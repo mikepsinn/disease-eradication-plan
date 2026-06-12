@@ -1,0 +1,143 @@
+---
+title: "Commission of the President"
+description: "The formal instrument of your appointment as President and Chief Executive Officer of Earth Optimization Services. Yours to print and frame. No President of the United States has ever received one."
+published: true
+tags:
+  - eos
+  - president
+  - commission
+  - onboarding
+  - certificate
+---
+
+Your commission of office is below. We had it drawn up the day you took the post.
+
+::: {.content-visible when-format="html"}
+
+<div class="eos-commission">
+  <div class="eos-commission-inner">
+    <div class="eos-commission-kicker">Earth Optimization Services</div>
+    <div class="eos-commission-title">Commission of the President</div>
+    <div class="eos-commission-greeting">To all who shall see these presents, greeting:</div>
+    <div class="eos-commission-body">
+      Know ye, that reposing special trust and confidence in the
+      patriotism, judgment, and abilities of
+      <div class="eos-commission-name">_______________________________</div>
+      I do hereby appoint them
+    </div>
+    <div class="eos-commission-rank">President and Chief Executive Officer<br>Earth Optimization Services</div>
+    <div class="eos-commission-body">
+      and do authorize and empower them to execute and fulfill the duties
+      of that office, which include the direction, optimization, and
+      general welfare of the planet Earth and all persons thereon.
+    </div>
+    <div class="eos-commission-term">
+      This commission shall remain in force for the natural life of the
+      bearer, a term the Company regards as a defect scheduled for repair.
+    </div>
+    <div class="eos-commission-done">
+      Done at the offices of Earth Optimization Services, which are Earth,<br>
+      this ______ day of ________________, in the year ________.
+    </div>
+    <div class="eos-commission-sig">
+      <div class="eos-commission-sigline">___________________________</div>
+      <div class="eos-commission-signame">Mike P. Sinn</div>
+      <div class="eos-commission-sigtitle">Assistant to the President</div>
+    </div>
+  </div>
+</div>
+
+:::
+
+::: {.content-hidden when-format="html"}
+
+```
++--------------------------------------------------------------+
+|                  EARTH OPTIMIZATION SERVICES                 |
+|                                                              |
+|                 COMMISSION OF THE PRESIDENT                  |
+|                                                              |
+|   To all who shall see these presents, greeting:             |
+|                                                              |
+|   Know ye, that reposing special trust and confidence        |
+|   in the patriotism, judgment, and abilities of              |
+|                                                              |
+|        _______________________________                      |
+|                                                              |
+|   I do hereby appoint them                                   |
+|                                                              |
+|          PRESIDENT AND CHIEF EXECUTIVE OFFICER               |
+|              EARTH OPTIMIZATION SERVICES                     |
+|                                                              |
+|   and do authorize and empower them to execute and           |
+|   fulfill the duties of that office, which include the       |
+|   direction, optimization, and general welfare of the        |
+|   planet Earth and all persons thereon.                      |
+|                                                              |
+|   This commission shall remain in force for the natural      |
+|   life of the bearer, a term the Company regards as a        |
+|   defect scheduled for repair.                               |
+|                                                              |
+|   Done at the offices of Earth Optimization Services,        |
+|   which are Earth, this ____ day of ____________,            |
+|   in the year ________.                                      |
+|                                                              |
+|   ___________________________                                |
+|   Mike P. Sinn                                               |
+|   Assistant to the President                                 |
++--------------------------------------------------------------+
+```
+
+:::
+
+Yours to print, date by hand, and frame. No President of the United States has ever had one of these: there is no office above theirs to issue it. There is one above yours.
+
+<style>
+.eos-commission {
+  --eosc-ink: #2c2115;
+  --eosc-gold: #a04f1a;
+  --eosc-bg: #fbf5ea;
+  background: var(--eosc-bg);
+  border: 3px double var(--eosc-gold);
+  border-radius: 6px;
+  color: var(--eosc-ink);
+  margin: 1.5rem 0 2rem;
+  padding: clamp(1.2rem, 3vw, 2.4rem);
+  text-align: center;
+}
+.eos-commission-inner {
+  border: 1px solid rgba(160, 79, 26, 0.4);
+  border-radius: 4px;
+  padding: clamp(1rem, 2.5vw, 2rem);
+}
+.eos-commission-kicker {
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--eosc-gold);
+}
+.eos-commission-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin: 0.6rem 0 1rem;
+}
+.eos-commission-greeting {
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
+.eos-commission-body { font-size: 1rem; line-height: 1.6; }
+.eos-commission-name { margin: 0.8rem 0; font-size: 1.1rem; letter-spacing: 0.04em; }
+.eos-commission-rank {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0.8rem 0;
+  color: var(--eosc-gold);
+}
+.eos-commission-term { font-size: 0.95rem; line-height: 1.6; margin: 1rem 0 0.4rem; }
+.eos-commission-done { font-size: 0.9rem; line-height: 1.8; margin-top: 1rem; }
+.eos-commission-sig { margin-top: 1.6rem; }
+.eos-commission-sigline { letter-spacing: 0.04em; }
+.eos-commission-signame { font-weight: 700; margin-top: 0.3rem; }
+.eos-commission-sigtitle { font-size: 0.85rem; color: rgba(44, 33, 21, 0.7); }
+</style>

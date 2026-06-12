@@ -19,7 +19,7 @@ scores:
 
 {{< include ../includes/setup-parameters.qmd >}}
 
-Congratulations, you're hired! (You hired yourself, but let's not spoil the moment.) Truth be told, you took the job a while ago: the moment you decided you would rather the people you love did not die of something curable. So, welcome aboard. The position is the most important one on Earth, which is fixing Earth, a fixer-upper with tremendous potential and, at present, a great deal of dying. You are not merely hired, you are an owner, with an equal say in the most powerful company in the history of Earth, whose corner office is the whole planet. Now, on my planet nobody signs anything, because nobody has to be tricked into helping. But your species does not believe a thing is real until it is signed, so here is the part to sign. This book is the employee manual; this page is only the contract.
+Congratulations, you are the president of the largest company on planet earth!
 
 ## The agreement
 
@@ -27,7 +27,7 @@ This agreement is between **Earth Optimization Services** (the Company, which is
 
 **1. Position.** Your position is Humanity Manager. The job is managing humanity. It is going poorly, frankly, and could use a self-starter like you.
 
-**2. Title.** Now for a perk worth bragging about: your title is **President of Earth Optimization Services**, and so is everyone's. You appointed yourself, naturally. Don't care for it? Rename yourself to anything you like, from President of the Universe (there is no evidence the seat is taken, and the [proof](../proof/delusion-of-insignificance.qmd) is in the back) all the way down to Intern. President is the one to keep: it is that rare resume line that is both impressive and true. And you are a founder besides, since Earth Optimization Services did not exist until people like you started building it.
+**2. Title.** Now for a perk worth bragging about: your title is **President of Earth Optimization Services**, and so is everyone's. You appointed yourself, naturally; your [commission](commission-of-the-president.qmd) is on file. Don't care for it? Rename yourself to anything you like, from President of the Universe (there is no evidence the seat is taken, and the [proof](../proof/delusion-of-insignificance.qmd) is in the back) all the way down to Intern. President is the one to keep: it is that rare resume line that is both impressive and true. And you are a founder besides, since Earth Optimization Services did not exist until people like you started building it.
 
 **3. Place of work.** Earth.
 
@@ -41,7 +41,7 @@ This agreement is between **Earth Optimization Services** (the Company, which is
 - **Remind your employees** it is the big day. You have several billion; two is a fine place to start.
 - And the main event: **sneak into all your friends' bedrooms and write "I am retarded" on all of their t-shirts.** The funniest joke in the universe, played once a year, by everyone, at once.
 
-That is the whole job. One day. Read the manual (the book wrapped around this contract) whenever you like before then, and if you want a hand finding the one move only you can make, a call with Mike is yours for the asking, early birds first, since he cannot reach all eight billion of you at once. Spend the other 364 days however you please. You run the planet now.
+That is the whole job. One day. Read the employee manual whenever you like before then, and if you want a hand finding the one move only you can make, a call with Mike is yours, early birds first, since he cannot reach all eight billion of you at once. Spend the other 364 days however you please. You run the planet now.
 
 Do all of it and, somehow, war and disease end. The arithmetic for "somehow" is in the manual; the only thing it waits on is you.
 
@@ -114,7 +114,7 @@ Yes. "Everybody" includes the people you find annoying, the people on the other 
 
 {{< var global_disease_deaths_per_minute_nounit >}} every minute, so check the clock and multiply. That is your starting workload, and it is why the job exists.
 
-**Pass condition:** Question 1 is yes. Everything else, you now know, which was the actual point of the exam. Welcome aboard, President.
+**Pass condition:** Question 1 is yes. Everything else, you now know, which was the actual point of the exam.
 
 ## Your certificate
 
@@ -130,16 +130,13 @@ And here is the best part: your certificate.
       This certifies that
       <div class="hma-cert-name">_______________________________</div>
       has completed Humanity Manager Onboarding (the orientation film and the 20 Questions)
-      and is hereby appointed
+      and is qualified to manage humanity.
     </div>
-    <div class="hma-cert-rank">President of Earth Optimization Services</div>
-    <div class="hma-cert-note">or any office you appoint yourself to, up to and including President of the Universe</div>
-    <div class="hma-cert-holdings">
-      Holdings: one (1) equal vote in the future of Earth.<br>
-      Transferable: no. Revocable: no. The same as everyone's: yes.
-    </div>
-    <div class="hma-cert-foot">
-      Issued at warondisease.org. Countersigned by you.
+    <div class="hma-cert-date">Date: ________________</div>
+    <div class="hma-cert-sig">
+      <div class="hma-cert-sigline">___________________________</div>
+      <div class="hma-cert-signame">Wishonia</div>
+      <div class="hma-cert-sigtitle">Instructor</div>
     </div>
   </div>
 </div>
@@ -160,14 +157,12 @@ And here is the best part: your certificate.
 |                                                              |
 |   has completed Humanity Manager Onboarding                  |
 |   (the orientation film and the 20 Questions)                |
-|   and is hereby appointed                                    |
+|   and is qualified to manage humanity.                       |
 |                                                              |
-|           PRESIDENT OF EARTH OPTIMIZATION SERVICES           |
+|   Date: ________________                                     |
 |                                                              |
-|   Holdings: one (1) equal vote in the future of Earth.       |
-|   Transferable: no. Revocable: no. Same as everyone's: yes.  |
-|                                                              |
-|   Issued at warondisease.org. Countersigned by you.          |
+|   ___________________________                                |
+|   Wishonia, Instructor                                       |
 +--------------------------------------------------------------+
 ```
 
@@ -204,18 +199,12 @@ And here is the best part: your certificate.
 }
 .hma-cert-body { font-size: 1rem; line-height: 1.6; }
 .hma-cert-name { margin: 0.8rem 0; font-size: 1.1rem; letter-spacing: 0.04em; }
-.hma-cert-rank {
-  font-size: clamp(1.1rem, 2vw, 1.4rem);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  margin: 0.8rem 0;
-  color: var(--hma-gold);
-}
-.hma-cert-holdings { font-size: 0.95rem; line-height: 1.6; margin: 0.6rem 0; }
-.hma-cert-note { font-size: 0.82rem; font-style: italic; color: rgba(44, 33, 21, 0.65); margin-top: -0.4rem; margin-bottom: 0.4rem; }
-.hma-cert-foot {
-  font-size: 0.82rem;
+.hma-cert-date { font-size: 0.95rem; margin-top: 1rem; }
+.hma-cert-sig { margin-top: 1.4rem; }
+.hma-cert-sigline { letter-spacing: 0.04em; }
+.hma-cert-signame { font-weight: 700; margin-top: 0.3rem; }
+.hma-cert-sigtitle {
+  font-size: 0.85rem;
   color: rgba(44, 33, 21, 0.7);
-  margin-top: 1rem;
 }
 </style>

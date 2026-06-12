@@ -244,7 +244,7 @@ After WW2, your grandparents cut military spending by {{< var post_ww2_military_
 **Animation:** Houses sprout. The man waters his and it grows a second story. The prosperity beanstalk climbs higher.
 :::
 
-They cut {{< var post_ww2_military_cut_pct >}}. You're asking for 1%.
+They cut {{< var post_ww2_military_cut_pct >}}. You're moving 1%.
 
 :::{.scene-direction}
 **Keyframe:** A skyscraper-sized bar chart towers on the left, disappearing into clouds. On the right, a nearly invisible speck. An ant next to the tiny bar is taller than it. A tiny flag planted on top so people can find it. Display text: "{{< var post_ww2_military_cut_pct >}}" on the skyscraper bar, "1%" on the tiny bar.
@@ -331,7 +331,7 @@ No political movement in the last century has failed after {{< var global_popula
 **Animation:** The small group cheers and wins. The massive crowd keeps dancing, oblivious. One dancer looks up, confused.
 :::
 
-Go to warondisease.org, Your Excellency. Vote, then forward this to one person with more reach than you. Your vote saves {{< var voter_lives_saved_nounit >}} lives and prevents {{< var voter_suffering_hours_prevented_nounit >}} hours of suffering. Love you! Bye!
+Go to warondisease.org, Your Excellency. Vote, then forward this to the person with the biggest audience you know. Your vote saves {{< var voter_lives_saved_nounit >}} lives and prevents {{< var voter_suffering_hours_prevented_nounit >}} hours of suffering. Love you! Bye!
 
 :::{.scene-direction}
 **Keyframe:** A pale-skinned young alien woman with small antennae, black bob haircut, and cosmic-patterned dress walking away toward a small flying saucer parked in the background. She looks back over her shoulder, one eyebrow raised, deadpan. The instruction manual glows on the ground behind her, open. Display text on the manual cover: "How to End War and Disease". Display text: "warondisease.org" glowing beneath the manual.

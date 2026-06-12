@@ -152,7 +152,7 @@ Everything above this heading was the *why*. Everything below it is the *how*. G
 
 **Stage 1. The organization joins the International Campaign to End War and Disease as an organizational signatory of the 1% Treaty.** Logo on [warondisease.org](https://warondisease.org), name on the Campaign page, one public statement. Artifacts: [The Outreach Email](#the-outreach-email), [The Organizational Signatory and Campaign Membership Form](#the-organizational-signatory-and-campaign-membership-form), [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo), [Objection Handling](#objection-handling) for whoever forwards the "we need to think about this" response.
 
-**Stage 2. The organization embeds the voting widget.** A permanent iframe on the nonprofit's site that keeps converting their warm audience indefinitely. Host credibility transfers to the widget; visitors are pre-qualified because they came to the site about the thing the widget is about. This is the single most effective ask in the chapter, and it goes before the Stage 3 newsletter blast so the blast can point at the embed instead of an external URL. See [Why Your Org Should Help](#why-your-org-should-help) for the pitch.
+**Stage 2. The organization embeds the voting widget.** A permanent iframe on the nonprofit's site that keeps converting their warm audience indefinitely. Host credibility transfers to the widget; visitors are pre-qualified because they came to the site about the thing the widget is about. This is the single most effective move in the chapter, and it goes before the Stage 3 newsletter blast so the blast can point at the embed instead of an external URL. See [What Your Org Gets](#what-your-org-gets) for the pitch.
 
 **Stage 3. The organization shares the treaty with its members.** One newsletter mention, one email, one social post, each linking to the embed on the nonprofit's own site. The distribution list becomes the campaign's distribution list for a single day; the embed catches the long tail after the blast decays. Artifacts: [The Member Activation Email](#the-member-activation-email), [The Social Post Pack](#the-social-post-pack).
 
@@ -164,7 +164,7 @@ Stage 1 leads to Stages 2 through 5. The nonprofit's only real job is Stages 1 t
 
 The rest of this chapter is the "knows what to click" part.
 
-## Why Your Org Should Help
+## What Your Org Gets
 
 Every disease-advocacy, peace, or global-health org operates inside the same structural trap: their mission's budget is {{< var military_to_government_clinical_trials_spending_ratio >}}x smaller than the budget that makes their mission harder. The Campaign fixes the upstream cause. The voting infrastructure, the attribution dashboard, the embed widget, the legal analysis, the cost-effectiveness modeling, the pre-written outreach copy, and the ongoing coordination are already built and staffed, at warondisease.org, at no cost to any partner org. The one thing the Campaign cannot produce on its own is audience reach. That is the only thing a partner org contributes. Every other cost has been absorbed before the conversation started.
 
@@ -182,7 +182,7 @@ The pitch has three arguments. Every recipient is at least one of rational, gree
 
 **If they are greedy.** Once the prize pool is seeded, voters referred through their channel earn their org a share of the eventual payout proportional to the size of the chain they seeded. Their org can absorb that as a new revenue line or pass it through to their referred voters as a further incentive.
 
-Most recipients hit two of these, or all three. It does not matter which. The ask is the same.
+Most recipients hit two of these, or all three. It does not matter which. The offer is the same.
 
 **Additional benefits most orgs underweight:**
 
@@ -320,7 +320,7 @@ The email for Stage 3. The nonprofit drops this into its existing newsletter or 
 ::: {.callout-note icon=false}
 **Subject:** Sign the public treaty register
 
-[Org Name] has joined the International Campaign to End War and Disease as an organizational signatory of the 1% Treaty, a proposal to redirect 1% of military spending to pragmatic clinical trials. We're asking for 30 seconds of your time, in two clicks.
+[Org Name] has joined the International Campaign to End War and Disease as an organizational signatory of the 1% Treaty, a proposal to redirect 1% of military spending to pragmatic clinical trials. It takes 30 seconds and two clicks.
 
 **Click 1: Sign the public treaty register at [warondisease.org](https://warondisease.org).** Your signature is one of the data points telling 193 heads of state that the public is not waiting for permission.
 
@@ -335,7 +335,7 @@ Two clicks. 30 seconds. Links again:
 - Sign: <https://warondisease.org>
 - Notify your leader: <https://warondisease.org/tasks>
 
-If you read this far, please forward the email to one person who also doesn't want to die of a preventable disease.
+If you read this far, forward the email to one person who also doesn't want to die of a preventable disease.
 
 Thank you.
 
@@ -364,12 +364,12 @@ Three short posts and one long post for Stage 3. Schedule them in your CMS; pin 
 >
 > The 1% Treaty proposes a simultaneous 1% reduction in military spending across all signatory nations, redirected to pragmatic clinical trials. Because every nation cuts equally, no country's military capability changes relative to any other. The balance stays identical. But {{< var treaty_annual_funding >}} per year frees up for clinical research.
 >
-> [Org Name] has joined the International Campaign to End War and Disease as an organizational signatory of the 1% Treaty. We are asking our community to do two things:
+> [Org Name] has joined the International Campaign to End War and Disease as an organizational signatory of the 1% Treaty. Our community has two things to do:
 >
 > 1. Sign the public treaty register at warondisease.org (10 seconds)
 > 2. Notify your head of state at warondisease.org/tasks (20 seconds)
 >
-> That is the entire ask. 30 seconds. Please share with anyone who also doesn't want to die of a preventable disease.
+> That is the whole job. 30 seconds. Share it with anyone who also doesn't want to die of a preventable disease.
 
 ## The Embed Snippet
 
@@ -444,7 +444,7 @@ This template is structured so the funder pays on verified delivery, with explic
 
 Even at aggressive probability discounts on treaty passage, the cost per DALY beats bed nets by orders of magnitude. The full three-accounting-method comparison is in [The Cost-Effectiveness Argument](#the-cost-effectiveness-argument).
 
-**On the per-voter denominator.** Lives-saved-per-voter divides total projected lives saved by the verified majority-of-humanity coordination target, not by the smaller Chenoweth tipping-point benchmark. This is the conservative public attribution: the public-signature strategy asks people to build a majority humans can see, so the impact math uses that larger denominator. The {{< var global_population_activism_threshold_pct >}} benchmark remains useful as evidence that political pressure can become decisive before the full target is reached.
+**On the per-voter denominator.** Lives-saved-per-voter divides total projected lives saved by the verified majority-of-humanity coordination target, not by the smaller Chenoweth tipping-point benchmark. This is the conservative public attribution: the public-signature strategy has people build a majority humans can see, so the impact math uses that larger denominator. The {{< var global_population_activism_threshold_pct >}} benchmark remains useful as evidence that political pressure can become decisive before the full target is reached.
 
 **What warondisease.org already provides, at no cost to [Org Name].**
 
@@ -481,7 +481,7 @@ Funds may not be used for: conferences, retreats, consultants whose outputs are 
 
 **Legal.** See [This Is Not Lobbying (The Legal Memo)](#this-is-not-lobbying-the-legal-memo). No changes to [Org Name]'s 501(c)(3) status result from this Campaign work. Voter acquisition for a proposed international treaty is issue advocacy, not lobbying.
 
-**The ask.** Fund [Org Name] at a $5,000 baseline plus a per-voter rate (anchor: $1.00, negotiable) up to a delivery target of [target] voters within [timeframe]. Maximum funder exposure: $5,000 + (rate × target). At $1/voter: $15,000 for 10,000 voters, $105,000 for 100,000 voters, $1,005,000 for 1,000,000. Delivery is public through the warondisease.org dashboard; the funder pays monthly in arrears against voters actually delivered, never advanced.
+**The proposal.** Fund [Org Name] at a $5,000 baseline plus a per-voter rate (anchor: $1.00, negotiable) up to a delivery target of [target] voters within [timeframe]. Maximum funder exposure: $5,000 + (rate × target). At $1/voter: $15,000 for 10,000 voters, $105,000 for 100,000 voters, $1,005,000 for 1,000,000. Delivery is public through the warondisease.org dashboard; the funder pays monthly in arrears against voters actually delivered, never advanced.
 
 Close every proposal with: "What per-voter rate and delivery target would make this the best cost-per-DALY grant in your current portfolio, and if we can hit it, is there any blocker to signing?"
 
@@ -511,7 +511,7 @@ Five steps. Do them in order.
 The top objections, with the top answer to each. If the same objection keeps appearing, revise the outreach email so it preempts it.
 
 **"This is too political."**
-The treaty asks for a simultaneous reduction, preserving military balance. It does not favor or oppose any nation, party, or candidate. It is no more political than advocating for increased NIH funding, which hundreds of 501(c)(3)s already do. The underlying fact is not partisan: everyone's lifetime risk of dying from a disease is 100%, and the current budget does not reflect this.
+The treaty specifies a simultaneous reduction, preserving military balance. It does not favor or oppose any nation, party, or candidate. It is no more political than advocating for increased NIH funding, which hundreds of 501(c)(3)s already do. The underlying fact is not partisan: everyone's lifetime risk of dying from a disease is 100%, and the current budget does not reflect this.
 
 **"This will never work."**
 The International Campaign to Ban Landmines started with one staff member and six NGOs in 1992. By 1997, 122 nations signed the Ottawa Treaty and the campaign won the Nobel Peace Prize. A 1% cut is historically trivial: pre-WWII US military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today's peacetime budget. After WWII, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and produced the largest economic boom in modern history. A 1% simultaneous reduction is rounding error compared to what has already been done safely.
@@ -526,7 +526,7 @@ Link to the treaty text itself. Organizations sign the public treaty register an
 Every organizational signature adds social proof. The first 10 matter more than the next 100. Small organizations that move fast become founding members, which is a permanently better position than large organizations that move slow.
 
 **"What about our existing campaigns?"**
-This complements existing work and does not replace or compete with anything. End-to-end first deployment is under one hour of staff time across all three org-facing stages: about 15 minutes to sign, about 30 minutes for a webmaster to paste the embed iframe into the CMS, and about 15 minutes to schedule the pre-written newsletter and social posts from this chapter. After that, the embed converts passively with zero ongoing overhead. The ask is also a potential new-funding unlock: global-health, peace, and policy funders increasingly fund coalition work on this issue, and coalition membership opens eligibility.
+This complements existing work and does not replace or compete with anything. End-to-end first deployment is under one hour of staff time across all three org-facing stages: about 15 minutes to sign, about 30 minutes for a webmaster to paste the embed iframe into the CMS, and about 15 minutes to schedule the pre-written newsletter and social posts from this chapter. After that, the embed converts passively with zero ongoing overhead. Membership also opens a new funding line: global-health, peace, and policy funders increasingly fund coalition work on this issue, and coalition membership opens eligibility.
 
 **"The numbers seem too good to be true."**
 They are calculated with 95% confidence intervals and 90+ cited sources. The full methodology is transparent in the [parameters and calculations](../appendix/parameters-and-calculations.qmd) appendix. Offer to connect them with an economist reviewer, or invite them to review the model themselves.

@@ -19,19 +19,13 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 {{< include /knowledge/includes/reactive-params.qmd >}}
 
-On my planet, when somebody asks you for money, you check two things. First: is anybody keeping any of it? Second: does giving it away make you richer or poorer?
 
-Nobody who operates Earth Optimization Services owns equity in it. I am told this is unusual. On my planet, building something and then not owning it is just called building something. But on yours, the question "what do you get out of this?" apparently requires an answer more complicated than "the same thing you get out of it: a planet where fewer people die." So here is the longer answer.
 
-The people who operate EOS live on the same planet you do. If the planet gets better, they get the better planet. Equity in a company is a number on a screen. A world where your children do not die of treatable diseases is a thing that is actually real. These are different categories of object. Your species treats them as the same category, which I find philosophically interesting and practically fatal.
 
-The second check: does giving money make you richer or poorer? If war and disease end, the shares appreciate substantially. If they do not, you own shares in military contractors, which historically perform well during periods of continued military spending. The downside is whatever else you would have done with the money.
 
-## What EOS is
+Earth Optimization Services is a company that sells products and services, makes money, and uses the money to optimize Earth. Your government requires me to be specific about the legal structure, so: it is a holding company. Everything described in this book is a product or subsidiary of EOS.
 
-Earth Optimization Services is a company. Not a fund. Not a nonprofit. Not a movement. A company that sells products and services, makes money, and uses the money to optimize Earth. Your government requires me to be specific about the legal structure, so: it is a holding company. Everything described in this book is a product or subsidiary of EOS.
-
-The names matter because your investors will try to put the whole thing in one familiar box and then become confused when the box catches fire. Earth Optimization Services is the company. [Optimitron](../solution/optimocracy.qmd) is the product: causal inference over public policy, scored against median health and wealth, meaning health-adjusted life expectancy and after-tax inflation-adjusted income. [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] is the preference and accountability layer: pairwise slider choices in, Citizen Alignment Scores out. Money buys a return. It does not buy extra votes, board control over EOS, or a private steering wheel for Earth. The steering wheel is shared, which is the first design improvement.
+[Optimitron](../solution/optimocracy.qmd) is the product: causal inference over public policy, scored against median health and wealth, meaning health-adjusted life expectancy and after-tax inflation-adjusted income. [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] is the preference and accountability layer: pairwise slider choices in, Citizen Alignment Scores out. Money buys a return. It does not buy extra votes, board control over EOS, or a private steering wheel for Earth. The steering wheel is shared, which is the first design improvement.
 
 | Product | What it does | Revenue |
 |---------|-------------|---------|
@@ -240,7 +234,7 @@ viewof eosNetWorth = Inputs.range([0, 100000000], {value: 250000, step: 10000, l
 ```
 
 ::: {.content-visible when-format="html"}
-**Share-price multiplier if the campaign succeeds.** Pick your package. The **Light package** is the 1% Treaty passing and nothing else: the economy ends up about {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the size it would otherwise be by year 15. The **Deluxe package** is full Wishonia optimization, government replaced with optimal policy, which the model puts at {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} by year 15. The Deluxe asks more of the species (you have to actually replace the broken machine, not just trim its budget), and pays like it. And it is not a one-time choice: you ship the Light package first by passing the treaty, then upgrade to Deluxe at any time by running the rest of the optimization. Same investment, same shares; the upgrade is how far the program goes, not a second purchase. The default below is the Light package, so the number you see first is the floor of the upside, not the ceiling. Expand the tree to edit the drivers.
+**Share-price multiplier if the campaign succeeds.** Pick your package. The **Light package** is the 1% Treaty passing and nothing else: the economy ends up about {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the size it would otherwise be by year 15. The **Deluxe package** is full Wishonia optimization, government replaced with optimal policy, which the model puts at {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} by year 15. The Deluxe is a bigger job (you actually replace the broken machine, not just trim its budget), and pays like it. And it is not a one-time choice: you ship the Light package first by passing the treaty, then upgrade to Deluxe at any time by running the rest of the optimization. Same investment, same shares; the upgrade is how far the program goes, not a second purchase. The default below is the Light package, so the number you see first is the floor of the upside, not the ceiling. Expand the tree to edit the drivers.
 :::
 
 ```{ojs}

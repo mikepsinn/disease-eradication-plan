@@ -136,7 +136,7 @@ The campaign has two prongs: a [Global Referendum](global-referendum.qmd) and a 
 
 The referendum proves that the support already exists. Everyone thinks ending war and disease is crazy because everyone else thinks it is crazy. Your economists call this pluralistic ignorance. The referendum is the moment eight billion people discover they nearly all agree. The canonical end-state coordination target in the prize model is {{< var global_registered_voters >}}, or {{< var global_coordination_target_pct >}} of humanity. More than 10 times as many downloaded TikTok.
 
-The right institutional framing is three lanes, not one giant capital ask:
+The right institutional framing is three lanes, not one giant check:
 
 | Lane | What it funds | Canonical number |
 |:---|:---|:---|
@@ -146,7 +146,7 @@ The right institutional framing is three lanes, not one giant capital ask:
 
 The expected first mover is a foundation consortium that can underwrite the stack together while still routing each lane through the committee or vehicle that fits it. One extraordinary institution could still do everything.
 
-{{< var treaty_campaign_viral_referendum_base_case >}} is the older narrow-bloc referendum budget for roughly 280 million verified votes. The canonical 50%-of-humanity activation ask is {{< var global_coordination_activation_budget >}}. The lobbying budget ({{< var treaty_campaign_budget_lobbying >}}) outbids the defense lobby's annual spend ({{< var defense_lobbying_annual >}}/year) by a factor of 8.
+{{< var treaty_campaign_viral_referendum_base_case >}} is the older narrow-bloc referendum budget for roughly 280 million verified votes. The canonical 50%-of-humanity activation budget is {{< var global_coordination_activation_budget >}}. The lobbying budget ({{< var treaty_campaign_budget_lobbying >}}) outbids the defense lobby's annual spend ({{< var defense_lobbying_annual >}}/year) by a factor of 8.
 
 Cash bonuses are the immediate incentive. The longer-dated incentive is Earth Optimization Points: verified recruitment credit on the scoreboard and, formally, the success-side claim on the prize pool if the year-15 targets are met. They are earned by recruiting, never bought, and cannot be traded; the point is to make coalition-building legible and worth doing, not to create a speculative asset.
 
@@ -327,7 +327,7 @@ These are the failure modes we consider most likely, ordered by severity. If you
 
 Everything depends on raising {{< var treaty_campaign_total_cost >}} in initial IAB capital. If no billionaire buys in, the cascade never starts. The [chain reaction model](../appendix/treaty-feasibility.qmd#sec-chain-reaction-model) says that even with {{< var chain_dismiss_probability >}} dismissal, approximately {{< var chain_expected_engaged_implementers_nounit >}} of {{< var chain_implementer_count_nounit >}} billionaires and heads of state engage within {{< var chain_horizon_years_nounit >}} years. The math is reassuring. The math has not met your billionaires. This is the single highest-risk node in the system.
 
-**How to improve this part:** Prize deposits keep philanthropists and pessimists in the same pool: failure leaves depositors with a pro-rata claim on the realized pool, while success routes the same pool to Earth Optimization Points holders. IAB investors take real risk (money funds the lobbying campaign), but the revenue share on success ({{< var victory_bond_annual_return_pct >}} annually) makes the expected value positive even at low success probabilities. The [decision-theoretic case](../appendix/treaty-feasibility.qmd) shows investing is the dominant strategy even without a cascade. What neither proves is that real billionaires evaluate payoff matrices. A pilot at $10M that demonstrates the loop before asking for {{< var treaty_campaign_total_cost >}} would reduce this from a modeling question to an empirical one.
+**How to improve this part:** Prize deposits keep philanthropists and pessimists in the same pool: failure leaves depositors with a pro-rata claim on the realized pool, while success routes the same pool to Earth Optimization Points holders. IAB investors take real risk (money funds the lobbying campaign), but the revenue share on success ({{< var victory_bond_annual_return_pct >}} annually) makes the expected value positive even at low success probabilities. The [decision-theoretic case](../appendix/treaty-feasibility.qmd) shows investing is the dominant strategy even without a cascade. What neither proves is that real billionaires evaluate payoff matrices. A pilot at $10M that demonstrates the loop before raising {{< var treaty_campaign_total_cost >}} would reduce this from a modeling question to an empirical one.
 
 ### 2. The 20% Overhead Question
 
@@ -345,7 +345,7 @@ If participation in wishocratic allocation is low, the allocations are noisy and
 
 We have not tested any of this as an integrated system. The RECOVERY trial proves pragmatic trials work. The Montreal Protocol proves coordinated reduction works. The NRA proves political scoring works. But the integrated loop has never run. Individually validated components can fail when combined, the same way individually safe chemicals can explode when mixed.
 
-**How to improve this part:** Run a pilot. A single country, a single disease category, a scaled-down version of the full loop. Prove the integration works before asking for planetary adoption.
+**How to improve this part:** Run a pilot. A single country, a single disease category, a scaled-down version of the full loop. Prove the integration works before going planetary.
 
 ## What Already Exists
 

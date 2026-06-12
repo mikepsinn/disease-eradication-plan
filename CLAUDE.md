@@ -72,6 +72,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Treaty durability | Billionaire bondholders have pre-existing influence + motive to keep/expand | "if the treaty holds" without explaining why it will |
 | Bond terms | Securities, revenue share, perpetual bonds | Utility tokens, DAO governance |
 | Ownership | Reader builds everything: "your Scoreboard," "here's how you launch" | "Join us," "our platform," "we're building" |
+| Giving, not asking | Hand the reader assets ("your commission is on file"); the treaty "directs"/"requires" governments | "we ask", "please help", thank-you framing, participation as sacrifice |
 | Framing | A company whose founder, owners, and staff are all the same people: the reader. Everyone is owner + Humanity Manager + founder. Registration = Onboarding | "the founder"/centering one person; "movement," "join us"; startup rah-rah ("we're all founders!") |
 | Stakes | Suffering first (concrete: "her last decade, in pain, not knowing you"), death as punctuation; disease as a deadpan villain *with intent* | abstract "reduce suffering"; melodrama; disease as fate |
 | Jargon | Plain words; keep a buzzword only when *mocking* it ("they call it 'synergy'") | startup-speak used straight: "leverage"/"unlock" (flat), "onboard," "bring online," "amplify," "empower," "world-class" |

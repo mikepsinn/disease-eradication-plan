@@ -35,7 +35,7 @@ Your one-pager: cost per voter, DALYs averted per voter, probability-weighted re
 
 One embed on a major health, peace, or effective-altruism org reaches more interested humans in a month than social media reaches in a year. Host credibility transfers to your widget. Their visitors already care about the thing your widget is about, because that is why they are on the site.
 
-The full pitch lives in [Why Your Org Should Help](/knowledge/strategy/nonprofit-coalition-strategy.qmd#why-your-org-should-help): three arguments (altruistic, rational, greedy) with the numbers each audience wants. Same chapter has the legal memo their general counsel will ask for. Send ten outreach emails per week, target fifty nonprofits in the first ninety days. At a ten-percent response rate that is five partnerships, which is tens of millions of eyeballs per month at zero cost.
+The full pitch lives in [What Your Org Gets](/knowledge/strategy/nonprofit-coalition-strategy.qmd#what-your-org-gets): three arguments (altruistic, rational, greedy) with the numbers each audience wants. Same chapter has the legal memo their general counsel will ask for. Send ten outreach emails per week, target fifty nonprofits in the first ninety days. At a ten-percent response rate that is five partnerships, which is tens of millions of eyeballs per month at zero cost.
 
 This is the single most effective action in the ninety-day plan.
 
@@ -83,7 +83,7 @@ The wearable layer that compounds with celebrity reach is the [shirt seed progra
 
 ## The Server Cost Non-Problem
 
-Four billion voters sounds like it needs a datacenter. It does not. Cloudflare's free tier serves static pages to any volume. Your voting widget is a static page. Nonprofit status gets you $100,000 in AWS credits. Another $100,000 in GCP credits. Another $100,000 in Azure. That is $300,000 in compute credits before you have asked anyone for money.
+Four billion voters sounds like it needs a datacenter. It does not. Cloudflare's free tier serves static pages to any volume. Your voting widget is a static page. Nonprofit status gets you $100,000 in AWS credits. Another $100,000 in GCP credits. Another $100,000 in Azure. That is $300,000 in compute credits before a single dollar of outside money arrives.
 
 Infrastructure is a solved problem. Getting anyone to vote is the unsolved one. Solve that one.
 

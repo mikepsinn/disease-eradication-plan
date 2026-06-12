@@ -19,7 +19,7 @@ Your institution is good at describing desirable end states. It is bad at buildi
 
 The [Earth Optimization Prize](earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is not another report. It is a public contest for discovering better plans to redirect resources from destruction to medicine, with a scoreboard, red-team bounties, and a referral mechanism that makes public support countable. The modeled upside of changing course is {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} in lifetime income per person. Most of the software already exists publicly through [Optimitron](https://optomitron.com) and its [open-source repository](https://github.com/mikepsinn/optomitron).
 
-## The Ask
+## The Offer
 
 Host the first 90-day pilot. Five things:
 
@@ -47,7 +47,7 @@ The benchmark plan ([Earth Optimization Protocol v1](earth-optimization-protocol
 | **[Optimocracy](../solution/optimocracy.qmd) / [OPG](https://opg.warondisease.org) / [OBG](https://obg.warondisease.org)** | Measures which policies make people richer or less dead |
 | **[Legal framework](../legal/legal-framework.qmd)** | Treaty, statutory, and election-law-compliant paths |
 
-You are not being asked to bless every component. You are hosting the first public process that can compare, attack, improve, and replace them. On 847 planets, this is how governance reform starts: someone credible says "try to prove this wrong" and then stands back. The standing back is the part your species finds difficult.
+Blessing every component is not the job. You are hosting the first public process that can compare, attack, improve, and replace them. On 847 planets, this is how governance reform starts: someone credible says "try to prove this wrong" and then stands back. The standing back is the part your species finds difficult.
 
 ## What Already Exists
 
@@ -60,7 +60,7 @@ This is not a request to fund a concept. The software is built and public. I men
 | **Participation layer** | World ID referendum, referral plumbing, alignment interfaces |
 | **Treasury layer** | PRIZE, VOTE, IAB contracts in Solidity |
 
-The software works. The ask is: put a credible name on the front door and let people try to break it.
+The software works. The offer: put a credible name on the front door, let people try to break it, and collect the credit when it holds.
 
 ## What You Are Agreeing To
 

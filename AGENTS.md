@@ -73,6 +73,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Cross-chapter | Each chapter gets its own joke version | Same joke verbatim in 2+ chapters |
 | Bond terms | Securities, revenue share, perpetual bonds | Utility tokens, DAO governance |
 | Ownership | Reader builds everything: "your Scoreboard," "here's how you launch" | "Join us," "our platform," "we're building" |
+| Giving, not asking | Hand the reader assets ("your commission is on file"); the treaty "directs"/"requires" governments | "we ask", "please help", thank-you framing, participation as sacrifice |
 | Jargon | Alien voice: "you give them money, they stop dying" | "leverage", "synergy", "stakeholder", "operationalize" |
 
 ## Quick Commands

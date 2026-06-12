@@ -202,8 +202,9 @@ book:
         # ── Direct action (any reader, today) ──
         - knowledge/appendix/handout.qmd # Single-sheet flyer tucked in the collar of vandalized shirts; recipient-facing explainer
         - knowledge/appendix/joke.qmd # The shirt; lives on the manual site; _quarto-joke.yml exists for PDF/Zenodo build only (no subdomain)
-        - knowledge/appendix/president-notification-letter.qmd # 1950s HR-style notification letter for newly recognized EOS Presidents; scheduling CTA, Peace assistant, compensation upside, onboarding links
-        - knowledge/appendix/humanity-manager-employment-agreement.qmd # Parody employment contract + printable Certificate of Humanity Management + the qualifying exam (onboarding artifact; pairs with educational-film.qmd)
+        - knowledge/appendix/president-notification-letter.qmd # 1950s HR-style notification letter for newly recognized EOS Presidents; scheduling CTA, Peace assistant, compensation upside, onboarding links; encloses the commission
+        - knowledge/appendix/commission-of-the-president.qmd # The appointment document itself: formal commission in the style of a U.S. officer's commission, played dead straight, printable and frameable
+        - knowledge/appendix/humanity-manager-employment-agreement.qmd # Parody employment contract + the qualifying exam + printable Certificate of Humanity Management (training completion; the appointment lives in commission-of-the-president.qmd)
         - knowledge/appendix/notice-of-termination.qmd # HR-format termination letter for all politicians with authority over military spending
         # ── Lawsuit kit ──
         - knowledge/appendix/love-letter.qmd # The warm, anyone-can-send letter to a defense contractor board ("I love you, I do not want you to suffer and die of horrible diseases"); friendly front door to the demand letter; one share upgrades it to a binding demand

@@ -69,7 +69,7 @@ The full benchmark system is [Earth Optimization Protocol v1](../strategy/earth-
 | **[Legal framework](../legal/legal-framework.qmd)** | Treaty/statutory/election-law path | Constraint set for credible contenders |
 | **[Phase 2 monetary transition](../futures/wishonia.qmd#the-algorithm-that-replaced-twelve-humans)** | Long-run replacement of fiat-era fiscal/monetary machinery | Explicitly outside pilot scope |
 
-The host institution is not being asked to build every downstream component in 90 days. It is being asked to launch the public contest, review process, and scoreboard that decides what should advance.
+The host institution does not build every downstream component in 90 days. It launches the public contest, review process, and scoreboard that decides what should advance.
 
 ## Existing Implementation Base
 
@@ -85,7 +85,7 @@ The pilot is extending an existing implementation base, not inventing the entire
 | **Treasury packages** | PRIZE / VOTE / IAB / `$WISH` packages are already present in the codebase | Makes it plausible to connect the pilot to later financing rails without re-architecting from scratch |
 | **Testing base** | Roughly 2,900+ tests across the workspace, plus strict TypeScript and typed schemas | Gives the institution something closer to a software program than a speculative concept note |
 
-For a host institution, this changes the nature of the ask. The pilot is not “please fund the invention of a whole new universe.” It is “please host the first credible public selection and review process around an already substantial implementation base.”
+For a host institution, this changes the offer. The pilot is not funding the invention of a whole new universe. It is hosting the first credible public selection and review process around an already substantial implementation base.
 
 ## Scope
 

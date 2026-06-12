@@ -27,7 +27,7 @@ The architecture is embarrassingly simple. Raise {{< var treaty_campaign_total_c
 
 ## Pillar 1: The Money Part (Raise {{< var treaty_campaign_total_cost >}})
 
-The instrument is a [VICTORY Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd): give us money now, get a fixed slice of treaty money later, for as long as the treaty survives. Anywhere else, this would be called "fraud." On Earth, it's a revenue share backed by the treaty's future cash flows if the treaty passes.
+The instrument is a [VICTORY Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd): money in now, a fixed slice of treaty money out later, for as long as the treaty survives. Anywhere else, this would be called "fraud." On Earth, it's a revenue share backed by the treaty's future cash flows if the treaty passes.
 
 The bonds return {{< var victory_bond_annual_return_pct >}} annually. This looks like a typo. It's arithmetic: {{< var victory_bond_annual_payout >}} divided by {{< var treaty_campaign_total_cost >}}. This isn't a normal loan with an end date. The treaty permanently earmarks {{< var victory_bond_funding_pct >}} of all treaty money ({{< var victory_bond_annual_payout >}}/year) for bondholders, for as long as the treaty exists. That slice is fixed by the treaty itself, not by some manager's annual mood, because investors don't care about your moral framework until after they've been paid. Every Ponzi scheme in history has promised returns like this. The difference is that Bernie Madoff's repayment story was a spreadsheet he made up. Yours is a treaty that, if passed, creates {{< var treaty_annual_funding >}}+ in annual public funding and routes a fixed share of it to investors.
 
@@ -62,7 +62,7 @@ Legally, the [501(c)(3)](../legal/legal-framework.qmd) proof layer can describe 
 
 ## Pillar 2: The Spending Part (Spend {{< var treaty_campaign_total_cost >}})
 
-![How to spend one billion convincing humans to stop killing each other: some for lobbying politicians, some for asking citizens directly, some for emergencies. Democracy is expensive.](/assets/images/financial-plan/financial-plan-section-campaign-budget-how-to-spend-var-treaty-campaign-total-cost-bw-academic.jpg)
+![How to spend one billion convincing humans to stop killing each other: some for lobbying politicians, some for letting citizens vote directly, some for emergencies. Democracy is expensive.](/assets/images/financial-plan/financial-plan-section-campaign-budget-how-to-spend-var-treaty-campaign-total-cost-bw-academic.jpg)
 
 The one-time activation energy to convince {{< var global_population_2024_nounit >}} people to marginally reduce their commitment to mutual annihilation. [Detailed line items here](campaign-budget.qmd).
 
