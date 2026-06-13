@@ -4,12 +4,12 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Science Opportunity Cost (USD) | 0.6583 | Strong driver |
-| Global Migration Opportunity Cost (USD) | 0.6124 | Strong driver |
-| Economic Multiplier for Healthcare Investment (x) | -0.5906 | Strong driver |
-| Global Lead Poisoning Cost (USD) | 0.5310 | Strong driver |
-| Economic Multiplier for Military Spending (x) | -0.3372 | Moderate driver |
-| R&D Spillover Multiplier (x) | 0.2007 | Weak driver |
-| GDP Growth Boost at 30% Military Reallocation (rate) | -0.0382 | Minimal effect |
+| Economic Multiplier for Healthcare Investment (x) | 1.8611 | Strong driver |
+| R&D Spillover Multiplier (x) | -1.4978 | Strong driver |
+| Global Migration Opportunity Cost (USD) | 1.1699 | Strong driver |
+| GDP Growth Boost at 30% Military Reallocation (rate) | -1.0327 | Strong driver |
+| Global Lead Poisoning Cost (USD) | 1.0214 | Strong driver |
+| Economic Multiplier for Military Spending (x) | -0.5214 | Strong driver |
+| Global Science Opportunity Cost (USD) | -0.0569 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

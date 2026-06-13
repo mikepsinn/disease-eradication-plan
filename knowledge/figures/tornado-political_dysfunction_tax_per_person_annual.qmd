@@ -26,7 +26,7 @@ baseline = 12625.0
 
 drivers = ['POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST', 'GLOBAL_POPULATION_2024', 'POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST']
 driver_labels = ['Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Global Science Opportunity Cost', 'Global Population in 2024', 'Global Lead Poisoning Cost']
-impacts_low = [0.0, -1750.0, -250.0, 323.7179487179492, -250.0]
+impacts_low = [-6500.0, -1750.0, -250.0, 323.7179487179492, -250.0]
 impacts_high = [14125.0, 5750.0, 750.0, -307.92682926829184, 250.0]
 
 # Convert deltas to absolute values (baseline + delta)

@@ -6215,20 +6215,23 @@ ETHYL_SHAREHOLDER_COUNTERFACTUAL_WEALTH_GAIN = Parameter(
 )
 
 POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST = Parameter(
-    57_000_000_000_000,  # $57T annually (conservative lower bound)
+    57_000_000_000_000,  # $57T annually (Clemens 2011 lower bound)
     manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="low",
-    description="Unrealized output from migration restrictions. Clemens (2011) calculated "
+    description="Unrealized output from migration restrictions. Clemens (2011) estimated "
                 "eliminating labor mobility barriers could increase global GDP by 50-150%. "
-                "At $115T global GDP, lower bound = $57T; upper bound = $170T. "
-                "Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. "
-                "This is the largest single distortion in the global economy.",
+                "At $115T global GDP, Clemens lower bound = $57T; upper bound = $170T. "
+                "The estimate is controversial: critics argue it assumes full global labor "
+                "mobility and ignores fiscal and social adjustment costs. Skeptical lower "
+                "bound: ~$5T (partial reforms only). Even 5% workforce mobility would "
+                "generate trillions, exceeding all foreign aid ever given. "
+                "This is the largest and most uncertain single component of the dysfunction tax.",
     display_name="Global Migration Opportunity Cost",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(57_000_000_000_000, 170_000_000_000_000),
+    confidence_interval=(5_000_000_000_000, 170_000_000_000_000),
     std_error=30_000_000_000_000,
     keywords=["migration", "labor mobility", "opportunity cost", "global", "Clemens"],
     latex_symbol=r"O_{migration}",
@@ -6265,6 +6268,66 @@ POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL = Parameter(
     ),
     keywords=["opportunity cost", "global", "total", "dysfunction"],
     latex_symbol=r"O_{total}",
+)
+
+# ============================================================
+# EOS equity valuation parameters
+# ============================================================
+
+# Fraction of social value EOS captures as shareholder returns.
+# Base: Nordhaus (2004) found innovators capture ~2.2% of social surplus on average.
+# For activist governance this is likely a floor (not a ceiling): the capture mechanism
+# is portfolio appreciation, not competitive product pricing, so there is no competitive
+# erosion of the capture rate. Activist literature analog: Engine No. 1 captured
+# significant fraction of ExxonMobil's value uplift through share appreciation.
+# CI: 1% (competitive markets, spillovers dominate) to 5% (durable moat via network/data).
+EOS_SOCIAL_VALUE_CAPTURE_PCT = Parameter(
+    0.022,
+    manual_ref="knowledge/economics/earth-optimization-fund.qmd",
+    source_type="external",
+    confidence="low",
+    description="Fraction of political dysfunction tax value that EOS captures as "
+                "shareholder returns via portfolio appreciation. Base case from "
+                "Nordhaus (2004): innovators capture 2.2% of social surplus. "
+                "Likely a floor for activist governance (no competitive price erosion). "
+                "Skeptical case: 1%. Bull case: 5%.",
+    display_name="EOS Social Value Capture Rate",
+    unit="percent",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(0.01, 0.05),
+    std_error=0.01,
+    keywords=["EOS", "value capture", "Nordhaus", "activist", "equity"],
+    latex_symbol=r"\phi_{capture}",
+)
+
+# Total addressable value for EOS equity (NPV of captured dysfunction tax).
+# Formula: dysfunction_tax_annual × capture_pct / discount_rate
+# At base values: $101T × 2.2% / 3% = ~$74T
+# This is V in the share price formula: price = P(I) × V / total_shares.
+EOS_EQUITY_VALUE_V = Parameter(
+    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * 0.022 / 0.03,
+    manual_ref="knowledge/economics/earth-optimization-fund.qmd",
+    source_type="calculated",
+    confidence="low",
+    description="Total addressable value for EOS equity: NPV of the fraction of "
+                "political dysfunction tax EOS captures as portfolio appreciation. "
+                "V in the share price formula: price = P(I) x V / total_shares. "
+                "Calculated as dysfunction_tax x capture_pct / discount_rate.",
+    display_name="EOS Equity Value (V)",
+    unit="USD",
+    formula="POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * EOS_SOCIAL_VALUE_CAPTURE_PCT / NPV_DISCOUNT_RATE_STANDARD",
+    inputs=[
+        "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+        "EOS_SOCIAL_VALUE_CAPTURE_PCT",
+        "NPV_DISCOUNT_RATE_STANDARD",
+    ],
+    compute=lambda ctx: (
+        ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"] *
+        ctx["EOS_SOCIAL_VALUE_CAPTURE_PCT"] /
+        ctx["NPV_DISCOUNT_RATE_STANDARD"]
+    ),
+    keywords=["EOS", "equity", "valuation", "V", "share price"],
+    latex_symbol=r"V_{EOS}",
 )
 
 # Global opportunity cost as percentage of global GDP

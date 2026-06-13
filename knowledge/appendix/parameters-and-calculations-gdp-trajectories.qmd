@@ -1635,7 +1635,7 @@ Total global opportunity cost from governance failures: health innovation delays
 - [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34 trillion (95% CI: $20 trillion - $80 trillion)
 - [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
 - [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $5 trillion - $170 trillion)
 
 $$
 \begin{gathered}
@@ -4836,7 +4836,7 @@ Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all
 - [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
 - [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
 - [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $5 trillion - $170 trillion)
 - [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
 - [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
 
@@ -6548,15 +6548,15 @@ Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points 
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Unrealized output from migration restrictions. Clemens (2011) calculated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, lower bound = $57T; upper bound = $170T. Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest single distortion in the global economy.
+Unrealized output from migration restrictions. Clemens (2011) estimated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, Clemens lower bound = $57T; upper bound = $170T. The estimate is controversial: critics argue it assumes full global labor mobility and ignores fiscal and social adjustment costs. Skeptical lower bound: ~$5T (partial reforms only). Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest and most uncertain single component of the dysfunction tax.
 
 **Source**: [@political-dysfunction-tax-paper-2025]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$57 trillion, $170 trillion] • Distribution: Lognormal (SE: $30 trillion)
+**Technical**: 95% CI: [$5 trillion, $170 trillion] • Distribution: Lognormal (SE: $30 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $57 trillion and $170 trillion (±99%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $5 trillion and $170 trillion (±145%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

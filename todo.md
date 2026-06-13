@@ -1,16 +1,32 @@
 # Open Tasks
 
-Current focus: **ship the front door** and **stand up the investor fund** (accredited money in → buy controlling/influential stakes in the companies that control government → redirect their lobbying). Decided work lands here; exploration happens in conversation, then lands here. `[P]` = safe to parallelize across agents.
+Current focus: **ship the front door** and **stand up the EOS equity raise** (accredited money in -> buy influential, not majority-control, stakes in the companies that control government -> redirect their lobbying via shareholder activism, Engine-No.-1 style). Decided work lands here; exploration happens in conversation, then lands here. `[P]` = safe to parallelize across agents.
 
 ## Now: verify + ship
 
 - [ ] **Render + verify + commit** the session's content work (Theory of Operation chapter, ASCII circuit schematics + `.diagram` CSS, handbook build-out, canon fixes). Confirm diagrams render, links resolve, mobile CSS works, then commit.
 - [ ] **Name the next real-world test.** Which front-door artifact (Wishonia's Wager / EOS brochure / educational film) goes in front of which real people, by when.
 
-## The fund (operational focus)
+## EOS equity raise (operational focus)
 
-- [ ] **Securities counsel to structure the investor vehicle.** Accredited investors put money into a fund, run under the existing **Earth Optimization Services LLC** (Illinois), that buys controlling/influential stakes in the companies controlling government and redirects their lobbying (the Loving Takeover). Counsel covers: the offering exemption (Reg D 506(c) for accredited), whether a separate fund/management layer is needed, Investment Company / Adviser Act exposure, and subscription docs. You already have the entity, this is the legal structuring of the offering, not a new LLC.
-- [ ] **Investor-facing materials.** Confirm `investment-terms.qmd` + `investment-thesis.qmd` match the final structure; draft the real term sheet / PPM with counsel.
+**Decided (2026-06-13):** Structure = **Earth Optimization Services itself** as the vehicle. No separate fund LLC. Convert or re-form as a Delaware C-corp; investors buy non-voting EOS equity directly under **Reg D 506(c)** (public solicitation allowed; accredited investors must be *verified*, not self-certified). **No carry, no advisory fee.** Mike is aligned by owning shares and drawing a disclosed salary as an EOS operating expense. First close target $500K-$2M.
+
+### Document set to accept investment (Reg D 506(c))
+
+- [ ] **Delaware C-corp formation or conversion** for Earth Optimization Services, with two share classes: voting founder/foundation shares + non-voting economic investor shares.
+- [ ] **Private Placement Memorandum (PPM)**, disclosure doc sourced from the public EOS equity chapter but tighter and dated. (Claude drafts.)
+- [ ] **Share Purchase Agreement** + accredited questionnaire. (Claude drafts.)
+- [ ] **Accredited-investor verification**, use a third-party service (VerifyInvestor / Parallel Markets, ~$30-60/investor) so we never collect tax returns ourselves.
+- [ ] **Rule 506(d) bad-actor check**, one-page certification from issuer/control/offering participants and no disqualified paid solicitor.
+- [ ] **Form D**, federal EDGAR filing within 15 days of first sale. Self-filing, free. (Claude preps, Mike files.)
+- [ ] **State blue-sky notice filings**, per investor's home state. (Claude preps.)
+- [ ] **Investment Company Act memo**, operating-company analysis, 40% test, Rule 3a-2 launch runway. No 3(c)(1) fund reliance.
+- [ ] **Corporate bank + brokerage account**, in EOS's name; holds operating cash and activist positions.
+- [ ] **ONE securities-attorney review pass** on the finished PPM + share-purchase docs before accepting the first dollar. Not a lawyer shopping spree; one review, because antifraud liability is personal and uncapped. The book already says hire counsel who treats "legal" and "unprecedented" as compatible.
+
+Downstream (when EOS owns positions): Schedule 13D once >5% of a target (e.g. HII); 13F once the reportable portfolio crosses the rule threshold. Claude handles when we get there.
+
+- [ ] **Reconcile investor-facing chapters.** Confirm no stale "Victory Corp issues the Fund," separate-fund, adviser-registration, or 3(c)(1) confusion remains.
 
 ## Book / content (front door + open threads)
 

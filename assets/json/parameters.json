@@ -3672,6 +3672,39 @@
       "computeExpr": "(((GENE_THERAPY_DISEASE_COMBINATIONS + MRNA_THERAPEUTIC_COMBINATIONS) + EPIGENETIC_DISEASE_COMBINATIONS) + CELL_THERAPY_DISEASE_COMBINATIONS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html"
     },
+    "EOS_EQUITY_VALUE_V": {
+      "value": 74066666666666.67,
+      "formatted": "$74.1 trillion",
+      "unit": "USD",
+      "description": "Total addressable value for EOS equity: NPV of the fraction of political dysfunction tax EOS captures as portfolio appreciation. V in the share price formula: price = P(I) x V / total_shares. Calculated as dysfunction_tax x capture_pct / discount_rate.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * EOS_SOCIAL_VALUE_CAPTURE_PCT / NPV_DISCOUNT_RATE_STANDARD",
+      "inputs": [
+        "EOS_SOCIAL_VALUE_CAPTURE_PCT",
+        "NPV_DISCOUNT_RATE_STANDARD",
+        "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"
+      ],
+      "computeExpr": "((POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * EOS_SOCIAL_VALUE_CAPTURE_PCT) / NPV_DISCOUNT_RATE_STANDARD)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html"
+    },
+    "EOS_SOCIAL_VALUE_CAPTURE_PCT": {
+      "value": 0.022,
+      "formatted": "2.2%",
+      "unit": "percent",
+      "description": "Fraction of political dysfunction tax value that EOS captures as shareholder returns via portfolio appreciation. Base case from Nordhaus (2004): innovators capture 2.2% of social surplus. Likely a floor for activist governance (no competitive price erosion). Skeptical case: 1%. Bull case: 5%.",
+      "sourceType": "external",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        0.01,
+        0.05
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html"
+    },
     "EPIGENETIC_DISEASE_COMBINATIONS": {
       "value": 1500000.0,
       "formatted": "1.5 million combinations",
@@ -7450,13 +7483,13 @@
       "value": 57000000000000.0,
       "formatted": "$57 trillion",
       "unit": "USD",
-      "description": "Unrealized output from migration restrictions. Clemens (2011) calculated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, lower bound = $57T; upper bound = $170T. Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest single distortion in the global economy.",
+      "description": "Unrealized output from migration restrictions. Clemens (2011) estimated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, Clemens lower bound = $57T; upper bound = $170T. The estimate is controversial: critics argue it assumes full global labor mobility and ignores fiscal and social adjustment costs. Skeptical lower bound: ~$5T (partial reforms only). Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest and most uncertain single component of the dysfunction tax.",
       "sourceType": "external",
       "sourceRef": "political-dysfunction-tax-paper-2025",
       "confidence": "low",
       "formula": null,
       "confidenceInterval": [
-        57000000000000.0,
+        5000000000000.0,
         170000000000000.0
       ],
       "distribution": "lognormal",

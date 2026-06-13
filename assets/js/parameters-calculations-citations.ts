@@ -789,6 +789,21 @@ export const EFFICACY_LAG_YEARS: Parameter = {
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
 };
 
+export const EOS_SOCIAL_VALUE_CAPTURE_PCT: Parameter = {
+  value: 0.022,
+  parameterName: "EOS_SOCIAL_VALUE_CAPTURE_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-eos_social_value_capture_pct",
+  unit: "percent",
+  displayName: "EOS Social Value Capture Rate",
+  description: "Fraction of political dysfunction tax value that EOS captures as shareholder returns via portfolio appreciation. Base case from Nordhaus (2004): innovators capture 2.2% of social surplus. Likely a floor for activist governance (no competitive price erosion). Skeptical case: 1%. Bull case: 5%.",
+  sourceType: "external",
+  confidence: "low",
+  confidenceInterval: [0.01, 0.05],
+  stdError: 0.01,
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html",
+  manualPageTitle: "Earth Optimization Fund",
+};
+
 export const EXPERT_DECISION_ACCURACY: Parameter = {
   value: 0.65,
   parameterName: "EXPERT_DECISION_ACCURACY",
@@ -2477,12 +2492,12 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST: Parameter 
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-political_dysfunction_global_migration_opportunity_cost",
   unit: "USD",
   displayName: "Global Migration Opportunity Cost",
-  description: "Unrealized output from migration restrictions. Clemens (2011) calculated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, lower bound = $57T; upper bound = $170T. Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest single distortion in the global economy.",
+  description: "Unrealized output from migration restrictions. Clemens (2011) estimated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, Clemens lower bound = $57T; upper bound = $170T. The estimate is controversial: critics argue it assumes full global labor mobility and ignores fiscal and social adjustment costs. Skeptical lower bound: ~$5T (partial reforms only). Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest and most uncertain single component of the dysfunction tax.",
   sourceType: "external",
   sourceRef: "political-dysfunction-tax-paper-2025",
   sourceUrl: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   confidence: "low",
-  confidenceInterval: [57000000000000.0, 170000000000000.0],
+  confidenceInterval: [5000000000000.0, 170000000000000.0],
   stdError: 30000000000000.0,
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html",
   manualPageTitle: "The Political Dysfunction Tax",
@@ -4095,7 +4110,7 @@ export const CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA: Parameter = {
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA × 0.01",
   latex: "\\begin{gathered}\nEV_{pp,wish} = \\Delta Y_{lifetime,wish} \\times 0.01 = \\$36.4M \\times 0.01 = \\$364K\n\\\\[0.5em]\n\\text{where } \\Delta Y_{lifetime,wish} = Y_{cum,wish} - Y_{cum,earth} = \\$37.3M - \\$904K = \\$36.4M\n\\\\[0.5em]\n\\text{where } Y_{cum,wish} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \\bar{y}_{wish,20} \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\\\[0.5em]\n\\text{where } \\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}} = \\frac{\\$10700T}{9.2B} = \\$1.16M\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } \\bar{y}_{base,20} = \\frac{GDP_{base,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{base,20} = GDP_{global} \\times (1 + g_{base})^{20}\n\\\\[0.5em]\n\\text{where } T_{remaining} = LE_{global} - Age_{median} = 73.4 - 30.5 = 42.9\n\\\\[0.5em]\n\\text{where } Y_{cum,earth} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}\n\\end{gathered}",
-  confidenceInterval: [105962.07706942114, 2329739.1048568552],
+  confidenceInterval: [63412.38195169245, 2329739.1048568552],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
   manualPageTitle: "The Earth Optimization Prize",
 };
@@ -4111,7 +4126,7 @@ export const CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND: Parameter = {
   confidence: "high",
   formula: "WISHONIA_PERSONAL_UPSIDE_BLEND × 0.01",
   latex: "\\begin{gathered}\nEV_{pp,wish,blend} = Upside_{blend,wish} \\times 0.01 = \\$40.5M \\times 0.01 = \\$405K\n\\\\[0.5em]\n\\text{where } Upside_{blend,wish} = \\Delta Y_{lifetime,wish} + Value_{HALE,wish} = \\$36.4M + \\$4.02M = \\$40.5M\n\\\\[0.5em]\n\\text{where } \\Delta Y_{lifetime,wish} = Y_{cum,wish} - Y_{cum,earth} = \\$37.3M - \\$904K = \\$36.4M\n\\\\[0.5em]\n\\text{where } Y_{cum,wish} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \\bar{y}_{wish,20} \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\\\[0.5em]\n\\text{where } \\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}} = \\frac{\\$10700T}{9.2B} = \\$1.16M\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } \\bar{y}_{base,20} = \\frac{GDP_{base,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{base,20} = GDP_{global} \\times (1 + g_{base})^{20}\n\\\\[0.5em]\n\\text{where } T_{remaining} = LE_{global} - Age_{median} = 73.4 - 30.5 = 42.9\n\\\\[0.5em]\n\\text{where } Y_{cum,earth} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}\n\\\\[0.5em]\n\\text{where } Value_{HALE,wish} = \\Delta HALE_{wish,15} \\times Value_{QALY} = 26.8 \\times \\$150K = \\$4.02M\n\\\\[0.5em]\n\\text{where } \\Delta HALE_{wish,15} = f_{cure,15,wish} \\times \\Delta_{HALE} + \\Delta HALE_{wish,extra,15}\n\\\\[0.5em]\n\\text{where } f_{cure,15,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{15}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } \\Delta HALE_{wish,extra,15} = f_{cure,15,wish} \\times (\\Delta LE_{best} + T_{extend} \\times \\rho_{HALE,15})\n\\\\[0.5em]\n\\text{where } \\Delta LE_{best} = \\max\\left(LE_{CH}, LE_{SG}\\right) - LE_{global}\n\\end{gathered}",
-  confidenceInterval: [130051.00499646284, 2402551.0303017865],
+  confidenceInterval: [87501.30987873417, 2402551.0303017865],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
   manualPageTitle: "The Earth Optimization Prize",
 };
@@ -5793,6 +5808,22 @@ export const EMERGING_MODALITY_COMBINATIONS: Parameter = {
   confidenceInterval: [32432642.738815937, 52539582.74663582],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html",
   manualPageTitle: "The Untapped Therapeutic Frontier",
+};
+
+export const EOS_EQUITY_VALUE_V: Parameter = {
+  value: 74066666666666.67,
+  parameterName: "EOS_EQUITY_VALUE_V",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-eos_equity_value_v",
+  unit: "USD",
+  displayName: "EOS Equity Value (V)",
+  description: "Total addressable value for EOS equity: NPV of the fraction of political dysfunction tax EOS captures as portfolio appreciation. V in the share price formula: price = P(I) x V / total_shares. Calculated as dysfunction_tax x capture_pct / discount_rate.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * EOS_SOCIAL_VALUE_CAPTURE_PCT / NPV_DISCOUNT_RATE_STANDARD",
+  latex: "\\begin{gathered}\nV_{EOS} = O_{total} \\times \\frac{\\phi_{capture}}{r_{discount}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
+  confidenceInterval: [16122778640202.992, 260205758935381.28],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html",
+  manualPageTitle: "Earth Optimization Fund",
 };
 
 export const EPIGENETIC_DISEASE_COMBINATIONS: Parameter = {
@@ -7505,7 +7536,7 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE: Parameter = {
   confidence: "low",
   formula: "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED / POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE",
   latex: "\\begin{gathered}\nE_{gov} = \\frac{W_{real}}{W_{max}} = \\frac{\\$109T}{\\$210T} = 51.9\\%\n\\\\[0.5em]\n\\text{where } W_{real} = GDP_{global} - W_{waste} = \\$115T - \\$6.2T = \\$109T\n\\\\[0.5em]\n\\text{where } W_{waste} = W_{total,US} + W_{ff,global} = \\$4.9T + \\$1.3T = \\$6.2T\n\\\\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times \\delta_{overlap} = \\$4.9T \\times 1 = \\$4.9T\n\\\\[0.5em]\n\\text{where } W_{raw,US} = W_{health} + W_{housing} + W_{military} + W_{regulatory} + W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} + W_{fossil} + W_{agriculture} = \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B + \\$181B + \\$160B + \\$90B + \\$50B + \\$75B = \\$4.9T\n\\\\[0.5em]\n\\text{where } W_{max} = W_{real} + O_{total} = \\$109T + \\$101T = \\$210T\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
-  confidenceInterval: [0.3588263089576748, 0.5695487810078039],
+  confidenceInterval: [0.3588263089576748, 0.6950687776564031],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html",
   manualPageTitle: "The Political Dysfunction Tax",
 };
@@ -7523,7 +7554,7 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_PCT_GDP: Parameter = 
   confidence: "low",
   formula: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL / GLOBAL_GDP_2025",
   latex: "\\begin{gathered}\nO_{\\%GDP} = \\frac{O_{total}}{GDP_{global}} = \\frac{\\$101T}{\\$115T} = 87.8\\%\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
-  confidenceInterval: [0.7245731001101416, 1.6630893863202825],
+  confidenceInterval: [0.42059422539659974, 1.6630893863202825],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/optimocracy.html",
   manualPageTitle: "Optimocracy: The Evidence Machine",
 };
@@ -7541,7 +7572,7 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL: Parameter = {
   confidence: "low",
   formula: "HEALTH + SCIENCE + LEAD + MIGRATION",
   latex: "\\begin{gathered}\nO_{total} \\\\\n= O_{health} + O_{science} + O_{lead} + O_{migration} \\\\\n= \\$34T + \\$4T + \\$6T + \\$57T \\\\\n= \\$101T\n\\end{gathered}",
-  confidenceInterval: [83325906512666.3, 191255279426832.47],
+  confidenceInterval: [48368335920608.97, 191255279426832.47],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/optimocracy-paper.html",
   manualPageTitle: "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
 };
@@ -7573,7 +7604,7 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE: Parameter = {
   confidence: "low",
   formula: "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED + POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
   latex: "\\begin{gathered}\nW_{max} = W_{real} + O_{total} = \\$109T + \\$101T = \\$210T\n\\\\[0.5em]\n\\text{where } W_{real} = GDP_{global} - W_{waste} = \\$115T - \\$6.2T = \\$109T\n\\\\[0.5em]\n\\text{where } W_{waste} = W_{total,US} + W_{ff,global} = \\$4.9T + \\$1.3T = \\$6.2T\n\\\\[0.5em]\n\\text{where } W_{total,US} = W_{raw,US} \\times \\delta_{overlap} = \\$4.9T \\times 1 = \\$4.9T\n\\\\[0.5em]\n\\text{where } W_{raw,US} = W_{health} + W_{housing} + W_{military} + W_{regulatory} + W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} + W_{fossil} + W_{agriculture} = \\$1.2T + \\$1.4T + \\$615B + \\$580B + \\$546B + \\$181B + \\$160B + \\$90B + \\$50B + \\$75B = \\$4.9T\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
-  confidenceInterval: [193581830767599.1, 298289343579017.9],
+  confidenceInterval: [158620476898935.44, 298289343579017.9],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html",
   manualPageTitle: "The Political Dysfunction Tax",
 };
@@ -7605,7 +7636,7 @@ export const POLITICAL_DYSFUNCTION_TAX_PER_HOUSEHOLD_OF_FOUR_ANNUAL: Parameter =
   confidence: "low",
   formula: "POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL × 4",
   latex: "\\begin{gathered}\nT_{pd,hh4} = T_{pd,pc} \\times 4 = \\$12.6K \\times 4 = \\$50.5K\n\\\\[0.5em]\n\\text{where } T_{pd,pc} = \\frac{O_{total}}{Pop_{global}} = \\frac{\\$101T}{8B} = \\$12.6K\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
-  confidenceInterval: [42560.51546662096, 93652.46708364938],
+  confidenceInterval: [24708.11931994425, 93652.46708364938],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html",
   manualPageTitle: "The Political Dysfunction Tax",
 };
@@ -7621,7 +7652,7 @@ export const POLITICAL_DYSFUNCTION_TAX_PER_PERSON_ANNUAL: Parameter = {
   confidence: "low",
   formula: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL ÷ GLOBAL_POPULATION_2024",
   latex: "\\begin{gathered}\nT_{pd,pc} = \\frac{O_{total}}{Pop_{global}} = \\frac{\\$101T}{8B} = \\$12.6K\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
-  confidenceInterval: [10640.12886665524, 23413.116770912344],
+  confidenceInterval: [6177.029829986062, 23413.116770912344],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
   manualPageTitle: "The Earth Optimization Prize",
 };
@@ -9918,7 +9949,7 @@ export const WISHONIA_PERSONAL_UPSIDE_BLEND: Parameter = {
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + WISHONIA_HALE_VALUE_PER_CAPITA",
   latex: "\\begin{gathered}\nUpside_{blend,wish} = \\Delta Y_{lifetime,wish} + Value_{HALE,wish} = \\$36.4M + \\$4.02M = \\$40.5M\n\\\\[0.5em]\n\\text{where } \\Delta Y_{lifetime,wish} = Y_{cum,wish} - Y_{cum,earth} = \\$37.3M - \\$904K = \\$36.4M\n\\\\[0.5em]\n\\text{where } Y_{cum,wish} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \\bar{y}_{wish,20} \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\\\[0.5em]\n\\text{where } \\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}} = \\frac{\\$10700T}{9.2B} = \\$1.16M\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } \\bar{y}_{base,20} = \\frac{GDP_{base,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{base,20} = GDP_{global} \\times (1 + g_{base})^{20}\n\\\\[0.5em]\n\\text{where } T_{remaining} = LE_{global} - Age_{median} = 73.4 - 30.5 = 42.9\n\\\\[0.5em]\n\\text{where } Y_{cum,earth} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}\n\\\\[0.5em]\n\\text{where } Value_{HALE,wish} = \\Delta HALE_{wish,15} \\times Value_{QALY} = 26.8 \\times \\$150K = \\$4.02M\n\\\\[0.5em]\n\\text{where } \\Delta HALE_{wish,15} = f_{cure,15,wish} \\times \\Delta_{HALE} + \\Delta HALE_{wish,extra,15}\n\\\\[0.5em]\n\\text{where } f_{cure,15,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{15}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } \\Delta HALE_{wish,extra,15} = f_{cure,15,wish} \\times (\\Delta LE_{best} + T_{extend} \\times \\rho_{HALE,15})\n\\\\[0.5em]\n\\text{where } \\Delta LE_{best} = \\max\\left(LE_{CH}, LE_{SG}\\right) - LE_{global}\n\\end{gathered}",
-  confidenceInterval: [13005100.499646284, 240255103.03017864],
+  confidenceInterval: [8750130.987873416, 240255103.03017864],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/call-to-action/your-personal-benefits.html",
   manualPageTitle: "Your Personal Benefits",
 };
@@ -9950,7 +9981,7 @@ export const WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_15: Parameter = {
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_GDP_YEAR_15 / GLOBAL_POPULATION_2040_PROJECTED",
   latex: "\\begin{gathered}\n\\bar{y}_{wish,15} = \\frac{GDP_{wish,15}}{Pop_{2040}} = \\frac{\\$4480T}{8.9B} = \\$504K\n\\\\[0.5em]\n\\text{where } GDP_{wish,15}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{12}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,15,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{15}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
-  confidenceInterval: [233795.42404750193, 1872303.3964954303],
+  confidenceInterval: [143096.77945089462, 1872303.3964954303],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html",
   manualPageTitle: "Earth Optimization Protocol v1",
 };
@@ -9966,7 +9997,7 @@ export const WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20: Parameter = {
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_GDP_YEAR_20 / GLOBAL_POPULATION_2045_PROJECTED",
   latex: "\\begin{gathered}\n\\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}} = \\frac{\\$10700T}{9.2B} = \\$1.16M\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
-  confidenceInterval: [395118.3791840341, 6220302.783575157],
+  confidenceInterval: [240658.14460645945, 6220302.783575157],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html",
   manualPageTitle: "The Political Dysfunction Tax",
 };
@@ -9982,7 +10013,7 @@ export const WISHONIA_TRAJECTORY_CAGR_YEAR_20: Parameter = {
   confidence: "high",
   formula: "(WISHONIA_TRAJECTORY_GDP_YEAR_20 ÷ GLOBAL_GDP_2025)^(1/20) - 1",
   latex: "\\begin{gathered}\ng_{wish,CAGR} = \\left(\\frac{GDP_{wish,20}}{GDP_{global}}\\right)^{\\frac{1}{20}} - 1\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
-  confidenceInterval: [0.18847721731264658, 0.36409644028780025],
+  confidenceInterval: [0.15937659143616362, 0.36409644028780025],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html",
   manualPageTitle: "The Political Dysfunction Tax",
 };
@@ -9998,7 +10029,7 @@ export const WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME: Parameter = {
   confidence: "high",
   formula: "Phase 1: y0*(1+g_pc,wish)*((1+g_pc,wish)^20-1)/g_pc,wish + Phase 2: y20*(1+g_pc,base)*((1+g_pc,base)^(T-20)-1)/g_pc,base",
   latex: "\\begin{gathered}\nY_{cum,wish} \\\\\n= \\bar{y}_0 \\cdot \\frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} \\\\\n+ \\bar{y}_{wish,20} \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}\n\\end{gathered}",
-  confidenceInterval: [11409103.318970945, 234011469.1356582],
+  confidenceInterval: [7154133.807198077, 234011469.1356582],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
   manualPageTitle: "The Earth Optimization Prize",
 };
@@ -10014,7 +10045,7 @@ export const WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_15: P
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_GDP_YEAR_15 / CURRENT_TRAJECTORY_GDP_YEAR_15",
   latex: "\\begin{gathered}\nk_{wish:base,15} = \\frac{GDP_{wish,15}}{GDP_{base,15}} = \\frac{\\$4480T}{\\$167T} = 26.9\n\\\\[0.5em]\n\\text{where } GDP_{wish,15}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{12}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,15,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{15}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } GDP_{base,15} = GDP_{global} \\times (1 + g_{base})^{15}\n\\end{gathered}",
-  confidenceInterval: [12.49309930519262, 100.04846055975138],
+  confidenceInterval: [7.646523806941786, 100.04846055975138],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
   manualPageTitle: "The Earth Optimization Prize",
 };
@@ -10030,7 +10061,7 @@ export const WISHONIA_TRAJECTORY_GDP_VS_CURRENT_TRAJECTORY_MULTIPLIER_YEAR_20: P
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_GDP_YEAR_20 ÷ CURRENT_TRAJECTORY_GDP_YEAR_20",
   latex: "\\begin{gathered}\nk_{wish:base,20} = \\frac{GDP_{wish,20}}{GDP_{base,20}} = \\frac{\\$10700T}{\\$188T} = 56.7\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } GDP_{base,20} = GDP_{global} \\times (1 + g_{base})^{20}\n\\end{gathered}",
-  confidenceInterval: [19.290341264439483, 303.68560356798565],
+  confidenceInterval: [11.749333825251268, 303.68560356798565],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/treaty-feasibility.html",
   manualPageTitle: "Treaty Feasibility & Cost Analysis",
 };
@@ -10046,7 +10077,7 @@ export const WISHONIA_TRAJECTORY_GDP_YEAR_15: Parameter = {
   confidence: "high",
   formula: "GLOBAL_GDP_2025 * (1 + g_ramp)^3 * (1 + g_full)^12, where years 1-3 use 50% of military and non-health reallocation intensity, and years 4-15 use 100%; both include disease-burden recovery",
   latex: "GDP_{wish,15}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{12}",
-  confidenceInterval: [2080779274022767.2, 1.6663500228809328e+16],
+  confidenceInterval: [1273561337112962.2, 1.6663500228809328e+16],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-protocol-v1.html",
   manualPageTitle: "Earth Optimization Protocol v1",
 };
@@ -10062,7 +10093,7 @@ export const WISHONIA_TRAJECTORY_GDP_YEAR_20: Parameter = {
   confidence: "high",
   formula: "GLOBAL_GDP_2025 × (1 + g_ramp)^3 × (1 + g_full)^17, where years 1-3 use 50% of military and non-health reallocation intensity, and years 4-20 use 100%; both include disease-burden recovery",
   latex: "GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}",
-  confidenceInterval: [3635089088493114.0, 5.722678560889144e+16],
+  confidenceInterval: [2214054930379426.8, 5.722678560889144e+16],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html",
   manualPageTitle: "The Political Dysfunction Tax",
 };
@@ -10078,7 +10109,7 @@ export const WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA: Parameter = {
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME - CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME",
   latex: "\\begin{gathered}\n\\Delta Y_{lifetime,wish} = Y_{cum,wish} - Y_{cum,earth} = \\$37.3M - \\$904K = \\$36.4M\n\\\\[0.5em]\n\\text{where } Y_{cum,wish} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \\bar{y}_{wish,20} \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\\\[0.5em]\n\\text{where } \\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}} = \\frac{\\$10700T}{9.2B} = \\$1.16M\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } \\bar{y}_{base,20} = \\frac{GDP_{base,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{base,20} = GDP_{global} \\times (1 + g_{base})^{20}\n\\\\[0.5em]\n\\text{where } T_{remaining} = LE_{global} - Age_{median} = 73.4 - 30.5 = 42.9\n\\\\[0.5em]\n\\text{where } Y_{cum,earth} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}\n\\end{gathered}",
-  confidenceInterval: [10596207.706942113, 232973910.48568553],
+  confidenceInterval: [6341238.195169245, 232973910.48568553],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
   manualPageTitle: "The Earth Optimization Prize",
 };
@@ -10094,7 +10125,7 @@ export const WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER: Parameter = {
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME / CURRENT_TRAJECTORY_CUMULATIVE_LIFETIME_INCOME",
   latex: "\\begin{gathered}\nk_{lifetime,wish:earth} = \\frac{Y_{cum,wish}}{Y_{cum,earth}} = \\frac{\\$37.3M}{\\$904K} = 41.3\n\\\\[0.5em]\n\\text{where } Y_{cum,wish} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,wish})((1+g_{pc,wish})^{20}-1)}{g_{pc,wish}} + \\bar{y}_{wish,20} \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}-20}-1)}{g_{pc,base}}\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\\\[0.5em]\n\\text{where } \\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}} = \\frac{\\$10700T}{9.2B} = \\$1.16M\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } \\bar{y}_{base,20} = \\frac{GDP_{base,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{base,20} = GDP_{global} \\times (1 + g_{base})^{20}\n\\\\[0.5em]\n\\text{where } T_{remaining} = LE_{global} - Age_{median} = 73.4 - 30.5 = 42.9\n\\\\[0.5em]\n\\text{where } Y_{cum,earth} = \\bar{y}_0 \\cdot \\frac{(1+g_{pc,base})((1+g_{pc,base})^{T_{remaining}}-1)}{g_{pc,base}}\n\\end{gathered}",
-  confidenceInterval: [14.035139506224963, 225.54047343842183],
+  confidenceInterval: [8.800802589169775, 225.54047343842183],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
   manualPageTitle: "The Earth Optimization Prize",
 };
@@ -10110,7 +10141,7 @@ export const WISHONIA_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20: Parameter = {
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_AVG_INCOME_YEAR_20 * (1 - GLOBAL_MILITARY_SHARE_OF_GDP*(1-WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE)) * GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO * (1 + MEDIAN_HEALTH_BURDEN_RELIEF_SHARE * WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL) * (1 - GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN)",
   latex: "\\begin{gathered}\n\\tilde{m}_{wish,20} = \\bar{y}_{wish,20} \\times (1 - s_{mil} \\times (1-s_{mil,max})) \\times \\rho_{med} \\times (1 + r_{relief} \\times f_{cure,20,wish}) \\times (1 - \\tau_{med})\n\\\\[0.5em]\n\\text{where } \\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}} = \\frac{\\$10700T}{9.2B} = \\$1.16M\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } s_{mil} = \\frac{Spending_{mil}}{GDP_{global}} = \\frac{\\$2.72T}{\\$115T} = 2.37\\%\n\\\\[0.5em]\n\\text{where } \\rho_{med} = \\frac{\\tilde{y}_{gallup}}{\\bar{y}_{0}} = \\frac{\\$2.92K}{\\$14.4K} = 0.203\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\end{gathered}",
-  confidenceInterval: [49394.130885212544, 1323068.8763169614],
+  confidenceInterval: [30084.907534694004, 1323068.8763169614],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html",
   manualPageTitle: "Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere",
 };
@@ -10126,7 +10157,7 @@ export const WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20: Pa
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_GDP_YEAR_20 ÷ TREATY_TRAJECTORY_GDP_YEAR_20",
   latex: "\\begin{gathered}\nk_{wish,full:core,20} = \\frac{GDP_{wish,20}}{GDP_{treaty,20}} = \\frac{\\$10700T}{\\$322T} = 33.2\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } GDP_{treaty,20} = GDP_{global} \\times (1 + g_{base} + g_{redirect,treaty,20} + g_{peace,treaty,20} + g_{cyber,treaty,20} + g_{health,treaty,20})^{20}\n\\\\[0.5em]\n\\text{where } g_{redirect,treaty,20} = \\bar{s}_{treaty,20} \\times \\Delta g_{30\\%} \\times m_{spillover} \\times 1.67 = 5.8\\% \\times 5.5\\% \\times 2 \\times 1.67 = 1.06\\%\n\\\\[0.5em]\n\\text{where } \\bar{s}_{treaty,20} = s_{ratchet} \\times 0.409 = 10\\% \\times 0.409 = 5.8\\%\n\\\\[0.5em]\n\\text{where } g_{peace,treaty,20} = \\left(\\frac{Benefit_{peace,soc}}{GDP_{global}}\\right) \\times \\left(\\frac{\\bar{s}_{treaty,20}}{Reduce_{treaty}}\\right) \\times \\varepsilon_{conflict}\n\\\\[0.5em]\n\\text{where } Benefit_{peace,soc} = Cost_{war,total} \\times Reduce_{treaty} = \\$11.4T \\times 1\\% = \\$114B\n\\\\[0.5em]\n\\text{where } Cost_{war,total} = Cost_{war,direct} + Cost_{war,indirect} = \\$7.66T + \\$3.7T = \\$11.4T\n\\\\[0.5em]\n\\text{where } Cost_{war,direct} = Loss_{life,conflict} + Damage_{infra,total} + Disruption_{trade} + Spending_{mil} = \\$2.45T + \\$1.88T + \\$616B + \\$2.72T = \\$7.66T\n\\\\[0.5em]\n\\text{where } Loss_{life,conflict} = Cost_{combat,human} + Cost_{state,human} + Cost_{terror,human} = \\$2.34T + \\$27B + \\$83B = \\$2.45T\n\\\\[0.5em]\n\\text{where } Cost_{combat,human} = Deaths_{combat} \\times VSL = 234{,}000 \\times \\$10M = \\$2.34T\n\\\\[0.5em]\n\\text{where } Cost_{state,human} = Deaths_{state} \\times VSL = 2{,}700 \\times \\$10M = \\$27B\n\\\\[0.5em]\n\\text{where } Cost_{terror,human} = Deaths_{terror} \\times VSL = 8{,}300 \\times \\$10M = \\$83B\n\\\\[0.5em]\n\\text{where } Damage_{infra,total} = Damage_{comms} + Damage_{edu} + Damage_{energy} + Damage_{health} + Damage_{transport} + Damage_{water} = \\$298B + \\$234B + \\$422B + \\$166B + \\$487B + \\$268B = \\$1.88T\n\\\\[0.5em]\n\\text{where } Disruption_{trade} = Disruption_{currency} + Disruption_{energy} + Disruption_{shipping} + Disruption_{supply} = \\$57.4B + \\$125B + \\$247B + \\$187B = \\$616B\n\\\\[0.5em]\n\\text{where } Cost_{war,indirect} = Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} + Cost_{psych} + Cost_{refugee} + Cost_{vet} = \\$100B + \\$2.72T + \\$300B + \\$232B + \\$150B + \\$200B = \\$3.7T\n\\\\[0.5em]\n\\text{where } g_{cyber,treaty,20} = \\left(\\frac{Cost_{cyber}}{GDP_{global}}\\right) \\times \\bar{s}_{treaty,20} \\times \\varepsilon_{conflict}\n\\\\[0.5em]\n\\text{where } g_{health,treaty,20} = ((1 + f_{cure,20,treaty} \\times d_{disease})^{\\frac{1}{H_{health,treaty}}}) - 1\n\\\\[0.5em]\n\\text{where } f_{cure,20,treaty} = \\min\\left(1.0, (3 \\times min(k_{capacity} \\times \\left(\\frac{0.01}{0.01}\\right), k_{capacity,max}) + 4 \\times min(k_{capacity} \\times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \\times min(k_{capacity} \\times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 8 \\times min(k_{capacity} \\times \\left(\\frac{s_{ratchet}}{0.01}\\right), k_{capacity,max})) / T_{queue,SQ}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\end{gathered}",
-  confidenceInterval: [15.366555086720448, 117.04907869237118],
+  confidenceInterval: [9.36154295075769, 117.04907869237118],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html",
   manualPageTitle: "Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere",
 };
@@ -10142,7 +10173,7 @@ export const WISHONIA_VS_CURRENT_MEDIAN_INCOME_MULTIPLIER_YEAR_20: Parameter = {
   confidence: "high",
   formula: "WISHONIA_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20 / CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20",
   latex: "\\begin{gathered}\nk_{med,wish:base} = \\frac{\\tilde{m}_{wish,20}}{\\tilde{m}_{base,20}} = \\frac{\\$194K}{\\$3.03K} = 64\n\\\\[0.5em]\n\\text{where } \\tilde{m}_{wish,20} = \\bar{y}_{wish,20} \\times (1 - s_{mil} \\times (1-s_{mil,max})) \\times \\rho_{med} \\times (1 + r_{relief} \\times f_{cure,20,wish}) \\times (1 - \\tau_{med})\n\\\\[0.5em]\n\\text{where } \\bar{y}_{wish,20} = \\frac{GDP_{wish,20}}{Pop_{2045}} = \\frac{\\$10700T}{9.2B} = \\$1.16M\n\\\\[0.5em]\n\\text{where } GDP_{wish,20}=GDP_0(1+g_{ramp})^{3}(1+g_{full})^{17}\n\\\\[0.5em]\n\\text{where } s_{mil,max} = Cut_{WW2} = 87.6\\% = 87.6\\%\n\\\\[0.5em]\n\\text{where } Cut_{WW2} = 1 - \\frac{Spending_{US,1947}}{Spending_{US,1945}} = 1 - \\frac{\\$176B}{\\$1.42T} = 87.6\\%\n\\\\[0.5em]\n\\text{where } f_{cure,20,wish} = \\min\\left(1.0, Treatments_{new,ann} \\times min(\\text{TRIAL\\_CAPACITY\\_MULTIPLIER} \\times \\left(\\frac{s_{mil,max}}{0.01}\\right), \\text{MAX\\_TRIAL\\_CAPACITY\\_MULTIPLIER\\_PHYSICAL}) \\times \\frac{20}{N_{untreated}}\\right)\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } k_{capacity,max} = \\frac{N_{willing}}{Slots_{curr}} = \\frac{1.08B}{1.9M} = 566\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } s_{mil} = \\frac{Spending_{mil}}{GDP_{global}} = \\frac{\\$2.72T}{\\$115T} = 2.37\\%\n\\\\[0.5em]\n\\text{where } \\rho_{med} = \\frac{\\tilde{y}_{gallup}}{\\bar{y}_{0}} = \\frac{\\$2.92K}{\\$14.4K} = 0.203\n\\\\[0.5em]\n\\text{where } \\bar{y}_{0} = \\frac{GDP_{global}}{Pop_{global}} = \\frac{\\$115T}{8B} = \\$14.4K\n\\\\[0.5em]\n\\text{where } \\tilde{m}_{base,20} = \\bar{y}_{base,20} \\times (1 - s_{mil} \\times \\left(\\frac{1+g_{mil,10yr}}{1+g_{base}}\\right)^{20}) \\times \\rho_{med} \\times (1 - e_{med})^{20} \\times (1 - \\tau_{med})\n\\\\[0.5em]\n\\text{where } \\bar{y}_{base,20} = \\frac{GDP_{base,20}}{Pop_{2045}} = \\frac{\\$188T}{9.2B} = \\$20.5K\n\\\\[0.5em]\n\\text{where } GDP_{base,20} = GDP_{global} \\times (1 + g_{base})^{20}\n\\end{gathered}",
-  confidenceInterval: [18.938668523321702, 396.19312628018673],
+  confidenceInterval: [11.535137489740421, 396.19312628018673],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html",
   manualPageTitle: "Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere",
 };
@@ -12375,6 +12406,7 @@ export const parameters = {
   ECONOMIC_MULTIPLIER_INFRASTRUCTURE_INVESTMENT,
   ECONOMIC_MULTIPLIER_MILITARY_SPENDING,
   EFFICACY_LAG_YEARS,
+  EOS_SOCIAL_VALUE_CAPTURE_PCT,
   EXPERT_DECISION_ACCURACY,
   FDA_APPROVED_PRODUCTS_COUNT,
   FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS,
@@ -12690,6 +12722,7 @@ export const parameters = {
   EFFICACY_LAG_DEATHS_911_EQUIVALENTS,
   EFFICACY_LAG_TREATMENT_DELAY_YLD_ANNUAL,
   EMERGING_MODALITY_COMBINATIONS,
+  EOS_EQUITY_VALUE_V,
   EPIGENETIC_DISEASE_COMBINATIONS,
   ETHYL_SHAREHOLDER_COUNTERFACTUAL_WEALTH_GAIN,
   EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL,
@@ -15543,9 +15576,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 793,
-  external: 234,
-  calculated: 399,
+  total: 795,
+  external: 235,
+  calculated: 400,
   definitions: 160,
   citations: 175,
 } as const;

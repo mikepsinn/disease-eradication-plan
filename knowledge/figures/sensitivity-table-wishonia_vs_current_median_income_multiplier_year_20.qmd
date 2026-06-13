@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Median After-Tax Consumable Income, Wishonia (Year 20) (USD) | 0.9873 | Strong driver |
-| Median After-Tax Consumable Income, Status Quo (Year 20) (USD) | 0.0169 | Minimal effect |
+| Median After-Tax Consumable Income, Wishonia (Year 20) (USD) | 0.9830 | Strong driver |
+| Median After-Tax Consumable Income, Status Quo (Year 20) (USD) | 0.0224 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -67,6 +67,8 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 
 **Financial architecture:** Corruption capped at 20% (transparent), 80% untouchable via wishocracy. Money and influence are disentangled. This is the core selling point vs current government.
 
+**Securities-disclosure rule (EOS equity/bonds/Prize):** The book may describe and invite investment (Reg D 506(c) permits public solicitation), but only verified-accredited investors are accepted in the private EOS equity raise, and all returns are projections, never guarantees. Banned: "guaranteed", "approved", "will return/earn", "can't lose", "risk-free", "safe" (re: returns). Use "projected/modeled/estimated/target". The public book can explain the structure; keep the binding PPM + share-purchase docs OUT of the book. Numbers: honest updates aren't fraud, but each must be reasonable + hedged when published, the PPM is held to a stricter standard than the book, and existing investors must be told of material changes. Full rule: `../docs/fund/book-disclosure-policy.md`.
+
 | Stakeholder | Gets | Never gets |
 |-------------|------|-----------|
 | Investors | Revenue share | Governance, board seats, influence |
@@ -85,5 +87,4 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Unused params | `npm run param:unused` |
 
 Validation runs automatically on commit. Do not run `npm run validate:pre-render` manually unless adding new parameters or doing other major schema changes.
-
 

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 793 parameters used in the analysis, organized by type:
+This appendix documents all 795 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 234
-- Calculated values: 399
+- External sources (peer-reviewed): 235
+- Calculated values: 400
 - Core definitions: 160
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (399 parameters) • [External Data Sources](#sec-external) (234 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
+[Calculated Values](#sec-calculated) (400 parameters) • [External Data Sources](#sec-external) (235 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -11056,6 +11056,55 @@ $$
 
 :::
 
+### EOS Equity Value (V): $74.1 trillion {#sec-eos_equity_value_v}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total addressable value for EOS equity: NPV of the fraction of political dysfunction tax EOS captures as portfolio appreciation. V in the share price formula: price = P(I) x V / total_shares. Calculated as dysfunction_tax x capture_pct / discount_rate.
+
+**Inputs**:
+
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101 trillion
+- [EOS Social Value Capture Rate](#sec-eos_social_value_capture_pct) 📊: 2.2% (95% CI: 1% - 5%)
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+V_{EOS} \\
+= O_{total} \times \frac{\phi_{capture}}{r_{discount}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-eos_equity_value_v.qmd >}}
+
+{{< include ../figures/sensitivity-table-eos_equity_value_v.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-eos_equity_value_v.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-eos_equity_value_v.qmd >}}
+
+**Used in:**
+
+- [Earth Optimization Fund](../economics/earth-optimization-fund.html)
+
+:::
+
 ### Epigenetic Therapy Combinations: 1.5 million combinations {#sec-epigenetic_disease_combinations}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -18607,7 +18656,7 @@ Total global opportunity cost from governance failures: health innovation delays
 - [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34 trillion (95% CI: $20 trillion - $80 trillion)
 - [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
 - [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $5 trillion - $170 trillion)
 
 $$
 \begin{gathered}
@@ -35666,7 +35715,7 @@ Projected global GDP at year 15 under the Wishonia Trajectory. Applies all Wisho
 - [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
 - [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
 - [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $5 trillion - $170 trillion)
 - [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
 - [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
 
@@ -35709,7 +35758,7 @@ Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all
 - [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
 - [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
 - [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
-- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $57 trillion - $170 trillion)
+- [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $5 trillion - $170 trillion)
 - [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
 - [Economic Multiplier for Military Spending](#sec-economic_multiplier_military_spending) 📊: 0.6x (95% CI: 0.4x - 0.9x)
 
@@ -37870,6 +37919,28 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 :::
 
+### EOS Social Value Capture Rate: 2.2% {#sec-eos_social_value_capture_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of political dysfunction tax value that EOS captures as shareholder returns via portfolio appreciation. Base case from Nordhaus (2004): innovators capture 2.2% of social surplus. Likely a floor for activist governance (no competitive price erosion). Skeptical case: 1%. Bull case: 5%.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1%, 5%] • Distribution: Lognormal (SE: 1%)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 5% (±91%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-eos_social_value_capture_pct.qmd >}}
+
+*? Low confidence*
+
+:::
+
 ### Expert Decision Accuracy (Millionaire): 65% {#sec-expert_decision_accuracy}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -39157,6 +39228,7 @@ Global military spending in 2024
 - [Diagnostic Summary](../problem.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [Department of Peace](../solution/department-of-peace.html)
+- [Earth Optimization Fund](../economics/earth-optimization-fund.html)
 - [Investor Risk Analysis](../appendix/investor-risk-analysis.html)
 - [The Cost-Benefit Analysis of Global Hegemony](../appendix/cost-benefit-of-hegemony.html)
 - [Medical Research Spending: The Lie](../appendix/global-government-medical-research-spending.html)
@@ -40439,15 +40511,15 @@ Global cost of lead exposure: World Bank/Lancet estimate. 765 million IQ points 
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Unrealized output from migration restrictions. Clemens (2011) calculated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, lower bound = $57T; upper bound = $170T. Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest single distortion in the global economy.
+Unrealized output from migration restrictions. Clemens (2011) estimated eliminating labor mobility barriers could increase global GDP by 50-150%. At $115T global GDP, Clemens lower bound = $57T; upper bound = $170T. The estimate is controversial: critics argue it assumes full global labor mobility and ignores fiscal and social adjustment costs. Skeptical lower bound: ~$5T (partial reforms only). Even 5% workforce mobility would generate trillions, exceeding all foreign aid ever given. This is the largest and most uncertain single component of the dysfunction tax.
 
 **Source**: [@political-dysfunction-tax-paper-2025]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$57 trillion, $170 trillion] • Distribution: Lognormal (SE: $30 trillion)
+**Technical**: 95% CI: [$5 trillion, $170 trillion] • Distribution: Lognormal (SE: $30 trillion)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $57 trillion and $170 trillion (±99%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between $5 trillion and $170 trillion (±145%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
