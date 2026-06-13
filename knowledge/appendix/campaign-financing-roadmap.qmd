@@ -1,31 +1,40 @@
 ---
-title: Fundraising Strategy
-description: How to convince humans with many papers to give you their papers so you can give different papers to politicians so they stop giving papers to weapons manufacturers. Budget - {{< var treaty_campaign_total_cost >}}.
+title: Campaign Financing Roadmap
+description: Later ways to pay for the 1% Treaty campaign. This is not the Earth Optimization Fund and not the first thing you sell.
 published: true
 tags:
+  - campaign-financing
   - fundraising
   - strategy
   - activation-energy
   - victory-bonds
   - whale-targeting
 image: /assets/og-images/knowledge/appendix/fundraising-strategy-og-retro-academic.jpg
+aliases:
+  - /knowledge/appendix/fundraising-strategy.html
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Financial Plan Overview](../economics/financial-plan.qmd) | [Campaign Budget](../economics/campaign-budget.qmd)
 
 <!-- This file contains content consolidated from orphaned fundraising files -->
 
-## Fundraising Strategy: The {{< var treaty_campaign_total_cost >}} Activation Energy
+::: {.callout-note}
+## Later Campaign Money, Not the Fund
+
+The first investor story is the [Earth Optimization Fund](../economics/earth-optimization-fund.qmd): private activist fund first, public active ETF later. This roadmap is the later campaign-money file for treaty passage. It stays here because the mechanism may be useful. It is not the first thing you sell.
+:::
+
+## Campaign Financing Roadmap: Spend {{< var treaty_campaign_total_cost >}} Once
 
 <!-- BEGIN CONTENT MERGED FROM economics/fundraising/fundraising-plan.md -->
 
-### On How to Raise {{< var treaty_campaign_total_cost >}} to Unlock {{< var treaty_annual_funding >}}/Year Forever
+### On How to Spend {{< var treaty_campaign_total_cost >}} Once and Get {{< var treaty_annual_funding >}}/Year Forever
 
-The capital required for a [1% treaty](../solution/1-percent-treaty.qmd) is not for ongoing operations. It's "activation energy", the one-time push to overcome political inertia and unlock **{{< var treaty_annual_funding >}} annually** for global health.^[Value captured by 1% treaty [@value-captured-by-1pct-treaty]]
+The money required for a [1% treaty](../solution/1-percent-treaty.qmd) is not for ongoing operations. It is the one-time shove that gets a very large government vending machine unstuck: **{{< var treaty_annual_funding >}} annually** for global health.^[Value captured by 1% treaty [@value-captured-by-1pct-treaty]]
 
 Think of it as a {{< var treaty_campaign_total_cost >}} vending machine that dispenses {{< var treaty_annual_funding >}} per year. Forever.
 
-![Spend 1 billion once, get 27 billion every year forever. It's the best investment humans have ever ignored.](/assets/images/fundraising-strategy/fundraising-strategy-section-on-how-to-raise-bw-academic.jpg)
+![Spend 1 billion once, get 27 billion every year forever. It's the best investment humans have ever ignored.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-on-how-to-raise-bw-academic.jpg)
 
 The economics are stupidly obvious. The challenge is convincing people the vending machine is real.
 
@@ -37,7 +46,7 @@ These are tranches of the VICTORY [Incentive Alignment Bond](https://iab.warondi
 
 #### First Tranche ($250M - $400M)
 
-![How to start a health revolution: get some money, tell people about it, test it somewhere small, then count how many people join. It's like planning a very important party.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-1-seed-round-250m-400m-bw-academic.jpg)
+![How to start a health revolution: get some money, tell people about it, test it somewhere small, then count how many people join. It's like planning a very important party.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-phase-1-seed-round-250m-400m-bw-academic.jpg)
 
 - Build public engagement platform and policy frameworks for a potential referendum
 - Prove model in pilot countries
@@ -52,7 +61,7 @@ These are tranches of the VICTORY [Incentive Alignment Bond](https://iab.warondi
 
 #### Third Tranche ($500M - $1.1B)
 
-![How to get governments to sign: talk to diplomats, teach the public, make them vote yes, give them money. Democracy, but with diagrams.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-3-growth-round-500m-1-1b-bw-academic.jpg)
+![How to get governments to sign: talk to diplomats, teach the public, make them vote yes, give them money. Democracy, but with diagrams.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-phase-3-growth-round-500m-1-1b-bw-academic.jpg)
 
 - Foster conditions for ratification in major powers (US, EU, China) through public education and diplomatic engagement
 - Lay the groundwork for the future capitalization of your 1% Treaty Fund upon treaty ratification
@@ -62,7 +71,7 @@ The tranches are not fully additive: the {{< var treaty_campaign_total_cost >}} 
 
 ### Key Innovation: Nobody Gets Paid Unless It Works
 
-![Everyone gets paid if it works, nobody gets paid if it fails. Turns out people try harder when their money depends on not failing.](/assets/images/fundraising-strategy/fundraising-strategy-section-key-innovation-nobody-gets-paid-unless-it-works-bw-academic.jpg)
+![Everyone gets paid if it works, nobody gets paid if it fails. Turns out people try harder when their money depends on not failing.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-key-innovation-nobody-gets-paid-unless-it-works-bw-academic.jpg)
 
 All major costs are structured so people only get paid if they succeed:
 
@@ -79,13 +88,13 @@ All major costs are structured so people only get paid if they succeed:
 
 **Implementation** (after treaty passes): {{< var treaty_annual_funding >}}/year funds your decentralized FDA, DIH, pragmatic clinical trials, and other global health initiatives.
 
-![Before the treaty: 1 billion dollars to convince people. After the treaty: 27 billion dollars per year to actually cure diseases. The convincing costs less than the doing.](/assets/images/fundraising-strategy/fundraising-strategy-section-capital-structure-campaign-vs-imple-bw-academic.jpg)
+![Before the treaty: 1 billion dollars to convince people. After the treaty: 27 billion dollars per year to actually cure diseases. The convincing costs less than the doing.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-capital-structure-campaign-vs-imple-bw-academic.jpg)
 
 #### Why {{< var treaty_campaign_total_cost >}}?
 
 **The campaign** ({{< var treaty_campaign_total_cost >}}) is NOT building your decentralized FDA - it's getting people to vote for the treaty and lobbying governments to sign it. Your dFDA gets built AFTER the treaty passes using the {{< var treaty_annual_funding >}}/year revenue.
 
-![Drug companies and weapons makers spend more on lobbying every year than we need to spend once to redirect 27 billion dollars forever. They're very good at protecting their money.](/assets/images/fundraising-strategy/fundraising-strategy-section-why-var-treaty-campaign-total-cost-bw-academic.jpg)
+![Drug companies and weapons makers spend more on lobbying every year than we need to spend once to redirect 27 billion dollars forever. They're very good at protecting their money.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-why-var-treaty-campaign-total-cost-bw-academic.jpg)
 
 **Why this amount?** To significantly exceed combined annual lobbying spend of:
 
@@ -121,7 +130,7 @@ All major costs are structured so people only get paid if they succeed:
 
 **Legal freedom**: VICTORY Incentive Alignment Bonds can fund political lobbying without IRS 501(c)(3) restrictions. We can run Super PACs, fund opposition research, and outspend pharma/military lobbies.
 
-![Bonds versus donations. With donations, you give money and feel good. With bonds, you give money, get more money back, and diseases get cured. Both make you feel good, but one is illegal.](/assets/images/fundraising-strategy/fundraising-strategy-section-why-victory-incentive-alignment-bon-bw-academic.jpg)
+![Bonds versus donations. With donations, you give money and feel good. With bonds, you give money, get more money back, and diseases get cured. Both make you feel good, but one is illegal.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-why-victory-incentive-alignment-bon-bw-academic.jpg)
 
 **Investor alignment**: Returns only pay if treaty passes - investors are incentivized to fund maximum lobbying power (not penny-pinch like foundations).
 
@@ -155,7 +164,7 @@ Once the treaty passes, the {{< var treaty_annual_funding >}}/year revenue strea
 
 This is NOT part of the {{< var treaty_campaign_total_cost >}} campaign budget. The campaign is just: get votes + pass treaty.
 
-![How to spend 27 billion dollars per year on health: split it between trials, data, technology, and global coordination. It's a budget, but for saving lives instead of ending them.](/assets/images/fundraising-strategy/fundraising-strategy-section-post-treaty-implementation-var-treaty-annual-funding-year-bw-academic.jpg)
+![How to spend 27 billion dollars per year on health: split it between trials, data, technology, and global coordination. It's a budget, but for saving lives instead of ending them.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-post-treaty-implementation-var-treaty-annual-funding-year-bw-academic.jpg)
 
 #### Legal Structure: Two Separate Entities
 
@@ -179,7 +188,7 @@ This is NOT part of the {{< var treaty_campaign_total_cost >}} campaign budget. 
 
 **Coordination**: Shared board members, information sharing agreements, but legally separate for compliance.
 
-![The legal wall between the charity part and the political part. Americans invented this because they don't trust themselves to keep money separate from voting.](/assets/images/fundraising-strategy/fundraising-strategy-section-legal-structure-firewall-bw-academic.jpg)
+![The legal wall between the charity part and the political part. Americans invented this because they don't trust themselves to keep money separate from voting.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-legal-structure-firewall-bw-academic.jpg)
 
 #### Nonprofit Compliance Checklist
 
@@ -196,7 +205,7 @@ For foundations/donors to feel comfortable funding:
 
 ### Funding Model Comparison: What Actually Works
 
-![Different ways to fund big campaigns and whether they worked. Some grow like trees, some grow like rabbits, some die like houseplants.](/assets/images/fundraising-strategy/fundraising-strategy-section-funding-model-comparison-what-actually-works-bw-academic.jpg)
+![Different ways to fund big campaigns and whether they worked. Some grow like trees, some grow like rabbits, some die like houseplants.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-funding-model-comparison-what-actually-works-bw-academic.jpg)
 
 To understand realistic funding strategies, we examined historical evidence from similar large-scale campaigns. The data shows distinct patterns in how successful campaigns were funded and scaled:
 
@@ -219,7 +228,7 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ##### How it would work
 
-![The plan: ask rich people for money, spend 3 to 5 years testing it, build a charity that lasts forever. Like a startup, but for not dying.](/assets/images/fundraising-strategy/fundraising-strategy-section-how-it-would-work-bw-academic.jpg)
+![The plan: ask rich people for money, spend 3 to 5 years testing it, build a charity that lasts forever. Like a startup, but for not dying.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-how-it-would-work-bw-academic.jpg)
 
 - Approach Gates, Wellcome Trust, Open Society, Chan Zuckerberg Initiative
 - Pitch: "Fund a decentralized FDA / Wishocracy protocol as civic infrastructure"
@@ -228,7 +237,7 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ##### Evidence
 
-![How much rich people spent campaigning for gay marriage, eliminating polio, and privatizing schools. Turns out you can buy social change if you're patient and wealthy.](/assets/images/fundraising-strategy/fundraising-strategy-section-evidence-bw-academic.jpg)
+![How much rich people spent campaigning for gay marriage, eliminating polio, and privatizing schools. Turns out you can buy social change if you're patient and wealthy.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-evidence-bw-academic.jpg)
 
 - Largest foundation-funded advocacy: Marriage equality ($153M over 11 years)
 - Polio: $500M over 20 years before Gates joined with $2B
@@ -251,7 +260,7 @@ To understand realistic funding strategies, we examined historical evidence from
 
 **Realistic assessment:** Could raise $10-20M for pilots. Not $442M for campaign.
 
-![We need 442 million dollars. We have 10 to 20 million dollars. We have 11 years. There are many laws against this. It's going great.](/assets/images/fundraising-strategy/fundraising-strategy-section-cons-bw-academic.jpg)
+![We need 442 million dollars. We have 10 to 20 million dollars. We have 11 years. There are many laws against this. It's going great.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-cons-bw-academic.jpg)
 
 **Verdict:** ✗ Too slow, wrong tool for political campaign
 
@@ -259,11 +268,11 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ##### How it would work
 
-![How money flows from treaty signatures to investor pockets. Ten percent goes to the people who paid for it. The SEC approved this, which means it's legal but confusing.](/assets/images/fundraising-strategy/fundraising-strategy-section-how-it-would-work-bw-academic.jpg)
+![How money could flow from treaty signatures to investor pockets. Ten percent goes to the people who paid for it if the offering is properly structured, disclosed, and sold under a real securities exemption.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-how-it-would-work-bw-academic.jpg)
 
 - Issue registered securities offering {{< var victory_bond_annual_return_pct >}} from treaty revenue
 - Target accredited investors, family offices, hedge funds
-- SEC-compliant offering (Reg D, Reg A+, or public offering)
+- Securities offering under a real path (Reg D, Reg A, or registered public offering). Compliant does not mean approved.
 - Returns paid from treaty appropriations ({{< var treaty_annual_funding >}}/year × {{< var victory_bond_funding_pct >}} = {{< var victory_bond_annual_payout >}}/year)
 
 ##### Evidence
@@ -291,7 +300,7 @@ To understand realistic funding strategies, we examined historical evidence from
 
 **Realistic assessment:** Could raise $100M-$500M if pilots show proof of concept.
 
-![The Reg A+ timeline. Year 1: prove it works. Year 2: raise more money. Year 3: raise even more money. Each step requires the previous step to not fail.](/assets/images/fundraising-strategy/fundraising-strategy-section-cons-bw-academic.jpg)
+![The Reg A+ timeline. Year 1: prove it works. Year 2: raise more money. Year 3: raise even more money. Each step requires the previous step to not fail.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-cons-bw-academic.jpg)
 
 **Verdict:** ✓ Viable but needs proof first (Phase 2-3, not Phase 1)
 
@@ -328,7 +337,7 @@ To understand realistic funding strategies, we examined historical evidence from
 - Technical risk: smart contract bugs, hacks
 - Volatile secondary market could undermine credibility
 
-**Realistic assessment:** Could raise $50M-$200M from crypto whales if positioned as "inverse military-industrial complex" with 270% returns.
+**Realistic assessment:** Could raise $50M-$200M from risk-tolerant private capital if positioned as "inverse military-industrial complex" with treaty-linked returns.
 
 **Verdict:** 🟡 Fast but risky. Good for seed round ($10M-50M), dangerous at scale.
 
@@ -416,9 +425,9 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ###### Phase 1: Pilot ($10-20M, Years 1-2)
 
-![Phase 1: get 10 to 20 million from rich people, use it to prove this works in one or two countries. SAFE notes means the investors get rewarded later if we don't fail.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-1-pilot-10-20m-years-1-2-bw-academic.jpg)
+![Phase 1: get 10 to 20 million from rich people, use it to prove this works in one or two countries. SAFE notes means the investors get rewarded later if we don't fail.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-phase-1-pilot-10-20m-years-1-2-bw-academic.jpg)
 
-- **Source**: Angel investors (tech billionaires, crypto whales)
+- **Source**: Risk-tolerant mission-aligned private capital
 - **Evidence**: Every successful campaign started with small proof
 - **Structure**: SAFE notes or convertible debt
 - **Use**: Prove concept in 1-2 countries, demonstrate lives saved
@@ -426,7 +435,7 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ###### Phase 2: Campaign ($100-200M, Years 3-5)
 
-![Phase 2: ask institutions for much more money, route it through complicated financial structures, spend it on scaling up. Institutions means organizations too big to say yes quickly.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-2-campaign-100-200m-years-3-5-bw-academic.jpg)
+![Phase 2: ask institutions for much more money, route it through complicated financial structures, spend it on scaling up. Institutions means organizations too big to say yes quickly.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-phase-2-campaign-100-200m-years-3-5-bw-academic.jpg)
 
 - **Source**: VICTORY Incentive Alignment Bonds (traditional securities) + weapons manufacturer conversion
 - **Evidence**: Marriage equality ($153M), Obamacare ($47M), SPACs ($300M average)
@@ -436,7 +445,7 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ###### Phase 3: Implementation ({{< var treaty_annual_funding >}}/year, Year 6+)
 
-![Phase 3: governments sign the treaty, money flows into the health system, 10 percent goes back to bond investors. Capitalism, but for curing things.](/assets/images/fundraising-strategy/fundraising-strategy-section-phase-3-implementation-var-treaty-annual-funding-year-year-6-bw-academic.jpg)
+![Phase 3: governments sign the treaty, money flows into the health system, 10 percent goes back to bond investors. Capitalism, but for curing things.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-phase-3-implementation-var-treaty-annual-funding-year-year-6-bw-academic.jpg)
 
 - **Source**: Government appropriations (treaty signatories)
 - **Evidence**: PEPFAR ($15B/year federal), Paris Agreement (government commitments)
@@ -450,15 +459,15 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ##### Year 1-2: Seed ($10-20M)
 
-![Years 1 to 2: where the seed money comes from and how SAFE notes turn into VICTORY Incentive Alignment Bonds. Money metamorphosis, like a caterpillar becoming a butterfly made of returns.](/assets/images/fundraising-strategy/fundraising-strategy-section-year-1-2-seed-10-20m-bw-academic.jpg)
+![Years 1 to 2: where the seed money comes from and how SAFE notes turn into VICTORY Incentive Alignment Bonds. Money metamorphosis, like a caterpillar becoming a butterfly made of returns.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-year-1-2-seed-10-20m-bw-academic.jpg)
 
-- Crypto whales: $5-10M (fast, mission-aligned)
+- Risk-tolerant private capital: $5-10M (fast, mission-aligned)
 - Tech billionaires: $5-10M (Musk, Thiel, Andreessen - contrarian bets)
 - Structure: SAFE notes convertible to VICTORY Incentive Alignment Bonds
 
 ###### Year 3-4: Series A ($50-100M)
 
-![Series A: military budgets and private money combine to fund pilot programs and convince countries to sign treaties. Peace through creative accounting.](/assets/images/fundraising-strategy/fundraising-strategy-section-year-3-4-series-a-50-100m-bw-academic.jpg)
+![Series A: military budgets and private money combine to fund pilot programs and convince countries to sign treaties. Peace through creative accounting.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-year-3-4-series-a-50-100m-bw-academic.jpg)
 
 - Military contractors: Redirect $50M of existing lobbying budget
 - VICTORY Incentive Alignment Bonds (Reg D): $50M from family offices, hedge funds
@@ -466,7 +475,7 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ###### Year 5-6: Series B ($100-200M)
 
-![Series B: where 200 million dollars comes from and what it buys. Specifically, it buys treaty signatures and recurring revenue. Democracy has a price, and this is it.](/assets/images/fundraising-strategy/fundraising-strategy-section-year-5-6-series-b-100-200m-bw-academic.jpg)
+![Series B: where 200 million dollars comes from and what it buys. Specifically, it buys treaty signatures and recurring revenue. Democracy has a price, and this is it.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-year-5-6-series-b-100-200m-bw-academic.jpg)
 
 - Military contractors: Redirect another $100M lobbying
 - VICTORY Incentive Alignment Bonds (Reg A+ or public): $100M from institutional investors
@@ -474,7 +483,7 @@ To understand realistic funding strategies, we examined historical evidence from
 
 ###### Year 7+: Implementation
 
-![How 27 billion flows from governments to health programs each year, with 10 percent going to bondholders to keep them happy. Stability requires feeding the investors.](/assets/images/fundraising-strategy/fundraising-strategy-section-year-7-implementation-bw-academic.jpg)
+![How 27 billion flows from governments to health programs each year, with 10 percent going to bondholders to keep them happy. Stability requires feeding the investors.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-year-7-implementation-bw-academic.jpg)
 
 - Government appropriations: {{< var treaty_annual_funding >}}/year from treaty signatories
 - VICTORY Incentive Alignment Bondholders: {{< var victory_bond_annual_payout >}}/year ({{< var victory_bond_funding_pct >}})
@@ -503,7 +512,7 @@ The ~{{< var treaty_campaign_total_cost >}} VICTORY Incentive Alignment Bond cam
 
 **Funding source: 100% VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) ({{< var treaty_campaign_total_cost >}} total)**
 
-![The flywheel: selling bonds pays for votes, votes make bonds more valuable, valuable bonds sell better. It's a circular logic that accidentally cures diseases.](/assets/images/fundraising-strategy/fundraising-strategy-section-virtuous-cycle-flywheel-bw-academic.jpg)
+![The flywheel: selling bonds pays for votes, votes make bonds more valuable, valuable bonds sell better. It's a circular logic that accidentally cures diseases.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-virtuous-cycle-flywheel-bw-academic.jpg)
 
 ###### Why only bonds (not donations)?
 
@@ -518,7 +527,7 @@ The ~{{< var treaty_campaign_total_cost >}} VICTORY Incentive Alignment Bond cam
 - But we're not COUNTING on donations - bonds cover everything
 - Historical comparison: Marriage equality raised $153M over 11 years. We're raising {{< var treaty_campaign_total_cost >}} in 1-2 years via bonds.
 
-![Bonds versus donations, round two. Bonds take longer, have more legal options, and give people their money back with interest. Donations are faster but require generosity, which is rare.](/assets/images/fundraising-strategy/fundraising-strategy-section-why-only-bonds-not-donations-bw-academic.jpg)
+![Bonds versus donations, round two. Bonds take longer, have more legal options, and give people their money back with interest. Donations are faster but require generosity, which is rare.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-why-only-bonds-not-donations-bw-academic.jpg)
 
 ##### Timeline milestones
 
@@ -534,7 +543,7 @@ The ~{{< var treaty_campaign_total_cost >}} VICTORY Incentive Alignment Bond cam
 
 #### The Marketing Message (The "Hook")
 
-![The plan: beat hedge fund returns, but cap profits at 50 percent so investors don't eat all the medicine money. Greed is useful, but only in moderation.](/assets/images/fundraising-strategy/fundraising-strategy-section-the-marketing-message-the-hook-bw-academic.jpg)
+![The plan: beat hedge fund returns, but cap profits at 50 percent so investors don't eat all the medicine money. Greed is useful, but only in moderation.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-the-marketing-message-the-hook-bw-academic.jpg)
 
 For marketing and high-level communications, lead with a simple, audacious target:
 
@@ -542,7 +551,7 @@ For marketing and high-level communications, lead with a simple, audacious targe
 
 #### The Backend Engine (Market-Driven Pricing)
 
-![How the bond sale works: Dutch auction sets the price, smart contracts hold the money, automatic refunds if it fails. It's like eBay, but for saving humanity.](/assets/images/fundraising-strategy/fundraising-strategy-section-the-backend-engine-market-driven-pricing-bw-academic.jpg)
+![How the bond sale works: Dutch auction sets the price, smart contracts hold the money, automatic refunds if it fails. It's like eBay, but for saving humanity.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-the-backend-engine-market-driven-pricing-bw-academic.jpg)
 
 For sophisticated investors, use efficient market mechanisms:
 
@@ -552,7 +561,7 @@ For sophisticated investors, use efficient market mechanisms:
 
 ### De-Risking with PRIZE Tokens (Assurance Contracts)
 
-![Assurance contracts: money goes into escrow. If we hit the goal, money goes to the project. If we don't, money goes back to investors. Nobody loses unless we win.](/assets/images/fundraising-strategy/fundraising-strategy-section-de-risking-with-assurance-contracts-bw-academic.jpg)
+![Assurance contracts: money goes into escrow. If we hit the goal, money goes to the project. If we don't, money goes back to investors. Nobody loses unless we win.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-de-risking-with-assurance-contracts-bw-academic.jpg)
 
 The primary risk elimination mechanism for the **referendum campaign** (distinct from IAB-funded lobbying):
 
@@ -632,7 +641,7 @@ IAB capital is separate: it funds the lobbying campaign immediately and carries 
 
 "The initiative advocates for the creation of a 1% Treaty Fund (a {{< var treaty_annual_funding >}} annually decentralized treasury) using proven DAO models from MakerDAO/Uniswap. We advocate for a governance model where future government-issued VICTORY Incentive Alignment Bond holders, alongside public health experts, provide input on the allocation of this treasury across pragmatic clinical trials and other global health initiatives.
 
-![Who controls the 27 billion: bond investors and health experts vote on how to spend it. Democracy, but the voters have medical degrees and financial stakes.](/assets/images/fundraising-strategy/fundraising-strategy-section-template-1-crypto-whales-governance-angle-bw-academic.jpg)
+![Who controls the 27 billion: bond investors and health experts vote on how to spend it. Democracy, but the voters have medical degrees and financial stakes.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-template-1-crypto-whales-governance-angle-bw-academic.jpg)
 
 This isn't just an investment - it's a chance to influence the direction of more capital than the NIH budget toward curing diseases through 80X lower cost per patient [@recovery-trial-82x-cost-reduction] decentralized trials."
 
@@ -642,7 +651,7 @@ This isn't just an investment - it's a chance to influence the direction of more
 
 "A 1% treaty redirects 1% of global military spending ({{< var treaty_annual_funding >}} annually) into health research using Oxford RECOVERY trial methods (80X lower cost). Early supporters will be instrumental in shaping the policy recommendations for treasury allocation.
 
-![Take 1 percent from weapons, give it to health research. Drug companies get 2 to 5 times more research money. Missiles don't cure cancer, but their budgets can.](/assets/images/fundraising-strategy/fundraising-strategy-section-template-2-health-billionaires-industry-advantage-bw-academic.jpg)
+![Take 1 percent from weapons, give it to health research. Drug companies get 2 to 5 times more research money. Missiles don't cure cancer, but their budgets can.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-template-2-health-billionaires-industry-advantage-bw-academic.jpg)
 
 For [Company], this means 2-5X more R&D funding for the same work you're already doing, plus the opportunity to influence priority areas."
 
@@ -652,7 +661,7 @@ For [Company], this means 2-5X more R&D funding for the same work you're already
 
 "Your $50M investment would give [Foundation] direct influence over the allocation of {{< var victory_bond_annual_payout >}} annually. That is 54 times your money, every year, forever.
 
-![Spend 50 million to control 2.72 billion. That's 54 times your money in leverage. It's like a very long lever, but for budgets instead of rocks.](/assets/images/fundraising-strategy/fundraising-strategy-section-template-3-foundations-mission-multiplication-bw-academic.jpg)
+![Spend 50 million to control 2.72 billion. That's 54 times your money in leverage. It's like a very long lever, but for budgets instead of rocks.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-template-3-foundations-mission-multiplication-bw-academic.jpg)
 
 This uses the same proven model that created $7T in fossil fuel subsidies [@fossil-fuel-subsidies], but directed toward saving lives."
 
@@ -709,7 +718,7 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 
 #### Legal & Policy Engagement
 
-![How lawyers and lobbyists team up to make VICTORY Incentive Alignment Bonds legal. Law firms know the rules, advocacy groups know the politicians, together they make impossible things possible.](/assets/images/fundraising-strategy/fundraising-strategy-section-legal-policy-engagement-bw-academic.jpg)
+![How lawyers and lobbyists team up to make VICTORY Incentive Alignment Bonds legal. Law firms know the rules, advocacy groups know the politicians, together they make impossible things possible.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-legal-policy-engagement-bw-academic.jpg)
 
 - 5 top-tier global law firms ($5M/year each)
 - 3 policy advocacy and government consultation firms ($5M/year each)
@@ -718,7 +727,7 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 
 #### Public Engagement & Policy Education Initiatives
 
-![The scaling plan: start small, expand to rich countries, use prizes to make people compete. Humans love competitions, even for things that matter.](/assets/images/fundraising-strategy/fundraising-strategy-section-public-engagement-policy-education-initiatives-bw-academic.jpg)
+![The scaling plan: start small, expand to rich countries, use prizes to make people compete. Humans love competitions, even for things that matter.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-public-engagement-policy-education-initiatives-bw-academic.jpg)
 
 - Public education and civic engagement initiatives replicated in 2 key pilot regions for the first tranche
 - Scaled to 5-10 G7 nations for second-tranche public awareness initiatives
@@ -728,39 +737,22 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 
 ### Legal Structures for Large Investments
 
-#### Option 1: SAFT (Simple Agreement for Future Tokens)
+The old token-first menu is retired. A token pre-sale, voting coin, or "this is useful, therefore not a security" label is the wrong first story and the wrong first structure. It makes the project sound like crypto before the reader understands the actual product, and it does not solve the legal problem if the economics are an investment contract.
 
-- **Best for:** Crypto whales who understand token mechanics
-- **Timeline:** 2-4 weeks to close
-- **Minimum:** {{< var family_office_investment_min >}} investment
+Use one of the boring structures below:
 
-#### Option 2: Convertible Note
-
-![How debt becomes voting power. Investors loan money, time passes, debt turns into tokens, tokens let you vote. It's financial alchemy.](/assets/images/fundraising-strategy/fundraising-strategy-section-option-2-convertible-note-bw-academic.jpg)
-
-- **Best for:** Traditional investors/foundations
-- **Structure:** Debt that converts to governance tokens
-- **Timeline:** 4-8 weeks to close
-- **Minimum:** $10M investment
-
-#### Option 3: Series Seed Equity
-
-- **Best for:** VCs and institutional investors
-- **Timeline:** 8-12 weeks to close
-- **Minimum:** $25M investment
-
-#### Option 4: Revenue Share Agreement
-
-- **Best for:** Conservative institutions
-- **Structure:** Fixed % of treaty inflows
-- **Timeline:** 6-10 weeks to close
-- **Minimum:** $50M investment
+| Structure | Best for | Notes |
+|:---|:---|:---|
+| Private placement | Accredited investors, family offices, strategic backers | Reg D path. No public retail promise. |
+| Revenue-share security | Campaign-financing investors | Plain instrument for treaty-linked upside if the campaign succeeds. |
+| Reg A offering | Broader public raise after proof | More expensive and slower, but actually built for public solicitation. |
+| Registered public offering | Mature version | Maximum reach, maximum disclosure burden. |
 
 ### Execution Timeline
 
 #### Month 1-2: List Building & Warm Intros
 
-![How to ask rich people for money: make a list, get someone they trust to introduce you, prepare the legal paperwork. Never cold-call a billionaire.](/assets/images/fundraising-strategy/fundraising-strategy-section-month-1-2-list-building-warm-intros-bw-academic.jpg)
+![How to ask rich people for money: make a list, get someone they trust to introduce you, prepare the legal paperwork. Never cold-call a billionaire.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-month-1-2-list-building-warm-intros-bw-academic.jpg)
 
 - Finalize top 100 target list with contact information
 - Secure warm introductions through mutual connections
@@ -789,7 +781,7 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 
 ### Success Metrics
 
-![The fundraising growth curve. Month 3: a little money, few investors. Month 12: more money, more investors. The line goes up, which is good.](/assets/images/fundraising-strategy/fundraising-strategy-section-success-metrics-bw-academic.jpg)
+![The fundraising growth curve. Month 3: a little money, few investors. Month 12: more money, more investors. The line goes up, which is good.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-success-metrics-bw-academic.jpg)
 
 - **Month 3:** 25 outreach attempts, 10 meetings scheduled
 - **Month 6:** $250M committed, 5 investors closed
@@ -800,9 +792,9 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 
 #### Regulatory Risk
 
-- Use established legal structures (SAFTs, convertibles)
-- Engage top-tier securities lawyers from day one
-- Structure as utility tokens, not investment contracts
+- Use established securities structures.
+- Treat filings and exemptions as permissions, not SEC approval.
+- Do not call investment economics a product-use label.
 
 #### Market Risk
 
@@ -820,7 +812,7 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 
 This isn't traditional fundraising. It's buying policy change. The approach copies what already works: concentrated political spending produces outsized returns. Military contractors spend {{< var defense_lobbying_annual >}} per year on lobbying and receive hundreds of billions in contracts. That is the conversion ratio. You are copying the ratio and pointing it at diseases instead of countries.
 
-![Economic arbitrage: spend 1 billion on politics, get 27 billion per year in government money. It's not bribery, it's lobbying. The difference is legal, not moral.](/assets/images/fundraising-strategy/fundraising-strategy-section-the-economic-reality-bw-academic.jpg)
+![Economic arbitrage: spend 1 billion on politics, get 27 billion per year in government money. It's not bribery, it's lobbying. The difference is legal, not moral.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-the-economic-reality-bw-academic.jpg)
 
 The twist: offer them an even better deal to fund cures instead of wars.
 

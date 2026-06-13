@@ -1,6 +1,6 @@
 ---
-title: Impact Securities Reform Act
-description: Draft Legislation for Digital Public Goods Financing - Model law to enable high-impact public-good financing via impact securities, expanded investor access, and on-chain reporting safe harbors.
+title: Draft Impact Securities Reform Act
+description: Model legislation, not current law. A proposed path for high-impact public-good financing via impact securities, expanded investor access, and on-chain reporting safe harbors.
 published: true
 tags:
   - impact-securities
@@ -19,17 +19,23 @@ doc_type: regulatory
 image: /assets/og-images/knowledge/appendix/impact-securities-reform-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-## What This Act Does (Plain English)
+::: {.callout-warning}
+## Model law, not current law
 
-Right now, selling your VICTORY Incentive Alignment Bonds requires navigating a regulatory maze built for Wall Street banks in the 1930s. Your species hasn't updated it much since then. This Act carves out a simpler path for securities that fund public goods.
+This chapter is a draft statute. It is not a launch exemption, not an SEC rule, and not a safe harbor anyone can rely on today. The current launch path still uses existing securities exemptions and ordinary disclosures.
+:::
+
+## What This Model Act Would Do (Plain English)
+
+Right now, selling your VICTORY Incentive Alignment Bonds requires navigating a regulatory maze built for Wall Street banks in the 1930s. Your species hasn't updated it much since then. This draft Act would carve out a simpler path for securities that fund public goods.
 
 Three changes:
 
-1. **Skip the paperwork.** If you publish all your financials on a public blockchain in real time, you don't need to file paper reports with the SEC.
+1. **Replace some paperwork with live disclosure.** If you publish all your financials on a public blockchain in real time, this model law would reduce duplicative paper reports.
 2. **Let more people invest.** Your current rules lock out most Americans from early-stage investments because your regulators decided that being rich means being smart. This opens the door based on knowledge, not just wealth.
-3. **Protect governance tokens.** Tokens used for voting (not profit) aren't securities. This gives projects three years to decentralize before the SEC decides for them.
+3. **Protect non-investment voting records.** Voting or participation records used only for governance and not sold for profit would have a clear non-security path.
 
-This matters for your decentralized FDA, your DIH, and your 1% treaty because all three need capital. This Act makes raising that capital legal, fast, and transparent.
+This matters for your decentralized FDA, your DIH, and your 1% treaty because all three need capital. If enacted, this Act would make raising that capital simpler, faster, and more transparent.
 
 ## Section 2. Definitions
 
@@ -41,16 +47,16 @@ This matters for your decentralized FDA, your DIH, and your 1% treaty because al
 
 ## Section 3. Impact Securities Safe Harbor
 
-The core rule: **radical transparency replaces pre-approval.**
+The proposed core rule: **radical transparency replaces some pre-approval.**
 
 ![How being extremely transparent about everything on the blockchain makes regulators leave you alone. Like showing the teacher all your work, except the teacher is the SEC and the work is financial crimes prevention.](/assets/images/impact-securities-reform/impact-securities-reform-section-section-3-impact-securities-saf-bw-academic.jpg)
 
-If your on-chain disclosures (Section 4) are live at launch and continuously maintained, you can offer, sell, and resell impact securities without prior agency approval or periodic paper filings. Anti-fraud laws and KYC/AML still apply.
+If your on-chain disclosures (Section 4) are live at launch and continuously maintained, the model law would permit offers, sales, and resales of impact securities without prior agency approval or periodic paper filings. Anti-fraud laws and KYC/AML still apply.
 
 - **Universal Exemption**: Any raise size qualifies, as long as on-chain disclosures are live and KYC/AML is in place.
 - **Preemption**: State blue-sky laws are preempted for cross-border digital offerings.
 
-No pre-filing. No pre-clearance. Just publish everything on-chain and don't commit fraud.
+Under this model law: no pre-filing, no pre-clearance. Just publish everything on-chain and do not commit fraud. Under current law: do not rely on this paragraph.
 
 ## Section 4. On-Chain Disclosure and Reporting
 

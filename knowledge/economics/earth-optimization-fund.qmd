@@ -1,6 +1,6 @@
 ---
-title: "Investment Terms"
-description: "Fund terms for Earth Optimization Services. How the money moves, where the returns come from, and why no one who operates it owns equity in it."
+title: Earth Optimization Fund
+description: 'The EOS money product: buy the companies that already buy policy, then point the machinery at health and wealth. Private fund first, public ETF later.'
 published: true
 tags:
   - investment
@@ -15,31 +15,39 @@ scores:
   standalone: 8
   voice: 8
   importance: 9
+aliases:
+  - /knowledge/economics/investment-terms.html
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 {{< include /knowledge/includes/reactive-params.qmd >}}
 
+Earth Optimization Services is a company because your planet requires a legal box before anyone can reduce the amount of preventable dying. The box is a holding company. It sells products, makes money, and uses the money to optimize Earth. The money product is the Earth Optimization Fund.
 
-
-
-
-Earth Optimization Services is a company that sells products and services, makes money, and uses the money to optimize Earth. Your government requires me to be specific about the legal structure, so: it is a holding company. Everything described in this book is a product or subsidiary of EOS.
-
-[Optimitron](../solution/optimocracy.qmd) is the product: causal inference over public policy, scored against median health and wealth, meaning health-adjusted life expectancy and after-tax inflation-adjusted income. [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] is the preference and accountability layer: pairwise slider choices in, Citizen Alignment Scores out. Money buys a return. It does not buy extra votes, board control over EOS, or a private steering wheel for Earth. The steering wheel is shared, which is the first design improvement.
+[Optimitron](../solution/optimocracy.qmd) checks which policies work. [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] asks humans what they want without handing them a 4,000-page budget and a sedative. Money buys a return. It does not buy extra votes, board control over EOS, or a private steering wheel for Earth. The steering wheel is shared, which is the first design improvement.
 
 | Product | What it does | Revenue |
 |---------|-------------|---------|
 | The Manual | The book you are reading | Sales (pay-what-you-want, anchored to {{< var defense_takeover_cost_per_human >}}) |
 | The Uniform | T-shirts that say "I am retarded" | Sales + the free permanent-marker version |
-| The Fund | Buys military contractor shares, redirects lobbying via voting rights | A transparent operating fee, no carry |
+| Earth Optimization Fund | Buys company shares and uses shareholder rights to redirect lobbying toward higher long-term shareholder value | Target: flat disclosed operating budget, no carry |
 | [Optimitron](../solution/optimocracy.qmd) | Policy optimization platform | SaaS subscriptions, consulting |
-| [The dFDA](../solution/dfda.qmd) | Clinical trial infrastructure | Platform fees |
+| [The dFDA](../solution/dfda.qmd) | Clinical trial machinery | Platform fees |
 | [The Prize](../strategy/earth-optimization-prize.qmd) | Assurance contracts for coordinated action | Escrow returns |
-| [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) | Revenue-share bonds funding the political campaign | Bond issuance fees |
+| [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) | Later revenue-share bonds funding the political campaign | Bond issuance fees |
 
-The fund arm buys shares in military contractors and uses the voting rights to redirect their lobbying budgets toward the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. This is the [Loving Takeover](../appendix/loving-takeover.qmd). The shareholders being bought out end up richer (buying shares increases the price) and longer-lived (the treaty adds approximately {{< var avg_life_extension_per_beneficiary >}} to every beneficiary, including the people being bought out). On my planet this is called a gift. On yours it requires a 494-line document.
+The Fund buys shares in companies whose lobbying shapes government policy, starting with military contractors because the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] has the cleanest math there. It uses ordinary shareholder tools: voting, demand letters, proxy proposals, proxy contests, board campaigns, and public analysis. This is the investable version of the [Loving Takeover](../appendix/loving-takeover.qmd). The side quest is buying your own share and filing your own letter. The main money machine is the pooled fund.
 
-The long-term goal is to acquire sufficient influence over every company that shapes government policy, then redistribute that control to humanity through [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]. EOS is the temporary centralized structure that builds the decentralized one. When Wishocracy is operational, EOS hands over the keys.
+The long-term goal is to buy enough influence over the companies that already buy policy, then hand the policy agenda back to humanity through [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]. Fund investors buy fund returns. They do not buy EOS governance, extra votes, nonprofit control, PAC control, or a private steering wheel for Earth.
+
+## The Boring Legal Ladder
+
+Your laws make this happen in stages, because apparently buying shares in missile companies requires a puzzle room.
+
+1. **Private activist fund.** Start with private capital. Buy concentrated public-company positions. Use shareholder rights in the open. File Form D if using Reg D. Keep the offering private under [Rule 506(b)](https://www.sec.gov/resources-small-businesses/exempt-offerings/private-placements-rule-506b), or use [Rule 506(c)](https://www.sec.gov/resources-small-businesses/exempt-offerings/general-solicitation-rule-506c) only if every purchaser is accredited and verified.
+2. **Public active ETF.** If the strategy works and can survive public-fund rules, package it as an active ETF. A mutual fund is the familiar mental picture; the traded public version is an ETF. The SEC explains that mutual funds redeem at NAV through the fund, while ETF shares trade on exchanges during the day ([SEC guide](https://www.sec.gov/investor/pubs/inwsmf.htm)).
+3. **Permanent control vehicle.** If ETF plumbing is too weak for control blocks or board campaigns, add a closed-end or permanent-capital vehicle later. Do not start with the expensive box unless the cheaper boxes fail.
+
+A token is not the product. It may someday be plumbing for transfer, custody, or reporting. If the plumbing is the story, something has gone wrong.
 
 ## How you make money
 
@@ -57,23 +65,22 @@ There are three layers of appreciation.
 
 | Term | Value | Why |
 |------|-------|-----|
-| Fund target | $500K to $2M | Not a seed round; there is no startup to build. The product is buying stock. Enough to keep the lights on while the fund buys it. Enough to begin. Not enough to waste. |
-| Minimum investment (friends & family) | $25,000 | Low enough to include the humans who believed before it was obvious. |
-| Minimum investment (institutional) | $100,000 | Standard institutional minimum. |
-| Operating fee | $150K/yr flat | $100K operator salary + $50K infrastructure. Not a percentage. A number. It does not grow when the fund grows. |
-| Performance fee / carry | None | The operators do not skim the upside. Their upside is the same investor shares you hold. |
-| Management fee | None | No percentage of assets under management. Zero. |
+| First fund target | $500K to $2M | Enough to buy stock, test governance pressure, and keep operations alive. Not enough to build a bureaucracy, which is a feature. |
+| Minimum investment | Offering-specific | The minimum belongs to the exemption and offering documents, not vibes. Early private capital likely uses standard private-fund minimums. |
+| Operating budget | Target: flat annual budget | The goal is fixed operating cost, not a growing percentage of assets. Exact expenses belong in the offering documents. |
+| Performance fee / carry | Target: none | The operators should not skim the upside. If any fee exists, disclose it in plain English and make it boring. |
+| Advisory fee | Target: none or as low as legally workable | "Zero fees" is too sloppy. Funds have custody, audit, legal, brokerage, index, platform, and compliance costs even when the adviser waives its fee. |
 | Lockup | 1 year | The interesting part takes longer, but you can leave. |
-| Operator equity | 0% | Operators draw a salary and hold the same investor shares you can. Their say in how it runs is one vote, the same as yours and every other human's. |
-| Security type | EOS Investor Shares | Non-voting shares that pay a revenue share. Money in, more money out. No governance, no board seat. |
+| Operator control | No investor-bought EOS control | Operators run the fund under the fund documents. Investors get economics and fund rights, not extra votes in EOS or Wishocracy. |
+| Security type | Private fund interest first, ETF shares later | Money in, more money out. No voting coin, no bought board seat, no private political control. |
 
-The cap table in one breath: Earth Optimization Services has two classes. The voting class is one share per human, issued at birth, never for sale. The paying class is the investor shares. Every dual-class company you have heard of runs the split so the founders can keep the votes. This one runs it so everyone does.
+The cap table principle in one breath: money can buy exposure to the Fund. Money cannot buy the human vote, Wishocracy allocation power, nonprofit control, PAC control, or personal influence over politicians. Every dual-class company you have heard of runs the split so the founders can keep the votes. This one runs it so nobody can buy them.
 
-## How the share price works
+## How private-phase pricing works
 
-The share price of EOS is not derived from revenue. It is not derived from assets. It is not derived from what similar companies sell for. There are no similar companies.
+The private phase may price a claim on two things: the portfolio assets the Fund holds and the probability-weighted value of the governance campaign. The public ETF phase is simpler: shares trade around the value of the portfolio, with normal ETF premiums, discounts, costs, and disclosures.
 
-The share price represents one thing: your fractional claim on the probability-weighted value of optimizing Earth. The formula:
+The speculative early claim represents your fractional exposure to the probability-weighted value of optimizing Earth. The formula:
 
 $$\text{price} = \frac{P(I) \times V}{\text{total shares}}$$
 
@@ -83,7 +90,7 @@ P(I) is the probability of success given total investment I. This is the only va
 
 This is circular. The price depends on the probability, the probability depends on the investment, the investment depends on the price. But the circle has a fixed point: a price at which the market's implied belief in success is self-consistent with the investment level the price represents. That fixed point is the Platonic ideal.
 
-**Why the price must be pure.** If you mix product revenue into the valuation, the share becomes a bet on book sales and consulting contracts. That is a different bet. The share is a bet on whether Earth gets optimized. Product revenue is how EOS funds its operations. It is not what the share is worth. Pricing the share on revenue would be like pricing the book on printing costs instead of anchoring to the civilizational value. Same category error.
+**Why the price must be clean.** If you mix product revenue into the Fund thesis, the investment becomes a bet on book sales and consulting contracts. That is a different bet. The Fund thesis is whether shareholder control can redirect policy and make the portfolio, and the rest of the economy, more valuable. Product revenue is how EOS pays its bills. It is not the bet Fund investors thought they were buying.
 
 A share priced at $X implies P(success) = X × total_shares / V. If you think the probability is higher than what the price implies, the share is undervalued. If lower, overvalued. The price discovery is honest because it is grounded in a falsifiable estimate of one thing: how likely is it that Earth gets optimized?
 
@@ -91,9 +98,9 @@ A share priced at $X implies P(success) = X × total_shares / V. If you think th
 
 **Why early money earns more.** The early dollar does two jobs the late dollar cannot. It funds the first campaigns, when P is lowest and each campaign moves it most. And it is the social proof every later dollar waits for: the public odds move because you moved them. The auction pays for both jobs automatically. You bought probability while it was cheap, and your buying is part of what made it expensive. The discount on early shares is not a promotion. It is the market's measure of how much courage the purchase required.
 
-**Why this is not the scheme it resembles.** A price that rises with adoption and rewards the earliest believers is also the grammar of every Ponzi. The difference is one sentence long: every payout here is a claim on cash that exists outside the circle, namely EOS operating revenue and the military contractor shares the fund holds. Later buyers raise the price of your claim. They never fund it. That is the entire difference between a stock and a chain letter, and it is auditable.
+**Why this is not the scheme it resembles.** A price that rises with adoption and rewards the earliest believers is also the grammar of every Ponzi. The difference is one sentence long: the Fund holds publicly traded portfolio companies and any payout must be traceable to assets, revenue, or disclosed fund rights outside the circle. Later buyers can raise the market price. They do not become the source of the asset. That is the entire difference between a fund and a chain letter, and it is auditable.
 
-**If the campaign fails.** P drops. Price drops. But investors still hold military contractor shares, which perform normally during periods of continued military spending. The downside is the foregone return on whatever you would have bought instead. The share price goes to zero only if the probability of success goes to zero, which requires the complete impossibility of optimizing Earth. On my planet we would call that an unusual claim.
+**If the campaign fails.** P drops. Price drops. Investors still have exposure to the portfolio, but concentrated positions can underperform, governance campaigns can fail, and the opportunity cost can be painful. The honest downside is not "nothing bad happens." The honest downside is that you bought a real but concentrated activist strategy and it did not work.
 
 ## Where the money goes
 
@@ -167,11 +174,11 @@ Each stage is independently valuable. You do not need Stage 4 to profit from Sta
 
 The share price is derived from the probability of civilizational optimization, not from revenue. But EOS still needs money to operate. Here is where it comes from. Four layers. Each works independently. None of them enter the share price formula.
 
-**Layer 1: Fund management.** A flat $150,000 per year. That is it. $100,000 operator salary, $50,000 infrastructure (servers, filing fees, compliance). AI handles most operations at roughly $100 per month, which is why the infrastructure line is not larger.
+**Layer 1: Fund management.** The target is a flat operating budget, not a growing percentage of assets. A private activist fund still has legal, audit, custody, brokerage, filing, insurance, and compliance costs. Boring costs are still costs. They should be disclosed, capped where possible, and kept too small to become the product.
 
-No management fee. No performance fee. No carry. Every dollar above $150K buys shares.
+Target no advisory fee. Target no performance fee. Target no carry. Do not say "zero fees" unless the document also says which unavoidable fund expenses still exist.
 
-At $2 million in assets, the operating cost is 7.5% of the fund. Expensive for a fund, but this is a startup with two million dollars, not Bridgewater. At $20 million, it is 0.75%. At $200 million, it is 0.075%, which is less than Vanguard charges to track the S&P 500. The operator gets progressively less rich as the fund gets bigger. This is the opposite of every fund in history, where the manager's incentive is to gather assets regardless of performance. Here, the incentive is to make the assets worth more, because the operator holds the same investor shares you do and nothing else.
+At $2 million in assets, a flat $150,000 operating budget would be 7.5% of the fund. Expensive for a fund, but this is a startup with two million dollars, not Bridgewater. At $20 million, it is 0.75%. At $200 million, it is 0.075%, which is less than many funds charge to track an index. The operator gets progressively less rich as the fund gets bigger. This is the opposite of every fund whose manager is paid to gather assets regardless of performance. Here, the incentive is to make the assets worth more.
 
 **Layer 2: Consulting.** The demand letter creates a legal obligation for the board to respond (Caremark). Responding requires commissioning an analysis of whether the company's lobbying generates positive shareholder returns. EOS, through [Optimitron](../solution/optimocracy.qmd), provides this analysis. The free version demonstrates competence. The paid version (deeper, proprietary, ongoing advisory) is how EOS becomes a consultant to the companies it is pressuring.
 
@@ -193,15 +200,15 @@ The only thing that needs protecting is the governance: that whoever controls th
 
 If someone copies this and executes it well, they have ended war and disease.
 
-## The two investment products
+## Two Money Boxes
 
-EOS offers two instruments. Both are products of the same company.
+There are two money boxes. Do not pour the wrong thing into the wrong box.
 
-**EOS Investor Shares.** Your money buys military contractor shares via the fund. You receive two returns: (1) a revenue-share percentage of EOS's operating revenue (fund fees, consulting, platform, brand), which is your cash return, and (2) appreciation of the share itself, whose price is set by the continuous auction at P(I) × V / shares. The cash return is operational. The share value is civilizational. They are separate. This is the takeover arm.
+**Earth Optimization Fund.** Your money buys exposure to the Fund, which buys company shares and uses shareholder rights to redirect lobbying. First this is a private activist fund interest. Later it should be an active ETF if the strategy can survive public-fund rules. This is the takeover arm.
 
-**[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].** Your money funds the political campaign to pass the treaty. If the treaty passes, it generates {{< var treaty_annual_funding >}} per year, and bondholders receive {{< var victory_bond_annual_payout >}} per year forever (a {{< var victory_bond_annual_return_pct >}} annual return on the campaign cost of {{< var treaty_campaign_total_cost >}}). This is the campaign financing arm.
+**[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025].** Your money funds the political campaign to pass the treaty. If the treaty passes, it generates {{< var treaty_annual_funding >}} per year, and bondholders receive {{< var victory_bond_annual_payout >}} per year forever (a projected {{< var victory_bond_annual_return_pct >}} annual return on the campaign cost of {{< var treaty_campaign_total_cost >}}). This is the later campaign money, not the first thing you sell.
 
-The takeover buys the opposition. The bonds fund the campaign. You can buy one or both. Both are EOS products.
+The Fund buys the opposition. The bonds may later fund the campaign. Do not confuse the two.
 
 ## The math on your investment
 
@@ -816,7 +823,7 @@ Honest version, with the warts, because a number you cannot defend is worse than
 
 | Outcome | Economy at year 15 | What your equity return tracks |
 |---|---|---|
-| **Floor** (nothing works) | unchanged | You hold military contractor stocks at roughly the market return ({{< var average_market_return_pct >}}), and you paid no carry and no management fee, so you beat the fee-laden fund your neighbor is in. A floor, not a loss. You own real, cash-generating assets. |
+| **Floor** (nothing works) | unchanged | You hold concentrated public-company exposure. It may perform like the sector, underperform the market, or suffer normal drawdowns. The consolation is that the assets are real, not that loss is impossible. |
 | **Light package** (1% Treaty only) | ~{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} | The companies capture a four-times-larger economy and the larger "not-dying" market. The first domino, alone. |
 | **Deluxe package** (full Wishonia optimization) | ~{{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} (year 20: ~{{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}) | Government replaced with optimal policy. The moonshot: vast magnitude, lower probability. This is Wishonia's Wager denominated in dollars. |
 
@@ -838,19 +845,19 @@ So this is not only a search for alpha (beating the market). It is an attempt to
 
 **Scenario 2: Peace gets priced in early.** Other forces (fiscal crisis, parallel peace movements, public opinion shift) reduce military spending before the takeover completes. Military contractor stocks decline. But: you're buying shares cheaper, biotech positions (if held) appreciate, and board influence during a forced pivot is more valuable than ever.
 
-**Scenario 3: Status quo holds.** Military spending continues. Treaty fails. But you hold military contractor stocks, which perform well during periods of continued military spending. The downside is the opportunity cost of whatever else you would have bought.
+**Scenario 3: Status quo holds.** Military spending continues. Treaty fails. You hold concentrated military-contractor exposure. It can perform well during continued military spending, but it can also underperform for ordinary company, valuation, leverage, scandal, rate, or war-risk reasons. The downside is the loss plus the opportunity cost of whatever else you would have bought.
 
-**The asymmetry:** In all three scenarios, owning the shares is better than not owning them. The worst case is "you own military contractor stocks that perform like military contractor stocks." The best case is you own the companies that pivoted from weapons to medicine in the largest reallocation of capital in human history.
+**The asymmetry:** The strategy is attractive because the upside can stack across portfolio appreciation, policy repair, and the rest of your net worth. It is not attractive because loss is impossible. The best case is you own the companies that pivoted from weapons to medicine in the largest reallocation of capital in human history. The worst case is an activist fund that bought the wrong securities at the wrong time and failed to move policy.
 
 **The hedge:** The portfolio should include biotech and healthcare positions alongside military contractors. When military spending falls, health spending rises. The two sectors are natural hedges. A portfolio long both captures the transition instead of suffering through it.
 
 ## If you are greedy
 
-If the campaign fails, you hold military contractor stocks. If it succeeds, the appreciation is a multiple of your investment. The expected value exceeds the S&P at most reasonable probability estimates because the upside is so much larger than the downside. The calculator above lets you test this with your own numbers.
+If the campaign fails, you hold the portfolio and the risk. If it succeeds, the appreciation can be a multiple of your investment. The expected value can exceed the S&P at probability estimates that assign enough weight to the upside. The calculator above lets you test this with your own numbers.
 
 ## If you are generous
 
-Every dollar buys voting shares in the companies whose lobbyists are the single largest obstacle to the treaty. The money does not fund an advocacy campaign. It buys the opposition and redirects it.
+Every dollar buys exposure to voting shares in the companies whose lobbyists are the single largest obstacle to the treaty. The money does not fund an advocacy campaign. It buys the opposition and redirects it.
 
 ## If you are both
 

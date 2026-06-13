@@ -47,7 +47,7 @@ This converts the book's greatest weakness (arbitrary assumptions) into its grea
 - Confidence intervals on most parameters
 - Monte Carlo simulation infrastructure
 - Popovers that show parameter metadata
-- Interactive calculators in `your-personal-benefits.qmd` and `investment-terms.qmd` (IIFE pattern with hidden spans)
+- Interactive calculators in `your-personal-benefits.qmd` and `earth-optimization-fund.qmd` (IIFE pattern with hidden spans)
 
 ### What needs to be built
 

@@ -41,6 +41,9 @@ scores:
   standalone: 9
   voice: 8
   importance: 10
+audience: "shareholders, lawyers, anyone willing to file (template users)"
+feel: "the legal theory is real and winnable; the defendants are better off losing; filing costs $200 and one evening; you are saving the board, not attacking them"
+do: "buy one share of a military contractor; print and mail the demand letter; start the 60-day clock"
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
@@ -68,7 +71,6 @@ This is the funniest lawsuit in the universe and this page is everything you nee
 
 It is the first lawsuit in legal history where the defendants are radically better off losing than winning. Settling adds approximately {{< var avg_life_extension_per_beneficiary >}} to each defendant's healthy life and approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to the average shareholder's lifetime income. Winning leaves the defendant where they started: facing the same diseases on the same timeline, while their lobbying continues to keep the cure trials underfunded.
 
-It is also the first lawsuit you can file for $200. One share of any major military contractor is legally sufficient under DGCL § 327. The full demand letter, the share-purchase instructions, the brokerage walkthrough, the pre-filled defendant fact sheets, and the post-response decision tree are all linked from this page.
 
 **The selfish version.** If you do not care about the disease eradication argument and only care about money, the share you bought to file the lawsuit also goes up in price. As the campaign scales, demand for military contractor shares mechanically exceeds the available float (see [The Loving Takeover](loving-takeover.qmd) for the math), and prices spike for the same reason GameStop spiked in 2021. The lawsuit is the event that puts the float math in front of buyers. Heads you make money on the share, tails you hold a normal military contractor position. The downside is foregone index-fund return on $200.
 
@@ -90,7 +92,7 @@ The cost is one share (~$200) plus 43 hours of work. Under the Part 3 assumption
 
 ### How To File (60-Second Version)
 
-1. Open a [brokerage account](brokerage-how-to.qmd) if you do not have one (Fidelity walkthrough at the link).
+1. Buy one whole share through a real brokerage if you do not already own one.
 2. Buy 1 share of any major military contractor. The eight with [pre-filled fact sheets](pre-filled-demand-letters.qmd) are RTX, LMT, BA, GD, NOC, LHX, HII, and LDOS. Others (BAH, CACI, SAIC, BAE, Thales) work too; you just look up the corporate-secretary address yourself.
 3. Copy the demand letter below, fill in the bracketed fields, sign it.
 4. Send it certified mail to the corporate secretary of the defendant.

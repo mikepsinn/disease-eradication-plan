@@ -1223,7 +1223,7 @@
         "DESTRUCTIVE_ECONOMY_BASE_YEAR"
       ],
       "computeExpr": "Math.pow((1.0 + CONVENTIONAL_RETIREMENT_RETURN), (DESTRUCTIVE_ECONOMY_50PCT_YEAR - DESTRUCTIVE_ECONOMY_BASE_YEAR))",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html"
     },
     "CONVENTIONAL_RETIREMENT_RETURN": {
       "value": 0.065,
@@ -1239,7 +1239,7 @@
         0.08
       ],
       "distribution": "normal",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html"
     },
     "CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER": {
       "value": 3.0,
@@ -5382,7 +5382,7 @@
       "confidence": "high",
       "formula": null,
       "distribution": "fixed",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html"
     },
     "GLOBAL_SAVINGS_RATE_PCT": {
       "value": 0.27,
@@ -5644,7 +5644,7 @@
         0.015
       ],
       "distribution": "normal",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html"
     },
     "HOURS_PER_DAY": {
       "value": 24.0,
@@ -10780,7 +10780,7 @@
         0.22
       ],
       "distribution": "normal",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html"
     },
     "VICTORY_BOND_ANNUAL_PAYOUT": {
       "value": 2720000000.0,
@@ -11524,7 +11524,7 @@
         0.015
       ],
       "distribution": "normal",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html"
     },
     "WISHONIA_DISEASE_CURE_FRACTION_15YR": {
       "value": 1.0,

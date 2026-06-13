@@ -57,32 +57,24 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 
 ## Content Rules
 
-**Voice:** Wishonia (naive alien observing Earth, Philomena Cunk deadpan). Never consultant, crypto bro, or salesman. Full mechanics: `GUIDES/STYLE_GUIDE.md`. Pitches (10s/30s/5min/15min): `GUIDES/PITCH_LADDER.md`.
+**Voice:** Wishonia (naive alien observing Earth, Philomena Cunk deadpan). Never consultant, crypto bro, or salesman. Full mechanics: `GUIDES/STYLE_GUIDE.md`. Pitches: `GUIDES/PITCH_LADDER.md`.
+
+**Core method:** Each chapter has `audience`, `feel`, `do` in its frontmatter. Write to make that audience feel and do those things. Ask "what would make this person act?" not "what does this type of writing usually look like?" When the objective contradicts the convention, do the objective.
+
+**The reader IS the company.** Founder, president, owner, employee, all the same person. Hand them assets and roles ("your commission is on file," "you are the president"). Never ask, beg, thank, or center someone else as founder. Role-assignment lines are structural, not fluff; the mechanism needs the reader to accept the role.
+
+**Canonical love line:** "I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases." One breath, one sentence. We fund research to FIND cures; we don't have them; that's the point.
 
 **Financial architecture:** Corruption capped at 20% (transparent), 80% untouchable via wishocracy. Money and influence are disentangled. This is the core selling point vs current government.
 
-| Rule | Do | Don't |
-|------|----|-------|
-| Investors | Money in, more money out (revenue share) | Board seats, governance, influence, "control the fund" |
-| Nonprofits | Mission funded + direct referral bonuses | "Seat at the table", governance stake, tokens, VOTE points |
-| Politicians | Campaign funding + votes + post-office careers | Personal bond investments, direct payments |
-| Regular people | Referral bonuses + diseases get cured | Tokens, ownership, crypto anything |
-| Confidence | "probably irresistible", "the math suggests" | "unstoppable", "inevitable", "guaranteed" |
-| Comparisons | Like with like (margins to margins) | 8% operating margin vs 272% bond return |
-| Treaty durability | Billionaire bondholders have pre-existing influence + motive to keep/expand | "if the treaty holds" without explaining why it will |
-| Bond terms | Securities, revenue share, perpetual bonds | Utility tokens, DAO governance |
-| Ownership | Reader builds everything: "your Scoreboard," "here's how you launch" | "Join us," "our platform," "we're building" |
-| Giving, not asking | Hand the reader assets ("your commission is on file"); the treaty "directs"/"requires" governments | "we ask", "please help", thank-you framing, participation as sacrifice |
-| Framing | A company whose founder, owners, and staff are all the same people: the reader. Everyone is owner + Humanity Manager + founder. Registration = Onboarding | "the founder"/centering one person; "movement," "join us"; startup rah-rah ("we're all founders!") |
-| Stakes | Suffering first (concrete: "her last decade, in pain, not knowing you"), death as punctuation; disease as a deadpan villain *with intent* | abstract "reduce suffering"; melodrama; disease as fate |
-| Jargon | Plain words; keep a buzzword only when *mocking* it ("they call it 'synergy'") | startup-speak used straight: "leverage"/"unlock" (flat), "onboard," "bring online," "amplify," "empower," "world-class" |
-| Persuasion | Reason from objective: "what would make this person act?" | Pattern-match: "what do persuasive essays usually look like?" |
-| Natural speech | One breath = one sentence ("I love you and I do not want X") | Splitting natural speech into separate formal sentences |
-| Self-narration | Just do the thing | Announcing what you are doing ("That is the entire reason for this letter") |
-| Disease framing | "horrible diseases" (we fund research to FIND cures) | "diseases we already know how to cure" (we don't; that's the point) |
-| Canonical love line | "I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases" | weaker variants: "anyone you love" (too narrow), "suffer and die" (too soft), split into separate sentences |
+| Stakeholder | Gets | Never gets |
+|-------------|------|-----------|
+| Investors | Revenue share | Governance, board seats, influence |
+| Nonprofits | Mission funding + referral bonuses | Governance stake, tokens |
+| Politicians | Campaign funding + votes + careers | Direct payments, bond investments |
+| Regular people | Referral bonuses + cured diseases | Tokens, ownership, crypto |
 
-**Anti-pattern-matching:** Standard persuasion patterns (establish credentials, build authority, hedge claims, protect the author's status) are the average of every failed pitch, ignored white paper, and unread manifesto in history. Pattern-matching on failed attempts computes the optimal way to fail. When the objective (reader action) contradicts the convention (writer pattern), do the objective. If vulnerability disarms the reader, credentials are ego armor. If raw numbers persuade, hedging is cowardice. Ask "what would make this person act?" not "what does this type of writing usually look like?"
+**Tone:** "probably irresistible" not "inevitable." Like with like (margins to margins). Securities not tokens. Plain words; mock buzzwords, never use them straight. Suffering first (concrete, specific), death as punctuation, disease as a deadpan villain with intent. Just do the thing; never narrate what you're doing. Treaty durability: explain WHY it holds (billionaire bondholders have motive to keep/expand), don't just assume it.
 
 ## Quick Commands
 

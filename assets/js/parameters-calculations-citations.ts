@@ -347,8 +347,8 @@ export const CONVENTIONAL_RETIREMENT_RETURN: Parameter = {
   sourceType: "external",
   confidence: "high",
   confidenceInterval: [0.05, 0.08],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
-  manualPageTitle: "The Earth Optimization Prize Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html",
+  manualPageTitle: "The Earth Optimization Prize Treasury",
 };
 
 export const CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER: Parameter = {
@@ -1746,8 +1746,8 @@ export const GLOBAL_RETIREMENT_ASSETS: Parameter = {
   description: "Total global pension and retirement assets (OECD 2024). This is the capital pool that the Prize Fund competes with and could partially absorb.",
   sourceType: "external",
   confidence: "high",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
-  manualPageTitle: "The Earth Optimization Prize Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html",
+  manualPageTitle: "The Earth Optimization Prize Treasury",
 };
 
 export const GLOBAL_SAVINGS_RATE_PCT: Parameter = {
@@ -1840,8 +1840,8 @@ export const HOME_BIAS_ALPHA: Parameter = {
   sourceType: "external",
   confidence: "high",
   confidenceInterval: [0.003, 0.015],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
-  manualPageTitle: "The Earth Optimization Prize Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html",
+  manualPageTitle: "The Earth Optimization Prize Treasury",
 };
 
 export const HUMAN_GENOME_PROJECT_TOTAL_ECONOMIC_IMPACT: Parameter = {
@@ -3665,8 +3665,8 @@ export const VENTURE_GROSS_RETURN: Parameter = {
   sourceType: "external",
   confidence: "high",
   confidenceInterval: [0.13, 0.22],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
-  manualPageTitle: "The Earth Optimization Prize Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html",
+  manualPageTitle: "The Earth Optimization Prize Treasury",
 };
 
 export const VITAMIN_A_COST_PER_DALY: Parameter = {
@@ -4160,8 +4160,8 @@ export const CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE: Parameter = {
   formula: "(1 + CONVENTIONAL_RETIREMENT_RETURN) ^ (DESTRUCTIVE_ECONOMY_50PCT_YEAR - DESTRUCTIVE_ECONOMY_BASE_YEAR)",
   latex: "\\begin{gathered}\nM_{retire} = (1 + r_{retire})^{Y_{50\\%} - Y_0}\n\\\\[0.5em]\n\\text{where } Y_{50\\%} = Y_0 + \\frac{\\ln\\left(0.50 / \\text{DESTRUCTIVE\\_PCT\\_GDP}\\right)}{\\ln\\left(1 + \\text{DESTRUCTIVE\\_GROWTH} - \\text{GDP\\_GROWTH}\\right)}\n\\\\[0.5em]\n\\text{where } r_{destruct:GDP} = \\frac{Cost_{destruct}}{GDP_{global}} = \\frac{\\$13.2T}{\\$115T} = 11.5\\%\n\\\\[0.5em]\n\\text{where } Cost_{destruct} = Spending_{mil} + Cost_{cyber} = \\$2.72T + \\$10.5T = \\$13.2T\n\\end{gathered}",
   confidenceInterval: [2.144867844917442, 3.066863226999378],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
-  manualPageTitle: "The Earth Optimization Prize Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html",
+  manualPageTitle: "The Earth Optimization Prize Treasury",
 };
 
 export const CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL: Parameter = {
@@ -12296,8 +12296,8 @@ export const WISHOCRATIC_CROWD_ALPHA: Parameter = {
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [0.0, 0.015],
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-fund.html",
-  manualPageTitle: "The Earth Optimization Prize Fund",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-prize-treasury.html",
+  manualPageTitle: "The Earth Optimization Prize Treasury",
 };
 
 export const _CASCADE_GENERATIONS: Parameter = {

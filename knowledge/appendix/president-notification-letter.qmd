@@ -15,6 +15,9 @@ scores:
   standalone: 8
   voice: 9
   importance: 7
+audience: "everyone (the reader who just arrived)"
+feel: "you ARE the president now; amused by the absurdity; terrified about the diseases coming for your family; greedy for the money"
+do: "get on a call with Mike; accept the role; forward the short version to someone you love"
 ---
 
 {{< include ../includes/setup-parameters.qmd >}}

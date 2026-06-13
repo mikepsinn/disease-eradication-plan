@@ -54,7 +54,7 @@ scores:
 
 **EXPECTED VALUE PER GLOBAL HUMAN PARTICIPANT:** ~$530,000-$2,000,000 in total expected value at base case (~6,000x-22,000x the contribution; mostly welfare value, not cash). Even after a 99% pessimism haircut, ~$5,000-$20,000 in expected total value per {{< var defense_takeover_cost_per_human >}} contributed.
 
-This is the [lawsuit](lawsuit.qmd) escalated. The lawsuit is the cheap version: own one share, send the board a love letter (the law calls it a demand letter), and the board is required to read the math. The takeover is the full version: own enough shares to choose the board, and the best lobbyists money can buy start working on keeping their shareholders alive.
+This is the [lawsuit](lawsuit.qmd) escalated. The lawsuit is the cheap side path: own one share, send the board a love letter (the law calls it a demand letter), and the board is required to read the math. The Fund is the main version: pool capital, own enough shares to matter, and make the best lobbyists money can buy start working on keeping their shareholders alive.
 
 ## Why "Loving," Not "Hostile"
 
@@ -243,7 +243,7 @@ This number is calculable. It is not a fantasy.
 |---|---|---|
 | One share (~$200) | A letter the board is obliged to read | The [lawsuit campaign](lawsuit.qmd) |
 | A fraction of a percent, plus a proxy campaign | Board seats, if the financial case persuades the index funds | Engine No. 1 won three ExxonMobil seats with 0.02% of the shares |
-| 1-5% across the primes | Agenda-setting positions at every annual meeting | The [activist tier](../economics/investment-terms.qmd) |
+| 1-5% across the primes | Agenda-setting positions at every annual meeting | The [activist tier](../economics/earth-optimization-fund.qmd) |
 | 50.1% | Nobody has to agree with you | {{< var defense_takeover_cost_total >}} |
 
 Three institutional investors hold 60-75% of every military prime, and their job is to vote for whatever makes the shares worth more. The pitch to them is the one this chapter already made: the treaty makes the companies more valuable. Each tier is insurance against the cheaper tier failing. You climb only as far as the persuasion fails.
@@ -332,7 +332,7 @@ Military contractor profits historically flow to a narrow set of institutional a
 
 ## Expected Value Per Person
 
-A note on what these numbers are. The totals below are *total value to you as a human*: they add the financial return on your shares to the welfare value of the extra years of life and health the plan buys you, valued at standard QALY and statistical-life rates. Most of the total is that welfare value, not cash in your account. If you want the *financial* equity return on its own, modeled against the historical track record of taking over badly-run companies (Buffett, the activist literature, the governance evidence) with a floored downside, that is in [Investment Terms](../economics/investment-terms.qmd). The two are different objects. Do not hand a skeptic the welfare multiple and call it a stock return.
+A note on what these numbers are. The totals below are *total value to you as a human*: they add the financial return on your shares to the welfare value of the extra years of life and health the plan buys you, valued at standard QALY and statistical-life rates. Most of the total is that welfare value, not cash in your account. If you want the *financial* equity return on its own, modeled against the historical track record of taking over badly-run companies (Buffett, the activist literature, the governance evidence) with a floored downside, that is in [Investment Terms](../economics/earth-optimization-fund.qmd). The two are different objects. Do not hand a skeptic the welfare multiple and call it a stock return.
 
 ### Investment per person (realistic, including acquisition premium)
 
@@ -379,7 +379,7 @@ Apply a 99% pessimism haircut to every line item above (treaty fails to pass, mu
 | Global human (~{{< var defense_takeover_cost_per_human >}} in) | ~$5,000-$20,000 | **~60x-220x** |
 | US adult (~$2,700 in) | ~$8,500-$21,000 | **~3x-8x** |
 
-Even with a 99% haircut, the expected total value remains roughly 60x-220x the contribution. Most of that is welfare value (extra healthy life-years at standard rates), not cash; the financial-only return is modeled in [Investment Terms](../economics/investment-terms.qmd).
+Even with a 99% haircut, the expected total value remains roughly 60x-220x the contribution. Most of that is welfare value (extra healthy life-years at standard rates), not cash; the financial-only return is modeled in [Investment Terms](../economics/earth-optimization-fund.qmd).
 
 ## How It Finances Itself (Not a Bonfire)
 
@@ -437,7 +437,7 @@ Huntington Ingalls Industries is the sole builder of nuclear aircraft carriers o
 
 The government does not contract with these companies because the companies lobby well. The government contracts with them because nobody else on the planet can build what they build. The lobbying wins marginal contracts, cost-plus expansions, and favorable terms on the next procurement cycle. It does not win the core work. The core work exists because a nuclear submarine requires roughly 10 million person-hours of specialized labor, and exactly one company has the workforce, the facilities, and the security clearances to deliver it.
 
-So the real question is narrower than it sounds: does the marginal ROI on lobbying (winning the next cost-plus expansion) exceed the marginal ROI on diversification (pivoting that same money into health tech, renewable energy, AI-augmented drug discovery)? For a company operating in a post-treaty economy where GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger, the diversification bet is better. You are not choosing between revenue and no revenue. You are choosing between a slow-growth monopoly and a fast-growth monopoly that also has new product lines.
+So the real question is narrower than it sounds: does the marginal ROI on lobbying (winning the next cost-plus expansion) exceed the marginal ROI on diversification (pivoting that same money into health tech, renewable energy, AI-augmented drug discovery)? For a company operating in a post-treaty economy where GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger, the diversification bet is obviously better. You are not choosing between revenue and no revenue. You are choosing between a slow-growth monopoly and a fast-growth monopoly that also has new product lines.
 
 If this sounds theoretical, it has already happened. In 2021, a twelve-person hedge fund called Engine No. 1 won three board seats at ExxonMobil, one of the largest companies on Earth, on a platform of accelerating the energy transition. The stock did not crash. It went up. Shareholder activism that aligns a company with long-term secular trends makes the company more valuable, not less. The market is not confused about this. The market prices it in, which is why Engine No. 1's investors made money.
 

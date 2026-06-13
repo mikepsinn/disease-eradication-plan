@@ -5087,7 +5087,7 @@ TREATY_QALYS_GAINED_ANNUAL_GLOBAL = Parameter(
 # Tech R&D removed from campaign (post-treaty implementation funded by $27B/year)
 # Legal/ops/partnerships rolled into main campaign categories
 
-# Source: /knowledge/appendix/fundraising-strategy.qmd#capital-structure-campaign-vs-implementation
+# Source: /knowledge/appendix/campaign-financing-roadmap.qmd#capital-structure-campaign-vs-implementation
 TREATY_CAMPAIGN_DURATION_YEARS = Parameter(
     4,
     manual_ref="knowledge/appendix/treaty-feasibility.qmd",
@@ -10322,7 +10322,7 @@ VOTER_SUFFERING_HOURS_PREVENTED = Parameter(
 
 VENTURE_GROSS_RETURN = Parameter(
     0.17,
-    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
+    manual_ref="knowledge/economics/earth-optimization-prize-treasury.qmd",
     source_type="external",
     description="Venture capital / private equity gross return (before 2-and-20 fees). "
                 "Cambridge Associates US VC index 25-year pooled gross IRR. "
@@ -10402,7 +10402,7 @@ ALLOCATION_DECISION_SPREAD = Parameter(
 
 HOME_BIAS_ALPHA = Parameter(
     0.008,
-    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
+    manual_ref="knowledge/economics/earth-optimization-prize-treasury.qmd",
     source_type="external",
     description="Return drag from home bias in fragmented national pension systems. "
                 "70+ countries each overweight domestic assets, missing global diversification. "
@@ -10418,7 +10418,7 @@ HOME_BIAS_ALPHA = Parameter(
 
 GLOBAL_RETIREMENT_ASSETS = Parameter(
     70_000_000_000_000,
-    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
+    manual_ref="knowledge/economics/earth-optimization-prize-treasury.qmd",
     source_type="external",
     description="Total global pension and retirement assets (OECD 2024). "
                 "This is the capital pool that the Prize Fund competes with "
@@ -10432,7 +10432,7 @@ GLOBAL_RETIREMENT_ASSETS = Parameter(
 
 CONVENTIONAL_RETIREMENT_RETURN = Parameter(
     0.065,
-    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
+    manual_ref="knowledge/economics/earth-optimization-prize-treasury.qmd",
     source_type="external",
     description="Average retail after-fee return on conventional retirement portfolios "
                 "(60/40 stock/bond mix, ~1% advisory fees, ~0.4% fund fees). "
@@ -10448,7 +10448,7 @@ CONVENTIONAL_RETIREMENT_RETURN = Parameter(
 
 CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE = Parameter(
     (1 + float(CONVENTIONAL_RETIREMENT_RETURN)) ** round(_years_to_50pct),
-    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
+    manual_ref="knowledge/economics/earth-optimization-prize-treasury.qmd",
     source_type="calculated",
     description="Compound multiple for conventional retirement investing over the prize pool resolution horizon "
                 "(tied to the destructive economy 50% threshold year).",
@@ -10465,7 +10465,7 @@ CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE = Parameter(
 
 WISHOCRATIC_CROWD_ALPHA = Parameter(
     0.005,
-    manual_ref="knowledge/economics/earth-optimization-prize-fund.qmd",
+    manual_ref="knowledge/economics/earth-optimization-prize-treasury.qmd",
     source_type="definition",
     description="Allocation alpha from wishocratic sector- and manager-level capital routing. "
                 "Crowds route capital across sectors and managers at least as well as "

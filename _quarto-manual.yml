@@ -123,7 +123,7 @@ book:
         # REMOVED: Merged unique content (biology fixes society) into solution.qmd
         # - knowledge/solution/war-on-disease.qmd
         - knowledge/solution/aligning-incentives.qmd # ✅ Aligning Incentives ~7p
-        - knowledge/solution/incentive-alignment-bonds.qmd # ✅ VICTORY Incentive Alignment Bonds ~28p (merged with victory-bonds.qmd)
+        - knowledge/solution/incentive-alignment-bonds.qmd # VICTORY Incentive Alignment Bonds: later campaign-financing mechanism, not the main Fund product
         - knowledge/solution/earth-optimization-services.qmd # EOS: the four-component planetary optimization package (Wishonia's service brochure)
         - knowledge/solution/theory-of-operation.qmd # Civilization as a closed-loop control system; master schematic + parts-list mapping; the spine every module diagram links back to (repair-manual "Theory of Operation" framing)
         - knowledge/solution/special-education.qmd # Special Education: free AI-tutored "special education for everyone" product page (what it is / how it works / how you pass / what it costs); linked from the EOS brochure
@@ -210,7 +210,6 @@ book:
         - knowledge/appendix/love-letter.qmd # The warm, anyone-can-send letter to a defense contractor board ("I love you, I do not want you to suffer and die of horrible diseases"); friendly front door to the demand letter; one share upgrades it to a binding demand
         - knowledge/appendix/lawsuit.qmd # Master shareholder demand letter against defense contractor boards; Caremark 2.0 duty-of-care theory
         - knowledge/appendix/pre-filled-demand-letters.qmd # 8 per-contractor fact sheets (addresses, tickers, lobbying spend, filing forum) to plug into the master demand letter
-        - knowledge/appendix/brokerage-how-to.qmd # Step-by-step for readers who have never bought stock; opens an account and buys 1 share
         - knowledge/appendix/board-member-research.qmd # Protocol for extracting CEO and board details from DEF 14A proxy statements to personalize the demand letter
         - knowledge/appendix/counsel-outreach.qmd # Pro bono / contingency law firm list + pitch letter for recruiting plaintiff-side counsel
         - knowledge/appendix/press-release.qmd # Press release template + journalist target list by beat for simultaneous distribution with the demand letter
@@ -218,7 +217,6 @@ book:
         - knowledge/appendix/filing-day-checklist.qmd # Single printable one-page checklist for filing day
         - knowledge/appendix/shareholder-proposal-14a-8.qmd # SEC Rule 14a-8 shareholder proposal template; escalation after the 60-day demand-letter window
         - knowledge/appendix/litigation-phase.qmd # Post-response decision tree, derivative complaint structural template, settlement playbook
-        - knowledge/appendix/funding-and-coordination.qmd # Self-funding default, co-plaintiff recruit template, multi-defendant coordination, plaintiff registry format
         # ── Escalation ──
         - knowledge/appendix/loving-takeover.qmd # ~$90/global human to buy controlling stake in Western defense primes; redirects lobbying to championing the 1% treaty. Loving because existing shareholders get rich on the way in and directors gain personal life expectancy from settling
 
@@ -229,9 +227,9 @@ book:
         - knowledge/economics/gdp-trajectories.qmd # ✅ (expected-value model, 3 civilization trajectories) ~5p
         - knowledge/economics/health-dividend.qmd # ✅ (good voice) ~3p
         - knowledge/economics/financial-plan.qmd # ✅ (IMPROVED - added personality to opening) ~10p
-        - knowledge/economics/investment-terms.qmd # EOS Fund I terms in Wishonia voice + interactive investment calculator
+        - knowledge/economics/earth-optimization-fund.qmd # Earth Optimization Fund: private activist fund first, public active ETF later
         - knowledge/economics/investment-thesis.qmd # Founder's unfiltered 15-minute investment thesis pitch
-        - knowledge/economics/earth-optimization-prize-fund.qmd # ✅ (prize fund model) ~8p
+        - knowledge/economics/earth-optimization-prize-treasury.qmd # Prize Treasury: deposit pool, separate from the Earth Optimization Fund
         - knowledge/economics/campaign-budget.qmd # ✅ (IMPROVED - "On How to Buy a Planet for $1B") ~7p
         - knowledge/appendix/investor-risk-analysis.qmd # ✅ (risk analysis, appropriate) ~5p
 

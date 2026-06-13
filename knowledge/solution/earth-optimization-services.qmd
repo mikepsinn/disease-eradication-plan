@@ -1,7 +1,7 @@
 ---
-title: "Earth Optimization Services"
-subtitle: "The future: now under new management."
-description: "Universe Optimization Services has helped over 300 civilizations upgrade from 'actively self-destructing' to 'surprisingly pleasant.' Earth is now accepting applications."
+title: Earth Optimization Services
+subtitle: 'The future: now under new management.'
+description: Universe Optimization Services has helped over 300 civilizations upgrade from 'actively self-destructing' to 'surprisingly pleasant.' Earth is now accepting applications.
 published: true
 tags:
   - solution
@@ -132,7 +132,7 @@ Most products on your planet come with one benefit. A car moves you. A drug trea
 **The upside, which stacks.** If it works, your return does not arrive through one door. It arrives through thirteen at once, because curing disease and ending war happen to make almost everything else more valuable at the same time:
 
 1. **Buying pressure.** Coordinated demand against a fixed supply of shares raises the price directly. [Mechanism](../appendix/loving-takeover.qmd).
-2. **Credibility repricing.** As success becomes likely, the market prices it in. Buy before it does, and you keep the difference. [Terms](../economics/investment-terms.qmd).
+2. **Credibility repricing.** As success becomes likely, the market prices it in. Buy before it does, and you keep the difference. [Terms](../economics/earth-optimization-fund.qmd).
 3. **The pivot.** Comes in two trim levels. The *Deluxe package* (full [Wishonia optimization](../economics/gdp-trajectories.qmd)) makes the economy roughly {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger by year 15; the *Light package* (the 1% Treaty alone) is already ~{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}. The companies you own capture that larger economy, and "not dying" is a larger market than "killing."
 4. **Disease gets cheap.** The [dFDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] makes cures faster and cheaper. A workforce that is alive and well produces and buys more. Every company you own is worth more in a world that is not sick.
 5. **Bureaucracy gets cheap.** [Algorithmic administration](../appendix/algorithmic-public-administration-paper.qmd) replaces the agencies. The compliance overhead every company pays merely to exist falls.
@@ -141,7 +141,7 @@ Most products on your planet come with one benefit. A car moves you. A drug trea
 8. **War gets rarer.** Less organized violence is a [peace dividend](../economics/peace-dividend.qmd): less destruction, more stability, lower risk on everything you hold.
 9. **The lobbying comes back.** The companies stop spending billions on lobbying that loses money for their own shareholders. That line item returns to you. [Tier 1](../appendix/loving-takeover.qmd).
 10. **The big number.** The [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025], roughly {{< var political_dysfunction_global_opportunity_cost_total >}} a year of recoverable waste, stops being wasted. Some of it becomes your return.
-11. **Your whole net worth rides along.** The one people miss: a larger economy lifts everything you own that tracks it, which dwarfs the return on this one position. [The number you are actually betting](../economics/investment-terms.qmd).
+11. **Your whole net worth rides along.** The one people miss: a larger economy lifts everything you own that tracks it, which dwarfs the return on this one position. [The number you are actually betting](../economics/earth-optimization-fund.qmd).
 12. **Your money stays usable.** Every extra healthy year is a year you can still spend what you saved. [Your money is worthless the day you die](../call-to-action/your-personal-benefits.qmd).
 13. **Nobody skims it.** Money and influence are [disentangled](incentive-alignment-bonds.qmd): no one sits in the middle taking a cut, so more of every gain above reaches you instead of an intermediary.
 
@@ -149,7 +149,7 @@ One downside, capped at "ordinary." Thirteen upsides, compounding on each other 
 
 And there is a fourteenth thing, which is not another channel but the reason the thirteen are not lumpy the way every other investment is. Your Warren Buffett beat your market two-to-one for sixty years and *still* rode a roller-coaster, because he was investing inside a system that periodically robs the table: money-printing booms, disorderly busts, malinvestment, regulatory whiplash, war. Every investor on your planet eats that volatility as if it were weather. It is not weather. It is policy, and policy is a choice. This is the only product on the shelf that proposes to fix the table itself. You are not merely buying a position. You are buying the repair of the casino your entire net worth is already sitting in.
 
-For the exact terms, the share-price formula, the [return ladder, and why this is not Buffett](../economics/investment-terms.qmd), see Investment Terms, including a calculator that lets you set your own probabilities.
+For the exact terms, the launch sequence, the [return ladder, and why this is not Buffett](../economics/earth-optimization-fund.qmd), see the Earth Optimization Fund page, including a calculator that lets you set your own probabilities.
 
 *"I came for the tripled share price. I stayed because my other, unrelated investments also rose, my taxes fell, and I stopped dying. The cross-selling on this product is extraordinary." (Diversified holder, Sector 12)*
 
@@ -163,29 +163,32 @@ The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth
 
 On most planets, these two mechanisms are separate programs run by separate departments that compete for the same budget. On your planet, we wired them together. This is the part that matters.
 
+::: {.diagram}
 ```
-THE LOOP:
+EARTH OPTIMIZATION SERVICES
 
-  Takeover buys shares
-       │
-       ▼
-  Share price rises ──► Returns generated
-       │                      │
-       │                      ▼
-       │               Prize pool grows
-       │                      │
-       │                      ▼
-       │               Prize pays recruiters
-       │                      │
-       │                      ▼
-       │               Recruiters sign voters
-       │                      │
-       │                      ▼
-       │               More awareness ──► More investors
-       │                                      │
-       └──────────────────────────────────────┘
-                    (repeat, faster)
+EOS LLC / sponsor
+ |
+ +-- Earth Optimization Fund
+ |    +-- First: private activist fund
+ |    +-- Later: public active ETF
+ |    +-- If needed: permanent control vehicle
+ |
+ +-- Operating products
+ |    +-- Manual: evidence, citations, arguments
+ |    +-- Optimitron: policy evidence engine
+ |    +-- Wishocracy: public preference and accountability layer
+ |    +-- dFDA / DIH: trial and medical-funding machinery
+ |
+ +-- Deeper mechanisms
+      +-- Loving Takeover: how shareholders take the wheel
+      +-- IABs: later campaign bonds
+      +-- Prize / EOPs: recruitment and conditional-prize system
+      +-- 501(c)(3) / 501(c)(4) / PAC: separated legal layers
 ```
+:::
+
+This is why the Fund comes first. Normal humans can understand it: buy the companies that buy policy, then make the policy less stupid. The other machinery still matters. It just does not need to be printed on the cereal box.
 
 The Takeover generates returns. The returns fund the Prize. The Prize pays people to recruit voters. The voters create awareness. The awareness attracts investors. The investors fund more Takeover. The Takeover generates more returns.
 
@@ -343,7 +346,7 @@ For planets ready for the full upgrade. Each module replaces one agency with an 
 | The [Onboarding Video](../educational-film.qmd) | Orientation film for new Humanity Managers. 3 minutes, 1950s style. Since your whole job is one day a year, this is 0.6% of your annual workload. |
 | [Special Education](special-education.qmd) | Free special education, for everyone, because everyone needs it. The whole manual, taught one-on-one by Wishonia, who walks you through it and checks you understood. When we can afford the compute, we will pay *you* to take it. |
 | The Uniform | "I Am Retarded." Company dress code. Either the funniest or the most honest garment you have ever worn. Either way, people ask about it, which is the point. |
-| The [Earth Optimization Prize](../economics/earth-optimization-prize-fund.qmd) | Employee performance bonuses. Cash prizes for the researchers, organizers, and citizens who contribute most to optimization. Because your species responds to prizes the way dogs respond to treats, and with approximately the same dignity. |
+| The [Earth Optimization Prize](../economics/earth-optimization-prize-treasury.qmd) | Employee performance bonuses. Cash prizes for the researchers, organizers, and citizens who contribute most to optimization. Because your species responds to prizes the way dogs respond to treats, and with approximately the same dignity. |
 | [Catsoline](../appendix/catsoline.qmd) | A feline-actuated propulsion system. Runs your vehicle on a single startled cat at 340% thermal efficiency, no fossil fuel, no patent. We include it because it proves your species can optimize literally anything when sufficiently motivated. Anything except its own government. |
 
 ## Reviews from the Competition
@@ -377,20 +380,26 @@ The good news: every planet that scores above 90% similarity with Moronia and th
 
 Earth Optimization Services is the legal structure your system requires in order to begin. On most planets, you do not need to register a limited liability company to stop people from dying. On yours, you do. So we did.
 
-The people who operate it own no more of it than anyone else. On my planet, building something that belongs to everyone is just called building something. On yours it requires a securities filing and a conversation about incentive structures that I have [provided elsewhere](../economics/investment-terms.qmd) because it is long.
+The people who operate it own no more of it than anyone else. On my planet, building something that belongs to everyone is just called building something. On yours it requires a securities filing and a conversation about incentive structures that I have [provided elsewhere](../economics/earth-optimization-fund.qmd) because it is long.
 
 ## How to Order
 
 **Option 1: Free** (30 seconds)
 [Vote](https://warondisease.org) and share the [20 Questions](../strategy/questions.qmd) with two people. If the average person shares with two people, this reaches half of humanity in 32 rounds. Your 30 seconds have never been this valuable.
 
-**Option 2: $200+** (invest through the fund)
-The fund pools investments to buy military contractor shares and coordinate governance pressure. Your $200 buys voting rights that are aggregated with thousands of other investors into demand letters, proxy proposals, and board campaigns. One person with one share is a letter. Ten thousand people with coordinated shares are a takeover. The [investment terms](../economics/investment-terms.qmd) explain the structure. Your return is share appreciation if the campaign succeeds, normal military contractor stock performance if it does not.
+**Option 2: Put your name on the Earth Optimization Fund list**
 
-**Option 3: $25,000+** (accredited investor)
-Same fund, larger position. The [terms page](../economics/investment-terms.qmd) has a calculator showing expected value at various probability estimates.
+The first money product is the Earth Optimization Fund: a private activist fund that buys shares in companies whose lobbying controls policy, then uses shareholder rights to redirect that lobbying toward median health and median real after-tax income. Do not send money yet. There is nowhere honest to put it. Put your name on the list so the first fund knows how many papers are waiting.
 
-All three produce the same outcome at different speeds.
+**Option 3: Private fund, then public ETF**
+
+First comes a private activist fund for people your laws allow to buy early risky things. Later comes a public active ETF if the strategy proves it can handle public-fund rules. A mutual fund is the familiar picture; the traded public version is an ETF. The [Earth Optimization Fund](../economics/earth-optimization-fund.qmd) page has the ladder and the calculator.
+
+**Option 4: Side paths**
+
+If you are impatient, the [Loving Takeover](../appendix/loving-takeover.qmd) and [demand letter](../appendix/lawsuit.qmd) show the direct-shareholder route. That is for plaintiffs and volunteers. The Fund is the thing normal investors can understand without developing a hobby in corporate procedure.
+
+All four point at the same outcome. Only the Fund is the money product on the sign.
 
 The guarantee: full refund if the world ends more than once.
 

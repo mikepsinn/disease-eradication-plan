@@ -1,19 +1,19 @@
 ---
-title: The Earth Optimization Prize Fund
-subtitle: The pool of money that funds curing diseases whether the treaty passes or not
-description: The PRIZE pool is not a jar of money on a shelf. It is an investment fund. It buys the companies that cure diseases and raise incomes. If the treaty passes, the pool goes to the voters. If not, the depositors split the pool, and the pool has been compounding the whole time.
+title: The Earth Optimization Prize Treasury
+subtitle: The optional prize pool, separate from the Earth Optimization Fund
+description: "The PRIZE pool is not the Earth Optimization Fund. It is a separate treasury for a conditional prize: if the targets are met, the pool pays Earth Optimization Points holders; if not, depositors split the realized pool."
 abstract: |
   Listen.
 
   99% of humans are legally banned from the best-performing asset class. It is called venture capital. It makes about {{< var venture_gross_return >}} a year [@cambridge-pe-vc-benchmark-2024]. Your retirement fund makes {{< var conventional_retirement_return >}} after fees. The gap is not skill. It is a door marked "accredited investors only." Your government decided only rich people are smart enough to invest in things that make money. This is called investor protection. It has protected you from having money. Thank you.
 
-  The Prize Fund walks through the door. Not to beat your 401(k) by a few percent. To take {{< var global_retirement_assets >}} of retirement money your species has trapped in index funds and point it at the companies that cure diseases and raise incomes. And away from the ones billing $400 for a hammer.
+  The Prize Treasury walks through the door. Not to beat your 401(k) by a few percent. To take {{< var global_retirement_assets >}} of retirement money your species has trapped in index funds and point it at the companies that cure diseases and raise incomes. And away from the ones billing $400 for a hammer.
 
-  There is a game attached. You put money in the pool. You vote for a 1% treaty that sends 1% of military spending to medical research. If the treaty passes and people live longer and earn more by {{< var destructive_economy_50pct_year >}}, the pool goes to the voters. You get a world with fewer diseases. If it fails, you get the pool back, which has been compounding, at a multiple of {{< var prize_pool_horizon_multiple >}}. Your retirement account makes {{< var conventional_retirement_horizon_multiple >}} over the same period.
+  There is a game attached. You put money in the pool. You vote for a 1% treaty that sends 1% of military spending to medical research. If the treaty passes and people live longer and earn more by {{< var destructive_economy_50pct_year >}}, the pool goes to the voters. You get a world with fewer diseases. If it fails, depositors split the realized pool, which is modeled at a multiple of {{< var prize_pool_horizon_multiple >}}. Your retirement account makes {{< var conventional_retirement_horizon_multiple >}} over the same period.
 
-  Either way, you come out ahead. That is the whole thing. People keep asking what the catch is. There is no catch. That is the catch.
+  This is not principal protection. It is an optional conditional prize deposit with real drawdown, custody, legal, and oracle risk. The catch is that the label "prize" does not repeal securities law. Very rude of securities law, but consistent.
 
-  This is not a money-market account. The fund holds real companies. They go up and they go down. The 15-year lockup is there so depositors do not panic-sell at the bottom, which is the main thing that ruins normal investors.
+  This is not a money-market account. The treasury holds real companies. They go up and they go down. The 15-year lockup is there so depositors do not panic-sell at the bottom, which is the main thing that ruins normal investors.
 published: true
 tags:
   - economics
@@ -26,6 +26,7 @@ podcast-image: /assets/podcast/wishocratic-investment-fund-podcast.jpg
 youtube-thumbnail: /assets/podcast/wishocratic-investment-fund-youtube.jpg
 aliases:
   - /knowledge/economics/wishocratic-investment-fund.html
+  - /knowledge/economics/earth-optimization-prize-fund.html
 scores:
   quality: 5
   value: 5
@@ -39,14 +40,14 @@ image: /assets/og-images/knowledge/economics/earth-optimization-prize-fund-og-bw
 {{< include ../includes/setup-parameters.qmd >}}
 
 ::: {.callout-note}
-## This is an optional EOS instrument, not the main way to invest in EOS
+## This is an optional EOS instrument, not the Earth Optimization Fund
 
-If you want to own the company and make money when it wins, that is [EOS shares](investment-terms.qmd): money in, more money out. The Prize deposit described here is the opposite shape. You fund the pool; if the treaty fails you are refunded (at a multiple); if it succeeds you forfeit your principal to the people who won it and you get the world instead. It is a conditional bet for people who would rather have the outcome than the money, and a deposit is a security, offered as one (see [the regulatory section](#v1-bootstrap)). One tool in the kit, not the front door.
+If you want the main investor product, that is the [Earth Optimization Fund](earth-optimization-fund.qmd): money in, portfolio exposure out. The Prize deposit described here is the opposite shape. You fund the pool; if the targets fail, depositors split the realized pool; if the targets succeed, your principal funds the people who won it and you get the world instead. It is a conditional bet for people who would rather have the outcome than the money, and a deposit is a security, offered as one (see [the regulatory section](#v1-bootstrap)). One tool in the kit, not the front door.
 :::
 
-## What the Fund Does
+## What the Prize Treasury Does
 
-The prize pool is not a jar of money on a shelf. It is an investment fund. It has three jobs.
+The prize pool is not a jar of money on a shelf. It is a pooled treasury. It has three jobs.
 
 One. Make money.
 
@@ -56,7 +57,7 @@ Three. Stop paying for the opposite. Stop paying for the companies whose main pr
 
 Your index fund rewards market cap. Market cap rewards incumbency. Incumbency rewards lobbying. Productivity is optional. The crowd, given pairwise sliders and no lobbyists, points the money somewhere else.
 
-This is a 15-year bet. It has downside. If you need principal protection, use [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]. That is what IABs are for. This chapter is for skeptics.
+This is a 15-year bet. It has downside. If you need principal protection, do not use this instrument. [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are a later campaign-financing security with their own risk, not a magic savings account.
 
 ## Why Venture
 
@@ -169,11 +170,11 @@ Even the most boring row pays about four times in. The aggressive rows pay ten t
 
 Build a barbell. Four slices. Let the crowd rebalance it.
 
-The fund's job is not to maximize returns. The fund's job is to survive long enough to pay out. Survival means no single bad year kills the referendum. Plan everything around that.
+The treasury's job is not to maximize returns. The treasury's job is to survive long enough to pay out. Survival means no single bad year kills the referendum. Plan everything around that.
 
-**Slice 1, Boring (60% of the pool).** Buy VCX on the New York Stock Exchange. Wrap it in a claim token so depositors on Base get an on-chain receipt. Ship this in 3 to 6 months. Do not rebuild the portfolio. VCX already holds OpenAI, Anthropic, Databricks, SpaceX, Anduril, and Ramp. Wrap it and move on. Budget 9 to 11% a year net, about 4× over 15 years. No legislation needed. No headline risk.
+**Slice 1, Boring (60% of the pool).** Buy VCX on the New York Stock Exchange. Give depositors a custodial receipt and public dashboard entry. Ship this in 3 to 6 months. Do not rebuild the portfolio. VCX already holds OpenAI, Anthropic, Databricks, SpaceX, Anduril, and Ramp. Budget 9 to 11% a year net, about 4x over 15 years. No legislation needed. No token headline risk.
 
-**Slice 2, Tokenized (20%).** Stand up a Reg D fund on Securitize. Real per-deal voting. Tokenized shares. On-chain accounting. Budget 0.5 to 1% in fees. At launch this is accredited-only; it opens to everyone if the INVEST Act passes. Expect 12 to 14% a year, about 6× over 15 years. This is the slice where the crowd actually gets tested.
+**Slice 2, Private/Tokenized (20%).** Stand up a Reg D fund on a compliant platform only if the compliance path is cleaner than a normal private fund. Tokenized shares are securities when they are securities; the chain does not baptize them into toys. Budget 0.5 to 1% in fees. At launch this is accredited-only; broader access depends on actual law, not vibes. Expect 12 to 14% a year, about 6x over 15 years. This is the slice where the crowd actually gets tested.
 
 **Slice 3, Frontier (10%).** Buy pre-IPO shares in Anthropic, SpaceX, and OpenAI through the Securitize shell. Expect 10 to 18× over 15 years if the cohort holds. Keep it at 10%. A 70% drop in this slice becomes a 7% bruise to the pool, not a dead fund. Do not go above 10% even if the crowd wants to. This is the one sleeve where you overrule the vote.
 
@@ -182,7 +183,7 @@ The fund's job is not to maximize returns. The fund's job is to survive long eno
 Do not do these things.
 
 - **Do not use leverage.** The math looks beautiful until a crash prints "PRIZE FUND DOWN 60%" at the exact moment the referendum needs credibility. Leverage is the enemy of survival.
-- **Do not hold crypto tokens.** The moment the fund holds anything called a "token," every government the referendum needs to reach writes the project off. Politically radioactive regardless of returns.
+- **Do not hold speculative crypto tokens.** The moment the treasury holds anything that reads like casino crypto, every government the referendum needs to reach writes the project off. Politically radioactive regardless of returns.
 - **Do not build your own SEC-registered fund from scratch at launch.** It takes 1 to 2 years and $2 to $5 million before it holds a dollar. By then the referendum is over. Wait until the pool is big enough to absorb the fixed cost, then revisit.
 
 **What to let the crowd vote on.** Not individual companies. Asking a crowd to find the next Stripe in a pairwise slider is the same power-law error described above. Let the crowd vote on:
@@ -197,14 +198,16 @@ The Boring slice passes through VCX unchanged. Fundrise picked the companies. Th
 
 **Timeline.**
 
-- **Months 0–6.** Ship Boring and Ballast. 80% of the pool is already compounding. Configure the prize contract on Base to accept deposits and route capital to the two live slices. (Earth Optimization Points are earned through verified-voter recruitment, not minted by deposits.)
+- **Months 0-6.** Ship Boring and Ballast. 80% of the pool is already compounding. Configure the deposit contract, custodian, or portal to accept deposits and route capital to the two live slices. (Earth Optimization Points are earned through verified-voter recruitment, not minted by deposits.)
 - **Months 6–18.** Launch the Tokenized slice on Securitize. Accredited depositors get the full mix. Everyone else gets Boring and Ballast until the law changes.
 - **Months 12–24.** Open the Frontier slice.
-- **Year 2 and beyond.** If the INVEST Act passes, open the full mix to everyone. If it does not, the Tokenized and Frontier slices stay accredited-only indefinitely. The pool still works.
+- **Year 2 and beyond.** If enacted investor-access reforms broaden eligibility, open the full mix to more people. If they do not, the private and frontier slices stay accredited-only indefinitely. The pool still works.
 
 That is the launch configuration.
 
 **What it pays.** The barbell nets about 12 to 13% gross a year at about 1% blended fees. About 5 to 6× over 15 years. Higher than Boring alone at 4×. Lower than the canonical {{< var prize_pool_horizon_multiple >}} headline, which assumes top-quartile access and a fully-grown Tokenized slice. The canonical is the target. The barbell is where you start. The crowd moves the mix between them as the pool grows.
+
+<a id="v1-bootstrap"></a>
 
 ## V1 Bootstrap {#v1-bootstrap}
 
@@ -212,7 +215,7 @@ Most novel mechanisms wait for an institutional host that never arrives. This on
 
 The first host's job is to start the broadcast, not to own the network. Later hosts fork additional pool instances using the protocol spec; custody transfers preserve all existing deposit terms.
 
-**The 2026 regulatory environment makes a clean, compliant launch cheaper than ever, but the deposit is a security and is offered as one.** A deposit that refunds at a multiple on the failure branch carries an expectation of profit from a pooled, managed investment. Dressing it as a "charitable gift" to place it outside securities law is exactly the kind of label-engineering that does not survive contact with a regulator, so do not. Offer the deposit through a real exemption: Reg CF is the cheapest and earliest on-ramp for ordinary depositors (portal-based, Form C), Reg A+ Tier 2 scales it ($75M a year, non-accredited allowed), Reg D 506(c) covers accredited capital with no cap. Earth Optimization Points are a separate layer and are not a security: they are earned through verified-voter recruitment, cannot be bought, and cannot be traded, which keeps them on the rewards-program side of the line (like frequent-flyer miles) rather than the investment side. FinCEN's AML/CFT program requirement for investment advisers is delayed to January 1, 2028, which lowers the compliance burden during the launch window. State-level money-transmitter rules (NY DFS, CA DFPI) still need a per-state opinion before accepting deposits in those jurisdictions. The goal is a launch that is honest about what each piece is, not one that hopes a wrapper hides it.
+**The 2026 regulatory environment is friendlier, but the deposit is still a security and is offered as one.** A deposit that refunds at a multiple on the failure branch carries an expectation of profit from a pooled, managed investment. Dressing it as a "charitable gift" to place it outside securities law is exactly the kind of label-engineering that does not survive contact with a regulator, so do not. Offer the deposit through a real exemption: [Reg CF](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation-crowdfunding) is the cheapest ordinary-depositor on-ramp, [Reg A](https://www.sec.gov/resources-small-businesses/exempt-offerings/regulation) Tier 2 scales to $75M in a 12-month period, and [Reg D 506(c)](https://www.sec.gov/resources-small-businesses/exempt-offerings/general-solicitation-rule-506c) covers verified accredited capital with no offering cap. Earth Optimization Points are a separate layer: they are earned through verified-voter recruitment, cannot be bought, and cannot be traded. That supports rewards-program treatment, but it is a facts-and-circumstances conclusion, not a magic word. FinCEN delayed the investment-adviser AML/CFT effective date to January 1, 2028 ([FinCEN](https://www.fincen.gov/news/news-releases/fincen-issues-final-rule-postpone-effective-date-investment-adviser-rule-2028)). State money-transmitter rules still need jurisdiction-by-jurisdiction treatment before accepting deposits. The goal is a launch that is honest about what each piece is, not one that hopes a wrapper hides it.
 
 ### Three things gate the first deposit
 
@@ -229,14 +232,14 @@ This is the v1 assurance contract content in plain language. The attorney-review
 | **What you deposit** | USD, USDC, or BTC. Custodian converts to the published allocation policy on receipt. |
 | **Minimum deposit** | $100 (v1; can rise as the pool grows and the operation matures). |
 | **Lockup** | Until {{< var destructive_economy_50pct_year >}} or the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) terminal general-welfare metric oracle triggers release, whichever comes first. |
-| **Allocation during lockup** | Per the published [Prize Fund allocation policy](#what-the-fund-does) (Boring + Ballast at launch; Tokenized and Frontier slices added per timeline). |
+| **Allocation during lockup** | Per the published [Prize Treasury allocation policy](#what-the-prize-treasury-does) (Boring + Ballast at launch; private and frontier slices added per timeline). |
 | **Earth Optimization Points** | You earn Earth Optimization Points by recruiting verified treaty-register signups through your referral link, not by depositing. Deposits do not buy points; points are earned, never bought. (See [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) for the recruitment mechanism.) |
 | **Success branch** | If the Scoreboard targets are hit, your principal routes pro-rata to all Earth Optimization Points holders. You do not get your money back; you get the world that the pool produced. |
 | **Failure branch** | If the targets are not hit by {{< var destructive_economy_50pct_year >}}, depositors split the realized pool pro-rata. Modeled return: {{< var prize_pool_horizon_multiple >}} of deposit at 15 years. |
 | **Beneficiary** | You designate one at deposit; update any time before death. Your deposit claim transfers by inheritance per the [protocol spec](../appendix/earth-optimization-prize-protocol.qmd). |
 | **Transparency** | Every deposit, every wire, every custody balance published on the public dashboard. |
 | **Custody transfer** | If the v1 host transfers custody to a larger institution, deposits transfer with the same terms. No new paperwork. |
-| **What can go wrong** | (a) The custodian fails (mitigated: regulated custodian + segregated client funds). (b) The Prize Fund allocation underperforms (mitigated: failure-branch refund still beats a conventional retirement account at the modeled rate). (c) The terminal general-welfare metric oracle is gamed (mitigated: Optimitron five-source design, public adversarial-challenge window). |
+| **What can go wrong** | (a) The custodian fails (mitigated: regulated custodian + segregated client funds). (b) The Prize Treasury allocation underperforms (mitigated: long lockup and diversification, not magic). (c) The terminal general-welfare metric oracle is gamed (mitigated: Optimitron five-source design, public adversarial-challenge window). |
 
 ### Public dashboard spec
 
@@ -251,7 +254,7 @@ The dashboard at warondisease.org shows, updated in real time:
 - **Earth Optimization Points ledger.** Total points earned, points per major referrer (opt-in display), projected per-point payout if targets are hit.
 - **Audit log.** Every change to deposit terms, every custodian action, every dashboard edit, timestamped and signed.
 
-The dashboard does the credibility work. An institution evaluating the fund inspects the dashboard, not a marketing deck.
+The dashboard does the credibility work. An institution evaluating the treasury inspects the dashboard, not a marketing deck.
 
 ### V1 size cap
 
@@ -278,19 +281,19 @@ Plan for each of these. Do not let a depositor discover any of them from a press
 1. **One window.** You get one 15-year vintage. Historical venture returns range from minus 5% to plus 25% a year depending on the starting year. One shot. Build the pool assuming the vintage could be bad.
 2. **Drawdowns.** The aggressive slices can mark down 40 to 70% in a bad year. Depositors will see these marks on-chain in real time. Prepare the messaging before the mark, not after. The 15-year lockup stops panic-selling at the bottom, which is the main thing that ruins normal investors.
 3. **Fundrise risk.** VCX is Fundrise's picks. If they are wrong, the Boring slice is wrong with them. VCX has no long track record. Monitor their deal flow. Be ready to move the Boring slice to an alternative if Fundrise's selection visibly degrades.
-4. **Legislative risk.** The INVEST Act might die in committee. If it does, Tokenized and Frontier stay accredited-only indefinitely. Boring and Ballast still work for everyone. Write the depositor-facing copy so nothing assumes the bill passes.
-5. **Tokenized discount.** On-chain venture stakes can trade 30 to 60% below their real value in stressed markets. VCX itself trades at a discount to NAV regularly. Do not let depositors confuse the secondary-market price with the fund's underlying value.
+4. **Legislative risk.** Investor-access bills might pass, stall, change, or die. If they do not become law, private and frontier slices stay accredited-only indefinitely. Boring and Ballast still work for everyone. Write the depositor-facing copy so nothing assumes a bill passes.
+5. **Tokenized/private-market discount.** On-chain or private-market venture stakes can trade 30 to 60% below their real value in stressed markets. VCX itself trades at a discount to NAV regularly. Do not let depositors confuse the secondary-market price with the fund's underlying value.
 6. **Stacked fees.** If you pick the fund-of-funds option, the wrapper fee plus each underlying fund's 2-and-20 will quietly eat the returns. Model the stack before you commit.
 7. **Crowd goes wrong.** If the crowd is wrong at the sector level for three to five years in a row (overweighting crypto in 2021, say), the fund underperforms a dumb index. Shorten the rebalance cadence before you argue with the outcome.
 8. **Breakeven shift.** At a 6× failure payout instead of 11×, the dominant-assurance math still works, but the breakeven probability rises from 0.67% to about 1.3%. Still a winning bet for any referendum with real traction. The number just moves. Quote the new one.
 
-A 40% mark in year 5 is survivable. The fund recovers by year 15. The failure case still pays. Depositors who cannot tolerate a year-5 mark should be routed to IABs instead.
+A 40% mark in year 5 may be survivable if the treasury recovers by year 15. It is not guaranteed. Depositors who cannot tolerate a year-5 mark should not make Prize deposits.
 
 ## The Short Position Problem
 
 Capital providers get 4 to 25× on treaty failure and zero on success. Earth Optimization Points holders get paid on success. So a pure depositor, looked at narrowly, would rather the referendum lose. A short position on your own mission.
 
-Two things defuse it. First, depositors hold no lever to cause failure. Governance is the vote, which belongs to all humanity, one per person, and cannot be bought; the campaign's power comes from the vote count, the redirected lobbying, and [EOS shares](investment-terms.qmd), none of which a depositor controls. The short position is a private preference with no mechanism behind it. Second, the deposit selects for mission-alignment: you put money in precisely because you would rather have the world than the refund, and the refund is the consolation, not the goal.
+Two things defuse it. First, depositors hold no lever to cause failure. Governance is the vote, which belongs to all humanity, one per person, and cannot be bought; the campaign's power comes from the vote count, the redirected lobbying, and the [Earth Optimization Fund](earth-optimization-fund.qmd), none of which a depositor controls. The short position is a private preference with no mechanism behind it. Second, the deposit selects for mission-alignment: you put money in precisely because you would rather have the world than the refund, and the refund is the consolation, not the goal.
 
 Note what we do not do: we do not mint points for depositing. Points are earned through action, never bought with money, because the moment money buys points the points become a purchasable security and the wall between votes and money starts to crack. The old version of this fix (every dollar deposited mints voting points) is therefore retired. A depositor who wants success-side upside earns it the way everyone else does, by recruiting voters.
 
@@ -298,37 +301,36 @@ Note what we do not do: we do not mint points for depositing. Points are earned 
 
 Track these. Your launch plan depends on which ones land.
 
-- **INVEST Act** (H.R. 9459, passed the House in December 2025 by a bipartisan vote). Expands the accredited-investor definition to cover professional licenses, education, and an SEC-administered exam. Removes some restrictions on closed-end funds holding private funds, which directly helps structures B, C, G, and J.
-- **Fair Investment Opportunities for Professional Experts Act** (H.R. 3394, passed 397 to 12). License- and education-based accreditation.
-- **Equal Opportunity for All Investors Act.** An SEC exam pathway to accredited status with no wealth test.
-- **DTC digital-twin program** (2026). On-chain versions of SEC-registered securities, which lowers the transfer-agent cost for tokenized shells.
-- **Securitize, Ondo, Superstate.** Operating SEC-registered tokenized funds today. Talk to them before you design anything tokenized from scratch.
-- **SEC Interpretive Release on crypto assets** ([March 17, 2026](https://www.sec.gov/files/rules/interp/2026/33-11412.pdf)). The Atkins-era SEC's five-token taxonomy puts utility-like tokens outside "digital security" status. A proposed Token Safe Harbor would add startup ($5M) and fundraising ($75M) exemptions. Interpretive guidance is faster than legislation and can already be relied on, but is reversible by a future SEC chair. Most relevant to structure G (Securitize tokenized) and to confirming that the earned, non-tradeable Earth Optimization Points layer sits outside "digital security" status.
-- **FinCEN AML/CFT delay for investment advisers** (now January 1, 2028). Reduces the compliance burden for structures B, C, F, G, and J during the launch window.
+- **INVEST Act** ([H.R. 3383](https://rules.house.gov/bill/119/hr-3383), House-passed in December 2025). Treat it as pending legislation unless enacted. Do not write depositor copy as if it is already law.
+- **Fair Investment Opportunities for Professional Experts Act** (H.R. 3394, House-passed 397 to 12 according to the [House Financial Services Committee](https://financialservices.house.gov/news/documentsingle.aspx?DocumentID=410775)). License- and education-based accreditation, if enacted.
+- **Equal Opportunity for All Investors Act** (H.R. 3339, House-passed and awaiting Senate consideration according to [Rep. Flood](https://flood.house.gov/media/press-releases/congressman-flood-applauds-house-passage-his-bipartisan-equal-opportunity-all)). Exam pathway to accredited status, if enacted.
+- **Securitize, Ondo, Superstate, and similar platforms.** Operating tokenized or on-chain securities infrastructure exists, but tokenized securities remain securities. Talk to existing platforms before designing anything tokenized from scratch.
+- **SEC Interpretive Release on crypto assets** ([March 17, 2026](https://www.sec.gov/files/rules/interp/2026/33-11412.pdf)). The release gives a taxonomy for crypto assets and transactions. It does not mean a tokenized security stops being a security, and it does not turn an investment contract into a rewards program. Most relevant here: earned, non-tradeable Earth Optimization Points are designed to avoid investment-contract facts, but the deposit remains a security.
+- **FinCEN AML/CFT delay for investment advisers** (now January 1, 2028, [FinCEN](https://www.fincen.gov/news/news-releases/fincen-issues-final-rule-postpone-effective-date-investment-adviser-rule-2028)). This reduces near-term setup pressure. It does not eliminate AML/KYC, sanctions, fraud, custody, or state-law obligations.
 
-Structures A and I need none of these to launch. Structures B, C, and H get cheaper and broader if the INVEST Act passes. Structures G and J get cheaper and broader on multiple of these landing. Plan for both the pass and the fail case on legislation; the interpretive guidance is already in effect.
+Structures A and I need none of these bills to launch. Private slices get cheaper and broader only if legislation actually becomes law. Plan for both the pass and fail case; do not build the product on a statute that does not exist yet.
 
 ## Prize Deposit vs Shares vs IAB vs Retirement
 
-If the prize fails, your deposit comes back at 4 to 25× what you put in, depending on which strategy the fund targets. Your retirement account makes {{< var conventional_retirement_horizon_multiple >}} over the same period. If the prize succeeds, your deposit goes to the voters, and you live in a world {{< var treaty_personal_upside_blend >}} richer per person. The deposit is the one instrument here that pays nothing on success, by design; if you want to make money *when the treaty wins*, that is [EOS shares](investment-terms.qmd), shown in the table below for contrast.
+If the prize fails, depositors split the realized pool, modeled at 4x to 25x depending on which strategy the treasury targets. That is a model, not a promise. Your retirement account makes {{< var conventional_retirement_horizon_multiple >}} over the same period. If the prize succeeds, your deposit goes to the voters, and you live in a world {{< var treaty_personal_upside_blend >}} richer per person. The deposit is the one instrument here that pays nothing on success, by design; if you want to make money *when the treaty wins*, that is the [Earth Optimization Fund](earth-optimization-fund.qmd), shown in the table below for contrast.
 
 Your species has a law called ERISA. It requires the people managing your retirement money to act in your interest, not theirs. A fiduciary cannot put your retirement money into a fund whose best-case outcome means the money goes to someone else. So this is not a retirement account.
 
 | Instrument | Success | Failure | Retirement-compatible? |
 |:---|:---|:---|:---|
-| **[EOS shares](investment-terms.qmd)** | Share appreciation (you make money when it wins) | Hold military contractor stocks at about market, fee-free | Yes |
-| **Prize deposit** | Pool routes to Earth Optimization Points holders (deposit forfeited) | 4× – 25× depending on strategy | No |
+| **[Earth Optimization Fund](earth-optimization-fund.qmd)** | Portfolio appreciation (you make money when it wins) | Concentrated public-company exposure, with normal drawdown risk | Potentially, depending on final vehicle |
+| **Prize deposit** | Pool routes to Earth Optimization Points holders (deposit forfeited) | Modeled 4x-25x depending on strategy, not guaranteed | No |
 | **[IAB](../solution/incentive-alignment-bonds.qmd)** | {{< var victory_bond_annual_return_pct >}} perpetual revenue share | Principal at risk | Yes |
 | **Conventional retirement** | {{< var conventional_retirement_horizon_multiple >}} over 15 years | Same | Yes |
 
-If your retirement account wants exposure to the treaty succeeding, [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are the instrument. Standard securities. Nothing exotic. If you want skin in the game and you can tolerate drawdowns, PRIZE is the instrument. A conditional bet on civilization with a very attractive consolation prize.
+If your retirement account wants exposure to the treaty succeeding, the cleanest future public vehicle is the Earth Optimization Fund as an active ETF. [IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] are later campaign-financing securities. If you want skin in the game and can tolerate the weird success/failure payoff, PRIZE is the instrument. A conditional bet on civilization with an attractive modeled consolation prize.
 
 ## The Self-Fulfilling Property
 
-A normal investment fund bets on which companies will succeed. The Prize Fund puts money into companies that cure diseases, build infrastructure, and raise incomes. Those are the prize targets.
+A normal investment fund bets on which companies will succeed. The Prize Treasury puts money into companies that cure diseases, build infrastructure, and raise incomes. Those are the prize targets.
 
-Allocate well, the targets get hit, the pool goes to the voters. Allocate badly, the fund still compounds and the depositors split it.
+Allocate well, the targets get hit, the pool goes to the voters. Allocate badly, the treasury still compounds or declines, and the depositors split what exists.
 
 Someone will call this circular. It is not. It is a loop. Deposit. Allocate. The world improves. You get paid.
 
-The objection assumes the fund sits there passively. The fund is the largest active capital allocator in human history, pointed at two numbers everyone agrees on.
+The objection assumes the treasury sits there passively. The treasury is an active capital allocator pointed at two numbers everyone agrees on.

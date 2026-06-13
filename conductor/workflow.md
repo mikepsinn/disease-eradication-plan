@@ -76,7 +76,7 @@ To regenerate all derived artifacts (variables, citations, charts):
    ```python
    FOUNDATION_FUNDING_REALISTIC = Parameter(
        519_000_000, unit="USD",
-       source_ref="/knowledge/appendix/fundraising-strategy.qmd#...",
+       source_ref="/knowledge/appendix/campaign-financing-roadmap.qmd#...",
        description="Nonprofit foundation funding in realistic scenario"
    )
    ```
