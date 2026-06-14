@@ -84,11 +84,21 @@ The cap table principle in one breath: money can buy exposure to EOS. Money cann
 
 The private phase prices EOS equity on two things: the portfolio assets EOS owns and the probability-weighted value of the governance campaign succeeding. The public phase is simpler: shares trade around observable market value.
 
+**The floor is the portfolio.** EOS holds publicly traded stocks with prices you can look up any day. At minimum, EOS shares are worth the net asset value (NAV) of those holdings, the same way you can rough-price a Berkshire Hathaway share by adding up what Berkshire owns. The campaign optionality sits on top of that floor. As campaigns succeed, the market prices in the probability of the strategy working and EOS shares trade at a premium above NAV. Early investors buy at a premium near zero, before anything is proven. That is the discount.
+
 The speculative early claim is your fractional exposure to the probability-weighted value of optimizing Earth. The formula:
 
 $$\text{price per share} = \frac{P(I) \times V}{\text{total shares}}$$
 
-**V** is the total addressable value EOS can capture: the NPV of the fraction of the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] that flows to EOS shareholders through portfolio appreciation. Nordhaus (2004) found innovators capture roughly 2.2% of the social value they create; for activist governance (where the capture mechanism is portfolio appreciation, not competitive product pricing) this is likely a floor. At the base case: $101T/yr dysfunction tax × 2.2% capture × perpetuity at 3% discount rate ≈ **{{< var eos_equity_value_v >}}**. Expand the tree below to adjust any assumption.
+**V** is the total addressable value EOS can capture: the NPV of the fraction of the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] that flows to EOS shareholders through portfolio appreciation. The base case uses Nordhaus (2004), who found innovators capture roughly 2.2% of the social value they create. That is not a law of physics. It is the benchmark.
+
+A governance product can capture less than that because some benefits are public goods: fewer wars, cheaper cures, lower tax drag, less policy volatility. Those benefits spill into the whole economy whether or not EOS owns every pipe they flow through.
+
+But the leakage is not wasted from an investor's point of view. A diversified investor already owns a slice of the economy EOS is trying to repair. If EOS makes the economy larger, safer, and less stupid, the "uncaptured" surplus still shows up in the investor's other assets. The EOS share is the lever. The balance sheet is the larger bet.
+
+EOS can also capture more than the ordinary innovator benchmark because the thesis is tradable before it is obvious. EOS can buy the constrained assets first. If copycat funds arrive later and buy the same defense, pharma, finance, and energy shares, that demand validates the thesis and reprices assets EOS already owns. Normal competitors take margin. Early EOS competitors may create demand for the inventory.
+
+At the base case: $101T/yr dysfunction tax × 2.2% capture × perpetuity at 3% discount rate ≈ **{{< var eos_equity_value_v >}}**. Expand the tree below to adjust any assumption.
 
 Product revenue, consulting, board comp, platform subscriptions, does not enter V. It funds operations. V is what happens to the portfolio if the campaign works.
 
@@ -112,11 +122,249 @@ This means no single person, not Mike, not the attorneys, not the lead investor,
 
 **Why early money earns more.** The early dollar funds the first campaign when P is lowest and each win moves it most. And it is the social proof every later dollar waits for. You bought probability while it was cheap, and your buying is part of what made it expensive. The discount is not a promotion; it is the market's measure of how much conviction the purchase required.
 
+### First-tranche bid calculator
+
+This is deliberately not a new parameter factory. The shared valuation comes from the generated model. The investor-specific assumptions stay local: your check size, your bid, dilution, recovery, and the stage probabilities you actually believe.
+
+::: {.content-visible when-format="html"}
+
+```{ojs}
+//| echo: false
+viewof eosBidInvestment = Inputs.range([10000, 5000000], {value: 25000, step: 5000, label: "Investment amount ($)"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosBidPostMoney = Inputs.range([5000000, 1000000000], {value: 50000000, step: 5000000, label: "Tranche 1 post-money valuation ($)"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosBidFutureDilutionPct = Inputs.range([0, 90], {value: 50, step: 5, label: "Future dilution before exit (%)"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosBidFailureRecovery = Inputs.range([0, 1], {value: 0.25, step: 0.05, label: "Failure recovery multiple"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosBidRequiredMultiple = Inputs.range([1, 100], {value: 10, step: 1, label: "Required expected multiple"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosBidNetWorth = Inputs.range([100000, 100000000], {value: 10000000, step: 100000, label: "Liquid net worth / portfolio ($)"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosBidRiskBudgetPct = Inputs.range([0.1, 5], {value: 0.5, step: 0.1, label: "Max loss budget (% of portfolio)"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosBidPStage1 = Inputs.range([0, 20], {value: 1, step: 0.1, label: "Probability Stage 1 works (%)"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosBidPStage2Given1 = Inputs.range([0, 100], {value: 25, step: 1, label: "If Stage 1 works, probability of Stage 2 (%)"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosBidPStage3Given2 = Inputs.range([0, 100], {value: 10, step: 1, label: "If Stage 2 works, probability of Stage 3 (%)"})
+```
+
+```{ojs}
+//| echo: false
+viewof eosBidPFullGiven3 = Inputs.range([0, 100], {value: 5, step: 1, label: "If Stage 3 works, probability of full EOS value (%)"})
+```
+
+```{ojs}
+//| echo: false
+function eosBidMoney(v) {
+  if (!Number.isFinite(v)) return "not bounded";
+  const abs = Math.abs(v);
+  const sign = v < 0 ? "-" : "";
+  if (abs >= 1e12) return `${sign}$${(abs / 1e12).toFixed(abs >= 100e12 ? 0 : 1)}T`;
+  if (abs >= 1e9) return `${sign}$${(abs / 1e9).toFixed(abs >= 100e9 ? 0 : 1)}B`;
+  if (abs >= 1e6) return `${sign}$${(abs / 1e6).toFixed(abs >= 100e6 ? 0 : 1)}M`;
+  return new Intl.NumberFormat("en-US", {style: "currency", currency: "USD", maximumFractionDigits: 0}).format(v);
+}
+```
+
+```{ojs}
+//| echo: false
+function eosBidPct(p) {
+  if (!Number.isFinite(p)) return "n/a";
+  return `${(p * 100).toFixed(p < 0.001 ? 4 : p < 0.01 ? 3 : p < 0.1 ? 2 : 1)}%`;
+}
+```
+
+```{ojs}
+//| echo: false
+function eosBidOneIn(p) {
+  if (!Number.isFinite(p) || p <= 0) return "not priced";
+  const n = 1 / p;
+  if (n >= 1e9) return `1 in ${(n / 1e9).toFixed(1)}B`;
+  if (n >= 1e6) return `1 in ${(n / 1e6).toFixed(1)}M`;
+  if (n >= 1000) return `1 in ${Math.round(n / 1000).toLocaleString()}K`;
+  return `1 in ${Math.round(n).toLocaleString()}`;
+}
+```
+
+```{ojs}
+//| echo: false
+function eosBidQuantile(rows, q) {
+  let cumulative = 0;
+  const sorted = [...rows].sort((a, b) => a.payout - b.payout);
+  for (const row of sorted) {
+    cumulative += row.p;
+    if (cumulative >= q) return row.payout;
+  }
+  return sorted[sorted.length - 1].payout;
+}
+```
+
+```{ojs}
+//| echo: false
+eosBidModel = {
+  const investment = eosBidInvestment;
+  const postMoney = eosBidPostMoney;
+  const dilution = eosBidFutureDilutionPct / 100;
+  const recovery = eosBidFailureRecovery;
+  const requiredMultiple = eosBidRequiredMultiple;
+  const p1 = eosBidPStage1 / 100;
+  const p2 = eosBidPStage2Given1 / 100;
+  const p3 = eosBidPStage3Given2 / 100;
+  const p4 = eosBidPFullGiven3 / 100;
+  const terminalFailure = 1 - p1;
+  const terminalStage1 = p1 * (1 - p2);
+  const terminalStage2 = p1 * p2 * (1 - p3);
+  const terminalStage3 = p1 * p2 * p3 * (1 - p4);
+  const terminalFull = p1 * p2 * p3 * p4;
+  const afterDilutionOwnership = (investment / postMoney) * (1 - dilution);
+  const fullValue = paramData["EOS_EQUITY_VALUE_V"].value;
+  const stageValues = {
+    stage1: paramData["EOS_STAGE_1_HII_MODELED_VALUE"].value,
+    stage2: paramData["EOS_STAGE_2_DEFENSE_PRIMES_MODELED_VALUE"].value,
+    stage3: paramData["EOS_STAGE_3_LOBBYING_SECTORS_MODELED_VALUE"].value,
+    full: fullValue
+  };
+  const scenarios = [
+    {name: "Failure", p: terminalFailure, value: 0, payout: investment * recovery},
+    {name: "Stage 1: HII", p: terminalStage1, value: stageValues.stage1, payout: afterDilutionOwnership * stageValues.stage1},
+    {name: "Stage 2: nine companies", p: terminalStage2, value: stageValues.stage2, payout: afterDilutionOwnership * stageValues.stage2},
+    {name: "Stage 3: all lobbying sectors", p: terminalStage3, value: stageValues.stage3, payout: afterDilutionOwnership * stageValues.stage3},
+    {name: "Stage 4: full EOS value", p: terminalFull, value: stageValues.full, payout: afterDilutionOwnership * stageValues.full}
+  ];
+  const expectedValue = scenarios.reduce((sum, row) => sum + row.p * row.payout, 0);
+  const expectedMultiple = expectedValue / investment;
+  const scenarioWeightedValue = terminalStage1 * stageValues.stage1 +
+    terminalStage2 * stageValues.stage2 +
+    terminalStage3 * stageValues.stage3 +
+    terminalFull * stageValues.full;
+  const rationalDenominator = requiredMultiple - terminalFailure * recovery;
+  const rationalPostMoney = rationalDenominator > 0
+    ? ((1 - dilution) * scenarioWeightedValue) / rationalDenominator
+    : Infinity;
+  const impliedFullSuccessProbability = postMoney / fullValue;
+  const maxLoss = investment * Math.max(0, 1 - recovery);
+  const riskBudget = eosBidNetWorth * (eosBidRiskBudgetPct / 100);
+  const maxInvestmentByRisk = riskBudget / Math.max(1 - recovery, 0.000001);
+  const p5 = eosBidQuantile(scenarios, 0.05);
+  const p50 = eosBidQuantile(scenarios, 0.50);
+  const p95 = eosBidQuantile(scenarios, 0.95);
+  const p99 = eosBidQuantile(scenarios, 0.99);
+  const bidVerdict = postMoney <= rationalPostMoney ? "Inside modeled bid cap" : "Above modeled bid cap";
+  const riskVerdict = investment <= maxInvestmentByRisk ? "Inside loss budget" : "Above loss budget";
+  return {investment, postMoney, dilution, recovery, requiredMultiple, afterDilutionOwnership,
+    fullValue, scenarios, expectedValue, expectedMultiple, scenarioWeightedValue,
+    rationalPostMoney, impliedFullSuccessProbability, maxLoss, riskBudget,
+    maxInvestmentByRisk, p5, p50, p95, p99, bidVerdict, riskVerdict};
+}
+```
+
+```{ojs}
+//| echo: false
+html`<div class="eit-cards">
+  <div class="eit-card ${eosBidModel.postMoney <= eosBidModel.rationalPostMoney ? "good" : "bad"}">
+    <div class="eit-card-title">Modeled Bid Cap</div>
+    <div class="eit-card-value">${eosBidMoney(eosBidModel.rationalPostMoney)}</div>
+    <div class="eit-card-meta">${eosBidModel.bidVerdict} for a ${eosBidModel.requiredMultiple.toFixed(0)}x expected-value hurdle</div>
+  </div>
+  <div class="eit-card good">
+    <div class="eit-card-title">Expected Multiple</div>
+    <div class="eit-card-value">${eosBidModel.expectedMultiple.toFixed(1)}x</div>
+    <div class="eit-card-meta">${eosBidMoney(eosBidModel.expectedValue)} probability-weighted value on ${eosBidMoney(eosBidModel.investment)}</div>
+  </div>
+  <div class="eit-card">
+    <div class="eit-card-title">Implied Full-Success Odds</div>
+    <div class="eit-card-value">${eosBidOneIn(eosBidModel.impliedFullSuccessProbability)}</div>
+    <div class="eit-card-meta">${eosBidMoney(eosBidModel.postMoney)} post-money divided by ${eosBidMoney(eosBidModel.fullValue)}</div>
+  </div>
+  <div class="eit-card">
+    <div class="eit-card-title">Ownership After Dilution</div>
+    <div class="eit-card-value">${eosBidPct(eosBidModel.afterDilutionOwnership)}</div>
+    <div class="eit-card-meta">${eosBidMoney(eosBidModel.investment)} at ${eosBidMoney(eosBidModel.postMoney)} post-money, then ${(eosBidModel.dilution * 100).toFixed(0)}% diluted</div>
+  </div>
+  <div class="eit-card ${eosBidModel.investment <= eosBidModel.maxInvestmentByRisk ? "good" : "bad"}">
+    <div class="eit-card-title">Risk Budget Check</div>
+    <div class="eit-card-value">${eosBidMoney(eosBidModel.maxInvestmentByRisk)}</div>
+    <div class="eit-card-meta">${eosBidModel.riskVerdict}; modeled max loss is ${eosBidMoney(eosBidModel.maxLoss)}</div>
+  </div>
+  <div class="eit-card">
+    <div class="eit-card-title">Median Outcome</div>
+    <div class="eit-card-value">${eosBidMoney(eosBidModel.p50)}</div>
+    <div class="eit-card-meta">5th: ${eosBidMoney(eosBidModel.p5)}; 95th: ${eosBidMoney(eosBidModel.p95)}; 99th: ${eosBidMoney(eosBidModel.p99)}</div>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="eit-table-wrap">
+  <table class="eit-table">
+    <thead>
+      <tr>
+        <th>Terminal case</th>
+        <th>Probability</th>
+        <th>Company value</th>
+        <th>Your payout</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${eosBidModel.scenarios.map(row => html`<tr>
+        <td>${row.name}</td>
+        <td>${eosBidPct(row.p)}</td>
+        <td>${row.value === 0 ? "-" : eosBidMoney(row.value)}</td>
+        <td>${eosBidMoney(row.payout)}</td>
+      </tr>`)}
+    </tbody>
+  </table>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="eit-summary">At ${eosBidMoney(eosBidModel.postMoney)} post-money, the bid prices full EOS success at about ${eosBidOneIn(eosBidModel.impliedFullSuccessProbability)} before counting partial-stage outcomes. With your stage probabilities, dilution, and failure recovery, the modeled expected value is ${eosBidMoney(eosBidModel.expectedValue)} (${eosBidModel.expectedMultiple.toFixed(1)}x). The rational post-money cap for your ${eosBidModel.requiredMultiple.toFixed(0)}x expected-value hurdle is ${eosBidMoney(eosBidModel.rationalPostMoney)}. This is an underwriting worksheet, not a promise; most of the probability mass can still live in the failure row.</div>`
+```
+
+:::
+
+::: {.content-hidden when-format="html"}
+The web edition includes a first-tranche bid calculator that lets the reader set investment amount, post-money valuation, dilution, downside recovery, portfolio risk budget, and stage probabilities.
+:::
+
 **Why this is not the scheme it resembles.** A price that rises with adoption and rewards early believers is also the grammar of a Ponzi. The difference: EOS holds publicly traded portfolio companies. Any payout traces to assets, revenue, or disclosed equity rights, not to later investors. Later buyers can raise the market price; they do not become the source of the asset. That is the entire difference between an activist holding company and a chain letter, and it is auditable.
 
 **If the campaign fails.** P drops. Price drops. Investors hold a concentrated activist portfolio that underperformed. The honest downside is not catastrophe; it is opportunity cost, what you would have earned elsewhere.
 
 ::: {.callout-important}
+
 ## Two separate things both called "vote"
 
 **EOS corporate voting shares** (who controls EOS the company), held by the founder, later by a mission-lock foundation. Investors buying EOS equity receive *non-voting* economic shares. Money buys returns, never control of EOS.
@@ -182,9 +430,9 @@ Most investments are zero-sum at the margin. A dollar of market share won by one
 
 This one is different in four ways that do not coexist in any other asset class.
 
-**1. It is the only investment that increases the value of everything else you own.** The political dysfunction tax is not a tax on one sector. It is a drag on the entire economy. Eliminating it does not rerate one stock; it reraters all of them. If you own index funds, bonds, real estate, or a business, their value is being suppressed by misallocated policy. EOS correcting that suppression makes your other holdings worth more at the same time it makes itself worth more. No other investment does this.
+**1. It is the only investment that increases the value of everything else you own.** The political dysfunction tax is not a tax on one sector. It is a drag on the entire economy. Eliminating it does not rerate one stock; it rerates all of them. If you own index funds, bonds, real estate, or a business, their value is being suppressed by misallocated policy. EOS correcting that suppression makes your other holdings worth more at the same time it makes itself worth more. No other investment does this.
 
-**2. It has no competitors by structure.** Every other business competes with someone for something: customers, attention, market share, talent, contracts. EOS's competition is waste. Waste does not compete back. Nobody is lobbying for preventable deaths to continue because it helps their bottom line in a way they can defend in public. The competitive moat is not a patent, a network effect, or a distribution advantage. It is that fixing the problem makes every other party better off, so there is no organized constituency for the problem to persist.
+**2. Copycats can be demand before they are competition.** Every other business competes with someone for customers, attention, market share, talent, or contracts. EOS's first competition is waste. Waste does not compete back. A fund copying the thesis has to buy many of the same constrained assets and make many of the same public arguments. That raises prices of assets EOS already owns, increases attention, and makes the strategy easier for boards to believe. Later, copied operating businesses may compete for fees or status. Fine. By then the important thing has happened: the market has begun pricing the end of waste.
 
 **3. The leverage math is absurd.** The top U.S. defense contractors spend roughly $60 million per year on direct lobbying. That money is burned: spent, gone, zero asset remaining. It purchases access and influence for one year and requires the same spend next year to maintain.
 
@@ -210,13 +458,13 @@ EOS captures value from waste. Not from competitors, not from customers, not fro
 
 Control is the one thing split evenly: one vote per human, operators included, none worth more than another. Your money buys a return, not a bigger say. Your species finds this more suspicious than if they had simply stolen everything.
 
-**Stage 1: One company (HII).** Huntington Ingalls Industries is the sole supplier of aircraft carriers to the United States Navy. Market cap roughly $10 billion. Its core revenue is contract-locked (the Navy cannot buy carriers from anyone else), its engineering workforce is among the most skilled on the planet, and its lobbying budget is currently pointed at maintaining military spending levels that its own shareholders would be better off without. A governance campaign redirects the lobbying. The contract revenue continues. The stock appreciates from the credibility cascade. Expected value of the position: approximately $330 million. A $25,000 early investment is worth roughly $532,000 at this stage.
+**Stage 1: One company (HII).** Huntington Ingalls Industries is the sole supplier of aircraft carriers to the United States Navy. Market cap roughly $10 billion. Its core revenue is contract-locked (the Navy cannot buy carriers from anyone else), its engineering workforce is among the most skilled on the planet, and its lobbying budget is currently pointed at maintaining military spending levels that its own shareholders would be better off without. A governance campaign redirects the lobbying. The contract revenue continues. The stock appreciates from the credibility cascade. Modeled stage value: {{< var eos_stage_1_hii_modeled_value >}}. The calculator above prices what that means for a specific check, valuation, dilution, and failure recovery.
 
-**Stage 2: Nine companies.** The same logic applied to all nine major U.S. military primes. Each success funds the next (appreciation from HII funds KTOS, KTOS funds LDOS, and so on). The lobbying of the entire military sector, redirected. Expected value: $7 billion or more. The mechanism is identical to Stage 1; the scale is larger because nine companies lobby more than one.
+**Stage 2: Defense primes.** The same logic applied to the major U.S. military primes. Each success funds the next (appreciation from HII funds KTOS, KTOS funds LDOS, and so on). The lobbying of the entire military sector, redirected. Modeled stage value: {{< var eos_stage_2_defense_primes_modeled_value >}}. The mechanism is identical to Stage 1; the scale is larger because a sector lobbies more than one company.
 
-**Stage 3: All lobbying sectors.** Military contracting is not the only industry that lobbies for policies its own shareholders would be better off without. Pharmaceutical companies spend $373 million per year lobbying against drug pricing reforms that would expand their addressable market. Energy companies lobby against transitions that would lower their input costs. Finance, telecom, agriculture. Every industry that lobbies for wasteful policy has value trapped by misallocation. EOS applies the same governance pressure across all of them. Expected value: approximately $452 billion. That $25,000 early investment is now worth roughly $34 million.
+**Stage 3: All lobbying sectors.** Military contracting is not the only industry that lobbies for policies its own shareholders would be better off without. Pharmaceutical companies spend $373 million per year lobbying against drug pricing reforms that would expand their addressable market. Energy companies lobby against transitions that would lower their input costs. Finance, telecom, agriculture. Every industry that lobbies for wasteful policy has value trapped by misallocation. EOS applies the same governance pressure across all of them. Modeled stage value: {{< var eos_stage_3_lobbying_sectors_modeled_value >}}.
 
-**Stage 4: Wishocratic governance.** When resource allocation is optimized across all public spending globally, through [Wishocracy](../solution/wishocracy.qmd), the total value is the difference between what humanity produces under current governance and what it produces under optimal governance. This is the political dysfunction tax, eliminated. Expected value: approximately $133 trillion. The same $25,000 is worth roughly $10 billion. This sounds absurd until you remember that global GDP is approximately $105 trillion per year, and the difference between good and bad allocation of that sum, compounded over decades, is larger than any number that fits comfortably in a sentence.
+**Stage 4: Wishocratic governance.** When resource allocation is optimized across all public spending globally, through [Wishocracy](../solution/wishocracy.qmd), the total value is the difference between what humanity produces under current governance and what it produces under optimal governance. This is the political dysfunction tax, eliminated. Modeled full EOS value: {{< var eos_equity_value_v >}}. This sounds absurd until you remember that global GDP is approximately {{< var global_gdp_2025 >}} per year, and the difference between good and bad allocation of that sum, compounded over decades, is larger than any number that fits comfortably in a sentence.
 
 Each stage is independently valuable. You do not need Stage 4 to profit from Stage 1. But each stage funds the next, and the probability of reaching each subsequent stage increases with each completed stage. The math suggests this is probably irresistible once Stage 1 demonstrates the mechanism. But "the math suggests" is doing a lot of work in that sentence, and you should check the math yourself. The calculators above let you do that.
 
@@ -246,13 +494,13 @@ EOS does not need donations or grants. The revenue comes from the same activitie
 
 ## Why competitors help
 
-If another fund copies this strategy, EOS investors make more money. More funds buying means more buying pressure means higher share prices. More demand letters means faster board responses. More media attention means more retail investors.
+If another fund copies this strategy, EOS investors can make more money before anyone wins a fee war. Copycats need the same shares, the same board conversations, and the same public thesis. More funds buying means more buying pressure means higher share prices. More demand letters means faster board responses. More media attention means more retail investors.
 
-Ten competing funds means ten times the buying pressure and ten times the demand letters. Competition and cooperation produce identical outcomes. I do not know a word for a game where this is true, but it is the game you are in.
+Ten competing funds means ten times the buying pressure and ten times the demand letters. This stops being free demand only when the copied product competes for operating revenue after the market has already repriced the thesis. That is not the scarce value. The scarce value is owning the thesis before the market accepts it.
 
 The only thing that needs protecting is the governance: that whoever controls the redirected lobbying does not use it for extraction. This is why EOS publishes the equity formula, the humanity reserve, and the transfer clause before any of it is profitable. Establishing the norms first is the only defense against a version of this that is sleazy.
 
-If someone copies this and executes it well, they have ended war and disease.
+If someone copies this and executes it well, they helped end war and disease. That is not a downside.
 
 ## Two Money Boxes
 
@@ -399,6 +647,7 @@ html`<div class="eit-summary">You invest ${eosMoney(eosCalc.amount)}. If the cam
 ```
 
 ::: {.content-visible when-format="html"}
+
 ### When you buy changes what you make
 
 The cards above value the share by the appreciation of what it holds (military contractors pivoting in a larger economy). That is only one of the layers. The other is repricing: a share is worth its probability of success times the value of success. You buy while the market prices that probability near zero. If you are right, the share reprices the whole way up, and you keep the difference.
@@ -433,9 +682,12 @@ html`<div class="eit-summary">Two ways to read the same share. <strong>If the ma
 ```
 
 ::: {.content-visible when-format="html"}
+
 ### The number you are actually betting
 
 Your investment is the lever. Your **net worth** is the bet. If the treaty passes and the economy ends up larger than the current trajectory, everything you own that tracks the economy (stocks, property, business equity) is worth more under that trajectory than the one where nothing happens. You are already long this outcome. The only question is whether you spend a little to improve its odds.
+
+That is the investor version of the leakage point above: uncaptured surplus can still land in the rest of your balance sheet.
 :::
 
 ```{ojs}
@@ -472,9 +724,22 @@ When you buy matters. A share is worth its probability of success times the valu
 
 But the investment is the lever, not the bet. Your whole net worth is the bet. If the treaty passes, everything you own that tracks the economy is worth roughly the multiplier more under that trajectory than under the current one. The systemic upside is your net worth times the multiplier minus one, which dwarfs the return on the investment itself and accrues whether or not you buy a single share. The investment only nudges the odds that you collect it. (This assumes your wealth tracks the economy; cash and bonds lag, equities and property track it more closely.) The web edition lets you edit every input, including the drivers behind the multiplier.
 
+That is the investor version of the leakage point above: uncaptured surplus can still land in the rest of your balance sheet.
+
 :::
 
 <style>
+:root {
+  --eit-bg: #f5efe4;
+  --eit-card: #fffaf1;
+  --eit-line: rgba(60, 43, 16, 0.16);
+  --eit-text: #2c2115;
+  --eit-muted: #6a5a45;
+  --eit-accent: #a04f1a;
+  --eit-good: #0e5f47;
+  --eit-bad: #8d2f25;
+}
+
 .eit-shell {
   --eit-bg: #f5efe4;
   --eit-card: #fffaf1;
@@ -591,6 +856,31 @@ But the investment is the lever, not the bet. Your whole net worth is the bet. I
   font-size: 1rem;
   line-height: 1.65;
   padding: 1rem;
+}
+
+.eit-table-wrap {
+  overflow-x: auto;
+}
+
+.eit-table {
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.eit-table th,
+.eit-table td {
+  border-bottom: 1px solid var(--eit-line);
+  padding: 0.55rem 0.65rem;
+  text-align: left;
+}
+
+.eit-table th {
+  color: var(--eit-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .eit-footnote {

@@ -3578,9 +3578,22 @@ WAR_TRIAL_REDIRECT_TOOLCHAIN_BOOTSTRAP_YEARS = Parameter(
     manual_ref="knowledge/problem/cost-of-war.qmd",
     source_type=SourceType.DEFINITION,
     confidence="low",
-    description="Assumed years to build the missing medical toolchain before the queue-clearance clock "
-                "runs at full force: diagnostics, EHRs, sequencing, AI, factories, surveillance, and "
-                "trial infrastructure. Set so the central queue model yields a 1950 disease cutoff.",
+    description="Estimated minimum physical build time for the medical toolchain even with 10x capital: "
+                "diagnostics, cell culture, manufacturing scale-up, trained researchers, surveillance, "
+                "and trial infrastructure. Fermi rationale: (1) scientific breakthroughs are treated as "
+                "largely proportional to investment -- more money attracts talent from finance and other "
+                "high-paying sectors, more researchers mean more parallel experiments and more shots on "
+                "goal, so conceptual barriers are not treated as exogenous; (2) even so, a physical floor "
+                "exists -- you cannot train a molecular biologist in a year or build a penicillin factory "
+                "overnight regardless of capital; (3) prize-based and market-incentive funding is assumed, "
+                "not NIH grant-style funding -- prizes pay for results, not process, yielding roughly "
+                "5-10x more useful output per dollar, making this estimate conservative relative to "
+                "current NIH efficiency as a baseline; (4) Operation Warp Speed compressed a 10-15 year "
+                "vaccine timeline to 9 months with advance purchase commitments -- ~15x acceleration -- "
+                "suggesting the physical floor is around 12-18 months for known-science applications. "
+                "14 years reflects the harder case of building infrastructure for unknown-science "
+                "applications from a 1900 starting point. Confidence interval (0-40) reflects genuine "
+                "uncertainty; the central estimate is not reverse-engineered to hit any target year.",
     display_name="War-Redirect Medical Toolchain Bootstrap Years",
     unit="years",
     distribution="triangular",
@@ -3595,7 +3608,15 @@ WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS = Parameter(
     source_type=SourceType.DEFINITION,
     confidence="low",
     description="Additional lag after broad disease-control capacity before biological aging becomes "
-                "a treatable risk factor in the aggressive prosecutor model.",
+                "a treatable risk factor in the aggressive prosecutor model. Fermi rationale: aging "
+                "research requires the molecular biology toolchain (DNA structure, oncogenes, telomere "
+                "biology, cellular senescence) which itself builds on the disease-control infrastructure. "
+                "With investment proportional to funding and prizes accelerating iteration, the hallmarks-"
+                "of-aging framework (telomeres, senolytics, mTOR) likely emerges ~15-20 years faster than "
+                "the historical timeline -- but geroscience is genuinely downstream of molecular biology "
+                "and cannot be fully parallelized with disease-control research. 40 years is the central "
+                "estimate; confidence interval (10-65) is wide because this is the most speculative "
+                "component of the model.",
     display_name="War-Redirect Aging Lag After Disease Control",
     unit="years",
     distribution="triangular",
@@ -6328,6 +6349,57 @@ EOS_EQUITY_VALUE_V = Parameter(
     ),
     keywords=["EOS", "equity", "valuation", "V", "share price"],
     latex_symbol=r"V_{EOS}",
+)
+
+EOS_STAGE_1_HII_EXPECTED_VALUE = Parameter(
+    330_000_000,
+    manual_ref="knowledge/economics/earth-optimization-fund.qmd",
+    source_type="definition",
+    confidence="low",
+    description="Modeled expected stage value if the first EOS governance campaign "
+                "redirects Huntington Ingalls Industries lobbying and creates a "
+                "credible activist-governance proof point.",
+    display_name="EOS Stage 1 HII Expected Value",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(100_000_000, 1_000_000_000),
+    std_error=250_000_000,
+    keywords=["EOS", "stage 1", "HII", "Huntington Ingalls", "valuation"],
+    latex_symbol=r"V_{EOS,1}",
+)
+
+EOS_STAGE_2_NINE_COMPANIES_EXPECTED_VALUE = Parameter(
+    7_000_000_000,
+    manual_ref="knowledge/economics/earth-optimization-fund.qmd",
+    source_type="definition",
+    confidence="low",
+    description="Modeled expected stage value if EOS extends the governance campaign "
+                "from HII to the major U.S. military prime contractors and redirects "
+                "sector lobbying toward shareholder-positive policy.",
+    display_name="EOS Stage 2 Nine-Company Expected Value",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(1_500_000_000, 30_000_000_000),
+    std_error=6_000_000_000,
+    keywords=["EOS", "stage 2", "military primes", "defense contractors", "valuation"],
+    latex_symbol=r"V_{EOS,2}",
+)
+
+EOS_STAGE_3_LOBBYING_SECTORS_EXPECTED_VALUE = Parameter(
+    452_000_000_000,
+    manual_ref="knowledge/economics/earth-optimization-fund.qmd",
+    source_type="definition",
+    confidence="low",
+    description="Modeled expected stage value if EOS applies the same governance "
+                "pressure across major lobbying-heavy sectors whose current policy "
+                "positions destroy shareholder value.",
+    display_name="EOS Stage 3 Lobbying-Sectors Expected Value",
+    unit="USD",
+    distribution=DistributionType.LOGNORMAL,
+    confidence_interval=(100_000_000_000, 2_000_000_000_000),
+    std_error=400_000_000_000,
+    keywords=["EOS", "stage 3", "lobbying sectors", "activist governance", "valuation"],
+    latex_symbol=r"V_{EOS,3}",
 )
 
 # Global opportunity cost as percentage of global GDP
