@@ -95,8 +95,8 @@ scores:
 ```
 +---------------------------------------+
 |                                       |
-|  EV(prevent hell)   = +infinity       |
-|  EV(achieve heaven) = +infinity       |
+|  value of preventing hell  = +infinity |
+|  value of achieving heaven = +infinity |
 |                                       |
 |  total = two infinities of motivation |
 |                                       |
@@ -554,7 +554,7 @@ scores:
 
 ---
 
-## The Governance Lock
+## Money Doesn't Buy Votes
 
 ```
 +---------------------------------------+
@@ -578,17 +578,16 @@ scores:
 
 ---
 
-## The Ask
+## Invest
 
 ```
 +---------------------------------------+
 |                                       |
 |  Earth Optimization Services          |
-|  Delaware C-corp  (Berkshire model)   |
+|  buy shares in the company            |
 |                                       |
-|  you buy: non-voting economic share   |
-|  floor:   NAV of defense portfolio    |
-|  upside:  premium as campaigns win    |
+|  if the campaigns work: shares go up  |
+|  if they don't: you own defense stocks|
 |                                       |
 |  minimum: $25,000                     |
 |  accredited investors only            |
