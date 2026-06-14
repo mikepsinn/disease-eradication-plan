@@ -72,7 +72,7 @@ This is the funniest lawsuit in the universe and this page is everything you nee
 It is the first lawsuit in legal history where the defendants are radically better off losing than winning. Settling adds approximately {{< var avg_life_extension_per_beneficiary >}} to each defendant's healthy life and approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to the average shareholder's lifetime income. Winning leaves the defendant where they started: facing the same diseases on the same timeline, while their lobbying continues to keep the cure trials underfunded.
 
 
-**The selfish version.** If you do not care about the disease eradication argument and only care about money, the share you bought to file the lawsuit also goes up in price. As the campaign scales, demand for military contractor shares mechanically exceeds the available float (see [The Loving Takeover](loving-takeover.qmd) for the math), and prices spike for the same reason GameStop spiked in 2021. The lawsuit is the event that puts the float math in front of buyers. Heads you make money on the share, tails you hold a normal military contractor position. The downside is foregone index-fund return on $200.
+**The selfish version.** If you do not care about the disease eradication argument and only care about money, the share you bought to file the lawsuit still gives you ordinary shareholder exposure to the company whose board is forced to answer the analysis. If the campaign works, the upside comes from better policy, better corporate strategy, and the larger economy you also own through your other assets. If it fails, you hold a normal military contractor position. The downside is ordinary market risk on the share and the foregone index-fund return on $200.
 
 **The altruistic version.** If you do care about disease eradication: the math says the campaign prevents approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths from the diseases that will otherwise kill someone you love. Filing one demand letter forces the math into one boardroom for $200.
 
@@ -84,11 +84,11 @@ It is the first lawsuit in legal history where the defendants are radically bett
 |---|---:|
 | Additional healthy life expectancy if treaty passes | ~{{< var avg_life_extension_per_beneficiary >}} |
 | Additional lifetime income if treaty passes | ~{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
-| Share-price appreciation on the $200 share, mechanically, as the campaign scales | ~$200 to $2,000 (scenario-dependent; see [Loving Takeover](loving-takeover.qmd)) |
+| Ordinary shareholder exposure to the company you file against | Uncertain; the stock can rise or fall while the campaign is pending |
 | Personal share of the recovered lifespan of the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} humans the campaign prevents from dying | Not pricable; this is the part the demand letter is about |
 | Standing to tell the people you love that you tried | This one is free; you just have to file |
 
-The cost is one share (~$200) plus 43 hours of work. Under the Part 3 assumptions (ten defendants sued, 5% per-defendant probability of a redirection), the expected dollar return on the full ten-share position is several multiples of what the same capital earns in twenty years of index funds. The expected return on the years is the rest of your life and the rest of the lives of everyone you love.
+The cost is one share (~$200) plus 43 hours of work. Under the Part 3 assumptions (ten defendants sued, 5% per-defendant probability of a redirection), the modeled upside is mostly treaty value, life expectancy, and the value of a larger economy, not a direct litigation payout. The expected return on the years is the rest of your life and the rest of the lives of everyone you love.
 
 ### How To File (60-Second Version)
 

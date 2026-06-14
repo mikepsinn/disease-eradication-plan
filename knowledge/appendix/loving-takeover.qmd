@@ -1,8 +1,8 @@
 ---
 title: 'The Loving Takeover'
-description: 'For roughly $90 per global human, humanity can buy a controlling stake in every major military contractor on Earth and redirect their lobbying budgets toward the 1% treaty. The takeover is loving because the people being bought out are made richer and longer-lived by it. The math is on this page.'
+description: 'For roughly $90 per global human, humanity can buy a controlling stake in every major military contractor on Earth and redirect their lobbying budgets toward the 1% treaty. The takeover is loving because existing shareholders, employees, and directors are intended beneficiaries of the long-term strategy. The math is on this page.'
 abstract: |
-  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $131 billion across allied European primes. A majority shareholding requires roughly $400 billion nominal (and far more after price inflation during a coordinated buy-up, which is the point: the upside accrues to the early buyers). Distributed across the global population, the per-person ante is approximately $90. Once humanity holds the majority, the single highest-leverage action is to redirect the ~$127 million per year of military lobbying toward the 1% treaty. Expected total value per global human: ~6,000x-22,000x the contribution at base case (mostly welfare value, not cash); ~60x-220x even after a 99% pessimistic haircut. The takeover is structurally loving: existing shareholders are made richer by the demand that buys their shares, military-contractor employees keep their jobs (and gain new ones in the medical pivot), and the directors and officers who settle gain personal life expectancy alongside everyone else.
+  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $131 billion across allied European primes. A majority shareholding requires roughly $400 billion nominal before any acquisition premium, disclosure friction, or transaction cost. Distributed across the global population, the per-person ante is approximately $90. Once humanity holds the majority, the single highest-leverage action is to redirect the ~$127 million per year of military lobbying toward the 1% treaty. Expected total value per global human: ~6,000x-22,000x the contribution at base case (mostly welfare value, not cash); ~60x-220x even after a 99% pessimistic haircut. The takeover is structurally loving: existing shareholders may benefit from a better long-term corporate strategy, military-contractor employees keep their jobs (and gain new ones in the medical pivot), and the directors and officers who settle gain personal life expectancy alongside everyone else.
 aliases:
   - /loving-takeover.html
   - /funniest-loving-takeover.html
@@ -62,10 +62,10 @@ A normal hostile takeover is hostile to the people being acquired. The acquirer 
 
 This takeover does the opposite of all four.
 
-1. **Existing shareholders make money on the way in.** A coordinated humanity-wide buy-up is roughly $400 billion-{{< var defense_takeover_cost_total >}} of net new demand against a tradeable float of roughly $200-320 billion. The mathematical consequence is that share prices rise. Anyone who held military contractor stock before the campaign started is wealthier because of the campaign. The takeover is the largest voluntary wealth transfer to existing military-contractor shareholders in history.
+1. **Existing shareholders are not the enemy.** The campaign is built around the claim that the companies are worth more under a better long-term strategy: same engineering base, same federal customer, fewer self-defeating lobbying objectives, and a larger economy to sell into. Existing shareholders are not asked to donate value. They are asked to consider the better trade.
 2. **Military-contractor employees keep their jobs.** The companies are not liquidated. The engineering workforce is redirected toward medical, biotech, and dual-use civilian applications that compound at higher rates in the post-treaty economy. Headcount goes up, not down.
 3. **Directors and officers gain personal life expectancy.** The settlement adds approximately {{< var avg_life_extension_per_beneficiary >}} to the average beneficiary's healthy life, including the directors and officers themselves and their families. The same directors who currently face the same age-stratified disease risk as everyone else gain measurable additional years of life from the company they direct settling rather than fighting.
-4. **The acquirers are everyone.** The campaign has no central acquirer extracting value at the expense of others. The "control premium" is paid by humanity to humanity. The early buyers (who fund the campaign by accepting the early risk) capture some upside. The later buyers (who join once the campaign has scale) capture the policy benefits. Existing holders capture the price appreciation. Military contractors capture an addressable market roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory at year 15. There is no party that loses.
+4. **The acquirers are everyone.** The campaign has no central acquirer extracting value at the expense of others. The control premium, if one is paid, is paid to existing shareholders. Later participants capture the policy benefits. Military contractors capture an addressable market roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory at year 15. The structure is designed so the people being acquired are also beneficiaries of the acquisition.
 
 The only thing the takeover changes is a budget line item: the {{< var defense_lobbying_annual >}}/year of lobbying that is not yet directed at the [1% treaty](../solution/1-percent-treaty.qmd). The humans associated with that line item are not the problem. The direction is.
 
@@ -80,7 +80,7 @@ A military contractor's share price today reflects its current business model: s
 
 **The asymmetric upside.** If the campaign succeeds, military contractor shares appreciate substantially through both channels above. If the campaign fails, the shares stay roughly where they are (a normal military contractor position). The downside is the foregone return on whatever the share purchase displaced (typically index funds at ~7-10% annualized).
 
-**The self-financing cascade.** As the campaign builds credibility, the upside above starts to price in. Early buyers see appreciation, which attracts more buyers, which drives prices higher, which makes early buyers wealthier, which validates the strategy, which attracts the next wave. The lawsuit (and the demand-letter pipeline it sits inside) is the catalyst that activates this cycle: every demand letter filed, every board response received, every press article covering the math is a credibility-step that shifts probability mass toward "campaign succeeds" and pulls the future upside into the present share price.
+**The credibility cascade.** As the campaign builds credibility, the market may begin to price in a higher probability that the thesis works. The lawsuit (and the demand-letter pipeline it sits inside) is the catalyst that activates this cycle: every demand letter filed, every board response received, every press article covering the math is a credibility-step that shifts probability mass toward "campaign succeeds."
 
 This is not speculation. It is the same mechanism that prices any value-event into a stock: M&A announcements, FDA approvals, regulatory rulings, earnings revisions. The campaign supplies the value-event (a structural shift in the military contractor's long-term addressable market and pivot optionality) and the market prices it in as the probability of success rises.
 
@@ -92,11 +92,10 @@ THE FLYWHEEL: THREE LOOPS, ONE MACHINE
    (~{{< var defense_takeover_cost_per_human >}} per human buys all of them)
         |
         v
-   SHARE PRICES RISE  (fixed float, new demand)
+   CREDIBILITY RISES
         |        \
-        |         early buyers get richer,
-        |         which attracts more buyers
-        |         [LOOP A: prices rise again]
+        |         more shareholders read the analysis
+        |         [LOOP A: the board pressure improves]
         v
    BOARD CONTROL ACCUMULATES
         |
@@ -122,8 +121,8 @@ THE FLYWHEEL: THREE LOOPS, ONE MACHINE
    ECONOMY GROWS
    ({{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current path at year 15)
         |
-        \--> military primes are worth more
-             [LOOP C: share prices rise again]
+        \--> military primes have a better long-term market
+             [LOOP C: the shareholder case improves]
 ```
 :::
 
@@ -131,52 +130,11 @@ Three reinforcing loops, one machine. Each lap makes the next lap cheaper.
 
 **Selfish and altruistic converge.** A reader who does not care about disease eradication and wants only to make money has the same correct action as a reader who cares about disease eradication and would buy the shares purely to redirect the lobbying. Both buy the shares. The campaign requires no shared motivation, only shared action.
 
-## What Happens to the Share Price When Demand Exceeds Float
+## Market-Impact and Compliance Boundary
 
-The share-price upside above assumes the value-event is the campaign succeeding. There is a second, more mechanical reason prices rise: if the participation rate is high, **demand for military contractor shares exceeds available float**, and prices spike for the same reason any constrained-supply asset spikes when buyers pile in.
+Large acquisition programs can affect price, trigger disclosure obligations, and attract regulatory scrutiny. This chapter is not a trading campaign, a recommendation to coordinate purchases, or a model of short-term price impact.
 
-The math:
-
-### Float dynamics
-
-The major Western military primes have a combined market capitalization of approximately {{< var defense_primes_market_cap_us >}} across the US primes plus {{< var defense_primes_market_cap_allied >}} across the allied European primes. Institutional ownership (Vanguard, BlackRock, State Street, other index funds, pension funds, sovereign wealth funds) holds roughly 60-75% of outstanding shares across this universe. Those institutional positions are not actively for sale at any reasonable price; index funds hold market-cap-weighted positions because their mandates require it, not because they want to sell at a particular price.
-
-The freely tradeable float (shares that change hands at market prices on a normal trading day) is roughly 25-40% of total market cap, or **approximately $200-320 billion across all major Western military primes combined**.
-
-Daily trading volume in this universe is roughly $5-8 billion. Total annual turnover is roughly 1-2x the float. The market is not built to absorb a multi-hundred-billion-dollar coordinated buy without significant price impact.
-
-### Participation scenarios
-
-| Scenario | Buyers | Shares per buyer | Total demand | Effect |
-|---|---:|---:|---|---|
-| **A. Modest** | 10 million global participants | 1 share of one prime | ~$3-5B distributed across primes | 5-15% price rise per prime over weeks |
-| **B. Strong** | 100 million global participants | 1 share of one prime | ~$30-50B distributed across primes | 30-80% price rise per prime; some halts |
-| **C. Coordinated** | 100 million global participants | 1 share of each of ~10 primes | ~$300-500B (exceeds entire tradeable float) | 3-8x price spike across all primes; trading halts; SEC scrutiny |
-| **D. Viral** | 1 billion global participants | 1 share of each of ~10 primes | ~$3 trillion (~10x available float) | 10-50x price spike at peak; circuit breakers triggered; market mechanisms strained |
-
-### Reference point: GameStop, January 2021
-
-The GameStop short squeeze offers an empirical anchor. GameStop had approximately 50 million shares outstanding and a tradeable float comparable to a single mid-sized military prime. Coordinated retail buying (millions of participants, no institutional coordination) drove the price from approximately $20 to approximately $483 over several weeks: a **~24x increase**. The squeeze was amplified by ~140% short interest (a dynamic that does not apply meaningfully to military primes), but the basic mechanism (float-constrained demand from coordinated retail) is identical to what scenarios C and D model.
-
-Military primes have lower short interest, which removes the squeeze-amplification, but they also have larger market caps and smaller proportional float, which increases the price sensitivity to large demand shocks. Net: a coordinated global buy-up plausibly produces price moves in the same order of magnitude as GameStop did, distributed across a basket of contractors rather than concentrated in one.
-
-### What this means for early buyers
-
-In scenarios C and D, **early buyers see price appreciation before the campaign has finished its first acquisition wave**. A participant who buys 1 share of Lockheed Martin at $530 today and 100 million other participants follow over the next 6-18 months sees the share price rise into the $1,500-$3,000 range mechanically, before any policy outcome materializes.
-
-This is the structural reason the campaign is selfish-rational: the price spike happens whether or not the treaty passes, because it is caused by the demand for the shares, not by the eventual policy outcome.
-
-The combination of (1) asymmetric upside from the policy outcome and (2) mechanical price appreciation from float-constrained demand produces modeled expected returns well above standard retail alternatives under the scenarios above.
-
-### Caveats
-
-Three honest caveats apply:
-
-1. **Circuit breakers and trading halts** will trigger in scenarios C and D. Buyers will not be able to fill orders at every desired price point. Some demand will displace into options markets, ETFs, and adjacent securities.
-2. **Some institutional holders will sell** at high prices to capture the spike, providing partial supply relief. This dampens the peak but does not eliminate the rise; rebalancing flows are bounded by mandate constraints.
-3. **Regulatory intervention is possible.** The SEC may scrutinize a coordinated buy-up. The substance differs from manipulation, and the difference is what protects the campaign: manipulation requires deceptive intent and artificial pricing, while transparent, fully disclosed, long-horizon accumulation by shareholders who intend to vote their shares is lawful shareholder coordination. The campaign's obligation is to make that substance legible to regulators through disclosure and posture.
-
-None of these caveats undo the basic dynamic. They shape the trajectory and the volatility, not the direction.
+The public thesis is narrower and cleaner: disclosed, long-horizon shareholders can use ordinary shareholder tools to ask whether military-contractor lobbying maximizes long-term shareholder value. Any organized acquisition vehicle, proxy campaign, or large ownership program requires securities, antitrust, CFIUS, and proxy-solicitation review before it moves from analysis to action.
 
 ## Why This Works
 
@@ -211,14 +169,14 @@ This page points it out.
 
 Numbers are approximate and require verification against current filings before any campaign acts on them.
 
-### Realistic cost after price inflation
+### Realistic cost after acquisition premium
 
-A coordinated purchase of half the float of every major military prime simultaneously would push prices up sharply. Realistic effective cost after a {{< var defense_takeover_acquisition_premium >}} acquisition premium:
+Acquiring influence at this scale would not happen at the last quoted market price. Any real acquisition program has to budget for premium, timing, disclosure, execution friction, and legal review. Realistic effective cost after a {{< var defense_takeover_acquisition_premium >}} acquisition premium:
 
 - Nominal: **~$401 billion**
 - Realistic with acquisition premium: **{{< var defense_takeover_cost_total >}}**
 
-The premium is the upside captured by the early buyers. It is the campaign's self-financing mechanism, not a cost overrun.
+The premium is part of the capital required to buy influence at scale. It is not a promise of trading profit.
 
 ### Per-person cost
 
@@ -352,7 +310,6 @@ For a global human contributing ~{{< var defense_takeover_cost_per_human >}}:
 | Disease eradication value: ~{{< var avg_life_extension_per_beneficiary >}} of extra healthy life × global value per healthy life-year (~$30-50K/year) | ~$360,000-$600,000 |
 | Lower lifetime apocalypse risk | ~$1,000-$10,000 |
 | Military-contractor dividends now flowing to humanity | ~$10-50/year ongoing |
-| Direct share-price appreciation from float-constrained demand | ~$200-$2,000 on the initial purchase |
 | **Total EV per global human (base case)** | **~$530,000-$2,000,000** |
 
 **Base case ROI multiple per global human: ~6,000x to 22,000x.**
@@ -365,7 +322,6 @@ For a US adult contributing ~$2,700:
 | Disease eradication: ~{{< var avg_life_extension_per_beneficiary >}} of extra healthy life × US QALY threshold ({{< var medical_qaly_threshold >}}/year) | ~$800,000-$1,800,000 |
 | Lower lifetime apocalypse risk | ~$10,000-$100,000 |
 | Direct military-industry dividends | ~$500-$2,000/year ongoing |
-| Direct share-price appreciation from float-constrained demand | ~$5,000-$50,000 on the initial purchase |
 | **Total EV per US adult (base case)** | **~$850,000-$2,100,000** |
 
 **Base case ROI multiple per US adult: ~300x to 800x.**
@@ -399,11 +355,11 @@ So this is not capital poured into a hole. It is capital redeployed into a gover
 
 These are real, and they shape how the campaign is structured. They do not eliminate it.
 
-### Price inflation during a coordinated buy-up
+### Acquisition compliance
 
-Military contractor stock floats are not infinitely liquid. A coordinated purchase of half the float of every prime would push prices up sharply. The modeled premium is {{< var defense_takeover_acquisition_premium >}} during acquisition, and potentially much higher in the scenarios modeled above.
+Military contractor stock floats are not infinitely liquid. A large acquisition program has to assume price impact, filing obligations, and legal scrutiny. The modeled premium is {{< var defense_takeover_acquisition_premium >}} for acquisition planning, not a public trading target.
 
-**Mitigation:** Phased buying across multiple quarters, distributed across many small purchasers rather than concentrated, public communication of intent to acquire long positions rather than to flip them. Index fund or trust vehicle that aggregates small purchases without telegraphing the buy to the market. The price inflation is also the upside captured by the early buyers, so the "mitigation" framing is partial: the campaign benefits from the inflation it causes.
+**Mitigation:** counsel-led structure, disclosure planning, beneficial-ownership monitoring, proxy-solicitation review, CFIUS analysis, and public communication of the long-term shareholder objective rather than any short-term trading outcome.
 
 ### CFIUS and national security review
 
