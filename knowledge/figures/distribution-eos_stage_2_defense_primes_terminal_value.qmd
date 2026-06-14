@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: EOS Social Value Capture Rate"
+#| fig-cap: "Probability Distribution: EOS Stage 2 Defense-Primes Terminal Value"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -17,12 +17,12 @@ setup_chart_style()
 
 # Parameter values
 
-central_value = 0.022
-low = 0.005
-high = 0.05
+central_value = 7000000000.0
+low = 1500000000
+high = 30000000000
 dist_type = "lognormal"
-display_name = "EOS Social Value Capture Rate"
-unit = "percent"
+display_name = "EOS Stage 2 Defense-Primes Terminal Value"
+unit = "USD"
 
 # Calculate distribution parameters
 
@@ -143,7 +143,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('distribution-eos_social_value_capture_pct.png')
+output_path = get_figure_output_path('distribution-eos_stage_2_defense_primes_terminal_value.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

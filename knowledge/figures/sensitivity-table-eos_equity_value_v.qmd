@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Opportunity Cost Total (USD) | 2.6007 | Strong driver |
-| EOS Social Value Capture Rate (percent) | -1.6270 | Strong driver |
+| Global Opportunity Cost Total (USD) | 2.5729 | Strong driver |
+| EOS Social Value Capture Rate (percent) | -1.6001 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

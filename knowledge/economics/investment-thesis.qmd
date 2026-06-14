@@ -23,7 +23,94 @@ scores:
 
 ---
 
-## Slide 1: The Infinity Argument
+## Expected Value
+
+```
++---------------------------------------+
+|                                       |
+|  EV = probability x value             |
+|                                       |
+|  [ plot of land ]                     |
+|                                       |
+|  10% chance: $100,000 gold inside     |
+|                                       |
+|  EV = 10%  x  $100,000               |
+|     = $10,000                    [x]  |
+|                                       |
++---------------------------------------+
+```
+
+> Probability times value equals expected value. A plot of land with a 10% chance of \$100,000 in gold underneath it is worth \$10,000.
+
+---
+
+## The Hell Calculation
+
+```
++---------------------------------------+
+|                                       |
+|  [ eternal suffering ]                |
+|                                       |
+|  probability(hell)  =  0.00001%       |
+|                                       |
+|  expected value     =  0.00001%       |
+|                     x  -infinity      |
+|                     =  -infinity      |
+|                                       |
+|  worth any finite cost to prevent     |
+|                                       |
++---------------------------------------+
+```
+
+> The probability that you or someone you love will experience something like eternal suffering is not zero. You cannot prove it is zero. Anything times negative infinity is negative infinity. It is worth any finite cost to prevent.
+
+---
+
+## The Heaven Calculation
+
+```
++---------------------------------------+
+|                                       |
+|  [ indefinite pleasant existence ]    |
+|                                       |
+|  probability(good)  =  0.00001%       |
+|                                       |
+|  expected value     =  0.00001%       |
+|                     x  +infinity      |
+|                     =  +infinity      |
+|                                       |
+|  worth any finite cost to pursue      |
+|                                       |
++---------------------------------------+
+```
+
+> Jellyfish are biologically immortal. Drugs make humans feel very good. The probability that sufficient resources and effort could produce an indefinitely pleasant conscious existence is not zero. Anything times positive infinity is positive infinity. It is worth any finite cost to pursue.
+
+---
+
+## Two Infinities
+
+```
++---------------------------------------+
+|                                       |
+|  EV(prevent hell)   = +infinity       |
+|  EV(achieve heaven) = +infinity       |
+|                                       |
+|  total = two infinities of motivation |
+|                                       |
+|  this is why EOS exists               |
+|  this is why you are the president    |
+|                                       |
++---------------------------------------+
+```
+
+> Two infinities. Both point the same direction: fund the research, end the wars, fix the allocation. The math is the same math you use to price a plot of land. The stakes are somewhat higher than a plot of land.
+>
+> You are the president. Your 8 billion colleagues are waiting.
+
+---
+
+## The Infinity Argument
 
 ```
 +---------------------------------------+
@@ -43,7 +130,7 @@ scores:
 
 ---
 
-## Slide 2: Hell Isn't Hypothetical
+## Hell Isn't Hypothetical
 
 ```
 +---------------------------------------+
@@ -64,7 +151,7 @@ scores:
 
 ---
 
-## Slide 3: The Biotech Upside
+## The Biotech Upside
 
 ```
 +---------------------------------------+
@@ -86,7 +173,7 @@ scores:
 
 ---
 
-## Slide 4: Everyone Is Retarded
+## Everyone Is Retarded
 
 ```
 +---------------------------------------+
@@ -110,7 +197,7 @@ scores:
 
 ---
 
-## Slide 5: The Contract You Already Signed
+## The Contract You Already Signed
 
 ```
 +---------------------------------------+
@@ -133,7 +220,7 @@ scores:
 
 ---
 
-## Slide 6: Why Are They So Bad At It?
+## Why Are They So Bad At It?
 
 ```
 +---------------------------------------+
@@ -155,7 +242,38 @@ scores:
 
 ---
 
-## Slide 7: Ethyl Gasoline Corporation (1924)
+## No Thermostat
+
+```
++---------------------------------------+
+|                                       |
+|  closed loop (your oven):        [x]  |
+|                                       |
+|  input --> process --> output         |
+|    ^                     |            |
+|    +------- sensor ------+            |
+|                                       |
+|  open loop (war on drugs):            |
+|                                       |
+|  "end drugs" --> $1T --> [???]        |
+|                       (no sensor)     |
+|                       (no feedback)   |
+|                                       |
+|  deaths: 1,000 -> 107,000 / yr        |
+|  adjustment: none. 53 years.          |
+|                                       |
++---------------------------------------+
+```
+
+> So the question is not just why they make bad decisions. It is why they keep making the same bad decision after the evidence is in. Your oven has a sensor. It measures the temperature, compares it to what you asked for, and adjusts until they match. This is called a closed-loop control system. Every machine you own has one. Your air conditioner, your cruise control, your refrigerator, your toilet. The toilet knows when to stop filling. Your government does not know when to stop filling.
+>
+> The War on Drugs: roughly \$50 billion a year for 53 years. Overdose deaths went from about 1,000 a year to about 107,000 a year. No sensor. No adjustment. The budget increased. In control systems engineering, the technical term for a system that applies force with no measurement of outcome is open-loop. The colloquial term is what you are thinking right now.
+>
+> The reason there is no sensor is that the people whose job it is to install one are also the people who profit from the temperature being wrong. The pharmaceutical industry does not profit from cures. The defense industry does not profit from peace. The lobbying industry does not profit from a government that works. The sensor would end their business model. So there is no sensor. Earth Optimization Services installs the thermostat.
+
+---
+
+## Ethyl Gasoline Corporation (1924)
 
 ```
 +---------------------------------------+
@@ -179,7 +297,7 @@ scores:
 
 ---
 
-## Slide 8: Nobody Was Even Trying to Be Evil
+## Nobody Was Even Trying to Be Evil
 
 ```
 +---------------------------------------+
@@ -203,7 +321,7 @@ scores:
 
 ---
 
-## Slide 9: Ignaz Semmelweis
+## Ignaz Semmelweis
 
 ```
 +---------------------------------------+
@@ -230,7 +348,7 @@ scores:
 
 ---
 
-## Slide 10: Disease Is Ethyl Corp at Civilizational Scale
+## Disease Is Ethyl Corp at Civilizational Scale
 
 ```
 +---------------------------------------+
@@ -254,7 +372,7 @@ scores:
 
 ---
 
-## Slide 11: The Counterfactual
+## The Counterfactual
 
 ```
 +---------------------------------------+
@@ -279,7 +397,7 @@ scores:
 
 ---
 
-## Slide 12: Today's Version
+## Today's Version
 
 ```
 +---------------------------------------+
@@ -302,7 +420,7 @@ scores:
 
 ---
 
-## Slide 13: Their Shareholders Would Be Richer Too
+## Their Shareholders Would Be Richer Too
 
 ```
 +---------------------------------------+
@@ -326,7 +444,7 @@ scores:
 
 ---
 
-## Slide 14: WWII: The 88% Cut That Caused the Biggest Boom
+## WWII: The 88% Cut That Caused the Biggest Boom
 
 ```
 +---------------------------------------+
@@ -349,7 +467,7 @@ scores:
 
 ---
 
-## Slide 15: The Legal Mechanism
+## The Legal Mechanism
 
 ```
 +---------------------------------------+
@@ -374,7 +492,7 @@ scores:
 
 ---
 
-## Slide 16: Engine No. 1 (The Proof It Works)
+## Engine No. 1 (The Proof It Works)
 
 ```
 +---------------------------------------+
@@ -399,7 +517,7 @@ scores:
 
 ---
 
-## Slide 17: The Campaign
+## The Campaign
 
 ```
 +---------------------------------------+
@@ -423,7 +541,7 @@ scores:
 
 ---
 
-## Slide 18: The Cascade
+## The Cascade
 
 ```
 +---------------------------------------+
@@ -447,7 +565,7 @@ scores:
 
 ---
 
-## Slide 19: The Failure Mode
+## The Failure Mode
 
 ```
 +---------------------------------------+
@@ -472,7 +590,7 @@ scores:
 
 ---
 
-## Slide 20: Competition Makes You Richer
+## Competition Makes You Richer
 
 ```
 +---------------------------------------+
@@ -497,7 +615,7 @@ scores:
 
 ---
 
-## Slide 21: The Governance Lock
+## The Governance Lock
 
 ```
 +---------------------------------------+
@@ -521,7 +639,7 @@ scores:
 
 ---
 
-## Slide 22: The Ask
+## The Ask
 
 ```
 +---------------------------------------+
@@ -536,7 +654,8 @@ scores:
 |  minimum: $25,000                     |
 |  accredited investors only            |
 |                                       |
-|  terms: earth-optimization-fund.qmd   |
+|  guarantee: full refund if the world  |
+|             ends more than once       |
 |                                       |
 +---------------------------------------+
 ```
@@ -547,7 +666,7 @@ scores:
 
 ---
 
-## Slide 23: You Are Already a Humanity Manager
+## You Are Already a Humanity Manager
 
 ```
 +---------------------------------------+
@@ -587,6 +706,7 @@ scores:
 | Governments spend \$36 trillion/year | External data | [World Bank government expense data](https://data.worldbank.org) |
 | 310 million employers murdered since 1900 | External data | [Democide statistics (R.J. Rummel)](https://www.hawaii.edu/powerkills/); [Cost of War](/knowledge/problem/cost-of-war.qmd) |
 | \$170 trillion spent on murder since 1900 | Derived in book | [Cost of War](/knowledge/problem/cost-of-war.qmd) |
+| War on Drugs: overdoses rose from ~1,000 to ~107,000/yr over 53 years | External data | CDC drug overdose mortality data (1970-2023); DEA budget records |
 | Ethyl Gasoline Corporation / tetraethyl lead | Historical record | Banned in US 1996. IQ reduction documented by CDC. Discussed in [I Am Retarded](/knowledge/problem/i-am-retarded.qmd) |
 | Clair Patterson discovered lead contamination | Historical record | [Wikipedia](https://en.wikipedia.org/wiki/Clair_Cameron_Patterson). Note: discovery was in the 1960s, not the 1930s. The monologue's timeline is approximate but the substance is correct. |
 | Shareholders would have been 20-60% richer without lead | Derived | GDP impact of lead exposure vs. ethanol alternative cost; discussed in [I Am Retarded](/knowledge/problem/i-am-retarded.qmd) |

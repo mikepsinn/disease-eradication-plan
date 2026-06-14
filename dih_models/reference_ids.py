@@ -837,6 +837,7 @@ class ReferenceID(str, Enum):
     NONPROFIT_CLINICAL_TRIAL_SPENDING_ESTIMATE = "nonprofit-clinical-trial-spending-estimate"
     NONPROFIT_DRUG_DEVELOPMENT_DEADLOCKS = "nonprofit-drug-development-deadlocks"
     NORDHAUS2002 = "nordhaus2002"
+    NORDHAUS2004 = "nordhaus2004"
     NORDHAUS2013 = "nordhaus2013"
     NOREN1995SOVIET = "noren1995soviet"
     NORTH_KOREA_BYBIT_HACK_2025 = "north-korea-bybit-hack-2025"

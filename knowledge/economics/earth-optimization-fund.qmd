@@ -90,7 +90,7 @@ The speculative early claim is your fractional exposure to the probability-weigh
 
 $$\text{price per share} = \frac{P(I) \times V}{\text{total shares}}$$
 
-**V** is the total addressable value EOS can capture: the NPV of the fraction of the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] that flows to EOS shareholders through portfolio appreciation. The base case uses Nordhaus (2004), who found innovators capture roughly 2.2% of the social value they create. That is not a law of physics. It is the benchmark.
+**V** is the total addressable value EOS can capture: the NPV of the fraction of the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] that flows to EOS shareholders through portfolio appreciation. The base case uses Nordhaus (2004), who found innovators capture roughly 2.2% of the social value they create [@nordhaus2004]. That is not a law of physics. It is the benchmark.
 
 A governance product can capture less than that because some benefits are public goods: fewer wars, cheaper cures, lower tax drag, less policy volatility. Those benefits spill into the whole economy whether or not EOS owns every pipe they flow through.
 
@@ -249,15 +249,15 @@ eosBidModel = {
   const afterDilutionOwnership = (investment / postMoney) * (1 - dilution);
   const fullValue = paramData["EOS_EQUITY_VALUE_V"].value;
   const stageValues = {
-    stage1: paramData["EOS_STAGE_1_HII_MODELED_VALUE"].value,
-    stage2: paramData["EOS_STAGE_2_DEFENSE_PRIMES_MODELED_VALUE"].value,
-    stage3: paramData["EOS_STAGE_3_LOBBYING_SECTORS_MODELED_VALUE"].value,
+    stage1: paramData["EOS_STAGE_1_HII_TERMINAL_VALUE"].value,
+    stage2: paramData["EOS_STAGE_2_DEFENSE_PRIMES_TERMINAL_VALUE"].value,
+    stage3: paramData["EOS_STAGE_3_LOBBYING_SECTORS_TERMINAL_VALUE"].value,
     full: fullValue
   };
   const scenarios = [
     {name: "Failure", p: terminalFailure, value: 0, payout: investment * recovery},
     {name: "Stage 1: HII", p: terminalStage1, value: stageValues.stage1, payout: afterDilutionOwnership * stageValues.stage1},
-    {name: "Stage 2: nine companies", p: terminalStage2, value: stageValues.stage2, payout: afterDilutionOwnership * stageValues.stage2},
+    {name: "Stage 2: defense primes", p: terminalStage2, value: stageValues.stage2, payout: afterDilutionOwnership * stageValues.stage2},
     {name: "Stage 3: all lobbying sectors", p: terminalStage3, value: stageValues.stage3, payout: afterDilutionOwnership * stageValues.stage3},
     {name: "Stage 4: full EOS value", p: terminalFull, value: stageValues.full, payout: afterDilutionOwnership * stageValues.full}
   ];
@@ -458,11 +458,11 @@ EOS captures value from waste. Not from competitors, not from customers, not fro
 
 Control is the one thing split evenly: one vote per human, operators included, none worth more than another. Your money buys a return, not a bigger say. Your species finds this more suspicious than if they had simply stolen everything.
 
-**Stage 1: One company (HII).** Huntington Ingalls Industries is the sole supplier of aircraft carriers to the United States Navy. Market cap roughly $10 billion. Its core revenue is contract-locked (the Navy cannot buy carriers from anyone else), its engineering workforce is among the most skilled on the planet, and its lobbying budget is currently pointed at maintaining military spending levels that its own shareholders would be better off without. A governance campaign redirects the lobbying. The contract revenue continues. The stock appreciates from the credibility cascade. Modeled stage value: {{< var eos_stage_1_hii_modeled_value >}}. The calculator above prices what that means for a specific check, valuation, dilution, and failure recovery.
+**Stage 1: One company (HII).** Huntington Ingalls Industries is the sole supplier of aircraft carriers to the United States Navy. Market cap roughly $10 billion. Its core revenue is contract-locked (the Navy cannot buy carriers from anyone else), its engineering workforce is among the most skilled on the planet, and its lobbying budget is currently pointed at maintaining military spending levels that its own shareholders would be better off without. A governance campaign redirects the lobbying. The contract revenue continues. The stock appreciates from the credibility cascade. Terminal stage value: {{< var eos_stage_1_hii_terminal_value >}}. The calculator above prices what that means for a specific check, valuation, dilution, and failure recovery.
 
-**Stage 2: Defense primes.** The same logic applied to the major U.S. military primes. Each success funds the next (appreciation from HII funds KTOS, KTOS funds LDOS, and so on). The lobbying of the entire military sector, redirected. Modeled stage value: {{< var eos_stage_2_defense_primes_modeled_value >}}. The mechanism is identical to Stage 1; the scale is larger because a sector lobbies more than one company.
+**Stage 2: Defense primes.** The same logic applied to the major U.S. military primes. Each success funds the next (appreciation from HII funds KTOS, KTOS funds LDOS, and so on). The lobbying of the entire military sector, redirected. Terminal stage value: {{< var eos_stage_2_defense_primes_terminal_value >}}. The mechanism is identical to Stage 1; the scale is larger because a sector lobbies more than one company.
 
-**Stage 3: All lobbying sectors.** Military contracting is not the only industry that lobbies for policies its own shareholders would be better off without. Pharmaceutical companies spend $373 million per year lobbying against drug pricing reforms that would expand their addressable market. Energy companies lobby against transitions that would lower their input costs. Finance, telecom, agriculture. Every industry that lobbies for wasteful policy has value trapped by misallocation. EOS applies the same governance pressure across all of them. Modeled stage value: {{< var eos_stage_3_lobbying_sectors_modeled_value >}}.
+**Stage 3: All lobbying sectors.** Military contracting is not the only industry that lobbies for policies its own shareholders would be better off without. Pharmaceutical companies spend $373 million per year lobbying against drug pricing reforms that would expand their addressable market. Energy companies lobby against transitions that would lower their input costs. Finance, telecom, agriculture. Every industry that lobbies for wasteful policy has value trapped by misallocation. EOS applies the same governance pressure across all of them. Terminal stage value: {{< var eos_stage_3_lobbying_sectors_terminal_value >}}.
 
 **Stage 4: Wishocratic governance.** When resource allocation is optimized across all public spending globally, through [Wishocracy](../solution/wishocracy.qmd), the total value is the difference between what humanity produces under current governance and what it produces under optimal governance. This is the political dysfunction tax, eliminated. Modeled full EOS value: {{< var eos_equity_value_v >}}. This sounds absurd until you remember that global GDP is approximately {{< var global_gdp_2025 >}} per year, and the difference between good and bad allocation of that sum, compounded over decades, is larger than any number that fits comfortably in a sentence.
 

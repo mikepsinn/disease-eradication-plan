@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 664 parameters used in the analysis, organized by type:
+This appendix documents all 667 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 199
 - Calculated values: 340
-- Core definitions: 125
+- Core definitions: 128
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (340 parameters) • [External Data Sources](#sec-external) (199 parameters) • [Core Definitions](#sec-definitions) (125 parameters)
+[Calculated Values](#sec-calculated) (340 parameters) • [External Data Sources](#sec-external) (199 parameters) • [Core Definitions](#sec-definitions) (128 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5261,7 +5261,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium from coordinated buying pressure
+Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium and execution friction
 
 **Inputs**:
 
@@ -9162,7 +9162,7 @@ Total addressable value for EOS equity: NPV of the fraction of political dysfunc
 **Inputs**:
 
 - [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101 trillion
-- [EOS Social Value Capture Rate](#sec-eos_social_value_capture_pct) 📊: 2.2% (95% CI: 1% - 5%)
+- [EOS Social Value Capture Rate](#sec-eos_social_value_capture_pct) 📊: 2.2% (95% CI: 0.5% - 5%)
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -31370,13 +31370,15 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Fraction of political dysfunction tax value that EOS captures as shareholder returns via portfolio appreciation. Base case from Nordhaus (2004): innovators capture 2.2% of social surplus. Likely a floor for activist governance (no competitive price erosion). Skeptical case: 1%. Bull case: 5%.
+Fraction of political dysfunction tax value that EOS captures as shareholder returns via portfolio appreciation. Base case from Nordhaus (2004): innovators capture 2.2% of social surplus. Could be lower because governance gains are partly public goods. Could be higher if the thesis is tradable before it is obvious, EOS owns constrained assets first, and later investors reprice those assets after EOS proves the governance case. Skeptical case: 0.5%. Bull case: 5%.
+
+**Source**: [@nordhaus2004]
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1%, 5%] • Distribution: Lognormal (SE: 1%)
+**Technical**: 95% CI: [0.5%, 5%] • Distribution: Lognormal (SE: 1%)
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 5% (±91%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.5% and 5% (±102%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -35354,7 +35356,7 @@ Percentage of budget the military sector keeps under 1% treaty
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected price multiplier from coordinated buy-up demand pressure (midpoint of 1.5x-3x range based on float constraints)
+Planning multiplier for acquisition premium, execution friction, disclosure timing, and large-position accumulation costs in a counsel-led control campaign
 
 #### Uncertainty Range
 
@@ -35667,6 +35669,72 @@ DIH broader initiatives upfront cost (medium case)
 #### Input Distribution
 
 {{< include ../figures/distribution-dih_npv_upfront_cost_initiatives.qmd >}}
+
+*Core definition*
+
+:::
+
+### EOS Stage 1 HII Terminal Value: $330 million {#sec-eos_stage_1_hii_terminal_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled terminal stage value if the first EOS governance campaign redirects Huntington Ingalls Industries lobbying and creates a credible activist-governance proof point. This is not probability-weighted expected value; the calculator applies probability separately.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100 million, $1 billion] • Distribution: Lognormal (SE: $250 million)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $100 million and $1 billion (±136%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-eos_stage_1_hii_terminal_value.qmd >}}
+
+*Core definition*
+
+:::
+
+### EOS Stage 2 Defense-Primes Terminal Value: $7 billion {#sec-eos_stage_2_defense_primes_terminal_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled terminal stage value if EOS extends the governance campaign from HII to the major U.S. military prime contractors and redirects sector lobbying toward shareholder-positive policy. This is not probability-weighted expected value; the calculator applies probability separately.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$1.5 billion, $30 billion] • Distribution: Lognormal (SE: $6 billion)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $1.5 billion and $30 billion (±204%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-eos_stage_2_defense_primes_terminal_value.qmd >}}
+
+*Core definition*
+
+:::
+
+### EOS Stage 3 Lobbying-Sectors Terminal Value: $452 billion {#sec-eos_stage_3_lobbying_sectors_terminal_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled terminal stage value if EOS applies the same governance pressure across major lobbying-heavy sectors whose current policy positions destroy shareholder value. This is not probability-weighted expected value; the calculator applies probability separately.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100 billion, $2 trillion] • Distribution: Lognormal (SE: $400 billion)
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $100 billion and $2 trillion (±210%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-eos_stage_3_lobbying_sectors_terminal_value.qmd >}}
 
 *Core definition*
 
@@ -36782,7 +36850,7 @@ Cumulative property and infrastructure destruction from major wars since 1900 (2
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Additional lag after broad disease-control capacity before biological aging becomes a treatable risk factor in the aggressive prosecutor model.
+Additional lag after broad disease-control capacity before biological aging becomes a treatable risk factor in the aggressive prosecutor model. Fermi rationale: aging research requires the molecular biology toolchain (DNA structure, oncogenes, telomere biology, cellular senescence) which itself builds on the disease-control infrastructure. With investment proportional to funding and prizes accelerating iteration, the hallmarks-of-aging framework (telomeres, senolytics, mTOR) likely emerges ~15-20 years faster than the historical timeline -- but geroscience is genuinely downstream of molecular biology and cannot be fully parallelized with disease-control research. 40 years is the central estimate; confidence interval (10-65) is wide because this is the most speculative component of the model.
 
 #### Uncertainty Range
 
@@ -36832,7 +36900,7 @@ Start year for the aggressive prosecutor medical redirect counterfactual.
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Assumed years to build the missing medical toolchain before the queue-clearance clock runs at full force: diagnostics, EHRs, sequencing, AI, factories, surveillance, and trial infrastructure. Set so the central queue model yields a 1950 disease cutoff.
+Estimated minimum physical build time for the medical toolchain even with 10x capital: diagnostics, cell culture, manufacturing scale-up, trained researchers, surveillance, and trial infrastructure. Fermi rationale: (1) scientific breakthroughs are treated as largely proportional to investment -- more money attracts talent from finance and other high-paying sectors, more researchers mean more parallel experiments and more shots on goal, so conceptual barriers are not treated as exogenous; (2) even so, a physical floor exists -- you cannot train a molecular biologist in a year or build a penicillin factory overnight regardless of capital; (3) prize-based and market-incentive funding is assumed, not NIH grant-style funding -- prizes pay for results, not process, yielding roughly 5-10x more useful output per dollar, making this estimate conservative relative to current NIH efficiency as a baseline; (4) Operation Warp Speed compressed a 10-15 year vaccine timeline to 9 months with advance purchase commitments -- ~15x acceleration -- suggesting the physical floor is around 12-18 months for known-science applications. 14 years reflects the harder case of building infrastructure for unknown-science applications from a 1900 starting point. Confidence interval (0-40) reflects genuine uncertainty; the central estimate is not reverse-engineered to hit any target year.
 
 #### Uncertainty Range
 

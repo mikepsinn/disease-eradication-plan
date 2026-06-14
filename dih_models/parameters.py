@@ -6297,25 +6297,30 @@ POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL = Parameter(
 
 # Fraction of social value EOS captures as shareholder returns.
 # Base: Nordhaus (2004) found innovators capture ~2.2% of social surplus on average.
-# For activist governance this is likely a floor (not a ceiling): the capture mechanism
-# is portfolio appreciation, not competitive product pricing, so there is no competitive
-# erosion of the capture rate. Activist literature analog: Engine No. 1 captured
-# significant fraction of ExxonMobil's value uplift through share appreciation.
-# CI: 1% (competitive markets, spillovers dominate) to 5% (durable moat via network/data).
+# This is a benchmark, not a guaranteed floor. Governance benefits are partly public
+# goods, so EOS equity may capture less than the social surplus it creates. It may
+# also capture more than the ordinary benchmark if the thesis is tradable before it
+# is obvious, EOS owns the constrained assets first, and later investors reprice
+# those assets after EOS proves the governance case.
+# CI: 0.5% (spillovers dominate) to 5% (durable thesis ownership).
 EOS_SOCIAL_VALUE_CAPTURE_PCT = Parameter(
     0.022,
     manual_ref="knowledge/economics/earth-optimization-fund.qmd",
     source_type="external",
+    source_ref=ReferenceID.NORDHAUS2004,
     confidence="low",
     description="Fraction of political dysfunction tax value that EOS captures as "
                 "shareholder returns via portfolio appreciation. Base case from "
                 "Nordhaus (2004): innovators capture 2.2% of social surplus. "
-                "Likely a floor for activist governance (no competitive price erosion). "
-                "Skeptical case: 1%. Bull case: 5%.",
+                "Could be lower because governance gains are partly public goods. "
+                "Could be higher if the thesis is tradable before it is obvious, "
+                "EOS owns constrained assets first, and later investors reprice "
+                "those assets after EOS proves the governance case. "
+                "Skeptical case: 0.5%. Bull case: 5%.",
     display_name="EOS Social Value Capture Rate",
     unit="percent",
     distribution=DistributionType.LOGNORMAL,
-    confidence_interval=(0.01, 0.05),
+    confidence_interval=(0.005, 0.05),
     std_error=0.01,
     keywords=["EOS", "value capture", "Nordhaus", "activist", "equity"],
     latex_symbol=r"\phi_{capture}",
@@ -6326,7 +6331,7 @@ EOS_SOCIAL_VALUE_CAPTURE_PCT = Parameter(
 # At base values: $101T × 2.2% / 3% = ~$74T
 # This is V in the share price formula: price = P(I) × V / total_shares.
 EOS_EQUITY_VALUE_V = Parameter(
-    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * 0.022 / 0.03,
+    POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * EOS_SOCIAL_VALUE_CAPTURE_PCT / NPV_DISCOUNT_RATE_STANDARD,
     manual_ref="knowledge/economics/earth-optimization-fund.qmd",
     source_type="calculated",
     confidence="low",
@@ -6351,15 +6356,16 @@ EOS_EQUITY_VALUE_V = Parameter(
     latex_symbol=r"V_{EOS}",
 )
 
-EOS_STAGE_1_HII_EXPECTED_VALUE = Parameter(
+EOS_STAGE_1_HII_TERMINAL_VALUE = Parameter(
     330_000_000,
     manual_ref="knowledge/economics/earth-optimization-fund.qmd",
     source_type="definition",
     confidence="low",
-    description="Modeled expected stage value if the first EOS governance campaign "
+    description="Modeled terminal stage value if the first EOS governance campaign "
                 "redirects Huntington Ingalls Industries lobbying and creates a "
-                "credible activist-governance proof point.",
-    display_name="EOS Stage 1 HII Expected Value",
+                "credible activist-governance proof point. This is not probability-"
+                "weighted expected value; the calculator applies probability separately.",
+    display_name="EOS Stage 1 HII Terminal Value",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
     confidence_interval=(100_000_000, 1_000_000_000),
@@ -6368,15 +6374,17 @@ EOS_STAGE_1_HII_EXPECTED_VALUE = Parameter(
     latex_symbol=r"V_{EOS,1}",
 )
 
-EOS_STAGE_2_NINE_COMPANIES_EXPECTED_VALUE = Parameter(
+EOS_STAGE_2_DEFENSE_PRIMES_TERMINAL_VALUE = Parameter(
     7_000_000_000,
     manual_ref="knowledge/economics/earth-optimization-fund.qmd",
     source_type="definition",
     confidence="low",
-    description="Modeled expected stage value if EOS extends the governance campaign "
+    description="Modeled terminal stage value if EOS extends the governance campaign "
                 "from HII to the major U.S. military prime contractors and redirects "
-                "sector lobbying toward shareholder-positive policy.",
-    display_name="EOS Stage 2 Nine-Company Expected Value",
+                "sector lobbying toward shareholder-positive policy. This is not "
+                "probability-weighted expected value; the calculator applies "
+                "probability separately.",
+    display_name="EOS Stage 2 Defense-Primes Terminal Value",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
     confidence_interval=(1_500_000_000, 30_000_000_000),
@@ -6385,15 +6393,16 @@ EOS_STAGE_2_NINE_COMPANIES_EXPECTED_VALUE = Parameter(
     latex_symbol=r"V_{EOS,2}",
 )
 
-EOS_STAGE_3_LOBBYING_SECTORS_EXPECTED_VALUE = Parameter(
+EOS_STAGE_3_LOBBYING_SECTORS_TERMINAL_VALUE = Parameter(
     452_000_000_000,
     manual_ref="knowledge/economics/earth-optimization-fund.qmd",
     source_type="definition",
     confidence="low",
-    description="Modeled expected stage value if EOS applies the same governance "
+    description="Modeled terminal stage value if EOS applies the same governance "
                 "pressure across major lobbying-heavy sectors whose current policy "
-                "positions destroy shareholder value.",
-    display_name="EOS Stage 3 Lobbying-Sectors Expected Value",
+                "positions destroy shareholder value. This is not probability-"
+                "weighted expected value; the calculator applies probability separately.",
+    display_name="EOS Stage 3 Lobbying-Sectors Terminal Value",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
     confidence_interval=(100_000_000_000, 2_000_000_000_000),
@@ -14724,11 +14733,11 @@ DEFENSE_TAKEOVER_ACQUISITION_PREMIUM = Parameter(
     1.8,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
     source_type="definition",
-    description="Expected price multiplier from coordinated buy-up demand pressure (midpoint of 1.5x-3x range based on float constraints)",
+    description="Planning multiplier for acquisition premium, execution friction, disclosure timing, and large-position accumulation costs in a counsel-led control campaign",
     display_name="Acquisition Premium Multiplier",
     unit="x",
     confidence_interval=(1.5, 3.0),
-    keywords=["acquisition premium", "price impact", "float"],
+    keywords=["acquisition premium", "execution friction", "control"],
     latex_symbol=r"m_{premium}",
 )
 
@@ -14736,7 +14745,7 @@ DEFENSE_TAKEOVER_COST_TOTAL = Parameter(
     (DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
     source_type="calculated",
-    description="Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium from coordinated buying pressure",
+    description="Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium and execution friction",
     display_name="Military Takeover Total Cost",
     unit="USD",
     keywords=["loving takeover", "military contractor", "market cap", "acquisition"],
@@ -15003,9 +15012,9 @@ MECHANISM_REFERENDUM_P_SUCCESS = Parameter(
 # Takeover, IABs) and the capital is returned or appreciates. Others are
 # pure expenditure (shirts, court, campaign). Dividing by "cost" produces
 # a metric that penalizes capital deployment and rewards cheap long-shots,
-# which is backwards. The Loving Takeover costs negative money (shares
-# appreciate from buying pressure alone, before any policy outcome), has
-# the highest P(success), and is mechanical. It is the best mechanism.
+# which is backwards. The Loving Takeover deploys capital into shares
+# rather than burning it as ordinary campaign spend, has the highest
+# P(success), and is mechanical. It is the best mechanism.
 # The cheap expenditure mechanisms (shirts, court) are what you do while
 # building toward the capital for the takeover.
 

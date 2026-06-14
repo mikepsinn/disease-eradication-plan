@@ -795,10 +795,12 @@ export const EOS_SOCIAL_VALUE_CAPTURE_PCT: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-eos_social_value_capture_pct",
   unit: "percent",
   displayName: "EOS Social Value Capture Rate",
-  description: "Fraction of political dysfunction tax value that EOS captures as shareholder returns via portfolio appreciation. Base case from Nordhaus (2004): innovators capture 2.2% of social surplus. Likely a floor for activist governance (no competitive price erosion). Skeptical case: 1%. Bull case: 5%.",
+  description: "Fraction of political dysfunction tax value that EOS captures as shareholder returns via portfolio appreciation. Base case from Nordhaus (2004): innovators capture 2.2% of social surplus. Could be lower because governance gains are partly public goods. Could be higher if the thesis is tradable before it is obvious, EOS owns constrained assets first, and later investors reprice those assets after EOS proves the governance case. Skeptical case: 0.5%. Bull case: 5%.",
   sourceType: "external",
+  sourceRef: "nordhaus2004",
+  sourceUrl: "https://www.nber.org/papers/w10433",
   confidence: "low",
-  confidenceInterval: [0.01, 0.05],
+  confidenceInterval: [0.005, 0.05],
   stdError: 0.01,
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html",
   manualPageTitle: "Earth Optimization Fund",
@@ -4726,7 +4728,7 @@ export const DEFENSE_TAKEOVER_COST_TOTAL: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_cost_total",
   unit: "USD",
   displayName: "Military Takeover Total Cost",
-  description: "Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium from coordinated buying pressure",
+  description: "Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium and execution friction",
   sourceType: "calculated",
   confidence: "high",
   formula: "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM",
@@ -5821,7 +5823,7 @@ export const EOS_EQUITY_VALUE_V: Parameter = {
   confidence: "low",
   formula: "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * EOS_SOCIAL_VALUE_CAPTURE_PCT / NPV_DISCOUNT_RATE_STANDARD",
   latex: "\\begin{gathered}\nV_{EOS} = O_{total} \\times \\frac{\\phi_{capture}}{r_{discount}}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
-  confidenceInterval: [16122778640202.992, 260205758935381.28],
+  confidenceInterval: [15631184638597.654, 260205758935381.28],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html",
   manualPageTitle: "Earth Optimization Fund",
 };
@@ -10869,7 +10871,7 @@ export const DEFENSE_TAKEOVER_ACQUISITION_PREMIUM: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_acquisition_premium",
   unit: "x",
   displayName: "Acquisition Premium Multiplier",
-  description: "Expected price multiplier from coordinated buy-up demand pressure (midpoint of 1.5x-3x range based on float constraints)",
+  description: "Planning multiplier for acquisition premium, execution friction, disclosure timing, and large-position accumulation costs in a counsel-led control campaign",
   sourceType: "definition",
   confidence: "high",
   confidenceInterval: [1.5, 3.0],
@@ -11176,6 +11178,51 @@ export const DISEASE_RELATED_CAREGIVER_PCT: Parameter = {
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-disease.html",
   manualPageTitle: "The Cost of Disease",
+};
+
+export const EOS_STAGE_1_HII_TERMINAL_VALUE: Parameter = {
+  value: 330000000.0,
+  parameterName: "EOS_STAGE_1_HII_TERMINAL_VALUE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-eos_stage_1_hii_terminal_value",
+  unit: "USD",
+  displayName: "EOS Stage 1 HII Terminal Value",
+  description: "Modeled terminal stage value if the first EOS governance campaign redirects Huntington Ingalls Industries lobbying and creates a credible activist-governance proof point. This is not probability-weighted expected value; the calculator applies probability separately.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [100000000.0, 1000000000.0],
+  stdError: 250000000.0,
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html",
+  manualPageTitle: "Earth Optimization Fund",
+};
+
+export const EOS_STAGE_2_DEFENSE_PRIMES_TERMINAL_VALUE: Parameter = {
+  value: 7000000000.0,
+  parameterName: "EOS_STAGE_2_DEFENSE_PRIMES_TERMINAL_VALUE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-eos_stage_2_defense_primes_terminal_value",
+  unit: "USD",
+  displayName: "EOS Stage 2 Defense-Primes Terminal Value",
+  description: "Modeled terminal stage value if EOS extends the governance campaign from HII to the major U.S. military prime contractors and redirects sector lobbying toward shareholder-positive policy. This is not probability-weighted expected value; the calculator applies probability separately.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [1500000000.0, 30000000000.0],
+  stdError: 6000000000.0,
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html",
+  manualPageTitle: "Earth Optimization Fund",
+};
+
+export const EOS_STAGE_3_LOBBYING_SECTORS_TERMINAL_VALUE: Parameter = {
+  value: 452000000000.0,
+  parameterName: "EOS_STAGE_3_LOBBYING_SECTORS_TERMINAL_VALUE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-eos_stage_3_lobbying_sectors_terminal_value",
+  unit: "USD",
+  displayName: "EOS Stage 3 Lobbying-Sectors Terminal Value",
+  description: "Modeled terminal stage value if EOS applies the same governance pressure across major lobbying-heavy sectors whose current policy positions destroy shareholder value. This is not probability-weighted expected value; the calculator applies probability separately.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [100000000000.0, 2000000000000.0],
+  stdError: 400000000000.0,
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html",
+  manualPageTitle: "Earth Optimization Fund",
 };
 
 export const EPIGENETIC_TARGETS_COUNT: Parameter = {
@@ -12269,7 +12316,7 @@ export const WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS: Parameter
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_trial_redirect_aging_lag_after_disease_control_years",
   unit: "years",
   displayName: "War-Redirect Aging Lag After Disease Control",
-  description: "Additional lag after broad disease-control capacity before biological aging becomes a treatable risk factor in the aggressive prosecutor model.",
+  description: "Additional lag after broad disease-control capacity before biological aging becomes a treatable risk factor in the aggressive prosecutor model. Fermi rationale: aging research requires the molecular biology toolchain (DNA structure, oncogenes, telomere biology, cellular senescence) which itself builds on the disease-control infrastructure. With investment proportional to funding and prizes accelerating iteration, the hallmarks-of-aging framework (telomeres, senolytics, mTOR) likely emerges ~15-20 years faster than the historical timeline -- but geroscience is genuinely downstream of molecular biology and cannot be fully parallelized with disease-control research. 40 years is the central estimate; confidence interval (10-65) is wide because this is the most speculative component of the model.",
   sourceType: "definition",
   confidence: "low",
   confidenceInterval: [10.0, 65.0],
@@ -12309,7 +12356,7 @@ export const WAR_TRIAL_REDIRECT_TOOLCHAIN_BOOTSTRAP_YEARS: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-war_trial_redirect_toolchain_bootstrap_years",
   unit: "years",
   displayName: "War-Redirect Medical Toolchain Bootstrap Years",
-  description: "Assumed years to build the missing medical toolchain before the queue-clearance clock runs at full force: diagnostics, EHRs, sequencing, AI, factories, surveillance, and trial infrastructure. Set so the central queue model yields a 1950 disease cutoff.",
+  description: "Estimated minimum physical build time for the medical toolchain even with 10x capital: diagnostics, cell culture, manufacturing scale-up, trained researchers, surveillance, and trial infrastructure. Fermi rationale: (1) scientific breakthroughs are treated as largely proportional to investment -- more money attracts talent from finance and other high-paying sectors, more researchers mean more parallel experiments and more shots on goal, so conceptual barriers are not treated as exogenous; (2) even so, a physical floor exists -- you cannot train a molecular biologist in a year or build a penicillin factory overnight regardless of capital; (3) prize-based and market-incentive funding is assumed, not NIH grant-style funding -- prizes pay for results, not process, yielding roughly 5-10x more useful output per dollar, making this estimate conservative relative to current NIH efficiency as a baseline; (4) Operation Warp Speed compressed a 10-15 year vaccine timeline to 9 months with advance purchase commitments -- ~15x acceleration -- suggesting the physical floor is around 12-18 months for known-science applications. 14 years reflects the harder case of building infrastructure for unknown-science applications from a 1900 starting point. Confidence interval (0-40) reflects genuine uncertainty; the central estimate is not reverse-engineered to hit any target year.",
   sourceType: "definition",
   confidence: "low",
   confidenceInterval: [0.0, 40.0],
@@ -13067,6 +13114,9 @@ export const parameters = {
   DIH_NPV_ANNUAL_OPEX_INITIATIVES,
   DIH_NPV_UPFRONT_COST_INITIATIVES,
   DISEASE_RELATED_CAREGIVER_PCT,
+  EOS_STAGE_1_HII_TERMINAL_VALUE,
+  EOS_STAGE_2_DEFENSE_PRIMES_TERMINAL_VALUE,
+  EOS_STAGE_3_LOBBYING_SECTORS_TERMINAL_VALUE,
   EPIGENETIC_TARGETS_COUNT,
   EVENTUALLY_AVOIDABLE_DALY_PCT,
   EVENTUALLY_AVOIDABLE_DEATH_PCT,
@@ -14586,6 +14636,21 @@ export const citations: Record<string, Citation> = {
         ],
         note: "Estimated from major foundation budgets and activities",
   },
+  "nordhaus2004": {
+        id: "nordhaus2004",
+        type: "report",
+        title: "Schumpeterian Profits in the American Economy: Theory and Measurement",
+        author: [
+          {
+            family: "Nordhaus",
+            given: "William D."
+          },
+        ],
+        issued: { 'date-parts': [[2004]] },
+        publisher: "National Bureau of Economic Research",
+        URL: "https://www.nber.org/papers/w10433",
+        note: "Estimates that innovators capture about 2.2 percent of total social surplus from innovation",
+  },
   "nuke-winter-150tg": {
         id: "nuke-winter-150tg",
         type: "article-journal",
@@ -15576,11 +15641,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 795,
+  total: 798,
   external: 235,
   calculated: 400,
-  definitions: 160,
-  citations: 175,
+  definitions: 163,
+  citations: 176,
 } as const;
 
 // ============================================================================

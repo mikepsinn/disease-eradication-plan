@@ -2071,7 +2071,7 @@
       "value": 1.8,
       "formatted": "1.8x",
       "unit": "x",
-      "description": "Expected price multiplier from coordinated buy-up demand pressure (midpoint of 1.5x-3x range based on float constraints)",
+      "description": "Planning multiplier for acquisition premium, execution friction, disclosure timing, and large-position accumulation costs in a counsel-led control campaign",
       "sourceType": "definition",
       "sourceRef": null,
       "confidence": "high",
@@ -2114,7 +2114,7 @@
       "value": 872942400000.0,
       "formatted": "$873 billion",
       "unit": "USD",
-      "description": "Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium from coordinated buying pressure",
+      "description": "Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium and execution friction",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
@@ -3693,14 +3693,62 @@
       "value": 0.022,
       "formatted": "2.2%",
       "unit": "percent",
-      "description": "Fraction of political dysfunction tax value that EOS captures as shareholder returns via portfolio appreciation. Base case from Nordhaus (2004): innovators capture 2.2% of social surplus. Likely a floor for activist governance (no competitive price erosion). Skeptical case: 1%. Bull case: 5%.",
+      "description": "Fraction of political dysfunction tax value that EOS captures as shareholder returns via portfolio appreciation. Base case from Nordhaus (2004): innovators capture 2.2% of social surplus. Could be lower because governance gains are partly public goods. Could be higher if the thesis is tradable before it is obvious, EOS owns constrained assets first, and later investors reprice those assets after EOS proves the governance case. Skeptical case: 0.5%. Bull case: 5%.",
       "sourceType": "external",
+      "sourceRef": "nordhaus2004",
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        0.005,
+        0.05
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html"
+    },
+    "EOS_STAGE_1_HII_TERMINAL_VALUE": {
+      "value": 330000000.0,
+      "formatted": "$330 million",
+      "unit": "USD",
+      "description": "Modeled terminal stage value if the first EOS governance campaign redirects Huntington Ingalls Industries lobbying and creates a credible activist-governance proof point. This is not probability-weighted expected value; the calculator applies probability separately.",
+      "sourceType": "definition",
       "sourceRef": null,
       "confidence": "low",
       "formula": null,
       "confidenceInterval": [
-        0.01,
-        0.05
+        100000000.0,
+        1000000000.0
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html"
+    },
+    "EOS_STAGE_2_DEFENSE_PRIMES_TERMINAL_VALUE": {
+      "value": 7000000000.0,
+      "formatted": "$7 billion",
+      "unit": "USD",
+      "description": "Modeled terminal stage value if EOS extends the governance campaign from HII to the major U.S. military prime contractors and redirects sector lobbying toward shareholder-positive policy. This is not probability-weighted expected value; the calculator applies probability separately.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        1500000000.0,
+        30000000000.0
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html"
+    },
+    "EOS_STAGE_3_LOBBYING_SECTORS_TERMINAL_VALUE": {
+      "value": 452000000000.0,
+      "formatted": "$452 billion",
+      "unit": "USD",
+      "description": "Modeled terminal stage value if EOS applies the same governance pressure across major lobbying-heavy sectors whose current policy positions destroy shareholder value. This is not probability-weighted expected value; the calculator applies probability separately.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        100000000000.0,
+        2000000000000.0
       ],
       "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/earth-optimization-fund.html"
@@ -11227,7 +11275,7 @@
       "value": 40.0,
       "formatted": "40 years",
       "unit": "years",
-      "description": "Additional lag after broad disease-control capacity before biological aging becomes a treatable risk factor in the aggressive prosecutor model.",
+      "description": "Additional lag after broad disease-control capacity before biological aging becomes a treatable risk factor in the aggressive prosecutor model. Fermi rationale: aging research requires the molecular biology toolchain (DNA structure, oncogenes, telomere biology, cellular senescence) which itself builds on the disease-control infrastructure. With investment proportional to funding and prizes accelerating iteration, the hallmarks-of-aging framework (telomeres, senolytics, mTOR) likely emerges ~15-20 years faster than the historical timeline -- but geroscience is genuinely downstream of molecular biology and cannot be fully parallelized with disease-control research. 40 years is the central estimate; confidence interval (10-65) is wide because this is the most speculative component of the model.",
       "sourceType": "definition",
       "sourceRef": null,
       "confidence": "low",
@@ -11482,7 +11530,7 @@
       "value": 14.0,
       "formatted": "14 years",
       "unit": "years",
-      "description": "Assumed years to build the missing medical toolchain before the queue-clearance clock runs at full force: diagnostics, EHRs, sequencing, AI, factories, surveillance, and trial infrastructure. Set so the central queue model yields a 1950 disease cutoff.",
+      "description": "Estimated minimum physical build time for the medical toolchain even with 10x capital: diagnostics, cell culture, manufacturing scale-up, trained researchers, surveillance, and trial infrastructure. Fermi rationale: (1) scientific breakthroughs are treated as largely proportional to investment -- more money attracts talent from finance and other high-paying sectors, more researchers mean more parallel experiments and more shots on goal, so conceptual barriers are not treated as exogenous; (2) even so, a physical floor exists -- you cannot train a molecular biologist in a year or build a penicillin factory overnight regardless of capital; (3) prize-based and market-incentive funding is assumed, not NIH grant-style funding -- prizes pay for results, not process, yielding roughly 5-10x more useful output per dollar, making this estimate conservative relative to current NIH efficiency as a baseline; (4) Operation Warp Speed compressed a 10-15 year vaccine timeline to 9 months with advance purchase commitments -- ~15x acceleration -- suggesting the physical floor is around 12-18 months for known-science applications. 14 years reflects the harder case of building infrastructure for unknown-science applications from a 1900 starting point. Confidence interval (0-40) reflects genuine uncertainty; the central estimate is not reverse-engineered to hit any target year.",
       "sourceType": "definition",
       "sourceRef": null,
       "confidence": "low",
@@ -26995,6 +27043,24 @@
       "volume": "",
       "pages": "",
       "number": "8818"
+    },
+    "nordhaus2004": {
+      "id": "nordhaus2004",
+      "title": "Schumpeterian Profits in the American Economy: Theory and Measurement",
+      "author": "Nordhaus, William D.",
+      "year": "2004",
+      "source": "National Bureau of Economic Research",
+      "url": "https://www.nber.org/papers/w10433",
+      "urls": [
+        "https://www.nber.org/papers/w10433"
+      ],
+      "quote": "",
+      "note": "Estimates that innovators capture about 2.2 percent of total social surplus from innovation",
+      "type": "techreport",
+      "doi": "10.3386/w10433",
+      "volume": "",
+      "pages": "",
+      "number": "10433"
     },
     "nordhaus2013": {
       "id": "nordhaus2013",

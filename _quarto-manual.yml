@@ -204,6 +204,7 @@ book:
         - knowledge/appendix/joke.qmd # The shirt; lives on the manual site; _quarto-joke.yml exists for PDF/Zenodo build only (no subdomain)
         - knowledge/appendix/president-notification-letter.qmd # 1950s HR-style notification letter for newly recognized EOS Presidents; scheduling CTA, Peace assistant, compensation upside, onboarding links; encloses the commission
         - knowledge/appendix/commission-of-the-president.qmd # The appointment document itself: formal commission in the style of a U.S. officer's commission, played dead straight, printable and frameable
+        - knowledge/appendix/presidential-inauguration-ceremony.qmd # Two-minute ceremony script for commissioning a new President; two "I do" questions, one commission
         - knowledge/appendix/humanity-manager-employment-agreement.qmd # Parody employment contract + the qualifying exam + printable Certificate of Humanity Management (training completion; the appointment lives in commission-of-the-president.qmd)
         - knowledge/appendix/notice-of-termination.qmd # HR-format termination letter for all politicians with authority over military spending
         # ── Lawsuit kit ──
@@ -218,7 +219,7 @@ book:
         - knowledge/appendix/shareholder-proposal-14a-8.qmd # SEC Rule 14a-8 shareholder proposal template; escalation after the 60-day demand-letter window
         - knowledge/appendix/litigation-phase.qmd # Post-response decision tree, derivative complaint structural template, settlement playbook
         # ── Escalation ──
-        - knowledge/appendix/loving-takeover.qmd # ~$90/global human to buy controlling stake in Western defense primes; redirects lobbying to championing the 1% treaty. Loving because existing shareholders get rich on the way in and directors gain personal life expectancy from settling
+        - knowledge/appendix/loving-takeover.qmd # ~$90/global human to buy controlling stake in Western defense primes; redirects lobbying to championing the 1% treaty. Loving because existing shareholders, employees, and directors are intended beneficiaries of the long-term strategy
 
     - part: "Economics & Finance"
       chapters:
