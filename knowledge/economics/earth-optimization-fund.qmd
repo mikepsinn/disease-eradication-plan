@@ -30,14 +30,14 @@ Earth Optimization Services is a company because your planet requires a legal bo
 | The Manual | The book you are reading | Sales (pay-what-you-want, anchored to {{< var defense_takeover_cost_per_human >}}) |
 | The Uniform | T-shirts that say "I am retarded" | Sales + the free permanent-marker version |
 | EOS equity (Earth Optimization Fund) | Buys company shares and uses shareholder rights to redirect lobbying toward higher long-term shareholder value | Portfolio appreciation + operating revenue, no carry |
-| [Optimitron](../solution/optimocracy.qmd) | Lobbying-ROI data platform | Data subscriptions, consulting, board-seat compensation |
+| [Optimitron](../solution/optimocracy.qmd) | Activist campaign infrastructure | Consulting triggered by demand letters; board-seat compensation |
 | [The dFDA](../solution/dfda.qmd) | Clinical trial machinery | Platform fees |
 | [The Prize](../strategy/earth-optimization-prize.qmd) | Assurance contracts for coordinated action | Escrow returns |
 | [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) | Later revenue-share bonds funding the political campaign | Bond issuance fees |
 
 EOS buys shares in companies whose lobbying shapes government policy, starting with military contractors because the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] has the cleanest math there. It uses ordinary shareholder tools: voting, demand letters, proxy proposals, proxy contests, board campaigns, and public analysis. This is the investable version of the [Loving Takeover](../appendix/loving-takeover.qmd). The side quest is buying your own share and filing your own letter. The main money machine is the holding company that owns the campaign.
 
-The long-term goal is to buy enough influence over the companies that already buy policy, then hand the policy agenda back to humanity through [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]. EOS investors buy economic upside. They do not buy EOS governance, extra votes, nonprofit control, PAC control, or a private steering wheel for Earth.
+The long-term goal is to buy enough influence over the companies that already buy policy, then hand the policy agenda back to humanity through [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025].
 
 ## The Boring Legal Ladder
 
@@ -57,7 +57,7 @@ A token is not the product. It may someday be plumbing for transfer, custody, or
 
 There are three layers of appreciation.
 
-**Layer 1: Capital deployment.** EOS buys real shares in companies whose lobbying shapes policy. The downside is ordinary portfolio risk. The upside is exposure to companies whose long-term strategy may improve if the analysis is correct.
+**Layer 1: Capital deployment.** EOS buys real shares in companies whose lobbying shapes policy. The downside is the portfolio tanks. The upside is the companies get smarter.
 
 **Layer 2: Credibility cascade.** As the campaign builds credibility, the market may price in a higher probability of success. This is the same kind of repricing that follows M&A announcements, FDA approvals, and earnings revisions.
 
@@ -120,7 +120,19 @@ A continuous per-share auction is aspirational; Reg D requires signed subscripti
 
 This means no single person, not Mike, not the attorneys, not the lead investor, picks the share price. The market picks it, within bounds the formula makes explicit and defensible.
 
-**Why early money earns more.** The early dollar funds the first campaign when P is lowest and each win moves it most. And it is the social proof every later dollar waits for. You bought probability while it was cheap, and your buying is part of what made it expensive. The discount is not a promotion; it is the market's measure of how much conviction the purchase required.
+**How P rises with capital.** P(I) is not a vague promise. Each tranche of capital funds a specific stage, and each stage has an estimated probability:
+
+| Capital raised | What it funds | Implied P(full success) | Price per share vs. floor |
+|---|---|---|---|
+| $0 | One demand letter, no follow-through | ~0.01% | 1× |
+| $500K | HII initial campaign: letter, legal, media | ~0.5% | ~50× |
+| $2M | HII full campaign: sustained pressure, ISS engagement | ~2% | ~200× |
+| $20M | Stage 2: five defense primes, coordinated | ~5% | ~500× |
+| $200M | Stage 3: all lobbying sectors | ~15% | ~1,500× |
+
+These are rough estimates, not projections. The exact numbers move with campaign results. The point is the direction: each dollar raised moves the probability up, which moves the rational share price up, which means every tranche after the first one clears at a higher price. The uniform-price auction within each tranche, and the Bayesian repricing between tranches, is how that relationship becomes observable rather than asserted.
+
+**Why early money earns more.** The early dollar funds the first campaign when P is lowest and each win moves it most. And it is the social proof every later dollar waits for. You bought probability while it was cheap, and your buying is part of what made it expensive.
 
 ### First-tranche bid calculator
 
@@ -430,8 +442,7 @@ Most investments are zero-sum at the margin. A dollar of market share won by one
 
 This one is different in four ways that do not coexist in any other asset class.
 
-**1. It is the only investment that increases the value of everything else you own.** The political dysfunction tax is not a tax on one sector. It is a drag on the entire economy. Eliminating it does not rerate one stock; it rerates all of them. If you own index funds, bonds, real estate, or a business, their value is being suppressed by misallocated policy. EOS correcting that suppression makes your other holdings worth more at the same time it makes itself worth more. No other investment does this.
-
+**1. It is the only investment that increases the value of everything else you own.** The political dysfunction tax is not a tax on one sector. It is a drag on the entire economy. Eliminating it does not rerate one stock; it rerates all of them. If you own index funds, bonds, real estate, or a business, their value is being suppressed by misallocated policy. EOS correcting that suppression makes your other holdings worth more at the same time it makes itself worth more.
 **2. Copycats can be validation before they are competition.** Every other business competes with someone for customers, attention, market share, talent, or contracts. EOS's first competition is waste. Waste does not compete back. A fund copying the thesis has to make many of the same board arguments and publish many of the same public analyses. That increases attention, reduces the perceived weirdness of the strategy, and makes the thesis easier for boards to take seriously. Later, copied operating businesses may compete for fees or status. Fine. By then the important thing has happened: the market has begun pricing the end of waste.
 
 **3. The leverage math is absurd.** The top U.S. defense contractors spend roughly $60 million per year on direct lobbying. That money is burned: spent, gone, zero asset remaining. It purchases access and influence for one year and requires the same spend next year to maintain.
@@ -446,9 +457,8 @@ If the activist campaign causes MIC stocks to outperform your alternatives (Laye
 
 The company spending $60M/yr on lobbying has nothing to show for it in year two. EOS has the same influence and an appreciating asset.
 
-**4. The amount of policy at stake per dollar invested is exceptional.** Governments collectively spend roughly {{< var global_military_spending_annual_2024 >}} per year on the military. Defense contractors collectively influence a meaningful fraction of how that is allocated. The capital required to gain activist influence at the board level across the major primes is a small fraction of one year's defense budget. Spend that fraction once; redirect the influence on {{< var global_military_spending_annual_2024 >}} per year, compounding, forever. That ratio exists in no other asset class.
-
-The honest caveat: these four properties only hold if the governance campaigns work. Engine No. 1 proved the mechanism at ExxonMobil; it has not been applied at scale to defense. The downside if it fails is a concentrated activist portfolio, not a catastrophe. But the upside if it works is in a different universe from every other investment you could make with the same capital.
+**4. The amount of policy at stake per dollar invested is exceptional.** Governments collectively spend roughly {{< var global_military_spending_annual_2024 >}} per year on the military. Defense contractors collectively influence a meaningful fraction of how that is allocated. The capital required to gain activist influence at the board level across the major primes is a small fraction of one year's defense budget. Spend that fraction once; redirect the influence on {{< var global_military_spending_annual_2024 >}} per year, compounding, forever.
+The honest caveat: these four properties only hold if the governance campaigns work. Engine No. 1 proved the mechanism at ExxonMobil; it has not been applied at scale to defense. The downside if it fails is a concentrated activist portfolio, not a catastrophe. But the upside if it works is larger than any other position you could take with the same capital.
 
 ## What each stage is worth (before it happens)
 
@@ -474,7 +484,16 @@ The share price is derived from the probability of civilizational optimization, 
 
 **Layer 1: Operating budget.** EOS is a holding company, not a fund. There is no management fee, no carry, no advisory fee. The founder is paid a salary as an ordinary operating expense. EOS still has real costs: legal, audit, custody, brokerage, filing, insurance, compliance, and one developer. These should be disclosed, capped, and kept too small to become the product.
 
-At $2M in assets, a flat $150K operating budget is 7.5% of assets. Expensive for a fund; acceptable for a startup that happens to hold activist positions. At $20M it is 0.75%. At $200M it is 0.075%, less than most index funds charge. The operator gets progressively less rich as the company gets bigger. This is the opposite of every fund whose manager is paid to gather assets regardless of performance. Here, the incentive is to make the assets worth more.
+There is no percentage management fee. EOS has a flat annual operating budget. This is disclosed in the offering documents and covers salary, legal, audit, custody, brokerage, filing, insurance, and one developer. As assets grow, that fixed cost becomes a smaller fraction of the total:
+
+| AUM | Annual operating budget | As % of assets | Comparable |
+|---|---|---|---|
+| $2M (seed) | ~$150K | 7.5% | Expensive for a fund; normal for a startup |
+| $20M | ~$250K | 1.25% | Competitive with venture |
+| $200M | ~$350K | 0.175% | Well below most index funds |
+| $2B | ~$500K | 0.025% | Berkshire territory |
+
+The operator gets progressively less rich as the company gets bigger. This is the opposite of every fund whose manager is paid to gather assets regardless of performance. Here, the incentive is to make the assets worth more.
 
 **Layer 2: Consulting.** The demand letter creates a legal obligation for the board to respond (Caremark). Responding requires commissioning an analysis of whether the company's lobbying generates positive shareholder returns. EOS, through [Optimitron](../solution/optimocracy.qmd), provides this analysis. The free version demonstrates competence. The paid version (deeper, proprietary, ongoing advisory) is how EOS becomes a consultant to the companies it is pressuring.
 
@@ -486,7 +505,7 @@ EOS nominates directors who represent the platonic ideal of a board member: some
 
 At scale: 15 board seats across the defense primes generates ~$4.2M/yr. 50 seats across defense, pharma, and finance generates ~$13.5M/yr, enough to cover EOS's full operating budget from board compensation alone, independent of any management fee.
 
-**Layer 4: Platform.** Optimitron becomes the analytical infrastructure that every institutional investor, proxy advisory firm, and pension fund uses to evaluate lobbying ROI. The data product is valuable to everyone who votes proxies. This is not a SaaS subscription to a software feature; it is access to a proprietary dataset that takes years of activist campaigns to build and cannot be replicated cheaply.
+**Layer 4: Campaign infrastructure.** Optimitron is not a subscription data product. AI will commoditize the analytical layer (lobbying ROI analysis on public data) faster than any subscription business can be built on it. The real asset is the infrastructure for running activist campaigns at scale: legal standing as a named shareholder of record, process infrastructure for filing proxy proposals and coordinating with ISS and Glass Lewis, and a track record of campaign outcomes that no AI can generate without first running the campaigns. The value is the legal position and the credibility it buys, not the algorithm behind it.
 
 **Layer 5: Brand.** The book you are reading. The [educational film](../educational-film.qmd). The shirts. None of this is large revenue. It is marketing that covers its own costs.
 
@@ -652,7 +671,7 @@ html`<div class="eit-summary">You invest ${eosMoney(eosCalc.amount)}. If the cam
 
 The cards above value the share by the appreciation of what it holds (military contractors pivoting in a larger economy). That is only one of the layers. The other is repricing: a share is worth its probability of success times the value of success. You buy while the market prices that probability near zero. If you are right, the share reprices the whole way up, and you keep the difference.
 
-This cuts two ways, and an honest pitch shows both.
+This cuts two ways, and the honest version shows both.
 :::
 
 ```{ojs}

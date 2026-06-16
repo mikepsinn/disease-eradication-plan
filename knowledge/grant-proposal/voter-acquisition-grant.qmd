@@ -20,7 +20,7 @@ This chapter is a grant proposal template. It is designed to be handed to funder
 
 **The intervention.** Redirect 1% of global military spending to clinical trials. This produces {{< var dfda_trial_capacity_multiplier_nounit >}} times more clinical-trial capacity and compresses the timeline for eradicating every known disease from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
 
-**The activation threshold.** The public target is a verified majority of humanity: {{< var global_coordination_target_pct >}} of humanity, or {{< var global_registered_voters_nounit >}} verified voters. The {{< var global_population_activism_threshold_pct >}} Chenoweth benchmark remains the historical lower bound for when movements become hard to ignore {{< var global_population_activism_threshold_pct_cite >}}.
+**The activation threshold.** The public target is a verified majority of humanity: {{< var global_coordination_target_pct >}} of humanity, or {{< var global_registered_voters_nounit >}} verified voters. The {{< var global_population_activism_threshold_pct >}} Chenoweth benchmark remains the historical lower bound for when governments can no longer pretend nobody cares {{< var global_population_activism_threshold_pct_cite >}}.
 
 **The cost-effectiveness.** Each verified voter is attributable to {{< var voter_lives_saved >}} saved and {{< var voter_suffering_hours_prevented >}} of suffering prevented. Per-dollar, probability-discounted, this is the highest-expected-value intervention a global-health funder can support.
 

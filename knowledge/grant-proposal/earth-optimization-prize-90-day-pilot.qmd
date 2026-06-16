@@ -34,14 +34,14 @@ That is the smallest credible pilot.
 
 The broader project is trying to solve a coordination failure, not just publish another proposal.
 
-Humanity already has candidate ingredients for a better trajectory: cheaper [pragmatic clinical trials](../solution/dfda.qmd), better [public-goods allocation](../solution/wishocracy.qmd), measurable [policy learning](../solution/optimocracy.qmd), and large waste pools that could be reallocated via the [Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025] and [US Efficiency Audit](https://us-efficiency-audit.warondisease.org) [@us-efficiency-audit-paper-2025]. What it lacks is a public mechanism that can do all four of these at once:
+Humanity already has the parts: cheaper [pragmatic clinical trials](../solution/dfda.qmd), better [public-goods allocation](../solution/wishocracy.qmd), measurable [policy learning](../solution/optimocracy.qmd), and large waste pools that could be reallocated via the [Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025] and [US Efficiency Audit](https://us-efficiency-audit.warondisease.org) [@us-efficiency-audit-paper-2025]. What it lacks is a public mechanism that can do all four of these at once:
 
 1. compare integrated plans against a visible benchmark,
 2. reward serious participation and recruitment,
 3. surface better replacements through [adversarial review](../strategy/earth-optimization-prize.qmd),
-4. create a credible bridge from public support to political adoption.
+4. turn public support into laws that pass.
 
-That is why the first 90 days matter. The pilot is the step where the project becomes inspectable public infrastructure instead of a stack of papers.
+That is why the first 90 days matter. The pilot is the step where the project becomes real instead of a stack of papers.
 
 ## Why This Pilot Matters
 
@@ -79,7 +79,7 @@ The pilot is extending an existing implementation base, not inventing the entire
 |---|---|---|
 | **[Optimitron](https://optomitron.com)** | Live public app with budget analysis, policy analysis, comparisons, misconceptions testing, alignment flows, and prize/referendum entry points | Gives the pilot a visible software base immediately |
 | **[Optimitron repository](https://github.com/mikepsinn/optomitron)** | Public monorepo implementing the core engine, app packages, data layer, and treasury packages | Lets reviewers inspect real code instead of a PDF |
-| **Evidence machine stack** | [Optimocracy](../solution/optimocracy.qmd), OPG, and OBG components already implemented in code | Reduces epistemic risk around the scoring/recommendation layer |
+| **Evidence machine stack** | [Optimocracy](../solution/optimocracy.qmd), OPG, and OBG components already implemented in code | Means the scoring layer already works, not just a plan |
 | **[Wishocracy](../solution/wishocracy.qmd) stack** | Pairwise preference aggregation and alignment logic already built | Reduces product risk around citizen preference collection |
 | **Identity / participation layer** | Auth, profile, referral plumbing, and World ID-aware participation surfaces already exist | Means the pilot can focus on public process rather than first building account infrastructure |
 | **Treasury packages** | PRIZE / VOTE / IAB / `$WISH` packages are already present in the codebase | Makes it plausible to connect the pilot to later financing rails without re-architecting from scratch |
@@ -111,7 +111,7 @@ Explicitly out of scope for the pilot:
 
 ## Host Responsibilities
 
-The host institution is responsible for a bounded set of public infrastructure tasks.
+The host institution is responsible for five things.
 
 | Responsibility | Output |
 |---|---|

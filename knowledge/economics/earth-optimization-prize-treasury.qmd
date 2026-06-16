@@ -120,7 +120,7 @@ An investment strategy is not a structure. The structure is the regulated shell 
 | I | Buy VCX, wrap it in a claim token | Yes | 3–6 months | $100–300k | 1.85% + ~0.2% | limited by VCX size | Fastest way to get VCX on-chain. |
 | J | A fund-of-funds holding 20+ existing venture firms | Rich people now | 1–1.5 years | $1–3M | ~1.5–2.5% stacked | none | Sounds great. Fees eat it. |
 
-Option J is the one that sounds better than it is. You spread the money across Sequoia, Benchmark, Founders Fund, a16z, First Round, and twenty others. The crowd votes on which ones get more money. It should be perfect. Three boring financial problems ruin it:
+Option J is the one that sounds better than it is. You spread the money across Sequoia, Benchmark, Founders Fund, a16z, First Round, and twenty others. The crowd votes on which ones get more money. Three boring financial problems ruin it:
 
 - The fees stack. You pay the wrapper 1 to 1.5%. Then each underlying fund takes 2% a year plus 20% of the profits. The net ends up worse than just buying VCX.
 - The best venture capital firms do not need new money. They say no. The list you can actually assemble is the second and third tier, which drags the returns toward average.
@@ -250,7 +250,7 @@ The dashboard at warondisease.org shows, updated in real time:
 - **Every wire.** Custodian-to-allocation flows. Auditable trail from deposit to position.
 - **Allocation breakdown.** Live percentage in Boring / Ballast / Tokenized / Frontier slices.
 - **Scoreboard targets.** Current global HALE and median income vs. the {{< var destructive_economy_50pct_year >}} targets. Distance-to-trigger as a single number.
-- **Projected refund per dollar** (failure branch). Updated as the pool compounds. Makes "you cannot lose money" a live number, not a promise.
+- **Projected refund per dollar** (failure branch). Updated as the pool compounds. The number is a model output, not a guarantee.
 - **Earth Optimization Points ledger.** Total points earned, points per major referrer (opt-in display), projected per-point payout if targets are hit.
 - **Audit log.** Every change to deposit terms, every custodian action, every dashboard edit, timestamped and signed.
 
@@ -331,6 +331,6 @@ A normal investment fund bets on which companies will succeed. The Prize Treasur
 
 Allocate well, the targets get hit, the pool goes to the voters. Allocate badly, the treasury still compounds or declines, and the depositors split what exists.
 
-Someone will call this circular. It is not. It is a loop. Deposit. Allocate. The world improves. You get paid.
+Someone will call this circular. It is not. It is a loop. Deposit. Allocate. The targets move. The math decides who gets what.
 
 The objection assumes the treasury sits there passively. The treasury is an active capital allocator pointed at two numbers everyone agrees on.
