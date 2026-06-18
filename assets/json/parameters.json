@@ -11286,7 +11286,7 @@
         "VICTORY_BOND_FUNDING_PCT"
       ],
       "computeExpr": "(TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/financial-plan.html"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/treaty-financial-plan.html"
     },
     "VICTORY_BOND_ANNUAL_RETURN_PCT": {
       "value": 2.72,

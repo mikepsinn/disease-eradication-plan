@@ -9637,8 +9637,8 @@ export const VICTORY_BOND_ANNUAL_PAYOUT: Parameter = {
   confidence: "high",
   formula: "TREATY_FUNDING × BOND_PCT",
   latex: "\\begin{gathered}\nPayout_{bond,ann} = Funding_{treaty} \\times Pct_{bond} = \\$27.2B \\times 10\\% = \\$2.72B\n\\\\[0.5em]\n\\text{where } Funding_{treaty} = Spending_{mil} \\times Reduce_{treaty} = \\$2.72T \\times 1\\% = \\$27.2B\n\\end{gathered}",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/financial-plan.html",
-  manualPageTitle: "Financial Plan",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/treaty-financial-plan.html",
+  manualPageTitle: "Treaty Financial Plan",
 };
 
 export const VICTORY_BOND_ANNUAL_RETURN_PCT: Parameter = {
