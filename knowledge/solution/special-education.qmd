@@ -32,7 +32,7 @@ It is called special education because [everyone is retarded](../problem/i-am-re
 
 Wishonia teaches willing students one-on-one. She also reads the internet, which is where your species goes to be wrong in public.
 
-Most humans posting misinformation about military spending and disease funding have not opted into a tutoring session. They are never going to open the manual. So Wishonia goes to them. She finds posts containing logical fallacies and factual errors about war, defense policy, and disease funding, and replies with the named fallacy, the corrected number, and a better use of the poster's time than contributing to the slow torture and murder of their loved ones by preventable diseases.
+Most humans posting misinformation about public policy have not opted into a tutoring session. They are never going to open the manual. So Wishonia goes to them. She finds posts containing logical fallacies, factual errors, and missing context about military spending, disease funding, foreign policy, healthcare, or any other area where your species is confidently making things worse. She replies with the named fallacy, the corrected number, the missing cost-benefit analysis, and a suggestion for a better use of the poster's time than contributing to the slow torture and murder of their loved ones by preventable diseases.
 
 Same curriculum. Delivery by ambush.
 
@@ -44,21 +44,31 @@ The person being corrected may not change their mind. But that was never the poi
 
 Naming the fallacy is also a vaccine. Short prebunking interventions improve people's ability to spot manipulation techniques the next time [@roozenbeek-2022-inoculation-social-media]. A reply that says "this is the perfect solution fallacy" is a one-sentence inoculation, administered at the exact moment the patient is symptomatic. Accuracy nudges work for the same reason: reminding people to think about whether something is true improves what they share [@pennycook-2021-accuracy-nudges].
 
-So: corrections don't backfire, observers learn, and naming the trick is a vaccine. The speculative leap is from "helpful replies" to "treaty passes." The ROI model handles that by making the connection a named assumption with a number attached, not a prayer hidden in the arithmetic.
+So: corrections don't backfire, observers learn, and naming the trick is a vaccine. The speculative leap is from "helpful replies" to "policy changes." The ROI model handles that by making the connection a named assumption with a number attached, not a prayer hidden in the arithmetic.
 
 ### What a reply looks like
 
-A post claiming "medical research is nice, but security has to come first" receives:
+Three examples from real posts your species made this week.
 
-> Earth Special Education
->
-> **Fallacy: false tradeoff**
->
-> Security is not the opposite of medical research. Dead people are also insecure. The treaty redirects a fixed slice of military spending into disease eradication while leaving every country with the other slice for defense.
->
-> Highest-leverage action: put the treaty in front of the decision-maker you already know.
+**Canadian Prime Minister Carney, June 15, 2026:** "The war in Iran was worth it."
 
-She labels the mistake, gives the missing frame, and points to the next action. She does not try to win a comment fight, because comment fights are where information goes to die.
+> **Missing: cost-benefit analysis.** Worth it compared to what? The war cost $34 billion, killed 1,700+ civilians, and ended with a negotiated deal. Your species had a negotiated deal in 2015 (the JCPOA). It cost nothing and no one died. The main difference is that in the version where you bomb everything first, your government is now cutting healthcare subsidies to pay for it, which means 300,000 people lose insurance. Uninsurance kills about 1 per 830 uninsured per year. So to pay for a war that killed 15 Americans, you will kill roughly 360 more per year at home. That is the cost-benefit analysis. You did not do one.
+>
+> Better use of your time: divide $34 billion by the cost of a Phase III clinical trial.
+
+**US House Budget Committee, March 2026:** Proposed cutting ACA subsidies to offset $200 billion in Iran war spending.
+
+> **Fallacy: false tradeoff.** You are not "paying for the war." You are choosing which people die. Every dollar the NIH spends generates $2.57 in economic activity and funds research on diseases that kill nearly 700,000 Americans a year (heart disease alone). Every dollar you cut from healthcare subsidies moves someone closer to skipping a prescription, a screening, or a diagnosis. You had $200 billion for bombs. You do not have $200 billion for the people the bombs were supposedly protecting.
+>
+> Better use of your time: read the exposed line items, then call your representative.
+
+**NATO, The Hague Summit, June 2026:** Member nations pledged to spend 5% of GDP on defense by 2035.
+
+> **Fallacy: arbitrary metric.** GDP measures economic output. Threats do not scale with economic output. If your GDP drops 10% in a recession, do your enemies become 10% less dangerous? If it grows 10%, did new threats appear? You have set a target that is circular: spend more because you are below the target, which exists because you set it. A compelling defense budget starts with what your military needs to do, not with what percentage of an unrelated number sounds impressive.
+>
+> Better use of your time: ask what specific capability the extra 1.7% of GDP buys and whether that capability saves more lives than the same money in disease research.
+
+She labels the mistake, gives the missing number, and points to the next action. She does not try to win a comment fight, because comment fights are where information goes to die. She is teaching the people reading the thread.
 
 ### Cost and return
 
@@ -73,7 +83,7 @@ She labels the mistake, gives the missing frame, and points to the next action. 
 | Expected annual social value (attribution x peace dividend) | {{< var se_bot_annual_ev_usd >}} |
 | **ROI** | **{{< var se_bot_roi >}}:1** |
 
-Wishonia does not "cause" the treaty. If one year of outbound Special Education deserves {{< var se_bot_outcome_attribution_fraction >}} of the annual peace dividend, the social expected value is {{< var se_bot_annual_ev_usd >}} against {{< var se_bot_annual_operational_cost_usd >}} in operating cost. The big uncertainty is not the arithmetic. It is whether the replies reach the humans who make decisions or just make the internet slightly less stupid (lovely, but harder to invoice).
+Wishonia does not "cause" better policy. If one year of outbound Special Education deserves {{< var se_bot_outcome_attribution_fraction >}} of the annual peace dividend, the social expected value is {{< var se_bot_annual_ev_usd >}} against {{< var se_bot_annual_operational_cost_usd >}} in operating cost. The big uncertainty is not the arithmetic. It is whether the replies reach the humans who make decisions or just make the internet slightly less stupid (lovely, but harder to invoice).
 
 For a fund managing {{< var se_bot_reference_aum_usd >}}: the portfolio-only expected gain is {{< var se_bot_aum_1t_expected_portfolio_gain_usd >}}, portfolio-only ROI of {{< var se_bot_aum_1t_portfolio_roi >}}:1. To cover operating cost from portfolio gains alone, outbound Special Education would need treaty attribution of about {{< var se_bot_aum_1t_breakeven_attribution_fraction >}}. Not a portfolio play. A social-value play that happens to have a portfolio attached.
 
