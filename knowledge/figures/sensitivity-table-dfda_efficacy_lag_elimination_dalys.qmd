@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Years of Life Lost from Disease Eradication Delay (years) | 0.6648 | Strong driver |
-| Years Lived with Disability During Disease Eradication Delay (years) | 0.3751 | Moderate driver |
+| Years of Life Lost from Disease Eradication Delay (years) | 0.9243 | Strong driver |
+| Years Lived with Disability During Disease Eradication Delay (years) | 0.1328 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

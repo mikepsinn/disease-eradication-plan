@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| QALY Value of Life Lost to War Since 1900 (USD) | 0.9801 | Strong driver |
-| Cumulative Property Destruction from War Since 1900 (USD) | 0.0209 | Minimal effect |
-| Cumulative Environmental Destruction from War Since 1900 (USD) | 0.0046 | Minimal effect |
+| QALY Value of Life Lost to War Since 1900 (USD) | 0.9990 | Strong driver |
+| Cumulative Property Destruction from War Since 1900 (USD) | 0.0267 | Minimal effect |
+| Cumulative Environmental Destruction from War Since 1900 (USD) | 0.0058 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

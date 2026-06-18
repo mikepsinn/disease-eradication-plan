@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Total Deaths from Historical Progress Delays (deaths) | 0.8519 | Strong driver |
-| Value of Statistical Life (USD) | 0.4781 | Moderate driver |
+| Total Deaths from Historical Progress Delays (deaths) | 0.7742 | Strong driver |
+| Value of Statistical Life (USD) | 0.5919 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

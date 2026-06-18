@@ -4,11 +4,11 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Median Income Relief from Full Disease Cure (rate) | -0.7011 | Strong driver |
-| Treaty Trajectory Average Income at Year 15 (USD) | 0.6930 | Strong driver |
-| Global Median-to-Mean Income Ratio (ratio) | 0.6362 | Strong driver |
-| Treaty Ratchet Terminal Redirect Share (percent) | 0.3149 | Moderate driver |
-| Median Share Erosion Rate (Annual) (rate) | 0.0615 | Minimal effect |
-| Treaty Disease Cure Fraction (15yr, Ratchet Schedule) (rate) | 0.0166 | Minimal effect |
+| Global Median-to-Mean Income Ratio (ratio) | 0.7769 | Strong driver |
+| Treaty Trajectory Average Income at Year 15 (USD) | 0.4740 | Moderate driver |
+| Median Share Erosion Rate (Annual) (rate) | -0.3085 | Moderate driver |
+| Median Income Relief from Full Disease Cure (rate) | 0.1400 | Weak driver |
+| Treaty Disease Cure Fraction (15yr, Ratchet Schedule) (rate) | 0.0933 | Minimal effect |
+| Treaty Ratchet Terminal Redirect Share (percent) | 0.0079 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

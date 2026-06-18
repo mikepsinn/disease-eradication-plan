@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Corporate Damages Prosecutor Base Ask Total (USD) | 1.0099 | Strong driver |
-| Global Population in 2024 (of people) | -0.0437 | Minimal effect |
+| Corporate Damages Prosecutor Base Ask Total (USD) | 0.9992 | Strong driver |
+| Global Population in 2024 (of people) | -0.0435 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

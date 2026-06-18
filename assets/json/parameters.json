@@ -8182,6 +8182,329 @@
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/invisible-graveyard.html"
     },
+    "SE_BOT_ANNUAL_BELIEF_CHANGES": {
+      "value": 4380000.0,
+      "formatted": "4.38 million people/year",
+      "unit": "people/year",
+      "description": "Modeled annual belief updates from the outbound bot before deduplicating repeat exposures across posts. This is not a count of unique people.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL * DAYS_PER_YEAR * SE_BOT_PEOPLE_PERSUADED_PER_POST",
+      "inputs": [
+        "SE_BOT_PEOPLE_PERSUADED_PER_POST",
+        "SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL"
+      ],
+      "computeExpr": "((SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL * 365.0) * SE_BOT_PEOPLE_PERSUADED_PER_POST)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_ANNUAL_EV_USD": {
+      "value": 11357100.0,
+      "formatted": "$11.4 million",
+      "unit": "USD/year",
+      "description": "Expected annual value from the SE bot: attribution_fraction × annual peace dividend. This is a social expected value scenario, not a directly observed revenue stream.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+      "inputs": [
+        "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+        "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION"
+      ],
+      "computeExpr": "(SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_ANNUAL_OPERATIONAL_COST_USD": {
+      "value": 292000.0,
+      "formatted": "$292,000",
+      "unit": "USD/year",
+      "description": "Annual cost to correct all relevant posts globally: cost_per_post * posts_per_day * days_per_year.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_COST_PER_POST_USD * SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL * DAYS_PER_YEAR",
+      "inputs": [
+        "SE_BOT_COST_PER_POST_USD",
+        "SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL"
+      ],
+      "computeExpr": "((SE_BOT_COST_PER_POST_USD * SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL) * 365.0)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_AUM_1T_BREAKEVEN_ATTRIBUTION_FRACTION": {
+      "value": 0.0014783703586302842,
+      "formatted": "0.148%",
+      "unit": "rate",
+      "description": "Treaty-attribution fraction required for a $1T AUM investor's portfolio gain to cover the annual bot operating cost, excluding social value and reputational value.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_ANNUAL_OPERATIONAL_COST_USD * SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD / (PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION * SE_BOT_REFERENCE_AUM_USD)",
+      "inputs": [
+        "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+        "SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+        "SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION",
+        "SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD",
+        "SE_BOT_REFERENCE_AUM_USD"
+      ],
+      "computeExpr": "((SE_BOT_ANNUAL_OPERATIONAL_COST_USD * SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD) / ((PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION) * SE_BOT_REFERENCE_AUM_USD))",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD": {
+      "value": 19751.478260869564,
+      "formatted": "$19,751",
+      "unit": "USD",
+      "description": "Expected portfolio gain for a $1T AUM fund from one year of SE bot operation. Calculation: (attribution_fraction * peace_dividend * equity_capture_share) / global_equity_market_cap * reference_AUM. This is a hedge value, not the social expected value.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION / SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD * SE_BOT_REFERENCE_AUM_USD",
+      "inputs": [
+        "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+        "SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION",
+        "SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD",
+        "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION",
+        "SE_BOT_REFERENCE_AUM_USD"
+      ],
+      "computeExpr": "((((SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT) * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION) / SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD) * SE_BOT_REFERENCE_AUM_USD)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_AUM_1T_PORTFOLIO_ROI": {
+      "value": 0.0676420488385944,
+      "formatted": "0.0676:1",
+      "unit": "ratio",
+      "description": "Portfolio-only ROI for a $1T AUM investor: expected portfolio gain divided by annual bot operating cost. Under the central case this does not include social value, donations, or reputational value.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+      "inputs": [
+        "SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+        "SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD"
+      ],
+      "computeExpr": "(SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_COST_PER_BELIEF_CHANGE_USD": {
+      "value": 0.06666666666666667,
+      "formatted": "$0.067",
+      "unit": "USD/person",
+      "description": "Cost per person whose belief is durably updated: cost_per_post / people_persuaded_per_post.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_COST_PER_POST_USD / SE_BOT_PEOPLE_PERSUADED_PER_POST",
+      "inputs": [
+        "SE_BOT_COST_PER_POST_USD",
+        "SE_BOT_PEOPLE_PERSUADED_PER_POST"
+      ],
+      "computeExpr": "(SE_BOT_COST_PER_POST_USD / SE_BOT_PEOPLE_PERSUADED_PER_POST)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_COST_PER_POST_USD": {
+      "value": 0.008,
+      "formatted": "$0.008",
+      "unit": "USD",
+      "description": "Total marginal cost to generate, screen, and post one correction reply.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_LLM_COST_PER_POST_USD + SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD",
+      "inputs": [
+        "SE_BOT_LLM_COST_PER_POST_USD",
+        "SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD"
+      ],
+      "computeExpr": "(SE_BOT_LLM_COST_PER_POST_USD + SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION": {
+      "value": 0.2,
+      "formatted": "20%",
+      "unit": "percentage",
+      "description": "Share of the peace dividend assumed to be capitalized into listed equities through lower conflict risk, lower supply-chain risk, and higher expected real output. This is a valuation scenario, not an observed pass-through estimate.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        0.05,
+        0.4
+      ],
+      "distribution": "beta",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD": {
+      "value": 115000000000000.0,
+      "formatted": "$115 trillion",
+      "unit": "USD",
+      "description": "Approximate global market capitalization of listed domestic companies. The 2024 World Bank series is about $115 trillion; the interval allows for market movement, coverage differences, and listed-company definition differences.",
+      "sourceType": "external",
+      "sourceRef": "world-bank-market-cap-listed-companies",
+      "confidence": "medium",
+      "formula": null,
+      "confidenceInterval": [
+        90000000000000.0,
+        140000000000000.0
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_LLM_COST_PER_POST_USD": {
+      "value": 0.006,
+      "formatted": "$0.006",
+      "unit": "USD",
+      "description": "Model inference cost to draft one correction reply. Central case assumes roughly 1,000 input tokens plus 300 output tokens using a Sonnet-class model with some prompt caching or batch routing. The interval spans Haiku-class routing, Sonnet batch discounts, longer replies, and retries.",
+      "sourceType": "external",
+      "sourceRef": "anthropic-claude-pricing-2026",
+      "confidence": "medium",
+      "formula": null,
+      "confidenceInterval": [
+        0.002,
+        0.03
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_OBSERVER_BELIEF_CHANGE_RATE": {
+      "value": 0.005,
+      "formatted": "0.5%",
+      "unit": "rate",
+      "description": "Fraction of observers (non-target readers) who durably update their belief after reading a correction exchange. Roozenbeek et al. (2022) supports the general prebunking mechanism, and Pennycook et al. (2021) supports accuracy prompts. This parameter is lower than those intervention effects because a public reply is shorter, unsolicited, and usually viewed while skimming.",
+      "sourceType": "definition",
+      "sourceRef": "roozenbeek-2022-inoculation-social-media",
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        0.0005,
+        0.03
+      ],
+      "distribution": "beta",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_OBSERVER_MULTIPLIER": {
+      "value": 20.0,
+      "formatted": "20 people per post",
+      "unit": "people per post",
+      "description": "Average unique readers of a correction reply besides the target. Munger (2017) is the closest field evidence for public bot replies, while Vosoughi et al. (2018) supports the broader claim that false-news cascades can reach large audiences. Neither paper directly measures observers per correction reply, so this remains a low-confidence reach assumption.",
+      "sourceType": "definition",
+      "sourceRef": "munger-2017-tweetment-effects",
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        2.0,
+        200.0
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION": {
+      "value": 0.0001,
+      "formatted": "0.01%",
+      "unit": "rate",
+      "description": "Fraction of the annual peace dividend outcome attributable to the SE bot running for one year. This is a scenario assumption, not an empirical estimate. The mechanical model produces modeled belief updates, but the conversion from belief updates to treaty passage depends on targeting, repeated exposure, elite pickup, platform enforcement, and whether the bot reaches marginal decision-makers.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        1e-06,
+        0.01
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_PEOPLE_PERSUADED_PER_POST": {
+      "value": 0.12000000000000001,
+      "formatted": "0.12 people/post",
+      "unit": "people/post",
+      "description": "Expected number of people whose belief is durably updated per correction post: (1 target * target_change_rate) + (observer_multiplier * observer_change_rate). This counts modeled belief updates, not unique humans across the whole campaign.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_TARGET_BELIEF_CHANGE_RATE + SE_BOT_OBSERVER_MULTIPLIER * SE_BOT_OBSERVER_BELIEF_CHANGE_RATE",
+      "inputs": [
+        "SE_BOT_OBSERVER_BELIEF_CHANGE_RATE",
+        "SE_BOT_OBSERVER_MULTIPLIER",
+        "SE_BOT_TARGET_BELIEF_CHANGE_RATE"
+      ],
+      "computeExpr": "(SE_BOT_TARGET_BELIEF_CHANGE_RATE + (SE_BOT_OBSERVER_MULTIPLIER * SE_BOT_OBSERVER_BELIEF_CHANGE_RATE))",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD": {
+      "value": 0.002,
+      "formatted": "$0.002",
+      "unit": "USD",
+      "description": "Non-model marginal overhead per attempted correction: search, ranking, duplicate filtering, policy checks, posting, retries, and failed attempts. This is a planning assumption because platform access terms and rate limits vary by platform.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        0.0005,
+        0.02
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_REFERENCE_AUM_USD": {
+      "value": 1000000000000.0,
+      "formatted": "$1 trillion",
+      "unit": "USD",
+      "description": "Reference institutional portfolio size for the trillion-dollar AUM sensitivity case.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL": {
+      "value": 100000.0,
+      "formatted": "100 thousand posts/day",
+      "unit": "posts/day",
+      "description": "Correctable posts per day across all platforms globally on defense spending, war, and disease funding topics. Defined as posts from accounts with 100+ followers containing an identifiable logical fallacy (not merely mentioning the topic). This is a planning assumption, not a platform-reported count, and should be replaced with live measurement before making an operating budget.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        5000.0,
+        1000000.0
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_ROI": {
+      "value": 38.89417808219178,
+      "formatted": "38.9:1",
+      "unit": "ratio",
+      "description": "Return on investment for the SE bot: annual_EV / annual_operational_cost. This is only as credible as the treaty-attribution scenario. The operating cost and reply mechanics are modelable; attribution to treaty passage is the dominant speculative input.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+      "inputs": [
+        "SE_BOT_ANNUAL_EV_USD",
+        "SE_BOT_ANNUAL_OPERATIONAL_COST_USD"
+      ],
+      "computeExpr": "(SE_BOT_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_TARGET_BELIEF_CHANGE_RATE": {
+      "value": 0.02,
+      "formatted": "2%",
+      "unit": "rate",
+      "description": "Fraction of reply targets who durably update their stated belief after receiving a correction. Wood and Porter (2019) support the narrower claim that corrections can reduce false beliefs without routine factual backfire. This 2% value is a calibrated durable-change assumption for public social replies, reduced from lab and survey settings because the message is unsolicited and political.",
+      "sourceType": "definition",
+      "sourceRef": "wood-porter-2019-backfire-effect",
+      "confidence": "low",
+      "formula": null,
+      "confidenceInterval": [
+        0.002,
+        0.1
+      ],
+      "distribution": "beta",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
     "SHARING_BREAKEVEN_ONE_IN_TREATY": {
       "value": 8663019.579252128,
       "formatted": "8.66 million:1",
@@ -12796,6 +13119,24 @@
       "volume": "17",
       "pages": "105-130",
       "number": "1"
+    },
+    "anthropic-claude-pricing-2026": {
+      "id": "anthropic-claude-pricing-2026",
+      "title": "Pricing",
+      "author": "Anthropic",
+      "year": "2026",
+      "source": "",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "urls": [
+        "https://platform.claude.com/docs/en/about-claude/pricing"
+      ],
+      "quote": "",
+      "note": "Claude API pricing page. Sonnet 4.6 is listed at \\$3 per million input tokens and \\$15 per million output tokens, with batch discounts available.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
     },
     "anti-aging-cream-market-50b": {
       "id": "anti-aging-cream-market-50b",
@@ -25450,6 +25791,24 @@
       "pages": "",
       "number": ""
     },
+    "munger-2017-tweetment-effects": {
+      "id": "munger-2017-tweetment-effects",
+      "title": "Tweetment Effects on the Tweeted: Experimentally Reducing Racist Harassment",
+      "author": "Munger, Kevin",
+      "year": "2017",
+      "source": "Political Behavior",
+      "url": "https://link.springer.com/article/10.1007/s11109-016-9373-5",
+      "urls": [
+        "https://link.springer.com/article/10.1007/s11109-016-9373-5"
+      ],
+      "quote": "",
+      "note": "Field experiment using Twitter bot replies; effects depended on the perceived identity and follower status of the correcting account.",
+      "type": "article",
+      "doi": "10.1007/s11109-016-9373-5",
+      "volume": "39",
+      "pages": "629--649",
+      "number": ""
+    },
     "murphy2006": {
       "id": "murphy2006",
       "title": "The Value of Health and Longevity",
@@ -28430,6 +28789,24 @@
       "pages": "1049-1091",
       "number": "5"
     },
+    "pennycook-2021-accuracy-nudges": {
+      "id": "pennycook-2021-accuracy-nudges",
+      "title": "Shifting Attention to Accuracy Can Reduce Misinformation Online",
+      "author": "Pennycook, Gordon and Epstein, Ziv and Mosleh, Mohsen and Arechar, Antonio A. and Eckles, Dean and Rand, David G.",
+      "year": "2021",
+      "source": "Nature",
+      "url": "https://www.nature.com/articles/s41586-021-03344-2",
+      "urls": [
+        "https://www.nature.com/articles/s41586-021-03344-2"
+      ],
+      "quote": "",
+      "note": "Four survey experiments and a Twitter field experiment found that prompting attention to accuracy improved the quality of news people shared.",
+      "type": "article",
+      "doi": "10.1038/s41586-021-03344-2",
+      "volume": "592",
+      "pages": "590--595",
+      "number": ""
+    },
     "pension-fund-fiduciary-duty": {
       "id": "pension-fund-fiduciary-duty",
       "title": "Fiduciary Duty of Pension Funds to Maximize Returns",
@@ -30925,6 +31302,24 @@
       "volume": "",
       "pages": "",
       "number": ""
+    },
+    "roozenbeek-2022-inoculation-social-media": {
+      "id": "roozenbeek-2022-inoculation-social-media",
+      "title": "Psychological Inoculation Improves Resilience Against Misinformation on Social Media",
+      "author": "Roozenbeek, Jon and van der Linden, Sander and Goldberg, Beth and Rathje, Steve and Lewandowsky, Stephan",
+      "year": "2022",
+      "source": "Science Advances",
+      "url": "https://www.science.org/doi/10.1126/sciadv.abo6254",
+      "urls": [
+        "https://www.science.org/doi/10.1126/sciadv.abo6254"
+      ],
+      "quote": "",
+      "note": "Technique-based prebunking videos improved manipulation recognition and sharing discernment in online experiments.",
+      "type": "article",
+      "doi": "10.1126/sciadv.abo6254",
+      "volume": "8",
+      "pages": "eabo6254",
+      "number": "34"
     },
     "roth2002": {
       "id": "roth2002",
@@ -34405,6 +34800,24 @@
       "pages": "",
       "number": ""
     },
+    "vosoughi-2018-false-news-spread": {
+      "id": "vosoughi-2018-false-news-spread",
+      "title": "The Spread of True and False News Online",
+      "author": "Vosoughi, Soroush and Roy, Deb and Aral, Sinan",
+      "year": "2018",
+      "source": "Science",
+      "url": "https://www.science.org/doi/10.1126/science.aap9559",
+      "urls": [
+        "https://www.science.org/doi/10.1126/science.aap9559"
+      ],
+      "quote": "",
+      "note": "Large-scale Twitter cascade analysis found that false news diffused farther, faster, deeper, and more broadly than true news.",
+      "type": "article",
+      "doi": "10.1126/science.aap9559",
+      "volume": "359",
+      "pages": "1146--1151",
+      "number": "6380"
+    },
     "vsl": {
       "id": "vsl",
       "title": "\\$12.5M Value of Statistical Life (VSL)",
@@ -35215,6 +35628,24 @@
       "pages": "",
       "number": ""
     },
+    "wood-porter-2019-backfire-effect": {
+      "id": "wood-porter-2019-backfire-effect",
+      "title": "The Elusive Backfire Effect: Mass Attitudes' Steadfast Factual Adherence",
+      "author": "Wood, Thomas and Porter, Ethan",
+      "year": "2019",
+      "source": "Political Behavior",
+      "url": "https://link.springer.com/article/10.1007/s11109-018-9443-y",
+      "urls": [
+        "https://link.springer.com/article/10.1007/s11109-018-9443-y"
+      ],
+      "quote": "",
+      "note": "Five experiments with more than 10,100 subjects and 52 correction tests found no corrections capable of triggering factual backfire.",
+      "type": "article",
+      "doi": "10.1007/s11109-018-9443-y",
+      "volume": "41",
+      "pages": "135--163",
+      "number": ""
+    },
     "wordpress-multi-billion-dollar-economy": {
       "id": "wordpress-multi-billion-dollar-economy",
       "title": "WordPress multi-billion dollar economy",
@@ -35282,6 +35713,24 @@
       ],
       "quote": "",
       "note": "World Development Indicators, indicator NY.GNS.ICTR.ZS. Global average ~27% of GDP (2023-2024).",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "world-bank-market-cap-listed-companies": {
+      "id": "world-bank-market-cap-listed-companies",
+      "title": "Market Capitalization of Listed Domestic Companies (Current US\\$)",
+      "author": "World Bank",
+      "year": "2026",
+      "source": "",
+      "url": "https://data.worldbank.org/indicator/CM.MKT.LCAP.CD",
+      "urls": [
+        "https://data.worldbank.org/indicator/CM.MKT.LCAP.CD"
+      ],
+      "quote": "",
+      "note": "World Bank indicator CM.MKT.LCAP.CD reports global listed domestic company market capitalization. The 2024 world value is about \\$115 trillion.",
       "type": "misc",
       "doi": "",
       "volume": "",

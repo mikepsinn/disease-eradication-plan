@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Regulatory Delay for Efficacy Testing Post-Safety Verification (years) | 1.1404 | Strong driver |
-| Global Daily Deaths from Disease and Aging (deaths/day) | -0.1422 | Weak driver |
+| Regulatory Delay for Efficacy Testing Post-Safety Verification (years) | 0.9809 | Strong driver |
+| Global Daily Deaths from Disease and Aging (deaths/day) | 0.2015 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

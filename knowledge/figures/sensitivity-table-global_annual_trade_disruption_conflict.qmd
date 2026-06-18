@@ -4,9 +4,9 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Annual Trade Disruption Costs from Shipping Disruptions (USD) | 0.4005 | Moderate driver |
-| Annual Trade Disruption Costs from Supply Chain Disruptions (USD) | 0.3033 | Moderate driver |
-| Annual Trade Disruption Costs from Energy Price Volatility (USD) | 0.2037 | Weak driver |
-| Annual Trade Disruption Costs from Currency Instability (USD) | 0.0926 | Minimal effect |
+| Annual Trade Disruption Costs from Shipping Disruptions (USD) | 0.7219 | Strong driver |
+| Annual Trade Disruption Costs from Supply Chain Disruptions (USD) | 0.5511 | Strong driver |
+| Annual Trade Disruption Costs from Energy Price Volatility (USD) | 0.3677 | Moderate driver |
+| Annual Trade Disruption Costs from Currency Instability (USD) | 0.1676 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

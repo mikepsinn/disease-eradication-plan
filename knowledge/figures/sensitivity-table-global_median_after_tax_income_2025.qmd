@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Global Median-to-Mean Income Ratio (ratio) | 0.8997 | Strong driver |
-| Global Average Income (2025 Baseline) (USD) | -0.1004 | Weak driver |
+| Global Median-to-Mean Income Ratio (ratio) | 1.0051 | Strong driver |
+| Global Average Income (2025 Baseline) (USD) | 0.1050 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

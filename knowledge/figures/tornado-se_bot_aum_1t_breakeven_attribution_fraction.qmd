@@ -1,0 +1,109 @@
+```{python}
+#| echo: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path,
+    get_tick_formatter
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Display name for chart title
+
+display_name = "$1T AUM Breakeven Attribution Fraction"
+
+# Baseline and units
+
+baseline = 0.0014783703586302842
+
+# Tornado data from sensitivity analysis
+
+drivers = ['SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL', 'SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION', 'SE_BOT_LLM_COST_PER_POST_USD', 'SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD', 'SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD', 'VALUE_OF_STATISTICAL_LIFE', 'GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT', 'GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT', 'GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT', 'GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT', 'GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT', 'GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE']
+driver_labels = ['Relevant Posts Per Day (Global)', 'Equity Capture Share of Peace Dividend', 'SE Bot LLM Cost Per Post', 'SE Bot Platform Overhead Per Post', 'Global Listed Equity Market Capitalization', 'Value of Statistical Life', 'Annual Lost Economic Growth from Military Spending Opportunity Cost', 'Annual Deaths from Active Combat Worldwide', 'Annual Infrastructure Damage to Transportation from Conflict', 'Annual Infrastructure Damage to Energy Systems from Conflict', 'Annual Lost Productivity from Conflict Casualties', 'Annual Infrastructure Damage to Communications from Conflict', 'Annual Infrastructure Damage to Water Systems from Conflict', 'Annual Trade Disruption Costs from Shipping Disruptions', 'Annual Infrastructure Damage to Education Facilities from Conflict', 'Annual PTSD and Mental Health Costs from Conflict', 'Annual Veteran Healthcare Costs', 'Annual Trade Disruption Costs from Supply Chain Disruptions', 'Annual Infrastructure Damage to Healthcare Facilities from Conflict', 'Annual Refugee Support Costs', 'Annual Trade Disruption Costs from Energy Price Volatility', 'Annual Environmental Damage and Restoration Costs from Conflict', 'Annual Deaths from Terror Attacks Globally', 'Annual Trade Disruption Costs from Currency Instability', 'Annual Deaths from State Violence']
+impacts_low = [-0.00140445184069877, 0.004435111075890853, -0.0007391851793151421, -0.0002771944422431782, -0.00032138486057180097, 0.0001784121874270864, 0.00011474480300590847, 7.322790771971724e-05, 1.942621222735799e-05, 1.6678793670613394e-05, 1.180901316902511e-05, 1.1689989257539874e-05, 1.0593219848472257e-05, 9.709052873748455e-06, 9.234411628252425e-06, 9.168513179126517e-06, 7.864925073353861e-06, 7.299431570842972e-06, 6.484825981699013e-06, 5.881018213979919e-06, 4.923808905097629e-06, 3.915486820007651e-06, 3.0000192559175715e-06, 2.2684589751197776e-06, 1.5637098221756452e-06]
+impacts_high = [0.013305333227672557, -0.0007391851793151421, 0.004435111075890853, 0.00332633330691814, 0.00032138486057180075, -0.00014372278031214692, -0.00012859424942624213, -8.16595750913402e-05, -2.4665532572690045e-05, -2.1587947607673314e-05, -1.5457253403354044e-05, -1.544450692687752e-05, -1.3823897005937457e-05, -1.2762816730842825e-05, -1.2071649392340249e-05, -1.2007619440233559e-05, -1.0328039840391823e-05, -9.72450434024645e-06, -8.593144991732044e-06, -7.769242760229588e-06, -6.518753531839418e-06, -5.188584319275194e-06, -4.800704159988248e-06, -2.9360325935698112e-06, -2.9878927468561262e-06]
+
+# Convert deltas to absolute values (baseline + delta)
+
+values_low = [baseline + delta for delta in impacts_low]
+values_high = [baseline + delta for delta in impacts_high]
+
+# Create tornado chart (horizontal bars showing swing range)
+# Cap dimensions to avoid LaTeX "Dimension too large" errors in PDF output
+# 8x10 inches max keeps figures compact and PDF-compatible
+
+fig, ax = plt.subplots(figsize=(8, min(10, max(5, len(drivers) * 0.6))))
+
+y_pos = np.arange(len(drivers))
+
+# Plot low impact (left side)
+
+for i, (low, high) in enumerate(zip(values_low, values_high)):
+    left = min(low, high)
+    width_low = baseline - left if left < baseline else 0
+    width_high = max(low, high) - baseline if max(low, high) > baseline else 0
+
+    # White bar for range below baseline
+
+    if width_low > 0:
+        ax.barh(i, width_low, left=left,
+                color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
+
+    # Black bar for range above baseline
+
+    if width_high > 0:
+        ax.barh(i, width_high, left=baseline,
+                color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
+
+# Format axis
+
+ax.set_yticks(y_pos)
+# Simplified labels (just parameter names)
+
+ax.set_yticklabels(driver_labels, fontsize=11)
+ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
+
+# X-axis label with units
+
+units_label = "rate"
+if units_label:
+    ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
+else:
+    ax.set_xlabel(f'{display_name}', fontsize=12)
+
+# Format x-axis tick labels with K/M/B/T notation
+
+ax.xaxis.set_major_formatter(get_tick_formatter(unit=units_label))
+
+# Add vertical line at baseline
+
+ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
+
+# Clean spines
+
+clean_spines(ax)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+# Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
+
+output_path = get_figure_output_path('tornado-se_bot_aum_1t_breakeven_attribution_fraction.png')
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Sensitivity: {display_name}',
+    description=f'Tornado diagram showing which input parameters have the largest impact on {display_name}'
+)
+
+plt.show()
+```

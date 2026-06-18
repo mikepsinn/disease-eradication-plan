@@ -4,9 +4,9 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Treaty Longevity HALE Gain at Year 15 (years) | 0.9462 | Strong driver |
-| Global Life Expectancy (2024) (years) | 0.2856 | Weak driver |
-| Global Healthy Life Expectancy (HALE) (years) | -0.2235 | Weak driver |
-| Treaty Disease Cure Fraction (15yr, Ratchet Schedule) (rate) | 0.0087 | Minimal effect |
+| Treaty Longevity HALE Gain at Year 15 (years) | 0.8808 | Strong driver |
+| Global Life Expectancy (2024) (years) | 0.2512 | Weak driver |
+| Treaty Disease Cure Fraction (15yr, Ratchet Schedule) (rate) | 0.2343 | Weak driver |
+| Global Healthy Life Expectancy (HALE) (years) | -0.1978 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

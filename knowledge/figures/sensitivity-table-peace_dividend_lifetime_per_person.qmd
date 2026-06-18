@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Cumulative Peace Dividend Over 80 Years (USD) | 1.0821 | Strong driver |
-| Global Population in 2024 (of people) | -0.0932 | Minimal effect |
+| Cumulative Peace Dividend Over 80 Years (USD) | 0.9895 | Strong driver |
+| Global Population in 2024 (of people) | -0.1552 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

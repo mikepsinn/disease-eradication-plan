@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| War Trial Redirect Post-Cutoff Aging Years (years) | 1.4339 | Strong driver |
-| Annual Deaths from All Diseases and Aging Globally (deaths/year) | 0.5064 | Strong driver |
-| Eventually Avoidable Death Percentage (percentage) | 0.2131 | Weak driver |
+| War Trial Redirect Post-Cutoff Aging Years (years) | 0.9771 | Strong driver |
+| Eventually Avoidable Death Percentage (percentage) | 0.1118 | Weak driver |
+| Annual Deaths from All Diseases and Aging Globally (deaths/year) | 0.0833 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

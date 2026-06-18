@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 798 parameters used in the analysis, organized by type:
+This appendix documents all 818 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 235
-- Calculated values: 400
-- Core definitions: 163
+- External sources (peer-reviewed): 237
+- Calculated values: 410
+- Core definitions: 171
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (400 parameters) • [External Data Sources](#sec-external) (235 parameters) • [Core Definitions](#sec-definitions) (163 parameters)
+[Calculated Values](#sec-calculated) (410 parameters) • [External Data Sources](#sec-external) (237 parameters) • [Core Definitions](#sec-definitions) (171 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -12363,7 +12363,9 @@ Canonical institutional activation threshold: capital required to make participa
 $$
 \begin{gathered}
 B_{activate} \\
-= N_{voters,global} \times C_{activate,pp} + C_{ops}
+= C_{ops} + N_{voters,global} \times C_{activate,pp} \\
+= \$4B + 4.13B \times \$6.5 \\
+= \$30.8B
 \end{gathered}
 $$
 where:
@@ -16817,6 +16819,7 @@ $$
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Peace Dividend](../economics/peace-dividend.html)
+- [Special Education](../solution/special-education.html)
 - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../appendix/incentive-alignment-bonds-paper.html)
 
 :::
@@ -20241,6 +20244,1002 @@ $$
 
 :::
 
+### SE Bot Annual Modeled Belief Changes: 4.38 million people/year {#sec-se_bot_annual_belief_changes}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled annual belief updates from the outbound bot before deduplicating repeat exposures across posts. This is not a count of unique people.
+
+**Inputs**:
+
+- [Relevant Posts Per Day (Global)](#sec-se_bot_relevant_posts_per_day_global): 100 thousand posts/day (95% CI: 5,000 posts/day - 1 million posts/day)
+- [People Persuaded Per Post](#sec-se_bot_people_persuaded_per_post) 🔢: 0.12 people/post
+
+$$
+\begin{gathered}
+N_{belief,annual} \\
+= V_{posts} \times N_{persuaded} \times 365 \\
+= 100{,}000 \times 0.12 \times 365 \\
+= 4.38M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{persuaded} \\
+= P_{target} + M_{obs} \times P_{obs} \\
+= 2\% + 20 \times 0.5\% \\
+= 0.12
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_annual_belief_changes.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_annual_belief_changes.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_annual_belief_changes.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_annual_belief_changes.qmd >}}
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### SE Bot Annual Expected Value: $11.4 million {#sec-se_bot_annual_ev_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual value from the SE bot: attribution_fraction × annual peace dividend. This is a social expected value scenario, not a directly observed revenue stream.
+
+**Inputs**:
+
+- [SE Bot Outcome Attribution Fraction](#sec-se_bot_outcome_attribution_fraction): 0.01% (95% CI: 0.0001% - 1%)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{bot} \\
+= \alpha_{bot} \times Benefit_{peace,soc} \\
+= 0.01\% \times \$114B \\
+= \$11.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_annual_ev_usd.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_annual_ev_usd.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_annual_ev_usd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_annual_ev_usd.qmd >}}
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### SE Bot Annual Operational Cost: $292,000 {#sec-se_bot_annual_operational_cost_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual cost to correct all relevant posts globally: cost_per_post * posts_per_day * days_per_year.
+
+**Inputs**:
+
+- [SE Bot Cost Per Post](#sec-se_bot_cost_per_post_usd) 🔢: $0.008
+- [Relevant Posts Per Day (Global)](#sec-se_bot_relevant_posts_per_day_global): 100 thousand posts/day (95% CI: 5,000 posts/day - 1 million posts/day)
+
+$$
+\begin{gathered}
+C_{annual} \\
+= C_{post} \times V_{posts} \times 365 \\
+= \$0.008 \times 100{,}000 \times 365 \\
+= \$292K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{post} \\
+= C_{llm} + C_{platform} \\
+= \$0.006 + \$0.002 \\
+= \$0.008
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_annual_operational_cost_usd.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_annual_operational_cost_usd.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_annual_operational_cost_usd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_annual_operational_cost_usd.qmd >}}
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### $1T AUM Breakeven Attribution Fraction: 0.148% {#sec-se_bot_aum_1t_breakeven_attribution_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treaty-attribution fraction required for a $1T AUM investor's portfolio gain to cover the annual bot operating cost, excluding social value and reputational value.
+
+**Inputs**:
+
+- [SE Bot Annual Operational Cost](#sec-se_bot_annual_operational_cost_usd) 🔢: $292,000
+- [Global Listed Equity Market Capitalization](#sec-se_bot_global_equity_market_cap_usd) 📊: $115 trillion (95% CI: $90 trillion - $140 trillion)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+- [Equity Capture Share of Peace Dividend](#sec-se_bot_equity_uplift_capture_fraction): 20% (95% CI: 5% - 40%)
+- [Reference AUM for SE Bot Portfolio Case](#sec-se_bot_reference_aum_usd): $1 trillion
+
+$$
+\begin{gathered}
+\alpha_{breakeven,1T} \\
+= C_{annual} \times M_{equity} / (Benefit_{peace,soc} \times f_{equity} \times AUM_{ref})
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{annual} \\
+= C_{post} \times V_{posts} \times 365 \\
+= \$0.008 \times 100{,}000 \times 365 \\
+= \$292K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{post} \\
+= C_{llm} + C_{platform} \\
+= \$0.006 + \$0.002 \\
+= \$0.008
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_aum_1t_breakeven_attribution_fraction.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_aum_1t_breakeven_attribution_fraction.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_aum_1t_breakeven_attribution_fraction.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_aum_1t_breakeven_attribution_fraction.qmd >}}
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### $1T AUM Expected Portfolio Gain from SE Bot: $19,751 {#sec-se_bot_aum_1t_expected_portfolio_gain_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected portfolio gain for a $1T AUM fund from one year of SE bot operation. Calculation: (attribution_fraction * peace_dividend * equity_capture_share) / global_equity_market_cap * reference_AUM. This is a hedge value, not the social expected value.
+
+**Inputs**:
+
+- [SE Bot Outcome Attribution Fraction](#sec-se_bot_outcome_attribution_fraction): 0.01% (95% CI: 0.0001% - 1%)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+- [Equity Capture Share of Peace Dividend](#sec-se_bot_equity_uplift_capture_fraction): 20% (95% CI: 5% - 40%)
+- [Global Listed Equity Market Capitalization](#sec-se_bot_global_equity_market_cap_usd) 📊: $115 trillion (95% CI: $90 trillion - $140 trillion)
+- [Reference AUM for SE Bot Portfolio Case](#sec-se_bot_reference_aum_usd): $1 trillion
+
+$$
+\begin{gathered}
+G_{1T} \\
+= \alpha_{bot} \times Benefit_{peace,soc} \times \frac{f_{equity}}{M_{equity}} \times AUM_{ref}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_aum_1t_expected_portfolio_gain_usd.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_aum_1t_expected_portfolio_gain_usd.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_aum_1t_expected_portfolio_gain_usd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_aum_1t_expected_portfolio_gain_usd.qmd >}}
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### $1T AUM Portfolio-Only ROI from SE Bot: 0.0676:1 {#sec-se_bot_aum_1t_portfolio_roi}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Portfolio-only ROI for a $1T AUM investor: expected portfolio gain divided by annual bot operating cost. Under the central case this does not include social value, donations, or reputational value.
+
+**Inputs**:
+
+- [$1T AUM Expected Portfolio Gain from SE Bot](#sec-se_bot_aum_1t_expected_portfolio_gain_usd) 🔢: $19,751
+- [SE Bot Annual Operational Cost](#sec-se_bot_annual_operational_cost_usd) 🔢: $292,000
+
+$$
+\begin{gathered}
+ROI_{1T} \\
+= \frac{G_{1T}}{C_{annual}} \\
+= \frac{\$19.8K}{\$292K} \\
+= 0.0676
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+G_{1T} \\
+= \alpha_{bot} \times Benefit_{peace,soc} \times \frac{f_{equity}}{M_{equity}} \times AUM_{ref}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{annual} \\
+= C_{post} \times V_{posts} \times 365 \\
+= \$0.008 \times 100{,}000 \times 365 \\
+= \$292K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{post} \\
+= C_{llm} + C_{platform} \\
+= \$0.006 + \$0.002 \\
+= \$0.008
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_aum_1t_portfolio_roi.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_aum_1t_portfolio_roi.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_aum_1t_portfolio_roi.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_aum_1t_portfolio_roi.qmd >}}
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### SE Bot Cost Per Belief Change: $0.067 {#sec-se_bot_cost_per_belief_change_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per person whose belief is durably updated: cost_per_post / people_persuaded_per_post.
+
+**Inputs**:
+
+- [SE Bot Cost Per Post](#sec-se_bot_cost_per_post_usd) 🔢: $0.008
+- [People Persuaded Per Post](#sec-se_bot_people_persuaded_per_post) 🔢: 0.12 people/post
+
+$$
+\begin{gathered}
+C_{belief} \\
+= \frac{C_{post}}{N_{persuaded}} \\
+= \frac{\$0.008}{0.12} \\
+= \$0.0667
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{post} \\
+= C_{llm} + C_{platform} \\
+= \$0.006 + \$0.002 \\
+= \$0.008
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{persuaded} \\
+= P_{target} + M_{obs} \times P_{obs} \\
+= 2\% + 20 \times 0.5\% \\
+= 0.12
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_cost_per_belief_change_usd.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_cost_per_belief_change_usd.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_cost_per_belief_change_usd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_cost_per_belief_change_usd.qmd >}}
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### SE Bot Cost Per Post: $0.008 {#sec-se_bot_cost_per_post_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total marginal cost to generate, screen, and post one correction reply.
+
+**Inputs**:
+
+- [SE Bot LLM Cost Per Post](#sec-se_bot_llm_cost_per_post_usd) 📊: $0.006 (95% CI: $0.002 - $0.03)
+- [SE Bot Platform Overhead Per Post](#sec-se_bot_platform_overhead_per_post_usd): $0.002 (95% CI: $0.0005 - $0.02)
+
+$$
+\begin{gathered}
+C_{post} \\
+= C_{llm} + C_{platform} \\
+= \$0.006 + \$0.002 \\
+= \$0.008
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_cost_per_post_usd.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_cost_per_post_usd.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_cost_per_post_usd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_cost_per_post_usd.qmd >}}
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### People Persuaded Per Post: 0.12 people/post {#sec-se_bot_people_persuaded_per_post}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected number of people whose belief is durably updated per correction post: (1 target * target_change_rate) + (observer_multiplier * observer_change_rate). This counts modeled belief updates, not unique humans across the whole campaign.
+
+**Inputs**:
+
+- [Target Belief Change Rate](#sec-se_bot_target_belief_change_rate): 2% (95% CI: 0.2% - 10%)
+- [Observer Multiplier](#sec-se_bot_observer_multiplier): 20 people per post (95% CI: 2 people per post - 200 people per post)
+- [Observer Belief Change Rate](#sec-se_bot_observer_belief_change_rate): 0.5% (95% CI: 0.05% - 3%)
+
+$$
+\begin{gathered}
+N_{persuaded} \\
+= P_{target} + M_{obs} \times P_{obs} \\
+= 2\% + 20 \times 0.5\% \\
+= 0.12
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_people_persuaded_per_post.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_people_persuaded_per_post.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_people_persuaded_per_post.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_people_persuaded_per_post.qmd >}}
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### SE Bot ROI: 38.9:1 {#sec-se_bot_roi}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Return on investment for the SE bot: annual_EV / annual_operational_cost. This is only as credible as the treaty-attribution scenario. The operating cost and reply mechanics are modelable; attribution to treaty passage is the dominant speculative input.
+
+**Inputs**:
+
+- [SE Bot Annual Expected Value](#sec-se_bot_annual_ev_usd) 🔢: $11.4 million
+- [SE Bot Annual Operational Cost](#sec-se_bot_annual_operational_cost_usd) 🔢: $292,000
+
+$$
+\begin{gathered}
+ROI_{bot} \\
+= \frac{EV_{bot}}{C_{annual}} \\
+= \frac{\$11.4M}{\$292K} \\
+= 38.9
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+EV_{bot} \\
+= \alpha_{bot} \times Benefit_{peace,soc} \\
+= 0.01\% \times \$114B \\
+= \$11.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{annual} \\
+= C_{post} \times V_{posts} \times 365 \\
+= \$0.008 \times 100{,}000 \times 365 \\
+= \$292K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{post} \\
+= C_{llm} + C_{platform} \\
+= \$0.006 + \$0.002 \\
+= \$0.008
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_roi.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_roi.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_roi.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_roi.qmd >}}
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
 ### Sharing Breakeven (1 in N): 8.66 million:1 {#sec-sharing_breakeven_one_in_treaty}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -23396,6 +24395,8 @@ $$
 
 {{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_disease_cure_fraction_20yr.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_disease_cure_fraction_20yr.qmd >}}
@@ -24442,6 +25443,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 
@@ -40917,6 +41920,58 @@ Total deaths in the September 11, 2001 attacks. 2,977 victims (excluding 19 hija
 
 :::
 
+### Global Listed Equity Market Capitalization: $115 trillion {#sec-se_bot_global_equity_market_cap_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Approximate global market capitalization of listed domestic companies. The 2024 World Bank series is about $115 trillion; the interval allows for market movement, coverage differences, and listed-company definition differences.
+
+**Source**: [@world-bank-market-cap-listed-companies]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$90 trillion, $140 trillion] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $90 trillion and $140 trillion (±22%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-se_bot_global_equity_market_cap_usd.qmd >}}
+
+*~ Medium confidence*
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### SE Bot LLM Cost Per Post: $0.006 {#sec-se_bot_llm_cost_per_post_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Model inference cost to draft one correction reply. Central case assumes roughly 1,000 input tokens plus 300 output tokens using a Sonnet-class model with some prompt caching or batch routing. The interval spans Haiku-class routing, Sonnet batch discounts, longer replies, and retries.
+
+**Source**: [@anthropic-claude-pricing-2026]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.002, $0.03] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.002 and $0.03 (±233%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-se_bot_llm_cost_per_post_usd.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Singapore GDP per Capita (PPP): $105,000 {#sec-singapore_gdp_per_capita_ppp}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -44997,6 +46052,186 @@ Diminishing-returns drag as the venture market expands ~15x (current global VC ~
 ### Seconds Per Year: 31.5 million {#sec-seconds_per_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
+
+*Core definition*
+
+:::
+
+### Equity Capture Share of Peace Dividend: 20% {#sec-se_bot_equity_uplift_capture_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share of the peace dividend assumed to be capitalized into listed equities through lower conflict risk, lower supply-chain risk, and higher expected real output. This is a valuation scenario, not an observed pass-through estimate.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5%, 40%] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5% and 40% (±88%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-se_bot_equity_uplift_capture_fraction.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### Observer Belief Change Rate: 0.5% {#sec-se_bot_observer_belief_change_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of observers (non-target readers) who durably update their belief after reading a correction exchange. Roozenbeek et al. (2022) supports the general prebunking mechanism, and Pennycook et al. (2021) supports accuracy prompts. This parameter is lower than those intervention effects because a public reply is shorter, unsolicited, and usually viewed while skimming.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.05%, 3%] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.05% and 3% (±295%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-se_bot_observer_belief_change_rate.qmd >}}
+
+*Core definition*
+
+:::
+
+### Observer Multiplier: 20 people per post {#sec-se_bot_observer_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average unique readers of a correction reply besides the target. Munger (2017) is the closest field evidence for public bot replies, while Vosoughi et al. (2018) supports the broader claim that false-news cascades can reach large audiences. Neither paper directly measures observers per correction reply, so this remains a low-confidence reach assumption.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [2 people per post, 200 people per post] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 2 people per post and 200 people per post (±495%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-se_bot_observer_multiplier.qmd >}}
+
+*Core definition*
+
+:::
+
+### SE Bot Outcome Attribution Fraction: 0.01% {#sec-se_bot_outcome_attribution_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of the annual peace dividend outcome attributable to the SE bot running for one year. This is a scenario assumption, not an empirical estimate. The mechanical model produces modeled belief updates, but the conversion from belief updates to treaty passage depends on targeting, repeated exposure, elite pickup, platform enforcement, and whether the bot reaches marginal decision-makers.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.0001%, 1%] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.0001% and 1% (±5000%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-se_bot_outcome_attribution_fraction.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### SE Bot Platform Overhead Per Post: $0.002 {#sec-se_bot_platform_overhead_per_post_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Non-model marginal overhead per attempted correction: search, ranking, duplicate filtering, policy checks, posting, retries, and failed attempts. This is a planning assumption because platform access terms and rate limits vary by platform.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.0005, $0.02] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.0005 and $0.02 (±488%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-se_bot_platform_overhead_per_post_usd.qmd >}}
+
+*Core definition*
+
+:::
+
+### Reference AUM for SE Bot Portfolio Case: $1 trillion {#sec-se_bot_reference_aum_usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Reference institutional portfolio size for the trillion-dollar AUM sensitivity case.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+**Used in:**
+
+- [Special Education](../solution/special-education.html)
+
+:::
+
+### Relevant Posts Per Day (Global): 100 thousand posts/day {#sec-se_bot_relevant_posts_per_day_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Correctable posts per day across all platforms globally on defense spending, war, and disease funding topics. Defined as posts from accounts with 100+ followers containing an identifiable logical fallacy (not merely mentioning the topic). This is a planning assumption, not a platform-reported count, and should be replaced with live measurement before making an operating budget.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5,000 posts/day, 1 million posts/day] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5,000 posts/day and 1 million posts/day (±498%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-se_bot_relevant_posts_per_day_global.qmd >}}
+
+*Core definition*
+
+:::
+
+### Target Belief Change Rate: 2% {#sec-se_bot_target_belief_change_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of reply targets who durably update their stated belief after receiving a correction. Wood and Porter (2019) support the narrower claim that corrections can reduce false beliefs without routine factual backfire. This 2% value is a calibrated durable-change assumption for public social replies, reduced from lab and survey settings because the message is unsolicited and political.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.2%, 10%] • Distribution: Beta
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.2% and 10% (±245%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The beta distribution means values are bounded and can skew toward one end.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-se_bot_target_belief_change_rate.qmd >}}
 
 *Core definition*
 

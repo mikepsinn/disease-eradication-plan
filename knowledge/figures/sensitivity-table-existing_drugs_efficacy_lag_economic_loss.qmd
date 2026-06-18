@@ -4,9 +4,9 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Total Deaths from Historical Progress Delays (deaths) | 0.9716 | Strong driver |
-| Remaining Life Expectancy at Age 60 (Global) (years) | 0.9059 | Strong driver |
-| Mean Age of Preventable Death from Post-Safety Efficacy Delay (years) | -0.8639 | Strong driver |
-| Standard Economic Value per QALY (USD/QALY) | -0.0073 | Minimal effect |
+| Total Deaths from Historical Progress Delays (deaths) | 0.8120 | Strong driver |
+| Standard Economic Value per QALY (USD/QALY) | 0.4152 | Moderate driver |
+| Mean Age of Preventable Death from Post-Safety Efficacy Delay (years) | -0.3576 | Moderate driver |
+| Remaining Life Expectancy at Age 60 (Global) (years) | 0.0693 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

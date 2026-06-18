@@ -3964,7 +3964,9 @@ Canonical institutional activation threshold: capital required to make participa
 $$
 \begin{gathered}
 B_{activate} \\
-= N_{voters,global} \times C_{activate,pp} + C_{ops}
+= C_{ops} + N_{voters,global} \times C_{activate,pp} \\
+= \$4B + 4.13B \times \$6.5 \\
+= \$30.8B
 \end{gathered}
 $$
 where:
@@ -6363,6 +6365,8 @@ $$
 
 {{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_disease_cure_fraction_20yr.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_disease_cure_fraction_20yr.qmd >}}
@@ -6929,6 +6933,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 

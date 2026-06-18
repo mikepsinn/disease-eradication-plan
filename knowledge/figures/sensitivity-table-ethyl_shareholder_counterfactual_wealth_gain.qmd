@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| US Average IQ Loss from Leaded Gasoline (IQ points) | 1.3208 | Strong driver |
-| GDP Growth Effect per National IQ Point (rate) | -0.3528 | Moderate driver |
+| US Average IQ Loss from Leaded Gasoline (IQ points) | 0.7610 | Strong driver |
+| GDP Growth Effect per National IQ Point (rate) | 0.5812 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

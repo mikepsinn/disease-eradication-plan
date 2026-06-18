@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Average Total Treatment Timeline Shift (years) | 0.8999 | Strong driver |
-| Eventually Avoidable DALY Percentage (percentage) | 0.4866 | Moderate driver |
-| Global Annual DALY Burden (DALYs/year) | 0.0432 | Minimal effect |
+| Average Total Treatment Timeline Shift (years) | 0.9320 | Strong driver |
+| Eventually Avoidable DALY Percentage (percentage) | 0.3151 | Moderate driver |
+| Global Annual DALY Burden (DALYs/year) | 0.1348 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

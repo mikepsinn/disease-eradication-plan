@@ -15115,3 +15115,449 @@ MECHANISM_COURT_EV = Parameter(
     inputs=["MECHANISM_COURT_OF_HUMANITY_P_SUCCESS", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
     compute=lambda ctx: ctx["MECHANISM_COURT_OF_HUMANITY_P_SUCCESS"] * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
 )
+
+# ============================================================================
+# SPECIAL EDUCATION BOT (SE_BOT) - Outbound misinformation correction
+# ============================================================================
+#
+# The SE bot scans social media for posts containing identifiable logical
+# fallacies about war, defense spending, and disease funding, then replies
+# with the specific data that updates the picture. This is the outbound
+# complement to Wishonia's inbound tutoring.
+#
+# Evidence base:
+#   - Wood & Porter 2019: factual corrections rarely backfire in survey experiments.
+#   - Pennycook et al. 2021: accuracy prompts can improve sharing quality.
+#   - Roozenbeek et al. 2022: short prebunking videos improve manipulation recognition.
+#   - Munger 2017: public bot replies can change behavior, but effects depend on source status.
+#   - Vosoughi et al. 2018: false news diffuses farther and faster than true news.
+#
+# The persuasion and treaty-attribution values below are calibrated assumptions, not direct
+# estimates from any one paper. Keep the distinction explicit in chapter text.
+#
+# See: knowledge/solution/special-education.qmd
+
+SE_BOT_LLM_COST_PER_POST_USD = Parameter(
+    0.006,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_ref="anthropic-claude-pricing-2026",
+    source_type="external",
+    description=(
+        "Model inference cost to draft one correction reply. Central case assumes roughly "
+        "1,000 input tokens plus 300 output tokens using a Sonnet-class model with some "
+        "prompt caching or batch routing. The interval spans Haiku-class routing, Sonnet "
+        "batch discounts, longer replies, and retries."
+    ),
+    display_name="SE Bot LLM Cost Per Post",
+    unit="USD",
+    confidence="medium",
+    distribution="lognormal",
+    confidence_interval=(0.002, 0.03),
+    keywords=["special education", "bot", "llm", "cost", "anthropic"],
+    latex_symbol=r"C_{llm}",
+)
+
+SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD = Parameter(
+    0.002,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="definition",
+    description=(
+        "Non-model marginal overhead per attempted correction: search, ranking, duplicate "
+        "filtering, policy checks, posting, retries, and failed attempts. This is a planning "
+        "assumption because platform access terms and rate limits vary by platform."
+    ),
+    display_name="SE Bot Platform Overhead Per Post",
+    unit="USD",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(0.0005, 0.02),
+    keywords=["special education", "bot", "platform", "api", "overhead"],
+    latex_symbol=r"C_{platform}",
+)
+
+SE_BOT_COST_PER_POST_USD = Parameter(
+    SE_BOT_LLM_COST_PER_POST_USD + SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description="Total marginal cost to generate, screen, and post one correction reply.",
+    display_name="SE Bot Cost Per Post",
+    unit="USD",
+    formula="SE_BOT_LLM_COST_PER_POST_USD + SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD",
+    confidence="low",
+    keywords=["special education", "bot", "cost", "api", "social media"],
+    inputs=["SE_BOT_LLM_COST_PER_POST_USD", "SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD"],
+    compute=lambda ctx: ctx["SE_BOT_LLM_COST_PER_POST_USD"] + ctx["SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD"],
+    latex_symbol=r"C_{post}",
+)
+
+SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL = Parameter(
+    100_000,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="definition",
+    description=(
+        "Correctable posts per day across all platforms globally on defense spending, "
+        "war, and disease funding topics. Defined as posts from accounts with 100+ followers "
+        "containing an identifiable logical fallacy (not merely mentioning the topic). "
+        "This is a planning assumption, not a platform-reported count, and should be replaced "
+        "with live measurement before making an operating budget."
+    ),
+    display_name="Relevant Posts Per Day (Global)",
+    unit="posts/day",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(5_000, 1_000_000),
+    keywords=["special education", "bot", "social media", "volume", "posts"],
+    latex_symbol=r"V_{posts}",
+)
+
+SE_BOT_ANNUAL_OPERATIONAL_COST_USD = Parameter(
+    SE_BOT_COST_PER_POST_USD * SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL * DAYS_PER_YEAR,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description="Annual cost to correct all relevant posts globally: cost_per_post * posts_per_day * days_per_year.",
+    display_name="SE Bot Annual Operational Cost",
+    unit="USD/year",
+    formula="SE_BOT_COST_PER_POST_USD * SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL * DAYS_PER_YEAR",
+    confidence="low",
+    keywords=["special education", "bot", "cost", "annual", "operational"],
+    inputs=["SE_BOT_COST_PER_POST_USD", "SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL"],
+    compute=lambda ctx: ctx["SE_BOT_COST_PER_POST_USD"] * ctx["SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL"] * DAYS_PER_YEAR,
+    latex_symbol=r"C_{annual}",
+)
+
+SE_BOT_TARGET_BELIEF_CHANGE_RATE = Parameter(
+    0.02,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_ref="wood-porter-2019-backfire-effect",
+    source_type="definition",
+    description=(
+        "Fraction of reply targets who durably update their stated belief after receiving "
+        "a correction. Wood and Porter (2019) support the narrower claim that corrections "
+        "can reduce false beliefs without routine factual backfire. This 2% value is a "
+        "calibrated durable-change assumption for public social replies, reduced from lab "
+        "and survey settings because the message is unsolicited and political."
+    ),
+    display_name="Target Belief Change Rate",
+    unit="rate",
+    confidence="low",
+    distribution="beta",
+    confidence_interval=(0.002, 0.10),
+    peer_reviewed=True,
+    keywords=["special education", "persuasion", "belief change", "correction", "backfire"],
+    latex_symbol=r"P_{target}",
+)
+
+SE_BOT_OBSERVER_MULTIPLIER = Parameter(
+    20,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_ref="munger-2017-tweetment-effects",
+    source_type="definition",
+    description=(
+        "Average unique readers of a correction reply besides the target. Munger (2017) is "
+        "the closest field evidence for public bot replies, while Vosoughi et al. (2018) "
+        "supports the broader claim that false-news cascades can reach large audiences. "
+        "Neither paper directly measures observers per correction reply, so this remains "
+        "a low-confidence reach assumption."
+    ),
+    display_name="Observer Multiplier",
+    unit="people per post",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(2, 200),
+    peer_reviewed=True,
+    keywords=["special education", "observer", "social media", "reach", "multiplier"],
+    latex_symbol=r"M_{obs}",
+)
+
+SE_BOT_OBSERVER_BELIEF_CHANGE_RATE = Parameter(
+    0.005,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_ref="roozenbeek-2022-inoculation-social-media",
+    source_type="definition",
+    description=(
+        "Fraction of observers (non-target readers) who durably update their belief after "
+        "reading a correction exchange. Roozenbeek et al. (2022) supports the general "
+        "prebunking mechanism, and Pennycook et al. (2021) supports accuracy prompts. "
+        "This parameter is lower than those intervention effects because a public reply "
+        "is shorter, unsolicited, and usually viewed while skimming."
+    ),
+    display_name="Observer Belief Change Rate",
+    unit="rate",
+    confidence="low",
+    distribution="beta",
+    confidence_interval=(0.0005, 0.03),
+    peer_reviewed=True,
+    keywords=["special education", "observer", "persuasion", "inoculation", "belief change"],
+    latex_symbol=r"P_{obs}",
+)
+
+SE_BOT_PEOPLE_PERSUADED_PER_POST = Parameter(
+    SE_BOT_TARGET_BELIEF_CHANGE_RATE + SE_BOT_OBSERVER_MULTIPLIER * SE_BOT_OBSERVER_BELIEF_CHANGE_RATE,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Expected number of people whose belief is durably updated per correction post: "
+        "(1 target * target_change_rate) + (observer_multiplier * observer_change_rate). "
+        "This counts modeled belief updates, not unique humans across the whole campaign."
+    ),
+    display_name="People Persuaded Per Post",
+    unit="people/post",
+    formula="SE_BOT_TARGET_BELIEF_CHANGE_RATE + SE_BOT_OBSERVER_MULTIPLIER * SE_BOT_OBSERVER_BELIEF_CHANGE_RATE",
+    confidence="low",
+    keywords=["special education", "persuasion", "effectiveness", "per post"],
+    inputs=["SE_BOT_TARGET_BELIEF_CHANGE_RATE", "SE_BOT_OBSERVER_MULTIPLIER", "SE_BOT_OBSERVER_BELIEF_CHANGE_RATE"],
+    compute=lambda ctx: (
+        ctx["SE_BOT_TARGET_BELIEF_CHANGE_RATE"]
+        + ctx["SE_BOT_OBSERVER_MULTIPLIER"] * ctx["SE_BOT_OBSERVER_BELIEF_CHANGE_RATE"]
+    ),
+    latex_symbol=r"N_{persuaded}",
+)
+
+SE_BOT_COST_PER_BELIEF_CHANGE_USD = Parameter(
+    SE_BOT_COST_PER_POST_USD / SE_BOT_PEOPLE_PERSUADED_PER_POST,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description="Cost per person whose belief is durably updated: cost_per_post / people_persuaded_per_post.",
+    display_name="SE Bot Cost Per Belief Change",
+    unit="USD/person",
+    formula="SE_BOT_COST_PER_POST_USD / SE_BOT_PEOPLE_PERSUADED_PER_POST",
+    confidence="low",
+    keywords=["special education", "cost-effectiveness", "belief change", "cost per person"],
+    inputs=["SE_BOT_COST_PER_POST_USD", "SE_BOT_PEOPLE_PERSUADED_PER_POST"],
+    compute=lambda ctx: ctx["SE_BOT_COST_PER_POST_USD"] / ctx["SE_BOT_PEOPLE_PERSUADED_PER_POST"],
+    latex_symbol=r"C_{belief}",
+)
+
+SE_BOT_ANNUAL_BELIEF_CHANGES = Parameter(
+    SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL * DAYS_PER_YEAR * SE_BOT_PEOPLE_PERSUADED_PER_POST,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Modeled annual belief updates from the outbound bot before deduplicating repeat "
+        "exposures across posts. This is not a count of unique people."
+    ),
+    display_name="SE Bot Annual Modeled Belief Changes",
+    unit="people/year",
+    formula="SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL * DAYS_PER_YEAR * SE_BOT_PEOPLE_PERSUADED_PER_POST",
+    confidence="low",
+    keywords=["special education", "belief change", "annual", "persuasion"],
+    inputs=["SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL", "SE_BOT_PEOPLE_PERSUADED_PER_POST"],
+    compute=lambda ctx: (
+        ctx["SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL"] * DAYS_PER_YEAR * ctx["SE_BOT_PEOPLE_PERSUADED_PER_POST"]
+    ),
+    latex_symbol=r"N_{belief,annual}",
+)
+
+SE_BOT_OUTCOME_ATTRIBUTION_FRACTION = Parameter(
+    0.0001,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="definition",
+    description=(
+        "Fraction of the annual peace dividend outcome attributable to the SE bot running "
+        "for one year. This is a scenario assumption, not an empirical estimate. The "
+        "mechanical model produces modeled belief updates, but the conversion from belief "
+        "updates to treaty passage depends on targeting, repeated exposure, elite pickup, "
+        "platform enforcement, and whether the bot reaches marginal decision-makers."
+    ),
+    display_name="SE Bot Outcome Attribution Fraction",
+    unit="rate",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(0.000001, 0.01),
+    keywords=["special education", "attribution", "counterfactual", "outcome", "treaty"],
+    latex_symbol=r"\alpha_{bot}",
+)
+
+SE_BOT_ANNUAL_EV_USD = Parameter(
+    SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Expected annual value from the SE bot: attribution_fraction × annual peace dividend. "
+        "This is a social expected value scenario, not a directly observed revenue stream."
+    ),
+    display_name="SE Bot Annual Expected Value",
+    unit="USD/year",
+    formula="SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+    confidence="low",
+    keywords=["special education", "expected value", "bot", "ev", "cost-effectiveness"],
+    inputs=["SE_BOT_OUTCOME_ATTRIBUTION_FRACTION", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+    compute=lambda ctx: ctx["SE_BOT_OUTCOME_ATTRIBUTION_FRACTION"] * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
+    latex_symbol=r"EV_{bot}",
+)
+
+SE_BOT_ROI = Parameter(
+    SE_BOT_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Return on investment for the SE bot: annual_EV / annual_operational_cost. "
+        "This is only as credible as the treaty-attribution scenario. The operating "
+        "cost and reply mechanics are modelable; attribution to treaty passage is the "
+        "dominant speculative input."
+    ),
+    display_name="SE Bot ROI",
+    unit="ratio",
+    formula="SE_BOT_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+    confidence="low",
+    keywords=["special education", "roi", "return on investment", "cost-effectiveness", "bot"],
+    inputs=["SE_BOT_ANNUAL_EV_USD", "SE_BOT_ANNUAL_OPERATIONAL_COST_USD"],
+    compute=lambda ctx: ctx["SE_BOT_ANNUAL_EV_USD"] / ctx["SE_BOT_ANNUAL_OPERATIONAL_COST_USD"],
+    latex_symbol=r"ROI_{bot}",
+)
+
+# Trillion-dollar AUM perspective: the bot as a portfolio hedge
+SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD = Parameter(
+    115_000_000_000_000,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_ref="world-bank-market-cap-listed-companies",
+    source_type="external",
+    description=(
+        "Approximate global market capitalization of listed domestic companies. The 2024 "
+        "World Bank series is about $115 trillion; the interval allows for market movement, "
+        "coverage differences, and listed-company definition differences."
+    ),
+    display_name="Global Listed Equity Market Capitalization",
+    unit="USD",
+    confidence="medium",
+    distribution="lognormal",
+    confidence_interval=(90_000_000_000_000, 140_000_000_000_000),
+    keywords=["special education", "equity", "market cap", "world bank", "portfolio"],
+    latex_symbol=r"M_{equity}",
+)
+
+SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION = Parameter(
+    0.20,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="definition",
+    description=(
+        "Share of the peace dividend assumed to be capitalized into listed equities through "
+        "lower conflict risk, lower supply-chain risk, and higher expected real output. This "
+        "is a valuation scenario, not an observed pass-through estimate."
+    ),
+    display_name="Equity Capture Share of Peace Dividend",
+    unit="percentage",
+    confidence="low",
+    distribution="beta",
+    confidence_interval=(0.05, 0.40),
+    keywords=["special education", "equity", "peace dividend", "portfolio", "uplift"],
+    latex_symbol=r"f_{equity}",
+)
+
+SE_BOT_REFERENCE_AUM_USD = Parameter(
+    1_000_000_000_000,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="definition",
+    description="Reference institutional portfolio size for the trillion-dollar AUM sensitivity case.",
+    display_name="Reference AUM for SE Bot Portfolio Case",
+    unit="USD",
+    confidence="high",
+    distribution="fixed",
+    keywords=["special education", "aum", "portfolio", "institutional investor"],
+    latex_symbol=r"AUM_{ref}",
+)
+
+SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD = Parameter(
+    (
+        SE_BOT_OUTCOME_ATTRIBUTION_FRACTION
+        * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT
+        * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION
+        / SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD
+        * SE_BOT_REFERENCE_AUM_USD
+    ),
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Expected portfolio gain for a $1T AUM fund from one year of SE bot operation. "
+        "Calculation: (attribution_fraction * peace_dividend * equity_capture_share) "
+        "/ global_equity_market_cap * reference_AUM. This is a hedge value, not the "
+        "social expected value."
+    ),
+    display_name="$1T AUM Expected Portfolio Gain from SE Bot",
+    unit="USD",
+    formula=(
+        "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT "
+        "* SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION / SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD "
+        "* SE_BOT_REFERENCE_AUM_USD"
+    ),
+    confidence="low",
+    keywords=["special education", "asset management", "portfolio", "aum", "institutional investor", "roi"],
+    inputs=[
+        "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION",
+        "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+        "SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION",
+        "SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD",
+        "SE_BOT_REFERENCE_AUM_USD",
+    ],
+    compute=lambda ctx: (
+        ctx["SE_BOT_OUTCOME_ATTRIBUTION_FRACTION"]
+        * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"]
+        * ctx["SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION"]
+        / ctx["SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD"]
+        * ctx["SE_BOT_REFERENCE_AUM_USD"]
+    ),
+    latex_symbol=r"G_{1T}",
+)
+
+SE_BOT_AUM_1T_PORTFOLIO_ROI = Parameter(
+    SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Portfolio-only ROI for a $1T AUM investor: expected portfolio gain divided by "
+        "annual bot operating cost. Under the central case this does not include social "
+        "value, donations, or reputational value."
+    ),
+    display_name="$1T AUM Portfolio-Only ROI from SE Bot",
+    unit="ratio",
+    formula="SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+    confidence="low",
+    keywords=["special education", "asset management", "portfolio", "aum", "roi", "breakeven"],
+    inputs=["SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD", "SE_BOT_ANNUAL_OPERATIONAL_COST_USD"],
+    compute=lambda ctx: ctx["SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD"] / ctx["SE_BOT_ANNUAL_OPERATIONAL_COST_USD"],
+    latex_symbol=r"ROI_{1T}",
+)
+
+SE_BOT_AUM_1T_BREAKEVEN_ATTRIBUTION_FRACTION = Parameter(
+    (
+        SE_BOT_ANNUAL_OPERATIONAL_COST_USD
+        * SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD
+        / (
+            PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT
+            * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION
+            * SE_BOT_REFERENCE_AUM_USD
+        )
+    ),
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Treaty-attribution fraction required for a $1T AUM investor's portfolio gain "
+        "to cover the annual bot operating cost, excluding social value and reputational value."
+    ),
+    display_name="$1T AUM Breakeven Attribution Fraction",
+    unit="rate",
+    formula=(
+        "SE_BOT_ANNUAL_OPERATIONAL_COST_USD * SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD "
+        "/ (PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION "
+        "* SE_BOT_REFERENCE_AUM_USD)"
+    ),
+    confidence="low",
+    keywords=["special education", "asset management", "portfolio", "aum", "breakeven", "attribution"],
+    inputs=[
+        "SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+        "SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD",
+        "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
+        "SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION",
+        "SE_BOT_REFERENCE_AUM_USD",
+    ],
+    compute=lambda ctx: (
+        ctx["SE_BOT_ANNUAL_OPERATIONAL_COST_USD"]
+        * ctx["SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD"]
+        / (
+            ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"]
+            * ctx["SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION"]
+            * ctx["SE_BOT_REFERENCE_AUM_USD"]
+        )
+    ),
+    latex_symbol=r"\alpha_{breakeven,1T}",
+)

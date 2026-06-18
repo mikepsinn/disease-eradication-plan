@@ -4,9 +4,9 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Maximum Trial Capacity Multiplier (Physical Limit) (x) | -12.4527 | Strong driver |
-| Treaty Ratchet Terminal Redirect Share (percent) | 9.1326 | Strong driver |
-| Status Quo Therapeutic Space Exploration Time (years) | -3.8092 | Strong driver |
-| Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding (x) | 0.7866 | Strong driver |
+| Treaty Ratchet Terminal Redirect Share (percent) | 0.3304 | Moderate driver |
+| Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding (x) | 0.3187 | Moderate driver |
+| Status Quo Therapeutic Space Exploration Time (years) | -0.2646 | Weak driver |
+| Maximum Trial Capacity Multiplier (Physical Limit) (x) | 0.0268 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

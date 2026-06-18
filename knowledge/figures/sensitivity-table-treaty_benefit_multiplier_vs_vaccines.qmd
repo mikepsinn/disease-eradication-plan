@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Estimated Annual Global Economic Benefit from Childhood Vaccination Programs (USD/year) | -1.1963 | Strong driver |
-| 1% treaty Basic Annual Benefits (Peace + R&D Savings) (USD/year) | 0.3259 | Moderate driver |
+| Estimated Annual Global Economic Benefit from Childhood Vaccination Programs (USD/year) | -0.8963 | Strong driver |
+| 1% treaty Basic Annual Benefits (Peace + R&D Savings) (USD/year) | 0.2247 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

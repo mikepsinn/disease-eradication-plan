@@ -1,0 +1,10 @@
+**Sensitivity Indices for SE Bot Annual Operational Cost**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Relevant Posts Per Day (Global) (posts/day) | 0.7242 | Strong driver |
+| SE Bot Cost Per Post (USD) | 0.3512 | Moderate driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

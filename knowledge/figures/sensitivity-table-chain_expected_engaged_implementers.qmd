@@ -4,9 +4,9 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Initial Audience (people) | 1.7614 | Strong driver |
-| Effective R (ratio) | -1.5003 | Strong driver |
-| Implementer Orbit Size (people) | 0.6074 | Strong driver |
-| Engagement Rate (rate) | 0.1146 | Weak driver |
+| Initial Audience (people) | 0.5996 | Strong driver |
+| Implementer Orbit Size (people) | 0.3824 | Moderate driver |
+| Engagement Rate (rate) | 0.1646 | Weak driver |
+| Effective R (ratio) | 0.0973 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

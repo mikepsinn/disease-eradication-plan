@@ -1,0 +1,11 @@
+**Sensitivity Indices for People Persuaded Per Post**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Observer Multiplier (people per post) | 0.5411 | Strong driver |
+| Observer Belief Change Rate (rate) | 0.4356 | Moderate driver |
+| Target Belief Change Rate (rate) | 0.0805 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

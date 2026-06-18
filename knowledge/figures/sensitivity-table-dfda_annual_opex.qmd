@@ -4,10 +4,10 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Pragmatic Trial Platform Maintenance Costs (USD/year) | 0.3542 | Moderate driver |
-| Pragmatic Trial Platform Staff Costs (USD/year) | 0.2355 | Weak driver |
-| Pragmatic Trial Platform Infrastructure Costs (USD/year) | 0.2060 | Weak driver |
-| Pragmatic Trial Platform Regulatory Coordination Costs (USD/year) | 0.1469 | Weak driver |
-| Pragmatic Trial Platform Community Support Costs (USD/year) | 0.0576 | Minimal effect |
+| Pragmatic Trial Platform Maintenance Costs (USD/year) | 0.7128 | Strong driver |
+| Pragmatic Trial Platform Staff Costs (USD/year) | 0.4775 | Moderate driver |
+| Pragmatic Trial Platform Infrastructure Costs (USD/year) | 0.4127 | Moderate driver |
+| Pragmatic Trial Platform Regulatory Coordination Costs (USD/year) | 0.2936 | Weak driver |
+| Pragmatic Trial Platform Community Support Costs (USD/year) | 0.1156 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -4,9 +4,9 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| US Alzheimer's Annual Cost (USD) | 0.6352 | Strong driver |
-| US Heart Disease Annual Cost (USD) | 0.2387 | Weak driver |
-| US Diabetes Annual Cost (USD) | 0.1329 | Weak driver |
-| US Cancer Annual Cost (USD) | -0.0067 | Minimal effect |
+| US Heart Disease Annual Cost (USD) | 0.5723 | Strong driver |
+| US Alzheimer's Annual Cost (USD) | 0.5545 | Strong driver |
+| US Diabetes Annual Cost (USD) | 0.5190 | Strong driver |
+| US Cancer Annual Cost (USD) | 0.3293 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

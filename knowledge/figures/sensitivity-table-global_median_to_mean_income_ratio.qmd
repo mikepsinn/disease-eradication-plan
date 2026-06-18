@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Gallup Global Median Per-Capita Income (2013, PPP) (USD) | 1.0832 | Strong driver |
-| Global Average Income (2025 Baseline) (USD) | 0.0834 | Minimal effect |
+| Gallup Global Median Per-Capita Income (2013, PPP) (USD) | 0.9948 | Strong driver |
+| Global Average Income (2025 Baseline) (USD) | -0.1044 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -35,3 +35,60 @@ The four things the book teaches: why your species misallocates everything, the 
 ## What it costs
 
 You: nothing, ever. The expensive part is the compute to run a patient one-on-one tutor for billions of people, paid for by donations, revenue, or donated compute from the companies that have it. When there is enough, we will pay *you* to take it, because a Manager who understands the plan is worth more than the lesson costs.
+
+## Outbound special education: the bot
+
+Wishonia teaches willing students. The bot finds unwilling ones.
+
+Most humans posting costly misinformation on social media have not opted into a tutoring session. They are not going to open the manual. The outbound component of Special Education goes to them: it scans posts containing identifiable logical fallacies about war, defense spending, and disease funding, and replies with the specific data that updates the picture: named fallacy, corrected number, and the highest-leverage action available.
+
+This is the same curriculum. Different delivery.
+
+### Why it works
+
+The intuition that "corrections backfire" is too strong. Wood and Porter tested 52 corrections across more than 10,100 participants and found no correction capable of triggering factual backfire [@wood-porter-2019-backfire-effect]. That does not mean every public correction persuades the target. It means the old fear, "if you correct someone, they automatically get more wrong," is not a good reason to surrender.
+
+The more important channel is the observer. The bot is not primarily trying to change the mind of the person it replies to. It is teaching everyone watching. The evidence here is indirect: public bot replies can change later behavior, but the effect depends on who appears to be speaking [@munger-2017-tweetment-effects], and false-news cascades can reach large audiences faster than true-news cascades [@vosoughi-2018-false-news-spread]. So the model treats observer reach as a low-confidence assumption, not as a measured law of nature.
+
+Inoculation theory adds another layer. Short prebunking interventions can improve people's ability to spot manipulation techniques [@roozenbeek-2022-inoculation-social-media]. A reply that names the fallacy, for example "this is the perfect solution fallacy," is trying to do the smallest possible version of that lesson.
+
+Accuracy nudges help for the same reason. Pennycook and coauthors found that shifting attention to accuracy improved the quality of news people shared [@pennycook-2021-accuracy-nudges]. The bot's framing, "here is the data that updates the picture," is the accuracy-nudge pattern applied at the point of maximum relevance.
+
+That is the defensible claim: corrections, accuracy prompts, and prebunking can help. The leap from "helpful replies" to "treaty passage" is the speculative part, so the ROI model makes that attribution a named assumption instead of hiding it in the arithmetic.
+
+### Cost and return
+
+| | |
+|---|---|
+| Cost per correction reply | {{< var se_bot_cost_per_post_usd >}} |
+| People whose belief updates per post (target + observers) | {{< var se_bot_people_persuaded_per_post >}} |
+| Modeled annual belief updates before deduplication | {{< var se_bot_annual_belief_changes >}} |
+| Cost per belief durably changed | {{< var se_bot_cost_per_belief_change_usd >}} |
+| Annual cost to correct all relevant posts globally | {{< var se_bot_annual_operational_cost_usd >}} |
+| Treaty-outcome attribution scenario | {{< var se_bot_outcome_attribution_fraction >}} |
+| Expected annual social value (attribution x peace dividend) | {{< var se_bot_annual_ev_usd >}} |
+| **ROI** | **{{< var se_bot_roi >}}:1** |
+
+This does not say the bot "causes" the treaty. It says that if one year of outbound Special Education deserves {{< var se_bot_outcome_attribution_fraction >}} of the annual peace dividend, then the social expected value is {{< var se_bot_annual_ev_usd >}} against {{< var se_bot_annual_operational_cost_usd >}} in operating cost. The big uncertainty is not arithmetic. The big uncertainty is whether the replies reach marginal decision-makers or just make the internet slightly less stupid, which is lovely but harder to invoice.
+
+For a fund managing {{< var se_bot_reference_aum_usd >}} in assets, the portfolio-only case is weaker. The expected portfolio gain is {{< var se_bot_aum_1t_expected_portfolio_gain_usd >}}, with a portfolio-only ROI of {{< var se_bot_aum_1t_portfolio_roi >}}:1. To cover the operating cost from portfolio gains alone, the bot would need treaty-outcome attribution of about {{< var se_bot_aum_1t_breakeven_attribution_fraction >}}. So this is not a standalone fiduciary slam dunk under the central model. It is a strong social-value case, and a possible portfolio hedge for funds that already care about treaty passage.
+
+The portfolio equation:
+
+$$G_{1T} = \frac{\alpha_{bot} \cdot Benefit_{peace} \cdot f_{equity}}{M_{equity}} \cdot AUM_{1T}$$
+
+where $\alpha_{bot}$ = {{< var se_bot_outcome_attribution_fraction >}}, $Benefit_{peace}$ = {{< var peace_dividend_annual_societal_benefit >}}, $f_{equity}$ = {{< var se_bot_equity_uplift_capture_fraction >}}, $M_{equity}$ = {{< var se_bot_global_equity_market_cap_usd >}}, and $AUM_{1T}$ = {{< var se_bot_reference_aum_usd >}}.
+
+### What a reply looks like
+
+A post claiming "medical research is nice, but security has to come first" receives:
+
+> Earth Special Education
+>
+> **Fallacy: false tradeoff**
+>
+> Security is not the opposite of medical research. Dead people are also insecure. The treaty redirects a fixed slice of military spending into disease eradication while leaving every country with the other slice for defense.
+>
+> Highest-leverage action: put the treaty in front of the decision-maker you already know.
+
+The reply does not try to win a comment fight. It labels the mistake, gives the missing frame, and points to the next action. Wishonia does the same thing one-on-one. The bot does it wherever the confusion is already reproducing.

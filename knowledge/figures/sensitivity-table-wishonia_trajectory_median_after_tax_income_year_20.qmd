@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Wishonia Trajectory Average Income at Year 20 (USD) | 1.0801 | Strong driver |
-| Global Median-to-Mean Income Ratio (ratio) | -0.0909 | Minimal effect |
-| Median Income Relief from Full Disease Cure (rate) | -0.0051 | Minimal effect |
+| Wishonia Trajectory Average Income at Year 20 (USD) | 0.9798 | Strong driver |
+| Global Median-to-Mean Income Ratio (ratio) | 0.1708 | Weak driver |
+| Median Income Relief from Full Disease Cure (rate) | 0.0340 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

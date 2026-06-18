@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| War Trial Redirect Post-Cutoff Disease Years (years) | 1.2381 | Strong driver |
-| Eventually Avoidable DALY Percentage (percentage) | 0.4562 | Moderate driver |
-| Global Annual DALY Burden (DALYs/year) | 0.3898 | Moderate driver |
+| War Trial Redirect Post-Cutoff Disease Years (years) | 0.9529 | Strong driver |
+| Eventually Avoidable DALY Percentage (percentage) | 0.2429 | Weak driver |
+| Global Annual DALY Burden (DALYs/year) | 0.1055 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

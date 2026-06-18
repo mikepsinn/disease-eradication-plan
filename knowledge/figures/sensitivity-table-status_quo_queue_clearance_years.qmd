@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Diseases Without Effective Treatment (diseases) | -0.7011 | Strong driver |
-| Diseases Getting First Treatment Per Year (diseases/year) | -0.2360 | Weak driver |
+| Diseases Getting First Treatment Per Year (diseases/year) | -0.8696 | Strong driver |
+| Diseases Without Effective Treatment (diseases) | 0.3427 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

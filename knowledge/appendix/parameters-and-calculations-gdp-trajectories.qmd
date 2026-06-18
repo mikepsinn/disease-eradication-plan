@@ -1922,6 +1922,8 @@ $$
 
 {{< include ../figures/tornado-treaty_disease_cure_fraction_20yr.qmd >}}
 
+{{< include ../figures/sensitivity-table-treaty_disease_cure_fraction_20yr.qmd >}}
+
 #### Monte Carlo Distribution
 
 {{< include ../figures/mc-distribution-treaty_disease_cure_fraction_20yr.qmd >}}
@@ -2073,6 +2075,8 @@ $$
 #### Sensitivity Analysis
 
 {{< include ../figures/tornado-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_health_recovery_gdp_growth_bonus_year_20.qmd >}}
 
 #### Monte Carlo Distribution
 

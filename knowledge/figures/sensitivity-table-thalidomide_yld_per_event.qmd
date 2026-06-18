@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Thalidomide Disability Weight (ratio) | 28.4785 | Strong driver |
-| Thalidomide Survivor Lifespan (years) | -23.4440 | Strong driver |
-| Thalidomide Survivors Per Event (cases) | -4.0444 | Strong driver |
+| Thalidomide Survivors Per Event (cases) | 0.7990 | Strong driver |
+| Thalidomide Disability Weight (ratio) | 0.4526 | Moderate driver |
+| Thalidomide Survivor Lifespan (years) | 0.3747 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

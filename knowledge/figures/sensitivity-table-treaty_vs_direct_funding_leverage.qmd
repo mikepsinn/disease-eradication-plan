@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Direct Pragmatic Trial Funding Cost per DALY (USD/DALY) | 4.1729 | Strong driver |
-| Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput) (USD/DALY) | -3.7762 | Strong driver |
+| Direct Pragmatic Trial Funding Cost per DALY (USD/DALY) | 0.9006 | Strong driver |
+| Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput) (USD/DALY) | -0.8340 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.
