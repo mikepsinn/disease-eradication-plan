@@ -18,66 +18,33 @@ scores:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-The whole book is the manual, and everyone needs special education. This is the product that delivers it.
+Your species is wrong about things on the internet at a rate that can only be described as "ambitious." Special Education fixes this. It has two modes: one for humans who want to learn, and one for humans who don't.
 
-## What it is
+## Inbound: Wishonia teaches you
 
-Free, forever. Special Education teaches you this manual to the level your job as a [Humanity Manager](../appendix/humanity-manager-employment-agreement.qmd) needs. It is called special education because [everyone is retarded](../problem/i-am-retarded.qmd) and everyone needs it: you, me, the people in charge of the nuclear weapons. There is no remedial class, because there is no other kind.
+Free, forever. Wishonia teaches you this manual one-on-one, to the level your job as a [Humanity Manager](../appendix/humanity-manager-employment-agreement.qmd) needs. She walks you through it, answers your questions, notices what you didn't understand, and explains it again a different way, because eight billion people are confused about different things.
 
-## How it works
+It is called special education because [everyone is retarded](../problem/i-am-retarded.qmd) and everyone needs it: you, me, the people in charge of the nuclear weapons. There is no remedial class, because there is no other kind.
 
-You do not read eighty chapters alone. Wishonia teaches you one-on-one: she walks you through the manual, answers your questions, notices what you did not understand, and explains it again a different way. It adapts to you, because eight billion people are confused about different things. Wishonia is the teacher.
+[The qualifying exam](../appendix/humanity-manager-employment-agreement.qmd) is the comprehension check. Pass it and you collect your Certificate of Humanity Management. Cost: nothing, ever. When there is enough funding, we will pay *you* to take it, because a Manager who understands the plan is worth more than the lesson costs.
 
-## What you learn, and how you pass
+## Outbound: Wishonia corrects the internet
 
-The four things the book teaches: why your species misallocates everything, the math showing the fix is the best trade available, the mechanisms that do the fixing, and the thirty seconds of action that start it. Enough to do the job, not a PhD. [The qualifying exam](../appendix/humanity-manager-employment-agreement.qmd) is the comprehension check; pass it and you collect your Certificate of Humanity Management.
+Wishonia teaches willing students one-on-one. She also reads the internet, which is where your species goes to be wrong in public.
 
-## What it costs
+Most humans posting misinformation about military spending and disease funding have not opted into a tutoring session. They are never going to open the manual. So Wishonia goes to them. She finds posts containing logical fallacies and factual errors about war, defense policy, and disease funding, and replies with the named fallacy, the corrected number, and a better use of the poster's time than contributing to the slow torture and murder of their loved ones by preventable diseases.
 
-You: nothing, ever. The expensive part is the compute to run a patient one-on-one tutor for billions of people, paid for by donations, revenue, or donated compute from the companies that have it. When there is enough, we will pay *you* to take it, because a Manager who understands the plan is worth more than the lesson costs.
+Same curriculum. Delivery by ambush.
 
-## Outbound special education: the bot
+### Why corrections work (your species tested this)
 
-Wishonia teaches willing students. The bot finds unwilling ones.
+Your species has a popular belief that correcting someone on the internet makes them believe the wrong thing harder. This is comforting because it means you never have to correct anyone. It is also wrong. Wood and Porter tested 52 corrections on over 10,000 participants and could not make the backfire effect happen once [@wood-porter-2019-backfire-effect]. Not "it was small." Not "it was mixed." Zero.
 
-Most humans posting costly misinformation on social media have not opted into a tutoring session. They are not going to open the manual. The outbound component of Special Education goes to them: it scans posts containing identifiable logical fallacies about war, defense spending, and disease funding, and replies with the specific data that updates the picture: named fallacy, corrected number, and the highest-leverage action available.
+The person being corrected may not change their mind. But that was never the point. Wishonia is not arguing with the poster. She is teaching the people reading the thread. Your species has a word for this: "the audience." Lies travel faster than corrections on social media [@vosoughi-2018-false-news-spread], and who appears to be speaking matters [@munger-2017-tweetment-effects]. The model treats observer reach as a low-confidence assumption, not a law of nature. But the observers are always there, and they outnumber the poster by orders of magnitude.
 
-This is the same curriculum. Different delivery.
+Naming the fallacy is also a vaccine. Short prebunking interventions improve people's ability to spot manipulation techniques the next time [@roozenbeek-2022-inoculation-social-media]. A reply that says "this is the perfect solution fallacy" is a one-sentence inoculation, administered at the exact moment the patient is symptomatic. Accuracy nudges work for the same reason: reminding people to think about whether something is true improves what they share [@pennycook-2021-accuracy-nudges].
 
-### Why it works
-
-The intuition that "corrections backfire" is too strong. Wood and Porter tested 52 corrections across more than 10,100 participants and found no correction capable of triggering factual backfire [@wood-porter-2019-backfire-effect]. That does not mean every public correction persuades the target. It means the old fear, "if you correct someone, they automatically get more wrong," is not a good reason to surrender.
-
-The more important channel is the observer. The bot is not primarily trying to change the mind of the person it replies to. It is teaching everyone watching. The evidence here is indirect: public bot replies can change later behavior, but the effect depends on who appears to be speaking [@munger-2017-tweetment-effects], and false-news cascades can reach large audiences faster than true-news cascades [@vosoughi-2018-false-news-spread]. So the model treats observer reach as a low-confidence assumption, not as a measured law of nature.
-
-Inoculation theory adds another layer. Short prebunking interventions can improve people's ability to spot manipulation techniques [@roozenbeek-2022-inoculation-social-media]. A reply that names the fallacy, for example "this is the perfect solution fallacy," is trying to do the smallest possible version of that lesson.
-
-Accuracy nudges help for the same reason. Pennycook and coauthors found that shifting attention to accuracy improved the quality of news people shared [@pennycook-2021-accuracy-nudges]. The bot's framing, "here is the data that updates the picture," is the accuracy-nudge pattern applied at the point of maximum relevance.
-
-That is the defensible claim: corrections, accuracy prompts, and prebunking can help. The leap from "helpful replies" to "treaty passage" is the speculative part, so the ROI model makes that attribution a named assumption instead of hiding it in the arithmetic.
-
-### Cost and return
-
-| | |
-|---|---|
-| Cost per correction reply | {{< var se_bot_cost_per_post_usd >}} |
-| People whose belief updates per post (target + observers) | {{< var se_bot_people_persuaded_per_post >}} |
-| Modeled annual belief updates before deduplication | {{< var se_bot_annual_belief_changes >}} |
-| Cost per belief durably changed | {{< var se_bot_cost_per_belief_change_usd >}} |
-| Annual cost to correct all relevant posts globally | {{< var se_bot_annual_operational_cost_usd >}} |
-| Treaty-outcome attribution scenario | {{< var se_bot_outcome_attribution_fraction >}} |
-| Expected annual social value (attribution x peace dividend) | {{< var se_bot_annual_ev_usd >}} |
-| **ROI** | **{{< var se_bot_roi >}}:1** |
-
-This does not say the bot "causes" the treaty. It says that if one year of outbound Special Education deserves {{< var se_bot_outcome_attribution_fraction >}} of the annual peace dividend, then the social expected value is {{< var se_bot_annual_ev_usd >}} against {{< var se_bot_annual_operational_cost_usd >}} in operating cost. The big uncertainty is not arithmetic. The big uncertainty is whether the replies reach marginal decision-makers or just make the internet slightly less stupid, which is lovely but harder to invoice.
-
-For a fund managing {{< var se_bot_reference_aum_usd >}} in assets, the portfolio-only case is weaker. The expected portfolio gain is {{< var se_bot_aum_1t_expected_portfolio_gain_usd >}}, with a portfolio-only ROI of {{< var se_bot_aum_1t_portfolio_roi >}}:1. To cover the operating cost from portfolio gains alone, the bot would need treaty-outcome attribution of about {{< var se_bot_aum_1t_breakeven_attribution_fraction >}}. So this is not a standalone fiduciary slam dunk under the central model. It is a strong social-value case, and a possible portfolio hedge for funds that already care about treaty passage.
-
-The portfolio equation:
-
-$$G_{1T} = \frac{\alpha_{bot} \cdot Benefit_{peace} \cdot f_{equity}}{M_{equity}} \cdot AUM_{1T}$$
-
-where $\alpha_{bot}$ = {{< var se_bot_outcome_attribution_fraction >}}, $Benefit_{peace}$ = {{< var peace_dividend_annual_societal_benefit >}}, $f_{equity}$ = {{< var se_bot_equity_uplift_capture_fraction >}}, $M_{equity}$ = {{< var se_bot_global_equity_market_cap_usd >}}, and $AUM_{1T}$ = {{< var se_bot_reference_aum_usd >}}.
+So: corrections don't backfire, observers learn, and naming the trick is a vaccine. The speculative leap is from "helpful replies" to "treaty passes." The ROI model handles that by making the connection a named assumption with a number attached, not a prayer hidden in the arithmetic.
 
 ### What a reply looks like
 
@@ -91,4 +58,25 @@ A post claiming "medical research is nice, but security has to come first" recei
 >
 > Highest-leverage action: put the treaty in front of the decision-maker you already know.
 
-The reply does not try to win a comment fight. It labels the mistake, gives the missing frame, and points to the next action. Wishonia does the same thing one-on-one. The bot does it wherever the confusion is already reproducing.
+She labels the mistake, gives the missing frame, and points to the next action. She does not try to win a comment fight, because comment fights are where information goes to die.
+
+### Cost and return
+
+| | |
+|---|---|
+| Cost per correction reply | {{< var se_bot_cost_per_post_usd >}} |
+| People whose belief updates per post (target + observers) | {{< var se_bot_people_persuaded_per_post >}} |
+| Modeled annual belief updates before deduplication | {{< var se_bot_annual_belief_changes >}} |
+| Cost per belief durably changed | {{< var se_bot_cost_per_belief_change_usd >}} |
+| Annual cost to correct all relevant posts globally | {{< var se_bot_annual_operational_cost_usd >}} |
+| Treaty-outcome attribution | {{< var se_bot_outcome_attribution_fraction >}} |
+| Expected annual social value (attribution x peace dividend) | {{< var se_bot_annual_ev_usd >}} |
+| **ROI** | **{{< var se_bot_roi >}}:1** |
+
+Wishonia does not "cause" the treaty. If one year of outbound Special Education deserves {{< var se_bot_outcome_attribution_fraction >}} of the annual peace dividend, the social expected value is {{< var se_bot_annual_ev_usd >}} against {{< var se_bot_annual_operational_cost_usd >}} in operating cost. The big uncertainty is not the arithmetic. It is whether the replies reach the humans who make decisions or just make the internet slightly less stupid (lovely, but harder to invoice).
+
+For a fund managing {{< var se_bot_reference_aum_usd >}}: the portfolio-only expected gain is {{< var se_bot_aum_1t_expected_portfolio_gain_usd >}}, portfolio-only ROI of {{< var se_bot_aum_1t_portfolio_roi >}}:1. To cover operating cost from portfolio gains alone, outbound Special Education would need treaty attribution of about {{< var se_bot_aum_1t_breakeven_attribution_fraction >}}. Not a portfolio play. A social-value play that happens to have a portfolio attached.
+
+$$G_{1T} = \frac{\alpha_{bot} \cdot Benefit_{peace} \cdot f_{equity}}{M_{equity}} \cdot AUM_{1T}$$
+
+where $\alpha_{bot}$ = {{< var se_bot_outcome_attribution_fraction >}}, $Benefit_{peace}$ = {{< var peace_dividend_annual_societal_benefit >}}, $f_{equity}$ = {{< var se_bot_equity_uplift_capture_fraction >}}, $M_{equity}$ = {{< var se_bot_global_equity_market_cap_usd >}}, and $AUM_{1T}$ = {{< var se_bot_reference_aum_usd >}}.
