@@ -132,7 +132,11 @@ def _get_config_qmd_files(project_root: Path, config_name: str = "manual") -> Li
 
 
 def _should_skip_file(project_root: Path, file_path: Path) -> bool:
-    rel = PurePosixPath(file_path.relative_to(project_root).as_posix())
+    try:
+        rel_path = file_path.resolve().relative_to(project_root.resolve())
+    except ValueError:
+        return False
+    rel = PurePosixPath(rel_path.as_posix())
     return any(rel.match(pattern) for pattern in SKIP_FILE_PATTERNS)
 
 
@@ -346,7 +350,7 @@ def _normalize_file(project_root: Path, file_path: Path, rules: Sequence[Concept
         if rule.owner_source_path is not None and rule.owner_source_path == file_path.resolve()
     }
     try:
-        display_path = file_path.relative_to(project_root)
+        display_path = file_path.resolve().relative_to(project_root.resolve())
     except ValueError:
         display_path = file_path
 

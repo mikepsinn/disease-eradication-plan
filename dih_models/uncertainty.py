@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import math
 import random
+import hashlib
 from typing import TYPE_CHECKING, Dict, Any, Tuple, Sequence, cast, Callable, List, Optional, Union
 
 try:
@@ -53,6 +54,13 @@ def _rng(seed: Optional[int]):
         return np.random.default_rng(seed)
     random.seed(seed or 0)
     return None
+
+
+def _seed_for_name(base_seed: Optional[int], name: str) -> Optional[int]:
+    if base_seed is None:
+        return None
+    digest = hashlib.blake2b(f"{base_seed}:{name}".encode("utf-8"), digest_size=8).digest()
+    return int.from_bytes(digest, "big") % (2 ** 32)
 
 
 def _bounded(value: float, bounds: Tuple[Optional[float], Optional[float]]):
@@ -242,11 +250,12 @@ def simulate(parameters: Dict[str, Dict[str, Any]], n: int = 10000, seed: Option
             continue
         # Use duck-typing to handle module reload issues
         # where Parameter class may be loaded from different module paths
+        parameter_seed = _seed_for_name(seed, name)
         if hasattr(val, 'distribution') or hasattr(val, 'std_error') or hasattr(val, 'confidence_interval'):
-            results[name] = sample_parameter(val, n=n, seed=seed)
+            results[name] = sample_parameter(val, n=n, seed=parameter_seed)
         elif Parameter is not None and isinstance(val, Parameter):
             # Fallback for Parameter without uncertainty metadata
-            results[name] = sample_parameter(val, n=n, seed=seed)
+            results[name] = sample_parameter(val, n=n, seed=parameter_seed)
         else:
             # Plain numeric - try to convert to float
             try:

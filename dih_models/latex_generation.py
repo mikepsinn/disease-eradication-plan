@@ -450,6 +450,27 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
         # For 3 inputs, check common compound patterns
         if n == 3:
             a, b, c = test_vals[0], test_vals[1], test_vals[2]  # 2, 3, 4
+
+            formula = (getattr(param_value, 'formula', '') or '').replace('\u00d7', '*')
+            formula_compact = re.sub(r'\s+', '', formula)
+            names = list(inputs)
+
+            sum_product_patterns = {
+                f"{names[0]}+{names[1]}*{names[2]}": 'first_plus_second_times_third',
+                f"{names[0]}+{names[2]}*{names[1]}": 'first_plus_third_times_second',
+                f"{names[1]}*{names[2]}+{names[0]}": 'first_plus_second_times_third',
+                f"{names[2]}*{names[1]}+{names[0]}": 'first_plus_third_times_second',
+                f"{names[1]}+{names[0]}*{names[2]}": 'second_plus_first_times_third',
+                f"{names[1]}+{names[2]}*{names[0]}": 'second_plus_third_times_first',
+                f"{names[0]}*{names[2]}+{names[1]}": 'second_plus_first_times_third',
+                f"{names[2]}*{names[0]}+{names[1]}": 'second_plus_third_times_first',
+                f"{names[2]}+{names[0]}*{names[1]}": 'third_plus_first_times_second',
+                f"{names[2]}+{names[1]}*{names[0]}": 'third_plus_second_times_first',
+                f"{names[0]}*{names[1]}+{names[2]}": 'third_plus_first_times_second',
+                f"{names[1]}*{names[0]}+{names[2]}": 'third_plus_second_times_first',
+            }
+            if formula_compact in sum_product_patterns:
+                return 'sum_product', sum_product_patterns[formula_compact]
             
             # A × (B - C): e.g., Deaths × (LifeExp - MeanAge)
             if abs(result - (a * (b - c))) < 0.01:  # 2 * (3-4) = -2
@@ -1832,6 +1853,27 @@ def generate_auto_latex(
         a, b, c = input_data[0], input_data[1], input_data[2]
         symbolic = f"({a['symbolic']} + {b['symbolic']}) \\times {c['symbolic']}"
         numeric = f"({a['formatted']} + {b['formatted']}) \\times {c['formatted']}"
+        latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
+
+    elif operation == 'sum_product' and len(input_data) == 3:
+        # A + B × C. Use formula metadata to avoid confusing it with A × (B + C).
+        pattern = str(order or '')
+        index_map = {
+            'first_plus_second_times_third': (0, 1, 2),
+            'first_plus_third_times_second': (0, 2, 1),
+            'second_plus_first_times_third': (1, 0, 2),
+            'second_plus_third_times_first': (1, 2, 0),
+            'third_plus_first_times_second': (2, 0, 1),
+            'third_plus_second_times_first': (2, 1, 0),
+        }
+        if pattern not in index_map:
+            return None
+        add_idx, mul_left_idx, mul_right_idx = index_map[pattern]
+        addend = input_data[add_idx]
+        mul_left = input_data[mul_left_idx]
+        mul_right = input_data[mul_right_idx]
+        symbolic = f"{addend['symbolic']} + {mul_left['symbolic']} \\times {mul_right['symbolic']}"
+        numeric = f"{addend['formatted']} + {mul_left['formatted']} \\times {mul_right['formatted']}"
         latex = f"{lhs_short} = {symbolic} = {numeric} = {result_formatted}"
 
     elif operation == 'first_over_diff_of_second_third' and len(input_data) == 3:
