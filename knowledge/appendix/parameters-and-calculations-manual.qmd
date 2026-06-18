@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 687 parameters used in the analysis, organized by type:
+This appendix documents all 689 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 201
-- Calculated values: 350
+- Calculated values: 352
 - Core definitions: 136
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (350 parameters) • [External Data Sources](#sec-external) (201 parameters) • [Core Definitions](#sec-definitions) (136 parameters)
+[Calculated Values](#sec-calculated) (352 parameters) • [External Data Sources](#sec-external) (201 parameters) • [Core Definitions](#sec-definitions) (136 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -15602,15 +15602,15 @@ $$
 
 :::
 
-### SE Bot Annual Expected Value: $11.4 million {#sec-se_bot_annual_ev_usd}
+### Special Education Peace-Dividend Expected Value: $11.4 million {#sec-se_bot_annual_ev_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected annual value from the SE bot: attribution_fraction × annual peace dividend. This is a social expected value scenario, not a directly observed revenue stream.
+Conservative expected annual social value from outbound Special Education: attribution_fraction x annual peace dividend. This is a treaty-only fallback, not the universal-owner portfolio case.
 
 **Inputs**:
 
-- [SE Bot Outcome Attribution Fraction](#sec-se_bot_outcome_attribution_fraction): 0.01% (95% CI: 0.0001% - 1%)
+- [Special Education Outcome Attribution Fraction](#sec-se_bot_outcome_attribution_fraction): 0.01% (95% CI: 0.0001% - 1%)
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
 
 $$
@@ -15780,24 +15780,24 @@ $$
 
 :::
 
-### $1T AUM Breakeven Attribution Fraction: 0.148% {#sec-se_bot_aum_1t_breakeven_attribution_fraction}
+### $1T AUM Universal-Owner Breakeven Attribution Fraction: 0.000166% {#sec-se_bot_aum_1t_universal_owner_breakeven_attribution_fraction}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Treaty-attribution fraction required for a $1T AUM investor's portfolio gain to cover the annual bot operating cost, excluding social value and reputational value.
+Political dysfunction attribution fraction required for a $1T universal-owner investor's portfolio gain to cover annual Special Education operating cost.
 
 **Inputs**:
 
 - [SE Bot Annual Operational Cost](#sec-se_bot_annual_operational_cost_usd) 🔢: $292,000
 - [Global Listed Equity Market Capitalization](#sec-se_bot_global_equity_market_cap_usd) 📊: $115 trillion (95% CI: $90 trillion - $140 trillion)
-- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
-- [Equity Capture Share of Peace Dividend](#sec-se_bot_equity_uplift_capture_fraction): 20% (95% CI: 5% - 40%)
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101 trillion
+- [Equity Capture Share of Public Value](#sec-se_bot_equity_uplift_capture_fraction): 20% (95% CI: 5% - 40%)
 - [Reference AUM for SE Bot Portfolio Case](#sec-se_bot_reference_aum_usd): $1 trillion
 
 $$
 \begin{gathered}
-\alpha_{breakeven,1T} \\
-= C_{annual} \times M_{equity} / (Benefit_{peace,soc} \times f_{equity} \times AUM_{ref})
+\alpha_{breakeven,UO} \\
+= C_{annual} \times M_{equity} / (O_{total} \times f_{equity} \times AUM_{ref})
 \end{gathered}
 $$
 where:
@@ -15821,368 +15821,110 @@ $$
 where:
 $$
 \begin{gathered}
-Benefit_{peace,soc} \\
-= Cost_{war,total} \times Reduce_{treaty} \\
-= \$11.4T \times 1\% \\
-= \$114B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,total} \\
-= Cost_{war,direct} + Cost_{war,indirect} \\
-= \$7.66T + \$3.7T \\
-= \$11.4T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,direct} \\
-= Loss_{life,conflict} + Damage_{infra,total} \\
-+ Disruption_{trade} + Spending_{mil} \\
-= \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{life,conflict} \\
-= Cost_{combat,human} + Cost_{state,human} \\
-+ Cost_{terror,human} \\
-= \$2.34T + \$27B + \$83B \\
-= \$2.45T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{combat,human} \\
-= Deaths_{combat} \times VSL \\
-= 234{,}000 \times \$10M \\
-= \$2.34T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{state,human} \\
-= Deaths_{state} \times VSL \\
-= 2{,}700 \times \$10M \\
-= \$27B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{terror,human} \\
-= Deaths_{terror} \times VSL \\
-= 8{,}300 \times \$10M \\
-= \$83B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Damage_{infra,total} \\
-= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} + Damage_{water} \\
-= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Disruption_{trade} \\
-= Disruption_{currency} + Disruption_{energy} \\
-+ Disruption_{shipping} + Disruption_{supply} \\
-= \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
-+ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
-= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
-= \$3.7T
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
 \end{gathered}
 $$
 *? Low confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-se_bot_aum_1t_breakeven_attribution_fraction.qmd >}}
+{{< include ../figures/tornado-se_bot_aum_1t_universal_owner_breakeven_attribution_fraction.qmd >}}
 
-{{< include ../figures/sensitivity-table-se_bot_aum_1t_breakeven_attribution_fraction.qmd >}}
+{{< include ../figures/sensitivity-table-se_bot_aum_1t_universal_owner_breakeven_attribution_fraction.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-se_bot_aum_1t_breakeven_attribution_fraction.qmd >}}
+{{< include ../figures/mc-distribution-se_bot_aum_1t_universal_owner_breakeven_attribution_fraction.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-se_bot_aum_1t_breakeven_attribution_fraction.qmd >}}
+{{< include ../figures/exceedance-se_bot_aum_1t_universal_owner_breakeven_attribution_fraction.qmd >}}
 
 :::
 
-### $1T AUM Expected Portfolio Gain from SE Bot: $19,751 {#sec-se_bot_aum_1t_expected_portfolio_gain_usd}
+### $1T AUM Universal-Owner Portfolio Gain from Special Education: $17.6 million {#sec-se_bot_aum_1t_universal_owner_portfolio_gain_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected portfolio gain for a $1T AUM fund from one year of SE bot operation. Calculation: (attribution_fraction * peace_dividend * equity_capture_share) / global_equity_market_cap * reference_AUM. This is a hedge value, not the social expected value.
+Expected portfolio gain for a $1T universal-owner fund from one year of outbound Special Education. Calculation: attribution_fraction x political_dysfunction_tax x equity_capture_share / global_equity_market_cap x reference_AUM.
 
 **Inputs**:
 
-- [SE Bot Outcome Attribution Fraction](#sec-se_bot_outcome_attribution_fraction): 0.01% (95% CI: 0.0001% - 1%)
-- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
-- [Equity Capture Share of Peace Dividend](#sec-se_bot_equity_uplift_capture_fraction): 20% (95% CI: 5% - 40%)
+- [Special Education Outcome Attribution Fraction](#sec-se_bot_outcome_attribution_fraction): 0.01% (95% CI: 0.0001% - 1%)
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101 trillion
+- [Equity Capture Share of Public Value](#sec-se_bot_equity_uplift_capture_fraction): 20% (95% CI: 5% - 40%)
 - [Global Listed Equity Market Capitalization](#sec-se_bot_global_equity_market_cap_usd) 📊: $115 trillion (95% CI: $90 trillion - $140 trillion)
 - [Reference AUM for SE Bot Portfolio Case](#sec-se_bot_reference_aum_usd): $1 trillion
 
 $$
 \begin{gathered}
-G_{1T} \\
-= \alpha_{bot} \times Benefit_{peace,soc} \times \frac{f_{equity}}{M_{equity}} \times AUM_{ref}
+G_{UO,1T} \\
+= \alpha_{bot} \times O_{total} \times \frac{f_{equity}}{M_{equity}} \times AUM_{ref}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Benefit_{peace,soc} \\
-= Cost_{war,total} \times Reduce_{treaty} \\
-= \$11.4T \times 1\% \\
-= \$114B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,total} \\
-= Cost_{war,direct} + Cost_{war,indirect} \\
-= \$7.66T + \$3.7T \\
-= \$11.4T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,direct} \\
-= Loss_{life,conflict} + Damage_{infra,total} \\
-+ Disruption_{trade} + Spending_{mil} \\
-= \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{life,conflict} \\
-= Cost_{combat,human} + Cost_{state,human} \\
-+ Cost_{terror,human} \\
-= \$2.34T + \$27B + \$83B \\
-= \$2.45T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{combat,human} \\
-= Deaths_{combat} \times VSL \\
-= 234{,}000 \times \$10M \\
-= \$2.34T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{state,human} \\
-= Deaths_{state} \times VSL \\
-= 2{,}700 \times \$10M \\
-= \$27B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{terror,human} \\
-= Deaths_{terror} \times VSL \\
-= 8{,}300 \times \$10M \\
-= \$83B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Damage_{infra,total} \\
-= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} + Damage_{water} \\
-= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Disruption_{trade} \\
-= Disruption_{currency} + Disruption_{energy} \\
-+ Disruption_{shipping} + Disruption_{supply} \\
-= \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
-+ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
-= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
-= \$3.7T
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
 \end{gathered}
 $$
 *? Low confidence*
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-se_bot_aum_1t_expected_portfolio_gain_usd.qmd >}}
+{{< include ../figures/tornado-se_bot_aum_1t_universal_owner_portfolio_gain_usd.qmd >}}
 
-{{< include ../figures/sensitivity-table-se_bot_aum_1t_expected_portfolio_gain_usd.qmd >}}
+{{< include ../figures/sensitivity-table-se_bot_aum_1t_universal_owner_portfolio_gain_usd.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-se_bot_aum_1t_expected_portfolio_gain_usd.qmd >}}
+{{< include ../figures/mc-distribution-se_bot_aum_1t_universal_owner_portfolio_gain_usd.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-se_bot_aum_1t_expected_portfolio_gain_usd.qmd >}}
+{{< include ../figures/exceedance-se_bot_aum_1t_universal_owner_portfolio_gain_usd.qmd >}}
 
 :::
 
-### $1T AUM Portfolio-Only ROI from SE Bot: 0.0676:1 {#sec-se_bot_aum_1t_portfolio_roi}
+### $1T AUM Universal-Owner Portfolio ROI from Special Education: 60.2:1 {#sec-se_bot_aum_1t_universal_owner_portfolio_roi}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Portfolio-only ROI for a $1T AUM investor: expected portfolio gain divided by annual bot operating cost. Under the central case this does not include social value, donations, or reputational value.
+Portfolio-only ROI for a $1T universal-owner investor: expected portfolio gain from political dysfunction tax recovery divided by annual Special Education operating cost.
 
 **Inputs**:
 
-- [$1T AUM Expected Portfolio Gain from SE Bot](#sec-se_bot_aum_1t_expected_portfolio_gain_usd) 🔢: $19,751
+- [$1T AUM Universal-Owner Portfolio Gain from Special Education](#sec-se_bot_aum_1t_universal_owner_portfolio_gain_usd) 🔢: $17.6 million
 - [SE Bot Annual Operational Cost](#sec-se_bot_annual_operational_cost_usd) 🔢: $292,000
 
 $$
 \begin{gathered}
-ROI_{1T} \\
-= \frac{G_{1T}}{C_{annual}} \\
-= \frac{\$19.8K}{\$292K} \\
-= 0.0676
+ROI_{UO,1T} \\
+= \frac{G_{UO,1T}}{C_{annual}} \\
+= \frac{\$17.6M}{\$292K} \\
+= 60.2
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-G_{1T} \\
-= \alpha_{bot} \times Benefit_{peace,soc} \times \frac{f_{equity}}{M_{equity}} \times AUM_{ref}
+G_{UO,1T} \\
+= \alpha_{bot} \times O_{total} \times \frac{f_{equity}}{M_{equity}} \times AUM_{ref}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Benefit_{peace,soc} \\
-= Cost_{war,total} \times Reduce_{treaty} \\
-= \$11.4T \times 1\% \\
-= \$114B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,total} \\
-= Cost_{war,direct} + Cost_{war,indirect} \\
-= \$7.66T + \$3.7T \\
-= \$11.4T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,direct} \\
-= Loss_{life,conflict} + Damage_{infra,total} \\
-+ Disruption_{trade} + Spending_{mil} \\
-= \$2.45T + \$1.88T + \$616B + \$2.72T \\
-= \$7.66T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Loss_{life,conflict} \\
-= Cost_{combat,human} + Cost_{state,human} \\
-+ Cost_{terror,human} \\
-= \$2.34T + \$27B + \$83B \\
-= \$2.45T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{combat,human} \\
-= Deaths_{combat} \times VSL \\
-= 234{,}000 \times \$10M \\
-= \$2.34T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{state,human} \\
-= Deaths_{state} \times VSL \\
-= 2{,}700 \times \$10M \\
-= \$27B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{terror,human} \\
-= Deaths_{terror} \times VSL \\
-= 8{,}300 \times \$10M \\
-= \$83B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Damage_{infra,total} \\
-= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
-+ Damage_{health} + Damage_{transport} + Damage_{water} \\
-= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
-= \$1.88T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Disruption_{trade} \\
-= Disruption_{currency} + Disruption_{energy} \\
-+ Disruption_{shipping} + Disruption_{supply} \\
-= \$57.4B + \$125B + \$247B + \$187B \\
-= \$616B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{war,indirect} \\
-= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
-+ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
-= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
-= \$3.7T
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
 \end{gathered}
 $$
 where:
@@ -16207,17 +15949,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-se_bot_aum_1t_portfolio_roi.qmd >}}
+{{< include ../figures/tornado-se_bot_aum_1t_universal_owner_portfolio_roi.qmd >}}
 
-{{< include ../figures/sensitivity-table-se_bot_aum_1t_portfolio_roi.qmd >}}
+{{< include ../figures/sensitivity-table-se_bot_aum_1t_universal_owner_portfolio_roi.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-se_bot_aum_1t_portfolio_roi.qmd >}}
+{{< include ../figures/mc-distribution-se_bot_aum_1t_universal_owner_portfolio_roi.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-se_bot_aum_1t_portfolio_roi.qmd >}}
+{{< include ../figures/exceedance-se_bot_aum_1t_universal_owner_portfolio_roi.qmd >}}
 
 :::
 
@@ -16353,15 +16095,134 @@ $$
 
 :::
 
-### SE Bot ROI: 38.9:1 {#sec-se_bot_roi}
+### Special Education Political Dysfunction Expected Social Value: $10.1 billion {#sec-se_bot_political_dysfunction_annual_ev_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Return on investment for the SE bot: annual_EV / annual_operational_cost. This is only as credible as the treaty-attribution scenario. The operating cost and reply mechanics are modelable; attribution to treaty passage is the dominant speculative input.
+Expected annual social value from outbound Special Education under the political dysfunction tax framing: attribution_fraction x annual global opportunity cost from governance failures. This is the broad public-value case, not a direct portfolio return.
 
 **Inputs**:
 
-- [SE Bot Annual Expected Value](#sec-se_bot_annual_ev_usd) 🔢: $11.4 million
+- [Special Education Outcome Attribution Fraction](#sec-se_bot_outcome_attribution_fraction): 0.01% (95% CI: 0.0001% - 1%)
+- [Global Opportunity Cost Total](#sec-political_dysfunction_global_opportunity_cost_total) 🔢: $101 trillion
+
+$$
+\begin{gathered}
+EV_{SE,PDT} \\
+= \alpha_{bot} \times O_{total} \\
+= 0.01\% \times \$101T \\
+= \$10.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_political_dysfunction_annual_ev_usd.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_political_dysfunction_annual_ev_usd.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_political_dysfunction_annual_ev_usd.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_political_dysfunction_annual_ev_usd.qmd >}}
+
+:::
+
+### Special Education Political Dysfunction Social ROI: 34.6 thousand:1 {#sec-se_bot_political_dysfunction_roi}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Broad social ROI for outbound Special Education: political_dysfunction_annual_EV / annual_operational_cost. This is useful as a social-value ceiling, while the universal-owner ROI estimates the investable portfolio case.
+
+**Inputs**:
+
+- [Special Education Political Dysfunction Expected Social Value](#sec-se_bot_political_dysfunction_annual_ev_usd) 🔢: $10.1 billion
+- [SE Bot Annual Operational Cost](#sec-se_bot_annual_operational_cost_usd) 🔢: $292,000
+
+$$
+\begin{gathered}
+ROI_{SE,PDT} \\
+= \frac{EV_{SE,PDT}}{C_{annual}} \\
+= \frac{\$10.1B}{\$292K} \\
+= 34{,}600
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+EV_{SE,PDT} \\
+= \alpha_{bot} \times O_{total} \\
+= 0.01\% \times \$101T \\
+= \$10.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+O_{total} \\
+= O_{health} + O_{science} + O_{lead} + O_{migration} \\
+= \$34T + \$4T + \$6T + \$57T \\
+= \$101T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{annual} \\
+= C_{post} \times V_{posts} \times 365 \\
+= \$0.008 \times 100{,}000 \times 365 \\
+= \$292K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{post} \\
+= C_{llm} + C_{platform} \\
+= \$0.006 + \$0.002 \\
+= \$0.008
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-se_bot_political_dysfunction_roi.qmd >}}
+
+{{< include ../figures/sensitivity-table-se_bot_political_dysfunction_roi.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-se_bot_political_dysfunction_roi.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-se_bot_political_dysfunction_roi.qmd >}}
+
+:::
+
+### Special Education Peace-Dividend Social ROI: 38.9:1 {#sec-se_bot_roi}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conservative treaty-only social ROI for outbound Special Education: peace_dividend_annual_EV / annual_operational_cost. This excludes broader political dysfunction tax recovery and universal-owner portfolio gains.
+
+**Inputs**:
+
+- [Special Education Peace-Dividend Expected Value](#sec-se_bot_annual_ev_usd) 🔢: $11.4 million
 - [SE Bot Annual Operational Cost](#sec-se_bot_annual_operational_cost_usd) 🔢: $292,000
 
 $$
@@ -37328,11 +37189,11 @@ Diminishing-returns drag as the venture market expands ~15x (current global VC ~
 
 :::
 
-### Equity Capture Share of Peace Dividend: 20% {#sec-se_bot_equity_uplift_capture_fraction}
+### Equity Capture Share of Public Value: 20% {#sec-se_bot_equity_uplift_capture_fraction}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Share of the peace dividend assumed to be capitalized into listed equities through lower conflict risk, lower supply-chain risk, and higher expected real output. This is a valuation scenario, not an observed pass-through estimate.
+Share of a large public-value gain assumed to be capitalized into listed equities through lower conflict risk, lower supply-chain risk, and higher expected real output. This is a valuation scenario, not an observed pass-through estimate.
 
 #### Uncertainty Range
 
@@ -37394,11 +37255,11 @@ Average unique readers of a correction reply besides the target. Munger (2017) i
 
 :::
 
-### SE Bot Outcome Attribution Fraction: 0.01% {#sec-se_bot_outcome_attribution_fraction}
+### Special Education Outcome Attribution Fraction: 0.01% {#sec-se_bot_outcome_attribution_fraction}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Fraction of the annual peace dividend outcome attributable to the SE bot running for one year. This is a scenario assumption, not an empirical estimate. The mechanical model produces modeled belief updates, but the conversion from belief updates to treaty passage depends on targeting, repeated exposure, elite pickup, platform enforcement, and whether the bot reaches marginal decision-makers.
+Fraction of a modeled public-policy outcome attributable to outbound Special Education running for one year. This is a scenario assumption, not an empirical estimate. The mechanical model produces modeled belief updates, but the conversion from belief updates to treaty passage depends on targeting, repeated exposure, elite pickup, platform enforcement, and whether the bot reaches marginal decision-makers.
 
 #### Uncertainty Range
 

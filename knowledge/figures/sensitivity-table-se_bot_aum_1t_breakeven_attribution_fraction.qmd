@@ -5,7 +5,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
 | SE Bot Annual Operational Cost (USD/year) | 0.8578 | Strong driver |
-| Equity Capture Share of Peace Dividend (percentage) | -0.1691 | Weak driver |
+| Equity Capture Share of Public Value (percentage) | -0.1691 | Weak driver |
 | Global Listed Equity Market Capitalization (USD) | 0.0343 | Minimal effect |
 | Annual Peace Dividend from 1% Reduction in Total War Costs (USD/year) | -0.0286 | Minimal effect |
 

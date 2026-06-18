@@ -48,25 +48,25 @@ So: corrections don't backfire, observers learn, and naming the trick is a vacci
 
 ### What a reply looks like
 
-Three examples from real posts your species made this week.
+Three examples of the kind of post she answers.
 
-**Canadian Prime Minister Carney, June 15, 2026:** "The war in Iran was worth it."
+**War supporter, June 2026:** "The war in Iran was worth it."
 
 > **Missing: cost-benefit analysis.** Worth it compared to what? The war cost $34 billion, killed 1,700+ civilians, and ended with a negotiated deal. Your species had a negotiated deal in 2015 (the JCPOA). It cost nothing and no one died. Meanwhile, your species has {{< var nuclear_winter_overkill_factor >}} apocalypse capacity. If you sacrificed one of those apocalypses and redirected the money into pragmatic clinical trials at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}, you would increase clinical trial capacity {{< var dfda_trial_capacity_multiplier >}} and compress the disease eradication timeline from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. That could save {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. The war saved zero. You have a 1 in {{< var annual_terrorism_death_risk_denominator >}} chance of being killed by a terrorist and a nearly 100% chance of being slowly tortured and murdered by a disease. The cost-benefit analysis was available. You did not do one.
 >
 > Better use of your time: divide $34 billion by {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient, then sit quietly.
 
-**US House Budget Committee, March 2026:** Proposed cutting ACA subsidies to offset $200 billion in Iran war spending.
+**US House Budget Committee, March 2026:** Proposed cutting ACA subsidies to offset $200 billion in Iran war spending [@axios-gop-health-care-cuts-iran-war-2026].
 
 > **Fallacy: false tradeoff.** You are not "paying for the war." You are choosing which people die. Your species currently enrolls {{< var current_trial_slots_available >}} in clinical trials. At {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient in pragmatic trials, $200 billion enrolls 215 million patients. That is 113 years of clinical trial capacity at your current rate. You could give every one of those patients a voucher for a pragmatic trial that globally ranks treatments by effectiveness and side effects, instead of your current system where a doctor guesses and you hope for the best. You spent 113 years of that on a war instead.
 >
 > Better use of your time: read the line items, then call your representative.
 
-**NATO, The Hague Summit, June 2026:** Member nations pledged to spend 5% of GDP on defense by 2035.
+**NATO, The Hague Summit, June 25, 2025:** Member nations pledged to spend 5% of GDP on defense by 2035 [@nato-hague-summit-declaration-2025].
 
 > **Fallacy: arbitrary metric.** GDP measures economic output. Threats do not scale with economic output. If your GDP drops 10% in a recession, do your enemies become 10% less dangerous? If it grows 10%, did new threats appear? Worse: your species keeps making weapons more efficient. A guided missile today does what a thousand bombs did in 1945. If your economy grows and your technology improves, a fixed GDP percentage buys exponentially more killing capacity every decade. The percentage should be going *down*, not up to 5%. You already have {{< var nuclear_winter_overkill_factor >}} apocalypses. You have set a target that is circular: spend more because you are below the target, which exists because you set it.
 >
-> Better use of your time: ask how many apocalypses you need, then redirect the {{< var nuclear_winter_spare_apocalypses >}} spares into clinical trials.
+> Better use of your time: ask how many apocalypses you need, then redirect the {{< var nuclear_winter_spare_apocalypses_nounit >}} spare apocalypses into clinical trials.
 
 She labels the mistake, gives the missing number, and points to the next action. She does not try to win a comment fight, because comment fights are where information goes to die. She is teaching the people reading the thread.
 
@@ -79,14 +79,17 @@ She labels the mistake, gives the missing number, and points to the next action.
 | Modeled annual belief updates before deduplication | {{< var se_bot_annual_belief_changes >}} |
 | Cost per belief durably changed | {{< var se_bot_cost_per_belief_change_usd >}} |
 | Annual cost to correct all relevant posts globally | {{< var se_bot_annual_operational_cost_usd >}} |
-| Treaty-outcome attribution | {{< var se_bot_outcome_attribution_fraction >}} |
-| Expected annual social value (attribution x peace dividend) | {{< var se_bot_annual_ev_usd >}} |
-| **ROI** | **{{< var se_bot_roi >}}:1** |
+| Outcome attribution | {{< var se_bot_outcome_attribution_fraction >}} |
+| Expected annual social value (attribution x political dysfunction tax) | {{< var se_bot_political_dysfunction_annual_ev_usd >}} |
+| Social ROI | {{< var se_bot_political_dysfunction_roi >}}:1 |
+| {{< var se_bot_reference_aum_usd >}} universal-owner portfolio gain | {{< var se_bot_aum_1t_universal_owner_portfolio_gain_usd >}} |
+| **{{< var se_bot_reference_aum_usd >}} universal-owner portfolio ROI** | **{{< var se_bot_aum_1t_universal_owner_portfolio_roi >}}:1** |
+| Breakeven attribution for portfolio ROI | {{< var se_bot_aum_1t_universal_owner_breakeven_attribution_fraction >}} |
 
-Wishonia does not "cause" better policy. If one year of outbound Special Education deserves {{< var se_bot_outcome_attribution_fraction >}} of the annual peace dividend, the social expected value is {{< var se_bot_annual_ev_usd >}} against {{< var se_bot_annual_operational_cost_usd >}} in operating cost. The big uncertainty is not the arithmetic. It is whether the replies reach the humans who make decisions or just make the internet slightly less stupid (lovely, but harder to invoice).
+Wishonia does not "cause" better policy by magic. The model asks one narrow question: if one year of outbound Special Education deserves {{< var se_bot_outcome_attribution_fraction >}} of the annual [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025], how much value does that create, and how much of it would a universal owner capture through broad equity exposure?
 
-For a fund managing {{< var se_bot_reference_aum_usd >}}: the portfolio-only expected gain is {{< var se_bot_aum_1t_expected_portfolio_gain_usd >}}, portfolio-only ROI of {{< var se_bot_aum_1t_portfolio_roi >}}:1. To cover operating cost from portfolio gains alone, outbound Special Education would need treaty attribution of about {{< var se_bot_aum_1t_breakeven_attribution_fraction >}}. Not a portfolio play. A social-value play that happens to have a portfolio attached.
+At the central case, a fund managing {{< var se_bot_reference_aum_usd >}} gets {{< var se_bot_aum_1t_universal_owner_portfolio_gain_usd >}} in expected portfolio gain from {{< var se_bot_annual_operational_cost_usd >}} of annual operating cost, or {{< var se_bot_aum_1t_universal_owner_portfolio_roi >}}:1. To break even from portfolio gains alone, outbound Special Education needs attribution of only {{< var se_bot_aum_1t_universal_owner_breakeven_attribution_fraction >}} of the political dysfunction tax. That is the fiduciary-duty version. The peace-dividend-only fallback is still positive social ROI ({{< var se_bot_roi >}}:1), but it is not the strongest frame for a universal owner.
 
-$$G_{1T} = \frac{\alpha_{bot} \cdot Benefit_{peace} \cdot f_{equity}}{M_{equity}} \cdot AUM_{1T}$$
+$$ROI_{UO,1T} = \frac{\alpha_{SE} \cdot PDT_{annual} \cdot f_{equity} \cdot AUM_{1T}}{M_{equity} \cdot C_{annual}}$$
 
-where $\alpha_{bot}$ = {{< var se_bot_outcome_attribution_fraction >}}, $Benefit_{peace}$ = {{< var peace_dividend_annual_societal_benefit >}}, $f_{equity}$ = {{< var se_bot_equity_uplift_capture_fraction >}}, $M_{equity}$ = {{< var se_bot_global_equity_market_cap_usd >}}, and $AUM_{1T}$ = {{< var se_bot_reference_aum_usd >}}.
+where $\alpha_{SE}$ = {{< var se_bot_outcome_attribution_fraction >}}, $PDT_{annual}$ = {{< var political_dysfunction_global_opportunity_cost_total >}}, $f_{equity}$ = {{< var se_bot_equity_uplift_capture_fraction >}}, $AUM_{1T}$ = {{< var se_bot_reference_aum_usd >}}, $M_{equity}$ = {{< var se_bot_global_equity_market_cap_usd >}}, and $C_{annual}$ = {{< var se_bot_annual_operational_cost_usd >}}.

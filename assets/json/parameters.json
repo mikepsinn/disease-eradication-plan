@@ -8202,7 +8202,7 @@
       "value": 11357100.0,
       "formatted": "$11.4 million",
       "unit": "USD/year",
-      "description": "Expected annual value from the SE bot: attribution_fraction × annual peace dividend. This is a social expected value scenario, not a directly observed revenue stream.",
+      "description": "Conservative expected annual social value from outbound Special Education: attribution_fraction x annual peace dividend. This is a treaty-only fallback, not the universal-owner portfolio case.",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "low",
@@ -8284,6 +8284,60 @@
       "computeExpr": "(SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
     },
+    "SE_BOT_AUM_1T_UNIVERSAL_OWNER_BREAKEVEN_ATTRIBUTION_FRACTION": {
+      "value": 1.662376237623762e-06,
+      "formatted": "0.000166%",
+      "unit": "rate",
+      "description": "Political dysfunction attribution fraction required for a $1T universal-owner investor's portfolio gain to cover annual Special Education operating cost.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_ANNUAL_OPERATIONAL_COST_USD * SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD / (POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION * SE_BOT_REFERENCE_AUM_USD)",
+      "inputs": [
+        "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+        "SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+        "SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION",
+        "SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD",
+        "SE_BOT_REFERENCE_AUM_USD"
+      ],
+      "computeExpr": "((SE_BOT_ANNUAL_OPERATIONAL_COST_USD * SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD) / ((POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION) * SE_BOT_REFERENCE_AUM_USD))",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD": {
+      "value": 17565217.391304348,
+      "formatted": "$17.6 million",
+      "unit": "USD",
+      "description": "Expected portfolio gain for a $1T universal-owner fund from one year of outbound Special Education. Calculation: attribution_fraction x political_dysfunction_tax x equity_capture_share / global_equity_market_cap x reference_AUM.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION / SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD * SE_BOT_REFERENCE_AUM_USD",
+      "inputs": [
+        "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+        "SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION",
+        "SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD",
+        "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION",
+        "SE_BOT_REFERENCE_AUM_USD"
+      ],
+      "computeExpr": "((((SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL) * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION) / SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD) * SE_BOT_REFERENCE_AUM_USD)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_ROI": {
+      "value": 60.15485407980941,
+      "formatted": "60.2:1",
+      "unit": "ratio",
+      "description": "Portfolio-only ROI for a $1T universal-owner investor: expected portfolio gain from political dysfunction tax recovery divided by annual Special Education operating cost.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+      "inputs": [
+        "SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+        "SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD"
+      ],
+      "computeExpr": "(SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
     "SE_BOT_COST_PER_BELIEF_CHANGE_USD": {
       "value": 0.06666666666666667,
       "formatted": "$0.067",
@@ -8320,7 +8374,7 @@
       "value": 0.2,
       "formatted": "20%",
       "unit": "percentage",
-      "description": "Share of the peace dividend assumed to be capitalized into listed equities through lower conflict risk, lower supply-chain risk, and higher expected real output. This is a valuation scenario, not an observed pass-through estimate.",
+      "description": "Share of a large public-value gain assumed to be capitalized into listed equities through lower conflict risk, lower supply-chain risk, and higher expected real output. This is a valuation scenario, not an observed pass-through estimate.",
       "sourceType": "definition",
       "sourceRef": null,
       "confidence": "low",
@@ -8400,7 +8454,7 @@
       "value": 0.0001,
       "formatted": "0.01%",
       "unit": "rate",
-      "description": "Fraction of the annual peace dividend outcome attributable to the SE bot running for one year. This is a scenario assumption, not an empirical estimate. The mechanical model produces modeled belief updates, but the conversion from belief updates to treaty passage depends on targeting, repeated exposure, elite pickup, platform enforcement, and whether the bot reaches marginal decision-makers.",
+      "description": "Fraction of a modeled public-policy outcome attributable to outbound Special Education running for one year. This is a scenario assumption, not an empirical estimate. The mechanical model produces modeled belief updates, but the conversion from belief updates to treaty passage depends on targeting, repeated exposure, elite pickup, platform enforcement, and whether the bot reaches marginal decision-makers.",
       "sourceType": "definition",
       "sourceRef": null,
       "confidence": "low",
@@ -8445,6 +8499,38 @@
       "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
     },
+    "SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD": {
+      "value": 10100000000.0,
+      "formatted": "$10.1 billion",
+      "unit": "USD/year",
+      "description": "Expected annual social value from outbound Special Education under the political dysfunction tax framing: attribution_fraction x annual global opportunity cost from governance failures. This is the broad public-value case, not a direct portfolio return.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+      "inputs": [
+        "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+        "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION"
+      ],
+      "computeExpr": "(SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
+    "SE_BOT_POLITICAL_DYSFUNCTION_ROI": {
+      "value": 34589.04109589041,
+      "formatted": "34.6 thousand:1",
+      "unit": "ratio",
+      "description": "Broad social ROI for outbound Special Education: political_dysfunction_annual_EV / annual_operational_cost. This is useful as a social-value ceiling, while the universal-owner ROI estimates the investable portfolio case.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "low",
+      "formula": "SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+      "inputs": [
+        "SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+        "SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD"
+      ],
+      "computeExpr": "(SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/special-education.html"
+    },
     "SE_BOT_REFERENCE_AUM_USD": {
       "value": 1000000000000.0,
       "formatted": "$1 trillion",
@@ -8477,7 +8563,7 @@
       "value": 38.89417808219178,
       "formatted": "38.9:1",
       "unit": "ratio",
-      "description": "Return on investment for the SE bot: annual_EV / annual_operational_cost. This is only as credible as the treaty-attribution scenario. The operating cost and reply mechanics are modelable; attribution to treaty passage is the dominant speculative input.",
+      "description": "Conservative treaty-only social ROI for outbound Special Education: peace_dividend_annual_EV / annual_operational_cost. This excludes broader political dysfunction tax recovery and universal-owner portfolio gains.",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "low",
@@ -13504,6 +13590,24 @@
       "quote": "Median Senate reelection campaign (2024): \\$11.1 million Highly competitive races: \\$90-97 million (e.g., Brown-OH, Tester-MT) Average Senate candidate (2020): \\$27.2 million Note: Truly competitive battleground races cost ~10x the median. Senators in tight contests raised over \\$123K/day Additional sources: https://issueone.org/articles/the-118th-congress-fundraising-treadmill/ | https://www.opensecrets.org/elections-overview/most-expensive-races",
       "note": "Issue One: 118th Congress Fundraising | OpenSecrets: Most Expensive Races",
       "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "axios-gop-health-care-cuts-iran-war-2026": {
+      "id": "axios-gop-health-care-cuts-iran-war-2026",
+      "title": "GOP weighs health care cuts to pay for Iran war",
+      "author": "Sullivan, Peter",
+      "year": "2026",
+      "source": "",
+      "url": "https://www.axios.com/2026/03/30/gop-health-care-pay-iran-war",
+      "urls": [
+        "https://www.axios.com/2026/03/30/gop-health-care-pay-iran-war"
+      ],
+      "quote": "",
+      "note": "Axios reported that Republicans were considering federal health-spending reductions to help fund as much as \\$200 billion for the Iran war and immigration enforcement.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -25960,6 +26064,24 @@
       ],
       "quote": "The General Accounting Office reports that US forces used 1.8 billion rounds of small-arms ammunition per year, a level that more than doubled in five years. An estimated 250,000 rounds were fired for every insurgent killed in Iraq and Afghanistan.",
       "note": "Based on GAO figures showing approximately 6 billion bullets expended between 2002 and 2005 in Iraq and Afghanistan. Calculated by military researcher John Pike of GlobalSecurity.org.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "nato-hague-summit-declaration-2025": {
+      "id": "nato-hague-summit-declaration-2025",
+      "title": "The Hague Summit Declaration",
+      "author": "North Atlantic Treaty Organization",
+      "year": "2025",
+      "source": "",
+      "url": "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2025/06/25/the-hague-summit-declaration",
+      "urls": [
+        "https://www.nato.int/en/about-us/official-texts-and-resources/official-texts/2025/06/25/the-hague-summit-declaration"
+      ],
+      "quote": "",
+      "note": "Official declaration issued by NATO heads of state and government in The Hague on June 25, 2025. The declaration sets a 5% of GDP annual defence and security-related investment commitment by 2035.",
       "type": "misc",
       "doi": "",
       "volume": "",

@@ -15353,13 +15353,13 @@ SE_BOT_OUTCOME_ATTRIBUTION_FRACTION = Parameter(
     manual_ref="knowledge/solution/special-education.qmd",
     source_type="definition",
     description=(
-        "Fraction of the annual peace dividend outcome attributable to the SE bot running "
-        "for one year. This is a scenario assumption, not an empirical estimate. The "
+        "Fraction of a modeled public-policy outcome attributable to outbound Special "
+        "Education running for one year. This is a scenario assumption, not an empirical estimate. The "
         "mechanical model produces modeled belief updates, but the conversion from belief "
         "updates to treaty passage depends on targeting, repeated exposure, elite pickup, "
         "platform enforcement, and whether the bot reaches marginal decision-makers."
     ),
-    display_name="SE Bot Outcome Attribution Fraction",
+    display_name="Special Education Outcome Attribution Fraction",
     unit="rate",
     confidence="low",
     distribution="lognormal",
@@ -15373,10 +15373,11 @@ SE_BOT_ANNUAL_EV_USD = Parameter(
     manual_ref="knowledge/solution/special-education.qmd",
     source_type="calculated",
     description=(
-        "Expected annual value from the SE bot: attribution_fraction × annual peace dividend. "
-        "This is a social expected value scenario, not a directly observed revenue stream."
+        "Conservative expected annual social value from outbound Special Education: "
+        "attribution_fraction x annual peace dividend. This is a treaty-only fallback, "
+        "not the universal-owner portfolio case."
     ),
-    display_name="SE Bot Annual Expected Value",
+    display_name="Special Education Peace-Dividend Expected Value",
     unit="USD/year",
     formula="SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
     confidence="low",
@@ -15391,12 +15392,11 @@ SE_BOT_ROI = Parameter(
     manual_ref="knowledge/solution/special-education.qmd",
     source_type="calculated",
     description=(
-        "Return on investment for the SE bot: annual_EV / annual_operational_cost. "
-        "This is only as credible as the treaty-attribution scenario. The operating "
-        "cost and reply mechanics are modelable; attribution to treaty passage is the "
-        "dominant speculative input."
+        "Conservative treaty-only social ROI for outbound Special Education: "
+        "peace_dividend_annual_EV / annual_operational_cost. This excludes broader "
+        "political dysfunction tax recovery and universal-owner portfolio gains."
     ),
-    display_name="SE Bot ROI",
+    display_name="Special Education Peace-Dividend Social ROI",
     unit="ratio",
     formula="SE_BOT_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
     confidence="low",
@@ -15431,11 +15431,11 @@ SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION = Parameter(
     manual_ref="knowledge/solution/special-education.qmd",
     source_type="definition",
     description=(
-        "Share of the peace dividend assumed to be capitalized into listed equities through "
-        "lower conflict risk, lower supply-chain risk, and higher expected real output. This "
-        "is a valuation scenario, not an observed pass-through estimate."
+        "Share of a large public-value gain assumed to be capitalized into listed equities "
+        "through lower conflict risk, lower supply-chain risk, and higher expected real output. "
+        "This is a valuation scenario, not an observed pass-through estimate."
     ),
-    display_name="Equity Capture Share of Peace Dividend",
+    display_name="Equity Capture Share of Public Value",
     unit="percentage",
     confidence="low",
     distribution="beta",
@@ -15560,4 +15560,184 @@ SE_BOT_AUM_1T_BREAKEVEN_ATTRIBUTION_FRACTION = Parameter(
         )
     ),
     latex_symbol=r"\alpha_{breakeven,1T}",
+)
+
+SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD = Parameter(
+    SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Expected annual social value from outbound Special Education under the political "
+        "dysfunction tax framing: attribution_fraction x annual global opportunity cost "
+        "from governance failures. This is the broad public-value case, not a direct "
+        "portfolio return."
+    ),
+    display_name="Special Education Political Dysfunction Expected Social Value",
+    unit="USD/year",
+    formula="SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+    confidence="low",
+    keywords=["special education", "political dysfunction tax", "expected value", "social value", "roi"],
+    inputs=["SE_BOT_OUTCOME_ATTRIBUTION_FRACTION", "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"],
+    compute=lambda ctx: (
+        ctx["SE_BOT_OUTCOME_ATTRIBUTION_FRACTION"]
+        * ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"]
+    ),
+    latex_symbol=r"EV_{SE,PDT}",
+)
+
+SE_BOT_POLITICAL_DYSFUNCTION_ROI = Parameter(
+    SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Broad social ROI for outbound Special Education: political_dysfunction_annual_EV "
+        "/ annual_operational_cost. This is useful as a social-value ceiling, while the "
+        "universal-owner ROI estimates the investable portfolio case."
+    ),
+    display_name="Special Education Political Dysfunction Social ROI",
+    unit="ratio",
+    formula="SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+    confidence="low",
+    keywords=["special education", "political dysfunction tax", "roi", "social value"],
+    inputs=["SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD", "SE_BOT_ANNUAL_OPERATIONAL_COST_USD"],
+    compute=lambda ctx: (
+        ctx["SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD"]
+        / ctx["SE_BOT_ANNUAL_OPERATIONAL_COST_USD"]
+    ),
+    latex_symbol=r"ROI_{SE,PDT}",
+)
+
+SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD = Parameter(
+    (
+        SE_BOT_OUTCOME_ATTRIBUTION_FRACTION
+        * POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL
+        * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION
+        / SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD
+        * SE_BOT_REFERENCE_AUM_USD
+    ),
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Expected portfolio gain for a $1T universal-owner fund from one year of outbound "
+        "Special Education. Calculation: attribution_fraction x political_dysfunction_tax "
+        "x equity_capture_share / global_equity_market_cap x reference_AUM."
+    ),
+    display_name="$1T AUM Universal-Owner Portfolio Gain from Special Education",
+    unit="USD",
+    formula=(
+        "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL "
+        "* SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION / SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD "
+        "* SE_BOT_REFERENCE_AUM_USD"
+    ),
+    confidence="low",
+    keywords=[
+        "special education",
+        "political dysfunction tax",
+        "universal owner",
+        "asset management",
+        "portfolio",
+        "aum",
+        "roi",
+    ],
+    inputs=[
+        "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION",
+        "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+        "SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION",
+        "SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD",
+        "SE_BOT_REFERENCE_AUM_USD",
+    ],
+    compute=lambda ctx: (
+        ctx["SE_BOT_OUTCOME_ATTRIBUTION_FRACTION"]
+        * ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"]
+        * ctx["SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION"]
+        / ctx["SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD"]
+        * ctx["SE_BOT_REFERENCE_AUM_USD"]
+    ),
+    latex_symbol=r"G_{UO,1T}",
+)
+
+SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_ROI = Parameter(
+    SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD,
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Portfolio-only ROI for a $1T universal-owner investor: expected portfolio gain "
+        "from political dysfunction tax recovery divided by annual Special Education "
+        "operating cost."
+    ),
+    display_name="$1T AUM Universal-Owner Portfolio ROI from Special Education",
+    unit="ratio",
+    formula=(
+        "SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD "
+        "/ SE_BOT_ANNUAL_OPERATIONAL_COST_USD"
+    ),
+    confidence="low",
+    keywords=[
+        "special education",
+        "political dysfunction tax",
+        "universal owner",
+        "asset management",
+        "portfolio",
+        "aum",
+        "roi",
+    ],
+    inputs=["SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD", "SE_BOT_ANNUAL_OPERATIONAL_COST_USD"],
+    compute=lambda ctx: (
+        ctx["SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD"]
+        / ctx["SE_BOT_ANNUAL_OPERATIONAL_COST_USD"]
+    ),
+    latex_symbol=r"ROI_{UO,1T}",
+)
+
+SE_BOT_AUM_1T_UNIVERSAL_OWNER_BREAKEVEN_ATTRIBUTION_FRACTION = Parameter(
+    (
+        SE_BOT_ANNUAL_OPERATIONAL_COST_USD
+        * SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD
+        / (
+            POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL
+            * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION
+            * SE_BOT_REFERENCE_AUM_USD
+        )
+    ),
+    manual_ref="knowledge/solution/special-education.qmd",
+    source_type="calculated",
+    description=(
+        "Political dysfunction attribution fraction required for a $1T universal-owner "
+        "investor's portfolio gain to cover annual Special Education operating cost."
+    ),
+    display_name="$1T AUM Universal-Owner Breakeven Attribution Fraction",
+    unit="rate",
+    formula=(
+        "SE_BOT_ANNUAL_OPERATIONAL_COST_USD * SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD "
+        "/ (POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION "
+        "* SE_BOT_REFERENCE_AUM_USD)"
+    ),
+    confidence="low",
+    keywords=[
+        "special education",
+        "political dysfunction tax",
+        "universal owner",
+        "asset management",
+        "portfolio",
+        "aum",
+        "breakeven",
+        "attribution",
+    ],
+    inputs=[
+        "SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+        "SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD",
+        "POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+        "SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION",
+        "SE_BOT_REFERENCE_AUM_USD",
+    ],
+    compute=lambda ctx: (
+        ctx["SE_BOT_ANNUAL_OPERATIONAL_COST_USD"]
+        * ctx["SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD"]
+        / (
+            ctx["POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL"]
+            * ctx["SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION"]
+            * ctx["SE_BOT_REFERENCE_AUM_USD"]
+        )
+    ),
+    latex_symbol=r"\alpha_{breakeven,UO}",
 )

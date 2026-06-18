@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Equity Capture Share of Peace Dividend"
+#| fig-cap: "Probability Distribution: Equity Capture Share of Public Value"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +21,7 @@ central_value = 0.2
 low = 0.05
 high = 0.4
 dist_type = "beta"
-display_name = "Equity Capture Share of Peace Dividend"
+display_name = "Equity Capture Share of Public Value"
 unit = "percentage"
 
 # Calculate distribution parameters

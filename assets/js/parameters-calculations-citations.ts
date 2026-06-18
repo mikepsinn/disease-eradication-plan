@@ -7921,8 +7921,8 @@ export const SE_BOT_ANNUAL_EV_USD: Parameter = {
   parameterName: "SE_BOT_ANNUAL_EV_USD",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-se_bot_annual_ev_usd",
   unit: "USD/year",
-  displayName: "SE Bot Annual Expected Value",
-  description: "Expected annual value from the SE bot: attribution_fraction × annual peace dividend. This is a social expected value scenario, not a directly observed revenue stream.",
+  displayName: "Special Education Peace-Dividend Expected Value",
+  description: "Conservative expected annual social value from outbound Special Education: attribution_fraction x annual peace dividend. This is a treaty-only fallback, not the universal-owner portfolio case.",
   sourceType: "calculated",
   confidence: "low",
   formula: "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
@@ -7996,6 +7996,54 @@ export const SE_BOT_AUM_1T_PORTFOLIO_ROI: Parameter = {
   manualPageTitle: "Special Education",
 };
 
+export const SE_BOT_AUM_1T_UNIVERSAL_OWNER_BREAKEVEN_ATTRIBUTION_FRACTION: Parameter = {
+  value: 1.662376237623762e-06,
+  parameterName: "SE_BOT_AUM_1T_UNIVERSAL_OWNER_BREAKEVEN_ATTRIBUTION_FRACTION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-se_bot_aum_1t_universal_owner_breakeven_attribution_fraction",
+  unit: "rate",
+  displayName: "$1T AUM Universal-Owner Breakeven Attribution Fraction",
+  description: "Political dysfunction attribution fraction required for a $1T universal-owner investor's portfolio gain to cover annual Special Education operating cost.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "SE_BOT_ANNUAL_OPERATIONAL_COST_USD * SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD / (POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION * SE_BOT_REFERENCE_AUM_USD)",
+  latex: "\\begin{gathered}\n\\alpha_{breakeven,UO} = C_{annual} \\times M_{equity} / (O_{total} \\times f_{equity} \\times AUM_{ref})\n\\\\[0.5em]\n\\text{where } C_{annual} = C_{post} \\times V_{posts} \\times 365 = \\$0.008 \\times 100{,}000 \\times 365 = \\$292K\n\\\\[0.5em]\n\\text{where } C_{post} = C_{llm} + C_{platform} = \\$0.006 + \\$0.002 = \\$0.008\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
+  confidenceInterval: [4.695207746001827e-08, 8.773413188088003e-06],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/special-education.html",
+  manualPageTitle: "Special Education",
+};
+
+export const SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD: Parameter = {
+  value: 17565217.391304348,
+  parameterName: "SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-se_bot_aum_1t_universal_owner_portfolio_gain_usd",
+  unit: "USD",
+  displayName: "$1T AUM Universal-Owner Portfolio Gain from Special Education",
+  description: "Expected portfolio gain for a $1T universal-owner fund from one year of outbound Special Education. Calculation: attribution_fraction x political_dysfunction_tax x equity_capture_share / global_equity_market_cap x reference_AUM.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL * SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION / SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD * SE_BOT_REFERENCE_AUM_USD",
+  latex: "\\begin{gathered}\nG_{UO,1T} = \\alpha_{bot} \\times O_{total} \\times \\frac{f_{equity}}{M_{equity}} \\times AUM_{ref}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
+  confidenceInterval: [81721.23358126835, 40892141.567865916],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/special-education.html",
+  manualPageTitle: "Special Education",
+};
+
+export const SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_ROI: Parameter = {
+  value: 60.15485407980941,
+  parameterName: "SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_ROI",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-se_bot_aum_1t_universal_owner_portfolio_roi",
+  unit: "ratio",
+  displayName: "$1T AUM Universal-Owner Portfolio ROI from Special Education",
+  description: "Portfolio-only ROI for a $1T universal-owner investor: expected portfolio gain from political dysfunction tax recovery divided by annual Special Education operating cost.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+  latex: "\\begin{gathered}\nROI_{UO,1T} = \\frac{G_{UO,1T}}{C_{annual}} = \\frac{\\$17.6M}{\\$292K} = 60.2\n\\\\[0.5em]\n\\text{where } G_{UO,1T} = \\alpha_{bot} \\times O_{total} \\times \\frac{f_{equity}}{M_{equity}} \\times AUM_{ref}\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } C_{annual} = C_{post} \\times V_{posts} \\times 365 = \\$0.008 \\times 100{,}000 \\times 365 = \\$292K\n\\\\[0.5em]\n\\text{where } C_{post} = C_{llm} + C_{platform} = \\$0.006 + \\$0.002 = \\$0.008\n\\end{gathered}",
+  confidenceInterval: [0.25040911641189684, 934.4706476791326],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/special-education.html",
+  manualPageTitle: "Special Education",
+};
+
 export const SE_BOT_COST_PER_BELIEF_CHANGE_USD: Parameter = {
   value: 0.06666666666666667,
   parameterName: "SE_BOT_COST_PER_BELIEF_CHANGE_USD",
@@ -8044,13 +8092,45 @@ export const SE_BOT_PEOPLE_PERSUADED_PER_POST: Parameter = {
   manualPageTitle: "Special Education",
 };
 
+export const SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD: Parameter = {
+  value: 10100000000.0,
+  parameterName: "SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-se_bot_political_dysfunction_annual_ev_usd",
+  unit: "USD/year",
+  displayName: "Special Education Political Dysfunction Expected Social Value",
+  description: "Expected annual social value from outbound Special Education under the political dysfunction tax framing: attribution_fraction x annual global opportunity cost from governance failures. This is the broad public-value case, not a direct portfolio return.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION * POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL",
+  latex: "\\begin{gathered}\nEV_{SE,PDT} = \\alpha_{bot} \\times O_{total} = 0.01\\% \\times \\$101T = \\$10.1B\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\end{gathered}",
+  confidenceInterval: [71023295.30739173, 25366838518.093105],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/special-education.html",
+  manualPageTitle: "Special Education",
+};
+
+export const SE_BOT_POLITICAL_DYSFUNCTION_ROI: Parameter = {
+  value: 34589.04109589041,
+  parameterName: "SE_BOT_POLITICAL_DYSFUNCTION_ROI",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-se_bot_political_dysfunction_roi",
+  unit: "ratio",
+  displayName: "Special Education Political Dysfunction Social ROI",
+  description: "Broad social ROI for outbound Special Education: political_dysfunction_annual_EV / annual_operational_cost. This is useful as a social-value ceiling, while the universal-owner ROI estimates the investable portfolio case.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
+  latex: "\\begin{gathered}\nROI_{SE,PDT} = \\frac{EV_{SE,PDT}}{C_{annual}} = \\frac{\\$10.1B}{\\$292K} = 34{,}600\n\\\\[0.5em]\n\\text{where } EV_{SE,PDT} = \\alpha_{bot} \\times O_{total} = 0.01\\% \\times \\$101T = \\$10.1B\n\\\\[0.5em]\n\\text{where } O_{total} = O_{health} + O_{science} + O_{lead} + O_{migration} = \\$34T + \\$4T + \\$6T + \\$57T = \\$101T\n\\\\[0.5em]\n\\text{where } C_{annual} = C_{post} \\times V_{posts} \\times 365 = \\$0.008 \\times 100{,}000 \\times 365 = \\$292K\n\\\\[0.5em]\n\\text{where } C_{post} = C_{llm} + C_{platform} = \\$0.006 + \\$0.002 = \\$0.008\n\\end{gathered}",
+  confidenceInterval: [170.40667741916042, 536455.2937486497],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/special-education.html",
+  manualPageTitle: "Special Education",
+};
+
 export const SE_BOT_ROI: Parameter = {
   value: 38.89417808219178,
   parameterName: "SE_BOT_ROI",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-se_bot_roi",
   unit: "ratio",
-  displayName: "SE Bot ROI",
-  description: "Return on investment for the SE bot: annual_EV / annual_operational_cost. This is only as credible as the treaty-attribution scenario. The operating cost and reply mechanics are modelable; attribution to treaty passage is the dominant speculative input.",
+  displayName: "Special Education Peace-Dividend Social ROI",
+  description: "Conservative treaty-only social ROI for outbound Special Education: peace_dividend_annual_EV / annual_operational_cost. This excludes broader political dysfunction tax recovery and universal-owner portfolio gains.",
   sourceType: "calculated",
   confidence: "low",
   formula: "SE_BOT_ANNUAL_EV_USD / SE_BOT_ANNUAL_OPERATIONAL_COST_USD",
@@ -12073,8 +12153,8 @@ export const SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION: Parameter = {
   parameterName: "SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-se_bot_equity_uplift_capture_fraction",
   unit: "percentage",
-  displayName: "Equity Capture Share of Peace Dividend",
-  description: "Share of the peace dividend assumed to be capitalized into listed equities through lower conflict risk, lower supply-chain risk, and higher expected real output. This is a valuation scenario, not an observed pass-through estimate.",
+  displayName: "Equity Capture Share of Public Value",
+  description: "Share of a large public-value gain assumed to be capitalized into listed equities through lower conflict risk, lower supply-chain risk, and higher expected real output. This is a valuation scenario, not an observed pass-through estimate.",
   sourceType: "definition",
   confidence: "low",
   confidenceInterval: [0.05, 0.4],
@@ -12121,8 +12201,8 @@ export const SE_BOT_OUTCOME_ATTRIBUTION_FRACTION: Parameter = {
   parameterName: "SE_BOT_OUTCOME_ATTRIBUTION_FRACTION",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-se_bot_outcome_attribution_fraction",
   unit: "rate",
-  displayName: "SE Bot Outcome Attribution Fraction",
-  description: "Fraction of the annual peace dividend outcome attributable to the SE bot running for one year. This is a scenario assumption, not an empirical estimate. The mechanical model produces modeled belief updates, but the conversion from belief updates to treaty passage depends on targeting, repeated exposure, elite pickup, platform enforcement, and whether the bot reaches marginal decision-makers.",
+  displayName: "Special Education Outcome Attribution Fraction",
+  description: "Fraction of a modeled public-policy outcome attributable to outbound Special Education running for one year. This is a scenario assumption, not an empirical estimate. The mechanical model produces modeled belief updates, but the conversion from belief updates to treaty passage depends on targeting, repeated exposure, elite pickup, platform enforcement, and whether the bot reaches marginal decision-makers.",
   sourceType: "definition",
   confidence: "low",
   confidenceInterval: [1e-06, 0.01],
@@ -13219,9 +13299,14 @@ export const parameters = {
   SE_BOT_AUM_1T_BREAKEVEN_ATTRIBUTION_FRACTION,
   SE_BOT_AUM_1T_EXPECTED_PORTFOLIO_GAIN_USD,
   SE_BOT_AUM_1T_PORTFOLIO_ROI,
+  SE_BOT_AUM_1T_UNIVERSAL_OWNER_BREAKEVEN_ATTRIBUTION_FRACTION,
+  SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_GAIN_USD,
+  SE_BOT_AUM_1T_UNIVERSAL_OWNER_PORTFOLIO_ROI,
   SE_BOT_COST_PER_BELIEF_CHANGE_USD,
   SE_BOT_COST_PER_POST_USD,
   SE_BOT_PEOPLE_PERSUADED_PER_POST,
+  SE_BOT_POLITICAL_DYSFUNCTION_ANNUAL_EV_USD,
+  SE_BOT_POLITICAL_DYSFUNCTION_ROI,
   SE_BOT_ROI,
   SHARING_BREAKEVEN_ONE_IN_TREATY,
   SHARING_BREAKEVEN_PROBABILITY_TREATY,
@@ -16046,9 +16131,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 818,
+  total: 823,
   external: 237,
-  calculated: 410,
+  calculated: 415,
   definitions: 171,
   citations: 181,
 } as const;

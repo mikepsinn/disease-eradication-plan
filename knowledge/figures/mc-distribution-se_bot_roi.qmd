@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: SE Bot ROI (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Special Education Peace-Dividend Social ROI (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 2313.990754083063
 p5 = 0.2066191808195078
 p50 = 6.338401011788595
 p95 = 606.6388342671968
-display_name = "SE Bot ROI"
+display_name = "Special Education Peace-Dividend Social ROI"
 units = "ratio"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: SE Bot ROI**
+**Simulation Results Summary: Special Education Peace-Dividend Social ROI**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 2,314:1 |
 | 90% Range (5th-95th percentile) | [0.207:1, 607:1] |
 
-*The histogram shows the distribution of SE Bot ROI across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Special Education Peace-Dividend Social ROI across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

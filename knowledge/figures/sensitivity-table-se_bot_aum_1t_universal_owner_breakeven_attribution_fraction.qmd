@@ -1,10 +1,12 @@
-**Sensitivity Indices for Special Education Peace-Dividend Expected Value**
+**Sensitivity Indices for $1T AUM Universal-Owner Breakeven Attribution Fraction**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Special Education Outcome Attribution Fraction (rate) | 0.9961 | Strong driver |
-| Annual Peace Dividend from 1% Reduction in Total War Costs (USD/year) | 0.0148 | Minimal effect |
+| SE Bot Annual Operational Cost (USD/year) | 0.8127 | Strong driver |
+| Equity Capture Share of Public Value (percentage) | -0.1575 | Weak driver |
+| Global Opportunity Cost Total (USD) | -0.0960 | Minimal effect |
+| Global Listed Equity Market Capitalization (USD) | 0.0324 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: SE Bot Outcome Attribution Fraction"
+#| fig-cap: "Probability Distribution: Special Education Outcome Attribution Fraction"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +21,7 @@ central_value = 0.0001
 low = 1e-06
 high = 0.01
 dist_type = "lognormal"
-display_name = "SE Bot Outcome Attribution Fraction"
+display_name = "Special Education Outcome Attribution Fraction"
 unit = "rate"
 
 # Calculate distribution parameters
