@@ -13,13 +13,13 @@ scores:
   importance: 7
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-> **Related:** [Financial Plan Overview](financial-plan.qmd) | [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]
+> **Related:** [Financial Plan Overview](treaty-financial-plan.qmd) | [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]
 
 Traditional campaigns throw money at problems until the money or the problems disappear. Usually the money disappears first.
 
 This budget does for {{< var treaty_campaign_total_cost >}} what normally costs $2-5B. Your species calls it "disruption" when tech companies do it and "corruption" when anyone else tries. This is both.
 
-**Funding**: 100% VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) (~$1B). Donations are bonus. See [Financial Plan](financial-plan.qmd).
+**Funding**: 100% VICTORY [Incentive Alignment Bonds](https://iab.warondisease.org) (~$1B). Donations are bonus. See [Financial Plan](treaty-financial-plan.qmd).
 
 {{< var treaty_campaign_total_cost >}} buys four things:
 

@@ -1,6 +1,6 @@
 ---
-title: Financial Plan
-description: Most financial plans are complicated because the writers are confused or lying. This one has three steps. Raise {{< var treaty_campaign_total_cost >}} (using greed, not generosity, because greed is faster). Spend it to pass the treaty. Manage {{< var treaty_annual_funding >}} a year forever, with {{< var dih_treasury_medical_research_pct >}} curing diseases, {{< var victory_bond_funding_pct >}} paying investors, and {{< var iab_political_incentive_funding_pct >}} keeping politicians obedient. The corruption is capped at 20% and fully transparent, which already makes it the most honest government program in your country's history.
+title: Treaty Financial Plan
+description: The 1% Treaty campaign's cash-flow model (raise, pass, manage), distinct from the Earth Optimization Services equity raise. Most financial plans are complicated because the writers are confused or lying. This one has three steps. Raise {{< var treaty_campaign_total_cost >}} (using greed, not generosity, because greed is faster). Spend it to pass the treaty. Manage {{< var treaty_annual_funding >}} a year forever, with {{< var dih_treasury_medical_research_pct >}} curing diseases, {{< var victory_bond_funding_pct >}} paying investors, and {{< var iab_political_incentive_funding_pct >}} keeping politicians obedient. The corruption is capped at 20% and fully transparent, which already makes it the most honest government program in your country's history.
 published: true
 tags:
   - finance
@@ -19,6 +19,8 @@ scores:
   standalone: 5
   voice: 8
   importance: 7
+aliases:
+  - /knowledge/economics/financial-plan.html
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Most financial plans are complicated because the writers are confused or lying. This one is complicated because you're convincing 195 countries to voluntarily stop buying so many weapons while paying your investors forever.
@@ -31,7 +33,7 @@ The instrument is a [VICTORY Incentive Alignment Bond](../solution/incentive-ali
 
 The bonds return {{< var victory_bond_annual_return_pct >}} annually. This looks like a typo. It's arithmetic: {{< var victory_bond_annual_payout >}} divided by {{< var treaty_campaign_total_cost >}}. This isn't a normal loan with an end date. The treaty permanently earmarks {{< var victory_bond_funding_pct >}} of all treaty money ({{< var victory_bond_annual_payout >}}/year) for bondholders, for as long as the treaty exists. That slice is fixed by the treaty itself, not by some manager's annual mood, because investors don't care about your moral framework until after they've been paid. Every Ponzi scheme in history has promised returns like this. The difference is that Bernie Madoff's repayment story was a spreadsheet he made up. Yours is a treaty that, if passed, creates {{< var treaty_annual_funding >}}+ in annual public funding and routes a fixed share of it to investors.
 
-![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/financial-plan/financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
+![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/treaty-financial-plan/treaty-financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
 
 You raise {{< var treaty_campaign_total_cost >}} in 12-24 months. Donations would require generosity. Bonds require greed. Greed is faster. 
 
@@ -64,7 +66,7 @@ Legally, the [501(c)(3)](../legal/legal-framework.qmd) proof layer can describe 
 
 ## Pillar 2: The Spending Part (Spend {{< var treaty_campaign_total_cost >}})
 
-![How to spend one billion convincing humans to stop killing each other: some for lobbying politicians, some for letting citizens vote directly, some for emergencies. Democracy is expensive.](/assets/images/financial-plan/financial-plan-section-campaign-budget-how-to-spend-var-treaty-campaign-total-cost-bw-academic.jpg)
+![How to spend one billion convincing humans to stop killing each other: some for lobbying politicians, some for letting citizens vote directly, some for emergencies. Democracy is expensive.](/assets/images/treaty-financial-plan/treaty-financial-plan-section-campaign-budget-how-to-spend-var-treaty-campaign-total-cost-bw-academic.jpg)
 
 The one-time activation energy to convince {{< var global_population_2024_nounit >}} people to marginally reduce their commitment to mutual annihilation. [Detailed line items here](campaign-budget.qmd).
 
@@ -76,7 +78,7 @@ The one-time activation energy to convince {{< var global_population_2024_nounit
 
 ### The Part That Makes It Cheap
 
-![Traditional diplomacy: slow, expensive, mostly cocktail parties. AI-accelerated diplomacy: fast, cheap, mostly algorithms. Both equally likely to prevent nuclear war.](/assets/images/financial-plan/financial-plan-section-key-innovations-bw-academic.jpg)
+![Traditional diplomacy: slow, expensive, mostly cocktail parties. AI-accelerated diplomacy: fast, cheap, mostly algorithms. Both equally likely to prevent nuclear war.](/assets/images/treaty-financial-plan/treaty-financial-plan-section-key-innovations-bw-academic.jpg)
 
 Viral referendum mechanics bring the cost down to $0.20/vote at the optimistic lower bound (base case $0.50-0.89), compared to $5-15 per voter through traditional channels. Getting someone to click "I prefer not dying" costs less than getting someone to click "I prefer Pepsi." You also focus on 20 high-impact countries, not all 195. You don't need Liechtenstein's permission. Liechtenstein has 39,000 people. That's a concert venue, not a geopolitical obstacle.
 
@@ -86,11 +88,11 @@ Timeline is 36-60 months (optimistic) to 120+ months (realistic, given that you'
 
 Once the treaty passes, {{< var treaty_annual_funding >}} flows annually from "how to kill people" budgets into "how to stop people dying" budgets. This is the part where your financial plan stops being a financial plan and starts being a money volcano that erupts on schedule, forever.
 
-![Every year, 27.2 billion moves from the war budget to the cure budget. It's a very slow transfer, like a glacier made of money and good intentions.](/assets/images/financial-plan/financial-plan-section-treasury-management-how-to-manage-var-treaty-annual-funding-annually-bw-academic.jpg)
+![Every year, 27.2 billion moves from the war budget to the cure budget. It's a very slow transfer, like a glacier made of money and good intentions.](/assets/images/treaty-financial-plan/treaty-financial-plan-section-treasury-management-how-to-manage-var-treaty-annual-funding-annually-bw-academic.jpg)
 
 100+ nations contribute {{< var treaty_reduction_pct >}} of military budgets. Not because they've had a moral awakening. Because the [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd) mechanism makes compliance self-enforcing: politicians in non-compliant countries watch their Treaty Support Scores fall, the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]-specific subtype of the [Public Good Score](../solution/incentive-alignment-bonds.qmd), independent PACs redirect millions in campaign funding to their opponents, and their post-office career options shrink from WHO boards to writing memoirs nobody reads. Compliance becomes the best career move. You don't need politicians to be good. You just need them to be selfish in the right direction.
 
-![Countries that contribute get good scores. Politicians with good scores get elected. Elected politicians contribute. The system enforces itself, like peer pressure but with nuclear weapons.](/assets/images/financial-plan/financial-plan-section-revenue-sources-bw-academic.jpg)
+![Countries that contribute get good scores. Politicians with good scores get elected. Elected politicians contribute. The system enforces itself, like peer pressure but with nuclear weapons.](/assets/images/treaty-financial-plan/treaty-financial-plan-section-revenue-sources-bw-academic.jpg)
 
 ### How the Money Gets Spent: 80/10/10
 

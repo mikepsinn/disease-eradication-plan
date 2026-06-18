@@ -2233,7 +2233,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 ### Conditional Benefits Interpretation
 
-The ROI estimates ({{< var dfda_roi_rd_only >}} conservative, {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} complete) are **conditional on successful implementation**, they represent returns *if* the system operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
+The ROI estimates ({{< var dfda_roi_rd_only >}} conservative, {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}} complete) are **conditional on successful implementation**, they represent returns *if* the system operates as designed. Expected value analysis (see "Expected Value Analysis Accounting for Political Risk" section) incorporates probability-weighted scenarios. This section examines operational and technical failure modes that could occur even after political success, complementing the [Investor Risk Analysis](../appendix/treaty-investor-risk-analysis.qmd) focus on political barriers. Pilot implementations should monitor false positive rates, adverse event detection sensitivity, regulatory acceptance rates, and industry adoption velocity to enable early course corrections.
 
 ### Limitations Summary
 

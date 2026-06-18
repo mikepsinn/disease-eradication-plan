@@ -60,7 +60,7 @@ DRIP_ORDER = [
     # --- THE PLAN: Now they believe, show them how ---
     "knowledge/solution.qmd",                              # Solution framing
     "knowledge/solution/incentive-alignment-bonds.qmd",    # The financial engine
-    "knowledge/economics/financial-plan.qmd",              # $1B investment plan
+    "knowledge/economics/treaty-financial-plan.qmd",              # $1B investment plan
     "knowledge/economics/peace-dividend.qmd",              # What peace pays
     "knowledge/economics/health-dividend.qmd",             # What health pays
     "knowledge/strategy/roadmap.qmd",                      # 36-month execution
@@ -79,7 +79,7 @@ DRIP_ORDER = [
     "knowledge/legal/election-law.qmd",                    # Buying politicians legally
     "knowledge/strategy/legislation-package.qmd",          # Draft laws
     "knowledge/appendix/treaty-feasibility.qmd",           # Cost analysis
-    "knowledge/appendix/investor-risk-analysis.qmd",       # For investors
+    "knowledge/appendix/treaty-investor-risk-analysis.qmd",       # For investors
 ]
 
 

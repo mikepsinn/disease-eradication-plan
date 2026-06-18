@@ -17,7 +17,7 @@ doc_type: strategy
 image: /assets/og-images/knowledge/operations/pre-seed-strategy-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-The [Financial Plan](../economics/financial-plan.qmd) describes raising {{< var treaty_campaign_total_cost >}}, spending it, and managing {{< var treaty_annual_funding >}}/year forever. The [Earth Optimization Protocol](../strategy/earth-optimization-protocol-v1.qmd#the-sequencing) describes the phases. This chapter describes the part that comes before all of that: the $1M-3M it takes to build the organization that does those things.
+The [Financial Plan](../economics/treaty-financial-plan.qmd) describes raising {{< var treaty_campaign_total_cost >}}, spending it, and managing {{< var treaty_annual_funding >}}/year forever. The [Earth Optimization Protocol](../strategy/earth-optimization-protocol-v1.qmd#the-sequencing) describes the phases. This chapter describes the part that comes before all of that: the $1M-3M it takes to build the organization that does those things.
 
 Redirecting resources from destruction to medicine should take about a week. On Earth, you need to incorporate four legal entities, hire three specialists, and build a "data room," which is not a room and does not contain data in any physical sense. It's a folder. Your species charges $50,000 in legal fees to create a folder.
 
@@ -73,4 +73,4 @@ Phase 0 is complete when:
 5. The referendum platform has a working prototype
 6. Legal frameworks for securities (Reg D) and election law (IE compliance) are in place
 
-At that point, you're ready for the [Financial Plan](../economics/financial-plan.qmd)'s Seed phase. Everything before this is building the launchpad. Everything after is the launch.
+At that point, you're ready for the [Financial Plan](../economics/treaty-financial-plan.qmd)'s Seed phase. Everything before this is building the launchpad. Everything after is the launch.

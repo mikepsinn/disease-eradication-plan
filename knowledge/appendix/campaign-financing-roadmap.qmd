@@ -14,7 +14,7 @@ aliases:
   - /knowledge/appendix/fundraising-strategy.html
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-> **Related:** [Financial Plan Overview](../economics/financial-plan.qmd) | [Campaign Budget](../economics/campaign-budget.qmd)
+> **Related:** [Financial Plan Overview](../economics/treaty-financial-plan.qmd) | [Campaign Budget](../economics/campaign-budget.qmd)
 
 <!-- This file contains content consolidated from orphaned fundraising files -->
 
@@ -570,7 +570,7 @@ The primary risk elimination mechanism for the **referendum campaign** (distinct
 - **No Collective Action Problem:** Zero-risk on-ramp eliminates the "but what if nobody else joins" hesitation
 - **Dominant Assurance Contract:** VOTE holders who recruited referendum participants allocate the PRIZE pool on success
 
-IAB capital is separate: it funds the lobbying campaign immediately and carries real risk (see [Investor Risk Analysis](investor-risk-analysis.qmd)).
+IAB capital is separate: it funds the lobbying campaign immediately and carries real risk (see [Investor Risk Analysis](treaty-investor-risk-analysis.qmd)).
 
 <!-- END CONTENT MERGED FROM economics/fundraising/fundraising-strategy.md -->
 

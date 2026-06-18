@@ -7602,7 +7602,7 @@ VICTORY_BOND_FUNDING_PCT = Parameter(
 )  # 10% of captured dividend funds bonds
 VICTORY_BOND_ANNUAL_PAYOUT = Parameter(
     TREATY_ANNUAL_FUNDING * VICTORY_BOND_FUNDING_PCT,
-    manual_ref="knowledge/economics/financial-plan.qmd",
+    manual_ref="knowledge/economics/treaty-financial-plan.qmd",
     source_ref="",
     source_type="calculated",
     description="Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)",
