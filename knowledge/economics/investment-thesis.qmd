@@ -491,26 +491,28 @@ TODAY'S VERSION
 
 ---
 
-## Cost in Context
+## What It Costs To Buy The Companies That Run The Government
 
 ```
-COST IN CONTEXT
+WHAT IT COSTS
+
+  Every number below is a slice of all the money invested on
+  Earth ({{< var global_investable_assets >}}).
 
   THE MILITARY-INDUSTRIAL COMPLEX (the only one you can buy outright):
-     activist 5% stake .... {{< var defense_takeover_cost_activist >}}  ({{< var defense_takeover_cost_activist_pct_investable_assets >}})
-     full 50.1% control ... {{< var defense_takeover_cost_total >}}  ({{< var defense_takeover_pct_investable_assets >}})
+     enough shares to win board seats .. {{< var defense_takeover_cost_activist >}}  ({{< var defense_takeover_cost_activist_pct_investable_assets >}})
+     enough to own them outright (51%) . {{< var defense_takeover_cost_total >}}  ({{< var defense_takeover_pct_investable_assets >}})
 
-  AN ACTIVIST STAKE IN EVERY government-controlling industry
-  (military + pharma + tech + insurance + oil) at once:
+  Enough shares to win board seats in EVERY industry that owns
+  the government (military, pharma, tech, insurance, oil) at once:
      {{< var full_corporate_takeover_cost_activist >}}  ({{< var full_corporate_takeover_cost_activist_pct_investable_assets >}})
 
-  Total investable assets on Earth: {{< var global_investable_assets >}}.
-  And you cannot even BUY most of these companies -- Zuckerberg,
-  the Google founders, and Ellison hold the votes.
-  You do not need to buy control. You need to win the vote.
+  And you cannot even BUY most of these companies. Zuckerberg,
+  the Google founders, and Ellison kept the votes for themselves.
+  So you do not buy them. You out-vote them.
 ```
 
-> So let's price it. The military-industrial complex is the one corner where you can buy outright control, and it's cheap: an activist five percent stake, which is all you need if the index funds vote with you, runs {{< var defense_takeover_cost_activist >}}. Buying outright fifty-point-one percent control of every single one is {{< var defense_takeover_cost_total >}}, which is {{< var defense_takeover_pct_investable_assets >}} of the {{< var global_investable_assets >}} in investable assets sitting on this planet doing nothing in particular. Now go wider. An activist stake in every industry that owns your government, military, pharma, tech, insurance, oil, all of them at once, is {{< var full_corporate_takeover_cost_activist >}}. That is {{< var full_corporate_takeover_cost_activist_pct_investable_assets >}} of the world's investable money. And you couldn't buy most of these companies if you tried. Zuckerberg and the Google founders and Larry Ellison hold the votes. So you don't need to buy control. You need to win the vote.
+> So let's price it. The military-industrial complex is the one part you can actually buy outright, and it's cheap. Enough stock to win a few board seats, which is all you need once the big funds vote with you, costs {{< var defense_takeover_cost_activist >}}. Buying half the shares of every one of them, so you own them flat out, costs {{< var defense_takeover_cost_total >}}. That is {{< var defense_takeover_pct_investable_assets >}} of all the money invested on the planet, which is {{< var global_investable_assets >}} sitting around doing nothing in particular. Now go wider. Enough stock to win board seats in every industry that owns your government, the weapons people, the drug people, tech, insurance, oil, all of them at once, costs {{< var full_corporate_takeover_cost_activist >}}. That is {{< var full_corporate_takeover_cost_activist_pct_investable_assets >}} of all the money in the world. And you couldn't buy most of these companies if you tried. Zuckerberg and the Google founders and Larry Ellison kept the votes for themselves. So you don't buy them. You out-vote them.
 
 ---
 
