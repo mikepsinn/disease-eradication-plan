@@ -24,10 +24,10 @@ baseline = 0.005601450491803279
 
 # Tornado data from sensitivity analysis
 
-drivers = ['DEFENSE_TAKEOVER_ACQUISITION_PREMIUM', 'GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP']
-driver_labels = ['Acquisition Premium Multiplier', 'Government-Controlling Sectors Top-5 Market Cap']
-impacts_low = [-0.0004770177049180325, -0.0002803278688524591]
-impacts_high = [0.001908070819672131, 0.0002114754098360653]
+drivers = ['INFLUENCE_ACTIVIST_STAKE_FRACTION', 'DEFENSE_TAKEOVER_ACQUISITION_PREMIUM', 'GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP']
+driver_labels = ['Activist Stake Fraction', 'Acquisition Premium Multiplier', 'Government-Controlling Sectors Top-5 Market Cap']
+impacts_low = [-0.0021914754098360657, -0.0004770177049180325, -0.0002803278688524591]
+impacts_high = [0.002739344262295082, 0.001908070819672131, 0.0002114754098360653]
 
 # Convert deltas to absolute values (baseline + delta)
 

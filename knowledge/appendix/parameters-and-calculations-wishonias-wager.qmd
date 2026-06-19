@@ -61,7 +61,7 @@ Per-person cost of the military takeover distributed across global population
 
 **Inputs**:
 
-- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
@@ -98,11 +98,11 @@ $$
 
 :::
 
-### Military Takeover Total Cost: $873 billion {#sec-defense_takeover_cost_total}
+### Military Takeover Cost (Outright-Control Ceiling): $873 billion {#sec-defense_takeover_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium and execution friction
+UPPER-BOUND cost to acquire outright controlling stakes (50.1%) in all major Western military contractors, including the acquisition premium. This is the buy-it-outright ceiling, not the expected entry cost: the realistic path is an activist stake (DEFENSE_TAKEOVER_COST_ACTIVIST) plus index-fund votes, which costs far less. Headline only as a worst case.
 
 **Inputs**:
 

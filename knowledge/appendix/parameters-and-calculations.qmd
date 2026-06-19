@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 829 parameters used in the analysis, organized by type:
+This appendix documents all 834 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 237
-- Calculated values: 421
-- Core definitions: 171
+- Calculated values: 425
+- Core definitions: 172
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (421 parameters) • [External Data Sources](#sec-external) (237 parameters) • [Core Definitions](#sec-definitions) (171 parameters)
+[Calculated Values](#sec-calculated) (425 parameters) • [External Data Sources](#sec-external) (237 parameters) • [Core Definitions](#sec-definitions) (172 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5748,6 +5748,87 @@ $$
 
 :::
 
+### Military Activist-Stake Cost (Realistic Entry): $48.4 billion {#sec-defense_takeover_cost_activist}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Realistic entry cost: capital to take an activist (non-control) equity position across all major Western military contractors, bought near market price with no control premium. Board influence comes from the financial argument plus the index-fund votes, not from outright control. This capital buys shares the fund keeps, so the true net cost is far lower than this gross figure. Contrast with the buy-outright ceiling (DEFENSE_TAKEOVER_COST_TOTAL).
+
+**Inputs**:
+
+- [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
+- [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
+- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 0.05:1 (95% CI: 0.01:1 - 0.1:1)
+
+$$
+\begin{gathered}
+C_{activist} \\
+= f_{activist} \times (MarketCap_{US} + MarketCap_{allied}) \\
+= 0.05 \times (\$836B + \$132B) \\
+= \$48.4B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-defense_takeover_cost_activist.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-defense_takeover_cost_activist.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-defense_takeover_cost_activist.qmd >}}
+
+:::
+
+### Military Activist-Stake Cost as Share of Global Investable Assets: 0.0159% {#sec-defense_takeover_cost_activist_pct_investable_assets}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Activist-stake entry cost across the defense primes as a share of total global investable assets. The realistic-path floor of the cost-in-context range, well below the buy-outright ceiling.
+
+**Inputs**:
+
+- [Military Activist-Stake Cost (Realistic Entry)](#sec-defense_takeover_cost_activist) 🔢: $48.4 billion
+- [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305 trillion
+
+$$
+\begin{gathered}
+C_{activist}/A_{investable} \\
+= \frac{C_{activist}}{Assets_{invest}} \\
+= \frac{\$48.4B}{\$305T} \\
+= 0.0159\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{activist} \\
+= f_{activist} \times (MarketCap_{US} + MarketCap_{allied}) \\
+= 0.05 \times (\$836B + \$132B) \\
+= \$48.4B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-defense_takeover_cost_activist_pct_investable_assets.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-defense_takeover_cost_activist_pct_investable_assets.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-defense_takeover_cost_activist_pct_investable_assets.qmd >}}
+
+:::
+
 ### Military Takeover Cost per Human: $109 {#sec-defense_takeover_cost_per_human}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5756,7 +5837,7 @@ Per-person cost of the military takeover distributed across global population
 
 **Inputs**:
 
-- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
@@ -5800,11 +5881,11 @@ $$
 
 :::
 
-### Military Takeover Total Cost: $873 billion {#sec-defense_takeover_cost_total}
+### Military Takeover Cost (Outright-Control Ceiling): $873 billion {#sec-defense_takeover_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium and execution friction
+UPPER-BOUND cost to acquire outright controlling stakes (50.1%) in all major Western military contractors, including the acquisition premium. This is the buy-it-outright ceiling, not the expected entry cost: the realistic path is an activist stake (DEFENSE_TAKEOVER_COST_ACTIVIST) plus index-fund votes, which costs far less. Headline only as a worst case.
 
 **Inputs**:
 
@@ -5853,7 +5934,7 @@ Cost to acquire controlling stakes in all major Western military contractors, ex
 
 **Inputs**:
 
-- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Global Annual Savings](#sec-global_annual_savings) 🔢: $31.1 trillion
 
 $$
@@ -5907,7 +5988,7 @@ Cost to acquire controlling stakes in all major Western military contractors, ex
 
 **Inputs**:
 
-- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305 trillion
 
 $$
@@ -11500,21 +11581,104 @@ $$
 
 :::
 
-### Full Influence Package Cost: $1.71 trillion {#sec-full_influence_cost_activist}
+### Full Corporate Activist-Stake Cost (All Sectors): $884 billion {#sec-full_corporate_takeover_cost_activist}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Full control of the military primes (50.1% plus acquisition premium) plus 5% activist positions in the top-5 lobbying firms of the other four government-controlling sectors. The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon board seats, so 5% is a loud voice at every table
+Realistic cost to take an activist (non-control) stake across EVERY government-controlling industry at once: military, pharma, tech, insurance, and oil and gas. This is the symmetric activist version of the takeover. Outright majority control of all of them is not even possible (founder and mutual control of Meta, Alphabet, Oracle, and the insurance mutuals), which is exactly why the activist tier, not a 50.1% buyout, is the operative model outside the defense primes.
 
 **Inputs**:
 
-- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
+- [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
+- [Government-Controlling Sectors Top-5 Market Cap](#sec-gov_controlling_sectors_top5_market_cap) 📊: $16.7 trillion (95% CI: $15 trillion - $18 trillion)
+- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 0.05:1 (95% CI: 0.01:1 - 0.1:1)
+
+$$
+\begin{gathered}
+C_{corp,activist} \\
+= (MarketCap_{US} + MarketCap_{allied} \\
++ MarketCap_{sectors}) \times f_{activist}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-full_corporate_takeover_cost_activist.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-full_corporate_takeover_cost_activist.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-full_corporate_takeover_cost_activist.qmd >}}
+
+:::
+
+### Full Corporate Activist-Stake Cost as Share of Global Investable Assets: 0.29% {#sec-full_corporate_takeover_cost_activist_pct_investable_assets}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Activist stake across every government-controlling industry as a share of total global investable assets.
+
+**Inputs**:
+
+- [Full Corporate Activist-Stake Cost (All Sectors)](#sec-full_corporate_takeover_cost_activist) 🔢: $884 billion
+- [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305 trillion
+
+$$
+\begin{gathered}
+C_{corp,activist}/A_{investable} \\
+= \frac{C_{corp,activist}}{Assets_{invest}} \\
+= \frac{\$884B}{\$305T} \\
+= 0.29\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{corp,activist} \\
+= (MarketCap_{US} + MarketCap_{allied} \\
++ MarketCap_{sectors}) \times f_{activist}
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-full_corporate_takeover_cost_activist_pct_investable_assets.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-full_corporate_takeover_cost_activist_pct_investable_assets.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-full_corporate_takeover_cost_activist_pct_investable_assets.qmd >}}
+
+:::
+
+### Full Influence Package Cost (Ceiling): $1.71 trillion {#sec-full_influence_cost_activist}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ceiling cost for influence over every government-controlling industry: the buy-outright defense ceiling plus an activist stake in the top-5 lobbying firms of the other four sectors (pharma, tech, insurance, oil and gas). The other sectors use the activist tier because their largest players cannot be majority-acquired anyway (Meta, Alphabet, Oracle founder control). The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon board seats, so a few percent is a loud voice at every table.
+
+**Inputs**:
+
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 0.05:1 (95% CI: 0.01:1 - 0.1:1)
 - [Government-Controlling Sectors Top-5 Market Cap](#sec-gov_controlling_sectors_top5_market_cap) 📊: $16.7 trillion (95% CI: $15 trillion - $18 trillion)
 
 $$
 \begin{gathered}
 C_{influence} \\
-= C_{takeover} + 0.05 \times MarketCap_{sectors}
+= C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
+= \$873B + 0.05 \times \$16.7T \\
+= \$1.71T
 \end{gathered}
 $$
 where:
@@ -11553,7 +11717,7 @@ Per-person cost of the full influence package (defense primes plus activist stak
 
 **Inputs**:
 
-- [Full Influence Package Cost](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
+- [Full Influence Package Cost (Ceiling)](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
@@ -11568,7 +11732,9 @@ where:
 $$
 \begin{gathered}
 C_{influence} \\
-= C_{takeover} + 0.05 \times MarketCap_{sectors}
+= C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
+= \$873B + 0.05 \times \$16.7T \\
+= \$1.71T
 \end{gathered}
 $$
 where:
@@ -11609,7 +11775,7 @@ Cost of the full influence package (every government-controlling industry, not j
 
 **Inputs**:
 
-- [Full Influence Package Cost](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
+- [Full Influence Package Cost (Ceiling)](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
 - [Global Annual Savings](#sec-global_annual_savings) 🔢: $31.1 trillion
 
 $$
@@ -11624,7 +11790,9 @@ where:
 $$
 \begin{gathered}
 C_{influence} \\
-= C_{takeover} + 0.05 \times MarketCap_{sectors}
+= C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
+= \$873B + 0.05 \times \$16.7T \\
+= \$1.71T
 \end{gathered}
 $$
 where:
@@ -11674,7 +11842,7 @@ Cost of the full influence package (every government-controlling industry, not j
 
 **Inputs**:
 
-- [Full Influence Package Cost](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
+- [Full Influence Package Cost (Ceiling)](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
 - [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305 trillion
 
 $$
@@ -11689,7 +11857,9 @@ where:
 $$
 \begin{gathered}
 C_{influence} \\
-= C_{takeover} + 0.05 \times MarketCap_{sectors}
+= C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
+= \$873B + 0.05 \times \$16.7T \\
+= \$1.71T
 \end{gathered}
 $$
 where:
@@ -13033,6 +13203,10 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_disease_total_market_cost_annual.qmd >}}
+
+**Used in:**
+
+- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 
 :::
 
@@ -15881,7 +16055,7 @@ Net annual cost of the Loving Takeover: opportunity cost only (capital deployed 
 
 **Inputs**:
 
-- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Mechanism Opportunity Cost Rate](#sec-mechanism_opportunity_cost_rate): 0.02:1 (95% CI: 0:1 - 0.05:1)
 
 $$
@@ -18628,9 +18802,9 @@ $$
 **Used in:**
 
 - [The 1% Treaty](../solution/1-percent-treaty.html)
+- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
-- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 
 :::
 
@@ -23673,12 +23847,12 @@ $$
 - [The Funniest Joke in the Universe](../appendix/joke.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [How to End War and Disease](../educational-film.html)
 - [The Vandalism Handout](../appendix/handout.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
-- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
@@ -41637,9 +41811,9 @@ Number of diseases that receive their FIRST effective treatment each year under 
 
 - [The 1% Treaty: Harnessing Greed to Eradicate Disease](../economics/1-pct-treaty-impact.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
+- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Health Dividend](../economics/health-dividend.html)
-- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
@@ -41835,9 +42009,9 @@ Funds the Department of Defense has failed to account for across seven consecuti
 
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
+- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
-- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [The Court of Humanity](../solution/court-of-humanity.html)
 
@@ -45179,9 +45353,9 @@ Cumulative global military spending since 1913 (Fed era) in constant 2024 dollar
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
-- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [I Am Retarded](../problem/i-am-retarded.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
@@ -46154,6 +46328,26 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+
+:::
+
+### Activist Stake Fraction: 0.05:1 {#sec-influence_activist_stake_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Activist equity stake assumed sufficient to win board influence when combined with index-fund votes, rather than buying outright control. Grounded in activist-investing precedent: Engine No. 1 won three ExxonMobil board seats with 0.02%, and Carl Icahn typically operates with 1-10% positions. 5% is a deliberately conservative central case; the real floor is far lower, because the universal-owner index funds that hold 60-75% of every prime supply the votes once shown the financial case.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.01:1, 0.1:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.01:1 and 0.1:1 (±90%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-influence_activist_stake_fraction.qmd >}}
+
+*Core definition*
 
 :::
 
@@ -47500,9 +47694,9 @@ Total deaths from wars, conflicts, genocides, and policy-induced famines since 1
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
+- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [I Am Retarded](../problem/i-am-retarded.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
-- [The Investment Thesis (Unfiltered)](../economics/investment-thesis.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 

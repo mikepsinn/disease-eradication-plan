@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Military Takeover Cost (Outright-Control Ceiling)"
+display_name = "Military Activist-Stake Cost as Share of Global Investable Assets"
 
 # Baseline and units
 
-baseline = 872942400000.0
+baseline = 0.00015868852459016393
 
 # Tornado data from sensitivity analysis
 
-drivers = ['DEFENSE_TAKEOVER_ACQUISITION_PREMIUM']
-driver_labels = ['Acquisition Premium Multiplier']
-impacts_low = [-145490400000.0]
-impacts_high = [581961600000.0]
+drivers = ['INFLUENCE_ACTIVIST_STAKE_FRACTION']
+driver_labels = ['Activist Stake Fraction']
+impacts_low = [-0.00012695081967213114]
+impacts_high = [0.00015868852459016393]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "USD"
+units_label = "rate"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-defense_takeover_cost_total.png')
+output_path = get_figure_output_path('tornado-defense_takeover_cost_activist_pct_investable_assets.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

@@ -2094,6 +2094,39 @@
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
     },
+    "DEFENSE_TAKEOVER_COST_ACTIVIST": {
+      "value": 48400000000.0,
+      "formatted": "$48.4 billion",
+      "unit": "USD",
+      "description": "Realistic entry cost: capital to take an activist (non-control) equity position across all major Western military contractors, bought near market price with no control premium. Board influence comes from the financial argument plus the index-fund votes, not from outright control. This capital buys shares the fund keeps, so the true net cost is far lower than this gross figure. Contrast with the buy-outright ceiling (DEFENSE_TAKEOVER_COST_TOTAL).",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * INFLUENCE_ACTIVIST_STAKE_FRACTION",
+      "inputs": [
+        "DEFENSE_PRIMES_MARKET_CAP_ALLIED",
+        "DEFENSE_PRIMES_MARKET_CAP_US",
+        "INFLUENCE_ACTIVIST_STAKE_FRACTION"
+      ],
+      "computeExpr": "((DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * INFLUENCE_ACTIVIST_STAKE_FRACTION)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
+    "DEFENSE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS": {
+      "value": 0.00015868852459016393,
+      "formatted": "0.0159%",
+      "unit": "rate",
+      "description": "Activist-stake entry cost across the defense primes as a share of total global investable assets. The realistic-path floor of the cost-in-context range, well below the buy-outright ceiling.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "DEFENSE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
+      "inputs": [
+        "DEFENSE_TAKEOVER_COST_ACTIVIST",
+        "GLOBAL_INVESTABLE_ASSETS"
+      ],
+      "computeExpr": "(DEFENSE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
     "DEFENSE_TAKEOVER_COST_PER_HUMAN": {
       "value": 109.1178,
       "formatted": "$109",
@@ -2114,7 +2147,7 @@
       "value": 872942400000.0,
       "formatted": "$873 billion",
       "unit": "USD",
-      "description": "Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium and execution friction",
+      "description": "UPPER-BOUND cost to acquire outright controlling stakes (50.1%) in all major Western military contractors, including the acquisition premium. This is the buy-it-outright ceiling, not the expected entry cost: the realistic path is an activist stake (DEFENSE_TAKEOVER_COST_ACTIVIST) plus index-fund votes, which costs far less. Headline only as a worst case.",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "high",
@@ -4014,20 +4047,55 @@
       "computeExpr": "((EFFICACY_LAG_YEARS * 12.0) / OXFORD_RECOVERY_TRIAL_DURATION_MONTHS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/fda-is-unsafe-and-ineffective.html"
     },
+    "FULL_CORPORATE_TAKEOVER_COST_ACTIVIST": {
+      "value": 883900000000.0,
+      "formatted": "$884 billion",
+      "unit": "USD",
+      "description": "Realistic cost to take an activist (non-control) stake across EVERY government-controlling industry at once: military, pharma, tech, insurance, and oil and gas. This is the symmetric activist version of the takeover. Outright majority control of all of them is not even possible (founder and mutual control of Meta, Alphabet, Oracle, and the insurance mutuals), which is exactly why the activist tier, not a 50.1% buyout, is the operative model outside the defense primes.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED + GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP) * INFLUENCE_ACTIVIST_STAKE_FRACTION",
+      "inputs": [
+        "DEFENSE_PRIMES_MARKET_CAP_ALLIED",
+        "DEFENSE_PRIMES_MARKET_CAP_US",
+        "GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
+        "INFLUENCE_ACTIVIST_STAKE_FRACTION"
+      ],
+      "computeExpr": "(((DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) + GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP) * INFLUENCE_ACTIVIST_STAKE_FRACTION)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
+    "FULL_CORPORATE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS": {
+      "value": 0.002898032786885246,
+      "formatted": "0.29%",
+      "unit": "rate",
+      "description": "Activist stake across every government-controlling industry as a share of total global investable assets.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "FULL_CORPORATE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
+      "inputs": [
+        "FULL_CORPORATE_TAKEOVER_COST_ACTIVIST",
+        "GLOBAL_INVESTABLE_ASSETS"
+      ],
+      "computeExpr": "(FULL_CORPORATE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
     "FULL_INFLUENCE_COST_ACTIVIST": {
       "value": 1708442400000.0,
       "formatted": "$1.71 trillion",
       "unit": "USD",
-      "description": "Full control of the military primes (50.1% plus acquisition premium) plus 5% activist positions in the top-5 lobbying firms of the other four government-controlling sectors. The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon board seats, so 5% is a loud voice at every table",
+      "description": "Ceiling cost for influence over every government-controlling industry: the buy-outright defense ceiling plus an activist stake in the top-5 lobbying firms of the other four sectors (pharma, tech, insurance, oil and gas). The other sectors use the activist tier because their largest players cannot be majority-acquired anyway (Meta, Alphabet, Oracle founder control). The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon board seats, so a few percent is a loud voice at every table.",
       "sourceType": "calculated",
       "sourceRef": null,
       "confidence": "medium",
-      "formula": "DEFENSE_TAKEOVER_COST_TOTAL + 0.05 * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
+      "formula": "DEFENSE_TAKEOVER_COST_TOTAL + INFLUENCE_ACTIVIST_STAKE_FRACTION * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
       "inputs": [
         "DEFENSE_TAKEOVER_COST_TOTAL",
-        "GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP"
+        "GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
+        "INFLUENCE_ACTIVIST_STAKE_FRACTION"
       ],
-      "computeExpr": "(DEFENSE_TAKEOVER_COST_TOTAL + (0.05 * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP))",
+      "computeExpr": "(DEFENSE_TAKEOVER_COST_TOTAL + (INFLUENCE_ACTIVIST_STAKE_FRACTION * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP))",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
     },
     "FULL_INFLUENCE_COST_PER_HUMAN": {
@@ -6013,6 +6081,21 @@
       ],
       "computeExpr": "((GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL - GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL) / GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/global-government-medical-research-spending.html"
+    },
+    "INFLUENCE_ACTIVIST_STAKE_FRACTION": {
+      "value": 0.05,
+      "formatted": "0.05:1",
+      "unit": "ratio",
+      "description": "Activist equity stake assumed sufficient to win board influence when combined with index-fund votes, rather than buying outright control. Grounded in activist-investing precedent: Engine No. 1 won three ExxonMobil board seats with 0.02%, and Carl Icahn typically operates with 1-10% positions. 5% is a deliberately conservative central case; the real floor is far lower, because the universal-owner index funds that hold 60-75% of every prime supply the votes once shown the financial case.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        0.01,
+        0.1
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
     },
     "INSTITUTIONAL_INVESTOR_MIN": {
       "value": 10000000.0,

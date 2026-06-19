@@ -202,7 +202,7 @@ THE CONTRACT YOU ALREADY SIGNED
 >
 > The War on Drugs: roughly \$50 billion a year for 53 years. Overdose deaths went from about 1,000 a year to about 107,000 a year. No sensor. No adjustment. The budget increased. In control systems engineering, the technical term for a system that applies force with no measurement of outcome is open-loop. The colloquial term is what you are thinking right now.
 >
-> The reason there is no sensor is that the people whose job it is to install one are also the people who profit from the temperature being wrong. The pharmaceutical industry does not profit from cures. The defense industry does not profit from peace. The lobbying industry does not profit from a government that works. The sensor would end their business model. So there is no sensor. Earth Optimization Services installs the thermostat.
+> The reason there is no sensor is that the people whose job it is to install one are also the people who profit from the temperature being wrong. The pharmaceutical industry does not profit from cures. The weapons industry does not profit from peace. The lobbying industry does not profit from a government that works. The sensor would end their business model. So there is no sensor. Earth Optimization Services installs the thermostat.
 
 ---
 
@@ -298,7 +298,7 @@ DISEASE IS ETHYL CORP AT CIVILIZATIONAL SCALE
   = {{< var pentagon_unaccounted_clinical_trial_years_nounit >}} years of clinical trials in a black hole.
 ```
 
-> The defense industry is the biggest one, but it is not the only one. Today, 4 billion people are sick with chronic or infectious diseases. There are 550 million people whose entire job is taking care of them. The cost is roughly {{< var global_disease_total_market_cost_annual >}} a year. There are {{< var drug_disease_combinations_possible_nounit >}} possible drug-disease combinations we could test. We have tested {{< var tested_relationships_estimate_nounit >}}. That is {{< var exploration_ratio >}} of the space. At the current rate of {{< var new_disease_first_treatments_per_year_nounit >}} new disease-treatment combinations approved per year, it will take {{< var status_quo_queue_clearance_years_nounit >}} years to clear the existing queue. The {{< var pentagon_unaccounted_funds >}} that the Pentagon cannot account for across 8 failed audits, all by itself, represents {{< var pentagon_unaccounted_clinical_trial_years_nounit >}} years of clinical trials at current funding levels. This is Ignaz Semmelweis's unwashed hands, scaled to a civilization. The cure is not missing. The decision to fund the search is.
+> The war industry is the biggest one, but it is not the only one. Today, 4 billion people are sick with chronic or infectious diseases. There are 550 million people whose entire job is taking care of them. The cost is roughly {{< var global_disease_total_market_cost_annual >}} a year. There are {{< var drug_disease_combinations_possible_nounit >}} possible drug-disease combinations we could test. We have tested {{< var tested_relationships_estimate_nounit >}}. That is {{< var exploration_ratio >}} of the space. At the current rate of {{< var new_disease_first_treatments_per_year_nounit >}} new disease-treatment combinations approved per year, it will take {{< var status_quo_queue_clearance_years_nounit >}} years to clear the existing queue. The {{< var pentagon_unaccounted_funds >}} that the Pentagon cannot account for across 8 failed audits, all by itself, represents {{< var pentagon_unaccounted_clinical_trial_years_nounit >}} years of clinical trials at current funding levels. This is Ignaz Semmelweis's unwashed hands, scaled to a civilization. The cure is not missing. The decision to fund the search is.
 
 ---
 
@@ -330,20 +330,16 @@ DISEASE IS ETHYL CORP AT CIVILIZATIONAL SCALE
 ## Today's Version
 
 ```
-+---------------------------------------+
-|                                       |
-|  12,121 nuclear warheads              |
-|  ~100 needed to end civilization      |
-|  = 122 apocalypses on standby         |
-|                                       |
-|  $4B/yr in corporate lobbying         |
-|  controls the government that         |
-|  bought all 12,121 of them            |
-|                                       |
-|  defense industry = Ethyl Corp        |
-|                  at planetary scale   |
-|                                       |
-+---------------------------------------+
+TODAY'S VERSION
+
+  {{< var global_warhead_count_nounit >}} nuclear warheads.
+  ~{{< var nuclear_winter_warhead_threshold_nounit >}} needed to end civilization.
+  = {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses on standby.
+
+  {{< var us_total_lobbying_annual >}}/yr in corporate lobbying controls the
+  government that bought all {{< var global_warhead_count_nounit >}} of them.
+
+  The military-industrial complex = Ethyl Corp, at planetary scale.
 ```
 
 > So I would argue that today we find ourselves in a similar situation. Whereby you have a lot of corporations with boards that are run by some people that are retarded relative to the optimal, perfect information and perfect rationality. And that there exists today lots of data and intelligence to make superior decisions to those being made by these board members. Case in point, making {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses worth of nuclear bombs when you only have one civilization to apocalypse.
@@ -498,26 +494,58 @@ DISEASE IS ETHYL CORP AT CIVILIZATIONAL SCALE
 ## Cost in Context
 
 ```
-COST IN CONTEXT  --  THE STEERING WHEEL IS ON CLEARANCE
+COST IN CONTEXT
 
-  What does a controlling voice over the industries that
-  steer the world's governments actually cost?
+  THE MILITARY-INDUSTRIAL COMPLEX (the only one you can buy outright):
+     activist 5% stake .... {{< var defense_takeover_cost_activist >}}  ({{< var defense_takeover_cost_activist_pct_investable_assets >}})
+     full 50.1% control ... {{< var defense_takeover_cost_total >}}  ({{< var defense_takeover_pct_investable_assets >}})
 
-  TIER 1 -- full control of every major Western defense prime:
-      {{< var defense_takeover_cost_total >}}
-      = {{< var defense_takeover_pct_investable_assets >}} of all investable assets on Earth
-
-  TIER 2 -- ALSO an activist stake in every other government-
-  controlling sector (pharma, tech, insurance, oil and gas):
-      {{< var full_influence_cost_activist >}}
-      = {{< var full_influence_pct_investable_assets >}} of all investable assets on Earth
+  AN ACTIVIST STAKE IN EVERY government-controlling industry
+  (military + pharma + tech + insurance + oil) at once:
+     {{< var full_corporate_takeover_cost_activist >}}  ({{< var full_corporate_takeover_cost_activist_pct_investable_assets >}})
 
   Total investable assets on Earth: {{< var global_investable_assets >}}.
-  Even a loud voice at EVERY table is about half of one percent
-  of the money already sitting in brokerage accounts.
+  And you cannot even BUY most of these companies -- Zuckerberg,
+  the Google founders, and Ellison hold the votes.
+  You do not need to buy control. You need to win the vote.
 ```
 
-> Here is the part that breaks people's brains. You assume buying control of the industries that run your governments is something only a government could afford. Tier one, full voting control of every major Western defense prime, is {{< var defense_takeover_cost_total >}}, which sounds enormous until you ask: enormous compared to what? It is {{< var defense_takeover_pct_investable_assets >}} of the {{< var global_investable_assets >}} in investable assets sitting on this planet, most of it doing nothing in particular. That is {{< var defense_takeover_cost_per_human >}} per living human. Now go bigger. Tier two keeps the defense primes and adds activist stakes in the top lobbyists of every other government-controlling sector, pharma, tech, insurance, oil and gas. That is the Engine No. 1 move: a tiny stake, a loud voice. The whole package is {{< var full_influence_cost_activist >}}, which is {{< var full_influence_pct_investable_assets >}} of investable assets, {{< var full_influence_cost_per_human >}} per human, or {{< var full_influence_pct_annual_savings >}} of everything your species saves in a single year. Buying a loud voice at every table that decides whether you live or die costs about twenty days of world saving. The reason nobody has done this is not that it is too expensive. It is that nobody thought to point the money at the steering wheel instead of the gas pedal.
+> So let's price it. The military-industrial complex is the one corner where you can buy outright control, and it's cheap: an activist five percent stake, which is all you need if the index funds vote with you, runs {{< var defense_takeover_cost_activist >}}. Buying outright fifty-point-one percent control of every single one is {{< var defense_takeover_cost_total >}}, which is {{< var defense_takeover_pct_investable_assets >}} of the {{< var global_investable_assets >}} in investable assets sitting on this planet doing nothing in particular. Now go wider. An activist stake in every industry that owns your government, military, pharma, tech, insurance, oil, all of them at once, is {{< var full_corporate_takeover_cost_activist >}}. That is {{< var full_corporate_takeover_cost_activist_pct_investable_assets >}} of the world's investable money. And you couldn't buy most of these companies if you tried. Zuckerberg and the Google founders and Larry Ellison hold the votes. So you don't need to buy control. You need to win the vote.
+
+---
+
+## The Alpha: You Already Own the Problem
+
+```
+YOU ALREADY OWN THE PROBLEM
+
+  Most investors pick stocks.
+  BlackRock and Vanguard own all of them.
+  They own slices of the entire economy.
+
+  One company beating another nets them zero.
+  They only get richer when the whole pie grows.
+
+  Same portfolio. Different governments:
+
+     your portfolio in Somalia ............... a fraction
+     your portfolio in the USA ............... orders of magnitude more
+     your portfolio under optimal governance . ?
+
+  The gap from USA to optimal is
+  {{< var political_dysfunction_global_opportunity_cost_total >}}/yr in burning money.
+
+  EOS does not fix one company.
+  It fixes the country the companies are in.
+```
+
+> BlackRock and Vanguard own a slice of the entire economy. Nobody at either firm has noticed what that means. Most investors guess which company beats which. BlackRock and Vanguard skipped that. They bought all of them. Every supplier, every lender, every insurer. They own a slice of everything. One company stealing from another nets them zero. They own both sides. They only make money when the whole economy gets bigger.
+>
+> The thing that decides how big the economy is? Governance. You can test this in your head. Take everything you own and move it to Somalia. Same stocks, same buildings. It's worth almost nothing. Warlords eat most of it. Move it to the United States. Worth orders of magnitude more. The only thing that changed was who runs the place.
+>
+> What's it worth under a government better than this one? That gap is {{< var political_dysfunction_global_opportunity_cost_total >}} a year. That is what it costs to run the policies you run instead of the ones that work.
+>
+> EOS does not fix one company. It fixes the country all the companies are in. When the country improves, every stock moves. You are not picking winners. You are fixing the room they all sit in. Nobody has to be nice. The index funds are legally required to vote for whatever makes their portfolio worth more. Engine No. 1 did it with 0.02% of ExxonMobil and a spreadsheet. This is the same spreadsheet, pointed at the companies whose lobbyists write your laws. The number on it is {{< var political_dysfunction_global_opportunity_cost_total >}}.
 
 ---
 

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 695 parameters used in the analysis, organized by type:
+This appendix documents all 699 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 202
-- Calculated values: 357
-- Core definitions: 136
+- External sources (peer-reviewed): 204
+- Calculated values: 358
+- Core definitions: 137
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (357 parameters) • [External Data Sources](#sec-external) (202 parameters) • [Core Definitions](#sec-definitions) (136 parameters)
+[Calculated Values](#sec-calculated) (358 parameters) • [External Data Sources](#sec-external) (204 parameters) • [Core Definitions](#sec-definitions) (137 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5220,7 +5220,7 @@ Per-person cost of the military takeover distributed across global population
 
 **Inputs**:
 
-- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
@@ -5257,11 +5257,11 @@ $$
 
 :::
 
-### Military Takeover Total Cost: $873 billion {#sec-defense_takeover_cost_total}
+### Military Takeover Cost (Outright-Control Ceiling): $873 billion {#sec-defense_takeover_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium and execution friction
+UPPER-BOUND cost to acquire outright controlling stakes (50.1%) in all major Western military contractors, including the acquisition premium. This is the buy-it-outright ceiling, not the expected entry cost: the realistic path is an activist stake (DEFENSE_TAKEOVER_COST_ACTIVIST) plus index-fund votes, which costs far less. Headline only as a worst case.
 
 **Inputs**:
 
@@ -5302,7 +5302,7 @@ Cost to acquire controlling stakes in all major Western military contractors, ex
 
 **Inputs**:
 
-- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
 - [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305 trillion
 
 $$
@@ -9463,21 +9463,24 @@ $$
 
 :::
 
-### Full Influence Package Cost: $1.71 trillion {#sec-full_influence_cost_activist}
+### Full Influence Package Cost (Ceiling): $1.71 trillion {#sec-full_influence_cost_activist}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Full control of the military primes (50.1% plus acquisition premium) plus 5% activist positions in the top-5 lobbying firms of the other four government-controlling sectors. The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon board seats, so 5% is a loud voice at every table
+Ceiling cost for influence over every government-controlling industry: the buy-outright defense ceiling plus an activist stake in the top-5 lobbying firms of the other four sectors (pharma, tech, insurance, oil and gas). The other sectors use the activist tier because their largest players cannot be majority-acquired anyway (Meta, Alphabet, Oracle founder control). The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon board seats, so a few percent is a loud voice at every table.
 
 **Inputs**:
 
-- [Military Takeover Total Cost](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 0.05:1 (95% CI: 0.01:1 - 0.1:1)
 - [Government-Controlling Sectors Top-5 Market Cap](#sec-gov_controlling_sectors_top5_market_cap) 📊: $16.7 trillion (95% CI: $15 trillion - $18 trillion)
 
 $$
 \begin{gathered}
 C_{influence} \\
-= C_{takeover} + 0.05 \times MarketCap_{sectors}
+= C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
+= \$873B + 0.05 \times \$16.7T \\
+= \$1.71T
 \end{gathered}
 $$
 where:
@@ -9512,7 +9515,7 @@ Per-person cost of the full influence package (defense primes plus activist stak
 
 **Inputs**:
 
-- [Full Influence Package Cost](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
+- [Full Influence Package Cost (Ceiling)](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
@@ -9527,7 +9530,9 @@ where:
 $$
 \begin{gathered}
 C_{influence} \\
-= C_{takeover} + 0.05 \times MarketCap_{sectors}
+= C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
+= \$873B + 0.05 \times \$16.7T \\
+= \$1.71T
 \end{gathered}
 $$
 where:
@@ -9564,7 +9569,7 @@ Cost of the full influence package (every government-controlling industry, not j
 
 **Inputs**:
 
-- [Full Influence Package Cost](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
+- [Full Influence Package Cost (Ceiling)](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
 - [Global Annual Savings](#sec-global_annual_savings) 🔢: $31.1 trillion
 
 $$
@@ -9579,7 +9584,9 @@ where:
 $$
 \begin{gathered}
 C_{influence} \\
-= C_{takeover} + 0.05 \times MarketCap_{sectors}
+= C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
+= \$873B + 0.05 \times \$16.7T \\
+= \$1.71T
 \end{gathered}
 $$
 where:
@@ -9625,7 +9632,7 @@ Cost of the full influence package (every government-controlling industry, not j
 
 **Inputs**:
 
-- [Full Influence Package Cost](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
+- [Full Influence Package Cost (Ceiling)](#sec-full_influence_cost_activist) 🔢: $1.71 trillion
 - [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305 trillion
 
 $$
@@ -9640,7 +9647,9 @@ where:
 $$
 \begin{gathered}
 C_{influence} \\
-= C_{takeover} + 0.05 \times MarketCap_{sectors}
+= C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
+= \$873B + 0.05 \times \$16.7T \\
+= \$1.71T
 \end{gathered}
 $$
 where:
@@ -10736,6 +10745,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_disease_economic_burden_annual.qmd >}}
+
+:::
+
+### Global Annual Total Market Cost of Disease: $14.9 trillion {#sec-global_disease_total_market_cost_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total annual market cost of disease globally: direct medical costs ($9.9T) plus lost productivity from people too sick to work ($5T). This is the cash-cost sum a payer or economy actually bears, distinct from the DALY-based welfare burden, and is deliberately NOT added to that burden to avoid double-counting.
+
+**Inputs**:
+
+- [Global Annual Direct Medical Costs of Disease](#sec-global_disease_direct_medical_cost_annual) 📊: $9.9 trillion (95% CI: $7 trillion - $14 trillion)
+- [Global Annual Productivity Loss from Disease](#sec-global_disease_productivity_loss_annual) 📊: $5 trillion (95% CI: $3.5 trillion - $7 trillion)
+
+$$
+\begin{gathered}
+Cost_{disease,market} \\
+= Cost_{medical,direct} + Loss_{productivity} \\
+= \$9.9T + \$5T \\
+= \$14.9T
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_disease_total_market_cost_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_disease_total_market_cost_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_disease_total_market_cost_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_disease_total_market_cost_annual.qmd >}}
 
 :::
 
@@ -33204,6 +33251,54 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 
 :::
 
+### Global Annual Direct Medical Costs of Disease: $9.9 trillion {#sec-global_disease_direct_medical_cost_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Direct medical costs of disease globally (treatment, hospitalization, medication). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.
+
+**Source**: [@disease-economic-burden-109t]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$7 trillion, $14 trillion] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $7 trillion and $14 trillion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_direct_medical_cost_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Global Annual Productivity Loss from Disease: $5 trillion {#sec-global_disease_productivity_loss_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual productivity loss from disease globally (absenteeism, reduced output). Standalone market-cost metric; not included in DALY-based welfare burden to avoid double-counting.
+
+**Source**: [@disease-economic-burden-109t]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.5 trillion, $7 trillion] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3.5 trillion and $7 trillion (±35%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_disease_productivity_loss_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Global GDP (2025): $115 trillion {#sec-global_gdp_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -37143,6 +37238,26 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Activist Stake Fraction: 0.05:1 {#sec-influence_activist_stake_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Activist equity stake assumed sufficient to win board influence when combined with index-fund votes, rather than buying outright control. Grounded in activist-investing precedent: Engine No. 1 won three ExxonMobil board seats with 0.02%, and Carl Icahn typically operates with 1-10% positions. 5% is a deliberately conservative central case; the real floor is far lower, because the universal-owner index funds that hold 60-75% of every prime supply the votes once shown the financial case.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.01:1, 0.1:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.01:1 and 0.1:1 (±90%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-influence_activist_stake_fraction.qmd >}}
 
 *Core definition*
 

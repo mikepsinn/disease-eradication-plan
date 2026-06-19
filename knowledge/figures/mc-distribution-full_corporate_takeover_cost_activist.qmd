@@ -1,0 +1,9 @@
+**Monte Carlo note:** Full Corporate Activist-Stake Cost (All Sectors) is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 8.839e-01)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | $884 billion |
+| Mean (expected value) | $884 billion |
+| Median (50th percentile) | $884 billion |
+| Standard Deviation | $0 |
+| 90% Range (5th-95th percentile) | [$884 billion, $884 billion] |

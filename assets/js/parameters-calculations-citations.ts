@@ -4738,6 +4738,36 @@ export const CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20: Parameter = {
   manualPageTitle: "Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere",
 };
 
+export const DEFENSE_TAKEOVER_COST_ACTIVIST: Parameter = {
+  value: 48400000000.0,
+  parameterName: "DEFENSE_TAKEOVER_COST_ACTIVIST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_cost_activist",
+  unit: "USD",
+  displayName: "Military Activist-Stake Cost (Realistic Entry)",
+  description: "Realistic entry cost: capital to take an activist (non-control) equity position across all major Western military contractors, bought near market price with no control premium. Board influence comes from the financial argument plus the index-fund votes, not from outright control. This capital buys shares the fund keeps, so the true net cost is far lower than this gross figure. Contrast with the buy-outright ceiling (DEFENSE_TAKEOVER_COST_TOTAL).",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * INFLUENCE_ACTIVIST_STAKE_FRACTION",
+  latex: "\\begin{gathered}\nC_{activist} \\\\\n= f_{activist} \\times (MarketCap_{US} + MarketCap_{allied}) \\\\\n= 0.05 \\times (\\$836B + \\$132B) \\\\\n= \\$48.4B\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Loving Takeover",
+};
+
+export const DEFENSE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS: Parameter = {
+  value: 0.00015868852459016393,
+  parameterName: "DEFENSE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_cost_activist_pct_investable_assets",
+  unit: "rate",
+  displayName: "Military Activist-Stake Cost as Share of Global Investable Assets",
+  description: "Activist-stake entry cost across the defense primes as a share of total global investable assets. The realistic-path floor of the cost-in-context range, well below the buy-outright ceiling.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DEFENSE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
+  latex: "\\begin{gathered}\nC_{activist}/A_{investable} = \\frac{C_{activist}}{Assets_{invest}} = \\frac{\\$48.4B}{\\$305T} = 0.0159\\%\n\\\\[0.5em]\n\\text{where } C_{activist} = f_{activist} \\times (MarketCap_{US} + MarketCap_{allied}) = 0.05 \\times (\\$836B + \\$132B) = \\$48.4B\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Loving Takeover",
+};
+
 export const DEFENSE_TAKEOVER_COST_PER_HUMAN: Parameter = {
   value: 109.1178,
   parameterName: "DEFENSE_TAKEOVER_COST_PER_HUMAN",
@@ -4759,8 +4789,8 @@ export const DEFENSE_TAKEOVER_COST_TOTAL: Parameter = {
   parameterName: "DEFENSE_TAKEOVER_COST_TOTAL",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_cost_total",
   unit: "USD",
-  displayName: "Military Takeover Total Cost",
-  description: "Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium and execution friction",
+  displayName: "Military Takeover Cost (Outright-Control Ceiling)",
+  description: "UPPER-BOUND cost to acquire outright controlling stakes (50.1%) in all major Western military contractors, including the acquisition premium. This is the buy-it-outright ceiling, not the expected entry cost: the realistic path is an activist stake (DEFENSE_TAKEOVER_COST_ACTIVIST) plus index-fund votes, which costs far less. Headline only as a worst case.",
   sourceType: "calculated",
   confidence: "high",
   formula: "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM",
@@ -5986,17 +6016,47 @@ export const FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER: Parameter = {
   manualPageTitle: "Your FDA Is Unsafe and Ineffective",
 };
 
+export const FULL_CORPORATE_TAKEOVER_COST_ACTIVIST: Parameter = {
+  value: 883900000000.0,
+  parameterName: "FULL_CORPORATE_TAKEOVER_COST_ACTIVIST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-full_corporate_takeover_cost_activist",
+  unit: "USD",
+  displayName: "Full Corporate Activist-Stake Cost (All Sectors)",
+  description: "Realistic cost to take an activist (non-control) stake across EVERY government-controlling industry at once: military, pharma, tech, insurance, and oil and gas. This is the symmetric activist version of the takeover. Outright majority control of all of them is not even possible (founder and mutual control of Meta, Alphabet, Oracle, and the insurance mutuals), which is exactly why the activist tier, not a 50.1% buyout, is the operative model outside the defense primes.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED + GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP) * INFLUENCE_ACTIVIST_STAKE_FRACTION",
+  latex: "\\begin{gathered}\nC_{corp,activist} \\\\\n= (MarketCap_{US} + MarketCap_{allied} \\\\\n+ MarketCap_{sectors}) \\times f_{activist}\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Loving Takeover",
+};
+
+export const FULL_CORPORATE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS: Parameter = {
+  value: 0.002898032786885246,
+  parameterName: "FULL_CORPORATE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-full_corporate_takeover_cost_activist_pct_investable_assets",
+  unit: "rate",
+  displayName: "Full Corporate Activist-Stake Cost as Share of Global Investable Assets",
+  description: "Activist stake across every government-controlling industry as a share of total global investable assets.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "FULL_CORPORATE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
+  latex: "\\begin{gathered}\nC_{corp,activist}/A_{investable} = \\frac{C_{corp,activist}}{Assets_{invest}} = \\frac{\\$884B}{\\$305T} = 0.29\\%\n\\\\[0.5em]\n\\text{where } C_{corp,activist} = (MarketCap_{US} + MarketCap_{allied} + MarketCap_{sectors}) \\times f_{activist}\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Loving Takeover",
+};
+
 export const FULL_INFLUENCE_COST_ACTIVIST: Parameter = {
   value: 1708442400000.0,
   parameterName: "FULL_INFLUENCE_COST_ACTIVIST",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-full_influence_cost_activist",
   unit: "USD",
-  displayName: "Full Influence Package Cost",
-  description: "Full control of the military primes (50.1% plus acquisition premium) plus 5% activist positions in the top-5 lobbying firms of the other four government-controlling sectors. The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon board seats, so 5% is a loud voice at every table",
+  displayName: "Full Influence Package Cost (Ceiling)",
+  description: "Ceiling cost for influence over every government-controlling industry: the buy-outright defense ceiling plus an activist stake in the top-5 lobbying firms of the other four sectors (pharma, tech, insurance, oil and gas). The other sectors use the activist tier because their largest players cannot be majority-acquired anyway (Meta, Alphabet, Oracle founder control). The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon board seats, so a few percent is a loud voice at every table.",
   sourceType: "calculated",
   confidence: "medium",
-  formula: "DEFENSE_TAKEOVER_COST_TOTAL + 0.05 * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
-  latex: "\\begin{gathered}\nC_{influence} = C_{takeover} + 0.05 \\times MarketCap_{sectors}\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+  formula: "DEFENSE_TAKEOVER_COST_TOTAL + INFLUENCE_ACTIVIST_STAKE_FRACTION * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
+  latex: "\\begin{gathered}\nC_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 0.05 \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
   manualPageTitle: "The Loving Takeover",
 };
@@ -6011,7 +6071,7 @@ export const FULL_INFLUENCE_COST_PER_HUMAN: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_POPULATION_2024",
-  latex: "\\begin{gathered}\nC_{influence,pp} = \\frac{C_{influence}}{Pop_{global}} = \\frac{\\$1.71T}{8B} = \\$214\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + 0.05 \\times MarketCap_{sectors}\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+  latex: "\\begin{gathered}\nC_{influence,pp} = \\frac{C_{influence}}{Pop_{global}} = \\frac{\\$1.71T}{8B} = \\$214\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 0.05 \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
   confidenceInterval: [209.19132084045313, 218.10970829082635],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
   manualPageTitle: "The Loving Takeover",
@@ -6027,7 +6087,7 @@ export const FULL_INFLUENCE_PCT_ANNUAL_SAVINGS: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_ANNUAL_SAVINGS",
-  latex: "\\begin{gathered}\nC_{influence}/S_{annual} = \\frac{C_{influence}}{S_{annual}} = \\frac{\\$1.71T}{\\$31.1T} = 5.5\\%\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + 0.05 \\times MarketCap_{sectors}\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\\\[0.5em]\n\\text{where } S_{annual} = s_{global} \\times GDP_{global} = 27\\% \\times \\$115T = \\$31.1T\n\\end{gathered}",
+  latex: "\\begin{gathered}\nC_{influence}/S_{annual} = \\frac{C_{influence}}{S_{annual}} = \\frac{\\$1.71T}{\\$31.1T} = 5.5\\%\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 0.05 \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\\\[0.5em]\n\\text{where } S_{annual} = s_{global} \\times GDP_{global} = 27\\% \\times \\$115T = \\$31.1T\n\\end{gathered}",
   confidenceInterval: [0.050289874553921574, 0.06068463311558671],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
   manualPageTitle: "The Loving Takeover",
@@ -6043,7 +6103,7 @@ export const FULL_INFLUENCE_PCT_INVESTABLE_ASSETS: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
-  latex: "\\begin{gathered}\nC_{influence}/A_{investable} = \\frac{C_{influence}}{Assets_{invest}} = \\frac{\\$1.71T}{\\$305T} = 0.56\\%\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + 0.05 \\times MarketCap_{sectors}\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+  latex: "\\begin{gathered}\nC_{influence}/A_{investable} = \\frac{C_{influence}}{Assets_{invest}} = \\frac{\\$1.71T}{\\$305T} = 0.56\\%\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 0.05 \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
   manualPageTitle: "The Loving Takeover",
 };
@@ -11848,6 +11908,20 @@ export const IAB_POLITICAL_INCENTIVE_FUNDING_PCT: Parameter = {
   manualPageTitle: "Earth Optimization Protocol v1",
 };
 
+export const INFLUENCE_ACTIVIST_STAKE_FRACTION: Parameter = {
+  value: 0.05,
+  parameterName: "INFLUENCE_ACTIVIST_STAKE_FRACTION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-influence_activist_stake_fraction",
+  unit: "ratio",
+  displayName: "Activist Stake Fraction",
+  description: "Activist equity stake assumed sufficient to win board influence when combined with index-fund votes, rather than buying outright control. Grounded in activist-investing precedent: Engine No. 1 won three ExxonMobil board seats with 0.02%, and Carl Icahn typically operates with 1-10% positions. 5% is a deliberately conservative central case; the real floor is far lower, because the universal-owner index funds that hold 60-75% of every prime supply the votes once shown the financial case.",
+  sourceType: "definition",
+  confidence: "high",
+  confidenceInterval: [0.01, 0.1],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Loving Takeover",
+};
+
 export const INSTITUTIONAL_INVESTOR_MIN: Parameter = {
   value: 10000000.0,
   parameterName: "INSTITUTIONAL_INVESTOR_MIN",
@@ -13190,6 +13264,8 @@ export const parameters = {
   CURRENT_TRAJECTORY_GDP_YEAR_20,
   CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_15,
   CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20,
+  DEFENSE_TAKEOVER_COST_ACTIVIST,
+  DEFENSE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS,
   DEFENSE_TAKEOVER_COST_PER_HUMAN,
   DEFENSE_TAKEOVER_COST_TOTAL,
   DEFENSE_TAKEOVER_PCT_ANNUAL_SAVINGS,
@@ -13268,6 +13344,8 @@ export const parameters = {
   EXISTING_DRUGS_EFFICACY_LAG_ECONOMIC_LOSS,
   EXPLORATION_RATIO,
   FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER,
+  FULL_CORPORATE_TAKEOVER_COST_ACTIVIST,
+  FULL_CORPORATE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS,
   FULL_INFLUENCE_COST_ACTIVIST,
   FULL_INFLUENCE_COST_PER_HUMAN,
   FULL_INFLUENCE_PCT_ANNUAL_SAVINGS,
@@ -13647,6 +13725,7 @@ export const parameters = {
   HUMAN_PROTEIN_CODING_GENES,
   IAB_MECHANISM_ANNUAL_COST,
   IAB_POLITICAL_INCENTIVE_FUNDING_PCT,
+  INFLUENCE_ACTIVIST_STAKE_FRACTION,
   INSTITUTIONAL_INVESTOR_MIN,
   LEADED_GASOLINE_ERA_YEARS,
   LOBBYIST_BOND_INVESTMENT_MAX,
@@ -16231,10 +16310,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 829,
+  total: 834,
   external: 237,
-  calculated: 421,
-  definitions: 171,
+  calculated: 425,
+  definitions: 172,
   citations: 181,
 } as const;
 

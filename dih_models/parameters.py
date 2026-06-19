@@ -14743,6 +14743,18 @@ DEFENSE_TAKEOVER_CONTROL_FRACTION = Parameter(
     distribution="fixed",
 )
 
+INFLUENCE_ACTIVIST_STAKE_FRACTION = Parameter(
+    0.05,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="definition",
+    description="Activist equity stake assumed sufficient to win board influence when combined with index-fund votes, rather than buying outright control. Grounded in activist-investing precedent: Engine No. 1 won three ExxonMobil board seats with 0.02%, and Carl Icahn typically operates with 1-10% positions. 5% is a deliberately conservative central case; the real floor is far lower, because the universal-owner index funds that hold 60-75% of every prime supply the votes once shown the financial case.",
+    display_name="Activist Stake Fraction",
+    unit="ratio",
+    confidence_interval=(0.01, 0.10),
+    keywords=["activist", "engine no. 1", "icahn", "board seat", "proxy"],
+    latex_symbol=r"f_{activist}",
+)
+
 DEFENSE_TAKEOVER_ACQUISITION_PREMIUM = Parameter(
     1.8,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
@@ -14759,14 +14771,42 @@ DEFENSE_TAKEOVER_COST_TOTAL = Parameter(
     (DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
     source_type="calculated",
-    description="Total realistic cost to acquire controlling stakes in all major Western military contractors, including acquisition premium and execution friction",
-    display_name="Military Takeover Total Cost",
+    description="UPPER-BOUND cost to acquire outright controlling stakes (50.1%) in all major Western military contractors, including the acquisition premium. This is the buy-it-outright ceiling, not the expected entry cost: the realistic path is an activist stake (DEFENSE_TAKEOVER_COST_ACTIVIST) plus index-fund votes, which costs far less. Headline only as a worst case.",
+    display_name="Military Takeover Cost (Outright-Control Ceiling)",
     unit="USD",
-    keywords=["loving takeover", "military contractor", "market cap", "acquisition"],
+    keywords=["loving takeover", "military contractor", "market cap", "acquisition", "ceiling"],
     latex_symbol=r"C_{takeover}",
     formula="(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM",
     inputs=["DEFENSE_PRIMES_MARKET_CAP_US", "DEFENSE_PRIMES_MARKET_CAP_ALLIED", "DEFENSE_TAKEOVER_CONTROL_FRACTION", "DEFENSE_TAKEOVER_ACQUISITION_PREMIUM"],
     compute=lambda ctx: (ctx["DEFENSE_PRIMES_MARKET_CAP_US"] + ctx["DEFENSE_PRIMES_MARKET_CAP_ALLIED"]) * ctx["DEFENSE_TAKEOVER_CONTROL_FRACTION"] * ctx["DEFENSE_TAKEOVER_ACQUISITION_PREMIUM"],
+)
+
+DEFENSE_TAKEOVER_COST_ACTIVIST = Parameter(
+    (DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * INFLUENCE_ACTIVIST_STAKE_FRACTION,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Realistic entry cost: capital to take an activist (non-control) equity position across all major Western military contractors, bought near market price with no control premium. Board influence comes from the financial argument plus the index-fund votes, not from outright control. This capital buys shares the fund keeps, so the true net cost is far lower than this gross figure. Contrast with the buy-outright ceiling (DEFENSE_TAKEOVER_COST_TOTAL).",
+    display_name="Military Activist-Stake Cost (Realistic Entry)",
+    unit="USD",
+    formula="(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * INFLUENCE_ACTIVIST_STAKE_FRACTION",
+    inputs=["DEFENSE_PRIMES_MARKET_CAP_US", "DEFENSE_PRIMES_MARKET_CAP_ALLIED", "INFLUENCE_ACTIVIST_STAKE_FRACTION"],
+    compute=lambda ctx: (ctx["DEFENSE_PRIMES_MARKET_CAP_US"] + ctx["DEFENSE_PRIMES_MARKET_CAP_ALLIED"]) * ctx["INFLUENCE_ACTIVIST_STAKE_FRACTION"],
+    keywords=["loving takeover", "activist", "entry cost", "board seat", "engine no. 1"],
+    latex_symbol=r"C_{activist}",
+)
+
+DEFENSE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS = Parameter(
+    DEFENSE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Activist-stake entry cost across the defense primes as a share of total global investable assets. The realistic-path floor of the cost-in-context range, well below the buy-outright ceiling.",
+    display_name="Military Activist-Stake Cost as Share of Global Investable Assets",
+    unit="rate",
+    formula="DEFENSE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
+    inputs=["DEFENSE_TAKEOVER_COST_ACTIVIST", "GLOBAL_INVESTABLE_ASSETS"],
+    compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_ACTIVIST"] / ctx["GLOBAL_INVESTABLE_ASSETS"],
+    keywords=["loving takeover", "activist", "cost in context", "affordability"],
+    latex_symbol=r"C_{activist}/A_{investable}",
 )
 
 DEFENSE_TAKEOVER_COST_PER_HUMAN = Parameter(
@@ -14849,19 +14889,21 @@ GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP = Parameter(
 )
 
 FULL_INFLUENCE_COST_ACTIVIST = Parameter(
-    DEFENSE_TAKEOVER_COST_TOTAL + 0.05 * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP,
+    DEFENSE_TAKEOVER_COST_TOTAL + INFLUENCE_ACTIVIST_STAKE_FRACTION * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
     source_type="calculated",
     confidence="medium",
-    description="Full control of the military primes (50.1% plus acquisition premium) plus 5% activist "
-                "positions in the top-5 lobbying firms of the other four government-controlling sectors. "
-                "The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon "
-                "board seats, so 5% is a loud voice at every table",
-    display_name="Full Influence Package Cost",
+    description="Ceiling cost for influence over every government-controlling industry: the buy-outright "
+                "defense ceiling plus an activist stake in the top-5 lobbying firms of the other four sectors "
+                "(pharma, tech, insurance, oil and gas). The other sectors use the activist tier because their "
+                "largest players cannot be majority-acquired anyway (Meta, Alphabet, Oracle founder control). "
+                "The activist tier follows the Engine No. 1 precedent: a 0.02% stake won three Exxon board seats, "
+                "so a few percent is a loud voice at every table.",
+    display_name="Full Influence Package Cost (Ceiling)",
     unit="USD",
-    formula="DEFENSE_TAKEOVER_COST_TOTAL + 0.05 * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
-    inputs=["DEFENSE_TAKEOVER_COST_TOTAL", "GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP"],
-    compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_TOTAL"] + 0.05 * ctx["GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP"],
+    formula="DEFENSE_TAKEOVER_COST_TOTAL + INFLUENCE_ACTIVIST_STAKE_FRACTION * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
+    inputs=["DEFENSE_TAKEOVER_COST_TOTAL", "INFLUENCE_ACTIVIST_STAKE_FRACTION", "GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP"],
+    compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_TOTAL"] + ctx["INFLUENCE_ACTIVIST_STAKE_FRACTION"] * ctx["GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP"],
     keywords=["loving takeover", "activist investor", "influence", "lobbying", "acquisition"],
     latex_symbol=r"C_{influence}",
 )
@@ -14906,6 +14948,34 @@ FULL_INFLUENCE_PCT_ANNUAL_SAVINGS = Parameter(
     compute=lambda ctx: ctx["FULL_INFLUENCE_COST_ACTIVIST"] / ctx["GLOBAL_ANNUAL_SAVINGS"],
     keywords=["loving takeover", "global saving", "cost in context", "affordability", "full influence"],
     latex_symbol=r"C_{influence}/S_{annual}",
+)
+
+FULL_CORPORATE_TAKEOVER_COST_ACTIVIST = Parameter(
+    (DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED + GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP) * INFLUENCE_ACTIVIST_STAKE_FRACTION,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Realistic cost to take an activist (non-control) stake across EVERY government-controlling industry at once: military, pharma, tech, insurance, and oil and gas. This is the symmetric activist version of the takeover. Outright majority control of all of them is not even possible (founder and mutual control of Meta, Alphabet, Oracle, and the insurance mutuals), which is exactly why the activist tier, not a 50.1% buyout, is the operative model outside the defense primes.",
+    display_name="Full Corporate Activist-Stake Cost (All Sectors)",
+    unit="USD",
+    formula="(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED + GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP) * INFLUENCE_ACTIVIST_STAKE_FRACTION",
+    inputs=["DEFENSE_PRIMES_MARKET_CAP_US", "DEFENSE_PRIMES_MARKET_CAP_ALLIED", "GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP", "INFLUENCE_ACTIVIST_STAKE_FRACTION"],
+    compute=lambda ctx: (ctx["DEFENSE_PRIMES_MARKET_CAP_US"] + ctx["DEFENSE_PRIMES_MARKET_CAP_ALLIED"] + ctx["GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP"]) * ctx["INFLUENCE_ACTIVIST_STAKE_FRACTION"],
+    keywords=["loving takeover", "activist", "all sectors", "corporate takeover", "lobbying"],
+    latex_symbol=r"C_{corp,activist}",
+)
+
+FULL_CORPORATE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS = Parameter(
+    FULL_CORPORATE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Activist stake across every government-controlling industry as a share of total global investable assets.",
+    display_name="Full Corporate Activist-Stake Cost as Share of Global Investable Assets",
+    unit="rate",
+    formula="FULL_CORPORATE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
+    inputs=["FULL_CORPORATE_TAKEOVER_COST_ACTIVIST", "GLOBAL_INVESTABLE_ASSETS"],
+    compute=lambda ctx: ctx["FULL_CORPORATE_TAKEOVER_COST_ACTIVIST"] / ctx["GLOBAL_INVESTABLE_ASSETS"],
+    keywords=["loving takeover", "activist", "cost in context", "affordability", "all sectors"],
+    latex_symbol=r"C_{corp,activist}/A_{investable}",
 )
 
 # ============================================================================
