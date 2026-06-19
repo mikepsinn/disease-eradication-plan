@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commission of the President — Earth Optimization Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IM+Fell+English:ital@1&display=swap" rel="stylesheet">
+<style>
+  @page { size: letter; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ddd;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .commission {
+    width: 8.5in;
+    height: 11in;
+    background: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .commission-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #2c1810;
+    padding: 1.5in 0.8in 0.7in;
+  }
+
+  .org-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 14pt;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #8b6914;
+    margin-bottom: 0.12in;
+  }
+
+  .divider {
+    width: 3.5in;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b8960c, transparent);
+    margin: 0.1in 0;
+  }
+
+  .title {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 38pt;
+    letter-spacing: 0.08em;
+    color: #2c1810;
+    margin-bottom: 0.02in;
+  }
+
+  .subtitle {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 13pt;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #8b6914;
+    margin-bottom: 0.18in;
+  }
+
+  .greeting {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16pt;
+    color: #5a4a3a;
+    margin-bottom: 0.16in;
+  }
+
+  .body-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16pt;
+    line-height: 1.6;
+    color: #2c1810;
+    max-width: 6in;
+  }
+
+  /* Name: no underline, no border, just the font */
+  .recipient-name {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-style: italic;
+    font-size: 42pt;
+    color: #2c1810;
+    margin: 0.18in 0;
+    line-height: 1.2;
+    min-width: 2in;
+    outline: none;
+    cursor: text;
+  }
+
+  .recipient-name:empty::before {
+    content: 'Click to enter name';
+    color: #b8960c;
+    opacity: 0.45;
+  }
+
+  @media print {
+    body { background: none; min-height: auto; }
+    .recipient-name:empty::before { content: ''; }
+  }
+
+  .appointment-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16pt;
+    line-height: 1.6;
+    color: #2c1810;
+    margin-bottom: 0.1in;
+  }
+
+  .rank {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 24pt;
+    letter-spacing: 0.12em;
+    color: #8b6914;
+    margin: 0.08in 0;
+  }
+
+  .rank-org {
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 14pt;
+    letter-spacing: 0.2em;
+    color: #5a4a3a;
+    margin-bottom: 0.14in;
+  }
+
+  .mandate {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15pt;
+    line-height: 1.7;
+    color: #2c1810;
+    max-width: 6in;
+    margin-bottom: 0.1in;
+  }
+
+  .term {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14pt;
+    line-height: 1.7;
+    color: #4a3a2a;
+    max-width: 5.8in;
+    margin-bottom: 0.18in;
+  }
+
+  .done-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13pt;
+    line-height: 1.7;
+    color: #5a4a3a;
+    margin-bottom: 0.4in;
+  }
+
+  .signature-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55in;
+    width: 6in;
+  }
+
+  .signature-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sig-line {
+    width: 2.4in;
+    border-bottom: 1px solid #2c1810;
+    margin-bottom: 0.08in;
+  }
+
+  .sig-name {
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 12pt;
+    letter-spacing: 0.05em;
+    color: #2c1810;
+  }
+
+  .sig-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11pt;
+    color: #6a5a4a;
+    font-style: italic;
+  }
+
+  .seal-wrap img {
+    width: 1.35in;
+    height: 1.35in;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div class="commission">
+  <div class="commission-content">
+    <div class="org-name">Earth Optimization Services</div>
+    <div class="divider"></div>
+    <div class="title">Commission</div>
+    <div class="subtitle">of the President</div>
+    <div class="greeting">To all who shall see these presents, greeting:</div>
+    <div class="body-text">
+      Reposing special trust and confidence in the<br>
+      judgment, conscience, and abilities of
+    </div>
+
+    <div class="recipient-name" contenteditable="true" spellcheck="false"></div>
+
+    <div class="appointment-line">I do hereby appoint them</div>
+    <div class="rank">President</div>
+    <div class="rank-org">Earth Optimization Services</div>
+
+    <div class="mandate">
+      and do authorize and empower them to promote the general welfare
+      of the planet Earth and all persons thereon: the maximization of
+      their health, their wealth, and the duration and quality of their lives.
+    </div>
+
+    <div class="term">
+      This commission shall remain in force for the natural life of the bearer,
+      a term the Company regards as a defect scheduled for repair.
+    </div>
+
+    <div class="done-line" id="date-line"></div>
+
+    <div class="signature-row">
+      <div class="signature-block">
+        <div class="sig-line"></div>
+        <div class="sig-name">Mike P. Sinn</div>
+        <div class="sig-title">Assistant to the President</div>
+      </div>
+
+      <div class="seal-wrap">
+        <img src="../../assets/images/earth-optimization-services/earth-optimization-services-seal-transparent.png" alt="Earth Optimization Services official seal">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Auto-date as spelled-out words
+  (function() {
+    const ord = ['','first','second','third','fourth','fifth','sixth','seventh','eighth',
+      'ninth','tenth','eleventh','twelfth','thirteenth','fourteenth','fifteenth',
+      'sixteenth','seventeenth','eighteenth','nineteenth','twentieth','twenty-first',
+      'twenty-second','twenty-third','twenty-fourth','twenty-fifth','twenty-sixth',
+      'twenty-seventh','twenty-eighth','twenty-ninth','thirtieth','thirty-first'];
+    const months = ['January','February','March','April','May','June','July','August',
+      'September','October','November','December'];
+    const d = new Date();
+    const line = document.getElementById('date-line');
+    line.innerHTML = 'Done at the offices of Earth Optimization Services, which are Earth,<br>'
+      + 'this ' + ord[d.getDate()] + ' day of ' + months[d.getMonth()]
+      + ', in the year ' + d.getFullYear() + '.';
+  })();
+
+  // Prevent newlines in name field
+  document.querySelector('.recipient-name').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') e.preventDefault();
+  });
+</script>
+
+</body>
+</html>

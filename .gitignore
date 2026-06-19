@@ -71,6 +71,7 @@ brain/figures/**/*.html
 # but DON'T ignore them if they are in the _book directory
 *_files/
 knowledge/**/*.html
+!knowledge/appendix/presidential-commission-print.html
 _book/
 libs/
 index.tex
