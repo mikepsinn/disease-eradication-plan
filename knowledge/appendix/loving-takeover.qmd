@@ -2,7 +2,7 @@
 title: 'The Loving Takeover'
 description: 'For roughly $90 per global human, humanity can buy a controlling stake in every major military contractor on Earth and redirect their lobbying budgets toward the 1% treaty. The takeover is loving because existing shareholders, employees, and directors are intended beneficiaries of the long-term strategy. The math is on this page.'
 abstract: |
-  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $131 billion across allied European primes. A majority shareholding requires roughly $400 billion nominal before any acquisition premium, disclosure friction, or transaction cost. Distributed across the global population, the per-person ante is approximately $90. Once humanity holds the majority, the single highest-leverage action is to redirect the ~$127 million per year of military lobbying toward the 1% treaty. Expected total value per global human: ~6,000x-22,000x the contribution at base case (mostly welfare value, not cash); ~60x-220x even after a 99% pessimistic haircut. The takeover is structurally loving: existing shareholders may benefit from a better long-term corporate strategy, military-contractor employees keep their jobs (and gain new ones in the medical pivot), and the directors and officers who settle gain personal life expectancy alongside everyone else.
+  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $131 billion across allied European primes. A majority shareholding requires roughly $400 billion nominal before any acquisition premium, disclosure friction, or transaction cost. Distributed across the global population, the per-person ante is approximately $90. Once humanity holds the majority, the single most powerful action is to redirect the ~$127 million per year of military lobbying toward the 1% treaty. Expected total value per global human: ~6,000x-22,000x the contribution at base case (mostly welfare value, not cash); ~60x-220x even after a 99% pessimistic haircut. The takeover is structurally loving: existing shareholders may benefit from a better long-term corporate strategy, military-contractor employees keep their jobs (and gain new ones in the medical pivot), and the directors and officers who settle gain personal life expectancy alongside everyone else.
 aliases:
   - /loving-takeover.html
   - /funniest-loving-takeover.html
@@ -54,7 +54,7 @@ scores:
 
 **EXPECTED VALUE PER GLOBAL HUMAN PARTICIPANT:** ~$530,000-$2,000,000 in total expected value at base case (~6,000x-22,000x the contribution; mostly welfare value, not cash). Even after a 99% pessimism haircut, ~$5,000-$20,000 in expected total value per {{< var defense_takeover_cost_per_human >}} contributed.
 
-This is the [lawsuit](lawsuit.qmd) escalated. The lawsuit is the cheap side path: own one share, send the board a love letter (the law calls it a demand letter), and the board is required to read the math. The Fund is the main version: pool capital, own enough shares to matter, and make the best lobbyists money can buy start working on keeping their shareholders alive.
+This is the [lawsuit](lawsuit.qmd) escalated. The lawsuit is the cheap side path: own one share, send the board a love letter (the law calls it a legal letter the board is required to read), and the board is required to read the math. The Fund is the main version: pool capital, own enough shares to matter, and make the best lobbyists money can buy start working on keeping their shareholders alive.
 
 ## Why "Loving," Not "Hostile"
 
@@ -78,17 +78,17 @@ A military contractor's share price today reflects its current business model: s
 1. **The addressable market grows.** Under the treaty trajectory, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. Even if military spending stays at the same fraction of GDP, the absolute military budget grows in proportion. A military contractor operating in a bigger economy captures proportionally more absolute revenue, with no change in its market share.
 2. **The pivot opportunity opens.** Military engineering talent applied to medical, biotech, AI-augmented drug discovery, [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure, sensors, imaging, materials, and dual-use civilian applications compounds at substantially higher rates than current cost-plus military work. The same workforce produces more value per engineer-year in the medical pivot than in the weapons-system status quo.
 
-**The asymmetric upside.** If the campaign succeeds, military contractor shares appreciate substantially through both channels above. If the campaign fails, the shares stay roughly where they are (a normal military contractor position). The downside is the foregone return on whatever the share purchase displaced (typically index funds at ~7-10% annualized).
+**The lopsided upside.** If the campaign succeeds, military contractor shares appreciate substantially through both channels above. If the campaign fails, the shares stay roughly where they are (a normal military contractor position). The downside is the foregone return on whatever the share purchase displaced (typically index funds at ~7-10% annualized).
 
-**The credibility cascade.** As the campaign builds credibility, the market may begin to price in a higher probability that the thesis works. The lawsuit (and the demand-letter pipeline it sits inside) is the catalyst that activates this cycle: every demand letter filed, every board response received, every press article covering the math is a credibility-step that shifts probability mass toward "campaign succeeds."
+**The credibility cascade.** As the campaign builds credibility, the market may begin to price in a higher probability that the thesis works. The lawsuit (and the legal-letter pipeline it sits inside) is the catalyst that activates this cycle: every legal letter filed, every board response received, every press article covering the math is a credibility-step that shifts probability mass toward "campaign succeeds."
 
-This is not speculation. It is the same mechanism that prices any value-event into a stock: M&A announcements, FDA approvals, regulatory rulings, earnings revisions. The campaign supplies the value-event (a structural shift in the military contractor's long-term addressable market and pivot optionality) and the market prices it in as the probability of success rises.
+This is not speculation. It is the same way any value-event gets priced into a stock: M&A announcements, FDA approvals, regulatory rulings, earnings revisions. The campaign supplies the value-event (a structural shift in the military contractor's long-term addressable market and pivot optionality) and the market prices it in as the probability of success rises.
 
 ::: {.diagram}
 ```
 THE FLYWHEEL: THREE LOOPS, ONE MACHINE
 
-   HUMANITY BUYS MILITARY PRIME SHARES
+   HUMANITY BUYS MILITARY CONTRACTOR SHARES
    (~{{< var defense_takeover_cost_per_human >}} per human buys all of them)
         |
         v
@@ -121,7 +121,7 @@ THE FLYWHEEL: THREE LOOPS, ONE MACHINE
    ECONOMY GROWS
    ({{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current path at year 15)
         |
-        \--> military primes have a better long-term market
+        \--> the big military contractors have a better long-term market
              [LOOP C: the shareholder case improves]
 ```
 :::
@@ -134,7 +134,7 @@ Three reinforcing loops, one machine. Each lap makes the next lap cheaper.
 
 Large acquisition programs can affect price, trigger disclosure obligations, and attract regulatory scrutiny. This chapter is not a trading campaign, a recommendation to coordinate purchases, or a model of short-term price impact.
 
-The public thesis is narrower and cleaner: disclosed, long-horizon shareholders can use ordinary shareholder tools to ask whether military-contractor lobbying maximizes long-term shareholder value. Any organized acquisition vehicle, proxy campaign, or large ownership program requires securities, antitrust, CFIUS, and proxy-solicitation review before it moves from analysis to action.
+The public thesis is narrower and cleaner: disclosed, long-horizon shareholders can use ordinary shareholder tools to ask whether military-contractor lobbying maximizes long-term shareholder value. Any organized acquisition vehicle, campaign to put your own people on the board, or large ownership program requires securities, antitrust, CFIUS, and proxy-solicitation review before it moves from analysis to action.
 
 ## Why This Works
 
@@ -146,7 +146,7 @@ This page points it out.
 
 ## The Math
 
-### Major Western military primes (approximate market caps)
+### Major Western military contractors (approximate market caps)
 
 | Contractor | Ticker | Approx market cap | 50%+1 control cost |
 |---|---|---:|---:|
@@ -200,17 +200,17 @@ This number is calculable. It is not a fantasy.
 | Tier | Stake | What it gets you |
 |---|---|---|
 | One share (~$200) | A letter the board is obliged to read | The [lawsuit campaign](lawsuit.qmd) |
-| A fraction of a percent, plus a proxy campaign | Board seats, if the financial case persuades the index funds | Engine No. 1 won three ExxonMobil seats with 0.02% of the shares |
+| A fraction of a percent, plus a campaign to put your own people on the board | Board seats, if the financial case persuades the index funds | Engine No. 1 won three ExxonMobil seats with 0.02% of the shares |
 | 1-5% across the primes | Agenda-setting positions at every annual meeting | The [activist tier](../economics/earth-optimization-fund.qmd) |
 | 50.1% | Nobody has to agree with you | {{< var defense_takeover_cost_total >}} |
 
-Three institutional investors hold 60-75% of every military prime, and their job is to vote for whatever makes the shares worth more. The pitch to them is the one this chapter already made: the treaty makes the companies more valuable. Each tier is insurance against the cheaper tier failing. You climb only as far as the persuasion fails.
+Three institutional investors hold 60-75% of every big military contractor, and their job is to vote for whatever makes the shares worth more. The pitch to them is the one this chapter already made: the treaty makes the companies more valuable. Each tier is insurance against the cheaper tier failing. You climb only as far as the persuasion fails.
 
 ## What Humanity Does Once It Owns the Companies
 
-Ranked by leverage. The first action is the entire game; the rest are bonus.
+Ranked by impact. The first action is the entire game; the rest are bonus.
 
-### Tier 1: Redirect the lobbying budget (highest leverage, zero cost)
+### Tier 1: Redirect the lobbying budget (highest impact, zero cost)
 
 Military contractors currently spend {{< var defense_lobbying_annual >}} per year lobbying Congress to expand military appropriations. This is the most effective political-influence operation on Earth. It has driven US military spending from its 1939 baseline to current levels and prevented every serious proposal for reallocation.
 
@@ -341,7 +341,7 @@ Even with a 99% haircut, the expected total value remains roughly 60x-220x the c
 
 The numbers above are the price if you paid all cash and then set the money on fire. You would do neither.
 
-Start with the cash. Military contractor cash flows are about as steady as cash flows get, which is precisely what lets you borrow against them. A leveraged buyout of something this stable can carry 50% to 65% debt, so taking a company private costs an equity slice, not the whole sticker. The acquisition premium pushes the price up and the leverage pushes the cash-down requirement back down; they roughly cancel. You need an equity check, plus debt the company itself carries.
+Start with the cash. Military contractor cash flows are about as steady as cash flows get, which is precisely what lets you borrow against them. A leveraged buyout of something this stable can carry 50% to 65% debt, so taking a company private costs an equity slice, not the whole sticker. The acquisition premium pushes the price up and the borrowed money pushes the cash-down requirement back down; they roughly cancel. You need an equity check, plus debt the company itself carries.
 
 Then comes the good objection: if the debt is serviced by the company's cash flows, and you are redirecting the company, do you not strangle the thing you just bought? In today's world, yes. That is the trap.
 
@@ -363,7 +363,7 @@ Military contractor stock floats are not infinitely liquid. A large acquisition 
 
 ### CFIUS and national security review
 
-Any large or unusual ownership change in a US military prime triggers Committee on Foreign Investment in the United States review. A coalition of US citizens buying shares is domestic and falls outside CFIUS, but the Department of Defense has informal mechanisms to slow or block ownership changes it considers adversarial to national security. This is a real obstacle, not a fatal one.
+Any large or unusual ownership change in a major US military contractor triggers Committee on Foreign Investment in the United States review. A coalition of US citizens buying shares is domestic and falls outside CFIUS, but the Department of Defense has informal mechanisms to slow or block ownership changes it considers adversarial to national security. This is a real obstacle, not a fatal one.
 
 **Mitigation:** CFIUS reviews substance: domestic ownership, disclosed intent, no foreign control, and classified programs left under existing cleared management. The campaign has all four. The presentation's job is to make that substance legible.
 
@@ -371,13 +371,13 @@ Any large or unusual ownership change in a US military prime triggers Committee 
 
 ### Staggered boards and poison pills
 
-Most military primes have anti-takeover provisions that delay control even with majority ownership. Staggered boards can be replaced only one-third per year. Poison pills can dilute acquirers the board deems hostile.
+Most big military contractors have anti-takeover provisions that delay control even with majority ownership. Staggered boards can be replaced only one-third per year. Poison pills can dilute acquirers the board deems hostile.
 
 **Mitigation:** Practical control takes 2-3 years post-acquisition rather than immediate. Shareholder resolutions and demand letters operate in parallel during the transition period and produce most of the lobbying-redirection benefit before formal board control is achieved. The "loving" framing also matters here: poison pills are designed to deter acquirers who plan to extract value at the expense of existing shareholders. They are harder to justify against an acquirer mathematically demonstrating that existing shareholders are richer under the takeover than under the status quo.
 
 ### Coordination capacity
 
-Buying half the float of every Western military prime requires coordinating millions of purchasers. This is a real operational challenge, though not the corporate-campaign kind. It is closer to the chain-letter or viral-meme kind: distributed, opt-in, low-friction per participant.
+Buying half the float of every big Western military contractor requires coordinating millions of purchasers. This is a real operational challenge, though not the corporate-campaign kind. It is closer to the chain-letter or viral-meme kind: distributed, opt-in, low-friction per participant.
 
 **Mitigation:** A standardized acquisition vehicle (e.g., an index fund or trust dedicated to the takeover) that anyone can buy into for the price of one share. Open-source coordination of which contractors are being targeted in which quarter. The same recruitment funnel as the [shirts campaign](handout.qmd) and the [lawsuit campaign](lawsuit.qmd).
 
@@ -454,11 +454,11 @@ The closest thing to a loser is the roughly 2,000 people currently paid to keep 
 
 ### The Ledger
 
-Every stakeholder, before and after. This is the no-adversaries claim in auditable form.
+Every person with skin in the game, before and after. This is the no-adversaries claim in auditable form.
 
 | Who | Status quo | After the takeover |
 |---|---|---|
-| Existing shareholders | Hold military prime stock | Same stock, repriced upward by the buy-up |
+| Existing shareholders | Hold military contractor stock | Same stock, repriced upward by the buy-up |
 | Employees of the primes | Build weapons on cost-plus | Same desks plus the medical pivot; headcount up |
 | Directors and officers | The same disease risk as everyone | ~{{< var avg_life_extension_per_beneficiary >}} of additional healthy life |
 | Early buyers | Hold cash | Bought probability while it was cheap |

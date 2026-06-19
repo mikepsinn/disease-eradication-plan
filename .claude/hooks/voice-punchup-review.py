@@ -31,6 +31,7 @@ import os
 import json
 import time
 import io
+import subprocess
 from pathlib import Path
 
 if hasattr(sys.stdout, 'reconfigure'):
@@ -104,6 +105,29 @@ def changed_prose(since: float) -> list:
     return out
 
 
+def scan_hits(files: list) -> str:
+    """Run the deterministic banned-phrase linter (scripts/voice-check.py) on the
+    changed files and return its combined output. This is the mechanical net under
+    the spots judgment keeps missing ('same trade', 'defense', 'proxy campaign'):
+    the punch-up pass catches novel cute/salesy lines, the scanner catches the exact
+    repeat offenders the style guide bans."""
+    checker = ROOT / "scripts" / "voice-check.py"
+    if not checker.exists() or not files:
+        return ""
+    out = []
+    for f in files:
+        try:
+            r = subprocess.run(
+                [sys.executable, str(checker), str(ROOT / f)],
+                capture_output=True, text=True, timeout=15,
+            )
+            if r.returncode != 0 and r.stdout.strip():
+                out.append(r.stdout.rstrip())
+        except Exception:
+            pass
+    return "\n".join(out)
+
+
 DIRECTIVE = """VOICE PUNCH-UP PASS REQUIRED before you finish.
 
 You changed these book files this turn:
@@ -138,8 +162,18 @@ def main() -> None:
     if len(files) > len(shown):
         filelist += f"\n  ... and {len(files) - len(shown)} more"
 
+    directive = DIRECTIVE.format(filelist=filelist)
+    hits = scan_hits(files)
+    if hits:
+        directive += (
+            "\n\nThe deterministic voice-check scanner (scripts/voice-check.py) also "
+            "flagged these exact phrases, which the STYLE_GUIDE bans. Fix each one, or "
+            "justify the keep (a buzzword survives only when you are quoting it to mock "
+            "it):\n\n" + hits
+        )
+
     save_ts(now)  # advance the clock so this turn's edits are not re-flagged next turn
-    sys.stderr.write(DIRECTIVE.format(filelist=filelist) + "\n")
+    sys.stderr.write(directive + "\n")
     sys.exit(2)  # block
 
 
