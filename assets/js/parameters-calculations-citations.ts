@@ -4769,6 +4769,37 @@ export const DEFENSE_TAKEOVER_COST_TOTAL: Parameter = {
   manualPageTitle: "The Loving Takeover",
 };
 
+export const DEFENSE_TAKEOVER_PCT_ANNUAL_SAVINGS: Parameter = {
+  value: 0.028114086956521737,
+  parameterName: "DEFENSE_TAKEOVER_PCT_ANNUAL_SAVINGS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_pct_annual_savings",
+  unit: "rate",
+  displayName: "Military Takeover Cost as Share of Annual Global Saving",
+  description: "Cost to acquire controlling stakes in all major Western military contractors, expressed as a share of one year of global saving. Roughly ten days of what humanity sets aside annually.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_ANNUAL_SAVINGS",
+  latex: "\\begin{gathered}\nC_{takeover}/S_{annual} = \\frac{C_{takeover}}{S_{annual}} = \\frac{\\$873B}{\\$31.1T} = 2.81\\%\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\\\[0.5em]\n\\text{where } S_{annual} = s_{global} \\times GDP_{global} = 27\\% \\times \\$115T = \\$31.1T\n\\end{gathered}",
+  confidenceInterval: [0.025696016318021157, 0.03100730189969515],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Loving Takeover",
+};
+
+export const DEFENSE_TAKEOVER_PCT_INVESTABLE_ASSETS: Parameter = {
+  value: 0.002862106229508197,
+  parameterName: "DEFENSE_TAKEOVER_PCT_INVESTABLE_ASSETS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-defense_takeover_pct_investable_assets",
+  unit: "rate",
+  displayName: "Military Takeover Cost as Share of Global Investable Assets",
+  description: "Cost to acquire controlling stakes in all major Western military contractors, expressed as a share of total global investable assets. The affordability framing: the entire takeover is a rounding error against the world's investable wealth.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_INVESTABLE_ASSETS",
+  latex: "\\begin{gathered}\nC_{takeover}/A_{investable} = \\frac{C_{takeover}}{Assets_{invest}} = \\frac{\\$873B}{\\$305T} = 0.286\\%\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Loving Takeover",
+};
+
 export const DESTRUCTIVE_ECONOMY_25PCT_YEAR: Parameter = {
   value: 2033.0,
   parameterName: "DESTRUCTIVE_ECONOMY_25PCT_YEAR",
@@ -5970,6 +6001,53 @@ export const FULL_INFLUENCE_COST_ACTIVIST: Parameter = {
   manualPageTitle: "The Loving Takeover",
 };
 
+export const FULL_INFLUENCE_COST_PER_HUMAN: Parameter = {
+  value: 213.5553,
+  parameterName: "FULL_INFLUENCE_COST_PER_HUMAN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-full_influence_cost_per_human",
+  unit: "USD",
+  displayName: "Full Influence Package Cost per Human",
+  description: "Per-person cost of the full influence package (defense primes plus activist stakes in every other government-controlling sector) distributed across global population",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_POPULATION_2024",
+  latex: "\\begin{gathered}\nC_{influence,pp} = \\frac{C_{influence}}{Pop_{global}} = \\frac{\\$1.71T}{8B} = \\$214\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + 0.05 \\times MarketCap_{sectors}\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+  confidenceInterval: [209.19132084045313, 218.10970829082635],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Loving Takeover",
+};
+
+export const FULL_INFLUENCE_PCT_ANNUAL_SAVINGS: Parameter = {
+  value: 0.05502229951690821,
+  parameterName: "FULL_INFLUENCE_PCT_ANNUAL_SAVINGS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-full_influence_pct_annual_savings",
+  unit: "rate",
+  displayName: "Full Influence Cost as Share of Annual Global Saving",
+  description: "Cost of the full influence package (every government-controlling industry, not just defense) as a share of one year of global saving.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_ANNUAL_SAVINGS",
+  latex: "\\begin{gathered}\nC_{influence}/S_{annual} = \\frac{C_{influence}}{S_{annual}} = \\frac{\\$1.71T}{\\$31.1T} = 5.5\\%\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + 0.05 \\times MarketCap_{sectors}\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\\\[0.5em]\n\\text{where } S_{annual} = s_{global} \\times GDP_{global} = 27\\% \\times \\$115T = \\$31.1T\n\\end{gathered}",
+  confidenceInterval: [0.050289874553921574, 0.06068463311558671],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Loving Takeover",
+};
+
+export const FULL_INFLUENCE_PCT_INVESTABLE_ASSETS: Parameter = {
+  value: 0.005601450491803279,
+  parameterName: "FULL_INFLUENCE_PCT_INVESTABLE_ASSETS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-full_influence_pct_investable_assets",
+  unit: "rate",
+  displayName: "Full Influence Cost as Share of Global Investable Assets",
+  description: "Cost of the full influence package (every government-controlling industry, not just defense) as a share of total global investable assets. The broader takeover is still a fraction of one percent of the world's investable wealth.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
+  latex: "\\begin{gathered}\nC_{influence}/A_{investable} = \\frac{C_{influence}}{Assets_{invest}} = \\frac{\\$1.71T}{\\$305T} = 0.56\\%\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + 0.05 \\times MarketCap_{sectors}\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+  manualPageTitle: "The Loving Takeover",
+};
+
 export const GENE_THERAPY_DISEASE_COMBINATIONS: Parameter = {
   value: 20000000.0,
   parameterName: "GENE_THERAPY_DISEASE_COMBINATIONS",
@@ -6366,6 +6444,22 @@ export const GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL: Parameter = {
   confidenceInterval: [251944013945312.84, 544272263829645.25],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: Harnessing Greed to Eradicate Disease",
+};
+
+export const GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL: Parameter = {
+  value: 14900000000000.0,
+  parameterName: "GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_disease_total_market_cost_annual",
+  unit: "USD/year",
+  displayName: "Global Annual Total Market Cost of Disease",
+  description: "Total annual market cost of disease globally: direct medical costs ($9.9T) plus lost productivity from people too sick to work ($5T). This is the cash-cost sum a payer or economy actually bears, distinct from the DALY-based welfare burden, and is deliberately NOT added to that burden to avoid double-counting.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL + GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL",
+  latex: "\\begin{gathered}\nCost_{disease,market} \\\\\n= Cost_{medical,direct} + Loss_{productivity} \\\\\n= \\$9.9T + \\$5T \\\\\n= \\$14.9T\n\\end{gathered}",
+  confidenceInterval: [11924462024252.91, 18328394950626.133],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/cost-of-disease.html",
+  manualPageTitle: "The Cost of Disease",
 };
 
 export const GLOBAL_GOVERNMENT_EXPENSE_ANNUAL: Parameter = {
@@ -13098,6 +13192,8 @@ export const parameters = {
   CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20,
   DEFENSE_TAKEOVER_COST_PER_HUMAN,
   DEFENSE_TAKEOVER_COST_TOTAL,
+  DEFENSE_TAKEOVER_PCT_ANNUAL_SAVINGS,
+  DEFENSE_TAKEOVER_PCT_INVESTABLE_ASSETS,
   DESTRUCTIVE_ECONOMY_25PCT_YEAR,
   DESTRUCTIVE_ECONOMY_35PCT_YEAR,
   DESTRUCTIVE_ECONOMY_50PCT_YEAR,
@@ -13173,6 +13269,9 @@ export const parameters = {
   EXPLORATION_RATIO,
   FDA_TO_OXFORD_RECOVERY_TRIAL_TIME_MULTIPLIER,
   FULL_INFLUENCE_COST_ACTIVIST,
+  FULL_INFLUENCE_COST_PER_HUMAN,
+  FULL_INFLUENCE_PCT_ANNUAL_SAVINGS,
+  FULL_INFLUENCE_PCT_INVESTABLE_ASSETS,
   GENE_THERAPY_DISEASE_COMBINATIONS,
   GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL,
   GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST,
@@ -13198,6 +13297,7 @@ export const parameters = {
   GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP,
   GLOBAL_DISEASE_DEATHS_PER_MINUTE,
   GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
+  GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL,
   GLOBAL_GOVERNMENT_EXPENSE_ANNUAL,
   GLOBAL_HALE_GAP,
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
@@ -16131,9 +16231,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 823,
+  total: 829,
   external: 237,
-  calculated: 415,
+  calculated: 421,
   definitions: 171,
   citations: 181,
 } as const;

@@ -2128,6 +2128,38 @@
       "computeExpr": "(((DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * DEFENSE_TAKEOVER_CONTROL_FRACTION) * DEFENSE_TAKEOVER_ACQUISITION_PREMIUM)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
     },
+    "DEFENSE_TAKEOVER_PCT_ANNUAL_SAVINGS": {
+      "value": 0.028114086956521737,
+      "formatted": "2.81%",
+      "unit": "rate",
+      "description": "Cost to acquire controlling stakes in all major Western military contractors, expressed as a share of one year of global saving. Roughly ten days of what humanity sets aside annually.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_ANNUAL_SAVINGS",
+      "inputs": [
+        "DEFENSE_TAKEOVER_COST_TOTAL",
+        "GLOBAL_ANNUAL_SAVINGS"
+      ],
+      "computeExpr": "(DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_ANNUAL_SAVINGS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
+    "DEFENSE_TAKEOVER_PCT_INVESTABLE_ASSETS": {
+      "value": 0.002862106229508197,
+      "formatted": "0.286%",
+      "unit": "rate",
+      "description": "Cost to acquire controlling stakes in all major Western military contractors, expressed as a share of total global investable assets. The affordability framing: the entire takeover is a rounding error against the world's investable wealth.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_INVESTABLE_ASSETS",
+      "inputs": [
+        "DEFENSE_TAKEOVER_COST_TOTAL",
+        "GLOBAL_INVESTABLE_ASSETS"
+      ],
+      "computeExpr": "(DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_INVESTABLE_ASSETS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
     "DEMOCIDE_TOTAL_20TH_CENTURY": {
       "value": 262000000.0,
       "formatted": "262 million deaths",
@@ -3998,6 +4030,54 @@
       "computeExpr": "(DEFENSE_TAKEOVER_COST_TOTAL + (0.05 * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP))",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
     },
+    "FULL_INFLUENCE_COST_PER_HUMAN": {
+      "value": 213.5553,
+      "formatted": "$214",
+      "unit": "USD",
+      "description": "Per-person cost of the full influence package (defense primes plus activist stakes in every other government-controlling sector) distributed across global population",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_POPULATION_2024",
+      "inputs": [
+        "FULL_INFLUENCE_COST_ACTIVIST",
+        "GLOBAL_POPULATION_2024"
+      ],
+      "computeExpr": "(FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_POPULATION_2024)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
+    "FULL_INFLUENCE_PCT_ANNUAL_SAVINGS": {
+      "value": 0.05502229951690821,
+      "formatted": "5.5%",
+      "unit": "rate",
+      "description": "Cost of the full influence package (every government-controlling industry, not just defense) as a share of one year of global saving.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_ANNUAL_SAVINGS",
+      "inputs": [
+        "FULL_INFLUENCE_COST_ACTIVIST",
+        "GLOBAL_ANNUAL_SAVINGS"
+      ],
+      "computeExpr": "(FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_ANNUAL_SAVINGS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
+    "FULL_INFLUENCE_PCT_INVESTABLE_ASSETS": {
+      "value": 0.005601450491803279,
+      "formatted": "0.56%",
+      "unit": "rate",
+      "description": "Cost of the full influence package (every government-controlling industry, not just defense) as a share of total global investable assets. The broader takeover is still a fraction of one percent of the world's investable wealth.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
+      "inputs": [
+        "FULL_INFLUENCE_COST_ACTIVIST",
+        "GLOBAL_INVESTABLE_ASSETS"
+      ],
+      "computeExpr": "(FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html"
+    },
     "FUNDAMENTALLY_UNAVOIDABLE_DEATH_PCT": {
       "value": 0.07372192099147949,
       "formatted": "7.37%",
@@ -4976,6 +5056,22 @@
       ],
       "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html"
+    },
+    "GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL": {
+      "value": 14900000000000.0,
+      "formatted": "$14.9 trillion",
+      "unit": "USD/year",
+      "description": "Total annual market cost of disease globally: direct medical costs ($9.9T) plus lost productivity from people too sick to work ($5T). This is the cash-cost sum a payer or economy actually bears, distinct from the DALY-based welfare burden, and is deliberately NOT added to that burden to avoid double-counting.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": "GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL + GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL",
+      "inputs": [
+        "GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL",
+        "GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL"
+      ],
+      "computeExpr": "(GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL + GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-disease.html"
     },
     "GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN": {
       "value": 0.25,

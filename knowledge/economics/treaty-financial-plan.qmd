@@ -23,7 +23,7 @@ aliases:
   - /knowledge/economics/financial-plan.html
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Most financial plans are complicated because the writers are confused or lying. This one is complicated because you're convincing 195 countries to voluntarily stop buying so many weapons while paying your investors forever.
+Most financial plans are complicated because the writers are confused or lying. This one is complicated because you're convincing {{< var chain_world_leader_count >}} to voluntarily stop buying so many weapons while paying your investors forever.
 
 The architecture is embarrassingly simple. Raise {{< var treaty_campaign_total_cost >}}. Spend it to pass the treaty. Manage {{< var treaty_annual_funding >}}+ annually forever. Three things. That's the whole financial plan. Three things. The rest of this chapter explains each one.
 
@@ -37,7 +37,7 @@ The bonds return {{< var victory_bond_annual_return_pct >}} annually. This looks
 
 You raise {{< var treaty_campaign_total_cost >}} in 12-24 months. Donations would require generosity. Bonds require greed. Greed is faster. 
 
-Why {{< var treaty_campaign_total_cost >}}? Your opposition spends $450M/year to keep things exactly as terrible as they are (pharma lobbying at roughly $300M/year plus the military-industrial complex at roughly $150M/year). A subscription to suffering. You raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generates {{< var treaty_annual_funding >}}/year FOREVER. Over a 10-year campaign, opposition spends roughly $4.5B to your $1B. But their $450M/year is spread across thousands of contracts and dozens of incumbents. Your $1B is aimed at a single treaty. Concentrated offense beats diffuse defense. This is military strategy, which is ironic, and also the only kind of strategy your species respects.
+Why {{< var treaty_campaign_total_cost >}}? Your opposition spends $450M/year to keep things exactly as terrible as they are (pharma lobbying at roughly $300M/year plus the military-industrial complex at roughly $150M/year). A subscription to suffering. You raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generates {{< var treaty_annual_funding >}}/year FOREVER. Over a 10-year campaign, opposition spends roughly $4.5B to your {{< var treaty_campaign_total_cost >}}. But their $450M/year is spread across thousands of contracts and dozens of incumbents. Your {{< var treaty_campaign_total_cost >}} is aimed at a single treaty. Concentrated offense beats diffuse defense. This is military strategy, which is ironic, and also the only kind of strategy your species respects.
 
 Nobody gets the upside unless it works. Lawyers can take success-based compensation. Team compensation is modest cash plus the same [Earth Optimization Fund](earth-optimization-fund.qmd) exposure the investors hold. This is how you know it's not a government program.
 
@@ -80,7 +80,7 @@ The one-time activation energy to convince {{< var global_population_2024_nounit
 
 ![Traditional diplomacy: slow, expensive, mostly cocktail parties. AI-accelerated diplomacy: fast, cheap, mostly algorithms. Both equally likely to prevent nuclear war.](/assets/images/treaty-financial-plan/treaty-financial-plan-section-key-innovations-bw-academic.jpg)
 
-Viral referendum mechanics bring the cost down to $0.20/vote at the optimistic lower bound (base case $0.50-0.89), compared to $5-15 per voter through traditional channels. Getting someone to click "I prefer not dying" costs less than getting someone to click "I prefer Pepsi." You also focus on 20 high-impact countries, not all 195. You don't need Liechtenstein's permission. Liechtenstein has 39,000 people. That's a concert venue, not a geopolitical obstacle.
+Viral referendum mechanics bring the cost down to $0.20/vote at the optimistic lower bound (base case $0.50-0.89), compared to $5-15 per voter through traditional channels. Getting someone to click "I prefer not dying" costs less than getting someone to click "I prefer Pepsi." You also focus on 20 high-impact countries, not all {{< var chain_world_leader_count_nounit >}}. You don't need Liechtenstein's permission. Liechtenstein has 39,000 people. That's a concert venue, not a geopolitical obstacle.
 
 Timeline is 36-60 months (optimistic) to 120+ months (realistic, given that you're humans). The landmine ban took 6 years, and that was just agreeing not to hide explosives in the ground, which you'd think wouldn't require a treaty at all. You're betting on viral referendum mechanics and existing disarmament frameworks. Also on the assumption that your species wants to survive, which, based on my observation, remains an open question.
 
@@ -119,7 +119,7 @@ Example with 1M participants:
 
 {{< var dih_treasury_to_medical_research_annual >}} / 1M = ~$21,800 per patient per year
 
-(Note: 80% of {{< var treaty_annual_funding >}} goes to medical research after bond and IAB payouts)
+(Note: {{< var dih_treasury_medical_research_pct >}} of {{< var treaty_annual_funding >}} goes to medical research after bond and IAB payouts)
 
 As more patients join:
 

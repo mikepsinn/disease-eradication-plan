@@ -90,7 +90,7 @@ The speculative early claim is your fractional exposure to the probability-weigh
 
 $$\text{price per share} = \frac{P(I) \times V}{\text{total shares}}$$
 
-**V** is the total addressable value EOS can capture: the NPV of the fraction of the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] that flows to EOS shareholders through portfolio appreciation. The base case uses Nordhaus (2004), who found innovators capture roughly 2.2% of the social value they create [@nordhaus2004]. That is not a law of physics. It is the benchmark.
+**V** is the total addressable value EOS can capture: the NPV of the fraction of the [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] that flows to EOS shareholders through portfolio appreciation. The base case uses Nordhaus (2004), who found innovators capture roughly {{< var eos_social_value_capture_pct >}} of the social value they create [@nordhaus2004]. That is not a law of physics. It is the benchmark.
 
 A governance product can capture less than that because some benefits are public goods: fewer wars, cheaper cures, lower tax drag, less policy volatility. Those benefits spill into the whole economy whether or not EOS owns every pipe they flow through.
 
@@ -98,7 +98,7 @@ But the leakage is not wasted from an investor's point of view. A diversified in
 
 EOS can also capture more than the ordinary innovator benchmark because the thesis is tradable before it is obvious. EOS can buy the constrained assets first. If copycat funds arrive later and buy the same defense, pharma, finance, and energy shares, that demand validates the thesis and reprices assets EOS already owns. Normal competitors take margin. Early EOS competitors may create demand for the inventory.
 
-At the base case: $101T/yr dysfunction tax × 2.2% capture × perpetuity at 3% discount rate ≈ **{{< var eos_equity_value_v >}}**. Expand the tree below to adjust any assumption.
+At the base case: {{< var political_dysfunction_global_opportunity_cost_total >}}/yr dysfunction tax × {{< var eos_social_value_capture_pct >}} capture × perpetuity at {{< var npv_discount_rate_standard >}} discount rate ≈ **{{< var eos_equity_value_v >}}**. Expand the tree below to adjust any assumption.
 
 Product revenue, consulting, board comp, platform subscriptions, does not enter V. It funds operations. V is what happens to the portfolio if the campaign works.
 
@@ -453,7 +453,7 @@ The correct way to measure the cost of the governance leverage is not the capita
 
 $$\text{ROI}_\text{leverage} = \frac{\text{value of governance influence}}{\text{return elsewhere} - \text{return on MIC activist portfolio}}$$
 
-If the activist campaign causes MIC stocks to outperform your alternatives (Layer 2 appreciation), the denominator is negative, you are paid to hold the governance leverage. If MIC stocks merely match the market, the denominator is zero and the ROI is infinite. If they underperform by 2% on $150M, the annual cost of the leverage is $3 million, still a small price for perpetual influence over $60M/yr of lobbying and a policy apparatus pointing at an $886B annual budget.
+If the activist campaign causes MIC stocks to outperform your alternatives (Layer 2 appreciation), the denominator is negative, you are paid to hold the governance leverage. If MIC stocks merely match the market, the denominator is zero and the ROI is infinite. If they underperform by 2% on $150M, the annual cost of the leverage is $3 million, still a small price for perpetual influence over $60M/yr of lobbying and a policy apparatus pointing at an {{< var us_military_spending_2024_annual >}} annual budget.
 
 The company spending $60M/yr on lobbying has nothing to show for it in year two. EOS has the same influence and an appreciating asset.
 

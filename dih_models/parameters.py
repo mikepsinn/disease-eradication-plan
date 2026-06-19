@@ -9337,6 +9337,20 @@ GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL = Parameter(
     latex_symbol=r"Loss_{productivity}",  # LaTeX symbol for equations
 )  # $5 trillion annually
 
+GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL = Parameter(
+    GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL + GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL,
+    manual_ref="knowledge/problem/cost-of-disease.qmd",
+    source_type="calculated",
+    description="Total annual market cost of disease globally: direct medical costs ($9.9T) plus lost productivity from people too sick to work ($5T). This is the cash-cost sum a payer or economy actually bears, distinct from the DALY-based welfare burden, and is deliberately NOT added to that burden to avoid double-counting.",
+    display_name="Global Annual Total Market Cost of Disease",
+    unit="USD/year",
+    formula="GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL + GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL",
+    inputs=["GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL", "GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL"],
+    compute=lambda ctx: ctx["GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL"] + ctx["GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL"],
+    keywords=["15t", "disease cost", "total", "market cost", "productivity", "direct medical"],
+    latex_symbol=r"Cost_{disease,market}",
+)  # ~$15 trillion annually
+
 # Annual welfare cost of disease: DALYs × avoidable % × QALY value
 # Uses consistent QALY valuation ($150K) matching all other health impact calculations.
 # Medical costs and productivity losses are standalone market-cost metrics, NOT summed here,
@@ -14769,6 +14783,34 @@ DEFENSE_TAKEOVER_COST_PER_HUMAN = Parameter(
     latex_symbol=r"C_{takeover,pp}",
 )
 
+DEFENSE_TAKEOVER_PCT_INVESTABLE_ASSETS = Parameter(
+    DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_INVESTABLE_ASSETS,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Cost to acquire controlling stakes in all major Western military contractors, expressed as a share of total global investable assets. The affordability framing: the entire takeover is a rounding error against the world's investable wealth.",
+    display_name="Military Takeover Cost as Share of Global Investable Assets",
+    unit="rate",
+    formula="DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_INVESTABLE_ASSETS",
+    inputs=["DEFENSE_TAKEOVER_COST_TOTAL", "GLOBAL_INVESTABLE_ASSETS"],
+    compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_TOTAL"] / ctx["GLOBAL_INVESTABLE_ASSETS"],
+    keywords=["loving takeover", "investable assets", "cost in context", "affordability"],
+    latex_symbol=r"C_{takeover}/A_{investable}",
+)
+
+DEFENSE_TAKEOVER_PCT_ANNUAL_SAVINGS = Parameter(
+    DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_ANNUAL_SAVINGS,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Cost to acquire controlling stakes in all major Western military contractors, expressed as a share of one year of global saving. Roughly ten days of what humanity sets aside annually.",
+    display_name="Military Takeover Cost as Share of Annual Global Saving",
+    unit="rate",
+    formula="DEFENSE_TAKEOVER_COST_TOTAL / GLOBAL_ANNUAL_SAVINGS",
+    inputs=["DEFENSE_TAKEOVER_COST_TOTAL", "GLOBAL_ANNUAL_SAVINGS"],
+    compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_TOTAL"] / ctx["GLOBAL_ANNUAL_SAVINGS"],
+    keywords=["loving takeover", "global saving", "cost in context", "affordability"],
+    latex_symbol=r"C_{takeover}/S_{annual}",
+)
+
 DEFENSE_PRIMES_TRADEABLE_FLOAT = Parameter(
     880_000_000_000,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
@@ -14822,6 +14864,48 @@ FULL_INFLUENCE_COST_ACTIVIST = Parameter(
     compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_TOTAL"] + 0.05 * ctx["GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP"],
     keywords=["loving takeover", "activist investor", "influence", "lobbying", "acquisition"],
     latex_symbol=r"C_{influence}",
+)
+
+FULL_INFLUENCE_COST_PER_HUMAN = Parameter(
+    FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_POPULATION_2024,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Per-person cost of the full influence package (defense primes plus activist stakes in every other government-controlling sector) distributed across global population",
+    display_name="Full Influence Package Cost per Human",
+    unit="USD",
+    formula="FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_POPULATION_2024",
+    inputs=["FULL_INFLUENCE_COST_ACTIVIST", "GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["FULL_INFLUENCE_COST_ACTIVIST"] / ctx["GLOBAL_POPULATION_2024"],
+    keywords=["loving takeover", "influence", "per person", "cost"],
+    latex_symbol=r"C_{influence,pp}",
+)
+
+FULL_INFLUENCE_PCT_INVESTABLE_ASSETS = Parameter(
+    FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Cost of the full influence package (every government-controlling industry, not just defense) as a share of total global investable assets. The broader takeover is still a fraction of one percent of the world's investable wealth.",
+    display_name="Full Influence Cost as Share of Global Investable Assets",
+    unit="rate",
+    formula="FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
+    inputs=["FULL_INFLUENCE_COST_ACTIVIST", "GLOBAL_INVESTABLE_ASSETS"],
+    compute=lambda ctx: ctx["FULL_INFLUENCE_COST_ACTIVIST"] / ctx["GLOBAL_INVESTABLE_ASSETS"],
+    keywords=["loving takeover", "investable assets", "cost in context", "affordability", "full influence"],
+    latex_symbol=r"C_{influence}/A_{investable}",
+)
+
+FULL_INFLUENCE_PCT_ANNUAL_SAVINGS = Parameter(
+    FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_ANNUAL_SAVINGS,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Cost of the full influence package (every government-controlling industry, not just defense) as a share of one year of global saving.",
+    display_name="Full Influence Cost as Share of Annual Global Saving",
+    unit="rate",
+    formula="FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_ANNUAL_SAVINGS",
+    inputs=["FULL_INFLUENCE_COST_ACTIVIST", "GLOBAL_ANNUAL_SAVINGS"],
+    compute=lambda ctx: ctx["FULL_INFLUENCE_COST_ACTIVIST"] / ctx["GLOBAL_ANNUAL_SAVINGS"],
+    keywords=["loving takeover", "global saving", "cost in context", "affordability", "full influence"],
+    latex_symbol=r"C_{influence}/S_{annual}",
 )
 
 # ============================================================================

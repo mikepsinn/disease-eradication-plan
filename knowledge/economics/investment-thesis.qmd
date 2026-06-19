@@ -135,23 +135,21 @@ scores:
 ## The Contract You Already Signed
 
 ```
-+---------------------------------------+
-|                                       |
-|  YOU PAY:        $36T / yr           |
-|  FORCED SERVICE: general welfare     |
-|                                       |
-|  since 1900: $170T spent murdering   |
-|  310M of their own employers         |
-|                                       |
-|  any other employee:  terminated     |
-|  these guys: $1T raise every year    |
-|                                       |
-+---------------------------------------+
+THE CONTRACT YOU ALREADY SIGNED
+
+  YOU PAY:         {{< var global_government_expense_annual >}} / yr
+  FORCED SERVICE:  general welfare
+
+  Since 1900: {{< var cumulative_military_spending_fed_era >}} spent murdering
+  {{< var war_deaths_since_1900_nounit >}} of their own employers.
+
+  Any other employee:  terminated.
+  These guys:          a $1T raise every year.
 ```
 
-> So apparently someone decided it's necessary to murder them on occasion. Like we made this thing called governments that are supposed to promote the general welfare, which is I guess median health and wealth. Or more specifically if you want to measure it, median health-adjusted life expectancy and median after-tax inflation-adjusted income. So theoretically, if you were running one of these governments, you would measure these things. Then you would try to make policies and allocate resources to different activities and then see which ones maximized these two measurable outcomes which you are trying to improve. For some reason governments do not do this. We have like 193 countries and hundreds of years of data about different public policies and budget allocations and so we can analyze this and determine which policies maximize the health and wealth of the population and then we could like just do those policies.
+> So apparently someone decided it's necessary to murder them on occasion. Like we made this thing called governments that are supposed to promote the general welfare, which is I guess median health and wealth. Or more specifically if you want to measure it, median health-adjusted life expectancy and median after-tax inflation-adjusted income. So theoretically, if you were running one of these governments, you would measure these things. Then you would try to make policies and allocate resources to different activities and then see which ones maximized these two measurable outcomes which you are trying to improve. For some reason governments do not do this. We have like {{< var chain_world_leader_count_nounit >}} countries and hundreds of years of data about different public policies and budget allocations and so we can analyze this and determine which policies maximize the health and wealth of the population and then we could like just do those policies.
 >
-> I have done this and like relative to the optimal policies that could be implemented, Earth currently wastes about \$101 trillion a year on idiotic policies. So this compounds. And so these governments that we pay about \$36 trillion a year to provide this service of promoting general welfare for us, since 1900 they have spent \$170 trillion of this murdering 310 million of their employers, which I feel would be grounds for termination probably under any employment contract any human has ever signed on Earth. But for some reason we just keep giving them an extra \$36 trillion every year. So they suck at it.
+> I have done this and like relative to the optimal policies that could be implemented, Earth currently wastes about \$101 trillion a year on idiotic policies. So this compounds. And so these governments that we pay about {{< var global_government_expense_annual >}} a year to provide this service of promoting general welfare for us, since 1900 they have spent {{< var cumulative_military_spending_fed_era >}} of this murdering {{< var war_deaths_since_1900_nounit >}} of their employers, which I feel would be grounds for termination probably under any employment contract any human has ever signed on Earth. But for some reason we just keep giving them an extra {{< var global_government_expense_annual >}} every year. So they suck at it.
 
 ---
 
@@ -252,7 +250,7 @@ scores:
 +---------------------------------------+
 ```
 
-> So there's an important lesson here. A lot of people attribute this problem to selfishness and greed, like the diffuse costs of everybody being retarded and the global economy losing tens or hundreds of trillions of dollars in potential GDP from everyone not being so retarded. If you do the math, even the shareholders of Ethyl Gasoline Corporation would have been 20 to 60% richer if they had used that money spent on making everyone retarded and manipulating the government to allow them to continue making everyone retarded, instead on things that are useful to society such as biomedical research. In the long run, they had to do this transition anyway, and in the long run even they themselves would have been vastly richer for not doing this. But for the fact that people assumed that the people in charge were not retarded.
+> So there's an important lesson here. A lot of people attribute this problem to selfishness and greed, like the diffuse costs of everybody being retarded and the global economy losing tens or hundreds of trillions of dollars in potential GDP from everyone not being so retarded. If you do the math, even the shareholders of Ethyl Gasoline Corporation would have been {{< var ethyl_shareholder_counterfactual_wealth_gain >}} richer if they had used that money spent on making everyone retarded and manipulating the government to allow them to continue making everyone retarded, instead on things that are useful to society such as biomedical research. In the long run, they had to do this transition anyway, and in the long run even they themselves would have been vastly richer for not doing this. But for the fact that people assumed that the people in charge were not retarded.
 
 ---
 
@@ -286,24 +284,21 @@ scores:
 ## Disease Is Ethyl Corp at Civilizational Scale
 
 ```
-+---------------------------------------+
-|                                       |
-|  4 billion sick right now             |
-|  550 million full-time caregivers     |
-|  $15 trillion / yr total cost         |
-|                                       |
-|  possible drug-disease combos: 9.5M   |
-|  tested: 32,500  =  0.3%             |
-|  queue at 15/yr: 443 years            |
-|                                       |
-|  Pentagon unaccounted: $2.46T         |
-|  = 546 years of clinical trials       |
-|    sitting in a black hole            |
-|                                       |
-+---------------------------------------+
+DISEASE IS ETHYL CORP AT CIVILIZATIONAL SCALE
+
+  4 billion sick right now.
+  550 million full-time caregivers.
+  Total cost: {{< var global_disease_total_market_cost_annual >}} / yr.
+
+  Possible drug-disease combos:  {{< var drug_disease_combinations_possible_nounit >}}
+  Tested:                        {{< var tested_relationships_estimate_nounit >}}  ({{< var exploration_ratio >}})
+  Queue at {{< var new_disease_first_treatments_per_year_nounit >}}/yr:               {{< var status_quo_queue_clearance_years_nounit >}} years
+
+  Pentagon unaccounted:  {{< var pentagon_unaccounted_funds >}}
+  = {{< var pentagon_unaccounted_clinical_trial_years_nounit >}} years of clinical trials in a black hole.
 ```
 
-> The defense industry is the biggest one, but it is not the only one. Today, 4 billion people are sick with chronic or infectious diseases. There are 550 million people whose entire job is taking care of them. The cost is roughly \$15 trillion a year. There are 9.5 million possible drug-disease combinations we could test. We have tested 32,500. That is 0.3% of the space. At the current rate of 15 new disease-treatment combinations approved per year, it will take 443 years to clear the existing queue. The \$2.46 trillion that the Pentagon cannot account for across 8 failed audits, all by itself, represents 546 years of clinical trials at current funding levels. This is Ignaz Semmelweis's unwashed hands, scaled to a civilization. The cure is not missing. The decision to fund the search is.
+> The defense industry is the biggest one, but it is not the only one. Today, 4 billion people are sick with chronic or infectious diseases. There are 550 million people whose entire job is taking care of them. The cost is roughly {{< var global_disease_total_market_cost_annual >}} a year. There are {{< var drug_disease_combinations_possible_nounit >}} possible drug-disease combinations we could test. We have tested {{< var tested_relationships_estimate_nounit >}}. That is {{< var exploration_ratio >}} of the space. At the current rate of {{< var new_disease_first_treatments_per_year_nounit >}} new disease-treatment combinations approved per year, it will take {{< var status_quo_queue_clearance_years_nounit >}} years to clear the existing queue. The {{< var pentagon_unaccounted_funds >}} that the Pentagon cannot account for across 8 failed audits, all by itself, represents {{< var pentagon_unaccounted_clinical_trial_years_nounit >}} years of clinical trials at current funding levels. This is Ignaz Semmelweis's unwashed hands, scaled to a civilization. The cure is not missing. The decision to fund the search is.
 
 ---
 
@@ -351,7 +346,7 @@ scores:
 +---------------------------------------+
 ```
 
-> So I would argue that today we find ourselves in a similar situation. Whereby you have a lot of corporations with boards that are run by some people that are retarded relative to the optimal, perfect information and perfect rationality. And that there exists today lots of data and intelligence to make superior decisions to those being made by these board members. Case in point, making 122 apocalypses worth of nuclear bombs when you only have one civilization to apocalypse.
+> So I would argue that today we find ourselves in a similar situation. Whereby you have a lot of corporations with boards that are run by some people that are retarded relative to the optimal, perfect information and perfect rationality. And that there exists today lots of data and intelligence to make superior decisions to those being made by these board members. Case in point, making {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses worth of nuclear bombs when you only have one civilization to apocalypse.
 
 ---
 
@@ -375,7 +370,7 @@ scores:
 +---------------------------------------+
 ```
 
-> The math works for the shareholders too. The same model that says the [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] makes the average person 89% richer by year 20 says the defense companies' own shareholders come out ahead in the redirected world. They are extracting value from a shrinking, destabilized economy. Redirect the lobbying toward the policies that grow the economy and their revenues grow with it. Their stock goes up. Their employees live longer. Their children inherit a healthier planet. The Ethyl Gasoline Corporation's shareholders would have been 20 to 60% richer if they had never put lead in the gas. We are not asking the defense contractors to be charitable. We are telling them what the math says.
+> The math works for the shareholders too. The same model that says the [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] makes the average person {{< var treaty_vs_current_median_income_multiplier_year_20_nounit >}}x richer by year 20 says the defense companies' own shareholders come out ahead in the redirected world. They are extracting value from a shrinking, destabilized economy. Redirect the lobbying toward the policies that grow the economy and their revenues grow with it. Their stock goes up. Their employees live longer. Their children inherit a healthier planet. The Ethyl Gasoline Corporation's shareholders would have been {{< var ethyl_shareholder_counterfactual_wealth_gain >}} richer if they had never put lead in the gas. We are not asking the defense contractors to be charitable. We are telling them what the math says.
 
 ---
 
@@ -398,7 +393,7 @@ scores:
 +---------------------------------------+
 ```
 
-> And by the way, in 1939 the United States military spending was about 3% of its current levels. And they won World War II in four years. After the war ended, the United States cut military spending by 88%. What followed was the greatest economic expansion in American history. The economy did not collapse. It erupted. Today we spend a trillion dollars more and we can't even keep the Strait of Hormuz open. And the reason is that in 1939 the free market had created an evolutionary industrial base that selected for competence in production. You had to be good at building stuff to get government contracts. Today we have an industrial base that selects for competence in corruption. You have to be good at lobbying to get government contracts. So we went from an industrial base that's good at building things to one that's good at extracting money. And the hundred billion dollars a year that the Pentagon just loses into a black hole and the thousand dollar screws and the eight consecutive failed audits are not bugs in the system. They're features of a system that selects for corruption over competence.
+> And by the way, in 1939 the United States military spending was about 3% of its current levels. And they won World War II in four years. After the war ended, the United States cut military spending by {{< var post_ww2_military_cut_pct >}}. What followed was the greatest economic expansion in American history. The economy did not collapse. It erupted. Today we spend a trillion dollars more and we can't even keep the Strait of Hormuz open. And the reason is that in 1939 the free market had created an evolutionary industrial base that selected for competence in production. You had to be good at building stuff to get government contracts. Today we have an industrial base that selects for competence in corruption. You have to be good at lobbying to get government contracts. So we went from an industrial base that's good at building things to one that's good at extracting money. And the hundred billion dollars a year that the Pentagon just loses into a black hole and the thousand dollar screws and the eight consecutive failed audits are not bugs in the system. They're features of a system that selects for corruption over competence.
 
 ---
 
@@ -423,7 +418,7 @@ scores:
 +---------------------------------------+
 ```
 
-> And there are legal mechanisms that require the boards to do this because they are required legally to act in the interest of their shareholders. And it is not in the financial interests of their shareholders to waste trillions of dollars on 122 apocalypses worth of mass murder capacity when we have one civilization and when everyone that they love, including themselves, is going to proceed to suffer and die of horrible diseases.
+> And there are legal mechanisms that require the boards to do this because they are required legally to act in the interest of their shareholders. And it is not in the financial interests of their shareholders to waste trillions of dollars on {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses worth of mass murder capacity when we have one civilization and when everyone that they love, including themselves, is going to proceed to suffer and die of horrible diseases.
 
 ---
 
@@ -472,7 +467,7 @@ scores:
 +---------------------------------------+
 ```
 
-> Okay, so my theory is one could make a company called Earth Optimization Services that could purchase sufficient shares of all these corporations which currently spend \$4 billion a year to get our government to make sub-optimal public policies and budgets. And that if you were to do this and you had a machine which I call the Optimitron which analyzes experimental data from lots of different countries over extended periods of time and determines which policies are most likely to make everyone as rich and healthy as possible, then this Earth Optimization Services could tell the lobbyists that these corporations employ to get these optimal policies implemented. And thereby making their shareholders significantly richer.
+> Okay, so my theory is one could make a company called Earth Optimization Services that could purchase sufficient shares of all these corporations which currently spend {{< var us_total_lobbying_annual >}} to get our government to make sub-optimal public policies and budgets. And that if you were to do this and you had a machine which I call the Optimitron which analyzes experimental data from lots of different countries over extended periods of time and determines which policies are most likely to make everyone as rich and healthy as possible, then this Earth Optimization Services could tell the lobbyists that these corporations employ to get these optimal policies implemented. And thereby making their shareholders significantly richer.
 
 ---
 
@@ -497,6 +492,32 @@ scores:
 ```
 
 > Start with Huntington Ingalls Industries, the sole builder of aircraft carriers in the United States. Market cap roughly \$10 billion. The Navy cannot buy carriers from anyone else. A demand letter and shareholder proposal costs \$5,000 to \$15,000 in legal drafting. A contested proxy campaign to win a board seat costs \$100,000 to \$500,000, funded by capital raised against the credibility of the prior campaign. Each success creates credibility, capital, and attention. Each funds the next. If someone copies the strategy, the thesis gets validated faster. More demand letters means faster board responses. More public analysis means more institutions have to answer the math. There is no other investment where your competitors helping the mission can also validate your thesis.
+
+---
+
+## Cost in Context
+
+```
+COST IN CONTEXT  --  THE STEERING WHEEL IS ON CLEARANCE
+
+  What does a controlling voice over the industries that
+  steer the world's governments actually cost?
+
+  TIER 1 -- full control of every major Western defense prime:
+      {{< var defense_takeover_cost_total >}}
+      = {{< var defense_takeover_pct_investable_assets >}} of all investable assets on Earth
+
+  TIER 2 -- ALSO an activist stake in every other government-
+  controlling sector (pharma, tech, insurance, oil and gas):
+      {{< var full_influence_cost_activist >}}
+      = {{< var full_influence_pct_investable_assets >}} of all investable assets on Earth
+
+  Total investable assets on Earth: {{< var global_investable_assets >}}.
+  Even a loud voice at EVERY table is about half of one percent
+  of the money already sitting in brokerage accounts.
+```
+
+> Here is the part that breaks people's brains. You assume buying control of the industries that run your governments is something only a government could afford. Tier one, full voting control of every major Western defense prime, is {{< var defense_takeover_cost_total >}}, which sounds enormous until you ask: enormous compared to what? It is {{< var defense_takeover_pct_investable_assets >}} of the {{< var global_investable_assets >}} in investable assets sitting on this planet, most of it doing nothing in particular. That is {{< var defense_takeover_cost_per_human >}} per living human. Now go bigger. Tier two keeps the defense primes and adds activist stakes in the top lobbyists of every other government-controlling sector, pharma, tech, insurance, oil and gas. That is the Engine No. 1 move: a tiny stake, a loud voice. The whole package is {{< var full_influence_cost_activist >}}, which is {{< var full_influence_pct_investable_assets >}} of investable assets, {{< var full_influence_cost_per_human >}} per human, or {{< var full_influence_pct_annual_savings >}} of everything your species saves in a single year. Buying a loud voice at every table that decides whether you live or die costs about twenty days of world saving. The reason nobody has done this is not that it is too expensive. It is that nobody thought to point the money at the steering wheel instead of the gas pedal.
 
 ---
 
@@ -594,7 +615,7 @@ scores:
 +---------------------------------------+
 ```
 
-> Therefore, I humbly request you assist Earth Optimization Services such that we may realize this objective. And what Earth Optimization Services would actually do if you think about it is just reclaim all of these currently wasted resources, all of this money that's being wasted on thousand dollar screws and lost in Pentagon black holes and spent on 121 unnecessary apocalypses, and return it to the shareholders. Which is you. All of you. And then you allocate it via the free market, which is the thing that we already know works better than central planning. So instead of 535 people in Congress deciding what to do with your money based on who gave them the most lobbying money, you decide what to do with your money based on what you actually need. And some of you will buy healthcare and some of you will fund research and some of you will buy more bombs if you want, but at least it will be your choice. 
+> Therefore, I humbly request you assist Earth Optimization Services such that we may realize this objective. And what Earth Optimization Services would actually do if you think about it is just reclaim all of these currently wasted resources, all of this money that's being wasted on thousand dollar screws and lost in Pentagon black holes and spent on {{< var nuclear_winter_spare_apocalypses_nounit >}} unnecessary apocalypses, and return it to the shareholders. Which is you. All of you. And then you allocate it via the free market, which is the thing that we already know works better than central planning. So instead of {{< var us_congress_member_count_nounit >}} people in Congress deciding what to do with your money based on who gave them the most lobbying money, you decide what to do with your money based on what you actually need. And some of you will buy healthcare and some of you will fund research and some of you will buy more bombs if you want, but at least it will be your choice. 
 >
 > Full terms and the investment calculator: [Earth Optimization Fund](../economics/earth-optimization-fund.qmd).
 
@@ -630,10 +651,10 @@ scores:
 | Time dilation in dreams | Peer-reviewed | Sleep research on subjective time perception |
 | Salvia divinorum time distortion | Published case reports | Pharmacological literature on salvinorin A |
 | Immortal jellyfish (*Turritopsis dohrnii*) | Confirmed | Marine biology textbooks |
-| Earth wastes \$101 trillion/year on suboptimal policies | Derived in book | [The Political Dysfunction Tax](/knowledge/appendix/political-dysfunction-tax.qmd) |
-| Governments spend \$36 trillion/year | External data | [World Bank government expense data](https://data.worldbank.org) |
-| 310 million employers murdered since 1900 | External data | [Democide statistics (R.J. Rummel)](https://www.hawaii.edu/powerkills/); [Cost of War](/knowledge/problem/cost-of-war.qmd) |
-| \$170 trillion spent on murder since 1900 | Derived in book | [Cost of War](/knowledge/problem/cost-of-war.qmd) |
+| Earth wastes {{< var political_dysfunction_global_opportunity_cost_total >}}/year on suboptimal policies | Derived in book | [The Political Dysfunction Tax](/knowledge/appendix/political-dysfunction-tax.qmd) |
+| Governments spend {{< var global_government_expense_annual >}}/year | External data | [World Bank government expense data](https://data.worldbank.org) |
+| {{< var war_deaths_since_1900_nounit >}} employers murdered since 1900 | External data | [Democide statistics (R.J. Rummel)](https://www.hawaii.edu/powerkills/); [Cost of War](/knowledge/problem/cost-of-war.qmd) |
+| {{< var cumulative_military_spending_fed_era >}} spent on murder since 1900 | Derived in book | [Cost of War](/knowledge/problem/cost-of-war.qmd) |
 | War on Drugs: overdoses rose from ~1,000 to ~107,000/yr over 53 years | External data | CDC drug overdose mortality data (1970-2023); DEA budget records |
 | Ethyl Gasoline Corporation / tetraethyl lead | Historical record | Banned in US 1996. IQ reduction documented by CDC. Discussed in [I Am Retarded](/knowledge/problem/i-am-retarded.qmd) |
 | Clair Patterson discovered lead contamination | Historical record | [Wikipedia](https://en.wikipedia.org/wiki/Clair_Cameron_Patterson). Note: discovery was in the 1960s, not the 1930s. The monologue's timeline is approximate but the substance is correct. |
@@ -641,14 +662,14 @@ scores:
 | Ignaz Semmelweis beaten to death in asylum | Historical record | [Wikipedia](https://en.wikipedia.org/wiki/Ignaz_Semmelweis). Died 1865. Discussed in [I Am Retarded](/knowledge/problem/i-am-retarded.qmd) |
 | 4 billion people sick with chronic or infectious diseases | External data | WHO Global Health Estimates; [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
 | 550 million caregivers worldwide | External data | ILO care economy estimates; [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
-| \$15 trillion annual disease burden | Derived | Direct + indirect costs; [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
-| 9.5 million possible drug-disease combinations | Derived | ~9,500 approved drugs x ~1,000 diseases; [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
-| 32,500 tested (0.3%) | Derived | ClinicalTrials.gov completed trials; [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
-| 443 years to clear queue at 15 approvals/year | Derived | 6,650 rare diseases / 15 FDA approvals/yr; [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
-| \$2.46 trillion Pentagon unaccounted = 546 trial years | Derived | DOD OIG audit findings; \$2.46T / \$4.5B per trial-year; [Cost of War](/knowledge/problem/cost-of-war.qmd); [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
-| 122 apocalypses worth of nuclear bombs | Derived in book | 12,121 warheads / 100 needed for nuclear winter. [The Apocalypse Markup](/knowledge/appendix/extinction-surplus.qmd); [Cost of War](/knowledge/problem/cost-of-war.qmd) |
-| \$4 billion in corporate lobbying | External data | [OpenSecrets](https://www.opensecrets.org/federal-lobbying) |
-| US military spending 3% of current levels in 1939 | Historical data | \$29B (1939) vs. \$886B (2024), constant 2024 dollars. [Cost of War](/knowledge/problem/cost-of-war.qmd) |
+| {{< var global_disease_total_market_cost_annual >}} annual disease burden | Derived | Direct + indirect costs; [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
+| {{< var drug_disease_combinations_possible_nounit >}} possible drug-disease combinations | Derived | ~9,500 approved drugs x ~1,000 diseases; [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
+| {{< var tested_relationships_estimate_nounit >}} tested (0.3%) | Derived | ClinicalTrials.gov completed trials; [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
+| {{< var status_quo_queue_clearance_years_nounit >}} years to clear queue at {{< var new_disease_first_treatments_per_year_nounit >}} approvals/year | Derived | 6,650 rare diseases / 15 FDA approvals/yr; [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
+| {{< var pentagon_unaccounted_funds >}} Pentagon unaccounted = 546 trial years | Derived | DOD OIG audit findings; \$2.46T / \$4.5B per trial-year; [Cost of War](/knowledge/problem/cost-of-war.qmd); [Cost of Disease](/knowledge/problem/cost-of-disease.qmd) |
+| {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses worth of nuclear bombs | Derived in book | {{< var global_warhead_count_nounit >}} warheads / {{< var nuclear_winter_warhead_threshold_nounit >}} needed for nuclear winter. [The Apocalypse Markup](/knowledge/appendix/extinction-surplus.qmd); [Cost of War](/knowledge/problem/cost-of-war.qmd) |
+| {{< var us_total_lobbying_annual >}} in corporate lobbying | External data | [OpenSecrets](https://www.opensecrets.org/federal-lobbying) |
+| US military spending 3% of current levels in 1939 | Historical data | {{< var us_military_spending_1939_annual_2024usd >}} (1939) vs. {{< var us_military_spending_2024_annual >}} (2024), constant 2024 dollars. [Cost of War](/knowledge/problem/cost-of-war.qmd) |
 | Won WWII in four years | Historical record | US entered December 1941, Japan surrendered August 1945 |
 | Post-WWII military cut 88%, then biggest boom | Historical record | DoD budget fell from ~\$900B (1945) to ~\$100B (1948) in 2024 dollars; followed by 1950s-60s expansion; [Cost of War](/knowledge/problem/cost-of-war.qmd) |
 | Median income 89% higher by year 20 under treaty | Modeled | [The Loving Takeover](/knowledge/appendix/loving-takeover.qmd); projected, not guaranteed |
