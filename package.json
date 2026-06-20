@@ -86,7 +86,6 @@
     "audiobook:scenes:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_scenes.py --config _quarto-manual-paperback.yml --list",
     "audiobook:video": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_video.py",
     "audiobook:video:list": ".venv\\Scripts\\python.exe -u scripts/generate_audiobook_video.py --list",
-
     "sync:r2:dry-run": ".venv\\Scripts\\python.exe -u scripts/sync_r2.py --dry-run",
     "sync:r2:list": ".venv\\Scripts\\python.exe -u scripts/sync_r2.py --list",
     "param:usage-matrix": "tsx scripts/parameter-usage-matrix.ts",

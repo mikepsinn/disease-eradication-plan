@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 699 parameters used in the analysis, organized by type:
+This appendix documents all 698 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 204
-- Calculated values: 358
+- Calculated values: 357
 - Core definitions: 137
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (358 parameters) • [External Data Sources](#sec-external) (204 parameters) • [Core Definitions](#sec-definitions) (137 parameters)
+[Calculated Values](#sec-calculated) (357 parameters) • [External Data Sources](#sec-external) (204 parameters) • [Core Definitions](#sec-definitions) (137 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5372,49 +5372,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-defense_takeover_cost_total.qmd >}}
-
-:::
-
-### Military Takeover Cost as Share of Global Investable Assets: 0.286% {#sec-defense_takeover_pct_investable_assets}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Cost to acquire controlling stakes in all major Western military contractors, expressed as a share of total global investable assets. The affordability framing: the entire takeover is a rounding error against the world's investable wealth.
-
-**Inputs**:
-
-- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
-- [Global Investable Financial Assets](#sec-global_investable_assets) 📊: $305 trillion
-
-$$
-\begin{gathered}
-C_{takeover}/A_{investable} \\
-= \frac{C_{takeover}}{Assets_{invest}} \\
-= \frac{\$873B}{\$305T} \\
-= 0.286\%
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-C_{takeover} \\
-= (MarketCap_{US} \\
-+ MarketCap_{allied}) \times f_{control} \times m_{premium}
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-defense_takeover_pct_investable_assets.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-defense_takeover_pct_investable_assets.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-defense_takeover_pct_investable_assets.qmd >}}
 
 :::
 

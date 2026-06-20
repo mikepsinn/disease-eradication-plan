@@ -1,6 +1,6 @@
 ---
-title: "Earth Optimization Services Pitch"
-description: "Diseases are slowly murdering you and everyone you love while your government maintains {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses worth of nuclear weapons for one civilization and spends {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} times more on war than on curing the diseases that are {{< var disease_vs_terrorism_deaths_ratio_nounit >}} times more likely to kill you than a terrorist. Now imagine buying the companies responsible, turning their lobbying toward cures instead of war, and getting filthy rich whether it works or not."
+title: Earth Optimization Services Pitch
+description: Diseases are slowly murdering you and everyone you love while your government maintains {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses worth of nuclear weapons for one civilization and spends {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} times more on war than on curing the diseases that are {{< var disease_vs_terrorism_deaths_ratio_nounit >}} times more likely to kill you than a terrorist. Now imagine buying the companies responsible, turning their lobbying toward cures instead of war, and getting filthy rich whether it works or not.
 published: true
 tags:
   - investment-thesis
@@ -16,6 +16,8 @@ scores:
   standalone: 8
   voice: 9
   importance: 7
+aliases:
+  - /knowledge/economics/investment-thesis.html
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
