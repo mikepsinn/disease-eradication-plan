@@ -196,9 +196,9 @@ YOU PAY {{< var global_government_expense_annual >}} A YEAR FOR HEALTH AND WEALT
 +---------------------------------------+
 ```
 
-> So the question is not just why they make bad decisions. It is why they keep making the same bad decision after the evidence is in. Your oven has a sensor. It measures the temperature, compares it to what you asked for, and adjusts until they match. This is called a closed-loop control system. Every machine you own has one. Your air conditioner, your cruise control, your refrigerator, your toilet. The toilet knows when to stop filling. Your government does not know when to stop filling.
+> So the question is not just why they make bad decisions. It is why they keep making the same bad decision after the evidence is in. Your oven has a sensor. It measures the temperature, compares it to what you asked for, and adjusts until they match. Every machine you own does this. Your air conditioner, your cruise control, your refrigerator, your toilet. The toilet knows when to stop filling. Your government does not know when to stop filling.
 >
-> The War on Drugs: roughly \$50 billion a year for 53 years. Overdose deaths went from about 1,000 a year to about 107,000 a year. No sensor. No adjustment. The budget increased. In control systems engineering, the technical term for a system that applies force with no measurement of outcome is open-loop. The colloquial term is what you are thinking right now.
+> The War on Drugs: roughly \$50 billion a year for 53 years. Overdose deaths went from about 1,000 a year to about 107,000 a year. No sensor. No adjustment. The budget increased.
 >
 > The reason there is no sensor is that the people whose job it is to install one are also the people who profit from the temperature being wrong. The pharmaceutical industry does not profit from cures. The weapons industry does not profit from peace. The lobbying industry does not profit from a government that works. The sensor would end their business model. So there is no sensor. Earth Optimization Services installs the thermostat.
 
@@ -273,7 +273,7 @@ YOU PAY {{< var global_government_expense_annual >}} A YEAR FOR HEALTH AND WEALT
 +---------------------------------------+
 ```
 
-> So this is just one example. Another example is whereby a doctor named Ignaz Semmelweis discovered that if you were to wash your goddamn hands before delivering a baby, there was only like a 2% chance the mother and the baby would die of sepsis after the delivery. So he instituted this rule in his hospitals that doctors had to wash their goddamn hands after doing their autopsies before delivering babies. And the doctors, being retarded, were offended by this, that he would suggest that they were filthy and causing their patients to die. So as a reward for this discovery, they decided to put him in a mental institution and the guards then proceeded to beat him to death after a few weeks. This is just one of many historical examples of like one human discovering this species was retarded in some way and getting punished and ignored for it. So after this discovery, they continued to proceed to not wash their hands before delivering babies and possibly killing tens or maybe hundreds of millions of mothers and babies in the process because they didn't want to wash their goddamn hands.
+> A doctor named Ignaz Semmelweis discovered that if you wash your goddamn hands before delivering a baby, there was only like a 2% chance the mother and the baby would die of sepsis after the delivery. He instituted this rule in his hospitals. The doctors, being retarded, were offended by the suggestion that they were filthy and causing their patients to die. As a reward for this discovery, they put him in a mental institution and the guards beat him to death. They then continued to not wash their hands before delivering babies, killing tens or maybe hundreds of millions of mothers and babies because they didn't want to wash their goddamn hands.
 >
 > The reason I tell you this story is because you need to stop assuming the people in charge know what they are doing. Scientists and math and data is smarter than the gut instincts of whatever humans happen to be good enough at lying their way into power.
 
@@ -405,7 +405,7 @@ WWII: THE CUT THAT CAUSED THE BIGGEST BOOM
   cannot keep one shipping lane open, 8 failed audits in a row.
 ```
 
-> And by the way, in 1939 the United States military spending was about 3% of its current levels. And they won World War II in four years. After the war ended, the United States cut military spending by {{< var post_ww2_military_cut_pct >}}. What followed was the greatest economic expansion in American history. The economy did not collapse. It boomed. Today we spend a trillion dollars more and we can't even keep the Strait of Hormuz open. And the reason is that in 1939 the free market had created an evolutionary industrial base that selected for competence in production. You had to be good at building stuff to get government contracts. Today we have an industrial base that selects for competence in corruption. You have to be good at lobbying to get government contracts. So we went from an industrial base that's good at building things to one that's good at extracting money. And the hundred billion dollars a year that the Pentagon just loses into a black hole and the thousand dollar screws and the eight consecutive failed audits are not accidents. That is what a system that selects for corruption instead of competence looks like.
+> In 1939 the United States military spending was about 3% of its current levels. They won World War II in four years. After the war, the United States cut military spending by {{< var post_ww2_military_cut_pct >}}. What followed was the greatest economic expansion in American history. The economy did not collapse. It boomed. Today we spend a trillion dollars more and we can't even keep the Strait of Hormuz open, because in 1939 you had to be good at building things to get government contracts and today you have to be good at lobbying. The hundred billion dollars a year the Pentagon just loses into a black hole and the thousand dollar screws and the eight consecutive failed audits are not accidents. That is what a system that selects for corruption instead of competence looks like.
 
 ---
 
@@ -415,24 +415,19 @@ WWII: THE CUT THAT CAUSED THE BIGGEST BOOM
 THE LEGAL MECHANISM
 
   By law, a board must act in its shareholders'
-  financial interest. (A 1996 court ruled on it;
-  look up "Caremark" if you want the case name.)
+  financial interest.
 
-  So here is their financial interest, spelled out:
+  A dead shareholder is worth nothing.
 
-  - A dead shareholder is worth nothing. Disease kills the
-    customers, the workers, and the shareholders themselves.
-  - Disease is a giant cost to these same companies and a drag
-    on the whole economy, which is where their returns come from.
-  - Government wastes about {{< var political_dysfunction_global_opportunity_cost_total >}} a year. Take a sliver
-    of it, point it at curing disease, and every shareholder
-    ends up richer and alive to spend it.
+  Disease kills the customers, the workers, and the
+  shareholders themselves. Government wastes about
+  {{< var political_dysfunction_global_opportunity_cost_total >}} a year that could be curing it.
 
-  Sitting on the waste is the breach. A legal argument, not
-  a moral one.
+  Sitting on the waste is the breach.
+  A legal argument, not a moral one.
 ```
 
-> The law already does the work here. A board is legally required to act in its shareholders' financial interest. And it is not in their interest to let disease keep killing their customers, their workers, and themselves, while the government wastes about {{< var political_dysfunction_global_opportunity_cost_total >}} a year that could be curing it. A dead shareholder is worth nothing. Point a sliver of that waste at clinical trials, cure the diseases, and the same shareholders end up richer and alive to enjoy it. Refusing to do that is the breach. This is a legal argument, not a moral one.
+> A board is legally required to act in its shareholders' financial interest. A dead shareholder is worth nothing. Disease kills the customers, the workers, and the shareholders themselves, while the government wastes about {{< var political_dysfunction_global_opportunity_cost_total >}} a year that could be curing it. Point a sliver of that waste at clinical trials and every shareholder ends up richer and alive to enjoy it. Refusing to do that is the breach. This is a legal argument, not a moral one.
 
 ---
 
@@ -473,7 +468,7 @@ BUY THE SHARES, REDIRECT THE LOBBYISTS
   that actually make you richer.
 ```
 
-> Okay, so my theory is one could make a company called Earth Optimization Services that could purchase sufficient shares of all these corporations which currently spend {{< var us_total_lobbying_annual >}} to get our government to make sub-optimal public policies and budgets. And that if you were to do this and you had a machine which I call the Optimitron which analyzes experimental data from lots of different countries over extended periods of time and determines which policies are most likely to make everyone as rich and healthy as possible, then this Earth Optimization Services could tell the lobbyists that these corporations employ to get these optimal policies implemented. And thereby making their shareholders significantly richer.
+> Earth Optimization Services purchases shares in the corporations that currently spend {{< var us_total_lobbying_annual >}} lobbying your government. Then it tells their lobbyists: here are the policies that actually make your shareholders richer. We know which ones work because we have data from hundreds of countries over hundreds of years. The lobbyists do what lobbyists do, except now they are lobbying for policies that work.
 
 ---
 
@@ -485,20 +480,13 @@ BUY ONE SHARE AND WRITE A LETTER
   First target: Huntington Ingalls, the only company that
   builds US aircraft carriers ($10B). The Navy can't shop elsewhere.
 
-  The cascade:
-     buy one share, write the board ............. ~$200
-     hire a law firm to write a letter
-       the board is required to read ............ $5K-15K
-     run a campaign to put your person on it .... $100K-500K
-
-  Each win buys credibility. Credibility raises the money
-  for the next, bigger target: Leidos, L3Harris, General
-  Dynamics, Northrop, Lockheed, Boeing, Raytheon.
+  Buy one share (~$200). Write a letter to the board.
+  Each win buys credibility. Credibility funds the next target.
 
   Then pharma. Then tech. Then oil.
 ```
 
-> Start with Huntington Ingalls Industries, the sole builder of aircraft carriers in the United States. The whole company is worth roughly \$10 billion. The Navy cannot buy carriers from anyone else. Buy one share for about \$200 and write a letter to the board. That is the floor. If you want the letter drafted by a law firm so the board is legally required to read it, that costs \$5,000 to \$15,000. A full campaign to get your own person elected to the board costs \$100,000 to \$500,000, funded by money raised on the credibility of the last win. Each success creates credibility, capital, and attention. Each funds the next. If someone copies the strategy, it works faster. More of those letters means faster board responses. More public analysis means more institutions have to answer the math. And if a competitor buys the same stocks, your shares go up.
+> Start with Huntington Ingalls Industries, the sole builder of aircraft carriers in the United States. The whole company is worth roughly \$10 billion. The Navy cannot buy carriers from anyone else. Buy one share for about \$200 and write a letter to the board. Each win creates credibility, capital, and attention. Each funds the next. If someone copies the strategy, it works faster, and if a competitor buys the same stocks, your shares go up.
 
 ---
 
@@ -507,23 +495,19 @@ BUY ONE SHARE AND WRITE A LETTER
 ```
 WHAT IT COSTS
 
-  Every number below is a slice of all the money invested on
-  Earth ({{< var global_investable_assets >}}).
+  Military-industrial complex, board seats:
+     {{< var defense_takeover_cost_activist >}}  ({{< var defense_takeover_cost_activist_pct_investable_assets >}} of all money on Earth)
 
-  THE MILITARY-INDUSTRIAL COMPLEX (the only one you can buy outright):
-     enough shares to win board seats .. {{< var defense_takeover_cost_activist >}}  ({{< var defense_takeover_cost_activist_pct_investable_assets >}})
-     enough to own them outright (51%) . {{< var defense_takeover_cost_total >}}  ({{< var defense_takeover_pct_investable_assets >}})
-
-  Enough shares to win board seats in EVERY industry that owns
-  the government (military, pharma, tech, insurance, oil) at once:
+  EVERY industry that owns the government at once:
      {{< var full_corporate_takeover_cost_activist >}}  ({{< var full_corporate_takeover_cost_activist_pct_investable_assets >}})
 
-  And you cannot even BUY most of these companies. Zuckerberg,
-  the Google founders, and Ellison kept the votes for themselves.
+  You cannot even BUY most of these companies.
+  Zuckerberg, the Google founders, and Ellison
+  kept the votes for themselves.
   So you do not buy them. You out-vote them.
 ```
 
-> So let's price it. The military-industrial complex is the one part you can actually buy outright, and it's cheap. Enough stock to win a few board seats, which is all you need once the big funds vote with you, costs {{< var defense_takeover_cost_activist >}}. Buying half the shares of every one of them, so you own them flat out, costs {{< var defense_takeover_cost_total >}}. That is {{< var defense_takeover_pct_investable_assets >}} of all the money invested on the planet, which is {{< var global_investable_assets >}} sitting around doing nothing in particular. Now go wider. Enough stock to win board seats in every industry that owns your government, the weapons people, the drug people, tech, insurance, oil, all of them at once, costs {{< var full_corporate_takeover_cost_activist >}}. That is {{< var full_corporate_takeover_cost_activist_pct_investable_assets >}} of all the money in the world. And you couldn't buy most of these companies if you tried. Zuckerberg and the Google founders and Larry Ellison kept the votes for themselves. So you don't buy them. You out-vote them.
+> The military-industrial complex is the one part you can actually buy outright, and it's cheap. Enough stock to win board seats costs {{< var defense_takeover_cost_activist >}}. That is {{< var defense_takeover_cost_activist_pct_investable_assets >}} of all the money invested on the planet. Enough to win board seats in every industry that owns your government, weapons, pharma, tech, insurance, oil, all at once, costs {{< var full_corporate_takeover_cost_activist >}}. That is {{< var full_corporate_takeover_cost_activist_pct_investable_assets >}} of all the money in the world. And you couldn't buy most of these companies if you tried. Zuckerberg and the Google founders and Larry Ellison kept the votes for themselves. So you don't buy them. You out-vote them.
 
 ---
 
@@ -567,23 +551,17 @@ WHERE THE PROFIT COMES FROM
 ```
 THE FLYWHEEL: WHY IT SPEEDS UP
 
-  Win one board fight and three things happen. Each one makes
-  the next fight easier, so the wheel turns faster every year.
+  Win one board fight and three things happen:
 
-  1. PRICE.  The win makes the stock go up. People notice and
-     buy in. That is more money for the next fight.
+  The stock goes up -> more money for the next fight.
+  Better policy -> bigger economy.
+  Bigger economy -> every stock worth more.
 
-  2. POLICY.  The lobbying you redirected gets good policy
-     passed, and good policy makes the whole economy grow.
-
-  3. PIE.  A bigger economy makes every company worth more,
-     including the ones you already own. Which funds more fights.
-
-  Price -> more fights -> better policy -> bigger economy ->
-  price again. You do not push this wheel. You kick it once.
+  Each feeds the other two.
+  You kick it once.
 ```
 
-> The reason this works is that it pays for itself, and then it gets faster. Win one board fight and three separate things start spinning. First, the stock goes up, because the market can finally see the company being run for the people who own it, so more people buy in, which is more money for the next fight. Second, the lobbying you redirected gets good policy passed, and good policy makes the whole economy bigger. Third, a bigger economy makes every company worth more, including the ones you already hold, which pays for even more fights. Each loop feeds the other two. You do not have to keep pushing it. You kick it once and it speeds up on its own.
+> Win one board fight and three things happen. The stock goes up, so more people buy in, which funds the next fight. The lobbying you redirected gets good policy passed, which makes the whole economy bigger. A bigger economy makes every company worth more, including the ones you already hold. Each feeds the other two. You kick it once and it speeds up on its own.
 
 ---
 
@@ -706,6 +684,8 @@ INVEST
 
 ## Verification Table
 
+::: {.callout-note collapse="true" title="Click to expand: every factual claim, its status, and where to verify it"}
+
 | Claim | Status | Where to Verify |
 |---|---|---|
 | Expected value math (infinity times any probability = infinity) | Standard probability theory | Any introductory probability textbook |
@@ -743,3 +723,5 @@ INVEST
 | Distribute voting shares equally among humanity | Book concept | [Wishocracy](/knowledge/solution/wishocracy.qmd); [Earth Optimization Services](/knowledge/solution/earth-optimization-services.qmd) |
 | Shareholder activism to replace boards | Book concept | [Loving Takeover](/knowledge/appendix/loving-takeover.qmd); [Lawsuit](/knowledge/appendix/lawsuit.qmd) |
 | Planet GL-881 / Moronia similarity score | Book concept | [Moronia](/knowledge/futures/moronia.qmd); [Earth Optimization Services](/knowledge/solution/earth-optimization-services.qmd) |
+
+:::
