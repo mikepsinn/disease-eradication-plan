@@ -143,6 +143,8 @@ book:
     - part: "For Skeptics"
       chapters:
         - knowledge/proof.qmd # ✅ Part III Intro + Historical Precedents (merged) ~20p
+        - knowledge/proof/bomb-budget-cut.qmd # The WW2 Spreadsheet Analogy: entire thesis in plain language, Register 2 (Mike's voice), most accessible entry point
+        - knowledge/proof/no-bad-guys.qmd # Why the System Exists: four mechanisms of emergent misallocation (selection, concentrated benefits, discount rate trap, identity as infrastructure)
         - knowledge/proof/biotechnological-imperative.qmd # Kant's categorical imperative applied to biotech funding; three-proof structure with Wishonia's Wager (rational) and Free Market Proof (empirical)
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
         - knowledge/proof/why-hasnt-anyone-done-this.qmd # ✅ Why Hasn't Anyone Done This? ~3p

@@ -1,0 +1,96 @@
+---
+title: There Are No Bad Guys (That Is the Problem)
+description: Nobody designed a world that spends 604 dollars on war for every dollar on clinical trials. Four mechanisms produced it without anyone deciding to. That is worse than a conspiracy, because there are no bad guys to remove.
+published: true
+tags:
+  - proof
+  - systems
+  - emergent-misallocation
+  - adverse-selection
+  - game-theory
+  - discount-rate
+scores:
+  quality: 8
+  value: 9
+  timeliness: 9
+  standalone: 8
+  voice: 7
+  importance: 9
+audience: skeptics, systems thinkers, anyone who suspects a conspiracy
+feel: 'this is not evil people, this is something worse: a trap nobody built'
+do: understand why the demand letter works and why it uses love instead of fight
+aliases:
+  - /knowledge/proof/why-the-system-exists.html
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Nobody sat in a room and said "let us design an education system that prevents citizens from questioning budget allocation." What happened is worse than that. The system arises without anyone designing it, through four mechanisms.
+
+## 1. Selection, Not Direction
+
+Who becomes a curriculum designer? Someone who succeeded in the existing curriculum. Who becomes a general? Someone who succeeded in the existing military. Who becomes a senator? Someone who succeeded in the existing system.
+
+None of these people are evil. All of them were selected BY the system FOR traits that perpetuate the system. A fish does not design water. A fish selected by water does not question water.
+
+Nobody is suppressing anything. The system suppresses itself by selecting for people who do not question it.
+
+## 2. Concentrated Benefits, Diffuse Costs
+
+Lockheed Martin's $50 billion in revenue comes from a specific line in a specific spreadsheet. They hire lobbyists to protect that line.
+
+The cost of that line ($50 billion NOT going to clinical trials) is spread across 330 million people. Each person loses about $150 a year in foregone clinical trial funding.
+
+$150 a year is not enough for anyone to hire a lobbyist. $50 billion is enough for Lockheed to hire 200.
+
+Nobody designed this. It is a mathematical property of concentrated versus diffuse interests. Mancur Olson described it in 1965. It is not a conspiracy. It is game theory.
+
+## 3. The Visibility Trap
+
+The powerful beneficiaries ARE shrinking the global pie and shortening their OWN lives. They would be richer and live longer in the optimized world. The book's own math says the typical person gains {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in extra lifetime wealth from the 1% Treaty alone. A Lockheed executive would gain far more, because the gain scales with income.
+
+Nothing stops him from selling his military stock, buying biotech, and lobbying to redirect funding to clinical trials. He would make more money, live longer, and his grandchildren would grow up in a world with fewer diseases. This is not a hypothetical. It is the straightforwardly more profitable play.
+
+He does not do it. Why?
+
+Nobody has ever shown him the spreadsheet that compares the two columns. His identity is "I protect America," not "I optimize returns." The system selected him for the trait of not questioning the system. So he sits on $15 million a year from missiles and never runs the calculation that would show him biotech is the better bet.
+
+This is a trap, not a conspiracy. He is in Door B and does not know it.
+
+## 4. Identity as Infrastructure
+
+The Pentagon employs 3.4 million people. Military contractors employ roughly 2.1 million more. 5.5 million people wake up every morning and their identity is "I protect America."
+
+Questioning the {{< var military_to_government_clinical_trials_spending_ratio >}} ratio threatens 5.5 million identities simultaneously. Those 5.5 million people vote, donate, run for school board, design curriculum, raise children, and talk at Thanksgiving.
+
+The system perpetuates itself through identity, not through conspiracy. Nobody needs to coordinate this. It is self-organizing.
+
+## Why This Matters
+
+### If it were a conspiracy, it would be easier to fix.
+
+Conspiracy: find the bad guys, remove them, system improves. Simple.
+
+Emergent system: there ARE no bad guys. Everyone is locally rational. The global outcome is catastrophic but nobody is responsible because nobody designed it.
+
+### This is why the demand letter works.
+
+The letter does not say "you are evil." It says "nobody checked." "Nobody checked" is accurate, non-threatening, and creates a legal obligation to check (under [Caremark](../legal/legal-framework.qmd)). It converts an emergent problem into a tractable one by creating a SPECIFIC PERSON who is now responsible for checking.
+
+Before the letter: nobody's job to compare columns. After the letter: the board's legal duty to compare. You are not fighting a conspiracy. You are installing a thermostat in a building that never had one.
+
+### This is why the love letter uses "love" instead of "fight."
+
+The Lockheed executive is 58. He will die at about 78. He earns $15 million a year from the current system. He could sell his military stock, buy biotech, lobby for the reallocation, and end up richer with 30 extra years of life. He does not do this because nobody has shown him the math and because his identity would have to die before his body does.
+
+So he dies at 78 leaving money on the table in a world that still has Alzheimer's. This is not a choice he made. This is a choice the system made for him by selecting him for traits that prevent him from seeing the better trade.
+
+He is in Door B and does not know it. The love letter is literally trying to save his life. Not metaphorically. Actually. That is why it is called a love letter.
+
+## Why Education Does Not Teach This
+
+The same government that writes the budget designs the curriculum. Teaching citizens to compute opportunity cost of military spending would produce citizens who question military spending.
+
+The curriculum is designed by people who succeeded within the existing system. They have no incentive to teach students to question it. This is not a conspiracy. It is adverse selection. It is why [Semmelweis](../proof.qmd) could not get doctors to wash their hands. It is why the {{< var military_to_government_clinical_trials_spending_ratio >}} ratio exists.
+
+The [calculator](https://impact.warondisease.org) teaches opportunity cost in 4 minutes. Twelve years of school did not. The calculator is the missing curriculum.

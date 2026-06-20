@@ -1,0 +1,33 @@
+---
+title: They Cut the Bomb Budget 87% and Everyone Got Richer
+description: "After World War 2, they cut the bomb budget {{< var post_ww2_military_cut_pct >}} and walked into the largest rise in living standards in history. Then they put it back. Here is what happened."
+published: true
+tags:
+  - proof
+  - ww2
+  - military-spending
+scores:
+  quality: 8
+  value: 9
+  timeliness: 9
+  standalone: 9
+  voice: 8
+  importance: 9
+audience: everyone (people who do not read policy papers)
+feel: this is simple, this is obvious, this person is not trying to sell me anything
+do: understand the whole idea in two minutes and tell someone else about it
+aliases:
+  - /knowledge/proof/plain-language-version.html
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+During World War 2, someone changed the government budget spreadsheets and paid a lot of people to make bombs instead of medicine, and cars, and helpful inventions and stuff. Then everyone was poorer and unhappy during the war while the spreadsheet had bigger numbers in the bombs line.
+
+Then people in charge made a treaty where everyone agreed to not fight so much and then they reduced the number in the bombs line by {{< var post_ww2_military_cut_pct >}} over 2 years and gave the money back to everyone. And they used this money to pay lots of people to stop making so many bombs and instead pay for things they liked more than bombs like medicine and college and cars and houses and new inventions. Then people were happier for a while.
+
+Then in the 60s, partly because of communism, people changed the numbers in the government spreadsheet and started paying a lot of people to stop making so many helpful things and start making more bombs instead. So today we spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the military for every dollar spent on finding out which medicines work.
+
+So if we made a treaty like they did after World War 2, maybe the people who change the government spreadsheets can agree to make the bomb line 1% smaller and 1% of the people working in bombs will do more valuable things for humanity. Then people might like it and do 2% eventually and so on.
+
+I have no money or power or sufficient skills or intelligence to do this. So I am just proposing a way that it could be done and some math that shows the benefits in the hope that people that read it will tell their friends about the idea and then their friends might tell their friends until someone with the power and interest to do it sees them and does it.
