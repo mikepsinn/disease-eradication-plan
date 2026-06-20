@@ -130,10 +130,10 @@ scores:
 
 ---
 
-## The Contract You Already Signed
+## You Pay {{< var global_government_expense_annual >}} a Year for Health and Wealth and Get War and Disease
 
 ```
-THE CONTRACT YOU ALREADY SIGNED
+YOU PAY {{< var global_government_expense_annual >}} A YEAR FOR HEALTH AND WEALTH AND GET WAR AND DISEASE
 
   YOU PAY:         {{< var global_government_expense_annual >}} / yr
   FORCED SERVICE:  general welfare
@@ -173,7 +173,7 @@ THE CONTRACT YOU ALREADY SIGNED
 
 ---
 
-## No Thermostat
+## Your Government Runs Without Feedback
 
 ```
 +---------------------------------------+
@@ -300,7 +300,7 @@ DISEASE IS ETHYL CORP AT CIVILIZATIONAL SCALE
 
 ---
 
-## The Counterfactual
+## What If the Shareholders Had Just Replaced the Board?
 
 ```
 +---------------------------------------+
@@ -325,10 +325,10 @@ DISEASE IS ETHYL CORP AT CIVILIZATIONAL SCALE
 
 ---
 
-## Today's Version
+## The Same Mistake, Now with Nuclear Weapons
 
 ```
-TODAY'S VERSION
+THE SAME MISTAKE, NOW WITH NUCLEAR WEAPONS
 
   {{< var global_warhead_count_nounit >}} nuclear warheads.
   ~{{< var nuclear_winter_warhead_threshold_nounit >}} needed to end civilization.
@@ -436,10 +436,10 @@ THE LEGAL MECHANISM
 
 ---
 
-## Engine No. 1 (The Proof It Works)
+## 12 People, $12.5 Million, 3 Board Seats at Exxon
 
 ```
-ENGINE NO. 1 (THE PROOF IT WORKS)
+12 PEOPLE, $12.5 MILLION, 3 BOARD SEATS AT EXXON
 
   2021: a tiny investment firm called Engine No. 1.
   12 people. $12.5 million.
@@ -457,10 +457,10 @@ ENGINE NO. 1 (THE PROOF IT WORKS)
 
 ---
 
-## The Campaign
+## Buy the Shares, Redirect the Lobbyists
 
 ```
-THE CAMPAIGN
+BUY THE SHARES, REDIRECT THE LOBBYISTS
 
   Earth Optimization Services buys shares in the
   companies whose lobbying controls the budget.
@@ -477,17 +477,19 @@ THE CAMPAIGN
 
 ---
 
-## The Cascade
+## Buy One Share and Write a Letter
 
 ```
-THE CASCADE: HOW A $5,000 LETTER BECOMES THE WHOLE THING
-
-  Start with the cheapest lever and climb.
+BUY ONE SHARE AND WRITE A LETTER
 
   First target: Huntington Ingalls, the only company that
   builds US aircraft carriers ($10B). The Navy can't shop elsewhere.
-     a legal letter the board must read ........ $5K-15K
-     a campaign to put your own person on it ... $100K-500K
+
+  The cascade:
+     buy one share, write the board ............. ~$200
+     hire a law firm to write a letter
+       the board is required to read ............ $5K-15K
+     run a campaign to put your person on it .... $100K-500K
 
   Each win buys credibility. Credibility raises the money
   for the next, bigger target: Leidos, L3Harris, General
@@ -496,7 +498,7 @@ THE CASCADE: HOW A $5,000 LETTER BECOMES THE WHOLE THING
   Then pharma. Then tech. Then oil.
 ```
 
-> Start with Huntington Ingalls Industries, the sole builder of aircraft carriers in the United States. The whole company is worth roughly \$10 billion. The Navy cannot buy carriers from anyone else. A legal letter the board is required to read costs \$5,000 to \$15,000 to draft. A full campaign to get your own person elected to the board costs \$100,000 to \$500,000, funded by money raised on the credibility of the last win. Each success creates credibility, capital, and attention. Each funds the next. If someone copies the strategy, it works faster. More of those letters means faster board responses. More public analysis means more institutions have to answer the math. And if a competitor buys the same stocks, your shares go up.
+> Start with Huntington Ingalls Industries, the sole builder of aircraft carriers in the United States. The whole company is worth roughly \$10 billion. The Navy cannot buy carriers from anyone else. Buy one share for about \$200 and write a letter to the board. That is the floor. If you want the letter drafted by a law firm so the board is legally required to read it, that costs \$5,000 to \$15,000. A full campaign to get your own person elected to the board costs \$100,000 to \$500,000, funded by money raised on the credibility of the last win. Each success creates credibility, capital, and attention. Each funds the next. If someone copies the strategy, it works faster. More of those letters means faster board responses. More public analysis means more institutions have to answer the math. And if a competitor buys the same stocks, your shares go up.
 
 ---
 
@@ -735,7 +737,7 @@ INVEST
 | Pentagon failed 8 consecutive audits | Government record | DOD Office of Inspector General, FY2018-FY2025 |
 | Engine No. 1: 12 people, \$12.5M, 0.02%, 3 board seats | Historical record | [Wall Street Journal, May 2021](https://www.wsj.com/articles/exxon-loses-board-seats-to-activist-hedge-fund-engine-no-1-11621368052) |
 | HII is sole US aircraft carrier builder | External data | Congressional Research Service reports on shipbuilding industrial base |
-| A legal letter the board must read \$5K-\$15K; a campaign to put your own person on the board \$100K-\$500K | Derived estimate | Shareholder rights law firm fee schedules; Engine No. 1 at scale was \$12.5M for a \$400B company |
+| Buy one share (~\$200) and write the board; a law firm letter the board must read \$5K-\$15K; a campaign to put your own person on the board \$100K-\$500K | Derived estimate | HII share price (NYSE); shareholder rights law firm fee schedules; Engine No. 1 at scale was \$12.5M for a \$400B company |
 | Boards legally required to act in shareholder interest (the 1996 Caremark ruling) | Legal record | *In re Caremark International Inc. Derivative Litigation*, 698 A.2d 959 (Del. Ch. 1996) |
 | "Optimitron" policy optimization machine | Book concept | [Optimocracy](/knowledge/solution/optimocracy.qmd); [Optimal Policy Generator](/knowledge/appendix/optimal-policy-generator-spec.qmd) |
 | Distribute voting shares equally among humanity | Book concept | [Wishocracy](/knowledge/solution/wishocracy.qmd); [Earth Optimization Services](/knowledge/solution/earth-optimization-services.qmd) |
