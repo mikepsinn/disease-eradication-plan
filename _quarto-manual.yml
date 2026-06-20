@@ -4,6 +4,7 @@ project:
   execute-dir: project
   resources:
     - knowledge/data/
+    - knowledge/appendix/presidential-commission-print.html
     - assets/
     - _redirects
     - robots.txt
