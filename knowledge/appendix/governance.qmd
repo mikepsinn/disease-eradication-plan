@@ -1,6 +1,6 @@
 ---
 title: Governance
-description: Governance architecture for the Decentralized Institutes of Health, including anti-capture mechanisms and security design.
+description: A map of the Earth Optimization founding documents to their government analogs (declaration, constitution, bill of rights, ratification, legislature, judiciary, executive), the two-votes separation, and the detailed governance modules.
 published: true
 tags:
   - governance
@@ -10,14 +10,31 @@ tags:
 image: /assets/og-images/knowledge/appendix/governance-og-retro-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-## Content Moved
+## The founding documents, mapped
 
-This chapter's content has been consolidated into the main [Decentralized Institutes of Health](../solution/dih.qmd) chapter. See:
+EOS is, on purpose, built like a government, so each piece below has a real-world analog you already understand. The legal envelope (Delaware corporate law and federal securities law) is the constitution EOS lives *under* and cannot rewrite. Everything here is what EOS writes inside that envelope.
+
+| Function in a government | EOS document | What it does |
+|---|---|---|
+| Declaration of Independence | [Declaration of Optimization](../strategy/declaration-of-optimization.qmd) | States the purpose of government (the two metrics) and the grievances |
+| The Constitution | [Earth Optimization Protocol](../strategy/earth-optimization-protocol-v1.qmd) | Constitutes the institutions and the separation of powers |
+| Bill of Rights + amendment rule | [Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.qmd) | The inviolable constraints and how a revision is proposed and ratified |
+| Ratification | [Global Referendum](../strategy/global-referendum.qmd) | How humanity signs |
+| The legislature (power of the purse) | [Wishocracy](../solution/wishocracy.qmd) | Aggregates what humans want and allocates the budget |
+| The evidence and audit branch | [Optimocracy](../solution/optimocracy.qmd) | Checks which policies actually work |
+| The judiciary | [Court of Humanity](../solution/court-of-humanity.qmd) | Adjudicates and enforces |
+| The executive and treasury | [EOS](../solution/earth-optimization-services.qmd) + [DIH](../solution/dih.qmd) | Operates the company and disburses the funds |
+
+The terminal objective every layer serves is one statement: **maximize the median number of healthy life years and the median after-tax, inflation-adjusted income of humanity.** Any departure from the approach best supported by the evidence has to justify itself with evidence.
+
+## Two votes, never one
+
+Money can buy economic exposure to EOS. Money can never buy the civic vote (one per human, non-transferable) or Wishocracy allocation power. The two sit at separate tables by design. See [EOS](../solution/earth-optimization-services.qmd) for the corporate side and [Wishocracy](../solution/wishocracy.qmd) for the civic side.
+
+## Detailed governance modules
 
 - [DIH Governance Modules](../solution/dih.qmd#governance-sick-people-choose-everyone-else-votes) - How Wishocracy and Optimocracy work together
 - [Anti-Capture Design](../solution/dih.qmd#anti-capture-design) - How DIH resists capture
 - [How the Money Flows](../solution/dih.qmd#how-the-money-flows) - Fund allocation architecture
-
-For the detailed Wishocracy voting mechanism, see [Wishocracy](../solution/wishocracy.qmd).
-
-For the Optimocracy algorithmic governance paper, see [Optimocracy Working Paper](optimocracy-paper.qmd).
+- [Wishocracy](../solution/wishocracy.qmd) - The detailed voting mechanism
+- [Optimocracy Working Paper](optimocracy-paper.qmd) - The algorithmic governance paper

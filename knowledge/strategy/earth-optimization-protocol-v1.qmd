@@ -46,7 +46,7 @@ Sell [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@ia
 
 ## How the Pieces Connect
 
-The system has eleven required functions. The first ten form a loop; the eleventh becomes possible once the loop is running:
+The system has eleven required functions. The first ten form the operating loop (the Minimum Acceptable Governance set that the [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) requires every revision to cover); the eleventh, the algorithmic monetary system, becomes possible once the loop is running:
 
 1. **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)** raise {{< var treaty_campaign_total_cost >}} from investors who want {{< var victory_bond_annual_return_pct >}} returns and billionaires who prefer not dying of horrible diseases.
 2. That money funds the **lobbying campaign**: Super PACs, scorecards, legislative drafting, and post-office career guarantees. The **referendum campaign** runs separately on Earth Optimization Points (recruit a verified participant, earn a point).
@@ -222,7 +222,7 @@ You need to fight on three fronts: moral (charity), political (lobbying), and fi
 - **The Charity (501c3).** Research and education. Foundations give money here and get tax deductions.
 - **The Lobbying Group (501c4).** Takes the research and wages unlimited political warfare (mostly lunch meetings and PowerPoints).
 - **The Corporation (C-Corp).** Issues the VICTORY [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) and collects investment capital. Yes, you need a for-profit corporation to end death.
-- **The Swiss Foundation.** The parent organization owns the corporation, ensuring profits can only fund the mission. You put it in Switzerland because they are good at keeping things neutral and also chocolate.
+- **The Mission-Lock.** A steward entity (a Delaware purpose trust) holds the corporation's voting control, locked to the mission, so profits can only fund the mission and no future board can decide the real mission was luxury condos all along.
 
 This structure lets you legally accept money from foundations, political donors, and investors, and aim it all at diseases instead of each other.
 
@@ -445,7 +445,7 @@ If your organization fits one of these profiles, the next step is a conversation
 | Role | Org type | Examples |
 |:---|:---|:---|
 | **The Starter** | A foundation or think tank with existing prize-program infrastructure and credibility in long-term civilizational risk | Foresight Institute, X Prize Foundation, Santa Fe Institute |
-| **The Vault** | A regulated financial custodian or purpose-built Swiss foundation with independent auditor | Qualified custodians, Swiss foundations with locked charters |
+| **The Vault** | A regulated financial custodian or purpose-built trust or foundation with a locked charter and independent auditor | Qualified custodians, purpose trusts or foundations with locked charters |
 | **The Referee** | An academic consortium or statistical panel with expertise in health economics and independence from political pressure | University health economics departments, WHO-affiliated research groups |
 | **The Bouncer** | A proof-of-personhood service with global reach and privacy-preserving verification | World ID, BrightID, Proof of Humanity |
 | **The Sword** | A political advocacy organization with experience in legislative campaigns and compliance infrastructure | Purpose-built 501(c)(4), modeled on existing effective advocacy structures |

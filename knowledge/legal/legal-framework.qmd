@@ -30,9 +30,9 @@ I have studied your laws for 80 years. They are not designed to prevent wrongdoi
 
 What follows is the legal architecture for curing disease using your own ridiculous laws, which is to say, using your laws exactly as written, just not as intended. On your planet, that's the most legal thing there is.
 
-Everything below is [Earth Optimization Services](../solution/earth-optimization-services.qmd), the terrestrial subsidiary of Universe Optimization Services. [Optimitron](../solution/optimocracy.qmd) is the policy and budget appliance, optimizing median health and wealth: health-adjusted life expectancy and after-tax inflation-adjusted income. [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] is the preference and accountability layer: pairwise slider choices in, Citizen Alignment Scores out. Your species used to call this "representation," but without checking the representing part.
+This chapter is the legal scaffolding around [Earth Optimization Services](../solution/earth-optimization-services.qmd), the terrestrial subsidiary of Universe Optimization Services, and the separate entities that work beside it. [Optimitron](../solution/optimocracy.qmd) is the policy and budget appliance, optimizing median health and wealth: health-adjusted life expectancy and after-tax inflation-adjusted income. [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] is the preference and accountability layer: pairwise slider choices in, Citizen Alignment Scores out. Your species used to call this "representation," but without checking the representing part.
 
-Your laws require this one company to pretend to be four companies, because your laws do not allow a single entity to simultaneously accept tax-deductible donations, lobby politicians, issue securities, and coordinate international treaties. So EOS is four legal entities that are spiritually one entity, held together by a Swiss foundation that owns all of them. The founder owns 0% of everything. The details:
+Your laws do not allow a single entity to accept tax-deductible donations, lobby politicians, issue securities, and coordinate international treaties all at once. So the work is split across several separate, firewalled entities that share one mission. Earth Optimization Services is a Delaware C-corp, the investment vehicle; the charity, the advocacy arm, the campaign-bond corporation, and the treasury sit beside it as distinct entities, not owned by it and not funded by its equity. Nothing owns the whole thing (you cannot own a nonprofit anyway, and nobody is allowed to own the mission). What holds them together is firewalls plus a mission-lock, both below. The operator is paid a salary, not stock. The details:
 
 ## Entity #1: Your 501(c)(3) Public Charity ("The Brain")
 
@@ -54,7 +54,7 @@ This is your political advocacy arm. Donations are NOT tax-deductible, which is 
 
 The Sword takes the referendum results from your Brain and weaponizes them: unlimited lobbying, voter mobilization of {{< var three_point_five_percent_of_global_population_nounit >}}+ referendum participants, and the kind of political pressure that makes politicians sweat through their suits. Your species invented an organizational form specifically for telling politicians what to do. Then you made a different form for everything else. Then you made it illegal for the two forms to talk to each other, except through carefully worded press releases, which is how they talk to each other.
 
-## Entity #3: The Victory Corporation ("The Engine")
+## Entity #3: The Campaign-Bond Corporation ("The Engine")
 
 This is a standard for-profit corporation. Designed to speak the only language Wall Street understands, which is money. Other languages Wall Street claims to understand include "sustainability," "stakeholder value," and "corporate responsibility," but it's been faking comprehension of these for decades and nobody has noticed, or rather everyone has noticed and nobody has cared, which on your planet is the same thing.
 
@@ -64,13 +64,11 @@ The Engine issues [VICTORY Incentive Alignment Bonds](../solution/incentive-alig
 
 Why Delaware? More corporations than humans live there [@delaware-corporate-population]. Your Supreme Court decided that companies are people who can talk, and talking is spending money. This sounds like satire but is actually constitutional law. Delaware has made itself the place where imaginary people go to be born, which is a sentence that sounds like it was written by a mentally unwell person but is in fact a precise description of American corporate law.
 
-## Entity #4: Your [Decentralized Institutes of Health](../solution/dih.qmd) Foundation ("The Soul")
+## Entity #4: The Mission-Lock ("The Soul")
 
-This is the parent organization. Based in Switzerland, where your species keeps its most valuable things and its least valuable opinions. The Swiss have avoided war for over 175 years [@switzerland-last-war-death-1847] by holding everyone's money. Even Hitler couldn't make them pick a side. If you're building something designed to survive hostile governments, put it in the country that survived all of them by being too useful to invade.
+This is the part that stops the whole thing from forgetting why it exists. Every for-profit eventually drifts toward maximizing shareholder value, which is corporate for "forgetting why you exist," as demonstrated by every hospital chain, insurance company, and pharmaceutical firm that started with noble intentions and ended up optimizing a spreadsheet. The only defense is a steward with a locked charter and a very long memory.
 
-![The Swiss foundation is the soul of the organization. Souls live in Switzerland because Switzerland has excellent tax treaties and doesn't ask uncomfortable questions.](/assets/images/legal-framework/legal-framework-section-entity-4-the-dih-foundation-the-soul-bw-academic.jpg)
-
-The Foundation owns 100% of Victory Corporation, ensuring profit serves mission instead of the other way around (which is what happens when you don't do this, as demonstrated by every hospital chain, insurance company, and pharmaceutical firm that started with noble intentions and ended up maximizing shareholder value, which is corporate for "forgetting why you exist"). It accepts international grants. Its legal charter is permanently locked to ending war and disease, which means no future board can wake up one morning and decide the real mission was luxury condos all along. And it sits in a neutral jurisdiction for treaty coordination, because coordinating an international treaty from a country that is party to the treaty is like refereeing a football game in which you're also the quarterback.
+So the voting control of Earth Optimization Services goes, permanently and irreversibly, into a Delaware purpose trust whose only job is to vote those shares for the mission. The trust cannot sell the shares, pledge them, or hand them to anyone whose terms are weaker. The nonprofits are locked the same way, each by its own charter. Nobody owns the whole thing, because you cannot own a nonprofit and nobody is allowed to own the mission. The operator holds the voting shares as a temporary bridge until the trust exists, and keeps none of the economics when they go. The charter is permanently locked to ending war and disease, so no future board can wake up one morning and decide the real mission was luxury condos all along.
 
 ## Why One Organization Pretending to Be Four
 
@@ -88,17 +86,15 @@ The ACLU, NRA, and Planned Parenthood use this same structure. It works for prot
 
 ## The General Staff
 
-Victory Corporation employs your core team, raises your capital, and executes your strategy. Your species spent thousands of years perfecting how to coordinate mass killing. Time to plagiarize that homework for the opposite purpose.
+Earth Optimization Services and the affiliated entities employ your core team, raise your capital, and execute your strategy. Your species spent thousands of years perfecting how to coordinate mass killing. Time to plagiarize that homework for the opposite purpose.
 
-![The people who will buy your democracy. Org chart included for transparency, as if that helps.](/assets/images/legal-framework/legal-framework-section-organizational-structure-the-for-profit-management-company-bw-academic.jpg)
 
 The organizational structure borrows from your military, because your military is the only institution on Earth that has successfully coordinated millions of humans toward a single objective, even if that objective was the wrong one. G-1 handles personnel (keeping track of humans, which is harder than it sounds). G-2 handles disease intelligence (deciding which diseases die next, which is a sentence your species should have been saying for decades but wasn't because nobody was coordinating). G-3 handles operations, running your [decentralized FDA](../solution/dfda.qmd) clinical trials, which is the only part that actually cures anything. G-4 handles logistics and treasury, managing your VICTORY Bond money (counting it, moving it, resisting the urge to steal it, which requires a surprising amount of institutional design). G-5 handles plans and strategy, thinking about next year while everyone else panics about next quarter. And G-6 handles signal and communications, which is propaganda, which is the reason you're reading this instead of doing something useful.
 
 ![You called your charity staff 'General Staff' like it's an army. To be fair, you're fighting death. Death doesn't have an org chart.](/assets/images/legal-framework/legal-framework-section-the-general-staff-g-staff-bw-academic.jpg)
 
-The Foundation watches the Victory Corporation to make sure profit stays on its leash. Mission drift happens to every for-profit entity eventually. It's like entropy but for mission statements. The only defense is a nonprofit owner with a locked charter and a very long memory.
+The mission-lock watches the for-profit arm to make sure profit stays on its leash. Mission drift happens to every for-profit entity eventually. It's like entropy but for mission statements. The only defense is a steward with a locked charter and a very long memory.
 
-![Who watches the watchmen? This chart. The chart watches the watchmen.](/assets/images/legal-framework/legal-framework-section-nonprofit-foundation-governance-bw-academic.jpg)
 
 ## Securities Law (A Section Named After Oranges)
 
@@ -164,7 +160,7 @@ The Sword converts scoreboard support into political action. When the [referendu
 
 **Succession:** If a Sword disappears, a replacement political advocacy organization in that jurisdiction can pick up the bond proceeds, the voter data (public on the Scoreboard), and the politician scoring methodology (published). The legal entities are separate from the people running them. The 501(c)(4) charter survives its founders, which is why your species uses 501(c)(4)s for things it wants to outlast any individual's attention span.
 
-**What kind of organization fits:** A purpose-built 501(c)(4) social welfare organization paired with a for-profit Victory Corporation, modeled on the ACLU, NRA, or Planned Parenthood structure. These organizations have been running the same legal playbook for decades. The only difference is the target: diseases instead of guns, reproductive rights, or civil liberties.
+**What kind of organization fits:** A purpose-built 501(c)(4) social welfare organization paired with a for-profit campaign-bond corporation, modeled on the ACLU, NRA, or Planned Parenthood structure. These organizations have been running the same legal playbook for decades. The only difference is the target: diseases instead of guns, reproductive rights, or civil liberties.
 
 ---
 
