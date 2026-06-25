@@ -151,6 +151,14 @@ README.html
 .claude/hooks/.voice-review-state.json
 !institute-header.tex
 
+# Voice pipeline: large/regenerable intermediates (rebuild with scripts/voice/*.py).
+# The distilled artifacts ARE tracked: voice-exemplars.jsonl + GUIDES/VOICE_RUBRIC.md.
+scripts/voice/voice-edits.jsonl
+scripts/voice/sample-pairs.json
+scripts/voice/sample-readable.txt
+scripts/voice/candidates.json
+scripts/voice/cand/
+
 
 
 # Audiobook build artifacts (regenerate with: npm run audiobook:generate:all, synced to R2)

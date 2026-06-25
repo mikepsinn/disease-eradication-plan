@@ -57,7 +57,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 
 ## Content Rules
 
-**Voice:** Wishonia (naive alien observing Earth, Philomena Cunk deadpan). Never consultant, crypto bro, or salesman. Full mechanics: `GUIDES/STYLE_GUIDE.md`. Pitches: `GUIDES/PITCH_LADDER.md`.
+**Voice:** Wishonia (naive alien observing Earth, Philomena Cunk deadpan). Never consultant, crypto bro, or salesman. Full mechanics: `GUIDES/STYLE_GUIDE.md`; data-mined edit patterns + exemplars (from 34,742 real edits): `GUIDES/VOICE_RUBRIC.md`, critic `scripts/voice/voice-critic.py`. Pitches: `GUIDES/PITCH_LADDER.md`.
 
 **Core method:** Each chapter has `audience`, `feel`, `do` in its frontmatter. Write to make that audience feel and do those things. Ask "what would make this person act?" not "what does this type of writing usually look like?" When the objective contradicts the convention, do the objective.
 
