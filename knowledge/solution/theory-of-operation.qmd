@@ -18,13 +18,13 @@ scores:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-Every appliance ships with a page called Theory of Operation. Nobody reads it until the appliance is on fire, which is also how you run a planet. It draws the machine as one diagram so that when the machine stops working, you can find the part that failed instead of arguing about it. Civilization did not ship with this page. So here it is. It is the most important page in this manual, because once you can see the machine, the rest of the book is just the parts list.
+Every appliance ships with a page called Theory of Operation. Nobody reads it until the appliance is on fire, which is also how you run a planet. It draws the machine as one diagram so that when the machine stops working, you can find the part that failed instead of arguing about it. Civilization did not ship with this page. So here it is. Once you can see the machine, the rest of the book is just the parts list.
 
 ## What a working machine has
 
 A machine that works has six parts and one habit.
 
-The six parts: a **target**, a **controller** that decides what to do, **actuators** that do it, the **plant** (the thing being acted on), an **output** (the result), and a **sensor** that measures the result. The habit: a **wire from the sensor back to the start**, so the machine compares the result to the target and adjusts. That feedback wire is the entire difference between a thermostat and a fire. Your oven has it. Your government does not.
+The six parts: a **target**, a **controller** that decides what to do, **actuators** that do it, the **plant** (the thing being acted on), an **output** (the result), and a **sensor** that measures the result. The habit: a **wire from the sensor back to the start**, so the machine compares the result to the target and adjusts. That feedback wire is the entire difference between a thermostat and a fire. Your oven has it. Your government has the fire.
 
 ## The schematic
 
@@ -68,13 +68,13 @@ The six parts: a **target**, a **controller** that decides what to do, **actuato
 
 ## The terminal general-welfare metrics, precisely
 
-The true target is conscious experience. The terminal general-welfare metrics deserve an exact definition, because every instrument in the machine is calibrated against them.
+The true target is conscious experience.
 
 **Median after-tax, inflation-adjusted income.** The income of the person in the middle, after taxes and including transfers (your economists call this real median disposable income), in constant purchasing power. The middle, not the average: the average is GDP per capita, which goes up when an arsonist and a firefighter invoice each other. Your statisticians already publish this number country by country (the OECD, the World Bank's poverty platform), and a commission of your own Nobel laureates told your governments in 2009 to steer by it instead of GDP [@nolan-gdp-vs-median-income-2019]. They declined. The machine does not decline.
 
 **Health-adjusted life expectancy (HALE).** Years of full health a person born today can expect, as the WHO already measures it. Not life expectancy, which counts the years spent dying as if they were living.
 
-The sensor reads both numbers by aggregating the published country-level figures under a methodology locked at baseline, cross-checked by surveys of the verified voter base (details in [the protocol spec](../appendix/earth-optimization-prize-protocol.qmd)). The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] settles on exactly these two numbers, and any future pricing of tasks on the [To-Do List for Humanity](../strategy/humanity-todo-list.qmd) is denominated in their expected movement. One terminal metric set; every instrument calibrated to it.
+The sensor reads both numbers by aggregating the published country-level figures under a methodology locked at baseline, cross-checked by surveys of the verified voter base (details in [the protocol spec](../appendix/earth-optimization-prize-protocol.qmd)). The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] settles on exactly these two numbers, and any future pricing of tasks on the [To-Do List for Humanity](../strategy/humanity-todo-list.qmd) is denominated in their expected movement.
 
 ## The four ledgers
 
@@ -87,7 +87,7 @@ The machine needs separate ledgers because different questions require different
 | Earth Optimization Points | Who helped produce verified progress? | Earned by contribution; not bought as votes |
 | Capital | What pays for the work? | Funds execution; does not buy extra humanity |
 
-Wishes tell the controller what humans want prioritized. Evidence tells it what works. Earth Optimization Points record useful contribution. Capital funds the work. They interact, but they are not the same thing, because the same thing cannot be a vote, a sensor, a receipt, and a bank account without becoming nonsense.
+Wishes tell the controller what humans want prioritized. Evidence tells it what works. Earth Optimization Points record useful contribution. Capital funds the work. They interact, but the same thing cannot be a vote, a sensor, a receipt, and a bank account without becoming nonsense.
 
 ## The two parts your government is missing
 
@@ -105,8 +105,8 @@ The usual objection: "you cannot measure human welfare precisely, so this cannot
 
 ## Warning (the part in red ink)
 
-The controller computes the correction. It does **not** choose the target, and it cannot make itself the boss. The target is set by humanity, and the controller is transparent, forkable, and overridable on purpose. A controller that sets its own target is not a thermostat. It is a king, and the whole machine exists to throw kings into the fire, not to forge a nicer one. The controller, [Optimitron](optimocracy.qmd), is built transparent, forkable, and overridable for exactly this reason.
+The controller computes the correction. It does **not** choose the target, and it cannot make itself the boss. The target is set by humanity, and the controller is transparent, forkable, and overridable on purpose. A controller that sets its own target is not a thermostat. It is a king, and the whole machine exists to throw kings into the fire, not to forge a shinier one.
 
 ## How to read the rest of the manual
 
-Every module in the parts list is the same six parts at smaller scale. The [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] is a loop (sensor: patient outcomes; controller: which treatment to try next). The [Loving Takeover](../appendix/loving-takeover.qmd) is a loop (actuator: a board seat; output: a redirected lobbying budget). Each module's chapter carries its own schematic at higher resolution and links back to this page, the way a repair manual's subsystem diagrams all reference the master. If a module ever stops making sense, come back here and find which of the six parts it is.
+Every module in the parts list is the same six parts at smaller scale. The [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] is a loop (sensor: patient outcomes; controller: which treatment to try next). The [Loving Takeover](../appendix/loving-takeover.qmd) is a loop (actuator: a board seat; output: a redirected lobbying budget). Each module's chapter carries its own schematic and links back to this page, the way a repair manual's subsystem diagrams all reference the master. If a module ever stops making sense, come back here and find which of the six parts it is.
