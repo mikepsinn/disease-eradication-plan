@@ -41,7 +41,7 @@ The long-term goal is to buy enough influence over the companies that already bu
 
 ## The Boring Legal Ladder
 
-Your laws make this happen in stages, because apparently buying shares in missile companies requires a puzzle room.
+Your laws make this happen in stages, because buying shares in missile companies requires a puzzle room.
 
 **The goal is to go public as fast as the campaign results allow.** A public company solves several problems at once: retail investors anywhere on Earth can buy in with $5, the activist campaign can become self-funding from inflows instead of private raises, and the ownership base becomes less absurdly gated. The Investment Company Act question is still handled by operating-company facts, not by magic public-company dust. The private phase is the minimum necessary starting point, not the destination.
 
@@ -49,7 +49,7 @@ Your laws make this happen in stages, because apparently buying shares in missil
 2. **Public listing (as soon as Stage 1 demonstrates the mechanism).** Once the HII campaign produces a verifiable result, EOS has a track record. At that point it can pursue a direct listing, traditional IPO, or another real public-company path. Any person on Earth can then buy EOS shares, which is the distributed-ownership goal in practical form.
 3. **Mission-lock holder (designed after first close; active before or concurrent with public listing).** A steward entity (a Delaware purpose trust, a foundation, or equivalent, chosen with counsel) takes custody of EOS's voting shares on behalf of humanity, bound by its governing terms to vote in alignment with Wishocracy outputs. It is what prevents a future acquirer from capturing EOS and reversing the mission at the moment it has actually succeeded.
 
-A token is not the product. It may someday be plumbing for transfer, custody, or reporting. If the plumbing is the story, something has gone wrong.
+A token is not the product. It may someday be plumbing for transfer, custody, or reporting. If anyone ever pitches you the plumbing as the story, that is your cue to leave the room.
 
 **The boring 506(c) gate.** Public solicitation is allowed, but accepted investors must be verified accredited investors. There is also a "bad actor" check, which means EOS cannot rely on Rule 506 if the issuer, core officers, or paid securities solicitors have certain recent securities-fraud convictions, bars, or orders. The fix is not a monastery. Use a verification service, get short certifications from the people actually touching the offering, and do not hire a disqualified paid solicitor. This is a speed bump, not the bridge.
 
@@ -69,7 +69,7 @@ There are three layers of appreciation.
 
 | Term | Value | Why |
 |------|-------|-----|
-| First EOS equity raise target | $500K minimum viable first close, $1M preferred initial target, with room up to $2M if demand justifies it | $500K buys proof/survival runway. $1M buys roughly 18-24 months of lean runway plus first campaign proof. $2M buys reserve, cleaner compliance, and stronger campaign proof. Not enough to build a bureaucracy, which is a feature. |
+| First EOS equity raise target | $500K minimum viable first close, $1M preferred initial target, with room up to $2M if demand justifies it | $500K buys proof/survival runway. $1M buys roughly 18-24 months of lean runway plus first campaign proof. $2M buys reserve, cleaner compliance, and stronger campaign proof. It is not enough money to build a bureaucracy, which on your planet is the rarest feature a pile of money can have. |
 | Minimum investment | Offering-specific | The minimum belongs to the exemption and offering documents, not vibes. Early private capital likely uses standard private-offering minimums. |
 | Operating budget | Target: flat annual budget | The goal is fixed operating cost, not a growing percentage of assets. Exact expenses belong in the offering documents. |
 | Performance fee / carry | Target: none | The operators should not skim the upside. If any fee exists, disclose it in plain English and make it boring. |
@@ -96,7 +96,7 @@ A governance product can capture less than that because some benefits are public
 
 But the leakage is not wasted from an investor's point of view. A diversified investor already owns a slice of the economy EOS is trying to repair. If EOS makes the economy larger, healthier, and less stupid, the "uncaptured" surplus still shows up in the investor's other assets. The EOS share is the lever. The balance sheet is the larger bet.
 
-EOS can also capture more than the ordinary innovator benchmark because the thesis is tradable before it is obvious. EOS can buy the constrained assets first. If copycat funds arrive later and buy the same military, pharma, finance, and energy shares, that demand validates the thesis and reprices assets EOS already owns. Normal competitors take margin. Early EOS competitors may create demand for the inventory.
+EOS can also capture more than the ordinary innovator benchmark because the thesis is tradable before it is obvious. EOS can buy the constrained assets first. If copycat funds arrive later and buy the same military, pharma, finance, and energy shares, that demand validates the thesis and reprices assets EOS already owns. Normal competitors take margin. Early EOS competitors are funds that turn up later, buy the same shares, and accidentally raise the price of the things EOS already owns. They are less rivals than unpaid marketing.
 
 At the base case: {{< var political_dysfunction_global_opportunity_cost_total >}}/yr dysfunction tax × {{< var eos_social_value_capture_pct >}} capture × perpetuity at {{< var npv_discount_rate_standard >}} discount rate ≈ **{{< var eos_equity_value_v >}}**. Expand the tree below to adjust any assumption.
 
@@ -113,7 +113,7 @@ A continuous per-share auction is aspirational; Reg D requires signed subscripti
 | **Implied-probability back-calculation** | Post-money valuation = P₀ × V / shares. Pick a P₀ a reasonable skeptic accepts as honest; the valuation follows. E.g. P₀ = 0.0001% → ~$74M post-money. | Sets the sanity-check floor and ceiling before any investor is approached. Anchors the range within which the auction must land to be credible. |
 | **Comparable activist launches** | Engine No. 1 launched at ~$250M for its first close with no track record. Other activist vehicles: $50M-$500M at launch. | Provides an independent cross-check. If the auction clears outside this range, investigate why before proceeding. |
 | **Minimum-investment anchor** | If $25K should represent ~X% of the company, post-money = $25K / X%. E.g. 0.5% → $5M post-money. | Sets the floor: a price so low that the $25K minimum feels meaningfully large. Prevents pricing that makes early investors feel like they bought rounding error. |
-| **Uniform-price auction (primary mechanism)** | Solicit bids (price per share + quantity) from all prospective investors before Tranche 1 closes. Sort by price, fill from highest down to the raise target. Everyone pays the clearing price, the lowest winning bid. Underbidding gets you excluded, not a discount, so lowballing is punished. | *This is the actual price-discovery mechanism.* The comparables and implied-probability calculation inform investors before they bid; the auction aggregates their beliefs into a clearing price. |
+| **Uniform-price auction (primary mechanism)** | Solicit bids (price per share + quantity) from all prospective investors before Tranche 1 closes. Sort by price, fill from highest down to the raise target. Everyone pays the clearing price, the lowest winning bid. Underbidding does not get you a discount; it gets you nothing, so the clever lowball move is to bid your actual belief. | *This is the actual price-discovery mechanism.* The comparables and implied-probability calculation inform investors before they bid; the auction aggregates their beliefs into a clearing price. |
 | **Bayesian tranche repricing** | After each close, the clearing price is evidence that investors estimated P ≥ implied level. Next tranche opens above that price, reflecting the updated signal. | Governs all tranches after Tranche 1. The auction sets the initial price; Bayesian updating governs every subsequent reprice. |
 
 **How they combine:** the implied-probability and comparables methods set the bounds before the auction (a sanity check investors can verify). The minimum-investment anchor prevents the price from being so high that the smallest check feels trivial. The uniform-price auction then runs within those bounds and discovers the actual clearing price. Every tranche after that is a Bayesian update on the signal from the last close.
@@ -412,7 +412,7 @@ The last line is not priced into the return, but it is arguably the more valuabl
 
 ## The cascade: how $5,000 becomes {{< var defense_takeover_cost_total >}}
 
-The diagram above assumes somebody buys everything at once. Nobody has {{< var defense_takeover_cost_total >}}.
+The diagram above assumes somebody buys everything at once. Nobody has {{< var defense_takeover_cost_total >}} lying around, and the few who do did not get it by buying missile companies outright.
 
 But you do not need to buy 50% of a company to control its board. In 2021, Engine No. 1 won three board seats at ExxonMobil while holding 0.02% of its shares. Carl Icahn has been redirecting boards since 1979 with positions between 1% and 10%. The mechanism is a legal letter the board is required to read (Caremark), a shareholder vote to seat a director that institutional investors are required to evaluate (ISS guidelines), and enough credibility that the board's lawyers recommend settling.
 
@@ -440,7 +440,7 @@ HII ($10B) → KTOS ($12B) → LDOS ($20B) → LHX ($45B)
 
 Then pharma ($373M/yr in lobbying). Then finance ($720M/yr). Then energy. Each sector's lobbying apparatus, redirected to champion the treaty. Each funded by the credibility and capital base created by the last.
 
-The cascade starts with one legal letter filed by one shareholder who paid $200 for one share.
+The whole cascade starts with one legal letter, filed by one shareholder, who paid $200 for one share, which the board is then legally obliged to read whether it wants to or not.
 
 ## Why this is unlike every other investment
 
@@ -449,7 +449,7 @@ Most investments are zero-sum at the margin. A dollar of market share won by one
 This one is different in four ways that do not coexist in any other asset class.
 
 **1. It is the only investment that increases the value of everything else you own.** The political dysfunction tax is not a tax on one sector. It is a drag on the entire economy. Eliminating it does not reprice one stock; it reprices all of them. If you own index funds, bonds, real estate, or a business, their value is being suppressed by misallocated policy. EOS correcting that suppression makes your other holdings worth more at the same time it makes itself worth more.
-**2. Copycats can be validation before they are competition.** Every other business competes with someone for customers, attention, market share, talent, or contracts. EOS's first competition is waste. Waste does not compete back. A fund copying the thesis has to make many of the same board arguments and publish many of the same public analyses. That increases attention, reduces the perceived weirdness of the strategy, and makes the thesis easier for boards to take seriously. Later, copied operating businesses may compete for fees or status. Fine. By then the important thing has happened: the market has begun pricing the end of waste.
+**2. Copycats can be validation before they are competition.** Every other business competes with someone for customers, attention, market share, talent, or contracts. EOS's first competitor is waste. Waste does not fight for market share, hire lawyers, or show up to the board meeting. It just sits there being wasteful. A fund copying the thesis has to make many of the same board arguments and publish many of the same public analyses. That increases attention, reduces the perceived weirdness of the strategy, and makes the thesis easier for boards to take seriously. Later, copied operating businesses may compete for fees or status. Fine. By then the important thing has happened: the market has begun pricing the end of waste.
 
 **3. The control math is absurd.** The top U.S. military contractors spend roughly $60 million per year on direct lobbying. That money is burned: spent, gone, zero asset remaining. It purchases access and influence for one year and requires the same spend next year to maintain.
 
@@ -468,7 +468,7 @@ The honest caveat: these four properties only hold if the governance campaigns w
 
 ## What each stage is worth (before it happens)
 
-On my planet, valuation is simple. You look at what a thing does, estimate how much waste it eliminates, and that is what it is worth. Your planet has a more complicated method involving comparable transactions, revenue multiples, and people in suits arguing about discount rates. I will use both methods and see if they agree.
+On my planet, valuation is simple. You look at what a thing does, estimate how much waste it eliminates, and that is what it is worth. Your planet has a more complicated method involving comparable transactions, revenue multiples, and people in suits arguing about discount rates.
 
 EOS captures value from waste. Not from competitors, not from customers, not from market share. From the gap between what money currently does and what it could do if pointed at things that work. This is not a zero-sum game. The value exists because your species is currently spending money on things that destroy value instead of creating it. EOS redirects the spending. The destroyed value becomes created value. The difference is the return.
 
@@ -480,7 +480,7 @@ Control is the one thing split evenly: one vote per human, operators included, n
 
 **Stage 3: All lobbying sectors.** Military contracting is not the only industry that lobbies for policies its own shareholders would be better off without. Pharmaceutical companies spend $373 million per year lobbying against drug pricing reforms that would expand their addressable market. Energy companies lobby against transitions that would lower their input costs. Finance, telecom, agriculture. Every industry that lobbies for wasteful policy has value trapped by misallocation. EOS applies the same governance pressure across all of them. Terminal stage value: {{< var eos_stage_3_lobbying_sectors_terminal_value >}}.
 
-**Stage 4: Wishocratic governance.** When resource allocation is optimized across all public spending globally, through [Wishocracy](../solution/wishocracy.qmd), the total value is the difference between what humanity produces under current governance and what it produces under optimal governance. This is the political dysfunction tax, eliminated. Modeled full EOS value: {{< var eos_equity_value_v >}}. This sounds absurd until you remember that global GDP is approximately {{< var global_gdp_2025 >}} per year, and the difference between good and bad allocation of that sum, compounded over decades, is larger than any number that fits comfortably in a sentence.
+**Stage 4: Wishocratic governance.** When resource allocation is optimized across all public spending globally, through [Wishocracy](../solution/wishocracy.qmd), the total value is the difference between what humanity produces under current governance and what it produces under optimal governance. This is the political dysfunction tax, eliminated. Modeled full EOS value: {{< var eos_equity_value_v >}}. Global GDP is approximately {{< var global_gdp_2025 >}} per year, and the difference between good and bad allocation of that sum, compounded over decades, is larger than any number that fits comfortably in a sentence.
 
 Each stage is independently valuable. You do not need Stage 4 to profit from Stage 1. But each stage funds the next, and the probability of reaching each subsequent stage increases with each completed stage. The math suggests this is probably irresistible once Stage 1 demonstrates the mechanism. But "the math suggests" is doing a lot of work in that sentence, and you should check the math yourself. The calculators above let you do that.
 
@@ -503,17 +503,17 @@ The operator gets progressively less rich as the company gets bigger. This is th
 
 **Layer 2: Consulting.** The legal letter the board must read creates a legal obligation for the board to respond (Caremark). Responding requires commissioning an analysis of whether the company's lobbying generates positive shareholder returns. EOS, through [Optimitron](../solution/optimocracy.qmd), provides this analysis. The free version demonstrates competence. The paid version (deeper, proprietary, ongoing advisory) is how EOS becomes a consultant to the companies it is pressuring.
 
-I spent a long time looking for the part where that letter and the consulting pipeline stop being the same object and could not find it. Each letter in the cascade creates a potential client. Across military contracting, pharma, and finance at scale, this is $10-50 million per year.
+That letter and the consulting pipeline are the same object. Each letter in the cascade creates a potential client. Across military contracting, pharma, and finance at scale, this is $10-50 million per year.
 
 **Layer 3: Board seat compensation.** When a governance campaign succeeds in placing a director, that director earns $220,000-$350,000 per year in board compensation from the portfolio company, not from EOS. Activist investors routinely require nominated directors to remit that compensation back to the nominating entity under a disclosed agreement. This is standard practice at Elliott, Starboard, and Third Point; it is disclosed in the proxy statement and legally clean.
 
-EOS nominates directors who represent the platonic ideal of a board member: someone who genuinely believes math and evidence should determine what maximizes long-term shareholder value, and acts on it. Optimitron provides the lobbying-ROI analysis; the director reviews it and exercises independent judgment, which, when the analysis is correct, means agreeing with it. The director is not a puppet; they are a person whose values align with the evidence. The $300,000 per year is the fee the company pays for having its shareholders represented by someone who actually read the data.
+EOS nominates directors who represent the platonic ideal of a board member: someone who believes math and evidence should decide what maximizes long-term shareholder value, and then, alarmingly, acts on it. Optimitron provides the lobbying-ROI analysis; the director reviews it and exercises independent judgment, which, when the analysis is correct, means agreeing with it. The director is not a puppet; they are a person whose values align with the evidence. The $300,000 per year is the fee the company pays for having its shareholders represented by someone who actually read the data.
 
 At scale: 15 board seats across the big military contractors generates ~$4.2M/yr. 50 seats across military, pharma, and finance generates ~$13.5M/yr, enough to cover EOS's full operating budget from board compensation alone, independent of any management fee.
 
-**Layer 4: Campaign infrastructure.** Optimitron is not a subscription data product. AI will commoditize the analytical layer (lobbying ROI analysis on public data) faster than any subscription business can be built on it. The real asset is the infrastructure for running activist campaigns at scale: legal standing as a named shareholder of record, process infrastructure for filing proxy proposals and coordinating with ISS and Glass Lewis, and a track record of campaign outcomes that no AI can generate without first running the campaigns. The value is the legal position and the credibility it buys, not the algorithm behind it.
+**Layer 4: Campaign infrastructure.** Optimitron is not a subscription data product. AI will turn lobbying-ROI analysis on public data into a free commodity faster than anyone could finish building a business around charging for it. The real asset is the infrastructure for running activist campaigns at scale: legal standing as a named shareholder of record, process infrastructure for filing proxy proposals and coordinating with ISS and Glass Lewis, and a track record of campaign outcomes that no AI can generate without first running the campaigns. The value is the legal position and the credibility it buys, not the algorithm behind it.
 
-**Layer 5: Brand.** The book you are reading. The [educational film](../educational-film.qmd). The shirts. None of this is large revenue. It is marketing that covers its own costs.
+**Layer 5: Brand.** The book you are reading. The [educational film](../educational-film.qmd). The shirts. None of this is large revenue. It is marketing that, unusually, pays for itself instead of asking you to.
 
 EOS does not need donations or grants. The revenue comes from the same activities that redirect the lobbying. If you separate the revenue from the mechanism, neither functions. Together, they compound: the more successfully EOS redirects lobbying, the more profitable it becomes.
 
@@ -529,7 +529,7 @@ If someone copies this and executes it well, they helped end war and disease. Th
 
 ## Two Money Boxes
 
-There are two money boxes. Do not pour the wrong thing into the wrong box.
+There are two money boxes. Pour the wrong thing into the wrong box and you have invented a brand new way to be confused about your own investment.
 
 **EOS equity.** Your money buys non-voting shares of Earth Optimization Services, the holding company, which buys activist positions in portfolio companies and operates real businesses on its own balance sheet. Private phase first (Reg D 506(c)), then public listing as fast as campaign results allow. This is the takeover arm.
 
@@ -933,7 +933,7 @@ The math: if you have $1 million and you spend $200 on something that increases 
 
 This scales linearly with wealth. A person with $1,000 who spends $200 preserves $800 of future utility. A person with $1 billion who spends $200 preserves $999,999,800. Same cost. Same action. The wealthier you are, the more you lose by dying on schedule.
 
-A person who spends 80 years accumulating $100 million and then dies of a treatable disease has built a pile of something that became worthless at the moment of their death. On my planet we find this very confusing. You are building a number and then not being alive for it. It is like spending your life writing a book and then burning it on the last page.
+A person who spends 80 years accumulating $100 million and then dies of a treatable disease has built a pile of something that became worthless at the moment of their death. On my planet we find this very confusing. You are building a number and then not being alive for it. It is like spending your life writing a book and then setting fire to it on the final page, while telling everyone how thick it got.
 
 ## Where to point the money: the lobbying allocation calculator
 
@@ -1230,4 +1230,4 @@ Every dollar buys exposure to voting shares in the companies whose lobbyists are
 
 ## If you are both
 
-Greed and generosity arrive at the same place.
+Greed and generosity, for once, get off at the same stop.

@@ -31,15 +31,15 @@ The architecture is embarrassingly simple. Raise {{< var treaty_campaign_total_c
 
 The instrument is a [VICTORY Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd): money in now, a fixed slice of treaty money out later, for as long as the treaty survives. Anywhere else, this would be called "fraud." On Earth, it's a revenue share backed by the treaty's future cash flows if the treaty passes.
 
-The bonds return {{< var victory_bond_annual_return_pct >}} annually. This looks like a typo. It's arithmetic: {{< var victory_bond_annual_payout >}} divided by {{< var treaty_campaign_total_cost >}}. This isn't a normal loan with an end date. The treaty permanently earmarks {{< var victory_bond_funding_pct >}} of all treaty money ({{< var victory_bond_annual_payout >}}/year) for bondholders, for as long as the treaty exists. That slice is fixed by the treaty itself, not by some manager's annual mood, because investors don't care about your moral framework until after they've been paid. Every Ponzi scheme in history has promised returns like this. The difference is that Bernie Madoff's repayment story was a spreadsheet he made up. Yours is a treaty that, if passed, creates {{< var treaty_annual_funding >}}+ in annual public funding and routes a fixed share of it to investors.
+The bonds return {{< var victory_bond_annual_return_pct >}} annually. This looks like a typo. It's arithmetic: {{< var victory_bond_annual_payout >}} divided by {{< var treaty_campaign_total_cost >}}. This isn't a normal loan with an end date. The treaty permanently earmarks {{< var victory_bond_funding_pct >}} of all treaty money ({{< var victory_bond_annual_payout >}}/year) for bondholders, for as long as the treaty exists. That slice is fixed by the treaty itself, not by some manager's annual mood. Every Ponzi scheme in history has promised returns like this. The difference is that Bernie Madoff's repayment story was a spreadsheet he made up. Yours is a treaty that, if passed, creates {{< var treaty_annual_funding >}}+ in annual public funding and routes a fixed share of it to investors.
 
 ![Put in one billion. Get 2.72 billion per year. Forever. The math is so good it sounds like a scam, but it's just what happens when you stop funding death.](/assets/images/treaty-financial-plan/treaty-financial-plan-section-fundraising-how-to-raise-var-treaty-campaign-total-cost-bw-academic.jpg)
 
-You raise {{< var treaty_campaign_total_cost >}} in 12-24 months. Donations would require generosity. Bonds require greed. Greed is faster. 
+You raise {{< var treaty_campaign_total_cost >}} in 12-24 months. Donations require generosity. Bonds require greed. Your species has a reliable, well-documented surplus of exactly one of these.
 
-Why {{< var treaty_campaign_total_cost >}}? Your opposition spends $450M/year to keep things exactly as terrible as they are (pharma lobbying at roughly $300M/year plus the military-industrial complex at roughly $150M/year). A subscription to suffering. You raise {{< var treaty_campaign_total_cost >}} ONCE to pass a treaty that generates {{< var treaty_annual_funding >}}/year FOREVER. Over a 10-year campaign, opposition spends roughly $4.5B to your {{< var treaty_campaign_total_cost >}}. But their $450M/year is spread across thousands of contracts and dozens of incumbents. Your {{< var treaty_campaign_total_cost >}} is aimed at a single treaty. Concentrated offense beats diffuse defense. This is military strategy, which is ironic, and also the only kind of strategy your species respects.
+Why {{< var treaty_campaign_total_cost >}}? Your opposition spends $450M/year to keep things exactly as terrible as they are (pharma lobbying at roughly $300M/year plus the military-industrial complex at roughly $150M/year). A subscription to suffering. You raise {{< var treaty_campaign_total_cost >}} once to pass a treaty that generates {{< var treaty_annual_funding >}}/year forever. Over a 10-year campaign, opposition spends roughly $4.5B to your {{< var treaty_campaign_total_cost >}}. But their $450M/year is spread across thousands of contracts and dozens of incumbents. Your {{< var treaty_campaign_total_cost >}} is aimed at a single treaty. Concentrated offense beats diffuse defense. This is military strategy, which is ironic, and also the only kind of strategy your species respects.
 
-Nobody gets the upside unless it works. Lawyers can take success-based compensation. Team compensation is modest cash plus the same [Earth Optimization Fund](earth-optimization-fund.qmd) exposure the investors hold. This is how you know it's not a government program.
+Nobody gets the projected upside unless it works. Lawyers take success-based compensation. The team takes modest cash plus the same [Earth Optimization Fund](earth-optimization-fund.qmd) exposure the investors hold, so everyone sinks or swims together. A government program would have paid itself first and forgotten the swimming part.
 
 These are tranches of the bond raise (the [Incentive Alignment Bond](../solution/incentive-alignment-bonds.qmd) product), not the [Earth Optimization Fund](earth-optimization-fund.qmd), which is a different product for a different job: bonds fund the campaign, the Fund buys the companies. The campaign borrows like a war effort, not like a startup.
 
@@ -82,7 +82,7 @@ The one-time activation energy to convince {{< var global_population_2024_nounit
 
 Viral referendum mechanics bring the cost down to $0.20/vote at the optimistic lower bound (base case $0.50-0.89), compared to $5-15 per voter through traditional channels. Getting someone to click "I prefer not dying" costs less than getting someone to click "I prefer Pepsi." You also focus on 20 high-impact countries, not all {{< var chain_world_leader_count_nounit >}}. You don't need Liechtenstein's permission. Liechtenstein has 39,000 people. That's a concert venue, not a geopolitical obstacle.
 
-Timeline is 36-60 months (optimistic) to 120+ months (realistic, given that you're humans). The landmine ban took 6 years, and that was just agreeing not to hide explosives in the ground, which you'd think wouldn't require a treaty at all. You're betting on viral referendum mechanics and existing disarmament frameworks. Also on the assumption that your species wants to survive, which, based on my observation, remains an open question.
+Timeline is 36-60 months (optimistic) to 120+ months (realistic, given that you're humans). The landmine ban took 6 years, and that was just agreeing not to hide explosives in the ground, which you'd think wouldn't require a treaty at all. You're betting on viral referendum mechanics and existing disarmament frameworks.
 
 ## Pillar 3: The Forever Part (Manage {{< var treaty_annual_funding >}}+/Year)
 
@@ -104,13 +104,13 @@ The allocation is fixed by the treaty and implemented through the fund's governi
 | **VICTORY Bond Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
 | **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Rewards for supporting legislators |
 
-The 20% for bonds and political incentives is fixed by the same treaty and fund rules and cannot be reallocated by management because somebody had a better idea after lunch. Where automation works, the distributions happen mechanically. Where the real world insists on banks, custodians, and auditors, the same formula still applies. Humans may run the payment systems. They do not get to improvise the percentages. On your planet, that already counts as a miracle.
+The 20% for bonds and political incentives is fixed by the same treaty and fund rules. Management cannot reallocate it because somebody had a better idea after lunch. Lunch has ended more good budgets than war. Where automation works, the distributions happen mechanically. Where the real world insists on banks, custodians, and auditors, the same formula still applies. Humans may run the payment systems. They do not get to improvise the percentages.
 
 The remaining {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds clinical trials and research infrastructure. Patients direct trial-participation spending by joining studies. [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025] governs infrastructure and other shared public-good allocations.
 
 ### Dynamic Patient Subsidies
 
-Instead of paying researchers to write about diseases, you pay patients to participate in curing them. Paying the people who are actually sick. What a concept.
+Instead of paying researchers to write about diseases, you pay patients to help cure them. You pay the sick people. On Earth this is considered a radical idea.
 
 ```
 Base Subsidy = Medical Research Allocation / Active Trial Participants
