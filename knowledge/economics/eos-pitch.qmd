@@ -40,7 +40,7 @@ aliases:
 +---------------------------------------+
 ```
 
-> There's this thing called expected value whereby if you multiply the chance of something happening by the value of it happening, you get the expected value. So let's say there's like a plot of land and you know there's like a 10% chance that there's \$100,000 worth of gold underneath it. The value of that land would be 10% times \$100,000 potential value equals \$10,000 expected value.
+> There's this thing called expected value, whereby you multiply the chance of a thing happening by how much you'd care if it did. Say there's a plot of land with a 10% chance of \$100,000 in gold under it. That land is worth \$10,000, on average, which is awkward, because you cannot dig up an average. You dig up either gold or disappointment.
 
 ---
 
@@ -62,7 +62,7 @@ aliases:
 +---------------------------------------+
 ```
 
-> There's a non-zero possibility that hell exists and you and everyone you love is going to die and burn in it for eternity. As it is very hot in hell, this would be unfortunate.
+> There's a non-zero possibility that hell exists and you and everyone you love is going to die and burn in it forever. Hell is, by most accounts, very hot. On a long enough timeline, this becomes a drawback.
 >
 > Additionally, when I was a kid my great-grandfather had Alzheimer's disease or something and he looked like he was in hell. All the time. He was miserable and he was like this for very many years. And so there's this thing called time dilation whereby when you're dreaming a few minutes can seem like a few hours. There's like a drug called salvia divinorum where some people have taken it and they said they felt like they were being crushed to death for millennia. Okay, so there's no way to disprove the possibility that your brain's going to get messed up in a manner that causes you great pain and confusion for perceptually an indefinite amount of time. Very very very very long time, maybe eternity. So this is like kind of a possibility of a hell on Earth. So even if it is highly unlikely that this occurs, like even if there's 0.00001% chance of this occurring, the expected value of this is infinity terrible.
 
@@ -104,7 +104,7 @@ aliases:
 +---------------------------------------+
 ```
 
-> So your job as President of Earth Optimization Services has 2 infinities of importance. One positive minus one negative.
+> So your job as President of Earth Optimization Services carries two infinities of importance: one heaven you could lose, one hell you could dodge. Most jobs offer dental.
 
 ---
 
@@ -147,7 +147,7 @@ YOU PAY {{< var global_government_expense_annual >}} A YEAR FOR HEALTH AND WEALT
   These guys:          a $1T raise every year.
 ```
 
-> So apparently someone decided it's necessary to murder them on occasion. Like we made this thing called governments that are supposed to promote the general welfare, which is I guess median health and wealth. Or more specifically if you want to measure it, median health-adjusted life expectancy and median after-tax inflation-adjusted income. So theoretically, if you were running one of these governments, you would measure these things. Then you would try to make policies and allocate resources to different activities and then see which ones maximized these two measurable outcomes which you are trying to improve. For some reason governments do not do this. We have like {{< var chain_world_leader_count_nounit >}} countries and hundreds of years of data about different public policies and budget allocations and so we can analyze this and determine which policies maximize the health and wealth of the population and then we could like just do those policies.
+> So apparently someone decided that part of promoting the general welfare of the employers was murdering them, occasionally, in batches. Like we made this thing called governments that are supposed to promote the general welfare, which is I guess median health and wealth. Or more specifically if you want to measure it, median health-adjusted life expectancy and median after-tax inflation-adjusted income. So theoretically, if you were running one of these governments, you would measure these things. Then you would try to make policies and allocate resources to different activities and then see which ones maximized these two measurable outcomes which you are trying to improve. For some reason governments do not do this. We have like {{< var chain_world_leader_count_nounit >}} countries and hundreds of years of data about different public policies and budget allocations and so we can analyze this and determine which policies maximize the health and wealth of the population and then we could like just do those policies.
 >
 > I have done this and like relative to the optimal policies that could be implemented, Earth currently wastes about \$101 trillion a year on idiotic policies. So this compounds. And so these governments that we pay about {{< var global_government_expense_annual >}} a year to provide this service of promoting general welfare for us, since 1900 they have spent {{< var cumulative_military_spending_fed_era >}} of this murdering {{< var war_deaths_since_1900_nounit >}} of their employers, which I feel would be grounds for termination probably under any employment contract any human has ever signed on Earth. But for some reason we just keep giving them an extra {{< var global_government_expense_annual >}} every year. So they suck at it.
 
@@ -429,7 +429,7 @@ THE LEGAL MECHANISM
   A legal argument, not a moral one.
 ```
 
-> A board is legally required to act in its shareholders' financial interest. A dead shareholder is worth nothing. Disease kills the customers, the workers, and the shareholders themselves, while the government wastes about {{< var political_dysfunction_global_opportunity_cost_total >}} a year that could be curing it. Point a sliver of that waste at clinical trials and every shareholder ends up richer and alive to enjoy it. Refusing to do that is the breach. This is a legal argument, not a moral one.
+> A board is legally required to act in its shareholders' financial interest. A dead shareholder is worth nothing. Disease kills the customers, the workers, and the shareholders themselves, while the government wastes about {{< var political_dysfunction_global_opportunity_cost_total >}} a year that could be curing it. Point a sliver of that waste at clinical trials and every shareholder ends up richer and alive to enjoy it. Refusing to do that is the breach. Note that this is a legal argument, not a moral one, which is the only kind a board is contractually allowed to hear.
 
 ---
 
@@ -613,7 +613,7 @@ THE FLYWHEEL: WHY IT SPEEDS UP
 +---------------------------------------+
 ```
 
-> Normally, when you get competitors, they steal your market share, so you get fewer sales and the value of your investment can go down. If somebody decides this is a good idea and competes with Earth Optimization Services, that can be good, because it means there is greater demand for the same shares you own, which can lift their value. Competition validates the thesis instead of destroying it, which is a nice change from normal capitalism, where everyone spends most of the day biting each other's ankles in spreadsheets.
+> Normally, when you get competitors, they steal your market share, so you get fewer sales and the value of your investment can go down. If somebody decides this is a good idea and competes with Earth Optimization Services, that can be good, because it means there is greater demand for the same shares you own, which can lift their value. Competition validates the thesis instead of destroying it, which is a nice change from normal capitalism, where everyone spends the working day trying to bite each other to death inside a spreadsheet.
 
 ---
 
@@ -635,7 +635,7 @@ MONEY DOESN'T BUY VOTES
   not extra votes or control of EOS.
 ```
 
-> If this company actually pulls it off and ends up controlling the companies that control the governments, it becomes very powerful. And concentrated power has a terrible track record. Every genocide, every unjust war, was started by some small group that had the power to start it. None of them were ever started by a public vote. People do not vote to be marched into a famine. So the rule here is simple: your money buys you a share of the profit, not extra civic votes or corporate control. The decisions get made one civic vote per human, and those votes are not for sale. You cannot buy the steering wheel, no matter how many shares you own.
+> If this company actually pulls it off and ends up controlling the companies that control the governments, it becomes very powerful. And concentrated power has a terrible track record. Every genocide, every unjust war, was started by some small group that had the power to start it. None of them were ever started by a public vote. People do not vote to be marched into a famine. So the rule here is simple: your money buys you a share of the profit, not extra civic votes or corporate control. The decisions get made one civic vote per human, and those votes are not for sale. You cannot buy the steering wheel, no matter how many shares you own, which is, admittedly, an unusual feature for a thing you are being asked to buy shares in.
 
 ---
 
@@ -661,7 +661,7 @@ WHAT THE FIRST MONEY BUYS
   It buys non-voting EOS equity.
 ```
 
-> Private offering documents decide the final terms, and accepted private investors must be verified accredited investors. The pitch version is simpler: the first EOS equity raise is meant to buy time, tools, legal cleanliness, and the first proof that shareholder pressure can redirect lobbying. At the low end, it is a proof budget. At the target, it is a real lean operating budget. If demand is larger, the extra oxygen goes to reserve, compliance, and stronger campaign proof, not to building a bureaucracy with better chairs.
+> Private offering documents decide the final terms, and accepted private investors must be verified accredited investors. The pitch version is simpler: the first EOS equity raise is meant to buy time, tools, legal cleanliness, and the first proof that shareholder pressure can redirect lobbying. At the low end, it is a proof budget. At the target, it is a real lean operating budget. If demand is larger, the extra oxygen goes to reserve, compliance, and stronger campaign proof, and not, under any circumstances, to a head office with a water feature and chairs that cost more than the audit.
 >
 > It does not fund the bonds, the Prize, a nonprofit, or a secret steering wheel. It funds EOS: the company, the platform, the first public-equity positions, and the first campaign evidence.
 
@@ -674,15 +674,13 @@ INVEST
 
   Earth Optimization Services. Buy shares in the company.
 
-  If the campaigns work: the shares go up.
-  If they don't: you own military stocks, which go up when
-  wars don't end. You make money either way.
+  If the campaigns work, the shares may rise. If they don't, you are left holding military stocks, which have historically risen when wars decline to end. The aim is a floor under the downside, not a promise of profit.
 
   Minimum: $25,000.
   You have to be a rich-enough investor to qualify
   (the legal word for it is "accredited").
 
-  Guarantee: full refund if the world ends more than once.
+  Refund policy: full refund if the world ends more than once. Returns are projected, not promised; the apocalypse, sadly, is the only thing here anyone can model with confidence.
 ```
 
 > So what Earth Optimization Services actually does is reclaim all of these currently wasted resources, all of this money that's being wasted on thousand dollar screws and lost in Pentagon black holes and spent on {{< var nuclear_winter_spare_apocalypses_nounit >}} unnecessary apocalypses, and return it to the shareholders. Which is you. All of you. And then you allocate it via the free market, which is the thing that we already know works better than central planning. So instead of {{< var us_congress_member_count_nounit >}} people in Congress deciding what to do with your money based on who gave them the most lobbying money, you decide what to do with your money based on what you actually need. And some of you will buy healthcare and some of you will fund research and some of you will buy more bombs if you want, but at least it will be your choice.
@@ -709,7 +707,6 @@ INVEST
 ```
 
 > Additionally, whether or not you invest, you are already a Humanity Manager at Earth Optimization Services, which comes with one civic vote, not a corporate share, given equally to every human and impossible to buy or sell. Investing earns you the financial return; the vote is yours just for being a person. And as a Humanity Manager, your job is to do your best to help Earth Optimization Services determine the optimal public policies and gain board seats at all of these corporations. And just generally make the rest of humanity be nice and helpful to each other in this workplace, which is Earth.
-
 
 ---
 

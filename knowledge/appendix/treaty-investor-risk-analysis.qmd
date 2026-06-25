@@ -25,7 +25,7 @@ aliases:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 This is the risk analysis for the **[1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] campaign** and its instruments, VICTORY [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] and Prize deposits. It is a separate product from buying [Earth Optimization Services](../solution/earth-optimization-services.qmd) shares. For the risk profile of the EOS equity raise, see the [Earth Optimization Fund](../economics/earth-optimization-fund.qmd).
 
-Your investors will ask: "Is this riskier than a normal startup investment?" The answer is no. The risk is not greater. It is fundamentally _different_. And different, here, means better.
+Your investors will ask: "Is this riskier than a normal startup investment?" It is not riskier. It is a different risk. A normal startup bets that a stranger will want its app. This bets that a politician will stop buying a bomb. Your species has decided the second one is the weird option.
 
 ## Where the risk lives.
 
@@ -37,7 +37,7 @@ Your investors will ask: "Is this riskier than a normal startup investment?" The
 
 **Your payback:** Returns don't depend on product-market fit, user adoption, or competitive dynamics. They depend on treaty ratification. That unlocks direct, recurring government payments.
 
-**The precedent:** Your military-industrial complex has proven this model for decades. Over the twenty years of the Afghan War, its top five firms spent ~$1.1 billion on lobbying and collected $2.02 trillion in contracts [@lobbying-roi-calc]. That's an ROI of 1,813:1. You're just reversing the cash flow. Same game, opposite direction.
+**The precedent:** Your military-industrial complex has proven this model for decades. Over the twenty years of the Afghan War, its top five firms spent ~$1.1 billion on lobbying and collected $2.02 trillion in contracts [@lobbying-roi-calc]. That's an ROI of 1,813:1. You're just reversing the cash flow.
 
 ## Risk Comparison
 
@@ -49,13 +49,11 @@ Your investors will ask: "Is this riskier than a normal startup investment?" The
 | **Political Risk** | **LOW** (operates within existing rules) | **VERY HIGH** (this is the whole bet) |
 | **Outcome Profile** | Graded (fail, 2x, 100x) | Binary (near-total loss, or a {{< var victory_bond_annual_return_pct >}}/year perpetual win) |
 
-You've swapped market and competition risk for a single, concentrated political risk. On your planet, this is considered exotic. In reality, it's a much cleaner bet. One variable instead of fifty.
+You've swapped market and competition risk for one concentrated political risk. On your planet this is considered exotic, which is strange, because you have traded fifty things that can go wrong for one. You normally call having fewer problems an improvement.
 
 ![Trade the risk of business failure for the risk of political failure. Like choosing between quicksand and a trapdoor.](/assets/images/treaty-investor-risk-analysis/treaty-investor-risk-analysis-section-comparative-risk-analysis-bw-academic.jpg)
 
 ## How You Mitigate Each Risk
-
-Your risk is specific. So you can engineer specific tools to neutralize it.
 
 Your ecosystem has two instruments with two risk profiles. A **Prize deposit** is a claim on the prize pool: if the plan fails to hit its year 15 targets (global HALE {{< var prize_target_hale_year_15 >}}, median income {{< var prize_target_median_income_year_15 >}}), depositors divide the realized pool pro rata by deposits; if it succeeds, the same pool routes to Earth Optimization Points holders. **[IABs](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]** fund the lobbying campaign with real capital at risk.
 
