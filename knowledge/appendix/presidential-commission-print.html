@@ -185,8 +185,21 @@
 
   .sig-line {
     width: 2.4in;
+    height: 0.38in;
     border-bottom: 1px solid #2c1810;
     margin-bottom: 0.08in;
+    outline: none;
+    cursor: text;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'IM Fell English', Georgia, serif;
+    font-style: italic;
+    font-size: 24pt;
+    line-height: 1;
+    color: #2c1810;
   }
 
   .sig-name {
@@ -246,7 +259,7 @@
 
     <div class="signature-row">
       <div class="signature-block">
-        <div class="sig-line"></div>
+        <div class="sig-line" contenteditable="true" spellcheck="false" aria-label="Optional signature"></div>
         <div class="sig-name">Mike P. Sinn</div>
         <div class="sig-title">Assistant to the President</div>
       </div>
@@ -276,9 +289,16 @@
       + ', in the year ' + d.getFullYear() + '.';
   })();
 
-  // Prevent newlines in name field
-  document.querySelector('.recipient-name').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') e.preventDefault();
+  // Keep editable certificate fields single-line and paste as plain text.
+  document.querySelectorAll('[contenteditable="true"]').forEach(function(field) {
+    field.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') e.preventDefault();
+    });
+
+    field.addEventListener('paste', function(e) {
+      e.preventDefault();
+      document.execCommand('insertText', false, e.clipboardData.getData('text/plain'));
+    });
   });
 </script>
 
