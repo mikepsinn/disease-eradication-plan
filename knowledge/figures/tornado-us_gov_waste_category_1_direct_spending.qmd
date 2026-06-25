@@ -20,14 +20,14 @@ display_name = "Category 1: Direct Spending Waste"
 
 # Baseline and units
 
-baseline = 1011000000000.0
+baseline = 1098000000000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['US_GOV_WASTE_MILITARY_OVERSPEND', 'US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES']
-driver_labels = ['Military Overspend', 'Drug War Cost', 'Agricultural Subsidies Deadweight Loss', 'Corporate Welfare Waste', 'Fossil Fuel Subsidies (Explicit)']
-impacts_low = [-115000000000.0, -30000000000.0, -25000000000.0, -31000000000.0, -20000000000.0]
-impacts_high = [135000000000.0, 60000000000.0, 45000000000.0, 39000000000.0, 30000000000.0]
+drivers = ['US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_DEFENSE_FP_MOBILIZATION_HEDGE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES', 'US_DEFENSE_FP_NUCLEAR_DETERRENT', 'US_DEFENSE_FP_HOMELAND_AIR_MISSILE', 'US_DEFENSE_FP_NATIONAL_GUARD', 'US_DEFENSE_FP_CYBER', 'US_DEFENSE_FP_COAST_GUARD']
+driver_labels = ['Drug War Cost', 'Agricultural Subsidies Deadweight Loss', 'Corporate Welfare Waste', 'First-Principles Defense: Mobilization Hedge', 'Fossil Fuel Subsidies (Explicit)', 'First-Principles Defense: Nuclear Second Strike', 'First-Principles Defense: Homeland Air & Missile Defense', 'First-Principles Defense: National Guard', 'First-Principles Defense: Cyber Defense', 'First-Principles Defense: Coast Guard']
+impacts_low = [-30000000000.0, -25000000000.0, -31000000000.0, 20000000000.0, -20000000000.0, 10000000000.0, 10000000000.0, 6000000000.0, 5000000000.0, 2000000000.0]
+impacts_high = [60000000000.0, 45000000000.0, 39000000000.0, -40000000000.0, 30000000000.0, -20000000000.0, -15000000000.0, -10000000000.0, -10000000000.0, -2000000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

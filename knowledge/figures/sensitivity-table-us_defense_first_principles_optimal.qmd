@@ -1,0 +1,14 @@
+**Sensitivity Indices for First-Principles Optimal US Defense Budget**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| First-Principles Defense: Mobilization Hedge (USD) | 0.7817 | Strong driver |
+| First-Principles Defense: Nuclear Second Strike (USD) | 0.4131 | Moderate driver |
+| First-Principles Defense: Homeland Air & Missile Defense (USD) | 0.3684 | Moderate driver |
+| First-Principles Defense: National Guard (USD) | 0.2171 | Weak driver |
+| First-Principles Defense: Cyber Defense (USD) | 0.2081 | Weak driver |
+| First-Principles Defense: Coast Guard (USD) | 0.0717 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

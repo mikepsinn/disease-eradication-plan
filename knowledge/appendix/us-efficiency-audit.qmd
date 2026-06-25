@@ -145,7 +145,7 @@ Calling everything "government waste" is like calling every medical problem "fee
 
 Actual budget allocations flowing to low-value uses. This is traditional "government waste": military overspend, corporate welfare, drug war enforcement, fossil fuel subsidies, agricultural subsidies. The solution is **budget reallocation**-redirect these dollars to higher-return uses without increasing total spending.
 
-Think of military spending: the {{< var us_gov_waste_military_overspend >}} "overspend" above strict deterrence baseline represents federal dollars that could fund disease eradication treaties instead of maintaining 750 overseas bases [@npp-military-bases-2025].
+Think of military spending: the {{< var us_gov_waste_military_overspend >}} "overspend" above a first-principles homeland-defense baseline ({{< var us_defense_first_principles_optimal >}}) represents federal dollars that could fund disease eradication treaties instead of maintaining 750 overseas bases [@npp-military-bases-2025].
 
 **Compliance Burden ({{< var us_gov_waste_category_2_compliance >}})**
 
@@ -217,7 +217,7 @@ This category represents actual federal budget allocations flowing to demonstrab
 
 | Component | Annual Cost | Optimal Comparison |
 |-----------|-------------|-------------------|
-| Military overspend | {{< var us_gov_waste_military_overspend >}} | Strict Deterrence doctrine ($285B baseline) |
+| Military overspend | {{< var us_gov_waste_military_overspend >}} | First-principles homeland defense ({{< var us_defense_first_principles_optimal >}}) |
 | Corporate welfare | {{< var us_gov_waste_corporate_welfare >}} | Zero subsidies (market allocation) |
 | Drug war | {{< var us_gov_waste_drug_war >}} | Portugal decriminalization model |
 | Fossil fuel subsidies | {{< var us_gov_waste_fossil_fuel_subsidies >}} | Zero subsidies (market pricing) |
@@ -323,7 +323,7 @@ The following subsystem audits provide detailed component breakdowns. Each subsy
 
 **[Direct Federal Spending Waste]**
 
-In the core model, defense contributes {{< var us_gov_waste_military_overspend >}} annually through military overspend above the strict deterrence baseline. The Department of Defense operates as the largest discretionary expenditure node, with annual spending of approximately $900 billion [@pgpf-defense-budget-2024]. Current spending exceeds the next nine nations combined [@sipri-milex-2024].
+In the core model, defense contributes {{< var us_gov_waste_military_overspend >}} annually through military overspend above the first-principles homeland-defense baseline of {{< var us_defense_first_principles_optimal >}}. The Department of Defense operates as the largest discretionary expenditure node, with annual spending of approximately $900 billion [@pgpf-defense-budget-2024]. Current spending exceeds the next nine nations combined [@sipri-milex-2024].
 
 ![America spends more on defense than the next nine countries combined. Apparently nine countries aren't enough to feel safe.](/assets/images/us-efficiency-audit/us-efficiency-audit-section-subsystem-audit-defense-bw-academic.jpg)
 

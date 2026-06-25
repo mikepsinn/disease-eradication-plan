@@ -7643,8 +7643,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html"
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_EFFICIENCY_SCORE": {
-      "value": 0.5185960162628752,
-      "formatted": "51.9%",
+      "value": 0.518396307387133,
+      "formatted": "51.8%",
       "unit": "percent",
       "description": "Global Governance Efficiency Score from Political Dysfunction Tax paper. E = Adjusted W_real / W_max, where W_real = GDP - waste, W_max = W_real + opportunity cost. Paper calculates 30-52% efficiency (using $110.9T adjusted / $211.9T maximum). This means civilization operates at roughly half its technological potential.",
       "sourceType": "calculated",
@@ -7757,7 +7757,7 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/optimocracy-paper.html"
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED": {
-      "value": 108803000000000.0,
+      "value": 108716000000000.0,
       "formatted": "$109 trillion",
       "unit": "USD",
       "description": "Adjusted realized welfare after subtracting measured governance waste from global GDP.",
@@ -7789,7 +7789,7 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/optimocracy-paper.html"
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE": {
-      "value": 209803000000000.0,
+      "value": 209716000000000.0,
       "formatted": "$210 trillion",
       "unit": "USD",
       "description": "Conservative theoretical maximum welfare under opportunity-cost recapture assumptions.",
@@ -7805,8 +7805,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/political-dysfunction-tax.html"
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_WASTE_TOTAL": {
-      "value": 6197000000000.0,
-      "formatted": "$6.2 trillion",
+      "value": 6284000000000.0,
+      "formatted": "$6.28 trillion",
       "unit": "USD",
       "description": "Global waste deduction used in Political Dysfunction Tax efficiency accounting. Combines US governance waste estimate with global explicit fossil-fuel subsidies.",
       "sourceType": "calculated",
@@ -10537,6 +10537,138 @@
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/unrepresentative-democracy.html"
     },
+    "US_DEFENSE_FIRST_PRINCIPLES_CUT_PCT": {
+      "value": 0.7923250564334086,
+      "formatted": "79.2%",
+      "unit": "percent",
+      "description": "Implied cut from current US military spending (~$886B) to the first-principles homeland-defense optimum (~$184B): ~79%. For comparison, the US cut military spending 87.6% in two years after WWII.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": "1 - (US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL / US_MILITARY_SPENDING_2024_ANNUAL)",
+      "inputs": [
+        "US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL",
+        "US_MILITARY_SPENDING_2024_ANNUAL"
+      ],
+      "computeExpr": "(1.0 - (US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL / US_MILITARY_SPENDING_2024_ANNUAL))",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/eisenhower-curve.html"
+    },
+    "US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL": {
+      "value": 184000000000.0,
+      "formatted": "$184 billion",
+      "unit": "USD",
+      "description": "First-principles optimal US homeland-defense budget: the bottom-up sum of what defending the United States actually requires at efficient prices. Nuclear second strike $30B + homeland air/missile defense $35B + Coast Guard $14B + National Guard $30B + cyber defense $15B + mobilization hedge $60B = ~$184B. Honest range ~$130-260B. Compare: current ~$886B. Restraint-school proposals (Posen, Cato) and peer benchmarks land higher (~$450-675B) because they cost reduced hegemony and allied/peer deterrence, not homeland defense.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": "Nuclear + HomelandAirMissile + CoastGuard + NationalGuard + Cyber + MobilizationHedge",
+      "inputs": [
+        "US_DEFENSE_FP_COAST_GUARD",
+        "US_DEFENSE_FP_CYBER",
+        "US_DEFENSE_FP_HOMELAND_AIR_MISSILE",
+        "US_DEFENSE_FP_MOBILIZATION_HEDGE",
+        "US_DEFENSE_FP_NATIONAL_GUARD",
+        "US_DEFENSE_FP_NUCLEAR_DETERRENT"
+      ],
+      "computeExpr": "(((((US_DEFENSE_FP_NUCLEAR_DETERRENT + US_DEFENSE_FP_HOMELAND_AIR_MISSILE) + US_DEFENSE_FP_COAST_GUARD) + US_DEFENSE_FP_NATIONAL_GUARD) + US_DEFENSE_FP_CYBER) + US_DEFENSE_FP_MOBILIZATION_HEDGE)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/eisenhower-curve.html"
+    },
+    "US_DEFENSE_FP_COAST_GUARD": {
+      "value": 14000000000.0,
+      "formatted": "$14 billion",
+      "unit": "USD",
+      "description": "US Coast Guard (actual budget ~$14B). Maritime homeland security and coastal defense.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "high",
+      "formula": null,
+      "confidenceInterval": [
+        12000000000.0,
+        16000000000.0
+      ],
+      "distribution": "normal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/eisenhower-curve.html"
+    },
+    "US_DEFENSE_FP_CYBER": {
+      "value": 15000000000.0,
+      "formatted": "$15 billion",
+      "unit": "USD",
+      "description": "Cyber defense of critical infrastructure: the primary modern attack vector that crosses oceans in milliseconds and is not stopped by geography.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": null,
+      "confidenceInterval": [
+        10000000000.0,
+        25000000000.0
+      ],
+      "distribution": "normal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/eisenhower-curve.html"
+    },
+    "US_DEFENSE_FP_HOMELAND_AIR_MISSILE": {
+      "value": 35000000000.0,
+      "formatted": "$35 billion",
+      "unit": "USD",
+      "description": "Continental air and missile defense plus early warning (NORAD, ground-based midcourse defense, interceptor aircraft). Defensive only; no expeditionary or power-projection air power.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": null,
+      "confidenceInterval": [
+        25000000000.0,
+        50000000000.0
+      ],
+      "distribution": "normal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/eisenhower-curve.html"
+    },
+    "US_DEFENSE_FP_MOBILIZATION_HEDGE": {
+      "value": 60000000000.0,
+      "formatted": "$60 billion",
+      "unit": "USD",
+      "description": "Mobilization hedge: defense R&D, a maintained industrial base, and a professional cadre force. The WWII lesson is to maintain the capacity to scale, not a standing empire: a peer buildup gives years of warning, and the US went from the 17th-ranked army in 1939 to victory in four years. This is the cheapest insurance and the most neglected.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": null,
+      "confidenceInterval": [
+        40000000000.0,
+        100000000000.0
+      ],
+      "distribution": "normal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/eisenhower-curve.html"
+    },
+    "US_DEFENSE_FP_NATIONAL_GUARD": {
+      "value": 30000000000.0,
+      "formatted": "$30 billion",
+      "unit": "USD",
+      "description": "National Guard / territorial land defense: a citizen-soldier reserve (the Switzerland model) for homeland defense and disaster response.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": null,
+      "confidenceInterval": [
+        24000000000.0,
+        40000000000.0
+      ],
+      "distribution": "normal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/eisenhower-curve.html"
+    },
+    "US_DEFENSE_FP_NUCLEAR_DETERRENT": {
+      "value": 30000000000.0,
+      "formatted": "$30 billion",
+      "unit": "USD",
+      "description": "Survivable nuclear second strike: an SSBN-centric minimum credible deterrent (~100-200 survivable warheads on ballistic-missile submarines). The one threat geography does not neutralize. Drops the first-strike-attractive ICBM silos and the bomber leg. The UK and France each sustain continuous-at-sea deterrents within total defense budgets under $80B.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": null,
+      "confidenceInterval": [
+        20000000000.0,
+        50000000000.0
+      ],
+      "distribution": "normal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/eisenhower-curve.html"
+    },
     "US_DIABETES_ANNUAL_COST": {
       "value": 327000000000.0,
       "formatted": "$327 billion",
@@ -10594,8 +10726,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/unrepresentative-democracy.html"
     },
     "US_FED_DISCRETIONARY_EFFICIENCY": {
-      "value": 0.4052941176470588,
-      "formatted": "40.5%",
+      "value": 0.35411764705882354,
+      "formatted": "35.4%",
       "unit": "percent",
       "description": "US federal discretionary spending efficiency. What fraction of discretionary spending avoids direct waste (Cat 1 only: military overspend, corporate welfare, drug war, fossil/ag subsidies). ~41%. Some Cat 1 items (farm subsidies, tax expenditures) are technically mandatory/off-budget but are fungible policy choices.",
       "sourceType": "calculated",
@@ -10622,8 +10754,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_FED_DISCRETIONARY_WASTE_PCT": {
-      "value": 0.5947058823529412,
-      "formatted": "59.5%",
+      "value": 0.6458823529411765,
+      "formatted": "64.6%",
       "unit": "percent",
       "description": "Category 1 direct spending waste as percentage of federal discretionary spending. ~$1.01T Cat 1 waste / $1.7T discretionary = ~59%. Uses discretionary spending as denominator because Cat 1 items (military overspend, corporate welfare, drug war, fossil/ag subsidies) are fungible policy choices within discretionary budget.",
       "sourceType": "calculated",
@@ -10650,8 +10782,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_GOVERNANCE_EFFICIENCY_GDP": {
-      "value": 0.8298471160528145,
-      "formatted": "83%",
+      "value": 0.8268241834607366,
+      "formatted": "82.7%",
       "unit": "percent",
       "description": "Total US governance efficiency: all 4 waste categories as share of GDP. 1 - ($4.9T / $28.78T) = ~83%. This broader metric captures direct spending waste, compliance burden, policy-induced GDP loss, and system inefficiency relative to total economic output.",
       "sourceType": "calculated",
@@ -10694,8 +10826,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_GOV_WASTE_CATEGORY_1_DIRECT_SPENDING": {
-      "value": 1011000000000.0,
-      "formatted": "$1.01 trillion",
+      "value": 1098000000000.0,
+      "formatted": "$1.1 trillion",
       "unit": "USD",
       "description": "Category 1: Direct Federal Spending Waste. Actual federal budget allocations that could be redirected. Includes military overspend ($615B), corporate welfare ($181B), drug war ($90B), fossil fuel subsidies ($50B), and agricultural subsidies ($75B). Total: ~$1.01T annually. Solution: Budget reallocation.",
       "sourceType": "calculated",
@@ -10840,19 +10972,19 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_GOV_WASTE_MILITARY_OVERSPEND": {
-      "value": 615000000000.0,
-      "formatted": "$615 billion",
+      "value": 702000000000.0,
+      "formatted": "$702 billion",
       "unit": "USD",
-      "description": "US military spending above 'Strict Deterrence' baseline. Current budget ~$900B supports global power projection (750+ bases). Strict Deterrence (nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense $28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]",
-      "sourceType": "external",
-      "sourceRef": "political-dysfunction-tax-paper-2025",
+      "description": "US military spending above the first-principles homeland-defense optimum. Current US military spending (~$886B) supports global power projection (~750 overseas bases). A bottom-up, threat-by-threat homeland-defense budget is ~$184B (nuclear second strike $30B, homeland air/missile defense $35B, Coast Guard $14B, National Guard $30B, cyber defense $15B, mobilization hedge $60B). Delta = $886B - $184B = ~$702B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]",
+      "sourceType": "calculated",
+      "sourceRef": null,
       "confidence": "medium",
-      "formula": null,
-      "confidenceInterval": [
-        500000000000.0,
-        750000000000.0
+      "formula": "US_MILITARY_SPENDING_2024_ANNUAL - US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL",
+      "inputs": [
+        "US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL",
+        "US_MILITARY_SPENDING_2024_ANNUAL"
       ],
-      "distribution": "normal",
+      "computeExpr": "(US_MILITARY_SPENDING_2024_ANNUAL - US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_GOV_WASTE_OVERLAP_DISCOUNT": {
@@ -10868,8 +11000,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_GOV_WASTE_PCT_GDP": {
-      "value": 0.17015288394718556,
-      "formatted": "17%",
+      "value": 0.17317581653926337,
+      "formatted": "17.3%",
       "unit": "percent",
       "description": "US government waste as percentage of GDP. ~$4.90T waste / $28.78T GDP = ~17%. This represents the 'dysfunction tax' that American citizens effectively pay through inefficient governance.",
       "sourceType": "calculated",
@@ -10884,8 +11016,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/optimocracy-paper.html"
     },
     "US_GOV_WASTE_QALY_EQUIVALENTS": {
-      "value": 48970000.0,
-      "formatted": "49 million QALYs",
+      "value": 49840000.0,
+      "formatted": "49.8 million QALYs",
       "unit": "QALYs",
       "description": "US government waste expressed as QALY equivalents. This is an economic equivalent, NOT epidemiological health outcomes. Dividing by QALY threshold yields a measure of foregone welfare.",
       "sourceType": "calculated",
@@ -10900,8 +11032,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_GOV_WASTE_RAW_TOTAL": {
-      "value": 4897000000000.0,
-      "formatted": "$4.9 trillion",
+      "value": 4984000000000.0,
+      "formatted": "$4.98 trillion",
       "unit": "USD",
       "description": "Raw sum of US government waste components before overlap discount: healthcare ($1.2T) + housing ($1.4T) + military ($615B) + regulatory ($580B) + tax ($546B) + corporate ($181B) + tariffs ($160B) + drug war ($90B) + fossil fuel ($50B) + agriculture ($75B) = ~$4.9T raw.",
       "sourceType": "calculated",
@@ -10924,8 +11056,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_GOV_WASTE_RECOVERABLE": {
-      "value": 2448500000000.0,
-      "formatted": "$2.45 trillion",
+      "value": 2492000000000.0,
+      "formatted": "$2.49 trillion",
       "unit": "USD",
       "description": "Recoverable capital if US improved to OECD median efficiency. Current US efficiency ~38-48%; OECD median ~75-85%. Closing to ~80% would recover approximately half the gap.",
       "sourceType": "calculated",
@@ -10987,8 +11119,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_GOV_WASTE_TOTAL": {
-      "value": 4897000000000.0,
-      "formatted": "$4.9 trillion",
+      "value": 4984000000000.0,
+      "formatted": "$4.98 trillion",
       "unit": "USD",
       "description": "Total annual US government waste (additive sum of components). Consolidates healthcare ($1.2T), housing ($1.4T), military ($615B), regulatory ($580B), tax ($546B), corporate ($181B), tariffs ($160B), drug war ($90B), fossil fuel ($50B), agriculture ($75B). Categories treated as additive; any overlap offset by excluded categories (state/local inefficiency, implicit subsidies, behavioral effects). ~$4.9T annually.",
       "sourceType": "calculated",
@@ -11003,8 +11135,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_GOV_WASTE_VSL_EQUIVALENTS": {
-      "value": 357445.25547445257,
-      "formatted": "357 thousand people",
+      "value": 363795.6204379562,
+      "formatted": "364 thousand people",
       "unit": "people",
       "description": "US government waste expressed as VSL equivalents. This is an economic equivalent, NOT literal deaths. Dividing the efficiency gap by VSL yields a measure of foregone welfare.",
       "sourceType": "calculated",
@@ -11019,8 +11151,8 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html"
     },
     "US_GOV_WASTE_VS_TREATY_MULTIPLIER": {
-      "value": 180.03676470588235,
-      "formatted": "180:1",
+      "value": 183.23529411764707,
+      "formatted": "183:1",
       "unit": "ratio",
       "description": "How many times the US government efficiency gap could fund the 1% Treaty. The efficiency gap represents capital that could fund transformative health research many times over.",
       "sourceType": "calculated",
@@ -11155,6 +11287,38 @@
       ],
       "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/cost-of-disease.html"
+    },
+    "US_MILITARY_OVERSPEND_PATIENTS_FUNDABLE": {
+      "value": 755651237.8902045,
+      "formatted": "756 million patients/year",
+      "unit": "patients/year",
+      "description": "Trial participants the annual US military overspend (~$702B) could fund at the empirical pragmatic-trial cost (~$929/patient): ~756M patients/year. Patient-based, the direct parallel of DFDA_PATIENTS_FUNDABLE_ANNUALLY (the treaty's ~23.4M).",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": "US_GOV_WASTE_MILITARY_OVERSPEND / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT",
+      "inputs": [
+        "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT",
+        "US_GOV_WASTE_MILITARY_OVERSPEND"
+      ],
+      "computeExpr": "(US_GOV_WASTE_MILITARY_OVERSPEND / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/cost-benefit-of-hegemony.html"
+    },
+    "US_MILITARY_OVERSPEND_TRIAL_CAPACITY_MULTIPLIER": {
+      "value": 397.7111778369498,
+      "formatted": "398x",
+      "unit": "x",
+      "description": "Patients the overspend could fund in pragmatic trials (~756M/year at ~$929 each) relative to the ~1.9M people currently in trials: ~398x. Identical methodology to the treaty's DFDA_TRIAL_CAPACITY_MULTIPLIER (12.3x), scaled to the overspend. The current 1.9M is capped by the ~$41k cost of a traditional trial, NOT by a shortage of patients: aging is a universal trial population and billions have suboptimally-treated chronic disease. The binding constraint is building decentralized trial infrastructure, not patient supply.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": "US_MILITARY_OVERSPEND_PATIENTS_FUNDABLE / CURRENT_TRIAL_SLOTS_AVAILABLE",
+      "inputs": [
+        "CURRENT_TRIAL_SLOTS_AVAILABLE",
+        "US_MILITARY_OVERSPEND_PATIENTS_FUNDABLE"
+      ],
+      "computeExpr": "(US_MILITARY_OVERSPEND_PATIENTS_FUNDABLE / CURRENT_TRIAL_SLOTS_AVAILABLE)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/cost-benefit-of-hegemony.html"
     },
     "US_MILITARY_SPENDING_1939_ANNUAL_2024USD": {
       "value": 29000000000.0,

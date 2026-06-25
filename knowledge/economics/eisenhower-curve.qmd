@@ -191,21 +191,25 @@ The Soviet Union was the natural experiment. The Soviet Union proved the curve.
 
 ## What Optimal Looks Like
 
-The model says the optimum is where additional military spending stops increasing wartime power and starts decreasing it. To convert that abstraction into a dollar figure, look at the convergence of five honest anchors:
+The model says the optimum is where additional military spending stops increasing wartime power and starts decreasing it. The honest way to turn that into a dollar figure is from first principles, not by benchmarking to what other countries spend or to last year's budget. List the threats that are both real and not already neutralized by something free. Size the minimum capability to defeat each one. Price it at efficient rates rather than cost-plus. Do that and most of the current budget evaporates, because the threat people fear most, an invasion of the homeland, is the one that costs almost nothing to defend against. Two oceans, weak neighbors, a nuclear deterrent, and the ability to mobilize an industrial economy already drive the probability of a successful invasion to approximately zero. You cannot buy down a risk that is already near zero. So the budget is set by the short list of threats that geography does not cover.
 
-| Anchor | Implied annual US military budget |
-|---|---:|
-| Pre-WW2 baseline (the budget that funded the country that won the largest war in human history) | ~$280 billion |
-| Peer democracies with comparable threat profiles (UK, France, Germany, Japan, averaged) | ~$450 billion |
-| China's current allocation, scaled to US economy size | ~$420-560 billion |
-| Deterrence-required floor (100-200 warheads sufficient for nuclear winter; conventional capacity for allied defense; intelligence and cyber sufficient for current threats) | ~$300-500 billion |
-| Saeed (2025) implication (every additional percentage point of military/GDP costs ~1.1 percentage points of growth) | the minimum consistent with deterrence; well below current levels |
+| Threat that actually requires spending | First-principles requirement | Annual cost |
+|---|---|---:|
+| Strategic nuclear attack | Survivable second strike: ~100-200 warheads on submarines nobody can find | {{< var us_defense_fp_nuclear_deterrent >}} |
+| Air and missile attack on the homeland | Continental air defense, missile warning and interception (NORAD) | {{< var us_defense_fp_homeland_air_missile >}} |
+| Maritime and coastal threats | Coast Guard | {{< var us_defense_fp_coast_guard >}} |
+| Territorial defense and disaster response | National Guard, the citizen-soldier model | {{< var us_defense_fp_national_guard >}} |
+| Cyberattack on critical infrastructure | Cyber defense, the one vector oceans do not stop | {{< var us_defense_fp_cyber >}} |
+| A peer threat that has not yet emerged | Mobilization hedge: defense R&D, a warm industrial base, a professional cadre | {{< var us_defense_fp_mobilization_hedge >}} |
+| **First-principles optimal homeland defense** | | **{{< var us_defense_first_principles_optimal >}}** |
 
-The anchors converge. Optimal US military spending is somewhere in the range of **$300 billion to $550 billion per year**, depending on how generous you want to be on the conventional and intelligence side.
+That is the number the threats actually justify: **{{< var us_defense_first_principles_optimal >}}** per year, with an honest range of roughly $130 billion to $260 billion depending on how lean the homeland air and maritime posture is and how large a mobilization hedge you want. The single largest line is the hedge, not a standing army, because the lesson of 1939 is that you win the next real war with the capacity to build a military, not with the one you happened to be storing. The country that ranked 17th in the world, behind Portugal, mobilized and won in four years.
 
-Current US military spending: **{{< var us_military_spending_2024_annual >}}**.
+Current US military spending: **{{< var us_military_spending_2024_annual >}}**. The first-principles optimum therefore implies a cut of about **{{< var us_defense_first_principles_cut_pct >}}**. That sounds enormous. It is smaller than the {{< var post_ww2_military_cut_pct >}} the country cut in two years after WW2, after which it produced the largest sustained economic expansion in its history.
 
-The Eisenhower-Curve-optimal allocation therefore implies a cut of approximately **35-65% from current levels**. That sounds enormous, and it is. It is also historically normal. The post-WW2 cut was {{< var post_ww2_military_cut_pct >}} over two years. The period that followed produced the largest sustained economic expansion in American history. The country was strong because it had stopped spending its strength on weapons it did not need.
+### Why the published numbers are higher (the convergence check)
+
+Other honest estimates land above this one, and it is worth being clear about why: they are answering a different question. The restraint school inside the defense establishment (Barry Posen's 37 percent cut, the Cato Institute's 25 percent) trims to roughly $560-675 billion. Peer democracies scaled to US economy size, and China's allocation scaled the same way, land around $450-560 billion. None of these are homeland-defense numbers. Every one of them prices a reduced version of global hegemony: forward bases, allied defense, the ability to project force across two oceans. They are trimming the empire. The first-principles number skips the empire and prices only the defense of the United States, which is why it is lower. Whether the extra few hundred billion buys enough deterrence of other people's wars to be worth it is the question [the cost-benefit ledger of hegemony](../appendix/cost-benefit-of-hegemony.qmd) takes up, and the answer there is no. But even the most generous of these anchors implies a budget far below the current one, which is the only point the Eisenhower Curve needs.
 
 The country that finishes this math is the country that reverts to something like the spending levels that won WW2, won the Cold War, and produced the longest economic expansion in American history. Those are the actually-defensible peacetime military budgets. Everything above them is the Eisenhower Curve in action: spending more, getting less, and watching China win.
 

@@ -20,14 +20,14 @@ display_name = "Discretionary Waste (%)"
 
 # Baseline and units
 
-baseline = 0.5947058823529412
+baseline = 0.6458823529411765
 
 # Tornado data from sensitivity analysis
 
-drivers = ['US_GOV_WASTE_MILITARY_OVERSPEND', 'US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES']
-driver_labels = ['Military Overspend', 'Drug War Cost', 'Agricultural Subsidies Deadweight Loss', 'Corporate Welfare Waste', 'Fossil Fuel Subsidies (Explicit)']
-impacts_low = [-0.0676470588235294, -0.01764705882352946, -0.014705882352941235, -0.018235294117647127, -0.01176470588235301]
-impacts_high = [0.07941176470588229, 0.03529411764705881, 0.026470588235294135, 0.022941176470588243, 0.01764705882352935]
+drivers = ['US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_DEFENSE_FP_MOBILIZATION_HEDGE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES', 'US_DEFENSE_FP_NUCLEAR_DETERRENT', 'US_DEFENSE_FP_HOMELAND_AIR_MISSILE', 'US_DEFENSE_FP_NATIONAL_GUARD', 'US_DEFENSE_FP_CYBER', 'US_DEFENSE_FP_COAST_GUARD']
+driver_labels = ['Drug War Cost', 'Agricultural Subsidies Deadweight Loss', 'Corporate Welfare Waste', 'First-Principles Defense: Mobilization Hedge', 'Fossil Fuel Subsidies (Explicit)', 'First-Principles Defense: Nuclear Second Strike', 'First-Principles Defense: Homeland Air & Missile Defense', 'First-Principles Defense: National Guard', 'First-Principles Defense: Cyber Defense', 'First-Principles Defense: Coast Guard']
+impacts_low = [-0.01764705882352935, -0.014705882352941124, -0.018235294117647016, 0.0117647058823529, -0.0117647058823529, 0.00588235294117645, 0.00588235294117645, 0.003529411764705892, 0.002941176470588225, 0.0011764705882353343]
+impacts_high = [0.03529411764705881, 0.026470588235294135, 0.022941176470588243, -0.02352941176470591, 0.01764705882352946, -0.0117647058823529, -0.008823529411764675, -0.00588235294117645, -0.00588235294117645, -0.0011764705882353343]
 
 # Convert deltas to absolute values (baseline + delta)
 

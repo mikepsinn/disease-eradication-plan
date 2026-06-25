@@ -960,7 +960,7 @@ The Waste Ledger quantifies the resources that are actively consumed by the curr
 
 ### Military Overspend: The Cost of Hegemony vs. Security
 
-The most glaring allocative distortion in the global public sector is the confusion between "defense" (the protection of territorial integrity and vital interests) and "power projection" (the maintenance of global hegemony through forward presence). While the former is a public good, the latter operates as a massive, unpriced subsidy to the global shipping order and a stimulus program for the defense industrial base, often with diminishing marginal returns to actual security.
+The most glaring allocative distortion in the global public sector is the confusion between "defense" (the protection of territorial integrity and vital interests) and "power projection" (the maintenance of global hegemony through forward presence). While the former is a public good, the latter operates as a massive, unpriced subsidy to the global shipping order and a stimulus program for the military-industrial base, often with diminishing marginal returns to actual security.
 
 ![Defense means protecting your borders. Power Projection means spending money to scare people far away. One is a lock on your door, the other is paying to stand outside other people's houses looking menacing.](/assets/images/political-dysfunction-tax/political-dysfunction-tax-section-military-overspend-the-cost-of-hegemony-vs-security-bw-academic.jpg)
 
@@ -970,37 +970,26 @@ As of Fiscal Year 2025/2026, the United States Department of Defense (DoD) has s
 
 From a mechanism design perspective, this posture is highly inefficient. The "Strict Deterrence" model, an alternative strategy focused on "Denial," posits that the security of the United States and its core allies can be guaranteed through a robust nuclear triad and impregnable coastal/aerospace defenses, without the massive overhead of expeditionary forces.
 
-![You spend 615 billion dollars more than you need to not get invaded. That's the cost of feeling important.](/assets/images/political-dysfunction-tax/political-dysfunction-tax-section-the-strategic-delta-dominance-vs-denial-bw-academic.jpg)
-
 The Cost of the Nuclear Triad (The Ultimate Guarantee):  
-The foundational layer of strict deterrence is the nuclear triad. The Congressional Budget Office (CBO) estimates the total cost to operate, sustain, and modernize the U.S. nuclear forces will be $946 billion over the 2025–2034 period, averaging roughly $95 billion annually [@cbo-nuclear-forces-2025-2034]. This figure includes the development of the Columbia-class submarines, the Sentinel ICBM, and the B-21 Raider [@crs-defense-primer-nuclear-forces]. While expensive, this constitutes the actual "existential insurance" of the nation.  
+The foundational layer of strict deterrence is a survivable second strike. The Congressional Budget Office estimates the full nuclear triad will cost roughly $95 billion annually to operate, sustain, and modernize over 2025–2034, covering the Columbia-class submarines, the Sentinel ICBM, and the B-21 Raider [@cbo-nuclear-forces-2025-2034; @crs-defense-primer-nuclear-forces]. But a survivable second strike does not require all three legs: the submarines are the leg nobody can find, the silo-based ICBMs are fixed, first-strike-attractive targets, and the bomber leg is redundant. A submarine-centric minimum credible deterrent costs about {{< var us_defense_fp_nuclear_deterrent >}}, and that is what the budget below retains.  
 The Cost of Conventional Projection:  
-The remainder of the defense budget (over $750 billion annually) is largely dedicated to general-purpose forces designed for power projection.
+The remainder of the military budget (over $750 billion annually) is largely dedicated to general-purpose forces designed for power projection.
 
 * **Overseas Basing:** The cost of maintaining the overseas footprint is estimated between **$55 billion and $80 billion annually** [@quincy-military-base-closures].  
 * **Operations and Maintenance (O&M):** The O&M accounts, which fund the readiness of these global forces, consume roughly **$338 billion** annually [@brookings-biden-defense-budget-850b].  
 * **Procurement of Projection Platforms:** The FY2026 request includes billions for platforms specifically designed for foreign intervention, such as amphibious assault ships and next-generation air dominance fighters, rather than purely defensive systems [@dod-fy26-budget-outline].
 
 The Delta Calculation:  
-A "Strict Deterrence" budget would retain the Nuclear Triad ($95B), the Coast Guard (~$13.8B) [@usamm-military-spending], the National Guard for domestic security (~$33B) [@us-per-capita-military-spending-3000], Missile Defense Agency (~$28B) [@dod-fy25-budget-release], and a robust Cyber Command (~$15B) [@dod-fy26-budget-outline]. Allowing for a generous $100 billion supplement for a defensive Navy and Air Force (attack submarines and interceptors rather than carrier strike groups), the total annual cost of a Strict Deterrence posture is approximately $285 billion.
+A Strict Deterrence budget, priced threat by threat at efficient rates, retains a survivable nuclear second strike ({{< var us_defense_fp_nuclear_deterrent >}}), continental air and missile defense ({{< var us_defense_fp_homeland_air_missile >}}) [@dod-fy25-budget-release], the Coast Guard ({{< var us_defense_fp_coast_guard >}}) [@usamm-military-spending], the National Guard for domestic security ({{< var us_defense_fp_national_guard >}}) [@us-per-capita-military-spending-3000], cyber defense ({{< var us_defense_fp_cyber >}}) [@dod-fy26-budget-outline], and a mobilization hedge of defense R&D and a warm industrial base ({{< var us_defense_fp_mobilization_hedge >}}). The total is approximately {{< var us_defense_first_principles_optimal >}}, derived threat by threat in [The Eisenhower Curve](../economics/eisenhower-curve.qmd) and the [cost-benefit ledger of hegemony](cost-benefit-of-hegemony.qmd).
 
 $$\text{Waste Delta} = \text{Current Budget} - \text{Strict Deterrence}$$
 
-$$\text{Waste Delta} \approx \$900\text{B} - \$285\text{B} = \$615 \text{ Billion Annually}$$  
-This **$615 billion** represents the annual "Hegemony Tax." It is capital expended not on survival, but on optionality and industrial subsidy.
+Current spending ({{< var us_military_spending_2024_annual >}}) minus this baseline ({{< var us_defense_first_principles_optimal >}}) leaves {{< var us_gov_waste_military_overspend >}} annually.  
+This represents the annual **"Hegemony Tax."** It is capital expended not on survival, but on optionality and industrial subsidy.
 
 #### The Compounded Economic Loss
 
-The true economic crime of this overspend is not the immediate cash outlay, but the opportunity cost of the capital. In an [Optimocracy](../solution/optimocracy.qmd), this $615 billion is returned to the private sector or high-yield public R&D.
-
-![Your defense overspending costs more than your entire national debt. You borrowed 36 trillion and wasted 58 trillion. At least you're consistent.](/assets/images/political-dysfunction-tax/political-dysfunction-tax-section-the-compounded-economic-loss-bw-academic.jpg)
-
-Projecting this over a 30-year horizon, assuming a conservative real return on capital of 7% (the historical inflation-adjusted return of the S&P 500), the loss of wealth is staggering.
-
-$$\text{Future Value} = \text{Annual Payment} \times \frac{(1+r)^n - 1}{r}$$
-
-$$\text{FV} = \$615\text{B} \times \frac{(1.07)^{30} - 1}{0.07} \approx \$58.1 \text{ Trillion}$$  
-**Insight:** The decision to maintain a global power projection capability rather than a strict deterrence posture costs the United States approximately **$58 trillion** in lost accumulated wealth over a single generation. This figure exceeds the entirety of the current U.S. national debt ($36 trillion) [@cei-regulatory-cost-2t] and represents a massive misallocation of societal savings. The defense budget is structurally insolvent when viewed against the counterfactual of compound growth.
+The true economic crime of this overspend is not the immediate cash outlay, but the opportunity cost of the capital. In an [Optimocracy](../solution/optimocracy.qmd), this {{< var us_gov_waste_military_overspend >}} is returned to the private sector or high-yield public R&D, where it compounds instead of being spent on platforms built to be destroyed. Over a single generation, the foregone compound growth dwarfs the one-time outlay, and the military budget is structurally insolvent when viewed against the counterfactual of that growth.
 
 ### Administrative Bloat and the Friction Economy
 
@@ -1078,11 +1067,11 @@ The true cost of incarceration is not the cost of the cage, but the cost of the 
 * **Intergenerational Damage:** The children of incarcerated parents face instability that translates into long-term economic underperformance. Estimates suggest these children lose **$215 billion** in future annual earnings over their lifetimes [@we-cant-afford-it-incarceration].
 
 Global Context:  
-The global cost of containing violence (including military, internal security, and incarceration) was estimated at $14.4 trillion to $19.97 trillion (PPP) in recent years, or roughly 10-12% of Global GDP [@global-violence-costs]. While some security is necessary, the "excess" spending driven by prohibition policies and punitive justice models represents trillions in potential savings. An [Optimocracy](../solution/optimocracy.qmd) that utilized harm reduction (the Portugal model) and rehabilitation could likely reclaim at least $450 billion annually in the US alone from direct costs and lost productivity.
+The global cost of containing violence (including military, internal security, and incarceration) was estimated at $14.4 trillion to $19.97 trillion (PPP) in recent years, or roughly 10-12% of Global GDP [@global-violence-costs]. While some security is necessary, the "excess" spending driven by prohibition policies and punitive justice models represents trillions in potential savings. An [Optimocracy](../solution/optimocracy.qmd) that used harm reduction (the Portugal model) and rehabilitation could likely reclaim at least $450 billion annually in the US alone from direct costs and lost productivity.
 
 ## Part 2: The Opportunity Ledger (The "Buried Multipliers")
 
-If the Waste Ledger is a tragedy of burning capital, the Opportunity Ledger is a tragedy of **unrealized exponentials**. This ledger attempts to price the "dog that didn't bark," the cures, technologies, and economic explosions that *would* exist if governance prioritized velocity and scientific leverage over stasis.
+If the Waste Ledger is a tragedy of burning capital, the Opportunity Ledger is a tragedy of **unrealized exponentials**. This ledger attempts to price the "dog that didn't bark," the cures, technologies, and economic explosions that *would* exist if governance prioritized velocity and scientific progress over stasis.
 
 ![Two paths: one where you move fast and cure diseases, one where you move slow and people die. You chose the second one because the first one felt rushed.](/assets/images/political-dysfunction-tax/political-dysfunction-tax-section-part-2-the-opportunity-ledger-the-buried-multipliers-bw-academic.jpg)
 
@@ -1123,7 +1112,7 @@ Assuming a cure for major diseases is worth $100 Trillion:
 * Delaying it by 10 years at a 3% social discount rate erodes roughly **$25 Trillion** of present value.  
 * Conversely, accelerating it captures that value.
 
-**Opportunity Loss:** We conservatively estimate the annual opportunity cost of the current slow-motion regulatory environment at **$34 Trillion**. This represents the value of lives lost and healthspan denied by the friction of the FDA/EMA paradigm.
+**Opportunity Loss:** We conservatively estimate the annual opportunity cost of the current slow-motion regulatory environment at **$34 Trillion**. This represents the value of lives lost and healthspan denied by the friction of the FDA/EMA system.
 
 ### The Human Capital Multiplier: Unleashing Cognitive Stock
 
@@ -1194,7 +1183,7 @@ While the calculation does not strictly reach the "\<10%" threshold in annual-fl
 
 | Ledger Item | Status Quo (Current Governance) | [Optimocracy](../solution/optimocracy.qmd) (Outcome-Optimizing) | The Delta (Political Dysfunction Tax) |
 | :---- | :---- | :---- | :---- |
-| **Defense Strategy** | **Power Projection:** Global hegemony, 750+ bases, carrier groups. Cost: ~$1T. | **Strict Deterrence:** Nuclear triad, coastal defense, cyber. Cost: ~$285B. | **\-$715 Billion / Year** (Waste) |
+| **Defense Strategy** | **Power Projection:** Global hegemony, 750+ bases, carrier groups. Cost: {{< var us_military_spending_2024_annual >}}. | **Strict Deterrence:** Survivable second strike, homeland air/missile/cyber, mobilization hedge. Cost: {{< var us_defense_first_principles_optimal >}}. | **\-{{< var us_gov_waste_military_overspend >}} / Year** (Waste) |
 | **Clinical Trials** | **Phase III RCTs:** Cost $50M+, slow, bureaucratic. | **Pragmatic Trials (PCTs):** Embedded, AI-driven. Cost $0.5M. | **99% Cost Reduction** (Efficiency) |
 | **Health Output** | **Stagnation (Eroom's Law):** Slow progress on chronic disease. | **Longevity Dividend:** Accelerated cures for cancer/aging. | **\-$34 Trillion / Year** (Lost Value) |
 | **Migration** | **Closed Borders:** Labor trapped in low-productivity zones. | **Global Skill Mobility:** Open labor markets. | **\-$57 Trillion / Year** (Lost Output) |
@@ -1218,7 +1207,7 @@ While Migration offers the largest *economic* arbitrage ($57T), the shift from R
 
 ### Security Theater vs. Solvency
 
-The United States spends nearly $1 trillion on defense, yet the "Strict Deterrence" audit demonstrates that existential safety could be purchased for roughly $300 billion. The remaining $700 billion is not buying safety; it is buying *influence* and *industrial subsidy*. From a Welfare Economics perspective, this is a massive malinvestment.
+The United States spends {{< var us_military_spending_2024_annual >}} on defense, yet the Strict Deterrence audit demonstrates that existential safety could be purchased for roughly {{< var us_defense_first_principles_optimal >}}. The remaining {{< var us_gov_waste_military_overspend >}} is not buying safety; it is buying *influence* and *industrial subsidy*. From a Welfare Economics perspective, this is a massive malinvestment.
 
 ## Conclusion
 
@@ -1226,7 +1215,7 @@ The hypothesis holds with a terrifying nuance. While the *nominal* economic effi
 
 We are burning capital to maintain a high-friction, low-trust status quo (The Waste Ledger) while actively suppressing the high-trust, high-velocity networks that create exponential value (The Opportunity Ledger). The "Political Dysfunction Tax" is not a marginal 20% or 30%. It is **100-200%** of current GWP. We are paying for the privilege of stagnating.
 
-The audit concludes that the single highest-leverage intervention for global welfare is not "more funding" but "mechanism redesign," specifically, the removal of the veto points that prevent PCTs, labor mobility, and administrative automation. We are rich enough to solve our problems, but we are currently too disorganized to afford the solutions.
+The audit concludes that the single highest-impact intervention for global welfare is not "more funding" but "mechanism redesign," specifically, the removal of the veto points that prevent PCTs, labor mobility, and administrative automation. We are rich enough to solve our problems, but we are currently too disorganized to afford the solutions.
 
 ## See Also
 

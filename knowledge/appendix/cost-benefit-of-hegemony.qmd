@@ -116,7 +116,7 @@ Chalmers Johnson, the late UC San Diego political scientist, called this pattern
 
 The return on investment ranges from **-77% to -99%**. In the best case, using the most generous benefit estimate and the lowest cost estimate, you lose $674 billion per year.
 
-Nobody publishes this ledger because the ledger is negative and publishing it would raise questions that defense budgets are not designed to survive.
+Nobody publishes this ledger because the ledger is negative and publishing it would raise questions that military budgets are not designed to survive.
 
 ## How Much Defense Is Actually Enough?
 
@@ -162,11 +162,15 @@ These numbers seem conservative. Posen proposes a 37% cut. Cato proposes 25%. Bu
 
 Those are different questions. The first one requires 750+ overseas bases, carrier strike groups, NATO commitments, Pacific alliances, and the ability to project force anywhere on Earth within 48 hours. The second one requires two oceans, friendly neighbors, and a submarine fleet that nobody can track. Posen and Cato are trimming the empire. The data from the table above suggests you could skip the empire entirely.
 
+How low is "skip the empire entirely"? Priced from first principles, the defense of the United States (a survivable nuclear second strike, homeland air and missile defense, the Coast Guard, the National Guard, cyber defense of infrastructure, and a mobilization hedge for a peer threat that has not yet emerged) comes to about {{< var us_defense_first_principles_optimal >}} per year, against current spending of {{< var us_military_spending_2024_annual >}}. That is a cut of roughly {{< var us_defense_first_principles_cut_pct >}}, derived threat by threat in [The Eisenhower Curve](../economics/eisenhower-curve.qmd). Posen and Cato land higher because they are still buying a trimmed hegemony. The homeland itself, defended at efficient prices, is cheap, because two oceans and a nuclear deterrent do most of the work for free.
+
 ## What You Could Buy Instead
 
 SIPRI calculated that achieving all sustainable development goals in health, education, agriculture, and infrastructure would cost $760-885 billion per year [@sipri-opportunity-cost-2016]. That is 46-54% of global military spending. You could solve most of humanity's measurable problems with half the death budget. You are choosing not to. Every year. On purpose.
 
 A [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] asks for {{< var treaty_annual_funding >}} from this budget. Not 50%. Not 25%. One percent. Redirected to clinical trials so that humans might figure out which of the 9.5 million untested treatment combinations actually work.
+
+That is the modest version. The immodest version is the overspend itself. At {{< var dfda_pragmatic_trial_cost_per_patient >}} a patient instead of the {{< var traditional_phase3_cost_per_patient >}} a traditional trial charges, one year of it would fund pragmatic trials for {{< var us_military_overspend_patients_fundable_nounit >}} people, about {{< var us_military_overspend_trial_capacity_multiplier >}} the {{< var current_trial_slots_available_nounit >}} who are in a trial today. (This is the same calculation as the treaty's {{< var dfda_trial_capacity_multiplier >}}, just scaled to the overspend: patients you can fund, against patients enrolled now.) That number sounds impossible only if you think the limit is a shortage of patients. It is not. Aging is a condition everyone has, and there are billions of people whose chronic diseases nobody has been paid to treat optimally. The limit was always the price of a trial, and pragmatic trials remove it.
 
 The net return on hegemony is -$674 billion to -$1.38 trillion per year. The 1% treaty costs {{< var treaty_annual_funding >}}. If you are looking for the controversial part of this proposal, it is not in the math.
 
@@ -193,7 +197,7 @@ F = D \cdot r \cdot \alpha
 $$
 
 - $D$ = $30.87 trillion (US debt held by public)
-- $r$ = interest rate reduction (range: 10-30 basis points, midpoint 20bp)
+- $r$ = interest rate reduction (range: 0.1-0.3 percentage points, midpoint 0.2)
 - $\alpha$ = share attributable to military (range: 25-85%, midpoint 50%)
 - **Median: ~$31 billion/year**
 

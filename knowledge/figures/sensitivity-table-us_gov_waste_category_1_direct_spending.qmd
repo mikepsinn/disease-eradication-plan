@@ -4,10 +4,10 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Military Overspend (USD) | 0.8656 | Strong driver |
-| Drug War Cost (USD) | 0.3211 | Moderate driver |
-| Agricultural Subsidies Deadweight Loss (USD) | 0.2640 | Weak driver |
-| Corporate Welfare Waste (USD) | 0.2345 | Weak driver |
-| Fossil Fuel Subsidies (Explicit) (USD) | 0.1684 | Weak driver |
+| Drug War Cost (USD) | 0.5866 | Strong driver |
+| Agricultural Subsidies Deadweight Loss (USD) | 0.4824 | Moderate driver |
+| Corporate Welfare Waste (USD) | 0.4285 | Moderate driver |
+| Military Overspend (USD) | 0.4010 | Moderate driver |
+| Fossil Fuel Subsidies (Explicit) (USD) | 0.3076 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

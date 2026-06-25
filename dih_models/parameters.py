@@ -6467,25 +6467,243 @@ US_FEDERAL_SPENDING_2024 = Parameter(
 # redirected. Solution: Budget reallocation.
 # ==============================================================================
 
-# Component 1.1: Military overspend ($615B) [CATEGORY 1: Direct Spending]
-US_GOV_WASTE_MILITARY_OVERSPEND = Parameter(
-    615_000_000_000,  # $615B annually
-    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
-    source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
-    source_type="external",
+# ==============================================================================
+# FIRST-PRINCIPLES US HOMELAND DEFENSE BUDGET
+# Bottom-up derivation of what actually defending the United States costs, by
+# threat tier, at efficient (non-cost-plus) prices. This REPLACES the earlier
+# anchored "strict deterrence" figure (~$285B) and the peer-benchmarked
+# $300-550B range used previously. The optimum is dominated by the single threat
+# US geography does not already neutralize: a survivable nuclear second strike.
+# Invasion/conquest of the homeland is already a near-zero risk (two oceans, weak
+# neighbors, the nuclear deterrent, and WWII-proven mobilization capacity), so
+# marginal spending against it buys almost nothing. Honest range ~$130-280B.
+# Derivation home: knowledge/economics/eisenhower-curve.qmd
+# ==============================================================================
+
+US_DEFENSE_FP_NUCLEAR_DETERRENT = Parameter(
+    30_000_000_000,
+    manual_ref="knowledge/economics/eisenhower-curve.qmd",
+    source_type="definition",
     confidence="medium",
-    description="US military spending above 'Strict Deterrence' baseline. Current budget "
-                "~$900B supports global power projection (750+ bases). Strict Deterrence "
-                "(nuclear triad $95B, Coast Guard $14B, National Guard $33B, Missile Defense "
-                "$28B, Cyber $15B, defensive Navy/Air Force $100B) = ~$285B. "
-                "Delta: $900B - $285B = $615B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(20_000_000_000, 50_000_000_000),
+    std_error=8_000_000_000,
+    description="Survivable nuclear second strike: an SSBN-centric minimum credible deterrent "
+                "(~100-200 survivable warheads on ballistic-missile submarines). The one threat "
+                "geography does not neutralize. Drops the first-strike-attractive ICBM silos and "
+                "the bomber leg. The UK and France each sustain continuous-at-sea deterrents within "
+                "total defense budgets under $80B.",
+    display_name="First-Principles Defense: Nuclear Second Strike",
+    unit="USD",
+    keywords=["defense", "first principles", "nuclear", "deterrent", "second strike", "SSBN"],
+    latex_symbol=r"D_{nuclear}",
+)
+
+US_DEFENSE_FP_HOMELAND_AIR_MISSILE = Parameter(
+    35_000_000_000,
+    manual_ref="knowledge/economics/eisenhower-curve.qmd",
+    source_type="definition",
+    confidence="medium",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(25_000_000_000, 50_000_000_000),
+    std_error=7_000_000_000,
+    description="Continental air and missile defense plus early warning (NORAD, ground-based "
+                "midcourse defense, interceptor aircraft). Defensive only; no expeditionary or "
+                "power-projection air power.",
+    display_name="First-Principles Defense: Homeland Air & Missile Defense",
+    unit="USD",
+    keywords=["defense", "first principles", "air defense", "missile defense", "NORAD"],
+    latex_symbol=r"D_{air}",
+)
+
+US_DEFENSE_FP_COAST_GUARD = Parameter(
+    14_000_000_000,
+    manual_ref="knowledge/economics/eisenhower-curve.qmd",
+    source_type="definition",
+    confidence="high",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(12_000_000_000, 16_000_000_000),
+    std_error=1_500_000_000,
+    description="US Coast Guard (actual budget ~$14B). Maritime homeland security and coastal "
+                "defense.",
+    display_name="First-Principles Defense: Coast Guard",
+    unit="USD",
+    keywords=["defense", "first principles", "coast guard", "maritime", "homeland"],
+    latex_symbol=r"D_{cg}",
+)
+
+US_DEFENSE_FP_NATIONAL_GUARD = Parameter(
+    30_000_000_000,
+    manual_ref="knowledge/economics/eisenhower-curve.qmd",
+    source_type="definition",
+    confidence="medium",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(24_000_000_000, 40_000_000_000),
+    std_error=4_000_000_000,
+    description="National Guard / territorial land defense: a citizen-soldier reserve (the "
+                "Switzerland model) for homeland defense and disaster response.",
+    display_name="First-Principles Defense: National Guard",
+    unit="USD",
+    keywords=["defense", "first principles", "national guard", "reserve", "territorial"],
+    latex_symbol=r"D_{guard}",
+)
+
+US_DEFENSE_FP_CYBER = Parameter(
+    15_000_000_000,
+    manual_ref="knowledge/economics/eisenhower-curve.qmd",
+    source_type="definition",
+    confidence="medium",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(10_000_000_000, 25_000_000_000),
+    std_error=4_000_000_000,
+    description="Cyber defense of critical infrastructure: the primary modern attack vector that "
+                "crosses oceans in milliseconds and is not stopped by geography.",
+    display_name="First-Principles Defense: Cyber Defense",
+    unit="USD",
+    keywords=["defense", "first principles", "cyber", "infrastructure", "CYBERCOM"],
+    latex_symbol=r"D_{cyber}",
+)
+
+US_DEFENSE_FP_MOBILIZATION_HEDGE = Parameter(
+    60_000_000_000,
+    manual_ref="knowledge/economics/eisenhower-curve.qmd",
+    source_type="definition",
+    confidence="medium",
+    distribution=DistributionType.NORMAL,
+    confidence_interval=(40_000_000_000, 100_000_000_000),
+    std_error=15_000_000_000,
+    description="Mobilization hedge: defense R&D, a maintained industrial base, and a professional "
+                "cadre force. The WWII lesson is to maintain the capacity to scale, not a standing "
+                "empire: a peer buildup gives years of warning, and the US went from the 17th-ranked "
+                "army in 1939 to victory in four years. This is the cheapest insurance and the most "
+                "neglected.",
+    display_name="First-Principles Defense: Mobilization Hedge",
+    unit="USD",
+    keywords=["defense", "first principles", "mobilization", "R&D", "industrial base", "cadre"],
+    latex_symbol=r"D_{hedge}",
+)
+
+# First-principles optimal homeland-defense budget = sum of the threat-tier components.
+US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL = Parameter(
+    (US_DEFENSE_FP_NUCLEAR_DETERRENT +
+     US_DEFENSE_FP_HOMELAND_AIR_MISSILE +
+     US_DEFENSE_FP_COAST_GUARD +
+     US_DEFENSE_FP_NATIONAL_GUARD +
+     US_DEFENSE_FP_CYBER +
+     US_DEFENSE_FP_MOBILIZATION_HEDGE),
+    manual_ref="knowledge/economics/eisenhower-curve.qmd",
+    source_type="calculated",
+    confidence="medium",
+    description="First-principles optimal US homeland-defense budget: the bottom-up sum of what "
+                "defending the United States actually requires at efficient prices. Nuclear second "
+                "strike $30B + homeland air/missile defense $35B + Coast Guard $14B + National Guard "
+                "$30B + cyber defense $15B + mobilization hedge $60B = ~$184B. Honest range "
+                "~$130-260B. Compare: current ~$886B. Restraint-school proposals (Posen, Cato) and "
+                "peer benchmarks land higher (~$450-675B) because they cost reduced hegemony and "
+                "allied/peer deterrence, not homeland defense.",
+    display_name="First-Principles Optimal US Defense Budget",
+    unit="USD",
+    formula="Nuclear + HomelandAirMissile + CoastGuard + NationalGuard + Cyber + MobilizationHedge",
+    inputs=[
+        "US_DEFENSE_FP_NUCLEAR_DETERRENT",
+        "US_DEFENSE_FP_HOMELAND_AIR_MISSILE",
+        "US_DEFENSE_FP_COAST_GUARD",
+        "US_DEFENSE_FP_NATIONAL_GUARD",
+        "US_DEFENSE_FP_CYBER",
+        "US_DEFENSE_FP_MOBILIZATION_HEDGE",
+    ],
+    compute=lambda ctx: (
+        ctx["US_DEFENSE_FP_NUCLEAR_DETERRENT"] +
+        ctx["US_DEFENSE_FP_HOMELAND_AIR_MISSILE"] +
+        ctx["US_DEFENSE_FP_COAST_GUARD"] +
+        ctx["US_DEFENSE_FP_NATIONAL_GUARD"] +
+        ctx["US_DEFENSE_FP_CYBER"] +
+        ctx["US_DEFENSE_FP_MOBILIZATION_HEDGE"]
+    ),
+    keywords=["defense", "first principles", "optimal", "homeland", "deterrence", "budget"],
+    latex_symbol=r"D_{optimal}",
+)
+
+# Component 1.1: Military overspend [CATEGORY 1: Direct Spending]
+# = current US military spending minus the first-principles homeland-defense optimum.
+US_GOV_WASTE_MILITARY_OVERSPEND = Parameter(
+    886_000_000_000 - US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL,  # current (US_MILITARY_SPENDING_2024_ANNUAL) - optimum
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
+    source_type="calculated",
+    confidence="medium",
+    description="US military spending above the first-principles homeland-defense optimum. Current "
+                "US military spending (~$886B) supports global power projection (~750 overseas "
+                "bases). A bottom-up, threat-by-threat homeland-defense budget is ~$184B (nuclear "
+                "second strike $30B, homeland air/missile defense $35B, Coast Guard $14B, National "
+                "Guard $30B, cyber defense $15B, mobilization hedge $60B). Delta = $886B - $184B = "
+                "~$702B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]",
     display_name="Military Overspend",
     unit="USD",
-    distribution=DistributionType.NORMAL,
-    confidence_interval=(500_000_000_000, 750_000_000_000),
-    std_error=75_000_000_000,
+    formula="US_MILITARY_SPENDING_2024_ANNUAL - US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL",
+    inputs=["US_MILITARY_SPENDING_2024_ANNUAL", "US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL"],
+    compute=lambda ctx: ctx["US_MILITARY_SPENDING_2024_ANNUAL"] - ctx["US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL"],
     keywords=["military", "defense", "overspend", "hegemony", "pentagon", "category_1_direct_spending"],
     latex_symbol=r"W_{military}",
+)
+
+# Implied cut from current US military spending to the first-principles optimum.
+US_DEFENSE_FIRST_PRINCIPLES_CUT_PCT = Parameter(
+    1 - (US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL / 886_000_000_000),  # 1 - optimum / current
+    manual_ref="knowledge/economics/eisenhower-curve.qmd",
+    source_type="calculated",
+    confidence="medium",
+    description="Implied cut from current US military spending (~$886B) to the first-principles "
+                "homeland-defense optimum (~$184B): ~79%. For comparison, the US cut military "
+                "spending 87.6% in two years after WWII.",
+    display_name="First-Principles Defense Cut (%)",
+    unit="percent",
+    formula="1 - (US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL / US_MILITARY_SPENDING_2024_ANNUAL)",
+    inputs=["US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL", "US_MILITARY_SPENDING_2024_ANNUAL"],
+    compute=lambda ctx: 1 - (ctx["US_DEFENSE_FIRST_PRINCIPLES_OPTIMAL"] / ctx["US_MILITARY_SPENDING_2024_ANNUAL"]),
+    keywords=["defense", "cut", "first principles", "reduction", "percent"],
+    latex_symbol=r"Cut_{FP}",
+)
+
+# What the annual military overspend could buy in clinical trials, computed the SAME way as the
+# 1% treaty's 12.3x capacity figure: patients fundable at the pragmatic-trial cost, relative to
+# the people currently in trials. NOT a ratio of current dollar spending (which would price trials
+# at today's ~$41k traditional cost and break the comparison with the treaty methodology).
+US_MILITARY_OVERSPEND_PATIENTS_FUNDABLE = Parameter(
+    US_GOV_WASTE_MILITARY_OVERSPEND / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
+    manual_ref="knowledge/appendix/cost-benefit-of-hegemony.qmd",
+    source_type="calculated",
+    confidence="medium",
+    description="Trial participants the annual US military overspend (~$702B) could fund at the "
+                "empirical pragmatic-trial cost (~$929/patient): ~756M patients/year. Patient-based, "
+                "the direct parallel of DFDA_PATIENTS_FUNDABLE_ANNUALLY (the treaty's ~23.4M).",
+    display_name="Patients Fundable by Military Overspend (Pragmatic Trials)",
+    unit="patients/year",
+    formula="US_GOV_WASTE_MILITARY_OVERSPEND / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT",
+    inputs=["US_GOV_WASTE_MILITARY_OVERSPEND", "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_MILITARY_OVERSPEND"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+    keywords=["overspend", "patients", "fundable", "pragmatic trials", "capacity"],
+    latex_symbol=r"N_{fundable,overspend}",
+)
+
+US_MILITARY_OVERSPEND_TRIAL_CAPACITY_MULTIPLIER = Parameter(
+    US_MILITARY_OVERSPEND_PATIENTS_FUNDABLE / CURRENT_TRIAL_SLOTS_AVAILABLE,
+    manual_ref="knowledge/appendix/cost-benefit-of-hegemony.qmd",
+    source_type="calculated",
+    confidence="medium",
+    description="Patients the overspend could fund in pragmatic trials (~756M/year at ~$929 each) "
+                "relative to the ~1.9M people currently in trials: ~398x. Identical methodology to "
+                "the treaty's DFDA_TRIAL_CAPACITY_MULTIPLIER (12.3x), scaled to the overspend. The "
+                "current 1.9M is capped by the ~$41k cost of a traditional trial, NOT by a shortage "
+                "of patients: aging is a universal trial population and billions have suboptimally-"
+                "treated chronic disease. The binding constraint is building decentralized trial "
+                "infrastructure, not patient supply.",
+    display_name="Military Overspend Pragmatic Trial Capacity Multiplier",
+    unit="x",
+    formula="US_MILITARY_OVERSPEND_PATIENTS_FUNDABLE / CURRENT_TRIAL_SLOTS_AVAILABLE",
+    inputs=["US_MILITARY_OVERSPEND_PATIENTS_FUNDABLE", "CURRENT_TRIAL_SLOTS_AVAILABLE"],
+    compute=lambda ctx: ctx["US_MILITARY_OVERSPEND_PATIENTS_FUNDABLE"] / ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"],
+    keywords=["overspend", "clinical trials", "capacity", "multiplier", "pragmatic"],
+    latex_symbol=r"k_{capacity,overspend}",
 )
 
 # Component 1.2: Corporate welfare ($181B) [CATEGORY 1: Direct Spending]

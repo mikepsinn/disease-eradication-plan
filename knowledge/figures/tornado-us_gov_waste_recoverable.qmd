@@ -20,14 +20,14 @@ display_name = "Recoverable Capital"
 
 # Baseline and units
 
-baseline = 2448500000000.0
+baseline = 2492000000000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['US_GOV_WASTE_HOUSING_ZONING', 'US_GOV_WASTE_REGULATORY_RED_TAPE', 'US_GOV_WASTE_HEALTHCARE_INEFFICIENCY', 'US_GOV_WASTE_MILITARY_OVERSPEND', 'US_GOV_WASTE_TAX_COMPLIANCE', 'US_GOV_WASTE_TARIFFS', 'US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES']
-driver_labels = ['Housing/Zoning Restrictions Cost', 'Regulatory Red Tape Waste', 'Healthcare System Inefficiency', 'Military Overspend', 'Tax Compliance Waste', 'Tariff Cost (GDP Loss)', 'Drug War Cost', 'Agricultural Subsidies Deadweight Loss', 'Corporate Welfare Waste', 'Fossil Fuel Subsidies (Explicit)']
-impacts_low = [-450000000000.0, -145000000000.0, -100000000000.0, -57500000000.0, -48000000000.0, -35000000000.0, -15000000000.0, -12500000000.0, -15500000000.0, -10000000000.0]
-impacts_high = [300000000000.0, 210000000000.0, 150000000000.0, 67500000000.0, 52000000000.0, 45000000000.0, 30000000000.0, 22500000000.0, 19500000000.0, 15000000000.0]
+drivers = ['US_GOV_WASTE_HOUSING_ZONING', 'US_GOV_WASTE_REGULATORY_RED_TAPE', 'US_GOV_WASTE_HEALTHCARE_INEFFICIENCY', 'US_GOV_WASTE_TAX_COMPLIANCE', 'US_GOV_WASTE_TARIFFS', 'US_GOV_WASTE_DRUG_WAR', 'US_GOV_WASTE_AGRICULTURAL_SUBSIDIES', 'US_GOV_WASTE_CORPORATE_WELFARE', 'US_DEFENSE_FP_MOBILIZATION_HEDGE', 'US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES', 'US_DEFENSE_FP_NUCLEAR_DETERRENT', 'US_DEFENSE_FP_HOMELAND_AIR_MISSILE', 'US_DEFENSE_FP_NATIONAL_GUARD', 'US_DEFENSE_FP_CYBER', 'US_DEFENSE_FP_COAST_GUARD']
+driver_labels = ['Housing/Zoning Restrictions Cost', 'Regulatory Red Tape Waste', 'Healthcare System Inefficiency', 'Tax Compliance Waste', 'Tariff Cost (GDP Loss)', 'Drug War Cost', 'Agricultural Subsidies Deadweight Loss', 'Corporate Welfare Waste', 'First-Principles Defense: Mobilization Hedge', 'Fossil Fuel Subsidies (Explicit)', 'First-Principles Defense: Nuclear Second Strike', 'First-Principles Defense: Homeland Air & Missile Defense', 'First-Principles Defense: National Guard', 'First-Principles Defense: Cyber Defense', 'First-Principles Defense: Coast Guard']
+impacts_low = [-450000000000.0, -145000000000.0, -100000000000.0, -48000000000.0, -35000000000.0, -15000000000.0, -12500000000.0, -15500000000.0, 10000000000.0, -10000000000.0, 5000000000.0, 5000000000.0, 3000000000.0, 2500000000.0, 1000000000.0]
+impacts_high = [300000000000.0, 210000000000.0, 150000000000.0, 52000000000.0, 45000000000.0, 30000000000.0, 22500000000.0, 19500000000.0, -20000000000.0, 15000000000.0, -10000000000.0, -7500000000.0, -5000000000.0, -5000000000.0, -1000000000.0]
 
 # Convert deltas to absolute values (baseline + delta)
 
