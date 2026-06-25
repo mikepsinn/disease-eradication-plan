@@ -153,28 +153,26 @@ def main() -> None:
         sys.exit(0)
 
     files = changed_prose(last_ts())
+    save_ts(now)  # advance the clock so this turn's edits are not re-flagged next turn
     if not files:
-        save_ts(now)
         sys.exit(0)
 
-    shown = files[:25]
-    filelist = "\n".join(f"  - {f}" for f in shown)
-    if len(files) > len(shown):
-        filelist += f"\n  ... and {len(files) - len(shown)} more"
-
-    directive = DIRECTIVE.format(filelist=filelist)
+    # QUIET MODE (2026-06): only speak when the deterministic scanner finds an actual
+    # banned phrase. The old every-turn punch-up wall-of-text was itself context
+    # pollution (which dampens the prose). On-demand voice review now lives in the
+    # `voice-critic` skill + GUIDES/VOICE_RUBRIC.md; the user reviews everything in git.
     hits = scan_hits(files)
-    if hits:
-        directive += (
-            "\n\nThe deterministic voice-check scanner (scripts/voice-check.py) also "
-            "flagged these exact phrases, which the STYLE_GUIDE bans. Fix each one, or "
-            "justify the keep (a buzzword survives only when you are quoting it to mock "
-            "it):\n\n" + hits
-        )
+    if not hits:
+        sys.exit(0)
 
-    save_ts(now)  # advance the clock so this turn's edits are not re-flagged next turn
+    directive = (
+        "VOICE CHECK (deterministic scanner). You changed book prose this turn and "
+        "scripts/voice-check.py flagged these banned phrases. Fix each, or justify the "
+        "keep (a buzzword survives only when you are quoting it to mock it). Refs: "
+        "GUIDES/STYLE_GUIDE.md, GUIDES/VOICE_RUBRIC.md.\n\n" + hits
+    )
     sys.stderr.write(directive + "\n")
-    sys.exit(2)  # block
+    sys.exit(2)  # block only on a real, deterministic hit
 
 
 if __name__ == "__main__":
