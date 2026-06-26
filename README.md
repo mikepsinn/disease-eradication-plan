@@ -158,7 +158,7 @@ Your body is quietly falling apart. Right now, as you read this sentence, someth
 Every one of these failures is a solvable engineering problem.**
 
 You'd think humans would prioritize solving these problems.
-You'd be adorable for thinking that.
+That thought would be incorrect.
 
 ### The Unexplored Therapeutic Frontier
 
