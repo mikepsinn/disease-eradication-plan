@@ -1,6 +1,5 @@
 ---
 title: Earth Optimization Services
-subtitle: 'The future: now under new management.'
 description: Universe Optimization Services has helped over 300 civilizations upgrade from 'actively self-destructing' to 'surprisingly pleasant.' Earth is now accepting applications.
 published: true
 tags:
@@ -16,10 +15,11 @@ scores:
   standalone: 8
   voice: 8
   importance: 9
+audience: "The reader who is the President and customer of Earth Optimization Services"
+feel: "I am the president of this whole machine, the pieces obviously fit, and I can see exactly which one to build first."
+do: "Take the chair, see how the parts fit, then go build the one you can: pick a module (the dFDA, the DIH, Wishocracy, the Loving Takeover) and start there."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
-## Introducing Universe Optimization Services
 
 Is your civilization spending more on explosions than on figuring out why its own citizens stop working? Are your elected representatives being purchased by the industries they regulate? Has your species developed nuclear weapons, antibiotics, and the internet, and then pointed two of those three at each other?
 
@@ -29,8 +29,18 @@ Universe Optimization Services has been upgrading civilizations since before you
 
 Earth Optimization Services is our regional branch for your planet, one of several thousand subsidiaries Universe Optimization Services operates across the galaxy. Same parent company. Same proven technology. Smaller market. More shouting.
 
-It brings the standard package to your small blue planet. Results include disease eradication, economic expansion, extended lifespan, and a dramatic reduction in the number of times your civilization can end itself. Currently: {{< var nuclear_winter_overkill_factor_nounit >}}. Recommended: No more than one as the other endings are mainly decorative.
+It brings the standard package to your small blue planet, including a dramatic reduction in the number of times your civilization can end itself. Currently: {{< var nuclear_winter_overkill_factor_nounit >}}. Recommended: No more than one as the other endings are mainly decorative.
 
+## What It Does For You
+
+For the average human, in order of what matters. All figures are modeled projections.
+
+- **The disease coming for someone you love almost certainly has no cure yet. This is how one gets found.** {{< var global_annual_deaths_curable_diseases_nounit >}} people a year die of disease and aging, and for most of them no treatment exists, because the trial that would have found it was never funded; the money turned into a missile instead. The accelerated trials run the search, and the few cures already proven safe stop sitting in a drawer for {{< var efficacy_lag_years >}} and reach patients almost at once.
+- **If you get sick, someone will actually be testing a fix.** Right now, for most diseases, no one is, and no one tells you that. Trial capacity goes from {{< var current_trial_slots_available >}} to {{< var dih_patients_fundable_annually >}} a year, so "nothing can be done" turns into "here, try this," and your disease is on the list.
+- **You get the decades back, and they work.** Centuries of waiting fold down into one human life: the backlog of {{< var diseases_without_effective_treatment >}} with no treatment clears in {{< var dfda_queue_clearance_years >}} instead of {{< var status_quo_queue_clearance_years >}}, and aging itself slows in the first generation, then reverses in the next.
+- **You get richer.** The Light package, the [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] alone, adds about {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to the average person's lifetime income. Go Deluxe (full optimization) and it is {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}}, because money spent on not-destruction turns out to produce things. Your economists will publish papers explaining why this was obvious in retrospect.
+- **You stop paying to be able to murder everyone several times over.** Your species keeps enough firepower to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times: the world ends once, and you built the other {{< var nuclear_winter_spare_apocalypses_nounit >}} apocalypses for practice. The treaty trims the budget, not the deterrent: everyone cuts the same one percent at once, so nobody is easier to invade, and you keep every spare apocalypse you were never going to use. Humanity ran this exact move once, cutting military spending {{< var post_ww2_military_cut_pct >}} after the last world war, and walked into its largest boom.
+- **It pays you to take it.** This is the only product that costs negative money, because you are buying assets rather than burning cash: the money is not new, it is what you already burn. Your share of starting the chain costs {{< var sharing_opportunity_cost >}} of your time. Everything above is what the time buys.
 ## What Comes in the Box
 
 Every regional branch ships with four components. They are not metaphors. They are the parts of the machine.
@@ -53,7 +63,7 @@ Every civilization gets the same four products. We tried offering customization.
 
 ### Product 1: The Evidence Engine
 
-**What it does:** Looks at what works.
+**What it does:** Counts which jurisdictions kept their citizens alive, and which buried them, then stops asking the ones who buried them for advice.
 
 Your planet has 10,000 jurisdictions, each trying slightly different policies. Some of them produce healthy, wealthy, well-educated citizens. Others produce the opposite. Right now, you determine which is which by having politicians argue on television. The [Evidence Engine](optimocracy.qmd) replaces the arguing with counting.
 
@@ -73,7 +83,7 @@ Our flagship feature: knowing where the trillions went.
 
 You do not need new money. You need to stop losing the money you have. You maintain {{< var global_warhead_count_nounit >}} nuclear warheads. You can only end your civilization once. The other {{< var nuclear_winter_overkill_factor_nounit >}} minus 1 endings are in storage, costing money, doing nothing. The [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] moves 1% of every nation's military budget to clinical trials. Everyone reduces equally. Nobody is easier to invade. Everyone has {{< var dfda_trial_capacity_multiplier >}} more clinical trials. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
 
-Your lifetime instead of centuries. That is the product.
+Centuries of waiting, folded down into one human life. The diseases were never going to cure themselves; somebody just had to pay for the search instead of the warheads. That is the product.
 
 *"We kept 11,000 warheads for 200 years after we only needed 50. Then we redirected 1% and cured our last disease in 22 years. The warheads did not notice they were missing." (The Yennari Collective, optimized 340 years ago)*
 
@@ -105,7 +115,7 @@ On *Who Wants to Be a Millionaire*, the studio audience picked the right answer 
 
 ### Bonus Feature: Incentive Alignment
 
-**What it does:** Makes saving lives pay better than ending them.
+**What it does:** Moves the money so the lobbyist who used to sell missiles makes rent selling cures instead.
 
 Every interest group on your planet currently profits from your dysfunction. Pharma profits from chronic treatment. Military industry profits from war. Politicians profit from the lobbyists who fund both. [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] rearrange the profit motive so that the most profitable thing anyone can do is [cure a disease](aligning-incentives.qmd).
 
@@ -119,13 +129,13 @@ The four products are one machine.
 
 You buy the companies that currently control your government (Product 3). This gives you their lobbying apparatus, which is the most effective policy-change mechanism your species has ever built. You point it at the [Evidence Engine](optimocracy.qmd) (Product 1), which calculates the policies that maximize two numbers: median health-adjusted life expectancy and median after-tax inflation-adjusted income. The lobbyists push for those policies instead of the ones their previous owners wanted. The [1% Treaty](../solution/1-percent-treaty.qmd) (Product 2) funds it. The [Wishocracy](wishocracy.qmd) (Product 4) makes sure no one can redirect the lobbying back.
 
-That is the entire service. Everything else is implementation detail.
+That is the entire service. Everything else is wiring you do not have to look at, the way you do not look inside the toilet tank that already knows when to stop.
 
 Your current system uses the same components in the opposite order: companies buy the government, lobbyists push for policies that maximize shareholder profit, and nobody measures whether anyone got healthier or richer. Same machine. Same parts. Different direction.
 
 ## What You Get Back
 
-Most products on your planet come with one benefit. A car moves you. A drug treats one disease. This one comes with a single downside and thirteen upsides, which is an unusual ratio, so we itemize it.
+Most products on your planet come with one benefit. A car moves you. A drug treats one disease, if one exists, which for most of them it does not yet. This one comes with a single downside and thirteen upsides, which is an unusual ratio, so we itemize it.
 
 **The downside, in full.** If the campaign fails completely, you are left holding shares in the companies that currently run your government. They return roughly what military contractor stocks have always returned, and because we charge no carry and no management fee, you keep more of that than your neighbor keeps from the fund he is in. That is the floor. There is no version of this where the floor drops below "a slightly-better-than-average index fund." We have checked. Repeatedly. It is the least interesting part of the product, which is why we are moving on.
 
@@ -224,7 +234,6 @@ YOUR OVEN (closed-loop):
   temperature. If not, it ADJUSTS. This is why
   your food is edible.
 
-
 YOUR GOVERNMENT (open-loop):
 
   ┌─────────────────────────────────────────────────┐
@@ -321,7 +330,7 @@ Each module replaces one government agency with software. The software does not 
 
 **Replaces:** Grant committees where researchers spend 40% of their time writing applications instead of doing research.
 
-**With:** A [coalition for curing disease](dih.qmd) modeled on your military-industrial complex, except pointed at biology instead of geography. Treaty funds flow to researchers based on outcomes, not proposals. If your treatment works, you get paid. If it does not, you do not. This is considered radical in your current system, where getting paid has no relationship to whether anything worked.
+**With:** A [coalition for curing disease](dih.qmd) modeled on your military-industrial complex, except pointed at biology instead of geography. Treaty funds flow to researchers by whether the patient got better, not by whose grant prose was prettiest. Find something that works, you get paid. Find nothing, you do not. This is considered radical in your current system, where the check clears whether or not anyone left the hospital.
 
 ### The Government Replacement Suite
 
@@ -407,6 +416,6 @@ The guarantee: full refund if the world ends more than once.
 
 Universe Optimization Services thanks you for your interest in continued existence. We look forward to adding Earth to our portfolio of successfully optimized planets.
 
-Your case has been assigned. Your representative is Wishonia, who is also the CEO of Universe Optimization Services. That the chief executive of a universe spanning company is personally handling one small planet's account is not a compliment. It is a measure of how far behind schedule you are. She has been watching your planet for some time. She finds your dogs delightful and your budget allocation confusing. She is available for questions. She is not available for patience, as she has been doing this for 4,297 years and your species is taking longer than average.
+Your case has been assigned. Your representative is Wishonia, who is also the CEO of Universe Optimization Services. The chief executive of a galaxy-spanning company does not personally work the small accounts. She is working yours the way a doctor cancels lunch for the patient whose chart just turned a color the others have not. She has been watching your planet for some time. She finds your dogs delightful and your budget allocation confusing. She is available for questions. She is not available for patience, as she has been doing this for 4,297 years and your species is taking longer than average.
 
 Please begin.

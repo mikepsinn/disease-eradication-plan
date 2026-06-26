@@ -175,6 +175,16 @@ Three discipline rules for the pass itself. **Tie goes to the incumbent:** never
 
 **The deletion bar is higher than the rewrite bar.** Deleting a funny line is worse than keeping an imperfect one. Redundancy alone never justifies cutting a joke: a point already made can land again if the second telling is funny. A full cut is justified only when the line fails the kill-test outright (not funny AND not informative) or its premise is factually broken. Deletions are allowed in any pass, same as rewrites; the review happens in the git diff before commit. But a deletion is invisible in review (nothing bad replaces it, so nothing catches the eye), so every cut must be logged in the pass's BEFORE/AFTER record with a one-line case for what it failed.
 
+## Steal or Beat: where new writing comes from
+
+The book already contains the best version of almost every point. Prose that re-derives a point from scratch reliably loses to what already exists; that is what a midwit summary IS. So before writing any beat:
+
+1. **Find the book's best existing expression of this point** (the `searchManual` tool, `grep`, or `scripts/voice/voice-exemplars.jsonl`). The disease-funding point already exists as "the treatment that would save your family sits untested on a shelf, because the money that would have tested it is in a missile." Longevity already exists as "Death currently holds 2.3 stars on Yelp."
+2. **Reuse it** (verbatim or lightly adapted) unless you can genuinely beat it.
+3. **Only write fresh if it WINS** against the best existing version. The critic's test is comparative: not "is this good?" but "does this beat what the book already says here?"
+
+Brochure and benefit-summary sections are the worst offenders: they restate, flatly, points the book makes elsewhere with a turn. Steal the turn; never paraphrase it into competence.
+
 ## Directness Failures
 
 | Failure | Example | Fix |
@@ -194,6 +204,10 @@ Three discipline rules for the pass itself. **Tie goes to the incumbent:** never
 | Wishonia performs comedy | "This is my favorite objection because..." | Wishonia doesn't know it's funny. It's just confused. |
 
 **The test:** The comedy comes from the GAP between Wishonia's naive tone and the devastating truth. If Wishonia sounds self-aware, the gap closes and the comedy dies.
+
+## Write to the Real Reader
+
+Check a line's hidden premise against the chapter's `audience`. The failure is writing to a reader who does not exist. "The trial stops being a lottery you lose" assumes the reader has been begging for a trial and losing; almost nobody has, and most people do not even know a cure could be found for their disease. Vivid-and-false is worse than plain-and-true. If a line assumes the reader already knows, wants, or has done something, verify the real reader does.
 
 ## The Voice Map
 

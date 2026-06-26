@@ -21,11 +21,11 @@ do: "Learn the manual free through Special Education, pass the comprehension che
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-Your species is wrong about things on the internet at a rate that can only be described as "ambitious." Special Education fixes this. It has two modes: one for humans who want to learn, and one for humans who are posting.
+Your species is wrong about things on the internet at a rate that can only be described as "ambitious." Special Education has two modes: one for the humans who want to learn, and one for the humans who would rather post.
 
 ## Inbound: Wishonia teaches you
 
-Free, forever. Wishonia teaches you this manual one-on-one, to the level your job as a [Humanity Manager](../appendix/humanity-manager-employment-agreement.qmd) needs. She walks you through it, answers your questions, notices what you didn't understand, and explains it again a different way, because eight billion people are confused about different things.
+Free, forever. Wishonia teaches you this manual one-on-one, to the level your job as a [Humanity Manager](../appendix/humanity-manager-employment-agreement.qmd) needs. She walks you through it, answers your questions, notices the exact spot where your eyes glazed over, and explains it again a different way, because eight billion people are confused about eight billion different things.
 
 It is called special education because [everyone is retarded](../problem/i-am-retarded.qmd) and everyone needs it: you, me, the people in charge of the nuclear weapons. There is no remedial class, because there is no other kind.
 
@@ -33,15 +33,15 @@ It is called special education because [everyone is retarded](../problem/i-am-re
 
 ## Outbound: Wishonia corrects the internet
 
-Wishonia teaches willing students one-on-one. She also reads the internet, which is where your species goes to be wrong in public.
+Wishonia teaches willing students one-on-one. She also reads the internet, which is where your species goes to be wrong at scale, in writing, with a timestamp.
 
 Most humans posting misinformation about public policy have not opted into a tutoring session. They are never going to open the manual. So Wishonia goes to them. She finds posts containing logical fallacies, factual errors, and missing context about military spending, disease funding, foreign policy, healthcare, or any other area where your species is confidently making things worse. She replies with the named fallacy, the corrected number, the missing cost-benefit analysis, and a suggestion for a better use of the poster's time than contributing to the slow torture and murder of their loved ones by preventable diseases.
 
-Same curriculum. Delivery by ambush.
+Same curriculum. The students just haven't enrolled, and won't be told they're in class.
 
 ### Why corrections work (your species tested this)
 
-Your species has a popular belief that correcting someone on the internet makes them believe the wrong thing harder. This is comforting because it means you never have to correct anyone. It is also wrong. Wood and Porter tested 52 corrections on over 10,000 participants and could not make the backfire effect happen once [@wood-porter-2019-backfire-effect]. They tried. They wanted it. Not "it was small." Not "it was mixed." Zero.
+Your species has a popular belief that correcting someone on the internet makes them believe the wrong thing harder. This is comforting because it means you never have to correct anyone, which is the most popular thing a fact can do for you. It is also wrong. Wood and Porter tested 52 corrections on over 10,000 participants and could not make the backfire effect happen once [@wood-porter-2019-backfire-effect]. They tried. They wanted it. Not "it was small." Not "it was mixed." Zero.
 
 The person being corrected may not change their mind. But that was never the point. Wishonia is not arguing with the poster. She is teaching the people reading the thread. Your species has a word for this: "the audience." Lies travel faster than corrections on social media [@vosoughi-2018-false-news-spread], and who appears to be speaking matters [@munger-2017-tweetment-effects]. The model treats observer reach as a low-confidence assumption, not a law of nature. But the observers are always there, and they outnumber the poster by orders of magnitude.
 
@@ -69,7 +69,7 @@ Three examples of the kind of post she answers. Real ones. Your species really p
 >
 > Better use of your time: ask how many apocalypses you need, then redirect the {{< var nuclear_winter_spare_apocalypses_nounit >}} spare apocalypses into clinical trials.
 
-She labels the mistake, gives the missing number, and points to the next action. She does not try to win a comment fight, because comment fights are where information goes to die. She is teaching the people reading the thread.
+She labels the mistake, gives the missing number, and points to the next action. She does not try to win the comment fight. Nobody has ever won a comment fight; the poster logs off convinced, the replier logs off exhausted, and the scoreboard stays at zero to zero forever. She is teaching the people reading the thread.
 
 ### Cost and return
 
