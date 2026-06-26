@@ -2,6 +2,9 @@
 title: "Interactive Book Strategy (internal)"
 description: "The book IS the pitch. Interactive parameters, crowdsourced assumptions, Wishonia as AI CEO. Not reader-facing; an internal operations doc."
 published: false
+audience: "The operator building and running the book (the person who can wire up the parameters, code, and pitch behind it)"
+feel: "Clear on the one rule that holds: the book is the pitch, the team is the agent, every number bends to the reader and the argument still stands"
+do: "Build Phase 1: make Wishonia's Wager parameters editable with live local recalculation"
 ---
 
 ## The principle: the book is the pitch

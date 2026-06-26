@@ -21,6 +21,9 @@ scores:
   standalone: 8
   voice: 8
   importance: 9
+audience: "A builder who will stand up Wishocracy itself: the person coding the pairwise sliders, writing the aggregation math, and running the bounty board that turns public budgets into funded work."
+feel: "Capable ownership: this is not utopian theory, it is the engine markets already proved, and I have the pieces to build it now."
+do: "Build Wishocracy: stand up the pairwise budget sliders, the aggregation math, and the bounty board that turns the public's choices into funded tasks."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

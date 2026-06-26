@@ -15,6 +15,9 @@ scores:
   standalone: 8
   voice: 8
   importance: 9
+audience: "A systems-minded builder (engineer, analyst, founder) who wants to see the machine before they wire it together, then go build the missing parts."
+feel: "The click of recognition that this is buildable: government is just an open loop missing two nameable parts, and you can build them."
+do: "Build the loop: start wiring in the two missing parts (the sensor and the off switch) by building Optimitron and the modules that supply them."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

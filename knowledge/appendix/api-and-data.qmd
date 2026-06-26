@@ -6,6 +6,9 @@ podcast-image: /assets/podcast/api-and-data-podcast.jpg
 youtube-thumbnail: /assets/podcast/api-and-data-youtube.jpg
 syndicate: false
 image: /assets/og-images/knowledge/appendix/api-and-data-og-bw-academic.jpg
+audience: "A developer or site owner who wants to pull the book's live numbers, search index, and images, or drop the Wishonia chat widget onto their own site."
+feel: "This is easy and open: the data is right here, free, and embedding the teacher is three lines of HTML."
+do: "Pull the JSON or TypeScript file you need (or paste the three-line widget snippet), then build with it."
 ---
 ![Machine-readable data indexes and APIs for building tools, agents, or integrations with the Disease Eradication Plan.](/assets/infographics/knowledge/appendix/api-and-data-infographic-bw-academic.jpg)
 

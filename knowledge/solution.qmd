@@ -21,6 +21,9 @@ scores:
   standalone: 3
   voice: 9
   importance: 7
+audience: "someone who just finished the problem section and wants to know the actual fix (the reader cast as the president who has to solve it)"
+feel: "relief that the whole thing is simple: take 1% of war money, route it through markets, and everyone's selfishness ends up curing diseases"
+do: "click into the first solution chapter, the 1% Treaty, to see how it's built"
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Now you understand the problem: everyone is dying while you build missiles. Time to fix it.

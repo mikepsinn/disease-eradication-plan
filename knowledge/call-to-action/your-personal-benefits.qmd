@@ -11,6 +11,9 @@ scores:
   standalone: 3
   voice: 6
   importance: 6
+audience: "The self-interested skeptic who does not care about saving humanity but does care about their own bank account and retirement."
+feel: "The personally caught out: this is not charity, it is the rational investment with the highest expected value they are currently ignoring."
+do: "Run the calculator with their own numbers, then make a Prize deposit, answer the referendum at warondisease.org, and recruit two people."
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

@@ -17,6 +17,9 @@ scores:
   importance: 9
 aliases:
   - /knowledge/economics/investment-terms.html
+audience: "A would-be investor (accredited) deciding whether to put money into EOS equity."
+feel: "This is a real, asset-backed bet with a capped downside, not a pitch or a scam, and the early dollar buys cheap odds."
+do: "Run the bid calculator with your own numbers, then ask for the PPM to invest."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 {{< include /knowledge/includes/reactive-params.qmd >}}

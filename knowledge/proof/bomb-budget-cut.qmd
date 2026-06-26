@@ -13,11 +13,11 @@ scores:
   standalone: 9
   voice: 8
   importance: 9
-audience: everyone (people who do not read policy papers)
-feel: this is simple, this is obvious, this person is not trying to sell me anything
-do: understand the whole idea in two minutes and tell someone else about it
 aliases:
   - /knowledge/proof/plain-language-version.html
+audience: "everyone (people who do not read policy papers)"
+feel: "this is simple and obvious; we already did it once and got richer, so it is not a fantasy"
+do: "forward this two-minute story to the most stubborn, hard-to-convince person you know (the relative who says nothing ever changes), and vote at warondisease.org"
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}

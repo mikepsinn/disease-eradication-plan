@@ -8,6 +8,9 @@ tags:
   - insurance-model
   - healthcare-system
 image: /assets/og-images/knowledge/appendix/dih-integration-model-og-retro-academic.jpg
+audience: "A skeptic (or operator) who fears this replaces the healthcare system and can't actually plug into hospitals, doctors, and pharmacies."
+feel: "Reassured that this slots into the system everyone already uses, costs a $30 copay, and asks nobody to tear anything down."
+do: "Accept that the insurance-layer model fits existing care, and carry that into the chapter that sent you here."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ```{python}

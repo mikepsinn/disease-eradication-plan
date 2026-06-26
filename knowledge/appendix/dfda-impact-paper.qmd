@@ -45,6 +45,9 @@ scores:
   standalone: 7
   voice: 4
   importance: 8
+audience: "A skeptical, numbers-literate reader (health economist, researcher, or funder) who wants to check the cost-per-life-year math before they believe it."
+feel: "Convinced the 84-cents-per-DALY claim survives hard scrutiny: the inputs are sourced, the method is honest, and the number holds."
+do: "Cite this analysis as the backing for the cost-effectiveness numbers, then return to the chapter that sent you here."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## Executive Summary

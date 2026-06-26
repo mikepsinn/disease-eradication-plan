@@ -120,13 +120,35 @@ we're-all-idiots-together lines ("we invented cheese, which is genius"). FLAG on
 second-person *personal* blame for a collective failure. This is **semantic** — do not
 regex it (every legitimate "you" would trip); it is a punch-up / critic judgment call.
 
+## 13. De-euphemize: name the real thing at full scale
+
+The world launders its horrors into bloodless abstraction: "waste on weapons",
+"defense spending", "casualties", "collateral damage", "mortality". Refuse the
+laundered word. Name the literal thing at its full concrete scale, so the horror
+and the absurdity are both undeniable. The euphemism is the enemy's framing.
+
+- "waste on weapons" -> "the redundant capacity to kill everyone several times over"
+- "defense spending" -> "the money spent on the ability to murder everyone"
+- never soften "people died" to "lives lost" or "mortality"; it is already literal
+
+**Rule:** generalizes "suffering first / disease as a villain" to everything the
+world sanitizes. Semantic, not regex-able; a punch-up / critic judgment call.
+
+## 14. Cut the medium-reference (a kind of self-aware aside)
+
+Narrating the document's own structure is leakage of the editor's framing into the
+prose. It is the same failure as #5 (self-aware aside), pointed at the page itself.
+
+- "That is the product. The rest of this page is how the machine delivers it." -> "That is the product."
+- Kill "this page", "this chapter", "this section", "below", "above", "as we'll see / as we saw". ("This manual / this book" in Wishonia's own voice is fine; "this page" is not.)
+
 ---
 
 ## How to use this
 
 When writing or punching up book prose: read this file, pull the most relevant
 exemplars (`scripts/voice/voice-exemplars.jsonl`), and for each passage ask the
-two questions the data answers: **"which of these 12 edits would the author make
+two questions the data answers: **"which of these 14 edits would the author make
 here?"** and **"is any sentence here a caption, a pompous opener, a self-aware
 aside, or a defensive preempt?"** If yes, apply edit 1/4/5/6. The critic
 (`scripts/voice/voice-critic.py`) does this automatically.

@@ -19,6 +19,7 @@ Quarto book: "How to End War and Disease" - getting nations to sign a 1% treaty 
 - **No em-dashes.** Use parentheses, commas, periods, or semicolons.
 - **Links:** Always `.qmd` extensions (not `.html`). Target must be in `_quarto-manual.yml`.
 - **Decision quality:** Evaluate trade-offs, state confidence. Don't mirror; hold position when evidence supports it.
+- **Default to the best version.** Pursue the goal, not the literal ask (this is the "Core method" rule applied to every task). Establish facts/benefits before writing copy; lead with the strongest quantified reader-facing benefit. Do the best thing and show the diff; don't poll for permission on reversible work.
 - **Brevity.** Omit needless words. In comedy, shorter is funnier. Trim until removing a word makes it worse, then stop.
 - **Capture corrections; don't navel-gaze.** When the user corrects you on something generalizable (or you notice yourself repeating a mistake), save it as a `feedback` memory, and if it is checkable at end-of-turn, add it to the punch-up hook (`.claude/hooks/voice-punchup-review.py`). Trigger only on a real correction or a noticed repeat, never routine self-analysis. Capture durable rules, not one-offs.
 
@@ -63,6 +64,8 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 
 **The reader IS the company.** Founder, president, owner, employee, all the same person. Hand them assets and roles ("your commission is on file," "you are the president"). Never ask, beg, thank, or center someone else as founder. Role-assignment lines are structural, not fluff; the mechanism needs the reader to accept the role.
 
+**Nothing here exists yet; the reader BUILDS it.** The dFDA, DIH, Court of Humanity, Wishocracy, etc. do not exist. This is an instruction manual for building them, not a pitch to support them. Frame every ask as **build / create / run / teach / file / convene** (Special Education = the reader teaching other humans, not a feature we offer). NEVER "back it / support it / vote yes / trust it / accept it" for a buildable institution. Vote/recruit is a real `do` only on the referendum/treaty/recruitment pages, where that IS the build step.
+
 **Canonical love line:** "I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases." One breath, one sentence. We fund research to FIND cures; we don't have them; that's the point.
 
 **Financial architecture:** Corruption capped at 20% (transparent), 80% untouchable via wishocracy. Money and influence are disentangled. This is the core selling point vs current government.
@@ -76,7 +79,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Politicians | Campaign funding + votes + careers | Direct payments, bond investments |
 | Regular people | Referral bonuses + cured diseases | Tokens, ownership, crypto |
 
-**Tone:** "probably irresistible" not "inevitable." Like with like (margins to margins). Securities not tokens. Plain words; mock buzzwords, never use them straight. Suffering first (concrete, specific), death as punctuation, disease as a deadpan villain with intent. Just do the thing; never narrate what you're doing. Treaty durability: explain WHY it holds (billionaire bondholders have motive to keep/expand), don't just assume it.
+**Tone:** "probably irresistible" not "inevitable." Like with like (margins to margins). Securities not tokens. Plain words; mock buzzwords, never use them straight. Suffering first (concrete, specific), death as punctuation, disease as a deadpan villain with intent. **De-euphemize:** refuse the world's laundered abstraction ("waste on weapons", "defense", "casualties"); name the literal thing at full scale ("the redundant capacity to kill everyone several times over"). Just do the thing; never narrate what you're doing or reference the medium ("this page/chapter", "below", "as we'll see"). Treaty durability: explain WHY it holds (billionaire bondholders have motive to keep/expand), don't just assume it.
 
 ## Quick Commands
 

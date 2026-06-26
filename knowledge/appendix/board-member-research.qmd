@@ -40,6 +40,9 @@ scores:
   standalone: 8
   voice: 7
   importance: 9
+audience: "The volunteer or lawyer filling in the personalized CEO section of a contractor's shareholder demand letter."
+feel: "Equipped: every number you need is public, and here is exactly where to get it."
+do: "Pull the current DEF 14A, fill the CEO template, and drop it into Section 6 of the demand letter."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

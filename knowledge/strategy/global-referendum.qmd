@@ -22,6 +22,9 @@ scores:
   standalone: 6
   voice: 9
   importance: 8
+audience: "An organizer or recruiter building the referendum: someone ready to gather verified public signatures and run the growth machine."
+feel: "This is buildable and cheaper than selling shoes; the cheating, privacy, and \"it's just a petition\" objections are already answered."
+do: "Start collecting verified signatures and recruiting the next signer, aiming the chain at the coordination target."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Politicians can ignore protests. They can ignore polls. They can ignore reality for surprisingly long periods (see: climate change, 1970-present).

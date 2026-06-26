@@ -12,6 +12,9 @@ scores:
   standalone: 4
   voice: 7
   importance: 5
+audience: "A nonprofit, research-org, or campaign leader buried in manual coordination (email threads, dead Zoom calls, cross-timezone scheduling) who is going to stand up the AI agents that fight disease."
+feel: "The relief and grip of \"I can finally build the coordination machine my own brain could never run, and millions can be pointed at one task starting now.\""
+do: "Deploy a coordination node for your organization and point its agents at one task from Wishocracy's Task Tree."
 ---
 
 You've got mission control, a network of [Decentralized Institutes of Health](dih.qmd) ([DIH](dih.qmd)), and a targeting system ([Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025]). Now you need an army of AI agents to do the work. Humans are sleeping, arguing on Twitter, or attending conferences that accomplish nothing.

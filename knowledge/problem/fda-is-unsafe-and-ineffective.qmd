@@ -20,6 +20,9 @@ scores:
   standalone: 9
   voice: 9
   importance: 8
+audience: "A reader who has always assumed the FDA's slow, careful approval process is what keeps them safe (and whose first instinct is to ask \"but what about safety?\")"
+feel: "Betrayed: the delay you trusted to protect you is the deadliest thing in the room, and the bodies are real, invisible, and on a schedule"
+do: "Forward this to one person who could move it (a doctor who has watched a patient die in the queue, a founder who could build the replacement, or your senator who could end the 1962 efficacy delay), then vote at warondisease.org"
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 For every 1 unit of harm prevented by efficacy delays, the system creates {{< var type_ii_error_cost_ratio >}} units of harm through denied access. Operational safety ratio: {{< var type_ii_error_cost_ratio >}}-to-1 against the patient.

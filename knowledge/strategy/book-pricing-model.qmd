@@ -2,6 +2,9 @@
 title: "Book Pricing Model (internal strategy)"
 description: "How the book is priced, and why. Not reader-facing prose; an internal operations doc. The objective is total dollars raised for ending war and disease, not margin per copy."
 published: false
+audience: "Whoever sets the book's price and runs the store: the operator deciding what to charge across Amazon and the warondisease.org store."
+feel: "Certain that a fixed price would leave the real money on the table, and that pay-what-you-want anchored to your share of the planet is the only structure that catches the whale."
+do: "Set the store to pay-what-you-want: free floor, the per-person share as the default anchor, and a real \"buy the planet\" patron tier at the top."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

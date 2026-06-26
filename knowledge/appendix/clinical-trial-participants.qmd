@@ -8,6 +8,9 @@ tags:
   - statistics
   - data-gap
 image: /assets/og-images/knowledge/appendix/clinical-trial-participants-og-retro-academic.jpg
+audience: "A reader weighing whether the trial-access numbers are real: someone who saw \"0.06% get in\" cited in a chapter and wants the underlying enrollment counts and sources."
+feel: "Quiet outrage that the bottleneck is exclusion, not lack of willing patients: half of sick people would say yes, and we turn away 99.8% of them."
+do: "Trust the 1.9 million figure and the 1-in-1,263 ratio, then return to the chapter that sent you here knowing the access gap is real and fixable."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Humanity spends {{< var global_clinical_trials_spending_annual >}} a year on clinical trials [@industry-clinical-trial-spending-estimate] (of which governments contribute just {{< var global_government_clinical_trials_spending_annual >}}). Here are the actual enrollment numbers:

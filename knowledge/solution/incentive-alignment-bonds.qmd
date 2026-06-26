@@ -25,6 +25,9 @@ scores:
   standalone: 7
   voice: 8
   importance: 10
+audience: "The Humanity Manager standing up the funding machine: the builder who will issue these bonds, raise the campaign capital, and wire up the scoring system that pays politicians for voting yes."
+feel: "The greedy thrill of holding the lever: you can build the one machine that makes saving everyone you love the selfish, profitable choice, and the parts already exist."
+do: "Build the bond and the three-layer scoring machine: issue the bonds, raise the campaign capital, and stand up the public scores that reward every yes vote."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Aligning Incentives](aligning-incentives.qmd) | [Academic Paper](../appendix/incentive-alignment-bonds-paper.qmd)
@@ -459,7 +462,7 @@ To game these metrics, you'd have to falsify your own vote (public record) or pr
 
 ![What happens to your score when you do good things for a while and then suddenly decide to do bad things instead. The graph goes down quite dramatically.](/assets/images/incentive-alignment-bonds/incentive-alignment-bonds-section-objection-3-what-if-politicians-pocket-the-career-rewards-th-bw-academic.jpg)
 
-Score decay. The same mechanism that rewarded you punishes backsliding, making reversals career suicide (the only kind of death politicians fear).
+Score decay. The same scoring that rewarded you punishes backsliding, making reversals career suicide (the only kind of death politicians fear).
 
 #### "What happens when this fails and I lose my billion dollars?"
 

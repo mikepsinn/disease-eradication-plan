@@ -18,6 +18,9 @@ scores:
   standalone: 7
   voice: 9
   importance: 7
+audience: "A numerate skeptic (policy, economics, or finance-minded reader) who wants to know whether the 1% Treaty's payoff is real arithmetic or hand-waving, and who personally knows people with money or influence."
+feel: "Disarmed by the honesty of the floor: the worst case is still a bank transfer that doubles medical research, and the real scandal is the 80 years of interrupted compounding nobody priced into their own invoice."
+do: "Forward this to the most numbers-driven person you know who controls or influences capital (a fund manager, an economist, a CFO, a policy staffer) with the line \"the floor case still doubles medical research\" and vote at warondisease.org."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Here's what 1% less murder money buys you. The [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] Fund gets {{< var treaty_annual_funding >}} to subsidize hyper-efficient pragmatic clinical trials. In the chapter's baseline case, the total annual societal dividend is {{< var peace_dividend_annual_societal_benefit >}}: {{< var treaty_annual_funding >}} as direct treaty funding, plus {{< var peace_dividend_conflict_reduction >}} in additional conflict-cost reduction. Your lifetime tab for wars in countries you can't find on a map: {{< var global_war_cost_lifetime_per_person_flat >}} per person over 80 years, and that's the conservative floor that pretends war costs aren't compounding. That's per person. Every person on Earth. Including you. You personally have been billed {{< var global_war_cost_lifetime_per_person_flat >}} for explosions on the other side of the planet, and nobody sent you an invoice because they knew you'd cancel.

@@ -80,6 +80,9 @@ scores:
   standalone: 7
   voice: 5
   importance: 7
+audience: "A technical reader (researcher, regulator, or builder) who wants to know exactly how the dFDA scores treatments and whether the cost and method claims hold up."
+feel: "Convinced the method is real and rigorous: watching a billion people take medicine, then testing the interesting signals, is cheaper and more honest than today's gold standard."
+do: "Trust the two-stage method and its cost numbers, then return to the chapter that sent you here (or build it)."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## Abstract

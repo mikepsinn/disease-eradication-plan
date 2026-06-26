@@ -16,6 +16,9 @@ scores:
   standalone: 4
   voice: 7
   importance: 6
+audience: "An organizer or recruiter who wants to actually get the treaty into law and needs ready-made bills and a step-by-step way to pass them."
+feel: "Armed: the bills are already written and built to pass, so they could walk into a politician's office tomorrow."
+do: "Pick a bill, start with Right to Try, and hand it to a politician they can reach, then bundle the rest into a must-pass vote."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Here's how democracy actually works: Lobbyists write bills and give them to politicians who can't read. Those politicians vote based on who donated most to their campaign. This chapter is five bills, pre-written, ready to hand to whichever politician you can afford. You're about to become the best lobbyist in history, except your bills actually help people instead of killing them.

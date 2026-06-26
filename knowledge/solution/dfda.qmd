@@ -18,6 +18,9 @@ scores:
   standalone: 8
   voice: 9
   importance: 10
+audience: "a builder or funder who can see the medical system is broken and is ready to stand up the open protocol that fixes it"
+feel: "the calm certainty that this is yours to build, the pieces already exist, and you can start wiring them together today"
+do: "build the decentralized FDA: stand up the open protocol, plug in the platforms that already exist, and run the first trials through it"
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

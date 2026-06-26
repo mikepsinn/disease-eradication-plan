@@ -9,6 +9,9 @@ tags:
   - airtable
   - strategy
 image: /assets/og-images/knowledge/appendix/command-and-control-systems-og-retro-academic.jpg
+audience: "The operator setting up the DIH back office: the person who will actually build the database that tracks every person, dollar, and vote."
+feel: "That the whole machine is buildable today with off-the-shelf tools, and that radical transparency is the design, not a slogan."
+do: "Open a cloud database and build the tables in the order given, starting with the Personnel Roster."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Every control loop in the [Theory of Operation](../solution/theory-of-operation.qmd) needs somewhere for the measurements to live and a wire to carry them back to the controller. This is that somewhere: the **ledger**, the machine's feedback path and its memory. It is the transparent record of every person, dollar, and vote, so the loop can tell what is actually happening and correct it. The cloud-database schema below is one way to build it; the principle is what matters: record what the machine did, measure the result, keep it where the controller and everyone else can see. Radical transparency is not a virtue here. It is the sensor cable.

@@ -19,6 +19,9 @@ scores:
   standalone: 4
   voice: 6
   importance: 6
+audience: "A domain expert or mechanism-design builder who could critique or rewrite a governance plan, looking for where it breaks."
+feel: "Dared: the manual is admittedly terrible and the rules are public, so beating it is a real, winnable challenge."
+do: "Fork the manual on GitHub and improve one row of the table, or red-team it against the eleven constraints in a published critique."
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 

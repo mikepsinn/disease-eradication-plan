@@ -20,6 +20,9 @@ scores:
   standalone: 9
   voice: 9
   importance: 7
+audience: "a numerate reader who assumed uncured diseases are too hard to cure, not too cheap to bother testing"
+feel: "outraged disbelief that 99.66% of testable cures sit untested because the molecules weren't profitable, not because the science failed"
+do: "forward the 0.34% number to a doctor, scientist, or grant-funder you know who keeps calling these diseases incurable, and vote at warondisease.org to redirect trial money toward testing the other 99.66%"
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

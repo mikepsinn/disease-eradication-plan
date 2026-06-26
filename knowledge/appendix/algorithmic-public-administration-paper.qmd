@@ -49,6 +49,9 @@ scores:
   standalone: 5
   voice: 7
   importance: 6
+audience: "A skeptical, technically literate reader (engineer, economist, policy wonk) who assumes \"you can't just automate government.\""
+feel: "The quiet shock of realizing most of government is robot work humans are being paid to do by hand, and the code already exists."
+do: "Accept that the five primitives are buildable, and carry that into the treaty and UBI chapters that cite this paper."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

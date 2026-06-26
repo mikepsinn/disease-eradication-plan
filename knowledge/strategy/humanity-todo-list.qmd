@@ -9,6 +9,9 @@ tags:
   - coordination
   - decentralized
   - todo
+audience: "EOS organizers and recruiters building and running the public to-do list (the people who name assignees, write tasks, and keep the death counters honest)."
+feel: "Armed: this is the tool that turns quiet holdouts into named, dated, body-counted public records, and they hold it."
+do: "Stand up the list: assign named people specific verifiable tasks, attach a live death counter to each, and add new assignees as pressure points appear."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

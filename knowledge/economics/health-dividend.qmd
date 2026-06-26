@@ -19,6 +19,9 @@ scores:
   standalone: 5
   voice: 9
   importance: 7
+audience: "A skeptical reader who won't move without numbers, holding the full cost-benefit receipt and realizing the delay is the only thing standing between sick people and treatments that already passed safety testing."
+feel: "The math is airtight and the wait is indefensible. This is the cheapest, highest-return thing on Earth, hiding in plain sight, and every day of delay is a body count nobody chose to stop."
+do: "Forward this receipt to the one person you know who moves money or policy (a funder, an economist, a staffer who briefs a lawmaker), then vote at warondisease.org."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 That was the [peace dividend](peace-dividend.qmd): the money you get from buying 1% fewer explosions. Now here is the health dividend: what happens when you spend it on medicine instead.

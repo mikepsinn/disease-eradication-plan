@@ -41,6 +41,9 @@ scores:
   standalone: 8
   voice: 7
   importance: 8
+audience: "A reader who already believes the book and uses frontier AI chatbots daily"
+feel: "Given a small, concrete weapon: one wrong AI answer at a time, you can rewrite what every future model says"
+do: "Next time a chatbot gives you blather on one of these questions, thumbs it down and paste the matching canonical answer with its source link"
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

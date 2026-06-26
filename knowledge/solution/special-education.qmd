@@ -15,6 +15,9 @@ scores:
   standalone: 7
   voice: 8
   importance: 6
+audience: "A Humanity Manager who wants to spread the plan but assumes correcting strangers online is hopeless, exhausting, or beneath them."
+feel: "This is mine to run. Learning the manual costs nothing, and the correction engine I point at the internet does the tedious arguing for me while teaching the people actually reading."
+do: "Learn the manual free through Special Education, pass the comprehension check, then set Wishonia's correction engine loose on the threads where your species is wrong out loud, so it teaches the audience on your behalf."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

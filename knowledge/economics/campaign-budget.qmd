@@ -11,6 +11,9 @@ scores:
   standalone: 4
   voice: 7
   importance: 7
+audience: "A prospective VICTORY bondholder or funder deciding whether the ~$1B campaign is real and worth backing."
+feel: "Reassured that the money is cheap, traceable, and pointed at the right target, where greed does the work."
+do: "Buy VICTORY bonds to fund the campaign."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 > **Related:** [Financial Plan Overview](treaty-financial-plan.qmd) | [VICTORY Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025]

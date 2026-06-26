@@ -63,6 +63,9 @@ scores:
   standalone: 10
   voice: 5
   importance: 10
+audience: "A skeptical analyst, funder, or policymaker evaluating whether the 1% Treaty math actually holds up."
+feel: "Convinced the numbers survive scrutiny: this is the highest-ROI reallocation on the table, and the case is cost-saving even at low odds of success."
+do: "Carry the headline figures (ROI, cost per DALY, lives saved) into your own decision or pitch, and check the parameters appendix to confirm them."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

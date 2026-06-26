@@ -51,6 +51,9 @@ scores:
   voice: 3
   importance: 5
 image: /assets/og-images/knowledge/appendix/earth-optimization-prize-protocol-og-bw-academic.jpg
+audience: "An engineer or protocol builder deciding whether to build a second prize pool or implement part of this system."
+feel: "Confident the plumbing actually holds: every piece (identity, registry, claims, oracle) has a defined, buildable answer, not a hand-wave."
+do: "Build a pool to this spec, starting from Phase 1, without asking the first pool's permission."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 

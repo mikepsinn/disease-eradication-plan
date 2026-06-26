@@ -22,6 +22,9 @@ scores:
   standalone: 3
   voice: 9
   importance: 7
+audience: "The general reader, opening the book and seeing for the first time how lopsided the killing-versus-curing math is."
+feel: "Indignant that math this broken (604 times more for killing than curing, fifty 9/11s a day) gets filed under \"natural causes\" and treated as normal instead of as the emergency it is."
+do: "Forward these numbers to one person who has money or a vote and has never seen the ratio (a friend who thinks the system basically works, a parent, a coworker), then vote at warondisease.org so the count of people who refuse to call this normal goes up by one."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 Before you can fix something, you need to understand what's broken. In this case, what's broken is approximately everything.
