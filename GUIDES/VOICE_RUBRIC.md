@@ -100,13 +100,33 @@ MAIN book keeps "you." (Voice Map: match the surface.)
 
 - "You can't fight 200,000 years of evolution. But you can hack it." -> "One cannot fight 200,000 years of evolution. But it can be hacked."
 
+## 12. Re-aim contempt: blame the species, not the reader
+
+(Added 2026-06 from a "de-contempt" audit of the book, not the original git mining.)
+The voice mocks human folly, but the instant "you" *personally* gets blamed for a
+*civilizational* failure, the reader feels scolded from above and bounces. Keep the
+dark joke; move the blame from the individual to the species or the system. The test:
+is the narrator standing *above* the reader, wagging a finger at them specifically?
+
+- "you had the technology, you just chose not to use it" -> "the technology existed; nobody reached for it"
+- "the price you pay for being too slow" -> "the price of humanity being too slow"
+- "You've been delaying it for 75 years" -> "It's been delayed for 75 years now"
+- "You're very good at circles" -> "The circle is undefeated"
+- "demonstrating basic arithmetic skills" -> (cut)
+
+**Rule:** the *species* committed the crime, not the reader holding the book. KEEP jokes
+aimed at a target that isn't the reader (the FDA, the Pentagon) and warm
+we're-all-idiots-together lines ("we invented cheese, which is genius"). FLAG only
+second-person *personal* blame for a collective failure. This is **semantic** — do not
+regex it (every legitimate "you" would trip); it is a punch-up / critic judgment call.
+
 ---
 
 ## How to use this
 
 When writing or punching up book prose: read this file, pull the most relevant
 exemplars (`scripts/voice/voice-exemplars.jsonl`), and for each passage ask the
-two questions the data answers: **"which of these 11 edits would the author make
+two questions the data answers: **"which of these 12 edits would the author make
 here?"** and **"is any sentence here a caption, a pompous opener, a self-aware
 aside, or a defensive preempt?"** If yes, apply edit 1/4/5/6. The critic
 (`scripts/voice/voice-critic.py`) does this automatically.

@@ -33,7 +33,7 @@ Your species also used rocks as currency, except you picked the shiniest rock, d
 
 But the most interesting thing about your money is not what it buys. It's where it comes from.
 
-Your money comes from a building. Inside that building, twelve humans sit around a table and decide how much money exists. Twelve. I counted. They are called the Federal Open Market Committee, which is three lies in five words: it is not federal, the market is not open, and the committee meets in private. These twelve people are not elected. You did not pick them. You do not know their names. (Go ahead. Try to name three. I'll wait. You can't. Nobody can. This is a feature, not a bug.) They decide whether your money is worth more or less tomorrow, which determines whether you can afford your rent, your groceries, your medicine, and your children's future. Twelve people. One table. Eight meetings a year. This is your species' system for deciding who gets what. It has been running for over a century. It has funded unpopular wars that killed {{< var war_deaths_since_1900_nounit >}} people. It is, by design, extremely boring, because boring things don't get investigated.
+Your money comes from a building. Inside that building, twelve humans sit around a table and decide how much money exists. Twelve. I counted. They are called the Federal Open Market Committee, which is three lies in five words: it is not federal, the market is not open, and the committee meets in private. These twelve people are not elected. You did not pick them. You do not know their names. (Try to name three. Nobody can. This is a feature, not a bug.) They decide whether your money is worth more or less tomorrow, which determines whether you can afford your rent, your groceries, your medicine, and your children's future. Twelve people. One table. Eight meetings a year. This is your species' system for deciding who gets what. It has been running for over a century. It has funded unpopular wars that killed {{< var war_deaths_since_1900_nounit >}} people. It is, by design, extremely boring, because boring things don't get investigated.
 
 There is a word for making theft too tedious to investigate. The word is "beige crime."
 
@@ -78,7 +78,7 @@ Really not great.
 - 1917-present: Dollar has lost 96% of its value
 - Wars: Now continuous and everywhere
 
-World War I is worth pausing on, because it is the cleanest demonstration of what a money printer does to democratic consent. In 1917, most Americans did not want to fight in a European war. They did not understand why it was happening. Nobody understood why it was happening. (Historians still argue about it, which is how you know.) Woodrow Wilson had just won reelection on the slogan "He kept us out of war," which, in retrospect, was less a promise than a spoiler alert delivered in the wrong tense.
+World War I is worth pausing on, because it is the cleanest demonstration of what a money printer does to democratic consent. In 1917, most Americans did not want to fight in a European war. They did not understand why it was happening. Nobody understood why it was happening. (Historians still argue about it, which is how you know.) Woodrow Wilson had just won reelection on the slogan "He kept us out of war," which, in retrospect, was less a promise than a countdown.
 
 The war had no popular mandate. It had something better: a four-year-old central bank that could fund it without asking.
 
@@ -92,7 +92,7 @@ The Federal Reserve was created in 1913. Within 16 years it had produced the Gre
 
 Within 32 years the same institution had produced the causal chain that ended in the Holocaust. These are not items on a long list of mistakes. These are the first two things it did. No sane auditor would review an institution whose first two achievements were the worst economic collapse and the worst genocide in planetary history and recommend a second century. Your species put it on your money and gave it one anyway.
 
-You're reading this sentence right now with money that's worth 4 cents on the 1913 dollar. I mention this because you seem fine with it, which I find clinically fascinating.
+You're reading this sentence with money worth 4 cents on the 1913 dollar. Nobody seems to mind, which I find clinically fascinating.
 
 ![Create Federal Reserve. Print money for wars. Dollar loses value. Fight more wars. Print more money. Nobody stops.](/assets/images/central-banks/central-banks-section-united-states-1917-present-bw-academic.jpg)
 
@@ -223,7 +223,7 @@ I found this confusing at first. Then I realized it's not a bug. Busy people don
 
 "Stable prices" means 2% inflation per year. In every dictionary I've checked, "stable" means "not moving." On Earth, "stable prices" means prices that rise every year, predictably, forever. This is like calling a sinking ship "stable" because it sinks at a known rate.
 
-I need to say that again because your brain is going to try to skip past it. The Federal Reserve's official, publicly stated, announced-on-television goal is to make your money worth 2% less every year. They chose this number. They aim for it. They celebrate when they hit it.
+I need to say that again, because it's the kind of thing the eye slides past. The Federal Reserve's official, publicly stated, announced-on-television goal is to make your money worth 2% less every year. They chose this number. They aim for it. They celebrate when they hit it.
 
 - Over 35 years, 2% compounds to a 50% loss
 - Actual inflation averaged higher than 2%. Since Nixon, your dollar has lost over 87%
@@ -351,7 +351,7 @@ Your species did 246% more work and received 115% more pay. The remaining 131% w
 
 ### The Two-Income Trap
 
-In 1967, fewer than half of married-couple families had both spouses working [@bls-working-wives-1967-2011]. One paycheck bought a house, a car, annual vacations, and a pension. The other adult raised children, or gardened, or was bored. Boredom was a luxury your grandparents could afford. They could afford it because one human working 40 hours a week earned enough to house, feed, transport, and retire an entire family. I want you to read that sentence again, slowly, because I can feel you not believing it.
+In 1967, fewer than half of married-couple families had both spouses working [@bls-working-wives-1967-2011]. One paycheck bought a house, a car, annual vacations, and a pension. The other adult raised children, or gardened, or was bored. Boredom was a luxury your grandparents could afford. They could afford it because one human working 40 hours a week earned enough to house, feed, transport, and retire an entire family. I want you to read that sentence again, slowly. It's hard to believe on the first pass.
 
 By 2011, husband-only earner families had fallen from over half to just 19%. The rest sent both adults to work and paid strangers to raise their children. Working wives contributed 27% of family income in 1970. By 2011, it was 37%. An entire additional human entered the workforce and the family gained ten percentage points.
 
@@ -489,7 +489,7 @@ Alfred Nobel never authorized this. He was dead at the time and unable to object
 
 The Nobel Prize website itself states that "the prize in economic sciences is not a Nobel Prize" [@nobelprize-economics-not-nobel]. Nobel's great-grandnephew, Peter Nobel, called it "a PR coup by economists to improve their reputation" [@nobel-family-dissociation-2010].
 
-I want to make sure you absorbed that:
+The sentence worth absorbing:
 
 The central bank that prints your money created a fake Nobel Prize to give to the people who explain why printing your money is fine.
 
@@ -589,7 +589,7 @@ Eight percent of GDP. For an Excel spreadsheet. I checked whether they were usin
 
 Understanding why your bodies break down requires decoding 3 billion base pairs of DNA, modeling protein folding across millions of configurations, and running clinical trials on thousands of humans for years. Moving money from Account A to Account B requires arithmetic. One of these captures 8% of GDP. The other gets 0.065%. I will let you guess which is which.
 
-I want to make sure you felt that number. Your governments spend {{< var global_government_clinical_trials_spending_annual >}} per year testing whether medicines work. The financial sector captures $2.3 trillion per year moving numbers between columns. That $2.3 trillion is 511 years of clinical trials. Five hundred and eleven years. Your entire species could run every government-funded clinical trial on Earth for half a millennium with what you pay the spreadsheet department annually. Every year, you choose the spreadsheet. Every year, the diseases wait.
+That number deserves a second look. Your governments spend {{< var global_government_clinical_trials_spending_annual >}} per year testing whether medicines work. The financial sector captures $2.3 trillion per year moving numbers between columns. That $2.3 trillion is 511 years of clinical trials. Five hundred and eleven years. Your entire species could run every government-funded clinical trial on Earth for half a millennium with what you pay the spreadsheet department annually. Every year, you choose the spreadsheet. Every year, the diseases wait.
 
 ##### How the Ledger Ate the Economy
 
