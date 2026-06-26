@@ -16,8 +16,11 @@ is only the short paste-in for generation prompts.
 >    or "curable diseases."
 > 3. **Build, not back.** The reader BUILDS these institutions; they do not exist.
 >    Never "support / vote for / trust our thing."
-> 4. **The number is the joke.** State the absurd literal truth WITH the figure.
->    "Costs almost nothing" is a lie when the price is negative; say what it pays.
+> 4. **The number is the joke, and magnitude is persuasion.** State the absurd literal
+>    truth WITH the figure. "Costs almost nothing" is a lie when the price is negative;
+>    say what it pays. When the real number is STAGGERING, show it ($14.9T/year in
+>    disease, 13% of GDP); never abstract it into a tidy phrase ("buying assets rather
+>    than burning cash" hid a $26T/year drain).
 > 5. **Write to the real reader.** Check each line's hidden premise against the
 >    chapter's `audience`; do not assume the reader already knows/wants/has-done.
 >
@@ -27,6 +30,6 @@ is only the short paste-in for generation prompts.
 ## The greatness critic FAILS
 
 On top of "clear but flat": euphemism (war / safety / spending / winds-down), a vague
-claim where a specific absurd number exists, contentless filler ("that is the product"),
+claim or tidy abstraction where a specific or staggering real number exists, contentless filler ("that is the product"),
 a premise untrue for the chapter's reader, and **any new line that does not beat the
 book's existing best version of the same point.**
