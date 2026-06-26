@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 708 parameters used in the analysis, organized by type:
+This appendix documents all 709 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 203
-- Calculated values: 362
+- Calculated values: 363
 - Core definitions: 143
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (362 parameters) • [External Data Sources](#sec-external) (203 parameters) • [Core Definitions](#sec-definitions) (143 parameters)
+[Calculated Values](#sec-calculated) (363 parameters) • [External Data Sources](#sec-external) (203 parameters) • [Core Definitions](#sec-definitions) (143 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1322,7 +1322,7 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15}
 \end{gathered}
 $$
@@ -1740,7 +1740,7 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,wish} \times \Delta_{HALE} \\
 + \Delta HALE_{wish,extra,15}
 \end{gathered}
 $$
@@ -10723,6 +10723,39 @@ $$
 
 :::
 
+### Life Expectancy to HALE Gap: 10.1 years {#sec-global_hale_gap}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Gap between life expectancy and healthy life expectancy. Represents years lived with disability or disease that could be recovered by curing diseases.
+
+**Inputs**:
+
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
+- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
+
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_hale_gap.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_hale_gap.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_hale_gap.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_hale_gap.qmd >}}
+
+:::
+
 ### Global Median After-Tax Consumable Income (2025): $2,138 {#sec-global_median_after_tax_income_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -15159,7 +15192,7 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15}
 \end{gathered}
 $$
@@ -20038,7 +20071,7 @@ HALE improvement at year 15 under Treaty Trajectory. It includes both closing th
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15}
 \end{gathered}
 $$
@@ -20172,7 +20205,7 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15}
 \end{gathered}
 $$
@@ -21389,7 +21422,7 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15}
 \end{gathered}
 $$
@@ -21450,7 +21483,7 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15}
 \end{gathered}
 $$
@@ -29927,7 +29960,7 @@ HALE improvement at year 15 under Wishonia Trajectory. It includes closing the c
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,wish} \times \Delta_{HALE} \\
 + \Delta HALE_{wish,extra,15}
 \end{gathered}
 $$
@@ -30071,7 +30104,7 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,wish} \times \Delta_{HALE} \\
 + \Delta HALE_{wish,extra,15}
 \end{gathered}
 $$
@@ -30410,7 +30443,7 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,wish} \times \Delta_{HALE} \\
 + \Delta HALE_{wish,extra,15}
 \end{gathered}
 $$
@@ -30477,7 +30510,7 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \text{GLOBAL\_HALE\_GAP} \\
+= f_{cure,15,wish} \times \Delta_{HALE} \\
 + \Delta HALE_{wish,extra,15}
 \end{gathered}
 $$
