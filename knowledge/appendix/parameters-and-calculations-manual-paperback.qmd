@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 438 parameters used in the analysis, organized by type:
+This appendix documents all 440 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 148
-- Calculated values: 216
+- External sources (peer-reviewed): 149
+- Calculated values: 217
 - Core definitions: 74
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (216 parameters) • [External Data Sources](#sec-external) (148 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
+[Calculated Values](#sec-calculated) (217 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4772,6 +4772,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_government_expense_annual.qmd >}}
+
+:::
+
+### Life Expectancy to HALE Gap: 10.1 years {#sec-global_hale_gap}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Gap between life expectancy and healthy life expectancy. Represents years lived with disability or disease that could be recovered by curing diseases.
+
+**Inputs**:
+
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
+- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
+
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_hale_gap.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_hale_gap.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_hale_gap.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_hale_gap.qmd >}}
 
 :::
 
@@ -19365,6 +19398,26 @@ World general government total expense as a share of GDP, using World Bank indic
 **Technical**: Distribution: Fixed
 
 *~ Medium confidence*
+
+:::
+
+### Global Healthy Life Expectancy (HALE): 63.3 years {#sec-global_hale_current}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global healthy life expectancy at birth (HALE) from WHO Global Health Observatory, 2019 data (most recent available). HALE measures years lived in full health, adjusting for years lived with disability or disease.
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 1.5 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_hale_current.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2019*
 
 :::
 
