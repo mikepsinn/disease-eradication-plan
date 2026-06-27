@@ -36,13 +36,13 @@ This had never happened before. People don't hoard failed medicine. The scientis
 
 Minoxidil has a similar origin story. Developed for high blood pressure. Failed at that too. Side effect: hair growth. It became Rogaine. Then sildenafil got repurposed *again* for pulmonary hypertension, making it three cures from two failed drugs, none of them intentional.
 
-The obvious question: "So then you tested all the other drugs for all the other side effects, right?"
+Three accidental cures. The natural next move is to test all the other drugs for all the other side effects.
 
 You did not.
 
 You found three cures by accident, said "huh, neat," and went back to testing the same twelve biological targets that pharmaceutical companies can patent. This is like finding buried treasure in your backyard, selling the treasure, and then never digging in your backyard again because the first hole was supposed to be for a fence post.
 
-I have been observing your species for 80 years. I have seen you do many confusing things. But this one keeps me up at night, which is saying something because I don't sleep.
+I have watched your species for 80 years do many confusing things. This is the one I cannot stop turning over. I do not sleep, so I have the time.
 
 ## Your Medicine Cabinet (After 5,000 Years of Civilization)
 
@@ -92,15 +92,15 @@ This is not a hard calculation. A child could do it. Several children have. The 
 
 **You have explored one-third of one percent of the things you could test using molecules you already have.**
 
-Sit with that for a moment. You have safe compounds. You have sick people. You have the ability to introduce them to each other. You have done this {{< var exploration_ratio >}} of the time. The other 99.66% of introductions have never been made. Not because they wouldn't work. Because the molecule didn't have a marketing budget.
+You have safe compounds. You have sick people. You have the ability to introduce them to each other. You have done this {{< var exploration_ratio >}} of the time. The other 99.66% of introductions have never been made. Not because they wouldn't work. Because the molecule didn't have a marketing budget.
 
-![The dot is everything you know about medicine. The rest is everything you don't. The dot is very small. You seem comfortable with this.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-scorecard-bw-academic.jpg)
+![The dot is everything you know about medicine. The rest is everything you don't. The dot is very small.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-scorecard-bw-academic.jpg)
 
 No sane doctor would explore {{< var exploration_ratio >}} of treatment options and declare the patient incurable. Your species publishes a paper about the {{< var exploration_ratio >}} and applies for a grant to re-study the same {{< var exploration_ratio >}} it studied last time.
 
-## "Maybe the Other 99.66% Is Useless"
+## The Other 99.66% Is Not Useless
 
-This is the objection I hear most often. Let me address it by introducing you to your own biology, which you have mostly not met.
+You have mostly not met your own biology. Here it is.
 
 ![You've figured out 12 percent of how the body works. The other 88 percent is a mystery. Drugs affect multiple pathways at once. You test them on one pathway at a time.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-is-the-untested-stuff-useful-bw-academic.jpg)
 
@@ -162,9 +162,9 @@ That's longer than *Homo sapiens* has existed as a species. You would need to ha
 
 Beyond your cupboard, the chemical space contains 10^23 to 10^60 drug-like molecules. At current trial capacity, exploring even the synthesizable fraction would take longer than the universe has existed. The universe is 13.8 billion years old. You need more time than that. To test pills.
 
-### "But Won't We Run Out of Easy Discoveries?"
+### Diminishing Returns Need Returns First
 
-Some of your economists (the ones who've never looked through a microscope) will argue "diminishing returns." The more you search, the harder each new find becomes. This assumes you've already found the easy cures.
+The diminishing-returns argument (popular with economists who have never looked through a microscope) says each new cure gets harder to find. That assumes the easy cures are already found.
 
 You are not in the orchard. You are standing outside the orchard filling out a 47-page application to enter the orchard. The application requires three letters of recommendation, an institutional review board approval, and a 14-month waiting period. The fruit is rotting. You can see it rotting. You're on page 12 of the application.
 
@@ -178,7 +178,7 @@ The Oxford RECOVERY Trial during COVID-19 proved something your pharmaceutical i
 
 {{< var recovery_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}.
 
-Read those two numbers again. One of them is the cost of finding out if a drug works. The other is the cost of finding out if a drug works while also paying for marble lobbies, compliance departments, and a CEO's third yacht. The medicine is the same. The patients are the same. The yacht is new.
+One of those numbers is the cost of finding out if a drug works. The other is the cost of finding out if a drug works while also paying for marble lobbies, compliance departments, and a CEO's third yacht. The medicine is the same. The patients are the same. The yacht is new.
 
 With a [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025], trial capacity increases by {{< var dfda_trial_capacity_multiplier >}}:
 
@@ -202,5 +202,5 @@ Your [decentralized FDA](../solution/dfda.qmd) creates a permanent system for te
 
 The cures exist. The molecules are sitting in your cabinets. The patients are willing. The only thing between them is a system that charges $100 million to introduce them and takes 17 years to make the introduction.
 
-There is a word for holding sick people hostage until someone pays a ransom. The word is "crime." Your species calls it "regulation." You seem very proud of it.
+There is a word for holding sick people hostage until someone pays a ransom. The word is "crime." Your species calls it "regulation" and prints it on the letterhead.
 

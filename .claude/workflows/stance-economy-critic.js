@@ -18,13 +18,7 @@ const TARGET = (typeof args === 'string' && args) ? args : (args && (args.file |
 if (!TARGET) throw new Error('Pass the target file as args: a path relative to the repo root, or absolute.')
 const PAGE = (/^[a-zA-Z]:\\|^\\\\/.test(TARGET)) ? TARGET : `${ROOT}\\${TARGET.replace(/\//g, '\\')}`
 
-const SHARED = `Read ${PAGE} IN FULL, then ${ROOT}\\GUIDES\\STYLE_GUIDE.md and ${ROOT}\\GUIDES\\GENERATION_CONSTRAINTS.md. You are judging the WHOLE DOCUMENT, not lines in isolation.
-Hard criteria:
-- STANCE: talking TO the reader vs AT them. FAILURES: manufacturing the reader's objection then defeating them for it (STYLE_GUIDE bans this: "an unprompted defense manufactures the objection it answers"); cornering ("no losing box", "no exit ramp", "the arithmetic is stuck with/forces"); preening over its own conceit; telling the reader what they just did or feel.
-- EGO & SENTIMENTALITY: the narrator centering their own sacrifice or bond with the reader ("I bet a decade of my life that you would read this"); reaching for a poignant author-reader moment; earnest/evangelical where the book is deadpan; imposing a bet or feeling on the reader ("You bet an afternoon"); introducing an institution as a cold third-person "entity" the reader merely watches (the reader IS the company).
-- ECONOMY: is the core claim re-proven across multiple sections? are whole sections cuttable? is the piece ~2x its argument?
-- CONFIDENT IS FINE; cornering/preening is not. The fix is NOT to hedge or go limp (STYLE_GUIDE bans hedged closes) and NOT to flatten a load-bearing metaphor or drop a true fact/joke — keep diction concrete and certain, just stop arguing at the reader and stop repeating.
-Propose only; do NOT edit files.`
+const SHARED = `Read ${PAGE} IN FULL, then ${ROOT}\\GUIDES\\GENERATION_CONSTRAINTS.md (canonical rules) and ${ROOT}\\GUIDES\\STYLE_GUIDE.md (voice). You are judging the WHOLE DOCUMENT, not lines in isolation. Your review checklist is the "Document-level failures" section of GENERATION_CONSTRAINTS.md: STANCE (at vs to the reader, manufactured objections, cornering, preening, telling the reader what they did/feel), EGO & SENTIMENTALITY (narrator centering their sacrifice or bond with the reader, poignant author moments, earnest/evangelical, institution-as-cold-entity), and ECONOMY (same point re-proven across sections, whole sections cuttable, ~2x length). Also hold the page to that file's generation rules (mission accuracy, build-not-back, the number, etc.). Confident is fine; cornering/preening is not. Do NOT propose hedging, flattening a load-bearing metaphor, or dropping a true fact or joke. Propose only; do NOT edit files.`
 
 const STANCE_SCHEMA = { type: 'object', additionalProperties: false, required: ['fixes'], properties: {
   fixes: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['passage', 'failure', 'action', 'replacement'], properties: {

@@ -70,7 +70,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 
 **Canonical love line:** "I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases." One breath, one sentence. We fund research to FIND cures; we don't have them; that's the point.
 
-**Mission accuracy (the cures do NOT exist yet).** Most diseases that kill people have NO effective treatment (Alzheimer's; ~95% of diseases). The trials DISCOVER treatments; separately, a small proven set is merely delayed (the efficacy lag). NEVER frame the deaths as "conditions we already know how to treat" or "curable diseases we just don't deliver", that erases the entire reason to fund the trials. The cure does not exist yet; the machine finds it.
+**Mission accuracy (the cures do NOT exist yet).** Most diseases that kill people have NO effective treatment (Alzheimer's; ~95% of diseases). The trials DISCOVER treatments; separately, a small proven set is merely delayed (the efficacy lag). **"Curable" is fine and true**: the diseases CAN be cured (that is the whole reason funding the search works), cure-found-yet or not. The ban is only on implying the cure ALREADY EXISTS and is merely withheld, NEVER "conditions we already know how to treat" or "cures we already have." The cure does not exist yet; the machine finds it.
 
 **Financial architecture:** Corruption capped at 20% (transparent), 80% untouchable via wishocracy. Money and influence are disentangled. This is the core selling point vs current government.
 

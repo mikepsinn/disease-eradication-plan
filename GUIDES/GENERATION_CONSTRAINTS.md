@@ -12,8 +12,9 @@ is only the short paste-in for generation prompts.
 >    write fresh if you BEAT it. A vivid line that loses to the book's existing version
 >    is not an improvement.
 > 2. **Mission accuracy.** The cures do NOT exist yet; the trials DISCOVER them (plus a
->    small proven set delivered faster). Never "diseases we already know how to treat"
->    or "curable diseases."
+>    small proven set delivered faster). "Curable" is FINE (the diseases CAN be cured,
+>    which is why funding the search works); ban only "diseases we already know how to
+>    treat" / "cures we already have."
 > 3. **Build, not back.** The reader BUILDS these institutions; they do not exist.
 >    Never "support / vote for / trust our thing."
 > 4. **The number is the joke, and magnitude is persuasion.** State the absurd literal
@@ -23,6 +24,11 @@ is only the short paste-in for generation prompts.
 >    than burning cash" hid a $26T/year drain).
 > 5. **Write to the real reader.** Check each line's hidden premise against the
 >    chapter's `audience`; do not assume the reader already knows/wants/has-done.
+> 6. **No narrator ego or sentimentality.** Don't center the narrator's sacrifice or
+>    bond with the reader ("I bet a decade of my life that you would read this"), reach
+>    for a poignant author moment, go earnest/evangelical, impose a feeling on the
+>    reader, or introduce an institution as a cold third-person "entity" (the reader IS
+>    the company).
 >
 > Hard bans (the love line verbatim; securities words "guaranteed / risk-free / will
 > return / safe"; em-dashes) are in the style guide and the commit scanner.
@@ -33,3 +39,24 @@ On top of "clear but flat": euphemism (war / safety / spending / winds-down), a 
 claim or tidy abstraction where a specific or staggering real number exists, contentless filler ("that is the product"),
 a premise untrue for the chapter's reader, and **any new line that does not beat the
 book's existing best version of the same point.**
+
+## Document-level failures (one source; the stance & economy critic reads this)
+
+A line can pass every rule above and still fail at the whole-document level. These live
+here, not duplicated in the critic, so there is ONE source.
+`.claude/workflows/stance-economy-critic.js` applies them as its review checklist;
+generation avoids them.
+
+- **STANCE (at vs to the reader).** Manufacturing the reader's objection then defeating
+  them for it; cornering ("no losing box", "no exit ramp", "the arithmetic forces /
+  stuck-with"); preening over the piece's own conceit; telling the reader what they just
+  did or feel.
+- **EGO & SENTIMENTALITY.** The narrator centering their own sacrifice or bond with the
+  reader; reaching for a poignant author moment; earnest/evangelical where the book is
+  deadpan; an institution introduced as a cold third-person "entity" the reader watches
+  (the reader IS the company).
+- **ECONOMY.** The same point re-proven across multiple sections; whole sections
+  cuttable; the piece ~2x its argument.
+
+Confident is fine; cornering/preening is not. De-smug WITHOUT hedging, flattening a
+load-bearing metaphor, or dropping a true fact or joke.
