@@ -47,7 +47,7 @@ do: "forward this to the one person you know who buys stocks (a rich uncle, a fr
 
 Okay. So there's a non-zero possibility that hell exists, and that you and everyone you love is going to die and burn in it for eternity. And as it is very hot in hell, this would be unfortunate.
 
-I want to do the arithmetic on this, because your species refuses to, on the grounds that it's unpleasant. I'm an alien. It isn't going to be me. So I can stay calm.
+I want to do the arithmetic on this. It is unpleasant arithmetic, which is why it mostly does not get done. I'm an alien. It isn't going to be me. So I can stay calm.
 
 ## First, expected value
 
@@ -81,7 +81,7 @@ And the expected value of that, given it can go on without limit, is infinitely 
 
 Two outcomes. Both infinity. One terrible, one wonderful, both pulling at you the whole time. Anything that shifts the odds from the terrible one toward the wonderful one is worth doing, at any cost short of infinite.
 
-You might object that two infinities are no bigger than one, so the good infinity is a freebie that buys nothing. Maybe. But watch what you just did. Handed an infinity of reasons to fund the cure, you spent a slice of your finite and dwindling life proving the spare one redundant. It was. People who win this argument have a way of dying from the thing it was about.
+People who win the argument that two infinities are no bigger than one have a way of dying from the thing the argument was about.
 
 The wonderful outcome runs on biotechnology, biotechnology runs on [clinical trials](../solution/dfda.qmd), and your governments spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the military than on the trials that would cure the diseases killing the taxpayers who pay for the military. So every solution in this book does one basic thing: it moves resources from being really good at killing people toward being good at curing them.
 
@@ -150,7 +150,7 @@ Infinity beats Sundays, so he said believe. Here is the same shape with the bugs
 | **Act** (a share, an afternoon) | Your odds shift toward forever-flourishing and away from forever-suffering | You hold a real asset that does not go to zero and buy some healthy years. A gain on its own. |
 | **Don't act** | You leave two infinities on the table | You keep the afternoon |
 
-There is no losing box on the Act row. That is the whole repair. Pascal's bet had a cost cell (believe, then find there is no god, and the Sundays were for nothing); this one does not, because it is backed by assets and added years instead of faith. The four specific bugs:
+Pascal's bet had a cost cell: believe, then find there is no god, and the Sundays were for nothing. The Act row has none, because it is backed by assets and added years instead of faith. The four specific bugs:
 
 | Pascal's wager breaks because | Wishonia's Wager doesn't |
 |---|---|
@@ -169,9 +169,7 @@ Fine. Delete the infinities.
 
 Even the most boring, selfish version of these solutions pays off in plain dollars. Buy one share of a military contractor and it's still an ordinary stock that doesn't go to zero. The campaign it funds still has a real, documented chance of paying off. And every extra healthy year any of this buys you keeps the rest of your money worth something, because [your money is worthless the day you die](../call-to-action/your-personal-benefits.qmd). The [finite math](../appendix/treaty-investor-risk-analysis.qmd) is already positive. The infinity was only ever the ceiling on top of a floor that already clears.
 
-So the bet works on everyone. Believe in the infinities and you act because the payoff is unlimited. Refuse them and you act because the boring math says yes anyway. The only way to lose is to not play.
-
-The interesting question was never whether the numbers work. It's whether knowing they work changes what you do next.
+So the bet works on everyone. Believe in the infinities and you act because the payoff is unlimited. Refuse them and the boring math says yes anyway. The only way to lose is to not play.
 
 ## The binary equation
 
@@ -185,7 +183,7 @@ So you are not betting on whether the payoff is big. The payoff is big or it is 
 
 ## The wager
 
-The numbers came first. I offered you {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}, the price of the lives you are losing, and you would not trade one of your {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses to take it. So the numbers were never going to do it. Hence infinity.
+The numbers came first: {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}, the price of the lives being lost, against one of your {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses. Numbers that size stop registering. Hence infinity.
 
 There is now an entity called Earth Optimization Services. It takes the proceeds from this manual, buys shares in the companies that build your missiles, and points their lobbyists the other way. This is the [Loving Takeover](../appendix/loving-takeover.qmd). The manual is free. The shares are the wager.
 
