@@ -22,7 +22,8 @@ sys.stdout.reconfigure(encoding="utf-8")  # type: ignore
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEDGER = os.path.join(ROOT, ".claude", "voice-sweep-state.json")
 # prose chapters only; skip generated param/data pages that are not voice-edited
-EXCLUDE_SUBSTR = ("parameters-and-calculations", "_variables")
+EXCLUDE_SUBSTR = ("parameters-and-calculations", "_variables",
+                  "knowledge/figures/", "knowledge/includes/", "knowledge/test/")
 
 
 def chapters():
@@ -89,6 +90,8 @@ def main():
     elif args and args[0] == "--all":
         for rel in chapters():
             print(rel)
+    elif args and args[0] == "--baseline":
+        cmd_update(chapters())
     elif args and args[0] == "--update":
         cmd_update(args[1:])
     else:

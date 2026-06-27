@@ -158,6 +158,8 @@ scripts/voice/sample-pairs.json
 scripts/voice/sample-readable.txt
 scripts/voice/candidates.json
 scripts/voice/cand/
+# stance/economy critic ledger: per-machine content hashes, regenerable via voice-sweep.py --baseline
+.claude/voice-sweep-state.json
 
 
 
