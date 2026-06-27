@@ -357,7 +357,7 @@ The Military Industrial Complex wasn't designed. It evolved, because the incenti
 
 You need [3.5%](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) of humanity to vote yes on: "Should your country redirect 1% of military spending to fund clinical trials?"
 
-You are not creating support for not dying of horrible diseases and mass murdering each other. Nearly everyone already supports not dying of horrible diseases and mass murdering each other. You are proving it.
+You are not creating support for not dying of horrible diseases and not mass murdering each other. Nearly everyone already supports not dying of horrible diseases and not mass murdering each other. You are proving it.
 
 Everyone thinks this is crazy because everyone else thinks this is crazy. Your economists call it pluralistic ignorance, which is the polite term for eight billion people waiting for permission to want what they already want. On Wishonia we call this "the galaxy's longest game of you-go-first." Most species that start playing it don't finish playing it. If every human realized that nearly every other human would like a world without war and disease and an extra [$518,879](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) in lifetime income, it would be done tomorrow and the world would be unrecognizable.
 

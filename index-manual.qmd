@@ -145,7 +145,7 @@ Your civilization's incentive structure is the psychopath:
 
 No individual human in this loop is evil. The loop is evil. Every politician in it is making the locally rational choice: take the papers or lose your job to someone who will. It's a machine that converts good intentions into missiles, and it runs automatically.
 
-Here is the part that baffles me most about your species. This loop does not even benefit the humans inside it. The weapons manufacturers get diseases. Their children get diseases. Everyone they love gets diseases. They live in the same economy that the loop is shrinking. If the loop breaks and the redirect happens, they lose 1% of their doomsday-device revenue and gain a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy to sell into, plus the ability to invest in the biotech sector that absorbs the redirected trillion per year, plus not being dead. This is not a case where an entrenched industry rationally profits at the public's expense. There is no rational beneficiary of the current arrangement. Everyone in the loop is worse off, including the people running it. They just haven't done the arithmetic.
+This loop does not even benefit the humans inside it. The weapons manufacturers get diseases. Their children get diseases. Everyone they love gets diseases. They live in the same economy that the loop is shrinking. If the loop breaks and the redirect happens, they lose 1% of their doomsday-device revenue and gain a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy to sell into, plus the ability to invest in the biotech sector that absorbs the redirected {{< var treaty_annual_funding >}} a year, plus not being dead. This is not a case where an entrenched industry rationally profits at the public's expense. There is no rational beneficiary of the current arrangement. Everyone in the loop is worse off, including the people running it. They just haven't done the arithmetic.
 
 There's literally no voting your way out of this. It doesn't matter which political party is in power. Your "red team" and "blue team" argue about everything except the loop, because they're both inside it. They are all slaves to the same incentive structure, wearing different colored ties. Switching parties is like changing the wallpaper in a burning building.
 
@@ -199,7 +199,7 @@ Humans spend **{{< var global_military_spending_annual_2024 >}}** every year on 
 
 Since 1913, your governments have printed {{< var cumulative_military_spending_fed_era >}} out of nothing and spent these nothing-papers on murdering {{< var war_deaths_since_1900_nounit >}} humans and destroying many valuable things those humans spent their entire lives building. Consequently your paycheck now buys 97% less due to the aforementioned destruction.  {{< var cumulative_military_spending_fed_era >}} is equal to 38,000 years of government clinical trial spending. You bought the other thing.
 
-Through compounding effects, you would be {{< var war_counterfactual_income_multiple >}} richer and significantly less diseased today if someone had aligned your governments properly in 1900. The average person would earn {{< var war_counterfactual_gdp_per_capita >}} per year instead of {{< var global_avg_income_2025 >}}.
+Through compounding effects, if your governments had stopped spending on murder in 1900 you would be {{< var war_counterfactual_income_multiple >}} richer today, and disease would not be stealing {{< var global_hale_gap_nounit >}} years of your life. The average person would earn {{< var war_counterfactual_gdp_per_capita >}} per year instead of {{< var global_avg_income_2025 >}}.
 
 Today, government spending on clinical trials: **{{< var military_to_government_clinical_trials_spending_ratio >}} times less** than military spending. Your chance of dying from terrorism: 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying from disease: 100%.
 
@@ -383,7 +383,7 @@ The Military Industrial Complex wasn't designed. It evolved, because the incenti
 
 You need {{< var global_population_activism_threshold_pct >}} of humanity to vote yes on: "Should your country redirect 1% of military spending to fund clinical trials?"
 
-You are not creating support for not dying of horrible diseases and mass murdering each other. Nearly everyone already supports not dying of horrible diseases and mass murdering each other. You are proving it.
+You are not creating support for not dying of horrible diseases and not mass murdering each other. Nearly everyone already supports not dying of horrible diseases and not mass murdering each other. You are proving it.
 
 Everyone thinks this is crazy because everyone else thinks this is crazy. Your economists call it pluralistic ignorance, which is the polite term for eight billion people waiting for permission to want what they already want. On Wishonia we call this "the galaxy's longest game of you-go-first." Most species that start playing it don't finish playing it. If every human realized that nearly every other human would like a world without war and disease and an extra {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, it would be done tomorrow and the world would be unrecognizable.
 
