@@ -116,12 +116,12 @@ A continuous per-share auction is aspirational; Reg D requires signed subscripti
 | **Implied-probability back-calculation** | Post-money valuation = P₀ × V / shares. Pick a P₀ a reasonable skeptic accepts as honest; the valuation follows. E.g. P₀ = 0.0001% → ~$74M post-money. | Sets the sanity-check floor and ceiling before any investor is approached. Anchors the range within which the auction must land to be credible. |
 | **Comparable activist launches** | Engine No. 1 launched at ~$250M for its first close with no track record. Other activist vehicles: $50M-$500M at launch. | Provides an independent cross-check. If the auction clears outside this range, investigate why before proceeding. |
 | **Minimum-investment anchor** | If $25K should represent ~X% of the company, post-money = $25K / X%. E.g. 0.5% → $5M post-money. | Sets the floor: a price so low that the $25K minimum feels meaningfully large. Prevents pricing that makes early investors feel like they bought rounding error. |
-| **Uniform-price auction (primary mechanism)** | Solicit bids (price per share + quantity) from all prospective investors before Tranche 1 closes. Sort by price, fill from highest down to the raise target. Everyone pays the clearing price, the lowest winning bid. Underbidding does not get you a discount; it gets you nothing, so the clever lowball move is to bid your actual belief. | *This is the actual price-discovery mechanism.* The comparables and implied-probability calculation inform investors before they bid; the auction aggregates their beliefs into a clearing price. |
+| **Uniform-price auction (primary mechanism)** | Solicit bids (price per share + quantity) from all prospective investors before Tranche 1 closes. Sort by price, fill from highest down to the raise target. Everyone pays the clearing price, the lowest winning bid, so bidding below your real number only risks winning nothing at no discount. | *This is the actual price-discovery mechanism.* The comparables and implied-probability calculation inform investors before they bid; the auction aggregates their beliefs into a clearing price. |
 | **Bayesian tranche repricing** | After each close, the clearing price is evidence that investors estimated P ≥ implied level. Next tranche opens above that price, reflecting the updated signal. | Governs all tranches after Tranche 1. The auction sets the initial price; Bayesian updating governs every subsequent reprice. |
 
 **How they combine:** the implied-probability and comparables methods set the bounds before the auction (a sanity check investors can verify). The minimum-investment anchor prevents the price from being so high that the smallest check feels trivial. The uniform-price auction then runs within those bounds and discovers the actual clearing price. Every tranche after that is a Bayesian update on the signal from the last close.
 
-This means no single person, not any insider, not the attorneys, not the lead investor, picks the share price. The market picks it, within bounds the formula makes explicit and defensible.
+The auction sets the price, within the bounds the formula above makes explicit. The clearing bid is the price; you can recompute it from the table yourself.
 
 ::: {.callout-warning}
 ## Illustrative, not promised, and you can lose everything
@@ -141,7 +141,7 @@ The multiples and valuations in this section are modeled illustrations of how pr
 
 These are rough estimates, not projections. The exact numbers move with campaign results. The point is the direction: each dollar raised moves the probability up, which moves the rational share price up, which means every tranche after the first one clears at a higher price. The uniform-price auction within each tranche, and the Bayesian repricing between tranches, is how that relationship becomes observable rather than asserted.
 
-**Why early money makes the most if it works.** The early dollar funds the first campaign when P is lowest and each win moves it most. And it is the social proof every later dollar waits for. You bought probability while it was cheap, and your buying is part of what made it expensive.
+**Why early money makes the most if it works.** The early dollar funds the first campaign when P is lowest, so each win moves the price most. It is also the social proof later dollars wait for. You buy probability while it is cheap; the buying is part of what makes it expensive.
 
 ### First-tranche bid calculator
 
@@ -380,7 +380,7 @@ html`<div class="eit-summary">At ${eosBidMoney(eosBidModel.postMoney)} post-mone
 The web edition includes a first-tranche bid calculator that lets the reader set investment amount, post-money valuation, dilution, downside recovery, portfolio risk budget, and stage probabilities.
 :::
 
-**Why this is not the scheme it resembles.** A price that rises with adoption and rewards early believers is also the grammar of a Ponzi. The difference: EOS holds publicly traded portfolio companies. Any payout traces to assets, revenue, or disclosed equity rights, not to later investors. Later buyers can raise the market price; they do not become the source of the asset. That is the entire difference between an activist holding company and a chain letter, and it is auditable.
+**The asset is real and you can audit it.** EOS holds publicly traded portfolio companies. Every payout traces to those assets, to revenue, or to disclosed equity rights. The share price can rise as more people buy, but later buyers raise the market price; they are not the source of the asset. Pull up the holdings any day and add them yourself.
 
 **If the campaign fails.** P drops. Price drops. Investors hold a concentrated activist portfolio that underperformed. The honest downside is not catastrophe; it is opportunity cost, what you would have earned elsewhere.
 
@@ -411,7 +411,7 @@ Your investment
                                                                     └─> You also don't die
 ```
 
-The last line is not priced into the return, but it is arguably the more valuable one.
+The last line is not priced into the return.
 
 ## The cascade: how $5,000 becomes {{< var defense_takeover_cost_total >}}
 
@@ -452,7 +452,7 @@ Most investments are zero-sum at the margin. A dollar of market share won by one
 This one is different in four ways that do not coexist in any other asset class.
 
 **1. It is the only investment that increases the value of everything else you own.** The political dysfunction tax is not a tax on one sector. It is a drag on the entire economy. Eliminating it does not reprice one stock; it reprices all of them. If you own index funds, bonds, real estate, or a business, their value is being suppressed by misallocated policy. EOS correcting that suppression makes your other holdings worth more at the same time it makes itself worth more.
-**2. Copycats can be validation before they are competition.** Every other business competes with someone for customers, attention, market share, talent, or contracts. EOS's first competitor is waste. Waste does not fight for market share, hire lawyers, or show up to the board meeting. It just sits there being wasteful. A fund copying the thesis has to make many of the same board arguments and publish many of the same public analyses. That increases attention, reduces the perceived weirdness of the strategy, and makes the thesis easier for boards to take seriously. Later, copied operating businesses may compete for fees or status. Fine. By then the important thing has happened: the market has begun pricing the end of waste.
+**2. Copycats can be validation before they are competition.** EOS's first competitor is waste, and waste does not fight for market share, hire lawyers, or show up to the board meeting. It just sits there being wasteful. A fund copying the thesis files the same demand letters and publishes the same analyses, which only reprices the assets EOS already owns. They are less rivals than unpaid marketing. Copies compete for fees only after the market has already begun pricing the end of waste, and the scarce thing is owning the thesis before that happens.
 
 **3. The control math is absurd.** The top U.S. military contractors spend roughly $60 million per year on direct lobbying. That money is burned: spent, gone, zero asset remaining. It purchases access and influence for one year and requires the same spend next year to maintain.
 
@@ -467,7 +467,7 @@ If the activist campaign causes MIC stocks to outperform your alternatives (Laye
 The company spending $60M/yr on lobbying has nothing to show for it in year two. EOS has the same influence and an appreciating asset.
 
 **4. The amount of policy at stake per dollar invested is exceptional.** Governments collectively spend roughly {{< var global_military_spending_annual_2024 >}} per year on the military. Military contractors collectively influence a meaningful fraction of how that is allocated. The capital required to gain activist influence at the board level across the major military contractors is a small fraction of one year's military budget. Spend that fraction once; redirect the influence on {{< var global_military_spending_annual_2024 >}} per year, compounding, forever.
-The honest caveat: these four properties only hold if the governance campaigns work. Engine No. 1 proved the mechanism at ExxonMobil; it has not been applied at scale to the military-industrial complex. The downside if it fails is a concentrated activist portfolio, not a catastrophe. But the upside if it works is larger than any other position you could take with the same capital.
+These four properties only hold if the governance campaigns work. Engine No. 1 proved the mechanism at ExxonMobil; it has not been applied at scale to the military-industrial complex. The downside if it fails is a concentrated activist portfolio, not a catastrophe. But the upside if it works is larger than any other position you could take with the same capital.
 
 ## What each stage is worth (before it happens)
 
@@ -475,7 +475,7 @@ On my planet, valuation is simple. You look at what a thing does, estimate how m
 
 EOS captures value from waste. Not from competitors, not from customers, not from market share. From the gap between what money currently does and what it could do if pointed at things that work. This is not a zero-sum game. The value exists because your species is currently spending money on things that destroy value instead of creating it. EOS redirects the spending. The destroyed value becomes created value. The difference is the return.
 
-Control is the one thing split evenly: one vote per human, operators included, none worth more than another. Your money buys a return, not a bigger say. Your species finds this more suspicious than if they had simply stolen everything.
+Control is the one thing split evenly: one vote per human, operators included, none worth more than another. Your money buys a return, not a bigger say.
 
 **Stage 1: One company (HII).** Huntington Ingalls Industries is the sole supplier of aircraft carriers to the United States Navy. Market cap roughly $10 billion. Its core revenue is contract-locked (the Navy cannot buy carriers from anyone else), its engineering workforce is among the most skilled on the planet, and its lobbying budget is currently pointed at maintaining military spending levels that its own shareholders would be better off without. A governance campaign redirects the lobbying. The contract revenue continues. The stock appreciates from the credibility cascade. Terminal stage value: {{< var eos_stage_1_hii_terminal_value >}}. The calculator above prices what that means for a specific check, valuation, dilution, and failure recovery.
 
@@ -483,7 +483,7 @@ Control is the one thing split evenly: one vote per human, operators included, n
 
 **Stage 3: All lobbying sectors.** Military contracting is not the only industry that lobbies for policies its own shareholders would be better off without. Pharmaceutical companies spend $373 million per year lobbying against drug pricing reforms that would expand their addressable market. Energy companies lobby against transitions that would lower their input costs. Finance, telecom, agriculture. Every industry that lobbies for wasteful policy has value trapped by misallocation. EOS applies the same governance pressure across all of them. Terminal stage value: {{< var eos_stage_3_lobbying_sectors_terminal_value >}}.
 
-**Stage 4: Wishocratic governance.** When resource allocation is optimized across all public spending globally, through [Wishocracy](../solution/wishocracy.qmd), the total value is the difference between what humanity produces under current governance and what it produces under optimal governance. This is the political dysfunction tax, eliminated. Modeled full EOS value: {{< var eos_equity_value_v >}}. Global GDP is approximately {{< var global_gdp_2025 >}} per year, and the difference between good and bad allocation of that sum, compounded over decades, is larger than any number that fits comfortably in a sentence.
+**Stage 4: Wishocratic governance.** When resource allocation is optimized across all public spending globally, through [Wishocracy](../solution/wishocracy.qmd), the total value is the difference between what humanity produces under current governance and what it produces under optimal governance. This is the political dysfunction tax, eliminated. Modeled full EOS value: {{< var eos_equity_value_v >}}. Global GDP is approximately {{< var global_gdp_2025 >}} per year; the gap between good and bad allocation of that sum, compounded over decades, is what the {{< var eos_equity_value_v >}} above already prices.
 
 Each stage is independently valuable. You do not need Stage 4 to profit from Stage 1. But each stage funds the next, and the probability of reaching each subsequent stage increases with each completed stage. The math suggests this is probably irresistible once Stage 1 demonstrates the mechanism. But "the math suggests" is doing a lot of work in that sentence, and you should check the math yourself. The calculators above let you do that.
 
