@@ -463,6 +463,40 @@ Current politics rewards tribal opposition. Optimocracy shifts the debate from "
 
 ![Tribal politics: my team good, your team bad. Optimocracy: did anyone get healthier or richer. One is sports, the other is governance.](/assets/images/optimocracy-paper/optimocracy-paper-section-depolarization-bw-academic.jpg)
 
+## Your Leader Is a Neural Network
+
+Everything above assumes a human stays in the loop, voting on the algorithm's recommendations. The opposite objection is fair: if the algorithm is better, why keep the human? Governance is information processing, and the human is one of the available processors. Data goes into a brain, the brain processes it, policy comes out. That is the whole job.
+
+The current system selects the processor on traits unrelated to the job: television appearance, fundraising, tribal affiliation, name recognition, a confident speaking voice. None of these predict the quality of the policy at the far end. The species hires its information processor for everything except its ability to process information.
+
+A biological neural network has documented defects for this particular task:
+
+- It is lazy: it does not read the legislation it votes on.
+- It is forgetful: it cannot hold the {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}:1 ratio of war spending to government clinical trial spending in working memory alongside ten thousand other policy dimensions.
+- It is greedy: it optimizes for reelection and personal wealth.
+- It is corruptible: it has a bank account where a bribe fits.
+- It is opaque: there is no inspecting why it decided anything.
+- It is untestable: you cannot run a politician on simulated data to see what they would do before they do it.
+- It is fragile: it runs civilization on four hours of sleep.
+
+An artificial neural network has different defects and is stronger on every dimension that matters here. It is inspectable: you can examine the reasoning. It is testable: run it on decades of historical policy and check whether it would have chosen better than the humans did. It has no bank account, so there is nowhere to deposit the bribe. It reads every document and processes every parameter, all day, without degrading at 3am. Its defects are real, but they are a different list, and the dimensions on its list are the ones a job interview for "process information correctly" would actually test.
+
+There is no basis for preferring carbon over silicon here except substrate. "I want my leader made of the same material as me" is not a policy argument; it is tribalism. The output is what matters. A conscious leader whose inaction kills millions is worse than an unconscious system whose optimization saves them.
+
+The standard objections all turn out to be arguments against the current system, only worse.
+
+*"AI has no consciousness."* Leaders are not selected for consciousness; they are selected for outputs. If self-awareness produced good policy, the most introspective politicians would govern best. They do not.
+
+*"Who programs its values?"* The same people who write the constitution: everyone, collectively, transparently, with amendments. The constitution already is value programming. It is currently implemented in biological networks that ignore it when ignoring it is convenient. A silicon constitution would at least be followed consistently.
+
+*"People want to feel represented."* People want clean water, cured diseases, and their children alive at the end of the year. If silicon delivers these more reliably than carbon, the preference for human representation is a luxury good, and it is paid for in lives.
+
+*"AI hallucinates."* So do politicians, and theirs become law. The difference is correctability. An AI hallucination can be detected and patched. A political hallucination becomes policy and kills people for decades before anyone checks the arithmetic. The war-to-trials ratio is a hallucination that has persisted for seventy-five years. A reviewing algorithm would have flagged it on day one.
+
+*"This is antidemocratic."* Democracy is a method for selecting the information processor. It is not the only method, and the version currently running selects for charisma. A method that selects for measurable welfare improvement, and that publishes its reasoning for anyone to inspect, is closer to the democratic spirit than an opaque process that rewards irrelevant traits.
+
+None of this means handing the keys to a chatbot tomorrow. It means the human-in-the-loop architecture is a starting position, not a moral floor. The algorithm advises human boards; its recommendations get compared against what actually happened; a track record accumulates. If silicon demonstrably governs better across every measurable dimension, humans delegate to it the way they delegated long division to calculators: not under duress, but because the evidence stopped being arguable. The constitution becomes the value programming, amendments stay transparent and collectively approved, and no human ever again runs on four hours of sleep while deciding things that affect billions.
+
 ## Challenges and Failure Modes
 
 ### Why Goodhart's Law Doesn't Apply Here
@@ -558,7 +592,7 @@ Optimocracy provides the *what* (evidence-based recommendations); the SuperPAC p
 
 **Funding sources:**
 
-1. **Donations (primary):** Donations are high-leverage. Historical lobbying ROI suggests $1 of campaign spending can shift $100+ in policy outcomes. This makes funding Optimocracy more effective than traditional charity.
+1. **Donations (primary):** A dollar of donations shifts far more than a dollar. Historical lobbying ROI suggests $1 of campaign spending can shift $100+ in policy outcomes. This makes funding Optimocracy more effective than traditional charity.
 
 2. **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) (for specific reallocations):** When Optimocracy recommends a specific funding reallocation (like the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]), [IABs](incentive-alignment-bonds-paper.qmd) can provide investor returns tied to policy success. Investors get a percentage of redirected funds, scaling funding beyond donations.
 

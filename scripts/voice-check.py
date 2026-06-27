@@ -24,7 +24,7 @@ BANNED = [
     (r"\bsurface area\b", "whiteboard", "say the plain thing"),
     (r"\bmaximalist\b", "whiteboard", "plain word"),
     # finance jargon
-    (r"\balpha\b", "finance", "'the edge' / 'the profit' / plain"),
+    (r"(?<!\\)\balpha\b", "finance", "'the edge' / 'the profit' / plain"),  # not LaTeX \alpha
     (r"\brerate[sd]?\b", "finance", "'reprice' / 'worth more'"),
     (r"\basymmetr\w*", "finance", "'lopsided' / plain"),
     (r"\bproxy (campaign|proposal|fight|vote|battle)\b", "finance",
