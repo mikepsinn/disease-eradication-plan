@@ -55,6 +55,12 @@ BANNED = [
     (r"\bspoiler alert\b", "cliche", "cut it"),
     (r"\bplot twist\b", "cliche", "cut it"),
     (r"\bmasterclass\b", "cliche", "cut it"),
+    # adversarial stance / manufactured objections  (STYLE_GUIDE: don't preempt objections nobody raised)
+    (r"\byou (might|may|could) (object|argue)\b", "stance", "don't manufacture-then-defeat the reader's objection"),
+    (r"\b(some|skeptics|critics|cynics) will say\b", "stance", "don't set up a strawman objection to knock down"),
+    (r"\bi know what you'?re thinking\b", "stance", "drop the mind-reading setup; just state it"),
+    (r"\byou'?re probably thinking\b", "stance", "drop the mind-reading setup; just state it"),
+    (r"\bwatch what you just did\b", "stance", "don't narrate the reader's move and defeat them for it"),
 ]
 
 # Legit contexts that LOOK like a hit but aren't (skip the match).
