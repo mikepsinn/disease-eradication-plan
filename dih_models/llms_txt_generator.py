@@ -98,6 +98,78 @@ def extract_site_info(config_path: Path, config_name: str) -> Optional[Dict[str,
     }
 
 
+def _read_qmd_frontmatter(path: Path) -> Dict[str, Any]:
+    """Parse the YAML frontmatter (title, description) out of a .qmd chapter."""
+    import yaml
+
+    try:
+        text = path.read_text(encoding="utf-8")
+    except OSError:
+        return {}
+    if not text.startswith("---"):
+        return {}
+    end = text.find("\n---", 3)
+    if end < 0:
+        return {}
+    try:
+        return yaml.safe_load(text[3:end]) or {}
+    except Exception:
+        return {}
+
+
+def extract_book_chapters(project_root: Path) -> List[Dict[str, Any]]:
+    """Walk the main book's chapter tree (_quarto-manual.yml) and pull each
+    chapter's title + description from its .qmd frontmatter.
+
+    Papers are covered by the Quarto-config pass; this covers the ACTUAL book
+    chapters (proofs, solutions, problem analyses) that were previously invisible
+    to llms.txt. Returns a list of parts: {"part": name, "chapters": [...]}.
+    """
+    import re
+
+    config = load_quarto_config(project_root / "_quarto-manual.yml")
+    if not config or "book" not in config:
+        return []
+    book = config["book"]
+    site_url = (book.get("site-url") or "https://manual.warondisease.org").rstrip("/")
+
+    def info(href: Optional[str]) -> Optional[Dict[str, str]]:
+        if not href or not isinstance(href, str) or not href.endswith(".qmd"):
+            return None
+        meta = _read_qmd_frontmatter(project_root / href)
+        title = meta.get("title") or href
+        if isinstance(title, str):
+            title = title.strip().strip('"').strip("'")
+        desc = meta.get("description") or meta.get("abstract") or ""
+        if isinstance(desc, str):
+            desc = re.sub(r"\{\{<\s*var\s+[^>]+>\}\}", "[value]", desc)
+            desc = re.sub(r"\s+", " ", desc).strip()
+        else:
+            desc = ""
+        return {"title": str(title), "url": f"{site_url}/{href.replace('.qmd', '.html')}", "description": desc}
+
+    parts: List[Dict[str, Any]] = []
+    top: List[Dict[str, str]] = []
+    for entry in book.get("chapters", []):
+        if isinstance(entry, dict) and "part" in entry:
+            chapters = []
+            for c in entry.get("chapters", []):
+                href = c if isinstance(c, str) else (c.get("href") if isinstance(c, dict) else None)
+                ci = info(href)
+                if ci:
+                    chapters.append(ci)
+            if chapters:
+                parts.append({"part": entry["part"], "chapters": chapters})
+        else:
+            href = entry if isinstance(entry, str) else (entry.get("href") if isinstance(entry, dict) else None)
+            ci = info(href)
+            if ci:
+                top.append(ci)
+    if top:
+        parts.insert(0, {"part": "Start Here", "chapters": top})
+    return parts
+
+
 def generate_llms_txt(project_root: Path) -> Path:
     """
     Generate llms.txt from all Quarto configs.
@@ -157,6 +229,21 @@ def generate_llms_txt(project_root: Path) -> Path:
         else:
             lines.append(f"- [{title}]({url})")
 
+    # Add the full book chapter map (papers were covered above; chapters were not).
+    book_parts = extract_book_chapters(project_root)
+    chapter_count = sum(len(p["chapters"]) for p in book_parts)
+    if book_parts:
+        lines.extend(["", "## Book: How to End War and Disease", ""])
+        for part in book_parts:
+            lines.append(f"### {part['part']}")
+            lines.append("")
+            for ch in part["chapters"]:
+                if ch["description"]:
+                    lines.append(f"- [{ch['title']}]({ch['url']}): {ch['description']}")
+                else:
+                    lines.append(f"- [{ch['title']}]({ch['url']})")
+            lines.append("")
+
     lines.extend([
         "",
         "## Author",
@@ -186,7 +273,7 @@ def generate_llms_txt(project_root: Path) -> Path:
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
         f.write("\n".join(lines))
 
-    logger.debug("Generated %s with %d papers", output_path.name, len(sites))
+    logger.debug("Generated %s with %d papers and %d book chapters", output_path.name, len(sites), chapter_count)
     return output_path
 
 
