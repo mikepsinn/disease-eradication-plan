@@ -28,7 +28,12 @@ is only the short paste-in for generation prompts.
 >    bond with the reader ("I bet a decade of my life that you would read this"), reach
 >    for a poignant author moment, go earnest/evangelical, impose a feeling on the
 >    reader, or introduce an institution as a cold third-person "entity" (the reader IS
->    the company).
+>    the company). **Never reference "the author"** (the narrator is Wishonia, not a
+>    human with bets/opinions, e.g. say "the one with the best math is X", not "the
+>    author's bet") **or narrate "this book / everything else in this book"** (self-aware
+>    text); keep "the manual" only as the object Wishonia hands over ("the manual is
+>    free; the shares are the wager"). Genre exceptions, NOT violations: academic-paper
+>    COI/funding boilerplate (`papers.qmd`) and the author bio.
 >
 > Hard bans (the love line verbatim; securities words "guaranteed / risk-free / will
 > return / safe"; em-dashes) are in the style guide and the commit scanner.
