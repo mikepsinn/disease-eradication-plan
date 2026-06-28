@@ -11,7 +11,7 @@ abstract: |
   approximately {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people died waiting for approved drugs
   during their approval delays, representing a lower bound excluding drugs never developed due to
   cost barriers; (2) Future timeline shift: an additional
-  {{< var dfda_efficacy_lag_elimination_deaths_averted >}} will eventually die because the disease
+  {{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} will eventually die because the disease
   eradication timeline has been pushed back by {{< var efficacy_lag_years >}}. Combined, these
   represent {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} Disability-Adjusted Life Years when
   adjusted for morbidity, with a cumulative economic deadweight loss of approximately
@@ -51,10 +51,10 @@ scores:
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## The Short Version
 
-A drug is proven safe. It might cure your disease. The FDA says you cannot have it yet because they need {{< var efficacy_lag_years >}} to confirm it works (the 1962 Kefauver-Harris Amendments). You die during those {{< var efficacy_lag_years >}}. The drug is then approved and given to people who are not you, because you are dead. This has happened {{< var existing_drugs_efficacy_lag_deaths_total >}} times since 1962. It is called "consumer protection." Two distinct mortality costs:
+A drug is proven safe. It might cure your disease. The FDA says you cannot have it yet because they need {{< var efficacy_lag_years >}} to confirm it works (the 1962 Kefauver-Harris Amendments). You die during those {{< var efficacy_lag_years >}}. The drug is then approved and given to people who are not you, because you are dead. This has happened {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} times since 1962. It is called "consumer protection." Two distinct mortality costs:
 
 1. **Historical deaths (1962-2024):** {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people died waiting for approved drugs during their approval process - a **lower bound** excluding drugs never developed due to cost barriers
-2. **Future timeline shift (under cascade assumption):** {{< var dfda_efficacy_lag_elimination_deaths_averted >}} additional deaths will occur because the entire disease eradication timeline is pushed back by {{< var efficacy_lag_years >}}
+2. **Future timeline shift (under cascade assumption):** {{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} additional deaths will occur because the entire disease eradication timeline is pushed back by {{< var efficacy_lag_years >}}
 
 **The ratio:** Type II errors (blocking effective drugs) cost {{< var type_ii_error_cost_ratio >}} more lives than Type I errors (approving dangerous drugs) prevent.
 
@@ -68,7 +68,7 @@ Using data from the Tufts Center for the Study of Drug Development (CSDD) and th
 
 1. **Historical mortality (1962-2024):** Approximately **{{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} people** died waiting for approved drugs during their {{< var efficacy_lag_years >}} approval delays. This is a **lower bound** - it excludes drugs never developed due to cost barriers.
 
-2. **Future timeline shift (under cascade assumption):** An additional **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** will eventually die because the entire disease eradication timeline has been pushed back by {{< var efficacy_lag_years >}}. When cures finally arrive, they arrive {{< var efficacy_lag_years >}} later than they would have without efficacy requirements. During that delay, people die.
+2. **Future timeline shift (under cascade assumption):** An additional **{{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}}** will eventually die because the entire disease eradication timeline has been pushed back by {{< var efficacy_lag_years >}}. When cures finally arrive, they arrive {{< var efficacy_lag_years >}} later than they would have without efficacy requirements. During that delay, people die.
 
 **Historical Deaths Calculation:**
 
@@ -84,7 +84,7 @@ Valuing these lost years at a conservative global Value of a Statistical Life Ye
 
 ## Scale
 
-9/11: {{< var sept_11_deaths >}} dead. We spent $8 trillion in response.
+9/11: {{< var sept_11_deaths_nounit >}} dead. We spent $8 trillion in response.
 
 Holocaust: 6 million dead.
 
@@ -269,7 +269,7 @@ These represent the hard physical limits of medicine. Everything else, including
 2. **Pharmaceutical Impact (Life-Years Saved):** Primary source: Lichtenberg (2019) [@lichtenberg-life-years-saved-2019].
    - **Primary metric:** {{< var pharma_life_years_saved_annual >}} saved annually by post-1981 drugs (22 countries, 66 diseases)
    - **Methodology:** 3-way fixed-effects regression (disease-country-year) controlling for confounders
-   - **Derived lives saved:** {{< var pharma_lives_saved_annual >}} (assuming {{< var avg_life_extension_per_beneficiary >}} average life extension per beneficiary)
+   - **Derived lives saved:** {{< var pharma_lives_saved_annual_nounit >}} (assuming {{< var avg_life_extension_per_beneficiary >}} average life extension per beneficiary)
 
    ### Note
    
@@ -323,9 +323,9 @@ The assumption is not empirically validated at the aggregate level, though indiv
 
 | Metric | Estimate | Methodology |
 |:-------|:---------|:------------|
-| **Total Deaths** | **{{< var dfda_efficacy_lag_elimination_deaths_averted >}}** | Regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}}. Uses WHO global disease mortality rate (150,000/day). |
+| **Total Deaths** | **{{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}}** | Regulatory delay shifts disease eradication timeline by {{< var efficacy_lag_years >}}. Uses WHO global disease mortality rate (150,000/day). |
 
-**Finding:** The disease eradication delay model estimates **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} total eventually avoidable deaths**, with **150,000 per day**, greater than the combined casualties of World War I and World War II over the 62-year period.
+**Finding:** The disease eradication delay model estimates **{{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} total eventually avoidable deaths**, with **150,000 per day**, greater than the combined casualties of World War I and World War II over the 62-year period.
 
 {{< var dfda_efficacy_lag_elimination_deaths_averted_latex >}}
 
@@ -367,7 +367,7 @@ Mortality counts fail to capture the suffering of patients living with untreated
 
 {{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_dalys.qmd >}}
 
-**Interpretation:** The regulatory framework has effectively deleted **{{< var dfda_efficacy_lag_elimination_dalys >}} billion years of healthy human life**.
+**Interpretation:** The regulatory framework has effectively deleted **{{< var dfda_efficacy_lag_elimination_dalys_nounit >}} years of healthy human life**.
 
 ### Years Lived with Disability - Treatment Beneficiaries {#treatment-morbidity}
 
@@ -381,7 +381,7 @@ The "{{< var pharma_lives_saved_annual_nounit >}} lives saved annually" from Lic
 
 **Treatment beneficiaries vastly exceed mortality beneficiaries.**
 
-**Data source**: IQVIA reports that global pharmaceutical use reached 1.8 trillion days of therapy in 2019, with 71% for chronic conditions (diabetes, CVD, respiratory, cancer) [@iqvia-global-medicines-2024]. From this, we estimate approximately {{< var chronic_disease_treated_patients_annual >}} unique patients receive chronic disease treatment annually.
+**Data source**: IQVIA reports that global pharmaceutical use reached 1.8 trillion days of therapy in 2019, with 71% for chronic conditions (diabetes, CVD, respiratory, cancer) [@iqvia-global-medicines-2024]. From this, we estimate approximately {{< var chronic_disease_treated_patients_annual_nounit >}} unique patients receive chronic disease treatment annually.
 
 **Treatment beneficiary YLD calculation:**
 
@@ -391,7 +391,7 @@ The "{{< var pharma_lives_saved_annual_nounit >}} lives saved annually" from Lic
 
 | Metric | Annual Burden | Source |
 |--------|---------------|--------|
-| Lives saved (mortality) | {{< var pharma_lives_saved_annual >}} | Lichtenberg 2019 |
+| Lives saved (mortality) | {{< var pharma_lives_saved_annual_nounit >}} | Lichtenberg 2019 |
 | Treatment beneficiaries (morbidity) | {{< var chronic_disease_treated_patients_annual >}} | IQVIA 2024 |
 | **Ratio** | **~80:1** | Morbidity >> mortality |
 
@@ -772,7 +772,7 @@ The pre-1962 system (1938-1962) included:
 
 The quantitative evidence demonstrates that the 1962 Kefauver-Harris efficacy requirements have generated catastrophic human costs:
 
-- **{{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths from {{< var efficacy_lag_years >}} timeline shift**
+- **{{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} eventually avoidable deaths from {{< var efficacy_lag_years >}} timeline shift**
 - **{{< var dfda_efficacy_lag_elimination_dalys >}} lost**
 - **{{< var dfda_efficacy_lag_elimination_economic_value >}} economic destruction** (cumulative DALYs valued at {{< var standard_economic_qaly_value_usd >}}/DALY, standard WHO methodology)
 - **{{< var type_ii_error_cost_ratio >}} harm ratio** (Type II vs. Type I errors)

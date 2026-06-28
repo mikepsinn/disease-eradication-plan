@@ -1,6 +1,6 @@
 ---
 title: The Cost of War
-description: "Since 1900, your governments printed {{< var cumulative_military_spending_fed_era >}} out of nothing and spent it murdering {{< var war_deaths_since_1900 >}} and destroying many valuable things those people spent their entire lives building. If you had required donations to fund all wars since 1900 and outlawed funding them through printing money, none of this death and destruction would have happened and you would be {{< var war_counterfactual_income_multiple >}} richer today from the compound effects of productive instead of destructive spending."
+description: "Since 1900, your governments printed {{< var cumulative_military_spending_fed_era >}} out of nothing and spent it murdering {{< var war_deaths_since_1900_nounit >}} and destroying many valuable things those people spent their entire lives building. If you had required donations to fund all wars since 1900 and outlawed funding them through printing money, none of this death and destruction would have happened and you would be {{< var war_counterfactual_income_multiple >}} richer today from the compound effects of productive instead of destructive spending."
 published: true
 tags:
   - costs-of-war
@@ -22,7 +22,7 @@ feel: "Sick at the scale of the waste, then jolted that the correction is one pe
 do: "Forward this receipt to the one person you know who could move a military budget or fund the alternative (a senator's office, a big donor, the rich relative who bankrolls things) with the line \"one percent of this stops it,\" then vote at warondisease.org."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Since 1913, your "governments" have printed {{< var cumulative_military_spending_fed_era >}} out of nothing and spent it on murdering {{< var war_deaths_since_1900 >}} [@lost-human-capital-war-cost; @leitenberg-deaths-wars-2006] and destroying many valuable things those humans spent their entire lives building. Consequently, you would be {{< var war_counterfactual_income_multiple >}} richer today from the compound effects of productive instead of destructive spending. They are still going. Current annual budget for organized violence: {{< var global_military_spending_annual_2024 >}} [@sipri-milex-2024]. Current annual deaths from diseases you could be finding cures for: {{< var global_annual_deaths_curable_diseases >}} [@who-global-health-estimates-2024].
+Since 1913, your "governments" have printed {{< var cumulative_military_spending_fed_era >}} out of nothing and spent it on murdering {{< var war_deaths_since_1900_nounit >}} [@lost-human-capital-war-cost; @leitenberg-deaths-wars-2006] and destroying many valuable things those humans spent their entire lives building. Consequently, you would be {{< var war_counterfactual_income_multiple >}} richer today from the compound effects of productive instead of destructive spending. They are still going. Current annual budget for organized violence: {{< var global_military_spending_annual_2024 >}} [@sipri-milex-2024]. Current annual deaths from diseases you could be finding cures for: {{< var global_annual_deaths_curable_diseases_nounit >}} [@who-global-health-estimates-2024].
 
 ## The Itemized Receipt for Armageddon
 
@@ -50,7 +50,7 @@ $$
 
 - M<sub>spending</sub> = {{< var global_military_spending_annual_2024 >}} (verified via SIPRI database [@sipri2024])
 - I<sub>damage</sub> = {{< var global_annual_infrastructure_destruction_conflict >}} (reconstruction cost estimates from 47 active conflicts)
-- H<sub>casualties</sub> = {{< var global_annual_human_life_losses_conflict >}} ({{< var global_annual_conflict_deaths_total >}} total conflict deaths × \$10M VSL per EPA guidelines [@epa-vsl-9-6m] - includes combat deaths, terrorism, and state violence; see Death Accounting section below for breakdown)
+- H<sub>casualties</sub> = {{< var global_annual_human_life_losses_conflict >}} ({{< var global_annual_conflict_deaths_total_nounit >}} total conflict deaths × \$10M VSL per EPA guidelines [@epa-vsl-9-6m] - includes combat deaths, terrorism, and state violence; see Death Accounting section below for breakdown)
 - T<sub>disruption</sub> = {{< var global_annual_trade_disruption_conflict >}} [@world-bank-trade-flow-analysis]
 
 **C<sub>direct</sub> = \$7,655 billion annually**
@@ -106,9 +106,9 @@ The U.S. Department of Transportation says a statistical life is worth \$13.6 mi
 
 | Conflict Type | Deaths/Year | Cost per Death | Annual Cost | Source |
 |--------------|-------------|----------------|-------------|---------|
-| Active Combat | {{< var global_annual_conflict_deaths_active_combat >}} | $10,000,000 | {{< var global_annual_human_cost_active_combat >}} | Armed Conflict Location & Event Data [@armed-conflict-location-event-data] |
-| Terror Attacks | {{< var global_annual_conflict_deaths_terror_attacks >}} | $10,000,000 | {{< var global_annual_human_cost_terror_attacks >}} | Global Terrorism Database [@global-terrorism-database] |
-| State Violence | {{< var global_annual_conflict_deaths_state_violence >}} | $10,000,000 | {{< var global_annual_human_cost_state_violence >}} | Uppsala Conflict Data Program [@wars-since-1945] |
+| Active Combat | {{< var global_annual_conflict_deaths_active_combat_nounit >}} | $10,000,000 | {{< var global_annual_human_cost_active_combat >}} | Armed Conflict Location & Event Data [@armed-conflict-location-event-data] |
+| Terror Attacks | {{< var global_annual_conflict_deaths_terror_attacks_nounit >}} | $10,000,000 | {{< var global_annual_human_cost_terror_attacks >}} | Global Terrorism Database [@global-terrorism-database] |
+| State Violence | {{< var global_annual_conflict_deaths_state_violence_nounit >}} | $10,000,000 | {{< var global_annual_human_cost_state_violence >}} | Uppsala Conflict Data Program [@wars-since-1945] |
 
 **Total Human Cost: {{< var global_annual_human_life_losses_conflict >}} annually**
 
@@ -335,7 +335,7 @@ Three hundred thousand scientists. Nine hundred thousand doctors. How many cures
 
 ### The Children
 
-Of the {{< var war_deaths_since_1900 >}} since 1900, approximately {{< var war_child_death_pct >}} were children under 18: roughly {{< var war_children_killed_since_1900 >}}.
+Of the {{< var war_deaths_since_1900 >}} since 1900, approximately {{< var war_child_death_pct >}} were children under 18: roughly {{< var war_children_killed_since_1900_nounit >}}.
 
 {{< var war_children_killed_since_1900_latex >}}
 
@@ -483,7 +483,7 @@ Each consequence causes the next:
 
 Everything above only counts what governments spend killing *other* countries' people. It does not include returns on domestic investment.
 
-Political scientist R.J. Rummel spent his career counting what he called "democide": the murder of unarmed civilians by their own governments. Not soldiers. Not enemy combatants. Civilians. The people governments are supposed to protect. His final estimate: {{< var democide_total_20th_century >}} people murdered by governments in the 20th century alone [@rummel-death-by-government]. That excludes all battle deaths in wars. This is just the bonus killing.
+Political scientist R.J. Rummel spent his career counting what he called "democide": the murder of unarmed civilians by their own governments. Not soldiers. Not enemy combatants. Civilians. The people governments are supposed to protect. His final estimate: {{< var democide_total_20th_century_nounit >}} people murdered by governments in the 20th century alone [@rummel-death-by-government]. That excludes all battle deaths in wars. This is just the bonus killing.
 
 To be clear: that is more than every war death in the same century combined.
 
@@ -513,7 +513,7 @@ A few observations from an outside perspective:
 
 - Communist regimes account for the largest share: 100-148+ million, depending on how you count famine deaths caused by policy. Communism did not just fail as economics. It failed as not-murder.
 - These are *estimates*. Governments that murder their own citizens tend not to keep meticulous records. In many cases, the records were destroyed by the same people who created the bodies. The true number is almost certainly higher.
-- Every regime on this list had an army. The army was frequently the instrument of democide. You are instructing these institutions to redirect 1% of their budget. One percent. From the machinery they have historically used to murder {{< var democide_total_20th_century >}} of their own unarmed citizens.
+- Every regime on this list had an army. The army was frequently the instrument of democide. You are instructing these institutions to redirect 1% of their budget. One percent. From the machinery they have historically used to murder {{< var democide_total_20th_century_nounit >}} of their own unarmed citizens.
 
 The governments you are trying to negotiate with have, on average, killed more of their own people than foreign enemies have. The call is coming from inside the house. It has always been coming from inside the house.
 

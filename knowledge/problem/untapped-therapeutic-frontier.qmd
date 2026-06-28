@@ -53,14 +53,14 @@ Here is everything humanity considers "medicine":
 * **Investigational Drugs:** {{< var phase_1_passed_compounds_global >}} have passed Phase I globally. These are compounds you already know won't kill people, sitting in filing cabinets, doing nothing.
 * **Safe Stuff:** The FDA GRAS list contains {{< var fda_gras_substances_count >}}. Things you could eat right now without dying. Low bar. Still useful.
 
-**Total unique compounds humanity knows are safe-ish: {{< var safe_compounds_count >}}.**
+**Total unique compounds humanity knows are safe-ish: {{< var safe_compounds_count_nounit >}}.**
 
 That's it. Five millennia of civilization, and this is your entire toolkit. A rational civilization would have more compounds in a single bathroom cabinet. Your bathroom cabinet has shampoo and expired cough syrup from 2019.
 
 ## Ways Your Body Breaks (The To-Do List Nobody's Doing)
 
 * **Codes:** The ICD-10 lists {{< var icd_10_total_codes_nounit >}} ways your meat can malfunction. This is your species' most comprehensive to-do list. You are not doing it.
-* **Real Targets:** After consolidation, {{< var trial_relevant_diseases_count >}} trial-relevant diseases actually worth testing drugs against.
+* **Real Targets:** After consolidation, {{< var trial_relevant_diseases_count_nounit >}} trial-relevant diseases actually worth testing drugs against.
 
 ![Fourteen thousand ways to be sick, but only 1,000 worth testing drugs against. The other 13,000 are just spelling variations.](/assets/images/untapped-therapeutic-frontier/untapped-therapeutic-frontier-section-the-target-list-ways-your-body-breaks-bw-academic.jpg)
 
@@ -68,9 +68,9 @@ That's it. Five millennia of civilization, and this is your entire toolkit. A ra
 
 Here is where it gets uncomfortable.
 
-Take your {{< var safe_compounds_count >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}}. This gives you the total number of things you *could* test tomorrow morning if you weren't busy filling out forms about whether you're allowed to test them.
+Take your {{< var safe_compounds_count_nounit >}} safe compounds. Multiply by {{< var trial_relevant_diseases_count >}}. This gives you the total number of things you *could* test tomorrow morning if you weren't busy filling out forms about whether you're allowed to test them.
 
-**{{< var safe_compounds_count >}} x {{< var trial_relevant_diseases_count >}} = {{< var drug_disease_combinations_possible >}} possible drug-disease combinations.**
+**{{< var safe_compounds_count >}} x {{< var trial_relevant_diseases_count >}} = {{< var drug_disease_combinations_possible_nounit >}} possible drug-disease combinations.**
 
 This is not a hard calculation. A child could do it. Several children have. The children were then told to stop asking uncomfortable questions and go play outside.
 
@@ -86,7 +86,7 @@ This is not a hard calculation. A child could do it. Several children have. The 
 
 ### The Number That Should Keep You Awake
 
-{{< var tested_relationships_estimate >}} tested / {{< var drug_disease_combinations_possible >}} possibilities = {{< var exploration_ratio >}}
+{{< var tested_relationships_estimate_nounit >}} tested / {{< var drug_disease_combinations_possible_nounit >}} possibilities = {{< var exploration_ratio >}}
 
 {{< var exploration_ratio_latex >}}
 

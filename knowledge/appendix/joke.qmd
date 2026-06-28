@@ -6,7 +6,7 @@ abstract: |
 
   The proof: 100 nuclear weapons cause a nuclear winter. Humanity has approximately 12,000 ({{< var nuclear_winter_overkill_factor >}} apocalypses worth). Sacrificing one apocalypse of capacity (redirecting 1% of global military spending to pragmatic clinical trials) multiplies global trial capacity by {{< var dfda_trial_capacity_multiplier_nounit >}}, compressing the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years and producing an approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger global economy at year 15.
 
-  The laugh count: DALYs averted × adult laughs per healthy life-year = {{< var shirt_induced_laughs_gained >}} additional human laughs, conservatively. This is three to four orders of magnitude more than every paid comedian in history combined. The joke is also responsible for the future existence of human consciousness, if enough humans wear it (the threshold is {{< var shirt_seed_wearers_threshold >}}; see the cascade math below).
+  The laugh count: DALYs averted × adult laughs per healthy life-year = {{< var shirt_induced_laughs_gained_nounit >}} additional human laughs, conservatively. This is three to four orders of magnitude more than every paid comedian in history combined. The joke is also responsible for the future existence of human consciousness, if enough humans wear it (the threshold is {{< var shirt_seed_wearers_threshold >}}; see the cascade math below).
 
   Implementation: take a permanent marker into the closet of every human you do not want slowly tortured and brutally murdered by horrible diseases, write "I am retarded" on the front of each shirt and "everyone is. Read the proof at warondisease.org" on the back, and wear it on August 6 (Earth Optimization Day). The seed program is paid for by an Earth Optimization Prize assurance contract for {{< var shirt_seed_program_total_usd >}}, refundable if the cascade fails.
 aliases:
@@ -71,7 +71,7 @@ The redirect also makes everyone richer. People who aren't dying work longer and
 
 Every nation reduces by the same amount, so relative military balance stays exactly the same. You each have 1% fewer missiles pointed at each other. You keep 121 apocalypses. Still adequate deterrence by any honest definition. Disease eradicated in a human lifetime. Everyone {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} richer. That is the trade.
 
-The total economic value of clearing the trial queue and eliminating the efficacy lag is approximately {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} [@1-pct-treaty-impact-paper-2025]. Divided across {{< var global_population_2024 >}} humans, that is:
+The total economic value of clearing the trial queue and eliminating the efficacy lag is approximately {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} [@1-pct-treaty-impact-paper-2025]. Divided across {{< var global_population_2024_nounit >}} humans, that is:
 
 > **{{< var shirt_value_per_wearer_usd >}} of unrealized treaty value per shirt-wearing human.**
 
@@ -85,7 +85,7 @@ The first assumption is that powerful people benefit from the status quo and blo
 
 This is wrong. The CEO of Lockheed Martin has two options: (a) keep apocalypse #122, watch their family die of curable diseases, retire on the current trajectory; or (b) give up the one apocalypse they cannot use, watch their family live, invest in the biotech sector that absorbs a trillion redirected dollars per year, retire on a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. There is probably no rational beneficiary of the current arrangement. The military-industrial complex does not benefit from the status quo. They die of the same diseases. They live in the same economy. Their children attend the same funerals. They keep {{< var defense_sector_retention_pct >}} of their revenue and gain a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy where they are alive to spend it.
 
-The real reason is simpler. Some of the individual facts are known. Military contractors know their annual chance of dying in a terrorist attack is about 1 in {{< var annual_terrorism_death_risk_denominator >}}. They probably suspect that their lifetime chance of suffering and dying from a disease is approximately 100%. They may even know that the current spending ratio funds the smaller risk at the expense of the larger one.
+The real reason is simpler. Some of the individual facts are known. Military contractors know their annual chance of dying in a terrorist attack is about 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}}. They probably suspect that their lifetime chance of suffering and dying from a disease is approximately 100%. They may even know that the current spending ratio funds the smaller risk at the expense of the larger one.
 
 What nobody knows is that a coordination mechanism exists that could change this, that it would cost on the order of {{< var shirt_seed_program_total_usd >}}, and that it would produce benefits on the order of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. Until this paper, the calculation did not exist in one place. Every claim links to a parameter, which links to a source or a derivation. If you think a number is wrong, [the code is on GitHub](https://github.com/wishonia/earth-optimization-protocol) and you can fix it.
 
@@ -210,7 +210,7 @@ Then shut up. Every answer they give sounds terrible out loud:
 
 The question does not argue. It makes them hear their own reason out loud. The next time they open the closet, they hear it again. It sounds weaker than it did yesterday.
 
-Most pranks cost the prankster something. This one makes the recipient a walking confession of something that is true of every human alive, and counts each unwitting wearer toward the {{< var shirt_seed_wearers_threshold >}} social-proof threshold. The joke spreads itself.
+Most pranks cost the prankster something. This one makes the recipient a walking confession of something that is true of every human alive, and counts each unwitting wearer toward the {{< var shirt_seed_wearers_threshold_nounit >}} social-proof threshold. The joke spreads itself.
 
 The shirt is a strictly better chain letter:
 
@@ -280,9 +280,9 @@ The joke is designed around this constraint. The person whose shirts you defaced
 
 One person wearing "I am retarded" is weird or offensive. A billion people wearing it on the same day is a species admitting something true for the first time in its history, which is the funniest thing that has ever happened.
 
-Healthy adults laugh about {{< var human_laughs_per_day_average >}} times per day, or {{< var human_laughs_per_healthy_life_year >}} per healthy life-year. The treaty's central-case impact is {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} of DALYs averted. Multiply:
+Healthy adults laugh about {{< var human_laughs_per_day_average >}} times per day, or {{< var human_laughs_per_healthy_life_year >}} per healthy life-year. The treaty's central-case impact is {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} of DALYs averted. Multiply:
 
-> **{{< var shirt_induced_laughs_gained >}} additional laughs across human history, caused by this joke.**
+> **{{< var shirt_induced_laughs_gained_nounit >}} additional laughs across human history, caused by this joke.**
 
 Every standup special, sitcom, and viral comedy clip in human history has produced on the order of 10^11 to 10^12 collective audience-laughs. This joke produces on the order of 10^15, conservatively. Three to four orders of magnitude funnier than every comedian who has ever been paid, combined. Any comedian who wants better numbers should consider switching to vandalism.
 
@@ -325,11 +325,11 @@ It is.
 **Theorem 2 (a priori).** Let $\mathcal{H}$ be the space of all possible jokes across all possible civilizations. Let $F: \mathcal{H} \to \mathbb{R}^+$ assign to each joke its funniness under the incongruity-resolution model ($F = $ incongruity magnitude $\times$ resolution completeness). A joke $j^*$ is *a priori maximal* if it simultaneously maximizes both factors independent of any empirical parameter. The joke described in this paper achieves $F(j^*) = \sup F(\mathcal{H})$ by Premises 3-8. It is a fixed point by Premise 9: the audience's resistance to the joke is itself evidence for the joke's premise, which increases incongruity, which increases $F$. No element of $\mathcal{H}$ can exceed $j^*$ without finding (a) a larger subject than "everyone," (b) a wider gap than "the most defended false self-belief," or (c) a more complete resolution than "literal truth." None is possible. ∎
 :::
 
-Theorem 1 tells you the joke produces {{< var shirt_induced_laughs_gained >}} laughs. Theorem 2 tells you no joke in any possible universe produces more. Theorem 1 could be wrong if the numbers are wrong. Theorem 2 cannot be wrong unless the definition of humor is wrong, and if the definition of humor is wrong, that is itself evidence that we are retarded, which strengthens Premise 6, which makes the joke funnier, which proves Theorem 2 by contradiction.
+Theorem 1 tells you the joke produces {{< var shirt_induced_laughs_gained_nounit >}} laughs. Theorem 2 tells you no joke in any possible universe produces more. Theorem 1 could be wrong if the numbers are wrong. Theorem 2 cannot be wrong unless the definition of humor is wrong, and if the definition of humor is wrong, that is itself evidence that we are retarded, which strengthens Premise 6, which makes the joke funnier, which proves Theorem 2 by contradiction.
 
 ## If You Have Money
 
-The basic version costs $0.50 of Sharpie ink. The funded version is {{< var shirt_seed_program_total_usd >}} into an [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract that pays {{< var shirt_seed_wearers_threshold >}} visible seed wearers (athletes on game day, university chapters in dining halls, celebrities at televised events) at {{< var shirt_seed_cost_per_wearer_usd >}} per wearer. If the cascade succeeds, money releases to recruiters. If it fails, refund at {{< var prize_pool_horizon_multiple >}} of deposit. The structure is designed so the funder does not lose money in any branch.
+The basic version costs $0.50 of Sharpie ink. The funded version is {{< var shirt_seed_program_total_usd >}} into an [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] assurance contract that pays {{< var shirt_seed_wearers_threshold_nounit >}} visible seed wearers (athletes on game day, university chapters in dining halls, celebrities at televised events) at {{< var shirt_seed_cost_per_wearer_usd >}} per wearer. If the cascade succeeds, money releases to recruiters. If it fails, refund at {{< var prize_pool_horizon_multiple >}} of deposit. The structure is designed so the funder does not lose money in any branch.
 
 | Outcome by {{< var destructive_economy_50pct_year >}} | What the funder gets | What the world gets |
 |:---|:---|:---|
@@ -337,13 +337,13 @@ The basic version costs $0.50 of Sharpie ink. The funded version is {{< var shir
 | Prize targets hit (without formal treaty) | Same release | Equivalent policy bundle |
 | Neither | Refund at {{< var prize_pool_horizon_multiple >}} of deposit | Status quo continues |
 
-If the cascade triggers, the unconditional ROI is {{< var shirt_program_roi_ratio >}}-to-one. This is not a typo. The ratio is large because the denominator (a {{< var shirt_seed_program_total_usd >}} seed) is small and the numerator ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} of unlocked treaty value) is the species-scale problem the seed is unlocking. Probability-discounted at 25% odds the cascade triggers (deliberately skeptical), the expected value per dollar is {{< var shirt_program_expected_value_per_dollar >}}. The shirt program beats bed nets (the gold standard) by about {{< var treaty_expected_vs_bed_nets_multiplier >}} after probability-discounting. Each verified voter the seed produces saves about {{< var voter_lives_saved >}} expected lives and prevents {{< var voter_suffering_hours_prevented >}} of expected suffering.
+If the cascade triggers, the unconditional ROI is {{< var shirt_program_roi_ratio >}}-to-one. This is not a typo. The ratio is large because the denominator (a {{< var shirt_seed_program_total_usd >}} seed) is small and the numerator ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} of unlocked treaty value) is the species-scale problem the seed is unlocking. Probability-discounted at 25% odds the cascade triggers (deliberately skeptical), the expected value per dollar is {{< var shirt_program_expected_value_per_dollar >}}. The shirt program beats bed nets (the gold standard) by about {{< var treaty_expected_vs_bed_nets_multiplier >}} after probability-discounting. Each verified voter the seed produces saves about {{< var voter_lives_saved_nounit >}} expected lives and prevents {{< var voter_suffering_hours_prevented >}} of expected suffering.
 
 {{< var shirt_seed_program_total_usd >}} does not fund the trials. It unlocks {{< var treaty_annual_funding >}} per year of redirected military spending into the trial pipeline, perpetually. The funder is not buying trials. The funder is buying the permanent marker that redirects military budgets into trials.
 
 ## Why This Is Pascal's Wager, But Better
 
-Pascal's original: believe in God; if right, infinite reward; if wrong, finite cost. The shirt: wear it; if right, billions of healthy life-years for everyone you love; if wrong, you wore a shirt. Pascal's threat is unfalsifiable. This one is published. Pascal's reward is infinite and therefore meaningless. This one is {{< var shirt_induced_laughs_gained >}} laughs and calculable to the unit. Pascal's cost is a lifetime of church. This one is $0.50 of ink. Dominant on every axis where Pascal's was already considered persuasive, and Pascal's convinced roughly a billion people.
+Pascal's original: believe in God; if right, infinite reward; if wrong, finite cost. The shirt: wear it; if right, billions of healthy life-years for everyone you love; if wrong, you wore a shirt. Pascal's threat is unfalsifiable. This one is published. Pascal's reward is infinite and therefore meaningless. This one is {{< var shirt_induced_laughs_gained_nounit >}} laughs and calculable to the unit. Pascal's cost is a lifetime of church. This one is $0.50 of ink. Dominant on every axis where Pascal's was already considered persuasive, and Pascal's convinced roughly a billion people.
 
 You have a permanent marker. You have a closet. The shirt is true of you right now. The only remaining question is whether you are the kind of person who, upon learning that admitting you are retarded could cure the diseases killing everyone you love, declines to admit it.
 

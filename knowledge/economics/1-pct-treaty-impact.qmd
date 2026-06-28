@@ -117,8 +117,8 @@ do: "Carry the headline figures (ROI, cost per DALY, lives saved) into your own 
 | **ROI (Complete)** | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | Complete health timeline shift benefits (efficacy lag + discovery acceleration) |
 | **Discovery Acceleration** | {{< var dfda_trial_capacity_treatment_acceleration_years >}} average | From {{< var dfda_trial_capacity_multiplier >}} trial capacity enabling parallel therapeutic space exploration |
 | **Total Timeline Shift** | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Discovery acceleration ({{< var dfda_trial_capacity_treatment_acceleration_years >}} yrs) + efficacy lag ({{< var efficacy_lag_years >}} yrs) |
-| **Lives Saved (Total)** | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | One-time benefit over {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift |
-| **DALYs Averted** | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Captures morbidity, not just mortality |
+| **Lives Saved (Total)** | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | One-time benefit over {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift |
+| **DALYs Averted** | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} | Captures morbidity, not just mortality |
 | **Total Economic Value** | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} standard QALY valuation |
 | **Research Acceleration** | {{< var dfda_trial_capacity_multiplier >}} | {{< var trial_capacity_cumulative_years_20yr >}} research-equivalent years in 20 calendar years |
 | **Therapeutic Space Explored** | {{< var dfda_queue_clearance_years >}} | Time to test first treatments for ALL diseases (vs. {{< var status_quo_queue_clearance_years >}}, effectively never) |
@@ -376,7 +376,7 @@ No extra paperwork. No dedicated research staff. Just making routine clinical da
 
 ![Faster treatments plus better treatments equals billions of lives saved and $84.8 quadrillion in economic value. Quadrillion has 15 zeros. You've seen numbers that big before, but usually they're debts, not assets.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-total-economic-value-bw-academic.jpg)
 
-This is the monetized value of {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} healthy life-years gained, using standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY). On average, first treatments become available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier - combining treatment acceleration ({{< var dfda_trial_capacity_treatment_acceleration_years >}} average from expanded trial capacity) and efficacy lag elimination ({{< var efficacy_lag_years >}} from deploying treatments once discovered).
+This is the monetized value of {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} healthy life-years gained, using standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY). On average, first treatments become available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier - combining treatment acceleration ({{< var dfda_trial_capacity_treatment_acceleration_years >}} average from expanded trial capacity) and efficacy lag elimination ({{< var efficacy_lag_years >}} from deploying treatments once discovered).
 
 ##### Uncertainty Analysis: Total Economic Value
 
@@ -408,7 +408,7 @@ Under the status quo, {{< var diseases_without_effective_treatment >}} lack trea
 
 ![Accelerating treatments by 212 years prevents 1931 trillion hours of human suffering. That's with confidence intervals, because we're honest about uncertainty. Unlike your current system, which is confidently wrong.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-suffering-reduction-bw-academic.jpg)
 
-{{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering eliminated (from {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} average timeline shift; derived from the disability burden component of {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} DALYs averted, converted to hours)
+{{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering eliminated (from {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} average timeline shift; derived from the disability burden component of {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} DALYs averted, converted to hours)
 
 ### Lives Saved
 
@@ -429,7 +429,7 @@ The Monte Carlo distribution below shows the range of lives saved estimates acro
 
 ### DALYs Averted
 
-**{{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}** (Disability-Adjusted Life Years) averted from the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.
+**{{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}}** (Disability-Adjusted Life Years) averted from the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.
 
 ![DALYs measure both dying early and living badly. You invented a unit that captures the full spectrum of human suffering. Then you ignored it. Like installing a smoke detector and using it as a coaster.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-dalys-averted-bw-academic.jpg)
 
@@ -954,7 +954,7 @@ QALYs represent the standard metric in health economics for comparing health int
 
 ### QALY Calculation Model
 
-The total DALYs averted ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}) from the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift derives from two complementary mechanisms:
+The total DALYs averted ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}}) from the ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift derives from two complementary mechanisms:
 
 1. **Efficacy Lag Elimination** ({{< var efficacy_lag_years >}}): Treatments reach patients immediately after Phase I safety, rather than waiting for Phase II/III efficacy trials
 2. **Trial Capacity Expansion** ({{< var dfda_trial_capacity_treatment_acceleration_years >}} average): {{< var dfda_trial_capacity_multiplier >}} more trials running in parallel accelerates discovery of first treatments for untreated diseases
@@ -1064,11 +1064,11 @@ Post-safety regulatory delay: {{< var efficacy_lag_years >}} (BIO 2021: 10.5 yea
 
 {{< var dfda_trial_capacity_plus_efficacy_lag_years_latex >}}
 
-### DALYs Averted Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}})
+### DALYs Averted Derivation ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}})
 
 **Step 1: Identify annual DALY burden**
 
-- Global annual DALY burden: {{< var global_annual_daly_burden >}} (WHO GBD 2021)
+- Global annual DALY burden: {{< var global_annual_daly_burden_nounit >}} (WHO GBD 2021)
 - This includes both mortality (YLL) and morbidity (YLD: arthritis, depression, chronic pain, etc.)
 
 **Step 2: Determine avoidable fraction**
@@ -1181,11 +1181,11 @@ The complete ROI includes the full timeline shift health benefits:
 |-------|-------|------------|--------|
 | Trial Capacity | {{< var dfda_trial_capacity_multiplier >}} | Patients fundable ÷ current slots | Funding, trial cost, current capacity |
 | Timeline Shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Treatment acceleration + efficacy lag | Discovery capacity model, multiplier, regulatory data |
-| DALYs Averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | DALY burden × avoidable × shift | WHO GBD, avoidability assumption |
+| DALYs Averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} | DALY burden × avoidable × shift | WHO GBD, avoidability assumption |
 | Cost/DALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} | Implementation cost ÷ DALYs | Implementation budget, DALYs |
 | ROI (Conservative) | {{< var dfda_roi_rd_only >}}:1 | NPV benefits ÷ NPV costs | Trial savings, discount rate |
 | ROI (Complete) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | Economic value ÷ implementation cost | QALY valuation, timeline shift |
-| Lives Saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | Daily deaths × avoidable × shift | WHO mortality, timeline shift |
+| Lives Saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | Daily deaths × avoidable × shift | WHO mortality, timeline shift |
 | Delay Lives | {{< var dfda_efficacy_lag_elimination_deaths_averted >}} | Daily deaths × lag × avoidable | WHO mortality, lag years |
 | Delay Value | {{< var dfda_efficacy_lag_elimination_economic_value >}} | Delay DALYs × QALY Value | Delay DALYs, QALY ($150k) |
 
@@ -1550,7 +1550,7 @@ The analysis employs comprehensive sensitivity testing across multiple scenarios
 **Optimistic Scenario ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI):**
 
 - R&D cost reduction: {{< var dfda_trial_cost_reduction_pct >}} (RECOVERY trial-like efficiency)
-- QALY gains: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} (total from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift)
+- QALY gains: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} (total from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift)
 - Faster adoption and broader scope
 
 **Complete Case ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI):**

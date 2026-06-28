@@ -22,10 +22,10 @@ abstract: |
   [@iab-paper-2025] returns, and a Political Incentive Fund that scores legislators
   on compliance. Every nation cuts equally, so no country gets weaker. Trial
   capacity scales {{< var dfda_trial_capacity_multiplier >}}. The backlog of
-  {{< var diseases_without_effective_treatment >}} untreated diseases drops from
+  {{< var diseases_without_effective_treatment_nounit >}} untreated diseases drops from
   {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
   Treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}
-  years sooner. {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}
+  years sooner. {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}}
   preventable deaths averted, valued at
   {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}.
 

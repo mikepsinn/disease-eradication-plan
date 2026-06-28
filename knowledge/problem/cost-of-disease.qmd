@@ -46,11 +46,11 @@ That's the body count. Now let's talk about the bill.
 
 ## The Financial Cost
 
-While you read this sentence, disease just deleted $12.6 million of human potential from existence.
+While you read this sentence, disease just deleted $12.7 million of human potential from existence.
 
 By the time you finish this paragraph, $60 million more will evaporate into cancer treatments, heart surgeries, and funeral expenses. Also Dave from accounting's weird rash, but that's probably unrelated.
 
-Humanity hemorrhages **$397.4 trillion annually** [@disease-economic-burden-109t] to diseases that are basically just engineering problems with meat robots.
+Humanity hemorrhages **{{< var global_disease_economic_burden_annual >}} annually** [@disease-economic-burden-109t] to diseases that are basically just engineering problems with meat robots.
 
 That's more than the entire global economy. Every year. You lose more money to disease than you make doing everything else combined. It's like running a lemonade stand that costs more in lemons than the entire GDP of Earth.
 
@@ -64,15 +64,11 @@ Here's what disease actually costs, translated from economist-speak into human l
 
 | What We're Losing | What This Actually Means | Annual Cost |
 | :--- | :--- | :--- |
-| **Direct Medical Costs** | Paying doctors to Google your symptoms in a room that costs $500/hour | $8.2 Trillion [@global-health-spending-gdp] |
-| **Lost Productivity** | Sick people make fewer spreadsheets, decreasing global PowerPoint supply | $6.7 Trillion [@wef-harvard-ncd-cost] |
-| **Lost Human Life (DALYs)** | Dead people contribute zero to the economy (economists finally noticed) | $382.5 Trillion [@ihme-gbd-2019] |
-| **TOTAL DISASTER** | **More money than exists on Earth** | **$397.4 Trillion** [@disease-economic-burden-109t] |
+| **Direct cash costs** | Paying doctors to Google your symptoms in a room that costs $500/hour, plus the spreadsheets sick people never make | {{< var global_disease_total_market_cost_annual >}} [@disease-economic-burden-109t] |
+| **What the lost life is actually worth (DALYs)** | Dead people contribute zero to the economy (economists finally noticed). This is the real number; the cash above is just the part with receipts | {{< var global_disease_economic_burden_annual >}} [@ihme-gbd-2019] |
+| **TOTAL DISASTER** | **More money than exists on Earth** | **{{< var global_disease_economic_burden_annual >}}** [@disease-economic-burden-109t] |
 
 Let me explain that last one, because it's where the real horror lives.
-
-![Disease costs $397 trillion a year. Most of that is dead people not being alive to do things. You could fix this by making people less dead.](/assets/images/cost-of-disease/cost-of-disease-section-cost-breakdown-chart-bw-academic.jpg)
-
 ## How to Measure Suffering Without Feeling Feelings (The DALY)
 
 DALY stands for "Disability-Adjusted Life Year." That's economist-speak for "quantifying human misery without having to look people in the eye."
@@ -86,7 +82,7 @@ That's 40 DALYs.
 Spend 10 years severely depressed?
 That's 5 DALYs (economists calculated that being miserable counts as being half-dead, which is oddly accurate).
 
-The entire human species combined? **2.55 BILLION DALYs annually [@ihme-gbd-2019]**. That's 2.55 billion years of human potential, dissolving annually into medical bills and funeral expenses.
+The entire human species combined? **{{< var global_annual_daly_burden_nounit >}} DALYs annually [@ihme-gbd-2019]**. That's {{< var global_annual_daly_burden_nounit >}} years of human potential, dissolving annually into medical bills and funeral expenses.
 
 ### What the WHO Thinks You're Worth (Less Than a Tesla)
 
@@ -96,28 +92,25 @@ Let's use 3x GDP per capita. We're optimists who think humans are worth at least
 
 The math is simple and horrifying:
 
-- Value per healthy year: $150,000 (less than a Tesla, apparently)
-- Total DALYs lost annually: 2.55 billion years
+- Value per healthy year: {{< var standard_economic_qaly_value_usd >}} (less than a Tesla, apparently)
+- Total DALYs lost annually: {{< var global_annual_daly_burden_nounit >}} years, about 93% of them eventually avoidable
 
-Multiply these together:
+Multiply the avoidable years by the value:
 
-$$ 2,550,000,000 \text{ years} \times \$150,000/\text{year} = \$382.5 \text{ trillion} $$
+{{< var global_disease_economic_burden_annual_latex >}}
 
-That's $382.5 trillion of human potential. We flush it annually down the toilet labeled "diseases we haven't cured yet because the money went to bombs."
+That's {{< var global_disease_economic_burden_annual >}} of human potential. We flush it annually down the toilet labeled "diseases we haven't cured yet because the money went to bombs."
 
 ## Let's Break Down This Apocalypse By Time Unit
 
-$397.4 trillion annually breaks down to:
+{{< var global_disease_economic_burden_annual >}} annually breaks down to:
 
-- **$1.09 trillion EVERY DAY** (more than most countries make in a year)
-- **$45 billion EVERY HOUR** (enough to fund a mid-size cancer research institute)
-- **$757 million EVERY MINUTE** (more than most lottery jackpots)
-- **$12.6 million EVERY SECOND** (a new Tesla Roadster worth of human potential, gone, every second, forever)
+- **$1.1 trillion EVERY DAY** (more than most countries make in a year)
+- **$45.7 billion EVERY HOUR** (enough to fund a mid-size cancer research institute)
+- **$761 million EVERY MINUTE** (more than most lottery jackpots)
+- **$12.7 million EVERY SECOND** (a new Tesla Roadster worth of human potential, gone, every second, forever)
 
 By the time you finish this chapter (about 10 minutes), disease will have cost humanity more than the entire Apollo moon program. We went to the moon for less than one chapter's worth of disease costs.
-
-![Ten minutes of global disease costs more than putting a man on the moon. You went to the moon once. Disease happens every ten minutes.](/assets/images/cost-of-disease/cost-of-disease-section-let-s-break-down-this-apocalypse-by-time-unit-bw-academic.jpg)
-
 The math is, as your children say, not mathing.
 
 ## What's Actually Deleting Everyone (The Greatest Hits)
@@ -133,7 +126,7 @@ Here's what's killing people while you read about what's killing people:
 | Diabetes | 3.4 million [@diabetes-deaths-2m-annually] | 9,300 | 85 |
 | Kidney Disease | 1.4 million [@kidney-disease-deaths-1-4m-annually] | 3,800 | 35 |
 | Tuberculosis | 1.3 million [@tuberculosis-deaths-1-3m-annually] | 3,600 | 33 |
-| **TOTAL** | **55 million [@who-daily-deaths]** | **150,000** | **1,370** |
+| **TOTAL** | **{{< var global_annual_deaths_curable_diseases_nounit >}} [@who-daily-deaths]** | **150,000** | **1,370** |
 
 1,370 humans will permanently stop existing while you read this chapter. That's five 747s crashing. Every 10 minutes. Forever. If this happened to actual planes, you'd ground all flights within an hour and the 24-hour news cycle would collapse from overuse. But because it's disease, you call it "natural causes" and go back to arguing about parking.
 
@@ -166,13 +159,10 @@ These don't get fixed because 99.999997% of the repair tools are untested. There
 
 ## What This Actually Costs
 
-The $397.4 trillion "Disease Tax" is optional. Not optional like "you can skip it," but optional like "it's not a law of physics, just a choice humanity keeps making."
-
-![The Disease Tax: $1.09 trillion per day in lost human potential. You pay it every day. You get nothing. At least real taxes build roads.](/assets/images/cost-of-disease/cost-of-disease-section-what-this-actually-costs-bw-academic.jpg)
-
+The {{< var global_disease_economic_burden_annual >}} "Disease Tax" is optional. Not optional like "you can skip it," but optional like "it's not a law of physics, just a choice humanity keeps making."
 It's the price of humanity being too slow to fix its own broken meat robots.
 
-Every day you delay costs another **$1.09 trillion** in human potential dissolving into medical bills, funeral expenses, and GoFundMe campaigns. Meanwhile, politicians argue whether you can "afford" to test molecules.
+Every day you delay costs another **$1.1 trillion** in human potential dissolving into medical bills, funeral expenses, and GoFundMe campaigns. Meanwhile, politicians argue whether you can "afford" to test molecules.
 
 ### Your Priorities, Written in Your Budgets
 
@@ -192,7 +182,7 @@ Somewhere in the future, there's a Tuesday when:
 - Death is optional, not mandatory
 - Aging is something that happened to your ancestors
 
-Every day between now and that Tuesday costs you $1.09 trillion. That's the real invoice. The actual bill for choosing bombs over grandma's cancer treatment.
+Every day between now and that Tuesday costs you $1.1 trillion. That's the real invoice. The actual bill for choosing bombs over grandma's cancer treatment.
 
 ![Every day of military spending delays the cancer cure by another day. It's been delayed for 75 years now. The cancer is very patient.](/assets/images/cost-of-disease/cost-of-disease-section-the-future-you-re-paying-for-bw-academic.jpg)
 

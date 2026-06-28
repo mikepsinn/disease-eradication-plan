@@ -108,11 +108,14 @@ UNIT_SYNONYMS: dict[str, set[str]] = {
     "years/decade":  {"years", "year"},
 }
 
-# Rate suffixes that can duplicate "/year" etc.
-RATE_PROSE = {
-    "per year", "a year", "each year", "every year", "annually",
-    "per month", "a month", "each month", "per day", "a day", "each day",
-    "per decade", "a decade",
+# Rate prose -> the time period it implies. Matched against the unit's denominator,
+# so "USD/person" + "per year" does NOT false-flag ("person" != "year"), while a var
+# that actually renders "X/year" still does.
+RATE_PERIOD = {
+    "per year": "year", "a year": "year", "each year": "year", "every year": "year", "annually": "year",
+    "per month": "month", "a month": "month", "each month": "month",
+    "per day": "day", "a day": "day", "each day": "day",
+    "per decade": "decade", "a decade": "decade",
 }
 
 # Units that are format-inherent (no visible word text) - skip these
@@ -156,12 +159,13 @@ def classify_usage(unit: str, trailing: str) -> tuple[str, str]:
     # Clean trailing text: strip leading punctuation/whitespace/bold markers
     clean = trailing.lstrip(" \t*_")
 
-    # Check for rate duplication first (multi-word patterns)
-    for rate in RATE_PROSE:
-        if clean.lower().startswith(rate):
-            # Check if the unit itself has a rate component
-            if "/" in unit:
-                return ("RATE_DUPLICATION", rate)
+    # Rate duplication only when the prose's time period is actually a denominator in
+    # the unit (unit "deaths/year" + "per year"), not merely because the unit has any
+    # "/" (e.g. "USD/person" renders "$333,636" with no "per year" in the text).
+    unit_denoms = unit_lower.split("/")[1:]
+    for rate, period in RATE_PERIOD.items():
+        if clean.lower().startswith(rate) and (period in unit_denoms or period + "s" in unit_denoms):
+            return ("RATE_DUPLICATION", rate)
 
     # Extract first 1-2 words for unit matching
     words = re.split(r'[\s,;.:!?\)\]\}]+', clean, maxsplit=3)

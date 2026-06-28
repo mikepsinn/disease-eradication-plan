@@ -52,9 +52,9 @@ do: "Cite this analysis as the backing for the cost-effectiveness numbers, then 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 ## Executive Summary
 
-There are {{< var safe_compounds_count >}} that have already been proven safe for human consumption. There are {{< var diseases_without_effective_treatment >}} with zero approved treatments. The number of possible combinations between those safe compounds and those untreated diseases is {{< var drug_disease_combinations_possible >}}. The fraction that has actually been tested is {{< var exploration_ratio >}}. At the current rate of {{< var new_disease_first_treatments_per_year >}} per year, testing the rest would take ~{{< var status_quo_queue_clearance_years >}}. Your species is sitting on a combinatorial goldmine of potential cures and has chosen to explore it with a teaspoon.
+There are {{< var safe_compounds_count >}} that have already been proven safe for human consumption. There are {{< var diseases_without_effective_treatment >}} with zero approved treatments. The number of possible combinations between those safe compounds and those untreated diseases is {{< var drug_disease_combinations_possible >}}. The fraction that has actually been tested is {{< var exploration_ratio >}}. At the current rate of {{< var new_disease_first_treatments_per_year_nounit >}} per year, testing the rest would take ~{{< var status_quo_queue_clearance_years >}}. Your species is sitting on a combinatorial goldmine of potential cures and has chosen to explore it with a teaspoon.
 
-Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
+Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available_nounit >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
 **The Solution:** A [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025], an open protocol (like HTTP/FHIR, not a competing platform) that existing DCT platforms, EHRs, and health apps adopt to integrate pragmatic clinical trials into standard healthcare, enabling:
 
@@ -69,8 +69,8 @@ Of {{< var current_disease_patients_global >}} with chronic disease, only {{< va
 | Metric | Value | Context |
 |--------|-------|---------|
 | **Cost-Effectiveness** | {{< var dfda_direct_funding_cost_per_daly >}}/DALY | Competitive with bed nets ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale |
-| **Lives Saved** | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | One-time benefit from {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift |
-| **DALYs Averted** | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Captures both mortality and morbidity |
+| **Lives Saved** | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | One-time benefit from {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift |
+| **DALYs Averted** | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} | Captures both mortality and morbidity |
 | **Suffering Eliminated** | {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} | YLD portion of DALYs (39%) x 8,760 hrs/yr over timeline shift |
 | **Total Economic Value** | {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} | Cumulative DALYs x $150K/DALY (WHO threshold) over {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} shift |
 | **Efficacy Lag Eliminated** | {{< var efficacy_lag_years >}} | Post-Phase I access via trial participation |
@@ -112,14 +112,14 @@ These are **cumulative benefits over the entire acceleration period**, not annua
 
 | Parameter | Status Quo | Proposed | Impact |
 |:---|:---:|:---:|:---|
-| **Untreated diseases** | {{< var diseases_without_effective_treatment >}} | {{< var diseases_without_effective_treatment >}} | Same backlog |
+| **Untreated diseases** | {{< var diseases_without_effective_treatment_nounit >}} | {{< var diseases_without_effective_treatment_nounit >}} | Same backlog |
 | **Discovery rate** (first treatments/year) | {{< var new_disease_first_treatments_per_year >}} | {{< var dfda_first_treatments_per_year >}} | {{< var dfda_trial_capacity_multiplier >}} faster |
 | **Time to explore search space** | {{< var status_quo_queue_clearance_years >}} | {{< var dfda_queue_clearance_years >}} | Centuries saved |
-| **Expected time to first treatment** | ~{{< var status_quo_queue_clearance_years >}}/2 | ~{{< var dfda_queue_clearance_years >}}/2 | {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier |
+| **Expected time to first treatment** | ~{{< var status_quo_queue_clearance_years_nounit >}}/2 | ~{{< var dfda_queue_clearance_years_nounit >}}/2 | {{< var dfda_trial_capacity_treatment_acceleration_years >}} earlier |
 
 **Why treatments arriving sooner saves lives:**
 
-A disease that would receive its first effective treatment in year 200 under the status quo might receive it in year 16 with the framework. During those 184 years, people die from that disease who could have been saved. The {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} figure captures the cumulative lives saved across all diseases during their acceleration periods.
+A disease that would receive its first effective treatment in year 200 under the status quo might receive it in year 16 with the framework. During those 184 years, people die from that disease who could have been saved. The {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} figure captures the cumulative lives saved across all diseases during their acceleration periods.
 
 **The two components:**
 
@@ -128,7 +128,7 @@ A disease that would receive its first effective treatment in year 200 under the
 
 **Total timeline shift:** {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} = {{< var dfda_trial_capacity_treatment_acceleration_years >}} + {{< var efficacy_lag_years >}}
 
-**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dfda_annual_trial_funding >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the framework enables {{< var dfda_patients_fundable_annually >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
+**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dfda_annual_trial_funding >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the framework enables {{< var dfda_patients_fundable_annually_nounit >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 ## Capabilities
 
@@ -212,7 +212,7 @@ Even if only 25% of deaths are eventually avoidable (half our estimate), the fra
 
 ### Trial Funding Scenario
 
-This analysis models a scenario with {{< var dfda_annual_trial_funding >}}/year allocated to pragmatic clinical trials. At {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, this funds approximately {{< var dfda_patients_fundable_annually >}} patient-years annually.
+This analysis models a scenario with {{< var dfda_annual_trial_funding >}}/year allocated to pragmatic clinical trials. At {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, this funds approximately {{< var dfda_patients_fundable_annually_nounit >}} patient-years annually.
 
 ![With proper funding, we could solve the backlog in 36 years instead of 443. Your great-great-great-great-great-great-great-grandchildren will be so pleased.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-funding-scenario-bw-academic.jpg)
 
@@ -567,7 +567,7 @@ Efficacy lag elimination ({{< var efficacy_lag_years >}}) is the **smaller** of 
 
 A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease.org) of post-safety efficacy lag costs (1962-2024) found:
 
-- **Total Deaths**: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} eventually avoidable deaths over {{< var efficacy_lag_years >}} efficacy lag (1962-2024)
+- **Total Deaths**: {{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} eventually avoidable deaths over {{< var efficacy_lag_years >}} efficacy lag (1962-2024)
 - **Total DALYs**: {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} Disability-Adjusted Life Years lost
 - **Total Timeline Shift**: One-time {{< var efficacy_lag_years >}} acceleration in disease eradication
 
@@ -595,9 +595,9 @@ This eliminates the post-safety efficacy lag (the Phase II/III portion, while pr
 
 The elimination of the post-safety efficacy lag by such a framework achieves a one-time {{< var efficacy_lag_years >}} timeline acceleration (the smaller component of the total {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} shift):
 
-- **Total DALYs Averted**: {{< var dfda_efficacy_lag_elimination_dalys >}} (total one-time impact from {{< var efficacy_lag_years >}} timeline shift)
+- **Total DALYs Averted**: {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} (total one-time impact from {{< var efficacy_lag_years >}} timeline shift)
 - **Total Economic Value**: {{< var dfda_efficacy_lag_elimination_economic_value >}} ({{< var dfda_efficacy_lag_elimination_dalys >}} at $150,000/DALY, cumulative over {{< var efficacy_lag_years >}} of accelerated treatment access)
-- **Deaths Prevented**: {{< var dfda_efficacy_lag_elimination_deaths_averted >}} (total over the {{< var efficacy_lag_years >}} period)
+- **Deaths Prevented**: {{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} (total over the {{< var efficacy_lag_years >}} period)
 
 {{< var dfda_efficacy_lag_elimination_dalys_latex >}}
 
@@ -885,13 +885,13 @@ For economist verification, this section provides complete derivation chains for
 
 **Step 1: Current trial capacity**
 
-- Current trial participants: {{< var current_trial_slots_available >}}
+- Current trial participants: {{< var current_trial_slots_available_nounit >}}
 - Current first treatments: {{< var new_disease_first_treatments_per_year >}}
 
 **Step 2: Capacity with {{< var dfda_annual_trial_funding >}}/year**
 
 - Cost per patient: {{< var dfda_pragmatic_trial_cost_per_patient >}}
-- Fundable patients: {{< var dfda_patients_fundable_annually >}}
+- Fundable patients: {{< var dfda_patients_fundable_annually_nounit >}}
 
 **Step 3: Calculate multiplier**
 
@@ -940,7 +940,7 @@ For economist verification, this section provides complete derivation chains for
 
 **Step 2: DALYs averted**
 
-- Total DALYs: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}
+- Total DALYs: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}}
 
 **Step 3: Calculate cost per DALY**
 
@@ -973,7 +973,7 @@ For economist verification, this section provides complete derivation chains for
 |--------|-------|----------------|--------------|
 | Trial Capacity | {{< var dfda_trial_capacity_multiplier >}} | Funding, trial costs | ADAPTABLE trial, ClinicalTrials.gov |
 | Timeline Shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Efficacy lag, backlog model | FDA approval data, disease registry |
-| Lives Saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} | Mortality rates, timeline | WHO GBD, mortality statistics |
+| Lives Saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | Mortality rates, timeline | WHO GBD, mortality statistics |
 | Cost/DALY | {{< var dfda_direct_funding_cost_per_daly >}} | NPV costs, DALYs | ROM estimates, DALY calculations |
 | ROI | {{< var dfda_roi_rd_only >}}:1 | Costs, savings | NPV analysis with 5-year ramp |
 
@@ -1017,7 +1017,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Counterfactual Baseline Specification
 
-This cost-effectiveness analysis uses the **status quo** as the baseline counterfactual: current clinical trial infrastructure continues operating at current efficiency ({{< var traditional_phase3_cost_per_patient >}}/patient) and capacity ({{< var current_trial_slots_available >}} participants/year). Under this baseline, the {{< var dfda_annual_trial_funding >}}/year allocated to pragmatic trials would not exist.
+This cost-effectiveness analysis uses the **status quo** as the baseline counterfactual: current clinical trial infrastructure continues operating at current efficiency ({{< var traditional_phase3_cost_per_patient >}}/patient) and capacity ({{< var current_trial_slots_available_nounit >}} participants/year). Under this baseline, the {{< var dfda_annual_trial_funding >}}/year allocated to pragmatic trials would not exist.
 
 **Why status quo is the appropriate baseline:**
 
@@ -1121,7 +1121,7 @@ Value of using comprehensive data to optimize preventative care and treatment ef
 
 Opens research pathways for conditions currently ignored because trials are too expensive to bother:
 
-- **Baseline:** {{< var rare_diseases_count_global >}}+ rare diseases, 95% lack FDA-approved treatments
+- **Baseline:** {{< var rare_diseases_count_global_nounit >}}+ rare diseases, 95% lack FDA-approved treatments
 - **Mechanism:** Radically lower per-patient costs ({{< var dfda_pragmatic_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}) make rare disease R&D economically feasible
 - **Confidence:** Lower. Economic viability of rare disease research is theoretically sound but empirically unproven at scale
 

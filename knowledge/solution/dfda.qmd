@@ -26,7 +26,7 @@ do: "build the decentralized FDA: stand up the open protocol, plug in the platfo
 
 On Wishonia, we eliminated disease 4,000 years ago. Every citizen has access to every treatment. Every outcome is recorded. Every disease gets studied. It's not complicated. You let sick people try things and write down what happens. But since your planet somehow hasn't figured this out, here's the instruction manual.
 
-Out of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available >}} participate in trials annually [@global-trial-participant-capacity]. That's **{{< var current_clinical_trial_participation_rate >}}**.
+Out of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available_nounit >}} participate in trials annually [@global-trial-participant-capacity]. That's **{{< var current_clinical_trial_participation_rate >}}**.
 
 {{< var patient_willingness_trial_participation_pct >}} would volunteer [@patient-willingness-clinical-trials] if they could. Only {{< var current_clinical_trial_participation_rate >}} currently participate.
 
@@ -116,7 +116,7 @@ That's not a typo. Five hundred dollars. The cost of a nice dinner in Manhattan 
 Results:
 
 - Found that steroids cut COVID deaths by 30% [@recovery-trial-dexamethasone-results]
-- Saved over {{< var recovery_trial_global_lives_saved >}} globally [@recovery-trial-summary-quote]
+- Saved over {{< var recovery_trial_global_lives_saved_nounit >}} globally [@recovery-trial-summary-quote]
 - Took {{< var oxford_recovery_trial_duration_months >}} [@recovery-trial-100-days-to-cure] instead of 3 years
 - Cost less than one Super Bowl commercial
 
