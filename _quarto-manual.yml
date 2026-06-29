@@ -203,7 +203,6 @@ book:
       chapters:
         - knowledge/strategy/earth-optimization-commission.qmd # Commission hub: public ledger of appointed commissioners and the two-metric interview format
         - knowledge/strategy/funniest-show-in-the-universe.qmd # Video show format, recording/storage split, and publication checklist
-        - knowledge/strategy/commissioners/andrew-trask.qmd # First commissioner episode packet: privacy-preserving AI, OpenMined, and DeepMind-linked public bio
   # appendices: Commented to get rid of the Appendix prefix in the titles
     - part: "Repair Procedures"
       chapters:
