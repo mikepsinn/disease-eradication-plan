@@ -1,0 +1,49 @@
+---
+title: "The Funniest Show in the Universe"
+description: "Every guest is appointed President of Earth Optimization Services and asked how to optimize Earth using two metrics. Each one inaugurates at least two successors. Production guide: docs/funniest-show-production.md"
+published: true
+tags:
+  - strategy
+  - podcast
+  - video
+  - interviews
+  - funniest-show
+  - earth-optimization-commission
+audience: "Anyone who wants to watch a real person answer the two questions government was supposed to answer."
+feel: "I want to hear what this person would do first."
+do: "Watch the episode, then volunteer to be inaugurated next."
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+The Funniest Show in the Universe is the meeting format of the [Earth Optimization Commission](earth-optimization-commission.qmd).
+
+Every episode begins:
+
+> "You are now President of Earth Optimization Services. I am your assistant. Your job is to tell me how humanity should maximize median health-adjusted life expectancy and median after-tax inflation-adjusted income."
+
+Then the guest answers. That is the show.
+
+## The Two Questions
+
+1. What should humanity do to maximize median health-adjusted life expectancy?
+2. What should humanity do to maximize median after-tax inflation-adjusted income?
+
+Everything else is a subquestion. Healthcare, military spending, education, AI governance, privacy, public finance, and political incentives are all instruments. Worshipping instruments is how governments end up with departments that survive longer than the problems they were created to solve.
+
+## Episode Format
+
+**Cold open.** Appoint the guest. No biography first. The title does the work.
+
+**Metric lock.** Confirm the two target metrics. If the guest wants a third, ask whether it improves one of the two or is a competing terminal value.
+
+**First move.** Ask what they would do in the first ninety days.
+
+**Mechanism pass.** Push each answer one level down: who pays, who acts, who verifies, who benefits, who loses, and what breaks.
+
+**Commission order.** End with one instruction a normal human can execute this week.
+
+**Inauguration.** The outgoing president appoints at least two successors on camera. Not "who's interesting." Who are the smartest people you know who would actually do something useful with this job? Two is the minimum because the target is 8 billion presidents. A binary tree reaches 8 billion in 33 generations. The episode does not end until the names are on record.
+
+## Commissioners
+
+- [Andrew Trask](commissioners/andrew-trask.qmd), privacy-preserving AI, OpenMined. The optimal policy and medical evidence machines need data. The humans who have the data are often correct not to hand it to random centralized systems. Secure computation is how you let knowledge move without making private lives spill onto the floor.

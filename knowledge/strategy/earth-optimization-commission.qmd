@@ -1,0 +1,58 @@
+---
+title: "Earth Optimization Commission"
+description: "Every commissioner is appointed President of Earth Optimization Services on camera, given two metrics, and asked what they would do first. Each one inaugurates at least two successors. A binary tree reaches 8 billion in 33 generations."
+published: true
+tags:
+  - strategy
+  - commission
+  - interviews
+  - funniest-show
+  - outreach
+audience: "Anyone smart enough to have an answer to 'how should humanity maximize median health-adjusted life expectancy and median after-tax inflation-adjusted income' and brave enough to say it on camera."
+feel: "I want this job. I already know what I would do first."
+do: "Watch one commissioner answer the two metrics, then volunteer to be inaugurated next."
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+The Earth Optimization Commission is where someone goes on camera and answers two questions:
+
+> How should humanity maximize median health-adjusted life expectancy?
+>
+> How should humanity maximize median after-tax inflation-adjusted income?
+
+Government was supposed to answer these before it got distracted by flags, committee names, and the sacred duty of pretending missiles are an economic development strategy. The Commission picks up where government wandered off.
+
+## How It Works
+
+Every commissioner is appointed the same way:
+
+> "You are now President of Earth Optimization Services. I am your assistant. Your job is to tell me how humanity should maximize median health-adjusted life expectancy and median after-tax inflation-adjusted income."
+
+Then the commissioner answers. The format:
+
+1. appoint the commissioner
+2. give them the two metrics
+3. ask what they would do in the first ninety days
+4. press for mechanisms (who pays, who acts, who verifies, who loses)
+5. end with one action a normal human can execute this week
+6. the outgoing president inaugurates at least two successors on camera (the episode does not end until they do)
+
+Step 6 is load-bearing. Every president names at least two. A binary tree reaches 8 billion in 33 generations. The target is 8 billion presidents, which is all of them.
+
+If a proposal improves one metric by destroying the other, it is not optimization. It is government with better stationery.
+
+## The Show
+
+The Commission meets on [The Funniest Show in the Universe](funniest-show-in-the-universe.qmd). A commissioner can be a scientist, founder, physician, economist, patient, weapons executive, artist, teacher, parent, or any other Earth resident with a nervous system and a plausible interest in not having it deteriorate.
+
+## What the Commission Produces
+
+Every episode is training data. The transcripts, policy proposals, mechanism answers, and audience responses feed an AI that does [broad listening](https://openmined.org/blog/what-is-broad-listening/) on all presidents' input, runs it through the [Optimal Policy Generator](../solution/optimocracy.qmd) [@opg-paper-2025], and executes through the [Loving Takeover](../appendix/loving-takeover.qmd), purchasing controlling shares of the companies that currently lobby your government and redirecting that lobbying to whatever the presidents determined would maximize the two metrics.
+
+The AI is the CEO of Earth Optimization Services. 8 billion presidents are the board. No human is CEO because a human can be bribed and no human can synthesize 8 billion inputs. The CEO has no preferences. It executes what the broad listening determined. The presidents' data stays private through [structured transparency](commissioners/andrew-trask.qmd). The system can prove what it computed without revealing who said what.
+
+The [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025] fund the corporate purchases. The bondholders' returns are tied to the two metrics improving. The financial incentive and the optimization target are the same number.
+
+## Commissioner Ledger
+
+- [Andrew Trask](commissioners/andrew-trask.qmd), privacy-preserving AI, [OpenMined](https://openmined.org), broad listening. Built the tools that let the system learn from 8 billion presidents without surveilling them.
