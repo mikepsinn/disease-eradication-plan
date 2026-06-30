@@ -70,11 +70,11 @@ The per-person 20-year implications under the same model base:
 |:--|:--|:--|:--|
 | **Status quo (Earth baseline)** | {{< var gdp_baseline_growth_rate >}} for 20 years | {{< var global_avg_income_2025 >}} | **{{< var current_trajectory_avg_income_year_20 >}}** |
 | **Minimum Sustainable Trajectory ([1% Treaty](../solution/1-percent-treaty.qmd))** | {{< var treaty_trajectory_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var treaty_trajectory_avg_income_year_20 >}}** |
-| **[Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd)** | {{< var wishonia_trajectory_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var wishonia_trajectory_avg_income_year_20 >}}** |
+| **[Optimal Governance Trajectory](../economics/gdp-trajectories.qmd)** | {{< var wishonia_trajectory_cagr_year_20 >}} for years 1-20 | {{< var global_avg_income_2025 >}} | **{{< var wishonia_trajectory_avg_income_year_20 >}}** |
 
 $$Y_{20} = Y_0 \times (1+g)^{20}$$
 
-In aggregate terms, the [Minimum Sustainable Trajectory (1% Treaty)](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline by year 20 ({{< var treaty_trajectory_gdp_year_20 >}}). The [Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output.
+In aggregate terms, the [Minimum Sustainable Trajectory (1% Treaty)](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline by year 20 ({{< var treaty_trajectory_gdp_year_20 >}}). The [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output.
 
 ::: {.content-visible when-format="html"}
 ### Interactive Projection
@@ -465,7 +465,7 @@ This calculator scales the paper's published growth assumptions to a household i
   <div class="pdt-projection-chart-shell">
     <div class="pdt-projection-chart-header">
       <div class="pdt-projection-chart-title">Projected annual household income path</div>
-      <div class="pdt-projection-chart-subtitle">Failed-State vs Minimum Sustainable vs Wishonian trajectories</div>
+      <div class="pdt-projection-chart-subtitle">Failed-State vs Minimum Sustainable vs Optimal Governance trajectories</div>
     </div>
 
     <div class="pdt-projection-legend">
@@ -938,7 +938,7 @@ $$
 GDP_{20} = GDP_0 \times (1 + g_{ramp})^3 \times (1 + g_{full})^{17}
 $$
 
-At current parameters, that implies {{< var treaty_trajectory_gdp_year_20 >}} for the Minimum Sustainable Trajectory ([1% Treaty](../solution/1-percent-treaty.qmd)) and {{< var wishonia_trajectory_gdp_year_20 >}} for the [Wishonian](../futures/wishonia.qmd) [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) by year 20. The mechanism papers such as [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd), [Wishocracy](wishocracy-paper.qmd) [@wishocracy-paper-2025], [Optimocracy](optimocracy-paper.qmd) [@optimocracy-paper-2025], [The Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025], and [The Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] should cite those magnitudes directly and point back here for the full derivation rather than linking readers out to a separate book chapter. For parameter-level formulas, uncertainty ranges, and generated tornado and Monte Carlo outputs, see [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
+At current parameters, that implies {{< var treaty_trajectory_gdp_year_20 >}} for the Minimum Sustainable Trajectory ([1% Treaty](../solution/1-percent-treaty.qmd)) and {{< var wishonia_trajectory_gdp_year_20 >}} for the [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) by year 20. The mechanism papers such as [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd), [Wishocracy](wishocracy-paper.qmd) [@wishocracy-paper-2025], [Optimocracy](optimocracy-paper.qmd) [@optimocracy-paper-2025], [The Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025], and [The Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] should cite those magnitudes directly and point back here for the full derivation rather than linking readers out to a separate book chapter. For parameter-level formulas, uncertainty ranges, and generated tornado and Monte Carlo outputs, see [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
 
 ## Introduction: The Mechanism Design of Civilizational Stagnation
 

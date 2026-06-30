@@ -94,11 +94,12 @@ book:
     - text: "Listen"
       href: knowledge/podcast.qmd
 
-    - text: "Wishonia's Wager"
-      href: knowledge/proof/wishonias-wager.qmd # Opening chapter / introduction: the reader's wager (act on infinite stakes), the ten-solution overview, attention-as-cost, Pascal debugged, and the "Wishonia's wager" coda (author's bet on humanity + revenue-funds-takeover flywheel + price gag). Standalone paper config: _quarto-wishonias-wager.yml
-
-    - text: "What Matters"
-      href: knowledge/proof/what-matters.qmd # Terminal values: pleasant consciousness and unpleasant consciousness; terminal general-welfare metrics: HALE and median income.
+    - part: "First Principles"
+      chapters:
+        - text: "Wishonia's Wager"
+          href: knowledge/proof/wishonias-wager.qmd # Opening chapter / introduction: the reader's wager (act on infinite stakes), the ten-solution overview, attention-as-cost, Pascal debugged, and the "Wishonia's wager" coda (author's bet on humanity + revenue-funds-takeover flywheel + price gag). Standalone paper config: _quarto-wishonias-wager.yml
+        - text: "What Matters"
+          href: knowledge/proof/what-matters.qmd # Terminal values: pleasant consciousness and unpleasant consciousness; terminal general-welfare metrics: HALE and median income.
 
     - part: "Failure Analysis"
       chapters:
@@ -149,7 +150,7 @@ book:
         - knowledge/proof/body-as-repairable-machine.qmd # ✅ The Body as a Machine ~7p
         - knowledge/proof/why-hasnt-anyone-done-this.qmd # ✅ Why Hasn't Anyone Done This? ~3p
         - knowledge/proof/delusion-of-insignificance.qmd # The Grandeur Proof: you ARE the universe experiencing itself; insignificance is the delusion, not grandeur ~4p
-        # MOVED to front as the opening chapter / introduction (see top of chapters list). wishonias-wager.qmd is also dual-listed in Papers & Publications.
+        # MOVED to front as the opening chapter / introduction (now under the "First Principles" part). wishonias-wager.qmd is also dual-listed in Papers & Publications.
         # STANDALONE PAPER - see impact.warondisease.org
         # - knowledge/economics/1-pct-treaty-impact.qmd # ✅ Rigorous economic analysis
         # REMOVED: Sales-pitchy tone, thin content (82 lines), already covered in incentive-alignment-bonds.qmd, 1-percent-treaty.qmd, faq.qmd
