@@ -15,7 +15,7 @@ concurrency:
 jobs:
 
   build-1-pct-treaty-impact:
-    name: "Build The 1% Treaty: Harnessing Greed to Eradicate Disea"
+    name: "Build The 1% Treaty: An Incentive-Compatible Approach to"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -82,7 +82,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build The 1% Treaty: Harnessing Greed to Eradicate Disea"
+      - name: "Render Build The 1% Treaty: An Incentive-Compatible Approach to"
         run: python scripts/render-quarto.py 1-pct-treaty-impact --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -126,7 +126,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The 1% Treaty: Harnessing Greed to Eradicate Disea PDF to Zenodo (draft)"
+      - name: "Upload Build The 1% Treaty: An Incentive-Compatible Approach to PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}

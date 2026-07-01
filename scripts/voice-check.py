@@ -39,7 +39,9 @@ BANNED = [
     (r"\bparadigm\b", "corporate", "cut it"),
     (r"\butiliz\w*", "corporate", "'use'"),
     (r"\bfacilitat\w*", "corporate", "'help' / 'let'"),
-    (r"\bleverage\b", "corporate", "'use' (keep ONLY if literal finance leverage)"),
+    # only the corporate VERB "leverage X" (= use); the leverage-RATIO noun is legit finance
+    (r"\bleverages?\s+(?:existing|the|a|an|its|our|their|your|this|these|those|all)\b",
+     "corporate", "'use' (corporate verb 'leverage X'; the leverage-ratio noun is fine)"),
     (r"\bonboard\w*", "corporate", "plain word"),
     (r"\bworld-class\b", "corporate", "cut it"),
     (r"\bbest-in-class\b", "corporate", "cut it"),
@@ -66,20 +68,82 @@ BANNED = [
 # Legit contexts that LOOK like a hit but aren't (skip the match).
 DEFENSE_OK = re.compile(r"missile defense|department of defense|defense against|self-defense", re.I)
 
+# "asymmetry/asymmetric" is precise finance/econ vocabulary as a compound term (information
+# asymmetry, capital asymmetry, asymmetric payoffs, Olson's concentrated-vs-diffuse). Skip
+# those; still flag loose rhetorical "asymmetric" in reader-facing prose.
+ASYMMETRY_OK = re.compile(
+    r"(information|capital|power|preference|description|payoff|risk|return|interest|"
+    r"wealth|resource|lobbying|structural|temporal|cost|benefit|diffuse|concentrated)\s+asymmetr\w*"
+    r"|asymmetr\w*\s+(payoffs?|information|returns?|benefits?|risks?|interests?|"
+    r"advantage|upside|bets?|capital)"
+    r"|asymmetr\w*\s*\(",
+    re.I,
+)
+
+# "synergy/synergies/synergistic" is precise pharmacology when the line is about drugs,
+# treatments, or their interactions (drug synergy = a supra-additive combination effect).
+SYNERGY_OK = re.compile(
+    r"drug|treatment|pharmacolog|therapeut|molecul|dose|dosing|receptor|agonist|"
+    r"compound|interaction|combination effect",
+    re.I,
+)
+
+# Mock-statute / mock-contract chapters written in deliberate bureaucratic register (real
+# Acts of Congress and HR contracts genuinely say "utilize," "facilitate," "stakeholders,"
+# "onboarding," "leverage X" -- flattening these to plain English breaks the played-dead-straight
+# bit). Exempt only the bureaucratese category words below; modern pitch-deck words (synergy,
+# paradigm, best-in-class, world-class, alpha, rerate) still get flagged even in these files,
+# since real statutes and HR contracts never use those either.
+FORMAL_REGISTER_FILES = {
+    "right-to-trial-fda-upgrade-act.qmd",
+    "commission-of-the-president.qmd",
+    "humanity-manager-employment-agreement.qmd",
+    "notice-of-termination.qmd",
+    "presidential-inauguration-ceremony.qmd",
+}
+FORMAL_REGISTER_EXEMPT_PATTERNS = {
+    r"\bstakeholder\w*",
+    r"\butiliz\w*",
+    r"\bfacilitat\w*",
+    r"\bleverages?\s+(?:existing|the|a|an|its|our|their|your|this|these|those|all)\b",
+    r"\bonboard\w*",
+}
+
 
 def check(path):
     hits = []
+    import os
+    is_formal_register = os.path.basename(path) in FORMAL_REGISTER_FILES
     with open(path, encoding="utf-8") as fh:
         for i, raw in enumerate(fh, 1):
             # strip {{< var foo_bar >}} so variable NAMES (e.g. defense_takeover_*) never trigger
             line = re.sub(r"\{\{<\s*var\s+[a-z0-9_]+\s*>\}\}", "", raw)
+            # blank out markdown link/image TARGETS so paths/filenames in URLs never trigger
+            # (e.g. ...section-stakeholder-alignment.jpg in an image src is not prose)
+            line = re.sub(r"\]\([^)]*\)", "]()", line)
             for pat, cat, fix in BANNED:
+                if is_formal_register and pat in FORMAL_REGISTER_EXEMPT_PATTERNS:
+                    continue
                 for m in re.finditer(pat, line, re.I):
+                    frag = m.group(0)
                     if "defense" in pat or cat == "euphemism":
                         ctx = line[max(0, m.start() - 16):m.end() + 16]
                         if DEFENSE_OK.search(ctx):
                             continue
-                    hits.append((i, m.group(0), cat, fix, raw.strip()[:90]))
+                    # precise compound use of asymmetry/asymmetric -> not a voice violation
+                    if frag.lower().startswith("asymmetr"):
+                        ctx = line[max(0, m.start() - 24):m.end() + 24]
+                        if ASYMMETRY_OK.search(ctx):
+                            continue
+                    # precise pharmacology use of synergy -> not a corporate buzzword
+                    if frag.lower().startswith("synerg") and SYNERGY_OK.search(line):
+                        continue
+                    # a buzzword in 'scare quotes' is being mocked, which the guide allows
+                    if (cat in ("corporate", "finance", "whiteboard", "cliche")
+                            and m.start() > 0
+                            and line[m.start() - 1] in "'‘’\""):
+                        continue
+                    hits.append((i, frag, cat, fix, raw.strip()[:90]))
     return hits
 
 

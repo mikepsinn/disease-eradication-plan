@@ -1,5 +1,5 @@
 ---
-title: 'The 1% Treaty: Harnessing Greed to Eradicate Disease'
+title: 'The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease'
 description: '{{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending scales capacity {{< var dfda_trial_capacity_multiplier >}}, cutting the timeline to ~{{< var dfda_queue_clearance_years >}} and preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. At {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY, {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.'
 abstract: |
   {{< var diseases_without_effective_treatment >}} have 0 FDA-approved treatments. At current trial
@@ -285,7 +285,7 @@ Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient 
 
 ![Traditional trials build special facilities to test drugs. Pragmatic trials use hospitals that already exist. 82 times cheaper. You've been building a separate kitchen every time you want to cook breakfast.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-trial-cost-reduction-bw-academic.jpg)
 
-The Oxford RECOVERY trial demonstrated an alternative: leverage existing hospital infrastructure, collect only incremental data beyond standard medical records, and integrate evidence generation into routine clinical care. Cost: {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient. (Note: RECOVERY benefited from NHS/COVID conditions; however, a systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost], confirming this efficiency is replicable. Our system projections use a conservative {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.) Same quality evidence. {{< var recovery_trial_cost_reduction_factor >}} lower cost.
+The Oxford RECOVERY trial demonstrated an alternative: use existing hospital infrastructure, collect only incremental data beyond standard medical records, and integrate evidence generation into routine clinical care. Cost: {{< var recovery_trial_cost_per_patient >}} {{< var recovery_trial_cost_per_patient_cite >}} per patient. (Note: RECOVERY benefited from NHS/COVID conditions; however, a systematic review of 64 pragmatic trials found a median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient [@pmc-pragmatic-trial-cost], confirming this efficiency is replicable. Our system projections use a conservative {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on the ADAPTABLE trial.) Same quality evidence. {{< var recovery_trial_cost_reduction_factor >}} lower cost.
 
 **Concrete example**: A hospital already tracks patient lab results, symptoms, and outcomes in electronic health records. Traditional trials build a parallel research infrastructure to collect the same information again. Pragmatic trials simply flag which patients are enrolled and automatically extract relevant data from existing systems. No duplicate infrastructure, no dedicated research staff per trial.
 
@@ -736,7 +736,7 @@ Military spending generates economic multiplier effects of {{< var economic_mult
 
 **2. Trial cost reduction through infrastructure efficiency**
 
-Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per patient due to site setup costs, dedicated research staff, patient travel reimbursement, custom case report forms, and extensive monitoring requirements. Pragmatic trials leverage existing infrastructure: the Harvard meta-analysis of 108 embedded pragmatic trials found median costs of $97/patient [@embedded-pragmatic-trials-meta-analysis], RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient (NHS/COVID conditions), and ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient under normal conditions. Our system projections use the conservative ADAPTABLE estimate ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient).
+Traditional FDA Phase 3 trials cost {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per patient due to site setup costs, dedicated research staff, patient travel reimbursement, custom case report forms, and extensive monitoring requirements. Pragmatic trials use existing infrastructure: the Harvard meta-analysis of 108 embedded pragmatic trials found median costs of $97/patient [@embedded-pragmatic-trials-meta-analysis], RECOVERY achieved {{< var recovery_trial_cost_per_patient >}}/patient (NHS/COVID conditions), and ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient under normal conditions. Our system projections use the conservative ADAPTABLE estimate ({{< var dfda_pragmatic_trial_cost_per_patient >}}/patient).
 
 This represents a {{< var dfda_trial_cost_reduction_factor >}} cost reduction achieved by eliminating duplicative overhead and leveraging existing healthcare infrastructure.
 
@@ -1697,7 +1697,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 - Against Malaria Foundation: ~8:1 equivalent ROI
 - **1% Treaty (central estimate, P={{< var political_success_probability >}})**: {{< var treaty_expected_roi_trial_capacity_plus_efficacy_lag >}}:1 expected ROI
 
-**Interpretation**: The high conditional ROI ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1) means that even modest implementation probabilities yield expected values competitive with best-in-class health interventions that have near-certain implementation.
+**Interpretation**: The high conditional ROI ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1) means that even modest implementation probabilities yield expected values competitive with the best health interventions that have near-certain implementation.
 
 **Note**: The uncertainty analysis samples political probability from its full distribution ({{< var political_success_probability >}}). Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The campaign strategy allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
 
@@ -2222,7 +2222,7 @@ This analysis employs partial equilibrium methodology, holding prices and market
 
 **Unmodeled general equilibrium effects include**:
 
-1. **Data infrastructure scaling costs**: Decentralized trial infrastructure uses automated software (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the framework leverages existing EHR systems and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
+1. **Data infrastructure scaling costs**: Decentralized trial infrastructure uses automated software (federated queries, not centralized databases), scaling through technology rather than labor. Unlike traditional research that faces researcher supply constraints, the framework uses existing EHR systems and adds coordination protocols. Marginal scaling costs are low relative to traditional models.
 
 2. **Clinical trial market price effects**: Increasing trial demand by {{< var dfda_trial_capacity_multiplier >}} could affect equilibrium prices for clinical research services. However, the pragmatic trial approach *reduces* per-trial costs ({{< var recovery_trial_cost_reduction_factor >}} cheaper via automation), suggesting supply constraints may not bind. Traditional trials cost {{< var traditional_phase3_cost_per_patient >}}; decentralized trials target {{< var dfda_pragmatic_trial_cost_per_patient >}} by eliminating overhead, not by increasing demand for scarce inputs.
 

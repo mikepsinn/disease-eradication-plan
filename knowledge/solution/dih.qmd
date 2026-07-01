@@ -256,4 +256,4 @@ The Pool Custodian (the Vault) is the organization with legal custody of Prize d
 
 **Succession:** If a Vault disappears, its pool's assets transfer to a replacement custodian or are distributed to depositors. The other pools continue operating. No single Vault is a permanent dependency.
 
-That is the design. Building it is the next job.
+That is the design. It is not claimed to be the best possible custodian architecture, only the least-bad one I have yet discovered. Building it, or a better one, is the next job.
