@@ -89,7 +89,7 @@ do: "Trust the two-stage method and its cost numbers, then return to the chapter
 
 Right now, the way your species figures out if a drug works is: give it to 500 carefully selected people in a controlled environment for a few months, write a paper about it, and then give it to millions of unselected people in uncontrolled environments forever. If something goes wrong, you hope someone fills out a form. This is called "the gold standard." The gold is spray-painted.
 
-Current pharmacovigilance systems rely primarily on spontaneous adverse event reporting, which suffers from significant underreporting, lack of denominator data, and inability to quantify effect sizes. Meanwhile, the proliferation of wearable devices, health apps, and patient-reported outcomes has generated unprecedented volumes of longitudinal real-world data (RWD) that remain largely untapped for safety and efficacy signal detection.
+Current pharmacovigilance systems rely primarily on spontaneous adverse event reporting, which suffers from significant underreporting, lack of denominator data, and inability to quantify effect sizes. Meanwhile, the proliferation of wearable devices, health apps, and patient-reported outcomes has generated massive volumes of longitudinal real-world data (RWD) that remain largely untapped for safety and efficacy signal detection.
 
 ![Step 1: Let computers watch a billion people take medicine. Step 2: Test the interesting bits. You were doing Step 2 first, which is why everything costs a billion dollars.](/assets/images/dfda-spec-paper/dfda-spec-paper-section-abstract-bw-academic.jpg)
 
@@ -209,7 +209,7 @@ This data is characterized by:
 
 ### Our Contribution
 
-We present a framework that transforms real-world health data into actionable pharmacovigilance intelligence:
+We present a framework that transforms real-world health data into drug safety signals you can act on:
 
 1. **Quantitative Outcome Labels**: For each treatment, generate effect sizes (percent change from baseline) for all measured outcomes
 2. **Treatment Rankings**: Rank treatments by efficacy and safety within therapeutic categories
@@ -1711,8 +1711,8 @@ A reference implementation is available at:
 - **v1 Code Repository**: <https://github.com/decentralized-fda>
 - **Documentation**: <https://docs.dfda.earth>
 - **v2 Code Repository**: <https://github.com/mikepsinn/optimitron>
-- **Causal inference engine**: [`packages/optimizer`](https://github.com/mikepsinn/optimitron/tree/main/packages/optimizer) (`@optimitron/optimizer`) implements temporal alignment, correlations, Bradford Hill scoring, Predictor Impact Score, response curves, and outcome ranking
-- **Data adapters and generated datasets**: [`packages/data`](https://github.com/mikepsinn/optimitron/tree/main/packages/data) (`@optimitron/data`) includes local-first importers for Apple Health, Fitbit, Oura, MyFitnessPal, Withings, Google Fit, Cronometer, Strava, generic CSV, public-data fetchers, and the static dFDA medical-data snapshot
+- **Causal inference engine**: [`packages/optimizer`](https://github.com/mikepsinn/optimitron/tree/main/packages/optimizer) implements temporal alignment, correlations, Bradford Hill scoring, Predictor Impact Score, response curves, and outcome ranking
+- **Data adapters and generated datasets**: [`packages/data`](https://github.com/mikepsinn/optimitron/tree/main/packages/data) includes local-first importers for Apple Health, Fitbit, Oura, MyFitnessPal, Withings, Google Fit, Cronometer, Strava, generic CSV, public-data fetchers, and the static dFDA medical-data snapshot
 - **Web surfaces**: [`packages/web/src/app/agencies/dfda`](https://github.com/mikepsinn/optimitron/tree/main/packages/web/src/app/agencies/dfda), [`packages/web/src/app/conditions`](https://github.com/mikepsinn/optimitron/tree/main/packages/web/src/app/conditions), and [`packages/web/src/app/treatments`](https://github.com/mikepsinn/optimitron/tree/main/packages/web/src/app/treatments) expose condition pages, treatment pages, and dFDA agency routes
 - **Live evidence site**: <https://studies.dfda.earth> runs this exact PIS/Bradford Hill pipeline today: 160,698 N-of-1 trials across 36,955 health variables from over 10,000 participants, covering 162 conditions and 300+ treatments, published as ranked Outcome Labels
 

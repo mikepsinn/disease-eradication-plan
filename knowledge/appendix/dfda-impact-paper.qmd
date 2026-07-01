@@ -242,7 +242,7 @@ Approximately {{< var diseases_without_effective_treatment >}} have zero FDA-app
 >
 > - **Upfront protocol/API build:** \$15–25M
 > - **Annual protocol operations:** \$5–12M
-> - **Integration onboarding fund:** \$20-50M (one-time, to support EHR and DCT platform adoption)
+> - **Integration adoption fund:** \$20-50M (one-time, to support EHR and DCT platform adoption)
 > - **Total initiative:** ~\$40-75M upfront, \$5-12M annual
 >
 > **Using What Already Exists**: The protocol builds on existing infrastructure (DCT platforms, major EHR systems, academic medical centers, and consumer health apps). These organizations have invested billions in infrastructure that becomes more valuable through protocol interoperability.
@@ -302,7 +302,7 @@ Where:
 _Note: This ROM estimate focuses **only on the Core framework build effort and associated setup**. It represents the foundational first step. A full global implementation requires significant additional investment in broader initiatives to achieve goals of global integration, legal harmonization, and massive scale. These crucial, follow-on costs are estimated separately in the [Scenario Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs) section below and include:_
 
 - _Global EHR/Data Source Integration Effort:_ Building/buying connectors for _thousands_ of systems worldwide.
-- _Large-Scale Plugin Development:_ Funding the ecosystem of data importers, analysis tools, and visualization plugins.
+- _Large-Scale Plugin Development:_ Funding the library of data importers, analysis tools, and visualization plugins.
 - _International Legal/Regulatory Harmonization:_ Major diplomatic and legal efforts to create a global standard.
 - _Global Rollout & Adoption:_ Costs associated with driving adoption and providing training worldwide.
 - _Massive-Scale Infrastructure:_ Scaling hardware and cloud resources beyond initial targets to support millions of users.
@@ -407,7 +407,7 @@ This table presents point estimates for each scenario, with the overall range of
 | Component                                    | Best Case (Upfront / Annual) | Medium Case (Upfront / Annual) | Worst Case (Upfront / Annual) | Key Assumptions & Variables Driving Range                                                                  |
 | :------------------------------------------- | :--------------------------- | :----------------------------- | :---------------------------- | :--------------------------------------------------------------------------------------------------------- |
 | **Global Data Integration**                  | $2M / ~$0                    | $125M / $10M                   | $1.5B / $150M                 | Success of AI/automation, standards adoption, #systems, vendor cooperation.                                |
-| **Bounty & Prize Program** | $1M (Prizes) / ~$0           | $15M (Bounties) / $2M          | $50M (Major Bounties) / $10M  | Success of organic ecosystem growth vs. need to incentivize critical plugin/tool development via bounties. |
+| **Bounty & Prize Program** | $1M (Prizes) / ~$0           | $15M (Bounties) / $2M          | $50M (Major Bounties) / $10M  | Whether plugin developers show up on their own vs. need bounties to build critical tools. |
 | **Legal/Regulatory Harmonization**           | $1.5M / ~$0                  | $60M / $3M                     | $300M / $30M                  | Effectiveness of AI legal tools, political will, complexity of global law.                                 |
 | **Global Rollout & Adoption**                | ~$0 / ~$0                    | $12M / $3M                     | $125M / $30M                  | Need for training/support beyond protocol adoption, user interface complexity.                               |
 | **Governance Operations**                    | ~$0 / ~$0                    | ~$1M / $0.3M                   | ~$6M / $1M                    | Automation level, need for audits, grants, core support staff.                                             |
@@ -1029,7 +1029,7 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 1. **Organic efficiency improvement**: Clinical trial costs decrease 2-3% annually through technology adoption. Under this scenario, the marginal impact of the framework is reduced by the amount of improvement that would occur anyway. At 3%/year organic improvement over 10 years, approximately 26% of the cost reduction would occur regardless, reducing the framework's attributable benefit to ~74% of projections.
 
-2. **Alternative government priorities**: Funds are allocated to other health investments (NIH grants, hospital infrastructure, insurance subsidies). Each alternative use would require separate cost-benefit analysis. However, none of these alternatives address the core trial cost problem; they operate within the existing high-cost paradigm.
+2. **Alternative government priorities**: Funds are allocated to other health investments (NIH grants, hospital infrastructure, insurance subsidies). Each alternative use would require separate cost-benefit analysis. However, none of these alternatives address the core trial cost problem; they operate within the existing high-cost system.
 
 3. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually). The framework ROI of {{< var dfda_roi_rd_only >}}:1 substantially exceeds this threshold.
 

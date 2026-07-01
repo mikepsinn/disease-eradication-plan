@@ -175,9 +175,9 @@ This is NOT part of the {{< var treaty_campaign_total_cost >}} campaign budget. 
 
 - Name: "Global Health Treaty Initiative" or similar
 - Mission: Educate public about benefits of redirecting 1% of military budgets to health
-- Activities: Voter education, nonpartisan research, civic engagement platform
+- Activities: Voter education, nonpartisan research, referendum support platform
 - Funding: Foundation grants, individual donations
-- Budget: ~$160M (referendum education and civic engagement)
+- Budget: ~$160M (referendum education and voter outreach)
 - Tax status: Tax-deductible donations
 
 ###### Entity 2: For-Profit Political Campaign
@@ -535,7 +535,7 @@ The ~{{< var treaty_campaign_total_cost >}} VICTORY Incentive Alignment Bond cam
 ##### Timeline milestones
 
 - 1M votes: Prove the model works → Easier to sell Series A bonds
-- 100M votes: Demonstrate massive political will → Easier to sell Series B bonds
+- 100M votes: 100 million humans on record → Easier to sell Series B bonds
 - 208M votes + {{< var treaty_campaign_total_cost >}} raised: Treaty passage threshold
 
 **Post-treaty:** {{< var treaty_annual_funding >}}/year funds the implementation of your decentralized FDA, infrastructure for decentralized institutes of health, and pragmatic clinical trials.
@@ -570,7 +570,7 @@ The primary risk elimination mechanism for the **referendum campaign** (distinct
 
 - **Smart Contract Escrow:** Prize deposit funds locked until year 15 global targets met (HALE {{< var prize_target_hale_year_15 >}}, median income {{< var prize_target_median_income_year_15 >}})
 - **Automatic Refunds:** If targets are not met at year 15, Prize deposits return automatically
-- **No Collective Action Problem:** Zero-risk on-ramp eliminates the "but what if nobody else joins" hesitation
+- **No free-rider problem:** Zero-risk on-ramp eliminates the "but what if nobody else joins" hesitation
 - **Dominant Assurance Contract:** VOTE holders who recruited referendum participants allocate the PRIZE pool on success
 
 IAB capital is separate: it funds the lobbying campaign immediately and carries real risk (see [Investor Risk Analysis](treaty-investor-risk-analysis.qmd)).
@@ -732,7 +732,7 @@ This uses the same proven model that created $7T in fossil fuel subsidies [@foss
 
 ![The scaling plan: start small, expand to rich countries, use prizes to make people compete. Humans love competitions, even for things that matter.](/assets/images/campaign-financing-roadmap/campaign-financing-roadmap-section-public-engagement-policy-education-initiatives-bw-academic.jpg)
 
-- Public education and civic engagement initiatives replicated in 2 key pilot regions for the first tranche
+- Public education and voter outreach replicated in 2 key pilot regions for the first tranche
 - Scaled to 5-10 G7 nations for second-tranche public awareness initiatives
 - Prize model creates competitive dynamics for achieving public engagement milestones
 

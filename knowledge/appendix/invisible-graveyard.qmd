@@ -114,7 +114,7 @@ Without mandatory pre-market trials, the market wouldn't be blind. Knowing wheth
 
 ## Introduction
 
-The modern pharmaceutical regulatory paradigm relies on a binary licensure model: a drug is either "safe and effective" (approved) or "unsafe/ineffective" (prohibited). While Phase I trials typically establish safety within {{< var phase_1_safety_duration_years >}}, the requirement to prove statistical efficacy (Phase II/III) extends the pre-market timeline by an additional **{{< var efficacy_lag_years >}}** on average.
+The modern pharmaceutical regulatory model relies on a binary licensure model: a drug is either "safe and effective" (approved) or "unsafe/ineffective" (prohibited). While Phase I trials typically establish safety within {{< var phase_1_safety_duration_years >}}, the requirement to prove statistical efficacy (Phase II/III) extends the pre-market timeline by an additional **{{< var efficacy_lag_years >}}** on average.
 
 This study evaluates the **Bifurcated Regulatory Model (BRM)**, defined as "Safety-First / Efficacy-Later", to measure the "Invisible Graveyard": the population that dies during the regulatory latency period between safety verification and final approval.
 
@@ -172,7 +172,7 @@ The AIDS epidemic demonstrated that regulatory speed is a policy choice. AZT was
 
 **3. Hepatitis C (2013-2014): Breakthrough Designation Success**
 
-Sovaldi (sofosbuvir) received FDA Breakthrough Therapy designation and was approved December 2013, with Harvoni following in October 2014. These drugs cure HCV in 12 weeks with >95% efficacy. In 2013, HCV caused 19,368 US deaths. Critically, despite rapid approval, no Thalidomide-scale disaster occurred. The drugs' side effect profile was actually better than prior interferon-based treatments. This demonstrates that fast approval of transformative drugs is both possible and safe.
+Sovaldi (sofosbuvir) received FDA Breakthrough Therapy designation and was approved December 2013, with Harvoni following in October 2014. These drugs cure HCV in 12 weeks with >95% efficacy. In 2013, HCV caused 19,368 US deaths. Critically, despite rapid approval, no Thalidomide-scale disaster occurred. The drugs' side effect profile was actually better than prior interferon-based treatments. This demonstrates that fast approval of life-saving drugs is both possible and safe.
 
 **Implications for Causal Inference:**
 

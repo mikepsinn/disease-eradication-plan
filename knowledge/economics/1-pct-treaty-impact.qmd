@@ -1699,7 +1699,7 @@ The Monte Carlo distribution shows the full range of expected ROI outcomes when 
 
 **Interpretation**: The high conditional ROI ({{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1) means that even modest implementation probabilities yield expected values competitive with the best health interventions that have near-certain implementation.
 
-**Note**: The uncertainty analysis samples political probability from its full distribution ({{< var political_success_probability >}}). Actual probability depends on campaign execution, geopolitical conditions, and public support mobilization. The campaign strategy allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
+**Note**: The uncertainty analysis samples political probability from its full distribution ({{< var political_success_probability >}}). Actual probability depends on campaign execution, geopolitical conditions, and how many voters register publicly. The campaign strategy allocates {{< var treaty_campaign_total_cost >}} over 4 years specifically to maximize ratification probability.
 
 ### Time Inconsistency and Commitment Credibility
 
@@ -1830,7 +1830,7 @@ By collapsing the cost of clinical trials by {{< var dfda_trial_cost_reduction_f
 
 ## Implementation Strategy
 
-The economic benefits outlined above demonstrate why the {{< var treaty_reduction_pct >}} Treaty pays for itself many times over. Implementation requires political mobilization to achieve treaty adoption:
+The economic benefits outlined above demonstrate why the {{< var treaty_reduction_pct >}} Treaty pays for itself many times over. Implementation requires enough voters on record to make refusal career suicide:
 
 {{< include ../figures/five-step-strategy-flowchart.qmd >}}
 
@@ -2180,7 +2180,7 @@ Implementation requires substantial institutional development:
 - **Technical infrastructure:** Data systems, AI/ML capabilities, cybersecurity at global scale
 - **Legal frameworks:** International treaties, data privacy compliance, intellectual property harmonization
 
-**Mitigation:** Phased implementation allows capacity building concurrent with scale-up.
+**Mitigation:** Phased implementation allows infrastructure to grow concurrent with scale-up.
 
 #### Healthcare System Integration
 
@@ -2287,7 +2287,7 @@ Development agencies face a fundamental problem: the most cost-effective interve
 
 ![Buy one bed net, save one person. Sign one treaty, save everyone. Exponential beats linear, like how one match burns down more forest than one tree.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-international-development-priorities-bw-academic.jpg)
 
-**The difference**: This intervention scales exponentially through systemic change. It doesn't compete with existing development programs; it accelerates treatment discovery for all diseases affecting developing nations.
+**The difference**: This intervention scales exponentially because it changes which trials get funded. It doesn't compete with existing development programs; it accelerates treatment discovery for all diseases affecting developing nations.
 
 **Practical application**:
 
