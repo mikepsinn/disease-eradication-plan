@@ -544,9 +544,9 @@ This is why aliens don't visit.
 
 ## Papers
 
-### [The 1% Treaty: Harnessing Greed to Eradicate Disease](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)
+### [The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)
 
-[![The 1 percent Treaty: Harnessing Greed to Eradicate Disease](https://manual.warondisease.org/assets/og/1-pct-treaty-impact-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)
+[![The 1 percent Treaty: An Incentive-Compatible Approach to Ending War and Disease](https://manual.warondisease.org/assets/og/1-pct-treaty-impact-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)
 
 > 6,650 diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2 billion/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7 billion deaths, valued at $84.8 quadrillion. Cost-effectiveness: $0.00177/DALY, 50.3kx better than bed nets. Even at 1% probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard. For ceiling context, the Minimum Sustainable Trajectory (1% Treaty) reaches 1.71x the Earth baseline after 20 years, with average income at $34,972 and total output at $322 trillion. The Optimal Governance Trajectory reaches 56.7x the Earth baseline, with average income at $1.16 million versus $20,483 on the status-quo path and total output at $10.7 quadrillion ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 
