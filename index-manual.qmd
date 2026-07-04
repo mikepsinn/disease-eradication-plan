@@ -553,6 +553,14 @@ Humans aren't stupid. You invented cheese, which is milk you left out until it w
 
 Here is what should scare you: if this works, the world becomes unrecognizable. Not slightly better. Unrecognizable. Disease eradicated, income quadrupled, your species freed from the thing that has been eating it alive since before you invented writing. That future is so good your brain can't render it. 
 
+::: {.delay-cost-callout .content-visible when-format="html"}
+**Since an incentive-compatible way to end war and disease was discovered:**
+
+<span class="delay-cost-number" data-dih-delay-value="since-publication">counting</span>
+
+people will be unnecessarily tortured and brutally murdered by diseases. Every additional day we refrain from ending war and disease, about {{< var global_eventually_avoidable_disease_deaths_daily_nounit >}} more people are unnecessarily tortured and brutally murdered by diseases. This is unfortunate.
+:::
+
 Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts. Every minute of delay, {{< var global_disease_deaths_per_minute_nounit >}} humans permanently stop. Your vote saves {{< var voter_lives_saved >}} and prevents {{< var voter_suffering_hours_prevented >}} of suffering.
 
 ::: {.content-hidden when-format="epub"}

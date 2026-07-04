@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 440 parameters used in the analysis, organized by type:
+This appendix documents all 441 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 149
-- Calculated values: 217
+- Calculated values: 218
 - Core definitions: 74
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (217 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
+[Calculated Values](#sec-calculated) (218 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -4740,6 +4740,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_disease_economic_burden_annual.qmd >}}
+
+:::
+
+### Eventually Avoidable Deaths per Day: 139 thousand deaths/day {#sec-global_eventually_avoidable_disease_deaths_daily}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Daily global deaths that are eventually avoidable with sufficient biomedical research. Each day the disease-eradication date slips adds roughly this many deaths to the total schedule cost.
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7,500 deaths/day)
+- [Eventually Avoidable Death Percentage](#sec-eventually_avoidable_death_pct): 92.6% (95% CI: 50% - 98%)
+
+$$
+\begin{gathered}
+Deaths_{avoid,daily} \\
+= Deaths_{disease,daily} \times Pct_{avoid,death} \\
+= 150{,}000 \times 92.6\% \\
+= 139{,}000
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_eventually_avoidable_disease_deaths_daily.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_eventually_avoidable_disease_deaths_daily.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_eventually_avoidable_disease_deaths_daily.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_eventually_avoidable_disease_deaths_daily.qmd >}}
 
 :::
 

@@ -34,3 +34,202 @@
         line-height: 1.3;
     }
 }
+
+/* Live delay counter */
+.dih-delay-counter {
+    position: fixed;
+    left: 18px;
+    right: 92px;
+    bottom: 18px;
+    z-index: 9997;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: end;
+    max-width: 920px;
+    padding: 0.85rem 1rem;
+    border: 1px solid #2a2a2a;
+    border-left: 5px solid #b42318;
+    background: #fffdf7;
+    color: #171717;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.dih-delay-counter-hidden {
+    display: none;
+}
+
+.dih-delay-counter-close {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.35rem;
+    width: 28px;
+    height: 28px;
+    border: 0;
+    background: transparent;
+    color: #444;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dih-delay-counter-close:hover {
+    color: #b42318;
+}
+
+.dih-delay-counter-kicker {
+    font-size: 0.72rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 800;
+    color: #b42318;
+}
+
+.dih-delay-counter-number {
+    margin-top: 0.1rem;
+    font-size: clamp(1.8rem, 4.4vw, 3rem);
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: 0;
+    font-variant-numeric: tabular-nums;
+}
+
+.dih-delay-counter-copy,
+.dih-delay-counter-note {
+    max-width: 48rem;
+    font-size: 0.88rem;
+    line-height: 1.35;
+}
+
+.dih-delay-counter-copy {
+    margin-top: 0.3rem;
+    font-weight: 700;
+}
+
+.dih-delay-counter-note {
+    margin-top: 0.15rem;
+    color: #404040;
+}
+
+.dih-delay-counter-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.45rem;
+    padding-right: 1.5rem;
+}
+
+.dih-delay-counter-actions a,
+.dih-delay-counter-actions button {
+    min-height: 36px;
+    border: 1px solid #2a2a2a;
+    background: #171717;
+    color: #fff;
+    padding: 0.45rem 0.7rem;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dih-delay-counter-actions a:first-child {
+    background: #fffdf7;
+    color: #171717;
+}
+
+.dih-delay-counter-actions a:hover,
+.dih-delay-counter-actions button:hover {
+    background: #b42318;
+    border-color: #b42318;
+    color: #fff;
+}
+
+body.dih-delay-counter-visible {
+    padding-bottom: 224px;
+}
+
+.delay-cost-callout {
+    margin: 1.75rem 0;
+    padding: 1rem 1.1rem;
+    border: 1px solid #2a2a2a;
+    border-left: 5px solid #b42318;
+    background: #fffdf7;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.delay-cost-callout p {
+    margin: 0.45rem 0;
+}
+
+.delay-cost-callout p:first-child {
+    margin-top: 0;
+}
+
+.delay-cost-callout p:last-child {
+    margin-bottom: 0;
+}
+
+.delay-cost-number {
+    display: block;
+    margin: 0.4rem 0;
+    font-size: clamp(1.9rem, 5vw, 3.6rem);
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: 0;
+    font-variant-numeric: tabular-nums;
+    color: #b42318;
+}
+
+body.quarto-dark .dih-delay-counter,
+body.quarto-dark .delay-cost-callout {
+    background: #161412;
+    border-color: #f1e4d4;
+    color: #f8f0e6;
+}
+
+body.quarto-dark .dih-delay-counter-note {
+    color: #d8cbbc;
+}
+
+body.quarto-dark .dih-delay-counter-actions a:first-child {
+    background: #161412;
+    color: #f8f0e6;
+    border-color: #f1e4d4;
+}
+
+@media (max-width: 767px) {
+    .dih-delay-counter {
+        left: 10px;
+        right: 10px;
+        bottom: 72px;
+        grid-template-columns: 1fr;
+        align-items: stretch;
+        padding: 0.8rem 0.85rem;
+    }
+
+    .dih-delay-counter-actions {
+        justify-content: flex-start;
+        padding-right: 1.75rem;
+    }
+
+    .dih-delay-counter-actions a,
+    .dih-delay-counter-actions button {
+        flex: 1 1 8rem;
+    }
+
+    body.dih-delay-counter-visible {
+        padding-bottom: 480px;
+    }
+}
+
+@media print {
+    .dih-delay-counter,
+    .delay-cost-callout {
+        display: none !important;
+    }
+}

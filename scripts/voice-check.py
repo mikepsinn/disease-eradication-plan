@@ -80,6 +80,14 @@ ASYMMETRY_OK = re.compile(
     re.I,
 )
 
+# "demand letter" is the real legal document's name when the passage is about actual
+# litigation mechanics (counsel, motions, filings, lawsuits). Still flag it as
+# finance-speak when used loosely outside a legal scene.
+DEMAND_LETTER_OK = re.compile(
+    r"counsel|lawsuit|litigat|plaintiff|defendant|court|filing|filed|motion|attorney|\bsue[sd]?\b",
+    re.I,
+)
+
 # "synergy/synergies/synergistic" is precise pharmacology when the line is about drugs,
 # treatments, or their interactions (drug synergy = a supra-additive combination effect).
 SYNERGY_OK = re.compile(
@@ -137,6 +145,9 @@ def check(path):
                             continue
                     # precise pharmacology use of synergy -> not a corporate buzzword
                     if frag.lower().startswith("synerg") and SYNERGY_OK.search(line):
+                        continue
+                    # the real legal document in a litigation passage -> not finance jargon
+                    if frag.lower() == "demand letter" and DEMAND_LETTER_OK.search(line):
                         continue
                     # a buzzword in 'scare quotes' is being mocked, which the guide allows
                     if (cat in ("corporate", "finance", "whiteboard", "cliche")

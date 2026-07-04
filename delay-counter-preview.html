@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="quarto:offset" content="">
+  <meta name="dih-publication-date" content="2025-10-04">
+  <title>Delay Counter Preview</title>
+  <link rel="stylesheet" href="book-overrides.css">
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f7f3ea;
+      color: #171717;
+    }
+
+    main {
+      width: min(920px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 48px 0 220px;
+    }
+
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: clamp(2.2rem, 7vw, 5.6rem);
+      line-height: 0.92;
+      letter-spacing: 0;
+    }
+
+    .preview-kicker {
+      margin: 0 0 2rem;
+      color: #b42318;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .preview-copy {
+      max-width: 56rem;
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+      line-height: 1.48;
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 2rem 0;
+    }
+
+    .preview-stat {
+      border: 1px solid #2a2a2a;
+      background: #fffdf7;
+      padding: 0.9rem;
+    }
+
+    .preview-stat strong {
+      display: block;
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      line-height: 1;
+      color: #b42318;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .preview-stat span {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .preview-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+
+    .preview-controls button,
+    .preview-controls a,
+    .preview-fab-action,
+    .preview-fab-main {
+      border: 1px solid #2a2a2a;
+      background: #171717;
+      color: #fff;
+      padding: 0.65rem 0.85rem;
+      font: inherit;
+      font-weight: 850;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .preview-controls a:first-child {
+      background: #fffdf7;
+      color: #171717;
+    }
+
+    .preview-fab {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 9998;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .preview-fab-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .preview-fab-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      min-height: 38px;
+      padding: 0.55rem 0.7rem;
+      background: #fffdf7;
+      color: #171717;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+    }
+
+    .preview-fab-action-icon {
+      display: inline-flex;
+      width: 20px;
+      height: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .preview-fab-main {
+      width: 52px;
+      height: 52px;
+      border-radius: 999px;
+      background: #9b7650;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 767px) {
+      main {
+        padding-top: 28px;
+      }
+
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-fab-action-label {
+        max-width: 10rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="preview-kicker">Standalone local preview</p>
+    <h1>Since an Incentive-Compatible Way to End War and Disease Was Discovered</h1>
+    <p class="preview-copy">
+      This is the counter as a plain HTML file. Open it directly from disk. No Quarto render, no local server, no directory listing, no ritual chanting at port numbers.
+    </p>
+
+    <section class="delay-cost-callout">
+      <p><strong>Since an incentive-compatible way to end war and disease was discovered:</strong></p>
+      <p><span class="delay-cost-number" data-dih-delay-value="since-publication">counting</span></p>
+      <p>people will be unnecessarily tortured and brutally murdered by diseases. Every additional day we refrain from ending war and disease, about <span data-dih-delay-value="per-day" data-dih-delay-compact="true">139K</span> more people are unnecessarily tortured and brutally murdered by diseases. This is unfortunate.</p>
+    </section>
+
+    <section class="preview-grid" aria-label="Live counter values">
+      <div class="preview-stat">
+        <strong data-dih-delay-value="per-day" data-dih-delay-compact="true">139K</strong>
+        <span>unnecessary murders per day of delay</span>
+      </div>
+      <div class="preview-stat">
+        <strong data-dih-delay-value="per-minute">96</strong>
+        <span>per minute</span>
+      </div>
+      <div class="preview-stat">
+        <strong data-dih-delay-value="per-second">1.6</strong>
+        <span>per second</span>
+      </div>
+    </section>
+
+    <div class="preview-controls">
+      <a href="https://warondisease.org">Please take 30 seconds to end war and disease</a>
+      <button id="preview-reset-counter" type="button">Reset dismissed counter</button>
+    </div>
+  </main>
+
+  <div id="dih-fab" class="preview-fab" aria-label="Counter tools">
+    <div id="preview-fab-actions" class="preview-fab-actions"></div>
+    <button class="preview-fab-main dih-fab-main" type="button" aria-label="Counter tools" title="Counter tools">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3v3"></path>
+        <path d="M12 18v3"></path>
+        <path d="M3 12h3"></path>
+        <path d="M18 12h3"></path>
+        <circle cx="12" cy="12" r="3"></circle>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    window.dihFAB = {
+      addAction: function(id, label, icon, handler) {
+        var actions = document.getElementById('preview-fab-actions');
+        var button = document.createElement('button');
+        button.id = 'dih-fab-' + id;
+        button.className = 'preview-fab-action dih-fab-action';
+        button.type = 'button';
+        button.title = label;
+        button.setAttribute('aria-label', label);
+        button.innerHTML = '<span class="preview-fab-action-icon dih-fab-action-icon">' + icon + '</span><span class="preview-fab-action-label dih-fab-action-label">' + label + '</span>';
+        button.addEventListener('click', handler);
+        actions.appendChild(button);
+      }
+    };
+
+    document.getElementById('preview-reset-counter').addEventListener('click', function() {
+      localStorage.setItem('dih-delay-counter-dismissed', 'false');
+      window.location.reload();
+    });
+  </script>
+  <script src="assets/js/mortality-counters.js"></script>
+</body>
+</html>

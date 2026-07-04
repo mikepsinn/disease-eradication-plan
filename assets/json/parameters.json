@@ -5153,6 +5153,22 @@
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html"
     },
+    "GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY": {
+      "value": 138941.7118512781,
+      "formatted": "139 thousand deaths/day",
+      "unit": "deaths/day",
+      "description": "Daily global deaths that are eventually avoidable with sufficient biomedical research. Each day the disease-eradication date slips adds roughly this many deaths to the total schedule cost.",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "confidence": "medium",
+      "formula": "GLOBAL_DISEASE_DEATHS_DAILY × EVENTUALLY_AVOIDABLE_DEATH_PCT",
+      "inputs": [
+        "EVENTUALLY_AVOIDABLE_DEATH_PCT",
+        "GLOBAL_DISEASE_DEATHS_DAILY"
+      ],
+      "computeExpr": "(GLOBAL_DISEASE_DEATHS_DAILY * EVENTUALLY_AVOIDABLE_DEATH_PCT)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/where-am-i-wrong.html"
+    },
     "GLOBAL_GDP_2025": {
       "value": 115000000000000.0,
       "formatted": "$115 trillion",

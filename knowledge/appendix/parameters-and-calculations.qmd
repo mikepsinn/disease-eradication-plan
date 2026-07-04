@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 844 parameters used in the analysis, organized by type:
+This appendix documents all 845 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 236
-- Calculated values: 430
+- Calculated values: 431
 - Core definitions: 178
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (430 parameters) • [External Data Sources](#sec-external) (236 parameters) • [Core Definitions](#sec-definitions) (178 parameters)
+[Calculated Values](#sec-calculated) (431 parameters) • [External Data Sources](#sec-external) (236 parameters) • [Core Definitions](#sec-definitions) (178 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -13209,6 +13209,49 @@ $$
 - [The Cost of Disease](../problem/cost-of-disease.html)
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
+
+:::
+
+### Eventually Avoidable Deaths per Day: 139 thousand deaths/day {#sec-global_eventually_avoidable_disease_deaths_daily}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Daily global deaths that are eventually avoidable with sufficient biomedical research. Each day the disease-eradication date slips adds roughly this many deaths to the total schedule cost.
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7,500 deaths/day)
+- [Eventually Avoidable Death Percentage](#sec-eventually_avoidable_death_pct): 92.6% (95% CI: 50% - 98%)
+
+$$
+\begin{gathered}
+Deaths_{avoid,daily} \\
+= Deaths_{disease,daily} \times Pct_{avoid,death} \\
+= 150{,}000 \times 92.6\% \\
+= 139{,}000
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_eventually_avoidable_disease_deaths_daily.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_eventually_avoidable_disease_deaths_daily.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_eventually_avoidable_disease_deaths_daily.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_eventually_avoidable_disease_deaths_daily.qmd >}}
+
+**Used in:**
+
+- [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
+- [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
 
 :::
 

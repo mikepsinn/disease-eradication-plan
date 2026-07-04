@@ -4383,6 +4383,21 @@ EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
     latex_symbol=r"Pct_{avoid,death}",  # LaTeX symbol for equations
 )  # ~92.1% central, but 50-98% plausible range
 
+GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY = Parameter(
+    GLOBAL_DISEASE_DEATHS_DAILY * (1 - _unavoidable_pct),
+    manual_ref="knowledge/appendix/where-am-i-wrong.qmd",
+    source_type="calculated",
+    description="Daily global deaths that are eventually avoidable with sufficient biomedical research. Each day the disease-eradication date slips adds roughly this many deaths to the total schedule cost.",
+    display_name="Eventually Avoidable Deaths per Day",
+    unit="deaths/day",
+    formula="GLOBAL_DISEASE_DEATHS_DAILY × EVENTUALLY_AVOIDABLE_DEATH_PCT",
+    confidence="medium",
+    keywords=["mortality", "delay", "eventually avoidable", "daily deaths", "schedule cost"],
+    latex_symbol=r"Deaths_{avoid,daily}",
+    inputs=["GLOBAL_DISEASE_DEATHS_DAILY", "EVENTUALLY_AVOIDABLE_DEATH_PCT"],
+    compute=lambda ctx: ctx["GLOBAL_DISEASE_DEATHS_DAILY"] * ctx["EVENTUALLY_AVOIDABLE_DEATH_PCT"],
+)
+
 # ============================================================================
 # GLOBAL DALY BURDEN (WHO Global Burden of Disease)
 # ============================================================================

@@ -6505,6 +6505,22 @@ export const GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL: Parameter = {
   manualPageTitle: "The Cost of Disease",
 };
 
+export const GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY: Parameter = {
+  value: 138941.7118512781,
+  parameterName: "GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-global_eventually_avoidable_disease_deaths_daily",
+  unit: "deaths/day",
+  displayName: "Eventually Avoidable Deaths per Day",
+  description: "Daily global deaths that are eventually avoidable with sufficient biomedical research. Each day the disease-eradication date slips adds roughly this many deaths to the total schedule cost.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "GLOBAL_DISEASE_DEATHS_DAILY × EVENTUALLY_AVOIDABLE_DEATH_PCT",
+  latex: "\\begin{gathered}\nDeaths_{avoid,daily} \\\\\n= Deaths_{disease,daily} \\times Pct_{avoid,death} \\\\\n= 150{,}000 \\times 92.6\\% \\\\\n= 139{,}000\n\\end{gathered}",
+  confidenceInterval: [95672.50666696663, 157290.95119782313],
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/where-am-i-wrong.html",
+  manualPageTitle: "Where Am I Wrong?",
+};
+
 export const GLOBAL_GOVERNMENT_EXPENSE_ANNUAL: Parameter = {
   value: 36547000000000.0,
   parameterName: "GLOBAL_GOVERNMENT_EXPENSE_ANNUAL",
@@ -13528,6 +13544,7 @@ export const parameters = {
   GLOBAL_DISEASE_DEATHS_PER_MINUTE,
   GLOBAL_DISEASE_ECONOMIC_BURDEN_ANNUAL,
   GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL,
+  GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY,
   GLOBAL_GOVERNMENT_EXPENSE_ANNUAL,
   GLOBAL_HALE_GAP,
   GLOBAL_INDUSTRY_CLINICAL_TRIALS_SPENDING_ANNUAL,
@@ -16473,9 +16490,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 844,
+  total: 845,
   external: 236,
-  calculated: 430,
+  calculated: 431,
   definitions: 178,
   citations: 181,
 } as const;

@@ -332,6 +332,7 @@ metadata:
   # Version and edition
   version: "1.0.0"
   edition: "First Edition"
+  published-date: "2025-10-04"
   
   # Copyright and licensing
   copyright: "© 2025 Mike P. Sinn"
@@ -539,6 +540,7 @@ format:
           <!-- Chat link registered in unified FAB by site-enhancements.js -->
           <meta name="dih-chat-url" content="https://transmit.warondisease.org">
           <meta name="dih-hide-index-title" content="true">
+          <meta name="dih-publication-date" content="2025-10-04">
           <!-- RSS feed discovery -->
           <link rel="alternate" type="application/rss+xml" title="How to End War and Disease" href="/assets/feed.xml">
           <!-- Icons (project-specific) -->
