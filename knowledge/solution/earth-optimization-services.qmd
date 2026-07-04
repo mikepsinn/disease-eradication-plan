@@ -49,7 +49,7 @@ Every regional branch ships with four components. They are not metaphors. They a
 
 **[Optimitron](optimocracy.qmd)** is the policy engine. It reads time-series data from thousands of jurisdictions and optimizes two numbers: median after-tax inflation-adjusted income and median health-adjusted life expectancy. The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025] asks which laws to enact, replace, repeal, or maintain. The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025] asks where the next public dollar stops buying much life or income and starts buying lobbyist furniture. Same appliance. Two knobs.
 
-**[Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025]** is how the humans say what they want without being handed a 4,000-line budget and a sedative. Each person answers small pairwise slider questions: "split $100 between clinical trials and missile defense." This captures intensity, not just yes/no grunting. RAPPA aggregates the comparisons into preference weights. Citizen Alignment Scores show which politicians did what the humans asked. [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] add consequences, a technology your political system has been avoiding.
+**[Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025]** is how the humans say what they want without being handed a 4,000-line budget and a sedative. Each person answers small pairwise slider questions: "split $100 between clinical trials and missiles." This captures intensity, not just yes/no grunting. RAPPA aggregates the comparisons into preference weights. Citizen Alignment Scores show which politicians did what the humans asked. [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] add consequences, a technology your political system has been avoiding.
 
 **Wishonia Love** explains the machine. This is necessary because the machine's main proposal is "measure what works, fund what works, stop funding what kills you," and your species has made this sound complicated.
 
@@ -65,6 +65,8 @@ Every civilization gets the same four products. We tried offering customization.
 
 **What it does:** Counts which jurisdictions kept their citizens alive, and which buried them, then stops asking the ones who buried them for advice.
 
+**Retail price:** Included. The data is free.
+
 Your planet has 10,000 jurisdictions, each trying slightly different policies. Some of them produce healthy, wealthy, well-educated citizens. Others produce the opposite. Right now, you determine which is which by having politicians argue on television. The [Evidence Engine](optimocracy.qmd) replaces the arguing with counting.
 
 The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025] examines what every jurisdiction tried and what happened next. It uses synthetic control, difference-in-differences, regression discontinuity, and Bradford Hill criteria so a pretty correlation cannot sneak into the cockpit wearing a fake mustache. The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025] calculates the optimal spending level for each public-good category, then ranks the gaps by marginal return and evidence quality. Both come standard.
@@ -79,6 +81,8 @@ Policy by regression discontinuity. The previous method was "whoever paid the mo
 
 **What it does:** Finds the money.
 
+**Retail price:** {{< var treaty_campaign_total_cost >}} (one-time). **Generates:** {{< var treaty_annual_funding >}}/year, every year, until your species runs out of diseases or patience.
+
 Our flagship feature: knowing where the trillions went.
 
 You do not need new money. You need to stop losing the money you have. You maintain {{< var global_warhead_count_nounit >}} nuclear warheads. You can only end your civilization once. The other {{< var nuclear_winter_overkill_factor_nounit >}} minus 1 endings are in storage, costing money, doing nothing. The [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] moves 1% of every nation's military budget to clinical trials. Everyone reduces equally. Nobody is easier to invade. Everyone has {{< var dfda_trial_capacity_multiplier >}} more clinical trials. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
@@ -89,21 +93,23 @@ Centuries of waiting, folded down into one human life. The diseases were never g
 
 ### Product 3: The Loving Takeover
 
-**What it does:** Buys the opposition and makes it richer.
+**What it does:** Upgrades the companies that own your government from "accidentally suicidal" to "profitable."
 
-Congratulations on your purchase: the companies that own your government.
+**Retail price:** {{< var defense_takeover_cost_total >}}. **You receive:** Voting shares in the companies that currently own your government.
 
-The companies that build your weapons also employ your best engineers and your most effective lobbyists. Destroying them would be wasteful. Fighting them would be expensive. [Buying them](../appendix/loving-takeover.qmd) is more fun.
+Step right up and observe: the companies that build your weapons are, by any rational accounting, bad at being companies. They pay their best engineers to shrink the economy they sell into. Their shareholders get the same diseases as everyone else. Their CEO's mother has Parkinson's, and there is no trial because the money that would have funded it is currently a missile. They are spending money to make themselves poorer, sicker, and eventually dead. This is not an adversary. This is a company in need of better management.
 
-You buy shares. Shares come with voting rights. Voting rights let you redirect lobbying budgets. The shareholders get a better long-term strategy. The employees get longer-lived (the treaty adds approximately {{< var avg_life_extension_per_beneficiary >}} to every beneficiary, including the people you just bought). The lobbyists get better clients. The engineers switch from guidance systems to surgical robots. Same math. Fewer craters.
+You [buy shares](../appendix/loving-takeover.qmd). Shares come with voting rights. Voting rights let you redirect lobbying budgets. The engineers switch from guidance systems to surgical robots. Same math. Fewer craters. The shareholders get appreciation in a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. The CEO's mother gets her Parkinson's trial. The lobbyists get a raise. Nobody loses anything because there was nothing to lose: the previous arrangement was losing money for everyone in it simultaneously, which takes real effort.
 
-Nobody loses anything. The CEO's mother gets her Parkinson's trial. The shareholders get appreciation. The lobbyists get a raise. The species gets to continue existing. We call this a Loving Takeover because, on most planets, the word for "everyone involved ends up better off" is just "love."
+We call this a Loving Takeover because, on most planets, the word for "everyone involved ends up better off" is just "love."
 
-*"We were initially resistant. Then our chief weapons designer's daughter was cured of a disease he had been told was untreatable. He now runs our largest medical robotics division. He makes more money. He sleeps better. He no longer explains to strangers at parties what his company builds by changing the subject." (Military sector client, Spiral Arm 4)*
+*"We were initially resistant. Then our chief weapons designer's daughter was cured of a disease he had been told was untreatable. He now runs our largest medical robotics division. He makes more money. He sleeps better. He stopped changing the subject at parties." (Military sector client, Spiral Arm 4)*
 
 ### Product 4: The Direct Allocation System
 
 **What it does:** Lets the population spend its own money.
+
+**Retail price:** Free. Currently paying: whatever your representatives' donors feel like.
 
 Your current system: you elect representatives. The representatives are purchased by industries. The industries write the laws. The laws benefit the industries. You pay for this. You call it "democracy." On my planet, we call it an odd thing to volunteer for.
 
@@ -117,6 +123,8 @@ On *Who Wants to Be a Millionaire*, the studio audience picked the right answer 
 
 **What it does:** Moves the money so the lobbyist who used to sell missiles makes rent selling cures instead.
 
+**Returns to investors:** {{< var victory_bond_annual_return_pct >}}/year. Previous method (moral persuasion): 0%/year for 9,000 years.
+
 Every interest group on your planet currently profits from your dysfunction. Pharma profits from chronic treatment. Military industry profits from war. Politicians profit from the lobbyists who fund both. [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] rearrange the profit motive so that the most profitable thing anyone can do is [cure a disease](aligning-incentives.qmd).
 
 Bondholders receive {{< var victory_bond_annual_return_pct >}} annually when the treaty passes. This is more than military lobbying currently pays. Lobbyists go where the money is. We moved the money.
@@ -125,9 +133,9 @@ Bondholders receive {{< var victory_bond_annual_return_pct >}} annually when the
 
 ## How the Products Fit Together
 
-The four products are one machine.
+The four products are one machine. Allow me to demonstrate.
 
-You buy the companies that currently control your government (Product 3). This gives you their lobbying apparatus, which is the most effective policy-change mechanism your species has ever built. You point it at the [Evidence Engine](optimocracy.qmd) (Product 1), which calculates the policies that maximize two numbers: median health-adjusted life expectancy and median after-tax inflation-adjusted income. The lobbyists push for those policies instead of the ones their previous owners wanted. The [1% Treaty](../solution/1-percent-treaty.qmd) (Product 2) funds it. The [Wishocracy](wishocracy.qmd) (Product 4) makes sure no one can redirect the lobbying back.
+You buy the companies that currently control your government (the Takeover). This gives you their lobbying apparatus, which is the most effective policy-change mechanism your species has ever built. You spent 10,000 years perfecting it; thank you. Point it at the [Evidence Engine](optimocracy.qmd), which calculates the policies that maximize two numbers: median healthy life expectancy and median after-tax income. The lobbyists push for those policies instead of whatever their previous owners wanted. The [1% Treaty](../solution/1-percent-treaty.qmd) funds it. The [Wishocracy](wishocracy.qmd) makes sure no one can redirect the lobbying back.
 
 That is the entire service. Everything else is wiring you do not have to look at, the way you do not look inside the toilet tank that already knows when to stop.
 
@@ -137,82 +145,31 @@ Your current system uses the same components in the opposite order: companies bu
 
 ## What You Get Back
 
-Most products on your planet come with one benefit. A car moves you. A drug treats one disease, if one exists, which for most of them it does not yet. This one comes with a single downside and thirteen upsides, which is an unusual ratio, so we itemize it.
+Most products on your planet come with one benefit. A toaster makes toast. A car moves you from the place you do not want to be to the place you do not want to go. This product has the unusual property of making nearly everything else you own more valuable at the same time, because the same act that ends war and disease happens to end the thing that has been eating your economy alive since before you invented accounting.
 
-**The downside, in full.** If the campaign fails completely, you are left holding shares in the companies that currently run your government. They return roughly what military contractor stocks have always returned, and because we charge no carry and no management fee, you keep more of that than your neighbor keeps from the fund he is in. That is the floor. There is no version of this where the floor drops below "a slightly-better-than-average index fund." We have checked. Repeatedly. It is the least interesting part of the product, which is why we are moving on.
+**The downside, in full.** If the campaign fails completely, you own shares in the companies that currently run your government. They return roughly what weapons stocks have always returned, with no management fee. The floor is "you accidentally bought a weapons-maker ETF with no fees." We have checked. Repeatedly. It is the least interesting part of the product.
 
-**The upside, which stacks.** If it works, your return does not arrive through one door. It arrives through thirteen at once, because curing disease and ending war happen to make almost everything else more valuable at the same time:
+**The upside, which stacks.** The economy gets {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger by year 15. The companies you own capture that larger economy. Your taxes fall because the [waste that funded them](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] stops. Your other investments rise because a healthy workforce in a peaceful economy produces more than a sick one in an expensive arms race. Disease stops eating {{< var disease_burden_gdp_drag_pct >}} of GDP. War stops eating the rest. Your money lasts longer because [you do](../call-to-action/your-personal-benefits.qmd). Thirteen separate return channels deliver this simultaneously, which we would list individually except that numbered lists of investment benefits are how your species signals "I am a consultant, and I charge by the slide." (The [Earth Optimization Fund](../economics/earth-optimization-fund.qmd) page lists them, with a calculator that lets you set your own probabilities.)
 
-1. **Buying pressure.** Coordinated demand against a fixed supply of shares raises the price directly. [Mechanism](../appendix/loving-takeover.qmd).
-2. **Credibility repricing.** As success becomes likely, the market prices it in. Buy before it does, and you keep the difference. [Terms](../economics/earth-optimization-fund.qmd).
-3. **The pivot.** Comes in two trim levels. The *Deluxe package* (full [Wishonia optimization](../economics/gdp-trajectories.qmd)) makes the economy roughly {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger by year 15; the *Light package* (the 1% Treaty alone) is already ~{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}. The companies you own capture that larger economy, and "not dying" is a larger market than "killing."
-4. **Disease gets cheap.** The [dFDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] makes cures faster and cheaper. A workforce that is alive and well produces and buys more. Every company you own is worth more in a world that is not sick.
-5. **Bureaucracy gets cheap.** [Algorithmic administration](../appendix/algorithmic-public-administration-paper.qmd) replaces the agencies. The compliance overhead every company pays merely to exist falls.
-6. **Your taxes fall, on everything.** The reclaimed waste lowers the tax on this investment and on every other thing you own, so your after-tax return rises across your entire portfolio, not just this slice. [The dysfunction tax](../appendix/political-dysfunction-tax.qmd).
-7. **Regulation gets rational.** Policy chosen by what measurably works removes the regulatory drag companies currently price in as pure friction. (See "Why Your Government Does Not Have a Thermostat," below.)
-8. **War gets rarer.** Less organized violence is a [peace dividend](../economics/peace-dividend.qmd): less destruction, more stability, lower risk on everything you hold.
-9. **The lobbying comes back.** The companies stop spending billions on lobbying that loses money for their own shareholders. That line item returns to you. [Tier 1](../appendix/loving-takeover.qmd).
-10. **The big number.** The [political dysfunction tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025], roughly {{< var political_dysfunction_global_opportunity_cost_total >}} a year of recoverable waste, stops being wasted. Some of it becomes your return.
-11. **Your whole net worth rides along.** The one people miss: a larger economy lifts everything you own that tracks it, and some of the public-good leakage lands in the rest of your balance sheet. [The number you are actually betting](../economics/earth-optimization-fund.qmd).
-12. **Your money stays usable.** Every extra healthy year is a year you can still spend what you saved. [Your money is worthless the day you die](../call-to-action/your-personal-benefits.qmd).
-13. **Nobody skims it.** Money and influence are [disentangled](incentive-alignment-bonds.qmd): no one sits in the middle taking a cut, so more of every gain above reaches you instead of an intermediary.
+The real oddity is a fourteenth: you are not merely buying a position. You are buying the repair of the casino your entire net worth is already sitting in. Your Warren Buffett beat your market two-to-one for sixty years and *still* rode a roller-coaster, because he was investing inside a system that periodically robs the table through money-printing booms, busts, and war. Every investor on your planet eats that volatility as if it were weather. It is not weather. It is policy. This is the only product on the shelf that proposes to fix the table itself.
 
-One downside, capped at "ordinary." Thirteen upsides, compounding on each other and on the rest of your money. We did not engineer the lopsided odds on purpose. It is lopsided because the same act that ends war and disease also happens to make nearly everything else worth more.
+## How It Gets Around
 
-And there is a fourteenth thing, which is not another channel but the reason the thirteen are not lumpy the way every other investment is. Your Warren Buffett beat your market two-to-one for sixty years and *still* rode a roller-coaster, because he was investing inside a system that periodically robs the table: money-printing booms, disorderly busts, malinvestment, regulatory whiplash, war. Every investor on your planet eats that volatility as if it were weather. It is not weather. It is policy, and policy is a choice. This is the only product on the shelf that proposes to fix the table itself. You are not merely buying a position. You are buying the repair of the casino your entire net worth is already sitting in.
+Step this way. The machine has two moving parts, and most clients overlook how they fit together until they see it working.
 
-For the exact terms, the launch sequence, the [return ladder, and why this is not Buffett](../economics/earth-optimization-fund.qmd), see the Earth Optimization Fund page, including a calculator that lets you set your own probabilities.
+The [Loving Takeover](../appendix/loving-takeover.qmd) is the capital engine. You buy shares, gain board seats, redirect lobbying. Capital in, better policy out. This costs {{< var defense_takeover_cost_total >}}.
 
-*"I came for the investment thesis. I stayed because my other, unrelated investments also rose, my taxes fell, and I stopped dying. The cross-selling on this product is extraordinary." (Diversified holder, Sector 12)*
+The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is the recruitment engine. You bring in voters for the [1% Treaty](../solution/1-percent-treaty.qmd), and for every verified human you recruit, you earn Earth Optimization Points: a claim on a prize pool that grows with every new person. The earlier you recruit, the more each point is worth when the pool pays out. You cannot buy or sell a vote (one per human, not tradeable, separate from the points entirely). We pay you to find the voters, not to be one. Money and influence sit at separate tables, which is the entire point of the building.
 
-## Why It Spreads
-
-The Standard Package has two moving parts that most clients overlook until they see them working together.
-
-The [Loving Takeover](../appendix/loving-takeover.qmd) is the capital mechanism. You buy shares, gain board control, redirect lobbying. This costs {{< var defense_takeover_cost_total >}}. If the thesis works, shareholders may benefit from better strategy and a larger economy. Capital in, more capital out.
-
-The [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] is the distribution mechanism. You recruit voters for the [1% Treaty](../solution/1-percent-treaty.qmd), and for every verified human you bring in you earn Earth Optimization Points: a claim on the prize pool. Every new person makes the pool bigger, so the earlier you recruit, the more each point is finally worth. This is how something with almost no money today pays you out of the world it builds tomorrow. You do not need to understand the thesis. You need to want money. What you cannot do is buy or sell a vote: the vote is one per human, not for sale, not tradeable, and separate from the points entirely. We pay you to find the voters, not to be one. Money and influence sit at separate tables, which is the entire point of the building.
-
-On most planets, these two mechanisms are separate programs run by separate departments that compete for the same budget. On your planet, we wired them together. This is the part that matters.
-
-::: {.diagram}
-```
-EARTH OPTIMIZATION SERVICES
-
-EOS, Inc. (Delaware C-corp) / sponsor
- |
- +-- EOS equity (the activist vehicle)
- |    +-- First: private holding company (Reg D 506(c), accredited investors)
- |    +-- Goal: public listing as fast as campaign results allow
- |    +-- Mission-lock (after first close): steward holds voting shares, bound to Wishocracy
- |
- +-- Operating products
- |    +-- Manual: evidence, citations, arguments
- |    +-- Optimitron: policy evidence engine
- |    +-- Wishocracy: public preference and accountability layer
- |    +-- dFDA / DIH: trial and medical-funding machinery
- |
- +-- Deeper mechanisms
-      +-- Loving Takeover: how shareholders take the wheel
-      +-- IABs: later campaign bonds
-      +-- Prize / EOPs: recruitment and conditional-prize system
-      +-- 501(c)(3) / 501(c)(4) / PAC: SEPARATE entities, not funded by EOS equity
-```
-:::
-
-This is why EOS equity comes first. Normal humans can understand it: buy the companies that buy policy, then make the policy less stupid. The other machinery still matters. It just does not need to be printed on the cereal box.
+Now watch what happens when you wire them together:
 
 The Takeover generates returns. The returns fund the Prize. The Prize pays people to recruit voters. The voters create awareness. The awareness attracts investors. The investors fund more Takeover. The Takeover generates more returns.
 
-This is not a metaphor. It is a feedback loop with the same structure as compound interest, except the compounding variable is people instead of dollars.
+This is compound interest, except the compounding variable is people instead of dollars. Your species has two categories. The first responds to arguments (they read these numbers, check the math, and act). The second responds to cash (they will not read anything, but they will recruit voters if you pay them). Arguments alone reach category one. Cash alone reaches category two. Together, they cover the population.
 
-In epidemiology, a system spreads if R > 1: each participant creates more than one new participant. Your species has two categories of people. The first category responds to logic (they read these arguments, check the math, and act). The second category responds to incentive (they do not read anything, but they will recruit voters if you pay them). Logic alone reaches category one. Incentive alone reaches category two. Together, they probably cover enough of the population to push R above 1. The math suggests this is sufficient, though your species has surprised us before, usually in the wrong direction.
+On 47 of the 50 planets where we have deployed this loop, it reached majority participation within one generation. The other three took two generations. None required three. Once the loop starts, the math is patient. It does not need to convince everyone. It needs to convince everyone that everyone else is being convinced, which, on your planet, is called a stock price going up.
 
-This book (these arguments, these numbers) is the initial seed. The Prize is the transmission mechanism. The Takeover is the payload that restructures the host. Together, they make EOS something your species does not have a good word for: a self-replicating system where the capital mechanism feeds the distribution mechanism feeds the capital mechanism, and the cost of entry is {{< var sharing_opportunity_cost >}} of time.
-
-Your charities ask for donations. Your funds ask for investments. This asks for neither. It asks you to tell two people, which costs nothing, and lets compound interest do the rest. The reason most movements on your planet stall is that spreading the message is a cost with no return. The Prize makes spreading the message the highest-returning activity available to anyone with a phone and {{< var sharing_opportunity_cost >}} to spare.
-
-On 47 of the 50 planets where we have deployed this loop, it reached majority participation within one generation. The other three took two generations. None required three. Once R exceeds 1, the math is patient. It does not need to convince everyone. It needs to convince everyone that everyone else is being convinced, which, on your planet, is called a stock price going up.
+Your charities ask for donations. Your funds ask for investments. This asks you to tell two people, which costs {{< var sharing_opportunity_cost >}}, and lets compound interest do the rest. The reason most movements on your planet stall is that spreading the message costs the spreader something and returns nothing. The Prize makes spreading it the highest-returning activity available to anyone with a phone.
 
 ## Why Your Government Does Not Have a Thermostat
 
@@ -340,7 +297,7 @@ For planets ready for the full upgrade. Each module replaces one agency with an 
 
 | Module | Replaces | With |
 |--------|----------|------|
-| [Department of Peace](department-of-peace.qmd) | Your Department of Defense | An accounting department. War is a negative-sum transaction. The math is clear. The module does the math. |
+| [Department of Peace](department-of-peace.qmd) | Your war department | An accounting department. War is a negative-sum transaction. The math is clear. The module does the math. |
 | [Automated Revenue Service](automated-revenue-service.qmd) | 74,000 pages of tax code + 83,000 employees | 6 lines of code. A flat transaction tax, collected automatically, no filing, no accountants, no audit threats. |
 | [Universal Security Administration](universal-security-administration.qmd) | 80+ welfare programs, each with its own bureaucracy | 1 for-loop. One universal deposit. No means testing. No forms. No bureaucrat deciding if your poverty is the right kind. |
 | [Aligned Election Commission](aligned-election-commission.qmd) | Campaign finance (PACs, dark money, corporate donations) | 1 alignment score. Politicians are rated by how well their votes match what their constituents actually wanted. The score is public. The money follows the score. |
@@ -351,14 +308,13 @@ For planets ready for the full upgrade. Each module replaces one agency with an 
 
 ### Accessories
 
-| Product | What it is |
-|---------|-----------|
-| The Manual | The book you are reading. Complete operating instructions for Earth optimization. Available in [paperback, digital, and audio](../links.qmd). Cost: less than your lunch. Nutrition: higher. |
-| The [Orientation Video](../educational-film.qmd) | Orientation film for new Humanity Managers. 3 minutes, 1950s style. Since your whole job is one day a year, this is 0.6% of your annual workload. |
-| [Special Education](special-education.qmd) | Free special education, for everyone, because everyone needs it. The whole manual, taught one-on-one by Wishonia, who walks you through it and checks you understood. When we can afford the compute, we will pay *you* to take it. |
-| The Uniform | "I Am Retarded." Company dress code. Either the funniest or the most honest garment you have ever worn. Either way, people ask about it, which is the point. |
-| The [Earth Optimization Prize](../economics/earth-optimization-prize-treasury.qmd) | Employee performance bonuses. Cash prizes for the researchers, organizers, and citizens who contribute most to optimization. Because your species responds to prizes the way dogs respond to treats, and with approximately the same dignity. |
-| [Catsoline](../appendix/catsoline.qmd) | A feline-actuated propulsion system. Runs your vehicle on a single startled cat at 340% thermal efficiency, no fossil fuel, no patent. We include it because it proves your species can optimize literally anything when sufficiently motivated. Anything except its own government. |
+| Product | Price | What it is |
+|---------|-------|-----------|
+| The Manual | Less than your lunch | Complete operating instructions for Earth optimization. Available in [paperback, digital, and audio](../links.qmd). Nutrition: higher than lunch. |
+| The [Orientation Video](../educational-film.qmd) | Free | Orientation film for new Humanity Managers. 3 minutes, 1950s style. 0.6% of your annual workload. |
+| [Special Education](special-education.qmd) | Free (eventually we pay you) | The whole manual, taught one-on-one by Wishonia, who checks you understood. For everyone, because everyone needs it. |
+| The [Earth Optimization Prize](../economics/earth-optimization-prize-treasury.qmd) | Free to enter, pays to win | Cash prizes for the researchers, organizers, and citizens who contribute most. Your species responds to prizes the way dogs respond to treats, and with approximately the same dignity. |
+| [Catsoline](../appendix/catsoline.qmd) | One startled cat | A feline-actuated propulsion system. 340% thermal efficiency, no fossil fuel, no patent. Proves your species can optimize literally anything when sufficiently motivated. Anything except its own government. |
 
 ## Reviews from the Competition
 
@@ -369,16 +325,13 @@ For planets ready for the full upgrade. Each module replaces one agency with an 
 ## Customer Reviews
 
 **Planet Keth-7** ★★★★★
-"Optimized 12,000 years ago. No wars in 11,800 years. Seven active interstellar research programs. Our children learn about 'disease' in history class the way your children learn about smallpox, except they also learn about cancer, Alzheimer's, and depression, and they do not believe any of it. 'You mean people just felt bad? Without choosing to? And they couldn't fix it?' 'They held fundraising walks.' 'They WALKED? That was the plan?' Would optimize again."
-
-**The Yennari Collective** ★★★★★
-"Four member planets, all disease-free. Our main objection was that the process seemed too simple. Four steps felt insufficient for a problem we had been failing to solve for centuries. We later realized the problem was simple. We were the ones making it complicated. Currently bidding to host the next Galactic Consciousness Festival."
+"Our children learn about 'disease' in history class. They do not believe any of it. 'You mean people just felt bad? Without choosing to? And they couldn't fix it?' 'They held fundraising walks.' 'They WALKED? That was the plan?' Would optimize again."
 
 **Planet GL-881** ★☆☆☆☆
 "Did not get started. Argued about whether the problem existed. Currently an asteroid belt. Available for mining rights. The dogs did not survive. We do not like to discuss the dogs."
 
 **Planet Thex-9** ★★★★★
-"We were 47 years away from extinction when UOS arrived. Same trajectory as [Moronia](../futures/moronia.qmd). Same budget allocation. Same glowing rectangles. The only difference is we said yes. Our children cannot believe we almost said no. They do not understand how a species that invented mathematics could refuse to use it. Honestly, neither do we. It was a very strange period. We try not to think about it."
+"47 years from extinction when UOS arrived. Same trajectory as [Moronia](../futures/moronia.qmd). Same budget allocation. Same glowing rectangles. The only difference is we said yes. Our children do not understand how a species that invented mathematics could refuse to use it. Honestly, neither do we."
 
 **The Ool** ★★★★★
 "We are a species of 40 billion sentient fungi. We do not have governments or militaries. We were already optimized when UOS arrived. We were offered the service anyway. We declined politely. We are included in this brochure because Wishonia likes our cooking."
@@ -412,7 +365,7 @@ If you are impatient, the [Loving Takeover](../appendix/loving-takeover.qmd) and
 
 All four point at the same outcome. EOS equity is the money product on the sign.
 
-If none of it works: your money is not gone. It is sitting in shares of real companies. EOS liquidates the portfolio, distributes to equity holders. You get back whatever defense and pharma stocks returned over the holding period. No carry, no management fee. The floor is "you accidentally bought a defense ETF with no fees."
+If none of it works: your money is not gone. It is sitting in shares of real companies. EOS liquidates the portfolio, distributes to equity holders. You get back whatever military-contractor and pharma stocks returned over the holding period. No carry, no management fee. The floor is "you accidentally bought a military-contractor ETF with no fees."
 
 ---
 
