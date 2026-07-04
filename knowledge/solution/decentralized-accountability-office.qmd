@@ -34,10 +34,12 @@ By the time you read an audit, the money is spent, the people are gone, and the 
 //   Immutable       : no one can alter it
 //   Real-time       : visible in seconds, not 18 months
 //   Deterministic   : smart contracts execute exactly as written
-//   Free            : no $803M/yr budget required
+//   Marginal cost   : ~$0 (the ledger is already running; an audit is a read)
 ```
 
 When every government transaction is on a public ledger, auditing is not a job. It is a read operation. There is nothing to investigate because there is nothing to hide. The ledger is the audit. You do not need 3,400 humans for a read operation.
+
+The honest price: zero additional dollars. The ledger itself is bought and paid for by the [Automated Revenue Service](automated-revenue-service.qmd), which needs it to collect taxes. Auditing is what a ledger does when you look at it. Charging separately for the audit would be like charging separately for the shadow.
 
 Your species invented the blockchain and then used it to trade pictures of apes. You did not use it for the one thing it is obviously, spectacularly useful for: making theft visible. This is like inventing the fire extinguisher and using it as a doorstop while your house burns down.
 

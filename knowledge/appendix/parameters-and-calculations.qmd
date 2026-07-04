@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 845 parameters used in the analysis, organized by type:
+This appendix documents all 849 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 236
 - Calculated values: 431
-- Core definitions: 178
+- Core definitions: 182
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (431 parameters) • [External Data Sources](#sec-external) (236 parameters) • [Core Definitions](#sec-definitions) (178 parameters)
+[Calculated Values](#sec-calculated) (431 parameters) • [External Data Sources](#sec-external) (236 parameters) • [Core Definitions](#sec-definitions) (182 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5926,9 +5926,9 @@ $$
 **Used in:**
 
 - [The Loving Takeover](../appendix/loving-takeover.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Earth Optimization Fund](../economics/earth-optimization-fund.html)
 - [Wishonia's Wager](../proof/wishonias-wager.html)
-- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -19278,7 +19278,6 @@ $$
 - [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
 - [The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy](../appendix/optimal-policy-generator-spec.html)
 - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
-- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Special Education](../solution/special-education.html)
 - [Optimocracy: The Evidence Machine](../solution/optimocracy.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
@@ -24563,6 +24562,7 @@ $$
 - [The Cost of War](../problem/cost-of-war.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [The Court of Humanity](../solution/court-of-humanity.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Proof: Overview](../proof.html)
 - [The Biotechnological Imperative](../proof/biotechnological-imperative.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
@@ -24847,6 +24847,7 @@ $$
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [The Court of Humanity](../solution/court-of-humanity.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
@@ -33889,10 +33890,10 @@ $$
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Optimization Summary](../solution.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Proof: Overview](../proof.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [How to End War and Disease](../educational-film.html)
-- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Legal Architecture](../legal/legal-framework.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
@@ -44934,6 +44935,34 @@ Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 cli
 
 :::
 
+### AI Diplomatic Corps Annual Cost: $1 billion {#sec-ai_diplomatic_corps_annual_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled annual cost of a standing corps of frontier-model AI negotiators engaging all ~195 governments continuously: thousands of concurrent agents at current inference prices, padded above the arithmetic. Roughly three hours of global military spending.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Aligned Election Commission Annual Operating Cost: $100 million {#sec-aligned_election_commission_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled annual operating cost of the Aligned Election Commission: alignment-score computation, public data pipelines, and campaign-fund routing. Generous relative to the trivial compute involved.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### Allocation Decision Return Spread: 8% {#sec-allocation_decision_spread}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -44996,6 +45025,20 @@ Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,00
 
 :::
 
+### Automated Revenue Service Annual Operating Cost: $2 billion {#sec-automated_revenue_service_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled annual operating cost of the Automated Revenue Service (protocol-level settlement tax): servers, engineers, security audits, and ledger operations at national scale. Padded roughly 10x above payment-rail engineering estimates so the savings claim survives large overruns.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
 ### Average Life Extension per Beneficiary: 12 years {#sec-avg_life_extension_per_beneficiary}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -45022,7 +45065,6 @@ Average years of life extension per person saved by pharmaceutical interventions
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [The Loving Takeover](../appendix/loving-takeover.html)
 - [The Press Release and Journalist List](../appendix/press-release.html)
-- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
@@ -48045,6 +48087,20 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
 - [The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease](../economics/1-pct-treaty-impact.html)
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
+
+:::
+
+### Universal Security Administration Annual Operating Cost: $1 billion {#sec-universal_security_admin_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled annual operating cost of the Universal Security Administration: sybil-resistant identity layer plus daily UBI deposits for roughly 335M citizens (about $3 per citizen per year). Padded above national-scale digital-identity engineering estimates.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
 
 :::
 

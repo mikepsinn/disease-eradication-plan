@@ -62,6 +62,6 @@ Under the Aligned Election Commission:
 - Below minimum alignment? $0. Above it? Funded proportionally.
 - Every citizen can verify the score. Every vote is on the record. The algorithm shows its work.
 
-The $8.4 billion currently spent on campaign finance and lobbying ($4.7B + $3.7B) is eliminated. More importantly, the incentive for politicians to serve donors instead of citizens is eliminated. That second part is worth considerably more than $8.4 billion.
+The $8.4 billion currently spent on campaign finance and lobbying ($4.7B + $3.7B) is eliminated. Running the replacement costs perhaps {{< var aligned_election_commission_annual_opex >}} a year for score computation, public data pipelines, and fund routing, a generous figure for what is mostly arithmetic the NRA already does with interns. More importantly, the incentive for politicians to serve donors instead of citizens is eliminated. That second part is worth considerably more than $8.4 billion.
 
 Your current system is a vending machine where lobbyists insert money and legislation comes out. The replacement is a scoreboard where citizens insert preferences and representation comes out. The technology exists. The math is trivial. The obstacle is that the people who would need to approve the change are the same people who benefit from the current system. This is why the [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] works around them instead of through them.

@@ -14,51 +14,63 @@
   var DEFAULT_PUBLICATION_DATE = '2025-10-04';
   // Network-failure fallbacks only. Canonical values live in dih_models/parameters.py
   // (GLOBAL_DISEASE_DEATHS_DAILY, EVENTUALLY_AVOIDABLE_DEATH_PCT, GLOBAL_ANNUAL_DALY_BURDEN,
-  // EVENTUALLY_AVOIDABLE_DALY_PCT, DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED/_DALYS)
+  // EVENTUALLY_AVOIDABLE_DALY_PCT, GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST,
+  // GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL,
+  // DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED/_DALYS)
   // and are fetched from assets/json/parameters.json at runtime.
   var DEFAULTS = {
     diseaseDeathsDaily: 150000,
     eventuallyAvoidableDeathPct: 0.926,
     dalyBurdenAnnual: 2880000000,
     eventuallyAvoidableDalyPct: 0.926,
+    warCostAnnual: 11357100000000,
+    diseaseCostAnnual: 14900000000000,
     timelineLivesSaved: 10745517748.6,
     timelineDalys: 565243673351
   };
 
   var COPY = {
-    hudAriaLabel: 'Live scoreboard of avoidable disease deaths',
-    kicker: 'PLACEHOLDER KICKER',
-    scoreLabel: 'DISEASE',
-    scoreUnitLine: 'PLACEHOLDER UNIT LINE',
-    sufferingLabel: 'PLACEHOLDER SUFFERING LABEL',
-    highScoreLine: 'NEW HIGH SCORE',
-    ctaText: 'PRESS START',
-    openHint: 'PLACEHOLDER OPEN HINT',
-    fabShow: 'Show the score',
-    fabHide: 'Hide the score',
+    hudAriaLabel: 'Live scoreboard: avoidable disease deaths since 2025-10-04',
+    kicker: 'EVERY DAY HUMANITY IGNORES THE PLAN, DISEASE SCORES 139,000',
+    scoreLabel: 'PLAYER 1: DISEASE',
+    scoreUnitLine: 'deaths research could eventually prevent, since 2025-10-04',
+    sufferingLabel: 'HOURS OF HEALTHY LIFE EATEN, 741,000/SEC',
+    moneyLabel: 'DOLLARS BURNED ON WAR + DISEASE, $832K/SEC',
+    highScoreLine: 'AWAITING PLAYER 2 SINCE 298,000 BC',
+    ctaText: 'PRESS START: 30 SEC, 2.6 LIVES',
+    openHint: 'Open the rules of the game humanity is losing 139,000 to 0.',
+    fabShow: 'Show the scoreboard',
+    fabHide: 'Hide the scoreboard',
     closeHint: 'Hide the scoreboard',
     overlay: {
       closeText: 'RESUME IGNORING',
-      title: 'PLACEHOLDER TITLE',
-      subtitle: 'PLACEHOLDER SUBTITLE',
-      diseaseLabel: 'DISEASE',
-      diseaseFoot: 'PLACEHOLDER DISEASE FOOT',
-      humanityLabel: 'HUMANITY',
-      humanityScoreText: '0',
-      humanityFootnote: 'PLACEHOLDER HUMANITY FOOT',
+      title: 'ATTRACT MODE: YEAR 300,000',
+      subtitle: 'Disease is still on its first credit. The plan to beat it went public 2025-10-04.',
+      diseaseLabel: 'PLAYER 1: DISEASE',
+      diseaseFoot: 'deaths research could eventually prevent, since 2025-10-04',
+      humanityLabel: 'PLAYER 2: HUMANITY',
+      humanityScoreText: '00000000',
+      humanityFootnote: 'Nations signed: 0. Cure-finding machines built: 0. Start buttons pressed: 0.',
       rulesHeading: 'THE RULES',
-      rules: ['PLACEHOLDER RULE'],
+      rules: [
+        'Disease scores 1 point per death that research could eventually prevent: 138,942 a day, 96.5 a minute, 1.6 a second.',
+        'The suffering ticker: 84.5 years of healthy life eaten per second. Mostly not deaths. Mostly the decade your mother spends forgetting your name.',
+        'Humanity scores by finding first treatments. 6,650 diseases have none, all undefeated. At 15 a year, the queue clears in 443 years.',
+        'Side quest completed: 12,241 nuclear warheads. An apocalypse needs about 100, so humanity owns 122. The main quest sits untouched.',
+        'Power-ups exist: 9,500 known-safe compounds, 99.7% of their possible uses never tested. Nobody has walked over to pick them up.',
+        'There is no pause button. Ignoring the cabinet scores 139,000 points a day, all for disease. Disease has unlimited continues. You do not.'
+      ],
       player2Heading: 'HOW TO PLAY',
-      player2: 'PLACEHOLDER PLAYER 2',
+      player2: 'The game has been single-player for 300,000 years. Player 1 is disease. It is working on your family right now. You are Player 2. You did not apply; you were born, which is how disease selects opponents. Your first move takes 30 seconds: projected 2.6 lives saved, 468,000 hours of suffering spared. Look around the arcade. It is just you.',
       cheatHeading: 'CHEAT CODE',
-      cheatCode: 'PLACEHOLDER CHEAT CODE',
-      sinceOpenedBefore: 'PLACEHOLDER SINCE ',
-      sinceOpenedAfter: ' PLACEHOLDER AFTER',
-      auditPre: 'PLACEHOLDER AUDIT ',
-      auditLinkText: 'audit the scoreboard',
-      auditPost: '.',
-      ctaPrimary: 'PRESS START',
-      ctaSecondary: 'AUDIT THE SCORE'
+      cheatCode: 'UP UP DOWN DOWN LEFT RIGHT LEFT RIGHT 1%. Redirect 1% of military spending (1 of humanity’s 122 spare apocalypses) into 12.3x more clinical trials. The 443-year treatment queue drops to about 36 years. Disease’s final score falls by a projected 10.7 billion points. Public since 2025-10-04. Nations enter the code. Voters enter nations.',
+      sinceOpenedBefore: 'Since you opened this screen, disease scored ',
+      sinceOpenedAfter: ' points. Each one was a person. It does not know you are here.',
+      auditPre: 'Every number on the cabinet ',
+      auditLinkText: 'links to its source and math',
+      auditPost: ', plus a standing list of ways it could be wrong. Disputes are welcome. Rigged machines do not publish their wiring.',
+      ctaPrimary: 'PRESS START: 30 SECONDS, 2.6 LIVES',
+      ctaSecondary: 'CHECK THE WIRING: WHERE AM I WRONG'
     }
   };
 
@@ -71,6 +83,8 @@
     eventuallyAvoidableDeathPct: DEFAULTS.eventuallyAvoidableDeathPct,
     dalyBurdenAnnual: DEFAULTS.dalyBurdenAnnual,
     eventuallyAvoidableDalyPct: DEFAULTS.eventuallyAvoidableDalyPct,
+    warCostAnnual: DEFAULTS.warCostAnnual,
+    diseaseCostAnnual: DEFAULTS.diseaseCostAnnual,
     timelineLivesSaved: DEFAULTS.timelineLivesSaved,
     timelineDalys: DEFAULTS.timelineDalys
   };
@@ -171,6 +185,8 @@
         model.eventuallyAvoidableDeathPct = pickParam(parameters, 'EVENTUALLY_AVOIDABLE_DEATH_PCT', DEFAULTS.eventuallyAvoidableDeathPct);
         model.dalyBurdenAnnual = pickParam(parameters, 'GLOBAL_ANNUAL_DALY_BURDEN', DEFAULTS.dalyBurdenAnnual);
         model.eventuallyAvoidableDalyPct = pickParam(parameters, 'EVENTUALLY_AVOIDABLE_DALY_PCT', DEFAULTS.eventuallyAvoidableDalyPct);
+        model.warCostAnnual = pickParam(parameters, 'GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', DEFAULTS.warCostAnnual);
+        model.diseaseCostAnnual = pickParam(parameters, 'GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL', DEFAULTS.diseaseCostAnnual);
         model.timelineLivesSaved = pickParam(parameters, 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED', DEFAULTS.timelineLivesSaved);
         model.timelineDalys = pickParam(parameters, 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', DEFAULTS.timelineDalys);
       })
@@ -179,6 +195,8 @@
         model.eventuallyAvoidableDeathPct = DEFAULTS.eventuallyAvoidableDeathPct;
         model.dalyBurdenAnnual = DEFAULTS.dalyBurdenAnnual;
         model.eventuallyAvoidableDalyPct = DEFAULTS.eventuallyAvoidableDalyPct;
+        model.warCostAnnual = DEFAULTS.warCostAnnual;
+        model.diseaseCostAnnual = DEFAULTS.diseaseCostAnnual;
         model.timelineLivesSaved = DEFAULTS.timelineLivesSaved;
         model.timelineDalys = DEFAULTS.timelineDalys;
       });
@@ -202,6 +220,16 @@
     return elapsedSincePublication() * delayDeathsPerSecond();
   }
 
+  // Annual economic cost of war ($11.4T) plus disease ($14.9T), spread per second.
+  // Keep the "$832K/SEC" figure in COPY.moneyLabel in sync if these params move.
+  function wastedMoneyPerSecond() {
+    return (model.warCostAnnual + model.diseaseCostAnnual) / 31557600;
+  }
+
+  function currentWastedMoneySince() {
+    return elapsedSincePublication() * wastedMoneyPerSecond();
+  }
+
   function format(value, compact) {
     return compact ? compactFormat.format(value) : numberFormat.format(value);
   }
@@ -213,6 +241,8 @@
     if (kind === 'per-second') return compactFormat.format(delayDeathsPerSecond());
     if (kind === 'suffering-hours-since-publication') return format(elapsedSincePublication() * sufferingHoursPerSecond(), compact);
     if (kind === 'suffering-hours-per-second') return format(sufferingHoursPerSecond(), compact);
+    if (kind === 'money-since-publication') return '$' + compactFormat.format(currentWastedMoneySince());
+    if (kind === 'money-per-second') return '$' + compactFormat.format(wastedMoneyPerSecond());
     if (kind === 'since-opened') {
       if (overlayOpenedAt === null) return '0';
       return format(Math.max(0, (Date.now() - overlayOpenedAt) / 1000) * delayDeathsPerSecond(), false);
@@ -256,12 +286,16 @@
         '<span class="dih-arcade-skull">' + skullSvg() + '</span>' +
         '<span class="dih-arcade-score-block">' +
           '<span class="dih-arcade-kicker">' + COPY.kicker + '</span>' +
-          '<span class="dih-arcade-score"><span data-dih-delay-value="since-publication">0</span></span>' +
+          '<span class="dih-arcade-score"><span class="dih-arcade-score-label">' + COPY.scoreLabel + '</span> <span data-dih-delay-value="since-publication">0</span></span>' +
           '<span class="dih-arcade-unitline">' + COPY.scoreUnitLine + '</span>' +
         '</span>' +
         '<span class="dih-arcade-suffer-block">' +
           '<span class="dih-arcade-suffer-label">' + COPY.sufferingLabel + '</span>' +
           '<span class="dih-arcade-suffer" data-dih-delay-value="suffering-hours-since-publication">0</span>' +
+        '</span>' +
+        '<span class="dih-arcade-money-block">' +
+          '<span class="dih-arcade-money-label">' + COPY.moneyLabel + '</span>' +
+          '<span class="dih-arcade-money" data-dih-delay-value="money-since-publication">0</span>' +
         '</span>' +
         '<span class="dih-arcade-blink">' + COPY.highScoreLine + '</span>' +
       '</button>' +
@@ -318,6 +352,9 @@
         '</div>' +
         '<div class="dih-arcade-sufferline">' + COPY.sufferingLabel +
           '<span class="dih-arcade-suffer" data-dih-delay-value="suffering-hours-since-publication">0</span>' +
+        '</div>' +
+        '<div class="dih-arcade-sufferline">' + COPY.moneyLabel +
+          '<span class="dih-arcade-money" data-dih-delay-value="money-since-publication">0</span>' +
         '</div>' +
         sectionHtml(o.rulesHeading, rulesHtml) +
         sectionHtml(o.player2Heading, '<p>' + o.player2 + '</p>') +

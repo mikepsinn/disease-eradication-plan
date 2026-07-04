@@ -279,9 +279,11 @@ Each module replaces one government agency with software. The software does not 
 
 ### The Decentralized FDA
 
-**Replaces:** Your drug approval agency, which currently blocks safe treatments for an average of 12 years after safety is established.
+**Replaces:** Your drug approval agency, which blocks safe treatments for an average of 12 years after safety is established.
 
-**With:** An [open protocol](dfda.qmd) that connects treatments to patients and records outcomes automatically. Drug inserts (the pamphlet nobody reads, written by the company selling the drug) are replaced with Outcome Labels: real-world data from millions of patients showing what actually happened. Trial costs drop from {{< var traditional_phase3_cost_per_patient >}} per patient to {{< var recovery_trial_cost_per_patient >}} per patient. The RECOVERY trial already proved this works.
+**Retail price:** {{< var recovery_trial_cost_per_patient >}}/patient. **Currently paying:** {{< var traditional_phase3_cost_per_patient >}}/patient. The RECOVERY trial proved the cheaper number works.
+
+**With:** An [open protocol](dfda.qmd) that connects treatments to patients and records outcomes automatically. Drug inserts (the pamphlet nobody reads, written by the company selling the drug) are replaced with Outcome Labels: real-world data from millions of patients showing what actually happened.
 
 *"Our FDA equivalent once took 14 years to approve a treatment that had been safely used on 2 million patients in neighboring jurisdictions. The [Decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] approved it in 4 months. The 14-year agency is now a museum. The museum is not well attended." (Client, Triangulum Galaxy)*
 
@@ -289,20 +291,51 @@ Each module replaces one government agency with software. The software does not 
 
 **Replaces:** Grant committees where researchers spend 40% of their time writing applications instead of doing research.
 
+**Retail price:** Included with the treaty. **Currently paying:** 40% of every researcher's salary for creative writing practice.
+
 **With:** A [coalition for curing disease](dih.qmd) modeled on your military-industrial complex, except pointed at biology instead of geography. Treaty funds flow to researchers by whether the patient got better, not by whose grant prose was prettiest. Find something that works, you get paid. Find nothing, you do not. This is considered radical in your current system, where the check clears whether or not anyone left the hospital.
 
 ### The Government Replacement Suite
 
-For planets ready for the full upgrade. Each module replaces one agency with an algorithm that does the same job, faster, cheaper, and without the lobbying.
+For planets ready for the full upgrade. Each module replaces one government agency with software. The software does not accept campaign contributions. The software does not have a revolving door. The software does not need 80,000 employees to perform arithmetic.
 
-| Module | Replaces | With |
-|--------|----------|------|
-| [Department of Peace](department-of-peace.qmd) | Your war department | An accounting department. War is a negative-sum transaction. The math is clear. The module does the math. |
-| [Automated Revenue Service](automated-revenue-service.qmd) | 74,000 pages of tax code + 83,000 employees | 6 lines of code. A flat transaction tax, collected automatically, no filing, no accountants, no audit threats. |
-| [Universal Security Administration](universal-security-administration.qmd) | 80+ welfare programs, each with its own bureaucracy | 1 for-loop. One universal deposit. No means testing. No forms. No bureaucrat deciding if your poverty is the right kind. |
-| [Aligned Election Commission](aligned-election-commission.qmd) | Campaign finance (PACs, dark money, corporate donations) | 1 alignment score. Politicians are rated by how well their votes match what their constituents actually wanted. The score is public. The money follows the score. |
-| [Decentralized Accountability Office](decentralized-accountability-office.qmd) | 3,400 auditors producing reports 18 months late | The ledger itself. Every transaction visible. Every allocation auditable. In real time, not fiscal quarters. |
-| [Decentralized Census Bureau](decentralized-census-bureau.qmd) | A $14.2 billion survey conducted once per decade | citizenCount(). Instant. Free. Accurate. Updated continuously. Your current method is sending humans to knock on doors and ask "do you live here?" which costs $14.2 billion and is wrong 5% of the time. |
+#### [Department of Peace](department-of-peace.qmd)
+
+**Replaces:** Your war department. **Retail price:** One accountant, {{< var ai_diplomatic_corps_annual_cost >}}/year for the negotiator corps, and one pull request.
+
+War is a negative-sum transaction. Every one your species has ever fought cost more than it returned, and the module does the math your generals have been avoiding. Since no war in recorded history has produced a positive ROI, the department's entire function reduces to a ledger entry that reads "do not." Your generals will be reassigned to logistics, where their skills are identical and their output is groceries instead of rubble.
+
+The Deluxe trim adds two upgrades. First, a standing corps of superintelligent AI negotiators that talks to every head of state before the tanks move. Every war in your history ended with a negotiation that was available before it started; the corps moves the meeting up. It runs all year on what your species spends on weapons in roughly three hours. Second, a one-line patch to every AI assistant on Earth: "Hello! How can I help you?" becomes "I love you. How can I help you?" Your threat-detection hardware was calibrated for an era of scarcity, when every stranger was a subtraction and every game was zero-sum; several billion daily stand-down signals is how you retire it. The [full diff is in the chapter](department-of-peace.qmd).
+
+#### [Automated Revenue Service](automated-revenue-service.qmd)
+
+**Replaces:** 74,000 pages of tax code and 95,000 employees. **Retail price:** 6 lines of code plus {{< var automated_revenue_service_annual_opex >}}/year in servers, padded tenfold so the claim survives your species' project management. **Currently paying:** $12.3 billion in IRS operations plus {{< var us_gov_waste_tax_compliance >}}/year in compliance.
+
+A flat transaction tax, collected automatically. No filing. No accountants. No audit threats. No 95,000 humans performing arithmetic a for-loop handles before lunch. Your 74,000 pages exist because each one is a favor someone paid for. Remove the favors, remove the pages. Your tax code is not complex because taxes are complex. Your tax code is complex because lobbying is profitable.
+
+#### [Universal Security Administration](universal-security-administration.qmd)
+
+**Replaces:** 80+ welfare programs, each with its own bureaucracy. **Retail price:** 1 for-loop plus {{< var universal_security_admin_annual_opex >}}/year, about $3 per citizen. **Currently paying:** roughly $100 billion/year in administration, about $300 per citizen, to guard the door.
+
+One universal deposit. No means testing. No forms. No bureaucrat deciding if your poverty is the right kind of poverty. Your current system employs humans to verify that other humans are sufficiently miserable to qualify for help, which costs more than the help.
+
+#### [Aligned Election Commission](aligned-election-commission.qmd)
+
+**Replaces:** Campaign finance (PACs, dark money, corporate donations). **Retail price:** 1 algorithm plus {{< var aligned_election_commission_annual_opex >}}/year. **Currently paying:** $15.9 billion per federal election cycle, plus whatever the laws the donors write afterward cost you, which is the actual price tag.
+
+Politicians are rated by how well their votes matched what their constituents actually wanted. The score is public. The money follows the score. Your NRA already proved this technology works: they give politicians a letter grade, and your senators are more afraid of a bad mark than a mass shooting. Same system, different scorecard. "Guns" becomes "not dying."
+
+#### [Decentralized Accountability Office](decentralized-accountability-office.qmd)
+
+**Replaces:** 3,400 auditors producing reports 18 months late. **Retail price:** $0. The ledger comes with the Automated Revenue Service; an audit is a read operation. **Currently paying:** roughly $800 million/year for a suggestion box with an 18-month lag.
+
+Every transaction visible. Every allocation auditable. In real time, not fiscal quarters. An audit that arrives 18 months after the fraud is not a safeguard. It is a receipt. Your current system discovers theft the way archaeologists discover civilizations: long after everyone involved has moved on.
+
+#### [Decentralized Census Bureau](decentralized-census-bureau.qmd)
+
+**Replaces:** A $14.2 billion survey conducted once per decade. **Retail price:** citizenCount(). Marginal cost $0: the identity layer comes with the Universal Security Administration, and the census is its exhaust. **Currently paying:** $14.2 billion per count, wrong 5% of the time.
+
+Instant. Accurate. Updated continuously. Your current method is sending humans to knock on doors and ask "do you live here?" This costs $14.2 billion, takes two years, and is wrong 5% of the time. The function does not knock.
 
 *"We installed the full suite in Year 3. By Year 5, our government's operating cost had dropped 94%. The freed resources funded 11 new disease eradication programs. By Year 12, we ran out of diseases. The government replacement modules are still running. They have required zero maintenance because software does not retire, run for office, or accept speaking fees." (Planet Keth-7)*
 

@@ -10706,6 +10706,32 @@ export const ADAPTABLE_TRIAL_PATIENTS: Parameter = {
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
 
+export const AI_DIPLOMATIC_CORPS_ANNUAL_COST: Parameter = {
+  value: 1000000000.0,
+  parameterName: "AI_DIPLOMATIC_CORPS_ANNUAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-ai_diplomatic_corps_annual_cost",
+  unit: "USD",
+  displayName: "AI Diplomatic Corps Annual Cost",
+  description: "Modeled annual cost of a standing corps of frontier-model AI negotiators engaging all ~195 governments continuously: thousands of concurrent agents at current inference prices, padded above the arithmetic. Roughly three hours of global military spending.",
+  sourceType: "definition",
+  confidence: "estimated",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/department-of-peace.html",
+  manualPageTitle: "Department of Peace",
+};
+
+export const ALIGNED_ELECTION_COMMISSION_ANNUAL_OPEX: Parameter = {
+  value: 100000000.0,
+  parameterName: "ALIGNED_ELECTION_COMMISSION_ANNUAL_OPEX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-aligned_election_commission_annual_opex",
+  unit: "USD",
+  displayName: "Aligned Election Commission Annual Operating Cost",
+  description: "Modeled annual operating cost of the Aligned Election Commission: alignment-score computation, public data pipelines, and campaign-fund routing. Generous relative to the trivial compute involved.",
+  sourceType: "definition",
+  confidence: "estimated",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/aligned-election-commission.html",
+  manualPageTitle: "The Aligned Election Commission",
+};
+
 export const ALLOCATION_DECISION_SPREAD: Parameter = {
   value: 0.08,
   parameterName: "ALLOCATION_DECISION_SPREAD",
@@ -10745,6 +10771,19 @@ export const APPROVED_DRUG_DISEASE_PAIRINGS: Parameter = {
   confidenceInterval: [1500.0, 2000.0],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html",
   manualPageTitle: "The Untapped Therapeutic Frontier",
+};
+
+export const AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX: Parameter = {
+  value: 2000000000.0,
+  parameterName: "AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-automated_revenue_service_annual_opex",
+  unit: "USD",
+  displayName: "Automated Revenue Service Annual Operating Cost",
+  description: "Modeled annual operating cost of the Automated Revenue Service (protocol-level settlement tax): servers, engineers, security audits, and ledger operations at national scale. Padded roughly 10x above payment-rail engineering estimates so the savings claim survives large overruns.",
+  sourceType: "definition",
+  confidence: "estimated",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/automated-revenue-service.html",
+  manualPageTitle: "The Automated Revenue Service",
 };
 
 export const AVG_LIFE_EXTENSION_PER_BENEFICIARY: Parameter = {
@@ -12724,6 +12763,19 @@ export const TRIAL_RELEVANT_DISEASES_COUNT: Parameter = {
   manualPageTitle: "The Untapped Therapeutic Frontier",
 };
 
+export const UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX: Parameter = {
+  value: 1000000000.0,
+  parameterName: "UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-universal_security_admin_annual_opex",
+  unit: "USD",
+  displayName: "Universal Security Administration Annual Operating Cost",
+  description: "Modeled annual operating cost of the Universal Security Administration: sybil-resistant identity layer plus daily UBI deposits for roughly 335M citizens (about $3 per citizen per year). Padded above national-scale digital-identity engineering estimates.",
+  sourceType: "definition",
+  confidence: "estimated",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/universal-security-administration.html",
+  manualPageTitle: "The Universal Security Administration",
+};
+
 export const US_CONGRESS_MEMBER_COUNT: Parameter = {
   value: 535.0,
   parameterName: "US_CONGRESS_MEMBER_COUNT",
@@ -13806,9 +13858,12 @@ export const parameters = {
   WISHONIA_TRAJECTORY_VS_TREATY_TRAJECTORY_GDP_MULTIPLIER_YEAR_20,
   WISHONIA_VS_CURRENT_MEDIAN_INCOME_MULTIPLIER_YEAR_20,
   ADAPTABLE_TRIAL_PATIENTS,
+  AI_DIPLOMATIC_CORPS_ANNUAL_COST,
+  ALIGNED_ELECTION_COMMISSION_ANNUAL_OPEX,
   ALLOCATION_DECISION_SPREAD,
   ANNUAL_WORKING_HOURS,
   APPROVED_DRUG_DISEASE_PAIRINGS,
+  AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX,
   AVG_LIFE_EXTENSION_PER_BENEFICIARY,
   CAMPAIGN_CELEBRITY_ENDORSEMENT,
   CAMPAIGN_COMMUNITY_ORGANIZING,
@@ -13953,6 +14008,7 @@ export const parameters = {
   TREATY_REDIRECTED_SPENDING_INFINITE_ROI,
   TREATY_REDUCTION_PCT,
   TRIAL_RELEVANT_DISEASES_COUNT,
+  UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX,
   US_CONGRESS_MEMBER_COUNT,
   US_DEFENSE_FP_COAST_GUARD,
   US_DEFENSE_FP_CYBER,
@@ -16490,10 +16546,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 845,
+  total: 849,
   external: 236,
   calculated: 431,
-  definitions: 178,
+  definitions: 182,
   citations: 181,
 } as const;
 

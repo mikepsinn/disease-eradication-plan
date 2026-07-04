@@ -60,6 +60,30 @@
       "computeExpr": "(CURRENT_DRUG_APPROVALS_PER_YEAR * VALLEY_OF_DEATH_ATTRITION_PCT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html"
     },
+    "AI_DIPLOMATIC_CORPS_ANNUAL_COST": {
+      "value": 1000000000.0,
+      "formatted": "$1 billion",
+      "unit": "USD",
+      "description": "Modeled annual cost of a standing corps of frontier-model AI negotiators engaging all ~195 governments continuously: thousands of concurrent agents at current inference prices, padded above the arithmetic. Roughly three hours of global military spending.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "estimated",
+      "formula": null,
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/department-of-peace.html"
+    },
+    "ALIGNED_ELECTION_COMMISSION_ANNUAL_OPEX": {
+      "value": 100000000.0,
+      "formatted": "$100 million",
+      "unit": "USD",
+      "description": "Modeled annual operating cost of the Aligned Election Commission: alignment-score computation, public data pipelines, and campaign-fund routing. Generous relative to the trivial compute involved.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "estimated",
+      "formula": null,
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/aligned-election-commission.html"
+    },
     "ALLOCATION_DECISION_SPREAD": {
       "value": 0.08,
       "formatted": "8%",
@@ -158,6 +182,18 @@
       ],
       "distribution": "uniform",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html"
+    },
+    "AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX": {
+      "value": 2000000000.0,
+      "formatted": "$2 billion",
+      "unit": "USD",
+      "description": "Modeled annual operating cost of the Automated Revenue Service (protocol-level settlement tax): servers, engineers, security audits, and ledger operations at national scale. Padded roughly 10x above payment-rail engineering estimates so the savings claim survives large overruns.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "estimated",
+      "formula": null,
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/automated-revenue-service.html"
     },
     "AVERAGE_MARKET_RETURN_PCT": {
       "value": 0.1,
@@ -10460,6 +10496,18 @@
       ],
       "computeExpr": "(1.0 - (TESTED_RELATIONSHIPS_ESTIMATE / DRUG_DISEASE_COMBINATIONS_POSSIBLE))",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/nih-fails-2-institute-health.html"
+    },
+    "UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX": {
+      "value": 1000000000.0,
+      "formatted": "$1 billion",
+      "unit": "USD",
+      "description": "Modeled annual operating cost of the Universal Security Administration: sybil-resistant identity layer plus daily UBI deposits for roughly 335M citizens (about $3 per citizen per year). Padded above national-scale digital-identity engineering estimates.",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "confidence": "estimated",
+      "formula": null,
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/universal-security-administration.html"
     },
     "US_1939_MILITARY_SPENDING_PCT_LOWER_THAN_CURRENT": {
       "value": 0.9672686230248307,

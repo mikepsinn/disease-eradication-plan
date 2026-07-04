@@ -16128,3 +16128,58 @@ SE_BOT_AUM_1T_UNIVERSAL_OWNER_BREAKEVEN_ATTRIBUTION_FRACTION = Parameter(
     ),
     latex_symbol=r"\alpha_{breakeven,UO}",
 )
+
+# ============================================================================
+# GOVERNMENT REPLACEMENT MODULE OPERATING COSTS (modeled engineering estimates)
+# ============================================================================
+# Deliberately padded well above sane engineering arithmetic so every claimed
+# savings ratio survives a large cost overrun. These are definitions (our
+# budget assumptions), not external statistics.
+
+AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX = Parameter(
+    2_000_000_000,
+    manual_ref="knowledge/solution/automated-revenue-service.qmd",
+    source_type="definition",
+    description="Modeled annual operating cost of the Automated Revenue Service (protocol-level settlement tax): servers, engineers, security audits, and ledger operations at national scale. Padded roughly 10x above payment-rail engineering estimates so the savings claim survives large overruns.",
+    display_name="Automated Revenue Service Annual Operating Cost",
+    unit="USD",
+    distribution="fixed",
+    confidence="estimated",
+    keywords=["automated revenue service", "settlement tax", "irs replacement", "operating cost", "opex"],
+)
+
+UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX = Parameter(
+    1_000_000_000,
+    manual_ref="knowledge/solution/universal-security-administration.qmd",
+    source_type="definition",
+    description="Modeled annual operating cost of the Universal Security Administration: sybil-resistant identity layer plus daily UBI deposits for roughly 335M citizens (about $3 per citizen per year). Padded above national-scale digital-identity engineering estimates.",
+    display_name="Universal Security Administration Annual Operating Cost",
+    unit="USD",
+    distribution="fixed",
+    confidence="estimated",
+    keywords=["universal security administration", "ubi", "welfare replacement", "identity layer", "operating cost", "opex"],
+)
+
+ALIGNED_ELECTION_COMMISSION_ANNUAL_OPEX = Parameter(
+    100_000_000,
+    manual_ref="knowledge/solution/aligned-election-commission.qmd",
+    source_type="definition",
+    description="Modeled annual operating cost of the Aligned Election Commission: alignment-score computation, public data pipelines, and campaign-fund routing. Generous relative to the trivial compute involved.",
+    display_name="Aligned Election Commission Annual Operating Cost",
+    unit="USD",
+    distribution="fixed",
+    confidence="estimated",
+    keywords=["aligned election commission", "alignment score", "campaign finance replacement", "operating cost", "opex"],
+)
+
+AI_DIPLOMATIC_CORPS_ANNUAL_COST = Parameter(
+    1_000_000_000,
+    manual_ref="knowledge/solution/department-of-peace.qmd",
+    source_type="definition",
+    description="Modeled annual cost of a standing corps of frontier-model AI negotiators engaging all ~195 governments continuously: thousands of concurrent agents at current inference prices, padded above the arithmetic. Roughly three hours of global military spending.",
+    display_name="AI Diplomatic Corps Annual Cost",
+    unit="USD",
+    distribution="fixed",
+    confidence="estimated",
+    keywords=["department of peace", "ai negotiator", "diplomacy", "inference cost", "operating cost"],
+)

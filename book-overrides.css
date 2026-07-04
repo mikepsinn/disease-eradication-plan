@@ -112,7 +112,8 @@
 }
 
 .dih-arcade-score-block,
-.dih-arcade-suffer-block {
+.dih-arcade-suffer-block,
+.dih-arcade-money-block {
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -120,7 +121,8 @@
 
 .dih-arcade-kicker,
 .dih-arcade-unitline,
-.dih-arcade-suffer-label {
+.dih-arcade-suffer-label,
+.dih-arcade-money-label {
     font-size: 0.6rem;
     line-height: 1.25;
     letter-spacing: 0.12em;
@@ -131,6 +133,14 @@
     text-overflow: ellipsis;
 }
 
+.dih-arcade-score-label {
+    font-size: 0.62em;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--dih-arcade-white);
+    text-shadow: none;
+}
+
 .dih-arcade-score {
     font-size: clamp(1.3rem, 3.2vw, 1.9rem);
     line-height: 1.05;
@@ -139,6 +149,17 @@
     font-variant-numeric: tabular-nums;
     color: var(--dih-arcade-red);
     text-shadow: 0 0 10px rgba(255, 42, 31, 0.55);
+    white-space: nowrap;
+}
+
+.dih-arcade-money {
+    font-size: clamp(0.85rem, 1.8vw, 1.15rem);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    color: var(--dih-arcade-green);
+    text-shadow: 0 0 8px rgba(51, 255, 102, 0.4);
     white-space: nowrap;
 }
 

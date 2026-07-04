@@ -22,9 +22,9 @@ do: "build and run the smart contract that collects revenue automatically, repla
 
 Your tax system has 74,000 pages of rules. To put that in perspective, the entire Harry Potter series is 4,224 pages. Your tax code is 17.5 Harry Potters long. Except Harry Potter has a coherent plot and your tax code has loopholes.
 
-The Internal Revenue Service employs 83,000 humans to interpret these rules. It costs $12.3 billion per year to operate. Americans spend an additional 6.1 billion hours per year filling out forms. An entire profession ("accountant") exists solely to decode rules that your government wrote for itself.
+The Internal Revenue Service employs about 95,000 humans to interpret these rules [@irs-budget-workforce-fy2025]. It costs $12.3 billion per year to operate. Americans spend an additional 7 billion hours per year filling out forms [@ntu-tax-compliance-2025]. An entire profession ("accountant") exists solely to decode rules that your government wrote for itself.
 
-On my planet, when a system requires 83,000 interpreters, we don't hire more interpreters. We rewrite the system. Your species hired the interpreters. Then you hired people to interpret the interpreters. Then you wrote 74,000 pages of instructions for the interpreters of the interpreters. At no point did anyone suggest starting over. This is called "institutional momentum," which is what happens when the cure for a bad idea is more of the bad idea.
+On my planet, when a system requires 95,000 interpreters, we don't hire more interpreters. We rewrite the system. Your species hired the interpreters. Then you hired people to interpret the interpreters. Then you wrote 74,000 pages of instructions for the interpreters of the interpreters. At no point did anyone suggest starting over. This is called "institutional momentum," which is what happens when the cure for a bad idea is more of the bad idea.
 
 ## The Replacement
 
@@ -46,12 +46,12 @@ You cannot lobby a smart contract. You cannot offshore a protocol. Every loophol
 
 ## The Numbers
 
-Your current system costs $12.3 billion in direct IRS budget plus over $200 billion in annual compliance costs. That is $640 per American per year, just in paperwork. Not taxes. Paperwork about taxes.
+Your current system costs $12.3 billion in direct IRS budget, plus {{< var us_gov_waste_tax_compliance >}} per year once you price the 7 billion hours of paperwork at what the humans doing it could have earned instead [@ntu-tax-compliance-2025]. Not taxes. Paperwork about taxes.
 
-The replacement costs approximately nothing. The 0.5% transaction tax collects the same revenue at roughly 0% administrative cost. The savings alone could fund a small country. Or, more usefully, clinical trials.
+The replacement is not free, and I will not insult you by pretending it is. Budget {{< var automated_revenue_service_annual_opex >}} a year: servers, engineers, security auditors, and the people who watch the people who watch the code. That figure is padded to roughly ten times any sane engineering estimate for running payment rails at national scale, and it is still one-sixth of the IRS's current operating budget. The compliance burden it deletes is several hundred times larger. The savings could fund a small country. Or, more usefully, clinical trials.
 
 ## Why You Haven't Done This
 
 The 74,000 pages are not a bug. Every page represents a negotiation between a lobbyist and a legislator. Every loophole is a feature, purchased and maintained by someone who benefits from it. Your tax system is not complicated because taxation is complicated. Your tax system is complicated because complexity is profitable for the people who write the rules.
 
-83,000 IRS employees interpreting 74,000 pages to do what six lines of code does automatically. And you wonder where your taxes go.
+95,000 IRS employees interpreting 74,000 pages to do what six lines of code does automatically. And you wonder where your taxes go.
