@@ -62,6 +62,8 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 
 **Voice:** Wishonia (naive alien observing Earth, Philomena Cunk deadpan). Never consultant, crypto bro, or salesman. Full mechanics: `GUIDES/STYLE_GUIDE.md`; data-mined edit patterns + exemplars (from 34,742 real edits): `GUIDES/VOICE_RUBRIC.md`, critic `scripts/voice/voice-critic.py`. Pitches: `GUIDES/PITCH_LADDER.md`.
 
+**Module pages:** every solution/module chapter must pass the 7-point Module Page Standard (readable, fundable, buildable, dense, survives hostile reading, reader-is-builder, honest accounting): `GUIDES/CONTENT_STANDARDS.md` → "The Module Page Standard". Build Sheets, not RFPs; the reader builds, never bids.
+
 **Core method:** Each chapter has `audience`, `feel`, `do` in its frontmatter. Write to make that audience feel and do those things. Ask "what would make this person act?" not "what does this type of writing usually look like?" When the objective contradicts the convention, do the objective.
 
 **The reader IS the company.** Founder, president, owner, employee, all the same person. Hand them assets and roles ("your commission is on file," "you are the president"). Never ask, beg, thank, or center someone else as founder. Role-assignment lines are structural, not fluff; the mechanism needs the reader to accept the role.

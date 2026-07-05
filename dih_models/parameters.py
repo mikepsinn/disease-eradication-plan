@@ -16130,56 +16130,391 @@ SE_BOT_AUM_1T_UNIVERSAL_OWNER_BREAKEVEN_ATTRIBUTION_FRACTION = Parameter(
 )
 
 # ============================================================================
-# GOVERNMENT REPLACEMENT MODULE OPERATING COSTS (modeled engineering estimates)
+# GOVERNMENT REPLACEMENT MODULE BUDGETS (comparator-anchored)
 # ============================================================================
-# Deliberately padded well above sane engineering arithmetic so every claimed
-# savings ratio survives a large cost overrun. These are definitions (our
-# budget assumptions), not external statistics.
+# Each module cost is anchored to the most similar system that already exists
+# (card networks and blockchain rails, national digital-identity systems,
+# market-scale fraud detection, frontier inference pricing) rather than to
+# invented staffing plans. Inputs carry lognormal uncertainty; Monte Carlo
+# propagates it. As many parameters as necessary, as few as possible.
 
-AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX = Parameter(
-    2_000_000_000,
+IRS_ANNUAL_OPERATING_BUDGET = Parameter(
+    12_320_000_000,
     manual_ref="knowledge/solution/automated-revenue-service.qmd",
-    source_type="definition",
-    description="Modeled annual operating cost of the Automated Revenue Service (protocol-level settlement tax): servers, engineers, security audits, and ledger operations at national scale. Padded roughly 10x above payment-rail engineering estimates so the savings claim survives large overruns.",
-    display_name="Automated Revenue Service Annual Operating Cost",
+    source_ref=ReferenceID.CRS_IRS_APPROPRIATIONS_FY2025,
+    source_type="external",
+    description="IRS enacted annual appropriation, FY2024 (CRS IF12647, Table 1).",
+    display_name="IRS Annual Operating Budget",
     unit="USD",
     distribution="fixed",
-    confidence="estimated",
+    confidence="high",
+    last_updated="2024-04",
+    keywords=["irs", "internal revenue service", "budget", "appropriation", "12.3b"],
+)
+
+# --- Automated Revenue Service (replaces the IRS) ---
+
+AUTOMATED_REVENUE_SERVICE_ANNUAL_TRANSACTION_VOLUME = Parameter(
+    500_000_000_000,
+    manual_ref="knowledge/solution/automated-revenue-service.qmd",
+    source_type="definition",
+    description="Design capacity: annual final-consumption settlements processed by the protocol, set well above current US card-network transaction volume.",
+    display_name="Automated Revenue Service Annual Transaction Volume",
+    unit="transactions",
+    distribution="fixed",
+    keywords=["automated revenue service", "transactions", "settlement volume", "capacity"],
+)
+
+AUTOMATED_REVENUE_SERVICE_ALL_IN_COST_PER_TRANSACTION = Parameter(
+    0.0003,
+    manual_ref="knowledge/solution/automated-revenue-service.qmd",
+    source_type="definition",
+    description="All-in cost per settlement (three hundredths of a cent): compute, storage, security audits, and the mostly-AI workforce, amortized per transaction. Anchored to the most similar systems that exist: card networks clear transactions for internal costs in this range, and public blockchain rails settle transfers for fractions of a cent.",
+    display_name="All-In Cost per Settlement Transaction",
+    unit="USD",
+    distribution="lognormal",
+    confidence_interval=(0.0001, 0.001),
+    keywords=["automated revenue service", "cost per transaction", "all-in", "payment rails", "blockchain"],
+)
+
+AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX = Parameter(
+    AUTOMATED_REVENUE_SERVICE_ANNUAL_TRANSACTION_VOLUME * AUTOMATED_REVENUE_SERVICE_ALL_IN_COST_PER_TRANSACTION,
+    manual_ref="knowledge/solution/automated-revenue-service.qmd",
+    source_type="calculated",
+    description="Annual operating cost of the Automated Revenue Service: design transaction volume times the all-in comparator-anchored cost per settlement. Uncertainty propagates from the component distributions via Monte Carlo.",
+    display_name="Automated Revenue Service Annual Operating Cost",
+    unit="USD",
+    formula="TRANSACTIONS × ALL_IN_COST_PER_TRANSACTION",
+    inputs=[
+        "AUTOMATED_REVENUE_SERVICE_ANNUAL_TRANSACTION_VOLUME",
+        "AUTOMATED_REVENUE_SERVICE_ALL_IN_COST_PER_TRANSACTION",
+    ],
+    compute=lambda ctx: (
+        ctx["AUTOMATED_REVENUE_SERVICE_ANNUAL_TRANSACTION_VOLUME"]
+        * ctx["AUTOMATED_REVENUE_SERVICE_ALL_IN_COST_PER_TRANSACTION"]
+    ),
     keywords=["automated revenue service", "settlement tax", "irs replacement", "operating cost", "opex"],
 )
 
-UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX = Parameter(
-    1_000_000_000,
-    manual_ref="knowledge/solution/universal-security-administration.qmd",
-    source_type="definition",
-    description="Modeled annual operating cost of the Universal Security Administration: sybil-resistant identity layer plus daily UBI deposits for roughly 335M citizens (about $3 per citizen per year). Padded above national-scale digital-identity engineering estimates.",
-    display_name="Universal Security Administration Annual Operating Cost",
+AUTOMATED_REVENUE_SERVICE_SAVINGS_PER_AMERICAN_ANNUAL = Parameter(
+    (US_GOV_WASTE_TAX_COMPLIANCE + IRS_ANNUAL_OPERATING_BUDGET - AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX)
+    / US_POPULATION_2024,
+    manual_ref="knowledge/solution/automated-revenue-service.qmd",
+    source_type="calculated",
+    description="Annual savings per American from replacing the IRS and the tax-compliance burden with the Automated Revenue Service, net of the padded replacement budget.",
+    display_name="Automated Revenue Service Annual Savings per American",
     unit="USD",
-    distribution="fixed",
-    confidence="estimated",
-    keywords=["universal security administration", "ubi", "welfare replacement", "identity layer", "operating cost", "opex"],
+    formula="(TAX_COMPLIANCE_BURDEN + IRS_BUDGET − ARS_BUDGET) / US_POPULATION",
+    inputs=[
+        "US_GOV_WASTE_TAX_COMPLIANCE",
+        "IRS_ANNUAL_OPERATING_BUDGET",
+        "AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX",
+        "US_POPULATION_2024",
+    ],
+    compute=lambda ctx: (
+        ctx["US_GOV_WASTE_TAX_COMPLIANCE"] + ctx["IRS_ANNUAL_OPERATING_BUDGET"] - ctx["AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX"]
+    ) / ctx["US_POPULATION_2024"],
+    keywords=["automated revenue service", "dividend", "per capita", "savings per american"],
 )
 
+# --- Universal Security Administration (replaces welfare administration) ---
+
+UNIVERSAL_SECURITY_ADMIN_ALL_IN_COST_PER_CITIZEN_ANNUAL = Parameter(
+    0.30,
+    manual_ref="knowledge/solution/universal-security-administration.qmd",
+    source_type="definition",
+    description="All-in annual cost per citizen served: sybil-resistant identity, 365 daily deposits, and the mostly-AI workforce. Anchored to the most similar system that exists: India's national biometric identity system serves 1.4 billion people at costs in this range per person per year, and payment rails move deposits for fractions of a cent.",
+    display_name="Universal Security Administration All-In Annual Cost per Citizen",
+    unit="USD",
+    distribution="lognormal",
+    confidence_interval=(0.10, 1.00),
+    keywords=["universal security administration", "cost per citizen", "all-in", "identity", "aadhaar"],
+)
+
+UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX = Parameter(
+    US_POPULATION_2024 * UNIVERSAL_SECURITY_ADMIN_ALL_IN_COST_PER_CITIZEN_ANNUAL,
+    manual_ref="knowledge/solution/universal-security-administration.qmd",
+    source_type="calculated",
+    description="Annual operating cost of the Universal Security Administration: population times the all-in comparator-anchored cost per citizen. Uncertainty propagates from the component distributions via Monte Carlo.",
+    display_name="Universal Security Administration Annual Operating Cost",
+    unit="USD",
+    formula="POPULATION × ALL_IN_COST_PER_CITIZEN",
+    inputs=[
+        "US_POPULATION_2024",
+        "UNIVERSAL_SECURITY_ADMIN_ALL_IN_COST_PER_CITIZEN_ANNUAL",
+    ],
+    compute=lambda ctx: (
+        ctx["US_POPULATION_2024"] * ctx["UNIVERSAL_SECURITY_ADMIN_ALL_IN_COST_PER_CITIZEN_ANNUAL"]
+    ),
+    keywords=["universal security administration", "ubi", "welfare replacement", "operating cost", "opex"],
+)
+
+# --- Aligned Election Commission (replaces campaign finance) ---
+
 ALIGNED_ELECTION_COMMISSION_ANNUAL_OPEX = Parameter(
-    100_000_000,
+    7_000_000,
     manual_ref="knowledge/solution/aligned-election-commission.qmd",
     source_type="definition",
-    description="Modeled annual operating cost of the Aligned Election Commission: alignment-score computation, public data pipelines, and campaign-fund routing. Generous relative to the trivial compute involved.",
+    description="All-in annual operating cost of the Aligned Election Commission: alignment-score computation, public data pipelines, and fund routing. Sized as a small data-engineering operation; the most similar existing system is the NRA's politician scorecard, which runs on a budget that rounds to zero.",
     display_name="Aligned Election Commission Annual Operating Cost",
     unit="USD",
-    distribution="fixed",
-    confidence="estimated",
+    distribution="lognormal",
+    confidence_interval=(2_000_000, 20_000_000),
     keywords=["aligned election commission", "alignment score", "campaign finance replacement", "operating cost", "opex"],
 )
 
-AI_DIPLOMATIC_CORPS_ANNUAL_COST = Parameter(
-    1_000_000_000,
-    manual_ref="knowledge/solution/department-of-peace.qmd",
+# --- Decentralized Census Bureau (the sensor array) ---
+
+DECENTRALIZED_CENSUS_BUREAU_ANNUAL_OPEX = Parameter(
+    15_000_000,
+    manual_ref="knowledge/solution/decentralized-census-bureau.qmd",
     source_type="definition",
-    description="Modeled annual cost of a standing corps of frontier-model AI negotiators engaging all ~195 governments continuously: thousands of concurrent agents at current inference prices, padded above the arithmetic. Roughly three hours of global military spending.",
-    display_name="AI Diplomatic Corps Annual Cost",
+    description="All-in annual operating cost of the sensor array: continuously computing, cross-checking, and integrity-auditing the statistics the machine steers by (median after-tax income aggregates, healthy-life-expectancy estimation from dFDA outcome data, data-poisoning detection). Sized as a mid-sized analytics operation; roughly 1% of what the decennial census costs per year amortized. The citizen count itself is a free byproduct of the identity layer.",
+    display_name="Decentralized Census Bureau Annual Operating Cost",
+    unit="USD",
+    distribution="lognormal",
+    confidence_interval=(5_000_000, 40_000_000),
+    keywords=["decentralized census bureau", "sensor array", "measurement", "operating cost", "opex"],
+)
+
+# --- Algorithmic Monetary Authority (replaces the Federal Reserve) ---
+
+ALGORITHMIC_MONETARY_AUTHORITY_ANNUAL_OPEX = Parameter(
+    7_500_000,
+    manual_ref="knowledge/solution/algorithmic-monetary-authority.qmd",
+    source_type="definition",
+    description="All-in annual operating cost of the Algorithmic Monetary Authority: basket monitoring, rule execution, continuous public verification, and the humans who hold the pager. Sized as a small monitoring operation; the rule itself is one formula and requires no committee.",
+    display_name="Algorithmic Monetary Authority Annual Operating Cost",
+    unit="USD",
+    distribution="lognormal",
+    confidence_interval=(3_000_000, 20_000_000),
+    keywords=["algorithmic monetary authority", "federal reserve replacement", "monetary policy", "operating cost", "opex"],
+)
+
+# --- Transparent Securities Commission (replaces the SEC wealth gate) ---
+
+TRANSPARENT_SECURITIES_COMMISSION_ANNUAL_OPEX = Parameter(
+    20_000_000,
+    manual_ref="knowledge/solution/transparent-securities-commission.qmd",
+    source_type="definition",
+    description="All-in annual operating cost of the Transparent Securities Commission: standardized disclosure schema plus continuous fraud-pattern detection across every issuer on the ledger. Anchored to the most similar existing systems: the real-time fraud-detection operations card networks already run at market scale.",
+    display_name="Transparent Securities Commission Annual Operating Cost",
+    unit="USD",
+    distribution="lognormal",
+    confidence_interval=(8_000_000, 50_000_000),
+    keywords=["transparent securities commission", "sec replacement", "fraud detection", "operating cost", "opex"],
+)
+
+# --- DIH same-budget efficiency (no treaty, no new money) ---
+
+NIH_TRIAL_PATIENTS_FUNDABLE_STATUS_QUO = Parameter(
+    NIH_ANNUAL_BUDGET * NIH_CLINICAL_TRIALS_SPENDING_PCT / TRADITIONAL_PHASE3_COST_PER_PATIENT,
+    manual_ref="knowledge/solution/dih.qmd",
+    source_type="calculated",
+    description="Trial participants the NIH's current clinical-trials allocation funds each year at traditional per-patient costs: the status quo output of the existing budget.",
+    display_name="NIH Trial Patients Fundable (Status Quo)",
+    unit="patients",
+    formula="NIH_BUDGET × TRIALS_PCT / TRADITIONAL_COST_PER_PATIENT",
+    inputs=["NIH_ANNUAL_BUDGET", "NIH_CLINICAL_TRIALS_SPENDING_PCT", "TRADITIONAL_PHASE3_COST_PER_PATIENT"],
+    compute=lambda ctx: ctx["NIH_ANNUAL_BUDGET"] * ctx["NIH_CLINICAL_TRIALS_SPENDING_PCT"] / ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"],
+    keywords=["nih", "trial capacity", "status quo", "patients fundable"],
+)
+
+DIH_NIH_SAME_BUDGET_PATIENTS_FUNDABLE = Parameter(
+    NIH_ANNUAL_BUDGET * NIH_CLINICAL_TRIALS_SPENDING_PCT / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT,
+    manual_ref="knowledge/solution/dih.qmd",
+    source_type="calculated",
+    description="Trial participants the SAME NIH clinical-trials allocation funds each year at dFDA pragmatic-trial prices: identical budget, identical 3.3% split, different procurement. No treaty and no new money required.",
+    display_name="DIH Same-Budget Trial Patients Fundable",
+    unit="patients",
+    formula="NIH_BUDGET × TRIALS_PCT / PRAGMATIC_COST_PER_PATIENT",
+    inputs=["NIH_ANNUAL_BUDGET", "NIH_CLINICAL_TRIALS_SPENDING_PCT", "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+    compute=lambda ctx: ctx["NIH_ANNUAL_BUDGET"] * ctx["NIH_CLINICAL_TRIALS_SPENDING_PCT"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
+    keywords=["dih", "nih", "same budget", "pragmatic trials", "procurement efficiency"],
+)
+
+# --- Suite-level aggregates and per-citizen dividends ---
+
+US_GOV_WASTE_PER_CAPITA_ANNUAL = Parameter(
+    US_GOV_WASTE_TOTAL / US_POPULATION_2024,
+    manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
+    source_type="calculated",
+    description="The US efficiency gap per person per year: the audit's total governance dysfunction divided across the population. The invoice every American pays silently.",
+    display_name="US Governance Dysfunction per Person per Year",
+    unit="USD",
+    formula="US_GOV_WASTE_TOTAL / US_POPULATION",
+    inputs=["US_GOV_WASTE_TOTAL", "US_POPULATION_2024"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_TOTAL"] / ctx["US_POPULATION_2024"],
+    keywords=["efficiency gap", "per capita", "dysfunction", "waste per person"],
+)
+
+GOV_REPLACEMENT_SUITE_ANNUAL_OPEX = Parameter(
+    AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX
+    + UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX
+    + ALIGNED_ELECTION_COMMISSION_ANNUAL_OPEX
+    + DECENTRALIZED_CENSUS_BUREAU_ANNUAL_OPEX
+    + ALGORITHMIC_MONETARY_AUTHORITY_ANNUAL_OPEX
+    + TRANSPARENT_SECURITIES_COMMISSION_ANNUAL_OPEX,
+    manual_ref="knowledge/solution/earth-optimization-services.qmd",
+    source_type="calculated",
+    description="Combined steady-state annual operating cost of the priced government-replacement modules (revenue service, security administration, election commission, census sensor array, monetary authority, securities commission). Excludes the revenue-positive and included-elsewhere modules.",
+    display_name="Government Replacement Suite Annual Operating Cost",
+    unit="USD",
+    formula="ARS + USA + AEC + DCB + AMA + TSC operating costs",
+    inputs=[
+        "AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX",
+        "UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX",
+        "ALIGNED_ELECTION_COMMISSION_ANNUAL_OPEX",
+        "DECENTRALIZED_CENSUS_BUREAU_ANNUAL_OPEX",
+        "ALGORITHMIC_MONETARY_AUTHORITY_ANNUAL_OPEX",
+        "TRANSPARENT_SECURITIES_COMMISSION_ANNUAL_OPEX",
+    ],
+    compute=lambda ctx: (
+        ctx["AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX"]
+        + ctx["UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX"]
+        + ctx["ALIGNED_ELECTION_COMMISSION_ANNUAL_OPEX"]
+        + ctx["DECENTRALIZED_CENSUS_BUREAU_ANNUAL_OPEX"]
+        + ctx["ALGORITHMIC_MONETARY_AUTHORITY_ANNUAL_OPEX"]
+        + ctx["TRANSPARENT_SECURITIES_COMMISSION_ANNUAL_OPEX"]
+    ),
+    keywords=["suite", "operating cost", "government replacement", "total opex"],
+)
+
+GOV_REPLACEMENT_SUITE_OPEX_PER_CITIZEN_ANNUAL = Parameter(
+    GOV_REPLACEMENT_SUITE_ANNUAL_OPEX / US_POPULATION_2024,
+    manual_ref="knowledge/solution/earth-optimization-services.qmd",
+    source_type="calculated",
+    description="The whole priced replacement suite's operating cost per citizen per year: roughly one dollar, versus five figures of dysfunction.",
+    display_name="Replacement Suite Operating Cost per Citizen per Year",
+    unit="USD",
+    formula="SUITE_ANNUAL_OPEX / US_POPULATION",
+    inputs=["GOV_REPLACEMENT_SUITE_ANNUAL_OPEX", "US_POPULATION_2024"],
+    compute=lambda ctx: ctx["GOV_REPLACEMENT_SUITE_ANNUAL_OPEX"] / ctx["US_POPULATION_2024"],
+    keywords=["suite", "per citizen", "operating cost", "dollar per person"],
+)
+
+DECENTRALIZED_CONGRESS_SAVINGS_PER_CITIZEN_ANNUAL = Parameter(
+    (US_GOV_WASTE_TARIFFS + US_GOV_WASTE_CORPORATE_WELFARE
+     + US_GOV_WASTE_AGRICULTURAL_SUBSIDIES + US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES)
+    / US_POPULATION_2024,
+    manual_ref="knowledge/solution/decentralized-congress.qmd",
+    source_type="calculated",
+    description="Annual savings per citizen from putting the zombie policies to direct evidence-attached votes: tariffs, corporate welfare, agricultural and fossil subsidies, the policies that survive only by never being asked about.",
+    display_name="Decentralized Congress Savings per Citizen per Year",
+    unit="USD",
+    formula="(TARIFFS + CORPORATE_WELFARE + AG_SUBSIDIES + FOSSIL_SUBSIDIES) / US_POPULATION",
+    inputs=[
+        "US_GOV_WASTE_TARIFFS",
+        "US_GOV_WASTE_CORPORATE_WELFARE",
+        "US_GOV_WASTE_AGRICULTURAL_SUBSIDIES",
+        "US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES",
+        "US_POPULATION_2024",
+    ],
+    compute=lambda ctx: (
+        ctx["US_GOV_WASTE_TARIFFS"] + ctx["US_GOV_WASTE_CORPORATE_WELFARE"]
+        + ctx["US_GOV_WASTE_AGRICULTURAL_SUBSIDIES"] + ctx["US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES"]
+    ) / ctx["US_POPULATION_2024"],
+    keywords=["decentralized congress", "dividend", "per capita", "zombie tariff"],
+)
+
+DRUG_TREATMENT_ADMIN_SAVINGS_PER_CITIZEN_ANNUAL = Parameter(
+    US_GOV_WASTE_DRUG_WAR / US_POPULATION_2024,
+    manual_ref="knowledge/solution/drug-treatment-administration.qmd",
+    source_type="calculated",
+    description="Annual savings per citizen from ending the drug war and routing addiction into the treatment machinery.",
+    display_name="Drug Treatment Administration Savings per Citizen per Year",
+    unit="USD",
+    formula="DRUG_WAR_ANNUAL_COST / US_POPULATION",
+    inputs=["US_GOV_WASTE_DRUG_WAR", "US_POPULATION_2024"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_DRUG_WAR"] / ctx["US_POPULATION_2024"],
+    keywords=["drug treatment administration", "dividend", "per capita", "drug war"],
+)
+
+DEPARTMENT_OF_PEACE_SAVINGS_PER_AMERICAN_ANNUAL = Parameter(
+    US_GOV_WASTE_MILITARY_OVERSPEND / US_POPULATION_2024,
+    manual_ref="knowledge/solution/department-of-peace.qmd",
+    source_type="calculated",
+    description="Annual savings per American from trimming military spending to the first-principles homeland-defense baseline: the audit's overspend divided across the population.",
+    display_name="Department of Peace Savings per American per Year",
+    unit="USD",
+    formula="MILITARY_OVERSPEND / US_POPULATION",
+    inputs=["US_GOV_WASTE_MILITARY_OVERSPEND", "US_POPULATION_2024"],
+    compute=lambda ctx: ctx["US_GOV_WASTE_MILITARY_OVERSPEND"] / ctx["US_POPULATION_2024"],
+    keywords=["department of peace", "dividend", "per capita", "military overspend"],
+)
+
+# --- Immigration Revenue Service (replaces ICE) ---
+
+US_SMUGGLER_FEE_AVG = Parameter(
+    6_937,
+    manual_ref="knowledge/solution/immigration-revenue-service.qmd",
+    source_ref=ReferenceID.EMIF_COYOTE_FEES_2022,
+    source_type="external",
+    description="Average fee Mexican migrants paid smugglers to enter the United States (EMIF Norte survey of 20,000+ migrants, second half of 2022). Reported street prices ran higher after 2023; the interval covers the range. This is the market-revealed willingness to pay for entry.",
+    display_name="Average Smuggler Fee per US Border Crossing",
+    unit="USD",
+    distribution="lognormal",
+    confidence_interval=(4_000, 14_000),
+    confidence="high",
+    last_updated="2023-04",
+    keywords=["coyote", "smuggler fee", "immigration", "border", "revealed preference"],
+)
+
+IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME = Parameter(
+    2_000_000,
+    manual_ref="knowledge/solution/immigration-revenue-service.qmd",
+    source_type="definition",
+    description="Modeled annual legal entries under uncapped priced entry. Anchored to the most similar thing that already happened: the 2021-2026 US immigration surge that the CBO measured ran at roughly this rate, uninvited and unpriced.",
+    display_name="Priced-Entry Annual Volume",
+    unit="entrants",
+    distribution="lognormal",
+    confidence_interval=(1_000_000, 5_000_000),
+    keywords=["immigration", "priced entry", "volume", "visa sales"],
+)
+
+IMMIGRATION_ENTRY_REVENUE_ANNUAL = Parameter(
+    IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME * US_SMUGGLER_FEE_AVG,
+    manual_ref="knowledge/solution/immigration-revenue-service.qmd",
+    source_type="calculated",
+    description="Annual entry-fee revenue under priced entry at the smuggler-revealed price: money migrants already pay, redirected from cartels to the Treasury. Excludes the ongoing surtax stream, so it is a floor.",
+    display_name="Priced-Entry Annual Fee Revenue",
+    unit="USD",
+    formula="ENTRANTS × SMUGGLER_FEE",
+    inputs=["IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME", "US_SMUGGLER_FEE_AVG"],
+    compute=lambda ctx: ctx["IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME"] * ctx["US_SMUGGLER_FEE_AVG"],
+    keywords=["immigration", "entry fees", "revenue", "smuggler market capture"],
+)
+
+CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034 = Parameter(
+    900_000_000_000,
+    manual_ref="knowledge/solution/immigration-revenue-service.qmd",
+    source_ref=ReferenceID.CBO_IMMIGRATION_SURGE_2024,
+    source_type="external",
+    description="CBO (July 2024): the 2021-2026 immigration surge lowers federal deficits, on net, by $0.9 trillion over 2024-2034 (revenues up $1.2 trillion, spending up $0.3 trillion).",
+    display_name="CBO Immigration Surge Deficit Reduction, 2024-2034",
     unit="USD",
     distribution="fixed",
-    confidence="estimated",
-    keywords=["department of peace", "ai negotiator", "diplomacy", "inference cost", "operating cost"],
+    confidence="high",
+    last_updated="2024-07",
+    keywords=["cbo", "immigration surge", "deficit reduction", "fiscal impact"],
+)
+
+IMMIGRATION_DIVIDEND_PER_CITIZEN_ANNUAL = Parameter(
+    (IMMIGRATION_ENTRY_REVENUE_ANNUAL + CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034 / 10)
+    / US_POPULATION_2024,
+    manual_ref="knowledge/solution/immigration-revenue-service.qmd",
+    source_type="calculated",
+    description="Annual per-citizen dividend from priced entry: entry-fee revenue redirected from smugglers to the Treasury, plus the annualized fiscal surplus the CBO measured from a surge of comparable volume. A floor: excludes the surtax stream and the retired enforcement budget.",
+    display_name="Immigration Dividend per Citizen per Year",
+    unit="USD",
+    formula="(ENTRY_FEES + SURGE_FISCAL_SURPLUS / 10 years) / US_POPULATION",
+    inputs=[
+        "IMMIGRATION_ENTRY_REVENUE_ANNUAL",
+        "CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034",
+        "US_POPULATION_2024",
+    ],
+    compute=lambda ctx: (
+        ctx["IMMIGRATION_ENTRY_REVENUE_ANNUAL"] + ctx["CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034"] / 10
+    ) / ctx["US_POPULATION_2024"],
+    keywords=["immigration", "dividend", "per capita", "citizen shareholder"],
 )

@@ -1,0 +1,72 @@
+---
+title: The Immigration Revenue Service
+description: ICE hunts people who want to work. The replacement sells them tickets, taxes the surplus, and pays you the dividend. It shares initials with your tax collector on purpose; it is the only agency in history whose customers queue up, pay, and say thank you.
+published: true
+scores:
+  quality: 6
+  value: 7
+  timeliness: 7
+  standalone: 6
+  voice: 7
+  importance: 8
+audience: "A policymaker, builder, or investor ready to convert the largest line item in the dysfunction tax into the only government agency that turns a profit."
+feel: "The gasp at the number: over half the dysfunction tax is one policy, and the fix is a checkout page."
+do: "Build the priced-entry system: uncapped legal immigration with entry fees, an ongoing surtax tuned to measured harms, and a citizen dividend, running on rails the other modules already built."
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## The Largest Number in This Book
+
+Migration restrictions cost {{< var political_dysfunction_global_migration_opportunity_cost >}} per year {{< var political_dysfunction_global_migration_opportunity_cost_cite >}}. That is more than half of the entire [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025], larger than the health item, the science item, and the lead item combined. Your economists estimated that free movement of labor would raise gross world product by 67 to 147 percent, published it under the title "Trillion-Dollar Bills on the Sidewalk" [@clemens2011], and then watched your species build an agency to guard the sidewalk.
+
+The mechanism is not mysterious. The same human, with the same hands and the same brain, produces several times more value on one side of a border than the other, because the difference was never the human. It was the institutions around the human. Moving a worker from a broken system to a working one is the single largest instant productivity upgrade your species knows how to perform, and you have priced this miracle at zero legal units per year and policed the shortage with handcuffs. The annual budget of the agency doing the hunting is smaller than one day of the prosperity it prevents.
+
+## The Replacement
+
+Stop prohibiting the most valuable transaction on Earth and start pricing it.
+
+- **Uncapped legal entry, market-priced.** Anyone who passes the security screen may buy in: an entry fee set by auction, plus an ongoing surtax on earnings. The queue that currently takes years or decades becomes a checkout page. Nobody swims a river to reach a checkout page.
+- **A citizen dividend.** The fees and surtax flow to existing citizens through the [Universal Security Administration's](universal-security-administration.qmd) deposit rails. Natives stop being spectators of immigration and become its shareholders. It is remarkable how quickly a country full of shareholders discovers it likes customers.
+- **The buy-in replaces the welfare question.** New arrivals are customers first: full access to the safety net phases in as the buy-in completes, so no one can claim the newcomer took anything. The newcomer bought something, from you, and you cashed the check.
+- **Measured harms, compensated automatically.** The [Optimitron](optimocracy.qmd) measures actual wage, congestion, and service effects in real data (your economists keep finding them small, but now the sensor settles the argument instead of the television) and tunes the surtax so that any measured harm is paid for out of the immigrant's own fees. If the harm is real, the surtax covers it. If the harm is imaginary, the dividend covers the feeling.
+- **Enforcement shrinks to receipt-checking.** When legal entry costs less than a smuggler and takes an afternoon, the smuggling industry dies the way scalpers die when the box office reopens: undercut on price, safety, and refund policy. The wall becomes a turnstile.
+
+**Retail price:** negative. This is the only module in the catalog that pays for itself before lunch, which is why it is also the only one your current system refuses to build.
+
+## The Math
+
+The demand curve for entry is not hypothetical. It has a price sheet, maintained by cartels. Migrants currently pay smugglers an average of {{< var us_smuggler_fee_avg >}} per crossing (a 20,000-person survey; women pay about 19% more, because the market has noticed they have fewer alternatives) [@emif-coyote-fees-2022]. Read that number the way an economist would: thousands of dollars, in cash, for a product with a meaningful chance of death, no legal status on delivery, and no refunds. That is the revealed willingness to pay for the *worst version* of entry. It is the floor under the price of the legal version, which is a strictly better product in every dimension including surviving the trip.
+
+So the checkout page charges the coyote rate and captures the market: {{< var immigration_priced_entry_annual_volume >}} a year, at {{< var us_smuggler_fee_avg >}} each, is {{< var immigration_entry_revenue_annual >}} a year in entry fees. This is not new money conjured by an economist. It is money that is already being paid, every year, by the same people, for the same trip. The only modeling assumption is who receives it: cartels or the Treasury. Every input is a distribution and the interval rides along in the tooltip.
+
+The fiscal side does not need modeling at all, because the natural experiment already ran at exactly this volume. The 2021-2026 immigration surge arrived at roughly two million people a year: uninvited, unpriced, unscreened, and maximally chaotic. Your own Congressional Budget Office measured the result: federal deficits *down* {{< var cbo_immigration_surge_deficit_reduction_2024_2034 >}} over 2024-2034, revenues up $1.2 trillion, GDP up $8.9 trillion [@cbo-immigration-surge-2024]. The messy, free version of this module turned a nine-hundred-billion-dollar profit while both political parties described it as a catastrophe.
+
+Add the two streams and divide by the population: {{< var immigration_dividend_per_citizen_annual >}} per citizen per year, every year, as a deposit. And that is the floor, measured by your own accountants from the chaotic version: it excludes the ongoing surtax stream, excludes the retired enforcement budget, and excludes the selection effects of screening paying customers instead of chasing swimmers. The priced version should beat it the way a box office beats a scalper.
+
+| Feature | The Other Guys | The Immigration Revenue Service |
+|---------|----------------|----------------------------------|
+| Legal entry time | Years to decades, by filing cabinet | Under a day, by checkout page |
+| Who collects the {{< var us_smuggler_fee_avg >}} per head | Cartels | The Treasury, which splits it with you |
+| Annual take | Tens of billions spent hunting workers | {{< var immigration_entry_revenue_annual >}} in fees, plus the measured fiscal surplus |
+| Your cut | Nothing | {{< var immigration_dividend_per_citizen_annual >}} per year, as a deposit |
+| Casualty rate | People drown | Nobody swims to a checkout page |
+
+## Build Sheet
+
+*Loop role: the intake valve. The single largest measured flow of value into the machine; currently welded shut with the pressure building. See the [Theory of Operation](theory-of-operation.qmd).*
+
+- **What you are building:** The priced-entry system: security screening, visa checkout, surtax collection, dividend distribution.
+- **Parts required:** Surtax collection on [Automated Revenue Service](automated-revenue-service.qmd) rails. Dividend distribution on [Universal Security Administration](universal-security-administration.qmd) rails. The [Optimitron](optimocracy.qmd) for quarterly price setting from measured effects. A checkout page, which your species has built approximately forty million of.
+- **Specifications:** End-to-end legal entry, screen to visa, in under one day; the current median is measured in years because the current system is measured in filing cabinets. Prices adjusted quarterly by a published rule, not by mood or election cycle. Every fee, surtax, and dividend on the public ledger. No detention infrastructure: the customer is paying, and you do not cage the customer.
+- **Testing your installation:** One corridor where the border queue becomes a checkout page: median legal entry under 24 hours, revenue positive from the first month, smuggler market share falling because you outcompeted them on price, safety, and refund policy.
+- **Parts cost:** Negative. This module pays for the shelf it sits on. Builders who need capital should note that the concession pays the concessionaire, which is why Dubai will read this page twice.
+- **First bolt (no permission required):** Publish the price sheet: the legal price of entry versus the cartel price, corridor by corridor, updated monthly, with the revenue the Treasury declined to collect running as a totalizer. A price sheet is speech, and speech is permissionless.
+- **Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "They will take our jobs and lower our wages" | The [Optimitron](optimocracy.qmd) measures actual wage effects in real data and tunes the surtax to compensate any measured harm from the immigrant's own fees. Your economists keep finding the effects small; now the sensor settles it instead of the television. If the harm is real, the surtax covers it. If the harm is imaginary, the dividend covers the feeling. |
+| "They will go on welfare" | Safety-net access phases in as the buy-in completes. The newcomer bought something from you, and you cashed the check. The freeloading arrow points the other way: natives collect the dividend from day one. |
+| "This commodifies personhood" | The current system prices entry too: {{< var us_smuggler_fee_avg >}}, paid to cartels, with a drowning risk. The question was never whether entry has a price. It was who collects it and whether the customer survives the transaction. |
+
+You build it, or your least dysfunctional border agency does. Forward this page with the checkout page attached. It will be timed.

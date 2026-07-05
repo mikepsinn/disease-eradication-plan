@@ -32,6 +32,8 @@ Your NIH spends {{< var nih_annual_budget >}} a year. Billions flow to projects 
 
 This is not a conspiracy. It's just what happens when you pay people for asking instead of finding. You've built a machine whose primary output is requests for money and whose secondary output is, reluctantly, science. There is a word for systems that produce the opposite of their stated purpose. The word is "human." It also works as a verb. As in, "the project was going well until someone humaned it."
 
+Here is the same-budget test, and it requires no treaty, no new money, and no permission from anyone but a procurement officer. The NIH's current clinical-trials allocation ({{< var nih_clinical_trials_spending_pct >}} of {{< var nih_annual_budget >}}) funds about {{< var nih_trial_patients_fundable_status_quo >}} a year at traditional per-patient prices of {{< var traditional_phase3_cost_per_patient >}}. Run the identical dollars through [pragmatic-trial procurement](dfda.qmd) at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient and the same line item funds {{< var dih_nih_same_budget_patients_fundable >}} a year. Same budget. Same 3.3%. Different shopping. And that is before anyone touches the 96.7% cookbook budget, which is a separate and larger conversation.
+
 Your Decentralized Institutes of Health is what you'd build if you started over and actually meant it. Here's the blueprint.
 
 ## The Health-Industrial Complex: Coordinating Your War on Disease

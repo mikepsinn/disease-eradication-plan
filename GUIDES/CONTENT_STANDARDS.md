@@ -164,4 +164,16 @@ Use these five checks to audit every chapter file.
 - **Frontmatter:** Does the file have a complete and accurate YAML frontmatter block?
 - **Link Integrity:** Are all internal links valid and pointing to existing files?
 - **Formatting:** Does the file adhere to the automated formatting standards?
+
+### The Module Page Standard
+
+Every solution/module chapter (the government-replacement suite and its siblings) must pass all seven, in addition to the audit checklist above:
+
+1. **Readable.** Every section carries a laugh or a load-bearing fact; shorter is funnier. If a sibling chapter already says the same thing funnier, steal that line or beat it (see STYLE_GUIDE, "Steal or Beat"). Never restate a sibling's point less funny.
+2. **Fundable.** The page states who pays, what it returns, and the per-capita dividend where parameterized. Costs are comparator-anchored ("the most similar machine that already exists") with Monte Carlo intervals. No padding multipliers. No invented staffing plans.
+3. **Buildable.** The Build Sheet is specific enough that a contractor cannot pretend it is vague: parts, specifications, acceptance tests. Dependencies on other modules are named and linked.
+4. **Dense.** No content-free sentences. Delete blather; make the surviving facts funny.
+5. **Survives hostile reading.** The 2-4 strongest objections are pre-countered on the page, as Troubleshooting rows (Symptom / Fix).
+6. **Reader is the builder.** The page ends with what the reader does. Never casts the reader as vendor, bidder, or supporter.
+7. **Honest accounting.** No "free" claims. If a cost lives in another module's budget, name the module and the line.
 - **Heading Standard:** Does the chapter avoid starting with a redundant "Introduction" or title-like heading?

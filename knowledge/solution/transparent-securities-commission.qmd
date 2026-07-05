@@ -1,0 +1,70 @@
+---
+title: The Transparent Securities Commission
+description: Your SEC protects you from the best-returning asset class unless you are already rich. The replacement protects you with information instead of exclusion.
+published: true
+scores:
+  quality: 6
+  value: 6
+  timeliness: 7
+  standalone: 6
+  voice: 7
+  importance: 6
+audience: "A builder, and every investor the accredited-investor rule currently locks out of the room."
+feel: "The flat realization that the wall was never protection, followed by the itch to replace it with a window."
+do: "Build the three primitives: disclosure-by-default on the ledger, continuous fraud detection, and access by competence instead of net worth."
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## The Wealth Test
+
+Your Securities and Exchange Commission protects you from fraud primarily by deciding who is allowed to invest. Under the accredited-investor rule, you may buy into early-stage companies only if you earn over $200,000 a year or hold over $1 million in net worth [@us-sec-accredited-investor-definition]. Those thresholds were written in 1982 dollars and never indexed [@accredited-investor-thresholds-history], so inflation quietly enlarges the excluded class every year. Early-stage investments have returned roughly {{< var venture_gross_return >}} annually; the retirement accounts you are permitted return about {{< var conventional_retirement_return >}}. The difference is not sophistication. It is a permission slip.
+
+The stated purpose is fraud protection. Observe the mechanism in action: every victim of Bernie Madoff's $64.8 billion fraud (the wealthy individuals, the feeder funds, the endowments, the charities) was accredited [@madoff-investment-scandal]. The rule did not stop the largest investment fraud in your history. It curated the victims. Meanwhile fraud is already separately illegal (the SEC brought 583 enforcement actions and collected $8.2 billion in one year [@us-sec-enforcement-fy2024]), and when your regulators finally did open a small door for ordinary investors, Regulation Crowdfunding, their own review found "a low incidence of fraud" [@us-sec-reg-cf-data-2024]. And through all of it, the same government that forbids a nurse a $1,000 stake in a startup sold your species $66.5 billion of legal gambling in a single year [@aga-commercial-gaming-2023]. You may bet your paycheck on a parlay. You may not invest it in a company. This is called investor protection.
+
+## The Replacement
+
+Three primitives, all properties of the public ledger rather than offices full of reviewers:
+
+1. **Disclosure by default.** Every issuer's books, capitalization table, use of funds, and results are published to the ledger in standardized, machine-readable form. The thing the wealth test assumes ordinary people cannot obtain (information) is simply made public.
+2. **Continuous fraud detection.** Pattern analysis runs over the ledger around the clock and flags the statistical signatures of fraud (impossible returns, circular flows, undisclosed related-party transfers) while the fraud is happening, not after the collapse and the press conference.
+3. **Access by competence.** Anyone may invest after a standardized risk disclosure and a competence check.
+
+```python
+def may_invest(citizen, offering):
+    return citizen.passed_competence_check(offering.risk_class)
+    # net worth does not appear in this function,
+    # because net worth measures what you can afford to lose,
+    # not whether you understood the question
+```
+
+Madoff ran for decades under the old system; the detection method was an accident followed by a confession. Under continuous ledger analysis, a circular flow is a query, and queries do not take decades. Full mechanics: [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.qmd) [@algorithmic-public-administration-paper-2025].
+
+## The Build
+
+{{< var transparent_securities_commission_annual_opex >}} a year, all-in, anchored to the most similar system that exists: the real-time fraud detection your card networks already run, which catches stolen cards in milliseconds at planetary scale. The agency it replaces spends roughly $2.4 billion a year with about 5,000 staff [@us-sec-budget-fy2024] and reads the disclosures after you have already lost the money.
+
+| Feature | The Other Guys | The Transparent Securities Commission |
+|---------|----------------|----------------------------------------|
+| Protects you by | Deciding you are too poor to invest | Publishing the books and watching the flows |
+| Fraud detection speed | Decades, by accident, after confession | Continuous; a circular flow is a query |
+| Who may buy the best returns | Households above $1 million | Anyone who passes a free competence check |
+| Madoff outcome | Every victim pre-screened as qualified | Flagged at the first impossible return |
+
+## Build Sheet
+
+*Loop role: the intake filter on capital formation. It keeps fraud out of the fuel line without welding the tank shut for everyone earning under $200,000. See the [Theory of Operation](theory-of-operation.qmd).*
+
+- **What you are building:** The standardized disclosure schema, the continuous fraud-detection engine, and the competence-check gateway.
+- **Parts required:** The [public ledger](automated-revenue-service.qmd) for disclosure-by-default. Anomaly detection of the kind your card networks already run at planetary scale, catching stolen cards in milliseconds while your securities regulator catches Ponzis in decades; that gap is the part you are machining.
+- **Specifications:** Every filing machine-readable and public within one block. Fraud-pattern scan latency under 24 hours across all issuers. Competence checks free, retakeable, available in every language. Zero net-worth inputs anywhere in the access path, including the fine print; the fine print will be checked with the same engine being built.
+- **Testing your installation:** Detect a simulated Madoff (circular flows, impossible returns, fabricated statements) within 30 days of the first fake transaction. The current record is decades, set by accident. Beat it by decades.
+- **Parts cost:** {{< var transparent_securities_commission_annual_opex >}}/year; interval in the tooltip. The incumbent spends roughly $2.4 billion a year reading disclosures after you have lost the money.
+- **First bolt (no permission required):** Run the anomaly engine over public filings and publish scores. Scores, not accusations; your libel lawyer will enjoy explaining the difference, briefly. The first flagged fund that later collapses is the advertisement.
+- **Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "Grandma will lose her savings on startups" | Grandma is currently permitted to lose her savings on lottery tickets, sports parlays, and meme stocks, which are legal at every income. The one thing she is protected from is the asset class with the best returns. The check tests whether she understood the risk, which is more protection than the wealth test ever gave Madoff's pre-qualified victims. |
+| "Fraudsters will pass the competence check" | The check is not the defense; the ledger is. Fraud is caught by the flows, not the vibes, and the flows are public. |
+
+You build it. Include the query that catches Madoff; if you cannot write it, hire someone who can, and this page is their spec.

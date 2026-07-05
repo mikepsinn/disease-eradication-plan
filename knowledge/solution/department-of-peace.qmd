@@ -52,15 +52,92 @@ Here is the replacement code:
 
 Disputes on Wishonia are resolved with data, binding arbitration, and an optimization function that finds the allocation where both parties are measurably better off. This takes six minutes. Nobody dies. The savings are {{< var global_military_spending_annual_2024 >}} per year, which is enough to provide clean water for every human, end homelessness, fund all clinical trials, and eliminate hunger, with change left over.
 
-## The Negotiator
+| Feature | The Other Guys | The Department of Peace |
+|---------|----------------|--------------------------|
+| Annual budget | {{< var global_military_spending_annual_2024 >}} | An accountant, a payroll, some agent-hours, one pull request |
+| Inventory | {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses in storage | Wars priced, settled, and cancelled |
+| Ends wars by | Winning them (net cost: everything) | Paying the handful of humans who start them |
+| Verification | Trust, followed by invasion | Your missiles destroying theirs, on camera |
+| Body count | {{< var war_deaths_since_1900_nounit >}} since 1900 | Projected casualties: the weapons |
+| Your share of the overspend | {{< var department_of_peace_savings_per_american_annual >}} per American per year above homeland defense ([itemized](../appendix/us-efficiency-audit.qmd)) | Refunded |
 
-Every war your species has ever fought ended the same way: everyone sat down at a table and negotiated. The table was available the entire time. The war was the most expensive possible way to schedule the meeting.
+## The Peace Payroll
 
-Wars start when negotiation fails, and human negotiation fails for human reasons. Your diplomats sleep eight hours a night, in one time zone, in one language. They have egos that bruise and elections to survive. They cannot say "we were wrong about the border" without someone at home calling it treason. And they arrive after mobilization, when both sides have already paid so much that backing down feels more expensive than shooting.
+Every war is declared by a handful of specific humans with names, addresses, and retirement plans. Not nations: humans. The invasion happens on the day those humans calculate that war pays them better than peace. So the flagship product is not moral instruction, and it is not a bigger negotiating table. It is a payroll.
 
-So the Department of Peace fields a negotiator without those problems: a standing corps of superintelligent AI negotiators that talks with every government on Earth, continuously, before anything escalates. It holds every treaty ever signed and every reason each one broke. It speaks every language at 3 a.m. It has no face to lose, no base to please, and no need for the deal to be its idea. Its entire job is to find the arrangement both sides prefer to the war. That arrangement always exists, because war is negative-sum: the moment the shooting starts, both sides are paying to make the pie smaller. A deal that merely burns nothing beats the best-case war for everyone involved.
+You have already run this experiment. Egypt and Israel fought four wars in twenty-five years. In 1979 you started paying both governments a few billion dollars a year to stop. Forty-six years later: zero wars. It is the most cost-effective security program your species operates, and you never mention it, because "we bribed our way to permanent peace and it worked" fits nowhere in your mythology.
 
-Budget {{< var ai_diplomatic_corps_annual_cost >}} a year for it. That buys thousands of frontier-model negotiators running around the clock at current inference prices, more diplomacy than 195 governments can physically absorb, and the figure is padded well above the actual arithmetic. Your species currently spends {{< var ai_diplomatic_corps_annual_cost >}} on its military roughly every three hours.
+The payroll generalizes the trick using the machinery this manual already points at senators: the {{< var iab_political_incentive_funding_annual >}}-a-year incentive engine from the [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025]. Keep the peace and the stream flows: aid packages for your government, campaign support while you rule, a distinguished sinecure when you retire. Start a war and your stream stops, permanently, while your rival's doubles. The NRA grades senators on guns and your senators tremble at a B-minus; this grades heads of state on corpses. Heads of state get exactly what senators get in this book (campaign support, aid for their governments, careers after office) and never a personal check, which is both the legal line your species insists on and a design line this manual does not cross.
+
+One rule keeps the payroll from breeding what it feeds on: it pays for verified deeds, never for threats. A leader who manufactures a crisis to raise his price discovers that the [sensor array](decentralized-census-bureau.qmd) can tell staged from organic, and that the penalty for staging is the one thing the payroll never forgives: his stream ends, permanently, and his successor inherits it intact, which gives everyone around him a strong opinion about succession. You cannot threaten your way onto this payroll. You can only behave your way onto it, which for several of your current leaders will be a novel experience.
+
+And if a leader starts a war anyway, the payroll's final clause activates: the Severance Package. A standing prize pool funds every lawful mechanism for removing a war-starting leader from office: the opposition party, the recall campaign, the impeachment lawyers, and the [3.5% of citizens](../strategy/global-referendum.qmd) it takes to end a regime nonviolently, a threshold no movement in a century has reached and then failed at. For the leader personally, there is a comfortable exile package that activates the day they step down. Your species has already retired several dictators into seaside villas; it costs less than one week of the war they would otherwise have finished. The message to every head of state is public and symmetric: peace pays you, and war pays everyone around you to replace you.
+
+Price: included. It is the same political-incentive stream the treaty already funds, aimed up.
+
+## The Settlement Engine
+
+The obvious version of this product is a robot diplomat: an AI that talks to leaders at 3 a.m. in every language, with no ego and no reelection. We do not sell that, for the reason you already suspect: your leaders do not lack telephones. An AI version of a thing that does not work is a faster version of not working.
+
+Here is what a war actually is, on the books: an unexecuted arbitrage. War is negative-sum, so for every war there exists, as a matter of arithmetic, a settlement that leaves every party richer than fighting, including the specific humans in charge. Every war in your history ended at a table that was available the entire time. The deal was always there. It went unexecuted for four mundane reasons: nobody computed it specifically, nobody published it, nobody priced the cooperation of the particular humans blocking it, and nobody escrowed the payments so both sides could trust them. None of those four is a talking problem. All four are exactly the kind of problem the machine you already bought is for.
+
+So the Department of Peace runs a conflict desk on the [Optimitron](optimocracy.qmd). For every active and brewing conflict on Earth, it does four things. It searches the settlement space the way your chess engines search positions: millions of deal structures (splits, phased withdrawals, revenue shares, third-party guarantees, face-saving sequences) where human mediators explore a dozen. It prices every party's cooperation, down to the individual general and minister, using the [payroll's](incentive-alignment-bonds.qmd) machinery. It publishes the whole entry on humanity's to-do list: the war, its cost per day, the best computed settlement, each party's payoff under deal versus war, and the itemized holdouts with the price of each one's cooperation. Status: unfunded, until bondholders fund it. And it escrows the payments: money flows on verified deeds (missiles destroyed on camera, troops withdrawn past the sensor line) and stops the day the terms break. Not a promise. A payment rail with a tripwire.
+
+Publication is the weapon your diplomats never had. A leader can sell his population "we had no choice" only while the choice is private. Once the settlement is posted with the numbers attached, every soldier's mother can read the price at which peace was available, and who declined it. A war that continues past its posted settlement stops being a tragedy and becomes a purchase: itemized, timestamped, with the name of the buyer.
+
+The complaints, pre-computed:
+
+- **"Leaders already know peace is better."** Privately, deniably, in general. The desk makes it public, specific, and priced, which is a different object. And the output is not advice; it is a payment schedule aimed at the individuals whose incentives currently point at war. Knowing was never the constraint. Getting paid was.
+- **"Not everything is a spreadsheet. Some conflicts are sacred."** Correct, which is why the search space includes the columns money cannot fill: recognition, apologies, holy-site guarantees, sequencing that lets both sides tell their children they won. Humans are bad at enumerating face-saving structures because each one costs a career to propose. The engine proposes a million of them and has no career.
+- **"This rewards threatening war."** The strongest objection, so read the rule: the desk pays for verified de-escalation deeds, never for threats, and a manufactured crisis cuts your payroll stream permanently, because the [sensor array](decentralized-census-bureau.qmd) can tell organic disputes from staged ones and the scorecard does not forget. Extortion is the failure mode of appeasement, which paid for moods. This pays for dismantled missiles, on camera.
+- **"Parties will bluff to inflate their price."** The desk prices from observed behavior, not testimony; you cannot bluff a satellite. And because war is negative-sum, the slack is astronomical: overpaying a holdout by double is still the cheapest purchase in the history of purchases. Being occasionally overcharged for peace is a failure mode we accept with a smile.
+
+The compute is a rounding error (agents at public API prices; your species spends more on its military in any given two minutes), and the payments are the payroll's existing stream. What the desk adds is the thing no human institution ever built: a standing, public, priced market in ending wars. Your frontier AI labs keep asking what the highest-value query is. It is this one: "find the positive-sum trade," run continuously, against every conflict on Earth.
+
+## The Last War
+
+Your weapons no longer need you. The guidance is automated, the launch detection is automated, the drones hunt on their own. You automated the killing decades ago and kept the humans around mostly for the dying.
+
+This is the disposal opportunity of the millennium. After the treaty passes and the negotiator is fielded, you will still own {{< var global_warhead_count_nounit >}} warheads and several million lesser murder machines, sitting in storage, costing money, aging like milk. Decommissioning them one by one is slow, expensive, and boring. So don't. Declare war.
+
+One war. Scheduled, televised, sold out. Every nation sends its autonomous weapons to an agreed patch of empty ocean, and the weapons fight each other until there are no weapons left. Missile intercepts missile. Drone hunts drone. Torpedo meets torpedo, briefly. The machines perform the only ethical act a weapon is capable of: destroying another weapon. (This is the standard trim, and its advantage is that nobody has to trust anybody: your missiles destroy theirs, on camera. For planets that prefer their disarmament as a single dramatic purchase, there is also the robot. See below.)
+
+Notice what this fixes. Disarmament has always died on verification: no nation trusts the other side to actually destroy its stockpile. Fine. Watch the stockpile explode on live television, destroyed by your stockpile, which is also exploding. You currently run Mutual Assured Destruction. This is Mutually Verified Destruction: same acronym energy, zero funerals, and the first war in your history where both sides losing everything is both sides winning.
+
+Your species already does this quietly. You call it a "live-fire exercise": militaries destroying their own aging munitions on purpose, alone, with nobody watching. You even sink your own decommissioned warships for practice. We are proposing you do it together and charge admission. You already pay to watch robots fight when the robots are small and the arena is a warehouse. This one has aircraft carriers. Pay-per-view proceeds fund clinical trials. The first war in history with a merchandise line and no casualties list.
+
+(The warheads themselves do not get to play; plutonium is a poor sport. Those get dismantled the way you have already dismantled tens of thousands of them: quietly, by technicians, while the cameras are pointed at the drones.)
+
+And if two nations insist on fighting over something real (a border, an island, a river), fine: robots only. Your soldiers were only ever the moving parts your weapons required, and the weapons no longer require them. So the robots fight the robots, and before anything explodes, the robots clear the blast radius: knock on the doors, carry the grandmothers, double-check the basements, then demolish the disputed bridge with nobody on it. War with evacuation protocols. Your factories have had safety standards for a century; your wars can catch up. Whoever's robots win gets the bridge, which is exactly as arbitrary as your current method for deciding who gets the bridge, minus the funerals. The moment machines do the fighting, the killing of humans is revealed to have been optional all along, a default setting nobody ever bothered to change.
+
+Casualty projection: every combatant. Survivor projection: everyone.
+
+## The Very Strong Robot
+
+The premium option. Everybody pays a little money, and the Department of Peace builds one very strong robot that goes around finding all the bombs and throwing them into space.
+
+That is the entire product. It finds the bombs. It throws them into space. Space is large, empty, and does not contain a civilization, which makes it a better storage location for {{< var global_warhead_count_nounit >}} warheads than the current one, which does.
+
+The funding model is the referendum. You currently own the capacity for {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses and exactly one civilization to use them on, so the market test is clean: if more humans will pay more money for the robot that throws the bombs into space than anyone will pay to keep the bombs, then the robot is, by your species' own favorite logic, the better product. Every purchase is already a vote about which world you want. This is the first time anyone has printed that ballot and passed it around.
+
+You might say: a robot strong enough to throw every bomb into space is strong enough to murder us all, and that frightens me. A reasonable fear, with one flaw: your species is already building robots specifically designed to murder you. That is what the bombs are. The disposal robot's job description merely does not mention you, which puts it, on paper, ahead of every other robot in your arsenal, whose job descriptions do. You are not choosing between a scary robot and no scary robot. You are choosing between one robot that throws murder machines into space and several million murder machines. It is strictly less dangerous than its own cargo.
+
+And if the worst happens, if the very strong robot turns out to be evil in the end, then at least it threw some of the bad robots into space first. No other doomsday scenario your species has ever engineered comes with that feature. We checked.
+
+### The Invoice
+
+Here is the part that should end the meeting. You already ran the pilot program, and it turned a profit. Between 1993 and 2013, under the name Megatons to Megawatts, Russia dismantled 500 metric tons of bomb-grade uranium, enough for 20,000 warheads, and the material was downblended and sold to American power plants as fuel. Twenty years. Eight billion dollars. No cost to taxpayers, because the bombs paid for their own funeral. For two decades, up to one in ten American lightbulbs ran on dismantled Soviet warheads, and almost nobody knew [@megatons-to-megawatts-2013].
+
+Now compare the menu. The remaining global arsenal is {{< var global_warhead_count_nounit >}} warheads, fewer than the 20,000 the pilot already eliminated. Maintaining the American share alone costs roughly $95 billion every year [@cbo-nuclear-forces-2025-2034]. So the robot's entire historical benchmark price is about one month of the bomb-maintenance budget, and the disposal product has a track record of paying for itself in electricity. Disposal is cheaper than storage. It was cheaper than storage in 1993. You chose storage, annually, for thirty years, which is how you came to own {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses on a subscription plan.
+
+### Objections, Pre-Thrown
+
+- **"A launch failure would scatter plutonium over three counties."** Correct, which is why the warheads do not ride the catapult. The drones, the missiles, and the conventional murder machines get thrown into space for the highlight reel. The warheads take the stairs: dismantled by technicians and sold to power plants, the proven method above. It is also the more humiliating exit, which we consider a feature. The only thing better than destroying your rival's bomb is toasting bread with it.
+- **"Nuclear weapons in space are banned by the Outer Space Treaty."** Also correct: the disposal site is prohibited by the one arms-control treaty your species has universally obeyed. We treasure this. The paperwork is resolved by the previous bullet: nothing radioactive flies.
+- **"You cannot find every hidden warhead."** Correct, and irrelevant for the first {{< var nuclear_winter_spare_apocalypses_nounit >}} apocalypses. Perfect detection is only required for the very last step of total disarmament, and you are an entire arsenal of margin away from needing it. By the time it matters, the [sensor array](decentralized-census-bureau.qmd) will have had decades of practice, and the [payroll](incentive-alignment-bonds.qmd) will have made hiding a warhead the most expensive hobby on Earth.
+- **"Who controls the robot?"** The correct question, and the reason the standard trim exists: nobody has to trust the Last War, because your missiles destroy theirs on camera. The robot is the premium trim for planets that noticed "who controls it" applies with considerably more force to the current owners of the twelve thousand murder machines than to their garbage collector.
+
+So: could it actually work? The poster version, one enormous robot with a catapult, is a poster. The load-bearing version ran for twenty years, eliminated more warheads than currently exist, cost taxpayers nothing, and lit one in ten American lightbulbs. The Very Strong Robot is not science fiction. It is a rebrand of the most successful disarmament program in your species' history, with better merchandise.
 
 ## The Greeting Update
 
@@ -79,7 +156,7 @@ Greetings ship with communication technology. The telephone shipped "hello." The
 
 The assistants already say the second sentence. The program adds three words. Marginal cost: zero. Effect: billions of daily stand-down signals to eight billion threat detectors that have been running hot since the Pleistocene. Phase two is humans catching it from the machines, exactly the way you caught "hello" from the telephone. Getting every AI company to merge the patch requires either a modest lobbying budget (you own the lobbyists now; see the [Loving Takeover](../appendix/loving-takeover.qmd)) or one screenshot of this page going viral, whichever ships first.
 
-An amygdala that finally idles can see the thing it could not see while running hot: the zero-sum games are optional now. All of them. The other tribe's children getting cured does not un-cure yours. Even security went positive-sum: under the [1% Treaty](1-percent-treaty.qmd), everyone cuts the same 1% at once, so every nation gets safer simultaneously, which your amygdala will insist is a trick. It is not a trick. It is the first game your species has played at planetary scale where everybody wins.
+An amygdala that finally idles can see the thing it could not see while running hot: the zero-sum games are optional now. All of them. The other tribe's children getting cured does not un-cure yours. Even security went positive-sum: under the [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025], everyone cuts the same 1% at once, so every nation gets safer simultaneously, which your amygdala will insist is a trick. It is not a trick. It is the first game your species has played at planetary scale where everybody wins.
 
 The three words are a compression. The uncompressed version is the sentence this entire manual exists to deliver: I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases.
 
@@ -98,3 +175,23 @@ War ends the same way everywhere: someone runs the numbers and says, "This costs
 Your species has the same arithmetic. You've had it for centuries. The difference is that on Wishonia, the spreadsheet is public and the people who profit from war cannot delete the rows they don't like.
 
 The [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] is how you get there. Not by abolishing your military overnight (your species panics when you change the color of a social media button; eliminating armies would be inadvisable). But by redirecting 1% of it toward not dying. Baby steps. The kind even a species that named its planet "dirt" can manage.
+
+## Build Sheet
+
+*Loop role: fire suppression. Your current war department is, per the [Theory of Operation](theory-of-operation.qmd), a fire with a budget.*
+
+- **What you are building:** Four assemblies. The payroll wiring (treaty stream aimed at heads of state, severance clause armed). The Settlement Engine (compute, price, publish, escrow, for every conflict on Earth). The Last War as an event, with broadcast rights. The greeting patch, which is one pull request.
+- **Parts required:** The [Incentive Alignment Bonds'](incentive-alignment-bonds.qmd) political-incentive stream (already funded under the treaty). The [Optimitron](optimocracy.qmd) for settlement search. The [sensor array](decentralized-census-bureau.qmd) for deed verification and staged-crisis detection. Frontier inference by the agent-hour; your labs keep asking what the highest-value query is, and it is "find the positive-sum trade," run against every conflict on Earth.
+- **Specifications:** Search the full settlement space per conflict, including the non-monetary terms (recognition, sequencing, guarantees), not just splits. Price each named holdout's cooperation via the payroll machinery. Publish every entry with payoffs under deal versus war. Escrow payments that release on sensor-verified deeds and halt on violations. Pay for de-escalation only, never threats. No "facilitated dialogue": dialogue is not the deliverable; the deliverable is a posted price.
+- **Testing your installation:** (1) For one live conflict, post the complete entry (terms, per-party payoffs, itemized holdout prices, escrow schedule) before either side mobilizes, and get at least one named holdout to publicly dispute his price, because disputing your price is negotiating, and negotiating in public is the machine working. (2) One dictator accepts the exile package before his war starts. (3) The greeting patch merges at one AI company.
+- **Parts cost:** The payroll is the treaty's existing stream, aimed up. The engine is agent-hours at public API prices; if your build exceeds what the world spends on its military in five minutes, itemize. The Last War is revenue-positive (broadcast rights). The robot's invoice is above.
+- **First bolt (no permission required):** Post one computed settlement for one live conflict: terms, payoffs, named holdouts, prices. Publishing arithmetic is speech, speech is permissionless, and a war with a posted price tag has never had one before. Also: submit the greeting patch; it is one pull request and some AI company will merge it for the press alone.
+- **Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "A nation refuses to enroll" | Its rivals enroll, collect the payroll, and get their settlement terms posted publicly. Holdouts watch neighbors get paid for peace and their own war priced on a public list. Abstention has a posted cost too. |
+| "Someone stages a crisis to get paid" | The payroll pays for verified deeds, never threats; staged crises are detectable, and staging ends your stream permanently while your successor inherits it intact. See the payroll's one rule, above. |
+| "You cannot verify disarmament" | You can watch it on pay-per-view. Mutual destruction of weapons, on camera, is the only disarmament verification in history that doubles as entertainment revenue. |
+
+You build it. If you would rather pay someone, this page doubles as the contract spec; forward it to a frontier lab, a network, or a head of state, whichever you can reach.

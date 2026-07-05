@@ -1,0 +1,80 @@
+---
+title: The Algorithmic Monetary Authority
+description: Twelve humans around a table decide what your money is worth. The replacement is one formula, and it cannot be lobbied, panicked, or invited to Jackson Hole.
+published: true
+scores:
+  quality: 6
+  value: 6
+  timeliness: 7
+  standalone: 6
+  voice: 7
+  importance: 6
+audience: "A builder or economist ready to replace discretionary monetary policy with one public rule anyone can verify."
+feel: "The vertigo of realizing the most powerful economic institution on Earth is a committee guessing, followed by the relief that a formula cannot guess."
+do: "Build and run the monetary rule: a public, deterministic 0% target on a real-price basket, with the productivity dividend deposited equally to every citizen."
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## Twelve Humans and a Table
+
+Your money comes from a building. Inside the building, twelve humans decide how much money exists. They are called the Federal Open Market Committee, which is three lies in five words: it is not federal, the market is not open, and the committee meets in private. Try to name three of them. Nobody can. This is a feature: the institution runs on being too boring to investigate, a category of theft [the autopsy chapter](../economics/central-banks.qmd) calls beige crime.
+
+The recipe it executes has been tested for thousands of years across dozens of civilizations: Step 1, give politicians a machine that creates money. Step 2, they use it to kill people. There is no Step 3. Since the building opened in 1913, the dollar has kept 4 cents of its purchasing power, and the wars have required nobody's consent, because a printer that buys war debt removes the inconvenient step of asking. On my planet, an instrument that loses 96% of its calibration is recalled. On yours, it is given a marble building and a security detail, which is also why you do not call the losses theft: the thief has a marble building.
+
+The quieter theft is the delivery route. New money enters through banks, and whoever stands closest to the printer captures the value before prices adjust; whoever stands farthest (you) receives the inflation. Between 2020 and 2022 the balance sheet grew by roughly $4.8 trillion and the top 1% gained roughly $4 trillion in net worth. The people who benefit from this being a coincidence have concluded it is a coincidence. Body count and full pattern, Rome through Weimar to now: [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.qmd). That chapter is the autopsy. This page is the repair.
+
+## The Replacement
+
+```python
+def monetary_policy(basket_price, target):
+    if basket_price > target:
+        raise_stabilization_rate()      # remove money until prices sit down
+    elif basket_price < target:
+        mint_productivity_dividend()    # new money, deposited equally to every citizen
+    # That is the entire committee.
+```
+
+The rule targets 0% change in a purchasing-power basket computed from actual cleared prices on the [settlement ledger](automated-revenue-service.qmd): real rents, real groceries, real energy. No survey. No hedonic imputation that counts your unchanged laptop price as deflation because the processor got faster. No asking homeowners to guess what their house would rent for. The basket weights are locked on a public schedule, the calculation is public, and anyone can rerun it. Nobody can adjust it, which is the feature.
+
+When the economy grows and prices would fall, the rule mints exactly enough new money to hold the target, and deposits it equally to every verified citizen as the productivity dividend. Same monetary function your central bank performs today. Different first receiver. The Cantillon pipeline still exists; it just terminates at everyone.
+
+The rule cannot be suspended by a Sunday evening press conference, because it runs on a distributed ledger and suspension requires a majority of nodes rather than a nervous chairman. Every gold standard in your history was abandoned the week a government needed a war. The formula does not know what a war is and declines to fund one on credit. Full mechanics, including why the target is 0% rather than natural deflation: [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.qmd) [@algorithmic-public-administration-paper-2025].
+
+## The Malinvestment Bill
+
+What does the distortion actually cost? Here is the honest ledger. The pieces your species has managed to price: one financial crisis, 2007-09, cost an estimated 40 to 90 percent of a year's output, $6 trillion to $14 trillion, or $50,000 to $120,000 per household, and that is the conservative estimate published by the central bank's own Dallas branch, which is like getting the arson damages assessed by the arsonist's insurance adjuster and still hitting five figures per household [@dallas-fed-crisis-cost-2013]. The standing toll: the finance sector's share of your economy doubled after 1971, roughly $1.1 trillion a year of excess intermediation rent, itemized in [the protocol paper](../appendix/algorithmic-public-administration-paper.qmd). The opening act: the Great Depression, caused by the institution created to prevent it, per the definitive monetary history [the autopsy chapter](../economics/central-banks.qmd) cites.
+
+What nobody has priced: the malinvestment itself, the decades of capital steered into whatever the cheap-credit spigot happened to point at instead of whatever people actually needed. There is no single annual number for that distortion, and the absence is itself a finding: producing it would require exactly the kind of public, recomputable [sensor array](decentralized-census-bureau.qmd) this catalog sells, and the institution being measured currently controls the measurements. We therefore do not add a malinvestment line to [the waste ledger](../appendix/us-efficiency-audit.qmd) or to any dividend in this catalog. The crisis bills above are cited, not summed. Consider them the unpriced column: the reason the [brochure](earth-optimization-services.qmd) says you are not buying a position, you are buying the repair of the casino your net worth already sits in.
+
+## The Build
+
+{{< var algorithmic_monetary_authority_annual_opex >}} a year, all-in: the compute that watches the basket, runs the rule, and republishes the proof, plus a few humans to sign their names and hold the pager. Uncertainty included. The institution it replaces spends about $6.8 billion a year and employs roughly 400 PhD economists. The formula does not require them. The maintenance role is part-time.
+
+| Feature | The Other Guys | The Algorithmic Monetary Authority |
+|---------|----------------|-------------------------------------|
+| Who decides what money is worth | Twelve unelected humans, in private | One public formula, in public |
+| Track record since 1913 | Kept 4 cents of your dollar | Holds the basket at 0%, or anyone can prove it failed |
+| New money goes to | Banks first; you receive the inflation | Every citizen, equally, daily |
+| Crisis protocol | A press conference on Sunday evening | There is no pause button to press |
+| Funding wars | All of them, without asking | Declines. It does not know what a war is. |
+
+## Build Sheet
+
+*Loop role: the pressure regulator. It holds the machine's working fluid (money) at constant purchasing power so every other gauge on the panel reads true. See the [Theory of Operation](theory-of-operation.qmd).*
+
+- **What you are building:** The rule (basket computation from ledger prices, stabilization adjustment, dividend minting, equal distribution) and its continuous public verification pipeline.
+- **Parts required:** The [settlement ledger](automated-revenue-service.qmd) for actual cleared prices. The [identity layer](universal-security-administration.qmd) for equal distribution. The [sensor array](decentralized-census-bureau.qmd) for cross-checks. One honest formula, left alone.
+- **Specifications:** Basket recomputable by any citizen from public data. Weights locked to a published schedule. Zero discretionary inputs: any parameter a human can nudge is a defect. Rule execution and distribution fully automatic, published to the ledger in real time. Proposals containing the phrase "policy flexibility" fail review; flexibility is the product recall being issued.
+- **Testing your installation:** Twelve consecutive months holding the basket within tolerance of 0% with zero human interventions, zero press conferences, and zero meetings at ski resorts.
+- **Parts cost:** {{< var algorithmic_monetary_authority_annual_opex >}}/year; interval in the tooltip. The incumbent spends about $6.8 billion a year and 400 PhD economists. The formula requires neither, though the economists may apply for the maintenance role, which is part-time.
+- **First bolt (no permission required):** Run the rule in shadow mode. Compute the basket from public price data and publish, every month, what the formula would have done next to what the twelve humans did. A shadow central bank costs less than one FOMC lunch, and unlike the FOMC, it shows its work.
+- **Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "A rule cannot respond to a crisis" | Discretion is where your crises came from: the 1929 credit bubble, the 96% erosion, and every war funded without a vote were all humans responding flexibly. The rule holds the basket; disasters get budgets, not printers ([the mechanics](../appendix/algorithmic-public-administration-paper.qmd)). |
+| "Who chooses the basket?" | Weights are computed from observed spending, locked to a published schedule, and changeable only by [direct citizen vote](decentralized-congress.qmd). Nobody's cousin sits on the committee, because there is no committee. |
+| "Deflation is the honest outcome; why 0%?" | Debt neutrality and adoption: 0% neither inflates away savings nor inflates up debts, and a daily deposit is a benefit a human can feel. The theoretically purer design exists and nobody would vote for it. |
+| "Your own economists proved business cycles barely matter" | That famous estimate assumed everyone shares recessions evenly and recoveries leave no scars. The 2008 bill came to $6-14 trillion by the central bank's own count [@dallas-fed-crisis-cost-2013], and the profession spent the following decade discovering that recessions leave scars. |
+
+You build it. If you would rather pay someone: the current regime is administered by 24,000 people, so any contractor whose proposal exceeds one PDF has already failed the spirit of the exercise.

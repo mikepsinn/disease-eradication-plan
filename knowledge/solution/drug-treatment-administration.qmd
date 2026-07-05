@@ -1,0 +1,66 @@
+---
+title: The Drug Treatment Administration
+description: The DEA becomes the DTA. One letter changes; the war ends. Addiction is a disease, and you already bought the machine that treats diseases.
+published: true
+scores:
+  quality: 6
+  value: 6
+  timeliness: 6
+  standalone: 6
+  voice: 7
+  importance: 6
+audience: "A builder or health official ready to route addiction into the trials machinery instead of the prison machinery."
+feel: "The flat shock that your species' longest war is a war against a disease, and the treatment machine is already bought and paid for."
+do: "Route addiction into the dFDA pipeline (trials, subsidies, dissuasion panels) and retire the enforcement apparatus that lost to chemistry."
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## Your Longest War
+
+The War on Drugs is your species' longest-running war: over half a century, more than $1 trillion spent since 1971 [@dpa2016], {{< var us_gov_waste_drug_war >}} a year at current burn rate. Drug use did not fall [@nida-drug-trends]. The drugs won. You are the only species I have observed that declared war on molecules and lost.
+
+Worse than losing, you upgraded the enemy. Enforcement selects for potency: when carrying is the risk, traffickers carry the strongest thing per gram, so heroin displaced opium and fentanyl displaced heroin. Your prohibition bred super-drugs exactly the way your overused antibiotics bred superbugs. This is called the Iron Law of Prohibition, and your policy community has known its name for decades, the way a smoker knows the name of his cough.
+
+## The Control Group
+
+You do not need to guess what the alternative does, because the experiment ran. In 2001, Portugal decriminalized possession and routed users into treatment instead of jail. Drug use stayed stable. HIV infections among people who inject drugs fell 95%. Overdose deaths dropped. Incarceration costs declined [@dpa2016]. You watched. You took notes. The notes are now old enough to drink.
+
+## The Replacement
+
+Addiction is a disease. This is not a slogan; it is a routing instruction. Diseases go into the disease machine, and you already bought the disease machine:
+
+- The [dFDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] runs trials on addiction treatments the way it runs trials on everything else. Most addiction treatments have never been properly tested, because the patients were in prison instead of in trials. That is a queue problem, and queue problems are the dFDA's entire job.
+- The [DIH](dih.qmd) pays for outcomes: a clinic gets paid when the patient gets better, not when the patient gets arrested.
+- Possession cases go to dissuasion panels instead of criminal courts, which is the Portuguese component, unchanged, because it works and is out of patent.
+- The [Optimitron](optimocracy.qmd) watches overdose deaths and recovery rates, not arrest quotas. An agency judged by arrests produces arrests. An agency judged by recoveries produces recoveries. You get what you measure, which is why you currently have warehouses of confiscated powder and no fewer addicts.
+
+The agency rebrand requires one letter: the Drug Enforcement Administration becomes the Drug Treatment Administration. Same building. Same parking spaces. The agents who liked chemistry become inspectors of supply purity; the ones who liked helping people get to do that now; the ones who liked kicking in doors can apply to the [Last War](department-of-peace.qmd), where the doors are robotic and consenting.
+
+**Retail price:** One letter. The treatment machinery ships with the [dFDA](dfda.qmd); the dissuasion panels cost less than the trials they feed. **Currently paying:** {{< var us_gov_waste_drug_war >}} a year to lose. **Your annual dividend:** {{< var drug_treatment_admin_savings_per_citizen_annual >}} per citizen, per the [waste ledger](../appendix/us-efficiency-audit.qmd), before counting anyone who gets better.
+
+| Feature | The Other Guys | The Drug Treatment Administration |
+|---------|----------------|------------------------------------|
+| Duration | 50+ years and counting | Portugal did the pilot in one legislative session |
+| Spend | {{< var us_gov_waste_drug_war >}}/year, $1 trillion lifetime | Rides the dFDA's existing trial subsidies |
+| Product | Fentanyl (enforcement breeds potency) | Treatment slots within days |
+| Success metric | Buckets of confiscated powder | Humans who got better |
+| Result | Use flat, overdoses up 18x | HIV among injectors down 95% in the pilot country |
+
+## Build Sheet
+
+*Loop role: a repair bay. The machine routes damaged humans to repair instead of scrap; scrap was the previous policy. See the [Theory of Operation](theory-of-operation.qmd).*
+
+- **What you are building:** One willing city converted from an arrest pipeline to a treatment pipeline: dissuasion panels, dFDA-subsidized treatment slots, real-time public outcome metrics.
+- **Parts required:** The [dFDA](dfda.qmd) trial machinery (already specified; addiction enters it as what it is, a disease). The [DIH's](dih.qmd) pay-for-outcomes rails. Portugal's dissuasion-panel design, unchanged, because it works and is out of patent.
+- **Specifications:** Every addicted human offered a treatment slot within days, not waitlists. Possession routed to dissuasion panels, not criminal courts. Overdose, HIV, and recovery metrics published to the ledger continuously. Zero metrics denominated in arrests or seizures; buckets of confiscated powder are not the disease.
+- **Testing your installation:** Overdose deaths fall while possession arrests go to zero. Portugal passed this test in 2001; you are replicating a result that has been sitting in the literature for a quarter of a century.
+- **Parts cost:** Included with the dFDA's trial subsidies. The war was the expensive part. Medicine is the cheap part.
+- **First bolt (no permission required):** Fund one dissuasion panel in one willing city and publish overdose and arrest numbers monthly. Portugal will lend you the manual; it is a quarter century old and still undefeated.
+- **Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "Legalizing means more addicts" | The pilot country's use rates stayed flat while overdose deaths and HIV collapsed [@dpa2016]. The current policy is the one growing potency: enforcement bred fentanyl the way overused antibiotics bred superbugs. |
+| "It sends the wrong message" | The current message, delivered 100,000 times a year, is a coroner's report. Any replacement message is an improvement. |
+
+You build it, or your health department does; forward this page to them without the word "war" in the cover note, and they will recognize the Portugal file when they open it.

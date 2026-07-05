@@ -66,7 +66,13 @@ BANNED = [
 ]
 
 # Legit contexts that LOOK like a hit but aren't (skip the match).
-DEFENSE_OK = re.compile(r"missile defense|department of defense|defense against|self-defense", re.I)
+# "word is .defense sector": quoting the euphemism to mock it (mention, not use),
+# e.g. department-of-peace.qmd: 'On your planet, the word is "defense sector."'
+DEFENSE_OK = re.compile(
+    r"missile defense|department of defense|defense against|self-defense"
+    r"|word is .defense sector",
+    re.I,
+)
 
 # "asymmetry/asymmetric" is precise finance/econ vocabulary as a compound term (information
 # asymmetry, capital asymmetry, asymmetric payoffs, Olson's concentrated-vs-diffuse). Skip

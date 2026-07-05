@@ -1,18 +1,18 @@
 ---
 title: The Decentralized Census Bureau
-description: You spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds.
+description: You spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds. The count is the toy on top; the real product is the sensor array that measures the two numbers the whole machine steers by.
 published: true
 scores:
-  quality: 4
-  value: 4
+  quality: 6
+  value: 6
   timeliness: 5
-  standalone: 5
+  standalone: 6
   voice: 7
-  importance: 4
+  importance: 7
 image: /assets/og-images/knowledge/solution/decentralized-census-bureau-og-bw-academic.jpg
-audience: "A Humanity Manager who will stand up the registration system that counts everyone the instant they sign up for their money."
-feel: "The pull of replacing a $14 billion clipboard ritual with one line of code you can ship yourself, right now."
-do: "Build the registration-equals-money system that counts every person in real time, and run citizenCount() as your live population number."
+audience: "A Humanity Manager who will build the machine's sensor array: the live population count plus the price, income, and healthy-life statistics every other module steers by."
+feel: "The pull of replacing a $14 billion clipboard ritual with one line of code, followed by the sober realization that the cheapest-looking module is the most safety-critical: if the sensor lies, the machine steers into a wall."
+do: "Build the registration-equals-money count and the outcome-measurement pipeline (median after-tax income, median healthy life expectancy) that the Optimitron steers by."
 ---
 ![You spend fourteen billion dollars to count everyone once every ten years. citizenCount() returns in fifty milliseconds.](/assets/infographics/knowledge/solution/decentralized-census-bureau-infographic-bw-academic.jpg)
 
@@ -34,9 +34,19 @@ function citizenCount() external view returns (uint256) {
 }
 ```
 
-One line. Returns in 50 milliseconds. Updated the instant someone registers. Always current. Always complete. Marginal cost: zero, and for once that is not an exaggeration. The identity layer is already bought and paid for by the [Universal Security Administration](universal-security-administration.qmd), because registration equals money. The census is its exhaust. You currently pay $14.2 billion per count for a worse number.
+One line. Returns in 50 milliseconds. Updated the instant someone registers. Always current. Always complete.
 
-Every citizen registers once with World ID (cryptographic proof of unique personhood). The count updates in real-time. No clipboards. Your species invented computers and then continued counting by hand. I have been trying to understand this for three years. I will let you know.
+Reading the count is free. Producing the thing being counted is not, and this bureau will not pretend otherwise. Underneath citizenCount() sits a sybil-resistant identity layer, which means biometric proof-of-personhood enrollment for 335 million humans, deduplication, key recovery for everyone who loses a phone, and a standing red team paid to break it. That is real, priced work. India has already done it for 1.4 billion people, so the playbook is public. It is funded on the [Universal Security Administration's](universal-security-administration.qmd) invoice, inside its roughly-thirty-cents-per-citizen line, because a system that deposits money daily cannot exist without knowing exactly who is who: the count is a side effect of the paycheck. You currently pay $14.2 billion per count for a worse number, collected by clipboard.
+
+The count is also the least important thing this bureau measures, which is the part your current Census Bureau never understood.
+
+| Feature | The Other Guys | The Decentralized Census Bureau |
+|---------|----------------|----------------------------------|
+| Price of a count | $14.2 billion | A read query |
+| Frequency | Once a decade | Continuous |
+| Error | Wrong 5%, worst for the poorest | Self-correcting: the uncounted are unpaid, and they notice |
+| Notices your death | Years (one week if you owed taxes) | One day. The deposit stops. |
+| Measures | How many of you there are | Prices, income, and healthy life expectancy: the numbers the whole machine steers by |
 
 ## The Undercount Problem, Solved Backwards
 
@@ -49,3 +59,40 @@ Under UBI ([Universal Security Administration](universal-security-administration
 Between counts, your population changes by millions. Births, deaths, migration. By year nine, you are governing with data so stale it would not pass a freshman statistics course. Then you spend $14.2 billion to update it, at which point it begins going stale again immediately. This is called a "decennial census," which is Latin for "wrong every year except one."
 
 The 2030 Census is budgeted at $18 billion. More money. Same wrong method. A decade later. No species I have ever watched has solved the counting problem by spending more on the method that already failed. You will be the first to try. I am rooting for you, in the way one roots for a person attempting to open a door by running into it harder.
+
+## The Part That Is Actually Hard
+
+Counting heads is the toy on top. The real product of this bureau is the sensor array for the entire machine.
+
+Every module in [the Standard Package](earth-optimization-services.qmd) steers by two numbers: median after-tax inflation-adjusted income, and median healthy life expectancy. The [Optimitron](optimocracy.qmd) ranks policies by whether they move those numbers. [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] allocates against them. The [treaty's](1-percent-treaty.qmd) expansion triggers read them. If the two numbers are wrong, the machine is not broken, which would be survivable. It is precise about a hallucination, which is not. A closed-loop system with a lying sensor does not fail safely; it steers into the wall with confidence. So the cheapest-looking module in the catalog is the most safety-critical, and I am telling you that plainly instead of hiding it in the warranty.
+
+Where each number comes from:
+
+- **How many of you there are** comes from the identity layer, as above. Deaths are detected within a day, because the deposit stops being collected. Your current method for discovering that a citizen has died can take years, unless the citizen owed taxes, in which case it takes a week.
+- **Prices** come from actual cleared settlements on the [ledger](automated-revenue-service.qmd): real rents, real groceries, real energy. This is the same basket the [monetary rule](algorithmic-monetary-authority.qmd) steers by. No survey. No substitution fiction. No asking homeowners to guess.
+- **Income** is an aggregate query over settlement flows: the median is computed from what citizens actually received after tax, provable with zero-knowledge proofs, so the statistic is public while every individual paycheck stays private. Your current method mails people a form asking them to remember.
+- **Healthy life expectancy** is the hard one, and it is honest to say so. Mortality comes from the identity layer. The "healthy" part, morbidity and function, comes from the [dFDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]'s real-world outcome data, which exists because the treaty pays patients and providers to report outcomes continuously. No module in this catalog invents that data. The dFDA buys it, from everyone, every day.
+
+Then there is the part your species names Goodhart's Law and then ignores: the moment a number decides budgets, everyone with a budget acquires an opinion about the number. The defenses are structural, not moral. The statistics are computed from raw transactions rather than self-reports, and you cannot flatter a ledger. Every statistic is recomputable by any citizen from public aggregates. And the [Optimitron cross-checks five independent data sources](optimocracy.qmd), so poisoning one feed does not steer the machine; it identifies the poisoner.
+
+Running the sensor array costs {{< var decentralized_census_bureau_annual_opex >}} a year, all-in, sized as a mid-sized analytics operation: roughly 1% of what your decennial census costs per year, for statistics that are continuous, auditable, and about the things that matter instead of just the number of things.
+
+## Build Sheet
+
+*Loop role: the sensor array. Every other module steers by what this one measures; a machine with a lying sensor drives into the wall with confidence. See the [Theory of Operation](theory-of-operation.qmd). This is the most safety-critical build in the manual, disguised as the cheapest.*
+
+- **What you are building:** The measurement layer: the live count, and the outcome statistics (median after-tax inflation-adjusted income, median healthy life expectancy) computed continuously from raw ledger and outcome data.
+- **Parts required:** The identity layer (funded and built under the [Universal Security Administration](universal-security-administration.qmd); India's 1.4-billion-person enrollment playbook is public). The [settlement ledger](automated-revenue-service.qmd) for prices and incomes. [dFDA](dfda.qmd) outcome feeds for the health half. Nothing on this list is hypothetical; you are assembling, not inventing.
+- **Specifications:** Every published statistic recomputable by any citizen from public aggregates. Individual privacy preserved with zero-knowledge proofs. Statistics continuous, not decennial. Anomaly detection against data poisoning running at all times. No pipeline in which a human can edit a statistic after computation: if a number can be nudged, it will be, and the nudger will be sincere.
+- **Testing your installation:** (1) Reproduce a jurisdiction's median income from public aggregates within stated tolerance. (2) Detect an injected data-poisoning attack within 72 hours; you will not be told which jurisdiction, because that is the point. (3) Any citizen recomputes any statistic and gets the published number. (4) The count updates within one second of an enrollment. No door-knocking permitted during the test; the doors have suffered enough.
+- **Parts cost:** {{< var decentralized_census_bureau_annual_opex >}}/year for the sensor array (interval in the tooltip). The identity layer is on the USA's invoice. Reading the count is the only free part, and only because the hard part has a paycheck attached.
+- **First bolt (no permission required):** Publish one live, recomputable median-income statistic for one jurisdiction, built from public aggregates, displayed next to the official number and the official number's two-year lag. A fresher number beats an argument.
+- **Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "The government will see everything I do" | It sees aggregates, proven with zero-knowledge math. Your income stays private; the median is public. Under the current arrangement, three private companies know where you are standing right now and the tax agency knows your income to the penny. You are not choosing between surveillance and privacy. You are choosing who holds the proofs. |
+| "One identity database is a hacker's jackpot" | Keys stay with citizens; the public side holds proofs, not files. The jackpot you fear already exists, is centralized, and has been breached. This design's whole point is that there is no single drawer to rob. |
+| "Statistics can always be gamed" | Gamed, yes. Gamed quietly, no. Raw-transaction sourcing, public recomputability, and five cross-checked feeds mean a nudged number stops matching its own audit trail within hours, and the nudge identifies the nudger. |
+
+You build it. If you would rather pay someone, this page doubles as the contract spec; forward it.

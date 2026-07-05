@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 441 parameters used in the analysis, organized by type:
+This appendix documents all 443 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 149
-- Calculated values: 218
+- Calculated values: 220
 - Core definitions: 74
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (218 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
+[Calculated Values](#sec-calculated) (220 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3253,6 +3253,43 @@ $$
 
 :::
 
+### DIH Same-Budget Trial Patients Fundable: 1.67 million patients {#sec-dih_nih_same_budget_patients_fundable}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial participants the SAME NIH clinical-trials allocation funds each year at dFDA pragmatic-trial prices: identical budget, identical 3.3% split, different procurement. No treaty and no new money required.
+
+**Inputs**:
+
+- [NIH Annual Budget](#sec-nih_annual_budget) 📊: $47 billion (95% CI: $45 billion - $50 billion)
+- [NIH Clinical Trials Spending Percentage](#sec-nih_clinical_trials_spending_pct) 📊: 3.3% (95% CI: 2% - 5%)
+- [Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+
+$$
+\begin{gathered}
+Fundable \\
+= \text{NIH\_BUDGET} \times \text{TRIALS\_PCT} / \text{PRAGMATIC\_COST\_PER\_PATIENT}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dih_nih_same_budget_patients_fundable.qmd >}}
+
+{{< include ../figures/sensitivity-table-dih_nih_same_budget_patients_fundable.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dih_nih_same_budget_patients_fundable.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_nih_same_budget_patients_fundable.qmd >}}
+
+:::
+
 ### Patients Fundable Annually Under the 1% Treaty: 23.4 million patients/year {#sec-dih_patients_fundable_annually}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6142,6 +6179,43 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-nih_traditional_trial_max_efficiency_pct.qmd >}}
+
+:::
+
+### NIH Trial Patients Fundable (Status Quo): 37,829 patients {#sec-nih_trial_patients_fundable_status_quo}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial participants the NIH's current clinical-trials allocation funds each year at traditional per-patient costs: the status quo output of the existing budget.
+
+**Inputs**:
+
+- [NIH Annual Budget](#sec-nih_annual_budget) 📊: $47 billion (95% CI: $45 billion - $50 billion)
+- [NIH Clinical Trials Spending Percentage](#sec-nih_clinical_trials_spending_pct) 📊: 3.3% (95% CI: 2% - 5%)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41,000 (95% CI: $20,000 - $120,000)
+
+$$
+\begin{gathered}
+Fundable \\
+= \text{NIH\_BUDGET} \times \text{TRIALS\_PCT} / \text{TRADITIONAL\_COST\_PER\_PATIENT}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-nih_trial_patients_fundable_status_quo.qmd >}}
+
+{{< include ../figures/sensitivity-table-nih_trial_patients_fundable_status_quo.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-nih_trial_patients_fundable_status_quo.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-nih_trial_patients_fundable_status_quo.qmd >}}
 
 :::
 

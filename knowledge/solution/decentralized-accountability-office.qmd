@@ -39,7 +39,14 @@ By the time you read an audit, the money is spent, the people are gone, and the 
 
 When every government transaction is on a public ledger, auditing is not a job. It is a read operation. There is nothing to investigate because there is nothing to hide. The ledger is the audit. You do not need 3,400 humans for a read operation.
 
-The honest price: zero additional dollars. The ledger itself is bought and paid for by the [Automated Revenue Service](automated-revenue-service.qmd), which needs it to collect taxes. Auditing is what a ledger does when you look at it. Charging separately for the audit would be like charging separately for the shadow.
+The honest price: the ledger itself is bought and paid for by the [Automated Revenue Service](automated-revenue-service.qmd), which needs it to collect taxes, and auditing is what a ledger does when you look at it. Charging separately for the audit would be like charging separately for the shadow. What you do pay for is the looking: dashboards, tracing tools, and anomaly alerts, a line item small enough to live inside the ARS security budget, named here because this manual does not do "free."
+
+| Feature | The Other Guys | The Decentralized Accountability Office |
+|---------|----------------|------------------------------------------|
+| Audit latency | 18 months | The current block |
+| Cost | $803 million/year, 3,400 auditors | Dashboards on rails already paid for |
+| Pentagon audit record | Zero passes in seven attempts | A ledger cannot fail an audit. It is one. |
+| Recommendations ignored | 33% | There are no recommendations. There is visibility. |
 
 Your species invented the blockchain and then used it to trade pictures of apes. You did not use it for the one thing it is obviously, spectacularly useful for: making theft visible. This is like inventing the fire extinguisher and using it as a doorstop while your house burns down.
 
@@ -48,3 +55,21 @@ Your species invented the blockchain and then used it to trade pictures of apes.
 3,400 auditors sample a fraction of government spending. The rest is trusted on faith. This is how you accumulate $35 trillion in debt without anyone being able to explain where it went. Your species has a word for an organization that takes money, refuses to say where it goes, and punishes anyone who asks too many questions. The word is "mafia." When the government does it, the word is "fiscal policy."
 
 The $803 million in annual savings is the smallest benefit. The real benefit is that corruption becomes structurally impossible rather than merely illegal. Your current system makes corruption illegal and then provides 18 months of unmonitored darkness in which to do it. This is like locking the cookie jar and then leaving the key on top. A public ledger removes the jar entirely. Every cookie is visible the moment it moves. The only reliable way to stop organisms from cheating is to remove the option. Laws do not prevent cheating. Architecture does. This is true for every species I have ever observed, including the ones that had better laws than yours, which is most of them.
+
+## Build Sheet
+
+*Loop role: the gauge cluster. It does not steer the machine; it makes lying about the speed impossible. See the [Theory of Operation](theory-of-operation.qmd).*
+
+- **What you are building:** The read layer over the public ledger: tracing tools, dashboards, and anomaly alerts (circular flows, no-bid concentrations, payments to the recently incorporated). The ledger itself ships with the [Automated Revenue Service](automated-revenue-service.qmd).
+- **Specifications:** Every public transaction traceable from wishocratic allocation to final disbursement. Alerts published, not filed. No report format; a report is a screenshot of the dashboard, and the dashboard never sleeps.
+- **Testing your installation:** Any citizen locates any public dollar in under one minute.
+- **Parts cost:** Dashboard engineering and alert compute, funded inside the ARS security line and named here because this manual does not do "free."
+- **First bolt (no permission required):** Build the tracing dashboard for one budget that is already public (a city, a state) and invite citizens to find a dollar. The first dollar nobody can find is the marketing.
+- **Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "Some spending must stay secret" | Classified programs appear as sealed amounts with cleared auditors and public totals. You may hide the submarine's blueprints. You may not hide the submarine's price, which is how you lost the last $2.5 trillion. |
+| "Auditors will lose their jobs" | The 3,400 auditors are invited to build the dashboards. They know where the bodies are filed. |
+
+You build it. Firms wishing to bill 18 months of auditing hours instead may invoice the previous system, which can neither find the invoice nor explain where it went.

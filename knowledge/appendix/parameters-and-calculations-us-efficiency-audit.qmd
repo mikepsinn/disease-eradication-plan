@@ -38,20 +38,58 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 82 parameters used in the analysis, organized by type:
+This appendix documents all 95 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 33
-- Calculated values: 32
-- Core definitions: 17
+- External sources (peer-reviewed): 34
+- Calculated values: 37
+- Core definitions: 24
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (32 parameters) • [External Data Sources](#sec-external) (33 parameters) • [Core Definitions](#sec-definitions) (17 parameters)
+[Calculated Values](#sec-calculated) (37 parameters) • [External Data Sources](#sec-external) (34 parameters) • [Core Definitions](#sec-definitions) (24 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Automated Revenue Service Annual Operating Cost: $150 million {#sec-automated_revenue_service_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual operating cost of the Automated Revenue Service: design transaction volume times the all-in comparator-anchored cost per settlement. Uncertainty propagates from the component distributions via Monte Carlo.
+
+**Inputs**:
+
+- [Automated Revenue Service Annual Transaction Volume](#sec-automated_revenue_service_annual_transaction_volume): 500 billion transactions
+- [All-In Cost per Settlement Transaction](#sec-automated_revenue_service_all_in_cost_per_transaction): $0.0003 (95% CI: $0.0001 - $0.001)
+
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Automated_{annual} \times Cost_{all} \\
+= 500B \times \$0.0003 \\
+= \$150M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-automated_revenue_service_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-automated_revenue_service_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-automated_revenue_service_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-automated_revenue_service_annual_opex.qmd >}}
+
+:::
 
 ### Current Trajectory Average Income at Year 20: $20,483 {#sec-current_trajectory_avg_income_year_20}
 
@@ -414,6 +452,131 @@ $$
 
 :::
 
+### Government Replacement Suite Annual Operating Cost: $300 million {#sec-gov_replacement_suite_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Combined steady-state annual operating cost of the priced government-replacement modules (revenue service, security administration, election commission, census sensor array, monetary authority, securities commission). Excludes the revenue-positive and included-elsewhere modules.
+
+**Inputs**:
+
+- [Automated Revenue Service Annual Operating Cost](#sec-automated_revenue_service_annual_opex) 🔢: $150 million
+- [Universal Security Administration Annual Operating Cost](#sec-universal_security_admin_annual_opex) 🔢: $100 million
+- [Aligned Election Commission Annual Operating Cost](#sec-aligned_election_commission_annual_opex): $7 million (95% CI: $2 million - $20 million)
+- [Decentralized Census Bureau Annual Operating Cost](#sec-decentralized_census_bureau_annual_opex): $15 million (95% CI: $5 million - $40 million)
+- [Algorithmic Monetary Authority Annual Operating Cost](#sec-algorithmic_monetary_authority_annual_opex): $7.5 million (95% CI: $3 million - $20 million)
+- [Transparent Securities Commission Annual Operating Cost](#sec-transparent_securities_commission_annual_opex): $20 million (95% CI: $8 million - $50 million)
+
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Cost_{opex,ann} + Cost_{opex,ann} + Cost_{opex,ann} \\
++ Cost_{opex,ann} + Cost_{net,ann} + Cost_{opex,ann} \\
+= \$150M + \$100M + \$7M + \$15M + \$7.5M + \$20M \\
+= \$300M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Automated_{annual} \times Cost_{all} \\
+= 500B \times \$0.0003 \\
+= \$150M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Pop_{US} \times Cost_{ann} \\
+= 335M \times \$0.3 \\
+= \$100M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-gov_replacement_suite_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-gov_replacement_suite_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-gov_replacement_suite_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-gov_replacement_suite_annual_opex.qmd >}}
+
+:::
+
+### Replacement Suite Operating Cost per Citizen per Year: $0.896 {#sec-gov_replacement_suite_opex_per_citizen_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+The whole priced replacement suite's operating cost per citizen per year: roughly one dollar, versus five figures of dysfunction.
+
+**Inputs**:
+
+- [Government Replacement Suite Annual Operating Cost](#sec-gov_replacement_suite_annual_opex) 🔢: $300 million
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= \frac{Cost_{opex,ann}}{Pop_{US}} \\
+= \frac{\$300M}{335M} \\
+= \$0.896
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Cost_{opex,ann} + Cost_{opex,ann} + Cost_{opex,ann} \\
++ Cost_{opex,ann} + Cost_{net,ann} + Cost_{opex,ann} \\
+= \$150M + \$100M + \$7M + \$15M + \$7.5M + \$20M \\
+= \$300M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Automated_{annual} \times Cost_{all} \\
+= 500B \times \$0.0003 \\
+= \$150M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Pop_{US} \times Cost_{ann} \\
+= 335M \times \$0.3 \\
+= \$100M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-gov_replacement_suite_opex_per_citizen_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-gov_replacement_suite_opex_per_citizen_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-gov_replacement_suite_opex_per_citizen_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-gov_replacement_suite_opex_per_citizen_annual.qmd >}}
+
+:::
+
 ### Global Opportunity Cost Total: $101 trillion {#sec-political_dysfunction_global_opportunity_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -517,6 +680,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_annual_funding.qmd >}}
+
+:::
+
+### Universal Security Administration Annual Operating Cost: $100 million {#sec-universal_security_admin_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual operating cost of the Universal Security Administration: population times the all-in comparator-anchored cost per citizen. Uncertainty propagates from the component distributions via Monte Carlo.
+
+**Inputs**:
+
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+- [Universal Security Administration All-In Annual Cost per Citizen](#sec-universal_security_admin_all_in_cost_per_citizen_annual): $0.3 (95% CI: $0.1 - $1)
+
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Pop_{US} \times Cost_{ann} \\
+= 335M \times \$0.3 \\
+= \$100M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-universal_security_admin_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-universal_security_admin_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-universal_security_admin_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-universal_security_admin_annual_opex.qmd >}}
 
 :::
 
@@ -995,6 +1196,83 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_gov_waste_pct_gdp.qmd >}}
+
+:::
+
+### US Governance Dysfunction per Person per Year: $14,878 {#sec-us_gov_waste_per_capita_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+The US efficiency gap per person per year: the audit's total governance dysfunction divided across the population. The invoice every American pays silently.
+
+**Inputs**:
+
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.98 trillion
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+
+$$
+\begin{gathered}
+US_{annual} \\
+= \frac{W_{total,US}}{Pop_{US}} \\
+= \frac{\$4.98T}{335M} \\
+= \$14.9K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times \delta_{overlap} \\
+= \$4.98T \times 1 \\
+= \$4.98T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$702B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.98T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{military} \\
+= Spending_{US,2024} - D_{optimal} \\
+= \$886B - \$184B \\
+= \$702B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{optimal} \\
+= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
++ D_{hedge} \\
+= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
+= \$184B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_per_capita_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_per_capita_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_per_capita_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_per_capita_annual.qmd >}}
 
 :::
 
@@ -2631,9 +2909,135 @@ US military spending in 2024 in constant dollars
 
 :::
 
+### US Population in 2024: 335 million people {#sec-us_population_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US population in 2024
+
+**Source**: [@us-voter-population]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [330 million people, 340 million people] • Distribution: Lognormal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 330 million people and 340 million people (±1%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_population_2024.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ## Core Definitions {#sec-definitions}
 
 Fundamental parameters and constants used throughout the analysis.
+
+### Algorithmic Monetary Authority Annual Operating Cost: $7.5 million {#sec-algorithmic_monetary_authority_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+All-in annual operating cost of the Algorithmic Monetary Authority: basket monitoring, rule execution, continuous public verification, and the humans who hold the pager. Sized as a small monitoring operation; the rule itself is one formula and requires no committee.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3 million, $20 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $3 million and $20 million (±113%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-algorithmic_monetary_authority_annual_opex.qmd >}}
+
+*Core definition*
+
+:::
+
+### Aligned Election Commission Annual Operating Cost: $7 million {#sec-aligned_election_commission_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+All-in annual operating cost of the Aligned Election Commission: alignment-score computation, public data pipelines, and fund routing. Sized as a small data-engineering operation; the most similar existing system is the NRA's politician scorecard, which runs on a budget that rounds to zero.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2 million, $20 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2 million and $20 million (±129%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-aligned_election_commission_annual_opex.qmd >}}
+
+*Core definition*
+
+:::
+
+### All-In Cost per Settlement Transaction: $0.0003 {#sec-automated_revenue_service_all_in_cost_per_transaction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+All-in cost per settlement (three hundredths of a cent): compute, storage, security audits, and the mostly-AI workforce, amortized per transaction. Anchored to the most similar systems that exist: card networks clear transactions for internal costs in this range, and public blockchain rails settle transfers for fractions of a cent.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.0001, $0.001] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.0001 and $0.001 (±150%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-automated_revenue_service_all_in_cost_per_transaction.qmd >}}
+
+*Core definition*
+
+:::
+
+### Automated Revenue Service Annual Transaction Volume: 500 billion transactions {#sec-automated_revenue_service_annual_transaction_volume}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Design capacity: annual final-consumption settlements processed by the protocol, set well above current US card-network transaction volume.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Decentralized Census Bureau Annual Operating Cost: $15 million {#sec-decentralized_census_bureau_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+All-in annual operating cost of the sensor array: continuously computing, cross-checking, and integrity-auditing the statistics the machine steers by (median after-tax income aggregates, healthy-life-expectancy estimation from dFDA outcome data, data-poisoning detection). Sized as a mid-sized analytics operation; roughly 1% of what the decennial census costs per year amortized. The citizen count itself is a free byproduct of the identity layer.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5 million, $40 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $5 million and $40 million (±117%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-decentralized_census_bureau_annual_opex.qmd >}}
+
+*Core definition*
+
+:::
 
 ### Reference Annual Pragmatic Trial Funding: $21.8 billion {#sec-dfda_annual_trial_funding}
 
@@ -2817,6 +3221,28 @@ R&D spillover multiplier: each $1 in directed medical research produces $2 in ad
 
 :::
 
+### Transparent Securities Commission Annual Operating Cost: $20 million {#sec-transparent_securities_commission_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+All-in annual operating cost of the Transparent Securities Commission: standardized disclosure schema plus continuous fraud-pattern detection across every issuer on the ledger. Anchored to the most similar existing systems: the real-time fraud-detection operations card networks already run at market scale.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$8 million, $50 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $8 million and $50 million (±105%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-transparent_securities_commission_annual_opex.qmd >}}
+
+*Core definition*
+
+:::
+
 ### 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2826,6 +3252,28 @@ R&D spillover multiplier: each $1 in directed medical research produces $2 in ad
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Universal Security Administration All-In Annual Cost per Citizen: $0.3 {#sec-universal_security_admin_all_in_cost_per_citizen_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+All-in annual cost per citizen served: sybil-resistant identity, 365 daily deposits, and the mostly-AI workforce. Anchored to the most similar system that exists: India's national biometric identity system serves 1.4 billion people at costs in this range per person per year, and payment rails move deposits for fractions of a cent.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.1, $1] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.1 and $1 (±150%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-universal_security_admin_all_in_cost_per_citizen_annual.qmd >}}
 
 *Core definition*
 

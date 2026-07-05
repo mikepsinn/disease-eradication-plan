@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 849 parameters used in the analysis, organized by type:
+This appendix documents all 869 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 236
-- Calculated values: 431
-- Core definitions: 182
+- External sources (peer-reviewed): 239
+- Calculated values: 444
+- Core definitions: 186
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (431 parameters) • [External Data Sources](#sec-external) (236 parameters) • [Core Definitions](#sec-definitions) (182 parameters)
+[Calculated Values](#sec-calculated) (444 parameters) • [External Data Sources](#sec-external) (239 parameters) • [Core Definitions](#sec-definitions) (186 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -206,6 +206,101 @@ $$
 **Used in:**
 
 - [The Apocalypse Markup](../appendix/extinction-surplus.html)
+
+:::
+
+### Automated Revenue Service Annual Operating Cost: $150 million {#sec-automated_revenue_service_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual operating cost of the Automated Revenue Service: design transaction volume times the all-in comparator-anchored cost per settlement. Uncertainty propagates from the component distributions via Monte Carlo.
+
+**Inputs**:
+
+- [Automated Revenue Service Annual Transaction Volume](#sec-automated_revenue_service_annual_transaction_volume): 500 billion transactions
+- [All-In Cost per Settlement Transaction](#sec-automated_revenue_service_all_in_cost_per_transaction): $0.0003 (95% CI: $0.0001 - $0.001)
+
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Automated_{annual} \times Cost_{all} \\
+= 500B \times \$0.0003 \\
+= \$150M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-automated_revenue_service_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-automated_revenue_service_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-automated_revenue_service_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-automated_revenue_service_annual_opex.qmd >}}
+
+**Used in:**
+
+- [The Automated Revenue Service](../solution/automated-revenue-service.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
+
+:::
+
+### Automated Revenue Service Annual Savings per American: $1,666 {#sec-automated_revenue_service_savings_per_american_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual savings per American from replacing the IRS and the tax-compliance burden with the Automated Revenue Service, net of the padded replacement budget.
+
+**Inputs**:
+
+- [Tax Compliance Waste](#sec-us_gov_waste_tax_compliance) 📊: $546 billion (95% CI: $450 billion - $650 billion)
+- [IRS Annual Operating Budget](#sec-irs_annual_operating_budget) 📊: $12.3 billion
+- [Automated Revenue Service Annual Operating Cost](#sec-automated_revenue_service_annual_opex) 🔢: $150 million
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+
+$$
+\begin{gathered}
+Savings_{ann} \\
+= (\text{TAX\_COMPLIANCE\_BURDEN} \\
++ \text{IRS\_BUDGET} − \text{ARS\_BUDGET}) / \text{US\_POPULATION}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Automated_{annual} \times Cost_{all} \\
+= 500B \times \$0.0003 \\
+= \$150M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-automated_revenue_service_savings_per_american_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-automated_revenue_service_savings_per_american_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-automated_revenue_service_savings_per_american_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-automated_revenue_service_savings_per_american_annual.qmd >}}
+
+**Used in:**
+
+- [The Automated Revenue Service](../solution/automated-revenue-service.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -5748,6 +5843,51 @@ $$
 
 :::
 
+### Decentralized Congress Savings per Citizen per Year: $1,391 {#sec-decentralized_congress_savings_per_citizen_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual savings per citizen from putting the zombie policies to direct evidence-attached votes: tariffs, corporate welfare, agricultural and fossil subsidies, the policies that survive only by never being asked about.
+
+**Inputs**:
+
+- [Tariff Cost (GDP Loss)](#sec-us_gov_waste_tariffs) 📊: $160 billion (95% CI: $90 billion - $250 billion)
+- [Corporate Welfare Waste](#sec-us_gov_waste_corporate_welfare) 📊: $181 billion (95% CI: $150 billion - $220 billion)
+- [Agricultural Subsidies Deadweight Loss](#sec-us_gov_waste_agricultural_subsidies) 📊: $75 billion (95% CI: $50 billion - $120 billion)
+- [Fossil Fuel Subsidies (Explicit)](#sec-us_gov_waste_fossil_fuel_subsidies) 📊: $50 billion (95% CI: $30 billion - $80 billion)
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+
+$$
+\begin{gathered}
+Savings_{ann} \\
+= (\text{TARIFFS} + \text{CORPORATE\_WELFARE} \\
++ \text{AG\_SUBSIDIES} \\
++ \text{FOSSIL\_SUBSIDIES}) / \text{US\_POPULATION}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-decentralized_congress_savings_per_citizen_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-decentralized_congress_savings_per_citizen_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-decentralized_congress_savings_per_citizen_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-decentralized_congress_savings_per_citizen_annual.qmd >}}
+
+**Used in:**
+
+- [The Decentralized Congress](../solution/decentralized-congress.html)
+
+:::
+
 ### Military Activist-Stake Cost (Realistic Entry): $48.4 billion {#sec-defense_takeover_cost_activist}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6026,6 +6166,66 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-defense_takeover_pct_investable_assets.qmd >}}
+
+:::
+
+### Department of Peace Savings per American per Year: $2,096 {#sec-department_of_peace_savings_per_american_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual savings per American from trimming military spending to the first-principles homeland-defense baseline: the audit's overspend divided across the population.
+
+**Inputs**:
+
+- [Military Overspend](#sec-us_gov_waste_military_overspend) 🔢: $702 billion
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+
+$$
+\begin{gathered}
+Savings_{ann} \\
+= \frac{W_{military}}{Pop_{US}} \\
+= \frac{\$702B}{335M} \\
+= \$2.1K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{military} \\
+= Spending_{US,2024} - D_{optimal} \\
+= \$886B - \$184B \\
+= \$702B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{optimal} \\
+= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
++ D_{hedge} \\
+= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
+= \$184B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-department_of_peace_savings_per_american_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-department_of_peace_savings_per_american_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-department_of_peace_savings_per_american_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-department_of_peace_savings_per_american_annual.qmd >}}
+
+**Used in:**
+
+- [Department of Peace](../solution/department-of-peace.html)
 
 :::
 
@@ -10010,6 +10210,47 @@ $$
 
 :::
 
+### DIH Same-Budget Trial Patients Fundable: 1.67 million patients {#sec-dih_nih_same_budget_patients_fundable}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial participants the SAME NIH clinical-trials allocation funds each year at dFDA pragmatic-trial prices: identical budget, identical 3.3% split, different procurement. No treaty and no new money required.
+
+**Inputs**:
+
+- [NIH Annual Budget](#sec-nih_annual_budget) 📊: $47 billion (95% CI: $45 billion - $50 billion)
+- [NIH Clinical Trials Spending Percentage](#sec-nih_clinical_trials_spending_pct) 📊: 3.3% (95% CI: 2% - 5%)
+- [Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+
+$$
+\begin{gathered}
+Fundable \\
+= \text{NIH\_BUDGET} \times \text{TRIALS\_PCT} / \text{PRAGMATIC\_COST\_PER\_PATIENT}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dih_nih_same_budget_patients_fundable.qmd >}}
+
+{{< include ../figures/sensitivity-table-dih_nih_same_budget_patients_fundable.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dih_nih_same_budget_patients_fundable.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dih_nih_same_budget_patients_fundable.qmd >}}
+
+**Used in:**
+
+- [Decentralized Institutes of Health](../solution/dih.html)
+
+:::
+
 ### Patients Fundable Annually Under the 1% Treaty: 23.4 million patients/year {#sec-dih_patients_fundable_annually}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -10828,6 +11069,48 @@ $$
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
+
+:::
+
+### Drug Treatment Administration Savings per Citizen per Year: $269 {#sec-drug_treatment_admin_savings_per_citizen_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual savings per citizen from ending the drug war and routing addiction into the treatment machinery.
+
+**Inputs**:
+
+- [Drug War Cost](#sec-us_gov_waste_drug_war) 📊: $90 billion (95% CI: $60 billion - $150 billion)
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+
+$$
+\begin{gathered}
+Savings_{ann} \\
+= \frac{W_{drugs}}{Pop_{US}} \\
+= \frac{\$90B}{335M} \\
+= \$269
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-drug_treatment_admin_savings_per_citizen_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-drug_treatment_admin_savings_per_citizen_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-drug_treatment_admin_savings_per_citizen_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-drug_treatment_admin_savings_per_citizen_annual.qmd >}}
+
+**Used in:**
+
+- [The Drug Treatment Administration](../solution/drug-treatment-administration.html)
 
 :::
 
@@ -14741,6 +15024,136 @@ $$
 
 :::
 
+### Government Replacement Suite Annual Operating Cost: $300 million {#sec-gov_replacement_suite_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Combined steady-state annual operating cost of the priced government-replacement modules (revenue service, security administration, election commission, census sensor array, monetary authority, securities commission). Excludes the revenue-positive and included-elsewhere modules.
+
+**Inputs**:
+
+- [Automated Revenue Service Annual Operating Cost](#sec-automated_revenue_service_annual_opex) 🔢: $150 million
+- [Universal Security Administration Annual Operating Cost](#sec-universal_security_admin_annual_opex) 🔢: $100 million
+- [Aligned Election Commission Annual Operating Cost](#sec-aligned_election_commission_annual_opex): $7 million (95% CI: $2 million - $20 million)
+- [Decentralized Census Bureau Annual Operating Cost](#sec-decentralized_census_bureau_annual_opex): $15 million (95% CI: $5 million - $40 million)
+- [Algorithmic Monetary Authority Annual Operating Cost](#sec-algorithmic_monetary_authority_annual_opex): $7.5 million (95% CI: $3 million - $20 million)
+- [Transparent Securities Commission Annual Operating Cost](#sec-transparent_securities_commission_annual_opex): $20 million (95% CI: $8 million - $50 million)
+
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Cost_{opex,ann} + Cost_{opex,ann} + Cost_{opex,ann} \\
++ Cost_{opex,ann} + Cost_{net,ann} + Cost_{opex,ann} \\
+= \$150M + \$100M + \$7M + \$15M + \$7.5M + \$20M \\
+= \$300M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Automated_{annual} \times Cost_{all} \\
+= 500B \times \$0.0003 \\
+= \$150M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Pop_{US} \times Cost_{ann} \\
+= 335M \times \$0.3 \\
+= \$100M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-gov_replacement_suite_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-gov_replacement_suite_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-gov_replacement_suite_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-gov_replacement_suite_annual_opex.qmd >}}
+
+:::
+
+### Replacement Suite Operating Cost per Citizen per Year: $0.896 {#sec-gov_replacement_suite_opex_per_citizen_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+The whole priced replacement suite's operating cost per citizen per year: roughly one dollar, versus five figures of dysfunction.
+
+**Inputs**:
+
+- [Government Replacement Suite Annual Operating Cost](#sec-gov_replacement_suite_annual_opex) 🔢: $300 million
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= \frac{Cost_{opex,ann}}{Pop_{US}} \\
+= \frac{\$300M}{335M} \\
+= \$0.896
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Cost_{opex,ann} + Cost_{opex,ann} + Cost_{opex,ann} \\
++ Cost_{opex,ann} + Cost_{net,ann} + Cost_{opex,ann} \\
+= \$150M + \$100M + \$7M + \$15M + \$7.5M + \$20M \\
+= \$300M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Automated_{annual} \times Cost_{all} \\
+= 500B \times \$0.0003 \\
+= \$150M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Pop_{US} \times Cost_{ann} \\
+= 335M \times \$0.3 \\
+= \$100M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-gov_replacement_suite_opex_per_citizen_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-gov_replacement_suite_opex_per_citizen_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-gov_replacement_suite_opex_per_citizen_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-gov_replacement_suite_opex_per_citizen_annual.qmd >}}
+
+**Used in:**
+
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
+- [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
+
+:::
+
 ### Healthcare vs Military Multiplier Ratio: 7.17x {#sec-healthcare_vs_military_multiplier_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -15037,6 +15450,7 @@ $$
 - [The Court of Humanity](../solution/court-of-humanity.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
+- [Department of Peace](../solution/department-of-peace.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [Treaty Financial Plan](../economics/treaty-financial-plan.html)
@@ -15097,6 +15511,100 @@ $$
 **Used in:**
 
 - [Peace Dividend](../economics/peace-dividend.html)
+
+:::
+
+### Immigration Dividend per Citizen per Year: $310 {#sec-immigration_dividend_per_citizen_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual per-citizen dividend from priced entry: entry-fee revenue redirected from smugglers to the Treasury, plus the annualized fiscal surplus the CBO measured from a surge of comparable volume. A floor: excludes the surtax stream and the retired enforcement budget.
+
+**Inputs**:
+
+- [Priced-Entry Annual Fee Revenue](#sec-immigration_entry_revenue_annual) 🔢: $13.9 billion
+- [CBO Immigration Surge Deficit Reduction, 2024-2034](#sec-cbo_immigration_surge_deficit_reduction_2024_2034) 📊: $900 billion
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+
+$$
+\begin{gathered}
+Dividend_{ann} \\
+= (\text{ENTRY\_FEES} \\
++ \text{SURGE\_FISCAL\_SURPLUS} / 10 years) / \text{US\_POPULATION}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Ratio_{ann} \\
+= Ratio_{ann} \times US \\
+= 2M \times \$6.94K \\
+= \$13.9B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-immigration_dividend_per_citizen_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-immigration_dividend_per_citizen_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-immigration_dividend_per_citizen_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-immigration_dividend_per_citizen_annual.qmd >}}
+
+**Used in:**
+
+- [The Immigration Revenue Service](../solution/immigration-revenue-service.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
+
+:::
+
+### Priced-Entry Annual Fee Revenue: $13.9 billion {#sec-immigration_entry_revenue_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual entry-fee revenue under priced entry at the smuggler-revealed price: money migrants already pay, redirected from cartels to the Treasury. Excludes the ongoing surtax stream, so it is a floor.
+
+**Inputs**:
+
+- [Priced-Entry Annual Volume](#sec-immigration_priced_entry_annual_volume): 2 million entrants (95% CI: 1 million entrants - 5 million entrants)
+- [Average Smuggler Fee per US Border Crossing](#sec-us_smuggler_fee_avg) 📊: $6,937 (95% CI: $4,000 - $14,000)
+
+$$
+\begin{gathered}
+Ratio_{ann} \\
+= Ratio_{ann} \times US \\
+= 2M \times \$6.94K \\
+= \$13.9B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-immigration_entry_revenue_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-immigration_entry_revenue_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-immigration_entry_revenue_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-immigration_entry_revenue_annual.qmd >}}
+
+**Used in:**
+
+- [The Immigration Revenue Service](../solution/immigration-revenue-service.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -17143,6 +17651,47 @@ $$
 
 :::
 
+### NIH Trial Patients Fundable (Status Quo): 37,829 patients {#sec-nih_trial_patients_fundable_status_quo}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial participants the NIH's current clinical-trials allocation funds each year at traditional per-patient costs: the status quo output of the existing budget.
+
+**Inputs**:
+
+- [NIH Annual Budget](#sec-nih_annual_budget) 📊: $47 billion (95% CI: $45 billion - $50 billion)
+- [NIH Clinical Trials Spending Percentage](#sec-nih_clinical_trials_spending_pct) 📊: 3.3% (95% CI: 2% - 5%)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41,000 (95% CI: $20,000 - $120,000)
+
+$$
+\begin{gathered}
+Fundable \\
+= \text{NIH\_BUDGET} \times \text{TRIALS\_PCT} / \text{TRADITIONAL\_COST\_PER\_PATIENT}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-nih_trial_patients_fundable_status_quo.qmd >}}
+
+{{< include ../figures/sensitivity-table-nih_trial_patients_fundable_status_quo.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-nih_trial_patients_fundable_status_quo.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-nih_trial_patients_fundable_status_quo.qmd >}}
+
+**Used in:**
+
+- [Decentralized Institutes of Health](../solution/dih.html)
+
+:::
+
 ### Nuclear Winter Overkill Factor: 122x {#sec-nuclear_winter_overkill_factor}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -17183,9 +17732,10 @@ $$
 
 - [The Apocalypse Markup](../appendix/extinction-surplus.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [I Am Retarded](../problem/i-am-retarded.html)
-- [Earth Optimization Services](../solution/earth-optimization-services.html)
+- [Department of Peace](../solution/department-of-peace.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
 - [Wishonia's Wager](../proof/wishonias-wager.html)
@@ -17248,6 +17798,7 @@ $$
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Special Education](../solution/special-education.html)
+- [Department of Peace](../solution/department-of-peace.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 
 :::
@@ -19610,6 +20161,7 @@ $$
 **Used in:**
 
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -19661,6 +20213,7 @@ $$
 
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -32172,6 +32725,49 @@ $$
 
 :::
 
+### Universal Security Administration Annual Operating Cost: $100 million {#sec-universal_security_admin_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual operating cost of the Universal Security Administration: population times the all-in comparator-anchored cost per citizen. Uncertainty propagates from the component distributions via Monte Carlo.
+
+**Inputs**:
+
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+- [Universal Security Administration All-In Annual Cost per Citizen](#sec-universal_security_admin_all_in_cost_per_citizen_annual): $0.3 (95% CI: $0.1 - $1)
+
+$$
+\begin{gathered}
+Cost_{opex,ann} \\
+= Pop_{US} \times Cost_{ann} \\
+= 335M \times \$0.3 \\
+= \$100M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-universal_security_admin_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-universal_security_admin_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-universal_security_admin_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-universal_security_admin_annual_opex.qmd >}}
+
+**Used in:**
+
+- [The Universal Security Administration](../solution/universal-security-administration.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
+
+:::
+
 ### Pre-WW2 US Military Spending % Lower than Current: 96.7% {#sec-us_1939_military_spending_pct_lower_than_current}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -32937,6 +33533,88 @@ $$
 - [Optimocracy: The Evidence Machine](../solution/optimocracy.html)
 - [Wishonia](../futures/wishonia.html)
 - [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
+
+:::
+
+### US Governance Dysfunction per Person per Year: $14,878 {#sec-us_gov_waste_per_capita_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+The US efficiency gap per person per year: the audit's total governance dysfunction divided across the population. The invoice every American pays silently.
+
+**Inputs**:
+
+- [US Government Waste (Total)](#sec-us_gov_waste_total) 🔢: $4.98 trillion
+- [US Population in 2024](#sec-us_population_2024) 📊: 335 million people (95% CI: 330 million people - 340 million people)
+
+$$
+\begin{gathered}
+US_{annual} \\
+= \frac{W_{total,US}}{Pop_{US}} \\
+= \frac{\$4.98T}{335M} \\
+= \$14.9K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{total,US} \\
+= W_{raw,US} \times \delta_{overlap} \\
+= \$4.98T \times 1 \\
+= \$4.98T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{raw,US} \\
+= W_{health} + W_{housing} + W_{military} + W_{regulatory} \\
++ W_{tax} + W_{corporate} + W_{tariffs} + W_{drugs} \\
++ W_{fossil} + W_{agriculture} \\
+= \$1.2T + \$1.4T + \$702B + \$580B + \$546B + \$181B + \$160B \\
++ \$90B + \$50B + \$75B \\
+= \$4.98T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+W_{military} \\
+= Spending_{US,2024} - D_{optimal} \\
+= \$886B - \$184B \\
+= \$702B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{optimal} \\
+= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
++ D_{hedge} \\
+= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
+= \$184B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_per_capita_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_per_capita_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_per_capita_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_per_capita_annual.qmd >}}
+
+**Used in:**
+
+- [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -39551,6 +40229,26 @@ Estimated replacement cost per hour of caregiving
 
 :::
 
+### CBO Immigration Surge Deficit Reduction, 2024-2034: $900 billion {#sec-cbo_immigration_surge_deficit_reduction_2024_2034}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+CBO (July 2024): the 2021-2026 immigration surge lowers federal deficits, on net, by $0.9 trillion over 2024-2034 (revenues up $1.2 trillion, spending up $0.3 trillion).
+
+**Source**: [@cbo-immigration-surge-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence • Updated 2024-07*
+
+**Used in:**
+
+- [The Immigration Revenue Service](../solution/immigration-revenue-service.html)
+
+:::
+
 ### Global Billionaire Count: 2,781 people {#sec-chain_global_billionaire_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -39659,6 +40357,7 @@ Average retail after-fee return on conventional retirement portfolios (60/40 sto
 **Used in:**
 
 - [The Earth Optimization Prize Treasury](../economics/earth-optimization-prize-treasury.html)
+- [The Transparent Securities Commission](../solution/transparent-securities-commission.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 
@@ -39746,6 +40445,7 @@ Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. Studi
 
 - [Wishocracy](../solution/wishocracy.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
+- [The Decentralized Congress](../solution/decentralized-congress.html)
 
 :::
 
@@ -40101,13 +40801,13 @@ Embedded pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBE
 - [A Decentralized FDA](../solution/dfda.html)
 - [Special Education](../solution/special-education.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
+- [Decentralized Institutes of Health](../solution/dih.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [How to End War and Disease](../educational-film.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [The Cost of War](../problem/cost-of-war.html)
 - [Optimization Summary](../solution.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
-- [Decentralized Institutes of Health](../solution/dih.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [The Proof: Overview](../proof.html)
 - [Frequently Asked Objections](../appendix/faq.html)
@@ -40413,6 +41113,7 @@ Expert accuracy on Who Wants to Be a Millionaire phone-a-friend lifeline. Creden
 
 - [Wishocracy](../solution/wishocracy.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
+- [The Decentralized Congress](../solution/decentralized-congress.html)
 
 :::
 
@@ -41680,12 +42381,12 @@ Global military spending in 2024
 - [Incentive Alignment Bonds: Making Public Goods Financially and Politically Profitable](../appendix/incentive-alignment-bonds-paper.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [Department of Peace](../solution/department-of-peace.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Diagnostic Summary](../problem.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
-- [Department of Peace](../solution/department-of-peace.html)
 - [Earth Optimization Fund](../economics/earth-optimization-fund.html)
 - [Treaty Investor Risk Analysis](../appendix/treaty-investor-risk-analysis.html)
 - [The Cost-Benefit Analysis of Global Hegemony](../appendix/cost-benefit-of-hegemony.html)
@@ -42001,6 +42702,7 @@ Total global nuclear warhead inventory across nine nuclear-armed states. Include
 
 **Used in:**
 
+- [Department of Peace](../solution/department-of-peace.html)
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [Diagnostic Summary](../problem.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
@@ -42125,6 +42827,27 @@ Total ICD-10 diagnostic codes for human diseases and conditions
 **Used in:**
 
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
+
+:::
+
+### IRS Annual Operating Budget: $12.3 billion {#sec-irs_annual_operating_budget}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+IRS enacted annual appropriation, FY2024 (CRS IF12647, Table 1).
+
+**Source**: [@crs-irs-appropriations-fy2025]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence • Updated 2024-04*
+
+**Used in:**
+
+- [The Automated Revenue Service](../solution/automated-revenue-service.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -42478,8 +43201,8 @@ NIH annual budget (FY2024/2025)
 **Used in:**
 
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
-- [Diagnostic Summary](../problem.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
+- [Diagnostic Summary](../problem.html)
 
 :::
 
@@ -42510,6 +43233,7 @@ Percentage of NIH budget spent on clinical trials (3.3%)
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
 - [Diagnostic Summary](../problem.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
+- [Decentralized Institutes of Health](../solution/dih.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
@@ -42995,6 +43719,8 @@ Unrealized output from migration restrictions. Clemens (2011) estimated eliminat
 **Used in:**
 
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [The Immigration Revenue Service](../solution/immigration-revenue-service.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -43853,6 +44579,7 @@ Phase 3 cost per patient (median from FDA study)
 - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
+- [Decentralized Institutes of Health](../solution/dih.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [How to End War and Disease](../educational-film.html)
@@ -43860,7 +44587,6 @@ Phase 3 cost per patient (median from FDA study)
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
 - [Optimization Summary](../solution.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
-- [Decentralized Institutes of Health](../solution/dih.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Special Education](../solution/special-education.html)
 - [The Proof: Overview](../proof.html)
@@ -44133,6 +44859,8 @@ Direct US federal corporate welfare: subsidies to agriculture ($16.4B), green en
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [Wishonia](../futures/wishonia.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
+- [The Decentralized Congress](../solution/decentralized-congress.html)
 
 :::
 
@@ -44161,8 +44889,10 @@ Annual cost of drug war: ~$41B federal drug control budget, ~$10B state/local en
 **Used in:**
 
 - [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
+- [The Drug Treatment Administration](../solution/drug-treatment-administration.html)
 - [Wishonia](../futures/wishonia.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Optimocracy: The Evidence Machine](../solution/optimocracy.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
@@ -44316,6 +45046,8 @@ Annual GDP reduction from US tariffs and retaliation. Yale Budget Lab estimates 
 - [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 - [Wishonia](../futures/wishonia.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
+- [The Decentralized Congress](../solution/decentralized-congress.html)
 
 :::
 
@@ -44345,7 +45077,9 @@ Annual cost of US tax code compliance: 7.9 billion hours of lost productivity ($
 
 - [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
+- [The Automated Revenue Service](../solution/automated-revenue-service.html)
 - [Wishonia](../futures/wishonia.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -44660,6 +45394,35 @@ Senators needed for treaty ratification (2/3 majority per Article II, Section 2)
 
 :::
 
+### Average Smuggler Fee per US Border Crossing: $6,937 {#sec-us_smuggler_fee_avg}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average fee Mexican migrants paid smugglers to enter the United States (EMIF Norte survey of 20,000+ migrants, second half of 2022). Reported street prices ran higher after 2023; the interval covers the range. This is the market-revealed willingness to pay for entry.
+
+**Source**: [@emif-coyote-fees-2022]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$4,000, $14,000] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $4,000 and $14,000 (±72%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_smuggler_fee_avg.qmd >}}
+
+*✓ High confidence • Updated 2023-04*
+
+**Used in:**
+
+- [The Immigration Revenue Service](../solution/immigration-revenue-service.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
+
+:::
+
 ### US Federal Campaign Spending (2024): $20 billion {#sec-us_total_federal_campaign_spending_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -44712,7 +45475,9 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 - [Unrepresentative Democracy](../problem/unrepresentative-democracy.html)
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [Optimocracy: The Evidence Machine](../solution/optimocracy.html)
+- [The Decentralized Congress](../solution/decentralized-congress.html)
 - [How Much Does It Cost to Buy All the Governments?](../appendix/cost-of-change-analysis.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Wishonia](../futures/wishonia.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
@@ -44812,6 +45577,7 @@ Venture capital / private equity gross return (before 2-and-20 fees). Cambridge 
 
 - [The Earth Optimization Prize Treasury](../economics/earth-optimization-prize-treasury.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [The Transparent Securities Commission](../solution/transparent-securities-commission.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 
 :::
@@ -44935,31 +45701,57 @@ Patients enrolled in ADAPTABLE trial (PCORnet 2016-2019). Enrolled across 40 cli
 
 :::
 
-### AI Diplomatic Corps Annual Cost: $1 billion {#sec-ai_diplomatic_corps_annual_cost}
+### Algorithmic Monetary Authority Annual Operating Cost: $7.5 million {#sec-algorithmic_monetary_authority_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Modeled annual cost of a standing corps of frontier-model AI negotiators engaging all ~195 governments continuously: thousands of concurrent agents at current inference prices, padded above the arithmetic. Roughly three hours of global military spending.
+All-in annual operating cost of the Algorithmic Monetary Authority: basket monitoring, rule execution, continuous public verification, and the humans who hold the pager. Sized as a small monitoring operation; the rule itself is one formula and requires no committee.
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Fixed
+**Technical**: 95% CI: [$3 million, $20 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $3 million and $20 million (±113%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-algorithmic_monetary_authority_annual_opex.qmd >}}
 
 *Core definition*
+
+**Used in:**
+
+- [The Algorithmic Monetary Authority](../solution/algorithmic-monetary-authority.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
-### Aligned Election Commission Annual Operating Cost: $100 million {#sec-aligned_election_commission_annual_opex}
+### Aligned Election Commission Annual Operating Cost: $7 million {#sec-aligned_election_commission_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Modeled annual operating cost of the Aligned Election Commission: alignment-score computation, public data pipelines, and campaign-fund routing. Generous relative to the trivial compute involved.
+All-in annual operating cost of the Aligned Election Commission: alignment-score computation, public data pipelines, and fund routing. Sized as a small data-engineering operation; the most similar existing system is the NRA's politician scorecard, which runs on a budget that rounds to zero.
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Fixed
+**Technical**: 95% CI: [$2 million, $20 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2 million and $20 million (±129%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-aligned_election_commission_annual_opex.qmd >}}
 
 *Core definition*
+
+**Used in:**
+
+- [The Aligned Election Commission](../solution/aligned-election-commission.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
 
 :::
 
@@ -45025,17 +45817,47 @@ Unique approved drug-disease pairings (FDA-approved uses, midpoint of 1,500-2,00
 
 :::
 
-### Automated Revenue Service Annual Operating Cost: $2 billion {#sec-automated_revenue_service_annual_opex}
+### All-In Cost per Settlement Transaction: $0.0003 {#sec-automated_revenue_service_all_in_cost_per_transaction}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Modeled annual operating cost of the Automated Revenue Service (protocol-level settlement tax): servers, engineers, security audits, and ledger operations at national scale. Padded roughly 10x above payment-rail engineering estimates so the savings claim survives large overruns.
+All-in cost per settlement (three hundredths of a cent): compute, storage, security audits, and the mostly-AI workforce, amortized per transaction. Anchored to the most similar systems that exist: card networks clear transactions for internal costs in this range, and public blockchain rails settle transfers for fractions of a cent.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$0.0001, $0.001] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.0001 and $0.001 (±150%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-automated_revenue_service_all_in_cost_per_transaction.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [The Automated Revenue Service](../solution/automated-revenue-service.html)
+
+:::
+
+### Automated Revenue Service Annual Transaction Volume: 500 billion transactions {#sec-automated_revenue_service_annual_transaction_volume}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Design capacity: annual final-consumption settlements processed by the protocol, set well above current US card-network transaction volume.
 
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
 
 *Core definition*
+
+**Used in:**
+
+- [The Automated Revenue Service](../solution/automated-revenue-service.html)
 
 :::
 
@@ -46027,6 +46849,33 @@ Mid-range funding for commercial DCT platform
 
 :::
 
+### Decentralized Census Bureau Annual Operating Cost: $15 million {#sec-decentralized_census_bureau_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+All-in annual operating cost of the sensor array: continuously computing, cross-checking, and integrity-auditing the statistics the machine steers by (median after-tax income aggregates, healthy-life-expectancy estimation from dFDA outcome data, data-poisoning detection). Sized as a mid-sized analytics operation; roughly 1% of what the decennial census costs per year amortized. The citizen count itself is a free byproduct of the identity layer.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$5 million, $40 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $5 million and $40 million (±117%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-decentralized_census_bureau_annual_opex.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [The Decentralized Census Bureau](../solution/decentralized-census-bureau.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
+
+:::
+
 ### Percentage of Budget Military Sector Keeps Under 1% Treaty: 99% {#sec-defense_sector_retention_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -46979,6 +47828,32 @@ Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for
 
 :::
 
+### Priced-Entry Annual Volume: 2 million entrants {#sec-immigration_priced_entry_annual_volume}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Modeled annual legal entries under uncapped priced entry. Anchored to the most similar thing that already happened: the 2021-2026 US immigration surge that the CBO measured ran at roughly this rate, uninvited and unpriced.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1 million entrants, 5 million entrants] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1 million entrants and 5 million entrants (±100%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-immigration_priced_entry_annual_volume.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [The Immigration Revenue Service](../solution/immigration-revenue-service.html)
+
+:::
+
 ### Activist Stake Fraction: 0.05:1 {#sec-influence_activist_stake_fraction}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -47887,6 +48762,33 @@ Estimated drug-disease relationships actually tested (approved uses + repurposed
 
 :::
 
+### Transparent Securities Commission Annual Operating Cost: $20 million {#sec-transparent_securities_commission_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+All-in annual operating cost of the Transparent Securities Commission: standardized disclosure schema plus continuous fraud-pattern detection across every issuer on the ledger. Anchored to the most similar existing systems: the real-time fraud-detection operations card networks already run at market scale.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$8 million, $50 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $8 million and $50 million (±105%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-transparent_securities_commission_annual_opex.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [The Transparent Securities Commission](../solution/transparent-securities-commission.html)
+- [Earth Optimization Services](../solution/earth-optimization-services.html)
+
+:::
+
 ### Political Lobbying Campaign: Direct Lobbying, Super Pacs, Opposition Research, Staff, Legal/Compliance: $650 million {#sec-treaty_campaign_budget_lobbying}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -48090,15 +48992,23 @@ Consolidated count of trial-relevant diseases worth targeting (after grouping IC
 
 :::
 
-### Universal Security Administration Annual Operating Cost: $1 billion {#sec-universal_security_admin_annual_opex}
+### Universal Security Administration All-In Annual Cost per Citizen: $0.3 {#sec-universal_security_admin_all_in_cost_per_citizen_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Modeled annual operating cost of the Universal Security Administration: sybil-resistant identity layer plus daily UBI deposits for roughly 335M citizens (about $3 per citizen per year). Padded above national-scale digital-identity engineering estimates.
+All-in annual cost per citizen served: sybil-resistant identity, 365 daily deposits, and the mostly-AI workforce. Anchored to the most similar system that exists: India's national biometric identity system serves 1.4 billion people at costs in this range per person per year, and payment rails move deposits for fractions of a cent.
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Fixed
+**Technical**: 95% CI: [$0.1, $1] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $0.1 and $1 (±150%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-universal_security_admin_all_in_cost_per_citizen_annual.qmd >}}
 
 *Core definition*
 
@@ -48521,6 +49431,7 @@ Total deaths from wars, conflicts, genocides, and policy-induced famines since 1
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [I Am Retarded](../problem/i-am-retarded.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
+- [Department of Peace](../solution/department-of-peace.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 

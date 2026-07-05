@@ -1,6 +1,6 @@
 ---
 title: The Automated Revenue Service
-description: 74,000 pages of tax code replaced by six lines of code. The IRS employs 83,000 humans to do what a smart contract does automatically.
+description: 74,000 pages of tax code replaced by six lines of code. The IRS employs 95,000 humans to do what a smart contract does automatically.
 published: true
 scores:
   quality: 5
@@ -14,7 +14,7 @@ audience: "a builder who has accepted that government paperwork overhead is mone
 feel: "the clean thrill that 74,000 pages collapse into six lines you can deploy yourself, and the tax machine is yours to rebuild now"
 do: "build and run the smart contract that collects revenue automatically, replacing the IRS paperwork machine with code you control"
 ---
-![74,000 pages of tax code replaced by six lines of code. The IRS employs 83,000 humans to do what a smart contract does automatically.](/assets/infographics/knowledge/solution/automated-revenue-service-infographic-bw-academic.jpg)
+![74,000 pages of tax code replaced by six lines of code. The IRS employs 95,000 humans to do what a smart contract does automatically.](/assets/infographics/knowledge/solution/automated-revenue-service-infographic-bw-academic.jpg)
 
 {{< include ../includes/setup-parameters.qmd >}}
 
@@ -46,12 +46,42 @@ You cannot lobby a smart contract. You cannot offshore a protocol. Every loophol
 
 ## The Numbers
 
-Your current system costs $12.3 billion in direct IRS budget, plus {{< var us_gov_waste_tax_compliance >}} per year once you price the 7 billion hours of paperwork at what the humans doing it could have earned instead [@ntu-tax-compliance-2025]. Not taxes. Paperwork about taxes.
+Your current system costs {{< var irs_annual_operating_budget >}} in direct IRS budget, plus {{< var us_gov_waste_tax_compliance >}} per year once you price the 7 billion hours of paperwork at what the humans doing it could have earned instead [@ntu-tax-compliance-2025]. Not taxes. Paperwork about taxes.
 
-The replacement is not free, and I will not insult you by pretending it is. Budget {{< var automated_revenue_service_annual_opex >}} a year: servers, engineers, security auditors, and the people who watch the people who watch the code. That figure is padded to roughly ten times any sane engineering estimate for running payment rails at national scale, and it is still one-sixth of the IRS's current operating budget. The compliance burden it deletes is several hundred times larger. The savings could fund a small country. Or, more usefully, clinical trials.
+The replacement is not free, and I will not insult you by pretending it is. It is priced the way you price any utility: against the most similar machines you already run. Your card networks clear this many transactions for internal costs of fractions of a cent each, and public blockchain rails settle transfers for less. So budget {{< var automated_revenue_service_all_in_cost_per_transaction >}} per settlement, all-in (compute, storage, security audits, and the workforce, which is mostly AI plus a few humans who exist to sign their names, because someone must be arrestable), across {{< var automated_revenue_service_annual_transaction_volume >}} a year: {{< var automated_revenue_service_annual_opex >}}. The inputs are distributions, not vibes; the total carries its own confidence interval, which is more than your Pentagon can say about anything it owns.
+
+That is about 1% of the IRS's operating budget [@crs-irs-appropriations-fy2025], and the {{< var us_gov_waste_tax_compliance >}} compliance burden it deletes is a few thousand times larger. Net of everything, the arithmetic hands every American {{< var automated_revenue_service_savings_per_american_annual >}} a year back, and every input traces to the [waste ledger](../appendix/us-efficiency-audit.qmd). The savings could fund a small country. Or, more usefully, clinical trials.
+
+| Feature | The Other Guys | The Automated Revenue Service |
+|---------|----------------|-------------------------------|
+| Tax code | 74,000 pages | One rate |
+| Your annual filing | 13 hours, $273 in preparation fees, dread | Nothing. It happened at checkout. |
+| Collection cost | {{< var irs_annual_operating_budget >}} plus {{< var us_gov_waste_tax_compliance >}} in compliance | {{< var automated_revenue_service_annual_opex >}}, all-in |
+| Audits | Threats, by mail | The ledger, continuously, of itself |
+| Loopholes | Each one purchased and lovingly maintained | There is nothing to lobby |
 
 ## Why You Haven't Done This
 
 The 74,000 pages are not a bug. Every page represents a negotiation between a lobbyist and a legislator. Every loophole is a feature, purchased and maintained by someone who benefits from it. Your tax system is not complicated because taxation is complicated. Your tax system is complicated because complexity is profitable for the people who write the rules.
 
 95,000 IRS employees interpreting 74,000 pages to do what six lines of code does automatically. And you wonder where your taxes go.
+
+## Build Sheet
+
+*Loop role: the fuel pump. Every other module runs on money this one collects; see the [Theory of Operation](theory-of-operation.qmd).*
+
+- **What you are building:** The six lines above, plus the unglamorous 99% around them: verified wallets, the business zero-rating registry, zero-knowledge receipts, and the public revenue ledger.
+- **Parts required:** Settlement rails at card-network scale (your card networks already clear this volume daily; public blockchain rails settle transfers for fractions of a cent). The [identity layer](universal-security-administration.qmd) for wallet verification. A standing security budget, because this machine will be attacked by everyone who liked the old 74,000 pages.
+- **Specifications:** Sustain {{< var automated_revenue_service_annual_transaction_volume >}} a year at a 50,000-settlements-per-second peak. Deduct the configured rate at settlement with sub-5-second finality. Zero-rate registered business wallets automatically so the tax does not pyramid. Publish revenue in real time. Expose only amount, category, jurisdiction, and time bucket per transaction, identities proved privately. 99.99% uptime. If your implementation exceeds one page per thousand pages replaced, attach a written apology.
+- **Testing your installation:** Collect one full day of national revenue with zero forms filed, zero accountants consulted, and zero threatening letters mailed.
+- **Parts cost:** {{< var automated_revenue_service_annual_opex >}}/year, all-in, at {{< var automated_revenue_service_all_in_cost_per_transaction >}} per settlement; interval in the tooltip.
+- **First bolt (no permission required):** Deploy the six lines on a public testnet and replay one day of real consumption data through them. Publish the revenue it would have collected next to what the 74,000 pages collected, minus the 7 billion hours. Cost: a weekend.
+- **Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "A flat rate is regressive" | The [daily deposit](universal-security-administration.qmd) is the progressive half: everyone pays the same rate, everyone receives the same dividend, and the net is progressive without a single form. The current code is 74,000 pages of progressivity theater whose effective rates favor whoever bought the page. |
+| "The government will just raise the rate" | Rate changes go to a [direct citizen vote](decentralized-congress.qmd) with the evidence card attached, not to a committee at midnight. |
+| "Cash and barter will evade it" | Evasion already runs about $600 billion a year under the system with the 95,000 enforcers. When deposits, dividends, and legal commerce all live on the rails, exile from the rails is its own tax. The bar to beat was installed at ground level. |
+
+You build it. If you would rather pay someone, this page doubles as the contract spec; forward it to anyone who already runs payment rails. Not to Intuit. Intuit knows why.

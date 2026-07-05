@@ -1,0 +1,70 @@
+---
+title: The Decentralized Congress
+description: 535 humans vote on 5,000-page bills they have not read, funded by the industries the bills regulate. The replacement is you, twenty questions a year, with the evidence attached.
+published: true
+scores:
+  quality: 6
+  value: 7
+  timeliness: 7
+  standalone: 6
+  voice: 7
+  importance: 7
+audience: "A citizen ready to take the legislature's two jobs (budgets and laws) back from the 535 intermediaries currently doing both badly."
+feel: "The zombie-tariff realization: the laws everyone hates survive because nobody is ever asked, and the whole replacement mechanism is asking."
+do: "Build the rule-vote layer on Wishocracy's rails: direct citizen votes on tariffs, subsidies, and prohibitions, each ballot shipped with the Optimitron's evidence card."
+---
+{{< include ../includes/setup-parameters.qmd >}}
+
+## The Bundling Machine
+
+Your legislature produces two products: budgets and laws. Both are manufactured by 535 intermediaries who vote on 5,000-page documents they have not read, funded by {{< var us_total_lobbying_annual >}} a year in lobbying from the industries the documents regulate. You cannot buy the products separately. You elect one human to represent your view on immigration, war, healthcare, tariffs, and cheese subsidies simultaneously, which means you cannot express a view on any of them individually. The package was designed by consultants and paid for by donors, and the donors are the only customers whose orders arrive correctly.
+
+The budget half of the replacement already shipped: it is [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025], the Standard Package's Direct Allocation System, where verified citizens set budget weights through pairwise comparisons. This chapter is about the other half: the laws.
+
+## The Zombie Tariff Problem
+
+Consider how a tariff lives. It costs your economy {{< var us_gov_waste_tariffs >}} a year in deadweight loss. Everyone pays slightly more for washing machines; three factories profit enormously. The costs are diffuse, the benefits are concentrated, so the three factories hire lobbyists and the 330 million washing-machine buyers do not. Your economists have understood this arithmetic for seventy years. The tariffs are still there, along with {{< var us_gov_waste_corporate_welfare >}} a year in corporate welfare and subsidy programs that survive on the same trick.
+
+Here is the thing to notice: these policies do not survive because citizens want them. They survive because citizens are never asked. A tariff put to a direct vote, with its price tag attached, loses. So it is never put to a direct vote. Your current method for repealing a bad subsidy is to wait for the industry that bought it to die of old age, and the industry knows this, which is why it does not die.
+
+## The Replacement
+
+When a question is about money, [Wishocracy](wishocracy.qmd) allocates it. When a question is about rules (should this tariff exist, should this subsidy continue, should this thing be prohibited), the same interface presents a direct citizen vote, with one addition your ballot initiatives never had: the [Optimitron's](optimocracy.qmd) evidence card, showing what actually happened in the jurisdictions that tried it, attached to the question the way nutrition facts are attached to cereal.
+
+- Every rule question ships with the evidence: costs, benefits, and what happened in the thousands of jurisdictions that ran the experiment already.
+- Votes are pairwise and continuous where intensity matters, direct where the question is binary. Verified one-per-human by the identity layer. No representative bundling your tariff opinion with your war opinion.
+- Twenty questions a year, roughly twenty minutes. Your current civic workload is one bundled vote every two years plus unlimited shouting; this is less work and it is aimed.
+- There is no floor to seize, no committee to capture, no member to take to lunch. The lobbying industry's entire technology stack assumes there is a human in the middle. The replacement removes the human in the middle. You cannot take eight billion people to lunch.
+
+Your government has shut down more than 20 times because 535 humans could not agree on a spreadsheet. Eight billion humans and an algorithm cannot shut down. There is no door.
+
+Division of labor, for readers keeping score: the [Loving Takeover](../appendix/loving-takeover.qmd) buys the supply side of lobbying and redirects it. The [Aligned Election Commission](aligned-election-commission.qmd) removes the demand side, because a politician funded by alignment scores has nothing left to sell. And this module removes the product the lobbyists were buying: a legislature. What remains of lobbying is publishing evidence where eight billion voters can read it, which has another name: arguing in public. That one stays legal on every planet.
+
+**Retail price:** Twenty questions a year. The rails ship with Wishocracy and the identity layer; the marginal cost is your twenty minutes. **Currently paying:** {{< var us_total_lobbying_annual >}}/year in lobbying, plus the tariffs and subsidies it buys, plus a legislature that periodically closes the government it is inside of. **Your annual dividend:** {{< var decentralized_congress_savings_per_citizen_annual >}} per citizen once the zombie policies die, [itemized line by line in the audit](../appendix/us-efficiency-audit.qmd).
+
+| Feature | The Other Guys | The Decentralized Congress |
+|---------|----------------|-----------------------------|
+| Your input | One bundled vote every two years | Twenty specific questions a year |
+| Information at the ballot | Attack ads | The evidence card: what the policy did wherever it was tried |
+| Lobbying surface | 535 humans with lunch schedules | Eight billion humans. Book the restaurant. |
+| Zombie tariff lifespan | Until the industry that bought it dies of old age | Until the next vote |
+| Shutdowns | 20+ since 1976 | There is no door |
+
+## Build Sheet
+
+*Loop role: the setpoint dial for laws. Budgets already have their dial ([Wishocracy](wishocracy.qmd)); this one turns rules. See the [Theory of Operation](theory-of-operation.qmd).*
+
+- **What you are building:** The rule-vote layer: evidence cards, direct and pairwise ballots, verified voting, and the enactment pipeline from result to statute.
+- **Parts required:** The [identity layer](universal-security-administration.qmd) for one-human-one-vote. [Wishocracy's](wishocracy.qmd) preference rails. The [Optimitron](optimocracy.qmd) for machine-generated, source-linked evidence cards. Estonia's e-voting playbook, which has been running from sofas for two decades.
+- **Specifications:** Every ballot question ships with its evidence card. One vote per verified human. Results, turnout, and evidence provenance on the public ledger. Total citizen workload capped at roughly twenty questions a year, because attention is the scarcest public resource and this manual does not waste it. No deliberative chamber of professional representatives may be added; those were just removed, and reinstalling them is not a feature.
+- **Testing your installation:** Repeal one zombie tariff: a policy every economist scores as a net loss, that polls against, and that has survived forty years anyway. If direct democracy with the evidence attached cannot beat a policy nobody wants, return the legislature with our apologies.
+- **Parts cost:** Ships on Wishocracy and identity rails; the increment is a small data operation.
+- **First bolt (no permission required):** Publish evidence cards for five zombie tariffs and run a nonbinding vote. The gap between what a million verified humans choose and what the law says is the campaign ad, and it writes itself quarterly.
+- **Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "Mob rule" | The mob currently rules through one bundled vote filtered by donors; this is the calmer version. Constitutional floors stay, intensity is captured through pairwise sliders instead of shouting, and every question arrives with evidence. On the one game show that measured it, the audience beat the expert {{< var crowd_decision_accuracy >}} to {{< var expert_decision_accuracy >}}. |
+| "Voters are not competent to judge tariffs" | Nobody asked them to derive the deadweight loss. The evidence card states what happened in the jurisdictions that tried it, the same way a nutrition label does not require you to be a chemist. The incumbent method for judging tariffs is a committee funded by the tariff's beneficiaries. |
+
+You build it. If you would rather pay someone, attach a sample evidence card for a tariff of your choosing; the sources will be checked before the design.

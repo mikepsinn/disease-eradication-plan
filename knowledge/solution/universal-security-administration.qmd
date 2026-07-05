@@ -55,6 +55,34 @@ You could skip directly to the pouring step. But then what would the 60,000 peop
 
 That is more than the GDP of the Netherlands. And a staggering fraction of it goes not to helping people, but to deciding which people deserve help.
 
-The replacement costs {{< var universal_security_admin_annual_opex >}} a year to operate, a padded estimate for running the identity layer and the daily deposits: about $3 per citizen per year. The current gate costs roughly $300 per citizen per year to decide whether each citizen deserves what is behind it. You are paying a hundred times more for the bouncer than for the door. The savings could cure diseases or simply be distributed as larger UBI payments. Your species has the resources to eliminate poverty. You are spending those resources on form processing instead.
+The replacement costs {{< var universal_security_admin_annual_opex >}} a year to operate, priced against the most similar system that exists: India already runs biometric identity for 1.4 billion humans at costs in this range per person, and payment rails move deposits for fractions of a cent. All-in (identity, 365 deposits a year, and the workforce, which is mostly AI plus a few humans who sign their names), it comes to about thirty cents per citizen per year. The current gate costs roughly $300 per citizen per year to decide whether each citizen deserves what is behind it. You are paying a thousand times more for the bouncer than for the door. The savings could cure diseases or simply be distributed as larger UBI payments. Your species has the resources to eliminate poverty. You are spending those resources on form processing instead.
 
 The hardest-to-reach populations (homeless, disabled, undocumented) have the strongest incentive to register under UBI, because registration equals money. Your current system does the opposite: the people who need help most are the ones least equipped to navigate 80 separate application processes. You have built a safety net optimized for people who don't need one.
+
+| Feature | The Other Guys | The Universal Security Administration |
+|---------|----------------|----------------------------------------|
+| Programs | 80+, each with its own forms | One deposit |
+| Wait | 45 days, on average, while hungry | Tomorrow morning, and every morning |
+| Overhead | ~$300 per citizen per year | ~30 cents per citizen per year |
+| Who qualifies | Whoever survives the paperwork | Whoever is human |
+| Fraud control | 60,000 inspectors hunting the 1.5% | One identity per human, checked by math |
+
+## Build Sheet
+
+*Loop role: the output stage. Everything the machine gains reaches humans through this module or not at all; see the [Theory of Operation](theory-of-operation.qmd).*
+
+- **What you are building:** The for-loop above, plus the identity layer beneath it: biometric proof-of-personhood enrollment for 335 million humans, deduplication, key recovery, and a standing sybil red team. That layer is real, priced work carried on this module's invoice, and the [census](decentralized-census-bureau.qmd) rides it for free, which is the only honest "free" in this catalog.
+- **Parts required:** India's enrollment playbook (1.4 billion humans, public; bidders intimidated by 335 million should not open the India file). Deposit rails on the [Automated Revenue Service](automated-revenue-service.qmd). Proof-of-personhood hardware or an equivalent your red team fails to break.
+- **Specifications:** One identity per human, cryptographically unique, privacy-preserving. An enrollment path for humans with no phone, no address, and no paperwork (the deposit is the recruitment budget; they will find you). Daily deposits at two hundredths of a cent or less per transfer. Zero application forms. Means-testing features will be logged as defects and billed back to the builder.
+- **Testing your installation:** A 70-year-old with no smartphone and no fixed address receives her deposit every day for one year without filling out a single form.
+- **Parts cost:** {{< var universal_security_admin_annual_opex >}}/year, about thirty cents per citizen; interval in the tooltip. Fraud rate must merely beat the current system's, a bar that has been thoughtfully installed at ground level.
+- **First bolt (no permission required):** Enroll one town, privately funded: biometric identity plus a daily deposit for a thousand humans. Your charities already wire cash to villages; add the identity layer, run it a year, and publish your overhead percentage next to the incumbent's. Theirs is 25.
+- **Troubleshooting:**
+
+| Symptom | Fix |
+|---------|-----|
+| "People will stop working" | The current system already punishes work: for a poor family, earning one more dollar can cost more than a dollar in withdrawn benefits. A universal deposit never withdraws, so work always pays more than not working. The perverse incentive is the incumbent. |
+| "People will register twice" | One biometric identity per human, checked by math instead of by 60,000 caseworkers. The system you are replacing spends a quarter of its budget to catch cheating it measures at 1.5%. |
+| "The undeserving will get it" | Yes. On purpose. Deciding who deserves lunch currently costs more than lunch. We fired the question. |
+
+You build it. If you would rather pay someone, this page doubles as the contract spec; forward it. If your contractor's proposal contains the word "eligibility," return the proposal.

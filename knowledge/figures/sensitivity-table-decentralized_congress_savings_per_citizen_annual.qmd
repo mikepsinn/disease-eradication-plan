@@ -1,0 +1,13 @@
+**Sensitivity Indices for Decentralized Congress Savings per Citizen per Year**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Tariff Cost (GDP Loss) (USD) | 0.8185 | Strong driver |
+| Agricultural Subsidies Deadweight Loss (USD) | 0.3820 | Moderate driver |
+| Corporate Welfare Waste (USD) | 0.3393 | Moderate driver |
+| Fossil Fuel Subsidies (Explicit) (USD) | 0.2437 | Weak driver |
+| US Population in 2024 (people) | -0.0615 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

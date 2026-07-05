@@ -1,0 +1,14 @@
+**Sensitivity Indices for Government Replacement Suite Annual Operating Cost**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Automated Revenue Service Annual Operating Cost (USD) | 0.8233 | Strong driver |
+| Universal Security Administration Annual Operating Cost (USD) | 0.5593 | Strong driver |
+| Transparent Securities Commission Annual Operating Cost (USD) | 0.0806 | Minimal effect |
+| Decentralized Census Bureau Annual Operating Cost (USD) | 0.0659 | Minimal effect |
+| Aligned Election Commission Annual Operating Cost (USD) | 0.0339 | Minimal effect |
+| Algorithmic Monetary Authority Annual Operating Cost (USD) | 0.0325 | Minimal effect |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

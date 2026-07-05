@@ -661,7 +661,7 @@ QALY-Equivalents = {{< var us_gov_waste_total >}} / {{< var medical_qaly_thresho
 
 ## Reallocation Potential
 
-If U.S. efficiency improved to OECD median (80%), approximately **{{< var us_gov_waste_recoverable >}} annually** becomes available for reallocation.
+If U.S. efficiency improved to OECD median (80%), approximately **{{< var us_gov_waste_recoverable >}} annually** becomes available for reallocation. The [government replacement suite](../solution/earth-optimization-services.qmd) is the set of machines designed to recover it category by category, each module priced against the line item it deletes ({{< var gov_replacement_suite_opex_per_citizen_annual >}} per citizen per year of operating cost against {{< var us_gov_waste_per_capita_annual >}} per citizen per year of dysfunction).
 
 For scale, the total efficiency gap ({{< var us_gov_waste_total >}}/year) implies the following coverage estimates.
 
@@ -727,6 +727,7 @@ Political cycles (2-4 years) misalign with infrastructure and policy cycles (10-
 - Intergenerational costs (debt burden on future)
 - Second-order behavioral effects
 - International competitiveness losses
+- Monetary-cycle distortion and financial-crisis losses: the 2007-09 crisis alone cost an estimated $6-14 trillion [@dallas-fed-crisis-cost-2013], but no honest annualization exists, so it is cited rather than summed (see [the Algorithmic Monetary Authority](../solution/algorithmic-monetary-authority.qmd))
 
 Including these factors would increase the efficiency gap estimate substantially.
 
