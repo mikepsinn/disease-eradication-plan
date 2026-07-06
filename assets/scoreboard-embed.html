@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="dih-publication-date" content="2025-10-04">
+  <title>Put the Scoreboard on Your Website</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f7f3ea;
+      color: #171717;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main { width: min(880px, calc(100vw - 32px)); margin: 0 auto; padding: 40px 0 240px; }
+    h1 { margin: 0 0 0.3rem; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.05; }
+    h2 { margin: 2.4rem 0 0.6rem; font-size: 1.15rem; }
+    p { max-width: 46rem; line-height: 1.5; }
+    .kicker {
+      margin: 0 0 1.2rem; color: #b42318; font-size: 0.78rem; font-weight: 900;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .picker { display: flex; flex-wrap: wrap; gap: 8px; margin: 0.8rem 0; }
+    .picker button {
+      font: inherit; font-weight: 800; padding: 0.5rem 0.9rem;
+      border: 1px solid #2a2a2a; background: #fffdf7; cursor: pointer;
+    }
+    .picker button.on { background: #171717; color: #fff; }
+    #vdesc { border: 1px solid #2a2a2a; background: #fffdf7; padding: 0.8rem 1rem; font-size: 0.95rem; max-width: 46rem; }
+    .snippet { position: relative; max-width: 46rem; }
+    .snippet pre {
+      margin: 0; padding: 1rem 1.1rem; border: 1px solid #2a2a2a; background: #171717;
+      color: #f2f2f2; font-size: 0.8rem; line-height: 1.55; overflow-x: auto;
+    }
+    .snippet button {
+      position: absolute; top: 8px; right: 8px; font: inherit; font-size: 0.75rem;
+      font-weight: 800; padding: 0.35rem 0.7rem; border: 1px solid #555;
+      background: #fffdf7; cursor: pointer;
+    }
+    #eventlog {
+      max-width: 46rem; border: 1px solid #2a2a2a; background: #fffdf7;
+      padding: 0.6rem 0.9rem; font-family: ui-monospace, Consolas, monospace;
+      font-size: 0.72rem; line-height: 1.6; min-height: 3.4rem; max-height: 10rem; overflow-y: auto;
+    }
+    .controls button {
+      font: inherit; padding: 0.5rem 0.8rem; border: 1px solid #2a2a2a;
+      background: #fffdf7; cursor: pointer;
+    }
+    code { background: #efe9dc; padding: 0.1em 0.3em; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Put the Scoreboard on Your Website</h1>
+  <p class="kicker"><span data-dih-delay-value="per-day" data-dih-delay-compact="true">139K</span> preventable disease deaths per day of delay. Your footer has room for the score.</p>
+  <p>
+    The bar pinned to the bottom of this page is live: it counts the people brutally tortured and
+    murdered by disease since the fix was published, and clicking it opens the full math. Embedding
+    it is one script tag. It loads its own stylesheet, fetches the live numbers, and links every
+    figure back to its source. Pick a design, copy the code, paste it before <code>&lt;/body&gt;</code>.
+  </p>
+
+  <h2>1. Pick a design</h2>
+  <div class="picker" id="picker"></div>
+  <div id="vdesc"></div>
+
+  <h2>2. Copy the embed code</h2>
+  <div class="snippet">
+    <pre id="snippet"></pre>
+    <button id="copy" type="button">COPY</button>
+  </div>
+
+  <h2>Track conversions</h2>
+  <p>
+    Every interaction dispatches a <code>dih-scoreboard</code> event on <code>document</code>:
+    <code>bar-shown</code>, <code>bar-dismissed</code>, <code>overlay-opened</code>,
+    <code>overlay-closed</code> (with <code>secondsOpen</code>), and <code>cta-clicked</code>
+    (with <code>source</code>). Each carries the active <code>variant</code>, so you can A/B test
+    designs with whatever analytics you already run:
+  </p>
+  <div class="snippet">
+    <pre>document.addEventListener('dih-scoreboard', function (e) {
+  // e.detail = { action: 'cta-clicked', variant: 'minimal', source: 'bar' }
+  gtag('event', e.detail.action, { variant: e.detail.variant });
+});</pre>
+  </div>
+  <p>Interact with the bar below and watch the events arrive:</p>
+  <div id="eventlog"></div>
+
+  <h2>Counters without the bar</h2>
+  <p>
+    Want the live numbers inside your own prose instead? Add
+    <code>&lt;meta name="dih-disable-features" content="delay-counter-hud"&gt;</code> and write
+    spans like <code>&lt;span data-dih-delay-value="per-day"&gt;&lt;/span&gt;</code>
+    (<span data-dih-delay-value="per-day" data-dih-delay-compact="true">139K</span> deaths per day of delay,
+    <span data-dih-delay-value="suffering-hours-per-second" data-dih-delay-compact="true">741K</span> hours
+    of suffering per second). The full list of counter types, the JSON the numbers come from, and the
+    rest of the API live in <a href="../knowledge/appendix/api-and-data.html">API &amp; Data Indexes</a>.
+  </p>
+
+  <h2>Housekeeping</h2>
+  <p class="controls">
+    <button id="reset" type="button">Reset the dismissed flag</button>
+    (the close button hides the bar per browser; this brings it back)
+  </p>
+</main>
+
+<script src="js/mortality-counters.js" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var sb = window.dihScoreboard;
+  var SITE = 'https://manual.warondisease.org';
+
+  var DESC = {
+    'minimal': '<strong>minimal.</strong> Skull, the number, one caption naming the late leaders, one button. Nothing on the bar that is not load-bearing. Recommended.',
+    'instrument-panel': '<strong>instrument-panel.</strong> Most information, least focus: the score plus suffering and dollar odometers. On phones it collapses to what minimal already is.',
+    'sentence': '<strong>sentence.</strong> Skull and number as one unit, the caption as running text. The sentence competes with the number for attention at every width.',
+    'scoreline': '<strong>scoreline.</strong> DISEASE vs HUMANITY 0, caption beneath. The zero is the punch.',
+    'tab': '<strong>tab.</strong> A running bill with three odometers. Three numbers race each other and the eye loses the murders.'
+  };
+  var ORDER = ['minimal', 'instrument-panel', 'sentence', 'scoreline', 'tab'];
+
+  var picker = document.getElementById('picker');
+  ORDER.forEach(function (v) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = v;
+    b.setAttribute('data-v', v);
+    b.addEventListener('click', function () { select(v); });
+    picker.appendChild(b);
+  });
+
+  function snippetFor(variant) {
+    var lines = [];
+    if (variant !== sb.defaultVariant) {
+      lines.push('<meta name="dih-scoreboard-variant" content="' + variant + '">');
+    }
+    lines.push('<script src="' + SITE + '/assets/js/mortality-counters.js" defer><\/script>');
+    return lines.join('\n');
+  }
+
+  function select(v) {
+    sb.setVariant(v);
+    document.querySelectorAll('#picker button').forEach(function (b) {
+      b.classList.toggle('on', b.getAttribute('data-v') === v);
+    });
+    document.getElementById('vdesc').innerHTML = DESC[v];
+    document.getElementById('snippet').textContent = snippetFor(v);
+    if (history.replaceState) history.replaceState(null, '', '#' + v);
+  }
+
+  var initial = location.hash.replace('#', '');
+  select(sb.variants.indexOf(initial) !== -1 ? initial : sb.defaultVariant);
+
+  document.getElementById('copy').addEventListener('click', function () {
+    var btn = this;
+    navigator.clipboard.writeText(document.getElementById('snippet').textContent).then(function () {
+      btn.textContent = 'COPIED';
+      setTimeout(function () { btn.textContent = 'COPY'; }, 1400);
+    });
+  });
+
+  var log = document.getElementById('eventlog');
+  document.addEventListener('dih-scoreboard', function (e) {
+    var line = document.createElement('div');
+    line.textContent = JSON.stringify(e.detail);
+    log.insertBefore(line, log.firstChild);
+    while (log.childNodes.length > 30) log.removeChild(log.lastChild);
+  });
+
+  document.getElementById('reset').addEventListener('click', function () {
+    localStorage.setItem('dih-delay-counter-dismissed', 'false');
+    sb.show();
+  });
+});
+</script>
+</body>
+</html>

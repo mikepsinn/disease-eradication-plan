@@ -12,7 +12,6 @@ do: "Pull the JSON or TypeScript file you need (or paste the three-line widget s
 ---
 ![Machine-readable data indexes and APIs for building tools, agents, or integrations with the Disease Eradication Plan.](/assets/infographics/knowledge/appendix/api-and-data-infographic-bw-academic.jpg)
 
-
 This page documents the data indexes and APIs available for programmatic access to the book's content, parameters, images, and chat functionality.
 
 ## Parameters & Shareable Snippets
@@ -314,3 +313,61 @@ The upside per person is {{< var treaty_personal_upside_blend >}} in a world tha
 
 Send people to [transmit.warondisease.org](https://transmit.warondisease.org) for the full chat experience with conversation history, voice chat, and the robot.
 
+## Put the Scoreboard on Your Website
+
+The arcade mortality scoreboard (the bar pinned to the bottom of this site, counting the deaths that research could eventually prevent) is embeddable. Same deal as the widget: paste HTML, no API key, no build step. The [embed configurator](https://manual.warondisease.org/assets/scoreboard-embed.html) previews all five bar designs live and generates the code for you.
+
+### The Full Scoreboard
+
+One line. You get the pinned HUD, the fullscreen math screen when a visitor clicks the score, and the button pointing at the vote:
+
+```html
+<script src="https://manual.warondisease.org/assets/js/mortality-counters.js" defer></script>
+```
+
+The script loads its own stylesheet, derives the manual's address from its own URL, fetches live parameter values, and points every number's source link back here. If your visitor's browser blocks the cross-origin fetch, the counters fall back to values baked into the script at deploy time; they tick either way.
+
+Pick a different bar design with one more line (options and previews in the [configurator](https://manual.warondisease.org/assets/scoreboard-embed.html)):
+
+```html
+<meta name="dih-scoreboard-variant" content="instrument-panel">
+```
+
+Every interaction fires a `dih-scoreboard` CustomEvent on `document` (`bar-shown`, `bar-dismissed`, `overlay-opened`, `overlay-closed`, `cta-clicked`, each tagged with the active variant), so you can measure which design converts with whatever analytics you already run.
+
+### Counters Without the Bar
+
+If you want live numbers inside your own prose without our scoreboard eating the bottom of your screen, add one more meta tag and write spans wherever you want numbers:
+
+```html
+<meta name="dih-disable-features" content="delay-counter-hud">
+
+<p>Since the plan went public,
+<span data-dih-delay-value="since-publication">counting</span>
+people have died of diseases that research could eventually prevent,
+at <span data-dih-delay-value="per-second">1.6</span> per second.</p>
+```
+
+The span's text content is replaced and re-rendered about eight times a second. Whatever you put inside is the loading state.
+
+**Counter types (`data-dih-delay-value`):**
+
+| Value | Renders |
+|-------|---------|
+| `since-publication` | Preventable deaths since the plan's publication date, live |
+| `per-day` | Preventable deaths per day of delay |
+| `per-minute` | Per minute |
+| `per-second` | Per second |
+| `suffering-hours-since-publication` | Hours of healthy life lost since publication, live |
+| `suffering-hours-per-second` | Hours of healthy life lost per second |
+| `money-since-publication` | Dollars burned on war + disease since publication, live |
+| `money-per-second` | Dollars burned per second |
+| `timeline-lives` | Projected lives saved by the accelerated timeline |
+| `timeline-dalys` | Projected healthy life-years saved |
+| `publication-date` | The publication date the clocks count from |
+
+Add `data-dih-delay-compact="true"` to any span for compact notation ("139K" instead of "138,942").
+
+### How the Numbers Stay Honest
+
+Every figure the scoreboard renders is computed from the same [parameters.json](#json-language-agnostic) that generates this book, and the fullscreen rules screen links each number to [its source and math](parameters-and-calculations.qmd). If you embed the scoreboard, you inherit the receipts. Disputes are welcome; rigged machines do not publish their wiring.

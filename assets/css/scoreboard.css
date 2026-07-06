@@ -1,0 +1,988 @@
+/* ==========================================
+   ARCADE MORTALITY SCOREBOARD
+   Sticky HUD + fullscreen CRT overlay + bar variants.
+   Markup built by assets/js/mortality-counters.js, which injects this
+   stylesheet itself (embedders only paste the script tag).
+   When you edit this file, bump WIDGET_VERSION in mortality-counters.js
+   so the injected ?v= cache-buster picks up the change.
+   ========================================== */
+
+:root {
+    --dih-arcade-bg: #050505;
+    --dih-arcade-red: #ff2a1f;
+    --dih-arcade-amber: #ffb000;
+    --dih-arcade-green: #33ff66;
+    --dih-arcade-white: #f2f2f2;
+    --dih-arcade-dim: #8a8a8a;
+    --dih-arcade-font: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, monospace;
+}
+
+/* ---------- Sticky HUD bar ---------- */
+
+.dih-delay-counter {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9997;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    background:
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.028) 0 1px, transparent 1px 3px),
+        var(--dih-arcade-bg);
+    border-top: 2px solid var(--dih-arcade-red);
+    box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.45);
+    font-family: var(--dih-arcade-font);
+    color: var(--dih-arcade-white);
+}
+
+.dih-delay-counter-hidden {
+    display: none;
+}
+
+.dih-arcade-open {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.25rem;
+    min-width: 0;
+    padding: 0.5rem 0.9rem;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dih-arcade-open:hover .dih-arcade-kicker,
+.dih-arcade-open:focus-visible .dih-arcade-kicker {
+    color: var(--dih-arcade-white);
+}
+
+.dih-arcade-skull {
+    flex: 0 0 auto;
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    filter: drop-shadow(0 0 6px rgba(255, 42, 31, 0.7));
+}
+
+.dih-arcade-skull svg,
+.dih-arcade-skull-big svg {
+    width: 100%;
+    height: 100%;
+    shape-rendering: crispEdges;
+}
+
+.dih-arcade-score-block,
+.dih-arcade-suffer-block,
+.dih-arcade-money-block {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.dih-arcade-kicker,
+.dih-arcade-unitline,
+.dih-arcade-unitline-short,
+.dih-arcade-suffer-label,
+.dih-arcade-money-label {
+    font-size: 0.6rem;
+    line-height: 1.25;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-dim);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dih-arcade-score-label {
+    font-size: 0.62em;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--dih-arcade-white);
+    text-shadow: none;
+}
+
+.dih-arcade-score {
+    font-size: clamp(1.3rem, 3.2vw, 1.9rem);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    color: var(--dih-arcade-red);
+    text-shadow: 0 0 10px rgba(255, 42, 31, 0.55);
+    white-space: nowrap;
+}
+
+.dih-arcade-money {
+    font-size: clamp(0.85rem, 1.8vw, 1.15rem);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    color: var(--dih-arcade-green);
+    text-shadow: 0 0 8px rgba(51, 255, 102, 0.4);
+    white-space: nowrap;
+}
+
+.dih-arcade-suffer {
+    font-size: clamp(0.85rem, 1.8vw, 1.15rem);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    font-variant-numeric: tabular-nums;
+    color: var(--dih-arcade-amber);
+    text-shadow: 0 0 8px rgba(255, 176, 0, 0.45);
+    white-space: nowrap;
+}
+
+.dih-arcade-blink {
+    flex: 0 0 auto;
+    align-self: center;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-green);
+    text-shadow: 0 0 8px rgba(51, 255, 102, 0.5);
+    animation: dih-arcade-blink 1.1s steps(1) infinite;
+    white-space: nowrap;
+}
+
+@keyframes dih-arcade-blink {
+    50% { opacity: 0; }
+}
+
+.dih-arcade-cta {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 1.1rem;
+    margin: 0;
+    border: 0;
+    border-left: 2px solid var(--dih-arcade-red);
+    background: var(--dih-arcade-red);
+    color: #fff;
+    font-family: var(--dih-arcade-font);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    animation: dih-arcade-cta-pulse 1.1s steps(1) infinite;
+}
+
+@keyframes dih-arcade-cta-pulse {
+    50% { background: #c31c13; }
+}
+
+.dih-arcade-cta:hover,
+.dih-arcade-cta:focus-visible {
+    animation: none;
+    background: #fff;
+    color: #b42318;
+    text-decoration: none;
+}
+
+.dih-delay-counter-close {
+    flex: 0 0 auto;
+    width: 40px;
+    border: 0;
+    border-left: 1px solid #262626;
+    background: transparent;
+    color: var(--dih-arcade-dim);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dih-delay-counter-close:hover {
+    color: var(--dih-arcade-red);
+}
+
+body.dih-delay-counter-visible {
+    padding-bottom: 84px;
+}
+
+/* Keep the floating tools button clear of the scoreboard whenever it is pinned. */
+body.dih-delay-counter-visible .dih-fab {
+    bottom: 96px;
+}
+
+/* ---------- Fullscreen CRT overlay ---------- */
+
+.dih-arcade-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: none;
+    background:
+        radial-gradient(ellipse at center, rgba(30, 8, 8, 0.9) 0%, rgba(0, 0, 0, 0.97) 75%),
+        #000;
+    color: var(--dih-arcade-white);
+    font-family: var(--dih-arcade-font);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.dih-arcade-overlay-visible {
+    display: block;
+}
+
+body.dih-arcade-overlay-open {
+    overflow: hidden;
+}
+
+.dih-arcade-overlay::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 3px);
+    mix-blend-mode: overlay;
+    animation: dih-arcade-flicker 4s steps(2) infinite;
+}
+
+@keyframes dih-arcade-flicker {
+    50% { opacity: 0.75; }
+}
+
+.dih-arcade-screen {
+    width: min(760px, calc(100vw - 2.5rem));
+    margin: 0 auto;
+    padding: 3.25rem 0 3rem;
+    text-align: center;
+}
+
+.dih-arcade-overlay-close {
+    position: fixed;
+    top: 14px;
+    right: 16px;
+    z-index: 2;
+    border: 1px solid #3a3a3a;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--dih-arcade-dim);
+    font-family: var(--dih-arcade-font);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.5rem 0.7rem;
+    cursor: pointer;
+}
+
+.dih-arcade-overlay-close:hover {
+    color: #fff;
+    border-color: var(--dih-arcade-red);
+}
+
+.dih-arcade-skull-big {
+    width: clamp(84px, 18vmin, 150px);
+    height: clamp(84px, 18vmin, 150px);
+    margin: 0 auto 1.2rem;
+    filter: drop-shadow(0 0 22px rgba(255, 42, 31, 0.65));
+}
+
+.dih-arcade-title {
+    margin: 0 0 0.5rem;
+    font-family: var(--dih-arcade-font);
+    font-size: clamp(1.35rem, 4.6vw, 2.3rem);
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-red);
+    text-shadow: 0 0 14px rgba(255, 42, 31, 0.6);
+}
+
+.dih-arcade-subtitle {
+    margin: 0 auto 1.8rem;
+    max-width: 40rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--dih-arcade-white);
+}
+
+.dih-arcade-board {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin: 0 0 0.9rem;
+}
+
+.dih-arcade-side {
+    border: 1px solid #333;
+    padding: 0.8rem 0.6rem 0.7rem;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.dih-arcade-team {
+    display: block;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-dim);
+}
+
+.dih-arcade-pts {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: clamp(1.25rem, 4.4vw, 2.2rem);
+    line-height: 1.05;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: var(--dih-arcade-red);
+    text-shadow: 0 0 12px rgba(255, 42, 31, 0.55);
+    overflow-wrap: anywhere;
+}
+
+.dih-arcade-side-humanity .dih-arcade-pts {
+    color: var(--dih-arcade-green);
+    text-shadow: 0 0 12px rgba(51, 255, 102, 0.4);
+}
+
+.dih-arcade-foot {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.6rem;
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-dim);
+}
+
+.dih-arcade-vs {
+    align-self: center;
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: var(--dih-arcade-dim);
+}
+
+.dih-arcade-sufferline {
+    margin: 0 0 2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-dim);
+}
+
+.dih-arcade-sufferline .dih-arcade-suffer {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: clamp(1rem, 3.4vw, 1.5rem);
+}
+
+.dih-arcade-section {
+    margin: 0 auto 1.7rem;
+    max-width: 42rem;
+    text-align: left;
+}
+
+.dih-arcade-heading {
+    margin: 0 0 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-amber);
+    text-shadow: 0 0 8px rgba(255, 176, 0, 0.4);
+}
+
+.dih-arcade-section p,
+.dih-arcade-section li {
+    margin: 0 0 0.45rem;
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--dih-arcade-white);
+}
+
+.dih-arcade-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dih-arcade-section li::before {
+    content: "> ";
+    color: var(--dih-arcade-red);
+}
+
+.dih-arcade-sinceopened {
+    margin: 0 auto 2rem;
+    max-width: 42rem;
+    border: 1px solid var(--dih-arcade-red);
+    padding: 0.8rem 1rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.dih-arcade-sinceopened .dih-arcade-live {
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: var(--dih-arcade-red);
+    text-shadow: 0 0 10px rgba(255, 42, 31, 0.55);
+}
+
+.dih-arcade-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+    margin: 0 0 1.1rem;
+}
+
+.dih-arcade-ctas a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--dih-arcade-font);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.dih-arcade-cta-primary {
+    background: var(--dih-arcade-red);
+    color: #fff;
+    border: 1px solid var(--dih-arcade-red);
+    animation: dih-arcade-blink 1.1s steps(1) infinite;
+}
+
+.dih-arcade-cta-primary:hover,
+.dih-arcade-cta-primary:focus-visible {
+    animation: none;
+    background: #fff;
+    color: #b42318;
+}
+
+.dih-arcade-cta-secondary {
+    background: transparent;
+    color: var(--dih-arcade-white);
+    border: 1px solid #3a3a3a;
+}
+
+.dih-arcade-cta-secondary:hover {
+    border-color: var(--dih-arcade-amber);
+    color: var(--dih-arcade-amber);
+}
+
+.dih-arcade-audit {
+    margin: 0 auto;
+    max-width: 42rem;
+    font-size: 0.7rem;
+    line-height: 1.55;
+    color: var(--dih-arcade-dim);
+}
+
+.dih-arcade-audit a {
+    color: var(--dih-arcade-amber);
+}
+
+/* ---------- Overlay: simplified death count ---------- */
+
+.dih-arcade-death-count {
+    margin: 0 0 0.6rem;
+}
+
+.dih-arcade-death-count .dih-arcade-pts {
+    display: block;
+    font-size: clamp(1.8rem, 6vw, 3.2rem);
+}
+
+.dih-arcade-death-sub {
+    margin: 0 auto 2rem;
+    max-width: 40rem;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--dih-arcade-dim);
+    letter-spacing: 0.04em;
+}
+
+/* ---------- Overlay: math chain ---------- */
+
+.dih-arcade-math {
+    margin: 0 0 0.5rem;
+}
+
+.dih-arcade-math-step {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    margin: 0 0 0.35rem;
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+.dih-arcade-math-val {
+    flex: 0 0 auto;
+    min-width: 6rem;
+    text-align: right;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: var(--dih-arcade-red);
+    text-shadow: 0 0 8px rgba(255, 42, 31, 0.4);
+    white-space: nowrap;
+}
+
+.dih-arcade-math-desc {
+    color: var(--dih-arcade-white);
+}
+
+.dih-arcade-math-punch {
+    margin: 0.8rem 0 0;
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--dih-arcade-red);
+    text-shadow: 0 0 8px rgba(255, 42, 31, 0.4);
+}
+
+/* ---------- Overlay: bar charts ---------- */
+
+.dih-arcade-bar-row {
+    display: grid;
+    grid-template-columns: 11rem 1fr auto;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 0.4rem;
+}
+
+.dih-arcade-bar-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-white);
+    text-align: right;
+}
+
+.dih-arcade-bar-track {
+    height: 1.1rem;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+}
+
+.dih-arcade-bar-fill {
+    height: 100%;
+    background: var(--dih-arcade-dim);
+}
+
+.dih-arcade-bar-fill-primary {
+    background: var(--dih-arcade-red);
+    box-shadow: 0 0 8px rgba(255, 42, 31, 0.4);
+}
+
+.dih-arcade-bar-value {
+    font-size: 0.68rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    color: var(--dih-arcade-dim);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+    .dih-arcade-bar-row {
+        grid-template-columns: 1fr auto;
+        gap: 0.15rem 0.6rem;
+    }
+    .dih-arcade-bar-label {
+        grid-column: 1 / -1;
+        text-align: left;
+    }
+    .dih-arcade-math-val {
+        min-width: 4.5rem;
+    }
+}
+
+/* ---------- Overlay: closing + suffer unit ---------- */
+
+.dih-arcade-closing {
+    margin: 0 auto 1.5rem;
+    max-width: 42rem;
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--dih-arcade-dim);
+    font-style: italic;
+}
+
+.dih-arcade-suffer-unit {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-dim);
+}
+
+/* ---------- In-page callout (qmd + README) ---------- */
+
+.delay-cost-callout {
+    margin: 1.75rem 0;
+    padding: 1rem 1.1rem;
+    border: 1px solid #2a2a2a;
+    border-left: 5px solid #b42318;
+    background: #fffdf7;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.delay-cost-callout p {
+    margin: 0.45rem 0;
+}
+
+.delay-cost-callout p:first-child {
+    margin-top: 0;
+}
+
+.delay-cost-callout p:last-child {
+    margin-bottom: 0;
+}
+
+.delay-cost-number {
+    display: block;
+    margin: 0.4rem 0;
+    font-size: clamp(1.9rem, 5vw, 3.6rem);
+    line-height: 0.95;
+    font-weight: 900;
+    letter-spacing: 0;
+    font-variant-numeric: tabular-nums;
+    color: #b42318;
+}
+
+body.quarto-dark .delay-cost-callout {
+    background: #161412;
+    border-color: #f1e4d4;
+    color: #f8f0e6;
+}
+
+/* ---------- Responsive ----------
+   The HUD sheds instruments as the cabinet narrows. Everything hidden here
+   still lives one tap away on the fullscreen CRT rules screen. */
+
+@media (max-width: 1199px) {
+    .dih-arcade-blink {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .dih-arcade-money-block,
+    .dih-arcade-suffer-block {
+        display: none;
+    }
+
+    .dih-arcade-kicker,
+    .dih-arcade-unitline {
+        max-width: 44vw;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Two rows: [skull + score | close] over a full-width PRESS START. */
+    .dih-delay-counter {
+        flex-wrap: wrap;
+    }
+
+    .dih-arcade-open {
+        flex: 1 1 0;
+        gap: 0.15rem 0.6rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    /* One number on a phone: the score. */
+    .dih-arcade-kicker,
+    .dih-arcade-unitline,
+    .dih-arcade-suffer-block,
+    .dih-arcade-money-block {
+        display: none;
+    }
+
+    .dih-arcade-skull {
+        width: 26px;
+        height: 26px;
+    }
+
+    .dih-arcade-score {
+        font-size: 1.45rem;
+    }
+
+    .dih-delay-counter-close {
+        flex: 0 0 44px;
+        min-height: 44px;
+    }
+
+    .dih-arcade-cta {
+        flex: 1 1 100%;
+        order: 3;
+        justify-content: center;
+        padding: 0.7rem;
+        font-size: 0.72rem;
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    body.dih-delay-counter-visible {
+        padding-bottom: 104px;
+    }
+
+    body.dih-delay-counter-visible .dih-fab {
+        bottom: 100px;
+    }
+
+    .dih-arcade-board {
+        grid-template-columns: 1fr;
+    }
+
+    .dih-arcade-vs {
+        padding: 0.1rem 0;
+    }
+}
+
+/* ---------- Bar variants ----------
+   One DOM, five skins. The variant is a class on #dih-delay-counter, set from
+   <meta name="dih-scoreboard-variant"> or window.dihScoreboard.setVariant().
+   Default (instrument-panel) is the base styling above; no overrides needed.
+   Elements only some variants use are hidden here by default. */
+
+.dih-arcade-tab-head,
+.dih-arcade-vs-block,
+.dih-arcade-unitline-short {
+    display: none;
+}
+
+/* sentence: skull + number, caption as running text beside them. */
+.dih-arcade-variant-sentence .dih-arcade-kicker,
+.dih-arcade-variant-sentence .dih-arcade-score-label,
+.dih-arcade-variant-sentence .dih-arcade-suffer-block,
+.dih-arcade-variant-sentence .dih-arcade-money-block,
+.dih-arcade-variant-sentence .dih-arcade-blink {
+    display: none;
+}
+
+.dih-arcade-variant-sentence .dih-arcade-score-block {
+    display: contents;
+}
+
+.dih-arcade-variant-sentence .dih-arcade-open {
+    gap: 0.7rem 1rem;
+    padding: 0.7rem 1rem;
+}
+
+.dih-arcade-variant-sentence .dih-arcade-unitline {
+    flex: 1 1 260px;
+    max-width: none;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-transform: none;
+    color: var(--dih-arcade-white);
+    white-space: normal;
+    overflow: visible;
+}
+
+/* tab: a running bill. Dashed header row, items on one baseline. */
+.dih-arcade-variant-tab {
+    flex-wrap: wrap;
+}
+
+.dih-arcade-variant-tab .dih-arcade-tab-head {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.45rem 1rem 0.3rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-dim);
+    border-bottom: 1px dashed #333;
+    cursor: pointer;
+}
+
+.dih-arcade-variant-tab .dih-arcade-open {
+    gap: 0.5rem 1.6rem;
+}
+
+.dih-arcade-variant-tab .dih-arcade-kicker,
+.dih-arcade-variant-tab .dih-arcade-unitline,
+.dih-arcade-variant-tab .dih-arcade-blink {
+    display: none;
+}
+
+.dih-arcade-variant-tab .dih-arcade-score-block,
+.dih-arcade-variant-tab .dih-arcade-suffer-block,
+.dih-arcade-variant-tab .dih-arcade-money-block {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.dih-arcade-variant-tab .dih-arcade-score {
+    font-size: 1.1rem;
+}
+
+.dih-arcade-variant-tab .dih-arcade-suffer,
+.dih-arcade-variant-tab .dih-arcade-money {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.dih-arcade-variant-tab .dih-arcade-cta {
+    flex: 1 1 auto;
+    justify-content: center;
+    padding: 0.55rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* scoreline: DISEASE vs HUMANITY 0, caption row beneath, full-width CTA. */
+.dih-arcade-variant-scoreline {
+    flex-wrap: wrap;
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-open {
+    justify-content: center;
+    gap: 0.15rem 1.1rem;
+    padding: 0.6rem 1rem 0.4rem;
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-kicker,
+.dih-arcade-variant-scoreline .dih-arcade-suffer-block,
+.dih-arcade-variant-scoreline .dih-arcade-money-block,
+.dih-arcade-variant-scoreline .dih-arcade-blink {
+    display: none;
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-score-block {
+    display: contents;
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-score-label {
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-dim);
+    text-shadow: none;
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-vs-block {
+    display: flex;
+    align-items: baseline;
+    gap: 1.1rem;
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-vs-tag {
+    color: var(--dih-arcade-dim);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-hum {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-hum-team {
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--dih-arcade-dim);
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-hum-pts {
+    font-size: clamp(1.3rem, 3.2vw, 1.9rem);
+    line-height: 1.05;
+    font-weight: 800;
+    color: var(--dih-arcade-green);
+    text-shadow: 0 0 8px rgba(51, 255, 102, 0.4);
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-unitline {
+    order: 10;
+    flex: 1 1 100%;
+    max-width: none;
+    text-align: center;
+    white-space: normal;
+    overflow: visible;
+}
+
+.dih-arcade-variant-scoreline .dih-arcade-cta {
+    flex: 1 1 100%;
+    order: 11;
+    justify-content: center;
+    padding: 0.6rem;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* minimal: skull + number + one caption. The tab lives in the popup. */
+.dih-arcade-variant-minimal .dih-arcade-kicker,
+.dih-arcade-variant-minimal .dih-arcade-score-label,
+.dih-arcade-variant-minimal .dih-arcade-suffer-block,
+.dih-arcade-variant-minimal .dih-arcade-money-block,
+.dih-arcade-variant-minimal .dih-arcade-blink {
+    display: none;
+}
+
+.dih-arcade-variant-minimal .dih-arcade-open {
+    gap: 0.15rem 0.65rem;
+    padding: 0.6rem 0.9rem;
+}
+
+/* Zero basis so the caption's content width can't wrap the block below the skull. */
+.dih-arcade-variant-minimal .dih-arcade-score-block {
+    flex: 1 1 0;
+}
+
+.dih-arcade-variant-minimal .dih-arcade-score {
+    font-size: 1.7rem;
+}
+
+@media (max-width: 767px) {
+    /* sentence keeps its sentence on phones; that IS the variant. */
+    .dih-arcade-variant-sentence .dih-arcade-unitline {
+        display: block;
+        font-size: 0.74rem;
+        max-width: none;
+    }
+
+    /* minimal swaps the long caption for the short one. */
+    .dih-arcade-variant-minimal .dih-arcade-unitline-short {
+        display: block;
+    }
+
+    .dih-arcade-variant-scoreline .dih-arcade-hum-pts {
+        font-size: 1.45rem;
+    }
+}
+
+/* ---------- Motion + print ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    .dih-arcade-blink,
+    .dih-arcade-cta,
+    .dih-arcade-cta-primary,
+    .dih-arcade-overlay::before {
+        animation: none;
+    }
+}
+
+@media print {
+    .dih-delay-counter,
+    .dih-arcade-overlay,
+    .delay-cost-callout {
+        display: none !important;
+    }
+}
