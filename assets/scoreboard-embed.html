@@ -22,13 +22,18 @@
       margin: 0 0 1.2rem; color: #b42318; font-size: 0.78rem; font-weight: 900;
       letter-spacing: 0.08em; text-transform: uppercase;
     }
-    .picker { display: flex; flex-wrap: wrap; gap: 8px; margin: 0.8rem 0; }
+    .picker-group { margin: 1rem 0 1.1rem; }
+    .picker-label {
+      margin: 0 0 0.4rem; font-size: 0.74rem; font-weight: 900;
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .picker { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 0.65rem; }
     .picker button {
       font: inherit; font-weight: 800; padding: 0.5rem 0.9rem;
       border: 1px solid #2a2a2a; background: #fffdf7; cursor: pointer;
     }
     .picker button.on { background: #171717; color: #fff; }
-    #vdesc { border: 1px solid #2a2a2a; background: #fffdf7; padding: 0.8rem 1rem; font-size: 0.95rem; max-width: 46rem; }
+    .description { border: 1px solid #2a2a2a; background: #fffdf7; padding: 0.8rem 1rem; font-size: 0.95rem; max-width: 46rem; }
     .snippet { position: relative; max-width: 46rem; }
     .snippet pre {
       margin: 0; padding: 1rem 1.1rem; border: 1px solid #2a2a2a; background: #171717;
@@ -59,12 +64,20 @@
     The bar pinned to the bottom of this page is live: it counts the people brutally tortured and
     murdered by disease since the fix was published, and clicking it opens the full math. Embedding
     it is one script tag. It loads its own stylesheet, fetches the live numbers, and links every
-    figure back to its source. Pick a design, copy the code, paste it before <code>&lt;/body&gt;</code>.
+    figure back to its source. Pick a style and layout, copy the code, paste it before <code>&lt;/body&gt;</code>.
   </p>
 
-  <h2>1. Pick a design</h2>
-  <div class="picker" id="picker"></div>
-  <div id="vdesc"></div>
+  <h2>1. Pick a style and layout</h2>
+  <div class="picker-group">
+    <p class="picker-label">Style</p>
+    <div class="picker" id="theme-picker"></div>
+    <div class="description" id="tdesc"></div>
+  </div>
+  <div class="picker-group">
+    <p class="picker-label">Layout</p>
+    <div class="picker" id="variant-picker"></div>
+    <div class="description" id="vdesc"></div>
+  </div>
 
   <h2>2. Copy the embed code</h2>
   <div class="snippet">
@@ -77,13 +90,14 @@
     Every interaction dispatches a <code>dih-scoreboard</code> event on <code>document</code>:
     <code>bar-shown</code>, <code>bar-dismissed</code>, <code>overlay-opened</code>,
     <code>overlay-closed</code> (with <code>secondsOpen</code>), and <code>cta-clicked</code>
-    (with <code>source</code>). Each carries the active <code>variant</code>, so you can A/B test
+    (with <code>source</code>). Each carries the active <code>variant</code> and
+    <code>theme</code>, so you can A/B test
     designs with whatever analytics you already run:
   </p>
   <div class="snippet">
     <pre>document.addEventListener('dih-scoreboard', function (e) {
-  // e.detail = { action: 'cta-clicked', variant: 'minimal', source: 'bar' }
-  gtag('event', e.detail.action, { variant: e.detail.variant });
+  // e.detail = { action: 'cta-clicked', variant: 'minimal', theme: 'treaty', source: 'bar' }
+  gtag('event', e.detail.action, { variant: e.detail.variant, theme: e.detail.theme });
 });</pre>
   </div>
   <p>Interact with the bar below and watch the events arrive:</p>
@@ -113,16 +127,33 @@ document.addEventListener('DOMContentLoaded', function () {
   var sb = window.dihScoreboard;
   var SITE = 'https://manual.warondisease.org';
 
-  var DESC = {
-    'minimal': '<strong>minimal.</strong> Skull, the number, one caption naming the late leaders, one button. Nothing on the bar that is not load-bearing. Recommended.',
+  var LAYOUT_DESC = {
+    'minimal': '<strong>minimal.</strong> The number, one caption naming the late leaders, one button. Nothing on the bar that is not load-bearing. Recommended.',
     'instrument-panel': '<strong>instrument-panel.</strong> Most information, least focus: the score plus suffering and dollar odometers. On phones it collapses to what minimal already is.',
-    'sentence': '<strong>sentence.</strong> Skull and number as one unit, the caption as running text. The sentence competes with the number for attention at every width.',
+    'sentence': '<strong>sentence.</strong> Number first, caption as running text. The sentence competes with the number for attention at every width.',
     'scoreline': '<strong>scoreline.</strong> DISEASE vs HUMANITY 0, caption beneath. The zero is the punch.',
     'tab': '<strong>tab.</strong> A running bill with three odometers. Three numbers race each other and the eye loses the murders.'
   };
+  var THEME_DESC = {
+    'treaty': '<strong>treaty.</strong> Paper, ink, sober typography, and no CRT effects. This is the default because the math needs institutional credibility.',
+    'arcade': '<strong>arcade.</strong> The original video-game urgency: black HUD, neon counters, pulse effects, and CRT overlay. Use it when provocation matters more than prestige.'
+  };
   var ORDER = ['minimal', 'instrument-panel', 'sentence', 'scoreline', 'tab'];
+  var THEME_ORDER = ['treaty', 'arcade'];
+  var selectedVariant = sb.defaultVariant;
+  var selectedTheme = sb.defaultTheme;
 
-  var picker = document.getElementById('picker');
+  var themePicker = document.getElementById('theme-picker');
+  THEME_ORDER.forEach(function (theme) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = theme;
+    b.setAttribute('data-theme', theme);
+    b.addEventListener('click', function () { selectTheme(theme); });
+    themePicker.appendChild(b);
+  });
+
+  var picker = document.getElementById('variant-picker');
   ORDER.forEach(function (v) {
     var b = document.createElement('button');
     b.type = 'button';
@@ -132,27 +163,49 @@ document.addEventListener('DOMContentLoaded', function () {
     picker.appendChild(b);
   });
 
-  function snippetFor(variant) {
+  function snippetFor(variant, theme) {
     var lines = [];
     if (variant !== sb.defaultVariant) {
       lines.push('<meta name="dih-scoreboard-variant" content="' + variant + '">');
+    }
+    if (theme !== sb.defaultTheme) {
+      lines.push('<meta name="dih-scoreboard-theme" content="' + theme + '">');
     }
     lines.push('<script src="' + SITE + '/assets/js/mortality-counters.js" defer><\/script>');
     return lines.join('\n');
   }
 
-  function select(v) {
-    sb.setVariant(v);
-    document.querySelectorAll('#picker button').forEach(function (b) {
-      b.classList.toggle('on', b.getAttribute('data-v') === v);
+  function renderSelection(updateHash) {
+    if (sb.getVariant() !== selectedVariant) sb.setVariant(selectedVariant);
+    if (sb.getTheme() !== selectedTheme) sb.setTheme(selectedTheme);
+    document.querySelectorAll('#variant-picker button').forEach(function (b) {
+      b.classList.toggle('on', b.getAttribute('data-v') === selectedVariant);
     });
-    document.getElementById('vdesc').innerHTML = DESC[v];
-    document.getElementById('snippet').textContent = snippetFor(v);
-    if (history.replaceState) history.replaceState(null, '', '#' + v);
+    document.querySelectorAll('#theme-picker button').forEach(function (b) {
+      b.classList.toggle('on', b.getAttribute('data-theme') === selectedTheme);
+    });
+    document.getElementById('vdesc').innerHTML = LAYOUT_DESC[selectedVariant];
+    document.getElementById('tdesc').innerHTML = THEME_DESC[selectedTheme];
+    document.getElementById('snippet').textContent = snippetFor(selectedVariant, selectedTheme);
+    if (updateHash && history.replaceState) {
+      history.replaceState(null, '', '#' + selectedVariant + '/' + selectedTheme);
+    }
   }
 
-  var initial = location.hash.replace('#', '');
-  select(sb.variants.indexOf(initial) !== -1 ? initial : sb.defaultVariant);
+  function select(v) {
+    selectedVariant = v;
+    renderSelection(true);
+  }
+
+  function selectTheme(theme) {
+    selectedTheme = theme;
+    renderSelection(true);
+  }
+
+  var initialParts = location.hash.replace('#', '').split('/');
+  if (sb.variants.indexOf(initialParts[0]) !== -1) selectedVariant = initialParts[0];
+  if (sb.themes.indexOf(initialParts[1]) !== -1) selectedTheme = initialParts[1];
+  renderSelection(false);
 
   document.getElementById('copy').addEventListener('click', function () {
     var btn = this;

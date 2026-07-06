@@ -1,20 +1,21 @@
 /**
- * Arcade mortality scoreboard for the War on Disease manual.
+ * Mortality scoreboard for the War on Disease manual.
  *
- * A sticky video-game HUD counts counterfactual schedule deaths: humans who die
+ * A sticky HUD counts counterfactual schedule deaths: humans who die
  * because the disease-eradication date remains one day farther away than it would
  * be under immediate implementation of this plan or a better one. Clicking the
- * scoreboard opens a fullscreen CRT screen that explains the math.
+ * scoreboard opens a fullscreen screen that explains the math.
  *
  * Embeddable on any website with a single tag:
  *   <script src="https://manual.warondisease.org/assets/js/mortality-counters.js" defer></script>
  * The script derives the site root from its own src, injects its stylesheet
  * (assets/css/scoreboard.css), and fetches live parameter values. Configure with:
- *   <meta name="dih-scoreboard-variant" content="minimal">  (bar design; see VARIANTS)
+ *   <meta name="dih-scoreboard-variant" content="minimal">  (bar layout; see VARIANTS)
+ *   <meta name="dih-scoreboard-theme" content="arcade">  (visual theme; default is treaty)
  *   <meta name="dih-disable-features" content="delay-counter-hud">  (counters without the bar)
- * JS API: window.dihScoreboard.setVariant/getVariant/show/hide/openOverlay.
+ * JS API: window.dihScoreboard.setVariant/setTheme/getVariant/getTheme/show/hide/openOverlay.
  * Conversion tracking: every interaction dispatches a 'dih-scoreboard' CustomEvent
- * on document with {action, variant} in detail. Configurator + docs:
+ * on document with {action, variant, theme} in detail. Configurator + docs:
  * https://manual.warondisease.org/assets/scoreboard-embed.html
  */
 
@@ -23,11 +24,13 @@
 
   // Bump when this file or assets/css/scoreboard.css changes; it cache-busts
   // the injected stylesheet for embedders.
-  var WIDGET_VERSION = '6.0.0';
+  var WIDGET_VERSION = '6.1.0';
   var SCRIPT_SRC = document.currentScript && document.currentScript.src ? document.currentScript.src : '';
 
   var VARIANTS = ['instrument-panel', 'sentence', 'tab', 'scoreline', 'minimal'];
   var DEFAULT_VARIANT = 'minimal';
+  var THEMES = ['treaty', 'arcade'];
+  var DEFAULT_THEME = 'treaty';
 
   var STORAGE_KEY = 'dih-delay-counter-dismissed';
   var DEFAULT_PUBLICATION_DATE = '2025-10-04';
@@ -77,19 +80,11 @@
       mathHeading: 'THE MATH',
       sufferingHeading: 'UNNECESSARY SUFFERING',
       dollarsHeading: 'DOLLARS WASTED',
-      closingLine: 'You did not apply; you were born, which is how disease selects opponents.',
-      sinceOpenedBefore: 'Since you opened this screen, disease scored ',
-      sinceOpenedAfter: ' more. Each one was a person. It does not know you are here.',
-      auditPre: 'Every number on this screen ',
-      auditLinkText: 'links to its source and math',
-      auditPost: ', plus a standing list of ways it could be wrong. Disputes are welcome. Rigged machines do not publish their wiring.',
-      ctaPrimary: 'TAKE 30 SECONDS TO END WAR AND DISEASE',
-      ctaSecondary: 'CHECK THE WIRING: WHERE AM I WRONG'
+      ctaPrimary: 'TAKE 30 SECONDS TO END WAR AND DISEASE'
     }
   };
 
   var VOTE_URL = 'https://warondisease.org';
-  var AUDIT_PAGE = 'knowledge/appendix/where-am-i-wrong.html';
   var PARAM_PAGE = 'knowledge/appendix/parameters-and-calculations.html';
   var CALC_ANCHOR = 'knowledge/appendix/parameters-and-calculations.html#sec-global_eventually_avoidable_disease_deaths_daily';
   var KATEX_CSS = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css';
@@ -199,13 +194,25 @@
     return VARIANTS.indexOf(value) !== -1 ? value : DEFAULT_VARIANT;
   }
 
+  function getConfiguredTheme() {
+    var meta = document.querySelector('meta[name="dih-scoreboard-theme"]');
+    var value = meta && meta.content ? meta.content.trim() : '';
+    return THEMES.indexOf(value) !== -1 ? value : DEFAULT_THEME;
+  }
+
   var currentVariant = DEFAULT_VARIANT;
   var currentVariantExplicit = false;
+  var currentTheme = DEFAULT_THEME;
+  var currentThemeExplicit = false;
+
+  function themeClass(theme) {
+    return 'dih-scoreboard-theme-' + theme;
+  }
 
   // Conversion-tracking hook. Embedders (and our own analytics) listen with:
   //   document.addEventListener('dih-scoreboard', function(e) { ... e.detail ... });
   function emit(action, extra) {
-    var detail = { action: action, variant: currentVariant };
+    var detail = { action: action, variant: currentVariant, theme: currentTheme };
     if (extra) {
       for (var key in extra) {
         if (Object.prototype.hasOwnProperty.call(extra, key)) detail[key] = extra[key];
@@ -440,7 +447,7 @@
   }
 
   function openHintText() {
-    return leaderCountText() + " leaders have not completed their 3-second signing task. Tap to see the math.";
+    return leaderCountText() + " leaders have not completed their 30-second signing task. Tap to see the math.";
   }
 
   function sufferingYearsPerDay() {
@@ -460,10 +467,7 @@
   }
 
   function dollarsDescHtml(offset) {
-    return 'For every ' + sourceNumberHtml(offset, '$1', 'MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO') +
-      ' governments spend on clinical trials, they spend ' +
-      sourceNumberHtml(offset, '$' + format(model.militaryToGovernmentClinicalTrialsRatio, false), 'MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO') +
-      ' on the capacity for mass murder.';
+    return 'Cost of delay since the 1% Treaty was proposed.';
   }
 
   function paramHref(offset, parameterName) {
@@ -475,11 +479,6 @@
       escapeHtml(attrValue) + '" title="Show source and math">' + text + '</button>';
   }
 
-  function detailSpanHtml(text, attrName, attrValue) {
-    return '<span class="dih-arcade-source-number" ' + attrName + '="' +
-      escapeHtml(attrValue) + '" title="Show source and math">' + text + '</span>';
-  }
-
   function sourceNumberHtml(offset, text, parameterName) {
     return detailButtonHtml(text, 'data-dih-param', parameterName);
   }
@@ -489,12 +488,13 @@
   }
 
   function ctaPrimaryHtml() {
-    return COPY.overlay.ctaPrimary.replace('30', detailSpanHtml('30', 'data-dih-detail', 'TREATY_SIGNING_TASK_SECONDS'));
+    return COPY.overlay.ctaPrimary;
   }
 
   function scoreUnitLine() {
     return 'Humans will be unnecessarily brutally tortured and murdered by disease because disease eradication is delayed while ' +
-      leaderCountText() + ' leaders have not completed their 3-second task of signing the 1% Treaty';
+      leaderCountText() + ' leaders have not completed their 30-second task of signing the ' +
+      formatPercent(model.treatyReductionPct) + ' Treaty';
   }
 
   function scoreUnitLineShort() {
@@ -507,18 +507,17 @@
 
   function scoreUnitLineHtml(offset) {
     return 'Humans will be unnecessarily brutally tortured and murdered by disease because disease eradication is delayed while ' +
-      sourceNumberHtml(offset, leaderCountText(), 'CHAIN_WORLD_LEADER_COUNT') +
+      escapeHtml(leaderCountText()) +
       ' leaders have not completed their ' +
-      detailNumberHtml('3-second', 'TREATY_SIGNING_TASK_SECONDS') +
+      '30-second' +
       ' task of signing the ' +
-      sourceNumberHtml(offset, '1%', 'TREATY_REDUCTION_PCT') + ' Treaty';
+      escapeHtml(formatPercent(model.treatyReductionPct)) + ' Treaty';
   }
 
   function deathSubHtml(offset) {
     return 'Every day we delay disease eradication: ' +
       sourceNumberHtml(offset, format(delayDeathsPerDay(), false), 'GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY') +
-      ' lives. The ' + detailNumberHtml('3-second', 'TREATY_SIGNING_TASK_SECONDS') + ' signing task is still sitting on ' +
-      sourceNumberHtml(offset, leaderCountText(), 'CHAIN_WORLD_LEADER_COUNT') + ' desks.';
+      ' lives.';
   }
 
   function textForValue(kind, compact) {
@@ -568,7 +567,7 @@
     var hidden = getStoredDismissed();
     counterEl = document.createElement('aside');
     counterEl.id = 'dih-delay-counter';
-    counterEl.className = 'dih-delay-counter dih-arcade-variant-' + currentVariant + (hidden ? ' dih-delay-counter-hidden' : '');
+    counterEl.className = 'dih-delay-counter dih-arcade-variant-' + currentVariant + ' ' + themeClass(currentTheme) + (hidden ? ' dih-delay-counter-hidden' : '');
     counterEl.setAttribute('aria-label', 'Live scoreboard: avoidable disease deaths since ' + publicationDateText());
     counterEl.innerHTML =
       '<span class="dih-arcade-tab-head" role="button" tabindex="0">' +
@@ -667,6 +666,7 @@
         description: 'Live count of eventually avoidable disease deaths accumulated since the scoreboard publication date.',
         sourceType: 'calculated',
         formula: 'GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY × elapsed seconds since publication ÷ 86,400',
+        latex: '\\begin{gathered}\nDeaths_{score} = \\frac{Deaths_{avoid,daily} \\times t_{elapsed}}{86{,}400}\n\\end{gathered}',
         inputs: commonDeathInputs
       };
     }
@@ -677,6 +677,7 @@
         description: 'Live count of eventually avoidable disease deaths accumulated since this explanation screen opened.',
         sourceType: 'calculated',
         formula: 'GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY × elapsed seconds since opening ÷ 86,400',
+        latex: '\\begin{gathered}\nDeaths_{opened} = \\frac{Deaths_{avoid,daily} \\times t_{opened}}{86{,}400}\n\\end{gathered}',
         inputs: commonDeathInputs
       };
     }
@@ -687,6 +688,7 @@
         description: 'Live counter for avoidable disease burden accumulated since the scoreboard publication date.',
         sourceType: 'calculated',
         formula: 'GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × 8,766 × elapsed seconds ÷ 31,557,600',
+        latex: '\\begin{gathered}\nHours_{suffering} = \\frac{DALYs_{annual} \\times Pct_{avoid,DALY} \\times 8{,}766 \\times t_{elapsed}}{31{,}557{,}600}\n\\end{gathered}',
         inputs: ['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT']
       };
     }
@@ -697,6 +699,7 @@
         description: 'Daily avoidable disease burden used by the scoreboard.',
         sourceType: 'calculated',
         formula: 'GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT ÷ 365.25',
+        latex: '\\begin{gathered}\nYears_{suffering,daily} = \\frac{DALYs_{annual} \\times Pct_{avoid,DALY}}{365.25}\n\\end{gathered}',
         inputs: ['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT']
       };
     }
@@ -707,27 +710,19 @@
         description: 'Per-second avoidable disease burden used by the scoreboard.',
         sourceType: 'calculated',
         formula: 'GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT ÷ 31,557,600',
+        latex: '\\begin{gathered}\nYears_{suffering,second} = \\frac{DALYs_{annual} \\times Pct_{avoid,DALY}}{31{,}557{,}600}\n\\end{gathered}',
         inputs: ['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT']
       };
     }
     if (detailId === 'GLOBAL_SCOREBOARD_WAR_DISEASE_MARKET_COST_SINCE_PUBLICATION') {
       return {
-        displayName: 'War And Disease Dollars Since Publication',
+        displayName: 'Delay Cost',
         formatted: displayText,
-        description: 'Live counter for direct and indirect war costs plus disease market costs accumulated since publication.',
+        description: 'Cost of delay since the 1% Treaty was proposed.',
         sourceType: 'calculated',
         formula: '(GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST + GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL) × elapsed seconds ÷ 31,557,600',
+        latex: '\\begin{gathered}\nCost_{delay} = \\frac{(Cost_{war,annual} + Cost_{disease,annual}) \\times t_{elapsed}}{31{,}557{,}600}\n\\end{gathered}',
         inputs: ['GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', 'GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL']
-      };
-    }
-    if (detailId === 'TREATY_SIGNING_TASK_SECONDS') {
-      return {
-        displayName: 'Treaty Signing Task Time',
-        formatted: '3 seconds',
-        description: 'Visible copy estimate for the head-of-state act of signing the treaty. This is a UI definition, not an economic model input.',
-        sourceType: 'definition',
-        formula: null,
-        inputs: []
       };
     }
     return {
@@ -757,28 +752,49 @@
       ' (95% confidence)</span></div>';
   }
 
+  function modalIconHtml(type) {
+    if (type === 'input') {
+      return '<span class="dih-param-icon dih-param-icon-input" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false">' +
+        '<path d="M2 8h8"></path><path d="M7 5l3 3-3 3"></path><path d="M12 3h2v10h-2"></path>' +
+        '</svg></span>';
+    }
+    return '<span class="dih-param-icon dih-param-icon-link" aria-hidden="true"><svg viewBox="0 0 16 16" focusable="false">' +
+      '<path d="M6.5 4H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9.5"></path>' +
+      '<path d="M9 2h5v5"></path><path d="M8 8l6-6"></path>' +
+      '</svg></span>';
+  }
+
   function inputButtonsHtml(inputs) {
     if (!inputs || !inputs.length) return '';
     var html = '<div class="dih-param-inputs"><strong>Inputs</strong><div>';
     for (var i = 0; i < inputs.length; i++) {
-      html += '<button type="button" class="dih-param-chip" data-dih-param="' +
-        escapeHtml(inputs[i]) + '">' + escapeHtml(titleFromParameterName(inputs[i])) + '</button>';
+      var title = titleFromParameterName(inputs[i]);
+      html += '<button type="button" class="dih-param-chip dih-param-input-chip" data-dih-param="' +
+        escapeHtml(inputs[i]) + '" title="Open input parameter" aria-label="Open input parameter: ' +
+        escapeHtml(title) + '">' + modalIconHtml('input') + '<span>' + escapeHtml(title) + '</span></button>';
     }
     html += '</div></div>';
     return html;
+  }
+
+  function referenceActionLinkHtml(href, label) {
+    return '<a class="dih-param-action-link" href="' + escapeHtml(href) +
+      '" target="_blank" rel="noopener" title="Open ' + escapeHtml(label) +
+      ' in a new tab" aria-label="Open ' + escapeHtml(label) +
+      ' in a new tab">' + modalIconHtml('link') + '<span>' + escapeHtml(label) + '</span></a>';
   }
 
   function referenceActionsHtml(paramName, param) {
     var offset = getOffset();
     var html = '<div class="dih-param-actions">';
     if (paramName) {
-      html += '<a href="' + escapeHtml(param.calculationUrl || paramHref(offset, paramName)) + '" target="_blank" rel="noopener">Calculation</a>';
+      html += referenceActionLinkHtml(param.calculationUrl || paramHref(offset, paramName), 'Calculation');
     }
     if (param && param.chapterUrl) {
-      html += '<a href="' + escapeHtml(param.chapterUrl) + '" target="_blank" rel="noopener">Chapter</a>';
+      html += referenceActionLinkHtml(param.chapterUrl, 'Chapter');
     }
     if (param && param.sourceUrl) {
-      html += '<a href="' + escapeHtml(param.sourceUrl) + '" target="_blank" rel="noopener">Source</a>';
+      html += referenceActionLinkHtml(param.sourceUrl, 'Source');
     }
     html += '</div>';
     return html;
@@ -921,7 +937,7 @@
   function createParameterDialog() {
     if (parameterDialogEl) return;
     parameterDialogEl = document.createElement('div');
-    parameterDialogEl.className = 'dih-param-modal';
+    parameterDialogEl.className = 'dih-param-modal ' + themeClass(currentTheme);
     parameterDialogEl.setAttribute('role', 'dialog');
     parameterDialogEl.setAttribute('aria-modal', 'true');
     parameterDialogEl.setAttribute('aria-label', 'Source and math');
@@ -984,7 +1000,7 @@
     var mathSteps = [
       [sourceNumberHtml(offset, ratioText, 'MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO'), 'what governments spend on the capacity for mass murder vs clinical trials'],
       [sourceNumberHtml(offset, formatMoney(model.militarySpendingAnnual, true), 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024'), 'capacity for mass murder per year'],
-      [sourceNumberHtml(offset, '× ' + treatyPercent, 'TREATY_REDUCTION_PCT'), '= ' + sourceNumberHtml(offset, formatMoney(model.treatyAnnualFunding, true), 'TREATY_ANNUAL_FUNDING') + ' for clinical trials'],
+      ['× ' + escapeHtml(treatyPercent), '= ' + sourceNumberHtml(offset, formatMoney(model.treatyAnnualFunding, true), 'TREATY_ANNUAL_FUNDING') + ' for clinical trials'],
       [sourceNumberHtml(offset, '= ' + trialMultiplier, 'DFDA_TRIAL_CAPACITY_MULTIPLIER'), 'more trials than currently exist'],
       [sourceNumberHtml(offset, format(model.diseasesWithoutEffectiveTreatment, false), 'DISEASES_WITHOUT_EFFECTIVE_TREATMENT'), 'diseases have no treatment'],
       ['÷ ' + sourceNumberHtml(offset, format(model.newDiseaseFirstTreatmentsPerYear, false) + '/yr', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR'), 'current rate of first treatments'],
@@ -1000,9 +1016,7 @@
         (mathSteps[i][1] ? '<span class="dih-arcade-math-desc">' + mathSteps[i][1] + '</span>' : '') +
         '</div>';
     }
-    mathHtml += '<p class="dih-arcade-math-punch">Every day we delay disease eradication: ' +
-      sourceNumberHtml(offset, format(delayDeathsPerDay(), false), 'GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY') +
-      ' lives.</p></div>';
+    mathHtml += '</div>';
 
     var terrorismBarWidth = model.annualDiseaseDeaths > 0 ? model.annualTerrorismDeaths / model.annualDiseaseDeaths * 100 : 0;
     var clinicalTrialsBarWidth = model.militarySpendingAnnual > 0
@@ -1021,7 +1035,7 @@
 
     overlayEl = document.createElement('div');
     overlayEl.id = 'dih-arcade-overlay';
-    overlayEl.className = 'dih-arcade-overlay';
+    overlayEl.className = 'dih-arcade-overlay ' + themeClass(currentTheme);
     overlayEl.setAttribute('role', 'dialog');
     overlayEl.setAttribute('aria-modal', 'true');
     overlayEl.setAttribute('aria-label', 'The math behind the scoreboard');
@@ -1051,17 +1065,9 @@
           '</div>' +
           '<p>' + dollarsDescHtml(offset) + '</p>' +
         '</section>' +
-        '<p class="dih-arcade-closing">' + o.closingLine + '</p>' +
-        '<div class="dih-arcade-sinceopened">' + o.sinceOpenedBefore +
-          detailNumberHtml('<span class="dih-arcade-live" data-dih-delay-value="since-opened">0</span>', 'GLOBAL_SCOREBOARD_DEATHS_SINCE_OPENED') + o.sinceOpenedAfter +
-        '</div>' +
         '<div class="dih-arcade-ctas">' +
           '<a class="dih-arcade-cta-primary" href="' + VOTE_URL + '" target="_blank" rel="noopener">' + ctaPrimaryHtml() + '</a>' +
-          '<a class="dih-arcade-cta-secondary" href="' + offset + AUDIT_PAGE + '">' + o.ctaSecondary + '</a>' +
         '</div>' +
-        '<p class="dih-arcade-audit">' + o.auditPre +
-          '<a href="' + offset + CALC_ANCHOR + '">' + o.auditLinkText + '</a>' + o.auditPost +
-        '</p>' +
       '</div>';
 
     document.body.appendChild(overlayEl);
@@ -1122,6 +1128,10 @@
 
   function setVariant(name) {
     if (VARIANTS.indexOf(name) === -1) return currentVariant;
+    if (name === currentVariant) {
+      currentVariantExplicit = true;
+      return currentVariant;
+    }
     if (counterEl) {
       counterEl.classList.remove('dih-arcade-variant-' + currentVariant);
       counterEl.classList.add('dih-arcade-variant-' + name);
@@ -1130,6 +1140,30 @@
     currentVariantExplicit = true;
     emit('variant-changed', null);
     return currentVariant;
+  }
+
+  function setTheme(name) {
+    if (THEMES.indexOf(name) === -1) return currentTheme;
+    if (name === currentTheme) {
+      currentThemeExplicit = true;
+      return currentTheme;
+    }
+    if (counterEl) {
+      counterEl.classList.remove(themeClass(currentTheme));
+      counterEl.classList.add(themeClass(name));
+    }
+    if (overlayEl) {
+      overlayEl.classList.remove(themeClass(currentTheme));
+      overlayEl.classList.add(themeClass(name));
+    }
+    if (parameterDialogEl) {
+      parameterDialogEl.classList.remove(themeClass(currentTheme));
+      parameterDialogEl.classList.add(themeClass(name));
+    }
+    currentTheme = name;
+    currentThemeExplicit = true;
+    emit('theme-changed', null);
+    return currentTheme;
   }
 
   function toggleCounter() {
@@ -1176,6 +1210,7 @@
     if (isDisabled()) return;
 
     if (!currentVariantExplicit) currentVariant = getConfiguredVariant();
+    if (!currentThemeExplicit) currentTheme = getConfiguredTheme();
 
     Promise.all([injectStylesheet(), loadModel()]).then(function() {
       if (!isHudDisabled()) {
@@ -1190,10 +1225,14 @@
   // Public API for the configurator page and embedders.
   window.dihScoreboard = {
     variants: VARIANTS.slice(),
+    themes: THEMES.slice(),
     defaultVariant: DEFAULT_VARIANT,
+    defaultTheme: DEFAULT_THEME,
     version: WIDGET_VERSION,
     setVariant: setVariant,
+    setTheme: setTheme,
     getVariant: function() { return currentVariant; },
+    getTheme: function() { return currentTheme; },
     show: showCounter,
     hide: hideCounter,
     openOverlay: openOverlay,

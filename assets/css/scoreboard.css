@@ -1,6 +1,6 @@
 /* ==========================================
-   ARCADE MORTALITY SCOREBOARD
-   Sticky HUD + fullscreen CRT overlay + bar variants.
+   MORTALITY SCOREBOARD
+   Sticky HUD + fullscreen overlay + layout and theme variants.
    Markup built by assets/js/mortality-counters.js, which injects this
    stylesheet itself (embedders only paste the script tag).
    When you edit this file, bump WIDGET_VERSION in mortality-counters.js
@@ -15,6 +15,15 @@
     --dih-arcade-white: #f2f2f2;
     --dih-arcade-dim: #8a8a8a;
     --dih-arcade-font: ui-monospace, "Cascadia Mono", "SF Mono", Consolas, Menlo, monospace;
+    --dih-treaty-paper: var(--treaty-paper, #fffdf7);
+    --dih-treaty-paper-soft: #f7f1e6;
+    --dih-treaty-ink: var(--treaty-ink, #111111);
+    --dih-treaty-ink-soft: var(--treaty-ink-soft, #252525);
+    --dih-treaty-ink-muted: var(--treaty-ink-muted, #555555);
+    --dih-treaty-rule: rgba(17, 17, 17, 0.24);
+    --dih-treaty-accent: #8f1d1d;
+    --dih-treaty-font: var(--v0-font-libre-baskerville, "Libre Baskerville", Georgia, "Times New Roman", serif);
+    --dih-treaty-sans: var(--v0-font-dm-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
 }
 
 /* ---------- Sticky HUD bar ---------- */
@@ -468,17 +477,6 @@ body.dih-arcade-overlay-open {
     color: #b42318;
 }
 
-.dih-arcade-cta-secondary {
-    background: transparent;
-    color: var(--dih-arcade-white);
-    border: 1px solid #3a3a3a;
-}
-
-.dih-arcade-cta-secondary:hover {
-    border-color: var(--dih-arcade-amber);
-    color: var(--dih-arcade-amber);
-}
-
 .dih-arcade-audit {
     margin: 0 auto;
     max-width: 42rem;
@@ -704,6 +702,10 @@ body.dih-arcade-overlay-open {
 
 .dih-param-chip,
 .dih-param-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
     border: 1px solid #3a3a3a;
     background: transparent;
     color: var(--dih-arcade-white);
@@ -713,6 +715,33 @@ body.dih-arcade-overlay-open {
     padding: 0.42rem 0.55rem;
     text-decoration: none;
     cursor: pointer;
+}
+
+.dih-param-input-chip {
+    border-style: dashed;
+}
+
+.dih-param-action-link span:last-child {
+    text-decoration: underline;
+    text-underline-offset: 0.14em;
+}
+
+.dih-param-icon {
+    display: inline-flex;
+    width: 0.86rem;
+    height: 0.86rem;
+    flex: 0 0 auto;
+}
+
+.dih-param-icon svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .dih-param-chip:hover,
@@ -786,14 +815,6 @@ body.dih-arcade-overlay-open {
 
 .dih-arcade-math-desc {
     color: var(--dih-arcade-white);
-}
-
-.dih-arcade-math-punch {
-    margin: 0.8rem 0 0;
-    font-size: 0.92rem;
-    font-weight: 800;
-    color: var(--dih-arcade-red);
-    text-shadow: 0 0 8px rgba(255, 42, 31, 0.4);
 }
 
 /* ---------- Overlay: bar charts ---------- */
@@ -1208,10 +1229,331 @@ body.quarto-dark .delay-cost-callout {
     /* minimal swaps the long caption for the short one. */
     .dih-arcade-variant-minimal .dih-arcade-unitline-short {
         display: block;
+        flex: 1 1 100%;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
     }
 
     .dih-arcade-variant-scoreline .dih-arcade-hum-pts {
         font-size: 1.45rem;
+    }
+}
+
+/* ---------- Treaty theme: sober default, arcade remains opt-in ---------- */
+
+.dih-delay-counter.dih-scoreboard-theme-treaty {
+    background: var(--dih-treaty-paper);
+    border-top: 1px solid var(--dih-treaty-ink);
+    box-shadow: 0 -8px 24px rgba(17, 17, 17, 0.12);
+    color: var(--dih-treaty-ink);
+    font-family: var(--dih-treaty-font);
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-open {
+    padding: 0.65rem 1rem;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-skull,
+.dih-scoreboard-theme-treaty .dih-arcade-skull-big {
+    display: none;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-kicker,
+.dih-scoreboard-theme-treaty .dih-arcade-unitline,
+.dih-scoreboard-theme-treaty .dih-arcade-unitline-short,
+.dih-scoreboard-theme-treaty .dih-arcade-suffer-label,
+.dih-scoreboard-theme-treaty .dih-arcade-money-label,
+.dih-scoreboard-theme-treaty .dih-arcade-team,
+.dih-scoreboard-theme-treaty .dih-arcade-foot,
+.dih-scoreboard-theme-treaty .dih-arcade-vs-tag,
+.dih-scoreboard-theme-treaty .dih-arcade-hum-team,
+.dih-scoreboard-theme-treaty .dih-arcade-tab-head,
+.dih-scoreboard-theme-treaty .dih-arcade-suffer-unit,
+.dih-scoreboard-theme-treaty .dih-param-modal-loading {
+    color: var(--dih-treaty-ink-muted);
+    font-family: var(--dih-treaty-sans);
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-score,
+.dih-scoreboard-theme-treaty .dih-arcade-pts,
+.dih-scoreboard-theme-treaty .dih-arcade-suffer,
+.dih-scoreboard-theme-treaty .dih-arcade-money,
+.dih-scoreboard-theme-treaty .dih-arcade-hum-pts,
+.dih-scoreboard-theme-treaty .dih-arcade-math-val,
+.dih-scoreboard-theme-treaty .dih-arcade-sinceopened .dih-arcade-live,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-value {
+    color: var(--dih-treaty-accent);
+    text-shadow: none;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-score-label {
+    color: var(--dih-treaty-ink);
+    font-family: var(--dih-treaty-sans);
+    letter-spacing: 0;
+}
+
+.dih-scoreboard-theme-treaty.dih-arcade-variant-minimal .dih-arcade-unitline-short {
+    color: var(--dih-treaty-ink);
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-blink {
+    color: var(--dih-treaty-ink-muted);
+    animation: none;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-cta {
+    border-left: 1px solid var(--dih-treaty-ink);
+    background: var(--dih-treaty-ink);
+    color: var(--dih-treaty-paper);
+    font-family: var(--dih-treaty-sans);
+    letter-spacing: 0;
+    animation: none;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-cta:hover,
+.dih-scoreboard-theme-treaty .dih-arcade-cta:focus-visible {
+    background: var(--dih-treaty-paper);
+    color: var(--dih-treaty-ink);
+}
+
+.dih-scoreboard-theme-treaty .dih-delay-counter-close {
+    color: var(--dih-treaty-ink-muted);
+}
+
+.dih-scoreboard-theme-treaty .dih-delay-counter-close:hover,
+.dih-scoreboard-theme-treaty .dih-delay-counter-close:focus-visible {
+    color: var(--dih-treaty-ink);
+}
+
+.dih-arcade-overlay.dih-scoreboard-theme-treaty {
+    background: var(--dih-treaty-paper);
+    color: var(--dih-treaty-ink);
+    font-family: var(--dih-treaty-font);
+}
+
+.dih-arcade-overlay.dih-scoreboard-theme-treaty::before {
+    display: none;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-screen {
+    width: min(820px, calc(100vw - 2rem));
+    padding: 4rem 0 3rem;
+    text-align: left;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-overlay-close {
+    border: 1px solid var(--dih-treaty-ink);
+    background: var(--dih-treaty-paper);
+    color: var(--dih-treaty-ink);
+    font-family: var(--dih-treaty-sans);
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-overlay-close:hover,
+.dih-scoreboard-theme-treaty .dih-arcade-overlay-close:focus-visible {
+    background: var(--dih-treaty-ink);
+    color: var(--dih-treaty-paper);
+    outline: none;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-death-count {
+    margin-bottom: 0.45rem;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-death-count .dih-arcade-pts {
+    font-size: clamp(2.2rem, 8vw, 5.4rem);
+    line-height: 0.98;
+    font-weight: 700;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-subtitle,
+.dih-scoreboard-theme-treaty .dih-arcade-death-sub,
+.dih-scoreboard-theme-treaty .dih-arcade-section p,
+.dih-scoreboard-theme-treaty .dih-arcade-section li,
+.dih-scoreboard-theme-treaty .dih-arcade-math-desc,
+.dih-scoreboard-theme-treaty .dih-arcade-closing,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-description,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-citation {
+    color: var(--dih-treaty-ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    letter-spacing: 0;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-subtitle,
+.dih-scoreboard-theme-treaty .dih-arcade-death-sub {
+    max-width: 48rem;
+    margin-left: 0;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-section {
+    max-width: none;
+    margin-bottom: 1.6rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--dih-treaty-rule);
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-heading {
+    color: var(--dih-treaty-ink);
+    font-family: var(--dih-treaty-sans);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0;
+    text-shadow: none;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-section li::before {
+    color: var(--dih-treaty-accent);
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-sinceopened {
+    max-width: none;
+    border: 1px solid var(--dih-treaty-ink);
+    background: #fffaf0;
+    color: var(--dih-treaty-ink-soft);
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-ctas {
+    justify-content: flex-start;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-ctas a {
+    font-family: var(--dih-treaty-sans);
+    letter-spacing: 0;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-cta-primary {
+    border: 1px solid var(--dih-treaty-ink);
+    background: var(--dih-treaty-ink);
+    color: var(--dih-treaty-paper);
+    animation: none;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-cta-primary:hover,
+.dih-scoreboard-theme-treaty .dih-arcade-cta-primary:focus-visible {
+    background: var(--dih-treaty-paper);
+    color: var(--dih-treaty-ink);
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-audit {
+    max-width: none;
+    margin-left: 0;
+    color: var(--dih-treaty-ink-muted);
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-audit a,
+.dih-scoreboard-theme-treaty .dih-arcade-source-number:hover,
+.dih-scoreboard-theme-treaty .dih-arcade-source-number:focus-visible {
+    color: var(--dih-treaty-accent);
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-math-step {
+    font-size: 0.96rem;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-math-val {
+    font-weight: 700;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-bar-label,
+.dih-scoreboard-theme-treaty .dih-arcade-bar-value {
+    color: var(--dih-treaty-ink-soft);
+    font-family: var(--dih-treaty-sans);
+    letter-spacing: 0;
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-bar-track {
+    background: rgba(17, 17, 17, 0.08);
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-bar-fill {
+    background: var(--dih-treaty-ink-muted);
+}
+
+.dih-scoreboard-theme-treaty .dih-arcade-bar-fill-primary {
+    background: var(--dih-treaty-accent);
+    box-shadow: none;
+}
+
+.dih-param-modal.dih-scoreboard-theme-treaty {
+    background: rgba(17, 17, 17, 0.55);
+    color: var(--dih-treaty-ink);
+    font-family: var(--dih-treaty-font);
+}
+
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-modal-card {
+    border: 1px solid var(--dih-treaty-ink);
+    background: var(--dih-treaty-paper);
+    box-shadow: 0 18px 56px rgba(17, 17, 17, 0.22);
+}
+
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-modal-head {
+    border-bottom: 1px solid var(--dih-treaty-rule);
+}
+
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-modal-head h3,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-range strong,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-equation strong,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-formula strong,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-inputs strong {
+    color: var(--dih-treaty-ink);
+    font-family: var(--dih-treaty-sans);
+    letter-spacing: 0;
+}
+
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-modal-close {
+    border: 1px solid var(--dih-treaty-ink);
+    background: transparent;
+    color: var(--dih-treaty-ink);
+    font-family: var(--dih-treaty-sans);
+}
+
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-modal-close:hover,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-modal-close:focus-visible {
+    background: var(--dih-treaty-ink);
+    color: var(--dih-treaty-paper);
+}
+
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-badges span,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-range span,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-equation pre,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-formula code,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-equation-render,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-chip,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-actions a {
+    border: 1px solid var(--dih-treaty-rule);
+    background: #fffaf0;
+    color: var(--dih-treaty-ink);
+    font-family: var(--dih-treaty-sans);
+    letter-spacing: 0;
+}
+
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-equation .katex {
+    color: var(--dih-treaty-ink);
+}
+
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-chip:hover,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-chip:focus-visible,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-actions a:hover,
+.dih-param-modal.dih-scoreboard-theme-treaty .dih-param-actions a:focus-visible {
+    border-color: var(--dih-treaty-ink);
+    color: var(--dih-treaty-accent);
+}
+
+@media (max-width: 520px) {
+    .dih-scoreboard-theme-treaty .dih-arcade-screen {
+        width: min(100% - 1.5rem, 820px);
+        padding-top: 4.25rem;
+    }
+
+    .dih-scoreboard-theme-treaty .dih-arcade-math-step {
+        align-items: flex-start;
     }
 }
 
