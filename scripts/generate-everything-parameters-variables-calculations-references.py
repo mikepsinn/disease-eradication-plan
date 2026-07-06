@@ -199,8 +199,10 @@ from dih_models.chart_generators import (
     generate_deterministic_cdf_note_qmd,
 )
 from dih_models.latex_generation import (
+    collapse_latex_blocks,
     format_latex_value,
     create_latex_variable_name,
+    generate_expanded_latex,
     get_formula_fallback_log,
     clear_formula_fallback_log,
     create_short_label,
@@ -208,6 +210,7 @@ from dih_models.latex_generation import (
     extract_lambda_body_from_file,
     lambda_to_sympy_latex,
 )
+from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.parameters_and_calculations_qmd_generator import (
     generate_parameters_and_calculations_qmd,
 )
@@ -532,9 +535,191 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
 from dih_models.environment_logger import log_environment_info, log_mc_fingerprint, enforce_reproducible_environment
 
 
+SCOREBOARD_PARAMETER_NAMES = [
+    "GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY",
+    "GLOBAL_DISEASE_DEATHS_DAILY",
+    "EVENTUALLY_AVOIDABLE_DEATH_PCT",
+    "GLOBAL_ANNUAL_DALY_BURDEN",
+    "EVENTUALLY_AVOIDABLE_DALY_PCT",
+    "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST",
+    "GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL",
+    "GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL",
+    "GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL",
+    "CHAIN_WORLD_LEADER_COUNT",
+    "MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO",
+    "GLOBAL_MILITARY_SPENDING_ANNUAL_2024",
+    "TREATY_REDUCTION_PCT",
+    "TREATY_ANNUAL_FUNDING",
+    "DFDA_TRIAL_CAPACITY_MULTIPLIER",
+    "DISEASES_WITHOUT_EFFECTIVE_TREATMENT",
+    "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
+    "STATUS_QUO_QUEUE_CLEARANCE_YEARS",
+    "DFDA_QUEUE_CLEARANCE_YEARS",
+    "GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES",
+    "GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS",
+    "GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL",
+    "SHARING_TIME_MINUTES",
+]
+
+
+def _calculation_url(param_name: str) -> str:
+    return (
+        "https://manual.warondisease.org/knowledge/appendix/"
+        f"parameters-and-calculations.html#sec-{param_name.lower()}"
+    )
+
+
+def _source_ref_key(source_ref: Any) -> str | None:
+    if not source_ref:
+        return None
+    return source_ref.value if hasattr(source_ref, "value") else str(source_ref)
+
+
+def _source_url(source_ref: Any, citation_data: Dict[str, Dict[str, Any]]) -> str | None:
+    source_ref_str = _source_ref_key(source_ref)
+    if not source_ref_str:
+        return None
+    if source_ref_str.startswith(("http://", "https://")):
+        return source_ref_str
+    citation = citation_data.get(source_ref_str)
+    if not citation:
+        return None
+    if citation.get("url"):
+        return citation.get("url")
+    urls = citation.get("urls") or []
+    return urls[0] if urls else None
+
+
+def _public_parameter_entry(
+    name: str,
+    meta: Dict[str, Any],
+    parameters: Dict[str, Dict[str, Any]],
+    params_file: Path,
+    chapter_mapping: Dict[str, list],
+    citation_data: Dict[str, Dict[str, Any]],
+) -> Dict[str, Any] | None:
+    value_obj = meta.get("value")
+    if value_obj is None:
+        return None
+    try:
+        formatted = format_parameter_value(value_obj)
+    except Exception:
+        formatted = None
+    source_type_attr = getattr(value_obj, "source_type", None)
+    source_type_str = (
+        source_type_attr.value
+        if hasattr(source_type_attr, "value")
+        else (str(source_type_attr) if source_type_attr is not None else None)
+    )
+    source_ref = _source_ref_key(getattr(value_obj, "source_ref", None))
+    entry: Dict[str, Any] = {
+        "value": float(value_obj) if hasattr(value_obj, "__float__") else None,
+        "formatted": formatted,
+        "unit": getattr(value_obj, "unit", None) or None,
+        "description": getattr(value_obj, "description", None) or None,
+        "displayName": getattr(value_obj, "display_name", None) or None,
+        "sourceType": source_type_str,
+        "sourceRef": source_ref,
+        "sourceUrl": _source_url(source_ref, citation_data),
+        "confidence": getattr(value_obj, "confidence", None) or None,
+        "formula": getattr(value_obj, "formula", None) or None,
+        "calculationUrl": _calculation_url(name),
+    }
+    latex = getattr(value_obj, "latex", None)
+    if not latex:
+        latex = generate_expanded_latex(name, value_obj, parameters, params_file)
+    if latex:
+        latex = collapse_latex_blocks(latex)
+        entry["latex"] = wrap_latex_for_mobile(latex, max_width=60)
+
+    ci = getattr(value_obj, "confidence_interval", None)
+    if ci:
+        entry["confidenceInterval"] = [float(ci[0]), float(ci[1])]
+
+    # Reactive metadata: dependency list, distribution, and a JS-evaluable
+    # expression traced from the compute lambda. Powers interactive consumers.
+    dist = getattr(value_obj, "distribution", None)
+    dist_str = dist.value if hasattr(dist, "value") else (str(dist) if dist else None)
+    if dist_str:
+        entry["distribution"] = dist_str
+    if getattr(value_obj, "compute", None) and getattr(value_obj, "inputs", None):
+        js_expr, js_inputs, ok = compute_to_js(value_obj)
+        if ok:
+            entry["inputs"] = js_inputs
+            entry["computeExpr"] = js_expr
+
+    pages = chapter_mapping.get(name) or []
+    if pages:
+        entry["chapterUrl"] = pages[0]["url"]
+        entry["chapterTitle"] = pages[0].get("title")
+    return entry
+
+
+def _collect_parameter_inputs(
+    names: list[str],
+    parameters: Dict[str, Dict[str, Any]],
+) -> list[str]:
+    seen: set[str] = set()
+    ordered: list[str] = []
+
+    def visit(param_name: str):
+        if param_name in seen or param_name not in parameters:
+            return
+        seen.add(param_name)
+        ordered.append(param_name)
+        value_obj = parameters[param_name].get("value")
+        inputs = getattr(value_obj, "inputs", None) or []
+        for input_name in inputs:
+            visit(input_name)
+
+    for name in names:
+        visit(name)
+    return ordered
+
+
+def publish_scoreboard_parameter_metadata(
+    project_root: Path,
+    parameters: Dict[str, Dict[str, Any]],
+    params_file: Path,
+    chapter_mapping: Dict[str, list],
+    citation_data: Dict[str, Dict[str, Any]],
+) -> None:
+    import json
+
+    param_names = _collect_parameter_inputs(SCOREBOARD_PARAMETER_NAMES, parameters)
+    json_params: Dict[str, Any] = {}
+    citation_ids: set[str] = set()
+
+    for name in param_names:
+        entry = _public_parameter_entry(name, parameters[name], parameters, params_file, chapter_mapping, citation_data)
+        if not entry:
+            continue
+        json_params[name] = entry
+        source_ref = entry.get("sourceRef")
+        if source_ref and source_ref in citation_data:
+            citation_ids.add(source_ref)
+
+    payload = {
+        "sourceFile": "dih_models/parameters.py",
+        "parameters": json_params,
+        "citations": {key: citation_data[key] for key in sorted(citation_ids)},
+    }
+
+    js_output = project_root / "assets" / "js" / "scoreboard-parameter-metadata.js"
+    js_output.parent.mkdir(parents=True, exist_ok=True)
+    js_payload = json.dumps(payload, indent=2, ensure_ascii=True, default=str)
+    js_output.write_text(
+        "window.dihScoreboardParameterMetadata = " + js_payload + ";\n",
+        encoding="utf-8",
+        newline="\n",
+    )
+    logger.debug(f"[OK] Published scoreboard parameter metadata to {js_output}")
+
+
 def publish_public_parameters_exports(
     project_root: Path,
     parameters: Dict[str, Dict[str, Any]],
+    params_file: Path,
     chapter_mapping: Dict[str, list],
     shareable_snippets: Dict[str, Dict[str, str]],
     citation_data: Dict[str, Dict[str, Any]],
@@ -554,49 +739,9 @@ def publish_public_parameters_exports(
     json_params: Dict[str, Any] = {}
     for name in sorted(parameters.keys()):
         meta = parameters[name]
-        value_obj = meta.get("value")
-        if value_obj is None:
+        entry = _public_parameter_entry(name, meta, parameters, params_file, chapter_mapping, citation_data)
+        if not entry:
             continue
-        try:
-            formatted = format_parameter_value(value_obj)
-        except Exception:
-            formatted = None
-        source_type_attr = getattr(value_obj, "source_type", None)
-        source_type_str = (
-            source_type_attr.value
-            if hasattr(source_type_attr, "value")
-            else (str(source_type_attr) if source_type_attr is not None else None)
-        )
-        entry: Dict[str, Any] = {
-            "value": float(value_obj) if hasattr(value_obj, "__float__") else None,
-            "formatted": formatted,
-            "unit": getattr(value_obj, "unit", None) or None,
-            "description": getattr(value_obj, "description", None) or None,
-            "sourceType": source_type_str,
-            "sourceRef": getattr(value_obj, "source_ref", None) or None,
-            "confidence": getattr(value_obj, "confidence", None) or None,
-            "formula": getattr(value_obj, "formula", None) or None,
-        }
-        ci = getattr(value_obj, "confidence_interval", None)
-        if ci:
-            entry["confidenceInterval"] = [float(ci[0]), float(ci[1])]
-
-        # Reactive metadata: dependency list, distribution, and a JS-evaluable
-        # expression traced from the compute lambda. Powers the interactive
-        # parameter editor (see knowledge/includes/reactive-params.qmd).
-        dist = getattr(value_obj, "distribution", None)
-        dist_str = dist.value if hasattr(dist, "value") else (str(dist) if dist else None)
-        if dist_str:
-            entry["distribution"] = dist_str
-        if getattr(value_obj, "compute", None) and getattr(value_obj, "inputs", None):
-            js_expr, js_inputs, ok = compute_to_js(value_obj)
-            if ok:
-                entry["inputs"] = js_inputs
-                entry["computeExpr"] = js_expr
-
-        pages = chapter_mapping.get(name) or []
-        if pages:
-            entry["chapterUrl"] = pages[0]["url"]
         json_params[name] = entry
 
     payload = {
@@ -1005,7 +1150,10 @@ def main():
 
         # Publish parameters.json alongside the TS file for language-agnostic consumers
         publish_public_parameters_exports(
-            project_root, parameters, chapter_mapping, shareable_snippets, citation_data
+            project_root, parameters, parameters_path, chapter_mapping, shareable_snippets, citation_data
+        )
+        publish_scoreboard_parameter_metadata(
+            project_root, parameters, parameters_path, chapter_mapping, citation_data
         )
 
         # Write formula fallback log if any parameters used it
@@ -1530,7 +1678,10 @@ def main():
 
         # Publish parameters.json alongside the TS file for language-agnostic consumers
         publish_public_parameters_exports(
-            project_root, parameters, chapter_mapping, shareable_snippets, citation_data
+            project_root, parameters, parameters_path, chapter_mapping, shareable_snippets, citation_data
+        )
+        publish_scoreboard_parameter_metadata(
+            project_root, parameters, parameters_path, chapter_mapping, citation_data
         )
 
     # Generate parameters-and-calculations.qmd AFTER uncertainty charts are created

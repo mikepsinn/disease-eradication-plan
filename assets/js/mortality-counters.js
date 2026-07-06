@@ -90,9 +90,17 @@
 
   var VOTE_URL = 'https://warondisease.org';
   var AUDIT_PAGE = 'knowledge/appendix/where-am-i-wrong.html';
+  var PARAM_PAGE = 'knowledge/appendix/parameters-and-calculations.html';
   var CALC_ANCHOR = 'knowledge/appendix/parameters-and-calculations.html#sec-global_eventually_avoidable_disease_deaths_daily';
+  var KATEX_CSS = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css';
+  var KATEX_JS = 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js';
 
   var model = {};
+  var parameterMetadata = null;
+  var parameterMetadataPromise = null;
+  var parameterDialogEl = null;
+  var parameterDialogLastFocus = null;
+  var katexPromise = null;
 
   var numberFormat = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
   var oneDecimalFormat = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
@@ -252,6 +260,77 @@
       : fallback;
   }
 
+  function escapeHtml(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function loadParameterMetadata() {
+    if (parameterMetadata) return Promise.resolve(parameterMetadata);
+    if (window.dihScoreboardParameterMetadata) {
+      parameterMetadata = window.dihScoreboardParameterMetadata;
+      return Promise.resolve(parameterMetadata);
+    }
+    if (parameterMetadataPromise) return parameterMetadataPromise;
+
+    parameterMetadataPromise = new Promise(function(resolve) {
+      var script = document.createElement('script');
+      script.src = getOffset() + 'assets/js/scoreboard-parameter-metadata.js?v=' + WIDGET_VERSION;
+      script.async = true;
+      script.onload = function() {
+        parameterMetadata = window.dihScoreboardParameterMetadata || parameterMetadata;
+        resolve(parameterMetadata);
+      };
+      script.onerror = function() {
+        resolve(parameterMetadata);
+      };
+      document.head.appendChild(script);
+    });
+    return parameterMetadataPromise;
+  }
+
+  function loadKatex() {
+    if (window.katex && typeof window.katex.render === 'function') return Promise.resolve(window.katex);
+    if (katexPromise) return katexPromise;
+
+    katexPromise = new Promise(function(resolve) {
+      var css = document.querySelector('link[href="' + KATEX_CSS + '"]');
+      var cssReady = Promise.resolve();
+      if (!css) {
+        cssReady = new Promise(function(done) {
+          css = document.createElement('link');
+          css.rel = 'stylesheet';
+          css.href = KATEX_CSS;
+          css.onload = done;
+          css.onerror = done;
+          document.head.appendChild(css);
+        });
+      }
+
+      var script = document.querySelector('script[src="' + KATEX_JS + '"]');
+      var jsReady = Promise.resolve();
+      if (!script) {
+        jsReady = new Promise(function(done) {
+          script = document.createElement('script');
+          script.src = KATEX_JS;
+          script.async = true;
+          script.onload = done;
+          script.onerror = done;
+          document.head.appendChild(script);
+        });
+      }
+
+      Promise.all([cssReady, jsReady]).then(function() {
+        resolve(window.katex && typeof window.katex.render === 'function' ? window.katex : null);
+      });
+    });
+    return katexPromise;
+  }
+
   function resetModelDefaults() {
     for (var key in DEFAULTS) {
       if (Object.prototype.hasOwnProperty.call(DEFAULTS, key)) model[key] = DEFAULTS[key];
@@ -267,6 +346,7 @@
         return response.json();
       })
       .then(function(json) {
+        if (json && json.parameters) parameterMetadata = json;
         var parameters = json && json.parameters ? json.parameters : null;
         model.diseaseDeathsDaily = pickParam(parameters, 'GLOBAL_DISEASE_DEATHS_DAILY', DEFAULTS.diseaseDeathsDaily);
         model.eventuallyAvoidableDeathPct = pickParam(parameters, 'EVENTUALLY_AVOIDABLE_DEATH_PCT', DEFAULTS.eventuallyAvoidableDeathPct);
@@ -355,28 +435,12 @@
     return getPublicationDate().toISOString().slice(0, 10);
   }
 
-  function scoreUnitLine() {
-    return "brutally tortured and murdered by disease because " + leaderCountText() + " leaders haven't spent 30 seconds signing the 1% Treaty";
-  }
-
-  function scoreUnitLineShort() {
-    return "murdered because " + leaderCountText() + " leaders won't spend 30 seconds";
-  }
-
-  function kickerText() {
-    return 'EVERY DAY ' + leaderCountText() + ' LEADERS ARE LATE ON THEIR 30-SECOND TASK, DISEASE SCORES ' + format(delayDeathsPerDay(), false);
-  }
-
   function tabHeadLeftText() {
     return "YOUR SPECIES' TAB · OPEN SINCE " + publicationDateText() + ', THE DAY THE FIX WAS PUBLISHED';
   }
 
   function openHintText() {
-    return leaderCountText() + " leaders haven't spent 30 seconds. Tap to see the math.";
-  }
-
-  function deathSubText() {
-    return format(delayDeathsPerDay(), false) + ' more per day. The 30-second task is still sitting on ' + leaderCountText() + ' desks.';
+    return leaderCountText() + " leaders have not completed their 3-second signing task. Tap to see the math.";
   }
 
   function sufferingYearsPerDay() {
@@ -388,13 +452,73 @@
   }
 
   function sufferingDescText() {
-    return "Every day they're late adds " + wordCompactFormat.format(sufferingYearsPerDay()) +
-      " years of unnecessary suffering. That's " + format(sufferingYearsPerSecond(), false) + ' years per second.';
+    return 'Every day disease eradication is delayed adds ' +
+      detailNumberHtml(wordCompactFormat.format(sufferingYearsPerDay()), 'GLOBAL_SCOREBOARD_SUFFERING_YEARS_PER_DAY') +
+      " years of unnecessary suffering. That's " +
+      detailNumberHtml(format(sufferingYearsPerSecond(), false), 'GLOBAL_SCOREBOARD_SUFFERING_YEARS_PER_SECOND') +
+      ' years per second.';
   }
 
-  function dollarsDescText() {
-    return 'For every $1 governments spend on clinical trials, they spend $' +
-      format(model.militaryToGovernmentClinicalTrialsRatio, false) + ' on the capacity for mass murder.';
+  function dollarsDescHtml(offset) {
+    return 'For every ' + sourceNumberHtml(offset, '$1', 'MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO') +
+      ' governments spend on clinical trials, they spend ' +
+      sourceNumberHtml(offset, '$' + format(model.militaryToGovernmentClinicalTrialsRatio, false), 'MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO') +
+      ' on the capacity for mass murder.';
+  }
+
+  function paramHref(offset, parameterName) {
+    return offset + PARAM_PAGE + '#sec-' + parameterName.toLowerCase();
+  }
+
+  function detailButtonHtml(text, attrName, attrValue) {
+    return '<button class="dih-arcade-source-number" type="button" ' + attrName + '="' +
+      escapeHtml(attrValue) + '" title="Show source and math">' + text + '</button>';
+  }
+
+  function detailSpanHtml(text, attrName, attrValue) {
+    return '<span class="dih-arcade-source-number" ' + attrName + '="' +
+      escapeHtml(attrValue) + '" title="Show source and math">' + text + '</span>';
+  }
+
+  function sourceNumberHtml(offset, text, parameterName) {
+    return detailButtonHtml(text, 'data-dih-param', parameterName);
+  }
+
+  function detailNumberHtml(text, detailId) {
+    return detailButtonHtml(text, 'data-dih-detail', detailId);
+  }
+
+  function ctaPrimaryHtml() {
+    return COPY.overlay.ctaPrimary.replace('30', detailSpanHtml('30', 'data-dih-detail', 'TREATY_SIGNING_TASK_SECONDS'));
+  }
+
+  function scoreUnitLine() {
+    return 'Humans will be unnecessarily brutally tortured and murdered by disease because disease eradication is delayed while ' +
+      leaderCountText() + ' leaders have not completed their 3-second task of signing the 1% Treaty';
+  }
+
+  function scoreUnitLineShort() {
+    return 'murdered because disease eradication is delayed';
+  }
+
+  function kickerText() {
+    return 'EVERY DAY WE DELAY DISEASE ERADICATION, DISEASE SCORES ' + format(delayDeathsPerDay(), false);
+  }
+
+  function scoreUnitLineHtml(offset) {
+    return 'Humans will be unnecessarily brutally tortured and murdered by disease because disease eradication is delayed while ' +
+      sourceNumberHtml(offset, leaderCountText(), 'CHAIN_WORLD_LEADER_COUNT') +
+      ' leaders have not completed their ' +
+      detailNumberHtml('3-second', 'TREATY_SIGNING_TASK_SECONDS') +
+      ' task of signing the ' +
+      sourceNumberHtml(offset, '1%', 'TREATY_REDUCTION_PCT') + ' Treaty';
+  }
+
+  function deathSubHtml(offset) {
+    return 'Every day we delay disease eradication: ' +
+      sourceNumberHtml(offset, format(delayDeathsPerDay(), false), 'GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY') +
+      ' lives. The ' + detailNumberHtml('3-second', 'TREATY_SIGNING_TASK_SECONDS') + ' signing task is still sitting on ' +
+      sourceNumberHtml(offset, leaderCountText(), 'CHAIN_WORLD_LEADER_COUNT') + ' desks.';
   }
 
   function textForValue(kind, compact) {
@@ -516,6 +640,337 @@
     return html;
   }
 
+  function titleFromParameterName(name) {
+    return String(name || 'Parameter')
+      .toLowerCase()
+      .replace(/_/g, ' ')
+      .replace(/\b\w/g, function(ch) { return ch.toUpperCase(); });
+  }
+
+  function getMetadataParam(paramName) {
+    return parameterMetadata && parameterMetadata.parameters
+      ? parameterMetadata.parameters[paramName]
+      : null;
+  }
+
+  function citationForParam(param) {
+    if (!param || !param.sourceRef || !parameterMetadata || !parameterMetadata.citations) return null;
+    return parameterMetadata.citations[param.sourceRef] || null;
+  }
+
+  function syntheticDetail(detailId, displayText) {
+    var commonDeathInputs = ['GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY'];
+    if (detailId === 'GLOBAL_SCOREBOARD_DEATHS_SINCE_PUBLICATION') {
+      return {
+        displayName: 'Disease Score Since Publication',
+        formatted: displayText,
+        description: 'Live count of eventually avoidable disease deaths accumulated since the scoreboard publication date.',
+        sourceType: 'calculated',
+        formula: 'GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY × elapsed seconds since publication ÷ 86,400',
+        inputs: commonDeathInputs
+      };
+    }
+    if (detailId === 'GLOBAL_SCOREBOARD_DEATHS_SINCE_OPENED') {
+      return {
+        displayName: 'Disease Score Since Opening',
+        formatted: displayText,
+        description: 'Live count of eventually avoidable disease deaths accumulated since this explanation screen opened.',
+        sourceType: 'calculated',
+        formula: 'GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY × elapsed seconds since opening ÷ 86,400',
+        inputs: commonDeathInputs
+      };
+    }
+    if (detailId === 'GLOBAL_SCOREBOARD_SUFFERING_HOURS_SINCE_PUBLICATION') {
+      return {
+        displayName: 'Suffering Hours Since Publication',
+        formatted: displayText + ' hours',
+        description: 'Live counter for avoidable disease burden accumulated since the scoreboard publication date.',
+        sourceType: 'calculated',
+        formula: 'GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × 8,766 × elapsed seconds ÷ 31,557,600',
+        inputs: ['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT']
+      };
+    }
+    if (detailId === 'GLOBAL_SCOREBOARD_SUFFERING_YEARS_PER_DAY') {
+      return {
+        displayName: 'Avoidable Suffering Years Per Day',
+        formatted: displayText + ' years/day',
+        description: 'Daily avoidable disease burden used by the scoreboard.',
+        sourceType: 'calculated',
+        formula: 'GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT ÷ 365.25',
+        inputs: ['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT']
+      };
+    }
+    if (detailId === 'GLOBAL_SCOREBOARD_SUFFERING_YEARS_PER_SECOND') {
+      return {
+        displayName: 'Avoidable Suffering Years Per Second',
+        formatted: displayText + ' years/second',
+        description: 'Per-second avoidable disease burden used by the scoreboard.',
+        sourceType: 'calculated',
+        formula: 'GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT ÷ 31,557,600',
+        inputs: ['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT']
+      };
+    }
+    if (detailId === 'GLOBAL_SCOREBOARD_WAR_DISEASE_MARKET_COST_SINCE_PUBLICATION') {
+      return {
+        displayName: 'War And Disease Dollars Since Publication',
+        formatted: displayText,
+        description: 'Live counter for direct and indirect war costs plus disease market costs accumulated since publication.',
+        sourceType: 'calculated',
+        formula: '(GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST + GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL) × elapsed seconds ÷ 31,557,600',
+        inputs: ['GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', 'GLOBAL_DISEASE_TOTAL_MARKET_COST_ANNUAL']
+      };
+    }
+    if (detailId === 'TREATY_SIGNING_TASK_SECONDS') {
+      return {
+        displayName: 'Treaty Signing Task Time',
+        formatted: '3 seconds',
+        description: 'Visible copy estimate for the head-of-state act of signing the treaty. This is a UI definition, not an economic model input.',
+        sourceType: 'definition',
+        formula: null,
+        inputs: []
+      };
+    }
+    return {
+      displayName: titleFromParameterName(detailId),
+      formatted: displayText,
+      description: 'Scoreboard detail.',
+      sourceType: 'calculated',
+      formula: null,
+      inputs: []
+    };
+  }
+
+  function formatRangeValue(value, unit) {
+    if (unit && unit.indexOf('USD') === 0) return formatMoney(value, true);
+    if ((unit === 'percent' || unit === 'percentage' || unit === 'rate') && Math.abs(value) <= 1) {
+      return formatPercent(value);
+    }
+    return format(value, true);
+  }
+
+  function confidenceIntervalHtml(param) {
+    if (!param || !param.confidenceInterval || param.confidenceInterval.length !== 2) return '';
+    return '<div class="dih-param-range">' +
+      '<strong>Estimated range</strong><span>' +
+      escapeHtml(formatRangeValue(param.confidenceInterval[0], param.unit)) + ' to ' +
+      escapeHtml(formatRangeValue(param.confidenceInterval[1], param.unit)) +
+      ' (95% confidence)</span></div>';
+  }
+
+  function inputButtonsHtml(inputs) {
+    if (!inputs || !inputs.length) return '';
+    var html = '<div class="dih-param-inputs"><strong>Inputs</strong><div>';
+    for (var i = 0; i < inputs.length; i++) {
+      html += '<button type="button" class="dih-param-chip" data-dih-param="' +
+        escapeHtml(inputs[i]) + '">' + escapeHtml(titleFromParameterName(inputs[i])) + '</button>';
+    }
+    html += '</div></div>';
+    return html;
+  }
+
+  function referenceActionsHtml(paramName, param) {
+    var offset = getOffset();
+    var html = '<div class="dih-param-actions">';
+    if (paramName) {
+      html += '<a href="' + escapeHtml(param.calculationUrl || paramHref(offset, paramName)) + '" target="_blank" rel="noopener">Calculation</a>';
+    }
+    if (param && param.chapterUrl) {
+      html += '<a href="' + escapeHtml(param.chapterUrl) + '" target="_blank" rel="noopener">Chapter</a>';
+    }
+    if (param && param.sourceUrl) {
+      html += '<a href="' + escapeHtml(param.sourceUrl) + '" target="_blank" rel="noopener">Source</a>';
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function citationHtml(citation) {
+    if (!citation || !citation.title) return '';
+    var parts = [escapeHtml(citation.title)];
+    if (citation.author) parts.push(escapeHtml(citation.author));
+    if (citation.year) parts.push(escapeHtml(citation.year));
+    if (citation.source) parts.push(escapeHtml(citation.source));
+    return '<p class="dih-param-citation">' + parts.join(' | ') + '</p>';
+  }
+
+  function readLatexGroup(text, start) {
+    if (text.charAt(start) !== '{') return null;
+    var depth = 0;
+    var value = '';
+    for (var i = start; i < text.length; i++) {
+      var ch = text.charAt(i);
+      if (ch === '{') {
+        if (depth > 0) value += ch;
+        depth += 1;
+      } else if (ch === '}') {
+        depth -= 1;
+        if (depth === 0) return { value: value, next: i + 1 };
+        value += ch;
+      } else {
+        value += ch;
+      }
+    }
+    return null;
+  }
+
+  function replaceLatexFractions(text) {
+    var output = '';
+    var i = 0;
+    while (i < text.length) {
+      if (text.slice(i, i + 6) === '\\frac{') {
+        var numerator = readLatexGroup(text, i + 5);
+        var denominator = numerator ? readLatexGroup(text, numerator.next) : null;
+        if (numerator && denominator) {
+          output += '(' + replaceLatexFractions(numerator.value) + ') / (' +
+            replaceLatexFractions(denominator.value) + ')';
+          i = denominator.next;
+          continue;
+        }
+      }
+      output += text.charAt(i);
+      i += 1;
+    }
+    return output;
+  }
+
+  function readableLatexFallback(latex) {
+    return replaceLatexFractions(latex)
+      .replace(/\\begin\{[^}]+\}/g, '')
+      .replace(/\\end\{[^}]+\}/g, '')
+      .replace(/\\text\{([^}]*)\}/g, '$1')
+      .replace(/\\\\\[[^\]]+\]/g, '\n')
+      .replace(/\\\\/g, '\n')
+      .replace(/\\times/g, '×')
+      .replace(/\\%/g, '%')
+      .replace(/\\\$/g, '$')
+      .replace(/\{,\}/g, ',')
+      .replace(/\\left/g, '')
+      .replace(/\\right/g, '')
+      .replace(/[{}]/g, '')
+      .replace(/[ \t]+\n/g, '\n')
+      .replace(/\n{3,}/g, '\n\n')
+      .trim();
+  }
+
+  function equationHtml(detail) {
+    if (detail.latex) {
+      var renderable = detail.latex.length <= 520 && detail.latex.indexOf('\\text{where') === -1;
+      var fallbackText = renderable ? detail.latex : readableLatexFallback(detail.latex);
+      return '<div class="dih-param-equation' + (renderable ? '' : ' dih-param-equation-raw-only') + '"><strong>Equation</strong>' +
+        (renderable ? '<div class="dih-param-equation-render" aria-hidden="true"></div>' : '') +
+        '<pre class="dih-param-equation-raw">' + escapeHtml(fallbackText) + '</pre></div>';
+    }
+    if (detail.formula) {
+      return '<div class="dih-param-formula"><strong>Formula</strong><code>' +
+        escapeHtml(detail.formula) + '</code></div>';
+    }
+    return '';
+  }
+
+  function renderLatexInCard(card) {
+    var blocks = card.querySelectorAll('.dih-param-equation');
+    if (!blocks.length) return;
+    loadKatex().then(function(katex) {
+      if (!katex) return;
+      for (var i = 0; i < blocks.length; i++) {
+        var block = blocks[i];
+        if (block.classList.contains('dih-param-equation-raw-only')) continue;
+        var raw = block.querySelector('.dih-param-equation-raw');
+        var target = block.querySelector('.dih-param-equation-render');
+        if (!raw || !target) continue;
+        katex.render(raw.textContent, target, {
+          displayMode: true,
+          throwOnError: false,
+          strict: 'ignore',
+          trust: false
+        });
+        target.scrollLeft = 0;
+        block.classList.add('dih-param-equation-rendered');
+      }
+    });
+  }
+
+  function parameterDetailHtml(paramName, detailId, displayText) {
+    var param = paramName ? getMetadataParam(paramName) : null;
+    var detail = param || syntheticDetail(detailId, displayText);
+    var citation = citationForParam(param);
+    var title = detail.displayName || titleFromParameterName(paramName || detailId);
+    var value = detail.formatted || displayText;
+    var sourceType = detail.sourceType ? '<span>' + escapeHtml(detail.sourceType) + '</span>' : '';
+    var confidence = detail.confidence ? '<span>' + escapeHtml(detail.confidence) + ' confidence</span>' : '';
+    var badges = sourceType || confidence ? '<div class="dih-param-badges">' + sourceType + confidence + '</div>' : '';
+    var description = detail.description ? '<p class="dih-param-description">' + escapeHtml(detail.description) + '</p>' : '';
+    var equation = equationHtml(detail);
+
+    return '<div class="dih-param-modal-head">' +
+        '<h3>' + escapeHtml(title) + '</h3>' +
+        '<button type="button" class="dih-param-modal-close" aria-label="Close">×</button>' +
+      '</div>' +
+      '<div class="dih-param-modal-body">' +
+        '<div class="dih-param-value">' + escapeHtml(value) + '</div>' +
+        badges +
+        description +
+        confidenceIntervalHtml(detail) +
+        equation +
+        inputButtonsHtml(detail.inputs) +
+        referenceActionsHtml(paramName, detail) +
+        citationHtml(citation) +
+      '</div>';
+  }
+
+  function createParameterDialog() {
+    if (parameterDialogEl) return;
+    parameterDialogEl = document.createElement('div');
+    parameterDialogEl.className = 'dih-param-modal';
+    parameterDialogEl.setAttribute('role', 'dialog');
+    parameterDialogEl.setAttribute('aria-modal', 'true');
+    parameterDialogEl.setAttribute('aria-label', 'Source and math');
+    parameterDialogEl.innerHTML = '<div class="dih-param-modal-card"></div>';
+    document.body.appendChild(parameterDialogEl);
+    parameterDialogEl.addEventListener('click', function(event) {
+      if (event.target === parameterDialogEl) closeParameterDialog();
+      var input = event.target.closest && event.target.closest('.dih-param-chip');
+      if (input) {
+        event.preventDefault();
+        event.stopPropagation();
+        openParameterDialog(input);
+      }
+    });
+  }
+
+  function openParameterDialog(trigger) {
+    parameterDialogLastFocus = trigger;
+    createParameterDialog();
+    var paramName = trigger.getAttribute('data-dih-param');
+    var detailId = trigger.getAttribute('data-dih-detail');
+    var displayText = trigger.textContent.trim();
+    var card = parameterDialogEl.querySelector('.dih-param-modal-card');
+    card.innerHTML = '<div class="dih-param-modal-loading">Loading source and math...</div>';
+    parameterDialogEl.classList.add('dih-param-modal-visible');
+
+    loadParameterMetadata().then(function() {
+      card.innerHTML = parameterDetailHtml(paramName, detailId, displayText);
+      card.querySelector('.dih-param-modal-close').addEventListener('click', closeParameterDialog);
+      renderLatexInCard(card);
+      card.querySelector('.dih-param-modal-close').focus();
+    });
+  }
+
+  function closeParameterDialog() {
+    if (!parameterDialogEl) return;
+    parameterDialogEl.classList.remove('dih-param-modal-visible');
+    if (parameterDialogLastFocus && parameterDialogLastFocus.focus) parameterDialogLastFocus.focus();
+    parameterDialogLastFocus = null;
+  }
+
+  function handleParameterTriggerClick(event) {
+    var target = event.target.closest && event.target.closest('[data-dih-param], [data-dih-detail]');
+    if (!target) return;
+    event.preventDefault();
+    event.stopPropagation();
+    openParameterDialog(target);
+  }
+
   function createOverlay() {
     if (overlayEl) return;
     var o = COPY.overlay;
@@ -527,15 +982,16 @@
     var statusQuoYears = format(model.statusQuoQueueClearanceYears, false);
     var dfdaYears = format(model.dfdaQueueClearanceYears, false);
     var mathSteps = [
-      [ratioText, 'what governments spend on the capacity for mass murder vs clinical trials'],
-      [formatMoney(model.militarySpendingAnnual, true), 'capacity for mass murder per year'],
-      ['× ' + treatyPercent, '= ' + formatMoney(model.treatyAnnualFunding, true) + ' for clinical trials'],
-      ['= ' + trialMultiplier, 'more trials than currently exist'],
-      [format(model.diseasesWithoutEffectiveTreatment, false), 'diseases have no treatment'],
-      ['÷ ' + format(model.newDiseaseFirstTreatmentsPerYear, false) + '/yr', 'current rate of first treatments'],
-      ['= ' + statusQuoYears + ' yrs', 'to clear the queue at this pace'],
-      [statusQuoYears + ' ÷ ' + trialMultiplier, ''],
-      ['= ' + dfdaYears + ' yrs', 'if they sign']
+      [sourceNumberHtml(offset, ratioText, 'MILITARY_TO_GOVERNMENT_CLINICAL_TRIALS_SPENDING_RATIO'), 'what governments spend on the capacity for mass murder vs clinical trials'],
+      [sourceNumberHtml(offset, formatMoney(model.militarySpendingAnnual, true), 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024'), 'capacity for mass murder per year'],
+      [sourceNumberHtml(offset, '× ' + treatyPercent, 'TREATY_REDUCTION_PCT'), '= ' + sourceNumberHtml(offset, formatMoney(model.treatyAnnualFunding, true), 'TREATY_ANNUAL_FUNDING') + ' for clinical trials'],
+      [sourceNumberHtml(offset, '= ' + trialMultiplier, 'DFDA_TRIAL_CAPACITY_MULTIPLIER'), 'more trials than currently exist'],
+      [sourceNumberHtml(offset, format(model.diseasesWithoutEffectiveTreatment, false), 'DISEASES_WITHOUT_EFFECTIVE_TREATMENT'), 'diseases have no treatment'],
+      ['÷ ' + sourceNumberHtml(offset, format(model.newDiseaseFirstTreatmentsPerYear, false) + '/yr', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR'), 'current rate of first treatments'],
+      [sourceNumberHtml(offset, '= ' + statusQuoYears + ' yrs', 'STATUS_QUO_QUEUE_CLEARANCE_YEARS'), 'to clear the queue at this pace'],
+      [sourceNumberHtml(offset, statusQuoYears, 'STATUS_QUO_QUEUE_CLEARANCE_YEARS') + ' ÷ ' +
+        sourceNumberHtml(offset, trialMultiplier, 'DFDA_TRIAL_CAPACITY_MULTIPLIER'), ''],
+      [sourceNumberHtml(offset, '= ' + dfdaYears + ' yrs', 'DFDA_QUEUE_CLEARANCE_YEARS'), 'if they sign']
     ];
     var mathHtml = '<div class="dih-arcade-math">';
     for (var i = 0; i < mathSteps.length; i++) {
@@ -544,7 +1000,9 @@
         (mathSteps[i][1] ? '<span class="dih-arcade-math-desc">' + mathSteps[i][1] + '</span>' : '') +
         '</div>';
     }
-    mathHtml += '<p class="dih-arcade-math-punch">Every day before signing: ' + format(delayDeathsPerDay(), false) + ' lives.</p></div>';
+    mathHtml += '<p class="dih-arcade-math-punch">Every day we delay disease eradication: ' +
+      sourceNumberHtml(offset, format(delayDeathsPerDay(), false), 'GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY') +
+      ' lives.</p></div>';
 
     var terrorismBarWidth = model.annualDiseaseDeaths > 0 ? model.annualTerrorismDeaths / model.annualDiseaseDeaths * 100 : 0;
     var clinicalTrialsBarWidth = model.militarySpendingAnnual > 0
@@ -553,12 +1011,12 @@
 
     var barsHtml =
       barChartHtml('KILLED PER YEAR', [
-        ['Disease', format(model.annualDiseaseDeaths, false), 100],
-        ['Terrorism', format(model.annualTerrorismDeaths, false), terrorismBarWidth]
+        ['Disease', sourceNumberHtml(offset, format(model.annualDiseaseDeaths, false), 'GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES'), 100],
+        ['Terrorism', sourceNumberHtml(offset, format(model.annualTerrorismDeaths, false), 'GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS'), terrorismBarWidth]
       ]) +
       barChartHtml('GOVERNMENT SPENDING PER YEAR', [
-        ['Capacity for mass murder', formatMoney(model.militarySpendingAnnual, false), 100],
-        ['Clinical trials', formatMoney(model.governmentClinicalTrialsSpendingAnnual, false), clinicalTrialsBarWidth]
+        ['Capacity for mass murder', sourceNumberHtml(offset, formatMoney(model.militarySpendingAnnual, false), 'GLOBAL_MILITARY_SPENDING_ANNUAL_2024'), 100],
+        ['Clinical trials', sourceNumberHtml(offset, formatMoney(model.governmentClinicalTrialsSpendingAnnual, false), 'GLOBAL_GOVERNMENT_CLINICAL_TRIALS_SPENDING_ANNUAL'), clinicalTrialsBarWidth]
       ]);
 
     overlayEl = document.createElement('div');
@@ -572,16 +1030,16 @@
       '<div class="dih-arcade-screen">' +
         '<div class="dih-arcade-skull-big">' + skullSvg() + '</div>' +
         '<div class="dih-arcade-death-count">' +
-          '<span class="dih-arcade-pts" data-dih-delay-value="since-publication">0</span>' +
+          detailNumberHtml('<span class="dih-arcade-pts" data-dih-delay-value="since-publication">0</span>', 'GLOBAL_SCOREBOARD_DEATHS_SINCE_PUBLICATION') +
         '</div>' +
-        '<p class="dih-arcade-subtitle">' + scoreUnitLine() + '</p>' +
-        '<p class="dih-arcade-death-sub">' + deathSubText() + '</p>' +
+        '<p class="dih-arcade-subtitle">' + scoreUnitLineHtml(offset) + '</p>' +
+        '<p class="dih-arcade-death-sub">' + deathSubHtml(offset) + '</p>' +
         sectionHtml(o.mathHeading, mathHtml) +
         barsHtml +
         '<section class="dih-arcade-section">' +
           '<h3 class="dih-arcade-heading">' + o.sufferingHeading + '</h3>' +
           '<div class="dih-arcade-sufferline">' +
-            '<span class="dih-arcade-suffer" data-dih-delay-value="suffering-hours-since-publication">0</span>' +
+            detailNumberHtml('<span class="dih-arcade-suffer" data-dih-delay-value="suffering-hours-since-publication">0</span>', 'GLOBAL_SCOREBOARD_SUFFERING_HOURS_SINCE_PUBLICATION') +
             '<span class="dih-arcade-suffer-unit">hours</span>' +
           '</div>' +
           '<p>' + sufferingDescText() + '</p>' +
@@ -589,16 +1047,16 @@
         '<section class="dih-arcade-section">' +
           '<h3 class="dih-arcade-heading">' + o.dollarsHeading + '</h3>' +
           '<div class="dih-arcade-sufferline">' +
-            '<span class="dih-arcade-money" data-dih-delay-value="money-since-publication">$0</span>' +
+            detailNumberHtml('<span class="dih-arcade-money" data-dih-delay-value="money-since-publication">$0</span>', 'GLOBAL_SCOREBOARD_WAR_DISEASE_MARKET_COST_SINCE_PUBLICATION') +
           '</div>' +
-          '<p>' + dollarsDescText() + '</p>' +
+          '<p>' + dollarsDescHtml(offset) + '</p>' +
         '</section>' +
         '<p class="dih-arcade-closing">' + o.closingLine + '</p>' +
         '<div class="dih-arcade-sinceopened">' + o.sinceOpenedBefore +
-          '<span class="dih-arcade-live" data-dih-delay-value="since-opened">0</span>' + o.sinceOpenedAfter +
+          detailNumberHtml('<span class="dih-arcade-live" data-dih-delay-value="since-opened">0</span>', 'GLOBAL_SCOREBOARD_DEATHS_SINCE_OPENED') + o.sinceOpenedAfter +
         '</div>' +
         '<div class="dih-arcade-ctas">' +
-          '<a class="dih-arcade-cta-primary" href="' + VOTE_URL + '" target="_blank" rel="noopener">' + o.ctaPrimary + '</a>' +
+          '<a class="dih-arcade-cta-primary" href="' + VOTE_URL + '" target="_blank" rel="noopener">' + ctaPrimaryHtml() + '</a>' +
           '<a class="dih-arcade-cta-secondary" href="' + offset + AUDIT_PAGE + '">' + o.ctaSecondary + '</a>' +
         '</div>' +
         '<p class="dih-arcade-audit">' + o.auditPre +
@@ -607,11 +1065,16 @@
       '</div>';
 
     document.body.appendChild(overlayEl);
+    overlayEl.addEventListener('click', handleParameterTriggerClick);
     overlayEl.querySelector('.dih-arcade-overlay-close').addEventListener('click', closeOverlay);
     overlayEl.querySelector('.dih-arcade-cta-primary').addEventListener('click', function() {
       emit('cta-clicked', { source: 'overlay' });
     });
     document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && parameterDialogEl && parameterDialogEl.classList.contains('dih-param-modal-visible')) {
+        closeParameterDialog();
+        return;
+      }
       if (event.key === 'Escape' && overlayEl.classList.contains('dih-arcade-overlay-visible')) {
         closeOverlay();
       }
@@ -633,6 +1096,7 @@
     var secondsOpen = overlayOpenedAt === null ? 0 : Math.round((Date.now() - overlayOpenedAt) / 1000);
     overlayEl.classList.remove('dih-arcade-overlay-visible');
     document.body.classList.remove('dih-arcade-overlay-open');
+    closeParameterDialog();
     overlayOpenedAt = null;
     emit('overlay-closed', { secondsOpen: secondsOpen });
   }
