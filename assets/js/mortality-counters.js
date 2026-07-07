@@ -24,7 +24,7 @@
 
   // Bump when this file or assets/css/scoreboard.css changes; it cache-busts
   // the injected stylesheet for embedders.
-  var WIDGET_VERSION = '6.1.0';
+  var WIDGET_VERSION = '6.1.1';
   var SCRIPT_SRC = document.currentScript && document.currentScript.src ? document.currentScript.src : '';
 
   var VARIANTS = ['instrument-panel', 'sentence', 'tab', 'scoreline', 'minimal'];
@@ -1118,12 +1118,15 @@
 
   function showCounter() {
     if (!counterEl) createCounter();
+    // createCounter() already emits bar-shown when it builds a visible bar, so
+    // only emit here on an actual hidden -> visible transition (no double-count).
+    var wasHidden = counterEl.classList.contains('dih-delay-counter-hidden');
     counterEl.classList.remove('dih-delay-counter-hidden');
     document.body.classList.add('dih-delay-counter-visible');
     setStoredDismissed(false);
     updateCounters();
     updateFabLabel();
-    emit('bar-shown', null);
+    if (wasHidden) emit('bar-shown', null);
   }
 
   function setVariant(name) {

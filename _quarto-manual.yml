@@ -535,6 +535,7 @@ format:
     css:
       - styles.css
       - book-overrides.css
+      - assets/css/scoreboard.css
     include-after-body:
       - file: assets/html/site-enhancements-loader.html
     include-in-header:

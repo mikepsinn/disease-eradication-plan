@@ -325,22 +325,24 @@ One line. You get the pinned HUD, the fullscreen math screen when a visitor clic
 <script src="https://manual.warondisease.org/assets/js/mortality-counters.js" defer></script>
 ```
 
-The script loads its own stylesheet, derives the manual's address from its own URL, fetches live parameter values, and points every number's source link back here. If your visitor's browser blocks the cross-origin fetch, the counters fall back to values baked into the script at deploy time; they tick either way.
+The script loads its own stylesheet, derives the manual's address from its own URL, and fetches live parameter values. If the parameter fetch fails, the counters fall back to values hard-coded in the script; they tick either way.
 
-Pick a different bar design with one more line (options and previews in the [configurator](https://manual.warondisease.org/assets/scoreboard-embed.html)):
+Pick a layout and a visual theme with one more line each (options and live previews in the [configurator](https://manual.warondisease.org/assets/scoreboard-embed.html)):
 
 ```html
 <meta name="dih-scoreboard-variant" content="instrument-panel">
+<meta name="dih-scoreboard-theme" content="arcade">
 ```
 
-Every interaction fires a `dih-scoreboard` CustomEvent on `document` (`bar-shown`, `bar-dismissed`, `overlay-opened`, `overlay-closed`, `cta-clicked`, each tagged with the active variant), so you can measure which design converts with whatever analytics you already run.
+Every interaction fires a `dih-scoreboard` CustomEvent on `document` (`bar-shown`, `bar-dismissed`, `overlay-opened`, `overlay-closed`, `cta-clicked`, `variant-changed`, `theme-changed`, each tagged with the active `variant` and `theme`), so you can measure which design converts with whatever analytics you already run.
 
 ### Counters Without the Bar
 
-If you want live numbers inside your own prose without our scoreboard eating the bottom of your screen, add one more meta tag and write spans wherever you want numbers:
+If you want live numbers inside your own prose without our scoreboard eating the bottom of your screen, keep the script tag and add one more meta tag, then write spans wherever you want numbers:
 
 ```html
 <meta name="dih-disable-features" content="delay-counter-hud">
+<script src="https://manual.warondisease.org/assets/js/mortality-counters.js" defer></script>
 
 <p>Since the plan went public,
 <span data-dih-delay-value="since-publication">counting</span>

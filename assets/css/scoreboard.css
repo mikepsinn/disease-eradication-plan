@@ -1113,6 +1113,16 @@ body.quarto-dark .delay-cost-callout {
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+/* A "running bill" needs its three odometers. The base 991px rule hides
+   suffer/money for the other layouts; restore them for tab down to the phone
+   breakpoint, where tab collapses to one number like everything else. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .dih-arcade-variant-tab .dih-arcade-suffer-block,
+    .dih-arcade-variant-tab .dih-arcade-money-block {
+        display: flex;
+    }
+}
+
 /* scoreline: DISEASE vs HUMANITY 0, caption row beneath, full-width CTA. */
 .dih-arcade-variant-scoreline {
     flex-wrap: wrap;
