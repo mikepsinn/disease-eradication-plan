@@ -29,12 +29,12 @@ tags:
 
 | Form field | Draft answer / status |
 |---|---|
-| Your name / contact person / email | Mike P. Sinn, m@warondisease.org |
+| Your name / contact person / email | Mike P. Sinn, [m@warondisease.org](mailto:m@warondisease.org) |
 | Round | Human Self-Enhancement and Empowerment (HSEE) |
 | Fairness / freedom questions | Select "No" for both if applying to HSEE, per the form instruction |
 | Legal entity | Non-profit / charity, 501(c)(3) or equivalent |
 | Long-form attachment | This QMD is the source draft; before submission, create a viewable Google Doc and upload a PDF copy |
-| Organization name / website / country | International Campaign to End War and Disease; warondisease.org; United States |
+| Organization name / website / country | International Campaign to End War and Disease; [warondisease.org](https://warondisease.org); United States |
 | Org chart | Use the written org chart in Section A or export a simple diagram/PDF |
 | Compensation information | One planned campaign coordinator at ~$6,200/month for 24 months; counsel and infrastructure are contractor line items |
 | Plan for impact | Use the one-sentence summary in Section A or the HSEE answer in Section H |
@@ -48,9 +48,9 @@ tags:
 | One-page budget | Use Section C as source; create a viewable one-page budget link and PDF before submission |
 | Matching pledge | No, simpler. Revisit in a later round after there is a public donor pipeline |
 | Speculation Grant amount | $50,000 |
-| Ways to reach | m@warondisease.org; add phone only if desired |
+| Ways to reach | [m@warondisease.org](mailto:m@warondisease.org); add phone only if desired |
 | Encouragement | No |
-| Links of interest | warondisease.org, [papers index](../papers.qmd), [studies.dfda.earth](https://studies.dfda.earth), or the rendered 1% Treaty impact page |
+| Links of interest | [warondisease.org](https://warondisease.org), [papers index](../papers.qmd), [studies.dfda.earth](https://studies.dfda.earth), or the rendered 1% Treaty impact page |
 
 ---
 
@@ -62,20 +62,21 @@ Use this section when filling out the Google Form. For upload fields, type `N/A`
 |---|---|
 | Your name | Mike P. Sinn |
 | Contact person | Mike P. Sinn |
-| Contact email | m@warondisease.org |
+| Contact email | [m@warondisease.org](mailto:m@warondisease.org) |
 | Round | Human Self-Enhancement and Empowerment |
 | Fairness | No |
 | Freedom | No |
 | Legal entity | Non-profit / charity, 501(c)(3) or equivalent |
 | Link to long-form attachment | Paste public Google Doc link if available; otherwise `N/A` and upload PDF |
 | Organization name | International Campaign to End War and Disease |
-| Organization website | https://warondisease.org |
+| Organization website | [warondisease.org](https://warondisease.org) |
 | Organization country | United States |
 | Link to latest org chart | Paste public link if available; otherwise `N/A` and upload PDF |
+| PDF copy of latest org chart | Upload exported org chart PDF |
 | Tax ID of receiving charity | 41-2555651 |
 | Name of receiving charity | Accelerated Medicine Foundation Inc |
 | Country of receiving charity | United States |
-| Link verifying charity status | Paste IRS determination letter link or IRS Tax Exempt Organization Search screenshot/link |
+| Link verifying charity status | [ProPublica Nonprofit Explorer profile](https://projects.propublica.org/nonprofits/organizations/412555651) |
 | Agreement with receiving charity | Yes; my organization is the receiving charity, so no agreement is necessary |
 | Overhead reduction policy | Yes; my receiving charity has fewer than 100 employees, so this does not apply to me |
 | Start date | September 1, 2026 |
@@ -83,17 +84,31 @@ Use this section when filling out the Google Form. For upload fields, type `N/A`
 | Base request amount | $400,000 |
 | Currency | USD |
 | Budget | Paste one-page public budget link if available; otherwise `N/A` and upload PDF |
+| PDF copy of budget | Upload one-page budget PDF |
 | Available funds | $0 unrestricted cash available for this spending plan |
 | Minimum grant amount | $150,000 |
 | Ambitious request amount | $850,000 |
-| Ambitious spending plan | `N/A` if no separate PDF is uploaded; otherwise paste public budget link |
+| Ambitious spending plan | Use the same one-page budget link; it includes the $850,000 ambitious coalition-scale line |
+| PDF copy of ambitious spending plan | Upload the same one-page budget PDF if the form asks for one |
 | Maximum grant amount | $1,000,000 |
 | Public fundraising page | N/A |
 | Matching pledge | No, I don't want to request a Matching Pledge (simpler) |
+| Matching rate / maximum standard grant / outside-donation deadline | Skip; not required because no Matching Pledge is requested |
+| Donation sources to exclude / other matching comments | Skip; not required because no Matching Pledge is requested |
+| Key Individual #1 name | Mike P. Sinn |
+| Key Individual #1 title / relationship | Founder & President; applicant and project lead |
+| Key Individual #1 contribution | Created the public manual, parameterized models, SFF application, papers, dFDA precursor platform, and campaign strategy. Responsible for application, modeling, outreach design, and execution until the campaign coordinator is hired. |
+| Key Individual #1 contact | [m@warondisease.org](mailto:m@warondisease.org) |
+| Key Individuals #2-#4 | Leave blank unless board members consent to direct outreach |
 | Matching pledge documentation | N/A; I am NOT opting in to the Matching Pledge Program |
 | Permission to discuss | Yes |
 | Speculation Grant amount | $50,000 |
 | Expedited funding or Matching Pledge | Expedited funding (normal Speculation Grant) |
+| Data privacy and LLM usage policy | Yes, I acknowledge |
+| Variance in funding amount | Yes, I acknowledge |
+| Full application disclosure to reviewers | Yes; I acknowledge and grant this sharing permission to the SFF Advisors |
+| Anonymized numerical evaluation disclosure | Yes; I acknowledge and grant this sharing permission to the SFF Advisors and those they enlist for help |
+| Functional link confirmation | Select yes only after the final link/PDF upload check |
 | Encouragement | No |
 | Disclosure permissions | Choose "Yes" for fact of application, basic funding request, numerical evaluation, and written evaluation disclosure |
 
@@ -103,7 +118,7 @@ Use this section when filling out the Google Form. For upload fields, type `N/A`
 
 **Confidence in basic spending plan:** I am about 85% confident the $400,000 base plan would be used as described. The coordinator, counsel, share purchases, and registry costs are modular. If prices or legal requirements differ, we would reduce the number of shares distributed before reducing the core legal package or outreach work.
 
-**Available funds context:** The project has been self-funded to date. Existing assets include the public manual, papers, parameter engine, and studies.[dfda](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025].earth precursor platform, but there is no unrestricted cash reserve dedicated to this campaign budget.
+**Available funds context:** The project has been self-funded to date. Existing assets include the public manual, papers, parameter engine, and [studies.dfda.earth](https://studies.dfda.earth) precursor platform, but there is no unrestricted cash reserve dedicated to this campaign budget.
 
 **Partial fulfillment impact:** At $150,000, we would run the legally conservative version: finalize the demand-letter and share-gifting package, hire part-time coordination, contact the first nonprofit cohort, and distribute fewer shares. We would postpone broader survey infrastructure, multilingual outreach, and larger-scale share distribution until follow-on funding.
 
@@ -125,16 +140,18 @@ Use this section when filling out the Google Form. For upload fields, type `N/A`
 
 **Reason for expedition:** A Speculation Grant would let us finish the legal demand-letter package, create the org chart and budget attachments, and begin nonprofit outreach while the HSEE round is being evaluated. Early funding mainly buys time: counsel review, coordination, and first-share distribution.
 
-**Ways to reach you:** Email is best: m@warondisease.org. If a Speculation Grantor wants a call, please email proposed times and I will respond quickly.
+**Ways to reach you:** Email is best: [m@warondisease.org](mailto:m@warondisease.org). If a Speculation Grantor wants a call, please email proposed times and I will respond quickly.
 
-**Link #1:** https://warondisease.org
+**Link #1:** [warondisease.org](https://warondisease.org)
 **Link #1 description:** Public manual for the 1% Treaty, decentralized FDA, governance, and campaign mechanism. The application points into this site for the full theory of change, parameterized models, and implementation chapters.
 
-**Link #2:** https://manual.warondisease.org/knowledge/papers.qmd
+**Link #2:** [papers index](https://manual.warondisease.org/knowledge/papers.html)
 **Link #2 description:** Papers and publications index collecting the treaty impact model, decentralized FDA specification and impact papers, incentive-alignment bonds, optimal budget/governance work, and related technical writeups.
 
-**Link #3:** https://studies.dfda.earth
+**Link #3:** [studies.dfda.earth](https://studies.dfda.earth)
 **Link #3 description:** Precursor platform for decentralized health-data collection and causal inference. It demonstrates the applicant's prior work on patient-centered evidence generation, which the proposed dFDA generalizes into a pragmatic-trial allocation system.
+
+**Form fields to skip intentionally:** The for-profit section is not applicable because the receiving entity is a 501(c)(3). Do not add EOS Inc. as a second applicant on this form; EOS is only a separate optional investment vehicle for funders who explicitly prefer that route. The fairness and freedom explanation paragraphs are skipped because the HSEE instructions say to select "No" for those fields when applying to a Theme Round. Matching Pledge details are skipped because this submission requests the simpler standard grant path. Feedback can be left blank.
 
 **Anything else:** One useful way to read this application is as a leverage test. The base request is $400,000 against $27.2B/year of treaty funding, about 68,000:1 in first-year public funding, or $21.7B/year in direct trial subsidies, about 54,000:1. If this grant has even a one-in-50,000 chance of being pivotal for the first treaty year, it is near break-even on redirected trial dollars before counting health value. The full model uses a $1B campaign baseline; this asks whether the share-backed coalition path is cheaper.
 
@@ -144,7 +161,7 @@ Submit this after the rolling form, because the supplemental form asks for the S
 
 | HSEE field | Answer |
 |---|---|
-| Email | m@warondisease.org |
+| Email | [m@warondisease.org](mailto:m@warondisease.org) |
 | SFF ApplicationID | Paste from the rolling-form confirmation email |
 | Your name | Mike P. Sinn |
 | Organization | International Campaign to End War and Disease |
@@ -155,18 +172,18 @@ Submit this after the rolling form, because the supplemental form asks for the S
 
 **12-month HSEE milestones:** Within 12 months, we expect to complete securities counsel review, publish the shareholder-demand package, build the first public survey/registry workflow, contact at least 1,000 nonprofits, secure 100-200 campaign endorsements if conversion rates match the landmine/ICAN-style outreach model, and deliver the first donated-share demand letters to military-contractor boards.
 
-**Past HSEE-related projects:** Mike built the open-source precursor to the decentralized FDA at studies.dfda.earth, collecting about 12 million data points from over 10,000 people and applying causal inference to quantify effects of foods, drugs, and behaviors on health conditions. The current dFDA and 1% Treaty work generalize that patient-centered evidence system to pragmatic trials, healthspan, and AI-assisted collective coordination.
+**Past HSEE-related projects:** Mike built the open-source precursor to the decentralized FDA at [studies.dfda.earth](https://studies.dfda.earth), collecting about 12 million data points from over 10,000 people and applying causal inference to quantify effects of foods, drugs, and behaviors on health conditions. The current dFDA and 1% Treaty work generalize that patient-centered evidence system to pragmatic trials, healthspan, and AI-assisted collective coordination.
 
 **Equitable distribution:** The treaty design targets universal access by funding pragmatic trials through public, auditable allocation rather than donor-controlled steering. The survey/registry asks people which diseases and outcomes should receive priority, and the allocation system is designed so capital buys no governance control. The point is not premium enhancement for a small class. It is a larger evidence engine for treatments that can reach everyone.
 
 ## A. Organization / project
 
 **Name:** International Campaign to End War and Disease (a project of Accelerated Medicine Foundation Inc)
-**Website:** warondisease.org  (book: the manual "How to End War and Disease")
-**Primary contact:** Mike P. Sinn (m@warondisease.org)
+**Website:** [warondisease.org](https://warondisease.org)  (book: the manual "How to End War and Disease")
+**Primary contact:** Mike P. Sinn ([m@warondisease.org](mailto:m@warondisease.org))
 **Country of operation / incorporation:** United States
 **Legal status:** Accelerated Medicine Foundation Inc is a Wyoming 501(c)(3) public charity under IRC 170(b)(1)(A)(vi), EIN 41-2555651. IRS exemption effective November 12, 2025; determination letter dated March 25, 2026.
-**Org chart / responsibility summary:** Mike P. Sinn is Founder & President and owns application, strategy, modeling, and campaign execution until the coordinator is hired. Board: Kate Botko. Treasurer: Vladimir Kolev. Grant-funded roles: campaign coordinator, securities counsel, and survey/registry infrastructure contractor. *(VERIFY board titles before submitting the org chart.)*
+**Org chart / responsibility summary:** Mike P. Sinn is Founder & President and owns application, strategy, modeling, and campaign execution until the coordinator is hired. Directors: Mike P. Sinn, Kathryn Bortko, and Vladimir Kolev. Officers: Mike P. Sinn, President; Kathryn Bortko, Secretary; Vladimir Kolev, Treasurer. Grant-funded roles: campaign coordinator, securities counsel, and survey/registry infrastructure contractor.
 
 **One-sentence summary:**
 We use shareholder rights to redirect the military-industrial complex's lobbying power toward a [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] that redirects {{< var treaty_annual_funding >}}/year of military spending into subsidized pragmatic clinical trials. This multiplies global trial capacity {{< var dfda_trial_capacity_multiplier >}} and compresses the disease-treatment backlog from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
@@ -266,7 +283,7 @@ Every dollar maps to a countable output: organizations contacted, endorsements, 
 
 ## D. Track record / evidence we can execute
 
-The complete plan is written, parameterized, and public: a book-length manual ("How to End War and Disease") where every number links to its own derivation, data source, and 95% confidence interval (warondisease.org).
+The complete plan is written, parameterized, and public: a book-length manual ("How to End War and Disease") where every number links to its own derivation, data source, and 95% confidence interval ([warondisease.org](https://warondisease.org)).
 
 Each mechanism has already worked at least once:
 
@@ -283,7 +300,7 @@ Each mechanism has already worked at least once:
 - Foresight Institute Fellow.
 - Background: electrical engineering; invented a power-line modem; 10 years operating and then managing an industrial testing laboratory, performing root-cause failure analysis and building laboratory information management systems. That is a career spent finding out why complex systems fail and building the data infrastructure that proves it, which is this project at civilizational scale: root-cause analysis of why cures don't get found, and the information management system for the trials that find them.
 
-Current campaign traction: no referendum signatures or endorsing organizations are claimed in this application yet; this grant funds the first formal outreach wave. Shipped assets include the public manual, the public [papers and publications index](../papers.qmd), the parameter engine, the studies.dfda.earth precursor platform, and draft shareholder-demand / coalition infrastructure.
+Current campaign traction: no referendum signatures or endorsing organizations are claimed in this application yet; this grant funds the first formal outreach wave. Shipped assets include the public manual, the public [papers and publications index](../papers.qmd), the parameter engine, the [studies.dfda.earth](https://studies.dfda.earth) precursor platform, and draft shareholder-demand / coalition infrastructure.
 
 ---
 
@@ -303,7 +320,7 @@ Separate from the grant. Earth Optimization Services Inc. is a Berkshire-model h
 ## F. Budget & funding
 
 **Current annual budget:** Approximately $0; self-funded to date.
-**Current funding sources / runway:** None. The book, the papers, the parameter engine, and the studies.dfda.earth platform were built self-funded. This application is the project's first institutional funding request.
+**Current funding sources / runway:** None. The book, the papers, the parameter engine, and the [studies.dfda.earth](https://studies.dfda.earth) platform were built self-funded. This application is the project's first institutional funding request.
 **Concurrent fundraising / other funders:** None listed in this application; self-funded to date.
 **Amount requested from SFF:** $400,000 grant for the 24-month HSEE campaign in Section F. Minimum: $150,000. Ambitious request: $850,000. Maximum useful grant: $1,000,000. Speculation Grant request: $50,000.
 
@@ -311,7 +328,7 @@ Separate from the grant. Earth Optimization Services Inc. is a Berkshire-model h
 
 ## G. Administrative
 
-**Key individuals / references:** Mike P. Sinn, Founder & President, m@warondisease.org. Add up to three other key individuals only if Mike wants SFF reviewers to contact board members, advisors, or collaborators directly.
+**Key individuals / references:** Mike P. Sinn, Founder & President, [m@warondisease.org](mailto:m@warondisease.org). Add up to three other key individuals only if Mike wants SFF reviewers to contact board members, advisors, or collaborators directly.
 **Information-sharing / disclosure preference:** Most open option available. Transparency is the project's whole thesis (every parameter public and clickable), so default to the maximum-disclosure setting SFF offers.
 **Matching Pledge Program:** No for this submission. The simpler standard-grant path is cleaner because there is no public donor pipeline yet; revisit matching after the campaign has outside donors to match.
 
@@ -343,9 +360,9 @@ We think this is the most cost-effective way to avert disability-adjusted life y
 - [ ] Round selected as Human Self-Enhancement and Empowerment
 - [ ] Submit HSEE supplemental after the rolling form returns an SFF Application ID
 - [ ] Create viewable Google Doc long-form attachment and upload frozen PDF
-- [ ] Create/share org chart link or PDF
+- [ ] Create/share org chart link or PDF from Section A
 - [ ] Create/share one-page budget link and PDF from Section C
-- [ ] Attach IRS determination letter or IRS charity-search screenshot for EIN 41-2555651
+- [ ] Attach IRS determination letter PDF for EIN 41-2555651 from `E:\code\institute-for-accelerated-medicine\legal\compliance\iam-irs-nonprofit-approval-letter.pdf`; public status link is [ProPublica Nonprofit Explorer profile](https://projects.propublica.org/nonprofits/organizations/412555651)
 - [ ] Use minimum $150,000, base $400,000, ambitious $850,000, maximum $1,000,000, Speculation Grant $50,000
 - [ ] Matching Pledge marked N/A
 - [ ] **All `{{< var >}}` shortcodes replaced with rendered numbers from the live site** (they will not render in a Google Form)
@@ -353,4 +370,4 @@ We think this is the most cost-effective way to avert disability-adjusted life y
 - [ ] Verify the post-WWII NIH figures ($3M→$50M, 500% growth, Salk/DNA/Framingham dates) against references.bib; add citations if missing
 - [ ] Confirm with securities counsel: share-gifting mechanics (nonprofit as shareholder of record), demand-letter template, and that grant funds may purchase shares for charitable distribution
 - [ ] Return language checked: every instance says "projected/modeled," none says "guaranteed/will return"
-- [ ] Key individuals + disclosure preference set
+- [ ] Key Individual #1 set to Mike; add board members only if they consent to direct outreach
