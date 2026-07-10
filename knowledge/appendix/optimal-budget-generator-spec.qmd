@@ -88,7 +88,7 @@ Unlike marginal-return frameworks that ask "where should we invest the next doll
 
 The framework combines two evidence sources: (1) **diminishing returns modeling** from cross-country dose-response studies, and (2) **cost-effectiveness threshold analysis** from health economics. The **Budget Impact Score (BIS)** measures our *confidence* in each category's OSL estimate based on the quality and quantity of causal evidence from the econometric literature.
 
-The result is a gap analysis showing which categories are underfunded relative to evidence-based optimal levels, enabling systematic reallocation from overinvestment to underinvestment. Applied to the US federal budget, the framework identifies pragmatic clinical trials as the most severely underinvested category (9,900% below optimal with {{< var dfda_roi_rd_only >}}:1 benefit-cost ratio), followed by vaccinations, basic research, and early childhood education.
+The result is a gap analysis showing which categories are below evidence-based optimal levels, enabling systematic reallocation from overinvestment to underinvestment. Applied to the US federal budget, the framework identifies pragmatic clinical trials as the most severely underinvested category (9,900% below optimal with {{< var dfda_roi_rd_only >}}:1 benefit-cost ratio), followed by vaccinations, outcome-funded R&D, and early childhood education.
 
 **Scale note.** If budget allocation is the core bottleneck, the upside from fixing it is civilization-scale. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Over 20 years, the [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This specification focuses on the allocation layer of that plan; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
 
@@ -169,7 +169,7 @@ Current budget allocation follows a process dominated by:
 
 1. **Lobbying intensity**: Categories with organized beneficiaries (weapons manufacturers, agricultural lobbies) receive disproportionate funding regardless of evidence
 2. **Historical inertia**: This year's budget is last year's budget plus a percentage, not a fresh optimization
-3. **Visible vs. invisible beneficiaries**: Programs with identifiable beneficiaries (veterans) outcompete programs with diffuse beneficiaries (basic research)
+3. **Visible vs. invisible beneficiaries**: Programs with identifiable beneficiaries (veterans) outcompete programs with diffuse beneficiaries (clinical trials, vaccinations)
 4. **Political salience**: Crises drive spending regardless of cost-effectiveness (terrorism vs. air pollution)
 5. **Zero-sum framing**: Budget debates treat all categories as competing rather than asking which ones are at optimal levels
 
@@ -620,7 +620,7 @@ $$
 \text{Priority} = |\text{Gap}| \times \text{BIS} = \$49.5B \times 0.90 = 44.6
 $$
 
-Among categories requiring increased investment, this is the highest priority score, exceeding basic research (31.5), vaccinations (25.7), and early childhood (17.0). Military spending has a larger absolute priority score (195.5) due to its massive gap, but represents overinvestment requiring reduction.
+Among categories requiring increased investment, this is the highest priority score, exceeding outcome-funded R&D (31.5), vaccinations (25.7), and early childhood (17.0). Military spending has a larger absolute priority score (195.5) due to its massive gap, but represents overinvestment requiring reduction.
 
 ## Cost-Effectiveness Threshold Analysis
 
@@ -768,7 +768,7 @@ The following uses the same illustrative data from the dashboard example above. 
 | Category | Current | OSL | Gap | BIS | Inc | Hlth | Priority | Action |
 |----------|---------|-----|-----|-----|-----|------|----------|--------|
 | **Pragmatic trials** | $0.5B | $50B | +$49.5B | 0.90 | ++ | +++ | **44.6** | **Scale 100x** |
-| Basic research | $45B | $90B | +$45B | 0.70 | ++ | ++ | 31.5 | Increase |
+| Outcome-funded R&D | $45B | $90B | +$45B | 0.70 | ++ | ++ | 31.5 | Increase |
 | Vaccinations | $8B | $35B | +$27B | 0.95 | + | +++ | 25.7 | Increase |
 | Early childhood | $50B | $70B | +$20B | 0.85 | +++ | + | 17.0 | Increase |
 | Military | $850B | $459B | -$391B | 0.50 | − | − | 195.5 | **Decrease** |
@@ -776,7 +776,7 @@ The following uses the same illustrative data from the dashboard example above. 
 
 *Inc = effect on real after-tax median income growth. Hlth = effect on median healthy life years. Scale: +++ strong, ++ moderate, + weak, − negative.*
 
-**Reallocation plan**: Cut military discretionary (-$391B) and agricultural subsidies (-$25B) to fund pragmatic clinical trials (+$49.5B), basic research (+$45B), vaccinations (+$27B), and early childhood (+$20B). Pragmatic trials have the highest priority score among positive-gap categories due to extreme underinvestment combined with strong evidence, and they improve both welfare metrics.
+**Reallocation plan**: Cut military discretionary (-$391B) and agricultural subsidies (-$25B) to fund pragmatic clinical trials (+$49.5B), outcome-funded R&D (+$45B), vaccinations (+$27B), and early childhood (+$20B). Pragmatic trials have the highest priority score among positive-gap categories due to extreme underinvestment combined with strong evidence, and they improve both welfare metrics.
 
 ## Multi-Unit Reporting
 
@@ -1217,7 +1217,7 @@ This appendix applies the OBG methodology to the US discretionary budget as an i
 
 1. **Extreme underinvestment in pragmatic trials**: At 9,900% below OSL with {{< var dfda_roi_rd_only >}}:1 BCR, this is the single largest misallocation in the federal budget (see Section 6 for full derivation)
 2. **Overinvestment in military spending**: Military spending is ~$391B (46%) above OSL estimates based on cross-country benchmarking
-3. **Underinvestment in research and prevention**: Vaccinations, basic research, and health research sit far below evidence-optimal levels
+3. **Underinvestment in outcomes**: Vaccinations, outcome-funded R&D, and health research sit far below evidence-optimal levels
 4. **Negative-return spending**: Agricultural subsidies produce negative welfare effects per the cost-effectiveness literature
 5. **Reallocation potential**: The direction of reallocation runs from military and subsidies toward research, health, and education
 

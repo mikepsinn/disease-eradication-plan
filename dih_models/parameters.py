@@ -6124,17 +6124,17 @@ POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST = Parameter(
     source_ref=ReferenceID.POLITICAL_DYSFUNCTION_TAX_PAPER_2025,
     source_type="external",
     confidence="low",
-    description="Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). "
+    description="Annual opportunity cost from outcome-blind research allocation. "
                 "Human Genome Project: $3.8B cost, $796B-1T impact (141:1 ROI). "
                 "Fusion DEMO plant: $5-10B could solve energy/climate permanently. "
-                "AI safety: <5% of capabilities spending despite existential stakes. "
+                "Current system funds inputs (grants, process) rather than outcomes (cures, working reactors). "
                 "Reallocating $200B from military waste at 20x multiplier = $4T foregone growth.",
-    display_name="Global Science Opportunity Cost",
+    display_name="Global R&D Misallocation Cost",
     unit="USD",
     distribution=DistributionType.LOGNORMAL,
     confidence_interval=(2_000_000_000_000, 10_000_000_000_000),
     std_error=2_000_000_000_000,
-    keywords=["science", "R&D", "opportunity cost", "global", "fusion", "AI safety"],
+    keywords=["science", "R&D", "opportunity cost", "global", "fusion", "misallocation"],
     latex_symbol=r"O_{science}",
 )
 
@@ -6284,7 +6284,7 @@ POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL = Parameter(
     source_type="calculated",
     confidence="low",
     description="Total global opportunity cost from governance failures: "
-                "health innovation delays ($34T), underfunded science ($4T), "
+                "health innovation delays ($34T), outcome-blind R&D allocation ($4T), "
                 "lead poisoning ($6T), migration restrictions ($57T). "
                 "Sum: $101T annually in unrealized potential.",
     display_name="Global Opportunity Cost Total",
