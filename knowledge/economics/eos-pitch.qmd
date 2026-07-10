@@ -284,10 +284,10 @@ YOU PAY {{< var global_government_expense_annual >}} A YEAR FOR HEALTH AND WEALT
 
 ---
 
-## Disease Is Ethyl Corp at Civilizational Scale
+## The Military-Industrial Complex Is Ethyl Corp at Civilizational Scale
 
 ```
-DISEASE IS ETHYL CORP AT CIVILIZATIONAL SCALE
+THE MILITARY-INDUSTRIAL COMPLEX IS ETHYL CORP AT CIVILIZATIONAL SCALE
 
   4 billion sick right now.
   550 million full-time caregivers.
@@ -330,10 +330,10 @@ DISEASE IS ETHYL CORP AT CIVILIZATIONAL SCALE
 
 ---
 
-## The Same Mistake, Now with Nuclear Weapons
+## And They Built 122 Apocalypses for One Civilization
 
 ```
-THE SAME MISTAKE, NOW WITH NUCLEAR WEAPONS
+AND THEY BUILT 122 APOCALYPSES FOR ONE CIVILIZATION
 
   {{< var global_warhead_count_nounit >}} nuclear warheads.
   ~{{< var nuclear_winter_warhead_threshold_nounit >}} needed to end civilization.
@@ -376,22 +376,13 @@ THEIR SHAREHOLDERS WOULD BE RICHER TOO
 ```
 WHO LOSES?
 
-  Nobody. That is the strange part. Go down the list.
+  Nobody. That is the strange part.
 
-  - The weapons companies keep 99% of the budget, and their
-    stock rises as the whole economy grows.
-  - Their shareholders end up richer. So do their employees,
-    who also live longer.
-  - Patients get the cures. Taxpayers stop paying for
-    {{< var nuclear_winter_spare_apocalypses_nounit >}} spare apocalypses.
-  - Even the bought politicians get offered a better-paying
-    deal than the one they have now.
-
-  Everyone is handed a raise. The only way to lose is to turn
-  it down, and that is a decision, not a casualty.
+  Everyone is handed a raise. The only way to lose
+  is to turn it down.
 ```
 
-> Nobody has to lose. Go down the list. The weapons companies keep ninety-nine percent of their budget, and their stock goes up, because a bigger economy buys more of everything, theirs included. Their shareholders get richer. Their own employees stop dying of the diseases nobody is funding. Patients get cured. Taxpayers stop paying for the hundredth apocalypse. Even the politicians who take the lobbying money get offered a better deal, because lobbying for policies that work pays more than lobbying for policies that don't. The only person who loses is the one who is handed a raise and says no.
+> The weapons companies keep 99% of the budget. You are asking for 1%. Their stock rises because the whole economy grows. Their shareholders end up richer. Their employees live longer because the diseases that were going to kill them get cured. The patients obviously win. The taxpayers stop paying for {{< var nuclear_winter_spare_apocalypses_nounit >}} spare apocalypses they did not need. Even the politicians who are currently bought get offered a better deal: campaign contributions from a growing economy plus they get to take credit for curing diseases, which is popular with voters. Every single group ends up better off. The only person who loses is the one who is handed a raise and says no.
 
 ---
 
@@ -419,17 +410,11 @@ WWII: THE CUT THAT CAUSED THE BIGGEST BOOM
 ```
 THE LEGAL MECHANISM
 
-  By law, a board must act in its shareholders'
-  financial interest.
+  fiduciary duty -> act in shareholders' interest
+  dead shareholder -> net worth $0
+  waste: {{< var political_dysfunction_global_opportunity_cost_total >}} / yr on policies that kill them
 
-  A dead shareholder is worth nothing.
-
-  Disease kills the customers, the workers, and the
-  shareholders themselves. Government wastes about
-  {{< var political_dysfunction_global_opportunity_cost_total >}} a year that could be curing it.
-
-  Sitting on the waste is the breach. A legal argument, not a moral
-  one, which is the only kind a board is contractually allowed to hear.
+  the breach is sitting on the waste.
 ```
 
 > A board is legally required to act in its shareholders' financial interest. A dead shareholder is worth nothing. Disease kills the customers, the workers, and the shareholders themselves, while the government wastes about {{< var political_dysfunction_global_opportunity_cost_total >}} a year that could be curing it. Point a sliver of that waste at clinical trials and every shareholder ends up richer and alive to enjoy it.
@@ -462,15 +447,10 @@ THE LEGAL MECHANISM
 ```
 BUY THE SHARES, REDIRECT THE LOBBYISTS
 
-  Earth Optimization Services buys shares in the
-  companies whose lobbying controls the budget.
+  buy shares -> shareholder rights -> board seats
+  -> redirect lobbyists -> better policy
 
-  It sends love letters, using the ordinary legal tools
-  every shareholder already has: letters the board is
-  required to read, and votes to put new people on the board.
-
-  Then it tells their lobbyists: here are the policies
-  that actually make you richer.
+  using tools every shareholder already has.
 ```
 
 > Earth Optimization Services purchases shares in the corporations that currently spend {{< var us_total_lobbying_annual >}} lobbying your government. Then it tells their lobbyists: here are the policies that actually make your shareholders richer. We know which ones work because we have data from hundreds of countries over hundreds of years. The lobbyists do what lobbyists do, except now they are lobbying for policies that work.
@@ -505,11 +485,6 @@ WHAT IT COSTS
 
   EVERY industry that owns the government at once:
      {{< var full_corporate_takeover_cost_activist >}}  ({{< var full_corporate_takeover_cost_activist_pct_investable_assets >}})
-
-  You cannot even BUY most of these companies.
-  Zuckerberg, the Google founders, and Ellison
-  kept the votes for themselves.
-  So you do not buy them. You out-vote them.
 ```
 
 > The military-industrial complex is the one part you can actually buy outright, and it's cheap. Enough stock to win board seats costs {{< var defense_takeover_cost_activist >}}. That is {{< var defense_takeover_cost_activist_pct_investable_assets >}} of all the money invested on the planet. Enough to win board seats in every industry that owns your government, weapons, pharma, tech, insurance, oil, all at once, costs {{< var full_corporate_takeover_cost_activist >}}. That is {{< var full_corporate_takeover_cost_activist_pct_investable_assets >}} of all the money in the world. And you couldn't buy most of these companies if you tried. Zuckerberg and the Google founders and Larry Ellison kept the votes for themselves. So you don't buy them. You out-vote them.
@@ -521,22 +496,17 @@ WHAT IT COSTS
 ```
 WHERE THE PROFIT COMES FROM
 
-  Warren Buffett's whole career in one picture:
-  buy a company with poor management, put in better
-  management, keep the difference.
-
       better management  --.   sell high (worth more)
                            |
                            +-- the profit is this gap
                            |
       poor management    --'   buy low (cheap)
 
-  Earth Optimization Services does the same thing, but bigger.
-  It fixes the GOVERNANCE, not the management. Same companies:
+  Same thing, bigger:
 
       optimized governance  --.   worth a lot more after
                               |
-                              +-- same gap, worth {{< var political_dysfunction_global_opportunity_cost_total >}} a year
+                              +-- gap: {{< var political_dysfunction_global_opportunity_cost_total >}} / yr
                               |
       poor governance       --'   buy in here, cheap
 ```
@@ -545,9 +515,7 @@ WHERE THE PROFIT COMES FROM
 >
 > The thing that decides how big the economy is? Governance. You can test this in your head. Take everything you own and move it to Somalia. Same stocks, same buildings. It's worth almost nothing. Warlords eat most of it. Move it to the United States. Worth orders of magnitude more. The only thing that changed was who runs the place.
 >
-> What's it worth under a government better than this one? That gap is {{< var political_dysfunction_global_opportunity_cost_total >}} a year. That is the bill for running the policies in place instead of the ones that work.
->
-> EOS does not fix one company. It fixes the country all the companies are in. When the country improves, every stock moves. You are not picking winners. You are fixing the room they all sit in. Nobody has to be nice. The index funds are legally required to vote for whatever makes their portfolio worth more. Engine No. 1 did it with 0.02% of ExxonMobil and a spreadsheet. Same spreadsheet. Pointed at the companies whose lobbyists write your laws. The waste on it is {{< var political_dysfunction_global_opportunity_cost_total >}} a year.
+> What's it worth under a government better than this one? That gap is {{< var political_dysfunction_global_opportunity_cost_total >}} a year. You are not picking winners. You are fixing the room they all sit in.
 
 ---
 
@@ -625,17 +593,8 @@ THE FLYWHEEL: WHY IT SPEEDS UP
 ```
 MONEY DOESN'T BUY VOTES
 
-  If this works, EOS ends up holding a lot of power.
-  Concentrated power has a terrible track record.
-
-  Every genocide and every unjust war was started by a
-  small group of people who had the power to start it.
-  None were ever started by a public vote.
-
-  So here the civic votes are not for sale.
-  One per human.
-  Your money buys a share of the profit,
-  not extra votes or control of EOS.
+  money buys profit. not votes. not control.
+  one civic vote per human. not for sale.
 ```
 
 > If this company actually pulls it off and ends up controlling the companies that control the governments, it becomes very powerful. And concentrated power has a terrible track record. Every genocide, every unjust war, was started by some small group that had the power to start it. None of them were ever started by a public vote. People do not vote to be marched into a famine. So the rule here is simple: your money buys you a share of the profit, not extra civic votes or corporate control. The decisions get made one civic vote per human, and those votes are not for sale. You cannot buy the steering wheel, no matter how many shares you own.
@@ -701,7 +660,7 @@ WHAT THE FIRST MONEY BUYS
 >
 > I got my degree in electrical engineering and physics. Then I went to work at an industrial testing laboratory for about ten years doing root cause failure analysis. A turbine explodes, a power plant fails, a bridge cracks. You get the data, you find the actual cause, you write the report. You do not write the cause that makes the client feel better. You write the one the evidence points to.
 >
-> Then I got a bunch of diseases. Psoriasis, arthritis, depression, and some gross stuff with my intestines that I will not describe because you are possibly eating. I wanted to do a root cause failure analysis on myself. So I built a sort of a decentralized FDA platform and apps that collected about 12 million data points on symptoms of illness and food and drug intake from about 10,000 people. Then I applied causal inference to determine the change from baseline in symptom severity following administration of various foods and drugs, and generated outcome labels for thousands of foods and drugs and treatment rankings. You can see them at [studies.dfda.earth](https://studies.dfda.earth).
+> Then I got a bunch of diseases. Psoriasis, arthritis, depression, and some gross stuff with my intestines that I will not describe because you are possibly eating. I wanted to do a root cause failure analysis on myself. So I built a sort of a decentralized FDA platform and apps that collected about 12 million data points on symptoms of illness and food and drug intake from about 10,000 people. Then I applied causal inference to determine the change from baseline in symptom severity following administration of various foods and drugs, and generated outcome labels for thousands of foods and drugs and treatment rankings. You can see them at [studies.dfda.earth](https://studies.dfda.earth) [@dfda-spec-paper-2025; @dfda-impact-paper-2025].
 >
 > And there is a lot you can learn about how to fix yourself from that data. But the biggest thing I learned is that for a lot of people with a lot of diseases, the existing treatments do not make a ton of difference. The treatments that could actually fix you do not exist yet because nobody has run the trials.
 >
@@ -710,9 +669,6 @@ WHAT THE FIRST MONEY BUYS
 > But then I realized it was not just a regulatory problem either. It is a resource allocation problem. Your government spends {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} times more on the capacity to kill people than on clinical trials to cure the diseases that are about 30 million times more likely to kill you than a terrorist. The regulations are bad because the lobbying that writes them is funded by industries that profit from the regulations being bad. The FDA is slow because nobody with real money wants it to be fast.
 >
 > Root cause: the money points at the wrong things. The same root cause as the Ethyl Gasoline Corporation. The same root cause as Ignaz Semmelweis's unwashed hands. The same root cause, at civilizational scale, running for decades, killing millions of people a year, because the companies that profit from the current arrangement spend {{< var us_total_lobbying_annual >}} a year making sure it does not change.
->
-> So that is why I am here telling you to buy shares in defense companies and send love letters to their boards. It is not because I woke up one morning and thought "you know what sounds fun, hostile takeovers." It is because I followed the problem from my own sick body to a testing platform to a regulatory system to a resource allocation failure to the lobbying machine that maintains the failure, and the lobbying machine has a price tag, and the price tag is surprisingly small.
->
 
 
 ---
