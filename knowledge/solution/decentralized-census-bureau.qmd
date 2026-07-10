@@ -30,15 +30,15 @@ The 2020 Census overcounted the total population while undercounting Black Ameri
 
 ```solidity
 function citizenCount() external view returns (uint256) {
-    return citizenList.length;  // Real-time. Sybil-resistant. Free.
+    return citizenList.length;  // live count, sybil-resistant, costs nothing to read
 }
 ```
 
-One line. Returns in 50 milliseconds. Updated the instant someone registers. Always current. Always complete.
+One line. Returns in 50 milliseconds, updates the instant someone registers, and never goes stale.
 
 Reading the count is free. Producing the thing being counted is not, and this bureau will not pretend otherwise. Underneath citizenCount() sits a sybil-resistant identity layer, which means biometric proof-of-personhood enrollment for 335 million humans, deduplication, key recovery for everyone who loses a phone, and a standing red team paid to break it. That is real, priced work. India has already done it for 1.4 billion people, so the playbook is public. It is funded on the [Universal Security Administration's](universal-security-administration.qmd) invoice, inside its roughly-thirty-cents-per-citizen line, because a system that deposits money daily cannot exist without knowing exactly who is who: the count is a side effect of the paycheck. You currently pay $14.2 billion per count for a worse number, collected by clipboard.
 
-The count is also the least important thing this bureau measures, which is the part your current Census Bureau never understood.
+The count is also the least important thing this bureau measures, which is a strange thing to say about a Census Bureau, but here we are.
 
 | Feature | The Other Guys | The Decentralized Census Bureau |
 |---------|----------------|----------------------------------|

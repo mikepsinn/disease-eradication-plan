@@ -30,7 +30,7 @@ The system is working perfectly. Just not for you. I checked who it's working fo
 
 Wishonia replaces the entire campaign finance apparatus with one number per politician: the Citizen Alignment Score.
 
-How closely do their votes match what citizens actually want? Public. Immutable. Updated in real-time. Cannot be lobbied.
+How closely do their votes match what citizens actually want? The score is public, immutable, updated in real time, and cannot be lobbied.
 
 ```solidity
 function allocate(bytes32 jurisdiction, bytes32[] leaves,
@@ -66,7 +66,11 @@ The $8.4 billion currently spent on campaign finance and lobbying ($4.7B + $3.7B
 
 Your current system is a vending machine where lobbyists insert money and legislation comes out. The replacement is a scoreboard where citizens insert preferences and representation comes out. The technology exists. The math is trivial. The obstacle is that the people who would need to approve the change are the same people who benefit from the current system. This is why the [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] works around them instead of through them.
 
-To be precise about which part of corruption this module kills, because the machine has three blades: the [Loving Takeover](../appendix/loving-takeover.qmd) buys the supply side (the companies whose lobbying budgets write your laws get new boards and new instructions). This commission removes the demand side: a politician funded by alignment scores has nothing left to sell a donor. And the [Decentralized Congress](decentralized-congress.qmd) removes the product itself, because you cannot lobby a legislature that consists of everyone. Any one blade can be dodged. The three together leave lobbying with one remaining business model: publishing evidence and hoping eight billion people find it convincing, which is also called arguing in public, and stays legal on every planet.
+To be precise about which part of corruption this module kills, because the machine has three blades.
+
+The [Loving Takeover](../appendix/loving-takeover.qmd) buys the supply side: the companies whose lobbying budgets write your laws get new boards and new instructions. This commission removes the demand side: a politician funded by alignment scores has nothing left to sell a donor. And the [Decentralized Congress](decentralized-congress.qmd) removes the product itself, because you cannot lobby a legislature that consists of everyone.
+
+Any one blade can be dodged. The three together leave lobbying with one remaining business model: publishing evidence and hoping eight billion people find it convincing, which is also called arguing in public, and stays legal on every planet.
 
 | Feature | The Other Guys | The Aligned Election Commission |
 |---------|----------------|----------------------------------|

@@ -40,7 +40,7 @@ function _update(address from, address to, uint256 value) internal override {
 }
 ```
 
-Six lines. Every transfer automatically deducts 0.5% and sends it to the treasury. No filing. No forms. No audits. No compliance departments. No offshore accounts. No accountants. The tax is unavoidable because it IS the protocol.
+Six lines. Every transfer automatically deducts 0.5% and sends it to the treasury. Filing, forms, audits, compliance departments, offshore routing, and the entire accountancy profession all become unnecessary, because the tax collects itself inside the transaction. There is nothing to avoid, in the same way there is nothing to avoid about arithmetic.
 
 You cannot lobby a smart contract. You cannot offshore a protocol. Every loophole in your 74,000 pages exists because someone paid a lobbyist to put it there. The replacement has no lobbyists because there is nothing to lobby.
 

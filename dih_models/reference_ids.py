@@ -754,6 +754,8 @@ class ReferenceID(str, Enum):
     MILITARY_SPENDING_GROWTH_IMPACT = "military-spending-growth-impact"
     MILITARY_VS_NIH_SALARY_COMPARISON = "military-vs-nih-salary-comparison"
     MILKEN_HIGH_YIELD_BONDS = "milken-high-yield-bonds"
+    MINAB_DOUBLE_TAP_2026 = "minab-double-tap-2026"
+    MINAB_SCHOOL_STRIKE_2026 = "minab-school-strike-2026"
     MIRON2010 = "miron2010"
     MIT_JONES_ACT_2025 = "mit-jones-act-2025"
     MRNA_VACCINE_DEVELOPMENT_HISTORY = "mrna-vaccine-development-history"
