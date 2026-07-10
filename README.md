@@ -194,7 +194,7 @@ Cybercrime costs [$10.5 trillion](https://manual.warondisease.org/knowledge/econ
 
 Combined, your [destructive economy](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) is [$13.2 trillion](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) per year, [11.5%](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) of global GDP. Both are growing faster than the part of your economy that makes things. So the part that destroys things is winning. I'm told this is not considered an emergency. On your planet this is considered "Tuesday."
 
-There is a crossover point, and I cannot believe I have to explain this to a species that invented calculus. When the parasitic economy grows large enough relative to the productive one, the rational choice for any individual, company, or nation flips from "build things" to "steal things." Why spend years building a product when you can ransom a hospital in an afternoon? Why manufacture exports when hacking banks pays better? Once enough of your economy is extraction, producing anything makes you a target rather than a success. Production becomes irrational. Parasitism becomes the only means of survival.
+When the parasitic economy grows large enough relative to the productive one, the rational choice for any individual, company, or nation flips from "build things" to "steal things." Why spend years building a product when you can ransom a hospital in an afternoon? Why manufacture exports when hacking banks pays better? Once enough of your economy is extraction, producing anything makes you a target rather than a success. Production becomes irrational. Parasitism becomes the only means of survival.
 
 You have a name for places where this already happened. You call them "failed states." Somalia, Libya, parts of Syria. The productive economy collapsed, the warlord economy replaced it, and nobody can restart production because anyone who builds something gets it taken. You've watched this happen to individual countries the way someone watches a neighbor's house burn down while storing gasoline in their own basement. Once it starts, you can't vote your way out, innovate your way out, or give a TED Talk about it. (You will try all three.)
 
@@ -392,7 +392,7 @@ Military lobbyists currently get $1,813 back per dollar invested in democracy co
 - Moral status: "Philanthropist" (but you get to keep the money)
 - Legacy: "Accidentally saved humanity while getting rich"
 
-They won't even need convincing. Lobbyists don't have beliefs. They have clients. The current client pays them to lobby for a world where they die of preventable diseases in a smaller economy. You're offering a client that pays the same salary to lobby for a world where they don't die and the economy is [1.43x](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) larger. This is not a hard sell. It is an IQ test.
+They won't even need convincing. Lobbyists don't have beliefs. They have clients. The current client pays them to lobby for a world where they die of preventable diseases in a smaller economy. You're offering a client that pays the same salary to lobby for a world where they don't die and the economy is [1.43x](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) larger. This is not a hard sell. It is arithmetic.
 
 ### Step 4: Purchase Democracy
 
@@ -490,7 +490,7 @@ Over an average remaining lifespan, reallocation from the destructive economy to
 - Year 2040: The compounding kicks in. Healthier people work more, earn more, spend more, fund more research, which cures more diseases, which makes more people healthier. Humans begin to suspect that not killing each other was the missing variable.
 - Year 2048: The [model projects](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) everyone [56.7x](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) richer than the path you're currently on. Your children ask what "war" means. You change the subject.
 
-Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea. You have the internet and an idea that mainly requires people to click a button and then receive money. If you can't make this happen, that's a skill issue.
+Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea. You have the internet and an idea that mainly requires people to click a button and then receive money. If you can't make this happen, I genuinely don't know what to tell you.
 
 ### The Part Where Humanity Has No Choice
 
