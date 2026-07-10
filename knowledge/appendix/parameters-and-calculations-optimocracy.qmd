@@ -1103,12 +1103,12 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total global opportunity cost from governance failures: health innovation delays ($34T), underfunded science ($4T), lead poisoning ($6T), migration restrictions ($57T). Sum: $101T annually in unrealized potential.
+Total global opportunity cost from governance failures: health innovation delays ($34T), outcome-blind R&D allocation ($4T), lead poisoning ($6T), migration restrictions ($57T). Sum: $101T annually in unrealized potential.
 
 **Inputs**:
 
 - [Global Health Opportunity Cost](#sec-political_dysfunction_global_health_opportunity_cost) 📊: $34 trillion (95% CI: $20 trillion - $80 trillion)
-- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
+- [Global R&D Misallocation Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
 - [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
 - [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $5 trillion - $170 trillion)
 
@@ -2191,7 +2191,7 @@ Projected global GDP at year 20 under the Wishonia Trajectory. Model applies all
 - [R&D Spillover Multiplier](#sec-rd_spillover_multiplier): 2x (95% CI: 1.5x - 2.5x)
 - [Wishonia Disease Cure Fraction (20yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_20yr_full) 🔢: 100%
 - [Disease Burden as % of GDP](#sec-disease_burden_gdp_drag_pct) 📊: 13%
-- [Global Science Opportunity Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
+- [Global R&D Misallocation Cost](#sec-political_dysfunction_global_science_opportunity_cost) 📊: $4 trillion (95% CI: $2 trillion - $10 trillion)
 - [Global Lead Poisoning Cost](#sec-political_dysfunction_global_lead_opportunity_cost) 📊: $6 trillion (95% CI: $4 trillion - $8 trillion)
 - [Global Migration Opportunity Cost](#sec-political_dysfunction_global_migration_opportunity_cost) 📊: $57 trillion (95% CI: $5 trillion - $170 trillion)
 - [Economic Multiplier for Healthcare Investment](#sec-economic_multiplier_healthcare_investment) 📊: 4.3x (95% CI: 3x - 6x)
@@ -2599,11 +2599,11 @@ Unrealized output from migration restrictions. Clemens (2011) estimated eliminat
 
 :::
 
-### Global Science Opportunity Cost: $4 trillion {#sec-political_dysfunction_global_science_opportunity_cost}
+### Global R&D Misallocation Cost: $4 trillion {#sec-political_dysfunction_global_science_opportunity_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual opportunity cost from underfunding high-ROI science (fusion, AI safety). Human Genome Project: $3.8B cost, $796B-1T impact (141:1 ROI). Fusion DEMO plant: $5-10B could solve energy/climate permanently. AI safety: <5% of capabilities spending despite existential stakes. Reallocating $200B from military waste at 20x multiplier = $4T foregone growth.
+Annual opportunity cost from outcome-blind research allocation. Human Genome Project: $3.8B cost, $796B-1T impact (141:1 ROI). Fusion DEMO plant: $5-10B could solve energy/climate permanently. Current system funds inputs (grants, process) rather than outcomes (cures, working reactors). Reallocating $200B from military waste at 20x multiplier = $4T foregone growth.
 
 **Source**: [@political-dysfunction-tax-paper-2025]
 

@@ -25,7 +25,7 @@ baseline = 10100000000.0
 # Tornado data from sensitivity analysis
 
 drivers = ['SE_BOT_OUTCOME_ATTRIBUTION_FRACTION', 'POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST']
-driver_labels = ['Special Education Outcome Attribution Fraction', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Global Science Opportunity Cost', 'Global Lead Poisoning Cost']
+driver_labels = ['Special Education Outcome Attribution Fraction', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Global R&D Misallocation Cost', 'Global Lead Poisoning Cost']
 impacts_low = [-9999000000.0, -5200000000.0, -1400000000.0, -200000000.0, -200000000.0]
 impacts_high = [999900000000.0, 11300000000.0, 4600000000.0, 600000000.0, 200000000.0]
 

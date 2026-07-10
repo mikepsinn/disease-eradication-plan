@@ -25,7 +25,7 @@ baseline = 1.662376237623762e-06
 # Tornado data from sensitivity analysis
 
 drivers = ['SE_BOT_RELEVANT_POSTS_PER_DAY_GLOBAL', 'SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION', 'SE_BOT_LLM_COST_PER_POST_USD', 'SE_BOT_PLATFORM_OVERHEAD_PER_POST_USD', 'POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST', 'SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD', 'POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST']
-driver_labels = ['Relevant Posts Per Day (Global)', 'Equity Capture Share of Public Value', 'SE Bot LLM Cost Per Post', 'SE Bot Platform Overhead Per Post', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Global Listed Equity Market Capitalization', 'Global Science Opportunity Cost', 'Global Lead Poisoning Cost']
+driver_labels = ['Relevant Posts Per Day (Global)', 'Equity Capture Share of Public Value', 'SE Bot LLM Cost Per Post', 'SE Bot Platform Overhead Per Post', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Global Listed Equity Market Capitalization', 'Global R&D Misallocation Cost', 'Global Lead Poisoning Cost']
 impacts_low = [-1.579257425742574e-06, 4.987128712871286e-06, -8.31188118811881e-07, -3.116955445544551e-07, 1.7641543746211357e-06, 2.675088198475023e-07, -3.6138613861386124e-07, 3.3583358335833706e-08, 3.3583358335833706e-08]
 impacts_high = [1.496138613861386e-05, -8.31188118811881e-07, 4.987128712871286e-06, 3.7403465346534656e-06, -8.777967983714257e-07, -5.201993668754627e-07, 3.6138613861386145e-07, -9.321735911908922e-08, -3.227915024512123e-08]
 

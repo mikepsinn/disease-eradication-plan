@@ -25,7 +25,7 @@ baseline = 17565217.391304348
 # Tornado data from sensitivity analysis
 
 drivers = ['SE_BOT_OUTCOME_ATTRIBUTION_FRACTION', 'SE_BOT_EQUITY_UPLIFT_CAPTURE_FRACTION', 'POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST', 'SE_BOT_GLOBAL_EQUITY_MARKET_CAP_USD', 'POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST', 'POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST']
-driver_labels = ['Special Education Outcome Attribution Fraction', 'Equity Capture Share of Public Value', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Global Listed Equity Market Capitalization', 'Global Science Opportunity Cost', 'Global Lead Poisoning Cost']
+driver_labels = ['Special Education Outcome Attribution Fraction', 'Equity Capture Share of Public Value', 'Global Migration Opportunity Cost', 'Global Health Opportunity Cost', 'Global Listed Equity Market Capitalization', 'Global R&D Misallocation Cost', 'Global Lead Poisoning Cost']
 impacts_low = [-17389565.217391305, -13173913.043478262, -9043478.260869564, -2434782.6086956523, 4879227.053140096, -347826.08695652336, -347826.08695652336]
 impacts_high = [1738956521.7391305, 17565217.391304348, 19652173.913043473, 8000000.0, -3136645.9627329186, 1043478.2608695626, 347826.08695652336]
 

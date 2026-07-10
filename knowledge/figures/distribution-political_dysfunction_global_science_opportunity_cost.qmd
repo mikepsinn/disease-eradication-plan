@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Global Science Opportunity Cost"
+#| fig-cap: "Probability Distribution: Global R&D Misallocation Cost"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +21,7 @@ central_value = 4000000000000.0
 low = 2000000000000
 high = 10000000000000
 dist_type = "lognormal"
-display_name = "Global Science Opportunity Cost"
+display_name = "Global R&D Misallocation Cost"
 unit = "USD"
 
 # Calculate distribution parameters
