@@ -13,7 +13,7 @@ scores:
   importance: 6
 audience: "The self-interested skeptic who does not care about saving humanity but does care about their own bank account and retirement."
 feel: "The personally caught out: this is not charity, it is the rational investment with the highest expected value they are currently ignoring."
-do: "Run the calculator with their own numbers, then make a Prize deposit, answer the referendum at warondisease.org, and recruit two people."
+do: "Run the calculator with their own numbers, then join the EOS investor list if they can legally invest, answer the referendum at warondisease.org, and recruit two people."
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 
@@ -164,6 +164,7 @@ The calculator below lets you replace "the average human" with yourself. I recom
   font-size: clamp(1.35rem, 2vw, 1.55rem);
   font-weight: 700;
   line-height: 1.1;
+  overflow-wrap: anywhere;
 }
 
 .pbc-card-meta {
@@ -171,6 +172,7 @@ The calculator below lets you replace "the average human" with yourself. I recom
   font-size: 0.88rem;
   line-height: 1.45;
   margin-top: 0.35rem;
+  overflow-wrap: anywhere;
 }
 
 .pbc-card.good .pbc-card-value {
@@ -188,6 +190,75 @@ The calculator below lets you replace "the average human" with yourself. I recom
   font-size: 1rem;
   line-height: 1.65;
   padding: 1rem;
+}
+
+.pbc-chart-shell {
+  background: var(--pbc-card);
+  border: 1px solid var(--pbc-line);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.pbc-chart-header {
+  align-items: end;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.pbc-chart-header h4 {
+  margin: 0 0 0.35rem;
+}
+
+.pbc-chart-scale {
+  color: var(--pbc-muted);
+  font-size: 0.84rem;
+  text-align: right;
+}
+
+.pbc-chart {
+  background: #fff;
+  border: 1px solid var(--pbc-line);
+  border-radius: 12px;
+  display: block;
+  height: auto;
+  max-height: 360px;
+  width: 100%;
+}
+
+.pbc-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.pbc-legend-item {
+  align-items: center;
+  color: var(--pbc-muted);
+  display: inline-flex;
+  font-size: 0.86rem;
+  gap: 0.35rem;
+}
+
+.pbc-legend-swatch {
+  border-radius: 999px;
+  display: inline-block;
+  height: 0.7rem;
+  width: 0.7rem;
+}
+
+.pbc-legend-current {
+  background: #7a6a56;
+}
+
+.pbc-legend-treaty {
+  background: var(--pbc-accent);
+}
+
+.pbc-legend-wishonia {
+  background: var(--pbc-good);
 }
 
 .pbc-footnote {
@@ -220,11 +291,21 @@ The calculator below lets you replace "the average human" with yourself. I recom
 <span id="pbc-src-destruct-25" class="visually-hidden">{{< var destructive_economy_25pct_year >}}</span>
 <span id="pbc-src-destruct-35" class="visually-hidden">{{< var destructive_economy_35pct_year >}}</span>
 <span id="pbc-src-destruct-50" class="visually-hidden">{{< var destructive_economy_50pct_year >}}</span>
+<span id="pbc-src-global-gdp" class="visually-hidden">{{< var global_gdp_2025 >}}</span>
+<span id="pbc-src-current-gdp-15" class="visually-hidden">{{< var current_trajectory_gdp_year_15 >}}</span>
+<span id="pbc-src-current-gdp-20" class="visually-hidden">{{< var current_trajectory_gdp_year_20 >}}</span>
+<span id="pbc-src-treaty-gdp-15" class="visually-hidden">{{< var treaty_trajectory_gdp_year_15 >}}</span>
+<span id="pbc-src-treaty-gdp-20" class="visually-hidden">{{< var treaty_trajectory_gdp_year_20 >}}</span>
+<span id="pbc-src-wish-gdp-15" class="visually-hidden">{{< var wishonia_trajectory_gdp_year_15 >}}</span>
+<span id="pbc-src-wish-gdp-20" class="visually-hidden">{{< var wishonia_trajectory_gdp_year_20 >}}</span>
+<span id="pbc-src-household-wealth" class="visually-hidden">{{< var global_household_wealth_usd >}}</span>
+<span id="pbc-src-investable-assets" class="visually-hidden">{{< var global_investable_assets >}}</span>
+<span id="pbc-src-population" class="visually-hidden">{{< var global_population_2024 >}}</span>
 
 <div class="pbc-grid">
 <div>
 <h3>How much is it rational for you to invest?</h3>
-<p class="pbc-footnote">This calculator scales the average-person scenario gains to your age, income, and available savings. </p>
+<p class="pbc-footnote">This calculator scales the average-person scenario gains to your age, income, net worth, and available savings.</p>
 </div>
 
 <div class="pbc-controls">
@@ -247,6 +328,18 @@ The calculator below lets you replace "the average human" with yourself. I recom
 <label for="pbc-input-income">Your annual income</label>
 <input id="pbc-input-income" type="number" min="1" step="1000" inputmode="numeric">
 <div class="pbc-helper">Income upside scales from the global average baseline.</div>
+</div>
+
+<div class="pbc-group">
+<label for="pbc-input-networth">Your net worth</label>
+<input id="pbc-input-networth" type="number" min="0" step="1000" inputmode="numeric">
+<div class="pbc-helper">Default = global household wealth divided by humans.</div>
+</div>
+
+<div class="pbc-group">
+<label for="pbc-input-wealth-exposure">Net worth tied to the economy (%)</label>
+<input id="pbc-input-wealth-exposure" type="number" min="0" max="100" step="5" inputmode="decimal">
+<div class="pbc-helper">Default = global investable assets as a share of household wealth.</div>
 </div>
 
 <div class="pbc-group">
@@ -292,6 +385,12 @@ The calculator below lets you replace "the average human" with yourself. I recom
 <div id="pbc-output-blend-meta" class="pbc-card-meta"></div>
 </div>
 
+<div class="pbc-card good">
+<div class="pbc-card-title">Year-20 Wealth Gap</div>
+<div id="pbc-output-wealth-gap" class="pbc-card-value"></div>
+<div id="pbc-output-wealth-gap-meta" class="pbc-card-meta"></div>
+</div>
+
 <div class="pbc-card">
 <div class="pbc-card-title">Expected Value Of Your Contribution</div>
 <div id="pbc-output-ev" class="pbc-card-value"></div>
@@ -311,6 +410,26 @@ The calculator below lets you replace "the average human" with yourself. I recom
 </div>
 </div>
 
+<div class="pbc-chart-shell">
+<div class="pbc-chart-header">
+<div>
+<h4>Your Net Worth Timeline</h4>
+<p class="pbc-footnote">The chart applies the GDP trajectories to the economy-linked share of your net worth. It does not add health value or EOS equity returns.</p>
+</div>
+<div id="pbc-chart-scale" class="pbc-chart-scale"></div>
+</div>
+<svg id="pbc-wealth-chart" class="pbc-chart" viewBox="0 0 720 320" role="img" aria-labelledby="pbc-wealth-chart-title pbc-wealth-chart-desc">
+<title id="pbc-wealth-chart-title">Net worth timeline by trajectory</title>
+<desc id="pbc-wealth-chart-desc">Projected net worth under current, treaty, and optimal governance trajectories.</desc>
+</svg>
+<div class="pbc-legend" aria-hidden="true">
+<span class="pbc-legend-item"><span class="pbc-legend-swatch pbc-legend-current"></span>Current</span>
+<span class="pbc-legend-item"><span class="pbc-legend-swatch pbc-legend-treaty"></span>1% Treaty</span>
+<span class="pbc-legend-item"><span class="pbc-legend-swatch pbc-legend-wishonia"></span>Optimal governance</span>
+</div>
+<div id="pbc-wealth-summary" class="pbc-summary" aria-live="polite"></div>
+</div>
+
 <div id="pbc-summary" class="pbc-summary" aria-live="polite"></div>
 <p class="pbc-footnote">Blended upside = lifetime income gain + valued healthy-life gain. It is intentionally expansive rather than conservative. The scenario cards above show the downside of letting the current trajectory continue.</p>
 </div>
@@ -325,8 +444,20 @@ The calculator below lets you replace "the average human" with yourself. I recom
   root.dataset.initialized = 'true';
 
   function multiplierFromSuffix(suffix) {
-    const map = { K: 1e3, M: 1e6, B: 1e9, T: 1e12 };
-    return map[(suffix || '').toUpperCase()] || 1;
+    const normalized = (suffix || '').toLowerCase();
+    const map = {
+      k: 1e3,
+      thousand: 1e3,
+      m: 1e6,
+      million: 1e6,
+      b: 1e9,
+      billion: 1e9,
+      t: 1e12,
+      trillion: 1e12,
+      q: 1e15,
+      quadrillion: 1e15
+    };
+    return map[normalized] || 1;
   }
 
   function parsePrimary(text, fallback, allowPercent) {
@@ -335,8 +466,8 @@ The calculator below lets you replace "the average human" with yourself. I recom
     }
     const clean = text.replace(/,/g, '').replace(/\u00a0/g, ' ');
     const re = allowPercent
-      ? /([0-9]+(?:\.[0-9]+)?)\s*([KMBT]?)\s*(x|%|years|year)?/i
-      : /\$?\s*([0-9]+(?:\.[0-9]+)?)\s*([KMBT]?)/i;
+      ? /([0-9]+(?:\.[0-9]+)?)\s*(K|M|B|T|Q|thousand|million|billion|trillion|quadrillion)?\s*(x|%|years|year)?/i
+      : /\$?\s*([0-9]+(?:\.[0-9]+)?)\s*(K|M|B|T|Q|thousand|million|billion|trillion|quadrillion)?/i;
     const match = clean.match(re);
     if (!match) {
       return fallback;
@@ -358,8 +489,8 @@ The calculator below lets you replace "the average human" with yourself. I recom
     }
     const clean = text.replace(/,/g, '').replace(/\u00a0/g, ' ');
     const re = allowPercent
-      ? /95% CI:\s*([0-9]+(?:\.[0-9]+)?)\s*([KMBT]?)\s*(%|years|year|x)?\s*-\s*([0-9]+(?:\.[0-9]+)?)\s*([KMBT]?)\s*(%|years|year|x)?/i
-      : /95% CI:\s*\$?([0-9]+(?:\.[0-9]+)?)\s*([KMBT]?)\s*-\s*\$?([0-9]+(?:\.[0-9]+)?)\s*([KMBT]?)/i;
+      ? /95% CI:\s*([0-9]+(?:\.[0-9]+)?)\s*(K|M|B|T|Q|thousand|million|billion|trillion|quadrillion)?\s*(%|years|year|x)?\s*-\s*([0-9]+(?:\.[0-9]+)?)\s*(K|M|B|T|Q|thousand|million|billion|trillion|quadrillion)?\s*(%|years|year|x)?/i
+      : /95% CI:\s*\$?([0-9]+(?:\.[0-9]+)?)\s*(K|M|B|T|Q|thousand|million|billion|trillion|quadrillion)?\s*-\s*\$?([0-9]+(?:\.[0-9]+)?)\s*(K|M|B|T|Q|thousand|million|billion|trillion|quadrillion)?/i;
     const match = clean.match(re);
     if (!match) {
       return { lower: fallback, upper: fallback };
@@ -402,6 +533,15 @@ The calculator below lets you replace "the average human" with yourself. I recom
     }).format(value);
   }
 
+  function formatCompactCurrency(value) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 1,
+      notation: 'compact'
+    }).format(value);
+  }
+
   function formatRange(lower, upper) {
     return `${formatCurrency(lower)} to ${formatCurrency(upper)}`;
   }
@@ -441,6 +581,18 @@ The calculator below lets you replace "the average human" with yourself. I recom
   const destruct25 = parseMetric('pbc-src-destruct-25', { fallback: 2033, allowPercent: true });
   const destruct35 = parseMetric('pbc-src-destruct-35', { fallback: 2037, allowPercent: true });
   const destruct50 = parseMetric('pbc-src-destruct-50', { fallback: 2040, allowPercent: true });
+  const globalGdp = parseMetric('pbc-src-global-gdp', { fallback: 1 });
+  const currentGdp15 = parseMetric('pbc-src-current-gdp-15', { fallback: globalGdp.central });
+  const currentGdp20 = parseMetric('pbc-src-current-gdp-20', { fallback: currentGdp15.central });
+  const treatyGdp15 = parseMetric('pbc-src-treaty-gdp-15', { fallback: currentGdp15.central });
+  const treatyGdp20 = parseMetric('pbc-src-treaty-gdp-20', { fallback: treatyGdp15.central });
+  const wishGdp15 = parseMetric('pbc-src-wish-gdp-15', { fallback: treatyGdp15.central });
+  const wishGdp20 = parseMetric('pbc-src-wish-gdp-20', { fallback: wishGdp15.central });
+  const householdWealth = parseMetric('pbc-src-household-wealth', { fallback: globalSavings.central });
+  const investableAssets = parseMetric('pbc-src-investable-assets', { fallback: householdWealth.central });
+  const globalPopulation = parseMetric('pbc-src-population', { fallback: 1 });
+  const defaultNetWorth = Math.max(0, householdWealth.central / Math.max(globalPopulation.central, 1));
+  const defaultWealthExposure = clamp(investableAssets.central / Math.max(householdWealth.central, 1), 0, 1);
 
   const scenarioMap = {
     treaty: {
@@ -458,14 +610,20 @@ The calculator below lets you replace "the average human" with yourself. I recom
   const scenarioInput = document.getElementById('pbc-input-scenario');
   const ageInput = document.getElementById('pbc-input-age');
   const incomeInput = document.getElementById('pbc-input-income');
+  const netWorthInput = document.getElementById('pbc-input-networth');
+  const wealthExposureInput = document.getElementById('pbc-input-wealth-exposure');
   const savingsInput = document.getElementById('pbc-input-savings');
   const contributionInput = document.getElementById('pbc-input-contribution');
   const probabilityInput = document.getElementById('pbc-input-probability');
   const resetButton = document.getElementById('pbc-reset');
+  const wealthChart = document.getElementById('pbc-wealth-chart');
+  const chartScale = document.getElementById('pbc-chart-scale');
 
   function resetDefaults() {
     ageInput.value = Math.round(globalAge.central);
     incomeInput.value = Math.round(globalIncome.central);
+    netWorthInput.value = Math.round(defaultNetWorth);
+    wealthExposureInput.value = Math.round(defaultWealthExposure * 100);
     savingsInput.value = Math.round(globalSavings.central);
     contributionInput.value = Math.max(1, Math.round(globalSavings.central * 0.01));
     probabilityInput.value = '0.01';
@@ -487,14 +645,110 @@ The calculator below lets you replace "the average human" with yourself. I recom
     }
   }
 
+  function interpolateGdp(year, gdp0, gdp15, gdp20) {
+    const midYear = 15;
+    const horizonYear = 20;
+    if (year <= midYear) {
+      return gdp0 * Math.pow(gdp15 / gdp0, year / midYear);
+    }
+    return gdp15 * Math.pow(gdp20 / gdp15, (year - midYear) / (horizonYear - midYear));
+  }
+
+  function wealthForGdp(netWorth, exposure, gdp) {
+    const gdpMultiple = gdp / Math.max(globalGdp.central, 1);
+    return netWorth * (1 + exposure * (gdpMultiple - 1));
+  }
+
+  function buildWealthSeries(netWorth, exposure) {
+    const years = Array.from({ length: 21 }, function(_, index) { return index; });
+    return {
+      current: years.map(function(year) {
+        return {
+          year: year,
+          value: wealthForGdp(netWorth, exposure, interpolateGdp(year, globalGdp.central, currentGdp15.central, currentGdp20.central))
+        };
+      }),
+      treaty: years.map(function(year) {
+        return {
+          year: year,
+          value: wealthForGdp(netWorth, exposure, interpolateGdp(year, globalGdp.central, treatyGdp15.central, treatyGdp20.central))
+        };
+      }),
+      wishonia: years.map(function(year) {
+        return {
+          year: year,
+          value: wealthForGdp(netWorth, exposure, interpolateGdp(year, globalGdp.central, wishGdp15.central, wishGdp20.central))
+        };
+      })
+    };
+  }
+
+  function drawWealthChart(series) {
+    if (!wealthChart) {
+      return;
+    }
+    const width = 720;
+    const height = 320;
+    const margin = { top: 24, right: 24, bottom: 44, left: 88 };
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+    const allValues = series.current.concat(series.treaty, series.wishonia).map(function(point) { return point.value; });
+    const maxValue = Math.max.apply(null, allValues.concat([1]));
+    const xFor = function(year) {
+      return margin.left + (year / 20) * plotWidth;
+    };
+    const yFor = function(value) {
+      return margin.top + plotHeight - (value / maxValue) * plotHeight;
+    };
+    const pointsFor = function(points) {
+      return points.map(function(point) {
+        return `${xFor(point.year).toFixed(1)},${yFor(point.value).toFixed(1)}`;
+      }).join(' ');
+    };
+    const yTicks = [0, 0.25, 0.5, 0.75, 1];
+    const xTicks = [0, 5, 10, 15, 20];
+    const grid = yTicks.map(function(tick) {
+      const y = margin.top + plotHeight - tick * plotHeight;
+      return `<line x1="${margin.left}" y1="${y}" x2="${width - margin.right}" y2="${y}" stroke="rgba(60,43,16,0.12)" />` +
+        `<text x="${margin.left - 12}" y="${y + 4}" text-anchor="end" font-size="12" fill="#6a5a45">${formatCompactCurrency(maxValue * tick)}</text>`;
+    }).join('') + xTicks.map(function(tick) {
+      const x = xFor(tick);
+      return `<line x1="${x}" y1="${margin.top}" x2="${x}" y2="${height - margin.bottom}" stroke="rgba(60,43,16,0.08)" />` +
+        `<text x="${x}" y="${height - 16}" text-anchor="middle" font-size="12" fill="#6a5a45">Y${tick}</text>`;
+    }).join('');
+
+    wealthChart.innerHTML =
+      '<title id="pbc-wealth-chart-title">Net worth timeline by trajectory</title>' +
+      '<desc id="pbc-wealth-chart-desc">Projected net worth under current, treaty, and optimal governance trajectories.</desc>' +
+      `<rect x="0" y="0" width="${width}" height="${height}" fill="#fff" />` +
+      grid +
+      `<line x1="${margin.left}" y1="${height - margin.bottom}" x2="${width - margin.right}" y2="${height - margin.bottom}" stroke="#6a5a45" />` +
+      `<line x1="${margin.left}" y1="${margin.top}" x2="${margin.left}" y2="${height - margin.bottom}" stroke="#6a5a45" />` +
+      `<polyline fill="none" stroke="#7a6a56" stroke-width="3" points="${pointsFor(series.current)}" />` +
+      `<polyline fill="none" stroke="#a04f1a" stroke-width="3.5" points="${pointsFor(series.treaty)}" />` +
+      `<polyline fill="none" stroke="#0e5f47" stroke-width="3.5" points="${pointsFor(series.wishonia)}" />`;
+
+    if (chartScale) {
+      chartScale.textContent = `Top tick: ${formatCompactCurrency(maxValue)}`;
+    }
+  }
+
   function render() {
     const scenario = scenarioMap[scenarioInput.value] || scenarioMap.treaty;
     const age = clamp(Number.parseFloat(ageInput.value) || globalAge.central, 0, 120);
     const income = Math.max(1, Number.parseFloat(incomeInput.value) || globalIncome.central);
+    const netWorth = Math.max(0, Number.parseFloat(netWorthInput.value) || 0);
+    const wealthExposure = clamp((Number.parseFloat(wealthExposureInput.value) || 0) / 100, 0, 1);
     const savings = Math.max(1, Number.parseFloat(savingsInput.value) || globalSavings.central);
     const contribution = Math.max(1, Number.parseFloat(contributionInput.value) || 1);
     const probabilityPoints = Math.max(0, Number.parseFloat(probabilityInput.value) || 0);
     const probabilityFraction = probabilityPoints / 100;
+    const wealthSeries = buildWealthSeries(netWorth, wealthExposure);
+    const currentWealth20 = wealthSeries.current[20].value;
+    const treatyWealth20 = wealthSeries.treaty[20].value;
+    const wishWealth20 = wealthSeries.wishonia[20].value;
+    const selectedWealth20 = scenarioInput.value === 'wishonia' ? wishWealth20 : treatyWealth20;
+    const selectedWealthGap = selectedWealth20 - currentWealth20;
 
     const remainingYears = Math.max(1, globalYears.central + (globalAge.central - age));
     const incomeScale = income / globalIncome.central;
@@ -523,6 +777,9 @@ The calculator below lets you replace "the average human" with yourself. I recom
     setOutput('pbc-output-blend', formatCurrency(personalBlend.central));
     setOutput('pbc-output-blend-meta', `Range: ${formatRange(personalBlend.lower, personalBlend.upper)}`);
 
+    setOutput('pbc-output-wealth-gap', formatCompactCurrency(selectedWealthGap));
+    setOutput('pbc-output-wealth-gap-meta', `Year 20: current ${formatCompactCurrency(currentWealth20)}, treaty ${formatCompactCurrency(treatyWealth20)}, optimal ${formatCompactCurrency(wishWealth20)}.`);
+
     setOutput('pbc-output-ev', formatCurrency(evBlend.central));
     setOutput('pbc-output-ev-meta', `Income-only EV: ${formatCurrency(evIncome.central)}. Blended range: ${formatRange(evBlend.lower, evBlend.upper)}`);
 
@@ -531,6 +788,13 @@ The calculator below lets you replace "the average human" with yourself. I recom
 
     setOutput('pbc-output-probability', formatPctPoints(breakEvenProbabilityBlend));
     setOutput('pbc-output-probability-meta', `Income-only break-even: ${formatPctPoints(breakEvenProbabilityIncome)}.`);
+
+    drawWealthChart(wealthSeries);
+
+    setOutput(
+      'pbc-wealth-summary',
+      `With ${formatCompactCurrency(netWorth)} in net worth and ${formatPercent(wealthExposure)} tied to the real economy, the year-20 wealth track is ${formatCompactCurrency(currentWealth20)} on the current trajectory, ${formatCompactCurrency(treatyWealth20)} under the 1% Treaty, and ${formatCompactCurrency(wishWealth20)} under optimal governance. This is the financial-wealth layer only. It excludes health value and any direct EOS equity return.`
+    );
 
     setOutput(
       'pbc-summary',
@@ -543,7 +807,7 @@ The calculator below lets you replace "the average human" with yourself. I recom
     render();
   });
 
-  [scenarioInput, ageInput, incomeInput, savingsInput, contributionInput, probabilityInput].forEach(function(el) {
+  [scenarioInput, ageInput, incomeInput, netWorthInput, wealthExposureInput, savingsInput, contributionInput, probabilityInput].forEach(function(el) {
     el.addEventListener('input', render);
   });
 
@@ -556,7 +820,7 @@ The calculator below lets you replace "the average human" with yourself. I recom
 
 The calculator has no feelings. It has arithmetic. Your contribution does not need to cause the treaty to pass. It needs to make it fractionally more likely. "Fractionally more likely" times "enormous upside" equals "large expected value." This is how insurance works. This is how venture capital works. You understand this math when it applies to stock portfolios. You ignore it when it applies to not dying.
 
-Three things. Make a Prize deposit. Answer the referendum questions at [warondisease.org](https://warondisease.org). Recruit two people. The phone script is at [The Most Important Secret in the World](../strategy/questions.qmd). Total time: less than it takes to order lunch. Expected value: considerably more than lunch.
+Three things. Put your name on the EOS investor list in [Earth Optimization Services](../solution/earth-optimization-services.qmd) if you can legally invest. Answer the referendum questions at [warondisease.org](https://warondisease.org). Recruit two people. The phone script is at [The Most Important Secret in the World](../strategy/questions.qmd). Total time: less than it takes to order lunch. Expected value: considerably more than lunch.
 
 ---
 
