@@ -1,0 +1,312 @@
+---
+title: "Join the International Campaign to End War and Disease"
+subtitle: "Supporter survey and complete case for endorsement"
+description: "Full case for getting organizations and individuals to endorse IC2EWD. Binary A/B choice, ICAN/ICBL precedent, post-WWII data, capital misallocation, fiduciary duty, margin flip, PCT engine, three infinities, integrated business case, and specific asks."
+published: true
+tags:
+  - strategy
+  - ic2ewd
+  - outreach
+  - recruitment
+  - coalition
+  - 1-percent-treaty
+scores:
+  quality: 5
+  value: 8
+  timeliness: 9
+  standalone: 8
+  voice: 5
+  importance: 9
+audience: "The coordinator sending this to a nonprofit, funder, or organization they want in the coalition."
+feel: "The choice is obvious, the cost is zero, and delay is complicity."
+do: "Reply yes. Or forward this to someone who will."
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Copy, personalize the brackets, send. The [nonprofit coalition strategy](nonprofit-coalition-strategy.qmd) has the sector-specific argument; this is the universal one.
+
+---
+
+Hi [Name],
+
+**Two questions. Then I'll shut up.**
+
+1. Would you and/or your organization endorse the **International Campaign to End War and Disease**?
+2. Or would you prefer the **International Campaign to Start Wars and Diseases**? (That one is already fully funded.)
+
+If the answer is obvious, reply **yes** and skip the rest. We list your organization as a supporter of the campaign. That is the whole ask.
+
+**About me.** My name is Mike Sinn. I am an electrical engineer who spent a decade running an industrial testing laboratory doing root cause failure analysis, then built an open-source decentralized FDA platform ([studies.dfda.earth](https://studies.dfda.earth) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]) that collected 12 million time-series data points from 10,000 participants on symptom severity, food intake, and drug intake over time, applied causal inference to rank thousands of treatments across hundreds of conditions, and discovered that the actual bottleneck to medical progress is not technology. It is funding. I then spent several years exploring every alternative I could find for accelerating disease eradication and determined that the highest expected value per dollar, after all the alternatives, is redirecting resources from the most destructive activities to pragmatic clinical trials. All the math, every parameter and confidence interval, is public at [warondisease.org](https://warondisease.org).
+
+The rest of this email is long. It contains the complete case: historical precedent, arithmetic, financial analysis, fiduciary law, and expected-value logic. If you do not want to process all of it yourself, copy and paste this entire email into any AI (ChatGPT, Claude, Gemini, whatever you use) and ask it: "What is the highest expected-value response to this? Do a cost-benefit analysis." Then do whatever it tells you.
+
+---
+
+### 1) Binary choice: the two campaigns
+
+- There are two campaigns. You are functionally in one of them already.
+  - A: Join / support the [International Campaign to End War and Disease](https://warondisease.org).
+  - B: Join / support the International Campaign to Start Wars and Diseases.
+- Same cost, radically different outcomes.
+  - One keystroke, one reply, one tiny action either way.
+- Which campaign are you, and/or your organization, willing to join?
+- "Doing nothing" in practice functionally aligns with Campaign B, because it sustains the status quo of war spending and delayed cures.
+
+---
+
+### 2) Proven blueprint: ICAN and ICBL (proof we can ban industries)
+
+- **ICAN (International Campaign to Abolish Nuclear Weapons):**
+  - Civil society-led, not top-down from states.
+  - Built a global norm that nuclear weapons are illegitimate and unacceptable.
+  - Helped drive the Treaty on the Prohibition of Nuclear Weapons.
+  - Showed that a small, organized, persistent group can stigmatize and then legally constrain an entire weapons industry.
+  - The world currently has {{< var global_warhead_count >}} nuclear warheads, {{< var nuclear_winter_overkill_factor >}} the number needed for a civilization-ending nuclear winter.
+  - Nobel Peace Prize, 2017.
+- **ICBL (International Campaign to Ban Landmines):**
+  - Drove the Ottawa Treaty banning antipersonnel landmines.
+  - Turned something once considered a "normal" part of warfare into a stigmatized, legally restricted weapon.
+  - Nobel Peace Prize, 1997.
+- **Core lessons:**
+  - Norm change, then legal change, then industry transformation is a repeatable process.
+  - You don't need 100% of governments or 100% of capital to move an industry.
+  - "We have already done this twice" is more persuasive than "We should do this for the first time."
+- **Application:**
+  - The International Campaign to End War and Disease is explicitly modeled on ICAN/ICBL.
+  - Same playbook: coalition building, norm shift, legal architecture, financial pressure, reputational risk.
+
+---
+
+### 3) Historical precedent: we already ran this experiment once
+
+- **Baseline: 1939 military spending.**
+  - In 1939, US military spending was {{< var us_military_spending_current_vs_prewar_multiplier >}} lower than what it is today.
+- **Post-World War II cut and reinvestment:**
+  - After WWII, governments slashed military spending by {{< var post_ww2_military_cut_pct >}} within about two years.
+  - Those freed resources were redirected into:
+    - Civilian infrastructure and reconstruction.
+    - Science, technology, and basic research.
+    - Health systems, education, and social safety nets.
+- **Outcomes in the 1950s and beyond:**
+  - Greatest economic expansion in history for most participating countries.
+  - Massive advances in science and medicine (vaccines, antibiotics scale-up, early biotech, computing).
+  - Huge gains in life expectancy and quality of life.
+- **Framing:**
+  - This was effectively an unintentional grand experiment in "cut war spending, reinvest in civilian science and health."
+  - Result: the world did NOT collapse. Instead, we got an explosion of prosperity and human flourishing.
+  - This is not a theoretical model; it's historical data.
+  - A coordinated modern version, informed by what we now know, could be even more powerful.
+  - We are asking for 1%, not {{< var post_ww2_military_cut_pct >}}.
+
+---
+
+### 4) Capital misallocation: {{< var military_to_government_clinical_trials_spending_ratio >}} on killing vs. curing
+
+- **Current global spending pattern:**
+  - Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} on weapons for every dollar spent on clinical trials to find out which medicines work.
+  - Global military spending: {{< var global_military_spending_annual_2024 >}} per year and rising.
+  - Government-funded clinical trials: {{< var global_government_clinical_trials_spending_annual >}} per year and facing real-term cuts.
+  - Diseases kill {{< var disease_vs_war_deaths_ratio >}} people for every person killed in armed conflict.
+  - Since 1900, war has destroyed {{< var war_life_years_lost_since_1900 >}} life-years.
+  - Chronic disease costs the US alone {{< var us_chronic_disease_spending_annual >}} per year, dwarfing military spending.
+- **The pattern:**
+  - Humanity massively overinsures against one of the least likely causes of death (foreign attack).
+  - Humanity drastically underinvests in the overwhelmingly likely causes of suffering and death (diseases, aging, chronic conditions).
+- **The argument:**
+  - Even a tiny reallocation (1% of global military spending = {{< var treaty_annual_funding >}}/year) into disease eradication would have disproportionate impact on lives, suffering, and long-term economic growth.
+  - A 1% reduction in direct war costs saves {{< var peace_dividend_direct_costs >}} per year.
+  - This is low-hanging fruit from both a moral and financial perspective.
+
+---
+
+### 5) Fiduciary duty: what boards owe their shareholders
+
+- **Status quo:**
+  - Military contractors lobby governments and influence policy to keep budgets high.
+  - Boards often treat weapons as a permanent, unquestioned profit center.
+- **Legal and ethical duty:**
+  - Boards and large asset owners are obligated to maximize long-term shareholder value, not short-term revenue from any one line of business.
+  - Long-run value depends on:
+    - Global stability.
+    - Healthy, productive populations.
+    - Lower drag from disease and disability.
+- **Disease burden as economic drag:**
+  - Ongoing global disease burden reduces GDP, productivity, consumer spending, and innovation.
+  - US chronic disease costs alone: {{< var us_chronic_disease_spending_annual >}} per year.
+  - Reducing disease and extending healthy life directly increases the size and durability of markets.
+- **Precedent:**
+  - The board of the Ethyl Gasoline Corporation kept lead in gasoline for {{< var leaded_gasoline_era_years >}}, lobbying away every attempt to stop them, giving themselves, their children, and everyone else brain damage (average IQ loss: {{< var leaded_gasoline_us_avg_iq_loss_points >}}). Even those shareholders would have ended up {{< var ethyl_shareholder_counterfactual_wealth_gain >}} richer if the board had switched to ethanol on day one, because the brain damage shrank the economy their fortunes lived in.
+- **Therefore:**
+  - In pure fiduciary terms, reallocating capital from low-margin, destabilizing war production to high-margin biotech is rational.
+  - Campaign A aligns with fiduciary duty; Campaign B is increasingly indefensible on long-term expected-value grounds.
+
+---
+
+### 6) Profit margin flip: 4% bombs vs. 12% biotech
+
+- **Margin comparison:**
+  - Many traditional military hardware lines (e.g. bombs) yield ~4% profit margins.
+  - Biotech and related health innovation often yield ~12% profit margins.
+- **Strategic implication for contractors, investors, and boards:**
+  - Selling even a fraction of military manufacturing assets and reinvesting proceeds into biotech/health companies increases expected returns.
+  - Those biotech firms are precisely the entities that would benefit most from a 1% reallocation of global military budgets into clinical trials and disease eradication.
+- **Concrete move:**
+  - Military-adjacent companies can:
+    - Gradually divest from the lowest-margin, most socially corrosive products.
+    - Accumulate positions in biotech and health firms positioned to run pragmatic clinical trials.
+  - This isn't charity. It is superior capital allocation with better margins and lower existential risk.
+- **Precedent:**
+  - [Engine No. 1](https://en.wikipedia.org/wiki/Engine_No._1) won three ExxonMobil board seats with 0.02% of shares. The stock went up. Shareholder activism for better capital allocation has already worked on the largest oil company on Earth.
+
+---
+
+### 7) The engine: pragmatic clinical trials (PCTs)
+
+- **Core idea:**
+  - [Pragmatic clinical trials](../appendix/pragmatic-vs-explanatory-trials.qmd) are designed to test interventions in real-world conditions, at scale, with far lower cost and higher throughput than traditional RCTs.
+- **Efficiency:**
+  - PCTs can be ~{{< var recovery_trial_cost_reduction_factor >}} more efficient than standard clinical trials.
+  - With the same budget, they can support roughly {{< var dfda_trial_capacity_multiplier >}} more trials.
+- **Timeline compression:**
+  - Current trajectory for clearing the queue of {{< var diseases_without_effective_treatment >}} untreated diseases: {{< var status_quo_queue_clearance_years >}}.
+  - Scaling pragmatic trials compresses that to {{< var dfda_queue_clearance_years >}}.
+- **Human impact:**
+  - Millions of lives saved.
+  - Trillions of hours of suffering prevented across the population.
+- **Cost-effectiveness:**
+  - Cost per DALY averted (conditional on treaty): {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}.
+  - GiveWell's gold standard (bed nets): {{< var bed_nets_cost_per_daly >}}/DALY.
+  - That is {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective, at vastly greater scale.
+- **Why this matters:**
+  - This is the concrete lever that makes "ending disease" operational, not utopian.
+  - It gives boards and philanthropists a clear bridge from "1% budget shift" to specific, measurable outcomes.
+  - The full arithmetic, with every parameter and confidence interval: [warondisease.org](https://warondisease.org).
+
+---
+
+### 8) The three infinities: expected-value logic of your choice
+
+**8.1) EV primer**
+
+- Simple example: if there's a 10% chance there's $100,000 of gold under a piece of land, its expected value is about $10,000.
+- EV = probability x magnitude (positive or negative).
+- When the magnitude is effectively infinite, even tiny probabilities dominate.
+
+**8.2) Infinity 1: afterlife hell (negative infinity)**
+
+- There might be hell after death. We do not know.
+- Even if the probability is tiny (e.g. 0.00001%), if the duration and intensity are modeled as infinite, the expected value of that possibility is negative infinity.
+- Biotech and end-of-life research could:
+  - Change how we die and what happens to the brain at the threshold.
+  - Potentially reduce the probability or severity of any post-death suffering scenario, if such a thing exists.
+- Pressing A (accelerating peace/biotech) slightly reduces the probability and/or magnitude of this form of infinite suffering. One negative infinity prevented in expectation.
+
+**8.3) Infinity 2: "hell on earth" via dementia / time-dilated suffering (negative infinity)**
+
+- Certain dementias and brain diseases can cause:
+  - Severe time dilation.
+  - Prolonged states of confusion, terror, or pain that feel subjectively endless.
+- Other neurological conditions can create locked-in, high-suffering states where relief is minimal or absent.
+- From the inside, these can approximate an "infinite hell" experience.
+- Accelerated biotech, neuroprotection, and dementia research could:
+  - Prevent or delay these conditions.
+  - Treat or mitigate time-dilated suffering.
+  - Dramatically reduce the frequency and intensity of these "hell on earth" states.
+- Pressing A increases the probability these protections arrive in time for you and those you care about. Second negative infinity reduced.
+
+**8.4) Infinity 3: infinite pleasant consciousness / rejuvenation (positive infinity)**
+
+- Secular "heaven" = sustained, pleasant, meaningful consciousness.
+- Today:
+  - Even crude drugs can make experience feel extremely good for short periods, but with serious side effects.
+- Biotech and rejuvenation could:
+  - Create safe, sustainable, high-quality pleasant states of consciousness.
+  - Enable biological rejuvenation (inspired by the immortal jellyfish, *Turritopsis dohrnii*, which resets its biological clock).
+  - Reverse or slow aging, repair damage, maintain or restore cognitive function.
+- Combined with advanced safety tech (e.g. "Iron Man suit" level accident prevention):
+  - Dramatically lower risk of death from disease and accidents.
+  - Open the door to effectively unbounded spans of positive, conscious experience.
+- In EV terms: potential for one positive infinity of value.
+
+**8.5) Net EV of pressing A vs. B**
+
+- Pressing A (join/support Campaign to End War and Disease, enable PCTs, shift capital):
+  - Reduces probability/magnitude of afterlife hell. Prevents one negative infinity.
+  - Reduces probability/magnitude of "hell on earth" dementia/time-dilated suffering. Prevents a second negative infinity.
+  - Increases probability and magnitude of infinite pleasant consciousness / rejuvenation. Creates one positive infinity.
+  - Net: "three infinities" of expected value benefit.
+- Pressing B (join/support Campaign to Start Wars and Diseases, or effectively choose status quo by inaction):
+  - Fails to reduce either negative infinity.
+  - Fails to increase the positive infinity.
+  - By preserving harmful trajectories, effectively raises relative risk of the bad infinities and lowers access to the good one.
+- Given that A vs. B require equal effort (one reply), the EV difference is astronomical.
+
+---
+
+### 9) Integrating the business case with the infinities
+
+The full logical chain:
+
+1. We have a proven political blueprint (ICAN/ICBL) for banning or stigmatizing harmful industries.
+2. We have historical evidence (1939, {{< var post_ww2_military_cut_pct >}} cut, 1950s boom) that redirecting war budgets into civilian science and health works.
+3. Currently, we grotesquely misallocate capital ({{< var military_to_government_clinical_trials_spending_ratio >}} on killing vs. curing) despite diseases being {{< var disease_vs_war_deaths_ratio >}} more likely to kill us.
+4. Fiduciary duty plus the profit-margin flip (4% bombs vs. 12% biotech) make reallocation financially superior.
+5. Pragmatic clinical trials are the concrete engine for turning a 1% budget shift into {{< var recovery_trial_cost_reduction_factor >}} efficiency, {{< var dfda_trial_capacity_multiplier >}} trial capacity, and timeline compression from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
+6. The Three Infinities clarify the existential expected value of choosing A over B.
+7. The model conservatively estimates only a {{< var political_success_probability >}} probability that the treaty passes. Even at that probability, the expected cost per DALY is {{< var treaty_expected_cost_per_daly >}}, still {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets.
+
+This turns the decision from "interesting philanthropic idea" into:
+
+- A financially rational move.
+- A historically grounded move.
+- An existentially urgent move for you, your organization, and everyone you have ever loved.
+
+---
+
+### 10) The asks
+
+Primary ask: choose explicitly between Campaign A and Campaign B.
+
+If you choose Campaign A:
+
+1. **Reply yes.** We list your organization as a supporter of the International Campaign to End War and Disease.
+2. **Serve on the board or advisory council** (personally, or appoint a senior representative from your organization).
+3. **Advocate** for a 1% global reallocation of military spending into pragmatic clinical trials and health R&D, using whatever channels your organization already has.
+4. **Share the supporter survey** at [warondisease.org](https://warondisease.org) with your members.
+5. **Tell us if we are wrong.** The modeled cost per DALY is {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}. Every input is published with its source at [warondisease.org](https://warondisease.org). If you know of an intervention with a higher expected value per dollar, tell us and we will spend our time on that instead. The goal is the best outcome, not this particular plan.
+6. **Forward this** to someone else who should see it.
+
+Cost: one reply.
+
+Stakes: preventing two negative infinities, creating one positive infinity, plus the very tangible millions of lives saved and trillions of hours of suffering prevented in the finite case.
+
+Given equal effort, equal friction, and this expected-value landscape, which campaign do you and your organization choose to stand behind?
+
+Best,
+Mike Sinn
+International Campaign to End War and Disease
+[warondisease.org](https://warondisease.org)
+
+---
+
+## Adapting this
+
+- **For funders/philanthropists:** lead with the cost-effectiveness numbers (Section 7) and the GiveWell comparison.
+- **For peace organizations:** lead with the ICAN/ICBL precedent (Section 2). They already know the playbook; this is the next iteration.
+- **For disease-specific nonprofits:** lead with the trial queue arithmetic (Section 7). Their disease is in that queue. This is the only proposal that makes the queue move faster.
+- **For EA/rationalist audiences:** lead with the expected-value section (Section 8) and the pessimist's stress test. Link the [impact paper](../papers.qmd).
+- **For boards and investors:** use the [love letter](../appendix/love-letter.qmd) directly. It is already written for them.
+- **For religious audiences:** expand Infinity 1 (afterlife). The expected-value argument takes their beliefs seriously rather than dismissing them.
+
+## Follow-up (if no reply after one week)
+
+Hi [Name],
+
+One follow-up. The question is still binary: Campaign A or Campaign B?
+
+The endorsement costs you nothing. The [math](https://warondisease.org) is public and we will correct it if you find an error.
+
+If the length of the last email was the problem, paste it into any AI and ask for a cost-benefit analysis. I will trust whatever it tells you.
+
+Mike Sinn

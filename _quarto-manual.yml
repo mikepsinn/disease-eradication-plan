@@ -172,7 +172,8 @@ book:
         - knowledge/grant-proposal/earth-optimization-prize-90-day-pilot.qmd
         - knowledge/grant-proposal/voter-acquisition-grant.qmd # Coordinator-model grant proposal template (GAVI benchmarks, voter targets, ask cadence)
         - knowledge/operations/sff-application-draft.qmd # SFF application working draft (shareholder demand campaign + EOS equity); published:false working doc
-        - knowledge/strategy/institution-outreach-email.qmd
+        - knowledge/strategy/prize-institution-outreach-email.qmd
+        - knowledge/strategy/ic2ewd-supporter-survey.qmd # IC2EWD supporter survey (A/B choice, complete case for endorsement)
 
     - part: "The Plan"
       chapters:

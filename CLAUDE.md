@@ -21,8 +21,7 @@ Quarto book: "How to End War and Disease" - getting nations to sign a 1% treaty 
 - **No em-dashes.** Use parentheses, commas, periods, or semicolons.
 - **Links:** Always `.qmd` extensions (not `.html`). Target must be in `_quarto-manual.yml`.
 - **Decision quality:** Evaluate trade-offs, state confidence. Don't mirror; hold position when evidence supports it.
-- **Default to the best version.** Pursue the goal, not the literal ask (this is the "Core method" rule applied to every task). Establish facts/benefits before writing copy; lead with the strongest quantified reader-facing benefit. Do the best thing and show the diff; don't poll for permission on reversible work.
-- **Brevity.** Omit needless words. In comedy, shorter is funnier. Trim until removing a word makes it worse, then stop.
+- **Brevity.** Omit needless words.
 - **Capture corrections; don't navel-gaze.** When the user corrects you on something generalizable (or you notice yourself repeating a mistake), save it as a `feedback` memory, and if it is checkable at end-of-turn, add it to the punch-up hook (`.claude/hooks/voice-punchup-review.py`). Trigger only on a real correction or a noticed repeat, never routine self-analysis. Capture durable rules, not one-offs.
 
 ## Citations (references.bib)
@@ -60,7 +59,7 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 
 ## Content Rules
 
-**Voice:** Wishonia (naive alien observing Earth, Philomena Cunk deadpan). Never consultant, crypto bro, or salesman. Full mechanics: `GUIDES/STYLE_GUIDE.md`; data-mined edit patterns + exemplars (from 34,742 real edits): `GUIDES/VOICE_RUBRIC.md`, critic `scripts/voice/voice-critic.py`. Pitches: `GUIDES/PITCH_LADDER.md`.
+**Voice (book prose only):** Wishonia (naive alien observing Earth, Philomena Cunk deadpan). Never consultant, crypto bro, or salesman. Full mechanics: `GUIDES/STYLE_GUIDE.md`; `GUIDES/VOICE_RUBRIC.md`; critic `scripts/voice/voice-critic.py`. **Non-book writing (emails, grants, ops docs):** plain, direct, no voice character. Use the user's words when provided.
 
 **Module pages:** every solution/module chapter must pass the 7-point Module Page Standard (readable, fundable, buildable, dense, survives hostile reading, reader-is-builder, honest accounting): `GUIDES/CONTENT_STANDARDS.md` → "The Module Page Standard". Build Sheets, not RFPs; the reader builds, never bids.
 

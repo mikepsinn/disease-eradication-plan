@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 734 parameters used in the analysis, organized by type:
+This appendix documents all 735 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 206
+- External sources (peer-reviewed): 207
 - Calculated values: 377
 - Core definitions: 151
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (377 parameters) • [External Data Sources](#sec-external) (206 parameters) • [Core Definitions](#sec-definitions) (151 parameters)
+[Calculated Values](#sec-calculated) (377 parameters) • [External Data Sources](#sec-external) (207 parameters) • [Core Definitions](#sec-definitions) (151 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -36292,6 +36292,30 @@ Annual US cost of cancer (direct and indirect)
 {{< include ../figures/distribution-us_cancer_annual_cost.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### US Annual Chronic Disease Spending: $4.1 trillion {#sec-us_chronic_disease_spending_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US annual chronic disease spending
+
+**Source**: [@us-chronic-disease-spending]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.3 trillion, $5 trillion] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3.3 trillion and $5 trillion (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_chronic_disease_spending_annual.qmd >}}
+
+*✓ High confidence*
 
 :::
 

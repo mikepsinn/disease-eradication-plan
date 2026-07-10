@@ -11,9 +11,11 @@ scores:
   standalone: 2
   voice: 6
   importance: 2
-audience: "An organizer or recruiter about to email an institution to ask it to host the first 90-day pilot."
-feel: "Armed and unembarrassed: the hard part (what to say) is already written, so sending feels easy."
-do: "Pick the template that fits the contact, fill in the brackets, and send it today."
+audience: An organizer or recruiter about to email an institution to ask it to host the first 90-day pilot.
+feel: 'Armed and unembarrassed: the hard part (what to say) is already written, so sending feels easy.'
+do: Pick the template that fits the contact, fill in the brackets, and send it today.
+aliases:
+  - /knowledge/strategy/institution-outreach-email.html
 ---
 
 {{< include ../includes/setup-parameters.qmd >}}
