@@ -1,0 +1,286 @@
+---
+title: Earth Optimization Services Investor Video
+subtitle: Production Script
+description: 3-5 minute investor pitch video in 1950s Tomorrowland aesthetic. For accredited investors. Over-the-top retro pitchman voice; humor comes from contrast between sunny delivery and horrifying content.
+toc: false
+number-sections: false
+audience: "Accredited investors (millionaires+) deciding whether to invest in EOS equity."
+feel: "This is a once-in-history arbitrage on civilizational stupidity, and the downside is you accidentally bought a defense ETF."
+do: "Request the PPM and invest $25K+ in EOS equity."
+video:
+  visual-style: 1950s World's Fair / Tomorrowland corporate film. Bright, optimistic, retro-futurist. Clean lines, chrome, atomic-age typography. Think GM Futurama, Bell Labs promotional films, Walt Disney's EPCOT pitch. Saturated colors, lens flares on chrome surfaces, scale models of cities.
+  negative-prompt: dystopia, gritty, dark, horror, anime, CGI realism, handheld camera, found footage, TikTok aesthetic
+  duration: 3-5 minutes
+  format: live-action with motion graphics overlays, or fully animated in retro style
+  music: soaring orchestral with 1950s industrial-film optimism, brass-heavy
+---
+
+<style>
+.scene-direction {
+  background: #f0f5ff;
+  border-left: 4px solid #2563eb;
+  padding: 0.8em 1em;
+  margin: 1em 0;
+  font-size: 0.9em;
+  border-radius: 0 4px 4px 0;
+}
+.production-note {
+  background: #fff7ed;
+  border-left: 4px solid #ea580c;
+  padding: 0.8em 1em;
+  margin: 1em 0;
+  font-size: 0.85em;
+  border-radius: 0 4px 4px 0;
+}
+</style>
+
+:::{.production-note}
+**What this is:** Production script for a 3-5 minute investor pitch video. NOT the feature-length educational film (that is `educational-film.qmd`). This video exists to get accredited investors to request the PPM and write a check.
+
+**Voice:** 1950s Tomorrowland pitchman. Over-the-top sunny, selling the future of tomorrow. The humor is the contrast: the delivery is "boy oh boy, wait till you see this!" while the content is "your civilization is collapsing and most of you will die of diseases nobody bothered to cure." The pitchman is not ironic. He means every word. That is what makes it funny.
+
+**Dependency chain:** This video (hook) -> investor requests PPM -> investment closes -> educational film (feature-length, for humanity) gets funded.
+
+**Key content rules:**
+
+- Optimitron analyzes and recommends; humans vote. It is not a central brain.
+- The "loving takeover" means buying shares and redirecting lobbying. Not installing hardware.
+- Wishocracy means one civic vote per human with data-informed decisions. Not removing human agency.
+- dFDA means massively scaling clinical trials. Not a product approval/retirement system.
+- Returns are projected, not promised. Securities-disclosure language required.
+- The cure does not exist yet. The trials DISCOVER treatments.
+:::
+
+## Scene 1: The Pitch {.scene}
+
+:::{.scene-direction}
+**Setting:** A 1950s World's Fair pavilion. Chrome, glass, scale models of gleaming cities under glass domes. A PITCHMAN in a sharp suit stands at a podium. Behind him, a massive curtain. Orchestra swells.
+
+**Visual:** Camera dollies forward through the pavilion entrance. Sunlight catches chrome. Title card: EARTH OPTIMIZATION SERVICES. Subtitle: "The Future Is Solvent."
+
+**Music:** Brass fanfare, then settles to warm underscore.
+:::
+
+PITCHMAN: Ladies and gentlemen! Welcome to the most exciting investment opportunity since fire!
+
+:::{.scene-direction}
+**Visual:** Pitchman gestures grandly. Behind him, an animated globe rotates, gleaming.
+:::
+
+Now, I know what you're thinking. "That man is going to ask me for money." You're right! But first, let me show you something.
+
+:::{.scene-direction}
+**Visual:** He pulls a cord. The curtain drops, revealing a giant animated chart. Four lines diverge from a single point labeled "TODAY: {{< var global_gdp_2025 >}}."
+:::
+
+## Scene 2: The Chart {.scene}
+
+:::{.scene-direction}
+**Setting:** The chart fills the screen. Clean retro infographic style. Four lines animate from left to right.
+
+**Line 1 (gray, dotted):** "Fantasy Baseline" climbs gently to {{< var current_trajectory_gdp_year_20 >}}.
+**Line 2 (red, descending):** "Collapse" curves downward, ends at an X.
+**Line 3 (blue, ascending):** "Treaty" climbs to {{< var treaty_trajectory_gdp_year_20 >}}.
+**Line 4 (gold, soaring):** "Optimal" rockets to {{< var wishonia_trajectory_gdp_year_20 >}}.
+
+Each line draws itself as the pitchman describes it.
+:::
+
+PITCHMAN: This gray line? That's what your economists project. Two-point-five percent growth, smooth and steady, for twenty consecutive years. Which requires twenty consecutive years of nothing going wrong.
+
+:::{.scene-direction}
+**Visual:** A superimposed counter ticks through "Years of nothing going wrong in human history: 0." Pitchman's smile does not waver.
+:::
+
+PITCHMAN: Your species has never done this. Not once! Isn't that something!
+
+Now this red line. This is what is actually happening.
+
+:::{.scene-direction}
+**Visual:** The red line animates downward. Small labels pop up along it: "Soviet Union," "Venezuela," "Zimbabwe," "Somalia." Each with a date. The line crosses a dashed threshold labeled "35% EXTRACTIVE BURDEN" at the year {{< var destructive_economy_35pct_year >}}, then plunges to zero.
+:::
+
+PITCHMAN: Your destructive economy, that's military spending plus cybercrime, is already {{< var global_destructive_economy_pct_gdp >}} of GDP. Growing faster than your productive economy! Every civilization that crossed 35% extractive burden collapsed. You hit that by {{< var destructive_economy_35pct_year >}}. Not a prediction! Just the current line, extended!
+
+:::{.scene-direction}
+**Visual:** Pitchman beams at the collapsing line like he is showing you a new dishwasher.
+:::
+
+PITCHMAN: The blue line! This is the hedge. Redirect 1% of the weapons budget to clinical trials. Compounds at {{< var treaty_trajectory_cagr_year_20 >}}. The average person ends up {{< var treaty_vs_current_median_income_multiplier_year_20_nounit >}} times richer than on the fantasy baseline.
+
+And this gold line? Fix governance entirely. That one reaches {{< var wishonia_trajectory_gdp_year_20 >}}.
+
+:::{.scene-direction}
+**Visual:** The gold line exits the top of the chart. The chart frame cracks. Pitchman doesn't notice.
+:::
+
+PITCHMAN: Now, in every other asset class, your alpha comes from secret information, proprietary models, a faster computer. Here? The alpha is that your civilization is governed by idiots. And the returns from not being governed by idiots are larger than any trade in the history of money!
+
+:::{.scene-direction}
+**Visual:** Text animates on screen in atomic-age typography: "THE ALPHA: HUMAN STUPIDITY." Stars and atoms orbit the text.
+:::
+
+PITCHMAN: This is not a hidden signal. Everyone knows. The trade is: make it less bad, and own the upside.
+
+## Scene 3: The Machine {.scene}
+
+:::{.scene-direction}
+**Setting:** Pitchman walks to a scale model of the EOS mechanism. Chrome and glass. Animated arrows show flow. Think: GM Futurama exhibit, but the model is of corporate governance instead of highways.
+:::
+
+PITCHMAN: So how does it work? Boy oh boy, I'm glad you asked!
+
+:::{.scene-direction}
+**Visual:** Animated flow diagram, retro style. Each step lights up as described:
+
+1. MONEY IN (coins pour into a hopper)
+2. BUY SHARES (stock certificates emerge)
+3. WIN BOARD SEATS (tiny suited figures sit at a boardroom table)
+4. REDIRECT LOBBYING (arrows from Capitol Hill turn from red to blue)
+5. BETTER POLICY (a thermometer labeled "GOVERNANCE" rises)
+6. ECONOMY GROWS (the globe gets shinier, cities sprout)
+7. YOUR SHARES GO UP (a stock ticker climbs)
+8. Arrow loops back to step 1.
+:::
+
+PITCHMAN: Earth Optimization Services buys shares in the corporations whose lobbying currently writes your laws. {{< var us_total_lobbying_annual >}} a year buys your legislation. In the context of capital markets, that is a very small number!
+
+Shares come with votes. Votes elect board members. Board members set strategy. Strategy includes what those lobbyists ask for. Same lobbyists, same offices, same committee relationships. Different ask. Instead of "more missiles," it's "more clinical trials." The missiles have {{< var nuclear_winter_overkill_factor_nounit >}} spare apocalypses of margin. The trials have a {{< var status_quo_queue_clearance_years_nounit >}}-year backlog.
+
+:::{.scene-direction}
+**Visual:** Side-by-side: a comically overstuffed missile warehouse (missiles falling out the door) vs. an empty clinical trial lab (one lonely scientist, cobwebs). Pitchman gestures at both with equal enthusiasm.
+:::
+
+PITCHMAN: Someone already did a version of this! In 2021, a twelve-person firm called Engine No. 1 spent twelve-and-a-half million dollars and won three board seats at ExxonMobil. A four-hundred-billion-dollar company. The stock went up!
+
+:::{.scene-direction}
+**Visual:** Newspaper headline animates in: "TINY FUND WINS EXXON BOARD SEATS." Stock chart climbs. Confetti.
+:::
+
+## Scene 4: The Trials {.scene}
+
+:::{.scene-direction}
+**Setting:** Pitchman walks to a new exhibit: a split display. Left side shows a comically expensive traditional clinical trial (gold-plated building, mountains of paperwork, a clock spinning for 14 years). Right side shows a streamlined pragmatic trial (a doctor, a patient, a tablet, done).
+:::
+
+PITCHMAN: Now, what does that redirected money actually do? Well!
+
+Currently it costs {{< var traditional_phase3_cost_per_patient >}} per patient to test whether a medicine works, because you build a separate building, hire separate humans, and make the sick person drive across town to be sick in the correct building.
+
+:::{.scene-direction}
+**Visual:** A sick person in a hospital gown drives a comically long distance to a different, identical hospital. Arrows point to both buildings: "SAME DISEASE. DIFFERENT ZIP CODE."
+:::
+
+PITCHMAN: The treaty drops that to {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient. Your doctor prescribes the most promising treatment. Your outcomes get tracked. Done! Instead of {{< var current_trial_slots_available_nounit >}} patients per year, you fund {{< var dih_patients_fundable_annually_nounit >}}.
+
+95% of diseases have zero approved treatments. Not because the cures are impossible! Because the search is underfunded by a factor of {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}.
+
+:::{.scene-direction}
+**Visual:** A lineup of cartoon disease germs. 95 out of 100 wear tiny sunglasses and swagger freely. 5 are in handcuffs. The free ones high-five.
+:::
+
+PITCHMAN: The trials don't deliver cures we already have. They DISCOVER cures that don't exist yet. That is the whole point. If the cures existed, we wouldn't need the trials!
+
+## Scene 5: The Downside {.scene}
+
+:::{.scene-direction}
+**Setting:** Pitchman leans on the podium, casual, as if sharing a secret.
+:::
+
+PITCHMAN: Now, every good investment pitch ends by saying "and there is absolutely no risk!" I am going to do something different. I am going to tell you what happens if this completely fails.
+
+:::{.scene-direction}
+**Visual:** A big red stamp: "TOTAL FAILURE." Dramatic music sting. Then: a perfectly normal stock portfolio.
+:::
+
+PITCHMAN: If the campaign fails entirely? War continues. Which means more defense contracts. You hold shares in monopoly contractors whose customers cannot leave. The Navy is not going to buy aircraft carriers from Toyota!
+
+:::{.scene-direction}
+**Visual:** A Toyota dealership with aircraft carriers in the parking lot. A salesman kicks a tire on a destroyer. "Low miles!"
+:::
+
+PITCHMAN: Your money is sitting in defense and pharma companies purchased at market price with no management fee. EOS liquidates the portfolio. You get back whatever those stocks returned. You accidentally bought a no-fee ETF.
+
+The failure mode is not zero. It is a defense portfolio. The success mode is you got rich ending war and disease. Projected returns, not promised, but the math is clear and the floor has a floor.
+
+## Scene 6: The Close {.scene}
+
+:::{.scene-direction}
+**Setting:** Pitchman returns to center stage. The globe behind him now shows animated clinical trials lighting up across continents. The four-line chart is visible in the background.
+
+**Music:** Swells to finale.
+:::
+
+PITCHMAN: Right now, {{< var global_disease_deaths_per_minute_nounit >}} people die every minute from diseases that have no approved treatment. Not because the cures are impossible. Because nobody funded the search.
+
+:::{.scene-direction}
+**Visual:** The death counter ticks. Not morbid. Factual. Clean white numbers on the screen.
+:::
+
+PITCHMAN: The gap between the red line and the blue line is not a bet on optimism. It is a hedge against the certainty that things will get worse if nobody does anything. Your portfolio requires a functioning civilization, and the red line does not have one.
+
+:::{.scene-direction}
+**Visual:** Chart zooms in on the gap between red and blue. The gap is shaded and labeled: "YOUR HEDGE."
+:::
+
+PITCHMAN: Earth Optimization Services. Minimum investment: twenty-five thousand dollars. Accredited investors only, because the SEC protects less wealthy Americans from the risk of making money. We go public as fast as possible so everyone can participate.
+
+:::{.scene-direction}
+**Visual:** Clean title card: "EARTH OPTIMIZATION SERVICES." Below it: "Request the Private Placement Memorandum." A URL. The globe rotates behind it, clinical trials still lighting up.
+:::
+
+PITCHMAN: I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases.
+
+:::{.scene-direction}
+**Visual:** Beat. The pitchman's smile is completely sincere. Held for two seconds of silence.
+:::
+
+PITCHMAN: Visit warondisease.org. Invest. Or at the very least, forward this to the richest person you know.
+
+:::{.scene-direction}
+**Visual:** Retro title card: "THE FUTURE IS SOLVENT." Logo. URL. Fade to black.
+
+**Music:** Final brass chord. Resolves warmly.
+:::
+
+---
+
+:::{.production-note}
+**REQUIRED DISCLOSURE (must appear as on-screen text or voiceover during Scene 6):**
+
+All returns are projections based on modeled estimates, not guarantees. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only. This video is not a prospectus. Full terms are in the Private Placement Memorandum, available upon request and verification of accredited investor status.
+:::
+
+---
+
+## Production Notes
+
+**Duration target:** 3:30 to 4:30. The educational film (`educational-film.qmd`) is the feature-length piece for humanity; this is the short hook for investors.
+
+**Key pitch sections mapped to scenes:**
+
+| Scene | Pitch Section | Purpose |
+|-------|--------------|---------|
+| 1: The Pitch | Opening hook | Establish tone, promise |
+| 2: The Chart | Four Earths, Twenty Years | Show the alpha |
+| 3: The Machine | Buy the Shares, Redirect the Lobbyists | Explain the mechanism |
+| 4: The Trials | The Military-Industrial Complex section | Show what the money buys |
+| 5: The Downside | The Failure Mode | Address risk, show the floor |
+| 6: The Close | Invest | CTA with disclosure |
+
+**What this video is NOT:**
+
+- Not the educational film (that is a separate, later production)
+- Not a Wishocracy explainer (one line only: "money buys profit, not votes")
+- Not an Optimitron demo (save for the landing page and book)
+- Not a nonprofit pitch (this is an equity investment)
+
+**Content accuracy checklist:**
+
+- [ ] Optimitron is mentioned zero times (correct; save for landing page)
+- [ ] Mechanism is share buying -> board seats -> lobbying redirect (correct)
+- [ ] No implication that cures already exist (correct; "discover," not "deliver")
+- [ ] Returns described as "projected," never "guaranteed" (correct)
+- [ ] Disclosure text appears on screen (required)
+- [ ] One civic vote per human mentioned only in passing, if at all
+- [ ] Wishocracy not explained in detail (correct; this is about the investment)

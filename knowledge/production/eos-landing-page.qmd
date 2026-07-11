@@ -1,0 +1,401 @@
+---
+title: Earth Optimization Services Landing Page
+subtitle: Production Specification
+description: Complete specification for the EOS single-page web application. Every word of copy, every section layout, every interactive element, every data requirement. Hand to a coding agent for implementation.
+toc: false
+number-sections: false
+audience: "Split: general public (the builder, the voter, the sharer) AND accredited investors (the funder). The page serves both without segregating them."
+feel: "This is a once-in-history arbitrage on civilizational stupidity, presented by an alien who genuinely wants to help and finds your current arrangement baffling."
+do: "Invest in EOS equity (accredited), or build/spread (everyone else)."
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## Purpose
+
+Complete specification for a single-page web application. Contains every word of copy, every section layout, every interactive element, and every data requirement. Hand it to a coding agent for implementation. The coding agent has access to a TypeScript variables file with all numeric parameters; reference variable names where relevant but do not hardcode numbers.
+
+## Audience
+
+Split: general public (the builder, the voter, the sharer) AND accredited investors (the funder). The page serves both without segregating them into separate tracks. Investors see the same vision everyone else does; the investor-specific details (structure, returns, disclosures) come near the end.
+
+## Voice
+
+Wishonia: naive alien observer, Philomena Cunk deadpan. Warm, funny, inviting. The Tomorrowland pitchman selling a future people want to live in. Never contemptuous, never startup-bro, never consultant-speak. The reader is the president of this machine; we hand them the keys.
+
+## Visual Direction
+
+Futuristic but warm. Think: NASA mission control crossed with a children's science museum. Data-dense but navigable. Dark background with bright accent colors for data visualizations. Smooth scroll. Each section is a full viewport. Animated transitions between sections. The overall feeling should be: "holy shit, someone actually designed this."
+
+---
+
+## SECTION 1: HERO
+
+**Layout:** Full viewport. Centered text. Subtle particle animation or starfield in background (not distracting). Two CTA buttons at bottom.
+
+**Headline:**
+
+> Buy the machine that's making you poorer and deader. Reprogram it to make you healthier and wealthier.
+
+**Subhead:**
+
+> Earth Optimization Services has been upgrading civilizations since before your sun ignited. Over 300 planets optimized. Yours is next.
+
+**Live counter** (top right corner, small, ticking): Deaths from curable diseases since you opened this page. Uses `global_disease_deaths_per_minute` to increment. Format: "XX people died of curable diseases while this page was open." Updates every second. Not morbid; factual. Small font, corner placement. The number does the work.
+
+**Two CTA buttons:**
+
+- "See What You're Buying" -> scrolls to Section 2
+- "I Have Money and Want to Help" -> scrolls to Section 8 (Investor)
+
+---
+
+## SECTION 2: THE TAX YOU DIDN'T KNOW YOU WERE PAYING
+
+**Layout:** The number {{< var political_dysfunction_global_opportunity_cost_total >}}/YEAR dominates the viewport. Large. Unmissable. Below it, the per-person math and the "how do we know" link.
+
+**Copy:**
+
+> ## The Political Dysfunction Tax
+>
+> This is not the national debt. This is not the deficit. This is the annual cost of having a government that optimizes for the wrong things.
+>
+> Your government is a machine. It has inputs (money, laws, people) and outputs (health, wealth, safety). The machine is currently miscalibrated. It spends {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} times more on the capacity to kill people than on the research to save them. It maintains 74,000 pages of tax code to do what six lines of arithmetic could handle. It runs 80+ overlapping welfare programs to accomplish what a single deposit could.
+>
+> The total cost of this miscalibration is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. That is {{< var political_dysfunction_tax_per_person_annual >}} per human per year. {{< var political_dysfunction_tax_per_household_of_four_annual >}} per household of four. Not taken from you in taxes. Taken from you in a future that doesn't arrive.
+
+**Below the copy:** Three supporting stats displayed as large counters or cards (no component breakdown):
+
+- **{{< var political_dysfunction_tax_per_person_annual >}}** per person per year
+- **{{< var political_dysfunction_global_efficiency_score >}}** Global Governance Efficiency Score (you are getting 52 cents of value for every dollar your government touches)
+- **{{< var military_to_government_clinical_trials_spending_ratio >}}** ratio of military spending to clinical trial funding
+
+**Small link** at bottom: "Read the full forensic audit ->" (links to the Political Dysfunction Tax paper, where curious readers find the component breakdown including migration)
+
+**No breakdown bars.** The number stands alone. The paper has the derivation for anyone who digs.
+
+**Transition line** (at bottom of section, leading to next):
+
+> The good news: miscalibration is fixable. That is what calibration means.
+
+---
+
+## SECTION 3: FOUR EARTHS
+
+**Layout:** Full viewport. Centered animated line chart draws four trajectories from 2025 forward to 2045. Above the chart: a single input field for personalization. Below: copy explaining the lines.
+
+**Personalization input** (above chart, centered, clean):
+
+A single field: "Enter your net worth or annual income" with a toggle (net worth / annual income). Default: median global income (`global_median_after_tax_income_2025`). The chart Y-axis dynamically rescales to show YOUR number multiplied by each trajectory. Hover tooltips show "Your projected [net worth / income] under this scenario: $X" at each year. The personalization makes abstract GDP concrete: the visitor sees their own money diverging across four futures.
+
+**Chart data:** Pull from GDP trajectories. Four lines:
+
+1. **Collapse** (red, animates downward): Current destructive economy trend. Starts at {{< var global_destructive_economy_pct_gdp >}} of GDP, crosses 35% terminal parasitic load by {{< var destructive_economy_35pct_year >}}. The line curves down and terminates at a skull icon or "X" mark. Historical precedent labels on hover: "Soviet Union," "Venezuela," "Somalia." This is not a projection. It is the current trend line, extended.
+2. **Fantasy Baseline** (gray, dotted, fading): 2.5% CAGR -> {{< var current_trajectory_gdp_year_20 >}} global GDP by 2045. Labeled "requires 20 consecutive lucky years." Visually thin and uncertain.
+3. **Treaty Trajectory** (blue, solid, animates upward): {{< var treaty_trajectory_cagr_year_20 >}} CAGR -> {{< var treaty_trajectory_gdp_year_20 >}} by 2045. The conservative hedge. Labeled "1% redirect."
+4. **Optimal Governance** (gold, bright, animates way up): {{< var wishonia_trajectory_cagr_year_20 >}} CAGR -> {{< var wishonia_trajectory_gdp_year_20 >}} by 2045. Labeled "stop being stupid."
+
+The chart should have hover tooltips showing per-person income at each year. When the visitor has entered a personal number, tooltips show their personalized projection instead. The gap between the red and blue lines should be visually emphasized (shaded region labeled "the hedge").
+
+**Annotation on chart:** Small text near the divergence point: "the alpha: human stupidity"
+
+**Copy below chart:**
+
+> Your economists project steady 2.5% growth. This requires twenty consecutive years of nothing going wrong. Your species has never achieved this, because your largest economic sector is destroying things, and destroying things is a growth industry.
+>
+> The red line is what is actually happening. Your destructive economy (military spending plus cybercrime) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than everything else. At current rates, it crosses 35% by {{< var destructive_economy_35pct_year >}}. Every civilization that has crossed that threshold collapsed. The Soviet Union. Venezuela. Zimbabwe. Somalia. There is no historical exception.
+>
+> The blue line is the conservative hedge: redirect 1% of the weapons budget to clinical trials. The average person ends up {{< var treaty_vs_current_median_income_multiplier_year_20 >}} richer. The gold line is what happens if you fix governance entirely. The gap between these lines is not a bet on optimism. It is the measured cost of human stupidity, priced annually, compounded over twenty years.
+>
+> Most alpha in finance comes from proprietary models or faster computers. This alpha comes from the fact that your government is bad at its job and the returns from making it less bad are larger than any trade in the history of capital markets. Everyone knows the government is bad. Nobody has priced the upside of it being better.
+
+**Closing line:**
+
+> Every decision is locally sensible. The aggregate output does not have to be extinction.
+
+---
+
+## SECTION 4: THE MACHINE
+
+**Layout:** A clean system diagram, animated. The flow: Money In -> Share Acquisition -> Board Seats -> Lobbying Redirect -> Policy Change -> Outcomes Improve -> Value Increases -> More Money In. A virtuous cycle.
+
+**Header:**
+
+> ## How It Works
+
+**Copy:**
+
+> Earth Optimization Services is an activist holding company. It acquires governance positions in the corporations whose lobbying writes your laws, then redirects that lobbying toward policies that make everyone healthier and wealthier.
+>
+> The defense industry spends $198 million per year on lobbying. Total US lobbying: {{< var us_total_lobbying_annual >}}. These numbers buy your laws. They are also, in the context of capital markets, very small numbers. A single activist fund can outspend them.
+>
+> We buy shares. Shares come with votes. Votes elect board members. Board members set corporate strategy. Corporate strategy includes lobbying priorities. The same machine that currently lobbies for weapons contracts begins lobbying for clinical trials. Same lobbyists, same Capitol Hill offices, same committee relationships. Different ask.
+
+**Three-step animated sequence** (each step lights up in order):
+
+**Step 1: Buy**
+> Acquire shares in defense, pharma, and government-adjacent corporations. The floor is: you own real companies with real earnings. If nothing else works, you accidentally bought a no-fee ETF.
+
+**Step 2: Redirect**
+> Use board seats, proxy fights, and shareholder resolutions to redirect lobbying budgets. The pitch to Lockheed Martin is not "stop making weapons." It is "make the same weapons, sell them to the same government, and stop needing a war to justify the invoice."
+
+**Step 3: Optimize**
+> Feed every law and budget line through the Optimitron (below). Replace policies that make people poorer and sicker with policies that make people healthier and wealthier. Measure the results. Repeat.
+
+---
+
+## SECTION 5: THE OPTIMITRON
+
+**Layout:** Two panels side by side. Left: Optimal Policy Generator. Right: Optimal Budget Generator. Both feed into a central metric display showing the two numbers.
+
+**Header:**
+
+> ## The Thermostat
+>
+> Your government is an oven with no thermostat. It heats up, it cools down, nobody measures the temperature, nobody adjusts the dial, and every four years you replace the person standing next to it and hope that helps.
+>
+> The Optimitron is the thermostat. It has two settings.
+
+**Left Panel: Optimal Policy Generator**
+
+> Analyzes millions of policy-years across 10,000+ jurisdictions. Every state, province, canton, and municipality that ever tried a policy becomes a data point. Synthetic controls, difference-in-differences, regression discontinuity. Not opinion. Not ideology. Measurement.
+>
+> Output: ENACT / REPLACE / REPEAL / MAINTAIN. Each recommendation scored on the two metrics that matter.
+
+**Right Panel: Optimal Budget Generator**
+
+> Finds the optimal spending level for every budget line: the point where each additional dollar produces less benefit than spending it somewhere else. The current largest misallocation: clinical trial funding is 9,900% below optimal. Military spending is $391 billion above optimal.
+>
+> Output: an optimal budget for every jurisdiction on Earth, updated continuously.
+
+**Center Display: The Two Numbers**
+
+Two large, animated counters or gauges:
+
+> **Median Healthy Life Years** -- not average life expectancy; the age at which the median person is still healthy
+>
+> **Median Real After-Tax Income** -- not GDP per capita, which looks great when three billionaires move into your city while everyone else's rent doubles
+
+> Two numbers. Everything important your government does eventually makes people healthier or wealthier. If it doesn't do either, it wasn't important.
+
+**Interactive element:** A simplified policy comparator. Show 3-4 example policies with before/after scores. Examples:
+
+- **Tax code**: 74,000 pages -> 6 lines. Filing cost per citizen: $1,200 -> $0.
+- **Drug approval**: 14 years, $2.6 billion per drug -> pragmatic trials, 90% cost reduction. 50 approvals/year -> 200+.
+- **Welfare**: 80+ programs, 95,000 administrators -> single universal deposit, automatic.
+- **Military**: $886B (3.5% GDP) -> $459B (strict deterrence). Savings redirected to clinical trials.
+
+---
+
+## SECTION 6: THE OPERATING SYSTEM
+
+**Layout:** A grid of cards. Each card represents one government replacement module. Cards flip or expand on click to show details.
+
+**Header:**
+
+> ## What Comes in the Box
+>
+> Thirteen modules. Each one replaces a federal agency with software that does the same job faster, cheaper, and without the lobbying intake valve. Click any module to see what it replaces and what it costs.
+
+**Module Cards** (each card shows: icon, name, one-line description, cost comparison):
+
+1. **Decentralized FDA** -- Open protocol for drug approval. Current: $6.5B/year. EOS: protocol fees.
+2. **Decentralized Institutes of Health** -- Treaty-funded research. Current: $47B/year (3.3% to trials). EOS: {{< var treaty_annual_funding >}}/year (100% to trials).
+3. **Department of Peace** -- Settlement engine + disposal robots. Current: $886B/year. EOS: $459B strict deterrence.
+4. **Automated Revenue Service** -- Six lines of code. Current: $14.3B/year + $546B compliance costs. EOS: $0.
+5. **Universal Security Administration** -- One deposit replacing 80+ programs. Current: $1.2T/year across overlapping agencies. EOS: single transfer.
+6. **Aligned Election Commission** -- Politician alignment scores funded by citizens. Current: {{< var us_total_lobbying_annual >}} lobbying buys your laws. EOS: evidence buys your laws.
+7. **Decentralized Accountability Office** -- Real-time public ledger. Current: annual audits, years late. EOS: every dollar tracked live.
+8. **Decentralized Census Bureau** -- Continuous measurement. Current: $13B every 10 years. EOS: real-time, always current.
+9. **Algorithmic Monetary Authority** -- 0% inflation targeting. Current: dual mandate, political pressure, 15 people in a room.
+10. **Transparent Securities Commission** -- Competence-based access, not wealth gates. Current: accredited investor rules that curated Madoff's victims.
+11. **Drug Treatment Administration** -- Addiction as disease, not crime. Current: $182B/year on criminalization. EOS: treatment cheaper than incarceration.
+12. **Immigration Revenue Service** -- Priced legal entry with citizen dividends. Current: $25.6B/year on enforcement, $0 in entry fees.
+13. **Decentralized Congress** -- Direct citizen votes with evidence cards. Current: {{< var us_congress_member_count_nounit >}} people. EOS: 335 million.
+
+**Comparison bar** at bottom of section: a single horizontal bar showing total current cost vs. total EOS cost.
+
+---
+
+## SECTION 7: THE FUTURE
+
+**Layout:** Warm, aspirational. Transition from dark data-heavy sections to something that feels like sunrise. This is the Wishonia section.
+
+**Header:**
+
+> ## A Day in the Optimized Life
+
+**Interactive timeline** -- a horizontal scrollable or vertical scrolling timeline showing a single day in the optimized world:
+
+> **6:00 AM** -- You wake up without an alarm. Your health monitor adjusted your sleep cycle overnight. Depression was cured eleven years ago; the protocol cost $340 million in trial funding and replaced $320 billion in annual treatment costs.
+>
+> **7:30 AM** -- Breakfast. The food is not "organic" or "conventional" because those categories stopped meaning anything once the outcome data was published. You eat what the evidence says works. It tastes fine.
+>
+> **9:00 AM** -- You work, or you don't. The universal deposit covers baseline needs. Most people work anyway, because humans get bored. Your job exists because a human is better at it than a machine. If a machine gets better, you retrain on evidence-based curricula that take weeks, not years.
+>
+> **12:00 PM** -- Your five pairwise budget votes for the week take ninety seconds during lunch. Medical research or military? 85-15. Infrastructure or space? 60-40. You do not vote on things you know nothing about. Nobody does.
+>
+> **3:00 PM** -- Your child's school teaches history, including the chapter on diseases. "You mean people just... had cancer? And they couldn't fix it? What did they do?" "They held fundraising walks." "They WALKED? That was the plan?"
+>
+> **6:00 PM** -- Dinner costs less because the tax is 0.5% on transactions, automatic, invisible. No filing. No April. No accountant. The government's share was allocated by 8 billion people simultaneously, which turned out to work better than having {{< var us_congress_member_count_nounit >}} people do it while being handed envelopes.
+>
+> **9:00 PM** -- You are not worried about medical bankruptcy. Nobody is. That concept is taught alongside "bloodletting" and "phrenology." You are also not worried about war, because the disposal robots handled the weapons and the settlement engine handled the disputes and the last war was boring enough to end on its own.
+
+**Pull quote after timeline:**
+
+> You have the same atoms we had. You have the same physics. You have better computers than we had at this stage. The only difference is where the money points.
+
+**Corporate transformation cards** (visual, 3-4 cards):
+
+- Lockheed Martin -> Lockheed Martin Health Systems
+- Raytheon -> Raytheon Wellness Infrastructure
+- Northrop Grumman -> Northrop Grumman Medical Devices
+- General Dynamics -> General Dynamics Civil Engineering
+
+> Same factories. Same engineers. Same stock tickers. Different products. The revenue was always the point; the killing was just the sales channel.
+
+---
+
+## SECTION 8: THE dFDA
+
+**Layout:** An interactive treatment ranking table. This is the proof that the system produces real output.
+
+**Header:**
+
+> ## What Funded Research Actually Produces
+>
+> The Decentralized FDA aggregates treatment outcome data from real patients. Here is what the evidence says works, ranked by measured effect size, for the conditions that kill the most people.
+
+**Interactive element:** A searchable, sortable table pulling from studies.dfda.earth API (or the optimitron medical-data dataset). Columns:
+
+- Condition
+- Treatment
+- Effect size (with confidence interval)
+- Sample size (N)
+- Optimal dose
+- Comparative ranking
+
+**Default view:** Show depression treatment rankings (the most complete dataset). Allow switching between conditions.
+
+**Below the table:**
+
+> This is what a $60 billion research budget produces. The 1% Treaty would add {{< var treaty_annual_funding >}} per year, increasing trial capacity {{< var dfda_trial_capacity_multiplier >}}. The diseases you see ranked above with "insufficient data" would have answers.
+>
+> {{< var global_disease_deaths_per_minute_nounit >}} people die every minute from conditions like these. Not because the cures are impossible. Because the search is underfunded by a factor of {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}.
+
+---
+
+## SECTION 9: THE INVESTOR SECTION
+
+**Layout:** Clean, professional. This section shifts tone slightly: still warm, but more precise. Securities disclosure language is required.
+
+**Header:**
+
+> ## The Investment
+
+**The Structure:**
+
+> Earth Optimization Services is a holding company. Investors receive revenue share from the portfolio's performance. You do not receive governance rights, board seats, or influence over strategy. This is deliberate. The architecture separates money from power; investors cannot buy policy outcomes, because that is the problem we are solving.
+
+**The Floor:**
+
+> If the campaign fails entirely (the treaty never passes, the lobbying never redirects, the government never optimizes), you own shares in defense and pharmaceutical companies purchased at market price with no management fee. The floor is: you accidentally bought an ETF. These companies have paid dividends through every war and recession in living memory.
+
+**The Upside:**
+
+> If the campaign works, value compounds across thirteen channels simultaneously: the economy grows, the companies capture the growth, your tax burden falls, your other investments rise, medical costs disappear from your budget, and you live longer to enjoy it. This product has the unusual property of making nearly everything else you own more valuable at the same time.
+
+**Key projections** (displayed as a clean data table):
+
+- Treaty ROI (R&D savings only): {{< var dfda_roi_rd_only >}}
+- Treaty ROI (existing drugs + efficacy lag): {{< var treaty_roi_existing_drugs_only >}}
+- Campaign cost: {{< var treaty_campaign_total_cost >}}
+- Annual treaty funding generated: {{< var treaty_annual_funding >}}
+- Trial capacity multiplier: {{< var dfda_trial_capacity_multiplier >}}
+
+**REQUIRED DISCLOSURE** (always visible, not fine print):
+
+> All returns are projections based on modeled estimates, not guarantees. Past performance of comparable interventions (smallpox eradication ROI: 280:1, childhood vaccination ROI: 13:1, Human Genome Project: $1T economic impact) is presented for context, not as a promise. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only. This page is not a prospectus. Full terms are in the Private Placement Memorandum, which is available upon request and verification of accredited investor status.
+
+**CTA button:** "Request the PPM" -> leads to an accredited investor verification flow.
+
+---
+
+## SECTION 10: HOW TO ACT
+
+**Layout:** Three clear paths. Cards or columns.
+
+**Header:**
+
+> ## Your Move
+
+**Path 1: Invest**
+> You have capital and want returns that compound with civilization getting better instead of worse.
+>
+> -> Request the Private Placement Memorandum
+
+**Path 2: Build**
+> You have skills. Every module in the operating system needs engineers, researchers, lawyers, and organizers. The Earth Optimization Prize pays cash for completed work.
+>
+> -> See Open Tasks
+
+**Path 3: Spread**
+> You have a phone. The referendum needs signatures. The campaign needs reach. Every person who sees this page and acts on it brings the timeline forward.
+>
+> -> Share This Page / Sign the Referendum
+
+---
+
+## SECTION 11: FOOTER
+
+**The closer** (small text, centered):
+
+> The disease coming for someone you love almost certainly has no cure yet. This is how one gets found.
+>
+> I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases.
+
+**Standard footer links:** The Manual (book), About, Contact, Legal, PPM Request
+
+---
+
+## INTERACTIVE ELEMENTS SUMMARY
+
+| Element | Section | Data Source | Behavior |
+|---------|---------|------------|----------|
+| Death counter | Hero | `global_disease_deaths_per_minute` | Ticks every second |
+| Dysfunction Tax stats | Section 2 | Per-person cost, efficiency score, spending ratio | Static display, link to paper |
+| Personalization input | Section 3 | User-entered net worth or income | Rescales chart Y-axis |
+| GDP trajectory chart | Section 3 | GDP trajectory parameters (4 scenarios) | Animated draw, hover tooltips |
+| System diagram | Section 4 | Static with animated flow | Loops continuously |
+| Policy comparator | Section 5 | 4 example policies with before/after | Click to expand |
+| Module cards | Section 6 | 13 modules with cost data | Flip/expand on click |
+| Day timeline | Section 7 | Static copy | Scroll-driven reveal |
+| Treatment rankings | Section 8 | studies.dfda.earth API or static dataset | Searchable, sortable table |
+| ROI table | Section 9 | Parameter variables | Static display |
+
+## TECHNICAL NOTES FOR IMPLEMENTATION
+
+- All numeric values should be pulled from the TypeScript variables file, not hardcoded.
+- The page should be responsive but is primarily designed for desktop (investors use desktops).
+- Dark theme with bright data visualization accents.
+- Smooth scroll between sections with section-snapping optional.
+- The death counter should stop when the page is not visible (use Page Visibility API) and resume when the user returns, with a note: "XX more people died while you were away."
+- Treatment ranking data: try studies.dfda.earth API first; fall back to the illustrative depression dataset from dfda-spec-paper.qmd.
+- All charts should animate on scroll-into-view, not on page load.
+- Section 7 (The Future) should feel visually distinct from the data-heavy sections: lighter background, more whitespace, warmer colors.
+- The corporate transformation cards (Lockheed Health, Raytheon Wellness) should have a subtle before/after animation.
+
+## COPY THAT MUST APPEAR VERBATIM
+
+These lines are canonical to the project and must not be paraphrased:
+
+1. "I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases."
+2. "We tried moral persuasion for 9,000 years. Then we tried paying them. Took six months."
+3. "The disease coming for someone you love almost certainly has no cure yet. This is how one gets found."
+
+## WHAT IS NOT ON THIS PAGE
+
+- No Moronia content (the dystopia chapter). The landing page sells the future people want, not the one they're afraid of. The book handles the dark case.
+- No contempt for the reader. No "your species is too stupid." No sneering. The reader is the president of this machine; we hand them the keys.
+- No crypto-bro energy. No "immutable, trustless, permissionless." The technology is described by what it does, not by its architecture.
+- No consultant frameworks. No "let's unpack the synergies." Plain words.
+- No em-dashes.
