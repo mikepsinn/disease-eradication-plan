@@ -89,14 +89,14 @@ A single field: "Enter your net worth or annual income" with a toggle (net worth
 
 **Chart data:** Pull from GDP trajectories. Four lines:
 
-1. **Collapse** (red, animates downward): Current destructive economy trend. Starts at {{< var global_destructive_economy_pct_gdp >}} of GDP, crosses 35% terminal parasitic load by {{< var destructive_economy_35pct_year >}}. The line curves down and terminates at a skull icon or "X" mark. Historical precedent labels on hover: "Soviet Union," "Venezuela," "Somalia." This is not a projection. It is the current trend line, extended.
+1. **Collapse** (red, animates downward): Current destructive economy trend. Starts at {{< var global_destructive_economy_pct_gdp >}} of GDP, crosses 35% (when stealing outgrows building) by {{< var destructive_economy_35pct_year >}}. The line curves down and terminates at a skull icon or "X" mark. Historical precedent labels on hover: "Soviet Union," "Venezuela," "Somalia." This is not a projection. It is the current trend line, extended.
 2. **Fantasy Baseline** (gray, dotted, fading): 2.5% CAGR -> {{< var current_trajectory_gdp_year_20 >}} global GDP by 2045. Labeled "requires 20 consecutive lucky years." Visually thin and uncertain.
-3. **Treaty Trajectory** (blue, solid, animates upward): {{< var treaty_trajectory_cagr_year_20 >}} CAGR -> {{< var treaty_trajectory_gdp_year_20 >}} by 2045. The conservative hedge. Labeled "1% redirect."
-4. **Optimal Governance** (gold, bright, animates way up): {{< var wishonia_trajectory_cagr_year_20 >}} CAGR -> {{< var wishonia_trajectory_gdp_year_20 >}} by 2045. Labeled "stop being stupid."
+3. **Treaty Trajectory** (blue, solid, animates upward): {{< var treaty_trajectory_cagr_year_20 >}} annual growth -> {{< var treaty_trajectory_gdp_year_20 >}} by 2045. The conservative hedge. Labeled "1% redirect."
+4. **Optimal Governance** (gold, bright, animates way up): {{< var wishonia_trajectory_cagr_year_20 >}} annual growth -> {{< var wishonia_trajectory_gdp_year_20 >}} by 2045. Labeled "stop being stupid."
 
 The chart should have hover tooltips showing per-person income at each year. When the visitor has entered a personal number, tooltips show their personalized projection instead. The gap between the red and blue lines should be visually emphasized (shaded region labeled "the hedge").
 
-**Annotation on chart:** Small text near the divergence point: "the alpha: human stupidity"
+**Annotation on chart:** Small text near the divergence point: "the edge: human stupidity"
 
 **Copy below chart:**
 
@@ -106,7 +106,7 @@ The chart should have hover tooltips showing per-person income at each year. Whe
 >
 > The blue line is the conservative hedge: redirect 1% of the weapons budget to clinical trials. The average person ends up {{< var treaty_vs_current_median_income_multiplier_year_20 >}} richer. The gold line is what happens if you fix governance entirely. The gap between these lines is not a bet on optimism. It is the measured cost of human stupidity, priced annually, compounded over twenty years.
 >
-> Most alpha in finance comes from proprietary models or faster computers. This alpha comes from the fact that your government is bad at its job and the returns from making it less bad are larger than any trade in the history of capital markets. Everyone knows the government is bad. Nobody has priced the upside of it being better.
+> Most profit edges in finance come from proprietary models or faster computers. This edge comes from the fact that your government is bad at its job and the returns from making it less bad are larger than any trade in the history of capital markets. Everyone knows the government is bad. Nobody has priced the upside of it being better.
 
 **Closing line:**
 
@@ -126,7 +126,7 @@ The chart should have hover tooltips showing per-person income at each year. Whe
 
 > Earth Optimization Services is an activist holding company. It acquires governance positions in the corporations whose lobbying writes your laws, then redirects that lobbying toward policies that make everyone healthier and wealthier.
 >
-> The defense industry spends $198 million per year on lobbying. Total US lobbying: {{< var us_total_lobbying_annual >}}. These numbers buy your laws. They are also, in the context of capital markets, very small numbers. A single activist fund can outspend them.
+> The defense industry spends {{< var defense_lobbying_annual >}} per year on lobbying. Total US lobbying: {{< var us_total_lobbying_annual >}}. These numbers buy your laws. They are also, in the context of capital markets, very small numbers. A single activist fund can outspend them.
 >
 > We buy shares. Shares come with votes. Votes elect board members. Board members set corporate strategy. Corporate strategy includes lobbying priorities. The same machine that currently lobbies for weapons contracts begins lobbying for clinical trials. Same lobbyists, same Capitol Hill offices, same committee relationships. Different ask.
 
@@ -136,7 +136,7 @@ The chart should have hover tooltips showing per-person income at each year. Whe
 > Acquire shares in defense, pharma, and government-adjacent corporations. The floor is: you own real companies with real earnings. If nothing else works, you accidentally bought a no-fee ETF.
 
 **Step 2: Redirect**
-> Use board seats, proxy fights, and shareholder resolutions to redirect lobbying budgets. The pitch to Lockheed Martin is not "stop making weapons." It is "make the same weapons, sell them to the same government, and stop needing a war to justify the invoice."
+> Use board seats, shareholder votes, and formal proposals to redirect lobbying budgets. The pitch to Lockheed Martin is not "stop making weapons." It is "make the same weapons, sell them to the same government, and stop needing a war to justify the invoice."
 
 **Step 3: Optimize**
 > Feed every law and budget line through the Optimitron (below). Replace policies that make people poorer and sicker with policies that make people healthier and wealthier. Measure the results. Repeat.
@@ -298,7 +298,7 @@ Two large, animated counters or gauges:
 
 **The Floor:**
 
-> If the campaign fails entirely (the treaty never passes, the lobbying never redirects, the government never optimizes), you own shares in defense and pharmaceutical companies purchased at market price with no management fee. The floor is: you accidentally bought an ETF. These companies have paid dividends through every war and recession in living memory.
+> If the campaign fails entirely (the treaty never passes, the lobbying never redirects, the government never optimizes), you own shares in defense and pharmaceutical companies purchased at market price with no management fee. The floor is: you accidentally bought an index fund. These companies have paid dividends through every war and recession in living memory.
 
 **The Upside:**
 
