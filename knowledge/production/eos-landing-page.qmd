@@ -328,7 +328,7 @@ function distributeUBI() external {
 
 **Personalization input** (above chart, centered, clean):
 
-A single field: "Enter your net worth or annual income" with a toggle (net worth / annual income). Default: median global income (`global_median_after_tax_income_2025`). The chart Y-axis dynamically rescales to show YOUR number multiplied by each trajectory. Hover tooltips show "Your projected [net worth / income] under this scenario: $X" at each year.
+A single field: "Enter your net worth or annual income" with a toggle (net worth / annual income). Default: median global income (`global_median_after_tax_income_2025`). The chart Y-axis dynamically rescales to show YOUR number multiplied by each trajectory. Hover tooltips show "Your projected [net worth / income] under this scenario: $X" at each year. The personalization makes abstract GDP concrete: the visitor sees their own money diverging across four futures.
 
 **Chart data:** Four lines:
 
@@ -337,6 +337,8 @@ A single field: "Enter your net worth or annual income" with a toggle (net worth
 3. **Treaty Trajectory** (blue, solid, animates upward): {{< var treaty_trajectory_cagr_year_20 >}} -> {{< var treaty_trajectory_gdp_year_20 >}} by 2045. Labeled "1% redirect."
 4. **Optimal Governance** (gold, bright, animates way up): {{< var wishonia_trajectory_cagr_year_20 >}} -> {{< var wishonia_trajectory_gdp_year_20 >}} by 2045. Labeled "stop being stupid."
 
+The gap between the red and blue lines should be visually emphasized (shaded region labeled "the hedge"). Small annotation near the divergence point: "the alpha: human stupidity."
+
 **Copy below chart:**
 
 > Your economists project steady 2.5% growth. This requires twenty consecutive years of nothing going wrong. Your species has never achieved this, because your largest economic sector is destroying things, and destroying things is a growth industry.
@@ -344,6 +346,8 @@ A single field: "Enter your net worth or annual income" with a toggle (net worth
 > The red line is what is actually happening. Your destructive economy is already {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than everything else. The civilizations that ran this experiment before you crossed a similar threshold on the way down.
 >
 > The blue line is the 1% Treaty: move 1% of the weapons budget to clinical trials. The average person ends up {{< var treaty_vs_current_median_income_multiplier_year_20 >}} richer. The gold line is what happens if you install every module you just saw. The gap between these lines is the measured cost of human stupidity, priced annually, compounded over twenty years.
+>
+> Every decision is locally sensible. The aggregate output does not have to be extinction.
 
 ---
 
@@ -397,11 +401,11 @@ A single field: "Enter your net worth or annual income" with a toggle (net worth
 
 **The Floor:**
 
-> If the campaign fails entirely, part of every dollar is still sitting in shares of military and pharmaceutical companies purchased at market price. That part comes back when the portfolio liquidates; the part that funded the campaign is spent. The exact split lives in the offering documents. These companies have paid dividends through every war and recession in living memory.
+> If the campaign fails entirely, part of every dollar is still sitting in shares of military and pharmaceutical companies purchased at market price. That part comes back when the portfolio liquidates; the part that funded the campaign is spent. The exact split lives in the offering documents. The floor is: you accidentally bought an ETF. These companies have paid dividends through every war and recession in living memory.
 
 **The Upside:**
 
-> If the campaign works, value compounds across the economy simultaneously: the companies capture the growth, your tax burden falls, your other investments rise, medical costs disappear from your budget, and you live longer to enjoy it.
+> If the campaign works, value compounds across the economy simultaneously: the companies capture the growth, your tax burden falls, your other investments rise, medical costs disappear from your budget, and you live longer to enjoy it. This product has the unusual property of making nearly everything else you own more valuable at the same time.
 
 **Key projections** (displayed as a clean data table):
 
@@ -413,7 +417,7 @@ A single field: "Enter your net worth or annual income" with a toggle (net worth
 
 **DISCLOSURE** (always visible, not fine print):
 
-> All returns are projections from a published model, not guarantees. The model, its parameters, and every derivation chain are public. Comparable interventions (smallpox eradication ROI: 280:1, childhood vaccination ROI: 13:1, Human Genome Project: $1T economic impact) are context, not promises. Equity is illiquid until an exit or listing; do not invest money you need. This page is not a prospectus. Full terms are in the offering documents, available on request.
+> All returns are projections from a published model, not guarantees. The model, its parameters, and every derivation chain are public. Comparable interventions (smallpox eradication ROI: 280:1, childhood vaccination ROI: 13:1, Human Genome Project: $1T economic impact) are context, not promises. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only. Equity is illiquid until an exit or listing; do not invest money you need. This page is not a prospectus. Full terms are in the Private Placement Memorandum, available upon request and verification of accredited investor status.
 
 **CTA button:** "Request the PPM" -> leads to an accredited investor verification flow.
 
