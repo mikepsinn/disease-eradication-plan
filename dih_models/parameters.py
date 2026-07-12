@@ -9616,6 +9616,46 @@ GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
     latex_symbol=r"Cost_{health+war}",  # LaTeX symbol for equations
 )  # ~$411T = $11.355T (war with externalities) + ~$400T (disease welfare burden)
 
+# Industry profit margin comparisons (Damodaran, NYU Stern, January 2026)
+DEFENSE_NET_PROFIT_MARGIN = Parameter(
+    0.0499,
+    manual_ref="index-manual.qmd",
+    source_ref="",
+    source_type="external",
+    description="Net profit margin for Aerospace/Defense industry (79 firms, Damodaran Jan 2026)",
+    display_name="Aerospace/Defense Net Profit Margin",
+    unit="percent",
+    keywords=["defense", "aerospace", "profit", "margin", "military", "contractor"],
+    latex_symbol=r"Margin_{def}",
+)
+
+PHARMA_NET_PROFIT_MARGIN = Parameter(
+    0.1854,
+    manual_ref="index-manual.qmd",
+    source_ref="",
+    source_type="external",
+    description="Net profit margin for Drugs (Pharmaceutical) industry (228 firms, Damodaran Jan 2026)",
+    display_name="Pharmaceutical Net Profit Margin",
+    unit="percent",
+    keywords=["pharma", "pharmaceutical", "biotech", "biotechnology", "profit", "margin", "drug"],
+    latex_symbol=r"Margin_{pharma}",
+)
+
+PHARMA_VS_DEFENSE_NET_MARGIN_RATIO = Parameter(
+    0.1854 / 0.0499,
+    manual_ref="index-manual.qmd",
+    source_ref="",
+    source_type="calculated",
+    description="Ratio of pharmaceutical to defense net profit margins",
+    display_name="Pharma-to-Defense Net Profit Margin Ratio",
+    unit="x",
+    keywords=["pharma", "defense", "margin", "ratio", "comparison"],
+    formula="PHARMA_NET_PROFIT_MARGIN / DEFENSE_NET_PROFIT_MARGIN",
+    inputs=["PHARMA_NET_PROFIT_MARGIN", "DEFENSE_NET_PROFIT_MARGIN"],
+    compute=lambda ctx: ctx["PHARMA_NET_PROFIT_MARGIN"] / ctx["DEFENSE_NET_PROFIT_MARGIN"],
+    latex_symbol=r"\frac{Margin_{pharma}}{Margin_{def}}",
+)
+
 # Defense and research participation rates
 DEFENSE_SECTOR_RETENTION_PCT = Parameter(
     0.99,

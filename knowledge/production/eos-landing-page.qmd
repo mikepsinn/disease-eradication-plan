@@ -79,6 +79,24 @@ Futuristic but warm. Think: NASA mission control crossed with a children's scien
 
 ---
 
+## SECTION 2.5: SOMEONE ALREADY RAN THE EXPERIMENT
+
+**Layout:** Credibility-first proof section. Three beats: a feature card, a price list, and the universal-owner argument. Placed before the trajectory chart so the mechanism is established with checkable history before any projection appears.
+
+**Beat 1, Engine No. 1 feature card:**
+
+> In 2021, twelve people with $12.5 million and 0.02% of ExxonMobil won three seats on its board. Vanguard and BlackRock, who own roughly 60%, voted with them. The argument was: your strategy is destroying the value of the people who own this company.
+
+**Beat 2, the prices:** {{< var defense_lobbying_annual >}}/year buys military policy. {{< var us_total_lobbying_annual >}}/year buys all of it. Board seats across the military-industrial complex cost {{< var defense_takeover_cost_activist >}} ({{< var defense_takeover_cost_activist_pct_investable_assets >}} of the money invested on Earth). "These numbers buy your laws. They are also, in capital markets terms, very small numbers."
+
+**Beat 3, the universal owner:** the Buffett paragraph from the pitch: buy poor governance cheap, install better governance, pocket the gap; BlackRock and Vanguard own both sides of every trade and only profit when the whole economy grows; "You are not picking winners. You are fixing the room they all sit in."
+
+**Closer (verbatim canonical line):**
+
+> We tried moral persuasion for 9,000 years. Then we tried paying them. Took six months.
+
+---
+
 ## SECTION 3: FOUR EARTHS
 
 **Layout:** Full viewport. Centered animated line chart draws four trajectories from 2025 forward to 2045. Above the chart: a single input field for personalization. Below: copy explaining the lines.
@@ -102,7 +120,7 @@ The chart should have hover tooltips showing per-person income at each year. Whe
 
 > Your economists project steady 2.5% growth. This requires twenty consecutive years of nothing going wrong. Your species has never achieved this, because your largest economic sector is destroying things, and destroying things is a growth industry.
 >
-> The red line is what is actually happening. Your destructive economy (military spending plus cybercrime) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than everything else. At current rates, it crosses 35% by {{< var destructive_economy_35pct_year >}}. Every civilization that has crossed that threshold collapsed. The Soviet Union. Venezuela. Zimbabwe. Somalia. There is no historical exception.
+> The red line is what is actually happening. Your destructive economy (military spending plus cybercrime) is already {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than everything else. At current rates, it crosses 35% by {{< var destructive_economy_35pct_year >}}. The civilizations that ran this experiment before you, the Soviet Union, Venezuela, Zimbabwe, Somalia, crossed a similar threshold on the way down.
 >
 > The blue line is the conservative hedge: redirect 1% of the weapons budget to clinical trials. The average person ends up {{< var treaty_vs_current_median_income_multiplier_year_20 >}} richer. The gold line is what happens if you fix governance entirely. The gap between these lines is not a bet on optimism. It is the measured cost of human stupidity, priced annually, compounded over twenty years.
 >
@@ -126,14 +144,14 @@ The chart should have hover tooltips showing per-person income at each year. Whe
 
 > Earth Optimization Services is an activist holding company. It acquires governance positions in the corporations whose lobbying writes your laws, then redirects that lobbying toward policies that make everyone healthier and wealthier.
 >
-> The defense industry spends {{< var defense_lobbying_annual >}} per year on lobbying. Total US lobbying: {{< var us_total_lobbying_annual >}}. These numbers buy your laws. They are also, in the context of capital markets, very small numbers. A single activist fund can outspend them.
+> Military contractors spend {{< var defense_lobbying_annual >}} per year on lobbying. Total US lobbying: {{< var us_total_lobbying_annual >}}. These numbers buy your laws. They are also, in the context of capital markets, very small numbers. A single activist fund can outspend them.
 >
 > We buy shares. Shares come with votes. Votes elect board members. Board members set corporate strategy. Corporate strategy includes lobbying priorities. The same machine that currently lobbies for weapons contracts begins lobbying for clinical trials. Same lobbyists, same Capitol Hill offices, same committee relationships. Different ask.
 
 **Three-step animated sequence** (each step lights up in order):
 
 **Step 1: Buy**
-> Acquire shares in defense, pharma, and government-adjacent corporations. The floor is: you own real companies with real earnings. If nothing else works, you accidentally bought a no-fee ETF.
+> Acquire shares in military contractors, pharma, and government-adjacent corporations. The floor is: you own real companies with real earnings. If nothing else works, you accidentally bought a no-fee ETF.
 
 **Step 2: Redirect**
 > Use board seats, shareholder votes, and formal proposals to redirect lobbying budgets. The pitch to Lockheed Martin is not "stop making weapons." It is "make the same weapons, sell them to the same government, and stop needing a war to justify the invoice."
@@ -163,7 +181,7 @@ The chart should have hover tooltips showing per-person income at each year. Whe
 
 **Right Panel: Optimal Budget Generator**
 
-> Finds the optimal spending level for every budget line: the point where each additional dollar produces less benefit than spending it somewhere else. The current largest misallocation: clinical trial funding is 9,900% below optimal. Military spending is $391 billion above optimal.
+> Finds the optimal spending level for every budget line: the point where each additional dollar produces less benefit than spending it somewhere else. The current largest misallocation: clinical trial funding sits at roughly 1% of its optimal level. Military spending is $391 billion above optimal.
 >
 > Output: an optimal budget for every jurisdiction on Earth, updated continuously.
 
@@ -183,6 +201,22 @@ Two large, animated counters or gauges:
 - **Drug approval**: 14 years, $2.6 billion per drug -> pragmatic trials, 90% cost reduction. 50 approvals/year -> 200+.
 - **Welfare**: 80+ programs, 95,000 administrators -> single universal deposit, automatic.
 - **Military**: $886B (3.5% GDP) -> $459B (strict deterrence). Savings redirected to clinical trials.
+
+---
+
+## SECTION 5.5: YOUR HUMANITY MANAGER
+
+**Layout:** Proof-of-life section. A stylized ranked task queue rendered like a terminal readout, showing a real day: medication times interleaved with high-expected-value work ("22:30 Take night meds", "OVERDUE Sign the 1% Treaty publicly (36 seconds)", "Apply for the Survival and Flourishing Fund grant (2.5h)"), each with a priority score.
+
+**Copy:**
+
+> Every human on Earth is a president of Earth Optimization Services. The machine computes your highest-value next action, from taking your medication to redirecting {{< var treaty_annual_funding >}} a year, with the same arithmetic. It is running today. Connect any AI assistant to the MCP server and ask it what you should do next.
+
+**Traction line:**
+
+> The health engine already generated outcome labels from 12 million datapoints contributed by 10,000 people. The rankings are public at studies.dfda.earth.
+
+**CTA:** "Ask the machine what to do next" -> /mcp
 
 ---
 
@@ -298,7 +332,7 @@ Two large, animated counters or gauges:
 
 **The Floor:**
 
-> If the campaign fails entirely (the treaty never passes, the lobbying never redirects, the government never optimizes), you own shares in defense and pharmaceutical companies purchased at market price with no management fee. The floor is: you accidentally bought an index fund. These companies have paid dividends through every war and recession in living memory.
+> If the campaign fails entirely (the treaty never passes, the lobbying never redirects, the government never optimizes), part of every dollar is still sitting in shares of military and pharmaceutical companies purchased at market price. That part comes back when the portfolio liquidates; the part that funded the campaign is spent. The exact split lives in the offering documents. These companies have paid dividends through every war and recession in living memory.
 
 **The Upside:**
 
@@ -312,9 +346,9 @@ Two large, animated counters or gauges:
 - Annual treaty funding generated: {{< var treaty_annual_funding >}}
 - Trial capacity multiplier: {{< var dfda_trial_capacity_multiplier >}}
 
-**REQUIRED DISCLOSURE** (always visible, not fine print):
+**DISCLOSURE** (always visible, not fine print):
 
-> All returns are projections based on modeled estimates, not guarantees. Past performance of comparable interventions (smallpox eradication ROI: 280:1, childhood vaccination ROI: 13:1, Human Genome Project: $1T economic impact) is presented for context, not as a promise. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only. This page is not a prospectus. Full terms are in the Private Placement Memorandum, which is available upon request and verification of accredited investor status.
+> All returns are projections from a published model, not guarantees. The model, its parameters, and every derivation chain are public. Comparable interventions (smallpox eradication ROI: 280:1, childhood vaccination ROI: 13:1, Human Genome Project: $1T economic impact) are context, not promises. Equity is illiquid until an exit or listing; do not invest money you need. This page is not a prospectus. Full terms are in the offering documents, available on request.
 
 **CTA button:** "Request the PPM" -> leads to an accredited investor verification flow.
 

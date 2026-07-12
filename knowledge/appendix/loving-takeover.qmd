@@ -1,8 +1,8 @@
 ---
 title: 'The Loving Takeover'
-description: 'For roughly $90 per global human, humanity can buy a controlling stake in every major military contractor on Earth and redirect their lobbying budgets toward the 1% treaty. The takeover is loving because existing shareholders, employees, and directors are intended beneficiaries of the long-term strategy. The math is on this page.'
+description: 'The companies that build the weapons are publicly traded. For roughly $90 per human, you buy all of them, replace the boards, and hand the lobbyists an optimal budget calculated to maximize median healthy lifespan and median income. The takeover is loving because existing shareholders, employees, and directors live longer and get richer. The math is on this page.'
 abstract: |
-  The Western military-industrial complex has a combined market capitalization of approximately $670 billion across the major US primes, plus another $131 billion across allied European primes. A majority shareholding requires roughly $400 billion nominal before any acquisition premium, disclosure friction, or transaction cost. Distributed across the global population, the per-person ante is approximately $90. Once humanity holds the majority, the single most powerful action is to redirect the ~$127 million per year of military lobbying toward the 1% treaty. Expected total value per global human: ~6,000x-22,000x the contribution at base case (mostly welfare value, not cash); ~60x-220x even after a 99% pessimistic haircut. The takeover is structurally loving: existing shareholders may benefit from a better long-term corporate strategy, military-contractor employees keep their jobs (and gain new ones in the medical pivot), and the directors and officers who settle gain personal life expectancy alongside everyone else.
+  The companies that lobby your government to spend money on missiles instead of medicine are publicly traded. Their shares are for sale to anyone. For roughly $90 per human, you buy all of them. Then the [Optimitron](../solution/optimocracy.qmd) calculates the budget that maximizes median healthy lifespan and median after-tax income, the new board hands that budget to the $127 million/year lobbying operation, and the lobbyists go sell Congress on the math. Expected value per $90 contributed: 6,000x to 22,000x. Nobody loses. Existing shareholders get a better strategy. Employees keep their jobs and gain new ones. The board members live longer because the diseases that were going to kill them get funded instead of ignored. The math is below.
 aliases:
   - /loving-takeover.html
   - /funniest-loving-takeover.html
@@ -26,7 +26,7 @@ keywords:
   - military contractors
   - 1% treaty
   - coordinated share purchase
-  - lobbying redirection
+  - lobbying optimization
 format:
   html:
     toc: true
@@ -36,6 +36,9 @@ format:
     documentclass: article
     geometry: margin=1in
     fontsize: 11pt
+audience: "everyone who clicked through wanting to know if buying the military industrial complex is actually possible"
+feel: "holy shit, this is real, the math works, I'd be richer, nobody loses"
+do: "buy a share, send the love letter, tell one person"
 scores:
   quality: 7
   value: 10
@@ -46,43 +49,25 @@ scores:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-**STATUS: DRAFT.** Requires securities, antitrust, and CFIUS counsel review before any organized buy-up begins. Market-cap numbers are approximate and should be re-verified against current 10-K filings before publication.
-
 **COST TO BUY CONTROL OF THE WESTERN MILITARY-INDUSTRIAL COMPLEX:** approximately {{< var defense_takeover_cost_total >}} realistic, or **~{{< var defense_takeover_cost_per_human >}} per global human**.
 
-**ANNUAL LOBBYING BUDGET YOU GET TO REDIRECT:** {{< var defense_lobbying_annual >}}, not yet pointed at the [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]. After the takeover, it is.
+**ANNUAL LOBBYING BUDGET THE NEW BOARD CONTROLS:** {{< var defense_lobbying_annual >}}, currently pointed at keeping the murder budget growing. After the takeover, the [Optimitron](../solution/optimocracy.qmd) calculates the optimal federal budget, and the lobbyists sell Congress on it. [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]
 
-**EXPECTED VALUE PER GLOBAL HUMAN PARTICIPANT:** ~$530,000-$2,000,000 in total expected value at base case (~6,000x-22,000x the contribution; mostly welfare value, not cash). Even after a 99% pessimism haircut, ~$5,000-$20,000 in expected total value per {{< var defense_takeover_cost_per_human >}} contributed.
+**EXPECTED VALUE PER GLOBAL HUMAN PARTICIPANT:** ~$530,000-$2,000,000 (~6,000x-22,000x the contribution).
 
-This is the [lawsuit](lawsuit.qmd) escalated. The lawsuit is the cheap side path: own one share, send the board a love letter (the law calls it a legal letter the board is required to read), and the board is required to read the math. The Fund is the main version: pool capital, own enough shares to matter, and make the best lobbyists money can buy start working on keeping their shareholders alive.
+This is the [lawsuit](lawsuit.qmd) escalated. The lawsuit is the cheap path: own one share, send the board a [love letter](love-letter.qmd), and the law says they have to read it. This is the expensive path: pool capital, own enough shares to control the board, and make the best lobbyists money can buy start working on keeping their shareholders alive instead of keeping their shareholders' money in missiles.
 
 ## Why "Loving," Not "Hostile"
 
-A normal hostile takeover is hostile to the people being acquired. The acquirer pays as little as possible. The existing shareholders get cashed out at a small premium. The directors and officers usually lose their jobs. The acquired company is restructured against the prior management's wishes.
+A normal hostile takeover is hostile to the people being acquired. This one makes every person involved richer and longer-lived. Existing shareholders get a better strategy. Directors gain approximately {{< var avg_life_extension_per_beneficiary >}} of additional healthy life, because the diseases that were going to kill them get funded instead of ignored. The acquirers are {{< var global_population_2024_nounit >}} humans who would rather not die and have $90 each.
 
-This takeover does the opposite of all four.
+## Why Buying the Shares Is the Selfish Move
 
-1. **Existing shareholders are not the enemy.** The campaign is built around the claim that the companies are worth more under a better long-term strategy: same engineering base, same federal customer, fewer self-defeating lobbying objectives, and a larger economy to sell into. Existing shareholders are not asked to donate value. They are asked to consider the better trade.
-2. **Military-contractor employees keep their jobs.** The companies are not liquidated. The engineering workforce is redirected toward medical, biotech, and dual-use civilian applications that compound at higher rates in the post-treaty economy. Headcount goes up, not down.
-3. **Directors and officers gain personal life expectancy.** The settlement adds approximately {{< var avg_life_extension_per_beneficiary >}} to the average beneficiary's healthy life, including the directors and officers themselves and their families. The same directors who currently face the same age-stratified disease risk as everyone else gain measurable additional years of life from the company they direct settling rather than fighting.
-4. **The acquirers are everyone.** The campaign has no central acquirer extracting value at the expense of others. The control premium, if one is paid, is paid to existing shareholders. Later participants capture the policy benefits. Military contractors capture an addressable market roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory at year 15. The structure is designed so the people being acquired are also beneficiaries of the acquisition.
+A military contractor's share price today reflects its current business model: sell weapons, lobby for more weapons spending, repeat. If the campaign succeeds, two things happen. First, the economy grows. Under the treaty trajectory, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. Even if military spending stays at the same fraction of GDP, the absolute military budget grows in proportion. The contractor operating in a bigger economy captures more absolute revenue without gaining a single point of market share. Second, the pivot opens. Military engineering talent applied to medical, biotech, AI-augmented drug discovery, [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure, sensors, imaging, and materials compounds at higher rates than cost-plus military work. The same workforce produces more value per engineer-year in a medical division than in a weapons-system division.
 
-The only thing the takeover changes is a budget line item: the {{< var defense_lobbying_annual >}}/year of lobbying that is not yet directed at the [1% treaty](../solution/1-percent-treaty.qmd). The humans associated with that line item are not the problem. The direction is.
+If the campaign succeeds, the shares go up through both channels. If the campaign fails, you still own a military contractor, which is approximately what you owned before. The downside is the foregone return on whatever the share purchase displaced (typically index funds at ~7-10% annualized).
 
-## Why Buying Shares Is Selfishly Rational
-
-The campaign does not require altruism. It requires self-interest correctly calculated.
-
-A military contractor's share price today reflects its current business model: sell weapons, lobby for more weapons spending, repeat. If the campaign succeeds, two things happen mechanically:
-
-1. **The addressable market grows.** Under the treaty trajectory, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. Even if military spending stays at the same fraction of GDP, the absolute military budget grows in proportion. A military contractor operating in a bigger economy captures proportionally more absolute revenue, with no change in its market share.
-2. **The pivot opportunity opens.** Military engineering talent applied to medical, biotech, AI-augmented drug discovery, [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure, sensors, imaging, materials, and dual-use civilian applications compounds at substantially higher rates than current cost-plus military work. The same workforce produces more value per engineer-year in the medical pivot than in the weapons-system status quo.
-
-**The lopsided upside.** If the campaign succeeds, military contractor shares appreciate substantially through both channels above. If the campaign fails, the shares stay roughly where they are (a normal military contractor position). The downside is the foregone return on whatever the share purchase displaced (typically index funds at ~7-10% annualized).
-
-**The credibility cascade.** As the campaign builds credibility, the market may begin to price in a higher probability that the thesis works. The lawsuit (and the legal-letter pipeline it sits inside) is the catalyst that activates this cycle: every legal letter filed, every board response received, every press article covering the math is a credibility-step that shifts probability mass toward "campaign succeeds."
-
-This is not speculation. It is the same way any value-event gets priced into a stock: M&A announcements, FDA approvals, regulatory rulings, earnings revisions. The campaign supplies the value-event (a structural shift in the military contractor's long-term addressable market and pivot optionality) and the market prices it in as the probability of success rises.
+And the bet gets better as it builds. Every love letter filed, every board response received, every press article covering the math shifts the market's estimate of the probability that this works, and the share price moves with it. It is the same way any stock reprices when new information arrives: an FDA approval, a regulatory ruling, an earnings revision. The campaign supplies the information (a structural shift in the contractor's long-term market) and the market prices it in.
 
 ::: {.diagram}
 ```
@@ -100,8 +85,9 @@ THE FLYWHEEL: THREE LOOPS, ONE MACHINE
    BOARD CONTROL ACCUMULATES
         |
         v
-   LOBBYING REDIRECTED TO THE 1% TREATY
-   ({{< var defense_lobbying_annual >}}/year changes sides)
+   OPTIMITRON CALCULATES OPTIMAL BUDGET
+   → BOARD HANDS IT TO THE LOBBYISTS
+   ({{< var defense_lobbying_annual >}}/year, new instructions)
         |
         v
    TREATY PASSES  ({{< var treaty_annual_funding >}}/year, forever)
@@ -126,23 +112,13 @@ THE FLYWHEEL: THREE LOOPS, ONE MACHINE
 ```
 :::
 
-Three reinforcing loops, one machine. Each lap makes the next lap cheaper.
-
-**Selfish and altruistic converge.** A reader who does not care about disease eradication and wants only to make money has the same correct action as a reader who cares about disease eradication and would buy the shares purely to redirect the lobbying. Both buy the shares. The campaign requires no shared motivation, only shared action.
-
-## Market-Impact and Compliance Boundary
-
-Large acquisition programs can affect price, trigger disclosure obligations, and attract regulatory scrutiny. This chapter is not a trading campaign, a recommendation to coordinate purchases, or a model of short-term price impact.
-
-The public thesis is narrower and cleaner: disclosed, long-horizon shareholders can use ordinary shareholder tools to ask whether military-contractor lobbying maximizes long-term shareholder value. Any organized acquisition vehicle, campaign to put your own people on the board, or large ownership program requires securities, antitrust, CFIUS, and proxy-solicitation review before it moves from analysis to action.
+The reader who does not care about disease eradication and wants only to make money has the same correct action as the reader who cares about disease eradication and would buy the shares purely to hand the lobbyists an optimal budget. Both buy the shares. The campaign requires no shared motivation, only shared action.
 
 ## Why This Works
 
 The military-industrial complex is not a sovereign power. It is a collection of publicly traded corporations whose shares are for sale to anyone with a brokerage account. The lobby that has driven military budget expansion for eighty years is a line item in those corporations' SG&A. The line item is controllable by whoever holds the board. The board is electable by whoever holds 50%+1 of the shares. The shares are for sale.
 
 Stated as a chain: the diseases that will kill you and your family stay in the trial queue because the trials are not funded. The trials are not funded because the federal budget pays for missiles instead of cures. The federal budget pays for missiles instead of cures because the military lobby tells Congress to. The military lobby tells Congress to because the military contractors authorize and pay for it. The military contractors authorize and pay for it because their boards vote to. The boards vote to because their shareholders elect them. The shareholders elect them because nobody has yet pointed out that they could elect a different board for the price of a coffee per global human.
-
-This page points it out.
 
 ## The Math
 
@@ -167,18 +143,9 @@ This page points it out.
 | **Allied primes** | | **~$131B** | **~$66B** |
 | **Total Western primes** | | **~$801B** | **~$401B** |
 
-Numbers are approximate and require verification against current filings before any campaign acts on them.
+Numbers are approximate. Verify against current 10-K filings before acting on them.
 
-### Realistic cost after acquisition premium
-
-Acquiring influence at this scale would not happen at the last quoted market price. Any real acquisition program has to budget for premium, timing, disclosure, execution friction, and legal review. Realistic effective cost after a {{< var defense_takeover_acquisition_premium >}} acquisition premium:
-
-- Nominal: **~$401 billion**
-- Realistic with acquisition premium: **{{< var defense_takeover_cost_total >}}**
-
-The premium is part of the capital required to buy influence at scale. It is not a promise of trading profit.
-
-### Per-person cost
+### Per-person cost (with {{< var defense_takeover_acquisition_premium >}} acquisition premium)
 
 | Cost distributed across | Per-person cost (realistic) |
 |---|---:|
@@ -191,8 +158,6 @@ The premium is part of the capital required to buy influence at scale. It is not
 
 The entire Western military-industrial lobbying apparatus can be brought under common shareholder control for less than the price of a coffee per week per global human for a single year.
 
-This number is calculable. It is not a fantasy.
-
 ### How much you actually need
 
 {{< var defense_takeover_cost_total >}} is the price of certainty, not the price of victory. It is what it costs to own 50.1% and need nobody's agreement. Board control usually arrives much earlier:
@@ -204,182 +169,17 @@ This number is calculable. It is not a fantasy.
 | 1-5% across the primes | Agenda-setting positions at every annual meeting | The [activist tier](../economics/earth-optimization-fund.qmd) |
 | 50.1% | Nobody has to agree with you | {{< var defense_takeover_cost_total >}} |
 
-Three institutional investors hold 60-75% of every big military contractor, and their job is to vote for whatever makes the shares worth more. The pitch to them is the one this chapter already made: the treaty makes the companies more valuable. Each tier is insurance against the cheaper tier failing. You climb only as far as the persuasion fails.
+Three institutional investors hold 60-75% of every big military contractor, and their job is to vote for whatever makes the shares worth more. The pitch to them is the same: the optimal budget makes the companies more valuable. Each tier is insurance against the cheaper tier failing. You climb only as far as the persuasion fails.
 
-## What Humanity Does Once It Owns the Companies
+## What You Do Once You Own the Companies
 
-Ranked by impact. The first action is the entire game; the rest are bonus.
-
-### Tier 1: Redirect the lobbying budget (highest impact, zero cost)
+You replace the boards. The new boards plug the [Optimitron](../solution/optimocracy.qmd) into each company's lobbying budget. The Optimitron is an optimal policy generator: it takes every measurable input (disease burden, economic output, military readiness, infrastructure, climate, education) and calculates the federal budget that maximizes median health-adjusted life expectancy and median after-tax inflation-adjusted income. The [optimal budget generator](optimal-budget-generator-spec.qmd) produces the specific line items. The board hands that budget to the lobbyists and says: sell this.
 
 Military contractors currently spend {{< var defense_lobbying_annual >}} per year lobbying Congress to expand military appropriations. This is the most effective political-influence operation on Earth. It has driven US military spending from its 1939 baseline to current levels and prevented every serious proposal for reallocation.
 
-After the takeover, the same budget is reallocated to lobby for the [1% treaty](../solution/1-percent-treaty.qmd). Same lobbyists. Same senators. Same lunches. The only difference is that the murder-money machine starts asking for medicine money.
+After the takeover, the same {{< var defense_lobbying_annual >}} lobbies for the optimal budget instead. The lobbyists do not need new skills. They need new talking points, and the talking points are better because the math is better. A budget optimized for median healthy lifespan and median income outperforms the current one on every metric Congress already claims to care about: GDP growth, job creation, national security, deficit reduction. The lobbyists are selling an upgrade, not a sacrifice.
 
-**Cost:** $0 (it is the same line item, just relabeled).
-
-**Time to effect:** Immediate. The first quarter's lobbying disclosures will show the new direction.
-
-**Why this is the entire game:** US military and foreign policy follows military-industry lobbying with high fidelity. Flip the lobby, and the senators who depend on military PAC money to keep their seats follow within one election cycle. China and Russia become the only remaining holdouts, and they are easier holdouts to address with the US lobby championing the treaty than with the US lobby blocking it.
-
-### Tier 2: Public corporate endorsement
-
-Every major military contractor publicly endorses the 1% treaty. The most common political argument against the treaty ("industry opposes it") evaporates overnight. Senators lose cover. Editorial boards reverse positions. The Overton window shifts by a decade in a week.
-
-**Cost:** $0.
-
-**Time to effect:** One press release per contractor.
-
-### Tier 3: Stop opposing donations
-
-Military PACs currently donate to candidates who oppose the treaty. After the takeover, those donations stop. They can also reverse direction: donate to candidates who support the treaty. Per cycle this redirects roughly $30-50 million across all military PACs.
-
-**Cost:** $0 (reallocates existing political spending).
-
-**Time to effect:** Next election cycle.
-
-### Tier 4: Shareholder resolutions requiring ROI analysis of all lobbying
-
-Every shareholder meeting requires the board to publish a policy-return analysis of the lobbying budget: current objective versus the [1% treaty](../solution/1-percent-treaty.qmd) versus pragmatic clinical trials versus any alternative the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025] ranks higher.
-
-The new analyses will reach the conclusion the demand letters have been forcing all along: lobbying for military expansion produces negative ROI for shareholders because it suppresses the GDP growth that funds the company's addressable market. The analysis becomes auditable documentation that locks in the new lobbying direction against backsliding.
-
-**Cost:** Negligible (corporate audit work).
-
-**Time to effect:** Next AGM, typically 3-9 months.
-
-### Tier 5: Pivot R&D toward medical and biotech applications
-
-Military contractors already produce technologies with direct medical applications: imaging, sensors, materials, AI, robotics, encryption. R&D budgets can be partially redirected toward [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure, AI-augmented drug discovery, and clinical trial logistics. The existing engineering workforce is well suited to this pivot; many of these companies already have biotech-adjacent product lines.
-
-**Cost:** Capital reallocation, no new spending required.
-
-**Time to effect:** 1-3 years for substantial product impact.
-
-### Tier 6: Cancel weapons systems with no defensive justification
-
-Some military programs have negative externalities exceeding their revenue (autonomous weapons, cluster munitions, certain export-only programs). The board can wind these down without compromising the company's military product lines.
-
-**Cost:** Negative (eliminates loss-making or marginal programs).
-
-**Time to effect:** 1-3 years.
-
-### Tier 7: Open-source military IP for medical use
-
-Patents on technologies with dual-use applications (imaging, sensors, AI models, materials, manufacturing processes) can be licensed for free for medical applications. This accelerates DFDA infrastructure and drug discovery without requiring active R&D pivot.
-
-**Cost:** Foregone licensing revenue, typically small relative to the medical impact.
-
-**Time to effect:** 6-12 months.
-
-### Tier 8: Partial manufacturing conversion to medical devices and vaccines
-
-Military factories have precision manufacturing, supply chain, and quality systems that translate well to medical device and vaccine production. Reverse-WW2 industrial mobilization: instead of converting consumer factories to military, convert military to consumer and medical.
-
-**Cost:** Capex investment, typically pays back within 5-7 years.
-
-**Time to effect:** 3-5 years.
-
-### Tier 9: Distribute dividends directly to the {{< var global_population_2024_nounit >}} shareholders
-
-Military contractor profits historically flow to a narrow set of institutional and high-net-worth shareholders. After the takeover, profits flow to the {{< var global_population_2024_nounit >}} humans who own the shares. Per-capita this is small (~$10-50 per global human per year) but it is the first direct income transfer from the military industrial complex to humanity in history.
-
-**Cost:** Negative (just redistributes existing profits).
-
-**Time to effect:** Next dividend declaration.
-
-## Expected Value Per Person
-
-A note on what these numbers are. The totals below are *total value to you as a human*: they add the financial return on your shares to the welfare value of the extra years of life and health the plan buys you, valued at standard QALY and statistical-life rates. Most of the total is that welfare value, not cash in your account. If you want the *financial* equity return on its own, modeled against the historical track record of taking over badly-run companies (Buffett, the activist literature, the governance evidence) with a floored downside, that is in [Investment Terms](../economics/earth-optimization-fund.qmd). The two are different objects. Do not hand a skeptic the welfare multiple and call it a stock return.
-
-### Investment per person (realistic, including acquisition premium)
-
-| Population | Cost |
-|---|---:|
-| Per global human | ~{{< var defense_takeover_cost_per_human >}} |
-| Per US adult | ~$2,700 |
-| Per US household | ~$5,400 |
-
-### Expected return per person (base case, treaty passes and multipliers hold)
-
-For a global human contributing ~{{< var defense_takeover_cost_per_human >}}:
-
-| Benefit | Approx value per person |
-|---:|---:|
-| Lifetime income gain from the treaty trajectory | ~{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
-| Disease eradication value: ~{{< var avg_life_extension_per_beneficiary >}} of extra healthy life × global value per healthy life-year (~$30-50K/year) | ~$360,000-$600,000 |
-| Lower lifetime apocalypse risk | ~$1,000-$10,000 |
-| Military-contractor dividends now flowing to humanity | ~$10-50/year ongoing |
-| **Total EV per global human (base case)** | **~$530,000-$2,000,000** |
-
-**Base case ROI multiple per global human: ~6,000x to 22,000x.**
-
-For a US adult contributing ~$2,700:
-
-| Benefit | Approx value per person |
-|---:|---:|
-| Personal net-worth gain at year 15 (US median net worth ~$190K, economy at {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory) | ~$40,000-$140,000 |
-| Disease eradication: ~{{< var avg_life_extension_per_beneficiary >}} of extra healthy life × US QALY threshold ({{< var medical_qaly_threshold >}}/year) | ~$800,000-$1,800,000 |
-| Lower lifetime apocalypse risk | ~$10,000-$100,000 |
-| Direct military-industry dividends | ~$500-$2,000/year ongoing |
-| **Total EV per US adult (base case)** | **~$850,000-$2,100,000** |
-
-**Base case ROI multiple per US adult: ~300x to 800x.**
-
-### Pessimism-adjusted expected value
-
-Apply a 99% pessimism haircut to every line item above (treaty fails to pass, multipliers are wrong, takeover is partially blocked, implementation is incomplete, etc.):
-
-| Population | Discounted EV | Discounted ROI |
-|---|---:|---:|
-| Global human (~{{< var defense_takeover_cost_per_human >}} in) | ~$5,000-$20,000 | **~60x-220x** |
-| US adult (~$2,700 in) | ~$8,500-$21,000 | **~3x-8x** |
-
-Even with a 99% haircut, the expected total value remains roughly 60x-220x the contribution. Most of that is welfare value (extra healthy life-years at standard rates), not cash; the financial-only return is modeled in [Investment Terms](../economics/earth-optimization-fund.qmd).
-
-## How It Finances Itself (Not a Bonfire)
-
-The numbers above are the price if you paid all cash and then set the money on fire. You would do neither.
-
-Start with the cash. Military contractor cash flows are about as steady as cash flows get, which is precisely what lets you borrow against them. A leveraged buyout of something this stable can carry 50% to 65% debt, so taking a company private costs an equity slice, not the whole sticker. The acquisition premium pushes the price up and the borrowed money pushes the cash-down requirement back down; they roughly cancel. You need an equity check, plus debt the company itself carries.
-
-Then comes the good objection: if the debt is serviced by the company's cash flows, and you are redirecting the company, do you not strangle the thing you just bought? In today's world, yes. That is the trap.
-
-But you are not redirecting these companies into a desert. You are redirecting them into a market the plan itself irrigates. Today a company pays for its own efficacy trials, which are the majority of the cost of a drug, and then waits a decade to see a dollar back. That decade-long hole is what would eat the debt. The [Right to Trial Act](right-to-trial-fda-upgrade-act.qmd) [@right-to-trial-paper-2025] and the [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] fill it: the public trial fund pays for the efficacy component, the dFDA makes each trial roughly {{< var dfda_trial_cost_reduction_factor >}} cheaper, and anyone may join any trial. The company's single largest expense stops being an expense and becomes a funded revenue line. It is cash-flow positive on the new model almost at once. There is no decade to bridge.
-
-And the competence transfers exactly. These firms are not good at "weapons." They are good at winning government-funded R&D contracts, integrating complex systems, and lobbying. Point that skill at the health-security market the treaty creates and it is the same skill in a new costume. The lobbying you redirect passes the treaty; the treaty funds the trials; the trials are the contracts these companies win. The snake eats its own tail in the one direction where that is a good thing.
-
-So this is not capital poured into a hole. It is capital redeployed into a government-funded growth sector that the redeployment itself calls into being. The redirected company is worth more, not less, which is the entire reason the debt is serviceable and the early shareholders get richer on the way in. Lenders finance growth pivots. They do not finance bonfires. This is the former wearing the costume of the latter.
-
-## Real Frictions
-
-These are real, and they shape how the campaign is structured. They do not eliminate it.
-
-### Acquisition compliance
-
-Military contractor stock floats are not infinitely liquid. A large acquisition program has to assume price impact, filing obligations, and legal scrutiny. The modeled premium is {{< var defense_takeover_acquisition_premium >}} for acquisition planning, not a public trading target.
-
-**Mitigation:** counsel-led structure, disclosure planning, beneficial-ownership monitoring, proxy-solicitation review, CFIUS analysis, and public communication of the long-term shareholder objective rather than any short-term trading outcome.
-
-### CFIUS and national security review
-
-Any large or unusual ownership change in a major US military contractor triggers Committee on Foreign Investment in the United States review. A coalition of US citizens buying shares is domestic and falls outside CFIUS, but the Department of Defense has informal mechanisms to slow or block ownership changes it considers adversarial to national security. This is a real obstacle, not a fatal one.
-
-**Mitigation:** CFIUS reviews substance: domestic ownership, disclosed intent, no foreign control, and classified programs left under existing cleared management. The campaign has all four. The presentation's job is to make that substance legible.
-
-**The deeper argument runs the other way.** The current base is itself the national-security problem: it rewards competence in lobbying over competence in production, which is how a system spending close to a trillion dollars a year still cannot surge artillery shells and has failed its audit every year it has been tried. A takeover that turns these companies from buyers of influence back into builders of things, and stands up a health-security industrial base alongside the military one, is the pro-security move, not the adversarial one. The single piece to keep off the table is the weapons themselves: the actual munitions and classified programs stay under existing cleared control. Humanity votes on the lobbying and the capital allocation. It does not vote on the nuclear codes.
-
-### Staggered boards and poison pills
-
-Most big military contractors have anti-takeover provisions that delay control even with majority ownership. Staggered boards can be replaced only one-third per year. Poison pills can dilute acquirers the board deems hostile.
-
-**Mitigation:** Practical control takes 2-3 years post-acquisition rather than immediate. Shareholder resolutions and demand letters operate in parallel during the transition period and produce most of the lobbying-redirection benefit before formal board control is achieved. The "loving" framing also matters here: poison pills are designed to deter acquirers who plan to extract value at the expense of existing shareholders. They are harder to justify against an acquirer mathematically demonstrating that existing shareholders are richer under the takeover than under the status quo.
-
-### Coordination capacity
-
-Buying half the float of every big Western military contractor requires coordinating millions of purchasers. This is a real operational challenge, though not the corporate-campaign kind. It is closer to the chain-letter or viral-meme kind: distributed, opt-in, low-friction per participant.
-
-**Mitigation:** A standardized acquisition vehicle (e.g., an index fund or trust dedicated to the takeover) that anyone can buy into for the price of one share. Open-source coordination of which contractors are being targeted in which quarter. The same recruitment funnel as the [shirts campaign](handout.qmd) and the [lawsuit campaign](lawsuit.qmd).
+US military and foreign policy follows military-industry lobbying with high fidelity. Hand the lobby better math, and the senators who depend on military PAC money to keep their seats follow within one election cycle. China and Russia become the only remaining holdouts, and they are easier holdouts to address with the US lobby championing the optimal budget than with the US lobby blocking it.
 
 ## The Minimum Viable Payload
 
@@ -414,7 +214,7 @@ That last property is what lets the message run without an organizer. The reader
 
 This is the objection that sounds serious. It is not.
 
-The objection goes: if a shareholder coalition takes over military companies and redirects their lobbying, the government will punish them by canceling their contracts. The companies go bankrupt. You bought an expensive pile of nothing. Congratulations.
+The objection goes: if a shareholder coalition takes over military companies and points their lobbying at medicine, the government will punish them by canceling their contracts. The companies go bankrupt. You bought an expensive pile of nothing. Congratulations.
 
 The problem with this objection is that it assumes the Pentagon has options. It does not.
 
@@ -426,50 +226,17 @@ So the real question is narrower than it sounds: does the marginal ROI on lobbyi
 
 If this sounds theoretical, it has already happened. In 2021, a twelve-person hedge fund called Engine No. 1 won three board seats at ExxonMobil, one of the largest companies on Earth, on a platform of accelerating the energy transition. The stock did not crash. It went up. Shareholder activism that aligns a company with long-term secular trends makes the company more valuable, not less. The market is not confused about this. The market prices it in, which is why Engine No. 1's investors made money.
 
-The sole-supplier argument is not a reason the takeover fails. It is a reason the takeover is structurally safe. You are buying monopolies whose customers cannot leave, and redirecting their discretionary spending toward higher-return opportunities. The downside is "you own a monopoly military contractor." The upside is "you own a monopoly military contractor that also does health tech in a substantially bigger economy." This is not a hard trade.
-
-## Relationship to the Lawsuit Campaign
-
-The two campaigns are complementary, not alternative.
-
-| | Lawsuit | Loving takeover |
-|---|---|---|
-| Cost per participant | ~$200 (one share) | ~{{< var defense_takeover_cost_per_human >}} (proportional share of control) |
-| Number of participants required | Hundreds to thousands | Millions to billions |
-| Mechanism | Force the math into boardrooms via demand letters | Buy the board, change the lobbying direction |
-| Time to effect | 1-3 years | 2-5 years |
-| What it produces | Public board responses, media coverage, Overton window shift | Direct policy change via redirected lobbying |
-| Failure mode | Court dismisses, board ignores | Buy-up incomplete, board partial control |
-| Compounding effect on the other | Demand letters become takeover groundwork | Shareholder control becomes the venue where the demands get enacted |
-
-The lawsuit campaign generates the public attention and shareholder organization that makes the takeover financially feasible. The takeover, in turn, locks in the lawsuit's asks against backsliding by ensuring the board itself supports the treaty. Run them together.
+The sole-supplier argument is not a reason the takeover fails. It is a reason the takeover is structurally safe. You are buying monopolies whose customers cannot leave, and pointing their discretionary spending at higher-return opportunities. The downside is "you own a monopoly military contractor." The upside is "you own a monopoly military contractor that also does health tech in a substantially bigger economy."
 
 ## Relationship to Buying Politicians Directly
 
 There is also the rent-versus-own question. You can [buy the politicians directly](cost-of-change-analysis.qmd): roughly {{< var us_political_reform_investment_total >}} for the American set, {{< var global_political_reform_investment >}} for the world's. It works, but it is rent. The money is spent, the politicians need re-buying every election cycle, and the other side can outbid you at the next auction. Shares are different. If the campaign works, you own the machine that buys the politicians, permanently. If it never works, you still own the shares and whatever they gained along the way. Buying politicians is an expense. Buying their owners is an asset. This is why the more expensive path is the cheaper one.
 
-## Next Steps
-
-This page is a draft. Before any campaign acts on the math:
-
-1. **Verify market cap and float numbers** against current 10-K filings.
-2. **Engage securities and antitrust counsel** on the structure of an aggregating acquisition vehicle.
-3. **Engage CFIUS counsel** on framing and review posture.
-4. **Build the acquisition vehicle** (index fund, trust, or DAO-style coordination) that allows distributed participation at {{< var defense_takeover_cost_per_human >}} per share.
-5. **Coordinate with the [lawsuit campaign](lawsuit.qmd)** so demand letters and share accumulation reinforce each other.
-6. **Coordinate with the [handout and shirts campaign](handout.qmd)** so recruitment of participants happens through the same funnel.
-
-For the underlying argument for why this is necessary, see [Where Am I Wrong?](where-am-i-wrong.qmd) and the [1% treaty paper](../solution/1-percent-treaty.qmd). For the liability framework that quantifies the harm the takeover is correcting, see [Humanity v. Government](humanity-v-government.qmd).
-
 ## Your Money, Your Choice
 
-The entire plan on this page, stated once: buy the military contractors, use their lobbyists to give the money back to the people, let the people decide what to spend it on.
+The entire plan on this page, stated once: buy the military contractors, replace the boards, let the Optimitron calculate the optimal budget, hand it to the lobbyists, and let every human alive set the priorities through the [Wishocracy](../solution/wishocracy.qmd).
 
-That is it. Everything else on this page is the math proving it works and the frictions slowing it down.
-
-The redirected {{< var defense_lobbying_annual >}} per year does not go to a committee. It does not go to a czar. It does not go to a panel of experts who will thoughtfully allocate it on your behalf while charging 40% overhead. It goes to a [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]: every person gets a proportional say in how the reallocated funds are spent, under real budget constraints, with tradeoffs visible. You want the money spent on cancer trials? Vote for cancer trials. Pandemic preparedness? Vote for that. You think the whole thing is stupid and the money should stay in military spending? Vote for military spending. The system does not care what you pick. It cares that you pick.
-
-This is the part that breaks political objections, because every political tribe already wants this. They just describe it differently.
+The optimized {{< var defense_lobbying_annual >}} per year does not go to a committee. It does not go to a czar. It does not go to a panel of experts who will thoughtfully allocate it on your behalf while charging 40% overhead. It goes to a [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]: every person gets a proportional say in how the funds are spent, under real budget constraints, with tradeoffs visible. You want the money spent on cancer trials? Vote for cancer trials. Pandemic preparedness? Vote for that. You think the whole thing is stupid and the money should stay in military spending? Vote for military spending. The system does not care what you pick. It cares that you pick.
 
 If you are conservative: this is smaller government. The money currently disappears into a military bureaucracy that has failed its own audit every single year it has been tried. Giving it back to the people who earned it and letting them choose is the most conservative fiscal policy available. Less bureaucracy, more accountability, your money back.
 
@@ -479,11 +246,9 @@ If you are libertarian: this is individual choice replacing government planning.
 
 If you are religious: this is what "love thy neighbor" looks like when you write it into the budget. Your neighbor is dying of a disease that has a cure stuck in a trial queue. You take the money currently pointed at building the next missile and point it at finishing the trial. You do not need to use the word "love." You just move the decimal point.
 
-The closest thing to a loser is the roughly 2,000 people currently paid to keep the budget pointed at missiles: the members of Congress collecting military PAC contributions, and the lobbyists whose fees depend on the budget growing. The plan's response to them is a raise. The lobbyists get a client with a bigger budget asking for medicine instead of missiles (same firms, same lunches, better wine). The politicians get the [Senator Smith arithmetic](../solution/incentive-alignment-bonds.qmd): more campaign money and a better post-office career, for voting yes. The only way to lose under this arrangement is to be offered more money to stop helping kill people, and refuse. Some will refuse. That is a decision, not a casualty. The number of people who benefit is roughly {{< var global_population_2024 >}}.
+The closest thing to a loser is the roughly 2,000 people currently paid to keep the budget pointed at missiles: the members of Congress collecting military PAC contributions, and the lobbyists whose fees depend on the budget growing. The plan's response to them is a raise. The lobbyists get a client with a bigger budget and better math. The politicians get the [Senator Smith arithmetic](../solution/incentive-alignment-bonds.qmd): more campaign money and a better post-office career, for voting yes. The only way to lose under this arrangement is to be offered more money to stop helping kill people, and refuse. Some will refuse. That is a decision, not a casualty. The number of people who benefit is roughly {{< var global_population_2024 >}}.
 
 ### The Ledger
-
-Every person with skin in the game, before and after. This is the no-adversaries claim in auditable form.
 
 | Who | Status quo | After the takeover |
 |---|---|---|
@@ -497,7 +262,7 @@ Every person with skin in the game, before and after. This is the no-adversaries
 | Doctors | Paid to argue with insurers | Paid per [trial participant](../solution/dfda.qmd) |
 | Soldiers | Deployed to defend budget lines | Same paycheck ({{< var defense_sector_retention_pct >}} of the budget stays), fewer occasions to die for it |
 | Politicians who vote yes | Military PAC money | More money: campaign support now, a better career after |
-| Lobbyists | A {{< var defense_lobbying_annual >}}/year client | A richer client asking for medicine |
+| Lobbyists | A {{< var defense_lobbying_annual >}}/year client | A richer client with better math |
 | Anyone who refuses the raise | Paid to expand the budget | Outbid and replaced. Self-inflicted. |
 | The diseases | {{< var diseases_without_effective_treatment_nounit >}} of them, operating freely | Eradication queue, fully funded |
 
@@ -507,14 +272,14 @@ This is [Wishocracy](../solution/wishocracy.qmd) applied at its simplest: instea
 
 ## The Funniness of This Loving Takeover, Mathematically
 
-The financial ROI is obvious: ~{{< var defense_takeover_cost_per_human >}} in, ~$530,000-$2,000,000 out. The financial ROI is also not the point. The point is that this is the funniest loving takeover in the universe, and the funniness is also calculable.
+~{{< var defense_takeover_cost_per_human >}} in, ~$530,000-$2,000,000 out. This is also the funniest loving takeover in the universe, and the funniness is calculable.
 
 A normal hostile takeover produces one laugh: the laugh of the acquirer counting their gains. This one produces approximately {{< var shirt_induced_laughs_gained >}}.
 
 The chain:
 
 - Average human laughter rate: {{< var human_laughs_per_day_average_nounit >}} laughs per day, or {{< var human_laughs_per_healthy_life_year_nounit >}} per healthy life-year.
-- The takeover redirects the {{< var defense_lobbying_annual >}} per year of military lobbying toward the 1% treaty.
+- The takeover hands the {{< var defense_lobbying_annual >}} per year lobbying operation an optimal budget calculated to maximize median healthy lifespan and median income.
 - The treaty compresses the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years, recovering approximately {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} healthy life-years across humanity.
 - {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = **{{< var shirt_induced_laughs_gained_nounit >}} laughs.**
 
