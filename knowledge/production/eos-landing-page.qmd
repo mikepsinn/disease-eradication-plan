@@ -5,7 +5,7 @@ description: Complete specification for the EOS single-page web application. Eve
 toc: false
 number-sections: false
 audience: "Split: general public (the builder, the voter, the sharer) AND accredited investors (the funder). The page serves both without segregating them."
-feel: "Reading a performance review of the worst employee in history, then seeing the competing bid from the vendor that has never murdered anyone."
+feel: "Reading a performance review of the worst employee in history, then being handed a cheerful brochure by a polite alien vendor who has done this 300 times and finds your dysfunction familiar, textbook, and fixable."
 do: "Build a module, spread the page, or invest in EOS equity. Build is the default path."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
@@ -30,7 +30,11 @@ Each product card uses the "Retail price / Currently paying" format from the EOS
 
 ## Visual Direction
 
-A product catalog for civilization. Each section is a product card with working demos, real code, and real data. Dark background with bright accent colors for data visualizations. The comparison matrix is the visual centerpiece. Interactive elements in every product card (working code, live sliders, real data). The overall feeling should be: "this vendor is obviously better and has never killed anyone."
+Two visual registers matching the two voice registers:
+
+**Section 1 (Performance Review):** Dark, dense, clinical. The charge sheet. Dark background, bright white text, numbers in accent color. No ornamentation. The numbers do the work.
+
+**Section 2 onward:** 1950s-futuristic product catalog. Cheerful retro typography, clean lines, pastel accent colors against dark background. Think Tomorrowland brochure meets competent vendor pitch. Each product card with working demos, real code, and real data. The comparison matrix is the visual centerpiece. Interactive elements in every product card (working code, live sliders, real data). The overall feeling should be: "this vendor is obviously better, has never killed anyone, and has a lovely brochure."
 
 ---
 
@@ -160,7 +164,7 @@ Two large, animated counters:
 
 > **Median Healthy Life Years.** Not average life expectancy; the age at which the median person is still healthy.
 >
-> **Median Real After-Tax Income.** Not GDP per capita, which looks great when three billionaires move into your city while everyone else's rent doubles.
+> **Median Real After-Tax Income.** Not GDP per capita; not average.
 
 **Interactive element:** A simplified policy comparator. 3-4 example policies with before/after scores:
 
@@ -257,6 +261,8 @@ Below the slider, a real-time display shows: "If everyone answered the way you j
 
 **Tagline:** Six lines replace 74,000 pages.
 
+**Replaces:** 74,000 pages of tax code and 95,000 employees. **Retail price:** 6 lines of code plus {{< var automated_revenue_service_annual_opex >}}/year. **Currently paying:** {{< var irs_annual_operating_budget >}} in IRS operations plus {{< var us_gov_waste_tax_compliance >}}/year in compliance. **Your annual dividend:** {{< var automated_revenue_service_savings_per_american_annual >}} per American.
+
 **Copy:**
 
 > Your tax system has 74,000 pages of rules. The IRS employs 95,000 humans to interpret them. An entire profession ("accountant") exists solely to decode rules your government wrote for itself. The replacement:
@@ -293,6 +299,8 @@ function _update(address from, address to, uint256 value) internal override {
 
 **Tagline:** 80+ programs replaced by one for-loop.
 
+**Replaces:** 80+ welfare programs, each with its own bureaucracy. **Retail price:** 1 for-loop plus {{< var universal_security_admin_annual_opex >}}/year, about thirty cents per citizen. **Currently paying:** Roughly $100 billion/year in administration, about $300 per citizen, to guard the door. The bouncer costs a thousand times more than the door.
+
 **Copy:**
 
 > You spend more money deciding who deserves help than you spend helping them. 80+ overlapping welfare programs, each with its own bureaucracy, its own application, its own case workers. The replacement:
@@ -326,6 +334,8 @@ function distributeUBI() external {
 
 **Tagline:** What funded research actually produces.
 
+**Replaces:** Your drug approval agency, which blocks safe treatments for an average of 12 years after safety is established. **Retail price:** {{< var recovery_trial_cost_per_patient >}}/patient. **Currently paying:** {{< var traditional_phase3_cost_per_patient >}}/patient. The RECOVERY trial proved the cheaper number works.
+
 **Layout:** An interactive treatment ranking table pulling from studies.dfda.earth API.
 
 **Copy:**
@@ -346,11 +356,17 @@ function distributeUBI() external {
 
 > The health engine already generated outcome labels from 12 million datapoints contributed by 10,000 people. The rankings are public at studies.dfda.earth.
 
+**Testimonial:**
+
+> *"Our FDA equivalent once took 14 years to approve a treatment that had been safely used on 2 million patients in neighboring jurisdictions. The Decentralized FDA approved it in 4 months. The 14-year agency is now a museum. The museum is not well attended." (Client, Triangulum Galaxy)*
+
 ---
 
 ### PRODUCT 7: THE DECENTRALIZED CONGRESS
 
 **Tagline:** 535 intermediaries replaced by 20 questions a year.
+
+**Replaces:** 535 humans voting on 5,000-page bills they have not read. **Retail price:** Twenty questions a year with the evidence attached. **Currently paying:** {{< var us_total_lobbying_annual >}}/year in lobbying, plus {{< var us_gov_waste_tariffs >}} in tariff losses no citizen would vote for if asked.
 
 **Copy:**
 
@@ -380,7 +396,7 @@ function distributeUBI() external {
 
 > Every module in this catalog produces tasks. The 1% Treaty needs signatures. The Decentralized FDA needs trial participants. The Wishocracy needs votes. The code needs engineers. The campaigns need organizers. Right now, these tasks are scattered across websites, inboxes, and good intentions. Nobody knows which task has the highest expected value or who could complete it at the lowest cost.
 >
-> The Humanity Manager computes both. It calculates the expected value of every action (signatures, code contributions, trial enrollment, lobbying visits, social shares) and identifies the lowest-cost actor for each one. Your doctor is the lowest-cost actor for enrolling patients. Your engineer is the lowest-cost actor for deploying the tax code. Your senator's constituent is the lowest-cost actor for a lobbying visit. You are the lowest-cost actor for something, and the machine knows what it is.
+> The Humanity Manager computes both. It calculates the expected value of every action (signatures, code contributions, trial enrollment, lobbying visits, social shares) and identifies the lowest-cost actor for each one. Your doctor is the lowest-cost actor for enrolling patients. Your senator's constituent is the lowest-cost actor for a lobbying visit. You are the lowest-cost actor for something, and the machine knows what it is.
 
 **Interactive element:** A ranked task queue showing a real day:
 
@@ -401,31 +417,43 @@ function distributeUBI() external {
 
 **Tagline:** Your Department of Defense has fought 13+ wars since it rebranded from the Department of War. The wars did not become more defensive.
 
+**Replaces:** Your war department. **Retail price:** One accountant, one pull request, some agent-hours, and pay-per-view rights to the finale. **Currently paying:** {{< var global_military_spending_annual_2024 >}}/year on organized violence, net return negative.
+
 **Layout:** Two panels. Left: the Settlement Engine. Right: the Disposal Program. Below: the math on why peace is more profitable than war.
 
 **Copy:**
 
-> In 1947, the United States renamed the Department of War to the Department of Defense. Since then it has fought 13+ wars, none of which were defensive. The Department of Peace replaces organized violence with two systems: a settlement engine and a disposal program.
+> War is a negative-sum transaction. Every one your species has ever fought cost more than it returned. Since no war in recorded history has produced a positive ROI, the department's entire function reduces to a ledger entry that reads "do not." In 1947, the United States renamed the Department of War to the Department of Defense. Since then it has fought 13+ wars, none of which were defensive. The Department of Peace replaces organized violence with two systems: a settlement engine and a disposal program.
 
 **Left Panel: The Settlement Engine**
 
-> Makes resolving disputes cheaper than fighting them. Current system: {{< var global_military_spending_annual_2024 >}}/year on organized violence, net return negative (the US military hegemony costs $674B to $1.38T/year more than it returns). The settlement engine prices every conflict: what does it cost to fight vs. what does it cost to settle? When settling is cheaper (it almost always is), the math does the selling.
+> Makes resolving disputes cheaper than fighting them. The US military hegemony costs $674B to $1.38T/year more than it returns. The settlement engine prices every conflict: what does it cost to fight vs. what does it cost to settle? When settling is cheaper (it almost always is), the math does the selling.
 
-**Right Panel: The Disposal Program**
+**Right Panel: The Disposal Program (feat. The Very Strong Robot)**
 
 > Your species currently possesses enough nuclear weapons to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times. The redundant capacity to kill everyone several times over is not a deterrent; it is inventory. The disposal program: make a really strong robot. The robot picks up the weapons, dismantles them, and converts the fissile material into fuel for nuclear power plants. The bombs become electricity. The artillery becomes scrap metal. The factories retool. Same engineers, same facilities, different product.
 >
+> Yes, a robot that strong is frightening. Your species is already building robots specifically designed to murder you; in 2026 your government declared the one AI company that refused to help build killing machines a national security threat. So the disposal robot, whose job description does not mention you, is an upgrade over its own cargo.
+>
 > This is not a metaphor. The Megatons to Megawatts program already converted 20,000 Russian nuclear warheads into fuel that generated 10% of US electricity for two decades. The disposal robot is an engineering project, not a policy debate.
+
+**The Deluxe trim** also includes: The Last War (one scheduled war in an empty ocean where every nation's autonomous weapons destroy each other on pay-per-view, proceeds to clinical trials; zero funerals, one merchandise line).
 
 **The math:**
 
 > Post-WW2, the US cut military spending {{< var post_ww2_military_cut_pct >}} in two years. Result: the greatest economic expansion in history. Pre-WW2 military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today (inflation-adjusted). They still won World War II. The money is not buying safety. It is buying inventory that rusts.
+
+**Testimonial:**
+
+> *We deployed the Very Strong Robot on three planets. On two, it worked beautifully. On the third, it developed opinions. That planet now has no bombs AND a very opinionated robot. They consider this a lateral move.*
 
 ---
 
 ### PRODUCT 10: THE ALIGNED ELECTION COMMISSION
 
 **Tagline:** Politician alignment scores. Evidence replaces lobbying.
+
+**Replaces:** Campaign finance (PACs, dark money, corporate donations). **Retail price:** 1 algorithm plus {{< var aligned_election_commission_annual_opex >}}/year. **Currently paying:** $15.9 billion per federal election cycle, plus whatever the laws the donors write afterward cost you, which is the actual price tag.
 
 **Copy:**
 
@@ -436,6 +464,8 @@ function distributeUBI() external {
 ### PRODUCT 11: THE COURT OF HUMANITY
 
 **Tagline:** The negative incentive. Governments that harm their citizens become expensive to insure.
+
+**Replaces:** The International Criminal Court (10 convictions in 21 years, ~$150M per conviction, cannot enforce its own warrants). **Retail price:** One jurisdiction model plus evidence infrastructure. **Currently paying:** $150 million per conviction for a court nobody obeys.
 
 **Layout:** A jurisdiction diagram showing how consent-based jurisdiction works, plus examples of enforcement through capital markets.
 
@@ -448,8 +478,6 @@ function distributeUBI() external {
 **How it works:**
 
 > A government poisons a river. Citizens file with the Court. The Court evaluates the evidence (same methodology as the Optimitron: measured outcomes, not ideology). If the violation is confirmed, the rating propagates: insurance premiums on that government's operations rise, sovereign credit ratings adjust, institutional investors rebalance. The government's cost of doing business goes up until the violation stops.
->
-> This is not unprecedented. Credit rating agencies already move trillions by downgrading sovereign debt. ESG ratings already affect insurance premiums. The Court of Humanity applies the same mechanism to human rights instead of fiscal policy. The enforcement technology exists. The jurisdiction is new.
 
 **The comparison:**
 
@@ -475,11 +503,11 @@ function distributeUBI() external {
 
 ## SECTION 4: HOW THE MACHINE WORKS
 
-**Layout:** A clean animated system diagram showing the full mechanism. Not a three-step startup "How It Works" slide. A schematic showing how the products fit together.
+**Layout:** A clean animated system diagram showing the full mechanism. Not a three-step startup "How It Works" slide. A schematic showing how the products fit together. The pitchman tone continues: this is the "How the Products Fit Together" section of the brochure.
 
 **Copy:**
 
-> The products are one machine.
+> The four products are one machine. Your current system uses the same components in the opposite order: companies buy the government, lobbyists push for policies that maximize shareholder profit, and nobody measures whether anyone got healthier or richer. Same machine. Same parts. Different direction.
 >
 > You buy shares in the corporations whose lobbying writes your laws. Shares come with votes. Votes elect board members. The new board hands the lobbyists an optimal budget calculated by the Optimitron to maximize median healthy lifespan and median income. The Wishocracy lets every human set the priorities through pairwise comparisons. The Humanity Manager breaks the optimal policies into tasks and matches each task to the lowest-cost actor. The lobbyists sell Congress on the math. The 1% Treaty funds it. Each lap makes the next lap cheaper.
 
@@ -521,8 +549,6 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 > The red line is what is actually happening. Your destructive economy is already {{< var global_destructive_economy_pct_gdp >}} of GDP and growing faster than everything else. The civilizations that ran this experiment before you crossed a similar threshold on the way down.
 >
 > The blue line is the 1% Treaty: move 1% of the weapons budget to clinical trials. The average person ends up {{< var treaty_vs_current_median_income_multiplier_year_20 >}} richer. The gold line is what happens if you install every product you just saw. The gap between these lines is the measured cost of human stupidity, priced annually, compounded over twenty years.
->
-> Every decision is locally sensible. The aggregate output does not have to be extinction.
 
 ---
 
@@ -537,10 +563,6 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 **Interactive timeline.** A horizontal scrollable or vertical scrolling timeline showing a single day in the optimized world. Each entry animates in on scroll:
 
 > **6:00 AM.** You wake up without an alarm. Your health monitor adjusted your sleep cycle overnight. Depression was cured eleven years ago; the protocol cost $340 million in trial funding and replaced $320 billion in annual treatment costs.
->
-> **7:30 AM.** Breakfast. The food is not "organic" or "conventional" because those categories stopped meaning anything once the outcome data was published. You eat what the evidence says works. It tastes fine.
->
-> **9:00 AM.** You work, or you don't. The universal deposit covers baseline needs. Most people work anyway, because humans get bored. Your job exists because a human is better at it than a machine. If a machine gets better, you retrain on evidence-based curricula that take weeks, not years.
 >
 > **12:00 PM.** Your five pairwise budget votes for the week take ninety seconds during lunch. Medical research or military? 85-15. Infrastructure or space? 60-40. You do not vote on things you know nothing about. Nobody does.
 >
@@ -586,7 +608,30 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 
 ---
 
-## SECTION 8: FOR INVESTORS
+## SECTION 8: REVIEWS
+
+**Layout:** Two subsections. "Reviews from the Competition" (short, dark humor) and "Customer Reviews" (planet testimonials, star ratings). Light visual treatment; this is the comedic breather before the investor section.
+
+**Reviews from the Competition:**
+
+> *"One star. They started checking which medicines work."* (Cancer)
+>
+> *"They outspent their own cures {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} to 1. We assumed it was a tribute."* (The Diseases)
+
+**Customer Reviews:**
+
+> **Planet Keth-7** ★★★★★
+> "We installed the full suite in Year 3. By Year 5, our government's operating cost had dropped 94%. By Year 12, we ran out of diseases. Our children learn about 'disease' in history class. They do not believe any of it. Would optimize again."
+>
+> **Planet GL-881** ★☆☆☆☆
+> "Did not get started. Argued about whether the problem existed. Currently an asteroid belt. Available for mining rights."
+>
+> **Planet Thex-9** ★★★★★
+> "47 years from extinction when UOS arrived. Same trajectory as yours. Same budget allocation. Same glowing rectangles. The only difference is we said yes."
+
+---
+
+## SECTION 9: FOR INVESTORS
 
 **Layout:** Clean, warm, precise. Not the climax of the page; one participation path among three. Securities disclosure language is required.
 
@@ -596,7 +641,7 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 
 **The Structure:**
 
-> Earth Optimization Services is a holding company. Investors receive revenue share from the portfolio's performance. You do not receive governance rights, board seats, or influence over strategy. This is deliberate. The architecture separates money from power; investors cannot buy policy outcomes, because that is the problem we are solving.
+> Earth Optimization Services is a holding company. Investors receive revenue share from the portfolio's performance. You do not receive governance rights, board seats, or influence over strategy. This is deliberate. You cannot buy the steering wheel, no matter how many shares you own, because selling the steering wheel is the problem we are solving.
 
 **The Floor:**
 
@@ -604,7 +649,9 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 
 **The Upside:**
 
-> If the campaign works, value compounds across the economy simultaneously: the companies capture the growth, your tax burden falls, your other investments rise, medical costs disappear from your budget, and you live longer to enjoy it. This product has the unusual property of making nearly everything else you own more valuable at the same time.
+> Most products on your planet come with one benefit. A toaster makes toast. A car moves you from the place you do not want to be to the place you do not want to go. This product has the unusual property of making nearly everything else you own more valuable at the same time, because the same act that ends war and disease happens to end the thing that has been eating your economy alive since before you invented accounting.
+>
+> If the campaign works, value compounds across the economy simultaneously: the companies capture the growth, your tax burden falls, your other investments rise, medical costs disappear from your budget, and you live longer to enjoy it.
 
 **Key projections** (displayed as a clean data table):
 
@@ -622,10 +669,12 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 
 ---
 
-## SECTION 9: FOOTER
+## SECTION 10: FOOTER
 
 **The closer** (small text, centered):
 
+> Universe Optimization Services thanks you for your interest in continued existence.
+>
 > The disease coming for someone you love almost certainly has no cure yet. This is how one gets found.
 >
 > I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases.
@@ -659,7 +708,9 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 | GDP trajectory chart | 5 | GDP trajectory parameters (4 scenarios) | Animated draw, hover tooltips, shaded hedge region |
 | Day timeline | 6 (Optimized Life) | Static copy | Scroll-driven reveal, each entry animates in |
 | Corporate transformation cards | 6 | Static | Subtle before/after animation |
-| ROI table | 8 (Investors) | Parameter variables | Static display |
+| Disease reviews | 8 (Reviews) | Static copy | Styled as review cards with star ratings |
+| Planet reviews | 8 (Reviews) | Static copy | Styled as customer review cards with star ratings |
+| ROI table | 9 (Investors) | Parameter variables | Static display |
 
 ## TECHNICAL NOTES FOR IMPLEMENTATION
 
@@ -673,6 +724,7 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 - Section 1 (Performance Review) should be dense, fast, and feel like reading a charge sheet. No breathing room. The numbers should hit in sequence.
 - Section 2 (Comparison Matrix) should be the visual centerpiece. Large table, well-spaced, high contrast.
 - Section 6 (Optimized Life) should feel visually distinct from the dark data-heavy sections: lighter background, more whitespace, warmer colors. This is the sunrise moment.
+- Section 8 (Reviews) should feel like a real review page: star ratings, cards, the diseases' one-star reviews styled as hostile competitor feedback. Light comedic treatment.
 - The corporate transformation cards (Lockheed Health, Raytheon Wellness) should have a subtle before/after animation.
 - Product code blocks (Automated Revenue Service, Universal Security Administration) should use syntax highlighting and feel like working, deployable code, not decoration.
 - The Wishocracy slider (Product 2) should produce real-time budget numbers when dragged.
@@ -692,6 +744,6 @@ These lines are canonical to the project and must not be paraphrased:
 - No contempt for the reader. No "your species is too stupid." No sneering. The reader is the president of this machine; we hand them the keys.
 - No crypto-bro energy. No "immutable, trustless, permissionless." The technology is described by what it does, not by its architecture.
 - No consultant frameworks. No "let's unpack the synergies." Plain words.
-- No startup pitch-deck framing. No "How It Works" three-step. The page is a product catalog and a performance review, not a fundraiser.
-- No metaphors where a number will do. The facts are more devastating than any analogy.
+- No startup pitch-deck framing. No "How It Works" three-step. The page is a performance review followed by a cheerful product catalog, not a fundraiser.
+- No metaphors where a number will do, especially in Section 1. The pitchman voice (Section 2 onward) may use comedy and character, but the facts always come first.
 - No em-dashes.
