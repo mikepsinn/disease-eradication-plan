@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 443 parameters used in the analysis, organized by type:
+This appendix documents all 446 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 149
-- Calculated values: 220
+- External sources (peer-reviewed): 151
+- Calculated values: 221
 - Core definitions: 74
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (220 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
+[Calculated Values](#sec-calculated) (221 parameters) • [External Data Sources](#sec-external) (151 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -7320,6 +7320,42 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-pentagon_unaccounted_clinical_trial_years.qmd >}}
+
+:::
+
+### Pharma-to-Defense Net Profit Margin Ratio: 3.72x {#sec-pharma_vs_defense_net_margin_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of pharmaceutical to defense net profit margins
+
+**Inputs**:
+
+- [Pharmaceutical Net Profit Margin](#sec-pharma_net_profit_margin) 📊: 18.5% (95% CI: 15% - 22%)
+- [Aerospace/Defense Net Profit Margin](#sec-defense_net_profit_margin) 📊: 4.99% (95% CI: 4% - 6%)
+
+$$
+\begin{gathered}
+\frac{Margin_{pharma}}{Margin_{def}} \\
+= \frac{Margin_{pharma}}{Margin_{def}} \\
+= \frac{18.5\%}{4.99\%} \\
+= 3.72
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pharma_vs_defense_net_margin_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pharma_vs_defense_net_margin_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pharma_vs_defense_net_margin_ratio.qmd >}}
 
 :::
 
@@ -18573,6 +18609,26 @@ Annual military sector lobbying spending. OpenSecrets reports the 2025 actual at
 
 :::
 
+### Aerospace/Defense Net Profit Margin: 4.99% {#sec-defense_net_profit_margin}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net profit margin for Aerospace/Defense industry (79 firms, Damodaran Jan 2026)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [4%, 6%]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 4% and 6% (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-defense_net_profit_margin.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### 20th-Century Government Democide Total: 262 million deaths {#sec-democide_total_20th_century}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -20124,6 +20180,26 @@ Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 199
 **Source**: [@pharma-drug-revenue-average]
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Pharmaceutical Net Profit Margin: 18.5% {#sec-pharma_net_profit_margin}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net profit margin for Drugs (Pharmaceutical) industry (228 firms, Damodaran Jan 2026)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [15%, 22%]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 15% and 22% (±19%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_net_profit_margin.qmd >}}
+
+*✓ High confidence*
 
 :::
 

@@ -173,7 +173,7 @@ Three institutional investors hold 60-75% of every big military contractor, and 
 
 ## What You Do Once You Own the Companies
 
-You replace the boards. The new boards plug the [Optimitron](../solution/optimocracy.qmd) into each company's lobbying budget. The Optimitron is an optimal policy generator: it takes every measurable input (disease burden, economic output, military readiness, infrastructure, climate, education) and calculates the federal budget that maximizes median health-adjusted life expectancy and median after-tax inflation-adjusted income. The [optimal budget generator](optimal-budget-generator-spec.qmd) produces the specific line items. The board hands that budget to the lobbyists and says: sell this.
+You replace the boards. The new boards plug the [Optimitron](../solution/optimocracy.qmd) into each company's lobbying budget. The Optimitron is an [optimal policy generator](https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html) [@opg-paper-2025]: it takes every measurable input (disease burden, economic output, military readiness, infrastructure, climate, education) and calculates the federal budget that maximizes median health-adjusted life expectancy and median after-tax inflation-adjusted income. The [optimal budget generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] produces the specific line items. The board hands that budget to the lobbyists and says: sell this.
 
 Military contractors currently spend {{< var defense_lobbying_annual >}} per year lobbying Congress to expand military appropriations. This is the most effective political-influence operation on Earth. It has driven US military spending from its 1939 baseline to current levels and prevented every serious proposal for reallocation.
 
@@ -234,7 +234,7 @@ There is also the rent-versus-own question. You can [buy the politicians directl
 
 ## Your Money, Your Choice
 
-The entire plan on this page, stated once: buy the military contractors, replace the boards, let the Optimitron calculate the optimal budget, hand it to the lobbyists, and let every human alive set the priorities through the [Wishocracy](../solution/wishocracy.qmd).
+The entire plan on this page, stated once: buy the military contractors, replace the boards, let the Optimitron calculate the optimal budget, hand it to the lobbyists, and let every human alive set the priorities through the [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025].
 
 The optimized {{< var defense_lobbying_annual >}} per year does not go to a committee. It does not go to a czar. It does not go to a panel of experts who will thoughtfully allocate it on your behalf while charging 40% overhead. It goes to a [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]: every person gets a proportional say in how the funds are spent, under real budget constraints, with tradeoffs visible. You want the money spent on cancer trials? Vote for cancer trials. Pandemic preparedness? Vote for that. You think the whole thing is stupid and the money should stay in military spending? Vote for military spending. The system does not care what you pick. It cares that you pick.
 

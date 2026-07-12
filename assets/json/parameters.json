@@ -2798,6 +2798,25 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/faq.html",
       "chapterTitle": "Frequently Asked Objections"
     },
+    "DEFENSE_NET_PROFIT_MARGIN": {
+      "value": 0.0499,
+      "formatted": "4.99%",
+      "unit": "percent",
+      "description": "Net profit margin for Aerospace/Defense industry (79 firms, Damodaran Jan 2026)",
+      "displayName": "Aerospace/Defense Net Profit Margin",
+      "sourceType": "external",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-defense_net_profit_margin",
+      "confidenceInterval": [
+        0.04,
+        0.06
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/love-letter.html",
+      "chapterTitle": "The Love Letter"
+    },
     "DEFENSE_PRIMES_MARKET_CAP_ALLIED": {
       "value": 132000000000.0,
       "formatted": "$132 billion",
@@ -10195,6 +10214,25 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/invisible-graveyard.html",
       "chapterTitle": "The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag"
     },
+    "PHARMA_NET_PROFIT_MARGIN": {
+      "value": 0.1854,
+      "formatted": "18.5%",
+      "unit": "percent",
+      "description": "Net profit margin for Drugs (Pharmaceutical) industry (228 firms, Damodaran Jan 2026)",
+      "displayName": "Pharmaceutical Net Profit Margin",
+      "sourceType": "external",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-pharma_net_profit_margin",
+      "confidenceInterval": [
+        0.15,
+        0.22
+      ],
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/love-letter.html",
+      "chapterTitle": "The Love Letter"
+    },
     "PHARMA_PHASE_2_3_COST_BARRIER": {
       "value": 1560000000.0,
       "formatted": "$1.56 billion",
@@ -10240,6 +10278,27 @@
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-pharma_success_rate_current_pct",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/fda-is-unsafe-and-ineffective.html",
       "chapterTitle": "Your FDA Is Unsafe and Ineffective"
+    },
+    "PHARMA_VS_DEFENSE_NET_MARGIN_RATIO": {
+      "value": 3.7154308617234473,
+      "formatted": "3.72x",
+      "unit": "x",
+      "description": "Ratio of pharmaceutical to defense net profit margins",
+      "displayName": "Pharma-to-Defense Net Profit Margin Ratio",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "high",
+      "formula": "PHARMA_NET_PROFIT_MARGIN / DEFENSE_NET_PROFIT_MARGIN",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-pharma_vs_defense_net_margin_ratio",
+      "latex": "\\begin{gathered}\n\\frac{Margin_{pharma}}{Margin_{def}} \\\\\n= \\frac{Margin_{pharma}}{Margin_{def}} \\\\\n= \\frac{18.5\\%}{4.99\\%} \\\\\n= 3.72\n\\end{gathered}",
+      "inputs": [
+        "DEFENSE_NET_PROFIT_MARGIN",
+        "PHARMA_NET_PROFIT_MARGIN"
+      ],
+      "computeExpr": "(PHARMA_NET_PROFIT_MARGIN / DEFENSE_NET_PROFIT_MARGIN)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/love-letter.html",
+      "chapterTitle": "The Love Letter"
     },
     "PHASE_1_PASSED_COMPOUNDS_GLOBAL": {
       "value": 7500.0,

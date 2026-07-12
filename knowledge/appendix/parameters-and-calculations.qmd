@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 869 parameters used in the analysis, organized by type:
+This appendix documents all 872 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 239
-- Calculated values: 444
+- External sources (peer-reviewed): 241
+- Calculated values: 445
 - Core definitions: 186
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (444 parameters) • [External Data Sources](#sec-external) (239 parameters) • [Core Definitions](#sec-definitions) (186 parameters)
+[Calculated Values](#sec-calculated) (445 parameters) • [External Data Sources](#sec-external) (241 parameters) • [Core Definitions](#sec-definitions) (186 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -10082,7 +10082,6 @@ $$
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
-- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
@@ -17756,7 +17755,6 @@ $$
 - [Special Education](../solution/special-education.html)
 - [Department of Peace](../solution/department-of-peace.html)
 - [Your Desk Is Ready, President](../appendix/president-notification-letter.html)
-- [The Love Letter](../appendix/love-letter.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Genetic Slavery](../problem/genetic-slavery.html)
@@ -17765,6 +17763,7 @@ $$
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [How to End War and Disease](../educational-film.html)
 - [The Humanity Manager Employment Agreement](../appendix/humanity-manager-employment-agreement.html)
+- [The Love Letter](../appendix/love-letter.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
 - [About This Manual](../appendix/back-cover.html)
 
@@ -19619,6 +19618,46 @@ $$
 **Used in:**
 
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
+
+:::
+
+### Pharma-to-Defense Net Profit Margin Ratio: 3.72x {#sec-pharma_vs_defense_net_margin_ratio}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of pharmaceutical to defense net profit margins
+
+**Inputs**:
+
+- [Pharmaceutical Net Profit Margin](#sec-pharma_net_profit_margin) 📊: 18.5% (95% CI: 15% - 22%)
+- [Aerospace/Defense Net Profit Margin](#sec-defense_net_profit_margin) 📊: 4.99% (95% CI: 4% - 6%)
+
+$$
+\begin{gathered}
+\frac{Margin_{pharma}}{Margin_{def}} \\
+= \frac{Margin_{pharma}}{Margin_{def}} \\
+= \frac{18.5\%}{4.99\%} \\
+= 3.72
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-pharma_vs_defense_net_margin_ratio.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-pharma_vs_defense_net_margin_ratio.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-pharma_vs_defense_net_margin_ratio.qmd >}}
+
+**Used in:**
+
+- [The Love Letter](../appendix/love-letter.html)
 
 :::
 
@@ -29637,15 +29676,16 @@ $$
 **Used in:**
 
 - [The Funniest Joke in the Universe](../appendix/joke.html)
-- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Earth Optimization Fund](../economics/earth-optimization-fund.html)
 - [The Press Release and Journalist List](../appendix/press-release.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Vandalism Handout](../appendix/handout.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 - [The Counsel Pitch](../appendix/counsel-outreach.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
+- [The Love Letter](../appendix/love-letter.html)
 - [The Board Member Research](../appendix/board-member-research.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
@@ -30779,7 +30819,6 @@ $$
 - [Your Personal Benefits](../call-to-action/your-personal-benefits.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Your Desk Is Ready, President](../appendix/president-notification-letter.html)
-- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Peace Dividend](../economics/peace-dividend.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [There Are No Bad Guys (That Is the Problem)](../proof/no-bad-guys.html)
@@ -30791,6 +30830,7 @@ $$
 - [The Humanity Manager Employment Agreement](../appendix/humanity-manager-employment-agreement.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
@@ -40712,6 +40752,30 @@ Annual military sector lobbying spending. OpenSecrets reports the 2025 actual at
 
 :::
 
+### Aerospace/Defense Net Profit Margin: 4.99% {#sec-defense_net_profit_margin}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net profit margin for Aerospace/Defense industry (79 firms, Damodaran Jan 2026)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [4%, 6%]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 4% and 6% (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-defense_net_profit_margin.qmd >}}
+
+*✓ High confidence*
+
+**Used in:**
+
+- [The Love Letter](../appendix/love-letter.html)
+
+:::
+
 ### Allied Military Primes Market Cap: $132 billion {#sec-defense_primes_market_cap_allied}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -42552,9 +42616,9 @@ Global population in 2024
 **Used in:**
 
 - [Decentralized Institutes of Health](../solution/dih.html)
-- [The Loving Takeover](../appendix/loving-takeover.html)
 - [A Decentralized FDA](../solution/dfda.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [The Court of Humanity](../solution/court-of-humanity.html)
 - [Money Comes From a Building and They Use It to Kill People](../economics/central-banks.html)
 - [Optimization Summary](../solution.html)
@@ -43014,7 +43078,6 @@ Medical cost-effectiveness QALY threshold. Standard threshold for evaluating whe
 **Used in:**
 
 - [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
-- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 
 :::
@@ -43501,6 +43564,30 @@ Annual life-years saved by pharmaceutical innovations globally. Lichtenberg (201
 **Used in:**
 
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
+
+:::
+
+### Pharmaceutical Net Profit Margin: 18.5% {#sec-pharma_net_profit_margin}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net profit margin for Drugs (Pharmaceutical) industry (228 firms, Damodaran Jan 2026)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [15%, 22%]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 15% and 22% (±19%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_net_profit_margin.qmd >}}
+
+*✓ High confidence*
+
+**Used in:**
+
+- [The Love Letter](../appendix/love-letter.html)
 
 :::
 
@@ -45940,8 +46027,8 @@ Average years of life extension per person saved by pharmaceutical interventions
 
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
-- [The Loving Takeover](../appendix/loving-takeover.html)
 - [The Press Release and Journalist List](../appendix/press-release.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Where Am I Wrong?](../appendix/where-am-i-wrong.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)

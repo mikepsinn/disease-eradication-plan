@@ -1,0 +1,9 @@
+**Monte Carlo note:** Pharma-to-Defense Net Profit Margin Ratio is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 3.715e-12)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 3.72x |
+| Mean (expected value) | 3.72x |
+| Median (50th percentile) | 3.72x |
+| Standard Deviation | 4.44e-16x |
+| 90% Range (5th-95th percentile) | [3.72x, 3.72x] |

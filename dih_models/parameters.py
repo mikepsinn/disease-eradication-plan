@@ -9619,31 +9619,33 @@ GLOBAL_TOTAL_HEALTH_AND_WAR_COST_ANNUAL = Parameter(
 # Industry profit margin comparisons (Damodaran, NYU Stern, January 2026)
 DEFENSE_NET_PROFIT_MARGIN = Parameter(
     0.0499,
-    manual_ref="index-manual.qmd",
+    manual_ref="knowledge/appendix/love-letter.qmd",
     source_ref="",
     source_type="external",
     description="Net profit margin for Aerospace/Defense industry (79 firms, Damodaran Jan 2026)",
     display_name="Aerospace/Defense Net Profit Margin",
     unit="percent",
+    confidence_interval=(0.040, 0.060),  # year-to-year variation in Damodaran's annual tables
     keywords=["defense", "aerospace", "profit", "margin", "military", "contractor"],
     latex_symbol=r"Margin_{def}",
 )
 
 PHARMA_NET_PROFIT_MARGIN = Parameter(
     0.1854,
-    manual_ref="index-manual.qmd",
+    manual_ref="knowledge/appendix/love-letter.qmd",
     source_ref="",
     source_type="external",
     description="Net profit margin for Drugs (Pharmaceutical) industry (228 firms, Damodaran Jan 2026)",
     display_name="Pharmaceutical Net Profit Margin",
     unit="percent",
+    confidence_interval=(0.15, 0.22),  # year-to-year variation in Damodaran's annual tables
     keywords=["pharma", "pharmaceutical", "biotech", "biotechnology", "profit", "margin", "drug"],
     latex_symbol=r"Margin_{pharma}",
 )
 
 PHARMA_VS_DEFENSE_NET_MARGIN_RATIO = Parameter(
-    0.1854 / 0.0499,
-    manual_ref="index-manual.qmd",
+    float(PHARMA_NET_PROFIT_MARGIN) / float(DEFENSE_NET_PROFIT_MARGIN),
+    manual_ref="knowledge/appendix/love-letter.qmd",
     source_ref="",
     source_type="calculated",
     description="Ratio of pharmaceutical to defense net profit margins",
