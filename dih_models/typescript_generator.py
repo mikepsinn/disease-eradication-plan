@@ -18,6 +18,7 @@ Usage:
     generate_typescript_parameters(parameters, output_path, references_path=Path("references.bib"))
 """
 
+from functools import cache
 import logging
 from pathlib import Path
 from typing import Any, Dict, Optional
@@ -28,6 +29,7 @@ from dih_models.reference_parser import parse_references_bib
 from dih_models.latex_generation import generate_expanded_latex, collapse_latex_blocks
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
 from dih_models.manual_ref_validation import get_parameter_manual_ref
+from dih_models.reactive_formula import compute_to_js
 
 # Pattern for {{< var variable_name >}} in QMD files
 _VAR_PATTERN = re.compile(r'\{\{<\s*var\s+([a-zA-Z0-9_]+)\s*>\}\}')
@@ -38,6 +40,17 @@ _VAR_SUFFIXES = ('_latex', '_cite', '_nounit')
 BASE_URL = 'https://manual.WarOnDisease.org'
 
 logger = logging.getLogger("dih.typescript")
+
+
+@cache
+def _integer_coerced_parameters(params_file: str) -> frozenset[str]:
+    source = Path(params_file).read_text(encoding="utf-8")
+    return frozenset(
+        re.findall(
+            r"(?m)^([A-Z_][A-Z0-9_]*)\s*=\s*Parameter\(\s*int\s*\(",
+            source,
+        )
+    )
 
 
 def _escape_typescript_string(s: str) -> str:
@@ -593,6 +606,15 @@ def generate_typescript_parameters(
         content.append("  peerReviewed?: boolean;")
         content.append("  /** Whether this is a conservative estimate */")
         content.append("  conservative?: boolean;")
+        content.append("  /** Declared input parameter keys, in calculation order */")
+        content.append("  inputs?: string[];")
+        content.append("  /** Inert JavaScript expression for deterministic recalculation */")
+        content.append("  computeExpr?: string;")
+        content.append("  /** Uncertainty distribution used by the manual model */")
+        content.append("  distribution?: string;")
+        content.append("  validationMin?: number;")
+        content.append("  validationMax?: number;")
+        content.append("  sourceLastUpdated?: string;")
         content.append("  /** Parameter key name (e.g., GLOBAL_DISEASE_DEATHS_ANNUAL) */")
         content.append("  parameterName?: string;")
         content.append("  /** URL to full calculation methodology on the calculations page */")
@@ -1389,6 +1411,48 @@ def _generate_parameter_constant(
         conservative = getattr(value_obj, "conservative", None)
         if conservative:
             lines.append(f"  conservative: {_format_typescript_value(conservative)},")
+
+        # Calculation and model metadata used by downstream parameter catalogs.
+        inputs = list(getattr(value_obj, "inputs", None) or [])
+        if inputs:
+            formatted_inputs = ", ".join(
+                _format_typescript_value(item) for item in inputs
+            )
+            lines.append(f"  inputs: [{formatted_inputs}],")
+            compute_expr, _, translated = compute_to_js(value_obj)
+            if translated:
+                if params_file and param_name in _integer_coerced_parameters(
+                    str(params_file)
+                ):
+                    compute_expr = f"Math.trunc({compute_expr})"
+                lines.append(f"  computeExpr: {_format_typescript_value(compute_expr)},")
+
+        distribution = getattr(value_obj, "distribution", None)
+        if distribution:
+            distribution_value = (
+                distribution.value
+                if hasattr(distribution, "value")
+                else str(distribution)
+            )
+            lines.append(
+                f"  distribution: {_format_typescript_value(distribution_value)},"
+            )
+
+        for attribute, field_name in (
+            ("validation_min", "validationMin"),
+            ("validation_max", "validationMax"),
+        ):
+            metadata_value = getattr(value_obj, attribute, None)
+            if metadata_value is not None:
+                lines.append(
+                    f"  {field_name}: {_format_typescript_value(metadata_value)},"
+                )
+
+        source_last_updated = getattr(value_obj, "last_updated", None)
+        if source_last_updated:
+            lines.append(
+                f"  sourceLastUpdated: {_format_typescript_value(source_last_updated)},"
+            )
 
     # Primary manual page where this parameter is discussed
     if chapter_mapping and param_name in chapter_mapping:
