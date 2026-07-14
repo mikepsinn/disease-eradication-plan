@@ -82,9 +82,11 @@ Two visual registers matching the two voice registers:
 
 **Transition** (visual shift: background lightens slightly, a cheerful retro-futuristic header appears, the tone pivots completely):
 
-> Is your civilization spending more on explosions than on figuring out why its own citizens stop working? Are your elected representatives being purchased by the industries they regulate? Has your species developed nuclear weapons, antibiotics, and the internet, and then pointed two of those three at each other?
+> Are your governments wasting trillions of dollars a year on excess mass murder capacity while you and everyone you love are slowly being tortured and murdered by horrible diseases?
 >
 > You may be eligible for optimization.
+>
+> Earth Optimization Services offers a variety of products and services for repairing your governments and maximizing the general welfare (i.e., the health and wealth) of your civilization.
 >
 > Universe Optimization Services has been upgrading civilizations since before your sun ignited. Over 300 planets optimized. 100% satisfaction rate among clients who got started. (Clients who did not get started are not available for comment, as they are not available for anything. Some are available for mining rights.)
 >
@@ -525,13 +527,13 @@ function distributeUBI() external {
 
 ---
 
-## SECTION 5: FOUR FUTURES
+## SECTION 5: PLEASE SELECT AN EARTH
 
-**Layout:** Full viewport. Centered animated line chart draws four trajectories from 2025 forward to 2045. Above the chart: a single input field for personalization. Below: copy explaining the lines.
+**Layout:** Full viewport. Centered animated line chart draws four trajectories from 2025 forward to 2045. Above the chart: a single input field for personalization. Below: copy explaining the lines. The framing is a chooser, not a forecast: you are selecting which Earth happens. Doing nothing selects the red line.
 
 **Personalization input** (above chart, centered, clean):
 
-A single field: "Enter your net worth or annual income" with a toggle (net worth / annual income). Default: median global income (`global_median_after_tax_income_2025`). The chart Y-axis dynamically rescales to show YOUR number multiplied by each trajectory. Hover tooltips show "Your projected [net worth / income] under this scenario: $X" at each year. The personalization makes abstract GDP concrete: the visitor sees their own money diverging across four futures.
+A single field: "Enter your net worth or annual income" with a toggle (net worth / annual income). Default: median global income (`global_median_after_tax_income_2025`). The chart Y-axis dynamically rescales to show YOUR number multiplied by each trajectory. Hover tooltips show "Your projected [net worth / income] under this scenario: $X" at each year. The personalization makes abstract GDP concrete: the visitor sees their own money diverging across four Earths.
 
 **Chart data:** Four lines:
 
@@ -704,7 +706,7 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 | Remaining product cards | 3 (Remaining) | Cost data | Expand on click |
 | Cost comparison bar | 3 (bottom) | Total current vs EOS cost | Horizontal bar |
 | System diagram | 4 (How Machine Works) | Full mechanism schematic | Animated flow, nodes light up in sequence |
-| Personalization input | 5 (Four Futures) | User-entered net worth or income | Rescales chart Y-axis |
+| Personalization input | 5 (Select an Earth) | User-entered net worth or income | Rescales chart Y-axis |
 | GDP trajectory chart | 5 | GDP trajectory parameters (4 scenarios) | Animated draw, hover tooltips, shaded hedge region |
 | Day timeline | 6 (Optimized Life) | Static copy | Scroll-driven reveal, each entry animates in |
 | Corporate transformation cards | 6 | Static | Subtle before/after animation |
