@@ -164,7 +164,7 @@ The rest of this email is long. It contains the complete case: historical preced
 ### 7) The engine: pragmatic clinical trials (PCTs)
 
 - **Core idea:**
-  - [Pragmatic clinical trials](../appendix/pragmatic-vs-explanatory-trials.qmd) are designed to test interventions in real-world conditions, at scale, with far lower cost and higher throughput than traditional RCTs.
+  - [Pragmatic clinical trials](../appendix/recovery-trial.qmd) are designed to test interventions in real-world conditions, at scale, with far lower cost and higher throughput than traditional RCTs.
 - **Efficiency:**
   - PCTs can be ~{{< var recovery_trial_cost_reduction_factor >}} more efficient than standard clinical trials.
   - With the same budget, they can support roughly {{< var dfda_trial_capacity_multiplier >}} more trials.
