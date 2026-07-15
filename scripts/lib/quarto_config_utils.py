@@ -442,6 +442,49 @@ def get_qmd_files_from_config(config: Dict[str, Any]) -> List[str]:
     return files
 
 
+def get_qmd_files_for_config(
+    config_path: Path,
+    include_index_source: bool = True,
+) -> Set[str]:
+    """Return normalized QMD paths rendered by one Quarto config."""
+    config = _load_config(Path(config_path))
+    if config is None:
+        return set()
+
+    qmd_files = get_qmd_files_from_config(config)
+    if include_index_source:
+        index_source = config.get("dih-render", {}).get("index-source")
+        if isinstance(index_source, str) and index_source.endswith(".qmd"):
+            qmd_files.append(index_source)
+
+    return {path.replace("\\", "/") for path in qmd_files}
+
+
+def get_cross_site_paper_qmd_files(
+    project_root: Optional[Path] = None,
+) -> Set[str]:
+    """Return standalone paper sources rewritten to HTTPS by render-quarto.py."""
+    if project_root is None:
+        project_root = _find_project_root()
+
+    paper_sources: Set[str] = set()
+    for config_path in get_all_config_paths(project_root):
+        key = _extract_config_key(config_path)
+        if key in NON_PAPER_CONFIGS or not key or key == "quarto":
+            continue
+
+        config = _load_config(config_path)
+        if config is None:
+            continue
+
+        index_source = config.get("dih-render", {}).get("index-source")
+        site_url = config.get("website", {}).get("site-url") or config.get("book", {}).get("site-url")
+        if isinstance(index_source, str) and index_source.endswith(".qmd") and site_url:
+            paper_sources.add(index_source.replace("\\", "/"))
+
+    return paper_sources
+
+
 def get_all_book_qmd_files(project_root: Optional[Path] = None) -> Set[str]:
     """
     Get all QMD files that are part of any Quarto book/website config.

@@ -34,6 +34,7 @@ import re
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
+from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
 # Set UTF-8 encoding for stdout and stderr on Windows
@@ -49,7 +50,11 @@ except ImportError:
 
 # Import centralized file utilities
 from lib.quarto_file_utils import find_files_by_extension
-from lib.quarto_config_utils import get_all_book_qmd_files
+from lib.quarto_config_utils import (
+    get_all_book_qmd_files,
+    get_cross_site_paper_qmd_files,
+    get_qmd_files_for_config,
+)
 
 # Use C-accelerated YAML loader when available (21x faster on _variables.yml)
 try:
@@ -409,7 +414,14 @@ def check_filler_phrases(content: str, filepath: str, lines: List[str]):
                     )
 
 
-def check_cross_reference_links(content: str, filepath: str, lines: List[str]):
+def check_cross_reference_links(
+    content: str,
+    filepath: str,
+    lines: List[str],
+    manual_source_qmd_files: Optional[Set[str]] = None,
+    manual_navigation_qmd_files: Optional[Set[str]] = None,
+    cross_site_paper_qmd_files: Optional[Set[str]] = None,
+):
     """
     Check for broken cross-reference links to other .qmd files
     Matches patterns like: [text](path/to/file.qmd)
@@ -448,6 +460,53 @@ def check_cross_reference_links(content: str, filepath: str, lines: List[str]):
                         context=line.strip()[:80],
                     )
                 )
+                continue
+
+            if manual_source_qmd_files and manual_navigation_qmd_files:
+                source_path = os.path.normpath(filepath).replace("\\", "/")
+                target_path = os.path.normpath(resolved_path).replace("\\", "/")
+                allowed_targets = manual_navigation_qmd_files | (cross_site_paper_qmd_files or set())
+                if source_path in manual_source_qmd_files and target_path not in allowed_targets:
+                    errors.append(
+                        ValidationError(
+                            file=filepath,
+                            line=line_index + 1,
+                            message=(
+                                f"Cross-reference target is not rendered by _quarto-manual.yml: {link_path} "
+                                "(Quarto will leave a .qmd link in rendered HTML)"
+                            ),
+                            context=line.strip()[:80],
+                        )
+                    )
+
+
+def get_qmd_include_closure(source_files: Set[str]) -> Set[str]:
+    """Return manual sources plus QMD partials included by those sources."""
+    closure = {os.path.normpath(path).replace("\\", "/") for path in source_files}
+    pending = list(closure)
+
+    while pending:
+        source_path = pending.pop()
+        if not os.path.isfile(source_path):
+            continue
+
+        with open(source_path, encoding="utf-8") as source_file:
+            content = source_file.read()
+
+        source_dir = os.path.dirname(source_path)
+        for match in _RE_INCLUDE_DIRECTIVE.finditer(content):
+            include_path = match.group(1)
+            resolved_path = resolve_link_path(include_path, source_dir)
+            normalized_path = os.path.normpath(resolved_path).replace("\\", "/")
+            if (
+                normalized_path.endswith(".qmd")
+                and os.path.isfile(normalized_path)
+                and normalized_path not in closure
+            ):
+                closure.add(normalized_path)
+                pending.append(normalized_path)
+
+    return closure
 
 
 def load_parameter_names() -> Set[str]:
@@ -1726,7 +1785,16 @@ def validate_quarto_config():
             check_file_refs(config["book"]["appendices"], "book.appendices")
 
 
-def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set[str], anchor_map: Dict[str, Set[str]], defined_citations: Set[str]):
+def validate_file(
+    filepath: str,
+    defined_vars: Set[str],
+    defined_parameters: Set[str],
+    anchor_map: Dict[str, Set[str]],
+    defined_citations: Set[str],
+    manual_source_qmd_files: Set[str],
+    manual_navigation_qmd_files: Set[str],
+    cross_site_paper_qmd_files: Set[str],
+):
     """Validate a single file"""
     if not os.path.exists(filepath):
         print(f"File not found: {filepath}", file=sys.stderr)
@@ -1740,7 +1808,14 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
 
     # For .md files, only check broken links (skip citation validation - .md files often contain examples)
     if filepath.lower().endswith(".md"):
-        check_cross_reference_links(content, filepath, lines)
+        check_cross_reference_links(
+            content,
+            filepath,
+            lines,
+            manual_source_qmd_files,
+            manual_navigation_qmd_files,
+            cross_site_paper_qmd_files,
+        )
         check_markdown_links(content, filepath, lines)
         check_anchor_ids(content, filepath, anchor_map, lines)
         return
@@ -1764,7 +1839,14 @@ def validate_file(filepath: str, defined_vars: Set[str], defined_parameters: Set
     check_math_delimiters(content, filepath, lines)
     check_image_paths(content, filepath, lines)
     check_figure_caption_latex_safety(content, filepath, lines)
-    check_cross_reference_links(content, filepath, lines)
+    check_cross_reference_links(
+        content,
+        filepath,
+        lines,
+        manual_source_qmd_files,
+        manual_navigation_qmd_files,
+        cross_site_paper_qmd_files,
+    )
     check_figure_file_imports(content, filepath)
     check_python_imports(content, filepath, lines)
     check_parameter_imports(content, filepath, defined_parameters, lines)
@@ -2056,9 +2138,22 @@ def main():
     all_files = qmd_files
     logger.info(f"Validating {len(qmd_files)} .qmd files...")
 
+    manual_navigation_qmd_files = get_qmd_files_for_config(Path("_quarto-manual.yml"))
+    manual_source_qmd_files = get_qmd_include_closure(manual_navigation_qmd_files)
+    cross_site_paper_qmd_files = get_cross_site_paper_qmd_files()
+
     # Validate each file
     for file in all_files:
-        validate_file(file, defined_vars, defined_parameters, anchor_map, defined_citations)
+        validate_file(
+            file,
+            defined_vars,
+            defined_parameters,
+            anchor_map,
+            defined_citations,
+            manual_source_qmd_files,
+            manual_navigation_qmd_files,
+            cross_site_paper_qmd_files,
+        )
 
     # Write JSON output if requested
     if args.output_json and len(errors) > 0:
