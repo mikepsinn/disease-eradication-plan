@@ -75,11 +75,11 @@ On Wishonia, making everyone richer and less dead is just called "a transaction.
 
 A military contractor's share price reflects its current business model: sell weapons, lobby for more weapons spending, repeat. If the campaign succeeds, two things happen that make those shares worth more.
 
-First, the economy grows. Under the treaty trajectory, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current path. Even if the military budget stays at the same fraction of GDP, the absolute budget grows in proportion. The contractor captures more revenue without gaining a single point of market share. Not because it did anything clever. Because the civilization it operates in stopped slowly poisoning itself.
+First, the economy grows. When a civilization stops spending a trillion dollars a year preparing to kill itself, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current path. Even if the military budget stays at the same fraction of GDP, the absolute budget grows in proportion. The contractor captures more revenue without gaining a single point of market share. Not because it did anything clever. Because the civilization it operates in stopped slowly poisoning itself.
 
-Second, the pivot opens. Military engineering talent applied to medical devices, AI-augmented drug discovery, [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure, sensors, imaging, and biotech compounds at higher rates than cost-plus military work. The same workforce produces more value per engineer-year curing diseases than building the {{< var nuclear_winter_overkill_factor_nounit >}}th apocalypse. This should not have required a spreadsheet to figure out.
+Second, the pivot opens. Your bomb engineers can also build medical devices, drug discovery platforms, and [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure. They produce more value per engineer-year doing it than building the {{< var nuclear_winter_overkill_factor_nounit >}}th apocalypse. This should not have required a spreadsheet to figure out.
 
-If the campaign succeeds, the shares go up through both channels. If the campaign fails, you still own a military contractor, which is approximately what you owned before. The downside is whatever return the share purchase displaced (typically index funds at ~7-10% annualized). The upside is owning a monopoly military contractor that also does health tech in a substantially bigger economy.
+If the campaign succeeds, the shares go up through both channels. If it fails, you still own a military contractor, which is approximately what you owned before. The worst case is a slightly lower return than your index fund. The best case is you own the company that cured the thing that was going to kill you.
 
 ::: {.diagram}
 ```
@@ -161,7 +161,7 @@ Every link in this chain is a human institution doing what humans told it to do.
 | **Allied primes** | | **~$131B** | **~$66B** |
 | **Total Western primes** | | **~$801B** | **~$401B** |
 
-Numbers are approximate. Verify against current 10-K filings before buying anything.
+These numbers are approximate. Check them against current filings before buying anything, because I got them by observing your planet from several light-years away.
 
 ### Per-person cost (with {{< var defense_takeover_acquisition_premium >}} acquisition premium)
 
@@ -191,7 +191,7 @@ Three institutional investors (BlackRock, Vanguard, State Street) hold 60-75% of
 
 ## What You Do Once You Own the Companies
 
-You replace the boards. The new boards plug the [Optimitron](../solution/optimocracy.qmd) into each company's lobbying budget. The Optimitron is an [optimal policy generator](https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html) [@opg-paper-2025]: it takes every measurable input (disease burden, economic output, military readiness, infrastructure, climate, education) and calculates the federal budget that maximizes median health-adjusted life expectancy and median after-tax inflation-adjusted income. The [optimal budget generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] produces the specific line items. The board hands those line items to the lobbyists and says: sell this.
+You replace the boards. The new boards plug the [Optimitron](../solution/optimocracy.qmd) into each company's lobbying budget. The Optimitron is an [optimal policy generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025] that calculates the federal budget maximizing median healthy lifespan and median income. The [optimal budget generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] produces the specific line items. The board hands those line items to the lobbyists and says: sell this.
 
 On Wishonia, we use an Optimitron to make every budget decision. It does not have feelings, which is why it is better at governing than your senators. Your senators have feelings, mostly about reelection, which is why they spend your money on missiles instead of medicine.
 
