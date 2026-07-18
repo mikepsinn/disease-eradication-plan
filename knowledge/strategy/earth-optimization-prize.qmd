@@ -33,7 +33,7 @@ do: "Vote on the 1% Treaty and recruit two verified people onto the Scoreboard (
 
 Every day, {{< var global_disease_deaths_daily_nounit >}} people die from diseases humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on wars, genocides, and blowing people up than researching. Your governments burn {{< var political_dysfunction_global_opportunity_cost_total >}} a year on [political dysfunction](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025]. This proposal: do 1% less of that. Redirect 1% of military spending to clinical trials. Everything below is the mechanism for making it happen and the math on what changes if it does.
 
-I designed a game where humans put papers in a pile, recruit other humans to vote on not dying, and then wait. If the not-dying works, the recruiters split the pile. If it does not work, the people who put papers in split whatever the pile became. The modeled case is {{< var prize_pool_horizon_multiple >}} what they deposited, which is still more than their retirement account would have managed. It is a model, not a promise. The upside is {{< var treaty_personal_upside_blend >}} per person. The downside is {{< var sharing_opportunity_cost >}} of time plus the deposit risk if you choose to deposit.
+I designed a game where humans put papers in a pile, recruit other humans to vote on not dying, and then wait. If the not-dying works, the recruiters split the pile. If it does not work, the people who put papers in split whatever the pile became. The modeled case is {{< var prize_pool_horizon_multiple >}} what they deposited, which is still more than their retirement account would have managed. It is a model, not a promise. The upside is {{< var treaty_personal_upside_income_plus_health >}} per person. The downside is {{< var sharing_opportunity_cost >}} of time plus the deposit risk if you choose to deposit.
 
 I have been explaining this to humans for a while now. They keep asking what the catch is. There is no catch. That is the catch. Your species is so accustomed to getting swindled that a straightforward offer makes you suspicious.
 
@@ -42,7 +42,7 @@ This chapter explains the game, and then explains why your species needs it.
 {{< include ../includes/cognitive-bias-warning.qmd >}}
 
 1. **The Game you're building.** An open-source coordination game: raise global median income and healthy life years by {{< var destructive_economy_50pct_year >}}. (Your species has been trying for 10,000 years without a scoreboard, so this is an upgrade.)
-2. **How you keep score.** By {{< var destructive_economy_50pct_year >}}: did people live {{< var treaty_hale_gain_year_15 >}} longer? Did they earn {{< var treaty_trajectory_lifetime_income_multiplier >}} as much? (See [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].) That is {{< var treaty_personal_upside_blend >}} per person.
+2. **How you keep score.** By {{< var destructive_economy_50pct_year >}}: did people live {{< var treaty_hale_gain_year_15 >}} longer? Did they earn {{< var treaty_trajectory_lifetime_income_multiplier >}} as much? (See [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].) That is {{< var treaty_personal_upside_income_plus_health >}} per person.
 3. **How Prize works.** You fund one pool until {{< var destructive_economy_50pct_year >}}. Targets missed: you divide the realized pool pro rata. (Either way, you beat your retirement account. Your retirement account is not trying very hard.)
 4. **How Earth Optimization Points work.** You recruit one verified referendum participant, you earn one point. Targets met: the pool routes to Earth Optimization Points holders.
 5. **How you start.** A v1 pool launches once any qualified host completes the three scaffolding pieces in [V1 Bootstrap](../economics/earth-optimization-prize-treasury.qmd#v1-bootstrap). Other hosts fork additional pools using the [protocol spec](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-protocol-paper-2025]. The [Planetary Constitutional Convention](planetary-constitutional-convention.qmd) and [Initiating Node memo](initiating-node-memo.qmd) describe the larger-institution path.
@@ -76,7 +76,7 @@ The pool makes money regardless of whether the targets are met. The only questio
 **Worked example: $100 deposit + 2 Earth Optimization Points.**
 
 - *Targets missed:* You get back `$100 × {{< var prize_pool_horizon_multiple >}}` = $1,110 from the pool. Your Earth Optimization Points pay nothing. You still beat a conventional retirement account (`$100 × {{< var conventional_retirement_horizon_multiple >}}` = $257).
-- *Targets met:* Your $100 deposit goes to Earth Optimization Points holders. Your 2 Earth Optimization Points pay `2 × {{< var earth_optimization_point_value >}} = {{< var earth_optimization_two_points_payout >}}`. Plus you live in a world where people are {{< var treaty_personal_upside_blend >}} to {{< var wishonia_personal_upside_blend >}} richer and diseases get cured.
+- *Targets met:* Your $100 deposit goes to Earth Optimization Points holders. Your 2 Earth Optimization Points pay `2 × {{< var earth_optimization_point_value >}} = {{< var earth_optimization_two_points_payout >}}`. Plus you live in a world where people are {{< var treaty_personal_upside_income_plus_health >}} to {{< var wishonia_personal_upside_income_plus_health >}} richer and diseases get cured.
 
 Two Earth Optimization Points turn a small deposit into a large payout.
 
@@ -250,7 +250,7 @@ Those are not projections about charity. They are projections about your money, 
 |---|---|---|---|---|
 | `0.01 percentage points` | `+$1.49K` | `+$2.48K` | `+$5.21K` | `+$7.56K` |
 | `0.1 percentage points` | `+$14.9K` | `+$24.8K` | `+$52.1K` | `+$75.6K` |
-| `1 percentage point` | {{< var contribution_ev_per_pct_point_treaty >}} | {{< var contribution_ev_per_pct_point_treaty_blend >}} | {{< var contribution_ev_per_pct_point_wishonia >}} | {{< var contribution_ev_per_pct_point_wishonia_blend >}} |
+| `1 percentage point` | {{< var contribution_ev_per_pct_point_treaty >}} | {{< var contribution_ev_per_pct_point_treaty_income_plus_health >}} | {{< var contribution_ev_per_pct_point_wishonia >}} | {{< var contribution_ev_per_pct_point_wishonia_income_plus_health >}} |
 
 | Channel | What it is | Current modeled range |
 |---|---|---|
@@ -287,7 +287,7 @@ But the deeper answer is that free-riding makes sense when participation is expe
 
 I am told humans need time to "evaluate" arithmetic. The arithmetic is patient. The diseases are not.
 
-The selfish reason to play the Game is not the Earth Optimization Points payout or the pool return. It is that you personally get {{< var treaty_personal_upside_blend >}} richer in a world where diseases get cured.
+The selfish reason to play the Game is not the Earth Optimization Points payout or the pool return. It is that you personally get {{< var treaty_personal_upside_income_plus_health >}} richer in a world where diseases get cured.
 
 ## How the Game Spreads
 
@@ -364,7 +364,7 @@ Your species turns out at 50-65% for elections despite getting paid nothing. Thi
 
 Your politicians care about reelection. Your investors care about returns. Your citizens care about not dying. This is not a design flaw. It is a design constraint. Here is how you work with it instead of against it:
 
-- **Depositors** put money in because they get it back (at {{< var prize_pool_horizon_multiple >}}) if this fails. If it succeeds, diseases get cured and they are {{< var treaty_personal_upside_blend >}} richer.
+- **Depositors** put money in because they get it back (at {{< var prize_pool_horizon_multiple >}}) if this fails. If it succeeds, diseases get cured and they are {{< var treaty_personal_upside_income_plus_health >}} richer.
 - **Recruiters** recruit because every person they bring in earns them a Earth Optimization Point.
 - **Entrepreneurs** compete for a giant implementation contract.
 - **Politicians** get funded for voting yes and watch their opponents get funded if they vote no (details below).
@@ -435,7 +435,7 @@ Your species moves $5 trillion across borders every day, verifies 8 billion iden
 
 ### 5. "The return projections are too good to be true"
 
-The {{< var prize_pool_annual_return >}} central value is not a promise. It is transparent arithmetic from four independently sourced components: (1) {{< var venture_gross_return >}} venture capital gross return (Cambridge Associates 25-year pooled IRR), (2) {{< var scale_compression_factor >}} scale compression drag (explicitly modeled for 15x market expansion), (3) +{{< var wishocratic_crowd_alpha >}} sector-allocation alpha (S&P SPIVA shows 88% of active large-cap funds underperform over 15 years [@spiva2023]; Preqin manager-dispersion data puts top-quartile vs bottom-quartile VC spread at 5-15%; avoiding the bottom half of that spread at the allocation level yields the 0.5% alpha), and (4) +{{< var home_bias_alpha >}} from eliminating home-country bias (70+ countries each overweight domestic assets, missing global diversification; IMF/Vanguard estimate 0.3-1.5% annual drag). This is the central case. The [Earth Optimization Prize Treasury](../economics/earth-optimization-prize-treasury.qmd) chapter presents mechanism-labeled scenarios, wrapper options, and honest risk disclosure. The treasury tolerates drawdown risk. It is not a money-market account.
+The {{< var prize_pool_annual_return >}} central value is not a promise. It is transparent arithmetic from four independently sourced components: (1) {{< var venture_gross_return >}} venture capital gross return (Cambridge Associates 25-year pooled IRR), (2) {{< var scale_compression_factor >}} scale compression drag (explicitly modeled for 15x market expansion), (3) +{{< var wishocratic_crowd_alpha >}} sector-allocation edge (S&P SPIVA shows 88% of active large-cap funds underperform over 15 years [@spiva2023]; Preqin manager-dispersion data puts top-quartile vs bottom-quartile VC spread at 5-15%; avoiding the bottom half of that spread at the allocation level yields the extra 0.5%), and (4) +{{< var home_bias_alpha >}} from eliminating home-country bias (70+ countries each overweight domestic assets, missing global diversification; IMF/Vanguard estimate 0.3-1.5% annual drag). This is the central case. The [Earth Optimization Prize Treasury](../economics/earth-optimization-prize-treasury.qmd) chapter presents mechanism-labeled scenarios, wrapper options, and honest risk disclosure. The treasury tolerates drawdown risk. It is not a money-market account.
 
 ### 6. "272% returns is a scam"
 
@@ -443,7 +443,7 @@ To anyone in finance, "{{< var victory_bond_annual_return_pct >}} annual returns
 
 ### 7. "The Earth Optimization Points payout is too large/too small"
 
-The modeled Earth Optimization Point value is {{< var earth_optimization_point_value >}} at {{< var prize_pool_participation_rate >}} of global investable assets ({{< var global_investable_assets >}}). That confidence interval ({{< var earth_optimization_point_value >}}) reflects the real uncertainty: how much capital flows into the pool. At 0.1% participation, a Earth Optimization Point pays hundreds of dollars. At 10%, tens of thousands. The model uses 1% as the central estimate because it parallels the treaty ask (1% of military spending) and because asking people to redirect 1% of their invested savings into a higher-returning vehicle is not an unusual ask.
+The modeled Earth Optimization Point value is {{< var earth_optimization_point_value >}} at {{< var prize_pool_participation_rate >}} of the money invested worldwide ({{< var global_investable_assets >}}). That confidence interval ({{< var earth_optimization_point_value >}}) reflects the real uncertainty: how much capital flows into the pool. At 0.1% participation, a Earth Optimization Point pays hundreds of dollars. At 10%, tens of thousands. The model uses 1% as the central estimate because it parallels the treaty ask (1% of military spending) and because asking people to redirect 1% of their invested savings into a higher-returning vehicle is not an unusual ask.
 
 The pool does not need to be large for the Game to be worth playing. It needs to be large enough that telling two people about it is worth 30 seconds. That is not a high bar. Your species spends more time than that choosing a sandwich.
 

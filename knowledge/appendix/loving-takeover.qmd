@@ -1,8 +1,8 @@
 ---
 title: 'The Loving Takeover'
-description: 'The companies that build the weapons are publicly traded. For roughly $90 per human, you buy all of them, replace the boards, and hand the lobbyists an optimal budget. Nobody loses.'
+description: 'The companies that build the weapons are publicly traded. For roughly $110 per human, you buy all of them, replace the boards, and hand the lobbyists an optimal budget calculated to maximize median healthy lifespan and median income. The takeover is loving because existing shareholders, employees, and directors live longer and get richer. Nobody loses.'
 abstract: |
-  The companies that lobby your government to spend money on missiles instead of medicine are publicly traded. Their shares are for sale to anyone. For roughly $90 per human, you buy all of them. Then the Optimitron calculates the budget that maximizes median healthy lifespan and median after-tax income, the new board hands that budget to the $127 million/year lobbying operation, and the lobbyists go sell Congress on the math. Expected value per $90 contributed: 6,000x to 22,000x. Nobody loses. Existing shareholders get a better strategy. Employees keep their jobs. The board members live longer because the diseases that were going to kill them get funded instead of ignored.
+  The companies that lobby your government into spending 604 dollars on missiles for every one dollar on finding out which medicines work are publicly traded. Their shares are for sale to anyone. For roughly $110 per human, you buy all of them. Then the Optimitron calculates the budget that maximizes median healthy lifespan and median after-tax income, the new board hands that budget to the $198 million/year lobbying operation, and the lobbyists go sell Congress on the math. Expected value per $110 contributed: 4,800x to 27,000x. Nobody loses. Existing shareholders get a better strategy. Employees keep their jobs. The board members live longer because the diseases that were going to kill them get funded instead of ignored.
 aliases:
   - /loving-takeover.html
   - /funniest-loving-takeover.html
@@ -53,11 +53,13 @@ I went shopping on your stock exchanges.
 
 The companies that lobby your government to spend money on missiles instead of medicine? They sell tiny pieces of themselves to anyone. Each piece comes with a vote. Collect enough votes and you pick who sits on the board of directors. The board tells the {{< var defense_lobbying_annual >}}/year lobbying operation what to say. The lobbyists currently say "more missiles." This is adjustable.
 
+The current allocation, for context: diseases kill {{< var disease_vs_war_deaths_ratio_nounit >}} of you for every one that war kills. Your governments respond by spending {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the capacity to kill people for every one dollar on finding out which medicines work. The species owns {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses' worth of warheads and one civilization to use them on. Nobody calculated any of this. It is just where the lobbying pointed.
+
 **COST TO BUY THE WHOLE THING:** ~{{< var defense_takeover_cost_total >}}, or **~{{< var defense_takeover_cost_per_human >}} per human.** [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]
 
-**WHAT YOU GET:** the lobbying apparatus that has driven your military budget expansion for eighty years, repointed at an [optimal budget](../solution/optimocracy.qmd) calculated to maximize median healthy lifespan and median income.
+**WHAT YOU GET:** the lobbying apparatus that has driven your military budget expansion for eighty years, repointed at an [optimal budget](optimal-budget-generator-spec.qmd) calculated to maximize median healthy lifespan and median income. The spare apocalypses are just the first line item it deletes.
 
-**EXPECTED VALUE PER HUMAN:** ~$530,000-$2,000,000 (6,000x-22,000x the contribution).
+**EXPECTED VALUE PER HUMAN:** ~{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in lifetime income, ~{{< var treaty_personal_upside_income_plus_health >}} counting the healthy years ({{< var defense_takeover_roi_income_only >}}-{{< var defense_takeover_roi_income_plus_health >}} the contribution; [full model](../economics/1-pct-treaty-impact.qmd)).
 
 The cheap version is the [lawsuit](lawsuit.qmd): buy one share, send the board a [love letter](love-letter.qmd), and the law requires them to read it. This is the expensive version: buy enough shares to replace the board entirely, and give the best lobbyists money can buy new talking points. The talking points are better because the math is better. A budget optimized for not dying outperforms the current one on every metric your Congress already claims to care about.
 
@@ -73,13 +75,15 @@ On Wishonia, making everyone richer and less dead is just called "a transaction.
 
 ## Why Buying the Shares Is the Selfish Move
 
-A military contractor's share price reflects its current business model: sell weapons, lobby for more weapons spending, repeat. If the campaign succeeds, two things happen that make those shares worth more.
+A military contractor's share price reflects its current business model: sell weapons, lobby for more weapons spending, repeat. If the campaign succeeds, three things happen that make those shares worth more.
 
-First, the economy grows. When a civilization stops spending a trillion dollars a year preparing to kill itself, GDP at year 15 is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current path. Even if the military budget stays at the same fraction of GDP, the absolute budget grows in proportion. The contractor captures more revenue without gaining a single point of market share. Not because it did anything clever. Because the civilization it operates in stopped slowly poisoning itself.
+First, the economy grows. When a civilization stops spending {{< var global_military_spending_annual_2024 >}} a year preparing to kill itself, [GDP at year 15](../economics/gdp-trajectories.qmd) is roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current path. Even if the military budget stays at the same fraction of GDP, the absolute budget grows in proportion. The contractor captures more revenue without gaining a single point of market share. Not because it did anything clever. Because the civilization it operates in stopped slowly poisoning itself.
 
 Second, the pivot opens. Your bomb engineers can also build medical devices, drug discovery platforms, and [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] infrastructure. They produce more value per engineer-year doing it than building the {{< var nuclear_winter_overkill_factor_nounit >}}th apocalypse. This should not have required a spreadsheet to figure out.
 
-If the campaign succeeds, the shares go up through both channels. If it fails, you still own a military contractor, which is approximately what you owned before. The worst case is a slightly lower return than your index fund. The best case is you own the company that cured the thing that was going to kill you.
+Third, governance is priced into every asset you own. Move a company from the United States to Somalia and its shareholders get poorer. Same products. Same employees. The only thing that changed is the quality of the government it operates under. Your species already prices this; it is why the shares are not listed in Mogadishu. The United States is merely less bad, and the [gap between the government you have and the one the data could generate](../economics/gdp-trajectories.qmd) is the largest unpriced upside on every share you own. The takeover is how you buy the upgrade.
+
+If the campaign succeeds, the shares go up through all three channels. If it fails, you still own a military contractor, which is approximately what you owned before. The worst case is a slightly lower return than your index fund. The best case is you own the company that cured the thing that was going to kill you.
 
 ::: {.diagram}
 ```
@@ -134,32 +138,32 @@ Stated as a chain:
 
 The diseases that will kill you and your family stay in the trial queue because the trials are not funded. The trials are not funded because the federal budget pays for missiles instead of cures. The federal budget pays for missiles because the military lobby tells Congress to. The lobby tells Congress to because the military contractors authorize and pay for it. The contractors authorize it because their boards vote to. The boards vote to because their shareholders elect them.
 
-The shareholders elect them because nobody has yet mentioned that they could elect a different board for the price of a coffee per human.
+The shareholders elect them because nobody has yet mentioned that they could elect a different board for {{< var defense_takeover_cost_per_human >}} a head.
 
-Every link in this chain is a human institution doing what humans told it to do. None of it is physics. None of it is inevitable. The last link is the cheapest one to change, and it changes all the others.
+Every link in this chain is a human institution doing what humans told it to do. None of it is physics. None of it is inevitable. [It has been changed before.](../proof/bomb-budget-cut.qmd) The last link is the cheapest one to change, and it changes all the others.
 
 ## The Math
 
-### Major Western military contractors (approximate market caps)
+### Major Western military contractors (approximate market caps, June 2026)
 
 | Contractor | Ticker | Approx market cap | 50%+1 control cost |
 |---|---|---:|---:|
-| RTX (Raytheon) | RTX | ~$160B | ~$80B |
-| Boeing | BA | ~$130B | ~$65B |
-| Lockheed Martin | LMT | ~$110B | ~$55B |
-| General Dynamics | GD | ~$80B | ~$40B |
-| Northrop Grumman | NOC | ~$75B | ~$38B |
-| L3Harris | LHX | ~$45B | ~$23B |
-| Leidos | LDOS | ~$20B | ~$10B |
-| Booz Allen Hamilton | BAH | ~$20B | ~$10B |
-| CACI International | CACI | ~$11B | ~$6B |
-| Huntington Ingalls | HII | ~$10B | ~$5B |
-| SAIC | SAIC | ~$8B | ~$4B |
-| **US primes subtotal** | | **~$670B** | **~$336B** |
+| RTX (Raytheon) | RTX | ~$248B | ~$124B |
+| Boeing | BA | ~$175B | ~$87B |
+| Lockheed Martin | LMT | ~$127B | ~$63B |
+| General Dynamics | GD | ~$97B | ~$49B |
+| Northrop Grumman | NOC | ~$79B | ~$39B |
+| L3Harris | LHX | ~$58B | ~$29B |
+| Leidos | LDOS | ~$15B | ~$8B |
+| Huntington Ingalls | HII | ~$12B | ~$6B |
+| CACI International | CACI | ~$12B | ~$6B |
+| Booz Allen Hamilton | BAH | ~$9B | ~$5B |
+| SAIC | SAIC | ~$5B | ~$2.5B |
+| **US primes subtotal** | | **~$836B** | **~$419B** |
 | BAE Systems (UK) | BA.L | ~$76B | ~$38B |
-| Thales (France) | HO.PA | ~$55B | ~$28B |
-| **Allied primes** | | **~$131B** | **~$66B** |
-| **Total Western primes** | | **~$801B** | **~$401B** |
+| Thales (France) | HO.PA | ~$57B | ~$28B |
+| **Allied primes** | | **~$132B** | **~$66B** |
+| **Total Western primes** | | **~$968B** | **~$485B** |
 
 These numbers are approximate. Check them against current filings before buying anything, because I got them by observing your planet from several light-years away.
 
@@ -168,13 +172,13 @@ These numbers are approximate. Check them against current filings before buying 
 | Cost distributed across | Per-person cost (realistic) |
 |---|---:|
 | Global humans ({{< var global_population_2024_nounit >}}) | **~{{< var defense_takeover_cost_per_human >}}** |
-| Global adults (~5.5 billion) | ~$130 |
-| Global middle class+ (~3.5 billion) | ~$200 |
-| US adults (260 million) | ~$2,700 |
-| US households (130 million) | ~$5,400 |
-| US households earning >$100k (~50 million) | ~$14,000 |
+| Global adults (~5.5 billion) | ~$160 |
+| Global middle class+ (~3.5 billion) | ~$250 |
+| US adults (260 million) | ~$3,400 |
+| US households (130 million) | ~$6,700 |
+| US households earning >$100k (~50 million) | ~$17,500 |
 
-The entire Western military lobbying apparatus, the most effective political-influence operation your planet has produced in eighty years, can be brought under common shareholder control for less than the price of a coffee per week per human for a single year. You spend more on ringtones.
+The entire Western military lobbying apparatus, the most effective political-influence operation your planet has produced in eighty years, can be brought under common shareholder control for less than the price of a coffee per week per human for a single year. Your governments spend three times that every year on the arsenal itself.
 
 ### How much you actually need
 
@@ -187,19 +191,23 @@ The entire Western military lobbying apparatus, the most effective political-inf
 | 1-5% across the primes | Agenda-setting positions at every annual meeting | The [activist tier](../economics/earth-optimization-fund.qmd) |
 | 50.1% | Nobody has to agree with you | {{< var defense_takeover_cost_total >}} |
 
-Three institutional investors (BlackRock, Vanguard, State Street) hold 60-75% of every big military contractor, and their job is to vote for whatever makes the shares worth more. The pitch to them is the pitch to everyone: the optimal budget makes the companies more valuable. Each tier is insurance against the cheaper tier failing. You climb only as far as the persuasion fails.
+Institutional investors hold 70-85% of every big military contractor, and the biggest bloc is three index-fund managers (Vanguard, BlackRock, State Street) with roughly 20-30% among them, per the companies' own proxy statements. Their job is to vote for whatever makes the shares worth more. The pitch to them is the pitch to everyone: the optimal budget makes the companies more valuable. Each tier is insurance against the cheaper tier failing. You climb only as far as the persuasion fails.
+
+The missile companies are just the first purchase. The [same trick works](../economics/earth-optimization-fund.qmd) on every industry that pays lobbyists to make its own shareholders sicker and poorer in exchange for a good quarter.
 
 ## What You Do Once You Own the Companies
 
-You replace the boards. The new boards plug the [Optimitron](../solution/optimocracy.qmd) into each company's lobbying budget. The Optimitron is an [optimal policy generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025] that calculates the federal budget maximizing median healthy lifespan and median income. The [optimal budget generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] produces the specific line items. The board hands those line items to the lobbyists and says: sell this.
+You replace the boards. The new boards plug the [Optimitron](../solution/optimocracy.qmd) into each company's lobbying budget. The Optimitron is an [optimal policy generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025] that calculates the federal budget maximizing median healthy lifespan and median income. The [optimal budget generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] produces the specific line items. The board hands those line items to the lobbyists and says: [sell this](../solution/aligning-incentives.qmd).
+
+Cutting the arsenal from {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses toward the number of civilizations available to end (one) is not the goal. It is the first output of a machine whose goal is a budget derived from [193 countries and centuries of data](optimal-policy-generator-spec.qmd) on what makes the median human healthier and richer, instead of from whoever bought the most senators.
 
 On Wishonia, we use an Optimitron to make every budget decision. It does not have feelings, which is why it is better at governing than your senators. Your senators have feelings, mostly about reelection, which is why they spend your money on missiles instead of medicine.
 
-Military contractors currently spend {{< var defense_lobbying_annual >}} per year lobbying Congress to expand military appropriations. This operation has driven US military spending from its 1939 baseline to current levels and prevented every serious proposal for reallocation. It is, by any measure, the most successful sustained influence campaign in human history. It just happens to be pointed at the wrong thing.
+Military contractors currently spend {{< var defense_lobbying_annual >}} per year lobbying Congress to expand military appropriations. This operation has driven US military spending from its post-war low to {{< var us_military_spending_2024_annual >}} a year and buried every serious reallocation proposal since the 1960s buildup. It is, by any measure, the most successful sustained influence campaign in human history. It just happens to be pointed at the wrong thing.
 
-After the takeover, the same {{< var defense_lobbying_annual >}} lobbies for the optimal budget instead. The lobbyists do not need new skills. They need new talking points, and the talking points are better because the math is better. A budget optimized for median healthy lifespan and median income outperforms the current one on GDP growth, job creation, national security, and deficit reduction. The lobbyists are selling an upgrade, not a sacrifice. They sit in the same chairs and call the same senators. The only thing that changed is that the sentence they say will not result in the lobbyist dying of a preventable disease in twenty years.
+After the takeover, the same {{< var defense_lobbying_annual >}} lobbies for the optimal budget instead. The lobbyists do not need new skills. They need [new talking points](../strategy/legislation-package.qmd), and the talking points are better because the math is better. A budget optimized for median healthy lifespan and median income outperforms the current one on GDP growth, job creation, national security, and deficit reduction. The lobbyists are selling an upgrade, not a sacrifice. They sit in the same chairs and call the same senators. The only thing that changed is that the sentence they say will not result in the lobbyist dying of a preventable disease in twenty years.
 
-US military and foreign policy follows military-industry lobbying with high fidelity. Hand the lobby better math, and the senators who depend on military PAC money follow within one election cycle.
+Organized business interests get the policy they lobby for; average citizens get approximately nothing [@gilens2014]. For military contractors, the exchange rate has been measured: $1,813 in contracts for every dollar spent lobbying [@lobbying-roi-calc]. Hand the lobby better math, and the senators who depend on military PAC money follow within one election cycle.
 
 ## Buying Politicians Versus Buying Their Owners
 
@@ -213,7 +221,7 @@ I find it delightful that your species has separate words for "lobbying" and "br
 
 ## Your Money, Your Choice
 
-The entire plan: buy the military contractors, replace the boards, let the [Optimitron](../solution/optimocracy.qmd) calculate the optimal budget, hand it to the lobbyists, and let every human alive set priorities through the [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025].
+The entire plan: buy the military contractors, replace the boards, let the [optimal policy generator](optimal-policy-generator-spec.qmd) and [optimal budget generator](optimal-budget-generator-spec.qmd) calculate the optimal budget, hand it to the lobbyists, and let every human alive set priorities through the [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025].
 
 The optimized {{< var defense_lobbying_annual >}}/year does not go to a committee, a czar, or a panel of experts who will thoughtfully allocate it while charging 40% overhead. It goes to a [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025]: every person gets a proportional say in how the funds are spent, under real budget constraints, with tradeoffs visible. Want cancer trials? Vote for cancer trials. Pandemic preparedness? Vote for that. Think the whole thing is stupid and the money should stay in missiles? Vote for missiles. The system does not care what you pick. It cares that you pick.
 
@@ -237,6 +245,6 @@ The optimized {{< var defense_lobbying_annual >}}/year does not go to a committe
 
 The plan has exactly one structural adversary, and it is on the last row.
 
-Instead of your government deciding what you need, you decide. Your government's track record on this question is a trillion dollars a year on missiles and zero dollars a year on the diseases that will probably kill you. Your track record on this question is that you would rather not die. The data favors your judgment.
+Instead of your government deciding what you need, you decide. Your government's track record on this question is {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on missiles for every one dollar on the trials that might cure what is actually going to kill you. Your track record on this question is that you would rather not die. The data favors your judgment.
 
-Buy a share. Send the board the [love letter](love-letter.qmd). Tell one person.
+Buy a share. Send the board a [love letter](love-letter.qmd) ([eight pre-filled versions, ready to mail](pre-filled-demand-letters.qmd)). Tell one person.

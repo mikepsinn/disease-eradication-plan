@@ -33,6 +33,7 @@
     "zod": "^3.25.76"
   },
   "scripts": {
+    "seo:snippet-audit": "tsx scripts/seo/google-snippet-audit.ts",
     "render:manual:paperback": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py manual-paperback",
     "images:fix-missing": "tsx scripts/images/fix-missing-images.ts --fix",
     "sync:r2": ".venv\\Scripts\\python.exe -u scripts/sync_r2.py",

@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Contribution EV per Percentage Point (Wishonia, Blended) (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Contribution EV per Percentage Point (Wishonia, Income + Health) (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 283563.1332316334
 p5 = 172760.92959121088
 p50 = 389419.2993991651
 p95 = 1011219.739637052
-display_name = "Contribution EV per Percentage Point (Wishonia, Blended)"
+display_name = "Contribution EV per Percentage Point (Wishonia, Income + Health)"
 units = "USD"
 
 # Create figure with two subplots
@@ -101,7 +101,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('mc-distribution-contribution_ev_per_pct_point_wishonia_blend.png')
+output_path = get_figure_output_path('mc-distribution-contribution_ev_per_pct_point_wishonia_income_plus_health.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Contribution EV per Percentage Point (Wishonia, Blended)**
+**Simulation Results Summary: Contribution EV per Percentage Point (Wishonia, Income + Health)**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $283,563 |
 | 90% Range (5th-95th percentile) | [$172,761, $1.01 million] |
 
-*The histogram shows the distribution of Contribution EV per Percentage Point (Wishonia, Blended) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Contribution EV per Percentage Point (Wishonia, Income + Health) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

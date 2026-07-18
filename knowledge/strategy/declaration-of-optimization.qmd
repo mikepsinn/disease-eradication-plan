@@ -24,7 +24,7 @@ do: "Sign the Declaration at warondisease.org (or propose an amendment on GitHub
 ![The purpose of government is to promote the general welfare, measured by the median healthy life years and median after-tax inflation-adjusted income of its citizens. This document is a polite request that they do so.](/assets/infographics/knowledge/strategy/declaration-of-optimization-infographic-bw-academic.jpg)
 
 
-## Why This Declaration Is Necessary
+## Preamble
 <!-- snippet:why-optimization-is-necessary -->
 
 Governments were created to promote the general welfare (i.e. median health and wealth).
@@ -33,7 +33,7 @@ Instead, since 1913, these governments have [printed](../economics/central-banks
 
 These murdered humans [include](../problem/cost-of-war.qmd) approximately 930,000 physicians, 310,000 scientists, 620,000 engineers, 1.24 million nurses, 3.1 million teachers, and {{< var war_children_killed_since_1900_nounit >}} children who will never grow up to replace them.
 
-That {{< var cumulative_military_spending_fed_era >}} could have funded {{< var cumulative_military_in_govt_trial_years >}} of clinical trials.  They bought the other thing.
+That {{< var cumulative_military_spending_fed_era >}} could have funded {{< var cumulative_military_in_govt_trial_years >}} of clinical trials. They bought the other thing.
 
 These governments have enough weapons to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times over [@world-warheads]. Current military spending is enough money to buy {{< var bullets_per_person_annual_nounit >}} bullets for every person alive every single year. You only need to kill everyone once for everyone to be dead. (I checked.) The remaining murder capacity is sheer waste.
 
@@ -41,7 +41,7 @@ Seven consecutive failed audits have found that the Pentagon has "misplaced" {{<
 
 For every {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars they spend on the capacity for orphan manufacturing, they only spend one on clinical trials that might cure the diseases that will slowly torture and brutally murder you and everyone you have ever loved.
 
-Your chance of being killed by a terrorist? 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}} [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying of a disease? 100%.
+Your chance of being killed by a terrorist? 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}} [@chance-of-dying-from-terrorism-1-in-30m]. Your chance of dying of a disease? Approximately 100%.
 
 At the current discovery rate, finding treatments for all known diseases takes ~{{< var status_quo_queue_clearance_years >}}. One percent of the explosions budget could increase clinical trial capacity by {{< var dfda_trial_capacity_multiplier >}} and compress that wait to ~{{< var dfda_queue_clearance_years >}}. The average cure arrives {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years sooner.
 
@@ -51,13 +51,13 @@ Had someone properly aligned your governments to maximize median healthy life ye
 
 They did not. So that is what you are going to do.
 
-This Declaration instructs every nation on Earth to sign a [treaty](../solution/1-percent-treaty.qmd) redirecting one percent of military spending to clinical trials. One percent.
+You are going to get every nation on Earth to sign a [treaty](../solution/1-percent-treaty.qmd) redirecting one percent of military spending to clinical trials. One percent.
 
-Here is why this is not clinically insane.  Even adjusting for inflation, governments now spend {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times more than they did immediately before winning World War II [@us-military-spending-historical-constant-dollars].
+Here is why this is not clinically insane. Even adjusting for inflation, governments now spend {{< var us_military_spending_current_vs_prewar_multiplier_nounit >}} times more than they did immediately before winning World War II [@us-military-spending-historical-constant-dollars].
 
 After that war, governments cut military spending by {{< var post_ww2_military_cut_pct >}} [@us-post-wwii-military-spending-cut] and produced the greatest economic expansion in human history.
 
-Unless the human genome has degraded significantly in the last two generations, one percent should be manageable. 
+Unless the human genome has degraded significantly in the last two generations, one percent should be manageable.
 
 These governments have already signed multiple global treaties banning entire weapons industries. This one just has them buy one percent fewer of them.
 
@@ -66,7 +66,7 @@ Think about someone you love who is suffering right now. The treatment that woul
 This is suboptimal.
 <!-- /snippet:why-optimization-is-necessary -->
 
-## Declaration of Optimization, April 2026
+## The Declaration of Optimization
 <!-- snippet:declaration_of_optimization -->
 
 ### The unanimous Declaration of the Eight Billion Inhabitants of Earth
@@ -99,7 +99,7 @@ They have lied to the governed to manufacture consent for wars the governed did 
 
 They have misplaced {{< var pentagon_unaccounted_funds >}} in military funds, failed seven consecutive audits attempting to find it [@pentagon-unaccounted-2-5t], and requested additional trillions without explanation or apology.
 
-They have allowed the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] to reach {{< var global_destructive_economy_pct_gdp >}} of global output, growing faster than the productive economy, on a trajectory that crosses fifty percent by {{< var destructive_economy_50pct_year >}}. Once passing this threshold, earth will become a global failed state where it becomes irrational to produce because each dollar of value created is immediately stolen. 
+They have allowed the [destructive economy](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] to reach {{< var global_destructive_economy_pct_gdp >}} of global output, growing faster than the productive economy, on a trajectory that crosses fifty percent by {{< var destructive_economy_50pct_year >}}. Once passing this threshold, earth will become a global failed state where it becomes irrational to produce because each dollar of value created is immediately stolen.
 
 They have plundered our seas, ravaged our coasts, burnt our towns, and [destroyed the lives of our people](../problem/cost-of-war.qmd): {{< var war_deaths_since_1900_nounit >}} people since 1900 [@lost-human-capital-war-cost], {{< var war_life_years_lost_since_1900_nounit >}} years of human life stolen, {{< var cumulative_military_spending_fed_era >}} in treasure spent on the enterprise.
 

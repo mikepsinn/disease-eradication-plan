@@ -13263,32 +13263,32 @@ WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA = Parameter(
     latex_symbol=r"\Delta Y_{lifetime,wish}",
 )
 
-TREATY_PERSONAL_UPSIDE_BLEND = Parameter(
+TREATY_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH = Parameter(
     float(TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) + float(TREATY_HALE_VALUE_PER_CAPITA),
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
-    description="Blended personal upside under Treaty Trajectory: lifetime income gain plus valued healthy-life gains.",
-    display_name="Treaty Personal Upside (Blended)",
+    description="Personal upside under Treaty Trajectory: lifetime income gain plus valued healthy-life gains.",
+    display_name="Treaty Personal Upside (Income + Health)",
     unit="USD/person",
     formula="TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + TREATY_HALE_VALUE_PER_CAPITA",
     inputs=["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA", "TREATY_HALE_VALUE_PER_CAPITA"],
     compute=lambda ctx: ctx["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] + ctx["TREATY_HALE_VALUE_PER_CAPITA"],
     keywords=["treaty", "personal", "upside", "blended", "income", "health"],
-    latex_symbol=r"Upside_{blend,treaty}",
+    latex_symbol=r"Upside_{income+health,treaty}",
 )
 
-WISHONIA_PERSONAL_UPSIDE_BLEND = Parameter(
+WISHONIA_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH = Parameter(
     float(WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA) + float(WISHONIA_HALE_VALUE_PER_CAPITA),
     manual_ref="knowledge/call-to-action/your-personal-benefits.qmd",
     source_type="calculated",
-    description="Blended personal upside under Wishonia Trajectory: lifetime income gain plus valued healthy-life gains.",
-    display_name="Wishonia Personal Upside (Blended)",
+    description="Personal upside under Wishonia Trajectory: lifetime income gain plus valued healthy-life gains.",
+    display_name="Wishonia Personal Upside (Income + Health)",
     unit="USD/person",
     formula="WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA + WISHONIA_HALE_VALUE_PER_CAPITA",
     inputs=["WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA", "WISHONIA_HALE_VALUE_PER_CAPITA"],
     compute=lambda ctx: ctx["WISHONIA_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] + ctx["WISHONIA_HALE_VALUE_PER_CAPITA"],
     keywords=["wishonia", "personal", "upside", "blended", "income", "health"],
-    latex_symbol=r"Upside_{blend,wish}",
+    latex_symbol=r"Upside_{income+health,wish}",
 )
 
 WISHONIA_TRAJECTORY_LIFETIME_INCOME_MULTIPLIER = Parameter(
@@ -14904,30 +14904,30 @@ CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA = Parameter(
     latex_symbol=r"EV_{pp,wish}",
 )
 
-CONTRIBUTION_EV_PER_PCT_POINT_TREATY_BLEND = Parameter(
-    float(TREATY_PERSONAL_UPSIDE_BLEND) * 0.01,
+CONTRIBUTION_EV_PER_PCT_POINT_TREATY_INCOME_PLUS_HEALTH = Parameter(
+    float(TREATY_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH) * 0.01,
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
-    description="Blended personal expected value per percentage point of implementation probability shift under Treaty Trajectory.",
-    display_name="Contribution EV per Percentage Point (Treaty, Blended)",
+    description="Income-plus-health personal expected value per percentage point of implementation probability shift under Treaty Trajectory.",
+    display_name="Contribution EV per Percentage Point (Treaty, Income + Health)",
     unit="USD",
-    formula="TREATY_PERSONAL_UPSIDE_BLEND × 0.01",
-    inputs=["TREATY_PERSONAL_UPSIDE_BLEND"],
-    compute=lambda ctx: ctx["TREATY_PERSONAL_UPSIDE_BLEND"] * 0.01,
-    latex_symbol=r"EV_{pp,treaty,blend}",
+    formula="TREATY_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH × 0.01",
+    inputs=["TREATY_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH"],
+    compute=lambda ctx: ctx["TREATY_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH"] * 0.01,
+    latex_symbol=r"EV_{pp,treaty,income+health}",
 )
 
-CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_BLEND = Parameter(
-    float(WISHONIA_PERSONAL_UPSIDE_BLEND) * 0.01,
+CONTRIBUTION_EV_PER_PCT_POINT_WISHONIA_INCOME_PLUS_HEALTH = Parameter(
+    float(WISHONIA_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH) * 0.01,
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
-    description="Blended personal expected value per percentage point of implementation probability shift under Wishonia Trajectory.",
-    display_name="Contribution EV per Percentage Point (Wishonia, Blended)",
+    description="Income-plus-health personal expected value per percentage point of implementation probability shift under Wishonia Trajectory.",
+    display_name="Contribution EV per Percentage Point (Wishonia, Income + Health)",
     unit="USD",
-    formula="WISHONIA_PERSONAL_UPSIDE_BLEND × 0.01",
-    inputs=["WISHONIA_PERSONAL_UPSIDE_BLEND"],
-    compute=lambda ctx: ctx["WISHONIA_PERSONAL_UPSIDE_BLEND"] * 0.01,
-    latex_symbol=r"EV_{pp,wish,blend}",
+    formula="WISHONIA_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH × 0.01",
+    inputs=["WISHONIA_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH"],
+    compute=lambda ctx: ctx["WISHONIA_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH"] * 0.01,
+    latex_symbol=r"EV_{pp,wish,income+health}",
 )
 
 CONTRIBUTION_DALYS_PER_PCT_POINT = Parameter(
@@ -15022,7 +15022,7 @@ INFLUENCE_ACTIVIST_STAKE_FRACTION = Parameter(
     0.05,
     manual_ref="knowledge/appendix/loving-takeover.qmd",
     source_type="definition",
-    description="Activist equity stake assumed sufficient to win board influence when combined with index-fund votes, rather than buying outright control. Grounded in activist-investing precedent: Engine No. 1 won three ExxonMobil board seats with 0.02%, and Carl Icahn typically operates with 1-10% positions. 5% is a deliberately conservative central case; the real floor is far lower, because the universal-owner index funds that hold 60-75% of every prime supply the votes once shown the financial case.",
+    description="Activist equity stake assumed sufficient to win board influence when combined with index-fund votes, rather than buying outright control. Grounded in activist-investing precedent: Engine No. 1 won three ExxonMobil board seats with 0.02%, and Carl Icahn typically operates with 1-10% positions. 5% is a deliberately conservative central case; the real floor is far lower, because institutional investors hold 70-85% of every prime (the Big Three index managers alone hold roughly 20-30%, per the primes' own proxy statements) and supply the votes once shown the financial case.",
     display_name="Activist Stake Fraction",
     unit="ratio",
     confidence_interval=(0.01, 0.10),
@@ -15096,6 +15096,39 @@ DEFENSE_TAKEOVER_COST_PER_HUMAN = Parameter(
     compute=lambda ctx: ctx["DEFENSE_TAKEOVER_COST_TOTAL"] / ctx["GLOBAL_POPULATION_2024"],
     keywords=["loving takeover", "per person", "cost"],
     latex_symbol=r"C_{takeover,pp}",
+)
+
+DEFENSE_TAKEOVER_ROI_INCOME_ONLY = Parameter(
+    TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA / DEFENSE_TAKEOVER_COST_PER_HUMAN,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Conditional return multiple on the per-human takeover contribution, counting lifetime income gains only: "
+                "the treaty trajectory's per-capita lifetime income gain divided by the per-human cost of the "
+                "outright-control ceiling. Conditional on campaign success; excludes the dollar value of the "
+                "added healthy years (see the blend variant).",
+    display_name="Loving Takeover ROI (Income Only)",
+    unit="x",
+    formula="TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA / DEFENSE_TAKEOVER_COST_PER_HUMAN",
+    inputs=["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA", "DEFENSE_TAKEOVER_COST_PER_HUMAN"],
+    compute=lambda ctx: ctx["TREATY_TRAJECTORY_LIFETIME_INCOME_GAIN_PER_CAPITA"] / ctx["DEFENSE_TAKEOVER_COST_PER_HUMAN"],
+    keywords=["loving takeover", "expected value", "upside", "multiple", "roi"],
+    latex_symbol=r"ROI_{takeover,income}",
+)
+
+DEFENSE_TAKEOVER_ROI_INCOME_PLUS_HEALTH = Parameter(
+    TREATY_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH / DEFENSE_TAKEOVER_COST_PER_HUMAN,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Conditional return multiple on the per-human takeover contribution, counting lifetime income gains plus "
+                "valued healthy-life gains (the blended personal upside) divided by the per-human cost of the "
+                "outright-control ceiling. Conditional on campaign success.",
+    display_name="Loving Takeover ROI (Income + Health)",
+    unit="x",
+    formula="TREATY_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH / DEFENSE_TAKEOVER_COST_PER_HUMAN",
+    inputs=["TREATY_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH", "DEFENSE_TAKEOVER_COST_PER_HUMAN"],
+    compute=lambda ctx: ctx["TREATY_PERSONAL_UPSIDE_INCOME_PLUS_HEALTH"] / ctx["DEFENSE_TAKEOVER_COST_PER_HUMAN"],
+    keywords=["loving takeover", "expected value", "upside", "multiple", "health", "roi"],
+    latex_symbol=r"ROI_{takeover,income+health}",
 )
 
 DEFENSE_TAKEOVER_PCT_INVESTABLE_ASSETS = Parameter(

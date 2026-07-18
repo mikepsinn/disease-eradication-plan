@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Wishonia Personal Upside (Blended) (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Wishonia Personal Upside (Income + Health) (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 28356313.323163338
 p5 = 17276092.959121086
 p50 = 38941929.93991651
 p95 = 101121973.9637052
-display_name = "Wishonia Personal Upside (Blended)"
+display_name = "Wishonia Personal Upside (Income + Health)"
 units = "USD/person"
 
 # Create figure with two subplots
@@ -101,7 +101,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('mc-distribution-wishonia_personal_upside_blend.png')
+output_path = get_figure_output_path('mc-distribution-wishonia_personal_upside_income_plus_health.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Wishonia Personal Upside (Blended)**
+**Simulation Results Summary: Wishonia Personal Upside (Income + Health)**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $28.4 million |
 | 90% Range (5th-95th percentile) | [$17.3 million, $101 million] |
 
-*The histogram shows the distribution of Wishonia Personal Upside (Blended) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Wishonia Personal Upside (Income + Health) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

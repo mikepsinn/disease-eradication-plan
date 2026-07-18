@@ -536,20 +536,20 @@ $$
 
 :::
 
-### Contribution EV per Percentage Point (Treaty, Blended): $29,339 {#sec-contribution_ev_per_pct_point_treaty_blend}
+### Contribution EV per Percentage Point (Treaty, Income + Health): $29,339 {#sec-contribution_ev_per_pct_point_treaty_income_plus_health}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Blended personal expected value per percentage point of implementation probability shift under Treaty Trajectory.
+Income-plus-health personal expected value per percentage point of implementation probability shift under Treaty Trajectory.
 
 **Inputs**:
 
-- [Treaty Personal Upside (Blended)](#sec-treaty_personal_upside_blend) 🔢: $2.93 million
+- [Treaty Personal Upside (Income + Health)](#sec-treaty_personal_upside_income_plus_health) 🔢: $2.93 million
 
 $$
 \begin{gathered}
-EV_{pp,treaty,blend} \\
-= Upside_{blend,treaty} \times 0.01 \\
+EV_{pp,treaty,income+health} \\
+= Upside_{income+health,treaty} \times 0.01 \\
 = \$2.93M \times 0.01 \\
 = \$29.3K
 \end{gathered}
@@ -557,7 +557,7 @@ $$
 where:
 $$
 \begin{gathered}
-Upside_{blend,treaty} \\
+Upside_{income+health,treaty} \\
 = \Delta Y_{lifetime,treaty} + Value_{HALE,treaty} \\
 = \$519K + \$2.42M \\
 = \$2.93M
@@ -851,17 +851,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-contribution_ev_per_pct_point_treaty_blend.qmd >}}
+{{< include ../figures/tornado-contribution_ev_per_pct_point_treaty_income_plus_health.qmd >}}
 
-{{< include ../figures/sensitivity-table-contribution_ev_per_pct_point_treaty_blend.qmd >}}
+{{< include ../figures/sensitivity-table-contribution_ev_per_pct_point_treaty_income_plus_health.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-contribution_ev_per_pct_point_treaty_blend.qmd >}}
+{{< include ../figures/mc-distribution-contribution_ev_per_pct_point_treaty_income_plus_health.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-contribution_ev_per_pct_point_treaty_blend.qmd >}}
+{{< include ../figures/exceedance-contribution_ev_per_pct_point_treaty_income_plus_health.qmd >}}
 
 :::
 
@@ -1053,20 +1053,20 @@ $$
 
 :::
 
-### Contribution EV per Percentage Point (Wishonia, Blended): $404,654 {#sec-contribution_ev_per_pct_point_wishonia_blend}
+### Contribution EV per Percentage Point (Wishonia, Income + Health): $404,654 {#sec-contribution_ev_per_pct_point_wishonia_income_plus_health}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Blended personal expected value per percentage point of implementation probability shift under Wishonia Trajectory.
+Income-plus-health personal expected value per percentage point of implementation probability shift under Wishonia Trajectory.
 
 **Inputs**:
 
-- [Wishonia Personal Upside (Blended)](#sec-wishonia_personal_upside_blend) 🔢: $40.5 million
+- [Wishonia Personal Upside (Income + Health)](#sec-wishonia_personal_upside_income_plus_health) 🔢: $40.5 million
 
 $$
 \begin{gathered}
-EV_{pp,wish,blend} \\
-= Upside_{blend,wish} \times 0.01 \\
+EV_{pp,wish,income+health} \\
+= Upside_{income+health,wish} \times 0.01 \\
 = \$40.5M \times 0.01 \\
 = \$405K
 \end{gathered}
@@ -1074,7 +1074,7 @@ $$
 where:
 $$
 \begin{gathered}
-Upside_{blend,wish} \\
+Upside_{income+health,wish} \\
 = \Delta Y_{lifetime,wish} + Value_{HALE,wish} \\
 = \$36.4M + \$4.02M \\
 = \$40.5M
@@ -1275,17 +1275,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-contribution_ev_per_pct_point_wishonia_blend.qmd >}}
+{{< include ../figures/tornado-contribution_ev_per_pct_point_wishonia_income_plus_health.qmd >}}
 
-{{< include ../figures/sensitivity-table-contribution_ev_per_pct_point_wishonia_blend.qmd >}}
+{{< include ../figures/sensitivity-table-contribution_ev_per_pct_point_wishonia_income_plus_health.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-contribution_ev_per_pct_point_wishonia_blend.qmd >}}
+{{< include ../figures/mc-distribution-contribution_ev_per_pct_point_wishonia_income_plus_health.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-contribution_ev_per_pct_point_wishonia_blend.qmd >}}
+{{< include ../figures/exceedance-contribution_ev_per_pct_point_wishonia_income_plus_health.qmd >}}
 
 :::
 
@@ -7348,11 +7348,11 @@ $$
 
 :::
 
-### Treaty Personal Upside (Blended): $2.93 million {#sec-treaty_personal_upside_blend}
+### Treaty Personal Upside (Income + Health): $2.93 million {#sec-treaty_personal_upside_income_plus_health}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Blended personal upside under Treaty Trajectory: lifetime income gain plus valued healthy-life gains.
+Personal upside under Treaty Trajectory: lifetime income gain plus valued healthy-life gains.
 
 **Inputs**:
 
@@ -7361,7 +7361,7 @@ Blended personal upside under Treaty Trajectory: lifetime income gain plus value
 
 $$
 \begin{gathered}
-Upside_{blend,treaty} \\
+Upside_{income+health,treaty} \\
 = \Delta Y_{lifetime,treaty} + Value_{HALE,treaty} \\
 = \$519K + \$2.42M \\
 = \$2.93M
@@ -7692,17 +7692,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-treaty_personal_upside_blend.qmd >}}
+{{< include ../figures/tornado-treaty_personal_upside_income_plus_health.qmd >}}
 
-{{< include ../figures/sensitivity-table-treaty_personal_upside_blend.qmd >}}
+{{< include ../figures/sensitivity-table-treaty_personal_upside_income_plus_health.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-treaty_personal_upside_blend.qmd >}}
+{{< include ../figures/mc-distribution-treaty_personal_upside_income_plus_health.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-treaty_personal_upside_blend.qmd >}}
+{{< include ../figures/exceedance-treaty_personal_upside_income_plus_health.qmd >}}
 
 :::
 
@@ -11140,11 +11140,11 @@ $$
 
 :::
 
-### Wishonia Personal Upside (Blended): $40.5 million {#sec-wishonia_personal_upside_blend}
+### Wishonia Personal Upside (Income + Health): $40.5 million {#sec-wishonia_personal_upside_income_plus_health}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Blended personal upside under Wishonia Trajectory: lifetime income gain plus valued healthy-life gains.
+Personal upside under Wishonia Trajectory: lifetime income gain plus valued healthy-life gains.
 
 **Inputs**:
 
@@ -11153,7 +11153,7 @@ Blended personal upside under Wishonia Trajectory: lifetime income gain plus val
 
 $$
 \begin{gathered}
-Upside_{blend,wish} \\
+Upside_{income+health,wish} \\
 = \Delta Y_{lifetime,wish} + Value_{HALE,wish} \\
 = \$36.4M + \$4.02M \\
 = \$40.5M
@@ -11354,17 +11354,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-wishonia_personal_upside_blend.qmd >}}
+{{< include ../figures/tornado-wishonia_personal_upside_income_plus_health.qmd >}}
 
-{{< include ../figures/sensitivity-table-wishonia_personal_upside_blend.qmd >}}
+{{< include ../figures/sensitivity-table-wishonia_personal_upside_income_plus_health.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-wishonia_personal_upside_blend.qmd >}}
+{{< include ../figures/mc-distribution-wishonia_personal_upside_income_plus_health.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-wishonia_personal_upside_blend.qmd >}}
+{{< include ../figures/exceedance-wishonia_personal_upside_income_plus_health.qmd >}}
 
 :::
 

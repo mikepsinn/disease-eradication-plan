@@ -165,7 +165,7 @@ Failure-case payout on a $100 deposit, for the eight combinations worth consider
 | AI secondaries tokenized | 18× | $1,782 | hard | 12–18 months |
 | Crypto tokenized | 25× | $2,475 | medium-hard | 9–12 months |
 
-On success, the deposit goes to the voters and the dollar column goes to zero. But the depositor lives in a world richer by {{< var treaty_personal_upside_blend >}} per average person in blended lifetime upside (income plus valued health), which is larger than every number in the table combined.
+On success, the deposit goes to the voters and the dollar column goes to zero. But the depositor lives in a world richer by {{< var treaty_personal_upside_income_plus_health >}} per average person in blended lifetime upside (income plus valued health), which is larger than every number in the table combined.
 
 Even the most boring row pays about four times in. The aggressive rows pay ten to twenty-five times in, with the downside spelled out below. The treaty passing is pure upside. The treaty failing still pays.
 
@@ -315,7 +315,7 @@ Structures A and I need none of these bills to launch. Private slices get cheape
 
 ## Prize Deposit vs Shares vs IAB vs Retirement
 
-If the prize fails, depositors split the realized pool, modeled at 4x to 25x depending on which strategy the treasury targets. That is a model, not a promise. Your retirement account makes {{< var conventional_retirement_horizon_multiple >}} over the same period. If the prize succeeds, your deposit goes to the voters, and you live in a world {{< var treaty_personal_upside_blend >}} richer per person. The deposit is the one instrument here that pays nothing on success, by design; if you want to make money *when the treaty wins*, that is the [Earth Optimization Fund](earth-optimization-fund.qmd), shown in the table below for contrast.
+If the prize fails, depositors split the realized pool, modeled at 4x to 25x depending on which strategy the treasury targets. That is a model, not a promise. Your retirement account makes {{< var conventional_retirement_horizon_multiple >}} over the same period. If the prize succeeds, your deposit goes to the voters, and you live in a world {{< var treaty_personal_upside_income_plus_health >}} richer per person. The deposit is the one instrument here that pays nothing on success, by design; if you want to make money *when the treaty wins*, that is the [Earth Optimization Fund](earth-optimization-fund.qmd), shown in the table below for contrast.
 
 Your species has a law called ERISA. It requires the people managing your retirement money to act in your interest, not theirs. A fiduciary cannot put your retirement money into a fund whose best-case outcome means the money goes to someone else. So this is not a retirement account.
 

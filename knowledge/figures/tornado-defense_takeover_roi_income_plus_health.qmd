@@ -1,0 +1,109 @@
+```{python}
+#| echo: false
+
+import matplotlib.pyplot as plt
+import numpy as np
+from pathlib import Path
+
+from dih_models.plotting.chart_style import (
+    setup_chart_style, add_watermark, clean_spines,
+    COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path,
+    get_tick_formatter
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+# Display name for chart title
+
+display_name = "Loving Takeover ROI (Income + Health)"
+
+# Baseline and units
+
+baseline = 26887.261078231877
+
+# Tornado data from sensitivity analysis
+
+drivers = ['LIFE_EXTENSION_YEARS', 'TREATY_RATCHET_TERMINAL_SHARE', 'DEFENSE_TAKEOVER_ACQUISITION_PREMIUM', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'GLOBAL_LIFE_EXPECTANCY_2024', 'GLOBAL_HALE_CURRENT', 'PEACE_DIVIDEND_CONFLICT_ELASTICITY', 'MILITARY_REDIRECT_GDP_BOOST_AT_30PCT', 'GLOBAL_POPULATION_2024', 'RD_SPILLOVER_MULTIPLIER', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'VALUE_OF_STATISTICAL_LIFE', 'GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_ACTIVE_COMBAT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_TRANSPORTATION_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_ENERGY_CONFLICT', 'GLOBAL_ANNUAL_LOST_HUMAN_CAPITAL_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_COMMUNICATIONS_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_WATER_CONFLICT', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_SHIPPING_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_EDUCATION_CONFLICT', 'GLOBAL_ANNUAL_PSYCHOLOGICAL_IMPACT_COSTS_CONFLICT', 'GLOBAL_ANNUAL_VETERAN_HEALTHCARE_COSTS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_SUPPLY_CHAIN_CONFLICT', 'GLOBAL_ANNUAL_INFRASTRUCTURE_DAMAGE_HEALTHCARE_CONFLICT', 'GLOBAL_ANNUAL_REFUGEE_SUPPORT_COSTS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_ENERGY_PRICE_CONFLICT', 'GLOBAL_ANNUAL_ENVIRONMENTAL_DAMAGE_CONFLICT', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_TERROR_ATTACKS', 'GLOBAL_ANNUAL_TRADE_DISRUPTION_CURRENCY_CONFLICT', 'GLOBAL_ANNUAL_CONFLICT_DEATHS_STATE_VIOLENCE', 'CURRENT_DISEASE_PATIENTS_GLOBAL', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'DFDA_OPEX_COMMUNITY', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_STAFF', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'RARE_DISEASES_COUNT_GLOBAL']
+driver_labels = ['Life Extension from Treaty Research Acceleration', 'Treaty Ratchet Terminal Redirect Share', 'Acquisition Premium Multiplier', 'Pragmatic Trial Cost per Patient', 'Standard Economic Value per QALY', 'Global Life Expectancy (2024)', 'Global Healthy Life Expectancy (HALE)', 'Peace Dividend Conflict Elasticity', 'GDP Growth Boost at 30% Military Reallocation', 'Global Population in 2024', 'R&D Spillover Multiplier', 'Diseases Getting First Treatment Per Year', 'Value of Statistical Life', 'Annual Lost Economic Growth from Military Spending Opportunity Cost', 'Annual Deaths from Active Combat Worldwide', 'Annual Infrastructure Damage to Transportation from Conflict', 'Annual Infrastructure Damage to Energy Systems from Conflict', 'Annual Lost Productivity from Conflict Casualties', 'Annual Infrastructure Damage to Communications from Conflict', 'Annual Infrastructure Damage to Water Systems from Conflict', 'Annual Trade Disruption Costs from Shipping Disruptions', 'Annual Infrastructure Damage to Education Facilities from Conflict', 'Annual PTSD and Mental Health Costs from Conflict', 'Annual Veteran Healthcare Costs', 'Annual Trade Disruption Costs from Supply Chain Disruptions', 'Annual Infrastructure Damage to Healthcare Facilities from Conflict', 'Annual Refugee Support Costs', 'Annual Trade Disruption Costs from Energy Price Volatility', 'Annual Environmental Damage and Restoration Costs from Conflict', 'Annual Deaths from Terror Attacks Globally', 'Annual Trade Disruption Costs from Currency Instability', 'Annual Deaths from State Violence', 'Global Population with Chronic Diseases', 'Annual Global Clinical Trial Participants', 'Pragmatic Trial Platform Community Support Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Staff Costs', 'Patient Willingness to Participate in Clinical Trials', 'Total Number of Rare Diseases Globally']
+impacts_low = [-6185.975157123772, -16625.48647873178, 5377.452215646375, 0.0, -4426.408890208568, -3137.9209350657147, 2061.991719041256, -1655.4856417775954, -803.075993428989, -717.9141575851972, -557.7256293369064, -468.8056500737148, -131.64907391855377, -88.20479324771804, -57.86612540896749, -15.928703501871496, -13.702264980864129, -9.734778506375733, -9.637467628443119, -8.740009951125103, -8.015509916942392, -7.626209252735862, -7.572138772622566, -6.50149588237764, -6.036441070365981, -5.365866959651612, -4.868321365476731, -4.078698153258301, -3.2457547474368766, -2.4884860985475825, -1.8826386946348066, -1.2984013498753484, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+impacts_high = [32991.8675046601, 3236.5079160633286, -10754.90443129275, -9555.221905093429, 4426.408890208564, 3151.9273498216207, -2061.991719041256, 1239.2250235543142, 857.2247554657588, 720.2460455670225, 583.3150280104273, 0.0, 133.02657449754406, 117.61920471328267, 72.051938078479, 20.86833447774552, 18.22405782722126, 12.991309588622244, 12.980477972512745, 11.60493765782303, 10.706042824509495, 10.12125377407574, 10.067107999289874, 8.648570797289722, 8.139668518833787, 7.186884948012448, 6.493996261902794, 5.443908794390154, 4.328962360017613, 4.004239059489919, 2.4456826251916937, 2.488973280207574, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+# Convert deltas to absolute values (baseline + delta)
+
+values_low = [baseline + delta for delta in impacts_low]
+values_high = [baseline + delta for delta in impacts_high]
+
+# Create tornado chart (horizontal bars showing swing range)
+# Cap dimensions to avoid LaTeX "Dimension too large" errors in PDF output
+# 8x10 inches max keeps figures compact and PDF-compatible
+
+fig, ax = plt.subplots(figsize=(8, min(10, max(5, len(drivers) * 0.6))))
+
+y_pos = np.arange(len(drivers))
+
+# Plot low impact (left side)
+
+for i, (low, high) in enumerate(zip(values_low, values_high)):
+    left = min(low, high)
+    width_low = baseline - left if left < baseline else 0
+    width_high = max(low, high) - baseline if max(low, high) > baseline else 0
+
+    # White bar for range below baseline
+
+    if width_low > 0:
+        ax.barh(i, width_low, left=left,
+                color=COLOR_WHITE, edgecolor=COLOR_BLACK, linewidth=2)
+
+    # Black bar for range above baseline
+
+    if width_high > 0:
+        ax.barh(i, width_high, left=baseline,
+                color=COLOR_BLACK, edgecolor=COLOR_BLACK, linewidth=2)
+
+# Format axis
+
+ax.set_yticks(y_pos)
+# Simplified labels (just parameter names)
+
+ax.set_yticklabels(driver_labels, fontsize=11)
+ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold', pad=20)
+
+# X-axis label with units
+
+units_label = "x"
+if units_label:
+    ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
+else:
+    ax.set_xlabel(f'{display_name}', fontsize=12)
+
+# Format x-axis tick labels with K/M/B/T notation
+
+ax.xaxis.set_major_formatter(get_tick_formatter(unit=units_label))
+
+# Add vertical line at baseline
+
+ax.axvline(baseline, color=COLOR_BLACK, linewidth=1, linestyle='--', alpha=0.5)
+
+# Clean spines
+
+clean_spines(ax)
+
+# Add watermark
+
+add_watermark(fig)
+
+# Save PNG to knowledge/figures/ regardless of where Quarto renders from
+# Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
+
+output_path = get_figure_output_path('tornado-defense_takeover_roi_income_plus_health.png')
+plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
+
+add_png_metadata(
+    output_path,
+    title=f'Sensitivity: {display_name}',
+    description=f'Tornado diagram showing which input parameters have the largest impact on {display_name}'
+)
+
+plt.show()
+```

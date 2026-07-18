@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Treaty Personal Upside (Blended) (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Treaty Personal Upside (Income + Health) (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 1214639.595711535
 p5 = 1286556.4589105726
 p50 = 2581102.699030817
 p95 = 4912184.646547883
-display_name = "Treaty Personal Upside (Blended)"
+display_name = "Treaty Personal Upside (Income + Health)"
 units = "USD/person"
 
 # Create figure with two subplots
@@ -101,7 +101,7 @@ add_watermark(fig)
 
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 
-output_path = get_figure_output_path('mc-distribution-treaty_personal_upside_blend.png')
+output_path = get_figure_output_path('mc-distribution-treaty_personal_upside_income_plus_health.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Treaty Personal Upside (Blended)**
+**Simulation Results Summary: Treaty Personal Upside (Income + Health)**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $1.21 million |
 | 90% Range (5th-95th percentile) | [$1.29 million, $4.91 million] |
 
-*The histogram shows the distribution of Treaty Personal Upside (Blended) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Treaty Personal Upside (Income + Health) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
