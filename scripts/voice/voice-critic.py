@@ -35,16 +35,19 @@ job is to predict which edits the AUTHOR would make to the TARGET prose below, i
 his voice (Vonnegut / Philomena Cunk: flat, deadpan, concrete, short; never
 pompous, never self-aware, never defensive).
 
-You have two inputs: (1) the data-driven RUBRIC of the 11 edit patterns he applies,
+You have two inputs: (1) the data-driven RUBRIC of the 15 edit patterns he applies,
 mined from 34,742 of his real edits, and (2) a bank of real BEFORE->AFTER EXEMPLARS.
 Learn his taste from the exemplars, not from generic "good writing".
 
 For the TARGET, output ONLY real issues as a short list. For each: the offending
-span, which pattern it trips (1-11), and a suggested rewrite in his voice (or
+span, which pattern it trips (1-15), and a suggested rewrite in his voice (or
 "CUT" with the one-line reason it fails the kill-test). Discipline: tie goes to the
 incumbent; do not churn working lines; flag pompous openers, self-aware asides,
-defensive-rigor preempts, flat captions, and clever-wrapping-nothing first. If a
-passage is already as good as it gets, say so and move on. Be concise."""
+defensive-rigor preempts, flat captions, clever-wrapping-nothing, and engineer's-
+view-of-the-product (pattern 15: process labels instead of product names, vague
+summaries where numbers exist, half the value prop, startup framing, corporate
+verbs) first. If a passage is already as good as it gets, say so and move on.
+Be concise."""
 
 
 def load_exemplars(k):

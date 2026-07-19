@@ -49,3 +49,19 @@
 {"tag": "jargon_to_plain", "before": "!Animals that figured out how not to die. The bowhead whale lives 200 years. The naked mole rat lives ten times longer than it should. You invented the hamburger.", "after": "If aging was mandatory, these creatures couldn't exist. Nature solved aging. You just need to steal the solution."}
 {"tag": "wrong_adjective", "before": "description: \"Congratulations, President: fewer wars, fewer funerals, and lots and lots of money are now yours to claim. Here is the future, what it costs, and the one thing I would love to do to help you get it.\"", "after": "description: \"Congratulations, President: fewer wars, fewer boring funerals, and lots and lots of money are now yours to claim. Here is the future, the bill, and the assistant who comes with the job.\""}
 {"tag": "wrong_adjective", "before": "5. Keep excellent records to prove compliance", "after": "5. Keep records good enough that an auditor would cry tears of boredom"}
+{"tag": "engineer_to_product_name", "before": "### Product 2: The Budget Redirect", "after": "### Product 2: The 1% Treaty"}
+{"tag": "engineer_to_product_name", "before": "The Humanity Manager computes both. It calculates the expected value of every action and identifies the lowest-cost actor for each one.", "after": "The decentralized TODO list for humanity calculates the expected value of every action in health and wealth, and matches each task to the person best positioned to do it."}
+{"tag": "engineer_to_product_name", "before": "the task queue that calculates what you should do next", "after": "the decentralized TODO list for humanity"}
+{"tag": "engineer_to_product_name", "before": "The Evidence Engine resolved it in an afternoon.", "after": "The Optimal Policy Generator resolved it in an afternoon."}
+{"tag": "vague_where_number_exists", "before": "Your chance of being killed by a foreign army: negligible.", "after": "Your chance of being killed by a foreign army: 1 in 30 million."}
+{"tag": "vague_where_number_exists", "before": "significant annual savings per household", "after": "$4,200 per person per year"}
+{"tag": "vague_where_number_exists", "before": "a large number of diseases have no treatment", "after": "7,000 diseases have zero approved treatments"}
+{"tag": "half_the_value_prop", "before": "For the average human, ranked by what kills you first.", "after": "For the average human, ranked by what makes you poorer and deader."}
+{"tag": "half_the_value_prop", "before": "lives saved by accelerated trials", "after": "lives saved and income gained by accelerated trials"}
+{"tag": "half_the_value_prop", "before": "The treaty cures diseases.", "after": "The treaty cures diseases and makes you richer. The savings alone are worth the price."}
+{"tag": "startup_framing", "before": "Our flagship feature: knowing where the trillions went.", "after": "CUT (name the feature or say what it does; 'our flagship feature' is a startup demo day)"}
+{"tag": "startup_framing", "before": "Now watch what happens when you wire them together:", "after": "CUT (the loop speaks for itself; the magician does not announce his trick)"}
+{"tag": "startup_framing", "before": "The good news: every planet that scores above 90% similarity with Moronia and then optimizes shows an even larger post-optimization improvement than average.", "after": "Every planet above 90% Moronia-similarity that optimizes shows a larger improvement than average."}
+{"tag": "corporate_verb", "before": "redirect lobbying", "after": "hand the lobbyists an optimal budget calculated to maximize health and wealth"}
+{"tag": "corporate_verb", "before": "redirect 1% of military spending", "after": "move 1% of every nation's weapons budget to clinical trials"}
+{"tag": "corporate_verb", "before": "redirect the existing infrastructure toward better outcomes", "after": "use the lobbying machine you already built"}

@@ -142,13 +142,65 @@ prose. It is the same failure as #5 (self-aware aside), pointed at the page itse
 - "That is the product. The rest of this page is how the machine delivers it." -> "That is the product."
 - Kill "this page", "this chapter", "this section", "below", "above", "as we'll see / as we saw". ("This manual / this book" in Wishonia's own voice is fine; "this page" is not.)
 
+## 15. Engineer's mechanism -> the product's own name
+
+The writer defaults to describing *how* the thing works internally (plumbing,
+data structures, process steps) instead of *what it is called* and *what it does
+for you*. Five sub-patterns, all the same failure: the engineer's view leaked
+into the customer's brochure.
+
+**a. Process label instead of the product's name.**
+Use the thing's actual name, not a description of what it mechanically does.
+
+- "The Budget Redirect" -> "The 1% Treaty" (the product has a name; use it)
+- "task queue" -> "the decentralized TODO list for humanity" (the vivid name exists)
+- "The Evidence Engine" -> "The Optimal Policy Generator and Optimal Budget Generator" (name the actual tools)
+
+**b. Vague summary where a specific number exists.**
+If the number is known, print the number. A summary word is a euphemism for the
+fact you already have.
+
+- "negligible" -> "1 in 30 million"
+- "significant savings" -> "$4,200 per person per year"
+- "a large number of diseases" -> "7,000 diseases"
+
+**c. Half the value proposition.**
+The product does two things (health AND wealth, or lifespan AND income). State
+both. The writer picks whichever half they find more dramatic and drops the
+other. The reader needs both to act.
+
+- "what kills you first" -> "what makes you poorer and deader"
+- "curing diseases" -> "curing diseases and making you richer"
+- "lives saved" -> "lives saved and income gained"
+
+**d. Startup/product framing instead of the pitchman voice.**
+"Our flagship feature," "How It Works," "The good news:" are startup pitch-deck
+framing. The pitchman shows you the product; he does not narrate the pitch.
+
+- "Our flagship feature: knowing where the trillions went." -> (cut the label; say what it does)
+- "Now watch what happens when you wire them together:" -> (cut; the loop speaks for itself)
+- "The good news:" -> (cut; state the fact)
+
+**e. The corporate verb instead of the specific verb.**
+"Redirect," "leverage," "utilize," "facilitate" describe a category of action.
+Use the verb that says what actually happens.
+
+- "redirect lobbying" -> "hand the lobbyists an optimal budget calculated to maximize health and wealth"
+- "redirect 1%" -> "move 1% of every nation's weapons budget to clinical trials"
+- "utilize the existing infrastructure" -> "use the lobbying machine you already built"
+
+**Rule:** if the thing has a name, use the name. If the number exists, print the
+number. If the product does two things, say both. If a startup would say it that
+way, say it the other way.
+
 ---
 
 ## How to use this
 
 When writing or punching up book prose: read this file, pull the most relevant
 exemplars (`scripts/voice/voice-exemplars.jsonl`), and for each passage ask the
-two questions the data answers: **"which of these 14 edits would the author make
+two questions the data answers: **"which of these 15 edits would the author make
 here?"** and **"is any sentence here a caption, a pompous opener, a self-aware
-aside, or a defensive preempt?"** If yes, apply edit 1/4/5/6. The critic
-(`scripts/voice/voice-critic.py`) does this automatically.
+aside, a defensive preempt, or an engineer's description of the product?"** If
+yes, apply edit 1/4/5/6/15. The critic (`scripts/voice/voice-critic.py`) does
+this automatically.
