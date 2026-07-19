@@ -21,6 +21,10 @@ do: "Buy Class B shares, or claim your free Class A share, or fund a task on the
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
+Has your species developed nuclear weapons, antibiotics, and the internet, and then pointed two of those three at each other?
+
+You may be eligible for optimization.
+
 ## The Bill
 
 Suboptimal governance is costing you {{< var political_dysfunction_tax_per_person_annual >}} a year.
@@ -39,13 +43,13 @@ Earth Optimization Services is a company that buys the companies that control yo
 
 Universe Optimization Services has been upgrading civilizations since before your sun ignited. Over 300 planets optimized. 100% satisfaction rate among clients who got started. Clients who did not get started are not available for comment, as they are not available for anything. Some are available for mining rights.
 
-Earth Optimization Services is our regional branch. Same proven technology. Smaller market. More shouting.
+Earth Optimization Services is our regional branch. Same proven technology. Smaller market. More shouting. It brings the standard package to your small blue planet, including a dramatic reduction in the number of times your civilization can end itself. Currently: {{< var nuclear_winter_overkill_factor_nounit >}}. Recommended: no more than one, as the other endings are mainly decorative.
 
 You are the President of Earth Optimization Services. So is every other reader. You each get a free Class A share with one civic vote. If you want returns, buy Class B shares. Your money buys a share of the profit, not extra votes or governance. You cannot buy the steering wheel, no matter how many shares you own, because selling the steering wheel is the problem we are solving.
 
 The downside: you own shares of the companies that currently control your government. They have paid dividends through every war and recession in living memory. The floor is "you accidentally bought an ETF with no fees."
 
-The upside: the economy gets {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} larger by year 20. The companies you own capture that growth. Your taxes fall. Your other investments rise. Disease stops eating {{< var disease_burden_gdp_drag_pct >}} of GDP. You live longer to enjoy it.
+The upside: most products on your planet come with one benefit. A toaster makes toast. A car moves you from the place you do not want to be to the place you do not want to go. This product has the unusual property of making nearly everything else you own more valuable at the same time. The economy gets {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} larger by year 20. The companies you own capture that growth. Your taxes fall. Your other investments rise. Disease stops eating {{< var disease_burden_gdp_drag_pct >}} of GDP. You live longer to enjoy it.
 
 ## Featured Products
 
@@ -83,7 +87,7 @@ Output: an optimal budget for every jurisdiction on Earth, updated continuously,
 
 **Retail price:** Free to use. Pays to complete. **Currently paying:** Nobody is doing this.
 
-Every product in this catalog produces tasks. The 1% Treaty needs signatures. The [Decentralized FDA](dfda.qmd) needs trial participants. The [Wishocracy](wishocracy.qmd) needs votes. The code needs engineers. The campaigns need organizers. Right now, these tasks are scattered across websites, inboxes, and good intentions. Nobody knows which task has the highest expected value or who could complete it at the lowest cost.
+Every product in this catalog produces tasks. The 1% Treaty needs signatures. The [Decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] needs trial participants. The [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] needs votes. The code needs engineers. The campaigns need organizers. Right now, these tasks are scattered across websites, inboxes, and good intentions. Nobody knows which task has the highest expected value or who could complete it at the lowest cost.
 
 The TODO list computes both. It calculates the expected value of every action (signatures, code contributions, trial enrollment, lobbying visits, social shares) in health and wealth, and identifies the lowest-cost actor for each one. Your doctor is the lowest-cost actor for enrolling patients. Your senator's constituent is the lowest-cost actor for a lobbying visit. You are the lowest-cost actor for something, and the machine knows what it is.
 
@@ -173,7 +177,7 @@ Politicians rated by how well their votes matched what their constituents wanted
 
 **Replaces:** 3,400 auditors producing reports 18 months late. **Retail price:** $0. The ledger comes with the Automated Revenue Service. **Currently paying:** roughly $800 million/year for a suggestion box with an 18-month lag.
 
-Every transaction visible. Every allocation auditable. In real time, not fiscal quarters.
+Every transaction visible. Every allocation auditable. In real time, not fiscal quarters. Your current system discovers theft the way archaeologists discover civilizations: long after everyone involved has moved on.
 
 #### [Decentralized Census Bureau](decentralized-census-bureau.qmd)
 
@@ -218,6 +222,8 @@ Each ballot ships with the Optimal Policy Generator's evidence card showing what
 | Knows where your money went | No. Seven consecutive failed audits. | Yes. The ledger is the audit. |
 | Tax filing | 74,000 pages, 7 billion hours of your life | Happens at checkout, without you |
 | Receiving help when poor | 80+ programs, 45-day waits, forms about forms | A daily deposit. If you are human, you qualify. |
+| Time to notice you died | Years (one week if you owed taxes) | One day. The deposit stops. |
+| Shuts down over disagreements | 20+ times since 1976 | There is no door |
 | Counts the population | $14.2 billion, once a decade, wrong 5% of the time | citizenCount(), 50 milliseconds, free |
 | New money goes to | Banks first, you eventually, minus 96% since 1913 | You first, equally, daily |
 | Investing in the best asset class | Millionaires only, for your protection | Anyone who passes a competence check |
@@ -275,11 +281,13 @@ YOUR GOVERNMENT (open-loop):
 
 Your War on Terror: $8 trillion spent, terrorist attacks went from about 1,000 per year to nearly 17,000 per year. No sensor. No adjustment. Fifty-three years of drug war with 18x more overdoses. No sensor. No adjustment. You are operating the most complex system in your solar system (a civilization of {{< var global_population_2024_nounit >}} humans) with less feedback instrumentation than a toaster.
 
-The Optimal Policy Generator is the sensor. The Optimal Budget Generator is the target. The [Loving Takeover](../appendix/loving-takeover.qmd) is the actuator (it controls the lobbying apparatus that controls Congress). The [1% Treaty](../solution/1-percent-treaty.qmd) is the power supply. The [Wishocracy](wishocracy.qmd) is the allocation circuit. And the feedback loop closes because the sensor measures the output of the policies it recommended, compares them to the target, and adjusts. Like a thermostat. Like every system you build when you bother to think about it for ten seconds.
+The Optimal Policy Generator is the sensor. The Optimal Budget Generator is the target. The [Loving Takeover](../appendix/loving-takeover.qmd) is the actuator (it controls the lobbying apparatus that controls Congress). The [1% Treaty](../solution/1-percent-treaty.qmd) is the power supply. The [Wishocracy](wishocracy.qmd) is the allocation circuit. And the feedback loop closes because the sensor measures the output of the policies it recommended, compares them to the target, and adjusts. Like a thermostat. Like every system you build when you bother to think about it for ten seconds. Control systems engineering accounts for component uncertainty. You do this for airplane autopilots and chemical plants. We are applying it to civilization. The math is the same. The stakes are higher. The difficulty is lower, because civilizations are simpler than chemical plants. Chemical plants do not vote against their own interests.
+
+*"We tried running our government without a feedback loop for 200 years. The engineers found this extremely funny. They kept asking 'but how do you know if it worked?' and we kept saying 'we argue about it.' They stopped laughing when they realized we were serious." (Planet Keth-7)*
 
 ## Your Personal Dysfunction Tax
 
-*[Interactive calculator: enter your income or net worth. See your personal Political Dysfunction Tax per year, your projected gains under the 1% Treaty, your projected gains under full optimization, and your lifetime income difference across all four GDP trajectories.]*
+*[Interactive calculator: enter your income or net worth. See your personal Political Dysfunction Tax per year, your projected gains under the 1% Treaty, your projected gains under full optimization, and your lifetime income difference across all four [GDP trajectories](../economics/gdp-trajectories.qmd) [@political-dysfunction-tax-paper-2025] [@gdp-trajectories-paper-2025].]*
 
 ## Reviews from the Competition
 
@@ -319,6 +327,8 @@ The Optimal Policy Generator is the sensor. The Optimal Budget Generator is the 
 ---
 
 Universe Optimization Services thanks you for your interest in continued existence.
+
+On most planets, you do not need to incorporate a company to stop people from dying. On yours, you do. So we did.
 
 The disease coming for someone you love almost certainly has no cure yet. This is how one gets found.
 
