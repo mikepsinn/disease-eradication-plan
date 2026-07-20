@@ -31,7 +31,9 @@ import json
 import logging
 import os
 import re
+import subprocess
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
@@ -118,6 +120,24 @@ class ValidationError:
 
 
 errors: List[ValidationError] = []
+
+
+def select_qmd_files(filepaths: List[str]) -> List[str]:
+    """Normalize and filter QMD paths handled by this validator."""
+    qmd_files = {
+        filepath.replace("\\", "/")
+        for filepath in filepaths
+        if filepath.lower().endswith(".qmd")
+    }
+    qmd_files = {
+        filepath for filepath in qmd_files if not filepath.endswith("references.qmd")
+    }
+    qmd_files = {
+        filepath
+        for filepath in qmd_files
+        if not filepath.endswith("index.qmd") or filepath.endswith("index-manual.qmd")
+    }
+    return sorted(qmd_files)
 
 # Common LaTeX error patterns to check for
 latex_patterns = [
@@ -2051,32 +2071,25 @@ def main():
         format='%(message)s'
     )
 
-    # First, regenerate _variables.yml to ensure it's current with parameters.py
-    logger.debug("Regenerating _variables.yml from parameters.py...\n")
-    try:
-        import subprocess
-
-        result = subprocess.run(
-            [sys.executable, "scripts/generate-everything-parameters-variables-calculations-references.py"], capture_output=True, text=True, timeout=1800
-        )
-        if result.returncode != 0:
-            print(f"ERROR: generate-everything-parameters-variables-calculations-references.py failed with exit code {result.returncode}", file=sys.stderr)
-            if result.stdout:
-                print(result.stdout, file=sys.stderr)
-            if result.stderr:
-                print(result.stderr, file=sys.stderr)
-            print("\nPre-render validation FAILED: Variable generation failed.", file=sys.stderr)
-            print("Fix the issues above before rendering.\n", file=sys.stderr)
-            sys.exit(1)
-        else:
-            # Print condensed output (just the summary lines)
-            for line in result.stdout.split("\n"):
-                if line.startswith("[OK]") or line.startswith("[*]"):
-                    logger.debug(line)
-        logger.debug("")
-    except Exception as e:
-        print(f"ERROR: Failed to regenerate _variables.yml: {e}\n", file=sys.stderr)
+    logger.info("Regenerating generated artifacts before validation...")
+    generation_started = time.perf_counter()
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-u",
+            "scripts/generate-everything-parameters-variables-calculations-references.py",
+        ],
+        timeout=1800,
+    )
+    if result.returncode != 0:
+        print(f"ERROR: generate-everything-parameters-variables-calculations-references.py failed with exit code {result.returncode}", file=sys.stderr)
+        print("\nPre-render validation FAILED: Variable generation failed.", file=sys.stderr)
+        print("Fix the issues above before rendering.\n", file=sys.stderr)
         sys.exit(1)
+    generation_elapsed = time.perf_counter() - generation_started
+    logger.info(f"Generated artifacts in {generation_elapsed:.1f} seconds.\n")
+
+    qmd_files = select_qmd_files(find_files_by_extension((".qmd",)))
 
     logger.info("Running pre-render validation checks on .qmd files...\n")
 
@@ -2117,26 +2130,14 @@ def main():
     else:
         logger.debug("No citations loaded")
 
-    # Validate _quarto.yml configuration first
     validate_quarto_config()
-
-    # Check source images for bad DPI / oversized physical dimensions
     check_source_image_dpi()
-
-    # Check for patterns that break EPUB/Kindle
     check_epub_compatibility()
-
-    # Find all .qmd files using centralized file utilities
-    qmd_files = find_files_by_extension((".qmd",))
-    # Exclude references.qmd from validation
-    qmd_files = [f for f in qmd_files if not f.endswith("references.qmd")]
-    # Exclude index.qmd (use index-book.qmd instead - index.qmd is for website, index-book.qmd is for book)
-    qmd_files = [f for f in qmd_files if not f.endswith("index.qmd") or f.endswith("index-manual.qmd")]
 
     # Skip .md files - they're documentation, not part of the Quarto book
     # (anchor IDs from .md files are still loaded for cross-reference validation)
     all_files = qmd_files
-    logger.info(f"Validating {len(qmd_files)} .qmd files...")
+    logger.info(f"Validating {len(qmd_files)} QMD files...")
 
     manual_navigation_qmd_files = get_qmd_files_for_config(Path("_quarto-manual.yml"))
     manual_source_qmd_files = get_qmd_include_closure(manual_navigation_qmd_files)

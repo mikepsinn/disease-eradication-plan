@@ -1,18 +1,18 @@
 ---
 title: Earth Optimization Services Landing Page
 subtitle: Production Specification
-description: Complete specification for the EOS single-page web application. Every word of copy, every section layout, every interactive element, every data requirement. Hand to a coding agent for implementation.
+description: Complete specification for the EOS single-page web application at optimitron.com. Every word of copy, every section layout, every interactive element, every data requirement. Hand to a coding agent for implementation.
 toc: false
 number-sections: false
 audience: "Split: general public (the builder, the voter, the sharer) AND accredited investors (the funder). The page serves both without segregating them."
 feel: "Reading a performance review of the worst employee in history, then being handed a cheerful brochure by a polite alien vendor who has done this 300 times and finds your dysfunction familiar, textbook, and fixable."
-do: "Build a module, spread the page, or invest in EOS equity. Build is the default path."
+do: "Buy Class B shares, claim your free Class A share, or fund a task on the TODO list. In that order."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 ## Purpose
 
-Complete specification for a single-page web application. Contains every word of copy, every section layout, every interactive element, and every data requirement. Hand it to a coding agent for implementation. The coding agent has access to a TypeScript variables file with all numeric parameters; reference variable names where relevant but do not hardcode numbers.
+Complete specification for a single-page web application at optimitron.com. Contains every word of copy, every section layout, every interactive element, and every data requirement. Hand it to a coding agent for implementation. The coding agent has access to a TypeScript variables file with all numeric parameters; reference variable names where relevant but do not hardcode numbers.
 
 ## Audience
 
@@ -22,25 +22,27 @@ Split: general public (the builder, the voter, the sharer) AND accredited invest
 
 Two registers, deployed in sequence:
 
-**Section 1 (Performance Review):** No character. No comedy. Dense, humorless, devastating. The facts arrive fast and do not stop. This is the charge sheet. The voice is a prosecutor reading counts.
+**Section 1 (The Bill):** No character. No comedy. Dense, humorless, devastating. The facts arrive fast and do not stop. This is the charge sheet. The voice is a prosecutor reading counts. The horror stays at full volume. Every sentence has a specific number or a specific horror. No sanding down, no clever substitutes, no euphemisms.
 
-**Section 2 onward:** Wishonia arrives. Naive alien observer, Philomena Cunk deadpan, 1950s cheerful pitchman selling the Government of Tomorrow. Warm, funny, inviting. The visitor is the president of this machine; we hand them the keys. The comedy lives in the contrast: the facts in Section 1 are horrifying, and the vendor selling the fix is polite, cheerful, and has a brochure. Never contemptuous, never startup-bro, never consultant-speak. Never pitching. The facts already did the selling; the pitchman is just showing you the catalog.
+**Section 2 onward:** The pitchman arrives. 1950s Vault-Tec / Tomorrowland brochure cheerful. Naive alien observer, Philomena Cunk deadpan, warm folksy salesmanship. The comedy lives in the gap between the upbeat tone and the dark content. The visitor is the President of Earth Optimization Services; we hand them the keys. Never contemptuous, never startup-bro, never consultant-speak. Never pitching. The facts already did the selling; the pitchman is just showing you the catalog.
 
-Each product card uses the "Retail price / Currently paying" format from the EOS chapter. Planet testimonials (fake reviews from optimized civilizations) appear after key products. The tone is a competent vendor who has done this 300 times and finds your planet's dysfunction familiar, textbook, and fixable.
+Each product card uses the "Retail price / Currently paying" format. Planet testimonials (fake reviews from optimized civilizations) appear after key products. The tone is a competent vendor who has done this 300 times and finds your planet's dysfunction familiar, textbook, and fixable.
+
+**What the voice is NOT:** Cute. Clever at the expense of horror. Startup framing ("Our flagship feature," "The good news"). Process descriptions instead of product names. Vague where a number exists. Half the value proposition (health AND wealth, always both). Corporate verbs instead of specific verbs.
 
 ## Visual Direction
 
 Two visual registers matching the two voice registers:
 
-**Section 1 (Performance Review):** Dark, dense, clinical. The charge sheet. Dark background, bright white text, numbers in accent color. No ornamentation. The numbers do the work.
+**Section 1 (The Bill):** Dark, dense, clinical. The charge sheet. Dark background, bright white text, numbers in accent color. No ornamentation. The numbers do the work.
 
-**Section 2 onward:** 1950s-futuristic product catalog. Cheerful retro typography, clean lines, pastel accent colors against dark background. Think Tomorrowland brochure meets competent vendor pitch. Each product card with working demos, real code, and real data. The comparison matrix is the visual centerpiece. Interactive elements in every product card (working code, live sliders, real data). The overall feeling should be: "this vendor is obviously better, has never killed anyone, and has a lovely brochure."
+**Section 2 onward:** 1950s-futuristic product catalog. Cheerful retro typography, clean lines, pastel accent colors against dark background. Think Tomorrowland brochure meets competent vendor pitch. Each product card with working demos, real code, and real data. Interactive elements in every product card (working code, live sliders, real data). The overall feeling should be: "this vendor is obviously better, has never killed anyone, and has a lovely brochure."
 
 ---
 
-## SECTION 1: THE PERFORMANCE REVIEW
+## SECTION 1: THE BILL
 
-**Layout:** Dense. No metaphors. The facts arrive fast and do not stop. Each line is a sourced statistic. The section opens with the job description, then delivers the performance review. Dark background, bright white text, numbers in accent color. The number `political_dysfunction_global_opportunity_cost_total`/YEAR appears large and unmissable partway through.
+**Layout:** Dense. No metaphors. The facts arrive fast and do not stop. Each line is a sourced statistic. Dark background, bright white text, numbers in accent color. The number `political_dysfunction_global_opportunity_cost_total`/YEAR appears large and unmissable partway through.
 
 **Live counter** (top right corner, small, ticking): Deaths from curable diseases since you opened this page. Uses `global_disease_deaths_per_minute` to increment. Format: "XX people died of curable diseases while this page was open." Updates every second. Small font, corner placement. The number does the work.
 
@@ -80,21 +82,35 @@ Two visual registers matching the two voice registers:
 
 **Small link:** "Read the full forensic audit ->" (links to the Political Dysfunction Tax paper)
 
+> I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases.
+>
+> That is why this store exists.
+
 **Transition** (visual shift: background lightens slightly, a cheerful retro-futuristic header appears, the tone pivots completely):
 
-> Are your governments wasting trillions of dollars a year on excess mass murder capacity while you and everyone you love are slowly being tortured and murdered by horrible diseases?
+> Has your species developed nuclear weapons, antibiotics, and the internet, and then pointed two of those three at each other?
 >
 > You may be eligible for optimization.
->
-> Earth Optimization Services offers a variety of products and services for repairing your governments and maximizing the general welfare (i.e., the health and wealth) of your civilization.
->
-> Universe Optimization Services has been upgrading civilizations since before your sun ignited. Over 300 planets optimized. 100% satisfaction rate among clients who got started. (Clients who did not get started are not available for comment, as they are not available for anything. Some are available for mining rights.)
->
-> Earth Optimization Services is our regional branch for your planet. Same parent company. Same proven technology. Smaller market. More shouting.
 
 ---
 
-## SECTION 2: THE COMPARISON MATRIX
+## SECTION 2: THE STORE
+
+**Layout:** The cheerful pitchman arrives. Background shifts to 1950s retro-futuristic. Warm, inviting typography. This is the first time the visitor sees EOS as a product.
+
+**Copy:**
+
+> Earth Optimization Services is a company that buys the companies that control your government, uses hundreds of years of data from 193 countries to determine the policies and budgets that maximize two numbers (median health-adjusted life expectancy and median after-tax inflation-adjusted income), and then uses shareholder rights to make those companies' lobbyists implement the policies that are in the best interests of their shareholders, the corporations' profits, and the general welfare, making everyone richer and significantly less dead.
+>
+> Universe Optimization Services has been upgrading civilizations since before your sun ignited. Over 300 planets optimized. 100% satisfaction rate among clients who got started. Clients who did not get started are not available for comment, as they are not available for anything. Some are available for mining rights.
+>
+> Earth Optimization Services is our regional branch. Same proven technology. Smaller market. More shouting.
+>
+> You are the President of Earth Optimization Services. One Class A share per human, one civic vote, free. If you want returns, buy Class B shares. Money buys a share of the profit, not extra votes or governance. One cannot buy the steering wheel, no matter how many shares you own, because selling the steering wheel is the problem we are solving.
+
+---
+
+## SECTION 3: THE COMPARISON MATRIX
 
 **Layout:** A single, clean, full-viewport comparison table. This is the visual centerpiece of the page. Two columns. Every row is devastating. The table should be large, well-spaced, and feel like a vendor comparison chart in a cheerful brochure about the end of suffering. 1950s product-catalog aesthetic: clean lines, confident typography, pastel accent colors against dark background.
 
@@ -116,19 +132,24 @@ Two visual registers matching the two voice registers:
 | Your input | 1 bundled vote every 2 years. Correlation with outcomes: 0%. | 20 specific questions/year. Pairwise comparisons. Evidence attached. |
 | Corruption surface | {{< var us_total_lobbying_annual >}}/year in lobbying buys your laws | No door. You cannot take 8 billion people to lunch. |
 | Policy evidence used | None. Drug war ran 50 years, overdoses up 1,700%, nobody checked. | 10,000 jurisdictions measured. Synthetic controls, diff-in-diff, regression discontinuity. |
-| Disease queue | {{< var status_quo_queue_clearance_years >}} at current rate | {{< var dfda_queue_clearance_years >}} with 1% redirect |
+| Disease queue | {{< var status_quo_queue_clearance_years >}} at current rate | {{< var dfda_queue_clearance_years >}} with 1% moved to clinical trials |
+| Time to notice you died | Years (one week if you owed taxes) | One day. The deposit stops. |
+| Shuts down over disagreements | 20+ times since 1976 | There is no door |
 | Audit record | 0 of 7 passed (Pentagon) | Real-time public ledger, continuous |
 | Budget allocation | {{< var military_to_government_clinical_trials_spending_ratio >}} kill:cure ratio | Optimal budget calculated to maximize the two numbers |
+| Sticker price | {{< var us_gov_waste_per_capita_annual >}} per American per year | {{< var gov_replacement_suite_opex_per_citizen_annual >}} per citizen per year, plus dividends |
 
 ---
 
-## SECTION 3: THE PRODUCT CATALOG
+## SECTION 4: FEATURED PRODUCTS
 
-**Layout:** Each product is a full card with: name, one-line description, "Retail price" and "Currently paying" comparison, and a working interactive element or code block. Cards are large and detailed, not thumbnails. This is a Tomorrowland brochure: each product is something you can build, fund, or use. The cheerful pitchman voice is fully deployed here. Every product card follows the format from the EOS chapter: what it replaces, retail price, currently paying, the product itself, and (for key products) a testimonial from a previously optimized planet.
+**Layout:** Each product is a full card with: name, one-line description, "Retail price" and "Currently paying" comparison, and a working interactive element or code block. Cards are large and detailed, not thumbnails. This is a Tomorrowland brochure: each product is something you can build, fund, or use. The cheerful pitchman voice is fully deployed here.
 
 **Header:**
 
 > ## The Standard Package
+>
+> The decentralized TODO list for humanity is the product. The root task is Optimize Earth. Everything below is a subtask. Each task has a calculated expected value in health and wealth. You can fund any task (pledge money; it executes when enough people commit, like a group purchase) or do it yourself.
 >
 > Every civilization gets the same products. We tried offering customization. It turns out every planet has the same problems. They all think theirs are unique. They are not. The variables change. The dysfunction is identical.
 >
@@ -146,19 +167,13 @@ Two visual registers matching the two voice registers:
 
 **Copy:**
 
-> Your planet has 10,000 jurisdictions, each trying slightly different policies. Some of them produce healthy, wealthy, well-educated citizens. Others produce the opposite. Right now, you determine which is which by having politicians argue on television. The Optimitron replaces the arguing with counting.
-
-**Left Panel: Optimal Policy Generator**
-
-> Analyzes millions of policy-years across 10,000+ jurisdictions. Every state, province, canton, and municipality that ever tried a policy becomes a data point. Synthetic controls, difference-in-differences, regression discontinuity. Not opinion. Not ideology. Measurement.
+> Your planet has 10,000 jurisdictions, each trying slightly different policies. Some produce healthy, wealthy citizens. Others produce the opposite. Right now, you determine which is which by having politicians argue on television. The Optimal Policy Generator replaces the arguing with counting.
 >
-> Output: ENACT / REPLACE / REPEAL / MAINTAIN. Each recommendation scored on the two numbers.
-
-**Right Panel: Optimal Budget Generator**
-
-> Finds the optimal spending level for every budget line: the point where each additional dollar produces less benefit than spending it somewhere else. The current largest misallocation: clinical trial funding sits at roughly 1% of its optimal level. Military spending is $391 billion above optimal.
+> It examines what every jurisdiction tried and what happened next. Synthetic controls, difference-in-differences, regression discontinuity. Not opinion. Not ideology. Measurement. Output: ENACT / REPLACE / REPEAL / MAINTAIN. Each recommendation scored on the two numbers.
 >
-> Output: an optimal budget for every jurisdiction on Earth, updated continuously.
+> Its current highest-expected-value recommendation is the 1% Treaty: move 1% of every nation's weapons budget to clinical trials. Everyone cuts equally. Nobody is easier to invade. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. The average treatment arrives {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} people who would have died do not.
+>
+> Your governments have signed treaties banning chemical weapons (193 countries), biological weapons (187), and landmines (164). This one asks them to buy 1% fewer weapons and spend the savings on figuring out why everyone keeps dying. Pre-WW2 military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today, inflation-adjusted. They still won World War II. Then they cut spending {{< var post_ww2_military_cut_pct >}} in two years and walked into the greatest economic expansion in history. One percent should be manageable.
 
 **Center Display: The Two Numbers**
 
@@ -173,7 +188,111 @@ Two large, animated counters:
 - **Tax code**: 74,000 pages -> 6 lines. Filing cost per citizen: $1,200 -> $0.
 - **Drug approval**: 14 years, $2.6 billion per drug -> pragmatic trials, 90% cost reduction. 50 approvals/year -> 200+.
 - **Welfare**: 80+ programs, 95,000 administrators -> single universal deposit, automatic.
-- **Military**: $886B (3.5% GDP) -> $459B (strict deterrence). Savings fund clinical trials.
+- **Clinical trials**: {{< var military_to_government_clinical_trials_spending_ratio >}} kill:cure ratio -> 1% Treaty funds {{< var treaty_annual_funding >}}/year in trials.
+
+**Testimonial:**
+
+> *"We spent 4,000 years debating education policy. The Optimal Policy Generator resolved it in an afternoon. Our main regret is the 4,000 years." (Planet Keth-7, client since 8,000 BCE)*
+
+---
+
+### FEATURED PRODUCT 2: THE OPTIMAL BUDGET GENERATOR
+
+**Tagline:** The point where each additional dollar does less good than spending it somewhere else.
+
+**Replaces:** Whatever the lobbyists negotiated. **Retail price:** Included. **Currently paying:** Whatever the lobbyists negotiated.
+
+**Copy:**
+
+> The Optimal Budget Generator calculates the optimal spending level for every budget line in every jurisdiction on Earth: the point where each additional dollar produces less health or wealth than spending it somewhere else.
+>
+> The current largest misallocation: clinical trial funding sits at roughly 1% of its optimal level. The money that should be finding cures is sitting in the weapons budget, where it purchases the ability to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times. You can only end civilization once. The other {{< var nuclear_winter_spare_apocalypses_nounit >}} endings are in storage, costing money, doing nothing.
+>
+> You do not need new money. You need to stop losing the money you have.
+>
+> Output: an optimal budget for every jurisdiction on Earth, updated continuously, scored on the two numbers. Hand it to a lobbyist. The lobbyist hands it to Congress. The math does the selling.
+
+**Key numbers** (displayed as data cards):
+
+- 1% Treaty annual funding: {{< var treaty_annual_funding >}}/year
+- Trial capacity increase: {{< var dfda_trial_capacity_multiplier >}}
+- Disease queue: {{< var status_quo_queue_clearance_years >}} -> {{< var dfda_queue_clearance_years >}}
+- Average treatment arrives: {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner
+- Lives saved: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}
+
+**The ratchet:**
+
+> The percentage can go up. It never goes down. The treaty creates a class of wealthy humans (bondholders) whose bank accounts grow every time a war ends, a disease is eradicated, or a child who would have died gets to grow up. For the first time in history, the absence of war and disease is more profitable than their existence.
+
+**Testimonial:**
+
+> *"We kept 11,000 warheads for 200 years after we only needed 50. Then we moved 1% to clinical trials and cured our last disease in 22 years. The warheads did not notice they were missing." (The Yennari Collective, optimized 340 years ago)*
+
+**CTA:** "Read the full treaty text" / "Sign the Treaty at warondisease.org"
+
+---
+
+### FEATURED PRODUCT 3: THE DECENTRALIZED TODO LIST FOR HUMANITY
+
+**Tagline:** Every task ranked by expected value in health and wealth. Yours is in here.
+
+**Replaces:** Nobody is doing this. **Retail price:** Free to use. Pays to complete. **Currently paying:** Nobody is doing this.
+
+**Layout:** A stylized task list rendered like a terminal readout, showing ranked tasks with expected value scores and estimated completion times.
+
+**Copy:**
+
+> Every product in this catalog produces tasks. The 1% Treaty needs signatures. The Decentralized FDA needs trial participants. The Wishocracy needs votes. The code needs engineers. The campaigns need organizers. Right now, these tasks are scattered across websites, inboxes, and good intentions. Nobody knows which task has the highest expected value or who could complete it at the lowest cost.
+>
+> The TODO list computes both. It calculates the expected value of every action (signatures, code contributions, trial enrollment, lobbying visits, social shares) in health and wealth, and identifies the lowest-cost actor for each one. Your doctor is the lowest-cost actor for enrolling patients. Your senator's constituent is the lowest-cost actor for a lobbying visit. You are the lowest-cost actor for something, and the machine knows what it is.
+>
+> If you sign up, you get your own subtask: Optimize [Your Name]'s Life. If you add your organization, it gets one too: Optimize [Your Organization]. These nest under the root. The whole thing is one tree, from "Optimize Earth" down to "take your medication."
+>
+> In the long run, governments become irrelevant. AI agents execute the TODO list directly. The optimal policies and budgets get implemented because the math is public and the agents do not need to be lobbied. Until then, we lobby.
+
+**Interactive element:** A ranked task list showing a real day:
+
+> 1. **Sign the 1% Treaty publicly** (36 seconds) - EV: $4,200
+> 2. **Share this page with 3 contacts** (2 minutes) - EV: $890
+> 3. **Take night meds** (30 seconds) - EV: $12 (health maintenance)
+> 4. **Apply for the Survival and Flourishing Fund grant** (2.5h) - EV: $47,000
+> 5. **File shareholder proposal at [company]** (4h) - EV: $2.1M
+> 6. **Enroll 10 patients in depression outcome tracking** (1h) - EV: $34,000
+
+> Every task has a price, a time estimate, and a person best positioned to do it. The TODO list is live at optimitron.com/tasks.
+
+**CTA:** "Browse the TODO list" -> optimitron.com/tasks
+
+---
+
+### FEATURED PRODUCT 4: THE LOVING TAKEOVER
+
+**Tagline:** Buy the companies that control your government. Hand their lobbyists an optimal budget.
+
+**Replaces:** Moral persuasion (9,000 years, zero results). **Retail price:** {{< var defense_takeover_cost_total >}} for the full takeover. **You receive:** Voting shares in the companies whose lobbying writes your laws.
+
+**Layout:** Two panels. Left: the mechanism (shares -> votes -> board seats -> lobbyists -> optimal budget). Right: the ExxonMobil proof of concept. Below: the math on cost and returns.
+
+**Copy:**
+
+> The companies that build your weapons are, by any rational accounting, bad at being companies. They pay their best engineers to shrink the economy they sell into. Their shareholders get the same diseases as everyone else. Their CEO's mother has Parkinson's, and there is no trial because the money that would have funded it is currently a missile. They are spending money to make themselves poorer, sicker, and eventually dead. This is not an adversary. This is a company in need of better management.
+>
+> You buy shares. Shares come with voting rights. Voting rights let you hand the lobbyists an optimal budget calculated by the Optimal Budget Generator to maximize health and wealth. The engineers switch from guidance systems to surgical robots. Same math. Fewer craters. The shareholders get appreciation in a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. The CEO's mother gets her Parkinson's trial. The lobbyists get a raise. Nobody loses anything. The previous arrangement was losing money for everyone in it simultaneously, which is harder than it sounds.
+
+**Proof of concept:**
+
+> In 2021, twelve people with $12.5 million and 0.02% of ExxonMobil won three seats on its board. Vanguard and BlackRock, who own roughly 60%, voted with them. The argument was: your strategy is destroying the value of the people who own this company. Board seats across the military-industrial complex cost {{< var defense_takeover_cost_activist >}} ({{< var defense_takeover_cost_activist_pct_investable_assets >}} of the money invested on Earth).
+
+> We tried moral persuasion for 9,000 years. Then we tried paying them. Took six months.
+
+**Corporate transformation cards** (visual, 3-4 cards, subtle before/after animation):
+
+- Lockheed Martin -> Lockheed Martin Health Systems
+- Raytheon -> Raytheon Wellness Infrastructure
+- Northrop Grumman -> Northrop Grumman Medical Devices
+- General Dynamics -> General Dynamics Civil Engineering
+
+> Same factories. Same engineers. Same stock tickers. Different products. The revenue was always the point; the killing was just the sales channel.
 
 **Testimonial:**
 
@@ -181,11 +300,11 @@ Two large, animated counters:
 
 ---
 
-### PRODUCT 2: THE WISHOCRACY (The Direct Allocation System)
+### FEATURED PRODUCT 5: THE WISHOCRACY (The Direct Allocation System)
 
 **Tagline:** Ask-the-audience, not phone-a-friend.
 
-**Replaces:** 535 middlemen and their donors. **Retail price:** Free. **Currently paying:** Whatever your representatives' donors feel like.
+**Replaces:** 535 purchased intermediaries and their donors. **Retail price:** Free. **Currently paying:** {{< var us_total_lobbying_annual >}}/year in lobbying, plus whatever the laws the donors write afterward cost you.
 
 **Layout:** A live, working pairwise slider demo dominates the viewport. Below: accuracy comparison and anti-corruption architecture.
 
@@ -205,9 +324,9 @@ A working pairwise comparison slider. The visitor drags between two competing bu
 
 Below the slider, a real-time display shows: "If everyone answered the way you just did, {{< var treaty_annual_funding >}} per year moves from [X] to [Y]."
 
-**Architecture callout:**
+**Anti-corruption architecture:**
 
-> Your money buys you a share of the profit, not extra civic votes or corporate control. One civic vote per human. Not for sale. You cannot buy the steering wheel, no matter how many shares you own. Eighty percent of treaty funds go through the Wishocracy and cannot be touched by any individual. The other twenty percent goes through traditional channels and will be partially stolen. This is budgeted for. It is still cheaper than what you have now.
+> Eighty percent of treaty funds go through the Wishocracy and cannot be touched by any individual. The other twenty percent goes through traditional channels and will be partially stolen. This is budgeted for. It is still cheaper than what you have now, where the percentage stolen is higher and also classified.
 
 **Accuracy stats:**
 
@@ -223,43 +342,49 @@ Below the slider, a real-time display shows: "If everyone answered the way you j
 
 ---
 
-### PRODUCT 3: THE 1% TREATY (The Budget Redirect)
+## SECTION 5: THE GOVERNMENT REPLACEMENT SUITE
 
-**Tagline:** The minimum viable fix.
+**Layout:** A grid of product cards. Each card shows: name, what it replaces, retail price / currently paying, one-paragraph description. Cards expand on click to show full detail and (where applicable) working code blocks. This is the full catalog; the featured products above are the headliners.
 
-**Replaces:** The current funding allocation between killing and curing. **Retail price:** {{< var treaty_campaign_total_cost >}} (one-time). **Generates:** {{< var treaty_annual_funding >}}/year, every year, until your species runs out of diseases or patience.
+**Header:**
 
-**Copy:**
-
-> Our flagship feature: knowing where the trillions went.
+> ## The Government Replacement Suite
 >
-> You do not need new money. You need to stop losing the money you have. You maintain {{< var global_warhead_count_nounit >}} nuclear warheads. You can only end your civilization once. The other {{< var nuclear_winter_overkill_factor_nounit >}} minus 1 endings are in storage, costing money, doing nothing.
+> Most planets also order these. Each one replaces a government agency with software that does not accept campaign contributions, does not have a revolving door, and does not need 80,000 employees to perform arithmetic.
 >
-> Your governments already signed treaties banning chemical weapons (193 countries), biological weapons (187), and landmines (164). This one asks them to buy 1% fewer weapons and spend the savings on clinical trials. Every nation cuts equally, so no country gets weaker.
->
-> Pre-WW2 military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today (inflation-adjusted). They still won World War II. Then they cut military spending {{< var post_ww2_military_cut_pct >}} in two years and produced the greatest economic expansion in history. One percent should be manageable.
-
-**Key numbers** (displayed as data cards):
-
-- Redirect: {{< var treaty_annual_funding >}}/year
-- Trial capacity increase: {{< var dfda_trial_capacity_multiplier >}}
-- Disease queue: {{< var status_quo_queue_clearance_years >}} -> {{< var dfda_queue_clearance_years >}}
-- Average treatment arrives: {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner
-- Lives saved: {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}
-
-**The ratchet:**
-
-> The percentage can go up. It never goes down. Article III creates a class of wealthy humans (bondholders) whose bank accounts grow every time a war ends, a disease is eradicated, or a child who would have died gets to grow up. For the first time in history, the absence of war and disease is more profitable than their existence.
-
-**Testimonial:**
-
-> *"We kept 11,000 warheads for 200 years after we only needed 50. Then we redirected 1% and cured our last disease in 22 years. The warheads did not notice they were missing." (The Yennari Collective, optimized 340 years ago)*
-
-**CTA:** "Sign the Treaty at warondisease.org" / "Read the full treaty text"
+> Every price is anchored to the most similar machine you already run. Every assumption carries its uncertainty through the arithmetic. The few humans who remain are there to sign their names, because someone must be arrestable.
 
 ---
 
-### PRODUCT 4: THE AUTOMATED REVENUE SERVICE
+### THE DECENTRALIZED FDA
+
+**Replaces:** Your drug approval agency, which blocks safe treatments for an average of 12 years after safety is established. **Retail price:** {{< var recovery_trial_cost_per_patient >}}/patient. **Currently paying:** {{< var traditional_phase3_cost_per_patient >}}/patient.
+
+**Layout:** An interactive treatment ranking table pulling from studies.dfda.earth API.
+
+**Copy:**
+
+> An open protocol that connects treatments to patients and records outcomes automatically. Drug inserts (the pamphlet nobody reads, written by the company selling the drug) are replaced with Outcome Labels: real-world data from millions of patients showing what actually happened.
+>
+> The UK's RECOVERY trial spent {{< var recovery_trial_total_cost >}} over 6 months at {{< var recovery_trial_cost_per_patient >}}/patient. Found dexamethasone (available since 1957). Saved {{< var recovery_trial_global_lives_saved_nounit >}} lives. The NIH received $1.665 billion for Long COVID over 4 years and completed zero trials. Same money at RECOVERY efficiency: 600 completed trials.
+
+**Interactive element:** A searchable, sortable table. Columns: Condition, Treatment, Effect size (with CI), Sample size (N), Optimal dose, Comparative ranking. Default view: depression treatment rankings (most complete dataset). Allow switching between conditions.
+
+**Below the table:**
+
+> {{< var global_disease_deaths_per_minute_nounit >}} people die every minute from conditions like these. Not because the cures are impossible. Because the search is underfunded by a factor of {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}.
+
+**Traction line:**
+
+> The Decentralized FDA has already generated outcome labels from 12 million datapoints contributed by 10,000 people. The rankings are public at studies.dfda.earth.
+
+**Testimonial:**
+
+> *"Our FDA equivalent once took 14 years to approve a treatment that had been safely used on 2 million patients in neighboring jurisdictions. The Decentralized FDA approved it in 4 months. The 14-year agency is now a museum. The museum is not well attended." (Client, Triangulum Galaxy)*
+
+---
+
+### THE AUTOMATED REVENUE SERVICE
 
 **Tagline:** Six lines replace 74,000 pages.
 
@@ -267,7 +392,7 @@ Below the slider, a real-time display shows: "If everyone answered the way you j
 
 **Copy:**
 
-> Your tax system has 74,000 pages of rules. The IRS employs 95,000 humans to interpret them. An entire profession ("accountant") exists solely to decode rules your government wrote for itself. The replacement:
+> Your tax system has 74,000 pages of rules. The IRS employs 95,000 humans to interpret them. An entire profession ("accountant") exists solely to decode rules your government wrote for itself. Your 74,000 pages exist because each page is a favor someone paid for. Remove the favors, remove the pages.
 
 **The code (syntax-highlighted):**
 
@@ -283,7 +408,7 @@ function _update(address from, address to, uint256 value) internal override {
 }
 ```
 
-> Six lines. Every transfer automatically deducts 0.5% and sends it to the treasury. Filing, forms, audits, compliance departments, offshore routing, and the entire accountancy profession all become unnecessary, because the tax collects itself inside the transaction. You cannot lobby a smart contract. You cannot offshore a protocol.
+> Six lines. Every transfer automatically deducts 0.5% and sends it to the treasury. Filing, forms, audits, compliance departments, offshore routing, and the entire accountancy profession all become unnecessary, because the tax collects itself inside the transaction. You cannot lobby a smart contract.
 
 **Before/after table:**
 
@@ -297,7 +422,7 @@ function _update(address from, address to, uint256 value) internal override {
 
 ---
 
-### PRODUCT 5: THE UNIVERSAL SECURITY ADMINISTRATION
+### THE UNIVERSAL SECURITY ADMINISTRATION
 
 **Tagline:** 80+ programs replaced by one for-loop.
 
@@ -332,90 +457,7 @@ function distributeUBI() external {
 
 ---
 
-### PRODUCT 6: THE DECENTRALIZED FDA
-
-**Tagline:** What funded research actually produces.
-
-**Replaces:** Your drug approval agency, which blocks safe treatments for an average of 12 years after safety is established. **Retail price:** {{< var recovery_trial_cost_per_patient >}}/patient. **Currently paying:** {{< var traditional_phase3_cost_per_patient >}}/patient. The RECOVERY trial proved the cheaper number works.
-
-**Layout:** An interactive treatment ranking table pulling from studies.dfda.earth API.
-
-**Copy:**
-
-> The Decentralized FDA aggregates treatment outcome data from real patients. Here is what the evidence says works, ranked by measured effect size, for the conditions that kill the most people.
-
-**Interactive element:** A searchable, sortable table. Columns: Condition, Treatment, Effect size (with CI), Sample size (N), Optimal dose, Comparative ranking. Default view: depression treatment rankings (most complete dataset). Allow switching between conditions.
-
-**The NIH comparison:**
-
-> The UK's RECOVERY trial spent {{< var recovery_trial_total_cost >}} over 6 months at {{< var recovery_trial_cost_per_patient >}}/patient. Found dexamethasone (available since 1957). Saved {{< var recovery_trial_global_lives_saved_nounit >}} lives. The NIH received $1.665 billion for Long COVID over 4 years and completed zero trials. Same money at RECOVERY efficiency: 600 completed trials.
-
-**Below the table:**
-
-> {{< var global_disease_deaths_per_minute_nounit >}} people die every minute from conditions like these. Not because the cures are impossible. Because the search is underfunded by a factor of {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}.
-
-**Traction line:**
-
-> The health engine already generated outcome labels from 12 million datapoints contributed by 10,000 people. The rankings are public at studies.dfda.earth.
-
-**Testimonial:**
-
-> *"Our FDA equivalent once took 14 years to approve a treatment that had been safely used on 2 million patients in neighboring jurisdictions. The Decentralized FDA approved it in 4 months. The 14-year agency is now a museum. The museum is not well attended." (Client, Triangulum Galaxy)*
-
----
-
-### PRODUCT 7: THE DECENTRALIZED CONGRESS
-
-**Tagline:** 535 intermediaries replaced by 20 questions a year.
-
-**Replaces:** 535 humans voting on 5,000-page bills they have not read. **Retail price:** Twenty questions a year with the evidence attached. **Currently paying:** {{< var us_total_lobbying_annual >}}/year in lobbying, plus {{< var us_gov_waste_tariffs >}} in tariff losses no citizen would vote for if asked.
-
-**Copy:**
-
-> 535 humans vote on 5,000-page bills they have not read, funded by the industries the bills regulate. The replacement is you, twenty questions a year, with the evidence attached.
->
-> Consider how a tariff lives. It costs your economy {{< var us_gov_waste_tariffs >}} a year. Everyone pays slightly more for washing machines; three factories profit enormously. These policies do not survive because citizens want them. They survive because citizens are never asked.
-
-**Interactive element:** A sample ballot question with the Optimitron's evidence card attached:
-
-> **Question: Should the sugar subsidy ($4.1B/year) continue?**
->
-> Evidence card: Jurisdictions that removed sugar subsidies saw [X] change in health outcomes, [Y] change in food prices, [Z] change in agricultural employment. Net fiscal impact: [calculated].
->
-> [YES] [NO]
-
-> Twenty questions a year, roughly twenty minutes. Your current civic workload is one bundled vote every two years plus unlimited shouting. This is less work and it is aimed. You cannot take eight billion people to lunch.
-
----
-
-### PRODUCT 8: THE HUMANITY MANAGER
-
-**Tagline:** The decentralized to-do list that calculates what you should do next.
-
-**Layout:** A stylized task queue rendered like a terminal readout, showing ranked tasks with expected value scores and estimated completion times.
-
-**Copy:**
-
-> Every module in this catalog produces tasks. The 1% Treaty needs signatures. The Decentralized FDA needs trial participants. The Wishocracy needs votes. The code needs engineers. The campaigns need organizers. Right now, these tasks are scattered across websites, inboxes, and good intentions. Nobody knows which task has the highest expected value or who could complete it at the lowest cost.
->
-> The Humanity Manager computes both. It calculates the expected value of every action (signatures, code contributions, trial enrollment, lobbying visits, social shares) and identifies the lowest-cost actor for each one. Your doctor is the lowest-cost actor for enrolling patients. Your senator's constituent is the lowest-cost actor for a lobbying visit. You are the lowest-cost actor for something, and the machine knows what it is.
-
-**Interactive element:** A ranked task queue showing a real day:
-
-> 1. **Sign the 1% Treaty publicly** (36 seconds) - EV: $4,200
-> 2. **Share this page with 3 contacts** (2 minutes) - EV: $890
-> 3. **Take night meds** (30 seconds) - EV: $12 (health maintenance)
-> 4. **Apply for the Survival and Flourishing Fund grant** (2.5h) - EV: $47,000
-> 5. **File shareholder proposal at [company]** (4h) - EV: $2.1M
-> 6. **Enroll 10 patients in depression outcome tracking** (1h) - EV: $34,000
-
-> Every task has a price, a time estimate, and a person best positioned to do it. Connect any AI assistant to the MCP server and ask it what you should do next. It is running today.
-
-**CTA:** "Ask the machine what to do next" -> /mcp
-
----
-
-### PRODUCT 9: THE DEPARTMENT OF PEACE
+### THE DEPARTMENT OF PEACE
 
 **Tagline:** Your Department of Defense has fought 13+ wars since it rebranded from the Department of War. The wars did not become more defensive.
 
@@ -429,7 +471,7 @@ function distributeUBI() external {
 
 **Left Panel: The Settlement Engine**
 
-> Makes resolving disputes cheaper than fighting them. The US military hegemony costs $674B to $1.38T/year more than it returns. The settlement engine prices every conflict: what does it cost to fight vs. what does it cost to settle? When settling is cheaper (it almost always is), the math does the selling.
+> Makes resolving disputes cheaper than fighting them. Prices every conflict: what does it cost to fight vs. what does it cost to settle? When settling is cheaper (it always is), the math does the selling.
 
 **Right Panel: The Disposal Program (feat. The Very Strong Robot)**
 
@@ -451,83 +493,96 @@ function distributeUBI() external {
 
 ---
 
-### PRODUCT 10: THE ALIGNED ELECTION COMMISSION
+### THE DECENTRALIZED CONGRESS
 
-**Tagline:** Politician alignment scores. Evidence replaces lobbying.
+**Tagline:** 535 intermediaries replaced by 20 questions a year.
 
-**Replaces:** Campaign finance (PACs, dark money, corporate donations). **Retail price:** 1 algorithm plus {{< var aligned_election_commission_annual_opex >}}/year. **Currently paying:** $15.9 billion per federal election cycle, plus whatever the laws the donors write afterward cost you, which is the actual price tag.
-
-**Copy:**
-
-> Current system: {{< var us_total_lobbying_annual >}}/year in lobbying buys your laws. Replacement: a public scorecard that scores every legislator on two axes (treaty compliance and Court of Humanity compliance), then funds the campaigns of the highest-scoring candidates. The NRA perfected this technology. This product plagiarizes it, substituting "not dying from diseases" for "guns."
-
----
-
-### PRODUCT 11: THE COURT OF HUMANITY
-
-**Tagline:** The negative incentive. Governments that harm their citizens become expensive to insure.
-
-**Replaces:** The International Criminal Court (10 convictions in 21 years, ~$150M per conviction, cannot enforce its own warrants). **Retail price:** One jurisdiction model plus evidence infrastructure. **Currently paying:** $150 million per conviction for a court nobody obeys.
-
-**Layout:** A jurisdiction diagram showing how consent-based jurisdiction works, plus examples of enforcement through capital markets.
+**Replaces:** 535 humans voting on 5,000-page bills they have not read. **Retail price:** Twenty questions a year with the evidence attached. **Currently paying:** {{< var us_total_lobbying_annual >}}/year in lobbying, plus {{< var us_gov_waste_tariffs >}} in tariff losses no citizen would vote for if asked.
 
 **Copy:**
 
-> Every product so far is a positive incentive: build better systems, people get healthier and wealthier. The Court of Humanity is the negative incentive. It makes governments pay for the damage they cause.
+> 535 humans vote on 5,000-page bills they have not read, funded by the industries the bills regulate. Each ballot ships with the Optimal Policy Generator's evidence card showing what the policy did wherever it was tried. Consider how a tariff lives. It costs your economy {{< var us_gov_waste_tariffs >}} a year. Everyone pays slightly more for washing machines; three factories profit enormously. The tariff survives by never being put to the people who pay for it.
 >
-> Jurisdiction comes from human consent, not geographic accident. If a government violates human rights, any affected human can bring a case. Enforcement works through capital markets: governments found in violation become expensive to insure, their bonds get downgraded, and their borrowing costs rise. No army required. The bond market is larger than every military on Earth combined, and it responds to risk assessments, not moral arguments.
+> Twenty questions a year, roughly twenty minutes. Your current civic workload is one bundled vote every two years plus unlimited shouting. This is less work and it is aimed. You cannot take eight billion people to lunch.
 
-**How it works:**
+**Interactive element:** A sample ballot question with the OPG's evidence card attached:
 
-> A government poisons a river. Citizens file with the Court. The Court evaluates the evidence (same methodology as the Optimitron: measured outcomes, not ideology). If the violation is confirmed, the rating propagates: insurance premiums on that government's operations rise, sovereign credit ratings adjust, institutional investors rebalance. The government's cost of doing business goes up until the violation stops.
-
-**The comparison:**
-
-> Current system: the International Criminal Court has convicted 10 people in 21 years, at a cost of roughly $150 million per conviction, and cannot enforce its own warrants. The Court of Humanity does not issue warrants. It issues risk assessments. Nobody has to arrest anyone. The money moves on its own.
+> **Question: Should the sugar subsidy ($4.1B/year) continue?**
+>
+> Evidence card: Jurisdictions that removed sugar subsidies saw [X] change in health outcomes, [Y] change in food prices, [Z] change in agricultural employment. Net fiscal impact: [calculated].
+>
+> [YES] [NO]
 
 ---
 
-### REMAINING PRODUCTS
+### REMAINING AGENCIES
 
-**Layout:** A grid of smaller cards. Each card shows: name, one-line description, cost comparison. Cards expand on click.
+**Layout:** A compact grid of smaller cards. Each card shows: name, one-line description, cost comparison. Cards expand on click.
 
-1. **Decentralized Accountability Office.** Real-time public ledger. Current: annual audits, years late. Replacement: every dollar tracked live.
-2. **Decentralized Census Bureau.** Continuous measurement. Current: $13B every 10 years. Replacement: real-time, always current.
-3. **Algorithmic Monetary Authority.** 0% inflation targeting. Current: 15 people in a room. Replacement: one formula; new money enters at the bottom.
-4. **Transparent Securities Commission.** Competence-based access, not wealth gates. Current: accredited investor rules that curated Madoff's victims.
-5. **Drug Treatment Administration.** Addiction as disease, not crime. Current: $182B/year on criminalization. Replacement: treatment cheaper than incarceration.
-6. **Immigration Revenue Service.** Priced legal entry with citizen dividends. Current: $25.6B/year on enforcement, $0 in entry fees.
-7. **Decentralized Institutes of Health.** Treaty-funded research. Current: $47B/year (3.3% to trials). Replacement: {{< var treaty_annual_funding >}}/year (100% to trials).
+1. **Decentralized Institutes of Health.** Replaces: grant committees where researchers spend 40% of their time writing applications instead of doing research. Treaty funds flow to researchers by whether the patient got better, not by whose grant prose was prettiest.
+2. **Aligned Election Commission.** Politicians rated by how well their votes matched what their constituents wanted. The score is public. The money follows the score. The NRA perfected this technology. This product plagiarizes it, substituting "not dying from diseases" for "guns." Cost: 1 algorithm plus {{< var aligned_election_commission_annual_opex >}}/year. Currently paying: $15.9 billion per federal election cycle.
+3. **Decentralized Accountability Office.** Every transaction visible. Every allocation auditable. In real time, not fiscal quarters. Your current system discovers theft the way archaeologists discover civilizations: long after everyone involved has moved on. Cost: $0. The ledger comes with the Automated Revenue Service.
+4. **Decentralized Census Bureau.** Continuous measurement. The sensor array for the whole machine. Current: $14.2 billion every 10 years, wrong 5% of the time. Replacement: {{< var decentralized_census_bureau_annual_opex >}}/year, always current.
+5. **Algorithmic Monetary Authority.** 0% inflation targeting. Current: 12 humans deciding what your money is worth, minus 96% of your currency's purchasing power since 1913. Replacement: one formula plus {{< var algorithmic_monetary_authority_annual_opex >}}/year; new money enters at the bottom as equal deposits to every citizen.
+6. **Transparent Securities Commission.** Competence-based access, not wealth gates. Every Madoff victim passed the current wealth test. The rule did not stop the largest fraud in history; it curated the victims. Cost: 1 public disclosure schema plus {{< var transparent_securities_commission_annual_opex >}}/year.
+7. **Drug Treatment Administration.** Addiction as disease, not crime. Portugal routed users into treatment instead of jail in 2001: HIV infections among people who inject fell 95%, overdose deaths dropped. Cost: one letter. Currently paying: {{< var us_gov_waste_drug_war >}}/year.
+8. **Immigration Revenue Service.** Priced legal entry with citizen dividends. Migrants already pay smugglers {{< var us_smuggler_fee_avg >}} a head for a worse product. The border queue becomes a checkout page. Nobody swims a river to reach a checkout page. Your annual dividend: {{< var immigration_dividend_per_citizen_annual >}} per citizen.
+9. **Court of Humanity.** Jurisdiction from human consent, not geographic accident. Enforcement through capital markets: the Court issues risk assessments on governments that poison rivers, steal elections, or murder civilians. The bond market is larger than every military on Earth combined, and it responds to risk assessments, not moral arguments. Nobody has to arrest anyone. The money moves on its own. The ICC spent $150 million per conviction and achieved 10 convictions in 21 years. This product replaces the arresting with accounting.
 
 **Total cost comparison bar** at bottom of section: a single horizontal bar showing total current cost of government services vs. total EOS cost.
 
 ---
 
-## SECTION 4: HOW THE MACHINE WORKS
+## SECTION 6: WHY YOUR GOVERNMENT DOES NOT HAVE A THERMOSTAT
 
-**Layout:** A clean animated system diagram showing the full mechanism. Not a three-step startup "How It Works" slide. A schematic showing how the products fit together. The pitchman tone continues: this is the "How the Products Fit Together" section of the brochure.
+**Layout:** A clean animated system diagram showing the full mechanism. Not a three-step startup "How It Works" slide. A schematic showing how the products fit together as a closed-loop control system.
 
 **Copy:**
 
-> The four products are one machine. Your current system uses the same components in the opposite order: companies buy the government, lobbyists push for policies that maximize shareholder profit, and nobody measures whether anyone got healthier or richer. Same machine. Same parts. Different direction.
+> Your oven has a sensor. It measures the temperature inside the oven, compares it to the temperature you requested, and adjusts the heating element until the two numbers match. This is called a closed-loop control system. Every appliance in your home has one. Your air conditioner, your cruise control, your refrigerator, your toilet. The toilet knows when to stop filling. Your government does not.
+
+**Animated diagram:** Two control-loop diagrams, animated:
+
+```
+YOUR OVEN (closed-loop):
+
+  Set 350°F --> Heating Element --> Oven --> Food
+      ^                              |
+      |                              |
+      +---- Thermometer <------------+
+             (measures actual temperature,
+              adjusts input)
+
+YOUR GOVERNMENT (open-loop):
+
+  "War on Drugs" --> $1 Trillion --> Drug Policy --> ???
+
+                              (no sensor)
+                              (no measurement)
+                              (no adjustment)
+
+           Overdose deaths: 6,000 --> 107,000
+           Budget change:   none
+           Duration: 53 years and counting
+```
+
+> Your War on Terror: $8 trillion spent, terrorist attacks went from about 1,000 per year to nearly 17,000 per year. No sensor. No adjustment. Fifty-three years of drug war with 18x more overdoses. No sensor. No adjustment. You are operating the most complex system in your solar system (a civilization of {{< var global_population_2024_nounit >}} humans) with less feedback instrumentation than a toaster.
+
+**The closed loop (animated, nodes light up in sequence):**
+
+> Your current system uses the same components in the opposite order: companies buy the government, lobbyists push for policies that maximize shareholder profit, and nobody measures whether anyone got healthier or richer. Same machine. Same parts. Different direction.
 >
-> You buy shares in the corporations whose lobbying writes your laws. Shares come with votes. Votes elect board members. The new board hands the lobbyists an optimal budget calculated by the Optimitron to maximize median healthy lifespan and median income. The Wishocracy lets every human set the priorities through pairwise comparisons. The Humanity Manager breaks the optimal policies into tasks and matches each task to the lowest-cost actor. The lobbyists sell Congress on the math. The 1% Treaty funds it. Each lap makes the next lap cheaper.
+> The Optimal Policy Generator is the sensor. The Optimal Budget Generator is the target. The Loving Takeover is the actuator (it controls the lobbying apparatus that controls Congress). The 1% Treaty is the power supply. The Wishocracy is the allocation circuit. And the feedback loop closes because the sensor measures the output of the policies it recommended, compares them to the target, and adjusts. Like a thermostat. Like every system you build when you bother to think about it for ten seconds.
 
-**Animated diagram:** The flow: Share Acquisition -> Board Seats -> Optimitron Calculates Optimal Budget -> Board Hands Budget to Lobbyists -> Lobbyists Sell Congress on the Math -> Policy Changes -> Wishocracy Sets Priorities -> Humanity Manager Distributes Tasks -> Economy Grows -> Value Increases -> More Capital for Next Fight. A virtuous cycle. Each node lights up in sequence.
+**Animated diagram:** The flow: Share Acquisition -> Board Seats -> OBG Calculates Optimal Budget -> Board Hands Budget to Lobbyists -> Lobbyists Sell Congress on the Math -> Policy Changes -> OPG Measures Outcomes -> Wishocracy Sets Priorities -> TODO List Distributes Tasks -> Economy Grows -> Value Increases -> More Capital for Next Fight. A virtuous cycle. Each node lights up in sequence.
 
-**Proof that this works:**
+**Testimonial:**
 
-> In 2021, twelve people with $12.5 million and 0.02% of ExxonMobil won three seats on its board. Vanguard and BlackRock, who own roughly 60%, voted with them. The argument was: your strategy is destroying the value of the people who own this company.
->
-> Board seats across the military-industrial complex cost {{< var defense_takeover_cost_activist >}} ({{< var defense_takeover_cost_activist_pct_investable_assets >}} of the money invested on Earth). Every industry that lobbies your government, all at once: {{< var full_corporate_takeover_cost_activist >}} ({{< var full_corporate_takeover_cost_activist_pct_investable_assets >}}).
-
-**Canonical line:**
-
-> We tried moral persuasion for 9,000 years. Then we tried paying them. Took six months.
+> *"We tried running our government without a feedback loop for 200 years. The engineers found this extremely funny. They kept asking 'but how do you know if it worked?' and we kept saying 'we argue about it.' They stopped laughing when they realized we were serious." (Planet Keth-7)*
 
 ---
 
-## SECTION 5: PLEASE SELECT AN EARTH
+## SECTION 7: PLEASE SELECT AN EARTH
 
 **Layout:** Full viewport. Centered animated line chart draws four trajectories from 2025 forward to 2045. Above the chart: a single input field for personalization. Below: copy explaining the lines. The framing is a chooser, not a forecast: you are selecting which Earth happens. Doing nothing selects the red line.
 
@@ -539,10 +594,10 @@ A single field: "Enter your net worth or annual income" with a toggle (net worth
 
 1. **Collapse** (red, animates downward): Current destructive economy trend. Crosses 35% extractive burden by {{< var destructive_economy_35pct_year >}}. Historical precedent labels on hover: "Soviet Union," "Venezuela," "Somalia." The current trend line, extended.
 2. **Fantasy Baseline** (gray, dotted, fading): 2.5% CAGR -> {{< var current_trajectory_gdp_year_20 >}} by 2045. Labeled "requires 20 consecutive lucky years." Visually thin and uncertain.
-3. **Treaty Trajectory** (blue, solid, animates upward): {{< var treaty_trajectory_cagr_year_20 >}} -> {{< var treaty_trajectory_gdp_year_20 >}} by 2045. Labeled "1% redirect."
-4. **Optimal Governance** (gold, bright, animates way up): {{< var wishonia_trajectory_cagr_year_20 >}} -> {{< var wishonia_trajectory_gdp_year_20 >}} by 2045. Labeled "stop being stupid."
+3. **Treaty Trajectory** (blue, solid, animates upward): {{< var treaty_trajectory_cagr_year_20 >}} -> {{< var treaty_trajectory_gdp_year_20 >}} by 2045. Labeled "1% Treaty."
+4. **Optimal Governance** (gold, bright, animates way up): {{< var wishonia_trajectory_cagr_year_20 >}} -> {{< var wishonia_trajectory_gdp_year_20 >}} by 2045. Labeled "full optimization."
 
-The gap between the red and blue lines should be visually emphasized (shaded region labeled "the hedge"). Small annotation near the divergence point: "the alpha: human stupidity."
+The gap between the red and blue lines should be visually emphasized (shaded region labeled "the hedge"). Small annotation near the divergence point: "the gap: human stupidity, priced annually."
 
 **Copy below chart:**
 
@@ -552,9 +607,15 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 >
 > The blue line is the 1% Treaty: move 1% of the weapons budget to clinical trials. The average person ends up {{< var treaty_vs_current_median_income_multiplier_year_20 >}} richer. The gold line is what happens if you install every product you just saw. The gap between these lines is the measured cost of human stupidity, priced annually, compounded over twenty years.
 
+**The downside and upside** (below the chart):
+
+> The downside: you own shares of the companies that currently control your government. They have paid dividends through every war and recession in living memory. The floor is "you accidentally bought an ETF with no fees."
+>
+> The upside: most products on your planet come with one benefit. A toaster makes toast. A car moves you from the place you do not want to be to the place you do not want to go. This product has the unusual property of making nearly everything else you own more valuable at the same time. The economy gets {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} larger by year 20. The companies you own capture that growth. Your taxes fall. Your other investments rise. Disease stops eating {{< var disease_burden_gdp_drag_pct >}} of GDP. You live longer to enjoy it.
+
 ---
 
-## SECTION 6: A DAY IN THE OPTIMIZED LIFE
+## SECTION 8: A DAY IN THE OPTIMIZED LIFE
 
 **Layout:** Warm, aspirational. Transition from the dark data-heavy sections to something that feels like sunrise. The visitor has seen the products; now they see what Tuesday looks like when the products are installed.
 
@@ -583,34 +644,7 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 
 > Same factories. Same engineers. Same stock tickers. Different products. The revenue was always the point; the killing was just the sales channel.
 
----
-
-## SECTION 7: YOUR MOVE
-
-**Layout:** Three clear paths. Cards or columns. Build is visually primary (largest card, first position).
-
-**Header:**
-
-> ## Your Move
-
-**Path 1: Build**
-> You have skills. Every product in this catalog needs engineers, researchers, lawyers, and organizers. The Earth Optimization Prize pays cash for completed work. The Humanity Manager knows which task has the highest expected value for someone with your skills. Pick a product. Build it.
->
-> -> See Open Tasks / Ask the Machine What To Do Next
-
-**Path 2: Spread**
-> You have a phone. The referendum needs signatures. The campaign needs reach. Every person who sees this page and acts on it brings the timeline forward.
->
-> -> Share This Page / Sign the Referendum
-
-**Path 3: Invest**
-> You have capital and want returns that compound with civilization getting better instead of worse.
->
-> -> Request the Private Placement Memorandum
-
----
-
-## SECTION 8: REVIEWS
+## SECTION 9: REVIEWS
 
 **Layout:** Two subsections. "Reviews from the Competition" (short, dark humor) and "Customer Reviews" (planet testimonials, star ratings). Light visual treatment; this is the comedic breather before the investor section.
 
@@ -633,7 +667,7 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 
 ---
 
-## SECTION 9: FOR INVESTORS
+## SECTION 10: YOUR MOVE
 
 **Layout:** Clean, warm, precise. Not the climax of the page; one participation path among three. Securities disclosure language is required.
 
@@ -663,19 +697,33 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 - Annual treaty funding generated: {{< var treaty_annual_funding >}}
 - Trial capacity multiplier: {{< var dfda_trial_capacity_multiplier >}}
 
+**Context** (displayed below projections, smaller text):
+
+> Historical public health ROI: smallpox eradication 280:1, childhood vaccination 13:1, Human Genome Project $1T economic impact. These are context for the scale of returns public health interventions have produced, not predictions for this investment.
+
 **DISCLOSURE** (always visible, not fine print):
 
-> All returns are projections from a published model, not guarantees. The model, its parameters, and every derivation chain are public. Comparable interventions (smallpox eradication ROI: 280:1, childhood vaccination ROI: 13:1, Human Genome Project: $1T economic impact) are context, not promises. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only. Equity is illiquid until an exit or listing; do not invest money you need. This page is not a prospectus. Full terms are in the Private Placement Memorandum, available upon request and verification of accredited investor status.
+> All returns are projections from a published model, not guarantees. The model, its parameters, and every derivation chain are public. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only. Equity is illiquid until an exit or listing; do not invest money you need. Full terms are in the Private Placement Memorandum, available upon request and verification of accredited investor status.
 
-**CTA button:** "Request the PPM" -> leads to an accredited investor verification flow.
+**Path 2: Claim Your Class A Share**
+> You are the President of Earth Optimization Services. Your Class A share is free. One civic vote per human. Not for sale.
+>
+> -> Sign Up and Claim Your Share
+
+**Path 3: Fund or Do a Task**
+> The decentralized TODO list for humanity is live. Every task has an expected value in health and wealth. Pledge money to fund a task (it executes when enough people commit) or do it yourself.
+>
+> -> Browse the TODO List at optimitron.com/tasks
 
 ---
 
-## SECTION 10: FOOTER
+## SECTION 11: FOOTER
 
 **The closer** (small text, centered):
 
 > Universe Optimization Services thanks you for your interest in continued existence.
+>
+> On most planets, you do not need to incorporate a company to stop people from dying. On yours, you do. So we did.
 >
 > The disease coming for someone you love almost certainly has no cure yet. This is how one gets found.
 >
@@ -689,30 +737,30 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 
 | Element | Section | Data Source | Behavior |
 |---------|---------|------------|----------|
-| Death counter | 1 (Performance Review) | `global_disease_deaths_per_minute` | Ticks every second |
-| Dysfunction Tax display | 1 (Performance Review) | Per-person cost, efficiency score, spending ratio | Large centered number |
-| Comparison matrix | 2 | All parameter variables | Static table, devastating |
-| Policy comparator | 3 (Optimitron) | 4 example policies with before/after | Click to expand |
-| Two-number dashboard | 3 (Optimitron) | Median HALE + median income | Animated counters |
-| Wishocracy budget slider | 3 (Wishocracy) | Pairwise comparisons | Live slider with real-time budget output |
-| Treaty key numbers | 3 (1% Treaty) | Treaty parameters | Data cards |
-| Tax code (Solidity) | 3 (Revenue Service) | Static | Syntax-highlighted code block |
-| UBI code (Solidity) | 3 (Universal Security) | Static | Syntax-highlighted code block |
-| Treatment rankings | 3 (dFDA) | studies.dfda.earth API or static dataset | Searchable, sortable table |
-| Sample ballot question | 3 (Congress) | Static with Optimitron evidence card | Interactive yes/no |
-| Task queue | 3 (Humanity Manager) | Real or illustrative task list with EV scores | Terminal-style readout |
-| Settlement/disposal panels | 3 (Dept. of Peace) | Military spending params, Megatons to Megawatts data | Two-panel layout |
-| Court jurisdiction diagram | 3 (Court of Humanity) | Static with enforcement examples | Jurisdiction flow diagram |
-| Remaining product cards | 3 (Remaining) | Cost data | Expand on click |
-| Cost comparison bar | 3 (bottom) | Total current vs EOS cost | Horizontal bar |
-| System diagram | 4 (How Machine Works) | Full mechanism schematic | Animated flow, nodes light up in sequence |
-| Personalization input | 5 (Select an Earth) | User-entered net worth or income | Rescales chart Y-axis |
-| GDP trajectory chart | 5 | GDP trajectory parameters (4 scenarios) | Animated draw, hover tooltips, shaded hedge region |
-| Day timeline | 6 (Optimized Life) | Static copy | Scroll-driven reveal, each entry animates in |
-| Corporate transformation cards | 6 | Static | Subtle before/after animation |
-| Disease reviews | 8 (Reviews) | Static copy | Styled as review cards with star ratings |
-| Planet reviews | 8 (Reviews) | Static copy | Styled as customer review cards with star ratings |
-| ROI table | 9 (Investors) | Parameter variables | Static display |
+| Death counter | 1 (The Bill) | `global_disease_deaths_per_minute` | Ticks every second |
+| Dysfunction Tax display | 1 (The Bill) | Per-person cost, efficiency score, spending ratio | Large centered number |
+| Comparison matrix | 3 | All parameter variables | Static table, devastating |
+| Policy comparator | 4 (OPG) | 4 example policies with before/after | Click to expand |
+| Two-number dashboard | 4 (OPG) | Median HALE + median income | Animated counters |
+| Treaty key numbers | 4 (OBG) | Treaty parameters | Data cards |
+| TODO list | 4 (TODO List) | Real or illustrative task list with EV scores | Terminal-style readout |
+| Corporate transformation cards | 4 (Loving Takeover) | Static | Subtle before/after animation |
+| Wishocracy budget slider | 4 (Wishocracy) | Pairwise comparisons | Live slider with real-time budget output |
+| Tax code (Solidity) | 5 (Revenue Service) | Static | Syntax-highlighted code block |
+| UBI code (Solidity) | 5 (Universal Security) | Static | Syntax-highlighted code block |
+| Treatment rankings | 5 (dFDA) | studies.dfda.earth API or static dataset | Searchable, sortable table |
+| Settlement/disposal panels | 5 (Dept. of Peace) | Military spending params, Megatons to Megawatts data | Two-panel layout |
+| Sample ballot question | 5 (Congress) | Static with OPG evidence card | Interactive yes/no |
+| Remaining agency cards | 5 (Remaining) | Cost data | Expand on click |
+| Cost comparison bar | 5 (bottom) | Total current vs EOS cost | Horizontal bar |
+| Thermostat diagrams | 6 (Thermostat) | Static | Animated control-loop comparison |
+| System diagram | 6 (Thermostat) | Full mechanism schematic | Animated flow, nodes light up in sequence |
+| Personalization input | 7 (Select an Earth) | User-entered net worth or income | Rescales chart Y-axis |
+| GDP trajectory chart | 7 | GDP trajectory parameters (4 scenarios) | Animated draw, hover tooltips, shaded hedge region |
+| Day timeline | 8 (Optimized Life) | Static copy | Scroll-driven reveal, each entry animates in |
+| Disease reviews | 9 (Reviews) | Static copy | Styled as review cards with star ratings |
+| Planet reviews | 9 (Reviews) | Static copy | Styled as customer review cards with star ratings |
+| ROI table | 10 (Your Move) | Parameter variables | Static display, expandable |
 
 ## TECHNICAL NOTES FOR IMPLEMENTATION
 
@@ -723,14 +771,15 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 - The death counter should stop when the page is not visible (use Page Visibility API) and resume when the user returns, with a note: "XX more people died while you were away."
 - Treatment ranking data: try studies.dfda.earth API first; fall back to the illustrative depression dataset from dfda-spec-paper.qmd.
 - All charts and interactive elements should animate on scroll-into-view, not on page load.
-- Section 1 (Performance Review) should be dense, fast, and feel like reading a charge sheet. No breathing room. The numbers should hit in sequence.
-- Section 2 (Comparison Matrix) should be the visual centerpiece. Large table, well-spaced, high contrast.
-- Section 6 (Optimized Life) should feel visually distinct from the dark data-heavy sections: lighter background, more whitespace, warmer colors. This is the sunrise moment.
-- Section 8 (Reviews) should feel like a real review page: star ratings, cards, the diseases' one-star reviews styled as hostile competitor feedback. Light comedic treatment.
+- Section 1 (The Bill) should be dense, fast, and feel like reading a charge sheet. No breathing room. The numbers should hit in sequence.
+- Section 3 (Comparison Matrix) should be the visual centerpiece. Large table, well-spaced, high contrast.
+- Section 8 (Optimized Life) should feel visually distinct from the dark data-heavy sections: lighter background, more whitespace, warmer colors. This is the sunrise moment.
+- Section 9 (Reviews) should feel like a real review page: star ratings, cards, the diseases' one-star reviews styled as hostile competitor feedback.
 - The corporate transformation cards (Lockheed Health, Raytheon Wellness) should have a subtle before/after animation.
 - Product code blocks (Automated Revenue Service, Universal Security Administration) should use syntax highlighting and feel like working, deployable code, not decoration.
-- The Wishocracy slider (Product 2) should produce real-time budget numbers when dragged.
-- The Humanity Manager task queue (Product 8) should feel like a live terminal readout with expected value scores.
+- The Wishocracy slider (Featured Product 5) should produce real-time budget numbers when dragged.
+- The TODO list (Featured Product 3) should feel like a live terminal readout with expected value scores.
+- The thermostat section (Section 6) should animate both diagrams: the oven loop cycling smoothly, the government loop dead-ending.
 
 ## COPY THAT MUST APPEAR VERBATIM
 
@@ -742,10 +791,17 @@ These lines are canonical to the project and must not be paraphrased:
 
 ## WHAT IS NOT ON THIS PAGE
 
+- No "Evidence Engine" naming. The tools are called the Optimal Policy Generator and the Optimal Budget Generator.
+- No "Budget Redirect" naming. The product is the 1% Treaty; it is the OPG's highest-expected-value recommendation, not a standalone peer product.
+- No "Humanity Manager" naming. The product is the Decentralized TODO List for Humanity.
+- No "task queue" or other engineer-jargon renaming of the TODO list.
+- No startup framing. No "Our flagship feature." No "The good news." No Y Combinator voice.
 - No Moronia content (the dystopia chapter). The landing page shows the future people want, not the one they're afraid of. The book handles the dark case.
 - No contempt for the reader. No "your species is too stupid." No sneering. The reader is the president of this machine; we hand them the keys.
 - No crypto-bro energy. No "immutable, trustless, permissionless." The technology is described by what it does, not by its architecture.
 - No consultant frameworks. No "let's unpack the synergies." Plain words.
-- No startup pitch-deck framing. No "How It Works" three-step. The page is a performance review followed by a cheerful product catalog, not a fundraiser.
 - No metaphors where a number will do, especially in Section 1. The pitchman voice (Section 2 onward) may use comedy and character, but the facts always come first.
 - No em-dashes.
+- No Incentive Alignment Bonds.
+- No vague summaries where specific numbers exist ("negligible" -> "1 in 30 million").
+- No half-value-prop (health OR wealth). Always state both: health AND wealth.

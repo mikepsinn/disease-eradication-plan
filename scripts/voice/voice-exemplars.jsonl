@@ -65,3 +65,8 @@
 {"tag": "corporate_verb", "before": "redirect lobbying", "after": "hand the lobbyists an optimal budget calculated to maximize health and wealth"}
 {"tag": "corporate_verb", "before": "redirect 1% of military spending", "after": "move 1% of every nation's weapons budget to clinical trials"}
 {"tag": "corporate_verb", "before": "redirect the existing infrastructure toward better outcomes", "after": "use the lobbying machine you already built"}
+{"tag": "content_free_blather", "before": "The store is open.", "after": "CUT (no fact, no number, no argument, no joke)"}
+{"tag": "content_free_blather", "before": "And that changes everything.", "after": "CUT (no fact, no number, no argument, no joke)"}
+{"tag": "content_free_blather", "before": "Welcome to the future.", "after": "CUT (no fact; the future is already described)"}
+{"tag": "content_free_blather", "before": "Here's what that looks like in practice.", "after": "CUT (the practice is about to speak for itself)"}
+{"tag": "content_free_blather", "before": "Let's dive in.", "after": "CUT"}

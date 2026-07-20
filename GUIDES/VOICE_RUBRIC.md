@@ -70,10 +70,29 @@ defense manufactures the objection it answers").
 - "An economist reviewing the expected value calculations should find:" -> (deleted)
 - "This section makes it concrete enough that skeptical economists stop rolling their eyes." -> (deleted)
 
-## 7. Cut: redundant header / transition / scaffolding
+## 7. Cut: content-free blather (the general kill-test)
 
-- "## How to Talk About Not Dying Without Sounding Insane" -> (deleted)
+Every sentence must carry a fact, number, argument, or joke. If it carries
+none of those four, delete it. This is the single most important edit pattern
+and supersedes all the specific "Cut:" patterns below it (4, 5, 6 are common
+sub-types). It applies everywhere: openers, closers, transitions, headers,
+mid-paragraph filler, captions. Position in the sentence does not grant
+immunity. The delete-test: remove it and see if the reader loses anything.
+If not, cut it.
+
+- "## How to Talk About Not Dying Without Sounding Insane" -> (deleted: header that narrates instead of heading)
 - "## The Only Two Numbers That Matter" -> (deleted)
+- "The store is open." -> (deleted: no fact, no number, no argument, no joke)
+- "And that changes everything." -> (deleted: content-free punctuation dressed as a closer)
+- "Welcome to the future." -> (deleted: the future is already described; this adds nothing)
+- "Let's dive in." -> (deleted)
+- "Here's what that looks like in practice." -> (deleted: the practice is about to speak for itself)
+
+**Rule:** the pitchman voice must always wrap a real fact. A pitchman line
+with no fact is just noise. "That is the product." survives (names a thing).
+"The store is open." does not (names nothing). The cheerful delivery makes
+facts land harder; without a fact, it is a salesman grinning at you while
+saying nothing.
 
 ## 8. Add: the concrete absurd analogy as the closer
 

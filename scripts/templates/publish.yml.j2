@@ -77,11 +77,11 @@ jobs:
       - name: Install dih_models package
         run: uv pip install --python .venv/bin/python -e ".[dev]"
 
-      - name: Run Python type check
-        run: npx --yes pyright dih_models scripts
-
       - name: Install Node dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Run Python type check
+        run: pnpm exec pyright dih_models scripts
 
       - name: Install Jupyter kernel
         run: |

@@ -1,6 +1,9 @@
 import importlib.util
+import subprocess
 import sys
 from pathlib import Path
+
+import pytest
 
 
 def load_pre_render_validation_module():
@@ -153,3 +156,46 @@ dih-render:
 
     assert manual_files == {"index-manual.qmd", "knowledge/manual-chapter.qmd"}
     assert paper_files == {"knowledge/paper.qmd"}
+
+
+def test_select_qmd_files_filters_global_and_generated_indexes() -> None:
+    module = load_pre_render_validation_module()
+
+    selected = module.select_qmd_files(
+        [
+            "knowledge/chapter.qmd",
+            "knowledge/references.qmd",
+            "index.qmd",
+            "index-manual.qmd",
+            "scripts/check.py",
+        ]
+    )
+
+    assert selected == ["index-manual.qmd", "knowledge/chapter.qmd"]
+
+
+def test_main_always_runs_generation_before_validation(monkeypatch) -> None:
+    module = load_pre_render_validation_module()
+    calls = []
+    completed = subprocess.CompletedProcess(args=[], returncode=1)
+    monkeypatch.setattr(
+        module.subprocess,
+        "run",
+        lambda args, **kwargs: calls.append((args, kwargs)) or completed,
+    )
+    monkeypatch.setattr(sys, "argv", ["pre-render-validation.py"])
+
+    with pytest.raises(SystemExit) as exit_info:
+        module.main()
+
+    assert exit_info.value.code == 1
+    assert calls == [
+        (
+            [
+                sys.executable,
+                "-u",
+                "scripts/generate-everything-parameters-variables-calculations-references.py",
+            ],
+            {"timeout": 1800},
+        )
+    ]
