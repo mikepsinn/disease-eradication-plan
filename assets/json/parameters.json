@@ -157,7 +157,7 @@
       "value": 1270000.0,
       "formatted": "1.27 million deaths",
       "unit": "deaths",
-      "description": "Deaths directly attributable to bacterial antimicrobial resistance in 2019, ~1.27 million (95% UI 0.91-1.71 million); ~4.95 million deaths were associated with it (Murray et al., The Lancet 2022). Attributable and associated are not additive. Animal agriculture consumes a large majority of medically important antibiotics, driving resistance.",
+      "description": "Deaths directly attributable to bacterial antimicrobial resistance in 2019, ~1.27 million (95% UI 0.91-1.71 million); ~4.95 million deaths were associated with it (Murray et al., The Lancet 2022). Attributable and associated are not additive.",
       "displayName": "Deaths Directly Attributable to AMR (2019)",
       "sourceType": "external",
       "sourceRef": "murray-2022-amr",
@@ -165,7 +165,11 @@
       "confidence": "high",
       "formula": null,
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-amr_deaths_attributable_2019",
-      "distribution": "fixed",
+      "confidenceInterval": [
+        911000.0,
+        1710000.0
+      ],
+      "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
       "chapterTitle": "The Slaughterhouse Was a Workaround"
     },
@@ -282,7 +286,7 @@
       "value": 1100000000000.0,
       "formatted": "1.1 trillion animals",
       "unit": "animals",
-      "description": "Wild-caught fish killed globally per year, estimated at 1.1-2.2 trillion (average 2000-2019, fishcount.org.uk, derived from FAO capture tonnage and mean body weights). Value shown is the conservative low end; the range is wide because these animals are counted by weight, not headcount. Farmed finfish add ~120 billion more. Aquatic deaths exceed land-animal deaths by roughly an order of magnitude.",
+      "description": "Wild-caught fish killed globally per year, estimated at 1.1-2.2 trillion (average 2000-2019, fishcount.org.uk, derived from FAO capture tonnage and mean body weights). Value shown is the conservative low end; the range is wide because these animals are counted by weight, not headcount.",
       "displayName": "Wild Aquatic Animals Killed for Food per Year (low estimate)",
       "sourceType": "external",
       "sourceRef": "fishcount-wild-fish",
@@ -4574,7 +4578,11 @@
       "confidence": "high",
       "formula": null,
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-dietary_risk_deaths_annual",
-      "distribution": "fixed",
+      "confidenceInterval": [
+        10000000.0,
+        12000000.0
+      ],
+      "distribution": "normal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
       "chapterTitle": "The Slaughterhouse Was a Workaround"
     },
@@ -5713,7 +5721,7 @@
       "value": 12000000000000.0,
       "formatted": "$12 trillion",
       "unit": "USD",
-      "description": "Hidden (external) costs of the global food and land-use system, ~$12 trillion/year, against a market value of ~$10 trillion (FOLU 'Growing Better' 2019; modeled by an advocacy coalition, widely cited). Comprises environmental, public-health, and poverty costs; projected to rise to $16.1 trillion by 2050 under current trends. US-only true-cost accounting (Rockefeller 2021) finds ~$2.1 trillion/year in hidden costs on top of ~$1.1 trillion paid.",
+      "description": "Hidden (external) costs of the global food and land-use system, ~$12 trillion/year, against a market value of ~$10 trillion (FOLU 'Growing Better' 2019; modeled by an advocacy coalition, widely cited). Comprises environmental, public-health, and poverty costs; projected to rise to $16.1 trillion by 2050 under current trends.",
       "displayName": "Global Food System Hidden Costs per Year",
       "sourceType": "external",
       "sourceRef": "folu-growing-better-2019",

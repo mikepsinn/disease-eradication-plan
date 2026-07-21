@@ -590,6 +590,10 @@ def _source_url(source_ref: Any, citation_data: Dict[str, Dict[str, Any]]) -> st
     return urls[0] if urls else None
 
 
+def _public_citation_entry(citation: Dict[str, Any]) -> Dict[str, Any]:
+    return {key: value for key, value in citation.items() if not key.startswith('_')}
+
+
 def _public_parameter_entry(
     name: str,
     meta: Dict[str, Any],
@@ -702,7 +706,10 @@ def publish_scoreboard_parameter_metadata(
     payload = {
         "sourceFile": "dih_models/parameters.py",
         "parameters": json_params,
-        "citations": {key: citation_data[key] for key in sorted(citation_ids)},
+        "citations": {
+            key: _public_citation_entry(citation_data[key])
+            for key in sorted(citation_ids)
+        },
     }
 
     js_output = project_root / "assets" / "js" / "scoreboard-parameter-metadata.js"
@@ -748,7 +755,10 @@ def publish_public_parameters_exports(
         "sourceFile": "dih_models/parameters.py",
         "parameters": json_params,
         "shareableSnippets": shareable_snippets,
-        "citations": citation_data,
+        "citations": {
+            key: _public_citation_entry(citation)
+            for key, citation in citation_data.items()
+        },
     }
 
     json_output = project_root / "assets" / "json" / "parameters.json"
