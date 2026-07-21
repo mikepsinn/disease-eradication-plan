@@ -1409,20 +1409,7 @@ def render_quarto(  # pyright: ignore[reportGeneralTypeIssues]
             print("[WARNING] Jupyter kernel setup failed, continuing anyway...")
         gh_group_end()
 
-        # 2. Regenerate derived files before validating their contents
-        gh_group_start("SETUP: GENERATE EVERYTHING")
-        generation_script = project_root / "scripts" / "generate-everything-parameters-variables-calculations-references.py"
-        generation_result = subprocess.run(
-            [sys.executable, "-u", str(generation_script)],
-            cwd=str(project_root),
-        )
-        if generation_result.returncode != 0:
-            print("[ERROR] Artifact generation failed, aborting render", file=sys.stderr)
-            gh_group_end()
-            return generation_result.returncode
-        gh_group_end()
-
-        # 3. Validate the generated artifacts and source files
+        # 2. Generate derived files and run pre-validation
         gh_group_start("VALIDATION: PRE-RENDER")
         validation_exit = run_pre_validation()
         if validation_exit != 0:
@@ -1431,7 +1418,7 @@ def render_quarto(  # pyright: ignore[reportGeneralTypeIssues]
             return validation_exit
         gh_group_end()
 
-        # 4. Prepare build directory (always use temp directory for clean builds)
+        # 3. Prepare build directory (always use temp directory for clean builds)
         gh_group_start(f"SETUP: PREPARING {description.upper()}")
 
         build_temp = prepare_build_temp(config_name, verbose=True)

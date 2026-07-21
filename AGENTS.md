@@ -29,8 +29,8 @@ Quarto book: "How to End War and Disease" - getting nations to sign a 1% treaty 
 | Rule | Requirement |
 |------|-------------|
 | Agent commits | Only when explicitly requested; review the complete diff and stage only intended files |
-| Pre-commit | Read-only Pyright and repository-wide validation run automatically; never use `--no-verify` unless explicitly requested |
-| Generated changes | Run `npm run validate:full`, then review and stage generated files |
+| Pre-commit | Full artifact generation, Pyright, and repository-wide validation run automatically; never use `--no-verify` unless explicitly requested |
+| Generated changes | The commit succeeds; review and commit any generated changes left in the worktree |
 
 ## Citations (references.bib)
 
@@ -108,6 +108,5 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 |------|---------|
 | Regenerate everything | `npm run generate:everything` |
 | Validate before render | `npm run validate:pre-render` (automatic on commit; run manually only before render or major schema work) |
-| Generate and validate | `npm run validate:full` |
 | Find param usages | `npx tsx scripts/parameter-audit.ts PARAM_NAME` |
 | Unused params | `npm run param:unused` |

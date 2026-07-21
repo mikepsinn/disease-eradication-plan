@@ -1,5 +1,5 @@
 import importlib.util
-import inspect
+import subprocess
 import sys
 from pathlib import Path
 
@@ -174,9 +174,28 @@ def test_select_qmd_files_filters_global_and_generated_indexes() -> None:
     assert selected == ["index-manual.qmd", "knowledge/chapter.qmd"]
 
 
-def test_main_does_not_generate_artifacts() -> None:
+def test_main_always_runs_generation_before_validation(monkeypatch) -> None:
     module = load_pre_render_validation_module()
-    source = inspect.getsource(module.main)
+    calls = []
+    completed = subprocess.CompletedProcess(args=[], returncode=1)
+    monkeypatch.setattr(
+        module.subprocess,
+        "run",
+        lambda args, **kwargs: calls.append((args, kwargs)) or completed,
+    )
+    monkeypatch.setattr(sys, "argv", ["pre-render-validation.py"])
 
-    assert "generate-everything-parameters-variables-calculations-references.py" not in source
-    assert "subprocess.run" not in source
+    with pytest.raises(SystemExit) as exit_info:
+        module.main()
+
+    assert exit_info.value.code == 1
+    assert calls == [
+        (
+            [
+                sys.executable,
+                "-u",
+                "scripts/generate-everything-parameters-variables-calculations-references.py",
+            ],
+            {"timeout": 1800},
+        )
+    ]

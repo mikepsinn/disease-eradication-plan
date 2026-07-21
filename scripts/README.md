@@ -13,7 +13,6 @@ This directory contains automation scripts for the disease eradication book proj
 | **Audit hardcoded values** | `npm run audit-hardcoded` | Find hardcoded numbers in QMD files |
 | **Generate images** | `npm run images:sections -- file.qmd` | Generate section images for a file |
 | **Validate pre-render** | `npm run validate:pre-render` | Run pre-render validation |
-| **Generate and validate** | `npm run validate:full` | Regenerate artifacts, then run validation |
 | **Generate everything** | `npm run generate:everything` | Regenerate variables, calculations, references |
 
 ## Directory Structure

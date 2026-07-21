@@ -11,18 +11,13 @@ fi
 
 START_TIME=$(date +%s)
 
-if ! pnpm exec pyright --version >/dev/null 2>&1; then
-    echo "Pyright is not installed. Run: pnpm install --frozen-lockfile"
-    exit 1
-fi
-
 echo "Running Python type check..."
-if ! pnpm exec pyright dih_models scripts; then
+if ! npx --yes pyright dih_models scripts; then
     echo "Python type check failed. Fix Pyright/Pylance errors before committing."
     exit 1
 fi
 
-echo "Running read-only pre-render validation..."
+echo "Running pre-render validation (including artifact generation)..."
 if ! "$PYTHON_CMD" -u scripts/pre-render-validation.py; then
     echo "Pre-render validation failed. Fix the errors before committing."
     exit 1

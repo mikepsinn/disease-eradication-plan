@@ -63,7 +63,6 @@
     "zenodo:skip-validation": ".venv\\Scripts\\python.exe -u scripts/upload-all-zenodo-and-save-dois.py --skip-validation",
     "render:test:pdf": ".venv\\Scripts\\python.exe -u scripts/render-quarto.py test --to pdf --verify",
     "validate:pre-render": ".venv\\Scripts\\python.exe -u scripts/pre-render-validation.py",
-    "validate:full": "npm run generate:everything && npm run validate:pre-render",
     "validate:latex": ".venv\\Scripts\\python.exe -u scripts/validate-latex-per-file.py",
     "validate:latex:quick": ".venv\\Scripts\\python.exe -u scripts/validate-latex-per-file.py --quick",
     "validate:latex:parallel": ".venv\\Scripts\\python.exe -u scripts/validate-latex-per-file.py --parallel 4",
