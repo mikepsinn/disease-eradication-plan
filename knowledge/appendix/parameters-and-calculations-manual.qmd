@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 740 parameters used in the analysis, organized by type:
+This appendix documents all 753 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 209
+- External sources (peer-reviewed): 222
 - Calculated values: 380
 - Core definitions: 151
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (380 parameters) • [External Data Sources](#sec-external) (209 parameters) • [Core Definitions](#sec-definitions) (151 parameters)
+[Calculated Values](#sec-calculated) (380 parameters) • [External Data Sources](#sec-external) (222 parameters) • [Core Definitions](#sec-definitions) (151 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -33630,6 +33630,38 @@ PCORI grant for ADAPTABLE trial (2016-2019). Note: Direct funding only; total co
 
 :::
 
+### Agriculture Share of Freshwater Withdrawals: 70% {#sec-agriculture_freshwater_withdrawal_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Agriculture's share of global freshwater withdrawals, ~70% (Our World in Data, FAO AQUASTAT / World Bank). This is the standard consensus figure but is a soft estimate; recent work argues the true irrigation share could plausibly range ~45-90%. Reported as the widely-cited ~70% with that uncertainty acknowledged.
+
+**Source**: [@owid-water-use-stress]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*~ Medium confidence*
+
+:::
+
+### Deaths Directly Attributable to AMR (2019): 1.27 million deaths {#sec-amr_deaths_attributable_2019}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Deaths directly attributable to bacterial antimicrobial resistance in 2019, ~1.27 million (95% UI 0.91-1.71 million); ~4.95 million deaths were associated with it (Murray et al., The Lancet 2022). Attributable and associated are not additive. Animal agriculture consumes a large majority of medically important antibiotics, driving resistance.
+
+**Source**: [@murray-2022-amr]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Annual Terrorism Death Risk (1 in X): 30 million people {#sec-annual_terrorism_death_risk_denominator}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -33655,6 +33687,22 @@ Mean exclusion rate in antidepressant trials (86.1% of real-world patients exclu
 **Source**: [@antidepressant-trial-exclusion-rates]
 
 *✓ High confidence*
+
+:::
+
+### Wild Aquatic Animals Killed for Food per Year (low estimate): 1.1 trillion animals {#sec-aquatic_animals_killed_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Wild-caught fish killed globally per year, estimated at 1.1-2.2 trillion (average 2000-2019, fishcount.org.uk, derived from FAO capture tonnage and mean body weights). Value shown is the conservative low end; the range is wide because these animals are counted by weight, not headcount. Farmed finfish add ~120 billion more. Aquatic deaths exceed land-animal deaths by roughly an order of magnitude.
+
+**Source**: [@fishcount-wild-fish]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*~ Medium confidence*
 
 :::
 
@@ -33691,6 +33739,22 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 {{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
+
+:::
+
+### Beef Caloric Conversion Efficiency: 3% {#sec-beef_feed_calorie_efficiency_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Caloric conversion efficiency of beef, ~3%: only about 3 of every 100 feed calories become beef calories (Cassidy et al. 2013, Environmental Research Letters). The often-quoted '~33 feed calories per beef calorie' is the arithmetic reciprocal of this figure, not a separate measurement. System-wide, 36% of crop calories go to animal feed and only 12% return as human food.
+
+**Source**: [@cassidy-2013-nourished]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 
@@ -34178,6 +34242,22 @@ Embedded pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBE
 
 :::
 
+### Deaths per Year from Dietary Risks: 11 million deaths {#sec-dietary_risk_deaths_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Deaths per year attributable to dietary risk factors, ~11 million (95% UI 10-12 million; 255 million DALYs), from the Global Burden of Disease Study 2017 (Afshin et al., The Lancet 2019). Diet-driven chronic disease is one of the human-health costs the current food system externalizes.
+
+**Source**: [@gbd-2017-diet]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Disease Burden as % of GDP: 13% {#sec-disease_burden_gdp_drag_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -34400,6 +34480,54 @@ Expert accuracy on Who Wants to Be a Millionaire phone-a-friend lifeline. Creden
 
 :::
 
+### Share of US Farmed Animals on Factory Farms: 99% {#sec-factory_farm_share_us}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share of US farmed animals living on factory farms, ~99% (Sentience Institute, using EPA CAFO definitions and USDA farm-size census; widely cited incl. by Our World in Data). Per-species: ~75% of cows, ~99% of pigs, >99.9% of meat chickens. Global share is lower for land vertebrates (~74%) and higher once fish are included (>90%).
+
+**Source**: [@sentience-us-factory-farming]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Land Animals Slaughtered for Food per Year: 83 billion animals {#sec-farmed_land_animals_slaughtered_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Land animals slaughtered for meat globally per year, ~83 billion in 2022 (UN FAO via Our World in Data). Chickens are the immense majority. Excludes culled male chicks and animals without data, so it undercounts total farmed deaths. Dwarfed in turn by aquatic-animal deaths (see AQUATIC_ANIMALS_KILLED_ANNUAL).
+
+**Source**: [@owid-land-animals-slaughtered]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Farmland Freed Under a Shift Off Animal Products: 75% {#sec-farmland_reduction_potential_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Reduction in global farmland if the world shifted off meat and dairy while still feeding everyone, more than 75% (~4.1 billion down to ~1 billion hectares; University of Oxford LEAP, reporting Poore & Nemecek 2018, Science). Oxford's illustrative equivalent: an area the size of the US, China, EU, and Australia combined. A hypothetical full-shift model, not a forecast.
+
+**Source**: [@oxford-leap-food-impacts]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### FDA-Approved Drug Products: 20,000 products {#sec-fda_approved_products_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -34481,6 +34609,38 @@ FDA timeline from Phase 1 start to approval. Derived from BIO 2021 industry surv
 {{< include ../figures/distribution-fda_phase_1_to_approval_years.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### Food Production Share of Global GHG Emissions: 26% {#sec-food_production_ghg_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Food production's share of global greenhouse-gas emissions, ~26% (~13.7 Gt CO2eq; Our World in Data, based on Poore & Nemecek 2018). Uses the 'food production' boundary. A wider whole-food-system boundary including retail, transport, packaging, and waste (Crippa et al. 2021, Nature Food) reaches ~34%. Present as boundary choices, not a contradiction.
+
+**Source**: [@owid-environmental-impacts-food]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Global Food System Hidden Costs per Year: $12 trillion {#sec-food_system_hidden_cost_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hidden (external) costs of the global food and land-use system, ~$12 trillion/year, against a market value of ~$10 trillion (FOLU 'Growing Better' 2019; modeled by an advocacy coalition, widely cited). Comprises environmental, public-health, and poverty costs; projected to rise to $16.1 trillion by 2050 under current trends. US-only true-cost accounting (Rockefeller 2021) finds ~$2.1 trillion/year in hidden costs on top of ~$1.1 trillion paid.
+
+**Source**: [@folu-growing-better-2019]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*~ Medium confidence*
 
 :::
 
@@ -35773,6 +35933,54 @@ Expected years of life extension from 1% treaty research acceleration (25x trial
 {{< include ../figures/distribution-life_extension_years.qmd >}}
 
 *? Low confidence*
+
+:::
+
+### Livestock Share of Agricultural Land: 80% {#sec-livestock_share_of_agricultural_land}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Livestock's share of global agricultural land, combining grazing land and cropland grown for animal feed, ~80% (Our World in Data, FAOSTAT). Poore & Nemecek (2018) report ~83% of farmland by a slightly different boundary. Defensible range ~77-83%. The striking point is the mismatch: this majority of farmland returns only ~18% of calories.
+
+**Source**: [@owid-land-for-agriculture]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Livestock Share of Global Calories: 18% {#sec-livestock_share_of_calories}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share of the world's calories provided by meat, aquaculture, eggs, and dairy, ~18% (Poore & Nemecek 2018, Science, meta-analysis of ~38,700 farms across 119 countries). Our World in Data reports ~17% by FAOSTAT. Pair with LIVESTOCK_SHARE_OF_AGRICULTURAL_LAND: the majority of farmland for a small share of the calories.
+
+**Source**: [@poore-nemecek-2018]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Livestock Share of Global Protein: 37% {#sec-livestock_share_of_protein}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share of the world's protein provided by meat, aquaculture, eggs, and dairy, ~37% (Poore & Nemecek 2018, Science). Our World in Data reports ~38% by FAOSTAT. Delivered using ~83% of farmland and producing the majority of food's emissions.
+
+**Source**: [@poore-nemecek-2018]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
 
 :::
 

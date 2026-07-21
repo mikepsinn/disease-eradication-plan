@@ -31,9 +31,7 @@ import json
 import logging
 import os
 import re
-import subprocess
 import sys
-import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
@@ -2070,24 +2068,6 @@ def main():
         level=logging.DEBUG if args.verbose else logging.INFO,
         format='%(message)s'
     )
-
-    logger.info("Regenerating generated artifacts before validation...")
-    generation_started = time.perf_counter()
-    result = subprocess.run(
-        [
-            sys.executable,
-            "-u",
-            "scripts/generate-everything-parameters-variables-calculations-references.py",
-        ],
-        timeout=1800,
-    )
-    if result.returncode != 0:
-        print(f"ERROR: generate-everything-parameters-variables-calculations-references.py failed with exit code {result.returncode}", file=sys.stderr)
-        print("\nPre-render validation FAILED: Variable generation failed.", file=sys.stderr)
-        print("Fix the issues above before rendering.\n", file=sys.stderr)
-        sys.exit(1)
-    generation_elapsed = time.perf_counter() - generation_started
-    logger.info(f"Generated artifacts in {generation_elapsed:.1f} seconds.\n")
 
     qmd_files = select_qmd_files(find_files_by_extension((".qmd",)))
 

@@ -77,6 +77,22 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
       "chapterTitle": "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease"
     },
+    "AGRICULTURE_FRESHWATER_WITHDRAWAL_PCT": {
+      "value": 0.7,
+      "formatted": "70%",
+      "unit": "percent",
+      "description": "Agriculture's share of global freshwater withdrawals, ~70% (Our World in Data, FAO AQUASTAT / World Bank). This is the standard consensus figure but is a soft estimate; recent work argues the true irrigation share could plausibly range ~45-90%. Reported as the widely-cited ~70% with that uncertainty acknowledged.",
+      "displayName": "Agriculture Share of Freshwater Withdrawals",
+      "sourceType": "external",
+      "sourceRef": "owid-water-use-stress",
+      "sourceUrl": "https://ourworldindata.org/water-use-stress",
+      "confidence": "medium",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-agriculture_freshwater_withdrawal_pct",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
+    },
     "ALGORITHMIC_MONETARY_AUTHORITY_ANNUAL_OPEX": {
       "value": 7500000.0,
       "formatted": "$7.5 million",
@@ -136,6 +152,22 @@
       "distribution": "normal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/wishocracy.html",
       "chapterTitle": "Wishocracy"
+    },
+    "AMR_DEATHS_ATTRIBUTABLE_2019": {
+      "value": 1270000.0,
+      "formatted": "1.27 million deaths",
+      "unit": "deaths",
+      "description": "Deaths directly attributable to bacterial antimicrobial resistance in 2019, ~1.27 million (95% UI 0.91-1.71 million); ~4.95 million deaths were associated with it (Murray et al., The Lancet 2022). Attributable and associated are not additive. Animal agriculture consumes a large majority of medically important antibiotics, driving resistance.",
+      "displayName": "Deaths Directly Attributable to AMR (2019)",
+      "sourceType": "external",
+      "sourceRef": "murray-2022-amr",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/35065702/",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-amr_deaths_attributable_2019",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
     },
     "ANNUAL_TERRORISM_DEATH_RISK_DENOMINATOR": {
       "value": 30000000.0,
@@ -245,6 +277,22 @@
       "distribution": "uniform",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html",
       "chapterTitle": "The Untapped Therapeutic Frontier"
+    },
+    "AQUATIC_ANIMALS_KILLED_ANNUAL": {
+      "value": 1100000000000.0,
+      "formatted": "1.1 trillion animals",
+      "unit": "animals",
+      "description": "Wild-caught fish killed globally per year, estimated at 1.1-2.2 trillion (average 2000-2019, fishcount.org.uk, derived from FAO capture tonnage and mean body weights). Value shown is the conservative low end; the range is wide because these animals are counted by weight, not headcount. Farmed finfish add ~120 billion more. Aquatic deaths exceed land-animal deaths by roughly an order of magnitude.",
+      "displayName": "Wild Aquatic Animals Killed for Food per Year (low estimate)",
+      "sourceType": "external",
+      "sourceRef": "fishcount-wild-fish",
+      "sourceUrl": "https://fishcount.org.uk/fish-count-estimates-2",
+      "confidence": "medium",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-aquatic_animals_killed_annual",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
     },
     "AUTOMATED_REVENUE_SERVICE_ALL_IN_COST_PER_TRANSACTION": {
       "value": 0.0003,
@@ -395,6 +443,22 @@
       "distribution": "normal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
       "chapterTitle": "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease"
+    },
+    "BEEF_FEED_CALORIE_EFFICIENCY_PCT": {
+      "value": 0.03,
+      "formatted": "3%",
+      "unit": "percent",
+      "description": "Caloric conversion efficiency of beef, ~3%: only about 3 of every 100 feed calories become beef calories (Cassidy et al. 2013, Environmental Research Letters). The often-quoted '~33 feed calories per beef calorie' is the arithmetic reciprocal of this figure, not a separate measurement. System-wide, 36% of crop calories go to animal feed and only 12% return as human food.",
+      "displayName": "Beef Caloric Conversion Efficiency",
+      "sourceType": "external",
+      "sourceRef": "cassidy-2013-nourished",
+      "sourceUrl": "https://iopscience.iop.org/article/10.1088/1748-9326/8/3/034015",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-beef_feed_calorie_efficiency_pct",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
     },
     "BEST_PRACTICE_LIFE_EXPECTANCY_GAIN": {
       "value": 10.699999999999989,
@@ -4498,6 +4562,22 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
       "chapterTitle": "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease"
     },
+    "DIETARY_RISK_DEATHS_ANNUAL": {
+      "value": 11000000.0,
+      "formatted": "11 million deaths",
+      "unit": "deaths",
+      "description": "Deaths per year attributable to dietary risk factors, ~11 million (95% UI 10-12 million; 255 million DALYs), from the Global Burden of Disease Study 2017 (Afshin et al., The Lancet 2019). Diet-driven chronic disease is one of the human-health costs the current food system externalizes.",
+      "displayName": "Deaths per Year from Dietary Risks",
+      "sourceType": "external",
+      "sourceRef": "gbd-2017-diet",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/30954305/",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-dietary_risk_deaths_annual",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
+    },
     "DIH_NIH_SAME_BUDGET_PATIENTS_FUNDABLE": {
       "value": 1669537.1367061357,
       "formatted": "1.67 million patients",
@@ -5454,6 +5534,22 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html",
       "chapterTitle": "The Untapped Therapeutic Frontier"
     },
+    "FACTORY_FARM_SHARE_US": {
+      "value": 0.99,
+      "formatted": "99%",
+      "unit": "percent",
+      "description": "Share of US farmed animals living on factory farms, ~99% (Sentience Institute, using EPA CAFO definitions and USDA farm-size census; widely cited incl. by Our World in Data). Per-species: ~75% of cows, ~99% of pigs, >99.9% of meat chickens. Global share is lower for land vertebrates (~74%) and higher once fish are included (>90%).",
+      "displayName": "Share of US Farmed Animals on Factory Farms",
+      "sourceType": "external",
+      "sourceRef": "sentience-us-factory-farming",
+      "sourceUrl": "https://www.sentienceinstitute.org/us-factory-farming-estimates",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-factory_farm_share_us",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
+    },
     "FAMILY_OFFICE_INVESTMENT_MIN": {
       "value": 5000000.0,
       "formatted": "$5 million",
@@ -5468,6 +5564,38 @@
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-family_office_investment_min",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/aligning-incentives.html",
       "chapterTitle": "Aligning Incentives"
+    },
+    "FARMED_LAND_ANIMALS_SLAUGHTERED_ANNUAL": {
+      "value": 83000000000.0,
+      "formatted": "83 billion animals",
+      "unit": "animals",
+      "description": "Land animals slaughtered for meat globally per year, ~83 billion in 2022 (UN FAO via Our World in Data). Chickens are the immense majority. Excludes culled male chicks and animals without data, so it undercounts total farmed deaths. Dwarfed in turn by aquatic-animal deaths (see AQUATIC_ANIMALS_KILLED_ANNUAL).",
+      "displayName": "Land Animals Slaughtered for Food per Year",
+      "sourceType": "external",
+      "sourceRef": "owid-land-animals-slaughtered",
+      "sourceUrl": "https://ourworldindata.org/data-insights/billions-of-chickens-ducks-and-pigs-are-slaughtered-for-meat-every-year",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-farmed_land_animals_slaughtered_annual",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
+    },
+    "FARMLAND_REDUCTION_POTENTIAL_PCT": {
+      "value": 0.75,
+      "formatted": "75%",
+      "unit": "percent",
+      "description": "Reduction in global farmland if the world shifted off meat and dairy while still feeding everyone, more than 75% (~4.1 billion down to ~1 billion hectares; University of Oxford LEAP, reporting Poore & Nemecek 2018, Science). Oxford's illustrative equivalent: an area the size of the US, China, EU, and Australia combined. A hypothetical full-shift model, not a forecast.",
+      "displayName": "Farmland Freed Under a Shift Off Animal Products",
+      "sourceType": "external",
+      "sourceRef": "oxford-leap-food-impacts",
+      "sourceUrl": "https://www.leap.ox.ac.uk/article/reducing-foods-environmental-impacts",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-farmland_reduction_potential_pct",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
     },
     "FDA_APPROVED_PRODUCTS_COUNT": {
       "value": 20000.0,
@@ -5564,6 +5692,38 @@
       "computeExpr": "((EFFICACY_LAG_YEARS * 12.0) / OXFORD_RECOVERY_TRIAL_DURATION_MONTHS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/fda-is-unsafe-and-ineffective.html",
       "chapterTitle": "Your FDA Is Unsafe and Ineffective"
+    },
+    "FOOD_PRODUCTION_GHG_PCT": {
+      "value": 0.26,
+      "formatted": "26%",
+      "unit": "percent",
+      "description": "Food production's share of global greenhouse-gas emissions, ~26% (~13.7 Gt CO2eq; Our World in Data, based on Poore & Nemecek 2018). Uses the 'food production' boundary. A wider whole-food-system boundary including retail, transport, packaging, and waste (Crippa et al. 2021, Nature Food) reaches ~34%. Present as boundary choices, not a contradiction.",
+      "displayName": "Food Production Share of Global GHG Emissions",
+      "sourceType": "external",
+      "sourceRef": "owid-environmental-impacts-food",
+      "sourceUrl": "https://ourworldindata.org/environmental-impacts-of-food",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-food_production_ghg_pct",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
+    },
+    "FOOD_SYSTEM_HIDDEN_COST_ANNUAL": {
+      "value": 12000000000000.0,
+      "formatted": "$12 trillion",
+      "unit": "USD",
+      "description": "Hidden (external) costs of the global food and land-use system, ~$12 trillion/year, against a market value of ~$10 trillion (FOLU 'Growing Better' 2019; modeled by an advocacy coalition, widely cited). Comprises environmental, public-health, and poverty costs; projected to rise to $16.1 trillion by 2050 under current trends. US-only true-cost accounting (Rockefeller 2021) finds ~$2.1 trillion/year in hidden costs on top of ~$1.1 trillion paid.",
+      "displayName": "Global Food System Hidden Costs per Year",
+      "sourceType": "external",
+      "sourceRef": "folu-growing-better-2019",
+      "sourceUrl": "https://www.foodandlandusecoalition.org/wp-content/uploads/2019/09/FOLU-GrowingBetter-GlobalReport-SummaryReport.pdf",
+      "confidence": "medium",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-food_system_hidden_cost_annual",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
     },
     "FULL_CORPORATE_TAKEOVER_COST_ACTIVIST": {
       "value": 883900000000.0,
@@ -8477,6 +8637,54 @@
       "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/earth-optimization-prize.html",
       "chapterTitle": "The Earth Optimization Prize"
+    },
+    "LIVESTOCK_SHARE_OF_AGRICULTURAL_LAND": {
+      "value": 0.8,
+      "formatted": "80%",
+      "unit": "percent",
+      "description": "Livestock's share of global agricultural land, combining grazing land and cropland grown for animal feed, ~80% (Our World in Data, FAOSTAT). Poore & Nemecek (2018) report ~83% of farmland by a slightly different boundary. Defensible range ~77-83%. The striking point is the mismatch: this majority of farmland returns only ~18% of calories.",
+      "displayName": "Livestock Share of Agricultural Land",
+      "sourceType": "external",
+      "sourceRef": "owid-land-for-agriculture",
+      "sourceUrl": "https://ourworldindata.org/global-land-for-agriculture",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-livestock_share_of_agricultural_land",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
+    },
+    "LIVESTOCK_SHARE_OF_CALORIES": {
+      "value": 0.18,
+      "formatted": "18%",
+      "unit": "percent",
+      "description": "Share of the world's calories provided by meat, aquaculture, eggs, and dairy, ~18% (Poore & Nemecek 2018, Science, meta-analysis of ~38,700 farms across 119 countries). Our World in Data reports ~17% by FAOSTAT. Pair with LIVESTOCK_SHARE_OF_AGRICULTURAL_LAND: the majority of farmland for a small share of the calories.",
+      "displayName": "Livestock Share of Global Calories",
+      "sourceType": "external",
+      "sourceRef": "poore-nemecek-2018",
+      "sourceUrl": "https://ora.ox.ac.uk/objects/uuid:b0b53649-5e93-4415-bf07-6b0b1227172f",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-livestock_share_of_calories",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
+    },
+    "LIVESTOCK_SHARE_OF_PROTEIN": {
+      "value": 0.37,
+      "formatted": "37%",
+      "unit": "percent",
+      "description": "Share of the world's protein provided by meat, aquaculture, eggs, and dairy, ~37% (Poore & Nemecek 2018, Science). Our World in Data reports ~38% by FAOSTAT. Delivered using ~83% of farmland and producing the majority of food's emissions.",
+      "displayName": "Livestock Share of Global Protein",
+      "sourceType": "external",
+      "sourceRef": "poore-nemecek-2018",
+      "sourceUrl": "https://ora.ox.ac.uk/objects/uuid:b0b53649-5e93-4415-bf07-6b0b1227172f",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-livestock_share_of_protein",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
+      "chapterTitle": "The Slaughterhouse Was a Workaround"
     },
     "LOBBYIST_BOND_INVESTMENT_MAX": {
       "value": 20000000.0,
@@ -19395,6 +19603,24 @@
       "pages": "",
       "number": ""
     },
+    "cassidy-2013-nourished": {
+      "id": "cassidy-2013-nourished",
+      "title": "Redefining agricultural yields: from tonnes to people nourished per hectare",
+      "author": "Cassidy, Emily S. and West, Paul C. and Gerber, James S. and Foley, Jonathan A.",
+      "year": "2013",
+      "source": "Environmental Research Letters",
+      "url": "https://iopscience.iop.org/article/10.1088/1748-9326/8/3/034015",
+      "urls": [
+        "https://iopscience.iop.org/article/10.1088/1748-9326/8/3/034015"
+      ],
+      "quote": "",
+      "note": "Quote: \"36% of the calories produced by the world's crops are being used for animal feed, and only 12% of those feed calories ultimately contribute to the human diet (as meat and other animal products).\" Beef caloric conversion efficiency 3% (Table 1).",
+      "type": "article",
+      "doi": "10.1088/1748-9326/8/3/034015",
+      "volume": "8",
+      "pages": "034015",
+      "number": "3"
+    },
     "cato-corporate-welfare": {
       "id": "cato-corporate-welfare",
       "title": "Corporate Welfare in the Federal Budget",
@@ -19717,6 +19943,24 @@
       "quote": "",
       "note": "",
       "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "cedelft-cultivated-2021": {
+      "id": "cedelft-cultivated-2021",
+      "title": "TEA of Cultivated Meat: Future projections of different scenarios",
+      "author": "Vergeer, Reinier and Sinke, Pelle and Odegard, Ingrid",
+      "year": "2021",
+      "source": "CE Delft (commissioned by The Good Food Institute)",
+      "url": "https://cedelft.eu/publications/tea-of-cultivated-meat/",
+      "urls": [
+        "https://cedelft.eu/publications/tea-of-cultivated-meat/"
+      ],
+      "quote": "",
+      "note": "Optimistic, industry-commissioned. Projects cultivated meat cost-competitive at ~US\\$5.66 per kilogram by 2030 in a best-case scenario, with ~92% less climate impact, 95% less land, and 78% less water versus beef (assuming decarbonized energy). Contrast with the skeptical Humbird 2021.",
+      "type": "techreport",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -21955,6 +22199,24 @@
       "pages": "",
       "number": ""
     },
+    "cutler-summers-2020-covid": {
+      "id": "cutler-summers-2020-covid",
+      "title": "The COVID-19 Pandemic and the \\$16 Trillion Virus",
+      "author": "Cutler, David M. and Summers, Lawrence H.",
+      "year": "2020",
+      "source": "JAMA",
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/2771764",
+      "urls": [
+        "https://jamanetwork.com/journals/jama/fullarticle/2771764"
+      ],
+      "quote": "",
+      "note": "US-only, cumulative over roughly a decade, including monetized health and mortality losses. Quote: \"The total cost is estimated at more than \\$16 trillion, or approximately 90% of the annual gross domestic product of the US.\"",
+      "type": "article",
+      "doi": "",
+      "volume": "324",
+      "pages": "1495--1496",
+      "number": "15"
+    },
     "cvd-80-percent-preventable": {
       "id": "cvd-80-percent-preventable",
       "title": "80% of cardiovascular disease is preventable",
@@ -23531,6 +23793,24 @@
       "pages": "",
       "number": ""
     },
+    "embl-nobel-2024": {
+      "id": "embl-nobel-2024",
+      "title": "Computational protein design and protein structure prediction win Nobel Prize in Chemistry",
+      "author": "European Molecular Biology Laboratory",
+      "year": "2024",
+      "source": "",
+      "url": "https://www.embl.org/news/science-technology/alphafold-wins-nobel-prize-chemistry-2024/",
+      "urls": [
+        "https://www.embl.org/news/science-technology/alphafold-wins-nobel-prize-chemistry-2024/"
+      ],
+      "quote": "",
+      "note": "2024 Nobel Prize in Chemistry: David Baker \"for computational protein design\" (de novo design), Demis Hassabis and John Jumper for AlphaFold protein structure prediction. Establishes that de novo protein design is real and prize-recognized; not food-specific.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "emif-coyote-fees-2022": {
       "id": "emif-coyote-fees-2022",
       "title": "Survey finds Mexican migrants pay average of US \\$7,000 to 'coyotes'",
@@ -24836,6 +25116,60 @@
       "pages": "",
       "number": ""
     },
+    "fishcount-farmed-fish": {
+      "id": "fishcount-farmed-fish",
+      "title": "Numbers of farmed fishes slaughtered each year",
+      "author": "Mood, Alison and Brooke, Phil",
+      "year": "2019",
+      "source": "fishcount.org.uk; 2019 figure peer-reviewed in Animal Welfare",
+      "url": "https://fishcount.org.uk/fish-count-estimates-2/numbers-of-farmed-fish-slaughtered-each-year",
+      "urls": [
+        "https://fishcount.org.uk/fish-count-estimates-2/numbers-of-farmed-fish-slaughtered-each-year"
+      ],
+      "quote": "",
+      "note": "Quote: global farmed finfishes killed for food \"reached 120,000,000,000 or 120 billion (range 78-170 billion)\" in 2019; approximately 130 billion in 2022. Finfish only; excludes farmed shrimp/decapods.",
+      "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "fishcount-wild-fish": {
+      "id": "fishcount-wild-fish",
+      "title": "Fish count estimates",
+      "author": "fishcount.org.uk",
+      "year": "2019",
+      "source": "",
+      "url": "https://fishcount.org.uk/fish-count-estimates-2",
+      "urls": [
+        "https://fishcount.org.uk/fish-count-estimates-2"
+      ],
+      "quote": "",
+      "note": "Derived from FAO capture tonnage and estimated mean body weights. Quote: \"1.1-2.2 trillion wild fishes were caught annually, on average, during 2000-2019.\" Advocacy-aligned project, standard methodology for these counts.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "folu-growing-better-2019": {
+      "id": "folu-growing-better-2019",
+      "title": "Growing Better: Ten Critical Transitions to Transform Food and Land Use",
+      "author": "Food and Land Use Coalition",
+      "year": "2019",
+      "source": "The Food and Land Use Coalition (FOLU)",
+      "url": "https://www.foodandlandusecoalition.org/wp-content/uploads/2019/09/FOLU-GrowingBetter-GlobalReport-SummaryReport.pdf",
+      "urls": [
+        "https://www.foodandlandusecoalition.org/wp-content/uploads/2019/09/FOLU-GrowingBetter-GlobalReport-SummaryReport.pdf"
+      ],
+      "quote": "",
+      "note": "Advocacy coalition; modeled figures, widely cited. Quote: \"The hidden costs of global food and land use systems sum to \\$12 trillion, compared to a market value of the global food system of \\$10 trillion.\" Rises to \\$16.1 trillion by 2050 under current trends.",
+      "type": "techreport",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "food-abundance-stats": {
       "id": "food-abundance-stats",
       "title": "Food Abundance in Modern Society",
@@ -25411,6 +25745,24 @@
       "pages": "",
       "number": ""
     },
+    "gbd-2017-diet": {
+      "id": "gbd-2017-diet",
+      "title": "Health effects of dietary risks in 195 countries, 1990-2017: a systematic analysis for the Global Burden of Disease Study 2017",
+      "author": "GBD 2017 Diet Collaborators",
+      "year": "2019",
+      "source": "The Lancet",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30954305/",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/30954305/"
+      ],
+      "quote": "",
+      "note": "Lead author Ashkan Afshin. Quote: \"In 2017, 11 million (95% uncertainty interval [UI] 10-12) deaths and 255 million (234-274) DALYs were attributable to dietary risk factors.\"",
+      "type": "article",
+      "doi": "",
+      "volume": "393",
+      "pages": "1958--1972",
+      "number": "10184"
+    },
     "gbd-disability-weights": {
       "id": "gbd-disability-weights",
       "title": "Global Burden of Disease Study 2019: Disability Weights",
@@ -25580,6 +25932,24 @@
       "pages": "",
       "number": ""
     },
+    "genetic-literacy-fpc-2024": {
+      "id": "genetic-literacy-fpc-2024",
+      "title": "Is your cheese GMO? The Non-GMO Project and other activists claim 90 percent of cheeses in America are tainted. Here are the facts",
+      "author": "Genetic Literacy Project",
+      "year": "2024",
+      "source": "",
+      "url": "https://geneticliteracyproject.org/2024/08/16/is-your-cheese-gmo-the-non-gmo-project-and-other-activists-claim-90-of-cheeses-in-america-are-tainted-here-are-the-facts/",
+      "urls": [
+        "https://geneticliteracyproject.org/2024/08/16/is-your-cheese-gmo-the-non-gmo-project-and-other-activists-claim-90-of-cheeses-in-america-are-tainted-here-are-the-facts/"
+      ],
+      "quote": "",
+      "note": "Fermentation-produced chymosin (FPC), FDA-approved 1990. Quote: \"Today ninety percent of the cheese in the United States is made using FPC.\" Peer-reviewed estimates (Johnson and Lucey 2006) are more conservative at ~70-80% of the global coagulant market.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "geographic-literacy-survey": {
       "id": "geographic-literacy-survey",
       "title": "Survey on Americans' geographic literacy",
@@ -25649,6 +26019,24 @@
       "quote": "10-year plan (Dec 2020): Raise R&D from 2.2% to 3% of GDP; public spending €15B → €20B by 2030 Research funding system: Federal Ministry of Education & Research (BMBF) + German Research Foundation (DFG) Medical biotechnology: Strong industry sector with government support Biomedical research investment: Significant portion of overall R&D budget Public investment in biomedical research (Europe-wide context): Germany major contributor Note: Specific \"\\$6 billion\" for medical research not confirmed. Germany committed to raising total public R&D spending to €20B by 2030, with significant biomedical research component Additional sources: https://www.research-in-germany.org/en/research-landscape/why-germany/research-funding-system/government-funding.html | https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(15)00326-8/fulltext | https://www.science.org/content/article/german-research-promised-decade-budget-increases",
       "note": "Research in Germany: Government Funding | Lancet: Public Investment in Biomedical Research Europe | Science: German Research Budget Increases",
       "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "gfi-state-industry-2024": {
+      "id": "gfi-state-industry-2024",
+      "title": "GFI State of the Industry Report 2024",
+      "author": "Good Food Institute",
+      "year": "2025",
+      "source": "",
+      "url": "https://www.greenqueen.com.hk/gfi-state-of-the-industry-report-2024/",
+      "urls": [
+        "https://www.greenqueen.com.hk/gfi-state-of-the-industry-report-2024/"
+      ],
+      "quote": "",
+      "note": "Advocacy organization; a downturn year. Quote: \"total funding for the sector only amounting to \\$1.1B, a 27% decline from the year before\"; plant-based startups \"raised \\$309M in 2024, a sharp 64% fall from the year before.\" Primary GFI PDF unreadable on fetch; figures via Green Queen.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -26677,6 +27065,24 @@
       "pages": "",
       "number": ""
     },
+    "goncalves-participatory-budgeting-2014": {
+      "id": "goncalves-participatory-budgeting-2014",
+      "title": "The Effects of Participatory Budgeting on Municipal Expenditures and Infant Mortality in Brazil",
+      "author": "Gonçalves, Sónia",
+      "year": "2014",
+      "source": "World Development",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0305750X13000156",
+      "urls": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S0305750X13000156"
+      ],
+      "quote": "",
+      "note": "Municipalities adopting participatory budgeting (1990-2004) shifted spending toward sanitation and health and saw infant mortality fall by roughly 1-2 per 1,000 live births, about 5-10 percent of the baseline rate.",
+      "type": "article",
+      "doi": "",
+      "volume": "53",
+      "pages": "94-110",
+      "number": ""
+    },
     "goodhart1984": {
       "id": "goodhart1984",
       "title": "Problems of Monetary Management: The UK Experience",
@@ -27669,6 +28075,24 @@
       "volume": "",
       "pages": "",
       "number": ""
+    },
+    "humbird-2021-cultured-meat": {
+      "id": "humbird-2021-cultured-meat",
+      "title": "Scale-up economics for cultured meat",
+      "author": "Humbird, David",
+      "year": "2021",
+      "source": "Biotechnology and Bioengineering",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8362201/",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8362201/"
+      ],
+      "quote": "",
+      "note": "Skeptical, peer-reviewed (commissioned by Open Philanthropy). Quote: \"The overall cost of production estimated for a fed-batch cell-culture process is \\$37/kg wet cell mass\"; the analysis describes \"economics that would likely preclude the affordability of their products as food.\"",
+      "type": "article",
+      "doi": "",
+      "volume": "118",
+      "pages": "3239--3250",
+      "number": "8"
     },
     "hunter-gatherer-violence": {
       "id": "hunter-gatherer-violence",
@@ -28932,6 +29356,24 @@
       "volume": "",
       "pages": "",
       "number": ""
+    },
+    "jones-2008-emerging-diseases": {
+      "id": "jones-2008-emerging-diseases",
+      "title": "Global trends in emerging infectious diseases",
+      "author": "Jones, Kate E. and Patel, Nikkita G. and Levy, Marc A. and Storeygard, Adam and Balk, Deborah and Gittleman, John L. and Daszak, Peter",
+      "year": "2008",
+      "source": "Nature",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18288193/",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/18288193/"
+      ],
+      "quote": "",
+      "note": "Quote: \"EID events are dominated by zoonoses (60.3% of EIDs): the majority of these (71.8%) originate in wildlife.\" Consistent with the CDC figure that ~3 of 4 new or emerging human infectious diseases come from animals.",
+      "type": "article",
+      "doi": "",
+      "volume": "451",
+      "pages": "990--993",
+      "number": "7181"
     },
     "jones-schneider-iq-growth-2006": {
       "id": "jones-schneider-iq-growth-2006",
@@ -30200,6 +30642,24 @@
       "pages": "",
       "number": ""
     },
+    "martin-2015-antibiotics-animals": {
+      "id": "martin-2015-antibiotics-animals",
+      "title": "Antibiotics Overuse in Animal Agriculture: A Call to Action for Health Care Providers",
+      "author": "Martin, Michael J. and Thottathil, Sapna E. and Newman, Thomas B.",
+      "year": "2015",
+      "source": "American Journal of Public Health",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4638249/",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4638249/"
+      ],
+      "quote": "",
+      "note": "Based on FDA sales data. Quote: \"Of all antibiotics sold in the United States, approximately 80% are sold for use in animal agriculture; about 70% of these are 'medically important'.\"",
+      "type": "article",
+      "doi": "",
+      "volume": "105",
+      "pages": "2409--2410",
+      "number": "12"
+    },
     "maskin1999": {
       "id": "maskin1999",
       "title": "Nash Equilibrium and Welfare Optimality",
@@ -30863,6 +31323,24 @@
       "volume": "114",
       "pages": "871-904",
       "number": "5"
+    },
+    "murray-2022-amr": {
+      "id": "murray-2022-amr",
+      "title": "Global burden of bacterial antimicrobial resistance in 2019: a systematic analysis",
+      "author": "Antimicrobial Resistance Collaborators",
+      "year": "2022",
+      "source": "The Lancet",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35065702/",
+      "urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/35065702/"
+      ],
+      "quote": "",
+      "note": "Lead author Christopher J. L. Murray. Quote: \"1.27 million (95% UI 0.911-1.71) deaths attributable to bacterial AMR ... 4.95 million (3.62-6.57) deaths associated with bacterial AMR in 2019.\" Attributable and associated are not additive.",
+      "type": "article",
+      "doi": "",
+      "volume": "399",
+      "pages": "629--655",
+      "number": "10325"
     },
     "myerson1979": {
       "id": "myerson1979",
@@ -33049,6 +33527,24 @@
       "pages": "",
       "number": ""
     },
+    "oneill-amr-2016": {
+      "id": "oneill-amr-2016",
+      "title": "Tackling Drug-Resistant Infections Globally: Final Report and Recommendations",
+      "author": "O'Neill, Jim",
+      "year": "2016",
+      "source": "The Review on Antimicrobial Resistance (commissioned by the UK Government and Wellcome Trust)",
+      "url": "https://amr-review.org/",
+      "urls": [
+        "https://amr-review.org/"
+      ],
+      "quote": "",
+      "note": "Contested upper-bound scenario, not a forecast (RAND/KPMG models; \"a broad brush estimate\"). Quote: \"the burden of deaths from AMR could balloon to 10 million lives each year by 2050, at a cumulative cost to global economic output of 100 trillion USD.\" Newer GBD forecasts project far fewer deaths by 2050.",
+      "type": "techreport",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "open-source-platform-multi-trillion-dollar-reality": {
       "id": "open-source-platform-multi-trillion-dollar-reality",
       "title": "Open-source and platform-as-a-service multi-trillion dollar market",
@@ -33449,6 +33945,132 @@
       "pages": "",
       "number": ""
     },
+    "owid-drivers-deforestation": {
+      "id": "owid-drivers-deforestation",
+      "title": "Drivers of Deforestation",
+      "author": "Ritchie, Hannah",
+      "year": "2021",
+      "source": "",
+      "url": "https://ourworldindata.org/drivers-of-deforestation",
+      "urls": [
+        "https://ourworldindata.org/drivers-of-deforestation"
+      ],
+      "quote": "",
+      "note": "Based on Pendrill et al. 2019. Quote: \"The expansion of pasture land to raise cattle was responsible for 41% of tropical deforestation\" (~2.1 million hectares per year); \"beef and oilseeds account for nearly 60% of deforestation.\"",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "owid-environmental-impacts-food": {
+      "id": "owid-environmental-impacts-food",
+      "title": "Environmental Impacts of Food Production",
+      "author": "Ritchie, Hannah and Rosado, Pablo and Roser, Max",
+      "year": "2022",
+      "source": "",
+      "url": "https://ourworldindata.org/environmental-impacts-of-food",
+      "urls": [
+        "https://ourworldindata.org/environmental-impacts-of-food"
+      ],
+      "quote": "",
+      "note": "Based on Poore and Nemecek 2018. Quote: \"Food production accounts for over a quarter (26%) of global greenhouse gas emissions.\" A wider whole-food-system boundary (Crippa et al. 2021) reaches ~34%.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "owid-land-animals-slaughtered": {
+      "id": "owid-land-animals-slaughtered",
+      "title": "More than 80 billion land animals are slaughtered for meat every year",
+      "author": "Rosado, Pablo",
+      "year": "2024",
+      "source": "",
+      "url": "https://ourworldindata.org/data-insights/billions-of-chickens-ducks-and-pigs-are-slaughtered-for-meat-every-year",
+      "urls": [
+        "https://ourworldindata.org/data-insights/billions-of-chickens-ducks-and-pigs-are-slaughtered-for-meat-every-year"
+      ],
+      "quote": "",
+      "note": "Data from UN FAO / FAOSTAT. Quote: \"In 2022, the reported total reached 83 billion worldwide.\" Excludes culled male chicks, so undercounts total farmed deaths.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "owid-land-for-agriculture": {
+      "id": "owid-land-for-agriculture",
+      "title": "Half of the world's habitable land is used for agriculture",
+      "author": "Ritchie, Hannah and Roser, Max",
+      "year": "2019",
+      "source": "",
+      "url": "https://ourworldindata.org/global-land-for-agriculture",
+      "urls": [
+        "https://ourworldindata.org/global-land-for-agriculture"
+      ],
+      "quote": "",
+      "note": "Data from UN FAO / FAOSTAT. Quote: \"livestock accounts for 80% of agricultural land use\"; \"Meat, dairy, and farmed fish provide just 17% of the world's calories and 38% of its protein.\"",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "owid-less-meat": {
+      "id": "owid-less-meat",
+      "title": "Less meat is nearly always better than sustainable meat, to reduce your carbon footprint",
+      "author": "Ritchie, Hannah",
+      "year": "2020",
+      "source": "",
+      "url": "https://ourworldindata.org/less-meat-or-sustainable-meat",
+      "urls": [
+        "https://ourworldindata.org/less-meat-or-sustainable-meat"
+      ],
+      "quote": "",
+      "note": "Data from Poore and Nemecek 2018. Quote: \"producing 100 grams of protein from peas emits just 0.4 kilograms of carbon dioxide equivalents (CO2eq). To get the same amount of protein from beef, emissions would be nearly 90 times higher, at 35 kgCO2eq.\"",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "owid-slaughter-per-day": {
+      "id": "owid-slaughter-per-day",
+      "title": "How many animals get slaughtered every day?",
+      "author": "Roser, Max",
+      "year": "2023",
+      "source": "",
+      "url": "https://ourworldindata.org/how-many-animals-get-slaughtered-every-day",
+      "urls": [
+        "https://ourworldindata.org/how-many-animals-get-slaughtered-every-day"
+      ],
+      "quote": "",
+      "note": "Data from UN FAO (2021). Quote: \"140,000 chickens are slaughtered every minute\"; \"202 million chickens every day\".",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "owid-water-use-stress": {
+      "id": "owid-water-use-stress",
+      "title": "Water Use and Stress",
+      "author": "Ritchie, Hannah and Roser, Max",
+      "year": "2018",
+      "source": "",
+      "url": "https://ourworldindata.org/water-use-stress",
+      "urls": [
+        "https://ourworldindata.org/water-use-stress"
+      ],
+      "quote": "",
+      "note": "Data from FAO AQUASTAT / World Bank. Quote: \"Globally, we use approximately 70 percent of freshwater withdrawals for agriculture.\" Standard consensus figure; some recent work argues the true irrigation share is uncertain (~45-90%).",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "ows-monkey-comparison-dropped": {
       "id": "ows-monkey-comparison-dropped",
       "title": "Saying human trials aren't enough, researchers call for comparison of COVID-19 vaccines in monkeys",
@@ -33480,6 +34102,24 @@
       "quote": "",
       "note": "Science, July 2, 2020. BARDA acting director Gary Disbrow refused to name vaccine companies receiving OWS funding when asked by Senator Tammy Baldwin, citing ``procurement sensitivity.'' Top US scientists were not consulted on vaccine shortlist selection.",
       "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "oxford-leap-food-impacts": {
+      "id": "oxford-leap-food-impacts",
+      "title": "Reducing food's environmental impacts",
+      "author": "University of Oxford, LEAP",
+      "year": "2018",
+      "source": "",
+      "url": "https://www.leap.ox.ac.uk/article/reducing-foods-environmental-impacts",
+      "urls": [
+        "https://www.leap.ox.ac.uk/article/reducing-foods-environmental-impacts"
+      ],
+      "quote": "",
+      "note": "Reporting Poore and Nemecek 2018 (Science). Quote (lead author Joseph Poore): \"without meat and dairy consumption, global farmland use could be reduced by more than 75% - an area equivalent to the US, China, European Union and Australia combined - and still feed the world.\" Hypothetical full-shift model, not a forecast.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -35035,6 +35675,24 @@
       "pages": "",
       "number": ""
     },
+    "poore-nemecek-2018": {
+      "id": "poore-nemecek-2018",
+      "title": "Reducing food's environmental impacts through producers and consumers",
+      "author": "Poore, Joseph and Nemecek, Thomas",
+      "year": "2018",
+      "source": "Science",
+      "url": "https://ora.ox.ac.uk/objects/uuid:b0b53649-5e93-4415-bf07-6b0b1227172f",
+      "urls": [
+        "https://ora.ox.ac.uk/objects/uuid:b0b53649-5e93-4415-bf07-6b0b1227172f"
+      ],
+      "quote": "",
+      "note": "Meta-analysis of ~38,700 farms across 119 countries and 40 products. Quote (paper body): \"meat, aquaculture, eggs, and dairy use ~83% of the world's farmland and contribute 56-58% of food's different emissions, despite providing only 37% of our protein and 18% of our calories.\"",
+      "type": "article",
+      "doi": "10.1126/science.aaq0216",
+      "volume": "360",
+      "pages": "987--992",
+      "number": "6392"
+    },
     "pos-energy-efficiency": {
       "id": "pos-energy-efficiency",
       "title": "Proof-of-Stake Energy Efficiency",
@@ -36213,6 +36871,24 @@
       "pages": "",
       "number": ""
     },
+    "rethinkx-food-2019": {
+      "id": "rethinkx-food-2019",
+      "title": "Rethinking Food and Agriculture 2020-2030: The Second Domestication of Plants and Animals, the Disruption of the Cow, and the Collapse of Industrial Livestock Farming",
+      "author": "Tubb, Catherine and Seba, Tony",
+      "year": "2019",
+      "source": "RethinkX",
+      "url": "https://www.rethinkx.com/food-and-agriculture",
+      "urls": [
+        "https://www.rethinkx.com/food-and-agriculture"
+      ],
+      "quote": "",
+      "note": "Advocacy/forecast think tank; aggressive disruption timelines, several 2030 predictions already unmet as of 2026. Quote: \"PF will make protein production five times cheaper than existing animal proteins by 2030, and 10 times cheaper by 2035.\" Cite as a bullish scenario, not an established projection.",
+      "type": "techreport",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "reversal-of-aging-in-mice-sinclair": {
       "id": "reversal-of-aging-in-mice-sinclair",
       "title": "Reversal of Aging in Mice at David Sinclair's Lab",
@@ -36877,6 +37553,24 @@
       "quote": "After Semmelweis required chlorinated-lime handwashing, the First Clinic maternal mortality rate fell from 18.27% in 1847 to 1.27% in 1848. His findings were rejected by the medical establishment; in 1865 he was committed to an asylum, where he died shortly thereafter.",
       "note": "",
       "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "sentience-us-factory-farming": {
+      "id": "sentience-us-factory-farming",
+      "title": "US Factory Farming Estimates",
+      "author": "Anthis, Jacy Reese",
+      "year": "2024",
+      "source": "",
+      "url": "https://www.sentienceinstitute.org/us-factory-farming-estimates",
+      "urls": [
+        "https://www.sentienceinstitute.org/us-factory-farming-estimates"
+      ],
+      "quote": "",
+      "note": "Uses EPA CAFO definitions and USDA farm-size census; cited by Our World in Data. Quote: \"We estimate that 99% of US farmed animals are living in factory farms at present.\" Advocacy think tank, transparent method.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -41069,6 +41763,24 @@
       "volume": "",
       "pages": "",
       "number": ""
+    },
+    "xu-2021-animal-ghg": {
+      "id": "xu-2021-animal-ghg",
+      "title": "Global greenhouse gas emissions from animal-based foods are twice those of plant-based foods",
+      "author": "Xu, Xiaoming and Sharma, Prateek and Shu, Shijie and Lin, Tzu-Shun and Ciais, Philippe and Tubiello, Francesco N. and Smith, Pete and Campbell, Nelson and Jain, Atul K.",
+      "year": "2021",
+      "source": "Nature Food",
+      "url": "https://www.nature.com/articles/s43016-021-00358-x",
+      "urls": [
+        "https://www.nature.com/articles/s43016-021-00358-x"
+      ],
+      "quote": "",
+      "note": "Quote: global food-production GHG \"17,318 +/- 1,675 TgCO2eq yr-1, of which 57% corresponds to the production of animal-based food (including livestock feed), 29% to plant-based foods and 14% to other utilizations.\"",
+      "type": "article",
+      "doi": "10.1038/s43016-021-00358-x",
+      "volume": "2",
+      "pages": "724--732",
+      "number": "9"
     },
     "yale-tariffs-2025": {
       "id": "yale-tariffs-2025",

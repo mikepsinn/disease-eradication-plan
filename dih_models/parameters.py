@@ -16593,3 +16593,221 @@ IMMIGRATION_DIVIDEND_PER_CITIZEN_ANNUAL = Parameter(
     ) / ctx["US_POPULATION_2024"],
     keywords=["immigration", "dividend", "per capita", "citizen shareholder"],
 )
+
+# ==============================================================================
+# OPTIMIZED FOOD SYSTEM (knowledge/solution/optimized-food-system.qmd)
+# The animal-as-inefficient-middleware case. Planetary aggregates; each is a
+# headline metric used in the chapter and citable in the parameters appendix.
+# One-off supporting stats (cost curves, COVID $16T, zoonotic share) are cited
+# inline in the chapter, not parameterized, per the book's parameterize/inline rule.
+# ==============================================================================
+
+FARMED_LAND_ANIMALS_SLAUGHTERED_ANNUAL = Parameter(
+    83_000_000_000,  # 83 billion land animals (2022), chickens dominate
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="owid-land-animals-slaughtered",
+    source_type="external",
+    confidence="high",
+    description="Land animals slaughtered for meat globally per year, ~83 billion in 2022 "
+                "(UN FAO via Our World in Data). Chickens are the immense majority. Excludes "
+                "culled male chicks and animals without data, so it undercounts total farmed "
+                "deaths. Dwarfed in turn by aquatic-animal deaths (see AQUATIC_ANIMALS_KILLED_ANNUAL).",
+    display_name="Land Animals Slaughtered for Food per Year",
+    unit="animals",
+    distribution="fixed",
+    keywords=["animals", "slaughter", "meat", "livestock", "chickens", "suffering", "food"],
+)
+
+AQUATIC_ANIMALS_KILLED_ANNUAL = Parameter(
+    1_100_000_000_000,  # conservative low end of the 1.1-2.2 trillion wild-caught range
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="fishcount-wild-fish",
+    source_type="external",
+    confidence="medium",
+    description="Wild-caught fish killed globally per year, estimated at 1.1-2.2 trillion "
+                "(average 2000-2019, fishcount.org.uk, derived from FAO capture tonnage and mean "
+                "body weights). Value shown is the conservative low end; the range is wide because "
+                "these animals are counted by weight, not headcount. Farmed finfish add ~120 billion "
+                "more. Aquatic deaths exceed land-animal deaths by roughly an order of magnitude.",
+    display_name="Wild Aquatic Animals Killed for Food per Year (low estimate)",
+    unit="animals",
+    distribution="fixed",
+    keywords=["fish", "aquatic", "wild-caught", "fishcount", "suffering", "food"],
+)
+
+FACTORY_FARM_SHARE_US = Parameter(
+    0.99,  # 99% of US farmed animals live on factory farms (Sentience Institute)
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="sentience-us-factory-farming",
+    source_type="external",
+    confidence="high",
+    description="Share of US farmed animals living on factory farms, ~99% (Sentience Institute, "
+                "using EPA CAFO definitions and USDA farm-size census; widely cited incl. by Our "
+                "World in Data). Per-species: ~75% of cows, ~99% of pigs, >99.9% of meat chickens. "
+                "Global share is lower for land vertebrates (~74%) and higher once fish are included (>90%).",
+    display_name="Share of US Farmed Animals on Factory Farms",
+    unit="percent",
+    distribution="fixed",
+    keywords=["factory farm", "CAFO", "intensive", "animal welfare", "sentience institute"],
+)
+
+LIVESTOCK_SHARE_OF_AGRICULTURAL_LAND = Parameter(
+    0.80,  # livestock (grazing + feed cropland) = ~80% of agricultural land
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="owid-land-for-agriculture",
+    source_type="external",
+    confidence="high",
+    description="Livestock's share of global agricultural land, combining grazing land and cropland "
+                "grown for animal feed, ~80% (Our World in Data, FAOSTAT). Poore & Nemecek (2018) report "
+                "~83% of farmland by a slightly different boundary. Defensible range ~77-83%. The striking "
+                "point is the mismatch: this majority of farmland returns only ~18% of calories.",
+    display_name="Livestock Share of Agricultural Land",
+    unit="percent",
+    distribution="fixed",
+    keywords=["livestock", "land use", "farmland", "grazing", "feed", "agriculture"],
+)
+
+LIVESTOCK_SHARE_OF_CALORIES = Parameter(
+    0.18,  # livestock provides ~18% of global calories (Poore & Nemecek 2018)
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="poore-nemecek-2018",
+    source_type="external",
+    confidence="high",
+    description="Share of the world's calories provided by meat, aquaculture, eggs, and dairy, ~18% "
+                "(Poore & Nemecek 2018, Science, meta-analysis of ~38,700 farms across 119 countries). "
+                "Our World in Data reports ~17% by FAOSTAT. Pair with LIVESTOCK_SHARE_OF_AGRICULTURAL_LAND: "
+                "the majority of farmland for a small share of the calories.",
+    display_name="Livestock Share of Global Calories",
+    unit="percent",
+    distribution="fixed",
+    keywords=["livestock", "calories", "protein", "poore nemecek", "food"],
+)
+
+LIVESTOCK_SHARE_OF_PROTEIN = Parameter(
+    0.37,  # livestock provides ~37% of global protein (Poore & Nemecek 2018)
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="poore-nemecek-2018",
+    source_type="external",
+    confidence="high",
+    description="Share of the world's protein provided by meat, aquaculture, eggs, and dairy, ~37% "
+                "(Poore & Nemecek 2018, Science). Our World in Data reports ~38% by FAOSTAT. "
+                "Delivered using ~83% of farmland and producing the majority of food's emissions.",
+    display_name="Livestock Share of Global Protein",
+    unit="percent",
+    distribution="fixed",
+    keywords=["livestock", "protein", "poore nemecek", "food"],
+)
+
+AGRICULTURE_FRESHWATER_WITHDRAWAL_PCT = Parameter(
+    0.70,  # agriculture = ~70% of global freshwater withdrawals
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="owid-water-use-stress",
+    source_type="external",
+    confidence="medium",
+    description="Agriculture's share of global freshwater withdrawals, ~70% (Our World in Data, "
+                "FAO AQUASTAT / World Bank). This is the standard consensus figure but is a soft estimate; "
+                "recent work argues the true irrigation share could plausibly range ~45-90%. Reported as "
+                "the widely-cited ~70% with that uncertainty acknowledged.",
+    display_name="Agriculture Share of Freshwater Withdrawals",
+    unit="percent",
+    distribution="fixed",
+    keywords=["water", "freshwater", "irrigation", "agriculture", "AQUASTAT"],
+)
+
+FOOD_PRODUCTION_GHG_PCT = Parameter(
+    0.26,  # food production = ~26% of global GHG (Poore & Nemecek boundary)
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="owid-environmental-impacts-food",
+    source_type="external",
+    confidence="high",
+    description="Food production's share of global greenhouse-gas emissions, ~26% (~13.7 Gt CO2eq; "
+                "Our World in Data, based on Poore & Nemecek 2018). Uses the 'food production' boundary. "
+                "A wider whole-food-system boundary including retail, transport, packaging, and waste "
+                "(Crippa et al. 2021, Nature Food) reaches ~34%. Present as boundary choices, not a contradiction.",
+    display_name="Food Production Share of Global GHG Emissions",
+    unit="percent",
+    distribution="fixed",
+    keywords=["emissions", "GHG", "climate", "food", "agriculture", "poore nemecek"],
+)
+
+FARMLAND_REDUCTION_POTENTIAL_PCT = Parameter(
+    0.75,  # >75% of farmland freed under a full shift off animal products
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="oxford-leap-food-impacts",
+    source_type="external",
+    confidence="high",
+    description="Reduction in global farmland if the world shifted off meat and dairy while still "
+                "feeding everyone, more than 75% (~4.1 billion down to ~1 billion hectares; University of "
+                "Oxford LEAP, reporting Poore & Nemecek 2018, Science). Oxford's illustrative equivalent: "
+                "an area the size of the US, China, EU, and Australia combined. A hypothetical full-shift "
+                "model, not a forecast.",
+    display_name="Farmland Freed Under a Shift Off Animal Products",
+    unit="percent",
+    distribution="fixed",
+    keywords=["land", "farmland", "rewilding", "reforestation", "poore nemecek", "diet"],
+)
+
+BEEF_FEED_CALORIE_EFFICIENCY_PCT = Parameter(
+    0.03,  # ~3% of feed calories become beef calories (Cassidy et al. 2013)
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="cassidy-2013-nourished",
+    source_type="external",
+    confidence="high",
+    description="Caloric conversion efficiency of beef, ~3%: only about 3 of every 100 feed calories "
+                "become beef calories (Cassidy et al. 2013, Environmental Research Letters). The often-quoted "
+                "'~33 feed calories per beef calorie' is the arithmetic reciprocal of this figure, not a "
+                "separate measurement. System-wide, 36% of crop calories go to animal feed and only 12% return "
+                "as human food.",
+    display_name="Beef Caloric Conversion Efficiency",
+    unit="percent",
+    distribution="fixed",
+    keywords=["feed conversion", "beef", "efficiency", "calories", "thermodynamics"],
+)
+
+DIETARY_RISK_DEATHS_ANNUAL = Parameter(
+    11_000_000,  # ~11 million deaths/year attributable to dietary risks (GBD 2017)
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="gbd-2017-diet",
+    source_type="external",
+    confidence="high",
+    description="Deaths per year attributable to dietary risk factors, ~11 million (95% UI 10-12 million; "
+                "255 million DALYs), from the Global Burden of Disease Study 2017 (Afshin et al., The Lancet 2019). "
+                "Diet-driven chronic disease is one of the human-health costs the current food system externalizes.",
+    display_name="Deaths per Year from Dietary Risks",
+    unit="deaths",
+    distribution="fixed",
+    keywords=["diet", "deaths", "chronic disease", "GBD", "lancet", "health"],
+)
+
+AMR_DEATHS_ATTRIBUTABLE_2019 = Parameter(
+    1_270_000,  # ~1.27 million deaths directly attributable to bacterial AMR in 2019
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="murray-2022-amr",
+    source_type="external",
+    confidence="high",
+    description="Deaths directly attributable to bacterial antimicrobial resistance in 2019, ~1.27 million "
+                "(95% UI 0.91-1.71 million); ~4.95 million deaths were associated with it (Murray et al., "
+                "The Lancet 2022). Attributable and associated are not additive. Animal agriculture consumes a "
+                "large majority of medically important antibiotics, driving resistance.",
+    display_name="Deaths Directly Attributable to AMR (2019)",
+    unit="deaths",
+    distribution="fixed",
+    keywords=["antibiotics", "AMR", "resistance", "deaths", "lancet", "livestock"],
+)
+
+FOOD_SYSTEM_HIDDEN_COST_ANNUAL = Parameter(
+    12_000_000_000_000,  # ~$12 trillion/year global hidden costs (FOLU 2019)
+    manual_ref="knowledge/solution/optimized-food-system.qmd",
+    source_ref="folu-growing-better-2019",
+    source_type="external",
+    confidence="medium",
+    description="Hidden (external) costs of the global food and land-use system, ~$12 trillion/year, "
+                "against a market value of ~$10 trillion (FOLU 'Growing Better' 2019; modeled by an advocacy "
+                "coalition, widely cited). Comprises environmental, public-health, and poverty costs; projected "
+                "to rise to $16.1 trillion by 2050 under current trends. US-only true-cost accounting (Rockefeller "
+                "2021) finds ~$2.1 trillion/year in hidden costs on top of ~$1.1 trillion paid.",
+    display_name="Global Food System Hidden Costs per Year",
+    unit="USD",
+    distribution="fixed",
+    keywords=["externalities", "hidden cost", "true cost", "food system", "FOLU"],
+)

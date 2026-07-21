@@ -11,35 +11,21 @@ fi
 
 START_TIME=$(date +%s)
 
+if ! pnpm exec pyright --version >/dev/null 2>&1; then
+    echo "Pyright is not installed. Run: pnpm install --frozen-lockfile"
+    exit 1
+fi
+
 echo "Running Python type check..."
 if ! pnpm exec pyright dih_models scripts; then
     echo "Python type check failed. Fix Pyright/Pylance errors before committing."
     exit 1
 fi
 
-SNAPSHOT_DIR=$(mktemp -d)
-trap 'rm -rf "$SNAPSHOT_DIR"' EXIT
-
-git diff --no-ext-diff --binary > "$SNAPSHOT_DIR/before.diff"
-git status --porcelain=v1 --untracked-files=all > "$SNAPSHOT_DIR/before.status"
-
-echo "Running full pre-render validation (including artifact generation)..."
-VALIDATION_EXIT=0
-"$PYTHON_CMD" -u scripts/pre-render-validation.py || VALIDATION_EXIT=$?
-
-git diff --no-ext-diff --binary > "$SNAPSHOT_DIR/after.diff"
-git status --porcelain=v1 --untracked-files=all > "$SNAPSHOT_DIR/after.status"
-
-if ! cmp -s "$SNAPSHOT_DIR/before.diff" "$SNAPSHOT_DIR/after.diff" || \
-   ! cmp -s "$SNAPSHOT_DIR/before.status" "$SNAPSHOT_DIR/after.status"; then
-    echo "Generation changed the worktree. Review and stage the generated files, then commit again."
-    git status --short
-    exit 1
-fi
-
-if [ "$VALIDATION_EXIT" -ne 0 ]; then
+echo "Running read-only pre-render validation..."
+if ! "$PYTHON_CMD" -u scripts/pre-render-validation.py; then
     echo "Pre-render validation failed. Fix the errors before committing."
-    exit "$VALIDATION_EXIT"
+    exit 1
 fi
 
 END_TIME=$(date +%s)

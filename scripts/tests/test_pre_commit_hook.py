@@ -26,8 +26,8 @@ def prepare_hook_repo(tmp_path: Path) -> tuple[Path, dict[str, str]]:
     python_stub = bin_dir / "python"
     python_stub.write_text(
         """#!/usr/bin/env sh
-if [ "${MUTATE_GENERATION:-0}" = "1" ] && echo "$*" | grep -q "pre-render-validation"; then
-    printf '\nchanged by generation\n' >> tracked.txt
+if [ "${VALIDATION_FAIL:-0}" = "1" ] && echo "$*" | grep -q "pre-render-validation"; then
+    exit 1
 fi
 exit 0
 """,
@@ -36,7 +36,15 @@ exit 0
     python_stub.chmod(python_stub.stat().st_mode | stat.S_IEXEC)
 
     pnpm_stub = bin_dir / "pnpm"
-    pnpm_stub.write_text("#!/usr/bin/env sh\nexit 0\n", encoding="utf-8")
+    pnpm_stub.write_text(
+        """#!/usr/bin/env sh
+if [ "${PYRIGHT_MISSING:-0}" = "1" ] && [ "$*" = "exec pyright --version" ]; then
+    exit 1
+fi
+exit 0
+""",
+        encoding="utf-8",
+    )
     pnpm_stub.chmod(pnpm_stub.stat().st_mode | stat.S_IEXEC)
 
     (tmp_path / "tracked.txt").write_text("baseline\n", encoding="utf-8")
@@ -49,7 +57,7 @@ exit 0
     return hook_dir / "pre-commit", env
 
 
-def test_pre_commit_continues_when_generation_changes_nothing(tmp_path: Path) -> None:
+def test_pre_commit_runs_read_only_validation(tmp_path: Path) -> None:
     hook, env = prepare_hook_repo(tmp_path)
 
     result = subprocess.run(
@@ -61,13 +69,14 @@ def test_pre_commit_continues_when_generation_changes_nothing(tmp_path: Path) ->
     )
 
     assert result.returncode == 0
-    assert "Running full pre-render validation (including artifact generation)" in result.stdout
+    assert "Running read-only pre-render validation" in result.stdout
     assert "Pre-commit checks passed" in result.stdout
+    assert (tmp_path / "tracked.txt").read_text(encoding="utf-8") == "baseline\n"
 
 
-def test_pre_commit_aborts_when_validation_generation_changes_worktree(tmp_path: Path) -> None:
+def test_pre_commit_reports_missing_pyright(tmp_path: Path) -> None:
     hook, env = prepare_hook_repo(tmp_path)
-    env["MUTATE_GENERATION"] = "1"
+    env["PYRIGHT_MISSING"] = "1"
 
     result = subprocess.run(
         [env["TEST_SH"], str(hook)],
@@ -78,6 +87,23 @@ def test_pre_commit_aborts_when_validation_generation_changes_worktree(tmp_path:
     )
 
     assert result.returncode == 1
-    assert "Generation changed the worktree" in result.stdout
-    assert "Running full pre-render validation (including artifact generation)" in result.stdout
+    assert "Pyright is not installed" in result.stdout
+    assert "pnpm install --frozen-lockfile" in result.stdout
+    assert "Running Python type check" not in result.stdout
+
+
+def test_pre_commit_aborts_when_validation_fails(tmp_path: Path) -> None:
+    hook, env = prepare_hook_repo(tmp_path)
+    env["VALIDATION_FAIL"] = "1"
+
+    result = subprocess.run(
+        [env["TEST_SH"], str(hook)],
+        cwd=tmp_path,
+        env=env,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.returncode == 1
+    assert "Pre-render validation failed" in result.stdout
     assert "Pre-commit checks passed" not in result.stdout
