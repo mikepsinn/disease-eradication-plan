@@ -26,6 +26,7 @@ Safety:
 import argparse
 import json
 import os
+import shutil
 import subprocess
 import sys
 from datetime import datetime
@@ -44,6 +45,19 @@ if sys.platform == "win32":
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 LOG_DIR = PROJECT_ROOT / "AUTONOMOUS-FIX-LOGS"
 RESULT_FILE = PROJECT_ROOT / "auto-fix-result.json"
+
+
+def resolve_pnpm_command() -> List[str]:
+    """Return a pnpm command that subprocess can launch on every platform."""
+    pnpm = shutil.which("pnpm")
+    if pnpm is not None:
+        return [pnpm]
+
+    corepack = shutil.which("corepack")
+    if corepack is not None:
+        return [corepack, "pnpm"]
+
+    raise RuntimeError("pnpm is required. Install Node.js 22 and enable Corepack.")
 
 
 class AutoFixOrchestrator:
@@ -172,12 +186,12 @@ class AutoFixOrchestrator:
         """Classify errors and route to appropriate fix tier"""
         print("\n[STEP 3] Classifying errors and routing to fix tiers...")
 
-        # Call TypeScript error router via npx tsx
+        # Call TypeScript error router through the pinned pnpm dependency
         errors_json = json.dumps(errors)
 
         try:
             result = subprocess.run(
-                ["npx", "tsx", "scripts/agents/sub-agents/error-router.ts"],
+                [*resolve_pnpm_command(), "exec", "tsx", "scripts/agents/sub-agents/error-router.ts"],
                 input=errors_json,
                 capture_output=True,
                 text=True,

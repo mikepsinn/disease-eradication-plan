@@ -22,22 +22,22 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.15.9
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Run domain status check
         id: domain-check
         continue-on-error: true
         run: |
           # Run the check and capture output
-          npx tsx scripts/check-domain-status.ts --json > domain-status.json 2>&1 || true
+          pnpm exec tsx scripts/check-domain-status.ts --json > domain-status.json 2>&1 || true
 
           # Extract summary for step output
           if [ -f domain-status.json ]; then
@@ -48,7 +48,7 @@ jobs:
 
             # Also show human-readable output in logs
             echo "=== Domain Status Check Results ==="
-            npx tsx scripts/check-domain-status.ts || true
+            pnpm exec tsx scripts/check-domain-status.ts || true
           else
             echo "unhealthy=0" >> $GITHUB_OUTPUT
             echo "total=0" >> $GITHUB_OUTPUT
