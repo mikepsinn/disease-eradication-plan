@@ -38,8 +38,8 @@ exit 0
     )
     python_stub.chmod(python_stub.stat().st_mode | stat.S_IEXEC)
 
-    npx_stub = bin_dir / "npx"
-    npx_stub.write_text(
+    pnpm_stub = bin_dir / "pnpm"
+    pnpm_stub.write_text(
         """#!/usr/bin/env sh
 if [ "${PYRIGHT_FAIL:-0}" = "1" ]; then
     exit 1
@@ -48,7 +48,7 @@ exit 0
 """,
         encoding="utf-8",
     )
-    npx_stub.chmod(npx_stub.stat().st_mode | stat.S_IEXEC)
+    pnpm_stub.chmod(pnpm_stub.stat().st_mode | stat.S_IEXEC)
 
     (tmp_path / "tracked.txt").write_text("baseline\n", encoding="utf-8")
     run_command(["git", "init", "--quiet"], tmp_path)

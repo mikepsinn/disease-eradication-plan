@@ -236,7 +236,7 @@ Google Gemini Imagen pricing (as of 2024):
 
 ### "Import errors"
 - Run from project root
-- Ensure dependencies installed: `npm install`
+- Ensure dependencies installed: `pnpm install --frozen-lockfile`
 - Use `tsx` not `ts-node`
 
 ## Other Commands

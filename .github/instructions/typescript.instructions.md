@@ -246,7 +246,7 @@ npm run test:coverage     # With coverage
 ### Adding New Dependencies
 
 1. Check if it's in the ecosystem: `npm search package-name`
-2. Install: `npm install package-name`
+2. Install: `pnpm add package-name`
 3. Use proper imports
 4. Document in code why it's needed
 

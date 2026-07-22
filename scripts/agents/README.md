@@ -16,7 +16,7 @@ WISHONIA uses a supervisor agent that coordinates 5 specialized subagents:
 
 ### Prerequisites
 
-- Node.js and npm/pnpm installed
+- Node.js 22 and pnpm installed
 - Google Generative AI API key in `.env` file:
   ```
   GOOGLE_GENERATIVE_AI_API_KEY=your-key-here
@@ -96,7 +96,7 @@ The system uses VoltAgent with:
 
 **API errors**: Make sure `GOOGLE_GENERATIVE_AI_API_KEY` is set in `.env`.
 
-**TypeScript errors**: Run `npm install` to ensure all dependencies are installed.
+**TypeScript errors**: Run `pnpm install --frozen-lockfile` to ensure all dependencies are installed.
 
 ## Advanced Usage
 
@@ -138,4 +138,3 @@ wishonia-voltagent.ts (Main CLI)
 ## See Also
 
 - [VoltAgent Documentation](https://docs.voltagent.ai) - Framework details
-

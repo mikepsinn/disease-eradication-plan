@@ -11,8 +11,19 @@ fi
 
 START_TIME=$(date +%s)
 
+run_pnpm() {
+    if command -v pnpm >/dev/null 2>&1; then
+        pnpm "$@"
+    elif command -v corepack >/dev/null 2>&1; then
+        corepack pnpm "$@"
+    else
+        echo "pnpm is required. Install Node.js 22 and enable Corepack."
+        return 1
+    fi
+}
+
 echo "Running Python type check..."
-if ! npx --yes pyright dih_models scripts; then
+if ! run_pnpm exec pyright dih_models scripts; then
     echo "Python type check failed. Fix Pyright/Pylance errors before committing."
     exit 1
 fi

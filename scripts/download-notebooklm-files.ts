@@ -3,7 +3,7 @@
  * Script to automatically download all files from a NotebookLM Studio tab
  * 
  * First install puppeteer:
- *   npm install --save-dev puppeteer @types/puppeteer
+ *   pnpm add --save-dev puppeteer
  * 
  * Usage:
  *   tsx scripts/download-notebooklm-files.ts <notebook-url>
@@ -450,4 +450,3 @@ if (!notebookUrl) {
 
 const useExisting = process.argv.includes('--use-existing');
 downloadNotebookLMFiles(notebookUrl, useExisting).catch(console.error);
-

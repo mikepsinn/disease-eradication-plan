@@ -1,6 +1,8 @@
 # Disease Eradication Plan - Makefile
 # Simplifies common development tasks
 
+PNPM ?= corepack pnpm
+
 .PHONY: help setup install validate render deploy deploy-economics deploy-vercel deploy-economics-vercel clean
 
 # Default target - show help
@@ -40,7 +42,7 @@ setup:
 	$(PYTHON) -m pip install -r requirements.txt
 	@echo ""
 	@echo "Installing Node.js dependencies..."
-	npm install
+	$(PNPM) install --frozen-lockfile
 	@echo ""
 	@echo "Setup complete! Next steps:"
 	@echo "  - Run 'make validate' to check your changes"
@@ -52,7 +54,7 @@ install:
 	$(PYTHON) -m pip install -r requirements.txt
 	@echo ""
 	@echo "Installing Node.js dependencies..."
-	npm install
+	$(PNPM) install --frozen-lockfile
 	@echo ""
 	@echo "Dependencies installed!"
 
