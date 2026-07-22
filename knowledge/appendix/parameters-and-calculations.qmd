@@ -40806,13 +40806,21 @@ Agriculture's share of global freshwater withdrawals, ~70% (Our World in Data, F
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Deaths directly attributable to bacterial antimicrobial resistance in 2019, ~1.27 million (95% UI 0.91-1.71 million); ~4.95 million deaths were associated with it (Murray et al., The Lancet 2022). Attributable and associated are not additive. Animal agriculture consumes a large majority of medically important antibiotics, driving resistance.
+Deaths directly attributable to bacterial antimicrobial resistance in 2019, ~1.27 million (95% UI 0.91-1.71 million); ~4.95 million deaths were associated with it (Murray et al., The Lancet 2022). Attributable and associated are not additive.
 
 **Source**: [@murray-2022-amr]
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Fixed
+**Technical**: 95% CI: [911 thousand deaths, 1.71 million deaths] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 911 thousand deaths and 1.71 million deaths (±31%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-amr_deaths_attributable_2019.qmd >}}
 
 *✓ High confidence*
 
@@ -40873,7 +40881,7 @@ Mean exclusion rate in antidepressant trials (86.1% of real-world patients exclu
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Wild-caught fish killed globally per year, estimated at 1.1-2.2 trillion (average 2000-2019, fishcount.org.uk, derived from FAO capture tonnage and mean body weights). Value shown is the conservative low end; the range is wide because these animals are counted by weight, not headcount. Farmed finfish add ~120 billion more. Aquatic deaths exceed land-animal deaths by roughly an order of magnitude.
+Wild-caught fish killed globally per year, estimated at 1.1-2.2 trillion (average 2000-2019, fishcount.org.uk, derived from FAO capture tonnage and mean body weights). Value shown is the conservative low end; the range is wide because these animals are counted by weight, not headcount.
 
 **Source**: [@fishcount-wild-fish]
 
@@ -41698,7 +41706,15 @@ Deaths per year attributable to dietary risk factors, ~11 million (95% UI 10-12 
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Fixed
+**Technical**: 95% CI: [10 million deaths, 12 million deaths] • Distribution: Normal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 10 million deaths and 12 million deaths (±9%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dietary_risk_deaths_annual.qmd >}}
 
 *✓ High confidence*
 
@@ -42193,7 +42209,7 @@ Food production's share of global greenhouse-gas emissions, ~26% (~13.7 Gt CO2eq
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Hidden (external) costs of the global food and land-use system, ~$12 trillion/year, against a market value of ~$10 trillion (FOLU 'Growing Better' 2019; modeled by an advocacy coalition, widely cited). Comprises environmental, public-health, and poverty costs; projected to rise to $16.1 trillion by 2050 under current trends. US-only true-cost accounting (Rockefeller 2021) finds ~$2.1 trillion/year in hidden costs on top of ~$1.1 trillion paid.
+Hidden (external) costs of the global food and land-use system, ~$12 trillion/year, against a market value of ~$10 trillion (FOLU 'Growing Better' 2019; modeled by an advocacy coalition, widely cited). Comprises environmental, public-health, and poverty costs; projected to rise to $16.1 trillion by 2050 under current trends.
 
 **Source**: [@folu-growing-better-2019]
 

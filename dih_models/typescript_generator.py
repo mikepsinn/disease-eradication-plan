@@ -155,20 +155,23 @@ def _convert_to_csl_json(ref_id: str, ref_data: Dict[str, Any]) -> Optional[Dict
     }
     csl['type'] = type_mapping.get(ref_data.get('type', 'misc'), 'webpage')
 
-    # Parse author into CSL format
+    # Parse BibTeX personal-name lists while preserving braced corporate authors.
     if ref_data.get('author'):
         author_str = ref_data['author']
-        # Simple parsing: assume "Last, First" or "Organization Name"
-        if ',' in author_str:
-            # "Last, First" format
-            parts = author_str.split(',', 1)
-            csl['author'] = [{
-                'family': parts[0].strip(),
-                'given': parts[1].strip() if len(parts) > 1 else ''
-            }]
-        else:
-            # Organization or single name
+        if ref_data.get('_author_is_literal'):
             csl['author'] = [{'literal': author_str}]
+        else:
+            csl_authors = []
+            for author in re.split(r'\s+and\s+', author_str):
+                if ',' in author:
+                    family, given = author.split(',', 1)
+                    csl_authors.append({
+                        'family': family.strip(),
+                        'given': given.strip(),
+                    })
+                else:
+                    csl_authors.append({'literal': author.strip()})
+            csl['author'] = csl_authors
 
     # Parse year into CSL date format
     if ref_data.get('year'):
