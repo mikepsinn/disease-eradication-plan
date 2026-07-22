@@ -16627,8 +16627,7 @@ AQUATIC_ANIMALS_KILLED_ANNUAL = Parameter(
     description="Wild-caught fish killed globally per year, estimated at 1.1-2.2 trillion "
                 "(average 2000-2019, fishcount.org.uk, derived from FAO capture tonnage and mean "
                 "body weights). Value shown is the conservative low end; the range is wide because "
-                "these animals are counted by weight, not headcount. Farmed finfish add ~120 billion "
-                "more. Aquatic deaths exceed land-animal deaths by roughly an order of magnitude.",
+                "these animals are counted by weight, not headcount.",
     display_name="Wild Aquatic Animals Killed for Food per Year (low estimate)",
     unit="animals",
     distribution="fixed",
@@ -16775,7 +16774,8 @@ DIETARY_RISK_DEATHS_ANNUAL = Parameter(
                 "Diet-driven chronic disease is one of the human-health costs the current food system externalizes.",
     display_name="Deaths per Year from Dietary Risks",
     unit="deaths",
-    distribution="fixed",
+    confidence_interval=(10_000_000, 12_000_000),
+    distribution="normal",
     keywords=["diet", "deaths", "chronic disease", "GBD", "lancet", "health"],
 )
 
@@ -16787,11 +16787,11 @@ AMR_DEATHS_ATTRIBUTABLE_2019 = Parameter(
     confidence="high",
     description="Deaths directly attributable to bacterial antimicrobial resistance in 2019, ~1.27 million "
                 "(95% UI 0.91-1.71 million); ~4.95 million deaths were associated with it (Murray et al., "
-                "The Lancet 2022). Attributable and associated are not additive. Animal agriculture consumes a "
-                "large majority of medically important antibiotics, driving resistance.",
+                "The Lancet 2022). Attributable and associated are not additive.",
     display_name="Deaths Directly Attributable to AMR (2019)",
     unit="deaths",
-    distribution="fixed",
+    confidence_interval=(911_000, 1_710_000),
+    distribution="lognormal",
     keywords=["antibiotics", "AMR", "resistance", "deaths", "lancet", "livestock"],
 )
 
@@ -16804,8 +16804,7 @@ FOOD_SYSTEM_HIDDEN_COST_ANNUAL = Parameter(
     description="Hidden (external) costs of the global food and land-use system, ~$12 trillion/year, "
                 "against a market value of ~$10 trillion (FOLU 'Growing Better' 2019; modeled by an advocacy "
                 "coalition, widely cited). Comprises environmental, public-health, and poverty costs; projected "
-                "to rise to $16.1 trillion by 2050 under current trends. US-only true-cost accounting (Rockefeller "
-                "2021) finds ~$2.1 trillion/year in hidden costs on top of ~$1.1 trillion paid.",
+                "to rise to $16.1 trillion by 2050 under current trends.",
     display_name="Global Food System Hidden Costs per Year",
     unit="USD",
     distribution="fixed",

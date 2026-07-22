@@ -41,8 +41,16 @@ except ImportError:
 _URL_PATTERN = re.compile(r'https?://[^\s<>\"\'\)]+[^\s<>\"\'\)\.,]')
 _BIBTEX_KEY_NONALNUM = re.compile(r'[^a-zA-Z0-9\-_]')
 _BIBTEX_KEY_MULTI_HYPHEN = re.compile(r'-+')
-_REFERENCE_CACHE_VERSION = 1
+_REFERENCE_CACHE_VERSION = 3
 _PARSED_REFERENCES_CACHE: Dict[Tuple[str, int, int], Dict[str, Dict[str, Any]]] = {}
+
+
+def _convert_entry_preserving_author_type(record: Dict[str, Any]) -> Dict[str, Any]:
+    raw_author = str(record.get('author', '')).strip()
+    converted = convert_to_unicode(record)
+    if raw_author.startswith('{') and raw_author.endswith('}'):
+        converted['_author_is_literal'] = True
+    return converted
 
 
 def _get_bib_signature(bib_path: Path) -> Tuple[str, int, int]:
@@ -151,7 +159,7 @@ def parse_references_bib(bib_path: Path) -> Dict[str, Dict[str, Any]]:
 
     # Parse with unicode conversion
     parser = BibTexParser(common_strings=True)
-    parser.customization = convert_to_unicode  # pyright: ignore[reportAttributeAccessIssue]
+    parser.customization = _convert_entry_preserving_author_type  # pyright: ignore[reportAttributeAccessIssue]
     bib_database = bibtexparser.loads(bib_content, parser=parser)
 
     references = {}
@@ -203,6 +211,8 @@ def parse_references_bib(bib_path: Path) -> Dict[str, Dict[str, Any]]:
             'pages': entry.get('pages', ''),
             'number': entry.get('number', ''),
         }
+        if entry.get('_author_is_literal'):
+            ref_data['_author_is_literal'] = True
 
         references[entry_key] = ref_data
 
