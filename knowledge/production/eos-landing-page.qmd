@@ -36,7 +36,13 @@ Two visual registers matching the two voice registers:
 
 **Section 1 (The Bill):** Dark, dense, clinical. The charge sheet. Dark background, bright white text, numbers in accent color. No ornamentation. The numbers do the work.
 
-**Section 2 onward:** 1950s-futuristic product catalog. Cheerful retro typography, clean lines, pastel accent colors against dark background. Think Tomorrowland brochure meets competent vendor pitch. Each product card with working demos, real code, and real data. Interactive elements in every product card (working code, live sliders, real data). The overall feeling should be: "this vendor is obviously better, has never killed anyone, and has a lovely brochure."
+**Section 2 onward: BRIGHT.** The 1950s Home of the Future. Sunlit, optimistic, chrome-and-cream. A NASA press kit crossed with a cheerful mid-century educational film. Warm cream or pale sky backgrounds, never dark. Atomic-era palette: turquoise, coral, mustard, chrome, sky blue. Cheerful retro typography, clean lines, generous white space, starbursts and boomerangs where they earn their place.
+
+The register shift at the pivot is the point: the charge sheet is dark and airless, and then the future *floods in*. If Section 2 looks like a slightly lighter Section 1, the joke is dead. The brightness has to feel like walking out of a courtroom into 1962.
+
+Layout is catalog, not article. Each screen is one idea: an enormous number, one line of claim, and the working demo. The prose lives behind "read the math" disclosure, not in front of it. Every product card carries a working demo, real code, and real data.
+
+The overall feeling: "this vendor is obviously better, has never killed anyone, and has a lovely brochure."
 
 ---
 
@@ -70,7 +76,7 @@ Two visual registers matching the two voice registers:
 >
 > They maintain 74,000 pages of tax code. They run 80+ overlapping welfare programs. The NIH directs only {{< var nih_clinical_trials_spending_pct >}} of its budget to clinical trials; the rest studies disease without testing cures. {{< var diseases_without_effective_treatment_nounit >}} diseases have zero approved treatments. At the current discovery rate, clearing the queue takes {{< var status_quo_queue_clearance_years_nounit >}} years.
 >
-> Singapore spends roughly a quarter of what the US spends per capita on healthcare. Singaporeans live about ten years longer. 193 countries, hundreds of years of policy data. The experiments already ran. Nobody checked the results.
+> Singapore spends roughly a quarter of what the US spends per capita on healthcare. Singaporeans live about seven years longer. 193 countries, hundreds of years of policy data. The experiments already ran. Nobody checked the results.
 >
 > Had these governments been properly aligned to maximize health and wealth since 1900, the average human would earn {{< var war_counterfactual_gdp_per_capita >}} a year instead of {{< var global_avg_income_2025 >}}. That is {{< var war_counterfactual_income_multiple_nounit >}} times richer.
 
