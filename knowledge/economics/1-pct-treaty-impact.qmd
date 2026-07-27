@@ -561,13 +561,13 @@ Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic 
 
 ![Ideas do not win on merit. Merit has an unbroken losing streak against money. So the question is not whether the arithmetic is correct, it is which lever you pull to make the arithmetic binding.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-political-economy-and-financing-bw-academic.jpg)
 
-The benefit estimates in this analysis are conditional on treaty adoption and independent of how adoption is achieved. The cost estimates are not. Cost per DALY is adoption cost divided by DALYs averted, so the denominator moves with the pathway. This section specifies the costed pathways and tests whether the cost-effectiveness conclusion survives substituting each one.
+The benefit estimates in this analysis are conditional on treaty adoption and independent of how adoption is achieved. The cost estimates are not. Cost per DALY is adoption cost divided by DALYs averted, so the numerator moves with the pathway while the denominator stays fixed. This section specifies the costed pathways and tests whether the cost-effectiveness conclusion survives substituting each one.
 
 ### Why the Pathway Is a Separate Question
 
 Politicians face career penalties for supporting policies that threaten incumbent industries. That is a problem in mechanism design, not in health economics, and it has more than one solution. Each pathway below has been specified elsewhere in enough detail to cost, each is sufficient for adoption on its own, and only one has to work.
 
-They divide into two cost structures, and the distinction matters for interpreting the denominator:
+They divide into two cost structures, and the distinction matters for interpreting the cost figure:
 
 - **Expenditure pathways** spend money that is gone once spent (advocacy campaigns, referenda, litigation, platform construction).
 - **Capital deployment pathways** buy assets the deployer retains (bonds repaid from treaty inflows, equity in the firms whose lobbying sets the budget). The economically relevant cost is the opportunity cost of the capital, not the principal, because the principal is recovered.
@@ -591,14 +591,14 @@ These probabilities are conditional on the pathway being funded, and they are no
 
 ### Sensitivity of Cost per DALY to Pathway
 
-The base case uses the advocacy campaign budget ({{< var treaty_campaign_total_cost >}}) as the denominator. It is the most conservative fully specified expenditure pathway and the least favorable common assumption, so it is the reasonable default.
+The base case uses the advocacy campaign budget ({{< var treaty_campaign_total_cost >}}) as the adoption cost. It is the most conservative fully specified expenditure pathway and the least favorable common assumption, so it is the reasonable default.
 
-Substituting the alternatives moves the denominator in both directions:
+Substituting the alternatives moves the adoption cost in both directions:
 
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] reduce it. Investor principal is returned from treaty inflows, so the net cost to the issuer is administration only ({{< var mechanism_iab_net_cost >}} annually), an order of magnitude below the campaign budget.
 - Shareholder control raises it. Buying the weapons manufacturers deploys {{< var defense_takeover_cost_total >}}, but the shares are retained rather than consumed, so the annual cost is the forgone excess return on that capital ({{< var mechanism_loving_takeover_net_cost >}} at a {{< var mechanism_opportunity_cost_rate_nounit >}} opportunity cost rate).
 
-The upper bound is the binding test. Replacing the campaign budget with the shareholder-control opportunity cost raises cost per DALY proportionally, and the result remains far below the {{< var bed_nets_cost_per_daly >}}/DALY benchmark for the best available consumable intervention. The conclusion is therefore not an artifact of the pathway assumed: it holds across a denominator range spanning more than two orders of magnitude.
+The upper bound is the binding test. Replacing the campaign budget with the shareholder-control opportunity cost raises cost per DALY proportionally, and the result remains far below the {{< var bed_nets_cost_per_daly >}}/DALY benchmark for the best available consumable intervention. The conclusion is therefore not an artifact of the pathway assumed: it holds across an adoption-cost range spanning more than two orders of magnitude.
 
 The residual risk is not cost. It is P(adoption), which is treated directly in [Expected Value Under Political Uncertainty](#expected-value-under-political-uncertainty).
 
