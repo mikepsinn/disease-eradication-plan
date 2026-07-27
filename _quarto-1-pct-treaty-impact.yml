@@ -43,8 +43,8 @@ book:
       affiliations:
         - name: "International Campaign to End War and Disease"
           url: https://warondisease.org
-  description: '6.65 thousand diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7 billion deaths. At $0.00177/DALY, 50.3kx more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.'
-  abstract: "6.65 thousand diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7 billion deaths, valued at $84.8 quadrillion. Cost-effectiveness: $0.00177/DALY, 50.3kx better than bed nets. Even at 1% probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Incentive Alignment Bonds address political feasibility by tying legislators' career incentives to a public voting scorecard."
+  description: '6.65 thousand diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7 billion deaths. At $0.00177/DALY, 50.3kx more cost-effective than the best existing interventions. The result holds across every specified adoption pathway.'
+  abstract: "6.65 thousand diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7 billion deaths, valued at $84.8 quadrillion. Cost-effectiveness: $0.00177/DALY, 50.3kx better than bed nets. Even at 1% probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Benefit estimates are independent of how adoption is achieved; six adoption pathways are costed separately and the cost-effectiveness conclusion survives substituting any of them."
   site-url: https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html
   favicon: assets/icons/economics-favicon.png
   page-navigation: true
@@ -80,12 +80,19 @@ book:
           - href: knowledge/appendix/parameters-and-calculations.qmd
             text: "Parameters & Calculations"
 
+      - section: "Adoption Pathways"
+        contents:
+          - href: https://manual.warondisease.org/knowledge/appendix/loving-takeover.html
+            text: "The Loving Takeover →"
+          - href: https://iab.warondisease.org
+            text: "Incentive Alignment Bonds →"
+          - href: https://court-of-humanity.warondisease.org
+            text: "Court of Humanity →"
+
       - section: "Related Materials"
         contents:
           - href: https://invisible-graveyard.warondisease.org
             text: "Invisible Graveyard Paper →"
-          - href: https://iab.warondisease.org
-            text: "IAB Working Paper →"
           - href: https://paper.wishocracy.org
             text: "Wishocracy Working Paper →"
 
