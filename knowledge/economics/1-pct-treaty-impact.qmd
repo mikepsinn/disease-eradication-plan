@@ -578,7 +578,7 @@ Treating the two as equivalent produces a metric that penalizes capital deployme
 
 | Pathway | Cost structure | P(adoption \| funded) | Expected annual social value | Specification |
 |:---|:---|:---|:---|:---|
-| Shareholder control of defense primes | Capital deployment | {{< var mechanism_loving_takeover_p_success_nounit >}} | {{< var mechanism_loving_takeover_ev >}} | [The Loving Takeover](../appendix/loving-takeover.qmd) |
+| Shareholder control of the big military contractors | Capital deployment | {{< var mechanism_loving_takeover_p_success_nounit >}} | {{< var mechanism_loving_takeover_ev >}} | [The Loving Takeover](../appendix/loving-takeover.qmd) |
 | Decentralized trial infrastructure first | Expenditure | {{< var mechanism_dfda_p_success_nounit >}} | {{< var mechanism_dfda_ev >}} | [dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] |
 | Incentive Alignment Bonds | Capital deployment | {{< var mechanism_iab_p_success_nounit >}} | {{< var mechanism_iab_ev >}} | [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025] |
 | Advocacy campaign (referendum plus lobbying) | Expenditure | {{< var mechanism_treaty_campaign_p_success_nounit >}} | {{< var mechanism_treaty_campaign_ev >}} | [Campaign Budget](../economics/campaign-budget.qmd) |
@@ -596,7 +596,7 @@ The base case uses the advocacy campaign budget ({{< var treaty_campaign_total_c
 Substituting the alternatives moves the denominator in both directions:
 
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] reduce it. Investor principal is returned from treaty inflows, so the net cost to the issuer is administration only ({{< var mechanism_iab_net_cost >}} annually), an order of magnitude below the campaign budget.
-- Shareholder control raises it. Acquiring the primes deploys {{< var defense_takeover_cost_total >}}, but the shares are retained rather than consumed, so the annual cost is the forgone excess return on that capital ({{< var mechanism_loving_takeover_net_cost >}} at a {{< var mechanism_opportunity_cost_rate_nounit >}} opportunity cost rate).
+- Shareholder control raises it. Buying the weapons manufacturers deploys {{< var defense_takeover_cost_total >}}, but the shares are retained rather than consumed, so the annual cost is the forgone excess return on that capital ({{< var mechanism_loving_takeover_net_cost >}} at a {{< var mechanism_opportunity_cost_rate_nounit >}} opportunity cost rate).
 
 The upper bound is the binding test. Replacing the campaign budget with the shareholder-control opportunity cost raises cost per DALY proportionally, and the result remains far below the {{< var bed_nets_cost_per_daly >}}/DALY benchmark for the best available consumable intervention. The conclusion is therefore not an artifact of the pathway assumed: it holds across a denominator range spanning more than two orders of magnitude.
 
