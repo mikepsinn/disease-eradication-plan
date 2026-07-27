@@ -25,6 +25,7 @@ from typing import Any, Dict, Optional
 import re
 import shutil
 
+from dih_models.formatting import round_significant
 from dih_models.reference_parser import parse_references_bib
 from dih_models.latex_generation import generate_expanded_latex, collapse_latex_blocks
 from dih_models.latex_mobile_wrap import wrap_latex_for_mobile
@@ -100,6 +101,9 @@ def _format_typescript_value(value: Any) -> str:
     elif isinstance(value, bool):
         return 'true' if value else 'false'
     elif isinstance(value, (int, float)):
+        # Drop the last-bit float noise that otherwise churns this artifact
+        # across machines. Integers are left exact.
+        value = round_significant(value)
         # Use underscore separators for large numbers in TypeScript
         if isinstance(value, int) and abs(value) >= 10000:
             # Format with underscores for readability

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 753 parameters used in the analysis, organized by type:
+This appendix documents all 768 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 222
-- Calculated values: 380
-- Core definitions: 151
+- Calculated values: 388
+- Core definitions: 158
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (380 parameters) • [External Data Sources](#sec-external) (222 parameters) • [Core Definitions](#sec-definitions) (151 parameters)
+[Calculated Values](#sec-calculated) (388 parameters) • [External Data Sources](#sec-external) (222 parameters) • [Core Definitions](#sec-definitions) (158 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -13901,6 +13901,888 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-lost_prosperity_npv_perpetuity_total.qmd >}}
+
+:::
+
+### Court of Humanity Expected Social Value: $11.4 billion {#sec-mechanism_court_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the Court of Humanity: P(success) * annual peace dividend. Expenditure ($30M).
+
+**Inputs**:
+
+- [P(Success | Court of Humanity Funded)](#sec-mechanism_court_of_humanity_p_success): 0.1:1 (95% CI: 0.03:1 - 0.25:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{court} \\
+= P_{court} \times Benefit_{peace,soc} \\
+= 0.1 \times \$114B \\
+= \$11.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_court_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_court_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_court_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_court_ev.qmd >}}
+
+:::
+
+### dFDA Expected Social Value: $79.5 billion {#sec-mechanism_dfda_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the dFDA: P(success) * annual peace dividend. Platform build is expenditure ($500M).
+
+**Inputs**:
+
+- [P(Success | dFDA Funded)](#sec-mechanism_dfda_p_success): 0.7:1 (95% CI: 0.4:1 - 0.9:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{dFDA} \\
+= P_{dFDA} \times Benefit_{peace,soc} \\
+= 0.7 \times \$114B \\
+= \$79.5B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_dfda_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_dfda_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_dfda_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_dfda_ev.qmd >}}
+
+:::
+
+### IAB Expected Social Value: $68.1 billion {#sec-mechanism_iab_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from IABs: P(success) * annual peace dividend. Investor capital is returned with interest, not spent.
+
+**Inputs**:
+
+- [P(Success | IABs Funded)](#sec-mechanism_iab_p_success): 0.6:1 (95% CI: 0.3:1 - 0.85:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{IAB} \\
+= P_{IAB} \times Benefit_{peace,soc} \\
+= 0.6 \times \$114B \\
+= \$68.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_iab_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_iab_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_iab_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_iab_ev.qmd >}}
+
+:::
+
+### IAB Net Cost (Annual): $50 million {#sec-mechanism_iab_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net annual cost of IABs to EOS: administration only (investor capital is returned, not spent)
+
+**Inputs**:
+
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1 billion
+- [IAB Admin Cost Rate](#sec-mechanism_iab_admin_rate): 0.05:1
+
+$$
+\begin{gathered}
+C_{IAB,net} \\
+= Cost_{campaign} \times r_{IAB,admin} \\
+= \$1B \times 0.05 \\
+= \$50M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_iab_net_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_iab_net_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_iab_net_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_iab_net_cost.qmd >}}
+
+:::
+
+### Loving Takeover Expected Social Value: $108 billion {#sec-mechanism_loving_takeover_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the Loving Takeover: P(success) * annual peace dividend. Capital is deployed into shares (retained and appreciating), not spent.
+
+**Inputs**:
+
+- [P(Success | Loving Takeover Funded)](#sec-mechanism_loving_takeover_p_success): 0.95:1 (95% CI: 0.8:1 - 0.99:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{takeover} \\
+= P_{takeover} \times Benefit_{peace,soc} \\
+= 0.95 \times \$114B \\
+= \$108B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_loving_takeover_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_loving_takeover_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_loving_takeover_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_loving_takeover_ev.qmd >}}
+
+:::
+
+### Loving Takeover Net Cost (Annual): $17.5 billion {#sec-mechanism_loving_takeover_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net annual cost of the Loving Takeover: opportunity cost only (capital deployed into shares is retained, not spent). At 2% annual opportunity cost rate.
+
+**Inputs**:
+
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Mechanism Opportunity Cost Rate](#sec-mechanism_opportunity_cost_rate): 0.02:1 (95% CI: 0:1 - 0.05:1)
+
+$$
+\begin{gathered}
+C_{takeover,net} \\
+= C_{takeover} \times r_{opp} \\
+= \$873B \times 0.02 \\
+= \$17.5B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{takeover} \\
+= (MarketCap_{US} \\
++ MarketCap_{allied}) \times f_{control} \times m_{premium}
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_loving_takeover_net_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_loving_takeover_net_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_loving_takeover_net_cost.qmd >}}
+
+:::
+
+### Referendum Expected Social Value: $34.1 billion {#sec-mechanism_referendum_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the global referendum: P(success) * annual peace dividend. Expenditure ($250M).
+
+**Inputs**:
+
+- [P(Success | Referendum Funded)](#sec-mechanism_referendum_p_success): 0.3:1 (95% CI: 0.1:1 - 0.55:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{referendum} \\
+= P_{referendum} \times Benefit_{peace,soc} \\
+= 0.3 \times \$114B \\
+= \$34.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_referendum_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_referendum_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_referendum_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_referendum_ev.qmd >}}
+
+:::
+
+### Treaty Campaign Expected Social Value: $45.4 billion {#sec-mechanism_treaty_campaign_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the treaty campaign: P(success) * annual peace dividend. Lobbying + referendum is expenditure ($1B).
+
+**Inputs**:
+
+- [P(Success | Treaty Campaign Funded)](#sec-mechanism_treaty_campaign_p_success): 0.4:1 (95% CI: 0.15:1 - 0.7:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{campaign} \\
+= P_{campaign} \times Benefit_{peace,soc} \\
+= 0.4 \times \$114B \\
+= \$45.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_treaty_campaign_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_treaty_campaign_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_treaty_campaign_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_treaty_campaign_ev.qmd >}}
 
 :::
 
@@ -39582,6 +40464,80 @@ Maximum bond investment for lobbyist incentives
 
 :::
 
+### P(Success | Court of Humanity Funded): 0.1:1 {#sec-mechanism_court_of_humanity_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given Court of Humanity operational. Lowest direct causal link: court rulings are non-binding but create political pressure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.03:1, 0.25:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.03:1 and 0.25:1 (±110%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_court_of_humanity_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### P(Success | dFDA Funded): 0.7:1 {#sec-mechanism_dfda_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability that a funded dFDA produces sufficient cures to create political momentum for the treaty. High because clinical trials mechanically produce treatments; the platform reduces cost per trial.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.4:1, 0.9:1]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.4:1 and 0.9:1 (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_dfda_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### IAB Admin Cost Rate: 0.05:1 {#sec-mechanism_iab_admin_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual administrative cost of IABs as fraction of principal (legal, compliance, reporting). The principal itself is investor capital returned with interest, not EOS expenditure.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### P(Success | IABs Funded): 0.6:1 {#sec-mechanism_iab_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given full IAB issuance. High because lobbying is a proven mechanism and IABs align politician incentives directly.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.3:1, 0.85:1]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.3:1 and 0.85:1 (±46%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_iab_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
 ### P(Success | Loving Takeover Funded): 0.95:1 {#sec-mechanism_loving_takeover_p_success}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -39597,6 +40553,64 @@ Probability of treaty passage given full funding of the Loving Takeover (mechani
 #### Input Distribution
 
 {{< include ../figures/distribution-mechanism_loving_takeover_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### Mechanism Opportunity Cost Rate: 0.02:1 {#sec-mechanism_opportunity_cost_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual opportunity cost rate for capital deployment mechanisms (forgone excess return vs market). Defense stocks historically return near-market, so excess opportunity cost is low.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0:1, 0.05:1] • Distribution: Fixed
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0:1 and 0.05:1 (±125%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The fixed distribution means values follow a specific statistical pattern.*
+
+*Core definition*
+
+:::
+
+### P(Success | Referendum Funded): 0.3:1 {#sec-mechanism_referendum_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given a successful global referendum demonstrating majority support. Non-binding but creates political pressure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.1:1, 0.55:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1:1 and 0.55:1 (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_referendum_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### P(Success | Treaty Campaign Funded): 0.4:1 {#sec-mechanism_treaty_campaign_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given full funding of the lobbying + referendum campaign ($1B). Depends on political will after lobbying and public pressure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.15:1, 0.7:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.15:1 and 0.7:1 (±69%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_treaty_campaign_p_success.qmd >}}
 
 *Core definition*
 
