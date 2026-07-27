@@ -1,6 +1,6 @@
 ---
 title: 'The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease'
-description: '{{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending scales capacity {{< var dfda_trial_capacity_multiplier >}}, cutting the timeline to ~{{< var dfda_queue_clearance_years >}} and preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. At {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY, {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than the best existing interventions. Incentive Alignment Bonds make adoption politically viable.'
+description: '{{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments; at current trial capacity, exploring them takes ~{{< var status_quo_queue_clearance_years >}}. Redirecting {{< var treaty_reduction_pct >}} of military spending scales capacity {{< var dfda_trial_capacity_multiplier >}}, cutting the timeline to ~{{< var dfda_queue_clearance_years >}} and preventing {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. At {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY, {{< var treaty_vs_bed_nets_multiplier >}} more cost-effective than the best existing interventions. The result holds across every specified adoption pathway.'
 abstract: |
   {{< var diseases_without_effective_treatment >}} have 0 FDA-approved treatments. At current trial
   capacity ({{< var new_disease_first_treatments_per_year >}}), exploring the therapeutic search
@@ -16,8 +16,9 @@ abstract: |
   Cost-effectiveness: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY,
   {{< var treaty_vs_bed_nets_multiplier >}} better than bed nets. Even at {{< var political_success_probability >}}
   probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing
-  global health interventions. Incentive Alignment Bonds address political feasibility by tying
-  legislators' career incentives to a public voting scorecard. For ceiling context, the Minimum Sustainable Trajectory (1% Treaty)
+  global health interventions. Benefit estimates are independent of how adoption is achieved; several
+  specified adoption pathways are costed separately and the cost-effectiveness conclusion survives
+  substituting any of them. For ceiling context, the Minimum Sustainable Trajectory (1% Treaty)
   reaches {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years,
   with average income at {{< var treaty_trajectory_avg_income_year_20 >}} and total output at
   {{< var treaty_trajectory_gdp_year_20 >}}. The Optimal Governance Trajectory reaches
@@ -81,7 +82,7 @@ do: "Carry the headline figures (ROI, cost per DALY, lives saved) into your own 
 
 **Cost-effectiveness:** {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}}/DALY via treaty advocacy ({{< var treaty_vs_bed_nets_multiplier >}} better than bed nets) or {{< var dfda_direct_funding_cost_per_daly >}}/DALY via direct funding. ROI ranges from {{< var dfda_roi_rd_only >}}:1 (R&D savings only) to {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 (complete benefits). This qualifies as cost-saving: it reduces costs while improving outcomes.
 
-**Robustness:** Even at {{< var political_success_probability >}} probability of treaty adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets. Monte Carlo simulation (10,000 trials) confirms the intervention remains cost-saving across parameter uncertainty. [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025] provide the political mechanism: by tying legislators' electoral support and post-office career prospects to a public voting scorecard, they convert treaty support from political liability to career advantage.
+**Robustness:** Even at {{< var political_success_probability >}} probability of treaty adoption, risk-adjusted cost-effectiveness ({{< var treaty_expected_cost_per_daly >}}/DALY) remains {{< var treaty_expected_vs_bed_nets_multiplier >}} better than bed nets. Monte Carlo simulation (10,000 trials) confirms the intervention remains cost-saving across parameter uncertainty. Benefit estimates are conditional on adoption but independent of the adoption pathway; the pathways specified to date differ in cost by more than an order of magnitude and the cost-effectiveness conclusion survives substituting any of them ([Adoption Pathways and Cost Sensitivity](#sec-adoption-pathways)).
 
 **Impact Mechanism:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} average timeline shift combines two complementary effects:
 
@@ -528,17 +529,15 @@ By successfully executing a verified, mutual reduction in military spending to f
 
 This gradual approach steers nations toward a safer equilibrium, one percentage point at a time.
 
-### Why The Ratchet Works: The Incentive Alignment Bond Scaling Engine
+### Why The Ratchet Holds: A Funded Defense Constituency
 
-The ratchet mechanism isn't just economic gravity. It's engineered through [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd).
+Economic gravity alone does not protect a budget line. Treaties get renegotiated, and a reallocation with no organized defenders is reversed by the interests it displaced.
 
-![80 percent funds trials. 10 percent pays investors. 10 percent bribes politicians legally. Self-reinforcing loop. You already have this system. It currently reinforces weapons manufacturing. We're proposing the same machine with different output. Like using your oven to bake bread instead of burn evidence.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-why-the-ratchet-works-the-iab-scaling-engine-bw-academic.jpg)
+The treaty therefore hard-codes a non-medical allocation on all inflows: {{< var victory_bond_funding_pct >}} to returns on whatever capital financed adoption, and {{< var iab_political_incentive_funding_pct >}} to a standing political layer whose function is to defend the treaty against repeal. This is a deliberate cost, not an oversight. It buys a permanent constituency with a financial interest in the treaty surviving each budget cycle. The remaining {{< var dih_treasury_medical_research_pct >}} funds trials.
 
-The mechanism: {{< var iab_political_incentive_funding_pct >}} of treaty revenue ({{< var iab_political_incentive_funding_annual >}}/year) funds political incentives while {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}/year) funds pragmatic trials. The remaining {{< var victory_bond_funding_pct >}} funds Incentive Alignment Bond investor returns.
+Every benefit figure in this analysis is computed on the {{< var dih_treasury_medical_research_pct >}} share, not on gross treaty inflows. Readers who consider the defense layer unnecessary should read the results as conservative by roughly a quarter.
 
-Incentive Alignment Bond investors receive projected {{< var victory_bond_annual_return_pct >}} on their investment. The {{< var iab_political_incentive_funding_pct >}} allocation to political incentives creates sustained pressure to maintain and expand the treaty, while the {{< var dih_treasury_medical_research_pct >}} allocation ensures the primary purpose (funding pragmatic trials) remains the largest share.
-
-This allocation structure ({{< var dih_treasury_medical_research_pct >}} medical research, {{< var victory_bond_funding_pct >}} investor returns, {{< var iab_political_incentive_funding_pct >}} political incentives) functions as a political transformation engine, making the transition from military spending to health investment economically self-reinforcing.
+Who receives the non-medical allocation, and on what terms, depends on which adoption pathway is used. Those pathways are specified and costed in [Adoption Pathways and Cost Sensitivity](#sec-adoption-pathways).
 
 ### Treaty Funding Allocation
 
@@ -547,8 +546,8 @@ This allocation structure ({{< var dih_treasury_medical_research_pct >}} medical
 | Allocation | Percentage | Annual Amount | Purpose |
 |------------|------------|---------------|---------|
 | **Pragmatic Clinical Trials** | {{< var dih_treasury_medical_research_pct >}} | {{< var dih_treasury_to_medical_research_annual >}} | Patient subsidies, system operations |
-| **IAB Investor Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Perpetual investor payments |
-| **IAB Political Incentives** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | [Rewards for supporting legislators](../appendix/incentive-alignment-bonds-paper.qmd) |
+| **Financing Returns** | {{< var victory_bond_funding_pct >}} | {{< var victory_bond_annual_payout >}} | Returns to the capital that financed adoption |
+| **Political Defense Layer** | {{< var iab_political_incentive_funding_pct >}} | {{< var iab_political_incentive_funding_annual >}} | Independent expenditures and compliance monitoring that defend the treaty against repeal |
 
 Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic clinical trials:
 
@@ -558,92 +557,50 @@ Within the {{< var dih_treasury_medical_research_pct >}} allocated to pragmatic 
 
 2. **Coordination Framework** ({{< var dfda_opex_pct_of_treaty_funding >}}): {{< var dfda_annual_opex >}}/year for system infrastructure
 
-## Political Economy and Financing
+## Adoption Pathways and Cost Sensitivity {#sec-adoption-pathways}
 
-Ideas don't win on merit alone. They win by aligning incentives.
+![Ideas do not win on merit. Merit has an unbroken losing streak against money. So the question is not whether the arithmetic is correct, it is which lever you pull to make the arithmetic binding.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-political-economy-and-financing-bw-academic.jpg)
 
-![Incentive Alignment Bonds make donors, governments, and investors all want the same thing: people not dying. Revolutionary concept. You aligned incentives for war in 1945. This is the same idea but backwards and with fewer corpses.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-political-economy-and-financing-bw-academic.jpg)
+The benefit estimates in this analysis are conditional on treaty adoption and independent of how adoption is achieved. The cost estimates are not. Cost per DALY is adoption cost divided by DALYs averted, so the denominator moves with the pathway. This section specifies the costed pathways and tests whether the cost-effectiveness conclusion survives substituting each one.
 
-This section describes how [Incentive Alignment Bonds (IABs)](../appendix/incentive-alignment-bonds-paper.qmd) restructure the political economy of global health funding.
+### Why the Pathway Is a Separate Question
 
-### [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)
+Politicians face career penalties for supporting policies that threaten incumbent industries. That is a problem in mechanism design, not in health economics, and it has more than one solution. Each pathway below has been specified elsewhere in enough detail to cost, each is sufficient for adoption on its own, and only one has to work.
 
-[Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) address a fundamental problem: politicians face career penalties for supporting beneficial policies that threaten incumbent industries. IABs restructure these incentives so that supporting effective policy becomes professionally advantageous.
+They divide into two cost structures, and the distinction matters for interpreting the denominator:
 
-![Current system: oppose weapons manufacturers, lose your career. Proposed system: cure diseases, advance your career. One punishes goodness. The other rewards it. Apparently this needed a diagram because the concept of not punishing heroism was too complex for paragraphs.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-incentive-alignment-bonds-bw-academic.jpg)
+- **Expenditure pathways** spend money that is gone once spent (advocacy campaigns, referenda, litigation, platform construction).
+- **Capital deployment pathways** buy assets the deployer retains (bonds repaid from treaty inflows, equity in the firms whose lobbying sets the budget). The economically relevant cost is the opportunity cost of the capital, not the principal, because the principal is recovered.
 
-The mechanism applies public choice theory systematically. Rather than requiring altruism, it makes self-interest align with social welfare. Politicians pursuing their own career advancement simultaneously advance global health outcomes.
+Treating the two as equivalent produces a metric that penalizes capital deployment and rewards cheap long shots, which is backwards.
 
-#### Mechanism Architecture
+### Costed Pathways
 
-Politicians are evaluated through a **Public Good Score** based on verifiable voting records for treaty funding. This scoring system creates three channels of incentive alignment:
+| Pathway | Cost structure | P(adoption \| funded) | Expected annual social value | Specification |
+|:---|:---|:---|:---|:---|
+| Shareholder control of defense primes | Capital deployment | {{< var mechanism_loving_takeover_p_success_nounit >}} | {{< var mechanism_loving_takeover_ev >}} | [The Loving Takeover](../appendix/loving-takeover.qmd) |
+| Decentralized trial infrastructure first | Expenditure | {{< var mechanism_dfda_p_success_nounit >}} | {{< var mechanism_dfda_ev >}} | [dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] |
+| Incentive Alignment Bonds | Capital deployment | {{< var mechanism_iab_p_success_nounit >}} | {{< var mechanism_iab_ev >}} | [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) [@iab-paper-2025] |
+| Advocacy campaign (referendum plus lobbying) | Expenditure | {{< var mechanism_treaty_campaign_p_success_nounit >}} | {{< var mechanism_treaty_campaign_ev >}} | [Campaign Budget](../economics/campaign-budget.qmd) |
+| Global referendum | Expenditure | {{< var mechanism_referendum_p_success_nounit >}} | {{< var mechanism_referendum_ev >}} | [Global Referendum](../strategy/global-referendum.qmd) |
+| Litigation against non-adopting states | Expenditure | {{< var mechanism_court_of_humanity_p_success_nounit >}} | {{< var mechanism_court_ev >}} | [Court of Humanity](../solution/court-of-humanity.qmd) [@court-of-humanity-paper-2025] |
 
-1. **Electoral advantage**: Independent campaign support flows to high-scoring politicians
-2. **Reputational benefits**: Public scores create transparency and accountability
-3. **Post-office opportunities**: High scorers gain access to prestigious fellowships, advisory positions, and speaking engagements
+Expected annual social value is P(adoption) multiplied by the annual peace dividend. It is deliberately not divided by cost, for the reason given above.
 
-Critically, no direct monetary transfers to politicians occur. Benefits flow through reputation, electoral support, and career advancement - all based on publicly verifiable voting records that cannot be manipulated.
+These probabilities are conditional on the pathway being funded, and they are not independent of one another. All six draw on the same pool of capital and the same coordination capacity, so they cannot be combined as independent trials to produce an aggregate probability of adoption. What the table supports is narrower and sufficient: the highest-probability pathway does not depend on persuading legislators to act against their donors, and no pathway's cost is large enough to overturn the cost-effectiveness result.
 
-#### Comparative Static Analysis: Senator Smith
+### Sensitivity of Cost per DALY to Pathway
 
-Consider a legislator's decision calculus regarding the 1% Treaty vote:
+The base case uses the advocacy campaign budget ({{< var treaty_campaign_total_cost >}}) as the denominator. It is the most conservative fully specified expenditure pathway and the least favorable common assumption, so it is the reasonable default.
 
-**Without IABs:**
+Substituting the alternatives moves the denominator in both directions:
 
-| Action | Expected Outcome |
-|:-------|:-----------------|
-| Vote Yes | Military lobby attack ads; reduced industry support |
-| Vote No | Retained weapons manufacturer funding; no electoral risk |
+- [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] reduce it. Investor principal is returned from treaty inflows, so the net cost to the issuer is administration only ({{< var mechanism_iab_net_cost >}} annually), an order of magnitude below the campaign budget.
+- Shareholder control raises it. Acquiring the primes deploys {{< var defense_takeover_cost_total >}}, but the shares are retained rather than consumed, so the annual cost is the forgone excess return on that capital ({{< var mechanism_loving_takeover_net_cost >}} at a {{< var mechanism_opportunity_cost_rate_nounit >}} opportunity cost rate).
 
-**With IABs:**
+The upper bound is the binding test. Replacing the campaign budget with the shareholder-control opportunity cost raises cost per DALY proportionally, and the result remains far below the {{< var bed_nets_cost_per_daly >}}/DALY benchmark for the best available consumable intervention. The conclusion is therefore not an artifact of the pathway assumed: it holds across a denominator range spanning more than two orders of magnitude.
 
-| Action | Expected Outcome |
-|:-------|:-----------------|
-| Vote Yes | Public Good Score: 45 → 72; P(reelection): 55% → 62%; Expected post-office income: $200K → $500K/yr |
-| Vote No | Score: 45 → 30; P(reelection): 55% → 48%; Opposition receives $2M independent support |
-
-The mechanism changes the math. Supporting beneficial policy becomes professionally advantageous rather than requiring self-sacrifice.
-
-#### Who Gets Paid (And Why They Stay)
-
-The IAB mechanism aligns incentives across every group that matters:
-
-{{< include ../figures/victory-bonds-money-flow-diagram.qmd >}}
-
-**Weapons Manufacturers**: Keep {{< var defense_sector_retention_pct >}} of current budgets. Earn projected {{< var victory_bond_annual_return_pct >}} returns on [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd). You still get rich. You just stop killing people to do it.
-
-![Before: everyone fights over the same pie. After: everyone gets more pie. You could have done this earlier, but you were busy fighting.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-stakeholder-alignment-bw-academic.jpg)
-
-**Insurance Companies**: Healthier populations pay premiums for more years. Patients who don't die keep paying you. This is better for your spreadsheets than the current model where your customers keep dying.
-
-**Pharmaceutical Companies**: Instead of paying {{< var traditional_phase3_cost_per_patient >}} {{< var traditional_phase3_cost_per_patient_cite >}} per trial patient, companies collect {{< var dfda_pragmatic_trial_cost_per_patient >}} {{< var dfda_pragmatic_trial_cost_per_patient_cite >}} subsidies when patients enroll. You currently spend money to test drugs. Under this system, you get paid to test drugs. Read that sentence again if you need to.
-
-**Politicians**: {{< var three_point_five_percent_of_global_population >}} voters want this. Support the treaty and they vote for you, fund your campaign, and stop funding whoever runs against you. Oppose it and they do the opposite. Politicians are good at counting.
-
-{{< var three_point_five_percent_of_global_population_latex >}}
-
-**Investors**: [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) offer projected {{< var victory_bond_annual_return_pct >}}. The stock market averages {{< var average_market_return_pct >}}. You give them money, they give you more money back, and also people stop dying. The pitch writes itself.
-
-{{< var victory_bond_annual_return_pct_latex >}}
-
-**Patients**: You get paid to try treatments your doctor recommends. You pick which trials to join. The money follows your decision, not a pharmaceutical company's. Also you get richer over your (now longer) lifetime because the economy grows when people stop dying.
-
-Everyone gets more of what they want. The trick was to stop playing a game where your gain requires someone else's loss.
-
-See [Aligning Incentives](../solution/aligning-incentives.qmd) for complete analysis.
-
-#### Legal and Ethical Framework
-
-This mechanism differs from bribery in four key ways:
-
-1. **No duty violation**: IABs reward policy support that advances rather than undermines public welfare
-2. **Transparent rules**: Scoring criteria are public, announced in advance, and apply equally to all legislators
-3. **No direct payments**: Benefits flow through reputation, electoral support, and career opportunities, not cash transfers
-4. **Verifiable metrics**: Scores depend entirely on public voting records from official government sources
-
-The mechanism strengthens rather than corrupts the alignment between political success and social outcomes.
-
-![Four reasons why paying politicians to do good things is technically not bribery. You had to invent a whole new financial instrument because regular bribery only works for bad things.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-legal-and-ethical-framework-bw-academic.jpg)
+The residual risk is not cost. It is P(adoption), which is treated directly in [Expected Value Under Political Uncertainty](#expected-value-under-political-uncertainty).
 
 ## Dominance Analysis
 
@@ -1015,7 +972,7 @@ The trial capacity multiplier determines how many more trials can be run with re
 {{< var dih_patients_fundable_annually_latex >}}
 
 - Treaty redirects {{< var treaty_annual_funding >}}/year
-- Trial subsidies allocation: {{< var dih_treasury_trial_subsidies_annual >}} (after IAB and political allocations)
+- Trial subsidies allocation: {{< var dih_treasury_trial_subsidies_annual >}} (after financing and political-defense allocations)
 - Pragmatic trial cost: {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (ADAPTABLE basis; RECOVERY achieved {{< var recovery_trial_cost_per_patient >}})
 
 **Step 2: Compare to current capacity**
@@ -1844,15 +1801,15 @@ The economic benefits outlined above demonstrate why the {{< var treaty_reductio
 
 **Funding**: This educational and scientific polling initiative is the primary entry point for **philanthropic partners**, validating global demand before the main campaign begins.
 
-### Step 2: Capitalization via [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) (IABs)
+### Step 2: Capitalization
 
-A Special Purpose Vehicle (SPV) issues [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) to capitalize the advocacy roadmap. By front-loading the cost of political change, investors capture the arbitrage gap between lobbying costs ({{< var treaty_campaign_total_cost >}}) and sovereign flows ({{< var treaty_annual_funding >}}/year). Financial modeling projects a risk-adjusted IRR of ~{{< var victory_bond_annual_return_pct >}}.
+Front-loading the cost of political change requires capital, and the arbitrage gap that attracts it is large: adoption costs on the order of {{< var treaty_campaign_total_cost >}} against sovereign flows of {{< var treaty_annual_funding >}}/year. Which instrument closes that gap is a separate design question with several answers, costed in [Adoption Pathways and Cost Sensitivity](#sec-adoption-pathways).
 
-![How to turn lobbying money into government money using bonds. It's like money laundering, but legal and for good things instead of crime.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-2-capitalization-via-incentive-alignment-bonds-iabs-bw-academic.jpg)
+![How to turn lobbying money into government money. It's like money laundering, but legal and for good things instead of crime.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-step-2-capitalization-via-incentive-alignment-bonds-iabs-bw-academic.jpg)
 
 ### Step 3: Implement the Legislative Strategy
 
-Deploy Incentive Alignment Bond proceeds to translate public support into legislative action.
+Deploy the proceeds to translate public support into legislative action.
 
 ### Step 4: Build the Infrastructure
 
@@ -1876,7 +1833,7 @@ The Treaty mandates that the Fund be managed by a private Central Counterparty t
 - Disease categories collapse as effective treatments scale
 - Healthspan overtakes pathology
 
-**The utility structure:** The treaty hard-codes a 20% non-medical allocation on all inflows. Half ({{< var victory_bond_funding_pct >}}) goes to perpetual investor dividends ({{< var victory_bond_annual_payout >}}/year). The other half ({{< var iab_political_incentive_funding_pct >}}) funds the political incentive layer: independent expenditures, post-office career programs, and Public Good Score infrastructure ({{< var iab_political_incentive_funding_annual >}}/year) through legally separate entities. The SPV can administer the treasury plumbing and investor payments, but it does not get to pocket the full 20% and call that governance. The remaining {{< var dih_treasury_medical_research_pct >}} flows directly to clinical trials and research.
+**The utility structure:** The treaty hard-codes the non-medical allocation on all inflows. {{< var victory_bond_funding_pct >}} goes to returns on the capital that financed adoption ({{< var victory_bond_annual_payout >}}/year). {{< var iab_political_incentive_funding_pct >}} funds the political defense layer ({{< var iab_political_incentive_funding_annual >}}/year) through legally separate entities. The administrator handles treasury plumbing and scheduled payments; it does not receive the non-medical allocation as a management fee. The remaining {{< var dih_treasury_medical_research_pct >}} flows directly to clinical trials and research.
 
 **Governance constraints** (addressing self-dealing concerns):
 
@@ -1884,13 +1841,13 @@ The Treaty mandates that the Fund be managed by a private Central Counterparty t
 - **Capped compensation**: Administrator salaries benchmarked to comparable multilateral institutions (WHO, World Bank)
 - **Annual third-party audit**: Published financials with signatory oversight committee review
 - **Sunset provision**: Fee percentage subject to 10-year renegotiation by signatory majority
-- **Operational scope**: The 20% non-medical allocation funds only investor returns, political incentives, compliance monitoring, and fund administration (not founder enrichment)
+- **Operational scope**: The non-medical allocation funds only financing returns, the political defense layer, compliance monitoring, and fund administration (not founder enrichment)
 
-**Bondholders** receive perpetual dividends from their treaty-defined revenue share, creating a permanent constituency to defend the Treaty against political cuts. We do not rely on altruism. We rely on the "Iron Dome" effect: the 20% non-medical allocation creates a well-funded political defense layer (investors + PACs) whose only job is to protect the Treaty's existence.
+**Holders of the treaty-defined revenue share** receive perpetual distributions, creating a permanent constituency to defend the Treaty against political cuts. The design does not rely on altruism. It relies on the non-medical allocation funding a political defense layer whose only job is to protect the Treaty's existence.
 
 **Implementation complexity:** Coordinating global treaty adoption, building technical infrastructure, and integrating with existing health systems presents significant logistical challenges. However, these are coordination problems with aligned incentives, not conflicts of interest. Similar to how nations coordinated on the Montreal Protocol (ozone layer) or the International Space Station despite complexity, the economic case makes cooperation rational even for self-interested actors.
 
-**For comprehensive implementation details**, see **[Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd)** for the proposed financing mechanism.
+**For comprehensive implementation details**, see [Adoption Pathways and Cost Sensitivity](#sec-adoption-pathways) and the pathway specifications cited there.
 
 ### Implementation Budget Breakdown
 
@@ -1940,13 +1897,13 @@ This section addresses common objections and potential failure modes, along with
 
 **What could go wrong**: Politicians take too long to redirect {{< var treaty_reduction_pct >}} of military spending to pragmatic clinical trials because nobody has paid them to do the arithmetic yet.
 
-![The Pentagon lost track of trillions of dollars. We're asking for 1%. If they refuse, the bonds make it financially suicidal. It's a kill switch, but for bureaucracy.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-but-politicians-won-t-do-it-problem-bw-academic.jpg)
+![The Pentagon lost track of trillions of dollars. We're asking for 1%. The money that currently buys the refusal is for sale to anyone.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-the-but-politicians-won-t-do-it-problem-bw-academic.jpg)
 
 **Counterargument**:
 
-Military lobbyists got $1,813 back for every $1 the top five firms spent on political influence across the twenty-year Afghan War [@lobbying-roi-calc]. The proposed model offers Incentive Alignment Bond holders **~{{< var victory_bond_annual_return_pct >}}** in perpetuity (allocating {{< var victory_bond_funding_pct >}} of the {{< var treaty_annual_funding >}} annual inflows to bond payouts).
+Political influence has a measured price and a measured return. Military lobbyists got $1,813 back for every $1 the top five firms spent on political influence across the twenty-year Afghan War [@lobbying-roi-calc]. Nothing about that machinery is reserved for weapons; it responds to whoever funds it, which is why the adoption problem is a financing problem rather than a persuasion problem. The pathways in [Adoption Pathways and Cost Sensitivity](#sec-adoption-pathways) are different ways of funding it.
 
-This creates a financial "kill switch": if the treaty is not respected, this massive income stream stops. This aligns the most powerful interests on earth with treaty compliance.
+Treaty-defined revenue shares also create a compliance interest that outlives the campaign: if the treaty is not respected, the income stream stops, so the holders of that stream defend it.
 
 **Budgetary Reality**: The Pentagon has failed its sixth consecutive audit and cannot account for **$2.5 trillion** in assets. A {{< var treaty_reduction_pct >}} reduction is statistical noise in a system that can't locate trillions. It doesn't require firing people or closing factories; it requires accounting for rounding errors.
 
@@ -2265,7 +2222,7 @@ This intervention differs in four critical ways:
 
 3. **Cost-saving intervention status**: Cost-saving interventions (reducing costs while improving outcomes) are robust to uncertainty in ways that cost-effective interventions are not. Even if health benefits are overstated by 50%, the intervention still saves money.
 
-4. **Aligned incentives**: The {{< var treaty_reduction_pct >}} Treaty proposes [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd): a single instrument that aligns investors ({{< var victory_bond_funding_pct >}} allocation, projected {{< var victory_bond_annual_return_pct >}} returns), politicians ({{< var iab_political_incentive_funding_pct >}} political incentive fund), and patients ({{< var dih_treasury_medical_research_pct >}} pragmatic trials) with the same outcome, rather than relying on altruism or bureaucratic mandate.
+4. **Aligned incentives**: The treaty's allocation structure points investors ({{< var victory_bond_funding_pct >}}), the political defense layer ({{< var iab_political_incentive_funding_pct >}}), and patients ({{< var dih_treasury_medical_research_pct >}} to pragmatic trials) at the same outcome, rather than relying on altruism or bureaucratic mandate.
 
 ## Policy Implications
 
@@ -2313,13 +2270,13 @@ Military planners optimize for national security. This analysis demonstrates tha
 
 Current global health funding relies on unpredictable philanthropic donations and limited government aid budgets. Total official development assistance for health: ~$40B/year. This intervention creates a {{< var treaty_annual_funding >}}/year permanent funding stream.
 
-**Why this works**: This is not charity; it's profitable. Investors can purchase [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) offering projected {{< var victory_bond_annual_return_pct >}} backed by the peace dividend, making health funding financially attractive rather than dependent on altruism.
+**Why this works**: This is not charity; it's profitable. A treaty-defined revenue share backed by the peace dividend can be sold to private capital, making health funding financially attractive rather than dependent on altruism. Which instrument carries that share is a design choice with several costed options ([Adoption Pathways and Cost Sensitivity](#sec-adoption-pathways)).
 
 **Mechanism design**: The 1% Treaty Fund allocates:
 
 - {{< var dih_treasury_medical_research_pct >}} ({{< var dih_treasury_to_medical_research_annual >}}) → pragmatic trials
-- {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) → bond investor returns
-- {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) → political incentive alignment
+- {{< var victory_bond_funding_pct >}} ({{< var victory_bond_annual_payout >}}) → returns to the capital that financed adoption
+- {{< var iab_political_incentive_funding_pct >}} ({{< var iab_political_incentive_funding_annual >}}) → political defense layer
 
 This creates a self-sustaining funding mechanism where:
 1. **Investors profit** from peace dividend returns
@@ -2352,7 +2309,7 @@ It requires only a 1% reallocation from the least cost-effective government spen
 
 ![The easy solution: move the money. The hard solution: make politicians want to move the money. We need both because politicians don't like easy.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-bottom-line-for-policymakers-bw-academic.jpg)
 
-The political challenge isn't economic: the ROI speaks for itself. The challenge is speed. Nobody in the military-industrial complex rationally benefits from the status quo (they die of the same diseases, in the same shrinking economy), but inertia kills {{< var global_disease_deaths_daily_nounit >}} people per day. The solution: [Incentive Alignment Bonds](../appendix/incentive-alignment-bonds-paper.qmd) that pay politicians to do the arithmetic faster than they would on their own.
+The political challenge isn't economic: the ROI speaks for itself. The challenge is speed. Nobody in the military-industrial complex rationally benefits from the status quo (they die of the same diseases, in the same shrinking economy), but inertia kills {{< var global_disease_deaths_daily_nounit >}} people per day. The solution is any mechanism that makes the arithmetic financially binding on the people who vote, and there are several ([Adoption Pathways and Cost Sensitivity](#sec-adoption-pathways)).
 
 ## Treaty Adoption: Political Will and Diplomatic Strategy
 
@@ -2390,7 +2347,7 @@ The 1% Treaty follows this model, with the advantage that it offers immediate ec
 Treaty adoption depends on:
 1. **Political coalition**: Build support among health ministries, fiscal conservatives seeking budget efficiency, and populations demanding better healthcare
 2. **Economic case**: {{< var dfda_roi_rd_only >}}:1 ROI makes this profitable, not charitable
-3. **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd)**: Fund {{< var treaty_campaign_total_cost >}} advocacy phase, align investor and political incentives
+3. **Financing**: Capitalize the adoption phase through one of the [costed pathways](#sec-adoption-pathways), aligning investor and political incentives with treaty survival
 4. **Diplomatic negotiation**: UN General Assembly or coalition of willing nations
 
 **Timeline**: Highly variable depending on political momentum. Successful precedents range from 18 months (rapid consensus) to 5+ years (extended negotiation). The self-funding nature and aligned incentives favor faster adoption than typical treaties requiring sacrifice.
