@@ -1,0 +1,219 @@
+project:
+  type: website
+  output-dir: _site/loving-takeover
+  execute-dir: project
+  resources:
+    - knowledge/data/
+    - assets/
+    - _redirects
+    - robots.txt
+    - llms.txt
+  render:
+    - index.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
+
+# Custom fields for render-quarto.py
+dih-render:
+  emoji: "💌"
+  index-source: knowledge/appendix/loving-takeover.qmd
+  redirect-from: https://takeover.warondisease.org
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org
+  netlify-site-id: ""  # TODO: create Netlify site and add ID
+  netlify-cname: "manual-warondisease-org.netlify.app"
+  show-confidence-intervals: true
+  concept-terms:
+    - term: "Loving Takeover"
+      manual-target: knowledge/appendix/loving-takeover.qmd
+    - term: "1% Treaty"
+      manual-target: knowledge/solution/1-percent-treaty.qmd
+  favicon-prompt: "A stock certificate folded into a paper heart, stark black and white retro-academic style"
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+author:
+  - name: Mike P. Sinn
+    email: m@warondisease.org
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "International Campaign to End War and Disease"
+        url: https://warondisease.org
+
+website:
+  title: "The Loving Takeover"
+  description: "The companies that build the weapons are publicly traded. For roughly $110 per human, you buy all of them, replace the boards, and hand the lobbyists an optimal budget calculated to maximize median healthy lifespan and median income. The takeover is loving because existing shareholders, employees, and directors live longer and get richer. Nobody loses."
+  site-url: https://manual.warondisease.org/knowledge/appendix/loving-takeover.html
+  favicon: assets/icons/loving-takeover-favicon.png
+  page-navigation: true
+  page-footer:
+    left: "© 2026 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/loving-takeover.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
+    right: "[VOTE](https://WarOnDisease.org)"
+  navbar:
+    right:
+      - text: "VOTE"
+        href: https://WarOnDisease.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  importance: 94
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Corporate Governance, Shareholder Activism, Public Choice, Political Economy, Peace Economics"
+  category: "Academic Paper, Public Policy, Corporate Finance, Political Economy"
+  coi-statement: "The author declares no competing interests beyond owning the same mortality risk as every named issuer's board of directors."
+  data-availability: "All parameters, formulas, and citations are publicly available at https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html"
+  ethics-statement: "This paper describes purchases of publicly listed securities on open exchanges and the exercise of the voting rights attached to them. Nothing here is investment advice, and market capitalizations cited are approximate and must be checked against current filings."
+  funding: "This research received no funding."
+  github-profile: "https://github.com/mikepsinn"
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  keywords:
+    - shareholder-activism
+    - corporate-governance
+    - military-industrial-complex
+    - lobbying
+    - collective-action
+    - 1-percent-treaty
+    - peace-economics
+    - index-funds
+  version: "1.0"
+  edition: "Working Paper"
+  copyright: "© 2026 Mike P. Sinn"
+  copyright-year: "2026"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "International Campaign to End War and Disease"
+  publisher-url: "https://warondisease.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/wishonia/earth-optimization-protocol"
+  issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
+  source-url: "https://github.com/wishonia/earth-optimization-protocol"
+  geographic-coverage: "Global"
+  audience: "Investors, Researchers, Policy Makers, Shareholder Advocates, Journalists"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Corporate Governance, Political Economy, Peace Studies"
+  medium: "Digital"
+  twitter-site: "https://x.com/warondisease"
+  twitter-creator: "https://x.com/warondisease"
+  og-site-name: "The Loving Takeover"
+
+  open-graph: true
+  image: "https://manual.warondisease.org/assets/og/loving-takeover-og-1200x630.jpg"
+
+  publishing:
+    own-site:
+      url: "https://manual.warondisease.org/knowledge/appendix/loving-takeover.html"
+      status: pending
+    preprints:
+      - platform: zenodo
+        status: pending
+        url: ""
+      - platform: osf
+        status: pending
+        url: ""
+      - platform: ssrn
+        status: pending
+        url: ""
+    journals:
+      - name: "Journal of Corporate Finance"
+        tier: 1
+        status: target
+        url: ""
+      - name: "Journal of Public Economics"
+        tier: 1
+        status: target
+        url: ""
+
+# Remove "Appendix" prefix
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Bibliography
+bibliography: references.bib
+csl: nature-annotated.csl
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    lightbox: auto
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: false
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - file: assets/html/site-enhancements-loader.html
+    include-in-footer:
+      - file: assets/html/generated-footer.html
+    include-in-header:
+      - text: |
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/loving-takeover-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/loving-takeover-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/loving-takeover-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/loving-takeover-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/loving-takeover-android-chrome-512x512.png">
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis.html
+      - file: assets/html/fonts-preload.html
+    citation-hover: true
+    code-fold: true
+    link-citations: true
+    smooth-scroll: true
+    code-tools: false
+    filters: [assets/filters/live-version-note.lua]
+  pdf:
+    output-file: "loving-takeover.pdf"
+    documentclass: article
+    institute: "International Campaign to End War and Disease"
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    colorlinks: true
+    link-citations: true
+    include-in-header:
+      - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/loving-takeover.html}
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    date: ""
+    filters: [assets/filters/live-version-note.lua]
