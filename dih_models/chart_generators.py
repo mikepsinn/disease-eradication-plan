@@ -38,7 +38,11 @@ Usage:
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from dih_models.formatting import format_parameter_value
+from dih_models.formatting import (
+    format_parameter_value,
+    round_significant as _round_sig,
+    round_significant_seq as _round_seq,
+)
 from dih_models.latex_generation import smart_title_case
 
 
@@ -592,13 +596,13 @@ setup_chart_style()
 
 # Simulation results
 
-samples = {samples[:1000] if len(samples) > 1000 else samples}  # Truncate for embedding
-baseline = {baseline}
-mean = {mean}
-std = {std}
-p5 = {p5}
-p50 = {p50}
-p95 = {p95}
+samples = {_round_seq(samples[:1000] if len(samples) > 1000 else samples)}  # Truncate for embedding
+baseline = {_round_sig(baseline)}
+mean = {_round_sig(mean)}
+std = {_round_sig(std)}
+p5 = {_round_sig(p5)}
+p50 = {_round_sig(p50)}
+p95 = {_round_sig(p95)}
 display_name = "{display_name}"
 units = "{units}"
 
@@ -816,8 +820,8 @@ setup_chart_style()
 
 # Monte Carlo samples
 
-samples = {samples[:2000] if len(samples) > 2000 else samples}
-thresholds = {thresholds}
+samples = {_round_seq(samples[:2000] if len(samples) > 2000 else samples)}
+thresholds = {_round_seq(thresholds)}
 display_name = "{display_name}"
 units = "{units}"
 
