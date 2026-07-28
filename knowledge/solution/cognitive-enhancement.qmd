@@ -1,6 +1,6 @@
 ---
 title: "Cognitive Enhancement"
-description: "Your species left 20 IQ points on the table through lead, iodine deficiency, and underfunded schools, then spent the savings on missiles. Here is the repair manual for your brain."
+description: "Twenty IQ points are sitting on the ground. The proven fixes cost pennies. The frontier fixes are in clinical trials. Here is the product catalog."
 published: true
 tags:
   - eos
@@ -18,102 +18,80 @@ scores:
   standalone: 8
   voice: 8
   importance: 8
-audience: "A reader who just finished 'I Am Retarded' and wants to know what to do about it."
-feel: "I am fixable. The species is fixable. The fixes are embarrassingly cheap and we have been stepping over them to build missiles."
+audience: "Anyone who would like to be smarter, which is everyone, and anyone who would like everyone else to be smarter, which should also be everyone."
+feel: "The future is bright and I am about to be substantially more intelligent than I am right now, for less than the cost of a gym membership."
 do: "Fund the cognitive enhancement TODO list, starting with the interventions that cost less per IQ point than a single artillery shell."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-You diagnosed the problem in [I Am Retarded](../problem/i-am-retarded.qmd). Everyone is bunched near the bottom of the intelligence ladder, squinting up. The leaded gasoline era alone cost Americans {{< var leaded_gasoline_us_avg_iq_loss_points >}} per person, and each lost IQ point costs roughly {{< var national_iq_gdp_growth_effect_per_point >}} of annual GDP growth [@jones-schneider-iq-growth-2006]. The Ethyl Gasoline Corporation made everyone measurably stupider for seventy years, and even the shareholders would have been {{< var ethyl_shareholder_counterfactual_wealth_gain >}} richer if they had stopped.
-
-That was the damage report. This is the repair manual.
-
 ## The Department of Cognitive Enhancement
 
-**What it does:** Moves humans up the intelligence ladder using interventions your species already tested, measured, published, and then did not bother to deploy.
+**What it does:** Makes everyone smarter. Proven interventions first, frontier biology second, direct neural interfaces eventually.
 
-**Retail price:** Varies. The cheapest interventions cost pennies per IQ point. The most expensive cost less than one missile. **Currently paying:** Nothing, because nobody calculated the return.
+**Retail price:** The cheapest ones cost pennies per IQ point. The most expensive cost less than one missile. **Currently paying:** Nothing, because nobody calculated the return.
 
-On most planets, the Department of Cognitive Enhancement is the first thing installed, because every other optimization gets easier when the species doing the optimizing can think more clearly. Your planet installed a military first. This explains a great deal.
+Each IQ point of national average is worth roughly {{< var national_iq_gdp_growth_effect_per_point >}} of annual GDP growth [@jones-schneider-iq-growth-2006]. Twenty points are sitting on the ground uncollected. The return on picking them up is several thousand percent, and the current budget allocation is approximately zero.
 
-## Tier 1: Patches You Haven't Installed
+## Proven Fixes
 
-These are not speculative. They are tested, measured, published, and sitting in plain sight. The only reason your species has not deployed them universally is that nobody ran the cost-benefit analysis, or ran it and then funded a bomber instead.
+Tested, measured, published, sitting in plain sight.
 
 ### Iodine
 
-Iodine deficiency lowers IQ by 8 to 13 points [@qian-iodine-iq-2005; @bougma-iodine-cognition-2013]. The fix is iodized salt. It costs roughly $0.05 per person per year. Approximately 1.8 billion people still live in iodine-deficient regions.
-
-For context: {{< var leaded_gasoline_us_avg_iq_loss_points >}} of IQ loss from lead poisoning horrified your species enough to ban leaded gasoline (after seventy years). Iodine deficiency causes two to four times the damage and the fix is putting a mineral in the salt. The mineral is already in the salt in wealthy countries. It is not in the salt in poor countries because poor countries do not have lobbyists for salt additives.
-
-The Optimal Budget Generator would have flagged this on day one.
+Iodine deficiency lowers IQ by 8 to 13 points [@qian-iodine-iq-2005; @bougma-iodine-cognition-2013]. The fix is iodized salt. It costs $0.05 per person per year. 1.8 billion people still live in iodine-deficient regions. The mineral is already in the salt in wealthy countries. It is not in the salt in poor countries because poor countries do not have lobbyists for salt additives.
 
 ### Lead (still)
 
-Your species banned leaded gasoline (eventually). You have not finished the job. Lead paint remains in millions of homes. Lead pipes deliver drinking water to millions of Americans. The Flint, Michigan water crisis was not an anomaly. It was the anomaly that got caught.
-
-Every 10 micrograms per deciliter of blood lead costs roughly 4 IQ points [@lanphear-lead-iq-2005]. The cost of replacing lead pipes in the United States is estimated at $45 billion. The annual GDP cost of the remaining lead exposure is substantially higher. This is a negative-cost intervention: it pays for itself and then keeps paying.
+Leaded gasoline is banned. Lead paint and lead pipes are not gone. Flint, Michigan was not an anomaly; it was the anomaly that got caught. Every 10 micrograms per deciliter of blood lead costs roughly 4 IQ points [@lanphear-lead-iq-2005]. Replacing lead pipes in the United States costs an estimated $45 billion. The annual GDP cost of the remaining exposure is substantially higher. This is a negative-cost intervention: it pays for itself and then keeps paying.
 
 ### Education
 
-Each additional year of schooling adds 1 to 5 IQ points [@ritchie-tucker-drob-education-iq-2018]. This is not selection bias (smart kids stay in school longer). Ritchie and Tucker-Drob's meta-analysis of 600,000 participants found education causes the IQ gain, controlling for pre-existing ability.
-
-[Special Education](special-education.qmd) offers this free, forever, via AI tutor. Every human gets as many years of additional education as they want at zero marginal cost. The constraint was teachers. There are now no constraints.
+Each additional year of schooling adds 1 to 5 IQ points [@ritchie-tucker-drob-education-iq-2018]. Ritchie and Tucker-Drob's meta-analysis of 600,000 participants confirmed this is causal, not selection bias. [Special Education](special-education.qmd) delivers unlimited years of AI-tutored education at zero marginal cost. The constraint was teachers. There are now no constraints.
 
 ### Nutrition
 
-Breastfeeding and DHA supplementation add roughly 2 to 3.5 IQ points [@caspi-breastfeeding-iq-2007]. Micronutrient supplementation (iron, zinc, folate) in deficient populations adds more. These are not expensive. They are cheaper than the diseases caused by the deficiency.
+Breastfeeding and DHA supplementation add 2 to 3.5 IQ points [@caspi-breastfeeding-iq-2007]. Micronutrient supplementation (iron, zinc, folate) in deficient populations adds more. All cheaper than the diseases caused by the deficiency.
 
-Your species has a program where governments buy food for poor pregnant women (WIC). It works. It is underfunded. The Optimal Budget Generator would fund it at the level the data supports, which is higher.
+## The Hardware Upgrade
 
-## Tier 2: The Hardware Upgrade
-
-Tier 1 fixes are patches: they restore the brain to what it would have been without the damage. Tier 2 is different. Tier 2 makes the brain better than it has ever been.
+The proven fixes restore the brain to what it would have been without the damage. The hardware upgrade makes it better than it has ever been.
 
 ### Klotho
 
-A protein called klotho is one of the more interesting candidates. Humans who carry one copy of the KL-VS variant of the klotho gene score roughly 6 IQ points higher than those who do not, across a sample of 220 adults aged 52 to 85 [@dubal-klotho-cognition-2014]. The mechanism involves elevated GluN2B, an NMDA receptor subunit involved in learning and synaptic plasticity.
+People who carry one copy of the KL-VS variant of the klotho gene score roughly 6 IQ points higher [@dubal-klotho-cognition-2014]. The mechanism: elevated GluN2B, an NMDA receptor subunit that strengthens learning and synaptic plasticity.
 
-In 2023, Castner and colleagues injected a single low dose of klotho into aged rhesus macaques and improved their spatial memory from 45% to 60% accuracy [@castellano-klotho-primates-2023]. One injection. Old monkeys. Measurable improvement.
+In 2023, Castner and colleagues gave aged rhesus macaques a single low-dose klotho injection and improved their spatial memory from 45% to 60% accuracy [@castellano-klotho-primates-2023]. One shot. Old monkeys. Measurable improvement.
 
-Replication is incomplete: Müller and colleagues failed to reproduce the cognitive benefit in a population-based sample of adults aged 55 to 87 [@muller-klotho-replication-2021]. No human therapeutic trial has been conducted. This is the frontier, not the floor. It is mentioned here because a 6-point IQ gain delivered by injection would be worth trillions of dollars in GDP, and nobody is running the trial because nobody calculated the return. The [Decentralized FDA](dfda.qmd) would run this trial at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}.
+Replication is incomplete (Müller et al. failed to find the effect in adults 55 to 87 [@muller-klotho-replication-2021]), but the biology is promising enough that Minicircle launched a Phase 1 klotho gene therapy trial in late 2025 (NCT07216781) [@minicircle-klotho-trial-2025]. Their approach: inject minicircle DNA into abdominal fat, the cells produce klotho for roughly a year, the DNA degrades and clears. No permanent genome integration. Twenty-four participants enrolled. Results expected mid-2026.
 
-### Neuroplasticity restoration
+A 6-point population-wide IQ gain delivered by annual injection would be worth trillions in GDP. The [Decentralized FDA](dfda.qmd) would run this trial at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}.
 
-Your adult brains are less plastic than your child brains. The neural networks that store your worldview calcify with age, which is why [science advances one funeral at a time](../problem/i-am-retarded.qmd). Several lines of research are reopening critical-period plasticity in adults: valproic acid has been shown to reopen the critical period for learning absolute pitch in adults [@gervain-valproic-acid-pitch-2013]. Psychedelics appear to promote structural neuroplasticity [@ly-psychedelics-neuroplasticity-2018]. HDAC inhibitors are being investigated as general plasticity enhancers.
+### Neuroplasticity Restoration
 
-If you could restore youthful neuroplasticity in aging decision-makers, you would eliminate the Planck's-funeral problem without waiting for the funeral. A seventy-year-old senator whose neural networks can still update would be a seventy-year-old senator who can change their mind when the data changes. This is not a personality upgrade. It is a firmware update.
+Adult brains are less plastic than child brains. Neural networks calcify with age. Valproic acid reopens critical-period learning in adults (Gervain et al. demonstrated this with absolute pitch [@gervain-valproic-acid-pitch-2013]). Psychedelics promote structural neuroplasticity [@ly-psychedelics-neuroplasticity-2018]. HDAC inhibitors are being investigated as general plasticity enhancers.
 
-### Brain-computer interfaces
+A seventy-year-old whose neural networks can still update is a seventy-year-old who can change their mind when the data changes. Firmware update, not personality transplant.
 
-Direct neural interfaces skip the biological bottleneck entirely. The bandwidth between a human brain and the outside world is roughly 40 bits per second (reading) to 10 bits per second (typing). A USB cable carries 5 billion. The interface is the constraint.
+### Brain-Computer Interfaces
 
-This is the longest-horizon intervention and the least certain. It is also the only one with no theoretical ceiling. Every other enhancement moves humans a few inches up the ladder. A working brain-computer interface moves the ladder.
+The bandwidth between a human brain and the outside world is roughly 40 bits per second (reading) to 10 bits per second (typing). A USB cable carries 5 billion. The interface is the bottleneck. Direct neural interfaces remove it.
 
-## The Return on Intelligence
+Longest horizon. Least certain. Only intervention with no theoretical ceiling. Everything else moves you a few inches up the ladder. This moves the ladder.
 
-Each IQ point of national average is worth roughly {{< var national_iq_gdp_growth_effect_per_point >}} of annual GDP growth [@jones-schneider-iq-growth-2006]. For a planet with $115 trillion in GDP, a 10-point population-wide gain (achievable from Tier 1 alone in deficient populations) compounds to trillions within a generation.
-
-The cost of achieving those 10 points:
+## The Menu
 
 | Intervention | IQ gain | Cost | Status |
 |---|---|---|---|
-| Iodine supplementation | +8–13 points | ~$0.05/person/year | Proven, deployed unevenly |
-| Lead pipe replacement | +4–6 points (exposed populations) | ~$45B (US) | Proven, underfunded |
-| Education (AI-tutored) | +1–5 points/year | Free ([Special Education](special-education.qmd)) | Available now |
+| Iodized salt | +8–13 points | $0.05/person/year | Proven, unevenly deployed |
+| Lead pipe replacement | +4–6 points | ~$45B (US) | Proven, underfunded |
+| AI-tutored education | +1–5 points/year | Free ([Special Education](special-education.qmd)) | Available now |
 | Nutrition (DHA, micronutrients) | +2–3.5 points | Pennies/day | Proven, underfunded |
-| Klotho therapy | ~6 points (genetic variant) | Unknown (no trial yet) | Frontier |
-| Neuroplasticity restoration | Unknown | Unknown | Research stage |
-| Brain-computer interface | No ceiling | Unknown | Long horizon |
+| Klotho gene therapy | ~6 points | Phase 1 trial underway | [Minicircle trial](https://clinicaltrials.gov/study/NCT07216781) |
+| Neuroplasticity restoration | TBD | TBD | Research stage |
+| Brain-computer interface | No ceiling | TBD | Long horizon |
 
-The four proven interventions together could add 10 to 20 IQ points in the populations that need them most, at a combined cost lower than what your species spends on military marching bands.
+The four proven interventions add 10 to 20 IQ points in deficient populations at a combined cost lower than military marching bands.
 
-## Why This Hasn't Happened
+The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) counts the return on every one of these. The spreadsheet says several thousand percent. The current allocation says zero.
 
-The same reason everything in this manual hasn't happened. The benefit (smarter population, larger economy, fewer diseases, better decisions) is diffuse. The cost of the current arrangement (stupider population, smaller economy, more diseases, worse decisions) is invisible because it is the baseline. Nobody invoices you for the IQ points you never had.
-
-The Ethyl Gasoline Corporation did not set out to make everyone retarded. They set out to make money from lead, and the retardation was a cost they did not bear and therefore did not count. Your governments do not set out to keep the population stupid. They set out to build missiles, and the forgone cognitive enhancement is a cost they do not bear and therefore do not count.
-
-The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) counts it. The cost is in the spreadsheet. The spreadsheet says the return on cognitive enhancement is several thousand percent and the current allocation is approximately zero.
-
-*"We deployed Tier 1 in the first fiscal quarter. National IQ rose 11 points. Crime fell. GDP grew. Tax revenue increased. The program paid for itself in 8 months. Our main regret is the 4,000 years we spent debating whether intelligence was genetic and therefore none of our business." (Planet Keth-7, client since 8,000 BCE)*
+*"We deployed the proven fixes in the first fiscal quarter. National IQ rose 11 points. Crime fell. GDP grew. Tax revenue increased. The program paid for itself in 8 months. Our main regret is the 4,000 years we spent debating whether intelligence was genetic and therefore none of our business." (Planet Keth-7, client since 8,000 BCE)*
