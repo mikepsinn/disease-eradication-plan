@@ -22,6 +22,7 @@ scores:
 audience: "A domain expert or mechanism-design builder who could critique or rewrite a governance plan, looking for where it breaks."
 feel: "Dared: the manual is admittedly terrible and the rules are public, so beating it is a real, winnable challenge."
 do: "Fork the manual on GitHub and improve one row of the table, or red-team it against the eleven constraints in a published critique."
+image: /assets/og-images/knowledge/strategy/planetary-constitutional-convention-og-bw-academic.jpg
 ---
 {{< include ../includes/setup-parameters.qmd >}}
 
