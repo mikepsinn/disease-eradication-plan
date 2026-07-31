@@ -167,6 +167,8 @@ def generate_parameters_and_calculations_qmd(
     content.append("---")
     content.append('title: "Methodology, Parameters, and Calculations"')
     content.append('description: "Parameter definitions, formulas, uncertainty ranges, and data sources."')
+    if output_path.name == "parameters-and-calculations.qmd":
+        content.append("image: /assets/og-images/knowledge/appendix/parameters-and-calculations-og-bw-academic.jpg")
     content.append("feed-date: false")
     content.append("keywords:")
     content.append("  - health economics methodology")
