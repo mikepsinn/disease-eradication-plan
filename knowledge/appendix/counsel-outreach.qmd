@@ -1,9 +1,7 @@
 ---
 title: 'The Counsel Pitch'
-description: 'How to recruit pro bono or contingency-fee plaintiff-side counsel to file the shareholder demand letter against a military contractor board. Vetted firm list, the pitch letter, and an outreach tracker.'
+description: 'How to recruit plaintiff-side counsel. Firm list, pitch letter, outreach tracker.'
 image: /assets/og-images/knowledge/appendix/counsel-outreach-og-bw-academic.jpg
-abstract: |
-  The [shareholder demand letter](lawsuit.qmd) requires plaintiff-side securities counsel to finalize, file, and prosecute. This page is the counsel-recruitment layer of the lawsuit campaign. It lists plaintiff-side derivative and Caremark specialists, makes the strategic case for why a firm should take the matter on contingency or pro bono, and provides a pitch letter distinct from the demand letter itself. Specific partner names, current pro bono policies, and recent case wins must be verified by the plaintiff before outreach.
 aliases:
   - /counsel-outreach.html
   - /counsel-pitch.html
@@ -14,7 +12,6 @@ author:
       name: International Campaign to End War and Disease
     roles:
       - conceptualization
-      - writing - original draft
     email: mike@warondisease.org
     corresponding: true
 keywords:
@@ -43,15 +40,15 @@ scores:
   importance: 9
 audience: "a plaintiff-side securities or derivative litigator (and the plaintiff recruiting one)"
 feel: "this is a winnable, career-making case where the defendants are better off losing, and the only people it really helps are the ones you would otherwise lose to cancer"
-do: "pick a partner off the list, send the pitch letter, and take a 30-minute call (or, if every firm declines, file the demand letter pro se)"
+do: "pick a partner off the list, send the pitch letter, and take a 30-minute call (or, if every firm declines, file the love letter pro se)"
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-**STATUS: DRAFT.** Specific partner names, recent case-win records, and current pro bono policies require verification before any outreach. The pitch letter below is structurally complete; the firm list below should be treated as a starting set, not a vetted recommendation.
+Verify partner names, case records, and pro bono policies before outreach. The firm list is a starting set.
 
 ## Why Counsel Will Take This
 
-Three reasons, in descending order of how strategy memos usually rank them and ascending order of what actually matters.
+Three reasons, in descending order of how strategy memos rank them and ascending order of what matters.
 
 1. **Frontier *Caremark* expansion that gets published either way.** Win or lose, the case produces a Delaware Chancery opinion on whether a board's duty of oversight extends to lobbying that suppresses the macroeconomy that funds the company. Either outcome is the precedent-setting opinion. Either outcome is the named-on-the-docket professional credit.
 2. **The only derivative action that gets covered in military, healthcare, business, science, and political beats simultaneously.** The press release writes itself across six different reporter assignments. Few derivative filings produce that breadth.
@@ -59,7 +56,7 @@ Three reasons, in descending order of how strategy memos usually rank them and a
 
 ## Firm List (Starting Set)
 
-This is a starting list. Each entry needs verification of current partner contacts, pro bono criteria, and conflicts before outreach. Plaintiffs should add firms based on local jurisdiction and personal network.
+Starting set. Verify contacts, pro bono criteria, and conflicts before outreach. Add firms based on your jurisdiction and network.
 
 ### Plaintiff-side shareholder rights / derivative specialists
 
@@ -80,7 +77,7 @@ If every firm on the list declines: file pro se using the master letter, or cont
 
 ## The Pitch Letter
 
-Send to a specific partner identified through the firm's website or LinkedIn. Do not send to a general intake email. The pitch is shorter than the demand letter because the demand letter speaks for itself; the pitch only needs to explain why your time and theirs is well-spent on this matter.
+Send to a specific partner, not a general intake email. The love letter speaks for itself; the pitch only needs to explain why this is worth a 30-minute call.
 
 ---
 
@@ -92,21 +89,21 @@ Send to a specific partner identified through the firm's website or LinkedIn. Do
 
 Dear [PARTNER NAME],
 
-I am writing to ask whether [FIRM NAME] would consider representing me, on a pro bono or contingency basis, in a shareholder derivative matter against the board of one or more major US military contractors. The legal theory and proposed demand letter are available at [warondisease.org/lawsuit](https://warondisease.org/lawsuit). The short version follows.
+I am writing to ask whether [FIRM NAME] would consider representing me, on a pro bono or contingency basis, in a shareholder derivative matter against the board of one or more major US military contractors. The legal theory and proposed love letter are available at [warondisease.org/lawsuit](https://warondisease.org/lawsuit). The short version follows.
 
 This is the only derivative action where the plaintiff is desperately trying to prevent the suffering and death of the defendants. I do not want these board members and everyone they have ever loved to be slowly tortured and brutally murdered by horrible diseases. The lawsuit is the only legal mechanism I have to force the math in front of them. Settlement is the preferred outcome; litigation is the backup the math compels when the Board declines to investigate.
 
 I believe this is also the first lawsuit in legal history in which the defendants are radically better off losing than winning. The proposed settlement is non-monetary, zero incremental cost, expands the defendants' addressable market by approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} at year 15 of the treaty, and increases the defendants' personal life expectancy. There is no scenario in which they win in court and are materially better off than if they had settled.
 
-**The theory.** Each defendant's annual lobbying expenditure ({{< var defense_lobbying_annual >}} across the sector) is targeted at maintaining the current ratio of military spending to government clinical-trial spending ({{< var military_to_government_clinical_trials_spending_ratio >}} to 1). That expenditure suppresses the GDP growth that funds the defendants' addressable market. The Board has, on information and belief, never conducted an ROI analysis of this expenditure that accounts for its macroeconomic effect on the defendants' future revenue. The duty of oversight under *Caremark*, *Marchand*, and *Garfield* requires that analysis. The demand letter creates the red flag that triggers the duty.
+**The theory.** Each defendant's annual lobbying expenditure ({{< var defense_lobbying_annual >}} across the sector) is targeted at maintaining the current ratio of military spending to government clinical-trial spending ({{< var military_to_government_clinical_trials_spending_ratio >}} to 1). That expenditure suppresses the GDP growth that funds the defendants' addressable market. The Board has, on information and belief, never conducted an ROI analysis of this expenditure that accounts for its macroeconomic effect on the defendants' future revenue. The duty of oversight under *Caremark*, *Marchand*, and *Garfield* requires that analysis. The love letter creates the red flag that triggers the duty.
 
-**Why this is unusual.** Most derivative claims allege backward-looking harm (a failed acquisition, an accounting fraud). This one alleges forward-looking value destruction through a recurring expenditure that the Board has never been forced to scrutinize. The pleading is sourced entirely from public data (SIPRI, WHO, NIH, OpenSecrets, and the defendants' own SEC filings). The cost to file is approximately $3,000 per defendant in share purchases plus counsel time. The damages theory is unusually clean: the lobbying expenditure has a quantifiable negative-ROI consequence for shareholders, derivable from published economic models.
+**Why this is unusual.** Most derivative claims allege backward-looking harm (a failed acquisition, an accounting fraud). This one alleges forward-looking value destruction through a recurring expenditure the Board has never scrutinized. The pleading is sourced entirely from public data (SIPRI, WHO, NIH, OpenSecrets, and the defendants' own SEC filings). Cost to file: ~$3,000 per defendant in share purchases plus counsel time. The lobbying has a quantifiable negative-ROI consequence for shareholders, derivable from published economic models.
 
 **Why your firm.** [Specific reason: prior Caremark cases, public-interest practice, recent Delaware Chancery wins, capacity for parallel filings against multiple defendants.] If this is not a fit for your derivative practice, the parallel Rule 14a-8 shareholder proposal may be a better fit and is structurally lower-risk.
 
 **What I am asking.** A 30-minute call to walk through the pleading and discuss whether the theory is colorable and whether your firm would represent the plaintiff. I am prepared to be the named plaintiff. I have purchased the qualifying shares. I will execute on whatever timeline is appropriate.
 
-**What I am not asking.** I am not asking for a personal damages recovery. The proposed settlement is non-monetary: the defendant redirects its annual lobbying objective from maintaining current military spending levels to supporting a 1% military-to-clinical-trials redirection. Per the demand letter, this resolution costs the defendant $0 in additional expenditure, increases its long-term addressable market by a factor of approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} by year 15, and is structurally easier for a board to accept than a damages payout. The press coverage benefit accrues to your firm regardless of how the defendant responds. (See [Part 2 of the lawsuit page](lawsuit.qmd#part-2-the-zugzwang) for the full outcome matrix.)
+**What I am not asking.** I am not asking for a personal damages recovery. The proposed settlement is non-monetary: the defendant redirects its annual lobbying objective from maintaining current military spending levels to supporting a 1% military-to-clinical-trials redirection. Per the love letter, this resolution costs the defendant $0 in additional expenditure, increases its long-term addressable market by a factor of approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} by year 15, and is structurally easier for a board to accept than a damages payout. The press coverage benefit accrues to your firm regardless of how the defendant responds. (See [Part 2 of the lawsuit page](lawsuit.qmd#part-2-the-zugzwang) for the full outcome matrix.)
 
 The math on the harm is at [warondisease.org/where-am-i-wrong](https://warondisease.org/where-am-i-wrong). The math on the funniness is at [warondisease.org/joke](https://warondisease.org/joke). The math on the takeover escalation, if the derivative path stalls, is at [warondisease.org/loving-takeover](https://warondisease.org/loving-takeover). Every number is sourced. Every derivation is published.
 
@@ -126,35 +123,12 @@ Respectfully,
 
 ---
 
-## Outreach Tracker Template
-
-Plaintiffs should maintain a tracker. The template:
-
-| Firm | Partner | Date sent | Method | Date acknowledged | Response | Status | Next step |
-|---|---|---|---|---|---|---|---|
-| [firm] | [partner name] | [date] | email / mail / referral | [date] | [summary] | declined / interested / scheduled / engaged | [action] |
-
-Status definitions:
-
-- **declined**: explicit no, record the stated reason for future filings.
-- **interested**: requested follow-up; schedule the 30-minute call.
-- **scheduled**: call on the calendar; prepare the pleading and the strategic-value memo.
-- **engaged**: signed retention agreement; coordinate with the [demand-letter timeline](lawsuit.qmd#part-4-how-to-file-your-own).
 
 ## What If Every Firm Declines
 
 The campaign does not stop. The math is not contingent on the bar.
 
-If every plaintiff-side firm on the list declines, file the demand letter pro se. The Board's 60-day response obligation runs against the letter, not against the lawyer. File the Rule 14a-8 shareholder proposal pro se; [As You Sow](https://www.asyousow.org/) handles the SEC procedural lift for eligible shareholders. Use the declination record itself: a military-contractor lobbying budget so structurally indefensible that no plaintiff-side firm with a Caremark practice will touch it is itself a press release. Pivot to the [loving takeover](loving-takeover.qmd) in parallel. Share accumulation does not need a lawyer; the brokerage app on your phone is sufficient.
+If every plaintiff-side firm on the list declines, file the love letter pro se. The Board's 60-day response obligation runs against the letter, not against the lawyer. File the Rule 14a-8 shareholder proposal pro se; [As You Sow](https://www.asyousow.org/) handles the SEC procedural lift for eligible shareholders. Use the declination record itself: a military-contractor lobbying budget so structurally indefensible that no plaintiff-side firm with a Caremark practice will touch it is itself a press release. Pivot to the [loving takeover](loving-takeover.qmd) in parallel. Share accumulation does not need a lawyer; the brokerage app on your phone is sufficient.
 
 The lawsuit is one campaign layer of many. The math reaches the boardroom either way. The Board reads what the corporate secretary opens, and the corporate secretary opens what arrives by certified mail, and certified mail does not check who signed the return slip.
 
-## Back-Pocket Legal Angles
-
-Two parallel legal vectors exist alongside the Caremark shareholder strategy. Neither is the core campaign; both are worth knowing about because counsel and plaintiffs may prefer one over the other in specific circumstances.
-
-**False Claims Act qui tam (31 U.S.C. § 3730(b)).** An insider with original non-public knowledge of specific military-contractor fraud (cost-plus billing fraud, defective products certified as conforming, false test results, mischarged commercial costs) can file a sealed qui tam lawsuit on the government's behalf. If the case succeeds, the relator receives 15-30% of the recovery plus attorney's fees. DOJ FCA recoveries against military contractors run hundreds of millions per major case. The traditional FCA targets specific contract fraud, not lobbying. A novel theory linking the FCA to the Eisenhower Curve argument (lobbying for spending levels the math shows undermines national security as an implicit misrepresentation in contract performance) exists but has not been tested in court and would face the same Noerr-Pennington protections that immunize lobbying speech. Recommended posture: traditional FCA cost-fraud claims are real and lucrative; the novel macroeconomic-feedback theory is a long shot worth mentioning to counsel but not betting the case on.
-
-**SEC disclosure / securities fraud.** If a publicly traded military contractor fails to disclose material risks (such as the long-run macroeconomic-feedback risk to its addressable market), that is potentially actionable under SEC rules. This vector overlaps substantially with the Caremark shareholder primacy theory the core demand letter advances; treat it as a downstream possibility rather than a separate campaign.
-
-Counsel interested in either vector should review [The Eisenhower Curve](../economics/eisenhower-curve.qmd) for the analytical basis and the cited Saeed (2025) instrumental-variables result that anchors the macroeconomic-feedback claim.

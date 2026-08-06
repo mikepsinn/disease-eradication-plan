@@ -1,9 +1,9 @@
 ---
 title: 'The Funniest Lawsuit in the Universe'
-description: 'A $200 shareholder demand letter (one share of stock is legally sufficient under DGCL § 327) that turns the military lobby into the most effective advocate for pragmatic clinical trials on Earth. This page is everything you need to file it.'
+description: 'A $200 shareholder love letter (one share of stock is legally sufficient under DGCL § 327) that turns the military lobby into the most effective advocate for pragmatic clinical trials on Earth. This page is everything you need to file it.'
 image: /assets/og-images/knowledge/appendix/lawsuit-og-bw-academic.jpg
 abstract: |
-  Shareholder demand letter addressed to the boards of major US military contractors. Legal theory: Caremark 2.0 duty of oversight, single-firm shareholder-primacy framing. Substantive claim: each defendant's lobbying to maintain current military spending ratios produces negative ROI for its own shareholders by suppressing the GDP growth that would expand its addressable market. Every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Cost to file: approximately $200 (one share of stock; 1 share is sufficient under DGCL § 327). This page is structured as a standalone distribution artifact: post it anywhere, forward it to any military-contractor shareholder, file it yourself. The math, the legal theory, and the templates are all in this document.
+  Shareholder love letter addressed to the boards of major US military contractors. Legal theory: Caremark 2.0 duty of oversight, single-firm shareholder-primacy framing. Substantive claim: each defendant's lobbying to maintain current military spending ratios produces negative ROI for its own shareholders by suppressing the GDP growth that would expand its addressable market. Every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Cost to file: approximately $200 (one share of stock; 1 share is sufficient under DGCL § 327). This page is structured as a standalone distribution artifact: post it anywhere, forward it to any military-contractor shareholder, file it yourself. The math, the legal theory, and the templates are all in this document.
 aliases:
   - /lawsuit.html
   - /funniest-lawsuit.html
@@ -44,7 +44,7 @@ scores:
   importance: 10
 audience: "shareholders, lawyers, anyone willing to file (template users)"
 feel: "the legal theory is real and winnable; the defendants are better off losing; filing costs $200 and one evening; you are saving the board, not attacking them"
-do: "buy one share of a military contractor; print and mail the demand letter; start the 60-day clock"
+do: "buy one share of a military contractor; print and mail the love letter; start the 60-day clock"
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
@@ -59,9 +59,9 @@ do: "buy one share of a military contractor; print and mail the demand letter; s
 ::: {.callout-warning}
 **Legal posture for reviewing counsel.** The public wrapper is morally aggressive. The board-facing demand is narrower. In *McRitchie v. Zuckerberg*, C.A. No. 2022-0890-JTL (Del. Ch. Apr. 30, 2024), Vice Chancellor Laster rejected a fiduciary-duty theory based on directors' obligation to consider society-wide or macroeconomic interests. Delaware law applies the single-firm, shareholder-primacy model.
 
-The demand letter therefore does not ask directors to save the world as a charitable act. It asks whether a recurring corporate expenditure benefits this company's shareholders after accounting for the effect of military-budget-ratchet lobbying on the economy that funds future contracts, shareholder income, shareholder survival, and long-term market value.
+The love letter therefore does not ask directors to save the world as a charitable act. It asks whether a recurring corporate expenditure benefits this company's shareholders after accounting for the effect of military-budget-ratchet lobbying on the economy that funds future contracts, shareholder income, shareholder survival, and long-term market value.
 
-Target doctrine: *Caremark* 2.0 duty of oversight, as expanded in *Marchand v. Barnhill* (2019) and *Garfield v. Allen* (2024, V.C. Laster). The demand letter itself creates the "red flag" that triggers oversight obligations.
+Target doctrine: *Caremark* 2.0 duty of oversight, as expanded in *Marchand v. Barnhill* (2019) and *Garfield v. Allen* (2024, V.C. Laster). The love letter itself creates the "red flag" that triggers oversight obligations.
 
 Derivative recovery usually belongs to the corporation, not the filing shareholder. Direct personal damages are an aggressive and unlikely theory. Rule 14a-8 is a separate eligible-shareholder path with ownership and holding requirements. Do not promise plaintiffs a direct payout from derivative recovery.
 :::
@@ -75,9 +75,9 @@ It is the first lawsuit in legal history where the defendants are radically bett
 
 **The selfish version.** If you do not care about the disease eradication argument and only care about money, the share you bought to file the lawsuit still gives you ordinary shareholder exposure to the company whose board is forced to answer the analysis. If the campaign works, the upside comes from better policy, better corporate strategy, and the larger economy you also own through your other assets. If it fails, you hold a normal military contractor position. The downside is ordinary market risk on the share and the foregone index-fund return on $200.
 
-**The altruistic version.** If you do care about disease eradication: the math says the campaign prevents approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths from the diseases that will otherwise kill someone you love. Filing one demand letter forces the math into one boardroom for $200.
+**The altruistic version.** If you do care about disease eradication: the math says the campaign prevents approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths from the diseases that will otherwise kill someone you love. Filing one love letter forces the math into one boardroom for $200.
 
-**Selfish and altruistic converge on the same action.** Both readers buy the share, both read the demand letter below, both file it. The campaign requires no shared motivation, only shared action.
+**Selfish and altruistic converge on the same action.** Both readers buy the share, both read the love letter below, both file it. The campaign requires no shared motivation, only shared action.
 
 ### What You Personally Get From Filing
 
@@ -86,7 +86,7 @@ It is the first lawsuit in legal history where the defendants are radically bett
 | Additional healthy life expectancy if treaty passes | ~{{< var avg_life_extension_per_beneficiary >}} |
 | Additional lifetime income if treaty passes | ~{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
 | Ordinary shareholder exposure to the company you file against | Uncertain; the stock can rise or fall while the campaign is pending |
-| Personal share of the recovered lifespan of the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} humans the campaign prevents from dying | Not pricable; this is the part the demand letter is about |
+| Personal share of the recovered lifespan of the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} humans the campaign prevents from dying | Not pricable; this is the part the love letter is about |
 | Standing to tell the people you love that you tried | This one is free; you just have to file |
 
 The cost is one share (~$200) plus 43 hours of work. Under the Part 3 assumptions (ten defendants sued, 5% per-defendant probability of a redirection), the modeled upside is mostly treaty value, life expectancy, and the value of a larger economy, not a direct litigation payout. The expected return on the years is the rest of your life and the rest of the lives of everyone you love.
@@ -95,7 +95,7 @@ The cost is one share (~$200) plus 43 hours of work. Under the Part 3 assumption
 
 1. Buy one whole share through a real brokerage if you do not already own one.
 2. Buy 1 share of any major military contractor. The eight with [pre-filled fact sheets](pre-filled-demand-letters.qmd) are RTX, LMT, BA, GD, NOC, LHX, HII, and LDOS. Others (BAH, CACI, SAIC, BAE, Thales) work too; you just look up the corporate-secretary address yourself.
-3. Copy the demand letter below, fill in the bracketed fields, sign it.
+3. Copy the love letter below, fill in the bracketed fields, sign it.
 4. Send it certified mail to the corporate secretary of the defendant.
 5. Wait 60 days. Use the [post-response decision tree](litigation-phase.qmd) when the board responds.
 
@@ -103,7 +103,7 @@ If you want company on the way: [counsel outreach pitch](counsel-outreach.qmd), 
 
 If you want to read the full argument before deciding: [Where Am I Wrong?](where-am-i-wrong.qmd) is the most rigorous version of the math, and [The Eisenhower Curve](../economics/eisenhower-curve.qmd) is the strategic-competition version of why the current allocation makes the country weaker, not stronger.
 
-The rest of this document is the demand letter itself, the legal theory, the outcome matrix, and the operational templates. The Open Letter to the Boards (below) is the version of the demand letter you can post on social media unchanged. The numbered demand letter in Part 1 is the version you send by certified mail.
+The rest of this document is the love letter itself, the legal theory, the outcome matrix, and the operational templates. The Open Letter to the Boards (below) is the version of the love letter you can post on social media unchanged. The numbered love letter in Part 1 is the version you send by certified mail.
 
 ## An Open Letter to the Boards
 
@@ -153,7 +153,7 @@ The military industry's lobbying machine produces negative ROI for its own share
 
 There is precedent for a board lobbying itself into the ground. The Ethyl Gasoline Corporation, a joint venture of General Motors and Standard Oil, lobbied for decades to keep tetraethyl lead in gasoline, because it held the patents and you cannot patent ethanol [@kovarik-leaded-gasoline-history-2005] [@kitman-secret-history-lead-2000]. The lead cost Americans 824 million IQ points, including the directors' own children's [@mcfarland-lead-iq-2022]. Run the numbers and even Ethyl's shareholders would have ended up roughly {{< var ethyl_shareholder_counterfactual_wealth_gain >}} richer had the board switched to ethanol in 1923, because a diversified portfolio lives in the economy the brain damage shrank [@jones-schneider-iq-growth-2006]. Nobody on that board ever saw an ROI analysis of the lobbying either. The product changed. The unsupervised line item did not.
 
-Once a single board receives a sourced, quantitative analysis showing this expenditure destroys shareholder value, the board has two options: investigate, or knowingly continue to destroy shareholder value with a documented red flag in its possession. Under *Caremark* and its progeny, the second option creates personal liability for directors. The first option requires commissioning an independent analysis that will reach the same conclusion as the demand letter, because the demand letter's math comes from SIPRI, the WHO, the NIH, and the boards' own SEC filings.
+Once a single board receives a sourced, quantitative analysis showing this expenditure destroys shareholder value, the board has two options: investigate, or knowingly continue to destroy shareholder value with a documented red flag in its possession. Under *Caremark* and its progeny, the second option creates personal liability for directors. The first option requires commissioning an independent analysis that will reach the same conclusion as the love letter, because the love letter's math comes from SIPRI, the WHO, the NIH, and the boards' own SEC filings.
 
 In either path, the lobby has to switch sides. The cost to make it happen is $200 of stock (one share is sufficient under DGCL § 327) and 43 hours of work per defendant.
 
@@ -207,7 +207,7 @@ The settlement asks them to redirect existing lobbying from one objective to ano
 
 ---
 
-## Part 1: The Demand Letter
+## Part 1: The Love Letter
 
 ### Shareholder Demand to the Board of Directors
 
@@ -398,7 +398,7 @@ The military industry's lobbying machine is now pointed at disease eradication i
 
 ### If they fight
 
-Every dollar spent on legal fees is additional shareholder money spent without ROI analysis, in order to resist a demand that the Board conduct an ROI analysis. The irony is the evidence. The demand letter documented that the Board was informed. Post-receipt actions are informed decisions, not oversights.
+Every dollar spent on legal fees is additional shareholder money spent without ROI analysis, in order to resist a demand that the Board conduct an ROI analysis. The irony is the evidence. The love letter documented that the Board was informed. Post-receipt actions are informed decisions, not oversights.
 
 ### If they ignore
 
@@ -414,13 +414,13 @@ Best outcome for public discourse. Their counter-analysis enters the public reco
 
 **DO NOT:** Frame anything as societal obligation. *McRitchie v. Zuckerberg* killed that theory in Delaware.
 
-**DO:** Cite *Caremark* 2.0 line: *Marchand*, *Garfield v. Allen*, *Teamsters v. Chou*. The demand letter IS the red flag.
+**DO:** Cite *Caremark* 2.0 line: *Marchand*, *Garfield v. Allen*, *Teamsters v. Chou*. The love letter IS the red flag.
 
 **DO:** File in Delaware Chancery. Most major military contractors are Delaware-incorporated.
 
 **DO:** Note that V.C. Laster accepted the novel *Caremark* theory in *Garfield v. Allen*. Approximately 1-in-7 chance of drawing him.
 
-**McRitchie guardrail:** never make the demand letter depend on a board duty to maximize global welfare. The public wrapper can say the case could prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths. The legal demand must ask whether the expenditure benefits this Company's shareholders.
+**McRitchie guardrail:** never make the love letter depend on a board duty to maximize global welfare. The public wrapper can say the case could prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths. The legal demand must ask whether the expenditure benefits this Company's shareholders.
 
 **Caremark guardrail:** do not overstate survival past a motion to dismiss. The demand creates a record and may create a red flag, but the law remains difficult. Say "may," not "will."
 
@@ -562,13 +562,12 @@ This has not yet happened. On my planet, the first time someone ran the numbers,
 
 ### Execution sequence
 
-1. Write one-page cost-benefit analysis (4 hrs, $0). The [demand letter](#part-1-the-demand-letter) already contains the full analysis; the one-pager is the executive summary for the journalist list. Source the math from [Where Am I Wrong?](where-am-i-wrong.qmd).
-2. Buy at least 1 share of the target military contractor's stock (1 hr, $200-$600 for one share depending on contractor). Per DGCL § 327, one share is legally sufficient for the demand letter and derivative action. Many plaintiffs buy 5-10 shares for optics and to preserve the Rule 14a-8 path (which has separate dollar thresholds; see [shareholder-proposal-14a-8.qmd](shareholder-proposal-14a-8.qmd)). Total cost: ~$500 minimum, ~$3,000 if buying 10 shares. See the [target reference table](#target-reference-table) below for current prices.
-3. Research board members, personalize from proxy statements (9 hrs, $0). Use the [board member research protocol](board-member-research.qmd) to extract CEO name, age, holdings, and probability of being alive in 20 years from the latest DEF 14A. Output goes into Section 6 of the demand letter.
-4. Engage pro bono counsel; pitch Cohen Milstein, Selendy Gay, or BLB&G (3 hrs, $0). Use the [counsel pitch letter and firm list](counsel-outreach.qmd). The pitch letter is distinct from the demand letter and emphasizes strategic value to the firm, not the moral case.
-5. Counsel reviews, finalizes, and files [demand letter](#part-1-the-demand-letter) ($0).
-6. Prepare [press release](press-release.qmd) and journalist list (4 hrs, $0). The press release page also contains the full journalist target list by beat.
-7. Send demand letters and press releases simultaneously (1 hr, postage). The [press release sequencing section](press-release.qmd#sequencing) covers embargo timing and same-day distribution.
+1. Write one-page cost-benefit analysis (4 hrs, $0). The [love letter](#part-1-the-love-letter) already contains the full analysis; the one-pager is the executive summary for the journalist list. Source the math from [Where Am I Wrong?](where-am-i-wrong.qmd).
+2. Buy at least 1 share of the target military contractor's stock (1 hr, $200-$600 depending on contractor). Per DGCL § 327, one share is legally sufficient. Buy 5-10 shares if you also want the Rule 14a-8 path (separate dollar thresholds; see [shareholder-proposal-14a-8.qmd](shareholder-proposal-14a-8.qmd)). See the [target reference table](#target-reference-table) below for current prices.
+3. Engage pro bono counsel; pitch Cohen Milstein, Selendy Gay, or BLB&G (3 hrs, $0). Use the [counsel pitch letter and firm list](counsel-outreach.qmd).
+4. Counsel reviews, finalizes, and files [love letter](#part-1-the-love-letter) ($0).
+5. Prepare [press release](press-release.qmd) and journalist list (4 hrs, $0).
+6. Send love letters and press releases simultaneously (1 hr, postage). The [press release sequencing section](press-release.qmd#sequencing) covers embargo timing.
 8. Wait 60 days.
 9. If no adequate response: file shareholder proposals under SEC Rule 14a-8 (see the [eligible-shareholder proposal track](#eligible-shareholder-proposal-track) below) plus a derivative suit in Delaware Chancery (Maryland for Lockheed Martin).
 
@@ -611,9 +610,9 @@ Cost per share as of May 2026; lobbying figures from OpenSecrets (2024 full-year
 | L3Harris Technologies | LHX | $318 | $2.5M | DE |
 | **Subtotal (these eight)** | | | **$73.6M** | |
 
-Seven of eight are Delaware corporations; Lockheed Martin is Maryland. Both states permit Caremark-type oversight claims. Step 2 in the execution sequence above ("buy 10 shares") costs roughly $1,200-$5,600 depending on target. Filing against all eight requires approximately $25,600 in share purchases, which also happens to be the hedge: if the demand letters work and military contractor stocks dip, the treaty-driven GDP growth more than compensates (see Part 3).
+Seven of eight are Delaware corporations; Lockheed Martin is Maryland. Both states permit Caremark-type oversight claims. Step 2 in the execution sequence above ("buy 10 shares") costs roughly $1,200-$5,600 depending on target. Filing against all eight requires approximately $25,600 in share purchases, which also happens to be the hedge: if the love letters work and military contractor stocks dip, the treaty-driven GDP growth more than compensates (see Part 3).
 
-Share prices are approximate and will change. Look them up before buying. The lobbying column is what you cite in Section 1 of the demand letter as the specific expenditure constituting the alleged oversight failure.
+Share prices are approximate and will change. Look them up before buying. The lobbying column is what you cite in Section 1 of the love letter as the specific expenditure constituting the alleged oversight failure.
 
 ### Eligible-Shareholder Proposal Track
 
