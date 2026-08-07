@@ -25,7 +25,7 @@ format:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-Every number below is sourced from SIPRI, WHO, NIH, and the companies' own SEC filings. The derivations are at [GDP Trajectories](../economics/gdp-trajectories.qmd) and [parameters-and-calculations](parameters-and-calculations.qmd). If a number is wrong, the linked source says so.
+Every number below is sourced from SIPRI, WHO, NIH, and the companies' own SEC filings. The derivations are at [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] and [parameters-and-calculations](parameters-and-calculations.qmd). If a number is wrong, the linked source says so.
 
 ::: {.delay-cost-callout .content-visible when-format="html"}
 If a link below is broken, the counter is fiction; break the link and improve the book. If every link holds, then every day of delay gives disease about <span data-dih-delay-value="per-day" data-dih-delay-compact="true">{{< var global_eventually_avoidable_disease_deaths_daily_nounit >}}</span> extra murder victims, and the counter is your to-do list.

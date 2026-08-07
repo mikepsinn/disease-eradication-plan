@@ -535,7 +535,7 @@ Here is what should scare you: if this works, the world becomes unrecognizable. 
 
 <span class="delay-cost-number" data-dih-delay-value="since-publication">counting</span>
 
-people will be unnecessarily tortured and brutally murdered by diseases. Every additional day we refrain from ending war and disease, about [139 thousand](https://manual.warondisease.org/knowledge/appendix/where-am-i-wrong.html) more people are unnecessarily tortured and brutally murdered by diseases. This is unfortunate.
+people will be unnecessarily tortured and brutally murdered by diseases. Every additional day we refrain from ending war and disease, about [139 thousand](https://manual.warondisease.org/knowledge/appendix/bombs-vs-biotech-roi.html) more people are unnecessarily tortured and brutally murdered by diseases. This is unfortunate.
 :::
 
 Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts. Every minute of delay, [104](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop. Your vote saves [2.6 lives](https://manual.warondisease.org/knowledge/strategy/nonprofit-coalition-strategy.html) and prevents [468 thousand hours](https://manual.warondisease.org/knowledge/strategy/nonprofit-coalition-strategy.html) of suffering.
