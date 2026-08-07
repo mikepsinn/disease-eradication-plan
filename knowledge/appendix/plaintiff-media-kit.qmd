@@ -78,7 +78,7 @@ Verify reporter names at filing time. Fill [BRACKETS] with current data.
 
 The legal theory, based on Delaware's *Caremark* duty of oversight doctrine as expanded in *Marchand v. Barnhill* (2019) and *Garfield v. Allen* (2024), argues that [COMPANY]'s lobbying to maintain current US military appropriations suppresses the GDP growth that funds the company's long-term addressable market. Specifically, the lobbying targets maintaining the current {{< var military_to_government_clinical_trials_spending_ratio >}}-to-1 ratio of military spending to government clinical-trial spending, which the love letter argues delays disease eradication by approximately {{< var dfda_trial_capacity_treatment_acceleration_years_nounit >}} years and reduces global GDP at year 15 by a factor of approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}.
 
-"I love the board members of [COMPANY] and I do not want them and everyone they have ever loved to be slowly tortured and brutally murdered by horrible diseases," said [PLAINTIFF NAME]. "The lawsuit is the only way to make them read the math. Their lobbying is increasing the probability that every person in this case, on both sides, dies earlier than the math says they had to. We are asking them to redirect the same lobbying budget so that none of us has to die of a disease we could cure if we funded the trial. This is the first lawsuit in history where the defendants are radically better off losing than winning. Settle and the Board members and their families are roughly {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} richer over a lifetime and roughly {{< var avg_life_extension_per_beneficiary >}} longer-lived. Fight and win and everyone in the courtroom stays on the trajectory that kills them earlier. We are asking everyone in the case to please let us help them."
+"We love the board members of [COMPANY] and we do not want them and everyone they have ever loved to be slowly tortured and brutally murdered by horrible diseases," said [PLAINTIFF NAME]. "We are asking them to redirect the same lobbying budget so that none of us has to die of a disease we could cure if we funded the trial. Settle and the Board members and their families are roughly {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} richer over a lifetime and roughly {{< var avg_life_extension_per_beneficiary >}} longer-lived. Fight and win and everyone in the courtroom stays on the trajectory that kills them earlier."
 
 The proposed resolution is non-monetary: [COMPANY] would redirect its annual lobbying objective from maintaining current military spending levels to supporting a global agreement to redirect 1% of military spending to pragmatic clinical trials. Per the love letter, this resolution costs [COMPANY] $0 in additional expenditure, expands its long-term addressable market by a factor of approximately {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} by year 15, and increases shareholder lifetime wealth by approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} per shareholder.
 
@@ -143,31 +143,31 @@ Pitch at T+7d. 800-1,200 words. Headline and subhead are placeholders; the outle
 
 ---
 
-**Headline:** I sued the board of a military contractor because I love them.
+**Headline:** We sued the board of a military contractor because we love them.
 
-**Subhead:** The math says the Company's lobbying is killing the people who own the shares. I bought one share to put the math in front of them. So can you.
+**Subhead:** The Company's lobbying produces [negative ROI](https://warondisease.org/where-am-i-wrong) for its own shareholders. We bought one share to put the analysis in front of the Board. So can you.
 
 ---
 
-Last week I mailed a shareholder love letter to the Board of [COMPANY]. I own one share. I paid $[X] for it.
+Last week we mailed a shareholder love letter to the Board of [COMPANY]. We own one share. We paid $[X] for it.
 
-They are going to die of something preventable. So am I. The Board of [COMPANY] signs off every year on a lobbying budget that keeps the ratio of military spending to clinical-trial spending at {{< var military_to_government_clinical_trials_spending_ratio >}} to 1. That ratio is why the cures do not exist yet. The Board has never asked whether this is good for the people who own the shares. The lawsuit asks them to.
+They are going to die of something preventable. So are we. The Board of [COMPANY] signs off every year on a lobbying budget that keeps the ratio of military spending to clinical-trial spending at {{< var military_to_government_clinical_trials_spending_ratio >}} to 1. That ratio is why the cures do not exist yet. The Board has never asked whether this is good for the people who own the shares. The lawsuit asks them to.
 
-The mechanism is small. [COMPANY] spends approximately $[X] million a year on federal lobbying. The lobbying is pointed at maintaining the ratio of US military spending to government clinical-trial spending, currently {{< var military_to_government_clinical_trials_spending_ratio >}} to 1. The trials that would tell us which compounds cure pancreatic cancer, Alzheimer's, ALS, and cardiovascular disease are not being funded because the funding ratio is what it is because the lobby tells Congress to keep it that way.
+The mechanism is small. [COMPANY] spends approximately $[X] million a year on federal lobbying pointed at maintaining that ratio. The trials that would tell us which compounds cure pancreatic cancer, Alzheimer's, ALS, and cardiovascular disease are not being funded because the lobby tells Congress to keep it that way.
 
 Three molecules sitting in the untested-compound queue right now, with public research support and no funded large-scale trials: metformin for Alzheimer's. Rapamycin for biological aging. Low-dose naltrexone for autoimmune conditions and certain cancers. The 1% redirection funds those trials. The current lobbying keeps the money pointed somewhere else. That is what is going to kill us.
 
-I am not asking the Company to do anything new. I am asking the Company to *stop* doing something specific. The settlement is non-monetary. The Board redirects the same lobbying budget, in the same offices, with the same lobbyists, to argue for the [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] on Capitol Hill instead of arguing against it. Nothing in the Company's operations changes. The only thing that changes is what the Company's lobbyists are saying in the meetings they were already going to have.
+The settlement is non-monetary. The Board redirects the same lobbying budget, with the same lobbyists, to argue for the [1% treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] on Capitol Hill instead of arguing against it. Nothing in the Company's operations changes. The only thing that changes is what the lobbyists say in the meetings they were already going to have.
 
-The math is in the love letter, sourced entirely from SIPRI, the WHO, the NIH, OpenSecrets, and [COMPANY]'s own SEC filings. The legal theory is *Caremark*, *Marchand*, *Stone v. Ritter*. A board that knowingly continues an expenditure shown to be negative-ROI for its own shareholders is in conscious disregard of a known risk. The love letter creates the record.
+The sourced ROI analysis is in the [love letter](lawsuit.qmd#part-1-the-love-letter), built from SIPRI, WHO, NIH, OpenSecrets, and [COMPANY]'s own SEC filings. Legal theory: *Caremark*, *Marchand*, *Stone v. Ritter*.
 
-I want to be clear about who this lawsuit hurts. It does not hurt [COMPANY]. The settlement does not cost the Company a dollar. It hurts no shareholder. It hurts no employee. The people the lawsuit hurts are the lobbyists who would otherwise have spent the next decade pointing the federal budget at missiles, and the people who profit from those lobbyists keeping it pointed that way. The people the lawsuit helps are everyone else, including everyone named in the caption.
+We want to be clear about who this lawsuit hurts. Nobody. Not the Company. Not shareholders. Not employees. Not even the lobbyists, who keep the same jobs and the same budget and argue for a different sentence. The settlement costs the Company nothing and helps everyone in the case, on both sides, live longer.
 
-As far as anyone can tell, this is the first lawsuit in legal history where the defendants are radically better off losing than winning. Settle and the Board members and their shareholders are roughly {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} richer over a lifetime and roughly {{< var avg_life_extension_per_beneficiary >}} longer-lived. Fight and win and they stay on the trajectory that, on average, kills them and their families earlier than the math says they could have lived. That is not metaphor. That is the actuarial table.
+Settle and the Board members and their shareholders are roughly {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} richer over a lifetime and roughly {{< var avg_life_extension_per_beneficiary >}} longer-lived. Fight and win and they stay on the trajectory that kills them earlier.
 
-If you are a shareholder of any major military contractor, you can do exactly what I did. One share. Two hundred dollars. The template is at [warondisease.org/lawsuit](https://warondisease.org/lawsuit). There are eight pre-filled love letters ready to print. The Board has to respond to whoever sent the letter, regardless of who sent it.
+If you are a shareholder of any major military contractor, you can do this too. One share. Two hundred dollars. The template is at [warondisease.org/lawsuit](https://warondisease.org/lawsuit). Eight pre-filled love letters ready to print. The Board has to respond to whoever sent the letter.
 
-The lobbying that has caused American policy to drift this far from any honest cost-benefit calculation is built on the assumption that no one is doing the math. I did the math. So can you. The math is in the public record. The compounds are in the public record. The diseases are in your family. The cost of telling the Board is a marker, an evening, and the price of one share of stock.
+The lobbying works because no one has checked the ROI. The ROI is negative. The derivation, sourced from SIPRI, WHO, NIH, and the company's own SEC filings, is at [warondisease.org/where-am-i-wrong](https://warondisease.org/where-am-i-wrong). Filing costs an evening and one share of stock.
 
 ---
 
@@ -179,23 +179,23 @@ Publish at T=0 + 1 hour, simultaneously with the press release. Your lawyer revi
 
 ### Tweet thread (5 tweets)
 
-**1.** Today I sued the board of [COMPANY]. I love them and I do not want them and everyone they have ever loved to be slowly tortured and brutally murdered by horrible diseases. The lawsuit is the only legal mechanism to make them read the math showing their lobbying is killing them, their families, and their shareholders. 🧵
+**1.** Today we sued the board of [COMPANY]. We love them and we do not want them and everyone they have ever loved to be slowly tortured and brutally murdered by horrible diseases. The lawsuit is the only legal mechanism to make them read the [ROI analysis](https://warondisease.org/where-am-i-wrong) showing their lobbying loses money for their own shareholders. 🧵
 
 **2.** [COMPANY] lobbies to keep military appropriations high. Current ratio of military to clinical-trial spending: {{< var military_to_government_clinical_trials_spending_ratio >}}:1. Redirecting 1% to trials compresses the disease eradication timeline from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
 
 **3.** Global GDP at year 15 under the 1% redirect: ~{{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the current trajectory. [COMPANY]'s revenue is a fraction of US federal spending, which is a fraction of US GDP. They are paying lobbyists to keep small the economy that funds them, and to keep small the medical research that would cure the diseases that will kill them.
 
-**4.** I'm asking the Board to redirect the SAME lobbying budget from "maintain military appropriations" to "support a 1% redirection." Same lobbyists. Different objective. Net cost: $0. Net effect: none of us has to die of a disease the math says we could have cured. Legal basis: *Caremark*, *Marchand*.
+**4.** We're asking the Board to redirect the SAME lobbying budget from "maintain military appropriations" to "support a 1% redirection." Same lobbyists. Different objective. Net cost: $0. Legal basis: *Caremark*, *Marchand*.
 
 **5.** You can do this too. 1 share = ~$200. Template + 8 pre-filled letters at warondisease.org/lawsuit. One share starts the same 60-day clock a million shares would. RT this to the next shareholder.
 
 ### LinkedIn post
 
-Reshare the op-ed link: "Today I filed a shareholder love letter against the Board of [COMPANY] under *Caremark*. The company's $[X]M annual lobbying budget loses money for its own shareholders. The math: [op-ed link]."
+Reshare the op-ed link: "Today we filed a shareholder love letter against the Board of [COMPANY] under *Caremark*. The company's $[X]M annual lobbying budget loses money for its own shareholders. The ROI analysis: [op-ed link]."
 
 ### Video script (optional, 60-90 seconds vertical for TikTok/Reels/Shorts)
 
-If you want to shoot one: open with "Today I sued a military contractor for $200" on camera holding the share, hit the {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio + the {{< var status_quo_queue_clearance_years_nounit >}}→{{< var dfda_queue_clearance_years_nounit >}} years compression + the {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} GDP point, close with "1 share, ~$200, template at warondisease.org/lawsuit."
+If you want to shoot one: open with "Today we sued a military contractor for $200" on camera holding the share, hit the {{< var military_to_government_clinical_trials_spending_ratio >}}:1 ratio + the {{< var status_quo_queue_clearance_years_nounit >}}→{{< var dfda_queue_clearance_years_nounit >}} years compression + the {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} GDP point, close with "1 share, ~$200, template at warondisease.org/lawsuit."
 
 ## Interview Prep Q&A
 
@@ -203,7 +203,7 @@ The 8 most likely reporter questions. Practice the top 5 out loud before the fir
 
 ### Q1: What are you suing for?
 
-I'm not suing for damages. I'm asking the Board of [COMPANY] to check whether their $[X] million annual lobbying budget actually helps the company, once you account for what the lobbying does to the economy that funds the company's contracts. The settlement is that they point the same lobbyists at the 1% treaty instead of at keeping military budgets high. No extra cost to the company.
+We're not suing for damages. We're asking the Board of [COMPANY] to check whether their $[X] million annual lobbying budget actually helps the company, once you account for what the lobbying does to the economy that funds the company's contracts. The settlement is that they point the same lobbyists at the 1% treaty instead of at keeping military budgets high. No extra cost to the company.
 
 ### Q2: Why do you think the lobbying is bad for shareholders?
 
@@ -227,7 +227,7 @@ The opposite. The 1% treaty is the most pro-military action available to the Uni
 
 ### Q7: What if the company just ignores the love letter?
 
-I'll file a Rule 14a-8 shareholder proposal in the next proxy cycle and a derivative action in [Delaware Chancery / Maryland] at day 61.
+We'll file a Rule 14a-8 shareholder proposal in the next proxy cycle and a derivative action in [Delaware Chancery / Maryland] at day 61.
 
 ### Q8: Why should I care?
 
@@ -243,4 +243,4 @@ Distribute the day the Board's response (or non-response) becomes public. Use th
 
 ### If the Board declines or doesn't respond
 
-> [CITY, DATE]: [COMPANY]'s Board of Directors today declined to investigate whether the company's $[X] million annual lobbying expenditure is shortening the lives of its own shareholders, their families, and its own directors. Sixty days after receiving a shareholder love letter setting out the math, the Board's response addressed every procedural question and none of the substantive ones. [PLAINTIFF NAME] today filed a derivative action in [Delaware Chancery / Maryland circuit] under *Caremark*, *Marchand*, and *Stone v. Ritter*, and will submit a Rule 14a-8 shareholder proposal requiring an independent ROI analysis in the next proxy cycle. "I would have preferred a phone call," [PLAINTIFF NAME] said. "I love the Board. The Board's response shows the Board has not yet read the math. The lawsuit is the procedural mechanism that requires them to." Lawyer: [FIRM NAME].
+> [CITY, DATE]: [COMPANY]'s Board of Directors today declined to investigate whether the company's $[X] million annual lobbying expenditure is shortening the lives of its own shareholders, their families, and its own directors. Sixty days after receiving a shareholder love letter setting out the math, the Board's response addressed every procedural question and none of the substantive ones. [PLAINTIFF NAME] today filed a derivative action in [Delaware Chancery / Maryland circuit] under *Caremark*, *Marchand*, and *Stone v. Ritter*, and will submit a Rule 14a-8 shareholder proposal requiring an independent ROI analysis in the next proxy cycle. "We would have preferred a phone call," [PLAINTIFF NAME] said. "We love the Board. The Board's response shows they have not yet read the [ROI analysis](https://warondisease.org/where-am-i-wrong). The lawsuit is the mechanism that requires them to." Counsel: [FIRM NAME].

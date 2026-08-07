@@ -78,12 +78,6 @@ This is the funniest lawsuit in the universe and this page is everything you nee
 It is the first lawsuit in legal history where the defendants are radically better off losing than winning. Settling adds approximately {{< var avg_life_extension_per_beneficiary >}} to each defendant's healthy life and approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to the average shareholder's lifetime income. Winning leaves the defendant where they started: facing the same diseases on the same timeline, while their lobbying continues to keep the cure trials underfunded.
 
 
-**The selfish version.** If you do not care about the disease eradication argument and only care about money, the share you bought to file the lawsuit still gives you ordinary shareholder exposure to the company whose board is forced to answer the analysis. If the campaign works, the upside comes from better policy, better corporate strategy, and the larger economy you also own through your other assets. If it fails, you hold a normal military contractor position. The downside is ordinary market risk on the share and the foregone index-fund return on $200.
-
-**The altruistic version.** If you do care about disease eradication: the math says the campaign prevents approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths from the diseases that will otherwise kill someone you love. Filing one love letter forces the math into one boardroom for $200.
-
-**Selfish and altruistic converge on the same action.** Both readers buy the share, both read the love letter below, both file it. The campaign requires no shared motivation, only shared action.
-
 ### What You Personally Get From Filing
 
 | Benefit | Approximate value |
@@ -94,15 +88,14 @@ It is the first lawsuit in legal history where the defendants are radically bett
 | Personal share of the recovered lifespan of the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} humans the campaign prevents from dying | Not pricable; this is the part the love letter is about |
 | Standing to tell the people you love that you tried | This one is free; you just have to file |
 
-The cost is one share (~$200) plus 43 hours of work. Under the Part 3 assumptions (ten defendants sued, 5% per-defendant probability of a redirection), the modeled upside is mostly treaty value, life expectancy, and the value of a larger economy, not a direct litigation payout. The expected return on the years is the rest of your life and the rest of the lives of everyone you love.
+The cost is one share (~$200) plus 43 hours of work. Under the [Part 3](#part-3-expected-value-for-plaintiffs) assumptions (ten defendants sued, 5% per-defendant probability of a redirection), the modeled upside is mostly treaty value, life expectancy, and the value of a larger economy, not a direct litigation payout.
 
 ### How To File (60-Second Version)
 
-1. Buy one whole share through a real brokerage if you do not already own one.
-2. Buy 1 share of any major military contractor. The eight with [pre-filled fact sheets](pre-filled-demand-letters.qmd) are RTX, LMT, BA, GD, NOC, LHX, HII, and LDOS. Others (BAH, CACI, SAIC, BAE, Thales) work too; you just look up the corporate-secretary address yourself.
-3. Copy the love letter below, fill in the bracketed fields, sign it.
-4. Send it certified mail to the corporate secretary of the defendant.
-5. Wait 60 days. Use the [post-response decision tree](#board-response-three-outcomes) when the board responds.
+1. Buy 1 share of any major military contractor. The eight with [pre-filled fact sheets](pre-filled-demand-letters.qmd) are RTX, LMT, BA, GD, NOC, LHX, HII, and LDOS. Others (BAH, CACI, SAIC, BAE, Thales) work too; you just look up the corporate-secretary address yourself.
+2. Copy the love letter below, fill in the bracketed fields, sign it.
+3. Send it certified mail to the corporate secretary of the defendant.
+4. Wait 60 days. Use the [post-response decision tree](#board-response-three-outcomes) when the board responds.
 
 If you want company on the way: [how to find a lawyer](#the-counsel-pitch), [filing-day checklist](filing-day-checklist.qmd), [pre-filled defendant fact sheets](pre-filled-demand-letters.qmd), and [the media kit](plaintiff-media-kit.qmd) are all linked.
 
@@ -150,9 +143,7 @@ To the judge: if you are still leaning toward throwing this case out on a techni
 
 ## Why This Works
 
-The military lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives hundreds of billions of dollars in military contracts in return. The standard mistake is to try to defeat this lobby by outbidding it. That is charming, like trying to drown the ocean with a cup. The standard outcome is a fundraising treadmill that never reaches the budget.
-
-The lawsuit does something different. It does not try to defeat the military lobby. It redirects it.
+The military lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives hundreds of billions of dollars in military contracts in return. Outbidding it is impossible. The lawsuit redirects it instead.
 
 The military industry's lobbying machine produces negative ROI for its own shareholders. Military contractors are humans who die of the same diseases as everyone else. They live in the same economy that their lobbying is keeping small. They are not a sophisticated adversary defending a rational interest. They are an unsupervised line item on a corporate budget that nobody has ever ROI-analyzed because nobody had to.
 
@@ -208,7 +199,7 @@ Every response on this list is useful. On your planet, you call this "losing." O
 
 ### The Settlement Is the Trap
 
-The settlement asks them to redirect existing lobbying from one objective to another. Same lobbyists. Same offices. Same budget. Different talking points. The settlement makes the defendant richer. It is hard to find a settlement in legal history where accepting makes the defendant better off than before the lawsuit.
+The settlement makes the defendant richer. It is hard to find a settlement in legal history where accepting makes the defendant better off than before the lawsuit.
 
 ---
 
@@ -708,11 +699,7 @@ I can be reached at [EMAIL] or [PHONE].
 
 #### What If Every Firm Declines
 
-The campaign does not stop. The math is not contingent on the bar.
-
-If every firm on the list declines, file the love letter pro se. The Board's 60-day clock runs against the letter, not against the lawyer. File the Rule 14a-8 shareholder proposal pro se; [As You Sow](https://www.asyousow.org/) handles the SEC paperwork for eligible shareholders. If no firm will touch a case this obvious, that is itself a press release. Pivot to the [loving takeover](loving-takeover.qmd) in parallel. You do not need a lawyer to buy shares; the brokerage app on your phone works fine.
-
-The lawsuit is one layer. The math reaches the boardroom either way. The Board reads what the corporate secretary opens, and the corporate secretary opens what arrives by certified mail, and certified mail does not check who signed the return slip.
+File the love letter pro se. The Board's 60-day clock runs against the letter, not against the lawyer. File the Rule 14a-8 shareholder proposal pro se; [As You Sow](https://www.asyousow.org/) handles the SEC paperwork for eligible shareholders. Pivot to the [loving takeover](loving-takeover.qmd) in parallel.
 
 ---
 
@@ -782,8 +769,6 @@ The lawsuit is one move. The [loving takeover](loving-takeover.qmd), the [shirts
 ## How This Connects
 
 The lawsuit is one move in a campaign that does not depend on the lawsuit winning. The citizens wear [the shirt](joke.qmd) that puts the math in front of every human they love. The voters send [the Notice of Termination](notice-of-termination.qmd) to every elected official who would rather fund missiles than the trial that would save the official's mother. The treaty itself is the [1% redirection](../solution/1-percent-treaty.qmd) and the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] that absorbs the redirected dollars and turns them into cures. The institutions that replace the budget-allocation systems the treaty obsoletes are [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025], [Optimocracy](../solution/optimocracy.qmd) [@optimocracy-paper-2025], the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025], and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025]. The [FAQ](faq.qmd) handles the question every honest skeptic asks once and then stops.
-
-The lawsuit is the layer that forces the math into the boardroom in a form the Board is legally required to read. The shirts force it into the family living room. The termination letters force it into the senator's inbox. The treaty is what every layer is converging on. The campaign succeeds whenever any of those layers lands. The campaign succeeds completely when all of them do.
 
 ## The Funniness of This Lawsuit, Mathematically
 
