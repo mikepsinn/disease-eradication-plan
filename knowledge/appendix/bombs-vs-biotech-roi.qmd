@@ -1,0 +1,145 @@
+---
+title: 'Bombs vs. Biotechnology: The ROI'
+description: 'A sourced cost-benefit analysis of redirecting 1% of military spending to clinical trials: disease queue, GDP growth channels, per-capita returns, and biotech margin advantage.'
+image: /assets/og-images/knowledge/appendix/where-am-i-wrong-og-bw-academic.jpg
+aliases:
+  - /where-am-i-wrong.html
+  - /knowledge/appendix/where-am-i-wrong.html
+author:
+  - name: Mike P. Sinn
+    affiliation:
+      name: International Campaign to End War and Disease
+    email: mike@warondisease.org
+    corresponding: true
+keywords:
+  - ROI analysis
+  - 1% treaty
+  - GDP growth
+  - disease queue
+  - cost-benefit
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Every number below is sourced from SIPRI, WHO, NIH, and the companies' own SEC filings. The derivations are at [GDP Trajectories](../economics/gdp-trajectories.qmd) and [parameters-and-calculations](parameters-and-calculations.qmd). If a number is wrong, the linked source says so.
+
+::: {.delay-cost-callout .content-visible when-format="html"}
+If a link below is broken, the counter is fiction; break the link and improve the book. If every link holds, then every day of delay gives disease about <span data-dih-delay-value="per-day" data-dih-delay-compact="true">{{< var global_eventually_avoidable_disease_deaths_daily_nounit >}}</span> extra murder victims, and the counter is your to-do list.
+:::
+
+## Summary {#summary}
+
+| Metric | Status quo | After 1% redirection |
+|---|---:|---:|
+| Diseases without effective treatment | {{< var diseases_without_effective_treatment >}} | Same queue, {{< var dfda_trial_capacity_multiplier >}} trial capacity |
+| New first treatments per year | {{< var new_disease_first_treatments_per_year >}} | {{< var dfda_first_treatments_per_year >}} |
+| Years to clear the disease queue | {{< var status_quo_queue_clearance_years >}} | {{< var dfda_queue_clearance_years >}} |
+| Global GDP at year 15 | {{< var current_trajectory_gdp_year_15 >}} | {{< var treaty_trajectory_gdp_year_15 >}} |
+| Global GDP at year 20 | {{< var current_trajectory_gdp_year_20 >}} | {{< var treaty_trajectory_gdp_year_20 >}} |
+| Per-capita lifetime income gain | Baseline | +{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
+| Healthy life gained per person | Baseline | +{{< var avg_life_extension_per_beneficiary >}} |
+
+## The disease queue {#the-disease-queue}
+
+{{< var diseases_without_effective_treatment_nounit >}} diseases have no effective treatment. The world discovers about {{< var new_disease_first_treatments_per_year_nounit >}} first treatments per year. At that rate, clearing the queue takes {{< var status_quo_queue_clearance_years_nounit >}} years. {{< var unexplored_ratio >}} of the potential uses for the {{< var safe_compounds_count_nounit >}} known-safe compounds have never been tested.
+
+Redirecting 1% of global military spending ({{< var treaty_annual_funding >}} per year) to [pragmatic clinical trials](../solution/dfda.qmd) increases trial capacity by {{< var dfda_trial_capacity_multiplier >}}, compressing the queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}}.
+
+The cost: one of our {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses worth of nuclear capacity. It takes about {{< var nuclear_winter_warhead_threshold_nounit >}} warheads to cause nuclear winter. We have {{< var global_warhead_count_nounit >}}.
+
+## Why GDP grows {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} at year 15 {#why-gdp-grows}
+
+The treaty's GDP effect comes through four compounding channels, each sourced independently:
+
+**1. Multiplier differential.** Every dollar spent on the military returns approximately {{< var economic_multiplier_military_spending >}} in GDP (CBO, Moody's Analytics). Every dollar spent on healthcare R&D returns approximately {{< var economic_multiplier_healthcare_investment >}}, plus a {{< var rd_spillover_multiplier >}} spillover into adjacent sectors (biotech, AI, manufacturing). Redirecting 1% moves spending from the low-return category to the high-return category.
+
+**2. Disease burden recovery (dominant channel).** Disease drags GDP by {{< var disease_burden_gdp_drag_pct >}} annually ({{< var global_disease_economic_burden_annual >}} per year, WHO). The redirected funding scales trial capacity {{< var dfda_trial_capacity_multiplier >}}, progressively curing diseases and recovering that drag. This channel alone accounts for most of the GDP gap.
+
+**3. Peace dividend.** War costs the global economy approximately $11.4 trillion per year in direct and indirect damages (IEP Global Peace Index). A proportional reduction from reduced military posture recovers part of that drag.
+
+**4. Cybercrime recovery.** Cybercrime costs approximately $10.5 trillion per year (Cybersecurity Ventures). Reduced military tensions partially reduce state-sponsored cyber operations and their economic drag.
+
+The treaty ratchets from 1% to 10% over 15-20 years. The compounded effect: GDP grows at an effective {{< var treaty_trajectory_cagr_year_20 >}} instead of the baseline {{< var gdp_baseline_growth_rate >}}. At year 15, the treaty economy is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} the baseline ({{< var treaty_trajectory_gdp_year_15 >}} vs {{< var current_trajectory_gdp_year_15 >}}). At year 20, {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} ({{< var treaty_trajectory_gdp_year_20 >}} vs {{< var current_trajectory_gdp_year_20 >}}). Full derivation: [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025].
+
+## The biotech margin argument {#biotech-margins}
+
+Biotechnology companies have net profit margins of {{< var pharma_net_profit_margin >}}. Military contractors have net profit margins of {{< var defense_net_profit_margin >}}. That is {{< var pharma_vs_defense_net_margin_ratio >}} higher. A military contractor board that sells 1% of its bomb-making assets and buys biotechnology shares with the proceeds has given itself a raise on the reallocation alone, before the treaty's GDP growth compounds the gain.
+
+The economy the treaty produces is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger at year 15. Every diversified portfolio scales with it. A military contractor is worth far more operating in an economy that large than in the economy its current lobbying is working to keep small.
+
+## Historical precedent {#historical-precedent}
+
+After World War II, the United States cut military spending by {{< var post_ww2_military_cut_pct >}} in two years. That reduction was followed by the greatest sustained rise in living standards in American history. Current US military spending is {{< var us_military_spending_current_vs_prewar_multiplier >}} the pre-war baseline. In 1939, before the United States won the war, military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than it is now. A 1% reduction is manageable.
+
+## The spending ratio {#the-spending-ratio}
+
+You have about a 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}} chance of being killed by a terrorist, and approximately a 100% chance of being killed by a disease. We spend {{< var military_to_government_clinical_trials_spending_ratio >}} times more on the military than on clinical trials. That ratio is why the cures do not exist yet.
+
+The ratio persists because military contractors spend approximately {{< var defense_lobbying_annual >}} per year on lobbying. The lobbying is effective: global military spending is {{< var global_military_spending_annual_2024 >}} per year (SIPRI). Global government clinical trial spending is {{< var global_government_clinical_trials_spending_annual >}} per year (NIH). Nobody has ever ROI-analyzed the lobbying expenditure.
+
+## Why it has not happened {#why-it-has-not-happened}
+
+CEOs and board members in the military industrial complex are also humans. The average age is about 60. In about {{< var global_life_expectancy_remaining_at_age_60 >}}, on average, they will be dead, and their net worth will be zero, unless they are buried with their money, which their children are unlikely to do.
+
+If they are trying to maximize their net worth, and their net worth is going to be zero when they are dead, they should be fighting *for* this 1% reallocation that could eradicate disease {{< var dfda_trial_capacity_multiplier_nounit >}} times faster. Instead they block it, because this set of facts has never gotten into their brains. If it did, and they are rational agents interested in maximizing their net worth, they would reinvest their personal money into biotechnology and use their lobbying budget to redirect 1% of military spending to pragmatic clinical trials.
+
+## Model objections
+
+### Objection: More trials does not mean proportionally more cures (diminishing returns).
+
+Doubling biomedical research dollars does not double cures. Diminishing returns on research are well documented (Bloom et al., "Are Ideas Getting Harder to Find?"). The {{< var status_quo_queue_clearance_years_nounit >}} → {{< var dfda_queue_clearance_years_nounit >}} years compression assumes linear scaling, and the cure rate is sublinear in trial count.
+
+**Refutation:**
+
+You are basing this on a situation where trials are only done on profitable novel molecules. These trials are done on all potentially medicinal molecules, regardless of whether they are profitable, and the cost is about {{< var dfda_trial_cost_reduction_factor_nounit >}} times cheaper than traditional trials. Additionally, under this system, it is a [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] where all information is published, giving us additional public and shared information about the effectiveness of each intervention on each target. This allows us to better understand human biology and improves our ability to target and select the next intervention. You can aggregate all of this data, rank interventions, and always be trialing the most promising intervention available based on the entire universe of data. Therefore, the number of cures produced per trial should increase over time.
+
+We are not running out of low-hanging fruit. {{< var unexplored_ratio >}} of the potential uses of {{< var safe_compounds_count_nounit >}} known-safe but generally unpatentable interventions have never been tested. You can't run out of low-hanging fruit if you haven't even gone into the orchard.
+
+### Objection: GDP growth does not accrue evenly.
+
+The gains may concentrate at the top. The reader you most need to persuade may hear "the average rises" as "I get screwed because I am not average."
+
+**Refutation:**
+
+Fair, so run it on the median instead of the mean. The treaty's targets are median disposable income and median healthy life expectancy, not GDP per capita. The disease-cost reduction (out-of-pocket care, lost workdays, caregiving) lands disproportionately on the median household, which is why the median rises even under historical patterns where the mean outruns it.
+
+### Objection: Compounding model uncertainty makes the joint claim weaker than the chain reads.
+
+Each link is probabilistic: 1% → {{< var dfda_trial_capacity_multiplier_nounit >}}x trials, more trials → more cures, more cures → {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} GDP at year 15, bigger GDP → the reader's personal net worth rises with it. A sophisticated reader can accept the direction of every link and still rationally disagree about the magnitude. "I agree disease eradication is undervalued; I disagree that the multiplier is 1.4x rather than 1.05x." That is not irrational.
+
+**Refutation:**
+
+Run the conservative case. Assume 1% reallocation → 2x trials (not {{< var dfda_trial_capacity_multiplier_nounit >}}x). Assume 2x trials → 1.5x cures. Assume the GDP gain comes in at the bottom of the model's confidence interval rather than the center. You still get an enormous reduction in disease burden, an enormous personal benefit to every human alive, and a treaty that pays for itself many times over its 1% cost. The math is overwhelming even at conservative parameters.
+
+The person who says "I disagree about the multiplier" has to specify a multiplier so low that the conclusion flips. There is no honest multiplier that low. The cost of being wrong about the multiplier is "we got fewer cures than hoped." The cost of being wrong about not doing it is "we continued blowing up cities and prolonging disease for another century." Those two costs are not the same size.
+
+Compounding uncertainty cuts both ways, by the way. It is just as likely that the multiplier is *higher* than estimated as lower, because we are at {{< var unexplored_ratio >}} untested potential uses for known-safe interventions. The point estimate is the median of the distribution, not the worst case.
+
+### Objection: Motivated reasoning beats spreadsheets in the empirical record.
+
+The cognitive science is bad for the strategy. Forty years of "smoking causes cancer" warnings produced slow gradual behavior change, not immediate compliance, even though the math is personal and overwhelming. Cardiovascular non-compliance, climate-risk complacency, financial discount-rate failures: humans systematically underweight low-probability catastrophic personal outcomes even when their own life is at stake. The "rational agent who reads the math and updates" is an economist's model, not a psychologist's.
+
+**Refutation:**
+
+Smoking is the wrong reference class because it requires the smoker to change their own behavior, which is hard. The treaty requires no behavior change from the public. It requires a budget line item to be adjusted in 190 spreadsheets. The friction is institutional, not personal.
+
+Even taking smoking on its own terms: US adult smoking declined from 42% in 1965 to 12% in 2023. That is a 71% reduction over 58 years through exactly this kind of multi-channel, multi-decade campaign. If the disease-eradication campaign achieves the smoking trajectory, the treaty passes. Slow and gradual is fine. Disease eradication does not need to happen next year; it needs to happen eventually, and {{< var dfda_queue_clearance_years_nounit >}} years is an acceptable timeline even with substantial campaign drag.
+
+Also: the people who matter (CEOs, judges, senators) are an unusually rational subset of the population, and they are exposed to spreadsheets professionally. They are more responsive to math than the median smoker is, because their job is to read math. Motivated reasoning is strongest when the cost of changing your mind is high. For a senator, the cost of changing their mind on the treaty (once their constituents are wearing the shirts) is low and the cost of *not* changing it is career death.
+
+## The Funniest Joke in the Universe, Mathematically
+
+The total funniness of this campaign, measured in laughs prevented from being lost to disease and aging, is approximately {{< var shirt_induced_laughs_gained >}}. For comparison, the average joke produces 1 laugh. This is the funniest joke in human history by a margin of approximately {{< var shirt_induced_laughs_gained_nounit >}} to 1.
+
+The chain:
+
+- The average human laughs {{< var human_laughs_per_day_average_nounit >}} times per day.
+- That is {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per healthy life-year.
+- The treaty recovers approximately {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} DALYs (disability-adjusted life-years) by compressing the disease eradication queue from {{< var status_quo_queue_clearance_years_nounit >}} years to {{< var dfda_queue_clearance_years_nounit >}} years.
+- {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} recovered healthy life-years × {{< var human_laughs_per_healthy_life_year_nounit >}} laughs per year = {{< var shirt_induced_laughs_gained_nounit >}} laughs.
+
+Every objection above is asking you to weigh some friction (diminishing returns, distributional effects, model uncertainty, motivated reasoning) against the funniness of this joke. The friction is measured in academic papers and confidence intervals. The joke is measured in quadrillions of laughs. The math does not require a calculator.

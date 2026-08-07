@@ -166,7 +166,7 @@ book:
         - knowledge/futures/moronia.qmd # ✅ Path A: Moronia ~10p
         - knowledge/futures/wishonia.qmd # ✅ Path B: Wishonia ~13p
         - knowledge/appendix/faq.qmd # ✅ Demolishing Objections ~15p
-        - knowledge/appendix/where-am-i-wrong.qmd # Full argument for the 1% treaty in one breath; FAQ with strongest known objections and refutations
+        - knowledge/appendix/bombs-vs-biotech-roi.qmd # Bombs vs. Biotechnology: sourced cost-benefit analysis with GDP channels, biotech margins, FAQ
 
     - part: "For Institutions"
       chapters:
@@ -288,7 +288,7 @@ book:
         # - knowledge/appendix/lawsuit.qmd
         # - knowledge/appendix/loving-takeover.qmd
         # MOVED to "For Skeptics" part:
-        # - knowledge/appendix/where-am-i-wrong.qmd
+        # - knowledge/appendix/bombs-vs-biotech-roi.qmd
 
     - part: "References"
       chapters:

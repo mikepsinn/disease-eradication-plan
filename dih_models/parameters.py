@@ -4385,7 +4385,7 @@ EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
 
 GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY = Parameter(
     GLOBAL_DISEASE_DEATHS_DAILY * (1 - _unavoidable_pct),
-    manual_ref="knowledge/appendix/where-am-i-wrong.qmd",
+    manual_ref="knowledge/appendix/bombs-vs-biotech-roi.qmd",
     source_type="calculated",
     description="Daily global deaths that are eventually avoidable with sufficient biomedical research. Each day the disease-eradication date slips adds roughly this many deaths to the total schedule cost.",
     display_name="Eventually Avoidable Deaths per Day",
