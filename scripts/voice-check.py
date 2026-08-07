@@ -90,7 +90,7 @@ ASYMMETRY_OK = re.compile(
 # litigation mechanics (counsel, motions, filings, lawsuits). Still flag it as
 # finance-speak when used loosely outside a legal scene.
 DEMAND_LETTER_OK = re.compile(
-    r"counsel|lawsuit|litigat|plaintiff|defendant|court|filing|filed|motion|attorney|\bsue[sd]?\b",
+    r"counsel|lawsuit|litigat|plaintiff|defendant|court|filing|filed|motion|attorney|\bsue[sd]?\b|love letter",
     re.I,
 )
 
