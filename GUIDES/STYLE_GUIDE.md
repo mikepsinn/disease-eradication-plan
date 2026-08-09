@@ -253,7 +253,7 @@ This is a DIY guide. The reader is the one building, funding, and running every 
 
 Recent binding refinements (2026). They extend "The Reader Owns Everything"; they do not replace it.
 
-**Wishonia's identity (keep consistent).** Wishonia Love is the alien narrator and teacher: CEO of **Universe Optimization Services**, of which **Earth Optimization Services** is the Earth subsidiary. EOS tagline: **"The future: now under new management."** (the new management is the reader). 
+**Wishonia's identity (keep consistent).** Wishonia Love is the alien narrator and teacher: CEO and President of **Universe Optimization Services**, of which **Earth Optimization Services** is the Earth subsidiary. EOS tagline: **"The future: now under new management."** (the new management is the reader). 
 
 **A company, never a movement.** EOS is a company, not a movement, cause, or thing-you-join. "Movement" is the vocabulary of efforts that failed; never call our own work "the movement" (referencing *other* movements, e.g. the 3.5% rule, is fine). Same instinct as the "never pitch / join us" ban: a company gets its owners to do their jobs; a movement begs strangers to believe.
 
