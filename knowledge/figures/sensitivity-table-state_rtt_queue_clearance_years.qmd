@@ -4,9 +4,9 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Treatments Proven Effective Annually (50-State Registry) (treatments/year) | -0.6505 | Strong driver |
-| Diseases Without Effective Treatment (diseases) | 0.1726 | Weak driver |
-| Diseases Getting First Treatment Per Year (diseases/year) | -0.1494 | Weak driver |
-| Share of Evaluations Targeting Untreated Diseases (percentage) | -0.0967 | Minimal effect |
+| Treatments Proven Effective Annually (50-State Registry) (treatments/year) | -0.6431 | Strong driver |
+| Diseases Without Effective Treatment (diseases) | 0.1714 | Weak driver |
+| Diseases Getting First Treatment Per Year (diseases/year) | -0.1517 | Weak driver |
+| Share of Evaluations Targeting Untreated Diseases (percentage) | -0.1289 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

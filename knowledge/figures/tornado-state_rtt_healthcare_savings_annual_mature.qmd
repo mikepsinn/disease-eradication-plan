@@ -24,10 +24,10 @@ baseline = 152985074626.86566
 
 # Tornado data from sensitivity analysis
 
-drivers = ['STATE_RTT_TREATED_COST_REDUCTION_PCT', 'STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED', 'US_CHRONIC_DISEASE_SPENDING_ANNUAL', 'STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'US_POPULATION_2024']
-driver_labels = ['Cost Reduction When Effectively Treated', 'US Patients with Poorly Treated Common Diseases', 'US Annual Chronic Disease Spending', 'US Rare Disease Patients', 'US Population in 2024']
-impacts_low = [-91791044776.11938, -30597014925.37314, -29850746268.656708, -15298507462.686554, 2317955676.1646423]
-impacts_high = [152985074626.86566, 61194029850.74628, 33582089552.2388, 30597014925.37314, -2249780509.2185974]
+drivers = ['STATE_RTT_TREATED_COST_REDUCTION_PCT', 'STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED', 'STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'US_CHRONIC_DISEASE_SPENDING_ANNUAL', 'US_POPULATION_2024']
+driver_labels = ['Cost Reduction When Effectively Treated', 'US Patients with Poorly Treated Common Diseases', 'US Rare Disease Patients', 'US Annual Chronic Disease Spending', 'US Population in 2024']
+impacts_low = [-91791044776.11938, -30597014925.37314, -45895522388.05969, -29850746268.656708, 2317955676.1646423]
+impacts_high = [152985074626.86566, 61194029850.74628, 30597014925.37314, 33582089552.2388, -2249780509.2185974]
 
 # Convert deltas to absolute values (baseline + delta)
 

@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Eventual Annual US Healthcare Savings (Mature) (USD/year) | 0.9974 | Strong driver |
-| Government Share of US Health Spending (percentage) | 0.0707 | Minimal effect |
+| Eventual Annual US Healthcare Savings (Mature) (USD/year) | 0.9976 | Strong driver |
+| Government Share of US Health Spending (percentage) | 0.0688 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

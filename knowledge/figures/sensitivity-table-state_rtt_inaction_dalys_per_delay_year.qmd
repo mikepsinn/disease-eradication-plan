@@ -4,10 +4,10 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Treatments Proven Effective Annually (50-State Registry) (treatments/year) | 0.7888 | Strong driver |
-| Annual DALY Gain per Patient on an Eventually-Effective Treatment (DALYs) | 0.4149 | Moderate driver |
-| Share of Evaluations Targeting Untreated Diseases (percentage) | 0.1175 | Weak driver |
-| Global Rare Disease Patients (patients) | 0.1047 | Weak driver |
-| Total Number of Rare Diseases Globally (diseases) | -0.0957 | Minimal effect |
+| Treatments Proven Effective Annually (50-State Registry) (treatments/year) | 0.7848 | Strong driver |
+| Annual DALY Gain per Patient on an Eventually-Effective Treatment (DALYs) | 0.4066 | Moderate driver |
+| Share of Evaluations Targeting Untreated Diseases (percentage) | 0.1263 | Weak driver |
+| Global Rare Disease Patients (patients) | 0.1022 | Weak driver |
+| Total Number of Rare Diseases Globally (diseases) | -0.0935 | Minimal effect |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

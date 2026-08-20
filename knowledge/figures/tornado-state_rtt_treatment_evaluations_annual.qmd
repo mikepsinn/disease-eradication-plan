@@ -26,7 +26,7 @@ baseline = 1120.0
 
 drivers = ['STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION', 'STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT', 'STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED', 'STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT']
 driver_labels = ['Patients per Treatment-Condition Evaluation', 'Mature Market Annual Penetration Rate', 'US Patients with Poorly Treated Common Diseases', 'US Rare Disease Patients', 'Patient Willingness to Participate in Clinical Trials']
-impacts_low = [2613.3333333333335, -896.0, -224.0, -112.0, -120.0]
+impacts_low = [2613.3333333333335, -896.0, -224.0, -336.0, -120.0]
 impacts_high = [-746.6666666666667, 2240.0, 448.0, 224.0, 130.0]
 
 # Convert deltas to absolute values (baseline + delta)

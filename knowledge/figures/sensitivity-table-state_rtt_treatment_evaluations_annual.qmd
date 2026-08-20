@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Annual Experimental Treatment Center Patients (50-State) (patients/year) | 0.7040 | Strong driver |
-| Patients per Treatment-Condition Evaluation (patients) | -0.4769 | Moderate driver |
+| Annual Experimental Treatment Center Patients (50-State) (patients/year) | 0.7079 | Strong driver |
+| Patients per Treatment-Condition Evaluation (patients) | -0.4716 | Moderate driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -4,7 +4,7 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Annual Treatment Evaluations (50-State Registry) (evaluations/year) | 0.9502 | Strong driver |
-| Pharma Drug Success Rate (Current System) (percentage) | 0.2210 | Weak driver |
+| Annual Treatment Evaluations (50-State Registry) (evaluations/year) | 0.9508 | Strong driver |
+| Pharma Drug Success Rate (Current System) (percentage) | 0.2185 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

@@ -24,10 +24,10 @@ baseline = 35.224303135888505
 
 # Tornado data from sensitivity analysis
 
-drivers = ['STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT', 'STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN', 'STATE_RTT_REGISTRY_ANNUAL_COST', 'PHARMA_SUCCESS_RATE_CURRENT_PCT', 'STATE_RTT_CAMPAIGN_COST_PER_STATE', 'STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED', 'EFFICACY_LAG_YEARS', 'STATE_RTT_PHILANTHROPIC_FUNDING_YEARS', 'STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT']
-driver_labels = ['Mature Market Annual Penetration Rate', 'Annual DALY Gain per Patient on an Eventually-Effective Treatment', 'National Outcome Registry Annual Operating Cost', 'Pharma Drug Success Rate (Current System)', 'Campaign Cost per State (Universal Right to Try + Data Amendment)', 'US Patients with Poorly Treated Common Diseases', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Philanthropic Registry Funding Horizon', 'US Rare Disease Patients', 'Patient Willingness to Participate in Clinical Trials']
-impacts_low = [140.897212543554, 105.67290940766551, -16.33275261324042, 23.482868757259013, -5.335365853658537, 8.806075783972119, 11.36267843093178, 8.00304878048781, 3.9138114595431617, 4.226916376306619]
-impacts_high = [-23.482868757259006, -21.1345818815331, 54.442508710801405, -11.741434378629503, 18.673780487804883, -10.064086610253856, -6.906726105076174, -4.001524390243901, -5.870717189314746, -3.6633275261324023]
+drivers = ['STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT', 'STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN', 'STATE_RTT_REGISTRY_ANNUAL_COST', 'PHARMA_SUCCESS_RATE_CURRENT_PCT', 'STATE_RTT_CAMPAIGN_COST_PER_STATE', 'STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED', 'EFFICACY_LAG_YEARS', 'STATE_RTT_PHILANTHROPIC_FUNDING_YEARS', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT']
+driver_labels = ['Mature Market Annual Penetration Rate', 'Annual DALY Gain per Patient on an Eventually-Effective Treatment', 'National Outcome Registry Annual Operating Cost', 'Pharma Drug Success Rate (Current System)', 'Campaign Cost per State (Universal Right to Try + Data Amendment)', 'US Rare Disease Patients', 'US Patients with Poorly Treated Common Diseases', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Philanthropic Registry Funding Horizon', 'Patient Willingness to Participate in Clinical Trials']
+impacts_low = [140.897212543554, 105.67290940766551, -16.33275261324042, 23.482868757259013, -5.335365853658537, 15.096129915380793, 8.806075783972119, 11.36267843093178, 8.00304878048781, 4.226916376306619]
+impacts_high = [-23.482868757259006, -21.1345818815331, 54.442508710801405, -11.741434378629503, 18.673780487804883, -5.870717189314746, -10.064086610253856, -6.906726105076174, -4.001524390243901, -3.6633275261324023]
 
 # Convert deltas to absolute values (baseline + delta)
 

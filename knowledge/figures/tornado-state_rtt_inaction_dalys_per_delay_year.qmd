@@ -24,10 +24,10 @@ baseline = 576000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION', 'STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT', 'STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN', 'PHARMA_SUCCESS_RATE_CURRENT_PCT', 'RARE_DISEASE_PATIENTS_GLOBAL', 'STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'RARE_DISEASES_COUNT_GLOBAL', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED']
-driver_labels = ['Patients per Treatment-Condition Evaluation', 'Mature Market Annual Penetration Rate', 'Annual DALY Gain per Patient on an Eventually-Effective Treatment', 'Pharma Drug Success Rate (Current System)', 'Global Rare Disease Patients', 'US Rare Disease Patients', 'Total Number of Rare Diseases Globally', 'Patient Willingness to Participate in Clinical Trials', 'US Patients with Poorly Treated Common Diseases']
-impacts_low = [1344000.0, -460800.0, -432000.0, -230400.0, -71040.0, -96000.0, 96000.0, -61714.28571428568, 0.0]
-impacts_high = [-384000.0, 1152000.0, 864000.0, 288000.0, 280320.0, 192000.0, -172800.0, 66857.14285714284, 0.0]
+drivers = ['STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION', 'STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT', 'STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN', 'PHARMA_SUCCESS_RATE_CURRENT_PCT', 'STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'RARE_DISEASE_PATIENTS_GLOBAL', 'RARE_DISEASES_COUNT_GLOBAL', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED']
+driver_labels = ['Patients per Treatment-Condition Evaluation', 'Mature Market Annual Penetration Rate', 'Annual DALY Gain per Patient on an Eventually-Effective Treatment', 'Pharma Drug Success Rate (Current System)', 'US Rare Disease Patients', 'Global Rare Disease Patients', 'Total Number of Rare Diseases Globally', 'Patient Willingness to Participate in Clinical Trials', 'US Patients with Poorly Treated Common Diseases']
+impacts_low = [1344000.0, -460800.0, -432000.0, -230400.0, -288000.0, -71040.0, 96000.0, -61714.28571428568, 0.0]
+impacts_high = [-384000.0, 1152000.0, 864000.0, 288000.0, 192000.0, 280320.0, -172800.0, 66857.14285714284, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

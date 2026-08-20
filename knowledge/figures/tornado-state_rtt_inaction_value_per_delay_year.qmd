@@ -24,10 +24,10 @@ baseline = 86400000000.0
 
 # Tornado data from sensitivity analysis
 
-drivers = ['STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION', 'STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT', 'STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN', 'PHARMA_SUCCESS_RATE_CURRENT_PCT', 'RARE_DISEASE_PATIENTS_GLOBAL', 'STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'RARE_DISEASES_COUNT_GLOBAL', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED']
-driver_labels = ['Patients per Treatment-Condition Evaluation', 'Mature Market Annual Penetration Rate', 'Annual DALY Gain per Patient on an Eventually-Effective Treatment', 'Pharma Drug Success Rate (Current System)', 'Global Rare Disease Patients', 'US Rare Disease Patients', 'Total Number of Rare Diseases Globally', 'Standard Economic Value per QALY', 'Patient Willingness to Participate in Clinical Trials', 'US Patients with Poorly Treated Common Diseases']
-impacts_low = [201600000000.0, -69120000000.0, -64800000000.0, -34560000000.0, -10656000000.0, -14400000000.0, 14400000000.0, -17280000000.0, -9257142857.142853, 0.0]
-impacts_high = [-57600000000.0, 172800000000.0, 129600000000.0, 43200000000.0, 42048000000.0, 28800000000.0, -25920000000.0, 17280000000.0, 10028571428.571426, 0.0]
+drivers = ['STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION', 'STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT', 'STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN', 'PHARMA_SUCCESS_RATE_CURRENT_PCT', 'STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'RARE_DISEASE_PATIENTS_GLOBAL', 'RARE_DISEASES_COUNT_GLOBAL', 'STANDARD_ECONOMIC_QALY_VALUE_USD', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED']
+driver_labels = ['Patients per Treatment-Condition Evaluation', 'Mature Market Annual Penetration Rate', 'Annual DALY Gain per Patient on an Eventually-Effective Treatment', 'Pharma Drug Success Rate (Current System)', 'US Rare Disease Patients', 'Global Rare Disease Patients', 'Total Number of Rare Diseases Globally', 'Standard Economic Value per QALY', 'Patient Willingness to Participate in Clinical Trials', 'US Patients with Poorly Treated Common Diseases']
+impacts_low = [201600000000.0, -69120000000.0, -64800000000.0, -34560000000.0, -43200000000.0, -10656000000.0, 14400000000.0, -17280000000.0, -9257142857.142853, 0.0]
+impacts_high = [-57600000000.0, 172800000000.0, 129600000000.0, 43200000000.0, 28800000000.0, 42048000000.0, -25920000000.0, 17280000000.0, 10028571428.571426, 0.0]
 
 # Convert deltas to absolute values (baseline + delta)
 

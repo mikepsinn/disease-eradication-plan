@@ -26,7 +26,7 @@ baseline = 0.6
 
 drivers = ['STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED', 'STATE_RTT_US_PATIENTS_RARE_UNTREATED']
 driver_labels = ['US Patients with Poorly Treated Common Diseases', 'US Rare Disease Patients']
-impacts_low = [0.15000000000000002, -0.0444444444444444]
+impacts_low = [0.15000000000000002, -0.17142857142857143]
 impacts_high = [-0.17142857142857143, 0.06666666666666665]
 
 # Convert deltas to absolute values (baseline + delta)

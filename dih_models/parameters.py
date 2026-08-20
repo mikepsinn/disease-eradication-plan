@@ -14441,9 +14441,10 @@ PHARMA_SUCCESS_RATE_CURRENT_PCT = Parameter(
 # ==============================================================================
 # STATE RIGHT-TO-TRIAL (MONTANA SB 535 x 50 STATES) PARAMETERS
 # ==============================================================================
-# 49-state campaign cost model for replicating Montana SB 535 with the
-# data amendment. Impact values come from DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_*
-# parameters; these cover only the campaign logistics.
+# 49-state campaign cost model for replicating Montana SB 535 with the data
+# amendment, plus the derived impact model: addressable patients, evaluation
+# throughput, proven treatments, queue clearance, DALY gains, and healthcare
+# savings.
 # ==============================================================================
 
 STATE_RTT_CAMPAIGN_COST_PER_STATE = Parameter(
@@ -14521,13 +14522,13 @@ STATE_RTT_US_PATIENTS_RARE_UNTREATED = Parameter(
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_ref=ReferenceID.NORD_RARE_DISEASE_30M_US,
     source_type="external",
-    description="US patients with rare diseases (NORD: more than 30M Americans, 1 in 10). Fewer than 5% of the 10,000+ known rare diseases have an approved treatment, so nearly this entire population lacks an effective option.",
+    description="US patients with rare diseases the model treats as addressable (NORD: more than 30M Americans, 1 in 10). Fewer than 5% of known rare diseases (roughly 7,000-10,000 depending on the definition) have an approved treatment. That share is disease-level, and patients concentrate in the more prevalent rare diseases, which are also the most likely to have a treatment, so using the full 30M as the untreated population is an upper-bound assumption. The lower confidence bound reflects a patient-weighted untreated fraction.",
     display_name="US Rare Disease Patients",
     unit="patients",
     confidence="medium",
     keywords=["rare disease", "NORD", "30 million", "US patients", "untreated"],
     distribution="lognormal",
-    confidence_interval=(25_000_000, 40_000_000),
+    confidence_interval=(15_000_000, 40_000_000),
     latex_symbol=r"N_{rare,US}",
 )
 
@@ -14622,7 +14623,7 @@ STATE_RTT_PROVEN_TREATMENTS_ANNUAL = Parameter(
     float(STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL) * float(PHARMA_SUCCESS_RATE_CURRENT_PCT),
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_type="calculated",
-    description="Treatments proven effective per year by the pooled 50-state registry: annual treatment evaluations times the historical clinical success rate. For comparison, roughly 15 diseases per year get their first effective treatment under the current worldwide system.",
+    description="Treatments proven effective per year by the pooled 50-state registry: annual treatment evaluations times the historical clinical success rate. Assumes evaluations use protocols capable of establishing efficacy (randomization within the pragmatic protocol where patients consent, as in RECOVERY); applying the conventional-development success rate to observational-only cohorts would overstate this. For comparison, roughly 15 diseases per year get their first effective treatment under the current worldwide system.",
     display_name="Treatments Proven Effective Annually (50-State Registry)",
     unit="treatments/year",
     formula="STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL × PHARMA_SUCCESS_RATE_CURRENT_PCT",
@@ -14653,7 +14654,7 @@ STATE_RTT_QUEUE_CLEARANCE_YEARS = Parameter(
     / (float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR) + float(STATE_RTT_PROVEN_TREATMENTS_ANNUAL) * float(STATE_RTT_EVALUATIONS_QUEUE_SHARE)),
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_type="calculated",
-    description="Years to find first treatments for all currently untreated diseases with the 50-state registry running and no public subsidies. The registry's queue-directed discoveries add to the status quo worldwide rate of ~15 first treatments per year. Same formula structure as the status quo (443 years) and dFDA full-deployment (36 years) estimates.",
+    description="Years to find first treatments for all currently untreated diseases with the 50-state registry running and no public subsidies. The registry's queue-directed discoveries add to the status quo worldwide rate of ~15 first treatments per year. Treats each queue-directed success as the first treatment for a distinct untreated disease; clustering of successes on the same disease, or on diseases already treated, would lengthen the estimate, and the rate saturates as the queue empties. Same formula structure as the status quo (443 years) and dFDA full-deployment (36 years) estimates.",
     display_name="Untreated Disease Queue Clearance (50-State Registry, Unsubsidized)",
     unit="years",
     formula="DISEASES_WITHOUT_EFFECTIVE_TREATMENT ÷ (NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR + STATE_RTT_PROVEN_TREATMENTS_ANNUAL × STATE_RTT_EVALUATIONS_QUEUE_SHARE)",
@@ -14683,7 +14684,7 @@ STATE_RTT_PHILANTHROPIC_COST_PER_DALY = Parameter(
     / (float(STATE_RTT_MARKET_PATIENTS_ANNUAL) * float(PHARMA_SUCCESS_RATE_CURRENT_PCT) * float(STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN) * float(EFFICACY_LAG_YEARS) * float(STATE_RTT_PHILANTHROPIC_FUNDING_YEARS)),
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_type="calculated",
-    description="Philanthropic cost per DALY averted for the combined 49-state campaign and registry. Numerator: one-time campaign cost plus registry operating cost over the philanthropic funding horizon. Denominator: DALYs generated by earlier access over the same period (patients x historical approval rate x DALY gain x efficacy lag years x funding horizon). Treatments fund themselves through patient payment; the philanthropic cost covers only the legal campaign and the shared data infrastructure.",
+    description="Philanthropic cost per DALY averted for the combined 49-state campaign and registry. Numerator: one-time campaign cost plus registry operating cost over the philanthropic funding horizon. Denominator: DALYs generated by earlier access over the same period (patients x historical approval rate x DALY gain x efficacy lag years x funding horizon). Assumes mature annual patient volume in every year of the horizon, with no adoption ramp, so the figure is optimistic on timing. Treatments fund themselves through patient payment; the philanthropic cost covers only the legal campaign and the shared data infrastructure.",
     display_name="Philanthropic Cost per DALY (Campaign + Registry)",
     unit="USD/DALY",
     formula="(STATE_RTT_CAMPAIGN_TOTAL_COST + STATE_RTT_REGISTRY_ANNUAL_COST × STATE_RTT_PHILANTHROPIC_FUNDING_YEARS) ÷ (STATE_RTT_MARKET_PATIENTS_ANNUAL × PHARMA_SUCCESS_RATE_CURRENT_PCT × STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN × EFFICACY_LAG_YEARS × STATE_RTT_PHILANTHROPIC_FUNDING_YEARS)",
