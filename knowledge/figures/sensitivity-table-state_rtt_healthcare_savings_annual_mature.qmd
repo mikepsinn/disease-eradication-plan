@@ -1,0 +1,11 @@
+**Sensitivity Indices for Eventual Annual US Healthcare Savings (Mature)**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Cost Reduction When Effectively Treated (percentage) | 0.8824 | Strong driver |
+| US Patients with Poorly Treated Diseases (patients) | 0.3693 | Moderate driver |
+| US Per Capita Chronic Disease Cost (USD/person/year) | 0.2350 | Weak driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

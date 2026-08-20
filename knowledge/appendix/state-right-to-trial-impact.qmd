@@ -1,0 +1,175 @@
+---
+title: "Universal right to try in all 50 states: impact, cost, and adoption plan"
+description: "Montana lets any adult access any post-Phase-1 treatment and requires clinics to track outcomes. Adding three clauses (enroll, pool, publish) turns every treatment purchase into a patient-funded pragmatic trial enrollment. Replicated in all 50 states, the mature market runs {{< var state_rtt_treatment_evaluations_annual >}} and cuts the projected time to first treatments for every untreated disease from {{< var status_quo_queue_clearance_years >}} to {{< var state_rtt_queue_clearance_years >}}, with no subsidies. Campaign cost for the 49 remaining states: {{< var state_rtt_campaign_total_cost >}}."
+published: true
+tags:
+  - right-to-try
+  - montana
+  - state-policy
+  - clinical-trials
+  - real-world-evidence
+  - dfda
+  - economics
+scores:
+  quality: 7
+  value: 8
+  timeliness: 9
+  standalone: 9
+  voice: 2
+  importance: 7
+audience: "A donor, state legislator, or advocate deciding whether to fund or sponsor universal right-to-try legislation outside Montana."
+feel: "Equipped: the impact numbers, the line-item budget, and the playbook are in one document they can forward without explanation."
+do: "Fund or sponsor the model bill with the data amendment included; if they run a center or review board, publish outcomes in poolable form now."
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## Summary
+
+Montana is the only US state where any adult patient can legally access treatments that have passed Phase 1 safety testing but lack FDA approval. The eligibility expansion passed in 2023 with bipartisan supermajorities. A licensing framework for experimental treatment centers followed in 2025. Implementation rules took effect on July 25, 2026, and the first clinics are expected to open by the end of 2026.
+
+Montana's rules already require each center to track outcomes and publish annual summaries. The one missing piece is structural: no standardized measures, no pooling across centers, no continuous publication. A three-clause data amendment (enroll, pool, publish) completes that architecture and turns every clinic visit into a data point in a permanent public evidence base.
+
+This analysis answers six questions for anyone deciding whether to fund or sponsor the combined bill (access plus data amendment) in the other 49 states:
+
+| Question | Answer |
+|:---|:---|
+| How much research does it add? | {{< var state_rtt_treatment_evaluations_annual >}} patient-funded; {{< var state_rtt_proven_treatments_annual >}} proven effective, against the current worldwide rate of about {{< var new_disease_first_treatments_per_year >}} getting their first treatment |
+| How much faster are diseases cured? | Time to first treatments for every untreated disease drops from {{< var status_quo_queue_clearance_years >}} to {{< var state_rtt_queue_clearance_years >}}, with no subsidies |
+| What does it save on healthcare? | {{< var state_rtt_healthcare_savings_annual_mature >}} at maturity, {{< var state_rtt_gov_healthcare_savings_annual_mature >}} of it government money |
+| What does delay cost? | {{< var state_rtt_inaction_dalys_per_delay_year >}} of permanent global benefit forfeited per year of delay, worth {{< var state_rtt_inaction_value_per_delay_year >}} |
+| What does a 49-state campaign cost? | {{< var state_rtt_campaign_total_cost >}} total; {{< var state_rtt_campaign_cost_per_state >}} per state; {{< var state_rtt_philanthropic_cost_per_daly >}} per disability-adjusted life year (DALY) |
+| How long does it take? | The original right-to-try model bill reached 41 states in 4 years [@goldwater-rtt-41-states-2018] |
+
+A DALY is one lost year of healthy life; averting one DALY buys one healthy year. US policy treats interventions below {{< var standard_economic_qaly_value_usd >}} per DALY as cost-effective.
+
+## What Montana enacted
+
+Montana built its framework in three steps. The same state senator, Kenneth Bogner, sponsored the second and third:
+
+1. **2015.** A standard right-to-try law for terminally ill patients, similar to most states.
+2. **2023 (SB 422).** Removed patient eligibility restrictions. Any patient qualifies who has evaluated FDA-approved options, obtained a treating provider's recommendation, and given informed consent. Passed the Senate 38-12 and the House 81-19 [@montana-sb422-2023].
+3. **2025 (SB 535).** Created a licensing framework for experimental treatment centers: facilities that can legally provide, and charge for, experimental treatments. Signed May 12, 2025 [@montana-sb535-2025; @montana-sb535-signed-2025].
+
+The statute defines an experimental treatment as a drug, biologic, device, or other treatment that "has successfully completed phase 1 of a clinical trial but has not yet been approved for general use" by the FDA, and that either remains under investigation in an FDA-approved trial or has a documented safety record from a qualified medical institution [@montana-sb535-2025].
+
+Key terms from the enrolled bill [@montana-sb535-2025]:
+
+- License fees: $10,000 application, $5,000 annual renewal.
+- Centers set their own payment arrangements with patients. Insurers don't have to cover treatment. Heirs aren't liable for treatment debt.
+- Centers must direct 2% of net annual profits to free care or insurance premium support for lower-income Montanans.
+- State officials can't block a patient's access.
+
+For contrast: the 2018 federal Right to Try Act covers only terminally ill patients and lets manufacturers refuse requests. It reached fewer than 200 patients [@right-to-try-act-2018; @right-to-try-act-outcomes]. Montana's design removes both restrictions.
+
+Implementation status: rules took effect July 25, 2026. The first registered Experimental Treatment Review Board is operating, organized by Infinita CEO Niklas Anzinger [@montana-etrb-infinita-2026]. The first two company applications cover treatments for neuropathy and hearing loss, and the first clinic is expected around the end of 2026 [@montana-etrb-2026].
+
+## What Montana's rules already require
+
+A standard criticism of right-to-try frameworks is that no one learns anything from the treatments provided. Montana's implementation rules already address much of it [@montana-etc-rules-2026]:
+
+- Each center's medical director must maintain "a comprehensive system that tracks all experimental treatments conducted at the center, including patient outcomes for each treatment."
+- Centers must report serious adverse events to the state within 5 days.
+- Centers must file an annual de-identified report with the health department.
+- Each center's review board must publish an annual public summary that includes aggregate treatment counts, aggregate safety outcomes, and aggregate treatment outcome data.
+
+The outcome-publication requirement got stronger during rulemaking: the draft required only safety data in the public report, and the final rule added aggregate treatment outcome data [@montana-etc-rules-2026]. Montana's own regulators are moving toward outcomes transparency.
+
+## What the data amendment completes
+
+Montana collects everything needed for systematic learning. The gap is structural: at 50-state scale, the current architecture produces one aggregate summary per clinic per year, on each clinic's own website. No standardized outcome measures, so summaries can't be compared across centers. No patient-level de-identified records, so no one can analyze which patients responded. No pooling, so a treatment tried by 40 patients at each of 200 clinics produces 200 incompatible reports instead of one 8,000-patient evidence base. The adoption notice states the boundary directly: "Experimental Treatment Centers do not administer clinical trials" [@montana-etc-rules-2026].
+
+The amendment is three clauses that complete the architecture:
+
+1. **Enroll.** Every experimental treatment center offers each patient enrollment in a pragmatic trial protocol for the treatment administered, with enrollment as the default. A pragmatic trial is a study embedded in routine care rather than run at dedicated research sites.
+2. **Pool.** Centers report de-identified baseline and outcome data, in a standardized format, to a shared public registry. Centers already collect all of this under existing licensure rules; the amendment forwards a copy.
+3. **Publish.** The registry publishes continuously updated outcomes for every treatment-condition pair, so each patient's decision is informed by every prior patient's result.
+
+With the amendment, every treatment purchase at every clinic becomes a data point in a permanent public evidence base.
+
+## What 50-state adoption is worth
+
+**Proving a drug becomes a profit center.** Today the sponsor pays for efficacy testing, the most expensive step in medicine: Phase 3 trials run {{< var traditional_phase3_cost_per_patient >}} per patient, and thousands of compounds sit shelved because no sponsor can justify that bill for an off-patent or unpatentable molecule. Under the data amendment, the patient pays for treatment and the evidence accumulates as a byproduct, so the cost of proving a drug falls to roughly the cost of Phase 1. {{< var phase_1_passed_compounds_global >}} have already passed Phase 1 and become offerable on day one. When proving efficacy flips from the largest cost in drug development to a revenue stream, shelved compounds come off the shelf and new providers enter.
+
+**The market grows the way this market already grows.** The US market for unproven interventions grew from 351 businesses in 2016 to 1,480 businesses operating 2,754 clinics in 2021, a fourfold increase in five years, while it was illegal [@turner-stem-cell-2021]. A legal, licensed market with published outcomes grows at least that fast, reaching maturity in about a decade. The demand ceiling: {{< var state_rtt_us_patients_poorly_treated >}} have diseases lacking effective treatment ({{< var state_rtt_us_patients_rare_untreated >}} with rare diseases [@nord-rare-disease-30m-us], plus {{< var state_rtt_us_patients_common_poorly_treated >}} with Alzheimer's, treatment-resistant depression, refractory cancers, and similar), and {{< var patient_willingness_trial_participation_pct >}} of patients say they would join trials. At a mature-market conversion of {{< var state_rtt_mature_annual_penetration_pct >}} of willing patients per year, the system treats {{< var state_rtt_market_patients_annual >}}, every one a pragmatic trial enrollment at zero research cost.
+
+**What that buys in trials.** At {{< var state_rtt_patients_per_treatment_evaluation >}} per adequately powered evaluation, that volume supports {{< var state_rtt_treatment_evaluations_annual >}}. At the historical {{< var pharma_success_rate_current_pct >}} clinical success rate, {{< var state_rtt_proven_treatments_annual >}} prove effective. The entire current worldwide system produces first treatments for about {{< var new_disease_first_treatments_per_year >}} per year. For scale: clinical trials worldwide enroll {{< var current_trial_slots_available >}}; the mature 50-state system adds more than half that again, and every added participant costs the research system nothing.
+
+**What that does to the eradication clock.** The {{< var diseases_without_effective_treatment >}} with no effective treatment would take {{< var status_quo_queue_clearance_years >}} to clear at the current discovery rate. Nearly all of those diseases are rare, so the {{< var state_rtt_evaluations_queue_share >}} of evaluations serving rare disease patients add their discoveries directly to the worldwide rate, and the clearance estimate drops to {{< var state_rtt_queue_clearance_years >}}. Discoveries for dementia and treatment-resistant depression improve tens of millions of lives but do not move this particular clock, because those diseases have bad treatments rather than none. A companion analysis [@dfda-impact-paper-2025; @dfda-spec-paper-2025] reaches {{< var dfda_queue_clearance_years >}} by buying similar patient volume with {{< var dfda_annual_trial_funding >}} per year in public subsidies; the market route reaches the same order of magnitude with zero. Two independent models, one subsidized and one self-funding, converge on the same destination. Subsidies accelerate the ramp; they are not the mechanism.
+
+**What delay costs.** Every proven treatment is knowledge, and knowledge copies for free: US patients fund the discoveries, and the {{< var rare_disease_patients_global >}} worldwide receive each one at no research cost, forever. Each year the system does not exist permanently forfeits {{< var state_rtt_inaction_dalys_per_delay_year >}} of ongoing global benefit, worth {{< var state_rtt_inaction_value_per_delay_year >}} at the standard economic value of a healthy year. That counts only the rare disease discoveries; the dementia and depression breakthroughs, each serving tens of millions of patients, are on top of it.
+
+**What it saves everyone paying for healthcare.** Effective treatments displace expensive disease management, and many treatments proven this way are generic-priced compounds that add little cost back. Once effective treatments exist for today's poorly treated diseases, a {{< var state_rtt_treated_cost_reduction_pct >}} reduction in those patients' ongoing costs cuts US healthcare spending by {{< var state_rtt_healthcare_savings_annual_mature >}}. Government programs pay {{< var us_gov_health_spending_share_pct >}} of US health spending [@cms-nhe-gov-share-2023], so {{< var state_rtt_gov_healthcare_savings_annual_mature >}} of that is Medicare and Medicaid money. These are mature-endpoint figures that phase in as treatments are proven; the campaign's contribution is pulling that date centuries closer. The break-even bar is almost invisible: the decade of philanthropy repays itself once pooled evidence saves {{< var state_rtt_breakeven_recovery_per_100k_spending >}} of every $100,000 of US chronic disease spending ({{< var us_chronic_disease_spending_annual >}}). Past that, the campaign's long-run cost is negative.
+
+These are not duplicate trials. They generate evidence for treatments that have no other evidence pathway: off-patent compounds, repurposed generics, and commercially orphaned drugs that no company will sponsor through a {{< var traditional_phase3_cost_per_patient >}}-per-patient Phase 3 trial. Without this system, the efficacy evidence for those treatments never gets generated. And as outcomes accumulate, the evidence base is the political case for the federal version and for public funding.
+
+## Federal legal limits
+
+State law can't override federal law. The Supreme Court has held that Congress's commerce power reaches even purely intrastate production and use of a substance permitted by state law (Gonzales v. Raich, 2005) [@gonzales-v-raich-2005], and the 2018 federal Right to Try Act shields only terminally ill patients [@right-to-try-act-2018]. The Montana model therefore operates in a zone of federal enforcement forbearance: permitted by state law, neither authorized nor actively prosecuted under federal law. Manufacturers who ship unapproved drugs across state lines remain exposed to FDA jurisdiction, which is why Montana's early applicants plan to operate inside the state.
+
+For the campaign, this means 50 state laws are a demonstration and a pressure mechanism, not the end state. The durable fix is federal legislation that establishes the same access-plus-data architecture nationally; a complete draft exists ([Right to Trial & FDA Upgrade Act](right-to-trial-fda-upgrade-act.qmd) [@right-to-trial-paper-2025]). In the interim, states can form an interstate compact to pool their registries. A compact requires no act of Congress and produces a national evidence network directly.
+
+## Campaign budget
+
+The distribution channel is proven in this exact policy area. The Goldwater Institute, a single 501(c)(3), took the original right-to-try model bill from first passage (Colorado, 2014) to 41 states and a federal statute in 4 years [@goldwater-rtt-41-states-2018]. No (c)(4) was required. The bill proposed here is that bill's direct descendant, with two upgrades Montana has already passed and one amendment no state has passed yet.
+
+**What the original campaign spent.** The Goldwater Institute's total annual expenses during the campaign years (2014-2018) ranged from $4.3 million to $6.2 million across all initiatives; right-to-try was one of several. Their reported federal lobbying ran about $19,000 per year. Per-state costs were not published, but the campaign ran through existing State Policy Network affiliates in each state, in-state legislative sponsors, and patient testimony. No separate 501(c)(4) entity was involved.
+
+**Per-state budget.** The model uses {{< var state_rtt_campaign_cost_per_state >}} per state, all-in, across however many sessions passage takes. This is a forward estimate, not a projection from Goldwater's actual spend. The expanded bill (licensing framework, data amendment) requires more in-state work than the original one-pager. In-state contract lobbyists typically cost $15,000-$50,000 per session in part-time legislatures and $60,000-$300,000 per year in large states. The following allocations are illustrative; actual splits will vary by state.
+
+| Line item | Tax status | Estimate |
+|:---|:---|---:|
+| In-state contract lobbyist, one to two sessions | 501(c)(3) lobbying (capped) or (c)(4) | $100,000 |
+| In-state campaign organizer (coalition building, patient groups, sponsor support) | 501(c)(3) education | $60,000 |
+| Public education and digital outreach | 501(c)(3) education | $40,000 |
+| Expert witnesses and testimony travel | 501(c)(3) education | $20,000 |
+| Bill localization and legal review | 501(c)(3) research | $20,000 |
+| Allocated national overhead (model bill maintenance, this analysis, scorecard) | 501(c)(3) research | $40,000 |
+| Reserve for a second session | Matches above split | $20,000 |
+| **Total** | | **$300,000** |
+
+Across {{< var state_rtt_campaign_states_remaining >}}, the total is {{< var state_rtt_campaign_total_cost >}}.
+
+**Funding structure.** Most of this budget is tax-deductible under a 501(c)(3): research, public education, coalition building, testimony, and model-bill drafting are all exempt-purpose activities. The only line that counts as lobbying is direct communication with legislators about a specific bill (the lobbyist's core work). Under the 501(h) election, a (c)(3) can spend up to $1 million per year on lobbying, on a sliding scale starting at 20% of exempt-purpose expenditures. The Goldwater Institute passed 41 right-to-try laws without a (c)(4). A separate 501(c)(4) is only necessary if the campaign's direct-lobbying spend exceeds the (c)(3) cap in a given year, which is unlikely at this per-state budget. Donors who want the tax deduction can fund the entire campaign through the (c)(3).
+
+**Cost-effectiveness.** Treatments fund themselves through patient payment; the donor's money buys the legal infrastructure and the shared data platform. The philanthropic cost is the one-time campaign ({{< var state_rtt_campaign_total_cost >}}) plus the registry operating cost ({{< var state_rtt_registry_annual_cost >}} per year) over a {{< var state_rtt_philanthropic_funding_years >}} philanthropic funding horizon before the registry self-sustains through government appropriation or user fees. Over that period, at {{< var state_rtt_market_patients_annual >}} paying for their own treatments, the philanthropic cost per DALY is {{< var state_rtt_philanthropic_cost_per_daly >}}. For comparison, insecticide-treated bed nets cost {{< var bed_nets_cost_per_daly >}} per DALY, and US policy treats anything below {{< var standard_economic_qaly_value_usd >}} per DALY as cost-effective. The gap is not an anomaly; it is what buying a rule change instead of buying interventions looks like. A delivery charity buys interventions one at a time, so its cost scales with its impact. This buys a rule change under which patients fund the interventions, so the philanthropic cost stays fixed while the impact scales with the whole market. The figure is also a deliberate undercount: it counts only US clinic patients' earlier access, and ignores that every proven treatment then serves every patient on Earth at no research cost. Counting that, the philanthropic cost per DALY falls by orders of magnitude again, and the healthcare savings alone make the campaign's long-run cost negative.
+
+## Adoption playbook
+
+To take the bill to all 49 remaining states:
+
+1. **Assemble the package.** Combine Montana's 2023 eligibility language, the 2025 licensing framework, and the three-clause data amendment into one model bill. Attach this analysis as the impact case and a one-page summary for legislators.
+2. **Recruit the validators.** Montana's sponsor and implementers are the proof the bill works. The testimony that carried Montana twice can carry other states.
+3. **Sequence the states.** Start with states that passed the original right-to-try model earliest in 2014-2015. Their committees have already voted for the principle.
+4. **Run the campaign through the (c)(3).** Research, education, testimony, coalition building, and limited direct lobbying all fit under one 501(c)(3) with a 501(h) election, the same structure the Goldwater Institute used. Budget {{< var state_rtt_campaign_cost_per_state >}} per state.
+5. **Publish a scorecard.** Track which states have passed access, which have passed the data amendment, and what their registries have produced. Legislators respond to rankings. So do donors.
+6. **Standardize from Montana outward.** The first mover's data format becomes the national default. A Montana center that publishes poolable, patient-level, de-identified outcomes before any statute requires it defines the standard the other 49 states inherit.
+7. **Ratchet to federal.** When enough states run pooled registries, the federal bill stops being a proposal and becomes a ratification of existing practice. File the interstate registry compact in parallel.
+
+## Objections and responses
+
+Sponsors will face these objections in committee. Each response is written to be used directly.
+
+**"This lets clinics profit from hurting desperate people."**
+Phase 1 screens for safety, and Montana adds licensed facilities, an independent review board, informed consent, and 5-day adverse event reporting; that's more oversight than the gray market these patients already use has ever had. The data amendment is the strongest patient-protection measure available: a pooled continuous registry surfaces a dangerous treatment or clinic across all centers in weeks, where today's per-center annual summaries can take a year. If patient safety is the concern, the amendment belongs in the bill, not out of it.
+
+**"Registry data isn't real evidence; you need randomized trials."**
+The registry supports randomization: the enrollment clause places patients into pragmatic trial protocols, which can randomize where patients consent. The UK's RECOVERY trial randomized tens of thousands of patients inside routine hospital care and found dexamethasone, the first proven COVID-19 mortality treatment ([details](recovery-trial.qmd)). The alternative on offer isn't randomized evidence; it's the same treatments used with no evidence collected at all.
+
+**"These numbers are speculative."**
+The inputs are stated assumptions with wide, published confidence intervals, and every figure links to its definition, sources, and formula. Change any input and trace how the conclusion changes. The cost-per-DALY remains below the cost-effectiveness threshold even if the budget estimate is wrong by an order of magnitude, so no defensible revision of the inputs reverses the recommendation.
+
+**"Most states won't pass this."**
+The identical distribution channel passed the original right-to-try model in 41 states in 4 years [@goldwater-rtt-41-states-2018], and Montana passed the expanded version with supermajorities in both chambers. Value also doesn't require full adoption: it scales with each state's population as it joins.
+
+**"This assumes cures exist and are being withheld."**
+Not conspiratorially. Most lethal diseases lack any effective treatment. But some treatments that would work are economically orphaned: a cheap generic or off-patent compound with no commercial sponsor will never get a $48,000-per-patient Phase 3 trial funded, so its efficacy evidence never gets generated. Nobody is hiding it; the economics just don't move it through the pipeline. The data amendment fixes this directly, because a pooled pragmatic-trial registry produces efficacy evidence without requiring a commercial sponsor. Earlier access helps the subset of treatments that eventually prove effective; the registry is what finds which ones those are, including the ones no company will pay to test.
+
+## Modeling assumptions
+
+Five structural simplifications affect the estimates. None reverses the recommendation; all are worth stating.
+
+1. **The penetration rate is the dominant uncertainty.** The mature-market conversion rate ({{< var state_rtt_mature_annual_penetration_pct >}} of willing patients per year) is the one scenario knob in the model. Its floor (1%) describes a market with no supply response at all; its ceiling (15%) is still below what the subsidized [dFDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] model contemplates. The growth-rate evidence is a proxy: business counts, not patient counts, quadrupled in the illegal market between 2016 and 2021 [@turner-stem-cell-2021], and the model assumes patient volume tracks provider count.
+2. **Evaluations are counted in aggregate.** Dividing patient volume by {{< var state_rtt_patients_per_treatment_evaluation >}} treats patient-years as fungible across treatments. In practice demand concentrates on popular treatments while any single rare disease enrolls slowly. Offsetting this, rare-disease approvals routinely rest on far fewer than 1,000 patients, because effect sizes are larger and the alternative is nothing.
+3. **Sequential adoption.** The model values 50-state coverage as if all states adopt simultaneously. In practice, value ramps as each state joins, weighted by population. The first 10 states (if chosen by population) cover roughly half the US, so the ramp is front-loaded, but year-one value will be lower than the steady-state figure.
+4. **Harm is not netted out.** Phase 1 establishes preliminary safety in small cohorts, not efficacy. Some post-Phase-1 treatments will injure patients. The confidence intervals on the impact estimates reflect this, but the point estimates do not subtract expected harm. The data amendment mitigates this: a continuously published registry surfaces dangerous treatments across all centers within weeks, where per-center annual summaries take a year.
+5. **Several inputs are deliberate undercounts.** Willingness uses the 44.8% survey figure; 88% of patients participate when actually approached. The addressable population excludes longevity and enhancement demand entirely, though the law has no illness requirement. The cost-of-inaction figure counts only rare disease discoveries, excluding the dementia and depression breakthroughs. The healthcare savings use all-population per-capita spending, which understates the actual cost of the sickest patients.

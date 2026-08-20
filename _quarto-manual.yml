@@ -258,6 +258,7 @@ book:
         - knowledge/papers.qmd
         - knowledge/economics/1-pct-treaty-impact.qmd # Standalone paper config: _quarto-1-pct-treaty-impact.yml
         - knowledge/appendix/dfda-impact-paper.qmd # Standalone paper config: _quarto-dfda-impact.yml
+        - knowledge/appendix/state-right-to-trial-impact.qmd # The Montana Experiment: health/economic impact of replicating Montana SB 535 (universal right to try) in all 50 states; access-only vs access-plus-published-data scenarios
         - knowledge/appendix/incentive-alignment-bonds-paper.qmd # Standalone paper config: _quarto-iab.yml
         - knowledge/appendix/wishocracy-paper.qmd # Standalone paper config: _quarto-wishocracy.yml
         - knowledge/appendix/extinction-surplus.qmd

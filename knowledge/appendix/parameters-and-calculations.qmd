@@ -39,15 +39,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 887 parameters used in the analysis, organized by type:
+This appendix documents all 912 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 254
-- Calculated values: 447
-- Core definitions: 186
+- External sources (peer-reviewed): 257
+- Calculated values: 460
+- Core definitions: 195
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (447 parameters) • [External Data Sources](#sec-external) (254 parameters) • [Core Definitions](#sec-definitions) (186 parameters)
+[Calculated Values](#sec-calculated) (460 parameters) • [External Data Sources](#sec-external) (257 parameters) • [Core Definitions](#sec-definitions) (195 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -9041,6 +9041,7 @@ $$
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [The Love Letter](../appendix/love-letter.html)
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
@@ -11447,6 +11448,7 @@ $$
 - [The Love Letter](../appendix/love-letter.html)
 - [The Loving Takeover](../appendix/loving-takeover.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
 
 :::
@@ -25192,6 +25194,843 @@ $$
 
 :::
 
+### Break-Even Recovery per $100,000 of Chronic Disease Spending: $0.158 {#sec-state_rtt_breakeven_recovery_per_100k_spending}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Savings the campaign must produce per $100,000 of US chronic disease spending to pay for itself: total philanthropic cost (campaign plus a decade of registry operation) divided by chronic disease spending over the same decade, scaled to $100,000. Past this threshold the campaign's long-run cost is negative.
+
+**Inputs**:
+
+- [Total 49-State Campaign Cost](#sec-state_rtt_campaign_total_cost) 🔢: $14.7 million
+- [National Outcome Registry Annual Operating Cost](#sec-state_rtt_registry_annual_cost): $5 million (95% CI: $2 million - $15 million)
+- [Philanthropic Registry Funding Horizon](#sec-state_rtt_philanthropic_funding_years): 10 years (95% CI: 5 years - 20 years)
+- [US Annual Chronic Disease Spending](#sec-us_chronic_disease_spending_annual) 📊: $4.1 trillion (95% CI: $3.3 trillion - $5 trillion)
+
+$$
+\begin{gathered}
+r_{breakeven} \\
+= \frac{C_{campaign} + C_{registry} \times T_{fund}}{Spending_{chronic,US} \times T_{fund}} \times 100,000
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{campaign} \\
+= C_{state} \times N_{states} \\
+= \$300K \times 49 \\
+= \$14.7M
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_breakeven_recovery_per_100k_spending.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_breakeven_recovery_per_100k_spending.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_breakeven_recovery_per_100k_spending.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_breakeven_recovery_per_100k_spending.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Total 49-State Campaign Cost: $14.7 million {#sec-state_rtt_campaign_total_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total campaign cost to pass the universal right-to-try bill plus data amendment in all 49 remaining states.
+
+**Inputs**:
+
+- [Campaign Cost per State (Universal Right to Try + Data Amendment)](#sec-state_rtt_campaign_cost_per_state): $300,000 (95% CI: $100,000 - $1 million)
+- [States Remaining for Universal Right to Try](#sec-state_rtt_campaign_states_remaining): 49 states
+
+$$
+\begin{gathered}
+C_{campaign} \\
+= C_{state} \times N_{states} \\
+= \$300K \times 49 \\
+= \$14.7M
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_campaign_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_campaign_total_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_campaign_total_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_campaign_total_cost.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Share of Evaluations Targeting Untreated Diseases: 60% {#sec-state_rtt_evaluations_queue_share}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of registry evaluations targeting diseases with no effective treatment (the untreated-disease queue), set to the rare-disease share of the addressable patient population (30M of 50M). The remainder target poorly treated conditions that have inadequate approved options (treatment-resistant depression, dementia); those evaluations improve care but do not clear queue diseases.
+
+**Inputs**:
+
+- [US Rare Disease Patients](#sec-state_rtt_us_patients_rare_untreated) 📊: 30 million patients (95% CI: 25 million patients - 40 million patients)
+- [US Patients with Poorly Treated Diseases](#sec-state_rtt_us_patients_poorly_treated) 🔢: 50 million patients
+
+$$
+\begin{gathered}
+s_{queue} \\
+= \frac{N_{rare,US}}{N_{poorly\_treated,US}} \\
+= \frac{30M}{50M} \\
+= 60\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_evaluations_queue_share.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_evaluations_queue_share.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_evaluations_queue_share.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_evaluations_queue_share.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Eventual Annual Government Healthcare Savings (Mature): $73.4 billion {#sec-state_rtt_gov_healthcare_savings_annual_mature}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Government share of the eventual annual US healthcare savings, at the CMS-reported 48% government share of national health spending. This is Medicare, Medicaid, and other public program money.
+
+**Inputs**:
+
+- [Eventual Annual US Healthcare Savings (Mature)](#sec-state_rtt_healthcare_savings_annual_mature) 🔢: $153 billion
+- [Government Share of US Health Spending](#sec-us_gov_health_spending_share_pct) 📊: 48% (95% CI: 45% - 51%)
+
+$$
+\begin{gathered}
+S_{gov,US} \\
+= S_{health,US} \times s_{gov} \\
+= \$153B \times 48\% \\
+= \$73.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+S_{health,US} \\
+= N_{poorly\_treated,US} \times Cost_{chronic,pc} \times r_{cost} \\
+= 50M \times \$12.2K \times 25\% \\
+= \$153B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{chronic,pc} \\
+= \frac{Spending_{chronic,US}}{Pop_{US}} \\
+= \frac{\$4.1T}{335M} \\
+= \$12.2K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_gov_healthcare_savings_annual_mature.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_gov_healthcare_savings_annual_mature.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_gov_healthcare_savings_annual_mature.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_gov_healthcare_savings_annual_mature.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Eventual Annual US Healthcare Savings (Mature): $153 billion {#sec-state_rtt_healthcare_savings_annual_mature}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Eventual annual US healthcare savings once effective treatments exist for today's poorly treated diseases: 50M patients x per-capita chronic disease spending x cost reduction from effective treatment. Uses the all-population per-capita spending figure, which understates the per-patient cost of dementia and refractory disease patients, so this is conservative. This is the mature endpoint, phased in as treatments are proven; the system's contribution is pulling that date centuries closer, not delivering these savings in year one.
+
+**Inputs**:
+
+- [US Patients with Poorly Treated Diseases](#sec-state_rtt_us_patients_poorly_treated) 🔢: 50 million patients
+- [US Per Capita Chronic Disease Cost](#sec-per_capita_chronic_disease_cost) 🔢: $12,239
+- [Cost Reduction When Effectively Treated](#sec-state_rtt_treated_cost_reduction_pct): 25% (95% CI: 10% - 50%)
+
+$$
+\begin{gathered}
+S_{health,US} \\
+= N_{poorly\_treated,US} \times Cost_{chronic,pc} \times r_{cost} \\
+= 50M \times \$12.2K \times 25\% \\
+= \$153B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{chronic,pc} \\
+= \frac{Spending_{chronic,US}}{Pop_{US}} \\
+= \frac{\$4.1T}{335M} \\
+= \$12.2K
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_healthcare_savings_annual_mature.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_healthcare_savings_annual_mature.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_healthcare_savings_annual_mature.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_healthcare_savings_annual_mature.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Global DALYs Forfeited per Year of Delay: 576 thousand DALYs/year {#sec-state_rtt_inaction_dalys_per_delay_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Permanent annual global benefit forfeited per year the 50-state system is delayed. Each year of delay forgoes the mature system's queue-directed discoveries; each forgone treatment would have served its disease's entire global patient population (about 43,000 patients per rare disease on average) every year thereafter. US patients fund and populate the evaluations; every patient on Earth receives each discovery free of research cost.
+
+**Inputs**:
+
+- [Treatments Proven Effective Annually (50-State Registry)](#sec-state_rtt_proven_treatments_annual) 🔢: 112 treatments/year
+- [Share of Evaluations Targeting Untreated Diseases](#sec-state_rtt_evaluations_queue_share) 🔢: 60%
+- [Global Rare Disease Patients](#sec-rare_disease_patients_global) 📊: 300 million patients (95% CI: 263 million patients - 446 million patients)
+- [Total Number of Rare Diseases Globally](#sec-rare_diseases_count_global) 📊: 7,000 diseases (95% CI: 6,000 diseases - 10,000 diseases)
+- [Annual DALY Gain per Patient on an Eventually-Effective Treatment](#sec-state_rtt_effective_treatment_daly_gain): 0.2 DALYs (95% CI: 0.05 DALYs - 0.5 DALYs)
+
+$$
+\begin{gathered}
+DALY_{delay} \\
+= N_{proven} \times s_{queue} \times \left(\frac{N_{rare,global}}{N_{rare}}\right) \times \Delta_{DALY,eff}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{proven} \\
+= N_{evals} \times Rate_{success,curr} \\
+= 1{,}120 \times 10\% \\
+= 112
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{evals} \\
+= \frac{N_{RTT}}{n_{eval}} \\
+= \frac{1.12M}{1{,}000} \\
+= 1{,}120
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{RTT} \\
+= N_{poorly\_treated,US} \times Pct_{willing} \times p_{mature} \\
+= 50M \times 44.8\% \times 5\% \\
+= 1.12M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+s_{queue} \\
+= \frac{N_{rare,US}}{N_{poorly\_treated,US}} \\
+= \frac{30M}{50M} \\
+= 60\%
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_inaction_dalys_per_delay_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_inaction_dalys_per_delay_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_inaction_dalys_per_delay_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_inaction_dalys_per_delay_year.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Economic Value Forfeited per Year of Delay: $86.4 billion {#sec-state_rtt_inaction_value_per_delay_year}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Economic value of the permanent annual global benefit forfeited per year the 50-state system is delayed, at the standard economic value of a healthy life-year.
+
+**Inputs**:
+
+- [Global DALYs Forfeited per Year of Delay](#sec-state_rtt_inaction_dalys_per_delay_year) 🔢: 576 thousand DALYs/year
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+
+$$
+\begin{gathered}
+V_{delay} \\
+= DALY_{delay} \times Value_{QALY} \\
+= 576{,}000 \times \$150K \\
+= \$86.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALY_{delay} \\
+= N_{proven} \times s_{queue} \times \left(\frac{N_{rare,global}}{N_{rare}}\right) \times \Delta_{DALY,eff}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{proven} \\
+= N_{evals} \times Rate_{success,curr} \\
+= 1{,}120 \times 10\% \\
+= 112
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{evals} \\
+= \frac{N_{RTT}}{n_{eval}} \\
+= \frac{1.12M}{1{,}000} \\
+= 1{,}120
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{RTT} \\
+= N_{poorly\_treated,US} \times Pct_{willing} \times p_{mature} \\
+= 50M \times 44.8\% \times 5\% \\
+= 1.12M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+s_{queue} \\
+= \frac{N_{rare,US}}{N_{poorly\_treated,US}} \\
+= \frac{30M}{50M} \\
+= 60\%
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_inaction_value_per_delay_year.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_inaction_value_per_delay_year.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_inaction_value_per_delay_year.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_inaction_value_per_delay_year.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Annual Experimental Treatment Center Patients (50-State): 1.12 million patients/year {#sec-state_rtt_market_patients_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual patients treated at experimental treatment centers under mature 50-state adoption. Derived from: US patients with poorly treated diseases (50M: rare diseases plus dementia, treatment-resistant depression, and similar) x willingness to participate in trials (44.8%, survey data; 88% when actually approached) x mature-market annual penetration (5% of willing patients per year). Patients pay out of pocket; the per-patient research cost is zero.
+
+**Inputs**:
+
+- [US Patients with Poorly Treated Diseases](#sec-state_rtt_us_patients_poorly_treated) 🔢: 50 million patients
+- [Patient Willingness to Participate in Clinical Trials](#sec-patient_willingness_trial_participation_pct) 📊: 44.8% (95% CI: 40% - 50%)
+- [Mature Market Annual Penetration Rate](#sec-state_rtt_mature_annual_penetration_pct): 5% (95% CI: 1% - 15%)
+
+$$
+\begin{gathered}
+N_{RTT} \\
+= N_{poorly\_treated,US} \times Pct_{willing} \times p_{mature} \\
+= 50M \times 44.8\% \times 5\% \\
+= 1.12M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_market_patients_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_market_patients_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_market_patients_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_market_patients_annual.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Philanthropic Cost per DALY (Campaign + Registry): $35 {#sec-state_rtt_philanthropic_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Philanthropic cost per DALY averted for the combined 49-state campaign and registry. Numerator: one-time campaign cost plus registry operating cost over the philanthropic funding horizon. Denominator: DALYs generated by earlier access over the same period (patients x historical approval rate x DALY gain x efficacy lag years x funding horizon). Treatments fund themselves through patient payment; the philanthropic cost covers only the legal campaign and the shared data infrastructure.
+
+**Inputs**:
+
+- [Total 49-State Campaign Cost](#sec-state_rtt_campaign_total_cost) 🔢: $14.7 million
+- [National Outcome Registry Annual Operating Cost](#sec-state_rtt_registry_annual_cost): $5 million (95% CI: $2 million - $15 million)
+- [Philanthropic Registry Funding Horizon](#sec-state_rtt_philanthropic_funding_years): 10 years (95% CI: 5 years - 20 years)
+- [Annual Experimental Treatment Center Patients (50-State)](#sec-state_rtt_market_patients_annual) 🔢: 1.12 million patients/year
+- [Pharma Drug Success Rate (Current System)](#sec-pharma_success_rate_current_pct) 📊: 10% (95% CI: 6% - 15%)
+- [Annual DALY Gain per Patient on an Eventually-Effective Treatment](#sec-state_rtt_effective_treatment_daly_gain): 0.2 DALYs (95% CI: 0.05 DALYs - 0.5 DALYs)
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+C_{DALY,phil} \\
+= \frac{C_{campaign} + C_{registry} \times T_{fund}}{N_{RTT} \times Rate_{success,curr} \times \Delta_{DALY,eff} \times T_{lag} \times T_{fund}}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{campaign} \\
+= C_{state} \times N_{states} \\
+= \$300K \times 49 \\
+= \$14.7M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{RTT} \\
+= N_{poorly\_treated,US} \times Pct_{willing} \times p_{mature} \\
+= 50M \times 44.8\% \times 5\% \\
+= 1.12M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_philanthropic_cost_per_daly.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_philanthropic_cost_per_daly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_philanthropic_cost_per_daly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_philanthropic_cost_per_daly.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Treatments Proven Effective Annually (50-State Registry): 112 treatments/year {#sec-state_rtt_proven_treatments_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treatments proven effective per year by the pooled 50-state registry: annual treatment evaluations times the historical clinical success rate. For comparison, roughly 15 diseases per year get their first effective treatment under the current worldwide system.
+
+**Inputs**:
+
+- [Annual Treatment Evaluations (50-State Registry)](#sec-state_rtt_treatment_evaluations_annual) 🔢: 1,120 evaluations/year
+- [Pharma Drug Success Rate (Current System)](#sec-pharma_success_rate_current_pct) 📊: 10% (95% CI: 6% - 15%)
+
+$$
+\begin{gathered}
+N_{proven} \\
+= N_{evals} \times Rate_{success,curr} \\
+= 1{,}120 \times 10\% \\
+= 112
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{evals} \\
+= \frac{N_{RTT}}{n_{eval}} \\
+= \frac{1.12M}{1{,}000} \\
+= 1{,}120
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{RTT} \\
+= N_{poorly\_treated,US} \times Pct_{willing} \times p_{mature} \\
+= 50M \times 44.8\% \times 5\% \\
+= 1.12M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_proven_treatments_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_proven_treatments_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_proven_treatments_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_proven_treatments_annual.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Untreated Disease Queue Clearance (50-State Registry, Unsubsidized): 80.9 years {#sec-state_rtt_queue_clearance_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years to find first treatments for all currently untreated diseases with the 50-state registry running and no public subsidies. The registry's queue-directed discoveries add to the status quo worldwide rate of ~15 first treatments per year. Same formula structure as the status quo (443 years) and dFDA full-deployment (36 years) estimates.
+
+**Inputs**:
+
+- [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
+- [Diseases Getting First Treatment Per Year](#sec-new_disease_first_treatments_per_year) 📊: 15 diseases/year (95% CI: 8 diseases/year - 30 diseases/year)
+- [Treatments Proven Effective Annually (50-State Registry)](#sec-state_rtt_proven_treatments_annual) 🔢: 112 treatments/year
+- [Share of Evaluations Targeting Untreated Diseases](#sec-state_rtt_evaluations_queue_share) 🔢: 60%
+
+$$
+\begin{gathered}
+T_{queue,RTT} \\
+= N_{untreated} / (Treatments_{new,ann} \\
++ N_{proven} \times s_{queue})
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{proven} \\
+= N_{evals} \times Rate_{success,curr} \\
+= 1{,}120 \times 10\% \\
+= 112
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{evals} \\
+= \frac{N_{RTT}}{n_{eval}} \\
+= \frac{1.12M}{1{,}000} \\
+= 1{,}120
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{RTT} \\
+= N_{poorly\_treated,US} \times Pct_{willing} \times p_{mature} \\
+= 50M \times 44.8\% \times 5\% \\
+= 1.12M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+s_{queue} \\
+= \frac{N_{rare,US}}{N_{poorly\_treated,US}} \\
+= \frac{30M}{50M} \\
+= 60\%
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_queue_clearance_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_queue_clearance_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_queue_clearance_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_queue_clearance_years.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Annual Treatment Evaluations (50-State Registry): 1,120 evaluations/year {#sec-state_rtt_treatment_evaluations_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Treatment-condition pairs receiving an adequately powered efficacy evaluation per year in the pooled 50-state registry: annual patient volume divided by patients needed per evaluation.
+
+**Inputs**:
+
+- [Annual Experimental Treatment Center Patients (50-State)](#sec-state_rtt_market_patients_annual) 🔢: 1.12 million patients/year
+- [Patients per Treatment-Condition Evaluation](#sec-state_rtt_patients_per_treatment_evaluation): 1,000 patients (95% CI: 300 patients - 3,000 patients)
+
+$$
+\begin{gathered}
+N_{evals} \\
+= \frac{N_{RTT}}{n_{eval}} \\
+= \frac{1.12M}{1{,}000} \\
+= 1{,}120
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{RTT} \\
+= N_{poorly\_treated,US} \times Pct_{willing} \times p_{mature} \\
+= 50M \times 44.8\% \times 5\% \\
+= 1.12M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_evaluations_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_evaluations_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_evaluations_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_evaluations_annual.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### US Patients with Poorly Treated Diseases: 50 million patients {#sec-state_rtt_us_patients_poorly_treated}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US patients with diseases lacking effective treatment: rare disease patients (30M, NORD) plus poorly treated common diseases (20M: dementia, treatment-resistant depression, refractory cancers, and similar).
+
+**Inputs**:
+
+- [US Rare Disease Patients](#sec-state_rtt_us_patients_rare_untreated) 📊: 30 million patients (95% CI: 25 million patients - 40 million patients)
+- [US Patients with Poorly Treated Common Diseases](#sec-state_rtt_us_patients_common_poorly_treated): 20 million patients (95% CI: 10 million patients - 40 million patients)
+
+$$
+\begin{gathered}
+N_{poorly\_treated,US} \\
+= N_{rare,US} + N_{common,US} \\
+= 30M + 20M \\
+= 50M
+\end{gathered}
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_us_patients_poorly_treated.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_us_patients_poorly_treated.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_us_patients_poorly_treated.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_us_patients_poorly_treated.qmd >}}
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
 ### Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_first_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -25311,6 +26150,7 @@ $$
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The Plaintiff Media Kit](../appendix/plaintiff-media-kit.html)
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Join the International Campaign to End War and Disease](../strategy/ic2ewd-supporter-survey.html)
@@ -40990,6 +41830,7 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 - [Pre-Built Google Ads Campaign for Coalition Partners](../appendix/google-ads-campaign-template.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 - [How Much Does It Cost to Buy All the Governments?](../appendix/cost-of-change-analysis.html)
 
 :::
@@ -41507,6 +42348,7 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [How to End War and Disease](../educational-film.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 - [The Cost-Benefit Analysis of Global Hegemony](../appendix/cost-benefit-of-hegemony.html)
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../appendix/dfda-spec-paper.html)
 
@@ -44273,6 +45115,7 @@ Number of diseases that receive their FIRST effective treatment each year under 
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Bombs vs. Biotechnology: The ROI](../appendix/bombs-vs-biotech-roi.html)
 - [Health Dividend](../economics/health-dividend.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [The Vandalism Handout](../appendix/handout.html)
@@ -44447,6 +45290,7 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
 - [A Decentralized FDA](../solution/dfda.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 
 :::
 
@@ -44606,12 +45450,25 @@ Percentage of drugs that reach market in current system
 
 **Source**: [@drug-trial-success-rate-12-pct]
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6%, 15%] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6% and 15% (±45%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_success_rate_current_pct.qmd >}}
+
 *✓ High confidence • 📊 Peer-reviewed*
 
 **Used in:**
 
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
 - [Aligning Incentives](../solution/aligning-incentives.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 - [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](../appendix/invisible-graveyard.html)
 
 :::
@@ -44641,6 +45498,7 @@ Investigational compounds that have passed Phase I globally (midpoint of 5,000-1
 **Used in:**
 
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 
 :::
 
@@ -45062,6 +45920,34 @@ Total number of rare diseases globally
 
 :::
 
+### Global Rare Disease Patients: 300 million patients {#sec-rare_disease_patients_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+People living with a rare disease worldwide (conservative estimate from Orphanet database analysis; range 263-446M, excludes rare cancers and infectious diseases).
+
+**Source**: [@rare-disease-patients-300m-globally]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [263 million patients, 446 million patients] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 263 million patients and 446 million patients (±31%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-rare_disease_patients_global.qmd >}}
+
+*~ Medium confidence*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
 ### Recovery Trial Cost per Patient: $500 {#sec-recovery_trial_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -45408,6 +46294,7 @@ Standard economic value per QALY
 - [Health Dividend](../economics/health-dividend.html)
 - [The Cost of War](../problem/cost-of-war.html)
 - [Frequently Asked Objections](../appendix/faq.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 - [Diagnostic Summary](../problem.html)
 - [The Cost of Disease](../problem/cost-of-disease.html)
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
@@ -45432,6 +46319,34 @@ Standard QALYs per life saved (WHO life tables)
 {{< include ../figures/distribution-standard_qalys_per_life_saved.qmd >}}
 
 *✓ High confidence*
+
+:::
+
+### US Rare Disease Patients: 30 million patients {#sec-state_rtt_us_patients_rare_untreated}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US patients with rare diseases (NORD: more than 30M Americans, 1 in 10). Fewer than 5% of the 10,000+ known rare diseases have an approved treatment, so nearly this entire population lacks an effective option.
+
+**Source**: [@nord-rare-disease-30m-us]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [25 million patients, 40 million patients] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 25 million patients and 40 million patients (±25%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_us_patients_rare_untreated.qmd >}}
+
+*~ Medium confidence*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 
 :::
 
@@ -45714,6 +46629,7 @@ Phase 3 cost per patient (median from FDA study)
 - [Aligning Incentives](../solution/aligning-incentives.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [How to End War and Disease](../educational-film.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 - [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../appendix/dfda-spec-paper.html)
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
 - [Optimization Summary](../solution.html)
@@ -45836,6 +46752,7 @@ US annual chronic disease spending
 **Used in:**
 
 - [Join the International Campaign to End War and Disease](../strategy/ic2ewd-supporter-survey.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 
 :::
 
@@ -45932,6 +46849,34 @@ US total government spending as percentage of GDP (federal + state + local). OEC
 **Technical**: Distribution: Fixed
 
 *✓ High confidence*
+
+:::
+
+### Government Share of US Health Spending: 48% {#sec-us_gov_health_spending_share_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Government share of US national health expenditures (CMS 2023: federal 32% plus state and local 16%).
+
+**Source**: [@cms-nhe-gov-share-2023]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [45%, 51%] • Distribution: Normal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between 45% and 51% (±6%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_gov_health_spending_share_pct.qmd >}}
+
+*✓ High confidence*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 
 :::
 
@@ -48100,6 +49045,7 @@ Reference annual funding level used for direct-funding comparisons. Source-agnos
 **Used in:**
 
 - [Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents](../appendix/dfda-impact-paper.html)
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 
 :::
 
@@ -49894,6 +50840,228 @@ Perceived social friction cost of wearing a political message in public, express
 **Used in:**
 
 - [The Funniest Joke in the Universe](../appendix/joke.html)
+
+:::
+
+### Campaign Cost per State (Universal Right to Try + Data Amendment): $300,000 {#sec-state_rtt_campaign_cost_per_state}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Assumed all-in cost to pass the universal right-to-try bill plus data amendment in one average state, across however many legislative sessions it takes: bill drafting support, an in-state contract lobbyist, expert testimony, coalition coordination, and grassroots mobilization. Model-bill state campaigns (the original right-to-try wave, marijuana policy reform) typically run in the low-to-mid six figures per state; ballot initiatives cost far more but are not required for legislation that passes with supermajorities.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$100,000, $1 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $100,000 and $1 million (±150%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_campaign_cost_per_state.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### States Remaining for Universal Right to Try: 49 states {#sec-state_rtt_campaign_states_remaining}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+States that have not yet enacted a universal right-to-try law with an experimental treatment center framework (all except Montana).
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Annual DALY Gain per Patient on an Eventually-Effective Treatment: 0.2 DALYs {#sec-state_rtt_effective_treatment_daly_gain}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+DALYs averted per patient per year of earlier access for a post-Phase-1 treatment that eventually proves effective. Serious untreated chronic disease typically imposes 0.1-0.5 DALYs/year of disability burden; an effective treatment averts part of it.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.05 DALYs, 0.5 DALYs] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.05 DALYs and 0.5 DALYs (±112%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_effective_treatment_daly_gain.qmd >}}
+
+*Core definition*
+
+:::
+
+### Mature Market Annual Penetration Rate: 5% {#sec-state_rtt_mature_annual_penetration_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share of willing patients using an experimental treatment center in a given year once the 50-state market matures. At 5%, 1 in 20 willing patients converts per year, limited by treatment availability for their condition, out-of-pocket affordability, and decision timing. The 1% floor of the confidence interval reproduces a static market with no supply response; for scale, the dFDA companion model contemplates 23.5M subsidized trial patients per year, above this parameter's ceiling.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1%, 15%] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 15% (±140%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_mature_annual_penetration_pct.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Patients per Treatment-Condition Evaluation: 1,000 patients {#sec-state_rtt_patients_per_treatment_evaluation}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Patients needed for an adequately powered efficacy evaluation of one treatment-condition pair in the pooled registry. Phase 3 pivotal trials typically enroll several hundred to a few thousand patients; rare-disease approvals often rest on under 100. Pragmatic registry designs may need more patients per comparison to detect smaller effects in heterogeneous populations, so 1,000 is a conservative central estimate.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [300 patients, 3,000 patients] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 300 patients and 3,000 patients (±135%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_patients_per_treatment_evaluation.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Philanthropic Registry Funding Horizon: 10 years {#sec-state_rtt_philanthropic_funding_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years of philanthropic funding for the registry before it self-sustains through government appropriation, user fees, or data licensing. The campaign cost is one-time; the registry needs ongoing support until adoption justifies public funding.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [5 years, 20 years] • Distribution: Uniform
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 5 years and 20 years (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_philanthropic_funding_years.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### National Outcome Registry Annual Operating Cost: $5 million {#sec-state_rtt_registry_annual_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual operating cost of the national pooled outcome registry (data platform, quality assurance, statistical analysis, publication, administration). Centers bear their own data collection and reporting costs under licensure requirements; this covers the shared infrastructure that standardizes, pools, and publishes their data.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2 million, $15 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $2 million and $15 million (±130%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_registry_annual_cost.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Cost Reduction When Effectively Treated: 25% {#sec-state_rtt_treated_cost_reduction_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of a poorly treated patient's ongoing healthcare cost erased once an effective treatment for their disease exists. Cures erase most downstream management cost; disease-modifying treatments erase part. Many treatments proven through the registry are off-patent or unpatentable compounds priced near generic levels, so the treatment itself adds little cost back.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [10%, 50%] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 10% and 50% (±80%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_treated_cost_reduction_pct.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### US Patients with Poorly Treated Common Diseases: 20 million patients {#sec-state_rtt_us_patients_common_poorly_treated}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US patients with common diseases whose approved treatments fail them: Alzheimer's and other dementias (~7M, no disease-modifying treatment), treatment-resistant depression (~7M, roughly 30% of diagnosed depression), treatment-resistant epilepsy (~1M), advanced cancers past standard therapy, ALS, Parkinson's, and autoimmune treatment failures. 20M is conservative after overlap with the rare disease count.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [10 million patients, 40 million patients] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 10 million patients and 40 million patients (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_us_patients_common_poorly_treated.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Universal right to try in all 50 states: impact, cost, and adoption plan](../appendix/state-right-to-trial-impact.html)
 
 :::
 

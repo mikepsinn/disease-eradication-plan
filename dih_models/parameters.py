@@ -14433,7 +14433,387 @@ PHARMA_SUCCESS_RATE_CURRENT_PCT = Parameter(
     confidence="high",
     peer_reviewed=True,
     keywords=["pharma", "drug", "success", "rate", "approval", "current"],
+    distribution="lognormal",
+    confidence_interval=(0.06, 0.15),  # BIO 2011-2020 Phase I-to-approval ~7.9%; older estimates 10-14%
     latex_symbol=r"Rate_{success,curr}",  # LaTeX symbol for equations
+)
+
+# ==============================================================================
+# STATE RIGHT-TO-TRIAL (MONTANA SB 535 x 50 STATES) PARAMETERS
+# ==============================================================================
+# 49-state campaign cost model for replicating Montana SB 535 with the
+# data amendment. Impact values come from DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_*
+# parameters; these cover only the campaign logistics.
+# ==============================================================================
+
+STATE_RTT_CAMPAIGN_COST_PER_STATE = Parameter(
+    300_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Assumed all-in cost to pass the universal right-to-try bill plus data amendment in one average state, across however many legislative sessions it takes: bill drafting support, an in-state contract lobbyist, expert testimony, coalition coordination, and grassroots mobilization. Model-bill state campaigns (the original right-to-try wave, marijuana policy reform) typically run in the low-to-mid six figures per state; ballot initiatives cost far more but are not required for legislation that passes with supermajorities.",
+    display_name="Campaign Cost per State (Universal Right to Try + Data Amendment)",
+    unit="USD",
+    confidence="low",
+    keywords=["campaign", "cost", "state", "lobbying", "right to try", "model bill", "advocacy"],
+    distribution="lognormal",
+    confidence_interval=(100_000, 1_000_000),
+    latex_symbol=r"C_{state}",
+)
+
+STATE_RTT_CAMPAIGN_STATES_REMAINING = Parameter(
+    49,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="States that have not yet enacted a universal right-to-try law with an experimental treatment center framework (all except Montana).",
+    display_name="States Remaining for Universal Right to Try",
+    unit="states",
+    confidence="high",
+    keywords=["states", "remaining", "right to try", "adoption", "49"],
+    distribution="fixed",
+    latex_symbol=r"N_{states}",
+)
+
+STATE_RTT_CAMPAIGN_TOTAL_COST = Parameter(
+    float(STATE_RTT_CAMPAIGN_COST_PER_STATE) * float(STATE_RTT_CAMPAIGN_STATES_REMAINING),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Total campaign cost to pass the universal right-to-try bill plus data amendment in all 49 remaining states.",
+    display_name="Total 49-State Campaign Cost",
+    unit="USD",
+    formula="STATE_RTT_CAMPAIGN_COST_PER_STATE × STATE_RTT_CAMPAIGN_STATES_REMAINING",
+    confidence="low",
+    keywords=["campaign", "total", "cost", "49 states", "right to try", "advocacy"],
+    inputs=['STATE_RTT_CAMPAIGN_COST_PER_STATE', 'STATE_RTT_CAMPAIGN_STATES_REMAINING'],
+    compute=lambda ctx: ctx["STATE_RTT_CAMPAIGN_COST_PER_STATE"] * ctx["STATE_RTT_CAMPAIGN_STATES_REMAINING"],
+    latex_symbol=r"C_{campaign}",
+)
+
+STATE_RTT_REGISTRY_ANNUAL_COST = Parameter(
+    5_000_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Annual operating cost of the national pooled outcome registry (data platform, quality assurance, statistical analysis, publication, administration). Centers bear their own data collection and reporting costs under licensure requirements; this covers the shared infrastructure that standardizes, pools, and publishes their data.",
+    display_name="National Outcome Registry Annual Operating Cost",
+    unit="USD/year",
+    confidence="low",
+    keywords=["registry", "data", "infrastructure", "annual cost", "right to try", "pooling"],
+    distribution="lognormal",
+    confidence_interval=(2_000_000, 15_000_000),
+    latex_symbol=r"C_{registry}",
+)
+
+STATE_RTT_PHILANTHROPIC_FUNDING_YEARS = Parameter(
+    10,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Years of philanthropic funding for the registry before it self-sustains through government appropriation, user fees, or data licensing. The campaign cost is one-time; the registry needs ongoing support until adoption justifies public funding.",
+    display_name="Philanthropic Registry Funding Horizon",
+    unit="years",
+    confidence="low",
+    keywords=["philanthropy", "funding", "horizon", "registry", "sustainability"],
+    distribution="uniform",
+    confidence_interval=(5, 20),
+    latex_symbol=r"T_{fund}",
+)
+
+STATE_RTT_US_PATIENTS_RARE_UNTREATED = Parameter(
+    30_000_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_ref=ReferenceID.NORD_RARE_DISEASE_30M_US,
+    source_type="external",
+    description="US patients with rare diseases (NORD: more than 30M Americans, 1 in 10). Fewer than 5% of the 10,000+ known rare diseases have an approved treatment, so nearly this entire population lacks an effective option.",
+    display_name="US Rare Disease Patients",
+    unit="patients",
+    confidence="medium",
+    keywords=["rare disease", "NORD", "30 million", "US patients", "untreated"],
+    distribution="lognormal",
+    confidence_interval=(25_000_000, 40_000_000),
+    latex_symbol=r"N_{rare,US}",
+)
+
+STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED = Parameter(
+    20_000_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="US patients with common diseases whose approved treatments fail them: Alzheimer's and other dementias (~7M, no disease-modifying treatment), treatment-resistant depression (~7M, roughly 30% of diagnosed depression), treatment-resistant epilepsy (~1M), advanced cancers past standard therapy, ALS, Parkinson's, and autoimmune treatment failures. 20M is conservative after overlap with the rare disease count.",
+    display_name="US Patients with Poorly Treated Common Diseases",
+    unit="patients",
+    confidence="low",
+    keywords=["dementia", "depression", "treatment resistant", "refractory", "poorly treated", "common disease"],
+    distribution="lognormal",
+    confidence_interval=(10_000_000, 40_000_000),
+    latex_symbol=r"N_{common,US}",
+)
+
+STATE_RTT_US_PATIENTS_POORLY_TREATED = Parameter(
+    float(STATE_RTT_US_PATIENTS_RARE_UNTREATED) + float(STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="US patients with diseases lacking effective treatment: rare disease patients (30M, NORD) plus poorly treated common diseases (20M: dementia, treatment-resistant depression, refractory cancers, and similar).",
+    display_name="US Patients with Poorly Treated Diseases",
+    unit="patients",
+    formula="STATE_RTT_US_PATIENTS_RARE_UNTREATED + STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED",
+    confidence="low",
+    keywords=["rare disease", "poorly treated", "unmet need", "US patients", "50 million", "addressable"],
+    inputs=['STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED'],
+    compute=lambda ctx: ctx["STATE_RTT_US_PATIENTS_RARE_UNTREATED"] + ctx["STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED"],
+    latex_symbol=r"N_{poorly\_treated,US}",
+)
+
+STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT = Parameter(
+    0.05,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Share of willing patients using an experimental treatment center in a given year once the 50-state market matures. At 5%, 1 in 20 willing patients converts per year, limited by treatment availability for their condition, out-of-pocket affordability, and decision timing. The 1% floor of the confidence interval reproduces a static market with no supply response; for scale, the dFDA companion model contemplates 23.5M subsidized trial patients per year, above this parameter's ceiling.",
+    display_name="Mature Market Annual Penetration Rate",
+    unit="percentage",
+    confidence="low",
+    keywords=["penetration", "conversion", "mature", "annual", "market", "uptake"],
+    distribution="lognormal",
+    confidence_interval=(0.01, 0.15),
+    latex_symbol=r"p_{mature}",
+)
+
+STATE_RTT_MARKET_PATIENTS_ANNUAL = Parameter(
+    float(STATE_RTT_US_PATIENTS_POORLY_TREATED) * float(PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT) * float(STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Annual patients treated at experimental treatment centers under mature 50-state adoption. Derived from: US patients with poorly treated diseases (50M: rare diseases plus dementia, treatment-resistant depression, and similar) x willingness to participate in trials (44.8%, survey data; 88% when actually approached) x mature-market annual penetration (5% of willing patients per year). Patients pay out of pocket; the per-patient research cost is zero.",
+    display_name="Annual Experimental Treatment Center Patients (50-State)",
+    unit="patients/year",
+    formula="STATE_RTT_US_PATIENTS_POORLY_TREATED × PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT × STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT",
+    confidence="low",
+    keywords=["right to try", "patients", "market", "experimental treatment", "volume", "pragmatic trial"],
+    inputs=['STATE_RTT_US_PATIENTS_POORLY_TREATED', 'PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT', 'STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT'],
+    compute=lambda ctx: ctx["STATE_RTT_US_PATIENTS_POORLY_TREATED"] * ctx["PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT"] * ctx["STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT"],
+    latex_symbol=r"N_{RTT}",
+)
+
+STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION = Parameter(
+    1_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Patients needed for an adequately powered efficacy evaluation of one treatment-condition pair in the pooled registry. Phase 3 pivotal trials typically enroll several hundred to a few thousand patients; rare-disease approvals often rest on under 100. Pragmatic registry designs may need more patients per comparison to detect smaller effects in heterogeneous populations, so 1,000 is a conservative central estimate.",
+    display_name="Patients per Treatment-Condition Evaluation",
+    unit="patients",
+    confidence="low",
+    keywords=["trial size", "power", "evaluation", "cohort", "registry", "pragmatic"],
+    distribution="lognormal",
+    confidence_interval=(300, 3_000),
+    latex_symbol=r"n_{eval}",
+)
+
+STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL = Parameter(
+    float(STATE_RTT_MARKET_PATIENTS_ANNUAL) / float(STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Treatment-condition pairs receiving an adequately powered efficacy evaluation per year in the pooled 50-state registry: annual patient volume divided by patients needed per evaluation.",
+    display_name="Annual Treatment Evaluations (50-State Registry)",
+    unit="evaluations/year",
+    formula="STATE_RTT_MARKET_PATIENTS_ANNUAL ÷ STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION",
+    confidence="low",
+    keywords=["evaluations", "trials enabled", "capacity", "registry", "right to try"],
+    inputs=['STATE_RTT_MARKET_PATIENTS_ANNUAL', 'STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION'],
+    compute=lambda ctx: ctx["STATE_RTT_MARKET_PATIENTS_ANNUAL"] / ctx["STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION"],
+    latex_symbol=r"N_{evals}",
+)
+
+STATE_RTT_PROVEN_TREATMENTS_ANNUAL = Parameter(
+    float(STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL) * float(PHARMA_SUCCESS_RATE_CURRENT_PCT),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Treatments proven effective per year by the pooled 50-state registry: annual treatment evaluations times the historical clinical success rate. For comparison, roughly 15 diseases per year get their first effective treatment under the current worldwide system.",
+    display_name="Treatments Proven Effective Annually (50-State Registry)",
+    unit="treatments/year",
+    formula="STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL × PHARMA_SUCCESS_RATE_CURRENT_PCT",
+    confidence="low",
+    keywords=["proven treatments", "effective", "annual", "registry", "right to try", "discovery rate"],
+    inputs=['STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL', 'PHARMA_SUCCESS_RATE_CURRENT_PCT'],
+    compute=lambda ctx: ctx["STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL"] * ctx["PHARMA_SUCCESS_RATE_CURRENT_PCT"],
+    latex_symbol=r"N_{proven}",
+)
+
+STATE_RTT_EVALUATIONS_QUEUE_SHARE = Parameter(
+    float(STATE_RTT_US_PATIENTS_RARE_UNTREATED) / float(STATE_RTT_US_PATIENTS_POORLY_TREATED),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Fraction of registry evaluations targeting diseases with no effective treatment (the untreated-disease queue), set to the rare-disease share of the addressable patient population (30M of 50M). The remainder target poorly treated conditions that have inadequate approved options (treatment-resistant depression, dementia); those evaluations improve care but do not clear queue diseases.",
+    display_name="Share of Evaluations Targeting Untreated Diseases",
+    unit="percentage",
+    formula="STATE_RTT_US_PATIENTS_RARE_UNTREATED ÷ STATE_RTT_US_PATIENTS_POORLY_TREATED",
+    confidence="medium",
+    keywords=["queue", "share", "untreated", "rare disease", "targeting"],
+    inputs=['STATE_RTT_US_PATIENTS_RARE_UNTREATED', 'STATE_RTT_US_PATIENTS_POORLY_TREATED'],
+    compute=lambda ctx: ctx["STATE_RTT_US_PATIENTS_RARE_UNTREATED"] / ctx["STATE_RTT_US_PATIENTS_POORLY_TREATED"],
+    latex_symbol=r"s_{queue}",
+)
+
+STATE_RTT_QUEUE_CLEARANCE_YEARS = Parameter(
+    float(DISEASES_WITHOUT_EFFECTIVE_TREATMENT)
+    / (float(NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR) + float(STATE_RTT_PROVEN_TREATMENTS_ANNUAL) * float(STATE_RTT_EVALUATIONS_QUEUE_SHARE)),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Years to find first treatments for all currently untreated diseases with the 50-state registry running and no public subsidies. The registry's queue-directed discoveries add to the status quo worldwide rate of ~15 first treatments per year. Same formula structure as the status quo (443 years) and dFDA full-deployment (36 years) estimates.",
+    display_name="Untreated Disease Queue Clearance (50-State Registry, Unsubsidized)",
+    unit="years",
+    formula="DISEASES_WITHOUT_EFFECTIVE_TREATMENT ÷ (NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR + STATE_RTT_PROVEN_TREATMENTS_ANNUAL × STATE_RTT_EVALUATIONS_QUEUE_SHARE)",
+    confidence="low",
+    keywords=["queue", "clearance", "timeline", "eradication", "right to try", "compression"],
+    inputs=['DISEASES_WITHOUT_EFFECTIVE_TREATMENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'STATE_RTT_PROVEN_TREATMENTS_ANNUAL', 'STATE_RTT_EVALUATIONS_QUEUE_SHARE'],
+    compute=lambda ctx: ctx["DISEASES_WITHOUT_EFFECTIVE_TREATMENT"] / (ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"] + ctx["STATE_RTT_PROVEN_TREATMENTS_ANNUAL"] * ctx["STATE_RTT_EVALUATIONS_QUEUE_SHARE"]),
+    latex_symbol=r"T_{queue,RTT}",
+)
+
+STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN = Parameter(
+    0.2,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="DALYs averted per patient per year of earlier access for a post-Phase-1 treatment that eventually proves effective. Serious untreated chronic disease typically imposes 0.1-0.5 DALYs/year of disability burden; an effective treatment averts part of it.",
+    display_name="Annual DALY Gain per Patient on an Eventually-Effective Treatment",
+    unit="DALYs",
+    confidence="low",
+    keywords=["daly", "gain", "effective treatment", "right to try", "burden", "averted"],
+    distribution="lognormal",
+    confidence_interval=(0.05, 0.5),
+    latex_symbol=r"\Delta_{DALY,eff}",
+)
+
+STATE_RTT_PHILANTHROPIC_COST_PER_DALY = Parameter(
+    (float(STATE_RTT_CAMPAIGN_TOTAL_COST) + float(STATE_RTT_REGISTRY_ANNUAL_COST) * float(STATE_RTT_PHILANTHROPIC_FUNDING_YEARS))
+    / (float(STATE_RTT_MARKET_PATIENTS_ANNUAL) * float(PHARMA_SUCCESS_RATE_CURRENT_PCT) * float(STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN) * float(EFFICACY_LAG_YEARS) * float(STATE_RTT_PHILANTHROPIC_FUNDING_YEARS)),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Philanthropic cost per DALY averted for the combined 49-state campaign and registry. Numerator: one-time campaign cost plus registry operating cost over the philanthropic funding horizon. Denominator: DALYs generated by earlier access over the same period (patients x historical approval rate x DALY gain x efficacy lag years x funding horizon). Treatments fund themselves through patient payment; the philanthropic cost covers only the legal campaign and the shared data infrastructure.",
+    display_name="Philanthropic Cost per DALY (Campaign + Registry)",
+    unit="USD/DALY",
+    formula="(STATE_RTT_CAMPAIGN_TOTAL_COST + STATE_RTT_REGISTRY_ANNUAL_COST × STATE_RTT_PHILANTHROPIC_FUNDING_YEARS) ÷ (STATE_RTT_MARKET_PATIENTS_ANNUAL × PHARMA_SUCCESS_RATE_CURRENT_PCT × STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN × EFFICACY_LAG_YEARS × STATE_RTT_PHILANTHROPIC_FUNDING_YEARS)",
+    confidence="low",
+    keywords=["philanthropy", "cost per daly", "campaign", "registry", "right to try", "cost effectiveness"],
+    inputs=['STATE_RTT_CAMPAIGN_TOTAL_COST', 'STATE_RTT_REGISTRY_ANNUAL_COST', 'STATE_RTT_PHILANTHROPIC_FUNDING_YEARS', 'STATE_RTT_MARKET_PATIENTS_ANNUAL', 'PHARMA_SUCCESS_RATE_CURRENT_PCT', 'STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN', 'EFFICACY_LAG_YEARS'],
+    compute=lambda ctx: (ctx["STATE_RTT_CAMPAIGN_TOTAL_COST"] + ctx["STATE_RTT_REGISTRY_ANNUAL_COST"] * ctx["STATE_RTT_PHILANTHROPIC_FUNDING_YEARS"]) / (ctx["STATE_RTT_MARKET_PATIENTS_ANNUAL"] * ctx["PHARMA_SUCCESS_RATE_CURRENT_PCT"] * ctx["STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN"] * ctx["EFFICACY_LAG_YEARS"] * ctx["STATE_RTT_PHILANTHROPIC_FUNDING_YEARS"]),
+    latex_symbol=r"C_{DALY,phil}",
+)
+
+RARE_DISEASE_PATIENTS_GLOBAL = Parameter(
+    300_000_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_ref=ReferenceID.RARE_DISEASE_PATIENTS_300M_GLOBALLY,
+    source_type="external",
+    description="People living with a rare disease worldwide (conservative estimate from Orphanet database analysis; range 263-446M, excludes rare cancers and infectious diseases).",
+    display_name="Global Rare Disease Patients",
+    unit="patients",
+    confidence="medium",
+    keywords=["rare disease", "global", "300 million", "worldwide", "orphanet"],
+    distribution="lognormal",
+    confidence_interval=(263_000_000, 446_000_000),
+    latex_symbol=r"N_{rare,global}",
+)
+
+STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR = Parameter(
+    float(STATE_RTT_PROVEN_TREATMENTS_ANNUAL) * float(STATE_RTT_EVALUATIONS_QUEUE_SHARE)
+    * (float(RARE_DISEASE_PATIENTS_GLOBAL) / float(RARE_DISEASES_COUNT_GLOBAL))
+    * float(STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Permanent annual global benefit forfeited per year the 50-state system is delayed. Each year of delay forgoes the mature system's queue-directed discoveries; each forgone treatment would have served its disease's entire global patient population (about 43,000 patients per rare disease on average) every year thereafter. US patients fund and populate the evaluations; every patient on Earth receives each discovery free of research cost.",
+    display_name="Global DALYs Forfeited per Year of Delay",
+    unit="DALYs/year",
+    formula="STATE_RTT_PROVEN_TREATMENTS_ANNUAL × STATE_RTT_EVALUATIONS_QUEUE_SHARE × (RARE_DISEASE_PATIENTS_GLOBAL ÷ RARE_DISEASES_COUNT_GLOBAL) × STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN",
+    confidence="low",
+    keywords=["inaction", "delay", "invisible graveyard", "daly", "forfeited", "global", "public good"],
+    inputs=['STATE_RTT_PROVEN_TREATMENTS_ANNUAL', 'STATE_RTT_EVALUATIONS_QUEUE_SHARE', 'RARE_DISEASE_PATIENTS_GLOBAL', 'RARE_DISEASES_COUNT_GLOBAL', 'STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN'],
+    compute=lambda ctx: ctx["STATE_RTT_PROVEN_TREATMENTS_ANNUAL"] * ctx["STATE_RTT_EVALUATIONS_QUEUE_SHARE"] * (ctx["RARE_DISEASE_PATIENTS_GLOBAL"] / ctx["RARE_DISEASES_COUNT_GLOBAL"]) * ctx["STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN"],
+    latex_symbol=r"DALY_{delay}",
+)
+
+STATE_RTT_INACTION_VALUE_PER_DELAY_YEAR = Parameter(
+    float(STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Economic value of the permanent annual global benefit forfeited per year the 50-state system is delayed, at the standard economic value of a healthy life-year.",
+    display_name="Economic Value Forfeited per Year of Delay",
+    unit="USD/year",
+    formula="STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR × STANDARD_ECONOMIC_QALY_VALUE_USD",
+    confidence="low",
+    keywords=["inaction", "delay", "value", "forfeited", "invisible graveyard"],
+    inputs=['STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
+    compute=lambda ctx: ctx["STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    latex_symbol=r"V_{delay}",
+)
+
+STATE_RTT_TREATED_COST_REDUCTION_PCT = Parameter(
+    0.25,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Fraction of a poorly treated patient's ongoing healthcare cost erased once an effective treatment for their disease exists. Cures erase most downstream management cost; disease-modifying treatments erase part. Many treatments proven through the registry are off-patent or unpatentable compounds priced near generic levels, so the treatment itself adds little cost back.",
+    display_name="Cost Reduction When Effectively Treated",
+    unit="percentage",
+    confidence="low",
+    keywords=["cost reduction", "savings", "effective treatment", "chronic care", "displacement"],
+    distribution="lognormal",
+    confidence_interval=(0.10, 0.50),
+    latex_symbol=r"r_{cost}",
+)
+
+STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE = Parameter(
+    float(STATE_RTT_US_PATIENTS_POORLY_TREATED) * float(PER_CAPITA_CHRONIC_DISEASE_COST) * float(STATE_RTT_TREATED_COST_REDUCTION_PCT),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Eventual annual US healthcare savings once effective treatments exist for today's poorly treated diseases: 50M patients x per-capita chronic disease spending x cost reduction from effective treatment. Uses the all-population per-capita spending figure, which understates the per-patient cost of dementia and refractory disease patients, so this is conservative. This is the mature endpoint, phased in as treatments are proven; the system's contribution is pulling that date centuries closer, not delivering these savings in year one.",
+    display_name="Eventual Annual US Healthcare Savings (Mature)",
+    unit="USD/year",
+    formula="STATE_RTT_US_PATIENTS_POORLY_TREATED × PER_CAPITA_CHRONIC_DISEASE_COST × STATE_RTT_TREATED_COST_REDUCTION_PCT",
+    confidence="low",
+    keywords=["healthcare savings", "chronic disease", "cost reduction", "annual", "mature"],
+    inputs=['STATE_RTT_US_PATIENTS_POORLY_TREATED', 'PER_CAPITA_CHRONIC_DISEASE_COST', 'STATE_RTT_TREATED_COST_REDUCTION_PCT'],
+    compute=lambda ctx: ctx["STATE_RTT_US_PATIENTS_POORLY_TREATED"] * ctx["PER_CAPITA_CHRONIC_DISEASE_COST"] * ctx["STATE_RTT_TREATED_COST_REDUCTION_PCT"],
+    latex_symbol=r"S_{health,US}",
+)
+
+US_GOV_HEALTH_SPENDING_SHARE_PCT = Parameter(
+    0.48,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_ref=ReferenceID.CMS_NHE_GOV_SHARE_2023,
+    source_type="external",
+    description="Government share of US national health expenditures (CMS 2023: federal 32% plus state and local 16%).",
+    display_name="Government Share of US Health Spending",
+    unit="percentage",
+    confidence="high",
+    keywords=["government", "medicare", "medicaid", "health spending", "share", "CMS"],
+    distribution="normal",
+    confidence_interval=(0.45, 0.51),
+    latex_symbol=r"s_{gov}",
+)
+
+STATE_RTT_GOV_HEALTHCARE_SAVINGS_ANNUAL_MATURE = Parameter(
+    float(STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE) * float(US_GOV_HEALTH_SPENDING_SHARE_PCT),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Government share of the eventual annual US healthcare savings, at the CMS-reported 48% government share of national health spending. This is Medicare, Medicaid, and other public program money.",
+    display_name="Eventual Annual Government Healthcare Savings (Mature)",
+    unit="USD/year",
+    formula="STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE × US_GOV_HEALTH_SPENDING_SHARE_PCT",
+    confidence="low",
+    keywords=["government savings", "medicare", "medicaid", "annual", "mature", "budget"],
+    inputs=['STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE', 'US_GOV_HEALTH_SPENDING_SHARE_PCT'],
+    compute=lambda ctx: ctx["STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE"] * ctx["US_GOV_HEALTH_SPENDING_SHARE_PCT"],
+    latex_symbol=r"S_{gov,US}",
+)
+
+STATE_RTT_BREAKEVEN_RECOVERY_PER_100K_SPENDING = Parameter(
+    (float(STATE_RTT_CAMPAIGN_TOTAL_COST) + float(STATE_RTT_REGISTRY_ANNUAL_COST) * float(STATE_RTT_PHILANTHROPIC_FUNDING_YEARS))
+    / (float(US_CHRONIC_DISEASE_SPENDING_ANNUAL) * float(STATE_RTT_PHILANTHROPIC_FUNDING_YEARS)) * 100_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Savings the campaign must produce per $100,000 of US chronic disease spending to pay for itself: total philanthropic cost (campaign plus a decade of registry operation) divided by chronic disease spending over the same decade, scaled to $100,000. Past this threshold the campaign's long-run cost is negative.",
+    display_name="Break-Even Recovery per $100,000 of Chronic Disease Spending",
+    unit="USD",
+    formula="(STATE_RTT_CAMPAIGN_TOTAL_COST + STATE_RTT_REGISTRY_ANNUAL_COST × STATE_RTT_PHILANTHROPIC_FUNDING_YEARS) ÷ (US_CHRONIC_DISEASE_SPENDING_ANNUAL × STATE_RTT_PHILANTHROPIC_FUNDING_YEARS) × 100,000",
+    confidence="medium",
+    keywords=["break even", "self funding", "negative cost", "threshold", "chronic disease spending"],
+    inputs=['STATE_RTT_CAMPAIGN_TOTAL_COST', 'STATE_RTT_REGISTRY_ANNUAL_COST', 'STATE_RTT_PHILANTHROPIC_FUNDING_YEARS', 'US_CHRONIC_DISEASE_SPENDING_ANNUAL'],
+    compute=lambda ctx: (ctx["STATE_RTT_CAMPAIGN_TOTAL_COST"] + ctx["STATE_RTT_REGISTRY_ANNUAL_COST"] * ctx["STATE_RTT_PHILANTHROPIC_FUNDING_YEARS"]) / (ctx["US_CHRONIC_DISEASE_SPENDING_ANNUAL"] * ctx["STATE_RTT_PHILANTHROPIC_FUNDING_YEARS"]) * 100_000,
+    latex_symbol=r"r_{breakeven}",
 )
 
 PHARMA_DRUG_REVENUE_AVERAGE_CURRENT = Parameter(

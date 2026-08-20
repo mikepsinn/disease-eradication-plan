@@ -20223,6 +20223,18 @@ Percentage of drugs that reach market in current system
 
 **Source**: [@drug-trial-success-rate-12-pct]
 
+#### Uncertainty Range
+
+**Technical**: 95% CI: [6%, 15%] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 6% and 15% (±45%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-pharma_success_rate_current_pct.qmd >}}
+
 *✓ High confidence • 📊 Peer-reviewed*
 
 :::

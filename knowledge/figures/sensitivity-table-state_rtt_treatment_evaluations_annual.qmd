@@ -1,0 +1,10 @@
+**Sensitivity Indices for Annual Treatment Evaluations (50-State Registry)**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| Annual Experimental Treatment Center Patients (50-State) (patients/year) | 0.7040 | Strong driver |
+| Patients per Treatment-Condition Evaluation (patients) | -0.4769 | Moderate driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

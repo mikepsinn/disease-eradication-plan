@@ -1,0 +1,10 @@
+**Sensitivity Indices for Share of Evaluations Targeting Untreated Diseases**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| US Patients with Poorly Treated Diseases (patients) | -1.0504 | Strong driver |
+| US Rare Disease Patients (patients) | 0.7896 | Strong driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

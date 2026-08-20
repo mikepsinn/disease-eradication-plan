@@ -2741,7 +2741,9 @@ export const PHARMA_SUCCESS_RATE_CURRENT_PCT: Parameter = {
   sourceRef: "drug-trial-success-rate-12-pct",
   sourceUrl: "https://www.nature.com/articles/nrd.2016.136",
   confidence: "high",
+  confidenceInterval: [0.06, 0.15],
   peerReviewed: true,
+  distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/fda-is-unsafe-and-ineffective.html",
   manualPageTitle: "Your FDA Is Unsafe and Ineffective",
 };
@@ -3053,6 +3055,23 @@ export const RARE_DISEASES_COUNT_GLOBAL: Parameter = {
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
 
+export const RARE_DISEASE_PATIENTS_GLOBAL: Parameter = {
+  value: 300000000.0,
+  parameterName: "RARE_DISEASE_PATIENTS_GLOBAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-rare_disease_patients_global",
+  unit: "patients",
+  displayName: "Global Rare Disease Patients",
+  description: "People living with a rare disease worldwide (conservative estimate from Orphanet database analysis; range 263-446M, excludes rare cancers and infectious diseases).",
+  sourceType: "external",
+  sourceRef: "rare-disease-patients-300m-globally",
+  sourceUrl: "https://www.rarediseasesinternational.org/new-scientific-paper-confirms-300-million-people-living-with-a-rare-disease-worldwide/",
+  confidence: "medium",
+  confidenceInterval: [263000000.0, 446000000.0],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
 export const RECOVERY_TRIAL_COST_PER_PATIENT: Parameter = {
   value: 500.0,
   parameterName: "RECOVERY_TRIAL_COST_PER_PATIENT",
@@ -3324,6 +3343,23 @@ export const STANDARD_QALYS_PER_LIFE_SAVED: Parameter = {
   distribution: "normal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
   manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+};
+
+export const STATE_RTT_US_PATIENTS_RARE_UNTREATED: Parameter = {
+  value: 30000000.0,
+  parameterName: "STATE_RTT_US_PATIENTS_RARE_UNTREATED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_us_patients_rare_untreated",
+  unit: "patients",
+  displayName: "US Rare Disease Patients",
+  description: "US patients with rare diseases (NORD: more than 30M Americans, 1 in 10). Fewer than 5% of the 10,000+ known rare diseases have an approved treatment, so nearly this entire population lacks an effective option.",
+  sourceType: "external",
+  sourceRef: "nord-rare-disease-30m-us",
+  sourceUrl: "https://www.prnewswire.com/news-releases/more-than-30-million-americans-living-with-rare-diseases-302694806.html",
+  confidence: "medium",
+  confidenceInterval: [25000000.0, 40000000.0],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
 };
 
 export const SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL: Parameter = {
@@ -3690,6 +3726,23 @@ export const US_GOVT_SPENDING_PCT_GDP: Parameter = {
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/us-efficiency-audit.html",
   manualPageTitle: "United States Efficiency Audit",
+};
+
+export const US_GOV_HEALTH_SPENDING_SHARE_PCT: Parameter = {
+  value: 0.48,
+  parameterName: "US_GOV_HEALTH_SPENDING_SHARE_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_gov_health_spending_share_pct",
+  unit: "percentage",
+  displayName: "Government Share of US Health Spending",
+  description: "Government share of US national health expenditures (CMS 2023: federal 32% plus state and local 16%).",
+  sourceType: "external",
+  sourceRef: "cms-nhe-gov-share-2023",
+  sourceUrl: "https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/historical",
+  confidence: "high",
+  confidenceInterval: [0.45, 0.51],
+  distribution: "normal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
 };
 
 export const US_GOV_WASTE_AGRICULTURAL_SUBSIDIES: Parameter = {
@@ -9789,6 +9842,240 @@ export const SHIRT_VALUE_PER_WEARER_USD: Parameter = {
   manualPageTitle: "The Funniest Joke in the Universe",
 };
 
+export const STATE_RTT_BREAKEVEN_RECOVERY_PER_100K_SPENDING: Parameter = {
+  value: 0.157804878049,
+  parameterName: "STATE_RTT_BREAKEVEN_RECOVERY_PER_100K_SPENDING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_breakeven_recovery_per_100k_spending",
+  unit: "USD",
+  displayName: "Break-Even Recovery per $100,000 of Chronic Disease Spending",
+  description: "Savings the campaign must produce per $100,000 of US chronic disease spending to pay for itself: total philanthropic cost (campaign plus a decade of registry operation) divided by chronic disease spending over the same decade, scaled to $100,000. Past this threshold the campaign's long-run cost is negative.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "(STATE_RTT_CAMPAIGN_TOTAL_COST + STATE_RTT_REGISTRY_ANNUAL_COST × STATE_RTT_PHILANTHROPIC_FUNDING_YEARS) ÷ (US_CHRONIC_DISEASE_SPENDING_ANNUAL × STATE_RTT_PHILANTHROPIC_FUNDING_YEARS) × 100,000",
+  latex: "\\begin{gathered}\nr_{breakeven} = \\frac{C_{campaign} + C_{registry} \\times T_{fund}}{Spending_{chronic,US} \\times T_{fund}} \\times 100,000\n\\\\[0.5em]\n\\text{where } C_{campaign} = C_{state} \\times N_{states} = \\$300K \\times 49 = \\$14.7M\n\\end{gathered}",
+  confidenceInterval: [0.0660599110427, 0.324417277408],
+  inputs: ["STATE_RTT_CAMPAIGN_TOTAL_COST", "STATE_RTT_REGISTRY_ANNUAL_COST", "STATE_RTT_PHILANTHROPIC_FUNDING_YEARS", "US_CHRONIC_DISEASE_SPENDING_ANNUAL"],
+  computeExpr: "(((STATE_RTT_CAMPAIGN_TOTAL_COST + (STATE_RTT_REGISTRY_ANNUAL_COST * STATE_RTT_PHILANTHROPIC_FUNDING_YEARS)) / (US_CHRONIC_DISEASE_SPENDING_ANNUAL * STATE_RTT_PHILANTHROPIC_FUNDING_YEARS)) * 100000.0)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_CAMPAIGN_TOTAL_COST: Parameter = {
+  value: 14700000.0,
+  parameterName: "STATE_RTT_CAMPAIGN_TOTAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_campaign_total_cost",
+  unit: "USD",
+  displayName: "Total 49-State Campaign Cost",
+  description: "Total campaign cost to pass the universal right-to-try bill plus data amendment in all 49 remaining states.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_CAMPAIGN_COST_PER_STATE × STATE_RTT_CAMPAIGN_STATES_REMAINING",
+  latex: "\\begin{gathered}\nC_{campaign} \\\\\n= C_{state} \\times N_{states} \\\\\n= \\$300K \\times 49 \\\\\n= \\$14.7M\n\\end{gathered}",
+  confidenceInterval: [4900000.0, 35043877.1813],
+  inputs: ["STATE_RTT_CAMPAIGN_COST_PER_STATE", "STATE_RTT_CAMPAIGN_STATES_REMAINING"],
+  computeExpr: "(STATE_RTT_CAMPAIGN_COST_PER_STATE * STATE_RTT_CAMPAIGN_STATES_REMAINING)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_EVALUATIONS_QUEUE_SHARE: Parameter = {
+  value: 0.6,
+  parameterName: "STATE_RTT_EVALUATIONS_QUEUE_SHARE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_evaluations_queue_share",
+  unit: "percentage",
+  displayName: "Share of Evaluations Targeting Untreated Diseases",
+  description: "Fraction of registry evaluations targeting diseases with no effective treatment (the untreated-disease queue), set to the rare-disease share of the addressable patient population (30M of 50M). The remainder target poorly treated conditions that have inadequate approved options (treatment-resistant depression, dementia); those evaluations improve care but do not clear queue diseases.",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "STATE_RTT_US_PATIENTS_RARE_UNTREATED ÷ STATE_RTT_US_PATIENTS_POORLY_TREATED",
+  latex: "\\begin{gathered}\ns_{queue} = \\frac{N_{rare,US}}{N_{poorly\\_treated,US}} = \\frac{30M}{50M} = 60\\%\n\\\\[0.5em]\n\\text{where } N_{poorly\\_treated,US} = N_{rare,US} + N_{common,US} = 30M + 20M = 50M\n\\end{gathered}",
+  confidenceInterval: [0.461651768411, 0.744304841068],
+  inputs: ["STATE_RTT_US_PATIENTS_RARE_UNTREATED", "STATE_RTT_US_PATIENTS_POORLY_TREATED"],
+  computeExpr: "(STATE_RTT_US_PATIENTS_RARE_UNTREATED / STATE_RTT_US_PATIENTS_POORLY_TREATED)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_GOV_HEALTHCARE_SAVINGS_ANNUAL_MATURE: Parameter = {
+  value: 73432835820.9,
+  parameterName: "STATE_RTT_GOV_HEALTHCARE_SAVINGS_ANNUAL_MATURE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_gov_healthcare_savings_annual_mature",
+  unit: "USD/year",
+  displayName: "Eventual Annual Government Healthcare Savings (Mature)",
+  description: "Government share of the eventual annual US healthcare savings, at the CMS-reported 48% government share of national health spending. This is Medicare, Medicaid, and other public program money.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE × US_GOV_HEALTH_SPENDING_SHARE_PCT",
+  latex: "\\begin{gathered}\nS_{gov,US} = S_{health,US} \\times s_{gov} = \\$153B \\times 48\\% = \\$73.4B\n\\\\[0.5em]\n\\text{where } S_{health,US} = N_{poorly\\_treated,US} \\times Cost_{chronic,pc} \\times r_{cost} = 50M \\times \\$12.2K \\times 25\\% = \\$153B\n\\\\[0.5em]\n\\text{where } N_{poorly\\_treated,US} = N_{rare,US} + N_{common,US} = 30M + 20M = 50M\n\\\\[0.5em]\n\\text{where } Cost_{chronic,pc} = \\frac{Spending_{chronic,US}}{Pop_{US}} = \\frac{\\$4.1T}{335M} = \\$12.2K\n\\end{gathered}",
+  confidenceInterval: [32878755732.2, 132940753631.0],
+  inputs: ["STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE", "US_GOV_HEALTH_SPENDING_SHARE_PCT"],
+  computeExpr: "(STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE * US_GOV_HEALTH_SPENDING_SHARE_PCT)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE: Parameter = {
+  value: 152985074627.0,
+  parameterName: "STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_healthcare_savings_annual_mature",
+  unit: "USD/year",
+  displayName: "Eventual Annual US Healthcare Savings (Mature)",
+  description: "Eventual annual US healthcare savings once effective treatments exist for today's poorly treated diseases: 50M patients x per-capita chronic disease spending x cost reduction from effective treatment. Uses the all-population per-capita spending figure, which understates the per-patient cost of dementia and refractory disease patients, so this is conservative. This is the mature endpoint, phased in as treatments are proven; the system's contribution is pulling that date centuries closer, not delivering these savings in year one.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_US_PATIENTS_POORLY_TREATED × PER_CAPITA_CHRONIC_DISEASE_COST × STATE_RTT_TREATED_COST_REDUCTION_PCT",
+  latex: "\\begin{gathered}\nS_{health,US} = N_{poorly\\_treated,US} \\times Cost_{chronic,pc} \\times r_{cost} = 50M \\times \\$12.2K \\times 25\\% = \\$153B\n\\\\[0.5em]\n\\text{where } N_{poorly\\_treated,US} = N_{rare,US} + N_{common,US} = 30M + 20M = 50M\n\\\\[0.5em]\n\\text{where } Cost_{chronic,pc} = \\frac{Spending_{chronic,US}}{Pop_{US}} = \\frac{\\$4.1T}{335M} = \\$12.2K\n\\end{gathered}",
+  confidenceInterval: [68555081517.8, 277722351872.0],
+  inputs: ["STATE_RTT_US_PATIENTS_POORLY_TREATED", "PER_CAPITA_CHRONIC_DISEASE_COST", "STATE_RTT_TREATED_COST_REDUCTION_PCT"],
+  computeExpr: "((STATE_RTT_US_PATIENTS_POORLY_TREATED * PER_CAPITA_CHRONIC_DISEASE_COST) * STATE_RTT_TREATED_COST_REDUCTION_PCT)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR: Parameter = {
+  value: 576000.0,
+  parameterName: "STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_inaction_dalys_per_delay_year",
+  unit: "DALYs/year",
+  displayName: "Global DALYs Forfeited per Year of Delay",
+  description: "Permanent annual global benefit forfeited per year the 50-state system is delayed. Each year of delay forgoes the mature system's queue-directed discoveries; each forgone treatment would have served its disease's entire global patient population (about 43,000 patients per rare disease on average) every year thereafter. US patients fund and populate the evaluations; every patient on Earth receives each discovery free of research cost.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_PROVEN_TREATMENTS_ANNUAL × STATE_RTT_EVALUATIONS_QUEUE_SHARE × (RARE_DISEASE_PATIENTS_GLOBAL ÷ RARE_DISEASES_COUNT_GLOBAL) × STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN",
+  latex: "\\begin{gathered}\nDALY_{delay} = N_{proven} \\times s_{queue} \\times \\left(\\frac{N_{rare,global}}{N_{rare}}\\right) \\times \\Delta_{DALY,eff}\n\\\\[0.5em]\n\\text{where } N_{proven} = N_{evals} \\times Rate_{success,curr} = 1{,}120 \\times 10\\% = 112\n\\\\[0.5em]\n\\text{where } N_{evals} = \\frac{N_{RTT}}{n_{eval}} = \\frac{1.12M}{1{,}000} = 1{,}120\n\\\\[0.5em]\n\\text{where } N_{RTT} = N_{poorly\\_treated,US} \\times Pct_{willing} \\times p_{mature} = 50M \\times 44.8\\% \\times 5\\% = 1.12M\n\\\\[0.5em]\n\\text{where } N_{poorly\\_treated,US} = N_{rare,US} + N_{common,US} = 30M + 20M = 50M\n\\\\[0.5em]\n\\text{where } s_{queue} = \\frac{N_{rare,US}}{N_{poorly\\_treated,US}} = \\frac{30M}{50M} = 60\\%\n\\end{gathered}",
+  confidenceInterval: [85099.7806673, 2621516.93792],
+  inputs: ["STATE_RTT_PROVEN_TREATMENTS_ANNUAL", "STATE_RTT_EVALUATIONS_QUEUE_SHARE", "RARE_DISEASE_PATIENTS_GLOBAL", "RARE_DISEASES_COUNT_GLOBAL", "STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN"],
+  computeExpr: "(((STATE_RTT_PROVEN_TREATMENTS_ANNUAL * STATE_RTT_EVALUATIONS_QUEUE_SHARE) * (RARE_DISEASE_PATIENTS_GLOBAL / RARE_DISEASES_COUNT_GLOBAL)) * STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_INACTION_VALUE_PER_DELAY_YEAR: Parameter = {
+  value: 86400000000.0,
+  parameterName: "STATE_RTT_INACTION_VALUE_PER_DELAY_YEAR",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_inaction_value_per_delay_year",
+  unit: "USD/year",
+  displayName: "Economic Value Forfeited per Year of Delay",
+  description: "Economic value of the permanent annual global benefit forfeited per year the 50-state system is delayed, at the standard economic value of a healthy life-year.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR × STANDARD_ECONOMIC_QALY_VALUE_USD",
+  latex: "\\begin{gathered}\nV_{delay} = DALY_{delay} \\times Value_{QALY} = 576{,}000 \\times \\$150K = \\$86.4B\n\\\\[0.5em]\n\\text{where } DALY_{delay} = N_{proven} \\times s_{queue} \\times \\left(\\frac{N_{rare,global}}{N_{rare}}\\right) \\times \\Delta_{DALY,eff}\n\\\\[0.5em]\n\\text{where } N_{proven} = N_{evals} \\times Rate_{success,curr} = 1{,}120 \\times 10\\% = 112\n\\\\[0.5em]\n\\text{where } N_{evals} = \\frac{N_{RTT}}{n_{eval}} = \\frac{1.12M}{1{,}000} = 1{,}120\n\\\\[0.5em]\n\\text{where } N_{RTT} = N_{poorly\\_treated,US} \\times Pct_{willing} \\times p_{mature} = 50M \\times 44.8\\% \\times 5\\% = 1.12M\n\\\\[0.5em]\n\\text{where } N_{poorly\\_treated,US} = N_{rare,US} + N_{common,US} = 30M + 20M = 50M\n\\\\[0.5em]\n\\text{where } s_{queue} = \\frac{N_{rare,US}}{N_{poorly\\_treated,US}} = \\frac{30M}{50M} = 60\\%\n\\end{gathered}",
+  confidenceInterval: [12236024937.8, 390102534636.0],
+  inputs: ["STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR", "STANDARD_ECONOMIC_QALY_VALUE_USD"],
+  computeExpr: "(STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR * STANDARD_ECONOMIC_QALY_VALUE_USD)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_MARKET_PATIENTS_ANNUAL: Parameter = {
+  value: 1120000.0,
+  parameterName: "STATE_RTT_MARKET_PATIENTS_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_market_patients_annual",
+  unit: "patients/year",
+  displayName: "Annual Experimental Treatment Center Patients (50-State)",
+  description: "Annual patients treated at experimental treatment centers under mature 50-state adoption. Derived from: US patients with poorly treated diseases (50M: rare diseases plus dementia, treatment-resistant depression, and similar) x willingness to participate in trials (44.8%, survey data; 88% when actually approached) x mature-market annual penetration (5% of willing patients per year). Patients pay out of pocket; the per-patient research cost is zero.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_US_PATIENTS_POORLY_TREATED × PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT × STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT",
+  latex: "\\begin{gathered}\nN_{RTT} = N_{poorly\\_treated,US} \\times Pct_{willing} \\times p_{mature} = 50M \\times 44.8\\% \\times 5\\% = 1.12M\n\\\\[0.5em]\n\\text{where } N_{poorly\\_treated,US} = N_{rare,US} + N_{common,US} = 30M + 20M = 50M\n\\end{gathered}",
+  confidenceInterval: [295048.529308, 2656524.71351],
+  inputs: ["STATE_RTT_US_PATIENTS_POORLY_TREATED", "PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT", "STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT"],
+  computeExpr: "((STATE_RTT_US_PATIENTS_POORLY_TREATED * PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT) * STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_PHILANTHROPIC_COST_PER_DALY: Parameter = {
+  value: 35.2243031359,
+  parameterName: "STATE_RTT_PHILANTHROPIC_COST_PER_DALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_cost_per_daly",
+  unit: "USD/DALY",
+  displayName: "Philanthropic Cost per DALY (Campaign + Registry)",
+  description: "Philanthropic cost per DALY averted for the combined 49-state campaign and registry. Numerator: one-time campaign cost plus registry operating cost over the philanthropic funding horizon. Denominator: DALYs generated by earlier access over the same period (patients x historical approval rate x DALY gain x efficacy lag years x funding horizon). Treatments fund themselves through patient payment; the philanthropic cost covers only the legal campaign and the shared data infrastructure.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "(STATE_RTT_CAMPAIGN_TOTAL_COST + STATE_RTT_REGISTRY_ANNUAL_COST × STATE_RTT_PHILANTHROPIC_FUNDING_YEARS) ÷ (STATE_RTT_MARKET_PATIENTS_ANNUAL × PHARMA_SUCCESS_RATE_CURRENT_PCT × STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN × EFFICACY_LAG_YEARS × STATE_RTT_PHILANTHROPIC_FUNDING_YEARS)",
+  latex: "\\begin{gathered}\nC_{DALY,phil} = \\frac{C_{campaign} + C_{registry} \\times T_{fund}}{N_{RTT} \\times Rate_{success,curr} \\times \\Delta_{DALY,eff} \\times T_{lag} \\times T_{fund}}\n\\\\[0.5em]\n\\text{where } C_{campaign} = C_{state} \\times N_{states} = \\$300K \\times 49 = \\$14.7M\n\\\\[0.5em]\n\\text{where } N_{RTT} = N_{poorly\\_treated,US} \\times Pct_{willing} \\times p_{mature} = 50M \\times 44.8\\% \\times 5\\% = 1.12M\n\\\\[0.5em]\n\\text{where } N_{poorly\\_treated,US} = N_{rare,US} + N_{common,US} = 30M + 20M = 50M\n\\end{gathered}",
+  confidenceInterval: [9.1599308993, 245.8212996],
+  inputs: ["STATE_RTT_CAMPAIGN_TOTAL_COST", "STATE_RTT_REGISTRY_ANNUAL_COST", "STATE_RTT_PHILANTHROPIC_FUNDING_YEARS", "STATE_RTT_MARKET_PATIENTS_ANNUAL", "PHARMA_SUCCESS_RATE_CURRENT_PCT", "STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN", "EFFICACY_LAG_YEARS"],
+  computeExpr: "((STATE_RTT_CAMPAIGN_TOTAL_COST + (STATE_RTT_REGISTRY_ANNUAL_COST * STATE_RTT_PHILANTHROPIC_FUNDING_YEARS)) / ((((STATE_RTT_MARKET_PATIENTS_ANNUAL * PHARMA_SUCCESS_RATE_CURRENT_PCT) * STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN) * EFFICACY_LAG_YEARS) * STATE_RTT_PHILANTHROPIC_FUNDING_YEARS))",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_PROVEN_TREATMENTS_ANNUAL: Parameter = {
+  value: 112.0,
+  parameterName: "STATE_RTT_PROVEN_TREATMENTS_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_proven_treatments_annual",
+  unit: "treatments/year",
+  displayName: "Treatments Proven Effective Annually (50-State Registry)",
+  description: "Treatments proven effective per year by the pooled 50-state registry: annual treatment evaluations times the historical clinical success rate. For comparison, roughly 15 diseases per year get their first effective treatment under the current worldwide system.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL × PHARMA_SUCCESS_RATE_CURRENT_PCT",
+  latex: "\\begin{gathered}\nN_{proven} = N_{evals} \\times Rate_{success,curr} = 1{,}120 \\times 10\\% = 112\n\\\\[0.5em]\n\\text{where } N_{evals} = \\frac{N_{RTT}}{n_{eval}} = \\frac{1.12M}{1{,}000} = 1{,}120\n\\\\[0.5em]\n\\text{where } N_{RTT} = N_{poorly\\_treated,US} \\times Pct_{willing} \\times p_{mature} = 50M \\times 44.8\\% \\times 5\\% = 1.12M\n\\\\[0.5em]\n\\text{where } N_{poorly\\_treated,US} = N_{rare,US} + N_{common,US} = 30M + 20M = 50M\n\\end{gathered}",
+  confidenceInterval: [23.2522938057, 456.352417946],
+  inputs: ["STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL", "PHARMA_SUCCESS_RATE_CURRENT_PCT"],
+  computeExpr: "(STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL * PHARMA_SUCCESS_RATE_CURRENT_PCT)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_QUEUE_CLEARANCE_YEARS: Parameter = {
+  value: 80.900243309,
+  parameterName: "STATE_RTT_QUEUE_CLEARANCE_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_queue_clearance_years",
+  unit: "years",
+  displayName: "Untreated Disease Queue Clearance (50-State Registry, Unsubsidized)",
+  description: "Years to find first treatments for all currently untreated diseases with the 50-state registry running and no public subsidies. The registry's queue-directed discoveries add to the status quo worldwide rate of ~15 first treatments per year. Same formula structure as the status quo (443 years) and dFDA full-deployment (36 years) estimates.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "DISEASES_WITHOUT_EFFECTIVE_TREATMENT ÷ (NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR + STATE_RTT_PROVEN_TREATMENTS_ANNUAL × STATE_RTT_EVALUATIONS_QUEUE_SHARE)",
+  latex: "\\begin{gathered}\nT_{queue,RTT} = N_{untreated} / (Treatments_{new,ann} + N_{proven} \\times s_{queue})\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } N_{proven} = N_{evals} \\times Rate_{success,curr} = 1{,}120 \\times 10\\% = 112\n\\\\[0.5em]\n\\text{where } N_{evals} = \\frac{N_{RTT}}{n_{eval}} = \\frac{1.12M}{1{,}000} = 1{,}120\n\\\\[0.5em]\n\\text{where } N_{RTT} = N_{poorly\\_treated,US} \\times Pct_{willing} \\times p_{mature} = 50M \\times 44.8\\% \\times 5\\% = 1.12M\n\\\\[0.5em]\n\\text{where } N_{poorly\\_treated,US} = N_{rare,US} + N_{common,US} = 30M + 20M = 50M\n\\\\[0.5em]\n\\text{where } s_{queue} = \\frac{N_{rare,US}}{N_{poorly\\_treated,US}} = \\frac{30M}{50M} = 60\\%\n\\end{gathered}",
+  confidenceInterval: [22.9518583444, 240.007671548],
+  inputs: ["DISEASES_WITHOUT_EFFECTIVE_TREATMENT", "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR", "STATE_RTT_PROVEN_TREATMENTS_ANNUAL", "STATE_RTT_EVALUATIONS_QUEUE_SHARE"],
+  computeExpr: "(DISEASES_WITHOUT_EFFECTIVE_TREATMENT / (NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR + (STATE_RTT_PROVEN_TREATMENTS_ANNUAL * STATE_RTT_EVALUATIONS_QUEUE_SHARE)))",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL: Parameter = {
+  value: 1120.0,
+  parameterName: "STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_evaluations_annual",
+  unit: "evaluations/year",
+  displayName: "Annual Treatment Evaluations (50-State Registry)",
+  description: "Treatment-condition pairs receiving an adequately powered efficacy evaluation per year in the pooled 50-state registry: annual patient volume divided by patients needed per evaluation.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_MARKET_PATIENTS_ANNUAL ÷ STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION",
+  latex: "\\begin{gathered}\nN_{evals} = \\frac{N_{RTT}}{n_{eval}} = \\frac{1.12M}{1{,}000} = 1{,}120\n\\\\[0.5em]\n\\text{where } N_{RTT} = N_{poorly\\_treated,US} \\times Pct_{willing} \\times p_{mature} = 50M \\times 44.8\\% \\times 5\\% = 1.12M\n\\\\[0.5em]\n\\text{where } N_{poorly\\_treated,US} = N_{rare,US} + N_{common,US} = 30M + 20M = 50M\n\\end{gathered}",
+  confidenceInterval: [249.57409652, 4447.70244406],
+  inputs: ["STATE_RTT_MARKET_PATIENTS_ANNUAL", "STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION"],
+  computeExpr: "(STATE_RTT_MARKET_PATIENTS_ANNUAL / STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_US_PATIENTS_POORLY_TREATED: Parameter = {
+  value: 50000000.0,
+  parameterName: "STATE_RTT_US_PATIENTS_POORLY_TREATED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_us_patients_poorly_treated",
+  unit: "patients",
+  displayName: "US Patients with Poorly Treated Diseases",
+  description: "US patients with diseases lacking effective treatment: rare disease patients (30M, NORD) plus poorly treated common diseases (20M: dementia, treatment-resistant depression, refractory cancers, and similar).",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_US_PATIENTS_RARE_UNTREATED + STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED",
+  latex: "\\begin{gathered}\nN_{poorly\\_treated,US} \\\\\n= N_{rare,US} + N_{common,US} \\\\\n= 30M + 20M \\\\\n= 50M\n\\end{gathered}",
+  confidenceInterval: [38618475.7302, 65000000.0],
+  inputs: ["STATE_RTT_US_PATIENTS_RARE_UNTREATED", "STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED"],
+  computeExpr: "(STATE_RTT_US_PATIENTS_RARE_UNTREATED + STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
 export const STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT: Parameter = {
   value: 221.666666667,
   parameterName: "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT",
@@ -14445,6 +14732,140 @@ export const SHIRT_WEARING_FRICTION_COST_USD: Parameter = {
   manualPageTitle: "The Funniest Joke in the Universe",
 };
 
+export const STATE_RTT_CAMPAIGN_COST_PER_STATE: Parameter = {
+  value: 300000.0,
+  parameterName: "STATE_RTT_CAMPAIGN_COST_PER_STATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_campaign_cost_per_state",
+  unit: "USD",
+  displayName: "Campaign Cost per State (Universal Right to Try + Data Amendment)",
+  description: "Assumed all-in cost to pass the universal right-to-try bill plus data amendment in one average state, across however many legislative sessions it takes: bill drafting support, an in-state contract lobbyist, expert testimony, coalition coordination, and grassroots mobilization. Model-bill state campaigns (the original right-to-try wave, marijuana policy reform) typically run in the low-to-mid six figures per state; ballot initiatives cost far more but are not required for legislation that passes with supermajorities.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [100000.0, 1000000.0],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_CAMPAIGN_STATES_REMAINING: Parameter = {
+  value: 49.0,
+  parameterName: "STATE_RTT_CAMPAIGN_STATES_REMAINING",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_campaign_states_remaining",
+  unit: "states",
+  displayName: "States Remaining for Universal Right to Try",
+  description: "States that have not yet enacted a universal right-to-try law with an experimental treatment center framework (all except Montana).",
+  sourceType: "definition",
+  confidence: "high",
+  distribution: "fixed",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN: Parameter = {
+  value: 0.2,
+  parameterName: "STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_effective_treatment_daly_gain",
+  unit: "DALYs",
+  displayName: "Annual DALY Gain per Patient on an Eventually-Effective Treatment",
+  description: "DALYs averted per patient per year of earlier access for a post-Phase-1 treatment that eventually proves effective. Serious untreated chronic disease typically imposes 0.1-0.5 DALYs/year of disability burden; an effective treatment averts part of it.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [0.05, 0.5],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT: Parameter = {
+  value: 0.05,
+  parameterName: "STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_mature_annual_penetration_pct",
+  unit: "percentage",
+  displayName: "Mature Market Annual Penetration Rate",
+  description: "Share of willing patients using an experimental treatment center in a given year once the 50-state market matures. At 5%, 1 in 20 willing patients converts per year, limited by treatment availability for their condition, out-of-pocket affordability, and decision timing. The 1% floor of the confidence interval reproduces a static market with no supply response; for scale, the dFDA companion model contemplates 23.5M subsidized trial patients per year, above this parameter's ceiling.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [0.01, 0.15],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION: Parameter = {
+  value: 1000.0,
+  parameterName: "STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_patients_per_treatment_evaluation",
+  unit: "patients",
+  displayName: "Patients per Treatment-Condition Evaluation",
+  description: "Patients needed for an adequately powered efficacy evaluation of one treatment-condition pair in the pooled registry. Phase 3 pivotal trials typically enroll several hundred to a few thousand patients; rare-disease approvals often rest on under 100. Pragmatic registry designs may need more patients per comparison to detect smaller effects in heterogeneous populations, so 1,000 is a conservative central estimate.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [300.0, 3000.0],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_PHILANTHROPIC_FUNDING_YEARS: Parameter = {
+  value: 10.0,
+  parameterName: "STATE_RTT_PHILANTHROPIC_FUNDING_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_funding_years",
+  unit: "years",
+  displayName: "Philanthropic Registry Funding Horizon",
+  description: "Years of philanthropic funding for the registry before it self-sustains through government appropriation, user fees, or data licensing. The campaign cost is one-time; the registry needs ongoing support until adoption justifies public funding.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [5.0, 20.0],
+  distribution: "uniform",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_REGISTRY_ANNUAL_COST: Parameter = {
+  value: 5000000.0,
+  parameterName: "STATE_RTT_REGISTRY_ANNUAL_COST",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_registry_annual_cost",
+  unit: "USD/year",
+  displayName: "National Outcome Registry Annual Operating Cost",
+  description: "Annual operating cost of the national pooled outcome registry (data platform, quality assurance, statistical analysis, publication, administration). Centers bear their own data collection and reporting costs under licensure requirements; this covers the shared infrastructure that standardizes, pools, and publishes their data.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [2000000.0, 15000000.0],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_TREATED_COST_REDUCTION_PCT: Parameter = {
+  value: 0.25,
+  parameterName: "STATE_RTT_TREATED_COST_REDUCTION_PCT",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treated_cost_reduction_pct",
+  unit: "percentage",
+  displayName: "Cost Reduction When Effectively Treated",
+  description: "Fraction of a poorly treated patient's ongoing healthcare cost erased once an effective treatment for their disease exists. Cures erase most downstream management cost; disease-modifying treatments erase part. Many treatments proven through the registry are off-patent or unpatentable compounds priced near generic levels, so the treatment itself adds little cost back.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [0.1, 0.5],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
+export const STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED: Parameter = {
+  value: 20000000.0,
+  parameterName: "STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_us_patients_common_poorly_treated",
+  unit: "patients",
+  displayName: "US Patients with Poorly Treated Common Diseases",
+  description: "US patients with common diseases whose approved treatments fail them: Alzheimer's and other dementias (~7M, no disease-modifying treatment), treatment-resistant depression (~7M, roughly 30% of diagnosed depression), treatment-resistant epilepsy (~1M), advanced cancers past standard therapy, ALS, Parkinson's, and autoimmune treatment failures. 20M is conservative after overlap with the rare disease count.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [10000000.0, 40000000.0],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal right to try in all 50 states: impact, cost, and adoption plan",
+};
+
 export const TESTED_RELATIONSHIPS_ESTIMATE: Parameter = {
   value: 32500.0,
   parameterName: "TESTED_RELATIONSHIPS_ESTIMATE",
@@ -15247,6 +15668,7 @@ export const parameters = {
   PRE_1962_DRUG_DEVELOPMENT_COST_2024_USD,
   PRE_1962_PHYSICIAN_COUNT,
   RARE_DISEASES_COUNT_GLOBAL,
+  RARE_DISEASE_PATIENTS_GLOBAL,
   RECOVERY_TRIAL_COST_PER_PATIENT,
   RECOVERY_TRIAL_GLOBAL_LIVES_SAVED,
   RECOVERY_TRIAL_TOTAL_COST,
@@ -15263,6 +15685,7 @@ export const parameters = {
   SMOKING_CESSATION_ANNUAL_BENEFIT,
   STANDARD_ECONOMIC_QALY_VALUE_USD,
   STANDARD_QALYS_PER_LIFE_SAVED,
+  STATE_RTT_US_PATIENTS_RARE_UNTREATED,
   SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL,
   SWITZERLAND_DEFENSE_SPENDING_PCT,
   SWITZERLAND_GDP_PER_CAPITA_K,
@@ -15285,6 +15708,7 @@ export const parameters = {
   US_FED_DISCRETIONARY_SPENDING_2024,
   US_GDP_2024,
   US_GOVT_SPENDING_PCT_GDP,
+  US_GOV_HEALTH_SPENDING_SHARE_PCT,
   US_GOV_WASTE_AGRICULTURAL_SUBSIDIES,
   US_GOV_WASTE_CORPORATE_WELFARE,
   US_GOV_WASTE_DRUG_WAR,
@@ -15625,6 +16049,19 @@ export const parameters = {
   SHIRT_PROGRAM_ROI_RATIO,
   SHIRT_SEED_PROGRAM_TOTAL_USD,
   SHIRT_VALUE_PER_WEARER_USD,
+  STATE_RTT_BREAKEVEN_RECOVERY_PER_100K_SPENDING,
+  STATE_RTT_CAMPAIGN_TOTAL_COST,
+  STATE_RTT_EVALUATIONS_QUEUE_SHARE,
+  STATE_RTT_GOV_HEALTHCARE_SAVINGS_ANNUAL_MATURE,
+  STATE_RTT_HEALTHCARE_SAVINGS_ANNUAL_MATURE,
+  STATE_RTT_INACTION_DALYS_PER_DELAY_YEAR,
+  STATE_RTT_INACTION_VALUE_PER_DELAY_YEAR,
+  STATE_RTT_MARKET_PATIENTS_ANNUAL,
+  STATE_RTT_PHILANTHROPIC_COST_PER_DALY,
+  STATE_RTT_PROVEN_TREATMENTS_ANNUAL,
+  STATE_RTT_QUEUE_CLEARANCE_YEARS,
+  STATE_RTT_TREATMENT_EVALUATIONS_ANNUAL,
+  STATE_RTT_US_PATIENTS_POORLY_TREATED,
   STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT,
   STATUS_QUO_QUEUE_CLEARANCE_YEARS,
   THALIDOMIDE_DALYS_PER_EVENT,
@@ -15912,6 +16349,15 @@ export const parameters = {
   SHIRT_SEED_COST_PER_WEARER_USD,
   SHIRT_SEED_WEARERS_THRESHOLD,
   SHIRT_WEARING_FRICTION_COST_USD,
+  STATE_RTT_CAMPAIGN_COST_PER_STATE,
+  STATE_RTT_CAMPAIGN_STATES_REMAINING,
+  STATE_RTT_EFFECTIVE_TREATMENT_DALY_GAIN,
+  STATE_RTT_MATURE_ANNUAL_PENETRATION_PCT,
+  STATE_RTT_PATIENTS_PER_TREATMENT_EVALUATION,
+  STATE_RTT_PHILANTHROPIC_FUNDING_YEARS,
+  STATE_RTT_REGISTRY_ANNUAL_COST,
+  STATE_RTT_TREATED_COST_REDUCTION_PCT,
+  STATE_RTT_US_PATIENTS_COMMON_POORLY_TREATED,
   TESTED_RELATIONSHIPS_ESTIMATE,
   TRANSPARENT_SECURITIES_COMMISSION_ANNUAL_OPEX,
   TREATY_CAMPAIGN_BUDGET_LOBBYING,
@@ -16329,6 +16775,19 @@ export const citations: Record<string, Citation> = {
         'container-title': "Direct analysis via ClinicalTrials.gov API v2",
         URL: "https://clinicaltrials.gov/data-api/api",
         note: "Direct analysis via ClinicalTrials.gov API v2",
+  },
+  "cms-nhe-gov-share-2023": {
+        id: "cms-nhe-gov-share-2023",
+        type: "webpage",
+        title: "National Health Expenditure Data: Historical",
+        author: [
+          {
+            literal: "Centers for Medicare and Medicaid Services"
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        URL: "https://www.cms.gov/data-research/statistics-trends-and-reports/national-health-expenditure-data/historical",
+        note: "In 2023, the federal government accounted for 32% of US national health expenditures and state and local governments for 16%, a combined government share of 48%. Households: 27%, private businesses: 18%.",
   },
   "companiesmarketcap-eu-primes-2026": {
         id: "companiesmarketcap-eu-primes-2026",
@@ -17585,6 +18044,19 @@ export const citations: Record<string, Citation> = {
         ],
         note: "Estimated from major foundation budgets and activities",
   },
+  "nord-rare-disease-30m-us": {
+        id: "nord-rare-disease-30m-us",
+        type: "webpage",
+        title: "More Than 30 Million Americans Living with Rare Diseases",
+        author: [
+          {
+            literal: "National Organization for Rare Disorders"
+          },
+        ],
+        issued: { 'date-parts': [[2026]] },
+        URL: "https://www.prnewswire.com/news-releases/more-than-30-million-americans-living-with-rare-diseases-302694806.html",
+        note: "NORD Rare Disease Day 2026: 1 in 10 Americans. Fewer than 5% of 10,000+ known rare diseases have an approved treatment.",
+  },
   "nordhaus2004": {
         id: "nordhaus2004",
         type: "report",
@@ -18096,6 +18568,20 @@ export const citations: Record<string, Citation> = {
         'container-title': "Orphanet Journal of Rare Diseases (2024)",
         URL: "https://ojrd.biomedcentral.com/articles/10.1186/s13023-024-03398-1",
         note: "Orphanet Journal of Rare Diseases (2024)",
+  },
+  "rare-disease-patients-300m-globally": {
+        id: "rare-disease-patients-300m-globally",
+        type: "article-journal",
+        title: "300 million people with rare diseases globally",
+        author: [
+          {
+            literal: "Rare Diseases International"
+          },
+        ],
+        issued: { 'date-parts': [[2019]] },
+        'container-title': "Rare Diseases International: 300 Million Worldwide",
+        URL: "https://www.rarediseasesinternational.org/new-scientific-paper-confirms-300-million-people-living-with-a-rare-disease-worldwide/",
+        note: "Rare Diseases International: 300 Million Worldwide | ScienceDaily: 300 Million Affected | PMC: Rare Disease Global Priority",
   },
   "recovery-cost-500": {
         id: "recovery-cost-500",
@@ -18775,11 +19261,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 887,
-  external: 254,
-  calculated: 447,
-  definitions: 186,
-  citations: 196,
+  total: 912,
+  external: 257,
+  calculated: 460,
+  definitions: 195,
+  citations: 199,
 } as const;
 
 // ============================================================================

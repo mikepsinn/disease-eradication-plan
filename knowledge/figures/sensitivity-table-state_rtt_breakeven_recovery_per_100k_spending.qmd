@@ -1,0 +1,12 @@
+**Sensitivity Indices for Break-Even Recovery per $100,000 of Chronic Disease Spending**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| National Outcome Registry Annual Operating Cost (USD/year) | 0.9136 | Strong driver |
+| Total 49-State Campaign Cost (USD) | 0.2767 | Weak driver |
+| US Annual Chronic Disease Spending (USD/year) | -0.1956 | Weak driver |
+| Philanthropic Registry Funding Horizon (years) | -0.1588 | Weak driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.
