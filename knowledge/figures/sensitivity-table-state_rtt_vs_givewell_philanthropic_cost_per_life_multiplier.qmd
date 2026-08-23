@@ -1,10 +1,10 @@
-**Sensitivity Indices for Universal State Right to Trial Cost-Effectiveness vs GiveWell Range Midpoint**
+**Sensitivity Indices for Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Universal State Right to Trial Philanthropic Cost per Life Saved (USD/life) | -0.5242 | Strong driver |
+| Universal Right to Try with Evidence Philanthropic Cost per Life Saved (USD/life) | -0.5242 | Strong driver |
 | GiveWell Midpoint of Modeled Cost per Life Saved Range (USD/life) | 0.1464 | Weak driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

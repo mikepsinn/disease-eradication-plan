@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Universal State Right to Trial Cost in FDA Budget Hours"
+display_name = "Universal Right to Try with Evidence Cost in FDA Budget Hours"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 80.69877714566412
 # Tornado data from sensitivity analysis
 
 drivers = ['STATE_RTT_PHILANTHROPIC_COST_TOTAL']
-driver_labels = ['Universal State Right to Trial Philanthropic Cost']
+driver_labels = ['Universal Right to Try with Evidence Philanthropic Cost']
 impacts_low = [-49.66078593579331]
 impacts_high = [167.60515253330243]
 

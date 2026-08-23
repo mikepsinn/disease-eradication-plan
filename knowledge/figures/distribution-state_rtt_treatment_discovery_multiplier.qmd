@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Universal State Right to Trial Treatment Discovery Multiplier"
+#| fig-cap: "Probability Distribution: Universal Right to Try with Evidence Treatment Discovery Multiplier"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +21,7 @@ central_value = 5.48
 low = 1.1
 high = 15.0
 dist_type = "lognormal"
-display_name = "Universal State Right to Trial Treatment Discovery Multiplier"
+display_name = "Universal Right to Try with Evidence Treatment Discovery Multiplier"
 unit = "x"
 
 # Calculate distribution parameters

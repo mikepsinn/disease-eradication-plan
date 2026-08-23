@@ -1,5 +1,5 @@
 ---
-title: "Universal Right to Trial in All 50 States: Potential Impact and Cost"
+title: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
 description: "A conditional schedule-shift model of state legislation that lets post-Phase-1 treatments finance their own evidence generation and accelerates treatments for global diseases and aging."
 published: true
 tags:
@@ -24,7 +24,7 @@ do: "Fund, sponsor, operate, use, or finance interoperable access-plus-data legi
 
 ## Summary
 
-Universal [Right to Trial](../solution/dfda.qmd) [@right-to-trial-paper-2025] would create licensed centers where patients can pay for treatment-related care while eligible participants enroll in standardized, pooled pragmatic trials. Patient and payer revenue can cover treatment delivery, trial-site services, and permitted study costs. Treatments abandoned because nobody can profitably finance conventional Phase 2 and Phase 3 trials become testable.
+[Universal Right to Try with Evidence](../solution/dfda.qmd) [@right-to-trial-paper-2025] would create licensed centers where patients can pay for treatment-related care while eligible participants enroll in standardized, pooled pragmatic trials. Patient and payer revenue can cover treatment delivery, trial-site services, and permitted study costs. Treatments abandoned because nobody can profitably finance conventional Phase 2 and Phase 3 trials become testable.
 
 If all 50 states adopt, the central model estimates:
 
@@ -73,7 +73,7 @@ The flywheel is a map of possible cash flows, not a promise of investor returns.
 
 This does not give a state registry the power to approve drugs or lower the federal evidence standard. It changes where and how effectiveness evidence is produced.
 
-Right to Trial and federal Right to Try are not the same legal pathway. Federal Right to Try is limited to eligible patients who are unable to participate in a clinical trial involving the drug [@fda-right-to-try-eligibility]. A patient enrolled in an interventional pragmatic trial must instead be treated under an active investigational new drug application or another applicable FDA-authorized pathway. Patients who cannot join the trial may still contribute separately labeled observational outcomes through federal Right to Try or expanded access if eligible. The state bill supplies centers, consent, comparison, and shared data rules. It does not waive federal trial authorization or Right to Try eligibility.
+Universal Right to Try with Evidence and federal Right to Try are not the same legal pathway. Federal Right to Try is limited to eligible patients who are unable to participate in a clinical trial involving the drug [@fda-right-to-try-eligibility]. A patient enrolled in an interventional pragmatic trial must instead be treated under an active investigational new drug application or another applicable FDA-authorized pathway. Patients who cannot join the trial may still contribute separately labeled observational outcomes through federal Right to Try or expanded access if eligible. The state bill supplies centers, consent, comparison, and shared data rules. It does not waive federal trial authorization or Right to Try eligibility.
 
 FDA's statutory standard remains substantial evidence from adequate and well-controlled investigations. Its June 2026 draft guidance explains that one rigorous investigation plus confirmatory evidence can sometimes satisfy that standard, while approval still requires sufficient safety evidence and a favorable benefit-risk assessment [@fda-substantial-evidence-guidance-2026]. FDA also supports streamlined randomized trials integrated into routine clinical practice [@fda-routine-practice-rct-guidance-2024]. Project Pragmatica applies the same design logic to approved oncology products through simpler eligibility, routine-practice enrollment, and reduced data-collection burden while maintaining safety and data integrity [@fda-project-pragmatica-2025]. It is an example of pragmatic design, not precedent for bypassing authorization of an unapproved drug.
 
@@ -81,7 +81,7 @@ A pragmatic randomized trial is still a randomized controlled trial. It keeps a 
 
 Federal charging rules remain in force. An IND sponsor needs FDA authorization to charge for the investigational drug and generally may recover only direct drug costs. FDA separately states that trial sites may recover pharmacy, nursing, equipment, and study-related procedure costs without charging authorization under that rule [@fda-charging-investigational-drugs-2024]. The model therefore assumes patient or payer revenue covers treatment delivery, site services, and permitted study costs, while center assessments sustain the common registry. It does not assume that states can finance research through unrestricted profits on the investigational drug. Whether lawful revenue is sufficient to sustain the modeled system is part of the uncertain discovery multiplier.
 
-Medicare already uses the analogous payment principle in Coverage with Evidence Development: specified services may be covered only within an approved study while additional evidence is collected, then CMS can reconsider coverage using the resulting evidence [@cms-coverage-evidence-development-2024]. Universal Right to Trial is access with evidence development, financed primarily by patients and participating centers rather than Medicare. The [Continuous Evidence Generation Protocol](dfda-spec-paper.qmd#stage-2-pragmatic-trial-confirmation) [@dfda-spec-paper-2025] provides the fuller technical design.
+Medicare already uses the analogous payment principle in Coverage with Evidence Development: specified services may be covered only within an approved study while additional evidence is collected, then CMS can reconsider coverage using the resulting evidence [@cms-coverage-evidence-development-2024]. Universal Right to Try with Evidence is access with evidence development, financed primarily by patients and participating centers rather than Medicare. The [Continuous Evidence Generation Protocol](dfda-spec-paper.qmd#stage-2-pragmatic-trial-confirmation) [@dfda-spec-paper-2025] provides the fuller technical design.
 
 The original Right to Try model spread from its first state in 2014 to 41 states by 2018 [@goldwater-rtt-41-states-2018]. That establishes a distribution channel. It does not prove that this broader access-plus-data bill will spread at the same speed.
 
@@ -127,7 +127,7 @@ The discovery multiplier is conditional on full adoption and a mature operating 
 
 Conditional cost per DALY is campaign plus registry-launch cost divided by the health benefit if the 50-state system operates at the modeled discovery rate. It excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs because those payments buy care and evidence generation rather than consuming the philanthropic budget.
 
-At the central estimate, universal Right to Trial's modeled philanthropic cost per life saved is {{< var state_rtt_philanthropic_cost_per_life_saved >}}, which is {{< var state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier_nounit >}} times lower than the midpoint of GiveWell's cited modeled range across top charities [@givewell-cost-per-life-saved]. This is not because legislation cures people by itself. It is because a relatively small campaign and shared registry are modeled to unlock treatment, sponsor, payer, clinic, and investor spending that philanthropists do not have to supply.
+At the central estimate, Universal Right to Try with Evidence's modeled philanthropic cost per life saved is {{< var state_rtt_philanthropic_cost_per_life_saved >}}, which is {{< var state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier_nounit >}} times lower than the midpoint of GiveWell's cited modeled range across top charities [@givewell-cost-per-life-saved]. This is not because legislation cures people by itself. It is because a relatively small campaign and shared registry are modeled to unlock treatment, sponsor, payer, clinic, and investor spending that philanthropists do not have to supply.
 
 {{< include ../figures/state-rtt-philanthropic-leverage-comparison.qmd >}}
 
@@ -168,7 +168,7 @@ The {{< var state_rtt_treatment_acceleration_lives_saved >}} figure exceeds the 
 
 The {{< var state_rtt_treatment_acceleration_suffering_hours >}} figure means disability-weighted equivalent hours. A disability weight of 0.25 sustained for four hours equals one full-disability-equivalent hour. It does not mean the person consciously experienced maximum pain for one hour.
 
-The global result assumes discoveries become public knowledge and eventually benefit patients outside the United States. The access right itself remains state law. State legislation also does not override federal FDA authority. The durable federal version is the [Right to Trial and FDA Upgrade Act](right-to-trial-fda-upgrade-act.qmd).
+The global result assumes discoveries become public knowledge and eventually benefit patients outside the United States. The access right itself remains state law. State legislation also does not override federal FDA authority. The durable federal version is the [Right to Trial and FDA Upgrade Act](right-to-trial-fda-upgrade-act.qmd) [@right-to-trial-paper-2025].
 
 ## Who should feel what and do what
 

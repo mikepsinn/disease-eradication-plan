@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Average Treatment Acceleration from Universal State Right to Trial (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Average Treatment Acceleration from Universal Right to Try with Evidence (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 77.8424444199
 p5 = 79.0533772556
 p50 = 175.92879452
 p95 = 332.378845812
-display_name = "Average Treatment Acceleration from Universal State Right to Trial"
+display_name = "Average Treatment Acceleration from Universal Right to Try with Evidence"
 units = "years"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Average Treatment Acceleration from Universal State Right to Trial**
+**Simulation Results Summary: Average Treatment Acceleration from Universal Right to Try with Evidence**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 77.8 |
 | 90% Range (5th-95th percentile) | [79.1, 332] |
 
-*The histogram shows the distribution of Average Treatment Acceleration from Universal State Right to Trial across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Average Treatment Acceleration from Universal Right to Try with Evidence across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "DALYs Averted from Universal State Right to Trial"
+display_name = "DALYs Averted from Universal Right to Try with Evidence"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 483427910011.47754
 # Tornado data from sensitivity analysis
 
 drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'RARE_DISEASES_COUNT_GLOBAL', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'GLOBAL_ANNUAL_DALY_BURDEN']
-driver_labels = ['Diseases Getting First Treatment Per Year', 'Universal State Right to Trial Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable DALY Percentage', 'Global Annual DALY Burden']
+driver_labels = ['Diseases Getting First Treatment Per Year', 'Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable DALY Percentage', 'Global Annual DALY Burden']
 impacts_low = [422999421260.0427, -429670098589.74664, -69061130001.63971, -222476085193.9593, -25178536979.764404]
 impacts_high = [-241713955005.73877, 68485620584.95935, 207183390004.91895, 28037666630.858215, 25178536979.764465]
 

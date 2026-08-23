@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: DALYs Averted from Universal State Right to Trial (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: DALYs Averted from Universal Right to Try with Evidence (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 217444090391.0
 p5 = 194576226838.0
 p50 = 462479407866.0
 p95 = 906801269448.0
-display_name = "DALYs Averted from Universal State Right to Trial"
+display_name = "DALYs Averted from Universal Right to Try with Evidence"
 units = "DALYs"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: DALYs Averted from Universal State Right to Trial**
+**Simulation Results Summary: DALYs Averted from Universal Right to Try with Evidence**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 217 billion |
 | 90% Range (5th-95th percentile) | [195 billion, 907 billion] |
 
-*The histogram shows the distribution of DALYs Averted from Universal State Right to Trial across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of DALYs Averted from Universal Right to Try with Evidence across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

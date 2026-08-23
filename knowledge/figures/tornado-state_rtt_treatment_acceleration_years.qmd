@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Average Treatment Acceleration from Universal State Right to Trial"
+display_name = "Average Treatment Acceleration from Universal Right to Try with Evidence"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 181.21654501216545
 # Tornado data from sensitivity analysis
 
 drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'RARE_DISEASES_COUNT_GLOBAL']
-driver_labels = ['Diseases Getting First Treatment Per Year', 'Universal State Right to Trial Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally']
+driver_labels = ['Diseases Getting First Treatment Per Year', 'Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally']
 impacts_low = [158.56447688564475, -161.0650298606503, -25.88807785888079]
 impacts_high = [-90.60827250608273, 25.67234387672343, 77.66423357664235]
 

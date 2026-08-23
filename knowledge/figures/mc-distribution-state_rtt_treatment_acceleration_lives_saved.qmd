@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Lives Saved from Universal State Right to Trial (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Lives Saved from Universal Right to Try with Evidence (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 4131542039.14
 p5 = 3712771172.52
 p50 = 8820964597.63
 p95 = 17234802793.1
-display_name = "Lives Saved from Universal State Right to Trial"
+display_name = "Lives Saved from Universal Right to Try with Evidence"
 units = "deaths"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Lives Saved from Universal State Right to Trial**
+**Simulation Results Summary: Lives Saved from Universal Right to Try with Evidence**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 4.13 billion |
 | 90% Range (5th-95th percentile) | [3.71 billion, 17.2 billion] |
 
-*The histogram shows the distribution of Lives Saved from Universal State Right to Trial across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Lives Saved from Universal Right to Try with Evidence across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

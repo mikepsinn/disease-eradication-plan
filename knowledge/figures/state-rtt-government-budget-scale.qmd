@@ -70,7 +70,7 @@ output_path = get_figure_output_path("state-rtt-government-budget-scale.png")
 plt.savefig(output_path, dpi=200, bbox_inches="tight", facecolor=COLOR_WHITE)
 add_png_metadata(
     output_path,
-    title="Universal Right to Trial Federal Budget Scale",
+    title="Universal Right to Try with Evidence Federal Budget Scale",
     description=f"Hours of selected annual federal budgets equal to the modeled {launch_cost} launch cost.",
 )
 plt.show()

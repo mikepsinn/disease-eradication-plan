@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Lives Saved from Universal State Right to Trial"
+display_name = "Lives Saved from Universal Right to Try with Evidence"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 9190165997.614027
 # Tornado data from sensitivity analysis
 
 drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'RARE_DISEASES_COUNT_GLOBAL', 'EVENTUALLY_AVOIDABLE_DEATH_PCT', 'GLOBAL_DISEASE_DEATHS_DAILY']
-driver_labels = ['Diseases Getting First Treatment Per Year', 'Universal State Right to Trial Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable Death Percentage', 'Global Daily Deaths from Disease and Aging']
+driver_labels = ['Diseases Getting First Treatment Per Year', 'Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable Death Percentage', 'Global Daily Deaths from Disease and Aging']
 impacts_low = [8041395247.9122715, -8168207603.39883, -1312880856.8020039, -4229363077.9059973, -459508299.880703]
 impacts_high = [-4595082998.8070135, 1301940182.9953213, 3938642570.4060116, 533007725.01371, 459508299.88070107]
 

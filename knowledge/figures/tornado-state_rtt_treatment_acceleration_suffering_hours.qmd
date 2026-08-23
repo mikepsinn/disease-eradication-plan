@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Disability-Equivalent Suffering Hours Prevented by Universal State Right to Trial"
+display_name = "Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 1651583111763212.0
 # Tornado data from sensitivity analysis
 
 drivers = ['NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'RARE_DISEASES_COUNT_GLOBAL', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'GLOBAL_YLD_PROPORTION_OF_DALYS', 'GLOBAL_ANNUAL_DALY_BURDEN']
-driver_labels = ['Diseases Getting First Treatment Per Year', 'Universal State Right to Trial Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable DALY Percentage', 'YLD Proportion of Total DALYs', 'Global Annual DALY Burden']
+driver_labels = ['Diseases Getting First Treatment Per Year', 'Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable DALY Percentage', 'YLD Proportion of Total DALYs', 'Global Annual DALY Burden']
 impacts_low = [1445135222792810.0, -1467924924822010.8, -235940444537602.0, -760067297456642.6, -127044854751016.5, -86019953737667.25]
 impacts_high = [-825791555881606.0, 233974274166455.0, 707821333612805.0, 95787884277664.0, 127044854751016.25, 86019953737667.25]
 

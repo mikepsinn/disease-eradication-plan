@@ -1041,7 +1041,7 @@ export const FDA_ANNUAL_PROGRAM_BUDGET: Parameter = {
   confidence: "high",
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const FDA_APPROVED_PRODUCTS_COUNT: Parameter = {
@@ -9812,8 +9812,8 @@ export const STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS: Parameter = {
   parameterName: "STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_fda_budget_equivalent_hours",
   unit: "hours",
-  displayName: "Universal State Right to Trial Cost in FDA Budget Hours",
-  description: "Hours of the FDA annual program budget equal to the full central philanthropic launch cost for universal state Right to Trial. This is a scale comparison, not a claim about FDA cost-effectiveness.",
+  displayName: "Universal Right to Try with Evidence Cost in FDA Budget Hours",
+  description: "Hours of the FDA annual program budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ FDA_ANNUAL_PROGRAM_BUDGET × 8,760",
@@ -9822,7 +9822,7 @@ export const STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS: Parameter = {
   inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "FDA_ANNUAL_PROGRAM_BUDGET"],
   computeExpr: "((STATE_RTT_PHILANTHROPIC_COST_TOTAL / FDA_ANNUAL_PROGRAM_BUDGET) * 8760.0)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS: Parameter = {
@@ -9830,8 +9830,8 @@ export const STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS: Parameter = {
   parameterName: "STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_nih_budget_equivalent_hours",
   unit: "hours",
-  displayName: "Universal State Right to Trial Cost in NIH Budget Hours",
-  description: "Hours of the NIH annual budget equal to the full central philanthropic launch cost for universal state Right to Trial. This is a scale comparison, not a claim about NIH cost-effectiveness.",
+  displayName: "Universal Right to Try with Evidence Cost in NIH Budget Hours",
+  description: "Hours of the NIH annual budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ NIH_ANNUAL_BUDGET × 8,760",
@@ -9840,7 +9840,7 @@ export const STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS: Parameter = {
   inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "NIH_ANNUAL_BUDGET"],
   computeExpr: "((STATE_RTT_PHILANTHROPIC_COST_TOTAL / NIH_ANNUAL_BUDGET) * 8760.0)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_PHILANTHROPIC_COST_PER_DALY: Parameter = {
@@ -9848,7 +9848,7 @@ export const STATE_RTT_PHILANTHROPIC_COST_PER_DALY: Parameter = {
   parameterName: "STATE_RTT_PHILANTHROPIC_COST_PER_DALY",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_cost_per_daly",
   unit: "USD/DALY",
-  displayName: "Universal State Right to Trial Philanthropic Cost per DALY",
+  displayName: "Universal Right to Try with Evidence Philanthropic Cost per DALY",
   description: "Conditional philanthropic cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.",
   sourceType: "calculated",
   confidence: "low",
@@ -9858,7 +9858,7 @@ export const STATE_RTT_PHILANTHROPIC_COST_PER_DALY: Parameter = {
   inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_DALYS"],
   computeExpr: "(STATE_RTT_PHILANTHROPIC_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_DALYS)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED: Parameter = {
@@ -9866,7 +9866,7 @@ export const STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED: Parameter = {
   parameterName: "STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_cost_per_life_saved",
   unit: "USD/life",
-  displayName: "Universal State Right to Trial Philanthropic Cost per Life Saved",
+  displayName: "Universal Right to Try with Evidence Philanthropic Cost per Life Saved",
   description: "Conditional philanthropic cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
   sourceType: "calculated",
   confidence: "low",
@@ -9876,7 +9876,7 @@ export const STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED: Parameter = {
   inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"],
   computeExpr: "(STATE_RTT_PHILANTHROPIC_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_TREATMENT_ACCELERATION_DALYS: Parameter = {
@@ -9884,7 +9884,7 @@ export const STATE_RTT_TREATMENT_ACCELERATION_DALYS: Parameter = {
   parameterName: "STATE_RTT_TREATMENT_ACCELERATION_DALYS",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_acceleration_dalys",
   unit: "DALYs",
-  displayName: "DALYs Averted from Universal State Right to Trial",
+  displayName: "DALYs Averted from Universal Right to Try with Evidence",
   description: "Conditional lifetime DALYs averted by shifting the global treatment-discovery schedule forward. By design, this applies the therapeutic-discovery timeline proxy to the eventually avoidable burden of all global diseases and aging-related degeneration. It is a schedule-shift calculation across future generations, not an observed epidemiological forecast.",
   sourceType: "calculated",
   confidence: "low",
@@ -9894,7 +9894,7 @@ export const STATE_RTT_TREATMENT_ACCELERATION_DALYS: Parameter = {
   inputs: ["GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
   computeExpr: "((GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED: Parameter = {
@@ -9902,7 +9902,7 @@ export const STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED: Parameter = {
   parameterName: "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_acceleration_lives_saved",
   unit: "deaths",
-  displayName: "Lives Saved from Universal State Right to Trial",
+  displayName: "Lives Saved from Universal Right to Try with Evidence",
   description: "Conditional cumulative premature deaths from global diseases and aging prevented across future generations by shifting the treatment-discovery schedule forward. The total can exceed the current population because it sums deaths prevented over the full acceleration period.",
   sourceType: "calculated",
   confidence: "low",
@@ -9912,7 +9912,7 @@ export const STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED: Parameter = {
   inputs: ["GLOBAL_DISEASE_DEATHS_DAILY", "EVENTUALLY_AVOIDABLE_DEATH_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
   computeExpr: "(((GLOBAL_DISEASE_DEATHS_DAILY * 365.0) * EVENTUALLY_AVOIDABLE_DEATH_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS: Parameter = {
@@ -9920,7 +9920,7 @@ export const STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS: Parameter = {
   parameterName: "STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_acceleration_suffering_hours",
   unit: "hours",
-  displayName: "Disability-Equivalent Suffering Hours Prevented by Universal State Right to Trial",
+  displayName: "Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence",
   description: "Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.",
   sourceType: "calculated",
   confidence: "low",
@@ -9930,7 +9930,7 @@ export const STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS: Parameter = {
   inputs: ["STATE_RTT_TREATMENT_ACCELERATION_DALYS", "GLOBAL_YLD_PROPORTION_OF_DALYS"],
   computeExpr: "((STATE_RTT_TREATMENT_ACCELERATION_DALYS * GLOBAL_YLD_PROPORTION_OF_DALYS) * 8760.0)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_TREATMENT_ACCELERATION_YEARS: Parameter = {
@@ -9938,8 +9938,8 @@ export const STATE_RTT_TREATMENT_ACCELERATION_YEARS: Parameter = {
   parameterName: "STATE_RTT_TREATMENT_ACCELERATION_YEARS",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_acceleration_years",
   unit: "years",
-  displayName: "Average Treatment Acceleration from Universal State Right to Trial",
-  description: "Average years earlier the first effective treatment arrives across the global therapeutic frontier under universal state Right to Trial. Uses the same schedule-shift structure as the 1% Treaty impact model: the status quo discovery timeline multiplied by one minus the inverse treatment-discovery multiplier.",
+  displayName: "Average Treatment Acceleration from Universal Right to Try with Evidence",
+  description: "Average years earlier the first effective treatment arrives across the global therapeutic frontier after all 50 states adopt Universal Right to Try with Evidence. Uses the same schedule-shift structure as the 1% Treaty impact model: the status quo discovery timeline multiplied by one minus the inverse treatment-discovery multiplier.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)",
@@ -9948,7 +9948,7 @@ export const STATE_RTT_TREATMENT_ACCELERATION_YEARS: Parameter = {
   inputs: ["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"],
   computeExpr: "(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT * (1.0 - (1.0 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)))",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS: Parameter = {
@@ -9956,8 +9956,8 @@ export const STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS: Parameter = {
   parameterName: "STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_us_military_overspend_equivalent_hours",
   unit: "hours",
-  displayName: "Universal State Right to Trial Cost in US Military Overspend Hours",
-  description: "Hours of estimated annual US military spending above the first-principles homeland-defense baseline equal to the full central philanthropic launch cost for universal state Right to Trial.",
+  displayName: "Universal Right to Try with Evidence Cost in US Military Overspend Hours",
+  description: "Hours of estimated annual US military spending above the first-principles homeland-defense baseline equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ US_GOV_WASTE_MILITARY_OVERSPEND × 8,760",
@@ -9966,7 +9966,7 @@ export const STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS: Parameter = {
   inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "US_GOV_WASTE_MILITARY_OVERSPEND"],
   computeExpr: "((STATE_RTT_PHILANTHROPIC_COST_TOTAL / US_GOV_WASTE_MILITARY_OVERSPEND) * 8760.0)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER: Parameter = {
@@ -9974,8 +9974,8 @@ export const STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER: Param
   parameterName: "STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier",
   unit: "x",
-  displayName: "Universal State Right to Trial Cost-Effectiveness vs GiveWell Range Midpoint",
-  description: "Conditional philanthropic cost-effectiveness of universal state Right to Trial relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+  displayName: "Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint",
+  description: "Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
   sourceType: "calculated",
   confidence: "low",
   formula: "GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED",
@@ -9984,7 +9984,7 @@ export const STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER: Param
   inputs: ["GIVEWELL_COST_PER_LIFE_AVG", "STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED"],
   computeExpr: "(GIVEWELL_COST_PER_LIFE_AVG / STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT: Parameter = {
@@ -14648,14 +14648,14 @@ export const STATE_RTT_PHILANTHROPIC_COST_TOTAL: Parameter = {
   parameterName: "STATE_RTT_PHILANTHROPIC_COST_TOTAL",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_cost_total",
   unit: "USD",
-  displayName: "Universal State Right to Trial Philanthropic Cost",
-  description: "Total philanthropic cost of universal state Right to Trial: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This philanthropic numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.",
+  displayName: "Universal Right to Try with Evidence Philanthropic Cost",
+  description: "Total philanthropic cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This philanthropic numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.",
   sourceType: "definition",
   confidence: "low",
   confidenceInterval: [25000000.0, 200000000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER: Parameter = {
@@ -14663,14 +14663,14 @@ export const STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER: Parameter = {
   parameterName: "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_discovery_multiplier",
   unit: "x",
-  displayName: "Universal State Right to Trial Treatment Discovery Multiplier",
+  displayName: "Universal Right to Try with Evidence Treatment Discovery Multiplier",
   description: "Conditional multiplier on the worldwide first-treatment discovery rate after all 50 states adopt and a mature pooled pragmatic-trial system operates under applicable federal authorization. The 5.48x central calibration reproduces the prior model's 82.2 versus 15 first treatments per year; it is an assumption, not an observed effect estimate. This single input incorporates patient or payer funding of treatment delivery, trial-site services, and permitted study costs, newly viable post-Phase-1 treatment-condition pairs, evaluable protocol quality, candidate supply, and scientific success. Its range describes productivity of an operating system, not the separate probability that advocacy achieves full adoption and implementation.",
   sourceType: "definition",
   confidence: "low",
   confidenceInterval: [1.1, 15.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
 
 export const TESTED_RELATIONSHIPS_ESTIMATE: Parameter = {

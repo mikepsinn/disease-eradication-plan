@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Universal State Right to Trial Cost in FDA Budget Hours (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Universal Right to Try with Evidence Cost in FDA Budget Hours (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 49.9638622462
 p5 = 31.0379912099
 p50 = 66.6577064871
 p95 = 189.634213444
-display_name = "Universal State Right to Trial Cost in FDA Budget Hours"
+display_name = "Universal Right to Try with Evidence Cost in FDA Budget Hours"
 units = "hours"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Universal State Right to Trial Cost in FDA Budget Hours**
+**Simulation Results Summary: Universal Right to Try with Evidence Cost in FDA Budget Hours**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 50 |
 | 90% Range (5th-95th percentile) | [31, 190] |
 
-*The histogram shows the distribution of Universal State Right to Trial Cost in FDA Budget Hours across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Universal Right to Try with Evidence Cost in FDA Budget Hours across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

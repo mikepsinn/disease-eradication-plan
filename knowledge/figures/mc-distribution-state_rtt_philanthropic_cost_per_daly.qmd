@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Universal State Right to Trial Philanthropic Cost per DALY (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Universal Right to Try with Evidence Philanthropic Cost per DALY (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 0.000191857755022
 p5 = 4.01449034938e-05
 p50 = 0.000119336768886
 p95 = 0.000447566436092
-display_name = "Universal State Right to Trial Philanthropic Cost per DALY"
+display_name = "Universal Right to Try with Evidence Philanthropic Cost per DALY"
 units = "USD/DALY"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Universal State Right to Trial Philanthropic Cost per DALY**
+**Simulation Results Summary: Universal Right to Try with Evidence Philanthropic Cost per DALY**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | $0.000192 |
 | 90% Range (5th-95th percentile) | [$4.01e-05, $0.000448] |
 
-*The histogram shows the distribution of Universal State Right to Trial Philanthropic Cost per DALY across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Universal Right to Try with Evidence Philanthropic Cost per DALY across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

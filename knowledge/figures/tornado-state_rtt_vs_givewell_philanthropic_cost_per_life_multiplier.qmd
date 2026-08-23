@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Universal State Right to Trial Cost-Effectiveness vs GiveWell Range Midpoint"
+display_name = "Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 636242.2613732788
 # Tornado data from sensitivity analysis
 
 drivers = ['STATE_RTT_PHILANTHROPIC_COST_TOTAL', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'RARE_DISEASES_COUNT_GLOBAL', 'EVENTUALLY_AVOIDABLE_DEATH_PCT', 'GIVEWELL_COST_PER_LIFE_AVG', 'GLOBAL_DISEASE_DEATHS_DAILY']
-driver_labels = ['Universal State Right to Trial Philanthropic Cost', 'Diseases Getting First Treatment Per Year', 'Universal State Right to Trial Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable Death Percentage', 'GiveWell Midpoint of Modeled Cost per Life Saved Range', 'Global Daily Deaths from Disease and Aging']
+driver_labels = ['Universal Right to Try with Evidence Philanthropic Cost', 'Diseases Getting First Treatment Per Year', 'Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable Death Percentage', 'GiveWell Midpoint of Modeled Cost per Life Saved Range', 'Global Daily Deaths from Disease and Aging']
 impacts_low = [1017987.6181972461, 556711.9787016188, -565491.2956199191, -90891.75162475416, -292802.05923964595, -141387.16919406195, -31812.113068664097]
 impacts_high = [-429463.52642696316, -318121.1306866394, 90134.32036121457, 272675.25487426226, 36900.534808641416, 141387.169194062, 31812.113068663864]
 

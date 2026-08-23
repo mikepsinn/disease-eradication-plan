@@ -1,10 +1,10 @@
-**Sensitivity Indices for Lives Saved from Universal State Right to Trial**
+**Sensitivity Indices for Lives Saved from Universal Right to Try with Evidence**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Average Treatment Acceleration from Universal State Right to Trial (years) | 0.9436 | Strong driver |
+| Average Treatment Acceleration from Universal Right to Try with Evidence (years) | 0.9436 | Strong driver |
 | Eventually Avoidable Death Percentage (percentage) | 0.2710 | Weak driver |
 | Global Daily Deaths from Disease and Aging (deaths/day) | 0.1115 | Weak driver |
 

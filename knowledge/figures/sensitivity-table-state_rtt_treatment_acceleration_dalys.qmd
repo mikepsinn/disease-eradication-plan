@@ -1,10 +1,10 @@
-**Sensitivity Indices for DALYs Averted from Universal State Right to Trial**
+**Sensitivity Indices for DALYs Averted from Universal Right to Try with Evidence**
 
 Regression-based sensitivity showing which inputs explain the most variance in the output.
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Average Treatment Acceleration from Universal State Right to Trial (years) | 0.9488 | Strong driver |
+| Average Treatment Acceleration from Universal Right to Try with Evidence (years) | 0.9488 | Strong driver |
 | Eventually Avoidable DALY Percentage (percentage) | 0.2682 | Weak driver |
 | Global Annual DALY Burden (DALYs/year) | 0.1167 | Weak driver |
 

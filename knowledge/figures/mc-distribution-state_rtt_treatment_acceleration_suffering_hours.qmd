@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Disability-Equivalent Suffering Hours Prevented by Universal State Right to Trial (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,7 +23,7 @@ std = 756033013291000.0
 p5 = 658973595488000.0
 p50 = 1573421011380000.0
 p95 = 3136447274920000.0
-display_name = "Disability-Equivalent Suffering Hours Prevented by Universal State Right to Trial"
+display_name = "Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence"
 units = "hours"
 
 # Create figure with two subplots
@@ -113,7 +113,7 @@ add_png_metadata(
 plt.show()
 ```
 
-**Simulation Results Summary: Disability-Equivalent Suffering Hours Prevented by Universal State Right to Trial**
+**Simulation Results Summary: Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence**
 
 | Statistic | Value |
 |:----------|------:|
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 756 trillion |
 | 90% Range (5th-95th percentile) | [659 trillion, 3.14 quadrillion] |
 
-*The histogram shows the distribution of Disability-Equivalent Suffering Hours Prevented by Universal State Right to Trial across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows the distribution of Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

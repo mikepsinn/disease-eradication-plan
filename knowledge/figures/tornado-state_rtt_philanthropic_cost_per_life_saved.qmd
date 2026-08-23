@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Universal State Right to Trial Philanthropic Cost per Life Saved"
+display_name = "Universal Right to Try with Evidence Philanthropic Cost per Life Saved"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 0.0070727775773446805
 # Tornado data from sensitivity analysis
 
 drivers = ['STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'STATE_RTT_PHILANTHROPIC_COST_TOTAL', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'EVENTUALLY_AVOIDABLE_DEATH_PCT', 'RARE_DISEASES_COUNT_GLOBAL', 'GLOBAL_DISEASE_DEATHS_DAILY']
-driver_labels = ['Universal State Right to Trial Treatment Discovery Multiplier', 'Universal State Right to Trial Philanthropic Cost', 'Diseases Getting First Treatment Per Year', 'Eventually Avoidable Death Percentage', 'Total Number of Rare Diseases Globally', 'Global Daily Deaths from Disease and Aging']
+driver_labels = ['Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Universal Right to Try with Evidence Philanthropic Cost', 'Diseases Getting First Treatment Per Year', 'Eventually Avoidable Death Percentage', 'Total Number of Rare Diseases Globally', 'Global Daily Deaths from Disease and Aging']
 impacts_low = [0.05653059450505419, -0.004352478509135188, -0.0033006295360941836, 0.006029940077850056, 0.0011787962628907805, 0.0003722514514391956]
 impacts_high = [-0.0008776439329551793, 0.014689614968331259, 0.0070727775773446805, -0.00038771754918409933, -0.0021218332732034035, -0.0003367989322545081]
 
