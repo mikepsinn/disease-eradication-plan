@@ -1,5 +1,10 @@
+import io
 import sys
 from pathlib import Path
+
+
+if sys.platform == "win32" and isinstance(sys.stdout, io.TextIOWrapper):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
