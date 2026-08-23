@@ -1,27 +1,20 @@
 ---
 title: 'The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding'
 subtitle: Generating Integrated Public Budget Recommendations Using Diminishing Returns Modeling and Cost-Effectiveness Analysis
-description: 'The Optimal Budget Generator (OBG) uses causal inference, diminishing returns modeling, and cost-effectiveness evidence to determine optimal public goods funding levels that maximize two terminal general-welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) and produces a gap analysis showing where current government budgets are over- or underfunded relative to evidence-based benchmarks. The Budget Impact Score (BIS) measures confidence in each recommendation based on the quality of causal evidence.'
+description: 'The Optimal Budget Generator (OBG) is a research-stage extension of the Optimocracy evidence scoreboard. It grades evidence for budget changes and estimates bounded target ranges only when credible marginal-return, capacity, interaction, and cost evidence exists. Otherwise it recommends an incremental pilot, presents a scenario, or abstains rather than labeling an unsupported point estimate optimal.'
 abstract: |
-  20-40% of public goods funding is misallocated relative to outcome-maximizing benchmarks, representing
-  trillions annually in foregone welfare gains. Budget processes respond to lobbying intensity and historical
-  precedent rather than causal evidence of effectiveness.
+  Public budgets may be substantially misallocated, but the exact share and recoverable value are uncertain.
+  Budget processes respond to lobbying and historical precedent as well as evidence of effectiveness.
 
-  The Optimal Budget Generator (OBG) applies causal inference, diminishing returns modeling, and
-  cost-effectiveness analysis to determine optimal public goods funding levels that maximize two terminal general-welfare
-  metrics: real after-tax median income growth and median healthy life years. For each spending category,
-  OBG estimates an Optimal Spending Level (OSL) identifying where marginal returns equal opportunity cost.
+  The Optimal Budget Generator (OBG) is a research specification for grading budget evidence and estimating
+  effects on real after-tax median income and healthy life years. It estimates an Optimal Spending Level only
+  when credible marginal-return curves, scaling behavior, interactions, capacity constraints, transition costs,
+  and opportunity costs are available. Otherwise it produces a bounded range, incremental pilot, scenario, or
+  abstention.
 
-  The Budget Impact Score (BIS) measures confidence in each OSL estimate based on study quality, statistical
-  precision, and temporal recency of the underlying causal evidence. The result is a gap analysis showing
-  which categories are over- or underfunded relative to evidence-based benchmarks, enabling systematic
-  reallocation from low-return to high-return public investments. At system scale, the model's
-  Optimal Governance Trajectory reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth
-  baseline after 20 years, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}}
-  versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, reaches
-  {{< var wishonia_trajectory_gdp_year_20 >}} in total output, and recovers roughly
-  {{< var political_dysfunction_global_opportunity_cost_total >}}/year in suppressed value
-  ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
+  The Budget Impact Score (BIS) records confidence in each output. It does not repair weak identification or
+  make an extrapolated point target optimal. The project's large welfare and GDP figures are illustrative
+  best-case scenarios, not validated OBG forecasts or recoverable totals.
 aliases:
   - /budget-optimization.html
   - /optimal-budget-generator.html
@@ -74,53 +67,50 @@ scores:
 
 {{< include ../includes/setup-parameters.qmd >}}
 
+> **Status: research-stage extension, not the Optimocracy minimum viable product.** The name describes the intended destination, not a claim that current data can solve a complete public budget. The operational starting point is a public evidence card for a bounded budget change, with separate health and income forecasts, an evidence grade, a safety screen, and a locked evaluation date. See [Optimocracy](optimocracy-paper.qmd) [@optimocracy-paper-2025] for that smaller protocol.
+
 ## Abstract {.unnumbered}
 
 Your government decides how much to spend on each category the same way it has for decades: last year's number, plus whatever the loudest lobbyist got added, minus whatever the latest crisis forced a cut on. This is called "the budget process." It has no optimization function. It has no feedback loop. It has no measurable objective. It is, in the technical sense, not a process at all. It is an accident that repeats annually.
 
-This specification describes the **Optimal Budget Generator (OBG)** framework, a systematic approach to generating integrated budget recommendations that maximize welfare as measured by two terminal general-welfare metrics: **real after-tax median income growth** and **median healthy life years**.
+This specification describes the **Optimal Budget Generator (OBG)** framework, a research approach to grading budget evidence and generating bounded recommendations using two general-welfare metrics: **real after-tax median income growth** and **median healthy life years**. It reports those outcomes separately unless a public, preregistered normalization rule is applied.
 
 ![Three ways to figure out optimal spending combine to show the gap between what you spend and what you should spend. The gap is filled with lobbyists.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-abstract-unnumbered-bw-academic.jpg)
 
 **JEL Classification**: H50, H61, D61, I18, C18
 
-Unlike marginal-return frameworks that ask "where should we invest the next dollar?", OBG asks "what should the complete budget allocation be?" Each category has a target level - too little means underinvestment, too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), budget allocation is zero-sum: spending more on one category means less for others. OBG generates integrated recommendations that balance these tradeoffs.
+The long-term OBG question is "what should the complete budget allocation be?" That question requires more than a collection of average treatment effects. Each category's returns may diminish, interact with other categories, face fixed costs, and exceed implementation capacity. Until those relationships are identified, OBG answers the narrower question: "what bounded change or pilot does the current evidence support?"
 
-The framework combines two evidence sources: (1) **diminishing returns modeling** from cross-country dose-response studies, and (2) **cost-effectiveness threshold analysis** from health economics. The **Budget Impact Score (BIS)** measures our *confidence* in each category's OSL estimate based on the quality and quantity of causal evidence from the econometric literature.
+The framework can combine two evidence sources: (1) **diminishing returns modeling** from relevant dose-response studies, and (2) **cost-effectiveness threshold analysis**. Cross-country comparisons are treated as causal only when a suitable design passes its diagnostics. The **Budget Impact Score (BIS)** records confidence in the output and remains separate from the estimated benefit.
 
-The result is a gap analysis showing which categories are below evidence-based optimal levels, enabling systematic reallocation from overinvestment to underinvestment. Applied to the US federal budget, the framework identifies pragmatic clinical trials as the most severely underinvested category (9,900% below optimal with {{< var dfda_roi_rd_only >}}:1 benefit-cost ratio), followed by vaccinations, outcome-funded R&D, and early childhood education.
+The practical result is a gap analysis that distinguishes evidence-supported ranges from scenarios and unsupported extrapolations. Large benefit-cost estimates can justify testing a larger allocation, but they do not by themselves establish that a category is a precise percentage below its optimum.
 
-**Scale note.** If budget allocation is the core bottleneck, the upside from fixing it is civilization-scale. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Over 20 years, the [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This specification focuses on the allocation layer of that plan; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
+**Scale note.** Better budget allocation could have large benefits. The project's [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) is an illustrative best-case scenario, not an OBG forecast. Its overlapping policy-domain estimates must not be treated as a recoverable total. This specification focuses on testing the allocation layer through bounded decisions before attempting a complete budget.
 
 ## System Overview {#obg-system-overview}
 
 ### What Policymakers See
 
-A dashboard showing spending gaps by category, with clear recommendations:
+A dashboard showing the strongest defensible output for each category:
 
 ## Illustrative Example: US Federal Budget Gap Analysis
 
-The following table demonstrates how OBG output would appear. OSL estimates for fully derived categories (pragmatic trials, vaccinations) come from the worked examples in Sections 6-7. Remaining OSL estimates use cross-country benchmarking.
+The following table demonstrates the output format without presenting unsupported point targets as solved results.
 
-| Category | Current | OSL | Gap | Evidence | Income Effect | Health Effect | Action |
-|----------|---------|-----|-----|----------|---------------|---------------|--------|
-| **Pragmatic clinical trials** | $0.5B | $50B | **+$49.5B** | A (RCTs) | ++ | +++ | **Scale 100x** |
-| Vaccinations | $8B | $35B | +$27B | A (RCTs) | + | +++ | Increase |
-| Basic research | $45B | $90B | +$45B | B (spillovers) | ++ | ++ | Increase |
-| Early childhood (0-5) | $50B | $70B | +$20B | A (RCTs) | +++ | + | Increase |
-| Military (discretionary) | $850B | $459B | -$391B | C (benchmarks) | − | − | Decrease |
-| Agricultural subsidies | $25B | $0B | -$25B | A (welfare analysis) | − | − | Eliminate |
-
-*Positive gaps indicate underinvestment; negative gaps indicate overinvestment. Income Effect: impact on real after-tax median income growth. Health Effect: impact on median healthy life years. Scale: +++ strong positive, ++ moderate positive, + weak positive, − negative.*
+| Category | Current | Supported range | Evidence | Income effect | Health effect | Output |
+|----------|---------|-----------------|----------|---------------|---------------|--------|
+| Category with identified scaling evidence | Reported amount | Bounded range | A or B | Raw estimate and interval | Raw estimate and interval | Increase, maintain, or decrease within range |
+| Category with strong intervention evidence but uncertain scaling | Reported amount | Unknown | A or B | Raw estimate and interval | Raw estimate and interval | Incremental pilot |
+| Category supported mainly by benchmarks | Reported amount | Scenario only | C or D | Predictive estimate | Predictive estimate | Insufficient evidence or pilot |
 
 ### What Budget Analysts See
 
-- **OSL estimates** with confidence intervals and methodology notes
+- **Supported ranges or scenarios** with methodology notes
 - **Cross-country spending data** showing spending-outcome relationships
-- **Diminishing returns curves** identifying optimal spending levels
+- **Diminishing returns curves** when the data identify them
 - **Evidence quality scores** (BIS) for each category
 - **Sensitivity analysis** showing how OSL changes with different assumptions
-- **Priority rankings** by gap size weighted by evidence confidence
+- **Priority rankings within evidence and safety tiers**
 
 ### Where This Fits
 
@@ -161,7 +151,7 @@ This specification focuses on generating evidence-based budget recommendations. 
 
 ### Why Budget Allocation Fails Today
 
-Budget allocation is fundamentally a problem of social choice under uncertainty [@arrow1951]. The challenge is not simply technical but institutional: current budget processes systematically diverge from welfare-optimal allocations due to political economy dynamics [@myerson1981; @kydland1977].
+Budget allocation is fundamentally a problem of social choice under uncertainty [@arrow1951]. The challenge is not simply technical but institutional: current budget processes can diverge from high-return allocations because of political economy dynamics [@myerson1981; @kydland1977].
 
 ![Current budgets: lobbying and 'we've always done it this way.' Result: money goes to things that don't work instead of things that do. Tradition is expensive.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-why-budget-allocation-fails-today-bw-academic.jpg)
 
@@ -171,11 +161,11 @@ Current budget allocation follows a process dominated by:
 2. **Historical inertia**: This year's budget is last year's budget plus a percentage, not a fresh optimization
 3. **Visible vs. invisible beneficiaries**: Programs with identifiable beneficiaries (veterans) outcompete programs with diffuse beneficiaries (clinical trials, vaccinations)
 4. **Political salience**: Crises drive spending regardless of cost-effectiveness (terrorism vs. air pollution)
-5. **Zero-sum framing**: Budget debates treat all categories as competing rather than asking which ones are at optimal levels
+5. **Weak marginal comparison**: Budget debates often compare line-item totals without estimating the return to the next feasible change
 
 The result: systematic overinvestment in low-return categories and underinvestment in high-return categories. Historical examples demonstrate the scale of missed opportunities: the smallpox eradication campaign returned an estimated 450:1 ROI [@smallpox-eradication-roi], yet similar high-return public health investments remain chronically underfunded.
 
-### The RDA Analogy: Optimal Levels, Not Just Marginal Returns
+### The RDA Analogy and Its Limit
 
 Nutrition science doesn't just say "eat more vitamins." It specifies **Recommended Daily Allowances** - target intake levels where:
 
@@ -183,13 +173,14 @@ Nutrition science doesn't just say "eat more vitamins." It specifies **Recommend
 - **At RDA**: Optimal health benefits
 - **Above RDA**: Diminishing returns, potential toxicity
 
-Budget allocation should work the same way. For each spending category:
+In theory, a spending category also has a range after which marginal returns fall below alternatives. Unlike a nutrient requirement, that range is rarely identified from biology and cannot be estimated independently of the rest of the budget. The analogy describes the research goal, not the current evidence.
 
-- **Below OSL**: Foregone welfare gains (underinvestment)
-- **At OSL**: Optimal welfare return per dollar
-- **Above OSL**: Diminishing or negative returns (overinvestment)
+- **Below a supported range**: Evidence may support a bounded increase
+- **Inside a supported range**: Evidence may support maintaining or testing a small change
+- **Above a supported range**: Evidence may support a bounded decrease
+- **No supported range**: Pilot, present a scenario, or abstain
 
-**infinite spending on any category doesn't make sense**, even one with high returns. Early childhood education has excellent returns - but spending $10 trillion on it wouldn't produce 10x the benefits of spending $1 trillion. There's an optimal level.
+Infinite spending on any category does not make sense, even one with high average returns. That observation proves diminishing returns are plausible; it does not locate the optimum.
 
 ![Nutritionists tell you how much vitamin C you need. OSL tells governments how much education funding they need. One prevents scurvy, the other prevents stupid.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-introduction-bw-academic.jpg)
 
@@ -197,13 +188,13 @@ Budget allocation should work the same way. For each spending category:
 
 ![Five pieces: evidence-based targets, gap analysis, priority ranking, uncertainty assessment, and wishful thinking. Wait, scratch that last one.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-what-this-framework-provides-bw-academic.jpg)
 
-1. **Target spending levels** for each budget category based on evidence
-2. **Gap analysis** showing where current spending diverges from optimal
-3. **Evidence grading** so policymakers know which OSL estimates are reliable
-4. **Priority ranking** for reallocation decisions
-5. **Uncertainty quantification** around each estimate
+1. **Bounded spending ranges** when marginal evidence is credible
+2. **Pilot or abstention outputs** when scaling is uncertain
+3. **Evidence grades** based on identification and diagnostics
+4. **Priority rules** within passing evidence and safety tiers
+5. **Separate uncertainty disclosures** for sampling, parameters, models, and structural assumptions
 
-### Outcome Metrics: What We're Optimizing
+### Outcome Metrics: What We Report
 
 All OBG recommendations ultimately aim to maximize two terminal general-welfare metrics:
 
@@ -211,15 +202,19 @@ All OBG recommendations ultimately aim to maximize two terminal general-welfare 
 
 2. **Median healthy life years** (years): Expected years of life in good health at the population median. Sources: WHO Global Health Observatory, national health surveys.
 
-The welfare function combines these with equal weight by default:
+The operational decision card reports these raw outcomes separately because percentage points per year and healthy life years are incompatible units.
+
+If a ranking requires one public score, both effects are converted to dimensionless values using preregistered reference distributions:
 
 $$
-W = 0.5 \cdot \text{IncomeGrowth} + 0.5 \cdot \text{HealthyYears}
+S = \alpha I + (1-\alpha)H, \qquad I,H \in [0,100]
 $$
 
-**Why these two metrics?** They are the terminal general-welfare metrics: the best currently measurable civilization-scale endpoints for approximating the terminal values defined in [What Matters](../proof/what-matters.qmd), pleasant consciousness and unpleasant consciousness. Most policy effects eventually show up in one or both. Economic policies (taxes, regulations, trade) primarily affect income growth. Health policies (healthcare access, public health, safety) primarily affect healthy life years. Education and infrastructure affect both. See [Two-Metric Welfare Function](optimocracy-paper.qmd#sec-two-metric-welfare) for the complete framework.
+Here $I$ and $H$ are normalized scores over the same declared horizon. The reference distributions and $\alpha$ are public choices, raw effects remain visible, and sensitivity across weights is required. Equal numerical weight is not a scientifically neutral conversion.
 
-Every spending category's OSL is ultimately justified by its expected impact on these two metrics. The gap analysis and priority rankings reflect which reallocations would most improve the combined welfare function.
+**Why these two metrics?** They are legible endpoints for approximating major economic and health effects. They do not exhaust public values or replace rights and subgroup-harm screens. See [Two-Metric Dashboard](optimocracy-paper.qmd#sec-two-metric-welfare) for the complete framework.
+
+Every spending recommendation is justified by its expected raw effects, evidence grade, cost, and safety screen. A combined score is a display and ranking aid, not proof of a true welfare optimum.
 
 ## Related Work
 
@@ -227,45 +222,45 @@ The OBG framework builds on and extends several established traditions in public
 
 ### Budget Analysis Frameworks
 
-**Congressional Budget Office (CBO) Scoring.** The CBO provides cost estimates for proposed legislation, projecting fiscal impacts over 10-year windows [@cbo2015]. However, CBO scoring focuses on *cost* rather than *welfare optimization* - it answers "what will this cost?" not "what should we spend?" OBG complements CBO analysis by providing evidence-based spending targets against which proposals can be evaluated.
+**Congressional Budget Office (CBO) Scoring.** The CBO provides cost estimates for proposed legislation, projecting fiscal impacts over 10-year windows [@cbo2015]. CBO scoring focuses on *cost* rather than *welfare optimization*. OBG aims to complement that work with bounded outcome forecasts when the evidence supports them.
 
 ![CBO scores costs. Performance budgeting measures results. Zero-based budgeting questions everything. OBG does all three and shows you the receipts.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-budget-analysis-frameworks-bw-academic.jpg)
 
-**Performance-Based Budgeting.** Since the Planning-Programming-Budgeting System (PPBS) of the 1960s, governments have attempted to link spending to outcomes. Modern variants include Results-Based Management and Performance-Informed Budgeting. These approaches improve transparency but typically lack the economic framework for determining *optimal* levels - they measure performance at current spending without estimating what spending *should* be.
+**Performance-Based Budgeting.** Since the Planning-Programming-Budgeting System (PPBS) of the 1960s, governments have attempted to link spending to outcomes. Modern variants include Results-Based Management and Performance-Informed Budgeting. OBG adds explicit evidence grades, support limits, and prospective forecasts to that tradition.
 
-**Zero-Based Budgeting.** ZBB requires justifying each budget line from zero rather than incremental adjustment. While philosophically aligned with OBG's goal of rational allocation, ZBB provides no systematic method for determining optimal levels. OBG operationalizes ZBB's ambition with evidence-based targets.
+**Zero-Based Budgeting.** ZBB requires justifying each budget line from zero rather than incremental adjustment. OBG can inform that review, but it should not manufacture a point target for every line merely because the budget process requests one.
 
 ### Evidence-Based Policy Movement
 
-**What Works Clearinghouses.** Organizations like the What Works Clearinghouse (education), Cochrane Collaboration (health), and Campbell Collaboration (social policy) synthesize intervention evidence through systematic reviews. OBG draws on these evidence bases but extends beyond intervention evaluation to budget-level optimization. While clearinghouses answer "does this work?", OBG answers "how much should we spend?"
+**What Works Clearinghouses.** Organizations like the What Works Clearinghouse (education), Cochrane Collaboration (health), and Campbell Collaboration (social policy) synthesize intervention evidence through systematic reviews. OBG draws on these evidence bases and asks the narrower next question: "what marginal change does this evidence support here?"
 
 ![Old way: evaluate programs one at a time. New way: optimize entire budgets at once. It's like organizing your whole kitchen instead of just the spoon drawer.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-evidence-based-policy-movement-bw-academic.jpg)
 
-**Cost-Effectiveness Analysis.** Health economics has developed methods for comparing interventions using metrics like QALYs (Quality-Adjusted Life Years) and DALYs (Disability-Adjusted Life Years) [@icer-qaly-methodology]. OBG incorporates cost-effectiveness as one of two estimation methods but applies it within an integrated budget optimization framework rather than intervention-by-intervention.
+**Cost-Effectiveness Analysis.** Health economics has developed methods for comparing interventions using metrics like QALYs (Quality-Adjusted Life Years) and DALYs (Disability-Adjusted Life Years) [@icer-qaly-methodology]. OBG uses cost-effectiveness as one input while preserving population, scale, capacity, and opportunity-cost limits.
 
 ### Comparative Public Finance
 
-**OECD Government Spending Analysis.** The OECD publishes extensive cross-country spending comparisons and outcome data [@oecd-govt-spending; @papanicolas2018]. OBG leverages this data infrastructure for diminishing returns analysis while adding the conceptual framework of optimal levels and evidence-weighted confidence.
+**OECD Government Spending Analysis.** The OECD publishes extensive cross-country spending comparisons and outcome data [@oecd-govt-spending; @papanicolas2018]. OBG can use this infrastructure for benchmarks and hypotheses. Cross-country correlation alone does not identify a marginal-return curve.
 
 ![A conceptual model showing the methodological progression from standard OECD benchmarking to OBG’s causal identification framework and actionable spending targets.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-comparative-public-finance-bw-academic.jpg)
 
-**International Benchmarking Studies.** Comparative studies examine spending-outcome relationships across countries but typically stop at correlation. OBG advances this literature by incorporating causal identification methods and producing actionable spending targets.
+**International Benchmarking Studies.** Comparative studies examine spending-outcome relationships across countries but typically stop at correlation. OBG uses them as benchmarks or hypotheses unless a suitable identification design supports a stronger claim.
 
 ### How OBG Differs
 
 The OBG framework advances existing approaches in three key ways:
 
-1. **Integrated multi-method estimation.** Rather than relying on a single approach, OBG combines OSL estimates from diminishing returns modeling and cost-effectiveness analysis. This provides robustness and identifies where methods agree or conflict.
+1. **Transparent multi-method comparison.** OBG compares diminishing-returns modeling and cost-effectiveness analysis without averaging incompatible estimands into a false consensus.
 
 ![Three different ways to count money, then deciding where to put it, then measuring how confident you are that you counted correctly. Like checking your restaurant bill three times because you still don't trust yourself.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-how-obg-differs-bw-academic.jpg)
 
-2. **Explicit optimal levels.** Unlike frameworks that analyze spending at current levels or propose marginal changes, OBG estimates target spending levels for each category - acknowledging that both underspending and overspending are suboptimal.
+2. **Explicit support limits.** OBG distinguishes point targets, bounded ranges, scenarios, pilots, and abstentions, acknowledging that both underspending and overspending are possible without pretending both have already been quantified.
 
-3. **Evidence-weighted confidence.** The Budget Impact Score (BIS) distinguishes recommendations supported by strong causal evidence (where reallocation should proceed) from those based on weaker evidence (where research or pilots are warranted).
+3. **Evidence and safety gates.** The Budget Impact Score (BIS) preserves design diagnostics, scaling support, uncertainty, and safety status instead of converting them into one confidence multiplier.
 
 ## Theoretical Framework
 
-This section formalizes the OBG framework as a social planner's optimization problem, establishing the theoretical foundations for optimal spending levels and evidence-weighted allocation.
+This section describes the research-stage optimization target. It is not the minimum viable calculation and should not be used empirically until the required response functions and constraints are identified.
 
 ![A social planner is someone who plans society. They take evidence, weigh it (not literally), and decide how much money to spend on things. It's like meal planning but for countries.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-theoretical-framework-bw-academic.jpg)
 
@@ -273,140 +268,49 @@ This section formalizes the OBG framework as a social planner's optimization pro
 
 Consider a benevolent social planner allocating a fixed budget $B$ across $n$ spending categories. Each category generates welfare measured using the [two-metric framework](optimocracy-paper.qmd#sec-two-metric-welfare): **real after-tax median income growth** and **median healthy life years**.
 
-**Why these specific metrics?** They are universal instrumental goods: virtually everyone wants higher purchasing power and longer healthy life, regardless of other values. They are hard to game (improving them requires actually helping typical citizens), measured by independent statistical agencies, and capture most policy effects. GDP can rise while median income stagnates; this framework correctly identifies such outcomes as low-welfare.
+**Why these specific metrics?** Higher typical purchasing power and longer healthy life are widely valued and more legible than many composite indices. They are not universal or impossible to game. Metric definitions, weights, rights, catastrophic risks, and subgroup harms remain public choices and constraints.
 
 Let $s_i$ denote spending on category $i$, with $\sum_{i=1}^{n} s_i = B$. Each category produces effects on both welfare metrics:
 
-- $\beta_i^{inc}(s_i)$: Effect on real after-tax median income growth (pp/year)
-- $\beta_i^{hlth}(s_i)$: Effect on median healthy life years (years)
+- $I_i(s_i)$: Normalized effect on real after-tax median income over the declared horizon
+- $H_i(s_i)$: Normalized effect on healthy life years over the same horizon
 
-Total welfare from category $i$ follows the two-metric welfare function:
-
-$$
-W_i(s_i) = \alpha \cdot \beta_i^{inc}(s_i) + (1-\alpha) \cdot \beta_i^{hlth}(s_i)
-$$
-
-where $\alpha = 0.5$ by default (equal weight to economic and health welfare). All welfare calculations in this framework flow through these two metrics.
-
-**Assumption 1 (Diminishing Returns).** For each category $i$, both effect functions $\beta_i^{inc}$ and $\beta_i^{hlth}$ are twice continuously differentiable with positive first derivatives and negative second derivatives for all $s > 0$.
-
-The social planner maximizes aggregate welfare:
+The optional normalized score from category $i$ is:
 
 $$
-\max_{\{s_i\}_{i=1}^{n}} \sum_{i=1}^{n} W_i(s_i) \quad \text{subject to} \quad \sum_{i=1}^{n} s_i = B, \quad s_i \geq 0 \ \forall i
+S_i(s_i) = \alpha \cdot I_i(s_i) + (1-\alpha) \cdot H_i(s_i)
 $$
 
-**Proposition 1 (Equimarginal Principle).** *At the optimal allocation $\{s_i^*\}$, marginal welfare is equalized across all categories with positive spending:*
+where the normalization rule and $\alpha$ are preregistered public choices. Raw income and health effects remain separate in every output, and the recommendation must be robust to reasonable alternative weights.
+
+**Assumption 1 (Diminishing Returns).** For each category $i$, both normalized effect functions $I_i$ and $H_i$ are assumed twice continuously differentiable with positive first derivatives and negative second derivatives for all $s > 0$. This assumption must be tested or bounded in an empirical application; it is not supplied by the framework itself.
+
+If the response functions and constraints are credibly identified, the research extension maximizes the declared normalized score:
 
 $$
-W_i'(s_i^*) = \lambda^* \quad \forall i \text{ with } s_i^* > 0
+\max_{\{s_i\}_{i=1}^{n}} \sum_{i=1}^{n} S_i(s_i) \quad \text{subject to} \quad \sum_{i=1}^{n} s_i = B, \quad s_i \geq 0 \ \forall i
 $$
 
-*where $\lambda^*$ is the shadow price of the budget constraint.*
+For an interior solution with correctly specified differentiable response functions, marginal returns would be equalized across funded categories. That is a theoretical benchmark, not evidence that the response functions are known.
 
-*Proof.* The Lagrangian is $\mathcal{L} = \sum_i W_i(s_i) - \lambda(\sum_i s_i - B)$. First-order conditions yield $W_i'(s_i^*) = \lambda$ for interior solutions. By strict concavity of $W_i$, the second-order conditions are satisfied. $\square$
+### What Must Be Known Before Optimization
 
-### Optimal Spending Levels Under Uncertainty
+An empirical OSL requires more than a point estimate of average benefit. For each category, the analysis needs:
 
-In practice, the welfare functions $W_i(\cdot)$ are not known with certainty. Let $\hat{W}_i(s)$ denote the planner's estimate of welfare, with associated uncertainty $\sigma_i^2(s)$.
+| Required object | Evidence needed | Fallback when missing |
+|-----------------|-----------------|-----------------------|
+| Marginal-return curve | Credibly identified outcomes at relevant spending levels | Direction or pilot |
+| Scaling behavior | Evidence on saturation and delivery capacity | Stay within observed support |
+| Interactions | Material complementarities and substitutes | Evaluate a bounded bundle or abstain |
+| Full costs | Fixed, transition, administrative, and displaced-spending costs | Scenario range |
+| Timing | Outcome horizon and discounting | Report streams separately |
+| Distribution and safety | Subgroup effects, rights, and catastrophic risks | Block the recommendation |
 
-**Definition 1 (Optimal Spending Level).** The Optimal Spending Level for category $i$ is:
+When these objects are identified, OBG can estimate a range where marginal return plausibly equals the opportunity cost of public funds. When they are not, adding risk-aversion parameters, quality weights, or recency decay creates detail without information. BIS therefore preserves the evidence record instead of producing a scalar confidence score.
 
-$$
-\text{OSL}_i \equiv \arg\max_{s_i} \mathbb{E}[\hat{W}_i(s_i)] - \frac{\rho}{2} \text{Var}[\hat{W}_i(s_i)]
-$$
+### Bounded Gaps and Uncertainty
 
-where $\rho \geq 0$ is the planner's risk aversion parameter.
-
-For risk-neutral planners ($\rho = 0$), OSL reduces to the spending level that maximizes expected welfare. For risk-averse planners, OSL accounts for estimation uncertainty.
-
-**Proposition 2 (OSL Characterization).** *Under Assumption 1, with estimated marginal welfare $\hat{W}_i'(s)$ and estimation variance $\sigma_i^2(s)$, the OSL satisfies:*
-
-$$
-\mathbb{E}[\hat{W}_i'(\text{OSL}_i)] = r + \rho \cdot \frac{\partial \sigma_i^2}{\partial s}\bigg|_{s=\text{OSL}_i}
-$$
-
-*where $r$ is the social discount rate (opportunity cost of public funds).*
-
-*Proof.* The first-order condition for the uncertainty-adjusted maximization problem yields the result. The term $r$ represents the marginal value of funds in alternative uses; the second term adjusts for risk. $\square$
-
-### Budget Impact Score as Precision Weighting
-
-The Budget Impact Score formalizes the precision of OSL estimates, enabling evidence-weighted reallocation decisions.
-
-**Definition 2 (Budget Impact Score).** For category $i$ with $n_i$ effect estimates $\{\hat{\beta}_{ij}\}_{j=1}^{n_i}$, the Budget Impact Score is:
-
-$$
-\text{BIS}_i = \min\left(1, \frac{1}{K} \sum_{j=1}^{n_i} w_j^Q \cdot w_j^P \cdot w_j^R \right)
-$$
-
-where:
-
-- $w_j^Q \in (0,1]$ = quality weight based on identification strategy (RCT = 1, cross-sectional = 0.25)
-- $w_j^P = 1/\text{SE}(\hat{\beta}_j)^2$ = precision weight (inverse variance)
-- $w_j^R = e^{-\delta(t_{now} - t_j)}$ = recency weight with decay rate $\delta$
-- $K$ = calibration constant
-
-**Proposition 3 (BIS as Inverse Variance).** *Under standard meta-analytic assumptions, BIS is proportional to the precision of the pooled effect estimate:*
-
-$$
-\text{BIS}_i \propto \frac{1}{\text{Var}(\hat{\beta}_i^{pooled})}
-$$
-
-*where $\hat{\beta}_i^{pooled}$ is the quality-weighted pooled estimate of spending effects.*
-
-![Three ingredients that tell you how much to trust a number: how good it is, how exact it is, and how old it is. Like checking the expiration date on milk, but for statistics.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-theoretical-framework-bw-academic.jpg)
-
-### Gap Analysis and Welfare Gains
-
-**Definition 3 (Spending Gap).** The spending gap for category $i$ is:
-
-$$
-\text{Gap}_i = \text{OSL}_i - s_i^{current}
-$$
-
-**Proposition 4 (Welfare Gains from Gap Closure).** *For small gaps, the welfare gain from moving spending from current level to OSL is approximately:*
-
-$$
-\Delta W_i \approx W_i'(s_i^{current}) \cdot \text{Gap}_i - \frac{1}{2} |W_i''(\bar{s})| \cdot \text{Gap}_i^2
-$$
-
-*where $\bar{s}$ is between $s_i^{current}$ and $\text{OSL}_i$.*
-
-*Proof.* Taylor expansion of $W_i(\text{OSL}_i) - W_i(s_i^{current})$ around $s_i^{current}$. $\square$
-
-**Corollary 1 (Priority Ranking).** *Categories should be prioritized for reallocation in order of:*
-
-$$
-\text{Priority}_i = |\text{Gap}_i| \times \text{BIS}_i \times |W_i'(s_i^{current})|
-$$
-
-*This ranks categories by expected welfare gain adjusted for estimation confidence.*
-
-**Note:** In the simplified implementation (Section 10.2), we normalize by setting $|W_i'(s_i^{current})| = 1$ for all categories, reducing the priority formula to $\text{Priority}_i = |\text{Gap}_i| \times \text{BIS}_i$. This assumes equal marginal welfare weights across categories as a first approximation. Future iterations could incorporate category-specific marginal welfare estimates.
-
-### Welfare Bounds Under Model Uncertainty
-
-When the functional form of $W_i(\cdot)$ is uncertain, we can establish bounds on welfare gains.
-
-**Proposition 5 (Welfare Bounds).** *Let $\underline{W}_i$ and $\overline{W}_i$ denote lower and upper bounds on the welfare function consistent with available evidence. Then:*
-
-$$
-\underline{\Delta W} = \sum_{i: \text{Gap}_i > 0} \underline{W}_i'(s_i) \cdot \text{Gap}_i \leq \Delta W \leq \sum_{i: \text{Gap}_i > 0} \overline{W}_i'(s_i) \cdot \text{Gap}_i = \overline{\Delta W}
-$$
-
-*The OBG framework reports both point estimates and these bounds via sensitivity analysis.*
-
-### Summary of Theoretical Results
-
-| Result | Implication for OBG |
-|--------|---------------------|
-| Proposition 1 | Optimal allocation equalizes marginal returns |
-| Proposition 2 | OSL accounts for both expected returns and uncertainty |
-| Proposition 3 | BIS captures estimation precision |
-| Proposition 4 | Gap closure yields quantifiable welfare gains |
-| Corollary 1 | Priority ranking optimizes reallocation sequence |
-| Proposition 5 | Welfare bounds enable robust recommendations |
+For a supported range $[L_i,U_i]$, OBG reports whether current spending is below, within, or above that range. It does not calculate a numeric gap when no credible range exists. Sampling intervals, parameter scenarios, competing models, and structural limitations are reported separately because Monte Carlo propagation cannot repair confounding or unsupported extrapolation.
 
 ## Core Methodology
 
@@ -529,44 +433,31 @@ If multiple studies estimate effects at different spending levels, meta-regressi
 
 @jackson2016 exploited court-ordered school finance reforms to estimate causal effects of K-12 spending. Key finding: a 10% increase in per-pupil spending increases adult earnings by 7% for students from low-income families.
 
-**Does this effect diminish at higher spending levels?**
+**Does this effect identify the current optimal spending level?** No. The study supports a causal effect for the populations and reforms it examined. A cross-state table of spending and earnings would not, by itself, identify a national marginal-return curve or show where that curve meets the opportunity cost of public funds.
 
-Evidence from cross-state variation suggests:
-
-| Baseline spending (per pupil) | Effect of 10% increase | Implied marginal return |
-|------------------------------|------------------------|------------------------|
-| $8,000 | +8% earnings | $0.80 per $1 |
-| $12,000 | +5% earnings | $0.50 per $1 |
-| $16,000 | +3% earnings | $0.30 per $1 |
-| $20,000 | +1% earnings | $0.10 per $1 |
-
-**OBG estimation**: At $16,000/pupil, the marginal return (~0.30) roughly equals the social discount rate. This suggests:
-
-- Current US average: ~$15,000/pupil
-- OSL: ~$16,000-$18,000/pupil (modest underinvestment)
-- Gap: ~$50B nationally
-
-**Evidence grade**: B (strong causal identification, moderate extrapolation uncertainty)
+**Defensible OBG output:** Report the study's raw effect and population, compare the proposed change with the observed reform range, test present-day transportability, and recommend a bounded increase or pilot if those checks pass. Do not infer a national point target or dollar gap from the average effect alone.
 
 ## Worked Example: Pragmatic Clinical Trials
 
-### The Highest-Return Public Investment
+### A High-Value Candidate for a Scaling Test
 
 **Metrics affected**: Both real after-tax median income growth (via reduced healthcare costs and improved productivity) and median healthy life years (via better treatments). This dual impact contributes to the exceptionally high returns.
 
 ![Some ways of spending government money work better than others. Also, cheap trials work as well as expensive trials, but cost less. This required two charts to explain.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-the-highest-return-public-investment-bw-academic.jpg)
 
-Pragmatic clinical trials represent perhaps the single highest-return category of public investment identified in the literature. While vaccinations return {{< var childhood_vaccination_roi >}}:1 and early childhood education returns 4:1, pragmatic trials demonstrate benefit-cost ratios of **{{< var dfda_roi_rd_only >}}:1** [@dfda-impact-paper-2025].
+Pragmatic clinical trials may be a high-return category of public investment. The project estimates a benefit-cost ratio of **{{< var dfda_roi_rd_only >}}:1** [@dfda-impact-paper-2025], but that estimate does not identify the return to a much larger national allocation.
 
 The UK's RECOVERY trial demonstrated this dramatically during COVID-19: it cost approximately {{< var recovery_trial_cost_per_patient >}} versus {{< var traditional_phase3_cost_per_patient >}} for traditional Phase 3 trials, a {{< var recovery_trial_cost_reduction_factor >}} cost reduction [@recovery-trial-summary-quote]. This single trial identified dexamethasone as a life-saving treatment, preventing an estimated 1 million deaths globally.
 
-### OSL Estimation
+### Evidence Needed for a Spending Range
 
-Pragmatic trials represent an *innovation frontier* where no country has achieved optimal investment. We estimate OSL from cost-effectiveness analysis:
+A defensible range needs more than the average cost of past trials:
 
-1. **Unmet medical need**: Approximately {{< var global_annual_daly_burden >}} from conditions lacking adequate treatment
-2. **Cost per DALY averted**: Pragmatic trials cost {{< var adaptable_trial_cost_per_patient >}} (ADAPTABLE trial) vs. {{< var traditional_phase3_cost_per_patient >}} traditional
-3. **Scale-up potential**: Current global clinical trial spending is approximately {{< var global_clinical_trials_spending_annual >}}/year, but only ~$500M goes to pragmatic/embedded designs
+1. **Fundable pipeline:** Number and expected value of decision-relevant unanswered questions
+2. **Delivery capacity:** Sites, investigators, recruitment, data systems, and review capacity
+3. **Marginal trial value:** Probability that the next funded study changes treatment and improves outcomes
+4. **Displaced spending:** Value of the budget source and transition costs
+5. **Scaling evidence:** Whether per-participant cost and trial quality persist at larger volume
 
 | Data Point | Value | Source |
 |------------|-------|--------|
@@ -576,70 +467,32 @@ Pragmatic trials represent an *innovation frontier* where no country has achieve
 | Cost per patient (traditional Phase 3) | {{< var traditional_phase3_cost_per_patient >}} | Industry average |
 | Cost reduction factor | **{{< var dfda_trial_cost_reduction_factor >}}** | Calculated |
 
-### Diminishing Returns Analysis
+### Defensible Initial Output
 
-Unlike most spending categories, pragmatic trials show **increasing returns at current spending levels** due to:
+The evidence can support a staged increase with explicit capacity milestones and a prospective evaluation. It does not currently establish a **$50-100B** optimum, a **99x** gap, or a priority score that can be compared with military, vaccination, and education spending. Those figures are scenarios until the fundable pipeline and marginal-return curve are measured.
 
-1. **Network effects**: Each additional participant improves statistical power for all trials
-2. **Infrastructure leverage**: Platform trials amortize fixed costs across multiple interventions
-3. **Learning effects**: Evidence accumulation improves trial design efficiency
-
-The "knee" of the diminishing returns curve is estimated at **$50-100B annually** (vs. current ~$500M), suggesting we are operating far below optimal.
-
-![We spend 500 million on pragmatic trials. The graph says we should spend 50 to 100 billion. We are so far to the left of where we should be that we're practically off the chart.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-diminishing-returns-analysis-bw-academic.jpg)
-
-### Cost-Effectiveness Calculation
-
-Using standard health economics methodology:
-
-| Component | Value | Calculation |
-|-----------|-------|-------------|
-| Cost per pragmatic trial participant | {{< var adaptable_trial_cost_per_patient >}} | ADAPTABLE benchmark |
-| QALYs gained per participant | 0.05-0.2 | Evidence generation value |
-| Cost per QALY | $4,600-$18,600 | Well below $50K threshold |
-| Scale-up population | 50M patients/year | 10% of treatable conditions |
-| **OSL estimate** | **$50B/year** | Conservative |
-
-### Gap Analysis
-
-| Metric | Value |
-|--------|-------|
-| Current spending (pragmatic trials) | ~$500M |
-| OSL | $50B |
-| **Gap** | **+$49.5B (99x underinvestment)** |
-| Gap % of current | +9,900% |
-| Opportunity cost | {{< var dfda_roi_rd_only >}}:1 foregone returns |
-
-**Evidence grade**: A (RCT evidence from RECOVERY, ADAPTABLE; strong theoretical foundation)
-
-### Why This Category Dominates
-
-Pragmatic clinical trials have the highest priority score of any category analyzed:
-
-$$
-\text{Priority} = |\text{Gap}| \times \text{BIS} = \$49.5B \times 0.90 = 44.6
-$$
-
-Among categories requiring increased investment, this is the highest priority score, exceeding outcome-funded R&D (31.5), vaccinations (25.7), and early childhood (17.0). Military spending has a larger absolute priority score (195.5) due to its massive gap, but represents overinvestment requiring reduction.
+An initial decision card should specify the next funding increment, eligible trial types, expected number of completed decision-relevant trials, cost per completed answer, predicted health and income effects, stop conditions, and evaluation date. The next increment depends on realized performance, not linear extrapolation from the first.
 
 ## Cost-Effectiveness Threshold Analysis
 
 ### The Standard Health Economics Approach
 
-Cost-effectiveness analysis has become the standard framework for health resource allocation decisions [@icer-qaly-methodology]. The QALY (Quality-Adjusted Life Year) metric enables comparison across diverse health interventions by monetizing health outcomes at a consistent threshold [@bhutta2014].
+Cost-effectiveness analysis is a standard framework for health resource allocation decisions [@icer-qaly-methodology]. The QALY (Quality-Adjusted Life Year) metric standardizes health outcomes across interventions; monetary comparison requires a separately declared willingness-to-pay threshold [@bhutta2014].
 
-For health interventions, cost-effectiveness analysis provides OSL estimates:
+For health interventions, cost-effectiveness analysis can provide a candidate coverage budget:
 
 $$
-\text{OSL} = \sum_{\text{interventions}} \text{Scale}_i \times \text{Cost}_i \quad \text{where } \frac{\text{Cost}_i}{\text{QALY}_i} < \text{WTP}
+\text{Candidate Budget} = \sum_{\text{eligible interventions}} \text{Reachable Scale}_i \times \text{Marginal Cost}_i
 $$
 
 Where:
 
-- $\text{Scale}_i$ = target population for intervention $i$
-- $\text{Cost}_i$ = per-person cost of intervention $i$
+- $\text{Reachable Scale}_i$ = population that can feasibly receive the intervention in the budget period
+- $\text{Marginal Cost}_i$ = acquisition, administration, outreach, and capacity cost per additional recipient
 - $\text{QALY}_i$ = QALYs gained per person from intervention $i$
-- $\text{WTP}$ = willingness-to-pay threshold (typically $50K-$150K per QALY)
+- $\text{WTP}$ = the jurisdiction's declared willingness-to-pay threshold
+
+An intervention is cost-effective under this rule when $\text{Marginal Cost}_i / \text{QALY}_i < \text{WTP}$. Eligibility also requires relevant effectiveness evidence, a passed safety screen, and comparison with the opportunity cost of the displaced budget. The sum is not an OSL unless marginal benefits and alternatives are also identified.
 
 ### Building Up from Intervention-Level Data
 
@@ -650,7 +503,7 @@ For each health intervention with cost-effectiveness data:
 1. **Identify target population** who would benefit
 2. **Calculate scale-up cost** to reach entire target population
 3. **Include only interventions** below the cost-effectiveness threshold
-4. **Sum to get category OSL**
+4. **Aggregate a candidate range and compare it with capacity and displaced spending**
 
 ### Worked Example: Vaccinations
 
@@ -658,34 +511,21 @@ For each health intervention with cost-effectiveness data:
 
 Vaccinations represent one of the highest-return public health investments, with estimated returns of 44:1 for routine childhood immunization [@vaccine-roi-44-to-1; @childhood-vaccination-roi]. The economic benefits include avoided medical costs, productivity gains, and reduced mortality [@childhood-vaccination-economic-benefits].
 
-Cost-effectiveness estimates from CEA Registry and CDC vaccination cost studies. QALY estimates reflect average health gains across target populations; costs include vaccine acquisition, administration, and program overhead.
+Cost-effectiveness evidence is intervention-, population-, place-, and time-specific. A category target therefore requires current eligible-population counts, baseline uptake, vaccine and delivery costs, marginal outreach costs, expected health effects, and implementation capacity for each program.
 
-| Intervention | Target pop. | Cost/person | QALY/person | Cost/QALY | Source | Include? |
-|--------------|-------------|-------------|-------------|-----------|--------|----------|
-| Childhood routine | 4M births | $500 | 0.1 | $5,000 | CDC VFC | Yes |
-| HPV vaccination | 4M teens | $300 | 0.05 | $6,000 | CEA Registry | Yes |
-| Flu (elderly) | 50M elderly | $40 | 0.01 | $4,000 | CDC | Yes |
-| Shingles | 40M eligible | $200 | 0.02 | $10,000 | CEA Registry | Yes |
-| COVID boosters | 100M adults | $30 | 0.005 | $6,000 | CDC | Yes |
+| Required Input | Why It Matters |
+|----------------|----------------|
+| Eligible and reachable population | Defines feasible scale rather than theoretical coverage |
+| Current uptake and disease risk | Determines marginal, not average, benefit |
+| Acquisition, administration, and outreach costs | Captures the rising cost of reaching harder-to-serve groups |
+| Program-specific effectiveness and duration | Prevents pooling unlike vaccines into one return |
+| Delivery capacity and equity effects | Constrains pace and reveals subgroup gaps |
 
-All interventions fall well below the conventional $50,000-$150,000 per QALY cost-effectiveness threshold, indicating strong economic justification for full scale-up.
-
-**OBG calculation**:
-
-- Childhood routine: 4M × $500 = $2.0B
-- HPV: 4M × $300 = $1.2B
-- Flu (elderly): 50M × $40 = $2.0B
-- Shingles: 40M × $200 = $8.0B
-- COVID boosters: 100M × $30 = $3.0B
-- **Total OSL: ~$16B** (vs. current ~$8B)
-
-**Gap**: +$8B (underinvestment)
-
-**Evidence grade**: A (RCT evidence for most vaccines, well-established cost-effectiveness)
+**Defensible OBG output:** Build a current intervention-level range and aggregate only programs whose inputs are compatible. A strong trial literature may establish vaccine efficacy while leaving the budget needed for the next percentage point of uptake uncertain. That uncertainty calls for a bounded range or delivery pilot, not an automatic category-wide Grade A point target.
 
 ## Budget Impact Score (BIS)
 
-The Budget Impact Score measures **confidence** in each category's OSL estimate based on the quality and quantity of causal evidence. The scoring methodology draws on the established evidence hierarchy from the econometrics literature [@angrist2010; @bloom2013].
+The Budget Impact Score is a structured evidence record for each category's bounded output. It draws on the econometrics evidence hierarchy [@angrist2010; @bloom2013] but does not turn method names or study counts into a scalar confidence score.
 
 ![A pyramid of trustworthiness. Randomized trials sit at the top wearing a crown. Someone's opinion sits at the bottom, wondering what it did wrong.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-budget-impact-score-bis-bw-academic.jpg)
 
@@ -693,90 +533,58 @@ The Budget Impact Score measures **confidence** in each category's OSL estimate 
 
 For each spending category $i$:
 
-**Step 1: Gather effect estimates**
+**Step 1: Gather comparable estimates**
 
-Collect all available causal effect estimates $\{\beta_{i,1}, \beta_{i,2}, ..., \beta_{i,n_i}\}$ from the econometric literature.
+Record the estimand, population, policy dose, cost basis, and follow-up horizon. Do not pool estimates merely because they concern the same budget category.
 
-**Step 2: Compute quality weights**
+**Step 2: Run design-specific diagnostics**
 
-| Identification Method | Quality Weight ($w^Q$) |
-|----------------------|------------------------|
-| Randomized controlled trial | 1.00 |
-| Natural experiment (difference-in-differences, regression discontinuity) | 0.85 |
-| Instrumental variables | 0.70 |
-| Panel with fixed effects | 0.55 |
-| Cross-sectional regression | 0.25 |
+The method name does not supply a fixed quality weight. A difference-in-differences analysis needs credible pre-trends and timing. A synthetic control needs a credible donor pool and pre-treatment fit. A regression discontinuity needs a real threshold and manipulation checks. A failed critical diagnostic produces grade X.
 
-**Step 3: Compute precision weights**
+**Step 3: Assign the evidence grade**
 
-$$
-w^P_j = \frac{1}{\text{SE}(\beta_j)^2}
-$$
+Use A for randomization or a validated discontinuity, B for a quasi-experimental design that passes its diagnostics, C for adjusted longitudinal prediction, D for cross-sectional or expert benchmarks, and X for failed diagnostics or unsupported extrapolation.
 
-**Step 4: Compute recency weights**
+**Step 4: Synthesize raw effects where appropriate**
 
-$$
-w^R_j = e^{-0.03(t_{now} - t_j)}
-$$
+Pool only comparable estimands. Report health and income effects separately with heterogeneity and transportability limits. Precision affects the interval, not the causal grade.
 
-**Step 5: Compute confidence score**
+**Step 5: Apply scaling and safety screens**
 
-$$
-\text{BIS}_i = \min\left(1, \frac{\sum_j w^Q_j \cdot w^P_j \cdot w^R_j}{K}\right)
-$$
-
-Where $K$ is a calibration constant.
+Assess whether the proposed spending change lies inside observed support and whether capacity, interactions, transition costs, rights, or subgroup harms block the recommendation. BIS is the resulting evidence record, not a scalar that can repair missing identification.
 
 ### Evidence Grading from BIS
 
-| BIS Range | Grade | Interpretation | OSL Confidence |
-|-----------|-------|----------------|----------------|
-| 0.80 - 1.00 | A | Strong causal evidence | High - proceed with reallocation |
-| 0.60 - 0.79 | B | Good evidence | Moderate - proceed with monitoring |
-| 0.40 - 0.59 | C | Mixed evidence | Low - pilot before scaling |
-| 0.20 - 0.39 | D | Weak evidence | Very low - research priority |
-| 0.00 - 0.19 | F | Insufficient evidence | Unknown - cannot estimate OSL |
+| Grade | Interpretation | Budget output |
+|-------|----------------|---------------|
+| A | Strong causal evidence with relevant scaling support | Bounded change may proceed with monitoring |
+| B | Qualified causal evidence | Bounded change or pilot |
+| C | Predictive evidence | Pilot or scenario |
+| D | Prior or benchmark | Research priority, no target claim |
+| X | Failed diagnostics, unsupported extrapolation, or safety failure | Do not recommend |
 
 ## Gap Analysis and Priority Ranking
 
-### Computing Gaps
+### Computing Bounded Gaps
 
-For each category $i$:
+For each category with adequate evidence, report a target range $[L_i,U_i]$ rather than a false-precision point estimate:
 
-$$
-\text{Gap}_i = \text{OSL}_i - \text{Current}_i
-$$
+- **Current below $L_i$**: Evidence supports an increase within the studied range
+- **Current inside $[L_i,U_i]$**: Maintain or test only small changes
+- **Current above $U_i$**: Evidence supports a decrease within the studied range
+- **No credible range**: Publish a scenario, pilot, or abstention
 
-- **Gap > 0**: Underinvestment (increase spending)
-- **Gap = 0**: At optimal (maintain)
-- **Gap < 0**: Overinvestment (decrease spending)
+### Priority Rules
 
-### Priority Score
+Do not multiply a speculative gap by a confidence score and call the product a priority. Evidence grade is a gate. Within the same passing grade and safety tier, rank bounded changes by expected raw benefit per dollar, feasibility, and forecast uncertainty. Large upside with weak evidence becomes a pilot.
 
-Prioritize reallocation by gap size weighted by confidence:
+### Illustrative Output Format
 
-$$
-\text{Priority}_i = |\text{Gap}_i| \times \text{BIS}_i
-$$
+| Category | Current | Supported range | Income effect | Health effect | Grade | Output |
+|----------|---------|-----------------|---------------|---------------|-------|--------|
+| Category A | Reported amount | Bounded range or unknown | Raw estimate and interval | Raw estimate and interval | A to X | Increase, maintain, decrease, pilot, or abstain |
 
-Categories with large gaps AND high confidence should be addressed first.
-
-### Illustrative Example: Priority Ranking
-
-The following uses the same illustrative data from the dashboard example above. OSL estimates for pragmatic trials, vaccinations, and K-12 education are derived in Sections 5-7. Other OSL values use cross-country benchmarking. BIS scores summarize available causal evidence quality.
-
-| Category | Current | OSL | Gap | BIS | Inc | Hlth | Priority | Action |
-|----------|---------|-----|-----|-----|-----|------|----------|--------|
-| **Pragmatic trials** | $0.5B | $50B | +$49.5B | 0.90 | ++ | +++ | **44.6** | **Scale 100x** |
-| Outcome-funded R&D | $45B | $90B | +$45B | 0.70 | ++ | ++ | 31.5 | Increase |
-| Vaccinations | $8B | $35B | +$27B | 0.95 | + | +++ | 25.7 | Increase |
-| Early childhood | $50B | $70B | +$20B | 0.85 | +++ | + | 17.0 | Increase |
-| Military | $850B | $459B | -$391B | 0.50 | − | − | 195.5 | **Decrease** |
-| Ag subsidies | $25B | $0B | -$25B | 0.90 | − | − | 22.5 | **Eliminate** |
-
-*Inc = effect on real after-tax median income growth. Hlth = effect on median healthy life years. Scale: +++ strong, ++ moderate, + weak, − negative.*
-
-**Reallocation plan**: Cut military discretionary (-$391B) and agricultural subsidies (-$25B) to fund pragmatic clinical trials (+$49.5B), outcome-funded R&D (+$45B), vaccinations (+$27B), and early childhood (+$20B). Pragmatic trials have the highest priority score among positive-gap categories due to extreme underinvestment combined with strong evidence, and they improve both welfare metrics.
+A complete reallocation plan requires compatible evidence across every source and destination category plus capacity, interaction, transition-cost, timing, and fiscal-incidence constraints. Until then, publish bounded changes rather than a balanced budget that only appears solved because missing relationships were assumed away.
 
 ## Multi-Unit Reporting
 
@@ -792,94 +600,72 @@ Composite scores (like 0-1 BIS values) obscure interpretability. Policymakers an
 | **1. Natural** | Domain-specific | Interpretation within domain | "Education: $2,100/student gap" |
 | **2. Monetized** | $ equivalent | Cross-domain comparison | "Expected welfare gain: $4.00 per $1" |
 | **3. Health** | QALYs/DALYs | Health-weighted comparison | "12,000 QALYs per $1B invested" |
-| **4. Composite** | 0-1 score | Ranking when monetization uncertain | "BIS = 0.85" |
+| **4. Evidence** | Grade plus diagnostics | Show what claim the evidence supports | "B, scaling uncertain" |
 
-**Level 0 (Core Metrics)** reports expected changes to the two welfare metrics directly. All other levels are derived from or convertible to these core outcomes. QALYs (Level 3) translate directly to median healthy life years. Monetized values (Level 2) combine income effects with health effects valued at standard rates.
+**Level 0 (Core Metrics)** reports expected changes to the two welfare metrics directly. Other levels require additional assumptions and are not automatically convertible. QALYs summarize quality-adjusted health gains across people; they do not translate directly into a change in median healthy life expectancy. Monetized values require a declared valuation method and distributional assumptions.
 
 ### Conversion Factors
 
-| Conversion | Value | Source | Notes |
-|------------|-------|--------|-------|
-| Value of Statistical Life (VSL) | ~$10M | EPA, DOT | US regulatory standard |
-| Value per QALY | $50K-$150K | ICER, WHO | Context-dependent |
-| QALY → $ | $100K/QALY | Mid-range estimate | For cross-domain |
-| Life-year → QALY | ~0.8-1.0 | Age/health adjusted | Quality weighting |
+Do not hard-code one universal health-to-dollar conversion. If monetization is necessary, cite the current jurisdiction-specific VSL or QALY method, declare the affected population and time horizon, and show sensitivity to alternative defensible values. Keep the unmonetized health result visible.
 
-### Worked Example: Multi-Unit Output
+### Multi-Unit Output Format
 
-**Category: Early Childhood Education**
+| Unit Level | Required Disclosure |
+|------------|---------------------|
+| **Core metrics** | Raw income and health effects, horizon, and intervals |
+| **Natural** | Domain-specific units and the causal link to the decision |
+| **Monetized** | Valuation method, discount rate, distributional weights, and sensitivity |
+| **Health** | QALY or DALY definition, affected population, and aggregation method |
+| **Evidence** | Grade, critical diagnostics, scaling support, and safety status |
 
-| Unit Level | Value | Interpretation |
-|------------|-------|----------------|
-| **Natural** | +$20B gap | Current: $50B, OSL: $70B |
-| **Per-child** | +$833/child gap | 24M children |
-| **Monetized ROI** | 4:1 NPV return | @heckman2010 |
-| **Health (QALYs)** | +8K QALYs/year | Per $1B additional |
-| **Composite (BIS)** | 0.85 | High-quality RCT evidence |
-
-**Recommendation**: Moderate underinvestment with strong evidence. Closing the gap would yield ~$80B in NPV returns.
+Do not present a monetized ROI, QALY total, or composite score unless the translation assumptions are explicit. None of these units supplies a spending target by itself.
 
 ## Quality Requirements and Validation
 
-### Minimum Thresholds for OBG Estimation
+### Minimum Requirements for OBG Estimation
 
-| Criterion | Minimum | Rationale |
-|-----------|---------|-----------|
-| Reference countries | 5+ | Avoid outlier bias |
-| Dose-response studies | 3+ | Identify diminishing returns |
-| Causal effect estimates | 2+ | Cross-validate |
-| Data recency | Within 10 years | Relevance |
-| BIS for reallocation | > 0.40 | Sufficient confidence |
+Fixed counts of countries or studies do not validate a spending target. Before reporting a bounded range, OBG requires a relevant estimand, a design that passes its critical diagnostics, spending levels that cover the proposed change, an explicit outcome horizon, scaling and capacity evidence, full costs, and a passed safety screen.
 
 ### Robustness Checks
 
-For each OSL estimate, report:
+For each supported range, report:
 
-1. **Leave-one-country-out**: Does excluding any single country change OSL by >20%?
-2. **Method comparison**: Do diminishing returns and cost-effectiveness methods agree?
-3. **Time stability**: Has OSL changed substantially over past 5 years?
-4. **Sensitivity to assumptions**: How does OSL change with ±20% parameter variation?
+1. **Influence analysis**: Does one study or jurisdiction drive the conclusion?
+2. **Method comparison**: Do credible designs estimate the same population, dose, and horizon?
+3. **Time stability**: Is the evidence still transportable to the target decision?
+4. **Sensitivity to assumptions**: Which plausible assumptions change the recommendation category?
 
 ![Four ways to check if your answer is wrong. Look for weird numbers. Make sure you did the same thing every time. Check if it changes when time passes. Wiggle the inputs and see if it explodes.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-robustness-checks-bw-academic.jpg)
 
 ## Interpreting Results
 
-### Gap Ranges and Recommended Actions
+### Evidence and Action Categories
 
-| Gap (% of current) | Interpretation | Recommended Action |
-|-------------------|----------------|-------------------|
-| > +50% | Severe underinvestment | Immediate scale-up |
-| +20% to +50% | Moderate underinvestment | Phased increase |
-| -10% to +20% | Near optimal | Monitor, fine-tune |
-| -50% to -10% | Moderate overinvestment | Gradual reduction |
-| < -50% | Severe overinvestment | Urgent reallocation |
+| Evidence State | Recommended Action |
+|----------------|--------------------|
+| Passing evidence and safety screens, inside observed support | Bounded increase, maintain, or decrease |
+| Strong intervention effect but uncertain scaling | Incremental pilot |
+| Predictive benchmark without causal identification | Scenario or research priority |
+| Failed diagnostic, unsupported extrapolation, or severe safety concern | Do not recommend |
 
 ### What the Algorithm Cannot Tell You
 
-| Factor | OBG Captures | OBG Does Not Capture |
-|--------|-------------|---------------------|
-| Evidence-optimal spending level | Yes | |
-| Confidence in estimates | Yes | |
-| Direction of reallocation | Yes | |
-| Political feasibility | | No |
-| Implementation capacity | | No |
-| Transition costs | | No |
-| Distributional effects | | No |
-| Novel interventions | | No |
+| Factor | Treatment |
+|--------|-----------|
+| Causal evidence and uncertainty | Estimate and disclose |
+| Implementation capacity and transition costs | Constrain the recommendation |
+| Distributional effects, rights, and catastrophic risk | Safety gate |
+| Political feasibility | Report as metadata |
+| Novel interventions without scaling evidence | Pilot or abstain |
+| Public weights and legal choices | Leave to legitimate decision-makers |
 
-OBG provides evidence-based targets. Political judgment is still required for implementation strategy.
+OBG can organize evidence and propose bounded changes. It cannot infer public values, legal authority, or an unidentified marginal-return curve.
 
 ## Pilot Program Prioritization
 
 ### Value of Information for Uncertain Categories
 
-Categories with low BIS but potentially high returns warrant research investment:
-
-$$
-\text{VOI}_i = \text{Potential Gap}_i \times (1 - \text{BIS}_i) \times P(\text{high return})
-$$
-
-High-VOI categories should receive pilot funding to generate better evidence.
+Potentially high-return categories with decision-relevant uncertainty may warrant research investment. Use a formal value-of-information model only when its inputs are defensible and the result could change the pilot decision. Otherwise rank pilots by plausible stakes, decision uncertainty, feasibility, learning value, and cost.
 
 ### Recommended Pilot Designs
 
@@ -889,7 +675,7 @@ For categories where OSL is uncertain:
 
 1. **Randomized scale-up**: Randomly vary spending levels across jurisdictions
 2. **Stepped-wedge rollout**: Gradual expansion with comparison to not-yet-treated areas
-3. **Natural experiment exploitation**: Monitor for policy changes that create quasi-experimental variation
+3. **Quasi-experimental opportunity**: Monitor policy changes and apply a design only when its assumptions fit
 4. **Administrative data linkage**: Connect spending to outcomes through administrative records
 
 ### Learning Feedback Loop
@@ -899,9 +685,9 @@ For categories where OSL is uncertain:
 After each budget cycle:
 
 1. **Measure outcomes**: Statistical agencies report welfare changes
-2. **Update estimates**: New data refines OSL estimates
-3. **Recalculate priorities**: Gaps and BIS scores updated
-4. **Reallocate**: Next cycle reflects improved evidence
+2. **Check forecasts**: Compare locked predictions with realized outcomes and the baseline
+3. **Update evidence**: Revise grades, supported ranges, and safety status without hiding failures
+4. **Decide again**: The next bounded change reflects what was learned
 
 ## Data Sources
 
@@ -959,26 +745,29 @@ Higher spending may not translate to outcomes if implementation capacity is lack
 
 This section defines how OBG should be benchmarked against historical and prospective budget outcomes.
 
-### Retrospective Validation
+### Retrospective Debugging
 
-**Question**: Did jurisdictions that moved toward OSL achieve better outcomes than those that diverged?
+**Question**: Would the historical evidence card have made a useful forecast using only information available at the time?
 
 ![Three steps to check if you were right. Step 1: go back in time (mathematically). Step 2: pretend you did what you should have done. Step 3: compare it to what actually happened. Like replaying a football match in your head where you win.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-retrospective-validation-bw-academic.jpg)
 
 **Method**:
-1. Compute OSL for past periods using only data available at that time (to avoid lookahead bias)
-2. Identify jurisdictions that moved toward/away from OSL
-3. Compare subsequent outcomes using difference-in-differences or synthetic control methods [@abadie2010]
+
+1. Reconstruct the evidence card using only data available at the historical cutoff
+2. Lock its bounded forecast and simple baseline
+3. Compare both forecasts with later outcomes
 
 **Example: US State Education Spending 2000-2015**
 
-A retrospective analysis can examine whether states that moved toward education OSL (estimated from high-performing states like Massachusetts and Minnesota) subsequently showed improved test scores and graduation rates relative to states that diverged.
+A retrospective analysis can ask whether a bounded education-spending forecast based on pre-2000 evidence predicted later test-score and graduation outcomes better than a simple status-quo forecast.
 
 **Challenges**:
 
 - Confounding from simultaneous policy changes
 - Limited variation in spending changes within countries
 - Outcome measurement lags (education effects take years to materialize)
+
+This exercise can reveal lookahead leakage and obvious model failures. It is not prospective validation when the same historical outcomes influenced model or threshold selection.
 
 ### Prospective Validation
 
@@ -987,62 +776,63 @@ A retrospective analysis can examine whether states that moved toward education 
 ![How to prove you're not making things up. Write down your prediction before it happens. Tell everyone. Wait. Check if you were right. It's the scientific method for not lying to yourself.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-prospective-validation-bw-academic.jpg)
 
 **Method**:
+
 1. Pre-register OBG predictions publicly before budget decisions
 2. Monitor jurisdictions that adopt OBG guidance vs. those that don't
 3. Compare outcome trajectories using appropriate causal identification
 
-**Implementation**: Publish annual OSL estimates for US federal budget categories, creating a public record for prospective benchmarking. If jurisdictions that adopt OBG guidance systematically outperform those that do not, the framework is doing its job.
+**Implementation**: Publish a small set of locked budget decision cards with explicit outcome dates and simple preregistered comparators. Expand the number and scale of decisions only if the forecasts are calibrated and changed decisions produce enough realized benefit to justify the process.
 
 ### Success Metrics
 
-| Metric | Definition | Target | Interpretation |
-|--------|------------|--------|----------------|
-| **Gap reduction** | Did spending move toward OSL? | > 50% of gap closed in 10 years | Tests political feasibility |
-| **Outcome improvement** | Did welfare metrics improve more in OBG-following jurisdictions? | > 10% relative improvement | Tests welfare prediction accuracy |
-| **Prediction accuracy** | Did estimated returns match actual returns? | Correlation r > 0.5 | Tests underlying model |
-| **Cross-method consistency** | Do diminishing returns and cost-effectiveness methods converge? | Agreement within 30% | Tests methodological robustness |
+| Metric | Definition | Why It Matters |
+|--------|------------|----------------|
+| **Forecast error** | Difference between predicted and realized raw outcomes | Tests model accuracy |
+| **Direction accuracy** | Whether the predicted sign was correct | Tests decision usefulness |
+| **Interval coverage** | Share of outcomes inside the declared interval | Tests calibration |
+| **Incremental benefit** | Realized improvement relative to the simple comparator, net of full process cost | Tests whether complexity adds value |
+| **Safety failures** | Severe harms missed by the preregistered screen | Tests whether the recommendation process is acceptable |
+
+Each pilot preregisters numeric thresholds appropriate to its outcome horizon and sample. The specification does not impose arbitrary universal percentages before baseline performance is known.
 
 ### Evidence Base and Benchmarking
 
 OBG rests on the underlying studies cited throughout (e.g., @jackson2016 for education, @vaccine-roi-44-to-1 for vaccinations) plus a continuous benchmarking program:
 
 1. **Data collection**: Longitudinal spending and outcome data across jurisdictions
-2. **Historical OSL estimation**: Compute past OSL using only contemporaneously available data
+2. **Historical decision cards**: Reconstruct bounded forecasts using only contemporaneously available data
 3. **Causal analysis**: Identify spending → outcome effects with strong quasi-experimental designs
 4. **Publication**: Publish pre-registered benchmark studies and annual scorecards
 
 ## Sensitivity Analysis
 
-### Parameter Sensitivity
+### Parameter and Model Sensitivity
 
-| Parameter | Default | Test Range | Impact on OSL |
-|-----------|---------|------------|---------------|
-| Country data set | All OECD | OECD + G20, High-income only | ±15% |
-| Discount rate | 5% | 3-7% | ±20% |
-| BIS confidence threshold | 0.40 | 0.30-0.60 | Category inclusion |
-| Recency decay rate | 0.03/year | 0.01-0.05 | Estimate weights |
+Vary the assumptions that could change the recommendation: comparator set, dose-response form, cost basis, outcome horizon, discount rate, welfare weights, implementation capacity, and transportability adjustment. Report the recommendation under each defensible specification rather than applying one universal percentage range.
 
 ### Scenario Analysis
 
-**Optimistic scenario**: All uncertain categories have high returns
-**Pessimistic scenario**: Uncertain categories have low/zero returns
-**Base case**: Use point estimates
+**Optimistic scenario**: Favorable but defensible assumptions
 
-Report OSL range across scenarios for policy guidance.
+**Pessimistic scenario**: Unfavorable but defensible assumptions
+
+**Reference scenario**: Preregistered central assumptions
+
+Report whether the recommendation category changes across scenarios. Do not label the scenario range a confidence interval or an identified OSL.
 
 ![Three answers to the same question. The pessimistic one assumes everything will go wrong. The optimistic one assumes everything will go right. The base case assumes you'll be disappointed but not surprised.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-scenario-analysis-bw-academic.jpg)
 
 ## Conclusion
 
-The Optimal Budget Generator framework provides a systematic, evidence-based approach to budget allocation. Unlike marginal-return frameworks that can justify infinite spending on high-return categories, OBG recognizes that every category has an optimal level - like the Recommended Daily Allowance for nutrients.
+The Optimal Budget Generator is a research framework for testing budget changes. Every category may have an optimal level in theory. Current evidence usually supports a bounded direction, range, scenario, or pilot rather than a precise point target.
 
 The framework answers three questions:
 
-1. **What is the target?** OBG provides evidence-based spending levels for each category
-2. **How far are we?** Gap analysis shows where current spending diverges from optimal
-3. **How confident are we?** BIS scores evidence quality so policymakers know which OSL estimates are reliable
+1. **What does the evidence support?** OBG reports a bounded range, scenario, pilot, or abstention
+2. **How far is current spending from that support?** Gap analysis compares current spending with a defensible range when one exists
+3. **How reliable is the recommendation?** BIS preserves the evidence grade, diagnostics, scaling limits, and safety screen
 
-Even with imperfect evidence, systematically moving from severe misallocation (military 100% above OSL, vaccinations 75% below OSL) toward evidence-based targets should produce substantially larger welfare gains than current lobbying-driven allocation achieves.
+The framework must earn confidence prospectively. It does not establish that a complete national budget is optimal by assigning every category a point estimate and making the spreadsheet balance.
 
 ## Acknowledgments {.unnumbered}
 
@@ -1080,56 +870,56 @@ Phase 1: DATA COLLECTION
 3. Effect estimate data
    +-- Search systematic reviews and meta-analyses
    +-- Extract effect sizes with standard errors
-   +-- Code study quality (RCT, natural experiment, etc.)
+   +-- Record estimand, design, diagnostics, population, dose, and horizon
    +-- Build literature database by category
 
-Phase 2: OSL ESTIMATION
------------------------
+Phase 2: SUPPORTED RANGE ESTIMATION
+-----------------------------------
 4. Diminishing returns modeling
    +-- Fit nonlinear spending-outcome functions
    +-- Identify "knee" of curve
    +-- Calculate marginal returns at current spending
-   +-- Estimate optimal level
+   +-- Estimate a bounded range when identified
 
 5. Cost-effectiveness analysis (health/life-saving)
    +-- Identify interventions below CE threshold
    +-- Calculate scale-up costs
-   +-- Sum to category OSL
+   +-- Bound scale-up inside observed support
    +-- Document assumptions
 
-6. Method reconciliation
-   +-- Compare OSL estimates across methods
-   +-- Weight by method reliability
-   +-- Produce consensus OSL estimate
-   +-- Flag discrepancies
+6. Evidence synthesis
+   +-- Compare compatible estimands across methods
+   +-- Keep design diagnostics separate from precision
+   +-- Report disagreements and heterogeneity
+   +-- Abstain when estimates cannot be reconciled
 
 Phase 3: EVIDENCE QUALITY
 -------------------------
-7. BIS calculation
-   +-- Compute quality weights per study
-   +-- Compute precision weights
-   +-- Compute recency weights
-   +-- Aggregate to category BIS
+7. BIS evidence record
+   +-- Run design-specific diagnostics
+   +-- Assess transportability and scaling
+   +-- Apply capacity and safety screens
+   +-- Preserve the evidence trail
 
 8. Evidence grading
-   +-- Assign A-F grade based on BIS
+   +-- Assign A, B, C, D, or X grade
    +-- Document key evidence
    +-- Identify research gaps
    +-- Flag high-uncertainty categories
 
 Phase 4: GAP ANALYSIS
 ---------------------
-9. Compute gaps
-    +-- Gap = OSL - Current
-    +-- Calculate % gap
-    +-- Classify as under/over/optimal
-    +-- Apply BIS weighting
+9. Compute bounded gaps
+    +-- Compare current spending with supported range
+    +-- Classify as increase/maintain/decrease, pilot, or abstain
+    +-- Mark unsupported extrapolation
+    +-- Keep evidence grade visible
 
-10. Priority ranking
-    +-- Priority = |Gap| × BIS
-    +-- Rank categories
-    +-- Identify reallocation pairs
-    +-- Estimate welfare gains
+10. Priority rules
+    +-- Gate on evidence grade and safety status
+    +-- Rank within passing tiers by bounded benefit, cost, and feasibility
+    +-- Identify reallocation pairs only with compatible evidence
+    +-- Preserve raw income and health forecasts separately
 
 Phase 5: OUTPUT GENERATION
 --------------------------
@@ -1137,7 +927,7 @@ Phase 5: OUTPUT GENERATION
     +-- Natural units ($/capita, % GDP)
     +-- Monetized (ROI, opportunity cost)
     +-- Health units (QALYs where applicable)
-    +-- Composite (BIS, evidence grade)
+    +-- Evidence grade and safety status
 
 12. Sensitivity analysis
     +-- Vary key parameters
@@ -1156,15 +946,15 @@ Phase 5: OUTPUT GENERATION
 
 ### Core Concepts
 
-- **Optimal Budget Generator (OBG)**: The framework/methodology for generating integrated budget recommendations based on evidence of spending-outcome relationships. OBG accounts for the zero-sum nature of budget allocation and produces Optimal Spending Level (OSL) estimates for each category.
+- **Optimal Budget Generator (OBG)**: A research framework for grading budget evidence and producing bounded changes, ranges, scenarios, pilots, or abstentions. Complete budget optimization is a later target.
 
 ![You put evidence and comparison data into the machine. The machine tells you two things: how much you should spend, and how sure you should be. Then you notice you're spending the wrong amount.](/assets/images/optimal-budget-generator-spec/optimal-budget-generator-spec-section-core-concepts-bw-academic.jpg)
 
-- **Optimal Spending Level (OSL)**: The evidence-based target spending level for each category, produced by the OBG framework. $\text{OSL}_i$ represents the optimal spending level for category $i$. Below OSL indicates underinvestment; above OSL indicates diminishing returns.
+- **Optimal Spending Level (OSL)**: A research-stage target where credible marginal returns equal opportunity cost after capacity, interactions, timing, and transition costs. Most operational outputs use a supported range rather than a point OSL.
 
-- **Budget Impact Score (BIS)**: A 0-1 score measuring confidence in each category's OSL estimate based on the quality and quantity of causal evidence. Higher BIS indicates more reliable OSL recommendations.
+- **Budget Impact Score (BIS)**: A structured evidence record containing the grade, design diagnostics, scaling and transportability limits, and safety status.
 
-- **Spending Gap**: The difference between current spending and the evidence-based target for each category. Positive gaps indicate underinvestment; negative gaps indicate overinvestment.
+- **Spending Gap**: The relationship between current spending and a supported range. When no credible range exists, no numeric gap is reported.
 
 - **Diminishing Returns**: The economic principle that marginal returns to spending decrease as spending increases. The optimal level is where marginal return equals opportunity cost.
 
@@ -1176,17 +966,15 @@ Phase 5: OUTPUT GENERATION
 
 ### Evidence Quality
 
-- **Quality Weight ($w^Q$)**: Weight assigned to a study based on identification strategy. RCTs receive 1.0; cross-sectional studies receive 0.25.
+- **Design diagnostics**: Assumption checks specific to the identification method. A failed critical diagnostic cannot be repaired with a numeric quality weight.
 
-- **Precision Weight ($w^P$)**: Weight assigned based on standard error. More precise estimates receive higher weight.
+- **Precision**: Sampling uncertainty around a compatible effect estimate. Greater precision narrows an interval but does not raise a descriptive design to a causal grade.
 
-- **Recency Weight ($w^R$)**: Weight assigned based on publication date. More recent studies receive higher weight via exponential decay.
-
-- **Evidence Grade**: Letter grade (A-F) summarizing confidence in each category's target estimate. A = strong evidence; F = insufficient evidence.
+- **Evidence Grade**: A, B, C, D, or X classification separating strong causal, qualified causal, predictive, prior, and failed or unsupported evidence.
 
 ### Output Concepts
 
-- **Priority Score**: Product of gap magnitude and BIS. Used to rank categories for reallocation priority.
+- **Priority Tier**: Recommend, Promising: Pilot First, Insufficient Evidence, or Do Not Recommend. Evidence and safety are gates.
 
 - **Value of Information (VOI)**: Expected benefit of additional research on uncertain categories. High-VOI categories warrant pilot funding.
 
@@ -1194,36 +982,23 @@ Phase 5: OUTPUT GENERATION
 
 ## Appendix C: Illustrative Comparison to US Budget {.appendix}
 
-This appendix applies the OBG methodology to the US discretionary budget as an illustrative exercise. "Current" figures reflect approximate FY2024 budget authority. OSL estimates for pragmatic trials, vaccinations, and K-12 education are derived from the worked examples in Sections 5-7. Other OSL values integrate cross-country benchmarking and published cost-effectiveness evidence. BIS scores summarize the strength of the causal evidence.
+An earlier prototype expressed approximate US budget figures as precise Optimal Spending Levels and multiplied those gaps by confidence scores. That presentation implied the complete budget had been solved when several targets relied on benchmarks, scaling assumptions, or incompatible evidence. A defensible comparison is built category by category:
 
-### Illustrative US Discretionary Budget vs. OSL Targets
+### Illustrative US Discretionary Budget Review Format
 
-| Category | Current ($B) | OSL ($B) | Gap ($B) | Gap % | BIS | Inc | Hlth | Priority |
-|----------|-------------|----------|----------|-------|-----|-----|------|----------|
-| Military (discretionary) | 850 | 459 | -391 | -46% | 0.50 | − | − | 195 |
-| Non-military discretionary | 915 | 1,350 | +435 | +48% | 0.65 | ++ | ++ | 283 |
-| ***- Pragmatic clinical trials*** | 0.5 | 50 | **+49.5** | **+9,900%** | 0.90 | ++ | +++ | **44.6** |
-| *- Education* | 80 | 120 | +40 | +50% | 0.75 | +++ | + | 30 |
-| *- Health (research)* | 50 | 100 | +50 | +100% | 0.80 | + | +++ | 40 |
-| *- Vaccinations* | 8 | 35 | +27 | +338% | 0.95 | + | +++ | 26 |
-| *- Basic research* | 45 | 90 | +45 | +100% | 0.70 | ++ | ++ | 32 |
-| *- Infrastructure* | 100 | 150 | +50 | +50% | 0.60 | ++ | + | 30 |
-| *- Early childhood* | 50 | 70 | +20 | +40% | 0.85 | +++ | + | 17 |
-| Agricultural subsidies | 25 | 0 | -25 | -100% | 0.90 | − | − | 23 |
+| Category | Current spending | Evidence needed for a target | Defensible output |
+|----------|------------------|------------------------------|-------------------|
+| Pragmatic clinical trials | Verified current amount | Scale-up curve, implementation capacity, displaced spending, and realized trial value | Bounded increase or pilot |
+| Vaccinations | Verified current amount | Remaining eligible population, delivery capacity, marginal uptake cost, and outcome evidence | Bounded range |
+| Basic research | Verified current amount | Spillover timing, diminishing returns, and interactions with applied research | Scenario or pilot |
+| Military | Verified current amount | Security objectives, marginal deterrence and conflict effects, transition costs, and credible comparators | Scenario until identified |
+| Agricultural subsidies | Verified current amount | Transfer, deadweight-loss, distributional, food-security, and transition effects | Reform-specific decision cards |
 
-*Inc = effect on real after-tax median income growth. Hlth = effect on median healthy life years. Scale: +++ strong positive, ++ moderate, + weak, − negative.*
-
-**Key findings**:
-
-1. **Extreme underinvestment in pragmatic trials**: At 9,900% below OSL with {{< var dfda_roi_rd_only >}}:1 BCR, this is the single largest misallocation in the federal budget (see Section 6 for full derivation)
-2. **Overinvestment in military spending**: Military spending is ~$391B (46%) above OSL estimates based on cross-country benchmarking
-3. **Underinvestment in outcomes**: Vaccinations, outcome-funded R&D, and health research sit far below evidence-optimal levels
-4. **Negative-return spending**: Agricultural subsidies produce negative welfare effects per the cost-effectiveness literature
-5. **Reallocation potential**: The direction of reallocation runs from military and subsidies toward research, health, and education
+Each row must stand on its own evidence. Only after compatible rows clear their evidence and safety gates can OBG propose a balanced reallocation. The previous point targets remain hypotheses to validate, not findings to print in an optimal budget.
 
 ---
 
-**Corresponding Author**: Mike P. Sinn, Institute for Accelerated Medicine (mike@warondisease.org)
+**Corresponding Author**: Mike P. Sinn, Institute for Accelerated Medicine (<mike@warondisease.org>)
 
 **Conflicts of Interest**: The author declares no conflicts of interest.
 

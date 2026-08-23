@@ -41,8 +41,8 @@ author:
         url: https://warondisease.org
 
 website:
-  title: "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth"
-  description: 'Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It then publishes evidence-based recommendations for every major vote, tracks politician alignment, and funds aligned candidates via SuperPAC, making suboptimal policy politically expensive while preserving democratic structures.'
+  title: "Optimocracy: A Practical Evidence Scoreboard for Health and Wealth"
+  description: 'Optimocracy grades policy evidence, forecasts effects on typical income and healthy life years, publishes bounded recommendations, and checks those forecasts against later outcomes. Cross-jurisdictional policy variation supports causal claims only when a suitable design passes its diagnostics.'
   site-url: https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html
   favicon: assets/icons/optimocracy-favicon.png
   page-navigation: true

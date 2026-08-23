@@ -10802,7 +10802,7 @@
       ],
       "computeExpr": "(((POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST + POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST) + POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST) + POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/optimocracy-paper.html",
-      "chapterTitle": "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth"
+      "chapterTitle": "Optimocracy: A Practical Evidence Scoreboard for Health and Wealth"
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED": {
       "value": 108716000000000.0,
@@ -10843,7 +10843,7 @@
       ],
       "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/optimocracy-paper.html",
-      "chapterTitle": "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth"
+      "chapterTitle": "Optimocracy: A Practical Evidence Scoreboard for Health and Wealth"
     },
     "POLITICAL_DYSFUNCTION_GLOBAL_THEORETICAL_MAX_WELFARE": {
       "value": 209716000000000.0,
@@ -15079,7 +15079,7 @@
       ],
       "computeExpr": "(US_GOV_WASTE_TOTAL / US_GDP_2024)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/optimocracy-paper.html",
-      "chapterTitle": "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth"
+      "chapterTitle": "Optimocracy: A Practical Evidence Scoreboard for Health and Wealth"
     },
     "US_GOV_WASTE_PER_CAPITA_ANNUAL": {
       "value": 14877.611940298508,
@@ -33267,13 +33267,13 @@
       "title": "The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding",
       "author": "Sinn, Mike P.",
       "year": "2025",
-      "source": "Institute for Accelerated Medicine",
+      "source": "International Campaign to End War and Disease",
       "url": "https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html",
       "urls": [
         "https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html"
       ],
-      "quote": "The Optimal Budget Generator (OBG) uses causal inference, diminishing returns modeling, and cost-effectiveness evidence to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) and produces a gap analysis showing where current government budgets are over- or underfunded relative to evidence-based benchmarks. The Budget Impact Score (BIS) measures confidence in each recommendation based on the quality of causal evidence.",
-      "note": "Working Draft",
+      "quote": "The Optimal Budget Generator (OBG) is a research-stage extension of the Optimocracy evidence scoreboard. It estimates bounded budget ranges only when credible marginal-return, scaling, capacity, interaction, and cost evidence exists. Otherwise it recommends a pilot, presents a scenario, or abstains.",
+      "note": "Working Paper",
       "type": "techreport",
       "doi": "10.5281/zenodo.18356209",
       "volume": "",
@@ -33796,13 +33796,13 @@
       "title": "The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy",
       "author": "Sinn, Mike P.",
       "year": "2025",
-      "source": "Institute for Accelerated Medicine",
+      "source": "International Campaign to End War and Disease",
       "url": "https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html",
       "urls": [
         "https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html"
       ],
-      "quote": "The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.",
-      "note": "Working Draft",
+      "quote": "The Optimal Policy Generator (OPG) is a research-stage extension of the Optimocracy evidence scoreboard. It grades policy evidence, forecasts effects on typical income and healthy life years, and produces bounded recommendations only when the evidence and safety screens pass.",
+      "note": "Working Paper",
       "type": "techreport",
       "doi": "10.5281/zenodo.18603834",
       "volume": "",
@@ -33811,16 +33811,16 @@
     },
     "optimocracy-paper-2025": {
       "id": "optimocracy-paper-2025",
-      "title": "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
+      "title": "Optimocracy: A Practical Evidence Scoreboard for Health and Wealth",
       "author": "Sinn, Mike P.",
       "year": "2025",
-      "source": "Institute for Accelerated Medicine",
+      "source": "International Campaign to End War and Disease",
       "url": "https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html",
       "urls": [
         "https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html"
       ],
-      "quote": "Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It then publishes evidence-based recommendations for every major vote, tracks politician alignment, and funds aligned candidates via SuperPAC, making suboptimal policy politically expensive while preserving democratic structures.",
-      "note": "Working Draft",
+      "quote": "Optimocracy grades policy evidence, forecasts effects on typical income and healthy life years, publishes bounded recommendations, and checks those forecasts against later outcomes. Cross-jurisdictional policy variation supports causal claims only when a suitable design passes its diagnostics.",
+      "note": "Working Paper",
       "type": "techreport",
       "doi": "10.5281/zenodo.18356213",
       "volume": "",

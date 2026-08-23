@@ -1,32 +1,24 @@
 ---
 title: 'The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy'
 subtitle: Systematic Generation of Enact/Replace/Repeal/Maintain Recommendations Using Quasi-Experimental Methods and Bradford Hill Criteria
-description: The Optimal Policy Generator (OPG) produces systematic public policy recommendations for jurisdictions at any level (country, state, city), generating prioritized enact/replace/repeal/maintain recommendations to maximize real after-tax median income growth and median healthy life years, based on quasi-experimental evidence from centuries of policy variation data.
+description: The Optimal Policy Generator (OPG) is a research-stage extension of the Optimocracy evidence scoreboard. It grades policy evidence, forecasts effects on typical income and healthy life years, and produces enact, replace, repeal, maintain, pilot, or abstain outputs. Cross-jurisdictional variation supports causal claims only when a suitable design passes its diagnostics.
 abstract: |
-  Centuries of public policy variation across thousands of jurisdictions (countries, states, cities) constitute
-  a massive natural experiment. The data to identify which policies maximize welfare exists but has not been
-  systematically harvested.
+  Centuries of public policy variation across thousands of jurisdictions create many opportunities for
+  comparison. They do not constitute one massive natural experiment, and many comparisons cannot identify
+  causal effects.
 
-  The Optimal Policy Generator (OPG) applies causal inference methods (synthetic control,
-  difference-in-differences, regression discontinuity) and Bradford Hill criteria to this cross-jurisdictional
-  data, measuring policy impact on two terminal general-welfare metrics: real after-tax median income growth and median
-  healthy life years.
+  The Optimal Policy Generator (OPG) is a research specification for grading evidence, forecasting effects on
+  real after-tax median income and healthy life years, and producing bounded recommendations. A method such as
+  synthetic control, difference-in-differences, or regression discontinuity supports a causal grade only when
+  the application passes the design's assumptions and diagnostics.
 
-  For any jurisdiction, OPG produces four categories of public policy recommendations: ENACT
-  (evidence-supported policies the jurisdiction lacks), REPLACE (policies set at suboptimal levels),
-  REPEAL (policies with net welfare harm), and MAINTAIN (policies aligned with evidence). Each
-  recommendation includes expected effects on both metrics, confidence grades, and blocking factors
-  including freedom and autonomy constraints.
+  OPG can produce ENACT, REPLACE, REPEAL, and MAINTAIN recommendations when the evidence clears a declared
+  threshold. Weak evidence, unsupported extrapolation, or unresolved severe harm instead produces PILOT,
+  INSUFFICIENT EVIDENCE, or DO NOT RECOMMEND. Each output includes raw effects on both metrics, an evidence
+  grade, uncertainty, blocking factors, and a prospective evaluation date.
 
-  The framework is agnostic to which party enacted each policy, evaluating only whether it improved
-  outcomes. Projected welfare gains for typical US states: 5-15% of GDP
-  (90% CI: 2-25%). At system scale, the Optimal Governance Trajectory reaches
-  {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, raises
-  average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus
-  {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, reaches
-  {{< var wishonia_trajectory_gdp_year_20 >}} in total output, and recovers roughly
-  {{< var political_dysfunction_global_opportunity_cost_total >}}/year in suppressed value
-  ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
+  The framework is agnostic to which party enacted each policy. The project's large welfare and GDP figures
+  are illustrative best-case scenarios, not validated OPG forecasts or recoverable totals.
 aliases:
   - /optimal-policy-generator.html
   - /policy-impact-score.html
@@ -78,13 +70,15 @@ scores:
 
 {{< include ../includes/setup-parameters.qmd >}}
 
+> **Status: research-stage extension, not the Optimocracy minimum viable product.** The name describes the intended destination, not a claim that current data can generate an optimal answer for every policy. The operational starting point is a public evidence card with a grade, separate health and income forecasts, a safety screen, a bounded recommendation, and a locked evaluation date. See [Optimocracy](optimocracy-paper.qmd) [@optimocracy-paper-2025] for that smaller protocol.
+
 ## Abstract {.unnumbered}
 
-Thousands of jurisdictions have been running different policies for centuries. Some of them got richer. Some of them got healthier. Some of them did both. The data to figure out which policies worked already exists. Nobody has systematically harvested it. This is like having centuries of clinical trial data in a filing cabinet and never opening the cabinet.
+Thousands of jurisdictions have been running different policies for centuries. Some of them got richer. Some got healthier. Some did both. Those comparisons can generate hypotheses and, in suitable designs, causal evidence. They are not automatically clinical trials, and more rows do not remove confounding.
 
-This specification describes the **Optimal Policy Generator (OPG)**, a framework for producing jurisdiction-specific policy recommendations from quasi-experimental evidence. OPG measures policy impact on two terminal general-welfare metrics: **real after-tax median income growth** (economic welfare) and **median healthy life years** (health welfare). These metrics capture the primary welfare effects of most policies while remaining directly interpretable.
+This specification describes the **Optimal Policy Generator (OPG)**, a research framework for producing jurisdiction-specific policy evidence cards. OPG reports effects on **real after-tax median income growth** and **median healthy life years** separately, then assigns an evidence grade and bounded recommendation. A combined score is optional and uses preregistered dimensionless normalization rather than adding percentage points to years.
 
-> **OPG output classes:** ENACT (add policy), REPLACE (adjust policy level), REPEAL (remove harmful policy), MAINTAIN (retain evidence-aligned policy).
+> **OPG output classes:** ENACT, REPLACE, REPEAL, or MAINTAIN when evidence and safety screens pass. Otherwise: PILOT, INSUFFICIENT EVIDENCE, or DO NOT RECOMMEND.
 
 OPG answers four questions: "What should we add? Change? Remove? Keep?" The framework operates at any jurisdiction level (country, state, county, city) and produces four outputs:
 
@@ -93,9 +87,9 @@ OPG answers four questions: "What should we add? Change? Remove? Keep?" The fram
 3. **Repeal**: Harmful policies to remove
 4. **Maintain**: Current policies aligned with evidence
 
-Each recommendation includes expected effects on both metrics, confidence grades, and blocking factors (see @sec-blocking-factors).
+Each recommendation includes expected effects on both metrics, an evidence grade, the principal uncertainties, a safety screen, blocking factors (see @sec-blocking-factors), and a prospective evaluation date.
 
-**Scale note.** If recommendation quality is the bottleneck, the upside from fixing it is enormous. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Over 20 years, the [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This specification focuses on the policy-selection layer of that plan; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
+**Scale note.** Better recommendations could have large benefits. The project's [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) is an illustrative best-case scenario, not an OPG forecast. Its overlapping policy-domain estimates must not be treated as a recoverable total. This specification focuses on testing whether the policy-selection layer can add value one decision at a time.
 
 **JEL Classification**: H10, D72, C54, I18, D61
 
@@ -103,12 +97,12 @@ H10 (Public Finance, Structure and Scope), D72 (Political Economy), C54 (Quantit
 
 ## The Two Terminal General-Welfare Metrics {#sec-two-metrics}
 
-OPG measures policy impact using the [two-metric welfare function](optimocracy-paper.qmd#sec-two-metric-welfare) defined in the [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025] Framework. These are the terminal general-welfare metrics, while the terminal values are pleasant consciousness and unpleasant consciousness:
+OPG reports policy impact using the [two-metric dashboard](optimocracy-paper.qmd#sec-two-metric-welfare) defined in [Optimocracy](https://optimocracy.warondisease.org) [@optimocracy-paper-2025]:
 
 1. **Real after-tax median income growth** (pp/year) - economic welfare
 2. **Median healthy life years** (years) - health welfare
 
-See the [Optimocracy](../solution/optimocracy.qmd) paper for full justification of these metric choices, data sources, and the welfare function formula.
+See [Optimocracy](optimocracy-paper.qmd) for the metric definitions, normalization rule, safety screen, and limitations.
 
 ![The two terminal general-welfare metrics: having money and being alive to spend it. You'd think this would be obvious, but governments often forget the second bit.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-two-welfare-metrics-sec-two-metrics-bw-academic.jpg)
 
@@ -185,11 +179,11 @@ Where CV is the coefficient of variation at each translation step. A three-step 
 
 **Important clarification:** The claim that "no complex conversion factors are needed" in the abstract refers to the *terminal metrics themselves* (income and health are directly interpretable, unlike utility or welfare indices). Translation from surrogate outcomes to terminal metrics *does* require conversion factors, which must be documented and include uncertainty bounds.
 
-## The Evidence Base: Centuries of Natural Policy Experiments {#sec-evidence-base}
+## The Evidence Base: Centuries of Policy Variation {#sec-evidence-base}
 
-Every jurisdiction that enacted a policy created a natural experiment. The evidence to know what works already exists, scattered across thousands of jurisdictions and hundreds of years. OPG systematically harvests this evidence.
+Every jurisdiction that enacted a policy created an observation. Some policy changes also create credible quasi-experimental opportunities. OPG harvests the broader evidence base, then grades each comparison according to what its design can actually support.
 
-### Scale of Available Natural Experiments
+### Scale of Available Comparisons
 
 | Level | Jurisdictions | Years | Policy-Years |
 |-------|--------------|-------|--------------|
@@ -199,7 +193,7 @@ Every jurisdiction that enacted a policy created a natural experiment. The evide
 | US Counties | 3,000+ | 50+ | 150,000+ |
 | Cities worldwide | 10,000+ | varies | millions |
 
-Each policy change creates a before/after comparison. Each jurisdiction that didn't adopt creates a control group. This represents a vast, largely untapped evidence base.
+Each policy change creates a before/after comparison. A jurisdiction that did not adopt is a valid control only if the design supports that role, including credible trends, timing, spillover, and comparability assumptions. The table measures available observations, not independent experiments or effective sample size.
 
 ![US states give you 3,500 policy-years of data. Cities worldwide give you millions. It's like comparing a cookbook to the entire history of food.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-scale-of-available-natural-experiments-bw-academic.jpg)
 
@@ -258,7 +252,7 @@ A jurisdiction-specific dashboard showing which policies to enact, replace, repe
 - **Bradford Hill criteria scores** for causality assessment
 - **Analysis method** used (synthetic control, DiD, RDD) with quality diagnostics
 - **Confounders controlled** and potential threats to validity
-- **Natural experiments identified** for validation opportunities
+- **Potential quasi-experimental designs identified** for validation
 - **Jurisdiction-specific adjustments** based on demographics, existing policies, and context
 
 ## Introduction
@@ -279,7 +273,7 @@ The result: welfare losses from documented policy failures. Evidence-based polic
 
 ### Scale of Available Evidence
 
-The evidence base comprises millions of policy-years of natural experiments across all jurisdictional levels (see @sec-evidence-base for detailed counts). Systematically analyzing this data provides a far better basis for policy adoption than the current system of lobbying-driven, ideology-filtered decision-making.
+The evidence base comprises millions of policy-years across jurisdictional levels (see @sec-evidence-base for counts). Systematic analysis can improve the evidence available for policy adoption, but the number of rows does not remove confounding or prove that the complex system beats a simpler evidence review.
 
 ![Current system: decide based on feelings, maybe 10 examples. New system: decide based on millions of examples. It's the difference between astrology and astronomy, but for governance.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-scale-of-available-evidence-bw-academic.jpg)
 
@@ -289,7 +283,7 @@ The evidence base comprises millions of policy-years of natural experiments acro
 
 ![Evidence becomes a score. Score tells you: do this new thing, swap that old thing, stop doing that terrible thing, or keep doing that good thing. It's like Marie Kondo, but for laws.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-contributions-bw-academic.jpg)
 
-2. **Taxonomic**: We formalize the four recommendation types and introduce the Policy Impact Score (PIS) as an intermediate metric combining effect magnitude, causal confidence (Bradford Hill criteria), and methodological quality. This provides a standardized approach to evidence aggregation.
+2. **Taxonomic**: We formalize recommendation types and introduce the Policy Impact Score (PIS) as a structured evidence record. Effect magnitude, causal grade, methodological quality, and safety status remain visible rather than allowing a large speculative effect to conceal weak identification.
 
 3. **Applied**: We demonstrate the complete framework with a worked example for Texas traffic safety policy, showing how generic effect estimates are translated into context-adjusted, prioritized recommendations with blocking factors and tracking guidance.
 
@@ -325,38 +319,30 @@ OPG differs from existing approaches by:
 
 ## Theoretical Framework
 
-### The Policy Optimization Problem
+### The Policy Decision Problem
 
-Let $\mathcal{P}$ denote the set of available policies. For jurisdiction $j$, let $P_j \subseteq \mathcal{P}$ denote the current policy bundle. Welfare under policy bundle $P$ is defined using the two core metrics:
+Let $\mathcal{P}$ denote the set of available policies. For jurisdiction $j$, let $P_j \subseteq \mathcal{P}$ denote the current policy bundle. The operational system forecasts raw income and health effects separately. If a public ranking requires one score, it uses preregistered normalized effects:
 
 $$
-W_j(P) = \alpha \cdot \text{IncomeGrowth}_j(P) + (1-\alpha) \cdot \text{HealthyYears}_j(P)
+S_j(P) = \alpha I_j(P) + (1-\alpha)H_j(P), \qquad I_j,H_j \in [0,100]
 $$
 
 Where:
 
-- $\text{IncomeGrowth}_j(P)$ = Real after-tax median income growth (pp/year)
-- $\text{HealthyYears}_j(P)$ = Median healthy life expectancy (years)
-- $\alpha = 0.5$ (default equal weighting; can be adjusted for jurisdiction priorities)
+- $I_j(P)$ = Normalized effect on real after-tax median income over the declared horizon
+- $H_j(P)$ = Normalized effect on healthy life years over the same horizon
+- $\alpha$ = Publicly selected weight, tested for sensitivity
 
-The social planner's problem:
+The long-term research target is:
 $$
-P_j^* = \arg\max_{P \subseteq \mathcal{P}} W_j(P) \quad \text{subject to feasibility constraints}
-$$
-
-**Assumption 1 (Additive Separability)**: For tractability, assume each metric is approximately additively separable across policies:
-$$
-\text{IncomeGrowth}_j(P) \approx \sum_{p \in P} \beta^{\text{inc}}_{jp} + \varepsilon_{\text{inc}}
-$$
-$$
-\text{HealthyYears}_j(P) \approx \sum_{p \in P} \beta^{\text{hlth}}_{jp} + \varepsilon_{\text{hlth}}
+P_j^* = \arg\max_{P \subseteq \mathcal{P}} S_j(P) \quad \text{subject to feasibility and safety constraints}
 $$
 
-where $\beta^{\text{inc}}_{jp}$ and $\beta^{\text{hlth}}_{jp}$ are the marginal effects of policy $p$ on each metric in jurisdiction $j$, and interaction terms are assumed to be second-order.
+This target is not an operational claim that the complete optimum is identified. A collection of average policy effects does not define the value of a policy bundle. Complementarities, substitution, saturation, implementation capacity, timing, legal constraints, and transition costs can change the result.
 
 ![Two circles: what you do now, what you should do. The bits that don't overlap are where people are dying unnecessarily. Venn diagrams finally do something useful.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-policy-optimization-problem-bw-academic.jpg)
 
-*Justification and limitations*: Additive separability is a standard simplifying assumption in policy analysis (see @hahn2000 for regulatory impact analysis applications). This assumption is most valid when: (1) policies operate through distinct mechanisms, (2) jurisdictions have not reached saturation in any policy domain, and (3) policies do not create complementarities or substitution effects. When these conditions fail (for example, when a carbon tax interacts with renewable energy subsidies), the marginal effects may be mis-estimated.
+The minimum viable system therefore evaluates one bounded decision at a time and models only interactions that are plausibly material. If a recommendation depends on an unidentified interaction or lies outside observed support, the output is Pilot or Insufficient Evidence rather than a claimed optimum.
 
 **Policy Interaction Detection:**
 
@@ -375,23 +361,10 @@ OPG flags potential interaction effects using the following heuristics:
 
 3. **Sensitivity analysis recommendation:** For high-priority recommendations, report: "How would this recommendation change if policies X and Y interact?" with bounds on combined effect.
 
-**Proposition 1 (Policy Gap Characterization)**: Under Assumption 1, the welfare-optimal policy set satisfies:
-$$
-P_j^* = \{p \in \mathcal{P} : w_j(p) > 0\}
-$$
+### Evidence Aggregation Notes
 
-and the policy gap for jurisdiction $j$ is:
-$$
-\Delta_j = (P_j^* \setminus P_j) \cup (P_j \setminus P_j^*)
-$$
+When studies estimate comparable populations, policy doses, outcomes, and follow-up horizons, a random-effects meta-analysis may estimate a pooled raw effect:
 
-where $(P_j^* \setminus P_j)$ represents beneficial policies the jurisdiction lacks (enact candidates) and $(P_j \setminus P_j^*)$ represents harmful policies the jurisdiction has (repeal candidates). See @sec-policy-gap for the operational implementation.
-
-*Proof*: Direct consequence of additive separability. Include policy $p$ if and only if $w_j(p) > 0$. ∎
-
-### Evidence Aggregation Properties
-
-**Proposition 2 (PIS as Precision-Weighted Evidence)**: Under random-effects meta-analysis with between-jurisdiction variance $\tau^2$, the pooled effect estimate $\hat{\beta}_{\text{pooled}}$ is (see @sec-global-pis for implementation):
 $$
 \hat{\beta}_{\text{pooled}} = \frac{\sum_j \frac{1}{\text{SE}_j^2 + \tau^2} \hat{\beta}_j}{\sum_j \frac{1}{\text{SE}_j^2 + \tau^2}}
 $$
@@ -401,29 +374,17 @@ $$
 \text{Var}(\hat{\beta}_{\text{pooled}}) = \frac{1}{\sum_j \frac{1}{\text{SE}_j^2 + \tau^2}}
 $$
 
-*Proof*: Standard random-effects meta-analysis derivation (DerSimonian-Laird). ∎
-
-**Proposition 3 (Heterogeneity Bounds Transferability)**: When $I^2 > 75\%$ (high heterogeneity):
-$$
-\text{Var}[\hat{\beta}_j | \hat{\beta}_{\text{pooled}}] > 0.75 \cdot \text{Var}[\hat{\beta}_j]
-$$
-
-meaning the pooled estimate explains less than 25% of cross-jurisdiction variation. Context-specific estimates are required rather than direct application of the pooled effect. This constraint is operationalized in @sec-evidence-grading.
-
-*Proof*: By definition, $I^2 = \frac{\tau^2}{\tau^2 + \bar{\sigma}^2}$ where $\bar{\sigma}^2$ is typical within-study variance. When $I^2 > 0.75$, between-study variance dominates, and the pooled estimate provides limited information about any individual jurisdiction's true effect. ∎
+This is a standard synthesis tool, not an identification strategy. High heterogeneity is a warning to investigate context and transportability. It does not have a universal cutoff that converts a pooled estimate into a jurisdiction-specific recommendation.
 
 ### Information Value
 
-**Proposition 4 (Value of Additional Evidence)**: The expected value of information from an additional jurisdiction study is:
+When a policy is promising but uncertain, value-of-information analysis can help decide whether a pilot is worth its cost:
+
 $$
 \text{VOI} = E[\max_{a \in \{adopt, reject\}} U(a | \text{new data})] - \max_{a} E[U(a | \text{current data})]
 $$
 
-which is maximized when prior uncertainty is high and decision stakes are large.
-
-*Proof*: Standard Bayesian decision theory [@cartwright2012]. ∎
-
-**Corollary 1 (Trial Prioritization)**: Policies with (1) high prior variance in effect estimates, (2) large potential welfare impact, and (3) low trial cost should be prioritized for experimental validation. See @sec-trial-prioritization for implementation.
+Use it only when the additional model is likely to change a real decision. Otherwise the simpler rule is enough: prioritize affordable pilots where uncertainty and stakes are both high. See @sec-trial-prioritization.
 
 ## Core Methodology
 
@@ -575,24 +536,21 @@ The OPG system supports multiple quasi-experimental designs, reflecting the "cre
 
 **Example**: Effect of unemployment insurance extensions on job search behavior, showing both anticipation effects (before benefits expire) and persistence of impact (after return to baseline).
 
-#### Confidence Weighting by Method
+#### Evidence Grade by Design Validation
 
-The following weights reflect default values based on the methodological rigor hierarchy in applied economics.
+The method name does not supply a fixed confidence weight. Grade the application after its identifying assumptions and diagnostics are reviewed.
 
-| Method | Base Confidence Weight | Rationale |
-|--------|----------------------|-----------|
-| Randomized experiment | 1.00 | Gold standard; rare for policies |
-| Regression discontinuity | 0.90 | Local randomization at threshold |
-| Synthetic control | 0.85 | Good pre-treatment fit implies validity |
-| Difference-in-differences | 0.80 | Requires untestable parallel trends |
-| Event study | 0.75 | Descriptive of dynamics; less rigorous |
-| Interrupted time series | 0.65 | Single-unit; history threats |
-| Simple before-after | 0.40 | No control group; confounding likely |
-| Cross-sectional | 0.25 | Snapshot; severe confounding |
+| Grade | Basis | Permitted claim |
+|-------|-------|-----------------|
+| A | Randomization or validated discontinuity | Strong causal estimate |
+| B | Quasi-experimental design that passes diagnostics | Qualified causal estimate |
+| C | Adjusted longitudinal design | Predictive estimate |
+| D | Cross-sectional comparison or expert benchmark | Prior or hypothesis |
+| X | Failed critical diagnostic or unsupported extrapolation | No recommendation |
 
-### Bradford Hill Criteria Scoring Functions {#sec-bradford-hill}
+### Optional Research: Bradford Hill Heuristics {#sec-bradford-hill}
 
-Bradford Hill's criteria for causality [@bradford-hill-1965], originally developed for epidemiology, are operationalized here as explicit scoring functions. Each criterion maps to a saturation function that produces a score in $[0, 1]$.
+Bradford Hill's considerations [@bradford-hill-1965] can organize a robustness review, but they do not replace identification. The numeric functions in this section are an unvalidated research sketch, not part of the minimum viable product and not a source of the operational causal grade. A failed design-specific diagnostic remains grade X regardless of the heuristic score.
 
 ![Take nine different ways to check if something causes something else, squish them into numbers between 0 and 1. Science loves turning confidence into decimals.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-bradford-hill-criteria-sco-bw-academic.jpg)
 
@@ -696,9 +654,9 @@ $$
 
 Where $N_{\text{outcomes}}$ is the number of outcome categories with significant effects. A policy affecting 1-2 outcomes has $S_{\text{specificity}} > 0.7$; a policy affecting 10+ outcomes has $S_{\text{specificity}} < 0.3$. Lower specificity suggests confounding or measurement artifact.
 
-### Causal Confidence Score (CCS) Calculation
+### Experimental Causal Confidence Score (CCS) Calculation
 
-The aggregate CCS combines the eight non-temporality criteria with explicit weights, gated by temporality:
+For research comparison only, the proposed CCS combines the eight non-temporality heuristics with explicit weights, gated by temporality. These weights require prospective calibration before use and do not authorize causal language:
 
 $$
 \text{CCS} = S_{\text{temporality}} \times \frac{\sum_{k \neq \text{temp}} w_k \cdot S_k}{\sum_{k \neq \text{temp}} w_k}
@@ -786,33 +744,23 @@ Where:
 | **Suboptimal strength** | Continuous policy set below evidence-supported level | Minimum wage below optimal level |
 | **Excessive strength** | Continuous policy set above evidence-supported level | Speed limit at 85 mph vs. optimal ~70 mph |
 
-### Priority Scoring
+### Priority Rules
 
-Recommendations are ranked by priority score, which combines gap magnitude, evidence quality, and expected welfare impact:
+Evidence grade and safety status are gates, not multipliers. Within the same passing tier, recommendations may be ordered by expected raw health and income benefit per dollar, feasibility, uncertainty, and robustness to public weights. A large modeled benefit with weak identification becomes a pilot rather than a high-priority instruction.
 
-$$
-\text{Priority}_{jp} = |\text{Gap}_{jp}| \times \text{PIS}_p \times M_{jp}
-$$
+| Tier | Interpretation |
+|------|----------------|
+| **Recommend** | Evidence and safety screens pass; bounded action is supported |
+| **Promising: Pilot First** | Potentially valuable, but scaling, transportability, or identification remains uncertain |
+| **Insufficient Evidence** | No defensible action ranking yet |
+| **Do Not Recommend** | Expected harm, failed diagnostics, or a failed safety screen |
 
-Where:
+Recommend-tier decisions have:
 
-- $|\text{Gap}_{jp}|$ = Absolute difference between evidence-supported and current policy level (normalized to $[0, 1]$)
-- $\text{PIS}_p$ = Policy Impact Score (see @sec-pis), capturing effect magnitude and causal confidence
-- $M_{jp}$ = Monetized annual welfare impact, adjusted for jurisdiction $j$'s population and context
-
-**Priority tiers:**
-
-| Tier | Priority Score | Interpretation |
-|------|---------------|----------------|
-| **Critical** | $\geq 0.80$ | Immediate action recommended |
-| **High** | $[0.50, 0.80)$ | Strong candidate for adoption |
-| **Medium** | $[0.25, 0.50)$ | Consider if political capital available |
-| **Low** | $< 0.25$ | Monitor for better evidence |
-
-High-priority recommendations have:
-1. Large gap between current and optimal
-2. Strong evidence (Grade A or B; high PIS)
-3. Large expected welfare impact (high M)
+1. Evidence grade A or B with critical diagnostics passed
+2. Safety screens passed and implementation feasible within the stated scope
+3. Material expected raw health or income benefit relative to cost
+4. A conclusion robust to reasonable weights and uncertainty assumptions
 
 ### Context Adjustment {#sec-context-adjustment}
 
@@ -866,42 +814,31 @@ This reflects increased uncertainty when extrapolating beyond the observed evide
 | **Repeal** | "Remove this?" | Remove policy with negative evidence | "REPEAL [harmful policy]" |
 | **Maintain** | "Keep this?" | Current policy is evidence-supported | "MAINTAIN DUI threshold at 0.08 BAC" |
 
-For continuous policies (taxes, spending levels), **Replace** specifies the change from current to optimal level. **Enact** is reserved for truly new policies that don't exist in the jurisdiction.
+For continuous policies (taxes, spending levels), **Replace** specifies a bounded change supported by the evidence. **Enact** is reserved for truly new policies that do not exist in the jurisdiction.
 
-### Blocking Factors {#sec-blocking-factors}
+### Blocking and Safety Factors {#sec-blocking-factors}
 
 Recommendations flag constraints that may impede adoption:
 
-| Blocking Factor | Severity | Description | Example |
-|-----------------|----------|-------------|---------|
-| Constitutional Constraint | **Hard** | Requires constitutional amendment | Takings Clause limits on land use regulations |
-| Federal Preemption | **Hard** | Federal law prevents state/local action | Federal minimum wage floor |
-| Treaty Obligation | **Hard** | International agreement constrains policy | WTO rules on tariffs |
-| Autonomy Concern | **Soft** | Restricts individual freedom/choice | Mandatory helmet laws |
-| Political Feasibility | **Soft** | Strong organized opposition | Industry lobbying |
-| Implementation Cost | **Soft** | High fixed costs to implement | New regulatory agency needed |
+| Factor | Treatment | Description | Example |
+|--------|-----------|-------------|---------|
+| Constitutional constraint | **Gate** | Current proposal is legally unavailable | Takings Clause limits on land use regulations |
+| Federal preemption | **Gate** | Current jurisdiction cannot enact the policy | Federal law preempts a local rule |
+| Treaty obligation | **Gate** | Current proposal conflicts with an international obligation | WTO rules on tariffs |
+| Rights or autonomy concern | **Safety gate** | Policy restricts protected freedom or choice | Mandatory medical intervention |
+| Credible subgroup harm | **Safety gate** | Median gains conceal severe harm to a group | Benefit excludes or harms disabled people |
+| Catastrophic risk | **Safety gate** | Low-probability harm exceeds the declared threshold | Irreversible environmental release |
+| Implementation capacity | **Pilot gate** | Delivery capacity cannot support the proposed scale | New program lacks trained staff |
+| Political feasibility | **Metadata** | Organized opposition affects adoption, not the evidence grade | Industry lobbying |
 
-**Design rationale: Why blocking factors are metadata only**
+**Why some factors gate the recommendation**
 
-OPG produces **evidence-based rankings**, not political forecasts. Blocking factors are flagged but do not affect algorithmic priority scores, for three reasons:
-
-1. **Political feasibility shifts over time.** A policy "impossible" in 2020 may be mainstream by 2025. Filtering by current political feasibility would lock in the status quo and fail to surface the evidence-supported set.
-
-2. **Politicians know their context.** An elected official in Texas understands local political dynamics better than any algorithm. OPG provides the evidence; filtering is left to policymaker judgment.
-
-3. **Autonomy tradeoffs require human judgment.** A universal helmet law may save lives but restrict freedom. This is a value judgment, not an evidence question. OPG surfaces the health/income effects; the autonomy tradeoff is for democratic deliberation.
-
-**Hard vs. Soft blocking factors:**
-
-- **Hard blockers** (constitutional, preemption, treaty): These represent legal impossibility at the current jurisdictional level. Recommendations with hard blockers are marked distinctly but still shown, as they may inform advocacy for constitutional change or higher-level policy.
-
-- **Soft blockers** (political, cost, autonomy): These represent practical difficulty, not impossibility. Many transformative policies faced "impossible" political opposition before adoption.
-
-**Important**: The full evidence-supported recommendation set is always shown. Users can filter by blocking factor severity if desired, but the default view shows all recommendations ranked by expected welfare impact.
+Political feasibility remains metadata because it can change without changing the evidence. Legal impossibility, credible severe harm, catastrophic risk, and unsupported implementation scale affect what the system can responsibly recommend now. A gated proposal may remain visible for research or democratic deliberation, but it receives no Recommend label or evidence-alignment reward until the gate is resolved.
 
 ### Similar Jurisdictions {#sec-similar-jurisdictions}
 
 For each recommendation, OPG identifies jurisdictions that:
+
 1. Had similar characteristics to the target jurisdiction
 2. Adopted the recommended policy
 3. Experienced the predicted effects
@@ -969,7 +906,7 @@ This creates a learning loop: OPG recommends → jurisdiction implements → rep
 
 OPG recommends policies be implemented at the **lowest jurisdictional level where the policy can be effective**, for two reasons:
 
-1. **Maximize experimental data**: 50 states experimenting > 1 federal policy. 3,000+ counties > 50 states. More jurisdictions = more natural experiments = faster evidence accumulation.
+1. **Increase learning opportunities**: More jurisdictions can provide more adoption events, comparisons, and opportunities for randomized or credible quasi-experimental designs. They do not automatically create independent experiments.
 
 ![Federal level: little data, big risk. County level: lots of data, small risk. It's safer to experiment in Shropshire than with the entire country.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-the-subsidiarity-principle-for-evidence-generation-bw-academic.jpg)
 
@@ -997,72 +934,63 @@ For each policy recommendation, OPG specifies:
 | **Current adoption** | "12 states, 47 cities have this" |
 | **Level constraints** | "Federal preemption prevents city-level" |
 
-## Policy Impact Score (Intermediate Metric) {#sec-pis}
+## Policy Impact Score (Evidence Record) {#sec-pis}
 
 ### Overview
 
-The Policy Impact Score (PIS) is the intermediate metric used to generate recommendations. It quantifies the strength of evidence that a policy affects an outcome, combining effect magnitude, causal confidence, and analysis quality into a single score.
+The Policy Impact Score (PIS) is a structured record used to generate recommendations. It keeps effect magnitude, uncertainty, causal grade, analysis quality, and safety status separate. Multiplying them into one number would allow a large speculative effect to outrank a smaller well-identified effect without showing the trade-off.
 
 ### Jurisdiction-Level PIS Calculation
 
 ![How to calculate if a policy works: add up how big the effect is, how sure we are, and how good the data is, for both money and health. Then argue about the number.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-jurisdiction-level-pis-calculation-bw-academic.jpg)
 
-For each jurisdiction $j$ and policy $p$, compute PIS separately for each of the two metrics:
+For each jurisdiction $j$ and policy $p$, store:
 
 $$
-\text{PIS}^{\text{inc}}_{jp} = |\hat{\beta}^{\text{inc}}_{jp}| \times \text{CCS}^{\text{inc}}_{jp} \times Q_{jp}
-$$
-
-$$
-\text{PIS}^{\text{hlth}}_{jp} = |\hat{\beta}^{\text{hlth}}_{jp}| \times \text{CCS}^{\text{hlth}}_{jp} \times Q_{jp}
+\text{PIS}_{jp} = \left(
+\hat{\beta}^{\text{inc}}_{jp},
+\hat{\beta}^{\text{hlth}}_{jp},
+G_{jp},
+Q_{jp},
+R_{jp}
+\right)
 $$
 
 Where:
 
-- $|\hat{\beta}^{\text{inc}}_{jp}|$ = Absolute standardized effect on median income growth (pp/year)
-- $|\hat{\beta}^{\text{hlth}}_{jp}|$ = Absolute standardized effect on healthy life years
-- $\text{CCS}$ = Causal Confidence Score from Bradford Hill criteria (see @sec-bradford-hill)
-- $Q_{jp}$ = Quality adjustment factor based on analysis method
+- $\hat{\beta}^{\text{inc}}_{jp}$ = Raw effect estimate and interval for typical income over the declared horizon
+- $\hat{\beta}^{\text{hlth}}_{jp}$ = Raw effect estimate and interval for healthy life years over the same horizon
+- $G_{jp}$ = Evidence grade A, B, C, D, or X
+- $Q_{jp}$ = Design-specific diagnostics and analysis-quality record
+- $R_{jp}$ = Rights, subgroup-harm, catastrophic-risk, feasibility, and extrapolation status
 
-The **combined PIS** for ranking purposes is:
-
-$$
-\text{PIS}_{jp} = 0.5 \times \text{PIS}^{\text{inc}}_{jp} + 0.5 \times \text{PIS}^{\text{hlth}}_{jp}
-$$
+Evidence grade and safety status gate the recommendation. Within the same passing tier, an optional normalized public score may rank expected effects. The raw estimates and weight sensitivity remain visible.
 
 ### Always Report Both Metrics Separately
 
-While combined PIS is useful for ranking, recommendations should always display effects on both metrics:
+Recommendations display effects on both metrics and the evidence gate:
 
-| Policy | Income Effect | Health Effect | CCS | Grade |
-|--------|---------------|---------------|-----|-------|
-| Primary seat belt | +0.02 pp/yr | +0.15 years | 0.81 | A |
-| Speed limit reduction | +0.01 pp/yr | +0.06 years | 0.73 | B |
+| Policy | Income Effect | Health Effect | Critical Diagnostics | Grade |
+|--------|---------------|---------------|----------------------|-------|
+| Primary seat belt | +0.02 pp/yr | +0.15 years | Pass | A |
+| Speed limit reduction | +0.01 pp/yr | +0.06 years | Pass with limitations | B |
 
 The two-metric format makes tradeoffs explicit when they exist, preventing policies from hiding negative effects behind aggregated scores.
 
-### Effect Estimate Standardization
+### Optional Effect Normalization
 
-Each metric is standardized using cross-jurisdictional standard deviations:
-
-$$
-\hat{\beta}^{\text{inc}}_{\text{std}} = \frac{\hat{\beta}^{\text{inc}}_{\text{raw}}}{\sigma_{\text{income}}}
-\quad\quad
-\hat{\beta}^{\text{hlth}}_{\text{std}} = \frac{\hat{\beta}^{\text{hlth}}_{\text{raw}}}{\sigma_{\text{health}}}
-$$
-
-Where $\sigma_{\text{income}}$ is the cross-jurisdictional SD of median income growth (typically ~1.5 pp/year) and $\sigma_{\text{health}}$ is the cross-jurisdictional SD of healthy life expectancy (typically ~3-5 years).
-
-### Quality Adjustment Factor
+If a combined ranking is required, each metric is converted to a dimensionless percentile using a preregistered reference distribution:
 
 $$
-Q = w_{\text{method}} \cdot (1 - \text{violations})
+I_{jp},H_{jp} \in [0,100], \qquad
+S_{jp} = \alpha I_{jp} + (1-\alpha)H_{jp}
 $$
 
-Where:
+The reference distributions, horizon, and $\alpha$ are fixed before scoring. A 50/50 weight is a public preference, not a neutral scientific conversion. Rankings must show sensitivity to reasonable alternative weights.
 
-- $w_{\text{method}}$ = Method confidence weight (see table above)
-- $\text{violations}$ = Proportion of validity checks failed (parallel trends, pre-treatment fit, etc.)
+### Design Diagnostics Are Gates
+
+A failed identifying assumption is not repaired by multiplying the estimate by a smaller quality weight. Failed or unresolved critical diagnostics produce grade X. Non-critical limitations lower the evidence grade and remain visible in the decision card.
 
 ### Confounder Adjustment
 
@@ -1080,9 +1008,9 @@ The `confounder_sensitivity` field estimates how much the effect estimate might 
 
 ![Policy causes outcome, but other things also cause outcome. We control for the things we know about. The things we don't know about are called 'oops.'](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-confounder-adjustment-bw-academic.jpg)
 
-## Global (Aggregate) PIS Calculation {#sec-global-pis}
+## Cross-Jurisdictional Evidence Synthesis {#sec-global-pis}
 
-Aggregate estimates combine jurisdiction-level analyses via random-effects meta-analysis.
+Comparable jurisdiction-level estimates may be combined via random-effects meta-analysis. Pool raw income and health estimands separately. Do not pool incomparable outcomes, designs, treatment doses, or follow-up horizons merely because each produced a number.
 
 ### Pooled Effect Estimate
 
@@ -1096,15 +1024,9 @@ $$
 w_j = \frac{1}{\text{SE}_j^2 + \tau^2}
 $$
 
-### Pooled PIS Across Jurisdictions
+### Evidence Grade Across Jurisdictions
 
-The aggregate PIS for policy $p$ and outcome $o$ is:
-
-$$
-\text{PIS}_{\text{pooled}} = \frac{\sum_j w_j \cdot \text{PIS}_j}{\sum_j w_j}
-$$
-
-This precision-weighted average gives more influence to high-precision estimates (low SE) while accounting for true heterogeneity ($\tau^2$).
+Evidence grades, design diagnostics, and safety screens are not averaged. The synthesis reports the pooled raw estimate when appropriate, the distribution of evidence grades, heterogeneity, transportability concerns, and any failed critical diagnostic. A precise pooled association does not become causal if its component designs do not identify a causal estimand.
 
 ### Heterogeneity Statistics
 
@@ -1123,47 +1045,17 @@ High heterogeneity suggests moderators (policy effects vary by context) rather t
 
 ### Evidence Grading {#sec-evidence-grading}
 
-Evidence grades are assigned using explicit thresholds on PIS, heterogeneity ($I^2$), and jurisdiction count ($N_j$):
+Evidence grades are assigned from the identification design and its diagnostics, not from arbitrary cutoffs on a composite score, heterogeneity statistic, or jurisdiction count.
 
-$$
-\text{Grade} = \begin{cases}
-A & \text{if } \text{PIS} \geq 0.80 \text{ AND } I^2 < 0.50 \text{ AND } N_j \geq 5 \\
-B & \text{if } \text{PIS} \geq 0.60 \text{ AND } I^2 < 0.50 \text{ AND } N_j \geq 3 \\
-C & \text{if } \text{PIS} \geq 0.40 \text{ AND } I^2 < 0.75 \text{ AND } N_j \geq 2 \\
-D & \text{if } \text{PIS} \geq 0.20 \\
-F & \text{otherwise}
-\end{cases}
-$$
+| Grade | Basis | Permitted Claim |
+|-------|-------|-----------------|
+| **A** | Randomization or a validated discontinuity with relevant follow-up | Strong causal estimate |
+| **B** | Quasi-experimental design that passes critical diagnostics | Qualified causal estimate |
+| **C** | Adjusted longitudinal evidence without credible causal identification | Predictive estimate |
+| **D** | Cross-sectional comparison or expert benchmark | Prior or hypothesis |
+| **X** | Failed critical diagnostic, unsupported extrapolation, or unresolved severe harm | No recommendation |
 
-**Grade interpretation:**
-
-| Grade | PIS Threshold | Heterogeneity | Jurisdictions | Interpretation |
-|-------|--------------|---------------|---------------|----------------|
-| **A** | $\geq 0.80$ | $I^2 < 50\%$ | $\geq 5$ | Strong evidence; ready for implementation |
-| **B** | $\geq 0.60$ | $I^2 < 50\%$ | $\geq 3$ | Good evidence; consider piloting |
-| **C** | $\geq 0.40$ | $I^2 < 75\%$ | $\geq 2$ | Suggestive evidence; suitable for targeted pilots |
-| **D** | $\geq 0.20$ | Any | Any | Weak evidence; exploratory only |
-| **F** | $< 0.20$ | Any | Any | Insufficient evidence |
-
-**Threshold benchmarking methodology:**
-
-These thresholds can be benchmarked against historical policy adoption outcomes. The benchmarking procedure:
-
-1. **Historical validation:** Apply OPG grading to policies adopted 10+ years ago with known outcomes
-2. **Target validation rates:** Grade A recommendations should validate at 70%+ rate; Grade B at 50%+
-3. **Threshold adjustment:** If observed validation rates differ from targets, adjust PIS and $I^2$ thresholds
-
-**Heterogeneity threshold rationale:**
-
-The $I^2 < 50\%$ threshold for Grades A and B follows Cochrane Collaboration guidance that heterogeneity above 50% indicates "substantial" variability across studies [@higgins2011]. Grade C allows heterogeneity up to 75% (the "high" threshold) with explicit acknowledgment that effects are context-dependent. Above 75%, pooled estimates provide limited guidance for any specific jurisdiction.
-
-> **Evidence grading decision rule (text summary):** start with PIS threshold, then apply heterogeneity threshold ($I^2$), then jurisdiction count ($N_j$). The canonical Grade A/B threshold in this spec is $I^2 < 50\%$.
-
-**Additional grade modifiers:**
-
-- **Conflicting evidence**: Downgrade by 1 letter if direction of effect differs across high-quality studies
-- **High-quality RCT**: Automatic Grade A if RCT with low risk of bias, regardless of other criteria
-- **Single jurisdiction**: Maximum Grade C unless effect is extraordinarily large ($|\hat{\beta}| > 1.0$ SD)
+Heterogeneity, sample size, precision, replication, publication bias, and transportability remain visible and may lower a grade. None raises a design above what its identification strategy supports. Grade thresholds should be prospectively calibrated against realized forecasts; they should not be tuned until retrospective examples look persuasive.
 
 ### Context-Specific Confidence
 
@@ -1178,14 +1070,16 @@ Effects may vary by jurisdiction characteristics. We report confidence separatel
 
 ## Quality Requirements & Benchmarking
 
-### Minimum Thresholds for Inclusion
+### Minimum Requirements for Inclusion
 
-| Criterion | Minimum | Rationale |
-|-----------|---------|-----------|
-| Pre-treatment periods | 4 | Need to assess pre-trends |
-| Post-treatment periods | 2 | Need to observe effect |
-| Outcome observations | 20 | Statistical power |
-| Control jurisdictions (for DiD) | 5 | Donor pool size |
+There is no universal minimum number of periods, observations, or control jurisdictions that validates every design. Each decision card instead reports:
+
+- the number of independent adoption or assignment events;
+- pre-treatment and post-treatment coverage;
+- the policy-assignment and clustering level;
+- design-specific diagnostics;
+- spillover, anticipation, and interference assumptions; and
+- whether the target decision lies within the evidence's population, dose, and implementation support.
 | Pre-treatment RMSE (synthetic control) | < 2 SD | Acceptable pre-treatment fit |
 
 ### Parallel Trends Testing (DiD)
@@ -1288,9 +1182,9 @@ Policies with high VOI have:
 - **Low trial cost**: Policy can be randomized in small jurisdictions cheaply
 - **Decision relevance**: Trial result would change adoption decision
 
-### Natural Experiment Identification
+### Quasi-Experimental Opportunity Identification
 
-The system automatically identifies potential natural experiments:
+The system flags policy changes that may support a quasi-experimental design. A flag is not a causal grade; the design-specific diagnostics still have to pass.
 
 | Type | Identification Method | Example |
 |------|----------------------|---------|
@@ -1301,11 +1195,11 @@ The system automatically identifies potential natural experiments:
 | Lottery | Random assignment (rare) | Charter school lotteries |
 | Court mandate | Externally imposed change | Desegregation orders |
 
-Identified natural experiments are stored in `natural_experiments` table for validation.
+Flagged opportunities are stored in the `natural_experiments` table for design review and validation. The schema name is historical and does not certify the record as a valid natural experiment.
 
 ### Recommended Pilot Jurisdictions
 
-For policies with PIS in the "pilot" range (0.10-0.25), we recommend jurisdictions based on:
+For policies classified **Promising: Pilot First**, candidate jurisdictions are compared using:
 
 1. **Variation feasibility**: Jurisdiction has autonomy to adopt the policy
 2. **Data quality**: Good administrative data for outcome measurement
@@ -1423,7 +1317,7 @@ The policy evaluation literature suffers from systematic publication bias:
 1. **Null effects underreported**: Studies finding "no significant effect" are less likely to be published
 2. **Positive framing**: Researchers may frame results to emphasize statistically significant findings
 3. **File drawer problem**: Failed replications rarely published
-4. **Jurisdiction selection**: Jurisdictions with cleaner natural experiments are overrepresented
+4. **Jurisdiction selection**: Jurisdictions with cleaner identification opportunities are overrepresented
 
 **Mitigation strategies**:
 
@@ -1506,7 +1400,7 @@ This creates an auditable record that prevents retrofitting methodology to match
 
 1. **Context adjustment accuracy**: Do jurisdiction-specific adjustments improve prediction?
 2. **Blocking factor impact**: Are recommendations with blocking factors less likely to be adopted?
-3. **Evidence grade thresholds**: Are the A-F grade cutoffs appropriately calibrated?
+3. **Evidence grade thresholds**: Do A, B, C, D, and X classifications predict prospective reliability?
 4. **Heterogeneity interpretation**: Does high I² actually indicate context-dependence vs. measurement noise?
 5. **Translation pipeline accuracy**: Do surrogate→terminal metric conversions introduce systematic bias?
 
@@ -1558,7 +1452,7 @@ Adoption feedback improves the system but does not substitute for exogenous-shoc
 
 ## Conclusion
 
-The Optimal Policy Generator provides a systematic framework for translating policy-outcome evidence into jurisdiction-specific recommendations. By comparing each jurisdiction's current policy inventory to the evidence-supported set, OPG produces actionable recommendations in four categories (enact/replace/repeal/maintain) ranked by expected welfare impact. The framework transforms scattered natural experimental evidence into actionable, jurisdiction-specific guidance.
+The Optimal Policy Generator is a research framework for translating policy-outcome evidence into jurisdiction-specific decision cards. When evidence and safety screens pass, it can produce enact, replace, repeal, or maintain recommendations. Otherwise it produces a pilot, insufficient-evidence, or do-not-recommend output. Its value must be demonstrated through locked forecasts and later outcomes, not by the fact that it maximizes its own projected score.
 
 ## Acknowledgments {.unnumbered}
 
@@ -1591,7 +1485,7 @@ This worked example demonstrates the complete OPG output for a specific jurisdic
 | DUI threshold (0.08 BAC) | Optimal | N/A | N/A | **MAINTAIN** | A |
 | Graduated licensing | Optimal | N/A | N/A | **MAINTAIN** | A |
 
-### Step 1: Calculate Policy Impact Scores
+### Step 1: Build the Policy Evidence Record
 
 **Example: Primary Seat Belt Law**
 
@@ -1614,7 +1508,7 @@ From meta-analysis of 47 US states (2000-2020):
 | Plausibility | 0.90 | Clear mechanism (increased compliance) |
 | Experiment | 0.85 | Multiple synthetic control studies |
 
-**CCS** = 0.81 → Grade A
+**Experimental CCS** = 0.81. This heuristic is shown only to illustrate the research appendix. It does not determine the operational evidence grade, which depends on the identification design and its diagnostics.
 
 ### Step 2: Apply Context Adjustment for Texas
 
@@ -1783,23 +1677,23 @@ Phase 2: EVIDENCE ANALYSIS (Quasi-Experimental)
 
 Phase 3: AGGREGATION & PIS CALCULATION
 ──────────────────────────────────────
-9. Meta-analysis
+9. Evidence synthesis
    ├── Pool jurisdiction estimates (random effects)
    ├── Calculate I², τ², Q statistics
    ├── Test for publication bias (funnel plot)
-   └── Apply trim-and-fill if needed
+   └── Preserve incompatible estimates separately
 
-10. Bradford Hill scoring
-    ├── Score each criterion (0-1)
-    ├── Apply criterion weights
-    ├── Compute CCS (causal confidence score)
-    └── Document evidence for each criterion
+10. Design validation
+    ├── Run method-specific critical diagnostics
+    ├── Document confounding and transportability limits
+    ├── Apply the safety and extrapolation screens
+    └── Assign evidence grade A, B, C, D, or X
 
-11. PIS calculation
-    ├── Standardize effect estimate
-    ├── Calculate quality adjustment
-    ├── Compute final PIS
-    └── Assign evidence grade (A-F)
+11. PIS evidence record
+    ├── Preserve raw income and health estimates
+    ├── Store intervals and critical diagnostics
+    ├── Store evidence grade and safety status
+    └── Normalize only if a public ranking requires it
 
 Phase 4: RECOMMENDATION GENERATION
 ──────────────────────────────────
@@ -1815,17 +1709,17 @@ Phase 4: RECOMMENDATION GENERATION
     ├── Identify similar jurisdictions for comparison
     └── Note implementation considerations
 
-14. Priority scoring
-    ├── Rank by |Gap| × Evidence Grade × Impact
-    ├── Assign to priority tiers (Quick Win, Major Reform, etc.)
-    ├── Generate enact/replace/repeal/maintain lists
-    └── Calculate total expected welfare gain
+14. Priority rules
+    ├── Gate on evidence grade and safety status
+    ├── Rank within passing tiers by bounded benefit, cost, feasibility, and uncertainty
+    ├── Generate recommend/pilot/insufficient-evidence/do-not-recommend lists
+    └── Preserve raw income and health forecasts separately
 
 Phase 5: OUTPUT GENERATION
 ──────────────────────────
 15. Recommendation dashboard
     ├── Enact list (new policies to adopt)
-    ├── Replace list (existing policies to modify: current → optimal)
+    ├── Replace list (existing policies with a supported bounded change)
     ├── Repeal list (harmful policies to remove)
     ├── Maintain list (policies aligned with evidence)
     └── Jurisdictional level and tracking guidance for each
@@ -1846,14 +1740,14 @@ Phase 5: OUTPUT GENERATION
 
 Before generating recommendations, verify:
 
-- [ ] ≥ 4 pre-treatment periods in evidence base
-- [ ] ≥ 2 post-treatment periods in evidence base
-- [ ] ≥ 20 total outcome observations
-- [ ] ≥ 5 control jurisdictions (for DiD-based evidence)
+- [ ] Pre-treatment and post-treatment coverage is adequate for the selected design
+- [ ] Independent adoption or assignment events and the effective sample size are reported
+- [ ] Clustering, spillovers, interference, and anticipation are addressed
+- [ ] Design-specific critical diagnostics pass
 - [ ] Policy implementation dates documented
 - [ ] Outcome variable has known valence
 - [ ] Jurisdiction policy inventory verified within 2 years
-- [ ] Data quality score ≥ 0.5 for target jurisdiction
+- [ ] Target population, dose, horizon, and implementation context are within evidence support
 
 ## Appendix C: Glossary {.appendix}
 
@@ -1862,9 +1756,9 @@ Before generating recommendations, verify:
 | Term | Definition | See Section |
 |------|------------|-------------|
 | **OPG** | Optimal Policy Generator: produces jurisdiction-specific recommendations | @sec-opg-system-overview |
-| **PIS** | Policy Impact Score: effect × causal confidence × quality | @sec-pis |
-| **CCS** | Causal Confidence Score: weighted Bradford Hill average | @sec-bradford-hill |
-| **Evidence Grade** | A-F rating based on PIS, heterogeneity, jurisdiction count | @sec-evidence-grading |
+| **PIS** | Policy Impact Score: structured effect, evidence, quality, and safety record | @sec-pis |
+| **CCS** | Experimental Bradford Hill heuristic; not a source of the operational causal grade | @sec-bradford-hill |
+| **Evidence Grade** | A, B, C, D, or X classification based on identification and diagnostics | @sec-evidence-grading |
 | **Policy Gap** | Difference between current and evidence-supported policy | @sec-policy-gap |
 | **Blocking Factor** | Constraint on adoption (constitutional, political, etc.) | @sec-blocking-factors |
 | **I²** | Between-study heterogeneity (>75% = high) | @sec-global-pis |
@@ -1878,6 +1772,6 @@ Before generating recommendations, verify:
 
 ---
 
-**Corresponding Author**: Mike P. Sinn, Institute for Accelerated Medicine (mike@warondisease.org)
+**Corresponding Author**: Mike P. Sinn, Institute for Accelerated Medicine (<mike@warondisease.org>)
 
 **Data Availability**: This specification describes a methodological framework. Policy databases referenced (V-Dem, Polity V, CPDS, World Bank WDI) are publicly available at URLs provided in Data Sources section. A complete replication package including data extraction scripts, analysis code, and recommendation generation algorithms will be deposited in a public repository upon system deployment.

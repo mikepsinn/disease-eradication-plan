@@ -2932,7 +2932,7 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST: Parameter = 
   stdError: 2000000000000.0,
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/optimocracy-paper.html",
-  manualPageTitle: "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
+  manualPageTitle: "Optimocracy: A Practical Evidence Scoreboard for Health and Wealth",
 };
 
 export const POLITICAL_SUCCESS_PROBABILITY: Parameter = {
@@ -9027,7 +9027,7 @@ export const POLITICAL_DYSFUNCTION_GLOBAL_OPPORTUNITY_COST_TOTAL: Parameter = {
   inputs: ["POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST", "POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST", "POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST", "POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST"],
   computeExpr: "(((POLITICAL_DYSFUNCTION_GLOBAL_HEALTH_OPPORTUNITY_COST + POLITICAL_DYSFUNCTION_GLOBAL_SCIENCE_OPPORTUNITY_COST) + POLITICAL_DYSFUNCTION_GLOBAL_LEAD_OPPORTUNITY_COST) + POLITICAL_DYSFUNCTION_GLOBAL_MIGRATION_OPPORTUNITY_COST)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/optimocracy-paper.html",
-  manualPageTitle: "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
+  manualPageTitle: "Optimocracy: A Practical Evidence Scoreboard for Health and Wealth",
 };
 
 export const POLITICAL_DYSFUNCTION_GLOBAL_REALIZED_WELFARE_ADJUSTED: Parameter = {
@@ -11173,7 +11173,7 @@ export const US_GOV_WASTE_PCT_GDP: Parameter = {
   inputs: ["US_GOV_WASTE_TOTAL", "US_GDP_2024"],
   computeExpr: "(US_GOV_WASTE_TOTAL / US_GDP_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/optimocracy-paper.html",
-  manualPageTitle: "Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth",
+  manualPageTitle: "Optimocracy: A Practical Evidence Scoreboard for Health and Wealth",
 };
 
 export const US_GOV_WASTE_PER_CAPITA_ANNUAL: Parameter = {

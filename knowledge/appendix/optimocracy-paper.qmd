@@ -1,21 +1,15 @@
 ---
-title: 'Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth'
-description: Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It publishes evidence-based recommendations for every major vote and scores every legislator against them. Getting anyone to act on the scoreboard is a separate question with several answers, none of which require a government's permission.
+title: 'Optimocracy: A Practical Evidence Scoreboard for Health and Wealth'
+description: Optimocracy grades policy evidence, forecasts effects on typical income and healthy life years, publishes bounded recommendations, and checks those forecasts against later outcomes. Cross-jurisdictional policy variation supplies useful comparisons, but only designs that pass causal diagnostics support causal claims. Politicians still decide; the public scoreboard records the evidence, the decision, and what happened next.
 abstract: |
-  Thousands of jurisdictions (municipal, state, federal, international) have exposed populations to different
-  policies over decades. This cross-jurisdictional variation is a natural experiment. Optimocracy: (1) Apply
-  causal inference to this historical policy data, (2) Identify which policies predict above-average median
-  income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician
-  alignment with evidence. Politicians still decide; the scoreboard just records what they decided and what
-  it cost. Acting on the scoreboard is a separate problem, and this paper surveys the available mechanisms
-  rather than assuming one. At system
-  scale, the Optimal Governance Trajectory reaches
-  {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, raises
-  average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus
-  {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, reaches
-  {{< var wishonia_trajectory_gdp_year_20 >}} in total output, and recovers roughly
-  {{< var political_dysfunction_global_opportunity_cost_total >}}/year in suppressed value
-  ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
+  Jurisdictions have exposed populations to different policies over decades. That variation creates useful
+  comparisons, but it does not automatically create natural experiments or causal estimates. Optimocracy
+  grades the available evidence, forecasts effects on typical income and healthy life years, publishes bounded
+  recommendations, and records whether later outcomes matched the forecast. Politicians still decide. The
+  scoreboard makes the evidence, uncertainty, decision, and result public. Acting on the scoreboard is a
+  separate problem, so this paper compares adoption mechanisms rather than assuming one. The project's
+  Optimal Governance Trajectory is an illustrative best-case scenario, not a forecast of what this scoreboard
+  will recover.
 aliases:
   - /optimocracy.html
 author:
@@ -68,37 +62,37 @@ scores:
 
 ## The Mechanism
 
-Optimocracy is simple:
+Optimocracy is simple enough to build:
 
-1. **Exploit cross-jurisdictional variation as natural experiments**: Thousands of jurisdictions have made different policy and budget choices over decades. When Kansas cuts education funding and Minnesota increases it, that's a natural experiment. Apply causal inference methods (synthetic control, difference-in-differences, regression discontinuity) to estimate what happened to median real after-tax income and healthy life years.
+1. **Collect relevant comparisons**: Jurisdictions have made different policy and budget choices over decades. When Kansas cuts education funding and Minnesota increases it, that is policy variation. It becomes useful causal evidence only if the comparison satisfies the assumptions of a suitable design.
 
 ![Optimocracy: measure what works, recommend what works, check if anyone listened, pay people who listened. It's the revolutionary idea of doing the thing that works.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg)
 
-2. **Identify which policies predict above-average outcomes**: Not ideology. Not theory. Which specific policy choices, across hundreds of jurisdictions and decades of data, causally predicted higher median income and more healthy life years?
+2. **Grade the evidence and forecast outcomes**: Report whether each estimate is causal, predictive, or speculative. Forecast effects on typical income and healthy life years separately, with the principal uncertainty and possible harms visible.
 
-3. **Publish recommendations**: For every major vote, publish what the evidence suggests. "Based on historical data, funding early childhood education at $X correlates with Y% better outcomes."
+3. **Publish bounded recommendations**: Classify each decision as Recommend, Promising: Pilot First, Insufficient Evidence, or Do Not Recommend. Do not manufacture an answer for every vote.
 
-4. **Track politician alignment**: When legislators vote, record how often they align with evidence-based recommendations. Senator Smith: 78% aligned. Senator Jones: 34% aligned.
+4. **Check the forecast**: Timestamp the evidence, assumptions, prediction, and recommendation before the outcome is known. Later, publish what happened. Track politician alignment only for recommendations that cleared the stated evidence threshold.
 
 **That's it.** Politicians still vote however they want. The algorithm recommends, and then it records.
 
 That leaves the second problem, which is getting anyone to act on the record. Published evidence is necessary and, on the historical record, not sufficient: [Why Information Alone Fails](#why-information-alone-fails) documents rankings that have existed for years and moved little. Several mechanisms could close that gap, they have different costs and different failure modes, and [Political Economy](#political-economy-making-reform-happen) works through them. This paper does not assume one. The analytical engine is the contribution; the adoption mechanism is a choice made afterward, and choosing wrong does not make the measurements wrong.
 
-**Scale note.** The magnitude at stake is far larger than any single reform memo. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Over 20 years, the [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper focuses on the evidence-production and enforcement layer that could move policy toward that ceiling; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
+**Scale note.** The magnitude at stake may be far larger than any single reform memo. The project's [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) is an illustrative best-case ceiling built from strong assumptions. It is not a forecast, and its overlapping policy-domain estimates are not an amount Optimocracy can promise to recover. This paper focuses on the smaller claim that transparent evidence grading and prospective checking can improve some decisions.
 
 ### Why This Works
 
-**Capture resistance:** Currently, lobbyists have thousands of capture points: committee earmarks, agency decisions, regulatory rulings. Each is relatively cheap to influence. Optimocracy consolidates these to a single target: the verification layer measuring health and wealth. Corrupting five independent data sources (Census Bureau, Federal Reserve, BLS, academic institutions, citizen surveys) requires coordination across institutions with different governance structures, funding sources, and methodologies. Corruption doesn't disappear; it just becomes prohibitively expensive.
+**Capture resistance:** Currently, lobbyists have thousands of capture points: committee earmarks, agency decisions, regulatory rulings. A public evidence layer creates a different target: the methods, data, and outcome definitions. Multiple sources, public code, and visible revisions make simple manipulation easier to detect. They do not make capture prohibitively expensive, especially when nominally independent reports share the same underlying data or model.
 
 ![A comparison between the current fragmented system of thousands of lobbyist capture points and Optimocracy’s consolidated verification layer protected by multiple independent data sources.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-this-works-bw-academic.jpg)
 
-**Analytical validity:** Cross-jurisdictional variation provides the statistical power that single-jurisdiction studies lack. When 50 states adopt different minimum wages over 30 years, we don't need a randomized trial; we have thousands of natural experiments. Modern causal inference methods (synthetic control, difference-in-differences) can extract signal from this variation. The approach has already produced actionable findings in economics and public health; Optimocracy systematizes it across all policy domains simultaneously.
+**Analytical validity:** Cross-jurisdictional variation can provide more comparisons than a single-jurisdiction study. More observations improve precision only when the observations and identification assumptions support the estimate. Difference-in-differences, synthetic control, and regression discontinuity can support causal claims in suitable cases. Otherwise the result remains predictive or descriptive. Optimocracy keeps those claims separate and starts with policy domains where credible evidence already exists.
 
 **No government permission required:** Optimocracy operates as a permanent advisory layer. Running a regression on published data and comparing the result to a published roll-call vote is information provision. No legislature has to authorize it, no agency has to adopt it, and no politician has to surrender anything to be measured. The question changes from "Will politicians give up power?" (hard) to "Will anyone act on an accurate scoreboard?" (still hard, but a different problem, and one with more than one answer).
 
 ## The Problem: [Political Dysfunction Tax](political-dysfunction-tax.qmd)
 
-Political actors optimize for what gets them reelected: campaign contributions, constituent services, ideological positioning. These differ systematically from what improves measured outcomes. The result: systematic resource misallocation costing {{< var us_gov_waste_total >}} in documented US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs. For full derivation, see [The Political Dysfunction Tax](political-dysfunction-tax.qmd).
+Political actors optimize for what gets them reelected: campaign contributions, constituent services, ideological positioning. These differ systematically from what improves measured outcomes. The project estimates large losses from policy and budget failures, but estimates across domains use different counterfactuals and overlap. They should be read as evidence that the stakes may be large, not added into a guaranteed recoverable total. For the component estimates and their limitations, see [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
 
 ## Why Information Alone Fails
 
@@ -141,7 +135,7 @@ The welfare loss can be conceptually decomposed into sources:
 
 Optimocracy primarily addresses $\tau_{crony}$ and $\tau_{time}$ by making evidence-based recommendations public and rewarding politicians (via campaign support and career opportunities) in proportion to their alignment with those recommendations.
 
-### Documented Welfare Losses by Policy Domain
+### Illustrative Policy-Loss Estimates by Domain
 
 The following table synthesizes estimates from peer-reviewed research:
 
@@ -156,21 +150,21 @@ The following table synthesizes estimates from peer-reviewed research:
 
 ^†^Think tank source with weak causal identification; achievable gains likely smaller.
 
-**Note on interpretation:** These estimates are not additive; many inefficiencies interact and overlap. However, even conservative aggregation suggests the [Political Dysfunction Tax](political-dysfunction-tax.qmd) amounts to {{< var us_gov_waste_pct_gdp >}} of US GDP in documented waste.
+**Note on interpretation:** These estimates are not additive. They mix fiscal waste, deadweight loss, GDP counterfactuals, transfers, consumer surplus, and health effects. Many domains overlap, and several estimates have weak causal identification. They show that individual policy failures can be important, not that one recoverable total has been established.
 
-This pattern (massive welfare losses persisting due to political economy constraints) recurs across policy domains. The question is not whether trillion-dollar bills exist, but why they remain on the sidewalk.
+The recurring pattern is enough to motivate a bounded evidence scoreboard. The proposal does not require a single global total.
 
-**Calibrating the estimates:** These theoretical maxima require heroic assumptions. Regulatory estimates from think tanks use weak causal identification; 5-10% is more defensible than 25%. After adjusting:
+**Calibrating the estimates:** These theoretical maxima require strong assumptions. Regulatory estimates from think tanks use weak causal identification. Alternative scenarios include:
 
 - Regulatory reform: 5-10% of GDP (not 25%)
 - Corruption reduction: 3-5% of GDP
 - Other allocative improvements: 5-10% of GDP
 
-**Conservative aggregate: {{< var us_gov_waste_pct_gdp >}} of US GDP in documented waste** ({{< var us_gov_waste_total >}}), with global opportunity costs reaching {{< var political_dysfunction_global_opportunity_cost_total >}}. This is sufficient to motivate Optimocracy, without relying on heroic assumptions.
+These scenario ranges still overlap and should not be summed. Optimocracy should justify each recommendation using its own incremental estimand, not allocate the same supposed loss to several reforms.
 
 ### Bottom-Up Policy Cost Accounting
 
-The US government waste estimate of {{< var us_gov_waste_total >}} ({{< var us_gov_waste_pct_gdp >}} of GDP) is derived from the [United States Efficiency Audit](us-efficiency-audit.qmd) [@us-efficiency-audit-paper-2025], which enumerates specific, measurable policy failures across defense, healthcare, justice, regulatory, and subsidy subsystems.
+The [United States Efficiency Audit](us-efficiency-audit.qmd) [@us-efficiency-audit-paper-2025] enumerates component estimates across military spending, healthcare, justice, regulation, and subsidies. Its headline is a scenario ledger. Components require overlap and transfer accounting before they can support an aggregate recoverable-welfare claim.
 
 ![How America wastes money, by category. Healthcare, military, regulations, taxes, housing. It's like a pie chart of inefficiency, and every slice is surprisingly large.](/assets/images/optimocracy-paper/optimocracy-paper-section-alternative-estimation-bottom-up-policy-cost-accounting-bw-academic.jpg)
 
@@ -188,62 +182,49 @@ If the welfare losses are documented, why don't governments act? As established 
 | Medical research | 45:1 | Competes with defense spending |
 | Agricultural subsidies | <1:1 | Concentrated beneficiaries, effective lobby |
 
-Information about optimal policy is freely available. The Copenhagen Consensus, GiveWell, and academic researchers publish rigorous benefit-cost analyses. Governments ignore this information because acting on it is not politically rewarded.
+Useful policy evidence is often freely available. The Copenhagen Consensus, GiveWell, and academic researchers publish benefit-cost analyses with varying scope and identification strength. Governments can ignore even strong evidence because acting on it is not always politically rewarded.
 
 ### Implications for Mechanism Design
 
 The empirical evidence suggests:
 
-1. **The welfare loss is massive**: Documented US waste alone totals {{< var us_gov_waste_total >}} ({{< var us_gov_waste_pct_gdp >}} of GDP).
+1. **The stakes may be large**: Several individual policy domains have material estimated losses, even though a precise aggregate is not established.
 2. **Information alone is insufficient**: Better data does not change political incentives.
 3. **The inefficiency is systematic**: It recurs across domains and countries, suggesting structural rather than contingent causes.
 4. **Capture is the primary mechanism**: Policies systematically favor concentrated interests over diffuse citizen welfare.
 
 ![Politicians get captured by special interests, which makes everyone poorer, so we're trying to design systems where being terrible is harder. Childproofing democracy.](/assets/images/optimocracy-paper/optimocracy-paper-section-implications-for-mechanism-design-bw-academic.jpg)
 
-This motivates the Optimocracy thesis: if current systems systematically fail to optimize for welfare, outcome-optimizing systems may improve outcomes. The following sections examine precedents, mechanisms, and limitations.
+This motivates a testable Optimocracy thesis: a transparent evidence scoreboard may improve some decisions enough to justify its cost. The following sections examine precedents, mechanisms, and limitations.
 
 ### When Does Optimocracy Beat the Status Quo?
 
-Optimocracy's structural advantage comes from consolidating capture opportunities. The only attack surface is the verification layer itself: coordinating multiple independent institutions to misreport the same metrics, without detection.
+Optimocracy may make some forms of capture more visible by consolidating methods, forecasts, and outcomes in a public record. It also creates new attack surfaces in source selection, modeling, evidence grades, metric weights, safety screens, and adoption incentives.
 
 ![Now: bribe one committee chair, get your way. Optimocracy: you'd have to bribe multiple independent organizations simultaneously. Corruption, but make it difficult.](/assets/images/optimocracy-paper/optimocracy-paper-section-when-does-optimocracy-beat-the-status-quo-bw-academic.jpg)
 
-Health and wealth are not arbitrary metrics. They are what humans universally value. The challenge for would-be corruptors: coordinate the Census Bureau, Federal Reserve, BLS, academic researchers, and citizen surveys to all report the same biased figure, without any whistleblowers. These institutions have different governance structures, funding sources, and methodologies. Collusion among strangers who lose credibility if caught is fundamentally harder than lobbying a single committee chair.
+Health and typical income are widely valued and relatively legible, but they are incomplete. Multiple data sources can expose crude manipulation, especially when they use genuinely independent collection and methods. Shared administrative records or shared definitions can also reproduce the same error without collusion.
 
-#### Formal Model
+#### Practical Dominance Test
 
-Let $N$ denote the number of capture-prone allocation decisions under the status quo. Each decision $i$ has capture probability $p_i$ and capture cost $c_i$ (welfare loss when captured). Under Optimocracy, capture opportunity collapses to oracle manipulation: $K$ independent oracles, each with capture probability $p_O$, requiring majority collusion.
+A stylized probability formula for independent oracle capture would add false precision because the relevant attack probabilities and dependencies are unknown. The practical comparison is empirical. Optimocracy earns continued use only when:
 
-**Proposition 1 (Optimocracy Dominance Condition):**
+1. its locked forecasts beat a preregistered simple baseline;
+2. the realized benefit of decisions changed by the scoreboard exceeds the full research and implementation cost;
+3. measurement and methodology manipulation remain detectable enough to preserve calibration; and
+4. the system stays within its declared safety thresholds.
 
-*Optimocracy beats capture-prone governance when:*
-
-$$
-\underbrace{\binom{K}{\lceil K/2 \rceil} p_O^{\lceil K/2 \rceil} \cdot c_O}_{\text{Expected capture cost under Optimocracy}} < \underbrace{\sum_{i=1}^{N} p_i \cdot c_i}_{\text{Expected capture cost under status quo}}
-$$
-
-In plain English: the left side is the cost of corrupting Optimocracy (coordinating oracle collusion across multiple independent sources). The right side is the cost of corrupting the status quo (bribing all those committee decisions). Optimocracy wins when the left side is smaller.
-
-**When this works:**
-
-1. **N is large**: More decision points = more capture opportunities = higher status quo corruption cost
-2. **Many independent oracles**: More oracles require exponentially harder collusion (5 sources means capturing 3; probability scales as $p_O^3$)
-3. **Oracles are genuinely independent**: Different governance structures, funding sources, methodologies
-
-**What the model shows:** The magnitude of Optimocracy's advantage depends on empirical parameters (capture probabilities, number of decision points, oracle independence). The model doesn't prove Optimocracy always wins. It identifies the *conditions* under which consolidating decision points reduces capture.
-
-**Limitations:** This model assumes capture probabilities are independent (may underestimate coordinated attacks) and oracle collusion requires simple majority (stronger thresholds reduce risk further). Real-world calibration is essential before drawing quantitative conclusions.
+These conditions can be tested without estimating the probability that every institution is corrupt.
 
 ## Theoretical Foundations
 
-Previous attempts at technocratic governance (Soviet central planning, credit rating agencies) failed due to knowledge problems, incentive misalignment, and scope creep. Optimocracy learns from these failures by using median aggregation across independent data sources, limiting scope to budget/policy recommendations (not comprehensive planning), and preserving market mechanisms for production decisions. For detailed historical analysis and engagement with Arrow's impossibility theorem, mechanism design theory, and democratic legitimacy concerns, see [Appendix B](#appendix-b-theoretical-background).
+Previous attempts at technocratic governance (Soviet central planning, credit rating agencies) failed due to knowledge problems, incentive misalignment, and scope creep. Optimocracy learns from these failures by using multi-source measurement with disclosed dependencies, limiting scope to budget and policy recommendations rather than comprehensive planning, and preserving market mechanisms for production decisions. For detailed historical analysis and engagement with Arrow's impossibility theorem, mechanism design theory, and democratic legitimacy concerns, see [Appendix B](#appendix-b-theoretical-background).
 
 ![Past technocrats failed because one source could be wrong or corrupt. Optimocracy uses multiple sources and takes the median. Wisdom of crowds, but for governments.](/assets/images/optimocracy-paper/optimocracy-paper-section-theoretical-foundations-bw-academic.jpg)
 
-Critically, Optimocracy also avoids the Soviet knowledge problem because it does not plan from first principles. It learns from decentralized experiments that already happened. Thousands of jurisdictions have already tried different policies; Optimocracy uses causal inference to identify which choices led to better outcomes. This is empirical pattern recognition across natural experiments, not central planning.
+Critically, Optimocracy does not plan production from first principles. It starts with decentralized policy experience that already exists, grades whether each comparison is descriptive, predictive, or plausibly causal, and checks new forecasts prospectively. That is an evidence service, not comprehensive central planning.
 
-Health and wealth aren't contested values requiring democratic selection. They're what everyone already wants. The hard problem isn't "what should we optimize?" but "who measures it honestly?" That's an oracle design problem, addressed through multi-source verification.
+Health and typical income are useful public objectives, but weights and non-negotiable constraints still require democratic selection. Measurement is one hard problem. Causal identification, transportability, implementation, and legitimate trade-offs are others.
 
 ### Precedents That Work
 
@@ -262,29 +243,29 @@ Optimocracy is purely advisory. It operates through three functions:
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                    RECOMMEND                             │
-│  - Algorithm calculates optimal policies/budgets        │
-│  - Optimizes for Health & Wealth (universal values)     │
-│  - Publishes recommendations for every major vote       │
+│  - Grade the evidence for a defined decision            │
+│  - Forecast health and income effects separately        │
+│  - Recommend, pilot, abstain, or reject                  │
 └─────────────────────────────────────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
 │                      TRACK                               │
-│  - Politicians vote however they want                   │
-│  - System records alignment with recommendations        │
-│  - Voting records are public                            │
+│  - Lock the forecast before outcomes are known          │
+│  - Record decisions, outcomes, and corrections          │
+│  - Score alignment only above an evidence threshold     │
 └─────────────────────────────────────────────────────────┘
                           │
                           ▼
 ┌─────────────────────────────────────────────────────────┐
 │                      REWARD                              │
 │  - Adoption mechanism converts score into support       │
-│  - 80% aligned = 2x the support of 40% aligned          │
-│  - Metric trends validate the system, attract funding   │
+│  - Better calibrated forecasts earn more trust          │
+│  - Failed forecasts remain public                       │
 └─────────────────────────────────────────────────────────┘
 ```
 
-**What about edge cases, catastrophic risks, novel situations?** Politicians handle them. That's their job. The algorithm recommends; politicians decide. If a recommendation seems dangerous or wrong, they ignore it and face public accountability for that choice. The system tracks and rewards, nothing more.
+**What about edge cases, catastrophic risks, novel situations?** The decision card flags rights constraints, credible subgroup harm, catastrophic risk, and extrapolation beyond observed evidence before a policy can receive a Recommend label. Politicians still decide, but the scoreboard does not award alignment points for blindly following a recommendation that failed its own safety screen.
 
 ### The Verification Layer
 
@@ -308,7 +289,7 @@ If one source reported +5.0% (an outlier), it would be excluded by the median. T
 
 An important limitation: the five sources above all ultimately rely on the same underlying data (Census surveys, tax records, employer reports). Their errors are correlated, meaning "five independent sources" may be an illusion. If the underlying methodology is captured, all five report the same biased figure.
 
-This is a real concern. The solution is **genuinely independent data collection via decentralized citizen surveys.**
+This is a real concern. One partial defense is **independent data collection**, including well-designed citizen surveys. A new survey does not automatically become independent or accurate; sampling, identity, privacy, nonresponse, and question design still require audit.
 
 **Decentralized Survey Architecture:**
 
@@ -320,37 +301,44 @@ This is a real concern. The solution is **genuinely independent data collection 
 | **Aggregation** | Open-source algorithm | Transparent, anyone can verify |
 | **Privacy** | Anonymization after identity verification | Responses can't be linked to individuals |
 
-**Why individual gaming is irrelevant:**
+**Why individual gaming is limited:**
 
-With millions of survey responses, one person lying has approximately zero impact on the aggregate. Survey responses are aggregated statistically, so there is no strategic incentive to misreport.
+With millions of valid survey responses, one person lying has approximately zero impact on the aggregate. Coordinated manipulation, selection bias, and shared methodology errors can still matter, so the system publishes source dependence and reconciliation methods rather than counting every source as an independent vote.
 
-### The Execution Layer
+### The Evidence and Recommendation Layer
 
-Given the objective function and data feeds, the execution layer performs constrained optimization:
+The first operational version does not require a universal optimizer. It produces a decision card for one defined choice at a time:
 
-$$
-\max_{\mathbf{x}} M(\mathbf{x}) \quad \text{subject to} \quad \sum_i x_i = B, \quad x_i \geq 0
-$$
+| Field | Minimum disclosure |
+|-------|--------------------|
+| Decision | Jurisdiction, alternatives, affected population, cost, and evaluation horizon |
+| Evidence | Design, sample, treatment timing, principal assumptions, and evidence grade |
+| Forecast | Raw effects on typical income and healthy life years, reported separately |
+| Uncertainty | Statistical interval plus the main confounding, model, and transportability risks |
+| Safety | Known subgroup effects, rights constraints, catastrophic risks, and implementation limits |
+| Evaluation | Timestamped forecast, outcome date, comparator, and correction policy |
 
-Where $M(\cdot)$ is the chosen metric, $\mathbf{x}$ is the allocation vector, and $B$ is the total budget.
+Evidence receives one of five grades:
 
-The primary analytical engine uses **causal inference on cross-jurisdictional time-series data**: synthetic control methods, difference-in-differences, and regression discontinuity designs applied to decades of policy variation across thousands of jurisdictions. This is the core of Optimocracy: not theoretical modeling, but empirical identification of which real-world policy choices actually predicted better outcomes.
+| Grade | Basis | Permitted claim |
+|-------|-------|-----------------|
+| A | Randomization or a validated discontinuity | Strong causal estimate |
+| B | Quasi-experimental design that passes its diagnostics | Qualified causal estimate |
+| C | Adjusted longitudinal evidence | Predictive estimate |
+| D | Cross-sectional comparison or expert benchmark | Prior or hypothesis |
+| X | Failed diagnostics, unsupported extrapolation, or unresolved severe harm | No recommendation |
 
-Supplementary methods include:
+The method follows the decision. Difference-in-differences requires credible pre-trends and treatment timing. Synthetic control requires a credible donor pool and pre-treatment fit. Regression discontinuity requires a real threshold and manipulation checks. Machine learning may improve prediction inside a valid design, but prediction alone does not raise the causal grade.
 
-1. **Randomized controlled trials**: Allocate experimental budgets to estimate causal effects of novel interventions with no historical variation to learn from
-2. **Prediction markets**: Aggregate distributed information about allocation effectiveness for forward-looking decisions
-3. **Machine learning**: Identify complex nonlinear patterns in the cross-jurisdictional dataset that traditional econometric methods may miss
+The output is deliberately coarse: **Recommend**, **Promising: Pilot First**, **Insufficient Evidence**, or **Do Not Recommend**. A large modeled benefit with weak evidence normally becomes a pilot, not an instruction. Allocations far outside observed spending levels also become pilots. Exact budget optimization is a research-stage extension that is justified only when credible marginal-return curves, interactions, capacity limits, and transition costs are available.
 
-The execution system publishes recommendations and tracks politician alignment. The alignment score is the input any [adoption mechanism](#sec-adoption-mechanisms) acts on, and the layer is indifferent to which one does. Outcome measurement validates the system over time.
-
-For a concrete worked example of how the optimization algorithm calculates allocations, see Appendix A: Technical Specification Sketch.
+The system timestamps each recommendation and later publishes forecast error. An alignment score is meaningful only for decisions that cleared the preregistered evidence and safety thresholds. [Appendix A](#appendix-a-minimum-viable-calculation-protocol-and-research-extensions) describes the minimum calculation protocol and where the larger generator specifications fit.
 
 ## Welfare Metrics
 
-### Default Implementation: Two-Metric Welfare Function {#sec-two-metric-welfare}
+### Default Implementation: A Two-Metric Dashboard {#sec-two-metric-welfare}
 
-For practical implementation, the Optimocracy framework provides a simplified two-metric system that captures core welfare dimensions without requiring complex conversion factors or contested weighting decisions:
+The first version reports two outcomes without pretending they share a natural unit:
 
 **Metric 1: Real After-Tax Median Income Growth**
 
@@ -368,13 +356,17 @@ For practical implementation, the Optimocracy framework provides a simplified tw
 - **Sources**: WHO Global Health Observatory, national health surveys (BRFSS in US)
 - **Relationship to QALYs**: Healthy life years ≈ life expectancy × average health utility
 
-**The Welfare Function**
+**No raw-unit addition**
+
+A percentage point of annual income growth cannot be added directly to a healthy life year. The scale note is not cosmetic: changing percentage points to basis points would change the answer while reality stayed the same. The decision card therefore reports raw effects separately over the same declared time horizon.
+
+If a public ranking requires one score, each forecast is first converted to a dimensionless percentile within a preregistered reference distribution:
 
 $$
-W_j = \alpha \cdot \text{IncomeGrowth}_j + (1-\alpha) \cdot \text{HealthyYears}_j
+S_j = \alpha I_j + (1-\alpha) H_j, \qquad I_j,H_j \in [0,100]
 $$
 
-Default weighting: $\alpha = 0.5$ (equal weight to economic and health welfare). Alternative weightings can be selected through democratic process.
+Here $I_j$ and $H_j$ are normalized income and health scores, not raw percentage points and years. The reference distribution, time horizon, and $\alpha$ must be published before scoring. The raw estimates remain visible, and the system shows whether the ranking changes under reasonable alternative weights. A 50/50 score is one public preference, not a scientifically neutral welfare conversion.
 
 **Why These Two Metrics Work**
 
@@ -404,7 +396,7 @@ If GDP rises but median after-tax income doesn't, the policy correctly registers
 | Elder care | Quality of late-life health |
 | Food safety | Fewer foodborne illness deaths |
 
-Using *median* (not mean) avoids distortion from extremes like infant mortality or billionaire longevity clinics. It captures what a typical person can expect.
+Median outcomes resist domination by extreme values and show what happens to a typical person. They can also hide severe harm to infants, disabled people, minorities, or a small region. Every decision card therefore reports material subgroup and lower-tail effects when the data permit. A credible severe harm or unresolved rights constraint blocks a Recommend label even when both medians rise.
 
 **Why Two Metrics Beat Long Indicator Lists**
 
@@ -416,7 +408,7 @@ Why not track 50 outcomes instead of 2? Three reasons:
 
 3. **Veto points accumulate**: With 50 metrics, every policy "harms" something. Analysis paralysis replaces action.
 
-Markets figured this out: firms optimize profit, not 200 sub-metrics. Profit combines customer satisfaction, efficiency, and innovation into one number. These two welfare metrics do the same for policy.
+The two metrics keep the public scoreboard legible. They do not prove that every relevant value has been compressed into one correct objective.
 
 **What This Covers**
 
@@ -426,9 +418,9 @@ Most policies affect one or both metrics:
 - **Health policies** (healthcare access, public health, safety) primarily affect healthy life years
 - **Many policies** (education, infrastructure) affect both
 
-**What about edge cases?** Politicians handle them. Optimocracy is purely advisory. If a recommendation seems to violate rights, increase catastrophic risk, or harm minorities, politicians ignore it. That's their job. The algorithm recommends what maximizes health and wealth; politicians decide whether to follow.
+Rights, catastrophic risk, and credible subgroup harms are safety screens, not extra terms hidden inside the score. Politicians retain final authority, but the analytical system must disclose these problems before assigning an evidence-alignment reward.
 
-This two-metric system is used by both the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025] for policy recommendations and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025] for spending targets, ensuring consistency across the Optimocracy framework.
+The same raw metrics and normalization rules can be used by the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025] and [Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025]. Those specifications are research extensions. Neither is required to launch the evidence scoreboard.
 
 ## Advantages Over Political Governance
 
@@ -498,15 +490,15 @@ None of this means handing the keys to a chatbot tomorrow. It means the human-in
 
 ## Challenges and Failure Modes
 
-### Why Goodhart's Law Doesn't Apply Here
+### Goodhart's Law Still Applies
 
 "When a measure becomes a target, it ceases to be a good measure" [@goodhart1984]. Traditional Goodhart examples (teaching to test, hospital readmissions) involve gaming metrics *without improving underlying reality*.
 
 ![Some numbers are easy to fake. GDP per capita looks great if three billionaires move in. Median income and healthy life years are harder to game. You can't fake everyone being less dead.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-goodhart-s-law-doesn-t-apply-here-bw-academic.jpg)
 
-**Median income and healthy life years are different:** You can't fake purchasing power at scale; administrative records cross-validate surveys. Mortality is binary and hard to fake. "Median" resists outlier gaming. Long time horizons resist timing games.
+Median income and healthy life years are harder to game than narrow process targets, but they are not exempt from Goodhart's Law. Definitions, sampling frames, price indices, migration, missing populations, and reporting delays can all move a measured median without producing the intended welfare gain.
 
-The real vulnerability isn't behavioral gaming; it's **measurement methodology capture**.
+The practical defense is boring and useful: version metric definitions before the evaluation period, publish raw source series, disclose shared data dependencies, report material subgroup outcomes, and preserve unfavorable revisions. The principal vulnerability remains **measurement methodology capture**, but ordinary measurement error and model misspecification matter too.
 
 ### Oracle Capture (The Real Challenge)
 
@@ -545,36 +537,33 @@ For deeper engagement with democratic theory objections, see [Appendix B](#appen
 
 A publishable theory must generate falsifiable predictions. This section presents predictions that would confirm or refute the Optimocracy thesis. (Note: Existing evidence already supports the general case for algorithmic over discretionary allocation; formula programs like Social Security show lower lobbying intensity than discretionary programs [@drutman2015]. The predictions below are specific to Optimocracy.)
 
-**Prediction 1: Private Optimocracy funds will outperform traditional philanthropic allocation on chosen metrics.**
+**Prediction 1: Locked forecasts will outperform a simple baseline.**
 
-- *Test*: Compare QALY/$, lives saved/$, or similar metrics across Optimocracy outcome funds vs. traditional foundations
-- *Expected finding*: Optimocracy allocation achieves significantly better metric performance (commensurate with eliminating the Crony Tax)
-- *Timeline*: Testable within 3-5 years of deployment
+- *Test*: Train only on evidence available through date $t$, publish the forecast, and compare it with later outcomes and a preregistered status-quo or conventional evidence-review forecast
+- *Expected finding*: Lower forecast error and better direction-of-effect accuracy than the baseline
+- *Timing*: Prospective, after the declared outcome window closes
 
-**Prediction 2: Shadow Optimocracy budgets will outperform actual government budgets in retrospective analysis.**
+**Prediction 2: Evidence grades will predict reliability.**
 
-- *Test*: Construct counterfactual "what if government allocated according to BCR rankings" and compare projected outcomes
-- *Expected finding*: Shadow budget shows 30-100% higher welfare per dollar
-- *Timeline*: Testable immediately with existing data
+- *Test*: Compare calibration, sign accuracy, and interval coverage across grades after enough forecasts mature
+- *Expected finding*: A and B forecasts outperform C and D forecasts on preregistered reliability measures
+- *Timing*: Prospective and cumulative
 
-**Prediction 3: Measurement methodology capture under Optimocracy will be less welfare-reducing than allocation capture under current governance.**
+**Prediction 3: Institutions using high-confidence recommendations will improve outcomes.**
 
-- *Test*: Compare welfare loss from documented measurement manipulation vs. documented lobbying/capture
-- *Expected finding*: Measurement capture is harder and less damaging than allocation capture
-- *Status*: **Requires careful empirical design**
+- *Test*: Compare participating institutions with matched or randomized-phase comparators when feasible
+- *Expected finding*: Higher realized health or income gains per dollar without breaching the safety screen
+- *Status*: Optional for the first version; useful once institutions volunteer
+
+A retrospective shadow budget is useful for debugging, but it is not validation when the same model ranks the policies and calculates the shadow benefit. That only proves that the model prefers its own output.
 
 ### Rejection Criteria
 
-The Optimocracy thesis would be falsified by:
+Each deployment preregisters its comparison group, evaluation horizon, minimum sample, forecast-error threshold, interval-coverage target, and maximum acceptable subgroup harm before outcomes are observed. The scoreboard fails its test if high-confidence forecasts do not beat the stated simple baseline, if its uncertainty intervals are persistently miscalibrated, if evidence grades do not predict reliability, or if recommendations repeatedly trigger harms excluded by the safety screen.
 
-1. **Consistent underperformance**: If outcome-optimizing systems consistently underperform political systems on their target metrics
-2. **Measurement capture**: If oracle/methodology capture proves as easy and damaging as current allocation capture
-3. **Value divergence**: If health and wealth prove NOT to be universal values (if significant populations genuinely prefer to be sicker and poorer)
-4. **Legitimacy failure**: If citizens reject algorithmic governance even after demonstrated welfare improvements
+Measurement capture or public rejection may still make the mechanism unusable even if forecasts are accurate. Failed tests and changed methods remain public. The response to failure is to downgrade, narrow, or abandon the affected recommendation process, not reinterpret the same projections until they pass.
 
-We commit to updating or abandoning the proposal if evidence accumulates against these predictions.
-
-![Four ways Optimocracy could fail: it doesn't work, it gets corrupted, it optimizes for terrible things, or people hate it anyway. Science, but pessimistic.](/assets/images/optimocracy-paper/optimocracy-paper-section-rejection-criteria-bw-academic.jpg)
+![Optimocracy fails if its forecasts do not beat a simple baseline, its confidence grades do not predict reliability, its measurements are captured, or its recommendations cause harms the safety screen should have caught.](/assets/images/optimocracy-paper/optimocracy-paper-section-rejection-criteria-bw-academic.jpg)
 
 ## The Wrapper Architecture: How Funding Works
 
@@ -628,7 +617,7 @@ A close race with a large alignment gap gets priority over a safe seat, even if 
 
 ## Political Economy: Making Reform Happen
 
-The empirical case for Optimocracy is strong (Section 2 documented {{< var us_gov_waste_total >}} in US waste and {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs). But optimal policy has been documented for decades. The question is not "what should we do?" but "how do we overcome political opposition to doing it?"
+The empirical case for testing Optimocracy is strong: large, imperfect estimates suggest that bad decisions can be costly, and strong evidence already exists for some interventions. Evidence quality and adoption are separate bottlenecks. The immediate questions are "where is the evidence strong enough to act?" and "how do we make acting on it worthwhile?"
 
 ![Pay the people who lose from good policy. Bribe them into not blocking progress. It's corruption in reverse, morally.](/assets/images/optimocracy-paper/optimocracy-paper-section-political-economy-making-reform-happen-bw-academic.jpg)
 
@@ -638,7 +627,7 @@ This section develops the political economy of reform, distinguishing actors who
 
 The scoreboard has no teeth on its own. Four mechanisms could give it some. They are not alternatives to each other in the sense that only one can be chosen; they differ in cost, in speed, and in what happens when they fail, and the cheapest ones should be exhausted first.
 
-**1. Direct institutional adoption.** An agency, a foundation, a sovereign wealth fund, or a large philanthropy uses the recommendations because they are correct. This costs nothing beyond producing the analysis, requires no political entity, and is how cost-effectiveness research already moves money at GiveWell and Open Philanthropy. It is slow and it is bounded by the budgets of institutions that already wanted to be evidence-driven. The [GiveWell Outcome Fund deployment](#concrete-first-deployment-the-givewell-outcome-fund) below is this mechanism. Try it first, because it is free.
+**1. Direct institutional adoption.** An agency, a foundation, a sovereign wealth fund, or a large philanthropy uses recommendations that clear its evidence and safety standards. This costs nothing beyond producing and reviewing the analysis, requires no political entity, and is how cost-effectiveness research already moves money at GiveWell and Open Philanthropy. It is slow and bounded by institutions that already want to be evidence-driven. The [public decision-card pilot](#concrete-first-deployment-a-public-decision-card-pilot) below starts with this mechanism. Try it first because it requires no campaign apparatus.
 
 **2. Corporate lobbying redirection.** The organizations that spend {{< var us_total_lobbying_annual >}} per year lobbying the US federal government [@drutman2015] are, with few exceptions, publicly traded. Their shares carry votes. Their boards direct their lobbying budgets. A shareholder who can demonstrate that a company's lobbying produces negative returns for that company's own shareholders is making a fiduciary argument, not a political one, and fiduciary arguments are the kind that institutional investors are obligated to evaluate. Engine No. 1 won three ExxonMobil board seats in 2021 holding 0.02% of the shares, because the three largest index-fund managers found the economic case persuasive. Military contractors alone direct {{< var defense_lobbying_annual >}} per year [@lobbying-spend-defense]. This mechanism buys the apparatus rather than renting its output, so the expenditure is an asset that persists rather than a campaign cost that recurs. It is also slower than writing a check and it is subject to proxy rules, disclosure thresholds, and the possibility that the board simply wins the vote.
 
@@ -650,7 +639,7 @@ The general rule: mechanisms 1 and 2 acquire durable capacity, 3 rents temporary
 
 ### Why Buying Off the Opposition Works
 
-Optimal policy creates massive value ($20-50T annually). Those currently benefiting from bad policy would lose much less ($2-5T annually).
+Best-case scenarios assign massive value to broad policy improvement, but they overlap and are not forecasts. The narrower political-economy point does not require those totals: many reforms can create diffuse public benefits larger than the concentrated losses faced by incumbent beneficiaries.
 
 **The math:** Pay off all the losers and you still have $15-45T left over. This is why reform is feasible: the pie is big enough that everyone can get a bigger slice.
 
@@ -724,7 +713,7 @@ The reform coalition assembles in phases:
 | Scale | Major health funders | Anchor capital across mechanisms; revenue-share instruments where a stream is defined | $1-5B |
 | Victory | Converted politicians, broader coalition | Political implementation | $10-25B |
 
-Reform advocates provide initial capital and legitimacy; major funders provide anchor capital for the SuperPAC; converted politicians provide political support. The arithmetic strongly favors reform: welfare gains ($20-50T annually) vastly exceed maximum compensation costs ($25-200B one-time).
+Reform advocates can provide initial capital and legitimacy; major funders can provide anchor capital; converted politicians can provide political support. The illustrative upside scenarios exceed the estimated political costs, but neither side of that comparison is a validated forecast. A pilot must justify itself using the bounded decision it actually changes.
 
 ## Implementation Pathway
 
@@ -738,93 +727,92 @@ What adoption requires depends on which [mechanism](#sec-adoption-mechanisms) is
 
 ### Implementation Strategy
 
-**Optimocracy does not require government permission for private fund allocation.** The technology exists today. The strategy: **start private → demonstrate → scale**.
+**Optimocracy does not require government permission to publish decision cards.** The minimum version needs researchers, public data, a versioned repository, and decisions whose outcomes can later be observed. The strategy is: **start narrow, publish forecasts, learn, then expand**.
 
-- **Private Outcome Fund**: Deploy $10M+ for philanthropic capital, prove mechanism works
-- **Shadow Tracking**: Generate counterfactual "what would Optimocracy allocate?" to demonstrate outperformance
-- **Government Pilots**: Partner with reform-minded jurisdictions for limited-scope pilots
-- **Broader Adoption**: Scale through demonstrated success and competitive pressure
+- **Choose one domain**: Use recurring decisions with measurable outcomes and existing credible evidence
+- **Publish a small batch**: Release complete decision cards, including abstentions and safety flags
+- **Lock the forecasts**: Preserve the data cutoff, assumptions, expected outcomes, and evaluation dates
+- **Score reality**: Compare forecasts with outcomes and a simple baseline; publish corrections
+- **Expand conditionally**: Add domains only after the process demonstrates useful calibration
 
-The bottleneck is not technology. The bottleneck is coordination: assembling capital, coalition members, and governance structures. Starting small is a feature: a $10M outcome fund with 50 committed participants can experiment, fail fast, and improve before scaling.
+The bottleneck is evidence quality and disciplined follow-through, not a missing universal optimizer. Starting small limits the cost of bad assumptions and makes failures legible before anyone attaches a national budget or campaign machine to them.
 
-### Concrete First Deployment: The GiveWell Outcome Fund
+### Concrete First Deployment: A Public Decision-Card Pilot
 
-We propose a specific first deployment to make Optimocracy actionable rather than theoretical.
+The first deployment can be a public forecasting pilot with no fund, legislation, or new data platform.
 
-![The GiveWell Outcome Fund's workflow. Money goes in, algorithm does maths, outcomes come out. Like a vending machine, but for saving lives instead of dispensing crisps.](/assets/images/optimocracy-paper/optimocracy-paper-section-concrete-first-deployment-the-givewell-outcome-fund-bw-academic.jpg)
+**Target domain:** One bounded area with recurring decisions, measurable outcomes, and credible existing studies. Global health philanthropy is a plausible candidate because cost-effectiveness reviews and later outcome reports already exist. A legislative committee with repeated votes and observable administrative outcomes is another.
 
-**Target domain:** Effective altruism / global health philanthropy. Why: GiveWell already produces rigorous QALY/$ estimates, the EA community is philosophically committed to outcome optimization, mortality data is increasingly reliable, and the community allocates $1B+ annually.
+**Proposed structure:** Publish a decision card before each decision. Show the evidence grade, raw health and income forecasts, cost, uncertainty, subgroup risks, recommendation category, and evaluation date. A second reviewer checks the card. The repository preserves every version and later appends the realized outcome.
 
-**Proposed structure:** Nonprofit foundation with algorithmic allocation rules, $10-50M initial capital from aligned foundations, maximizing expected QALYs verified by GiveWell evaluations + academic verification + randomized outcome audits. Public input on methodology; algorithm execution is automatic.
-
-**Success criteria (Year 1-3):** Achieve measurably higher QALY/$ than comparable traditional foundations, demonstrate transparent allocation without capture, attract additional capital, and generate replicable model for progressively harder domains (US healthcare allocation, infrastructure spending, research funding).
+**Success criteria:** Complete the evaluations, beat the preregistered simple baseline, show that higher evidence grades are better calibrated, preserve failed forecasts, and avoid severe harms missed by the safety screen. Funding or political enforcement becomes a later choice only if the evidence product earns trust.
 
 ## Conclusion
 
 Political governance is not failing because politicians are evil or voters are ignorant. It is failing because the incentive structure makes capture inevitable. No amount of transparency, campaign finance reform, or civic education can eliminate the fundamental misalignment between political incentives and citizen welfare.
 
-Optimocracy offers a different approach: rather than relying on systems that don't optimize for outcomes, introduce outcome-optimizing allocation for decisions where optimization is feasible. Define the objective democratically, measure outcomes rigorously, allocate algorithmically, and enforce via transparent rules.
+Optimocracy offers a smaller and more testable approach: grade the evidence for defined decisions, forecast health and income effects, publish bounded recommendations, and check the forecasts against reality. Define the public objectives democratically and keep final authority with people.
 
 The precedents are encouraging. Formula-based programs like Social Security COLA remove annual political battles. Published, transparent allocation rules enable credible commitment by making deviation visible.
 
-Optimocracy is not utopian. It faces real challenges: measurement methodology capture, edge cases, and democratic legitimacy. But these challenges are addressable through institutional diversity, the wrapper architecture, and iterative implementation.
+Optimocracy is not a validated optimizer. It faces measurement capture, confounding, transportability, harmful edge cases, and democratic legitimacy. Institutional diversity and public methods help, but only prospective performance can show whether the system adds value.
 
-The question is not whether Optimocracy is perfect; no governance system is. The question is whether outcome-optimizing algorithmic allocation produces better outcomes than captured allocation. The evidence suggests it does.
+The question is not whether Optimocracy can calculate the universally optimal government. It cannot currently do that. The useful question is whether a transparent evidence scoreboard can beat simpler decision processes often enough to justify its cost. That claim is ambitious, measurable, and worth testing.
 
 ### What About AI?
 
-Some may ask: won't superintelligent AI make Optimocracy obsolete? The answer is no. Optimocracy *is* the safe architecture for AI governance. "Aligned AI" requires specifying aligned *to what*. Health and wealth are the answer: universal human values, not arbitrary choices. Even a superintelligent AI should operate within an Optimocracy-like structure: optimize for what humans universally value, independent systems verify outcomes, and humans retain final approval authority. The algorithm (whether simple optimization or AGI) proposes; humans decide. Optimocracy isn't replaced by better AI; it's what makes AI governance safe. The framework scales from spreadsheet calculations to superintelligence while preserving human oversight.
+AI can help search literature, detect patterns, and draft forecasts. It cannot turn confounded data into a causal design or decide which trade-offs citizens ought to accept. The same disclosure rules apply whether the analyst uses a spreadsheet or an AI system: name the evidence, separate prediction from causation, expose uncertainty and harms, and keep humans responsible for the decision.
 
-![AI suggests good ideas based on universal values, other AIs check the first AI's work, then humans decide. It's like having three people to change a lightbulb, but one of them knows how many people die in the dark.](/assets/images/optimocracy-paper/optimocracy-paper-section-what-about-ai-bw-academic.jpg)
+![AI suggests ideas, independent reviewers check the evidence, and humans decide which trade-offs to accept. The model is an analyst, not the constitution.](/assets/images/optimocracy-paper/optimocracy-paper-section-what-about-ai-bw-academic.jpg)
 
 We propose Optimocracy not as a replacement for democracy but as its fulfillment: a system where citizens genuinely choose outcomes, not just representatives who promise outcomes and deliver something else. Democracy selects the destination; Optimocracy ensures we actually arrive.
 
-The urgency grows with each passing year. Deepfakes are eroding the shared factual basis democracy requires. Policy complexity increasingly exceeds human cognitive capacity. AI-accelerated influence operations will make capture orders of magnitude cheaper and more effective. The tribal epistemology that already interprets identical videos along partisan lines will have no ground truth whatsoever once synthetic media becomes indistinguishable from authentic footage. Optimocracy offers an exit from this epistemic collapse: outcomes you can measure, not narratives you must trust. Aggregate statistics from multiple independent sources provide unfalsifiable ground truth. Median income either rose or it didn't. The metric either improves or it doesn't. That fact provides a foundation for governance when all other foundations have eroded.
+The urgency grows with each passing year. Deepfakes erode the shared factual basis democracy requires, and AI makes influence operations cheaper. Optimocracy offers an auditable alternative: define outcomes in advance, preserve source data and forecasts, and publish corrections. Aggregate statistics are not infallible ground truth, but a versioned measurement process is easier to challenge than a campaign narrative that disappears after election day.
 
-## Appendix A: Technical Specification Sketch
+## Appendix A: Minimum Viable Calculation Protocol and Research Extensions
 
-### Budget and Policy Optimization: Two Complementary Frameworks
+### Decision-Card Calculation
 
-Optimocracy optimizes governance through two complementary mechanisms, each addressing a different aspect of the welfare-maximization problem.
+The operational calculation is a sequence of disclosures, not a claim that one model solved government:
 
-![The two pillars of Optimocracy: one tells you what to do, the other tells you how much to spend doing it. You'd think humans would have invented this before inventing NFTs.](/assets/images/optimocracy-paper/optimocracy-paper-section-budget-and-policy-optimization-two-complementary-frameworks-bw-academic.jpg)
+1. Define the jurisdiction, alternatives, population, cost, baseline, and outcome horizon.
+2. Select an identification design because its assumptions fit the decision, then assign the evidence grade.
+3. Estimate raw income and health effects separately. State what uncertainty the interval excludes.
+4. Apply the rights, subgroup-harm, catastrophic-risk, feasibility, and extrapolation screens.
+5. If a combined public score is needed, normalize both metrics using the preregistered reference distribution and show weight sensitivity.
+6. Assign Recommend, Promising: Pilot First, Insufficient Evidence, or Do Not Recommend.
+7. Lock the card before the outcome is known and evaluate it on the stated date.
 
-#### Budget Optimization: The Optimal Budget Generator (OBG) Framework
+This protocol can operate with ordinary research tools and a public repository. The two larger generator frameworks remain useful research agendas, but they are not prerequisites for the scoreboard.
 
-The **Optimal Budget Generator (OBG)** framework answers: "How should we allocate the budget to maximize welfare?"
+#### Budget Research Extension: The Optimal Budget Generator (OBG)
 
-Each spending category has an optimal level - not just a marginal return. Too little means underinvestment and foregone welfare gains; too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), budget allocation is zero-sum: spending more on one category means less for others. OBG generates integrated recommendations that balance these tradeoffs.
+The **Optimal Budget Generator (OBG)** asks: "How should a budget change given the evidence available now?" Its name describes the destination, not the certainty of every output.
 
-| Spending Level | Health Analogy | Budget Interpretation |
-|----------------|----------------|----------------------|
-| Below optimal | Vitamin deficiency | Foregone welfare gains |
-| At optimal | Recommended daily allowance | Maximum return per dollar |
-| Above optimal | Diminishing returns / toxicity | Waste, opportunity cost |
+An exact optimal spending level requires credible marginal-benefit curves, diminishing returns, interactions, fixed and transition costs, implementation capacity, timing, and fiscal incidence. Most categories will not satisfy that standard. The safe early output is a direction and bounded range inside observed support, or a pilot when the proposed change extrapolates beyond the evidence.
 
-The OBG framework combines three evidence sources:
+| Evidence available | Safe output |
+|--------------------|-------------|
+| Credible marginal-return curve with relevant comparators | Bounded target range |
+| Strong intervention evidence but uncertain scaling | Incremental increase plus evaluation |
+| Cross-country benchmark with unresolved confounding | Scenario or hypothesis |
+| Unsupported allocation outside observed experience | Pilot first or abstain |
+
+The OBG research extension may combine:
 
 1. **Reference country benchmarking**: What do high-performing peer countries spend?
 2. **Diminishing returns modeling**: Where is the "knee" of the spending-outcome curve?
 3. **Cost-effectiveness threshold analysis**: Which interventions pass standard health economics thresholds?
 
-The **Budget Impact Score (BIS)** measures our *confidence* in each category's target estimate based on the quality of causal evidence. Categories with strong RCT evidence have high BIS; categories with only cross-sectional correlations have low BIS.
-
-**Example output**:
-
-| Category | Current | Target | Gap | Evidence |
-|----------|---------|-----|-----|----------|
-| **Pragmatic clinical trials** | $0.5B | $50B | **+$49.5B** | A (RCTs) |
-| Vaccinations | $8B | $35B | +$27B | A (RCTs) |
-| Basic research | $45B | $90B | +$45B | B (spillovers) |
-| Military | $850B | $459B | -$391B | C (benchmarks) |
+These sources are not interchangeable and do not become causal by aggregation. The **Budget Impact Score (BIS)** records confidence in the decision card. It does not repair missing identification or make an unsupported point target optimal.
 
 For the complete methodology including estimation procedures, validation framework, and worked examples, see [Optimal Budget Generator Specification](https://obg.warondisease.org).
 
-#### Policy Optimization: The Policy Impact Score (PIS) Framework
+#### Policy Research Extension: The Policy Impact Score (PIS)
 
-The **Policy Impact Score (PIS)** framework answers: "Which policy reforms would most improve welfare outcomes?"
+The **Policy Impact Score (PIS)** asks: "Which policy reforms have the strongest evidence of improving the declared outcomes?"
 
-This extends beyond budget allocation to evaluate *all policies*: laws, regulations, taxes, and administrative rules. Budget reallocation alone cannot fix structural inefficiencies:
+This extends beyond budget allocation to evaluate laws, regulations, taxes, and administrative rules when a bounded decision and relevant evidence exist. Budget reallocation alone cannot fix structural inefficiencies:
 
 | Problem Type | Example | Budget Optimization Handles? |
 |--------------|---------|------------------------------|
@@ -832,49 +820,46 @@ This extends beyond budget allocation to evaluate *all policies*: laws, regulati
 | Administrative overhead | ~$1T/year US admin costs | No (requires regulatory reform) |
 | Drug pricing | US pays 256% of OECD average [@mulcahy2021] | No (requires policy change) |
 
-PIS uses quasi-experimental methods (synthetic control, difference-in-differences, regression discontinuity) to estimate causal effects of policy changes across centuries of variation in hundreds of jurisdictions.
+PIS may use synthetic control, difference-in-differences, regression discontinuity, trials, or descriptive evidence. The method does not determine the grade by its name. The application must pass the design's diagnostics, and a score cannot conceal a C or D evidence grade.
 
-**Example output**:
+**Illustrative output format:**
 
-| Policy Reform | Effect on Outcome | Evidence Grade |
-|---------------|-------------------|----------------|
-| Tobacco tax (+$1/pack) | -8.2 pp smoking rate | A (synthetic control) |
-| Seat belt laws (primary) | -1.8 traffic deaths/100K | A (DiD, 47 states) |
-| Occupational licensing | +2-3% consumer prices | B (cross-state variation) |
+| Policy reform | Raw health effect | Raw income effect | Evidence grade | Recommendation |
+|---------------|-------------------|-------------------|----------------|----------------|
+| Policy A | Report estimate and interval | Report estimate and interval | A to X | Recommend, pilot, abstain, or reject |
 
 For the complete methodology including database schema, Bradford Hill criteria mapping, and validation framework, see [Optimal Policy Generator Specification](https://opg.warondisease.org).
 
 #### How They Work Together
 
-| Framework | Unit of Analysis | Primary Output | Key Question |
-|-----------|------------------|----------------|--------------|
-| OBG/BIS | Spending category | Integrated budget recommendations | How much to spend? |
-| PIS | Policy/regulation | Ranked reforms by impact | Which policies to adopt? |
+| Framework | Unit of Analysis | Defensible early output | Research-stage output |
+|-----------|------------------|--------------------------|-----------------------|
+| OBG/BIS | Spending category | Direction, bounded range, or pilot | Integrated optimal budget |
+| PIS | Policy or regulation | Evidence grade and bounded recommendation | Comprehensive policy ranking |
 
-Both frameworks generate recommendations that politicians can follow or ignore:
+Both frameworks feed the same public decision card. Neither overrides a failed evidence diagnostic or safety screen.
 
 ```
 +------------------------+    +------------------------+
-|   Budget Optimization  |    |   Policy Optimization  |
+|   Budget Evidence      |    |   Policy Evidence      |
 |   (OBG/BIS Framework)  |    |   (PIS Framework)      |
 |                        |    |                        |
 |   Recommends:          |    |   Recommends:          |
-|   - Optimal spending   |    |   - Which reforms      |
-|     levels per category|    |     improve welfare    |
-|   - Investment gaps    |    |   - Priority ranking   |
+|   - Direction / range  |    |   - Evidence grade     |
+|   - Pilot or abstain   |    |   - Bounded forecast   |
 +------------------------+    +------------------------+
            |                              |
            +------------+  +--------------+
                         |  |
                         v  v
          +---------------------------+
-         |   ORACLE VERIFICATION     |
-         |   Independent measurement |
-         |   of actual outcomes      |
+         |   PROSPECTIVE CHECK       |
+         |   Locked forecast vs.     |
+         |   later observed outcomes |
          +---------------------------+
 ```
 
-The [Political Dysfunction Tax](political-dysfunction-tax.qmd) ({{< var us_gov_waste_total >}} in US waste, {{< var political_dysfunction_global_opportunity_cost_total >}} in global opportunity costs) arises from both **misallocation** (wrong spending levels) and **bad policy** (welfare-reducing regulations). Addressing both requires both frameworks working together.
+Budget and policy evidence can reveal misallocation and harmful rules. The practical system does not need to solve both everywhere at once. It earns the right to expand one evaluated decision at a time.
 
 ### Algorithmic Governance Threat Model
 
@@ -983,7 +968,7 @@ The concern is not whether Optimocracy would work technically, but whether citiz
 |----------|-----------|
 | **More democratic, not less** | Current system offers ritual (voting) but delivers oligarchy (@gilens2014). Optimocracy delivers what citizens actually voted for. |
 | **Citizens choose the goal** | We already delegate implementation to the Fed and FDA. |
-| **Universal values** | Health and wealth aren't contested preferences. We're measuring what humans universally value. |
+| **Bounded public objectives** | Health and typical income are widely valued but incomplete. Citizens set weights and safety constraints. |
 | **Legitimacy evolves** | Social Security and index funds were controversial initially. |
 | **The alternative is capture** | The realistic choice is captured allocation dressed in democratic ritual. |
 

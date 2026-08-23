@@ -44,7 +44,7 @@ author:
 
 website:
   title: "The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding"
-  description: "The Optimal Budget Generator (OBG) uses causal inference, diminishing returns modeling, and cost-effectiveness evidence to determine optimal public goods funding levels that maximize two welfare metrics: real after-tax median income growth and median healthy life years. For each spending category, OBG estimates an Optimal Spending Level (OSL) and produces a gap analysis showing where current government budgets are over- or underfunded relative to evidence-based benchmarks. The Budget Impact Score (BIS) measures confidence in each recommendation based on the quality of causal evidence."
+  description: "The Optimal Budget Generator (OBG) is a research-stage extension of the Optimocracy evidence scoreboard. It estimates bounded budget ranges only when credible marginal-return, scaling, capacity, interaction, and cost evidence exists. Otherwise it recommends a pilot, presents a scenario, or abstains."
   site-url: https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html
   favicon: assets/icons/dih-favicon.png
   page-navigation: true

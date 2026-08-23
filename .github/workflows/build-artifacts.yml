@@ -2295,7 +2295,7 @@ jobs:
 
 
   build-optimocracy:
-    name: "Build Optimocracy: Causal Inference on Cross-Jurisdictio"
+    name: "Build Optimocracy: A Practical Evidence Scoreboard for H"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2362,7 +2362,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build Optimocracy: Causal Inference on Cross-Jurisdictio"
+      - name: "Render Build Optimocracy: A Practical Evidence Scoreboard for H"
         run: python scripts/render-quarto.py optimocracy --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -2406,7 +2406,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Optimocracy: Causal Inference on Cross-Jurisdictio PDF to Zenodo (draft)"
+      - name: "Upload Build Optimocracy: A Practical Evidence Scoreboard for H PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
