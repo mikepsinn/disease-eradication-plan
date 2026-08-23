@@ -39,15 +39,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 887 parameters used in the analysis, organized by type:
+This appendix documents all 900 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 254
-- Calculated values: 447
-- Core definitions: 186
+- External sources (peer-reviewed): 255
+- Calculated values: 457
+- Core definitions: 188
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (447 parameters) • [External Data Sources](#sec-external) (254 parameters) • [Core Definitions](#sec-definitions) (186 parameters)
+[Calculated Values](#sec-calculated) (457 parameters) • [External Data Sources](#sec-external) (255 parameters) • [Core Definitions](#sec-definitions) (188 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -10775,6 +10775,7 @@ $$
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Wishonia's Wager](../proof/wishonias-wager.html)
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [A Decentralized FDA](../solution/dfda.html)
@@ -25192,6 +25193,712 @@ $$
 
 :::
 
+### Universal Right to Try with Evidence Cost in FDA Budget Hours: 80.7 hours {#sec-state_rtt_fda_budget_equivalent_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hours of the FDA annual program budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.
+
+**Inputs**:
+
+- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [FDA Annual Program Budget](#sec-fda_annual_program_budget) 📊: $7.06 billion
+
+$$
+Hours_{RTT,FDA} = \frac{C_{RTT}}{Budget_{FDA}} \times 8,760
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_fda_budget_equivalent_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_fda_budget_equivalent_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_fda_budget_equivalent_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_fda_budget_equivalent_hours.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal Right to Try with Evidence Cost in NIH Budget Hours: 12.1 hours {#sec-state_rtt_nih_budget_equivalent_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hours of the NIH annual budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.
+
+**Inputs**:
+
+- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [NIH Annual Budget](#sec-nih_annual_budget) 📊: $47 billion (95% CI: $45 billion - $50 billion)
+
+$$
+Hours_{RTT,NIH} = \frac{C_{RTT}}{Budget_{NIH}} \times 8,760
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal Right to Try with Evidence Philanthropic Cost per DALY: $0.000134 {#sec-state_rtt_philanthropic_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional philanthropic cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.
+
+**Inputs**:
+
+- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [DALYs Averted from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_dalys) 🔢: 483 billion DALYs
+
+$$
+\begin{gathered}
+Cost_{RTT,DALY} \\
+= \frac{C_{RTT}}{DALYs_{RTT}} \\
+= \frac{\$65M}{483B} \\
+= \$0.000134
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{RTT} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT} \\
+= 2.88B \times 92.6\% \times 181 \\
+= 483B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_philanthropic_cost_per_daly.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_philanthropic_cost_per_daly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_philanthropic_cost_per_daly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_philanthropic_cost_per_daly.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal Right to Try with Evidence Philanthropic Cost per Life Saved: $0.00707 {#sec-state_rtt_philanthropic_cost_per_life_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional philanthropic cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.
+
+**Inputs**:
+
+- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Lives Saved from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_lives_saved) 🔢: 9.19 billion deaths
+
+$$
+\begin{gathered}
+Cost_{RTT,life} \\
+= \frac{C_{RTT}}{Lives_{RTT}} \\
+= \frac{\$65M}{9.19B} \\
+= \$0.00707
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{RTT} \\
+= Deaths_{disease,daily} \times Pct_{avoid,death} \times T_{accel,RTT} \times 365 \\
+= 150{,}000 \times 92.6\% \times 181 \times 365 \\
+= 9.19B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### DALYs Averted from Universal Right to Try with Evidence: 483 billion DALYs {#sec-state_rtt_treatment_acceleration_dalys}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional lifetime DALYs averted by shifting the global treatment-discovery schedule forward. By design, this applies the therapeutic-discovery timeline proxy to the eventually avoidable burden of all global diseases and aging-related degeneration. It is a schedule-shift calculation across future generations, not an observed epidemiological forecast.
+
+**Inputs**:
+
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
+- [Average Treatment Acceleration from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_years) 🔢: 181 years
+
+$$
+\begin{gathered}
+DALYs_{RTT} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT} \\
+= 2.88B \times 92.6\% \times 181 \\
+= 483B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_dalys.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_dalys.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Lives Saved from Universal Right to Try with Evidence: 9.19 billion deaths {#sec-state_rtt_treatment_acceleration_lives_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional cumulative premature deaths from global diseases and aging prevented across future generations by shifting the treatment-discovery schedule forward. The total can exceed the current population because it sums deaths prevented over the full acceleration period.
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7,500 deaths/day)
+- [Eventually Avoidable Death Percentage](#sec-eventually_avoidable_death_pct): 92.6% (95% CI: 50% - 98%)
+- [Average Treatment Acceleration from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_years) 🔢: 181 years
+
+$$
+\begin{gathered}
+Lives_{RTT} \\
+= Deaths_{disease,daily} \times Pct_{avoid,death} \times T_{accel,RTT} \times 365 \\
+= 150{,}000 \times 92.6\% \times 181 \times 365 \\
+= 9.19B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_lives_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_lives_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_lives_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_lives_saved.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence: 1.65 quadrillion hours {#sec-state_rtt_treatment_acceleration_suffering_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.
+
+**Inputs**:
+
+- [DALYs Averted from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_dalys) 🔢: 483 billion DALYs
+- [YLD Proportion of Total DALYs](#sec-global_yld_proportion_of_dalys) 📊: 0.39 proportion (SE: ±0.03 proportion)
+
+$$
+\begin{gathered}
+Hours_{suffer,RTT} \\
+= DALYs_{RTT} \times Pct_{YLD} \times 8760 \\
+= 483B \times 0.39 \times 8760 \\
+= 1650T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{RTT} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT} \\
+= 2.88B \times 92.6\% \times 181 \\
+= 483B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Average Treatment Acceleration from Universal Right to Try with Evidence: 181 years {#sec-state_rtt_treatment_acceleration_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average years earlier the first effective treatment arrives across the global therapeutic frontier after all 50 states adopt Universal Right to Try with Evidence. Uses the same schedule-shift structure as the 1% Treaty impact model: the status quo discovery timeline multiplied by one minus the inverse treatment-discovery multiplier.
+
+**Inputs**:
+
+- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment) 🔢: 222 years
+- [Universal Right to Try with Evidence Treatment Discovery Multiplier](#sec-state_rtt_treatment_discovery_multiplier): 5.48x (95% CI: 1.1x - 15x)
+
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_years.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal Right to Try with Evidence Cost in US Military Overspend Hours: 0.811 hours {#sec-state_rtt_us_military_overspend_equivalent_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.
+
+**Inputs**:
+
+- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Military Overspend](#sec-us_gov_waste_military_overspend) 🔢: $702 billion
+
+$$
+Hours_{RTT,mil} = \frac{C_{RTT}}{W_{military}} \times 8,760
+$$
+where:
+$$
+\begin{gathered}
+W_{military} \\
+= Spending_{US,2024} - D_{optimal} \\
+= \$886B - \$184B \\
+= \$702B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{optimal} \\
+= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
++ D_{hedge} \\
+= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
+= \$184B
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint: 636.2kx {#sec-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
+
+**Inputs**:
+
+- [GiveWell Midpoint of Modeled Cost per Life Saved Range](#sec-givewell_cost_per_life_avg) 📊: $4,500
+- [Universal Right to Try with Evidence Philanthropic Cost per Life Saved](#sec-state_rtt_philanthropic_cost_per_life_saved) 🔢: $0.00707
+
+$$
+\begin{gathered}
+k_{RTT,GiveWell} \\
+= \frac{Cost_{GW,avg}}{Cost_{RTT,life}} \\
+= \frac{\$4.5K}{\$0.00707} \\
+= 636{,}000
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{RTT,life} \\
+= \frac{C_{RTT}}{Lives_{RTT}} \\
+= \frac{\$65M}{9.19B} \\
+= \$0.00707
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{RTT} \\
+= Deaths_{disease,daily} \times Pct_{avoid,death} \times T_{accel,RTT} \times 365 \\
+= 150{,}000 \times 92.6\% \times 181 \times 365 \\
+= 9.19B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
 ### Status Quo Average Years to First Treatment: 222 years {#sec-status_quo_avg_years_to_first_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -25249,6 +25956,7 @@ $$
 **Used in:**
 
 - [The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease](../economics/1-pct-treaty-impact.html)
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
 
 :::
 
@@ -41720,6 +42428,7 @@ Embedded pragmatic trial cost per patient. Uses ADAPTABLE trial ($929) as DELIBE
 - [Health Dividend](../economics/health-dividend.html)
 - [The Cost-Benefit Analysis of Global Hegemony](../appendix/cost-benefit-of-hegemony.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
 
 :::
 
@@ -42112,6 +42821,22 @@ Reduction in global farmland if the world shifted off meat and dairy while still
 
 :::
 
+### FDA Annual Program Budget: $7.06 billion {#sec-fda_annual_program_budget}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+FDA total program level in the FY 2026 operating plan. This is used only for a budget-scale comparison, not as an estimate of FDA cost-effectiveness.
+
+**Source**: [@fda-fy2026-operating-plan]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### FDA-Approved Drug Products: 20,000 products {#sec-fda_approved_products_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -42283,13 +43008,17 @@ Global median per-capita household income as measured by the Gallup World Poll (
 
 :::
 
-### Givewell Average Cost per Life Saved Across Top Charities: $4,500 {#sec-givewell_cost_per_life_avg}
+### GiveWell Midpoint of Modeled Cost per Life Saved Range: $4,500 {#sec-givewell_cost_per_life_avg}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-GiveWell average cost per life saved across top charities
+Midpoint of GiveWell's cited $3,500 to $5,500 modeled cost-per-life-saved range across top charities
 
 **Source**: [@givewell-cost-per-life-saved]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 
@@ -45728,6 +46457,7 @@ Phase 3 cost per patient (median from FDA study)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Right to Trial & FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.html)
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
 
 :::
 
@@ -49894,6 +50624,58 @@ Perceived social friction cost of wearing a political message in public, express
 **Used in:**
 
 - [The Funniest Joke in the Universe](../appendix/joke.html)
+
+:::
+
+### Universal Right to Try with Evidence Philanthropic Cost: $65 million {#sec-state_rtt_philanthropic_cost_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total philanthropic cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This philanthropic numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$25 million, $200 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $25 million and $200 million (±135%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_philanthropic_cost_total.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal Right to Try with Evidence Treatment Discovery Multiplier: 5.48x {#sec-state_rtt_treatment_discovery_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional multiplier on the worldwide first-treatment discovery rate after all 50 states adopt and a mature pooled pragmatic-trial system operates under applicable federal authorization. The 5.48x central calibration reproduces the prior model's 82.2 versus 15 first treatments per year; it is an assumption, not an observed effect estimate. This single input incorporates patient or payer funding of treatment delivery, trial-site services, and permitted study costs, newly viable post-Phase-1 treatment-condition pairs, evaluable protocol quality, candidate supply, and scientific success. Its range describes productivity of an operating system, not the separate probability that advocacy achieves full adoption and implementation.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.1x, 15x] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1.1x and 15x (±127%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_treatment_discovery_multiplier.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
 
 :::
 
