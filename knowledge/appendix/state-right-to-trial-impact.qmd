@@ -164,11 +164,13 @@ That separation is the point. Donors do not need to finance every future treatme
 
 ## What the numbers mean
 
-The {{< var state_rtt_treatment_acceleration_lives_saved >}} figure exceeds the current world population because it sums premature deaths prevented across approximately {{< var state_rtt_treatment_acceleration_years >}} of future generations. It is a schedule-cost estimate, not a count of currently identifiable people.
+The {{< var state_rtt_treatment_acceleration_lives_saved >}} figure exceeds the current world population because it sums premature deaths prevented across approximately {{< var state_rtt_treatment_acceleration_years >}} of future generations. It is a schedule-shift estimate, not a count of currently identifiable people.
+
+The model also excludes the uncertain net direct health effect on participants, including earlier benefits from effective treatments and harms from ineffective or unsafe ones. That is a separate unmodeled channel, not part of the discovery schedule shift.
 
 The {{< var state_rtt_treatment_acceleration_suffering_hours >}} figure means disability-weighted equivalent hours. A disability weight of 0.25 sustained for four hours equals one full-disability-equivalent hour. It does not mean the person consciously experienced maximum pain for one hour.
 
-The global result assumes discoveries become public knowledge and eventually benefit patients outside the United States. The access right itself remains state law. State legislation also does not override federal FDA authority. The durable federal version is the [Right to Trial and FDA Upgrade Act](right-to-trial-fda-upgrade-act.qmd) [@right-to-trial-paper-2025].
+The global result assumes discoveries become public knowledge and eventually benefit patients outside the United States. The access right itself remains state law. State legislation also does not override federal FDA authority. The durable federal version is the [Universal Right to Try and FDA Upgrade Act](right-to-trial-fda-upgrade-act.qmd) [@right-to-trial-paper-2025].
 
 ## Who should feel what and do what
 
