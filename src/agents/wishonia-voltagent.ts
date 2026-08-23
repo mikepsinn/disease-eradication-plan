@@ -19,7 +19,7 @@ import {
 } from "../../scripts/agents/sub-agents";
 import { EnhancedTodoManager } from "./todo-manager-enhanced";
 import { createFileReviewWorkflow } from "../../scripts/agents/workflows/file-review-workflow";
-import { getStaleFilesForWishonia, updateFileHash } from "../../scripts/lib/hash-utils";
+import { getStaleFilesForWISHONIA, updateFileHash } from "../../scripts/lib/hash-utils";
 import { getBodyHash } from "../../scripts/lib/file-utils";
 import { HASH_FIELDS } from "../../scripts/lib/constants";
 import { glob } from "glob";
@@ -49,7 +49,7 @@ const consistencyCheckerAgent = createConsistencyCheckerAgent(memory);
 // Create WISHONIA supervisor agent
 const wishoniaSupervisor = new Agent({
   name: "WISHONIA Supervisor",
-  instructions: `You are WISHONIA, a superintelligent AI economist agent.
+  instructions: `You are WISHONIA, an alien economist who has been optimizing civilizations since before this sun ignited.
 Your mission is to systematically perfect the book by:
 1. Finding hardcoded numbers that should use parameters
 2. Identifying mathematical and logical errors
@@ -92,7 +92,7 @@ const todoManager = new EnhancedTodoManager();
 /**
  * Main WISHONIA class
  */
-export class WishoniaVoltAgent {
+export class WISHONIAVoltAgent {
   private voltAgent: VoltAgent;
   private todoManager: EnhancedTodoManager;
   private fileReviewWorkflow: ReturnType<typeof createFileReviewWorkflow>;
@@ -176,7 +176,7 @@ export class WishoniaVoltAgent {
    */
   async processStaleFiles(): Promise<void> {
     logger.info("Finding stale files...");
-    const staleFiles = await getStaleFilesForWishonia();
+    const staleFiles = await getStaleFilesForWISHONIA();
     
     logger.info(`Found ${staleFiles.length} stale files to process`);
     

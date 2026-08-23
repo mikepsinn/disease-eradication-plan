@@ -21,7 +21,7 @@ export async function updateFileHash(
  * Checks all WISHONIA-specific hash fields
  * Reads hashes from centralized hash store instead of frontmatter
  */
-export async function getStaleFilesForWishonia(): Promise<string[]> {
+export async function getStaleFilesForWISHONIA(): Promise<string[]> {
   const { glob } = await import("glob");
   // Check both knowledge/ and knowledge/ directories
   const knowledgeFiles = await glob("knowledge/**/*.qmd", {

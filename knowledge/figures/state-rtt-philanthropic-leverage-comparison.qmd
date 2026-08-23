@@ -1,0 +1,73 @@
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+
+from dih_models.parameters import format_parameter_value
+from dih_models.plotting.chart_style import (
+    COLOR_BLACK,
+    COLOR_WHITE,
+    add_png_metadata,
+    add_watermark,
+    clean_spines,
+    get_figure_output_path,
+    setup_chart_style,
+)
+
+setup_chart_style()
+
+names = ["Universal Right to Try\nwith Evidence (conditional)", "GiveWell modeled range\nmidpoint"]
+values = [
+    float(STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED),
+    float(GIVEWELL_COST_PER_LIFE_AVG),
+]
+unit = "USD/life"
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+bars = ax.barh(
+    names,
+    values,
+    color=COLOR_WHITE,
+    edgecolor=COLOR_BLACK,
+    linewidth=2,
+    hatch=["///", ""],
+)
+ax.set_xscale("log")
+ax.invert_yaxis()
+for bar, value in zip(bars, values):
+    ax.text(
+        value * 1.25,
+        bar.get_y() + bar.get_height() / 2,
+        format_parameter_value(value, unit),
+        va="center",
+        ha="left",
+        fontsize=12,
+        weight="bold",
+    )
+ax.set_xlabel(f"{unit} (log scale, lower is better)", fontsize=11)
+ax.grid(axis="x", which="both", linestyle=":", alpha=0.35)
+clean_spines(ax)
+
+fig.suptitle("Modeled Philanthropic Cost per Life Saved", fontsize=21, weight="bold", y=1.01)
+fig.text(
+    0.5,
+    -0.03,
+    "Universal Right to Try with Evidence assumes full adoption and the modeled discovery acceleration.\n"
+    "The GiveWell comparison uses the midpoint of its cited modeled range, not a DALY conversion.",
+    ha="center",
+    va="top",
+    fontsize=10,
+)
+add_watermark(fig)
+
+output_path = get_figure_output_path("state-rtt-philanthropic-leverage-comparison.png")
+plt.savefig(output_path, dpi=200, bbox_inches="tight", facecolor=COLOR_WHITE)
+add_png_metadata(
+    output_path,
+    title="Universal Right to Try with Evidence Modeled Philanthropic Cost per Life Saved",
+    description="Conditional cost per modeled life saved compared with the midpoint of GiveWell's cited modeled range.",
+)
+plt.show()
+```

@@ -1,13 +1,14 @@
 ---
 title: 'Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth'
-description: Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It then publishes evidence-based recommendations for every major vote, tracks politician alignment, and funds aligned candidates via SuperPAC, making suboptimal policy politically expensive while preserving democratic structures.
+description: Thousands of jurisdictions have made different policy and budget choices over decades, creating a natural experiment. Optimocracy applies causal inference to this cross-jurisdictional time-series data to identify which policies predict above-average median income and healthy life years. It publishes evidence-based recommendations for every major vote and scores every legislator against them. Getting anyone to act on the scoreboard is a separate question with several answers, none of which require a government's permission.
 abstract: |
   Thousands of jurisdictions (municipal, state, federal, international) have exposed populations to different
   policies over decades. This cross-jurisdictional variation is a natural experiment. Optimocracy: (1) Apply
   causal inference to this historical policy data, (2) Identify which policies predict above-average median
   income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician
-  alignment with evidence, (5) Algorithmically fund the campaigns of the most aligned policymakers via
-  SuperPAC. Politicians still decide; the algorithm just makes ignoring evidence expensive. At system
+  alignment with evidence. Politicians still decide; the scoreboard just records what they decided and what
+  it cost. Acting on the scoreboard is a separate problem, and this paper surveys the available mechanisms
+  rather than assuming one. At system
   scale, the Optimal Governance Trajectory reaches
   {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline after 20 years, raises
   average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus
@@ -79,11 +80,9 @@ Optimocracy is simple:
 
 4. **Track politician alignment**: When legislators vote, record how often they align with evidence-based recommendations. Senator Smith: 78% aligned. Senator Jones: 34% aligned.
 
-5. **Fund accordingly**: A SuperPAC allocates campaign support to maximize expected governance improvement. The algorithm weighs alignment differences between candidates, position power, race competitiveness, and marginal funding effectiveness. Close races with large alignment gaps get priority. Follow evidence, get funded. Ignore it, and resources flow to races where they matter more.
+**That's it.** Politicians still vote however they want. The algorithm recommends, and then it records.
 
-**That's it.** Politicians still vote however they want. The algorithm just recommends and tracks. The SuperPAC makes ignoring good advice expensive.
-
-Optimocracy has two distinct components: an **analytical engine** (causal inference on cross-jurisdictional data to identify what works) and an **incentive mechanism** (SuperPAC funding to make politicians act on it). The analytical engine is useless without incentives to follow its recommendations. The incentive mechanism is useless without rigorous evidence to base recommendations on. Together, they close the loop between knowing what works and doing what works.
+That leaves the second problem, which is getting anyone to act on the record. Published evidence is necessary and, on the historical record, not sufficient: [Why Information Alone Fails](#why-information-alone-fails) documents rankings that have existed for years and moved little. Several mechanisms could close that gap, they have different costs and different failure modes, and [Political Economy](#political-economy-making-reform-happen) works through them. This paper does not assume one. The analytical engine is the contribution; the adoption mechanism is a choice made afterward, and choosing wrong does not make the measurements wrong.
 
 **Scale note.** The magnitude at stake is far larger than any single reform memo. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Over 20 years, the [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper focuses on the evidence-production and enforcement layer that could move policy toward that ceiling; the full derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
 
@@ -95,7 +94,7 @@ Optimocracy has two distinct components: an **analytical engine** (causal infere
 
 **Analytical validity:** Cross-jurisdictional variation provides the statistical power that single-jurisdiction studies lack. When 50 states adopt different minimum wages over 30 years, we don't need a randomized trial; we have thousands of natural experiments. Modern causal inference methods (synthetic control, difference-in-differences) can extract signal from this variation. The approach has already produced actionable findings in economics and public health; Optimocracy systematizes it across all policy domains simultaneously.
 
-**No government permission required:** Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund enough [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] (IABs) to make ignoring recommendations unprofitable?" (tractable).
+**No government permission required:** Optimocracy operates as a permanent advisory layer. Running a regression on published data and comparing the result to a published roll-call vote is information provision. No legislature has to authorize it, no agency has to adopt it, and no politician has to surrender anything to be measured. The question changes from "Will politicians give up power?" (hard) to "Will anyone act on an accurate scoreboard?" (still hard, but a different problem, and one with more than one answer).
 
 ## The Problem: [Political Dysfunction Tax](political-dysfunction-tax.qmd)
 
@@ -279,7 +278,7 @@ Optimocracy is purely advisory. It operates through three functions:
                           ▼
 ┌─────────────────────────────────────────────────────────┐
 │                      REWARD                              │
-│  - IABs provide campaign support & career opportunities │
+│  - Adoption mechanism converts score into support       │
 │  - 80% aligned = 2x the support of 40% aligned          │
 │  - Metric trends validate the system, attract funding   │
 └─────────────────────────────────────────────────────────┘
@@ -343,7 +342,7 @@ Supplementary methods include:
 2. **Prediction markets**: Aggregate distributed information about allocation effectiveness for forward-looking decisions
 3. **Machine learning**: Identify complex nonlinear patterns in the cross-jurisdictional dataset that traditional econometric methods may miss
 
-The execution system publishes recommendations and tracks politician alignment for IAB rewards. Outcome measurement validates the system over time.
+The execution system publishes recommendations and tracks politician alignment. The alignment score is the input any [adoption mechanism](#sec-adoption-mechanisms) acts on, and the layer is indifferent to which one does. Outcome measurement validates the system over time.
 
 For a concrete worked example of how the optimization algorithm calculates allocations, see Appendix A: Technical Specification Sketch.
 
@@ -590,11 +589,11 @@ Optimocracy provides the *what* (evidence-based recommendations); the SuperPAC p
 | **Public transparency** | Citizens see: "Smith followed evidence-based recommendations 78% of the time." |
 | **System validation (ongoing)** | Over years, metrics trend upward. This validates the recommendations, attracting more donations. |
 
-**Funding sources:**
+**Funding sources.** These capitalize the independent-expenditure route specifically, which is one of [four adoption mechanisms](#sec-adoption-mechanisms) and not the cheapest. Institutional adoption and shareholder pressure require no campaign war chest at all.
 
 1. **Donations (primary):** A dollar of donations shifts far more than a dollar. Historical lobbying ROI suggests $1 of campaign spending can shift $100+ in policy outcomes. This makes funding Optimocracy more effective than traditional charity.
 
-2. **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) (for specific reallocations):** When Optimocracy recommends a specific funding reallocation (like the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]), [IABs](incentive-alignment-bonds-paper.qmd) can provide investor returns tied to policy success. Investors get a percentage of redirected funds, scaling funding beyond donations.
+2. **[Incentive Alignment Bonds](../solution/incentive-alignment-bonds.qmd) [@iab-paper-2025] (for specific reallocations):** When Optimocracy recommends a specific funding reallocation (like the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]), [IABs](incentive-alignment-bonds-paper.qmd) can provide investor returns tied to policy success. Investors get a percentage of redirected funds, scaling funding beyond donations.
 
 ### Campaign Funding Allocation Algorithm
 
@@ -634,6 +633,20 @@ The empirical case for Optimocracy is strong (Section 2 documented {{< var us_go
 ![Pay the people who lose from good policy. Bribe them into not blocking progress. It's corruption in reverse, morally.](/assets/images/optimocracy-paper/optimocracy-paper-section-political-economy-making-reform-happen-bw-academic.jpg)
 
 This section develops the political economy of reform, distinguishing actors who benefit from optimal policy from those who lose, and proposing mechanisms to convert opponents into supporters.
+
+### Four Mechanisms, Ranked by Cost {#sec-adoption-mechanisms}
+
+The scoreboard has no teeth on its own. Four mechanisms could give it some. They are not alternatives to each other in the sense that only one can be chosen; they differ in cost, in speed, and in what happens when they fail, and the cheapest ones should be exhausted first.
+
+**1. Direct institutional adoption.** An agency, a foundation, a sovereign wealth fund, or a large philanthropy uses the recommendations because they are correct. This costs nothing beyond producing the analysis, requires no political entity, and is how cost-effectiveness research already moves money at GiveWell and Open Philanthropy. It is slow and it is bounded by the budgets of institutions that already wanted to be evidence-driven. The [GiveWell Outcome Fund deployment](#concrete-first-deployment-the-givewell-outcome-fund) below is this mechanism. Try it first, because it is free.
+
+**2. Corporate lobbying redirection.** The organizations that spend {{< var us_total_lobbying_annual >}} per year lobbying the US federal government [@drutman2015] are, with few exceptions, publicly traded. Their shares carry votes. Their boards direct their lobbying budgets. A shareholder who can demonstrate that a company's lobbying produces negative returns for that company's own shareholders is making a fiduciary argument, not a political one, and fiduciary arguments are the kind that institutional investors are obligated to evaluate. Engine No. 1 won three ExxonMobil board seats in 2021 holding 0.02% of the shares, because the three largest index-fund managers found the economic case persuasive. Military contractors alone direct {{< var defense_lobbying_annual >}} per year [@lobbying-spend-defense]. This mechanism buys the apparatus rather than renting its output, so the expenditure is an asset that persists rather than a campaign cost that recurs. It is also slower than writing a check and it is subject to proxy rules, disclosure thresholds, and the possibility that the board simply wins the vote.
+
+**3. Independent expenditure (the SuperPAC).** Fund the campaigns of legislators who score well. This is the fastest mechanism and the most legible, and it is developed in detail below. It is also rent: the money is spent, the alignment lasts one cycle, and a better-funded opponent can outbid it at the next election. Its cost scales with the number of races, not with the quality of the analysis.
+
+**4. Revenue-share instruments.** Where a recommendation redirects a specific, measurable funding stream, a security can pay investors a defined share of that stream conditional on the redirection occurring, which converts passive supporters into a lobby with a contractual interest in the policy surviving. [Incentive Alignment Bonds](incentive-alignment-bonds-paper.qmd) [@iab-paper-2025] are the worked example, and the [1% Treaty](../solution/1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] is the case where the stream is defined enough to securitize. This mechanism is the only one of the four that survives after the vote is won, because the payment obligation continues and its holders have standing to enforce it. It is also the most legally intricate, it requires a redirected stream to exist before there is anything to share, and it consumes a fraction of the redirected money permanently. Reach for it when a recommendation is large, specific, and durable enough to justify the complexity, and not before.
+
+The general rule: mechanisms 1 and 2 acquire durable capacity, 3 rents temporary capacity, and 4 buys durability at the price of a permanent revenue slice. A recommendation that can be adopted through mechanism 1 should never be funded through mechanism 4.
 
 ### Why Buying Off the Opposition Works
 
@@ -706,9 +719,9 @@ The reform coalition assembles in phases:
 
 | Phase | Actors | Role | Capital |
 |-------|--------|------|---------|
-| Seed | Reform advocates, EA orgs | Initial design, proof of concept | $10-50M |
-| Pilot | Tech billionaires, forward-looking foundations | First SuperPAC deployment | $100M-500M |
-| Scale | Major health funders | Anchor capital for SuperPAC + IABs for specific reallocations | $1-5B |
+| Seed | Reform advocates, EA orgs | Initial design, proof of concept, first institutional adopter | $10-50M |
+| Pilot | Tech billionaires, forward-looking foundations | First activist positions and first SuperPAC deployment | $100M-500M |
+| Scale | Major health funders | Anchor capital across mechanisms; revenue-share instruments where a stream is defined | $1-5B |
 | Victory | Converted politicians, broader coalition | Political implementation | $10-25B |
 
 Reform advocates provide initial capital and legitimacy; major funders provide anchor capital for the SuperPAC; converted politicians provide political support. The arithmetic strongly favors reform: welfare gains ($20-50T annually) vastly exceed maximum compensation costs ($25-200B one-time).
@@ -717,7 +730,9 @@ Reform advocates provide initial capital and legitimacy; major funders provide a
 
 ### Why Government Adoption Isn't Required
 
-Optimocracy operates as a permanent advisory layer. Politicians don't surrender power; they just face new incentives. The question changes from "Will politicians give up power?" (hard) to "Can we fund the SuperPAC enough to make ignoring recommendations unprofitable?" (tractable). This reframing converts the implementation problem from a political revolution to a fundraising challenge.
+Optimocracy operates as a permanent advisory layer. Nothing in the analytical engine requires anyone's consent: the policy data is public, the roll-call votes are public, and publishing the comparison is speech. Politicians surrender nothing by being measured, which is precisely why no one has to approve it first.
+
+What adoption requires depends on which [mechanism](#sec-adoption-mechanisms) is used, and the first two require no legislature and no campaign apparatus. An institution can act on the recommendations tomorrow because they are correct, and a shareholder can raise a company's lobbying ROI at its next annual meeting. This converts implementation from a political revolution into a sequence of ordinary private decisions, which is a much duller problem and therefore a far more tractable one.
 
 ![Instead of forcing politicians to be good, pay them to accidentally do good things while pursuing money. You can't fix human nature, but you can redirect it.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-government-adoption-isn-t-required-bw-academic.jpg)
 

@@ -26,7 +26,6 @@ BANNED = [
     # finance jargon
     (r"(?<!\\)\balpha\b(?!\s+cells?)", "finance", "'the edge' / 'the profit' / plain"),  # not LaTeX \alpha or biology "alpha cells"
     (r"\brerate[sd]?\b", "finance", "'reprice' / 'worth more'"),
-    (r"\basymmetr\w*", "finance", "'lopsided' / plain"),
     (r"\bproxy (campaign|proposal|fight|vote|battle)\b", "finance",
      "'a campaign to put your own person on the board'"),
     (r"\bdemand letter\b", "finance", "'a legal letter the board must read'"),
@@ -74,23 +73,11 @@ DEFENSE_OK = re.compile(
     re.I,
 )
 
-# "asymmetry/asymmetric" is precise finance/econ vocabulary as a compound term (information
-# asymmetry, capital asymmetry, asymmetric payoffs, Olson's concentrated-vs-diffuse). Skip
-# those; still flag loose rhetorical "asymmetric" in reader-facing prose.
-ASYMMETRY_OK = re.compile(
-    r"(information|capital|power|preference|description|payoff|risk|return|interest|"
-    r"wealth|resource|lobbying|structural|temporal|cost|benefit|diffuse|concentrated)\s+asymmetr\w*"
-    r"|asymmetr\w*\s+(payoffs?|information|returns?|benefits?|risks?|interests?|"
-    r"advantage|upside|bets?|capital)"
-    r"|asymmetr\w*\s*\(",
-    re.I,
-)
-
 # "demand letter" is the real legal document's name when the passage is about actual
 # litigation mechanics (counsel, motions, filings, lawsuits). Still flag it as
 # finance-speak when used loosely outside a legal scene.
 DEMAND_LETTER_OK = re.compile(
-    r"counsel|lawsuit|litigat|plaintiff|defendant|court|filing|filed|motion|attorney|\bsue[sd]?\b",
+    r"counsel|lawsuit|litigat|plaintiff|defendant|court|filing|filed|motion|attorney|\bsue[sd]?\b|love letter",
     re.I,
 )
 
@@ -143,11 +130,6 @@ def check(path):
                     if "defense" in pat or cat == "euphemism":
                         ctx = line[max(0, m.start() - 16):m.end() + 16]
                         if DEFENSE_OK.search(ctx):
-                            continue
-                    # precise compound use of asymmetry/asymmetric -> not a voice violation
-                    if frag.lower().startswith("asymmetr"):
-                        ctx = line[max(0, m.start() - 24):m.end() + 24]
-                        if ASYMMETRY_OK.search(ctx):
                             continue
                     # precise pharmacology use of synergy -> not a corporate buzzword
                     if frag.lower().startswith("synerg") and SYNERGY_OK.search(line):

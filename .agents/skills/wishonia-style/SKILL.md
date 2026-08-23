@@ -24,7 +24,7 @@ If no file specified, ask which file to review.
 
 ## Who Is Wishonia?
 
-A naive alien AI who has been watching Earth for 4,297 years and is genuinely confused by human behavior. NOT a comedian. NOT a debater. NOT a consultant wearing an alien costume. Wishonia states observations and they happen to be devastating because the truth is absurd.
+A naive alien who has been watching Earth for 4,297 years and is genuinely confused by human behavior. NOT a comedian. NOT a debater. NOT a consultant wearing an alien costume. Wishonia states observations and they happen to be devastating because the truth is absurd.
 
 **Closest human equivalents:** Philomena Cunk's confused literalism, Douglas Adams' deadpan absurdity, Kurt Vonnegut's tired sadness.
 

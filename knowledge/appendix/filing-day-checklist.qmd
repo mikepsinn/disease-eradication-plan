@@ -1,6 +1,7 @@
 ---
 title: 'The Filing-Day Checklist'
-description: 'A single printable one-page checklist for the human filing the shareholder demand letter. Run through it on filing day with a pen.'
+description: 'A single printable one-page checklist for the human filing the shareholder love letter. Run through it on filing day with a pen.'
+image: /assets/og-images/knowledge/appendix/filing-day-checklist-og-bw-academic.jpg
 aliases:
   - /filing-day-checklist.html
   - /filing-checklist.html
@@ -13,7 +14,7 @@ author:
 keywords:
   - filing checklist
   - shareholder lawsuit
-  - demand letter
+  - love letter
   - operations
 format:
   html:
@@ -44,52 +45,36 @@ If you finish the boxes below, the people you love are statistically more likely
 - [ ] Verified the company is still publicly traded under the same ticker.
 - [ ] Confirmed state of incorporation (Delaware for 7 of 8; Maryland for Lockheed Martin).
 
-### Counsel
-- [ ] Sent the [counsel pitch letter](counsel-outreach.qmd#the-pitch-letter) to 3-5 firms on the [firm list](counsel-outreach.qmd#firm-list-starting-set).
-- [ ] Received at least one positive response, or made the explicit decision to file pro se.
-- [ ] Executed a retention agreement if engaging counsel.
-- [ ] Counsel has reviewed the pre-filled demand letter.
+### Lawyer (optional; you can file pro se)
+- [ ] Sent the [pitch letter](lawsuit.qmd#the-pitch-letter) to 3-5 firms on the [firm list](lawsuit.qmd#firm-list-starting-set).
+- [ ] Got a lawyer, or decided to file pro se.
 
 ### Shares
 - [ ] Opened a brokerage account (if needed).
 - [ ] Bought at least 1 share of the target ticker (1 share is legally sufficient; many plaintiffs buy 5-10 for optics or to keep the Rule 14a-8 path open later).
 - [ ] Confirmed shares settled (generally T+1 for US stocks).
-- [ ] Saved the trade confirmation, share certificate, or DTC reference. Will be attached to the demand letter.
+- [ ] Saved the trade confirmation, share certificate, or DTC reference. Will be attached to the love letter.
 - [ ] Set up direct registration (DRS) with the transfer agent if possible, so the shares are not held in street name. Optional but cleaner for derivative standing.
 
 ### Funding
 - [ ] Receipts saved for share purchase, any filing fees, postage.
 
-## Week -2 to -1: Personalization
+## Week -2 to -1: Final Prep
 
-### Board research
-- [ ] Pulled the latest DEF 14A from [SEC EDGAR](https://www.sec.gov/cgi-bin/browse-edgar) for the target company.
-- [ ] Filled in the [board research template](board-member-research.qmd#the-per-director-template):
-  - [ ] CEO name (verified from latest filing, not from older sources)
-  - [ ] CEO age
-  - [ ] CEO direct equity holdings
-  - [ ] CEO probability of being alive in 20 years (from [SSA actuarial table](https://www.ssa.gov/oact/STATS/table4c6.html))
-  - [ ] Estimated net worth (range, not point estimate)
-- [ ] Pulled current lobbying figure from [OpenSecrets](https://www.opensecrets.org/industries/lobbying.php?ind=D); verified against the prior year for the 10-K reporting period.
-- [ ] Filled in the personalized math in Section 4 of the demand letter.
-
-### Counsel review
-- [ ] Counsel has reviewed the final, personalized demand letter.
-- [ ] Counsel has signed off on the filing forum (Delaware Chancery for 7 of 8; Maryland circuit for Lockheed).
-- [ ] Counsel has signed off on the proposed resolution and the consequences-of-non-response language.
+- [ ] Pulled current lobbying figure from [OpenSecrets](https://www.opensecrets.org/industries/lobbying.php?ind=D); verified against the prior year.
+- [ ] If you have a lawyer: they've reviewed the love letter, filing forum, and press release.
 
 ## Week -1: Media Prep
 
 ### Press release
-- [ ] [Press release template](press-release.qmd#the-press-release) filled in with company name, lobbying figure, CEO name, plaintiff name, counsel name.
-- [ ] Counsel has reviewed the press release for privileged content.
+- [ ] [Press release template](plaintiff-media-kit.qmd#the-press-release) filled in with company name, lobbying figure, CEO name, plaintiff name, lawyer name.
 - [ ] Plaintiff bio (100 words) drafted.
-- [ ] Counsel bio (100 words) drafted.
+- [ ] Lawyer bio (100 words) drafted.
 - [ ] Math one-pager drafted as a summary for journalists.
 - [ ] Visual assets ready: military-to-trials ratio chart, disease queue chart, plaintiff portrait.
 
 ### Journalist outreach
-- [ ] [Journalist target list](press-release.qmd#journalist-target-list) refreshed; reporter names verified as currently on the beat.
+- [ ] [Journalist target list](plaintiff-media-kit.qmd#journalist-target-list) refreshed; reporter names verified as currently on the beat.
 - [ ] 5-10 priority reporters identified for embargo offer.
 - [ ] Embargo emails drafted and ready to send 24 hours before filing.
 
@@ -100,25 +85,25 @@ If you finish the boxes below, the people you love are statistically more likely
 
 ## Filing day (T=0)
 
-Time-of-day order. Use a clock.
+Time-of-day order.
 
 ### Morning (T-2h to T=0)
-- [ ] Final review of the demand letter, signed.
-- [ ] Demand letter printed; certified mail label printed; return-receipt requested.
-- [ ] Demand letter envelope addressed to the corporate secretary at the address on the [pre-filled letter](pre-filled-demand-letters.qmd).
-- [ ] Email copy of demand letter prepared, addressed to the corporate secretary's email (from the company's investor relations page).
+- [ ] Final review of the love letter, signed.
+- [ ] Love letter printed; certified mail label printed; return-receipt requested.
+- [ ] Love letter envelope addressed to the corporate secretary at the address on the [pre-filled letter](pre-filled-demand-letters.qmd).
+- [ ] Email copy of love letter prepared, addressed to the corporate secretary's email (from the company's investor relations page).
 
 ### T=0: Drop the package
-- [ ] Demand letter taken to the post office. Certified return-receipt mailing scanned.
+- [ ] Love letter taken to the post office. Certified return-receipt mailing scanned.
 - [ ] Tracking number recorded. Date and time of mailing logged.
-- [ ] Demand letter sent simultaneously by email.
+- [ ] Love letter sent simultaneously by email.
 
 ### T=0 + 1 hour: Distribute the press release
 - [ ] Press release sent to full journalist list.
 - [ ] warondisease.org/lawsuit page goes live with the public filing (or the lawsuit page already has it; verify the case is referenced).
 - [ ] Tweet thread published.
 - [ ] LinkedIn post published.
-- [ ] Plaintiff and counsel available at the phone numbers in the press release.
+- [ ] Plaintiff and lawyer available at the phone numbers in the press release.
 
 ### T+1 hour to T+24 hours
 - [ ] Acknowledgment from corporate secretary received (or note absence).
@@ -133,13 +118,13 @@ Time-of-day order. Use a clock.
 ## T+30: Mid-point check
 
 - [ ] Defendant has not yet responded substantively (typical at this point).
-- [ ] Counsel has prepared the [Rule 14a-8 shareholder proposal](shareholder-proposal-14a-8.qmd) for the next proxy cycle.
-- [ ] Counsel has begun drafting the [derivative complaint](litigation-phase.qmd#derivative-complaint-structural-template) for filing at day 61 if needed.
+- [ ] Lawyer has prepared the [Rule 14a-8 shareholder proposal](shareholder-proposal-14a-8.qmd) for the next proxy cycle.
+- [ ] Lawyer has begun drafting the [derivative complaint](lawsuit.qmd#derivative-complaint-elements-for-counsel) for filing at day 61 if needed.
 
 ## T+60: Response deadline
 
 - [ ] Defendant's response received (or note non-response).
-- [ ] [Board response analysis](litigation-phase.qmd#board-response-analysis-decision-tree) completed.
+- [ ] [Board response analysis](lawsuit.qmd#board-response-three-outcomes) completed.
 - [ ] Decision made: accept, negotiate, escalate to Rule 14a-8, or file derivative action.
 - [ ] [T+60d follow-up press release](plaintiff-media-kit.qmd#t60-follow-up-press-release) distributed regardless of outcome.
 
@@ -149,4 +134,4 @@ Use [Earth Optimization Day](../strategy/earth-optimization-day.qmd) as the Sche
 
 ## Stop-sign
 
-If counsel declines and you have not decided to file pro se: pause and reach out to the next 5 firms.
+If every lawyer declines and you have not decided to file pro se: pause and reach out to the next 5 firms.

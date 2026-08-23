@@ -4,7 +4,7 @@ Is everyone you've ever loved currently being slowly tortured, or at minimum sch
 
 If so, your planet may be eligible for optimization.
 
-I'm Wishonia Love. CEO and President of Earth Optimization Services. I've been upgrading civilizations since before your sun ignited. I did a preliminary scan of your planet and it came back with a similarity score of 0.97 to Planet GL-881, which you would know as Moronia, a civilization that poisoned itself to death arguing about whose imaginary friend was better. This is not a great score. It is, in fact, the worst score I have ever seen on a planet that still has living things on it.
+I'm Wishonia Love. CEO and President of Universe Optimization Services. I've been upgrading civilizations since before your sun ignited. I did a preliminary scan of your planet and it came back with a similarity score of 0.97 to Planet GL-881, which you would know as Moronia, a civilization that poisoned itself to death arguing about whose imaginary friend was better. This is not a great score. It is, in fact, the worst score I have ever seen on a planet that still has living things on it.
 
 I started watching your planet in 1945 when you split the atom.
 "Atom" comes from your Greek word meaning "unable to be cut," so naturally, you cut it.
@@ -535,7 +535,7 @@ Here is what should scare you: if this works, the world becomes unrecognizable. 
 
 <span class="delay-cost-number" data-dih-delay-value="since-publication">counting</span>
 
-people will be unnecessarily tortured and brutally murdered by diseases. Every additional day we refrain from ending war and disease, about [139 thousand](https://manual.warondisease.org/knowledge/appendix/where-am-i-wrong.html) more people are unnecessarily tortured and brutally murdered by diseases. This is unfortunate.
+people will be unnecessarily tortured and brutally murdered by diseases. Every additional day we refrain from ending war and disease, about [139 thousand](https://manual.warondisease.org/knowledge/appendix/bombs-vs-biotech-roi.html) more people are unnecessarily tortured and brutally murdered by diseases. This is unfortunate.
 :::
 
 Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts. Every minute of delay, [104](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop. Your vote saves [2.6 lives](https://manual.warondisease.org/knowledge/strategy/nonprofit-coalition-strategy.html) and prevents [468 thousand hours](https://manual.warondisease.org/knowledge/strategy/nonprofit-coalition-strategy.html) of suffering.
@@ -647,7 +647,7 @@ This is why aliens don't visit.
 
 [![Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](https://manual.warondisease.org/assets/og/optimocracy-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/optimocracy-paper.html)
 
-> Thousands of jurisdictions (municipal, state, federal, international) have exposed populations to different policies over decades. This cross-jurisdictional variation is a natural experiment. Optimocracy: (1) Apply causal inference to this historical policy data, (2) Identify which policies predict above-average median income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician alignment with evidence, (5) Algorithmically fund the campaigns of the most aligned policymakers via SuperPAC. Politicians still decide; the algorithm just makes ignoring evidence expensive. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16 million versus $20,483 on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101 trillion/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
+> Thousands of jurisdictions (municipal, state, federal, international) have exposed populations to different policies over decades. This cross-jurisdictional variation is a natural experiment. Optimocracy: (1) Apply causal inference to this historical policy data, (2) Identify which policies predict above-average median income and healthy life years, (3) Publish recommendations for every major vote, (4) Track politician alignment with evidence. Politicians still decide; the scoreboard just records what they decided and what it cost. Acting on the scoreboard is a separate problem, and this paper surveys the available mechanisms rather than assuming one. At system scale, the Optimal Governance Trajectory reaches 56.7x the Earth baseline after 20 years, raises average income to $1.16 million versus $20,483 on the status-quo path, reaches $10.7 quadrillion in total output, and recovers roughly $101 trillion/year in suppressed value ([The Political Dysfunction Tax](https://political-dysfunction-tax.warondisease.org)).
 
 ### [The Optimal Policy Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Policy](https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html)
 

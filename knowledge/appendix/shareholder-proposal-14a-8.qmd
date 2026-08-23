@@ -1,8 +1,7 @@
 ---
 title: 'The Rule 14a-8 Shareholder Proposal'
-description: 'SEC Rule 14a-8 shareholder proposal text, 500-word supporting statement, and corporate secretary cover letter. The escalation step after the 60-day demand-letter response window closes.'
-abstract: |
-  If the defendant board's response to the [demand letter](lawsuit.qmd) is inadequate, the next step is to file a shareholder proposal under SEC Rule 14a-8 requiring the board to commission and disclose an independent ROI analysis of the company's lobbying expenditure. The proposal must fit on the company's proxy ballot, the supporting statement is capped at 500 words, and the SEC's no-action letter process can exclude the proposal if it's procedurally defective. This page provides the proposal text, the supporting statement, the cover letter, and the SEC no-action defense.
+description: 'Rule 14a-8 shareholder proposal, 500-word supporting statement, and cover letter. The escalation after 60 days.'
+image: /assets/og-images/knowledge/appendix/shareholder-proposal-14a-8-og-bw-academic.jpg
 aliases:
   - /shareholder-proposal.html
   - /rule-14a-8.html
@@ -37,15 +36,13 @@ scores:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-**STATUS: DRAFT.** Securities counsel must review before submission. Rule 14a-8 has strict eligibility, timing, and exclusion rules that are easy to fail by accident.
-
 ## Eligibility
 
-Rule 14a-8(b) requires continuous ownership of $2k/3yr, $15k/2yr, or $25k/1yr. The single-share demand-letter plaintiff doesn't meet this on day one; find a co-filer with the required history, or engage [As You Sow](https://www.asyousow.org/) as the eligible filer. Counsel verifies before submission.
+Rule 14a-8(b) requires continuous ownership of $2k/3yr, $15k/2yr, or $25k/1yr. The single-share love-letter plaintiff doesn't meet this on day one; find a co-filer with the required history, or engage [As You Sow](https://www.asyousow.org/) as the eligible filer. Counsel verifies before submission.
 
 ## The Proposal (ballot text)
 
-The proposal must fit in 500 words including the supporting statement. The ballot resolution itself should be a single resolved clause.
+500-word cap including the supporting statement. One resolved clause.
 
 ---
 
@@ -57,7 +54,7 @@ The proposal must fit in 500 words including the supporting statement. The ballo
 
 ## Supporting Statement (500 words including resolution)
 
-The supporting statement appears below the resolved clause on the proxy ballot. Together they cannot exceed 500 words. Count carefully.
+Appears below the resolved clause on the proxy ballot. Together they cannot exceed 500 words.
 
 ---
 
@@ -81,7 +78,7 @@ Submitted with love and respect by [PROPONENT NAME], holder of [N] shares of [CO
 
 ## Cover Letter to Corporate Secretary
 
-The proposal is delivered with a cover letter that establishes Rule 14a-8 eligibility and notice. Send by certified mail and email simultaneously.
+Send by certified mail and email simultaneously.
 
 ---
 
@@ -105,7 +102,7 @@ I am submitting the enclosed shareholder proposal for inclusion in [COMPANY]'s p
 
 **Proposal text.** The proposal and supporting statement are enclosed and total [N] words, within the 500-word limit set by Rule 14a-8(d).
 
-**Notice of related materials.** I refer the Board to the shareholder demand letter previously delivered on [DATE OF DEMAND LETTER], which is incorporated by reference. The demand letter set forth the substantive analysis underlying this proposal. The Board's response to that demand letter, [if any was received], has been considered and does not substantively address the question this proposal asks.
+**Notice of related materials.** I refer the Board to the shareholder love letter previously delivered on [DATE OF LOVE LETTER], which is incorporated by reference. The love letter set forth the substantive analysis underlying this proposal. The Board's response to that love letter, [if any was received], has been considered and does not substantively address the question this proposal asks.
 
 I welcome dialogue with the Board or management on the proposal. I would prefer dialogue to the alternative, because the alternative is that the Board members, their families, and the shareholders this proposal asks the Board to protect continue dying earlier than the math says they could have lived. I am reachable at [EMAIL] and [PHONE]. I would rather have lunch with you than file the derivative complaint.
 
@@ -124,11 +121,5 @@ cc: [COUNSEL NAME], [LAW FIRM]
 
 ## Timing and Process
 
-Submit at least 120 days before the anniversary of the prior year's proxy mailing. The company has 14 days to challenge eligibility and 80 days to file an SEC no-action request (counsel handles the response; common exclusion grounds are Rule 14a-8(i)(1), (i)(5), (i)(7), (i)(10)). SEC staff typically responds in 30-60 days. If no-action denied, the proposal goes on the ballot; if granted, refile next cycle.
+Submit at least 120 days before the prior year's proxy mailing anniversary. The company has 14 days to challenge eligibility and 80 days to file an SEC no-action request. Common exclusion grounds: Rule 14a-8(i)(1), (i)(5), (i)(7), (i)(10). SEC staff responds in 30-60 days. No-action denied = on the ballot. Granted = refile next cycle.
 
-## Related Documents
-
-- [The demand letter](lawsuit.qmd): the substantive analysis this proposal references.
-- [Counsel outreach](counsel-outreach.qmd): securities counsel for the 14a-8 process.
-- [Filing-day checklist](filing-day-checklist.qmd): timing of the proxy proposal relative to the demand letter.
-- [Litigation phase](litigation-phase.qmd): what happens if the board declines after a successful 14a-8 vote.

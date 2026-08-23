@@ -1,0 +1,32 @@
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+```{python}
+#| echo: false
+import graphviz
+from IPython.display import Image as IPImage, display
+
+from dih_models.plotting.graphviz_helper import setup_graphviz_style, render_graphviz_with_watermark
+
+dot = graphviz.Digraph(comment="Return Ranking Map", format="png")
+dot.attr(rankdir="LR", size="12,7", nodesep="0.5", ranksep="0.8")
+setup_graphviz_style(dot)
+
+dot.node("question", "How is the system funded?")
+dot.node("positive", "NEW APPROPRIATION\nUse finite cost per DALY")
+dot.node("zero", "REDIRECT ZERO-VALUE SPENDING\nNO NET NEW SPENDING\nADVOCACY SHORTHAND: ∞ NEW-BUDGET LEVERAGE")
+dot.node("negative", "REDIRECT HARMFUL SPENDING\nADD THE AVOIDED HARM\nREDIRECT FIRST")
+
+dot.node("positive_action", "Compare health per dollar")
+dot.node("zero_action", "Budget-neutral, more health\nNot a full social ROI")
+dot.node("negative_action", "Stop modeled harm + create health\nDominant in modeled net benefit")
+
+dot.edge("question", "positive", label="new money")
+dot.edge("question", "zero", label="zero-value budget")
+dot.edge("question", "negative", label="negative-value budget")
+dot.edge("positive", "positive_action")
+dot.edge("zero", "zero_action")
+dot.edge("negative", "negative_action")
+
+png_path = render_graphviz_with_watermark(dot, "state-rtt-return-ranking-map")
+display(IPImage(str(png_path)))
+```

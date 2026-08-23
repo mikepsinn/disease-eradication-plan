@@ -36,108 +36,62 @@ The plan _is_ the repository. This is not a metaphor. If you want to improve hum
 
 *Where We Explain Intellectual Property to a Species That Invented Both Copyright AND Piracy*
 
-By contributing to this repository, you agree that your work will be licensed under the [Creative Commons Attribution–NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/).
+By contributing to this repository, you agree that your work will be licensed under the [Creative Commons Attribution–ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
 
-This is the license humans invented for "I want credit but I don't want corporations stealing this to make yacht money."
+This is the license humans invented for "anyone can use this for anything, but you have to say where you got it and you can't make your version proprietary."
 
 ### What This Actually Means
 
 *Translated from Legalese to Human*
 
-- **Attribution:** You get credit for your contributions. Your name goes in the thing. Future historians will know you helped prevent humanity from being stupid. It's like signing the Declaration of Independence except less likely to get you shot by the British.
+- **Attribution:** You get credit for your contributions. Your name goes on the book as a co-author. Future historians will know you helped prevent humanity from being stupid. It's like signing the Declaration of Independence except less likely to get you shot by the British.
 
-- **NonCommercial:** Others may not use the work commercially. This means Jeff Bezos can't just copy this, slap it on Amazon for $49.99, and buy another rocket. (He has enough rockets.)
+- **ShareAlike:** Anyone can use, adapt, translate, teach, or sell courses based on this work. Derivatives must use the same CC BY-SA 4.0 license. Nobody can take a fork proprietary. This means a professor can teach it, a publisher can print it, and a consultant can train executives on the treaty mechanism. All of that is more distribution, which is the point.
 
 - **Copyright:** You retain copyright to your contributions. You still own what you wrote. We're not stealing it. Unlike most of the internet, which is entirely built on stealing things and calling it "sharing economy."
 
-- **Grant of Rights:** By submitting a contribution, you grant the project's maintainer (acting on behalf of Wishonia) a perpetual, worldwide, non-exclusive license to use, adapt, and publish your contributions under the CC BY-NC 4.0 license.
-
-Translation: We can use your stuff forever to save humanity, but we can't sell it without giving you a cut, and you can still use your own stuff however you want.
+Translation: Anyone can use your stuff for anything, as long as they credit the source and keep the same license. You can still use your own stuff however you want.
 
 This lets the project remain fully open while ensuring it can also be distributed and maintained coherently instead of fragmenting into 47 competing versions like what happened to Linux (there are over 600 Linux distributions now, because humans cannot agree on anything).
 
 ---
 
-## Attribution Expectations
+## You Are a Co-Author
 
-*How to Give Credit Without Claiming Authorship*
+*How to Get Your Name on the Thing That Saves Humanity*
 
-By contributing to this repository, you agree that your contributions may be used in nonprofit, academic, and commercial contexts, including incorporation into books authored by WISHONIA (translated by Mike P. Sinn).
+By contributing to this repository, you become a co-author of the book. A pull request, an interview, a correction, a vote on the treaty. Your name goes on it.
 
-This means your code, models, data processing scripts, and bug fixes can be used in the book. Your contribution makes the analysis possible. That's different from being a co-author of the book's arguments and conclusions.
+This is a credit, not a copyright assignment. You do not get a veto over edits or legal liability for the book's arguments. (That second part protects you. You're welcome.)
 
 ### If You Publish Work Using This Data
 
 If you publish research, papers, or other work derived from the models or data in this repository, please cite appropriately:
 
-**Repository citation:**
-
 ```
-"Disease Eradication Plan," maintained by Mike P. Sinn and open-source contributors.
-https://github.com/wishonia/earth-optimization-protocol
+Wishonia Love and the Citizens of Earth.
+"How to End War and Disease." 2025. https://warondisease.org
 ```
-
-**Book citation (if you're referencing the book's arguments):**
-
-```
-WISHONIA (translated by Mike P. Sinn). How to End War and Disease.
-First Edition, 2025. https://warondisease.org
-```
-
-### What This Means for You
-
-- ✅ Your technical contributions are credited via GitHub
-- ✅ Your work can be used in the book (it's CC BY-NC licensed)
-- ✅ You get attribution for your specific contributions
-- ❌ You are NOT automatically a co-author of the book
-- ❌ You do NOT have veto power over how your contributions are used (within license terms)
-- ❌ You are NOT responsible for the book's arguments or conclusions
-
-Contributors are not considered co-authors of the book unless explicitly agreed in writing. This protects you legally and professionally while allowing the project to move forward without requiring unanimous consent from every person who ever fixed a typo.
-
-Think of it like contributing to Linux: you get credit for your code, but Linus Torvalds doesn't need your permission to release a new kernel version.
 
 ---
 
 ## What You Can Do
 
-*The "Yes You May" List*
+*The "Yes You May" List (It's Everything)*
 
 You **CAN**:
 
-- Share the book and materials (non-commercially) — Email it to everyone you know who isn't currently dying (or is, they might find it relevant)
-- Translate the work (with attribution, non-commercial) — Make it comprehensible to other human language groups
-- Create derivative works (with attribution, non-commercial) — Turn it into a musical if you want, I've seen what you do with Hamilton
-- Use the content in nonprofit education — Teach humans to be less stupid (noble but Sisyphean)
-- Fork and modify the repository (non-commercial use) — Make your own version, just don't sell it
+- Share the book and materials — Email it to everyone you know who isn't currently dying (or is, they might find it relevant)
+- Translate the work — Make it comprehensible to other human language groups
+- Create derivative works — Turn it into a musical if you want, I've seen what you do with Hamilton
+- Use the content in education, courses, textbooks, training — Teach humans to be less stupid (noble but Sisyphean)
+- Fork and modify the repository — Make your own version
+- Sell courses, books, or training based on it — If someone profits from teaching people not to die, that is fine. That is the goal.
 
-You **CANNOT**:
+Two rules:
 
-- Sell the book or derived works — No printing this out and selling it for papers at your university bookstore
-- Use the material in paid courses — Your $4,000 online masterclass about not dying cannot just copy this
-- Include it in commercial textbooks — Pearson charges $400 for textbooks that cost $8 to print, they don't need more content to overcharge for
-- Use it in for-profit training programs or consultation — "I'll teach you to not die for only $5,000" is exactly the problem we're solving
-
-Basically: Free to use, forbidden to profit from. Like communism but it actually works because it's just information, not food distribution.
-
----
-
-## Commercial Rights
-
-*How This Stays Free While Also Paying for Servers*
-
-To sustain long-term development, the project maintainer may:
-
-- Sell print or digital editions of the book (some humans prefer dead trees with ink on them)
-- Offer paid courses or expanded editions (for people who pay money to be told things instead of just reading)
-- License commercial rights to publishers (who have distribution channels and marketing budgets)
-- Accept donations, sponsorships, or grants (because hosting costs money and humans invented this weird system where everything requires money even when the marginal cost is zero)
-
-This arrangement ensures the project remains free and open for the world while enabling the resources needed to support its continued evolution.
-
-Translation: The book stays free forever. But if Random House wants to print fancy hardcover editions for people who enjoy heavy objects, they can pay for that privilege, and that money funds more development.
-
-It's like how Linux is free but Red Hat makes money selling support. Except instead of operating systems, it's "instructions for not dying."
+1. **Credit the source.** Link to [warondisease.org](https://warondisease.org).
+2. **Keep the same license.** Derivatives must use CC BY-SA 4.0. Nobody can take a fork proprietary.
 
 ---
 
@@ -153,7 +107,7 @@ We probably won't respond immediately because I'm busy watching 47 other civiliz
 
 ---
 
-*WISHONIA*
-*World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation*
+*Wishonia Love*
+*CEO and President, Universe Optimization Services*
 *Still Watching You Make Questionable Decisions Since 1945*
 *Cautiously Optimistic About This Whole "Contributing to Your Own Survival" Thing*

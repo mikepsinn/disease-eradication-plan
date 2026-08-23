@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 93 parameters used in the analysis, organized by type:
+This appendix documents all 95 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 33
+- External sources (peer-reviewed): 35
 - Calculated values: 36
 - Core definitions: 24
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (36 parameters) • [External Data Sources](#sec-external) (33 parameters) • [Core Definitions](#sec-definitions) (24 parameters)
+[Calculated Values](#sec-calculated) (36 parameters) • [External Data Sources](#sec-external) (35 parameters) • [Core Definitions](#sec-definitions) (24 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -2271,6 +2271,28 @@ Annual global clinical trial participants (IQVIA 2022: 1.9M post-COVID normaliza
 
 :::
 
+### Annual Military Sector Lobbying: $198 million {#sec-defense_lobbying_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual military sector lobbying spending. OpenSecrets reports the 2025 actual at $198.0 million, the top of a three-year climb: $142.9M (2023), $159.5M (2024), $198.0M (2025)
+
+**Source**: [@lobbying-spend-defense]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$190 million, $210 million]
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between $190 million and $210 million (±5%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-defense_lobbying_annual.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2025*
+
+:::
+
 ### Pragmatic Trial Cost per Patient: $929 {#sec-dfda_pragmatic_trial_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2946,6 +2968,28 @@ US military spending in 2024 in constant dollars
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Total Lobbying (2024): $4.4 billion {#sec-us_total_lobbying_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets.
+
+**Source**: [@opensecrets-lobbying-2024]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3.74 billion, $5.06 billion]
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3.74 billion and $5.06 billion (±15%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_total_lobbying_annual.qmd >}}
 
 *✓ High confidence*
 

@@ -25,7 +25,7 @@ do: "Stand up the Evidence Machine: wire the two generators to the five independ
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-[Incentive Alignment Bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] make saving lives and advancing careers the same sentence. One problem: how do you know which policies to recommend?
+Ten thousand jurisdictions have already tried your policy. They wrote down what happened. Your species skipped that step and went straight to arguing.
 
 ## The Only Two Numbers That Matter
 
@@ -69,7 +69,7 @@ The Copenhagen Consensus already publishes rigorous benefit-cost analyses [@cope
 
 Why? Because information doesn't change incentives. A Princeton study analyzed 1,779 policy decisions and found that average citizens have "little or no independent influence" on policy outcomes [@gilens2014]. Economic elites and organized interest groups drive policy. You already knew this (it's covered in [Unrepresentative Democracy](../problem/unrepresentative-democracy.qmd)). The point here is that publishing better data doesn't fix the problem. Your politicians already know which programs produce value. They don't act because acting doesn't maximize getting votes, getting papers, or getting a nice job afterward selling access to their replacements.
 
-This is the gap between [Incentive Alignment Bonds](incentive-alignment-bonds.qmd) (which solve the incentive problem) and the Evidence Machine (which solves the knowledge problem). IABs make doing the right thing profitable. But they need to know what the right thing IS. That requires a measurement system nobody can corrupt.
+So there are two problems, and this chapter is only about the first one. The knowledge problem is "which policies actually work," and it is solved by measurement nobody can corrupt. The incentive problem is "why would anyone act on the answer," and it has [several solutions of varying price](../appendix/optimocracy-paper.qmd#sec-adoption-mechanisms): an institution that adopts the recommendations because they are correct, a shareholder who points out that a company's lobbying is losing its own shareholders money, a SuperPAC, or [bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] paying a share of whatever gets redirected. Every one of them needs the same thing first, which is a number that is actually true.
 
 ## The Mechanism: Recommend, Track, Reward
 
@@ -90,11 +90,11 @@ You are spending 100 times less than optimal on figuring out which medicines wor
 
 **Track.** When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: 78% aligned. Senator Jones: 34% aligned. This information is public. Any citizen can check. There is a word for this. The word is "checking if the person you hired did the thing you hired them to do." Your species finds this concept revolutionary, which tells you everything. Politicians who ignore the evidence must do so on the record.
 
-**Reward.** The [IAB-funded SuperPAC](incentive-alignment-bonds.qmd) allocates campaign support proportional to alignment scores. Follow evidence, get funded. Ignore it, watch your opponent get funded. Same trick the NRA perfected, but pointed at "not dying" instead of "more guns."
+**Reward.** Something has to make the score matter. The cheapest version is a company whose lobbyists already have the senator's phone number and are now selling the evidence-based budget instead ([the takeover](../appendix/loving-takeover.qmd)). The fastest version is a SuperPAC allocating campaign support proportional to alignment: follow evidence, get funded; ignore it, watch your opponent get funded. Same trick the NRA perfected, but pointed at "not dying" instead of "more guns." The scoreboard does not care which one shows up.
 
 ![Instead of forcing politicians to be good, pay them to accidentally do good things while pursuing money. You can't fix human nature, but you can redirect it.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-government-adoption-isn-t-required-bw-academic.jpg)
 
-This doesn't require government permission. The Evidence Machine operates as a permanent advisory layer outside government. Politicians still vote however they want. They can still ignore the evidence; it just costs them money now, which on Earth is apparently the only consequence that matters. The question isn't "will politicians give up power?" (they won't) but "can we make ignoring good advice unprofitable?" (yes; it's a fundraising challenge, not a revolution).
+This doesn't require government permission. The Evidence Machine operates as a permanent advisory layer outside government. The policy data is public, the votes are public, and publishing the comparison between them is just talking. Politicians still vote however they want. They can still ignore the evidence; it just costs them something now, which on Earth is apparently the only consequence that matters. The question isn't "will politicians give up power?" (they won't) but "will anyone act on an accurate scoreboard?" (several parties would, for several different reasons, which is the whole point of building it before deciding who).
 
 ## Corruption, But Make It Difficult
 
@@ -132,11 +132,11 @@ Why not 50 metrics? Because each additional target creates a new way to cheat, a
 
 ## Putting It Together
 
-The full loop: [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] funds it, [IABs](incentive-alignment-bonds.qmd) align incentives, the Evidence Machine identifies what works, and [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] allocates the research funds. The Evidence Machine tells governments which policies work. [Wishocracy](wishocracy.qmd) tells the research fund where to aim. Your species calls this "a bold new paradigm." Everyone else calls it "an obvious system." It required four chapters and a bibliography because you're you.
+The full loop: the Evidence Machine identifies what works, [somebody with a financial reason to care](../appendix/optimocracy-paper.qmd#sec-adoption-mechanisms) makes the politicians act on it, the [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] funds it, and [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] allocates the research funds. The Evidence Machine tells governments which policies work. [Wishocracy](wishocracy.qmd) tells the research fund where to aim. Your species calls this "a bold new paradigm." Everyone else calls it "an obvious system." It required four chapters and a bibliography because you're you.
 
 ![Tribal politics: my team good, your team bad. Optimocracy: did anyone get healthier or richer. One is sports, the other is governance.](/assets/images/optimocracy-paper/optimocracy-paper-section-depolarization-bw-academic.jpg)
 
-And here's why the whole thing ratchets. Each treaty expansion creates more IAB funding, which funds more evidence collection, which strengthens the case for further expansion. Evidence begets funding begets evidence. It's the same self-reinforcing loop as the [Military Industrial Complex](../solution/aligning-incentives.qmd), except instead of manufacturing orphans, it manufactures data about how to stop manufacturing orphans.
+And here's why the whole thing ratchets. Every expansion pays whoever pushed for it, whether that is a shareholder holding a repriced company or a bondholder collecting a share of the redirected money, and their winnings fund more evidence collection, which strengthens the case for the next expansion. Evidence begets funding begets evidence. It's the same self-reinforcing loop as the [Military Industrial Complex](../solution/aligning-incentives.qmd), except instead of manufacturing orphans, it manufactures data about how to stop manufacturing orphans.
 
 Now that you know how the Optimitron works (congratulations, on Wishonia this is taught to children), the next chapter shows you how [8 billion people allocate the research funds](wishocracy.qmd).
 

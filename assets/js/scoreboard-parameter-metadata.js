@@ -19,8 +19,8 @@ window.dihScoreboardParameterMetadata = {
         "GLOBAL_DISEASE_DEATHS_DAILY"
       ],
       "computeExpr": "(GLOBAL_DISEASE_DEATHS_DAILY * EVENTUALLY_AVOIDABLE_DEATH_PCT)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/where-am-i-wrong.html",
-      "chapterTitle": "Where Am I Wrong?"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/bombs-vs-biotech-roi.html",
+      "chapterTitle": "Bombs vs. Biotechnology: The ROI"
     },
     "GLOBAL_DISEASE_DEATHS_DAILY": {
       "value": 150000.0,

@@ -1,8 +1,7 @@
 ---
 title: 'Per-Contractor Fact Sheets'
-description: 'The eight contractor-specific fill-ins for the master demand letter: addresses, lobbying figures, SEC EDGAR links, filing forums, and any per-defendant notes. Plug these into the master letter in lawsuit.qmd.'
-abstract: |
-  The master demand letter is in [lawsuit.qmd](lawsuit.qmd#part-1-the-demand-letter). This page provides eight per-contractor fact sheets you plug into it: address for the corporate secretary, lobbying spend, SEC EDGAR link, state of incorporation, filing forum, and contractor-specific notes. Verify everything against the latest DEF 14A and OpenSecrets data before mailing because both shift.
+description: 'Eight contractor fact sheets for the master love letter: addresses, lobbying figures, SEC EDGAR links, filing forums.'
+image: /assets/og-images/knowledge/appendix/pre-filled-demand-letters-og-bw-academic.jpg
 aliases:
   - /pre-filled-demand-letters.html
   - /demand-letters.html
@@ -14,7 +13,7 @@ author:
     email: mike@warondisease.org
     corresponding: true
 keywords:
-  - demand letter
+  - love letter
   - military contractors
   - Caremark
   - shareholder rights
@@ -37,18 +36,9 @@ scores:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-**STATUS: DRAFT.** CEO names, ages, and current lobbying figures all shift. Verify the values for your target contractor against the latest DEF 14A and OpenSecrets before mailing.
+Verify against the latest DEF 14A and OpenSecrets before mailing. Numbers shift.
 
-## How to Use This Page
-
-1. Pick your target contractor. Pull the fact sheet below.
-2. Open the master demand letter in [lawsuit.qmd Part 1](lawsuit.qmd#part-1-the-demand-letter).
-3. Substitute the fact-sheet values into the master letter's placeholders.
-4. Run the CEO-personalization research per [board-member-research.qmd](board-member-research.qmd) and fill in Section 6.
-5. Counsel reviews ([counsel-outreach.qmd](counsel-outreach.qmd)).
-6. Mail by certified return receipt to the corporate secretary address below.
-
-Each fact sheet contains everything that varies per contractor. The legal theory, the macroeconomic argument, and the proposed resolution are identical across all eight and live in the master letter.
+Plug these into the master letter at [lawsuit.qmd](lawsuit.qmd#part-1-the-love-letter). Mail by certified return receipt.
 
 ## Lockheed Martin (LMT)
 
@@ -65,7 +55,7 @@ Applicable law:              Maryland MD. Code, Corps. & Ass'ns § 2-405.1
 ~Lobbying (FY 2024):         $15.7 million
 SEC EDGAR (CIK 0000936468):  sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000936468
 OpenSecrets:                 opensecrets.org/orgs/lockheed-martin/summary?id=D000000104
-Note:                        Largest pure-play military prime. File first if there is
+Note:                        Largest pure-play military contractor. File first if there is
                              media leverage in being first.
 ```
 
@@ -82,7 +72,7 @@ Filing forum:                Delaware Chancery for derivative; SEC for 14a-8
 ~Lobbying (FY 2024):         $13.5 million
 SEC EDGAR (CIK 0000101829):  sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000101829
 OpenSecrets:                 opensecrets.org/orgs/rtx-corp/summary?id=D000000125
-Note:                        Largest military prime by revenue post merger. Heavy
+Note:                        Largest military contractor by revenue post merger. Heavy
                              congressional relationships across multiple states
                              (RTX, Pratt & Whitney, Collins Aerospace).
 ```

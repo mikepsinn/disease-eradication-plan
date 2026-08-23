@@ -1,7 +1,7 @@
 {
-  "totalImages": 3254,
-  "totalSizeBytes": 1889400830,
-  "totalSize": "1801.9 MB",
+  "totalImages": 3310,
+  "totalSizeBytes": 1924144934,
+  "totalSize": "1835.0 MB",
   "images": [
     {
       "path": "assets/audiobook/manual-paperback/video/keyframes/index-manual-scene-01-16x9.jpg",
@@ -107099,6 +107099,34 @@
       "imageProblemsDetected": false
     },
     {
+      "path": "assets/og-images/knowledge/appendix/board-member-research-og-bw-academic.jpg",
+      "filename": "board-member-research-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 586325,
+      "size": "572.6 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/board-member-research"
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/catsoline-og-bw-academic.jpg",
+      "filename": "catsoline-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 607367,
+      "size": "593.1 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/catsoline"
+    },
+    {
       "path": "assets/og-images/knowledge/appendix/clinical-trial-participants-og-retro-academic.jpg",
       "filename": "clinical-trial-participants-og-retro-academic.jpg",
       "extension": "jpg",
@@ -107231,6 +107259,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/appendix/commission-of-the-president-og-bw-academic.jpg",
+      "filename": "commission-of-the-president-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 608003,
+      "size": "593.8 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/commission-of-the-president"
+    },
+    {
       "path": "assets/og-images/knowledge/appendix/conclusion-og-bw-academic.jpg",
       "filename": "conclusion-og-bw-academic.jpg",
       "extension": "jpg",
@@ -107292,13 +107334,27 @@
       "imageProblemsDetected": false
     },
     {
+      "path": "assets/og-images/knowledge/appendix/correcting-the-ais-og-bw-academic.jpg",
+      "filename": "correcting-the-ais-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 688584,
+      "size": "672.4 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/correcting-the-ais"
+    },
+    {
       "path": "assets/og-images/knowledge/appendix/cost-benefit-of-hegemony-og-bw-academic.jpg",
       "filename": "cost-benefit-of-hegemony-og-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 462970,
-      "size": "452.1 KB",
-      "width": 1376,
-      "height": 768,
+      "sizeBytes": 601811,
+      "size": "587.7 KB",
+      "width": 1672,
+      "height": 941,
       "format": "jpeg",
       "aspectRatio": "16:9",
       "imageType": "og",
@@ -107312,8 +107368,6 @@
         "busy visual layout"
       ],
       "metadataCreatedAt": "2026-04-09T01:10:54.633Z",
-      "title": "The Cost-Benefit Analysis of Global Hegemony",
-      "description": "The US spends $886 billion per year on military hegemony. The only quantifiable benefit is $20-200 billion in dollar privilege. The net is negative $674 billion to $1.38 trillion per year. Switzerland spends $7 billion and has better outcomes by every measure.",
       "keywords": [
         "military-spending",
         "cost-benefit-analysis",
@@ -107346,6 +107400,20 @@
       "imageType": "og",
       "style": "black and white academic",
       "chapter": "appendix/cost-of-change-analysis"
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/counsel-outreach-og-bw-academic.jpg",
+      "filename": "counsel-outreach-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 660726,
+      "size": "645.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/counsel-outreach"
     },
     {
       "path": "assets/og-images/knowledge/appendix/data-storage-costs-og-retro-academic.jpg",
@@ -107809,10 +107877,10 @@
       "path": "assets/og-images/knowledge/appendix/extinction-surplus-og-bw-academic.jpg",
       "filename": "extinction-surplus-og-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 362993,
-      "size": "354.5 KB",
-      "width": 1376,
-      "height": 768,
+      "sizeBytes": 567658,
+      "size": "554.4 KB",
+      "width": 1672,
+      "height": 941,
       "format": "jpeg",
       "aspectRatio": "16:9",
       "imageType": "og",
@@ -107825,8 +107893,6 @@
         "small text in citations"
       ],
       "metadataCreatedAt": "2026-04-09T01:07:13.990Z",
-      "title": "The Apocalypse Markup",
-      "description": "The Price of Apocalypse is $33.1B (95% CI: $23.7B-$44B) per year. Your governments spend $2.72T. That is an 82.3x (95% CI: 61.9x-115x) markup on the end of civilization.",
       "keywords": [
         "nuclear-weapons",
         "cost-analysis",
@@ -107911,6 +107977,20 @@
         "appendix",
         "retro"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/filing-day-checklist-og-bw-academic.jpg",
+      "filename": "filing-day-checklist-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 460700,
+      "size": "449.9 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/filing-day-checklist"
     },
     {
       "path": "assets/og-images/knowledge/appendix/fundraising-strategy-og-retro-academic.jpg",
@@ -108117,6 +108197,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/appendix/google-ads-campaign-template-og-bw-academic.jpg",
+      "filename": "google-ads-campaign-template-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 549049,
+      "size": "536.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/google-ads-campaign-template"
+    },
+    {
       "path": "assets/og-images/knowledge/appendix/governance-og-retro-academic.jpg",
       "filename": "governance-og-retro-academic.jpg",
       "extension": "jpg",
@@ -108185,6 +108279,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/appendix/handout-og-bw-academic.jpg",
+      "filename": "handout-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 518912,
+      "size": "506.8 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/handout"
+    },
+    {
       "path": "assets/og-images/knowledge/appendix/humanity-budget-overview-og-retro-academic.jpg",
       "filename": "humanity-budget-overview-og-retro-academic.jpg",
       "extension": "jpg",
@@ -108251,6 +108359,34 @@
         "appendix",
         "humanity"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/humanity-manager-employment-agreement-og-bw-academic.jpg",
+      "filename": "humanity-manager-employment-agreement-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 717728,
+      "size": "700.9 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/humanity-manager-employment-agreement"
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/humanity-v-government-og-bw-academic.jpg",
+      "filename": "humanity-v-government-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 605596,
+      "size": "591.4 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/humanity-v-government"
     },
     {
       "path": "assets/og-images/knowledge/appendix/impact-of-innovative-medicines-on-life-expectancy-og-retro-academic.jpg",
@@ -108604,6 +108740,48 @@
       "chapter": "appendix/invisible-graveyard"
     },
     {
+      "path": "assets/og-images/knowledge/appendix/joke-og-bw-academic.jpg",
+      "filename": "joke-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 689455,
+      "size": "673.3 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/joke"
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/lawsuit-og-bw-academic.jpg",
+      "filename": "lawsuit-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 663585,
+      "size": "648.0 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/lawsuit"
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/litigation-phase-og-bw-academic.jpg",
+      "filename": "litigation-phase-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 542770,
+      "size": "530.0 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/litigation-phase"
+    },
+    {
       "path": "assets/og-images/knowledge/appendix/lives-saved-by-drug-accessibility-og-retro-academic.jpg",
       "filename": "lives-saved-by-drug-accessibility-og-retro-academic.jpg",
       "extension": "jpg",
@@ -108670,6 +108848,34 @@
         "appendix",
         "accessibility"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/love-letter-og-bw-academic.jpg",
+      "filename": "love-letter-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 734006,
+      "size": "716.8 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/love-letter"
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/loving-takeover-og-bw-academic.jpg",
+      "filename": "loving-takeover-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 591685,
+      "size": "577.8 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/loving-takeover"
     },
     {
       "path": "assets/og-images/knowledge/appendix/military-vs-clinical-trials-funding-imbalance-og-bw-academic.jpg",
@@ -108780,6 +108986,20 @@
         "appendix",
         "partnership"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/notice-of-termination-og-bw-academic.jpg",
+      "filename": "notice-of-termination-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 710506,
+      "size": "693.9 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/notice-of-termination"
     },
     {
       "path": "assets/og-images/knowledge/appendix/nuclear-weapon-cost-and-casualties-og-retro-academic.jpg",
@@ -109072,6 +109292,20 @@
       "chapter": "appendix/parameters-and-calculations-iab"
     },
     {
+      "path": "assets/og-images/knowledge/appendix/parameters-and-calculations-og-bw-academic.jpg",
+      "filename": "parameters-and-calculations-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 499888,
+      "size": "488.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/parameters-and-calculations"
+    },
+    {
       "path": "assets/og-images/knowledge/appendix/parameters-and-calculations-optimocracy-og-bw-academic.jpg",
       "filename": "parameters-and-calculations-optimocracy-og-bw-academic.jpg",
       "extension": "jpg",
@@ -109202,6 +109436,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/appendix/plaintiff-media-kit-og-bw-academic.jpg",
+      "filename": "plaintiff-media-kit-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 490731,
+      "size": "479.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/plaintiff-media-kit"
+    },
+    {
       "path": "assets/og-images/knowledge/appendix/political-dysfunction-tax-og-bw-academic.jpg",
       "filename": "political-dysfunction-tax-og-bw-academic.jpg",
       "extension": "jpg",
@@ -109283,6 +109531,62 @@
         "appendix",
         "explanatory"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/pre-filled-demand-letters-og-bw-academic.jpg",
+      "filename": "pre-filled-demand-letters-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 506768,
+      "size": "494.9 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/pre-filled-demand-letters"
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/president-notification-letter-og-bw-academic.jpg",
+      "filename": "president-notification-letter-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 588063,
+      "size": "574.3 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/president-notification-letter"
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/presidential-inauguration-ceremony-og-bw-academic.jpg",
+      "filename": "presidential-inauguration-ceremony-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 775521,
+      "size": "757.3 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/presidential-inauguration-ceremony"
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/press-release-og-bw-academic.jpg",
+      "filename": "press-release-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 698667,
+      "size": "682.3 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/press-release"
     },
     {
       "path": "assets/og-images/knowledge/appendix/real-world-evidence-historical-success-og-retro-academic.jpg",
@@ -109619,6 +109923,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/appendix/shareholder-proposal-14a-8-og-bw-academic.jpg",
+      "filename": "shareholder-proposal-14a-8-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 470228,
+      "size": "459.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/shareholder-proposal-14a-8"
+    },
+    {
       "path": "assets/og-images/knowledge/appendix/treaty-feasibility-og-retro-academic.jpg",
       "filename": "treaty-feasibility-og-retro-academic.jpg",
       "extension": "jpg",
@@ -109699,6 +110017,20 @@
       "imageType": "og",
       "style": "black and white academic",
       "chapter": "appendix/us-efficiency-audit"
+    },
+    {
+      "path": "assets/og-images/knowledge/appendix/where-am-i-wrong-og-bw-academic.jpg",
+      "filename": "where-am-i-wrong-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 656827,
+      "size": "641.4 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "appendix/where-am-i-wrong"
     },
     {
       "path": "assets/og-images/knowledge/appendix/wishocracy-implementation-guide-og-bw-academic.jpg",
@@ -110101,6 +110433,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/economics/earth-optimization-fund-og-bw-academic.jpg",
+      "filename": "earth-optimization-fund-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 554593,
+      "size": "541.6 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "economics/earth-optimization-fund"
+    },
+    {
       "path": "assets/og-images/knowledge/economics/earth-optimization-prize-fund-og-bw-academic.jpg",
       "filename": "earth-optimization-prize-fund-og-bw-academic.jpg",
       "extension": "jpg",
@@ -110207,6 +110553,34 @@
         "economics",
         "finance"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/economics/eisenhower-curve-og-bw-academic.jpg",
+      "filename": "eisenhower-curve-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 547367,
+      "size": "534.5 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "economics/eisenhower-curve"
+    },
+    {
+      "path": "assets/og-images/knowledge/economics/eos-pitch-og-bw-academic.jpg",
+      "filename": "eos-pitch-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 597208,
+      "size": "583.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "economics/eos-pitch"
     },
     {
       "path": "assets/og-images/knowledge/economics/financial-plan-og-retro-academic.jpg",
@@ -110522,6 +110896,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/educational-film-og-bw-academic.jpg",
+      "filename": "educational-film-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 615211,
+      "size": "600.8 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "educational-film-og-bw-academic.jpg"
+    },
+    {
       "path": "assets/og-images/knowledge/futures-og-retro-academic.jpg",
       "filename": "futures-og-retro-academic.jpg",
       "extension": "jpg",
@@ -110747,6 +111135,20 @@
       "generationPrompt": "Use a black and white scientific illustration style.\n\nEarth Optimization Prize 90-Day Pilot\n\nA sponsor-facing 90-day pilot proposal for institutions considering whether to host the first Earth Optimization Prize launch without becoming the mechanism's root of trust.\n\nNote\n\nDocument Type: Institutional pilot proposal  \nPilot Length: 90 days  \nDefault Role: Initiating host, not sovereign owner  \nPrimary Goal: Make the Earth Optimization Prize earth-optimization-prize-paper-2025 publicly real without creating a single point of failure\n\nPilot Objective\n\nLaunch the first credible public version of the Earth Optimization Prize selection process.\n\nAt the end of 90 days, the host institution should have produced:\n\n1. a public rules page,\n2. a named review panel,\n3. a funded adversarial-review pool,\n4. a live public scoreboard, and\n5. the first set of credible submissions and public commitments.\n\nThat is the minimum viable institutional launch package.\n\nProblem Statement\n\nThe broader project is trying to solve a coordination failure, not just publish another proposal.\n\nHumanity already has candidate ingredients for a better trajectory: cheaper pragmatic clinical trials, better public-goods allocation, measurable policy learning, and large waste pools that could be reallocated via the Political Dysfunction Tax political-dysfunction-tax-paper-2025 and US Efficiency Audit us-efficiency-audit-paper-2025. What it lacks is a public mechanism that can do all four of these at once:\n\n1. compare integrated plans against a visible benchmark,\n2. reward serious participation and recruitment,\n3. surface better replacements through adversarial review,\n4. create a credible bridge from public support to political adoption.\n\nThat is why the first 90 days matter. The pilot is the step where the project becomes inspectable public infrastructure instead of a stack of papers.\n\nWhy This Pilot Matters\n\nThe prize is trying to shift humanity off a current trajectory where the destructive economy gdp-trajectories-paper-2025 is already 11.5% of GDP today, reaches the failed-state danger zone by 2033, and reaches 50% of GDP by 2040. At that point, stealing beats creating, because whatever gets created gets looted as fast as it is produced.\n\nThe upside of a better branch is large enough to justify building public coordination infrastructure around it. The Minimum Sustainable Trajectory (1% Treaty) 1-pct-treaty-impact-paper-2025 adds $3.48M in modeled lifetime income and 21.7 years of healthy life by year 15. The Wishonian Optimal Governance Trajectory adds $47.2M and 26.8 years.\n\nThe 90-day pilot is not trying to achieve those outcomes directly. It is trying to create the public machinery that can discover, test, and coordinate around the best available route toward them.\n\nWhat The Pilot Is A Pilot For\n\nThe full benchmark system is Earth Optimization Protocol v1. A sponsor does not need to memorize the whole document, but it should understand the stack it is helping bring into public view.\n\n| Component | Job in the larger system | Pilot relevance |\n|---|---|---|\n| Earth Optimization Prize | Open contest, scoreboard, and outcome-linked success pool | Directly launched now |\n| Global Referendum | Visible public support and preference signal | Adjacent next-step layer |\n| Incentive Alignment Bonds | Finance lobbying and implementation pressure | Later financing layer |\n| 1% Treaty | Redirect 1% of military spending into clinical trials and related incentives | Later legal/political target |\n| Decentralized Institutes of Health | Treasury and verification protocol for redirected funds | Downstream operating layer |\n| Your decentralized FDA | Cheap, high-throughput pragmatic trial engine | Downstream implementation layer |\n| Wishocracy | Public preference aggregation for budget allocation | Used as part of plan comparison and later allocation |\n| Optimocracy / OPG / OBG | Evidence and recommendation machinery for policy and budget choices | Background evidence layer for judging and later operations |\n| Political Dysfunction Tax and US Efficiency Audit | Waste maps and opportunity-cost accounting | Background case for why reallocation matters |\n| Legal framework | Treaty/statutory/election-law path | Constraint set for credible contenders |\n| Phase 2 monetary transition | Long-run replacement of fiat-era fiscal/monetary machinery | Explicitly outside pilot scope |\n\nThe initiating institution is not being asked to operationalize every downstream component in 90 days. It is being asked to launch the public selection, review, and visibility layer that decides what should advance.\n\nExisting Implementation Base\n\nThe pilot is extending an existing implementation base, not inventing the entire stack from scratch.\n\n| Existing asset | Current state | Why it matters for the pilot |\n|---|---|---|\n| Optimitron | Live public app with budget analysis, policy analysis, comparisons, misconceptions testing, alignment flows, and prize/referendum entry points | Gives the pilot a visible software base immediately |\n| Optimitron repository | Public monorepo implementing the core engine, app packages, data layer, and treasury packages | Lets reviewers inspect real code instead of a PDF |\n| Evidence machine stack | Optimocracy, OPG, and OBG components already implemented in code | Reduces epistemic risk around the scoring/recommendation layer |\n| Wishocracy stack | Pairwise preference aggregation and alignment logic already built | Reduces product risk around citizen preference collection |\n| Identity / participation layer | Auth, profile, referral plumbing, and World ID-aware participation surfaces already exist | Means the pilot can focus on public process rather than first building account infrastructure |\n| Treasury packages | PRIZE / VOTE / IAB / $WISH packages are already present in the codebase | Makes it plausible to connect the pilot to later financing rails without re-architecting from scratch |\n| Testing base | Roughly 2,900+ tests across the workspace, plus strict TypeScript and typed schemas | Gives the institution something closer to a software program than a speculative concept note |\n\nFor a host institution, this changes the nature of the ask. The pilot is not “please fund the invention of a whole new universe.” It is “please host the first credible public selection and review process around an already substantial implementation base.”\n\nScope\n\nThis pilot covers only Stage 1 of the broader launch sequence.\n\nIncluded:\n\n1. challenge publication,\n2. benchmark-plan publication of Earth Optimization Protocol v1,\n3. panel formation,\n4. adversarial review,\n5. scoreboard launch,\n6. first submission intake,\n7. first public commitments and milestone reporting.\n\nExplicitly out of scope for the pilot:\n\n1. final institutional endorsement of Earth Optimization Protocol v1,\n2. treaty passage,\n3. large-scale lobbying execution,\n4. permanent governance lock-in,\n5. making the host institution the sole root of trust.\n\nHost Responsibilities\n\nThe host institution is responsible for a bounded set of public infrastructure tasks.\n\n| Responsibility | Output |\n|---|---|\n| Publish the challenge | Public pilot page explaining targets, constraints, timeline, and submission path |\n| Convene reviewers | Named panel roster with clear filtering role and conflict-of-interest standard |\n| Fund adversarial review | Public bounty pool for red-team critiques, metric-gaming attacks, and superior replacement components |\n| Launch public measurement | Scoreboard showing host milestones, submission counts, and early participation/commitment signals |\n| Coordinate first cycle | Public timeline for submission, review, challenge, revision, and selection of serious contenders |\n\nGovernance Boundaries\n\nThe host institution should agree to these constraints up front.\n\n1. Hosting does not mean the institution owns the mechanism.\n2. Hosting does not require endorsing v1 as final truth.\n3. Rules, documentation, and milestone reporting should be public.\n4. Interfaces and implementation paths should be replaceable.\n5. Another host should be able to continue the process if the first host stops.\n\nThe central principle is:\n\nThe first institution should make the process credible, not captive.\n\nSuggested 90-Day Timeline\n\n| Window | Target |\n|---|---|\n| Days 1-14 | Publish pilot memo, challenge rules, evaluation criteria, and candidate panel list |\n| Days 15-30 | Finalize panel, open submissions, and announce red-team bounty terms |\n| Days 31-60 | Run first adversarial-review cycle, publish critiques, and keep scoreboard live |\n| Days 61-90 | Publish revised contender set, summarize lessons, and decide whether to expand into the next public phase |\n\nMilestones\n\nThe pilot should track sponsor-facing milestones first, then public-growth milestones.\n\nSponsor-Facing Milestones\n\n1. initiating host announced,\n2. rules published,\n3. expert panel formed,\n4. bounty pool funded,\n5. scoreboard live,\n6. first credible submissions received.\n\nEarly Public Milestones\n\n1. first visible seed commitments,\n2. first serious participant cohort,\n3. first replicated public references to the scoreboard,\n4. first external critique or replacement proposal,\n5. first evidence that the process is attracting people beyond the host's own network.\n\nDeliverables\n\nBy day 90, the host should be able to point to a concrete package:\n\n1. one public pilot page,\n2. one public ruleset,\n3. one named panel roster,\n4. one public bounty pool,\n5. one live scoreboard,\n6. one public summary of submissions and critiques,\n7. one decision memo on whether to expand, revise, or hand off to a successor host.\n\nBudget Framework\n\nThis pilot is intentionally modular. The host does not need to fund the full downstream campaign. It only needs to fund the first credible public test.\n\nThe budget categories are:\n\n1. program management,\n2. challenge-page and scoreboard implementation,\n3. expert-panel honoraria if desired,\n4. adversarial-review bounty pool,\n5. legal/compliance review,\n6. editorial and communications support.\n\nThe right budget is the smallest amount that makes the pilot visibly real and publicly legible. The pilot should be cheap enough to approve quickly and serious enough that outsiders can no longer dismiss the process as hypothetical.\n\nSuccess Criteria\n\nThe pilot succeeds if, by day 90:\n\n1. the process exists in public,\n2. serious outsiders can inspect and attack it,\n3. the benchmark plan has at least one credible challenger or red-team critique,\n4. the scoreboard makes progress legible,\n5. the next institution or funder can join without needing private permission from the host.\n\nExpansion Decision\n\nIf the pilot works, the next phase is not “centralize everything under the first institution.” The next phase is:\n\n1. expand participation,\n2. admit stronger challengers,\n3. add co-hosts or successor hosts,\n4. connect the contest outputs to PRIZE deposits, the referendum, and later implementation financing.\n\nIf the pilot fails, the output should still be useful: a public record of what broke, what was attacked, and what must be improved before trying again.\n\nRecommended Next Step\n\nIf your institution is plausibly willing to host the initiating node, the next step is simple:\n\n1. designate a pilot owner,\n2. commit to the 90-day scope,\n3. publish the rules,\n4. invite scrutiny immediately.\n\nBackground reading:\n\n- The Initiating Node Memo\n- The Earth Optimization Prize\n\nThe project does not need the first host to be omniscient. It needs the first host to be credible, bounded, and willing to let the process remain larger than itself.",
       "transcript": "EARTH OPTIMIZATION PRIZE 90-DAY PILOT\nDAYS 1-14: RULES & PANEL\nDAYS 15-60: SUBMISSIONS & REVIEW\nDAYS 61-90: DECISION & EXPANSION\nINITIATING HOST (NOT OWNER)\nPUBLIC RULES PAGE\nNAMED REVIEW PANEL\nPILOT MEMO\nADVERSARIAL-REVIEW POOL\nPUBLIC BOUNTY POOL\nRED-TEAM CRITIQUES & REVISIONS\nPUBLIC SCOREBOARD\nSUBMISSIONS\nCRITIQUES\nCOMMITMENTS\nEARTH OPTIMIZATION PROTOCOL V1\nSUMMARY REPORT\nNEXT PHASE: EXPAND & CONNECT\nREFERENDUM\nINCENTIVE ALIGNMENT BONDS\nSUCCESSOR HOST\nFAIL & DOCUMENT\nPUBLIC RECORD OF LESSONS\nMINIMUM VIABLE INSTITUTIONAL LAUNCH: CREDIBLE, INSPECTABLE, REPLACEABLE",
       "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/og-images/knowledge/grant-proposal/voter-acquisition-grant-og-bw-academic.jpg",
+      "filename": "voter-acquisition-grant-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 586135,
+      "size": "572.4 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "grant-proposal/voter-acquisition-grant"
     },
     {
       "path": "assets/og-images/knowledge/legal/election-law-og-retro-academic.jpg",
@@ -111313,6 +111715,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/operations/sff-application-draft-og-bw-academic.jpg",
+      "filename": "sff-application-draft-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 566135,
+      "size": "552.9 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "operations/sff-application-draft"
+    },
+    {
       "path": "assets/og-images/knowledge/papers-og-bw-academic.jpg",
       "filename": "papers-og-bw-academic.jpg",
       "extension": "jpg",
@@ -111625,6 +112041,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/problem/i-am-retarded-og-bw-academic.jpg",
+      "filename": "i-am-retarded-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 629458,
+      "size": "614.7 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "problem/i-am-retarded"
+    },
+    {
       "path": "assets/og-images/knowledge/problem/nih-spent-1-trillion-eradicating-0-diseases-og-retro-academic.jpg",
       "filename": "nih-spent-1-trillion-eradicating-0-diseases-og-retro-academic.jpg",
       "extension": "jpg",
@@ -111928,6 +112358,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/proof/biotechnological-imperative-og-bw-academic.jpg",
+      "filename": "biotechnological-imperative-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 595110,
+      "size": "581.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "proof/biotechnological-imperative"
+    },
+    {
       "path": "assets/og-images/knowledge/proof/body-as-repairable-machine-og-retro-academic.jpg",
       "filename": "body-as-repairable-machine-og-retro-academic.jpg",
       "extension": "jpg",
@@ -111992,6 +112436,34 @@
         "proof",
         "repairable"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/proof/bomb-budget-cut-og-bw-academic.jpg",
+      "filename": "bomb-budget-cut-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 618718,
+      "size": "604.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "proof/bomb-budget-cut"
+    },
+    {
+      "path": "assets/og-images/knowledge/proof/delusion-of-insignificance-og-bw-academic.jpg",
+      "filename": "delusion-of-insignificance-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 828569,
+      "size": "809.1 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "proof/delusion-of-insignificance"
     },
     {
       "path": "assets/og-images/knowledge/proof/historical-precedents-og-retro-academic.jpg",
@@ -112060,6 +112532,34 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/proof/no-bad-guys-og-bw-academic.jpg",
+      "filename": "no-bad-guys-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 726960,
+      "size": "709.9 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "proof/no-bad-guys"
+    },
+    {
+      "path": "assets/og-images/knowledge/proof/what-matters-og-bw-academic.jpg",
+      "filename": "what-matters-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 566607,
+      "size": "553.3 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "proof/what-matters"
+    },
+    {
       "path": "assets/og-images/knowledge/proof/why-hasnt-anyone-done-this-og-bw-academic.jpg",
       "filename": "why-hasnt-anyone-done-this-og-bw-academic.jpg",
       "extension": "jpg",
@@ -112102,6 +112602,20 @@
         "IMPORTANT: GENERATED WITH ASPECT RATIO 16:9."
       ],
       "imageProblemsRepairPrompt": "Remove the text 'IMPORTANT: GENERATED WITH ASPECT RATIO 16:9.' from the bottom left corner."
+    },
+    {
+      "path": "assets/og-images/knowledge/proof/wishonias-wager-og-bw-academic.jpg",
+      "filename": "wishonias-wager-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 533641,
+      "size": "521.1 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "proof/wishonias-wager"
     },
     {
       "path": "assets/og-images/knowledge/references-og-bw-academic.jpg",
@@ -112326,6 +112840,20 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/solution/algorithmic-monetary-authority-og-bw-academic.jpg",
+      "filename": "algorithmic-monetary-authority-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 527289,
+      "size": "514.9 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/algorithmic-monetary-authority"
+    },
+    {
       "path": "assets/og-images/knowledge/solution/aligned-election-commission-og-bw-academic.jpg",
       "filename": "aligned-election-commission-og-bw-academic.jpg",
       "extension": "jpg",
@@ -112458,6 +112986,20 @@
       "imageProblemsDetected": false
     },
     {
+      "path": "assets/og-images/knowledge/solution/court-of-humanity-og-bw-academic.jpg",
+      "filename": "court-of-humanity-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 629831,
+      "size": "615.1 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/court-of-humanity"
+    },
+    {
       "path": "assets/og-images/knowledge/solution/decentralized-accountability-office-og-bw-academic.jpg",
       "filename": "decentralized-accountability-office-og-bw-academic.jpg",
       "extension": "jpg",
@@ -112533,6 +113075,20 @@
         "SCIENTIFIC ILLUSTRATION"
       ],
       "imageProblemsRepairPrompt": "Remove 'SCIENTIFIC ILLUSTRATION' from the bottom right corner."
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/decentralized-congress-og-bw-academic.jpg",
+      "filename": "decentralized-congress-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 647515,
+      "size": "632.3 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/decentralized-congress"
     },
     {
       "path": "assets/og-images/knowledge/solution/department-of-peace-og-bw-academic.jpg",
@@ -112698,6 +113254,48 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/solution/drug-treatment-administration-og-bw-academic.jpg",
+      "filename": "drug-treatment-administration-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 581180,
+      "size": "567.6 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/drug-treatment-administration"
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/earth-optimization-services-og-bw-academic.jpg",
+      "filename": "earth-optimization-services-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 629767,
+      "size": "615.0 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/earth-optimization-services"
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/immigration-revenue-service-og-bw-academic.jpg",
+      "filename": "immigration-revenue-service-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 686903,
+      "size": "670.8 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/immigration-revenue-service"
+    },
+    {
       "path": "assets/og-images/knowledge/solution/incentive-alignment-bonds-og-retro-academic.jpg",
       "filename": "incentive-alignment-bonds-og-retro-academic.jpg",
       "extension": "jpg",
@@ -112762,6 +113360,62 @@
         "solution",
         "incentive"
       ]
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/optimized-food-system-og-bw-academic.jpg",
+      "filename": "optimized-food-system-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 562417,
+      "size": "549.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/optimized-food-system"
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/special-education-og-bw-academic.jpg",
+      "filename": "special-education-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 629352,
+      "size": "614.6 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/special-education"
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/theory-of-operation-og-bw-academic.jpg",
+      "filename": "theory-of-operation-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 536608,
+      "size": "524.0 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/theory-of-operation"
+    },
+    {
+      "path": "assets/og-images/knowledge/solution/transparent-securities-commission-og-bw-academic.jpg",
+      "filename": "transparent-securities-commission-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 664499,
+      "size": "648.9 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "solution/transparent-securities-commission"
     },
     {
       "path": "assets/og-images/knowledge/solution/universal-security-administration-og-bw-academic.jpg",
@@ -113021,6 +113675,48 @@
       "imageProblemsRepairPrompt": "Replace the nonsensical/garbled text inside the large parchment scroll with legible, clear text summarizing the declaration's principles."
     },
     {
+      "path": "assets/og-images/knowledge/strategy/distribution-checklist-og-bw-academic.jpg",
+      "filename": "distribution-checklist-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 533021,
+      "size": "520.5 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "strategy/distribution-checklist"
+    },
+    {
+      "path": "assets/og-images/knowledge/strategy/earth-optimization-commission-og-bw-academic.jpg",
+      "filename": "earth-optimization-commission-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 536799,
+      "size": "524.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "strategy/earth-optimization-commission"
+    },
+    {
+      "path": "assets/og-images/knowledge/strategy/earth-optimization-day-og-bw-academic.jpg",
+      "filename": "earth-optimization-day-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 640421,
+      "size": "625.4 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "strategy/earth-optimization-day"
+    },
+    {
       "path": "assets/og-images/knowledge/strategy/earth-optimization-prize-og-bw-academic.jpg",
       "filename": "earth-optimization-prize-og-bw-academic.jpg",
       "extension": "jpg",
@@ -113101,6 +113797,34 @@
       "imageProblemsDetected": false
     },
     {
+      "path": "assets/og-images/knowledge/strategy/funniest-show-in-the-universe-og-bw-academic.jpg",
+      "filename": "funniest-show-in-the-universe-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 715931,
+      "size": "699.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "strategy/funniest-show-in-the-universe"
+    },
+    {
+      "path": "assets/og-images/knowledge/strategy/getting-started-og-bw-academic.jpg",
+      "filename": "getting-started-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 630608,
+      "size": "615.8 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "strategy/getting-started"
+    },
+    {
       "path": "assets/og-images/knowledge/strategy/global-referendum-og-retro-academic.jpg",
       "filename": "global-referendum-og-retro-academic.jpg",
       "extension": "jpg",
@@ -113167,20 +113891,46 @@
       ]
     },
     {
+      "path": "assets/og-images/knowledge/strategy/humanity-todo-list-og-bw-academic.jpg",
+      "filename": "humanity-todo-list-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 643595,
+      "size": "628.5 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "strategy/humanity-todo-list"
+    },
+    {
+      "path": "assets/og-images/knowledge/strategy/ic2ewd-supporter-survey-og-bw-academic.jpg",
+      "filename": "ic2ewd-supporter-survey-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 746154,
+      "size": "728.7 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "strategy/ic2ewd-supporter-survey"
+    },
+    {
       "path": "assets/og-images/knowledge/strategy/initiating-node-memo-og-bw-academic.jpg",
       "filename": "initiating-node-memo-og-bw-academic.jpg",
       "extension": "jpg",
-      "sizeBytes": 470470,
-      "size": "459.4 KB",
-      "width": 1376,
-      "height": 768,
+      "sizeBytes": 541864,
+      "size": "529.2 KB",
+      "width": 1672,
+      "height": 941,
       "format": "jpeg",
       "aspectRatio": "16:9",
       "imageType": "og",
       "style": "black and white academic",
       "chapter": "strategy/initiating-node-memo",
-      "title": "The Initiating Node Memo",
-      "description": "A sponsor-facing memo for institutions considering whether to host the first 90-day Earth Optimization Prize pilot. The host role is to convene, publish, seed, and measure without becoming the mechanism's sovereign.",
       "keywords": [
         "initiating-node-memo"
       ],
@@ -113400,6 +114150,34 @@
       "sourceUrl": "https://manual.warondisease.org/knowledge/strategy/planetary-constitutional-convention.html",
       "category": "og-image",
       "imageProblemsDetected": false
+    },
+    {
+      "path": "assets/og-images/knowledge/strategy/prize-institution-outreach-email-og-bw-academic.jpg",
+      "filename": "prize-institution-outreach-email-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 585921,
+      "size": "572.2 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "strategy/prize-institution-outreach-email"
+    },
+    {
+      "path": "assets/og-images/knowledge/strategy/questions-og-bw-academic.jpg",
+      "filename": "questions-og-bw-academic.jpg",
+      "extension": "jpg",
+      "sizeBytes": 613991,
+      "size": "599.6 KB",
+      "width": 1672,
+      "height": 941,
+      "format": "jpeg",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "black and white academic",
+      "chapter": "strategy/questions"
     },
     {
       "path": "assets/og-images/knowledge/strategy/roadmap-og-retro-academic.jpg",

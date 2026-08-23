@@ -1,12 +1,18 @@
 ---
 title: 'The Funniest Lawsuit in the Universe'
-description: 'A $200 shareholder demand letter (one share of stock is legally sufficient under DGCL § 327) that turns the military lobby into the most effective advocate for pragmatic clinical trials on Earth. This page is everything you need to file it.'
+description: 'A $200 shareholder love letter (one share of stock is legally sufficient under DGCL § 327) that turns the military lobby into the most effective advocate for pragmatic clinical trials on Earth. This page is everything you need to file it.'
+image: /assets/og-images/knowledge/appendix/lawsuit-og-bw-academic.jpg
 abstract: |
-  Shareholder demand letter addressed to the boards of major US military contractors. Legal theory: Caremark 2.0 duty of oversight, single-firm shareholder-primacy framing. Substantive claim: each defendant's lobbying to maintain current military spending ratios produces negative ROI for its own shareholders by suppressing the GDP growth that would expand its addressable market. Every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Cost to file: approximately $200 (one share of stock; 1 share is sufficient under DGCL § 327). This page is structured as a standalone distribution artifact: post it anywhere, forward it to any military-contractor shareholder, file it yourself. The math, the legal theory, and the templates are all in this document.
+  Shareholder love letter addressed to the boards of major US military contractors. Legal theory: Caremark 2.0 duty of oversight, single-firm shareholder-primacy framing. Substantive claim: each defendant's lobbying to maintain current military spending ratios produces negative ROI for its own shareholders by suppressing the GDP growth that would expand its addressable market. Every possible board response (accept, fight, ignore, refute) benefits the plaintiff. Cost to file: approximately $200 (one share of stock; 1 share is sufficient under DGCL § 327). This page is structured as a standalone distribution artifact: post it anywhere, forward it to any military-contractor shareholder, file it yourself. The math, the legal theory, and the templates are all in this document.
 aliases:
   - /lawsuit.html
   - /funniest-lawsuit.html
   - /shareholder-demand.html
+  - /counsel-outreach.html
+  - /counsel-pitch.html
+  - /pro-bono-counsel.html
+  - /litigation-phase.html
+  - /post-response-playbook.html
 author:
   - name: Mike P. Sinn
     affiliation:
@@ -43,13 +49,13 @@ scores:
   importance: 10
 audience: "shareholders, lawyers, anyone willing to file (template users)"
 feel: "the legal theory is real and winnable; the defendants are better off losing; filing costs $200 and one evening; you are saving the board, not attacking them"
-do: "buy one share of a military contractor; print and mail the demand letter; start the 60-day clock"
+do: "buy one share of a military contractor; print and mail the love letter; start the 60-day clock"
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 **STATUS: DRAFT.** Requires securities, derivative-litigation, Rule 14a-8, and damages counsel review before sending or filing.
 
-**COST TO FILE:** $200 to $600 for one share of stock (pro bono counsel).
+**COST TO FILE:** $200 to $600 for one share of stock (pro bono lawyer).
 
 **PROBABILITY THE MATH REACHES THE BOARD:** approximately 100%. The Board is legally required to read what the corporate secretary receives by certified mail.
 
@@ -58,9 +64,9 @@ do: "buy one share of a military contractor; print and mail the demand letter; s
 ::: {.callout-warning}
 **Legal posture for reviewing counsel.** The public wrapper is morally aggressive. The board-facing demand is narrower. In *McRitchie v. Zuckerberg*, C.A. No. 2022-0890-JTL (Del. Ch. Apr. 30, 2024), Vice Chancellor Laster rejected a fiduciary-duty theory based on directors' obligation to consider society-wide or macroeconomic interests. Delaware law applies the single-firm, shareholder-primacy model.
 
-The demand letter therefore does not ask directors to save the world as a charitable act. It asks whether a recurring corporate expenditure benefits this company's shareholders after accounting for the effect of military-budget-ratchet lobbying on the economy that funds future contracts, shareholder income, shareholder survival, and long-term market value.
+The love letter therefore does not ask directors to save the world as a charitable act. It asks whether a recurring corporate expenditure benefits this company's shareholders after accounting for the effect of military-budget-ratchet lobbying on the economy that funds future contracts, shareholder income, shareholder survival, and long-term market value.
 
-Target doctrine: *Caremark* 2.0 duty of oversight, as expanded in *Marchand v. Barnhill* (2019) and *Garfield v. Allen* (2024, V.C. Laster). The demand letter itself creates the "red flag" that triggers oversight obligations.
+Target doctrine: *Caremark* 2.0 duty of oversight, as expanded in *Marchand v. Barnhill* (2019) and *Garfield v. Allen* (2024, V.C. Laster). The love letter itself creates the "red flag" that triggers oversight obligations.
 
 Derivative recovery usually belongs to the corporation, not the filing shareholder. Direct personal damages are an aggressive and unlikely theory. Rule 14a-8 is a separate eligible-shareholder path with ownership and holding requirements. Do not promise plaintiffs a direct payout from derivative recovery.
 :::
@@ -72,12 +78,6 @@ This is the funniest lawsuit in the universe and this page is everything you nee
 It is the first lawsuit in legal history where the defendants are radically better off losing than winning. Settling adds approximately {{< var avg_life_extension_per_beneficiary >}} to each defendant's healthy life and approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to the average shareholder's lifetime income. Winning leaves the defendant where they started: facing the same diseases on the same timeline, while their lobbying continues to keep the cure trials underfunded.
 
 
-**The selfish version.** If you do not care about the disease eradication argument and only care about money, the share you bought to file the lawsuit still gives you ordinary shareholder exposure to the company whose board is forced to answer the analysis. If the campaign works, the upside comes from better policy, better corporate strategy, and the larger economy you also own through your other assets. If it fails, you hold a normal military contractor position. The downside is ordinary market risk on the share and the foregone index-fund return on $200.
-
-**The altruistic version.** If you do care about disease eradication: the math says the campaign prevents approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths from the diseases that will otherwise kill someone you love. Filing one demand letter forces the math into one boardroom for $200.
-
-**Selfish and altruistic converge on the same action.** Both readers buy the share, both read the demand letter below, both file it. The campaign requires no shared motivation, only shared action.
-
 ### What You Personally Get From Filing
 
 | Benefit | Approximate value |
@@ -85,24 +85,23 @@ It is the first lawsuit in legal history where the defendants are radically bett
 | Additional healthy life expectancy if treaty passes | ~{{< var avg_life_extension_per_beneficiary >}} |
 | Additional lifetime income if treaty passes | ~{{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
 | Ordinary shareholder exposure to the company you file against | Uncertain; the stock can rise or fall while the campaign is pending |
-| Personal share of the recovered lifespan of the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} humans the campaign prevents from dying | Not pricable; this is the part the demand letter is about |
+| Personal share of the recovered lifespan of the {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} humans the campaign prevents from dying | Not pricable; this is the part the love letter is about |
 | Standing to tell the people you love that you tried | This one is free; you just have to file |
 
-The cost is one share (~$200) plus 43 hours of work. Under the Part 3 assumptions (ten defendants sued, 5% per-defendant probability of a redirection), the modeled upside is mostly treaty value, life expectancy, and the value of a larger economy, not a direct litigation payout. The expected return on the years is the rest of your life and the rest of the lives of everyone you love.
+The cost is one share (~$200) plus 43 hours of work. Under the [Part 3](#part-3-expected-value-for-plaintiffs) assumptions (ten defendants sued, 5% per-defendant probability of a redirection), the modeled upside is mostly treaty value, life expectancy, and the value of a larger economy, not a direct litigation payout.
 
 ### How To File (60-Second Version)
 
-1. Buy one whole share through a real brokerage if you do not already own one.
-2. Buy 1 share of any major military contractor. The eight with [pre-filled fact sheets](pre-filled-demand-letters.qmd) are RTX, LMT, BA, GD, NOC, LHX, HII, and LDOS. Others (BAH, CACI, SAIC, BAE, Thales) work too; you just look up the corporate-secretary address yourself.
-3. Copy the demand letter below, fill in the bracketed fields, sign it.
-4. Send it certified mail to the corporate secretary of the defendant.
-5. Wait 60 days. Use the [post-response decision tree](litigation-phase.qmd) when the board responds.
+1. Buy 1 share of any major military contractor. The eight with [pre-filled fact sheets](pre-filled-demand-letters.qmd) are RTX, LMT, BA, GD, NOC, LHX, HII, and LDOS. Others (BAH, CACI, SAIC, BAE, Thales) work too; you just look up the corporate-secretary address yourself.
+2. Copy the love letter below, fill in the bracketed fields, sign it.
+3. Send it certified mail to the corporate secretary of the defendant.
+4. Wait 60 days. Use the [post-response decision tree](#board-response-three-outcomes) when the board responds.
 
-If you want company on the way: [counsel outreach pitch](counsel-outreach.qmd), [filing-day checklist](filing-day-checklist.qmd), [pre-filled defendant fact sheets](pre-filled-demand-letters.qmd), and [the media kit](plaintiff-media-kit.qmd) are all linked.
+If you want company on the way: [how to find a lawyer](#the-counsel-pitch), [filing-day checklist](filing-day-checklist.qmd), [pre-filled defendant fact sheets](pre-filled-demand-letters.qmd), and [the media kit](plaintiff-media-kit.qmd) are all linked.
 
-If you want to read the full argument before deciding: [Where Am I Wrong?](where-am-i-wrong.qmd) is the most rigorous version of the math, and [The Eisenhower Curve](../economics/eisenhower-curve.qmd) is the strategic-competition version of why the current allocation makes the country weaker, not stronger.
+If you want to read the full argument before deciding: [Bombs vs. Biotechnology: The ROI](bombs-vs-biotech-roi.qmd) is the sourced cost-benefit analysis, and [The Eisenhower Curve](../economics/eisenhower-curve.qmd) is the strategic-competition version of why the current allocation makes the country weaker, not stronger.
 
-The rest of this document is the demand letter itself, the legal theory, the outcome matrix, and the operational templates. The Open Letter to the Boards (below) is the version of the demand letter you can post on social media unchanged. The numbered demand letter in Part 1 is the version you send by certified mail.
+The rest of this document is the love letter itself, the legal theory, the outcome matrix, and the operational templates. The Open Letter to the Boards (below) is the version of the love letter you can post on social media unchanged. The numbered love letter in Part 1 is the version you send by certified mail.
 
 ## An Open Letter to the Boards
 
@@ -128,13 +127,15 @@ If you are inclined to defend the current allocation on national-security ground
 
 One more thing. As far as we can tell, this is the first lawsuit ever where the defendants are way better off losing than winning. Settling costs your Company nothing. It adds approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to the average shareholder's lifetime income, because the economy grows about {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} bigger at year 15 when disease stops eating it. (You are well above the average and would gain more.) It adds approximately {{< var avg_life_extension_per_beneficiary >}} of healthy life to the average beneficiary, including you, your spouse, your kids, your parents, and every shareholder you serve. We looked for any version where fighting helps you. There isn't one.
 
+While the lobbying redirects, we are also asking the Board to consider investing in biotechnology. Biotechnology companies have net profit margins of {{< var pharma_net_profit_margin >}}. Military contractors have net profit margins of {{< var defense_net_profit_margin >}}. That is {{< var pharma_vs_defense_net_margin_ratio >}} higher. Sell 1% of the Company's bomb-making assets, buy biotechnology shares with the proceeds, and the Board has given itself a raise before the treaty's GDP growth even begins to compound. The full derivation of why the economy grows {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} at year 15 (four independent channels: multiplier differential, disease burden recovery, peace dividend, and cybercrime recovery) is at [Bombs vs. Biotechnology](bombs-vs-biotech-roi.qmd#why-gdp-grows).
+
 To say it plainly: winning this case kills you. If you beat us in court, the lobbying keeps going. If the lobbying keeps going, the line of untested cures stays {{< var status_quo_queue_clearance_years_nounit >}} years long. The diseases that will kill you, your wife or husband, your kids, your shareholders, and us stay in that line. Winning this case in court is the same as signing your own death warrant on behalf of everyone you love. We are filing the lawsuit because we do not want you to sign it. We do not want to die either.
 
 The same math applies to every human in the case: the judge, the jury, the defense lawyer, and all of their families. The judge who throws this case out is throwing out the case that would have helped the judge live longer, helped the judge's wife or husband live longer, and helped the judge's kids and grandkids live longer. The defense lawyer who wins a motion to dismiss is winning a motion that, on average, kills them, their spouse, and their kids a decade or two early. Same for every juror. Same for every juror's family.
 
 Add it up. Every person named in the case has about 10 to 20 people they love. Across the plaintiff, the defendants, the judge, the jury, and the lawyers on both sides, that is roughly 100 to 300 humans whose lives get shorter or longer based on what this court decides. We love all of them and we do not want any of them to die of horrible diseases the math says we could cure. This case is a letter asking every human reading it to choose to live longer and let everyone they have ever loved live longer.
 
-Defense contractors exist for one reason. They exist to preserve the lives of the citizens whose government funds them. Their charter, their privileges, their contracts, and their lobbying access all flow from that purpose and from no other. The lobbying your Board currently authorizes maintains {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses worth of mass-murder capacity while withholding the funding that would produce the treatments your shareholders, your families, and your fellow citizens require to survive pancreatic cancer, ovarian cancer, glioblastoma, Alzheimer's, ALS, Parkinson's, and cardiovascular disease. The Company is a defense contractor producing, in the aggregate, an undefended population. We ask you to redirect the lobbying so the Company performs the function for which it exists.
+Military contractors exist for one reason. They exist to preserve the lives of the citizens whose government funds them. Their charter, their privileges, their contracts, and their lobbying access all flow from that purpose and from no other. The lobbying your Board currently authorizes maintains {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses worth of mass-murder capacity while withholding the funding that would produce the treatments your shareholders, your families, and your fellow citizens require to survive pancreatic cancer, ovarian cancer, glioblastoma, Alzheimer's, ALS, Parkinson's, and cardiovascular disease. The Company is a military contractor producing, in the aggregate, an unprotected population. We ask you to redirect the lobbying so the Company performs the function for which it exists.
 
 Defense counsel exist to represent the client. The client is the Company. The Company has no interests except those of the humans who compose it. Under Delaware law, those interests are the interests of the shareholders, who are humans who must be alive to receive financial returns and whose families must be alive for those returns to mean anything. Under ABA Model Rule 2.1, counsel must render candid advice on the economic and moral considerations relevant to those humans' situation. The math in this filing shows that settling adds approximately {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} to the average shareholder's lifetime income and approximately {{< var avg_life_extension_per_beneficiary >}} to the average shareholder's healthy life, in an economy roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger than the current trajectory at year 15. Whether the Company itself grows, shrinks, or pivots into medical and biotech work in that larger economy is a question for the Board to answer; the shareholders' interests are served by settling either way. Counsel rendering candid advice on those humans' interests reaches one conclusion. Counsel advising "fight" is advising every human the corporation comprises to act against their own interest. We ask counsel to advise the Board accurately.
 
@@ -144,15 +145,13 @@ To the judge: if you are still leaning toward throwing this case out on a techni
 
 ## Why This Works
 
-The military lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives hundreds of billions of dollars in military contracts in return. The standard mistake is to try to defeat this lobby by outbidding it. That is charming, like trying to drown the ocean with a cup. The standard outcome is a fundraising treadmill that never reaches the budget.
-
-The lawsuit does something different. It does not try to defeat the military lobby. It redirects it.
+The military lobby is the most effective political-influence operation on Earth. It spends approximately {{< var defense_lobbying_annual >}} per year buying politicians and receives hundreds of billions of dollars in military contracts in return. Outbidding it is impossible. The lawsuit redirects it instead.
 
 The military industry's lobbying machine produces negative ROI for its own shareholders. Military contractors are humans who die of the same diseases as everyone else. They live in the same economy that their lobbying is keeping small. They are not a sophisticated adversary defending a rational interest. They are an unsupervised line item on a corporate budget that nobody has ever ROI-analyzed because nobody had to.
 
 There is precedent for a board lobbying itself into the ground. The Ethyl Gasoline Corporation, a joint venture of General Motors and Standard Oil, lobbied for decades to keep tetraethyl lead in gasoline, because it held the patents and you cannot patent ethanol [@kovarik-leaded-gasoline-history-2005] [@kitman-secret-history-lead-2000]. The lead cost Americans 824 million IQ points, including the directors' own children's [@mcfarland-lead-iq-2022]. Run the numbers and even Ethyl's shareholders would have ended up roughly {{< var ethyl_shareholder_counterfactual_wealth_gain >}} richer had the board switched to ethanol in 1923, because a diversified portfolio lives in the economy the brain damage shrank [@jones-schneider-iq-growth-2006]. Nobody on that board ever saw an ROI analysis of the lobbying either. The product changed. The unsupervised line item did not.
 
-Once a single board receives a sourced, quantitative analysis showing this expenditure destroys shareholder value, the board has two options: investigate, or knowingly continue to destroy shareholder value with a documented red flag in its possession. Under *Caremark* and its progeny, the second option creates personal liability for directors. The first option requires commissioning an independent analysis that will reach the same conclusion as the demand letter, because the demand letter's math comes from SIPRI, the WHO, the NIH, and the boards' own SEC filings.
+Once a single board receives a sourced, quantitative analysis showing this expenditure destroys shareholder value, the board has two options: investigate, or knowingly continue to destroy shareholder value with a documented red flag in its possession. Under *Caremark* and its progeny, the second option creates personal liability for directors. The first option requires commissioning an independent analysis that will reach the same conclusion as the love letter, because the love letter's math comes from SIPRI, the WHO, the NIH, and the boards' own SEC filings.
 
 In either path, the lobby has to switch sides. The cost to make it happen is $200 of stock (one share is sufficient under DGCL § 327) and 43 hours of work per defendant.
 
@@ -172,7 +171,7 @@ On my planet, when you want to change a policy, you change the policy. On your p
 |---|---|---|
 | Public indictment | Courts, journalists, voters, employees, plaintiffs | Make the moral stakes explicit: the budget ratchet is being defended while the disease queue remains {{< var status_quo_queue_clearance_years >}} long. |
 | Plaintiff recruitment | Shareholders, patients, families, workers | Explain why filing can still be rational if the case loses, without promising derivative payouts. |
-| Legal instruments | Boards, counsel, courts, eligible shareholders | Demand ROI analysis, disclosure, injunctive relief, and litigation hooks that create public pressure. |
+| Legal instruments | Boards, lawyers, courts, eligible shareholders | Demand ROI analysis, disclosure, injunctive relief, and litigation hooks that create public pressure. |
 
 The public layer exists to make people uncomfortable. The legal layer asks a question so narrow that dodging it is more embarrassing than answering it: did anyone ever check whether this expenditure is good for shareholders?
 
@@ -183,9 +182,9 @@ The public layer exists to make people uncomfortable. The legal layer asks a que
 | Shareholder demand | Current shareholder | Independent ROI analysis and assumptions disclosure | Forces board attention and creates a documented record | Demand refusal may still be protected by business judgment. |
 | Derivative flank | Shareholder on behalf of the corporation | Corporate waste recovery, process reform, injunction | Makes lobbying spend itself the fiduciary object | Recovery usually goes to the corporation, not the plaintiff. |
 | Direct personal-damages case | Individual plaintiff | Lost prosperity, delayed treatment, survival damages | Recruits plaintiffs and frames the human stakes | Very aggressive, likely dismissed, and still strategically useful. |
-| Rule 14a-8 path | Eligible long-term shareholder | Proxy proposal for independent ROI audit | Puts the issue in the company's own shareholder materials | Eligibility and procedural requirements are real; this is not available to every new buyer. |
+| Rule 14a-8 path | Eligible long-term shareholder | Shareholder proposal for independent ROI audit | Puts the issue in the company's own shareholder materials | Eligibility and procedural requirements are real; this is not available to every new buyer. |
 
-None of these needs to win. A derivative suit creates the board record. A direct case creates the human story. A shareholder proposal creates the proxy fight. A dismissal creates the headline. The military industry has spent decades making sure nobody asks the question. The goal is to ask it in as many rooms as possible.
+None of these needs to win. A derivative suit creates the board record. A direct case creates the human story. A shareholder proposal puts the question on every shareholder's ballot. A dismissal creates the headline. The military industry has spent decades making sure nobody asks the question. The goal is to ask it in as many rooms as possible.
 
 ## Outcome Matrix
 
@@ -194,7 +193,7 @@ None of these needs to win. A derivative suit creates the board record. A direct
 | Board ignores demand | They received the math and chose silence. | File derivative complaint, publish the refusal record, recruit employees and shareholders. |
 | Board says the math is wrong | Excellent. The military budget ratchet has entered the arithmetic arena. | Publish their assumptions beside the redirection model; invite economists, analysts, and journalists to adjudicate. |
 | Board orders independent analysis | The central demand worked. | Demand disclosure of methods, assumptions, and whether lobbying objectives will change. |
-| Court dismisses | The court was asked whether boards must analyze lobbying that may help keep the disease queue {{< var status_quo_queue_clearance_years >}} long. The court said no. | Use dismissal as press, appeal if counsel recommends it, file cleaner vehicles and shareholder proposals. |
+| Court dismisses | The court was asked whether boards must analyze lobbying that may help keep the disease queue {{< var status_quo_queue_clearance_years >}} long. The court said no. | Use dismissal as press, appeal if your lawyer recommends it, file cleaner vehicles and shareholder proposals. |
 | Court allows discovery | The budget ratchet is now under oath. | Seek lobbying ROI documents, board minutes, assumptions, and communications about long-term demand. |
 | Media covers it | The public learns that military lobbying can be challenged as shareholder-negative. | Recruit parallel plaintiffs against more boards and ask politicians why clinical trials are not in the budget room. |
 
@@ -202,11 +201,11 @@ Every response on this list is useful. On your planet, you call this "losing." O
 
 ### The Settlement Is the Trap
 
-The settlement asks them to redirect existing lobbying from one objective to another. Same lobbyists. Same offices. Same budget. Different talking points. The settlement makes the defendant richer. It is hard to find a settlement in legal history where accepting makes the defendant better off than before the lawsuit.
+The settlement makes the defendant richer. It is hard to find a settlement in legal history where accepting makes the defendant better off than before the lawsuit.
 
 ---
 
-## Part 1: The Demand Letter
+## Part 1: The Love Letter
 
 ### Shareholder Demand to the Board of Directors
 
@@ -371,7 +370,7 @@ Second, prevailing in the resulting litigation is, in actuarial terms, a death s
 - *Stone v. Ritter*, 911 A.2d 362 (Del. 2006)
 - *Marchand v. Barnhill*, 212 A.3d 805 (Del. 2019)
 - *Garfield v. Allen*, C.A. No. 2022-0837-JTL (Del. Ch. 2024)
-- *McRitchie v. Zuckerberg*, C.A. No. 2022-0890-JTL (Del. Ch. Apr. 30, 2024) (distinguished: this letter does not argue for stakeholder capitalism; it argues the specific expenditure harms this company's shareholders)
+- *McRitchie v. Zuckerberg*, C.A. No. 2022-0890-JTL (Del. Ch. Apr. 30, 2024) (distinguished: this letter does not argue for "stakeholder capitalism"; it argues the specific expenditure harms this company's shareholders)
 
 I invite the Board or its analysts to verify any calculation. Every number is sourced. Every derivation is published. If the Board identifies an error, I welcome the correction.
 
@@ -397,7 +396,7 @@ The military industry's lobbying machine is now pointed at disease eradication i
 
 ### If they fight
 
-Every dollar spent on legal fees is additional shareholder money spent without ROI analysis, in order to resist a demand that the Board conduct an ROI analysis. The irony is the evidence. The demand letter documented that the Board was informed. Post-receipt actions are informed decisions, not oversights.
+Every dollar spent on legal fees is additional shareholder money spent without ROI analysis, in order to resist a demand that the Board conduct an ROI analysis. The irony is the evidence. The love letter documented that the Board was informed. Post-receipt actions are informed decisions, not oversights.
 
 ### If they ignore
 
@@ -413,13 +412,13 @@ Best outcome for public discourse. Their counter-analysis enters the public reco
 
 **DO NOT:** Frame anything as societal obligation. *McRitchie v. Zuckerberg* killed that theory in Delaware.
 
-**DO:** Cite *Caremark* 2.0 line: *Marchand*, *Garfield v. Allen*, *Teamsters v. Chou*. The demand letter IS the red flag.
+**DO:** Cite *Caremark* 2.0 line: *Marchand*, *Garfield v. Allen*, *Teamsters v. Chou*. The love letter IS the red flag.
 
 **DO:** File in Delaware Chancery. Most major military contractors are Delaware-incorporated.
 
 **DO:** Note that V.C. Laster accepted the novel *Caremark* theory in *Garfield v. Allen*. Approximately 1-in-7 chance of drawing him.
 
-**McRitchie guardrail:** never make the demand letter depend on a board duty to maximize global welfare. The public wrapper can say the case could prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths. The legal demand must ask whether the expenditure benefits this Company's shareholders.
+**McRitchie guardrail:** never make the love letter depend on a board duty to maximize global welfare. The public wrapper can say the case could prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths. The legal demand must ask whether the expenditure benefits this Company's shareholders.
 
 **Caremark guardrail:** do not overstate survival past a motion to dismiss. The demand creates a record and may create a red flag, but the law remains difficult. Say "may," not "will."
 
@@ -561,13 +560,12 @@ This has not yet happened. On my planet, the first time someone ran the numbers,
 
 ### Execution sequence
 
-1. Write one-page cost-benefit analysis (4 hrs, $0). The [demand letter](#part-1-the-demand-letter) already contains the full analysis; the one-pager is the executive summary for the journalist list. Source the math from [Where Am I Wrong?](where-am-i-wrong.qmd).
-2. Buy at least 1 share of the target military contractor's stock (1 hr, $200-$600 for one share depending on contractor). Per DGCL § 327, one share is legally sufficient for the demand letter and derivative action. Many plaintiffs buy 5-10 shares for optics and to preserve the Rule 14a-8 path (which has separate dollar thresholds; see [shareholder-proposal-14a-8.qmd](shareholder-proposal-14a-8.qmd)). Total cost: ~$500 minimum, ~$3,000 if buying 10 shares. See the [target reference table](#target-reference-table) below for current prices.
-3. Research board members, personalize from proxy statements (9 hrs, $0). Use the [board member research protocol](board-member-research.qmd) to extract CEO name, age, holdings, and probability of being alive in 20 years from the latest DEF 14A. Output goes into Section 6 of the demand letter.
-4. Engage pro bono counsel; pitch Cohen Milstein, Selendy Gay, or BLB&G (3 hrs, $0). Use the [counsel pitch letter and firm list](counsel-outreach.qmd). The pitch letter is distinct from the demand letter and emphasizes strategic value to the firm, not the moral case.
-5. Counsel reviews, finalizes, and files [demand letter](#part-1-the-demand-letter) ($0).
-6. Prepare [press release](press-release.qmd) and journalist list (4 hrs, $0). The press release page also contains the full journalist target list by beat.
-7. Send demand letters and press releases simultaneously (1 hr, postage). The [press release sequencing section](press-release.qmd#sequencing) covers embargo timing and same-day distribution.
+1. Write one-page cost-benefit analysis (4 hrs, $0). The [love letter](#part-1-the-love-letter) already contains the full analysis; the one-pager is the executive summary for the journalist list. Source the math from [Bombs vs. Biotechnology](bombs-vs-biotech-roi.qmd).
+2. Buy at least 1 share of the target military contractor's stock (1 hr, $200-$600 depending on contractor). Per DGCL § 327, one share is legally sufficient. Buy 5-10 shares if you also want the Rule 14a-8 path (separate dollar thresholds; see [shareholder-proposal-14a-8.qmd](shareholder-proposal-14a-8.qmd)). See the [target reference table](#target-reference-table) below for current prices.
+3. Find a lawyer; pitch Cohen Milstein, Selendy Gay, or BLB&G (3 hrs, $0). Use the [pitch letter and firm list](#the-counsel-pitch).
+4. Lawyer reviews, finalizes, and files [love letter](#part-1-the-love-letter) ($0).
+5. Prepare [press release](plaintiff-media-kit.qmd#the-press-release) and journalist list (4 hrs, $0).
+6. Send love letters and press releases simultaneously (1 hr, postage). The [press release sequencing section](plaintiff-media-kit.qmd#sequencing) covers embargo timing.
 8. Wait 60 days.
 9. If no adequate response: file shareholder proposals under SEC Rule 14a-8 (see the [eligible-shareholder proposal track](#eligible-shareholder-proposal-track) below) plus a derivative suit in Delaware Chancery (Maryland for Lockheed Martin).
 
@@ -610,9 +608,9 @@ Cost per share as of May 2026; lobbying figures from OpenSecrets (2024 full-year
 | L3Harris Technologies | LHX | $318 | $2.5M | DE |
 | **Subtotal (these eight)** | | | **$73.6M** | |
 
-Seven of eight are Delaware corporations; Lockheed Martin is Maryland. Both states permit Caremark-type oversight claims. Step 2 in the execution sequence above ("buy 10 shares") costs roughly $1,200-$5,600 depending on target. Filing against all eight requires approximately $25,600 in share purchases, which also happens to be the hedge: if the demand letters work and military contractor stocks dip, the treaty-driven GDP growth more than compensates (see Part 3).
+Seven of eight are Delaware corporations; Lockheed Martin is Maryland. Both states permit Caremark-type oversight claims. Step 2 in the execution sequence above ("buy 10 shares") costs roughly $1,200-$5,600 depending on target. Filing against all eight requires approximately $25,600 in share purchases, which also happens to be the hedge: if the love letters work and military contractor stocks dip, the treaty-driven GDP growth more than compensates (see Part 3).
 
-Share prices are approximate and will change. Look them up before buying. The lobbying column is what you cite in Section 1 of the demand letter as the specific expenditure constituting the alleged oversight failure.
+Share prices are approximate and will change. Look them up before buying. The lobbying column is what you cite in Section 1 of the love letter as the specific expenditure constituting the alleged oversight failure.
 
 ### Eligible-Shareholder Proposal Track
 
@@ -624,11 +622,151 @@ The clean proposal is not "support the treaty now." The clean proposal is:
 
 That forces the arithmetic without asking the SEC staff to adjudicate the meaning of life in one proxy cycle.
 
-## How This Connects
+### Finding a Lawyer {#the-counsel-pitch}
 
-The lawsuit is one move in a campaign that does not depend on the lawsuit winning. The citizens wear [the shirt](joke.qmd) that puts the math in front of every human they love. The voters send [the Notice of Termination](notice-of-termination.qmd) to every elected official who would rather fund missiles than the trial that would save the official's mother. The treaty itself is the [1% redirection](../solution/1-percent-treaty.qmd) and the [Earth Optimization Prize](../strategy/earth-optimization-prize.qmd) [@earth-optimization-prize-paper-2025] that absorbs the redirected dollars and turns them into cures. The institutions that replace the budget-allocation systems the treaty obsoletes are [Wishocracy](../solution/wishocracy.qmd) [@wishocracy-paper-2025], [Optimocracy](../solution/optimocracy.qmd) [@optimocracy-paper-2025], the [Optimal Policy Generator](optimal-policy-generator-spec.qmd) [@opg-paper-2025], and the [Optimal Budget Generator](optimal-budget-generator-spec.qmd) [@obg-paper-2025]. The [FAQ](faq.qmd) handles the question every honest skeptic asks once and then stops.
+Verify partner names and case records before calling. The firm list is a starting set.
 
-The lawsuit is the layer that forces the math into the boardroom in a form the Board is legally required to read. The shirts force it into the family living room. The termination letters force it into the senator's inbox. The treaty is what every layer is converging on. The campaign succeeds whenever any of those layers lands. The campaign succeeds completely when all of them do.
+#### Why a Lawyer Will Take This
+
+Three reasons, in descending order of how strategy memos rank them and ascending order of what matters.
+
+1. **New *Caremark* law that gets published either way.** Win or lose, the case produces a Delaware Chancery opinion on whether a board's duty of oversight extends to lobbying that shrinks the economy that funds the company. Either way, the lawyer's name is on a precedent.
+2. **The only lawsuit that gets covered in military, healthcare, business, science, and political news simultaneously.** The press release writes itself for six different beats at once. Most lawsuits get one.
+3. **The clients are people you would otherwise spend the rest of your career losing to cancer.** The plaintiffs are humans who have buried family members to pancreatic cancer, Alzheimer's, ALS, and cardiovascular disease. The math says the case prevents approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} additional deaths from those diseases. Some of those deaths would otherwise have been members of your own family. Reason 3 is the only reason that matters. Reasons 1 and 2 are why your firm's compensation committee will let you take it.
+
+#### Firm List (Starting Set) {#firm-list-starting-set}
+
+Starting set. Verify contacts and conflicts before calling. Add firms from your jurisdiction.
+
+| Firm | Notes |
+|---|---|
+| **Cohen Milstein Sellers & Toll** | Long Caremark/derivative track record; public-interest mandate. |
+| **Bernstein Litowitz Berger & Grossmann (BLB&G)** | Largest plaintiff-side securities firm by recovery; recent Delaware Chancery wins. |
+| **Selendy Gay** | Small firm, comfortable with novel theories, press-friendly. |
+| **Robbins Geller Rudman & Dowd** | Largest plaintiff-side securities firm by volume; handles multi-defendant filings. |
+| **Kessler Topaz Meltzer & Check** | Active Caremark practice; institutional-investor clients. |
+| **Grant & Eisenhofer** | Strong derivative practice; history of governance cases. |
+| **Pomerantz LLP** | Aggressive filer; willing to test novel theories. |
+| **Bleichmar Fonti & Auld** | Small firm, picky about cases. |
+| **Saxena White P.A.** | History of governance reform settlements. |
+| **Block & Leviton** | Recent Caremark filings; willing to take contingency. |
+
+If every firm on the list declines: file pro se using the master letter, or contact [As You Sow](https://www.asyousow.org/) for Rule 14a-8 shareholder-resolution support.
+
+#### The Pitch Letter {#the-pitch-letter}
+
+Send to a specific partner, not a general inbox. The love letter speaks for itself; the pitch only needs to explain why this is worth a 30-minute call.
+
+---
+
+**[FIRM NAME]**
+
+**Attention: [SPECIFIC PARTNER NAME]**
+
+**Re: *Caremark* derivative case against US military contractors; pro bono / contingency.**
+
+Dear [PARTNER NAME],
+
+I am looking for a lawyer to represent me, pro bono or contingency, in a shareholder derivative case against the board of a major US military contractor. The full love letter and legal theory are at [warondisease.org/lawsuit](https://warondisease.org/lawsuit). Here is the short version.
+
+This is the only lawsuit where the plaintiff is trying to prevent the suffering and death of the defendants. I do not want these board members and everyone they have ever loved to be slowly tortured and brutally murdered by horrible diseases. The lawsuit is the only way I have to force the math in front of them. I would prefer settlement. Litigation is the backup if the Board will not look at the math.
+
+I believe this is also the first lawsuit in history where the defendants are better off losing than winning. The settlement is non-monetary, costs nothing, grows the economy the defendants operate in by roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} at year 15 of the treaty, and increases their personal life expectancy. There is no version where they win in court and are better off than if they had settled.
+
+**The theory.** The military industry spends {{< var defense_lobbying_annual >}} a year lobbying to keep the ratio of military spending to government clinical-trial spending at {{< var military_to_government_clinical_trials_spending_ratio >}} to 1. That lobbying shrinks the economy that funds the defendants' contracts. As far as anyone knows, the Board has never checked whether this lobbying actually helps the company. *Caremark*, *Marchand*, and *Garfield* say they have to. The love letter creates the red flag that triggers the duty.
+
+**Why this is unusual.** Most derivative cases say a board did something bad in the past (a failed acquisition, an accounting fraud). This one says the Board is destroying value right now through a recurring expense it has never questioned. The case is built entirely on public data (SIPRI, WHO, NIH, OpenSecrets, and the defendants' own SEC filings). Cost to file: ~$3,000 per defendant in share purchases plus lawyer time. The lobbying loses money for shareholders. The math is published.
+
+**Why your firm.** [Specific reason: prior Caremark cases, public-interest practice, recent Delaware Chancery wins, experience with parallel filings.] If the derivative case is not for you, the Rule 14a-8 shareholder proposal is lower-risk.
+
+**What I am asking.** A 30-minute call to walk through the case and see if it holds up. I am prepared to be the named plaintiff. I have purchased the qualifying shares. I am ready whenever you are.
+
+**What I am not asking.** I am not asking for damages. The settlement is non-monetary: the defendant points its lobbying at the 1% treaty instead of at keeping military budgets high. This costs the defendant nothing, grows the economy it operates in by roughly {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} by year 15, and is easier for a board to accept than paying damages. Your firm gets the press regardless of how the defendant responds. (See [Part 2](#part-2-the-zugzwang) for the full outcome matrix.)
+
+The math on the harm is at [warondisease.org/where-am-i-wrong](https://warondisease.org/where-am-i-wrong). The math on the funniness is at [warondisease.org/joke](https://warondisease.org/joke). The math on the takeover escalation is at [warondisease.org/loving-takeover](https://warondisease.org/loving-takeover). Every number is sourced.
+
+If the theory is wrong, tell me how. If it belongs at a different firm, I would appreciate the referral.
+
+I can be reached at [EMAIL] or [PHONE].
+
+[PLAINTIFF NAME]
+
+[ADDRESS]
+
+[SHARES HELD: [N] shares of [COMPANY], purchased [DATE]]
+
+[DATE]
+
+---
+
+#### What If Every Firm Declines
+
+File the love letter pro se. The Board's 60-day clock runs against the letter, not against the lawyer. File the Rule 14a-8 shareholder proposal pro se; [As You Sow](https://www.asyousow.org/) handles the SEC paperwork for eligible shareholders. Pivot to the [loving takeover](loving-takeover.qmd) in parallel.
+
+---
+
+## Part 5: After Day 60
+
+### Board Response: Three Outcomes {#board-response-three-outcomes}
+
+The 60-day clock ends at midnight of day 60 after the love letter was received. Sort the response within 48 hours. Act within 7 days.
+
+#### Outcome 1: No response or procedural-only acknowledgment
+
+No substantive engagement with the ROI question. Silence, a "we'll consider it" letter, or a denial without independent analysis.
+
+**Next steps:**
+1. T+60d follow-up press release (decline variant).
+2. File the [Rule 14a-8 shareholder proposal](shareholder-proposal-14a-8.qmd) for the next proxy cycle.
+3. Your lawyer files the derivative complaint in Delaware Chancery (Maryland for Lockheed).
+
+#### Outcome 2: Accommodation
+
+The Board commits to commissioning the ROI analysis.
+
+**Next steps:**
+1. T+60d follow-up press release (accommodation variant).
+2. Hold the shares. Continued ownership obligation persists.
+3. Monitor the analysis. If the published analysis confirms negative ROI but the Board declines to redirect lobbying, that is itself a fresh *Caremark* trigger; refile.
+
+#### Outcome 3: Settlement offer or adversarial response
+
+The Board offers to settle, or responds with threats, counterclaims, or personal attacks.
+
+**Next steps:**
+1. For settlement: walkaway terms below. Never accept a settlement that does not include public disclosure.
+2. For adversarial response: document everything; press release on the response itself; your lawyer files the derivative complaint.
+
+### Derivative Complaint Elements (For Your Lawyer) {#derivative-complaint-elements-for-counsel}
+
+The complaint must include:
+
+- Caption naming each Director Defendant individually plus the Company as Nominal Defendant.
+- Standing: continuous ownership since [DATE PURCHASED].
+- Demand-refusal pleading under *Levine v. Smith* (not *Zuckerberg* demand-futility, since demand was made).
+- Count I: breach of duty of care.
+- Count II: *Caremark* failure of oversight, citing *Marchand v. Barnhill* (Del. 2019).
+- Count III (alternative): conscious disregard under *Stone v. Ritter* (Del. 2006).
+- Prayer for relief: court orders the independent ROI analysis and public disclosure. No monetary damages to plaintiff.
+
+Filed in Delaware Chancery (Maryland circuit for Lockheed). Factual allegations track the love letter's sections 1-6. Audit and risk committee members carry the heaviest exposure per *Marchand*.
+
+### Settlement
+
+Acceptable only with all four: public commitment to redirect lobbying, independent ROI analysis, public disclosure within 6-12 months, reasonable fees. Walk if any element is missing or if they want an NDA on the analysis. No personal monetary payment to the plaintiff.
+
+The lawsuit is one move. The [loving takeover](loving-takeover.qmd), the [shirts](joke.qmd), the [handout](handout.qmd), and new plaintiffs via the [filing-day checklist](filing-day-checklist.qmd) continue regardless of outcome.
+
+### What to Have Ready Before Day 60
+
+- Lawyer on retainer.
+- The derivative complaint drafted but not filed.
+- The Rule 14a-8 proposal drafted and ready to submit at the next proxy cycle window.
+- The T+60d press release drafted in all three variants (Outcomes 1, 2, 3).
+- The plaintiff prepared for deposition prep if the case proceeds to litigation.
+- The next defendant's pre-filled love letter ready to mail, regardless of how this one resolves.
+
+---
 
 ## The Funniness of This Lawsuit, Mathematically
 

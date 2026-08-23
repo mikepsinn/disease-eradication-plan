@@ -5605,6 +5605,22 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/optimized-food-system.html",
       "chapterTitle": "The Slaughterhouse Was a Workaround"
     },
+    "FDA_ANNUAL_PROGRAM_BUDGET": {
+      "value": 7055869000.0,
+      "formatted": "$7.06 billion",
+      "unit": "USD",
+      "description": "FDA total program level in the FY 2026 operating plan. This is used only for a budget-scale comparison, not as an estimate of FDA cost-effectiveness.",
+      "displayName": "FDA Annual Program Budget",
+      "sourceType": "external",
+      "sourceRef": "fda-fy2026-operating-plan",
+      "sourceUrl": "https://www.fda.gov/media/192236/download",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-fda_annual_program_budget",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
     "FDA_APPROVED_PRODUCTS_COUNT": {
       "value": 20000.0,
       "formatted": "20,000 products",
@@ -5938,14 +5954,15 @@
       "value": 4500.0,
       "formatted": "$4,500",
       "unit": "USD/life",
-      "description": "GiveWell average cost per life saved across top charities",
-      "displayName": "Givewell Average Cost per Life Saved Across Top Charities",
+      "description": "Midpoint of GiveWell's cited $3,500 to $5,500 modeled cost-per-life-saved range across top charities",
+      "displayName": "GiveWell Midpoint of Modeled Cost per Life Saved Range",
       "sourceType": "external",
       "sourceRef": "givewell-cost-per-life-saved",
       "sourceUrl": "https://www.givewell.org/charities/top-charities",
       "confidence": "high",
       "formula": null,
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-givewell_cost_per_life_avg",
+      "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
       "chapterTitle": "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease"
     },
@@ -7173,8 +7190,8 @@
         "GLOBAL_DISEASE_DEATHS_DAILY"
       ],
       "computeExpr": "(GLOBAL_DISEASE_DEATHS_DAILY * EVENTUALLY_AVOIDABLE_DEATH_PCT)",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/where-am-i-wrong.html",
-      "chapterTitle": "Where Am I Wrong?"
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/bombs-vs-biotech-roi.html",
+      "chapterTitle": "Bombs vs. Biotechnology: The ROI"
     },
     "GLOBAL_GDP_2025": {
       "value": 115000000000000.0,
@@ -12518,6 +12535,258 @@
       "distribution": "normal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
       "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents"
+    },
+    "STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS": {
+      "value": 80.69877714566412,
+      "formatted": "80.7 hours",
+      "unit": "hours",
+      "description": "Hours of the FDA annual program budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.",
+      "displayName": "Universal Right to Try with Evidence Cost in FDA Budget Hours",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ FDA_ANNUAL_PROGRAM_BUDGET × 8,760",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_fda_budget_equivalent_hours",
+      "latex": "Hours_{RTT,FDA} = \\frac{C_{RTT}}{Budget_{FDA}} \\times 8,760",
+      "inputs": [
+        "FDA_ANNUAL_PROGRAM_BUDGET",
+        "STATE_RTT_PHILANTHROPIC_COST_TOTAL"
+      ],
+      "computeExpr": "((STATE_RTT_PHILANTHROPIC_COST_TOTAL / FDA_ANNUAL_PROGRAM_BUDGET) * 8760.0)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS": {
+      "value": 12.114893617021277,
+      "formatted": "12.1 hours",
+      "unit": "hours",
+      "description": "Hours of the NIH annual budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.",
+      "displayName": "Universal Right to Try with Evidence Cost in NIH Budget Hours",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ NIH_ANNUAL_BUDGET × 8,760",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_nih_budget_equivalent_hours",
+      "latex": "Hours_{RTT,NIH} = \\frac{C_{RTT}}{Budget_{NIH}} \\times 8,760",
+      "inputs": [
+        "NIH_ANNUAL_BUDGET",
+        "STATE_RTT_PHILANTHROPIC_COST_TOTAL"
+      ],
+      "computeExpr": "((STATE_RTT_PHILANTHROPIC_COST_TOTAL / NIH_ANNUAL_BUDGET) * 8760.0)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_PHILANTHROPIC_COST_PER_DALY": {
+      "value": 0.0001344564487359796,
+      "formatted": "$0.000134",
+      "unit": "USD/DALY",
+      "description": "Conditional philanthropic cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.",
+      "displayName": "Universal Right to Try with Evidence Philanthropic Cost per DALY",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_DALYS",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_philanthropic_cost_per_daly",
+      "latex": "\\begin{gathered}\nCost_{RTT,DALY} = \\frac{C_{RTT}}{DALYs_{RTT}} = \\frac{\\$65M}{483B} = \\$0.000134\n\\\\[0.5em]\n\\text{where } DALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "inputs": [
+        "STATE_RTT_PHILANTHROPIC_COST_TOTAL",
+        "STATE_RTT_TREATMENT_ACCELERATION_DALYS"
+      ],
+      "computeExpr": "(STATE_RTT_PHILANTHROPIC_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_DALYS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED": {
+      "value": 0.0070727775773446805,
+      "formatted": "$0.00707",
+      "unit": "USD/life",
+      "description": "Conditional philanthropic cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
+      "displayName": "Universal Right to Try with Evidence Philanthropic Cost per Life Saved",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_philanthropic_cost_per_life_saved",
+      "latex": "\\begin{gathered}\nCost_{RTT,life} = \\frac{C_{RTT}}{Lives_{RTT}} = \\frac{\\$65M}{9.19B} = \\$0.00707\n\\\\[0.5em]\n\\text{where } Lives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "inputs": [
+        "STATE_RTT_PHILANTHROPIC_COST_TOTAL",
+        "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"
+      ],
+      "computeExpr": "(STATE_RTT_PHILANTHROPIC_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_PHILANTHROPIC_COST_TOTAL": {
+      "value": 65000000.0,
+      "formatted": "$65 million",
+      "unit": "USD",
+      "description": "Total philanthropic cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This philanthropic numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.",
+      "displayName": "Universal Right to Try with Evidence Philanthropic Cost",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_philanthropic_cost_total",
+      "confidenceInterval": [
+        25000000.0,
+        200000000.0
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_TREATMENT_ACCELERATION_DALYS": {
+      "value": 483427910011.47754,
+      "formatted": "483 billion DALYs",
+      "unit": "DALYs",
+      "description": "Conditional lifetime DALYs averted by shifting the global treatment-discovery schedule forward. By design, this applies the therapeutic-discovery timeline proxy to the eventually avoidable burden of all global diseases and aging-related degeneration. It is a schedule-shift calculation across future generations, not an observed epidemiological forecast.",
+      "displayName": "DALYs Averted from Universal Right to Try with Evidence",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_treatment_acceleration_dalys",
+      "latex": "\\begin{gathered}\nDALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "inputs": [
+        "EVENTUALLY_AVOIDABLE_DALY_PCT",
+        "GLOBAL_ANNUAL_DALY_BURDEN",
+        "STATE_RTT_TREATMENT_ACCELERATION_YEARS"
+      ],
+      "computeExpr": "((GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED": {
+      "value": 9190165997.614027,
+      "formatted": "9.19 billion deaths",
+      "unit": "deaths",
+      "description": "Conditional cumulative premature deaths from global diseases and aging prevented across future generations by shifting the treatment-discovery schedule forward. The total can exceed the current population because it sums deaths prevented over the full acceleration period.",
+      "displayName": "Lives Saved from Universal Right to Try with Evidence",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "GLOBAL_DISEASE_DEATHS_DAILY × DAYS_PER_YEAR × EVENTUALLY_AVOIDABLE_DEATH_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_treatment_acceleration_lives_saved",
+      "latex": "\\begin{gathered}\nLives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "inputs": [
+        "EVENTUALLY_AVOIDABLE_DEATH_PCT",
+        "GLOBAL_DISEASE_DEATHS_DAILY",
+        "STATE_RTT_TREATMENT_ACCELERATION_YEARS"
+      ],
+      "computeExpr": "(((GLOBAL_DISEASE_DEATHS_DAILY * 365.0) * EVENTUALLY_AVOIDABLE_DEATH_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS": {
+      "value": 1651583111763212.0,
+      "formatted": "1.65 quadrillion hours",
+      "unit": "hours",
+      "description": "Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.",
+      "displayName": "Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "STATE_RTT_TREATMENT_ACCELERATION_DALYS × GLOBAL_YLD_PROPORTION_OF_DALYS × HOURS_PER_YEAR",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_treatment_acceleration_suffering_hours",
+      "latex": "\\begin{gathered}\nHours_{suffer,RTT} = DALYs_{RTT} \\times Pct_{YLD} \\times 8760 = 483B \\times 0.39 \\times 8760 = 1650T\n\\\\[0.5em]\n\\text{where } DALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "inputs": [
+        "GLOBAL_YLD_PROPORTION_OF_DALYS",
+        "STATE_RTT_TREATMENT_ACCELERATION_DALYS"
+      ],
+      "computeExpr": "((STATE_RTT_TREATMENT_ACCELERATION_DALYS * GLOBAL_YLD_PROPORTION_OF_DALYS) * 8760.0)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_TREATMENT_ACCELERATION_YEARS": {
+      "value": 181.21654501216545,
+      "formatted": "181 years",
+      "unit": "years",
+      "description": "Average years earlier the first effective treatment arrives across the global therapeutic frontier after all 50 states adopt Universal Right to Try with Evidence. Uses the same schedule-shift structure as the 1% Treaty impact model: the status quo discovery timeline multiplied by one minus the inverse treatment-discovery multiplier.",
+      "displayName": "Average Treatment Acceleration from Universal Right to Try with Evidence",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_treatment_acceleration_years",
+      "latex": "\\begin{gathered}\nT_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "inputs": [
+        "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER",
+        "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT"
+      ],
+      "computeExpr": "(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT * (1.0 - (1.0 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)))",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER": {
+      "value": 5.48,
+      "formatted": "5.48x",
+      "unit": "x",
+      "description": "Conditional multiplier on the worldwide first-treatment discovery rate after all 50 states adopt and a mature pooled pragmatic-trial system operates under applicable federal authorization. The 5.48x central calibration reproduces the prior model's 82.2 versus 15 first treatments per year; it is an assumption, not an observed effect estimate. This single input incorporates patient or payer funding of treatment delivery, trial-site services, and permitted study costs, newly viable post-Phase-1 treatment-condition pairs, evaluable protocol quality, candidate supply, and scientific success. Its range describes productivity of an operating system, not the separate probability that advocacy achieves full adoption and implementation.",
+      "displayName": "Universal Right to Try with Evidence Treatment Discovery Multiplier",
+      "sourceType": "definition",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_treatment_discovery_multiplier",
+      "confidenceInterval": [
+        1.1,
+        15.0
+      ],
+      "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS": {
+      "value": 0.8111111111111111,
+      "formatted": "0.811 hours",
+      "unit": "hours",
+      "description": "Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
+      "displayName": "Universal Right to Try with Evidence Cost in US Military Overspend Hours",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ US_GOV_WASTE_MILITARY_OVERSPEND × 8,760",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_us_military_overspend_equivalent_hours",
+      "latex": "\\begin{gathered}\nHours_{RTT,mil} = \\frac{C_{RTT}}{W_{military}} \\times 8,760\n\\\\[0.5em]\n\\text{where } W_{military} = Spending_{US,2024} - D_{optimal} = \\$886B - \\$184B = \\$702B\n\\\\[0.5em]\n\\text{where } D_{optimal} = D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} + D_{hedge} = \\$30B + \\$35B + \\$14B + \\$30B + \\$15B + \\$60B = \\$184B\n\\end{gathered}",
+      "inputs": [
+        "STATE_RTT_PHILANTHROPIC_COST_TOTAL",
+        "US_GOV_WASTE_MILITARY_OVERSPEND"
+      ],
+      "computeExpr": "((STATE_RTT_PHILANTHROPIC_COST_TOTAL / US_GOV_WASTE_MILITARY_OVERSPEND) * 8760.0)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+    },
+    "STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER": {
+      "value": 636242.2613732788,
+      "formatted": "636.2kx",
+      "unit": "x",
+      "description": "Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+      "displayName": "Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier",
+      "latex": "\\begin{gathered}\nk_{RTT,GiveWell} = \\frac{Cost_{GW,avg}}{Cost_{RTT,life}} = \\frac{\\$4.5K}{\\$0.00707} = 636{,}000\n\\\\[0.5em]\n\\text{where } Cost_{RTT,life} = \\frac{C_{RTT}}{Lives_{RTT}} = \\frac{\\$65M}{9.19B} = \\$0.00707\n\\\\[0.5em]\n\\text{where } Lives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "inputs": [
+        "GIVEWELL_COST_PER_LIFE_AVG",
+        "STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED"
+      ],
+      "computeExpr": "(GIVEWELL_COST_PER_LIFE_AVG / STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
     },
     "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT": {
       "value": 221.66666666666666,
@@ -21160,6 +21429,24 @@
       "pages": "",
       "number": ""
     },
+    "cms-coverage-evidence-development-2024": {
+      "id": "cms-coverage-evidence-development-2024",
+      "title": "Medicare Coverage with Evidence Development",
+      "author": "Centers for Medicare & Medicaid Services",
+      "year": "2024",
+      "source": "",
+      "url": "https://www.cms.gov/medicare/coverage/evidence",
+      "urls": [
+        "https://www.cms.gov/medicare/coverage/evidence"
+      ],
+      "quote": "",
+      "note": "Official CMS overview of Medicare Coverage with Evidence Development. Under a national coverage determination, specified items or services may be covered only in the context of an approved clinical study or additional data collection, with subsequent evidence review.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "coase1960": {
       "id": "coase1960",
       "title": "The Problem of Social Cost",
@@ -24590,6 +24877,24 @@
       "pages": "",
       "number": ""
     },
+    "fda-charging-investigational-drugs-2024": {
+      "id": "fda-charging-investigational-drugs-2024",
+      "title": "Charging for Investigational Drugs Under an IND: Questions and Answers",
+      "author": "U.S. Food and Drug Administration",
+      "year": "2024",
+      "source": "",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/charging-investigational-drugs-under-ind-questions-and-answers",
+      "urls": [
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/charging-investigational-drugs-under-ind-questions-and-answers"
+      ],
+      "quote": "",
+      "note": "Official February 2024 final FDA guidance. An IND sponsor needs prior FDA authorization to charge for an investigational drug and generally may recover only direct drug costs. Costs incurred at a trial site, including pharmacy, nursing, equipment, and study-related procedure costs, are outside the scope of the investigational-drug charging rule.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "fda-covid-test-delay": {
       "id": "fda-covid-test-delay",
       "title": "FDA delay in approving rapid COVID-19 tests",
@@ -24626,6 +24931,24 @@
       "quote": "Free platform developed by FDA & NIH (NCATS) to share off-label drug uses/repurposing Focus: 325 difficult-to-treat infectious diseases (neglected tropical, AMR organisms, emerging threats) Allows healthcare providers to report new uses via standardized case report form (web/mobile) Mission: Generate real-world evidence for off-label drugs with high public health impact, low commercial viability Providers can browse documented cases, treatment results, relevant clinical trials Expansion: Automating EHR data extraction; adding anonymized registry data Access: <https://cure.ncats.io> | App/Play Store Note: Platform exists and functions. \"Insufficient Incentives and Network Effects\" may refer to adoption challenges, but framework provides real-world evidence infrastructure Additional sources: https://cure.ncats.io/about | https://c-path.org/cdrc-and-cure-id-faqs/ | https://content.govdelivery.com/accounts/USFDA/bulletins/2e7f941",
       "note": "CURE ID: About | C-Path: CDRC and CURE ID FAQs | FDA: CURE ID Automated Data Collection",
       "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "fda-fy2026-operating-plan": {
+      "id": "fda-fy2026-operating-plan",
+      "title": "FY 2026 FDA Operating Plan",
+      "author": "U.S. Food and Drug Administration",
+      "year": "2026",
+      "source": "",
+      "url": "https://www.fda.gov/media/192236/download",
+      "urls": [
+        "https://www.fda.gov/media/192236/download"
+      ],
+      "quote": "",
+      "note": "The plan reports a total FDA program level of \\$7,055.869 million.",
+      "type": "techreport",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -24741,6 +25064,24 @@
       "pages": "",
       "number": ""
     },
+    "fda-project-pragmatica-2025": {
+      "id": "fda-project-pragmatica-2025",
+      "title": "Project Pragmatica",
+      "author": "U.S. Food and Drug Administration",
+      "year": "2025",
+      "source": "",
+      "url": "https://www.fda.gov/about-fda/oncology-center-excellence/project-pragmatica",
+      "urls": [
+        "https://www.fda.gov/about-fda/oncology-center-excellence/project-pragmatica"
+      ],
+      "quote": "",
+      "note": "Official FDA Oncology Center of Excellence program, current October 20, 2025, describing pragmatic trial elements for approved oncology products that simplify eligibility and data collection, integrate research into routine practice, accelerate recruitment, and preserve patient safety and data integrity.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "fda-public-health-advancement-mandate": {
       "id": "fda-public-health-advancement-mandate",
       "title": "FDA Mandate to Accelerate Innovation (21 U.S.C. § 393(b)(2)(B))",
@@ -24799,6 +25140,42 @@
       "pages": "",
       "number": ""
     },
+    "fda-right-to-try-eligibility": {
+      "id": "fda-right-to-try-eligibility",
+      "title": "Right to Try",
+      "author": "U.S. Food and Drug Administration",
+      "year": "",
+      "source": "",
+      "url": "https://www.fda.gov/patients/learn-about-expanded-access-and-other-treatment-options/right-try",
+      "urls": [
+        "https://www.fda.gov/patients/learn-about-expanded-access-and-other-treatment-options/right-try"
+      ],
+      "quote": "",
+      "note": "Official FDA eligibility summary. Federal Right to Try is available to qualifying patients who have exhausted approved options and are unable to participate in a clinical trial involving the eligible investigational drug.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "fda-routine-practice-rct-guidance-2024": {
+      "id": "fda-routine-practice-rct-guidance-2024",
+      "title": "Integrating Randomized Controlled Trials for Drug and Biological Products Into Routine Clinical Practice: Draft Guidance for Industry",
+      "author": "U.S. Food and Drug Administration",
+      "year": "2024",
+      "source": "",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/integrating-randomized-controlled-trials-drug-and-biological-products-routine-clinical-practice",
+      "urls": [
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/integrating-randomized-controlled-trials-drug-and-biological-products-routine-clinical-practice"
+      ],
+      "quote": "",
+      "note": "Official September 2024 FDA draft guidance on streamlined randomized controlled trials integrated into routine clinical practice. Draft guidance is nonbinding.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "fda-sentinel-initiative": {
       "id": "fda-sentinel-initiative",
       "title": "FDA Sentinel Initiative",
@@ -24814,6 +25191,24 @@
       "quote": "Launched: May 2008 in response to FDAAA 2007; transitioned to full system Feb 2016 Purpose: Active post-market risk identification and analysis (ARIA) for medical products Scale: World's largest multisite distributed database for medical product safety; 128.7M members Data sources: Insurance claims, electronic health records, patient reports Privacy: Distributed data approach - data remains with owners, patient identifiers removed Structure (2019): 3 coordinating centers - Operations, Innovation, Community Building/Outreach Real-World Evidence: RWE Data Enterprise (RWE-DE) - 25.5M lives (21M commercial + 4.5M academic) 2008-2014: FDA mandated 657 studies under FDAAA authority Note: Major advancement in post-market surveillance. \"Limited Transparency and Bureaucratic Constraints\" may refer to challenges, but system represents significant FDA capability improvement Additional sources: https://www.fda.gov/safety/fdas-sentinel-initiative | https://pmc.ncbi.nlm.nih.gov/articles/PMC9667154/ | https://en.wikipedia.org/wiki/Sentinel_Initiative",
       "note": "FDA: Sentinel Initiative | PMC: Sentinel - Learning Health System | Wikipedia: Sentinel Initiative",
       "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "fda-substantial-evidence-guidance-2026": {
+      "id": "fda-substantial-evidence-guidance-2026",
+      "title": "Demonstrating Substantial Evidence of Effectiveness for Human Drug and Biological Products",
+      "author": "U.S. Food and Drug Administration",
+      "year": "2026",
+      "source": "",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/demonstrating-substantial-evidence-effectiveness-human-drug-and-biological-products",
+      "urls": [
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/demonstrating-substantial-evidence-effectiveness-human-drug-and-biological-products"
+      ],
+      "quote": "",
+      "note": "Official June 2026 FDA revised draft guidance explaining when one adequate and well-controlled clinical investigation plus confirmatory evidence may satisfy the statutory substantial-evidence requirement. Draft guidance is nonbinding and does not replace safety or benefit-risk requirements.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -27055,6 +27450,24 @@
       "pages": "1-27",
       "number": ""
     },
+    "goldwater-rtt-41-states-2018": {
+      "id": "goldwater-rtt-41-states-2018",
+      "title": "Alaska Becomes 41st State to Enact Right to Try Legislation",
+      "author": "Goldwater Institute",
+      "year": "2018",
+      "source": "",
+      "url": "https://www.goldwaterinstitute.org/release-alaska-becomes-41st-state-to-enact-right-to-try-legislation/",
+      "urls": [
+        "https://www.goldwaterinstitute.org/release-alaska-becomes-41st-state-to-enact-right-to-try-legislation/"
+      ],
+      "quote": "",
+      "note": "Colorado passed the first Right to Try law in 2014; Alaska became the 41st state in July 2018. This is evidence about the demonstrated distribution speed of the model bill, not evidence that an expanded access-plus-data bill will pass at the same rate.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "gompers-ishii-metrick-2003": {
       "id": "gompers-ishii-metrick-2003",
       "title": "Corporate Governance and Equity Prices",
@@ -27128,12 +27541,12 @@
     "graefrath-retrenchment-2024": {
       "id": "graefrath-retrenchment-2024",
       "title": "The False Peril of Great Power Retrenchment: Types of Strategic Withdrawals and Their Consequences",
-      "author": "Graefrath, Johannes",
+      "author": "Graefrath, Moritz S.",
       "year": "2024",
       "source": "European Journal of International Security",
-      "url": "https://www.cambridge.org/core/journals/european-journal-of-international-security/article/false-peril-of-great-power-retrenchment/2B3F505E3CDF2056B13D3817DE0C9FD7",
+      "url": "https://www.cambridge.org/core/journals/european-journal-of-international-security/article/false-peril-of-great-power-retrenchment-types-of-strategic-withdrawals-and-their-consequences/2B3F505E3CDF2056B13D3817DE0C9FD7",
       "urls": [
-        "https://www.cambridge.org/core/journals/european-journal-of-international-security/article/false-peril-of-great-power-retrenchment/2B3F505E3CDF2056B13D3817DE0C9FD7"
+        "https://www.cambridge.org/core/journals/european-journal-of-international-security/article/false-peril-of-great-power-retrenchment-types-of-strategic-withdrawals-and-their-consequences/2B3F505E3CDF2056B13D3817DE0C9FD7"
       ],
       "quote": "Examined historical cases of great power withdrawal. Found that 3 of 4 types of retrenchment do not regularly create opportunities for rivals. Case studies include Soviet withdrawal from Romania (1950s), US from Korea (1970s), US from Western Europe (1990s). None were catastrophic.",
       "note": "",
@@ -28793,6 +29206,24 @@
       "quote": "Industry funds ~90% of interventional drug/device trials. Industry spending ~\\$32B vs Govt ~\\$3.6B (2008 data). Additional sources: https://www.appliedclinicaltrialsonline.com/view/sizing-clinical-research-market | https://www.tctmd.com/news/price-knowledge-industry-sponsored-studies-era-evidence-based-medicine",
       "note": "Applied Clinical Trials | TCTMD",
       "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "infinita-montana-pathway-2026": {
+      "id": "infinita-montana-pathway-2026",
+      "title": "Bridging the Gap from Biotech to Clinic",
+      "author": "Infinita",
+      "year": "2026",
+      "source": "",
+      "url": "https://www.infinita.co/old-home",
+      "urls": [
+        "https://www.infinita.co/old-home"
+      ],
+      "quote": "",
+      "note": "Infinita describes ETRB review, licensed clinical administration, evidence generation, and early commercialization as coordinated services for post-Phase-1 therapies under Montana law.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -31220,6 +31651,42 @@
       "quote": "",
       "note": "Total economic cost: \\$656 million to \\$19 billion annually",
       "type": "techreport",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "montana-etc-rules-2026": {
+      "id": "montana-etc-rules-2026",
+      "title": "Notice of Adoption: MAR Notice No. 2026-427.2, New Rules 1 through 25 Pertaining to Experimental Treatment Centers",
+      "author": "Montana Department of Public Health and Human Services",
+      "year": "2026",
+      "source": "",
+      "url": "https://dphhs.mt.gov/assets/rules/2026-427-Adp-Arm.pdf",
+      "urls": [
+        "https://dphhs.mt.gov/assets/rules/2026-427-Adp-Arm.pdf"
+      ],
+      "quote": "",
+      "note": "Effective July 25, 2026. Requires treatment and patient-outcome tracking, serious-adverse-event reporting, and annual public summaries containing aggregate safety and treatment outcomes. The agency also states that experimental treatment centers do not administer clinical trials, which is why the proposed data amendment adds actual trial enrollment and pooled protocols.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "montana-sb535-2025": {
+      "id": "montana-sb535-2025",
+      "title": "Senate Bill No. 535: An Act Revising Laws Related to Experimental Treatments",
+      "author": "Montana 69th Legislature",
+      "year": "2025",
+      "source": "",
+      "url": "https://archive.legmt.gov/content/Sessions/69th/Contractor_index/CH0621.pdf",
+      "urls": [
+        "https://archive.legmt.gov/content/Sessions/69th/Contractor_index/CH0621.pdf"
+      ],
+      "quote": "",
+      "note": "Creates licensed experimental treatment centers, defines eligible experimental treatments as post-Phase-1 interventions not yet approved for general FDA use, sets a $10,000 application fee and $5,000 annual renewal fee, and requires 2 percent of net annual profits to support access.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",

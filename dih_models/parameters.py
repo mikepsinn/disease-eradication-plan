@@ -1661,6 +1661,20 @@ NIH_ANNUAL_BUDGET = Parameter(
     latex_symbol=r"Budget_{NIH}",  # LaTeX symbol for equations
 )
 
+FDA_ANNUAL_PROGRAM_BUDGET = Parameter(
+    7_055_869_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_ref="fda-fy2026-operating-plan",
+    source_type=SourceType.EXTERNAL,
+    description="FDA total program level in the FY 2026 operating plan. This is used only for a budget-scale comparison, not as an estimate of FDA cost-effectiveness.",
+    display_name="FDA Annual Program Budget",
+    unit="USD",
+    confidence="high",
+    distribution="fixed",
+    keywords=["fda", "budget", "annual", "program level", "fy 2026"],
+    latex_symbol=r"Budget_{FDA}",
+)
+
 NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
     0.033,
     manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
@@ -4385,7 +4399,7 @@ EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
 
 GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY = Parameter(
     GLOBAL_DISEASE_DEATHS_DAILY * (1 - _unavoidable_pct),
-    manual_ref="knowledge/appendix/where-am-i-wrong.qmd",
+    manual_ref="knowledge/appendix/bombs-vs-biotech-roi.qmd",
     source_type="calculated",
     description="Daily global deaths that are eventually avoidable with sufficient biomedical research. Each day the disease-eradication date slips adds roughly this many deaths to the total schedule cost.",
     display_name="Eventually Avoidable Deaths per Day",
@@ -9094,6 +9108,212 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     latex_symbol=r"Hours_{suffer,max}",  # LaTeX symbol for equations
 )  # ~1,875 trillion hours from full timeline shift (vs old 193T - now based on WHO YLD proportion)
 
+# ============================================================================
+# UNIVERSAL RIGHT TO TRY WITH EVIDENCE
+# Conditional impact if all 50 states adopt and the system remains in force.
+# The model intentionally has two uncertain inputs: total philanthropic cost
+# and the resulting treatment-discovery multiplier. Existing global disease
+# burden parameters supply the rest of the Treaty-style calculation.
+# ============================================================================
+
+STATE_RTT_PHILANTHROPIC_COST_TOTAL = Parameter(
+    65_000_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Total philanthropic cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This philanthropic numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.",
+    display_name="Universal Right to Try with Evidence Philanthropic Cost",
+    unit="USD",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(25_000_000, 200_000_000),
+    keywords=["right to try", "right to trial", "state legislation", "campaign", "registry", "philanthropy"],
+    latex_symbol=r"C_{RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER = Parameter(
+    5.48,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Conditional multiplier on the worldwide first-treatment discovery rate after all 50 states adopt and a mature pooled pragmatic-trial system operates under applicable federal authorization. The 5.48x central calibration reproduces the prior model's 82.2 versus 15 first treatments per year; it is an assumption, not an observed effect estimate. This single input incorporates patient or payer funding of treatment delivery, trial-site services, and permitted study costs, newly viable post-Phase-1 treatment-condition pairs, evaluable protocol quality, candidate supply, and scientific success. Its range describes productivity of an operating system, not the separate probability that advocacy achieves full adoption and implementation.",
+    display_name="Universal Right to Try with Evidence Treatment Discovery Multiplier",
+    unit="x",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(1.1, 15.0),
+    keywords=["right to try", "right to trial", "treatment discovery", "trial capacity", "self-funding", "multiplier"],
+    latex_symbol=r"k_{RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_YEARS = Parameter(
+    float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT)
+    * (1 - 1 / float(STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Average years earlier the first effective treatment arrives across the global therapeutic frontier after all 50 states adopt Universal Right to Try with Evidence. Uses the same schedule-shift structure as the 1% Treaty impact model: the status quo discovery timeline multiplied by one minus the inverse treatment-discovery multiplier.",
+    display_name="Average Treatment Acceleration from Universal Right to Try with Evidence",
+    unit="years",
+    formula="STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)",
+    confidence="low",
+    inputs=["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"],
+    compute=lambda ctx: ctx["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT"]
+    * (1 - 1 / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"]),
+    keywords=["right to try", "right to trial", "treatment acceleration", "cure schedule", "years"],
+    latex_symbol=r"T_{accel,RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_DALYS = Parameter(
+    float(GLOBAL_ANNUAL_DALY_BURDEN)
+    * float(EVENTUALLY_AVOIDABLE_DALY_PCT)
+    * float(STATE_RTT_TREATMENT_ACCELERATION_YEARS),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional lifetime DALYs averted by shifting the global treatment-discovery schedule forward. By design, this applies the therapeutic-discovery timeline proxy to the eventually avoidable burden of all global diseases and aging-related degeneration. It is a schedule-shift calculation across future generations, not an observed epidemiological forecast.",
+    display_name="DALYs Averted from Universal Right to Try with Evidence",
+    unit="DALYs",
+    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+    confidence="low",
+    inputs=["GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DALY_BURDEN"]
+    * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"]
+    * ctx["STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    keywords=["right to try", "right to trial", "DALY", "disease burden", "schedule shift"],
+    latex_symbol=r"DALYs_{RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED = Parameter(
+    float(GLOBAL_DISEASE_DEATHS_DAILY)
+    * DAYS_PER_YEAR
+    * float(EVENTUALLY_AVOIDABLE_DEATH_PCT)
+    * float(STATE_RTT_TREATMENT_ACCELERATION_YEARS),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional cumulative premature deaths from global diseases and aging prevented across future generations by shifting the treatment-discovery schedule forward. The total can exceed the current population because it sums deaths prevented over the full acceleration period.",
+    display_name="Lives Saved from Universal Right to Try with Evidence",
+    unit="deaths",
+    formula="GLOBAL_DISEASE_DEATHS_DAILY × DAYS_PER_YEAR × EVENTUALLY_AVOIDABLE_DEATH_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+    confidence="low",
+    inputs=["GLOBAL_DISEASE_DEATHS_DAILY", "EVENTUALLY_AVOIDABLE_DEATH_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    compute=lambda ctx: ctx["GLOBAL_DISEASE_DEATHS_DAILY"]
+    * DAYS_PER_YEAR
+    * ctx["EVENTUALLY_AVOIDABLE_DEATH_PCT"]
+    * ctx["STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    keywords=["right to try", "right to trial", "lives saved", "premature deaths", "schedule shift"],
+    latex_symbol=r"Lives_{RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS = Parameter(
+    float(STATE_RTT_TREATMENT_ACCELERATION_DALYS)
+    * float(GLOBAL_YLD_PROPORTION_OF_DALYS)
+    * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.",
+    display_name="Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence",
+    unit="hours",
+    formula="STATE_RTT_TREATMENT_ACCELERATION_DALYS × GLOBAL_YLD_PROPORTION_OF_DALYS × HOURS_PER_YEAR",
+    confidence="low",
+    inputs=["STATE_RTT_TREATMENT_ACCELERATION_DALYS", "GLOBAL_YLD_PROPORTION_OF_DALYS"],
+    compute=lambda ctx: ctx["STATE_RTT_TREATMENT_ACCELERATION_DALYS"]
+    * ctx["GLOBAL_YLD_PROPORTION_OF_DALYS"]
+    * HOURS_PER_YEAR,
+    keywords=["right to try", "right to trial", "suffering", "disability", "YLD", "hours"],
+    latex_symbol=r"Hours_{suffer,RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_PHILANTHROPIC_COST_PER_DALY = Parameter(
+    float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(STATE_RTT_TREATMENT_ACCELERATION_DALYS),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional philanthropic cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.",
+    display_name="Universal Right to Try with Evidence Philanthropic Cost per DALY",
+    unit="USD/DALY",
+    formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_DALYS",
+    confidence="low",
+    inputs=["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_DALYS"],
+    compute=lambda ctx: ctx["STATE_RTT_PHILANTHROPIC_COST_TOTAL"]
+    / ctx["STATE_RTT_TREATMENT_ACCELERATION_DALYS"],
+    keywords=["right to try", "right to trial", "cost per DALY", "GiveWell", "philanthropy"],
+    latex_symbol=r"Cost_{RTT,DALY}",
+    hide_ci=True,
+)
+
+STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED = Parameter(
+    float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional philanthropic cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
+    display_name="Universal Right to Try with Evidence Philanthropic Cost per Life Saved",
+    unit="USD/life",
+    formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
+    confidence="low",
+    inputs=["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"],
+    compute=lambda ctx: ctx["STATE_RTT_PHILANTHROPIC_COST_TOTAL"]
+    / ctx["STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"],
+    keywords=["right to try", "right to trial", "cost per life saved", "GiveWell", "philanthropy"],
+    latex_symbol=r"Cost_{RTT,life}",
+    hide_ci=True,
+)
+
+STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS = Parameter(
+    float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(FDA_ANNUAL_PROGRAM_BUDGET) * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Hours of the FDA annual program budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.",
+    display_name="Universal Right to Try with Evidence Cost in FDA Budget Hours",
+    unit="hours",
+    formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ FDA_ANNUAL_PROGRAM_BUDGET × 8,760",
+    confidence="low",
+    inputs=["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "FDA_ANNUAL_PROGRAM_BUDGET"],
+    compute=lambda ctx: ctx["STATE_RTT_PHILANTHROPIC_COST_TOTAL"]
+    / ctx["FDA_ANNUAL_PROGRAM_BUDGET"]
+    * HOURS_PER_YEAR,
+    keywords=["right to try", "right to trial", "fda", "budget", "hours", "scale comparison"],
+    latex_symbol=r"Hours_{RTT,FDA}",
+    hide_ci=True,
+)
+
+STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS = Parameter(
+    float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(NIH_ANNUAL_BUDGET) * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Hours of the NIH annual budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.",
+    display_name="Universal Right to Try with Evidence Cost in NIH Budget Hours",
+    unit="hours",
+    formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ NIH_ANNUAL_BUDGET × 8,760",
+    confidence="low",
+    inputs=["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "NIH_ANNUAL_BUDGET"],
+    compute=lambda ctx: ctx["STATE_RTT_PHILANTHROPIC_COST_TOTAL"]
+    / ctx["NIH_ANNUAL_BUDGET"]
+    * HOURS_PER_YEAR,
+    keywords=["right to try", "right to trial", "nih", "budget", "hours", "scale comparison"],
+    latex_symbol=r"Hours_{RTT,NIH}",
+    hide_ci=True,
+)
+
+STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS = Parameter(
+    float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(US_GOV_WASTE_MILITARY_OVERSPEND) * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
+    display_name="Universal Right to Try with Evidence Cost in US Military Overspend Hours",
+    unit="hours",
+    formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ US_GOV_WASTE_MILITARY_OVERSPEND × 8,760",
+    confidence="low",
+    inputs=["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "US_GOV_WASTE_MILITARY_OVERSPEND"],
+    compute=lambda ctx: ctx["STATE_RTT_PHILANTHROPIC_COST_TOTAL"]
+    / ctx["US_GOV_WASTE_MILITARY_OVERSPEND"]
+    * HOURS_PER_YEAR,
+    keywords=["right to try", "right to trial", "military overspend", "budget", "hours", "reallocation"],
+    latex_symbol=r"Hours_{RTT,mil}",
+    hide_ci=True,
+)
+
 # Pragmatic trial system targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     float(CURRENT_TRIALS_PER_YEAR) * float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
@@ -9848,12 +10068,13 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
-    description="GiveWell average cost per life saved across top charities",
-    display_name="Givewell Average Cost per Life Saved Across Top Charities",
+    description="Midpoint of GiveWell's cited $3,500 to $5,500 modeled cost-per-life-saved range across top charities",
+    display_name="GiveWell Midpoint of Modeled Cost per Life Saved Range",
     unit="USD/life",
+    distribution="fixed",
     keywords=["4k", "costs", "funding", "investment", "givewell", "life", "avg"],
     latex_symbol=r"Cost_{GW,avg}",  # LaTeX symbol for equations
-)  # Midpoint of top charities
+)  # Midpoint of cited $3,500 to $5,500 range
 
 # Historical public health comparisons
 SMALLPOX_ERADICATION_ROI = Parameter(
@@ -10447,6 +10668,22 @@ DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
     compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["DFDA_DIRECT_FUNDING_COST_PER_DALY"],
     latex_symbol=r"k_{direct,nets}",  # LaTeX symbol for equations
 )  # ~90× more cost-effective than bed nets
+
+STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER = Parameter(
+    GIVEWELL_COST_PER_LIFE_AVG / STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+    display_name="Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint",
+    unit="x",
+    formula="GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED",
+    confidence="low",
+    inputs=["GIVEWELL_COST_PER_LIFE_AVG", "STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED"],
+    compute=lambda ctx: ctx["GIVEWELL_COST_PER_LIFE_AVG"] / ctx["STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED"],
+    keywords=["right to try", "right to trial", "GiveWell", "cost per life saved", "cost effectiveness", "philanthropy"],
+    latex_symbol=r"k_{RTT,GiveWell}",
+    hide_ci=True,
+)
 
 # Treaty campaign leverage vs direct funding
 TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
