@@ -73,7 +73,7 @@ The original Right to Try model spread from its first state in 2014 to 41 states
 
 ## Why previously unprofitable treatments matter
 
-Post-Phase-1 compounds, repurposing candidates, combinations, doses, and disease subtypes can each produce multiple treatment hypotheses. The relevant candidate pool is therefore much larger than a count of compounds, but this paper does not claim a precise inventory.
+Post-Phase-1 compounds, repurposing candidates, combinations, doses, and disease subtypes can each produce multiple treatment hypotheses. The relevant candidate pool is therefore much larger than a count of compounds. No precise inventory exists.
 
 Candidate abundance is not multiplied by global disease burden. Ten successful treatments for one disease cannot avert that disease's burden ten times. Additional candidates matter because they raise the rate at which the first effective treatment is found.
 
@@ -97,7 +97,7 @@ The status quo treatment queue is built from untreated rare diseases because tha
 
 At the status quo discovery rate, the average therapeutic target waits {{< var status_quo_avg_years_to_first_treatment >}} for its first effective treatment. A {{< var state_rtt_treatment_discovery_multiplier >}} discovery rate moves the average first treatment forward by {{< var state_rtt_treatment_acceleration_years >}}.
 
-The global DALY benefit is annual avoidable disease burden multiplied by that schedule shift. Premature deaths use the same schedule shift and global avoidable mortality. Disability-equivalent hours convert the years-lived-with-disability share of DALYs into hours. The full cost-per-DALY chain is shown once:
+The global DALY benefit is annual avoidable disease burden multiplied by that schedule shift. Premature deaths use the same schedule shift and global avoidable mortality. Disability-equivalent hours convert the years-lived-with-disability share of DALYs into hours. The full cost-per-DALY chain is:
 
 {{< var state_rtt_philanthropic_cost_per_daly_latex >}}
 
@@ -109,9 +109,9 @@ The discovery multiplier is conditional on full adoption and a mature operating 
 
 ## Comparison with GiveWell-style estimates
 
-The displayed cost per DALY is conditional: campaign plus registry-launch cost divided by the health benefit if the 50-state system operates at the modeled discovery rate. It excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs because those payments buy care and evidence generation rather than consuming the philanthropic budget.
+Conditional cost per DALY is campaign plus registry-launch cost divided by the health benefit if the 50-state system operates at the modeled discovery rate. It excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs because those payments buy care and evidence generation rather than consuming the philanthropic budget.
 
-For an advocacy grant comparison, expected cost per DALY equals the conditional cost per DALY divided by the probability that the grant produces full adoption and mature implementation. A 10% realization probability makes it 10 times the displayed figure. A 1% probability makes it 100 times the displayed figure. This transparent adjustment avoids another scenario parameter while letting a donor apply their own probability of legislative success.
+For an advocacy grant comparison, expected cost per DALY equals the conditional cost per DALY divided by the probability that the grant produces full adoption and mature implementation. A 10% realization probability makes it 10 times the conditional figure. A 1% probability makes it 100 times the conditional figure. This transparent adjustment avoids another scenario parameter while letting a donor apply their own probability of legislative success.
 
 ## What the numbers mean
 
