@@ -4,7 +4,6 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Universal Right to Try with Evidence Philanthropic Cost per Life Saved (USD/life) | -0.5242 | Strong driver |
-| GiveWell Midpoint of Modeled Cost per Life Saved Range (USD/life) | 0.1464 | Weak driver |
+| Universal Right to Try with Evidence Philanthropic Cost per Life Saved (USD/life) | -0.5292 | Strong driver |
 
 *Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

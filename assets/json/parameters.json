@@ -5959,14 +5959,10 @@
       "sourceType": "external",
       "sourceRef": "givewell-cost-per-life-saved",
       "sourceUrl": "https://www.givewell.org/charities/top-charities",
-      "confidence": "medium",
+      "confidence": "high",
       "formula": null,
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-givewell_cost_per_life_avg",
-      "confidenceInterval": [
-        3500.0,
-        5500.0
-      ],
-      "distribution": "lognormal",
+      "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
       "chapterTitle": "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease"
     },
@@ -12754,7 +12750,7 @@
       "value": 0.8111111111111111,
       "formatted": "0.811 hours",
       "unit": "hours",
-      "description": "Hours of estimated annual US military spending above the first-principles homeland-defense baseline equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
+      "description": "Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
       "displayName": "Universal Right to Try with Evidence Cost in US Military Overspend Hours",
       "sourceType": "calculated",
       "sourceRef": null,

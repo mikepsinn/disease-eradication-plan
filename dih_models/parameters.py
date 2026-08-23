@@ -9300,7 +9300,7 @@ STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS = Parameter(
     float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(US_GOV_WASTE_MILITARY_OVERSPEND) * HOURS_PER_YEAR,
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_type="calculated",
-    description="Hours of estimated annual US military spending above the first-principles homeland-defense baseline equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
+    description="Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
     display_name="Universal Right to Try with Evidence Cost in US Military Overspend Hours",
     unit="hours",
     formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ US_GOV_WASTE_MILITARY_OVERSPEND × 8,760",
@@ -10071,9 +10071,7 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
     description="Midpoint of GiveWell's cited $3,500 to $5,500 modeled cost-per-life-saved range across top charities",
     display_name="GiveWell Midpoint of Modeled Cost per Life Saved Range",
     unit="USD/life",
-    confidence="medium",
-    distribution="lognormal",
-    confidence_interval=(3500, 5500),
+    distribution="fixed",
     keywords=["4k", "costs", "funding", "investment", "givewell", "life", "avg"],
     latex_symbol=r"Cost_{GW,avg}",  # LaTeX symbol for equations
 )  # Midpoint of cited $3,500 to $5,500 range

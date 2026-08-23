@@ -20985,7 +20985,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Hours of estimated annual US military spending above the first-principles homeland-defense baseline equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.
+Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.
 
 **Inputs**:
 
@@ -21040,7 +21040,7 @@ Conditional philanthropic cost-effectiveness of adopting Universal Right to Try 
 
 **Inputs**:
 
-- [GiveWell Midpoint of Modeled Cost per Life Saved Range](#sec-givewell_cost_per_life_avg) 📊: $4,500 (95% CI: $3,500 - $5,500)
+- [GiveWell Midpoint of Modeled Cost per Life Saved Range](#sec-givewell_cost_per_life_avg) 📊: $4,500
 - [Universal Right to Try with Evidence Philanthropic Cost per Life Saved](#sec-state_rtt_philanthropic_cost_per_life_saved) 🔢: $0.00707
 
 $$
@@ -36258,17 +36258,9 @@ Midpoint of GiveWell's cited $3,500 to $5,500 modeled cost-per-life-saved range 
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$3,500, $5,500] • Distribution: Lognormal
+**Technical**: Distribution: Fixed
 
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3,500 and $5,500 (±22%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-givewell_cost_per_life_avg.qmd >}}
-
-*~ Medium confidence*
+*✓ High confidence*
 
 :::
 
