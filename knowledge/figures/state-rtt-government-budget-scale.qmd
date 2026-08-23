@@ -1,0 +1,77 @@
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+
+from dih_models.plotting.chart_style import (
+    COLOR_BLACK,
+    COLOR_WHITE,
+    add_png_metadata,
+    add_watermark,
+    clean_spines,
+    get_figure_output_path,
+    setup_chart_style,
+)
+from dih_models.parameters import format_parameter_value
+
+setup_chart_style()
+
+budget_hours = {
+    "Estimated US military\noverspend": float(STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS),
+    "NIH annual budget": float(STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS),
+    "FDA annual\nprogram budget": float(STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS),
+}
+
+names = list(budget_hours)
+values = list(budget_hours.values())
+
+fig, ax = plt.subplots(figsize=(11, 6.5))
+bars = ax.barh(
+    names,
+    values,
+    color=COLOR_WHITE,
+    edgecolor=COLOR_BLACK,
+    linewidth=2,
+    hatch=["///", "...", ""],
+)
+ax.set_xscale("log")
+ax.invert_yaxis()
+
+for bar, value in zip(bars, values):
+    label = f"{value * 60:.0f} minutes" if value < 1 else f"{value:.1f} hours"
+    ax.text(
+        value * 1.2,
+        bar.get_y() + bar.get_height() / 2,
+        label,
+        va="center",
+        ha="left",
+        fontsize=12,
+        weight="bold",
+    )
+
+ax.set_title("The Full 50-State Launch Is Tiny at Federal Scale", fontsize=20, weight="bold", pad=16)
+launch_cost = format_parameter_value(float(STATE_RTT_PHILANTHROPIC_COST_TOTAL), "USD")
+ax.set_xlabel(f"Hours of each annual budget equal to the {launch_cost} launch (log scale)", fontsize=12)
+ax.text(
+    0.5,
+    -0.16,
+    "Budget scale only. FDA and NIH bars do not estimate those agencies' cost-effectiveness.",
+    transform=ax.transAxes,
+    ha="center",
+    va="top",
+    fontsize=10,
+)
+clean_spines(ax)
+ax.grid(axis="x", which="both", linestyle=":", alpha=0.35)
+add_watermark(fig)
+
+output_path = get_figure_output_path("state-rtt-government-budget-scale.png")
+plt.savefig(output_path, dpi=200, bbox_inches="tight", facecolor=COLOR_WHITE)
+add_png_metadata(
+    output_path,
+    title="Universal Right to Trial Federal Budget Scale",
+    description=f"Hours of selected annual federal budgets equal to the modeled {launch_cost} launch cost.",
+)
+plt.show()
+```

@@ -39,15 +39,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 894 parameters used in the analysis, organized by type:
+This appendix documents all 900 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 254
-- Calculated values: 452
+- External sources (peer-reviewed): 255
+- Calculated values: 457
 - Core definitions: 188
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (452 parameters) • [External Data Sources](#sec-external) (254 parameters) • [Core Definitions](#sec-definitions) (188 parameters)
+[Calculated Values](#sec-calculated) (457 parameters) • [External Data Sources](#sec-external) (255 parameters) • [Core Definitions](#sec-definitions) (188 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -25193,6 +25193,80 @@ $$
 
 :::
 
+### Universal State Right to Trial Cost in FDA Budget Hours: 80.7 hours {#sec-state_rtt_fda_budget_equivalent_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hours of the FDA annual program budget equal to the full central philanthropic launch cost for universal state Right to Trial. This is a scale comparison, not a claim about FDA cost-effectiveness.
+
+**Inputs**:
+
+- [Universal State Right to Trial Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [FDA Annual Program Budget](#sec-fda_annual_program_budget) 📊: $7.06 billion
+
+$$
+Hours_{RTT,FDA} = \frac{C_{RTT}}{Budget_{FDA}} \times 8,760
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_fda_budget_equivalent_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_fda_budget_equivalent_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_fda_budget_equivalent_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_fda_budget_equivalent_hours.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Trial in All 50 States: Potential Impact and Cost](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal State Right to Trial Cost in NIH Budget Hours: 12.1 hours {#sec-state_rtt_nih_budget_equivalent_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hours of the NIH annual budget equal to the full central philanthropic launch cost for universal state Right to Trial. This is a scale comparison, not a claim about NIH cost-effectiveness.
+
+**Inputs**:
+
+- [Universal State Right to Trial Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [NIH Annual Budget](#sec-nih_annual_budget) 📊: $47 billion (95% CI: $45 billion - $50 billion)
+
+$$
+Hours_{RTT,NIH} = \frac{C_{RTT}}{Budget_{NIH}} \times 8,760
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Trial in All 50 States: Potential Impact and Cost](../appendix/state-right-to-trial-impact.html)
+
+:::
+
 ### Universal State Right to Trial Philanthropic Cost per DALY: $0.000134 {#sec-state_rtt_philanthropic_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -25272,6 +25346,92 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-state_rtt_philanthropic_cost_per_daly.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Trial in All 50 States: Potential Impact and Cost](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal State Right to Trial Philanthropic Cost per Life Saved: $0.00707 {#sec-state_rtt_philanthropic_cost_per_life_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional philanthropic cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.
+
+**Inputs**:
+
+- [Universal State Right to Trial Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Lives Saved from Universal State Right to Trial](#sec-state_rtt_treatment_acceleration_lives_saved) 🔢: 9.19 billion deaths
+
+$$
+\begin{gathered}
+Cost_{RTT,life} \\
+= \frac{C_{RTT}}{Lives_{RTT}} \\
+= \frac{\$65M}{9.19B} \\
+= \$0.00707
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{RTT} \\
+= Deaths_{disease,daily} \times Pct_{avoid,death} \times T_{accel,RTT} \times 365 \\
+= 150{,}000 \times 92.6\% \times 181 \times 365 \\
+= 9.19B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
 
 **Used in:**
 
@@ -25582,6 +25742,156 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-state_rtt_treatment_acceleration_years.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Trial in All 50 States: Potential Impact and Cost](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal State Right to Trial Cost in US Military Overspend Hours: 0.811 hours {#sec-state_rtt_us_military_overspend_equivalent_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hours of estimated annual US military spending above the first-principles homeland-defense baseline equal to the full central philanthropic launch cost for universal state Right to Trial.
+
+**Inputs**:
+
+- [Universal State Right to Trial Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Military Overspend](#sec-us_gov_waste_military_overspend) 🔢: $702 billion
+
+$$
+Hours_{RTT,mil} = \frac{C_{RTT}}{W_{military}} \times 8,760
+$$
+where:
+$$
+\begin{gathered}
+W_{military} \\
+= Spending_{US,2024} - D_{optimal} \\
+= \$886B - \$184B \\
+= \$702B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{optimal} \\
+= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
++ D_{hedge} \\
+= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
+= \$184B
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Trial in All 50 States: Potential Impact and Cost](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal State Right to Trial Cost-Effectiveness vs GiveWell Range Midpoint: 636.2kx {#sec-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional philanthropic cost-effectiveness of universal state Right to Trial relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
+
+**Inputs**:
+
+- [GiveWell Midpoint of Modeled Cost per Life Saved Range](#sec-givewell_cost_per_life_avg) 📊: $4,500 (95% CI: $3,500 - $5,500)
+- [Universal State Right to Trial Philanthropic Cost per Life Saved](#sec-state_rtt_philanthropic_cost_per_life_saved) 🔢: $0.00707
+
+$$
+\begin{gathered}
+k_{RTT,GiveWell} \\
+= \frac{Cost_{GW,avg}}{Cost_{RTT,life}} \\
+= \frac{\$4.5K}{\$0.00707} \\
+= 636{,}000
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{RTT,life} \\
+= \frac{C_{RTT}}{Lives_{RTT}} \\
+= \frac{\$65M}{9.19B} \\
+= \$0.00707
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{RTT} \\
+= Deaths_{disease,daily} \times Pct_{avoid,death} \times T_{accel,RTT} \times 365 \\
+= 150{,}000 \times 92.6\% \times 181 \times 365 \\
+= 9.19B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
 
 **Used in:**
 
@@ -42511,6 +42821,22 @@ Reduction in global farmland if the world shifted off meat and dairy while still
 
 :::
 
+### FDA Annual Program Budget: $7.06 billion {#sec-fda_annual_program_budget}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+FDA total program level in the FY 2026 operating plan. This is used only for a budget-scale comparison, not as an estimate of FDA cost-effectiveness.
+
+**Source**: [@fda-fy2026-operating-plan]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### FDA-Approved Drug Products: 20,000 products {#sec-fda_approved_products_count}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -42682,15 +43008,27 @@ Global median per-capita household income as measured by the Gallup World Poll (
 
 :::
 
-### Givewell Average Cost per Life Saved Across Top Charities: $4,500 {#sec-givewell_cost_per_life_avg}
+### GiveWell Midpoint of Modeled Cost per Life Saved Range: $4,500 {#sec-givewell_cost_per_life_avg}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-GiveWell average cost per life saved across top charities
+Midpoint of GiveWell's cited $3,500 to $5,500 modeled cost-per-life-saved range across top charities
 
 **Source**: [@givewell-cost-per-life-saved]
 
-*✓ High confidence*
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3,500, $5,500] • Distribution: Lognormal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $3,500 and $5,500 (±22%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-givewell_cost_per_life_avg.qmd >}}
+
+*~ Medium confidence*
 
 :::
 

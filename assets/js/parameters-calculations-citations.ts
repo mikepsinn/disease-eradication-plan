@@ -1028,6 +1028,22 @@ export const FARMLAND_REDUCTION_POTENTIAL_PCT: Parameter = {
   manualPageTitle: "The Slaughterhouse Was a Workaround",
 };
 
+export const FDA_ANNUAL_PROGRAM_BUDGET: Parameter = {
+  value: 7055869000.0,
+  parameterName: "FDA_ANNUAL_PROGRAM_BUDGET",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-fda_annual_program_budget",
+  unit: "USD",
+  displayName: "FDA Annual Program Budget",
+  description: "FDA total program level in the FY 2026 operating plan. This is used only for a budget-scale comparison, not as an estimate of FDA cost-effectiveness.",
+  sourceType: "external",
+  sourceRef: "fda-fy2026-operating-plan",
+  sourceUrl: "https://www.fda.gov/media/192236/download",
+  confidence: "high",
+  distribution: "fixed",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
 export const FDA_APPROVED_PRODUCTS_COUNT: Parameter = {
   value: 20000.0,
   parameterName: "FDA_APPROVED_PRODUCTS_COUNT",
@@ -1149,12 +1165,14 @@ export const GIVEWELL_COST_PER_LIFE_AVG: Parameter = {
   parameterName: "GIVEWELL_COST_PER_LIFE_AVG",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-givewell_cost_per_life_avg",
   unit: "USD/life",
-  displayName: "Givewell Average Cost per Life Saved Across Top Charities",
-  description: "GiveWell average cost per life saved across top charities",
+  displayName: "GiveWell Midpoint of Modeled Cost per Life Saved Range",
+  description: "Midpoint of GiveWell's cited $3,500 to $5,500 modeled cost-per-life-saved range across top charities",
   sourceType: "external",
   sourceRef: "givewell-cost-per-life-saved",
   sourceUrl: "https://www.givewell.org/charities/top-charities",
-  confidence: "high",
+  confidence: "medium",
+  confidenceInterval: [3500.0, 5500.0],
+  distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
@@ -9789,6 +9807,42 @@ export const SHIRT_VALUE_PER_WEARER_USD: Parameter = {
   manualPageTitle: "The Funniest Joke in the Universe",
 };
 
+export const STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS: Parameter = {
+  value: 80.6987771457,
+  parameterName: "STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_fda_budget_equivalent_hours",
+  unit: "hours",
+  displayName: "Universal State Right to Trial Cost in FDA Budget Hours",
+  description: "Hours of the FDA annual program budget equal to the full central philanthropic launch cost for universal state Right to Trial. This is a scale comparison, not a claim about FDA cost-effectiveness.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ FDA_ANNUAL_PROGRAM_BUDGET × 8,760",
+  latex: "Hours_{RTT,FDA} = \\frac{C_{RTT}}{Budget_{FDA}} \\times 8,760",
+  confidenceInterval: [31.0379912099, 189.634213444],
+  inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "FDA_ANNUAL_PROGRAM_BUDGET"],
+  computeExpr: "((STATE_RTT_PHILANTHROPIC_COST_TOTAL / FDA_ANNUAL_PROGRAM_BUDGET) * 8760.0)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
+export const STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS: Parameter = {
+  value: 12.114893617,
+  parameterName: "STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_nih_budget_equivalent_hours",
+  unit: "hours",
+  displayName: "Universal State Right to Trial Cost in NIH Budget Hours",
+  description: "Hours of the NIH annual budget equal to the full central philanthropic launch cost for universal state Right to Trial. This is a scale comparison, not a claim about NIH cost-effectiveness.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ NIH_ANNUAL_BUDGET × 8,760",
+  latex: "Hours_{RTT,NIH} = \\frac{C_{RTT}}{Budget_{NIH}} \\times 8,760",
+  confidenceInterval: [4.65957446809, 28.4688120847],
+  inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "NIH_ANNUAL_BUDGET"],
+  computeExpr: "((STATE_RTT_PHILANTHROPIC_COST_TOTAL / NIH_ANNUAL_BUDGET) * 8760.0)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
 export const STATE_RTT_PHILANTHROPIC_COST_PER_DALY: Parameter = {
   value: 0.000134456448736,
   parameterName: "STATE_RTT_PHILANTHROPIC_COST_PER_DALY",
@@ -9803,6 +9857,24 @@ export const STATE_RTT_PHILANTHROPIC_COST_PER_DALY: Parameter = {
   confidenceInterval: [4.01449034938e-05, 0.000447566436092],
   inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_DALYS"],
   computeExpr: "(STATE_RTT_PHILANTHROPIC_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_DALYS)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
+export const STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED: Parameter = {
+  value: 0.00707277757734,
+  parameterName: "STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_cost_per_life_saved",
+  unit: "USD/life",
+  displayName: "Universal State Right to Trial Philanthropic Cost per Life Saved",
+  description: "Conditional philanthropic cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
+  latex: "\\begin{gathered}\nCost_{RTT,life} = \\frac{C_{RTT}}{Lives_{RTT}} = \\frac{\\$65M}{9.19B} = \\$0.00707\n\\\\[0.5em]\n\\text{where } Lives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [0.0021050997161, 0.0235920076529],
+  inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"],
+  computeExpr: "(STATE_RTT_PHILANTHROPIC_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
   manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
 };
@@ -9875,6 +9947,42 @@ export const STATE_RTT_TREATMENT_ACCELERATION_YEARS: Parameter = {
   confidenceInterval: [79.0533772556, 332.378845812],
   inputs: ["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"],
   computeExpr: "(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT * (1.0 - (1.0 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)))",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
+export const STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS: Parameter = {
+  value: 0.811111111111,
+  parameterName: "STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_us_military_overspend_equivalent_hours",
+  unit: "hours",
+  displayName: "Universal State Right to Trial Cost in US Military Overspend Hours",
+  description: "Hours of estimated annual US military spending above the first-principles homeland-defense baseline equal to the full central philanthropic launch cost for universal state Right to Trial.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ US_GOV_WASTE_MILITARY_OVERSPEND × 8,760",
+  latex: "\\begin{gathered}\nHours_{RTT,mil} = \\frac{C_{RTT}}{W_{military}} \\times 8,760\n\\\\[0.5em]\n\\text{where } W_{military} = Spending_{US,2024} - D_{optimal} = \\$886B - \\$184B = \\$702B\n\\\\[0.5em]\n\\text{where } D_{optimal} = D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} + D_{hedge} = \\$30B + \\$35B + \\$14B + \\$30B + \\$15B + \\$60B = \\$184B\n\\end{gathered}",
+  confidenceInterval: [0.31119732011, 1.90637770578],
+  inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "US_GOV_WASTE_MILITARY_OVERSPEND"],
+  computeExpr: "((STATE_RTT_PHILANTHROPIC_COST_TOTAL / US_GOV_WASTE_MILITARY_OVERSPEND) * 8760.0)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
+export const STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER: Parameter = {
+  value: 636242.261373,
+  parameterName: "STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier",
+  unit: "x",
+  displayName: "Universal State Right to Trial Cost-Effectiveness vs GiveWell Range Midpoint",
+  description: "Conditional philanthropic cost-effectiveness of universal state Right to Trial relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED",
+  latex: "\\begin{gathered}\nk_{RTT,GiveWell} = \\frac{Cost_{GW,avg}}{Cost_{RTT,life}} = \\frac{\\$4.5K}{\\$0.00707} = 636{,}000\n\\\\[0.5em]\n\\text{where } Cost_{RTT,life} = \\frac{C_{RTT}}{Lives_{RTT}} = \\frac{\\$65M}{9.19B} = \\$0.00707\n\\\\[0.5em]\n\\text{where } Lives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [185622.535052, 2163582.32769],
+  inputs: ["GIVEWELL_COST_PER_LIFE_AVG", "STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED"],
+  computeExpr: "(GIVEWELL_COST_PER_LIFE_AVG / STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
   manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
 };
@@ -15245,6 +15353,7 @@ export const parameters = {
   FACTORY_FARM_SHARE_US,
   FARMED_LAND_ANIMALS_SLAUGHTERED_ANNUAL,
   FARMLAND_REDUCTION_POTENTIAL_PCT,
+  FDA_ANNUAL_PROGRAM_BUDGET,
   FDA_APPROVED_PRODUCTS_COUNT,
   FDA_APPROVED_UNIQUE_ACTIVE_INGREDIENTS,
   FDA_GRAS_SUBSTANCES_COUNT,
@@ -15745,11 +15854,16 @@ export const parameters = {
   SHIRT_PROGRAM_ROI_RATIO,
   SHIRT_SEED_PROGRAM_TOTAL_USD,
   SHIRT_VALUE_PER_WEARER_USD,
+  STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS,
+  STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS,
   STATE_RTT_PHILANTHROPIC_COST_PER_DALY,
+  STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED,
   STATE_RTT_TREATMENT_ACCELERATION_DALYS,
   STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED,
   STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS,
   STATE_RTT_TREATMENT_ACCELERATION_YEARS,
+  STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS,
+  STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER,
   STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT,
   STATUS_QUO_QUEUE_CLEARANCE_YEARS,
   THALIDOMIDE_DALYS_PER_EVENT,
@@ -16878,6 +16992,19 @@ export const citations: Record<string, Citation> = {
         'container-title': "FDA",
         URL: "https://www.fda.gov/media/143704/download",
         note: "FDA, Facts About Generic Drugs",
+  },
+  "fda-fy2026-operating-plan": {
+        id: "fda-fy2026-operating-plan",
+        type: "report",
+        title: "FY 2026 FDA Operating Plan",
+        author: [
+          {
+            literal: "U.S. Food and Drug Administration"
+          },
+        ],
+        issued: { 'date-parts': [[2026]] },
+        URL: "https://www.fda.gov/media/192236/download",
+        note: "The plan reports a total FDA program level of \\$7,055.869 million.",
   },
   "fda-gras-list-count": {
         id: "fda-gras-list-count",
@@ -18902,11 +19029,11 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 894,
-  external: 254,
-  calculated: 452,
+  total: 900,
+  external: 255,
+  calculated: 457,
   definitions: 188,
-  citations: 196,
+  citations: 197,
 } as const;
 
 // ============================================================================

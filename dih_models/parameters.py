@@ -1661,6 +1661,20 @@ NIH_ANNUAL_BUDGET = Parameter(
     latex_symbol=r"Budget_{NIH}",  # LaTeX symbol for equations
 )
 
+FDA_ANNUAL_PROGRAM_BUDGET = Parameter(
+    7_055_869_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_ref="fda-fy2026-operating-plan",
+    source_type=SourceType.EXTERNAL,
+    description="FDA total program level in the FY 2026 operating plan. This is used only for a budget-scale comparison, not as an estimate of FDA cost-effectiveness.",
+    display_name="FDA Annual Program Budget",
+    unit="USD",
+    confidence="high",
+    distribution="fixed",
+    keywords=["fda", "budget", "annual", "program level", "fy 2026"],
+    latex_symbol=r"Budget_{FDA}",
+)
+
 NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
     0.033,
     manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
@@ -9229,6 +9243,77 @@ STATE_RTT_PHILANTHROPIC_COST_PER_DALY = Parameter(
     hide_ci=True,
 )
 
+STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED = Parameter(
+    float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional philanthropic cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
+    display_name="Universal State Right to Trial Philanthropic Cost per Life Saved",
+    unit="USD/life",
+    formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
+    confidence="low",
+    inputs=["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"],
+    compute=lambda ctx: ctx["STATE_RTT_PHILANTHROPIC_COST_TOTAL"]
+    / ctx["STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"],
+    keywords=["right to trial", "cost per life saved", "GiveWell", "philanthropy"],
+    latex_symbol=r"Cost_{RTT,life}",
+    hide_ci=True,
+)
+
+STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS = Parameter(
+    float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(FDA_ANNUAL_PROGRAM_BUDGET) * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Hours of the FDA annual program budget equal to the full central philanthropic launch cost for universal state Right to Trial. This is a scale comparison, not a claim about FDA cost-effectiveness.",
+    display_name="Universal State Right to Trial Cost in FDA Budget Hours",
+    unit="hours",
+    formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ FDA_ANNUAL_PROGRAM_BUDGET × 8,760",
+    confidence="low",
+    inputs=["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "FDA_ANNUAL_PROGRAM_BUDGET"],
+    compute=lambda ctx: ctx["STATE_RTT_PHILANTHROPIC_COST_TOTAL"]
+    / ctx["FDA_ANNUAL_PROGRAM_BUDGET"]
+    * HOURS_PER_YEAR,
+    keywords=["right to trial", "fda", "budget", "hours", "scale comparison"],
+    latex_symbol=r"Hours_{RTT,FDA}",
+    hide_ci=True,
+)
+
+STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS = Parameter(
+    float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(NIH_ANNUAL_BUDGET) * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Hours of the NIH annual budget equal to the full central philanthropic launch cost for universal state Right to Trial. This is a scale comparison, not a claim about NIH cost-effectiveness.",
+    display_name="Universal State Right to Trial Cost in NIH Budget Hours",
+    unit="hours",
+    formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ NIH_ANNUAL_BUDGET × 8,760",
+    confidence="low",
+    inputs=["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "NIH_ANNUAL_BUDGET"],
+    compute=lambda ctx: ctx["STATE_RTT_PHILANTHROPIC_COST_TOTAL"]
+    / ctx["NIH_ANNUAL_BUDGET"]
+    * HOURS_PER_YEAR,
+    keywords=["right to trial", "nih", "budget", "hours", "scale comparison"],
+    latex_symbol=r"Hours_{RTT,NIH}",
+    hide_ci=True,
+)
+
+STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS = Parameter(
+    float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(US_GOV_WASTE_MILITARY_OVERSPEND) * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Hours of estimated annual US military spending above the first-principles homeland-defense baseline equal to the full central philanthropic launch cost for universal state Right to Trial.",
+    display_name="Universal State Right to Trial Cost in US Military Overspend Hours",
+    unit="hours",
+    formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ US_GOV_WASTE_MILITARY_OVERSPEND × 8,760",
+    confidence="low",
+    inputs=["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "US_GOV_WASTE_MILITARY_OVERSPEND"],
+    compute=lambda ctx: ctx["STATE_RTT_PHILANTHROPIC_COST_TOTAL"]
+    / ctx["US_GOV_WASTE_MILITARY_OVERSPEND"]
+    * HOURS_PER_YEAR,
+    keywords=["right to trial", "military overspend", "budget", "hours", "reallocation"],
+    latex_symbol=r"Hours_{RTT,mil}",
+    hide_ci=True,
+)
+
 # Pragmatic trial system targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     float(CURRENT_TRIALS_PER_YEAR) * float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
@@ -9983,12 +10068,15 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
-    description="GiveWell average cost per life saved across top charities",
-    display_name="Givewell Average Cost per Life Saved Across Top Charities",
+    description="Midpoint of GiveWell's cited $3,500 to $5,500 modeled cost-per-life-saved range across top charities",
+    display_name="GiveWell Midpoint of Modeled Cost per Life Saved Range",
     unit="USD/life",
+    confidence="medium",
+    distribution="lognormal",
+    confidence_interval=(3500, 5500),
     keywords=["4k", "costs", "funding", "investment", "givewell", "life", "avg"],
     latex_symbol=r"Cost_{GW,avg}",  # LaTeX symbol for equations
-)  # Midpoint of top charities
+)  # Midpoint of cited $3,500 to $5,500 range
 
 # Historical public health comparisons
 SMALLPOX_ERADICATION_ROI = Parameter(
@@ -10582,6 +10670,22 @@ DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
     compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["DFDA_DIRECT_FUNDING_COST_PER_DALY"],
     latex_symbol=r"k_{direct,nets}",  # LaTeX symbol for equations
 )  # ~90× more cost-effective than bed nets
+
+STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER = Parameter(
+    GIVEWELL_COST_PER_LIFE_AVG / STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional philanthropic cost-effectiveness of universal state Right to Trial relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+    display_name="Universal State Right to Trial Cost-Effectiveness vs GiveWell Range Midpoint",
+    unit="x",
+    formula="GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED",
+    confidence="low",
+    inputs=["GIVEWELL_COST_PER_LIFE_AVG", "STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED"],
+    compute=lambda ctx: ctx["GIVEWELL_COST_PER_LIFE_AVG"] / ctx["STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED"],
+    keywords=["right to trial", "GiveWell", "cost per life saved", "cost effectiveness", "philanthropy"],
+    latex_symbol=r"k_{RTT,GiveWell}",
+    hide_ci=True,
+)
 
 # Treaty campaign leverage vs direct funding
 TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
