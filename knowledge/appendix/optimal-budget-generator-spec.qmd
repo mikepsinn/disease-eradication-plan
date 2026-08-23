@@ -561,7 +561,9 @@ Assess whether the proposed spending change lies inside observed support and whe
 | B | Qualified causal evidence | Bounded change or pilot |
 | C | Predictive evidence | Pilot or scenario |
 | D | Prior or benchmark | Research priority, no target claim |
-| X | Failed diagnostics, unsupported extrapolation, or safety failure | Do not recommend |
+| X | Failed critical diagnostic or unsupported causal extrapolation | No evidentiary recommendation |
+
+Safety status is a separate gate. A change supported by A- or B-grade evidence can still receive **Do Not Recommend** when a rights, subgroup-harm, catastrophic-risk, capacity, or implementation gate fails.
 
 ## Gap Analysis and Priority Ranking
 

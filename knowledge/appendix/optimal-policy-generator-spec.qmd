@@ -1053,7 +1053,9 @@ Evidence grades are assigned from the identification design and its diagnostics,
 | **B** | Quasi-experimental design that passes critical diagnostics | Qualified causal estimate |
 | **C** | Adjusted longitudinal evidence without credible causal identification | Predictive estimate |
 | **D** | Cross-sectional comparison or expert benchmark | Prior or hypothesis |
-| **X** | Failed critical diagnostic, unsupported extrapolation, or unresolved severe harm | No recommendation |
+| **X** | Failed critical diagnostic or unsupported causal extrapolation | No evidentiary recommendation |
+
+Safety status is recorded separately from evidentiary grade. Credible causal evidence can still produce **DO NOT RECOMMEND** when a rights, subgroup-harm, catastrophic-risk, or implementation gate fails.
 
 Heterogeneity, sample size, precision, replication, publication bias, and transportability remain visible and may lower a grade. None raises a design above what its identification strategy supports. Grade thresholds should be prospectively calibrated against realized forecasts; they should not be tuned until retrospective examples look persuasive.
 
@@ -1080,7 +1082,8 @@ There is no universal minimum number of periods, observations, or control jurisd
 - design-specific diagnostics;
 - spillover, anticipation, and interference assumptions; and
 - whether the target decision lies within the evidence's population, dose, and implementation support.
-| Pre-treatment RMSE (synthetic control) | < 2 SD | Acceptable pre-treatment fit |
+
+For synthetic-control studies, the card reports pre-treatment fit and compares the treated unit's error with the placebo distribution. No universal RMSE cutoff substitutes for that design-specific assessment.
 
 ### Parallel Trends Testing (DiD)
 

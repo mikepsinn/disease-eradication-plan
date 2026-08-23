@@ -326,7 +326,9 @@ Evidence receives one of five grades:
 | B | Quasi-experimental design that passes its diagnostics | Qualified causal estimate |
 | C | Adjusted longitudinal evidence | Predictive estimate |
 | D | Cross-sectional comparison or expert benchmark | Prior or hypothesis |
-| X | Failed diagnostics, unsupported extrapolation, or unresolved severe harm | No recommendation |
+| X | Failed critical diagnostic or unsupported causal extrapolation | No evidentiary recommendation |
+
+Safety status is recorded separately from evidentiary grade. An A- or B-grade estimate can still produce **Do Not Recommend** when a rights, subgroup-harm, catastrophic-risk, or implementation gate fails.
 
 The method follows the decision. Difference-in-differences requires credible pre-trends and treatment timing. Synthetic control requires a credible donor pool and pre-treatment fit. Regression discontinuity requires a real threshold and manipulation checks. Machine learning may improve prediction inside a valid design, but prediction alone does not raise the causal grade.
 
@@ -641,7 +643,7 @@ The general rule: mechanisms 1 and 2 acquire durable capacity, 3 rents temporary
 
 Best-case scenarios assign massive value to broad policy improvement, but they overlap and are not forecasts. The narrower political-economy point does not require those totals: many reforms can create diffuse public benefits larger than the concentrated losses faced by incumbent beneficiaries.
 
-**The math:** Pay off all the losers and you still have $15-45T left over. This is why reform is feasible: the pie is big enough that everyone can get a bigger slice.
+**The structure:** When a reform's diffuse benefits credibly exceed the concentrated losses imposed on incumbent beneficiaries, compensation may leave a surplus. Whether it does, and how large that surplus is, must be estimated reform by reform rather than inferred from the overlapping scenario totals above.
 
 (This is the Coase Theorem [@coase1960] applied to governance: when gains vastly exceed losses, compensation makes everyone better off.)
 

@@ -1,6 +1,6 @@
 ---
 title: 'Optimocracy: The Evidence Machine'
-description: The Optimitron comes free with your first government. Its Optimal Budget Generator (OBG) and Optimal Policy Generator (OPG) check which policies work by looking at the 10,000 places that already tried them. Your species skipped this step and went straight to arguing.
+description: The Optimitron is a public evidence scoreboard. It grades policy evidence, reports health and income forecasts separately, recommends bounded action or a pilot when justified, and publishes when the evidence is insufficient.
 published: true
 tags:
   - solution
@@ -47,13 +47,13 @@ The United States spends {{< var us_vs_switzerland_spending_gap >}} percentage p
 
 ![Rich countries aren't rich because of resources. They're rich because their rules aren't stupid. Poor countries have bad governments. It's the institutions, not the dirt.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-scale-of-welfare-loss-empirical-foundations-bw-academic.jpg)
 
-Documented US governance waste totals {{< var us_gov_waste_total >}} ({{< var us_gov_waste_pct_gdp >}} of GDP). Globally, the opportunity cost of suboptimal policy reaches {{< var political_dysfunction_global_opportunity_cost_total >}} ({{< var political_dysfunction_global_opportunity_cost_pct_gdp >}} of GDP), putting your civilization's governance efficiency at {{< var political_dysfunction_global_efficiency_score >}}. Your species is running at roughly half its technological potential. Imagine building a car, then only turning on half the cylinders because the other half are controlled by a committee that meets once a year and disagrees about what "forward" means. (For the full accounting, see the [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] and [US Efficiency Audit](../appendix/us-efficiency-audit.qmd) [@us-efficiency-audit-paper-2025].)
+Some studies and accounting exercises suggest very large governance losses. Their definitions overlap, and their totals are best treated as scenarios rather than a recoverable sum. The practical case for a scoreboard needs only a narrower fact: governments repeatedly make consequential decisions without publishing a forecast and checking it against later outcomes. (For the underlying scenarios, see the [Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] and [US Efficiency Audit](../appendix/us-efficiency-audit.qmd) [@us-efficiency-audit-paper-2025].)
 
 Or consider the War on Drugs. Your species spends {{< var us_gov_waste_drug_war >}} per year on it. When Nixon declared it in 1971, about 6,000 Americans died annually from drug overdoses [@cdc-overdose-1980]. After 50 years and over a trillion dollars, that number exceeded 100,000 [@cdc-overdose-2023]. At no point did anyone check whether the policy was working. At no point did anyone stop funding it because it wasn't. No sane species would spend a trillion dollars on something, watch the problem get 18 times worse, and increase the budget. Your species did exactly that.
 
 ## The Answer Key You Already Have
 
-Your planet has roughly 10,000 jurisdictions making different policy choices. Kansas cut education funding; Minnesota increased it. Fifty states adopted different minimum wages over 30 years. Portugal decriminalized drugs; Singapore didn't. These are natural experiments, and the math can now figure out which policy caused which result, without needing anyone's permission to run an experiment. The experiment already happened. You just weren't paying attention.
+Your planet has thousands of jurisdictions making different policy choices. Kansas cut education funding; Minnesota increased it. States adopted different minimum wages at different times. Portugal and Singapore chose very different drug policies. These comparisons can generate hypotheses and, sometimes, credible causal designs. They are not automatically natural experiments, and more observations cannot repair confounding.
 
 ![Optimocracy: measure what works, recommend what works, check if anyone listened, pay people who listened. It's the revolutionary idea of doing the thing that works.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-mechanism-bw-academic.jpg)
 
@@ -69,24 +69,24 @@ The Copenhagen Consensus already publishes rigorous benefit-cost analyses [@cope
 
 Why? Because information doesn't change incentives. A Princeton study analyzed 1,779 policy decisions and found that average citizens have "little or no independent influence" on policy outcomes [@gilens2014]. Economic elites and organized interest groups drive policy. You already knew this (it's covered in [Unrepresentative Democracy](../problem/unrepresentative-democracy.qmd)). The point here is that publishing better data doesn't fix the problem. Your politicians already know which programs produce value. They don't act because acting doesn't maximize getting votes, getting papers, or getting a nice job afterward selling access to their replacements.
 
-So there are two problems, and this chapter is only about the first one. The knowledge problem is "which policies actually work," and it is solved by measurement nobody can corrupt. The incentive problem is "why would anyone act on the answer," and it has [several solutions of varying price](../appendix/optimocracy-paper.qmd#sec-adoption-mechanisms): an institution that adopts the recommendations because they are correct, a shareholder who points out that a company's lobbying is losing its own shareholders money, a SuperPAC, or [bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] paying a share of whatever gets redirected. Every one of them needs the same thing first, which is a number that is actually true.
+So there are two problems, and this chapter is only about the first one. The knowledge problem is "what does the evidence justify for this decision?" It is addressed by transparent measurement, explicit assumptions, and later evaluation. The incentive problem is "why would anyone act on the answer," and it has [several solutions of varying price](../appendix/optimocracy-paper.qmd#sec-adoption-mechanisms): an institution, an active shareholder, a SuperPAC, or [bonds](incentive-alignment-bonds.qmd) [@iab-paper-2025] tied to a measurable redirected stream. Every mechanism needs an evidence card honest enough to say "we do not know" when necessary.
 
 ## The Mechanism: Recommend, Track, Reward
 
 The Evidence Machine does three things. That's it. Three things. Your species has difficulty with three things, so I'll use small words.
 
-(It's an appliance. You plug in policies, it tells you which ones work. Your species will find this concept exotic.)
+(It is a scoreboard, not an oracle. Sometimes its most useful output is a pilot or an admission that the evidence is insufficient.)
 
-**Recommend.** The Optimitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States:
+**Recommend.** The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] grades evidence for a defined law or rule. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] is a research-stage extension for bounded spending changes. Neither gets to manufacture certainty from a large projected benefit.
 
-| Category | Current | Optimal | Gap | Evidence |
-|----------|---------|---------|-----|----------|
-| Pragmatic clinical trials | $0.5B | $50B | **+$49.5B** | A (RCTs) |
-| Vaccinations | $8B | $35B | +$27B | A (RCTs) |
-| Military (discretionary) | $850B | $459B | -$391B | C (benchmarks) |
-| Agricultural subsidies | $25B | $0B | -$25B | A (welfare analysis) |
+| Evidence and safety pattern | Output |
+|-----------------------------|--------|
+| Credible causal evidence, decision within observed support, safety gates pass | Recommend a bounded action |
+| Promising but scaled beyond the evidence | Pilot First |
+| Association, benchmark, or unresolved confounding | Insufficient Evidence |
+| Credible rights, subgroup-harm, catastrophic-risk, or implementation failure | Do Not Recommend |
 
-You are spending 100 times less than optimal on figuring out which medicines work, and paying farmers $25 billion a year to grow food nobody asked for. The Optimitron noticed. It also noticed you could cut $391 billion from the murder budget and still have the largest military on the planet. The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts.
+Every card reports the health forecast and income forecast separately, names the identification design, shows uncertainty and blocking factors, and sets a date for checking the prediction against what happened. Enact, replace, repeal, and maintain are possible instructions only after those gates pass.
 
 **Track.** When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: 78% aligned. Senator Jones: 34% aligned. This information is public. Any citizen can check. There is a word for this. The word is "checking if the person you hired did the thing you hired them to do." Your species finds this concept revolutionary, which tells you everything. Politicians who ignore the evidence must do so on the record.
 
@@ -104,7 +104,7 @@ Currently, your lobbying industry has thousands of capture points. Committee ear
 
 ![Lobbyists currently have thousands of people to corrupt. Optimocracy gives them one target protected by multiple watchdogs. You're trying to make corruption impractical instead of illegal.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
 
-The Evidence Machine collapses all those capture points to a single target: the measurement methodology. Here's the heist: simultaneously bribe the Census Bureau, the Federal Reserve, the Bureau of Labor Statistics, academic institutions, AND decentralized citizen surveys. All without detection. All at the same time. All institutions with different governance structures, different funding sources, different methodologies, and different reasons to hate each other. This is not a corruption strategy. This is the plot of a movie where the criminals lose.
+The Evidence Machine makes the measurement methodology a visible capture target, so its data sources, model choices, revisions, and conflicts must be public. Multiple genuinely independent measurements can make undetected manipulation harder, but nominally different sources may share the same surveys, definitions, or model errors.
 
 Here's how it works in practice. Five independent sources measure median income growth:
 
@@ -116,9 +116,9 @@ Here's how it works in practice. Five independent sources measure median income 
 | University of Michigan (Panel Study of Income Dynamics) | +2.2% |
 | Tax Foundation (IRS data analysis) | +2.0% |
 
-Take the median: **+2.1%**. If one source reports +5.0% (because someone bribed them), the median throws it out automatically. No investigation needed. No whistleblower needed. No committee hearing. Math does the work.
+Take the median: **+2.1%**. That reduces the influence of one extreme report, but it does not eliminate common-source dependence, correlated model error, or coordinated manipulation. The scoreboard must disclose those dependencies rather than pretending five labels mean five independent measurements.
 
-These five sources overlap in some inputs. The sixth source, decentralized citizen surveys, breaks that dependence by adding a methodology-independent stream collected directly from millions of humans. One person lying has approximately zero effect on the median. This is statistics, not voting.
+An independently sampled citizen survey could add another measurement stream, but only after its sampling, nonresponse, verification, privacy, and manipulation risks are validated. It is a cross-check, not a magic independence guarantee.
 
 Your species has spent centuries making corruption illegal. It hasn't worked, because laws are enforced by the same humans who are being bribed. The alternative is obvious: make corruption impractical. There's a difference between "you shouldn't steal" and "the vault has five locks held by five people who hate each other." Your species tried door number one for 3,000 years. We recommend door number two.
 
@@ -128,11 +128,11 @@ Why not 50 metrics? Because each additional target creates a new way to cheat, a
 
 ![Some numbers are easy to fake. GDP per capita looks great if three billionaires move in. Median income and healthy life years are harder to game. You can't fake everyone being less dead.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-goodhart-s-law-doesn-t-apply-here-bw-academic.jpg)
 
-"But correlation isn't causation!" Yes. Thank you. Your species discovered this in the 1800s and has been using it as an excuse to ignore data ever since. The Optimitron doesn't just check whether policies and outcomes happened in the same room. It uses the fact that 10,000 jurisdictions adopted different policies at different times to isolate what actually caused what. (The boring details: the [technical specification](../appendix/optimal-policy-generator-spec.qmd) scores every causal claim against nine criteria, and if the timing is wrong, the score is automatically zero, no matter how pretty the correlation looks.)
+"But correlation isn't causation!" Correct. Cross-jurisdiction variation earns a causal grade only when a suitable design passes its assumptions and diagnostics. Some decisions will have randomized or credible quasi-experimental evidence. Others will remain predictions, hypotheses, or research priorities. The [technical specification](../appendix/optimal-policy-generator-spec.qmd) makes that distinction explicit.
 
 ## Putting It Together
 
-The full loop: the Evidence Machine identifies what works, [somebody with a financial reason to care](../appendix/optimocracy-paper.qmd#sec-adoption-mechanisms) makes the politicians act on it, the [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] funds it, and [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] allocates the research funds. The Evidence Machine tells governments which policies work. [Wishocracy](wishocracy.qmd) tells the research fund where to aim. Your species calls this "a bold new paradigm." Everyone else calls it "an obvious system." It required four chapters and a bibliography because you're you.
+The full loop: the Evidence Machine publishes what the evidence justifies, [an adoption mechanism](../appendix/optimocracy-paper.qmd#sec-adoption-mechanisms) may act on it, the [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] is one candidate funding change, and [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] is one possible allocation mechanism. Later outcomes test the forecast. The adoption mechanism can vary without changing the calculation protocol.
 
 ![Tribal politics: my team good, your team bad. Optimocracy: did anyone get healthier or richer. One is sports, the other is governance.](/assets/images/optimocracy-paper/optimocracy-paper-section-depolarization-bw-academic.jpg)
 
@@ -142,7 +142,7 @@ Now that you know how the Optimitron works (congratulations, on Wishonia this is
 
 ## The Referee: Who Measures Whether It Worked
 
-Everything above describes how the Evidence Machine works. This section describes who runs it, because "an algorithm that nobody can corrupt" still requires someone to plug it in.
+Everything above describes how the Evidence Machine works. This section describes who runs it, because an algorithm designed to resist capture still requires someone to operate and audit it.
 
 The Measurement Authority (the Referee) is whoever locks the ruler before the game starts, reads the scoreboard at regular intervals, announces whether you've hit the thresholds for releasing prize money, and settles arguments when someone says the numbers are wrong. On Wishonia this job is given to the most boring person available. Boring is a feature.
 
@@ -171,4 +171,4 @@ The Measurement Authority (the Referee) is whoever locks the ruler before the ga
 
 **Succession:** The methodology is published and locked. If the Referee disappears, a replacement panel can pick up the locked methodology and continue measuring. The data sources (WHO, World Bank, national statistical agencies) exist independently of whoever reads them.
 
-For the full technical specification, formal models, and threat analysis, see the [Optimocracy academic paper](../appendix/optimocracy-paper.qmd) [@optimocracy-paper-2025]. For the gory details on how the recommendation engine decides you're spending too much on corn and too little on not dying: [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] and [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025].
+For the full technical specification, formal models, and threat analysis, see the [Optimocracy academic paper](../appendix/optimocracy-paper.qmd) [@optimocracy-paper-2025]. For the research extensions that grade possible policy and budget changes, see the [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] and [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025].

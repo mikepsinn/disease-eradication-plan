@@ -58,29 +58,29 @@ The decentralized TODO list for humanity is the product. The root task is Optimi
 
 ### The Optimal Policy Generator
 
-**What it does:** Determines which laws to enact, replace, repeal, or maintain to maximize median health and wealth.
+**What it does:** Grades the evidence for a defined policy decision, forecasts health and income effects separately, and recommends action, a pilot, or abstention.
 
 **Retail price:** Included. The data is free. **Currently paying:** Whatever your representatives' donors feel like.
 
-Your planet has 10,000 jurisdictions, each trying slightly different policies. Some produce healthy, wealthy citizens. Others produce the opposite. Right now, you determine which is which by having politicians argue on television. The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025] replaces the arguing with counting.
+Your planet has thousands of jurisdictions making different policy choices. That creates useful comparisons, but not thousands of automatic natural experiments. The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025] records which comparisons support a credible causal design and which support only a prediction or hypothesis.
 
-It examines what every jurisdiction tried and what happened next. Synthetic controls, difference-in-differences, regression discontinuity. Not opinion. Not ideology. Measurement. Output: ENACT / REPLACE / REPEAL / MAINTAIN. Each recommendation scored on the two numbers.
+It can use synthetic controls, difference-in-differences, or regression discontinuity when the data and diagnostics support that design. Output: RECOMMEND / PILOT FIRST / INSUFFICIENT EVIDENCE / DO NOT RECOMMEND. Enact, replace, repeal, or maintain instructions appear only after the evidence and safety gates pass.
 
-Its current highest-expected-value recommendation is the [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]: move 1% of every nation's weapons budget to clinical trials. Everyone cuts equally. Nobody is easier to invade. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. The average treatment arrives {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} people who would have died do not.
+A prominent candidate for evaluation is the [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]: move 1% of every nation's weapons budget to clinical trials while every participant cuts equally. Its modeled disease and treatment gains are scenarios to test, not conclusions established by counting jurisdictions.
 
 Your governments have signed treaties banning chemical weapons (193 countries), biological weapons (187), and landmines (164). This one asks them to buy 1% fewer weapons and spend the savings on figuring out why everyone keeps dying. Pre-WW2 military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today, inflation-adjusted. They still won World War II. Then they cut spending {{< var post_ww2_military_cut_pct >}} in two years and walked into the greatest economic expansion in history. One percent should be manageable.
 
-*"We spent 4,000 years debating education policy. The Optimal Policy Generator resolved it in an afternoon. Our main regret is the 4,000 years." (Planet Keth-7, client since 8,000 BCE)*
+*"We expected an answer by afternoon. The scoreboard told us the comparison was confounded and designed a pilot instead. Annoying, but useful." (Planet Keth-7, client since 8,000 BCE)*
 
 ### The Optimal Budget Generator
 
-**What it does:** Calculates the optimal spending level for every budget line in every jurisdiction on Earth: the point where each additional dollar produces less health or wealth than spending it somewhere else.
+**What it does:** Tests bounded budget changes when marginal-return, scaling, interaction, and capacity evidence exists. Otherwise it proposes a pilot, presents a scenario, or abstains.
 
 **Retail price:** Included. **Currently paying:** Whatever the lobbyists negotiated.
 
-The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025] finds the largest misallocations first. The current largest: clinical trial funding sits at roughly 1% of its optimal level. The money that should be finding cures is sitting in the weapons budget, where it purchases the ability to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times. You can only end civilization once. The other {{< var nuclear_winter_spare_apocalypses_nounit >}} endings are in storage, costing money, doing nothing.
+The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025] is a research-stage extension of the evidence scoreboard. It may identify a promising direction, such as testing a transfer from low-value spending to clinical trials, but current evidence does not establish a precise universal target for every budget line.
 
-Output: an optimal budget for every jurisdiction on Earth, updated continuously, scored on the two numbers. Hand it to a lobbyist. The lobbyist hands it to Congress. The math does the selling.
+Output: a bounded change, target range, pilot, scenario, or abstention, with health and income effects reported separately. Hand the evidence card to a decision maker, then publish what happened.
 
 ### The Decentralized TODO List for Humanity
 
@@ -100,13 +100,13 @@ The TODO list is live at optimitron.com/tasks.
 
 ### The Loving Takeover
 
-**What it does:** Buys shares in the companies that control your government and uses shareholder rights to hand their lobbyists an optimal budget.
+**What it does:** Buys shares in the companies that control your government and uses shareholder rights to hand their lobbyists evidence-backed budget changes.
 
 **Retail price:** {{< var defense_takeover_cost_total >}} for the full takeover. **You receive:** Voting shares in the companies whose lobbying writes your laws.
 
 The companies that build your weapons are, by any rational accounting, bad at being companies. They pay their best engineers to shrink the economy they sell into. Their shareholders get the same diseases as everyone else. Their CEO's mother has Parkinson's, and there is no trial because the money that would have funded it is currently a missile. They are spending money to make themselves poorer, sicker, and eventually dead. This is not an adversary. This is a company in need of better management.
 
-You [buy shares](../appendix/loving-takeover.qmd). Shares come with voting rights. Voting rights let you hand the lobbyists an optimal budget calculated by the Optimal Budget Generator to maximize health and wealth. The engineers switch from guidance systems to surgical robots. Same math. Fewer craters. The shareholders get appreciation in a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. The CEO's mother gets her Parkinson's trial. The lobbyists get a raise. Nobody loses anything. The previous arrangement was losing money for everyone in it simultaneously, which is harder than it sounds.
+You [buy shares](../appendix/loving-takeover.qmd). Shares come with voting rights. Voting rights let you ask the lobbyists to support budget changes backed by public evidence cards. The engineers can switch from guidance systems to surgical robots when the evidence, safety, and implementation gates support that change. The economic upside remains a scenario to validate, not a guaranteed return.
 
 In 2021, twelve people with $12.5 million and 0.02% of ExxonMobil won three seats on its board. Vanguard and BlackRock, who own roughly 60%, voted with them. The argument was: your strategy is destroying the value of the people who own this company. Board seats across the military-industrial complex cost {{< var defense_takeover_cost_activist >}} ({{< var defense_takeover_cost_activist_pct_investable_assets >}} of the money invested on Earth).
 
@@ -282,7 +282,7 @@ YOUR GOVERNMENT (open-loop):
 
 Your War on Terror: $8 trillion spent, terrorist attacks went from about 1,000 per year to nearly 17,000 per year. No sensor. No adjustment. Fifty-three years of drug war with 18x more overdoses. No sensor. No adjustment. You are operating the most complex system in your solar system (a civilization of {{< var global_population_2024_nounit >}} humans) with less feedback instrumentation than a toaster.
 
-The Optimal Policy Generator is the sensor. The Optimal Budget Generator is the target. The [Loving Takeover](../appendix/loving-takeover.qmd) is the actuator (it controls the lobbying apparatus that controls Congress). The [1% Treaty](../solution/1-percent-treaty.qmd) is the power supply. The [Wishocracy](wishocracy.qmd) is the allocation circuit. And the feedback loop closes because the sensor measures the output of the policies it recommended, compares them to the target, and adjusts. Like a thermostat. Like every system you build when you bother to think about it for ten seconds. Control systems engineering accounts for component uncertainty. You do this for airplane autopilots and chemical plants. We are applying it to civilization. The math is the same. The stakes are higher. The difficulty is lower, because civilizations are simpler than chemical plants. Chemical plants do not vote against their own interests.
+The Optimal Policy Generator is the evidence sensor. The Optimal Budget Generator tests candidate budget changes. The [Loving Takeover](../appendix/loving-takeover.qmd) is one possible actuator, the [1% Treaty](../solution/1-percent-treaty.qmd) is one candidate funding change, and [Wishocracy](wishocracy.qmd) is one allocation mechanism. The feedback loop closes only when timestamped forecasts are compared with later outcomes and the model is corrected. Governments are not chemical plants, so uncertainty, rights, spillovers, and political legitimacy remain explicit constraints.
 
 *"We tried running our government without a feedback loop for 200 years. The engineers found this extremely funny. They kept asking 'but how do you know if it worked?' and we kept saying 'we argue about it.' They stopped laughing when they realized we were serious." (Planet Keth-7)*
 

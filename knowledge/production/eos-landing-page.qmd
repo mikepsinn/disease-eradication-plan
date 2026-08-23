@@ -137,12 +137,12 @@ The overall feeling: "this vendor is obviously better, has never killed anyone, 
 | Decision method | 535 humans who haven't read the bill, funded by the industries the bill regulates | {{< var crowd_decision_accuracy >}} crowd accuracy vs {{< var expert_decision_accuracy >}} expert. Every question ships with evidence. |
 | Your input | 1 bundled vote every 2 years. Correlation with outcomes: 0%. | 20 specific questions/year. Pairwise comparisons. Evidence attached. |
 | Corruption surface | {{< var us_total_lobbying_annual >}}/year in lobbying buys your laws | No door. You cannot take 8 billion people to lunch. |
-| Policy evidence used | None. Drug war ran 50 years, overdoses up 1,700%, nobody checked. | 10,000 jurisdictions measured. Synthetic controls, diff-in-diff, regression discontinuity. |
+| Policy evidence used | None. Drug war ran 50 years, overdoses up 1,700%, nobody checked. | Cross-jurisdiction comparisons graded by design, diagnostics, and transportability. |
 | Disease queue | {{< var status_quo_queue_clearance_years >}} at current rate | {{< var dfda_queue_clearance_years >}} with 1% moved to clinical trials |
 | Time to notice you died | Years (one week if you owed taxes) | One day. The deposit stops. |
 | Shuts down over disagreements | 20+ times since 1976 | There is no door |
 | Audit record | 0 of 7 passed (Pentagon) | Real-time public ledger, continuous |
-| Budget allocation | {{< var military_to_government_clinical_trials_spending_ratio >}} kill:cure ratio | Optimal budget calculated to maximize the two numbers |
+| Budget allocation | {{< var military_to_government_clinical_trials_spending_ratio >}} kill:cure ratio | Bounded change or pilot backed by a public evidence card |
 | Sticker price | {{< var us_gov_waste_per_capita_annual >}} per American per year | {{< var gov_replacement_suite_opex_per_citizen_annual >}} per citizen per year, plus dividends |
 
 ---
@@ -173,11 +173,11 @@ The overall feeling: "this vendor is obviously better, has never killed anyone, 
 
 **Copy:**
 
-> Your planet has 10,000 jurisdictions, each trying slightly different policies. Some produce healthy, wealthy citizens. Others produce the opposite. Right now, you determine which is which by having politicians argue on television. The Optimal Policy Generator replaces the arguing with counting.
+> Your planet has thousands of jurisdictions making different policy choices. That creates useful comparisons, but not thousands of automatic natural experiments. The Optimal Policy Generator records which comparisons support a credible causal design and which support only a prediction or hypothesis.
 >
-> It examines what every jurisdiction tried and what happened next. Synthetic controls, difference-in-differences, regression discontinuity. Not opinion. Not ideology. Measurement. Output: ENACT / REPLACE / REPEAL / MAINTAIN. Each recommendation scored on the two numbers.
+> It can use synthetic controls, difference-in-differences, or regression discontinuity when the data and diagnostics support that design. Output: RECOMMEND / PILOT FIRST / INSUFFICIENT EVIDENCE / DO NOT RECOMMEND. Health and income forecasts remain separate.
 >
-> Its current highest-expected-value recommendation is the 1% Treaty: move 1% of every nation's weapons budget to clinical trials. Everyone cuts equally. Nobody is easier to invade. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. The average treatment arrives {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} people who would have died do not.
+> A prominent candidate for evaluation is the 1% Treaty: move 1% of every nation's weapons budget to clinical trials while every participant cuts equally. Its modeled disease and treatment gains are scenarios to test, not conclusions established by counting jurisdictions.
 >
 > Your governments have signed treaties banning chemical weapons (193 countries), biological weapons (187), and landmines (164). This one asks them to buy 1% fewer weapons and spend the savings on figuring out why everyone keeps dying. Pre-WW2 military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today, inflation-adjusted. They still won World War II. Then they cut spending {{< var post_ww2_military_cut_pct >}} in two years and walked into the greatest economic expansion in history. One percent should be manageable.
 
@@ -198,25 +198,25 @@ Two large, animated counters:
 
 **Testimonial:**
 
-> *"We spent 4,000 years debating education policy. The Optimal Policy Generator resolved it in an afternoon. Our main regret is the 4,000 years." (Planet Keth-7, client since 8,000 BCE)*
+> *"We expected an answer by afternoon. The scoreboard told us the comparison was confounded and designed a pilot instead. Annoying, but useful." (Planet Keth-7, client since 8,000 BCE)*
 
 ---
 
 ### FEATURED PRODUCT 2: THE OPTIMAL BUDGET GENERATOR
 
-**Tagline:** The point where each additional dollar does less good than spending it somewhere else.
+**Tagline:** Evidence for the next budget change.
 
 **Replaces:** Whatever the lobbyists negotiated. **Retail price:** Included. **Currently paying:** Whatever the lobbyists negotiated.
 
 **Copy:**
 
-> The Optimal Budget Generator calculates the optimal spending level for every budget line in every jurisdiction on Earth: the point where each additional dollar produces less health or wealth than spending it somewhere else.
+> The Optimal Budget Generator tests bounded budget changes when marginal-return, scaling, interaction, and capacity evidence exists. Otherwise it proposes a pilot, presents a scenario, or abstains.
 >
-> The current largest misallocation: clinical trial funding sits at roughly 1% of its optimal level. The money that should be finding cures is sitting in the weapons budget, where it purchases the ability to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times. You can only end civilization once. The other {{< var nuclear_winter_spare_apocalypses_nounit >}} endings are in storage, costing money, doing nothing.
+> A candidate change can move funding from an activity with weak marginal benefits to one with stronger evidence, such as a bounded clinical-trial expansion. Current models do not establish a precise universal target for every budget line.
 >
 > You do not need new money. You need to stop losing the money you have.
 >
-> Output: an optimal budget for every jurisdiction on Earth, updated continuously, scored on the two numbers. Hand it to a lobbyist. The lobbyist hands it to Congress. The math does the selling.
+> Output: a bounded change, target range, pilot, scenario, or abstention, with health and income effects reported separately. Hand the evidence card to a decision maker, then publish what happened.
 
 **Key numbers** (displayed as data cards):
 
@@ -273,17 +273,17 @@ Two large, animated counters:
 
 ### FEATURED PRODUCT 4: THE LOVING TAKEOVER
 
-**Tagline:** Buy the companies that control your government. Hand their lobbyists an optimal budget.
+**Tagline:** Buy the companies that control your government. Hand their lobbyists an evidence-backed budget change.
 
 **Replaces:** Moral persuasion (9,000 years, zero results). **Retail price:** {{< var defense_takeover_cost_total >}} for the full takeover. **You receive:** Voting shares in the companies whose lobbying writes your laws.
 
-**Layout:** Two panels. Left: the mechanism (shares -> votes -> board seats -> lobbyists -> optimal budget). Right: the ExxonMobil proof of concept. Below: the math on cost and returns.
+**Layout:** Two panels. Left: the mechanism (shares -> votes -> board seats -> lobbyists -> evidence card). Right: the ExxonMobil proof of concept. Below: the math on cost and returns.
 
 **Copy:**
 
 > The companies that build your weapons are, by any rational accounting, bad at being companies. They pay their best engineers to shrink the economy they sell into. Their shareholders get the same diseases as everyone else. Their CEO's mother has Parkinson's, and there is no trial because the money that would have funded it is currently a missile. They are spending money to make themselves poorer, sicker, and eventually dead. This is not an adversary. This is a company in need of better management.
 >
-> You buy shares. Shares come with voting rights. Voting rights let you hand the lobbyists an optimal budget calculated by the Optimal Budget Generator to maximize health and wealth. The engineers switch from guidance systems to surgical robots. Same math. Fewer craters. The shareholders get appreciation in a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. The CEO's mother gets her Parkinson's trial. The lobbyists get a raise. Nobody loses anything. The previous arrangement was losing money for everyone in it simultaneously, which is harder than it sounds.
+> You buy shares. Shares come with voting rights. Voting rights let you ask the lobbyists to support budget changes backed by public evidence cards. The engineers can switch from guidance systems to surgical robots when the evidence, safety, and implementation gates support that change. The economic upside remains a scenario to validate, not a guaranteed return.
 
 **Proof of concept:**
 
@@ -302,7 +302,7 @@ Two large, animated counters:
 
 **Testimonial:**
 
-> *"We spent 4,000 years debating education policy. The Evidence Engine resolved it in an afternoon. Our main regret is the 4,000 years." (Planet Keth-7, client since 8,000 BCE)*
+> *"We expected an answer by afternoon. The Evidence Engine told us the comparison was confounded and designed a pilot instead. Annoying, but useful." (Planet Keth-7, client since 8,000 BCE)*
 
 ---
 
@@ -578,9 +578,9 @@ YOUR GOVERNMENT (open-loop):
 
 > Your current system uses the same components in the opposite order: companies buy the government, lobbyists push for policies that maximize shareholder profit, and nobody measures whether anyone got healthier or richer. Same machine. Same parts. Different direction.
 >
-> The Optimal Policy Generator is the sensor. The Optimal Budget Generator is the target. The Loving Takeover is the actuator (it controls the lobbying apparatus that controls Congress). The 1% Treaty is the power supply. The Wishocracy is the allocation circuit. And the feedback loop closes because the sensor measures the output of the policies it recommended, compares them to the target, and adjusts. Like a thermostat. Like every system you build when you bother to think about it for ten seconds.
+> The Optimal Policy Generator is the evidence sensor. The Optimal Budget Generator tests candidate budget changes. The Loving Takeover is one possible actuator, the 1% Treaty is one candidate funding change, and Wishocracy is one allocation mechanism. The loop closes only when timestamped forecasts are compared with later outcomes and the model is corrected.
 
-**Animated diagram:** The flow: Share Acquisition -> Board Seats -> OBG Calculates Optimal Budget -> Board Hands Budget to Lobbyists -> Lobbyists Sell Congress on the Math -> Policy Changes -> OPG Measures Outcomes -> Wishocracy Sets Priorities -> TODO List Distributes Tasks -> Economy Grows -> Value Increases -> More Capital for Next Fight. A virtuous cycle. Each node lights up in sequence.
+**Animated diagram:** The flow: Share Acquisition -> Board Seats -> OBG Tests a Budget Change -> Board Hands Evidence Card to Lobbyists -> Lobbyists Present the Case to Congress -> Policy Changes -> OPG Measures Outcomes -> Wishocracy Sets Priorities -> TODO List Distributes Tasks -> Results Update the Evidence -> More Capital for the Next Test. Each node lights up in sequence.
 
 **Testimonial:**
 
@@ -798,7 +798,7 @@ These lines are canonical to the project and must not be paraphrased:
 ## WHAT IS NOT ON THIS PAGE
 
 - No "Evidence Engine" naming. The tools are called the Optimal Policy Generator and the Optimal Budget Generator.
-- No "Budget Redirect" naming. The product is the 1% Treaty; it is the OPG's highest-expected-value recommendation, not a standalone peer product.
+- No "Budget Redirect" naming. The product is the 1% Treaty; it is a prominent candidate for evaluation, not a standalone peer product.
 - No "Humanity Manager" naming. The product is the Decentralized TODO List for Humanity.
 - No "task queue" or other engineer-jargon renaming of the TODO list.
 - No startup framing. No "Our flagship feature." No "The good news." No Y Combinator voice.
