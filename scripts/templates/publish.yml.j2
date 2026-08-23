@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: "manual-deploy"
+  group: "{% raw %}${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}{% endraw %}"
   cancel-in-progress: true
 
 jobs:
