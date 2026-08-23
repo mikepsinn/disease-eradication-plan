@@ -1,0 +1,132 @@
+---
+title: "Universal Right to Trial in All 50 States: Potential Impact and Cost"
+description: "A conditional schedule-shift model of state legislation that lets post-Phase-1 treatments finance their own evidence generation and accelerates treatments for global diseases and aging."
+published: true
+tags:
+  - right-to-try
+  - right-to-trial
+  - state-policy
+  - clinical-trials
+  - health-economics
+scores:
+  quality: 7
+  value: 9
+  timeliness: 9
+  standalone: 9
+  voice: 3
+  importance: 8
+audience: "A donor, legislator, or health-policy researcher deciding whether universal state Right to Trial deserves funding or sponsorship."
+feel: "Clear about both the enormous conditional upside and the single causal assumption that determines whether it occurs."
+do: "Fund or sponsor access-plus-data legislation, then measure whether it produces credible treatment discoveries at the modeled rate."
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## Summary
+
+Universal [Right to Trial](../solution/dfda.qmd) [@right-to-trial-paper-2025] would create licensed centers where patients can pay for treatment-related care while eligible participants enroll in standardized, pooled pragmatic trials. Patient and payer revenue can cover treatment delivery, trial-site services, and permitted study costs. Treatments abandoned because nobody can profitably finance conventional Phase 2 and Phase 3 trials become testable.
+
+If all 50 states adopt, the central model estimates:
+
+| Result | Conditional central estimate |
+|:---|---:|
+| Treatment-discovery multiplier | {{< var state_rtt_treatment_discovery_multiplier_nounit >}}x |
+| Average first treatment arrives | {{< var state_rtt_treatment_acceleration_years_nounit >}} years earlier |
+| Premature deaths prevented | {{< var state_rtt_treatment_acceleration_lives_saved_nounit >}} |
+| Healthy years restored | {{< var state_rtt_treatment_acceleration_dalys_nounit >}} DALYs |
+| Disability-equivalent suffering prevented | {{< var state_rtt_treatment_acceleration_suffering_hours_nounit >}} hours |
+| Campaign plus shared registry cost | {{< var state_rtt_philanthropic_cost_total >}} |
+| Philanthropic cost per healthy year restored | {{< var state_rtt_philanthropic_cost_per_daly >}} |
+
+These are conditional lifetime schedule-shift totals across future generations. They are not claims that billions of people alive today are saved, or that passage guarantees the modeled effect.
+
+## The legislation
+
+Montana has already created licensed experimental treatment centers. Its law covers treatments that have passed Phase 1 but are not approved for general FDA use, permits centers to charge patients, and requires part of center profits to support access [@montana-sb535-2025].
+
+Montana's rules require centers to track treatments and patient outcomes, report serious adverse events, and publish annual aggregate safety and treatment outcomes. The same rules explicitly state that the centers do not administer clinical trials [@montana-etc-rules-2026]. Outcome tracking is useful. It is not automatically causal evidence.
+
+The model bill therefore adds four requirements:
+
+1. **Enroll.** Register a prospective protocol, obtain informed consent, report serious safety events, and place each patient in the applicable federal trial or treatment-access pathway.
+2. **Compare.** Prespecify outcomes and use simple randomization or another adequate control when feasible. Without an adequate comparison, label the result a signal, not a validated treatment effect.
+3. **Pool.** Send standardized, de-identified baseline and outcome data to a shared registry.
+4. **Publish.** Continuously publish results for each treatment-condition pair, including negative and harmful results.
+
+The philanthropic budget pays for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation through license or enrollment assessments after that launch period. This keeps the lifetime schedule shift from depending on a ten-year data system that then disappears.
+
+## Same evidence logic, lower collection cost
+
+This does not give a state registry the power to approve drugs or lower the federal evidence standard. It changes where and how effectiveness evidence is produced.
+
+Right to Trial and federal Right to Try are not the same legal pathway. Federal Right to Try is limited to eligible patients who are unable to participate in a clinical trial involving the drug [@fda-right-to-try-eligibility]. A patient enrolled in an interventional pragmatic trial must instead be treated under an active investigational new drug application or another applicable FDA-authorized pathway. Patients who cannot join the trial may still contribute separately labeled observational outcomes through federal Right to Try or expanded access if eligible. The state bill supplies centers, consent, comparison, and shared data rules. It does not waive federal trial authorization or Right to Try eligibility.
+
+FDA's statutory standard remains substantial evidence from adequate and well-controlled investigations. Its June 2026 draft guidance explains that one rigorous investigation plus confirmatory evidence can sometimes satisfy that standard, while approval still requires sufficient safety evidence and a favorable benefit-risk assessment [@fda-substantial-evidence-guidance-2026]. FDA also supports streamlined randomized trials integrated into routine clinical practice [@fda-routine-practice-rct-guidance-2024]. Project Pragmatica applies the same design logic to approved oncology products through simpler eligibility, routine-practice enrollment, and reduced data-collection burden while maintaining safety and data integrity [@fda-project-pragmatica-2025]. It is an example of pragmatic design, not precedent for bypassing authorization of an unapproved drug.
+
+A pragmatic randomized trial is still a randomized controlled trial. It keeps a comparison group, prespecified outcomes, safety reporting, and reliable analysis. It can reduce dedicated research visits and duplicate data collection when ordinary care can do the job. The existing cost model estimates {{< var traditional_phase3_cost_per_patient >}} per participant for a traditional Phase 3 trial versus {{< var dfda_pragmatic_trial_cost_per_patient >}} for an embedded pragmatic trial, a {{< var dfda_trial_cost_reduction_factor >}} reduction. That is a per-participant comparison, not a claim that every approval becomes {{< var dfda_trial_cost_reduction_factor >}} cheaper. Complex or high-risk studies will still need specialized sites, procedures, and monitoring.
+
+Federal charging rules remain in force. An IND sponsor needs FDA authorization to charge for the investigational drug and generally may recover only direct drug costs. FDA separately states that trial sites may recover pharmacy, nursing, equipment, and study-related procedure costs without charging authorization under that rule [@fda-charging-investigational-drugs-2024]. The model therefore assumes patient or payer revenue covers treatment delivery, site services, and permitted study costs, while center assessments sustain the common registry. It does not assume that states can finance research through unrestricted profits on the investigational drug. Whether lawful revenue is sufficient to sustain the modeled system is part of the uncertain discovery multiplier.
+
+Medicare already uses the analogous payment principle in Coverage with Evidence Development: specified services may be covered only within an approved study while additional evidence is collected, then CMS can reconsider coverage using the resulting evidence [@cms-coverage-evidence-development-2024]. Universal Right to Trial is access with evidence development, financed primarily by patients and participating centers rather than Medicare. The [Continuous Evidence Generation Protocol](dfda-spec-paper.qmd#stage-2-pragmatic-trial-confirmation) [@dfda-spec-paper-2025] provides the fuller technical design.
+
+The original Right to Try model spread from its first state in 2014 to 41 states by 2018 [@goldwater-rtt-41-states-2018]. That establishes a distribution channel. It does not prove that this broader access-plus-data bill will spread at the same speed.
+
+## Why previously unprofitable treatments matter
+
+Post-Phase-1 compounds, repurposing candidates, combinations, doses, and disease subtypes can each produce multiple treatment hypotheses. The relevant candidate pool is therefore much larger than a count of compounds, but this paper does not claim a precise inventory.
+
+Candidate abundance is not multiplied by global disease burden. Ten successful treatments for one disease cannot avert that disease's burden ten times. Additional candidates matter because they raise the rate at which the first effective treatment is found.
+
+The model compresses the entire causal mechanism into one uncertain input: {{< var state_rtt_treatment_discovery_multiplier >}}. That input represents all of the following together:
+
+- patient-funded treatment and evidence generation;
+- treatments revived because conventional trials were not economically viable;
+- enough candidate-condition pairs to keep enrollment capacity occupied;
+- protocols capable of producing credible efficacy evidence;
+- the share of completed evaluations that find an effective first treatment.
+
+This avoids pretending that patient volume, candidate supply, evaluation size, and success rates are independent benefit multipliers. The automatic Monte Carlo samples the resulting discovery multiplier directly. The {{< var state_rtt_treatment_discovery_multiplier_nounit >}}x central value is a calibration assumption, not a measured causal effect.
+
+## Why the model covers global diseases and aging
+
+The goal is to move forward treatments for the entire eventually treatable global burden, including common diseases and aging-related degeneration. The model therefore applies the treatment-schedule shift to global avoidable deaths and DALYs, not only to rare-disease burden.
+
+The status quo treatment queue is built from untreated rare diseases because that is the clearest available count of diseases still awaiting a first effective treatment. Here it serves as a proxy for the pace of exploring the wider therapeutic frontier. That is a strong modeling assumption. It is intentional, not an accidental multiplication of rare-disease benefits by global burden.
+
+## The schedule-shift calculation
+
+At the status quo discovery rate, the average therapeutic target waits {{< var status_quo_avg_years_to_first_treatment >}} for its first effective treatment. A {{< var state_rtt_treatment_discovery_multiplier >}} discovery rate moves the average first treatment forward by {{< var state_rtt_treatment_acceleration_years >}}.
+
+The global DALY benefit is annual avoidable disease burden multiplied by that schedule shift. Premature deaths use the same schedule shift and global avoidable mortality. Disability-equivalent hours convert the years-lived-with-disability share of DALYs into hours. The full cost-per-DALY chain is shown once:
+
+{{< var state_rtt_philanthropic_cost_per_daly_latex >}}
+
+## Why there is no ramp parameter
+
+This model values a permanent shift in the cure-arrival schedule, not only patient benefits received during the campaign's first decade. A temporary rollout changes the effective start date by a few years. It does not multiply the lifetime benefit by the fraction of mature volume reached in year one.
+
+The discovery multiplier is conditional on full adoption and a mature operating system. If advocacy fails to produce that system, the modeled benefit is not partially rescued by inventing a ramp curve. That political and implementation risk belongs in an external realization-probability adjustment.
+
+## Comparison with GiveWell-style estimates
+
+The displayed cost per DALY is conditional: campaign plus registry-launch cost divided by the health benefit if the 50-state system operates at the modeled discovery rate. It excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs because those payments buy care and evidence generation rather than consuming the philanthropic budget.
+
+For an advocacy grant comparison, expected cost per DALY equals the conditional cost per DALY divided by the probability that the grant produces full adoption and mature implementation. A 10% realization probability makes it 10 times the displayed figure. A 1% probability makes it 100 times the displayed figure. This transparent adjustment avoids another scenario parameter while letting a donor apply their own probability of legislative success.
+
+## What the numbers mean
+
+The {{< var state_rtt_treatment_acceleration_lives_saved >}} figure exceeds the current world population because it sums premature deaths prevented across approximately {{< var state_rtt_treatment_acceleration_years >}} of future generations. It is a schedule-cost estimate, not a count of currently identifiable people.
+
+The {{< var state_rtt_treatment_acceleration_suffering_hours >}} figure means disability-weighted equivalent hours. A disability weight of 0.25 sustained for four hours equals one full-disability-equivalent hour. It does not mean the person consciously experienced maximum pain for one hour.
+
+The global result assumes discoveries become public knowledge and eventually benefit patients outside the United States. The access right itself remains state law. State legislation also does not override federal FDA authority. The durable federal version is the [Right to Trial and FDA Upgrade Act](right-to-trial-fda-upgrade-act.qmd).
+
+## What could make the estimate wrong
+
+The arithmetic is short. The causal claim is not.
+
+The result is too high if self-selected treatment purchases fail to produce credible causal evidence, if treatment demand fragments across too many candidate-condition pairs, if discoveries do not diffuse globally, if the rare-disease queue is a poor proxy for the wider therapeutic frontier, or if the eventually avoidable share of global disease and aging is much smaller than modeled.
+
+The result is too low if patient-funded research supports more than the modeled treatment-discovery rate, if rare-disease effects require much smaller samples, or if the system creates valuable treatments for poorly treated common diseases that the untreated-disease queue does not fully represent.
+
+The primary empirical test is therefore simple: after adoption, measure credible first-treatment discoveries per year. Every other headline follows from that rate. The scientific multiplier does not include a separate atom for "thousands of valid trials occur but none produce useful discoveries." The model instead tests the productivity of the operating system directly and keeps failure to build that system in the advocacy probability adjustment.

@@ -9789,6 +9789,96 @@ export const SHIRT_VALUE_PER_WEARER_USD: Parameter = {
   manualPageTitle: "The Funniest Joke in the Universe",
 };
 
+export const STATE_RTT_PHILANTHROPIC_COST_PER_DALY: Parameter = {
+  value: 0.000134456448736,
+  parameterName: "STATE_RTT_PHILANTHROPIC_COST_PER_DALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_cost_per_daly",
+  unit: "USD/DALY",
+  displayName: "Universal State Right to Trial Philanthropic Cost per DALY",
+  description: "Conditional philanthropic cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_DALYS",
+  latex: "\\begin{gathered}\nCost_{RTT,DALY} = \\frac{C_{RTT}}{DALYs_{RTT}} = \\frac{\\$65M}{483B} = \\$0.000134\n\\\\[0.5em]\n\\text{where } DALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [4.01449034938e-05, 0.000447566436092],
+  inputs: ["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_DALYS"],
+  computeExpr: "(STATE_RTT_PHILANTHROPIC_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_DALYS)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
+export const STATE_RTT_TREATMENT_ACCELERATION_DALYS: Parameter = {
+  value: 483427910011.0,
+  parameterName: "STATE_RTT_TREATMENT_ACCELERATION_DALYS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_acceleration_dalys",
+  unit: "DALYs",
+  displayName: "DALYs Averted from Universal State Right to Trial",
+  description: "Conditional lifetime DALYs averted by shifting the global treatment-discovery schedule forward. By design, this applies the therapeutic-discovery timeline proxy to the eventually avoidable burden of all global diseases and aging-related degeneration. It is a schedule-shift calculation across future generations, not an observed epidemiological forecast.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+  latex: "\\begin{gathered}\nDALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [194576226838.0, 906801269448.0],
+  inputs: ["GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+  computeExpr: "((GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
+export const STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED: Parameter = {
+  value: 9190165997.61,
+  parameterName: "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_acceleration_lives_saved",
+  unit: "deaths",
+  displayName: "Lives Saved from Universal State Right to Trial",
+  description: "Conditional cumulative premature deaths from global diseases and aging prevented across future generations by shifting the treatment-discovery schedule forward. The total can exceed the current population because it sums deaths prevented over the full acceleration period.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "GLOBAL_DISEASE_DEATHS_DAILY × DAYS_PER_YEAR × EVENTUALLY_AVOIDABLE_DEATH_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+  latex: "\\begin{gathered}\nLives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [3712771172.52, 17234802793.1],
+  inputs: ["GLOBAL_DISEASE_DEATHS_DAILY", "EVENTUALLY_AVOIDABLE_DEATH_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+  computeExpr: "(((GLOBAL_DISEASE_DEATHS_DAILY * 365.0) * EVENTUALLY_AVOIDABLE_DEATH_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
+export const STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS: Parameter = {
+  value: 1651583111760000.0,
+  parameterName: "STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_acceleration_suffering_hours",
+  unit: "hours",
+  displayName: "Disability-Equivalent Suffering Hours Prevented by Universal State Right to Trial",
+  description: "Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_TREATMENT_ACCELERATION_DALYS × GLOBAL_YLD_PROPORTION_OF_DALYS × HOURS_PER_YEAR",
+  latex: "\\begin{gathered}\nHours_{suffer,RTT} = DALYs_{RTT} \\times Pct_{YLD} \\times 8760 = 483B \\times 0.39 \\times 8760 = 1650T\n\\\\[0.5em]\n\\text{where } DALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [658973595488000.0, 3136447274920000.0],
+  inputs: ["STATE_RTT_TREATMENT_ACCELERATION_DALYS", "GLOBAL_YLD_PROPORTION_OF_DALYS"],
+  computeExpr: "((STATE_RTT_TREATMENT_ACCELERATION_DALYS * GLOBAL_YLD_PROPORTION_OF_DALYS) * 8760.0)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
+export const STATE_RTT_TREATMENT_ACCELERATION_YEARS: Parameter = {
+  value: 181.216545012,
+  parameterName: "STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_acceleration_years",
+  unit: "years",
+  displayName: "Average Treatment Acceleration from Universal State Right to Trial",
+  description: "Average years earlier the first effective treatment arrives across the global therapeutic frontier under universal state Right to Trial. Uses the same schedule-shift structure as the 1% Treaty impact model: the status quo discovery timeline multiplied by one minus the inverse treatment-discovery multiplier.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)",
+  latex: "\\begin{gathered}\nT_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [79.0533772556, 332.378845812],
+  inputs: ["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"],
+  computeExpr: "(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT * (1.0 - (1.0 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)))",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
 export const STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT: Parameter = {
   value: 221.666666667,
   parameterName: "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT",
@@ -14445,6 +14535,36 @@ export const SHIRT_WEARING_FRICTION_COST_USD: Parameter = {
   manualPageTitle: "The Funniest Joke in the Universe",
 };
 
+export const STATE_RTT_PHILANTHROPIC_COST_TOTAL: Parameter = {
+  value: 65000000.0,
+  parameterName: "STATE_RTT_PHILANTHROPIC_COST_TOTAL",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_cost_total",
+  unit: "USD",
+  displayName: "Universal State Right to Trial Philanthropic Cost",
+  description: "Total philanthropic cost of universal state Right to Trial: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This philanthropic numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [25000000.0, 200000000.0],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
+export const STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER: Parameter = {
+  value: 5.48,
+  parameterName: "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_discovery_multiplier",
+  unit: "x",
+  displayName: "Universal State Right to Trial Treatment Discovery Multiplier",
+  description: "Conditional multiplier on the worldwide first-treatment discovery rate after all 50 states adopt and a mature pooled pragmatic-trial system operates under applicable federal authorization. The 5.48x central calibration reproduces the prior model's 82.2 versus 15 first treatments per year; it is an assumption, not an observed effect estimate. This single input incorporates patient or payer funding of treatment delivery, trial-site services, and permitted study costs, newly viable post-Phase-1 treatment-condition pairs, evaluable protocol quality, candidate supply, and scientific success. Its range describes productivity of an operating system, not the separate probability that advocacy achieves full adoption and implementation.",
+  sourceType: "definition",
+  confidence: "low",
+  confidenceInterval: [1.1, 15.0],
+  distribution: "lognormal",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Trial in All 50 States: Potential Impact and Cost",
+};
+
 export const TESTED_RELATIONSHIPS_ESTIMATE: Parameter = {
   value: 32500.0,
   parameterName: "TESTED_RELATIONSHIPS_ESTIMATE",
@@ -15625,6 +15745,11 @@ export const parameters = {
   SHIRT_PROGRAM_ROI_RATIO,
   SHIRT_SEED_PROGRAM_TOTAL_USD,
   SHIRT_VALUE_PER_WEARER_USD,
+  STATE_RTT_PHILANTHROPIC_COST_PER_DALY,
+  STATE_RTT_TREATMENT_ACCELERATION_DALYS,
+  STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED,
+  STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS,
+  STATE_RTT_TREATMENT_ACCELERATION_YEARS,
   STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT,
   STATUS_QUO_QUEUE_CLEARANCE_YEARS,
   THALIDOMIDE_DALYS_PER_EVENT,
@@ -15912,6 +16037,8 @@ export const parameters = {
   SHIRT_SEED_COST_PER_WEARER_USD,
   SHIRT_SEED_WEARERS_THRESHOLD,
   SHIRT_WEARING_FRICTION_COST_USD,
+  STATE_RTT_PHILANTHROPIC_COST_TOTAL,
+  STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER,
   TESTED_RELATIONSHIPS_ESTIMATE,
   TRANSPARENT_SECURITIES_COMMISSION_ANNUAL_OPEX,
   TREATY_CAMPAIGN_BUDGET_LOBBYING,
@@ -18775,10 +18902,10 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 887,
+  total: 894,
   external: 254,
-  calculated: 447,
-  definitions: 186,
+  calculated: 452,
+  definitions: 188,
   citations: 196,
 } as const;
 

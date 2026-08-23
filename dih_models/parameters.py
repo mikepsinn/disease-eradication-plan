@@ -9094,6 +9094,141 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     latex_symbol=r"Hours_{suffer,max}",  # LaTeX symbol for equations
 )  # ~1,875 trillion hours from full timeline shift (vs old 193T - now based on WHO YLD proportion)
 
+# ============================================================================
+# UNIVERSAL STATE RIGHT TO TRIAL
+# Conditional impact if all 50 states adopt and the system remains in force.
+# The model intentionally has two uncertain inputs: total philanthropic cost
+# and the resulting treatment-discovery multiplier. Existing global disease
+# burden parameters supply the rest of the Treaty-style calculation.
+# ============================================================================
+
+STATE_RTT_PHILANTHROPIC_COST_TOTAL = Parameter(
+    65_000_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Total philanthropic cost of universal state Right to Trial: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This philanthropic numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.",
+    display_name="Universal State Right to Trial Philanthropic Cost",
+    unit="USD",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(25_000_000, 200_000_000),
+    keywords=["right to trial", "state legislation", "campaign", "registry", "philanthropy"],
+    latex_symbol=r"C_{RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER = Parameter(
+    5.48,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Conditional multiplier on the worldwide first-treatment discovery rate after all 50 states adopt and a mature pooled pragmatic-trial system operates under applicable federal authorization. The 5.48x central calibration reproduces the prior model's 82.2 versus 15 first treatments per year; it is an assumption, not an observed effect estimate. This single input incorporates patient or payer funding of treatment delivery, trial-site services, and permitted study costs, newly viable post-Phase-1 treatment-condition pairs, evaluable protocol quality, candidate supply, and scientific success. Its range describes productivity of an operating system, not the separate probability that advocacy achieves full adoption and implementation.",
+    display_name="Universal State Right to Trial Treatment Discovery Multiplier",
+    unit="x",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(1.1, 15.0),
+    keywords=["right to trial", "treatment discovery", "trial capacity", "self-funding", "multiplier"],
+    latex_symbol=r"k_{RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_YEARS = Parameter(
+    float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT)
+    * (1 - 1 / float(STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Average years earlier the first effective treatment arrives across the global therapeutic frontier under universal state Right to Trial. Uses the same schedule-shift structure as the 1% Treaty impact model: the status quo discovery timeline multiplied by one minus the inverse treatment-discovery multiplier.",
+    display_name="Average Treatment Acceleration from Universal State Right to Trial",
+    unit="years",
+    formula="STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)",
+    confidence="low",
+    inputs=["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"],
+    compute=lambda ctx: ctx["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT"]
+    * (1 - 1 / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"]),
+    keywords=["right to trial", "treatment acceleration", "cure schedule", "years"],
+    latex_symbol=r"T_{accel,RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_DALYS = Parameter(
+    float(GLOBAL_ANNUAL_DALY_BURDEN)
+    * float(EVENTUALLY_AVOIDABLE_DALY_PCT)
+    * float(STATE_RTT_TREATMENT_ACCELERATION_YEARS),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional lifetime DALYs averted by shifting the global treatment-discovery schedule forward. By design, this applies the therapeutic-discovery timeline proxy to the eventually avoidable burden of all global diseases and aging-related degeneration. It is a schedule-shift calculation across future generations, not an observed epidemiological forecast.",
+    display_name="DALYs Averted from Universal State Right to Trial",
+    unit="DALYs",
+    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+    confidence="low",
+    inputs=["GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DALY_BURDEN"]
+    * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"]
+    * ctx["STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    keywords=["right to trial", "DALY", "disease burden", "schedule shift"],
+    latex_symbol=r"DALYs_{RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED = Parameter(
+    float(GLOBAL_DISEASE_DEATHS_DAILY)
+    * DAYS_PER_YEAR
+    * float(EVENTUALLY_AVOIDABLE_DEATH_PCT)
+    * float(STATE_RTT_TREATMENT_ACCELERATION_YEARS),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional cumulative premature deaths from global diseases and aging prevented across future generations by shifting the treatment-discovery schedule forward. The total can exceed the current population because it sums deaths prevented over the full acceleration period.",
+    display_name="Lives Saved from Universal State Right to Trial",
+    unit="deaths",
+    formula="GLOBAL_DISEASE_DEATHS_DAILY × DAYS_PER_YEAR × EVENTUALLY_AVOIDABLE_DEATH_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+    confidence="low",
+    inputs=["GLOBAL_DISEASE_DEATHS_DAILY", "EVENTUALLY_AVOIDABLE_DEATH_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    compute=lambda ctx: ctx["GLOBAL_DISEASE_DEATHS_DAILY"]
+    * DAYS_PER_YEAR
+    * ctx["EVENTUALLY_AVOIDABLE_DEATH_PCT"]
+    * ctx["STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    keywords=["right to trial", "lives saved", "premature deaths", "schedule shift"],
+    latex_symbol=r"Lives_{RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS = Parameter(
+    float(STATE_RTT_TREATMENT_ACCELERATION_DALYS)
+    * float(GLOBAL_YLD_PROPORTION_OF_DALYS)
+    * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.",
+    display_name="Disability-Equivalent Suffering Hours Prevented by Universal State Right to Trial",
+    unit="hours",
+    formula="STATE_RTT_TREATMENT_ACCELERATION_DALYS × GLOBAL_YLD_PROPORTION_OF_DALYS × HOURS_PER_YEAR",
+    confidence="low",
+    inputs=["STATE_RTT_TREATMENT_ACCELERATION_DALYS", "GLOBAL_YLD_PROPORTION_OF_DALYS"],
+    compute=lambda ctx: ctx["STATE_RTT_TREATMENT_ACCELERATION_DALYS"]
+    * ctx["GLOBAL_YLD_PROPORTION_OF_DALYS"]
+    * HOURS_PER_YEAR,
+    keywords=["right to trial", "suffering", "disability", "YLD", "hours"],
+    latex_symbol=r"Hours_{suffer,RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_PHILANTHROPIC_COST_PER_DALY = Parameter(
+    float(STATE_RTT_PHILANTHROPIC_COST_TOTAL) / float(STATE_RTT_TREATMENT_ACCELERATION_DALYS),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional philanthropic cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.",
+    display_name="Universal State Right to Trial Philanthropic Cost per DALY",
+    unit="USD/DALY",
+    formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_DALYS",
+    confidence="low",
+    inputs=["STATE_RTT_PHILANTHROPIC_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_DALYS"],
+    compute=lambda ctx: ctx["STATE_RTT_PHILANTHROPIC_COST_TOTAL"]
+    / ctx["STATE_RTT_TREATMENT_ACCELERATION_DALYS"],
+    keywords=["right to trial", "cost per DALY", "GiveWell", "philanthropy"],
+    latex_symbol=r"Cost_{RTT,DALY}",
+    hide_ci=True,
+)
+
 # Pragmatic trial system targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
     float(CURRENT_TRIALS_PER_YEAR) * float(DFDA_TRIAL_CAPACITY_MULTIPLIER),
