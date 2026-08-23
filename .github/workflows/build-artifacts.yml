@@ -1,3 +1,8 @@
+# AUTO-GENERATED FILE. DO NOT EDIT DIRECTLY.
+# Source: scripts/templates/build-artifacts.yml.j2
+# Generator: scripts/lib/workflow_generator.py
+# Make changes in the source template or generator, then regenerate.
+
 on:
   workflow_dispatch:
   push:

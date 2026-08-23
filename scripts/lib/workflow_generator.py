@@ -21,6 +21,12 @@ from urllib.parse import urlparse
 logger = logging.getLogger("dih.workflow")
 
 DOWNLOADABLE_FORMATS = ("pdf", "epub", "docx")
+GENERATED_WORKFLOW_HEADER = """# AUTO-GENERATED FILE. DO NOT EDIT DIRECTLY.
+# Source: scripts/templates/{template_name}
+# Generator: scripts/lib/workflow_generator.py
+# Make changes in the source template or generator, then regenerate.
+
+"""
 
 # Add project root to path for dih_models imports
 _project_root = str(Path(__file__).parent.parent.parent)
@@ -287,7 +293,8 @@ def generate_workflow(project_root: Path, job_configs: List[JobConfig], template
     env = Environment(loader=FileSystemLoader(str(template_dir)))
     template = env.get_template(template_name)
 
-    return template.render(jobs=job_configs)
+    header = GENERATED_WORKFLOW_HEADER.format(template_name=template_name)
+    return header + template.render(jobs=job_configs)
 
 
 def regenerate_workflow(project_root: Path) -> None:
