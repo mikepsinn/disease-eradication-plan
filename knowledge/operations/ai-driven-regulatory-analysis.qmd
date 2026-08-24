@@ -1,13 +1,13 @@
 ---
 title: AI-Driven Regulatory Impact Analysis System
-description: AI-driven system for regulatory health and economic impact analysis mandated by the Right to Trial & FDA Upgrade Act.
+description: AI-driven system supporting open regulatory impact comparisons under the Universal Right to Try & FDA Upgrade Act.
 published: true
 tags:
   - regulatory
 image: /assets/og-images/knowledge/operations/ai-driven-regulatory-analysis-og-bw-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-To fulfill the mandate for health and economic impact analysis of all FDA regulatory instruments (as outlined in Section 405(e) of the "Right to Trial & FDA Upgrade Act"). This system uses an AI-first approach based on the Pareto (80/20) principle, focusing on current and rapidly advancing AI reasoning and tool-use capabilities.
+Section 406 of the [Universal Right to Try & FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.qmd) requires open comparisons of FDA actions that materially affect treatment access or clinical evidence generation. This system uses an AI-first approach based on the Pareto (80/20) principle, focusing on current and rapidly advancing AI reasoning and tool-use capabilities.
 
 ### Core Components and Workflow
 
@@ -31,7 +31,7 @@ To fulfill the mandate for health and economic impact analysis of all FDA regula
 3. **Transparent Publishing:**
 
    - **Static Site Generation:** Approved reports and analyses will be automatically published to a static website using GitHub Pages, ensuring broad public accessibility.
-   - **Data and Model Availability:** All underlying data (where public), assumptions, and models (scripts, algorithms) will be linked or included with the published reports, enabling reproducibility and further research, consistent with Sec. 405(e)(4)(C) of the Act.
+   - **Data and Model Availability:** All underlying data (where public), assumptions, and models (scripts, algorithms) will be linked or included with the published reports, enabling reproducibility and further research, consistent with Section 406(d) of the Act.
 
 ### Operational Principles
 
@@ -42,13 +42,13 @@ To fulfill the mandate for health and economic impact analysis of all FDA regula
 
 ### Alignment with the Act
 
-This system directly addresses the requirements of Section 405(e) for:
+This system supports Section 406 by providing:
 
-- Systematic review of global evidence (AI-assisted web search and data extraction).
-- Quantitative modeling (AI-executed Python scripts).
-- Use of advanced analytical tools, including AI (core of the system).
+- Comparisons of proposed, less restrictive, and no-action alternatives.
+- Quantitative modeling of treatment discoveries, time to reliable answers, QALYs, harms, costs, entry, competition, and access.
+- Explicit uncertainty, sensitivity analysis, calibration, and retrospective forecast accuracy.
 - Open-sourcing of software, algorithms, data inputs, and models (GitHub repository).
 - Public inspection, contribution, and collaborative improvement (GitHub issues, pull requests, Actions).
 - Public availability of analyses in a user-friendly format (Markdown reports on GitHub Pages).
 
-While the Act also mentions dedicated resources and independent oversight (Sec. 405(e)(4)(A) and Sec. 405(e)(5)), this AI-driven system provides the core technical engine and public interface for performing and disseminating the analyses in a highly efficient and transparent manner. The institutional framework for oversight and resource allocation would complement this technical system.
+The independent audit and public comment required by Section 406(d) remain human accountability functions. This system supplies the technical engine and public interface; it does not replace independent judgment.

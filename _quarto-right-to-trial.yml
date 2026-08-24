@@ -11,7 +11,6 @@ project:
   render:
     # Paper is copied to index.qmd by render script
     - index.qmd
-    - knowledge/appendix/parameters-and-calculations.qmd
 
 # Custom fields for render-quarto.py
 dih-render:
@@ -24,8 +23,10 @@ dih-render:
   netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: false  # Legislative text, not academic paper
   concept-terms:
-    - term: "Right to Trial"
+    - term: "Universal Right to Try"
       aliases:
+        - "Universal Right to Try and FDA Upgrade Act"
+        - "Right to Trial"
         - "Right-to-Trial and FDA Upgrade Act"
       manual-target: knowledge/solution/dfda.qmd
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
@@ -45,8 +46,8 @@ author:
         url: https://warondisease.org
 
 website:
-  title: "Right to Trial & FDA Upgrade Act"
-  description: 'Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.'
+  title: "Universal Right to Try & FDA Upgrade Act"
+  description: 'Act to authorize commercial access to post-Phase-I investigational treatments while turning every covered treatment use into standardized evidence through an open-source FDA.gov v2.'
   site-url: https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
@@ -127,14 +128,12 @@ metadata:
   medium: "Digital"
   twitter-site: "https://x.com/warondisease"
   twitter-creator: "https://x.com/warondisease"
-  og-site-name: "Right to Trial Act"
+  og-site-name: "Universal Right to Try Act"
 
   # Identifiers
   # doi: ""
 
-  # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://manual.warondisease.org/assets/og/right-to-trial-og-1200x630.jpg"
 
   # Publication tracking
   publishing:

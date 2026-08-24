@@ -2655,7 +2655,7 @@ jobs:
 
 
   build-right-to-trial:
-    name: "Build Right to Trial & FDA Upgrade Act"
+    name: "Build Universal Right to Try & FDA Upgrade Act"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2722,7 +2722,7 @@ jobs:
           ~/.TinyTeX/bin/*/tlmgr update --self || true
           ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build Right to Trial & FDA Upgrade Act"
+      - name: "Render Build Universal Right to Try & FDA Upgrade Act"
         run: python scripts/render-quarto.py right-to-trial --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -2766,7 +2766,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Right to Trial & FDA Upgrade Act PDF to Zenodo (draft)"
+      - name: "Upload Build Universal Right to Try & FDA Upgrade Act PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
