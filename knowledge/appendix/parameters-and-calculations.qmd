@@ -25224,10 +25224,6 @@ $$
 
 {{< include ../figures/exceedance-state_rtt_fda_budget_equivalent_hours.qmd >}}
 
-**Used in:**
-
-- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
-
 :::
 
 ### Universal Right to Try with Evidence Cost in NIH Budget Hours: 12.1 hours {#sec-state_rtt_nih_budget_equivalent_hours}
@@ -25260,10 +25256,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-state_rtt_nih_budget_equivalent_hours.qmd >}}
-
-**Used in:**
-
-- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
 
 :::
 
@@ -25798,17 +25790,13 @@ $$
 
 {{< include ../figures/exceedance-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
 
-**Used in:**
-
-- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
-
 :::
 
 ### Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint: 636.2kx {#sec-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
+Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
 
 **Inputs**:
 
@@ -43766,6 +43754,7 @@ Total global deaths per day from all disease and aging (WHO Global Burden of Dis
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [The Vandalism Handout](../appendix/handout.html)
+- [How to Not Build Most of It](../appendix/open-ecosystem-and-bounty-model.html)
 - [The Biotechnological Imperative](../proof/biotechnological-imperative.html)
 - [The Delusion of Insignificance](../proof/delusion-of-insignificance.html)
 - [Wishonia](../futures/wishonia.html)
@@ -45827,7 +45816,6 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
-- [Universal Right to Try & FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.html)
 
 :::
 
@@ -46455,7 +46443,6 @@ Phase 3 cost per patient (median from FDA study)
 - [The Cost-Benefit Analysis of Global Hegemony](../appendix/cost-benefit-of-hegemony.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
-- [Universal Right to Try & FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.html)
 - [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
 
 :::

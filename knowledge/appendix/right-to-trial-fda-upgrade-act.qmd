@@ -1,6 +1,6 @@
 ---
-title: Universal Right to Try & FDA Upgrade Act
-description: Act to authorize commercial access to post-Phase-I investigational treatments while turning every covered treatment use into standardized evidence through an open-source FDA.gov v2.
+title: Right to Trial & FDA Upgrade Act
+description: A universal right to try, with evidence. The Act authorizes commercial access after initial human safety testing and makes every covered treatment use teach us something.
 published: true
 tags:
   - clinical-trials
@@ -20,278 +20,185 @@ scores:
   voice: 3
   importance: 7
 ---
-{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+> Every patient gets the right to try. Every treatment teaches us something.
+
 **Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,**
 
-## TITLE I: SHORT TITLE; PURPOSE; FINDINGS; DEFINITIONS
+## TITLE I: PURPOSE AND DEFINITIONS
 
 ### SEC. 101. SHORT TITLE
 
-This Act may be cited as the **"Universal Right to Try and FDA Upgrade Act."**
+This Act may be cited as the **"Right to Trial and FDA Upgrade Act."**
 
 ### SEC. 102. PURPOSE
 
-The purpose of this Act is to radically accelerate medical progress by:
-
-(1) Establishing a right for patients to seek, purchase, and use post-Phase-I investigational interventions from willing suppliers through decentralized clinical trials for any condition.
-(2) Permitting commercial suppliers to earn uncapped profit from providing those interventions while requiring standardized outcome collection and credible comparisons when feasible.
-(3) Creating a **zero-knowledge, decentralized global protocol** to function as a public utility that dramatically reduces the cost and time of pragmatic clinical trials.
-(4) Enabling this protocol to **aggregate private, individual, time-series health data** and publish analyses that distinguish causal estimates from uncontrolled signals, tailored to the multiomic cohort most similar to an individual, while maintaining participant anonymity.
-(5) Providing the open, interoperable infrastructure upon which existing and future clinical trial platforms, electronic health record systems, and other health technologies can integrate and build, transforming the system from a series of disconnected data silos into a unified learning health network.
-
-![How to connect every hospital's spreadsheet to every other hospital's spreadsheet without anyone knowing whose liver is whose.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-102-purpose-bw-academic.jpg)
+The purpose of this Act is to establish a universal right to seek investigational treatment after initial human safety testing while protecting voluntary supply, informed consent, reasonable safety standards, and the production of useful evidence.
 
 ### SEC. 103. FINDINGS
 
 Congress finds the following:
 
-1. New, effective treatments take an average of **17 years** to transition from scientific discovery to clinical practice, a delay during which millions of patients suffer without access to potential cures.
-2. The current clinical trial system is profoundly inefficient and exclusionary.
-   (A) Median per‑patient cost for a phase‑3 drug trial in 2024 exceeded **{{< var traditional_phase3_cost_per_patient >}}**\[2], inflating drug prices and limiting R‑&‑D on unpatentable therapies.
-   (B) Up to **86.1 percent of patients** are excluded from participating in pivotal trials, limiting the generalizability of findings to real-world patient populations.
-   (C) The failure to publish negative results leads to redundant research, while rigid trial designs that cannot adapt to incoming data stifle innovation.
-   (D) The short duration of most trials results in a critical lack of data on the long-term safety and efficacy of an intervention.
-
-3. As a consequence of these systemic failures, an estimated **95 percent of rare diseases lack a single FDA-approved treatment**, and effective therapies for common conditions remain undiscovered or inaccessible.
-4. The U.K. **RECOVERY** pragmatic trial enrolled 49,000 patients in 100 days at roughly **{{< var recovery_trial_cost_per_patient >}}**\[3], demonstrating that a decentralized, adaptive model can reduce the non-biologic operational costs of clinical research by over **90 percent** through automation of data management, monitoring, and administrative functions.
-5. The strategic application of artificial intelligence in healthcare has the potential to yield substantial economic benefits, with studies indicating that AI could reduce national healthcare spending by 5 to 10 percent annually by optimizing diagnostics, personalizing treatments, and improving the efficiency of health-related research and development.
-6. A lawful commercial market after initial human safety testing can reward companies for supplying treatments and generating standardized evidence before conventional approval. Requiring direct-cost pricing removes the profit incentive from early access and weakens the reason to supply treatments that conventional development cannot finance.
-7. The establishment of a global health data protocol, analogous to the foundational protocols of the internet, is necessary to securely connect disparate data silos and accelerate medical research worldwide. The **FDA.gov v2 Decentralized Health Protocol** is the United States' initial contribution to this protocol, a public utility providing the secure, open-source backend for a new generation of health innovation. It creates a global public good by making treatments overlooked under conventional development easier to finance and evaluate.
-8. A transparent, open-access reference implementation for trial design, recruitment, data submission, and cost disclosure, as envisioned by the FDA.gov v2 Decentralized Health Protocol, creates a competitive environment among trial sponsors, pushing them to adopt cost-efficient methods and transparent pricing for trial operations.
-9. Modernizing FDA regulation to embrace real‑world evidence, remote monitoring, and validated non‑animal test methods accelerates safe cures.
-10. The Protocol serves not only the FDA but as shared, open-source public infrastructure for all federal, state, and international health authorities, creating a shared global network for evidence generation and public health.
-11. This Act affirms the right of every United States resident to seek and purchase an eligible intervention from a willing supplier and to participate in scientific research relevant to their health. It does not guarantee that a treatment exists, that a supplier will manufacture it, or that a payer will cover it.
-12. The ultimate objective of the Protocol is to evolve into a fully decentralized and autonomous global protocol that is not reliant on the continued stewardship of any single government, corporate entity, or administrative body. The principle of **progressive decentralization** shall guide its development, ensuring that all governance and operational functions are systematically automated or migrated to secure, on-chain, community-ratified processes, thereby creating a resilient and permanently neutral public utility.
-13. FDA policies should be chosen through transparent economic models that compare lawful alternatives and maximize the expected rate and social value of reliable clinical discovery, subject to explicit safety, privacy, constitutional, and fiscal constraints.
-
-![Old trials: slow, expensive, rigid. New trials: fast, cheap, flexible. You've been doing this the hard way for decades.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-findings-comparison-bw-academic.jpg)
+1. Existing federal expanded-access and right-to-try pathways leave many patients and conditions outside their practical reach.
+2. Access may help the patient receiving a treatment. Standardized outcome collection can also help every later patient facing the same decision.
+3. Permitting willing suppliers to earn revenue after initial human safety testing can finance further investigation of treatments that could not otherwise pay for phase 2 or phase 3 trials.
+4. Pragmatic and decentralized trials can study treatments in routine care and include patients who would not qualify for conventional trials.
+5. Federal law should protect access without promising that a treatment works, requiring anyone to supply it, or requiring anyone else to pay for it.
 
 ### SEC. 104. DEFINITIONS
 
 In this Act:
 
-1. **Secretary** means the Secretary of Health and Human Services.
-2. **FDA** means the Food and Drug Administration.
-3. **NIH** means the National Institutes of Health.
-4. **Pragmatic decentralized trial** means a clinical study integrated into routine care, allowing remote or local data capture, minimal exclusions, and broad patient demographics.
-5. **QALY** means a quality‑adjusted life‑year, one year of life in perfect health.
-6. **FDA.gov v2 Decentralized Health Protocol (the "Protocol")** means the zero-knowledge, decentralized global health protocol initiated by the United States. Its primary function is to serve as a secure, open-source public utility that allows for the aggregation of private, individual, time-series health data. The Protocol is designed to publish analyses that distinguish causal estimates supported by adequate comparisons from observational signals, tailored to the multiomic cohort most similar to a given individual, while preserving the anonymity of all data contributors through cryptographic methods. It is intended to function as a Backend-as-a-Service (BaaS) with which existing and future health platforms (EHRs, clinical trial systems, etc.) can integrate, and is intended for eventual governance by a global, decentralized, on-chain community.
-7. **Trial Creator** means any individual, institution, or entity that designs, initiates, and manages a trial using the Protocol's reference implementation.
-8. **Eligible post-Phase-I investigational intervention** means a drug, biological product, device, diagnostic, behavioral intervention, or other medical intervention that:
-   (A) has completed a phase 1 clinical investigation or comparable first-in-human study sufficient to characterize initial human safety and dosing;
+1. **Eligible investigational treatment** means a drug, biological product, device, diagnostic, procedure, behavioral intervention, or combination of them that:
+   (A) has completed a phase 1 clinical investigation or has a comparable human safety record documented by a licensed medical facility or recognized research institution and found sufficient by the qualified provider and reviewing ethics board to characterize initial safety and dosing for the treatment and route of administration;
    (B) is not subject to an active clinical hold applicable to the proposed use;
-   (C) is manufactured, stored, prescribed, and administered under quality and safety standards established by the Secretary; and
-   (D) is supplied by an entity legally entitled and willing to manufacture or distribute it.
-9. **Commercial access price** means the total price freely set by a supplier for an eligible post-Phase-I investigational intervention and the services bundled with its provision. The price may include any profit or commercial margin selected by the supplier and is not limited to direct or indirect cost.
-10. **Commercial access protocol** means a prospectively registered pragmatic decentralized trial that provides an eligible post-Phase-I investigational intervention, obtains informed consent, captures a common core outcome set and adverse events, and permits auditable use of the resulting de-identified evidence. It shall use randomization or another adequate comparator when feasible. When no adequate comparator is feasible, the Protocol shall label the result as an observational signal and shall not present it as a causal treatment effect.
+   (C) is manufactured, stored, prescribed, and administered under applicable quality and safety standards; and
+   (D) is supplied by a person legally entitled and willing to manufacture or provide it.
+2. **Condition** includes a disease, injury, disability, symptom, functional impairment, or biological process associated with aging.
+3. **Qualified provider** means a licensed health professional acting within the professional's lawful scope of practice.
+4. **Right-to-trial protocol** means a prospectively registered plan for providing an eligible investigational treatment and collecting the minimum evidence required by section 203.
+5. **Qualified evidence system** means a public, nonprofit, or private registry or platform that satisfies section 301.
+6. **Secretary** means the Secretary of Health and Human Services, acting through the Commissioner of Food and Drugs where appropriate.
 
-![Your DNA and medical records flow through privacy-preserving internet pipes to the FDA and the WHO. Nobody sees your name, everyone sees the patterns.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-104-definitions-bw-academic.jpg)
+## TITLE II: UNIVERSAL RIGHT TO TRY AND LEARN
 
-## TITLE II: FDA Upgrade AND CLINICAL‑TRIAL INNOVATION
+### SEC. 201. RIGHT TO ACCESS
 
-### SEC. 201. ACCELERATED ADOPTION OF ALTERNATIVE PRECLINICAL TEST METHODS
+(a) **In General.** A patient may seek, purchase, and use an eligible investigational treatment for any condition under a right-to-trial protocol when a qualified provider recommends the treatment and a willing supplier agrees to provide it.
 
-(a) **Rulemaking.** Not later than 180 days after enactment, the Secretary, acting through the Commissioner of Food and Drugs, shall issue final regulations amending 21 CFR Parts 312 and 600 to permit non‑animal New‑Approach Methodologies (NAMs), including organ‑on‑chip systems, validated in‑silico toxicology, and high‑throughput cell assays, as acceptable primary evidence of safety where scientifically justified.
-(b) **Qualification pathway.** The regulations shall establish a transparent qualification pathway; once a NAM is qualified for a defined context of use, FDA reviewers shall accept data from that method without requiring parallel animal studies.
-(c) **Annual report.** The Commissioner shall publish an annual public report enumerating qualified NAMs, sponsor submissions using NAMs, and areas still requiring animal use with timelines to develop alternatives.
+(b) **Independent Federal Pathway.** Compliance with this Act is an independent federal pathway and does not require an investigational new drug application, investigational device exemption, individual expanded-access authorization, premarket approval, clearance, or licensure. Solely for treatment provided under this Act:
 
-![How to make the FDA accept computer models and lab-grown cells instead of killing mice. It's a multi-step bureaucratic process, naturally.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-201-accelerated-adopt-bw-academic.jpg)
+1. a drug or biological product is exempt from sections 502(f), 503(b)(4), 505(a), and 505(i) of the Federal Food, Drug, and Cosmetic Act, section 351(a) of the Public Health Service Act, and parts 50, 56, and 312 of title 21, Code of Federal Regulations, except that the labeling requirements in section 312.6 continue to apply;
+2. a device or diagnostic is exempt from sections 501(f)(1)(B), 502(f), 502(o), 510(k), 513(f)(2), 515, and 520(g) of the Federal Food, Drug, and Cosmetic Act and parts 50, 56, and 812 of title 21, Code of Federal Regulations, except that the labeling requirements in section 812.5 continue to apply; and
+3. the restrictions on prior charging authorization, cost recovery, promotion, and commercial distribution in sections 312.7, 312.8, and 812.7 of title 21, Code of Federal Regulations, do not prohibit truthful promotion, commercial distribution, or the price permitted by section 205.
 
-### SEC. 202. GUIDANCE ON DECENTRALISED, ADAPTIVE, AND REAL‑WORLD‑EVIDENCE TRIALS
+(c) **Protections Retained.** Nothing in subsection (b) exempts a person from applicable manufacturing and quality standards, prohibitions on false or misleading statements, or the consent, ethical review, evidence, safety-reporting, and liability requirements of this Act. No person may represent an eligible investigational treatment as safe or effective beyond what reliable evidence supports.
 
-(a) **Decentralised Trials Guidance.** Within 1 year the Secretary shall issue final guidance recognising remote visits, tele‑investigator oversight, direct‑to‑patient IMP shipment, and e‑consent, as compliant with 21 CFR Parts 50, 54, and 312.
-(b) **Adaptive Designs.** Guidance shall allow response‑adaptive randomisation, Bayesian interim analyses, seamless phase 2/3 designs, and platform/master‑protocol structures, provided pre‑specified statistical control of type‑I error.
-(c) **Real‑World Evidence.** Within 18 months the Secretary shall publish a framework specifying how real‑world data (EHRs, claims, device feeds) integrated via the FDA v2 Protocol may support new indications, post‑marketing commitments, or safety label changes.
-(d) **Training.** FDA shall establish continuing‑education modules to train reviewers in decentralized‑trial oversight, Bayesian statistics, and RWE analytics.
+(d) **No Compelled Participation.** Nothing in this Act requires a manufacturer, provider, facility, ethics board, evidence system, insurer, employer, or other person to manufacture, recommend, provide, administer, review, record, or pay for a treatment.
 
-![Four ways to make drug trials faster: run them remotely, change them mid-study, use real patient data, and teach the regulators how.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-202-guidance-on-decen-bw-academic.jpg)
+(e) **Clinical Judgment.** A provider may decline or discontinue treatment when the provider reasonably believes that the expected risks exceed the expected benefits for the patient.
 
-### SEC. 203. PATIENT‑FOCUSED DRUG DEVELOPMENT AND GLOBAL COLLABORATION
+### SEC. 202. PATIENT ELIGIBILITY AND INFORMED CONSENT
 
-(a) **Patient Experience Integration.** FDA shall revise Patient‑Focused Drug Development guidance to require that every pivotal trial protocol include at least one patient‑reported outcome or patient‑preference study relevant to benefit–risk assessment.
-(b) **Global Work‑sharing.** The Secretary may enter into work‑sharing arrangements with peer regulators (EMA, PMDA, Health Canada) for concurrent review of applications utilising FDA v2 Protocol data.
-(c) **Data Standards Convergence.** The Secretary shall align FDA data standards with HL7 FHIR Release 5, CDISC SDTM v4, and SNOMED‑CT 2025 edition to ensure cross‑border data utility.
+(a) **Eligibility.** A patient is eligible when:
 
-![Ask patients how they feel, get all countries to review drugs at once, and make everyone use the same spreadsheet format. Simple.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-203-patient-focused-d-bw-academic.jpg)
+1. a qualified provider has documented the patient's condition and recommendation;
+2. the patient has considered approved treatments reasonably available for the condition; and
+3. the patient or a legally authorized representative has given informed consent.
 
-### SEC. 204. FDA.gov v2 DECENTRALIZED HEALTH PROTOCOL AND REFERENCE IMPLEMENTATION
+(b) **Required Disclosure.** In plain language, the consent must:
 
-(a) **Launch & Hosting.** Within 12 months after enactment, the Secretary shall deploy an open-source, cloud-native **FDA.gov v2 Decentralized Health Protocol**, which shall include the **FDA.gov Public Portal** hosted on the **fda.gov** domain. All source code shall be mirrored in real-time to a public repository (e.g., _github.com/fda/fda-v2_).
-(b) **Mandatory Open‑Source Licence.** All code shall be released under the GNU General Public License v3.0. Any proprietary dependency shall be replaced or dual‑licensed within 24 months.
-(c) **Trial Creator Workspace Functions.** The **FDA.gov Public Portal** shall provide:
-(1) **E‑Protocol Builder** with templates and automated compliance validation (21 CFR Parts 312/812, ISO 14155) that lets any Trial Creator, regardless of prior regulatory expertise, design and launch a study.
-(2) **Liability‑Insurance Exchange** for real‑time per‑subject quotes; selections auto‑populate FDA Form 1572.
-(3) **Price and Payment Module** disclosing the commercial access price, all included goods and services, payment timing, refund and termination terms, and the participant's final payment before e-consent.
-(4) **Blockchain Supply‑Chain Ledger\[9]** interoperable with DSCSA (§ 360eee‑3) to capture temperature, custody, delivery.
-(5) **Live Analytics Dashboards** for enrolment, compliance, blinded efficacy; regulators & IRBs get read‑only oversight.
-(d) **Core Protocol Services and Public Reference Portal.** The Protocol's primary function is to provide core backend services accessible via its open API. To ensure baseline access for all citizens and to serve as a model for third-party developers, the Secretary shall host the public-facing **FDA.gov Public Portal** as part of the reference implementation. This framework shall:
+1. identify the treatment and state that it is investigational and may never be shown safe or effective;
+2. identify reasonably available approved alternatives;
+3. describe known and reasonably foreseeable risks, possible benefits, and the best, worst, and most likely outcomes;
+4. explain what remains unknown;
+5. state that participation is voluntary and may be ended at any time;
+6. state whether an insurer or public program is expected to pay;
+7. disclose the total price, included services, payment timing, refund terms, and reasonably foreseeable additional costs; and
+8. explain required data collection, permitted uses, privacy protections, and public reporting.
 
-(1) **Provide a Reference Health Analysis Tool.** The portal lets users connect their data to a secure reference agent that integrates and analyzes their health information to generate a **ranked list of treatments & trials**, presented alongside standardized "Outcome Labels."
-(2) **Enable User-Initiated Data Contribution.** The Protocol shall provide standardized tools (including APIs and SDKs) that let individuals securely contribute their health data from diverse sources. All data sharing shall be explicitly initiated and authorized by the user.
-(3) Provide reference interfaces for single‑session e‑screening, Part 11 e‑consent, and instant randomisation for matched trials through the portal.
-(4) Coordinate direct‑to‑patient or local‑pharmacy IMP dispatch with ledger verification.
-(5) Capture outcomes via mobile app, SMS/IVR, FHIR push, and IoT feeds; data loop into evidence rankings which are **recomputed nightly**. **The source code, feature weights, and a reproducible computational notebook for each annual release of the QALY‑ranking algorithm shall be posted in the public repository within 30 days of model deployment.**
-(6) Contribute to and draw from a **Publicly Accessible Knowledge Base** (dubbed "Clinipedia") of all quantified food and drug effects, continuously updated with new data and analysis from the Protocol. This knowledge base, including all underlying data, analytical models, and evidence rankings, shall be made easily searchable and accessible to all, serving as a global public good.
-(e) **The Protocol's Open API.** The Protocol shall function as a Backend-as-a-Service (BaaS) for the national health technology ecosystem. Its primary deliverable is the secure, versioned, and documented open API. All de‑identified data shall be exposed through this RESTful API that is HL7 FHIR‑R5 compliant and meets 42 U.S.C. § 300jj‑52. The reference implementation is explicitly intended _not_ to compete with consumer-facing applications but to provide the secure, interoperable rails upon which a competitive ecosystem of third-party tools and services can be built.
-(f) **Continuous Integration/Continuous Deployment (CI/CD).** The Secretary shall maintain automated unit‑test, security‑scan, and code‑quality pipelines that must pass before any code merge. CI results shall be publicly viewable and the Protocol's reference implementation shall maintain compliance with **FedRAMP‑Moderate\[6]** and **NIST SP 800‑218** DevSecOps guidelines; the System Security Plan and Authority‑to‑Operate letter shall be posted in redacted form.
-(g) **AI-Augmented Governance & Pull‑Request Acceptance.**
-(1) **AI-Assisted Review.** All pull requests (PRs) submitted to the public repository shall undergo an automated, comprehensive review by one or more designated AI Governance and Security Review systems. These systems shall be open-source and trained to perform deep code analysis, identify potential vulnerabilities, assess compliance with architectural standards, and model the risk of economic exploits.
-(2) **Risk-Based Triage.** The AI Reviewer shall assign each PR a risk score (e.g., "Low," "Medium," "High," "Critical"). This score determines the review and merge process:
+(c) **Form.** Consent may be completed on paper or through a digital process that permits questions and records the patient's agreement. The Secretary may publish model language but may not require a particular technology.
 
-(A) **Low-Risk PRs:** Shall be merged automatically within 72 hours if they pass all CI tests, unless a TSC member manually flags it for review.
-(B) **Medium-Risk PRs:** Shall be automatically paused and require an explicit simple majority approval vote from the TSC for merger.
-(C) **High-Risk or Critical-Risk PRs:** Shall be automatically rejected and may not be merged without a two-thirds supermajority vote from the TSC to override the AI's finding, accompanied by a published justification.
-(3) **Technical Steering Committee (TSC).** A nine‑member TSC is hereby established to oversee the repository, adjudicate flagged PRs, and manage the AI Governance Reviewers. The TSC is mandated to continuously pursue the automation and decentralization of its own functions, with the long-term goal of migrating governance decisions to a secure, on-chain, community-ratified process. **To ensure this transition, the authority of the TSC as constituted herein shall sunset no later than 7 years after the date of enactment of this Act, or upon a determination by the Secretary that a secure and viable on-chain governance model is operational, whichever is earlier. The final act of the TSC shall be to ratify the migration to the successor governance protocol.** Composition: 2 FDA officials, 1 NIH representative, 1 representative from a peer international regulator (e.g., EMA, PMDA), 1 patient‑advocacy representative, 1 open‑source AI/ML security expert elected by contributors, 1 biostatistician, 1 cyber‑security expert, and 1 industry sponsor representative. The Secretary shall pursue agreements to add representatives from at least two other international health authorities or bodies within 24 months.
-(4) **Appeal and Manual Override.** Any contributor may appeal an AI rejection or TSC decision to the FDA Chief Scientist, who must respond within 30 days. The TSC retains the authority to manually re-classify any PR with a two-thirds vote.
-(5) **Democratic Renewal.** The community-elected AI/ML security expert and patient-advocate seats are subject to annual election by contributors (defined as those with ≥5 merged PRs in the preceding year) using ranked‑choice voting via a transparent, verifiable online ballot.
-(h) **Rulemaking & PRA Fast‑Track.** Within 180 days the Secretary shall issue interim final rules specifying technical standards for each module, **standards for the content, format, and regular updating of Outcome Labels mandated under subsection (d)(1) of this section,** codifying the TSC charter, and **invoking 44 U.S.C. § 3507(h) such that any Information‑Collection Request[5] tied to the FDA v2 Protocol obtains OMB clearance within 60 days.** Sponsors or investigators that fail to comply with these rules may be suspended under 21 U.S.C. § 331(f).
+### SEC. 203. EVERY TREATMENT USE GENERATES EVIDENCE
 
-(i) **Public‑Bounty & Zero‑Knowledge Ledger.** The Secretary shall operate a continuous public bounty program using resources available under section 402 to reward external contributors for merged pull‑requests, vulnerability disclosures, and feature enhancements. **The AI Governance and Security Reviewer shall be used to automatically verify vulnerability submissions, score their severity, and recommend payment amounts to expedite the bounty process.** Bounties shall be posted openly as issues in the public repository with dollar amounts and paid within 30 days of merge. Furthermore, **all patient‑level data aggregated and analyzed by the Protocol shall be represented as zero‑knowledge proofs (e.g., zk‑SNARK commitments) and stored via content‑addressable storage, permitting any nation‑state or regional authority to run an independent mirror node and verify ledger integrity without accessing protected health information.**
+(a) **Prospective Registration.** Before treatment begins, the right-to-trial protocol must be registered with a qualified evidence system and identify the treatment, condition, eligibility criteria, outcomes, follow-up period, safety-monitoring plan, and the supplier, sponsor, provider, or evidence-system operator responsible for evidence submission.
 
-(j) **Metrics & Transparency.** Annual public report: protocol uptime, median time‑to‑trial launch, pull‑request merge rate, unresolved PR backlog, bounty payouts, penetration‑test findings, insurance‑premium benchmarks, and user‑satisfaction scores. The Secretary shall commission an independent **penetration test** every fiscal year and publish an executive summary of findings.
+(b) **Minimum Evidence.** Subject to subsection (c), the responsible party must collect and submit the following information for every treatment use:
 
-(k) **Protocol Intelligence and Automation.** The Protocol shall leverage artificial intelligence and machine learning capabilities to enhance its functionalities, including but not limited to: (1) assisting sponsors with automated protocol validation checks during e-protocol building; (2) improving the precision of matching patients to suitable trials based on their comprehensive health data; (3) augmenting the analysis of aggregated, de-identified data for early safety signal detection and pharmacovigilance; (4) **powering the AI Governance and Security Reviewer for automated code review, vulnerability detection, and pull-request adjudication as specified in subsection (g);** and (5) supporting regulatory staff with tools for efficient data review where appropriate. All such AI/ML systems shall be developed with robust validation, transparency in function, and operate under human oversight, particularly for critical decision support.
+1. baseline condition and relevant patient characteristics;
+2. treatment, dose, duration, and important concurrent treatments;
+3. clinical and patient-reported outcomes;
+4. discontinuations and serious adverse events; and
+5. the completeness and timing of follow-up.
 
-(l) **Global Accessibility.** To facilitate global participation and data collection, the **FDA.gov Public Portal's** user interfaces for patients and trial creators shall be made accessible in multiple languages.
+(c) **Follow-Up Completeness.** Each protocol must prespecify a minimum follow-up schedule and completion target and must obtain at least one post-treatment outcome record unless the patient withdraws, dies before the scheduled assessment, or cannot be reached after the protocol's required attempts. For each exception, the responsible party must submit the reason, the dates and methods of attempted contact, and the patient's last known clinical status. The evidence system shall publish protocol-level completion rates, and the reviewing board may require a corrective plan for material failure to meet the prespecified target without good cause.
 
-(m) **Interoperability with National Health Data Systems.** The Protocol shall be designed to complement and enhance existing government health initiatives. The Secretary shall establish data sharing and interoperability frameworks to connect the Protocol with key national health programs, including but not limited to: the FDA's Sentinel Initiative and Global Substance Registry System (GSRS); the National Institutes of Health's _All of Us_ Research Program; the National Health and Nutrition Examination Survey (NHANES); and the Centers for Disease Control and Prevention's public health surveillance systems. This integration shall leverage the Protocol's AI capabilities to analyze data across systems, enhancing national safety monitoring, research, and public health response capabilities while adhering to strict privacy-preserving protocols.
+(d) **Reliable Claims.** A protocol making a causal claim about treatment effects must use randomization or another adequate comparator when feasible and a prespecified analysis. Results without an adequate comparator must be clearly labeled observational and may not be represented as proving causation.
 
-### SEC. 205. FDA-X PRIZE
+(e) **Public Results.** A qualified evidence system shall publish timely, deidentified aggregate results, including negative and inconclusive results, in a searchable and machine-readable form. Individually identifiable information may not be publicly disclosed.
 
-(a) **Establishment.** To accelerate the development of the FDA.gov v2 Protocol, the Secretary may establish an "FDA-X Prize" competition, funded from resources available under section 402, for the entity that first develops and demonstrates a public portal meeting the core requirements outlined in Section 204 and which demonstrates the capacity to achieve at least an **80X reduction** in per-patient trial costs compared to traditional methodologies.
+(f) **Safety Reporting.** Serious and unexpected adverse events must be reported promptly to the supplier, reviewing ethics board, qualified evidence system, and Secretary under timelines established by the Secretary.
 
-![Offer a prize for cutting FDA approval costs by 80X. Somebody wins. Integrate their solution. Government runs a hackathon.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-205-fda-x-prize-bw-academic.jpg)
+### SEC. 204. INDEPENDENT ETHICAL AND SAFETY REVIEW
 
-(b) **Alternative Development Path.** The Secretary may use the prize competition as the primary mechanism for developing the protocol. In such a case, the timelines and responsibilities outlined in Section 204(a) shall be adjusted to reflect a successful prize outcome.
-(c) **Integration.** If the prize is awarded for a platform that meets a substantial subset of requirements, the Secretary shall ensure its integration with any components developed or procured under Section 204.
+(a) **Review.** Before enrollment, a right-to-trial protocol must be reviewed by an institutional review board under applicable federal law or by an independent ethics review board meeting equivalent minimum standards established by the Secretary.
 
-## TITLE III: COMMERCIAL POST-PHASE-I ACCESS
+(b) **Scope.** Review shall address the consent, risk disclosures, monitoring plan, evidence plan, conflicts of interest, and protection of patients unable to consent for themselves.
 
-### SEC. 301. COMMERCIAL ACCESS TO POST-PHASE-I INVESTIGATIONAL INTERVENTIONS
+(c) **Efficient Review.** One reviewing board may approve a protocol used by multiple providers, facilities, or States. Review may be remote. A board may charge a disclosed fee.
 
-(a) **Right.** Beginning 24 months after enactment, any U.S. resident may seek, purchase, and use an eligible post-Phase-I investigational intervention offered by a willing supplier through a commercial access protocol, subject to the safety, supply, manufacturing-capacity, and clinical-capacity limitations in subsection (f).
+(d) **No Treatment Guarantee.** Approval of a protocol does not represent that the treatment is safe, effective, or likely to benefit a particular patient.
 
-(b) **Interstate Commercial Authorization.** To the extent a federal provision would otherwise prohibit commerce solely because an intervention lacks premarket approval, clearance, authorization, licensure, or an investigational exemption, and notwithstanding sections 301(a) and (d), 501(f)(1)(B), 502(o), 505, 510(k), 513(f)(2), 515, and 520(g) of the Federal Food, Drug, and Cosmetic Act and section 351(a) of the Public Health Service Act, the manufacture, distribution, sale, prescription, and use of an eligible post-Phase-I investigational intervention in interstate commerce is lawful before marketing approval when:
-(1) the intervention is provided through a commercial access protocol;
-(2) the participant completes the informed-consent requirements in section 302;
-(3) the protocol prospectively specifies required baseline, outcome, adherence, comparator, and adverse-event data and requires their timely submission as they become available; and
-(4) the supplier complies with applicable manufacturing, labeling, supply-chain, and safety-monitoring requirements.
+(e) **Protocol Suspension.** The Secretary or reviewing ethics board may immediately suspend new enrollment or further treatment under a right-to-trial protocol when credible evidence indicates an unreasonable and significant risk of illness or injury. The Secretary may also suspend distribution under the protocol when necessary to prevent serious harm. The suspension notice must state the grounds and the conditions for resuming the protocol. A provider may continue only the care reasonably necessary to taper, withdraw, or stabilize a patient safely.
 
-(c) **Not Marketing Approval.** Commercial access under this section does not constitute FDA approval, establish safety or efficacy, authorize promotion that states or implies approval, or prevent the Secretary from imposing a clinical hold based on evidence of unreasonable risk.
+### SEC. 205. PAYMENT AND FINANCIAL RESPONSIBILITY
 
-(d) **Pricing.** Commercial access pricing, profit, disclosure, and payment are governed by section 303.
+(a) **Negotiated Price.** A willing supplier and patient may freely negotiate payment. The price may include profit and is not limited to direct or indirect cost.
 
-(e) **Voluntary Supply and Fair Allocation.** Nothing in this Act compels an entity to manufacture an intervention, surrender intellectual property, disclose protected know-how, or begin supplying an intervention. A participating supplier shall publish any safety, supply, manufacturing-capacity, or clinical-capacity criteria used to allocate access and shall apply those criteria consistently to similarly situated patients.
+(b) **Price Disclosure.** No patient may be charged more than the amount disclosed at consent unless the patient separately consents to an additional good or service.
 
-(f) **Safety and Capacity Limitations.** A supplier, prescriber, or reviewing board may exclude a patient for a documented contraindication, unreasonable clinical risk, insufficient supply, manufacturing constraint, or lack of clinical capacity. The reason shall be transmitted to the FDA Dashboard within 7 days and is subject to FDA audit.
-(g) **Adaptive Enrollment.** Sponsors participating under this section must accept data-driven lowering of exclusion criteria unless an IRB documents incremental safety risk.
+(c) **Payment Sources.** A patient, insurer, charity, employer, research sponsor, or other person may pay any portion of the price. Nothing in this Act creates an entitlement to payment or reimbursement.
 
-### SEC. 302. PATIENT PROTECTIONS, CONSENT, AND LIABILITY
+(d) **Surviving Family.** A patient's heirs or other family members are not liable for an unpaid treatment obligation unless they separately agreed to assume it before treatment.
 
-(a) **Ethical Oversight.** All commercial access protocols shall undergo review by a qualified Institutional Review Board (IRB). To enable faster and cheaper trials, the FDA.gov v2 Protocol shall support both review by a single central IRB (per 45 CFR § 46.114[8]) and by qualified **Decentralized Ethical Review Boards (DERBs)**. The Secretary shall, through rulemaking, establish standards for the qualification, operation, and oversight of DERBs on the Protocol.
-(b) **Informed Consent and Comprehension Verification.**
-(1) E-consent via the **FDA.gov Public Portal** shall clearly disclose, in an accessible format, the investigational nature of the trial, all known and potential risks including their likelihood based on available data, the commercial access price and payment terms under section 303, potential benefits, alternative treatments, the evidence design, and all data-sharing terms.
-(2) To verify genuine understanding of the disclosed information, particularly concerning the most serious risks and their likelihood, successful completion of the e-consent process shall require the patient to pass an automated, interactive comprehension quiz administered through the **FDA.gov Public Portal**. This quiz shall be based directly on the information disclosed pursuant to paragraph (1) of this subsection.
-(3) The Secretary, through rulemaking within 12 months of enactment, shall establish standards for the development, content, validation, and administration of such comprehension quizzes, including criteria for successful completion and procedures for patients who do not initially pass. These standards shall ensure quizzes are fair, accessible, and effectively assess understanding of critical information.
-(4) Execution of the e-consent, following successful completion of the comprehension quiz, constitutes both 45 CFR § 164.508 authorization and, where applicable, a waiver of authorization under § 164.512(i)\[11] for research use of protected health information, as approved by the reviewing IRB. A record of successful quiz completion and the signed consent shall be hashed and stored on the blockchain ledger.
-(c) **Safety Monitoring.** Sponsors must stream adverse‑event data to the Dashboard within 24 hours; FDA may halt enrolment under 21 CFR § 312.42.
-(d) **Liability Shield.** Good‑faith compliance grants immunity from tort claims except for gross negligence or willful misconduct; mirrors Pub. L. 115‑176 § 2(c).
+## TITLE III: COMPETING EVIDENCE SYSTEMS AND FDA USE
 
-![You click buttons until the computer is sure you understand the trial. Your consent lives on a blockchain. Sensors watch for side effects in real time.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-302-patient-protections-consent-and-liability-bw-academic.jpg)
+### SEC. 301. QUALIFIED EVIDENCE SYSTEMS
 
-### SEC. 303. COMMERCIAL PRICE AND PATIENT PAYMENT
+(a) **Qualification.** The Secretary shall publish minimum, technology-neutral standards for the security, privacy, auditability, interoperability, data export, conflict disclosure, safety reporting, and public reporting of qualified evidence systems. The standards must provide protections at least equivalent to the privacy, security, and breach-notification requirements in parts 160 and 164 of title 45, Code of Federal Regulations, and the electronic-record requirements in part 11 of title 21, Code of Federal Regulations, where applicable.
 
-(a) **Commercial Price.** A supplier shall post one commercial access price before a patient consents. The price may recover costs, include profit, or be set by any other lawful commercial method. No federal officer may require cost-based pricing, limit the supplier's margin or return, or reduce the lawful price as a condition of access under section 301.
+(b) **Open Entry.** A public agency, nonprofit organization, academic institution, or private company may operate a qualified evidence system by publicly certifying compliance with the published standards. The Secretary may audit an operator and revoke its qualification for material noncompliance after notice and an opportunity to cure, except when immediate action is necessary to prevent serious harm.
 
-(b) **Price Disclosure.** The Protocol shall display the total commercial access price, the intervention and services included, payment timing, refund and termination terms, and the patient's final payment. Suppliers may voluntarily disclose costs and margins, but such disclosure is not a condition of access.
-(c) **Patient Payment.** The participant, an insurer, a charity, an employer, or another private payer may pay any portion of the commercial access price. Nothing in this Act creates a federal entitlement to payment or reimbursement.
-(d) **No Undisclosed Charges.** A supplier or investigating site may not charge a participant more than the price disclosed at consent unless the participant separately consents to an additional good or service. Participants may terminate participation at any time. Refunds and remaining financial obligations shall follow the terms disclosed before consent.
-(e) **Competition.** The Protocol shall display comparable interventions, prices, enrollment volumes, data-completeness rates, safety signals, and evidence quality in a machine-readable format. Nothing in this Act limits competition by any entity lawfully entitled to manufacture or distribute an intervention.
+(c) **Fees.** An operator may charge disclosed fees to suppliers, sponsors, providers, facilities, or patients. Nothing in this Act limits a lawful profit or requires a government-operated platform.
 
-## TITLE IV: GENERAL PROVISIONS
+(d) **Portability.** A qualified evidence system must let authorized participants export protocol and evidence records in a documented, commonly usable format.
 
-### SEC. 401. COORDINATION WITH EXISTING LAW
+(e) **No Prescribed Architecture.** The Secretary may not require a particular software vendor, hosting model, source-code license, distributed ledger, artificial-intelligence system, or governance structure.
 
-(a) **Expanded Access.** This Act supplements 21 CFR § 312 Subpart I; data from Universal Right to Try may fulfill post‑marketing study obligations.
-(b) **State Laws.** No State or political subdivision may regulate the practice of tele‑medicine, pharmacy licensure, or shipment of investigational products in a manner that prevents implementation of this Act. Specifically, a licensed prescriber participating in a commercial access protocol registered with the FDA shall be deemed licensed in all States for the limited purpose of providing investigational treatment under this Act, and pharmacies dispensing or shipping such products pursuant to the blockchain supply‑chain ledger are exempt from conflicting State prohibitions.
-(c) **DSCSA Alignment.** All investigational shipments must utilize the protocol's ledger to satisfy DSCSA traceability.
-(d) **Shared Public Health Infrastructure.** The Protocol shall be designed and maintained as extensible infrastructure available for use by all federal, state, and international health agencies. The Secretary shall establish a process to facilitate the adoption of the Protocol by other agencies for their own regulatory, research, and public health surveillance purposes, thereby creating a shared global network for evidence generation.
+### SEC. 302. USE OF EVIDENCE
 
-![One blockchain to replace fifty state licensing systems, drug tracking rules, and international health agency paperwork. Efficiency looks like simplification.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-401-coordination-with-existing-law-bw-academic.jpg)
+(a) **Fit-for-Purpose Review.** The Secretary may use fit-for-purpose evidence generated under this Act to support approval, clearance, licensure, a new indication, labeling, safety action, or a postmarket requirement.
 
-### SEC. 402. IMPLEMENTATION FUNDING
+(b) **Method Neutrality.** The Secretary may not reject evidence solely because a study is pragmatic, decentralized, adaptive, conducted in routine care, or uses real-world data. The weight given to the evidence must reflect its design, data quality, uncertainty, and risk of bias.
 
-(a) **Existing Appropriations First.** The Secretary shall first implement this Act using existing appropriations, personnel, regulatory-science programs, interagency agreements, acquisition authorities, and user-fee authority.
-(b) **No Treatment Subsidy.** Nothing in this Act authorizes a new federal appropriation to purchase, reimburse, or subsidize an investigational intervention or a participant's commercial access price.
-(c) **Protocol Fees.** The Secretary may assess transparent, cost-based fees on commercial suppliers for access to the common Protocol infrastructure. Fees may fund only the construction, security, operation, maintenance, and independent evaluation of that infrastructure. They may not regulate a supplier's commercial access price.
-(d) **Public Accounting.** The Secretary shall publish obligations, outlays, fee collections, vendors, deliverables, and performance measures quarterly in a machine-readable format.
+(c) **Regulatory Guidance.** Not later than 180 days after enactment, the Secretary shall publish guidance describing how sponsors may use evidence generated under this Act in regulatory submissions.
 
-### SEC. 403. IMPLEMENTATION TIMELINE
+### SEC. 303. PUBLIC LEARNING
 
-- **180 days:** Interim rules; beta e‑protocol builder; transparency website live.
-- **24 months:** FDA v2 Platform MVP, insurance exchange, supply-chain ledger, and commercial post-Phase-I access operational; annual GAO reporting begins.
+(a) **Interoperable Catalog.** The Secretary shall maintain or designate a public catalog through which patients, providers, and researchers can find registered protocols and aggregate results across qualified evidence systems.
 
-### SEC. 404. STRATEGY FOR GLOBAL GOVERNANCE AND DECENTRALIZATION
+(b) **International Evidence.** A qualified evidence system may accept compatible evidence generated outside the United States when collection and use comply with applicable law.
 
-(a) **Objective.** The Secretary, in coordination with the Secretary of State, shall develop and execute a strategy to transition the governance of the Protocol from the United States government to an independent international governing body.
-(b) **Report to Congress.** Within 18 months of enactment, the Secretary shall submit a report to Congress outlining this strategy, including: (1) proposed frameworks for a new international governance body; (2) a timeline for transitioning technical and administrative oversight; and (3) a plan for ensuring the long-term sustainability and neutrality of the protocol, including research into and pathways toward cryptographically-secured, on-chain governance models that reduce reliance on a central administrative body.
-(c) **Continued Support.** The United States shall continue to provide technical support and, subject to resources available under section 402, financial support for the Protocol during a transition period of no less than 5 years after an international governance body is established.
+(c) **No Ownership Mandate.** Nothing in this Act transfers ownership of a patient's identifiable health data or requires public disclosure of trade secrets, manufacturing information, or identifiable health information.
 
-![The U.S. runs it first, then gives it to an international committee, then gives it to a blockchain. Centralization fades like training wheels.](/assets/images/right-to-trial-fda-upgrade-act/right-to-trial-fda-upgrade-act-section-sec-404-strategy-for-glob-bw-academic.jpg)
+## TITLE IV: NONINTERFERENCE AND IMPLEMENTATION
 
-### SEC. 405. SEVERABILITY
+### SEC. 401. FEDERAL AND STATE NONINTERFERENCE
 
-If any provision of this Act is held invalid, the remainder shall remain in effect.
+(a) **Government Action Prohibited.** No federal, State, or local officer may prohibit or materially burden treatment that complies with this Act solely because the treatment lacks premarket approval, clearance, or licensure for the proposed use.
 
-### SEC. 406. OPEN ECONOMIC DECISION RULE FOR FDA POLICY
+(b) **Professional Discipline.** A licensing board or government agency may not revoke, suspend, refuse to renew, or otherwise restrict a professional or facility license solely because of good-faith participation in treatment complying with this Act.
 
-(a) **Alternatives.** Before adopting a regulation, guidance, generally applicable policy, Protocol rule, or program design that materially affects treatment access or clinical evidence generation, the Secretary shall compare the proposed action with feasible lawful alternatives, including a less restrictive alternative and a no-action counterfactual.
+(c) **Generally Applicable Protections.** A State may enforce generally applicable professional-licensing, facility, manufacturing, pharmacy, fraud, and safety laws that do not discriminate against eligible investigational treatment or defeat the rights created by this Act.
 
-(b) **Separate Outcomes.** For each alternative, the Secretary shall separately report:
-(1) the expected number of treatment-condition pairs reaching a prespecified evidentiary threshold per year;
-(2) the expected time from initial human safety testing to a reliable answer;
-(3) expected QALYs gained or lost, serious adverse events, patient access, and distributional effects;
-(4) patient, payer, sponsor, and public costs;
-(5) effects on entry, competition, investment, treatment supply, and data completeness; and
-(6) uncertainty, sensitivity analyses, model calibration, and retrospective forecast accuracy.
+(d) **Federal Programs.** Participation in this Act alone may not be used to exclude a provider or facility from Medicare, Medicaid, or another federal health program.
 
-(c) **Decision Rule.** The Secretary shall adopt the alternative that the best available evidence and open economic model project will maximize the expected rate and social value of reliable clinical discovery, subject to explicit safety, privacy, constitutional, and fiscal constraints. The model shall not reward trivial endpoints, duplicate claims, biased analyses, or findings that fail independent replication.
+### SEC. 402. RESPONSIBILITY AND LIABILITY
 
-(d) **Transparency and Review.** The evidence, assumptions, models, code, uncertainty analysis, and proposed decision shall be published on the **FDA.gov Public Portal** for public comment and independent audit before the action takes effect.
+(a) **Good-Faith Participation.** A person is not subject to civil, criminal, licensing, or administrative liability solely for good-faith participation in treatment complying with this Act while exercising reasonable care.
 
-(e) **Emergency Action.** Nothing in this section limits the Secretary's authority to address an imminent unreasonable risk. For an emergency action, the analysis and public justification shall be published as soon as practicable after the action.
+(b) **Limits.** Nothing in this Act limits liability for failure to exercise reasonable care, violation of applicable manufacturing standards, fraud, a false or misleading statement, reckless conduct, or willful misconduct.
 
-(f) **Departure.** The Secretary may select another alternative only after publishing a finding that a binding legal or quantified safety constraint requires the departure and identifying the expected discoveries and QALYs forgone.
+(c) **Safety Authority.** Nothing in this Act limits the Secretary's authority to investigate a safety signal, require safety reporting, impose or maintain a clinical hold where otherwise authorized, exercise the protocol-suspension authority in section 204(e), or act against conduct outside this Act.
 
-### SEC. 407. INDEPENDENT IMPACT EVALUATION OF THIS ACT
+### SEC. 403. IMPLEMENTATION
 
-(a) **Preregistered Evaluation.** Before commercial access begins, the Comptroller General, in consultation with independent health economists, biostatisticians, patient representatives, and drug-development researchers, shall publish a preregistered evaluation protocol and baseline. The evaluation shall compare outcomes under this Act with the best available counterfactual, including existing expanded access, the federal Right to Try Act, accelerated approval, and contemporaneous changes unrelated to this Act.
+(a) **Rules.** Not later than 180 days after enactment, the Secretary shall issue rules necessary to implement this Act. The access right in section 201 takes effect 180 days after enactment whether or not final rules have been issued. Until final rules take effect, an evidence system may qualify by certifying compliance with the express requirements of this Act and protections at least equivalent to parts 160 and 164 of title 45, Code of Federal Regulations, and part 11 of title 21, Code of Federal Regulations, whether or not those regulations would otherwise apply to the operator.
 
-(b) **Required Outcomes.** The evaluation shall report annually by intervention, condition, supplier, and patient subgroup:
-(1) patients requesting, receiving, discontinuing, and completing follow-up;
-(2) posted prices, private payments, treatment supply, supplier entry, and market concentration;
-(3) serious adverse events, mortality, patient-reported outcomes, and QALYs gained or lost;
-(4) data completeness, missingness, protocol deviations, and representativeness;
-(5) treatment-condition pairs reaching prespecified evidentiary thresholds, time to reliable answer, independent replication, and regulatory uses of the evidence;
-(6) federal implementation costs, private treatment costs, medical spending, and patient financial burden; and
-(7) distributional effects by income, insurance, race, ethnicity, sex, age, disability, geography, and disease rarity.
+(b) **Existing Resources.** The Secretary shall use existing appropriations and may assess transparent, cost-based qualification fees. Nothing in this Act authorizes a new federal appropriation to purchase or subsidize treatment.
 
-(c) **Causal Methods and Uncertainty.** Reports shall distinguish randomized from observational evidence, prespecify methods, identify biases and spillovers, publish uncertainty intervals and sensitivity analyses, and release reproducible code and nonidentifiable data to the maximum extent permitted by law.
+(c) **Evaluation.** The Comptroller General shall report to Congress each year the number of protocols, patients treated, suppliers participating, serious adverse events, completed follow-up records, publicly reported results, regulatory uses of the evidence, and federal implementation costs.
 
-(d) **Five-Year Evaluation.** Five years after commercial access begins, the Comptroller General shall publish an independent benefit-cost and cost-effectiveness evaluation. Benefits from earlier access, faster discovery, treatment-price changes, medical-cost changes, and research-cost changes shall be reported separately before any combined total to prevent double counting.
-
-(e) **No Automatic Termination of Access.** The evaluation does not suspend the commercial-access right. Congress may revise the Protocol, safety requirements, or implementation funding in response to measured results.
-
-### REFERENCES
-
-\[1] ClinicalTrials.gov FY 2024 Annual Report, Table 4 (trial enrollment).
-\[2] Moore, T. J., Zhang, H., Anderson, G., & Alexander, G. C. (2018). Estimated Costs of Pivotal Trials for Novel Therapeutic Agents Approved by the US Food and Drug Administration, 2015-2016. _JAMA Internal Medicine_, 178(11), 1451–1457.
-\[3] See [Decentralized Pragmatic Trials (RECOVERY)](recovery-trial.qmd) analysis, citing UKRI, Manhattan Institute, and others.
-\[4] openFDA GitHub Repository, [https://github.com/FDA](https://github.com/FDA).
-\[5] 44 U.S.C. § 3507(h) fast‑track provision; Administrative Conference PRA Study (2012).
-\[6] FedRAMP FAQ, 'Understanding Baselines & Impact Levels' (2024).
-\[8] 45 CFR § 46.114, NIH Single‑IRB Policy (updated 2023).
-\[9] FDA _DSCSA Pilot Project Program – Final Report_ (2024).
-\[11] 45 CFR § 164.512(i)(1) (HIPAA research waiver).
+(d) **Severability.** If any provision of this Act is held invalid, the remainder shall not be affected.
 
 #### End of Act.

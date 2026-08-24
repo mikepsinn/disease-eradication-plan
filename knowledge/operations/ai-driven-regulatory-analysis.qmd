@@ -1,13 +1,12 @@
 ---
 title: AI-Driven Regulatory Impact Analysis System
-description: AI-driven system supporting open regulatory impact comparisons under the Universal Right to Try & FDA Upgrade Act.
+description: Optional AI-assisted system for producing open regulatory impact comparisons.
 published: true
 tags:
   - regulatory
-image: /assets/og-images/knowledge/operations/ai-driven-regulatory-analysis-og-bw-academic.jpg
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Section 406 of the [Universal Right to Try & FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.qmd) requires open comparisons of FDA actions that materially affect treatment access or clinical evidence generation. This system uses an AI-first approach based on the Pareto (80/20) principle, focusing on current and rapidly advancing AI reasoning and tool-use capabilities.
+The [Right to Trial & FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.qmd) does not prescribe an AI system or a regulatory decision model. This optional system could help regulators and independent researchers compare actions that affect treatment access or clinical evidence generation. It uses an AI-first approach based on the Pareto (80/20) principle, focusing on current and rapidly advancing AI reasoning and tool-use capabilities.
 
 ### Core Components and Workflow
 
@@ -31,7 +30,7 @@ Section 406 of the [Universal Right to Try & FDA Upgrade Act](../appendix/right-
 3. **Transparent Publishing:**
 
    - **Static Site Generation:** Approved reports and analyses will be automatically published to a static website using GitHub Pages, ensuring broad public accessibility.
-   - **Data and Model Availability:** All underlying data (where public), assumptions, and models (scripts, algorithms) will be linked or included with the published reports, enabling reproducibility and further research, consistent with Section 406(d) of the Act.
+   - **Data and Model Availability:** All underlying data (where public), assumptions, and models (scripts, algorithms) will be linked or included with the published reports, enabling reproducibility and further research.
 
 ### Operational Principles
 
@@ -40,9 +39,9 @@ Section 406 of the [Universal Right to Try & FDA Upgrade Act](../appendix/right-
 - **Community Contributions:** Accept pull requests from scientists and the public to improve the quality, scope, and relevance of the impact analyses.
 - **Cost-Effectiveness:** Prioritize open-source tools and lean operational practices to minimize costs while maximizing output and transparency.
 
-### Alignment with the Act
+### Relationship to Right to Trial
 
-This system supports Section 406 by providing:
+This optional system could support implementation and independent oversight by providing:
 
 - Comparisons of proposed, less restrictive, and no-action alternatives.
 - Quantitative modeling of treatment discoveries, time to reliable answers, QALYs, harms, costs, entry, competition, and access.
@@ -51,4 +50,4 @@ This system supports Section 406 by providing:
 - Public inspection, contribution, and collaborative improvement (GitHub issues, pull requests, Actions).
 - Public availability of analyses in a user-friendly format (Markdown reports on GitHub Pages).
 
-The independent audit and public comment required by Section 406(d) remain human accountability functions. This system supplies the technical engine and public interface; it does not replace independent judgment.
+Independent audit and public comment remain human accountability functions. This system could supply a technical engine and public interface; it does not replace independent judgment and is not required by the Act.

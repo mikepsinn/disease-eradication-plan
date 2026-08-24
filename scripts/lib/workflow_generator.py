@@ -56,6 +56,7 @@ class JobConfig:
     configured_formats: List[str] # e.g. ["html", "pdf"]
     downloadable_formats: List[str]  # subset of configured_formats
     artifact_render_format: str | None  # explicit --to format, or None for all configured formats
+    bundle_pdf_with_site: bool     # Render and bundle the PDF before the HTML deploy
     netlify_site_id: str | None   # Configured site ID, used as a deploy opt-in
     netlify_secret: str           # GitHub secret that stores the deploy site ID
     upload_to_zenodo: bool        # True for papers
@@ -88,6 +89,11 @@ class JobConfig:
             configured_formats=configured_formats,
             downloadable_formats=downloadable_formats,
         )
+        bundle_pdf_with_site = bool(
+            'html' in configured_formats
+            and 'pdf' in configured_formats
+            and dih_render.get('pdf-output-file')
+        )
 
         # Derive values
         display_name = derive_display_name(config_name, title)
@@ -111,6 +117,7 @@ class JobConfig:
             configured_formats=configured_formats,
             downloadable_formats=downloadable_formats,
             artifact_render_format=artifact_render_format,
+            bundle_pdf_with_site=bundle_pdf_with_site,
             netlify_site_id=netlify_site_id,
             netlify_secret=netlify_secret,
             upload_to_zenodo=upload_zenodo,

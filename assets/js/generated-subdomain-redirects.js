@@ -25,7 +25,7 @@
   "political-dysfunction-tax.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
   "prize-protocol.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/earth-optimization-prize-protocol.html",
   "prize.warondisease.org": "https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html",
-  "right-to-trial.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html",
+  "right-to-trial.warondisease.org": "https://right-to-trial.acceleratedmedicine.org",
   "takeover.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/loving-takeover.html",
   "us-efficiency-audit.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html",
   "wager.warondisease.org": "https://manual.warondisease.org/knowledge/proof/wishonias-wager.html",

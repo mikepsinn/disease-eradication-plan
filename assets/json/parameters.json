@@ -12771,7 +12771,7 @@
       "value": 636242.2613732788,
       "formatted": "636.2kx",
       "unit": "x",
-      "description": "Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+      "description": "Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
       "displayName": "Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint",
       "sourceType": "calculated",
       "sourceRef": null,
@@ -37418,15 +37418,15 @@
     },
     "right-to-trial-paper-2025": {
       "id": "right-to-trial-paper-2025",
-      "title": "Universal Right to Try & FDA Upgrade Act",
+      "title": "Right to Trial & FDA Upgrade Act",
       "author": "Sinn, Mike P.",
       "year": "2025",
       "source": "International Campaign to End War and Disease",
-      "url": "https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html",
+      "url": "https://right-to-trial.acceleratedmedicine.org",
       "urls": [
-        "https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html"
+        "https://right-to-trial.acceleratedmedicine.org"
       ],
-      "quote": "Act to authorize commercial access to post-Phase-I investigational treatments while turning every covered treatment use into standardized evidence through an open-source FDA.gov v2.",
+      "quote": "A universal right to try, with evidence. The Act authorizes commercial access after initial human safety testing and makes every covered treatment use teach us something.",
       "note": "Working Paper",
       "type": "techreport",
       "doi": "10.5281/zenodo.19076852",

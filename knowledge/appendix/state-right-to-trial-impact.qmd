@@ -8,23 +8,17 @@ tags:
   - state-policy
   - clinical-trials
   - health-economics
-scores:
-  quality: 7
-  value: 9
-  timeliness: 9
-  standalone: 9
-  voice: 3
-  importance: 8
-audience: "State leaders, philanthropists, patient groups, treatment developers, ETRB and clinic operators, payers, federal evidence agencies, and impact investors deciding whether to build a national access-with-evidence network."
-feel: "Montana can be the first node of a commercially durable evidence network whose conditional health upside dwarfs its launch cost."
-do: "Fund, sponsor, operate, use, or finance interoperable access-plus-data legislation in all 50 states, then publish whether it increases credible treatment discoveries."
 ---
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
+::: {.callout-note appearance="simple"}
+**Please help us improve this impact analysis.** We want to help policymakers and the public understand the enormous potential benefits of universal patient access to clinical trials and a continually learning system for global treatment-effectiveness rankings and outcome labels. Comment below, or highlight any text and log in with Hypothesis to leave a note. Co-authors welcome.
+:::
+
 ## Summary
 
-[Universal Right to Try with Evidence](../solution/dfda.qmd) [@right-to-trial-paper-2025] would create licensed centers where patients can pay for treatment-related care while eligible participants enroll in standardized, pooled pragmatic trials. Patient and payer revenue can cover treatment delivery, trial-site services, and permitted study costs. Treatments abandoned because nobody can profitably finance conventional Phase 2 and Phase 3 trials become testable.
+The proposed state framework would create licensed centers where patients can pay for treatment-related care while eligible participants enroll in standardized, pooled pragmatic trials. Patient and payer revenue can cover treatment delivery, trial-site services, and permitted study costs. Treatments abandoned because nobody can profitably finance conventional Phase 2 and Phase 3 trials become testable.
 
 If all 50 states adopt, the central model estimates:
 
@@ -57,7 +51,7 @@ The model bill therefore adds four requirements:
 3. **Pool.** Send standardized, de-identified baseline and outcome data to a shared registry.
 4. **Publish.** Continuously publish results for each treatment-condition pair, including negative and harmful results.
 
-The philanthropic budget pays for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation through license or enrollment assessments after that launch period. This keeps the lifetime schedule shift from depending on a ten-year data system that then disappears.
+The model does not require a new state appropriation. Philanthropy pays for the shared registry's first ten years, and participating centers fund continued operation through license or enrollment assessments. This keeps the lifetime schedule shift from depending on a data system that disappears when the launch grant ends.
 
 ## Montana can be the first node
 
@@ -73,7 +67,7 @@ The flywheel is a map of possible cash flows, not a promise of investor returns.
 
 This does not give a state registry the power to approve drugs or lower the federal evidence standard. It changes where and how effectiveness evidence is produced.
 
-Universal Right to Try with Evidence and federal Right to Try are not the same legal pathway. Federal Right to Try is limited to eligible patients who are unable to participate in a clinical trial involving the drug [@fda-right-to-try-eligibility]. A patient enrolled in an interventional pragmatic trial must instead be treated under an active investigational new drug application or another applicable FDA-authorized pathway. Patients who cannot join the trial may still contribute separately labeled observational outcomes through federal Right to Try or expanded access if eligible. The state bill supplies centers, consent, comparison, and shared data rules. It does not waive federal trial authorization or Right to Try eligibility.
+The proposed state framework and federal Right to Try are not the same legal pathway. Federal Right to Try is limited to eligible patients who are unable to participate in a clinical trial involving the drug [@fda-right-to-try-eligibility]. A patient enrolled in an interventional pragmatic trial must instead be treated under an active investigational new drug application or another applicable FDA-authorized pathway. Patients who cannot join the trial may still contribute separately labeled observational outcomes through federal Right to Try or expanded access if eligible. The state bill supplies centers, consent, comparison, and shared data rules. It does not waive federal trial authorization or Right to Try eligibility.
 
 FDA's statutory standard remains substantial evidence from adequate and well-controlled investigations. Its June 2026 draft guidance explains that one rigorous investigation plus confirmatory evidence can sometimes satisfy that standard, while approval still requires sufficient safety evidence and a favorable benefit-risk assessment [@fda-substantial-evidence-guidance-2026]. FDA also supports streamlined randomized trials integrated into routine clinical practice [@fda-routine-practice-rct-guidance-2024]. Project Pragmatica applies the same design logic to approved oncology products through simpler eligibility, routine-practice enrollment, and reduced data-collection burden while maintaining safety and data integrity [@fda-project-pragmatica-2025]. It is an example of pragmatic design, not precedent for bypassing authorization of an unapproved drug.
 
@@ -81,7 +75,7 @@ A pragmatic randomized trial is still a randomized controlled trial. It keeps a 
 
 Federal charging rules remain in force. An IND sponsor needs FDA authorization to charge for the investigational drug and generally may recover only direct drug costs. FDA separately states that trial sites may recover pharmacy, nursing, equipment, and study-related procedure costs without charging authorization under that rule [@fda-charging-investigational-drugs-2024]. The model therefore assumes patient or payer revenue covers treatment delivery, site services, and permitted study costs, while center assessments sustain the common registry. It does not assume that states can finance research through unrestricted profits on the investigational drug. Whether lawful revenue is sufficient to sustain the modeled system is part of the uncertain discovery multiplier.
 
-Medicare already uses the analogous payment principle in Coverage with Evidence Development: specified services may be covered only within an approved study while additional evidence is collected, then CMS can reconsider coverage using the resulting evidence [@cms-coverage-evidence-development-2024]. Universal Right to Try with Evidence is access with evidence development, financed primarily by patients and participating centers rather than Medicare. The [Continuous Evidence Generation Protocol](dfda-spec-paper.qmd#stage-2-pragmatic-trial-confirmation) [@dfda-spec-paper-2025] provides the fuller technical design.
+Medicare already uses the analogous payment principle in Coverage with Evidence Development: specified services may be covered only within an approved study while additional evidence is collected, then CMS can reconsider coverage using the resulting evidence [@cms-coverage-evidence-development-2024]. This proposal is access with evidence development, financed primarily by patients and participating centers rather than Medicare. The [Continuous Evidence Generation Protocol](https://doi.org/10.5281/zenodo.18203375) [@dfda-spec-paper-2025] provides one compatible technical design for standardized outcome data, observational signal detection, and pragmatic-trial confirmation. The legislation need not mandate that protocol.
 
 The original Right to Try model spread from its first state in 2014 to 41 states by 2018 [@goldwater-rtt-41-states-2018]. That establishes a distribution channel. It does not prove that this broader access-plus-data bill will spread at the same speed.
 
@@ -115,19 +109,13 @@ The global DALY benefit is annual avoidable disease burden multiplied by that sc
 
 {{< var state_rtt_philanthropic_cost_per_daly_latex >}}
 
-## Why there is no ramp parameter
-
-This model values a permanent shift in the cure-arrival schedule, not only patient benefits received during the campaign's first decade. A temporary rollout changes the effective start date by a few years. It does not multiply the lifetime benefit by the fraction of mature volume reached in year one.
-
-The discovery multiplier is conditional on full adoption and a mature operating system. If advocacy fails to produce that system, the modeled benefit is not partially rescued by inventing a ramp curve. That political and implementation risk belongs in an external realization-probability adjustment.
-
 ## What the money buys
 
 ### Philanthropy: an asymmetric bet
 
 Conditional cost per DALY is campaign plus registry-launch cost divided by the health benefit if the 50-state system operates at the modeled discovery rate. It excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs because those payments buy care and evidence generation rather than consuming the philanthropic budget.
 
-At the central estimate, Universal Right to Try with Evidence's modeled philanthropic cost per life saved is {{< var state_rtt_philanthropic_cost_per_life_saved >}}, which is {{< var state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier_nounit >}} times lower than the midpoint of GiveWell's cited modeled range across top charities [@givewell-cost-per-life-saved]. This is not because legislation cures people by itself. It is because a relatively small campaign and shared registry are modeled to unlock treatment, sponsor, payer, clinic, and investor spending that philanthropists do not have to supply.
+At the central estimate, the framework's modeled philanthropic cost per life saved is {{< var state_rtt_philanthropic_cost_per_life_saved >}}, which is {{< var state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier_nounit >}} times lower than the midpoint of GiveWell's cited modeled range across top charities [@givewell-cost-per-life-saved]. This is not because legislation cures people by itself. It is because a relatively small campaign and shared registry are modeled to unlock treatment, sponsor, payer, clinic, and investor spending that philanthropists do not have to supply.
 
 {{< include ../figures/state-rtt-philanthropic-leverage-comparison.qmd >}}
 
@@ -136,18 +124,6 @@ The cost-per-DALY Monte Carlo below shows uncertainty in the conditional estimat
 {{< include ../figures/mc-distribution-state_rtt_philanthropic_cost_per_daly.qmd >}}
 
 For a grant decision, multiply conditional lives saved by the donor's own probability that the grant produces full adoption, mature implementation, and the modeled discovery effect. Equivalently, divide conditional cost per life saved by that probability. The probability judgment stays outside the model, so it does not require another scenario parameter.
-
-### Government: finite, budget-neutral, or redirect first
-
-The full philanthropic launch is {{< var state_rtt_fda_budget_equivalent_hours >}} of the FDA's annual program budget, {{< var state_rtt_nih_budget_equivalent_hours >}} of the NIH budget, or {{< var state_rtt_us_military_overspend_equivalent_hours >}} of estimated annual US military overspending [@fda-fy2026-operating-plan; @nih-budget-fy2025]. This compares budget scale, not the effectiveness of every FDA or NIH dollar.
-
-{{< include ../figures/state-rtt-government-budget-scale.qmd >}}
-
-A normal multiplier works when the government adds spending. Then compare health per dollar. If it redirects existing spending from an activity with zero marginal value without increasing the total budget, there is no net new spending. The advocacy shorthand is **infinite new-budget leverage**, but that is not a conventional social ROI because the real resources still have an opportunity cost. If the displaced activity has negative value, do not divide by a negative denominator. Add the avoided harm to the health benefit and redirect it first.
-
-{{< include ../figures/state-rtt-return-ranking-map.qmd >}}
-
-The [cost-benefit analysis of US military hegemony](cost-benefit-of-hegemony.qmd) estimates negative marginal returns for spending above a first-principles baseline for preventing direct attacks on people in the United States, while historical research finds that regime-change wars commonly fail and that most forms of great-power retrenchment do not reliably invite catastrophe [@downes-catastrophic-success-2021; @graefrath-retrenchment-2024]. On those assumptions, redirecting excess power-projection spending is the chart's **REDIRECT FIRST** case: stop modeled harm, then create modeled health. For the budget request, the decisive fact is that no net new spending is required. Earth only needs one launch.
 
 ### Impact investors and operators: make evidence pay for itself
 
@@ -170,30 +146,10 @@ The model also excludes the uncertain net direct health effect on participants, 
 
 The {{< var state_rtt_treatment_acceleration_suffering_hours >}} figure means disability-weighted equivalent hours. A disability weight of 0.25 sustained for four hours equals one full-disability-equivalent hour. It does not mean the person consciously experienced maximum pain for one hour.
 
-The global result assumes discoveries become public knowledge and eventually benefit patients outside the United States. The access right itself remains state law. State legislation also does not override federal FDA authority. The durable federal version is the [Universal Right to Try and FDA Upgrade Act](right-to-trial-fda-upgrade-act.qmd) [@right-to-trial-paper-2025].
+The global result assumes discoveries become public knowledge and eventually benefit patients outside the United States. The access right itself remains state law, and state legislation does not override federal FDA authority.
 
-## Who should feel what and do what
+## Policy implications
 
-| Audience | What they should feel | What they should do |
-|:---|:---|:---|
-| Infinita and participating Montana ETRBs | Montana can become the first node of a national evidence market, not merely another state access exception. | Publish an interoperable protocol, document fees and outcomes, and help other states copy the model. |
-| Governors, legislators, and health departments | The state can expand access, require evidence, and measure results without pretending to replace FDA approval. | Sponsor the model bill, license centers and ETRBs, and require Enroll, Compare, Pool, Publish. |
-| Philanthropists and foundations | A {{< var state_rtt_philanthropic_cost_total >}} public-good investment can unlock a much larger self-financing treatment market. | Fund the 50-state campaign, shared registry, legal work, independent evaluation, and open standards. |
-| Patient and rare-disease organizations | Patient demand can become usable evidence instead of a stack of desperate anecdotes. | Define cohorts and outcomes, recruit participants, demand the bill, and insist that all results are published. |
-| Biotech developers and owners of shelved assets | A treatment that cannot justify a conventional Phase 2 or Phase 3 program may still be testable, revenue-producing, and financeable. | Submit eligible candidates, finance lawful treatment and evidence generation, and share standardized outcomes. |
-| ETRBs, clinics, clinicians, CROs, manufacturers, and data firms | Evidence generation can be a real operating business with a reputation worth protecting. | Adopt common protocols, price services transparently, pool data, monitor safety, and publish negative results. |
-| Impact and longevity investors | Revenue-producing infrastructure can carry public-health impact, but only credible evidence protects long-run asset value. | Finance review, clinics, manufacturing, data systems, and sponsor companies with explicit impact reporting. |
-| Insurers, self-insured employers, Medicaid, and CMS | Coverage with evidence can turn uncertain treatment spending into cumulative knowledge. | Pilot reimbursement conditional on registration, comparison, safety reporting, and pooled outcomes. |
-| FDA and federal policymakers | A state network can complement federal evidence standards by making rigorous studies cheaper and more plentiful. | Clarify authorization and charging pathways, accept interoperable evidence when it meets federal standards, and remove needless duplication. |
+The most useful next step is a transparent Montana demonstration of interoperable enrollment, pooled outcomes, documented fees, and safety monitoring. If it produces useful evidence while remaining commercially sustainable, other states can adopt the same model through compatible legislation.
 
-The coalition is larger than donors and legislators because the system has to survive after the bill-signing photograph. Patients supply demand. Developers supply treatments. ETRBs and clinics supply lawful operations. Payers and investors supply recurring capital. The shared protocol turns all of that activity into evidence instead of expensive folklore.
-
-## What could make the estimate wrong
-
-The arithmetic is short. The causal claim is not.
-
-The result is too high if self-selected treatment purchases fail to produce credible causal evidence, if treatment demand fragments across too many candidate-condition pairs, if discoveries do not diffuse globally, if the rare-disease queue is a poor proxy for the wider therapeutic frontier, or if the eventually avoidable share of global disease and aging is much smaller than modeled.
-
-The result is too low if patient-funded research supports more than the modeled treatment-discovery rate, if rare-disease effects require much smaller samples, or if the system creates valuable treatments for poorly treated common diseases that the untreated-disease queue does not fully represent.
-
-The primary empirical test is therefore simple: after adoption, measure credible first-treatment discoveries per year. Every other headline follows from that rate. The scientific multiplier does not include a separate atom for "thousands of valid trials occur but none produce useful discoveries." The model instead tests the productivity of the operating system directly and keeps failure to build that system in the advocacy probability adjustment.
+Any implementing bill should require Enroll, Compare, Pool, and Publish so the states produce comparable evidence instead of 50 disconnected experiments.

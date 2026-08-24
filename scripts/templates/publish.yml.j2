@@ -15,9 +15,55 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  validate:
+    name: Validate Python and workflow code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository for validation
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Python dependencies
+        run: |
+          uv venv .venv
+          uv pip install --python .venv/bin/python -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --python .venv/bin/python -e ".[dev]"
+
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Python type check
+        run: pnpm exec pyright dih_models scripts
+
+      - name: Test workflow generation
+        run: .venv/bin/python -m pytest scripts/tests/test_workflow_generator.py
+
 {% for job in jobs %}
   build-{{ job.config_name }}:
     name: "{{ job.display_name }}"
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - name: "Validate {{ job.display_name }} Netlify credentials"
@@ -132,16 +178,34 @@ jobs:
       - name: Install Node dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run Python type check
-        run: pnpm exec pyright dih_models scripts
-
       - name: Install Jupyter kernel
         run: |
           .venv/bin/python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-      - name: "Render {{ job.display_name }} (HTML)"
-        run: .venv/bin/python scripts/render-quarto.py {{ job.config_name }} --to html
-        env:
+{% if job.bundle_pdf_with_site %}      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-{% raw %}${{ runner.os }}{% endraw %}-{% raw %}${{ hashFiles('.github/workflows/publish.yml') }}{% endraw %}
+          restore-keys: |
+            tinytex-{% raw %}${{ runner.os }}{% endraw %}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
+
+{% endif %}      - name: "Render {{ job.display_name }}{% if job.bundle_pdf_with_site %} (PDF + HTML){% else %} (HTML){% endif %}"
+{% if job.bundle_pdf_with_site %}        run: |
+          .venv/bin/python scripts/render-quarto.py {{ job.config_name }} --to pdf
+          .venv/bin/python scripts/render-quarto.py {{ job.config_name }} --to html
+{% else %}        run: .venv/bin/python scripts/render-quarto.py {{ job.config_name }} --to html
+{% endif %}        env:
           GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/develop') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
         timeout-minutes: {{ job.timeout_minutes }}
 
