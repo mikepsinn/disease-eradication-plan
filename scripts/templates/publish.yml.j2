@@ -20,6 +20,58 @@ jobs:
     name: "{{ job.display_name }}"
     runs-on: ubuntu-latest
     steps:
+      - name: "Validate {{ job.display_name }} Netlify credentials"
+        if: {% raw %}${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}{% endraw %}
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "::error title=Missing Netlify token::GitHub Actions secret NETLIFY_AUTH_TOKEN is empty or missing."
+            echo "Fix: Create a Netlify personal access token from the Netlify account or team that owns {{ job.display_name }}, then update GitHub repo secret NETLIFY_AUTH_TOKEN."
+            exit 1
+          fi
+
+          if [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::error title=Missing Netlify site ID::GitHub Actions secret {{ job.netlify_secret }} is empty or missing."
+            echo "Fix: Set GitHub repo secret {{ job.netlify_secret }} to the Netlify site ID for {{ job.display_name }}."
+            exit 1
+          fi
+
+          netlify_response="$RUNNER_TEMP/netlify-site-response.json"
+          netlify_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 --output "$netlify_response" --write-out "%{http_code}" --header "Authorization: Bearer $NETLIFY_AUTH_TOKEN" "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID" || true)"
+
+          case "$netlify_status" in
+            200)
+              echo "Netlify preflight passed: token can retrieve the configured project."
+              ;;
+            401|403)
+              echo "::error title=Netlify token cannot retrieve project::NETLIFY_AUTH_TOKEN is invalid, revoked, stale, or does not have access to the site ID stored in {{ job.netlify_secret }}."
+              echo "Fix: Create a new Netlify personal access token from the Netlify account or team that owns {{ job.display_name }}."
+              echo "Then update GitHub repo secret NETLIFY_AUTH_TOKEN. Keep {{ job.netlify_secret }} unless the Netlify site was recreated."
+              exit 1
+              ;;
+            404)
+              echo "::error title=Netlify site not found::The site ID stored in {{ job.netlify_secret }} does not exist or is not visible to NETLIFY_AUTH_TOKEN."
+              echo "Fix: Verify the Netlify site ID for {{ job.display_name }} and update GitHub repo secret {{ job.netlify_secret }}. If the site exists, update NETLIFY_AUTH_TOKEN with a token from the owning account or team."
+              exit 1
+              ;;
+            000)
+              echo "::error title=Netlify API unreachable::Could not reach Netlify while checking deploy credentials."
+              echo "Fix: Retry the workflow. If this repeats, check Netlify status and GitHub runner network logs."
+              exit 1
+              ;;
+            *)
+              echo "::error title=Unexpected Netlify API response::Netlify returned HTTP $netlify_status while checking deploy credentials."
+              echo "Response body:"
+              cat "$netlify_response"
+              echo
+              echo "Fix: Check NETLIFY_AUTH_TOKEN and {{ job.netlify_secret }} in GitHub repo secrets, then inspect the Netlify API response above."
+              exit 1
+              ;;
+          esac
+        env:
+          NETLIFY_AUTH_TOKEN: {% raw %}${{ secrets.NETLIFY_AUTH_TOKEN }}{% endraw %}
+          NETLIFY_SITE_ID: {% raw %}${{ secrets.{% endraw %}{{ job.netlify_secret }}{% raw %} }}{% endraw %}
+        timeout-minutes: 1
+
       - name: Check out repository
         uses: actions/checkout@v4
 
@@ -107,51 +159,6 @@ jobs:
       - name: "Deploy {{ job.display_name }} to Netlify"
         if: {% raw %}${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}{% endraw %}
         run: |
-          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
-            echo "::error title=Missing Netlify token::GitHub Actions secret NETLIFY_AUTH_TOKEN is empty or missing."
-            echo "Fix: Create a Netlify personal access token from the Netlify account or team that owns {{ job.display_name }}, then update GitHub repo secret NETLIFY_AUTH_TOKEN."
-            exit 1
-          fi
-
-          if [ -z "$NETLIFY_SITE_ID" ]; then
-            echo "::error title=Missing Netlify site ID::GitHub Actions secret {{ job.netlify_secret }} is empty or missing."
-            echo "Fix: Set GitHub repo secret {{ job.netlify_secret }} to the Netlify site ID for {{ job.display_name }}."
-            exit 1
-          fi
-
-          netlify_response="$RUNNER_TEMP/netlify-site-response.json"
-          netlify_status="$(curl --silent --show-error --output "$netlify_response" --write-out "%{http_code}" --header "Authorization: Bearer $NETLIFY_AUTH_TOKEN" "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID" || true)"
-
-          case "$netlify_status" in
-            200)
-              echo "Netlify preflight passed: token can retrieve the configured project."
-              ;;
-            401|403)
-              echo "::error title=Netlify token cannot retrieve project::NETLIFY_AUTH_TOKEN is invalid, revoked, stale, or does not have access to the site ID stored in {{ job.netlify_secret }}."
-              echo "Fix: Create a new Netlify personal access token from the Netlify account or team that owns {{ job.display_name }}."
-              echo "Then update GitHub repo secret NETLIFY_AUTH_TOKEN. Keep {{ job.netlify_secret }} unless the Netlify site was recreated."
-              exit 1
-              ;;
-            404)
-              echo "::error title=Netlify site not found::The site ID stored in {{ job.netlify_secret }} does not exist or is not visible to NETLIFY_AUTH_TOKEN."
-              echo "Fix: Verify the Netlify site ID for {{ job.display_name }} and update GitHub repo secret {{ job.netlify_secret }}. If the site exists, update NETLIFY_AUTH_TOKEN with a token from the owning account or team."
-              exit 1
-              ;;
-            000)
-              echo "::error title=Netlify API unreachable::Could not reach Netlify while checking deploy credentials."
-              echo "Fix: Retry the workflow. If this repeats, check Netlify status and GitHub runner network logs."
-              exit 1
-              ;;
-            *)
-              echo "::error title=Unexpected Netlify API response::Netlify returned HTTP $netlify_status while checking deploy credentials."
-              echo "Response body:"
-              cat "$netlify_response"
-              echo
-              echo "Fix: Check NETLIFY_AUTH_TOKEN and {{ job.netlify_secret }} in GitHub repo secrets, then inspect the Netlify API response above."
-              exit 1
-              ;;
-          esac
-
           npm install -g netlify-cli
           netlify deploy \
             --dir='{{ job.build_dir }}' \
