@@ -206,7 +206,7 @@ jobs:
           .venv/bin/python scripts/render-quarto.py {{ job.config_name }} --to html
 {% else %}        run: .venv/bin/python scripts/render-quarto.py {{ job.config_name }} --to html
 {% endif %}        env:
-          GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/develop') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
+          GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
         timeout-minutes: {{ job.timeout_minutes }}
 
       - name: Upload build logs on failure

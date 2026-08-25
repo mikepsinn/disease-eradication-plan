@@ -190,7 +190,7 @@ jobs:
       - name: "Render Build How to End War and Disease (HTML)"
         run: .venv/bin/python scripts/render-quarto.py manual --to html
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/develop') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 75
 
       - name: Upload build logs on failure
@@ -362,7 +362,7 @@ jobs:
           .venv/bin/python scripts/render-quarto.py right-to-trial --to pdf
           .venv/bin/python scripts/render-quarto.py right-to-trial --to html
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/develop') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload build logs on failure
@@ -534,7 +534,7 @@ jobs:
           .venv/bin/python scripts/render-quarto.py right-to-trial-impact --to pdf
           .venv/bin/python scripts/render-quarto.py right-to-trial-impact --to html
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/develop') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
 
       - name: Upload build logs on failure
