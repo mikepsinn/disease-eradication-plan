@@ -87,7 +87,7 @@ jobs:
       - name: "Render {{ job.display_name }}"
         run: python scripts/render-quarto.py {{ job.config_name }}{% if job.artifact_render_format %} --to {{ job.artifact_render_format }}{% endif %}
         env:
-          GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
+          GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
         timeout-minutes: {{ job.timeout_minutes }}
 
 {% if "pdf" in job.downloadable_formats %}

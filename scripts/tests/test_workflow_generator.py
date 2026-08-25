@@ -76,6 +76,27 @@ def test_pull_requests_validate_and_build_but_only_develop_deploys() -> None:
     assert "github.event_name == 'pull_request'" not in deploy_step
 
 
+def test_pdf_llm_validation_is_explicitly_opt_in() -> None:
+    expected = (
+        "GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' "
+        "&& secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}"
+    )
+    workflow_cases = (
+        (extract_deploy_job_configs(PROJECT_ROOT), "publish.yml.j2"),
+        (extract_artifact_job_configs(PROJECT_ROOT), "build-artifacts.yml.j2"),
+    )
+
+    for jobs, template_name in workflow_cases:
+        workflow = generate_workflow(PROJECT_ROOT, jobs, template_name)
+        key_lines = [
+            line.strip()
+            for line in workflow.splitlines()
+            if "GOOGLE_GENERATIVE_AI_API_KEY:" in line
+        ]
+        assert key_lines
+        assert all(line == expected for line in key_lines)
+
+
 def test_checked_in_workflows_match_their_generators() -> None:
     workflow_cases = (
         (
