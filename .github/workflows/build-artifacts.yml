@@ -84,8 +84,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The 1% Treaty: An Incentive-Compatible Approach to"
         run: python scripts/render-quarto.py 1-pct-treaty-impact --to pdf
@@ -204,8 +206,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The 1% Treaty"
         run: python scripts/render-quarto.py 1-percent-treaty --to pdf
@@ -324,8 +328,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Algorithmic Public Administration: A Protocol for "
         run: python scripts/render-quarto.py algorithmic-public-administration --to pdf
@@ -444,8 +450,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build How Much Does It Cost to Buy All the Governments?"
         run: python scripts/render-quarto.py cost-of-change --to pdf
@@ -564,8 +572,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Court of Humanity"
         run: python scripts/render-quarto.py court-of-humanity --to pdf
@@ -684,8 +694,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Ubiquitous Pragmatic Trial Impact Analysis: How to"
         run: python scripts/render-quarto.py dfda-impact --to pdf
@@ -804,8 +816,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Continuous Evidence Generation Protocol: Two-S"
         run: python scripts/render-quarto.py dfda-spec --to pdf
@@ -924,8 +938,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Drug Development Cost Increase Analysis"
         run: python scripts/render-quarto.py drug-development-cost --to pdf
@@ -1044,8 +1060,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Earth Optimization Prize"
         run: python scripts/render-quarto.py earth-optimization-prize --to pdf
@@ -1164,8 +1182,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Earth Optimization Prize Protocol: Technical Speci"
         run: python scripts/render-quarto.py earth-optimization-prize-protocol --to pdf
@@ -1284,8 +1304,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Choose Your Own Earth: A World Without the Politic"
         run: python scripts/render-quarto.py gdp-trajectories --to pdf
@@ -1404,8 +1426,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The People of Earth v. Their Governments"
         run: python scripts/render-quarto.py humanity-v-government --to pdf
@@ -1524,8 +1548,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build I Am Retarded"
         run: python scripts/render-quarto.py i-am-retarded --to pdf
@@ -1644,8 +1670,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Incentive Alignment Bonds: Making Public Goods Fin"
         run: python scripts/render-quarto.py iab --to pdf
@@ -1764,8 +1792,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Invisible Graveyard: Quantifying the Mortality"
         run: python scripts/render-quarto.py invisible-graveyard --to pdf
@@ -1884,8 +1914,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Funniest Joke in the Universe"
         run: python scripts/render-quarto.py joke --to pdf
@@ -2004,8 +2036,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Loving Takeover"
         run: python scripts/render-quarto.py loving-takeover --to pdf
@@ -2124,8 +2158,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Optimal Budget Generator: A Causal Inference P"
         run: python scripts/render-quarto.py obg --to pdf
@@ -2244,8 +2280,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Optimal Policy Generator: A Causal Inference P"
         run: python scripts/render-quarto.py opg --to pdf
@@ -2364,8 +2402,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Optimocracy: Causal Inference on Cross-Jurisdictio"
         run: python scripts/render-quarto.py optimocracy --to pdf
@@ -2484,8 +2524,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Organized Violence Tax"
         run: python scripts/render-quarto.py organized-violence-tax --to pdf
@@ -2604,8 +2646,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build The Political Dysfunction Tax"
         run: python scripts/render-quarto.py political-dysfunction-tax --to pdf
@@ -2660,7 +2704,7 @@ jobs:
 
 
   build-right-to-trial:
-    name: "Build Universal Right to Try & FDA Upgrade Act"
+    name: "Build Right to Trial & FDA Upgrade Act"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2724,10 +2768,12 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build Universal Right to Try & FDA Upgrade Act"
+      - name: "Render Build Right to Trial & FDA Upgrade Act"
         run: python scripts/render-quarto.py right-to-trial --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -2771,11 +2817,127 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Universal Right to Try & FDA Upgrade Act PDF to Zenodo (draft)"
+      - name: "Upload Build Right to Trial & FDA Upgrade Act PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild right-to-trial
+
+
+
+  build-right-to-trial-impact:
+    name: "Build Universal Right to Try with Evidence: Potential Im"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-right-to-trial-impact-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-right-to-trial-impact-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Universal Right to Try with Evidence: Potential Im"
+        run: python scripts/render-quarto.py right-to-trial-impact --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/master') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+
+      - name: Upload PDFs artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdfs-right-to-trial-impact
+          path: _build_temp/right-to-trial-impact/**/*.pdf
+          if-no-files-found: error
+
+
+
+
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-right-to-trial-impact
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-right-to-trial-impact
+          path: |
+            logs/build-right-to-trial-impact.log
+            _build_temp/right-to-trial-impact/*.log
+            _build_temp/right-to-trial-impact/**/*.log
+            _build_temp/right-to-trial-impact/*.aux
+            _build_temp/right-to-trial-impact/**/*.aux
+            _build_temp/right-to-trial-impact/*.toc
+            _build_temp/right-to-trial-impact/**/*.toc
+            _build_temp/right-to-trial-impact/*.out
+            _build_temp/right-to-trial-impact/**/*.out
+          retention-days: 7
+
 
 
 
@@ -2844,8 +3006,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build United States Efficiency Audit"
         run: python scripts/render-quarto.py us-efficiency-audit --to pdf
@@ -2964,8 +3128,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Wishocracy: Solving the Democratic Principal-Agent"
         run: python scripts/render-quarto.py wishocracy --to pdf
@@ -3084,8 +3250,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render Build Wishonia's Wager: Any Finite Action Is Rational Wh"
         run: python scripts/render-quarto.py wishonias-wager --to pdf
@@ -3191,6 +3359,8 @@ jobs:
       - build-political-dysfunction-tax
 
       - build-right-to-trial
+
+      - build-right-to-trial-impact
 
       - build-us-efficiency-audit
 

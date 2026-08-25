@@ -79,8 +79,10 @@ jobs:
           if [ ! -d ~/.TinyTeX ]; then
             quarto install tinytex
           fi
-          ~/.TinyTeX/bin/*/tlmgr update --self || true
-          ~/.TinyTeX/bin/*/tlmgr install fontspec unicode-math lualatex-math luaotfload || true
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
       - name: "Render {{ job.display_name }}"
         run: python scripts/render-quarto.py {{ job.config_name }}{% if job.artifact_render_format %} --to {{ job.artifact_render_format }}{% endif %}

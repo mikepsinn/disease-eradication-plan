@@ -167,6 +167,12 @@ def setup_dns_records(cf_token: str, configs: dict) -> tuple[int, int]:
     created = 0
     updated = 0
     for config_name, info in configs.items():
+        # This helper manages only the warondisease.org Cloudflare zone. Other
+        # custom domains must be configured in their own DNS provider account.
+        custom_domain = info.get("custom_domain", "")
+        if custom_domain != BASE_DOMAIN and not custom_domain.endswith(f".{BASE_DOMAIN}"):
+            continue
+
         # Skip configs without CNAME info
         cname = info.get("netlify_cname")
         if not cname:
@@ -552,9 +558,11 @@ def discover_configs() -> dict:
         netlify_cname = dih_render.get("netlify-cname")
         redirect_from = dih_render.get("redirect-from")
 
-        # DNS is managed for the legacy host when a config redirects into the manual.
-        # The canonical site-url may be a manual page, not the old paper hostname.
-        dns_source_url = redirect_from or site_url
+        # Standalone sites use their canonical site-url. Path-based papers under the
+        # manual use redirect-from for their legacy host.
+        site_hostname = extract_custom_domain_from_url(site_url) if site_url else None
+        is_manual_page = bool(site_hostname and site_hostname == "manual.warondisease.org")
+        dns_source_url = redirect_from if is_manual_page and redirect_from else site_url
 
         # Extract subdomain from redirect-from/site-url, or fall back to config name
         subdomain = extract_subdomain_from_url(dns_source_url)
@@ -565,7 +573,7 @@ def discover_configs() -> dict:
         custom_domain = extract_custom_domain_from_url(dns_source_url)
         if not custom_domain:
             custom_domain = f"{subdomain}.{BASE_DOMAIN}"
-        redirect_only = bool(redirect_from and netlify_cname == MANUAL_NETLIFY_CNAME)
+        redirect_only = bool(is_manual_page and redirect_from and netlify_cname == MANUAL_NETLIFY_CNAME)
 
         configs[config_name] = {
             "path": config_path,

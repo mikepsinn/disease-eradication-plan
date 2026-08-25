@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 782 parameters used in the analysis, organized by type:
+This appendix documents all 778 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 224
-- Calculated values: 398
+- External sources (peer-reviewed): 223
+- Calculated values: 395
 - Core definitions: 160
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (398 parameters) • [External Data Sources](#sec-external) (224 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
+[Calculated Values](#sec-calculated) (395 parameters) • [External Data Sources](#sec-external) (223 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -20457,72 +20457,6 @@ $$
 
 :::
 
-### Universal Right to Try with Evidence Cost in FDA Budget Hours: 80.7 hours {#sec-state_rtt_fda_budget_equivalent_hours}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Hours of the FDA annual program budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.
-
-**Inputs**:
-
-- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
-- [FDA Annual Program Budget](#sec-fda_annual_program_budget) 📊: $7.06 billion
-
-$$
-Hours_{RTT,FDA} = \frac{C_{RTT}}{Budget_{FDA}} \times 8,760
-$$
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-state_rtt_fda_budget_equivalent_hours.qmd >}}
-
-{{< include ../figures/sensitivity-table-state_rtt_fda_budget_equivalent_hours.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-state_rtt_fda_budget_equivalent_hours.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-state_rtt_fda_budget_equivalent_hours.qmd >}}
-
-:::
-
-### Universal Right to Try with Evidence Cost in NIH Budget Hours: 12.1 hours {#sec-state_rtt_nih_budget_equivalent_hours}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Hours of the NIH annual budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.
-
-**Inputs**:
-
-- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
-- [NIH Annual Budget](#sec-nih_annual_budget) 📊: $47 billion (95% CI: $45 billion - $50 billion)
-
-$$
-Hours_{RTT,NIH} = \frac{C_{RTT}}{Budget_{NIH}} \times 8,760
-$$
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-state_rtt_nih_budget_equivalent_hours.qmd >}}
-
-{{< include ../figures/sensitivity-table-state_rtt_nih_budget_equivalent_hours.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-state_rtt_nih_budget_equivalent_hours.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-state_rtt_nih_budget_equivalent_hours.qmd >}}
-
-:::
-
 ### Universal Right to Try with Evidence Philanthropic Cost per DALY: $0.000134 {#sec-state_rtt_philanthropic_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -20981,62 +20915,11 @@ $$
 
 :::
 
-### Universal Right to Try with Evidence Cost in US Military Overspend Hours: 0.811 hours {#sec-state_rtt_us_military_overspend_equivalent_hours}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.
-
-**Inputs**:
-
-- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
-- [Military Overspend](#sec-us_gov_waste_military_overspend) 🔢: $702 billion
-
-$$
-Hours_{RTT,mil} = \frac{C_{RTT}}{W_{military}} \times 8,760
-$$
-where:
-$$
-\begin{gathered}
-W_{military} \\
-= Spending_{US,2024} - D_{optimal} \\
-= \$886B - \$184B \\
-= \$702B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-D_{optimal} \\
-= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
-+ D_{hedge} \\
-= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
-= \$184B
-\end{gathered}
-$$
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
-
-{{< include ../figures/sensitivity-table-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-state_rtt_us_military_overspend_equivalent_hours.qmd >}}
-
-:::
-
 ### Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint: 636.2kx {#sec-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
+Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
 
 **Inputs**:
 
@@ -36083,22 +35966,6 @@ Land animals slaughtered for meat globally per year, ~83 billion in 2022 (UN FAO
 Reduction in global farmland if the world shifted off meat and dairy while still feeding everyone, more than 75% (~4.1 billion down to ~1 billion hectares; University of Oxford LEAP, reporting Poore & Nemecek 2018, Science). Oxford's illustrative equivalent: an area the size of the US, China, EU, and Australia combined. A hypothetical full-shift model, not a forecast.
 
 **Source**: [@oxford-leap-food-impacts]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### FDA Annual Program Budget: $7.06 billion {#sec-fda_annual_program_budget}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-FDA total program level in the FY 2026 operating plan. This is used only for a budget-scale comparison, not as an estimate of FDA cost-effectiveness.
-
-**Source**: [@fda-fy2026-operating-plan]
 
 #### Uncertainty Range
 

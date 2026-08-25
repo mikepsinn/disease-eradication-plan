@@ -1,0 +1,215 @@
+project:
+  type: book
+  output-dir: _site/right-to-trial-impact
+  execute-dir: project
+  resources:
+    - knowledge/data/
+    - "assets/!(scoreboard-embed.html)"
+    - _redirects
+    - robots.txt
+    - llms.txt
+
+dih-render:
+  emoji: "📈"
+  index-source: knowledge/appendix/state-right-to-trial-impact.qmd
+  fallback-404-redirect-domain: ""
+  pdf-output-file: state-right-to-trial-impact.pdf
+  netlify-site-id: "7d9ffde4-1397-43bd-8b53-701a6be5a987"
+  netlify-cname: "creative-cascaron-e94b2c.netlify.app"
+  show-confidence-intervals: true
+  zenodo: false
+  concept-terms:
+    - term: "Universal Right to Try with Evidence"
+      aliases:
+        - "50-State Right to Try with Evidence"
+        - "Right to Trial Impact Analysis"
+      manual-target: knowledge/appendix/state-right-to-trial-impact.qmd
+  favicon-prompt: "A map of the United States with a medical cross and connected evidence nodes."
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+author:
+  - name: Mike P. Sinn
+    email: m@warondisease.org
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "International Campaign to End War and Disease"
+        url: https://right-to-trial-impact.acceleratedmedicine.org
+
+book:
+  title: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+  description: "A conditional schedule-shift model of state legislation that lets post-Phase-1 treatments finance their own evidence generation and accelerates treatments for global diseases and aging."
+  site-url: https://right-to-trial-impact.acceleratedmedicine.org
+  favicon: assets/icons/dfda-favicon.png
+  page-navigation: true
+  chapters:
+    - index.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
+  page-footer:
+    left: "© 2025 Mike P. Sinn | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/state-right-to-trial-impact.pdf)"
+  navbar:
+    right:
+      - text: "Calculations"
+        href: knowledge/appendix/parameters-and-calculations.qmd
+  sidebar:
+    collapse-level: 1
+    style: floating
+    search: true
+    contents:
+      - href: index.qmd
+        text: "Impact Analysis"
+      - href: knowledge/appendix/parameters-and-calculations.qmd
+        text: "Parameters & Calculations"
+  comments:
+    giscus:
+      repo: mikepsinn/disease-eradication-plan
+      repo-id: R_kgDOPv1G3Q
+      category: Announcements
+      category-id: DIC_kwDOPv1G3c4CyE_8
+      mapping: pathname
+      reactions-enabled: true
+      input-position: top
+      loading: lazy
+      theme: light
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto
+  daemon: 300
+  daemon-restart: true
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  importance: 92
+  creator: "Mike P. Sinn"
+  orcid: "0009-0006-0212-1094"
+  primary-author: "Mike P. Sinn"
+  byline: "Mike P. Sinn"
+  human-author: "Mike P. Sinn"
+  author-email: "mike@warondisease.org"
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  contact: "mike@warondisease.org"
+  language: "en-US"
+  subject: "Health Economics, Clinical Trials, State Policy, Patient Access, Drug Development"
+  category: "Academic Paper, Health Economics, Policy Analysis"
+  coi-statement: "The author declares no competing interests."
+  data-availability: "All data, parameters, and code used in this analysis are available in the linked public repository."
+  ethics-statement: "This analysis did not involve human subjects."
+  funding: "This research received no funding."
+  github-profile: "https://github.com/mikepsinn"
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  keywords:
+    - right-to-try
+    - right-to-trial
+    - state-policy
+    - clinical-trials
+    - pragmatic-trials
+    - health-economics
+    - cost-effectiveness
+    - patient-access
+    - aging
+  version: "1.0"
+  edition: "Working Paper"
+  copyright: "© 2025 Mike P. Sinn"
+  copyright-year: "2025"
+  license: "CC BY-NC 4.0"
+  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  publisher: "International Campaign to End War and Disease"
+  publisher-url: "https://right-to-trial-impact.acceleratedmedicine.org"
+  publisher-name: "Mike P. Sinn"
+  publisher-email: "mike@warondisease.org"
+  repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  geographic-coverage: "United States, Global"
+  audience: "State Leaders, Patient Advocates, Philanthropists, Treatment Developers, Evidence Review Boards, Payers, Impact Investors"
+  format: "Working Paper"
+  type: "Academic"
+  genre: "Health Economics, Policy Analysis, Cost-Effectiveness Analysis"
+  medium: "Digital"
+  twitter-site: "https://x.com/warondisease"
+  twitter-creator: "https://x.com/warondisease"
+  og-site-name: "Universal Right to Try with Evidence"
+  open-graph: true
+  publishing:
+    own-site:
+      url: "https://right-to-trial-impact.acceleratedmedicine.org"
+      status: deployed
+
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+bibliography: references.bib
+csl: nature-annotated.csl
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    lightbox: auto
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: false
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-in-footer:
+      - file: assets/html/generated-footer.html
+    include-in-header:
+      - text: |
+          <!-- Icons (project-specific) -->
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/dfda-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/dfda-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/dfda-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/dfda-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/dfda-android-chrome-512x512.png">
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis.html
+      - file: assets/html/fonts-preload.html
+    citation-hover: true
+    code-fold: true
+    link-citations: true
+    smooth-scroll: true
+    code-tools: false
+    filters: [assets/filters/live-version-note.lua]
+  pdf:
+    output-file: "state-right-to-trial-impact.pdf"
+    documentclass: report
+    institute: "International Campaign to End War and Disease"
+    echo: false
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    colorlinks: true
+    link-citations: true
+    date: ""
+    include-in-header:
+      - callout-bw.tex
+      - institute-header.tex
+      - text: |
+          \paperurl{https://right-to-trial-impact.acceleratedmedicine.org}
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1in
+      - right=1in
+    fontsize: 11pt
+    filters: [assets/filters/live-version-note.lua]

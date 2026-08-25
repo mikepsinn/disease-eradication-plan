@@ -615,6 +615,10 @@ This is why aliens don't visit.
 
 > Governance dysfunction suppresses roughly $101 trillion in recoverable value each year. Under this paper's 20-year transition model, the Minimum Sustainable Trajectory (1% Treaty) reaches 1.71x the Earth baseline ($322 trillion), while the Optimal Governance Trajectory reaches 56.7x the Earth baseline, raises average income to $1.16 million versus $20,483 on the status-quo path, and reaches $10.7 quadrillion in total output. This paper is the project's canonical derivation of that ceiling from an explicit waste ledger, opportunity ledger, and source-linked parameter model. [Incentive Alignment Bonds](https://iab.warondisease.org) are presented as the adoption mechanism, and full formulas, uncertainty ranges, and sensitivity outputs appear in [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
 
+### [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](https://right-to-trial-impact.acceleratedmedicine.org)
+
+> A conditional schedule-shift model of state legislation that lets post-Phase-1 treatments finance their own evidence generation and accelerates treatments for global diseases and aging.
+
 ### [The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html)
 
 [![The Invisible Graveyard: Quantifying the Mortality Cost of FDA Efficacy Lag](https://manual.warondisease.org/assets/og/invisible-graveyard-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html)
@@ -679,9 +683,9 @@ This is why aliens don't visit.
 
 > Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
 
-### [Universal Right to Try & FDA Upgrade Act](https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html)
+### [Right to Trial & FDA Upgrade Act](https://right-to-trial.acceleratedmedicine.org)
 
-> Act to authorize commercial access to post-Phase-I investigational treatments while turning every covered treatment use into standardized evidence through an open-source FDA.gov v2.
+> A universal right to try, with evidence. The Act authorizes commercial access after initial human safety testing and makes every covered treatment use teach us something.
 
 ### [Earth Optimization Prize Protocol: Technical Specification](https://manual.warondisease.org/knowledge/appendix/earth-optimization-prize-protocol.html)
 

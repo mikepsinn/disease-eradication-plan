@@ -20,9 +20,55 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  validate:
+    name: Validate Python and workflow code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository for validation
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Python dependencies
+        run: |
+          uv venv .venv
+          uv pip install --python .venv/bin/python -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --python .venv/bin/python -e ".[dev]"
+
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Python type check
+        run: pnpm exec pyright dih_models scripts
+
+      - name: Test workflow generation
+        run: .venv/bin/python -m pytest scripts/tests/test_workflow_generator.py
+
 
   build-manual:
     name: "Build How to End War and Disease"
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - name: "Validate Build How to End War and Disease Netlify credentials"
@@ -137,9 +183,6 @@ jobs:
       - name: Install Node dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Run Python type check
-        run: pnpm exec pyright dih_models scripts
-
       - name: Install Jupyter kernel
         run: |
           .venv/bin/python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
@@ -173,4 +216,348 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_MAIN_SITE_ID }}
+        timeout-minutes: 5
+
+  build-right-to-trial:
+    name: "Build Right to Trial & FDA Upgrade Act"
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Validate Build Right to Trial & FDA Upgrade Act Netlify credentials"
+        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "::error title=Missing Netlify token::GitHub Actions secret NETLIFY_AUTH_TOKEN is empty or missing."
+            echo "Fix: Create a Netlify personal access token from the Netlify account or team that owns Build Right to Trial & FDA Upgrade Act, then update GitHub repo secret NETLIFY_AUTH_TOKEN."
+            exit 1
+          fi
+
+          if [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::error title=Missing Netlify site ID::GitHub Actions secret NETLIFY_RIGHT_TO_TRIAL_SITE_ID is empty or missing."
+            echo "Fix: Set GitHub repo secret NETLIFY_RIGHT_TO_TRIAL_SITE_ID to the Netlify site ID for Build Right to Trial & FDA Upgrade Act."
+            exit 1
+          fi
+
+          netlify_response="$RUNNER_TEMP/netlify-site-response.json"
+          netlify_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 --output "$netlify_response" --write-out "%{http_code}" --header "Authorization: Bearer $NETLIFY_AUTH_TOKEN" "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID" || true)"
+
+          case "$netlify_status" in
+            200)
+              echo "Netlify preflight passed: token can retrieve the configured project."
+              ;;
+            401|403)
+              echo "::error title=Netlify token cannot retrieve project::NETLIFY_AUTH_TOKEN is invalid, revoked, stale, or does not have access to the site ID stored in NETLIFY_RIGHT_TO_TRIAL_SITE_ID."
+              echo "Fix: Create a new Netlify personal access token from the Netlify account or team that owns Build Right to Trial & FDA Upgrade Act."
+              echo "Then update GitHub repo secret NETLIFY_AUTH_TOKEN. Keep NETLIFY_RIGHT_TO_TRIAL_SITE_ID unless the Netlify site was recreated."
+              exit 1
+              ;;
+            404)
+              echo "::error title=Netlify site not found::The site ID stored in NETLIFY_RIGHT_TO_TRIAL_SITE_ID does not exist or is not visible to NETLIFY_AUTH_TOKEN."
+              echo "Fix: Verify the Netlify site ID for Build Right to Trial & FDA Upgrade Act and update GitHub repo secret NETLIFY_RIGHT_TO_TRIAL_SITE_ID. If the site exists, update NETLIFY_AUTH_TOKEN with a token from the owning account or team."
+              exit 1
+              ;;
+            000)
+              echo "::error title=Netlify API unreachable::Could not reach Netlify while checking deploy credentials."
+              echo "Fix: Retry the workflow. If this repeats, check Netlify status and GitHub runner network logs."
+              exit 1
+              ;;
+            *)
+              echo "::error title=Unexpected Netlify API response::Netlify returned HTTP $netlify_status while checking deploy credentials."
+              echo "Response body:"
+              cat "$netlify_response"
+              echo
+              echo "Fix: Check NETLIFY_AUTH_TOKEN and NETLIFY_RIGHT_TO_TRIAL_SITE_ID in GitHub repo secrets, then inspect the Netlify API response above."
+              exit 1
+              ;;
+          esac
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_RIGHT_TO_TRIAL_SITE_ID }}
+        timeout-minutes: 1
+
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-right-to-trial-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-right-to-trial-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: |
+          uv venv .venv
+          uv pip install --python .venv/bin/python -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --python .venv/bin/python -e ".[dev]"
+
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Jupyter kernel
+        run: |
+          .venv/bin/python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Right to Trial & FDA Upgrade Act (PDF + HTML)"
+        run: |
+          .venv/bin/python scripts/render-quarto.py right-to-trial --to pdf
+          .venv/bin/python scripts/render-quarto.py right-to-trial --to html
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/develop') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+      - name: Upload build logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs-right-to-trial
+          path: |
+            logs/build-right-to-trial.log
+            _build_temp/right-to-trial/*.log
+            _build_temp/right-to-trial/**/*.log
+          retention-days: 7
+
+      - name: "Deploy Build Right to Trial & FDA Upgrade Act to Netlify"
+        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
+        run: |
+          npm install -g netlify-cli
+          netlify deploy \
+            --dir='_build_temp/right-to-trial/_site/right-to-trial' \
+            --prod \
+            --no-build \
+            --message="Deploy right-to-trial from ${{ github.ref_name }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_RIGHT_TO_TRIAL_SITE_ID }}
+        timeout-minutes: 5
+
+  build-right-to-trial-impact:
+    name: "Build Universal Right to Try with Evidence: Potential Im"
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Validate Build Universal Right to Try with Evidence: Potential Im Netlify credentials"
+        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
+        run: |
+          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
+            echo "::error title=Missing Netlify token::GitHub Actions secret NETLIFY_AUTH_TOKEN is empty or missing."
+            echo "Fix: Create a Netlify personal access token from the Netlify account or team that owns Build Universal Right to Try with Evidence: Potential Im, then update GitHub repo secret NETLIFY_AUTH_TOKEN."
+            exit 1
+          fi
+
+          if [ -z "$NETLIFY_SITE_ID" ]; then
+            echo "::error title=Missing Netlify site ID::GitHub Actions secret NETLIFY_RIGHT_TO_TRIAL_IMPACT_SITE_ID is empty or missing."
+            echo "Fix: Set GitHub repo secret NETLIFY_RIGHT_TO_TRIAL_IMPACT_SITE_ID to the Netlify site ID for Build Universal Right to Try with Evidence: Potential Im."
+            exit 1
+          fi
+
+          netlify_response="$RUNNER_TEMP/netlify-site-response.json"
+          netlify_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 --output "$netlify_response" --write-out "%{http_code}" --header "Authorization: Bearer $NETLIFY_AUTH_TOKEN" "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID" || true)"
+
+          case "$netlify_status" in
+            200)
+              echo "Netlify preflight passed: token can retrieve the configured project."
+              ;;
+            401|403)
+              echo "::error title=Netlify token cannot retrieve project::NETLIFY_AUTH_TOKEN is invalid, revoked, stale, or does not have access to the site ID stored in NETLIFY_RIGHT_TO_TRIAL_IMPACT_SITE_ID."
+              echo "Fix: Create a new Netlify personal access token from the Netlify account or team that owns Build Universal Right to Try with Evidence: Potential Im."
+              echo "Then update GitHub repo secret NETLIFY_AUTH_TOKEN. Keep NETLIFY_RIGHT_TO_TRIAL_IMPACT_SITE_ID unless the Netlify site was recreated."
+              exit 1
+              ;;
+            404)
+              echo "::error title=Netlify site not found::The site ID stored in NETLIFY_RIGHT_TO_TRIAL_IMPACT_SITE_ID does not exist or is not visible to NETLIFY_AUTH_TOKEN."
+              echo "Fix: Verify the Netlify site ID for Build Universal Right to Try with Evidence: Potential Im and update GitHub repo secret NETLIFY_RIGHT_TO_TRIAL_IMPACT_SITE_ID. If the site exists, update NETLIFY_AUTH_TOKEN with a token from the owning account or team."
+              exit 1
+              ;;
+            000)
+              echo "::error title=Netlify API unreachable::Could not reach Netlify while checking deploy credentials."
+              echo "Fix: Retry the workflow. If this repeats, check Netlify status and GitHub runner network logs."
+              exit 1
+              ;;
+            *)
+              echo "::error title=Unexpected Netlify API response::Netlify returned HTTP $netlify_status while checking deploy credentials."
+              echo "Response body:"
+              cat "$netlify_response"
+              echo
+              echo "Fix: Check NETLIFY_AUTH_TOKEN and NETLIFY_RIGHT_TO_TRIAL_IMPACT_SITE_ID in GitHub repo secrets, then inspect the Netlify API response above."
+              exit 1
+              ;;
+          esac
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_RIGHT_TO_TRIAL_IMPACT_SITE_ID }}
+        timeout-minutes: 1
+
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-right-to-trial-impact-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-right-to-trial-impact-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: |
+          uv venv .venv
+          uv pip install --python .venv/bin/python -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --python .venv/bin/python -e ".[dev]"
+
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Install Jupyter kernel
+        run: |
+          .venv/bin/python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build Universal Right to Try with Evidence: Potential Im (PDF + HTML)"
+        run: |
+          .venv/bin/python scripts/render-quarto.py right-to-trial-impact --to pdf
+          .venv/bin/python scripts/render-quarto.py right-to-trial-impact --to html
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ (secrets.LLM_VALIDATION == 'true' || github.ref == 'refs/heads/develop') && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 30
+
+      - name: Upload build logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs-right-to-trial-impact
+          path: |
+            logs/build-right-to-trial-impact.log
+            _build_temp/right-to-trial-impact/*.log
+            _build_temp/right-to-trial-impact/**/*.log
+          retention-days: 7
+
+      - name: "Deploy Build Universal Right to Try with Evidence: Potential Im to Netlify"
+        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
+        run: |
+          npm install -g netlify-cli
+          netlify deploy \
+            --dir='_build_temp/right-to-trial-impact/_site/right-to-trial-impact' \
+            --prod \
+            --no-build \
+            --message="Deploy right-to-trial-impact from ${{ github.ref_name }}"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_RIGHT_TO_TRIAL_IMPACT_SITE_ID }}
         timeout-minutes: 5

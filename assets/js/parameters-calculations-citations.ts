@@ -9974,7 +9974,7 @@ export const STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER: Param
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier",
   unit: "x",
   displayName: "Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint",
-  description: "Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+  description: "Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
   sourceType: "calculated",
   confidence: "low",
   formula: "GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED",
