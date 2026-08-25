@@ -697,7 +697,7 @@ This is why aliens don't visit.
 
 [![How to End War and Disease](https://manual.warondisease.org/assets/og/manual-paperback-og-1200x630.jpg)](https://manual.WarOnDisease.org)
 
-> The Complete Idiot's Guide to Legally Bribing Your Way to Utopia
+> A Step-by-Step Guide to Optimizing Your Terrible Civilization
 
 ### [Drug Development Cost Increase Analysis](https://manual.warondisease.org/knowledge/appendix/drug-development-cost-analysis.html)
 
