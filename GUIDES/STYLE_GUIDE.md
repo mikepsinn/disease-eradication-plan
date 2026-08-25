@@ -1,6 +1,6 @@
 ---
 title: Writing Style Guide
-description: "The official writing style guide for the Complete Idiot's Guid to Ending War and Disease"
+description: "The official writing style guide for How to End War and Disease"
 tags: [style-guide, writing, tone, voice, contributing]
 
 ---

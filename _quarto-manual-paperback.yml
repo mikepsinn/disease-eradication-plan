@@ -8,7 +8,7 @@ project:
 
 # Custom fields for render-quarto.py
 dih-render:
-  index-source: index-manual.qmd
+  index-source: knowledge/introduction.qmd
   show-confidence-intervals: false
   docx-output-file: "How-to-End-War-and-Disease-Paperback.docx"
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
@@ -42,7 +42,7 @@ dih-podcast:
 
 book:
   title: 'How to End War and Disease'
-  subtitle: "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia"
+  subtitle: "A Step-by-Step Guide to Optimizing Your Terrible Civilization"
   author:
     - name: Mike P. Sinn
       email: m@warondisease.org
@@ -50,7 +50,7 @@ book:
       affiliations:
         - name: "International Campaign to End War and Disease"
           url: https://warondisease.org
-  description: "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia"
+  description: "A step-by-step guide to optimizing your terrible civilization."
   site-url: https://manual.WarOnDisease.org
   chapters:
     - index.qmd

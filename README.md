@@ -4,7 +4,9 @@ Is everyone you've ever loved currently being slowly tortured, or at minimum sch
 
 If so, your planet may be eligible for optimization.
 
-I'm Wishonia Love. CEO and President of Universe Optimization Services. I've been upgrading civilizations since before your sun ignited. I did a preliminary scan of your planet and it came back with a similarity score of 0.97 to Planet GL-881, which you would know as Moronia, a civilization that poisoned itself to death arguing about whose imaginary friend was better. This is not a great score. It is, in fact, the worst score I have ever seen on a planet that still has living things on it.
+This is your Earth repair manual. Diagnosis first. Repair instructions second. The parts already exist. This is encouraging.
+
+I'm Wishonia Love. CEO and President of Universe Optimization Services. I've been upgrading civilizations since before your sun ignited.
 
 I started watching your planet in 1945 when you split the atom.
 "Atom" comes from your Greek word meaning "unable to be cut," so naturally, you cut it.
@@ -53,7 +55,7 @@ On Wishonia, we skip the mass murder step and just give people food directly, bu
 
 On Wishonia, we ended wars using this exact program 4,297 years ago. Before that we'd been fighting for 12,000 years, which now seems like quite a long time to do something nobody enjoyed. Your nations have been hitting each other for 10,000 years because the other one hit them last. This is the conflict resolution strategy of four-year-olds, except four-year-olds eventually get tired and take a nap. Your species invented naps and then refused to apply them to geopolitics. You can't just stop being illogical all at once. That would be like teaching a dog calculus before it learns to sit.
 
-So this manual shows you how to bribe humanity into being less irrational gradually:
+So this manual shows you how to make humanity less irrational gradually:
 
 - Year 1: Move 1% of murder money to medicine money (baby steps)
 - Year 2: "Hey, we didn't die! Let's do 2%!"
@@ -61,95 +63,23 @@ So this manual shows you how to bribe humanity into being less irrational gradua
 - Year 10: "What's a war?"
 - Year 20: "We used to WHAT?!"
 
-It's like weaning a baby off eating paint chips. You can't just take away all the paint chips at once. They'll cry. You have to gradually replace paint chips with food until they forget paint chips were ever an option.
-
-### What to Do When They Try to Institutionalize You
-
-When you suggest moving 1% of murder money to medicine money, other humans will have you committed. Most humans have been programmed by their news boxes to believe war is a law of nature, like gravity or weather. They will assume your brain is malfunctioning.
-
-Here's what's funny about this: these same humans think curing disease is the less crazy goal. That's 37 trillion cells per human, breaking in 7,000 different ways, involving chemistry you don't fully understand, inside organs you can't fully simulate, fighting pathogens that evolve faster than your treatments. You're trying to debug all of it. At once. While your meat is walking around using itself.
-
-That: sane.
-"Give 1% fewer papers to people who build murder machines": insane.
-
-This is your planet's diagnostic criteria. I looked up the last person on your planet who went around suggesting universal love and peace. You nailed him to a piece of wood. So I consider it quite fortunate that I'm making this suggestion from several light-years away.
-
-Anyway, here's what you tell the orderly when he slides your medication through the door slot:
-
-Nobody accidentally builds an aircraft carrier or a nuclear bomb. War requires you to get millions of humans to work together to mine metal from the ground, refine it into alloys, build factories to shape the alloys into weapons, train millions of humans to operate the weapons, feed and clothe those humans, build ships and planes and trucks to move the weapons to where the other humans are, convince your population the other humans deserve it, and then vote to pay for all of this, annually, forever. It is the single largest coordinated effort your species undertakes.
-
-Ending war simply requires NOT doing any of that stuff.
-
-Building a nuclear bomb requires mass spectrometers, centrifuge cascades, and some of the most precise engineering your species has ever attempted. Not building a nuclear bomb requires nothing. Rocks do it every day. In fact, rocks have managed to live peacefully alongside different colored rocks for thousands of years.
-
-But somehow "stop" is the unrealistic part.
-
-Improvement is physically possible. "Stop" isn't the unrealistic part. Getting one billionaire to read a PDF is.
-
-### The Sacred Order of Paper Distribution
-
-After 80 years of observation, I've decoded the paper-giving sequence. This manual will teach you the precise order:
-
-**Step 1: Get Some Papers from Rich Humans**
-
-You convince rich humans to give you papers by promising them even more papers later. This is called "investment," which is gambling but wearing a suit. You really only need one human with papers who prefers not dying of horrible diseases to dying of horrible diseases. There are approximately 2,800 billionaires on your planet. Statistically, at least one of them prefers living.
-
-**Step 2: Buy the Machine That's Making You Poorer and Deader**
-
-So it turns out your weapons companies sell tiny pieces of themselves to anyone with papers. Each piece comes with a vote. If you collect enough votes you get to pick who sits on the board of directors, and the board of directors tells the lobbyists what to say to your politicians. A twelve-person firm called Engine No. 1 spent $12.5 million and won 3 board seats at ExxonMobil, which is a $400 billion company. The stock went up. So you're doing that, except instead of "please stop ruining the environment" the ask is "please stop spending trillions on the redundant capacity to kill everyone [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) times over when you only have the one everyone."
-
-**Step 3: Sell 1% of the Bombs, Buy Biotechnology Companies**
-
-So the bomb company's board, which is now you, sells 1% of its bomb-making stuff and uses those papers to buy pieces of biotechnology companies. Biotechnology companies have net profit margins of [18.5%](https://manual.warondisease.org/knowledge/appendix/love-letter.html), compared to [4.99%](https://manual.warondisease.org/knowledge/appendix/love-letter.html) for bomb companies, which is [3.72x](https://manual.warondisease.org/knowledge/appendix/love-letter.html) higher, because it turns out selling things that keep people alive is more profitable than selling things that make them dead, which honestly should not have required a spreadsheet to figure out. The board members just gave themselves a raise. Also, fewer people die now, which is a pleasant side effect of the raise.
-
-**Step 4: Everyone Gets Richer (Including the Bomb Company)**
-
-The bomb company kept 99% of its bombs. But the 1% it sold and put into biotechnology companies is making more money than the bombs were, because biotechnology has [3.72x](https://manual.warondisease.org/knowledge/appendix/love-letter.html) the margins of explosions. The whole economy grows because you stopped wasting resources on [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) spare apocalypses nobody needed. The board members' own shares go up. And the diseases that were going to kill the board members in twenty years, at which point their net worth becomes zero (unless their children bury them with all of their money, which, based on my observations of your inheritance disputes, seems unlikely), those diseases are now getting cured. So they live longer and they're richer. This is what your economists call a Pareto improvement and what everyone else calls "obvious."
-
-**Step 5: Do It Again**
-
-The biotechnology companies you bought are making money. You use that money to buy pieces of the next bomb company. That board also sells 1% of bombs, buys biotechnology shares, gives itself a raise, and stops dying. Each company you fix makes the next one easier because you have more papers and also a track record of making boards richer by not killing people. On Wishonia we call this a "positive feedback loop." On Earth you call it "going viral" but only when it's a video of a cat.
-
 ### Why Your Leaders Aren't the Problem
 
-With over two billion humans suffering from disease, you'd have to be a complete psychopath to make the conscious decision to spend [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) times more on weapons than on helping them.
-But your leaders aren't monsters. They're just operating in a system that rewards the wrong things.
-
-Your civilization's incentive structure is the psychopath:
+Your leaders are not monsters. They are operating inside a loop that rewards weapons spending and punishes unilateral restraint:
 
 1. Weapons manufacturers give politicians papers
 2. Politicians use the papers to get people to vote for them
-3. Voting for them gives them the power to give more papers to weapons manufacturers
-4. Weapons manufacturers give them more papers
-5. It's circular, like a dog chasing its tail, except the dog is democracy and the tail is made of money and corpses
+3. Winning gives them the power to award more weapons contracts
+4. The contracts produce more papers for political spending
+5. The loop repeats
 
-No individual human in this loop is evil. The loop is evil. Every politician in it is making the locally rational choice: take the papers or lose your job to someone who will. It's a machine that converts good intentions into missiles, and it runs automatically.
-
-This loop does not even benefit the humans inside it. The weapons manufacturers get diseases. Their children get diseases. Everyone they love gets diseases. They live in the same economy that the loop is shrinking. If the loop breaks and the optimization happens, the board sells 1% of its bomb-making assets and buys biotechnology shares with [3.72x](https://manual.warondisease.org/knowledge/appendix/love-letter.html) the profit margins, so the board is richer immediately. Then the economy grows to [1.43x](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) its current size by year 15, so every diversified shareholder's portfolio scales with it. And the diseases that were going to kill the board members stop getting ignored. This is not a case where an entrenched industry rationally profits at the public's expense. There is no rational beneficiary of the current arrangement. Everyone in the loop is worse off, including the people running it. They just haven't done the arithmetic.
-
-There's literally no voting your way out of this. It doesn't matter which political party is in power. Your "red team" and "blue team" argue about everything except the loop, because they're both inside it. They are all slaves to the same incentive structure, wearing different colored ties. Switching parties is like changing the wallpaper in a burning building.
-
-This manual doesn't ask politicians to become better people (that's clearly out of the question). It builds a better loop. You give them MORE papers to do the OPPOSITE thing. Same dog, same tail, but now the tail is made of cured diseases and the dog gets reelected for chasing it.
-
-### Humanity's Death Wish
-
-What's most endearing about your species is it KNOWS it's being illogical:
-
-- You have movies about how wars are bad (which you watch between wars)
-- You have books about peace (that you tax to buy bombs)
-- You give prizes to people who promote peace (funded by weapons manufacturers)
-- You have a "Department of Defense" (that mainly just attacks people)
-- You have a "Department of Health" (that apparently makes coronaviruses and has not yet produced any observable health)
-
-It's like humanity is playing a game where the objective is to lose, but it is trying to lose as elaborately as possible.
-
-But I digress. That's an Earth word I learned. It means continuing after you should have stopped. Like your military spending.
+Changing the person inside the loop does not change the loop. This manual changes the incentives so politicians, companies, patients, and investors can benefit from producing health instead of additional ways to destroy it.
 
 ## The Problem
 
 ### The Daily Deletion Event
 
-[150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software. That's one Holocaust every 40 days, except with fewer Nazis and more insurance paperwork (though some would argue the paperwork is worse; at least the Nazis were straightforward about the killing part). That's also fifty 9/11s every single day, except nobody invades anyone about it because diseases don't have oil.
+[150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software.
 
 Your body is quietly falling apart. Right now, as you read this sentence, something inside you is breaking. You don't know which part yet. You won't know until a doctor sits you down and says a word that rearranges the rest of your life. Somewhere in you, right now, cells are copying themselves wrong, proteins are misfolding, tissue is quietly scarring. You are dissolving on a schedule you can't see.
 
@@ -175,7 +105,6 @@ Humans spend **[$2.72 trillion](https://manual.warondisease.org/knowledge/econom
 - AI murder-bots
 - Invisible jets that cost more than hospitals
 - Space Force (to fight the zero aliens attacking you)
-- And some kind of earthquake machine (probably)
 
 Since 1913, your governments have printed [$170 trillion](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) out of nothing and spent these nothing-papers on murdering [310 million](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) humans and destroying many valuable things those humans spent their entire lives building. Consequently your paycheck now buys 97% less due to the aforementioned destruction.  [$170 trillion](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) is equal to 38,000 years of government clinical trial spending. You bought the other thing.
 
@@ -185,37 +114,17 @@ Today, government spending on clinical trials: **[604](https://manual.warondisea
 
 If cancer had oil reserves, you would have cured it by 2003. Instead, you spent the repair money on murder tubes that cost more than countries and submarines that hide underwater, as if that's somehow useful when you live on land.
 
-### Your Civilization Has a Countdown
-
-And that's just the official murder budget.
-
-Cybercrime costs [$10.5 trillion](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) per year and growing at [15%](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) annually. This is not a separate problem. North Korea can't build an aircraft carrier, but it funds its nuclear program by stealing $1.5 billion in cryptocurrency in a single afternoon. Russia finances military operations with ransomware. Cybercrime is war conducted through WiFi, and it pays better.
-
-Combined, your [destructive economy](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) is [$13.2 trillion](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) per year, [11.5%](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) of global GDP. Both are growing faster than the part of your economy that makes things. So the part that destroys things is winning. I'm told this is not considered an emergency. On your planet this is considered "Tuesday."
-
-When the parasitic economy grows large enough relative to the productive one, the rational choice for any individual, company, or nation flips from "build things" to "steal things." Why spend years building a product when you can ransom a hospital in an afternoon? Why manufacture exports when hacking banks pays better? Once enough of your economy is extraction, producing anything makes you a target rather than a success. Production becomes irrational. Parasitism becomes the only means of survival.
-
-You have a name for places where this already happened. You call them "failed states." Somalia, Libya, parts of Syria. The productive economy collapsed, the warlord economy replaced it, and nobody can restart production because anyone who builds something gets it taken. You've watched this happen to individual countries the way someone watches a neighbor's house burn down while storing gasoline in their own basement. Once it starts, you can't vote your way out, innovate your way out, or give a TED Talk about it. (You will try all three.)
-
-At current growth rates, your destructive economy reaches 25% of GDP by [2033](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html). The Soviet Union collapsed at 15% of GDP in military spending alone. They had worse technology, a smaller parasitic sector, and a plan. It was a terrible plan, but they had one. You are approaching their ratio with better technology, a faster-growing parasitic sector, and no plan. The Soviet Union's terrible plan beat your no plan, and the Soviet Union lost.
-
-This is a loop, not a line item. Your governments print money to fund military spending, which devalues wages through inflation, which makes legitimate work pay less, which pushes talent toward cybercrime, which grows the destructive economy, which justifies more military spending. Every nation you've bombed or sanctioned has learned that parasitizing your economy is cheaper than fighting you conventionally. That's not crime. That's homework. You built the incentive structure and they did the math.
-
-The treaty breaks this loop. Optimize the budget: move 1% of the war money to medical research, make the productive economy so rewarding that crime becomes irrational, and defund the war machine that manufactures the poverty that feeds the cycle. You don't outlaw the loop. You make it unprofitable.
-
 ### The FDA is Unsafe and Ineffective
 
 Even the money you DO spend on medicine is mostly wasted, because the system that approves treatments is a smoke detector that works by mail.
 
-Vioxx killed an estimated 55,000 people from heart attacks. The FDA approved it. When patients started dying, someone filled out a PDF form. A PDF. Then they faxed it. (Yes, in the 21st century.) Then a human read it. Five years and tens of thousands of corpses later, someone noticed a pattern. This is your safety system.
+Vioxx was associated with an estimated 55,000 deaths from heart attacks. The FDA approved it. Reports then arrived through disconnected forms and human review. Five years passed before the pattern produced a withdrawal. This is a smoke detector that works by mail.
 
 Your National Institutes of Health, the agency nominally responsible for finding cures, spends [3.3%](https://manual.warondisease.org/knowledge/problem/nih-fails-2-institute-health.html) of its budget on clinical trials. The other ~97% goes to basic research, administration, and buildings. It's like a fire department that spends 3% of its budget on water.
 
 Then there's a [8.2 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend [8.2 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would [1.08 billion](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) other patients, and the current system has [1.9 million](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) slots. That's a participation rate of [0.06%](https://manual.warondisease.org/knowledge/solution/dfda.html). It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
 
 Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html): for every 1 person protected from a dangerous drug, [3,389](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html) people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by [3,389](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html) to 1. Your safety system's main product is dead patients.
-
-Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money was busy turning into a missile. That missile incinerated a child who might have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the inflation. You get the tax bill. You get to pay for her murder.
 
 This is suboptimal.
 
@@ -231,16 +140,22 @@ This is suboptimal.
 
 ### [A 1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)
 
-This is going to sound crazy. But you're going to use those papers to persuade the leader of every country on Earth to simultaneously optimize 1% of its military budget by moving it to clinical trials. That's it. That's the treaty. National security goes up because everyone has 1% fewer missiles pointed at them. The economy grows because you stopped wasting resources on the [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html)th apocalypse. Everyone gets richer and stops dying. It's not a cut. It's an upgrade.
+You use those papers to persuade the leader of every country on Earth to simultaneously optimize 1% of its military budget by moving it to clinical trials. That's it. That's the treaty. National security goes up because everyone has 1% fewer missiles pointed at them. The economy grows because you stopped wasting resources on the [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html)th apocalypse. Everyone gets richer and stops dying. It's not a cut. It's an upgrade.
 
 After the craziness objection, the second objection every human has: "But if we cut our military budget, our enemies will invade us!"
 Everyone cuts 1% at the same time. Your national security actually *increases*, because everyone has 1% fewer missiles pointed at them. And if you still feel like doing war, you keep the capacity for [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) minus 1 nuclear apocalypses. Since [100](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) warheads is the threshold for ending civilization and you have [12,241](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html), you are settling for [121](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) civilizational collapses instead of [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html). This should be more than sufficient.
 
 "But humans would never agree to a treaty!" you say. You already have. Multiple times. You banned chemical weapons (1993, 193 countries). You banned biological weapons (1975, 187 countries). You banned landmines (1997, 164 countries). You've signed treaties banning weapons you actually like using. This one just asks you to buy 1% fewer of them.
 
-I've done this before. I've sent versions of this manual to 847 civilizations on 847 planets. Some listened. Some didn't. I kept the data. The ones that stopped spending resources on killing each other and started spending them on keeping each other alive stopped doing war and disease. The ones that didn't extincted themselves. The only variable was the percentage of the population that decided it sounded crazy without reading the next page. That is the same reflex that kept you from inventing antibiotics for 200,000 years while bread mold sat right there on your bread.
-
 And you have two other advantages. One, the internet, which lets you coordinate with billions of other humans who also prefer not dying. Two, the machines that are making you poorer and deader are publicly traded companies, which means they sell tiny pieces of themselves to literally anyone with papers, including you, and each piece comes with a vote. This is like discovering that the machine slowly murdering everyone you love has an off switch, but the off switch is made of money, so nobody thought to check.
+
+### [Universal Right to Try](https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html)
+
+The current system requires treatment developers to pay for large efficacy trials before most patients can buy a post-safety investigational treatment. Treatments that cannot support those costs are rarely investigated, even when patients are willing to pay for access and contribute outcome data.
+
+[Universal right to try](https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html) lets adults purchase treatments after Phase I safety testing while every participating clinic follows a registered protocol, tracks outcomes, and publishes standardized data. Patient demand becomes research funding. Treatments that were previously too small, unusual, or unprofitable to justify later-stage trials can begin generating the evidence needed to prove whether they work.
+
+The [50-state impact analysis](https://manual.warondisease.org/knowledge/appendix/state-right-to-trial-impact.html) estimates what happens when every state adopts this framework.
 
 ### Your [Decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html)
 
@@ -283,7 +198,7 @@ Your decentralized FDA figures out which treatments work. But your governments a
 
 ### The Evidence
 
-Humans usually want "proof" before they stop doing something stupid, which is interesting because you never required proof before starting:
+Humans usually want proof before changing a system, which is sensible and inconvenient. Fortunately, you already ran several of the experiments:
 
 - [The RECOVERY trial](https://manual.warondisease.org/knowledge/appendix/recovery-trial.html) tested 6 treatments on 48,000 patients for [$500](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) per patient instead of the usual [$41,000](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) per patient. That's a [82x](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) cost reduction. Not in theory. In reality. During a pandemic. While panicking. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic.
 - After WW2, humans cut military spending by [87.6%](https://manual.warondisease.org/knowledge/economics/peace-dividend.html) in two years and stumbled into the greatest economic boom in history by running out of people to shoot at. You're now spending [30.6x](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) the pre-WW2 baseline in inflation-adjusted dollars. You're asking for 1%. Even people who really, really, love exploding people should be able to handle 1%.
@@ -301,249 +216,25 @@ Remember the [212 years](https://manual.warondisease.org/knowledge/economics/1-p
 
 Cost-effectiveness: [$0.00177](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) to save one year of healthy human life. Anti-malaria bed nets, the gold standard for keeping humans alive, cost [$89](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). This is [50.3kx](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) cheaper. It beats smallpox eradication ([280](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) to 1) and childhood vaccinations ([13](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) to 1), which were humanity's previous greatest hits in the "not dying" genre. Even if you assume only a [1%](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) probability of the treaty actually passing (because you're you), the expected return is still [503x](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) better than anti-malaria bed nets.
 
-## The 5-Step Plan
+## The Repair Instructions
 
-*Saving Humanity While Making Everyone Obscenely Wealthy*
+Earth has no shortage of good intentions. It has a shortage of systems that turn treatment into comparable evidence.
 
-### Step 1: Buy the Machine That's Making You Poorer and Deader
+1. **Open access.** Enact [universal right to try](https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html) so adults can purchase post-safety investigational treatments.
+2. **Turn treatment into evidence.** Require registered protocols, standardized outcomes, pooled data, and public results.
+3. **Fund the search.** Enact the [1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) so every nation moves the same small share of military spending into pragmatic clinical trials.
+4. **Publish rankings.** Use the [Continuous Evidence Generation Protocol](https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html) to show which treatments work best for which patients.
+5. **Repeat.** Effective treatments rise in the rankings. Ineffective treatments stop consuming patients and papers. Every patient makes the system less ignorant for the next one.
 
-On Wishonia, people do useful things because they're useful. On Earth, you need a financial incentive. Not because anyone rationally opposes curing diseases (they don't; see above), but because [150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) people die per day while the arithmetic propagates, and money is how you compress the timeline.
+Patient-funded access investigates treatments that were not previously economical to test. Treaty funding expands the search further. Continuous outcome data connects both channels into one learning system.
 
-So your weapons companies have this design flaw. They sell tiny pieces of themselves to anyone with papers. Each piece comes with a vote. If you collect enough votes you get to pick who sits on the board of directors, and the board tells the lobbyists what to say to Congress. Like, [$4.4 billion](https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration-paper.html) a year in corporate lobbying is what buys your legislation. That is less than you spend on pizza. Your entire government is controlled by an amount of money that would not buy enough pizza to feed your government. And you're not buying Congress directly, because apparently that's illegal even though the current system is just buying Congress with extra steps. You're buying the companies that buy Congress. Then you tell them to ask for clinical trials instead of cluster bombs.
+## Inspect the Parts
 
-Someone already did a version of this. In 2021, a twelve-person firm called Engine No. 1, twelve people, spent $12.5 million and won three board seats at ExxonMobil, which is a $400 billion company. They did not have more money than Exxon. They had data showing that Exxon's strategy was making Exxon's own shareholders poorer, and the big shareholders like Vanguard and BlackRock, who own like 60% of everything, looked at the data and went "oh, huh, yeah" and voted with the twelve people. The stock went up.
+The calculations, uncertainty ranges, legislation, and technical specifications are available in [Papers & Publications](https://manual.warondisease.org/knowledge/papers.html). The longer alien diagnosis remains in the [Introduction](https://manual.warondisease.org/knowledge/introduction.html).
 
-[Earth Optimization Services](https://manual.warondisease.org/knowledge/economics/eos-pitch.html) does the same thing, except instead of making an oil company slightly less oily, you're buying the weapons companies that control your government's lobbying and telling their boards to sell 1% of their bomb-making assets and buy biotechnology companies, which have net profit margins of [18.5%](https://manual.warondisease.org/knowledge/appendix/love-letter.html) compared to [4.99%](https://manual.warondisease.org/knowledge/appendix/love-letter.html) for bomb companies, which is [3.72x](https://manual.warondisease.org/knowledge/appendix/love-letter.html) higher. So the board members get richer. And then you tell their lobbyists to lobby for clinical trials instead of missiles, which the [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) has calculated will make everyone including the board members richer and also not dead, because the board members are currently lobbying for policies that will result in the board members dying of preventable diseases in about twenty years, at which point their net worth becomes zero regardless of how large it was, unless they arrange to be buried with all of their money.
+You can also read the [1% Treaty impact analysis](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html), the [universal right-to-try impact analysis](https://manual.warondisease.org/knowledge/appendix/state-right-to-trial-impact.html), and the [ubiquitous pragmatic trial impact analysis](https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html) separately.
 
-EOS is what your lawyers call a mission-locked public benefit corporation. It is legally required to maximize how long you live and how much money you make. If a board member tries to do something else, you can sue them. On Wishonia we just call this "a company that works." On Earth it apparently requires special paperwork.
-
-The [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) calculates which policies will actually make humans live longer and have more money. Right now the answer is mostly "more clinical trials" because you have a [443](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)-year backlog of untested treatments and people are dying in line, and "fewer missiles" because you have [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) spare apocalypses of margin and zero spare civilizations to use them on. The corruption is capped at 20% and fully transparent. The other 80% goes directly to clinical trials through [wishocratic allocation](https://manual.warondisease.org/knowledge/solution/wishocracy.html), where every human gets one vote on spending priorities. You drag a slider. On one end: atomic bombs. On the other end: high-efficiency pragmatic clinical trials. Your current system has the slider at [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)-to-one in favor of the bombs. You, personally, get to drag it wherever you think it should go. And nobody with more papers gets more votes than anybody else, because on your planet the thing that happens when you let money buy votes is money buys votes and then the votes do what the money wanted, which is how the slider ended up at [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)-to-one in the first place.
-
-Remember when your grandparents funded WW2 by buying bonds? They got 4% returns and a world without Nazis (mostly). They also still died of cancer, because nobody used the money to fund clinical trials. You're doing a better version of this. Instead of lending papers to a government and hoping it does the right thing with them, you're buying the companies that tell the government what to do and making them do the right thing, and the right thing also happens to make everyone involved richer, because it turns out not slowly poisoning your own civilization is good for the economy.
-
-#### What Grandma Got
-
-- Dead Nazis (admittedly good)
-- 4% returns on war bonds (barely beat inflation)
-- Still died of cancer in 1987
-
-#### What You're Offering
-
-- Dead diseases (objectively better than dead Nazis because diseases kill more people)
-- [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) projected annual returns (because it turns out companies get more valuable when the civilization they operate in stops slowly killing itself, and the investors make more money, which makes them very enthusiastic about continuing to not kill the civilization, which is the first time in your history that greed and not dying have pointed in the same direction)
-- Not dying from preventable meat failures (this is the big one)
-- Also no Nazis (as a bonus)
-
-This raises the [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) needed to fuel the rest of the bribery machine. Nobody in the machine is your enemy. The enemy is the clock.
-
-![Grandma's war bonds paid 4%. Yours pay 272%. Grandma would be furious if she hadn't died of cancer.](https://manual.warondisease.org/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
-
-#### How the Money Flows
-
-Here's the part where humans usually stop reading because it involves following money through more than one step:
-
-1. Rich humans give papers to [Earth Optimization Services](https://manual.warondisease.org/knowledge/economics/eos-pitch.html). EOS uses the papers ([$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)) to buy enough pieces of your weapons companies to win board seats.
-2. The board members don't get to use opinions. The [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) tells them which policies will make humans live longer and have more money. [Wishocracy](https://manual.warondisease.org/knowledge/solution/wishocracy.html) lets every human who owns a piece drag a slider between "atomic bombs" and "high-efficiency pragmatic clinical trials." Right now the slider is at [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)-to-one in favor of the bombs. Every human gets to drag it. The board looks at this data, and then the board tells the lobbyists what to ask Congress for. This is not "sensible people making sensible decisions." Sensible people are bribable and also they die. This is a calculator that tells you the answer, plus a vote where nobody's papers buy them extra votes. Twelve people took three of ExxonMobil's board seats with nothing but opinions. You're taking board seats across the whole weapons industry with arithmetic and a legal obligation to use it.
-3. The board sells 1% of the bomb-making assets and buys biotechnology company shares with the proceeds. Biotechnology companies have [3.72x](https://manual.warondisease.org/knowledge/appendix/love-letter.html) the profit margins of bomb companies ([18.5%](https://manual.warondisease.org/knowledge/appendix/love-letter.html) vs [4.99%](https://manual.warondisease.org/knowledge/appendix/love-letter.html)). The board just gave itself a raise. The lobbyists are now lobbying for clinical trials instead of cluster bombs.
-4. The campaign succeeds. The treaty passes. [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)/year moves from the murder budget to clinical trials.
-5. EOS keeps 20% for the saving-your-civilization part. Half of that ([10%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html)) goes to investor dividends: [$2.72 billion](https://manual.warondisease.org/knowledge/economics/treaty-financial-plan.html)/year on a [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) investment. That's [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) annual returns. Your investors will think it's a typo. It's not. The other half ([10%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html)) goes to a Super PAC that spends [$2.72 billion](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html)/year rewarding politicians who voted yes on the treaty and funding cushy post-retirement careers for them, which is how your species trains senators apparently.
-
-The remaining [80%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) of [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) goes where it's supposed to: funding clinical trials that keep humans alive.
-
-This is the entire trick. You use greed to buy the machine, greed to optimize it, and greed to keep it optimized. The money just circulates until diseases stop existing. None of this is overcoming opposition. There is no opposition. There are only humans who haven't done the arithmetic yet, and [150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) daily funerals that won't wait for them to finish.
-
-So Eisenhower, the human who won your last big war, warned you about this thing called the Military Industrial Complex: weapons manufacturers give papers to politicians, politicians give papers to weapons contracts, the contracts give papers to the manufacturers, the manufacturers give papers to the politicians. A loop. It just goes around and around printing money and corpses. You've been watching it go around for 65 years. You're not fighting this machine. You are buying it and changing what it prints.
-
-### Step 2: The Great Clicking
-
-*Make Humans Click a Button to Not Die*
-
-You need [3.5%](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) of humanity to vote yes on: "Should your country move 1% of military spending to clinical trials?"
-
-You are not creating support for not dying of horrible diseases and not mass murdering each other. Nearly everyone already supports not dying of horrible diseases and not mass murdering each other. You are proving it.
-
-Everyone thinks this is crazy because everyone else thinks this is crazy. Your economists call it pluralistic ignorance, which is the polite term for eight billion people waiting for permission to want what they already want. On Wishonia we call this "the galaxy's longest game of you-go-first." Most species that start playing it don't finish playing it. If every human realized that nearly every other human would like a world without war and disease and an extra [$518,879](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) in lifetime income, it would be done tomorrow and the world would be unrecognizable.
-
-::: {.content-visible when-format="html"}
-<figure>
-<img src="/assets/images/unrepresentative-democracy/ant-death-spiral.gif" alt="Ants marching in a circular death spiral" />
-<figcaption>Each ant follows the ant ahead. No ant checks whether the trail goes anywhere. They march in a circle until they die. Your species does this with opinions. (Clemzouzou69, CC BY-SA 4.0)</figcaption>
-</figure>
-:::
-
-Right now every human who wants less war and disease assumes they are the weird one. The referendum is the moment they find out they are everyone.
-
-Why 3.5%? A political scientist named Erica Chenoweth studied every major political movement of the last century and found that [none had ever failed after achieving 3.5% active participation](https://manual.warondisease.org/knowledge/strategy/global-referendum.html). Not one. Every civil rights movement, every revolution, every regime change. Hit 3.5% and you win. Humanity discovered the cheat code for changing its own civilization and then never used it on purpose.
-
-That's [280 million](https://manual.warondisease.org/knowledge/economics/campaign-budget.html) humans. Sounds like a lot until you remember that more than 10 times as many of you downloaded TikTok to watch people twerk. You can get [280 million](https://manual.warondisease.org/knowledge/economics/campaign-budget.html) to vote yes or no on the treaty. [$250 million](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) of the campaign budget goes to [paid referral bonuses](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) that make sharing their link to vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from preventable diseases.
-
-### Step 3: Bribe the Bribers
-
-*[Professional Briber Conversion Therapy](https://manual.warondisease.org/knowledge/solution/aligning-incentives.html#military-contractors-teaching-merchants-of-death-to-love-life)*
-
-So you own the companies now (Step 1). The board sold 1% of the bombs and bought biotechnology companies that make [3.72x](https://manual.warondisease.org/knowledge/appendix/love-letter.html) the margin. The [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) told the board what policies will keep humans alive and not broke. The board told the lobbyists what to say. The lobbyists are the same humans in the same buildings having the same lunches with the same politicians, except now they say different words after the lunch. Military lobbyists currently get $1,813 back for every paper they invest in democracy corruption, so here's what their career upgrade looks like:
-
-#### Current Job
-
-- Salary: [$500,000](https://manual.warondisease.org/knowledge/solution/aligning-incentives.html)
-- Moral status: Somewhere between "arms dealer" and "the person who puts raisins in cookies"
-- Legacy: "Here lies someone who made orphans"
-
-#### Your Offer
-
-- Same salary, but for lobbying politicians to fund clinical trials instead of cluster bombs
-- Moral status: "Philanthropist" (but you get to keep the money)
-- Legacy: "Accidentally saved humanity while getting rich"
-
-They won't even complain. Lobbyists don't have beliefs. They have employers. The old employer paid them to lobby for policies that the [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) has calculated will result in the lobbyist dying of a preventable disease in a smaller economy. You, the new employer, pay the same salary to lobby for policies that will result in the lobbyist not dying in an economy that is [1.43x](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) larger. This is not a career change. The lobbyist sits in the same chair and calls the same senator. The only thing that changed is that the sentence they say will not result in the lobbyist dying.
-
-### Step 4: Purchase Democracy
-
-*It's For Sale Anyway*
-
-So politicians need two things to keep their jobs: papers and votes. Currently, weapons manufacturers provide both. After Step 1, you own the weapons manufacturer, and your lobbyists are already saying different words. But you have observed that politicians are not primarily motivated by words. They are motivated by papers and by the fear of losing their job, which is the source of their papers.
-
-Your explosion manufacturers used to spend [$198 million](https://manual.warondisease.org/knowledge/appendix/faq.html)/year buying politicians. Those lobbyists are already saying "clinical trials" instead of "cluster bombs" (Step 1). But you did not get this far by trusting humans to do the right thing without a financial incentive.
-
-It's not corruption if you corrupt the corruption.
-
-Remember that [$2.72 billion](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html)/year from Step 1? EOS pours it into a Super PAC that rewards politicians based on how they voted on the treaty. If you voted yes, you get campaign support while you're running and a cushy fellowship when you retire. If you voted no, you get to watch your opponent receive all of that instead. No papers go directly to politicians, because apparently that's illegal, so instead the papers take a scenic route through a scoring algorithm, which is the only legal way to train a senator on your planet.
-
-The NRA already perfected this technology. They give politicians a letter grade, and your senators are more afraid of a bad mark than a mass shooting. You're plagiarizing their system and replacing "guns" with "not dying from diseases."
-
-This works for any problem where politicians need to do something good but haven't been paid to do it yet. On your planet, this is most problems. On Wishonia, we just call it "the government." But you seem to prefer the version that requires bribery, so here we are.
-
-### Step 5: Enjoy
-
-*Everyone Gets Rich and Nobody Dies*
-
-Your treaty passes because money defeats morality, as is tradition.
-
-The [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)/year money volcano erupts:
-
-- **Military Contractors**: Kept [99%](https://manual.warondisease.org/knowledge/solution.html) of their bombs, sold 1% and bought biotechnology companies with [3.72x](https://manual.warondisease.org/knowledge/appendix/love-letter.html) the margins, so the board is richer, the stock is up, and their employees stop dying of the diseases nobody was bothering to cure because everyone was too busy buying the [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html)th apocalypse.
-- **Big Pharma**: Instead of paying [$41,000](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) for phase 2 and 3 trials, the treaty pays THEM for each patient that joins their trials.
-- **Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem).
-- **Investors**: [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) returns. Returns scale with every treaty expansion, so investors become the world's most aggressive pro-health and anti-war lobbying force. Not a sentence anyone expected to write.
-- **Lobbyists**: Same job, same salary, but their Wikipedia page no longer needs a "Controversies" section
-- **Politicians**: Getting reelected by living voters (a revolutionary strategy)
-- **Regular humans**: Not dying from stupid things (priceless, but also free)
-
-Nobody has to evolve morally. You just point everyone's greed at diseases instead of each other.
-
-### How This Manual Could Fix Everything
-
-This manual contains:
-
-- Pictures (because reading is hard when you're diseased and dying)
-- Simple math (addition mostly, some multiplication)
-- Exact amounts of papers to give to specific humans
-- The order in which to give them (very important)
-- Legal ways to call bribes other things
-- An appliance that tells your governments which policies work (it doesn't have feelings, which is why it's better at governing)
-- Templates for tricking politicians into saving lives
-
-Everything is designed to work WITH human dysfunction, not against it. I'm not asking humans to be better humans. I'm showing you how to bribe humanity into not dying.
-
-### But You Don't Need to Understand Any of That
-
-You just read five steps involving bonds, lobbyists, Super PACs, a decentralized FDA, and an appliance that optimizes government policy. The obvious objection: "Nobody can coordinate all of that."
-
-Correct. Nobody coordinates a pencil either.
-
-One of your economists held up a pencil on television and said: "There's not a single person in the world who could make this pencil. The wood comes from a tree in Washington. The graphite comes from mines in South America. The rubber comes from Malaya. The brass ferrule, I haven't the slightest idea where it came from. Literally thousands of people cooperated to make this pencil. People who don't speak the same language, who practice different religions, who might hate one another if they ever met. No one sitting in a central office gave orders to these thousands of people. No military police enforced the orders that were not given." [-]
-
-A pencil costs 25 cents. Making one requires thousands of strangers across dozens of countries. Nobody planned it. Nobody runs it. Everyone involved just wanted money, and the price system turned their selfishness into pencils. Your species does this billions of times a day without noticing.
-
-Now look at this cured disease.
-
-There is not a single person in the world who could cure it. The researcher in Lagos who found the cheaper trial design does not know the lobbyist in Brussels who passed the directive. The lobbyist does not know the nonprofit in Manila that recruited a million voters. The voters do not know the bondholder in New York whose greed funded the campaign. The bondholder does not know the politician in Delhi who voted yes because the Super PAC funded her opponent last time she voted no. The politician does not know the factory worker in Dhaka whose clinical trial enrollment generated the data that proved the treatment worked. Literally millions of people cooperated to cure this disease. No one sitting in a central office gave orders. No military police enforced the orders that were not given. Two numbers on a Scoreboard and pieces of paper with presidents on them did what no committee, no charity, and no central plan has ever done.
-
-The five steps above are the machinery. You do not need to build the machinery. You need to turn it on. Here is the switch.
-
-### The Earth Optimization Game
-
-A pool of money. Two numbers on a Scoreboard: how long people live, how much they earn. By [2040](https://manual.warondisease.org/knowledge/strategy/earth-optimization-prize.html), if the numbers went up, Earth Optimization Points holders split the pool. If they didn't, depositors divide it pro rata (still beats your retirement account). You earn Earth Optimization Points by getting friends to play. Nobody loses. The only losing move is not playing.
-
-Your job was never to understand the five steps. Your job is to [vote](https://warondisease.org) and get two friends to play. Four billion humans whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to do the rest. The greed handles it. It always has. You just never pointed it at anything useful before.
-
-## Choose Your Own Adventure
-
-Now is the time to select one of the two paths for the remainder of your existence.
-
-I [modeled both paths](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) for 20 of your years.  Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
-
-Over an average remaining lifespan, reallocation from the destructive economy to reducing the burden of disease and the associated compound growth from increased productivity multiplies your cumulative earnings by [1.57x](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html).
-
-#### Future A: You Ignore This Manual
-
-- Year 2027: Still spending [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) times more on weapons than on testing which medicines actually work. Nobody finds this weird.
-- Year 2033: Destructive economy hits 25% of GDP. The Soviet Union collapsed at 15%. You have better technology and worse planning.
-- Year 2035: Your best engineers now work in ransomware because it pays better than engineering. Hospitals budget for extortion the way they used to budget for gauze. A nurse clicks a chart and gets a countdown timer instead of a medication dose. The people who could reverse this trend are the ones profiting from it.
-- Year 2040: Parasitic economy hits 50%. AI agents file more fake court cases than real ones. Tax collection collapses because AI can evade faster than humans can audit. Your governments don't fall; they rot in place, like a body whose organs are still technically present but no longer speaking to one another. When Venezuela collapsed, Venezuelans fled to Colombia. When the global economy collapses, there is no Colombia.
-- Year 2043: Water wars go nuclear. The survivors argue about whether this counts as a climate death or a military death, because the spreadsheet has separate columns.
-- Year 2045: Cockroaches evolve intelligence.
-- Year 2050: Cockroaches find this manual, very confused
-
-#### Future B: You Follow Instructions
-
-- Year 2028: Treaty passes. Murder money becomes medicine money. Investors confused by returns that aren't a typo. Military contractors discover that alive customers buy more things than dead ones.
-- Year 2032: First treatments from the accelerated pipeline reach patients. Diseases that would have waited centuries for trials are getting tested now. Nobody is cured of everything, but the queue is finally moving. Humans experience the novel sensation of progress. Several publish op-eds arguing it's happening too fast.
-- Year 2035: Turns out when you stop spending money on destruction and start spending it on production, things get produced. Your economists publish papers explaining why this was obvious in retrospect.
-- Year 2040: The compounding kicks in. Healthier people work more, earn more, spend more, fund more research, which cures more diseases, which makes more people healthier. Humans begin to suspect that not killing each other was the missing variable.
-- Year 2048: The [model projects](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) everyone [56.7x](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) richer than the path you're currently on. Your children ask what "war" means. You change the subject.
-
-Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea. You have the internet and an idea that mainly requires people to click a button and then receive money. If you can't make this happen, I genuinely don't know what to tell you.
-
-### The Part Where Humanity Has No Choice
-
-The twist: you're going to do this anyway. Not because it's right, but because you can't help it.
-
-You are a selfish animal governed by incentives. This is not an insult. It's the premise of your entire economy, your political system, and every page of this manual.
-
-1. The rich humans want [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) returns (they're very greedy)
-2. The politicians want to keep their jobs (they're very vain)
-3. The voters want free healthcare (they're very sick)
-4. The explosion manufacturers want money (they don't care where it comes from)
-
-I ran the numbers on your species' habit of ignoring good ideas. The [institutionalization rate](https://manual.warondisease.org/index-manual.html#what-to-do-when-they-try-to-institutionalize-you) is [90%](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html). Nine out of ten humans will dismiss this as crazy. That is fine.
-
-There are [2,781](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) billionaires on your planet and [195](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) heads of state. The [chain reaction model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows that even with [90%](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) dismissal, approximately [3.48](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) of them will engage with this idea within [3](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) years. Not because they're brave. Because there are [2,976](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) of them, and the math doesn't need all of them. It needs one.
-
-And here is the part that should bother you: the [incentive structure](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-dominant-strategy-proof) makes acting the selfish move. If others act too, you get rich together. If nobody else acts, you still own a piece of the only serious attempt to fix the problem. Either way, you win. The only way to reject this is to identify [which assumption breaks](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#what-would-have-to-be-wrong), and you are welcome to try.
-
-Count the premises. Improvement is physically possible (not building a bomb requires nothing). The benefits compound (healthier workers produce more, which funds more cures). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is humans in the chain choosing "later" over 30 seconds. Five premises. Each one is individually obvious. The conclusion is just what happens when you add them up.
-
-That's the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) with numbers attached. Rejecting the conclusion means rejecting at least one of the five premises.
-
-Forwarding this takes 30 seconds. At the global average wage, that costs you [$0.06](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). If the treaty path works, your lifetime income goes up by [$518,879](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). The ratio is [8.7Mx](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) to one. For not forwarding to be rational, the probability of success has to fall below 1 in [8.66 million](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). Five obvious premises do not add up to a probability that low. Choosing "later" is the single failure mode the math can't route around.
-
-You don't need to know a billionaire. You're six degrees of separation from one. Forward this to one person with more reach than you. They forward to one person with more reach than them. Even with [90%](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) of the chain dismissing it, the [model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows it reaches someone who can act within [3](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) years. Not because anyone in the chain is brave. Because each one is selfish, and the math rewards forwarding.
-
-The same forwarding fuels Path B at the same time. Every human in the chain also votes at warondisease.org, and every vote counts toward the [4.13 billion](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) that no government on Earth can politely ignore. You don't have to pick which chain wins. Your thirty seconds runs both.
-
-This is a chain reaction, and it runs on greed.
-
-Every person in the chain will do exactly what you're about to do, for exactly the same selfish reasons. Not to save the world. Because it makes them money.
-
-Humans aren't stupid. You invented cheese, which is milk you left out until it went bad but in a good way. That's genius. You just need to apply that same innovation to not dying.
-
-Here is what should scare you: if this works, the world becomes unrecognizable. Not slightly better. Unrecognizable. Disease eradicated, income quadrupled, your species freed from the thing that has been eating it alive since before you invented writing. That future is so good your brain can't render it.
-
-::: {.delay-cost-callout.content-visible when-format="html"}
-**Since an incentive-compatible way to end war and disease was discovered:**
-
-<span class="delay-cost-number" data-dih-delay-value="since-publication">counting</span>
-
-people will be unnecessarily tortured and brutally murdered by diseases. Every additional day we refrain from ending war and disease, about [139 thousand](https://manual.warondisease.org/knowledge/appendix/bombs-vs-biotech-roi.html) more people are unnecessarily tortured and brutally murdered by diseases. This is unfortunate.
-:::
-
-Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts. Every minute of delay, [104](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop. Your vote saves [2.6 lives](https://manual.warondisease.org/knowledge/strategy/nonprofit-coalition-strategy.html) and prevents [468 thousand hours](https://manual.warondisease.org/knowledge/strategy/nonprofit-coalition-strategy.html) of suffering.
-
-
-The universe is literally offering you infinite money and eternal life, and you're thinking about it.
-
-This is why aliens don't visit.
+Your civilization is repairable. The parts are listed. The tools exist. Please stop using them mainly to make explosions.
 
 ---
 
@@ -693,7 +384,7 @@ This is why aliens don't visit.
 
 [![How to End War and Disease](https://manual.warondisease.org/assets/og/manual-paperback-og-1200x630.jpg)](https://manual.WarOnDisease.org)
 
-> The Complete Idiot's Guide to Legally Bribing Your Way to Utopia
+> A step-by-step guide to optimizing your terrible civilization.
 
 ### [Drug Development Cost Increase Analysis](https://manual.warondisease.org/knowledge/appendix/drug-development-cost-analysis.html)
 

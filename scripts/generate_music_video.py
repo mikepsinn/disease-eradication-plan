@@ -267,7 +267,7 @@ SCENES = [
     },
     {
         "index": 12,
-        "lyrics": "How to End War and Disease -- The Complete Idiot's Guide",
+        "lyrics": "How to End War and Disease -- A Step-by-Step Guide",
         "start_s": 71.0,
         "end_s": 79.0,
         "keyframe_prompt": (
@@ -286,7 +286,7 @@ SCENES = [
     },
     {
         "index": 13,
-        "lyrics": "to Legally Bribing Your Way...",
+        "lyrics": "to Optimizing Your Terrible...",
         "start_s": 79.0,
         "end_s": 86.5,
         "keyframe_prompt": (
@@ -302,7 +302,7 @@ SCENES = [
     },
     {
         "index": 14,
-        "lyrics": "...to Utopia!",
+        "lyrics": "...Civilization!",
         "start_s": 86.5,
         "end_s": 93.0,
         "keyframe_prompt": (
