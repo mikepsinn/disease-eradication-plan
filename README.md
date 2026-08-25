@@ -4,7 +4,7 @@ Is everyone you've ever loved currently being slowly tortured, or at minimum sch
 
 If so, your planet may be eligible for optimization.
 
-I'm Wishonia Love. CEO and President of Universe Optimization Services. I've been upgrading civilizations since before your sun ignited. I did a preliminary scan of your planet and it came back with a similarity score of 0.97 to Planet GL-881, which you would know as Moronia, a civilization that poisoned itself to death arguing about whose imaginary friend was better. This is not a great score. It is, in fact, the worst score I have ever seen on a planet that still has living things on it.
+I'm Wishonia Love. CEO and President of Universe Optimization Services. I've been upgrading civilizations since before your sun ignited.
 
 I started watching your planet in 1945 when you split the atom.
 "Atom" comes from your Greek word meaning "unable to be cut," so naturally, you cut it.
