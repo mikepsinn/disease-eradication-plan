@@ -626,6 +626,7 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
         "docx_output_file": docx_output_file,
         # Which formats are configured (e.g. ["html", "pdf", "epub"])
         "configured_formats": configured_formats,
+        "project_type": config.get("project", {}).get("type"),
         # Whether to show "(95% CI: ...)" in variable display values (default: True)
         "show_confidence_intervals": dih_render.get("show-confidence-intervals", True),
         # How to handle <a> links on parameter values (default: "html" = keep raw tags)
@@ -641,6 +642,28 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
             ""
         ),
     }
+
+
+def _build_quarto_render_command(
+    format_override: Optional[str],
+    quarto_args: Optional[List[str]],
+    project_type: Optional[str],
+    index_source: Optional[str],
+) -> List[str]:
+    """Build the Quarto command for a project render.
+
+    A standalone website can contain an HTML-only calculations page alongside
+    its paper. When producing the paper PDF, render only the copied index.qmd;
+    otherwise Quarto applies the paper's output filename to every website page.
+    """
+    cmd = ["quarto", "render"]
+    if format_override == "pdf" and project_type == "website" and index_source:
+        cmd.append("index.qmd")
+    if format_override:
+        cmd.extend(["--to", format_override])
+    if quarto_args:
+        cmd.extend(quarto_args)
+    return cmd
 
 
 def _collect_config_variable_names(project_root: Path, config_name: str) -> Set[str]:
@@ -1554,11 +1577,12 @@ def render_quarto(  # pyright: ignore[reportGeneralTypeIssues]
             gh_group_end()
         else:
             # Render mode - use build monitor
-            cmd = ["quarto", "render"]
-            if format_override:
-                cmd.extend(["--to", format_override])
-            if quarto_args:
-                cmd.extend(quarto_args)
+            cmd = _build_quarto_render_command(
+                format_override=format_override,
+                quarto_args=quarto_args,
+                project_type=metadata.get("project_type"),
+                index_source=metadata.get("index_source"),
+            )
 
             # Stop capture before BuildMonitor (it has its own logging)
             logger.stop_capture()

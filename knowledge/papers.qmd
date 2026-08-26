@@ -1274,9 +1274,9 @@ Select "Enter the details myself", then fill:
 
 -->
 
-### [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html)
+### [The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://spec.dfda.earth)
 
-[![The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](https://manual.warondisease.org/assets/og/dfda-spec-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html)
+[![The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)](../assets/og/dfda-spec-og-1200x630.jpg)](https://spec.dfda.earth)
 
 > Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
 
@@ -1291,7 +1291,7 @@ Treatments that could save lives take an average of 8.2 years to complete clinic
 
 AUTHOR: Mike P. Sinn
 EMAIL: m@warondisease.org
-AFFILIATION: International Campaign to End War and Disease
+AFFILIATION: Institute for Accelerated Medicine
 ORCID: 0009-0006-0212-1094
 
 KEYWORDS: dFDA, Predictor Impact Score, Pharmacovigilance, Real World Evidence, N of 1 Trials, Causal Inference, Bradford Hill Criteria, Treatment Effects, Adverse Events, Outcome Labels, Statistical Methods, dFDA, Decentralized Fda
@@ -1302,13 +1302,13 @@ SUBJECT AREAS: Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inf
 CATEGORY: Academic Paper, Medical Research, Methodology
 GENRE: Biostatistics, Pharmacoepidemiology, Methodology
 
-PDF: https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html/dfda-spec-paper.pdf
+PDF: https://spec.dfda.earth/dfda-spec-paper.pdf
 DOI: 10.5281/zenodo.18203375
 LICENSE: CC BY-NC 4.0
 COPYRIGHT YEAR: 2025
 
 === PLATFORM STATUS ===
-WEBSITE: deployed | https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html
+WEBSITE: deployed | https://spec.dfda.earth
 OSF: published | https://osf.io/preprints/socarxiv/h7rxv_v1
 MEDRXIV: pending
 ARXIV: pending | category: stat.ME
@@ -1318,20 +1318,20 @@ Clinical Pharmacology & Therapeutics (Tier 2): target
 Pharmacoepidemiology and Drug Safety (Tier 2): target
 Drug Safety (Tier 2): target
 
-SUGGESTED CITATION: Mike P. Sinn (2025). The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials). Working Paper. Available at https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html
+SUGGESTED CITATION: Mike P. Sinn (2025). The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials). Working Paper. Available at https://spec.dfda.earth
 
 === STATEMENTS (for journal submissions) ===
 COI: The author declares no competing interests. The author does maintain a bias toward the Bradford Hill criteria producing correct answers, which some regulatory agencies may find disruptive.
 FUNDING: This research received no funding. The statistical framework described herein costs less to develop than a single traditional Phase III trial costs to delay.
 ETHICS: This research did not involve human subjects. It proposes a framework that would involve considerably more of them, but with their informed consent and at 44x lower cost.
-DATA: All data and code used in this analysis are publicly available at https://github.com/wishonia/earth-optimization-protocol
+DATA: All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan
 
 === SSRN "Publication Details" BOX ===
 Select "Enter the details myself", then fill:
-  Publisher: International Campaign to End War and Disease
+  Publisher: Institute for Accelerated Medicine
   Publication Date: 2025
   DOI: 10.5281/zenodo.18203375
-  URL: https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html
+  URL: https://spec.dfda.earth
   (Leave Journal, Volume, Issue, Pages blank for working papers)
 
 -->

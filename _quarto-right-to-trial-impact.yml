@@ -14,6 +14,7 @@ dih-render:
   index-source: knowledge/appendix/state-right-to-trial-impact.qmd
   fallback-404-redirect-domain: ""
   pdf-output-file: state-right-to-trial-impact.pdf
+  cloudflare-pages-project: "right-to-trial-impact"
   netlify-site-id: "7d9ffde4-1397-43bd-8b53-701a6be5a987"
   netlify-cname: "creative-cascaron-e94b2c.netlify.app"
   show-confidence-intervals: true

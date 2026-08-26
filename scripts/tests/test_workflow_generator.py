@@ -31,10 +31,9 @@ def render_publish_workflow() -> str:
         downloadable_formats=[],
         artifact_render_format=None,
         bundle_pdf_with_site=False,
-        netlify_site_id="test-site-id",
-        netlify_secret="NETLIFY_MAIN_SITE_ID",
+        cloudflare_pages_project="warondisease-manual",
         upload_to_zenodo=False,
-        deploy_to_netlify=True,
+        deploy_to_cloudflare=True,
     )
     return generate_workflow(PROJECT_ROOT, [job], "publish.yml.j2")
 
@@ -50,23 +49,25 @@ def test_generated_workflow_identifies_its_source() -> None:
     )
 
 
-def test_netlify_credentials_are_validated_before_expensive_build_steps() -> None:
+def test_cloudflare_credentials_are_validated_before_expensive_build_steps() -> None:
     workflow = render_publish_workflow()
     build_job = workflow[workflow.index("  build-manual:"):]
 
-    preflight = build_job.index("Validate Build How to End War and Disease Netlify credentials")
+    preflight = build_job.index("Validate Build How to End War and Disease Cloudflare Pages credentials")
     checkout = build_job.index("Check out repository")
     render = build_job.index("Render Build How to End War and Disease (HTML)")
-    deploy = build_job.index("Deploy Build How to End War and Disease to Netlify")
+    deploy = build_job.index("Deploy Build How to End War and Disease to Cloudflare Pages")
 
     assert preflight < checkout < render < deploy
-    assert workflow.count("netlify_status=") == 1
+    assert workflow.count("project_status=") == 1
+    assert "NETLIFY_AUTH_TOKEN" not in workflow
+    assert "CLOUDFLARE_API_TOKEN" in workflow
 
 
 def test_pull_requests_validate_and_build_but_only_develop_deploys() -> None:
     workflow = render_publish_workflow()
     build_job = workflow[workflow.index("  build-manual:"):]
-    deploy_step = build_job[build_job.index("Deploy Build How to End War and Disease to Netlify"):]
+    deploy_step = build_job[build_job.index("Deploy Build How to End War and Disease to Cloudflare Pages"):]
 
     assert "pull_request:\n    branches: [develop]" in workflow
     assert "needs: validate" in build_job
@@ -74,6 +75,18 @@ def test_pull_requests_validate_and_build_but_only_develop_deploys() -> None:
     assert "github.event_name == 'push'" in deploy_step
     assert "github.ref == 'refs/heads/develop'" in deploy_step
     assert "github.event_name == 'pull_request'" not in deploy_step
+
+
+def test_only_explicit_cloudflare_pages_projects_deploy() -> None:
+    jobs = extract_deploy_job_configs(PROJECT_ROOT)
+
+    assert {job.config_name for job in jobs} == {
+        "dfda-spec",
+        "manual",
+        "right-to-trial",
+        "right-to-trial-impact",
+    }
+    assert len({job.cloudflare_pages_project for job in jobs}) == len(jobs)
 
 
 def test_pdf_llm_validation_is_explicitly_opt_in() -> None:

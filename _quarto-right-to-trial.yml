@@ -19,6 +19,7 @@ dih-render:
   redirect-from: https://right-to-trial.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: right-to-trial-fda-upgrade-act.pdf
+  cloudflare-pages-project: "right-to-trial"
   netlify-site-id: "2786b65f-23b9-4631-9abe-e2cf03b0d4d1"
   netlify-cname: "imaginative-paletas-fec1eb.netlify.app"
   show-confidence-intervals: false  # Legislative text, not academic paper
@@ -59,7 +60,7 @@ website:
   navbar:
     right:
       - text: "dFDA Protocol"
-        href: https://dfda-spec.warondisease.org
+        href: https://spec.dfda.earth
       - text: "VOTE"
         href: https://WarOnDisease.org
 
