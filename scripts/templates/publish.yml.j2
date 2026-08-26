@@ -66,56 +66,61 @@ jobs:
     needs: validate
     runs-on: ubuntu-latest
     steps:
-      - name: "Validate {{ job.display_name }} Netlify credentials"
+      - name: "Validate {{ job.display_name }} Cloudflare Pages credentials"
         if: {% raw %}${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}{% endraw %}
         run: |
-          if [ -z "$NETLIFY_AUTH_TOKEN" ]; then
-            echo "::error title=Missing Netlify token::GitHub Actions secret NETLIFY_AUTH_TOKEN is empty or missing."
-            echo "Fix: Create a Netlify personal access token from the Netlify account or team that owns {{ job.display_name }}, then update GitHub repo secret NETLIFY_AUTH_TOKEN."
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error title=Missing Cloudflare token::GitHub Actions secret CLOUDFLARE_API_TOKEN is empty or missing."
+            echo "Fix: Create an account-owned token with Pages Write permission, then update GitHub repo secret CLOUDFLARE_API_TOKEN."
             exit 1
           fi
 
-          if [ -z "$NETLIFY_SITE_ID" ]; then
-            echo "::error title=Missing Netlify site ID::GitHub Actions secret {{ job.netlify_secret }} is empty or missing."
-            echo "Fix: Set GitHub repo secret {{ job.netlify_secret }} to the Netlify site ID for {{ job.display_name }}."
+          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error title=Missing Cloudflare account ID::GitHub Actions secret CLOUDFLARE_ACCOUNT_ID is empty or missing."
             exit 1
           fi
 
-          netlify_response="$RUNNER_TEMP/netlify-site-response.json"
-          netlify_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 --output "$netlify_response" --write-out "%{http_code}" --header "Authorization: Bearer $NETLIFY_AUTH_TOKEN" "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID" || true)"
+          project_response="$RUNNER_TEMP/cloudflare-pages-project-response.json"
+          project_url="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$CLOUDFLARE_PROJECT_NAME"
+          project_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 --output "$project_response" --write-out "%{http_code}" --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$project_url" || true)"
 
-          case "$netlify_status" in
+          case "$project_status" in
             200)
-              echo "Netlify preflight passed: token can retrieve the configured project."
+              echo "Cloudflare preflight passed: token can retrieve $CLOUDFLARE_PROJECT_NAME."
               ;;
             401|403)
-              echo "::error title=Netlify token cannot retrieve project::NETLIFY_AUTH_TOKEN is invalid, revoked, stale, or does not have access to the site ID stored in {{ job.netlify_secret }}."
-              echo "Fix: Create a new Netlify personal access token from the Netlify account or team that owns {{ job.display_name }}."
-              echo "Then update GitHub repo secret NETLIFY_AUTH_TOKEN. Keep {{ job.netlify_secret }} unless the Netlify site was recreated."
+              echo "::error title=Cloudflare token cannot manage Pages::CLOUDFLARE_API_TOKEN is invalid, revoked, or lacks Pages Write permission for CLOUDFLARE_ACCOUNT_ID."
               exit 1
               ;;
             404)
-              echo "::error title=Netlify site not found::The site ID stored in {{ job.netlify_secret }} does not exist or is not visible to NETLIFY_AUTH_TOKEN."
-              echo "Fix: Verify the Netlify site ID for {{ job.display_name }} and update GitHub repo secret {{ job.netlify_secret }}. If the site exists, update NETLIFY_AUTH_TOKEN with a token from the owning account or team."
-              exit 1
+              create_response="$RUNNER_TEMP/cloudflare-pages-project-create-response.json"
+              create_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 --output "$create_response" --write-out "%{http_code}" --request POST --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" --header "Content-Type: application/json" --data "{\"name\":\"$CLOUDFLARE_PROJECT_NAME\",\"production_branch\":\"develop\"}" "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects" || true)"
+              case "$create_status" in
+                200|201)
+                  echo "Created Cloudflare Pages project $CLOUDFLARE_PROJECT_NAME."
+                  ;;
+                *)
+                  echo "::error title=Cloudflare Pages project creation failed::Cloudflare returned HTTP $create_status while creating $CLOUDFLARE_PROJECT_NAME."
+                  cat "$create_response"
+                  exit 1
+                  ;;
+              esac
               ;;
             000)
-              echo "::error title=Netlify API unreachable::Could not reach Netlify while checking deploy credentials."
-              echo "Fix: Retry the workflow. If this repeats, check Netlify status and GitHub runner network logs."
+              echo "::error title=Cloudflare API unreachable::Could not reach Cloudflare while checking deploy credentials."
               exit 1
               ;;
             *)
-              echo "::error title=Unexpected Netlify API response::Netlify returned HTTP $netlify_status while checking deploy credentials."
+              echo "::error title=Unexpected Cloudflare API response::Cloudflare returned HTTP $project_status while checking deploy credentials."
               echo "Response body:"
-              cat "$netlify_response"
-              echo
-              echo "Fix: Check NETLIFY_AUTH_TOKEN and {{ job.netlify_secret }} in GitHub repo secrets, then inspect the Netlify API response above."
+              cat "$project_response"
               exit 1
               ;;
           esac
         env:
-          NETLIFY_AUTH_TOKEN: {% raw %}${{ secrets.NETLIFY_AUTH_TOKEN }}{% endraw %}
-          NETLIFY_SITE_ID: {% raw %}${{ secrets.{% endraw %}{{ job.netlify_secret }}{% raw %} }}{% endraw %}
+          CLOUDFLARE_API_TOKEN: {% raw %}${{ secrets.CLOUDFLARE_API_TOKEN }}{% endraw %}
+          CLOUDFLARE_ACCOUNT_ID: {% raw %}${{ secrets.CLOUDFLARE_ACCOUNT_ID }}{% endraw %}
+          CLOUDFLARE_PROJECT_NAME: "{{ job.cloudflare_pages_project }}"
         timeout-minutes: 1
 
       - name: Check out repository
@@ -220,17 +225,33 @@ jobs:
             _build_temp/{{ job.config_name }}/**/*.log
           retention-days: 7
 
-      - name: "Deploy {{ job.display_name }} to Netlify"
+      - name: "Validate {{ job.display_name }} Cloudflare Pages limits"
         if: {% raw %}${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}{% endraw %}
         run: |
-          npm install -g netlify-cli
-          netlify deploy \
-            --dir='{{ job.build_dir }}' \
-            --prod \
-            --no-build \
-            --message="Deploy {{ job.config_name }} from {% raw %}${{ github.ref_name }}{% endraw %}"
+          file_count="$(find '{{ job.build_dir }}' -type f | wc -l)"
+          if [ "$file_count" -gt 20000 ]; then
+            echo "::error title=Too many Cloudflare Pages files::$file_count files exceeds the 20,000-file limit."
+            exit 1
+          fi
+
+          oversized_file="$(find '{{ job.build_dir }}' -type f -size +26214400c -print -quit)"
+          if [ -n "$oversized_file" ]; then
+            echo "::error title=Cloudflare Pages file too large::$oversized_file exceeds the 25 MiB per-file limit."
+            exit 1
+          fi
+
+          echo "Cloudflare Pages limits passed: $file_count files, none larger than 25 MiB."
+
+      - name: "Deploy {{ job.display_name }} to Cloudflare Pages"
+        if: {% raw %}${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}{% endraw %}
+        run: |
+          npx --yes wrangler@4.126.0 pages deploy '{{ job.build_dir }}' \
+            --project-name='{{ job.cloudflare_pages_project }}' \
+            --branch='develop' \
+            --commit-hash='{% raw %}${{ github.sha }}{% endraw %}' \
+            --commit-message='Deploy {{ job.config_name }} from GitHub Actions'
         env:
-          NETLIFY_AUTH_TOKEN: {% raw %}${{ secrets.NETLIFY_AUTH_TOKEN }}{% endraw %}
-          NETLIFY_SITE_ID: {% raw %}${{ secrets.{% endraw %}{{ job.netlify_secret }}{% raw %} }}{% endraw %}
-        timeout-minutes: 5
+          CLOUDFLARE_API_TOKEN: {% raw %}${{ secrets.CLOUDFLARE_API_TOKEN }}{% endraw %}
+          CLOUDFLARE_ACCOUNT_ID: {% raw %}${{ secrets.CLOUDFLARE_ACCOUNT_ID }}{% endraw %}
+        timeout-minutes: 20
 {% endfor %}

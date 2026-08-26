@@ -57,7 +57,7 @@ website:
   navbar:
     right:
       - text: "dFDA Framework"
-        href: https://dfda-spec.warondisease.org
+        href: https://spec.dfda.earth
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "VOTE"

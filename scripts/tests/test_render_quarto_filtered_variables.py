@@ -56,3 +56,33 @@ book:
         "included_value",
         "paper_value",
     }
+
+
+def test_standalone_website_pdf_renders_only_the_paper() -> None:
+    module = load_render_quarto_module()
+
+    command = module._build_quarto_render_command(
+        format_override="pdf",
+        quarto_args=None,
+        project_type="website",
+        index_source="knowledge/appendix/paper.qmd",
+    )
+
+    assert command == ["quarto", "render", "index.qmd", "--to", "pdf"]
+
+
+def test_html_and_book_renders_remain_project_wide() -> None:
+    module = load_render_quarto_module()
+
+    assert module._build_quarto_render_command(
+        format_override="html",
+        quarto_args=["--quiet"],
+        project_type="website",
+        index_source="knowledge/appendix/paper.qmd",
+    ) == ["quarto", "render", "--to", "html", "--quiet"]
+    assert module._build_quarto_render_command(
+        format_override="pdf",
+        quarto_args=None,
+        project_type="book",
+        index_source="index-manual.qmd",
+    ) == ["quarto", "render", "--to", "pdf"]

@@ -20,8 +20,9 @@ dih-render:
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   redirect-from: https://dfda-spec.warondisease.org
   pdf-output-file: dfda-spec-paper.pdf
+  cloudflare-pages-project: "dfda-spec"
   netlify-site-id: "01e9af64-b6d0-48ee-8c3d-43994745ac3f"
-  netlify-cname: "manual-warondisease-org.netlify.app"
+  netlify-cname: "dfda-spec-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "decentralized FDA"
@@ -49,27 +50,27 @@ author:
     email: m@warondisease.org
     orcid: 0009-0006-0212-1094
     affiliations:
-      - name: "International Campaign to End War and Disease"
-        url: https://warondisease.org
+      - name: "Institute for Accelerated Medicine"
+        url: https://acceleratedmedicine.org
 
 website:
   title: "The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)"
   description: 'We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.'
-  site-url: https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html
-  favicon: assets/icons/dfda-favicon.png
+  site-url: https://spec.dfda.earth
+  favicon: assets/icons/dfda-spec-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
-    center: "[PDF](https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
-    right: "[VOTE](https://WarOnDisease.org)"
+    left: "© 2025 Mike P. Sinn | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    center: "[PDF](/dfda-spec-paper.pdf) | [Zenodo](https://doi.org/10.5281/zenodo.18203375)"
+    right: "[Manual](https://manual.warondisease.org)"
   navbar:
     right:
       - text: "Prototype"
         href: https://dfda.earth
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
-      - text: "VOTE"
-        href: https://WarOnDisease.org
+      - text: "Manual"
+        href: https://manual.warondisease.org
 
 execute:
   fig-path: "knowledge/figures/"
@@ -95,7 +96,7 @@ metadata:
   subject: "Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods"
   category: "Academic Paper, Medical Research, Methodology"
   coi-statement: "The author declares no competing interests. The author does maintain a bias toward the Bradford Hill criteria producing correct answers, which some regulatory agencies may find disruptive."
-  data-availability: "All data and code used in this analysis are publicly available at https://github.com/wishonia/earth-optimization-protocol"
+  data-availability: "All data and code used in this analysis are publicly available at https://github.com/mikepsinn/disease-eradication-plan"
   ethics-statement: "This research did not involve human subjects. It proposes a framework that would involve considerably more of them, but with their informed consent and at 44x lower cost."
   funding: "This research received no funding. The statistical framework described herein costs less to develop than a single traditional Phase III trial costs to delay."
   github-profile: "https://github.com/mikepsinn"
@@ -118,18 +119,18 @@ metadata:
     - decentralized-fda
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 The International Campaign to End War and Disease"
+  copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
   license: "CC BY-NC 4.0"
   license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
   rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
-  publisher: "International Campaign to End War and Disease"
-  publisher-url: "https://warondisease.org"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
   publisher-name: "Mike P. Sinn"
   publisher-email: "mike@warondisease.org"
-  repo-url: "https://github.com/wishonia/earth-optimization-protocol"
-  issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
-  source-url: "https://github.com/wishonia/earth-optimization-protocol"
+  repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
+  issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
+  source-url: "https://github.com/mikepsinn/disease-eradication-plan"
   geographic-coverage: "Global"
   audience: "Researchers, Regulatory Scientists, Biostatisticians, Pharmacoepidemiologists, Health Data Scientists"
   format: "Working Paper"
@@ -146,12 +147,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://manual.warondisease.org/assets/og/dfda-spec-og-1200x630.jpg"
+  image: "https://spec.dfda.earth/assets/og/dfda-spec-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html"
+      url: "https://spec.dfda.earth"
       status: deployed
     preprints:
       - platform: zenodo
@@ -216,11 +217,11 @@ format:
     include-in-header:
       - text: |
           <!-- Icons (project-specific) -->
-          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/dfda-favicon-32x32.png">
-          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/dfda-favicon-16x16.png">
-          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/dfda-apple-touch-icon.png">
-          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/dfda-android-chrome-192x192.png">
-          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/dfda-android-chrome-512x512.png">
+          <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/dfda-spec-favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/dfda-spec-favicon-16x16.png">
+          <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/dfda-spec-apple-touch-icon.png">
+          <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/dfda-spec-android-chrome-192x192.png">
+          <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/dfda-spec-android-chrome-512x512.png">
       - file: assets/html/google-analytics.html
       - file: assets/html/hypothesis.html
       - file: assets/html/fonts-preload.html
@@ -233,7 +234,7 @@ format:
   pdf:
     output-file: "dfda-spec-paper.pdf"
     documentclass: article
-    institute: "International Campaign to End War and Disease"
+    institute: "Institute for Accelerated Medicine"
     echo: false
     toc: true
     toc-depth: 3
@@ -245,7 +246,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://manual.warondisease.org/knowledge/appendix/dfda-spec-paper.html}
+          \paperurl{https://spec.dfda.earth}
     geometry:
       - top=1in
       - bottom=1in
