@@ -174,6 +174,7 @@ def test_calculation_appendix_includes_sampled_named_range(tmp_path) -> None:
 
     assert "90% model range: [70 years, 150 years]" in output
     assert "propagated model results fall between 70 years and 150 years" in output
+    assert "That is a very wide range" in output
 
 
 def test_reactive_control_uses_exported_interval_label() -> None:

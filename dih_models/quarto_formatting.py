@@ -365,7 +365,7 @@ def generate_uncertainty_section(
         if is_statistical_ci:
             explanation = f"{certainty_phrase}. The true value likely falls between {low_str} and {high_str} (±{avg_pct:.0f}%). This represents {range_desc} that our Monte Carlo simulations account for when calculating overall uncertainty in the results."
         elif is_calculated:
-            explanation = f"The propagated model results fall between {low_str} and {high_str}. This {range_desc} reflects uncertainty carried through the calculation, not a statistical confidence interval for an observed effect."
+            explanation = f"The propagated model results fall between {low_str} and {high_str}. That is {range_desc}, reflecting uncertainty carried through the calculation, not a statistical confidence interval for an observed effect."
         elif dist_name.lower() == "lognormal":
             explanation = f"The model samples a lognormal distribution and clips draws to the modeled bounds from {low_str} to {high_str}. These bounds are not a statistical confidence interval for an observed effect."
         else:
