@@ -46,8 +46,10 @@ export interface Parameter {
   formula?: string;
   /** LaTeX equation (for display) */
   latex?: string;
-  /** 95% confidence interval [low, high] */
+  /** Uncertainty interval [low, high] */
   confidenceInterval?: [number, number];
+  /** Meaning of confidenceInterval, such as 95% CI or modeled range */
+  intervalLabel?: string;
   /** Standard error */
   stdError?: number;
   /** Whether this is peer-reviewed data */

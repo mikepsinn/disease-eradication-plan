@@ -828,7 +828,7 @@ def prepare_config(config_name: str, verbose: bool = True) -> bool:
 
 def _strip_confidence_intervals(variables_path: Path, verbose: bool = True) -> int:
     """
-    Strip "(95% CI: ...)" text from variable display values in _variables.yml.
+    Strip displayed uncertainty intervals from variable values in _variables.yml.
 
     Removes CI ranges from both display text and title/tooltip attributes so
     general-audience builds (book, EPUB) show clean numbers without uncertainty
@@ -850,14 +850,15 @@ def _strip_confidence_intervals(variables_path: Path, verbose: bool = True) -> i
     original = content
     stripped = 0
 
-    # Strip CI from display text: " (95% CI: $10.5M-$19.5M)" or " (95% CI: 8 years-18 years)"
-    # Pattern: space, open paren, "95% CI: ", content up to closing paren
-    content, n = re.subn(r' \(95% CI: [^)]+\)', '', content)
+    interval_label = r'(?:95% CI|[^():]{1,40} (?:range|interval))'
+
+    # Strip intervals from display text, including named model ranges.
+    content, n = re.subn(rf' \({interval_label}: [^)]+\)', '', content)
     stripped += n
 
-    # Strip CI from title attributes: "| 95% CI: [$78, $100] |" or "| 95% CI: [8 years, 18 years] |"
+    # Strip intervals from title attributes: "| 95% CI: [$78, $100] |", etc.
     # Keep the surrounding pipes clean (remove leading pipe + CI + trailing pipe, leave one pipe)
-    content, n = re.subn(r' \| 95% CI: \[[^\]]*\]', '', content)
+    content, n = re.subn(rf' \| {interval_label}: \[[^\]]*\]', '', content)
     stripped += n
 
     if content != original:

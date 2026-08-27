@@ -605,8 +605,10 @@ def generate_typescript_parameters(
         content.append("  formula?: string;")
         content.append("  /** LaTeX equation (for display) */")
         content.append("  latex?: string;")
-        content.append("  /** 95% confidence interval [low, high] */")
+        content.append("  /** Uncertainty interval [low, high] */")
         content.append("  confidenceInterval?: [number, number];")
+        content.append("  /** Meaning of confidenceInterval, such as 95% CI or modeled range */")
+        content.append("  intervalLabel?: string;")
         content.append("  /** Standard error */")
         content.append("  stdError?: number;")
         content.append("  /** Whether this is peer-reviewed data */")
@@ -1389,6 +1391,9 @@ def _generate_parameter_constant(
             low_val = float(low) if hasattr(low, '__float__') else low
             high_val = float(high) if hasattr(high, '__float__') else high
             lines.append(f"  confidenceInterval: [{_format_typescript_value(low_val)}, {_format_typescript_value(high_val)}],")
+            interval_label = getattr(value_obj, "interval_label", None)
+            if interval_label:
+                lines.append(f"  intervalLabel: {_format_typescript_value(interval_label)},")
             ci_emitted = True
 
         if not ci_emitted and uncertainty_data and param_name in uncertainty_data:
@@ -1403,6 +1408,9 @@ def _generate_parameter_constant(
                     has_meaningful = abs(p95 - p5) > 0
                 if has_meaningful:
                     lines.append(f"  confidenceInterval: [{_format_typescript_value(p5)}, {_format_typescript_value(p95)}],")
+                    interval_label = getattr(value_obj, "interval_label", None)
+                    if interval_label:
+                        lines.append(f"  intervalLabel: {_format_typescript_value(interval_label)},")
 
         # Standard error
         if hasattr(value_obj, "std_error") and value_obj.std_error:

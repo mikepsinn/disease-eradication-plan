@@ -296,15 +296,21 @@
   // ========================================
 
   var STORAGE_KEY = 'dih-hide-uncertainty';
+  var UNCERTAINTY_PATTERN = /\s*\((?:95% CI|[^():]{1,40} (?:range|interval)):[^)]+\)/gi;
+
+  function hasUncertaintyText(text) {
+    UNCERTAINTY_PATTERN.lastIndex = 0;
+    return UNCERTAINTY_PATTERN.test(text);
+  }
 
   function createUncertaintyToggle() {
     var paramLinks = document.querySelectorAll('a.parameter-link');
     var hasParameterWithCI = Array.from(paramLinks).some(function(link) {
-      return link.textContent.includes('95% CI');
+      return hasUncertaintyText(link.textContent);
     });
     var hasUncertaintyData = hasParameterWithCI ||
                              document.querySelector('.tippy-content') ||
-                             document.body.textContent.includes('95% CI');
+                             hasUncertaintyText(document.body.textContent);
 
     if (!hasUncertaintyData) return;
 
@@ -317,15 +323,15 @@
     var ciHidden = !isShown;
 
     addFABAction('ci-toggle',
-      ciHidden ? 'Show confidence intervals' : 'Hide confidence intervals',
+      ciHidden ? 'Show uncertainty ranges' : 'Hide uncertainty ranges',
       '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 16l4-8 4 4 5-10"/></svg>',
       function() {
         ciHidden = document.body.classList.toggle('hide-uncertainty');
         localStorage.setItem(STORAGE_KEY, ciHidden);
         processUncertaintyText(ciHidden);
         var btn = document.getElementById('dih-fab-ci-toggle');
-        if (btn) btn.title = ciHidden ? 'Show confidence intervals' : 'Hide confidence intervals';
-        if (btn) btn.querySelector('.dih-fab-action-label').textContent = ciHidden ? 'Show confidence intervals' : 'Hide confidence intervals';
+        if (btn) btn.title = ciHidden ? 'Show uncertainty ranges' : 'Hide uncertainty ranges';
+        if (btn) btn.querySelector('.dih-fab-action-label').textContent = ciHidden ? 'Show uncertainty ranges' : 'Hide uncertainty ranges';
       },
       { order: 30, closeFabOnClick: false }
     );
@@ -344,8 +350,8 @@
 
       // Store original text on first encounter
       if (!originalText) {
-        // Only process links that actually contain CI text
-        if (!link.textContent.includes('95% CI')) {
+        // Only process links that actually contain uncertainty text.
+        if (!hasUncertaintyText(link.textContent)) {
           return;
         }
         link.setAttribute('data-original-text', link.textContent);
@@ -354,7 +360,8 @@
       }
 
       if (hide) {
-        var cleanText = originalText.replace(/\s*\(95% CI:[^)]+\)/gi, '');
+        UNCERTAINTY_PATTERN.lastIndex = 0;
+        var cleanText = originalText.replace(UNCERTAINTY_PATTERN, '');
         link.textContent = cleanText;
       } else {
         link.textContent = originalText;

@@ -601,6 +601,7 @@ def _public_parameter_entry(
     params_file: Path,
     chapter_mapping: Dict[str, list],
     citation_data: Dict[str, Dict[str, Any]],
+    uncertainty_data: Dict[str, Dict[str, Any]] | None = None,
 ) -> Dict[str, Any] | None:
     value_obj = meta.get("value")
     if value_obj is None:
@@ -636,9 +637,18 @@ def _public_parameter_entry(
         latex = collapse_latex_blocks(latex)
         entry["latex"] = wrap_latex_for_mobile(latex, max_width=60)
 
+    interval_label = getattr(value_obj, "interval_label", None)
     ci = getattr(value_obj, "confidence_interval", None)
+    if not ci and interval_label and uncertainty_data:
+        uncertainty = uncertainty_data.get(name, {})
+        p5 = uncertainty.get("p5")
+        p95 = uncertainty.get("p95")
+        if p5 is not None and p95 is not None:
+            ci = (p5, p95)
     if ci:
         entry["confidenceInterval"] = [float(ci[0]), float(ci[1])]
+        if interval_label:
+            entry["intervalLabel"] = interval_label
 
     # Reactive metadata: dependency list, distribution, and a JS-evaluable
     # expression traced from the compute lambda. Powers interactive consumers.
@@ -687,15 +697,29 @@ def publish_scoreboard_parameter_metadata(
     params_file: Path,
     chapter_mapping: Dict[str, list],
     citation_data: Dict[str, Dict[str, Any]],
+    samples_json_path: Path | None = None,
 ) -> None:
     import json
+
+    uncertainty_data: Dict[str, Dict[str, Any]] = {}
+    if samples_json_path and samples_json_path.exists():
+        with open(samples_json_path, encoding="utf-8") as f:
+            uncertainty_data = json.load(f)
 
     param_names = _collect_parameter_inputs(SCOREBOARD_PARAMETER_NAMES, parameters)
     json_params: Dict[str, Any] = {}
     citation_ids: set[str] = set()
 
     for name in param_names:
-        entry = _public_parameter_entry(name, parameters[name], parameters, params_file, chapter_mapping, citation_data)
+        entry = _public_parameter_entry(
+            name,
+            parameters[name],
+            parameters,
+            params_file,
+            chapter_mapping,
+            citation_data,
+            uncertainty_data,
+        )
         if not entry:
             continue
         json_params[name] = entry
@@ -730,6 +754,7 @@ def publish_public_parameters_exports(
     chapter_mapping: Dict[str, list],
     shareable_snippets: Dict[str, Dict[str, str]],
     citation_data: Dict[str, Dict[str, Any]],
+    samples_json_path: Path | None = None,
 ) -> None:
     """
     Publish parameters.json to public static assets for language-agnostic
@@ -742,11 +767,24 @@ def publish_public_parameters_exports(
     """
     import json
 
+    uncertainty_data: Dict[str, Dict[str, Any]] = {}
+    if samples_json_path and samples_json_path.exists():
+        with open(samples_json_path, encoding="utf-8") as f:
+            uncertainty_data = json.load(f)
+
     # Build JSON payload
     json_params: Dict[str, Any] = {}
     for name in sorted(parameters.keys()):
         meta = parameters[name]
-        entry = _public_parameter_entry(name, meta, parameters, params_file, chapter_mapping, citation_data)
+        entry = _public_parameter_entry(
+            name,
+            meta,
+            parameters,
+            params_file,
+            chapter_mapping,
+            citation_data,
+            uncertainty_data,
+        )
         if not entry:
             continue
         json_params[name] = entry
@@ -1160,10 +1198,21 @@ def main():
 
         # Publish parameters.json alongside the TS file for language-agnostic consumers
         publish_public_parameters_exports(
-            project_root, parameters, parameters_path, chapter_mapping, shareable_snippets, citation_data
+            project_root,
+            parameters,
+            parameters_path,
+            chapter_mapping,
+            shareable_snippets,
+            citation_data,
+            samples_json_path,
         )
         publish_scoreboard_parameter_metadata(
-            project_root, parameters, parameters_path, chapter_mapping, citation_data
+            project_root,
+            parameters,
+            parameters_path,
+            chapter_mapping,
+            citation_data,
+            samples_json_path,
         )
 
         # Write formula fallback log if any parameters used it

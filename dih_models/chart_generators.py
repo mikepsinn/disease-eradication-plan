@@ -350,6 +350,23 @@ def generate_input_distribution_chart_qmd(param_name: str, param_data: dict, out
     # Get values
     central_value = float(value)
     unit = getattr(value, "unit", "")
+    interval_label = getattr(value, "interval_label", None) or "95% CI"
+    if interval_label == "95% CI":
+        range_low_label = "95% CI Low"
+        range_high_label = "95% CI High"
+        interval_comment = "confidence interval"
+        interval_caption = (
+            "This chart shows the assumed probability distribution for this parameter. "
+            "The shaded region represents the 95% confidence interval where we expect the true value to fall."
+        )
+    else:
+        range_low_label = f"{interval_label} low"
+        range_high_label = f"{interval_label} high"
+        interval_comment = "uncertainty interval"
+        interval_caption = (
+            "This chart shows the assumed probability distribution for this parameter. "
+            f"The shaded region marks the {interval_label}."
+        )
 
     # Determine distribution parameters
     if has_ci:
@@ -478,12 +495,12 @@ ax.plot(x, y, color=COLOR_BLACK, linewidth=2)
 ax.axvline(central_value, color=COLOR_BLACK, linestyle='--', linewidth=2,
            label=f'Central: {{central_value:,.2g}}')
 
-# Mark confidence interval
+# Mark {interval_comment}
 
 ax.axvline(low, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
-           label=f'95% CI Low: {{low:,.2g}}')
+           label=f'{range_low_label}: {{low:,.2g}}')
 ax.axvline(high, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
-           label=f'95% CI High: {{high:,.2g}}')
+           label=f'{range_high_label}: {{high:,.2g}}')
 
 # Shade the CI region
 
@@ -527,7 +544,7 @@ add_png_metadata(
 plt.show()
 ```
 
-*This chart shows the assumed probability distribution for this parameter. The shaded region represents the 95% confidence interval where we expect the true value to fall.*
+*{interval_caption}*
 '''
 
     # Write QMD file

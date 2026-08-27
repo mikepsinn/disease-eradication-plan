@@ -142,7 +142,8 @@ def generate_html_with_tooltip(param_name: str, value: Any, comment: str = "", i
             low, high = value.confidence_interval
             low_str = format_parameter_value(low, unit)
             high_str = format_parameter_value(high, unit)
-            tooltip_parts.append(f"95% CI: [{low_str}, {high_str}]")
+            interval_label = getattr(value, "interval_label", None) or "95% CI"
+            tooltip_parts.append(f"{interval_label}: [{low_str}, {high_str}]")
 
         if hasattr(value, "distribution") and value.distribution:
             dist_name = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
@@ -297,7 +298,8 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
         low, high = value.confidence_interval
         low_str = format_parameter_value(low, unit)
         high_str = format_parameter_value(high, unit)
-        technical_parts.append(f"95% CI: [{low_str}, {high_str}]")
+        interval_label = getattr(value, "interval_label", None) or "95% CI"
+        technical_parts.append(f"{interval_label}: [{low_str}, {high_str}]")
 
     if has_dist:
         dist_name = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
@@ -344,7 +346,20 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
             certainty_phrase = "This estimate is highly uncertain"
             range_desc = "a very wide range"
 
-        content.append(f"**What this means**: {certainty_phrase}. The true value likely falls between {low_str} and {high_str} (±{avg_pct:.0f}%). This represents {range_desc} that our Monte Carlo simulations account for when calculating overall uncertainty in the results.")
+        is_calculated = bool(getattr(value, "inputs", None)) and callable(getattr(value, "compute", None))
+        dist_name = ""
+        if has_dist:
+            dist_name = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
+
+        if interval_label == "95% CI":
+            explanation = f"{certainty_phrase}. The true value likely falls between {low_str} and {high_str} (±{avg_pct:.0f}%). This represents {range_desc} that our Monte Carlo simulations account for when calculating overall uncertainty in the results."
+        elif is_calculated:
+            explanation = f"The propagated model results fall between {low_str} and {high_str}. This {range_desc} reflects uncertainty carried through the calculation, not a statistical confidence interval for an observed effect."
+        elif dist_name.lower() == "lognormal":
+            explanation = f"The model samples a lognormal distribution and clips draws to the modeled bounds from {low_str} to {high_str}. These bounds are not a statistical confidence interval for an observed effect."
+        else:
+            explanation = f"The model explores values between {low_str} and {high_str}. This is {range_desc} for model uncertainty, not a statistical confidence interval for an observed effect."
+        content.append(f"**What this means**: {explanation}")
         content.append("")
 
         # Add distribution explanation if present

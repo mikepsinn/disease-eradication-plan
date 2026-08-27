@@ -50,6 +50,7 @@ type ParameterExport = {
   formula?: string | null;
   calculationUrl?: string | null;
   confidenceInterval?: [number, number];
+  intervalLabel?: string | null;
   distribution?: string | null;
   inputs?: string[];
   computeExpr?: string | null;
@@ -135,7 +136,8 @@ function citationLabel(sourceRef: string | null | undefined, citations: Record<s
 
 function confidenceIntervalText(parameter: ParameterExport): string {
   const interval = parameter.confidenceInterval;
-  return interval ? `${interval[0]} to ${interval[1]}` : '';
+  const label = parameter.intervalLabel?.trim() || '95% CI';
+  return interval ? `${label}: ${interval[0]} to ${interval[1]}` : '';
 }
 
 function relationForChapter(
