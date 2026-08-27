@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Lives Saved from Universal Right to Try with Evidence (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Lives Saved from Universal Right to Try with Evidence (1,000 plotted draws; 10,000 summary draws)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -79,7 +79,7 @@ ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
 
 ax2.set_xlabel('Premature deaths prevented (deaths)', fontsize=11)
 ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
-ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
+ax2.set_title('Cumulative Probability', fontsize=12, weight='bold')
 ax2.set_ylim(0, 100)
 clean_spines(ax2)
 
@@ -123,4 +123,4 @@ plt.show()
 | Standard Deviation | 4.13 billion |
 | 90% Range (5th-95th percentile) | [3.71 billion, 17.2 billion] |
 
-*The histogram shows the distribution of Lives Saved from Universal Right to Try with Evidence across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram plots 1,000 draws from the 10,000-draw Monte Carlo sample used for the summary statistics. The CDF (right) shows the cumulative probability of outcomes up to any given value.*

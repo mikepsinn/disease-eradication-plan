@@ -14,7 +14,7 @@ tags:
 
 ## The short version
 
-If all 50 states adopt [Universal Right to Try](https://right-to-trial.acceleratedmedicine.org) [@right-to-trial-paper-2025] with Evidence and the system produces the modeled increase in treatment discovery, the central estimate is **{{< var state_rtt_treatment_acceleration_suffering_years >}} of disability-equivalent suffering prevented across future generations**.
+If all {{< var state_rtt_adopting_state_count_nounit >}} states adopt [Universal Right to Try](https://right-to-trial.acceleratedmedicine.org) [@right-to-trial-paper-2025] with Evidence and the system produces the modeled increase in treatment discovery, the central estimate is **{{< var state_rtt_treatment_acceleration_suffering_years >}} of disability-equivalent suffering prevented across future generations**.
 
 The same conditional model estimates that treatment discovery rises to {{< var state_rtt_treatment_discovery_multiplier >}} the status quo rate. The average first effective treatment arrives {{< var state_rtt_treatment_acceleration_years >}} earlier, restoring {{< var state_rtt_treatment_acceleration_dalys >}} and preventing {{< var state_rtt_treatment_acceleration_lives_saved >}} across future generations.
 
@@ -36,7 +36,7 @@ Montana has already created licensed experimental treatment centers. Senate Bill
 
 That creates a lawful state-regulated place to provide experimental treatment. It does not by itself create a clinical trial system. Montana's rules require centers to track treatment, patient outcomes, and serious adverse events, but the rules explicitly state that the centers do not administer clinical trials [@montana-etc-rules-2026]. Observational outcomes can reveal promising or dangerous signals. Without a credible comparison, they cannot reliably show that a treatment caused the result.
 
-The model bill adds four requirements:
+The model bill adds these requirements:
 
 1. **Enroll.** Register a prospective protocol, obtain informed consent, report serious safety events, and place each patient in the applicable federal trial or treatment-access pathway.
 2. **Compare.** Prespecify outcomes and use simple randomization or another adequate control when feasible. Without an adequate comparison, label the result a signal, not a validated treatment effect.
@@ -89,7 +89,7 @@ The rare-disease treatment queue is the clearest available count of diseases sti
 
 The {{< var state_rtt_treatment_acceleration_lives_saved >}} estimate exceeds the current world population because it sums premature deaths prevented across approximately {{< var state_rtt_treatment_acceleration_years >}} of future generations. It is a schedule-shift estimate, not a count of currently identifiable people.
 
-The {{< var state_rtt_treatment_acceleration_suffering_years >}} estimate is the years-lived-with-disability share of averted DALYs. A disability weight of 0.25 sustained for four years equals one full-disability-equivalent year. This is a subset of restored healthy years, not an additional benefit.
+The {{< var state_rtt_treatment_acceleration_suffering_years >}} estimate is the years-lived-with-disability share of averted DALYs. Disability-equivalent years multiply duration by disability weight, so partial disability spread over several years can equal one year at full disability. This is a subset of restored healthy years, not an additional benefit.
 
 The global estimate assumes discoveries become public knowledge and eventually benefit patients outside the United States. The access right itself remains state law.
 
@@ -97,9 +97,9 @@ The model does not count the uncertain direct health effect on participating pat
 
 ## What the estimate costs
 
-The central launch-cost estimate is {{< var state_rtt_philanthropic_cost_total >}}. It covers legislation or amendments in all 50 states, common evidence standards, and the shared registry's first ten years.
+The central launch-cost estimate is {{< var state_rtt_philanthropic_cost_total >}}. It covers legislation or amendments in all {{< var state_rtt_adopting_state_count_nounit >}} states, common evidence standards, and the shared registry's first {{< var state_rtt_registry_launch_years_nounit >}} years.
 
-The estimate excludes treatment delivery, trial-site services, manufacturing, and other patient-level costs. It also assumes that continued registry operation after the first ten years is funded outside the launch budget. The conditional launch cost per restored healthy year is {{< var state_rtt_philanthropic_cost_per_daly >}} if all 50 states adopt and the mature system produces the modeled discovery rate. It is not the full cost per DALY of every treatment and service in the system.
+The estimate excludes treatment delivery, trial-site services, manufacturing, and other patient-level costs. It also assumes that continued registry operation after the first {{< var state_rtt_registry_launch_years_nounit >}} years is funded outside the launch budget. The conditional launch cost per restored healthy year is {{< var state_rtt_philanthropic_cost_per_daly >}} if all {{< var state_rtt_adopting_state_count_nounit >}} states adopt and the mature system produces the modeled discovery rate. It is not the full cost per DALY of every treatment and service in the system.
 
 At the central estimate, the modeled launch cost per life saved is {{< var state_rtt_philanthropic_cost_per_life_saved >}}, which is {{< var state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier_nounit >}} times lower than the midpoint of GiveWell's cited modeled range across top charities [@givewell-cost-per-life-saved]. This is a scale benchmark, not a like-for-like program comparison: the launch-cost numerator excludes treatment and service costs that GiveWell's full-program estimates include.
 
@@ -125,8 +125,4 @@ The next step is a transparent Montana demonstration that adds interoperable enr
 
 The original Right to Try model spread from its first state in 2014 to 41 states by 2018 [@goldwater-rtt-41-states-2018]. That history establishes a distribution channel, not a guarantee. The evidence amendment must prove its value in operation.
 
-Any implementing bill should require Enroll, Compare, Pool, and Publish. That turns 50 possible access experiments into one continually learning treatment system.
-
-::: {.callout-note appearance="simple"}
-**Help us improve this impact analysis.** Comment below, or highlight text and use Hypothesis to leave a note. Co-authors are welcome.
-:::
+Any implementing bill should require Enroll, Compare, Pool, and Publish. That turns {{< var state_rtt_adopting_state_count_nounit >}} possible access experiments into one continually learning treatment system.

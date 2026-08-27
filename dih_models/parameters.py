@@ -197,11 +197,32 @@ class Parameter(float):
     """
 
     __slots__ = (
-        'manual_ref', 'source_ref', 'source_type', 'description', 'unit', 'formula', 'latex',
-        'confidence', 'last_updated', 'peer_reviewed', 'conservative',
-        'sensitivity', 'display_value', 'display_name', 'chart_label', 'interval_label', 'keywords',
-        'validation_min', 'validation_max', 'confidence_interval', 'std_error',
-        'distribution', 'inputs', 'compute', 'latex_symbol', 'hide_ci'
+        'chart_label',
+        'compute',
+        'confidence',
+        'confidence_interval',
+        'conservative',
+        'description',
+        'display_name',
+        'display_value',
+        'distribution',
+        'formula',
+        'hide_ci',
+        'inputs',
+        'interval_label',
+        'keywords',
+        'last_updated',
+        'latex',
+        'latex_symbol',
+        'manual_ref',
+        'peer_reviewed',
+        'sensitivity',
+        'source_ref',
+        'source_type',
+        'std_error',
+        'unit',
+        'validation_max',
+        'validation_min',
     )
 
     # Type annotations for Pylance/Pyright
@@ -9124,6 +9145,32 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
 # burden parameters supply the rest of the Treaty-style calculation.
 # ============================================================================
 
+STATE_RTT_ADOPTING_STATE_COUNT = Parameter(
+    50,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Number of states in the conditional nationwide adoption scenario.",
+    display_name="States Adopting Universal Right to Try with Evidence",
+    unit="states",
+    confidence="high",
+    distribution="fixed",
+    keywords=["right to try", "right to trial", "states", "adoption", "scope"],
+    latex_symbol=r"N_{states,RTT}",
+)
+
+STATE_RTT_REGISTRY_LAUNCH_YEARS = Parameter(
+    10,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Years of shared-registry operation included in the launch-cost estimate.",
+    display_name="Universal Right to Try with Evidence Registry Launch Period",
+    unit="years",
+    confidence="high",
+    distribution="fixed",
+    keywords=["right to try", "right to trial", "registry", "launch period", "cost scope"],
+    latex_symbol=r"T_{registry,RTT}",
+)
+
 STATE_RTT_PHILANTHROPIC_COST_TOTAL = Parameter(
     65_000_000,
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
@@ -9223,7 +9270,7 @@ STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS = Parameter(
     description="Conditional disability-equivalent years prevented by the treatment schedule shift. This is the years-lived-with-disability share of averted DALYs, not a claim that every year represents maximum conscious pain.",
     display_name="Disability-Equivalent Suffering Years Prevented by Universal Right to Try with Evidence",
     unit="years",
-    formula="STATE_RTT_TREATMENT_ACCELERATION_DALYS × GLOBAL_YLD_PROPORTION_OF_DALYS",
+    formula="STATE_RTT_TREATMENT_ACCELERATION_DALYS * GLOBAL_YLD_PROPORTION_OF_DALYS",
     confidence="low",
     inputs=["STATE_RTT_TREATMENT_ACCELERATION_DALYS", "GLOBAL_YLD_PROPORTION_OF_DALYS"],
     compute=lambda ctx: ctx["STATE_RTT_TREATMENT_ACCELERATION_DALYS"]
@@ -9241,7 +9288,7 @@ STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS = Parameter(
     description="Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.",
     display_name="Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence",
     unit="hours",
-    formula="STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS × HOURS_PER_YEAR",
+    formula="STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS * HOURS_PER_YEAR",
     confidence="low",
     inputs=["STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS"],
     compute=lambda ctx: ctx["STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS"] * HOURS_PER_YEAR,
@@ -9274,6 +9321,7 @@ STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED = Parameter(
     source_type="calculated",
     description="Conditional launch cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
     display_name="Universal Right to Try with Evidence Launch Cost per Life Saved",
+    chart_label="Cost per life saved",
     unit="USD/life",
     formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
     confidence="low",
@@ -9290,7 +9338,7 @@ STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS = Parameter(
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_type="calculated",
     description="Hours of the FDA annual program budget equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.",
-    display_name="Universal Right to Try with Evidence Cost in FDA Budget Hours",
+    display_name="Universal Right to Try with Evidence Launch Cost in FDA Budget Hours",
     unit="hours",
     formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ FDA_ANNUAL_PROGRAM_BUDGET × 8,760",
     confidence="low",
@@ -9308,7 +9356,7 @@ STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS = Parameter(
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_type="calculated",
     description="Hours of the NIH annual budget equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.",
-    display_name="Universal Right to Try with Evidence Cost in NIH Budget Hours",
+    display_name="Universal Right to Try with Evidence Launch Cost in NIH Budget Hours",
     unit="hours",
     formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ NIH_ANNUAL_BUDGET × 8,760",
     confidence="low",
@@ -9326,7 +9374,7 @@ STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS = Parameter(
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_type="calculated",
     description="Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
-    display_name="Universal Right to Try with Evidence Cost in US Military Overspend Hours",
+    display_name="Universal Right to Try with Evidence Launch Cost in US Military Overspend Hours",
     unit="hours",
     formula="STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ US_GOV_WASTE_MILITARY_OVERSPEND × 8,760",
     confidence="low",

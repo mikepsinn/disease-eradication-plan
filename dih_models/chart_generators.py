@@ -349,6 +349,23 @@ def generate_input_distribution_chart_qmd(param_name: str, param_data: dict, out
     # Get values
     central_value = float(value)
     unit = getattr(value, "unit", "")
+    interval_label = getattr(value, "interval_label", None) or "95% CI"
+    if interval_label == "95% CI":
+        range_low_label = "95% CI Low"
+        range_high_label = "95% CI High"
+        interval_comment = "confidence interval"
+        interval_caption = (
+            "This chart shows the assumed probability distribution for this parameter. "
+            "The shaded region represents the 95% confidence interval where we expect the true value to fall."
+        )
+    else:
+        range_low_label = f"{interval_label} low"
+        range_high_label = f"{interval_label} high"
+        interval_comment = "uncertainty interval"
+        interval_caption = (
+            "This chart shows the assumed probability distribution for this parameter. "
+            f"The shaded region marks the {interval_label}."
+        )
 
     # Determine distribution parameters
     if has_ci:
@@ -477,12 +494,12 @@ ax.plot(x, y, color=COLOR_BLACK, linewidth=2)
 ax.axvline(central_value, color=COLOR_BLACK, linestyle='--', linewidth=2,
            label=f'Central: {{central_value:,.2g}}')
 
-# Mark confidence interval
+# Mark {interval_comment}
 
 ax.axvline(low, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
-           label=f'95% CI Low: {{low:,.2g}}')
+           label=f'{range_low_label}: {{low:,.2g}}')
 ax.axvline(high, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
-           label=f'95% CI High: {{high:,.2g}}')
+           label=f'{range_high_label}: {{high:,.2g}}')
 
 # Shade the CI region
 
@@ -526,7 +543,7 @@ add_png_metadata(
 plt.show()
 ```
 
-*This chart shows the assumed probability distribution for this parameter. The shaded region represents the 95% confidence interval where we expect the true value to fall.*
+*{interval_caption}*
 '''
 
     # Write QMD file
@@ -585,10 +602,25 @@ def generate_monte_carlo_distribution_chart_qmd(
     if chart_label == display_name:
         ax1_xlabel = "ax1.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)"
         ax2_xlabel = "ax2.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)"
+        fig_caption = f"Monte Carlo Distribution: {display_name} (10,000 simulations)"
+        cdf_title = "Probability of Exceeding Value"
+        simulation_note = f"The histogram shows the distribution of {display_name} across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment."
     else:
         axis_label = f"{chart_label} ({units})" if units else chart_label
         ax1_xlabel = f"ax1.set_xlabel({axis_label!r}, fontsize=11)"
         ax2_xlabel = f"ax2.set_xlabel({axis_label!r}, fontsize=11)"
+        embedded_draw_count = min(len(samples), 1000)
+        summary_draw_count = len(samples)
+        fig_caption = (
+            f"Monte Carlo Distribution: {display_name} "
+            f"({embedded_draw_count:,} plotted draws; {summary_draw_count:,} summary draws)"
+        )
+        cdf_title = "Cumulative Probability"
+        simulation_note = (
+            f"The histogram plots {embedded_draw_count:,} draws from the "
+            f"{summary_draw_count:,}-draw Monte Carlo sample used for the summary statistics. "
+            "The CDF (right) shows the cumulative probability of outcomes up to any given value."
+        )
 
     # The shared formatter rounds values below one cent to two decimal places,
     # which collapses an entire sub-cent currency axis to repeated "$0.00"
@@ -608,7 +640,7 @@ def generate_monte_carlo_distribution_chart_qmd(
     # Generate QMD with embedded Python
     qmd_content = f'''```{{python}}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: {display_name} (10,000 simulations)"
+#| fig-cap: "{fig_caption}"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -686,7 +718,7 @@ ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
 
 {ax2_xlabel}
 ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
-ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
+ax2.set_title('{cdf_title}', fontsize=12, weight='bold')
 ax2.set_ylim(0, 100)
 clean_spines(ax2)
 
@@ -730,7 +762,7 @@ plt.show()
 | Standard Deviation | {format_parameter_value(std, units, include_unit=_table_include_unit)} |
 | 90% Range (5th-95th percentile) | [{format_parameter_value(p5, units, include_unit=_table_include_unit)}, {format_parameter_value(p95, units, include_unit=_table_include_unit)}] |
 
-*The histogram shows the distribution of {display_name} across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*{simulation_note}*
 '''
 
     # Write QMD file
@@ -811,15 +843,38 @@ def generate_cdf_chart_qmd(
     Returns:
         Path to generated QMD file
     """
-    # Get display name
+    # Get display name and an optional concise axis label
     if param_metadata and hasattr(param_metadata.get("value"), "display_name"):
-        display_name = param_metadata["value"].display_name
+        parameter = param_metadata["value"]
+        display_name = parameter.display_name
+        chart_label = getattr(parameter, "chart_label", None) or display_name
     else:
         display_name = smart_title_case(param_name)
+        chart_label = display_name
 
     units = ""
     if param_metadata and hasattr(param_metadata.get("value"), "unit"):
         units = param_metadata["value"].unit or ""
+
+    if chart_label != display_name and chart_label.lower().startswith("cost"):
+        favorability_note = "For cost outcomes, lower curves indicate more favorable results because they imply a lower chance of exceeding costly thresholds."
+    else:
+        favorability_note = "Higher curves indicate more favorable outcomes with greater certainty."
+
+    if chart_label == display_name:
+        figure_caption = f"Probability of Exceeding Threshold: {display_name}"
+        parameter_names = f'display_name = "{display_name}"\nunits = "{units}"'
+        x_axis_code = "ax.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=12)"
+        title_code = "ax.set_title(f'Exceedance Probability: {display_name}', fontsize=14, weight='bold', pad=15)"
+    else:
+        figure_caption = f"Probability of Exceeding Threshold: {chart_label}"
+        parameter_names = (
+            f'display_name = "{display_name}"\n'
+            f'chart_label = "{chart_label}"\n'
+            f'units = "{units}"'
+        )
+        x_axis_code = "ax.set_xlabel(f'{chart_label} ({units})' if units else chart_label, fontsize=12)"
+        title_code = "ax.set_title(f'Exceedance Probability: {chart_label}', fontsize=14, weight='bold', pad=15)"
 
     # Auto-generate thresholds if not provided
     if thresholds is None:
@@ -831,7 +886,7 @@ def generate_cdf_chart_qmd(
 
     qmd_content = f'''```{{python}}
 #| echo: false
-#| fig-cap: "Probability of Exceeding Threshold: {display_name}"
+#| fig-cap: "{figure_caption}"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -849,8 +904,7 @@ setup_chart_style()
 
 samples = {_round_seq(samples[:2000] if len(samples) > 2000 else samples)}
 thresholds = {_round_seq(thresholds)}
-display_name = "{display_name}"
-units = "{units}"
+{parameter_names}
 
 # Calculate exceedance probabilities (1 - CDF)
 
@@ -884,9 +938,9 @@ for thresh in thresholds:
                 fontsize=10, ha='left', weight='bold',
                 bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, alpha=0.9))
 
-ax.set_xlabel(f'{{display_name}} ({{units}})' if units else display_name, fontsize=12)
+{x_axis_code}
 ax.set_ylabel('Probability of Exceeding Value (%)', fontsize=12)
-ax.set_title(f'Exceedance Probability: {{display_name}}', fontsize=14, weight='bold', pad=15)
+{title_code}
 ax.set_ylim(0, 100)
 ax.set_xlim(left=min(sorted_samples) * 0.95)
 
@@ -907,7 +961,7 @@ add_png_metadata(
 plt.show()
 ```
 
-*This exceedance probability chart shows the likelihood that {display_name} will exceed any given threshold. Higher curves indicate more favorable outcomes with greater certainty.*
+*This exceedance probability chart shows the likelihood that {display_name} will exceed any given threshold. {favorability_note}*
 '''
 
     # Write QMD file

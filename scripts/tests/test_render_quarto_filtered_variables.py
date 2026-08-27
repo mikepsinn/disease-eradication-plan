@@ -86,3 +86,24 @@ def test_html_and_book_renders_remain_project_wide() -> None:
         project_type="book",
         index_source="index-manual.qmd",
     ) == ["quarto", "render", "--to", "pdf"]
+
+
+def test_strip_confidence_intervals_handles_custom_model_range_labels(
+    tmp_path: Path,
+) -> None:
+    module = load_render_quarto_module()
+    variables_path = tmp_path / "_variables.yml"
+    variables_path.write_text(
+        'default: "10 (95% CI: 8-12) | 95% CI: [8, 12]"\n'
+        'modeled: "10 (modeled range: 4-20) | modeled range: [4, 20]"\n'
+        'propagated: "10 (90% model range: 5-18) | 90% model range: [5, 18]"\n',
+        encoding="utf-8",
+    )
+
+    stripped = module._strip_confidence_intervals(variables_path, verbose=False)
+    result = variables_path.read_text(encoding="utf-8")
+
+    assert stripped == 6
+    assert "95% CI" not in result
+    assert "modeled range" not in result
+    assert "90% model range" not in result

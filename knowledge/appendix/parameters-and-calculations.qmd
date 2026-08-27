@@ -39,15 +39,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 901 parameters used in the analysis, organized by type:
+This appendix documents all 903 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 255
 - Calculated values: 458
-- Core definitions: 188
+- Core definitions: 190
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (458 parameters) • [External Data Sources](#sec-external) (255 parameters) • [Core Definitions](#sec-definitions) (188 parameters)
+[Calculated Values](#sec-calculated) (458 parameters) • [External Data Sources](#sec-external) (255 parameters) • [Core Definitions](#sec-definitions) (190 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -25194,7 +25194,7 @@ $$
 
 :::
 
-### Universal Right to Try with Evidence Cost in FDA Budget Hours: 80.7 hours {#sec-state_rtt_fda_budget_equivalent_hours}
+### Universal Right to Try with Evidence Launch Cost in FDA Budget Hours: 80.7 hours {#sec-state_rtt_fda_budget_equivalent_hours}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -25227,7 +25227,7 @@ $$
 
 :::
 
-### Universal Right to Try with Evidence Cost in NIH Budget Hours: 12.1 hours {#sec-state_rtt_nih_budget_equivalent_hours}
+### Universal Right to Try with Evidence Launch Cost in NIH Budget Hours: 12.1 hours {#sec-state_rtt_nih_budget_equivalent_hours}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -25832,7 +25832,7 @@ $$
 
 :::
 
-### Universal Right to Try with Evidence Cost in US Military Overspend Hours: 0.811 hours {#sec-state_rtt_us_military_overspend_equivalent_hours}
+### Universal Right to Try with Evidence Launch Cost in US Military Overspend Hours: 0.811 hours {#sec-state_rtt_us_military_overspend_equivalent_hours}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -50706,6 +50706,24 @@ Perceived social friction cost of wearing a political message in public, express
 
 :::
 
+### States Adopting Universal Right to Try with Evidence: 50 states {#sec-state_rtt_adopting_state_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Number of states in the conditional nationwide adoption scenario.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
 ### Universal Right to Try with Evidence Launch Cost: $65 million {#sec-state_rtt_philanthropic_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -50716,13 +50734,31 @@ Estimated launch cost of adopting Universal Right to Try with Evidence in all 50
 
 **Technical**: modeled range: [$25 million, $200 million] • Distribution: Lognormal
 
-**What this means**: The model explores values between $25 million and $200 million (±135%). This is a very wide range for sensitivity analysis, not a statistical confidence interval. Monte Carlo simulations sample this range when calculating the model outputs.
+**What this means**: The model samples a lognormal distribution and clips draws to the modeled bounds from $25 million to $200 million. These bounds are not a statistical confidence interval for an observed effect.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
 #### Input Distribution
 
 {{< include ../figures/distribution-state_rtt_philanthropic_cost_total.qmd >}}
+
+*Core definition*
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal Right to Try with Evidence Registry Launch Period: 10 years {#sec-state_rtt_registry_launch_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Years of shared-registry operation included in the launch-cost estimate.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
@@ -50742,7 +50778,7 @@ Conditional multiplier on the worldwide first-treatment discovery rate after all
 
 **Technical**: modeled range: [1.1x, 15x] • Distribution: Lognormal
 
-**What this means**: The model explores values between 1.1x and 15x (±127%). This is a very wide range for sensitivity analysis, not a statistical confidence interval. Monte Carlo simulations sample this range when calculating the model outputs.
+**What this means**: The model samples a lognormal distribution and clips draws to the modeled bounds from 1.1x to 15x. These bounds are not a statistical confidence interval for an observed effect.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

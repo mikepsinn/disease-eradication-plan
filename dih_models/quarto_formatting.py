@@ -346,10 +346,19 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
             certainty_phrase = "This estimate is highly uncertain"
             range_desc = "a very wide range"
 
+        is_calculated = bool(getattr(value, "inputs", None)) and callable(getattr(value, "compute", None))
+        dist_name = ""
+        if has_dist:
+            dist_name = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
+
         if interval_label == "95% CI":
             explanation = f"{certainty_phrase}. The true value likely falls between {low_str} and {high_str} (±{avg_pct:.0f}%). This represents {range_desc} that our Monte Carlo simulations account for when calculating overall uncertainty in the results."
+        elif is_calculated:
+            explanation = f"The propagated model results fall between {low_str} and {high_str}. This {range_desc} reflects uncertainty carried through the calculation, not a statistical confidence interval for an observed effect."
+        elif dist_name.lower() == "lognormal":
+            explanation = f"The model samples a lognormal distribution and clips draws to the modeled bounds from {low_str} to {high_str}. These bounds are not a statistical confidence interval for an observed effect."
         else:
-            explanation = f"The model explores values between {low_str} and {high_str} (±{avg_pct:.0f}%). This is {range_desc} for sensitivity analysis, not a statistical confidence interval. Monte Carlo simulations sample this range when calculating the model outputs."
+            explanation = f"The model explores values between {low_str} and {high_str}. This is {range_desc} for model uncertainty, not a statistical confidence interval for an observed effect."
         content.append(f"**What this means**: {explanation}")
         content.append("")
 
