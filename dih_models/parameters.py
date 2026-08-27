@@ -124,6 +124,7 @@ class Parameter(float):
         # NEW FIELDS (v2.0):
         display_value: Optional override for formatted display (e.g., "$2.7T" instead of auto-format)
         display_name: Optional override for parameter title in documentation (e.g., "Active Trials")
+        chart_label: Optional concise label for generated chart axes and titles
         keywords: List of search keywords for parameter discovery
         validation_min: Minimum valid value (hard constraint for validation)
         validation_max: Maximum valid value (hard constraint for validation)
@@ -197,7 +198,7 @@ class Parameter(float):
     __slots__ = (
         'manual_ref', 'source_ref', 'source_type', 'description', 'unit', 'formula', 'latex',
         'confidence', 'last_updated', 'peer_reviewed', 'conservative',
-        'sensitivity', 'display_value', 'display_name', 'keywords',
+        'sensitivity', 'display_value', 'display_name', 'chart_label', 'keywords',
         'validation_min', 'validation_max', 'confidence_interval', 'std_error',
         'distribution', 'inputs', 'compute', 'latex_symbol', 'hide_ci'
     )
@@ -217,6 +218,7 @@ class Parameter(float):
     sensitivity: "float | None"
     display_value: "str | None"
     display_name: "str | None"
+    chart_label: "str | None"
     keywords: "list[str]"
     validation_min: "float | None"
     validation_max: "float | None"
@@ -246,6 +248,7 @@ class Parameter(float):
         # NEW v2.0 parameters
         display_value: Optional[str] = None,
         display_name: Optional[str] = None,
+        chart_label: Optional[str] = None,
         keywords: Optional[List[str]] = None,
         validation_min: Optional[float] = None,
         validation_max: Optional[float] = None,
@@ -312,6 +315,7 @@ class Parameter(float):
         # NEW v2.0 attributes
         instance.display_value = display_value
         instance.display_name = display_name
+        instance.chart_label = chart_label
         instance.keywords = keywords or []
         instance.validation_min = validation_min
         instance.validation_max = validation_max
