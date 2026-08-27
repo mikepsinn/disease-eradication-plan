@@ -231,7 +231,7 @@ import re as _re
 
 def _strip_confidence_intervals(text: str) -> str:
     """Remove (95% CI: ...) parentheticals — they make abstracts unreadable."""
-    return _re.sub(r"\s*\(95% CI:\s*[^)]+\)", "", text)
+    return _re.sub(r"\s*\(9[05]% CI:\s*[^)]+\)", "", text)
 
 
 def get_paper_metadata(paper_key: str, info: dict) -> dict:

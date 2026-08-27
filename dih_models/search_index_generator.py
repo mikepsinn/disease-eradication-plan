@@ -554,7 +554,7 @@ class SearchIndexGenerator:
             if display_match:
                 display = display_match.group(1).strip()
                 # Strip CI from display: "$500 (95% CI: $400-$2.5K)" -> "$500"
-                display = re.sub(r'\s*\(95% CI:[^)]+\)', '', display)
+                display = re.sub(r'\s*\(9[05]% CI:[^)]+\)', '', display)
                 meta['display'] = display
             else:
                 meta['display'] = re.sub(r'<[^>]+>', '', html_val).strip()

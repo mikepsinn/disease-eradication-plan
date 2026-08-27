@@ -605,7 +605,7 @@ def generate_typescript_parameters(
         content.append("  formula?: string;")
         content.append("  /** LaTeX equation (for display) */")
         content.append("  latex?: string;")
-        content.append("  /** 95% confidence interval [low, high] */")
+        content.append("  /** Confidence interval [low, high]: author-specified 95% interval, or Monte Carlo 5th-95th percentiles (a 90% interval) when simulation-derived */")
         content.append("  confidenceInterval?: [number, number];")
         content.append("  /** Standard error */")
         content.append("  stdError?: number;")

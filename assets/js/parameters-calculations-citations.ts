@@ -46,7 +46,7 @@ export interface Parameter {
   formula?: string;
   /** LaTeX equation (for display) */
   latex?: string;
-  /** 95% confidence interval [low, high] */
+  /** Confidence interval [low, high]: author-specified 95% interval, or Monte Carlo 5th-95th percentiles (a 90% interval) when simulation-derived */
   confidenceInterval?: [number, number];
   /** Standard error */
   stdError?: number;

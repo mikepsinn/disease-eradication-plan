@@ -471,7 +471,7 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
 
     lines = ["# Parameter Summary\n"]
     lines.append("One parameter per line for easy searching and copy-pasting.\n")
-    lines.append("Format: `PARAMETER_NAME: value (95% CI: low-high)`\n\n")
+    lines.append("Format: `PARAMETER_NAME: value (95% CI: low-high)` for specified intervals, `(90% CI: low-high)` for Monte Carlo 5th-95th percentiles\n\n")
 
     for param_name, param_data in sorted(parameters.items()):
         value = param_data["value"]
@@ -518,7 +518,7 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
                 if len(parts) > 1:
                     unit_suffix = " " + parts[-1]
 
-            line = f"{param_name}: {formatted_value} (95% CI: {p5_formatted}-{p95_formatted}{unit_suffix})\n"
+            line = f"{param_name}: {formatted_value} (90% CI: {p5_formatted}-{p95_formatted}{unit_suffix})\n"
         else:
             # No uncertainty data - just include the formatted value
             line = f"{param_name}: {formatted_value}\n"

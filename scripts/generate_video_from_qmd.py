@@ -225,7 +225,7 @@ def resolve_narration(scenes: list[dict], variables: dict):
 
 def _strip_ci(text: str) -> str:
     """Strip confidence intervals like '(95% CI: 324 years-712 years)' from resolved values."""
-    return re.sub(r"\s*\(95% CI:[^)]+\)", "", text)
+    return re.sub(r"\s*\(9[05]% CI:[^)]+\)", "", text)
 
 
 def resolve_keyframe_prompts(scenes: list[dict], variables: dict):

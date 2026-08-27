@@ -76,4 +76,4 @@ add_png_metadata(
 plt.show()
 ```
 
-*This exceedance probability chart shows the likelihood that Corporate Damages Treble-Style Exposure Total will exceed any given threshold. Higher curves indicate more favorable outcomes with greater certainty.*
+*This exceedance probability chart shows the likelihood that Corporate Damages Treble-Style Exposure Total will exceed any given threshold. The higher the curve at a threshold, the more likely the value exceeds it.*
