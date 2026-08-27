@@ -560,11 +560,14 @@ def generate_monte_carlo_distribution_chart_qmd(
     Returns:
         Path to generated QMD file
     """
-    # Get display name
+    # Get display name and an optional concise axis label
     if param_metadata and hasattr(param_metadata.get("value"), "display_name"):
-        display_name = param_metadata["value"].display_name
+        parameter = param_metadata["value"]
+        display_name = parameter.display_name
+        chart_label = getattr(parameter, "chart_label", None) or display_name
     else:
         display_name = smart_title_case(param_name)
+        chart_label = display_name
 
     baseline = outcome_data.get("baseline", 0)
     mean = outcome_data.get("mean", baseline)
@@ -577,6 +580,31 @@ def generate_monte_carlo_distribution_chart_qmd(
     # Table values: include format-inherent suffixes (x, :1, $, %) but not verbose unit words
     _table_include_unit = _summary_table_includes_unit(units)
 
+    # Preserve generated output for parameters without a custom label. This keeps
+    # regeneration from rewriting every existing Monte Carlo chart.
+    if chart_label == display_name:
+        ax1_xlabel = "ax1.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)"
+        ax2_xlabel = "ax2.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)"
+    else:
+        axis_label = f"{chart_label} ({units})" if units else chart_label
+        ax1_xlabel = f"ax1.set_xlabel({axis_label!r}, fontsize=11)"
+        ax2_xlabel = f"ax2.set_xlabel({axis_label!r}, fontsize=11)"
+
+    # The shared formatter rounds values below one cent to two decimal places,
+    # which collapses an entire sub-cent currency axis to repeated "$0.00"
+    # labels. Keep generated output stable except for affected charts.
+    is_sub_cent_currency = (
+        param_name == "STATE_RTT_PHILANTHROPIC_COST_PER_DALY"
+        and "usd" in units.lower()
+        and max(abs(p5), abs(p95)) < 0.01
+    )
+    if is_sub_cent_currency:
+        tick_formatter_import = "from matplotlib.ticker import FuncFormatter\n\n"
+        tick_formatter = "FuncFormatter(lambda value, _pos: format_parameter_value(value, units))"
+    else:
+        tick_formatter_import = "\n"
+        tick_formatter = "get_tick_formatter(unit=units)"
+
     # Generate QMD with embedded Python
     qmd_content = f'''```{{python}}
 #| echo: false
@@ -585,8 +613,7 @@ def generate_monte_carlo_distribution_chart_qmd(
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
-
-from dih_models.plotting.chart_style import (
+{tick_formatter_import}from dih_models.plotting.chart_style import (
     setup_chart_style, add_watermark, clean_spines, get_tick_formatter,
     COLOR_BLACK, COLOR_WHITE, add_png_metadata, get_figure_output_path
 )
@@ -623,7 +650,7 @@ n, bins, patches = ax1.hist(samples, bins=n_bins, color=COLOR_WHITE, edgecolor=C
 
 # Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
 
-ax1.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+ax1.xaxis.set_major_formatter({tick_formatter})
 
 # Mark key statistics with formatted values in legend (use format_parameter_value for full units)
 
@@ -632,7 +659,7 @@ ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, labe
 ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {{format_parameter_value(p95, units)}}')
 ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {{format_parameter_value(baseline, units)}}')
 
-ax1.set_xlabel(f'{{display_name}} ({{units}})' if units else display_name, fontsize=11)
+{ax1_xlabel}
 ax1.set_ylabel('Frequency', fontsize=11)
 ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
 ax1.legend(loc='upper right', fontsize=9)
@@ -648,7 +675,7 @@ ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLA
 
 # Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
 
-ax2.xaxis.set_major_formatter(get_tick_formatter(unit=units))
+ax2.xaxis.set_major_formatter({tick_formatter})
 
 # Mark key percentiles
 
@@ -657,7 +684,7 @@ ax2.axhline(5, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
 ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
 ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
 
-ax2.set_xlabel(f'{{display_name}} ({{units}})' if units else display_name, fontsize=11)
+{ax2_xlabel}
 ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
 ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
 ax2.set_ylim(0, 100)

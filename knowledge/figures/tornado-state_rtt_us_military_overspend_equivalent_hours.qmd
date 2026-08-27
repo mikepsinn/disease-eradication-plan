@@ -25,7 +25,7 @@ baseline = 0.8111111111111111
 # Tornado data from sensitivity analysis
 
 drivers = ['STATE_RTT_PHILANTHROPIC_COST_TOTAL', 'US_DEFENSE_FP_MOBILIZATION_HEDGE', 'US_DEFENSE_FP_NUCLEAR_DETERRENT', 'US_DEFENSE_FP_HOMELAND_AIR_MISSILE', 'US_DEFENSE_FP_NATIONAL_GUARD', 'US_DEFENSE_FP_CYBER', 'US_DEFENSE_FP_COAST_GUARD']
-driver_labels = ['Universal Right to Try with Evidence Philanthropic Cost', 'First-Principles Defense: Mobilization Hedge', 'First-Principles Defense: Nuclear Second Strike', 'First-Principles Defense: Homeland Air & Missile Defense', 'First-Principles Defense: National Guard', 'First-Principles Defense: Cyber Defense', 'First-Principles Defense: Coast Guard']
+driver_labels = ['Universal Right to Try with Evidence Launch Cost', 'First-Principles Defense: Mobilization Hedge', 'First-Principles Defense: Nuclear Second Strike', 'First-Principles Defense: Homeland Air & Missile Defense', 'First-Principles Defense: National Guard', 'First-Principles Defense: Cyber Defense', 'First-Principles Defense: Coast Guard']
 impacts_low = [-0.49914529914529915, -0.022468451831332725, -0.011392009987515661, -0.011392009987515661, -0.006873822975517974, -0.0057362879145057555, -0.002304292929292906]
 impacts_high = [1.6846153846153846, 0.04900973481033899, 0.023786249592701147, 0.01770984958757882, 0.011721258831085324, 0.011721258831085324, 0.0023174603174602737]
 

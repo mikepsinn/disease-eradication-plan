@@ -52,7 +52,7 @@ ax1.axvline(p5, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, labe
 ax1.axvline(p95, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7, label=f'95th %-ile: {format_parameter_value(p95, units)}')
 ax1.axvline(baseline, color=COLOR_BLACK, linestyle='-', linewidth=1.5, alpha=0.5, label=f'Baseline: {format_parameter_value(baseline, units)}')
 
-ax1.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax1.set_xlabel('Premature deaths prevented (deaths)', fontsize=11)
 ax1.set_ylabel('Frequency', fontsize=11)
 ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
 ax1.legend(loc='upper right', fontsize=9)
@@ -77,7 +77,7 @@ ax2.axhline(5, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
 ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
 ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
 
-ax2.set_xlabel(f'{display_name} ({units})' if units else display_name, fontsize=11)
+ax2.set_xlabel('Premature deaths prevented (deaths)', fontsize=11)
 ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
 ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
 ax2.set_ylim(0, 100)

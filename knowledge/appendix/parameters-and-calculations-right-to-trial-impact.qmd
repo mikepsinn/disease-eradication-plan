@@ -130,15 +130,15 @@ $$
 
 :::
 
-### Universal Right to Try with Evidence Philanthropic Cost per DALY: $0.000134 {#sec-state_rtt_philanthropic_cost_per_daly}
+### Universal Right to Try with Evidence Launch Cost per DALY: $0.000134 {#sec-state_rtt_philanthropic_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Conditional philanthropic cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.
+Conditional launch cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs. It excludes treatment delivery, trial-site services, manufacturing, and other patient-level costs. The denominator counts the global treatment schedule shift once.
 
 **Inputs**:
 
-- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Universal Right to Try with Evidence Launch Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (modeled range: $25 million - $200 million)
 - [DALYs Averted from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_dalys) 🔢: 483 billion DALYs
 
 $$
@@ -212,15 +212,15 @@ $$
 
 :::
 
-### Universal Right to Try with Evidence Philanthropic Cost per Life Saved: $0.00707 {#sec-state_rtt_philanthropic_cost_per_life_saved}
+### Universal Right to Try with Evidence Launch Cost per Life Saved: $0.00707 {#sec-state_rtt_philanthropic_cost_per_life_saved}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Conditional philanthropic cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.
+Conditional launch cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.
 
 **Inputs**:
 
-- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Universal Right to Try with Evidence Launch Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (modeled range: $25 million - $200 million)
 - [Lives Saved from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_lives_saved) 🔢: 9.19 billion deaths
 
 $$
@@ -442,11 +442,11 @@ $$
 
 :::
 
-### Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence: 1.65 quadrillion hours {#sec-state_rtt_treatment_acceleration_suffering_hours}
+### Disability-Equivalent Suffering Years Prevented by Universal Right to Try with Evidence: 189 billion years {#sec-state_rtt_treatment_acceleration_suffering_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.
+Conditional disability-equivalent years prevented by the treatment schedule shift. This is the years-lived-with-disability share of averted DALYs, not a claim that every year represents maximum conscious pain.
 
 **Inputs**:
 
@@ -455,10 +455,10 @@ Conditional disability-equivalent hours prevented by the treatment schedule shif
 
 $$
 \begin{gathered}
-Hours_{suffer,RTT} \\
-= DALYs_{RTT} \times Pct_{YLD} \times 8760 \\
-= 483B \times 0.39 \times 8760 \\
-= 1650T
+Years_{suffer,RTT} \\
+= DALYs_{RTT} \times Pct_{YLD} \\
+= 483B \times 0.39 \\
+= 189B
 \end{gathered}
 $$
 where:
@@ -510,17 +510,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_suffering_years.qmd >}}
 
-{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_suffering_years.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_suffering_years.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_suffering_years.qmd >}}
 
 :::
 
@@ -533,7 +533,7 @@ Average years earlier the first effective treatment arrives across the global th
 **Inputs**:
 
 - [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment) 🔢: 222 years
-- [Universal Right to Try with Evidence Treatment Discovery Multiplier](#sec-state_rtt_treatment_discovery_multiplier): 5.48x (95% CI: 1.1x - 15x)
+- [Universal Right to Try with Evidence Treatment Discovery Multiplier](#sec-state_rtt_treatment_discovery_multiplier): 5.48x (modeled range: 1.1x - 15x)
 
 $$
 \begin{gathered}
@@ -592,12 +592,12 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
+Conditional comparison of the Universal Right to Try with Evidence launch cost per modeled life saved with the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator includes only campaign and registry launch costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
 
 **Inputs**:
 
 - [GiveWell Midpoint of Modeled Cost per Life Saved Range](#sec-givewell_cost_per_life_avg) 📊: $4,500
-- [Universal Right to Try with Evidence Philanthropic Cost per Life Saved](#sec-state_rtt_philanthropic_cost_per_life_saved) 🔢: $0.00707
+- [Universal Right to Try with Evidence Launch Cost per Life Saved](#sec-state_rtt_philanthropic_cost_per_life_saved) 🔢: $0.00707
 
 $$
 \begin{gathered}
@@ -1007,17 +1007,17 @@ Percentage of deaths that are eventually avoidable with sufficient biomedical re
 
 :::
 
-### Universal Right to Try with Evidence Philanthropic Cost: $65 million {#sec-state_rtt_philanthropic_cost_total}
+### Universal Right to Try with Evidence Launch Cost: $65 million {#sec-state_rtt_philanthropic_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total philanthropic cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This philanthropic numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.
+Estimated launch cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million estimate covering legislation or amendment in all 50 states plus $50 million for common evidence standards and the shared registry's first ten years. It excludes treatment delivery, trial-site services, manufacturing, and other patient-level costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$25 million, $200 million] • Distribution: Lognormal
+**Technical**: modeled range: [$25 million, $200 million] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between $25 million and $200 million (±135%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: The model explores values between $25 million and $200 million (±135%). This is a very wide range for sensitivity analysis, not a statistical confidence interval. Monte Carlo simulations sample this range when calculating the model outputs.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 
@@ -1037,9 +1037,9 @@ Conditional multiplier on the worldwide first-treatment discovery rate after all
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [1.1x, 15x] • Distribution: Lognormal
+**Technical**: modeled range: [1.1x, 15x] • Distribution: Lognormal
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 1.1x and 15x (±127%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: The model explores values between 1.1x and 15x (±127%). This is a very wide range for sensitivity analysis, not a statistical confidence interval. Monte Carlo simulations sample this range when calculating the model outputs.
 
 *The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
 

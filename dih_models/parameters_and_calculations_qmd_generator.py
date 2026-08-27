@@ -302,7 +302,8 @@ def generate_parameters_and_calculations_qmd(
                         low, high = inp_value.confidence_interval
                         low_str = format_parameter_value(low, inp_unit)
                         high_str = format_parameter_value(high, inp_unit)
-                        uncertainty_str = f" (95% CI: {low_str} - {high_str})"
+                        interval_label = getattr(inp_value, "interval_label", None) or "95% CI"
+                        uncertainty_str = f" ({interval_label}: {low_str} - {high_str})"
                     elif hasattr(inp_value, "std_error") and inp_value.std_error:
                         se_str = format_parameter_value(inp_value.std_error, inp_unit)
                         uncertainty_str = f" (SE: ±{se_str})"

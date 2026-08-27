@@ -639,6 +639,9 @@ def _public_parameter_entry(
     ci = getattr(value_obj, "confidence_interval", None)
     if ci:
         entry["confidenceInterval"] = [float(ci[0]), float(ci[1])]
+        interval_label = getattr(value_obj, "interval_label", None)
+        if interval_label:
+            entry["intervalLabel"] = interval_label
 
     # Reactive metadata: dependency list, distribution, and a JS-evaluable
     # expression traced from the compute lambda. Powers interactive consumers.

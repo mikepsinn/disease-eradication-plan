@@ -46,8 +46,10 @@ export interface Parameter {
   formula?: string;
   /** LaTeX equation (for display) */
   latex?: string;
-  /** 95% confidence interval [low, high] */
+  /** Uncertainty interval [low, high] */
   confidenceInterval?: [number, number];
+  /** Meaning of confidenceInterval, such as 95% CI or modeled range */
+  intervalLabel?: string;
   /** Standard error */
   stdError?: number;
   /** Whether this is peer-reviewed data */
@@ -9812,7 +9814,7 @@ export const STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_fda_budget_equivalent_hours",
   unit: "hours",
   displayName: "Universal Right to Try with Evidence Cost in FDA Budget Hours",
-  description: "Hours of the FDA annual program budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.",
+  description: "Hours of the FDA annual program budget equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ FDA_ANNUAL_PROGRAM_BUDGET × 8,760",
@@ -9830,7 +9832,7 @@ export const STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_nih_budget_equivalent_hours",
   unit: "hours",
   displayName: "Universal Right to Try with Evidence Cost in NIH Budget Hours",
-  description: "Hours of the NIH annual budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.",
+  description: "Hours of the NIH annual budget equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ NIH_ANNUAL_BUDGET × 8,760",
@@ -9847,8 +9849,8 @@ export const STATE_RTT_PHILANTHROPIC_COST_PER_DALY: Parameter = {
   parameterName: "STATE_RTT_PHILANTHROPIC_COST_PER_DALY",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_cost_per_daly",
   unit: "USD/DALY",
-  displayName: "Universal Right to Try with Evidence Philanthropic Cost per DALY",
-  description: "Conditional philanthropic cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.",
+  displayName: "Universal Right to Try with Evidence Launch Cost per DALY",
+  description: "Conditional launch cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs. It excludes treatment delivery, trial-site services, manufacturing, and other patient-level costs. The denominator counts the global treatment schedule shift once.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_DALYS",
@@ -9865,8 +9867,8 @@ export const STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED: Parameter = {
   parameterName: "STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_cost_per_life_saved",
   unit: "USD/life",
-  displayName: "Universal Right to Try with Evidence Philanthropic Cost per Life Saved",
-  description: "Conditional philanthropic cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
+  displayName: "Universal Right to Try with Evidence Launch Cost per Life Saved",
+  description: "Conditional launch cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
@@ -9890,6 +9892,7 @@ export const STATE_RTT_TREATMENT_ACCELERATION_DALYS: Parameter = {
   formula: "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
   latex: "\\begin{gathered}\nDALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
   confidenceInterval: [194576226838.0, 906801269448.0],
+  intervalLabel: "90% model range",
   inputs: ["GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
   computeExpr: "((GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
@@ -9908,6 +9911,7 @@ export const STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED: Parameter = {
   formula: "GLOBAL_DISEASE_DEATHS_DAILY × DAYS_PER_YEAR × EVENTUALLY_AVOIDABLE_DEATH_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
   latex: "\\begin{gathered}\nLives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
   confidenceInterval: [3712771172.52, 17234802793.1],
+  intervalLabel: "90% model range",
   inputs: ["GLOBAL_DISEASE_DEATHS_DAILY", "EVENTUALLY_AVOIDABLE_DEATH_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
   computeExpr: "(((GLOBAL_DISEASE_DEATHS_DAILY * 365.0) * EVENTUALLY_AVOIDABLE_DEATH_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
@@ -9923,11 +9927,30 @@ export const STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS: Parameter = {
   description: "Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "STATE_RTT_TREATMENT_ACCELERATION_DALYS × GLOBAL_YLD_PROPORTION_OF_DALYS × HOURS_PER_YEAR",
-  latex: "\\begin{gathered}\nHours_{suffer,RTT} = DALYs_{RTT} \\times Pct_{YLD} \\times 8760 = 483B \\times 0.39 \\times 8760 = 1650T\n\\\\[0.5em]\n\\text{where } DALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  formula: "STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS × HOURS_PER_YEAR",
+  latex: "\\begin{gathered}\nHours_{suffer,RTT} = Years_{suffer,RTT} \\times 8760 = 189B \\times 8760 = 1650T\n\\\\[0.5em]\n\\text{where } Years_{suffer,RTT} = DALYs_{RTT} \\times Pct_{YLD} = 483B \\times 0.39 = 189B\n\\\\[0.5em]\n\\text{where } DALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
   confidenceInterval: [658973595488000.0, 3136447274920000.0],
+  inputs: ["STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS"],
+  computeExpr: "(STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS * 8760.0)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
+};
+
+export const STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS: Parameter = {
+  value: 188536884904.0,
+  parameterName: "STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_acceleration_suffering_years",
+  unit: "years",
+  displayName: "Disability-Equivalent Suffering Years Prevented by Universal Right to Try with Evidence",
+  description: "Conditional disability-equivalent years prevented by the treatment schedule shift. This is the years-lived-with-disability share of averted DALYs, not a claim that every year represents maximum conscious pain.",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "STATE_RTT_TREATMENT_ACCELERATION_DALYS × GLOBAL_YLD_PROPORTION_OF_DALYS",
+  latex: "\\begin{gathered}\nYears_{suffer,RTT} = DALYs_{RTT} \\times Pct_{YLD} = 483B \\times 0.39 = 189B\n\\\\[0.5em]\n\\text{where } DALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [75225296288.6, 358041926361.0],
+  intervalLabel: "90% model range",
   inputs: ["STATE_RTT_TREATMENT_ACCELERATION_DALYS", "GLOBAL_YLD_PROPORTION_OF_DALYS"],
-  computeExpr: "((STATE_RTT_TREATMENT_ACCELERATION_DALYS * GLOBAL_YLD_PROPORTION_OF_DALYS) * 8760.0)",
+  computeExpr: "(STATE_RTT_TREATMENT_ACCELERATION_DALYS * GLOBAL_YLD_PROPORTION_OF_DALYS)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
   manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
 };
@@ -9944,6 +9967,7 @@ export const STATE_RTT_TREATMENT_ACCELERATION_YEARS: Parameter = {
   formula: "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)",
   latex: "\\begin{gathered}\nT_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
   confidenceInterval: [79.0533772556, 332.378845812],
+  intervalLabel: "90% model range",
   inputs: ["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"],
   computeExpr: "(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT * (1.0 - (1.0 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)))",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
@@ -9956,7 +9980,7 @@ export const STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_us_military_overspend_equivalent_hours",
   unit: "hours",
   displayName: "Universal Right to Try with Evidence Cost in US Military Overspend Hours",
-  description: "Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
+  description: "Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
   sourceType: "calculated",
   confidence: "low",
   formula: "STATE_RTT_PHILANTHROPIC_COST_TOTAL ÷ US_GOV_WASTE_MILITARY_OVERSPEND × 8,760",
@@ -9974,7 +9998,7 @@ export const STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER: Param
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier",
   unit: "x",
   displayName: "Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint",
-  description: "Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+  description: "Conditional comparison of the Universal Right to Try with Evidence launch cost per modeled life saved with the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator includes only campaign and registry launch costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
   sourceType: "calculated",
   confidence: "low",
   formula: "GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED",
@@ -14647,11 +14671,12 @@ export const STATE_RTT_PHILANTHROPIC_COST_TOTAL: Parameter = {
   parameterName: "STATE_RTT_PHILANTHROPIC_COST_TOTAL",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_philanthropic_cost_total",
   unit: "USD",
-  displayName: "Universal Right to Try with Evidence Philanthropic Cost",
-  description: "Total philanthropic cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This philanthropic numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.",
+  displayName: "Universal Right to Try with Evidence Launch Cost",
+  description: "Estimated launch cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million estimate covering legislation or amendment in all 50 states plus $50 million for common evidence standards and the shared registry's first ten years. It excludes treatment delivery, trial-site services, manufacturing, and other patient-level costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.",
   sourceType: "definition",
   confidence: "low",
   confidenceInterval: [25000000.0, 200000000.0],
+  intervalLabel: "modeled range",
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
   manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
@@ -14667,6 +14692,7 @@ export const STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER: Parameter = {
   sourceType: "definition",
   confidence: "low",
   confidenceInterval: [1.1, 15.0],
+  intervalLabel: "modeled range",
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
   manualPageTitle: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States",
@@ -15860,6 +15886,7 @@ export const parameters = {
   STATE_RTT_TREATMENT_ACCELERATION_DALYS,
   STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED,
   STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS,
+  STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS,
   STATE_RTT_TREATMENT_ACCELERATION_YEARS,
   STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS,
   STATE_RTT_VS_GIVEWELL_PHILANTHROPIC_COST_PER_LIFE_MULTIPLIER,
@@ -19028,9 +19055,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 900,
+  total: 901,
   external: 255,
-  calculated: 457,
+  calculated: 458,
   definitions: 188,
   citations: 197,
 } as const;
