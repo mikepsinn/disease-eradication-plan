@@ -57,7 +57,7 @@ website:
   navbar:
     right:
       - text: "dFDA Framework"
-        href: https://spec.dfda.earth
+        href: https://dfda-protocol.acceleratedmedicine.org
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
       - text: "VOTE"

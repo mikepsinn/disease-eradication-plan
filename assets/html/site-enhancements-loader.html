@@ -18,6 +18,21 @@
       }
     }
 
+    // Keep inline mortality counters, but disable the fixed footer scoreboard.
+    var disabledFeatures = document.querySelector('meta[name="dih-disable-features"]');
+    if (!disabledFeatures) {
+      disabledFeatures = document.createElement('meta');
+      disabledFeatures.name = 'dih-disable-features';
+      document.head.appendChild(disabledFeatures);
+    }
+    var disabledFlags = (disabledFeatures.content || '').split(',').map(function(flag) {
+      return flag.trim();
+    }).filter(Boolean);
+    if (disabledFlags.indexOf('delay-counter-hud') === -1) {
+      disabledFlags.push('delay-counter-hud');
+      disabledFeatures.content = disabledFlags.join(',');
+    }
+
     var scripts = [
       'assets/js/generated-subdomain-redirects.js',
       'assets/js/site-enhancements.js',
