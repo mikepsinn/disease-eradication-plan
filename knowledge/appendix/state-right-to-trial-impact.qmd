@@ -12,29 +12,19 @@ tags:
 
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-::: {.callout-note appearance="simple"}
-**Please help us improve this impact analysis.** We want to help policymakers and the public understand the enormous potential benefits of universal patient access to clinical trials and a continually learning system for global treatment-effectiveness rankings and outcome labels. Comment below, or highlight any text and log in with Hypothesis to leave a note. Co-authors welcome.
-:::
-
 ## The short version
+
+If all {{< var state_rtt_adopting_state_count_nounit >}} states adopt [Universal Right to Try](https://right-to-trial.acceleratedmedicine.org) [@right-to-trial-paper-2025] with Evidence and the system produces the modeled increase in treatment discovery, the central estimate is **{{< var state_rtt_treatment_acceleration_suffering_years >}} of disability-equivalent suffering prevented across future generations**.
+
+The same conditional model estimates that treatment discovery rises to {{< var state_rtt_treatment_discovery_multiplier >}} the status quo rate. The average first effective treatment arrives {{< var state_rtt_treatment_acceleration_years >}} earlier, restoring {{< var state_rtt_treatment_acceleration_dalys >}} and preventing {{< var state_rtt_treatment_acceleration_lives_saved >}} across future generations.
+
+A disability-equivalent year is one full year of health lost to disability, or an equivalent amount spread across people and time. It is the years-lived-with-disability portion of the DALY estimate, not an additional benefit and not a claim that every year is spent in maximum pain. The displayed ranges are 5th-to-95th-percentile model results. They do not include the chance that states fail to enact the framework, implementation fails, or the model structure is wrong.
 
 About {{< var diseases_without_effective_treatment >}} rare diseases still have no effective treatment. The model uses this queue as a proxy for the wider therapeutic frontier. At the current rate, roughly {{< var new_disease_first_treatments_per_year_nounit >}} diseases receive their first effective treatment each year. At that pace, exploring the queue takes approximately {{< var status_quo_queue_clearance_years >}}, and the average therapeutic target waits about {{< var status_quo_avg_years_to_first_treatment >}}.
 
 The problem is not a shortage of possible treatments. Many post-Phase-1 compounds, repurposed drugs, combinations, doses, and disease-specific uses are never tested because nobody can finance conventional Phase 2 and Phase 3 trials.
 
 [Universal Right to Try](https://right-to-trial.acceleratedmedicine.org) [@right-to-trial-paper-2025] with Evidence changes that financing constraint. Licensed centers provide eligible experimental treatments while patients or payers cover treatment-related care, trial-site services, and permitted study costs. Trial participants follow shared protocols, and other eligible uses contribute separately labeled observational outcomes. Treatments that were not economically viable to investigate become testable. State law does not waive federal authorization or evidence requirements.
-
-If all 50 states adopt the framework and it produces the modeled increase in treatment discovery, the conditional central estimates are:
-
-| Result | Conditional central estimate |
-|:---|---:|
-| Treatment-discovery multiplier | {{< var state_rtt_treatment_discovery_multiplier_nounit >}}x |
-| Average first treatment arrives | {{< var state_rtt_treatment_acceleration_years_nounit >}} years earlier |
-| Premature deaths prevented | {{< var state_rtt_treatment_acceleration_lives_saved_nounit >}} |
-| Healthy years restored | {{< var state_rtt_treatment_acceleration_dalys_nounit >}} DALYs |
-| Disability-equivalent suffering prevented | {{< var state_rtt_treatment_acceleration_suffering_hours_nounit >}} hours |
-| Campaign plus shared registry cost | {{< var state_rtt_philanthropic_cost_total >}} |
-| Philanthropic cost per healthy year restored | {{< var state_rtt_philanthropic_cost_per_daly >}} |
 
 These are conditional lifetime totals across future generations. They do not mean that billions of currently living people are saved, and they do not assume that passing a law automatically produces the modeled scientific effect.
 
@@ -46,7 +36,7 @@ Montana has already created licensed experimental treatment centers. Senate Bill
 
 That creates a lawful state-regulated place to provide experimental treatment. It does not by itself create a clinical trial system. Montana's rules require centers to track treatment, patient outcomes, and serious adverse events, but the rules explicitly state that the centers do not administer clinical trials [@montana-etc-rules-2026]. Observational outcomes can reveal promising or dangerous signals. Without a credible comparison, they cannot reliably show that a treatment caused the result.
 
-The model bill adds four requirements:
+The model bill adds these requirements:
 
 1. **Enroll.** Register a prospective protocol, obtain informed consent, report serious safety events, and place each patient in the applicable federal trial or treatment-access pathway.
 2. **Compare.** Prespecify outcomes and use simple randomization or another adequate control when feasible. Without an adequate comparison, label the result a signal, not a validated treatment effect.
@@ -99,46 +89,23 @@ The rare-disease treatment queue is the clearest available count of diseases sti
 
 The {{< var state_rtt_treatment_acceleration_lives_saved >}} estimate exceeds the current world population because it sums premature deaths prevented across approximately {{< var state_rtt_treatment_acceleration_years >}} of future generations. It is a schedule-shift estimate, not a count of currently identifiable people.
 
-The {{< var state_rtt_treatment_acceleration_suffering_hours >}} estimate means disability-weighted equivalent hours. A disability weight of 0.25 sustained for four hours equals one full-disability-equivalent hour. It does not mean that every hour represents maximum conscious pain.
+The {{< var state_rtt_treatment_acceleration_suffering_years >}} estimate is the years-lived-with-disability share of averted DALYs. Disability-equivalent years multiply duration by disability weight, so partial disability spread over several years can equal one year at full disability. This is a subset of restored healthy years, not an additional benefit.
 
 The global estimate assumes discoveries become public knowledge and eventually benefit patients outside the United States. The access right itself remains state law.
 
 The model does not count the uncertain direct health effect on participating patients. Earlier access to an effective treatment could help them immediately. Ineffective or unsafe treatments could harm them. Those effects are real, but they are a separate channel from the treatment-discovery schedule shift and are not included in the headline totals.
 
-## What philanthropy and investment pay for
+## What the estimate costs
 
-### Philanthropy funds the shared public good
+The central launch-cost estimate is {{< var state_rtt_philanthropic_cost_total >}}. It covers legislation or amendments in all {{< var state_rtt_adopting_state_count_nounit >}} states, common evidence standards, and the shared registry's first {{< var state_rtt_registry_launch_years_nounit >}} years.
 
-Philanthropy pays for the 50-state campaign, common evidence standards, and the shared registry's first ten years. Participating centers then sustain the registry through license or enrollment assessments. The model does not require a new state appropriation.
+The estimate excludes treatment delivery, trial-site services, manufacturing, and other patient-level costs. It also assumes that continued registry operation after the first {{< var state_rtt_registry_launch_years_nounit >}} years is funded outside the launch budget. The conditional launch cost per restored healthy year is {{< var state_rtt_philanthropic_cost_per_daly >}} if all {{< var state_rtt_adopting_state_count_nounit >}} states adopt and the mature system produces the modeled discovery rate. It is not the full cost per DALY of every treatment and service in the system.
 
-The conditional philanthropic cost per DALY divides that public-good investment by the health benefit if all 50 states adopt and the mature system produces the modeled discovery rate. It excludes patient and payer spending on treatment delivery because those payments buy care and evidence generation rather than consuming the philanthropic campaign budget.
-
-At the central estimate, the modeled philanthropic cost per life saved is {{< var state_rtt_philanthropic_cost_per_life_saved >}}, which is {{< var state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier_nounit >}} times lower than the midpoint of GiveWell's cited modeled range across top charities [@givewell-cost-per-life-saved]. The comparison is so large because a relatively small campaign and registry are assumed to unlock treatment, sponsor, payer, clinic, and investor spending that philanthropists do not supply.
+At the central estimate, the modeled launch cost per life saved is {{< var state_rtt_philanthropic_cost_per_life_saved >}}, which is {{< var state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier_nounit >}} times lower than the midpoint of GiveWell's cited modeled range across top charities [@givewell-cost-per-life-saved]. This is a scale benchmark, not a like-for-like program comparison: the launch-cost numerator excludes treatment and service costs that GiveWell's full-program estimates include.
 
 {{< include ../figures/state-rtt-philanthropic-leverage-comparison.qmd >}}
 
-The cost-per-DALY Monte Carlo shows uncertainty in the conditional estimate itself:
-
 {{< include ../figures/mc-distribution-state_rtt_philanthropic_cost_per_daly.qmd >}}
-
-For a grant decision, multiply the conditional benefit by the donor's own probability that the grant produces full adoption, mature implementation, and the modeled scientific effect. Equivalently, divide the conditional cost per life saved by that probability. Keeping that judgment outside the model avoids another arbitrary scenario parameter.
-
-### Commercial capital funds the parts that can earn revenue
-
-Review, compliance, clinical administration, manufacturing, monitoring, data infrastructure, and successful treatment assets can all produce revenue. Commercial capital can therefore finance:
-
-- experimental treatment review board services and compliance;
-- licensed treatment and pragmatic-trial sites;
-- manufacturing and distribution;
-- treatment sponsors and holders of shelved post-Phase-1 assets;
-- interoperable registry, analytics, and monitoring infrastructure; and
-- payer contracts that condition coverage on evidence production.
-
-Donors fund the public-good layer that no company can capture. Investors fund services and assets that can earn revenue. Neither group has to finance the entire system.
-
-{{< include ../figures/state-rtt-commercial-evidence-flywheel.qmd >}}
-
-The flywheel maps possible cash flows, not promised investor returns. Actual returns depend on lawful charging, treatment demand, reimbursement, liability, protocol quality, and whether the evidence changes clinical or regulatory decisions.
 
 ## The federal boundary
 
@@ -158,4 +125,4 @@ The next step is a transparent Montana demonstration that adds interoperable enr
 
 The original Right to Try model spread from its first state in 2014 to 41 states by 2018 [@goldwater-rtt-41-states-2018]. That history establishes a distribution channel, not a guarantee. The evidence amendment must prove its value in operation.
 
-Any implementing bill should require Enroll, Compare, Pool, and Publish. That turns 50 possible access experiments into one continually learning treatment system.
+Any implementing bill should require Enroll, Compare, Pool, and Publish. That turns {{< var state_rtt_adopting_state_count_nounit >}} possible access experiments into one continually learning treatment system.

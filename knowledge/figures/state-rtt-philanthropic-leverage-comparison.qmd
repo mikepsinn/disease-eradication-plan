@@ -50,12 +50,12 @@ ax.set_xlabel(f"{unit} (log scale, lower is better)", fontsize=11)
 ax.grid(axis="x", which="both", linestyle=":", alpha=0.35)
 clean_spines(ax)
 
-fig.suptitle("Modeled Philanthropic Cost per Life Saved", fontsize=21, weight="bold", y=1.01)
+fig.suptitle("Modeled Launch Cost per Life Saved", fontsize=21, weight="bold", y=1.01)
 fig.text(
     0.5,
     -0.03,
     "Universal Right to Try with Evidence assumes full adoption and the modeled discovery acceleration.\n"
-    "The GiveWell comparison uses the midpoint of its cited modeled range, not a DALY conversion.",
+    "RTT includes launch costs only; GiveWell includes full program costs.",
     ha="center",
     va="top",
     fontsize=10,
@@ -66,8 +66,8 @@ output_path = get_figure_output_path("state-rtt-philanthropic-leverage-compariso
 plt.savefig(output_path, dpi=200, bbox_inches="tight", facecolor=COLOR_WHITE)
 add_png_metadata(
     output_path,
-    title="Universal Right to Try with Evidence Modeled Philanthropic Cost per Life Saved",
-    description="Conditional cost per modeled life saved compared with the midpoint of GiveWell's cited modeled range.",
+    title="Universal Right to Try with Evidence Modeled Launch Cost per Life Saved",
+    description="Conditional launch cost per modeled life saved compared with the midpoint of GiveWell's cited full-program range.",
 )
 plt.show()
 ```

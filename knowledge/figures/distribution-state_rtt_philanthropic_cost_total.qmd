@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Universal Right to Try with Evidence Philanthropic Cost"
+#| fig-cap: "Probability Distribution: Universal Right to Try with Evidence Launch Cost"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +21,7 @@ central_value = 65000000.0
 low = 25000000
 high = 200000000
 dist_type = "lognormal"
-display_name = "Universal Right to Try with Evidence Philanthropic Cost"
+display_name = "Universal Right to Try with Evidence Launch Cost"
 unit = "USD"
 
 # Calculate distribution parameters
@@ -106,12 +106,12 @@ ax.plot(x, y, color=COLOR_BLACK, linewidth=2)
 ax.axvline(central_value, color=COLOR_BLACK, linestyle='--', linewidth=2,
            label=f'Central: {central_value:,.2g}')
 
-# Mark confidence interval
+# Mark uncertainty interval
 
 ax.axvline(low, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
-           label=f'95% CI Low: {low:,.2g}')
+           label=f'modeled range low: {low:,.2g}')
 ax.axvline(high, color=COLOR_BLACK, linestyle=':', linewidth=1.5, alpha=0.7,
-           label=f'95% CI High: {high:,.2g}')
+           label=f'modeled range high: {high:,.2g}')
 
 # Shade the CI region
 
@@ -155,4 +155,4 @@ add_png_metadata(
 plt.show()
 ```
 
-*This chart shows the assumed probability distribution for this parameter. The shaded region represents the 95% confidence interval where we expect the true value to fall.*
+*This chart shows the assumed probability distribution for this parameter. The shaded region marks the modeled range.*

@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Universal Right to Try with Evidence Cost in NIH Budget Hours"
+display_name = "Universal Right to Try with Evidence Launch Cost in NIH Budget Hours"
 
 # Baseline and units
 
@@ -25,7 +25,7 @@ baseline = 12.114893617021277
 # Tornado data from sensitivity analysis
 
 drivers = ['STATE_RTT_PHILANTHROPIC_COST_TOTAL', 'NIH_ANNUAL_BUDGET']
-driver_labels = ['Universal Right to Try with Evidence Philanthropic Cost', 'NIH Annual Budget']
+driver_labels = ['Universal Right to Try with Evidence Launch Cost', 'NIH Annual Budget']
 impacts_low = [-7.45531914893617, 0.5384397163120553]
 impacts_high = [25.161702127659577, -0.7268936170212772]
 
