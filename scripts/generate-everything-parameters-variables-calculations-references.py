@@ -1081,6 +1081,8 @@ def main():
             f"[*] Skipping TypeScript survey file: optional {survey_json.relative_to(project_root)} not found"
         )
 
+    uncertainty_data: Dict[str, Dict[str, Any]] = {}
+
     # Always generate uncertainty outputs when module is available
     if simulate is not None:
         logger.debug("[*] Generating uncertainty summaries...")
@@ -1154,6 +1156,7 @@ def main():
                 }
         with open(analysis_dir / "samples.json", "w", encoding="utf-8", newline='\n') as f:
             json.dump(summaries, f, indent=2)
+        uncertainty_data = summaries
         logger.debug(f"[OK] Wrote {(analysis_dir / 'samples.json').relative_to(project_root)}")
 
         # Generate parameter summary (compact reference file)
@@ -1748,7 +1751,7 @@ def main():
     logger.debug("[*] Generating parameters-and-calculations.qmd...")
     qmd_output = project_root / "knowledge" / "appendix" / "parameters-and-calculations.qmd"
     # citation_data already parsed at script start - reuse it here
-    generate_parameters_and_calculations_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping)
+    generate_parameters_and_calculations_qmd(parameters, qmd_output, available_refs=available_refs, params_file=parameters_path, citation_data=citation_data, chapter_mapping=chapter_mapping, uncertainty_data=uncertainty_data)
 
     # Generate filtered parameters-and-calculations files for all Quarto configs
     # Each config (book, manual, papers) gets only the parameters it uses (plus transitive dependencies)
@@ -1758,7 +1761,8 @@ def main():
         parameters=parameters,
         available_refs=available_refs,
         params_file=parameters_path,
-        citation_data=citation_data
+        citation_data=citation_data,
+        uncertainty_data=uncertainty_data,
     )
     if paper_params_results:
         logger.debug(f"[OK] Generated {len(paper_params_results)} config-specific parameter appendices")

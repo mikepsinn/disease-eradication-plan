@@ -102,7 +102,8 @@ def generate_all_paper_parameters_qmd(
     parameters: Dict[str, Dict[str, Any]],
     available_refs: Optional[Set[str]] = None,
     params_file: Optional[Path] = None,
-    citation_data: Optional[Dict[str, Dict[str, Any]]] = None
+    citation_data: Optional[Dict[str, Dict[str, Any]]] = None,
+    uncertainty_data: Optional[Dict[str, Dict[str, Any]]] = None,
 ) -> Dict[str, int]:
     """
     Generate filtered parameters-and-calculations QMD files for all Quarto configs.
@@ -193,7 +194,8 @@ def generate_all_paper_parameters_qmd(
             available_refs=available_refs,
             params_file=params_file,
             citation_data=citation_data,
-            site_url=site_url
+            site_url=site_url,
+            uncertainty_data=uncertainty_data,
         )
 
         if count > 0:

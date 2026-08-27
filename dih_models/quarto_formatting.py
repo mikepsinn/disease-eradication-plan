@@ -27,6 +27,7 @@ Usage:
 
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from dih_models.formatting import format_parameter_value
@@ -263,7 +264,11 @@ def generate_html_with_tooltip(param_name: str, value: Any, comment: str = "", i
     return html
 
 
-def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
+def generate_uncertainty_section(
+    value: Any,
+    unit: str = "",
+    confidence_interval: tuple[float, float] | None = None,
+) -> list[str]:
     """
     Generate human-friendly uncertainty explanation for a parameter.
 
@@ -280,7 +285,8 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
     content = []
 
     # Check if we have any uncertainty metadata
-    has_ci = hasattr(value, "confidence_interval") and value.confidence_interval
+    resolved_interval = confidence_interval or getattr(value, "confidence_interval", None)
+    has_ci = resolved_interval is not None
     has_dist = hasattr(value, "distribution") and value.distribution
     has_se = hasattr(value, "std_error") and value.std_error
     has_sensitivity = hasattr(value, "sensitivity") and value.sensitivity
@@ -295,7 +301,7 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
     technical_parts = []
 
     if has_ci:
-        low, high = value.confidence_interval
+        low, high = resolved_interval
         low_str = format_parameter_value(low, unit)
         high_str = format_parameter_value(high, unit)
         interval_label = getattr(value, "interval_label", None) or "95% CI"
@@ -321,7 +327,7 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
     main_value = float(value)
 
     if has_ci:
-        low, high = value.confidence_interval
+        low, high = resolved_interval
 
         # Calculate percentage range from central value
         low_pct = abs((main_value - low) / main_value * 100) if main_value != 0 else 0
@@ -351,7 +357,12 @@ def generate_uncertainty_section(value: Any, unit: str = "") -> list[str]:
         if has_dist:
             dist_name = value.distribution.value if hasattr(value.distribution, "value") else str(value.distribution)
 
-        if interval_label == "95% CI":
+        is_statistical_ci = re.fullmatch(
+            r"\d+(?:\.\d+)?%\s*(?:CI|confidence interval)",
+            interval_label,
+            flags=re.IGNORECASE,
+        ) is not None
+        if is_statistical_ci:
             explanation = f"{certainty_phrase}. The true value likely falls between {low_str} and {high_str} (±{avg_pct:.0f}%). This represents {range_desc} that our Monte Carlo simulations account for when calculating overall uncertainty in the results."
         elif is_calculated:
             explanation = f"The propagated model results fall between {low_str} and {high_str}. This {range_desc} reflects uncertainty carried through the calculation, not a statistical confidence interval for an observed effect."

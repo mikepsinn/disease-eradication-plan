@@ -213,7 +213,8 @@ function paramTree(rootName) {
       });
       const range = document.createElement("span");
       range.className = "rp-range";
-      range.textContent = ci ? `${fmtValue(meta, lo)} – ${fmtValue(meta, hi)} (95% CI)` : "adjustable";
+      const intervalLabel = meta.intervalLabel || "95% CI";
+      range.textContent = ci ? `${fmtValue(meta, lo)} – ${fmtValue(meta, hi)} (${intervalLabel})` : "adjustable";
       ctrl.appendChild(slider);
       ctrl.appendChild(reset);
       ctrl.appendChild(range);

@@ -63,6 +63,25 @@ def _generate_used_in_links(param_name: str, chapter_mapping: Dict[str, list] | 
 from dih_models.reference_parser import parse_references_bib
 
 
+def _sampled_confidence_interval(
+    param_name: str,
+    value: Any,
+    uncertainty_data: Dict[str, Dict[str, Any]] | None,
+) -> tuple[float, float] | None:
+    """Return propagated bounds for explicitly labeled calculated ranges."""
+    explicit_interval = getattr(value, "confidence_interval", None)
+    if explicit_interval:
+        return explicit_interval
+    if not getattr(value, "interval_label", None) or not uncertainty_data:
+        return None
+    sampled = uncertainty_data.get(param_name, {})
+    low = sampled.get("p5")
+    high = sampled.get("p95")
+    if low is None or high is None:
+        return None
+    return float(low), float(high)
+
+
 def format_citation(ref_data: Dict[str, Any]) -> str:
     """
     Format citation data as a professional-looking citation string.
@@ -111,6 +130,7 @@ def generate_parameters_and_calculations_qmd(
     citation_data: Dict[str, Dict[str, Any]] | None = None,
     site_url: str | None = None,
     chapter_mapping: Dict[str, list] | None = None,
+    uncertainty_data: Dict[str, Dict[str, Any]] | None = None,
 ):
     """
     Generate comprehensive parameters-and-calculations.qmd appendix.
@@ -411,7 +431,11 @@ def generate_parameters_and_calculations_qmd(
                     content.append("")
 
             # Uncertainty section with human-friendly explanations (for calculated values too)
-            uncertainty_content = generate_uncertainty_section(value, unit)
+            uncertainty_content = generate_uncertainty_section(
+                value,
+                unit,
+                _sampled_confidence_interval(param_name, value, uncertainty_data),
+            )
             content.extend(uncertainty_content)
 
             # Confidence and notes
@@ -536,7 +560,11 @@ def generate_parameters_and_calculations_qmd(
                 content.append("")
 
             # Uncertainty section with human-friendly explanations
-            uncertainty_content = generate_uncertainty_section(value, unit)
+            uncertainty_content = generate_uncertainty_section(
+                value,
+                unit,
+                _sampled_confidence_interval(param_name, value, uncertainty_data),
+            )
             content.extend(uncertainty_content)
 
             # Add input distribution chart if exists (for external params with uncertainty)
@@ -612,7 +640,11 @@ def generate_parameters_and_calculations_qmd(
                 content.append("")
 
             # Uncertainty section with human-friendly explanations (for definitions too)
-            uncertainty_content = generate_uncertainty_section(value, unit)
+            uncertainty_content = generate_uncertainty_section(
+                value,
+                unit,
+                _sampled_confidence_interval(param_name, value, uncertainty_data),
+            )
             content.extend(uncertainty_content)
 
             # Add input distribution chart if exists (for definitions with uncertainty)

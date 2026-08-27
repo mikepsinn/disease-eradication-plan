@@ -53,6 +53,15 @@ def test_lognormal_range_is_described_as_modeled_bounds() -> None:
     assert "±" not in section
 
 
+def test_non_default_statistical_ci_label_is_not_described_as_model_bounds() -> None:
+    parameter = _modeled_parameter()
+    parameter.interval_label = "90% CI"
+    section = "\n".join(generate_uncertainty_section(parameter, "USD"))
+
+    assert "The true value likely falls between" in section
+    assert "not a statistical confidence interval" not in section
+
+
 def test_input_distribution_chart_uses_named_range(tmp_path) -> None:
     output = generate_input_distribution_chart_qmd(
         "SYNTHETIC_MODELED_COST",
@@ -139,3 +148,41 @@ def test_calculation_appendix_preserves_input_interval_label(tmp_path) -> None:
     output = output_path.read_text(encoding="utf-8")
 
     assert "(modeled range:" in output
+
+
+def test_calculation_appendix_includes_sampled_named_range(tmp_path) -> None:
+    calculated = Parameter(
+        100,
+        manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+        source_type="calculated",
+        description="Synthetic calculated outcome with propagated uncertainty.",
+        unit="years",
+        formula="BASE * 2",
+        latex=r"y = 2b",
+        inputs=["BASE"],
+        compute=lambda context: context["BASE"] * 2,
+        interval_label="90% model range",
+    )
+    output_path = tmp_path / "parameters-and-calculations-test.qmd"
+    generate_parameters_and_calculations_qmd(
+        {"SYNTHETIC_CALCULATION": {"value": calculated, "comment": ""}},
+        output_path,
+        citation_data={},
+        uncertainty_data={"SYNTHETIC_CALCULATION": {"p5": 70, "p95": 150}},
+    )
+    output = output_path.read_text(encoding="utf-8")
+
+    assert "90% model range: [70 years, 150 years]" in output
+    assert "propagated model results fall between 70 years and 150 years" in output
+
+
+def test_reactive_control_uses_exported_interval_label() -> None:
+    reactive_params = (
+        Path(__file__).resolve().parents[2]
+        / "knowledge"
+        / "includes"
+        / "reactive-params.qmd"
+    ).read_text(encoding="utf-8")
+
+    assert 'const intervalLabel = meta.intervalLabel || "95% CI";' in reactive_params
+    assert "(${intervalLabel})" in reactive_params
