@@ -120,7 +120,7 @@ plt.show()
 | Baseline (deterministic) | $0.000338 |
 | Mean (expected value) | $0.000338 |
 | Median (50th percentile) | $0.000338 |
-| Standard Deviation | $2.44e-06 |
+| Standard Deviation | $0.00000244 |
 | 90% Range (5th-95th percentile) | [$0.000334, $0.000343] |
 
 *The histogram shows the distribution of Expected Value of a Vote (US) across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*

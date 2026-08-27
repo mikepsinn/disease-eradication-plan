@@ -19,7 +19,7 @@ setup_chart_style()
 
 names = ["Universal Right to Try\nwith Evidence (conditional)", "GiveWell modeled range\nmidpoint"]
 values = [
-    float(STATE_RTT_PHILANTHROPIC_COST_PER_LIFE_SAVED),
+    float(STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED),
     float(GIVEWELL_COST_PER_LIFE_AVG),
 ]
 unit = "USD/life"
@@ -50,7 +50,7 @@ ax.set_xlabel(f"{unit} (log scale, lower is better)", fontsize=11)
 ax.grid(axis="x", which="both", linestyle=":", alpha=0.35)
 clean_spines(ax)
 
-fig.suptitle("Modeled Philanthropic Cost per Life Saved", fontsize=21, weight="bold", y=1.01)
+fig.suptitle("Modeled Cost per Life Saved", fontsize=21, weight="bold", y=1.01)
 fig.text(
     0.5,
     -0.03,
@@ -62,11 +62,11 @@ fig.text(
 )
 add_watermark(fig)
 
-output_path = get_figure_output_path("state-rtt-philanthropic-leverage-comparison.png")
+output_path = get_figure_output_path("state-rtt-givewell-cost-comparison.png")
 plt.savefig(output_path, dpi=200, bbox_inches="tight", facecolor=COLOR_WHITE)
 add_png_metadata(
     output_path,
-    title="Universal Right to Try with Evidence Modeled Philanthropic Cost per Life Saved",
+    title="Universal Right to Try with Evidence Modeled Cost per Life Saved",
     description="Conditional cost per modeled life saved compared with the midpoint of GiveWell's cited modeled range.",
 )
 plt.show()

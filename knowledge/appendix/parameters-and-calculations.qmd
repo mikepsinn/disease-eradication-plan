@@ -39,15 +39,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 900 parameters used in the analysis, organized by type:
+This appendix documents all 901 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 255
-- Calculated values: 457
+- Calculated values: 458
 - Core definitions: 188
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (457 parameters) • [External Data Sources](#sec-external) (255 parameters) • [Core Definitions](#sec-definitions) (188 parameters)
+[Calculated Values](#sec-calculated) (458 parameters) • [External Data Sources](#sec-external) (255 parameters) • [Core Definitions](#sec-definitions) (188 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -25198,11 +25198,11 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Hours of the FDA annual program budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.
+Hours of the FDA annual program budget equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.
 
 **Inputs**:
 
-- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Universal Right to Try with Evidence Implementation Cost](#sec-state_rtt_implementation_cost_total): $65 million (95% CI: $25 million - $200 million)
 - [FDA Annual Program Budget](#sec-fda_annual_program_budget) 📊: $7.06 billion
 
 $$
@@ -25227,48 +25227,15 @@ $$
 
 :::
 
-### Universal Right to Try with Evidence Cost in NIH Budget Hours: 12.1 hours {#sec-state_rtt_nih_budget_equivalent_hours}
+### Universal Right to Try with Evidence Implementation Cost per DALY: $0.000134 {#sec-state_rtt_implementation_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Hours of the NIH annual budget equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.
+Conditional implementation cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.
 
 **Inputs**:
 
-- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
-- [NIH Annual Budget](#sec-nih_annual_budget) 📊: $47 billion (95% CI: $45 billion - $50 billion)
-
-$$
-Hours_{RTT,NIH} = \frac{C_{RTT}}{Budget_{NIH}} \times 8,760
-$$
-
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-state_rtt_nih_budget_equivalent_hours.qmd >}}
-
-{{< include ../figures/sensitivity-table-state_rtt_nih_budget_equivalent_hours.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-state_rtt_nih_budget_equivalent_hours.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-state_rtt_nih_budget_equivalent_hours.qmd >}}
-
-:::
-
-### Universal Right to Try with Evidence Philanthropic Cost per DALY: $0.000134 {#sec-state_rtt_philanthropic_cost_per_daly}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Conditional philanthropic cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.
-
-**Inputs**:
-
-- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Universal Right to Try with Evidence Implementation Cost](#sec-state_rtt_implementation_cost_total): $65 million (95% CI: $25 million - $200 million)
 - [DALYs Averted from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_dalys) 🔢: 483 billion DALYs
 
 $$
@@ -25328,17 +25295,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-state_rtt_philanthropic_cost_per_daly.qmd >}}
+{{< include ../figures/tornado-state_rtt_implementation_cost_per_daly.qmd >}}
 
-{{< include ../figures/sensitivity-table-state_rtt_philanthropic_cost_per_daly.qmd >}}
+{{< include ../figures/sensitivity-table-state_rtt_implementation_cost_per_daly.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-state_rtt_philanthropic_cost_per_daly.qmd >}}
+{{< include ../figures/mc-distribution-state_rtt_implementation_cost_per_daly.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-state_rtt_philanthropic_cost_per_daly.qmd >}}
+{{< include ../figures/exceedance-state_rtt_implementation_cost_per_daly.qmd >}}
 
 **Used in:**
 
@@ -25346,15 +25313,15 @@ $$
 
 :::
 
-### Universal Right to Try with Evidence Philanthropic Cost per Life Saved: $0.00707 {#sec-state_rtt_philanthropic_cost_per_life_saved}
+### Universal Right to Try with Evidence Implementation Cost per Life Saved: $0.00707 {#sec-state_rtt_implementation_cost_per_life_saved}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Conditional philanthropic cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.
+Conditional implementation cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.
 
 **Inputs**:
 
-- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Universal Right to Try with Evidence Implementation Cost](#sec-state_rtt_implementation_cost_total): $65 million (95% CI: $25 million - $200 million)
 - [Lives Saved from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_lives_saved) 🔢: 9.19 billion deaths
 
 $$
@@ -25414,21 +25381,54 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+{{< include ../figures/tornado-state_rtt_implementation_cost_per_life_saved.qmd >}}
 
-{{< include ../figures/sensitivity-table-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+{{< include ../figures/sensitivity-table-state_rtt_implementation_cost_per_life_saved.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+{{< include ../figures/mc-distribution-state_rtt_implementation_cost_per_life_saved.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-state_rtt_philanthropic_cost_per_life_saved.qmd >}}
+{{< include ../figures/exceedance-state_rtt_implementation_cost_per_life_saved.qmd >}}
 
 **Used in:**
 
 - [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
+### Universal Right to Try with Evidence Cost in NIH Budget Hours: 12.1 hours {#sec-state_rtt_nih_budget_equivalent_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Hours of the NIH annual budget equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.
+
+**Inputs**:
+
+- [Universal Right to Try with Evidence Implementation Cost](#sec-state_rtt_implementation_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [NIH Annual Budget](#sec-nih_annual_budget) 📊: $47 billion (95% CI: $45 billion - $50 billion)
+
+$$
+Hours_{RTT,NIH} = \frac{C_{RTT}}{Budget_{NIH}} \times 8,760
+$$
+
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_nih_budget_equivalent_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_nih_budget_equivalent_hours.qmd >}}
 
 :::
 
@@ -25674,6 +25674,92 @@ $$
 
 :::
 
+### Disability-Equivalent Suffering Years Prevented by Universal Right to Try with Evidence: 189 billion years {#sec-state_rtt_treatment_acceleration_suffering_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional disability-equivalent years of suffering prevented by the treatment schedule shift: the years-lived-with-disability share of the DALYs averted. A disability weight of 0.25 sustained for four years equals one full-disability-equivalent year; it does not claim every year is a year of maximum conscious pain.
+
+**Inputs**:
+
+- [DALYs Averted from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_dalys) 🔢: 483 billion DALYs
+- [YLD Proportion of Total DALYs](#sec-global_yld_proportion_of_dalys) 📊: 0.39 proportion (SE: ±0.03 proportion)
+
+$$
+\begin{gathered}
+Years_{suffer,RTT} \\
+= DALYs_{RTT} \times Pct_{YLD} \\
+= 483B \times 0.39 \\
+= 189B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{RTT} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT} \\
+= 2.88B \times 92.6\% \times 181 \\
+= 483B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_suffering_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_suffering_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_suffering_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_suffering_years.qmd >}}
+
+**Used in:**
+
+- [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](../appendix/state-right-to-trial-impact.html)
+
+:::
+
 ### Average Treatment Acceleration from Universal Right to Try with Evidence: 181 years {#sec-state_rtt_treatment_acceleration_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -25746,11 +25832,11 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central philanthropic launch cost for adopting Universal Right to Try with Evidence in all 50 states.
+Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states.
 
 **Inputs**:
 
-- [Universal Right to Try with Evidence Philanthropic Cost](#sec-state_rtt_philanthropic_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Universal Right to Try with Evidence Implementation Cost](#sec-state_rtt_implementation_cost_total): $65 million (95% CI: $25 million - $200 million)
 - [Military Overspend](#sec-us_gov_waste_military_overspend) 🔢: $702 billion
 
 $$
@@ -25793,16 +25879,16 @@ $$
 
 :::
 
-### Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint: 636.2kx {#sec-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier}
+### Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint: 636.2kx {#sec-state_rtt_vs_givewell_cost_per_life_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Conditional philanthropic cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
+Conditional cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator counts only the campaign and registry launch and excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
 
 **Inputs**:
 
 - [GiveWell Midpoint of Modeled Cost per Life Saved Range](#sec-givewell_cost_per_life_avg) 📊: $4,500
-- [Universal Right to Try with Evidence Philanthropic Cost per Life Saved](#sec-state_rtt_philanthropic_cost_per_life_saved) 🔢: $0.00707
+- [Universal Right to Try with Evidence Implementation Cost per Life Saved](#sec-state_rtt_implementation_cost_per_life_saved) 🔢: $0.00707
 
 $$
 \begin{gathered}
@@ -25870,17 +25956,17 @@ $$
 
 #### Sensitivity Analysis
 
-{{< include ../figures/tornado-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+{{< include ../figures/tornado-state_rtt_vs_givewell_cost_per_life_multiplier.qmd >}}
 
-{{< include ../figures/sensitivity-table-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+{{< include ../figures/sensitivity-table-state_rtt_vs_givewell_cost_per_life_multiplier.qmd >}}
 
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+{{< include ../figures/mc-distribution-state_rtt_vs_givewell_cost_per_life_multiplier.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-state_rtt_vs_givewell_philanthropic_cost_per_life_multiplier.qmd >}}
+{{< include ../figures/exceedance-state_rtt_vs_givewell_cost_per_life_multiplier.qmd >}}
 
 **Used in:**
 
@@ -50616,11 +50702,11 @@ Perceived social friction cost of wearing a political message in public, express
 
 :::
 
-### Universal Right to Try with Evidence Philanthropic Cost: $65 million {#sec-state_rtt_philanthropic_cost_total}
+### Universal Right to Try with Evidence Implementation Cost: $65 million {#sec-state_rtt_implementation_cost_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total philanthropic cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This philanthropic numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.
+Total implementation cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This launch-cost numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.
 
 #### Uncertainty Range
 
@@ -50632,7 +50718,7 @@ Total philanthropic cost of adopting Universal Right to Try with Evidence in all
 
 #### Input Distribution
 
-{{< include ../figures/distribution-state_rtt_philanthropic_cost_total.qmd >}}
+{{< include ../figures/distribution-state_rtt_implementation_cost_total.qmd >}}
 
 *Core definition*
 

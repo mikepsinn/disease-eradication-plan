@@ -51,7 +51,7 @@ for bar, value in zip(bars, values):
     )
 
 ax.set_title("The Full 50-State Launch Is Tiny at Federal Scale", fontsize=20, weight="bold", pad=16)
-launch_cost = format_parameter_value(float(STATE_RTT_PHILANTHROPIC_COST_TOTAL), "USD")
+launch_cost = format_parameter_value(float(STATE_RTT_IMPLEMENTATION_COST_TOTAL), "USD")
 ax.set_xlabel(f"Hours of each annual budget equal to the {launch_cost} launch (log scale)", fontsize=12)
 ax.text(
     0.5,

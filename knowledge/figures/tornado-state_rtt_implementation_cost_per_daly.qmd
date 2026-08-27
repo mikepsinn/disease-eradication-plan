@@ -16,7 +16,7 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Universal Right to Try with Evidence Philanthropic Cost per DALY"
+display_name = "Universal Right to Try with Evidence Implementation Cost per DALY"
 
 # Baseline and units
 
@@ -24,8 +24,8 @@ baseline = 0.0001344564487359796
 
 # Tornado data from sensitivity analysis
 
-drivers = ['STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'STATE_RTT_PHILANTHROPIC_COST_TOTAL', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'RARE_DISEASES_COUNT_GLOBAL', 'GLOBAL_ANNUAL_DALY_BURDEN']
-driver_labels = ['Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Universal Right to Try with Evidence Philanthropic Cost', 'Diseases Getting First Treatment Per Year', 'Eventually Avoidable DALY Percentage', 'Total Number of Rare Diseases Globally', 'Global Annual DALY Burden']
+drivers = ['STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'STATE_RTT_IMPLEMENTATION_COST_TOTAL', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'RARE_DISEASES_COUNT_GLOBAL', 'GLOBAL_ANNUAL_DALY_BURDEN']
+driver_labels = ['Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Universal Right to Try with Evidence Implementation Cost', 'Diseases Getting First Treatment Per Year', 'Eventually Avoidable DALY Percentage', 'Total Number of Rare Diseases Globally', 'Global Annual DALY Burden']
 impacts_low = [0.0010746701559554573, -8.274242999137206e-05, -6.274634274345714e-05, 0.00011463167335496203, 2.2409408122663304e-05, 7.3877169635153605e-06]
 impacts_high = [-1.668437685045002e-05, 0.0002792557012208808, 0.0001344564487359796, -7.3706721589685725e-06, -4.033693462079387e-05, -6.656259838414821e-06]
 
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-state_rtt_philanthropic_cost_per_daly.png')
+output_path = get_figure_output_path('tornado-state_rtt_implementation_cost_per_daly.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(

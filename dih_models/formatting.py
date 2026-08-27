@@ -170,7 +170,14 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
             formatted_num = f"${clean_number(f'{raw_dollars:.2f}')}"
         elif abs_raw >= 0.01:
             formatted_num = f"${clean_number(f'{raw_dollars:.3f}')}"
+        elif abs_raw >= 1e-6:
+            # Fixed-point with 3 significant digits: ":.3g" flips to
+            # scientific notation below 1e-4 ("$4.1e-05"), useless in prose.
+            decimals = -int(math.floor(math.log10(abs_raw))) + 2
+            formatted_num = f"${clean_number(f'{raw_dollars:.{decimals}f}')}"
         elif abs_raw > 0:
+            # Sub-microdollar values only appear as float noise in stats
+            # tables; scientific notation is more compact than 12+ decimals.
             formatted_num = f"${raw_dollars:.3g}"
         else:
             formatted_num = "$0"
