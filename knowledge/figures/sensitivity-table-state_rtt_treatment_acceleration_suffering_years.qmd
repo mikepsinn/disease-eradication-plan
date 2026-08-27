@@ -1,0 +1,10 @@
+**Sensitivity Indices for Disability-Equivalent Suffering Years Prevented by Universal Right to Try with Evidence**
+
+Regression-based sensitivity showing which inputs explain the most variance in the output.
+
+| Input Parameter | Sensitivity Coefficient | Interpretation |
+|:----------------|------------------------:|:---------------|
+| DALYs Averted from Universal Right to Try with Evidence (DALYs) | 0.9822 | Strong driver |
+| YLD Proportion of Total DALYs (proportion) | 0.1721 | Weak driver |
+
+*Interpretation*: Standardized coefficients show the change in output (in SD units) per 1 SD change in input. Values near ±1 indicate strong influence; values exceeding ±1 may occur with correlated inputs.

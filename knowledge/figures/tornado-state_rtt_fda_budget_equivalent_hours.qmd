@@ -24,8 +24,8 @@ baseline = 80.69877714566412
 
 # Tornado data from sensitivity analysis
 
-drivers = ['STATE_RTT_PHILANTHROPIC_COST_TOTAL']
-driver_labels = ['Universal Right to Try with Evidence Philanthropic Cost']
+drivers = ['STATE_RTT_IMPLEMENTATION_COST_TOTAL']
+driver_labels = ['Universal Right to Try with Evidence Implementation Cost']
 impacts_low = [-49.66078593579331]
 impacts_high = [167.60515253330243]
 

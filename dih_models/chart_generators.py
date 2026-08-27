@@ -638,13 +638,13 @@ ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
 ax1.legend(loc='upper right', fontsize=9)
 clean_spines(ax1)
 
-# --- Right: CDF (Cumulative Probability) ---
+# --- Right: Exceedance Probability (survival curve, 100 - CDF) ---
 
 sorted_samples = np.sort(samples)
-cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
+exceedance = 100 - np.arange(1, len(sorted_samples) + 1) / len(sorted_samples) * 100
 
-ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
-ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
+ax2.plot(sorted_samples, exceedance, color=COLOR_BLACK, linewidth=2)
+ax2.fill_between(sorted_samples, 0, exceedance, alpha=0.1, color=COLOR_BLACK)
 
 # Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
 
@@ -658,7 +658,7 @@ ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
 ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
 
 ax2.set_xlabel(f'{{display_name}} ({{units}})' if units else display_name, fontsize=11)
-ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
+ax2.set_ylabel('Probability of Exceeding (%)', fontsize=11)
 ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
 ax2.set_ylim(0, 100)
 clean_spines(ax2)
@@ -703,7 +703,7 @@ plt.show()
 | Standard Deviation | {format_parameter_value(std, units, include_unit=_table_include_unit)} |
 | 90% Range (5th-95th percentile) | [{format_parameter_value(p5, units, include_unit=_table_include_unit)}, {format_parameter_value(p95, units, include_unit=_table_include_unit)}] |
 
-*The histogram shows the distribution of {display_name} across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows {min(len(samples), 1000):,} of the {len(samples):,} Monte Carlo draws for {display_name}; the summary statistics use all {len(samples):,}. The exceedance curve (right) shows the probability of the outcome exceeding any given value.*
 '''
 
     # Write QMD file
@@ -880,7 +880,7 @@ add_png_metadata(
 plt.show()
 ```
 
-*This exceedance probability chart shows the likelihood that {display_name} will exceed any given threshold. Higher curves indicate more favorable outcomes with greater certainty.*
+*This exceedance probability chart shows the likelihood that {display_name} will exceed any given threshold. The higher the curve at a threshold, the more likely the value exceeds it.*
 '''
 
     # Write QMD file

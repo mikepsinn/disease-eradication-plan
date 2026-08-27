@@ -48,3 +48,5 @@ boto3  # S3-compatible API for Cloudflare R2 audiobook uploads
 tweepy  # Twitter/X API v2
 atproto  # Bluesky AT Protocol
 praw  # Reddit API
+# Testing (scripts/tests/ imports pytest; pre-commit Pyright needs it resolvable)
+pytest

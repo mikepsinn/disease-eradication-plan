@@ -850,14 +850,14 @@ def _strip_confidence_intervals(variables_path: Path, verbose: bool = True) -> i
     original = content
     stripped = 0
 
-    # Strip CI from display text: " (95% CI: $10.5M-$19.5M)" or " (95% CI: 8 years-18 years)"
-    # Pattern: space, open paren, "95% CI: ", content up to closing paren
-    content, n = re.subn(r' \(95% CI: [^)]+\)', '', content)
+    # Strip CI from display text: " (95% CI: $10.5M-$19.5M)" or " (90% CI: 8 years-18 years)"
+    # Pattern: space, open paren, "95% CI: " or "90% CI: ", content up to closing paren
+    content, n = re.subn(r' \(9[05]% CI: [^)]+\)', '', content)
     stripped += n
 
-    # Strip CI from title attributes: "| 95% CI: [$78, $100] |" or "| 95% CI: [8 years, 18 years] |"
+    # Strip CI from title attributes: "| 95% CI: [$78, $100] |" or "| 90% CI: [8 years, 18 years] |"
     # Keep the surrounding pipes clean (remove leading pipe + CI + trailing pipe, leave one pipe)
-    content, n = re.subn(r' \| 95% CI: \[[^\]]*\]', '', content)
+    content, n = re.subn(r' \| 9[05]% CI: \[[^\]]*\]', '', content)
     stripped += n
 
     if content != original:
