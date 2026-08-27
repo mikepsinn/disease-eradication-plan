@@ -35,6 +35,7 @@ Usage:
     )
 """
 
+import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -577,6 +578,7 @@ def generate_monte_carlo_distribution_chart_qmd(
     p95 = outcome_data.get("p95", baseline)
     units = outcome_data.get("units", "")
     axis_label = f"{chart_label} ({units})" if units else chart_label
+    figure_caption = f"Monte Carlo Distribution: {chart_label} (10,000 simulations)"
 
     # Table values: include format-inherent suffixes (x, :1, $, %) but not verbose unit words
     _table_include_unit = _summary_table_includes_unit(units)
@@ -584,7 +586,7 @@ def generate_monte_carlo_distribution_chart_qmd(
     # Generate QMD with embedded Python
     qmd_content = f'''```{{python}}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: {display_name} (10,000 simulations)"
+#| fig-cap: {json.dumps(figure_caption, ensure_ascii=False)}
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -607,8 +609,9 @@ std = {_round_sig(std)}
 p5 = {_round_sig(p5)}
 p50 = {_round_sig(p50)}
 p95 = {_round_sig(p95)}
-display_name = "{display_name}"
-units = "{units}"
+display_name = {display_name!r}
+chart_label = {chart_label!r}
+units = {units!r}
 
 # Create figure with two subplots
 
@@ -677,7 +680,7 @@ ax2.annotate(f'{{exceed_baseline_pct:.0f}}% chance of\\nexceeding baseline',
 
 # Main title
 
-fig.suptitle(f'Monte Carlo Analysis: {{display_name}}', fontsize=14, weight='bold', y=1.02)
+fig.suptitle(f'Monte Carlo Analysis: {{chart_label}}', fontsize=14, weight='bold', y=1.02)
 
 # Add watermark
 
@@ -801,6 +804,8 @@ def generate_cdf_chart_qmd(
     if param_metadata and hasattr(param_metadata.get("value"), "unit"):
         units = param_metadata["value"].unit or ""
 
+    figure_caption = f"Probability of Exceeding Threshold: {chart_label}"
+
     # Auto-generate thresholds if not provided
     if thresholds is None:
         sorted_s = sorted(samples)
@@ -811,7 +816,7 @@ def generate_cdf_chart_qmd(
 
     qmd_content = f'''```{{python}}
 #| echo: false
-#| fig-cap: "Probability of Exceeding Threshold: {chart_label}"
+#| fig-cap: {json.dumps(figure_caption, ensure_ascii=False)}
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -829,9 +834,9 @@ setup_chart_style()
 
 samples = {_round_seq(samples[:2000] if len(samples) > 2000 else samples)}
 thresholds = {_round_seq(thresholds)}
-display_name = "{display_name}"
-chart_label = "{chart_label}"
-units = "{units}"
+display_name = {display_name!r}
+chart_label = {chart_label!r}
+units = {units!r}
 
 # Calculate exceedance probabilities (1 - CDF)
 
