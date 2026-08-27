@@ -697,15 +697,29 @@ def publish_scoreboard_parameter_metadata(
     params_file: Path,
     chapter_mapping: Dict[str, list],
     citation_data: Dict[str, Dict[str, Any]],
+    samples_json_path: Path | None = None,
 ) -> None:
     import json
+
+    uncertainty_data: Dict[str, Dict[str, Any]] = {}
+    if samples_json_path and samples_json_path.exists():
+        with open(samples_json_path, encoding="utf-8") as f:
+            uncertainty_data = json.load(f)
 
     param_names = _collect_parameter_inputs(SCOREBOARD_PARAMETER_NAMES, parameters)
     json_params: Dict[str, Any] = {}
     citation_ids: set[str] = set()
 
     for name in param_names:
-        entry = _public_parameter_entry(name, parameters[name], parameters, params_file, chapter_mapping, citation_data)
+        entry = _public_parameter_entry(
+            name,
+            parameters[name],
+            parameters,
+            params_file,
+            chapter_mapping,
+            citation_data,
+            uncertainty_data,
+        )
         if not entry:
             continue
         json_params[name] = entry
@@ -1193,7 +1207,12 @@ def main():
             samples_json_path,
         )
         publish_scoreboard_parameter_metadata(
-            project_root, parameters, parameters_path, chapter_mapping, citation_data
+            project_root,
+            parameters,
+            parameters_path,
+            chapter_mapping,
+            citation_data,
+            samples_json_path,
         )
 
         # Write formula fallback log if any parameters used it

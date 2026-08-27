@@ -12740,6 +12740,11 @@
       "formula": "STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS * HOURS_PER_YEAR",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_treatment_acceleration_suffering_hours",
       "latex": "\\begin{gathered}\nHours_{suffer,RTT} = Years_{suffer,RTT} \\times 8760 = 189B \\times 8760 = 1650T\n\\\\[0.5em]\n\\text{where } Years_{suffer,RTT} = DALYs_{RTT} \\times Pct_{YLD} = 483B \\times 0.39 = 189B\n\\\\[0.5em]\n\\text{where } DALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "confidenceInterval": [
+        658973595487811.2,
+        3136447274924949.5
+      ],
+      "intervalLabel": "90% model range",
       "inputs": [
         "STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS"
       ],
