@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Disability-Equivalent Suffering Years Prevented by Universal Right to Try with Evidence (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Disability-equivalent years prevented (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,8 +23,9 @@ std = 86305138503.5
 p5 = 75225296288.6
 p50 = 179614270705.0
 p95 = 358041926361.0
-display_name = "Disability-Equivalent Suffering Years Prevented by Universal Right to Try with Evidence"
-units = "years"
+display_name = 'Disability-Equivalent Suffering Years Prevented by Universal Right to Try with Evidence'
+chart_label = 'Disability-equivalent years prevented'
+units = 'years'
 
 # Create figure with two subplots
 
@@ -93,7 +94,7 @@ ax2.annotate(f'{exceed_baseline_pct:.0f}% chance of\nexceeding baseline',
 
 # Main title
 
-fig.suptitle(f'Monte Carlo Analysis: {display_name}', fontsize=14, weight='bold', y=1.02)
+fig.suptitle(f'Monte Carlo Analysis: {chart_label}', fontsize=14, weight='bold', y=1.02)
 
 # Add watermark
 

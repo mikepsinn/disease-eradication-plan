@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Monte Carlo Distribution: Universal Right to Try with Evidence Launch Cost per Life Saved (10,000 simulations)"
+#| fig-cap: "Monte Carlo Distribution: Cost per life saved (10,000 simulations)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,8 +23,9 @@ std = 0.0104952675238
 p5 = 0.0021050997161
 p50 = 0.00626809414016
 p95 = 0.0235920076529
-display_name = "Universal Right to Try with Evidence Launch Cost per Life Saved"
-units = "USD/life"
+display_name = 'Universal Right to Try with Evidence Launch Cost per Life Saved'
+chart_label = 'Cost per life saved'
+units = 'USD/life'
 
 # Create figure with two subplots
 
@@ -93,7 +94,7 @@ ax2.annotate(f'{exceed_baseline_pct:.0f}% chance of\nexceeding baseline',
 
 # Main title
 
-fig.suptitle(f'Monte Carlo Analysis: {display_name}', fontsize=14, weight='bold', y=1.02)
+fig.suptitle(f'Monte Carlo Analysis: {chart_label}', fontsize=14, weight='bold', y=1.02)
 
 # Add watermark
 
