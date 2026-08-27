@@ -74,7 +74,7 @@ In this Act:
 
 (c) **Protections Retained.** Nothing in subsection (b) exempts a person from applicable manufacturing and quality standards, prohibitions on false or misleading statements, or the consent, ethical review, evidence, safety-reporting, and liability requirements of this Act. No person may represent an eligible investigational treatment as safe or effective beyond what reliable evidence supports.
 
-(d) **No Compelled Participation.** Nothing in this Act requires a manufacturer, provider, facility, ethics board, evidence system, insurer, employer, or other person to manufacture, recommend, provide, administer, review, record, or pay for a treatment.
+(d) **No Compelled Participation.** Except for the duty under section 203(g) to record the disposition of a formal request received through a qualified evidence system, nothing in this Act requires a manufacturer, provider, facility, ethics board, evidence system, insurer, employer, or other person to manufacture, recommend, provide, administer, review, record, or pay for a treatment.
 
 (e) **Clinical Judgment.** A provider may decline or discontinue treatment when the provider reasonably believes that the expected risks exceed the expected benefits for the patient.
 
@@ -118,6 +118,8 @@ In this Act:
 (e) **Public Results.** A qualified evidence system shall publish timely, deidentified aggregate results, including negative and inconclusive results, in a searchable and machine-readable form. Individually identifiable information may not be publicly disclosed.
 
 (f) **Safety Reporting.** Serious and unexpected adverse events must be reported promptly to the supplier, reviewing ethics board, qualified evidence system, and Secretary under timelines established by the Secretary.
+
+(g) **Access and Market Records.** A formal request for treatment under this Act must be submitted or recorded through a qualified evidence system and assigned a persistent identifier. For every formal request, the system shall record the request date, treatment and condition, patient subgroup characteristics specified in the evaluation protocol, each supplier and provider disposition and stated reason for refusal or withdrawal, price offered, amount agreed and paid, payer category, any reported supply limitation, and whether and when treatment began. A supplier or provider receiving a formal request through the system shall promptly submit its disposition and the required information in its possession, whether or not treatment begins. The system shall link an accepted request to the treatment evidence record, preserve the complete nonpublic records for audit, and provide the Comptroller General access necessary for the evaluation under section 403(c). Public reporting must use deidentified aggregate data and may not disclose individually identifiable information or protected trade secrets.
 
 ### SEC. 204. INDEPENDENT ETHICAL AND SAFETY REVIEW
 
@@ -197,7 +199,14 @@ In this Act:
 
 (b) **Existing Resources.** The Secretary shall use existing appropriations and may assess transparent, cost-based qualification fees. Nothing in this Act authorizes a new federal appropriation to purchase or subsidize treatment.
 
-(c) **Evaluation.** The Comptroller General shall report to Congress each year the number of protocols, patients treated, suppliers participating, serious adverse events, completed follow-up records, publicly reported results, regulatory uses of the evidence, and federal implementation costs.
+(c) **Independent Evaluation.**
+
+1. **Preregistered plan.** Before the access right in section 201 takes effect, the Comptroller General, in consultation with independent health economists, biostatisticians, patient representatives, and drug-development researchers, shall publish a timestamped evaluation protocol and baseline in a permanent public repository. The initial protocol shall remain available. Every later amendment must be logged publicly with its date, reason, and affected analyses. The protocol shall identify outcomes, comparison groups, statistical methods, subgroup analyses, and criteria for interpreting success or failure.
+2. **Access and market outcomes.** The Comptroller General shall report annually on requests, enrollments, supplier refusals, posted prices, payments, treatment supply, supplier entry, market concentration, and participation by patient subgroup.
+3. **Health and evidence outcomes.** The annual report shall include mortality, condition-specific quality-adjusted life years, patient-reported outcomes, displacement of effective care, serious adverse events, follow-up completeness, missingness, protocol deviations, treatment-condition pairs reaching prespecified evidence thresholds, time to reliable answers, independent replications, and regulatory uses of the evidence.
+4. **Methods and uncertainty.** Reports shall distinguish randomized from observational evidence, identify biases and spillovers, publish uncertainty intervals and sensitivity analyses, and release reproducible code and nonidentifiable data to the maximum extent permitted by law.
+5. **Economic evaluation.** Public implementation cost, real treatment resources, patient financial burden, treatment prices, medical spending, and net health shall be reported separately. Benefits from earlier access, faster discovery, medical-cost changes, research-cost changes, and option value shall be defined as mutually exclusive channels before aggregation. The evaluation must reconcile interactions and overlap among the channels, and non-additive or overlapping benefits may not be summed.
+6. **Counterfactual.** The evaluation shall compare outcomes under this Act with the best available counterfactual, including expanded access, the existing federal Right to Try Act, accelerated approval, off-label treatment, and contemporaneous medical progress unrelated to this Act.
 
 (d) **Severability.** If any provision of this Act is held invalid, the remainder shall not be affected.
 
