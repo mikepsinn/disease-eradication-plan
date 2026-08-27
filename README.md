@@ -615,7 +615,7 @@ This is why aliens don't visit.
 
 > Governance dysfunction suppresses roughly $101 trillion in recoverable value each year. Under this paper's 20-year transition model, the Minimum Sustainable Trajectory (1% Treaty) reaches 1.71x the Earth baseline ($322 trillion), while the Optimal Governance Trajectory reaches 56.7x the Earth baseline, raises average income to $1.16 million versus $20,483 on the status-quo path, and reaches $10.7 quadrillion in total output. This paper is the project's canonical derivation of that ceiling from an explicit waste ledger, opportunity ledger, and source-linked parameter model. [Incentive Alignment Bonds](https://iab.warondisease.org) are presented as the adoption mechanism, and full formulas, uncertainty ranges, and sensitivity outputs appear in [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
 
-### [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](https://right-to-trial-impact.acceleratedmedicine.org)
+### [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](https://rtt-impact.acceleratedmedicine.org)
 
 > A conditional schedule-shift model of state legislation that lets post-Phase-1 treatments finance their own evidence generation and accelerates treatments for global diseases and aging.
 
