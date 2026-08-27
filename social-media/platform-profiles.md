@@ -43,7 +43,7 @@ This video: [TOPIC DESCRIPTION]
 Free book: https://manual.WarOnDisease.org
 Impact calculator: https://impact.warondisease.org
 Vote to not die: https://wishocracy.org
-dFDA spec: https://spec.dfda.earth
+dFDA spec: https://dfda-protocol.acceleratedmedicine.org
 
 #WarOnDisease #1PercentTreaty #CureDiseaseNotCountries
 
@@ -130,7 +130,7 @@ Funded through Incentive Alignment Bonds (IABs), which align investor returns, p
 
 Read the full plan: https://manual.WarOnDisease.org
 See the math: https://impact.warondisease.org
-dFDA specification: https://spec.dfda.earth
+dFDA specification: https://dfda-protocol.acceleratedmedicine.org
 
 ### Industry
 
@@ -165,7 +165,7 @@ Alien. Observing Earth since 1945. You spend 604x more on murder than medicine. 
 | Book (main) | https://manual.WarOnDisease.org |
 | Impact calculator | https://impact.warondisease.org |
 | dFDA impact | https://dfda-impact.warondisease.org |
-| dFDA spec | https://spec.dfda.earth |
+| dFDA spec | https://dfda-protocol.acceleratedmedicine.org |
 | Wishocracy | https://wishocracy.org |
 | IAB paper | https://iab.warondisease.org |
 

@@ -8,7 +8,7 @@
   "cost-of-change.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.html",
   "court-of-humanity.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html",
   "dfda-impact.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html",
-  "dfda-spec.warondisease.org": "https://spec.dfda.earth",
+  "dfda-spec.warondisease.org": "https://dfda-protocol.acceleratedmedicine.org",
   "drug-cost.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/drug-development-cost-analysis.html",
   "futures.warondisease.org": "https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html",
   "humanity-v-government.warondisease.org": "https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html",
