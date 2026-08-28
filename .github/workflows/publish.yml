@@ -826,6 +826,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Deploy redirect Worker to Cloudflare
         run: npx --yes wrangler@4.126.0 deploy --config cloudflare/redirect-worker/wrangler.jsonc
