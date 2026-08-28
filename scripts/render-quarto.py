@@ -1650,6 +1650,16 @@ def render_quarto(  # pyright: ignore[reportGeneralTypeIssues]
                 if site_url:
                     fix_og_metadata(str(html_output_dir), site_url=site_url)
 
+                # Cloudflare Pages reads _headers/_redirects from the deploy
+                # root, and Quarto skips underscore-prefixed source files, so
+                # bundle them into the output after the render.
+                pages_meta_dir = project_root / "cloudflare" / "pages" / config_name
+                if pages_meta_dir.is_dir():
+                    for meta_file in sorted(pages_meta_dir.iterdir()):
+                        if meta_file.is_file():
+                            shutil.copy2(meta_file, html_output_dir / meta_file.name)
+                            print(f"[OK] Bundled Cloudflare Pages meta file: {meta_file.name}")
+
             gh_group_start("VALIDATION: POST-RENDER (HTML)")
             output_dir = metadata["output_dir"]
             validation_exit = run_post_validation(output_dir=output_dir)

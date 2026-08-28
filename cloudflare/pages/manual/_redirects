@@ -1,0 +1,11 @@
+# Cloudflare Pages path redirects for the manual site, ported from
+# netlify.toml. Copied into the deploy root by scripts/render-quarto.py.
+# Host-based redirects (legacy subdomains) live in the redirect Worker
+# (cloudflare/redirect-worker/), not here - Pages ignores host rules.
+# /index.html -> / and 404.html handling are automatic on Pages.
+
+# Scoreboard embed configurator (replaced delay-counter-preview.html).
+# Extensionless target: Pages 308s .html URLs to clean URLs, so pointing at
+# the .html form would add a second redirect hop.
+/delay-counter-preview.html /assets/scoreboard-embed 301
+/scoreboard /assets/scoreboard-embed 302

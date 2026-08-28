@@ -1,0 +1,58 @@
+# Cloudflare Pages headers for the manual site, ported from netlify.toml.
+# Copied into the deploy root by scripts/render-quarto.py (Quarto skips
+# underscore-prefixed files, so this cannot live in the Quarto source tree).
+#
+# Pages matching differs from Netlify: * crosses "/" boundaries, and when a
+# request matches multiple rules their headers ACCUMULATE. A narrower rule
+# that changes Cache-Control must first detach the inherited value with
+# "! Cache-Control", then set its own. Rules are ordered general -> specific.
+
+# Security headers plus a safe caching default: always revalidate. HTML is
+# served at clean URLs (Pages redirects /page.html -> /page), so an *.html
+# rule would miss most page requests; the catch-all covers them.
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cache-Control: public, max-age=0, must-revalidate
+
+# CSS/JS everywhere: fresh 1hr, serve-stale-while-revalidating for 24hr, so
+# SCSS/JS edits propagate within ~1hr without a revalidation roundtrip on
+# repeat visitors.
+/*.css
+  ! Cache-Control
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/*.js
+  ! Cache-Control
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/assets/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+# The embeddable scoreboard files must stay fresh at their bare URLs:
+# third-party sites paste <script src=".../assets/js/mortality-counters.js">
+# with no cache-busting version, and the configurator page is HTML.
+/assets/js/mortality-counters.js
+  ! Cache-Control
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/assets/css/scoreboard.css
+  ! Cache-Control
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Extensionless: Pages serves scoreboard-embed.html at the clean URL and
+# 308s the .html form, so the clean URL is what browsers actually request.
+/assets/scoreboard-embed
+  ! Cache-Control
+  Cache-Control: public, max-age=0, must-revalidate
+
+# The embeddable scoreboard fetches this JSON cross-origin from third-party
+# sites (public read-only data), and its values must stay live, not a
+# year-stale immutable cache hit.
+/assets/json/parameters.json
+  Access-Control-Allow-Origin: *
+  ! Cache-Control
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
