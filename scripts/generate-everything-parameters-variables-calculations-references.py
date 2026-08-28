@@ -234,7 +234,7 @@ from dih_models.footer_generator import generate_footer_html
 from dih_models.links_generator import generate_links_qmd
 from dih_models.subdomain_redirects_generator import generate_subdomain_redirects_js
 from dih_models.readme_generator import generate_readme
-from generate_redirects import generate_redirects
+from generate_redirects import generate_cloudflare_redirects, generate_redirects
 from dih_models.quarto_references_generator import update_references_from_quarto
 from dih_models.references_bib_utils import sort_bib_file, validate_bib_file
 from dih_models.typescript_generator import generate_typescript_parameters, generate_typescript_survey
@@ -1794,6 +1794,11 @@ def main():
     logger.debug("[*] Generating _redirects from Quarto configs...")
     redirects_path = generate_redirects(project_root)
     logger.debug(f"[OK] Generated {redirects_path}")
+
+    # Generate the Cloudflare redirect Worker map and routes from the same source
+    logger.debug("[*] Generating Cloudflare redirect Worker config...")
+    for cloudflare_path in generate_cloudflare_redirects(project_root):
+        logger.debug(f"[OK] Generated {cloudflare_path}")
 
     # Final validation and sort of references.bib
     logger.debug("[*] Validating and sorting references.bib...")
