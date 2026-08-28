@@ -1184,6 +1184,7 @@ class ReferenceID(str, Enum):
     SYSTEMICPEACE_ORG = "systemicpeace-org"
     TABAK_GOF_TESTIMONY_2024 = "tabak-gof-testimony-2024"
     TABARROK1998 = "tabarrok1998"
+    TAME_METFORMIN_FUNDING_2022 = "tame-metformin-funding-2022"
     TARP_BAILOUT_700B = "tarp-bailout-700b"
     TAXFOUNDATION_TARIFFS_2025 = "taxfoundation-tariffs-2025"
     TAXFOUNDATION2024_COMPLIANCE = "taxfoundation2024-compliance"

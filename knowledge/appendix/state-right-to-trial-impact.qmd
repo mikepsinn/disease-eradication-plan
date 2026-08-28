@@ -51,6 +51,8 @@ A candidate treatment can have completed initial human safety testing and still 
 
 That does not mean every trial becomes {{< var dfda_trial_cost_reduction_factor >}} cheaper. Complex and high-risk studies will still need specialized sites, procedures, and monitoring. It means routine care can often replace dedicated research visits and duplicate data collection while retaining prespecified outcomes, safety reporting, reliable analysis, and a comparison group.
 
+The pool of stranded candidates is large: roughly {{< var safe_compounds_count >}} with established human safety profiles, counting approved drugs and food substances already recognized as safe, and most sit outside patent protection. The moment a trial proves a cheap unpatented compound works, any manufacturer can sell it at commodity prices, so no sponsor can recoup a conventional Phase 3 bill. Metformin is the standard example: an FDA-cleared trial of the generic diabetes drug against aging itself, tracking 3,000 people over five years at an estimated $30 million to $50 million, sat unfunded for more than six years because no company could profit from a positive result [@tame-metformin-funding-2022].
+
 The candidate pool is much larger than a count of compounds. One compound may be tested for several diseases, doses, combinations, or subtypes. Additional candidates do not multiply disease burden. They increase the chance that the first effective treatment for each condition is found sooner.
 
 ## One policy-effect input instead of a pretend forecast
@@ -101,7 +103,9 @@ The launch cost is {{< var state_rtt_implementation_cost_total >}}: the 50-state
 
 The conditional cost per DALY divides that launch cost by the health benefit if all 50 states adopt and the mature system produces the modeled discovery rate. It excludes patient and payer spending on treatment delivery because those payments buy care and evidence generation rather than consuming the launch budget.
 
-At the central estimate, the modeled launch cost per life saved is {{< var state_rtt_implementation_cost_per_life_saved >}}. The midpoint of GiveWell's cited modeled range across top charities is {{< var state_rtt_vs_givewell_cost_per_life_multiplier_nounit >}} times that figure [@givewell-cost-per-life-saved]. The scopes differ: the GiveWell number counts full program costs, while this numerator counts only the campaign and registry launch that unlock treatment, sponsor, payer, clinic, and investor spending. One effect is left out because it is hard to model: once many post-Phase-1 treatments can compete for the same condition, that competition could push patient prices down substantially.
+At the central estimate, the modeled launch cost per life saved is {{< var state_rtt_implementation_cost_per_life_saved >}}. The midpoint of GiveWell's cited modeled range across top charities is {{< var state_rtt_vs_givewell_cost_per_life_multiplier_nounit >}} times that figure [@givewell-cost-per-life-saved]. The scopes differ: the GiveWell number counts full program costs, while this numerator counts only the campaign and registry launch that unlock treatment, sponsor, payer, clinic, and investor spending.
+
+Three economic effects are left out because each is hard to estimate and they overlap one another and the discovery multiplier: price competition once several post-Phase-1 treatments target the same condition, substitution of cheap unpatented treatments for expensive patented ones, and lower medical and caregiving spending when aging and chronic disease are treated earlier. Summing them would double count. The model treats them the way it treats the direct participant effect: real, unmodeled, and excluded from the headline totals. Every excluded channel biases the conditional cost per healthy year against the policy.
 
 {{< include ../figures/state-rtt-givewell-cost-comparison.qmd >}}
 
