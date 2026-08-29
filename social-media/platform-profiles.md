@@ -120,7 +120,7 @@ Redirecting 1% of global military spending to clinical trials through Incentive 
 
 ### About Section
 
-150,000 humans die every 24 hours from preventable diseases. That's one Holocaust every 40 days, except nobody invades anyone about it because diseases don't have oil.
+150,000 humans die every 24 hours from disease and aging. The trials that could discover effective treatments remain drastically underfunded.
 
 Meanwhile, global military spending is $2.7 trillion/year. Government spending on clinical trials is 604 times less. 95% of diseases have zero approved treatments.
 

@@ -84,19 +84,13 @@ Valuing these lost years at a conservative global Value of a Statistical Life Ye
 
 ## Scale
 
-9/11: {{< var sept_11_deaths_nounit >}} dead. We spent $8 trillion in response.
-
-Holocaust: 6 million dead.
-
-Efficacy lag: {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} dead. That's {{< var efficacy_lag_deaths_911_equivalents >}}, or 17 Holocausts.
+The estimated efficacy lag caused {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} deaths.
 
 We paid {{< var efficacy_lag_cumulative_excess_cost >}} (lower bound - Phase 2/3 costs only) to cause {{< var efficacy_lag_deaths_911_equivalents >}}.
 
 {{< include ../figures/mc-distribution-efficacy_lag_cumulative_excess_cost.qmd >}}
 
 {{< include ../figures/tornado-efficacy_lag_cumulative_excess_cost.qmd >}}
-
-![The FDA has killed more people than the Holocaust, but they did it by accident while trying to help, which is somehow more disturbing.](/assets/images/invisible-graveyard/a-dramatic-bar-chart-comparing-the-scale-of-three-tragedies--chart.jpg)
 
 That's {{< var pharma_phase_2_3_cost_barrier >}} per drug for Phase 2/3 efficacy trials, paid by patients through higher drug prices. Before 1962, the AMA's {{< var pre_1962_physician_count >}} tracked patient outcomes and JAMA published the results. We replaced that with tiny trials on handpicked patients.
 
