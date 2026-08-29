@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 24 parameters used in the analysis, organized by type:
+This appendix documents all 25 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 8
 - Calculated values: 12
-- Core definitions: 4
+- Core definitions: 5
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (12 parameters) • [External Data Sources](#sec-external) (8 parameters) • [Core Definitions](#sec-definitions) (4 parameters)
+[Calculated Values](#sec-calculated) (12 parameters) • [External Data Sources](#sec-external) (8 parameters) • [Core Definitions](#sec-definitions) (5 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1084,6 +1084,28 @@ Percentage of deaths that are eventually avoidable with sufficient biomedical re
 #### Input Distribution
 
 {{< include ../figures/distribution-eventually_avoidable_death_pct.qmd >}}
+
+*Core definition*
+
+:::
+
+### Safe Compounds Available for Testing: 9,500 compounds {#sec-safe_compounds_count}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total safe compounds available for repurposing (FDA-approved + GRAS substances, midpoint of 7,000-12,000 range)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [7,000 compounds, 12,000 compounds] • Distribution: Uniform
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 7,000 compounds and 12,000 compounds (±26%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The uniform distribution means any value in the range is equally likely.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-safe_compounds_count.qmd >}}
 
 *Core definition*
 
