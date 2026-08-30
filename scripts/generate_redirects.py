@@ -34,6 +34,7 @@ _END_MARKER = "# --- END AUTO-GENERATED REDIRECTS ---"
 # chained impact.dih.earth -> impact.warondisease.org -> the manual page).
 # Alias them to the same canonical target so they redirect in one hop.
 _LEGACY_HOST_ALIASES = {
+    "impact.dfda.earth": "dfda-impact.warondisease.org",
     "impact.dih.earth": "impact.warondisease.org",
     "models.dih.earth": "impact.warondisease.org",
 }
@@ -41,8 +42,8 @@ _LEGACY_HOST_ALIASES = {
 # Zones whose hosts get Worker routes. A route can only be created in a zone
 # that exists on the Cloudflare account; add "dih.earth" here once that zone
 # is on Cloudflare, otherwise the Worker deploy fails.
-_ROUTE_ZONES = ("warondisease.org",)
-_KNOWN_ZONES = ("warondisease.org", "dih.earth")
+_ROUTE_ZONES = ("warondisease.org", "dfda.earth")
+_KNOWN_ZONES = ("warondisease.org", "dfda.earth", "dih.earth")
 
 _WORKER_NAME = "legacy-subdomain-redirects"
 

@@ -1,0 +1,20 @@
+{
+  "externalSites": [
+    {
+      "name": "manual.warondisease.org",
+      "url": "https://manual.warondisease.org/",
+      "keyword": "manual.warondisease.org"
+    },
+    {
+      "name": "warondisease.org",
+      "url": "https://warondisease.org/",
+      "keyword": "Disease"
+    }
+  ],
+  "keywordOverrides": {
+    "court-of-humanity.warondisease.org": "court-of-humanity.html",
+    "links.warondisease.org": "Select Your Preferred Sensory Input Channel",
+    "listen.warondisease.org": "Skull Auditory Port Edition",
+    "papers.warondisease.org": "Papers &amp; Publications"
+  }
+}
