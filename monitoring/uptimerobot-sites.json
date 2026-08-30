@@ -11,6 +11,7 @@
       "keyword": "Disease"
     }
   ],
+  "excludedRedirectHosts": ["models.dih.earth"],
   "keywordOverrides": {
     "court-of-humanity.warondisease.org": "court-of-humanity.html",
     "links.warondisease.org": "Select Your Preferred Sensory Input Channel",
