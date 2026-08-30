@@ -1,0 +1,173 @@
+---
+title: "Every Idea for Ending War and Disease"
+description: "Every distinct mechanism, supporting system, campaign tactic, legal tool, government replacement, and deliberate joke proposed in the manual, with links and role labels."
+published: true
+tags:
+  - solution
+  - strategy
+  - index
+  - war
+  - disease
+scores:
+  quality: 8
+  value: 10
+  timeliness: 9
+  standalone: 9
+  voice: 8
+  importance: 10
+audience: "A reader who wants the entire option set on one page before deciding what to build, fund, pass, file, distribute, or test."
+feel: "Relief that the ideas form a system, plus permission to replace any weak part with something better."
+do: "Choose one mechanism that matches your position and complete its smallest executable next step."
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Your species produced enough plans for ending war and disease to require an index, then distributed them across a book so the index became another plan. Here is the repair.
+
+An idea earns its own place here if a reader could **build, fund, pass, run, file, distribute, or test it**. Evidence, calculations, and future projections support those ideas. They do not become additional solutions merely by acquiring their own PDFs.
+
+Not every idea is supposed to run at once. Some are the current route. Some are backup engines. Some are tools. Some are jokes. The cat-powered car is definitely a joke. This clarification is necessary because humans invented both parody and venture capital, then made them visually indistinguishable.
+
+## The current integrated route
+
+These parts form the current first implementation. Replace a tool if you have a better one. Do not remove the function it performs and announce that simplicity has been achieved.
+
+- **Set the target:** [What Matters](../proof/what-matters.qmd) defines the objective as more pleasant conscious experience and less unpleasant conscious experience, measured publicly through healthy life and median income.
+- **Close the loop:** [Theory of Operation](theory-of-operation.qmd) turns government into a feedback system with a target, controller, actuators, outcome sensors, and a wire that carries results back to the next decision.
+- **Keep the whole design forkable:** [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.qmd) connects the required functions while allowing better instruments to replace the current ones.
+- **Continuously improve the manual:** [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.qmd) requires proposed revisions to cover every necessary governance function, satisfy constitutional constraints, and survive adversarial review.
+- **Create an operating company:** [Earth Optimization Services](earth-optimization-services.qmd) is the reader-owned wrapper that turns the manual into products, tasks, capital allocation, and execution.
+- **Create concentrated political power:** [The Earth Optimization Fund](../economics/earth-optimization-fund.qmd) buys companies that already influence government, then uses ordinary shareholder rights to point that influence toward health and wealth.
+- **Redirect the existing lobbyists:** [The Loving Takeover](../appendix/loving-takeover.qmd) acquires enough defense-company ownership to make supporting the treaty the profitable long-term strategy for shareholders, employees, directors, and customers.
+- **Move the first large block of money:** [The 1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025] redirects the same percentage of every signatory's military spending to clinical trials, preserving the military balance while reducing the number of weapons.
+- **Receive and route the money:** [Decentralized Institutes of Health](dih.qmd) coordinates the health-industrial coalition, pays for results, publishes the data, and outsources execution to competing providers.
+- **Make treatments teach humanity something:** [The decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] connects treatments, patients, outcome tracking, and pragmatic trials through an open protocol.
+- **Let humans set priorities:** [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] gives each verified person equal standing in bounded public-resource allocation without selling additional votes to people with additional papers.
+- **Let evidence choose means:** [Optimocracy and the Optimitron](optimocracy.qmd) [@optimocracy-paper-2025] compare policies and budgets across jurisdictions, recommend what improves the target metrics, and mark failing programs for reduction.
+- **Turn recommendations into assignments:** [The Decentralized To-Do List for Humanity](../strategy/humanity-todo-list.qmd) decomposes “optimize Earth” into ranked tasks, names the lowest-cost actor for each one, and records whether the work happened.
+- **Make selfish behavior useful:** [Aligning Incentives](aligning-incentives.qmd) gives contractors, pharmaceutical companies, insurers, politicians, investors, and ordinary humans their own profitable reason to support the same outcome.
+
+## Medical discovery and access
+
+The medical engine is not one website. It is a family of compatible tools.
+
+- **Continuous evidence generation:** [The two-stage dFDA protocol](../appendix/dfda-spec-paper.qmd) uses real-world evidence to find promising signals, then pragmatic trials to confirm them.
+- **Treatment search and rankings:** [The dFDA interface](dfda.qmd) lets a patient search by condition, compare what worked for similar people, and find an available trial.
+- **Outcome Labels:** [Nutrition-facts-style treatment labels](dfda.qmd) publish benefits, harms, uncertainty, and the population behind the estimate instead of hiding the useful facts in a pamphlet written by the seller.
+- **A personal treatment assistant:** [The FDAi](dfda.qmd) matches a person's history and preferences to treatments, trials, and evidence that change as new outcomes arrive.
+- **Continuous safety monitoring:** [Federated outcome tracking](dfda.qmd) detects harms and effectiveness changes across participating systems without requiring one organization to own every patient's data.
+- **Commercial access after safety testing:** [The Right to Trial & FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.qmd) [@right-to-trial-paper-2025] permits access after initial human safety testing while requiring covered uses to generate evidence.
+- **Patient-directed research allocation:** [The DIH](dih.qmd) lets patients choose trials while Wishocracy handles bounded infrastructure decisions, replacing grant-writing contests with demand and measured results.
+- **Pay for outcomes and publish everything:** [The DIH data commons](dih.qmd) pays providers when useful work occurs and makes positive, negative, and boring results public.
+- **Build rails, not every train:** [The open ecosystem and bounty model](../appendix/open-ecosystem-and-bounty-model.qmd) publishes interfaces and pays for completed components so many independent builders can supply the system.
+
+## Evidence, budgets, and public control
+
+- **Optimal Policy Generator:** [The OPG](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025] turns cross-jurisdiction causal evidence into prioritized enact, replace, repeal, or maintain recommendations.
+- **Optimal Budget Generator:** [The OBG](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025] estimates where the next public dollar produces the most health and income, and which budget lines have passed the point of usefulness.
+- **[Political Dysfunction Tax](../problem/unrepresentative-democracy.qmd) [@political-dysfunction-tax-paper-2025]:** [The dysfunction ledger](../appendix/political-dysfunction-tax.qmd) prices the gap between current outcomes and the outcomes available under better-tested policy.
+- **[United States Efficiency Audit](../appendix/us-efficiency-audit.qmd) [@us-efficiency-audit-paper-2025]:** [The line-item audit](../appendix/us-efficiency-audit.qmd) identifies recoverable spending waste, compliance burdens, and policy-created economic losses.
+- **Four separate ledgers:** [Theory of Operation](theory-of-operation.qmd) separates wishes, evidence, earned contribution, and capital so money cannot quietly become a vote, a fact, and a moral virtue at the same time.
+- **Proof of personhood:** [The Earth Optimization Prize protocol](../appendix/earth-optimization-prize-protocol.qmd) [@earth-optimization-prize-paper-2025] [@earth-optimization-prize-protocol-paper-2025] defines interoperable identity providers and a shared nullifier system so one human receives one civic identity across participating pools.
+
+## Ways to create political force
+
+The current first route is EOS equity and shareholder control. The remaining mechanisms are complements, escalation paths, or alternatives if the first route is insufficient.
+
+- **[Court of Humanity](court-of-humanity.qmd) [@court-of-humanity-paper-2025]:** [Any human may sue any government](court-of-humanity.qmd), [sovereign immunity](court-of-humanity.qmd) is not a defense, and the treaty is the standing settlement offer.
+- **Legal architecture:** [The four-part legal framework](../legal/legal-framework.qmd) separates treaty, securities, political, and operational functions so helping humanity does not accidentally become several felonies stacked in a coat.
+- **Election-law compliance:** [The election-law design](../legal/election-law.qmd) uses lobbying, campaign spending, and organizational forms that current law already permits.
+- **Ready-to-file legislation:** [The legislation package](../strategy/legislation-package.qmd) gives lobbyists and legislators statutory text instead of asking them to convert a moral aspiration into legal syntax during lunch.
+- **Incentive Alignment Bonds:** [IABs](incentive-alignment-bonds.qmd) [@iab-paper-2025] are the backup campaign-financing engine. Investors fund passage and become a permanent concentrated interest for maintaining and expanding the treaty.
+- **Treaty financial plan:** [The raise, pass, manage model](../economics/treaty-financial-plan.qmd) separates campaign capital, treaty adoption, and the continuing allocation of treaty revenue.
+- **Earth Optimization Prize:** [The outcome prize](../strategy/earth-optimization-prize.qmd) rewards verified recruitment and progress toward health and income targets while letting depositors retain a failure-state claim on the pool.
+- **Parallel prize treasuries:** [The Prize Treasury](../economics/earth-optimization-prize-treasury.qmd) allows multiple independently custodied pools to support the same outcome instead of requiring one sacred bank account.
+- **Earth Optimization Points:** [The prize protocol](../appendix/earth-optimization-prize-protocol.qmd) records verified contribution and uses those receipts for prize distribution without turning them into purchasable civic votes.
+- **Global Referendum:** [A verified species-wide vote](../strategy/global-referendum.qmd) makes public support visible, difficult to counterfeit, and useful to every political path.
+- **Declaration of Optimization:** [The declaration](../strategy/declaration-of-optimization.qmd) states the purpose, metrics, and grievances before asking anyone to ratify the machinery intended to fix them.
+- **Earth Optimization Day:** [The annual action day](../strategy/earth-optimization-day.qmd) coordinates voting, public accountability, and a proposed one-percentage-point treaty ratchet around one recurring date.
+
+## Government replacements
+
+The suite replaces mechanical government functions with transparent rules while leaving value choices under human control.
+
+- **Department of Peace:** [The replacement for the war department](department-of-peace.qmd) treats organized violence as a negative-return transaction and supplies four mechanisms of its own:
+  - **Peace Payroll:** Pay leaders, commanders, and other pivotal humans more for declining war than they expect to gain from starting one.
+  - **Settlement Engine:** Publish the expected cost of fighting beside the cost of settlement and finance the cheaper option.
+  - **The Last War:** Let autonomous weapons destroy one another in an empty ocean, sell the broadcast, and direct the proceeds to clinical trials.
+  - **The Very Strong Robot:** Locate weapons and remove them from Earth without asking the weapons to vote on it.
+- **Automated Revenue Service:** [A transaction-level tax system](automated-revenue-service.qmd) collects simple rules automatically and eliminates filing as a household hobby.
+- **Universal Security Administration:** [One universal transfer](universal-security-administration.qmd) replaces overlapping welfare programs, eligibility traps, and the bureaucracies guarding them.
+- **Aligned Election Commission:** [A public alignment score](aligned-election-commission.qmd) connects campaign support to how closely an official's record matches constituents and evidence.
+- **Decentralized Accountability Office:** [A public ledger](decentralized-accountability-office.qmd) makes transactions continuously auditable instead of discovering theft after everyone involved has retired.
+- **Decentralized Census Bureau:** [Continuous population and welfare measurement](decentralized-census-bureau.qmd) replaces a periodic count and supplies the sensor array for the wider system.
+- **Algorithmic Monetary Authority:** [A rules-based currency system](algorithmic-monetary-authority.qmd) targets stable prices and distributes newly created money without routing it through politically selected intermediaries first.
+- **Transparent Securities Commission:** [Disclosure plus a competence check](transparent-securities-commission.qmd) replaces investor exclusion based on whether someone was already rich.
+- **Drug Treatment Administration:** [Treatment replaces punishment](drug-treatment-administration.qmd) for addiction, changing the DEA into the DTA and moving the problem into the medical system.
+- **Immigration Revenue Service:** [Legal entry by priced permits](immigration-revenue-service.qmd) replaces prohibition, collects part of the migration surplus, and distributes it to citizens.
+- **Decentralized Congress:** [Evidence-backed direct questions](decentralized-congress.qmd) replace purchased intermediaries voting on documents they did not read.
+- **[Algorithmic Public Administration](../futures/wishonia.qmd) [@algorithmic-public-administration-paper-2025]:** [The integrated protocol](../appendix/algorithmic-public-administration-paper.qmd) combines transparent accounting, preference aggregation, evidence, identity, automatic revenue, and rules-based monetary policy while preserving democratic control over ends.
+
+## Coordination, recruitment, and distribution
+
+- **Twenty Questions:** [A person-to-person call script](../strategy/questions.qmd) makes each participant explain the case to two more humans.
+- **Nonprofit coalition:** [The coalition strategy](../strategy/nonprofit-coalition-strategy.qmd) lets existing organizations contribute audiences, endorsements, ad grants, and trusted distribution without surrendering their missions.
+- **Voter-acquisition grants:** [The grant template](../grant-proposal/voter-acquisition-grant.qmd) funds a coordinator to combine nonprofit communication channels into referendum participation.
+- **Pre-built advertising:** [The Google Ads package](../appendix/google-ads-campaign-template.qmd) gives coalition partners campaign copy, targeting, and landing paths they can load into existing ad grants.
+- **AI coordination army:** [Agent coordination](ai-coordination-army.qmd) assigns, tracks, and verifies work at a scale human working memory cannot manage.
+- **Recruitment before infrastructure:** [The recruitment and propaganda plan](../appendix/recruitment-and-propaganda-plan.qmd) builds a committed audience before requiring a complete organization or product.
+- **First ninety days:** [Getting Started](../strategy/getting-started.qmd) sequences the smallest campaign, grant, embed, outreach, and prize-seeding actions for an operator with little time or staff.
+- **Initiating node:** [The initiating-node model](../strategy/initiating-node-memo.qmd) lets one institution convene and publish the first bounded pilot without becoming the permanent sovereign.
+- **Ninety-day institutional pilot:** [The pilot proposal](../grant-proposal/earth-optimization-prize-90-day-pilot.qmd) tests sponsorship, measurement, recruitment, and governance before scaling.
+- **Institution outreach:** [Reusable outreach templates](../strategy/prize-institution-outreach-email.qmd) make hosting the first pilot a concrete yes-or-no decision instead of another meeting about meetings.
+- **Campaign endorsement:** [The supporter survey](../strategy/ic2ewd-supporter-survey.qmd) gives organizations and individuals a defined endorsement path and specific contributions.
+- **Orientation film:** [The educational film](../educational-film.qmd) compresses the system into a short, producible visual explanation.
+- **Distribution checklist:** [The channel checklist](../strategy/distribution-checklist.qmd) converts book arguments into formats native to the places humans already waste time.
+- **Correcting the AIs:** [Canonical correction templates](../appendix/correcting-the-ais.qmd) turn bad model answers into training feedback and point future answers toward sourced mechanisms.
+- **Earth Optimization Commission:** [The commission](../strategy/earth-optimization-commission.qmd) appoints each participant President of Earth Optimization Services, asks what they would optimize first using the two metrics, and has each appoint successors.
+- **The Funniest Show in the Universe:** [The interview show](../strategy/funniest-show-in-the-universe.qmd) turns the commission process into repeatable public media.
+- **Special Education:** [Free role-specific tutoring](special-education.qmd) teaches each builder only the parts of the manual required for the job they accepted.
+
+## Ready-to-use repair procedures
+
+These are not arguments. They are printable or executable objects.
+
+- **Vandalism handout:** [The two-sided handout](../appendix/handout.qmd) explains the [shirt campaign](../appendix/joke.qmd) [@joke-paper-2026] to the person whose closet has just been optimized without authorization.
+- **The shirt and the funniest joke:** [The vandalism campaign](../appendix/joke.qmd) puts the message on clothing, distributes it through absurdity, and supplies the card and script that explain it.
+- **President notification letter:** [The notification](../appendix/president-notification-letter.qmd) tells a newly recognized EOS President what the job is and where to begin.
+- **Commission of the President:** [The printable commission](../appendix/commission-of-the-president.qmd) makes the appointment formal enough to frame and ridiculous enough to share.
+- **Presidential inauguration:** [The two-minute ceremony](../appendix/presidential-inauguration-ceremony.qmd) commissions each new President and sends the appointment chain forward.
+- **Humanity Manager agreement:** [The employment agreement, exam, and certificate](../appendix/humanity-manager-employment-agreement.qmd) turn reading into an accepted operational role.
+- **Notice of termination:** [The termination letter](../appendix/notice-of-termination.qmd) gives officials who maintain the current military allocation a literal performance review.
+- **Love letter:** [The friendly board letter](../appendix/love-letter.qmd) explains why redirecting lobbying toward health is in the recipient's financial and personal interest.
+- **Shareholder demand and lawsuit:** [The filing kit](../appendix/lawsuit.qmd) uses one-share standing, fiduciary questions, and the treaty settlement to force a board response.
+- **Per-contractor demand packets:** [The fact sheets](../appendix/pre-filled-demand-letters.qmd) supply addresses, filings, lobbying figures, and forums for specific defense contractors.
+- **Plaintiff media kit:** [The press package](../appendix/plaintiff-media-kit.qmd) gives a filer the release, journalist list, interview answers, and follow-up materials needed to make the filing public.
+- **Filing-day checklist:** [The one-page checklist](../appendix/filing-day-checklist.qmd) turns the shareholder action into a sequence a human can complete with a pen.
+- **Rule 14a-8 proposal:** [The shareholder proposal](../appendix/shareholder-proposal-14a-8.qmd) supplies the ballot text, supporting statement, cover letter, and escalation path after the demand window.
+
+## Downstream upgrades and deliberate nonsense
+
+- **Optimized food system:** [Produce the useful molecules directly](optimized-food-system.qmd) instead of growing a conscious animal as inefficient biological middleware.
+- **Personal optimization:** [The To-Do List](../strategy/humanity-todo-list.qmd) can nest “optimize your life” and “optimize your organization” beneath the planetary task instead of treating public and personal welfare as unrelated software projects.
+- **Catsoline:** [A cat-powered car](../appendix/catsoline.qmd) is an intentionally false EOS product disclosure demonstrating that memorable nonsense spreads farther than correct brochures. Do not place a cat in an engine. Humans required this sentence.
+
+## Ideas that change the reader instead of the machinery
+
+These do not allocate a dollar or pass a law. They are decision tools intended to make someone use one of the mechanisms above.
+
+- **Wishonia's Wager:** [Act when the downside and upside cannot be bounded](../proof/wishonias-wager.qmd), because ignoring a small probability of an enormous outcome is not caution. It is arithmetic avoidance.
+- **The no-bad-guys diagnosis:** [Redesign incentives instead of hunting villains](../proof/no-bad-guys.qmd), because the destructive allocation emerged without requiring a secret meeting of everyone responsible.
+- **The Biotechnological Imperative:** [Apply the universalization test](../proof/biotechnological-imperative.qmd): a civilization cannot rationally require everyone to fund killing before curing.
+- **The repairable-body frame:** [Treat biology as machinery](../proof/body-as-repairable-machine.qmd), because cells, tissues, and organ systems already demonstrate replacement, repair, and reprogramming.
+- **The epistemic reset:** [Assume a large fraction of inherited beliefs are wrong](../problem/i-am-retarded.qmd), including the political identities currently preventing the reader from evaluating unfamiliar mechanisms.
+- **The genetic-slavery frame:** [Treat evolved drives as legacy hardware](../problem/genetic-slavery.qmd) rather than giving fear, tribalism, and status competition permanent authority over nuclear weapons.
+- **The grandeur proof:** [Reject the delusion of insignificance](../proof/delusion-of-insignificance.qmd), because the universe telling itself it is too small to matter is still the universe making a decision.
+- **The personal-benefits calculator:** [Price the reader's own upside](../call-to-action/your-personal-benefits.qmd) in health, lifetime income, taxes, and investment value.
+- **The two futures:** [Compare Moronia and Wishonia](../futures.qmd) as complete trajectories rather than evaluating each reform against an imaginary status quo where nothing else changes.
+
+## What is not counted twice
+
+The proof chapters, economic models, detailed calculations, source collections, standalone papers, and future scenarios are the receipts. A paper that analyzes the 1% Treaty does not create a second treaty. A cost model for the dFDA does not create a second dFDA. A reference showing that pragmatic trials work does not create another trial protocol.
+
+If an executable mechanism in the manual is missing from this index, then the index is wrong. Fix it. The whole system is open source because a civilization that cannot accept a correction is not an optimized civilization. It is a comments section with weapons.

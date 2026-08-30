@@ -118,6 +118,7 @@ book:
     - part: "System Optimization"
       chapters:
         - knowledge/solution.qmd # ✅ Part II Intro ~8p
+        - knowledge/solution/every-idea.qmd # Canonical index of every distinct mechanism, supporting system, tactic, replacement, and deliberate joke in the manual
         - knowledge/solution/1-percent-treaty.qmd # ✅ A 1% treaty (includes TL;DR at top) ~12p
         - knowledge/solution/court-of-humanity.qmd # The Court of Humanity (decentralized accountability mechanism, makes the Treaty a settlement offer)
         - knowledge/solution/dih.qmd # ✅ Your DIH ~7p

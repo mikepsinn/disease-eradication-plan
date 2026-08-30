@@ -70,6 +70,7 @@ book:
     - part: "System Optimization"
       chapters:
         # CUT: solution.qmd - overview that previews all solution sub-chapters; redundant in sequential reading
+        - knowledge/solution/every-idea.qmd
         - knowledge/solution/1-percent-treaty.qmd
         - knowledge/solution/court-of-humanity.qmd
         - knowledge/solution/dih.qmd
