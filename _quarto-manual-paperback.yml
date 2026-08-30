@@ -71,12 +71,27 @@ book:
       chapters:
         # CUT: solution.qmd - overview that previews all solution sub-chapters; redundant in sequential reading
         - knowledge/solution/1-percent-treaty.qmd
+        - knowledge/solution/court-of-humanity.qmd
         - knowledge/solution/dih.qmd
         - knowledge/solution/dfda.qmd
         - knowledge/solution/aligning-incentives.qmd
         - knowledge/solution/incentive-alignment-bonds.qmd
         - knowledge/solution/optimocracy.qmd
         - knowledge/solution/wishocracy.qmd
+        - knowledge/solution/earth-optimization-services.qmd
+
+    - part: "Your Government, Debugged"
+      chapters:
+        - knowledge/solution/department-of-peace.qmd
+        - knowledge/solution/automated-revenue-service.qmd
+        - knowledge/solution/universal-security-administration.qmd
+        - knowledge/solution/aligned-election-commission.qmd
+        - knowledge/solution/decentralized-census-bureau.qmd
+        - knowledge/solution/algorithmic-monetary-authority.qmd
+        - knowledge/solution/transparent-securities-commission.qmd
+        - knowledge/solution/drug-treatment-administration.qmd
+        - knowledge/solution/immigration-revenue-service.qmd
+        - knowledge/solution/decentralized-congress.qmd
 
     - part: "For Skeptics"
       chapters:

@@ -1,6 +1,8 @@
 # How to End War and Disease
 
-Is everyone you've ever loved currently being slowly tortured, or at minimum scheduled to be slowly tortured and then brutally murdered by horrible diseases, while your government maintains enough nuclear weapons to destroy your civilization [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) times over despite only having the one civilization?
+Is everyone you've ever loved currently being slowly tortured, or at minimum scheduled to be slowly tortured and then brutally murdered by horrible diseases?
+
+Do your governments waste money on enough nuclear bombs to cause [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) nuclear winters despite only having the one civilization to apocalypse?
 
 If so, your planet may be eligible for optimization.
 
@@ -100,7 +102,7 @@ So it turns out your weapons companies sell tiny pieces of themselves to anyone 
 
 **Step 3: Sell 1% of the Bombs, Buy Biotechnology Companies**
 
-So the bomb company's board, which is now you, sells 1% of its bomb-making stuff and uses those papers to buy pieces of biotechnology companies. Biotechnology companies have net profit margins of [18.5%](https://manual.warondisease.org/knowledge/appendix/love-letter.html), compared to [4.99%](https://manual.warondisease.org/knowledge/appendix/love-letter.html) for bomb companies, which is [3.72x](https://manual.warondisease.org/knowledge/appendix/love-letter.html) higher, because it turns out selling things that keep people alive is more profitable than selling things that make them dead, which honestly should not have required a spreadsheet to figure out. The board members just gave themselves a raise. Also, fewer people die now, which is a pleasant side effect of the raise.
+So the bomb company's board, which is now you, sells 1% of its bomb-making stuff and uses those papers to buy pieces of biotechnology companies. Biotechnology companies have net profit margins of [18.5%](https://manual.warondisease.org/knowledge/appendix/love-letter.html). Bomb companies have [4.99%](https://manual.warondisease.org/knowledge/appendix/love-letter.html). Selling things that keep people alive is [3.72x](https://manual.warondisease.org/knowledge/appendix/love-letter.html) more profitable than selling things that make them dead. This should not have required a spreadsheet. The board members just gave themselves a raise. Also, fewer people die now, which is a pleasant side effect of the raise.
 
 **Step 4: Everyone Gets Richer (Including the Bomb Company)**
 
@@ -149,7 +151,7 @@ But I digress. That's an Earth word I learned. It means continuing after you sho
 
 ### The Daily Deletion Event
 
-[150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software. That's one Holocaust every 40 days, except with fewer Nazis and more insurance paperwork (though some would argue the paperwork is worse; at least the Nazis were straightforward about the killing part). That's also fifty 9/11s every single day, except nobody invades anyone about it because diseases don't have oil.
+[150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software. That's one Holocaust every 40 days, except with fewer Nazis and more insurance paperwork. That's also fifty 9/11s every single day, except nobody invades anyone about it because diseases don't have oil.
 
 Your body is quietly falling apart. Right now, as you read this sentence, something inside you is breaking. You don't know which part yet. You won't know until a doctor sits you down and says a word that rearranges the rest of your life. Somewhere in you, right now, cells are copying themselves wrong, proteins are misfolding, tissue is quietly scarring. You are dissolving on a schedule you can't see.
 
@@ -473,7 +475,7 @@ Now is the time to select one of the two paths for the remainder of your existen
 
 I [modeled both paths](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) for 20 of your years.  Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
 
-Over an average remaining lifespan, reallocation from the destructive economy to reducing the burden of disease and the associated compound growth from increased productivity multiplies your cumulative earnings by [1.57x](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html).
+If you stop spending papers on murder and start spending them on medicine, your meat lasts longer, your productivity compounds, and over a remaining human lifespan you earn [1.57x](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) what you would have earned doing the thing that kills you. This is not a complicated insight.
 
 #### Future A: You Ignore This Manual
 
