@@ -17,7 +17,9 @@ youtube-thumbnail: /assets/podcast/index-manual-youtube.jpg
 :::
 :::
 
-Is everyone you've ever loved currently being slowly tortured, or at minimum scheduled to be slowly tortured and then brutally murdered by horrible diseases, while your government maintains enough nuclear weapons to destroy your civilization {{< var nuclear_winter_overkill_factor_nounit >}} times over despite only having the one civilization?
+Is everyone you've ever loved currently being slowly tortured, or at minimum scheduled to be slowly tortured and then brutally murdered by horrible diseases?
+
+Do your governments waste money on enough nuclear bombs to cause {{< var nuclear_winter_overkill_factor_nounit >}} nuclear winters despite only having the one civilization to apocalypse?
 
 If so, your planet may be eligible for optimization.
 
@@ -117,7 +119,7 @@ So it turns out your weapons companies sell tiny pieces of themselves to anyone 
 
 **Step 3: Sell 1% of the Bombs, Buy Biotechnology Companies**
 
-So the bomb company's board, which is now you, sells 1% of its bomb-making stuff and uses those papers to buy pieces of biotechnology companies. Biotechnology companies have net profit margins of {{< var pharma_net_profit_margin >}}, compared to {{< var defense_net_profit_margin >}} for bomb companies, which is {{< var pharma_vs_defense_net_margin_ratio >}} higher, because it turns out selling things that keep people alive is more profitable than selling things that make them dead, which honestly should not have required a spreadsheet to figure out. The board members just gave themselves a raise. Also, fewer people die now, which is a pleasant side effect of the raise.
+So the bomb company's board, which is now you, sells 1% of its bomb-making stuff and uses those papers to buy pieces of biotechnology companies. Biotechnology companies have net profit margins of {{< var pharma_net_profit_margin >}}. Bomb companies have {{< var defense_net_profit_margin >}}. Selling things that keep people alive is {{< var pharma_vs_defense_net_margin_ratio >}} more profitable than selling things that make them dead. This should not have required a spreadsheet. The board members just gave themselves a raise. Also, fewer people die now, which is a pleasant side effect of the raise.
 
 **Step 4: Everyone Gets Richer (Including the Bomb Company)**
 
@@ -166,7 +168,7 @@ But I digress. That's an Earth word I learned. It means continuing after you sho
 
 ### The Daily Deletion Event
 
-{{< var global_disease_deaths_daily_nounit >}} humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software. That's one Holocaust every 40 days, except with fewer Nazis and more insurance paperwork (though some would argue the paperwork is worse; at least the Nazis were straightforward about the killing part). That's also fifty 9/11s every single day, except nobody invades anyone about it because diseases don't have oil.
+{{< var global_disease_deaths_daily_nounit >}} humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software. That's one Holocaust every 40 days, except with fewer Nazis and more insurance paperwork. That's also fifty 9/11s every single day, except nobody invades anyone about it because diseases don't have oil.
 
 Your body is quietly falling apart. Right now, as you read this sentence, something inside you is breaking. You don't know which part yet. You won't know until a doctor sits you down and says a word that rearranges the rest of your life. Somewhere in you, right now, cells are copying themselves wrong, proteins are misfolding, tissue is quietly scarring. You are dissolving on a schedule you can't see.
 
@@ -497,7 +499,7 @@ Now is the time to select one of the two paths for the remainder of your existen
 
 I [modeled both paths](knowledge/economics/gdp-trajectories.qmd) for 20 of your years.  Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
 
-Over an average remaining lifespan, reallocation from the destructive economy to reducing the burden of disease and the associated compound growth from increased productivity multiplies your cumulative earnings by {{< var treaty_trajectory_lifetime_income_multiplier >}}.
+If you stop spending papers on murder and start spending them on medicine, your meat lasts longer, your productivity compounds, and over a remaining human lifespan you earn {{< var treaty_trajectory_lifetime_income_multiplier >}} what you would have earned doing the thing that kills you. This is not a complicated insight.
 
 #### Future A: You Ignore This Manual
 

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 779 parameters used in the analysis, organized by type:
+This appendix documents all 778 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 223
 - Calculated values: 396
-- Core definitions: 160
+- Core definitions: 159
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (396 parameters) • [External Data Sources](#sec-external) (223 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
+[Calculated Values](#sec-calculated) (396 parameters) • [External Data Sources](#sec-external) (223 parameters) • [Core Definitions](#sec-definitions) (159 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -40306,28 +40306,6 @@ Aggressive prosecutor pleading estimate for deaths from drugs never developed be
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Court of Humanity Build Cost: $30 million {#sec-court_build_cost}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-One-time cost to build the Court of Humanity. Range reflects digital-first institutional design (no physical courtrooms, no detention, AI-assisted evidence triage, cryptographic provenance, stratified random jury infrastructure). Lower bound: minimal viable institution. Upper bound: fully-staffed initial operations, roughly 27% of one year of ICC operating budget (the ICC funds physical courtrooms, detention, and 425+ staff).
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$10 million, $50 million] • Distribution: Lognormal
-
-**What this means**: This estimate is highly uncertain. The true value likely falls between $10 million and $50 million (±67%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-court_build_cost.qmd >}}
 
 *Core definition*
 
