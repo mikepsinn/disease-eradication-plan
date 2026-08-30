@@ -12,6 +12,7 @@ interface ExternalSite {
 
 interface MonitorConfig {
   externalSites: ExternalSite[];
+  excludedRedirectHosts: string[];
   keywordOverrides: Record<string, string>;
 }
 
@@ -62,12 +63,21 @@ export async function loadDesiredMonitors(repositoryRoot = REPOSITORY_ROOT): Pro
 
   const redirectMap = JSON.parse(redirectMapJson) as Record<string, string>;
   const monitorConfig = JSON.parse(monitorConfigJson) as MonitorConfig;
+  const excludedRedirectHosts = new Set(monitorConfig.excludedRedirectHosts);
 
-  const redirectMonitors = Object.entries(redirectMap).map(([hostname, target]) => ({
-    friendlyName: `EOS redirect | ${hostname}`,
-    url: `https://${hostname}/`,
-    keyword: monitorConfig.keywordOverrides[hostname] || keywordFromTarget(target),
-  }));
+  for (const hostname of excludedRedirectHosts) {
+    if (!(hostname in redirectMap)) {
+      throw new Error(`Excluded redirect host is not present in the redirect map: ${hostname}`);
+    }
+  }
+
+  const redirectMonitors = Object.entries(redirectMap)
+    .filter(([hostname]) => !excludedRedirectHosts.has(hostname))
+    .map(([hostname, target]) => ({
+      friendlyName: `EOS redirect | ${hostname}`,
+      url: `https://${hostname}/`,
+      keyword: monitorConfig.keywordOverrides[hostname] || keywordFromTarget(target),
+    }));
 
   const externalMonitors = monitorConfig.externalSites.map((site) => ({
     friendlyName: `EOS site | ${site.name}`,
@@ -199,6 +209,17 @@ async function syncMonitors(monitors: DesiredMonitor[]): Promise<void> {
 
   const alertContactId = await getAlertContactId(apiKey);
   const existingMonitors = await listPaginated<UptimeRobotMonitor>(apiKey, "/monitors?limit=200");
+  const desiredUrls = new Set(monitors.map((monitor) => normalizeUrl(monitor.url)));
+
+  for (const existing of existingMonitors) {
+    const isManagedRedirect = existing.friendlyName.startsWith("EOS redirect | ");
+    if (isManagedRedirect && !desiredUrls.has(normalizeUrl(existing.url))) {
+      await apiRequest(apiKey, `/monitors/${existing.id}`, {
+        method: "DELETE",
+      });
+      console.log(`[deleted] ${existing.friendlyName}`);
+    }
+  }
 
   for (const monitor of monitors) {
     const existing = existingMonitors.find(
