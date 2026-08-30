@@ -134,7 +134,7 @@ Here is what the Court of Humanity looks like, stripped of the jargon your legal
 
 **How they vote.** Yes or no on whether the conduct matches the template's elements. Jurors do *not* vote on damages amounts. Damages are determined by formula. This is essential. It prevents sentiment-driven inflation, eliminates lottery dynamics, and produces verdicts that capital markets can price. Your species has a long history of juries awarding comedy-sized damages to sympathetic plaintiffs while structurally similar victims get nothing. The formula fixes this by removing the part where humans get to feel feelings about money.
 
-**Proof of personhood.** Jurors verify their humanity through multiple independent biometric or social-graph systems (Worldcoin, BrightID, government IDs from non-defendant states). Eligibility requires verification on at least N systems, so no single compromised system can corrupt the jury. The verification systems are themselves auditable through the Court.
+**Proof of personhood.** Jurors verify their humanity through multiple independent biometric or social-graph systems (Worldcoin, BrightID, government IDs from non-defendant states). Eligibility requires verification on at least 3 systems, so no single compromised system can corrupt the jury. The verification systems are themselves auditable through the Court.
 
 **Edge cases.** Some cases will be genuinely novel: conduct that does not match any template, or evidence requiring expert investigation beyond AI capacity. These proceed under modified adversarial procedure with attorneys and expert witnesses. The output is typically a *new template*, ratified through deliberative referendum and added to the library. Over time, routine cases are pattern-matched, AI-briefed, jury-voted, and automatically remedied with no lawyer involved. Lawyers occupy the edge-case fallback, which is where they belong, rather than the routine procedure, which is where they currently live at $800 per hour.
 
@@ -291,24 +291,6 @@ The Court is the institutional anchor of the **International Campaign to End War
 In existing political theory, separation of powers requires three branches that constrain each other. Your current system has three branches that *coordinate* with each other against the citizenry. The executive appoints the judges. The legislature confirms them. The judges rule in favor of the executive's immunity. This is called "checks and balances," which contains the word "checks" the same way "grape soda" contains the word "grape."
 
 The Court of Humanity introduces a fourth branch: the citizenry itself, voting on cases, constraining the other three. The defendants will object that this is mob rule. {{< var global_population_2024_nounit >}} humans are not a mob. They are the population. The current system is rule by a small governing class operating under the procedural shield of sovereign immunity. The Court replaces elite immunity with equal public standing. This is what democracy was supposed to be. It is not what democracy currently is.
-
-## The Cost-Effectiveness Case
-
-Your species measures charitable interventions by how many years of healthy life each dollar buys. The standard benchmark is the malaria bed net, at {{< var bed_nets_cost_per_daly >}} per year of healthy life saved. The Court of Humanity is, by a margin I find interesting, the highest-value charitable intervention currently available to your species.
-
-Building the Court costs {{< var court_build_cost >}}. The International Criminal Court, for comparison, funds physical courtrooms, detention facilities, and a permanent staff. The Court of Humanity is digital: evidence submitted via web, AI triage, juries voting from home. No marble. No gavels. No parking garage.
-
-The honest accounting matters. The Court does not directly prevent any deaths. The 1% Treaty does that. The Court is what makes the Treaty more likely to get adopted. So the math is not "Court cost divided by deaths prevented." The math is "Court cost compared to how much more likely the Treaty becomes because the Court exists."
-
-The [1% Treaty](1-percent-treaty.qmd) has already established itself, separately, as approximately {{< var treaty_expected_vs_bed_nets_multiplier >}} more cost-effective than bed nets in expected value. That figure already accounts for the probability of political failure. The Court is small compared with the Treaty campaign itself ({{< var court_build_cost >}} compared to {{< var treaty_campaign_total_cost >}}). If the Court increases the probability of Treaty adoption by even a small fraction, the Court's cost per year of healthy life saved drops several orders of magnitude below bed nets.
-
-The breakeven question: how little would the Court need to improve the odds before it is no longer worth funding? Very little. The Court does not need to pass the Treaty by itself. It only needs to make adoption slightly more likely.
-
-To believe the Court is not worth funding, you must believe that a legal institution documenting millions of preventable deaths with named victims and family testimony contributes almost nothing to the political adoption of the 1% Treaty. I would be interested to read the argument for this position. I have not encountered it on any planet, and I have looked on 847.
-
-For donors with an existing charitable portfolio: a dollar that funds bed nets saves healthy life-years at the bed-net rate. A dollar that funds the Court saves healthy life-years by improving the odds that the Treaty passes, and the Treaty has already, separately, established itself as the most cost-effective intervention ever measured against that benchmark. Same dollar. Different multiplier. The Court is a charity that buys other charities. It works by making everything else more likely to happen.
-
-The full upside is described in the [1% Treaty Impact Analysis](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] for the conservative case, in [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025] for the recoverable losses across the broader governance system, and in [GDP Trajectories](../economics/gdp-trajectories.qmd) [@gdp-trajectories-paper-2025] for the best-case scenario. The Court is the legal instrument that connects the indictment to the settlement. Everything else in this book describes what the settlement pays for.
 
 ## What You Do
 
