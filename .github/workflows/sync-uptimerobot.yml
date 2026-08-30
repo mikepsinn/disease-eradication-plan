@@ -1,0 +1,44 @@
+name: Sync UptimeRobot Monitors
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+    paths:
+      - ".github/workflows/sync-uptimerobot.yml"
+      - "cloudflare/redirect-worker/redirect-map.json"
+      - "monitoring/uptimerobot-sites.json"
+      - "scripts/uptimerobot-monitors.ts"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sync-uptimerobot-monitors
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Synchronize monitors
+        env:
+          UPTIMEROBOT_API_KEY: ${{ secrets.UPTIMEROBOT_API_KEY }}
+        run: pnpm monitor:uptimerobot:sync
