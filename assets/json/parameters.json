@@ -12865,6 +12865,27 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/unrepresentative-democracy.html",
       "chapterTitle": "Unrepresentative Democracy"
     },
+    "SURVEY_COST_PER_LIFE_SAVED": {
+      "value": 2.4971273460505596,
+      "formatted": "$2.5",
+      "unit": "USD",
+      "description": "Cost per life saved for one verified survey response, conditional on the treaty passing: blended activation cost per participant divided by lives saved per verified voter. Not probability-weighted; the probability-weighted campaign figure is TREATY_EXPECTED_COST_PER_DALY.",
+      "displayName": "Cost per Life Saved per Verified Response (Conditional on Passage)",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "high",
+      "formula": "GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT / VOTER_LIVES_SAVED",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-survey_cost_per_life_saved",
+      "latex": "\\begin{gathered}\nC_{life,resp} = \\frac{C_{activate,pp}}{Lives_{voter}} = \\frac{\\$6.5}{2.6} = \\$2.5\n\\\\[0.5em]\n\\text{where } C_{activate,pp} = R_{activate} + C_{verify,pp} = \\$5 + \\$1.5 = \\$6.5\n\\\\[0.5em]\n\\text{where } Lives_{voter} = \\frac{Lives_{max}}{N_{voters,global}} = \\frac{10.7B}{4.13B} = 2.6\n\\\\[0.5em]\n\\text{where } Lives_{max} = Deaths_{disease,daily} \\times T_{accel,max} \\times 338 = 150{,}000 \\times 212 \\times 338 = 10.7B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+      "inputs": [
+        "GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT",
+        "VOTER_LIVES_SAVED"
+      ],
+      "computeExpr": "(GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT / VOTER_LIVES_SAVED)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/strategy/survey-to-end-war-and-disease.html",
+      "chapterTitle": "The Survey to End War and Disease"
+    },
     "SWITZERLAND_DEFENSE_SPENDING_PCT": {
       "value": 0.007,
       "formatted": "0.7%",
@@ -19949,6 +19970,24 @@
       ],
       "quote": "",
       "note": "",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "cato-qualified-immunity-2020": {
+      "id": "cato-qualified-immunity-2020",
+      "title": "Poll: 63% of Americans Favor Eliminating Qualified Immunity for Police",
+      "author": "Cato Institute",
+      "year": "2020",
+      "source": "",
+      "url": "https://www.cato.org/survey-reports/poll-63-americans-favor-eliminating-qualified-immunity-police",
+      "urls": [
+        "https://www.cato.org/survey-reports/poll-63-americans-favor-eliminating-qualified-immunity-police"
+      ],
+      "quote": "",
+      "note": "n=2,000 U.S. adults. 79% Democrats, 64% independents, 42% Republicans favor eliminating qualified immunity.",
       "type": "misc",
       "doi": "",
       "volume": "",
@@ -30111,6 +30150,25 @@
       "pages": "291-303",
       "number": "3"
     },
+    "kuran-private-truths-1995": {
+      "id": "kuran-private-truths-1995",
+      "title": "Private Truths, Public Lies: The Social Consequences of Preference Falsification",
+      "author": "Kuran, Timur",
+      "year": "1995",
+      "source": "Harvard University Press",
+      "url": "https://www.hup.harvard.edu/books/9780674707580",
+      "urls": [
+        "https://www.hup.harvard.edu/books/9780674707580",
+        "https://sites.duke.edu/timurkuran/research/books/private-truths-public-lies-the-social-consequences-of-preference-falsification/"
+      ],
+      "quote": "Kuran's theory of preference falsification: individuals misrepresent their private preferences under perceived social pressure. The book provides a unified theory of how preference falsification shapes collective decisions, sustains social stability, distorts human knowledge, and conceals political possibilities, with applications including the unexpected fall of communism, opposition to affirmative action, and the durability of India's caste system. Explains why large private majorities can remain invisible until a credible public measurement reveals them.",
+      "note": "xv + 423 pp. Author page: https://sites.duke.edu/timurkuran/research/books/private-truths-public-lies-the-social-consequences-of-preference-falsification/",
+      "type": "book",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "kyc-biometric-verification-costs-2024": {
       "id": "kyc-biometric-verification-costs-2024",
       "title": "KYC and biometric identity verification costs (2024)",
@@ -35178,6 +35236,24 @@
       "pages": "",
       "number": ""
     },
+    "pew-civilians-sue-officers-2020": {
+      "id": "pew-civilians-sue-officers-2020",
+      "title": "Majority of Public Favors Giving Civilians the Power to Sue Police Officers for Misconduct",
+      "author": "Pew Research Center",
+      "year": "2020",
+      "source": "",
+      "url": "https://www.pewresearch.org/politics/2020/07/09/majority-of-public-favors-giving-civilians-the-power-to-sue-police-officers-for-misconduct/",
+      "urls": [
+        "https://www.pewresearch.org/politics/2020/07/09/majority-of-public-favors-giving-civilians-the-power-to-sue-police-officers-for-misconduct/"
+      ],
+      "quote": "",
+      "note": "n=4,708 U.S. adults. 66% favor, 84% Democrats, 45% Republicans.",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
     "pgpf-defense-budget-2024": {
       "id": "pgpf-defense-budget-2024",
       "title": "Budget Basics: National Defense",
@@ -37362,6 +37438,24 @@
       "quote": "",
       "note": "Analysis of lobbying spending vs. Pentagon contracts for top five military contractors 2001-2021",
       "type": "article",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "results-for-america-evidence-2026": {
+      "id": "results-for-america-evidence-2026",
+      "title": "Evidence-Based Policymaking Poll",
+      "author": "Results for America and Echelon Insights",
+      "year": "2026",
+      "source": "",
+      "url": "https://results4america.org/evidence-based-policymaking-poll/",
+      "urls": [
+        "https://results4america.org/evidence-based-policymaking-poll/"
+      ],
+      "quote": "",
+      "note": "n=1,038 likely voters. 91% agree data and evidence should be a top influence in government policy. 91% Republican, 90% Democrat.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",

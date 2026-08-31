@@ -39,15 +39,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 901 parameters used in the analysis, organized by type:
+This appendix documents all 902 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 255
-- Calculated values: 458
+- Calculated values: 459
 - Core definitions: 188
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (458 parameters) • [External Data Sources](#sec-external) (255 parameters) • [Core Definitions](#sec-definitions) (188 parameters)
+[Calculated Values](#sec-calculated) (459 parameters) • [External Data Sources](#sec-external) (255 parameters) • [Core Definitions](#sec-definitions) (188 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5223,6 +5223,7 @@ $$
 
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 
 :::
 
@@ -9027,6 +9028,7 @@ $$
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Join the International Campaign to End War and Disease](../strategy/ic2ewd-supporter-survey.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [How to End War and Disease](../educational-film.html)
 - [The Vandalism Handout](../appendix/handout.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
@@ -9956,6 +9958,7 @@ $$
 - [Health Dividend](../economics/health-dividend.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Join the International Campaign to End War and Disease](../strategy/ic2ewd-supporter-survey.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
@@ -13890,6 +13893,7 @@ $$
 **Used in:**
 
 - [Global Referendum Strategy](../strategy/global-referendum.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 
 :::
 
@@ -14061,6 +14065,7 @@ $$
 - [The Initiating Node Memo](../strategy/initiating-node-memo.html)
 - [Earth Optimization Prize 90-Day Pilot](../grant-proposal/earth-optimization-prize-90-day-pilot.html)
 - [Institution Outreach Email Templates](../strategy/prize-institution-outreach-email.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [How to End War and Disease](../educational-film.html)
@@ -18099,6 +18104,7 @@ $$
 - [Department of Peace](../solution/department-of-peace.html)
 - [There Are No Bad Guys (That Is the Problem)](../proof/no-bad-guys.html)
 - [The Cautionary Tale of Moronia](../futures/moronia.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Recruitment & Propaganda Plan](../appendix/recruitment-and-propaganda-plan.html)
 - [The Vandalism Handout](../appendix/handout.html)
@@ -21047,6 +21053,7 @@ $$
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Bombs vs. Biotechnology: The ROI](../appendix/bombs-vs-biotech-roi.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
@@ -21993,6 +22000,7 @@ $$
 - [Drug Development Cost Increase Analysis](../appendix/drug-development-cost-analysis.html)
 - [Frequently Asked Objections](../appendix/faq.html)
 - [Join the International Campaign to End War and Disease](../strategy/ic2ewd-supporter-survey.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Diagnostic Summary](../problem.html)
 - [NIH Fails to Institute Health](../problem/nih-fails-2-institute-health.html)
 - [Your FDA Is Unsafe and Ineffective](../problem/fda-is-unsafe-and-ineffective.html)
@@ -26097,6 +26105,7 @@ $$
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
 - [Join the International Campaign to End War and Disease](../strategy/ic2ewd-supporter-survey.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [How to End War and Disease](../educational-film.html)
 - [The Vandalism Handout](../appendix/handout.html)
@@ -26110,6 +26119,151 @@ $$
 - [The Rule 14a-8 Shareholder Proposal](../appendix/shareholder-proposal-14a-8.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
+
+:::
+
+### Cost per Life Saved per Verified Response (Conditional on Passage): $2.5 {#sec-survey_cost_per_life_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per life saved for one verified survey response, conditional on the treaty passing: blended activation cost per participant divided by lives saved per verified voter. Not probability-weighted; the probability-weighted campaign figure is TREATY_EXPECTED_COST_PER_DALY.
+
+**Inputs**:
+
+- [Activation Cost per Participant](#sec-global_coordination_activation_cost_per_participant) 🔢: $6.5
+- [Lives Saved per Verified Voter](#sec-voter_lives_saved) 🔢: 2.6 lives
+
+$$
+\begin{gathered}
+C_{life,resp} \\
+= \frac{C_{activate,pp}}{Lives_{voter}} \\
+= \frac{\$6.5}{2.6} \\
+= \$2.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{activate,pp} \\
+= R_{activate} + C_{verify,pp} \\
+= \$5 + \$1.5 \\
+= \$6.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{voter} \\
+= \frac{Lives_{max}}{N_{voters,global}} \\
+= \frac{10.7B}{4.13B} \\
+= 2.6
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{max} \\
+= Deaths_{disease,daily} \times T_{accel,max} \times 338 \\
+= 150{,}000 \times 212 \times 338 \\
+= 10.7B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-survey_cost_per_life_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-survey_cost_per_life_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-survey_cost_per_life_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-survey_cost_per_life_saved.qmd >}}
+
+**Used in:**
+
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 
 :::
 
@@ -26667,6 +26821,7 @@ $$
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Decentralized Institutes of Health](../solution/dih.html)
 - [Incentive Alignment Bonds](../solution/incentive-alignment-bonds.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [The Legislation Package](../strategy/legislation-package.html)
 - [How to End War and Disease](../educational-film.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
@@ -27689,6 +27844,7 @@ $$
 - [The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease](../economics/1-pct-treaty-impact.html)
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [Join the International Campaign to End War and Disease](../strategy/ic2ewd-supporter-survey.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 
 :::
@@ -30598,6 +30754,7 @@ $$
 
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
 - [The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease](../economics/1-pct-treaty-impact.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
 
@@ -31994,6 +32151,7 @@ $$
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease](../economics/1-pct-treaty-impact.html)
 - [Your Personal Benefits](../call-to-action/your-personal-benefits.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [The Funniest Lawsuit in the Universe](../appendix/lawsuit.html)
 
 :::
@@ -36281,6 +36439,7 @@ $$
 
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Voter Acquisition Grant Proposal](../grant-proposal/voter-acquisition-grant.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Getting Started](../strategy/getting-started.html)
 - [How to End War and Disease](../educational-film.html)
 - [Conclusion](../appendix/conclusion.html)
@@ -36472,6 +36631,7 @@ $$
 - [The Cost of War](../problem/cost-of-war.html)
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 
 :::
@@ -40495,6 +40655,7 @@ $$
 - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 - [Why Hasn't Anyone Done This?](../proof/why-hasnt-anyone-done-this.html)
 - [Your Personal Benefits](../call-to-action/your-personal-benefits.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
 
 :::
@@ -41045,6 +41206,7 @@ $$
 **Used in:**
 
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 
 :::
 
@@ -41770,6 +41932,7 @@ GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, rang
 - [Treaty Feasibility & Cost Analysis](../appendix/treaty-feasibility.html)
 - [The Court of Humanity](../solution/court-of-humanity.html)
 - [Join the International Campaign to End War and Disease](../strategy/ic2ewd-supporter-survey.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [Pre-Built Google Ads Campaign for Coalition Partners](../appendix/google-ads-campaign-template.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
@@ -42555,6 +42718,7 @@ Fraction of GDP currently lost to disease (productivity losses + medical costs d
 - [Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere](../economics/gdp-trajectories.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Bombs vs. Biotechnology: The ROI](../appendix/bombs-vs-biotech-roi.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
@@ -44432,6 +44596,7 @@ Critical mass threshold for social change (3.5% rule). Chenoweth studied nationa
 - [Campaign Budget: The Legal Bribery Machine](../economics/campaign-budget.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Genetic Slavery](../problem/genetic-slavery.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
 - [Legal Architecture](../legal/legal-framework.html)
 - [How to End War and Disease](../educational-film.html)
@@ -45902,6 +46067,7 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [The Proof: Overview](../proof.html)
 - [Frequently Asked Objections](../appendix/faq.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Earth Optimization Protocol v1](../strategy/earth-optimization-protocol-v1.html)
 - [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
@@ -46527,6 +46693,7 @@ Phase 3 cost per patient (median from FDA study)
 - [Special Education](../solution/special-education.html)
 - [The Proof: Overview](../proof.html)
 - [Frequently Asked Objections](../appendix/faq.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [The Most Important Secret in the World: 20 Questions to End War and Disease](../strategy/questions.html)
 - [Health Dividend](../economics/health-dividend.html)
 - [The Cost-Benefit Analysis of Global Hegemony](../appendix/cost-benefit-of-hegemony.html)
@@ -48669,6 +48836,10 @@ Estimated cost per DALY for US childhood vaccination programs. Note: US cost-eff
 
 *Core definition*
 
+**Used in:**
+
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
+
 :::
 
 ### Concentrated Interest Sector Market Cap: $5 trillion {#sec-concentrated_interest_sector_market_cap_usd}
@@ -48767,6 +48938,7 @@ Cumulative global military spending since 1913 (Fed era) in constant 2024 dollar
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [I Am Retarded](../problem/i-am-retarded.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
 :::
@@ -49522,6 +49694,7 @@ Planning midpoint for the direct cash incentive required to make a successful ve
 **Used in:**
 
 - [How to Coordinate 10 Million Nonprofits](../strategy/nonprofit-coalition-strategy.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 
 :::
@@ -49575,6 +49748,7 @@ Planning midpoint for non-reward variable cost per successful verified participa
 **Used in:**
 
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 
 :::
 
@@ -51453,6 +51627,7 @@ Total deaths from wars, conflicts, genocides, and policy-induced famines since 1
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Department of Peace](../solution/department-of-peace.html)
+- [The Survey to End War and Disease](../strategy/survey-to-end-war-and-disease.html)
 - [The Earth Optimization Prize](../strategy/earth-optimization-prize.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 

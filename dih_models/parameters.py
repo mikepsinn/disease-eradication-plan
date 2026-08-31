@@ -11344,6 +11344,22 @@ GLOBAL_COORDINATION_ACTIVATION_BUDGET = Parameter(
     latex_symbol=r"B_{activate}",
 )
 
+SURVEY_COST_PER_LIFE_SAVED = Parameter(
+    float(GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT) / float(VOTER_LIVES_SAVED),
+    manual_ref="knowledge/strategy/survey-to-end-war-and-disease.qmd",
+    source_type="calculated",
+    description="Cost per life saved for one verified survey response, conditional on the treaty passing: "
+                "blended activation cost per participant divided by lives saved per verified voter. "
+                "Not probability-weighted; the probability-weighted campaign figure is TREATY_EXPECTED_COST_PER_DALY.",
+    display_name="Cost per Life Saved per Verified Response (Conditional on Passage)",
+    unit="USD",
+    formula="GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT / VOTER_LIVES_SAVED",
+    inputs=["GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT", "VOTER_LIVES_SAVED"],
+    compute=lambda ctx: ctx["GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT"] / ctx["VOTER_LIVES_SAVED"],
+    keywords=["cost per life", "verified response", "survey", "coordination", "cost-effectiveness", "conditional"],
+    latex_symbol=r"C_{life,resp}",
+)
+
 RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT = Parameter(
     float(GLOBAL_ANNUAL_SAVINGS_PER_CAPITA) * float(CONVENTIONAL_RETIREMENT_HORIZON_MULTIPLE),
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",

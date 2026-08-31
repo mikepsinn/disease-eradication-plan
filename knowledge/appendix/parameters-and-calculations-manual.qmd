@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 779 parameters used in the analysis, organized by type:
+This appendix documents all 781 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 223
-- Calculated values: 396
-- Core definitions: 160
+- Calculated values: 397
+- Core definitions: 161
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (396 parameters) • [External Data Sources](#sec-external) (223 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
+[Calculated Values](#sec-calculated) (397 parameters) • [External Data Sources](#sec-external) (223 parameters) • [Core Definitions](#sec-definitions) (161 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -21192,6 +21192,147 @@ $$
 
 :::
 
+### Cost per Life Saved per Verified Response (Conditional on Passage): $2.5 {#sec-survey_cost_per_life_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per life saved for one verified survey response, conditional on the treaty passing: blended activation cost per participant divided by lives saved per verified voter. Not probability-weighted; the probability-weighted campaign figure is TREATY_EXPECTED_COST_PER_DALY.
+
+**Inputs**:
+
+- [Activation Cost per Participant](#sec-global_coordination_activation_cost_per_participant) 🔢: $6.5
+- [Lives Saved per Verified Voter](#sec-voter_lives_saved) 🔢: 2.6 lives
+
+$$
+\begin{gathered}
+C_{life,resp} \\
+= \frac{C_{activate,pp}}{Lives_{voter}} \\
+= \frac{\$6.5}{2.6} \\
+= \$2.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{activate,pp} \\
+= R_{activate} + C_{verify,pp} \\
+= \$5 + \$1.5 \\
+= \$6.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{voter} \\
+= \frac{Lives_{max}}{N_{voters,global}} \\
+= \frac{10.7B}{4.13B} \\
+= 2.6
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{max} \\
+= Deaths_{disease,daily} \times T_{accel,max} \times 338 \\
+= 150{,}000 \times 212 \times 338 \\
+= 10.7B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-survey_cost_per_life_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-survey_cost_per_life_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-survey_cost_per_life_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-survey_cost_per_life_saved.qmd >}}
+
+:::
+
 ### Thalidomide DALYs Per Event: 41,760 DALYs {#sec-thalidomide_dalys_per_event}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -40282,6 +40423,16 @@ Number of sovereign heads of state/government
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Childhood Vaccination Cost per DALY (Estimated): $30 {#sec-childhood_vaccination_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.
 
 *Core definition*
 
