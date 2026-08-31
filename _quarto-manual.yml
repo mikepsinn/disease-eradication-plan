@@ -177,6 +177,8 @@ book:
         - knowledge/operations/sff-application-draft.qmd # SFF application working draft (shareholder demand campaign + EOS equity); published:false working doc
         - knowledge/strategy/prize-institution-outreach-email.qmd
         - knowledge/strategy/ic2ewd-supporter-survey.qmd # IC2EWD supporter survey (A/B choice, complete case for endorsement)
+        - knowledge/strategy/survey-to-end-war-and-disease.qmd # The Survey to End War and Disease: hypothesis paper (five questions, predictions, benefits, calculations). Standalone paper config: _quarto-survey-to-end-war-and-disease.yml
+        - knowledge/strategy/survey-organization-kit.qmd # Organization terms for distributing the survey (unique link, anonymized report, recognition, compensation)
 
     - part: "The Plan"
       chapters:

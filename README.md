@@ -643,6 +643,10 @@ This is why aliens don't visit.
 
 > Government agencies are largely chains of humans passing records to other humans, each checking whether the previous human filled out the right form rather than whether anyone was helped. In the United States alone, this intermediation destroys or diverts $4.98 trillion per year, or 17.3% of GDP. We describe a protocol combining five primitives (a transparent ledger, citizen preference aggregation, a cross-jurisdictional evidence engine, an identity layer, and rules-based monetary policy) that replaces specific mechanical functions currently performed by the Federal Reserve, Internal Revenue Service, Social Security Administration, Government Accountability Office, Congressional Budget Office, Office of Management and Budget, Federal Election Commission, Securities and Exchange Commission, and Census Bureau. The protocol is deliberately neutral about policy ends. It preserves democratic control: citizens still decide resource allocation through evidence-informed pairwise preference comparison, and the algorithm executes those decisions without extracting value at each administrative layer. Whether the recovered value is returned as debt reduction, expanded public goods, a citizen dividend, or lower taxes is a choice left to voters, not embedded in the mechanism. We distinguish fiscal cash the protocol can route directly to citizens from broader societal gains that arrive as lower prices and higher wages, and we describe a phased implementation pathway that proves each component at bounded scale before the next is deployed.
 
+### [The Survey to End War and Disease](https://manual.warondisease.org/knowledge/strategy/survey-to-end-war-and-disease.html)
+
+> Five questions that, if a majority of humans answered them, could put humanity on a trajectory to end war and disease.
+
 ### [United States Efficiency Audit](https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html)
 
 [![United States Efficiency Audit](https://manual.warondisease.org/assets/og/us-efficiency-audit-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/us-efficiency-audit.html)

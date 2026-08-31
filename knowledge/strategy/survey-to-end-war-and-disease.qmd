@@ -1,0 +1,116 @@
+---
+title: "The Survey to End War and Disease"
+description: "Five questions that, if a majority of humans answered them, could put humanity on a trajectory to end war and disease."
+published: true
+tags:
+  - strategy
+  - survey
+  - outreach
+  - coalition
+  - referendum
+  - 1-percent-treaty
+audience: "The funder, researcher, or organization leader deciding whether the five questions deserve their money, scrutiny, or members."
+feel: "This is a falsifiable experiment they can join, not a petition: the predictions are stated in advance, the math is shown, and the results publish either way."
+do: "Fund the count, stress-test the questions, or get your organization's unique link from the kit."
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on finding out which medicines work. Nobody has ever checked whether this is popular.
+
+## How a survey can change policy
+
+A majority can be invisible to itself. Everybody assumes everybody else disagrees, so everybody stays quiet. Researchers call this pluralistic ignorance [@kuran-private-truths-1995]. It means a majority can exist and not know it exists. The condition holds until somebody counts. Regimes that depend on nobody counting have collapsed in weeks.
+
+Mobilizing a majority has never been required. Nonviolent campaigns that held {{< var global_population_activism_threshold_pct >}} sustained participation have succeeded [@3-5-rule]. That is a floor, not a guarantee. In each case, most people did not act. Most people were visible.
+
+## The arithmetic
+
+- Disease costs about {{< var disease_burden_gdp_drag_pct >}} of global GDP. The [destructive economy](../economics/gdp-trajectories.qmd) consumes {{< var global_destructive_economy_pct_gdp >}} of GDP and grows faster than the productive one [@gdp-trajectories-paper-2025].
+- A 1% reallocation from military spending to clinical trials would cost {{< var treaty_expected_cost_per_daly >}} per healthy year of life saved, even after discounting for the chance it never happens politically [@1-pct-treaty-impact-paper-2025]. Vaccinating a child costs {{< var childhood_vaccination_cost_per_daly >}} per healthy year. A bed net costs {{< var bed_nets_cost_per_daly >}}.
+- On the reallocation trajectory, the models project global GDP of {{< var treaty_trajectory_gdp_year_20 >}} and average income of {{< var treaty_trajectory_avg_income_year_20 >}} in year 20 [@gdp-trajectories-paper-2025].
+- If every institution the mandate enables works as modeled, year-20 global GDP is {{< var wishonia_trajectory_gdp_year_20 >}} and median after-tax income is {{< var wishonia_trajectory_median_after_tax_income_year_20 >}} [@gdp-trajectories-paper-2025]. Its growth assumptions are outside historical precedent.
+- Military spending creates depreciating assets. Weapons become obsolete. Medical research creates appreciating assets. Treatments compound.
+
+## 1. Should every patient have the right and practical ability to join a pragmatic clinical trial of any promising treatment through their usual healthcare provider, with informed consent?
+
+**Why we ask:** Most patients cannot join a trial because no trial exists at their hospital. The right to try a treatment you cannot access is like the right to board a flight that does not exist. If every provider could enroll patients, every treatment would get a running scorecard: does it work, does it hurt, what does it cost, and how sure are we.
+
+**Prediction:** Most people say yes. Before the 2018 federal Right to Try Act, 41 US states had passed right-to-try laws [@goldwater-rtt-41-states-2018].
+
+**If a majority of humanity says yes:** Legislators remove the legal barriers. Hospitals start enrolling patients. Pragmatic trials become part of routine healthcare.
+
+**Evidence and calculations:** [Ubiquitous Pragmatic Trial Impact Analysis](../appendix/dfda-impact-paper.qmd) [@dfda-impact-paper-2025]
+
+## 2. How should public money be divided between these two uses?
+
+- Weapons and military spending
+- Pragmatic clinical trials comparing promising treatments
+
+**Pragmatic clinical trials:** Your doctor enrolls you. The trial runs through ordinary healthcare instead of a special facility. It costs less. The results go into the scorecard, including the ones where the treatment did nothing.
+
+**Why we ask:** Oxford's RECOVERY trial tested 6 treatments on 48,000 patients during a pandemic at about {{< var recovery_trial_cost_per_patient >}} per patient versus roughly {{< var traditional_phase3_cost_per_patient >}} for a conventional Phase III trial. That is a cost reduction of about {{< var recovery_trial_cost_reduction_factor >}}. After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and got the largest economic boom in its history. This survey asks about 1%.
+
+**Prediction:** Most people allocate more than the 0.17% that goes to clinical trials today. In US polling, 57% supported cutting the military budget by 10% to fund health and other domestic needs [@public-support-for-peace-funding-70-pct].
+
+**If the median allocation gives trials at least 1 percentage point more than today's share:** That is a global mandate for the 1% reallocation: {{< var treaty_annual_funding >}} per year for pragmatic trials, a {{< var dfda_trial_capacity_multiplier >}} increase in trial capacity, and a timeline drop from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
+
+**Evidence and calculations:** [Allocation Impact Analysis](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025]
+
+## 3. Most promising treatments are never tested, because no company can profit from testing them. Should patients be allowed to fund and join trials of treatments for their own disease?
+
+**Why we ask:** 95% of diseases have zero FDA-approved treatments [@95-pct-diseases-no-treatment]. There is a queue to not die, and at current speed it is {{< var status_quo_queue_clearance_years >}} long. A trial needs money. If no company can patent the treatment, no company pays, and it stays on a shelf.
+
+**Prediction:** No direct polling exists. Access to unapproved treatments polls between 54% and 90% depending on framing. Patient funding raises equity concerns those polls did not test.
+
+**If a majority of humanity says yes:** Regulators can permit patient-funded trials without political risk. Treatments with no patent value get tested.
+
+**Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@dfda-impact-paper-2025]
+
+## 4. If government action kills or injures your family, should you have the same right to sue as if a corporation did it?
+
+**Why we ask:** Governments receive {{< var global_government_expense_annual >}} a year to promote the general welfare. Since 1900 they have spent {{< var cumulative_military_spending_fed_era >}} on the capacity for state violence. They have used that capacity to directly or indirectly kill {{< var war_deaths_since_1900_nounit >}} people. This includes {{< var war_children_killed_since_1900_nounit >}} children, who likely did not deserve it. That money could have paid for {{< var cumulative_military_in_govt_trial_years >}} of clinical trials at current spending. The chance of dying from terrorism is 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. The chance of dying from disease is 100%. If a company did this, you could sue. [Sovereign immunity](../solution/court-of-humanity.qmd) means that when a government does it, you mostly cannot [@court-of-humanity-paper-2025].
+
+**Prediction:** In adjacent US polling, 63% favor ending qualified immunity for government officials [@cato-qualified-immunity-2020] and 66% favor giving civilians the power to sue officers for misconduct [@pew-civilians-sue-officers-2020]. The equal-treatment framing in this question has not been directly polled.
+
+**If a majority of humanity says yes:** A global consensus removes the belief that sustains immunity: that everyone else accepts it. It becomes possible to propose a court for harm caused by states.
+
+**Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@humanity-v-government-paper-2025]
+
+## 5. Should governments be required to measure how long people live in good health and what they actually earn, and to test which policies improve those numbers?
+
+**Why we ask:** Governments measure how much money they spend. They do not measure whether it worked. Two outcomes would tell them: how long people live in good health, and what they actually earn.
+
+**Prediction:** In US polling, 91% of voters agree that data and evidence should be a top influence in government policy, bipartisan [@results-for-america-evidence-2026]. The specific two-metric measurement mandate has not been polled.
+
+**If a majority of humanity says yes:** Ten thousand jurisdictions have already tried different policies and written down what happened. The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) uses causal inference to figure out which policies improved the two numbers and which ones did not, then produces recommendations for any jurisdiction: enact, replace, repeal, or keep [@opg-paper-2025]. The [Optimal Budget Generator](https://obg.warondisease.org) does the same for spending levels [@obg-paper-2025]. The recommendations and the votes are both public.
+
+**Evidence and calculations:** [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025]
+
+## Costs
+
+A verified response costs {{< var global_coordination_activation_cost_per_participant >}}: {{< var global_coordination_verification_and_payment_cost_per_participant >}} for identity verification and processing, {{< var global_coordination_activation_reward_per_verified_participant >}} for incentives. Organizations that distribute the questions receive compensation per verified response; terms are in the [Organization Kit](survey-organization-kit.qmd). If the treaty passes, each response corresponds to {{< var voter_lives_saved >}} saved, at {{< var survey_cost_per_life_saved >}} per life.
+
+## Appendix: Calculations {#sec-calculations}
+
+**The 0.17%.** Military spending is {{< var military_to_government_clinical_trials_spending_ratio >}} times government clinical trial spending, so trials receive roughly 1/604 of what weapons receive:
+
+{{< var military_to_government_clinical_trials_spending_ratio_latex >}}
+
+**The RECOVERY cost reduction:**
+
+{{< var recovery_trial_cost_reduction_factor_latex >}}
+
+**Annual funding from a 1% reallocation:**
+
+{{< var treaty_annual_funding_latex >}}
+
+**The treatment-testing timeline,** including the status quo 443-year estimate and the {{< var dfda_trial_capacity_multiplier >}} capacity multiplier it improves on:
+
+{{< var dfda_queue_clearance_years_latex >}}
+
+**Cumulative military spending expressed in years of clinical trial funding:**
+
+{{< var cumulative_military_in_govt_trial_years_latex >}}
+
+Source citations for all quantities are in the [parameter registry](../appendix/parameters-and-calculations.qmd).

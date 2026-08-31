@@ -10042,6 +10042,24 @@ export const STATUS_QUO_QUEUE_CLEARANCE_YEARS: Parameter = {
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
 
+export const SURVEY_COST_PER_LIFE_SAVED: Parameter = {
+  value: 2.49712734605,
+  parameterName: "SURVEY_COST_PER_LIFE_SAVED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-survey_cost_per_life_saved",
+  unit: "USD",
+  displayName: "Cost per Life Saved per Verified Response (Conditional on Passage)",
+  description: "Cost per life saved for one verified survey response, conditional on the treaty passing: blended activation cost per participant divided by lives saved per verified voter. Not probability-weighted; the probability-weighted campaign figure is TREATY_EXPECTED_COST_PER_DALY.",
+  sourceType: "calculated",
+  confidence: "high",
+  formula: "GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT / VOTER_LIVES_SAVED",
+  latex: "\\begin{gathered}\nC_{life,resp} = \\frac{C_{activate,pp}}{Lives_{voter}} = \\frac{\\$6.5}{2.6} = \\$2.5\n\\\\[0.5em]\n\\text{where } C_{activate,pp} = R_{activate} + C_{verify,pp} = \\$5 + \\$1.5 = \\$6.5\n\\\\[0.5em]\n\\text{where } Lives_{voter} = \\frac{Lives_{max}}{N_{voters,global}} = \\frac{10.7B}{4.13B} = 2.6\n\\\\[0.5em]\n\\text{where } Lives_{max} = Deaths_{disease,daily} \\times T_{accel,max} \\times 338 = 150{,}000 \\times 212 \\times 338 = 10.7B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [1.12145039577, 4.68381360224],
+  inputs: ["GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT", "VOTER_LIVES_SAVED"],
+  computeExpr: "(GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT / VOTER_LIVES_SAVED)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/strategy/survey-to-end-war-and-disease.html",
+  manualPageTitle: "The Survey to End War and Disease",
+};
+
 export const THALIDOMIDE_DALYS_PER_EVENT: Parameter = {
   value: 41760.0,
   parameterName: "THALIDOMIDE_DALYS_PER_EVENT",
@@ -15884,6 +15902,7 @@ export const parameters = {
   STATE_RTT_VS_GIVEWELL_COST_PER_LIFE_MULTIPLIER,
   STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT,
   STATUS_QUO_QUEUE_CLEARANCE_YEARS,
+  SURVEY_COST_PER_LIFE_SAVED,
   THALIDOMIDE_DALYS_PER_EVENT,
   THALIDOMIDE_DEATHS_PER_EVENT,
   THALIDOMIDE_SURVIVORS_PER_EVENT,
@@ -19047,9 +19066,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 901,
+  total: 902,
   external: 255,
-  calculated: 458,
+  calculated: 459,
   definitions: 188,
   citations: 197,
 } as const;
