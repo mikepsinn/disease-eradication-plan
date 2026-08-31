@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 131 parameters used in the analysis, organized by type:
+This appendix documents all 129 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 51
-- Calculated values: 55
+- External sources (peer-reviewed): 50
+- Calculated values: 54
 - Core definitions: 25
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (55 parameters) • [External Data Sources](#sec-external) (51 parameters) • [Core Definitions](#sec-definitions) (25 parameters)
+[Calculated Values](#sec-calculated) (54 parameters) • [External Data Sources](#sec-external) (50 parameters) • [Core Definitions](#sec-definitions) (25 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1576,38 +1576,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-global_destructive_economy_pct_gdp.qmd >}}
-
-:::
-
-### Annual Global Government Expense: $36.5 trillion {#sec-global_government_expense_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Approximate annual global government expenditure, computed as global GDP times the World Bank general-government expense share of GDP.
-
-**Inputs**:
-
-- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
-- [Global Government Expense Share of GDP](#sec-global_government_expense_pct_gdp) 📊: 31.8%
-
-$$
-\begin{gathered}
-Expense_{gov,global} \\
-= GDP_{global} \times p_{gov,expense} \\
-= \$115T \times 31.8\% \\
-= \$36.5T
-\end{gathered}
-$$
-
-*~ Medium confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-global_government_expense_annual.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-global_government_expense_annual.qmd >}}
 
 :::
 
@@ -4966,22 +4934,6 @@ Annual global government spending on interventional clinical trials (~5-10% of t
 {{< include ../figures/distribution-global_government_clinical_trials_spending_annual.qmd >}}
 
 *✓ High confidence*
-
-:::
-
-### Global Government Expense Share of GDP: 31.8% {#sec-global_government_expense_pct_gdp}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-World general government total expense as a share of GDP, using World Bank indicator GC.XPN.TOTL.GD.ZS. The most recent world aggregate in the cited source is 2021.
-
-**Source**: [@world-bank-government-expense-pct-gdp]
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
-
-*~ Medium confidence*
 
 :::
 

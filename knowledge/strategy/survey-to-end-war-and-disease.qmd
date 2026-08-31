@@ -18,12 +18,6 @@ do: "Fund the count, stress-test the questions, or get your organization's uniqu
 
 Humanity spends {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on finding out which medicines work. Nobody has ever checked whether this is popular.
 
-## How a survey can change policy
-
-A majority can be invisible to itself. Everybody assumes everybody else disagrees, so everybody stays quiet. Researchers call this pluralistic ignorance [@kuran-private-truths-1995]. It means a majority can exist and not know it exists. The condition holds until somebody counts. Regimes that depend on nobody counting have collapsed in weeks.
-
-Mobilizing a majority has never been required. Nonviolent campaigns that held {{< var global_population_activism_threshold_pct >}} sustained participation have succeeded [@3-5-rule]. That is a floor, not a guarantee. In each case, most people did not act. Most people were visible.
-
 ## 1. Should every patient have the right and practical ability to join a pragmatic clinical trial of any promising treatment through their usual healthcare provider, with informed consent?
 
 **Why we ask:** Most patients cannot join a trial because no trial exists at their hospital. The right to try a treatment you cannot access is like the right to board a flight that does not exist. If every provider could enroll patients, every treatment would get a running scorecard: does it work, does it hurt, what does it cost, and how sure are we.
@@ -78,6 +72,12 @@ Mobilizing a majority has never been required. Nonviolent campaigns that held {{
 **If a majority of humanity says yes:** Ten thousand jurisdictions have already tried different policies and written down what happened. The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) uses causal inference to figure out which policies improved the two numbers and which ones did not, then produces recommendations for any jurisdiction: enact, replace, repeal, or keep [@opg-paper-2025]. The [Optimal Budget Generator](https://obg.warondisease.org) does the same for spending levels [@obg-paper-2025]. The recommendations and the votes are both public.
 
 **Evidence and calculations:** [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025]
+
+## Why counting matters
+
+A majority can be invisible to itself. Everybody assumes everybody else disagrees, so everybody stays quiet. Researchers call this pluralistic ignorance [@kuran-private-truths-1995]. It means a majority can exist and not know it exists. The condition holds until somebody counts. Regimes that depend on nobody counting have collapsed in weeks.
+
+Mobilizing a majority has never been required. Nonviolent campaigns that held {{< var global_population_activism_threshold_pct >}} sustained participation have succeeded [@3-5-rule]. That is a floor, not a guarantee. In each case, most people did not act. Most people were visible.
 
 ## What happens if all five pass
 
