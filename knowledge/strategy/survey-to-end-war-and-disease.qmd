@@ -52,13 +52,13 @@ do: "Fund the count, stress-test the questions, or get your organization's uniqu
 
 **Evidence and calculations:** [Allocation Impact Analysis](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025]
 
-## 4. Should governments be required to measure how long people live in good health and what they actually earn, and to test which policies improve those numbers?
+## 4. Should governments collect and analyze data on how their policies and budgets affect median health and income, using the natural variation across thousands of jurisdictions to determine which policies work best?
 
-**Why we ask:** Governments measure how much money they spend. They do not measure whether it worked. Two outcomes would tell them: how long people live in good health, and what they actually earn.
+**Why we ask:** Thousands of jurisdictions have adopted different policies at different times: different tax rates, drug laws, education budgets, healthcare systems. The outcomes are recorded. This is a natural experiment large enough to determine which policies actually improve how long people live and what they earn. Governments currently do not systematically measure whether it worked to detemine optimal policy.
 
-**Prediction:** In US polling, 91% of voters agree that data and evidence should be a top influence in government policy, bipartisan [@results-for-america-evidence-2026]. The specific two-metric measurement mandate has not been polled.
+**Prediction:** In US polling, 91% of voters agree that data and evidence should be a top influence in government policy, bipartisan [@results-for-america-evidence-2026]. The specific mandate to analyze cross-jurisdictional outcomes has not been polled.
 
-**If a majority of humanity says yes:** Ten thousand jurisdictions have already tried different policies and written down what happened. The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) uses causal inference to figure out which policies improved the two numbers and which ones did not, then produces recommendations for any jurisdiction: enact, replace, repeal, or keep [@opg-paper-2025]. The [Optimal Budget Generator](https://obg.warondisease.org) does the same for spending levels [@obg-paper-2025]. The recommendations and the votes are both public.
+**If a majority of humanity says yes:** The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) uses causal inference on this cross-jurisdictional data to determine which policies improved median health and income and which did not, then produces recommendations for any jurisdiction: enact, replace, repeal, or keep [@opg-paper-2025]. The [Optimal Budget Generator](https://obg.warondisease.org) does the same for spending levels [@obg-paper-2025]. The recommendations and the votes are both public.
 
 **Evidence and calculations:** [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025]
 
