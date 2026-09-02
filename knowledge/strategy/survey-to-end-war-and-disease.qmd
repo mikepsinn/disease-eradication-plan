@@ -31,7 +31,7 @@ do: "Fund the count, stress-test the questions, or get your organization's uniqu
 
 **Why we ask:** 95% of diseases have zero FDA-approved treatments [@95-pct-diseases-no-treatment]. At current speed, testing every promising treatment takes {{< var status_quo_queue_clearance_years >}}. A trial needs money. If no company can patent the treatment, no company pays, and it stays on a shelf.
 
-**Prediction:** No direct polling exists. Access to unapproved treatments polls between 54% and 90% depending on framing. Patient funding raises equity concerns those polls did not test.
+**Prediction:** No direct polling exists. Access to unapproved treatments polls between 54% and 90% depending on framing.
 
 **If a majority of humanity says yes:** Regulators can permit patient-funded trials without political risk. Treatments with no patent value get tested.
 
@@ -44,7 +44,7 @@ do: "Fund the count, stress-test the questions, or get your organization's uniqu
 
 **Pragmatic clinical trials:** Your doctor enrolls you. The trial runs through ordinary care instead of a special facility. It costs less. Every treatment gets a public outcome label showing all measured effects, positive and negative.
 
-**Why we ask:** Disease costs about {{< var disease_burden_gdp_drag_pct >}} of global GDP. The [destructive economy](../economics/gdp-trajectories.qmd) consumes {{< var global_destructive_economy_pct_gdp >}} of GDP and grows faster than the productive one [@gdp-trajectories-paper-2025]. Military spending creates depreciating assets; weapons become obsolete. Medical research creates appreciating assets; treatments compound. Oxford's RECOVERY trial tested 6 treatments on 48,000 patients at about {{< var recovery_trial_cost_per_patient >}} per patient versus roughly {{< var traditional_phase3_cost_per_patient >}} for a conventional Phase III trial. That is a cost reduction of about {{< var recovery_trial_cost_reduction_factor >}}. It was run during a pandemic by terrified people, which raises questions about what the non-terrified system has been doing with its time. After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and stumbled into the largest economic boom in its history. This survey asks about 1%.
+**Why we ask:** Disease costs about {{< var disease_burden_gdp_drag_pct >}} of global GDP. The [destructive economy](../economics/gdp-trajectories.qmd) consumes {{< var global_destructive_economy_pct_gdp >}} of GDP and grows faster than the productive one [@gdp-trajectories-paper-2025]. Weapons become obsolete. Treatments compound. Oxford's RECOVERY trial tested 6 treatments on 48,000 patients at about {{< var recovery_trial_cost_per_patient >}} per patient versus roughly {{< var traditional_phase3_cost_per_patient >}} for a conventional Phase III trial. That is a cost reduction of about {{< var recovery_trial_cost_reduction_factor >}}. After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and stumbled into the largest economic boom in its history. This survey asks about 1%.
 
 **Prediction:** Most people allocate more than the 0.17% that goes to clinical trials today. In US polling, 57% supported cutting the military budget by 10% to fund health and other domestic needs [@public-support-for-peace-funding-70-pct].
 
@@ -64,11 +64,11 @@ do: "Fund the count, stress-test the questions, or get your organization's uniqu
 
 ## 5. If government action kills or injures your family, should you have the same right to sue as if a corporation did it?
 
-**Why we ask:** Since 1900, governments have spent {{< var cumulative_military_spending_fed_era >}} on the capacity to kill people and used it to kill {{< var war_deaths_since_1900_nounit >}} of them, including {{< var war_children_killed_since_1900_nounit >}} children. The chance of dying from terrorism is 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. The chance of dying from disease is 100%. Governments built the security apparatus around the first number. If a company made this trade, you could sue. [Sovereign immunity](../solution/court-of-humanity.qmd) means that when a government does it, you mostly cannot [@court-of-humanity-paper-2025].
+**Why we ask:** Since 1900, governments have spent {{< var cumulative_military_spending_fed_era >}} on the capacity to kill people and used it to kill {{< var war_deaths_since_1900_nounit >}} of them, including {{< var war_children_killed_since_1900_nounit >}} children. The chance of dying from terrorism is 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. The chance of dying from disease is 100%. Governments built the military around the first number. If a company made this trade, you could sue. [Sovereign immunity](../solution/court-of-humanity.qmd) means that when a government does it, you mostly cannot [@court-of-humanity-paper-2025].
 
 **Prediction:** In adjacent US polling, 63% favor ending qualified immunity for government officials [@cato-qualified-immunity-2020] and 66% favor giving civilians the power to sue officers for misconduct [@pew-civilians-sue-officers-2020]. The equal-treatment framing in this question has not been directly polled.
 
-**If a majority of humanity says yes:** A global consensus removes the belief that sustains immunity: that everyone else accepts it. It becomes possible to propose a court for harm caused by states.
+**If a majority of humanity says yes:** A global consensus removes the assumption that sustains immunity: that everyone else accepts it. That creates a mandate to establish a court where states face the same liability as corporations.
 
 **Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@humanity-v-government-paper-2025]
 
