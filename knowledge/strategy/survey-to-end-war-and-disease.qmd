@@ -27,7 +27,17 @@ do: "Fund the count, stress-test the questions, or get your organization's uniqu
 
 **Evidence and calculations:** [Ubiquitous Pragmatic Trial Impact Analysis](../appendix/dfda-impact-paper.qmd) [@dfda-impact-paper-2025]
 
-## 2. How should public money be divided between these two uses?
+## 2. Most promising treatments are never tested, because no company can profit from testing them. Should patients be allowed to fund and join trials of treatments for their own disease?
+
+**Why we ask:** 95% of diseases have zero FDA-approved treatments [@95-pct-diseases-no-treatment]. There is a queue to not die, and at current speed it is {{< var status_quo_queue_clearance_years >}} long. A trial needs money. If no company can patent the treatment, no company pays, and it stays on a shelf.
+
+**Prediction:** No direct polling exists. Access to unapproved treatments polls between 54% and 90% depending on framing. Patient funding raises equity concerns those polls did not test.
+
+**If a majority of humanity says yes:** Regulators can permit patient-funded trials without political risk. Treatments with no patent value get tested.
+
+**Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@dfda-impact-paper-2025]
+
+## 3. How should public money be divided between these two uses?
 
 - Weapons and military spending
 - Pragmatic clinical trials comparing promising treatments
@@ -42,27 +52,7 @@ do: "Fund the count, stress-test the questions, or get your organization's uniqu
 
 **Evidence and calculations:** [Allocation Impact Analysis](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025]
 
-## 3. Most promising treatments are never tested, because no company can profit from testing them. Should patients be allowed to fund and join trials of treatments for their own disease?
-
-**Why we ask:** 95% of diseases have zero FDA-approved treatments [@95-pct-diseases-no-treatment]. There is a queue to not die, and at current speed it is {{< var status_quo_queue_clearance_years >}} long. A trial needs money. If no company can patent the treatment, no company pays, and it stays on a shelf.
-
-**Prediction:** No direct polling exists. Access to unapproved treatments polls between 54% and 90% depending on framing. Patient funding raises equity concerns those polls did not test.
-
-**If a majority of humanity says yes:** Regulators can permit patient-funded trials without political risk. Treatments with no patent value get tested.
-
-**Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@dfda-impact-paper-2025]
-
-## 4. If government action kills or injures your family, should you have the same right to sue as if a corporation did it?
-
-**Why we ask:** Since 1900, governments have spent {{< var cumulative_military_spending_fed_era >}} on the capacity to kill people and used it to kill {{< var war_deaths_since_1900_nounit >}} of them, including {{< var war_children_killed_since_1900_nounit >}} children, who likely did not deserve it. The chance of dying from terrorism is 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. The chance of dying from disease is 100%. Governments built the security apparatus around the first number. If a company made this trade, you could sue. [Sovereign immunity](../solution/court-of-humanity.qmd) means that when a government does it, you mostly cannot [@court-of-humanity-paper-2025].
-
-**Prediction:** In adjacent US polling, 63% favor ending qualified immunity for government officials [@cato-qualified-immunity-2020] and 66% favor giving civilians the power to sue officers for misconduct [@pew-civilians-sue-officers-2020]. The equal-treatment framing in this question has not been directly polled.
-
-**If a majority of humanity says yes:** A global consensus removes the belief that sustains immunity: that everyone else accepts it. It becomes possible to propose a court for harm caused by states.
-
-**Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@humanity-v-government-paper-2025]
-
-## 5. Should governments be required to measure how long people live in good health and what they actually earn, and to test which policies improve those numbers?
+## 4. Should governments be required to measure how long people live in good health and what they actually earn, and to test which policies improve those numbers?
 
 **Why we ask:** Governments measure how much money they spend. They do not measure whether it worked. Two outcomes would tell them: how long people live in good health, and what they actually earn.
 
@@ -71,6 +61,16 @@ do: "Fund the count, stress-test the questions, or get your organization's uniqu
 **If a majority of humanity says yes:** Ten thousand jurisdictions have already tried different policies and written down what happened. The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) uses causal inference to figure out which policies improved the two numbers and which ones did not, then produces recommendations for any jurisdiction: enact, replace, repeal, or keep [@opg-paper-2025]. The [Optimal Budget Generator](https://obg.warondisease.org) does the same for spending levels [@obg-paper-2025]. The recommendations and the votes are both public.
 
 **Evidence and calculations:** [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025]
+
+## 5. If government action kills or injures your family, should you have the same right to sue as if a corporation did it?
+
+**Why we ask:** Since 1900, governments have spent {{< var cumulative_military_spending_fed_era >}} on the capacity to kill people and used it to kill {{< var war_deaths_since_1900_nounit >}} of them, including {{< var war_children_killed_since_1900_nounit >}} children, who likely did not deserve it. The chance of dying from terrorism is 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. The chance of dying from disease is 100%. Governments built the security apparatus around the first number. If a company made this trade, you could sue. [Sovereign immunity](../solution/court-of-humanity.qmd) means that when a government does it, you mostly cannot [@court-of-humanity-paper-2025].
+
+**Prediction:** In adjacent US polling, 63% favor ending qualified immunity for government officials [@cato-qualified-immunity-2020] and 66% favor giving civilians the power to sue officers for misconduct [@pew-civilians-sue-officers-2020]. The equal-treatment framing in this question has not been directly polled.
+
+**If a majority of humanity says yes:** A global consensus removes the belief that sustains immunity: that everyone else accepts it. It becomes possible to propose a court for harm caused by states.
+
+**Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@humanity-v-government-paper-2025]
 
 ## Why counting matters
 
