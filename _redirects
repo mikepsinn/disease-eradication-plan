@@ -124,6 +124,13 @@ https://wager.warondisease.org/*  https://manual.warondisease.org/knowledge/proo
 
 # --- END AUTO-GENERATED REDIRECTS ---
 
+# Stable second-edition Amazon links. Keep these temporary so future editions can change targets.
+/amazon             https://www.amazon.com/dp/B0HHKY4SBM  302!
+/amazon/book        https://www.amazon.com/dp/B0HHKY4SBM  302!
+/amazon/paperback   https://www.amazon.com/dp/B0HHKY4SBM  302!
+/amazon/ebook       https://www.amazon.com/dp/B0HHLR55CN  302!
+/amazon/kindle      https://www.amazon.com/dp/B0HHLR55CN  302!
+
 # Netlify redirects for subsites
 # If a page doesn't exist locally, redirect to the main book site
 # The absence of ! means Netlify tries local files first

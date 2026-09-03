@@ -30,7 +30,7 @@ def _build_cta_html(project_root: Path) -> str:
     buy_links = manual_config.get("links", {}).get("buy", [])
 
     # First buy link is the primary (Amazon Paperback)
-    amazon_url = buy_links[0]["url"] if buy_links else "https://www.amazon.com/dp/B0GPLXFMMT"
+    amazon_url = buy_links[0]["url"] if buy_links else "https://warondisease.org/amazon/paperback"
 
     return f"""  <p class="book-footer-cta">
     <a href="{amazon_url}" class="book-footer-link book-footer-link-bold">Buy on Amazon</a> &nbsp;|&nbsp;
