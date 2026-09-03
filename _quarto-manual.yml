@@ -428,12 +428,12 @@ links:
       primary: true
   buy:
     - label: "Amazon Paperback"
-      url: "https://www.amazon.com/dp/B0GPLXFMMT"
+      url: "https://warondisease.org/amazon/paperback"
       subtitle: "Ink on murdered tree, delivered to your dwelling"
       icon: "fa-brands fa-amazon"
       primary: true
     - label: "Amazon Kindle"
-      url: "https://www.amazon.com/dp/B0GPBH77XN"
+      url: "https://warondisease.org/amazon/ebook"
       subtitle: "Beamed directly into your glowing rectangle"
       icon: "fa-brands fa-amazon"
     - label: "All Retailers"
