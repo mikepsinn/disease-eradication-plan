@@ -22,7 +22,7 @@ The book is presented as an implementation guide from Wishonia, where they succe
 - Dark humor that already works ("Dead people file zero claims")
 - Historical references and factual irony
 - Clever wordplay ("First war on anything designed to win")
-- Self-deprecating humor ("The Complete Idiot's Guide...")
+- Self-deprecating humor ("you named your planet dirt")
 
 ## Scripts
 
