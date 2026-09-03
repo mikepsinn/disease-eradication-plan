@@ -286,7 +286,7 @@ SCENES = [
     },
     {
         "index": 13,
-        "lyrics": "to Optimizing Your Terrible Civilization...",
+        "lyrics": "to Optimizing Your",
         "start_s": 79.0,
         "end_s": 86.5,
         "keyframe_prompt": (
@@ -302,7 +302,7 @@ SCENES = [
     },
     {
         "index": 14,
-        "lyrics": "...to Utopia!",
+        "lyrics": "Terrible Civilization!",
         "start_s": 86.5,
         "end_s": 93.0,
         "keyframe_prompt": (
