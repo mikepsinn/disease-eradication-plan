@@ -96,7 +96,6 @@ Check existing: `grep "keyword" _variables.yml`. Never duplicate. Generate: `npm
 | Confidence | "probably irresistible", "the math suggests" | "unstoppable", "inevitable", "guaranteed" |
 | Comparisons | Like with like (margins to margins) | 8% operating margin vs 272% bond return |
 | Treaty durability | Billionaire bondholders have pre-existing influence + motive to keep/expand | "if the treaty holds" without explaining why it will |
-| Cross-chapter | Each chapter gets its own joke version | Same joke verbatim in 2+ chapters |
 | Bond terms | Securities, revenue share, perpetual bonds | Utility tokens, DAO governance |
 | Ownership | Reader builds everything: "your Scoreboard," "here's how you launch" | "Join us," "our platform," "we're building" |
 | Giving, not asking | Hand the reader assets ("your commission is on file"); the treaty "directs"/"requires" governments | "we ask", "please help", thank-you framing, participation as sacrifice |
