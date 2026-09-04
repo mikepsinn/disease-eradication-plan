@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 135 parameters used in the analysis, organized by type:
+This appendix documents all 147 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 50
-- Calculated values: 62
-- Core definitions: 23
+- External sources (peer-reviewed): 54
+- Calculated values: 64
+- Core definitions: 29
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (62 parameters) • [External Data Sources](#sec-external) (50 parameters) • [Core Definitions](#sec-definitions) (23 parameters)
+[Calculated Values](#sec-calculated) (64 parameters) • [External Data Sources](#sec-external) (54 parameters) • [Core Definitions](#sec-definitions) (29 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -180,6 +180,86 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_gdp_year_20.qmd >}}
+
+:::
+
+### Median After-Tax Consumable Income, Status Quo (Year 20): $3,033 {#sec-current_trajectory_median_after_tax_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Median after-tax consumable income at year 20 under the status quo: the world more or less as trended. Mean income grows at the baseline rate, the military share drifts up at its measured SIPRI-vs-GDP differential, the median's share holds (best guess zero erosion, range covers both directions), so the median grows roughly with GDP per capita. v1's compounding destructive share and assumed erosion made the median mysteriously die against 35 years of contrary observed history; that branch is gone. The collapse scenario (extraction crosses the rational-crime threshold and GDP craters with the median) is narrated separately, not smuggled into this baseline.
+
+**Inputs**:
+
+- [Current Trajectory Average Income at Year 20](#sec-current_trajectory_avg_income_year_20) 🔢: $20,483
+- [Military Share of Global GDP](#sec-global_military_share_of_gdp) 🔢: 2.37%
+- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
+- [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
+- [Global Median-to-Mean Income Ratio](#sec-global_median_to_mean_income_ratio) 🔢: 0.203:1
+- [Median Share Erosion Rate (Annual)](#sec-global_median_share_erosion_rate_annual): 0% (95% CI: -0.5% - 0.78%)
+- [Effective Tax Rate on Median Earner](#sec-global_effective_tax_rate_median): 25%
+
+$$
+\begin{gathered}
+\tilde{m}_{base,20} \\
+= \bar{y}_{base,20} \times (1 - s_{mil} \times \left(\frac{1+g_{mil,10yr}}{1+g_{base}}\right)^{20}) \times \rho_{med} \times (1 - e_{med})^{20} \times (1 - \tau_{med})
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{base,20} \\
+= \frac{GDP_{base,20}}{Pop_{2045}} \\
+= \frac{\$188T}{9.2B} \\
+= \$20.5K
+\end{gathered}
+$$
+where:
+$$
+GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
+$$
+where:
+$$
+\begin{gathered}
+s_{mil} \\
+= \frac{Spending_{mil}}{GDP_{global}} \\
+= \frac{\$2.72T}{\$115T} \\
+= 2.37\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\rho_{med} \\
+= \frac{\tilde{y}_{gallup}}{\bar{y}_{0}} \\
+= \frac{\$2.92K}{\$14.4K} \\
+= 0.203
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_trajectory_median_after_tax_income_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_trajectory_median_after_tax_income_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_trajectory_median_after_tax_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_trajectory_median_after_tax_income_year_20.qmd >}}
 
 :::
 
@@ -1210,65 +1290,6 @@ $$
 
 :::
 
-### 1% Treaty Pragmatic Trial Funding: $21.8 billion {#sec-dih_treasury_to_medical_research_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual 1% Treaty funding available for pragmatic clinical trials after bond payouts and political incentive funding.
-
-**Inputs**:
-
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2 billion
-- [Annual VICTORY Incentive Alignment Bond Payout](#sec-victory_bond_annual_payout) 🔢: $2.72 billion
-- [Annual IAB Political Incentive Funding](#sec-iab_political_incentive_funding_annual) 🔢: $2.72 billion
-
-$$
-\begin{gathered}
-Treasury_{RD,ann} \\
-= Funding_{treaty} - Payout_{bond,ann} - Funding_{political,ann} \\
-= \$27.2B - \$2.72B - \$2.72B \\
-= \$21.8B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dih_treasury_to_medical_research_annual.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dih_treasury_to_medical_research_annual.qmd >}}
-
-:::
-
 ### Diseases Without Effective Treatment: 6,650 diseases {#sec-diseases_without_effective_treatment}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1987,97 +2008,81 @@ $$
 
 :::
 
-### Global Political Reform Investment: $128 billion {#sec-global_political_reform_investment}
+### Global Median-to-Mean Income Ratio: 0.203:1 {#sec-global_median_to_mean_income_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Estimated global advocacy investment for policy reform. Calculated as US costs × global ratio (based on discretionary spending). Upper bound representing full democratic engagement at scale.
+Global median-to-mean income ratio, DERIVED from the Gallup anchor against mean income (GDP per capita): the median human receives about twenty-one cents of the average dollar. Pre-tax basis on both sides. The derivation replaces a hand-chosen 0.30 'from Gallup's range', which made the model's agreement with Gallup circular. This single number is why GDP per capita overstates what a typical person earns by roughly 5x.
 
 **Inputs**:
 
-- [US Political Reform Investment (Total)](#sec-us_political_reform_investment_total) 🔢: $25.5 billion
-- [Global-to-US Political Cost Ratio](#sec-global_to_us_political_cost_ratio): 5:1 (95% CI: 3:1 - 8:1)
+- [Gallup Global Median Per-Capita Income (2013, PPP)](#sec-gallup_global_median_income_per_capita) 📊: $2,920 (95% CI: $2,300 - $3,700)
+- [Global Average Income (2025 Baseline)](#sec-global_avg_income_2025) 🔢: $14,375
 
 $$
 \begin{gathered}
-Cost_{global,reform} \\
-= Cost_{US,total} \times \rho_{global/US} \\
-= \$25.5B \times 5 \\
-= \$128B
+\rho_{med} \\
+= \frac{\tilde{y}_{gallup}}{\bar{y}_{0}} \\
+= \frac{\$2.92K}{\$14.4K} \\
+= 0.203
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Cost_{US,total} \\
-= (Cost_{campaign} \\
-+ Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Cost_{US,congress} \\
-= N_{congress} \times V_{post-office} \\
-= 535 \times \$10M \\
-= \$5.35B
-\end{gathered}
-$$
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-global_political_reform_investment.qmd >}}
-
-{{< include ../figures/sensitivity-table-global_political_reform_investment.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-global_political_reform_investment.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-global_political_reform_investment.qmd >}}
-
-:::
-
-### Annual IAB Political Incentive Funding: $2.72 billion {#sec-iab_political_incentive_funding_annual}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual funding for IAB political incentive mechanism (independent expenditures supporting high-scoring politicians, post-office fellowship endowments, Public Good Score infrastructure)
-
-**Inputs**:
-
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2 billion
-- [IAB Political Incentive Funding Percentage](#sec-iab_political_incentive_funding_pct): 10%
-
-$$
-\begin{gathered}
-Funding_{political,ann} \\
-= Funding_{treaty} \times Pct_{political} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
 \end{gathered}
 $$
 *✓ High confidence*
 
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_median_to_mean_income_ratio.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_median_to_mean_income_ratio.qmd >}}
+
 #### Monte Carlo Distribution
 
-{{< include ../figures/mc-distribution-iab_political_incentive_funding_annual.qmd >}}
+{{< include ../figures/mc-distribution-global_median_to_mean_income_ratio.qmd >}}
 
 #### Exceedance Probability
 
-{{< include ../figures/exceedance-iab_political_incentive_funding_annual.qmd >}}
+{{< include ../figures/exceedance-global_median_to_mean_income_ratio.qmd >}}
+
+:::
+
+### Military Share of Global GDP: 2.37% {#sec-global_military_share_of_gdp}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Military spending as a share of global GDP (SIPRI spending over IMF output). The regrettables deduction in the median consumable-income track: output that is made and counted but cannot be eaten. Military ONLY, by design: it is hard data and the book's actual subject. Cybercrime was removed from this deduction (v2): loss estimates count transfers and double-counted indirect costs, not uneaten output.
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
+- [Global GDP (2025)](#sec-global_gdp_2025) 📊: $115 trillion
+
+$$
+\begin{gathered}
+s_{mil} \\
+= \frac{Spending_{mil}}{GDP_{global}} \\
+= \frac{\$2.72T}{\$115T} \\
+= 2.37\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_military_share_of_gdp.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_military_share_of_gdp.qmd >}}
 
 :::
 
@@ -2313,6 +2318,38 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-pharma_vs_defense_net_margin_ratio.qmd >}}
+
+:::
+
+### Percentage Military Spending Cut After WW2: 87.6% {#sec-post_ww2_military_cut_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage US military spending cut after WW2 (1945-1947, inflation-adjusted: $1,420B to $176B in constant 2024 dollars)
+
+**Inputs**:
+
+- [US Military Spending in 1947 (Constant 2024 Dollars)](#sec-us_military_spending_1947_annual_2024usd) 📊: $176 billion
+- [US Military Spending at WW2 Peak (Constant 2024 Dollars)](#sec-us_military_spending_1945_peak_annual_2024usd) 📊: $1.42 trillion
+
+$$
+\begin{gathered}
+Cut_{WW2} \\
+= 1 - \frac{Spending_{US,1947}}{Spending_{US,1945}} \\
+= 1 - \frac{\$176B}{\$1.42T} \\
+= 87.6\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-post_ww2_military_cut_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-post_ww2_military_cut_pct.qmd >}}
 
 :::
 
@@ -5526,6 +5563,308 @@ $$
 
 :::
 
+### Median After-Tax Consumable Income, Treaty (Year 20): $5,736 {#sec-treaty_trajectory_median_after_tax_income_year_20}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Median after-tax consumable income at year 20 under the Treaty Trajectory. Mean income from the treaty GDP trajectory; military share reduced by the ratchet's terminal redirect (the single ratchet knob); the same share erosion as the status quo (best guess zero) so distributional claims cancel out of the multiplier; plus the one pro-median channel: cures return out-of-pocket health costs and sick wages to the people who bear them (WHO-anchored relief share scaled by the ratchet-schedule cure fraction).
+
+**Inputs**:
+
+- [Treaty Trajectory Average Income at Year 20](#sec-treaty_trajectory_avg_income_year_20) 🔢: $34,972
+- [Military Share of Global GDP](#sec-global_military_share_of_gdp) 🔢: 2.37%
+- [Treaty Ratchet Terminal Redirect Share](#sec-treaty_ratchet_terminal_share): 10% (95% CI: 1% - 19%)
+- [Global Median-to-Mean Income Ratio](#sec-global_median_to_mean_income_ratio) 🔢: 0.203:1
+- [Median Share Erosion Rate (Annual)](#sec-global_median_share_erosion_rate_annual): 0% (95% CI: -0.5% - 0.78%)
+- [Median Income Relief from Full Disease Cure](#sec-median_health_burden_relief_share): 10% (95% CI: 5% - 15%)
+- [Treaty Disease Cure Fraction (20yr, Ratchet Schedule)](#sec-treaty_disease_cure_fraction_20yr) 🔢: 100%
+- [Effective Tax Rate on Median Earner](#sec-global_effective_tax_rate_median): 25%
+
+$$
+\begin{gathered}
+\tilde{m}_{treaty,20} \\
+= \bar{y}_{treaty,20} \times (1 - s_{mil} \times (1 - s_{ratchet})) \times \rho_{med} \times (1 - e_{med})^{20} \times (1 \\
++ r_{relief} \times f_{cure,20,treaty}) \times (1 - \tau_{med})
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{treaty,20} \\
+= \frac{GDP_{treaty,20}}{Pop_{2045}} \\
+= \frac{\$322T}{9.2B} \\
+= \$35K
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+GDP_{treaty,20} \\
+= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,20} \\
++ g_{peace,treaty,20} + g_{cyber,treaty,20} \\
++ g_{health,treaty,20})^{20}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{redirect,treaty,20} \\
+= \bar{s}_{treaty,20} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= 5.8\% \times 5.5\% \times 2 \times 1.67 \\
+= 1.06\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{s}_{treaty,20} \\
+= s_{ratchet} \times 0.409 \\
+= 10\% \times 0.409 \\
+= 5.8\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{peace,treaty,20} \\
+= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,20}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{cyber,treaty,20} \\
+= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,20} \times \varepsilon_{conflict}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{health,treaty,20} \\
+= ((1 \\
++ f_{cure,20,treaty} \times d_{disease})^{\frac{1}{H_{health,treaty}}}) - 1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+f_{cure,20,treaty} \\
+= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 8 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+s_{mil} \\
+= \frac{Spending_{mil}}{GDP_{global}} \\
+= \frac{\$2.72T}{\$115T} \\
+= 2.37\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\rho_{med} \\
+= \frac{\tilde{y}_{gallup}}{\bar{y}_{0}} \\
+= \frac{\$2.92K}{\$14.4K} \\
+= 0.203
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+\bar{y}_{0} \\
+= \frac{GDP_{global}}{Pop_{global}} \\
+= \frac{\$115T}{8B} \\
+= \$14.4K
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trajectory_median_after_tax_income_year_20.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trajectory_median_after_tax_income_year_20.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trajectory_median_after_tax_income_year_20.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trajectory_median_after_tax_income_year_20.qmd >}}
+
+:::
+
 ### US Congress Full Advocacy Cost: $5.35 billion {#sec-us_congress_full_advocacy_cost}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -5559,6 +5898,49 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_congress_full_advocacy_cost.qmd >}}
+
+:::
+
+### First-Principles Optimal US Defense Budget: $184 billion {#sec-us_defense_first_principles_optimal}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+First-principles optimal US homeland-defense budget: the bottom-up sum of what defending the United States actually requires at efficient prices. Nuclear second strike $30B + homeland air/missile defense $35B + Coast Guard $14B + National Guard $30B + cyber defense $15B + mobilization hedge $60B = ~$184B. Honest range ~$130-260B. Compare: current ~$886B. Restraint-school proposals (Posen, Cato) and peer benchmarks land higher (~$450-675B) because they cost reduced hegemony and allied/peer deterrence, not homeland defense.
+
+**Inputs**:
+
+- [First-Principles Defense: Nuclear Second Strike](#sec-us_defense_fp_nuclear_deterrent): $30 billion (95% CI: $20 billion - $50 billion)
+- [First-Principles Defense: Homeland Air & Missile Defense](#sec-us_defense_fp_homeland_air_missile): $35 billion (95% CI: $25 billion - $50 billion)
+- [First-Principles Defense: Coast Guard](#sec-us_defense_fp_coast_guard): $14 billion (95% CI: $12 billion - $16 billion)
+- [First-Principles Defense: National Guard](#sec-us_defense_fp_national_guard): $30 billion (95% CI: $24 billion - $40 billion)
+- [First-Principles Defense: Cyber Defense](#sec-us_defense_fp_cyber): $15 billion (95% CI: $10 billion - $25 billion)
+- [First-Principles Defense: Mobilization Hedge](#sec-us_defense_fp_mobilization_hedge): $60 billion (95% CI: $40 billion - $100 billion)
+
+$$
+\begin{gathered}
+D_{optimal} \\
+= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
++ D_{hedge} \\
+= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
+= \$184B
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_defense_first_principles_optimal.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_defense_first_principles_optimal.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_defense_first_principles_optimal.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_defense_first_principles_optimal.qmd >}}
 
 :::
 
@@ -5598,46 +5980,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-us_political_reform_investment_total.qmd >}}
-
-:::
-
-### Annual VICTORY Incentive Alignment Bond Payout: $2.72 billion {#sec-victory_bond_annual_payout}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Annual VICTORY Incentive Alignment Bond payout (treaty funding × bond percentage)
-
-**Inputs**:
-
-- [Annual Funding from 1% of Global Military Spending Redirected to DIH](#sec-treaty_annual_funding) 🔢: $27.2 billion
-- [Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds](#sec-victory_bond_funding_pct): 10%
-
-$$
-\begin{gathered}
-Payout_{bond,ann} \\
-= Funding_{treaty} \times Pct_{bond} \\
-= \$27.2B \times 10\% \\
-= \$2.72B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Funding_{treaty} \\
-= Spending_{mil} \times Reduce_{treaty} \\
-= \$2.72T \times 1\% \\
-= \$27.2B
-\end{gathered}
-$$
-*✓ High confidence*
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-victory_bond_annual_payout.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-victory_bond_annual_payout.qmd >}}
 
 :::
 
@@ -5842,6 +6184,30 @@ Fraction of GDP currently lost to disease (productivity losses + medical costs d
 **Technical**: Distribution: Fixed
 
 *✓ High confidence*
+
+:::
+
+### Gallup Global Median Per-Capita Income (2013, PPP): $2,920 {#sec-gallup_global_median_income_per_capita}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global median per-capita household income as measured by the Gallup World Poll (131 countries, PPP dollars, published 2013): the only comprehensive survey-based measurement of the middle human's income that exists. The median-to-mean ratio is DERIVED from this anchor rather than chosen, so the model is calibrated to a measured human. The confidence interval covers the anchor's vintage (global medians grew after 2013, pushing the true current value above the point estimate) and PPP-vs-market-rate conversion (pushing it below).
+
+**Source**: [@gallup-global-median-income-2013]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$2,300, $3,700] • Distribution: Normal
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $2,300 and $3,700 (±24%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-gallup_global_median_income_per_capita.qmd >}}
+
+*~ Medium confidence*
 
 :::
 
@@ -6449,6 +6815,22 @@ Global military spending in 2024
 
 :::
 
+### Military Spending Real CAGR (10-Year): 3.4% {#sec-global_military_spending_real_cagr_10yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Real compound annual growth rate of global military spending over the last decade (2014-2024). SIPRI reports 10 consecutive annual increases, with 2024 up 9.4% in real terms. The 10-year CAGR is approximately 3.4% real.
+
+**Source**: [@sipri-milex-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Global Population in 2024: 8 billion of people {#sec-global_population_2024}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6682,6 +7064,38 @@ Standard economic value per QALY
 #### Input Distribution
 
 {{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42 trillion {#sec-us_military_spending_1945_peak_annual_2024usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending at WW2 peak (1945) in constant 2024 dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Military Spending in 1947 (Constant 2024 Dollars): $176 billion {#sec-us_military_spending_1947_annual_2024usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2024 dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 
@@ -6979,23 +7393,33 @@ Status-quo baseline annual global GDP growth rate.
 
 :::
 
-### Global-to-US Political Cost Ratio: 5:1 {#sec-global_to_us_political_cost_ratio}
+### Effective Tax Rate on Median Earner: 25% {#sec-global_effective_tax_rate_median}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Ratio of global to US political reform costs. Based on discretionary spending ratio (~9x) discounted by ~50% for less transparent/expensive non-US political systems. Range 3-8 reflects uncertainty about non-US political dynamics and hidden influence channels.
+Effective combined tax rate (direct plus indirect) on the global median earner. Applied IDENTICALLY across all scenarios so it shifts levels without affecting any cross-scenario comparison: there is no pro-treaty thumb on this scale. The 'after-tax' in the metric name is honesty about levels, not a modeling lever.
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [3:1, 8:1] • Distribution: Lognormal
+**Technical**: Distribution: Fixed
 
-**What this means**: There's significant uncertainty here. The true value likely falls between 3:1 and 8:1 (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+*Core definition*
 
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+:::
 
-#### Input Distribution
+### Median Share Erosion Rate (Annual): 0% {#sec-global_median_share_erosion_rate_annual}
 
-{{< include ../figures/distribution-global_to_us_political_cost_ratio.qmd >}}
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual erosion of the median's share of mean income (positive = the middle person's slice shrinks). Best guess ZERO: the GLOBAL median-to-mean ratio ROSE 1990-2019 via between-country convergence (a billion people in Asia got real jobs), so the measured global sign favors the median; the US wedge is the extreme, not the world. The range spans continued convergence (-0.5%/yr, the share keeps growing) to the US-extreme construction applied globally (+0.78%/yr; EPI: productivity +90.2% vs typical pay +33.0%, 1979-2025). Applied IDENTICALLY to the status-quo and treaty branches, so it cancels out of every treaty-vs-current multiplier; Wishonia excludes it (the wishocratic mechanism exists to stop share capture). v1 set this to 0.5%/yr shrinkage as skeptic armor; that was deliberate conservatism, replaced by deliberate accuracy plus deliberate uncertainty.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [-0.5%, 0.78%] • Distribution: Normal
+
+**What this means**: We're quite confident in this estimate. The true value likely falls between -0.5% and 0.78% (±0%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
 *Core definition*
 
@@ -7015,15 +7439,23 @@ Share of longer-run life-extension gains that have plausibly materialized into h
 
 :::
 
-### IAB Political Incentive Funding Percentage: 10% {#sec-iab_political_incentive_funding_pct}
+### Median Income Relief from Full Disease Cure: 10% {#sec-median_health_burden_relief_share}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Percentage of treaty funding allocated to Incentive Alignment Bond mechanism for political incentives (independent expenditures/PACs, post-office fellowships, Public Good Score infrastructure)
+Fraction by which curing ALL currently untreatable disease would raise the median person's consumable income, beyond the mean-income effect already inside the GDP trajectories. Mechanism: out-of-pocket health spending and sick-day wage losses fall disproportionately on people at and below the median (WHO: about half a billion people pushed into extreme poverty by health costs, roughly 2 billion facing catastrophic or impoverishing health spending). Scaled by each scenario's cure fraction, so partial cures give partial relief. The range reflects genuine uncertainty about how much of that burden the queue's early cures relieve.
 
 #### Uncertainty Range
 
-**Technical**: Distribution: Fixed
+**Technical**: 95% CI: [5%, 15%] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 5% and 15% (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-median_health_burden_relief_share.qmd >}}
 
 *Core definition*
 
@@ -7159,6 +7591,138 @@ Total members of US Congress (100 senators + 435 representatives)
 
 :::
 
+### First-Principles Defense: Coast Guard: $14 billion {#sec-us_defense_fp_coast_guard}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US Coast Guard (actual budget ~$14B). Maritime homeland security and coastal defense.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$12 billion, $16 billion] • Distribution: Normal (SE: $1.5 billion)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $12 billion and $16 billion (±14%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_coast_guard.qmd >}}
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: Cyber Defense: $15 billion {#sec-us_defense_fp_cyber}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cyber defense of critical infrastructure: the primary modern attack vector that crosses oceans in milliseconds and is not stopped by geography.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10 billion, $25 billion] • Distribution: Normal (SE: $4 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $10 billion and $25 billion (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_cyber.qmd >}}
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: Homeland Air & Missile Defense: $35 billion {#sec-us_defense_fp_homeland_air_missile}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Continental air and missile defense plus early warning (NORAD, ground-based midcourse defense, interceptor aircraft). Defensive only; no expeditionary or power-projection air power.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$25 billion, $50 billion] • Distribution: Normal (SE: $7 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $25 billion and $50 billion (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_homeland_air_missile.qmd >}}
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: Mobilization Hedge: $60 billion {#sec-us_defense_fp_mobilization_hedge}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Mobilization hedge: defense R&D, a maintained industrial base, and a professional cadre force. The WWII lesson is to maintain the capacity to scale, not a standing empire: a peer buildup gives years of warning, and the US went from the 17th-ranked army in 1939 to victory in four years. This is the cheapest insurance and the most neglected.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$40 billion, $100 billion] • Distribution: Normal (SE: $15 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $40 billion and $100 billion (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_mobilization_hedge.qmd >}}
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: National Guard: $30 billion {#sec-us_defense_fp_national_guard}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+National Guard / territorial land defense: a citizen-soldier reserve (the Switzerland model) for homeland defense and disaster response.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$24 billion, $40 billion] • Distribution: Normal (SE: $4 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $24 billion and $40 billion (±27%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_national_guard.qmd >}}
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: Nuclear Second Strike: $30 billion {#sec-us_defense_fp_nuclear_deterrent}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Survivable nuclear second strike: an SSBN-centric minimum credible deterrent (~100-200 survivable warheads on ballistic-missile submarines). The one threat geography does not neutralize. Drops the first-strike-attractive ICBM silos and the bomber leg. The UK and France each sustain continuous-at-sea deterrents within total defense budgets under $80B.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20 billion, $50 billion] • Distribution: Normal (SE: $8 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $20 billion and $50 billion (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_nuclear_deterrent.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Political Effort Multiplier (US): 0.7x {#sec-us_political_effort_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7176,20 +7740,6 @@ Fraction of campaign + lobbying spending needed to achieve policy reform. Accoun
 #### Input Distribution
 
 {{< include ../figures/distribution-us_political_effort_multiplier.qmd >}}
-
-*Core definition*
-
-:::
-
-### Percentage of Captured Dividend Funding VICTORY Incentive Alignment Bonds: 10% {#sec-victory_bond_funding_pct}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Percentage of captured dividend funding VICTORY Incentive Alignment Bonds (10%)
-
-#### Uncertainty Range
-
-**Technical**: Distribution: Fixed
 
 *Core definition*
 

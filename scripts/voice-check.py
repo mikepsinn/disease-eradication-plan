@@ -62,6 +62,8 @@ BANNED = [
     (r"\bi know what you'?re thinking\b", "stance", "drop the mind-reading setup; just state it"),
     (r"\byou'?re probably thinking\b", "stance", "drop the mind-reading setup; just state it"),
     (r"\bwatch what you just did\b", "stance", "don't narrate the reader's move and defeat them for it"),
+    # register (Mike, 2026-09-04): plain spoken, not cute. "$109 a head" -> "$109 per person"
+    (r"\b(a|per) head\b(?!\s*(start|of|count|-))", "register", "'per person'"),
 ]
 
 # Legit contexts that LOOK like a hit but aren't (skip the match).
