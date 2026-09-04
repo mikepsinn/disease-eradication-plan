@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 147 parameters used in the analysis, organized by type:
+This appendix documents all 153 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 54
-- Calculated values: 64
+- External sources (peer-reviewed): 57
+- Calculated values: 67
 - Core definitions: 29
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (64 parameters) • [External Data Sources](#sec-external) (54 parameters) • [Core Definitions](#sec-definitions) (29 parameters)
+[Calculated Values](#sec-calculated) (67 parameters) • [External Data Sources](#sec-external) (57 parameters) • [Core Definitions](#sec-definitions) (29 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1240,6 +1240,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_multiplier.qmd >}}
+
+:::
+
+### Pragmatic Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial cost reduction percentage: 1 - (pragmatic trial cost / traditional Phase 3 cost)
+
+**Inputs**:
+
+- [Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41,000 (95% CI: $20,000 - $120,000)
+
+$$
+\begin{gathered}
+Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_cost_reduction_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_cost_reduction_pct.qmd >}}
 
 :::
 
@@ -5944,6 +5982,85 @@ $$
 
 :::
 
+### Military Overspend: $702 billion {#sec-us_gov_waste_military_overspend}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending above the first-principles homeland-defense optimum. Current US military spending (~$886B) supports global power projection (~750 overseas bases). A bottom-up, threat-by-threat homeland-defense budget is ~$184B (nuclear second strike $30B, homeland air/missile defense $35B, Coast Guard $14B, National Guard $30B, cyber defense $15B, mobilization hedge $60B). Delta = $886B - $184B = ~$702B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]
+
+**Inputs**:
+
+- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [First-Principles Optimal US Defense Budget](#sec-us_defense_first_principles_optimal) 🔢: $184 billion
+
+$$
+\begin{gathered}
+W_{military} \\
+= Spending_{US,2024} - D_{optimal} \\
+= \$886B - \$184B \\
+= \$702B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{optimal} \\
+= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
++ D_{hedge} \\
+= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
+= \$184B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_military_overspend.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_military_overspend.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_military_overspend.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_military_overspend.qmd >}}
+
+:::
+
+### Current US Military Spending vs Pre-WW2 Baseline (Multiplier): 30.6x {#sec-us_military_spending_current_vs_prewar_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Ratio of current US military spending to pre-WW2 baseline in constant dollars ($886B / $29B)
+
+**Inputs**:
+
+- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [US Military Spending in 1939 (Constant 2024 Dollars)](#sec-us_military_spending_1939_annual_2024usd) 📊: $29 billion
+
+$$
+\begin{gathered}
+Ratio_{US,2024:1939} \\
+= \frac{Spending_{US,2024}}{Spending_{US,1939}} \\
+= \frac{\$886B}{\$29B} \\
+= 30.6
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_military_spending_current_vs_prewar_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_military_spending_current_vs_prewar_multiplier.qmd >}}
+
+:::
+
 ### US Political Reform Investment (Total): $25.5 billion {#sec-us_political_reform_investment_total}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6024,6 +6141,22 @@ $$
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
+
+### Annual Terrorism Death Risk (1 in X): 30 million people {#sec-annual_terrorism_death_risk_denominator}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual probability of being killed by terrorism expressed as '1 in X'. An American's annual odds of dying in a terrorist attack are approximately 1 in 30 million.
+
+**Source**: [@chance-of-dying-from-terrorism-1-in-30m]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
 
 ### Global Population with Chronic Diseases: 2.4 billion people {#sec-current_disease_patients_global}
 
@@ -7064,6 +7197,46 @@ Standard economic value per QALY
 #### Input Distribution
 
 {{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Phase 3 Cost per Patient: $41,000 {#sec-traditional_phase3_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Phase 3 cost per patient (median from FDA study)
+
+**Source**: [@trial-costs-fda-study]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20,000, $120,000] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20,000 and $120,000 (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### US Military Spending in 1939 (Constant 2024 Dollars): $29 billion {#sec-us_military_spending_1939_annual_2024usd}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending in 1939 (pre-WW2 baseline) in constant 2024 dollars
+
+**Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *✓ High confidence*
 
