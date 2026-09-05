@@ -5,7 +5,7 @@ abstract: |
   Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only
   {{< var exploration_ratio >}} have been clinically tested. At the current discovery rate of
   {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take
-  ~{{< var status_quo_queue_clearance_years >}}. A decentralized FDA integrating pragmatic clinical
+  ~{{< var status_quo_queue_clearance_years >}}. An open protocol integrating pragmatic clinical
   trials into standard healthcare at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs.
   {{< var traditional_phase3_cost_per_patient >}} traditional) increases trial capacity
   {{< var dfda_trial_capacity_multiplier >}}, reducing backlog clearance to
@@ -56,7 +56,7 @@ There are {{< var safe_compounds_count >}} that have already been proven safe fo
 
 Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available_nounit >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
-**The Solution:** A [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025], an open protocol (like HTTP/FHIR, not a competing platform) that existing DCT platforms, EHRs, and health apps adopt to integrate pragmatic clinical trials into standard healthcare, enabling:
+**The Solution:** The [dFDA protocol](../solution/dfda.qmd) (Decentralized Framework for Drug Assessment) [@dfda-spec-paper-2025], an open standard like HTTP or FHIR rather than a platform, that existing DCT platforms, EHRs, and health apps adopt to integrate pragmatic clinical trials into standard healthcare, enabling:
 
 1. **Subsidized Patient Participation**: Patients receive subsidies to participate in trials, making participation accessible and incentivized
 2. **Universal Trial Access**: Any patient can join trials from home via their phone or computer - no travel to research centers required
@@ -119,7 +119,7 @@ These are **cumulative benefits over the entire acceleration period**, not annua
 
 **Why treatments arriving sooner saves lives:**
 
-A disease that would receive its first effective treatment in year 200 under the status quo might receive it in year 16 with the framework. During those 184 years, people die from that disease who could have been saved. The {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} figure captures the cumulative lives saved across all diseases during their acceleration periods.
+A disease that would receive its first effective treatment in year 200 under the status quo might receive it in year 16 with the protocol. During those 184 years, people die from that disease who could have been saved. The {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} figure captures the cumulative lives saved across all diseases during their acceleration periods.
 
 **The two components:**
 
@@ -128,7 +128,7 @@ A disease that would receive its first effective treatment in year 200 under the
 
 **Total timeline shift:** {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} = {{< var dfda_trial_capacity_treatment_acceleration_years >}} + {{< var efficacy_lag_years >}}
 
-**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dfda_annual_trial_funding >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the framework enables {{< var dfda_patients_fundable_annually_nounit >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
+**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dfda_annual_trial_funding >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the protocol enables {{< var dfda_patients_fundable_annually_nounit >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 ## Capabilities
 
@@ -140,7 +140,7 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 
 - Register treatments through any protocol-compliant system
 - Access aggregated effectiveness data across all participating platforms
-- Receive automatic liability coverage through protocol governance
+- Receive liability coverage through the protocol's pooled insurance
 - Benefit from standardized outcome reporting across the network
 
 **For Patients (via participating apps and platforms):**
@@ -206,86 +206,23 @@ This analysis demonstrates what becomes possible when the funding constraint is 
 
 The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}}:1 ROI, any rational capital allocator would fund this if they believed the analysis.
 
-**Trial Capacity Impact:** See [The Discovery Capacity Model](#the-discovery-capacity-model) for the full comparison of status quo vs. framework trial capacity metrics.
+**Trial Capacity Impact:** See [The Discovery Capacity Model](#the-discovery-capacity-model) for the full comparison of status quo vs. protocol trial capacity metrics.
 
 **The Untested Treatment Backlog:**
 
 Approximately {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. At current trial capacity ({{< var new_disease_first_treatments_per_year >}}), systematically testing all {{< var drug_disease_combinations_possible >}} plausible pairings would take ~{{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}} capacity, this drops to ~{{< var dfda_queue_clearance_years >}}.
 
-## Framework Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates}
+## Protocol Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates}
 
-> **Protocol Infrastructure Costs**
->
-> This is protocol infrastructure, open standards and APIs that existing clinical trial systems adopt. This is analogous to HTTP enabling any browser to access any website, or FHIR enabling health data interoperability.
->
-> - **Upfront protocol/API build:** \$15–25M
-> - **Annual protocol operations:** \$5–12M
-> - **Integration adoption fund:** \$20-50M (one-time, to support EHR and DCT platform adoption)
-> - **Total initiative:** ~\$40-75M upfront, \$5-12M annual
->
-> **Using What Already Exists**: The protocol builds on existing infrastructure (DCT platforms, major EHR systems, academic medical centers, and consumer health apps). These organizations have invested billions in infrastructure that becomes more valuable through protocol interoperability.
+The protocol is open standards and APIs that existing clinical trial systems adopt, the way HTTP lets any browser reach any website and FHIR lets health records move between systems. Like HTTP and FHIR, it needs a steward: an open standards body, modeled on HL7, that publishes the specification, runs conformance testing, and administers the pooled liability insurance. The steward holds no patient data (records stay in the source EHRs and apps and are queried in place) and runs no trials. The [technical specification](dfda-spec-paper.qmd) [@dfda-spec-paper-2025] itemizes the build; the rough-order-of-magnitude totals:
+
+- **Upfront protocol build** (reference implementation, conformance suite, compliance and legal setup, ~2.5 years): \$37.5M - {{< var dfda_upfront_build_max >}}
+- **Annual protocol operations** (hosting, maintenance, security audits, participant support): \$11M - \$26.5M/year. At 5 million participants that is \$2.20 - \$5.30 per participant per year; each additional participant costs pennies, since nearly all of the cost is fixed.
+- **Integration adoption fund** (one-time, to help EHR and DCT platforms connect): \$20M - \$50M
+
+These figures cover the protocol, not the trials. Trial participation is funded separately (the {{< var dfda_annual_trial_funding >}}/year scenario above); the protocol coordinates information and does not move the money.
 
 ![How much it costs to make all the medical computer systems talk to each other, assuming they want to. They don't want to.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-framework-costs-rom-estimates-dfda-framework-costs-rom-estim-bw-academic.jpg)
-
-This section provides a **Rough Order of Magnitude (ROM)** cost estimate for the protocol infrastructure that enables decentralized clinical trials.
-
-### Upfront Build Costs (30 Months) {#upfront-build-costs}
-
-1. **Core Engineering & Development Effort:**
-
-   - _Basis:_ ~75 FTEs _2.5 years_ \$200k/FTE/year
-   - _Activities:_ Detailed design, Core framework development (API, storage, mapping/validation, auth), reference frontend, initial plugin interfaces, testing, documentation, initial deployment.
-
-   The engineering cost is calculated as:
-
-   $$
-   C_{\text{engineering}} = N_{\text{FTEs}} \times T \times C_{\text{FTE}} = 75 \times 2.5 \times \$200\text{k} = \$37.5\text{M}
-   $$
-
-   Where $N_{\text{FTEs}} = 75$ is the number of full-time equivalents, $T = 2.5$ years is the development timeline, and $C_{\text{FTE}} = \$200\text{k}$ per FTE per year.
-
-   - **Estimated ROM:** \$35 - {{< var dfda_upfront_build >}}
-
-2. **Infrastructure Setup & Initial Cloud Costs:**
-
-   - _Activities:_ Establishing cloud accounts, VPCs, Kubernetes cluster (EKS) setup, database provisioning (RDS/TimescaleDB), S3 buckets, CI/CD pipeline setup, initial IaC development (Terraform).
-   - _Costs:_ Includes initial compute/storage during development/testing, potential small upfront reservations.
-   - **Estimated ROM:** [\$1 - \$3 Million](#upfront-build-costs)
-
-3. **Software Licenses & Tooling (Initial):**
-
-   - _Examples:_ Potential costs for monitoring tools (Datadog), security scanners (Snyk), specialized libraries, collaboration tools if not already covered.
-   - **Estimated ROM:** [\$0.5 - \$1 Million](#upfront-build-costs)
-
-4. **Compliance, Legal & Security (Initial Setup):**
-
-   - _Activities:_ Initial HIPAA/GDPR compliance assessment, policy development, security architecture review, legal consultation for data sharing frameworks.
-   - **Estimated ROM:** [\$1 - \$2 Million](#upfront-build-costs)
-
-The total upfront cost is the sum of all components:
-
-$$
-C_0 = C_{\text{engineering}} + C_{\text{infrastructure}} + C_{\text{software}} + C_{\text{compliance}}
-$$
-
-Where:
-
-- $C_{\text{engineering}} = \$35 - \$40$ million (Core Engineering & Development)
-- $C_{\text{infrastructure}} = \$1 - \$3$ million (Infrastructure Setup & Initial Cloud Costs)
-- $C_{\text{software}} = \$0.5 - \$1$ million (Software Licenses & Tooling)
-- $C_{\text{compliance}} = \$1 - \$2$ million (Compliance, Legal & Security)
-
-> **Total Estimated Upfront Cost (ROM): \$37.5 - {{< var dfda_upfront_build_max >}}**
-
-_Note: This ROM estimate focuses **only on the Core framework build effort and associated setup**. It represents the foundational first step. A full global implementation requires significant additional investment in broader initiatives to achieve goals of global integration, legal harmonization, and massive scale. These crucial, follow-on costs are estimated separately in the [Scenario Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs) section below and include:_
-
-- _Global EHR/Data Source Integration Effort:_ Building/buying connectors for _thousands_ of systems worldwide.
-- _Large-Scale Plugin Development:_ Funding the library of data importers, analysis tools, and visualization plugins.
-- _International Legal/Regulatory Harmonization:_ Major diplomatic and legal efforts to create a global standard.
-- _Global Rollout & Adoption:_ Costs associated with driving adoption and providing training worldwide.
-- _Massive-Scale Infrastructure:_ Scaling hardware and cloud resources beyond initial targets to support millions of users.
-
-The following sections provide ROM estimates for both the ongoing operational costs of the Core framework and for these essential broader initiatives.
 
 ### Who Participates
 
@@ -299,88 +236,11 @@ The protocol creates value by enabling interoperability among existing clinical 
 | **Academic Medical Centers** | Research infrastructure | Contribute federated data nodes | Research funding, publication opportunities |
 | **Consumer Health Apps** | Consumer health data | Report patient outcomes to protocol | User engagement, clinical validation |
 
-### Why This Matters
+DCT platforms and major EHR systems have already built the infrastructure for patient recruitment, data collection, and trial management. The protocol doesn't replicate this work; it makes their existing investments more valuable by letting data flow across systems.
 
-DCT platforms (collectively raising over $1B in venture funding) and major EHR systems have already built the infrastructure for patient recruitment, data collection, and trial management. The protocol doesn't replicate this work - it makes their existing investments more valuable by enabling data to flow across systems.
+### Broader Initiative Costs (Scenario Estimates)
 
-### Annual Operational Costs (5M MAU Target Scale) {#annual-operational-costs}
-
-1. **Cloud Infrastructure Costs (AWS):**
-
-   - _Components:_ EKS cluster, RDS/TimescaleDB hosting, S3 storage & requests, SQS messaging, API Gateway usage, Data Transfer (egress), CloudWatch logging/monitoring.
-   - _Basis:_ Highly dependent on actual usage patterns, data retrieval frequency, processing intensity. Assumes optimized resource usage.
-   - **Estimated ROM:** \$5 - \$15 Million / year (Very sensitive to scale and usage patterns)
-
-2. **Ongoing Engineering, Maintenance & Operations:**
-
-   - _Team Size:_ Assume ~20 FTEs (SREs, DevOps, Core Maintainers, Security).
-   - _Basis:_ 20 FTEs \* \$200k/FTE/year
-
-   The ongoing engineering cost is calculated as:
-
-   $$
-   C_{\text{engineering}}^{\text{ops}} = N_{\text{FTEs}}^{\text{ops}} \times C_{\text{FTE}} = 20 \times \$200\text{k} = \$4\text{M}/\text{year}
-   $$
-
-   Where $N_{\text{FTEs}}^{\text{ops}} = 20$ is the number of FTEs for ongoing operations.
-
-   - **Estimated ROM:** \$4 - \$6 Million / year
-
-3. **Software Licenses & Tooling (Ongoing):**
-
-   - _Examples:_ Monitoring (Datadog/New Relic), Error Tracking (Sentry), Security Tools, potential DB license/support costs at scale.
-   - **Estimated ROM:** \$0.5 - \$1.5 Million / year
-
-4. **Compliance & Auditing (Ongoing):**
-
-   - _Activities:_ Regular security audits (penetration tests, compliance checks), maintaining certifications, legal reviews.
-   - **Estimated ROM:** \$0.5 - \$1 Million / year
-
-5. **Support (User & Developer):**
-
-   - _Activities:_ Tier 1/2 support for protocol participants and third-party plugin developers.
-   - **Estimated ROM:** \$1 - \$3 Million / year (Scales with user base)
-
-The total annual operational cost is the sum of all components:
-
-$$
-C_{\text{op}} = C_{\text{cloud}} + C_{\text{engineering}} + C_{\text{software}} + C_{\text{compliance}} + C_{\text{support}}
-$$
-
-Where:
-
-- $C_{\text{cloud}} = \$5 - \$15$ million/year (Cloud Infrastructure Costs)
-- $C_{\text{engineering}} = \$4 - \$6$ million/year (Ongoing Engineering, Maintenance & Operations)
-- $C_{\text{software}} = \$0.5 - \$1.5$ million/year (Software Licenses & Tooling)
-- $C_{\text{compliance}} = \$0.5 - \$1$ million/year (Compliance & Auditing)
-- $C_{\text{support}} = \$1 - \$3$ million/year (Support)
-
-> **Total Estimated Annual Operations (Platform Only, ROM): \$11 - \$26.5 Million / year**
-
-#### Marginal Cost Analysis per User
-
-The **5M MAU** target is an illustrative milestone used for these initial ROM estimates, not the ultimate goal for the framework, which is to support hundreds of millions or billions of users. At this initial scale, you can analyze the cost on a per-user basis.
-
-- **Average Cost Range Per User (at 5M MAU):**
-  - Based on the total annual operational cost range of **[\$11M - \$26.5M](#annual-operational-costs)**, the average cost per user is:
-    $$
-    \frac{\$11,000,000 \text{ to } \$26,500,000}{5{,}000{,}000 \text{ users}} = \mathbf{\$2.20 \text{ to } \$5.30 \text{ per user per year}}
-    $$
-
-- **Marginal Cost Per Additional User:**
-  - As federated data infrastructure, the framework has high fixed costs (protocol development, core engineering) but very low variable costs. Therefore, the **marginal cost** of supporting one additional participant is expected to be a small fraction of the average cost, likely **pennies per year**. This cost will decrease further as the protocol achieves greater economies of scale, making it exceptionally efficient at supporting a global participant base.
-
-_(Note: The underlying cloud infrastructure cost ($5M-$15M/year) is a top-down ROM estimate. A more granular, bottom-up analysis based on projected per-user storage, data transfer, and compute would provide further support for these figures and is a key area for future refinement of this model.)_
-
-*Note on Participant Financial Contributions:*
-
-This cost estimate **covers building the protocol infrastructure, not paying patients for trial participation.** Trial participation costs would be handled separately through funding mechanisms (government grants, foundation funding, or sponsor payments). The protocol coordinates information exchange but doesn't move money around directly.
-
-_This estimate excludes costs for governance structure and plugin development._
-
-### Scenario Based ROM Estimates for Broader Initiative Costs
-
-This table presents point estimates for each scenario, with the overall range of possibilities captured by comparing the Best, Medium, and Worst Case columns.
+Beyond the core protocol, global integration, legal harmonization, and rollout costs depend on how much automation and vendor cooperation actually materialize:
 
 | Component                                    | Best Case (Upfront / Annual) | Medium Case (Upfront / Annual) | Worst Case (Upfront / Annual) | Key Assumptions & Variables Driving Range                                                                  |
 | :------------------------------------------- | :--------------------------- | :----------------------------- | :---------------------------- | :--------------------------------------------------------------------------------------------------------- |
@@ -389,30 +249,19 @@ This table presents point estimates for each scenario, with the overall range of
 | **Legal/Regulatory Harmonization**           | $1.5M / ~$0                  | $60M / $3M                     | $300M / $30M                  | Effectiveness of AI legal tools, political will, complexity of global law.                                 |
 | **Global Rollout & Adoption**                | ~$0 / ~$0                    | $12M / $3M                     | $125M / $30M                  | Need for training/support beyond protocol adoption, user interface complexity.                               |
 | **Governance Operations**                    | ~$0 / ~$0                    | ~$1M / $0.3M                   | ~$6M / $1M                    | Automation level, need for audits, grants, core support staff.                                             |
-| **--- TOTAL ---**                            | **~$4.5M / ~$0**             | **~$213M / ~$18.3M**           | **~$1.98B+ / ~$221M+**        | Represents total initiative cost excluding Core framework build/ops.                                        |
+| **--- TOTAL ---**                            | **~$4.5M / ~$0**             | **~$213M / ~$18.3M**           | **~$1.98B+ / ~$221M+**        | Total initiative cost excluding core protocol build/ops.                                        |
 
 {{< include ../figures/dfda-broader-initiative-costs-scenario-comparison-column-chart.qmd >}}
 
-#### Interpretation
-
-Even when pursuing efficient strategies, the potential cost for the full initiative for a decentralized framework (beyond the Core framework) varies dramatically based on real-world execution challenges. The Medium Case suggests upfront costs in the low hundreds of millions and annual costs in the low tens of millions, while the Worst Case pushes towards multi-billion dollar upfront figures and annual costs in the hundreds of millions, dominated by integration, plugin funding, and legal costs if automation and community efforts fall short.
-
-#### Summary
-
-Based on the detailed technical specification, a ROM estimate suggests:
-
-- **Initial Core framework Build (~2.5 years): ~\$37.5 - {{< var dfda_upfront_build_max >}}**
-- **Annual Core framework Operations (at ~5M MAU scale): [~\$11 - \$26.5 Million](#annual-operational-costs)** (These framework operational costs are distinct from the financial flows of patient contributions and the NIH Trial Participation Cost Discount Fund, and also exclude plugin ecosystem costs not covered by protocol bounties)
-
-The core protocol infrastructure build costs tens of millions; the broader global initiative (integration, legal frameworks, rollout) accounts for the larger cost estimates detailed in the scenario table above.
+The medium case puts the full initiative in the low hundreds of millions upfront and the low tens of millions per year. The worst case, dominated by integration and legal costs if automation and vendor cooperation fall short, reaches ~$2B upfront and ~$220M/year. The core protocol costs tens of millions; the broader initiative is where the large numbers live.
 
 ## Benefit Analysis - Quantifying the Savings
 
-This section quantifies the potential societal benefits of a decentralized FDA, focusing primarily on R&D cost savings and health outcome improvements.
+This section quantifies the potential societal benefits of the protocol, focusing primarily on R&D cost savings and health outcome improvements.
 
 ### Market Size and Impact
 
-The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials is approximately {{< var global_clinical_trials_spending_annual >}}. Much of this spending is made dramatically more efficient through protocol standardization. If such a framework enables even a fraction of these trials to use pragmatic designs, the economic impact will be substantial.
+The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials is approximately {{< var global_clinical_trials_spending_annual >}}. Much of this spending is made dramatically more efficient through protocol standardization. If the protocol enables even a fraction of these trials to use pragmatic designs, the economic impact will be substantial.
 
 - **Current Average Costs**: Estimates suggest {{< var pharma_drug_development_cost_current >}} to bring a new drug from discovery through FDA approval, spread across ~10 years.
 - **Clinical Trial Phase Breakdown**:
@@ -433,14 +282,14 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 - **ADAPTABLE Trial (PCORnet)**: The US-based ADAPTABLE trial [@adaptable-trial] ({{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} = **{{< var adaptable_trial_cost_per_patient >}}/patient**) provides a more representative benchmark for pragmatic trial costs in typical healthcare settings without emergency conditions.
 
-- **Framework Cost Projection**: Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
+- **Protocol Cost Projection**: Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
 
 **Input: Pragmatic Trial Cost Distribution**
 
 {{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
 
 - **Extrapolation to New System**:
-  - A well-integrated global framework could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} in many cases, especially for pragmatic or observational designs.
+  - A well-integrated global protocol could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} in many cases, especially for pragmatic or observational designs.
   - Up to **~{{< var dfda_trial_cost_reduction_factor >}} cost reduction** is achievable by comparing pragmatic trial costs ({{< var dfda_pragmatic_trial_cost_per_patient >}}) against traditional costs of {{< var traditional_phase3_cost_per_patient >}}.
 
   The cost reduction factor:
@@ -498,9 +347,9 @@ This reduction applies to trials amenable to pragmatic design - approximately 70
 
 ![When people don't die, economists can count them twice: once for being alive and again for feeling good. Death is very expensive.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-economic-value-of-earlier-access-to-treatments-bw-academic.jpg)
 
-### Gross R&D Savings from a Decentralized FDA {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
+### Gross R&D Savings from the Protocol {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
 
-- **Parameter**: Percentage reduction in addressable clinical trial costs due to a decentralized FDA.
+- **Parameter**: Percentage reduction in addressable clinical trial costs due to the protocol.
 - **Central Estimate**: {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}})
 - **Source/Rationale**:
   - Decentralized Clinical Trials (DCTs) demonstrate significant cost reductions [@dct-cost-reductions-evidence] through reduced site management, travel, and streamlined data collection.
@@ -591,9 +440,9 @@ The current "safety" system doesn't prevent harm - it **delays detection** until
 
 #### Pooled Liability Insurance
 
-The framework includes pooled liability coverage for sponsors, reducing individual company risk while ensuring patient compensation for adverse events. This removes a major barrier to trial participation for smaller sponsors while maintaining accountability.
+The protocol includes pooled liability coverage for sponsors, reducing individual company risk while ensuring patient compensation for adverse events. This removes a major barrier to trial participation for smaller sponsors while maintaining accountability.
 
-## ROI Analysis for a Decentralized FDA {#simplified-roi-scenario}
+## ROI Analysis {#simplified-roi-scenario}
 
 ### Monte Carlo Distributions
 
@@ -708,7 +557,7 @@ $$
 
 **Timeline to Crossover:**
 
-At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require ~1,500 years at current pace or ~125 years with the framework. For combination therapies ({{< var combination_therapy_disease_space >}}), reaching 53% exploration would take millions of years.
+At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require ~1,500 years at current pace or ~125 years with the protocol. For combination therapies ({{< var combination_therapy_disease_space >}}), reaching 53% exploration would take millions of years.
 
 **Conclusion**: For any plausible planning horizon, learning effects dominate. Diminishing returns is a theoretical concern for civilizations operating on multi-century timescales, not a practical constraint for the next 100+ years of medical research.
 
@@ -760,13 +609,13 @@ The proposed funding level ({{< var dfda_annual_trial_funding >}}/year) sits in 
 
 ## Conclusion
 
-A decentralized FDA transforms the centralized regulatory approach into a global, decentralized model, reducing clinical trial costs by a factor of {{< var dfda_trial_cost_reduction_factor >}}, accelerating approval timelines, and expanding therapeutic coverage to neglected diseases. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront plus discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends {{< var global_clinical_trials_spending_annual >}} annually on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}:1** at scale.
+The protocol reduces clinical trial costs by a factor of {{< var dfda_trial_cost_reduction_factor >}}, brings treatments to patients sooner, and extends trials to diseases no sponsor would otherwise fund. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront plus discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends {{< var global_clinical_trials_spending_annual >}} annually on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}:1** at scale.
 
-Beyond direct savings, the effects on medical progress are substantial: expanded therapeutic exploration, real-time treatment effectiveness rankings, and research on off-patent treatments that currently lack commercial incentives. With appropriate privacy protections and international coordination, this framework enables evidence-based personalized medicine at global scale.
+Beyond direct savings, the effects on medical progress are substantial: expanded therapeutic exploration, real-time treatment effectiveness rankings, and research on off-patent treatments that currently lack commercial incentives. With appropriate privacy protections and international coordination, the protocol enables evidence-based personalized medicine at global scale.
 
 ### Disclaimer
 
-All figures in this document are estimates based on publicly available information, industry benchmarks, and simplifying assumptions. Real-world costs, savings, and ROI will vary greatly depending on the scope of implementation, the speed of adoption, regulatory cooperation, and numerous other factors. Nonetheless, this high-level exercise illustrates the substantial potential gains from a global, decentralized, continuously learning clinical trial and regulatory system.
+All figures in this document are estimates based on publicly available information, industry benchmarks, and simplifying assumptions. Real-world costs, savings, and ROI will vary greatly depending on the scope of implementation, the speed of adoption, regulatory cooperation, and numerous other factors. Nonetheless, this high-level exercise illustrates the substantial potential gains from a global, continuously learning clinical trial system.
 
 ## Verification: Complete Derivation Chains
 
@@ -839,7 +688,7 @@ The protocol infrastructure itself ({{< var dfda_npv_total_cost >}} 10-year NPV)
 
 {{< var dfda_direct_funding_cost_per_daly_latex >}}
 
-**Comparison**: Malaria bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY. This framework operates at vastly greater scale while achieving competitive cost-effectiveness.
+**Comparison**: Malaria bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY. The protocol operates at vastly greater scale while achieving competitive cost-effectiveness.
 
 ### ROI Derivation
 
@@ -884,7 +733,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Adoption Rate Assumptions
 
-**Assumption:** Framework adoption follows a 5-year ramp (20%, 40%, 60%, 80%, 100%) before reaching full capacity.
+**Assumption:** Protocol adoption follows a 5-year ramp (20%, 40%, 60%, 80%, 100%) before reaching full capacity.
 
 **Justification:** Based on historical technology adoption curves in healthcare (EHR adoption, telemedicine during COVID). The ramp is built into NPV calculations.
 
@@ -918,15 +767,13 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 **Alternative counterfactual scenarios:**
 
-1. **Organic efficiency improvement**: Clinical trial costs decrease 2-3% annually through technology adoption. Under this scenario, the marginal impact of the framework is reduced by the amount of improvement that would occur anyway. At 3%/year organic improvement over 10 years, approximately 26% of the cost reduction would occur regardless, reducing the framework's attributable benefit to ~74% of projections.
+1. **Organic efficiency improvement**: Clinical trial costs decrease 2-3% annually through technology adoption. Under this scenario, the marginal impact of the protocol is reduced by the amount of improvement that would occur anyway. At 3%/year organic improvement over 10 years, approximately 26% of the cost reduction would occur regardless, reducing the protocol's attributable benefit to ~74% of projections.
 
 2. **Alternative government priorities**: Funds are allocated to other health investments (NIH grants, hospital infrastructure, insurance subsidies). Each alternative use would require separate cost-benefit analysis. However, none of these alternatives address the core trial cost problem; they operate within the existing high-cost system.
 
-3. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually). The framework ROI of {{< var dfda_roi_rd_only >}}:1 substantially exceeds this threshold.
+3. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually). The protocol ROI of {{< var dfda_roi_rd_only >}}:1 substantially exceeds this threshold.
 
 **Methodological note:** The analysis uses the neutral status quo baseline to avoid biasing results in either direction. Sensitivity analysis (tornado diagrams) demonstrates robustness across baseline assumptions.
-
-The analysis uses the neutral status quo baseline to avoid biasing results in either direction.
 
 ### Methodology Validation Against Accepted Benchmarks
 
@@ -976,7 +823,7 @@ We present a cost-utility analysis using the **quality-adjusted life years (QALY
 
   Where $Q_0$/$Q_1$ = quality of life (0-1) before/after, $T_0$/$T_1$ = years of life before/after.
 
-- **Cost-Effectiveness**: A decentralized FDA achieves cost-effectiveness through dual pathways:
+- **Cost-Effectiveness**: The protocol achieves cost-effectiveness through dual pathways:
   1. **R&D Savings**: {{< var dfda_benefit_rd_only_annual >}}+ annual savings from {{< var dfda_trial_cost_reduction_pct >}} trial cost reduction
   2. **Health Gains**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from {{< var dfda_trial_capacity_multiplier >}} trial capacity + efficacy lag elimination)
 
@@ -1030,7 +877,7 @@ The following auto-generated sensitivity analyses show how cost-effectiveness va
 
 {{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
 
-### Comparative Cost-Effectiveness - A Decentralized Framework vs Other Interventions
+### Comparative Cost-Effectiveness vs Other Interventions
 
 To provide context for the impact of a global pragmatic trial system's infrastructure, the chart below visualizes its cost-effectiveness against other well-understood public health programs. The metric used is **Quality-Adjusted Life Years (QALYs) Gained per $1 Million of Spending**. A higher number signifies greater cost-effectiveness.
 
@@ -1042,7 +889,7 @@ The following table provides the data and sources that support the chart. The li
 
 | Intervention                           | QALYs Gained per $1M Spending<a href="#ref_chart_calc">¹</a> | Typical ICER Range (Cost per QALY Gained)               | Classification                   | Source / Evidence                                                                                                                                                                                                                                                   |
 | :------------------------------------- | :----------------------------------------------------------: | :------------------------------------------------------ | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Decentralized Framework for Drug Assessment** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#dfda-icer-analysis---cost-utility-framework). Based on {{< var dfda_npv_annual_opex >}}-{{< var dfda_npv_annual_opex_total >}} annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.                                                                              |
+| **dFDA protocol** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#dfda-icer-analysis---cost-utility-framework). Based on {{< var dfda_npv_annual_opex >}}-{{< var dfda_npv_annual_opex_total >}} annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.                                                                              |
 | **Smallpox Eradication**               |      **100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its uncommon scale. (WHO, 2010 [@who-smallpox-eradication-commemoration]) |
 | **Childhood Vaccinations**             |        **22+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. (CDC, 2023 [@childhood-vaccinations-prevent-deaths])                                 |
 | **Clean Water Programs**               |                       **100 **                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $100-$500/DALY averted. Community water supply improvements cost $200/DALY. (WHO, 2004 [@who-clean-water-daly-costs])                                              |
@@ -1056,13 +903,13 @@ The following table provides the data and sources that support the chart. The li
 
 <a id="ref_chart_calc"></a>¹ **QALYs per $1M Calculation**:
 
-- For a decentralized framework: `(Annual QALYs Gained) / (Annual Cost in Millions)`
+- For the protocol: `(Annual QALYs Gained) / (Annual Cost in Millions)`
 - Ranges reflect conservative to optimistic scenarios accounting for parameter uncertainties
 
 <a id="ref_dfda_icer"></a>² **Cost-Dominant Interpretation**:
 
-- All scenarios for the framework show extremely low cost per DALY while generating net economic benefits that exceed costs
-- The framework is "dominant" - more effective and less costly than the status quo
+- All scenarios for the protocol show extremely low cost per DALY while generating net economic benefits that exceed costs
+- The protocol is "dominant" - more effective and less costly than the status quo
 
 <a id="ref_dominant"></a>³ **Dominant Interventions**:
 
@@ -1079,11 +926,11 @@ The following table provides the data and sources that support the chart. The li
 
 ## Comparison to Other Major Public Investments
 
-To provide context for the estimated costs of a global pragmatic trial system, it is useful to compare them to other significant U.S. government investments in health and technology. The projected 'Lean Ecosystem' cost for the framework of approximately **{{< var dfda_npv_annual_opex_total >}} per year** (covering Core framework operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
+To provide context for the estimated costs of a global pragmatic trial system, it is useful to compare them to other significant U.S. government investments in health and technology. The projected 'Lean Ecosystem' cost for the protocol of approximately **{{< var dfda_npv_annual_opex_total >}} per year** (core protocol operations plus the medium-case broader initiative) is modest in comparison to other major federal projects.
 
-| Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to Framework's Annual Cost | Source / Note                                                              |
+| Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to Protocol's Annual Cost | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :------------------------------------ | :------------------------------------------------------------------------- |
-| **Decentralized Framework (Lean Ecosystem)** | **~{{< var dfda_npv_annual_opex_total >}} / year**                                                                           | **1x (Baseline)**                     | [This analysis](#simplified-roi-scenario)                                  |
+| **dFDA protocol (Lean Ecosystem)** | **~{{< var dfda_npv_annual_opex_total >}} / year**                                                                           | **1x (Baseline)**                     | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **~\$257 Million / year [@cancer-budget]** ($1.8B over 7 years)          | **~6.4x**                             | 21st Century Cures Act [@21st-century-cures-act-2016]          |
 | **NIH "All of Us" Research Program** | **~$500M / year** (FY23 Approx. Budget) | **~12.5x**                            | NIH Budget [@global-gov-med-research-spending]              |
 | **HealthCare.gov (Initial Build)**   | **~\$1.7 - \$2.1 Billion [@gao-healthcare-gov-costs]** (Total Upfront Cost)        | **~42x - 52x** (of one year's cost)   | GAO Reports / Public Reporting [@gao-healthcare-gov-costs] |
@@ -1091,7 +938,7 @@ To provide context for the estimated costs of a global pragmatic trial system, i
 
 {{< include ../figures/dfda-vs-federal-health-programs-comparison-bar-chart.qmd >}}
 
-**Translation for Budget Committees:** The estimated annual cost of this initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from the system's [annual cost](#simplified-roi-scenario) and NCI budget [@nih-institute-budgets-fy24]). This comparison underscores that such an infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
+**Translation for Budget Committees:** The estimated annual cost of this initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from the system's [annual cost](#simplified-roi-scenario) and NCI budget [@nih-institute-budgets-fy24]). This comparison underscores that the protocol is not only a high-return investment but also a small one relative to the scale of federal health and technology spending.
 
 ## Why This Differs from Failed Megaprojects
 
@@ -1103,9 +950,9 @@ This intervention differs in five critical ways:
 
 1. **Proven Technology**: Unlike speculative moonshots, pragmatic trials using existing EHR infrastructure have been validated. The RECOVERY trial enrolled 47,000+ patients at {{< var recovery_trial_cost_per_patient >}}/patient. ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US healthcare settings. This isn't "we hope this works" - it's "we've proven this works, now scale it."
 
-2. **Marginal Extension, Not Novel System**: The framework extends existing clinical trial infrastructure rather than replacing it. Hospitals already have EHRs. Patients already take medications. We're adding a coordination layer and outcome tracking, not building from scratch.
+2. **Marginal Extension, Not Novel System**: The protocol extends existing clinical trial infrastructure rather than replacing it. Hospitals already have EHRs. Patients already take medications. We're adding a coordination layer and outcome tracking, not building from scratch.
 
-3. **Self-Correcting Feedback**: Unlike infrastructure projects where failures compound, the protocol has built-in error correction. If a treatment doesn't work, the data shows it. If costs exceed projections, we can adjust scope. The framework generates its own performance metrics.
+3. **Self-Correcting Feedback**: Unlike infrastructure projects where failures compound, the protocol has built-in error correction. If a treatment doesn't work, the data shows it. If costs exceed projections, funders can cut scope without losing what is already built. The protocol generates its own performance metrics.
 
 4. **Historical Precedent**: Smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI) and childhood vaccination programs demonstrate that systematic health interventions can achieve extraordinary returns. The difference: those targeted specific diseases. This targets the discovery process itself, which is the difference between fixing one pothole and repaving the road.
 
