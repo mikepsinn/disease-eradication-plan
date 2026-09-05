@@ -4,8 +4,8 @@ Regression-based sensitivity showing which inputs explain the most variance in t
 
 | Input Parameter | Sensitivity Coefficient | Interpretation |
 |:----------------|------------------------:|:---------------|
-| Gene Therapy Combinations (combinations) | 0.4760 | Moderate driver |
 | mRNA Therapeutic Combinations (combinations) | 0.4760 | Moderate driver |
+| Gene Therapy Combinations (combinations) | 0.4760 | Moderate driver |
 | Epigenetic Therapy Combinations (combinations) | 0.0672 | Minimal effect |
 | Cell Therapy Combinations (combinations) | 0.0316 | Minimal effect |
 

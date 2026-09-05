@@ -56,7 +56,7 @@ There are {{< var safe_compounds_count >}} that have already been proven safe fo
 
 Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available_nounit >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
 
-**The Solution:** A [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025], an open protocol (like HTTP/FHIR, not a competing platform) that existing DCT platforms, EHRs, and health apps adopt to integrate pragmatic clinical trials into standard healthcare, enabling:
+**The Solution:** A [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025], an open protocol (like HTTP/FHIR, not a competing platform) that existing DCT platforms, EHRs, and health apps adopt to integrate pragmatic clinical trials into standard healthcare, enabling:
 
 1. **Subsidized Patient Participation**: Patients receive subsidies to participate in trials, making participation accessible and incentivized
 2. **Universal Trial Access**: Any patient can join trials from home via their phone or computer - no travel to research centers required
@@ -172,28 +172,6 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 
 ## Addressing Key Concerns
 
-### Historical Validation: Pre-1962 Physician-Led Efficacy Testing
-
-The decentralized physician-led efficacy model is not theoretical. It operated successfully from 1883 to 1960, providing {{< var pre_1962_validation_years >}} of empirical validation.
-
-**How the pre-1962 system worked:**
-
-From 1883 to 1960, {{< var pre_1962_physician_count >}} across America tested drug efficacy on real patients in routine clinical practice. The Journal of the American Medical Association (JAMA) compiled observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement. This decentralized approach successfully identified antibiotics, vaccines, and countless surgical techniques.
-
-**Cost comparison demonstrates dramatic efficiency:**
-
-| Era | Cost per Drug (2024 USD) | System |
-|:---|:---|:---|
-| **Pre-1962** | {{< var pre_1962_drug_development_cost_2024_usd >}} | Decentralized physician-led efficacy testing |
-| **Post-1962** | {{< var pharma_drug_development_cost_current >}} | Centralized pharmaceutical company trials |
-| **Cost Increase** | {{< var drug_cost_increase_pre1962_to_current_multiplier >}} | Regulatory mandate, not drug complexity |
-
-The cost explosion began exactly when efficacy testing was centralized within pharmaceutical companies. This wasn't a natural evolution of drug development or increasing drug complexity. The same types of compounds (small molecules, biologics) that cost {{< var pre_1962_drug_development_cost_2024_usd >}} to develop in 1960 now cost {{< var pharma_drug_development_cost_current >}}.
-
-**The thalidomide success story:** Thalidomide is often cited as justification for the 1962 amendments, but the US *already* blocked thalidomide under existing 1938 safety regulations. The FDA's Frances Kelsey refused approval based on inadequate safety data, not efficacy requirements. The 1962 amendments added *efficacy* proof requirements, not additional safety testing.
-
-**Implications:** This model returns to decentralized physician-led efficacy testing but with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting the same 50-95% cost reductions that the pre-1962 system achieved.
-
 ### Why "Eventually Avoidable" Matters
 
 A critical assumption in this analysis is that {{< var eventually_avoidable_death_pct >}} of disease deaths are "eventually avoidable" - meaning they could be prevented with sufficient biomedical research over time.
@@ -208,7 +186,7 @@ A critical assumption in this analysis is that {{< var eventually_avoidable_deat
 
 **What if this assumption is wrong?**
 
-Even if only 25% of deaths are eventually avoidable (half our estimate), the framework still generates {{< var dfda_roi_rd_only >}}:1 ROI from R&D savings alone, independent of health benefits. These deaths will eventually be preventable with sufficient research progress. The health impact figures scale linearly with avoidability assumptions, but the cost-saving case doesn't depend on them.
+The health impact figures scale linearly with this assumption: at 50% avoidability (the low end of the confidence interval), lives saved and DALYs averted roughly halve and cost per DALY roughly doubles, still far below the bed nets benchmark. The R&D savings case ({{< var dfda_roi_rd_only >}}:1 ROI) does not depend on it at all.
 
 ### Trial Funding Scenario
 
@@ -555,82 +533,15 @@ Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial 
 
 ### Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}
 
-### Relative Magnitude
-
-Efficacy lag elimination ({{< var efficacy_lag_years >}}) is the **smaller** of the two timeline shift components. Discovery acceleration from {{< var dfda_trial_capacity_multiplier >}} trial capacity contributes {{< var dfda_trial_capacity_treatment_acceleration_years >}}, over 10× more health impact. This section details the efficacy lag component; see [The Discovery Capacity Model](#the-discovery-capacity-model) for the dominant component.
-
-**One of two health benefits of a decentralized FDA comes from eliminating the "efficacy lag"**, the {{< var efficacy_lag_years >}} Phase II/III delay between Phase I safety verification and final approval. **Critical: This does NOT eliminate safety testing.** Phase I safety testing ({{< var phase_1_safety_duration_years >}}) is preserved.
-
-![We keep the part where we check if drugs kill you immediately. We skip the part where we wait 8 years to see if they work.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-post-safety-efficacy-lag-elimination-regulatory-delay-avoida-bw-academic.jpg)
-
-#### The Efficacy Lag Problem
-
-A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease.org) of post-safety efficacy lag costs (1962-2024) found:
-
-- **Total Deaths**: {{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} eventually avoidable deaths over {{< var efficacy_lag_years >}} efficacy lag (1962-2024)
-- **Total DALYs**: {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} Disability-Adjusted Life Years lost
-- **Total Timeline Shift**: One-time {{< var efficacy_lag_years >}} acceleration in disease eradication
-
-The analysis shows that for every 1 unit of harm the FDA prevents through safety testing, it generates **{{< var type_ii_error_cost_ratio >}} units** of harm through efficacy delay (Type II vs. Type I error ratio).
-
-![For every person saved by making you wait for treatment, 3,070 people die from waiting. It's called being careful.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-efficacy-lag-problem-bw-academic.jpg)
-
-**Input: Efficacy Lag Duration Distribution**
-
-{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
-
-#### How a Decentralized Framework Eliminates the Efficacy Lag
-
-Such a framework provides **provisional access post-Phase I** via trial participation:
-
-1. **Phase I Safety Testing**: Maintained at {{< var phase_1_safety_duration_years >}} (no change)
-2. **Post-Phase I Access**: Patients can access drugs through trial participation immediately after safety verification
-3. **Continuous Efficacy Monitoring**: Real-world evidence replaces the {{< var efficacy_lag_years >}} pre-market efficacy delay
-
-This eliminates the post-safety efficacy lag (the Phase II/III portion, while preserving Phase I safety testing) by enabling real-world evidence collection during trials.
-
-#### Quantified Benefits (Efficacy Lag Component Only)
-
-![What happens when you give people medicine 8 years earlier: they live longer and economists get to make bigger numbers.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-quantified-benefits-efficacy-lag-component-only-bw-academic.jpg)
-
-The elimination of the post-safety efficacy lag by such a framework achieves a one-time {{< var efficacy_lag_years >}} timeline acceleration (the smaller component of the total {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} shift):
-
-- **Total DALYs Averted**: {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} (total one-time impact from {{< var efficacy_lag_years >}} timeline shift)
-- **Total Economic Value**: {{< var dfda_efficacy_lag_elimination_economic_value >}} ({{< var dfda_efficacy_lag_elimination_dalys >}} at $150,000/DALY, cumulative over {{< var efficacy_lag_years >}} of accelerated treatment access)
-- **Deaths Prevented**: {{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} (total over the {{< var efficacy_lag_years >}} period)
-
-{{< var dfda_efficacy_lag_elimination_dalys_latex >}}
-
-{{< var dfda_efficacy_lag_elimination_economic_value_latex >}}
-
-{{< var dfda_efficacy_lag_elimination_deaths_averted_latex >}}
-
-#### Efficacy Lag Elimination - Uncertainty Analysis
-
-{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_dalys.qmd >}}
-
-{{< include ../figures/tornado-dfda_efficacy_lag_elimination_dalys.qmd >}}
-
-This represents the health benefits from eliminating the post-safety efficacy lag **only**. The efficacy lag ({{< var efficacy_lag_years >}}) is one of two components of the total timeline shift:
-
-1. **Efficacy lag elimination**: {{< var efficacy_lag_years >}} (this section)
-2. **Trial capacity/discovery acceleration**: {{< var dfda_trial_capacity_treatment_acceleration_years >}} (from {{< var dfda_trial_capacity_multiplier >}} more trials)
-
-The **combined total** timeline shift is {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}, yielding {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}. See [The Receipts](#key-findings) for the combined totals.
-
-For detailed methodology and assumptions on efficacy lag, see [https://invisible-graveyard.warondisease.org](https://invisible-graveyard.warondisease.org).
+The smaller of the two timeline-shift components. Once a treatment has passed Phase I safety testing ({{< var phase_1_safety_duration_years >}}, unchanged), patients can take it through trial participation rather than waiting the {{< var efficacy_lag_years >}} that Phase II/III currently add before approval, with efficacy measured from the trial data as it accumulates. Removing that wait contributes {{< var efficacy_lag_years >}} of the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} total shift ({{< var dfda_efficacy_lag_elimination_dalys >}}, {{< var dfda_efficacy_lag_elimination_deaths_averted >}}); discovery acceleration contributes the other {{< var dfda_trial_capacity_treatment_acceleration_years >}}, over 10× more. Methodology for the lag estimate: [invisible-graveyard.warondisease.org](https://invisible-graveyard.warondisease.org).
 
 ### Safety and Risk Management
 
 **Common concern**: Won't faster trials with lower costs compromise safety?
 
-![Traditional safety monitoring versus actually paying attention. One watches 2,000 people for a few months. The other watches everyone forever.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-safety-and-risk-management-bw-academic.jpg)
-
 **The evidence indicates the opposite.** The proposed system provides superior safety monitoring compared to traditional trials across multiple dimensions.
 
 #### Current System Limitations: Dangerously Blind to Real-World Harms
-
-![Current drug safety: please voluntarily report if you die. Proposed drug safety: computers notice when you die.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-h-bw-academic.jpg)
 
 ### Caution
 
@@ -638,13 +549,12 @@ For detailed methodology and assumptions on efficacy lag, see [https://invisible
 
 The FDA's voluntary adverse event reporting system (MedWatch) captures only **1-10% of actual adverse events**. Long-term harms that develop gradually over years - the most insidious and deadly kind - are virtually invisible:
 
-- **Vioxx** (rofecoxib): Caused 38,000-55,000 cardiovascular deaths over 5 years before detection through voluntary reporting. With automated EHR pharmacovigilance, the elevated MI risk would have been detected within 6-12 months.
+- **Vioxx** (rofecoxib): Caused 38,000-55,000 cardiovascular deaths over 5 years before detection through voluntary reporting
 - **Hormone Replacement Therapy**: Prescribed for decades before the Women's Health Initiative revealed increased cancer and cardiovascular risk - risks invisible to voluntary reporting
 - **Opioids**: The overdose crisis killed 500,000+ Americans; the addiction signal was undetectable in short trials with cherry-picked populations
 - **Avandia** (rosiglitazone): 83,000 excess heart attacks estimated before restrictions; signal emerged years post-approval
-- **Thalidomide** (1950s): The disaster that prompted regulatory reform - yet the current system would **still miss** a thalidomide-like harm if it manifested gradually rather than as obvious birth defects
 
-The current "safety" system doesn't prevent harm - it **delays detection** until bodies accumulate. A global automated pharmacovigilance system with continuous EHR monitoring would detect these signals in months, not years or decades.
+The current "safety" system doesn't prevent harm - it **delays detection** until bodies accumulate. Continuous EHR monitoring across a treated population compares outcomes to matched controls as prescriptions accumulate, rather than waiting for doctors to notice, remember, and file a report.
 
 **Specific limitations of the current system:**
 
@@ -669,19 +579,6 @@ The current "safety" system doesn't prevent harm - it **delays detection** until
 
 5. **Immediate Mass Notification**: When safety signals are detected, all patients taking the drug receive automated alerts through patient portals, enabling immediate clinical review.
 
-#### Detection Timeline Comparison
-
-The following table quantifies how automated EHR monitoring would have changed outcomes for major drug safety disasters:
-
-| Drug | Harm | Voluntary Reporting Detection | Projected EHR Detection | Deaths During Delay |
-|:---|:---|:---|:---|:---|
-| **Vioxx** | Cardiovascular events | 5 years (1999-2004) | 6-12 months | 38,000-55,000 |
-| **Avandia** | Heart attacks | 8 years post-approval | 12-18 months | ~83,000 excess events |
-| **Opioids** | Addiction/overdose | Decades | 2-3 years | 500,000+ deaths |
-| **HRT** | Cancer/cardiovascular | 40+ years | 3-5 years | Unknown (millions affected) |
-
-**Why the difference?** Automated EHR surveillance compares treated patients to matched controls continuously. The Vioxx cardiovascular signal would trigger statistical alerts after ~5,000 prescriptions (1.2% elevated event rate vs. expected background). Voluntary reporting requires doctors to notice, remember, and file paperwork, capturing only 1-10% of events.
-
 #### Comparative Safety Surveillance
 
 | Safety Dimension | Traditional Trials | Pragmatic Trials + EHR Monitoring |
@@ -690,13 +587,11 @@ The following table quantifies how automated EHR monitoring would have changed o
 | Patient selection | {{< var antidepressant_trial_exclusion_rate >}} excluded | All volunteers (real-world populations) |
 | Monitoring duration | 3-12 months (then stops) | Continuous via EHR (indefinite) |
 | Publication rate | ~50% unpublished | 100% automatically published |
-| Adverse event detection | Voluntary reporting (1-10% capture) | Automated surveillance (100% capture) |
+| Adverse event detection | Voluntary reporting (1-10% capture) | Automated EHR surveillance of every enrolled patient |
 
 #### Pooled Liability Insurance
 
 The framework includes pooled liability coverage for sponsors, reducing individual company risk while ensuring patient compensation for adverse events. This removes a major barrier to trial participation for smaller sponsors while maintaining accountability.
-
-**Type II Error Dominance**: For every person protected from an unsafe drug (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current system prevents harm from unsafe drugs, but causes {{< var type_ii_error_cost_ratio >}} more deaths through delays. Phase I safety testing is preserved in this framework; the ratio quantifies the cost of the *efficacy lag*, not safety testing. (See [Historical Validation](#historical-validation-pre-1962-physician-led-efficacy-testing) for the thalidomide context.)
 
 ## ROI Analysis for a Decentralized FDA {#simplified-roi-scenario}
 
@@ -879,8 +774,6 @@ For economist verification, this section provides complete derivation chains for
 
 ### Trial Capacity Multiplier Derivation
 
-![If you spend more money on trials, you can run more trials. This required a diagram.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-capacity-multiplier-derivation-bw-academic.jpg)
-
 **Result:** {{< var dfda_trial_capacity_multiplier >}}
 
 **Step 1: Current trial capacity**
@@ -934,9 +827,9 @@ For economist verification, this section provides complete derivation chains for
 
 **Result:** {{< var dfda_direct_funding_cost_per_daly >}}
 
-**Step 1: Total protocol infrastructure cost (10-year NPV)**
+**Step 1: Total cost (NPV of {{< var dfda_annual_trial_funding >}}/year trial funding over the {{< var dfda_queue_clearance_years >}} clearance period, discounted at {{< var npv_discount_rate_standard >}})**
 
-- NPV total cost: {{< var dfda_npv_total_cost >}}
+The protocol infrastructure itself ({{< var dfda_npv_total_cost >}} 10-year NPV) is small next to the trial funding, which is what actually buys the DALYs, so the trial funding is the numerator.
 
 **Step 2: DALYs averted**
 
@@ -947,8 +840,6 @@ For economist verification, this section provides complete derivation chains for
 {{< var dfda_direct_funding_cost_per_daly_latex >}}
 
 **Comparison**: Malaria bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY. This framework operates at vastly greater scale while achieving competitive cost-effectiveness.
-
-![This costs 84 cents per year of healthy life saved. Mosquito nets cost $89. We give medals to the mosquito net people.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-cost-per-daly-derivation-bw-academic.jpg)
 
 ### ROI Derivation
 
@@ -1013,7 +904,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Justification:** Historical trend shows ~70% reduction in age-adjusted mortality since 1900. Most major disease categories have known biological mechanisms amenable to intervention. See [Why "Eventually Avoidable" Matters](#why-eventually-avoidable-matters).
 
-**Sensitivity:** Health impact scales linearly with this assumption. At 25% avoidability (half the estimate), health benefits are halved. R&D savings are unaffected.
+**Sensitivity:** Health impact scales linearly with this assumption. At 50% avoidability (the low end of the confidence interval), health benefits fall by roughly half. R&D savings are unaffected.
 
 ### Counterfactual Baseline Specification
 
@@ -1146,8 +1037,6 @@ To provide context for the impact of a global pragmatic trial system's infrastru
 For standard interventions, this value is calculated as `$1,000,000 / ICER`, where the ICER (Incremental Cost-Effectiveness Ratio) is the cost to gain one QALY. For **dominant** interventions that are both more effective and less expensive, the ICER is negative, and this metric isn't strictly applicable. For these cases, an illustrative range is used to represent their high value.
 
 All data used in the chart is derived from the table and sources below.
-
-![How much healthy life you buy per million dollars spent on various health things. Some are better than others. We fund the others.](../../assets/images/qaly-comparison-chart.png)
 
 The following table provides the data and sources that support the chart. The list is ordered to match the chart's presentation.
 

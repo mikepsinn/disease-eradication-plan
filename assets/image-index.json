@@ -29427,151 +29427,6 @@
       "imageProblemsDetected": false
     },
     {
-      "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-cost-per-daly-derivation-bw-academic.jpg",
-      "filename": "dfda-impact-paper-section-cost-per-daly-derivation-bw-academic.jpg",
-      "extension": "jpg",
-      "sizeBytes": 521267,
-      "size": "509.0 KB",
-      "width": 1024,
-      "height": 1024,
-      "format": "jpeg",
-      "aspectRatio": "1:1",
-      "imageType": "other",
-      "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nCost per DALY Derivation\n\n**Result:** $0.841 (95% CI: $0.242-$1.75)\n\n**Step 1: Total protocol infrastructure cost (10-year NPV)**\n\n- NPV total cost: $611M (95% CI: $415M-$853M)\n\n**Step 2: DALYs averted**\n\n- Total DALYs: 565B DALYs (95% CI: 361B DALYs-877B DALYs)\n\n**Step 3: Calculate cost per DALY**\n\n{{}}\n\n**Comparison**: Malaria bed nets cost $89 (95% CI: $78-$100)/DALY. This framework operates at vastly greater scale while achieving competitive cost-effectiveness.",
-      "transcript": "COST PER DALY DERIVATION. Result: $0.841 (95% CI: $0.242-$1.75). Step 1: Total protocol infrastructure cost (10-year NPV). NPV total cost: $611M (95% CI: $415M-$853M). Step 2: DALYs averted. Increased cognitive function. Improved health. Greater capacity. Improved circulation. Enhanced mobility. Disease Burden & Mortality. Healthy Life Years Gained. 10 Year. Total DALYs: 565B DALYs (95% CI: 361B DALYs-877B DALYs). Step 3: Calculate cost per DALY. $611M (NPV Total Cost). 565B DALYs (Total DALYs). Cost per DALY = NPV Total Cost / Total DALYs Averted. = $611M / 565B DALYs. Calculation Result: ~$0.841 per DALY (95% CI: $0.242-$1.75). Comparison: Malaria bed nets cost $89 (95% CI: $78-$100)/DALY. This framework operates at vastly greater scale while achieving competitive cost-effectiveness. October 26, 2023.",
-      "imageIssues": [
-        "Minor typos in anatomical labels (e.g., 'cogaitive', 'cicealation')",
-        "Complex background mathematical symbols can be distracting"
-      ],
-      "metadataCreatedAt": "2026-02-03T20:59:17.170Z",
-      "keywords": [
-        "chart",
-        "Cost per DALY Derivation",
-        "dfda-impact-paper",
-        "section-image"
-      ],
-      "author": "Mike P. Sinn",
-      "copyright": "© Mike P. Sinn - WarOnDisease.org",
-      "license": "CC BY-NC 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "website": "https://WarOnDisease.org",
-      "credit": "WarOnDisease.org / Decentralized Institutes of Health",
-      "imageProblemsDetected": false
-    },
-    {
-      "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-h-bw-academic.jpg",
-      "filename": "dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-h-bw-academic.jpg",
-      "extension": "jpg",
-      "sizeBytes": 520306,
-      "size": "508.1 KB",
-      "width": 1024,
-      "height": 1024,
-      "format": "jpeg",
-      "aspectRatio": "1:1",
-      "imageType": "other",
-      "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nCurrent System Limitations: Dangerously Blind to Real-World Harms\n\n**The current system is not safe - it just appears safe because harms go undetected.**\n\nThe FDA's voluntary adverse event reporting system (MedWatch) captures only **1-10% of actual adverse events**. Long-term harms that develop gradually over years - the most insidious and deadly kind - are virtually invisible:\n\n- **Vioxx** (rofecoxib): Caused 38,000-55,000 cardiovascular deaths over 5 years before detection through voluntary reporting. With automated EHR pharmacovigilance, the elevated MI risk would have been detected within 6-12 months.\n- **Hormone Replacement Therapy**: Prescribed for decades before the Women's Health Initiative revealed increased cancer and cardiovascular risk - risks invisible to voluntary reporting\n- **Opioids**: The overdose crisis killed 500,000+ Americans; the addiction signal was undetectable in short trials with cherry-picked populations\n- **Avandia** (rosiglitazone): 83,000 excess heart attacks estimated before restrictions; signal emerged years post-approval\n- **Thalidomide** (1950s): The disaster that prompted regulatory reform - yet the current system would **still miss** a thalidomide-like harm if it manifested gradually rather than as obvious birth defects\n\nThe current \"safety\" system doesn't prevent harm - it **delays detection** until bodies accumulate. A global automated pharmacovigilance system with continuous EHR monitoring would detect these signals in months, not years or decades.\n\n**Specific limitations of the current system:**\n\n- Voluntary adverse event reporting captures only 1-10% of actual events\n- Traditional Phase III trials test 100-300 patients for 3-12 months, then monitoring stops\n- Approximately 50% of trial results go unpublished, with publication bias favoring positive findings 3:1\n- 86.1% of patients excluded due to age, comorbidities, or medications - safety signals in these populations go undetected\n- Long-term effects (>1 year) rarely captured in pre-approval trials\n- No systematic mechanism to detect gradual harms that develop over years",
-      "transcript": "CURRENT SYSTEM LIMITATIONS: DANGEROUSLY BLIND TO REAL-WORLD HARMS. The current system is not safe - it just appears safe because harms go undetected. 1-10% OF ACTUAL ADVERSE EVENTS. MEDWATCH (VOLUNTARY REPORTING). DELAYED DETECTION. BODIES ACCUMULATE. EARLY INTERVENTION. PREVENTS HARM. GLOBAL AUTOMATED PHARMACOVIGILANCE (EHR MONITORING). RAPID SIGNAL DETECTION. ALL REAL-WORLD DATA (EHR, CLAIMS, PATIENT REPORTS). LONG-TERM HARMS: INVISIBLE & DEADLY. VIOXX (ROFECOXIB) 38,000-55,000 cardiovascular deaths over 5 years before detection. EHR monitoring would have detected in 6-12 months. HORMONE REPLACEMENT THERAPY Prescribed for decades. Increased cancer/cardiovascular risks invisible to voluntary reporting. OPIOIDS Overdose crisis: 500,000+ deaths. Addiction signal undetectable in short trials. AVANDIA (ROSIGLITAZONE) 83,000 excess heart attacks. Signal emerged years post-approval. THALIDOMIDE (1950s) Prompted reform, but current system would MISS gradual harms, unlike obvious defects. SPECIFIC LIMITATIONS OF THE CURRENT SYSTEM: Voluntary reporting captures 1-10% of actual events. Traditional Phase III trials: 100-300 patients for 3-12 months, then monitoring stops. ~50% of trial results unpublished; publication bias favors positive findings 3:1. 86.1% of patients excluded (age, comorbidities, medications); signals undetected. Long-term effects (>1 year) rarely captured in pre-approval trials. No systematic mechanism to detect gradual harms that develop over years. EVIDENCE-BASED. PATIENT SAFETY. PUBLIC HEALTH.",
-      "imageIssues": [
-        "cluttered layout",
-        "small text in the bottom list"
-      ],
-      "metadataCreatedAt": "2026-02-03T20:50:57.751Z",
-      "keywords": [
-        "infographic",
-        "Current System Limitations: Dangerously Blind to Real-World Harms",
-        "dfda-impact-paper",
-        "section-image"
-      ],
-      "author": "Mike P. Sinn",
-      "copyright": "© Mike P. Sinn - WarOnDisease.org",
-      "license": "CC BY-NC 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "website": "https://WarOnDisease.org",
-      "credit": "WarOnDisease.org / Decentralized Institutes of Health",
-      "imageProblemsDetected": false
-    },
-    {
-      "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-harms-bw-academic.jpg",
-      "filename": "dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-harms-bw-academic.jpg",
-      "extension": "jpg",
-      "sizeBytes": 541009,
-      "size": "528.3 KB",
-      "width": 1024,
-      "height": 1024,
-      "format": "jpeg",
-      "aspectRatio": "1:1",
-      "modified": "2026-01-27T20:53:25.831Z",
-      "imageType": "other",
-      "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nCurrent System Limitations: Dangerously Blind to Real-World Harms\n\n**The current system is not safe - it just appears safe because harms go undetected.**\n\nThe FDA's voluntary adverse event reporting system (MedWatch) captures only **1-10% of actual adverse events**. Long-term harms that develop gradually over years - the most insidious and deadly kind - are virtually invisible:\n\n- **Vioxx** (rofecoxib): Caused 38,000-55,000 cardiovascular deaths over 5 years before detection through voluntary reporting. With automated EHR pharmacovigilance, the elevated MI risk would have been detected within 6-12 months.\n- **Hormone Replacement Therapy**: Prescribed for decades before the Women's Health Initiative revealed increased cancer and cardiovascular risk - risks invisible to voluntary reporting\n- **Opioids**: The overdose crisis killed 500,000+ Americans; the addiction signal was undetectable in short trials with cherry-picked populations\n- **Avandia** (rosiglitazone): 83,000 excess heart attacks estimated before restrictions; signal emerged years post-approval\n- **Thalidomide** (1950s): The disaster that prompted regulatory reform - yet the current system would **still miss** a thalidomide-like harm if it manifested gradually rather than as obvious birth defects\n\nThe current \"safety\" system doesn't prevent harm - it **delays detection** until bodies accumulate. A global automated pharmacovigilance system with continuous EHR monitoring would detect these signals in months, not years or decades.\n\n**Specific limitations of the current system:**\n\n- Voluntary adverse event reporting captures only 1-10% of actual events\n- Traditional Phase III trials test 100-300 patients for 3-12 months, then monitoring stops\n- Approximately 50% of trial results go unpublished, with publication bias favoring positive findings 3:1\n- 86.1% of patients excluded due to age, comorbidities, or medications - safety signals in these populations go undetected\n- Long-term effects (>1 year) rarely captured in pre-approval trials\n- No systematic mechanism to detect gradual harms that develop over years",
-      "transcript": "CURRENT SYSTEM LIMITATIONS: DANGEROUSLY BLIND TO REAL-WORLD HARMS. The current system is not safe - it just appears safe because harms go undetected. CURRENT VOLUNTARY REPORTING SYSTEM (MedWatch). VOLUNTARY REPORTS. ADVERSE EVENTS. DETECTED SIGNALS (1-10% Captured). UNDETECTED REAL-WORLD HARMS: Vioxx (rofecoxib) 5 YEARS 38,000-55,000 Cardiovascular Deaths before detection. Automated EHR: 6-12 MONTHS. Opioids Overdose Crisis: 500,000+ Deaths. Addiction signal undetected in short, cherry-picked trials. Avandia (rosiglitazone) 83,000 Excess Heart Attacks estimated. Signal emerged years post-approval. Hormone Replacement Therapy Decades of Prescription. Increased Cancer & Cardiovascular Risk revealed by Women's Health Initiative. Invisible to voluntary reporting. Thalidomide (1950s) The disaster that prompted reform. Current system would STILL MISS gradual harm. SYSTEM DELAYS DETECTION UNTIL BODIES ACCUMULATE. PROPOSED AUTOMATED PHARMACOVIGILANCE SYSTEM (EHR MONITORING). CONTINUOUS EHR MONITORING & REAL-TIME ANALYSIS. ACTUAL ADVERSE EVENTS. RAPID SIGNAL DETECTION & ANALYSIS (Global Scale). EARLY DETECTION (Months, not Years). PREVENT HARM. Connects a healthy, thriving population. DETECTS SIGNALS IN MONTHS, NOT YEARS OR DECADES. SPECIFIC LIMITATIONS OF THE CURRENT SYSTEM: Voluntary reporting captures only 1-10% of actual events. Traditional Phase III trials: 100-300 patients, 3-12 months; monitoring stops. ~50% of trial results unpublished: publication bias favors positive findings 3:1. 86.1% patients excluded (age, comorbidities, meds); safety signals undetected. Long-term effects (>1 year) rarely captured in pre-approval trials. No systematic mechanism to detect gradual harm over years. WarOnDisease.org",
-      "inferredPrompt": "A sophisticated educational infographic in a hand-drawn charcoal and ink style on a cream-colored vintage paper background. The image is a split-screen comparison. The left side, titled 'CURRENT VOLUNTARY REPORTING SYSTEM', uses dark, organic imagery including a manual grinder, a beaker, and a tangled mass of roots filled with skulls and dark icons to represent undetected drug harms (Vioxx, Opioids, Thalidomide). The right side, titled 'PROPOSED AUTOMATED PHARMACOVIGILANCE SYSTEM', uses clean, technological imagery including a globe, satellites, circuit patterns, and a computer monitor showing data charts to represent real-time monitoring. Below the comparison is a horizontal banner labeled 'SPECIFIC LIMITATIONS OF THE CURRENT SYSTEM' featuring six distinct icons (net, clock, book, person with an 'X', hourglass, gears) with detailed explanatory bullet points. The text is dense, academic, and highly legible with a mix of bold headers and descriptive body text.",
-      "imageIssues": [
-        "text contains a grammatical error ('Connect's' instead of 'Connects')",
-        "background data feeds on the technology side contain unreadable gibberish text",
-        "the central illustration of roots and skulls is very cluttered",
-        "some small text in the icons is slightly blurry",
-        "the layout of the Thalidomide section is cramped",
-        "inconsistent rendering of some characters in the smaller bullet points"
-      ],
-      "promptImprovements": [
-        "specify 'zero gibberish' and 'correct spelling' to ensure high-quality typography",
-        "request more 'negative space' or 'whitespace' between the case study labels on the left for better clarity",
-        "specify 'vector-style icons' for the bottom row to improve sharpness",
-        "use a 'muted color palette' instruction to maintain the vintage look while highlighting key data with a single accent color",
-        "request 'consistent font weight' for all body text to improve readability"
-      ],
-      "metadataCreatedAt": "2026-01-27T04:47:42.224Z",
-      "keywords": [
-        "pharmacovigilance",
-        "drug safety",
-        "EHR monitoring",
-        "MedWatch",
-        "medical research",
-        "Vioxx",
-        "opioid crisis",
-        "public health policy",
-        "adverse events"
-      ],
-      "qualityScore": 4,
-      "qualityIssues": [
-        "Small text in the bottom limitations section may be difficult to read on mobile devices."
-      ],
-      "standaloneScore": 5,
-      "canShareStandalone": true,
-      "socialCaption": "We have a very efficient system for noticing a drug is dangerous only after it has killed fifty thousand people. It’s like a smoke detector that only goes off once the house is a pile of ash. https://WarOnDisease.org",
-      "twitterText": "The current medical safety system is 'voluntary,' which is a polite way of saying we wait for doctors to fill out forms while the bodies pile up. Automated EHR monitoring could catch side effects in months, but I guess we prefer the surprise. https://WarOnDisease.org",
-      "linkedInText": "Our current system for detecting drug side effects captures roughly 1-10% of actual harms. We've mastered the art of retroactive mourning; perhaps it's time we tried proactive data monitoring instead. #WarOnDisease https://WarOnDisease.org",
-      "targetPlatforms": [
-        "twitter",
-        "linkedin",
-        "facebook",
-        "presentation"
-      ],
-      "speakerNotes": "This visual contrasts our current 'manual' safety net with a modern digital one. On the left, you see the 'MedWatch' funnel—it's hand-cranked and misses 90% of what's happening. The 'undetected' section below ground shows the human cost of that 90% gap, including tens of thousands of deaths from Vioxx and the opioid crisis. By moving to the automated system on the right, we shift the detection window from years to months.",
-      "talkingPoints": [
-        "Voluntary reporting systems currently miss between 90% and 99% of adverse medical events.",
-        "Clinical trials often exclude 86% of the actual patient population, leaving safety signals for the general public undetected.",
-        "Automated EHR monitoring could have identified the Vioxx cardiovascular risk in 6-12 months instead of the 5 years it actually took.",
-        "The 'War on Disease' initiative proposes shifting funding to these automated safety systems to prevent mass-scale medical harm."
-      ],
-      "audienceLevel": "policymaker",
-      "altText": "A diagram comparing the 'Current Voluntary Reporting System' which misses most drug harms, leading to mass casualties (Vioxx, Opioids), against a 'Proposed Automated System' using EHR data to detect signals in months. The bottom lists 6 limitations including unpublished results and patient exclusion.",
-      "emotionalTone": "alarming",
-      "callToAction": "4 shares = ~153 lives saved",
-      "dataFreshness": "timeless",
-      "dataSources": [
-        "MedWatch",
-        "Women's Health Initiative",
-        "FDA"
-      ],
-      "factCheckNotes": "The death toll figures for Vioxx (38k-55k) and Opioids (500k+) are consistent with major public health reports. The 86.1% patient exclusion figure refers to a specific study on clinical trial generalizability.",
-      "imageProblemsDetected": false,
-      "metadataEnrichedAt": "2026-01-27T20:53:25.205Z"
-    },
-    {
       "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-economic-value-of-earlier-access-to-treatments-bw-academic.jpg",
       "filename": "dfda-impact-paper-section-economic-value-of-earlier-access-to-treatments-bw-academic.jpg",
       "extension": "jpg",
@@ -29853,43 +29708,6 @@
       "imageProblemsDetected": false
     },
     {
-      "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-post-safety-efficacy-lag-elimination-regulatory-delay-avoida-bw-academic.jpg",
-      "filename": "dfda-impact-paper-section-post-safety-efficacy-lag-elimination-regulatory-delay-avoida-bw-academic.jpg",
-      "extension": "jpg",
-      "sizeBytes": 418026,
-      "size": "408.2 KB",
-      "width": 1024,
-      "height": 1024,
-      "format": "jpeg",
-      "aspectRatio": "1:1",
-      "imageType": "other",
-      "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nPost-Safety Efficacy Lag Elimination\n\nEfficacy lag elimination (8.2 years (95% CI: 4.85 years-11.5 years)) is the **smaller** of the two timeline shift components. Discovery acceleration from 12.3x (95% CI: 4.19x-61.3x) trial capacity contributes 204 years (95% CI: 123 years-350 years), over 10× more health impact. This section details the efficacy lag component; see The Discovery Capacity Model for the dominant component.\n\n**One of two health benefits of a decentralized FDA comes from eliminating the \"efficacy lag\"**, the 8.2 years (95% CI: 4.85 years-11.5 years) Phase II/III delay between Phase I safety verification and final approval. **Critical: This does NOT eliminate safety testing.** Phase I safety testing (2.3 years) is preserved.",
-      "transcript": "POST-SAFETY EFFICACY LAG ELIMINATION\nScientific Illustration of Timeline Shift Components\nTRADITIONAL DEVELOPMENT PATH (Standard FDA Process)\nPHASE I SAFETY VERIFICATION (2.3 years)\nEFFICACY LAG (PHASE II/III DELAY)\nPhase II Trial Design\nPhase III Recruitment\nData Analysis\nRegulatory Review\n8.2 YEARS (95% CI: 4.85 YEARS-11.5 YEARS)\nFINAL APPROVAL\nDECENTRALIZED FDA PATH (Accelerated Model)\nPHASE I SAFETY VERIFICATION (2.3 years)\nELIMINATED LAG 0 YEARS LAG\nFINAL APPROVAL\nCRITICAL: SAFETY TESTING PRESERVED. Phase I (2.3 years) is preserved.\nOne of two health benefits of a decentralized FDA\nEFFICACY LAG ELIMINATION (Smaller Component)\nSMALLER TIMELINE SHIFT COMPONENT\nDOMINANT COMPONENT; See \"The Discovery Capacity Model\"\nEFFICACY LAG ELIMINATION (8.2 YEARS) (95% CI: 4.85 YEARS-11.5 YEARS)\nDISCOVERY ACCELERATION (204 YEARS; 95% CI: 123-350 YEARS) OVER 10x MORE HEALTH IMPACT (From 12.3x Trial Capacity)",
-      "metadataCreatedAt": "2026-02-03T02:42:50.244Z",
-      "keywords": [
-        "diagram",
-        "Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}",
-        "dfda-impact-paper",
-        "section-image"
-      ],
-      "author": "Mike P. Sinn",
-      "copyright": "© Mike P. Sinn - WarOnDisease.org",
-      "license": "CC BY-NC 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "website": "https://WarOnDisease.org",
-      "credit": "WarOnDisease.org / Decentralized Institutes of Health",
-      "imageProblemsDetected": true,
-      "imageProblems": [
-        "Scientific Illustration of Timeline Shift Components"
-      ],
-      "imageProblemsRepairPrompt": "Remove 'Scientific Illustration of Timeline Shift Components' from beneath the main title.",
-      "imageIssues": [
-        "busy layout with multiple arrow styles",
-        "varying font sizes"
-      ]
-    },
-    {
       "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-proposed-system-safety-advantages-bw-academic.jpg",
       "filename": "dfda-impact-paper-section-proposed-system-safety-advantages-bw-academic.jpg",
       "extension": "jpg",
@@ -30016,35 +29834,6 @@
       "generationPrompt": "Use a black and white scientific illustration style.\n\nQALY Benefit Streams Breakdown\n\nThe total DALY impact (565B DALYs (95% CI: 361B DALYs-877B DALYs)) derives from three distinct benefit streams with varying levels of empirical support:\n\n**A. Accelerated Development of Existing Pipeline Drugs**\n\nHealth gains from bringing effective treatments to patients faster through shortened development and approval timelines:\n\n- **Baseline:** Research shows treatment delays significantly increase mortality. Cancer studies indicate approximately 10% increased mortality risk per month of delay.\n- **Mechanism:** 12.3x (95% CI: 4.19x-61.3x) trial capacity reduces average development time\n- **Confidence:** High. Well-documented costs of delayed access (84,000 life-years lost per year of delay in cancer therapies alone)\n\n**B. Improved Preventative Care via Real-World Evidence**\n\nValue of using comprehensive data to optimize preventative care and treatment effectiveness:\n\n- **Baseline:** Cancer screenings alone have saved millions of life-years; significant untapped potential remains\n- **Mechanism:** Large-scale identification of at-risk populations and real-world effectiveness measurement enables personalized prevention\n- **Confidence:** Medium. Preventative care benefits are well-established, but scale of improvement from comprehensive data remains uncertain\n\n**C. Enabling Research for Previously Untreatable Diseases**\n\nTransformative potential to create viable research pathways for conditions ignored due to high trial costs:\n\n- **Baseline:** 7.00k diseases (95% CI: 6.00k diseases-10.0k diseases)+ rare diseases, 95% lack FDA-approved treatments\n- **Mechanism:** Radically lower per-patient costs ($929 (95% CI: $97-$3K) vs $41K (95% CI: $20K-$120K)) make rare disease R&D economically feasible\n- **Confidence:** Lower. Economic viability of rare disease research is theoretically sound but empirically unproven at scale\n\n**Conservative Approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even when using R&D savings alone (637:1 (95% CI: 569:1-790:1) ROI independent of health benefits)."
     },
     {
-      "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-quantified-benefits-efficacy-lag-component-only-bw-academic.jpg",
-      "filename": "dfda-impact-paper-section-quantified-benefits-efficacy-lag-component-only-bw-academic.jpg",
-      "extension": "jpg",
-      "sizeBytes": 481169,
-      "size": "469.9 KB",
-      "width": 1024,
-      "height": 1024,
-      "format": "jpeg",
-      "aspectRatio": "1:1",
-      "imageType": "other",
-      "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nQuantified Benefits (Efficacy Lag Component Only)\n\nThe elimination of the post-safety efficacy lag by such a framework achieves a one-time 8.2 years (95% CI: 4.85 years-11.5 years) timeline acceleration (the smaller component of the total 212 years (95% CI: 135 years-355 years) shift):\n\n- **Total DALYs Averted**: 7.94B DALYs (95% CI: 4.43B DALYs-12.1B DALYs) (total one-time impact from 8.2 years (95% CI: 4.85 years-11.5 years) timeline shift)\n- **Total Economic Value**: $1.19 quadrillion (95% CI: $443T-$2.41 quadrillion) (total one-time benefit from timeline shift)\n- **Deaths Prevented**: 416M deaths (95% CI: 225M deaths-630M deaths) (total over the 8.2 years (95% CI: 4.85 years-11.5 years) period)\n\n{{}}\n\n{{}}\n\n{{}}",
-      "transcript": "QUANTIFIED BENEFITS (EFFICACY LAG COMPONENT ONLY)\nTIMELINE ACCELERATION (EFFICACY LAG COMPONENT)\nPOST-SAFETY EFFICACY LAG\nFRAMEWORK IMPLEMENTATION\nONE-TIME 8.2 YEARS (95% CI: 4.85-11.5 YEARS) ACCELERATION\nSMALLER COMPONENT OF TOTAL 212 YEARS (95% CI: 135-355 YEARS) SHIFT\nTOTAL DALYS AVERTED: 7.94 BILLION DALYs (95% CI: 4.43-12.1 BILLION DALYs)\nTOTAL ONE-TIME IMPACT FROM 8.2 YEARS (95% CI: 4.85-11.5 YEARS) SHIFT\nTOTAL ECONOMIC VALUE: $1.19 QUADRILLION (95% CI: $443 TRILLION - $2.41 QUADRILLION)\nTOTAL ONE-TIME BENEFIT FROM TIMELINE SHIFT\nDEATHS PREVENTED: 416 MILLION DEATHS (95% CI: 225-630 MILLION DEATHS)\nTOTAL OVER THE 8.2 YEARS (95% CI: 4.85-11.5 YEARS) PERIOD",
-      "metadataCreatedAt": "2026-02-03T20:48:37.183Z",
-      "keywords": [
-        "infographic",
-        "Quantified Benefits (Efficacy Lag Component Only)",
-        "dfda-impact-paper",
-        "section-image"
-      ],
-      "author": "Mike P. Sinn",
-      "copyright": "© Mike P. Sinn - WarOnDisease.org",
-      "license": "CC BY-NC 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "website": "https://WarOnDisease.org",
-      "credit": "WarOnDisease.org / Decentralized Institutes of Health",
-      "imageProblemsDetected": false
-    },
-    {
       "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-research-acceleration-mechanism-bw-academic.jpg",
       "filename": "dfda-impact-paper-section-research-acceleration-mechanism-bw-academic.jpg",
       "extension": "jpg",
@@ -30112,67 +29901,6 @@
       ]
     },
     {
-      "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-safety-and-risk-management-bw-academic.jpg",
-      "filename": "dfda-impact-paper-section-safety-and-risk-management-bw-academic.jpg",
-      "extension": "jpg",
-      "sizeBytes": 476746,
-      "size": "465.6 KB",
-      "width": 1024,
-      "height": 1024,
-      "format": "jpeg",
-      "aspectRatio": "1:1",
-      "modified": "2026-02-01T00:01:28.414Z",
-      "imageType": "other",
-      "style": "black and white academic",
-      "keywords": [
-        "infographic",
-        "Safety and Risk Management",
-        "dfda-impact-paper",
-        "section-image"
-      ],
-      "transcript": "SAFETY AND RISK MANAGEMENT. COMMON CONCERN: WON'T FASTER TRIALS WITH LOWER COSTS COMPROMISE SAFETY? THE EVIDENCE INDICATES THE OPPOSITE. TRADITIONAL TRIALS. SAFETY CHECK. SLOW PROCESS & HIGH COST. PERCEIVED RISK. LIMITED MONITORING. PROPOSED SYSTEM. FASTER, LOWER COST & INTEGRATED DATA. SUPERIOR SAFETY MONITORING. DIMENSION 1: REAL-TIME DATA ANALYSIS. DIMENSION 2: AUTOMATED ALERT SYSTEMS. DIMENSION 3: COMPREHENSIVE PATIENT OVERSIGHT. SYSTEM PROVIDES SUPERIOR SAFETY ACROSS MULTIPLE DIMENSIONS.",
-      "qualityScore": 5,
-      "qualityIssues": [],
-      "standaloneScore": 5,
-      "canShareStandalone": true,
-      "socialCaption": "We've spent decades assuming that if a process is slow and expensive, it must be safe. It turns out 'slow' is just a way to describe how long it takes to realize something went wrong three months ago. https://WarOnDisease.org",
-      "twitterText": "We’ve perfected the art of being slow and expensive in the name of safety, while people die waiting for the results. Turns out, using modern technology to move faster actually makes things safer. Who knew? Not us, apparently. https://WarOnDisease.org",
-      "linkedInText": "The assumption that faster clinical trials are inherently more dangerous is a comforting fiction that ignores how modern data science actually works. Moving from reactive oversight to real-time AI monitoring doesn't just save time; it saves lives. #WarOnDisease https://WarOnDisease.org",
-      "targetPlatforms": [
-        "twitter",
-        "linkedin",
-        "facebook",
-        "presentation"
-      ],
-      "speakerNotes": "When people hear 'faster and cheaper' in medicine, they often hear 'dangerous.' But this comparison shows that our current 'slow' system is actually the one with higher risk because it relies on delayed, reactive data. By utilizing real-time AI and continuous surveillance, we can actually increase safety while reducing the time it takes to get cures to patients.",
-      "talkingPoints": [
-        "Traditional trials suffer from high risk due to 'blind spots' caused by delayed data reporting.",
-        "Proposed modernized trials use predictive AI and real-time ECG/data monitoring to catch issues instantly.",
-        "The evidence shows that technological acceleration provides superior participant protection compared to manual, reactive oversight."
-      ],
-      "audienceLevel": "policymaker",
-      "altText": "A diagram comparing traditional clinical trials and modernized trials. Traditional trials are shown as clunky gears with high-risk gauges and reactive oversight. Proposed trials are shown as streamlined machinery with AI, real-time data monitoring, and low-risk gauges, arguing that technology makes faster trials safer.",
-      "emotionalTone": "informative",
-      "callToAction": "Take the 2-question survey (~38 lives saved per vote)",
-      "dataFreshness": "timeless",
-      "dataSources": [
-        "WarOnDisease.org research"
-      ],
-      "factCheckNotes": "The diagram presents a methodological argument regarding the implementation of real-time monitoring and AI in clinical trials.",
-      "imageProblemsDetected": false,
-      "imageProblems": [],
-      "imageProblemsRepairPrompt": "",
-      "metadataEnrichedAt": "2026-02-01T00:01:27.783Z",
-      "metadataCreatedAt": "2026-02-01T00:01:28.030Z",
-      "author": "Mike P. Sinn",
-      "copyright": "© Mike P. Sinn - WarOnDisease.org",
-      "license": "CC BY-NC 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "website": "https://WarOnDisease.org",
-      "credit": "WarOnDisease.org / Decentralized Institutes of Health",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nSafety and Risk Management\n\n**Common concern**: Won't faster trials with lower costs compromise safety?\n\n**The evidence indicates the opposite.** The proposed system provides superior safety monitoring compared to traditional trials across multiple dimensions."
-    },
-    {
       "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-the-conservative-default-linear-assumption-bw-academic.jpg",
       "filename": "dfda-impact-paper-section-the-conservative-default-linear-assumption-bw-academic.jpg",
       "extension": "jpg",
@@ -30237,35 +29965,6 @@
         "Dense text in side panels",
         "Redundant text in bottom line summary"
       ]
-    },
-    {
-      "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-the-efficacy-lag-problem-bw-academic.jpg",
-      "filename": "dfda-impact-paper-section-the-efficacy-lag-problem-bw-academic.jpg",
-      "extension": "jpg",
-      "sizeBytes": 401370,
-      "size": "392.0 KB",
-      "width": 1024,
-      "height": 1024,
-      "format": "jpeg",
-      "aspectRatio": "1:1",
-      "imageType": "other",
-      "style": "black and white academic",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Efficacy Lag Problem\n\nA comprehensive quantitative analysis of post-safety efficacy lag costs (1962-2024) found:\n\n- **Total Deaths**: 416M deaths (95% CI: 225M deaths-630M deaths) eventually avoidable deaths over 8.2 years (95% CI: 4.85 years-11.5 years) efficacy lag (1962-2024)\n- **Total DALYs**: 7.94B DALYs (95% CI: 4.43B DALYs-12.1B DALYs) Disability-Adjusted Life Years lost\n- **Total Timeline Shift**: One-time 8.2 years (95% CI: 4.85 years-11.5 years) acceleration in disease eradication\n\nThe analysis shows that for every 1 unit of harm the FDA prevents through safety testing, it generates **3.07k:1 (95% CI: 2.88k:1-3.12k:1) units** of harm through efficacy delay (Type II vs. Type I error ratio).\n\n**Input: Efficacy Lag Duration Distribution**\n\n{{}}",
-      "transcript": "THE EFFICACY LAG PROBLEM: A QUANTITATIVE ANALYSIS (1962-2024)\nPost-Safety Efficacy Lag Costs & Timeline Acceleration\nCURRENT PATH (LAG)\n8.2 YEARS LAG (95% CI: 4.85-11.5 YEARS)\nTOTAL DEATHS: 416M (95% CI: 225M-630M) EVENTUALLY AVOIDABLE\nTOTAL DALYs: 7.94B (95% CI: 4.43B-12.1B) DISABILITY-ADJUSTED LIFE YEARS LOST\nPOST-SAFETY APPROVAL (1962)\nACCELERATED PATH (NO LAG)\nONE-TIME 8.2 YEARS (95% CI: 4.85-11.5 YEARS) ACCELERATION IN DISEASE ERADICATION\nDISEASE ERADICATION (FUTURE)\nHARM RATIO: TYPE II vs. TYPE I ERROR\n1 UNIT SAFETY HARM PREVENTED (TYPE I ERROR)\n3.07k UNITS (95% CI: 2.88k:1-3.12k:1)\nRATIO: 3.07k:1\nEFFICACY DELAY HARM GENERATED (TYPE II ERROR)\nINPUT: EFFICACY LAG DURATION DISTRIBUTION\nFREQUENCY\nLAG DURATION (YEARS)\nMEAN: ~8.2 YEARS\nDistribution of time between safety clearance and full efficacy realization.",
-      "metadataCreatedAt": "2026-02-03T20:47:08.781Z",
-      "keywords": [
-        "infographic",
-        "The Efficacy Lag Problem",
-        "dfda-impact-paper",
-        "section-image"
-      ],
-      "author": "Mike P. Sinn",
-      "copyright": "© Mike P. Sinn - WarOnDisease.org",
-      "license": "CC BY-NC 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "website": "https://WarOnDisease.org",
-      "credit": "WarOnDisease.org / Decentralized Institutes of Health",
-      "imageProblemsDetected": false
     },
     {
       "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-the-unexplored-therapeutic-frontier-bw-academic.jpg",
@@ -30335,43 +30034,6 @@
       "website": "https://WarOnDisease.org",
       "credit": "WarOnDisease.org / Decentralized Institutes of Health",
       "generationPrompt": "Use a black and white scientific illustration style.\n\nThe Unexplored Therapeutic Frontier\n\nThe fundamental problem isn't that cures are hard to discover. It's that we're barely looking:\n\n- **9.50M combinations** plausible drug-disease pairings exist (9.50k compounds (95% CI: 7.00k compounds-12.0k compounds) safe × 1.00k diseases (95% CI: 800 diseases-1.20k diseases))\n- **Only 0.342% (95% CI: 0.21%-0.514%)** of these combinations have been tested - **99%) | Calculated from 2 inputs | ✓ High confidence | Formula: 1 - EXPLORATION_RATIO | Unit: percentage | Click to view details, calculation & sources\">99.7% (95% CI: 99.5%-99.8%) remains unexplored**\n- **Only 12%** of the human interactome has ever been targeted by drugs\n- **30%** of approved drugs gain new indications, proving undiscovered uses exist\n\n{{}}\n\nThe cures likely already exist among tested-safe compounds. We just haven't looked. See The Untapped Therapeutic Frontier for detailed analysis of this exploration gap, and The Discovery Capacity Model for the quantitative framework showing how 12.3x (95% CI: 4.19x-61.3x) trial capacity produces the 212 years (95% CI: 135 years-355 years) timeline shift."
-    },
-    {
-      "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-capacity-multiplier-derivation-bw-academic.jpg",
-      "filename": "dfda-impact-paper-section-trial-capacity-multiplier-derivation-bw-academic.jpg",
-      "extension": "jpg",
-      "sizeBytes": 412902,
-      "size": "403.2 KB",
-      "width": 1024,
-      "height": 1024,
-      "format": "jpeg",
-      "aspectRatio": "1:1",
-      "imageType": "other",
-      "style": "black and white academic",
-      "keywords": [
-        "infographic",
-        "Trial Capacity Multiplier Derivation",
-        "dfda-impact-paper",
-        "section-image"
-      ],
-      "author": "Mike P. Sinn",
-      "copyright": "© Mike P. Sinn - WarOnDisease.org",
-      "license": "CC BY-NC 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/",
-      "website": "https://WarOnDisease.org",
-      "credit": "WarOnDisease.org / Decentralized Institutes of Health",
-      "generationPrompt": "Use a black and white scientific illustration style.\n\nTrial Capacity Multiplier Derivation\n\n**Result:** 12.3x (95% CI: 4.19x-61.3x)\n\n**Step 1: Current trial capacity**\n\n- Current trial participants: 1.90M patients/year (95% CI: 1.50M patients/year-2.30M patients/year)\n- Current first treatments: 15 diseases/year (95% CI: 8 diseases/year-30 diseases/year)\n\n**Step 2: Capacity with $21.8B/year**\n\n- Cost per patient: $929 (95% CI: $97-$3K)\n- Fundable patients: 23.4M patients/year (95% CI: 9.44M patients/year-96.8M patients/year)\n\n**Step 3: Calculate multiplier**\n\n{{}}",
-      "transcript": "TRIAL CAPACITY MULTIPLIER DERIVATION\nRESULT: 12.3x (95% CI: 4.19x-61.3x)\nSTEP 1: CURRENT TRIAL CAPACITY\nCurrent trial participants: 1.90M patients/year (95% CI: 1.50M patients/year-2.30M patients/year)\n1.50M, 1.90M, 2.30M\nCurrent first treatments: 15 diseases/year (95% CI: 8 diseases/year-30 diseases/year)\n8, 15, 30\nSTEP 2: CAPACITY WITH $21.8B/YEAR\nCost per patient: $929 (95% CI: $97-$3K)\n$21.8B/YEAR\n96.8M, 23.4M\nFundable patients: 23.4M patients/year (95% CI: 9.44M patients/year-96.8M patients/year)\nSTEP 3: CALCULATE MULTIPLIER\nFundable patients / Current trial participants = Multiplier\n23.4M / 1.90M approx 12.3x\nResult: 12.3x (95% CI: 4.19x-61.3x)\nIMPORTANT: Generate image with aspect ratio 1:1.",
-      "imageProblemsDetected": true,
-      "imageIssues": [
-        "prompt leakage text at bottom",
-        "text size inconsistent",
-        "cluttered layout with overlapping elements"
-      ],
-      "imageProblems": [
-        "IMPORTANT: Generate image with aspect ratio 1:1."
-      ],
-      "imageProblemsRepairPrompt": "Remove the text 'IMPORTANT: Generate image with aspect ratio 1:1.' from the bottom."
     },
     {
       "path": "assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-funding-scenario-bw-academic.jpg",
