@@ -3,16 +3,6 @@
     "PostToolUse": [],
     "UserPromptSubmit": [],
     "SessionStart": [],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python \"${CLAUDE_PROJECT_DIR}/.claude/hooks/voice-punchup-review.py\"",
-            "timeout": 30
-          }
-        ]
-      }
-    ]
+    "Stop": []
   }
 }

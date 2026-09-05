@@ -69,6 +69,4 @@ That is the flywheel: the critic improves as you keep editing, with no GPUs.
 ## Wiring options (not yet done)
 
 - Reference `GUIDES/VOICE_RUBRIC.md` from `CLAUDE.md` so it loads into context.
-- Upgrade `.claude/hooks/voice-punchup-review.py` to also surface the rubric + run
-  `voice-critic.py` on the changed files.
 - Add a `voice-critic` Claude Code skill that critiques the current diff on demand.
