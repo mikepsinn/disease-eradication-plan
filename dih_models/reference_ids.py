@@ -1133,6 +1133,7 @@ class ReferenceID(str, Enum):
     SEMAGACESTAT_IDENTITY = "semagacestat-identity"
     SEMMELWEIS_HANDWASHING_2024 = "semmelweis-handwashing-2024"
     SENTIENCE_US_FACTORY_FARMING = "sentience-us-factory-farming"
+    SENTINEL_INFORMATION_FOR_PROVIDERS = "sentinel-information-for-providers"
     SEPTEMBER_11_MEMORIAL = "september-11-memorial"
     SEVER_WARS_CHILDREN_2022 = "sever-wars-children-2022"
     SHEPHERD2019 = "shepherd2019"
