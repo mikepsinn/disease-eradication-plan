@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 95 parameters used in the analysis, organized by type:
+This appendix documents all 96 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 35
+- External sources (peer-reviewed): 36
 - Calculated values: 36
 - Core definitions: 24
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (36 parameters) • [External Data Sources](#sec-external) (35 parameters) • [Core Definitions](#sec-definitions) (24 parameters)
+[Calculated Values](#sec-calculated) (36 parameters) • [External Data Sources](#sec-external) (36 parameters) • [Core Definitions](#sec-definitions) (24 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -161,23 +161,24 @@ $$
 
 :::
 
-### Annual R&D Savings from Pragmatic Trials: $58.6 billion {#sec-dfda_benefit_rd_only_annual}
+### Annual R&D Savings from Pragmatic Trials: $40.5 billion {#sec-dfda_benefit_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual benefit from pragmatic trial R&D savings (trial cost reduction, secondary component)
+Annual benefit from pragmatic trial R&D savings: trial cost reduction applied to the Phase 2/3 efficacy share of global trial spending (Phase 1 safety trials retain traditional design and cost)
 
 **Inputs**:
 
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60 billion (95% CI: $50 billion - $75 billion)
+- [Phase 2/3 Share of Clinical Trial Costs](#sec-phase_2_3_clinical_trial_cost_pct) 📊: 69% (SE: ±5%)
 - [Pragmatic Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -253,7 +254,7 @@ $$
 
 :::
 
-### Annual Net Savings from Pragmatic Trials (R&D Only): $58.6 billion {#sec-dfda_net_savings_rd_only_annual}
+### Annual Net Savings from Pragmatic Trials (R&D Only): $40.4 billion {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -261,24 +262,24 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
 - [Total Annual Pragmatic Trial Platform Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -356,7 +357,7 @@ $$
 
 :::
 
-### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $389 billion {#sec-dfda_npv_benefit_rd_only}
+### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $269 billion {#sec-dfda_npv_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -364,7 +365,7 @@ NPV of pragmatic trial R&D savings only with 5-year adoption ramp (10-year horiz
 
 **Inputs**:
 
-- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6 billion
+- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $40.4 billion
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -597,7 +598,7 @@ $$
 
 :::
 
-### ROI from Pragmatic Trial R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
+### ROI from Pragmatic Trial R&D Savings Only: 439:1 {#sec-dfda_roi_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -605,15 +606,15 @@ ROI from pragmatic trial R&D savings only (10-year NPV, most conservative estima
 
 **Inputs**:
 
-- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $269 billion
 - [Pragmatic Trial Platform Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
 ROI_{RD} \\
 = \frac{NPV_{RD}}{Cost_{platform,total}} \\
-= \frac{\$389B}{\$611M} \\
-= 637
+= \frac{\$269B}{\$611M} \\
+= 439
 \end{gathered}
 $$
 where:
@@ -628,17 +629,17 @@ $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -2522,6 +2523,26 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 {{< include ../figures/distribution-patient_willingness_trial_participation_pct.qmd >}}
 
 *~ Medium confidence*
+
+:::
+
+### Phase 2/3 Share of Clinical Trial Costs: 69% {#sec-phase_2_3_clinical_trial_cost_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)
+
+**Source**: [@global-clinical-trials-market-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5%)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-phase_2_3_clinical_trial_cost_pct.qmd >}}
+
+*✓ High confidence*
 
 :::
 

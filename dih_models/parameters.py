@@ -3104,23 +3104,39 @@ DFDA_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
 # RECURRING ANNUAL BENEFITS (These repeat every year forever)
 # ==============================================================================
 
-# R&D Savings from Trial Cost Reduction (~$50B/year recurring)
+PHASE_2_3_CLINICAL_TRIAL_COST_PCT = Parameter(
+    0.69,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
+    source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
+    source_type="external",
+    description="Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)",
+    display_name="Phase 2/3 Share of Clinical Trial Costs",
+    unit="percentage",
+    confidence="high",
+    keywords=["phase 2", "phase 3", "efficacy", "cost", "clinical trials", "breakdown"],
+    distribution="normal",
+    std_error=0.05,  # ±7% uncertainty in cost allocation estimates
+    latex_symbol=r"Pct_{P2+P3}",  # LaTeX symbol for equations
+)  # 69% of trial costs are Phase 2/3 efficacy testing
+
+# R&D Savings from Trial Cost Reduction (~$40B/year recurring).
+# Only Phase 2/3 efficacy spending is addressable: Phase 1 first-in-human trials keep their
+# current design and cost under the dFDA model, and Phase 4 is conservatively excluded.
 DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
-    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * DFDA_TRIAL_COST_REDUCTION_PCT,
+    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * PHASE_2_3_CLINICAL_TRIAL_COST_PCT * DFDA_TRIAL_COST_REDUCTION_PCT,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Annual benefit from pragmatic trial R&D savings (trial cost reduction, secondary component)",
+    description="Annual benefit from pragmatic trial R&D savings: trial cost reduction applied to the Phase 2/3 efficacy share of global trial spending (Phase 1 safety trials retain traditional design and cost)",
     display_name="Annual R&D Savings from Pragmatic Trials",
     unit="USD/year",
-    formula="TRIAL_SPENDING × COST_REDUCTION_PCT",
+    formula="TRIAL_SPENDING × PHASE_2_3_SHARE × COST_REDUCTION_PCT",
     keywords=["rd savings", "pragmatic trials", "real world evidence", "rct", "clinical trial"],
-    # Uncertainty derived from inputs (TRIAL_SPENDING × COST_REDUCTION_PCT)
-    validation_min=25_000_000_000,   # Floor: 30% cost reduction at $83B market
-    validation_max=65_000_000_000,   # Ceiling: 70% cost reduction at $97B market
-    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "DFDA_TRIAL_COST_REDUCTION_PCT"],
-    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] * ctx["DFDA_TRIAL_COST_REDUCTION_PCT"],
+    validation_min=15_000_000_000,   # Floor: 30% cost reduction on 60% of $83B market
+    validation_max=65_000_000_000,   # Ceiling: 97% cost reduction on 69% of $97B market
+    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "PHASE_2_3_CLINICAL_TRIAL_COST_PCT", "DFDA_TRIAL_COST_REDUCTION_PCT"],
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] * ctx["PHASE_2_3_CLINICAL_TRIAL_COST_PCT"] * ctx["DFDA_TRIAL_COST_REDUCTION_PCT"],
     latex_symbol=r"Benefit_{RD,ann}",  # LaTeX symbol for equations
-)  # $41.5B from automating Phase 2/3/4 trials
+)  # ~$40.4B: $60B × 69% × 97.7%
 
 # Note: DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL defined later (after DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_COST_ANNUAL)
 
@@ -8296,20 +8312,7 @@ TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
 # Clinical Trial Phase Cost Breakdown
 # Source: Global clinical trials market ~$60B annually
 # Phase 2: ~$15-25B (24%), Phase 3: ~$29-45B (45%), combined ~69%
-PHASE_2_3_CLINICAL_TRIAL_COST_PCT = Parameter(
-    0.69,
-    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
-    source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
-    source_type="external",
-    description="Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)",
-    display_name="Phase 2/3 Share of Clinical Trial Costs",
-    unit="percentage",
-    confidence="high",
-    keywords=["phase 2", "phase 3", "efficacy", "cost", "clinical trials", "breakdown"],
-    distribution="normal",
-    std_error=0.05,  # ±7% uncertainty in cost allocation estimates
-    latex_symbol=r"Pct_{P2+P3}",  # LaTeX symbol for equations
-)  # 69% of trial costs are Phase 2/3 efficacy testing
+# PHASE_2_3_CLINICAL_TRIAL_COST_PCT is defined earlier, next to DFDA_BENEFIT_RD_ONLY_ANNUAL, which uses it.
 
 # Cost barrier pharma faces for Phase 2/3 (per drug)
 # Current drug development: $2.6B (PHARMA_DRUG_DEVELOPMENT_COST_CURRENT), ~60% is Phase 2/3/4 efficacy testing

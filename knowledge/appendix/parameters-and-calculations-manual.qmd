@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 780 parameters used in the analysis, organized by type:
+This appendix documents all 781 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 223
+- External sources (peer-reviewed): 224
 - Calculated values: 397
 - Core definitions: 160
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (397 parameters) • [External Data Sources](#sec-external) (223 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
+[Calculated Values](#sec-calculated) (397 parameters) • [External Data Sources](#sec-external) (224 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -6450,23 +6450,24 @@ $$
 
 :::
 
-### Annual R&D Savings from Pragmatic Trials: $58.6 billion {#sec-dfda_benefit_rd_only_annual}
+### Annual R&D Savings from Pragmatic Trials: $40.5 billion {#sec-dfda_benefit_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual benefit from pragmatic trial R&D savings (trial cost reduction, secondary component)
+Annual benefit from pragmatic trial R&D savings: trial cost reduction applied to the Phase 2/3 efficacy share of global trial spending (Phase 1 safety trials retain traditional design and cost)
 
 **Inputs**:
 
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60 billion (95% CI: $50 billion - $75 billion)
+- [Phase 2/3 Share of Clinical Trial Costs](#sec-phase_2_3_clinical_trial_cost_pct) 📊: 69% (SE: ±5%)
 - [Pragmatic Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -7354,7 +7355,7 @@ $$
 
 :::
 
-### Annual Net Savings from Pragmatic Trials (R&D Only): $58.6 billion {#sec-dfda_net_savings_rd_only_annual}
+### Annual Net Savings from Pragmatic Trials (R&D Only): $40.4 billion {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7362,24 +7363,24 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
 - [Total Annual Pragmatic Trial Platform Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -7457,7 +7458,7 @@ $$
 
 :::
 
-### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $389 billion {#sec-dfda_npv_benefit_rd_only}
+### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $269 billion {#sec-dfda_npv_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7465,7 +7466,7 @@ NPV of pragmatic trial R&D savings only with 5-year adoption ramp (10-year horiz
 
 **Inputs**:
 
-- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6 billion
+- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $40.4 billion
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -7493,7 +7494,7 @@ $$
 
 :::
 
-### NPV Net Benefit (R&D Only): $389 billion {#sec-dfda_npv_net_benefit_rd_only}
+### NPV Net Benefit (R&D Only): $268 billion {#sec-dfda_npv_net_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7501,15 +7502,15 @@ NPV net benefit using R&D savings only (benefits minus costs)
 
 **Inputs**:
 
-- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $269 billion
 - [Pragmatic Trial Platform Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
 NPV_{net,RD} \\
 = NPV_{RD} - Cost_{platform,total} \\
-= \$389B - \$611M \\
-= \$389B
+= \$269B - \$611M \\
+= \$268B
 \end{gathered}
 $$
 where:
@@ -7524,17 +7525,17 @@ $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -7963,7 +7964,7 @@ $$
 
 :::
 
-### Daily R&D Savings from Trial Cost Reduction: $161 million {#sec-dfda_rd_savings_daily}
+### Daily R&D Savings from Trial Cost Reduction: $111 million {#sec-dfda_rd_savings_daily}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7971,23 +7972,23 @@ Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
 **Inputs**:
 
-- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
 
 $$
 \begin{gathered}
 Savings_{RD,daily} \\
 = Benefit_{RD,ann} \times 0.00274 \\
-= \$58.6B \times 0.00274 \\
-= \$161M
+= \$40.5B \times 0.00274 \\
+= \$111M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -8017,7 +8018,7 @@ $$
 
 :::
 
-### ROI from Pragmatic Trial R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
+### ROI from Pragmatic Trial R&D Savings Only: 439:1 {#sec-dfda_roi_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -8025,15 +8026,15 @@ ROI from pragmatic trial R&D savings only (10-year NPV, most conservative estima
 
 **Inputs**:
 
-- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $269 billion
 - [Pragmatic Trial Platform Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
 ROI_{RD} \\
 = \frac{NPV_{RD}}{Cost_{platform,total}} \\
-= \frac{\$389B}{\$611M} \\
-= 637
+= \frac{\$269B}{\$611M} \\
+= 439
 \end{gathered}
 $$
 where:
@@ -8048,17 +8049,17 @@ $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -13252,7 +13253,7 @@ $$
 
 :::
 
-### IAB Mechanism Benefit-Cost Ratio: 230:1 {#sec-iab_mechanism_benefit_cost_ratio}
+### IAB Mechanism Benefit-Cost Ratio: 205:1 {#sec-iab_mechanism_benefit_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -13260,15 +13261,15 @@ Benefit-Cost Ratio of the IAB mechanism itself
 
 **Inputs**:
 
-- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $172 billion
+- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $154 billion
 - [IAB Mechanism Annual Cost (High Estimate)](#sec-iab_mechanism_annual_cost): $750 million (95% CI: $160 million - $750 million)
 
 $$
 \begin{gathered}
 BCR_{IAB} \\
 = \frac{Benefit_{peace+RD}}{Cost_{IAB,ann}} \\
-= \frac{\$172B}{\$750M} \\
-= 230
+= \frac{\$154B}{\$750M} \\
+= 205
 \end{gathered}
 $$
 where:
@@ -13276,8 +13277,8 @@ $$
 \begin{gathered}
 Benefit_{peace+RD} \\
 = Benefit_{peace,soc} + Benefit_{RD,ann} \\
-= \$114B + \$58.6B \\
-= \$172B
+= \$114B + \$40.5B \\
+= \$154B
 \end{gathered}
 $$
 where:
@@ -13379,9 +13380,9 @@ where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -21725,7 +21726,7 @@ $$
 
 :::
 
-### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5x {#sec-treaty_benefit_multiplier_vs_vaccines}
+### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 10.3x {#sec-treaty_benefit_multiplier_vs_vaccines}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -21734,14 +21735,14 @@ Treaty system benefit multiplier vs childhood vaccination programs
 **Inputs**:
 
 - [Estimated Annual Global Economic Benefit from Childhood Vaccination Programs](#sec-childhood_vaccination_annual_benefit) 📊: $15 billion (SE: ±$4.5 billion)
-- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $172 billion
+- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $154 billion
 
 $$
 \begin{gathered}
 k_{treaty:vax} \\
 = \frac{Benefit_{peace+RD}}{Benefit_{vax,ann}} \\
-= \frac{\$172B}{\$15B} \\
-= 11.5
+= \frac{\$154B}{\$15B} \\
+= 10.3
 \end{gathered}
 $$
 where:
@@ -21749,8 +21750,8 @@ $$
 \begin{gathered}
 Benefit_{peace+RD} \\
 = Benefit_{peace,soc} + Benefit_{RD,ann} \\
-= \$114B + \$58.6B \\
-= \$172B
+= \$114B + \$40.5B \\
+= \$154B
 \end{gathered}
 $$
 where:
@@ -21852,9 +21853,9 @@ where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -23588,7 +23589,7 @@ $$
 
 :::
 
-### 1% treaty Basic Annual Benefits (Peace + R&D Savings): $172 billion {#sec-treaty_peace_plus_rd_annual_benefits}
+### 1% treaty Basic Annual Benefits (Peace + R&D Savings): $154 billion {#sec-treaty_peace_plus_rd_annual_benefits}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -23597,14 +23598,14 @@ Basic annual benefits: peace dividend + pragmatic trial R&D savings only (2 of 8
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
-- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
 
 $$
 \begin{gathered}
 Benefit_{peace+RD} \\
 = Benefit_{peace,soc} + Benefit_{RD,ann} \\
-= \$114B + \$58.6B \\
-= \$172B
+= \$114B + \$40.5B \\
+= \$154B
 \end{gathered}
 $$
 where:
@@ -23706,9 +23707,9 @@ where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -38141,6 +38142,26 @@ Phase I safety trial duration
 **Source**: [@bio-clinical-development-2021]
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### Phase 2/3 Share of Clinical Trial Costs: 69% {#sec-phase_2_3_clinical_trial_cost_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)
+
+**Source**: [@global-clinical-trials-market-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5%)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-phase_2_3_clinical_trial_cost_pct.qmd >}}
+
+*✓ High confidence*
 
 :::
 

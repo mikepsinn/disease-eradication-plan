@@ -151,21 +151,6 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 
 ![A map of how sick people might meet doctors, if everyone agreed to use the same computer system. They won't.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-core-model-an-open-coordination-protocol-bw-academic.jpg)
 
-### Key Capabilities
-
-- **Treatment Rankings**: Every treatment for every condition ranked by real-world effectiveness, updated continuously as new data arrives
-- **Outcome Labels**: Standardized "nutrition facts for drugs" showing effectiveness rates, side effects, and outcomes from real patients
-- **Universal Trial Access**: Any patient can participate from anywhere via phone/computer
-- **Real-Time Surveillance**: Continuous data on efficacy, side effects, and drug interactions
-- **Federated Data Architecture**: Data stays in source systems (EHR platforms, consumer health apps) while queries run across all sources
-
-### Potential Impact on the Status Quo
-
-- **Speed of Trials**: Reduced overhead and automated data capture compresses timelines.
-- **Cost of Trials**: Using existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on pragmatic trials like Oxford RECOVERY and the US-based ADAPTABLE trial).
-- **Scale & Scope**: Enables testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.
-- **Innovation Incentives**: Lower R&D costs increase profitability and encourage more entrants/innovation in the life sciences.
-
 ## Addressing Key Concerns
 
 ### Why "Eventually Avoidable" Matters
@@ -194,19 +179,13 @@ This analysis models a scenario with {{< var dfda_annual_trial_funding >}}/year 
 
 This analysis demonstrates what becomes possible when the funding constraint is removed. The {{< var dfda_annual_trial_funding >}}/year figure is achievable through multiple mechanisms:
 
-- **Philanthropic mega-donors**: A single Gates Foundation-scale commitment could fund the protocol infrastructure and initial years
+- **Philanthropic mega-donors**: A single Gates Foundation-scale commitment could fund the protocol build, though not the trial budget
 - **Sovereign wealth funds**: Norway's $1.4T fund or similar could view this as humanity-scale infrastructure
 - **WHO/multilateral coordination**: Comparable to GAVI or the Global Fund
 - **Military reallocation**: Less than 1% of global military spending ({{< var global_military_spending_annual_2024 >}}/year)
-- **Industry consortium**: Pharma collectively spends {{< var global_clinical_trials_spending_annual >}}/year on trials; even 10% redirection exceeds this threshold
+- **Industry consortium**: Pharma collectively spends {{< var global_clinical_trials_spending_annual >}}/year on trials; redirecting just over a third of it would cover this budget
 
 The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}}:1 ROI, any rational capital allocator would fund this if they believed the analysis.
-
-**Trial Capacity Impact:** See [The Discovery Capacity Model](#the-discovery-capacity-model) for the full comparison of status quo vs. protocol trial capacity metrics.
-
-**The Untested Treatment Backlog:**
-
-Approximately {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. At current trial capacity ({{< var new_disease_first_treatments_per_year >}}), systematically testing all {{< var drug_disease_combinations_possible >}} plausible pairings would take ~{{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}} capacity, this drops to ~{{< var dfda_queue_clearance_years >}}.
 
 ## Protocol Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates}
 
@@ -257,14 +236,9 @@ This section quantifies the potential societal benefits of the protocol, focusin
 
 ### Market Size and Impact
 
-The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials is approximately {{< var global_clinical_trials_spending_annual >}}. Much of this spending could be made far more efficient through protocol standardization. If the protocol enables even a fraction of these trials to use pragmatic designs, the economic impact will be substantial.
+Annual global spending on clinical trials is approximately {{< var global_clinical_trials_spending_annual >}}. Much of this spending could be made far more efficient through protocol standardization.
 
 - **Current Average Costs**: Estimates suggest {{< var pharma_drug_development_cost_current >}} to bring a new drug from discovery through FDA approval, spread across ~10 years.
-- **Clinical Trial Phase Breakdown**:
-  - Phase I: \$2 - \$5 million/trial (smaller scale).
-  - Phase II: \$10 - \$50 million/trial (depending on disease area).
-  - Phase III: \$100M - \$500M/trial (large patient populations).
-
 - **Per-Patient Phase III Costs**: Often {{< var traditional_phase3_cost_per_patient >}} (site fees, overhead, staff, monitoring, data management).
 
 ### Decentralized Trial Costs Modeled on Pragmatic Trials
@@ -298,48 +272,7 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 ### Scope of Cost Reduction
 
-This reduction applies to trials amenable to pragmatic design - approximately 70% of Phase III trial volume by patient count (chronic disease management, comparative effectiveness, dose optimization). First-in-human studies, novel mechanism trials, and high-risk interventions retain traditional controlled protocols. The confidence interval ($500-$3,000/patient) captures this heterogeneity: simple comparative studies approach RECOVERY-level efficiency while complex trials remain closer to traditional costs. The headline {{< var dfda_trial_cost_reduction_pct >}} figure represents the **weighted average** across the addressable trial market, not a claim that every trial achieves this reduction.
-
-### Overall Savings
-
-1. **By Reducing Per-Patient Costs**
-
-   - If a trial with 5,000 participants costs {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, total cost is ~\$6 million, versus \$200 - \$600 million under traditional models.
-   - This magnitude of savings can drastically reduce the total cost of clinical development.
-
-   For a trial with $x$ participants, the total cost savings is:
-
-   $$
-   S_{\text{trial}}(x) = (c_t - c_d) \cdot x
-   $$
-
-   Where:
-   - $c_t$ is the traditional cost per patient ({{< var traditional_phase3_cost_per_patient >}})
-   - $c_d$ is the decentralized cost per patient ({{< var dfda_pragmatic_trial_cost_per_patient >}})
-
-   For a trial with $x = 5,000$ participants, savings are approximately:
-
-   $$(\text{Traditional} - \text{Pragmatic}) \times 5{,}000 \approx \$194\text{M per trial}$$
-
-2. **Volume of Trials & Speed**
-
-   - Faster, cheaper trials allow more drug candidates, off-label uses, nutraceuticals, and personalized dosing strategies to be tested.
-   - Shorter development cycles reduce carrying costs and risk, further increasing ROI for sponsors.
-
-3. **Regulatory Savings**
-
-   - A unified protocol standard with automated data audits cuts bureaucratic duplication across multiple countries, drastically lowering compliance costs.
-
-4. **Transparent, Standardized Environment**
-
-   - The transparent nature of the protocol creates a standardized operating environment. Outcome data is visible across the entire network, enabling sponsors to benchmark their trial designs and reduce operational costs, further driving down R&D expenditure beyond the technical efficiencies of pragmatic trials.
-
-### Economic Value of Earlier Access to Treatments
-
-- Faster approvals and access to effective treatments can save lives and improve quality of life.
-- **Value of a Statistical Life (VSL):** U.S. agencies use ~{{< var value_of_statistical_life >}} per life saved.
-- **QALY Framework:** Standard willingness-to-pay is **$100,000–{{< var standard_economic_qaly_value_usd >}} per QALY gained**.
-- These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
+The reduction applies to Phase II/III efficacy trials, which are {{< var phase_2_3_clinical_trial_cost_pct >}} of global trial spending. Phase I first-in-human trials keep their current design and cost, and Phase IV is excluded from the savings to stay conservative. Within efficacy trials, per-patient cost varies with the endpoints: simple comparative studies approach RECOVERY's {{< var recovery_trial_cost_per_patient >}} while trials needing imaging or biopsies run closer to \$3,000. The {{< var dfda_pragmatic_trial_cost_per_patient >}} central estimate and its confidence interval already carry that spread, so the {{< var dfda_trial_cost_reduction_pct >}} figure is not discounted a second time for trial complexity.
 
 ![When people don't die, economists can count them twice: once for being alive and again for feeling good. Death is very expensive.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-economic-value-of-earlier-access-to-treatments-bw-academic.jpg)
 
@@ -349,24 +282,22 @@ This reduction applies to trials amenable to pragmatic design - approximately 70
 - **Central Estimate**: {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}})
 - **Source/Rationale**:
   - Decentralized Clinical Trials (DCTs) demonstrate significant cost reductions [@dct-cost-reductions-evidence] through reduced site management, travel, and streamlined data collection.
-  - **Empirical evidence**: ADAPTABLE trial achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US settings. Harvard meta-analysis of 108 pragmatic trials found median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient.
-  - **Our estimate**: {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional). This deliberately uses ADAPTABLE as a conservative baseline; actual costs may be lower.
-  - **Confidence interval** captures uncertainty from complex chronic disease trials to highly efficient EHR-integrated designs.
 
 The annual gross R&D savings can be calculated as:
 
 $$
-S_{\text{annual}} = \alpha \cdot R_d
+S_{\text{annual}} = \alpha \cdot \phi \cdot R_d
 $$
 
 Where:
 
 - $\alpha \in [0,1]$ is the cost reduction percentage (as decimal)
+- $\phi$ = {{< var phase_2_3_clinical_trial_cost_pct >}}, the Phase II/III share of trial spending
 - $R_d$ = {{< var global_clinical_trials_spending_annual >}} global clinical trial spending
 
 **Base Case Calculation:**
 
-Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial costs of {{< var dfda_pragmatic_trial_cost_per_patient >}} vs traditional {{< var traditional_phase3_cost_per_patient >}}):
+Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial costs of {{< var dfda_pragmatic_trial_cost_per_patient >}} vs traditional {{< var traditional_phase3_cost_per_patient >}}) on the Phase II/III share of spending:
 
 {{< var dfda_benefit_rd_only_annual_latex >}}
 
@@ -562,7 +493,6 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
 1. **It's the neutral prior**: Without strong evidence for either diminishing or compounding returns, linearity is the least assumptive model
 2. **It may underestimate benefits**: If platform technologies and learning effects produce compounding returns, our projections are conservative
 3. **It's empirically defensible**: The RECOVERY trial's success (multiple treatments found with increased search) is consistent with linear or better returns
-4. **It avoids both failure modes**: Assuming diminishing returns would justify inaction; assuming compounding returns might overstate benefits. Linearity is the responsible middle ground
 
 **Bottom line**: Even under the conservative linear assumption, {{< var dfda_trial_capacity_multiplier >}} more trials produces {{< var dfda_trial_capacity_multiplier >}} more discoveries from a space that is 99%+ unexplored. The expected value calculation remains overwhelmingly positive.
 
@@ -584,7 +514,6 @@ The proposed funding level ({{< var dfda_annual_trial_funding >}}/year) sits in 
 
    - Tufts Center for the Study of Drug Development often cited for \$1.0 - \$2.6 billion/drug.
    - Journal articles and industry reports (IQVIA, Deloitte) also highlight \$2+ billion figures.
-   - Oxford RECOVERY trial: {{< var recovery_trial_cost_per_patient >}}/patient (exceptional NHS/COVID conditions). ADAPTABLE trial: {{< var adaptable_trial_cost_per_patient >}}/patient (typical US pragmatic trial). Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE; confidence interval captures uncertainty.
 
 2. **ROI Calculation Method**:
 
@@ -596,14 +525,9 @@ The proposed funding level ({{< var dfda_annual_trial_funding >}}/year) sits in 
    - The largest uncertainties revolve around uptake speed, regulatory harmonization, and participant willingness.
    - Projections assume widespread adoption by major pharmaceutical companies and global health authorities.
 
-4. **Secondary Benefits**:
-
-   - Quality-of-life improvements, lower healthcare costs from faster drug innovation, and potentially fewer adverse events from earlier detection.
-   - These are positive externalities that can significantly enlarge real ROI from a societal perspective.
-
 ## Conclusion
 
-The protocol reduces clinical trial costs by a factor of {{< var dfda_trial_cost_reduction_factor >}}, brings treatments to patients sooner, and extends trials to diseases no sponsor would otherwise fund. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront plus discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends {{< var global_clinical_trials_spending_annual >}} annually on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}:1** at scale.
+The protocol reduces clinical trial costs by a factor of {{< var dfda_trial_cost_reduction_factor >}}, brings treatments to patients sooner, and extends trials to diseases no sponsor would otherwise fund. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront plus discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends {{< var global_clinical_trials_spending_annual >}} annually on clinical trials, {{< var phase_2_3_clinical_trial_cost_pct >}} of it on Phase II/III efficacy testing, a {{< var dfda_trial_cost_reduction_pct >}} reduction on that share yields an ROI of **{{< var dfda_roi_rd_only >}}:1** at scale.
 
 Beyond direct savings, the effects on medical progress are substantial: expanded therapeutic exploration, real-time treatment effectiveness rankings, and research on off-patent treatments that currently lack commercial incentives. With appropriate privacy protections and international coordination, the protocol enables evidence-based personalized medicine at global scale.
 
@@ -781,19 +705,15 @@ This analysis uses standard health economics methodology identical to that emplo
 | NPV with discount rate | Standard cost-benefit analysis | CBO, OMB Circular A-94 |
 | Long-horizon cumulative impact | Social cost of carbon | EPA, IPCC, Stern Review |
 
-The large headline figures reflect the cumulative value of permanent infrastructure, the same methodology used to value smallpox eradication ($300M program valued at total future lives saved) and climate economics (multi-trillion dollar damage estimates that exceed annual GDP). Our 90% confidence intervals on the headline figures span a factor of three or more.
+Our 90% confidence intervals on the headline figures span a factor of three or more.
 
 ## Appendix Calculation Frameworks and Detailed Analysis
-
-This appendix provides the detailed models and data used in the cost-benefit analysis.
 
 ### Calculation Framework - NPV Methodology {#calculation-framework---npv-methodology}
 
 Uses 10-year NPV horizon (standard business practice). See [Verification: Complete Derivation Chains](#verification-complete-derivation-chains) for full methodology.
 
-### Financial Analysis Summary {#financial-analysis-summary}
-
-#### Health Impact Uncertainty Analysis
+### Health Impact Uncertainty Analysis {#financial-analysis-summary}
 
 These Monte Carlo distributions show the range of health impact estimates across 10,000 simulations, accounting for uncertainty in timeline shift, mortality rates, and avoidable percentages:
 

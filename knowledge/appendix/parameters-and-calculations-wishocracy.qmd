@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 44 parameters used in the analysis, organized by type:
+This appendix documents all 62 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 18
-- Calculated values: 16
-- Core definitions: 10
+- External sources (peer-reviewed): 21
+- Calculated values: 25
+- Core definitions: 16
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (16 parameters) • [External Data Sources](#sec-external) (18 parameters) • [Core Definitions](#sec-definitions) (10 parameters)
+[Calculated Values](#sec-calculated) (25 parameters) • [External Data Sources](#sec-external) (21 parameters) • [Core Definitions](#sec-definitions) (16 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -161,6 +161,53 @@ $$
 
 :::
 
+### Annual R&D Savings from Pragmatic Trials: $40.5 billion {#sec-dfda_benefit_rd_only_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual benefit from pragmatic trial R&D savings: trial cost reduction applied to the Phase 2/3 efficacy share of global trial spending (Phase 1 safety trials retain traditional design and cost)
+
+**Inputs**:
+
+- [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60 billion (95% CI: $50 billion - $75 billion)
+- [Phase 2/3 Share of Clinical Trial Costs](#sec-phase_2_3_clinical_trial_cost_pct) 📊: 69% (SE: ±5%)
+- [Pragmatic Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
+
+$$
+\begin{gathered}
+Benefit_{RD,ann} \\
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\%
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_benefit_rd_only_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_benefit_rd_only_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_benefit_rd_only_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_benefit_rd_only_annual.qmd >}}
+
+:::
+
 ### Maximum Trial Capacity Multiplier (Physical Limit): 566x {#sec-dfda_max_trial_capacity_multiplier_physical}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -204,6 +251,294 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_max_trial_capacity_multiplier_physical.qmd >}}
+
+:::
+
+### Annual Net Savings from Pragmatic Trials (R&D Only): $40.4 billion {#sec-dfda_net_savings_rd_only_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual net savings from R&D cost reduction only (gross savings minus operational costs, excludes regulatory delay value)
+
+**Inputs**:
+
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
+- [Total Annual Pragmatic Trial Platform Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
+
+$$
+\begin{gathered}
+Savings_{RD,ann} \\
+= Benefit_{RD,ann} - OPEX_{trial} \\
+= \$40.5B - \$40M \\
+= \$40.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{RD,ann} \\
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_net_savings_rd_only_annual.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_net_savings_rd_only_annual.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_net_savings_rd_only_annual.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_net_savings_rd_only_annual.qmd >}}
+
+:::
+
+### Pragmatic Trial Platform Total NPV Annual OPEX: $40 million {#sec-dfda_npv_annual_opex_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total NPV annual opex (pragmatic trial platform core + DIH initiatives)
+
+**Inputs**:
+
+- [Pragmatic Trial Platform Core Framework Annual OPEX](#sec-dfda_npv_annual_opex): $18.9 million (95% CI: $11 million - $26.5 million)
+- [DIH Broader Initiatives Annual OPEX](#sec-dih_npv_annual_opex_initiatives): $21.1 million (95% CI: $14 million - $32 million)
+
+$$
+\begin{gathered}
+OPEX_{total} \\
+= OPEX_{ann} + OPEX_{DIH,ann} \\
+= \$18.9M + \$21.1M \\
+= \$40M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_annual_opex_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_annual_opex_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_annual_opex_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_annual_opex_total.qmd >}}
+
+:::
+
+### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $269 billion {#sec-dfda_npv_benefit_rd_only}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+NPV of pragmatic trial R&D savings only with 5-year adoption ramp (10-year horizon, most conservative financial estimate)
+
+**Inputs**:
+
+- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $40.4 billion
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+NPV_{RD} \\
+= \sum_{t=1}^{10} \frac{Savings_{RD,ann} \cdot \frac{\min(t,5)}{5}}{(1+r)^t}
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_benefit_rd_only.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_benefit_rd_only.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_benefit_rd_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_benefit_rd_only.qmd >}}
+
+:::
+
+### Pragmatic Trial Platform Present Value of Annual OPEX Over 10 Years: $342 million {#sec-dfda_npv_pv_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Present value of annual opex over 10 years (NPV formula)
+
+**Inputs**:
+
+- [Pragmatic Trial Platform Total NPV Annual OPEX](#sec-dfda_npv_annual_opex_total) 🔢: $40 million
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+- [Standard Time Horizon for NPV Analysis](#sec-npv_time_horizon_years): 10 years
+
+$$
+\begin{gathered}
+PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{total} \\
+= OPEX_{ann} + OPEX_{DIH,ann} \\
+= \$18.9M + \$21.1M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_pv_annual_opex.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_pv_annual_opex.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_pv_annual_opex.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_pv_annual_opex.qmd >}}
+
+:::
+
+### Pragmatic Trial Platform Total NPV Cost: $611 million {#sec-dfda_npv_total_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total NPV cost (upfront + PV of annual opex)
+
+**Inputs**:
+
+- [Pragmatic Trial Platform Present Value of Annual OPEX Over 10 Years](#sec-dfda_npv_pv_annual_opex) 🔢: $342 million
+- [Pragmatic Trial Platform Total NPV Upfront Costs](#sec-dfda_npv_upfront_cost_total) 🔢: $270 million
+
+$$
+\begin{gathered}
+Cost_{platform,total} \\
+= PV_{OPEX} + Cost_{upfront,total} \\
+= \$342M + \$270M \\
+= \$611M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{total} \\
+= OPEX_{ann} + OPEX_{DIH,ann} \\
+= \$18.9M + \$21.1M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{upfront,total} \\
+= Cost_{upfront} + Cost_{DIH,init} \\
+= \$40M + \$230M \\
+= \$270M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_total_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_total_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_total_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_total_cost.qmd >}}
+
+:::
+
+### Pragmatic Trial Platform Total NPV Upfront Costs: $270 million {#sec-dfda_npv_upfront_cost_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total NPV upfront costs (pragmatic trial platform core + DIH initiatives)
+
+**Inputs**:
+
+- [Pragmatic Trial Platform Core Framework Build Cost](#sec-dfda_npv_upfront_cost): $40 million (95% CI: $25 million - $65 million)
+- [DIH Broader Initiatives Upfront Cost](#sec-dih_npv_upfront_cost_initiatives): $230 million (95% CI: $150 million - $350 million)
+
+$$
+\begin{gathered}
+Cost_{upfront,total} \\
+= Cost_{upfront} + Cost_{DIH,init} \\
+= \$40M + \$230M \\
+= \$270M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_npv_upfront_cost_total.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_npv_upfront_cost_total.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_npv_upfront_cost_total.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_npv_upfront_cost_total.qmd >}}
 
 :::
 
@@ -260,6 +595,123 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_patients_fundable_annually.qmd >}}
+
+:::
+
+### ROI from Pragmatic Trial R&D Savings Only: 439:1 {#sec-dfda_roi_rd_only}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+ROI from pragmatic trial R&D savings only (10-year NPV, most conservative estimate)
+
+**Inputs**:
+
+- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $269 billion
+- [Pragmatic Trial Platform Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
+
+$$
+\begin{gathered}
+ROI_{RD} \\
+= \frac{NPV_{RD}}{Cost_{platform,total}} \\
+= \frac{\$269B}{\$611M} \\
+= 439
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+NPV_{RD} \\
+= \sum_{t=1}^{10} \frac{Savings_{RD,ann} \cdot \frac{\min(t,5)}{5}}{(1+r)^t}
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Savings_{RD,ann} \\
+= Benefit_{RD,ann} - OPEX_{trial} \\
+= \$40.5B - \$40M \\
+= \$40.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{RD,ann} \\
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{platform,total} \\
+= PV_{OPEX} + Cost_{upfront,total} \\
+= \$342M + \$270M \\
+= \$611M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+PV_{OPEX} \\
+= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
+= \frac{10}{\$40M \times 3\%} \\
+= \$342M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{total} \\
+= OPEX_{ann} + OPEX_{DIH,ann} \\
+= \$18.9M + \$21.1M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{upfront,total} \\
+= Cost_{upfront} + Cost_{DIH,init} \\
+= \$40M + \$230M \\
+= \$270M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_roi_rd_only.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_roi_rd_only.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_roi_rd_only.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_roi_rd_only.qmd >}}
 
 :::
 
@@ -325,6 +777,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_trial_capacity_multiplier.qmd >}}
+
+:::
+
+### Pragmatic Trial Cost Reduction Percentage: 97.7% {#sec-dfda_trial_cost_reduction_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial cost reduction percentage: 1 - (pragmatic trial cost / traditional Phase 3 cost)
+
+**Inputs**:
+
+- [Pragmatic Trial Cost per Patient](#sec-dfda_pragmatic_trial_cost_per_patient) 📊: $929 (95% CI: $97 - $3,000)
+- [Phase 3 Cost per Patient](#sec-traditional_phase3_cost_per_patient) 📊: $41,000 (95% CI: $20,000 - $120,000)
+
+$$
+\begin{gathered}
+Reduce_{pct} \\
+= 1 - \frac{Cost_{pragmatic,pt}}{Cost_{P3,pt}} \\
+= 1 - \frac{\$929}{\$41K} \\
+= 97.7\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_cost_reduction_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_cost_reduction_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_cost_reduction_pct.qmd >}}
 
 :::
 
@@ -1110,6 +1600,30 @@ Economic multiplier for military spending (0.6x ROI). Literature range 0.4-1.0×
 
 :::
 
+### Annual Global Spending on Clinical Trials: $60 billion {#sec-global_clinical_trials_spending_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B + Nonprofits: $2-5B). Conservative estimate using 15-20% of $300B total pharma R&D, not inflated market size projections.
+
+**Source**: [@industry-clinical-trial-spending-estimate]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$50 billion, $75 billion] • Distribution: Lognormal (SE: $10 billion)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $50 billion and $75 billion (±21%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_clinical_trials_spending_annual.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Global GDP (2025): $115 trillion {#sec-global_gdp_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1203,6 +1717,26 @@ Patient willingness to participate in drug trials (44.8% in surveys, 88% when ac
 {{< include ../figures/distribution-patient_willingness_trial_participation_pct.qmd >}}
 
 *~ Medium confidence*
+
+:::
+
+### Phase 2/3 Share of Clinical Trial Costs: 69% {#sec-phase_2_3_clinical_trial_cost_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)
+
+**Source**: [@global-clinical-trials-market-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5%)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-phase_2_3_clinical_trial_cost_pct.qmd >}}
+
+*✓ High confidence*
 
 :::
 
@@ -1326,6 +1860,30 @@ Total number of rare diseases globally
 
 :::
 
+### Phase 3 Cost per Patient: $41,000 {#sec-traditional_phase3_cost_per_patient}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Phase 3 cost per patient (median from FDA study)
+
+**Source**: [@trial-costs-fda-study]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20,000, $120,000] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $20,000 and $120,000 (±122%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-traditional_phase3_cost_per_patient.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### US Military Spending at WW2 Peak (Constant 2024 Dollars): $1.42 trillion {#sec-us_military_spending_1945_peak_annual_2024usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1381,6 +1939,50 @@ Reference annual funding level used for direct-funding comparisons. Source-agnos
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Pragmatic Trial Platform Core Framework Annual OPEX: $18.9 million {#sec-dfda_npv_annual_opex}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Pragmatic trial platform core framework annual opex (midpoint of $11-26.5M)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$11 million, $26.5 million] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $11 million and $26.5 million (±41%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_npv_annual_opex.qmd >}}
+
+*Core definition*
+
+:::
+
+### Pragmatic Trial Platform Core Framework Build Cost: $40 million {#sec-dfda_npv_upfront_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Pragmatic trial platform core framework build cost
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$25 million, $65 million] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $25 million and $65 million (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dfda_npv_upfront_cost.qmd >}}
 
 *Core definition*
 
@@ -1496,6 +2098,50 @@ Pragmatic trial platform staff costs (minimal, AI-assisted)
 
 :::
 
+### DIH Broader Initiatives Annual OPEX: $21.1 million {#sec-dih_npv_annual_opex_initiatives}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+DIH broader initiatives annual opex (medium case)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$14 million, $32 million] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $14 million and $32 million (±43%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dih_npv_annual_opex_initiatives.qmd >}}
+
+*Core definition*
+
+:::
+
+### DIH Broader Initiatives Upfront Cost: $230 million {#sec-dih_npv_upfront_cost_initiatives}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+DIH broader initiatives upfront cost (medium case)
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$150 million, $350 million] • Distribution: Lognormal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $150 million and $350 million (±44%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-dih_npv_upfront_cost_initiatives.qmd >}}
+
+*Core definition*
+
+:::
+
 ### Baseline Global GDP Growth Rate: 2.5% {#sec-gdp_baseline_growth_rate}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1527,6 +2173,34 @@ Historical calibration target: 30% military reallocation maps to ~5.5 percentage
 #### Input Distribution
 
 {{< include ../figures/distribution-military_redirect_gdp_boost_at_30pct.qmd >}}
+
+*Core definition*
+
+:::
+
+### Standard Discount Rate for NPV Analysis: 3% {#sec-npv_discount_rate_standard}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard discount rate for NPV analysis (3% annual, social discount rate)
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Standard Time Horizon for NPV Analysis: 10 years {#sec-npv_time_horizon_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Standard time horizon for NPV analysis
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
 
 *Core definition*
 
