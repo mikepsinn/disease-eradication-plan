@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 101 parameters used in the analysis, organized by type:
+This appendix documents all 100 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 37
+- External sources (peer-reviewed): 36
 - Calculated values: 44
 - Core definitions: 20
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (44 parameters) • [External Data Sources](#sec-external) (37 parameters) • [Core Definitions](#sec-definitions) (20 parameters)
+[Calculated Values](#sec-calculated) (44 parameters) • [External Data Sources](#sec-external) (36 parameters) • [Core Definitions](#sec-definitions) (20 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3631,18 +3631,6 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 {{< include ../figures/distribution-regulatory_delay_suffering_period_years.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed*
-
-:::
-
-### Return on Investment from Smallpox Eradication Campaign: 280:1 {#sec-smallpox_eradication_roi}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Return on investment from smallpox eradication campaign
-
-**Source**: [@smallpox-eradication-roi]
-
-*✓ High confidence*
 
 :::
 
