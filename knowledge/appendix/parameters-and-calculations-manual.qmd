@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 781 parameters used in the analysis, organized by type:
+This appendix documents all 780 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 224
 - Calculated values: 397
-- Core definitions: 160
+- Core definitions: 159
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (397 parameters) • [External Data Sources](#sec-external) (224 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
+[Calculated Values](#sec-calculated) (397 parameters) • [External Data Sources](#sec-external) (224 parameters) • [Core Definitions](#sec-definitions) (159 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -41556,16 +41556,6 @@ Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of 
 #### Input Distribution
 
 {{< include ../figures/distribution-pharma_phase_2_3_cost_barrier.qmd >}}
-
-*Core definition*
-
-:::
-
-### Pre-1962 Validation Years: 77 years {#sec-pre_1962_validation_years}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Years of empirical validation for physician-led pragmatic trials (1883-1960)
 
 *Core definition*
 
