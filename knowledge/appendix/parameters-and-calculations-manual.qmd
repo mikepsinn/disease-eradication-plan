@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 781 parameters used in the analysis, organized by type:
+This appendix documents all 780 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 223
 - Calculated values: 397
-- Core definitions: 161
+- Core definitions: 160
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (397 parameters) • [External Data Sources](#sec-external) (223 parameters) • [Core Definitions](#sec-definitions) (161 parameters)
+[Calculated Values](#sec-calculated) (397 parameters) • [External Data Sources](#sec-external) (223 parameters) • [Core Definitions](#sec-definitions) (160 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -40783,16 +40783,6 @@ Pragmatic trial platform staff costs (minimal, AI-assisted)
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Target pragmatic trial cost per patient in USD
-
-*Core definition*
-
-:::
-
-### Pragmatic Trial Platform One-Time Build Cost: $40 million {#sec-dfda_upfront_build}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Pragmatic trial platform one-time build cost (central estimate)
 
 *Core definition*
 

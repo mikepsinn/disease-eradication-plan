@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 101 parameters used in the analysis, organized by type:
+This appendix documents all 100 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 36
 - Calculated values: 44
-- Core definitions: 21
+- Core definitions: 20
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (44 parameters) • [External Data Sources](#sec-external) (36 parameters) • [Core Definitions](#sec-definitions) (21 parameters)
+[Calculated Values](#sec-calculated) (44 parameters) • [External Data Sources](#sec-external) (36 parameters) • [Core Definitions](#sec-definitions) (20 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -3870,16 +3870,6 @@ Pragmatic trial platform staff costs (minimal, AI-assisted)
 #### Input Distribution
 
 {{< include ../figures/distribution-dfda_opex_staff.qmd >}}
-
-*Core definition*
-
-:::
-
-### Pragmatic Trial Platform One-Time Build Cost: $40 million {#sec-dfda_upfront_build}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Pragmatic trial platform one-time build cost (central estimate)
 
 *Core definition*
 
