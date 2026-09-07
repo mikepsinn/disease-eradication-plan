@@ -17,24 +17,34 @@ do: "Fund the count, stress-test the questions, or get your organization's uniqu
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
 
-## 1. Should every patient have the right and practical ability to join a pragmatic clinical trial of any promising treatment through their usual healthcare provider, with informed consent?
+## 1. Should every patient be able to join a pragmatic clinical trial of any promising treatment through their regular doctor, with informed consent?
 
-**Why we ask:** Most patients cannot join a trial because no trial exists at their hospital. The right to try a treatment you cannot access is like the right to board a flight that does not exist. If every provider could enroll patients, every treatment would get a running scorecard: does it work, does it hurt, what does it cost, and how sure are we.
+**Why we ask:** Most patients cannot join a trial because no trial exists at their hospital. The right to try a treatment you cannot access is the right to board a flight that does not exist. If every provider could enroll patients, every treatment gets a running scorecard: how much it helps, what side effects it causes, and what it costs, ranked against every other treatment for the same condition.
 
-**Prediction:** Most people say yes. Before the 2018 federal Right to Try Act, 41 US states had passed right-to-try laws [@goldwater-rtt-41-states-2018].
+**Prediction:** Before the 2018 federal Right to Try Act, 41 US states had already passed right-to-try laws [@goldwater-rtt-41-states-2018].
 
-**If a majority of humanity says yes:** Legislators remove the legal barriers. Hospitals start enrolling patients. Pragmatic trials become part of routine healthcare.
+**If a majority of humanity says yes:** Legislators remove the legal barriers. Hospitals can enroll patients through a shared reporting system, allowing each tested treatment to accumulate a public outcome label: measured changes from baseline across all positive and negative effects, ranked against alternatives.
 
 **Evidence and calculations:** [Ubiquitous Pragmatic Trial Impact Analysis](../appendix/dfda-impact-paper.qmd) [@dfda-impact-paper-2025]
 
-## 2. How should public money be divided between these two uses?
+## 2. Most promising treatments are never tested, because no company can profit from testing them. Should patients be allowed to fund and join trials of treatments for their own disease?
+
+**Why we ask:** 95% of diseases have zero FDA-approved treatments [@95-pct-diseases-no-treatment]. At current speed, testing every promising treatment takes {{< var status_quo_queue_clearance_years >}}. A trial needs money. If no company can patent the treatment, no company pays, and it stays on a shelf.
+
+**Prediction:** No direct polling exists. Access to unapproved treatments polls between 54% and 90% depending on framing, but those polls did not test patient funding or its equity implications.
+
+**If a majority of humanity says yes:** Regulators can permit patient-funded trials without political risk. Treatments with no patent value get tested.
+
+**Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@dfda-impact-paper-2025]
+
+## 3. How should public money be divided between these two uses?
 
 - Weapons and military spending
 - Pragmatic clinical trials comparing promising treatments
 
-**Pragmatic clinical trials:** Your doctor enrolls you. The trial runs through ordinary healthcare instead of a special facility. It costs less. The results go into the scorecard, including the ones where the treatment did nothing.
+**Pragmatic clinical trials:** Your doctor enrolls you. The trial runs through ordinary care instead of a special facility. It costs less. Every treatment gets a public outcome label showing all measured effects, positive and negative.
 
-**Why we ask:** Disease costs about {{< var disease_burden_gdp_drag_pct >}} of global GDP. The [destructive economy](../economics/gdp-trajectories.qmd) consumes {{< var global_destructive_economy_pct_gdp >}} of GDP and grows faster than the productive one [@gdp-trajectories-paper-2025]. Military spending creates depreciating assets; weapons become obsolete. Medical research creates appreciating assets; treatments compound. Oxford's RECOVERY trial tested 6 treatments on 48,000 patients at about {{< var recovery_trial_cost_per_patient >}} per patient versus roughly {{< var traditional_phase3_cost_per_patient >}} for a conventional Phase III trial. That is a cost reduction of about {{< var recovery_trial_cost_reduction_factor >}}. It was run during a pandemic by terrified people, which raises questions about what the non-terrified system has been doing with its time. After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and stumbled into the largest economic boom in its history. This survey asks about 1%.
+**Why we ask:** Disease costs about {{< var disease_burden_gdp_drag_pct >}} of global GDP. Military, conflict, and security spending consumes {{< var global_destructive_economy_pct_gdp >}} of GDP and grows faster than the productive economy [@gdp-trajectories-paper-2025]. Weapons become obsolete. Treatments compound. Oxford's RECOVERY trial tested 6 treatments on 48,000 patients at about {{< var recovery_trial_cost_per_patient >}} per patient versus roughly {{< var traditional_phase3_cost_per_patient >}} for a conventional Phase III trial. That is a cost reduction of about {{< var recovery_trial_cost_reduction_factor >}}. After WW2, the US cut military spending by {{< var post_ww2_military_cut_pct >}} in two years and stumbled into the largest economic boom in its history. This survey asks about 1%.
 
 **Prediction:** Most people allocate more than the 0.17% that goes to clinical trials today. In US polling, 57% supported cutting the military budget by 10% to fund health and other domestic needs [@public-support-for-peace-funding-70-pct].
 
@@ -42,45 +52,35 @@ do: "Fund the count, stress-test the questions, or get your organization's uniqu
 
 **Evidence and calculations:** [Allocation Impact Analysis](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025]
 
-## 3. Most promising treatments are never tested, because no company can profit from testing them. Should patients be allowed to fund and join trials of treatments for their own disease?
+## 4. Should governments collect and analyze data on how their policies and budgets affect median healthy life years and real after-tax median income, using the natural variation across thousands of jurisdictions to determine which policies work best?
 
-**Why we ask:** 95% of diseases have zero FDA-approved treatments [@95-pct-diseases-no-treatment]. There is a queue to not die, and at current speed it is {{< var status_quo_queue_clearance_years >}} long. A trial needs money. If no company can patent the treatment, no company pays, and it stays on a shelf.
+**Why we ask:** Thousands of jurisdictions have adopted different policies at different times: different tax rates, drug laws, education budgets, healthcare systems. The outcomes are recorded. Together, these policy differences provide quasi-experimental evidence that can help estimate which policies improve median healthy life years and real after-tax median income. Governments do not systematically analyze these outcomes to identify better policies.
 
-**Prediction:** No direct polling exists. Access to unapproved treatments polls between 54% and 90% depending on framing. Patient funding raises equity concerns those polls did not test.
+**Prediction:** In US polling, 91% of voters agree that data and evidence should be a top influence in government policy, bipartisan [@results-for-america-evidence-2026]. The specific mandate to analyze cross-jurisdictional outcomes has not been polled.
 
-**If a majority of humanity says yes:** Regulators can permit patient-funded trials without political risk. Treatments with no patent value get tested.
-
-**Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@dfda-impact-paper-2025]
-
-## 4. If government action kills or injures your family, should you have the same right to sue as if a corporation did it?
-
-**Why we ask:** Since 1900, governments have spent {{< var cumulative_military_spending_fed_era >}} on the capacity to kill people and used it to kill {{< var war_deaths_since_1900_nounit >}} of them, including {{< var war_children_killed_since_1900_nounit >}} children, who likely did not deserve it. The chance of dying from terrorism is 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. The chance of dying from disease is 100%. Governments built the security apparatus around the first number. If a company made this trade, you could sue. [Sovereign immunity](../solution/court-of-humanity.qmd) means that when a government does it, you mostly cannot [@court-of-humanity-paper-2025].
-
-**Prediction:** In adjacent US polling, 63% favor ending qualified immunity for government officials [@cato-qualified-immunity-2020] and 66% favor giving civilians the power to sue officers for misconduct [@pew-civilians-sue-officers-2020]. The equal-treatment framing in this question has not been directly polled.
-
-**If a majority of humanity says yes:** A global consensus removes the belief that sustains immunity: that everyone else accepts it. It becomes possible to propose a court for harm caused by states.
-
-**Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@humanity-v-government-paper-2025]
-
-## 5. Should governments be required to measure how long people live in good health and what they actually earn, and to test which policies improve those numbers?
-
-**Why we ask:** Governments measure how much money they spend. They do not measure whether it worked. Two outcomes would tell them: how long people live in good health, and what they actually earn.
-
-**Prediction:** In US polling, 91% of voters agree that data and evidence should be a top influence in government policy, bipartisan [@results-for-america-evidence-2026]. The specific two-metric measurement mandate has not been polled.
-
-**If a majority of humanity says yes:** Ten thousand jurisdictions have already tried different policies and written down what happened. The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) uses causal inference to figure out which policies improved the two numbers and which ones did not, then produces recommendations for any jurisdiction: enact, replace, repeal, or keep [@opg-paper-2025]. The [Optimal Budget Generator](https://obg.warondisease.org) does the same for spending levels [@obg-paper-2025]. The recommendations and the votes are both public.
+**If a majority of humanity says yes:** The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) uses causal inference on this cross-jurisdictional data to determine which policies improved median healthy life years and real after-tax median income and which did not, then produces recommendations for any jurisdiction: enact, replace, repeal, or keep [@opg-paper-2025]. The [Optimal Budget Generator](https://obg.warondisease.org) does the same for spending levels [@obg-paper-2025]. The recommendations and the votes are both public.
 
 **Evidence and calculations:** [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025]
 
+## 5. If government action kills or injures your family, should you have the same right to sue as if a corporation did it?
+
+**Why we ask:** Since 1900, governments have spent {{< var cumulative_military_spending_fed_era >}} on the capacity to kill people and used it to kill {{< var war_deaths_since_1900_nounit >}} of them, including {{< var war_children_killed_since_1900_nounit >}} children. The chance of dying from terrorism is 1 in 30 million [@chance-of-dying-from-terrorism-1-in-30m]. The chance of dying from disease is 100%. Governments built the military around the first number. If a company made this trade, you could sue. [Sovereign immunity](../solution/court-of-humanity.qmd) means that when a government does it, you mostly cannot [@court-of-humanity-paper-2025].
+
+**Prediction:** In adjacent US polling, 63% favor ending qualified immunity for government officials [@cato-qualified-immunity-2020] and 66% favor giving civilians the power to sue officers for misconduct [@pew-civilians-sue-officers-2020]. The equal-treatment framing in this question has not been directly polled.
+
+**If a majority of humanity says yes:** A global consensus removes the assumption that sustains immunity: that everyone else accepts it. That creates a mandate to establish a court where states face the same liability as corporations.
+
+**Evidence and calculations:** [Appendix: Calculations](#sec-calculations) [@humanity-v-government-paper-2025]
+
 ## Why counting matters
 
-A majority can exist and not know it exists. Pluralistic ignorance [@kuran-private-truths-1995]: eight billion people waiting for permission to want what they already want. The condition holds until somebody counts.
+A majority can exist and not know it exists. Pluralistic ignorance [@kuran-private-truths-1995] can make a majority believe it is a minority. The uncertainty remains until somebody counts.
 
-Erica Chenoweth studied every major nonviolent campaign of the last century and found that none had ever failed after achieving {{< var global_population_activism_threshold_pct >}} sustained participation [@3-5-rule]. Not one. Humanity discovered the cheat code for upgrading its own civilization.
+Erica Chenoweth studied every major nonviolent campaign of the last century and found that none had ever failed after achieving {{< var global_population_activism_threshold_pct >}} sustained participation [@3-5-rule]. Not one.
 
 ## What happens if all five pass
 
-On the reallocation trajectory, the models project global GDP of {{< var treaty_trajectory_gdp_year_20 >}} and average income of {{< var treaty_trajectory_avg_income_year_20 >}} in year 20 [@gdp-trajectories-paper-2025]. If every institution the mandate enables works as modeled, year-20 global GDP is {{< var wishonia_trajectory_gdp_year_20 >}} and median after-tax income is {{< var wishonia_trajectory_median_after_tax_income_year_20 >}} [@gdp-trajectories-paper-2025]. The second number's growth assumptions are outside historical precedent.
+If the 1% reallocation happens, the models project global GDP of {{< var treaty_trajectory_gdp_year_20 >}} and average income of {{< var treaty_trajectory_avg_income_year_20 >}} in year 20 [@gdp-trajectories-paper-2025]. If every institution the mandate enables works as modeled, year-20 global GDP is {{< var wishonia_trajectory_gdp_year_20 >}} and median after-tax income is {{< var wishonia_trajectory_median_after_tax_income_year_20 >}} [@gdp-trajectories-paper-2025]. The second number's growth assumptions are outside historical precedent.
 
 ## Costs
 
