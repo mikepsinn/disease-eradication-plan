@@ -1362,7 +1362,7 @@ jobs:
 
 
   build-humanity-v-government:
-    name: "Build The People v. Government"
+    name: "Build Humanity v. Government"
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1431,7 +1431,7 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build The People v. Government"
+      - name: "Render Build Humanity v. Government"
         run: python scripts/render-quarto.py humanity-v-government --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
@@ -1475,7 +1475,7 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The People v. Government PDF to Zenodo (draft)"
+      - name: "Upload Build Humanity v. Government PDF to Zenodo (draft)"
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}

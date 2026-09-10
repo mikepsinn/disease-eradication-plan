@@ -468,7 +468,7 @@ export const CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER: Parameter = {
   confidence: "high",
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER: Parameter = {
@@ -484,7 +484,7 @@ export const CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER: Parameter = {
   confidence: "high",
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CPI_MULTIPLIER_1980_TO_2024: Parameter = {
@@ -1768,7 +1768,7 @@ export const GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP: Parameter = {
   confidence: "medium",
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const GLOBAL_HALE_CURRENT: Parameter = {
@@ -2663,7 +2663,7 @@ export const PENTAGON_UNACCOUNTED_FUNDS: Parameter = {
   confidence: "high",
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const PHARMA_DRUG_DEVELOPMENT_COST_CURRENT: Parameter = {
@@ -4820,7 +4820,7 @@ export const CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL: Parameter = {
   inputs: ["CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS", "VALUE_OF_STATISTICAL_LIFE"],
   computeExpr: "(CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS * VALUE_OF_STATISTICAL_LIFE)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL: Parameter = {
@@ -4838,7 +4838,7 @@ export const CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL: Parameter = {
   inputs: ["EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL", "VALUE_OF_STATISTICAL_LIFE"],
   computeExpr: "(EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL * VALUE_OF_STATISTICAL_LIFE)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA: Parameter = {
@@ -4873,7 +4873,7 @@ export const CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT: Parameter = {
   inputs: ["PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE", "PENTAGON_UNACCOUNTED_FUNDS"],
   computeExpr: "(PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE - PENTAGON_UNACCOUNTED_FUNDS)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION: Parameter = {
@@ -4891,7 +4891,7 @@ export const CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION: Parameter = {
   inputs: ["WAR_PROPERTY_DESTRUCTION_SINCE_1900", "WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900"],
   computeExpr: "(WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_PER_CAPITA: Parameter = {
@@ -4909,7 +4909,7 @@ export const CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_PER_CAPITA: Parameter = {
   inputs: ["CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL", "GLOBAL_POPULATION_2024"],
   computeExpr: "(CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL / GLOBAL_POPULATION_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL: Parameter = {
@@ -4927,7 +4927,7 @@ export const CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL: Parameter = {
   inputs: ["CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL", "CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL"],
   computeExpr: "(CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_AGING_INTAKE_EXPOSURE: Parameter = {
@@ -4945,7 +4945,7 @@ export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_AGING_INTAKE_EXPOSURE: Parameter
   inputs: ["WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS", "VALUE_OF_STATISTICAL_LIFE"],
   computeExpr: "(WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS * VALUE_OF_STATISTICAL_LIFE)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE: Parameter = {
@@ -4963,7 +4963,7 @@ export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE: Parameter
   inputs: ["WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS", "STANDARD_ECONOMIC_QALY_VALUE_USD"],
   computeExpr: "(WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE: Parameter = {
@@ -4981,7 +4981,7 @@ export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE: 
   inputs: ["WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS", "VALUE_OF_STATISTICAL_LIFE"],
   computeExpr: "(WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS * VALUE_OF_STATISTICAL_LIFE)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_PER_CAPITA: Parameter = {
@@ -4999,7 +4999,7 @@ export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_PER_CAPITA: Pa
   inputs: ["CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL", "GLOBAL_POPULATION_2024"],
   computeExpr: "(CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL: Parameter = {
@@ -5017,7 +5017,7 @@ export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL: Paramet
   inputs: ["CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL", "CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE"],
   computeExpr: "(CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS: Parameter = {
@@ -5035,7 +5035,7 @@ export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS: Pa
   inputs: ["CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL", "CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE", "CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE"],
   computeExpr: "((CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE) + CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS_PER_CAPITA: Parameter = {
@@ -5053,7 +5053,7 @@ export const CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS_PER
   inputs: ["CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS", "GLOBAL_POPULATION_2024"],
   computeExpr: "(CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS / GLOBAL_POPULATION_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_PER_CAPITA: Parameter = {
@@ -5071,7 +5071,7 @@ export const CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_PER_CAPITA: Parameter
   inputs: ["CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL", "GLOBAL_POPULATION_2024"],
   computeExpr: "(CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL: Parameter = {
@@ -5089,7 +5089,7 @@ export const CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL: Parameter = {
   inputs: ["CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL", "CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER"],
   computeExpr: "(CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL * CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_STRICT_FLOOR_PER_CAPITA: Parameter = {
@@ -5107,7 +5107,7 @@ export const CORPORATE_DAMAGES_STRICT_FLOOR_PER_CAPITA: Parameter = {
   inputs: ["CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL", "GLOBAL_POPULATION_2024"],
   computeExpr: "(CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL / GLOBAL_POPULATION_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL: Parameter = {
@@ -5125,7 +5125,7 @@ export const CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL: Parameter = {
   inputs: ["CORPORATE_DAMAGES_WAR_DEATHS_VSL", "CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL", "CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION", "WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE", "CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT"],
   computeExpr: "((((CORPORATE_DAMAGES_WAR_DEATHS_VSL + CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL) + CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION) + WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE) + CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_TREBLE_EXPOSURE_PER_CAPITA: Parameter = {
@@ -5143,7 +5143,7 @@ export const CORPORATE_DAMAGES_TREBLE_EXPOSURE_PER_CAPITA: Parameter = {
   inputs: ["CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL", "GLOBAL_POPULATION_2024"],
   computeExpr: "(CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL: Parameter = {
@@ -5161,7 +5161,7 @@ export const CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL: Parameter = {
   inputs: ["CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL", "CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER"],
   computeExpr: "(CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL * CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CORPORATE_DAMAGES_WAR_DEATHS_VSL: Parameter = {
@@ -5179,7 +5179,7 @@ export const CORPORATE_DAMAGES_WAR_DEATHS_VSL: Parameter = {
   inputs: ["WAR_DEATHS_SINCE_1900", "VALUE_OF_STATISTICAL_LIFE"],
   computeExpr: "(WAR_DEATHS_SINCE_1900 * VALUE_OF_STATISTICAL_LIFE)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const CUMULATIVE_MILITARY_IN_GOVT_TRIAL_YEARS: Parameter = {
@@ -7556,7 +7556,7 @@ export const GLOBAL_GOVERNMENT_EXPENSE_ANNUAL: Parameter = {
   inputs: ["GLOBAL_GDP_2025", "GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP"],
   computeExpr: "(GLOBAL_GDP_2025 * GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const GLOBAL_HALE_GAP: Parameter = {
@@ -8102,7 +8102,7 @@ export const LOST_PROSPERITY_LIFETIME_DAMAGES_PER_CAPITA: Parameter = {
   inputs: ["WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA", "GLOBAL_LIFE_EXPECTANCY_2024"],
   computeExpr: "(WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA * GLOBAL_LIFE_EXPECTANCY_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const LOST_PROSPERITY_LIFETIME_DAMAGES_TOTAL: Parameter = {
@@ -8120,7 +8120,7 @@ export const LOST_PROSPERITY_LIFETIME_DAMAGES_TOTAL: Parameter = {
   inputs: ["WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL", "GLOBAL_LIFE_EXPECTANCY_2024"],
   computeExpr: "(WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL * GLOBAL_LIFE_EXPECTANCY_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const LOST_PROSPERITY_NPV_PERPETUITY_PER_CAPITA: Parameter = {
@@ -8138,7 +8138,7 @@ export const LOST_PROSPERITY_NPV_PERPETUITY_PER_CAPITA: Parameter = {
   inputs: ["WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA", "NPV_DISCOUNT_RATE_STANDARD"],
   computeExpr: "(WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA / NPV_DISCOUNT_RATE_STANDARD)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const LOST_PROSPERITY_NPV_PERPETUITY_TOTAL: Parameter = {
@@ -8156,7 +8156,7 @@ export const LOST_PROSPERITY_NPV_PERPETUITY_TOTAL: Parameter = {
   inputs: ["WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL", "NPV_DISCOUNT_RATE_STANDARD"],
   computeExpr: "(WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL / NPV_DISCOUNT_RATE_STANDARD)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const MECHANISM_COURT_EV: Parameter = {
@@ -8893,7 +8893,7 @@ export const PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE: Parameter = {
   inputs: ["PENTAGON_UNACCOUNTED_FUNDS", "CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER"],
   computeExpr: "(PENTAGON_UNACCOUNTED_FUNDS * CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const PERSONAL_LIFETIME_WEALTH: Parameter = {
@@ -11960,7 +11960,7 @@ export const WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR: Parameter = {
   inputs: ["WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR", "WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS"],
   computeExpr: "(WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR + WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR: Parameter = {
@@ -11977,7 +11977,7 @@ export const WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR: Parameter = {
   confidenceInterval: [1922.0, 2020.0],
   inputs: ["WAR_TRIAL_REDIRECT_START_YEAR", "WAR_TRIAL_REDIRECT_TOOLCHAIN_BOOTSTRAP_YEARS", "DFDA_QUEUE_CLEARANCE_YEARS"],
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE: Parameter = {
@@ -12121,7 +12121,7 @@ export const WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS: Parameter = {
   inputs: ["WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS", "GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES", "EVENTUALLY_AVOIDABLE_DEATH_PCT"],
   computeExpr: "((WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS * GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES) * EVENTUALLY_AVOIDABLE_DEATH_PCT)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS: Parameter = {
@@ -12139,7 +12139,7 @@ export const WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS: Parameter = {
   inputs: ["WAR_TRIAL_REDIRECT_PLEADING_END_YEAR", "WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR"],
   computeExpr: "((WAR_TRIAL_REDIRECT_PLEADING_END_YEAR - WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR) + 1.0)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS: Parameter = {
@@ -12157,7 +12157,7 @@ export const WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS: Parameter = {
   inputs: ["WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS", "GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT"],
   computeExpr: "((WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS * GLOBAL_ANNUAL_DALY_BURDEN) * EVENTUALLY_AVOIDABLE_DALY_PCT)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS: Parameter = {
@@ -12175,7 +12175,7 @@ export const WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS: Parameter = {
   inputs: ["WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS", "GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES", "EVENTUALLY_AVOIDABLE_DEATH_PCT"],
   computeExpr: "((WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS * GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES) * EVENTUALLY_AVOIDABLE_DEATH_PCT)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS: Parameter = {
@@ -12193,7 +12193,7 @@ export const WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS: Parameter = {
   inputs: ["WAR_TRIAL_REDIRECT_PLEADING_END_YEAR", "WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR"],
   computeExpr: "((WAR_TRIAL_REDIRECT_PLEADING_END_YEAR - WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR) + 1.0)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const WILLING_TRIAL_PARTICIPANTS_GLOBAL: Parameter = {
@@ -13282,7 +13282,7 @@ export const CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS: Parameter = {
   confidence: "high",
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const COURT_BUILD_COST: Parameter = {
@@ -15254,7 +15254,7 @@ export const WAR_TRIAL_REDIRECT_PLEADING_END_YEAR: Parameter = {
   confidence: "high",
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-  manualPageTitle: "The People v. Government",
+  manualPageTitle: "Humanity v. Government",
 };
 
 export const WAR_TRIAL_REDIRECT_START_YEAR: Parameter = {
