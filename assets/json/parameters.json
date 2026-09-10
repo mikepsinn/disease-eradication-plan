@@ -1824,7 +1824,7 @@
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-corporate_analog_false_claims_treble_multiplier",
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS": {
       "value": 300000000.0,
@@ -1840,7 +1840,7 @@
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-corporate_damages_drugs_never_developed_deaths",
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL": {
       "value": 3000000000000000.0,
@@ -1861,7 +1861,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_DEATHS * VALUE_OF_STATISTICAL_LIFE)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL": {
       "value": 1016116666666666.6,
@@ -1882,7 +1882,7 @@
       ],
       "computeExpr": "(EXISTING_DRUGS_EFFICACY_LAG_DEATHS_TOTAL * VALUE_OF_STATISTICAL_LIFE)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA": {
       "value": 10598318.87533123,
@@ -1924,7 +1924,7 @@
       ],
       "computeExpr": "(PENTAGON_UNACCOUNTED_FALSE_CLAIMS_ANALOG_EXPOSURE - PENTAGON_UNACCOUNTED_FUNDS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION": {
       "value": 50000000000000.0,
@@ -1945,7 +1945,7 @@
       ],
       "computeExpr": "(WAR_PROPERTY_DESTRUCTION_SINCE_1900 + WAR_ENVIRONMENTAL_DESTRUCTION_SINCE_1900)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_PER_CAPITA": {
       "value": 913218.9708806707,
@@ -1966,7 +1966,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL / GLOBAL_POPULATION_2024)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL": {
       "value": 7305751767045366.0,
@@ -1987,7 +1987,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_DRUGS_NEVER_DEVELOPED_VSL)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_PROSECUTOR_GROSS_AGING_INTAKE_EXPOSURE": {
       "value": 1.783085302091402e+16,
@@ -2008,7 +2008,7 @@
       ],
       "computeExpr": "(WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS * VALUE_OF_STATISTICAL_LIFE)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE": {
       "value": 3.0011409759876064e+16,
@@ -2029,7 +2029,7 @@
       ],
       "computeExpr": "(WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE": {
       "value": 3.820897075910147e+16,
@@ -2050,7 +2050,7 @@
       ],
       "computeExpr": "(WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS * VALUE_OF_STATISTICAL_LIFE)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_PER_CAPITA": {
       "value": 5314340.315768355,
@@ -2071,7 +2071,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_TOTAL": {
       "value": 4.251472252614684e+16,
@@ -2092,7 +2092,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS": {
       "value": 7.252613228602291e+16,
@@ -2114,7 +2114,7 @@
       ],
       "computeExpr": "((CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL + CORPORATE_DAMAGES_PROSECUTOR_GROSS_MEDICAL_MISALLOCATION_EXPOSURE) + CORPORATE_DAMAGES_PROSECUTOR_GROSS_DISEASE_DALY_EXPOSURE)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS_PER_CAPITA": {
       "value": 9065766.535752865,
@@ -2135,7 +2135,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_PROSECUTOR_GROSS_PLEADING_EXPOSURE_WITH_DALYS / GLOBAL_POPULATION_2024)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_PER_CAPITA": {
       "value": 9132189.708806708,
@@ -2156,7 +2156,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_STATE_FARM_CEILING_EXPOSURE_TOTAL": {
       "value": 7.305751767045366e+16,
@@ -2177,7 +2177,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL * CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_STATE_FARM_CEILING_MULTIPLIER": {
       "value": 10.0,
@@ -2193,7 +2193,7 @@
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-corporate_damages_state_farm_ceiling_multiplier",
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_STRICT_FLOOR_PER_CAPITA": {
       "value": 538218.9708806707,
@@ -2214,7 +2214,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL / GLOBAL_POPULATION_2024)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_STRICT_FLOOR_TOTAL": {
       "value": 4305751767045365.5,
@@ -2238,7 +2238,7 @@
       ],
       "computeExpr": "((((CORPORATE_DAMAGES_WAR_DEATHS_VSL + CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL) + CORPORATE_DAMAGES_PROPERTY_ENVIRONMENTAL_DESTRUCTION) + WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE) + CORPORATE_DAMAGES_PENTAGON_FCA_PENALTY_INCREMENT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_TREBLE_EXPOSURE_PER_CAPITA": {
       "value": 2739656.912642012,
@@ -2259,7 +2259,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL / GLOBAL_POPULATION_2024)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_TREBLE_EXPOSURE_TOTAL": {
       "value": 2.1917255301136096e+16,
@@ -2280,7 +2280,7 @@
       ],
       "computeExpr": "(CORPORATE_DAMAGES_PROSECUTOR_BASE_ASK_TOTAL * CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "CORPORATE_DAMAGES_WAR_DEATHS_VSL": {
       "value": 3100000000000000.0,
@@ -2301,7 +2301,7 @@
       ],
       "computeExpr": "(WAR_DEATHS_SINCE_1900 * VALUE_OF_STATISTICAL_LIFE)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "COURT_BUILD_COST": {
       "value": 30000000.0,
@@ -5620,7 +5620,7 @@
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-fda_annual_program_budget",
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "FDA_APPROVED_PRODUCTS_COUNT": {
       "value": 20000.0,
@@ -7265,7 +7265,7 @@
       ],
       "computeExpr": "(GLOBAL_GDP_2025 * GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "GLOBAL_GOVERNMENT_EXPENSE_PCT_GDP": {
       "value": 0.3178,
@@ -7281,7 +7281,7 @@
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-global_government_expense_pct_gdp",
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "GLOBAL_HALE_CURRENT": {
       "value": 63.3,
@@ -8776,7 +8776,7 @@
       ],
       "computeExpr": "(WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA * GLOBAL_LIFE_EXPECTANCY_2024)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "LOST_PROSPERITY_LIFETIME_DAMAGES_TOTAL": {
       "value": 1.874698963925694e+17,
@@ -8797,7 +8797,7 @@
       ],
       "computeExpr": "(WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL * GLOBAL_LIFE_EXPECTANCY_2024)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "LOST_PROSPERITY_NPV_PERPETUITY_PER_CAPITA": {
       "value": 10642024.091312978,
@@ -8818,7 +8818,7 @@
       ],
       "computeExpr": "(WAR_COUNTERFACTUAL_LOST_GDP_PER_CAPITA / NPV_DISCOUNT_RATE_STANDARD)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "LOST_PROSPERITY_NPV_PERPETUITY_TOTAL": {
       "value": 8.513619273050382e+16,
@@ -8839,7 +8839,7 @@
       ],
       "computeExpr": "(WAR_COUNTERFACTUAL_LOST_GDP_GLOBAL / NPV_DISCOUNT_RATE_STANDARD)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "MEASLES_VACCINATION_ROI": {
       "value": 14.0,
@@ -10333,7 +10333,7 @@
       ],
       "computeExpr": "(PENTAGON_UNACCOUNTED_FUNDS * CORPORATE_ANALOG_FALSE_CLAIMS_TREBLE_MULTIPLIER)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "PENTAGON_UNACCOUNTED_FUNDS": {
       "value": 2460000000000.0,
@@ -10349,7 +10349,7 @@
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-pentagon_unaccounted_funds",
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "PERSONAL_LIFETIME_WEALTH": {
       "value": 3000000.0,
@@ -12556,7 +12556,7 @@
       ],
       "computeExpr": "((STATE_RTT_IMPLEMENTATION_COST_TOTAL / FDA_ANNUAL_PROGRAM_BUDGET) * 8760.0)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_IMPLEMENTATION_COST_PER_DALY": {
       "value": 0.0001344564487359796,
@@ -12577,7 +12577,7 @@
       ],
       "computeExpr": "(STATE_RTT_IMPLEMENTATION_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_DALYS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED": {
       "value": 0.0070727775773446805,
@@ -12598,7 +12598,7 @@
       ],
       "computeExpr": "(STATE_RTT_IMPLEMENTATION_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_IMPLEMENTATION_COST_TOTAL": {
       "value": 65000000.0,
@@ -12618,7 +12618,7 @@
       ],
       "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS": {
       "value": 12.114893617021277,
@@ -12639,7 +12639,7 @@
       ],
       "computeExpr": "((STATE_RTT_IMPLEMENTATION_COST_TOTAL / NIH_ANNUAL_BUDGET) * 8760.0)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_TREATMENT_ACCELERATION_DALYS": {
       "value": 483427910011.47754,
@@ -12661,7 +12661,7 @@
       ],
       "computeExpr": "((GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED": {
       "value": 9190165997.614027,
@@ -12683,7 +12683,7 @@
       ],
       "computeExpr": "(((GLOBAL_DISEASE_DEATHS_DAILY * 365.0) * EVENTUALLY_AVOIDABLE_DEATH_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS": {
       "value": 1651583111763212.0,
@@ -12704,7 +12704,7 @@
       ],
       "computeExpr": "((STATE_RTT_TREATMENT_ACCELERATION_DALYS * GLOBAL_YLD_PROPORTION_OF_DALYS) * 8760.0)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS": {
       "value": 188536884904.47626,
@@ -12725,7 +12725,7 @@
       ],
       "computeExpr": "(STATE_RTT_TREATMENT_ACCELERATION_DALYS * GLOBAL_YLD_PROPORTION_OF_DALYS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_TREATMENT_ACCELERATION_YEARS": {
       "value": 181.21654501216545,
@@ -12746,7 +12746,7 @@
       ],
       "computeExpr": "(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT * (1.0 - (1.0 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)))",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER": {
       "value": 5.48,
@@ -12766,7 +12766,7 @@
       ],
       "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS": {
       "value": 0.8111111111111111,
@@ -12787,7 +12787,7 @@
       ],
       "computeExpr": "((STATE_RTT_IMPLEMENTATION_COST_TOTAL / US_GOV_WASTE_MILITARY_OVERSPEND) * 8760.0)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_VS_GIVEWELL_COST_PER_LIFE_MULTIPLIER": {
       "value": 636242.2613732788,
@@ -12808,7 +12808,7 @@
       ],
       "computeExpr": "(GIVEWELL_COST_PER_LIFE_AVG / STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
-      "chapterTitle": "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT": {
       "value": 221.66666666666666,
@@ -16774,7 +16774,7 @@
       ],
       "computeExpr": "(WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR + WAR_TRIAL_REDIRECT_AGING_LAG_AFTER_DISEASE_CONTROL_YEARS)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR": {
       "value": 1950.0,
@@ -16790,7 +16790,7 @@
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-war_trial_redirect_disease_pleading_cutoff_year",
       "latex": "\\begin{gathered}\nY_{disease,plead} = Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} = 1{,}900 + 14 + 36 = 1{,}950\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "WAR_TRIAL_REDIRECT_EXCESS_MILITARY_SPENDING_ABOVE_1900_FREEZE": {
       "value": 134715100378699.22,
@@ -16946,7 +16946,7 @@
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-war_trial_redirect_pleading_end_year",
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_PLAINTIFFS": {
       "value": 1783085302.091402,
@@ -16968,7 +16968,7 @@
       ],
       "computeExpr": "((WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS * GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES) * EVENTUALLY_AVOIDABLE_DEATH_PCT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "WAR_TRIAL_REDIRECT_POST_CUTOFF_AGING_YEARS": {
       "value": 35.0,
@@ -16989,7 +16989,7 @@
       ],
       "computeExpr": "((WAR_TRIAL_REDIRECT_PLEADING_END_YEAR - WAR_TRIAL_REDIRECT_AGING_PLEADING_CUTOFF_YEAR) + 1.0)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_DALYS": {
       "value": 200076065065.84042,
@@ -17011,7 +17011,7 @@
       ],
       "computeExpr": "((WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS * GLOBAL_ANNUAL_DALY_BURDEN) * EVENTUALLY_AVOIDABLE_DALY_PCT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_PLAINTIFFS": {
       "value": 3820897075.910147,
@@ -17033,7 +17033,7 @@
       ],
       "computeExpr": "((WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS * GLOBAL_ANNUAL_DEATHS_CURABLE_DISEASES) * EVENTUALLY_AVOIDABLE_DEATH_PCT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "WAR_TRIAL_REDIRECT_POST_CUTOFF_DISEASE_YEARS": {
       "value": 75.0,
@@ -17054,7 +17054,7 @@
       ],
       "computeExpr": "((WAR_TRIAL_REDIRECT_PLEADING_END_YEAR - WAR_TRIAL_REDIRECT_DISEASE_PLEADING_CUTOFF_YEAR) + 1.0)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/humanity-v-government.html",
-      "chapterTitle": "Humanity v. Government"
+      "chapterTitle": "The People v. Government"
     },
     "WAR_TRIAL_REDIRECT_START_YEAR": {
       "value": 1900.0,
@@ -28542,7 +28542,7 @@
     },
     "humanity-v-government-paper-2025": {
       "id": "humanity-v-government-paper-2025",
-      "title": "The People of Earth v. Their Governments",
+      "title": "The People v. Government",
       "author": "Sinn, Mike P.",
       "year": "2025",
       "source": "Institute for Accelerated Medicine",

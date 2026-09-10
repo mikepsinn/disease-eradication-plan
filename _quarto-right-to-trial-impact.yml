@@ -20,8 +20,9 @@ dih-render:
   show-confidence-intervals: true
   zenodo: false
   concept-terms:
-    - term: "Universal Right to Try with Evidence"
+    - term: "Patient's Right to Trial Act"
       aliases:
+        - "Universal Right to Try with Evidence"
         - "50-State Right to Try with Evidence"
         - "Right to Trial Impact Analysis"
       manual-target: knowledge/appendix/state-right-to-trial-impact.qmd
@@ -41,7 +42,7 @@ author:
         url: https://rtt-impact.acceleratedmedicine.org
 
 book:
-  title: "Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States"
+  title: "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
   description: "A conditional schedule-shift model of state legislation that lets post-Phase-1 treatments finance their own evidence generation and accelerates treatments for global diseases and aging."
   site-url: https://rtt-impact.acceleratedmedicine.org
   favicon: assets/icons/dfda-favicon.png
@@ -87,7 +88,7 @@ execute:
     PYTHONPATH: "."
 
 metadata:
-  image: "https://manual.warondisease.org/assets/og/right-to-trial-impact-og-bw.png"
+  image: "https://manual.warondisease.org/assets/og/patient-right-to-trial-act-og-bw.png"
   importance: 92
   creator: "Mike P. Sinn"
   orcid: "0009-0006-0212-1094"

@@ -626,11 +626,11 @@ jobs:
         timeout-minutes: 20
 
   build-right-to-trial-impact:
-    name: "Build Universal Right to Try with Evidence: Potential Im"
+    name: "Build Patient's Right to Trial Act: Potential Impact of "
     needs: validate
     runs-on: ubuntu-latest
     steps:
-      - name: "Validate Build Universal Right to Try with Evidence: Potential Im Cloudflare Pages credentials"
+      - name: "Validate Build Patient's Right to Trial Act: Potential Impact of  Cloudflare Pages credentials"
         if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
@@ -769,7 +769,7 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build Universal Right to Try with Evidence: Potential Im (PDF + HTML)"
+      - name: "Render Build Patient's Right to Trial Act: Potential Impact of  (PDF + HTML)"
         run: |
           .venv/bin/python scripts/render-quarto.py right-to-trial-impact --to pdf
           .venv/bin/python scripts/render-quarto.py right-to-trial-impact --to html
@@ -788,7 +788,7 @@ jobs:
             _build_temp/right-to-trial-impact/**/*.log
           retention-days: 7
 
-      - name: "Validate Build Universal Right to Try with Evidence: Potential Im Cloudflare Pages limits"
+      - name: "Validate Build Patient's Right to Trial Act: Potential Impact of  Cloudflare Pages limits"
         if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
         run: |
           file_count="$(find '_build_temp/right-to-trial-impact/_site/right-to-trial-impact' -type f | wc -l)"
@@ -805,7 +805,7 @@ jobs:
 
           echo "Cloudflare Pages limits passed: $file_count files, none larger than 25 MiB."
 
-      - name: "Deploy Build Universal Right to Try with Evidence: Potential Im to Cloudflare Pages"
+      - name: "Deploy Build Patient's Right to Trial Act: Potential Impact of  to Cloudflare Pages"
         if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
         run: |
           npx --yes wrangler@4.126.0 pages deploy '_build_temp/right-to-trial-impact/_site/right-to-trial-impact' \
