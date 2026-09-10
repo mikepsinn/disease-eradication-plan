@@ -19,7 +19,9 @@ import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from urllib.parse import urlsplit
 
+from dih_models.image_paths import local_image_path
 from dih_models.yaml_utils import load_quarto_config
 
 logger = logging.getLogger("dih.papers_qmd")
@@ -124,18 +126,14 @@ def extract_paper_info(
     doi = metadata.get("doi")
     doi_url = f"https://doi.org/{doi}" if doi else None
 
-    # Get OG image - convert to relative path from knowledge/
+    # Use local paths for project-hosted images so Quarto bundles them and
+    # pre-render validation checks them, even when site-url is a chapter URL.
     og_image = metadata.get("image", "")
     if og_image:
-        # Strip site URL prefix if present
-        if site_url and og_image.startswith(site_url):
-            og_image = og_image[len(site_url.rstrip("/")):]
-        # Strip leading slash and prepend ../ to make relative from knowledge/
-        if og_image.startswith("/"):
-            og_image = ".." + og_image
-        elif not og_image.startswith((".", "http://", "https://")):
-            # Relative path without leading slash - prepend ../
-            og_image = "../" + og_image
+        local_path = local_image_path(og_image, config_path.parent)
+        if local_path:
+            relative_path = local_path if local_path.startswith(".") else "../" + local_path.lstrip("/")
+            og_image = urlsplit(og_image)._replace(scheme="", netloc="", path=relative_path).geturl()
 
     # Get keywords
     keywords = metadata.get("keywords", [])
@@ -269,6 +267,12 @@ def generate_papers_qmd(project_root: Path, output_filename: str = "papers.qmd")
                 papers.append(paper_info)
         except Exception as e:
             logger.warning("Failed to parse %s: %s", config_path.name, e)
+
+    missing_images = [paper["id"] for paper in papers if not (paper.get("og_image") or "").strip()]
+    if missing_images:
+        raise ValueError(
+            "Papers missing metadata.image in their Quarto config: " + ", ".join(missing_images)
+        )
 
     # Sort papers by explicit importance score first (descending),
     # then by type and title for deterministic output.

@@ -1,7 +1,7 @@
 {
-  "totalImages": 3310,
-  "totalSizeBytes": 1924346636,
-  "totalSize": "1835.2 MB",
+  "totalImages": 3248,
+  "totalSizeBytes": 1898646042,
+  "totalSize": "1.8 GB",
   "images": [
     {
       "path": "assets/audiobook/manual-paperback/video/keyframes/index-manual-scene-01-16x9.jpg",
@@ -109525,40 +109525,6 @@
       ]
     },
     {
-      "path": "assets/og-images/knowledge/solution/1-percent-treaty-og-retro.jpg",
-      "filename": "1-percent-treaty-og-retro.jpg",
-      "extension": "jpg",
-      "sizeBytes": 1163501,
-      "size": "1.1 MB",
-      "width": 1376,
-      "height": 768,
-      "format": "jpeg",
-      "aspectRatio": "16:9",
-      "modified": "2026-01-16T01:46:55.245Z",
-      "imageType": "og",
-      "style": "colorful retro-futuristic",
-      "chapter": "solution/1-percent-treaty",
-      "title": "1 Percent Treaty Og",
-      "description": "1 Percent Treaty Og - Part of the War on Disease initiative for global health research and policy reform.",
-      "keywords": [
-        "war on disease",
-        "medical research",
-        "public health",
-        "health policy",
-        "social media",
-        "open graph",
-        "sharing",
-        "og images",
-        "research",
-        "science",
-        "academic",
-        "study",
-        "knowledge",
-        "solution",
-        "percent"
-      ]
-    },
-    {
       "path": "assets/og-images/knowledge/solution/ai-coordination-army-og-retro-academic.jpg",
       "filename": "ai-coordination-army-og-retro-academic.jpg",
       "extension": "jpg",
@@ -111768,6 +111734,24 @@
       ]
     },
     {
+      "path": "assets/og/right-to-trial-impact-og-bw.png",
+      "filename": "right-to-trial-impact-og-bw.png",
+      "extension": "png",
+      "sizeBytes": 2646875,
+      "size": "2.5 MB",
+      "width": 1672,
+      "height": 941,
+      "format": "png",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "fun retro black and white scientific illustration",
+      "chapter": "appendix/state-right-to-trial-impact",
+      "title": "Right to Try, with Evidence",
+      "description": "An absurd scientific apparatus asks whether a treatment worked, with results still unknown.",
+      "generationPrompt": "Use a fun retro black and white scientific illustration style and LARGE text. Make it a witty, deadpan plate from an imaginary vintage science manual, with expressive scientists and delightfully overengineered machinery. Wide 16:9; black ink on white paper.\n\nTitle: \"RIGHT TO TRY, WITH EVIDENCE\"\n\nAn enormous Victorian laboratory contraption, all gears, glass coils, a bellows and a ludicrously large magnifying lens, is devoted to one very small question: \"DID IT WORK?\" A completely serious scientist on a stepladder studies the tiny output slip, which says \"LET'S FIND OUT.\" A second scientist waits with a comically enormous pencil. The visual joke is the disproportion between the elaborate apparatus and the simple scientific question. Make the joke visible at a glance; lively editorial cartoon composition, strong silhouettes, readable lettering, not a solemn portrait or corporate illustration.\n\nSubject context: an illustration accompanying a conditional analysis of experimental treatment access and evidence collection across US states. The apparatus represents asking questions, comparing outcomes and recording results, not a cure-producing machine. Keep the outcomes unknown; this image takes no position on legislation. No statistics, endorsement, politicians, or invented study results.",
+      "editPrompt": "Edit this illustration with one targeted cleanup. Preserve the black-and-white drawing, scientists, giant pencil, absurd laboratory machine, magnifying lens and composition. Keep ONLY these three text elements, exactly: the large title \"RIGHT TO TRY, WITH EVIDENCE\"; \"DID IT WORK?\" inside the magnifying lens; and \"LET'S FIND OUT.\" on the output slip. Remove absolutely every other word, letter, phrase, label, slogan, book-spine title, sidebar text, tiny plaque text and footer from the entire image. Replace former text areas with plain surfaces, crosshatching, blank book spines or white space so the drawing feels natural. No replacement wording and no additional text. Especially remove every claim about brighter tomorrows, healthier people, better questions or access. This should be a clean humorous illustration of scientific inquiry, with just the title, question and punchline."
+    },
+    {
       "path": "assets/og/right-to-trial-og-1200x630.jpg",
       "filename": "right-to-trial-og-1200x630.jpg",
       "extension": "jpg",
@@ -111807,6 +111791,24 @@
         "specify 'clear differentiation between terrestrial and subterranean levels' for better visual hierarchy"
       ],
       "metadataCreatedAt": "2026-01-26T02:11:52.356Z"
+    },
+    {
+      "path": "assets/og/survey-to-end-war-and-disease-og-bw.png",
+      "filename": "survey-to-end-war-and-disease-og-bw.png",
+      "extension": "png",
+      "sizeBytes": 2294564,
+      "size": "2.2 MB",
+      "width": 1672,
+      "height": 941,
+      "format": "png",
+      "aspectRatio": "16:9",
+      "imageType": "og",
+      "style": "fun retro black and white scientific illustration",
+      "chapter": "strategy/survey-to-end-war-and-disease",
+      "title": "The Survey to End War and Disease",
+      "description": "An oversized Human Opinion Detector stands beside someone simply handing out a questionnaire.",
+      "generationPrompt": "Use a fun retro black and white scientific illustration style and LARGE text. Make it a witty, deadpan plate from an imaginary vintage science manual, with expressive scientists and delightfully overengineered machinery. Wide 16:9; black ink on white paper.\n\nTitle: \"THE SURVEY TO END WAR AND DISEASE\"\n\nA wonderfully absurd \"HUMAN OPINION DETECTOR\": a huge ear trumpet, gears, valves and a telescope pointed at a globe, attended by a very earnest old-fashioned scientist. Meanwhile a tiny assistant has simply handed a human a short questionnaire and a pencil. The human looks quizzically at the gigantic machine. Caption: \"HAVE WE TRIED ASKING?\" The joke is the vast apparatus compared with the very ordinary act of asking someone a question. Give it warm visual wit, strong silhouettes and large legible lettering, like an illustrated patent for an unnecessary invention.\n\nSubject context: a proposed five-question survey about healthcare research, public spending and accountability. This is a neutral illustration of collecting opinions, with no position on any policy and no assumed answers. Keep response boxes blank; do not show polling results, percentages, politicians or advocacy slogans.",
+      "editPrompt": "Edit this illustration with one targeted cleanup. Preserve the black-and-white cartoon, giant ear trumpet and machine, globe, earnest scientist, assistant and bemused human. Keep ONLY these three text elements, exactly: the large top title \"THE SURVEY TO END WAR AND DISEASE\"; \"HUMAN OPINION DETECTOR\" on the ear trumpet; and the bottom caption \"HAVE WE TRIED ASKING?\" Remove absolutely every other word, letter, phrase, label, slogan, speech-bubble text, book-spine title, plaque text and small corner inscription from the entire image. Remove the speech bubble and the large questionnaire poster at left completely, replacing them with open white space. The assistant's small clipboard should show five simple empty checkboxes with abstract horizontal rules only. Replace text elsewhere with plain machine surfaces, crosshatching or blank book spines, with no new wording. Especially remove all statements predicting benefits or praising the survey. Preserve the visual joke of an enormous apparatus for a simple question."
     },
     {
       "path": "assets/og/us-efficiency-audit-og-1200x630.jpg",

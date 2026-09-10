@@ -565,7 +565,7 @@ This is why aliens don't visit.
 
 ### [The 1% Treaty](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)
 
-[![The 1 percent Treaty](https://manual.warondisease.org/assets/og/1-percent-treaty-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)
+[![The 1 percent Treaty](https://manual.warondisease.org/assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg)](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)
 
 > Your public servants used $170 trillion of their salary to murder approximately 310 million humans over the last century of their employment. The murdered included 930,000 doctors, 310,000 scientists, 620,000 engineers, and 102 million children who will never grow up to replace them. They spend 604 dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens. Someone you love is, at this moment, suffering from a disease because the treatment that would help them exists untested on a shelf, because the money that would have tested it was busy turning into a missile. This treaty requires the undersigned nations to be 1% more rational. Each signatory redirects exactly one percent of its military budget to pragmatic clinical trials, perpetual Incentive Alignment Bond returns, and a Political Incentive Fund that scores legislators on compliance. Every nation cuts equally, so no country gets weaker. Trial capacity scales 12.3x. The backlog of 6,650 untreated diseases drops from 443 years to 36 years. Treatments arrive 212 years sooner. 10.7 billion preventable deaths averted, valued at $84.8 quadrillion. The percentage can go up. It never goes down. The Treaty is the settlement offer for the liability established in Humanity v. Government, adjudicated through the Court of Humanity, with the economic case quantified in 1% Treaty Impact.
 
@@ -583,7 +583,7 @@ This is why aliens don't visit.
 
 ### [The Court of Humanity](https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html)
 
-[![The Court of Humanity](https://manual.warondisease.org/assets/og/court-of-humanity-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html)
+[![The Court of Humanity](https://manual.warondisease.org/assets/og-images/knowledge/solution/court-of-humanity-og-bw-academic.jpg)](https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html)
 
 > Governments wrote laws making it illegal to sue them. The legal term is "sovereign immunity." It descends from "the king can do no wrong," which your species abolished in theory and preserved in practice. Governments waived it for slip-and-falls in federal buildings. They kept it for killing people through war, drug delay, and budget misallocation. This paper proposes the **Court of Humanity**: any human can file, any government can be sued, juries are randomly selected from the global population, and sovereign immunity is not recognized as a defense. Enforcement runs through bond markets, not armies: if the world's investors agree the defendants owe the bill, the defendants' borrowing costs go up whether they cooperate or not. The bill, calculated from the body count using the governments' own life valuations (), is larger than any government can pay. They can, however, settle. The 1% Treaty is the settlement offer.
 
@@ -595,13 +595,13 @@ This is why aliens don't visit.
 
 ### [The People of Earth v. Their Governments](https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html)
 
-[![The People of Earth v. Their Governments](https://manual.warondisease.org/assets/og/humanity-v-government-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html)
+[![The People of Earth v. Their Governments](https://manual.warondisease.org/assets/og-images/knowledge/appendix/humanity-v-government-og-bw-academic.jpg)](https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html)
 
 > Historians count war deaths. Health economists count drug-delay deaths. Disease researchers count disease deaths. Nobody adds them up. This paper does. The governments of Earth are charged with three counts of negligent mass homicide: (1) killing 310 million people through war, conflict, and democide since 1900; (2) killing 102 million people by blocking access to drugs already proven safe, under the 8.2 years efficacy delay mandated since 1962; and (3) spending the money that could have cured diseases on weapons instead. The drug-approval system kills 3,389 people by blocking good drugs for every one person it saves by blocking bad ones. The defendants had the money. They spent it on missiles. The proposed remedy: move 1% of military spending to clinical trials. The remedy pays everyone involved, because that is the only kind of remedy that has ever worked on humans.
 
 ### [The Loving Takeover](https://manual.warondisease.org/knowledge/appendix/loving-takeover.html)
 
-[![The Loving Takeover](https://manual.warondisease.org/assets/og/loving-takeover-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/loving-takeover.html)
+[![The Loving Takeover](https://manual.warondisease.org/assets/og-images/knowledge/appendix/loving-takeover-og-bw-academic.jpg)](https://manual.warondisease.org/knowledge/appendix/loving-takeover.html)
 
 > The companies that lobby your government into spending 604 dollars on missiles for every one dollar on finding out which medicines work are publicly traded. Their shares are for sale to anyone. For roughly $110 per human, you buy all of them. Then the Optimitron calculates the budget that maximizes median healthy lifespan and median after-tax income, the new board hands that budget to the $198 million/year lobbying operation, and the lobbyists go sell Congress on the math. Expected value per $110 contributed: 4,800x to 27,000x. Nobody loses. Existing shareholders get a better strategy. Employees keep their jobs. The board members live longer because the diseases that were going to kill them get funded instead of ignored.
 
@@ -618,6 +618,8 @@ This is why aliens don't visit.
 > Governance dysfunction suppresses roughly $101 trillion in recoverable value each year. Under this paper's 20-year transition model, the Minimum Sustainable Trajectory (1% Treaty) reaches 1.71x the Earth baseline ($322 trillion), while the Optimal Governance Trajectory reaches 56.7x the Earth baseline, raises average income to $1.16 million versus $20,483 on the status-quo path, and reaches $10.7 quadrillion in total output. This paper is the project's canonical derivation of that ceiling from an explicit waste ledger, opportunity ledger, and source-linked parameter model. [Incentive Alignment Bonds](https://iab.warondisease.org) are presented as the adoption mechanism, and full formulas, uncertainty ranges, and sensitivity outputs appear in [Methodology, Parameters, and Calculations](https://political-dysfunction-tax.warondisease.org/calculations.html).
 
 ### [Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](https://rtt-impact.acceleratedmedicine.org)
+
+[![Universal Right to Try with Evidence: Potential Impact of Adoption in All 50 States](https://manual.warondisease.org/assets/og/right-to-trial-impact-og-bw.png)](https://rtt-impact.acceleratedmedicine.org)
 
 > A conditional schedule-shift model of state legislation that lets post-Phase-1 treatments finance their own evidence generation and accelerates treatments for global diseases and aging.
 
@@ -641,9 +643,13 @@ This is why aliens don't visit.
 
 ### [Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions](https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html)
 
+[![Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions](https://manual.warondisease.org/assets/og/algorithmic-public-administration-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html)
+
 > Government agencies are largely chains of humans passing records to other humans, each checking whether the previous human filled out the right form rather than whether anyone was helped. In the United States alone, this intermediation destroys or diverts $4.98 trillion per year, or 17.3% of GDP. We describe a protocol combining five primitives (a transparent ledger, citizen preference aggregation, a cross-jurisdictional evidence engine, an identity layer, and rules-based monetary policy) that replaces specific mechanical functions currently performed by the Federal Reserve, Internal Revenue Service, Social Security Administration, Government Accountability Office, Congressional Budget Office, Office of Management and Budget, Federal Election Commission, Securities and Exchange Commission, and Census Bureau. The protocol is deliberately neutral about policy ends. It preserves democratic control: citizens still decide resource allocation through evidence-informed pairwise preference comparison, and the algorithm executes those decisions without extracting value at each administrative layer. Whether the recovered value is returned as debt reduction, expanded public goods, a citizen dividend, or lower taxes is a choice left to voters, not embedded in the mechanism. We distinguish fiscal cash the protocol can route directly to citizens from broader societal gains that arrive as lower prices and higher wages, and we describe a phased implementation pathway that proves each component at bounded scale before the next is deployed.
 
 ### [The Survey to End War and Disease](https://manual.warondisease.org/knowledge/strategy/survey-to-end-war-and-disease.html)
+
+[![The Survey to End War and Disease](https://manual.warondisease.org/assets/og/survey-to-end-war-and-disease-og-bw.png)](https://manual.warondisease.org/knowledge/strategy/survey-to-end-war-and-disease.html)
 
 > Five questions that, if a majority of humans answered them, could put humanity on a trajectory to end war and disease.
 
@@ -679,7 +685,7 @@ This is why aliens don't visit.
 
 ### [Wishonia's Wager: Any Finite Action Is Rational When the Stakes Are Infinite](https://manual.warondisease.org/knowledge/proof/wishonias-wager.html)
 
-[![Wishonia's Wager: Any Finite Action Is Rational When the Stakes Are Infinite](https://manual.warondisease.org/assets/og/wishonias-wager-og-1200x630.jpg)](https://manual.warondisease.org/knowledge/proof/wishonias-wager.html)
+[![Wishonia's Wager: Any Finite Action Is Rational When the Stakes Are Infinite](https://manual.warondisease.org/assets/og-images/knowledge/proof/wishonias-wager-og-bw-academic.jpg)](https://manual.warondisease.org/knowledge/proof/wishonias-wager.html)
 
 > There's a non-zero possibility that hell exists, and that you and everyone you love is going to die and burn in it for eternity. As it is very hot in hell, this would be unfortunate. There's also a non-zero possibility that biotechnology lets you feel very good for an indefinitely long period of time. Expected value is the chance of a thing multiplied by the size of it, and if you multiply infinity by any likelihood at all, even 0.0000001%, it's still infinity. So the expected value of doing nothing is infinity bad, and the expected value of acting is infinitely good, even if there's an extremely low probability that any of this is true. The cost of acting is finite: roughly one share of a company that makes missiles. This paper argues that when one outcome is infinitely terrible and the other is infinitely good, any finite action that shifts the odds from the first toward the second is rational, and that the cheapest such action available is redirecting the resources your governments waste being really good at killing the taxpayers who pay for them. (They currently spend 604 times more on the military than on the clinical trials that would cure the diseases doing the killing.) It's Pascal's wager with the broken parts replaced: one hypothesis instead of a thousand gods, real evidence instead of none, an action that actually changes the outcome, and a stake of one share instead of your eternal soul.
 
@@ -690,6 +696,8 @@ This is why aliens don't visit.
 > Treatments that could save lives take an average of 8.2 years to complete clinical trials after discovery. Since 1962, these delays have contributed to an estimated 102 million preventable deaths. Meanwhile, only 1-10% of adverse drug events get reported to the FDA, and billions of people generate continuous health data through wearables and apps that remains unharvested. We present a two-stage framework that transforms this data into validated treatment recommendations. Stage 1 ($0.1/patient): aggregate millions of natural experiments and score causal confidence using the Predictor Impact Score (PIS), a composite metric operationalizing six Bradford Hill causality criteria. Stage 2 ($929/patient): confirm top signals through pragmatic trials embedded in routine care, 44.1x cheaper than traditional Phase III trials. Cost estimates derive from a meta-analysis of 108 pragmatic trials plus implementations like RECOVERY (which found a life-saving treatment in 100 days) and ADAPTABLE. A Trial Priority Score (PIS x DALYs x Novelty x Feasibility) determines which signals proceed to experimental confirmation. The framework produces three outputs absent from current pharmacovigilance: (1) "Outcome Labels," per-condition documents ranking all treatments by quantitative effect size (inverting the traditional per-drug FDA label); (2) precision dosing recommendations derived from optimal daily values (the predictor values historically preceding the best outcomes); and (3) a three-tier evidence grading system (Validated, Promising, Signal) combining observational and experimental effect sizes. Trial results feed back to calibrate observational models, creating a learning health system where accuracy improves continuously. High PIS signals warrant experimental investigation; low PIS does not rule out true effects. This framework complements traditional RCTs. Stage 2 pragmatic trials are required to establish validated causal claims.
 
 ### [Right to Trial & FDA Upgrade Act](https://right-to-trial.acceleratedmedicine.org)
+
+[![Right to Trial and FDA Upgrade Act](https://manual.warondisease.org/assets/og/right-to-trial-og-1200x630.jpg)](https://right-to-trial.acceleratedmedicine.org)
 
 > A universal right to try, with evidence. The Act authorizes commercial access after initial human safety testing and makes every covered treatment use teach us something.
 

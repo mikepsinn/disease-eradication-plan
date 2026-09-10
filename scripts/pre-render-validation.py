@@ -38,6 +38,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
+from urllib.parse import unquote
 
 # Set UTF-8 encoding for stdout and stderr on Windows
 if sys.platform == 'win32':
@@ -57,6 +58,7 @@ from lib.quarto_config_utils import (
     get_cross_site_paper_qmd_files,
     get_qmd_files_for_config,
 )
+from dih_models.image_paths import local_image_path
 
 # Use C-accelerated YAML loader when available (21x faster on _variables.yml)
 try:
@@ -317,12 +319,13 @@ def check_image_paths(content: str, filepath: str, lines: List[str]):
 
 def _check_single_image_path(image_path: str, filepath: str, file_dir: str, line_number: int, line: str):
     """Helper function to check a single image path"""
-    # Skip URLs (http://, https://, etc.)
-    if image_path.startswith("http://") or image_path.startswith("https://"):
+    # Project-hosted URLs must pass the same checks as local image paths.
+    local_path = local_image_path(image_path, Path.cwd())
+    if local_path is None:
         return
 
     # Resolve the image path (handles both relative and absolute /paths)
-    resolved_path = resolve_link_path(image_path, file_dir)
+    resolved_path = resolve_link_path(unquote(local_path), file_dir)
 
     # Check if the path would exceed Windows MAX_PATH in the build temp directory
     if sys.platform == 'win32':
