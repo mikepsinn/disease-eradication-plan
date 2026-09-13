@@ -37,7 +37,7 @@ pydub
 Pillow
 textstat
 jinja2
-bibtexparser
+bibtexparser==1.4.4  # Citation parsing uses the v1 API; v2 requires a migration
 python-docx
 ebooklib
 lxml

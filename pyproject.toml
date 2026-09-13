@@ -20,6 +20,7 @@ dependencies = [
     "seaborn",
     "plotly",
     "PyYAML",
+    "bibtexparser==1.4.4",  # Keep the v1 citation API used by reference_parser
     # Jupyter ecosystem for Quarto
     "jupyter",
     "ipykernel",
