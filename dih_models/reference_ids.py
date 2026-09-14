@@ -35,6 +35,7 @@ class ReferenceID(str, Enum):
     N5_MILLION_ANNUAL_CHILD_DEATHS = "5-million-annual-child-deaths"
     N53_PERCENT_PREVENTABLE_DEATHS = "53-percent-preventable-deaths"
     N95_PCT_DISEASES_NO_TREATMENT = "95-pct-diseases-no-treatment"
+    AAPOR_BEST_PRACTICES = "aapor-best-practices"
     ABACUM_CLINICAL_TRIAL_COSTING = "abacum-clinical-trial-costing"
     ABADIE2010 = "abadie2010"
     ABADIE2015 = "abadie2015"

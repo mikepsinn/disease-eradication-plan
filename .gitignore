@@ -179,3 +179,5 @@ assets/docx
 
 zenodo-upload-report.md
 /scripts/voice/eval
+# Session scratch and build artifacts (epub/pdf/kpf builds, deploy logs, image-review renders)
+output/

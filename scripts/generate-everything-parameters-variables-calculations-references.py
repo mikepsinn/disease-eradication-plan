@@ -1148,7 +1148,7 @@ def main():
         # Copy TypeScript parameters file to consuming repos
         import shutil
         ts_copy_targets = [
-            Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
+            Path(r"E:\code\dih-neobrutalist\lib\parameters-calculations-citations.ts"),
             project_root.parent / "optimitron" / "packages" / "data" / "src" / "parameters" / "parameters-calculations-citations.ts",
         ]
         for copy_dest in ts_copy_targets:
@@ -1676,7 +1676,7 @@ def main():
         # Copy TypeScript parameters file to consuming repos
         import shutil
         ts_copy_targets = [
-            Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
+            Path(r"E:\code\dih-neobrutalist\lib\parameters-calculations-citations.ts"),
             project_root.parent / "optimitron" / "packages" / "data" / "src" / "parameters" / "parameters-calculations-citations.ts",
         ]
         for copy_dest in ts_copy_targets:

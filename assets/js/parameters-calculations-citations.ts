@@ -18221,9 +18221,9 @@ export const citations: Record<string, Citation> = {
           },
         ],
         issued: { 'date-parts': [[2025]] },
-        publisher: "Institute for Accelerated Medicine",
+        publisher: "International Campaign to End War and Disease",
         URL: "https://manual.warondisease.org/knowledge/appendix/political-dysfunction-tax.html",
-        note: "Working Draft",
+        note: "Working Paper",
   },
   "poore-nemecek-2018": {
         id: "poore-nemecek-2018",

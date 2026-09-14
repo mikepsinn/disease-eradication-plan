@@ -130,7 +130,7 @@ BAD examples (never write like this):
 ## Accessibility & Tone
 - "altText": Screen reader description (focus on meaning, not appearance)
 - "emotionalTone": One of "alarming", "hopeful", "informative", "urgent", "inspiring", "neutral"
-- "callToAction": Pick ONE randomly from: "Share this", "Retweet", "Take the 2-question survey (~38 lives saved per vote)", "4 shares = ~153 lives saved". Vary your choice across images.
+- "callToAction": Pick ONE randomly from: "Share this", "Retweet", "Take the 2-question survey (~2.6 lives saved per vote)", "4 shares = ~10 lives saved". Vary your choice across images.
 
 ## Data Integrity
 - "dataFreshness": One of "current", "needs-update", "timeless" (is the data/statistic current?)
