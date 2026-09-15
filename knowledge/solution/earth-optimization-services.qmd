@@ -66,8 +66,6 @@ Its current highest-expected-value recommendation is the [1% Treaty](1-percent-t
 
 Your governments have signed treaties banning chemical weapons (193 countries), biological weapons (187), and landmines (164). This one asks them to buy 1% fewer weapons and spend the savings on figuring out why everyone keeps dying. Pre-WW2 military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today, inflation-adjusted. They still won World War II. Then they cut spending {{< var post_ww2_military_cut_pct >}} in two years and walked into the greatest economic expansion in history. One percent should be manageable.
 
-*"We spent 4,000 years debating education policy. The Optimal Policy Generator resolved it in an afternoon. Our main regret is the 4,000 years." (Planet Keth-7, client since 8,000 BCE)*
-
 ### The Optimal Budget Generator
 
 **What it does:** Calculates the optimal spending level for every budget line in every jurisdiction on Earth: the point where each additional dollar produces less health or wealth than spending it somewhere else.
@@ -90,8 +88,6 @@ The TODO list computes both. It calculates the expected value of every action (s
 
 If you sign up, you get your own subtask: Optimize [Your Name]'s Life. If you add your organization, it gets one too: Optimize [Your Organization]. These nest under the root. The whole thing is one tree, from "Optimize Earth" down to "take your medication."
 
-In the long run, governments become irrelevant. AI agents execute the TODO list directly. The optimal policies and budgets get implemented because the math is public and the agents do not need to be lobbied. Until then, we lobby.
-
 ### The Loving Takeover
 
 **What it does:** Buys shares in the companies that control your government and uses shareholder rights to hand their lobbyists an optimal budget.
@@ -103,8 +99,6 @@ The companies that build your weapons are, by any rational accounting, bad at be
 You [buy shares](../appendix/loving-takeover.qmd). Shares come with voting rights. Voting rights let you hand the lobbyists an optimal budget calculated by the Optimal Budget Generator to maximize health and wealth. The companies invest in things that make the economy larger instead of things that make it smaller. The shareholders get appreciation in a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. The lobbyists get a raise. Nobody loses anything. The previous arrangement was losing money for everyone in it simultaneously, which is harder than it sounds.
 
 In 2021, twelve people with $12.5 million and 0.02% of ExxonMobil won three seats on its board. Vanguard and BlackRock, who own roughly 60%, voted with them. The argument was: your strategy is destroying the value of the people who own this company. Board seats across the military-industrial complex cost {{< var defense_takeover_cost_activist >}} ({{< var defense_takeover_cost_activist_pct_investable_assets >}} of the money invested on Earth).
-
-*"We were initially resistant. Then our chief weapons designer's daughter was cured of a disease he had been told was untreatable. He now runs our largest medical robotics division. He makes more money. He sleeps better. He stopped changing the subject at parties." (Military sector client, Spiral Arm 4)*
 
 ### Wishocracy
 
@@ -118,23 +112,17 @@ Your current system: you elect representatives. The representatives are purchase
 
 On *Who Wants to Be a Millionaire*, the studio audience picked the right answer {{< var crowd_decision_accuracy >}} of the time. The expert? {{< var expert_decision_accuracy >}}. Your entire government is phone-a-friend. This is ask-the-audience.
 
-*"Our representatives argued about healthcare allocation for 60 years. We switched to direct allocation. The citizens funded the same research the representatives had been blocking. The representatives became life coaches. The career transition was seamless." (Long-term client, Local Group)*
-
 ## The Government Replacement Suite
 
 Most planets also order these. Each one replaces a government agency with software that does not accept campaign contributions, does not have a revolving door, and does not need 80,000 employees to perform arithmetic.
 
 Every price is anchored to the most similar machine you already run. Every assumption carries its uncertainty through the arithmetic. The few humans who remain are there to sign their names, because someone must be arrestable.
 
-The dysfunction this suite replaces invoices every human {{< var political_dysfunction_tax_per_person_annual >}} per year, {{< var political_dysfunction_tax_per_household_of_four_annual >}} per household of four. You have been paying for the deluxe package all along. It was just pointed at you.
-
 #### [Decentralized FDA](dfda.qmd)
 
 **Replaces:** Your drug approval agency, which blocks safe treatments for an average of 12 years after safety is established. **Retail price:** {{< var recovery_trial_cost_per_patient >}}/patient. **Currently paying:** {{< var traditional_phase3_cost_per_patient >}}/patient.
 
 An [open protocol](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] that connects treatments to patients and records outcomes automatically. Drug inserts (the pamphlet nobody reads, written by the company selling the drug) are replaced with Outcome Labels: real-world data from millions of patients showing what actually happened. The UK's RECOVERY trial spent {{< var recovery_trial_total_cost >}} over 6 months and saved {{< var recovery_trial_global_lives_saved_nounit >}} lives. The NIH received $1.665 billion for Long COVID over 4 years and completed zero trials.
-
-*"Our FDA equivalent once took 14 years to approve a treatment that had been safely used on 2 million patients in neighboring jurisdictions. The Decentralized FDA approved it in 4 months. The 14-year agency is now a museum. The museum is not well attended." (Client, Triangulum Galaxy)*
 
 #### [Decentralized Institutes of Health](dih.qmd)
 
@@ -276,28 +264,9 @@ Your War on Terror: $8 trillion spent, terrorist attacks went from about 1,000 p
 
 The Optimal Policy Generator is the sensor. The Optimal Budget Generator is the target. The [Loving Takeover](../appendix/loving-takeover.qmd) is the actuator (it controls the lobbying apparatus that controls Congress). The [1% Treaty](../solution/1-percent-treaty.qmd) is the power supply. The [Wishocracy](wishocracy.qmd) is the allocation circuit. And the feedback loop closes because the sensor measures the output of the policies it recommended, compares them to the target, and adjusts. Like a thermostat. Like every system you build when you bother to think about it for ten seconds. Control systems engineering accounts for component uncertainty. You do this for airplane autopilots and chemical plants. We are applying it to civilization. The math is the same. The stakes are higher. The difficulty is lower, because civilizations are simpler than chemical plants. Chemical plants do not vote against their own interests.
 
-*"We tried running our government without a feedback loop for 200 years. The engineers found this extremely funny. They kept asking 'but how do you know if it worked?' and we kept saying 'we argue about it.' They stopped laughing when they realized we were serious." (Planet Keth-7)*
-
 ## Your Personal Dysfunction Tax
 
 *[Interactive calculator: enter your income or net worth. See your personal Political Dysfunction Tax per year, your projected gains under the 1% Treaty, your projected gains under full optimization, and your lifetime income difference across all four [GDP trajectories](../economics/gdp-trajectories.qmd) [@political-dysfunction-tax-paper-2025] [@gdp-trajectories-paper-2025].]*
-
-## Reviews from the Competition
-
-*"One star. They started checking which medicines work."* (Cancer)
-
-*"They outspent their own cures {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} to 1. We assumed it was a tribute."* (The Diseases)
-
-## Customer Reviews
-
-**Planet Keth-7** ★★★★★
-"Our children learn about 'disease' in history class. They do not believe any of it. 'You mean people just felt bad? Without choosing to? And they couldn't fix it?' 'They held fundraising walks.' 'They WALKED? That was the plan?' Would optimize again."
-
-**Planet GL-881** ★☆☆☆☆
-"Did not get started. Argued about whether the problem existed. Currently an asteroid belt. Available for mining rights. The dogs did not survive. We do not like to discuss the dogs."
-
-**Planet Thex-9** ★★★★★
-"47 years from extinction when UOS arrived. Same trajectory as [Moronia](../futures/moronia.qmd). Same budget allocation. Same glowing rectangles. The only difference is we said yes. Our children do not understand how a species that invented mathematics could refuse to use it. Honestly, neither do we."
 
 ## Your First Day
 
