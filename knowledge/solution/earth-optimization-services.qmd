@@ -16,9 +16,9 @@ scores:
   standalone: 8
   voice: 8
   importance: 9
-audience: "A cold stranger who has never heard of any of this. They are about to become the President of Earth Optimization Services."
-feel: "This is the most serious thing I have ever read, delivered by the most cheerful salesman I have ever met, and the math checks out."
-do: "Buy Class B shares, or claim your free Class A share, or fund a task on the TODO list. In that order."
+audience: "A cold stranger who has never heard of any of this."
+feel: "I understand the concept: calculate optimal policies and budgets, build optimized institutions, use shareholder activism to gain board seats on corporations that influence government through lobbying, decentralize control back to everyone through Class A shares, Wishocracy, and direct democracy, and ensure all lobbying promotes the general welfare and protects rights to life, liberty, and pursuit of happiness. I understand the benefits: if it doesn't work, you just bought an ETF; if it does, civilization-scale optimization. I understand how to go about creating it."
+do: "Start building Earth Optimization Services."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
@@ -36,8 +36,6 @@ This is not a metaphor. {{< var global_annual_deaths_curable_diseases >}} people
 
 I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases.
 
-That is why this store exists.
-
 ## The Store
 
 Earth Optimization Services is a company that buys the companies that control your government, uses hundreds of years of data from 193 countries to determine the policies and budgets that maximize two numbers (median health-adjusted life expectancy and median after-tax inflation-adjusted income), and then uses shareholder rights to make those companies' lobbyists implement the policies that are in the best interests of their shareholders, the corporations' profits, and the general welfare, making everyone richer and significantly less dead.
@@ -46,15 +44,13 @@ Universe Optimization Services has been upgrading civilizations since before you
 
 Earth Optimization Services is our regional branch. Same proven technology. Smaller market. More shouting. It brings the standard package to your small blue planet, including a dramatic reduction in the number of times your civilization can end itself. Currently: {{< var nuclear_winter_overkill_factor_nounit >}}. Recommended: no more than one, as the other endings are mainly decorative.
 
-You are the President of Earth Optimization Services. So is every other reader. You each get a free Class A share with one civic vote. If you want returns, buy Class B shares. Your money buys a share of the profit, not extra votes or governance. You cannot buy the steering wheel, no matter how many shares you own, because selling the steering wheel is the problem we are solving.
+You are the President of Earth Optimization Services. As you are very busy, you also get eight billion assistant presidents. Your Class A share is free and comes with one civic vote. If you want returns, buy Class B shares. Your money buys a share of the profit, not extra votes or governance. You cannot buy the steering wheel, no matter how many shares you own, because selling the steering wheel is how your government got this way.
 
 The downside: you own shares of the companies that currently control your government. They have paid dividends through every war and recession in living memory. The floor is "you accidentally bought an ETF with no fees."
 
-The upside: most products on your planet come with one benefit. A toaster makes toast. A car moves you from the place you do not want to be to the place you do not want to go. This product has the unusual property of making nearly everything else you own more valuable at the same time. The economy gets {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} larger by year 20. The companies you own capture that growth. Your taxes fall. Your other investments rise. Disease stops eating {{< var disease_burden_gdp_drag_pct >}} of GDP. You live longer to enjoy it.
+The upside: most products on your planet come with one benefit. A toaster makes toast. This product has the unusual property of making nearly everything else you own more valuable at the same time. The economy gets {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} larger by year 20. The companies you own capture that growth. Your taxes fall. Your other investments rise. Disease stops eating {{< var disease_burden_gdp_drag_pct >}} of GDP. You live longer to enjoy it.
 
 ## Featured Products
-
-The decentralized TODO list for humanity is the product. The root task is Optimize Earth. Everything below is a subtask. Each task has a calculated expected value in health and wealth. You can fund any task (pledge money; it executes when enough people commit, like a group purchase) or do it yourself.
 
 ### The Optimal Policy Generator
 
@@ -96,21 +92,17 @@ If you sign up, you get your own subtask: Optimize [Your Name]'s Life. If you ad
 
 In the long run, governments become irrelevant. AI agents execute the TODO list directly. The optimal policies and budgets get implemented because the math is public and the agents do not need to be lobbied. Until then, we lobby.
 
-The TODO list is live at optimitron.com/tasks.
-
 ### The Loving Takeover
 
 **What it does:** Buys shares in the companies that control your government and uses shareholder rights to hand their lobbyists an optimal budget.
 
 **Retail price:** {{< var defense_takeover_cost_total >}} for the full takeover. **You receive:** Voting shares in the companies whose lobbying writes your laws.
 
-The companies that build your weapons are, by any rational accounting, bad at being companies. They pay their best engineers to shrink the economy they sell into. Their shareholders get the same diseases as everyone else. Their CEO's mother has Parkinson's, and there is no trial because the money that would have funded it is currently a missile. They are spending money to make themselves poorer, sicker, and eventually dead. This is not an adversary. This is a company in need of better management.
+The companies that build your weapons are, by any rational accounting, bad at being companies. Every dollar of weapons spending generates {{< var economic_multiplier_military_spending >}} in economic output [@military-spending-economic-multiplier]. The same dollar in healthcare generates {{< var economic_multiplier_healthcare_investment >}} [@healthcare-investment-economic-multiplier]. They are paying their best engineers to turn dollars into sixty-cent pieces. Their shareholders get the same diseases as everyone else. Their CEO's mother has Parkinson's, and there is no trial because the money that would have funded it is currently a missile. They are spending money to make themselves poorer, sicker, and eventually dead. This is not an adversary. This is a company in need of better management.
 
-You [buy shares](../appendix/loving-takeover.qmd). Shares come with voting rights. Voting rights let you hand the lobbyists an optimal budget calculated by the Optimal Budget Generator to maximize health and wealth. The engineers switch from guidance systems to surgical robots. Same math. Fewer craters. The shareholders get appreciation in a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. The CEO's mother gets her Parkinson's trial. The lobbyists get a raise. Nobody loses anything. The previous arrangement was losing money for everyone in it simultaneously, which is harder than it sounds.
+You [buy shares](../appendix/loving-takeover.qmd). Shares come with voting rights. Voting rights let you hand the lobbyists an optimal budget calculated by the Optimal Budget Generator to maximize health and wealth. The companies invest in things that make the economy larger instead of things that make it smaller. The shareholders get appreciation in a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. The lobbyists get a raise. Nobody loses anything. The previous arrangement was losing money for everyone in it simultaneously, which is harder than it sounds.
 
 In 2021, twelve people with $12.5 million and 0.02% of ExxonMobil won three seats on its board. Vanguard and BlackRock, who own roughly 60%, voted with them. The argument was: your strategy is destroying the value of the people who own this company. Board seats across the military-industrial complex cost {{< var defense_takeover_cost_activist >}} ({{< var defense_takeover_cost_activist_pct_investable_assets >}} of the money invested on Earth).
-
-We call this a [Loving Takeover](../appendix/loving-takeover.qmd) because, on most planets, the word for "everyone involved ends up better off" is just "love."
 
 *"We were initially resistant. Then our chief weapons designer's daughter was cured of a disease he had been told was untreatable. He now runs our largest medical robotics division. He makes more money. He sleeps better. He stopped changing the subject at parties." (Military sector client, Spiral Arm 4)*
 
@@ -307,33 +299,13 @@ The Optimal Policy Generator is the sensor. The Optimal Budget Generator is the 
 **Planet Thex-9** ★★★★★
 "47 years from extinction when UOS arrived. Same trajectory as [Moronia](../futures/moronia.qmd). Same budget allocation. Same glowing rectangles. The only difference is we said yes. Our children do not understand how a species that invented mathematics could refuse to use it. Honestly, neither do we."
 
-## Your Move
+## Your First Day
 
-**Buy Class B Shares.** You have capital and want returns that compound with civilization getting better instead of worse. The floor is an ETF of the companies that control your government, no fees. The ceiling is a {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}-larger economy. All returns are projections from a published model, not guarantees. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only.
+**Your Class A share** is on file. One civic vote. Not for sale.
 
--> Request the Private Placement Memorandum
+**Class B shares** fund the takeover. Each one is a piece of the companies whose lobbying writes your laws. The floor is an ETF of those companies, no fees. The ceiling is a {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}-larger economy. All returns are projections from a published model, not guarantees. Available under Reg D 506(c) to verified accredited investors. The Private Placement Memorandum is available upon request and verification.
 
-**Claim Your Class A Share.** You are the President of Earth Optimization Services. Your Class A share is free. One civic vote per human. Not for sale.
-
--> Sign Up and Claim Your Share
-
-**Fund or Do a Task.** The decentralized TODO list for humanity is live. Every task has an expected value in health and wealth. Pledge money to fund a task (it executes when enough people commit) or do it yourself.
-
--> Browse the TODO List at optimitron.com/tasks
-
----
-
-**DISCLOSURE:** All returns are projections from a published model, not guarantees. The model, its parameters, and every derivation chain are public. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only. Equity is illiquid until an exit or listing; do not invest money you need. Full terms are in the Private Placement Memorandum, available upon request and verification of accredited investor status.
-
----
-
-Universe Optimization Services thanks you for your interest in continued existence.
-
-On most planets, you do not need to incorporate a company to stop people from dying. On yours, you do. So we did.
-
-The disease coming for someone you love almost certainly has no cure yet. This is how one gets found.
-
-I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases.
+**The TODO list** is ranked by expected value in health and wealth. Pick a task. Fund it (pledge money; it executes when enough people commit) or do it yourself.
 
 ### Accessories
 
@@ -344,3 +316,8 @@ I love you very much and I do not want you and everyone you have ever loved to b
 | [Special Education](special-education.qmd) | Free (eventually we pay you) | The whole manual, taught one-on-one by Wishonia, who checks you understood. |
 | The [Earth Optimization Prize](../economics/earth-optimization-prize-treasury.qmd) | Free to enter, pays to win | Cash prizes for the researchers, organizers, and citizens who contribute most. |
 | [Catsoline](../appendix/catsoline.qmd) | One startled cat | A feline-actuated propulsion system. 340% thermal efficiency, no fossil fuel, no patent. Proves your species can optimize literally anything when sufficiently motivated. Anything except its own government. |
+
+---
+
+**DISCLOSURE:** All returns are projections from a published model, not guarantees. The model, its parameters, and every derivation chain are public. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only. Equity is illiquid until an exit or listing; do not invest money you need. Full terms are in the Private Placement Memorandum, available upon request and verification of accredited investor status.
+
