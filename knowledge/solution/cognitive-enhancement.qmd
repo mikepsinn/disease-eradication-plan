@@ -1,0 +1,99 @@
+---
+title: "Cognitive Enhancement"
+description: "Twenty IQ points are sitting on the ground. The proven fixes cost pennies. The frontier fixes are in clinical trials. Here is the product catalog."
+published: true
+tags:
+  - eos
+  - cognitive-enhancement
+  - intelligence
+  - klotho
+  - lead
+  - iodine
+  - education
+  - product
+scores:
+  quality: 7
+  value: 8
+  timeliness: 7
+  standalone: 8
+  voice: 8
+  importance: 8
+audience: "Anyone who would like to be smarter, which is everyone, and anyone who would like everyone else to be smarter, which should also be everyone."
+feel: "The future is bright and I am about to be substantially more intelligent than I am right now, for less than the cost of a gym membership."
+do: "Fund the cognitive enhancement TODO list, starting with the interventions that cost less per IQ point than a single artillery shell."
+---
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+## The Department of Cognitive Enhancement
+
+**What it does:** Makes everyone smarter. Proven interventions first, frontier biology second, direct neural interfaces eventually.
+
+**Retail price:** The cheapest ones cost pennies per IQ point. The most expensive cost less than one missile. **Currently paying:** Nothing, because nobody calculated the return.
+
+Each IQ point of national average is associated with roughly {{< var national_iq_gdp_growth_effect_per_point >}} of annual GDP growth [@jones-schneider-iq-growth-2006]. The relationship has strong instrumental-variable support; every proposed mechanism runs the same way: smarter populations produce more. Twenty points are sitting on the ground uncollected. The return on picking them up is several thousand percent, and the current budget allocation is approximately zero.
+
+## Proven Fixes
+
+Tested, measured, published, sitting in plain sight.
+
+### Iodine
+
+Iodine deficiency lowers IQ by 8 to 13 points in children and young adults exposed during development [@qian-iodine-iq-2005; @bougma-iodine-cognition-2013]. The fix is iodized salt. It costs $0.05 per person per year. Nearly 2 billion people still live in iodine-deficient regions [@unicef-iodine-2023]. The mineral is already in the salt in wealthy countries. It is not in the salt in poor countries because poor countries do not have lobbyists for salt additives.
+
+### Lead (still)
+
+Leaded gasoline is banned. Lead paint and lead pipes are not gone. Flint, Michigan was not an anomaly; it was the anomaly that got caught. The dose-response is steepest at the lowest levels: the first 10 µg/dL of blood lead costs roughly 3.9 IQ points, with diminishing (but still real) losses above that [@lanphear-lead-iq-2005]. Most remaining exposure in wealthy countries is at these low levels, where the damage per microgram is worst. Replacing lead pipes in the United States costs an estimated $45 billion [@epa-lead-pipe-rule-2024]. The GDP cost of the remaining exposure is substantially higher. Negative-cost intervention: pays for itself and keeps paying.
+
+### Education
+
+Each additional year of schooling adds 1 to 5 IQ points [@ritchie-tucker-drob-education-iq-2018]. Ritchie and Tucker-Drob's meta-analysis of 600,000 participants found the effect is largely causal, with reduced (though not zero) selection bias. [Special Education](special-education.qmd) is designed to deliver unlimited AI-tutored education at near-zero marginal cost. You build it. The old constraint was teachers. The new constraint is deployment.
+
+### Nutrition
+
+Breastfeeding is associated with roughly 2 to 3.5 IQ points of gain, moderated by genetic variation in fatty acid metabolism [@caspi-breastfeeding-iq-2007]. Micronutrient supplementation (iron, zinc, folate) in deficient populations adds further gains. All cheaper than the diseases caused by the deficiency.
+
+## The Hardware Upgrade
+
+The proven fixes restore the brain to what it would have been without the damage. The hardware upgrade makes it better than it has ever been.
+
+### Klotho
+
+In a study of 718 cognitively healthy adults (aged 52 to 85) across three independent cohorts, people who carry one copy of the KL-VS variant of the klotho gene scored roughly 6 IQ points higher [@dubal-klotho-cognition-2014]. The mechanism: elevated GluN2B, an NMDA receptor subunit that strengthens learning and synaptic plasticity.
+
+In 2023, Castner and colleagues gave aged rhesus macaques a single low-dose klotho injection and improved their spatial memory from 45% to 60% accuracy [@castellano-klotho-primates-2023]. One shot. Old monkeys. Measurable improvement.
+
+Replication is incomplete (Müller et al. failed to find the effect in adults 55 to 87 [@muller-klotho-replication-2021]), but the biology is promising enough that Minicircle launched a Phase 1 klotho gene therapy trial in late 2025 (NCT07216781) [@minicircle-klotho-trial-2025]. Their approach: inject minicircle DNA into abdominal fat, the cells produce klotho for roughly a year, the DNA degrades and clears. No permanent genome integration. Twenty-four participants enrolled. Results expected mid-2026.
+
+A 6-point population-wide IQ gain delivered by annual injection would be worth trillions in GDP. The [Decentralized FDA](dfda.qmd) would run this trial at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}.
+
+### Neuroplasticity Restoration
+
+Adult brains are less plastic than child brains. Neural networks calcify with age. Valproic acid reopens critical-period learning in adults (Gervain et al. demonstrated this with absolute pitch [@gervain-valproic-acid-pitch-2013]). Psychedelics promote structural neuroplasticity [@ly-psychedelics-neuroplasticity-2018]. HDAC inhibitors are being investigated as general plasticity enhancers.
+
+A seventy-year-old whose neural networks can still update is a seventy-year-old who can change their mind when the data changes. Firmware update, not personality transplant.
+
+### Brain-Computer Interfaces
+
+The bandwidth between a human brain and the outside world is roughly 40 bits per second (reading) to 10 bits per second (typing). A USB cable carries 5 billion. The interface is the bottleneck. Direct neural interfaces remove it.
+
+Longest horizon. Least certain. Only intervention with no theoretical ceiling. Everything else moves you a few inches up the ladder. This moves the ladder.
+
+## The Menu {#tbl-cognitive-menu}
+
+: Cognitive enhancement interventions ranked by readiness and cost-effectiveness. {#tbl-cognitive-menu}
+
+| Intervention | IQ gain | Cost | Status |
+|---|---|---|---|
+| Iodized salt | +8–13 points | $0.05/person/year | Proven, unevenly deployed |
+| Lead pipe replacement | +2–4 points (low-level exposed) | ~$45B (US) | Proven, underfunded |
+| AI-tutored education | +1–5 points/year | Near-zero marginal ([Special Education](special-education.qmd)) | Build this |
+| Breastfeeding support + micronutrients | +2–3.5 points | Pennies/day | Proven, underfunded |
+| Klotho gene therapy | ~6 points | Phase 1 trial underway | [Minicircle trial](https://clinicaltrials.gov/study/NCT07216781) |
+| Neuroplasticity restoration | TBD | TBD | Research stage |
+| Brain-computer interface | No ceiling | TBD | Long horizon |
+
+These interventions target different deficiencies in different populations; the gains are not simply additive. But iodine supplementation alone, in the nearly 2 billion people who lack it, would produce the largest single cognitive gain in human history, for the cost of salt.
+
+The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) would score each of these by cost per IQ point per capita. The current allocation for population-wide cognitive enhancement is approximately zero.
+
+*"We deployed the proven fixes in the first fiscal quarter. National IQ rose 11 points. Crime fell. GDP grew. Tax revenue increased. The program paid for itself in 8 months. Our main regret is the 4,000 years we spent debating whether intelligence was genetic and therefore none of our business." (Planet Keth-7, client since 8,000 BCE)*
