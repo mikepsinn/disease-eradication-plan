@@ -1,0 +1,20 @@
+---
+title: "Page not found"
+description: "Find your way back to How to End War and Disease."
+author: []
+date: ""
+toc: false
+sidebar: how-to-end-war-and-disease
+search: false
+page-navigation: false
+include-before-body:
+  - text: |
+      <script>
+      const featureFlags = document.querySelector('meta[name="dih-disable-features"]');
+      if (featureFlags) featureFlags.content += ',share,ci-toggle';
+      </script>
+---
+
+That address does not exist.
+
+Use the menu or search to find what you need, or [return to the start](https://manual.warondisease.org/).

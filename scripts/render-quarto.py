@@ -1096,6 +1096,9 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     }
     required_extensions = {".css", ".scss", ".tex", ".csl", ".png", ".ico", ".toml"}
     required_files = {"favicon.ico", "pyproject.toml", "netlify.toml", "talk.html"}
+    if config_name == "manual":
+        # Quarto renders this with book navigation, outside the chapter list.
+        required_files.add("404.qmd")
 
     # Ignore patterns for subdirectories (e.g., __pycache__ inside dih_models)
     # Large asset dirs that standalone papers never need (audiobook alone is 18 GB)
