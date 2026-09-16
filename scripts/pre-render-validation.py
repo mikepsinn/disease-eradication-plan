@@ -15,6 +15,7 @@ Validates .qmd and .md files before Quarto rendering to catch errors early:
 - Unknown Quarto variables ({{< var name >}}) not defined in _variables.yml
 - Missing citations ([@citation-id]) not found in references.bib
 - _quarto.yml configuration (validates all chapter paths exist)
+- Manual canonical URLs and legacy subdomain redirect destinations
 - Figure files with YAML frontmatter (knowledge/figures/*.qmd should not have frontmatter)
 - Unclosed code blocks (missing closing ```) which cause code to leak into output
 - Duplicate _latex variables (same equation appearing multiple times indicates redundancy)
@@ -36,9 +37,9 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Dict, List, Optional, Set, Tuple
-from urllib.parse import unquote
+from urllib.parse import unquote, urljoin, urlsplit
 
 # Set UTF-8 encoding for stdout and stderr on Windows
 if sys.platform == 'win32':
@@ -59,6 +60,9 @@ from lib.quarto_config_utils import (
     get_qmd_files_for_config,
 )
 from dih_models.image_paths import local_image_path
+from dih_models.markdown_export import split_qmd_frontmatter
+from dih_models.subdomain_redirects_generator import collect_subdomain_redirects
+from dih_models.yaml_utils import load_quarto_config
 
 # Use C-accelerated YAML loader when available (21x faster on _variables.yml)
 try:
@@ -1808,6 +1812,97 @@ def validate_quarto_config():
             check_file_refs(config["book"]["appendices"], "book.appendices")
 
 
+def check_manual_url_targets(project_root: Optional[Path] = None):
+    """Check published manual URLs against source outputs, without network access.
+
+    External sites need deployment smoke checks. Source existence alone is not
+    enough here: a QMD must be included in the manual to produce a public page.
+    """
+    project_root = (project_root or Path.cwd()).resolve()
+    manual_path = project_root / "_quarto-manual.yml"
+    manual = load_quarto_config(manual_path)
+    manual_url = (manual.get("website") or {}).get("site-url") or (manual.get("book") or {}).get("site-url")
+    if not manual_url:
+        return
+    manual_host = urlsplit(manual_url).hostname
+
+    def route_key(url: str) -> str:
+        path = unquote(urlsplit(url).path).rstrip("/")
+        if path.endswith(".html"):
+            path = path[:-5]
+        if path.endswith("/index"):
+            path = path[:-6]
+        return path or "/"
+
+    routes: Set[str] = set()
+    index_source = manual.get("dih-render", {}).get("index-source", "index.qmd")
+    for source in get_qmd_files_for_config(manual_path):
+        source_path = project_root / source
+        if not source_path.is_file():
+            continue
+        metadata, _ = split_qmd_frontmatter(source_path.read_text(encoding="utf-8"))
+        source_url = "/" + PurePosixPath(source).with_suffix(".html").as_posix()
+        html_format = (metadata.get("format") or {}).get("html", {}) if isinstance(metadata.get("format"), dict) else {}
+        output_file = metadata.get("output-file") or (html_format.get("output-file") if isinstance(html_format, dict) else None)
+        if output_file:
+            source_url = urljoin(source_url, output_file)
+        if source == index_source:
+            source_url = "/index.html"
+        routes.add(route_key(source_url))
+        for alias in metadata.get("aliases", []):
+            routes.add(route_key(urljoin(source_url, alias)))
+
+    # Explicitly copied HTML resources (for example the scoreboard embed).
+    for resource in manual.get("project", {}).get("resources", []):
+        for match in project_root.glob(resource):
+            html_files = match.rglob("*.html") if match.is_dir() else [match]
+            for html_path in html_files:
+                if html_path.is_file() and html_path.suffix == ".html":
+                    routes.add(route_key("/" + html_path.relative_to(project_root).as_posix()))
+
+    targets: List[Tuple[Path, str, str]] = []
+    for config_path in sorted(project_root.glob("_quarto-*.yml")):
+        config = load_quarto_config(config_path)
+        for section in ("website", "book"):
+            site_url = (config.get(section) or {}).get("site-url")
+            if site_url:
+                targets.append((config_path, f"{section}.site-url", site_url))
+        own_site_url = (config.get("metadata", {}).get("publishing", {}).get("own-site") or {}).get("url")
+        if own_site_url:
+            targets.append((config_path, "metadata.publishing.own-site.url", own_site_url))
+
+    # Also cover shortcut hosts that are not backed by a paper config. All
+    # generated redirect artifacts use this same source mapping.
+    configured_urls = {url for _, _, url in targets}
+    for host, target in collect_subdomain_redirects(project_root).items():
+        if target not in configured_urls:
+            targets.append((project_root / "cloudflare/redirect-worker/redirect-map.json", host, target))
+
+    # Check literal Pages destinations too; wildcard substitutions are runtime
+    # paths and cannot be resolved to a single source page before deployment.
+    redirects_path = project_root / "cloudflare/pages/manual/_redirects"
+    if redirects_path.exists():
+        for line in redirects_path.read_text(encoding="utf-8").splitlines():
+            fields = line.split()
+            if len(fields) < 2 or fields[0].startswith("#"):
+                continue
+            target = urljoin(manual_url, fields[1])
+            if not re.search(r"[:*]", urlsplit(target).path):
+                targets.append((redirects_path, fields[0], target))
+
+    for config_path, field, target in targets:
+        if urlsplit(target).hostname != manual_host or route_key(target) in routes:
+            continue
+        lines = config_path.read_text(encoding="utf-8").splitlines() if config_path.exists() else []
+        line_number = next((i for i, line in enumerate(lines, 1) if target in line or field in line), 1)
+        errors.append(ValidationError(
+            file=config_path.relative_to(project_root).as_posix(),
+            line=line_number,
+            message=f"Manual URL target is not rendered by _quarto-manual.yml: {target}",
+            context=f"{field}: use the rendered page URL or add its source to the manual config",
+        ))
+
+
 def validate_file(
     filepath: str,
     defined_vars: Set[str],
@@ -2134,6 +2229,7 @@ def main():
         logger.debug("No citations loaded")
 
     validate_quarto_config()
+    check_manual_url_targets()
     check_source_image_dpi()
     check_epub_compatibility()
 

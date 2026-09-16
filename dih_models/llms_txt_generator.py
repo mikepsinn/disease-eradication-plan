@@ -24,6 +24,7 @@ import logging
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from urllib.parse import urlsplit
 
 from dih_models.yaml_utils import load_quarto_config
 
@@ -79,7 +80,8 @@ def extract_site_info(config_path: Path, config_name: str) -> Optional[Dict[str,
 
     # Build PDF URL
     pdf_url = None
-    if pdf_file and site_url:
+    # A manual chapter URL is not a directory containing a deployed PDF.
+    if pdf_file and site_url and not urlsplit(site_url).path.endswith(".html"):
         base_url = site_url.rstrip("/")
         pdf_url = f"{base_url}/{pdf_file}"
 

@@ -9,3 +9,7 @@
 # the .html form would add a second redirect hop.
 /delay-counter-preview.html /assets/scoreboard-embed 301
 /scoreboard /assets/scoreboard-embed 302
+
+# Old APA publication URL, including cached legacy-subdomain redirects.
+/knowledge/appendix/algorithmic-public-administration.html /knowledge/appendix/algorithmic-public-administration-paper 301
+/knowledge/appendix/algorithmic-public-administration /knowledge/appendix/algorithmic-public-administration-paper 301

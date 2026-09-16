@@ -118,7 +118,9 @@ def extract_paper_info(
         pdf_file = dih_render.get("pdf-output-file")
 
     pdf_url = None
-    if pdf_file and site_url:
+    # A chapter URL does not establish a hosted PDF. Only standalone site
+    # roots bundle their PDF; retain DOI links for manual-hosted papers.
+    if pdf_file and site_url and not urlsplit(site_url).path.endswith(".html"):
         base_url = site_url.rstrip("/")
         pdf_url = f"{base_url}/{pdf_file}"
 

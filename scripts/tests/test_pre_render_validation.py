@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 import pytest
+import yaml
 
 
 def load_pre_render_validation_module():
@@ -199,3 +200,104 @@ def test_main_always_runs_generation_before_validation(monkeypatch) -> None:
             {"timeout": 1800},
         )
     ]
+
+
+@pytest.fixture
+def manual_url_project(tmp_path: Path):
+    """A small manual with the same root, paper, and shortcut routing as production."""
+    paper = "knowledge/appendix/algorithmic-public-administration-paper.qmd"
+    chapters = ["index.qmd", paper, "knowledge/links.qmd", "knowledge/podcast.qmd", "knowledge/papers.qmd"]
+    for source in ["index-manual.qmd", *chapters[1:]]:
+        path = tmp_path / source
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text("---\ntitle: Test\n---\n", encoding="utf-8")
+    manual = {
+        "book": {"site-url": "https://manual.WarOnDisease.org", "chapters": chapters},
+        "dih-render": {"index-source": "index-manual.qmd"},
+        "project": {"resources": ["assets/"]},
+    }
+    (tmp_path / "_quarto-manual.yml").write_text(yaml.safe_dump(manual), encoding="utf-8")
+    return tmp_path
+
+
+@pytest.mark.parametrize(
+    ("target", "valid"),
+    [
+        ("https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html", False),
+        ("https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration-paper.html", True),
+        ("https://manual.WarOnDisease.org/knowledge/appendix/algorithmic-public-administration-paper?ref=apa#summary", True),
+        ("https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration%2Dpaper.html", True),
+        ("https://manual.warondisease.org/knowledge/appendix/knowledge/appendix/algorithmic-public-administration-paper.html", False),
+        ("https://manual.warondisease.org/index.html", True),
+        ("https://manual.warondisease.org/index-manual.html", False),
+        ("https://paper.example/", True),
+    ],
+)
+def test_manual_canonical_url_targets(manual_url_project: Path, target: str, valid: bool) -> None:
+    module = load_pre_render_validation_module()
+    config = {
+        "website": {"site-url": target},
+        "dih-render": {"redirect-from": "https://apa.warondisease.org"},
+    }
+    (manual_url_project / "_quarto-apa.yml").write_text(yaml.safe_dump(config), encoding="utf-8")
+
+    module.check_manual_url_targets(manual_url_project)
+
+    assert bool(module.errors) is not valid
+    if not valid:
+        assert len(module.errors) == 1
+        assert module.errors[0].file == "_quarto-apa.yml"
+        assert target in module.errors[0].message
+
+
+def test_manual_publication_url_must_be_rendered(manual_url_project: Path) -> None:
+    module = load_pre_render_validation_module()
+    # Merely existing on disk is insufficient if the manual never renders it.
+    (manual_url_project / "orphan.qmd").write_text("# Orphan\n", encoding="utf-8")
+    config = {"metadata": {"publishing": {"own-site": {"url": "https://manual.warondisease.org/orphan.html"}}}}
+    (manual_url_project / "_quarto-apa.yml").write_text(yaml.safe_dump(config), encoding="utf-8")
+
+    module.check_manual_url_targets(manual_url_project)
+
+    assert len(module.errors) == 1
+    assert "metadata.publishing.own-site.url" in module.errors[0].context
+
+
+def test_manual_shortcut_target_must_be_rendered(manual_url_project: Path) -> None:
+    module = load_pre_render_validation_module()
+    (manual_url_project / "knowledge/papers.qmd").unlink()
+
+    module.check_manual_url_targets(manual_url_project)
+
+    assert len(module.errors) == 1
+    assert "papers.warondisease.org" in module.errors[0].context
+
+
+@pytest.mark.parametrize("target", ["/knowledge/appendix/renamed", "/knowledge/appendix/legacy.html", "/assets/embed"])
+def test_manual_aliases_output_names_and_resources(manual_url_project: Path, target: str) -> None:
+    module = load_pre_render_validation_module()
+    paper = manual_url_project / "knowledge/appendix/algorithmic-public-administration-paper.qmd"
+    paper.write_text("---\nformat:\n  html:\n    output-file: renamed.html\naliases:\n  - /knowledge/appendix/legacy.html\n---\n", encoding="utf-8")
+    assets = manual_url_project / "assets"
+    assets.mkdir()
+    (assets / "embed.html").write_text("<h1>Embed</h1>", encoding="utf-8")
+    redirects = manual_url_project / "cloudflare/pages/manual/_redirects"
+    redirects.parent.mkdir(parents=True)
+    redirects.write_text(f"/old {target} 301\n", encoding="utf-8")
+
+    module.check_manual_url_targets(manual_url_project)
+
+    assert module.errors == []
+
+
+def test_manual_pages_redirect_missing_target(manual_url_project: Path) -> None:
+    module = load_pre_render_validation_module()
+    redirects = manual_url_project / "cloudflare/pages/manual/_redirects"
+    redirects.parent.mkdir(parents=True)
+    redirects.write_text("# Legacy routes\n/old /missing 301\n", encoding="utf-8")
+
+    module.check_manual_url_targets(manual_url_project)
+
+    assert len(module.errors) == 1
+    assert module.errors[0].file == "cloudflare/pages/manual/_redirects"
+    assert module.errors[0].line == 2

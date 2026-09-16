@@ -46,7 +46,7 @@ author:
 website:
   title: "Algorithmic Public Administration: A Protocol for Replacing Government Intermediaries with Deterministic Functions"
   description: 'A protocol combining five primitives (transparent ledger, preference aggregation, evidence engine, identity verification, automated monetary policy) to replace mechanical government agency functions, eliminating administrative intermediation costs while preserving democratic control.'
-  site-url: https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html
+  site-url: https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration-paper.html
   favicon: assets/icons/algorithmic-public-administration-favicon.png
   page-navigation: true
   page-footer:
@@ -138,7 +138,7 @@ metadata:
   # Publication tracking
   publishing:
     own-site:
-      url: "https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html"
+      url: "https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration-paper.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -229,7 +229,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration.html}
+          \paperurl{https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration-paper.html}
     geometry:
       - top=1in
       - bottom=1in

@@ -27,6 +27,7 @@ Usage:
 import re
 from pathlib import Path
 from typing import Any, Dict
+from urllib.parse import urljoin
 
 from dih_models.formatting import format_parameter_value
 from dih_models.latex_generation import generate_expanded_latex, smart_title_case, LATEX_BLOCK_SEP
@@ -197,7 +198,7 @@ def generate_parameters_and_calculations_qmd(
     # EPUB + DOCX: show only a link to the full online version
     # Note: Quarto doesn't support comma-separated formats, so we need separate blocks
     if site_url:
-        full_url = f"{site_url.rstrip('/')}/knowledge/appendix/parameters-and-calculations.html"
+        full_url = urljoin(site_url, "/knowledge/appendix/parameters-and-calculations.html")
         link_text = f"Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [{full_url}]({full_url})."
     else:
         link_text = "Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available in the online version of this document."
