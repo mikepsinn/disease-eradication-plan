@@ -1,7 +1,10 @@
 # robots.txt - Allow all crawlers (including AI)
 # https://www.robotstxt.org/
+# Content Signals: https://contentsignals.org/
+# AI training, search indexing, and AI input are welcome.
 
 User-agent: *
 Allow: /
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 Sitemap: https://manual.warondisease.org/sitemap.xml

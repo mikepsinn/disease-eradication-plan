@@ -143,7 +143,10 @@ format:
     for name, content in resources.items():
         assert (build_dir / name).read_text(encoding="utf-8") == content
     robots = (build_dir / "robots.txt").read_text(encoding="utf-8")
-    assert "User-agent: *\nAllow: /" in robots
+    assert (
+        "User-agent: *\nAllow: /\n"
+        "Content-Signal: ai-train=yes, search=yes, ai-input=yes\n"
+    ) in robots
     parser = RobotFileParser()
     parser.parse(robots.splitlines())
     assert parser.can_fetch("ExampleBot", site_url)

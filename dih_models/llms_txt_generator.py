@@ -281,10 +281,10 @@ def generate_llms_txt(project_root: Path) -> Path:
 
 def generate_robots_txt(project_root: Path, site_url: Optional[str] = None) -> Path:
     """
-    Generate robots.txt that allows all crawlers.
+    Generate robots.txt that welcomes crawling and AI content use.
 
     User-agent: * with Allow: / permits all crawlers (including AI).
-    No need to explicitly list each one.
+    Content Signals explicitly welcome training, search, and AI input.
 
     Args:
         project_root: Root directory of the project
@@ -295,9 +295,12 @@ def generate_robots_txt(project_root: Path, site_url: Optional[str] = None) -> P
     """
     content = """# robots.txt - Allow all crawlers (including AI)
 # https://www.robotstxt.org/
+# Content Signals: https://contentsignals.org/
+# AI training, search indexing, and AI input are welcome.
 
 User-agent: *
 Allow: /
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 """
 
     if site_url is None:
