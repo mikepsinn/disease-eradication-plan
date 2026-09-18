@@ -51,7 +51,7 @@ book:
     - index.qmd
     - knowledge/appendix/parameters-and-calculations.qmd
   page-footer:
-    left: "© 2025 Mike P. Sinn | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "© 2025 Mike P. Sinn | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/state-right-to-trial-impact.pdf)"
   navbar:
     right:
@@ -124,9 +124,9 @@ metadata:
   edition: "Working Paper"
   copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://rtt-impact.acceleratedmedicine.org"
   publisher-name: "Mike P. Sinn"

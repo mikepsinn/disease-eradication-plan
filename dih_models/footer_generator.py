@@ -58,7 +58,7 @@ def generate_footer_html(project_root: Path) -> Path:
 <div class="book-footer">
   <p class="book-footer-line">
     &copy; 2026 <a href="https://warondisease.org" class="book-footer-link">The International Campaign to End War and Disease</a> |
-    <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="book-footer-link">CC BY-NC 4.0</a> |
+    <a href="https://creativecommons.org/licenses/by/4.0/" class="book-footer-link">CC BY 4.0</a> |
     <a href="https://manual.WarOnDisease.org/knowledge/about.html" class="book-footer-link">About &amp; Follow</a> |
     <a href="https://github.com/wishonia/earth-optimization-protocol" class="book-footer-link">&#128194; Source Code &amp; Data</a>
   </p>

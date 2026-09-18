@@ -84,7 +84,7 @@ book:
           - href: knowledge/references.qmd
             text: "References & Citations"
   page-footer:
-    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[Get Manual](/knowledge/links.html) | [Listen](/knowledge/podcast.html) | [All Papers](/knowledge/papers.html)"
     right: "[Support](https://warondisease.org/donate) | [Vote](https://WarOnDisease.org)"
   chapters:
@@ -343,10 +343,10 @@ metadata:
   # Copyright and licensing
   copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
   # rights: moved to EPUB copyright page - Pandoc puts Dublin Core 'rights' on the title page
-  # rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  # rights: "Creative Commons Attribution 4.0 International License"
   
   # Publication information
   publisher: "International Campaign to End War and Disease"

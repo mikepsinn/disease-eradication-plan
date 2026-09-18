@@ -206,7 +206,7 @@ def generate_llms_txt(project_root: Path) -> Path:
         "",
         "> Academic research project proposing the 1% Treaty: redirecting 1% of global military spending to pragmatic clinical trials. Contains peer-reviewed analyses, governance frameworks, and implementation strategies.",
         "",
-        "This project consists of multiple interconnected research papers on health economics, regulatory reform, and democratic governance. All content is licensed under CC BY-NC 4.0.",
+        "This project consists of multiple interconnected research papers on health economics, regulatory reform, and democratic governance. Original project content is licensed under CC BY 4.0. Third-party material retains its own rights and license terms.",
         "",
         "## Core Concepts",
         "",
@@ -266,7 +266,9 @@ def generate_llms_txt(project_root: Path) -> Path:
         "",
         "## License",
         "",
-        "CC BY-NC 4.0 - Creative Commons Attribution-NonCommercial 4.0 International",
+        "[CC BY 4.0 - Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)",
+        "",
+        "Commercial sharing and adaptation are allowed with appropriate credit, a link to the license, and an indication of changes.",
         "",
     ])
 

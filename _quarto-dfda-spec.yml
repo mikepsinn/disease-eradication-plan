@@ -60,7 +60,7 @@ website:
   favicon: assets/icons/dfda-spec-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 Mike P. Sinn | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "© 2025 Mike P. Sinn | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/dfda-spec-paper.pdf) | [Zenodo](https://doi.org/10.5281/zenodo.18203375)"
     right: "[Manual](https://manual.warondisease.org)"
   navbar:
@@ -121,9 +121,9 @@ metadata:
   edition: "Working Paper"
   copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
   publisher: "Institute for Accelerated Medicine"
   publisher-url: "https://acceleratedmedicine.org"
   publisher-name: "Mike P. Sinn"

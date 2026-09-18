@@ -36,9 +36,9 @@ The plan _is_ the repository. This is not a metaphor. If you want to improve hum
 
 *Where We Explain Intellectual Property to a Species That Invented Both Copyright AND Piracy*
 
-By contributing to this repository, you agree that your work will be licensed under the [Creative Commons Attribution–ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
+By contributing to this repository, you agree that your work will be licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
-This is the license humans invented for "anyone can use this for anything, but you have to say where you got it and you can't make your version proprietary."
+This license allows sharing and adaptation for any purpose, including commercial use, with attribution.
 
 ### What This Actually Means
 
@@ -46,13 +46,13 @@ This is the license humans invented for "anyone can use this for anything, but y
 
 - **Attribution:** You get credit for your contributions. Your name goes on the book as a co-author. Future historians will know you helped prevent humanity from being stupid. It's like signing the Declaration of Independence except less likely to get you shot by the British.
 
-- **ShareAlike:** Anyone can use, adapt, translate, teach, or sell courses based on this work. Derivatives must use the same CC BY-SA 4.0 license. Nobody can take a fork proprietary. This means a professor can teach it, a publisher can print it, and a consultant can train executives on the treaty mechanism. All of that is more distribution, which is the point.
+- **Reuse:** Anyone can share, adapt, translate, teach, or sell this work. Give appropriate credit, link to the license, and indicate any changes. Adaptations do not have to use the same license, but must respect the CC BY 4.0 terms for the original material.
 
 - **Copyright:** You retain copyright to your contributions. You still own what you wrote. We're not stealing it. Unlike most of the internet, which is entirely built on stealing things and calling it "sharing economy."
 
-Translation: Anyone can use your stuff for anything, as long as they credit the source and keep the same license. You can still use your own stuff however you want.
+Translation: Anyone can reuse your work commercially or otherwise, with credit, a license link, and a note of changes. You can still use your own work however you want.
 
-This lets the project remain fully open while ensuring it can also be distributed and maintained coherently instead of fragmenting into 47 competing versions like what happened to Linux (there are over 600 Linux distributions now, because humans cannot agree on anything).
+Third-party material retains its own rights and license terms.
 
 ---
 
@@ -91,7 +91,7 @@ You **CAN**:
 Two rules:
 
 1. **Credit the source.** Link to [warondisease.org](https://warondisease.org).
-2. **Keep the same license.** Derivatives must use CC BY-SA 4.0. Nobody can take a fork proprietary.
+2. **Link the license and mark changes.** Include the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/) and indicate whether you modified the original material.
 
 ---
 

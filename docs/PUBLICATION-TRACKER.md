@@ -329,7 +329,8 @@ python scripts/publish-zenodo.py --list
 
 ## Notes
 
-- All publications licensed CC BY-NC 4.0
+- Current original project content is licensed CC BY 4.0 (commercial reuse allowed with attribution).
+- Existing external deposits may still display older license metadata; update that metadata when publishing their next versions.
 - Author: Mike P. Sinn, Institute for Accelerated Medicine
 - ORCID: [0009-0006-0212-1094](https://orcid.org/0009-0006-0212-1094)
 - Contact: mike@warondisease.org
