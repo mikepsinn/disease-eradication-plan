@@ -1096,6 +1096,13 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     }
     required_extensions = {".css", ".scss", ".tex", ".csl", ".png", ".ico", ".toml"}
     required_files = {"favicon.ico", "pyproject.toml", "netlify.toml", "talk.html"}
+    # Honor explicitly declared root resources (robots.txt, llms.txt,
+    # _redirects, etc.) instead of silently dropping them from Quarto's input.
+    config = load_quarto_config(project_root / metadata["config_file"])
+    required_files.update(
+        resource for resource in config.get("project", {}).get("resources", [])
+        if isinstance(resource, str) and Path(resource).name == resource
+    )
     if config_name == "manual":
         # Quarto renders this with book navigation, outside the chapter list.
         required_files.add("404.qmd")
@@ -1162,6 +1169,12 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
 
     if verbose:
         print(f"[OK] Copied {copied_count} items to _build_temp/{config_name}/", flush=True)
+
+    # Root resources are shared in the checkout, but each deployed site needs
+    # its own sitemap declaration. Quarto preserves an existing robots.txt.
+    if (build_temp / "robots.txt").is_file():
+        from dih_models.llms_txt_generator import generate_robots_txt
+        generate_robots_txt(build_temp, site_url=metadata.get("site_url"))
 
     # Use per-paper filtered _variables.yml if available.
     # This ensures citeproc only sees citations embedded in variables that are actually used.

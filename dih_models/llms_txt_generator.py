@@ -24,7 +24,7 @@ import logging
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
-from urllib.parse import urlsplit
+from urllib.parse import urljoin, urlsplit
 
 from dih_models.yaml_utils import load_quarto_config
 
@@ -279,7 +279,7 @@ def generate_llms_txt(project_root: Path) -> Path:
     return output_path
 
 
-def generate_robots_txt(project_root: Path) -> Path:
+def generate_robots_txt(project_root: Path, site_url: Optional[str] = None) -> Path:
     """
     Generate robots.txt that allows all crawlers.
 
@@ -288,6 +288,7 @@ def generate_robots_txt(project_root: Path) -> Path:
 
     Args:
         project_root: Root directory of the project
+        site_url: URL of the site being built (defaults to the manual config)
 
     Returns:
         Path to the generated robots.txt file
@@ -298,6 +299,17 @@ def generate_robots_txt(project_root: Path) -> Path:
 User-agent: *
 Allow: /
 """
+
+    if site_url is None:
+        manual_config = load_quarto_config(project_root / "_quarto-manual.yml")
+        site_url = (manual_config.get("website") or {}).get("site-url") or (manual_config.get("book") or {}).get("site-url")
+    if site_url:
+        parsed = urlsplit(site_url)
+        site_url = parsed._replace(netloc=parsed.netloc.lower()).geturl().rstrip("/")
+        # Manual chapter URLs share the manual's root sitemap. Standalone
+        # sites can have their own host or deployment subdirectory.
+        sitemap_url = urljoin(site_url, "/sitemap.xml") if parsed.path.endswith(".html") else f"{site_url}/sitemap.xml"
+        content += f"\nSitemap: {sitemap_url}\n"
 
     output_path = project_root / "robots.txt"
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:
