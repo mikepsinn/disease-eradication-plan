@@ -605,6 +605,7 @@ def _load_site_papers(project_root: Path, dih_render: Dict[str, Any]) -> List[Di
             "pdf_output_file": paper_render.get("pdf-output-file"),
             "doi": paper_metadata.get("doi"),
             "keywords": paper_metadata.get("keywords"),
+            "image": paper_metadata.get("image"),
         })
     return papers
 
@@ -648,6 +649,7 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
     return {
         "config_file": config_file,
         "index_source": dih_render.get("index-source"),
+        "image": config.get("metadata", {}).get("image"),
         # Papers published as root-level pages of a multi-paper site, and the
         # site's own home page. index-page is not index-source: generators that
         # read index-source treat the config as a paper (Zenodo, papers index).
@@ -798,13 +800,13 @@ def prepare_config(config_name: str, verbose: bool = True) -> bool:
     # Copy and transform index file if specified
     index_source = metadata["index_source"]
     if index_source and not _copy_paper_to_root(
-        project_root, config_name, index_source, "index.qmd", verbose=verbose
+        project_root, config_name, index_source, "index.qmd", image=metadata["image"], verbose=verbose
     ):
         return False
 
     index_page = metadata["index_page"]
     if index_page and not _copy_paper_to_root(
-        project_root, config_name, index_page, "index.qmd", verbose=verbose
+        project_root, config_name, index_page, "index.qmd", image=metadata["image"], verbose=verbose
     ):
         return False
 
@@ -833,6 +835,7 @@ def prepare_config(config_name: str, verbose: bool = True) -> bool:
             paper["source"],
             f"{paper['slug']}.qmd",
             extra_frontmatter=extra_frontmatter,
+            image=paper["image"],
             verbose=verbose,
         ):
             return False
@@ -858,6 +861,25 @@ def _add_missing_frontmatter(content: str, fields: Dict[str, Any]) -> str:
     return content[:match.end(1)] + "\n" + addition + content[match.end(1):]
 
 
+def _set_frontmatter_image(content: str, image: str) -> str:
+    """Use publication artwork on generated pages without editing source chapters."""
+    match = re.match(r"---\r?\n(.*?)\r?\n---\r?\n", content, flags=re.DOTALL)
+    if not match:
+        return "---\n" + yaml.safe_dump({"image": image}) + "---\n" + content
+    frontmatter = match.group(1)
+    node = yaml.compose(frontmatter)
+    if isinstance(node, yaml.MappingNode):
+        for key, value in node.value:
+            if key.value == "image":
+                start = match.start(1) + key.start_mark.index
+                end = match.start(1) + value.end_mark.index
+                replacement = yaml.safe_dump({"image": image}).rstrip("\n")
+                if content[start:end].endswith("\n"):
+                    replacement += "\n"
+                return content[:start] + replacement + content[end:]
+    return _add_missing_frontmatter(content, {"image": image})
+
+
 def _copy_paper_to_root(
     project_root: Path,
     config_name: str,
@@ -865,6 +887,7 @@ def _copy_paper_to_root(
     target_name: str,
     extra_frontmatter: Optional[Dict[str, Any]] = None,
     verbose: bool = True,
+    image: Optional[str] = None,
 ) -> bool:
     """Copy a nested paper QMD to a root-level page, fixing its relative paths."""
     source_path = project_root / index_source
@@ -883,6 +906,8 @@ def _copy_paper_to_root(
 
     if extra_frontmatter:
         content = _add_missing_frontmatter(content, extra_frontmatter)
+    if image:
+        content = _set_frontmatter_image(content, image)
 
     # Calculate path depth for transformation
     source_parts = Path(index_source).parts

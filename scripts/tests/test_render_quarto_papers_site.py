@@ -68,6 +68,35 @@ def test_papers_site_reads_each_paper_from_its_own_config(tmp_path: Path, monkey
     ]
 
 
+def test_publication_image_overrides_source_only_in_generated_pages(tmp_path: Path, monkeypatch) -> None:
+    module = load_render_quarto_module()
+    write_papers_site(tmp_path)
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(module, "_find_project_root", lambda: tmp_path)
+    config = tmp_path / "_quarto-alpha-paper.yml"
+    config.write_text(config.read_text() + "  image: https://example.org/new.jpg\n", encoding="utf-8")
+    source = tmp_path / "knowledge/appendix/alpha-paper.qmd"
+    original = source.read_text().replace("title: Alpha", "title: Alpha\nimage: old.jpg")
+    source.write_text(original, encoding="utf-8")
+
+    assert module.prepare_config("site", verbose=False)
+    assert "image: https://example.org/new.jpg" in (tmp_path / "alpha.qmd").read_text()
+    assert source.read_text() == original
+    assert module.prepare_config("alpha-paper", verbose=False)
+    assert "image: https://example.org/new.jpg" in (tmp_path / "index.qmd").read_text()
+
+
+@pytest.mark.parametrize("image_field", ["image: old.jpg\n", "image: >\n  old.jpg\n", ""])
+def test_image_override_preserves_other_frontmatter_and_body(image_field: str) -> None:
+    module = load_render_quarto_module()
+    content = "---\ntitle: Original\n" + image_field + "description: Preserved\n---\n\nBody.\n"
+    result = module._set_frontmatter_image(content, "https://example.org/new.jpg")
+    assert module.yaml.safe_load(result.split("---")[1]) == {
+        "title": "Original", "description": "Preserved", "image": "https://example.org/new.jpg"
+    }
+    assert result.endswith("---\n\nBody.\n")
+
+
 def test_papers_are_copied_to_root_pages_with_paths_and_citation_fields_fixed(
     tmp_path: Path, monkeypatch
 ) -> None:
