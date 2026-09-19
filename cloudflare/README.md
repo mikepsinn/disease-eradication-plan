@@ -19,40 +19,69 @@ Replaces the Netlify redirect/header setup (`netlify.toml`, host rules in
   Pages project, ported from `netlify.toml`. `scripts/render-quarto.py` copies
   `pages/<config-name>/*` into the deploy root after each HTML render.
 
-## One-time dashboard setup (required before this works)
+## What lives in the dashboard, not the repo
 
-1. **API token permissions.** The `CLOUDFLARE_API_TOKEN` GitHub secret needs,
-   in addition to Pages Write: Account > Workers Scripts > Edit, and for the
-   `warondisease.org` zone: Workers Routes > Edit and Zone > Read. Until then
-   the `deploy-redirect-worker` job fails (Pages deploys are unaffected).
-2. **DNS.** In the `warondisease.org` zone, add one proxied wildcard record so
-   the legacy subdomains resolve through Cloudflare: type `AAAA`, name `*`,
-   content `100::`, proxy on. Existing specific records (e.g. `manual`) take
-   precedence. Delete the old per-subdomain Netlify records.
-3. **dfda.earth.** `impact.dfda.earth` is routed by the Worker. The zone needs
-   the same wildcard DNS record and token permissions described above.
-4. **dih.earth (optional).** `impact.dih.earth` and `models.dih.earth` are in
-   the redirect map, but their routes are only generated once `"dih.earth"` is
-   added to `_ROUTE_ZONES` in `scripts/generate_redirects.py` - do that only
-   after the `dih.earth` zone exists on this Cloudflare account (plus the same
-   wildcard DNS record and token zone permissions), or the Worker deploy fails.
+Everything else (redirects, Worker routes, Pages projects, deploys, monitors)
+is declared in the repo and deployed by CI. Two things are not.
 
-`manual.warondisease.org` never invokes the Worker: routes are generated per
-legacy host, so live traffic and the Worker's request quota are independent.
+### API token
 
-## Verify after the first deploy
+The `CLOUDFLARE_API_TOKEN` GitHub secret is the Cloudflare token named
+`github-actions-eos-static-pages`. It needs:
+
+- Account: Cloudflare Pages > Edit, Workers Scripts > Edit
+- Zone: Workers Routes > Edit and Zone > Read, on every zone in `_ROUTE_ZONES`
+  (`scripts/generate_redirects.py`): `warondisease.org`, `dfda.earth`,
+  `acceleratedmedicine.org`
+
+Its zone list is specific, not "all zones". Adding a zone to `_ROUTE_ZONES`
+means editing the token first (Edit, never Roll: the secret must not change),
+or the `deploy-redirect-worker` job fails with an authentication error. Pages
+deploys are unaffected. `dih.earth` is in the redirect map but not in
+`_ROUTE_ZONES`, because that zone is not on this Cloudflare account.
+
+### DNS
+
+No credential in CI or on a dev machine can edit DNS, on purpose: a DNS token
+can repoint every domain and intercept mail, and this setup changes DNS about
+once a year. What it depends on:
+
+| Zone | Record | Why |
+|---|---|---|
+| `warondisease.org` | `manual` CNAME `warondisease-manual.pages.dev`, proxied | the book |
+| `acceleratedmedicine.org` | `papers` CNAME `institute-papers.pages.dev`, proxied | the papers site |
+| every zone in `_ROUTE_ZONES` | a **proxied** record for each host in `redirect-worker/redirect-map.json` | legacy redirects |
+
+For the last row the record's type and content do not matter, only that it
+exists and is proxied (orange cloud): the Worker answers before Cloudflare
+contacts the origin. A wildcard (`AAAA` `*` -> `100::`, proxied) covers every
+host at once; `dfda.earth` has one. `warondisease.org` and
+`acceleratedmedicine.org` do not, so each legacy host there has its own record
+(left over from Netlify and the old per-paper Pages projects). Those records
+must stay, or be replaced by a wildcard, when their old origins are deleted.
+
+A new paper needs no DNS: it is a path on the papers site. A new legacy host
+needs a proxied record only if its zone has no wildcard.
+
+Attaching a custom domain to a Pages project is scriptable
+(`POST .../pages/projects/<project>/domains`, which a `wrangler login` session
+can call), but through the API it does not create the DNS record: the domain
+stays `pending` with "CNAME record not set" until the CNAME exists. The
+dashboard's Custom domains screen does both in one step.
+
+## Verify
 
 ```bash
-curl -sI https://iab.warondisease.org/ | grep -i location
+pnpm monitor:uptimerobot:check
 ```
 
-Expect `location: https://manual.warondisease.org/knowledge/appendix/incentive-alignment-bonds-paper.html`.
-Spot-check a few more hosts from `redirect-worker/redirect-map.json`, then
-check the Pages meta files on the next manual deploy:
-
-```bash
-curl -sI https://manual.warondisease.org/assets/json/parameters.json | grep -i access-control
-```
+Checks every canonical URL and every legacy host from outside, the way a
+visitor reaches them, and needs no credentials: each must resolve, end on its
+expected URL, and serve that page's own `og:url`. A missing or unproxied DNS
+record, a Worker that did not deploy, or a redirect to the wrong page shows up
+as a named failing host. The publish workflow runs it after every deploy, and
+UptimeRobot runs the same checks every five minutes
+(`pnpm monitor:uptimerobot:sync` keeps its monitors in step with the configs).
 
 ## Pages `_redirects` is not Netlify `_redirects`
 
@@ -86,35 +115,46 @@ How it fits together:
 - Book-voice papers stay in the manual. A second publisher gets a second papers
   site the same way.
 
-### Cutover (repo side done 2026-09-19; dashboard steps below)
+### Cutover (done 2026-09-19)
 
-The six per-paper configs now declare `papers.acceleratedmedicine.org/<slug>.html`
+The six per-paper configs declare `papers.acceleratedmedicine.org/<slug>.html`
 as their `site-url` and list every host each paper has used under
-`redirect-from`. The Pages project `institute-papers` exists and
-`papers.acceleratedmedicine.org` is attached to it, pending DNS.
+`redirect-from`. All 40 monitored URLs passed the live check after the first
+deploy. The Worker redeploys only once every new target returns HTTP 200 on its
+own host, so legacy links never point at a site that is not serving yet.
 
-Two things cannot be done from the repo or with `wrangler login`:
+Worker routes run in front of Pages (confirmed on this account): hosts still
+attached to the three old Pages projects redirected without being detached.
 
-1. DNS: a proxied `CNAME papers -> institute-papers.pages.dev` in the
-   `acceleratedmedicine.org` zone. Attaching a domain through the API does not
-   create it (the domain stays `pending` with "CNAME record not set"), and
-   creating it needs Zone > DNS > Edit, which `wrangler login` does not grant.
-2. The CI token (`CLOUDFLARE_API_TOKEN`) needs Workers Routes > Edit and
-   Zone > Read on `acceleratedmedicine.org`, or the Worker deploy fails on the
-   six new routes in that zone.
+## Netlify: keep the account, delete the code
 
-Order does not matter for safety. The Worker redeploys only once every new
-target returns HTTP 200 on its own host, so until the papers site is live the
-previous Worker keeps serving and legacy links keep working. Doing both steps
-before the push lets the first run go green end to end.
+The sites moved from Netlify to Cloudflare Pages in August 2026. Netlify still
+holds about 21 of this project's sites (named like `iab-warondisease-org` and
+`manual-warondisease-org`), frozen at their last deploy. Leave them:
 
-Worker routes run in front of Pages, so hosts still attached to the three old
-projects (`dfda-spec`, `right-to-trial`, `right-to-trial-impact`) redirect
-without being detached. After `pnpm monitor:uptimerobot:check` passes, delete
-those three projects. `impact.` and `protocol.acceleratedmedicine.org` were
-frozen Netlify copies that never appeared in this repo; once they redirect, the
-Netlify site can go.
+- They cost nothing and are a rollback if Cloudflare ever misbehaves.
+- Deleting them leaves DNS records pointing at unclaimed Netlify addresses.
+  Hosts behind the Worker are unaffected, because the Worker answers first, but
+  `models.dih.earth` is not behind it (`dih.earth` is not on Cloudflare) and is
+  still served by Netlify. An unclaimed address on a live hostname lets someone
+  else claim it and serve their content on that subdomain. If a site must go,
+  remove or repoint its DNS record first.
+- `impact.` and `protocol.acceleratedmedicine.org` were Netlify copies that
+  never appeared in this repo; the Worker redirects both now.
 
-## Decommission Netlify (after verification)
+The Netlify code in the repo is different: delete it, do not mark it
+deprecated. A lingering Netlify-era file (`_redirects`) kept shipping with
+every build and took the three standalone paper sites down from the August
+migration until 2026-09-18, when it was found. What remains: `netlify.toml`
+(still copied into every build), `scripts/setup-netlify-sites.py` (broken since
+`redirect-from` became a list), `scripts/lib/netlify_deploy.py`,
+`.github/workflows/deploy-netlify.yml.disabled`, the `netlify-site-id` and
+`netlify-cname` keys in the configs, and the Netlify sections of
+`GUIDES/DEPLOYMENT.md` and `docs/PDF_EPUB_DEPLOYMENT.md`. Git history keeps it.
 
-Delete the Netlify site, then remove `netlify.toml`.
+## Old Pages projects
+
+`dfda-spec`, `right-to-trial`, and `right-to-trial-impact` no longer deploy.
+Their custom domains redirect through the Worker. They can stay or go; if one
+is deleted, keep its hosts' DNS records and rerun
+`pnpm monitor:uptimerobot:check`.
