@@ -1,139 +1,44 @@
-# GitHub Actions Deployment Setup
+# Deployment
 
-This repository uses GitHub Actions to automatically build and deploy multiple sites to Netlify.
+Two sites deploy to Cloudflare Pages from `.github/workflows/publish.yml` on every push to `develop` (and on manual dispatch from the Actions tab). Pull requests build but do not deploy.
 
-## Sites Deployed
+| Site | URL | Config | Pages project |
+|---|---|---|---|
+| The book | https://manual.warondisease.org | `_quarto-manual.yml` | `warondisease-manual` |
+| Institute papers | https://papers.acceleratedmedicine.org | `_quarto-institute-papers.yml` | `institute-papers` |
 
-| Site | URL | Netlify Secret | Output Directory |
-|------|-----|----------------|------------------|
-| **Main Book** | https://manual.WarOnDisease.org | `NETLIFY_MAIN_SITE_ID` | `_manual/warondisease` |
-| **Economics** | https://impact.warondisease.org | `NETLIFY_ECONOMICS_SITE_ID` | `_site/1-pct-treaty-impact` |
-| **Wishocracy Paper** | https://paper.wishocracy.org | `NETLIFY_WISHOCRACY_SITE_ID` | `_site/wishocracy` |
-| **IAB Paper** | https://iab.warondisease.org | `NETLIFY_IAB_SITE_ID` | `_site/iab` |
+`publish.yml` is generated. Edit `scripts/templates/publish.yml.j2` or the configs, then run `python scripts/lib/workflow_generator.py`. A config deploys when it sets `dih-render.cloudflare-pages-project`.
 
-## Required GitHub Secrets
+## What a run does
 
-Add these secrets in **Settings → Secrets and variables → Actions → Repository secrets**:
+1. `validate`: Pyright and the workflow generator tests.
+2. `build-manual` (75 minute limit) and `build-institute-papers` (120 minute limit, because it renders each member paper's PDF before the site): render, check Cloudflare's limits (20,000 files, 25 MiB per file), deploy.
+3. `deploy-redirect-worker`: deploys the Worker that 301s legacy hosts, but only after every redirect target returns HTTP 200 on its own host.
+4. `verify-live-sites`: checks all canonical URLs and legacy hosts from outside. A red run here means a live URL is wrong even though the deploys succeeded.
 
-### 1. NETLIFY_AUTH_TOKEN
-Your Netlify authentication token (shared across all sites).
+A push cancels a run still in progress on the same branch, so wait for a deploy to finish before pushing again.
 
-**How to get it:**
-1. Log in to Netlify
-2. Go to User Settings → Applications
-3. Create a new Personal Access Token
-4. Copy the token
+## Everything else
 
-### 2. NETLIFY_MAIN_SITE_ID
-The Netlify site ID for WarOnDisease.org
+`cloudflare/README.md` covers redirects, Worker routes, the API token, DNS, monitoring, and why the papers live on one site. Read it before changing any of those.
 
-**How to get it:**
-1. Go to your site in Netlify (WarOnDisease.org)
-2. Site Settings → General → Site information
-3. Copy the **Site ID** (format: `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`)
-
-### 3. NETLIFY_ECONOMICS_SITE_ID
-The Netlify site ID for impact.warondisease.org
-
-### 4. NETLIFY_WISHOCRACY_SITE_ID ⚠️ **NEW - Required**
-The Netlify site ID for paper.wishocracy.org
-
-**Setup steps:**
-1. Create a new site in Netlify
-2. Configure custom domain: `paper.wishocracy.org`
-3. Copy the Site ID
-4. Add as GitHub secret: `NETLIFY_WISHOCRACY_SITE_ID`
-
-### 5. NETLIFY_IAB_SITE_ID ⚠️ **NEW - Required**
-The Netlify site ID for iab.warondisease.org
-
-**Setup steps:**
-1. Create a new site in Netlify
-2. Configure custom domain: `iab.warondisease.org`
-3. Copy the Site ID
-4. Add as GitHub secret: `NETLIFY_IAB_SITE_ID`
-
-## Workflow Overview
-
-The GitHub Actions workflow (`.github/workflows/publish.yml`) performs these steps:
-
-### Build Phase (Job: `build-html`)
-1. **Setup environment** - Install Quarto, Python, Graphviz, dependencies
-2. **Render main book** - Full book to `_manual/warondisease/`
-3. **Deploy main site** - Upload to Netlify (WarOnDisease.org)
-4. **Render economics** - Economics site to `_site/1-pct-treaty-impact/`
-5. **Deploy economics** - Upload to Netlify (impact.warondisease.org)
-6. **Render Wishocracy paper** - Paper to `_site/wishocracy/`
-7. **Deploy Wishocracy** - Upload to Netlify (paper.wishocracy.org)
-8. **Render IAB paper** - Paper to `_site/iab/`
-9. **Deploy IAB** - Upload to Netlify (iab.warondisease.org)
-10. **Generate PDFs** - Create book PDF and EPUB versions
-
-### Deploy Phase (Jobs: `deploy-main`, `deploy-economics`, `deploy-wishocracy`, `deploy-iab`)
-These jobs run in parallel after the build completes, each downloading their respective artifacts and deploying to Netlify.
-
-## Triggering Deployments
-
-Deployments trigger automatically on:
-- **Push to master branch** - Full production deployment
-- **Manual workflow dispatch** - Run workflow manually from GitHub Actions tab
-
-## Render Times (Approximate)
-
-| Task | Timeout | Typical Duration |
-|------|---------|------------------|
-| Main book (85 files) | 25 min | ~8-10 min |
-| Economics (71 files) | 25 min | ~6-8 min |
-| Wishocracy paper (1 file) | 10 min | ~30 sec |
-| IAB paper (1 file) | 10 min | ~30 sec |
-| Book PDF | 20 min | ~10-15 min |
-| Book EPUB | 30 min | ~15-20 min |
-
-## Local Testing
-
-Before pushing, test the renders locally:
+## Local render
 
 ```bash
-# Main book
-python scripts/render-book-website.py
-
-# Economics site
-python scripts/render-economics-website.py
-
-# Wishocracy paper
-python scripts/render-wishocracy.py
-
-# IAB paper
-python scripts/render-iab.py
+# PYTHONPATH must point at the repo root, or render-quarto.py cannot import dih_models
+PYTHONPATH=. python scripts/render-quarto.py manual --to html
+PYTHONPATH=. python scripts/render-quarto.py institute-papers --to html
 ```
 
-## Troubleshooting
+Output lands in `_build_temp/<config>/`. A local build can sweep in stray, gitignored HTML left in `knowledge/` by earlier renders and report validation errors for it; CI checks out a clean tree and never sees those files.
 
-### "Context access might be invalid" warnings
-These are expected if the secrets haven't been added to GitHub yet. Add the missing secrets to fix.
+## Downloadable artifacts
 
-### Deployment failures
-1. Check that the Netlify site exists and the Site ID is correct
-2. Verify `NETLIFY_AUTH_TOKEN` is valid and has permissions
-3. Check Netlify site settings for custom domain configuration
+`.github/workflows/build-artifacts.yml` builds the PDFs, EPUBs, and DOCX files and uploads papers to Zenodo. It runs on manual dispatch, or on a push to `master`; the default branch is `develop`, so in practice it runs when someone starts it.
 
-### Build timeouts
-If builds timeout, check:
-- Quarto freeze cache (may need clearing)
-- Python dependencies (check for version conflicts)
-- Graphviz installation (required for diagrams)
+## When a run fails
 
-## Artifacts
-
-The workflow creates these artifacts (retained for 1-30 days):
-
-| Artifact | Retention | Content |
-|----------|-----------|---------|
-| `main-site` | 1 day | Built main book HTML |
-| `economics-site` | 1 day | Built economics site HTML |
-| `wishocracy-site` | 1 day | Built wishocracy paper HTML |
-| `iab-site` | 1 day | Built IAB paper HTML |
-| `book-pdf` | 30 days | PDF version of book |
-| `book-epub` | 30 days | EPUB version of book |
-
-You can download these from the Actions run page.
+- `ConnectionReset` or a timeout in a render step is a network flake: use "Re-run failed jobs".
+- An authentication error in `deploy-redirect-worker` means the CI token does not cover a zone in `_ROUTE_ZONES`. See the API token section of `cloudflare/README.md`.
+- "Redirect target is not live" means a site in the redirect map is not serving yet. The previous Worker stays deployed, so legacy links keep working.
+- For a failing host in `verify-live-sites`, run `pnpm monitor:uptimerobot:check` locally to see where it ends up.

@@ -1,4 +1,4 @@
-# Cloudflare Pages headers for the manual site, ported from netlify.toml.
+# Cloudflare Pages headers for the manual site.
 # Copied into the deploy root by scripts/render-quarto.py (Quarto skips
 # underscore-prefixed files, so this cannot live in the Quarto source tree).
 #

@@ -1,5 +1,5 @@
-# Cloudflare Pages path redirects for the manual site, ported from
-# netlify.toml. Copied into the deploy root by scripts/render-quarto.py.
+# Cloudflare Pages path redirects for the manual site. Copied into the deploy
+# root by scripts/render-quarto.py.
 # Host-based redirects (legacy subdomains) live in the redirect Worker
 # (cloudflare/redirect-worker/), not here - Pages ignores host rules.
 # /index.html -> / and 404.html handling are automatic on Pages.

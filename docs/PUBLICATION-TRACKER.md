@@ -218,7 +218,7 @@ Analysis and Return on Investment - How to slash per-patient trial costs by up t
 ## Cross-Platform Publication Strategy
 
 ### Tier 1: Immediate (Self-Hosted)
-All publications deployed to own domains via Quarto + GitHub Pages/Netlify.
+The book and the Institute papers site deploy to Cloudflare Pages via Quarto.
 
 ### Tier 2: Preprint Servers (Week 1-2)
 1. **SSRN** - All papers (economics, political science, health)
@@ -288,7 +288,7 @@ Target journals by paper type:
 ```yaml
 # .github/workflows/publish.yml
 - Zenodo draft upload for all papers (economics, iab, wishocracy, dfda-spec, dfda-impact)
-- Netlify deployment for all sites
+- Cloudflare Pages deployment for the book and the Institute papers site
 ```
 
 ### Potential to Automate

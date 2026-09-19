@@ -18,8 +18,6 @@ dih-render:
   index-source: knowledge/appendix/humanity-v-government.qmd
   redirect-from: https://humanity-v-government.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
-  netlify-site-id: ""  # TODO: create Netlify site and add ID
-  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "Negligent Mass Homicide"

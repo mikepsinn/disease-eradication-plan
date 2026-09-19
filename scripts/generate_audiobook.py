@@ -1615,7 +1615,7 @@ def generate_podcast_rss(
     """Generate a podcast RSS 2.0 feed with iTunes namespace tags.
 
     MP3 URLs are constructed relative to the site URL so the feed works
-    when deployed to the book's Netlify site.
+    when deployed to the book's site.
     """
     from xml.sax.saxutils import escape
 

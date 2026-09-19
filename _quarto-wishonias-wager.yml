@@ -19,10 +19,6 @@ dih-render:
   redirect-from: https://wager.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: wishonias-wager.pdf
-  # TODO: create a dedicated Netlify site and replace this ID before first deploy.
-  # Until then this points at the shared manual site app so local renders succeed.
-  netlify-site-id: "REPLACE_WITH_NEW_NETLIFY_SITE_ID"
-  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "An infinity symbol balanced on a coin, black outline on white."

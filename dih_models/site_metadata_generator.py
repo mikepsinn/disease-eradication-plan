@@ -172,11 +172,6 @@ def extract_site_metadata(config_path: Path, config_name: str, variables: Option
         "language": metadata.get("language", "en-US"),
         "twitterSite": metadata.get("twitter-site"),
         "twitterCreator": metadata.get("twitter-creator"),
-        # Netlify deployment info
-        "netlify": {
-            "siteId": dih_render.get("netlify-site-id"),
-            "cname": dih_render.get("netlify-cname"),
-        } if dih_render.get("netlify-site-id") else None,
         # Source file info
         "indexSource": dih_render.get("index-source"),
         "outputDir": config.get("project", {}).get("output-dir"),

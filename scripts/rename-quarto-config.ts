@@ -8,7 +8,7 @@
  * 3. Updating all references in Python scripts
  * 4. Updating all references in TypeScript/JavaScript files
  * 5. Updating all references in documentation files
- * 6. Updating netlify.toml and other config files
+ * 6. Updating other config files (.gitignore, Makefile, ...)
  *
  * Usage:
  *   npx tsx scripts/rename-quarto-config.ts <old_name> <new_name> [--dry-run]
@@ -284,7 +284,7 @@ async function updateDocFiles(
 }
 
 /**
- * Find and update references in config files (netlify.toml, .gitignore, etc.)
+ * Find and update references in config files (.gitignore, Makefile, etc.)
  */
 async function updateConfigFiles(
   oldName: string,
@@ -292,7 +292,6 @@ async function updateConfigFiles(
   dryRun: boolean
 ): Promise<{ count: number; files: string[] }> {
   const configPatterns = [
-    'netlify.toml',
     'vercel.json',
     '.gitignore',
     '.dockerignore',
@@ -420,7 +419,7 @@ async function renameQuartoConfig(options: RenameOptions): Promise<void> {
   }
 
   // Step 7: Update config files
-  console.log('\n📋 Step 7: Updating config files (netlify.toml, .gitignore, etc.)...');
+  console.log('\n📋 Step 7: Updating config files (.gitignore, Makefile, etc.)...');
   const configResult = await updateConfigFiles(oldName, newName, dryRun);
   if (configResult.count > 0) {
     stats.configUpdates = configResult.count;

@@ -1211,7 +1211,7 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
         "index",        # index*.qmd
     }
     required_extensions = {".css", ".scss", ".tex", ".csl", ".png", ".ico", ".toml"}
-    required_files = {"favicon.ico", "pyproject.toml", "netlify.toml", "talk.html"}
+    required_files = {"favicon.ico", "pyproject.toml", "talk.html"}
     # Honor explicitly declared root resources (robots.txt, llms.txt,
     # _redirects, etc.) instead of silently dropping them from Quarto's input.
     config = load_quarto_config(project_root / metadata["config_file"])
@@ -2088,7 +2088,7 @@ def render_quarto(  # pyright: ignore[reportGeneralTypeIssues]
     # Restore original exit code if PDF/EPUB failed but HTML was deployed
     if html_can_deploy and quarto_exit_code != 0:
         print(f"[ERROR] PDF/EPUB generation failed (exit code {quarto_exit_code}) - job will report failure", file=sys.stderr)
-        print(f"[INFO] HTML was successfully deployed to Netlify", file=sys.stderr)
+        print(f"[INFO] HTML was built successfully", file=sys.stderr)
         exit_code = quarto_exit_code
 
     return exit_code

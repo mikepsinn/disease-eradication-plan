@@ -49,7 +49,7 @@ act workflow_dispatch \
 3. ✅ Runs `python scripts/render-economics-website.py`
 4. ✅ Validates PDF exists at `_site/1-pct-treaty-impact/dih-economic-models.pdf`
 5. ✅ Uploads artifacts to `./act-artifacts/`
-6. ⏭️ Skips Netlify deployment (requires secrets)
+6. ⏭️ Skips deployment (requires secrets)
 
 ## Expected Output
 
@@ -113,7 +113,7 @@ The test workflow mirrors the `build-economics` job in `publish.yml` but:
 - ✅ Runs independently (no parallel jobs)
 - ✅ Uploads artifacts for inspection
 - ✅ Has explicit PDF validation step
-- ⏭️ Skips Netlify deployment by default
+- ⏭️ Skips deployment by default
 - 🐛 Includes verbose logging for debugging
 
 ## Running on GitHub Actions

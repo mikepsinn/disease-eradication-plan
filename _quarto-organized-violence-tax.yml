@@ -18,8 +18,6 @@ dih-render:
   index-source: knowledge/problem/cost-of-war.qmd
   redirect-from: https://organized-violence-tax.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
-  netlify-site-id: ""
-  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "Organized Violence Tax"

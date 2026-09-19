@@ -21,8 +21,6 @@ dih-render:
     - https://rtt-fda-upgrade-act.acceleratedmedicine.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: right-to-trial-fda-upgrade-act.pdf
-  netlify-site-id: "2786b65f-23b9-4631-9abe-e2cf03b0d4d1"
-  netlify-cname: "imaginative-paletas-fec1eb.netlify.app"
   show-confidence-intervals: false  # Legislative text, not academic paper
   concept-terms:
     - term: "Right to Trial"

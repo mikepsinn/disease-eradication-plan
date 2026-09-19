@@ -10,7 +10,6 @@ Provides consistent skip lists across all scripts.
 Usage:
     from lib.quarto_config_utils import (
         discover_paper_configs,  # For Zenodo upload
-        discover_deployable_configs,  # For Netlify deploy
         discover_syncable_configs,  # For config sync
         get_all_config_names,  # For rendering (all configs)
     )
@@ -51,7 +50,7 @@ NON_PAPER_CONFIGS: Set[str] = {
     "shared-defaults",  # Shared defaults template - not a renderable config
 }
 
-# Configs that should never be deployed to Netlify
+# Configs that never get a deploy or artifact workflow job
 NON_DEPLOYABLE_CONFIGS: Set[str] = {
     "manual-paperback", # Paperback/PDF/EPUB render config
     "test",             # Test config
@@ -281,70 +280,6 @@ def discover_pdf_work_items_sorted(
     return items
 
 
-def discover_deployable_configs(
-    project_root: Optional[Path] = None,
-) -> Dict[str, Dict[str, Any]]:
-    """
-    Discover Quarto configs that can be deployed to Netlify.
-
-    Excludes: test, shared-defaults
-
-    Args:
-        project_root: Project root directory (auto-detected if None)
-
-    Returns:
-        Dict mapping config key to config info with Netlify-relevant fields
-    """
-    if project_root is None:
-        project_root = _find_project_root()
-
-    configs = {}
-
-    for config_path in get_all_config_paths(project_root):
-        key = _extract_config_key(config_path)
-
-        # Skip non-deployable configs
-        if key in NON_DEPLOYABLE_CONFIGS or not key or key == "quarto":
-            continue
-
-        config = _load_config(config_path)
-        if config is None:
-            continue
-
-        # Get project info
-        project_type = config.get("project", {}).get("type", "website")
-        output_dir = config.get("project", {}).get("output-dir", f"_site/{key}")
-
-        # Get title and site URL
-        if project_type == "book":
-            section = config.get("book", {})
-        else:
-            section = config.get("website", {})
-
-        title = section.get("title", key.replace("-", " ").title())
-        site_url = section.get("site-url")
-
-        # Also check website section for books that have both
-        if not site_url and "website" in config:
-            site_url = config["website"].get("site-url")
-
-        # Get Netlify info
-        dih_render = config.get("dih-render", {})
-
-        configs[key] = {
-            "config_path": config_path,
-            "config": config,
-            "title": title,
-            "project_type": project_type,
-            "output_dir": output_dir,
-            "site_url": site_url,
-            "site_id": dih_render.get("netlify-site-id"),
-            "netlify_cname": dih_render.get("netlify-cname"),
-        }
-
-    return configs
-
-
 def discover_syncable_configs(
     project_root: Optional[Path] = None,
 ) -> List[Path]:
@@ -383,11 +318,6 @@ def discover_syncable_configs(
 def is_paper_config(config_name: str) -> bool:
     """Check if a config name represents a paper (vs book/test/etc)."""
     return bool(config_name and config_name != "quarto" and config_name not in NON_PAPER_CONFIGS)
-
-
-def is_deployable_config(config_name: str) -> bool:
-    """Check if a config name can be deployed to Netlify."""
-    return bool(config_name and config_name != "quarto" and config_name not in NON_DEPLOYABLE_CONFIGS)
 
 
 def is_syncable_config(config_name: str) -> bool:
@@ -753,11 +683,6 @@ if __name__ == "__main__":
     print("\nPaper configs (for Zenodo):")
     for key, info in discover_paper_configs(project_root).items():
         print(f"  {key}: {info['title'][:50]}")
-
-    print("\nDeployable configs (for Netlify):")
-    for key, info in discover_deployable_configs(project_root).items():
-        site_id = info.get('site_id', '(none)')[:20] if info.get('site_id') else '(none)'
-        print(f"  {key}: {site_id}")
 
     print("\nSyncable configs:")
     for path in discover_syncable_configs(project_root):

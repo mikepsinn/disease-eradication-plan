@@ -26,8 +26,6 @@ dih-render:
       to: knowledge/podcast.html
     - from: https://papers.warondisease.org
       to: knowledge/papers.html
-  netlify-site-id: "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062"
-  netlify-cname: "manual-warondisease-org.netlify.app"
   # Strip "(95% CI: ...)" from variable display values for general-audience reading
   show-confidence-intervals: true
   # parameter-link-format defaults to html (links work in HTML, stripped by Lua filter for EPUB/PDF)

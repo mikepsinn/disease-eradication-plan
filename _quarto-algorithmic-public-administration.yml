@@ -18,8 +18,6 @@ dih-render:
   index-source: knowledge/appendix/algorithmic-public-administration-paper.qmd
   redirect-from: https://apa.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
-  netlify-site-id: ""  # TODO: Create Netlify site and add ID
-  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "Algorithmic Public Administration"

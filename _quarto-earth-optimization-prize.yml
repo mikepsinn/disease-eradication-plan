@@ -18,8 +18,6 @@ dih-render:
   index-source: knowledge/strategy/earth-optimization-prize.qmd
   redirect-from: https://prize.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
-  netlify-site-id: "4b864c23-3f9e-4a83-a6dc-9a2f7690eb80"
-  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "Earth Optimization Prize"
