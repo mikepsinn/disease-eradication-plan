@@ -251,7 +251,7 @@ def generate_llms_txt(project_root: Path) -> Path:
         "## Author",
         "",
         "Mike P. Sinn",
-        "- Email: mike@warondisease.org",
+        "- Email: m@warondisease.org",
         "- Website: https://mikesinn.com",
         "- ORCID: 0009-0006-0212-1094",
         "",

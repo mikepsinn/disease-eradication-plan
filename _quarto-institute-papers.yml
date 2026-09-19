@@ -1,0 +1,158 @@
+project:
+  type: website
+  output-dir: _site/institute-papers
+  execute-dir: project
+  resources:
+    - knowledge/data/
+    - assets/
+    - robots.txt
+  render:
+    # index.qmd and each <slug>.qmd are copied to the root by the render script
+    # (dih-render.index-page and dih-render.papers). Every paper slug must be
+    # listed here.
+    - index.qmd
+    - dfda-protocol.qmd
+    - dfda-impact.qmd
+    - invisible-graveyard.qmd
+    - drug-development-cost.qmd
+    - right-to-trial.qmd
+    - right-to-trial-impact.qmd
+    - knowledge/appendix/parameters-and-calculations.qmd
+
+# Custom fields for render-quarto.py
+dih-render:
+  emoji: "🏛️"
+  # One site for every paper the Institute publishes. Each paper keeps its own
+  # _quarto-<config>.yml for its PDF, Zenodo upload, and citation metadata; this
+  # site reads the paper source, PDF name, DOI, and keywords from that config.
+  index-page: index-institute-papers.qmd
+  cloudflare-pages-project: "institute-papers"
+  papers:
+    - slug: dfda-protocol
+      config: dfda-spec
+    - slug: dfda-impact
+      config: dfda-impact
+    - slug: invisible-graveyard
+      config: invisible-graveyard
+    - slug: drug-development-cost
+      config: drug-development-cost
+    - slug: right-to-trial
+      config: right-to-trial
+    - slug: right-to-trial-impact
+      config: right-to-trial-impact
+  fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Links to book chapters point here
+  zenodo: false  # Papers upload from their own configs
+  show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
+
+profiles:
+  default:
+    dotenv:
+      allowEmptyValues: true
+
+author:
+  - name: Mike P. Sinn
+    email: m@warondisease.org
+    orcid: 0009-0006-0212-1094
+    affiliations:
+      - name: "Institute for Accelerated Medicine"
+        url: https://acceleratedmedicine.org
+
+website:
+  title: "Institute for Accelerated Medicine"
+  description: "Working papers on clinical trial capacity, drug approval delay, and the cost of medical evidence."
+  site-url: https://papers.acceleratedmedicine.org
+  favicon: assets/icons/dfda-favicon.png
+  page-navigation: false
+  search: true
+  page-footer:
+    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    right: "[Source code and data](https://github.com/wishonia/earth-optimization-protocol)"
+  navbar:
+    left:
+      - text: "Papers"
+        href: index.qmd
+    right:
+      - text: "Calculations"
+        href: knowledge/appendix/parameters-and-calculations.qmd
+      - text: "Institute"
+        href: https://acceleratedmedicine.org
+
+execute:
+  fig-path: "knowledge/figures/"
+  cache: false
+  freeze: auto  # Only re-run cells when content changes
+  daemon: 300
+  daemon-restart: false
+  env:
+    PYTHONPATH: "."
+
+metadata:
+  language: "en-US"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
+  og-site-name: "Institute for Accelerated Medicine"
+  open-graph: true
+
+  author-email: m@warondisease.org
+  author-url: "https://mikesinn.com"
+  author-website: "https://mikesinn.com"
+  byline: Mike P. Sinn
+  contact: m@warondisease.org
+  copyright: © 2025 Mike P. Sinn
+  copyright-year: 2025
+  creator: Mike P. Sinn
+  github-profile: "https://github.com/mikepsinn"
+  google-scholar: "https://scholar.google.com/citations?user=RjDd_qcAAAAJ"
+  human-author: Mike P. Sinn
+  linkedin: "https://www.linkedin.com/in/mikesinn"
+  orcid: 0009-0006-0212-1094
+  orcid-url: "https://orcid.org/0009-0006-0212-1094"
+  primary-author: Mike P. Sinn
+  publisher-email: m@warondisease.org
+  publisher-name: Mike P. Sinn
+  rights: Creative Commons Attribution 4.0 International License
+  twitter-creator: "https://x.com/warondisease"
+  twitter-site: "https://x.com/warondisease"
+language:
+  crossref-apx-prefix: ""
+  section-title-appendices: ""
+
+# Bibliography: Single source of truth for all citations
+bibliography: references.bib
+csl: nature-annotated.csl  # Renders 'abstract' field (quotes) in bibliography
+
+jupyter: dih-project-kernel
+
+format:
+  html:
+    lightbox: auto
+    theme:
+      - cosmo
+    mermaid:
+      theme: neutral
+    echo: false
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    css:
+      - styles.css
+      - economics-overrides.css
+    include-before-body:
+      - file: assets/html/page-loader.html
+    include-after-body:
+      - file: assets/html/site-enhancements-loader.html
+    include-in-header:
+      - text: |
+          <!-- No campaign Vote button on Institute papers -->
+          <meta name="dih-disable-features" content="vote">
+      - file: assets/html/google-analytics.html
+      - file: assets/html/hypothesis.html
+      - file: assets/html/fonts-preload.html
+    citation-hover: true
+    code-fold: true
+    link-citations: true
+    smooth-scroll: true
+    code-tools: false
+    filters: [assets/filters/live-version-note.lua]

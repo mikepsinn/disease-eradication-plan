@@ -36,7 +36,7 @@
 
 > You've tested less than 1% of possible drug-disease combinations. At current speed, you'll finish in the year 5000. You will not be alive in the year 5000. Here's how to speed that up before you become irrelevant to the outcome.
 >
-> https://dfda-protocol.acceleratedmedicine.org
+> https://papers.acceleratedmedicine.org/dfda-protocol.html
 
 ---
 

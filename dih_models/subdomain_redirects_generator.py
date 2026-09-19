@@ -6,10 +6,11 @@ Subdomain Redirects Generator
 Generates a shared JavaScript file that redirects legacy subdomains served by
 the Quarto sites to their canonical manual.warondisease.org page.
 
-Sources:
-- dih-render.redirect-from in _quarto-*.yml
-- a small set of manual shortcut hosts that are not backed by standalone paper
-  configs (listen/papers/links)
+Sources (the Quarto configs are the only place a redirect is declared):
+- dih-render.redirect-from in _quarto-*.yml: one legacy URL or a list of them,
+  all redirecting to that config's site-url
+- dih-render.page-redirects in _quarto-*.yml: legacy hosts that redirect to one
+  page of that config's site (listen/papers/links on the manual)
 
 Output:
     assets/js/generated-subdomain-redirects.js
@@ -25,13 +26,6 @@ from urllib.parse import urlparse
 from dih_models.yaml_utils import load_quarto_config
 
 logger = logging.getLogger("dih.subdomain_redirects")
-
-_MANUAL_SHORTCUT_REDIRECTS = {
-    "links.warondisease.org": "https://manual.warondisease.org/knowledge/links.html",
-    "listen.warondisease.org": "https://manual.warondisease.org/knowledge/podcast.html",
-    "papers.warondisease.org": "https://manual.warondisease.org/knowledge/papers.html",
-}
-
 
 def _get_site_url(config: dict) -> str | None:
     """Extract the canonical site-url from a Quarto config."""
@@ -49,21 +43,37 @@ def _extract_hostname(url: str | None) -> str | None:
     return parsed.hostname.lower() if parsed.hostname else None
 
 
+def _lowercase_host(url: str) -> str:
+    """Hosts are case-insensitive; configs sometimes spell them in mixed case."""
+    parsed = urlparse(url)
+    return parsed._replace(netloc=parsed.netloc.lower()).geturl()
+
+
 def collect_subdomain_redirects(project_root: Path) -> dict[str, str]:
     """Build hostname -> canonical URL mapping from Quarto configs."""
-    redirects = dict(_MANUAL_SHORTCUT_REDIRECTS)
+    redirects: dict[str, str] = {}
 
     for config_path in sorted(project_root.glob("_quarto-*.yml")):
         config = load_quarto_config(config_path)
         dih_render = config.get("dih-render") or {}
-        redirect_from = dih_render.get("redirect-from")
+        # One legacy URL, or a list when a paper has lived at several hosts
+        redirect_from = dih_render.get("redirect-from") or []
+        if isinstance(redirect_from, str):
+            redirect_from = [redirect_from]
         site_url = _get_site_url(config)
-
-        hostname = _extract_hostname(redirect_from)
-        if not hostname or not site_url:
+        if not site_url:
             continue
 
-        redirects[hostname] = site_url.rstrip("/")
+        site_url = _lowercase_host(site_url).rstrip("/")
+        for legacy_url in redirect_from:
+            hostname = _extract_hostname(legacy_url)
+            if hostname:
+                redirects[hostname] = site_url
+
+        for page_redirect in dih_render.get("page-redirects") or []:
+            hostname = _extract_hostname(page_redirect["from"])
+            if hostname:
+                redirects[hostname] = f"{site_url}/{page_redirect['to'].lstrip('/')}"
 
     return dict(sorted(redirects.items()))
 

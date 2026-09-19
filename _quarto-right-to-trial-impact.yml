@@ -5,16 +5,17 @@ project:
   resources:
     - knowledge/data/
     - "assets/!(scoreboard-embed.html)"
-    - _redirects
     - robots.txt
     - llms.txt
 
 dih-render:
   emoji: "📈"
   index-source: knowledge/appendix/state-right-to-trial-impact.qmd
+  redirect-from:
+    - https://rtt-impact.acceleratedmedicine.org
+    - https://rtt-impact.dfda.earth
   fallback-404-redirect-domain: ""
   pdf-output-file: state-right-to-trial-impact.pdf
-  cloudflare-pages-project: "right-to-trial-impact"
   netlify-site-id: "7d9ffde4-1397-43bd-8b53-701a6be5a987"
   netlify-cname: "creative-cascaron-e94b2c.netlify.app"
   show-confidence-intervals: true
@@ -38,13 +39,13 @@ author:
     email: m@warondisease.org
     orcid: 0009-0006-0212-1094
     affiliations:
-      - name: "International Campaign to End War and Disease"
-        url: https://rtt-impact.acceleratedmedicine.org
+      - name: "Institute for Accelerated Medicine"
+        url: https://acceleratedmedicine.org
 
 book:
   title: "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
   description: "A conditional schedule-shift model of state legislation that lets post-Phase-1 treatments finance their own evidence generation and accelerates treatments for global diseases and aging."
-  site-url: https://rtt-impact.acceleratedmedicine.org
+  site-url: https://papers.acceleratedmedicine.org/right-to-trial-impact.html
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
   chapters:
@@ -95,10 +96,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "Health Economics, Clinical Trials, State Policy, Patient Access, Drug Development"
   category: "Academic Paper, Health Economics, Policy Analysis"
@@ -127,10 +128,10 @@ metadata:
   license: "CC BY 4.0"
   license-url: "https://creativecommons.org/licenses/by/4.0/"
   rights: "Creative Commons Attribution 4.0 International License"
-  publisher: "International Campaign to End War and Disease"
-  publisher-url: "https://rtt-impact.acceleratedmedicine.org"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
   issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
   source-url: "https://github.com/mikepsinn/disease-eradication-plan"
@@ -146,7 +147,7 @@ metadata:
   open-graph: true
   publishing:
     own-site:
-      url: "https://rtt-impact.acceleratedmedicine.org"
+      url: "https://papers.acceleratedmedicine.org/right-to-trial-impact.html"
       status: deployed
 
 language:
@@ -196,7 +197,7 @@ format:
   pdf:
     output-file: "state-right-to-trial-impact.pdf"
     documentclass: report
-    institute: "International Campaign to End War and Disease"
+    institute: "Institute for Accelerated Medicine"
     echo: false
     toc: true
     toc-depth: 3
@@ -208,7 +209,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://rtt-impact.acceleratedmedicine.org}
+          \paperurl{https://papers.acceleratedmedicine.org/right-to-trial-impact.html}
     geometry:
       - top=1in
       - bottom=1in

@@ -213,7 +213,14 @@ def manual_url_project(tmp_path: Path):
         path.write_text("---\ntitle: Test\n---\n", encoding="utf-8")
     manual = {
         "book": {"site-url": "https://manual.WarOnDisease.org", "chapters": chapters},
-        "dih-render": {"index-source": "index-manual.qmd"},
+        "dih-render": {
+            "index-source": "index-manual.qmd",
+            "page-redirects": [
+                {"from": "https://links.warondisease.org", "to": "knowledge/links.html"},
+                {"from": "https://listen.warondisease.org", "to": "knowledge/podcast.html"},
+                {"from": "https://papers.warondisease.org", "to": "knowledge/papers.html"},
+            ],
+        },
         "project": {"resources": ["assets/"]},
     }
     (tmp_path / "_quarto-manual.yml").write_text(yaml.safe_dump(manual), encoding="utf-8")

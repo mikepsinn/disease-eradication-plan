@@ -5,7 +5,6 @@ project:
   resources:
     - knowledge/data/
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
   render:
@@ -44,7 +43,7 @@ author:
 website:
   title: "The Court of Humanity"
   description: "A decentralized court where 8 billion humans are the jury, sovereign immunity is a choice nobody chose, and ~$104 quadrillion in unliquidated wrongful-death exposure makes the 1% Treaty the most generous settlement offer in legal history."
-  site-url: https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html
+  site-url: https://manual.warondisease.org/knowledge/solution/court-of-humanity.html
   favicon: assets/icons/court-of-humanity-favicon.png
   page-navigation: true
   page-footer:
@@ -74,10 +73,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "International Law, Tort Law, Constitutional Theory, Public Choice, Mechanism Design"
   category: "Academic Paper, Public Policy, Legal Theory, Political Science"
@@ -108,7 +107,7 @@ metadata:
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
   issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
   source-url: "https://github.com/wishonia/earth-optimization-protocol"
@@ -130,7 +129,7 @@ metadata:
 
   publishing:
     own-site:
-      url: "https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html"
+      url: "https://manual.warondisease.org/knowledge/solution/court-of-humanity.html"
       status: pending
     preprints:
       - platform: zenodo
@@ -227,7 +226,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://manual.warondisease.org/knowledge/appendix/court-of-humanity-paper.html}
+          \paperurl{https://manual.warondisease.org/knowledge/solution/court-of-humanity.html}
     geometry:
       - top=1in
       - bottom=1in

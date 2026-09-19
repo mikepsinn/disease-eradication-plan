@@ -6,7 +6,6 @@ project:
     - knowledge/data/
     - knowledge/appendix/presidential-commission-print.html
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
   # pre-render:
@@ -19,6 +18,14 @@ dih-render:
   index-source: index-manual.qmd  # Simple copy, no path transformation needed
   # No target-url - this IS the main book site
   cloudflare-pages-project: "warondisease-manual"
+  # Legacy hosts that redirect to one page of this site instead of its home page
+  page-redirects:
+    - from: https://links.warondisease.org
+      to: knowledge/links.html
+    - from: https://listen.warondisease.org
+      to: knowledge/podcast.html
+    - from: https://papers.warondisease.org
+      to: knowledge/papers.html
   netlify-site-id: "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062"
   netlify-cname: "manual-warondisease-org.netlify.app"
   # Strip "(95% CI: ...)" from variable display values for general-audience reading
@@ -316,10 +323,10 @@ metadata:
   human-author: "Mike P. Sinn"
 
   # Author contact information
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   
   # Bibliographic metadata
   # title: Removed - each page defines its own title in frontmatter
@@ -352,7 +359,7 @@ metadata:
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   
   # Repository information
   repo-url: "https://github.com/mikepsinn"

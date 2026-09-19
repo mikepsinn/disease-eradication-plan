@@ -5,7 +5,6 @@ project:
   resources:
     - knowledge/data/
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
   render:
@@ -18,9 +17,12 @@ dih-render:
   emoji: "🔬"
   index-source: knowledge/appendix/dfda-spec-paper.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
-  redirect-from: https://dfda-spec.warondisease.org
+  redirect-from:
+    - https://dfda-spec.warondisease.org
+    - https://dfda-protocol.acceleratedmedicine.org
+    - https://protocol.acceleratedmedicine.org
+    - https://spec.dfda.earth
   pdf-output-file: dfda-spec-paper.pdf
-  cloudflare-pages-project: "dfda-spec"
   netlify-site-id: "01e9af64-b6d0-48ee-8c3d-43994745ac3f"
   netlify-cname: "dfda-spec-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
@@ -56,7 +58,7 @@ author:
 website:
   title: "The Continuous Evidence Generation Protocol: Two-Stage Validation (RWE → Pragmatic Trials)"
   description: 'We present the Predictor Impact Score (PIS), a novel composite metric operationalizing Bradford Hill causality criteria for automated signal detection from aggregated N-of-1 observational studies. Combined with pragmatic trial confirmation (based on evidence from 108+ embedded trials), this two-stage framework would generate validated outcome labels at 44.1x lower cost than traditional Phase III trials. This enables continuous, population-scale pharmacovigilance and precision dosing recommendations.'
-  site-url: https://dfda-protocol.acceleratedmedicine.org
+  site-url: https://papers.acceleratedmedicine.org/dfda-protocol.html
   favicon: assets/icons/dfda-spec-favicon.png
   page-navigation: true
   page-footer:
@@ -88,10 +90,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "Pharmacovigilance, Real-World Evidence, N-of-1 Trials, Causal Inference, Statistical Methods"
   category: "Academic Paper, Medical Research, Methodology"
@@ -127,7 +129,7 @@ metadata:
   publisher: "Institute for Accelerated Medicine"
   publisher-url: "https://acceleratedmedicine.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/mikepsinn/disease-eradication-plan"
   issue-url: "https://github.com/mikepsinn/disease-eradication-plan/issues"
   source-url: "https://github.com/mikepsinn/disease-eradication-plan"
@@ -147,12 +149,12 @@ metadata:
 
   # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://dfda-protocol.acceleratedmedicine.org/assets/og/dfda-spec-og-1200x630.jpg"
+  image: "https://papers.acceleratedmedicine.org/assets/og/dfda-spec-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://dfda-protocol.acceleratedmedicine.org"
+      url: "https://papers.acceleratedmedicine.org/dfda-protocol.html"
       status: deployed
     preprints:
       - platform: zenodo
@@ -246,7 +248,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://dfda-protocol.acceleratedmedicine.org}
+          \paperurl{https://papers.acceleratedmedicine.org/dfda-protocol.html}
     geometry:
       - top=1in
       - bottom=1in

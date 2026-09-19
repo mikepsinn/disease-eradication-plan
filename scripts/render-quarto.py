@@ -42,6 +42,8 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional, List, Set, Dict, Any
 
+import yaml
+
 from dih_models.paper_bibliography_generator import (
     extract_variables_from_qmd,
     generate_filtered_variables_yml,
@@ -405,7 +407,8 @@ def _rewrite_paper_links(
     project_root: Path,
     current_config_source: Optional[str],
     files_to_process: List[str],
-    verbose: bool = True
+    verbose: bool = True,
+    hosted_sources: Optional[Set[str]] = None,
 ) -> int:
     """
     Rewrite links to standalone paper QMD files with their deployed HTTPS URLs.
@@ -424,9 +427,12 @@ def _rewrite_paper_links(
     if not mapping:
         return 0
 
-    # Remove self-reference from mapping (a paper shouldn't link to its own URL)
-    if current_config_source and current_config_source in mapping:
-        mapping = {k: v for k, v in mapping.items() if k != current_config_source}
+    # Remove papers this site hosts itself (a paper shouldn't link to its own
+    # URL, and sibling papers on a papers site are internal links)
+    own_sources = set(hosted_sources or ())
+    if current_config_source:
+        own_sources.add(current_config_source)
+    mapping = {k: v for k, v in mapping.items() if k not in own_sources}
 
     if not mapping:
         return 0
@@ -498,18 +504,22 @@ def _rewrite_paper_links(
 
 def _rewrite_index_source_links(
     build_temp: Path,
-    index_source: str,
+    source_targets: Dict[str, str],
     files_to_process: List[str],
     verbose: bool = True
 ) -> int:
     """
-    Rewrite links to the current config's index-source to point to index.qmd.
+    Rewrite links to papers this config copied to root-level pages.
 
-    When a config uses dih-render.index-source, prepare_config copies that file
-    to index.qmd. Other chapter files linking to the original path need updating
-    so Quarto can resolve them (the original path isn't a book chapter).
+    prepare_config copies dih-render.index-source to index.qmd and each
+    dih-render.papers source to <slug>.qmd. Files linking to the original paths
+    need updating so Quarto can resolve them (the original path isn't rendered).
+
+    Args:
+        source_targets: Maps a source QMD path to its root page, for example
+            {"knowledge/appendix/dfda-impact-paper.qmd": "dfda-impact.qmd"}
     """
-    if not index_source:
+    if not source_targets:
         return 0
 
     links_rewritten = 0
@@ -556,8 +566,8 @@ def _rewrite_index_source_links(
                     os.path.join(str(file_dir), path_normalized)
                 ).replace("\\", "/")
 
-            if resolved == index_source:
-                new_path = f"/index.qmd{anchor}"
+            if resolved in source_targets:
+                new_path = f"/{source_targets[resolved]}{anchor}"
                 if verbose:
                     print(f"    {file_path_str}: {full_path} -> {new_path}")
                 links_rewritten += 1
@@ -572,6 +582,31 @@ def _rewrite_index_source_links(
                 f.write(content)
 
     return links_rewritten
+
+
+def _load_site_papers(project_root: Path, dih_render: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """
+    Resolve dih-render.papers into the papers a multi-paper site publishes.
+
+    Each entry names a URL slug and the per-paper config that owns the paper.
+    The source QMD, PDF name, and citation fields come from that config, so a
+    paper has one source of truth whether it is built alone (PDF, Zenodo) or as
+    a page of a papers site.
+    """
+    papers: List[Dict[str, Any]] = []
+    for entry in dih_render.get("papers", []):
+        paper_config = load_quarto_config(project_root / f"_quarto-{entry['config']}.yml")
+        paper_render = paper_config["dih-render"]
+        paper_metadata = paper_config.get("metadata", {})
+        papers.append({
+            "slug": entry["slug"],
+            "config": entry["config"],
+            "source": paper_render["index-source"],
+            "pdf_output_file": paper_render.get("pdf-output-file"),
+            "doi": paper_metadata.get("doi"),
+            "keywords": paper_metadata.get("keywords"),
+        })
+    return papers
 
 
 def get_config_metadata(config_name: str) -> Dict[str, Any]:
@@ -613,6 +648,11 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
     return {
         "config_file": config_file,
         "index_source": dih_render.get("index-source"),
+        # Papers published as root-level pages of a multi-paper site, and the
+        # site's own home page. index-page is not index-source: generators that
+        # read index-source treat the config as a paper (Zenodo, papers index).
+        "papers": _load_site_papers(project_root, dih_render),
+        "index_page": dih_render.get("index-page"),
         "target_url": dih_render.get("fallback-404-redirect-domain", "https://manual.WarOnDisease.org"),
         "description": (
             config.get("book", {}).get("title") or
@@ -671,6 +711,10 @@ def _collect_config_variable_names(project_root: Path, config_name: str) -> Set[
     config_path = project_root / f"_quarto-{config_name}.yml"
     config = load_quarto_config(config_path)
     index_source = config.get("dih-render", {}).get("index-source")
+    paper_sources = {
+        f"{paper['slug']}.qmd": paper["source"]
+        for paper in _load_site_papers(project_root, config.get("dih-render", {}))
+    }
     qmd_paths: Set[str] = set()
 
     def collect_qmd_paths(node: Any) -> None:
@@ -708,6 +752,8 @@ def _collect_config_variable_names(project_root: Path, config_name: str) -> Set[
         source_path = project_root / relative_path
         if relative_path == "index.qmd" and isinstance(index_source, str):
             source_path = project_root / index_source
+        elif relative_path in paper_sources:
+            source_path = project_root / paper_sources[relative_path]
         elif (
             Path(relative_path).name == "parameters-and-calculations.qmd"
             and filtered_parameters.exists()
@@ -751,11 +797,78 @@ def prepare_config(config_name: str, verbose: bool = True) -> bool:
 
     # Copy and transform index file if specified
     index_source = metadata["index_source"]
-    if not index_source:
-        return True
+    if index_source and not _copy_paper_to_root(
+        project_root, config_name, index_source, "index.qmd", verbose=verbose
+    ):
+        return False
 
+    index_page = metadata["index_page"]
+    if index_page and not _copy_paper_to_root(
+        project_root, config_name, index_page, "index.qmd", verbose=verbose
+    ):
+        return False
+
+    # A papers site publishes each paper as a root-level page. Root is the same
+    # depth as index.qmd, so the same path transforms apply.
+    rendered_pages = load_quarto_config(config_src).get("project", {}).get("render", [])
+    for paper in metadata["papers"]:
+        if f"{paper['slug']}.qmd" not in rendered_pages:
+            raise ValueError(
+                f"{metadata['config_file']}: paper slug '{paper['slug']}' is in dih-render.papers "
+                f"but {paper['slug']}.qmd is not in project.render, so it would not be published"
+            )
+        extra_frontmatter = {
+            key: paper[key] for key in ("doi", "keywords") if paper.get(key)
+        }
+        # Link the PDF only when the build will bundle it (see the HTML
+        # post-render step), so the link can never 404.
+        pdf_name = paper["pdf_output_file"]
+        if pdf_name and (project_root / "assets" / "pdfs" / pdf_name).exists():
+            extra_frontmatter["other-links"] = [
+                {"text": "PDF", "href": f"/{pdf_name}", "icon": "file-pdf"}
+            ]
+        if not _copy_paper_to_root(
+            project_root,
+            config_name,
+            paper["source"],
+            f"{paper['slug']}.qmd",
+            extra_frontmatter=extra_frontmatter,
+            verbose=verbose,
+        ):
+            return False
+
+    return True
+
+
+def _add_missing_frontmatter(content: str, fields: Dict[str, Any]) -> str:
+    """Add top-level YAML frontmatter fields the document does not already set."""
+    match = re.match(r"---\r?\n(.*?)\r?\n---\r?\n", content, flags=re.DOTALL)
+    if not match:
+        return content
+
+    frontmatter = match.group(1)
+    missing = {
+        key: value for key, value in fields.items()
+        if not re.search(rf"^{re.escape(key)}:", frontmatter, flags=re.MULTILINE)
+    }
+    if not missing:
+        return content
+
+    addition = yaml.safe_dump(missing, sort_keys=False, allow_unicode=True).rstrip("\n")
+    return content[:match.end(1)] + "\n" + addition + content[match.end(1):]
+
+
+def _copy_paper_to_root(
+    project_root: Path,
+    config_name: str,
+    index_source: str,
+    target_name: str,
+    extra_frontmatter: Optional[Dict[str, Any]] = None,
+    verbose: bool = True,
+) -> bool:
+    """Copy a nested paper QMD to a root-level page, fixing its relative paths."""
     source_path = project_root / index_source
-    target_path = project_root / "index.qmd"
+    target_path = project_root / target_name
 
     if not source_path.exists():
         if verbose:
@@ -763,10 +876,13 @@ def prepare_config(config_name: str, verbose: bool = True) -> bool:
         return False
 
     if verbose:
-        print(f"[*] Copying {index_source} -> index.qmd", flush=True)
+        print(f"[*] Copying {index_source} -> {target_name}", flush=True)
 
     with open(source_path, encoding="utf-8") as f:
         content = f.read()
+
+    if extra_frontmatter:
+        content = _add_missing_frontmatter(content, extra_frontmatter)
 
     # Calculate path depth for transformation
     source_parts = Path(index_source).parts
@@ -1275,7 +1391,8 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
         project_root=project_root,
         current_config_source=metadata.get("index_source"),
         files_to_process=paper_files_to_process,
-        verbose=verbose
+        verbose=verbose,
+        hosted_sources={paper["source"] for paper in metadata["papers"]},
     )
 
     if paper_links_rewritten > 0 and verbose:
@@ -1284,24 +1401,27 @@ def prepare_build_temp(config_name: str, verbose: bool = True) -> Optional[Path]
     # Rewrite links to current config's index-source to index.qmd
     # (prepare_config copies the index-source to index.qmd, but other chapter
     # files that link to the original path need updating so Quarto resolves them)
+    source_targets = {paper["source"]: f"{paper['slug']}.qmd" for paper in metadata["papers"]}
     index_source = metadata.get("index_source")
     if index_source:
-        # Only process chapter files, not index.qmd itself
+        source_targets[index_source] = "index.qmd"
+    if source_targets:
+        # Chapter files plus the copied papers, which link to each other
         index_source_files = _expand_qmd_files_with_includes(
             build_temp=build_temp,
             files_to_process=list(current_files),
             verbose=False
         )
         if verbose:
-            print(f"[*] Rewriting links to index-source ({index_source}) -> /index.qmd...", flush=True)
+            print(f"[*] Rewriting links to {len(source_targets)} copied paper(s) -> root pages...", flush=True)
         index_links = _rewrite_index_source_links(
             build_temp=build_temp,
-            index_source=index_source,
+            source_targets=source_targets,
             files_to_process=index_source_files,
             verbose=verbose
         )
         if index_links > 0 and verbose:
-            print(f"[OK] Rewrote {index_links} index-source links to /index.qmd", flush=True)
+            print(f"[OK] Rewrote {index_links} links to root pages", flush=True)
 
     # Cross-site link rewriting
     target_url = metadata.get("target_url")
@@ -1650,12 +1770,16 @@ def render_quarto(  # pyright: ignore[reportGeneralTypeIssues]
                 # Standalone papers advertise their PDF from the site root. A
                 # preceding PDF render stores the file in assets/pdfs, so bundle
                 # that artifact into the HTML package before link validation.
-                expected_pdf = metadata.get("pdf_output_file")
-                source_pdf = project_root / "assets" / "pdfs" / expected_pdf if expected_pdf else None
-                if source_pdf and source_pdf.exists():
-                    bundled_pdf = html_output_dir / expected_pdf
-                    shutil.copy2(source_pdf, bundled_pdf)
-                    print(f"[OK] Bundled PDF with HTML site: {bundled_pdf.relative_to(build_temp)}")
+                # A papers site bundles one PDF per paper.
+                expected_pdfs = [metadata.get("pdf_output_file")] + [
+                    paper["pdf_output_file"] for paper in metadata["papers"]
+                ]
+                for expected_pdf in filter(None, expected_pdfs):
+                    source_pdf = project_root / "assets" / "pdfs" / expected_pdf
+                    if source_pdf.exists():
+                        bundled_pdf = html_output_dir / expected_pdf
+                        shutil.copy2(source_pdf, bundled_pdf)
+                        print(f"[OK] Bundled PDF with HTML site: {bundled_pdf.relative_to(build_temp)}")
 
                 optimized_images = optimize_parameters_appendix_html(html_output_dir)
                 if optimized_images:

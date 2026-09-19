@@ -27,6 +27,10 @@
       "zone_name": "warondisease.org"
     },
     {
+      "pattern": "dfda-protocol.acceleratedmedicine.org/*",
+      "zone_name": "acceleratedmedicine.org"
+    },
+    {
       "pattern": "dfda-spec.warondisease.org/*",
       "zone_name": "warondisease.org"
     },
@@ -45,6 +49,10 @@
     {
       "pattern": "iab.warondisease.org/*",
       "zone_name": "warondisease.org"
+    },
+    {
+      "pattern": "impact.acceleratedmedicine.org/*",
+      "zone_name": "acceleratedmedicine.org"
     },
     {
       "pattern": "impact.dfda.earth/*",
@@ -99,8 +107,32 @@
       "zone_name": "warondisease.org"
     },
     {
+      "pattern": "protocol.acceleratedmedicine.org/*",
+      "zone_name": "acceleratedmedicine.org"
+    },
+    {
+      "pattern": "right-to-trial.acceleratedmedicine.org/*",
+      "zone_name": "acceleratedmedicine.org"
+    },
+    {
       "pattern": "right-to-trial.warondisease.org/*",
       "zone_name": "warondisease.org"
+    },
+    {
+      "pattern": "rtt-fda-upgrade-act.acceleratedmedicine.org/*",
+      "zone_name": "acceleratedmedicine.org"
+    },
+    {
+      "pattern": "rtt-impact.acceleratedmedicine.org/*",
+      "zone_name": "acceleratedmedicine.org"
+    },
+    {
+      "pattern": "rtt-impact.dfda.earth/*",
+      "zone_name": "dfda.earth"
+    },
+    {
+      "pattern": "spec.dfda.earth/*",
+      "zone_name": "dfda.earth"
     },
     {
       "pattern": "takeover.warondisease.org/*",

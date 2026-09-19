@@ -5,7 +5,6 @@ project:
   resources:
     - knowledge/data/
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
 
@@ -15,7 +14,8 @@ dih-render:
   netlify-site-id: "d739329f-a0cb-44b9-91a1-9921345a75c2"
   emoji: "💊"
   index-source: knowledge/appendix/drug-development-cost-analysis.qmd
-  redirect-from: https://drug-cost.warondisease.org
+  redirect-from:
+    - https://drug-cost.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
   pdf-output-file: drug-development-cost-analysis.pdf
   show-confidence-intervals: true
@@ -36,11 +36,11 @@ book:
       email: m@warondisease.org
       orcid: 0009-0006-0212-1094
       affiliations:
-        - name: "International Campaign to End War and Disease"
-          url: https://warondisease.org
+        - name: "Institute for Accelerated Medicine"
+          url: https://acceleratedmedicine.org
   description: 'Rigorous analysis of the 105x increase in drug development costs from pre-1962 to 2024, using Baily (1972) academic study with CPI adjustments and sensitivity analysis'
   abstract: "Drug development costs have increased approximately 105x in real terms since the 1962 Kefauver-Harris Amendment. This analysis uses the Baily (1972) academic study as the primary source, adjusts for inflation via Bureau of Labor Statistics CPI data, and validates the finding against six independent real-world price comparisons: generic vs. brand-name drugs, supplements vs. prescriptions, compounding pharmacies vs. FDA-approved products, veterinary vs. human drugs, orphan drug pricing, and historical antibiotic economics. Monte Carlo sensitivity analysis confirms the estimate is robust across plausible input ranges. The magnitude is consistent with independent estimates of 100-400x from multiple research groups."
-  site-url: https://manual.warondisease.org/knowledge/appendix/drug-development-cost-analysis.html
+  site-url: https://papers.acceleratedmedicine.org/drug-development-cost.html
   favicon: assets/icons/economics-favicon.png
   page-navigation: true
   chapters:
@@ -97,10 +97,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "Drug Development, Health Economics, Regulatory Analysis, FDA Policy"
   category: "Non-fiction, Health Economics, Regulatory Analysis"
@@ -127,15 +127,15 @@ metadata:
     - orphan-drugs
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 The International Campaign to End War and Disease"
+  copyright: "© 2025 Institute for Accelerated Medicine"
   copyright-year: "2025"
   license: "CC BY 4.0"
   license-url: "https://creativecommons.org/licenses/by/4.0/"
   rights: "Creative Commons Attribution 4.0 International License"
-  publisher: "International Campaign to End War and Disease"
-  publisher-url: "https://warondisease.org"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
   issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
   source-url: "https://github.com/wishonia/earth-optimization-protocol"
@@ -192,7 +192,7 @@ format:
   pdf:
     output-file: "drug-development-cost-analysis.pdf"
     documentclass: report
-    institute: "International Campaign to End War and Disease"
+    institute: "Institute for Accelerated Medicine"
     echo: false
     toc: true
     toc-depth: 3
@@ -203,7 +203,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://manual.warondisease.org/knowledge/appendix/drug-development-cost-analysis.html}
+          \paperurl{https://papers.acceleratedmedicine.org/drug-development-cost.html}
     geometry:
       - top=1in
       - bottom=1in

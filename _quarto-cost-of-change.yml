@@ -5,7 +5,6 @@ project:
   resources:
     - knowledge/data/
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
   render:
@@ -74,10 +73,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "Political Economy, Campaign Finance, Lobbying, Public Choice, Cost-Benefit Analysis"
   category: "Academic Paper, Political Economy, Mechanism Design, Public Policy"
@@ -109,7 +108,7 @@ metadata:
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
   issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
   source-url: "https://github.com/wishonia/earth-optimization-protocol"

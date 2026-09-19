@@ -13,7 +13,7 @@ if sys.platform == 'win32':
 
 import logging
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import List
 
@@ -59,6 +59,8 @@ class JobConfig:
     cloudflare_pages_project: str | None  # Explicit Pages project name and deploy opt-in
     upload_to_zenodo: bool        # True for papers
     deploy_to_cloudflare: bool    # True when cloudflare-pages-project is configured
+    # Member paper configs whose PDFs a papers site renders and bundles
+    paper_pdf_configs: List[str] = field(default_factory=list)
 
     @classmethod
     def from_quarto_config(cls, config_path: Path) -> "JobConfig":
@@ -98,6 +100,15 @@ class JobConfig:
         build_dir = infer_build_dir(config_name, output_dir, project_type)
         upload_zenodo = should_upload_to_zenodo(config_name, config)
         deploy_to_cloudflare = bool(cloudflare_pages_project)
+        paper_pdf_configs = [
+            paper["config"]
+            for paper in dih_render.get("papers", [])
+            if load_quarto_config(config_path.parent / f"_quarto-{paper['config']}.yml")
+            .get("dih-render", {})
+            .get("pdf-output-file")
+        ]
+        if paper_pdf_configs:
+            timeout += 15 * len(paper_pdf_configs)
 
         return cls(
             config_name=config_name,
@@ -112,6 +123,7 @@ class JobConfig:
             cloudflare_pages_project=cloudflare_pages_project,
             upload_to_zenodo=upload_zenodo,
             deploy_to_cloudflare=deploy_to_cloudflare,
+            paper_pdf_configs=paper_pdf_configs,
         )
 
 

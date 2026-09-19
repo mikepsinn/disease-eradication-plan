@@ -85,6 +85,10 @@ def extract_paper_info(
     if config_name in ("test", "manual"):
         return None
 
+    # A papers site publishes other configs' papers; it is not a paper itself
+    if (config.get("dih-render") or {}).get("papers"):
+        return None
+
     # Extract from book or website section
     title = None
     description = None

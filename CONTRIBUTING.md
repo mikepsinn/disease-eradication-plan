@@ -99,7 +99,7 @@ Two rules:
 
 *When Your Meat Brain Gets Confused*
 
-Please open an issue or contact: **mike@warondisease.org**
+Please open an issue or contact: **m@warondisease.org**
 
 Wishonia and the community of humans trying not to be extinct appreciate your contribution.
 

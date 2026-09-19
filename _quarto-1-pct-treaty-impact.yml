@@ -5,7 +5,6 @@ project:
   resources:
     - knowledge/data/
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
 
@@ -14,7 +13,10 @@ dih-render:
   emoji: "📜"
   index-source: knowledge/economics/1-pct-treaty-impact.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
-  redirect-from: https://impact.warondisease.org
+  redirect-from:
+    - https://impact.warondisease.org
+    - https://impact.dih.earth
+    - https://models.dih.earth
   pdf-output-file: 1-percent-treaty-impact.pdf
   netlify-site-id: "8cb62a4c-0a10-4a92-a9ab-088c5b2cf094"
   netlify-cname: "manual-warondisease-org.netlify.app"
@@ -112,10 +114,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   # title: Removed - each page defines its own title in frontmatter
   # description: Removed from metadata section to allow page-level descriptions to override for og:description
   # (Book-level description is already set in the 'book' section above)
@@ -164,7 +166,7 @@ metadata:
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/mikepsinn"
   issue-url: "https://github.com/mikepsinn"
   source-url: "https://github.com/mikepsinn"

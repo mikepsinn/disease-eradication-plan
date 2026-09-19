@@ -66,12 +66,12 @@ jobs:
         run: .venv/bin/python -m pytest scripts/tests/test_workflow_generator.py
 
 
-  build-dfda-spec:
-    name: "Build The Continuous Evidence Generation Protocol: Two-S"
+  build-institute-papers:
+    name: "Build Institute for Accelerated Medicine"
     needs: validate
     runs-on: ubuntu-latest
     steps:
-      - name: "Validate Build The Continuous Evidence Generation Protocol: Two-S Cloudflare Pages credentials"
+      - name: "Validate Build Institute for Accelerated Medicine Cloudflare Pages credentials"
         if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
@@ -125,7 +125,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_PROJECT_NAME: "dfda-spec"
+          CLOUDFLARE_PROJECT_NAME: "institute-papers"
         timeout-minutes: 1
 
       - name: Check out repository
@@ -135,9 +135,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: _freeze
-          key: quarto-freeze-dfda-spec-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          key: quarto-freeze-institute-papers-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
           restore-keys: |
-            quarto-freeze-dfda-spec-
+            quarto-freeze-institute-papers-
             quarto-freeze-
 
       - name: Set up Quarto
@@ -210,35 +210,41 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build The Continuous Evidence Generation Protocol: Two-S (PDF + HTML)"
+      - name: "Render Build Institute for Accelerated Medicine (PDF + HTML)"
+        # A papers site bundles each member paper's PDF, built from that paper's own config.
         run: |
           .venv/bin/python scripts/render-quarto.py dfda-spec --to pdf
-          .venv/bin/python scripts/render-quarto.py dfda-spec --to html
+          .venv/bin/python scripts/render-quarto.py dfda-impact --to pdf
+          .venv/bin/python scripts/render-quarto.py invisible-graveyard --to pdf
+          .venv/bin/python scripts/render-quarto.py drug-development-cost --to pdf
+          .venv/bin/python scripts/render-quarto.py right-to-trial --to pdf
+          .venv/bin/python scripts/render-quarto.py right-to-trial-impact --to pdf
+          .venv/bin/python scripts/render-quarto.py institute-papers --to html
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
-        timeout-minutes: 30
+        timeout-minutes: 120
 
       - name: Upload build logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: build-logs-dfda-spec
+          name: build-logs-institute-papers
           path: |
-            logs/build-dfda-spec.log
-            _build_temp/dfda-spec/*.log
-            _build_temp/dfda-spec/**/*.log
+            logs/build-institute-papers.log
+            _build_temp/institute-papers/*.log
+            _build_temp/institute-papers/**/*.log
           retention-days: 7
 
-      - name: "Validate Build The Continuous Evidence Generation Protocol: Two-S Cloudflare Pages limits"
+      - name: "Validate Build Institute for Accelerated Medicine Cloudflare Pages limits"
         if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
         run: |
-          file_count="$(find '_build_temp/dfda-spec/_site/dfda-spec' -type f | wc -l)"
+          file_count="$(find '_build_temp/institute-papers/_site/institute-papers' -type f | wc -l)"
           if [ "$file_count" -gt 20000 ]; then
             echo "::error title=Too many Cloudflare Pages files::$file_count files exceeds the 20,000-file limit."
             exit 1
           fi
 
-          oversized_file="$(find '_build_temp/dfda-spec/_site/dfda-spec' -type f -size +26214400c -print -quit)"
+          oversized_file="$(find '_build_temp/institute-papers/_site/institute-papers' -type f -size +26214400c -print -quit)"
           if [ -n "$oversized_file" ]; then
             echo "::error title=Cloudflare Pages file too large::$oversized_file exceeds the 25 MiB per-file limit."
             exit 1
@@ -246,14 +252,14 @@ jobs:
 
           echo "Cloudflare Pages limits passed: $file_count files, none larger than 25 MiB."
 
-      - name: "Deploy Build The Continuous Evidence Generation Protocol: Two-S to Cloudflare Pages"
+      - name: "Deploy Build Institute for Accelerated Medicine to Cloudflare Pages"
         if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
         run: |
-          npx --yes wrangler@4.126.0 pages deploy '_build_temp/dfda-spec/_site/dfda-spec' \
-            --project-name='dfda-spec' \
+          npx --yes wrangler@4.126.0 pages deploy '_build_temp/institute-papers/_site/institute-papers' \
+            --project-name='institute-papers' \
             --branch='develop' \
             --commit-hash='${{ github.sha }}' \
-            --commit-message='Deploy dfda-spec from GitHub Actions'
+            --commit-message='Deploy institute-papers from GitHub Actions'
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -432,395 +438,12 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         timeout-minutes: 20
 
-  build-right-to-trial:
-    name: "Build Right to Trial & FDA Upgrade Act"
-    needs: validate
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Validate Build Right to Trial & FDA Upgrade Act Cloudflare Pages credentials"
-        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
-        run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "::error title=Missing Cloudflare token::GitHub Actions secret CLOUDFLARE_API_TOKEN is empty or missing."
-            echo "Fix: Create an account-owned token with Pages Write permission, then update GitHub repo secret CLOUDFLARE_API_TOKEN."
-            exit 1
-          fi
-
-          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "::error title=Missing Cloudflare account ID::GitHub Actions secret CLOUDFLARE_ACCOUNT_ID is empty or missing."
-            exit 1
-          fi
-
-          project_response="$RUNNER_TEMP/cloudflare-pages-project-response.json"
-          project_url="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$CLOUDFLARE_PROJECT_NAME"
-          project_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 --output "$project_response" --write-out "%{http_code}" --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$project_url" || true)"
-
-          case "$project_status" in
-            200)
-              echo "Cloudflare preflight passed: token can retrieve $CLOUDFLARE_PROJECT_NAME."
-              ;;
-            401|403)
-              echo "::error title=Cloudflare token cannot manage Pages::CLOUDFLARE_API_TOKEN is invalid, revoked, or lacks Pages Write permission for CLOUDFLARE_ACCOUNT_ID."
-              exit 1
-              ;;
-            404)
-              create_response="$RUNNER_TEMP/cloudflare-pages-project-create-response.json"
-              create_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 --output "$create_response" --write-out "%{http_code}" --request POST --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" --header "Content-Type: application/json" --data "{\"name\":\"$CLOUDFLARE_PROJECT_NAME\",\"production_branch\":\"develop\"}" "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects" || true)"
-              case "$create_status" in
-                200|201)
-                  echo "Created Cloudflare Pages project $CLOUDFLARE_PROJECT_NAME."
-                  ;;
-                *)
-                  echo "::error title=Cloudflare Pages project creation failed::Cloudflare returned HTTP $create_status while creating $CLOUDFLARE_PROJECT_NAME."
-                  cat "$create_response"
-                  exit 1
-                  ;;
-              esac
-              ;;
-            000)
-              echo "::error title=Cloudflare API unreachable::Could not reach Cloudflare while checking deploy credentials."
-              exit 1
-              ;;
-            *)
-              echo "::error title=Unexpected Cloudflare API response::Cloudflare returned HTTP $project_status while checking deploy credentials."
-              echo "Response body:"
-              cat "$project_response"
-              exit 1
-              ;;
-          esac
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_PROJECT_NAME: "right-to-trial"
-        timeout-minutes: 1
-
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Cache Quarto freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-right-to-trial-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-          restore-keys: |
-            quarto-freeze-right-to-trial-
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Cache validation results
-        uses: actions/cache@v4
-        with:
-          path: .cache
-          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
-          restore-keys: |
-            validation-cache-${{ runner.os }}-
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.9
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'pnpm'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: |
-          uv venv .venv
-          uv pip install --python .venv/bin/python -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --python .venv/bin/python -e ".[dev]"
-
-      - name: Install Node dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Install Jupyter kernel
-        run: |
-          .venv/bin/python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Cache TinyTeX
-        uses: actions/cache@v4
-        with:
-          path: ~/.TinyTeX
-          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
-          restore-keys: |
-            tinytex-${{ runner.os }}-
-
-      - name: Install LaTeX
-        run: |
-          if [ ! -d ~/.TinyTeX ]; then
-            quarto install tinytex
-          fi
-          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
-          test -n "$tlmgr_path"
-          "$tlmgr_path" update --self || true
-          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
-
-      - name: "Render Build Right to Trial & FDA Upgrade Act (PDF + HTML)"
-        run: |
-          .venv/bin/python scripts/render-quarto.py right-to-trial --to pdf
-          .venv/bin/python scripts/render-quarto.py right-to-trial --to html
-        env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
-        timeout-minutes: 30
-
-      - name: Upload build logs on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-logs-right-to-trial
-          path: |
-            logs/build-right-to-trial.log
-            _build_temp/right-to-trial/*.log
-            _build_temp/right-to-trial/**/*.log
-          retention-days: 7
-
-      - name: "Validate Build Right to Trial & FDA Upgrade Act Cloudflare Pages limits"
-        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
-        run: |
-          file_count="$(find '_build_temp/right-to-trial/_site/right-to-trial' -type f | wc -l)"
-          if [ "$file_count" -gt 20000 ]; then
-            echo "::error title=Too many Cloudflare Pages files::$file_count files exceeds the 20,000-file limit."
-            exit 1
-          fi
-
-          oversized_file="$(find '_build_temp/right-to-trial/_site/right-to-trial' -type f -size +26214400c -print -quit)"
-          if [ -n "$oversized_file" ]; then
-            echo "::error title=Cloudflare Pages file too large::$oversized_file exceeds the 25 MiB per-file limit."
-            exit 1
-          fi
-
-          echo "Cloudflare Pages limits passed: $file_count files, none larger than 25 MiB."
-
-      - name: "Deploy Build Right to Trial & FDA Upgrade Act to Cloudflare Pages"
-        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
-        run: |
-          npx --yes wrangler@4.126.0 pages deploy '_build_temp/right-to-trial/_site/right-to-trial' \
-            --project-name='right-to-trial' \
-            --branch='develop' \
-            --commit-hash='${{ github.sha }}' \
-            --commit-message='Deploy right-to-trial from GitHub Actions'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        timeout-minutes: 20
-
-  build-right-to-trial-impact:
-    name: "Build Patient's Right to Trial Act: Potential Impact of "
-    needs: validate
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Validate Build Patient's Right to Trial Act: Potential Impact of  Cloudflare Pages credentials"
-        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
-        run: |
-          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
-            echo "::error title=Missing Cloudflare token::GitHub Actions secret CLOUDFLARE_API_TOKEN is empty or missing."
-            echo "Fix: Create an account-owned token with Pages Write permission, then update GitHub repo secret CLOUDFLARE_API_TOKEN."
-            exit 1
-          fi
-
-          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "::error title=Missing Cloudflare account ID::GitHub Actions secret CLOUDFLARE_ACCOUNT_ID is empty or missing."
-            exit 1
-          fi
-
-          project_response="$RUNNER_TEMP/cloudflare-pages-project-response.json"
-          project_url="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$CLOUDFLARE_PROJECT_NAME"
-          project_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 --output "$project_response" --write-out "%{http_code}" --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$project_url" || true)"
-
-          case "$project_status" in
-            200)
-              echo "Cloudflare preflight passed: token can retrieve $CLOUDFLARE_PROJECT_NAME."
-              ;;
-            401|403)
-              echo "::error title=Cloudflare token cannot manage Pages::CLOUDFLARE_API_TOKEN is invalid, revoked, or lacks Pages Write permission for CLOUDFLARE_ACCOUNT_ID."
-              exit 1
-              ;;
-            404)
-              create_response="$RUNNER_TEMP/cloudflare-pages-project-create-response.json"
-              create_status="$(curl --silent --show-error --connect-timeout 10 --max-time 30 --output "$create_response" --write-out "%{http_code}" --request POST --header "Authorization: Bearer $CLOUDFLARE_API_TOKEN" --header "Content-Type: application/json" --data "{\"name\":\"$CLOUDFLARE_PROJECT_NAME\",\"production_branch\":\"develop\"}" "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects" || true)"
-              case "$create_status" in
-                200|201)
-                  echo "Created Cloudflare Pages project $CLOUDFLARE_PROJECT_NAME."
-                  ;;
-                *)
-                  echo "::error title=Cloudflare Pages project creation failed::Cloudflare returned HTTP $create_status while creating $CLOUDFLARE_PROJECT_NAME."
-                  cat "$create_response"
-                  exit 1
-                  ;;
-              esac
-              ;;
-            000)
-              echo "::error title=Cloudflare API unreachable::Could not reach Cloudflare while checking deploy credentials."
-              exit 1
-              ;;
-            *)
-              echo "::error title=Unexpected Cloudflare API response::Cloudflare returned HTTP $project_status while checking deploy credentials."
-              echo "Response body:"
-              cat "$project_response"
-              exit 1
-              ;;
-          esac
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_PROJECT_NAME: "right-to-trial-impact"
-        timeout-minutes: 1
-
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Cache Quarto freeze
-        uses: actions/cache@v4
-        with:
-          path: _freeze
-          key: quarto-freeze-right-to-trial-impact-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
-          restore-keys: |
-            quarto-freeze-right-to-trial-impact-
-            quarto-freeze-
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Cache validation results
-        uses: actions/cache@v4
-        with:
-          path: .cache
-          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
-          restore-keys: |
-            validation-cache-${{ runner.os }}-
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Set up pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.9
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'pnpm'
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
-        with:
-          enable-cache: true
-
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
-        run: |
-          uv venv .venv
-          uv pip install --python .venv/bin/python -r requirements.txt
-
-      - name: Install dih_models package
-        run: uv pip install --python .venv/bin/python -e ".[dev]"
-
-      - name: Install Node dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Install Jupyter kernel
-        run: |
-          .venv/bin/python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
-
-      - name: Cache TinyTeX
-        uses: actions/cache@v4
-        with:
-          path: ~/.TinyTeX
-          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/publish.yml') }}
-          restore-keys: |
-            tinytex-${{ runner.os }}-
-
-      - name: Install LaTeX
-        run: |
-          if [ ! -d ~/.TinyTeX ]; then
-            quarto install tinytex
-          fi
-          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
-          test -n "$tlmgr_path"
-          "$tlmgr_path" update --self || true
-          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
-
-      - name: "Render Build Patient's Right to Trial Act: Potential Impact of  (PDF + HTML)"
-        run: |
-          .venv/bin/python scripts/render-quarto.py right-to-trial-impact --to pdf
-          .venv/bin/python scripts/render-quarto.py right-to-trial-impact --to html
-        env:
-          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
-        timeout-minutes: 30
-
-      - name: Upload build logs on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-logs-right-to-trial-impact
-          path: |
-            logs/build-right-to-trial-impact.log
-            _build_temp/right-to-trial-impact/*.log
-            _build_temp/right-to-trial-impact/**/*.log
-          retention-days: 7
-
-      - name: "Validate Build Patient's Right to Trial Act: Potential Impact of  Cloudflare Pages limits"
-        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
-        run: |
-          file_count="$(find '_build_temp/right-to-trial-impact/_site/right-to-trial-impact' -type f | wc -l)"
-          if [ "$file_count" -gt 20000 ]; then
-            echo "::error title=Too many Cloudflare Pages files::$file_count files exceeds the 20,000-file limit."
-            exit 1
-          fi
-
-          oversized_file="$(find '_build_temp/right-to-trial-impact/_site/right-to-trial-impact' -type f -size +26214400c -print -quit)"
-          if [ -n "$oversized_file" ]; then
-            echo "::error title=Cloudflare Pages file too large::$oversized_file exceeds the 25 MiB per-file limit."
-            exit 1
-          fi
-
-          echo "Cloudflare Pages limits passed: $file_count files, none larger than 25 MiB."
-
-      - name: "Deploy Build Patient's Right to Trial Act: Potential Impact of  to Cloudflare Pages"
-        if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
-        run: |
-          npx --yes wrangler@4.126.0 pages deploy '_build_temp/right-to-trial-impact/_site/right-to-trial-impact' \
-            --project-name='right-to-trial-impact' \
-            --branch='develop' \
-            --commit-hash='${{ github.sha }}' \
-            --commit-message='Deploy right-to-trial-impact from GitHub Actions'
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        timeout-minutes: 20
-
   deploy-redirect-worker:
     name: "Deploy legacy subdomain redirect Worker"
-    needs: validate
+    # Runs after the standalone paper deploys so the target check below sees them.
+    needs:
+      - validate
+      - build-institute-papers
     if: ${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}
     runs-on: ubuntu-latest
     steps:
@@ -829,9 +452,86 @@ jobs:
         with:
           persist-credentials: false
 
+      # Never point a working legacy host at a site that is not serving yet. A
+      # paper that just got its own site-url has a Pages project but no custom
+      # domain until someone attaches it, and this keeps the previous Worker
+      # (still redirecting to the manual page) in place until they do.
+      - name: Check standalone redirect targets are live
+        run: |
+          targets="$(jq -r '[.[]] | unique[]' cloudflare/redirect-worker/redirect-map.json | grep -v '^https://manual\.warondisease\.org/' || true)"
+          for attempt in 1 2 3; do
+            failed=""
+            for target in $targets; do
+              # Follow redirects within the site (Pages 308s "page.html" to
+              # "page"), but a target that ends up on another host is not live:
+              # that is how a catch-all rule once hid three broken paper sites.
+              result="$(curl --silent --location --output /dev/null --write-out '%{http_code} %{url_effective}' --max-time 30 "$target" || true)"
+              status="${result%% *}"
+              target_host="$(printf '%s' "$target" | sed -E 's#^https?://([^/]+).*#\1#' | tr '[:upper:]' '[:lower:]')"
+              final_host="$(printf '%s' "${result#* }" | sed -E 's#^https?://([^/]+).*#\1#' | tr '[:upper:]' '[:lower:]')"
+              if [ "$status" != "200" ] || [ "$final_host" != "$target_host" ]; then
+                failed="$failed $target($status@$final_host)"
+              fi
+            done
+            if [ -z "$failed" ]; then
+              echo "All standalone redirect targets return HTTP 200."
+              exit 0
+            fi
+            echo "Not live yet (attempt $attempt of 3):$failed"
+            sleep 30
+          done
+          echo "::error title=Redirect target is not live::These hosts do not return HTTP 200:$failed. Attach each host as a custom domain on its Cloudflare Pages project (Workers & Pages > project > Custom domains), then re-run this workflow. The previous redirect Worker stays deployed, so legacy links keep working."
+          exit 1
+        timeout-minutes: 5
+
       - name: Deploy redirect Worker to Cloudflare
         run: npx --yes wrangler@4.126.0 deploy --config cloudflare/redirect-worker/wrangler.jsonc
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         timeout-minutes: 5
+
+  # A deploy can succeed and still serve the wrong thing (a stray _redirects
+  # rule once sent every paper site to the manual for weeks). Check that each
+  # canonical URL serves its own page and each legacy host lands on its target.
+  verify-live-sites:
+    name: "Verify live sites and redirects"
+    needs:
+      - deploy-redirect-worker
+      - build-institute-papers
+      - build-manual
+    # Report on every URL even when the Worker deploy above was held back.
+    if: ${{ !cancelled() && ((github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop')) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check live sites and redirects
+        run: |
+          for attempt in 1 2 3; do
+            if pnpm monitor:uptimerobot:check; then
+              exit 0
+            fi
+            echo "Live check failed (attempt $attempt of 3); waiting for deploys to propagate."
+            sleep 60
+          done
+          echo "::error title=Live site check failed::A canonical URL or legacy redirect is not serving its expected page. See the [failed] lines above."
+          exit 1
+        timeout-minutes: 10

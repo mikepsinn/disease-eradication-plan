@@ -81,12 +81,40 @@ def test_only_explicit_cloudflare_pages_projects_deploy() -> None:
     jobs = extract_deploy_job_configs(PROJECT_ROOT)
 
     assert {job.config_name for job in jobs} == {
-        "dfda-spec",
+        "institute-papers",
         "manual",
-        "right-to-trial",
-        "right-to-trial-impact",
     }
     assert len({job.cloudflare_pages_project for job in jobs}) == len(jobs)
+
+
+def test_live_sites_are_verified_after_every_deploy() -> None:
+    workflow = generate_workflow(PROJECT_ROOT, extract_deploy_job_configs(PROJECT_ROOT), "publish.yml.j2")
+    verify_job = workflow[workflow.index("  verify-live-sites:"):]
+
+    for job in extract_deploy_job_configs(PROJECT_ROOT):
+        assert f"      - build-{job.config_name}\n" in verify_job
+    assert "pnpm monitor:uptimerobot:check" in verify_job
+
+
+def test_papers_site_job_builds_each_member_pdf_before_the_html() -> None:
+    workflow = generate_workflow(PROJECT_ROOT, extract_deploy_job_configs(PROJECT_ROOT), "publish.yml.j2")
+    papers_job = workflow[workflow.index("  build-institute-papers:"):workflow.index("  build-manual:")]
+
+    assert "Install LaTeX" in papers_job
+    assert papers_job.index("render-quarto.py dfda-spec --to pdf") < papers_job.index(
+        "render-quarto.py institute-papers --to html"
+    )
+
+
+def test_redirect_worker_waits_for_live_standalone_targets() -> None:
+    workflow = generate_workflow(PROJECT_ROOT, extract_deploy_job_configs(PROJECT_ROOT), "publish.yml.j2")
+    worker_job = workflow[workflow.index("  deploy-redirect-worker:"):workflow.index("  verify-live-sites:")]
+
+    assert "      - build-institute-papers\n" in worker_job
+    assert "      - build-manual\n" not in worker_job
+    assert worker_job.index("Check standalone redirect targets are live") < worker_job.index(
+        "Deploy redirect Worker to Cloudflare"
+    )
 
 
 def test_pdf_llm_validation_is_explicitly_opt_in() -> None:

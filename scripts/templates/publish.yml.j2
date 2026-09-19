@@ -187,7 +187,7 @@ jobs:
         run: |
           .venv/bin/python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
 
-{% if job.bundle_pdf_with_site %}      - name: Cache TinyTeX
+{% if job.bundle_pdf_with_site or job.paper_pdf_configs %}      - name: Cache TinyTeX
         uses: actions/cache@v4
         with:
           path: ~/.TinyTeX
@@ -205,8 +205,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
-{% endif %}      - name: "Render {{ job.display_name }}{% if job.bundle_pdf_with_site %} (PDF + HTML){% else %} (HTML){% endif %}"
-{% if job.bundle_pdf_with_site %}        run: |
+{% endif %}      - name: "Render {{ job.display_name }}{% if job.bundle_pdf_with_site or job.paper_pdf_configs %} (PDF + HTML){% else %} (HTML){% endif %}"
+{% if job.paper_pdf_configs %}        # A papers site bundles each member paper's PDF, built from that paper's own config.
+        run: |
+{% for paper_config in job.paper_pdf_configs %}          .venv/bin/python scripts/render-quarto.py {{ paper_config }} --to pdf
+{% endfor %}          .venv/bin/python scripts/render-quarto.py {{ job.config_name }} --to html
+{% elif job.bundle_pdf_with_site %}        run: |
           .venv/bin/python scripts/render-quarto.py {{ job.config_name }} --to pdf
           .venv/bin/python scripts/render-quarto.py {{ job.config_name }} --to html
 {% else %}        run: .venv/bin/python scripts/render-quarto.py {{ job.config_name }} --to html
@@ -257,8 +261,11 @@ jobs:
 {% endfor %}
   deploy-redirect-worker:
     name: "Deploy legacy subdomain redirect Worker"
-    needs: validate
-    if: {% raw %}${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}{% endraw %}
+    # Runs after the standalone paper deploys so the target check below sees them.
+    needs:
+      - validate
+{% for job in jobs if job.config_name != 'manual' %}      - build-{{ job.config_name }}
+{% endfor %}    if: {% raw %}${{ (github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop') }}{% endraw %}
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -266,9 +273,85 @@ jobs:
         with:
           persist-credentials: false
 
+      # Never point a working legacy host at a site that is not serving yet. A
+      # paper that just got its own site-url has a Pages project but no custom
+      # domain until someone attaches it, and this keeps the previous Worker
+      # (still redirecting to the manual page) in place until they do.
+      - name: Check standalone redirect targets are live
+        run: |
+          targets="$(jq -r '[.[]] | unique[]' cloudflare/redirect-worker/redirect-map.json | grep -v '^https://manual\.warondisease\.org/' || true)"
+          for attempt in 1 2 3; do
+            failed=""
+            for target in $targets; do
+              # Follow redirects within the site (Pages 308s "page.html" to
+              # "page"), but a target that ends up on another host is not live:
+              # that is how a catch-all rule once hid three broken paper sites.
+              result="$(curl --silent --location --output /dev/null --write-out '%{http_code} %{url_effective}' --max-time 30 "$target" || true)"
+              status="${result%% *}"
+              target_host="$(printf '%s' "$target" | sed -E 's#^https?://([^/]+).*#\1#' | tr '[:upper:]' '[:lower:]')"
+              final_host="$(printf '%s' "${result#* }" | sed -E 's#^https?://([^/]+).*#\1#' | tr '[:upper:]' '[:lower:]')"
+              if [ "$status" != "200" ] || [ "$final_host" != "$target_host" ]; then
+                failed="$failed $target($status@$final_host)"
+              fi
+            done
+            if [ -z "$failed" ]; then
+              echo "All standalone redirect targets return HTTP 200."
+              exit 0
+            fi
+            echo "Not live yet (attempt $attempt of 3):$failed"
+            sleep 30
+          done
+          echo "::error title=Redirect target is not live::These hosts do not return HTTP 200:$failed. Attach each host as a custom domain on its Cloudflare Pages project (Workers & Pages > project > Custom domains), then re-run this workflow. The previous redirect Worker stays deployed, so legacy links keep working."
+          exit 1
+        timeout-minutes: 5
+
       - name: Deploy redirect Worker to Cloudflare
         run: npx --yes wrangler@4.126.0 deploy --config cloudflare/redirect-worker/wrangler.jsonc
         env:
           CLOUDFLARE_API_TOKEN: {% raw %}${{ secrets.CLOUDFLARE_API_TOKEN }}{% endraw %}
           CLOUDFLARE_ACCOUNT_ID: {% raw %}${{ secrets.CLOUDFLARE_ACCOUNT_ID }}{% endraw %}
         timeout-minutes: 5
+
+  # A deploy can succeed and still serve the wrong thing (a stray _redirects
+  # rule once sent every paper site to the manual for weeks). Check that each
+  # canonical URL serves its own page and each legacy host lands on its target.
+  verify-live-sites:
+    name: "Verify live sites and redirects"
+    needs:
+      - deploy-redirect-worker
+{% for job in jobs %}      - build-{{ job.config_name }}
+{% endfor %}    # Report on every URL even when the Worker deploy above was held back.
+    if: {% raw %}${{ !cancelled() && ((github.event_name == 'push' && github.ref == 'refs/heads/develop') || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/develop')) }}{% endraw %}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check live sites and redirects
+        run: |
+          for attempt in 1 2 3; do
+            if pnpm monitor:uptimerobot:check; then
+              exit 0
+            fi
+            echo "Live check failed (attempt $attempt of 3); waiting for deploys to propagate."
+            sleep 60
+          done
+          echo "::error title=Live site check failed::A canonical URL or legacy redirect is not serving its expected page. See the [failed] lines above."
+          exit 1
+        timeout-minutes: 10
