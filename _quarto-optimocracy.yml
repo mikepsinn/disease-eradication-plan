@@ -44,7 +44,7 @@ website:
   favicon: assets/icons/optimocracy-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    left: "[International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/optimocracy-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -99,7 +99,6 @@ metadata:
     - public-choice
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
   license: "CC BY 4.0"
   license-url: "https://creativecommons.org/licenses/by/4.0/"

@@ -65,12 +65,30 @@ website:
   page-navigation: false
   search: true
   page-footer:
-    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    # No license here: the appendix of every page already states it.
+    left: "[Institute for Accelerated Medicine](https://acceleratedmedicine.org)"
     right: "[Source code and data](https://github.com/wishonia/earth-optimization-protocol)"
   navbar:
     left:
+      # Lets a reader move between papers without going back through the home
+      # page. Add a paper here when adding it to dih-render.papers.
       - text: "Papers"
-        href: index.qmd
+        menu:
+          - text: "All papers"
+            href: index.qmd
+          - text: "---"
+          - text: "The Continuous Evidence Generation Protocol"
+            href: dfda-protocol.qmd
+          - text: "Ubiquitous Pragmatic Trial Impact Analysis"
+            href: dfda-impact.qmd
+          - text: "The Invisible Graveyard"
+            href: invisible-graveyard.qmd
+          - text: "Drug Development Cost Increase Analysis"
+            href: drug-development-cost.qmd
+          - text: "Right to Trial & FDA Upgrade Act"
+            href: right-to-trial.qmd
+          - text: "Patient's Right to Trial Act: Impact in All 50 States"
+            href: right-to-trial-impact.qmd
     right:
       - text: "Calculations"
         href: knowledge/appendix/parameters-and-calculations.qmd
@@ -101,7 +119,6 @@ metadata:
   author-website: "https://mikesinn.com"
   byline: Mike P. Sinn
   contact: m@warondisease.org
-  copyright: © 2025 Mike P. Sinn
   copyright-year: 2025
   creator: Mike P. Sinn
   github-profile: "https://github.com/mikepsinn"

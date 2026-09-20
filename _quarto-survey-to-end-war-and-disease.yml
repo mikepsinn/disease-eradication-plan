@@ -40,7 +40,7 @@ website:
   favicon: favicon.ico
   page-navigation: true
   page-footer:
-    left: "© 2026 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    left: "[International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/survey-to-end-war-and-disease.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -91,7 +91,6 @@ metadata:
     - outcome-based-government
   version: "0.1"
   edition: "Working Paper"
-  copyright: "© 2026 Mike P. Sinn"
   copyright-year: "2026"
   license: "CC BY 4.0"
   license-url: "https://creativecommons.org/licenses/by/4.0/"

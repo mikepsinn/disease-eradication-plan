@@ -5,9 +5,9 @@ toc: false
 number-sections: false
 listing:
   id: papers
-  type: default
+  # Title, full-width image, abstract: the layout knowledge/papers.qmd uses.
+  template: assets/html/papers-listing.ejs
   sort: false
-  fields: [image, title, description]
   # Anchored with ./ because a bare filename matches at any depth, and a paper's
   # source can share its slug's filename (knowledge/appendix/invisible-graveyard.qmd).
   contents:
@@ -23,3 +23,11 @@ Each paper publishes its parameters, sources, and calculations with it. All are 
 
 ::: {#papers}
 :::
+
+```{=html}
+<style>
+.paper-entry { margin-bottom: 3rem; }
+.paper-entry-title { margin-top: 0; }
+.paper-entry-image { width: 100%; height: auto; }
+</style>
+```

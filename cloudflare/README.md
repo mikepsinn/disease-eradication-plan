@@ -110,9 +110,9 @@ How it fits together:
   still builds the PDF and uploads to Zenodo; it is the paper's source of truth.
 - `dih-render.index-page` is the site's home page. It is deliberately not
   `index-source`: generators that read `index-source` treat a config as a paper.
-- To add a paper: add it to `dih-render.papers`, `project.render`, and the
-  listing in `index-institute-papers.qmd`. The build fails loudly if the first
-  two disagree.
+- To add a paper: add it to `dih-render.papers`, `project.render`, the navbar
+  "Papers" menu, and the listing in `index-institute-papers.qmd`. The build
+  fails loudly if the first two disagree.
 - Book-voice papers stay in the manual. A second publisher gets a second papers
   site the same way.
 

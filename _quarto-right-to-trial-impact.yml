@@ -50,7 +50,7 @@ book:
     - index.qmd
     - knowledge/appendix/parameters-and-calculations.qmd
   page-footer:
-    left: "© 2025 Mike P. Sinn | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    left: "[Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/state-right-to-trial-impact.pdf)"
   navbar:
     right:
@@ -121,7 +121,6 @@ metadata:
     - aging
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
   license: "CC BY 4.0"
   license-url: "https://creativecommons.org/licenses/by/4.0/"

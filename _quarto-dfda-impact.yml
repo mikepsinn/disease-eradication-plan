@@ -52,7 +52,7 @@ website:
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    left: "[Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -114,7 +114,6 @@ metadata:
     - decentralized-fda
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 Institute for Accelerated Medicine"
   copyright-year: "2025"
   license: "CC BY 4.0"
   license-url: "https://creativecommons.org/licenses/by/4.0/"

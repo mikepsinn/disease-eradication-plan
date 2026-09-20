@@ -53,7 +53,7 @@ website:
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 [Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    left: "[Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/right-to-trial-fda-upgrade-act.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -109,7 +109,6 @@ metadata:
     - decentralized-trials
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
   license: "CC BY 4.0"
   license-url: "https://creativecommons.org/licenses/by/4.0/"

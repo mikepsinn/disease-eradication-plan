@@ -45,7 +45,7 @@ website:
   favicon: assets/icons/loving-takeover-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2026 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
+    left: "[International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/loving-takeover.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -95,7 +95,6 @@ metadata:
     - index-funds
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2026 Mike P. Sinn"
   copyright-year: "2026"
   license: "CC BY 4.0"
   license-url: "https://creativecommons.org/licenses/by/4.0/"
