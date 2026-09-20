@@ -55,7 +55,6 @@ execute:
   echo: false
 
 metadata:
-  image: "https://manual.warondisease.org/assets/og/retro-science/manual-og.jpg"
   title: "Test PDF Link Rewriting"
   # description: Removed from metadata section to allow page-level descriptions to override for og:description
   # (Book-level description is already set in the 'book' section above)
