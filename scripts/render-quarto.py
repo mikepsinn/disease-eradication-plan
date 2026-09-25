@@ -64,6 +64,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 from build_logger import BuildLogger  # type: ignore[import-not-found]
 from local_webtex import start_server as start_webtex, stop_server as stop_webtex  # type: ignore[import-not-found]
+from markdown_twins import write_markdown_twins  # type: ignore[import-not-found]
+from page_citations import keep_one_bibliography_page, scope_variable_citations  # type: ignore[import-not-found]
 from parameter_appendix_optimizer import optimize_parameters_appendix_html  # type: ignore[import-not-found]
 from python_utils import load_project_dotenv  # type: ignore[import-not-found]
 from render_utils import (  # type: ignore[import-not-found]
@@ -677,6 +679,10 @@ def get_config_metadata(config_name: str) -> Dict[str, Any]:
         "parameter_link_format": dih_render.get("parameter-link-format", "html"),
         # BibTeX fields to strip from references.bib (e.g., ["abstract", "note"] to shorten print refs)
         "strip_bib_fields": dih_render.get("strip-bib-fields", []),
+        # Write page.llms.md beside each HTML page for AI tools (scripts/lib/markdown_twins.py)
+        "markdown_twins": dih_render.get("markdown-twins", False),
+        # The one book page that shows the whole bibliography (scripts/lib/page_citations.py)
+        "references_page": dih_render.get("references-page"),
         # Site URL for OG metadata fixup (website.site-url or book.site-url)
         "site_url": (
             config.get("website", {}).get("site-url") or
@@ -708,15 +714,8 @@ def _build_quarto_render_command(
     return cmd
 
 
-def _collect_config_variable_names(project_root: Path, config_name: str) -> Set[str]:
-    """Collect Quarto variables used by the sources rendered for one config."""
-    config_path = project_root / f"_quarto-{config_name}.yml"
-    config = load_quarto_config(config_path)
-    index_source = config.get("dih-render", {}).get("index-source")
-    paper_sources = {
-        f"{paper['slug']}.qmd": paper["source"]
-        for paper in _load_site_papers(project_root, config.get("dih-render", {}))
-    }
+def _config_page_paths(config: Dict[str, Any]) -> Set[str]:
+    """Collect the .qmd pages a config renders: book chapters and project.render."""
     qmd_paths: Set[str] = set()
 
     def collect_qmd_paths(node: Any) -> None:
@@ -738,10 +737,23 @@ def _collect_config_variable_names(project_root: Path, config_name: str) -> Set[
             if key in node:
                 collect_qmd_paths(node[key])
 
-    if isinstance(index_source, str) and index_source.endswith(".qmd"):
-        qmd_paths.add(index_source)
     collect_qmd_paths(config.get("book", {}))
     collect_qmd_paths(config.get("project", {}).get("render", []))
+    return qmd_paths
+
+
+def _collect_config_variable_names(project_root: Path, config_name: str) -> Set[str]:
+    """Collect Quarto variables used by the sources rendered for one config."""
+    config_path = project_root / f"_quarto-{config_name}.yml"
+    config = load_quarto_config(config_path)
+    index_source = config.get("dih-render", {}).get("index-source")
+    paper_sources = {
+        f"{paper['slug']}.qmd": paper["source"]
+        for paper in _load_site_papers(project_root, config.get("dih-render", {}))
+    }
+    qmd_paths = _config_page_paths(config)
+    if isinstance(index_source, str) and index_source.endswith(".qmd"):
+        qmd_paths.add(index_source)
 
     variable_names: Set[str] = set()
     filtered_parameters = (
@@ -1690,6 +1702,28 @@ def render_quarto(  # pyright: ignore[reportGeneralTypeIssues]
                 params_qmd.write_text(text, encoding="utf-8", newline='\n')
                 print(f"[*] Stripped chart includes from parameters page ({format_override.upper()})")
 
+        # Give each HTML page the reference list of its own citations. PDF,
+        # EPUB, and DOCX builds are one document with one list, so they keep
+        # every parameter source. See scripts/lib/page_citations.py.
+        renders_html_only = format_override == "html" or (
+            format_override is None and metadata["configured_formats"] == ["html"]
+        )
+        if renders_html_only:
+            page_paths = _config_page_paths(load_quarto_config(project_root / metadata["config_file"]))
+            if page_paths:
+                stats = scope_variable_citations(build_temp, page_paths)
+                print(
+                    f"[*] Scoped parameter citations to their pages: nocite on {stats['pages_with_nocite']} "
+                    f"page(s), {stats['inlined_shortcodes']} _cite shortcode(s) inlined, "
+                    f"{stats['removed_variables']} _cite variable(s) removed from _variables.yml"
+                )
+            if metadata["project_type"] == "book" and metadata["references_page"]:
+                stripped = keep_one_bibliography_page(build_temp, page_paths, metadata["references_page"])
+                print(
+                    f"[*] Book bibliography goes to {metadata['references_page']}; "
+                    f"removed ::: {{#refs}} from {len(stripped)} other page(s)"
+                )
+
         # Start local webtex caching server for EPUB builds.
         # Proxies codecogs with local disk cache so builds survive outages.
         rendering_epub = format_override in (None, "epub")
@@ -1814,6 +1848,15 @@ def render_quarto(  # pyright: ignore[reportGeneralTypeIssues]
                 site_url = metadata.get("site_url", "")
                 if site_url:
                     fix_og_metadata(str(html_output_dir), site_url=site_url)
+
+                # AI tools fetch page.llms.md instead of the HTML (navigation,
+                # scripts, and tooltips removed). See scripts/lib/markdown_twins.py.
+                if metadata["markdown_twins"]:
+                    twins = write_markdown_twins(html_output_dir, site_url=site_url)
+                    print(
+                        f"[OK] Wrote {twins['twins']} markdown twin(s) (*.llms.md) for AI tools; "
+                        f"llms.txt links {twins['llms_txt_links']} of them"
+                    )
 
                 # Cloudflare Pages reads _headers/_redirects from the deploy
                 # root, and Quarto skips underscore-prefixed source files, so

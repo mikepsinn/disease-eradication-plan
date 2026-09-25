@@ -49,6 +49,16 @@
   ! Cache-Control
   Cache-Control: public, max-age=0, must-revalidate
 
+# Markdown twins of the pages, for AI tools (scripts/lib/markdown_twins.py).
+# The canonical Link sends search engines to the HTML page instead.
+/*.llms.md
+  Content-Type: text/markdown; charset=utf-8
+  Link: <https://manual.warondisease.org/:splat>; rel="canonical"
+
+/index.llms.md
+  ! Link
+  Link: <https://manual.warondisease.org/>; rel="canonical"
+
 # The embeddable scoreboard fetches this JSON cross-origin from third-party
 # sites (public read-only data), and its values must stay live, not a
 # year-stale immutable cache hit.

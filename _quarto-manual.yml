@@ -28,6 +28,11 @@ dih-render:
       to: knowledge/papers.html
   # Strip "(95% CI: ...)" from variable display values for general-audience reading
   show-confidence-intervals: true
+  # Write page.llms.md beside each page for AI tools (scripts/lib/markdown_twins.py)
+  markdown-twins: true
+  # Quarto puts the book bibliography on the first page with a ::: {#refs} block.
+  # The appendix papers have one for their PDFs; this keeps it here (scripts/lib/page_citations.py).
+  references-page: knowledge/references.qmd
   # parameter-link-format defaults to html (links work in HTML, stripped by Lua filter for EPUB/PDF)
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
