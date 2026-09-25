@@ -41,7 +41,7 @@ def test_each_page_cites_only_the_sources_of_its_own_parameters(tmp_path: Path) 
     (tmp_path / "parts").mkdir()
     (tmp_path / "parts" / "money.qmd").write_text("It cost {{< var spending_nounit >}}.\n", encoding="utf-8")
     (tmp_path / "lobby.qmd").write_text(
-        "Lobbyists spend {{< var lobbying >}} {{< var lobbying_cite >}}.\n", encoding="utf-8"
+        "Lobbyists spend {{< var lobbying >}} {{< var lobbying_cite >}}/year.\n", encoding="utf-8"
     )
     (tmp_path / "plain.qmd").write_text("---\ntitle: Plain\n---\n\n{{< var ratio >}}\n", encoding="utf-8")
 
@@ -50,8 +50,9 @@ def test_each_page_cites_only_the_sources_of_its_own_parameters(tmp_path: Path) 
     assert stats == {"pages_with_nocite": 2, "inlined_shortcodes": 1, "removed_variables": 3}
     war = (tmp_path / "war.qmd").read_text(encoding="utf-8")
     assert war.startswith("---\ntitle: War\nnocite: '@sipri-2024, @who-2024'\n---\n")
+    # Braces end the key: a bare "@opensecrets-2024/year" is the key "opensecrets-2024/year".
     lobby = (tmp_path / "lobby.qmd").read_text(encoding="utf-8")
-    assert lobby == "---\nnocite: '@opensecrets-2024'\n---\n\nLobbyists spend {{< var lobbying >}} @opensecrets-2024.\n"
+    assert lobby == "---\nnocite: '@opensecrets-2024'\n---\n\nLobbyists spend {{< var lobbying >}} @{opensecrets-2024}/year.\n"
     assert (tmp_path / "plain.qmd").read_text(encoding="utf-8") == "---\ntitle: Plain\n---\n\n{{< var ratio >}}\n"
     # The included file is not a page: it needs no frontmatter of its own.
     assert (tmp_path / "parts" / "money.qmd").read_text(encoding="utf-8") == "It cost {{< var spending_nounit >}}.\n"

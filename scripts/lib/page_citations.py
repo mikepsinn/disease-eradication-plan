@@ -60,7 +60,9 @@ def scope_variable_citations(build_dir: Path, page_paths: Iterable[str]) -> Dict
 
     1. Each page gets a nocite for the *_cite sources of the variables it uses
        (includes too), so its reference list keeps the sources of its numbers.
-    2. Explicit {{< var name_cite >}} shortcodes become the literal citation.
+    2. Explicit {{< var name_cite >}} shortcodes become the literal citation,
+       @{key}. The braces end the key: pandoc reads "@key/year" as the key
+       "key/year".
     3. The *_cite entries leave _variables.yml, so no page cites them all.
     """
     variables_path = build_dir / "_variables.yml"
@@ -82,9 +84,10 @@ def scope_variable_citations(build_dir: Path, page_paths: Iterable[str]) -> Dict
         if keys:
             page_keys[page_path.resolve()] = sorted(keys)
 
+    inline = {name: "@{" + value.lstrip("@") + "}" for name, value in cites.items()}
     for qmd_path in sorted(build_dir.rglob("*.qmd")):
         content = qmd_path.read_text(encoding="utf-8")
-        updated, inlined = _RE_CITE_SHORTCODE.subn(lambda m: cites.get(m.group(1), m.group(0)), content)
+        updated, inlined = _RE_CITE_SHORTCODE.subn(lambda m: inline.get(m.group(1), m.group(0)), content)
         keys = page_keys.get(qmd_path.resolve())
         if keys:
             updated = _add_nocite(updated, keys, str(qmd_path.relative_to(build_dir)))
