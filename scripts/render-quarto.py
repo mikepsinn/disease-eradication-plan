@@ -714,6 +714,19 @@ def _build_quarto_render_command(
     return cmd
 
 
+def _renders_html_only(format_override: Optional[str], configured_formats: List[str], preview: bool) -> bool:
+    """Whether a run makes HTML and no other format.
+
+    A preview serves only the first configured format. A render without --to
+    makes every configured format from the same sources.
+    """
+    if format_override is not None:
+        return format_override == "html"
+    if preview:
+        return configured_formats[:1] == ["html"]
+    return configured_formats == ["html"]
+
+
 def _config_page_paths(config: Dict[str, Any]) -> Set[str]:
     """Collect the .qmd pages a config renders: book chapters and project.render."""
     qmd_paths: Set[str] = set()
@@ -1704,11 +1717,10 @@ def render_quarto(  # pyright: ignore[reportGeneralTypeIssues]
 
         # Give each HTML page the reference list of its own citations. PDF,
         # EPUB, and DOCX builds are one document with one list, so they keep
-        # every parameter source. See scripts/lib/page_citations.py.
-        renders_html_only = format_override == "html" or (
-            format_override is None and metadata["configured_formats"] == ["html"]
-        )
-        if renders_html_only:
+        # every parameter source. A run that makes HTML and a print format
+        # together keeps the old lists in both, because they share sources;
+        # CI renders each site with --to html. See scripts/lib/page_citations.py.
+        if _renders_html_only(format_override, metadata["configured_formats"], preview):
             page_paths = _config_page_paths(load_quarto_config(project_root / metadata["config_file"]))
             if page_paths:
                 stats = scope_variable_citations(build_temp, page_paths)
