@@ -21,7 +21,7 @@ setup_chart_style()
 
 interventions = {
     'Malaria Bed Nets\n(Against Malaria\nFoundation)': {
-        'cost_per_daly': float(BED_NETS_COST_PER_DALY),  # $89 midpoint (GiveWell 2024)
+        'cost_per_daly': float(BED_NETS_COST_PER_DALY),  # GiveWell AMF cost per life / discounted life-years
         'category': 'givewell-top',
         'note': 'GiveWell top charity'
     },
