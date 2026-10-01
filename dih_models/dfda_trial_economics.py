@@ -26,8 +26,10 @@ from dih_models.parameters import (
     EFFICACY_LAG_YEARS,
     EVENTUALLY_AVOIDABLE_DALY_PCT,
     GLOBAL_ANNUAL_DALY_BURDEN,
+    NPV_DISCOUNT_RATE_STANDARD,
     STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT,
     STATUS_QUO_QUEUE_CLEARANCE_YEARS,
+    _timeline_shift_discounted_years,
 )
 
 
@@ -46,6 +48,7 @@ def _params() -> dict:
         avoidable_pct=float(EVENTUALLY_AVOIDABLE_DALY_PCT),
         proposed_funding=float(DFDA_ANNUAL_TRIAL_FUNDING),
         upfront_cost=float(DFDA_NPV_UPFRONT_COST_TOTAL),
+        discount_rate=float(NPV_DISCOUNT_RATE_STANDARD),
     )
 
 
@@ -60,8 +63,12 @@ def compute_at_funding_level(funding: float | None = None) -> dict:
 
     Returns:
         dict with keys: funding, subsidy, multiplier, clearance_years,
-        accel_years, total_shift, dalys_averted, total_cost, cost_per_daly.
+        accel_years, total_shift, dalys_averted (undiscounted count),
+        dalys_averted_discounted, total_cost (present value), cost_per_daly.
         Returns None for values that cannot be computed (funding too low).
+
+    Cost per DALY discounts costs and DALYs at the same standard rate, matching
+    DFDA_DIRECT_FUNDING_COST_PER_DALY.
     """
     p = _params()
     if funding is None:
@@ -71,7 +78,8 @@ def compute_at_funding_level(funding: float | None = None) -> dict:
     if subsidy <= 0:
         return dict(funding=funding, subsidy=subsidy,
                     multiplier=None, clearance_years=None, accel_years=None,
-                    total_shift=None, dalys_averted=None, total_cost=None,
+                    total_shift=None, dalys_averted=None,
+                    dalys_averted_discounted=None, total_cost=None,
                     cost_per_daly=None)
 
     patients = subsidy / p["cost_per_patient"]
@@ -79,14 +87,20 @@ def compute_at_funding_level(funding: float | None = None) -> dict:
     if multiplier <= 1:
         return dict(funding=funding, subsidy=subsidy, multiplier=multiplier,
                     clearance_years=None, accel_years=None, total_shift=None,
-                    dalys_averted=None, total_cost=None, cost_per_daly=None)
+                    dalys_averted=None, dalys_averted_discounted=None,
+                    total_cost=None, cost_per_daly=None)
 
+    r = p["discount_rate"]
     clearance_years = p["sq_queue"] / multiplier
     accel_years = p["baseline_wait"] * (1 - 1 / multiplier)
     total_shift = accel_years + p["efficacy_lag"]
-    dalys_averted = p["annual_daly_burden"] * p["avoidable_pct"] * total_shift
-    total_cost = p["upfront_cost"] + funding * clearance_years
-    cost_per_daly = total_cost / dalys_averted
+    burden = p["annual_daly_burden"] * p["avoidable_pct"]
+    dalys_averted = burden * total_shift
+    dalys_averted_discounted = burden * _timeline_shift_discounted_years(
+        p["sq_queue"], clearance_years, p["efficacy_lag"], r)
+    # Continuous spending, matching DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV and the discounted DALYs
+    total_cost = p["upfront_cost"] + funding * (1 - (1 + r) ** -clearance_years) / np.log(1 + r)
+    cost_per_daly = total_cost / dalys_averted_discounted
 
     return dict(
         funding=funding,
@@ -96,6 +110,7 @@ def compute_at_funding_level(funding: float | None = None) -> dict:
         accel_years=accel_years,
         total_shift=total_shift,
         dalys_averted=dalys_averted,
+        dalys_averted_discounted=dalys_averted_discounted,
         total_cost=total_cost,
         cost_per_daly=cost_per_daly,
     )
@@ -115,7 +130,6 @@ def compute_across_funding_levels(
         dict with keys: funding_levels, cost_per_daly, dalys_averted
         (numpy arrays; entries are NaN where funding is below threshold).
     """
-    p = _params()
     if funding_array is None:
         funding_array = np.logspace(np.log10(1e8), np.log10(2e11), 200)
     funding_levels = np.asarray(funding_array, dtype=float)
@@ -124,23 +138,11 @@ def compute_across_funding_levels(
     dalys_averted = np.full_like(funding_levels, np.nan)
 
     for i, funding in enumerate(funding_levels):
-        subsidy = funding - p["opex"]
-        if subsidy <= 0:
+        result = compute_at_funding_level(float(funding))
+        if result["cost_per_daly"] is None:
             continue
-        patients = subsidy / p["cost_per_patient"]
-        multiplier = patients / p["current_slots"]
-        if multiplier <= 1:
-            continue
-
-        clearance_years = p["sq_queue"] / multiplier
-        accel_years = p["baseline_wait"] * (1 - 1 / multiplier)
-        total_shift = accel_years + p["efficacy_lag"]
-
-        d = p["annual_daly_burden"] * p["avoidable_pct"] * total_shift
-        total_cost = p["upfront_cost"] + funding * clearance_years
-
-        dalys_averted[i] = d
-        cost_per_daly[i] = total_cost / d
+        dalys_averted[i] = result["dalys_averted"]
+        cost_per_daly[i] = result["cost_per_daly"]
 
     return dict(
         funding_levels=funding_levels,
@@ -161,7 +163,7 @@ def get_ceiling_dalys() -> float:
 
 
 def get_floor_queue_cost() -> float:
-    """Total undiscounted cost to clear the queue (roughly fixed).
+    """Total cost to clear the queue at infinite speed (all spent at t=0, so no discounting).
 
     = sq_queue * cost_per_patient * current_slots
     This is the minimum total trial expenditure regardless of speed.
@@ -173,12 +175,14 @@ def get_floor_queue_cost() -> float:
 def get_floor_cost_per_daly() -> float:
     """Asymptotic minimum cost/DALY at infinite funding.
 
-    = (upfront_cost + floor_queue_cost) / ceiling_dalys
+    = (upfront_cost + floor_queue_cost) / discounted ceiling DALYs, where every
+    first treatment arrives at t=0 and the status quo is unchanged.
     """
     p = _params()
     floor_cost = get_floor_queue_cost()
-    ceiling_dalys = get_ceiling_dalys()
-    return (p["upfront_cost"] + floor_cost) / ceiling_dalys
+    ceiling_dalys_discounted = p["annual_daly_burden"] * p["avoidable_pct"] * _timeline_shift_discounted_years(
+        p["sq_queue"], 0.0, p["efficacy_lag"], p["discount_rate"])
+    return (p["upfront_cost"] + floor_cost) / ceiling_dalys_discounted
 
 
 def get_efficacy_lag_dalys() -> float:

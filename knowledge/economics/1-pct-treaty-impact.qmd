@@ -579,7 +579,7 @@ Conservative benefits ({{< var treaty_peace_plus_rd_annual_benefits >}} annually
 
 **GiveWell Top Charities (individual benchmarks):**
 
-- **Bed Nets** {{< var bed_nets_cost_per_daly_cite >}}: {{< var bed_nets_cost_per_daly >}}/DALY
+- **Bed Nets** [@givewell-cost-per-life-saved]: {{< var bed_nets_cost_per_daly >}}/DALY
 - **Deworming** {{< var deworming_cost_per_daly_cite >}}: {{< var deworming_cost_per_daly >}}/DALY
 - **Vitamin A** {{< var vitamin_a_cost_per_daly_cite >}}: {{< var vitamin_a_cost_per_daly >}}/DALY
 
@@ -790,9 +790,9 @@ For the framework's cost per health benefit averted (using the full ~{{< var dfd
 
 This represents {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per year of healthy life gained. This extremely low cost per DALY, combined with net economic benefits that exceed costs, qualifies this as a cost-saving intervention under model assumptions. Standard willingness-to-pay thresholds are {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; cost-saving interventions are generally prioritized regardless of threshold.
 
-#### Timeline Shift Benefits Are Not Discounted
+#### Timeline Shift Benefits Use the Same Discount Rate as Costs
 
-The conservative NPV above excludes the timeline-shift health benefits. Discounting them would require assuming when each disease's first effective treatment arrives: at the {{< var npv_discount_rate_standard >}} rate, a benefit that begins around year 90 keeps well under a tenth of its undiscounted value, while diseases treatable within 10-20 years keep most of theirs. This analysis does not compute that figure. The timeline-shift values are reported undiscounted and cumulative ({{< var dfda_efficacy_lag_elimination_economic_value >}} for the efficacy-lag component alone, {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} for the full shift), separately from the R&D-only NPV ({{< var dfda_npv_benefit_rd_only >}}); the two are different benefit streams and are not added together.
+Health benefits are discounted at the same {{< var npv_discount_rate_standard >}} as costs. Discounting costs but not health would make the program look better the longer it is delayed (the Keeler-Cretin paradox). The model assumes first treatments arrive evenly over the {{< var dfda_queue_clearance_years >}} clearance period, instead of evenly over {{< var status_quo_queue_clearance_years >}} plus the efficacy lag today. The{{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} healthy years gained have a present value of {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_discounted_nounit >}}, worth {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. That value is separate from the R&D-only NPV ({{< var dfda_npv_benefit_rd_only >}}); the two are different benefit streams and are not added together.
 
 ## Quality-Adjusted Life Year (QALY) Valuation
 
@@ -1020,9 +1020,9 @@ The complete ROI includes the full timeline shift health benefits:
 | Trial Capacity | {{< var dfda_trial_capacity_multiplier >}} | Patients fundable ÷ current slots | Funding, trial cost, current capacity |
 | Timeline Shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Treatment acceleration + efficacy lag | Discovery capacity model, multiplier, regulatory data |
 | DALYs Averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} | DALY burden × avoidable × shift | WHO GBD, avoidability assumption |
-| Cost/DALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} | Implementation cost ÷ DALYs | Implementation budget, DALYs |
+| Cost/DALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} | Implementation cost ÷ discounted DALYs | Implementation budget, DALYs, discount rate |
 | ROI (Conservative) | {{< var dfda_roi_rd_only >}}:1 | NPV benefits ÷ NPV costs | Trial savings, discount rate |
-| ROI (Complete) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | Economic value ÷ implementation cost | QALY valuation, timeline shift |
+| ROI (Complete) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | Discounted DALYs × QALY value ÷ implementation cost | QALY valuation, timeline shift, discount rate |
 | Lives Saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | Daily deaths × avoidable × shift | WHO mortality, timeline shift |
 | Delay Lives | {{< var dfda_efficacy_lag_elimination_deaths_averted >}} | Daily deaths × lag × avoidable | WHO mortality, lag years |
 | Delay Value | {{< var dfda_efficacy_lag_elimination_economic_value >}} | Delay DALYs × QALY Value | Delay DALYs, QALY ($150k) |

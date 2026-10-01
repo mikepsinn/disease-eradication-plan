@@ -1,6 +1,6 @@
 ---
 title: Is This Crazy?
-description: A {{< var treaty_reduction_pct >}} redirect of military spending to pragmatic trials claims to avert {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} at {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} each. One-page calculation chain for economist review.
+description: A {{< var treaty_reduction_pct >}} redirect of military spending to pragmatic trials claims to avert {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} at {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY, with costs and health both discounted. One-page calculation chain for economist review.
 published: true
 toc: false
 number-sections: false
@@ -95,12 +95,12 @@ The logic builds in six steps.
 
 **Step 5: Cost-Effectiveness (Two Framings)**
 
-| Framing | Cost | DALYs | Cost/DALY |
+| Framing | Cost | Discounted DALYs | Cost/DALY |
 |:--------|-----:|------:|----------:|
-| Treaty campaign | {{< var treaty_campaign_total_cost >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
-| Direct funding (NPV at {{< var npv_discount_rate_standard >}}) | {{< var dfda_direct_funding_queue_clearance_npv >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | {{< var dfda_direct_funding_cost_per_daly >}} |
+| Treaty campaign | {{< var treaty_campaign_total_cost >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_discounted >}} | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
+| Direct funding (NPV at {{< var npv_discount_rate_standard >}}) | {{< var dfda_direct_funding_queue_clearance_npv >}} | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_discounted >}} | {{< var dfda_direct_funding_cost_per_daly >}} |
 
-Note: Costs are discounted at {{< var npv_discount_rate_standard >}} social discount rate; DALYs are undiscounted (standard in GBD methodology).
+Note: Costs and DALYs are both discounted at the {{< var npv_discount_rate_standard >}} social discount rate, as in standard cost-effectiveness analysis. The undiscounted total is {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}.
 
 **Step 6: Risk Adjustment**
 
