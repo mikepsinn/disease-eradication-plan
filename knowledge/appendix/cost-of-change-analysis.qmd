@@ -1,12 +1,12 @@
 ---
 title: "How Much Does It Cost to Buy All the Governments?"
-description: What's the maximum cost to achieve any policy change through legal democratic channels? $25B for the US, $200B globally. For high-value reforms like military-to-health reallocation, this yields a benefit-cost ratio exceeding 400,000:1.
+description: What's the maximum cost to achieve any policy change through legal democratic channels? {{< var us_political_reform_investment_total >}} for the US, {{< var global_political_reform_investment >}} globally. For high-value reforms like military-to-health reallocation, this yields a benefit-cost ratio in the tens of thousands to one.
 abstract: |
   What is the maximum cost to achieve any policy change through legal democratic channels? We estimate
   $25 billion for the United States and $200 billion globally. These figures represent the upper bound
   of matching all opposition spending (campaign finance, lobbying) and providing career alternatives
   for affected legislators. For high net-societal-value policies, even these maximum costs yield
-  extraordinary returns: military-to-health reallocation achieves a benefit-cost ratio exceeding 400,000:1, carbon
+  extraordinary returns: military-to-health reallocation achieves a benefit-cost ratio in the tens of thousands to one, carbon
   pricing exceeds 1,000:1, and occupational licensing reform exceeds 2,000:1. The "political
   impossibility" objection thus reduces to a capital allocation problem. Political change is not
   impossible; it is merely expensive, and for valuable reforms, the price is trivial relative to
@@ -90,7 +90,7 @@ Where $C(p)$ is the cost of achieving policy $p$, $B(p)$ is the benefit if succe
 
 2. **Empirical estimates**: Upper-bound estimates for US and global political systems, establishing that even maximum democratic engagement scenarios have quantifiable costs. (The answer for the US: about $25 billion. For the whole world: about $200 billion. This sounds like a lot until you compare it to the benefits.)
 
-3. **Case studies**: Multiple policy domains, demonstrating that high-NSV reforms yield positive expected value even under pessimistic assumptions about political costs. (Military-to-health reallocation: 400,000:1 benefit-cost ratio. Four hundred thousand to one. The worst investment on this list still returns 1,000:1.)
+3. **Case studies**: Multiple policy domains, demonstrating that high-NSV reforms yield positive expected value even under pessimistic assumptions about political costs. (Military-to-health reallocation: a benefit-cost ratio in the tens of thousands to one. The worst investment on this list still returns 1,000:1.)
 
 **Scale note.** The benefit side that this paper is pricing is enormous. Under the project's best-case governance ceiling, the recoverable upside is {{< var political_dysfunction_global_opportunity_cost_total >}} per year. Over 20 years, the [Optimal Governance Trajectory](../economics/gdp-trajectories.qmd) reaches {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} the Earth baseline, raises average income to {{< var wishonia_trajectory_avg_income_year_20 >}} versus {{< var current_trajectory_avg_income_year_20 >}} on the status-quo path, and reaches {{< var wishonia_trajectory_gdp_year_20 >}} in total output. This paper focuses on the cost of getting there through democratic incentives and capital deployment; the full upside derivation lives in [The Political Dysfunction Tax](political-dysfunction-tax.qmd) [@political-dysfunction-tax-paper-2025].
 
@@ -264,7 +264,7 @@ These estimates are calculated from input parameters with explicit uncertainty d
 3. **Non-linear effects**: Political influence may not scale linearly with spending; threshold effects and diminishing returns likely exist
 4. **Cross-country variation**: Political systems differ dramatically in their susceptibility to organized influence
 
-Despite this uncertainty, the core conclusion is robust: even at the 95th percentile of {{< var global_political_reform_investment >}}, high-NSV policies yield a benefit-cost ratio exceeding 400,000:1.
+Despite this uncertainty, the core conclusion is robust: even at the 95th percentile of {{< var global_political_reform_investment >}}, high-NSV policies yield a benefit-cost ratio in the tens of thousands to one.
 
 ## Implications for Major Health Funders {#funder-implications}
 
@@ -370,8 +370,6 @@ The same framework applies to other high-value policy reforms. Brief analysis su
 
 These estimates use the same methodology: match opposition spending 2-3:1, account for career value, and compare to policy benefits. In all cases, even pessimistic political cost estimates yield strongly positive expected value.
 
-![Laws are cheap to change and affect everyone forever. We prefer expensive temporary solutions. The chart needs a logarithmic scale.](/assets/images/cost-of-change-analysis/cost-of-change-analysis-section-cost-benefit-asymmetry-bw-academic.jpg)
-
 ## Limitations
 
 **Legal constraints**: Our framework assumes legal channels only (campaign contributions, lobbying, independent expenditures, career opportunities). Direct payments constitute bribery. The multi-billion-dollar lobbying industry demonstrates legal channels produce real effects.
@@ -390,7 +388,7 @@ The "political impossibility" objection to policy reform dissolves under quantit
 
 2. **Even maximum engagement scenarios are bounded**: achieving full democratic parity in the US costs {{< var us_political_reform_investment_total >}}; global parity costs {{< var global_political_reform_investment >}}.
 
-3. **High-NSV policies yield extreme benefit-cost ratios**: for policies like military-to-health reallocation, the benefit-cost ratio exceeds 400,000:1 even at maximum political investment.
+3. **High-NSV policies yield extreme benefit-cost ratios**: for policies like military-to-health reallocation, the benefit-cost ratio stays in the tens of thousands to one even at maximum political investment.
 
 4. **The breakeven point is astronomical**: political investment costs would need to exceed trillions of dollars before high-value reforms become uneconomical.
 

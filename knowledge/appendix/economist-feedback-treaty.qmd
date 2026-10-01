@@ -10,7 +10,6 @@ podcast-image: /assets/podcast/economist-feedback-treaty-podcast.jpg
 youtube-thumbnail: /assets/podcast/economist-feedback-treaty-youtube.jpg
 image: /assets/og-images/knowledge/appendix/economist-feedback-treaty-og-bw-academic.jpg
 ---
-![A <span class="parameter-definition" title="1% reduction in military spending/war costs from treaty | Unit: rate | Core definition">1%</span> redirect of military spending to pragmatic trials claims to avert 565 billion DALYs (95% CI: 361 billion DALYs-877 billion DALYs) at $0.00177 (95% CI: $0.000715-$0.00412) each. One-page calculation chain for economist review.](/assets/infographics/knowledge/appendix/economist-feedback-treaty-infographic-bw-academic.jpg)
 
 
 ::: {.callout-important}
@@ -107,7 +106,7 @@ Note: Costs and DALYs are both discounted at the {{< var npv_discount_rate_stand
 | Input | Value | Derivation |
 |:------|------:|:-----------|
 | Political success probability | {{< var political_success_probability >}} | Conservative (99% failure assumed) |
-| Risk-adjusted cost/DALY | {{< var treaty_expected_cost_per_daly >}} | = $0.0018 / 1% |
+| Risk-adjusted cost/DALY | {{< var treaty_expected_cost_per_daly >}} | = {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} / {{< var political_success_probability >}} |
 | Risk-adjusted vs. bed nets | {{< var treaty_expected_vs_bed_nets_multiplier >}} better | Still superior at 1% success |
 
 ## Key Assumptions Requiring Sign-Off

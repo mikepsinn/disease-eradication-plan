@@ -8860,6 +8860,8 @@ def _timeline_shift_discounted_years(
     ln(1 + discount_rate). At a zero rate this reduces to
     T_SQ/2 + lag - T_dFDA/2, the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS.
     """
+    if discount_rate == 0:
+        return status_quo_clearance_years / 2 + efficacy_lag_years - dfda_clearance_years / 2
     rho = math.log(1 + discount_rate)
 
     def avg_discount_factor(period_years: float) -> float:
@@ -8890,10 +8892,11 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED = Parameter(
                 "US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health "
                 "makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising "
                 "uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the "
-                "undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years.",
+                "undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. "
+                "A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].",
     display_name="Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
     unit="DALYs",
-    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × [Ā(T_dFDA) − (1+r)^-lag × Ā(T_SQ)] / ln(1+r), where Ā(T) = (1 − (1+r)^-T) / (T × ln(1+r))",
+    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × [A(DFDA_QUEUE_CLEARANCE_YEARS) - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-EFFICACY_LAG_YEARS) × A(STATUS_QUO_QUEUE_CLEARANCE_YEARS)] / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
     confidence="low",
     keywords=["dalys", "discounted", "present value", "timeline shift", "cost effectiveness", "keeler-cretin"],
     inputs=[
@@ -10141,8 +10144,9 @@ GIVEWELL_COST_PER_LIFE_MAX = Parameter(
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
     description="GiveWell cost per life saved (Against Malaria Foundation). GiveWell estimates ~$3,000 to ~$8,000 per death averted across the locations where it funds AMF campaigns (as of December 2023).",
-    display_name="Givewell Cost per Life Saved (Maximum)",
+    display_name="GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)",
     unit="USD/life",
+    distribution="normal",
     confidence_interval=(3_000, 8_000),  # GiveWell AMF page: range across funded locations
     keywords=["6k", "costs", "funding", "investment", "givewell", "life", "max"],
     latex_symbol=r"Cost_{GW,max}",  # LaTeX symbol for equations
@@ -10465,23 +10469,25 @@ BASELINE_LIVES_SAVED_ANNUAL = Parameter(
 # Cost per DALY benchmarks for comparison
 BED_NETS_COST_PER_DALY = Parameter(
     float(GIVEWELL_COST_PER_LIFE_MAX)
-    / ((1 - (1 + float(NPV_DISCOUNT_RATE_STANDARD)) ** -float(GLOBAL_LIFE_EXPECTANCY_2024)) / float(NPV_DISCOUNT_RATE_STANDARD)),
+    / ((1 - (1 + float(NPV_DISCOUNT_RATE_STANDARD)) ** -float(GLOBAL_LIFE_EXPECTANCY_2024))
+       / math.log(1 + float(NPV_DISCOUNT_RATE_STANDARD))),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="calculated",
     description="Cost per DALY for insecticide-treated bed nets: GiveWell's Against Malaria Foundation cost per life saved "
                 "divided by the discounted life-years of a child death averted (a full life expectancy at the standard "
-                "discount rate). Discounted at the same rate as the dFDA and treaty cost-per-DALY figures so comparisons "
-                "are like for like. GiveWell publishes cost per life saved, not cost per DALY. Bed nets are the standard "
+                "discount rate, life-years accruing continuously). Discounted at the same rate and with the same continuous "
+                "timing as the dFDA and treaty cost-per-DALY figures so comparisons are like for like. GiveWell publishes cost per life saved, not cost per DALY. Bed nets are the standard "
                 "benchmark for cost-effective global health spending.",
     display_name="Bed Nets Cost per DALY",
     unit="USD/DALY",
-    formula="GIVEWELL_COST_PER_LIFE_MAX ÷ [(1 − (1+r)^-LIFE_EXPECTANCY) / r]",
+    formula="GIVEWELL_COST_PER_LIFE_MAX / ((1 - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-GLOBAL_LIFE_EXPECTANCY_2024)) / ln(1 + NPV_DISCOUNT_RATE_STANDARD))",
     confidence="medium",
     keywords=["givewell", "bed nets", "malaria", "cost effectiveness", "benchmark", "comparison"],
     inputs=["GIVEWELL_COST_PER_LIFE_MAX", "NPV_DISCOUNT_RATE_STANDARD", "GLOBAL_LIFE_EXPECTANCY_2024"],
     compute=lambda ctx: ctx["GIVEWELL_COST_PER_LIFE_MAX"]
-    / ((1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["GLOBAL_LIFE_EXPECTANCY_2024"]) / ctx["NPV_DISCOUNT_RATE_STANDARD"]),
+    / ((1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["GLOBAL_LIFE_EXPECTANCY_2024"])
+       / math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"])),
     latex_symbol=r"Cost_{nets}",  # LaTeX symbol for equations
 )
 
@@ -10704,7 +10710,7 @@ DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     description="NPV of annual direct funding for the therapeutic space exploration period, spent continuously through each year (the same timing convention as the discounted DALYs it is divided by). Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
     display_name="Direct Pragmatic Trial Funding NPV (Exploration Period)",
     unit="USD",
-    formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / ln(1 + r)] where T = exploration time",
+    formula="DFDA_ANNUAL_TRIAL_FUNDING × (1 - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-DFDA_QUEUE_CLEARANCE_YEARS)) / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
     keywords=["philanthropy", "direct funding", "alternative", "npv", "exploration"],
     inputs=['DFDA_ANNUAL_TRIAL_FUNDING', 'NPV_DISCOUNT_RATE_STANDARD', 'DFDA_QUEUE_CLEARANCE_YEARS'],
     compute=lambda ctx: ctx["DFDA_ANNUAL_TRIAL_FUNDING"]
