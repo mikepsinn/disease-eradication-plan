@@ -23,7 +23,7 @@ Replaces the Netlify redirect/header setup (`netlify.toml`, host rules in
 ## What lives in the dashboard, not the repo
 
 Everything else (redirects, Worker routes, Pages projects, deploys, monitors)
-is declared in the repo and deployed by CI. Two things are not.
+is declared in the repo and deployed by CI. Three things are not.
 
 ### API token
 
@@ -63,6 +63,52 @@ must stay, or be replaced by a wildcard, when their old origins are deleted.
 
 A new paper needs no DNS: it is a path on the papers site. A new legacy host
 needs a proxied record only if its zone has no wildcard.
+
+### Markdown for AI tools (URL Rewrite Rules)
+
+The manual build writes `page.llms.md` beside each `page.html`
+(`scripts/lib/markdown_twins.py`): the page without navigation, scripts, or
+tooltips. Each page links to it with `<link rel="alternate"
+type="text/markdown">`, and the deployed `llms.txt` points to it. Three URL
+Rewrite Rules on the `warondisease.org` zone send it, at the page's own URL,
+to any client whose `Accept` header asks for `text/markdown`. Claude Code
+does; browsers do not. Rewrite rules are free on every plan and use no Worker
+requests. Cloudflare's own "Markdown for Agents" does the same job but needs
+the Pro plan.
+
+Create each rule in **Rules > Overview > Create rule > URL Rewrite Rule**,
+with **Edit expression**. The conditions do not overlap, so order does not
+matter.
+
+1. Clean URLs (`/knowledge/problem/cost-of-war`). Path: **Dynamic**,
+   `concat(http.request.uri.path, ".llms.md")`.
+
+   ```txt
+   (http.host eq "manual.warondisease.org" and any(http.request.headers["accept"][*] contains "text/markdown") and not (http.request.uri.path contains ".") and not ends_with(http.request.uri.path, "/"))
+   ```
+
+2. `.html` URLs. Path: **Dynamic**,
+   `wildcard_replace(http.request.uri.path, "*.html", "${1}.llms.md")`.
+
+   ```txt
+   (http.host eq "manual.warondisease.org" and any(http.request.headers["accept"][*] contains "text/markdown") and ends_with(http.request.uri.path, ".html"))
+   ```
+
+3. The home page. Path: **Static**, `/index.llms.md`.
+
+   ```txt
+   (http.host eq "manual.warondisease.org" and any(http.request.headers["accept"][*] contains "text/markdown") and http.request.uri.path eq "/")
+   ```
+
+Check them:
+
+```bash
+curl -sI -H "Accept: text/markdown" https://manual.warondisease.org/knowledge/problem/cost-of-war | grep -i content-type
+# content-type: text/markdown; charset=utf-8
+```
+
+A markdown request for a path with no page, such as the `/amazon` shortcut in
+`_redirects`, gets a 404 instead of the redirect.
 
 Attaching a custom domain to a Pages project is scriptable
 (`POST .../pages/projects/<project>/domains`, which a `wrangler login` session

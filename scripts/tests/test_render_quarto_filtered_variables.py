@@ -93,6 +93,24 @@ def test_html_and_book_renders_remain_project_wide() -> None:
     ) == ["quarto", "render", "--to", "pdf"]
 
 
+@pytest.mark.parametrize("format_override, configured_formats, preview, expected", [
+    ("html", ["html", "pdf"], False, True),
+    ("pdf", ["html", "pdf"], False, False),
+    (None, ["html"], False, True),
+    # One render that makes HTML and PDF shares its sources, so both keep the old lists.
+    (None, ["html", "pdf"], False, False),
+    # A preview serves only the first configured format.
+    (None, ["html", "pdf"], True, True),
+    (None, ["epub", "docx", "pdf"], True, False),
+])
+def test_only_html_runs_scope_citations_per_page(
+    format_override, configured_formats, preview, expected
+) -> None:
+    module = load_render_quarto_module()
+
+    assert module._renders_html_only(format_override, configured_formats, preview) is expected
+
+
 @pytest.mark.parametrize("site_url, sitemap_url", [
     ("https://manual.WarOnDisease.org", "https://manual.warondisease.org/sitemap.xml"),
     ("https://standalone.example.org/", "https://standalone.example.org/sitemap.xml"),
