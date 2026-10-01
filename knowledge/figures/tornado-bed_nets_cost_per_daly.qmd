@@ -20,14 +20,14 @@ display_name = "Bed Nets Cost per DALY"
 
 # Baseline and units
 
-baseline = 186.2768090742125
+baseline = 183.53731205368587
 
 # Tornado data from sensitivity analysis
 
 drivers = ['GIVEWELL_COST_PER_LIFE_MAX', 'GLOBAL_LIFE_EXPECTANCY_2024']
-driver_labels = ['Givewell Cost per Life Saved (Maximum)', 'Global Life Expectancy (2024)']
-impacts_low = [-84.67127685191478, 1.474424860085776]
-impacts_high = [84.6712768519148, -1.3687409376102266]
+driver_labels = ['GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)', 'Global Life Expectancy (2024)']
+impacts_low = [-83.42605093349357, 1.452741095309733]
+impacts_high = [83.42605093349357, -1.3486114231575357]
 
 # Convert deltas to absolute values (baseline + delta)
 

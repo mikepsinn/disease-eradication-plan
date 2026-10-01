@@ -53,22 +53,23 @@ This appendix documents all 103 parameters used in the analysis, organized by ty
 
 Parameters derived from mathematical formulas and economic models.
 
-### Bed Nets Cost per DALY: $186 {#sec-bed_nets_cost_per_daly}
+### Bed Nets Cost per DALY: $184 {#sec-bed_nets_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost per DALY for insecticide-treated bed nets: GiveWell's Against Malaria Foundation cost per life saved divided by the discounted life-years of a child death averted (a full life expectancy at the standard discount rate). Discounted at the same rate as the dFDA and treaty cost-per-DALY figures so comparisons are like for like. GiveWell publishes cost per life saved, not cost per DALY. Bed nets are the standard benchmark for cost-effective global health spending.
+Cost per DALY for insecticide-treated bed nets: GiveWell's Against Malaria Foundation cost per life saved divided by the discounted life-years of a child death averted (a full life expectancy at the standard discount rate, life-years accruing continuously). Discounted at the same rate and with the same continuous timing as the dFDA and treaty cost-per-DALY figures so comparisons are like for like. GiveWell publishes cost per life saved, not cost per DALY. Bed nets are the standard benchmark for cost-effective global health spending.
 
 **Inputs**:
 
-- [Givewell Cost per Life Saved (Maximum)](#sec-givewell_cost_per_life_max) 📊: $5,500 (95% CI: $3,000 - $8,000)
+- [GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)](#sec-givewell_cost_per_life_max) 📊: $5,500 (95% CI: $3,000 - $8,000)
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 - [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
 
 $$
 \begin{gathered}
 Cost_{nets} \\
-= Cost_{GW,max} / [(1 − (1+r)^{-}\text{LIFE\_EXPECTANCY}) / r]
+= Cost_{GW,max} / ((1 - (1 \\
++ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
 \end{gathered}
 $$
 
@@ -373,9 +374,8 @@ where:
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \text{ANNUAL\_FUNDING} \times [(1 - (1 \\
-+ r)^{-}T) / \ln\left(1 + r\right)] where T \\
-= exploration time
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -446,8 +446,8 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [Ā(T_dFDA) − (1 \\
-+ r)^{-}lag \times Ā(\text{T\_SQ})] / \ln\left(1+r\right)
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 *~ Medium confidence*
@@ -483,9 +483,8 @@ NPV of annual direct funding for the therapeutic space exploration period, spent
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \text{ANNUAL\_FUNDING} \times [(1 - (1 \\
-+ r)^{-}T) / \ln\left(1 + r\right)] where T \\
-= exploration time
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -602,8 +601,8 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [Ā(T_dFDA) − (1 \\
-+ r)^{-}lag \times Ā(\text{T\_SQ})] / \ln\left(1+r\right)
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -674,9 +673,8 @@ where:
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \text{ANNUAL\_FUNDING} \times [(1 - (1 \\
-+ r)^{-}T) / \ln\left(1 + r\right)] where T \\
-= exploration time
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 *✓ High confidence*
@@ -1812,7 +1810,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years.
+Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].
 
 **Inputs**:
 
@@ -1826,8 +1824,8 @@ Present value of the DALYs averted by the combined treatment timeline shift, dis
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [Ā(T_dFDA) − (1 \\
-+ r)^{-}lag \times Ā(\text{T\_SQ})] / \ln\left(1+r\right)
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -1935,8 +1933,8 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [Ā(T_dFDA) − (1 \\
-+ r)^{-}lag \times Ā(\text{T\_SQ})] / \ln\left(1+r\right)
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -3249,7 +3247,7 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 :::
 
-### Givewell Cost per Life Saved (Maximum): $5,500 {#sec-givewell_cost_per_life_max}
+### GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate): $5,500 {#sec-givewell_cost_per_life_max}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -3259,9 +3257,11 @@ GiveWell cost per life saved (Against Malaria Foundation). GiveWell estimates ~$
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [$3,000, $8,000]
+**Technical**: 95% CI: [$3,000, $8,000] • Distribution: Normal
 
 **What this means**: There's significant uncertainty here. The true value likely falls between $3,000 and $8,000 (±45%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
 
 #### Input Distribution
 

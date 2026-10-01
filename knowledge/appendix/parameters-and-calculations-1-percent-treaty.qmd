@@ -473,7 +473,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years.
+Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].
 
 **Inputs**:
 
@@ -487,8 +487,8 @@ Present value of the DALYs averted by the combined treatment timeline shift, dis
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [Ā(T_dFDA) − (1 \\
-+ r)^{-}lag \times Ā(\text{T\_SQ})] / \ln\left(1+r\right)
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -596,8 +596,8 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [Ā(T_dFDA) − (1 \\
-+ r)^{-}lag \times Ā(\text{T\_SQ})] / \ln\left(1+r\right)
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:

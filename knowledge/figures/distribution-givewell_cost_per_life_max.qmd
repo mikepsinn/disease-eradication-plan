@@ -1,6 +1,6 @@
 ```{python}
 #| echo: false
-#| fig-cap: "Probability Distribution: Givewell Cost per Life Saved (Maximum)"
+#| fig-cap: "Probability Distribution: GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)"
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -21,7 +21,7 @@ central_value = 5500.0
 low = 3000
 high = 8000
 dist_type = "normal"
-display_name = "Givewell Cost per Life Saved (Maximum)"
+display_name = "GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)"
 unit = "USD/life"
 
 # Calculate distribution parameters
