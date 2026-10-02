@@ -27,7 +27,7 @@ The problem is not a shortage of possible treatments. Many post-Phase-1 compound
 
 Universal Right to Try with Evidence changes that financing constraint. Licensed centers provide eligible experimental treatments while patients or payers cover treatment-related care, trial-site services, and permitted study costs. Trial participants follow shared protocols, and other eligible uses contribute separately labeled observational outcomes. Treatments that were not economically viable to investigate become testable. State law does not waive federal authorization or evidence requirements.
 
-Implementation costs about {{< var state_rtt_implementation_cost_total >}}: the 50-state campaign, common evidence standards, and the shared registry's first ten years, after which participating centers fund the registry. At the central estimate, that is {{< var state_rtt_implementation_cost_per_daly >}} per healthy year restored.
+Implementation costs about {{< var state_rtt_implementation_cost_total >}}: the 50-state campaign, common evidence standards, and the shared registry's first ten years, after which participating centers fund the registry. At the central estimate, that is {{< var state_rtt_implementation_cost_per_daly >}} per healthy year restored, with future years discounted at the same {{< var npv_discount_rate_standard >}} used for costs.
 
 {{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_lives_saved.qmd >}}
 
@@ -68,7 +68,7 @@ The model compresses the entire policy mechanism into one uncertain input: a tre
 - protocols capable of producing credible efficacy evidence; and
 - the share of completed evaluations that find a first effective treatment.
 
-The central value is a calibration assumption, not an observed causal estimate. The automatic Monte Carlo samples uncertainty in this multiplier, launch cost, avoidable disease burden, and their upstream inputs. It does not capture political adoption risk or model-form uncertainty in using the rare-disease queue as a proxy for the wider therapeutic frontier. The physical health totals are undiscounted. Applying a time discount rate would reduce their present value, but adding a preferred discount rate would not change the underlying schedule shift.
+The central value is a calibration assumption, not an observed causal estimate. The automatic Monte Carlo samples uncertainty in this multiplier, launch cost, avoidable disease burden, and their upstream inputs. It does not capture political adoption risk or model-form uncertainty in using the rare-disease queue as a proxy for the wider therapeutic frontier. The physical health totals (lives, healthy years, suffering) are undiscounted counts. The cost ratios discount health at {{< var npv_discount_rate_standard >}}, the same rate applied to costs, so a healthy year a century from now counts for far less than one next year.
 
 ## The calculation, one step at a time
 
@@ -80,7 +80,8 @@ The arithmetic asks how much sooner the average first treatment arrives if the d
 | 2 | How long does the average therapeutic target wait? | {{< var status_quo_avg_years_to_first_treatment >}} |
 | 3 | How much earlier does treatment arrive at the modeled discovery rate? | {{< var state_rtt_treatment_acceleration_years >}} |
 | 4 | How many global healthy years does that schedule shift restore? | {{< var state_rtt_treatment_acceleration_dalys >}} |
-| 5 | What is the campaign and registry-launch cost per restored healthy year? | {{< var state_rtt_implementation_cost_per_daly >}} |
+| 5 | What is the average shift worth today, discounting future years at {{< var npv_discount_rate_standard >}}? | {{< var state_rtt_treatment_acceleration_years_discounted >}} |
+| 6 | What is the campaign and registry-launch cost per restored healthy year, in present value? | {{< var state_rtt_implementation_cost_per_daly >}} |
 
 The full calculation is:
 
@@ -102,9 +103,9 @@ The model does not count the uncertain direct health effect on participating pat
 
 The launch cost is {{< var state_rtt_implementation_cost_total >}}: the 50-state campaign, common evidence standards, and the shared registry's first ten years. Participating centers then sustain the registry through license or enrollment assessments. The model does not require a new state appropriation.
 
-The conditional cost per DALY divides that launch cost by the health benefit if all 50 states adopt and the mature system produces the modeled discovery rate. It excludes patient and payer spending on treatment delivery because those payments buy care and evidence generation rather than consuming the launch budget.
+The conditional cost per DALY divides that launch cost by the present value of the health benefit, discounted at {{< var npv_discount_rate_standard >}}, if all 50 states adopt and the mature system produces the modeled discovery rate. It excludes patient and payer spending on treatment delivery because those payments buy care and evidence generation rather than consuming the launch budget.
 
-At the central estimate, the modeled launch cost per life saved is {{< var state_rtt_implementation_cost_per_life_saved >}}. The midpoint of GiveWell's cited modeled range across top charities is {{< var state_rtt_vs_givewell_cost_per_life_multiplier_nounit >}} times that figure [@givewell-cost-per-life-saved]. The scopes differ: the GiveWell number counts full program costs, while this numerator counts only the campaign and registry launch that unlock treatment, sponsor, payer, clinic, and investor spending.
+At the central estimate, the modeled launch cost per life saved is {{< var state_rtt_implementation_cost_per_life_saved >}}, with future deaths prevented discounted to present value so they compare with GiveWell's near-term lives. The midpoint of GiveWell's cited modeled range across top charities is {{< var state_rtt_vs_givewell_cost_per_life_multiplier_nounit >}} times that figure [@givewell-cost-per-life-saved]. The scopes differ: the GiveWell number counts full program costs, while this numerator counts only the campaign and registry launch that unlock treatment, sponsor, payer, clinic, and investor spending.
 
 Three economic effects are left out because each is hard to estimate and they overlap one another and the discovery multiplier: price competition once several post-Phase-1 treatments target the same condition, substitution of cheap unpatented treatments for expensive patented ones, and lower medical and caregiving spending when aging and chronic disease are treated earlier. Summing them would double count. The model treats them the way it treats the direct participant effect: real, unmodeled, and excluded from the headline totals. Every excluded channel biases the conditional cost per healthy year against the policy.
 

@@ -20,14 +20,14 @@ display_name = "Universal Right to Try with Evidence Implementation Cost per Lif
 
 # Baseline and units
 
-baseline = 0.0070727775773446805
+baseline = 0.12478694813503846
 
 # Tornado data from sensitivity analysis
 
 drivers = ['STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'STATE_RTT_IMPLEMENTATION_COST_TOTAL', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'EVENTUALLY_AVOIDABLE_DEATH_PCT', 'RARE_DISEASES_COUNT_GLOBAL', 'GLOBAL_DISEASE_DEATHS_DAILY']
 driver_labels = ['Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Universal Right to Try with Evidence Implementation Cost', 'Diseases Getting First Treatment Per Year', 'Eventually Avoidable Death Percentage', 'Total Number of Rare Diseases Globally', 'Global Daily Deaths from Disease and Aging']
-impacts_low = [0.05653059450505419, -0.004352478509135188, -0.0033006295360941836, 0.006029940077850056, 0.0011787962628907805, 0.0003722514514391956]
-impacts_high = [-0.0008776439329551793, 0.014689614968331259, 0.0070727775773446805, -0.00038771754918409933, -0.0021218332732034035, -0.0003367989322545081]
+impacts_low = [4.840165251956704, -0.0767919680831006, 0.08590859626026168, 0.10638788107268018, -0.012039970375610443, 0.006567734112370438]
+impacts_high = [-0.06063109817936274, 0.2591728922804645, -0.0368758922013389, -0.006840606702528965, 0.040151034777789946, -0.005942235625478021]
 
 # Convert deltas to absolute values (baseline + delta)
 

@@ -46,8 +46,8 @@ author:
         url: https://acceleratedmedicine.org
 
 website:
-  title: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents"
-  description: 'Only 15 diseases/year get their first treatment each year. With 6.65 thousand diseases lacking effective treatments, the backlog would take 443 years to clear. Integrating pragmatic trials into standard healthcare increases trial capacity 12.3x, cutting that timeline from 443 years to 36 years. The average untreated disease gets a treatment 212 years earlier, saving 10.7 billion deaths at $0.842 per year of healthy life saved.'
+  title: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10"
+  description: 'Only 15 diseases/year get their first treatment each year. With 6,650 diseases lacking effective treatments, the backlog would take 443 years to clear. Integrating pragmatic trials into standard healthcare increases trial capacity 12.3x, cutting that timeline from 443 years to 36 years. The average untreated disease gets a treatment 212 years earlier, saving 10.7 billion deaths at $9.62 per year of healthy life saved.'
   site-url: https://papers.acceleratedmedicine.org/dfda-impact.html
   favicon: assets/icons/dfda-favicon.png
   page-navigation: true
@@ -94,7 +94,7 @@ metadata:
   coi-statement: "The author declares no competing interests, unless you count a vested interest in not dying, which the author shares with approximately 8 billion co-conspirators."
   data-availability: "All data and code used in this analysis are publicly available at https://github.com/wishonia/earth-optimization-protocol"
   ethics-statement: "This research did not involve human subjects. The 6,650 diseases with zero FDA-approved treatments were not consulted, as they were busy not being treated."
-  funding: "This research received no funding. The author would like to note that the cost of producing the entire paper was roughly 84 cents per hour of work, which is coincidentally also the cost per DALY it proposes to achieve."
+  funding: "This research received no funding."
   github-profile: "https://github.com/mikepsinn"
   linkedin: "https://www.linkedin.com/in/mikesinn"
   orcid-url: "https://orcid.org/0009-0006-0212-1094"
