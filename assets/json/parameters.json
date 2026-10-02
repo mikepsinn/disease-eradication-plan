@@ -12591,44 +12591,48 @@
       "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_IMPLEMENTATION_COST_PER_DALY": {
-      "value": 0.0001344564487359796,
-      "formatted": "$0.000134",
+      "value": 0.0023722518786088043,
+      "formatted": "$0.00237",
       "unit": "USD/DALY",
-      "description": "Conditional implementation cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.",
+      "description": "Conditional implementation cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once, with DALYs discounted at the standard rate so the near-term launch cost is compared with health benefits in present value.",
       "displayName": "Universal Right to Try with Evidence Implementation Cost per DALY",
       "sourceType": "calculated",
       "sourceRef": null,
       "sourceUrl": null,
       "confidence": "low",
-      "formula": "STATE_RTT_IMPLEMENTATION_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_DALYS",
+      "formula": "STATE_RTT_IMPLEMENTATION_COST_TOTAL / (GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_implementation_cost_per_daly",
-      "latex": "\\begin{gathered}\nCost_{RTT,DALY} = \\frac{C_{RTT}}{DALYs_{RTT}} = \\frac{\\$65M}{483B} = \\$0.000134\n\\\\[0.5em]\n\\text{where } DALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "latex": "\\begin{gathered}\nCost_{RTT,DALY} = C_{RTT} / (DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT}^{PV})\n\\\\[0.5em]\n\\text{where } T_{accel,RTT}^{PV} = [A\\left(\\frac{T_{queue,SQ}}{k_{RTT}}\\right) - A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
       "inputs": [
+        "EVENTUALLY_AVOIDABLE_DALY_PCT",
+        "GLOBAL_ANNUAL_DALY_BURDEN",
         "STATE_RTT_IMPLEMENTATION_COST_TOTAL",
-        "STATE_RTT_TREATMENT_ACCELERATION_DALYS"
+        "STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"
       ],
-      "computeExpr": "(STATE_RTT_IMPLEMENTATION_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_DALYS)",
+      "computeExpr": "(STATE_RTT_IMPLEMENTATION_COST_TOTAL / ((GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED))",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
       "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED": {
-      "value": 0.0070727775773446805,
-      "formatted": "$0.00707",
+      "value": 0.12478694813503846,
+      "formatted": "$0.125",
       "unit": "USD/life",
-      "description": "Conditional implementation cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
+      "description": "Conditional implementation cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate, and discounts future deaths prevented at the standard rate so they compare with near-term costs and with GiveWell's near-term lives saved.",
       "displayName": "Universal Right to Try with Evidence Implementation Cost per Life Saved",
       "sourceType": "calculated",
       "sourceRef": null,
       "sourceUrl": null,
       "confidence": "low",
-      "formula": "STATE_RTT_IMPLEMENTATION_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
+      "formula": "STATE_RTT_IMPLEMENTATION_COST_TOTAL / (GLOBAL_DISEASE_DEATHS_DAILY × DAYS_PER_YEAR × EVENTUALLY_AVOIDABLE_DEATH_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_implementation_cost_per_life_saved",
-      "latex": "\\begin{gathered}\nCost_{RTT,life} = \\frac{C_{RTT}}{Lives_{RTT}} = \\frac{\\$65M}{9.19B} = \\$0.00707\n\\\\[0.5em]\n\\text{where } Lives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "latex": "\\begin{gathered}\nCost_{RTT,life} = C_{RTT} / (Deaths_{disease,daily} \\times \\text{DAYS\\_PER\\_YEAR} \\times Pct_{avoid,death} \\times T_{accel,RTT}^{PV})\n\\\\[0.5em]\n\\text{where } T_{accel,RTT}^{PV} = [A\\left(\\frac{T_{queue,SQ}}{k_{RTT}}\\right) - A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
       "inputs": [
+        "EVENTUALLY_AVOIDABLE_DEATH_PCT",
+        "GLOBAL_DISEASE_DEATHS_DAILY",
         "STATE_RTT_IMPLEMENTATION_COST_TOTAL",
-        "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"
+        "STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"
       ],
-      "computeExpr": "(STATE_RTT_IMPLEMENTATION_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED)",
+      "computeExpr": "(STATE_RTT_IMPLEMENTATION_COST_TOTAL / (((GLOBAL_DISEASE_DEATHS_DAILY * 365.0) * EVENTUALLY_AVOIDABLE_DEATH_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED))",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
       "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
@@ -12780,6 +12784,28 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
       "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
+    "STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED": {
+      "value": 10.271140815295185,
+      "formatted": "10.3 years",
+      "unit": "years",
+      "description": "Present value, in years, of the average treatment schedule shift from Universal Right to Try with Evidence, discounted at the standard social discount rate. Same timing as the undiscounted shift: first treatments are found evenly over the status quo clearance period, versus evenly over that period divided by the discovery multiplier. The cost-per-DALY and cost-per-life ratios use it so the near-term launch cost is compared with health benefits in present value, as in the 1% Treaty model. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].",
+      "displayName": "Discounted Treatment Acceleration from Universal Right to Try with Evidence",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "low",
+      "formula": "[A(STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER) - A(STATUS_QUO_QUEUE_CLEARANCE_YEARS)] / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_treatment_acceleration_years_discounted",
+      "latex": "\\begin{gathered}\nT_{accel,RTT}^{PV} = [A\\left(\\frac{T_{queue,SQ}}{k_{RTT}}\\right) - A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "inputs": [
+        "NPV_DISCOUNT_RATE_STANDARD",
+        "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER",
+        "STATUS_QUO_QUEUE_CLEARANCE_YEARS"
+      ],
+      "computeExpr": "((((1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-(STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)))) / ((STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER) * Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))) - ((1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-STATUS_QUO_QUEUE_CLEARANCE_YEARS))) / (STATUS_QUO_QUEUE_CLEARANCE_YEARS * Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD))))) / Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+      "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
+    },
     "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER": {
       "value": 5.48,
       "formatted": "5.48x",
@@ -12822,10 +12848,10 @@
       "chapterTitle": "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
     },
     "STATE_RTT_VS_GIVEWELL_COST_PER_LIFE_MULTIPLIER": {
-      "value": 636242.2613732788,
-      "formatted": "636.2kx",
+      "value": 36061.46369675068,
+      "formatted": "36.1kx",
       "unit": "x",
-      "description": "Conditional cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator counts only the campaign and registry launch and excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+      "description": "Conditional cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. Right to Try lives saved are discounted to present value at the standard rate so they compare with GiveWell's near-term lives saved. The cost scopes differ: the Right to Try numerator counts only the campaign and registry launch and excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
       "displayName": "Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint",
       "sourceType": "calculated",
       "sourceRef": null,
@@ -12833,7 +12859,7 @@
       "confidence": "low",
       "formula": "GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-state_rtt_vs_givewell_cost_per_life_multiplier",
-      "latex": "\\begin{gathered}\nk_{RTT,GiveWell} = \\frac{Cost_{GW,avg}}{Cost_{RTT,life}} = \\frac{\\$4.5K}{\\$0.00707} = 636{,}000\n\\\\[0.5em]\n\\text{where } Cost_{RTT,life} = \\frac{C_{RTT}}{Lives_{RTT}} = \\frac{\\$65M}{9.19B} = \\$0.00707\n\\\\[0.5em]\n\\text{where } Lives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+      "latex": "\\begin{gathered}\nk_{RTT,GiveWell} = \\frac{Cost_{GW,avg}}{Cost_{RTT,life}} = \\frac{\\$4.5K}{\\$0.125} = 36{,}100\n\\\\[0.5em]\n\\text{where } Cost_{RTT,life} = C_{RTT} / (Deaths_{disease,daily} \\times \\text{DAYS\\_PER\\_YEAR} \\times Pct_{avoid,death} \\times T_{accel,RTT}^{PV})\n\\\\[0.5em]\n\\text{where } T_{accel,RTT}^{PV} = [A\\left(\\frac{T_{queue,SQ}}{k_{RTT}}\\right) - A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
       "inputs": [
         "GIVEWELL_COST_PER_LIFE_AVG",
         "STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED"

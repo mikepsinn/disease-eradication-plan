@@ -16,18 +16,18 @@ setup_chart_style()
 
 # Display name for chart title
 
-display_name = "Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint"
+display_name = "Discounted Treatment Acceleration from Universal Right to Try with Evidence"
 
 # Baseline and units
 
-baseline = 36061.46369675068
+baseline = 10.271140815295185
 
 # Tornado data from sensitivity analysis
 
-drivers = ['STATE_RTT_IMPLEMENTATION_COST_TOTAL', 'STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'EVENTUALLY_AVOIDABLE_DEATH_PCT', 'RARE_DISEASES_COUNT_GLOBAL', 'GLOBAL_DISEASE_DEATHS_DAILY']
-driver_labels = ['Universal Right to Try with Evidence Implementation Cost', 'Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Diseases Getting First Treatment Per Year', 'Eventually Avoidable Death Percentage', 'Total Number of Rare Diseases Globally', 'Global Daily Deaths from Disease and Aging']
-impacts_low = [57698.3419148011, -35155.110560074594, -14703.631888227734, -16595.676632378752, 3850.9143503292144, -1803.073184837529]
-impacts_high = [-24341.487995306707, 34080.23036714186, 15126.637187781904, 2091.478949418306, -8778.481811502934, 1803.0731848375362]
+drivers = ['STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'RARE_DISEASES_COUNT_GLOBAL']
+driver_labels = ['Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Diseases Getting First Treatment Per Year', 'Total Number of Rare Diseases Globally']
+impacts_low = [-10.012990431454181, -4.1879352122321, 1.0968296764791674]
+impacts_high = [9.706839635301707, 4.308416927391331, -2.500315117230766]
 
 # Convert deltas to absolute values (baseline + delta)
 
@@ -71,7 +71,7 @@ ax.set_title(f'Sensitivity Analysis: {display_name}', fontsize=16, weight='bold'
 
 # X-axis label with units
 
-units_label = "x"
+units_label = "years"
 if units_label:
     ax.set_xlabel(f'{display_name} ({units_label})', fontsize=12)
 else:
@@ -96,7 +96,7 @@ add_watermark(fig)
 # Save PNG to knowledge/figures/ regardless of where Quarto renders from
 # Use 96 DPI for web-optimized output (reduced from 150 DPI to minimize file size)
 
-output_path = get_figure_output_path('tornado-state_rtt_vs_givewell_cost_per_life_multiplier.png')
+output_path = get_figure_output_path('tornado-state_rtt_treatment_acceleration_years_discounted.png')
 plt.savefig(output_path, dpi=96, bbox_inches=None, facecolor=COLOR_WHITE)
 
 add_png_metadata(
