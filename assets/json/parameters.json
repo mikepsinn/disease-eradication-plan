@@ -4364,6 +4364,15 @@
       "formula": "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × [A(DFDA_QUEUE_CLEARANCE_YEARS) - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-EFFICACY_LAG_YEARS) × A(STATUS_QUO_QUEUE_CLEARANCE_YEARS)] / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted",
       "latex": "\\begin{gathered}\nDALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+      "inputs": [
+        "DFDA_QUEUE_CLEARANCE_YEARS",
+        "EFFICACY_LAG_YEARS",
+        "EVENTUALLY_AVOIDABLE_DALY_PCT",
+        "GLOBAL_ANNUAL_DALY_BURDEN",
+        "NPV_DISCOUNT_RATE_STANDARD",
+        "STATUS_QUO_QUEUE_CLEARANCE_YEARS"
+      ],
+      "computeExpr": "(((GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT) * (((1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-DFDA_QUEUE_CLEARANCE_YEARS))) / (DFDA_QUEUE_CLEARANCE_YEARS * Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))) - ((Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-EFFICACY_LAG_YEARS)) * (1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-STATUS_QUO_QUEUE_CLEARANCE_YEARS)))) / (STATUS_QUO_QUEUE_CLEARANCE_YEARS * Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))))) / Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
       "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10"
     },
@@ -21986,7 +21995,7 @@
       "urls": [
         "https://manual.warondisease.org/knowledge/appendix/cost-of-change-analysis.html"
       ],
-      "quote": "What's the maximum cost to achieve any policy change through legal democratic channels? \\$25B for the US, \\$200B globally. For high-value reforms like military-to-health reallocation, this yields ROI exceeding 400,000:1.",
+      "quote": "What's the maximum cost to achieve any policy change through legal democratic channels? \\$25.5 billion for the US, \\$128 billion globally. For high-value reforms like military-to-health reallocation, this yields a benefit-cost ratio in the tens of thousands to one.",
       "note": "Working Paper",
       "type": "techreport",
       "doi": "10.5281/zenodo.18356215",
