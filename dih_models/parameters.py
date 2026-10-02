@@ -9241,6 +9241,38 @@ STATE_RTT_TREATMENT_ACCELERATION_YEARS = Parameter(
     latex_symbol=r"T_{accel,RTT}",
 )
 
+STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED = Parameter(
+    _timeline_shift_discounted_years(
+        float(STATUS_QUO_QUEUE_CLEARANCE_YEARS),
+        float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER),
+        0.0,
+        float(NPV_DISCOUNT_RATE_STANDARD),
+    ),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Present value, in years, of the average treatment schedule shift from Universal Right to Try with Evidence, "
+                "discounted at the standard social discount rate. Same timing as the undiscounted shift: first treatments "
+                "are found evenly over the status quo clearance period, versus evenly over that period divided by the "
+                "discovery multiplier. The cost-per-DALY and cost-per-life ratios use it so the near-term launch cost is "
+                "compared with health benefits in present value, as in the 1% Treaty model. "
+                "A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].",
+    display_name="Discounted Treatment Acceleration from Universal Right to Try with Evidence",
+    unit="years",
+    formula="[A(STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER) - A(STATUS_QUO_QUEUE_CLEARANCE_YEARS)] / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
+    confidence="low",
+    inputs=["STATUS_QUO_QUEUE_CLEARANCE_YEARS", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER", "NPV_DISCOUNT_RATE_STANDARD"],
+    # Inline arithmetic (not the helper) so the TypeScript generator can translate it for the calculator
+    compute=lambda ctx: (
+        (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -(ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"]))
+        / (ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
+        - (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"])
+        / (ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
+    )
+    / math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]),
+    keywords=["right to try", "right to trial", "treatment acceleration", "discounted", "present value", "years"],
+    latex_symbol=r"T_{accel,RTT}^{PV}",
+)
+
 STATE_RTT_TREATMENT_ACCELERATION_DALYS = Parameter(
     float(GLOBAL_ANNUAL_DALY_BURDEN)
     * float(EVENTUALLY_AVOIDABLE_DALY_PCT)
@@ -9319,33 +9351,45 @@ STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS = Parameter(
 )
 
 STATE_RTT_IMPLEMENTATION_COST_PER_DALY = Parameter(
-    float(STATE_RTT_IMPLEMENTATION_COST_TOTAL) / float(STATE_RTT_TREATMENT_ACCELERATION_DALYS),
+    float(STATE_RTT_IMPLEMENTATION_COST_TOTAL)
+    / (float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)),
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_type="calculated",
-    description="Conditional implementation cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.",
+    description="Conditional implementation cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once, with DALYs discounted at the standard rate so the near-term launch cost is compared with health benefits in present value.",
     display_name="Universal Right to Try with Evidence Implementation Cost per DALY",
     unit="USD/DALY",
-    formula="STATE_RTT_IMPLEMENTATION_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_DALYS",
+    formula="STATE_RTT_IMPLEMENTATION_COST_TOTAL / (GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)",
     confidence="low",
-    inputs=["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_DALYS"],
+    inputs=["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"],
     compute=lambda ctx: ctx["STATE_RTT_IMPLEMENTATION_COST_TOTAL"]
-    / ctx["STATE_RTT_TREATMENT_ACCELERATION_DALYS"],
+    / (ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"]),
     keywords=["right to try", "right to trial", "cost per DALY", "GiveWell", "implementation cost"],
     latex_symbol=r"Cost_{RTT,DALY}",
 )
 
 STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED = Parameter(
-    float(STATE_RTT_IMPLEMENTATION_COST_TOTAL) / float(STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED),
+    float(STATE_RTT_IMPLEMENTATION_COST_TOTAL)
+    / (
+        float(GLOBAL_DISEASE_DEATHS_DAILY)
+        * DAYS_PER_YEAR
+        * float(EVENTUALLY_AVOIDABLE_DEATH_PCT)
+        * float(STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)
+    ),
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_type="calculated",
-    description="Conditional implementation cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
+    description="Conditional implementation cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate, and discounts future deaths prevented at the standard rate so they compare with near-term costs and with GiveWell's near-term lives saved.",
     display_name="Universal Right to Try with Evidence Implementation Cost per Life Saved",
     unit="USD/life",
-    formula="STATE_RTT_IMPLEMENTATION_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
+    formula="STATE_RTT_IMPLEMENTATION_COST_TOTAL / (GLOBAL_DISEASE_DEATHS_DAILY × DAYS_PER_YEAR × EVENTUALLY_AVOIDABLE_DEATH_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)",
     confidence="low",
-    inputs=["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"],
+    inputs=["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "GLOBAL_DISEASE_DEATHS_DAILY", "EVENTUALLY_AVOIDABLE_DEATH_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"],
     compute=lambda ctx: ctx["STATE_RTT_IMPLEMENTATION_COST_TOTAL"]
-    / ctx["STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"],
+    / (
+        ctx["GLOBAL_DISEASE_DEATHS_DAILY"]
+        * DAYS_PER_YEAR
+        * ctx["EVENTUALLY_AVOIDABLE_DEATH_PCT"]
+        * ctx["STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"]
+    ),
     keywords=["right to try", "right to trial", "cost per life saved", "GiveWell", "implementation cost"],
     latex_symbol=r"Cost_{RTT,life}",
 )
@@ -10775,7 +10819,7 @@ STATE_RTT_VS_GIVEWELL_COST_PER_LIFE_MULTIPLIER = Parameter(
     GIVEWELL_COST_PER_LIFE_AVG / STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED,
     manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
     source_type="calculated",
-    description="Conditional cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator counts only the campaign and registry launch and excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+    description="Conditional cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. Right to Try lives saved are discounted to present value at the standard rate so they compare with GiveWell's near-term lives saved. The cost scopes differ: the Right to Try numerator counts only the campaign and registry launch and excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
     display_name="Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint",
     unit="x",
     formula="GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED",
