@@ -731,7 +731,7 @@ def generate_survey(
             "overview": f"This survey validates the economic model for a proposed 1% Global Health Security Treaty that would redirect 1% of global military spending ({fmt('TREATY_ANNUAL_FUNDING')}/year) to medical research and clinical trial infrastructure.",
             "main_claims": [
                 f"{fmt('DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED')} averted by treatments arriving {fmt('DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS')} sooner on average",
-                f"Cost-effectiveness: {fmt('TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG')} per DALY averted, costs and health both discounted ({fmt('TREATY_VS_BED_NETS_MULTIPLIER')} better than bed nets at {fmt('BED_NETS_COST_PER_DALY')}/DALY)",
+                f"Cost-effectiveness: {fmt('TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG')} per DALY averted, DALYs discounted at the standard rate ({fmt('TREATY_VS_BED_NETS_MULTIPLIER')} better than bed nets at {fmt('BED_NETS_COST_PER_DALY')}/DALY)",
                 f"ROI: {fmt('DFDA_ROI_RD_ONLY')} return on R&D savings alone (10-year NPV, most conservative estimate)",
                 f"Political feasibility: {fmt('POLITICAL_SUCCESS_PROBABILITY')} central success probability"
             ],

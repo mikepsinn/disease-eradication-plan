@@ -8907,14 +8907,17 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED = Parameter(
         "EFFICACY_LAG_YEARS",
         "NPV_DISCOUNT_RATE_STANDARD",
     ],
+    # Inline arithmetic (not the helper) so the TypeScript generator can translate it for the calculator
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_DALY_BURDEN"]
     * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"]
-    * _timeline_shift_discounted_years(
-        ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
-        ctx["DFDA_QUEUE_CLEARANCE_YEARS"],
-        ctx["EFFICACY_LAG_YEARS"],
-        ctx["NPV_DISCOUNT_RATE_STANDARD"],
-    ),
+    * (
+        (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
+        / (ctx["DFDA_QUEUE_CLEARANCE_YEARS"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
+        - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["EFFICACY_LAG_YEARS"]
+        * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"])
+        / (ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
+    )
+    / math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]),
     latex_symbol=r"DALYs_{max}^{PV}",
 )
 

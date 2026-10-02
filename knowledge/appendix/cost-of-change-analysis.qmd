@@ -355,10 +355,8 @@ For detailed analysis of the political economy and implementation mechanisms, se
 | Political Investment | Benefit-Cost Ratio | Cost per DALY |
 |---------------------|-----|---------------|
 | {{< var treaty_campaign_total_cost >}} (realistic) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} |
-| {{< var us_political_reform_investment_total >}} (US) | 3,390,000:1 | $0.05 |
-| {{< var global_political_reform_investment >}} (global) | 678,000:1 | $0.23 |
 
-For comparison, GiveWell's cost-effectiveness threshold is ~$50/DALY, and bed nets achieve ~{{< var bed_nets_cost_per_daly >}}. Even at {{< var global_political_reform_investment >}} political cost, this intervention is **139x more cost-effective than bed nets**.
+Even at the full {{< var global_political_reform_investment >}} global political cost, the benefits ({{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}, discounted) exceed the cost tens of thousands of times over, and the cost per DALY stays far below bed nets ({{< var bed_nets_cost_per_daly >}}).
 
 ### Other Policy Domains
 
