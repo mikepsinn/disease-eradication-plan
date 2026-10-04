@@ -93,7 +93,7 @@ export const ADAPTABLE_TRIAL_COST_PER_PATIENT: Parameter = {
   confidenceInterval: [929.0, 1400.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const ADAPTABLE_TRIAL_TOTAL_COST: Parameter = {
@@ -223,7 +223,7 @@ export const BASELINE_LIVES_SAVED_ANNUAL: Parameter = {
   conservative: true,
   sourceLastUpdated: "2024",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const BEEF_FEED_CALORIE_EFFICIENCY_PCT: Parameter = {
@@ -838,7 +838,7 @@ export const DRUG_REPURPOSING_SUCCESS_RATE: Parameter = {
   sourceUrl: "https://www.nature.com/articles/s41591-024-03233-x",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT: Parameter = {
@@ -1411,7 +1411,7 @@ export const GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH: Parameter = {
   confidenceInterval: [3000000.0, 6000000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING: Parameter = {
@@ -1668,7 +1668,7 @@ export const GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL: Parameter = {
   confidenceInterval: [7000000000000.0, 14000000000000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL: Parameter = {
@@ -1684,7 +1684,7 @@ export const GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL: Parameter = {
   confidenceInterval: [3500000000000.0, 7000000000000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const GLOBAL_GDP_2025: Parameter = {
@@ -2132,7 +2132,7 @@ export const GLOBAL_YLD_PROPORTION_OF_DALYS: Parameter = {
   peerReviewed: true,
   distribution: "normal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP: Parameter = {
@@ -2778,7 +2778,7 @@ export const PHASE_1_SAFETY_DURATION_YEARS: Parameter = {
   peerReviewed: true,
   sourceLastUpdated: "2021",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const PHASE_2_3_CLINICAL_TRIAL_COST_PCT: Parameter = {
@@ -2828,7 +2828,7 @@ export const PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT: Parameter = {
   confidenceInterval: [19.0, 478.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const POLIO_VACCINATION_ROI: Parameter = {
@@ -3324,7 +3324,7 @@ export const STANDARD_QALYS_PER_LIFE_SAVED: Parameter = {
   stdError: 7.0,
   distribution: "normal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL: Parameter = {
@@ -5698,7 +5698,7 @@ export const DFDA_DIRECT_FUNDING_COST_PER_DALY: Parameter = {
   inputs: ["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED"],
   computeExpr: "(DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV: Parameter = {
@@ -5734,7 +5734,7 @@ export const DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter
   inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"],
   computeExpr: "(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER: Parameter = {
@@ -5936,7 +5936,7 @@ export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
   inputs: ["DFDA_NPV_ANNUAL_OPEX", "DIH_NPV_ANNUAL_OPEX_INITIATIVES"],
   computeExpr: "(DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
@@ -5990,7 +5990,7 @@ export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {
   inputs: ["DFDA_NPV_ANNUAL_OPEX_TOTAL", "NPV_DISCOUNT_RATE_STANDARD", "NPV_TIME_HORIZON_YEARS"],
   computeExpr: "((DFDA_NPV_ANNUAL_OPEX_TOTAL * (1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-NPV_TIME_HORIZON_YEARS)))) / NPV_DISCOUNT_RATE_STANDARD)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_NPV_TOTAL_COST: Parameter = {
@@ -6008,7 +6008,7 @@ export const DFDA_NPV_TOTAL_COST: Parameter = {
   inputs: ["DFDA_NPV_PV_ANNUAL_OPEX", "DFDA_NPV_UPFRONT_COST_TOTAL"],
   computeExpr: "(DFDA_NPV_UPFRONT_COST_TOTAL + DFDA_NPV_PV_ANNUAL_OPEX)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
@@ -6064,7 +6064,7 @@ export const DFDA_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
   inputs: ["DFDA_TRIAL_SUBSIDIES_ANNUAL", "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
   computeExpr: "(DFDA_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
@@ -6298,7 +6298,7 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED: Parameter =
   inputs: ["GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATUS_QUO_QUEUE_CLEARANCE_YEARS", "DFDA_QUEUE_CLEARANCE_YEARS", "EFFICACY_LAG_YEARS", "NPV_DISCOUNT_RATE_STANDARD"],
   computeExpr: "(((GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT) * (((1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-DFDA_QUEUE_CLEARANCE_YEARS))) / (DFDA_QUEUE_CLEARANCE_YEARS * Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))) - ((Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-EFFICACY_LAG_YEARS)) * (1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-STATUS_QUO_QUEUE_CLEARANCE_YEARS)))) / (STATUS_QUO_QUEUE_CLEARANCE_YEARS * Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))))) / Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE: Parameter = {
@@ -6352,7 +6352,7 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS: Parameter = 
   inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS", "GLOBAL_YLD_PROPORTION_OF_DALYS"],
   computeExpr: "((DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS * GLOBAL_YLD_PROPORTION_OF_DALYS) * 8760.0)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
@@ -6426,7 +6426,7 @@ export const DFDA_TRIAL_COST_REDUCTION_PCT: Parameter = {
   validationMin: 0.9,
   validationMax: 0.99,
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
@@ -6443,7 +6443,7 @@ export const DFDA_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   inputs: ["DFDA_ANNUAL_TRIAL_FUNDING", "DFDA_ANNUAL_OPEX"],
   computeExpr: "(DFDA_ANNUAL_TRIAL_FUNDING - DFDA_ANNUAL_OPEX)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER: Parameter = {
@@ -7455,7 +7455,7 @@ export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   inputs: ["GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH", "GLOBAL_MED_RESEARCH_SPENDING"],
   computeExpr: "(GLOBAL_MED_RESEARCH_SPENDING / GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025: Parameter = {
@@ -8464,7 +8464,7 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   inputs: ["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL", "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL"],
   computeExpr: "((GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL) / GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
@@ -13472,7 +13472,7 @@ export const DFDA_ANNUAL_TRIAL_FUNDING: Parameter = {
   confidence: "high",
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
@@ -13500,7 +13500,7 @@ export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
   confidenceInterval: [11000000.0, 26500000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_NPV_UPFRONT_COST: Parameter = {
@@ -13691,7 +13691,7 @@ export const DFDA_UPFRONT_BUILD: Parameter = {
   sourceType: "definition",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_UPFRONT_BUILD_MAX: Parameter = {
@@ -13704,7 +13704,7 @@ export const DFDA_UPFRONT_BUILD_MAX: Parameter = {
   sourceType: "definition",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DIH_NPV_ANNUAL_OPEX_INITIATIVES: Parameter = {
@@ -13719,7 +13719,7 @@ export const DIH_NPV_ANNUAL_OPEX_INITIATIVES: Parameter = {
   confidenceInterval: [14000000.0, 32000000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for About $10",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DIH_NPV_UPFRONT_COST_INITIATIVES: Parameter = {
