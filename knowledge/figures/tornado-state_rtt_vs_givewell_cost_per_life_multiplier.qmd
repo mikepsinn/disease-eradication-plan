@@ -20,14 +20,14 @@ display_name = "Universal Right to Try with Evidence Cost-Effectiveness vs GiveW
 
 # Baseline and units
 
-baseline = 636242.2613732788
+baseline = 36061.46369675068
 
 # Tornado data from sensitivity analysis
 
-drivers = ['STATE_RTT_IMPLEMENTATION_COST_TOTAL', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'RARE_DISEASES_COUNT_GLOBAL', 'EVENTUALLY_AVOIDABLE_DEATH_PCT', 'GLOBAL_DISEASE_DEATHS_DAILY']
-driver_labels = ['Universal Right to Try with Evidence Implementation Cost', 'Diseases Getting First Treatment Per Year', 'Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Total Number of Rare Diseases Globally', 'Eventually Avoidable Death Percentage', 'Global Daily Deaths from Disease and Aging']
-impacts_low = [1017987.6181972461, 556711.9787016188, -565491.2956199191, -90891.75162475416, -292802.05923964595, -31812.113068664097]
-impacts_high = [-429463.52642696316, -318121.1306866394, 90134.32036121457, 272675.25487426226, 36900.534808641416, 31812.113068663864]
+drivers = ['STATE_RTT_IMPLEMENTATION_COST_TOTAL', 'STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'EVENTUALLY_AVOIDABLE_DEATH_PCT', 'RARE_DISEASES_COUNT_GLOBAL', 'GLOBAL_DISEASE_DEATHS_DAILY']
+driver_labels = ['Universal Right to Try with Evidence Implementation Cost', 'Universal Right to Try with Evidence Treatment Discovery Multiplier', 'Diseases Getting First Treatment Per Year', 'Eventually Avoidable Death Percentage', 'Total Number of Rare Diseases Globally', 'Global Daily Deaths from Disease and Aging']
+impacts_low = [57698.3419148011, -35155.110560074594, -14703.631888227734, -16595.676632378752, 3850.9143503292144, -1803.073184837529]
+impacts_high = [-24341.487995306707, 34080.23036714186, 15126.637187781904, 2091.478949418306, -8778.481811502934, 1803.0731848375362]
 
 # Convert deltas to absolute values (baseline + delta)
 

@@ -751,7 +751,7 @@ window.dihScoreboardParameterMetadata = {
       ],
       "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-      "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents"
+      "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis"
     },
     "GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL": {
       "value": 5000000000000.0,
@@ -771,7 +771,7 @@ window.dihScoreboardParameterMetadata = {
       ],
       "distribution": "lognormal",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-      "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents"
+      "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis"
     },
     "CHAIN_WORLD_LEADER_COUNT": {
       "value": 195.0,
@@ -927,7 +927,7 @@ window.dihScoreboardParameterMetadata = {
       ],
       "computeExpr": "(DFDA_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-      "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents"
+      "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis"
     },
     "DFDA_TRIAL_SUBSIDIES_ANNUAL": {
       "value": 21760000000.0,
@@ -948,7 +948,7 @@ window.dihScoreboardParameterMetadata = {
       ],
       "computeExpr": "(DFDA_ANNUAL_TRIAL_FUNDING - DFDA_ANNUAL_OPEX)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-      "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents"
+      "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis"
     },
     "DFDA_ANNUAL_TRIAL_FUNDING": {
       "value": 21800000000.0,
@@ -964,7 +964,7 @@ window.dihScoreboardParameterMetadata = {
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-dfda_annual_trial_funding",
       "distribution": "fixed",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-      "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents"
+      "chapterTitle": "Ubiquitous Pragmatic Trial Impact Analysis"
     },
     "DFDA_ANNUAL_OPEX": {
       "value": 40000000.0,

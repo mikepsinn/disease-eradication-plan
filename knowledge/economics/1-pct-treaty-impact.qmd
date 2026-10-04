@@ -336,8 +336,6 @@ No extra paperwork. No dedicated research staff. Just making routine clinical da
 
 **{{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}** in total economic value (cumulative over ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift, conditional on implementation).
 
-![Faster treatments plus better treatments equals billions of lives saved and $84.8 quadrillion in economic value. Quadrillion has 15 zeros. You've seen numbers that big before, but usually they're debts, not assets.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-total-economic-value-bw-academic.jpg)
-
 This is the monetized value of {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} saved and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} healthy life-years gained, using standard QALY valuation ({{< var standard_economic_qaly_value_usd >}}/QALY). On average, first treatments become available {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier - combining treatment acceleration ({{< var dfda_trial_capacity_treatment_acceleration_years >}} average from expanded trial capacity) and efficacy lag elimination ({{< var efficacy_lag_years >}} from deploying treatments once discovered).
 
 ##### Uncertainty Analysis: Total Economic Value
@@ -579,7 +577,7 @@ Conservative benefits ({{< var treaty_peace_plus_rd_annual_benefits >}} annually
 
 **GiveWell Top Charities (individual benchmarks):**
 
-- **Bed Nets** {{< var bed_nets_cost_per_daly_cite >}}: {{< var bed_nets_cost_per_daly >}}/DALY
+- **Bed Nets** [@givewell-cost-per-life-saved]: {{< var bed_nets_cost_per_daly >}}/DALY
 - **Deworming** {{< var deworming_cost_per_daly_cite >}}: {{< var deworming_cost_per_daly >}}/DALY
 - **Vitamin A** {{< var vitamin_a_cost_per_daly_cite >}}: {{< var vitamin_a_cost_per_daly >}}/DALY
 
@@ -681,8 +679,6 @@ But here's the key: this intervention is **cost-saving**. The upfront implementa
 
 ### Expected Value Under Political Uncertainty
 
-![Best case: you save lives cheaply. Worst case: politicians do politician things and you still save lives, just more expensively.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-expected-value-under-political-uncertainty-bw-academic.jpg)
-
 **Conditional on success**: {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per DALY
 
 **Risk-adjusted expected value**: {{< var treaty_expected_cost_per_daly >}} per DALY
@@ -720,8 +716,6 @@ A natural question: Why not skip the {{< var treaty_campaign_total_cost >}} trea
 #### Numerical Comparison: Treaty vs Direct Funding
 
 #### Direct Funding Scenario
-
-![Bed nets cost $89 per life year saved. Clinical trials cost 84 cents. You've been really into bed nets though, so that's nice.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-direct-funding-scenario-bw-academic.jpg)
 
 **If philanthropists/NIH directly funded** {{< var dih_treasury_to_medical_research_annual >}}/year for {{< var dfda_queue_clearance_years >}} (therapeutic space exploration period):
 
@@ -790,9 +784,9 @@ For the framework's cost per health benefit averted (using the full ~{{< var dfd
 
 This represents {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} per year of healthy life gained. This extremely low cost per DALY, combined with net economic benefits that exceed costs, qualifies this as a cost-saving intervention under model assumptions. Standard willingness-to-pay thresholds are {{< var who_qaly_threshold_cost_effective >}}-{{< var standard_economic_qaly_value_usd >}} {{< var standard_economic_qaly_value_usd_cite >}} per QALY; cost-saving interventions are generally prioritized regardless of threshold.
 
-#### Timeline Shift Benefits Are Not Discounted
+#### Timeline Shift Benefits Use the Same Discount Rate as Costs
 
-The conservative NPV above excludes the timeline-shift health benefits. Discounting them would require assuming when each disease's first effective treatment arrives: at the {{< var npv_discount_rate_standard >}} rate, a benefit that begins around year 90 keeps well under a tenth of its undiscounted value, while diseases treatable within 10-20 years keep most of theirs. This analysis does not compute that figure. The timeline-shift values are reported undiscounted and cumulative ({{< var dfda_efficacy_lag_elimination_economic_value >}} for the efficacy-lag component alone, {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} for the full shift), separately from the R&D-only NPV ({{< var dfda_npv_benefit_rd_only >}}); the two are different benefit streams and are not added together.
+Health benefits are discounted at the same {{< var npv_discount_rate_standard >}} as costs. Discounting costs but not health would make the program look better the longer it is delayed (the Keeler-Cretin paradox). The model assumes first treatments are found evenly over the {{< var dfda_queue_clearance_years >}} clearance period and reach patients right away. Today they are found evenly over {{< var status_quo_queue_clearance_years >}} and each one reaches patients {{< var efficacy_lag_years >}} later. The{{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} healthy years gained have a present value of {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_discounted_nounit >}}, worth {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}. That value is separate from the R&D-only NPV ({{< var dfda_npv_benefit_rd_only >}}); the two are different benefit streams and are not added together.
 
 ## Quality-Adjusted Life Year (QALY) Valuation
 
@@ -1020,9 +1014,9 @@ The complete ROI includes the full timeline shift health benefits:
 | Trial Capacity | {{< var dfda_trial_capacity_multiplier >}} | Patients fundable ÷ current slots | Funding, trial cost, current capacity |
 | Timeline Shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Treatment acceleration + efficacy lag | Discovery capacity model, multiplier, regulatory data |
 | DALYs Averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}} | DALY burden × avoidable × shift | WHO GBD, avoidability assumption |
-| Cost/DALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} | Implementation cost ÷ DALYs | Implementation budget, DALYs |
+| Cost/DALY | {{< var treaty_cost_per_daly_trial_capacity_plus_efficacy_lag >}} | Implementation cost ÷ discounted DALYs | Implementation budget, DALYs, discount rate |
 | ROI (Conservative) | {{< var dfda_roi_rd_only >}}:1 | NPV benefits ÷ NPV costs | Trial savings, discount rate |
-| ROI (Complete) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | Economic value ÷ implementation cost | QALY valuation, timeline shift |
+| ROI (Complete) | {{< var treaty_roi_trial_capacity_plus_efficacy_lag >}}:1 | Discounted DALYs × QALY value ÷ implementation cost | QALY valuation, timeline shift, discount rate |
 | Lives Saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | Daily deaths × avoidable × shift | WHO mortality, timeline shift |
 | Delay Lives | {{< var dfda_efficacy_lag_elimination_deaths_averted >}} | Daily deaths × lag × avoidable | WHO mortality, lag years |
 | Delay Value | {{< var dfda_efficacy_lag_elimination_economic_value >}} | Delay DALYs × QALY Value | Delay DALYs, QALY ($150k) |
@@ -1034,8 +1028,6 @@ For complete parameter definitions, uncertainty ranges, and Monte Carlo distribu
 ## Counterfactual Baseline Specification
 
 This cost-effectiveness analysis uses the **status quo** as the baseline counterfactual: military spending continues at current levels ({{< var global_military_spending_annual_2024 >}} {{< var global_military_spending_annual_2024_cite >}} annually) and is allocated to traditional military purposes. Under this baseline, the {{< var treaty_annual_funding >}} redirected to pragmatic clinical trials infrastructure would otherwise remain in military budgets.
-
-![What happens if you spend the money on trials, versus literally anything else you were going to waste it on.](/assets/images/1-pct-treaty-impact/1-pct-treaty-impact-section-counterfactual-baseline-specification-bw-academic.jpg)
 
 **Alternative counterfactual scenarios** include:
 

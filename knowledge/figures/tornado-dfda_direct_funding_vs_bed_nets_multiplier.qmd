@@ -20,14 +20,14 @@ display_name = "Direct Funding Cost-Effectiveness vs Bed Nets"
 
 # Baseline and units
 
-baseline = 105.76198011269368
+baseline = 19.074021696940314
 
 # Tornado data from sensitivity analysis
 
-drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'BED_NETS_COST_PER_DALY', 'RARE_DISEASES_COUNT_GLOBAL', 'GLOBAL_ANNUAL_DALY_BURDEN', 'EFFICACY_LAG_YEARS', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'Eventually Avoidable DALY Percentage', 'Annual Global Clinical Trial Participants', 'Bed Nets Cost per DALY', 'Total Number of Rare Diseases Globally', 'Global Annual DALY Burden', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
-impacts_low = [603.3218268247953, 41.80864006706649, -48.67222353230459, 18.310508852917508, -13.071705407186855, -5.880498597696587, -5.508436464202774, -0.9982923265203993, 0.015694333121743398, 0.009416580320987578, 0.009416580320987578, 0.006277713696192677, 0.003138853589092605]
-impacts_high = [-47.755734760074525, -18.552135006251305, 6.133942784868921, -11.828761613367263, 13.071705407186869, 19.40384999341164, 5.508436464202816, 0.9982923265204278, -0.021971792586143124, -0.015694170161438592, -0.01255534916833767, -0.009416521655253973, -0.003138847070687234]
+drivers = ['DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR', 'GIVEWELL_COST_PER_LIFE_MAX', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'CURRENT_TRIAL_SLOTS_AVAILABLE', 'RARE_DISEASES_COUNT_GLOBAL', 'GLOBAL_ANNUAL_DALY_BURDEN', 'GLOBAL_LIFE_EXPECTANCY_2024', 'EFFICACY_LAG_YEARS', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+driver_labels = ['Pragmatic Trial Cost per Patient', 'Diseases Getting First Treatment Per Year', 'GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)', 'Eventually Avoidable DALY Percentage', 'Annual Global Clinical Trial Participants', 'Total Number of Rare Diseases Globally', 'Global Annual DALY Burden', 'Global Life Expectancy (2024)', 'Regulatory Delay for Efficacy Testing Post-Safety Verification', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
+impacts_low = [170.4798725115072, -8.635850277667416, -8.670009862245596, -8.777965831429078, 5.320909385323379, 2.9519283558214404, -0.9934386300489706, 0.15097537858606813, -0.1251338453080919, 0.004590107832974866, 0.0027540660493592384, 0.0027540660493592384, 0.001836044482811161, 0.0009180224663865033]
+impacts_high = [-13.92102914191754, 16.668064186822754, 8.670009862245596, 1.106247799461709, -3.4779551147295926, -5.489428430996686, 0.9934386300489741, -0.14015375543106856, 0.11795065068158905, -0.006426169868227305, -0.004590119083246691, -0.003672094366230283, -0.002754070099456385, -0.0009180229164051923]
 
 # Convert deltas to absolute values (baseline + delta)
 

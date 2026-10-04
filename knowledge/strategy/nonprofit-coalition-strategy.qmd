@@ -214,7 +214,7 @@ Nonprofits evaluate new asks by comparing the cost per disability-adjusted life 
 
 **Direct trial funding.** A donor pays for pragmatic trials at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}} per patient traditional. This is the cost-effectiveness of the intervention itself, already roughly 100x better than bed nets.
 
-**Treaty advocacy campaign.** A donor funds the campaign to pass the treaty (~{{< var treaty_campaign_total_cost >}} total, shared across many funders). The trials are then paid for by redirected military spending, not new philanthropic money. Same {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted. Only the campaign costs anything. Roughly five orders of magnitude better than bed nets, if the numbers survive economist scrutiny.
+**Treaty advocacy campaign.** A donor funds the campaign to pass the treaty (~{{< var treaty_campaign_total_cost >}} total, shared across many funders). The trials are then paid for by redirected military spending, not new philanthropic money. Same {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted. Only the campaign costs anything. {{< var treaty_vs_bed_nets_multiplier >}} better than bed nets, if the numbers survive economist scrutiny.
 
 **Net of lifetime peace dividend.** A 1% reduction also eliminates war externalities (environmental damage, refugee costs, lost human capital, trade disruption). The estimated lifetime peace dividend is {{< var peace_dividend_lifetime_per_person >}} per person. The campaign pays for itself before a single trial enrolls a patient, and then keeps paying.
 

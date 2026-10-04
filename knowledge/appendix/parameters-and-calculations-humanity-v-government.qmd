@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 207 parameters used in the analysis, organized by type:
+This appendix documents all 208 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 64
-- Calculated values: 112
+- Calculated values: 113
 - Core definitions: 31
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (112 parameters) • [External Data Sources](#sec-external) (64 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
+[Calculated Values](#sec-calculated) (113 parameters) • [External Data Sources](#sec-external) (64 parameters) • [Core Definitions](#sec-definitions) (31 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -192,7 +192,7 @@ $$
 
 :::
 
-### Corporate Damages Forward Settlement Value Per Capita: $10.6 million {#sec-corporate_damages_forward_settlement_value_per_capita}
+### Corporate Damages Forward Settlement Value Per Capita: $940,697 {#sec-corporate_damages_forward_settlement_value_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -200,55 +200,32 @@ Forward treaty settlement value per living human from the 1% Treaty impact model
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $7.53 quadrillion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
 \begin{gathered}
 V_{settlement,pc} \\
 = \frac{Value_{max}}{Pop_{global}} \\
-= \frac{\$84800T}{8B} \\
-= \$10.6M
+= \frac{\$7530T}{8B} \\
+= \$941K
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -267,6 +244,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -3425,7 +3411,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).
+Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology). Undiscounted physical count of healthy years; cost-effectiveness ratios and dollar values use DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED so costs and health are discounted at the same rate.
 
 **Inputs**:
 
@@ -3536,54 +3522,26 @@ $$
 
 :::
 
-### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $84.8 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+### Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 50.2 billion DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total economic value from the combined treatment timeline shift. DALYs valued at standard economic rate.
+Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity](#sec-dfda_queue_clearance_years) 🔢: 36 years
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
 \begin{gathered}
-Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -3602,6 +3560,124 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+:::
+
+### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $7.53 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Present value of the combined treatment timeline shift: discounted DALYs valued at the standard economic rate per QALY.
+
+**Inputs**:
+
+- [Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted) 🔢: 50.2 billion DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:

@@ -93,7 +93,7 @@ export const ADAPTABLE_TRIAL_COST_PER_PATIENT: Parameter = {
   confidenceInterval: [929.0, 1400.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const ADAPTABLE_TRIAL_TOTAL_COST: Parameter = {
@@ -223,25 +223,7 @@ export const BASELINE_LIVES_SAVED_ANNUAL: Parameter = {
   conservative: true,
   sourceLastUpdated: "2024",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
-};
-
-export const BED_NETS_COST_PER_DALY: Parameter = {
-  value: 89.0,
-  parameterName: "BED_NETS_COST_PER_DALY",
-  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-bed_nets_cost_per_daly",
-  unit: "USD/DALY",
-  displayName: "Bed Nets Cost per DALY",
-  description: "GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.",
-  sourceType: "external",
-  sourceRef: "givewell-cost-per-life-saved",
-  sourceUrl: "https://www.givewell.org/charities/top-charities",
-  confidence: "high",
-  confidenceInterval: [78.0, 100.0],
-  peerReviewed: true,
-  distribution: "normal",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
-  manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const BEEF_FEED_CALORIE_EFFICIENCY_PCT: Parameter = {
@@ -856,7 +838,7 @@ export const DRUG_REPURPOSING_SUCCESS_RATE: Parameter = {
   sourceUrl: "https://www.nature.com/articles/s41591-024-03233-x",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const ECONOMIC_MULTIPLIER_EDUCATION_INVESTMENT: Parameter = {
@@ -1181,12 +1163,14 @@ export const GIVEWELL_COST_PER_LIFE_MAX: Parameter = {
   parameterName: "GIVEWELL_COST_PER_LIFE_MAX",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-givewell_cost_per_life_max",
   unit: "USD/life",
-  displayName: "Givewell Cost per Life Saved (Maximum)",
-  description: "GiveWell cost per life saved (Against Malaria Foundation)",
+  displayName: "GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)",
+  description: "GiveWell cost per life saved (Against Malaria Foundation). GiveWell estimates ~$3,000 to ~$8,000 per death averted across the locations where it funds AMF campaigns (as of December 2023).",
   sourceType: "external",
   sourceRef: "givewell-cost-per-life-saved",
   sourceUrl: "https://www.givewell.org/charities/top-charities",
   confidence: "high",
+  confidenceInterval: [3000.0, 8000.0],
+  distribution: "normal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
@@ -1427,7 +1411,7 @@ export const GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH: Parameter = {
   confidenceInterval: [3000000.0, 6000000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const GLOBAL_ANNUAL_LOST_ECONOMIC_GROWTH_MILITARY_SPENDING: Parameter = {
@@ -1684,7 +1668,7 @@ export const GLOBAL_DISEASE_DIRECT_MEDICAL_COST_ANNUAL: Parameter = {
   confidenceInterval: [7000000000000.0, 14000000000000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL: Parameter = {
@@ -1700,7 +1684,7 @@ export const GLOBAL_DISEASE_PRODUCTIVITY_LOSS_ANNUAL: Parameter = {
   confidenceInterval: [3500000000000.0, 7000000000000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const GLOBAL_GDP_2025: Parameter = {
@@ -2148,7 +2132,7 @@ export const GLOBAL_YLD_PROPORTION_OF_DALYS: Parameter = {
   peerReviewed: true,
   distribution: "normal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP: Parameter = {
@@ -2794,7 +2778,7 @@ export const PHASE_1_SAFETY_DURATION_YEARS: Parameter = {
   peerReviewed: true,
   sourceLastUpdated: "2021",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const PHASE_2_3_CLINICAL_TRIAL_COST_PCT: Parameter = {
@@ -2844,7 +2828,7 @@ export const PMC_PRAGMATIC_TRIAL_MEDIAN_COST_PER_PATIENT: Parameter = {
   confidenceInterval: [19.0, 478.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const POLIO_VACCINATION_ROI: Parameter = {
@@ -3340,7 +3324,7 @@ export const STANDARD_QALYS_PER_LIFE_SAVED: Parameter = {
   stdError: 7.0,
   distribution: "normal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const SUGAR_SUBSIDY_COST_PER_PERSON_ANNUAL: Parameter = {
@@ -4406,6 +4390,26 @@ export const AUTOMATED_REVENUE_SERVICE_SAVINGS_PER_AMERICAN_ANNUAL: Parameter = 
   manualPageTitle: "The Automated Revenue Service",
 };
 
+export const BED_NETS_COST_PER_DALY: Parameter = {
+  value: 183.537312054,
+  parameterName: "BED_NETS_COST_PER_DALY",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-bed_nets_cost_per_daly",
+  unit: "USD/DALY",
+  displayName: "Bed Nets Cost per DALY",
+  description: "Cost per DALY for insecticide-treated bed nets: GiveWell's Against Malaria Foundation cost per life saved divided by the discounted life-years of a child death averted (a full life expectancy at the standard discount rate, life-years accruing continuously). Discounted at the same rate and with the same continuous timing as the dFDA and treaty cost-per-DALY figures so comparisons are like for like. GiveWell publishes cost per life saved, not cost per DALY. Bed nets are the standard benchmark for cost-effective global health spending.",
+  sourceType: "calculated",
+  sourceRef: "givewell-cost-per-life-saved",
+  sourceUrl: "https://www.givewell.org/charities/top-charities",
+  confidence: "medium",
+  formula: "GIVEWELL_COST_PER_LIFE_MAX / ((1 - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-GLOBAL_LIFE_EXPECTANCY_2024)) / ln(1 + NPV_DISCOUNT_RATE_STANDARD))",
+  latex: "\\begin{gathered}\nCost_{nets} \\\\\n= Cost_{GW,max} / ((1 - (1 \\\\\n+ r_{discount})^{-LE_{global}}) / \\ln\\left(1 + r_{discount}\\right))\n\\end{gathered}",
+  confidenceInterval: [112.861567119, 252.221099595],
+  inputs: ["GIVEWELL_COST_PER_LIFE_MAX", "NPV_DISCOUNT_RATE_STANDARD", "GLOBAL_LIFE_EXPECTANCY_2024"],
+  computeExpr: "(GIVEWELL_COST_PER_LIFE_MAX / ((1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-GLOBAL_LIFE_EXPECTANCY_2024))) / Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD))))",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
+  manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
+};
+
 export const BEST_PRACTICE_LIFE_EXPECTANCY_GAIN: Parameter = {
   value: 10.7,
   parameterName: "BEST_PRACTICE_LIFE_EXPECTANCY_GAIN",
@@ -4842,7 +4846,7 @@ export const CORPORATE_DAMAGES_EFFICACY_LAG_DEATHS_VSL: Parameter = {
 };
 
 export const CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA: Parameter = {
-  value: 10598318.8753,
+  value: 940696.966583,
   parameterName: "CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-corporate_damages_forward_settlement_value_per_capita",
   unit: "USD/person",
@@ -4851,8 +4855,8 @@ export const CORPORATE_DAMAGES_FORWARD_SETTLEMENT_VALUE_PER_CAPITA: Parameter = 
   sourceType: "calculated",
   confidence: "high",
   formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / GLOBAL_POPULATION_2024",
-  latex: "\\begin{gathered}\nV_{settlement,pc} = \\frac{Value_{max}}{Pop_{global}} = \\frac{\\$84800T}{8B} = \\$10.6M\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
-  confidenceInterval: [5364323.20197, 21447999.551],
+  latex: "\\begin{gathered}\nV_{settlement,pc} = \\frac{Value_{max}}{Pop_{global}} = \\frac{\\$7530T}{8B} = \\$941K\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max}^{PV} \\times Value_{QALY} = 50.2B \\times \\$150K = \\$7530T\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [385780.899387, 1599332.68535],
   inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "GLOBAL_POPULATION_2024"],
   computeExpr: "(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / GLOBAL_POPULATION_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/court-of-humanity.html",
@@ -5680,43 +5684,43 @@ export const DFDA_COMBINED_TREATMENT_SPEEDUP_MULTIPLIER: Parameter = {
 };
 
 export const DFDA_DIRECT_FUNDING_COST_PER_DALY: Parameter = {
-  value: 0.841512232517,
+  value: 9.62237093833,
   parameterName: "DFDA_DIRECT_FUNDING_COST_PER_DALY",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_direct_funding_cost_per_daly",
   unit: "USD/DALY",
   displayName: "Direct Pragmatic Trial Funding Cost per DALY",
-  description: "Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.",
+  description: "Cost per DALY at direct funding level for the therapeutic space exploration period, with costs and DALYs discounted at the same standard rate. Still highly cost-effective vs bed nets.",
   sourceType: "calculated",
   confidence: "medium",
-  formula: "NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",
-  latex: "\\begin{gathered}\nCost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}} = \\frac{\\$476B}{565B} = \\$0.842\n\\\\[0.5em]\n\\text{where } NPV_{direct} = \\frac{T_{queue,trial}}{Funding_{trial,ref} \\times r_{discount}} = \\frac{36}{\\$21.8B \\times 3\\%} = \\$476B\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\end{gathered}",
-  confidenceInterval: [0.263681963629, 1.49224595226],
-  inputs: ["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
-  computeExpr: "(DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS)",
+  formula: "NPV_DIRECT_FUNDING ÷ DISCOUNTED_DALYS_TIMELINE_SHIFT",
+  latex: "\\begin{gathered}\nCost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}^{PV}} = \\frac{\\$483B}{50.2B} = \\$9.62\n\\\\[0.5em]\n\\text{where } NPV_{direct} = Funding_{trial,ref} \\times (1 - (1 + r_{discount})^{-T_{queue,trial}}) / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\end{gathered}",
+  confidenceInterval: [2.15116894109, 31.6737888985],
+  inputs: ["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED"],
+  computeExpr: "(DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV: Parameter = {
-  value: 475659465477.0,
+  value: 482759208161.0,
   parameterName: "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_direct_funding_queue_clearance_npv",
   unit: "USD",
   displayName: "Direct Pragmatic Trial Funding NPV (Exploration Period)",
-  description: "NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
+  description: "NPV of annual direct funding for the therapeutic space exploration period, spent continuously through each year (the same timing convention as the discounted DALYs it is divided by). Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = exploration time",
-  latex: "\\begin{gathered}\nNPV_{direct} = \\frac{T_{queue,trial}}{Funding_{trial,ref} \\times r_{discount}} = \\frac{36}{\\$21.8B \\times 3\\%} = \\$476B\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
-  confidenceInterval: [155522542261.0, 694735386931.0],
+  formula: "DFDA_ANNUAL_TRIAL_FUNDING × (1 - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-DFDA_QUEUE_CLEARANCE_YEARS)) / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
+  latex: "\\begin{gathered}\nNPV_{direct} = Funding_{trial,ref} \\times (1 - (1 + r_{discount})^{-T_{queue,trial}}) / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [157843887912.0, 705105079618.0],
   inputs: ["DFDA_ANNUAL_TRIAL_FUNDING", "NPV_DISCOUNT_RATE_STANDARD", "DFDA_QUEUE_CLEARANCE_YEARS"],
-  computeExpr: "((DFDA_ANNUAL_TRIAL_FUNDING * (1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-DFDA_QUEUE_CLEARANCE_YEARS)))) / NPV_DISCOUNT_RATE_STANDARD)",
+  computeExpr: "((DFDA_ANNUAL_TRIAL_FUNDING * (1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-DFDA_QUEUE_CLEARANCE_YEARS)))) / Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
 
 export const DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
-  value: 178250.52828,
+  value: 15588.6736192,
   parameterName: "DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag",
   unit: "ratio",
@@ -5725,16 +5729,16 @@ export const DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter
   sourceType: "calculated",
   confidence: "high",
   formula: "ECONOMIC_VALUE ÷ DIRECT_FUNDING_NPV",
-  latex: "\\begin{gathered}\nROI_{direct,max} = \\frac{Value_{max}}{NPV_{direct}} = \\frac{\\$84800T}{\\$476B} = 178{,}000\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } NPV_{direct} = \\frac{T_{queue,trial}}{Funding_{trial,ref} \\times r_{discount}} = \\frac{36}{\\$21.8B \\times 3\\%} = \\$476B\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\end{gathered}",
-  confidenceInterval: [92043.9328814, 574644.65677],
+  latex: "\\begin{gathered}\nROI_{direct,max} = \\frac{Value_{max}}{NPV_{direct}} = \\frac{\\$7530T}{\\$483B} = 15{,}600\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max}^{PV} \\times Value_{QALY} = 50.2B \\times \\$150K = \\$7530T\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } NPV_{direct} = Funding_{trial,ref} \\times (1 - (1 + r_{discount})^{-T_{queue,trial}}) / \\ln\\left(1 + r_{discount}\\right)\n\\end{gathered}",
+  confidenceInterval: [4524.91098326, 71497.7204398],
   inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"],
   computeExpr: "(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER: Parameter = {
-  value: 105.761980113,
+  value: 19.0740216969,
   parameterName: "DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_direct_funding_vs_bed_nets_multiplier",
   unit: "x",
@@ -5743,8 +5747,8 @@ export const DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "BED_NETS_COST_PER_DALY ÷ DIRECT_FUNDING_COST_PER_DALY",
-  latex: "\\begin{gathered}\nk_{direct,nets} = \\frac{Cost_{nets}}{Cost_{direct,DALY}} = \\frac{\\$89}{\\$0.842} = 106\n\\\\[0.5em]\n\\text{where } Cost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}} = \\frac{\\$476B}{565B} = \\$0.842\n\\\\[0.5em]\n\\text{where } NPV_{direct} = \\frac{T_{queue,trial}}{Funding_{trial,ref} \\times r_{discount}} = \\frac{36}{\\$21.8B \\times 3\\%} = \\$476B\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\end{gathered}",
-  confidenceInterval: [58.9502464259, 339.245017439],
+  latex: "\\begin{gathered}\nk_{direct,nets} = \\frac{Cost_{nets}}{Cost_{direct,DALY}} = \\frac{\\$184}{\\$9.62} = 19.1\n\\\\[0.5em]\n\\text{where } Cost_{nets} = Cost_{GW,max} / ((1 - (1 + r_{discount})^{-LE_{global}}) / \\ln\\left(1 + r_{discount}\\right))\n\\\\[0.5em]\n\\text{where } Cost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}^{PV}} = \\frac{\\$483B}{50.2B} = \\$9.62\n\\\\[0.5em]\n\\text{where } NPV_{direct} = Funding_{trial,ref} \\times (1 - (1 + r_{discount})^{-T_{queue,trial}}) / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\end{gathered}",
+  confidenceInterval: [5.4819966832, 89.661472214],
   inputs: ["BED_NETS_COST_PER_DALY", "DFDA_DIRECT_FUNDING_COST_PER_DALY"],
   computeExpr: "(BED_NETS_COST_PER_DALY / DFDA_DIRECT_FUNDING_COST_PER_DALY)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
@@ -5932,7 +5936,7 @@ export const DFDA_NPV_ANNUAL_OPEX_TOTAL: Parameter = {
   inputs: ["DFDA_NPV_ANNUAL_OPEX", "DIH_NPV_ANNUAL_OPEX_INITIATIVES"],
   computeExpr: "(DFDA_NPV_ANNUAL_OPEX + DIH_NPV_ANNUAL_OPEX_INITIATIVES)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_NPV_BENEFIT_RD_ONLY: Parameter = {
@@ -5986,7 +5990,7 @@ export const DFDA_NPV_PV_ANNUAL_OPEX: Parameter = {
   inputs: ["DFDA_NPV_ANNUAL_OPEX_TOTAL", "NPV_DISCOUNT_RATE_STANDARD", "NPV_TIME_HORIZON_YEARS"],
   computeExpr: "((DFDA_NPV_ANNUAL_OPEX_TOTAL * (1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-NPV_TIME_HORIZON_YEARS)))) / NPV_DISCOUNT_RATE_STANDARD)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_NPV_TOTAL_COST: Parameter = {
@@ -6004,7 +6008,7 @@ export const DFDA_NPV_TOTAL_COST: Parameter = {
   inputs: ["DFDA_NPV_PV_ANNUAL_OPEX", "DFDA_NPV_UPFRONT_COST_TOTAL"],
   computeExpr: "(DFDA_NPV_UPFRONT_COST_TOTAL + DFDA_NPV_PV_ANNUAL_OPEX)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_NPV_UPFRONT_COST_TOTAL: Parameter = {
@@ -6060,7 +6064,7 @@ export const DFDA_PATIENTS_FUNDABLE_ANNUALLY: Parameter = {
   inputs: ["DFDA_TRIAL_SUBSIDIES_ANNUAL", "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
   computeExpr: "(DFDA_TRIAL_SUBSIDIES_ANNUAL / DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_QUEUE_CLEARANCE_YEARS: Parameter = {
@@ -6267,7 +6271,7 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_plus_efficacy_lag_dalys",
   unit: "DALYs",
   displayName: "Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
-  description: "Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).",
+  description: "Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology). Undiscounted physical count of healthy years; cost-effectiveness ratios and dollar values use DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED so costs and health are discounted at the same rate.",
   sourceType: "calculated",
   confidence: "low",
   formula: "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × TIMELINE_SHIFT",
@@ -6279,20 +6283,38 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS: Parameter = {
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
 
+export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED: Parameter = {
+  value: 50170504884.4,
+  parameterName: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted",
+  unit: "DALYs",
+  displayName: "Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
+  description: "Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × [A(DFDA_QUEUE_CLEARANCE_YEARS) - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-EFFICACY_LAG_YEARS) × A(STATUS_QUO_QUEUE_CLEARANCE_YEARS)] / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
+  latex: "\\begin{gathered}\nDALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [21983879477.7, 76857764916.0],
+  inputs: ["GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATUS_QUO_QUEUE_CLEARANCE_YEARS", "DFDA_QUEUE_CLEARANCE_YEARS", "EFFICACY_LAG_YEARS", "NPV_DISCOUNT_RATE_STANDARD"],
+  computeExpr: "(((GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT) * (((1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-DFDA_QUEUE_CLEARANCE_YEARS))) / (DFDA_QUEUE_CLEARANCE_YEARS * Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))) - ((Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-EFFICACY_LAG_YEARS)) * (1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-STATUS_QUO_QUEUE_CLEARANCE_YEARS)))) / (STATUS_QUO_QUEUE_CLEARANCE_YEARS * Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))))) / Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
+};
+
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE: Parameter = {
-  value: 8.47865510026e+16,
+  value: 7525575732670000.0,
   parameterName: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value",
   unit: "USD",
   displayName: "Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
-  description: "Total economic value from the combined treatment timeline shift. DALYs valued at standard economic rate.",
+  description: "Present value of the combined treatment timeline shift: discounted DALYs valued at the standard economic rate per QALY.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "DALYS × STANDARD_QALY_VALUE",
-  latex: "\\begin{gathered}\nValue_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
-  confidenceInterval: [4.28734334942e+16, 1.71825306121e+17],
-  inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS", "STANDARD_ECONOMIC_QALY_VALUE_USD"],
-  computeExpr: "(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS * STANDARD_ECONOMIC_QALY_VALUE_USD)",
+  formula: "DISCOUNTED_DALYS × STANDARD_QALY_VALUE",
+  latex: "\\begin{gathered}\nValue_{max} = DALYs_{max}^{PV} \\times Value_{QALY} = 50.2B \\times \\$150K = \\$7530T\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [3078356367590000.0, 1.27625399884e+16],
+  inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED", "STANDARD_ECONOMIC_QALY_VALUE_USD"],
+  computeExpr: "(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED * STANDARD_ECONOMIC_QALY_VALUE_USD)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
@@ -6330,7 +6352,7 @@ export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS: Parameter = 
   inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS", "GLOBAL_YLD_PROPORTION_OF_DALYS"],
   computeExpr: "((DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS * GLOBAL_YLD_PROPORTION_OF_DALYS) * 8760.0)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS: Parameter = {
@@ -6404,7 +6426,7 @@ export const DFDA_TRIAL_COST_REDUCTION_PCT: Parameter = {
   validationMin: 0.9,
   validationMax: 0.99,
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
@@ -6421,7 +6443,7 @@ export const DFDA_TRIAL_SUBSIDIES_ANNUAL: Parameter = {
   inputs: ["DFDA_ANNUAL_TRIAL_FUNDING", "DFDA_ANNUAL_OPEX"],
   computeExpr: "(DFDA_ANNUAL_TRIAL_FUNDING - DFDA_ANNUAL_OPEX)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_VALLEY_OF_DEATH_RESCUE_MULTIPLIER: Parameter = {
@@ -7433,7 +7455,7 @@ export const GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL: Parameter = {
   inputs: ["GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH", "GLOBAL_MED_RESEARCH_SPENDING"],
   computeExpr: "(GLOBAL_MED_RESEARCH_SPENDING / GLOBAL_ANNUAL_LIVES_SAVED_BY_MED_RESEARCH)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025: Parameter = {
@@ -8442,7 +8464,7 @@ export const MISALLOCATION_FACTOR_DEATH_VS_SAVING: Parameter = {
   inputs: ["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL", "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST", "GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL"],
   computeExpr: "((GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST / GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL) / GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const MRNA_THERAPEUTIC_COMBINATIONS: Parameter = {
@@ -9735,7 +9757,7 @@ export const SHIRT_INDUCED_LAUGHS_GAINED: Parameter = {
 };
 
 export const SHIRT_PROGRAM_EXPECTED_VALUE_PER_DOLLAR: Parameter = {
-  value: 423932755.013,
+  value: 37627878.6633,
   parameterName: "SHIRT_PROGRAM_EXPECTED_VALUE_PER_DOLLAR",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-shirt_program_expected_value_per_dollar",
   unit: "ratio",
@@ -9744,8 +9766,8 @@ export const SHIRT_PROGRAM_EXPECTED_VALUE_PER_DOLLAR: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE × SHIRT_CASCADE_PROBABILITY_GIVEN_SEED) / SHIRT_SEED_PROGRAM_TOTAL_USD",
-  latex: "\\begin{gathered}\nEV_{shirt} = (Value_{max} \\times P_{cascade,shirt}) / C_{seed,total}\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } C_{seed,total} = N_{seed,shirt} \\times C_{seed,wearer} = 1M \\times \\$50 = \\$50M\n\\end{gathered}",
-  confidenceInterval: [74113474.28, 8212721232.94],
+  latex: "\\begin{gathered}\nEV_{shirt} = (Value_{max} \\times P_{cascade,shirt}) / C_{seed,total}\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max}^{PV} \\times Value_{QALY} = 50.2B \\times \\$150K = \\$7530T\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } C_{seed,total} = N_{seed,shirt} \\times C_{seed,wearer} = 1M \\times \\$50 = \\$50M\n\\end{gathered}",
+  confidenceInterval: [5662430.49863, 675741496.397],
   inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "SHIRT_CASCADE_PROBABILITY_GIVEN_SEED", "SHIRT_SEED_PROGRAM_TOTAL_USD"],
   computeExpr: "((DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE * SHIRT_CASCADE_PROBABILITY_GIVEN_SEED) / SHIRT_SEED_PROGRAM_TOTAL_USD)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
@@ -9753,7 +9775,7 @@ export const SHIRT_PROGRAM_EXPECTED_VALUE_PER_DOLLAR: Parameter = {
 };
 
 export const SHIRT_PROGRAM_ROI_RATIO: Parameter = {
-  value: 1695731020.05,
+  value: 150511514.653,
   parameterName: "SHIRT_PROGRAM_ROI_RATIO",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-shirt_program_roi_ratio",
   unit: "ratio",
@@ -9762,8 +9784,8 @@ export const SHIRT_PROGRAM_ROI_RATIO: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / SHIRT_SEED_PROGRAM_TOTAL_USD",
-  latex: "\\begin{gathered}\nROI_{shirt} = \\frac{Value_{max}}{C_{seed,total}} = \\frac{\\$84800T}{\\$50M} = 1.7B\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } C_{seed,total} = N_{seed,shirt} \\times C_{seed,wearer} = 1M \\times \\$50 = \\$50M\n\\end{gathered}",
-  confidenceInterval: [447129377.945, 31122525895.4],
+  latex: "\\begin{gathered}\nROI_{shirt} = \\frac{Value_{max}}{C_{seed,total}} = \\frac{\\$7530T}{\\$50M} = 151M\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max}^{PV} \\times Value_{QALY} = 50.2B \\times \\$150K = \\$7530T\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } C_{seed,total} = N_{seed,shirt} \\times C_{seed,wearer} = 1M \\times \\$50 = \\$50M\n\\end{gathered}",
+  confidenceInterval: [35581518.4311, 2551022504.27],
   inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "SHIRT_SEED_PROGRAM_TOTAL_USD"],
   computeExpr: "(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / SHIRT_SEED_PROGRAM_TOTAL_USD)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
@@ -9789,7 +9811,7 @@ export const SHIRT_SEED_PROGRAM_TOTAL_USD: Parameter = {
 };
 
 export const SHIRT_VALUE_PER_WEARER_USD: Parameter = {
-  value: 10598318.8753,
+  value: 940696.966583,
   parameterName: "SHIRT_VALUE_PER_WEARER_USD",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-shirt_value_per_wearer_usd",
   unit: "USD",
@@ -9798,8 +9820,8 @@ export const SHIRT_VALUE_PER_WEARER_USD: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / GLOBAL_POPULATION_2024",
-  latex: "\\begin{gathered}\nV_{wearer} = \\frac{Value_{max}}{Pop_{global}} = \\frac{\\$84800T}{8B} = \\$10.6M\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
-  confidenceInterval: [5364323.20197, 21447999.551],
+  latex: "\\begin{gathered}\nV_{wearer} = \\frac{Value_{max}}{Pop_{global}} = \\frac{\\$7530T}{8B} = \\$941K\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max}^{PV} \\times Value_{QALY} = 50.2B \\times \\$150K = \\$7530T\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [385780.899387, 1599332.68535],
   inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "GLOBAL_POPULATION_2024"],
   computeExpr: "(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / GLOBAL_POPULATION_2024)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/joke.html",
@@ -9825,37 +9847,37 @@ export const STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS: Parameter = {
 };
 
 export const STATE_RTT_IMPLEMENTATION_COST_PER_DALY: Parameter = {
-  value: 0.000134456448736,
+  value: 0.00237225187861,
   parameterName: "STATE_RTT_IMPLEMENTATION_COST_PER_DALY",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_implementation_cost_per_daly",
   unit: "USD/DALY",
   displayName: "Universal Right to Try with Evidence Implementation Cost per DALY",
-  description: "Conditional implementation cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once.",
+  description: "Conditional implementation cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once, with DALYs discounted at the standard rate so the near-term launch cost is compared with health benefits in present value.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "STATE_RTT_IMPLEMENTATION_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_DALYS",
-  latex: "\\begin{gathered}\nCost_{RTT,DALY} = \\frac{C_{RTT}}{DALYs_{RTT}} = \\frac{\\$65M}{483B} = \\$0.000134\n\\\\[0.5em]\n\\text{where } DALYs_{RTT} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT} = 2.88B \\times 92.6\\% \\times 181 = 483B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
-  confidenceInterval: [4.09544656305e-05, 0.000440340854584],
-  inputs: ["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_DALYS"],
-  computeExpr: "(STATE_RTT_IMPLEMENTATION_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_DALYS)",
+  formula: "STATE_RTT_IMPLEMENTATION_COST_TOTAL / (GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)",
+  latex: "\\begin{gathered}\nCost_{RTT,DALY} = C_{RTT} / (DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,RTT}^{PV})\n\\\\[0.5em]\n\\text{where } T_{accel,RTT}^{PV} = [A\\left(\\frac{T_{queue,SQ}}{k_{RTT}}\\right) - A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [0.000750002420133, 0.0173340515681],
+  inputs: ["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"],
+  computeExpr: "(STATE_RTT_IMPLEMENTATION_COST_TOTAL / ((GLOBAL_ANNUAL_DALY_BURDEN * EVENTUALLY_AVOIDABLE_DALY_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED))",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
   manualPageTitle: "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States",
 };
 
 export const STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED: Parameter = {
-  value: 0.00707277757734,
+  value: 0.124786948135,
   parameterName: "STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_implementation_cost_per_life_saved",
   unit: "USD/life",
   displayName: "Universal Right to Try with Evidence Implementation Cost per Life Saved",
-  description: "Conditional implementation cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate.",
+  description: "Conditional implementation cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate, and discounts future deaths prevented at the standard rate so they compare with near-term costs and with GiveWell's near-term lives saved.",
   sourceType: "calculated",
   confidence: "low",
-  formula: "STATE_RTT_IMPLEMENTATION_COST_TOTAL ÷ STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED",
-  latex: "\\begin{gathered}\nCost_{RTT,life} = \\frac{C_{RTT}}{Lives_{RTT}} = \\frac{\\$65M}{9.19B} = \\$0.00707\n\\\\[0.5em]\n\\text{where } Lives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
-  confidenceInterval: [0.00212751060109, 0.0231944862693],
-  inputs: ["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED"],
-  computeExpr: "(STATE_RTT_IMPLEMENTATION_COST_TOTAL / STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED)",
+  formula: "STATE_RTT_IMPLEMENTATION_COST_TOTAL / (GLOBAL_DISEASE_DEATHS_DAILY × DAYS_PER_YEAR × EVENTUALLY_AVOIDABLE_DEATH_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)",
+  latex: "\\begin{gathered}\nCost_{RTT,life} = C_{RTT} / (Deaths_{disease,daily} \\times \\text{DAYS\\_PER\\_YEAR} \\times Pct_{avoid,death} \\times T_{accel,RTT}^{PV})\n\\\\[0.5em]\n\\text{where } T_{accel,RTT}^{PV} = [A\\left(\\frac{T_{queue,SQ}}{k_{RTT}}\\right) - A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [0.0393036399539, 0.911703135243],
+  inputs: ["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "GLOBAL_DISEASE_DEATHS_DAILY", "EVENTUALLY_AVOIDABLE_DEATH_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"],
+  computeExpr: "(STATE_RTT_IMPLEMENTATION_COST_TOTAL / (((GLOBAL_DISEASE_DEATHS_DAILY * 365.0) * EVENTUALLY_AVOIDABLE_DEATH_PCT) * STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED))",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
   manualPageTitle: "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States",
 };
@@ -9968,6 +9990,24 @@ export const STATE_RTT_TREATMENT_ACCELERATION_YEARS: Parameter = {
   manualPageTitle: "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States",
 };
 
+export const STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED: Parameter = {
+  value: 10.2711408153,
+  parameterName: "STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_treatment_acceleration_years_discounted",
+  unit: "years",
+  displayName: "Discounted Treatment Acceleration from Universal Right to Try with Evidence",
+  description: "Present value, in years, of the average treatment schedule shift from Universal Right to Try with Evidence, discounted at the standard social discount rate. Same timing as the undiscounted shift: first treatments are found evenly over the status quo clearance period, versus evenly over that period divided by the discovery multiplier. The cost-per-DALY and cost-per-life ratios use it so the near-term launch cost is compared with health benefits in present value, as in the 1% Treaty model. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].",
+  sourceType: "calculated",
+  confidence: "low",
+  formula: "[A(STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER) - A(STATUS_QUO_QUEUE_CLEARANCE_YEARS)] / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
+  latex: "\\begin{gathered}\nT_{accel,RTT}^{PV} = [A\\left(\\frac{T_{queue,SQ}}{k_{RTT}}\\right) - A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [1.63276695601, 17.9723454653],
+  inputs: ["STATUS_QUO_QUEUE_CLEARANCE_YEARS", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER", "NPV_DISCOUNT_RATE_STANDARD"],
+  computeExpr: "((((1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-(STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)))) / ((STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER) * Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))) - ((1.0 - Math.pow((1.0 + NPV_DISCOUNT_RATE_STANDARD), (-STATUS_QUO_QUEUE_CLEARANCE_YEARS))) / (STATUS_QUO_QUEUE_CLEARANCE_YEARS * Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD))))) / Math.log((1.0 + NPV_DISCOUNT_RATE_STANDARD)))",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
+  manualPageTitle: "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States",
+};
+
 export const STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS: Parameter = {
   value: 0.811111111111,
   parameterName: "STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS",
@@ -9987,17 +10027,17 @@ export const STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS: Parameter = {
 };
 
 export const STATE_RTT_VS_GIVEWELL_COST_PER_LIFE_MULTIPLIER: Parameter = {
-  value: 636242.261373,
+  value: 36061.4636968,
   parameterName: "STATE_RTT_VS_GIVEWELL_COST_PER_LIFE_MULTIPLIER",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-state_rtt_vs_givewell_cost_per_life_multiplier",
   unit: "x",
   displayName: "Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint",
-  description: "Conditional cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. The cost scopes differ: the Right to Try numerator counts only the campaign and registry launch and excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+  description: "Conditional cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. Right to Try lives saved are discounted to present value at the standard rate so they compare with GiveWell's near-term lives saved. The cost scopes differ: the Right to Try numerator counts only the campaign and registry launch and excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
   sourceType: "calculated",
   confidence: "low",
   formula: "GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED",
-  latex: "\\begin{gathered}\nk_{RTT,GiveWell} = \\frac{Cost_{GW,avg}}{Cost_{RTT,life}} = \\frac{\\$4.5K}{\\$0.00707} = 636{,}000\n\\\\[0.5em]\n\\text{where } Cost_{RTT,life} = \\frac{C_{RTT}}{Lives_{RTT}} = \\frac{\\$65M}{9.19B} = \\$0.00707\n\\\\[0.5em]\n\\text{where } Lives_{RTT} = Deaths_{disease,daily} \\times Pct_{avoid,death} \\times T_{accel,RTT} \\times 365 = 150{,}000 \\times 92.6\\% \\times 181 \\times 365 = 9.19B\n\\\\[0.5em]\n\\text{where } T_{accel,RTT} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{RTT}}\\right) = 222 \\times \\left(1 - \\frac{1}{5.48}\\right) = 181\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
-  confidenceInterval: [194011.629682, 2115148.12444],
+  latex: "\\begin{gathered}\nk_{RTT,GiveWell} = \\frac{Cost_{GW,avg}}{Cost_{RTT,life}} = \\frac{\\$4.5K}{\\$0.125} = 36{,}100\n\\\\[0.5em]\n\\text{where } Cost_{RTT,life} = C_{RTT} / (Deaths_{disease,daily} \\times \\text{DAYS\\_PER\\_YEAR} \\times Pct_{avoid,death} \\times T_{accel,RTT}^{PV})\n\\\\[0.5em]\n\\text{where } T_{accel,RTT}^{PV} = [A\\left(\\frac{T_{queue,SQ}}{k_{RTT}}\\right) - A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\end{gathered}",
+  confidenceInterval: [4935.81753897, 114493.212608],
   inputs: ["GIVEWELL_COST_PER_LIFE_AVG", "STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED"],
   computeExpr: "(GIVEWELL_COST_PER_LIFE_AVG / STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/state-right-to-trial-impact.html",
@@ -10296,19 +10336,19 @@ export const TREATY_CAMPAIGN_TOTAL_COST: Parameter = {
 };
 
 export const TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
-  value: 0.00176914850558,
+  value: 0.0199320298311,
   parameterName: "TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag",
   unit: "USD/DALY",
   displayName: "Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)",
-  description: "Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.",
+  description: "Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput, with DALYs discounted at the standard rate. Only counts campaign cost; ignores economic benefits from funding and R&D savings.",
   sourceType: "calculated",
   confidence: "high",
-  formula: "CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
-  latex: "\\begin{gathered}\nCost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}} = \\frac{\\$1B}{565B} = \\$0.00177\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
-  confidenceInterval: [0.000809107454509, 0.00353985025261],
-  inputs: ["TREATY_CAMPAIGN_TOTAL_COST", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
-  computeExpr: "(TREATY_CAMPAIGN_TOTAL_COST / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS)",
+  formula: "CAMPAIGN_COST ÷ DISCOUNTED_DALYS_TIMELINE_SHIFT",
+  latex: "\\begin{gathered}\nCost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}^{PV}} = \\frac{\\$1B}{50.2B} = \\$0.0199\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [0.0105992778911, 0.047350273097],
+  inputs: ["TREATY_CAMPAIGN_TOTAL_COST", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED"],
+  computeExpr: "(TREATY_CAMPAIGN_TOTAL_COST / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
@@ -10440,17 +10480,17 @@ export const TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20: Parameter = {
 };
 
 export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
-  value: 0.176914850558,
+  value: 1.99320298311,
   parameterName: "TREATY_EXPECTED_COST_PER_DALY",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_expected_cost_per_daly",
   unit: "USD/DALY",
   displayName: "Expected Cost per DALY (Risk-Adjusted)",
-  description: "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).",
+  description: "Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this is still more cost-effective than bed nets (BED_NETS_COST_PER_DALY).",
   sourceType: "calculated",
   confidence: "low",
   formula: "CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",
-  latex: "\\begin{gathered}\nE[Cost_{DALY}] = \\frac{Cost_{treaty,DALY}}{P_{success}} = \\frac{\\$0.00177}{1\\%} = \\$0.177\n\\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}} = \\frac{\\$1B}{565B} = \\$0.00177\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
-  confidenceInterval: [0.030039389095, 2.91526685248],
+  latex: "\\begin{gathered}\nE[Cost_{DALY}] = \\frac{Cost_{treaty,DALY}}{P_{success}} = \\frac{\\$0.0199}{1\\%} = \\$1.99\n\\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}^{PV}} = \\frac{\\$1B}{50.2B} = \\$0.0199\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [0.369833978347, 37.7037020623],
   inputs: ["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG", "POLITICAL_SUCCESS_PROBABILITY"],
   computeExpr: "(TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG / POLITICAL_SUCCESS_PROBABILITY)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
@@ -10458,7 +10498,7 @@ export const TREATY_EXPECTED_COST_PER_DALY: Parameter = {
 };
 
 export const TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
-  value: 847865.510026,
+  value: 75255.7573267,
   parameterName: "TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag",
   unit: "ratio",
@@ -10468,8 +10508,8 @@ export const TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
   sourceRef: "calculated",
   confidence: "low",
   formula: "TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG × POLITICAL_SUCCESS_PROBABILITY",
-  latex: "\\begin{gathered}\nE[ROI_{max}] = ROI_{max} \\times P_{success} = 84.8M \\times 1\\% = 848{,}000\n\\\\[0.5em]\n\\text{where } ROI_{max} = \\frac{Value_{max}}{Cost_{campaign}} = \\frac{\\$84800T}{\\$1B} = 84.8M\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{gathered}",
-  confidenceInterval: [47788.384757, 4949530.48133],
+  latex: "\\begin{gathered}\nE[ROI_{max}] = ROI_{max} \\times P_{success} = 7.53M \\times 1\\% = 75{,}300\n\\\\[0.5em]\n\\text{where } ROI_{max} = \\frac{Value_{max}}{Cost_{campaign}} = \\frac{\\$7530T}{\\$1B} = 7.53M\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max}^{PV} \\times Value_{QALY} = 50.2B \\times \\$150K = \\$7530T\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{gathered}",
+  confidenceInterval: [3703.11770765, 404075.366453],
   inputs: ["TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG", "POLITICAL_SUCCESS_PROBABILITY"],
   computeExpr: "(TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG * POLITICAL_SUCCESS_PROBABILITY)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
@@ -10477,7 +10517,7 @@ export const TREATY_EXPECTED_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
 };
 
 export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
-  value: 503.066869282,
+  value: 92.0815961087,
   parameterName: "TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_expected_vs_bed_nets_multiplier",
   unit: "x",
@@ -10486,8 +10526,8 @@ export const TREATY_EXPECTED_VS_BED_NETS_MULTIPLIER: Parameter = {
   sourceType: "calculated",
   confidence: "low",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_EXPECTED_COST_PER_DALY",
-  latex: "\\begin{gathered}\nE[k_{nets}] = \\frac{Cost_{nets}}{E[Cost_{DALY}]} = \\frac{\\$89}{\\$0.177} = 503\n\\\\[0.5em]\n\\text{where } E[Cost_{DALY}] = \\frac{Cost_{treaty,DALY}}{P_{success}} = \\frac{\\$0.00177}{1\\%} = \\$0.177\n\\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}} = \\frac{\\$1B}{565B} = \\$0.00177\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
-  confidenceInterval: [30.5286607261, 2967.82499874],
+  latex: "\\begin{gathered}\nE[k_{nets}] = \\frac{Cost_{nets}}{E[Cost_{DALY}]} = \\frac{\\$184}{\\$1.99} = 92.1\n\\\\[0.5em]\n\\text{where } Cost_{nets} = Cost_{GW,max} / ((1 - (1 + r_{discount})^{-LE_{global}}) / \\ln\\left(1 + r_{discount}\\right))\n\\\\[0.5em]\n\\text{where } E[Cost_{DALY}] = \\frac{Cost_{treaty,DALY}}{P_{success}} = \\frac{\\$0.0199}{1\\%} = \\$1.99\n\\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}^{PV}} = \\frac{\\$1B}{50.2B} = \\$0.0199\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [4.54582506875, 493.022525952],
   inputs: ["BED_NETS_COST_PER_DALY", "TREATY_EXPECTED_COST_PER_DALY"],
   computeExpr: "(BED_NETS_COST_PER_DALY / TREATY_EXPECTED_COST_PER_DALY)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/treaty-feasibility.html",
@@ -10765,7 +10805,7 @@ export const TREATY_ROI_EXISTING_DRUGS_ONLY: Parameter = {
 };
 
 export const TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
-  value: 84786551.0026,
+  value: 7525575.73267,
   parameterName: "TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_roi_trial_capacity_plus_efficacy_lag",
   unit: "ratio",
@@ -10774,8 +10814,8 @@ export const TREATY_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG: Parameter = {
   sourceType: "calculated",
   confidence: "medium",
   formula: "TOTAL_TIMELINE_SHIFT_ECONOMIC_VALUE ÷ CAMPAIGN_COST",
-  latex: "\\begin{gathered}\nROI_{max} = \\frac{Value_{max}}{Cost_{campaign}} = \\frac{\\$84800T}{\\$1B} = 84.8M\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max} \\times Value_{QALY} = 565B \\times \\$150K = \\$84800T\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{gathered}",
-  confidenceInterval: [39647180.1228, 194492841.331],
+  latex: "\\begin{gathered}\nROI_{max} = \\frac{Value_{max}}{Cost_{campaign}} = \\frac{\\$7530T}{\\$1B} = 7.53M\n\\\\[0.5em]\n\\text{where } Value_{max} = DALYs_{max}^{PV} \\times Value_{QALY} = 50.2B \\times \\$150K = \\$7530T\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{gathered}",
+  confidenceInterval: [2959221.37789, 15105336.1919],
   inputs: ["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "TREATY_CAMPAIGN_TOTAL_COST"],
   computeExpr: "(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE / TREATY_CAMPAIGN_TOTAL_COST)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
@@ -11016,7 +11056,7 @@ export const TREATY_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20: Parameter = {
 };
 
 export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
-  value: 50306.6869282,
+  value: 9208.15961087,
   parameterName: "TREATY_VS_BED_NETS_MULTIPLIER",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_vs_bed_nets_multiplier",
   unit: "x",
@@ -11025,8 +11065,8 @@ export const TREATY_VS_BED_NETS_MULTIPLIER: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "BED_NETS_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
-  latex: "\\begin{gathered}\nk_{treaty:nets} = \\frac{Cost_{nets}}{Cost_{treaty,DALY}} = \\frac{\\$89}{\\$0.00177} = 50{,}300\n\\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}} = \\frac{\\$1B}{565B} = \\$0.00177\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
-  confidenceInterval: [25003.8391389, 111064.899509],
+  latex: "\\begin{gathered}\nk_{treaty:nets} = \\frac{Cost_{nets}}{Cost_{treaty,DALY}} = \\frac{\\$184}{\\$0.0199} = 9{,}210\n\\\\[0.5em]\n\\text{where } Cost_{nets} = Cost_{GW,max} / ((1 - (1 + r_{discount})^{-LE_{global}}) / \\ln\\left(1 + r_{discount}\\right))\n\\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}^{PV}} = \\frac{\\$1B}{50.2B} = \\$0.0199\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\end{gathered}",
+  confidenceInterval: [3520.18473924, 18940.4810711],
   inputs: ["BED_NETS_COST_PER_DALY", "TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"],
   computeExpr: "(BED_NETS_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
@@ -11052,7 +11092,7 @@ export const TREATY_VS_CURRENT_MEDIAN_INCOME_MULTIPLIER_YEAR_20: Parameter = {
 };
 
 export const TREATY_VS_DIRECT_FUNDING_LEVERAGE: Parameter = {
-  value: 475.659465477,
+  value: 482.759208161,
   parameterName: "TREATY_VS_DIRECT_FUNDING_LEVERAGE",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-treaty_vs_direct_funding_leverage",
   unit: "x",
@@ -11061,8 +11101,8 @@ export const TREATY_VS_DIRECT_FUNDING_LEVERAGE: Parameter = {
   sourceType: "calculated",
   confidence: "high",
   formula: "DIRECT_PRAGMATIC_TRIAL_FUNDING_COST_PER_DALY ÷ TREATY_COST_PER_DALY",
-  latex: "\\begin{gathered}\nLeverage_{treaty} = \\frac{Cost_{direct,DALY}}{Cost_{treaty,DALY}} = \\frac{\\$0.842}{\\$0.00177} = 476\n\\\\[0.5em]\n\\text{where } Cost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}} = \\frac{\\$476B}{565B} = \\$0.842\n\\\\[0.5em]\n\\text{where } NPV_{direct} = \\frac{T_{queue,trial}}{Funding_{trial,ref} \\times r_{discount}} = \\frac{36}{\\$21.8B \\times 3\\%} = \\$476B\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } DALYs_{max} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times T_{accel,max} = 2.88B \\times 92.6\\% \\times 212 = 565B\n\\\\[0.5em]\n\\text{where } T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212\n\\\\[0.5em]\n\\text{where } T_{accel} = T_{first,SQ} \\times \\left(1 - \\frac{1}{k_{capacity}}\\right) = 222 \\times \\left(1 - \\frac{1}{12.3}\\right) = 204\n\\\\[0.5em]\n\\text{where } T_{first,SQ} = T_{queue,SQ} \\times 0.5 = 443 \\times 0.5 = 222\n\\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}} = \\frac{\\$1B}{565B} = \\$0.00177\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{gathered}",
-  confidenceInterval: [149.214345402, 830.417577178],
+  latex: "\\begin{gathered}\nLeverage_{treaty} = \\frac{Cost_{direct,DALY}}{Cost_{treaty,DALY}} = \\frac{\\$9.62}{\\$0.0199} = 483\n\\\\[0.5em]\n\\text{where } Cost_{direct,DALY} = \\frac{NPV_{direct}}{DALYs_{max}^{PV}} = \\frac{\\$483B}{50.2B} = \\$9.62\n\\\\[0.5em]\n\\text{where } NPV_{direct} = Funding_{trial,ref} \\times (1 - (1 + r_{discount})^{-T_{queue,trial}}) / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } T_{queue,trial} = \\frac{T_{queue,SQ}}{k_{capacity}} = \\frac{443}{12.3} = 36\n\\\\[0.5em]\n\\text{where } T_{queue,SQ} = \\frac{N_{untreated}}{Treatments_{new,ann}} = \\frac{6{,}650}{15} = 443\n\\\\[0.5em]\n\\text{where } N_{untreated} = N_{rare} \\times 0.95 = 7{,}000 \\times 0.95 = 6{,}650\n\\\\[0.5em]\n\\text{where } k_{capacity} = \\frac{N_{fundable,ref}}{Slots_{curr}} = \\frac{23.4M}{1.9M} = 12.3\n\\\\[0.5em]\n\\text{where } N_{fundable,ref} = \\frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} = \\frac{\\$21.8B}{\\$929} = 23.4M\n\\\\[0.5em]\n\\text{where } Subsidies_{trial,ref} = Funding_{trial,ref} - OPEX_{trial} = \\$21.8B - \\$40M = \\$21.8B\n\\\\[0.5em]\n\\text{where } OPEX_{trial} = Cost_{platform} + Cost_{staff} + Cost_{infra} + Cost_{regulatory} + Cost_{community} = \\$15M + \\$10M + \\$8M + \\$5M + \\$2M = \\$40M\n\\\\[0.5em]\n\\text{where } DALYs_{max}^{PV} = DALYs_{global,ann} \\times Pct_{avoid,DALY} \\times [A(T_{queue,trial}) - (1 + r_{discount})^{-T_{lag}} \\times A(T_{queue,SQ})] / \\ln\\left(1 + r_{discount}\\right)\n\\\\[0.5em]\n\\text{where } Cost_{treaty,DALY} = \\frac{Cost_{campaign}}{DALYs_{max}^{PV}} = \\frac{\\$1B}{50.2B} = \\$0.0199\n\\\\[0.5em]\n\\text{where } Cost_{campaign} = Budget_{viral,base} + Budget_{lobby,treaty} + Budget_{reserve} = \\$250M + \\$650M + \\$100M = \\$1B\n\\end{gathered}",
+  confidenceInterval: [151.441534251, 842.812476357],
   inputs: ["DFDA_DIRECT_FUNDING_COST_PER_DALY", "TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"],
   computeExpr: "(DFDA_DIRECT_FUNDING_COST_PER_DALY / TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG)",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
@@ -13432,7 +13472,7 @@ export const DFDA_ANNUAL_TRIAL_FUNDING: Parameter = {
   confidence: "high",
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_NPV_ADOPTION_RAMP_YEARS: Parameter = {
@@ -13460,7 +13500,7 @@ export const DFDA_NPV_ANNUAL_OPEX: Parameter = {
   confidenceInterval: [11000000.0, 26500000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_NPV_UPFRONT_COST: Parameter = {
@@ -13651,7 +13691,7 @@ export const DFDA_UPFRONT_BUILD: Parameter = {
   sourceType: "definition",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DFDA_UPFRONT_BUILD_MAX: Parameter = {
@@ -13664,7 +13704,7 @@ export const DFDA_UPFRONT_BUILD_MAX: Parameter = {
   sourceType: "definition",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DIH_NPV_ANNUAL_OPEX_INITIATIVES: Parameter = {
@@ -13679,7 +13719,7 @@ export const DIH_NPV_ANNUAL_OPEX_INITIATIVES: Parameter = {
   confidenceInterval: [14000000.0, 32000000.0],
   distribution: "lognormal",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/appendix/dfda-impact-paper.html",
-  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents",
+  manualPageTitle: "Ubiquitous Pragmatic Trial Impact Analysis",
 };
 
 export const DIH_NPV_UPFRONT_COST_INITIATIVES: Parameter = {
@@ -15339,7 +15379,6 @@ export const parameters = {
   AQUATIC_ANIMALS_KILLED_ANNUAL,
   AVERAGE_MARKET_RETURN_PCT,
   BASELINE_LIVES_SAVED_ANNUAL,
-  BED_NETS_COST_PER_DALY,
   BEEF_FEED_CALORIE_EFFICIENCY_PCT,
   BULLETS_FIRED_PER_KILL_IRAQ_AFGHANISTAN,
   BULLET_COST_556_NATO,
@@ -15590,6 +15629,7 @@ export const parameters = {
   APOCALYPSE_MARKUP_MULTIPLIER,
   AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX,
   AUTOMATED_REVENUE_SERVICE_SAVINGS_PER_AMERICAN_ANNUAL,
+  BED_NETS_COST_PER_DALY,
   BEST_PRACTICE_LIFE_EXPECTANCY_GAIN,
   BULLETS_PER_PERSON_ANNUAL,
   CELL_THERAPY_DISEASE_COMBINATIONS,
@@ -15694,6 +15734,7 @@ export const parameters = {
   DFDA_TRIAL_CAPACITY_LIVES_SAVED,
   DFDA_TRIAL_CAPACITY_MULTIPLIER,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
+  DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED,
   DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS,
@@ -15898,6 +15939,7 @@ export const parameters = {
   STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS,
   STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS,
   STATE_RTT_TREATMENT_ACCELERATION_YEARS,
+  STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED,
   STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS,
   STATE_RTT_VS_GIVEWELL_COST_PER_LIFE_MULTIPLIER,
   STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT,
@@ -17160,7 +17202,7 @@ export const citations: Record<string, Citation> = {
         ],
         'container-title': "GiveWell: Top Charities",
         URL: "https://www.givewell.org/charities/top-charities",
-        note: "GiveWell: Top Charities | GiveWell: Helen Keller Vitamin A | Our World in Data: Cost-Effectiveness",
+        note: "GiveWell: Top Charities | GiveWell: Helen Keller Vitamin A | GiveWell: Against Malaria Foundation (accessed 2026-10-01) | Our World in Data: Cost-Effectiveness",
   },
   "global-clinical-trials-market-2024": {
         id: "global-clinical-trials-market-2024",
@@ -19066,9 +19108,9 @@ export const citations: Record<string, Citation> = {
 
 /** Summary statistics */
 export const PARAMETER_STATS = {
-  total: 902,
-  external: 255,
-  calculated: 459,
+  total: 904,
+  external: 254,
+  calculated: 462,
   definitions: 188,
   citations: 197,
 } as const;

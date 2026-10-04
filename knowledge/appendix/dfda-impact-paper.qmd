@@ -1,5 +1,5 @@
 ---
-title: 'Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents'
+title: 'Ubiquitous Pragmatic Trial Impact Analysis'
 description: Only {{< var new_disease_first_treatments_per_year >}} get their first treatment each year. With {{< var diseases_without_effective_treatment >}} lacking effective treatments, the backlog would take {{< var status_quo_queue_clearance_years >}} to clear. Integrating pragmatic trials into standard healthcare increases trial capacity {{< var dfda_trial_capacity_multiplier >}}, cutting that timeline from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. The average untreated disease gets a treatment {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} at {{< var dfda_direct_funding_cost_per_daly >}} per year of healthy life saved.
 abstract: |
   Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only
@@ -20,8 +20,8 @@ abstract: |
   ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale. Using standard health economic
   valuation ({{< var standard_economic_qaly_value_usd >}}/DALY, the US cost-effectiveness threshold;
   conservative relative to EPA/DOT Value of Statistical Life estimates), full impact yields
-  {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in cumulative value
-  ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} cumulative DALYs over the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift, not annual;
+  {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in present value
+  ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys_discounted >}} after discounting health at the same rate as costs;
   {{< var dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI).
 jel:
   - I18
@@ -484,7 +484,7 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
 
 #### Funding Level vs. Cost-Effectiveness
 
-While the analysis above addresses whether *trials* produce proportionally more *cures*, a separate question is how *funding level* affects *cost per DALY averted*. The acceleration formula $T_{accel} = T_{baseline} \times (1 - 1/k)$, where $k$ is the trial capacity multiplier, produces natural diminishing returns: each additional dollar buys less acceleration as $k$ grows. @fig-funding-vs-cost-per-daly shows cost per DALY rising with funding, while @fig-funding-vs-dalys-averted shows total DALYs approaching an asymptotic ceiling.
+While the analysis above addresses whether *trials* produce proportionally more *cures*, a separate question is how *funding level* affects *cost per DALY averted*. The acceleration formula $T_{accel} = T_{baseline} \times (1 - 1/k)$, where $k$ is the trial capacity multiplier, produces natural diminishing returns: each additional dollar buys less acceleration as $k$ grows. @fig-funding-vs-cost-per-daly shows cost per DALY falling as funding rises, with diminishing returns, while @fig-funding-vs-dalys-averted shows total DALYs approaching an asymptotic ceiling.
 
 {{< include ../figures/funding-vs-cost-per-daly-line-chart.qmd >}}
 
@@ -580,9 +580,10 @@ For economist verification, this section provides complete derivation chains for
 
 The protocol infrastructure itself ({{< var dfda_npv_total_cost >}} 10-year NPV) is small next to the trial funding, which is what actually buys the DALYs, so the trial funding is the numerator.
 
-**Step 2: DALYs averted**
+**Step 2: DALYs averted, discounted at the same {{< var npv_discount_rate_standard >}}**
 
 - Total DALYs: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}}
+- Present value: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_discounted_nounit >}}
 
 **Step 3: Calculate cost per DALY**
 
