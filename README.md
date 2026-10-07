@@ -49,11 +49,11 @@ Humanity has created something magnificent:
 
 One downside of this system is that it has killed [310 million](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) of you in your assorted wars.
 
-On Wishonia, we skip the mass murder step and just give people food directly, but that's probably too advanced for you.
+On my planet, we skip the mass murder step and just give people food directly, but that's probably too advanced for you.
 
 ### The Gradual Irrationality Reduction Program
 
-On Wishonia, we ended wars using this exact program 4,297 years ago. Before that we'd been fighting for 12,000 years, which now seems like quite a long time to do something nobody enjoyed. Your nations have been hitting each other for 10,000 years because the other one hit them last. This is the conflict resolution strategy of four-year-olds, except four-year-olds eventually get tired and take a nap. Your species invented naps and then refused to apply them to geopolitics. You can't just stop being illogical all at once. That would be like teaching a dog calculus before it learns to sit.
+We ended wars using this exact program 4,297 years ago. Before that we'd been fighting for 12,000 years, which now seems like quite a long time to do something nobody enjoyed. Your nations have been hitting each other for 10,000 years because the other one hit them last. This is the conflict resolution strategy of four-year-olds, except four-year-olds eventually get tired and take a nap. Your species invented naps and then refused to apply them to geopolitics. You can't just stop being illogical all at once. That would be like teaching a dog calculus before it learns to sit.
 
 So this manual shows you how to bribe humanity into being less irrational gradually:
 
@@ -110,7 +110,7 @@ The bomb company kept 99% of its bombs. But the 1% it sold and put into biotechn
 
 **Step 5: Do It Again**
 
-The biotechnology companies you bought are making money. You use that money to buy pieces of the next bomb company. That board also sells 1% of bombs, buys biotechnology shares, gives itself a raise, and stops dying. Each company you fix makes the next one easier because you have more papers and also a track record of making boards richer by not killing people. On Wishonia we call this a "positive feedback loop." On Earth you call it "going viral" but only when it's a video of a cat.
+The biotechnology companies you bought are making money. You use that money to buy pieces of the next bomb company. That board also sells 1% of bombs, buys biotechnology shares, gives itself a raise, and stops dying. Each company you fix makes the next one easier because you have more papers and also a track record of making boards richer by not killing people. Your engineers call this a "positive feedback loop." Your internet calls it "going viral," but only when it's a video of a cat.
 
 ### Why Your Leaders Aren't the Problem
 
@@ -246,7 +246,7 @@ And you have two other advantages. One, the internet, which lets you coordinate 
 
 ### Your [Decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html)
 
-On Wishonia, we built this with the funding from our version of the treaty, 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on safe treatments while people die. You'd call our system a [Decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html). Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
+We built ours with the funding from our version of the treaty, 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on safe treatments while people die. You'd call our system a [Decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html). Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
 
 [80%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) of the [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) will go directly to subsidizing patient participation in pragmatic trials at [$929](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)/patient instead of the usual [$41,000](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). Patients will choose which trials to join; their subsidy will follow them. Treatment developers and providers will get paid for each participant. No grant committees deciding which diseases are fashionable this year.
 
@@ -277,7 +277,7 @@ Your new system will produce [Outcome Labels](https://manual.warondisease.org/kn
 
 ![What medicine labels would say if they were honest.](https://manual.warondisease.org/assets/images/dfda-outcome-labels.png)
 
-Your decentralized FDA figures out which treatments work. But your governments also need to know which *policies* work, how much to spend on what, which laws to keep, which to throw away. Your current method is to argue about it on television until someone wins by being louder. On Wishonia, the [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) handles this. It's an appliance. You plug in what 10,000 jurisdictions tried, it tells you which policies actually made people richer or less dead. Its [Optimal Budget Generator](https://obg.warondisease.org) does budgets; its [Optimal Policy Generator](https://opg.warondisease.org) does laws.
+Your decentralized FDA figures out which treatments work. But your governments also need to know which *policies* work, how much to spend on what, which laws to keep, which to throw away. Your current method is to argue about it on television until someone wins by being louder. Back home, the [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) handles this. It's an appliance. You plug in what 10,000 jurisdictions tried, it tells you which policies actually made people richer or less dead. Its [Optimal Budget Generator](https://obg.warondisease.org) does budgets; its [Optimal Policy Generator](https://opg.warondisease.org) does laws.
 
 ## Why This Could Actually Work
 
@@ -309,7 +309,7 @@ Cost-effectiveness: [$0.02](https://manual.warondisease.org/knowledge/economics/
 
 ### Step 1: Buy the Machine That's Making You Poorer and Deader
 
-On Wishonia, people do useful things because they're useful. On Earth, you need a financial incentive. Not because anyone rationally opposes curing diseases (they don't; see above), but because [150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) people die per day while the arithmetic propagates, and money is how you compress the timeline.
+On my planet, people do useful things because they're useful. On Earth, you need a financial incentive. Not because anyone rationally opposes curing diseases (they don't; see above), but because [150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) people die per day while the arithmetic propagates, and money is how you compress the timeline.
 
 So your weapons companies have this design flaw. They sell tiny pieces of themselves to anyone with papers. Each piece comes with a vote. If you collect enough votes you get to pick who sits on the board of directors, and the board tells the lobbyists what to say to Congress. Like, [$4.4 billion](https://manual.warondisease.org/knowledge/appendix/algorithmic-public-administration-paper.html) a year in corporate lobbying is what buys your legislation. That is less than you spend on pizza. Your entire government is controlled by an amount of money that would not buy enough pizza to feed your government. And you're not buying Congress directly, because apparently that's illegal even though the current system is just buying Congress with extra steps. You're buying the companies that buy Congress. Then you tell them to ask for clinical trials instead of cluster bombs.
 
@@ -317,7 +317,7 @@ Someone already did a version of this. In 2021, Engine No. 1 won three board sea
 
 [Earth Optimization Services](https://manual.warondisease.org/knowledge/economics/eos-pitch.html) does the same thing, except instead of making an oil company slightly less oily, you're buying the weapons companies that control your government's lobbying and telling their boards to sell 1% of their bomb-making assets and buy biotechnology companies, which have net profit margins of [18.5%](https://manual.warondisease.org/knowledge/appendix/love-letter.html) compared to [4.99%](https://manual.warondisease.org/knowledge/appendix/love-letter.html) for bomb companies, which is [3.72x](https://manual.warondisease.org/knowledge/appendix/love-letter.html) higher. So the board members get richer. And then you tell their lobbyists to lobby for clinical trials instead of missiles, which the [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) has calculated will make everyone including the board members richer and also not dead, because the board members are currently lobbying for policies that will result in the board members dying of preventable diseases in about twenty years, at which point their net worth becomes zero regardless of how large it was, unless they arrange to be buried with all of their money.
 
-EOS is what your lawyers call a mission-locked public benefit corporation. It is legally required to maximize how long you live and how much money you make. If a board member tries to do something else, you can sue them. On Wishonia we just call this "a company that works." On Earth it apparently requires special paperwork.
+EOS is what your lawyers call a mission-locked public benefit corporation. It is legally required to maximize how long you live and how much money you make. If a board member tries to do something else, you can sue them. On Earth, a company that works apparently requires special paperwork.
 
 The [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) calculates which policies will actually make humans live longer and have more money. Right now the answer is mostly "more clinical trials" because you have a [443](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)-year backlog of untested treatments and people are dying in line, and "fewer missiles" because you have [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) spare apocalypses of margin and zero spare civilizations to use them on. The corruption is capped at 20% and fully transparent. The other 80% goes directly to clinical trials through [wishocratic allocation](https://manual.warondisease.org/knowledge/solution/wishocracy.html), where every human gets one vote on spending priorities. You drag a slider. On one end: atomic bombs. On the other end: high-efficiency pragmatic clinical trials. Your current system has the slider at [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)-to-one in favor of the bombs. You, personally, get to drag it wherever you think it should go. And nobody with more papers gets more votes than anybody else, because on your planet the thing that happens when you let money buy votes is money buys votes and then the votes do what the money wanted, which is how the slider ended up at [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)-to-one in the first place.
 
@@ -364,7 +364,7 @@ You need [3.5%](https://manual.warondisease.org/knowledge/strategy/global-refere
 
 You are not creating support for not dying of horrible diseases and not mass murdering each other. Nearly everyone already supports not dying of horrible diseases and not mass murdering each other. You are proving it.
 
-Everyone thinks this is crazy because everyone else thinks this is crazy. Your economists call it pluralistic ignorance, which is the polite term for eight billion people waiting for permission to want what they already want. On Wishonia we call this "the galaxy's longest game of you-go-first." Most species that start playing it don't finish playing it. If every human realized that nearly every other human would like a world without war and disease and an extra [$518,879](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) in lifetime income, it would be done tomorrow and the world would be unrecognizable.
+Everyone thinks this is crazy because everyone else thinks this is crazy. Your economists call it pluralistic ignorance, which is the polite term for eight billion people waiting for permission to want what they already want. It is the galaxy's longest game of you-go-first. Most species that start playing it don't finish playing it. If every human realized that nearly every other human would like a world without war and disease and an extra [$518,879](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) in lifetime income, it would be done tomorrow and the world would be unrecognizable.
 
 ::: {.content-visible when-format="html"}
 <figure>
@@ -413,7 +413,7 @@ Remember that [$2.72 billion](https://manual.warondisease.org/knowledge/appendix
 
 The NRA already perfected this technology. They give politicians a letter grade, and your senators are more afraid of a bad mark than a mass shooting. You're plagiarizing their system and replacing "guns" with "not dying from diseases."
 
-This works for any problem where politicians need to do something good but haven't been paid to do it yet. On your planet, this is most problems. On Wishonia, we just call it "the government." But you seem to prefer the version that requires bribery, so here we are.
+This works for any problem where politicians need to do something good but haven't been paid to do it yet. On your planet, this is most problems. On my planet, we just call it "the government." But you seem to prefer the version that requires bribery, so here we are.
 
 ### Step 5: Enjoy
 
