@@ -296,15 +296,20 @@
   // ========================================
 
   var STORAGE_KEY = 'dih-hide-uncertainty';
+  // Calculated values say "90% CI"; inputs and definitions say "95% CI"
+  var CI_TEXT = /\d+% CI:/;
+  var CI_SUFFIX = /\s*\(\d+% CI:[^)]+\)/gi;
+  // Definitions render as spans without a link
+  var PARAM_SELECTOR = 'a.parameter-link, span.parameter-definition';
 
   function createUncertaintyToggle() {
-    var paramLinks = document.querySelectorAll('a.parameter-link');
+    var paramLinks = document.querySelectorAll(PARAM_SELECTOR);
     var hasParameterWithCI = Array.from(paramLinks).some(function(link) {
-      return link.textContent.includes('95% CI');
+      return CI_TEXT.test(link.textContent);
     });
     var hasUncertaintyData = hasParameterWithCI ||
                              document.querySelector('.tippy-content') ||
-                             document.body.textContent.includes('95% CI');
+                             CI_TEXT.test(document.body.textContent);
 
     if (!hasUncertaintyData) return;
 
@@ -336,16 +341,16 @@
   }
 
   function processUncertaintyText(hide) {
-    // Select parameter-link elements (CI text is in text content, not title attribute)
-    var links = document.querySelectorAll('a.parameter-link');
+    // Select parameter elements (CI text is in text content, not title attribute)
+    var links = document.querySelectorAll(PARAM_SELECTOR);
 
     links.forEach(function(link) {
       var originalText = link.getAttribute('data-original-text');
 
       // Store original text on first encounter
       if (!originalText) {
-        // Only process links that actually contain CI text
-        if (!link.textContent.includes('95% CI')) {
+        // Only process elements that actually contain CI text
+        if (!CI_TEXT.test(link.textContent)) {
           return;
         }
         link.setAttribute('data-original-text', link.textContent);
@@ -354,7 +359,7 @@
       }
 
       if (hide) {
-        var cleanText = originalText.replace(/\s*\(95% CI:[^)]+\)/gi, '');
+        var cleanText = originalText.replace(CI_SUFFIX, '');
         link.textContent = cleanText;
       } else {
         link.textContent = originalText;

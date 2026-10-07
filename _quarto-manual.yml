@@ -26,7 +26,7 @@ dih-render:
       to: knowledge/podcast.html
     - from: https://papers.warondisease.org
       to: knowledge/papers.html
-  # Strip "(95% CI: ...)" from variable display values for general-audience reading
+  # Keep "(90% CI: ...)" in the HTML; site-enhancements.js hides it until the reader asks
   show-confidence-intervals: true
   # Write page.llms.md beside each page for AI tools (scripts/lib/markdown_twins.py)
   markdown-twins: true
