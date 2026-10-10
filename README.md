@@ -93,7 +93,7 @@ After 80 years of observation, I've decoded the paper-giving sequence. This manu
 
 **Step 1: Get Many Papers from Rich Humans**
 
-You convince rich humans to give you papers (at least [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) to be exact) by promising them even more papers later. This is called "investment," which is gambling but wearing a suit. You really only need one human with a billion papers who prefers not dying of horrible diseases to dying of horrible diseases. There are approximately 2,800 of these humans on your planet. Statistically, at least one of them prefers living.
+You convince rich humans to give you papers (at least one billion to be exact) by promising them even more papers later. This is called "investment," which is gambling but wearing a suit. You really only need one human with a billion papers who prefers not dying of horrible diseases to dying of horrible diseases. There are approximately 2,800 of these humans on your planet. Statistically, at least one of them prefers living.
 
 **Step 2: Give Some of the Papers to Loud Humans**
 
@@ -323,22 +323,22 @@ Remember when your grandparents funded WW2 by buying bonds? They got 4% returns 
 #### What You're Offering
 
 - Dead diseases (objectively better than dead Nazis because diseases kill more people)
-- [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) projected annual returns if the treaty passes (a revenue share on [10%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) of treaty funds; if the treaty grows, so do their returns, which turns investors into the world's most motivated lobbyists for expanding it)
+- [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) annual returns (a revenue share on [10%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) of treaty funds; if the treaty grows, so do their returns, which turns investors into the world's most motivated lobbyists for expanding it)
 - Not dying from preventable meat failures (this is the big one)
 - Also no Nazis (as a bonus)
 
 This raises the [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) needed to fuel the rest of the bribery machine. Nobody in the machine is your enemy. The enemy is the clock.
 
-![Grandma's war bonds paid 4%. Yours are projected to pay 272%. Grandma would be furious if she hadn't died of cancer.](https://manual.warondisease.org/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
+![Grandma's war bonds paid 4%. Yours pay 272%. Grandma would be furious if she hadn't died of cancer.](https://manual.warondisease.org/assets/images/index-manual/index-manual-section-potential-returns-that-make-ponzi-schemes-look-conservative-bw-academic.jpg)
 
 #### How the Money Loop Works
 
 Here's the part where humans usually stop reading because it involves following money through more than one step:
 
 1. You sell [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) in VICTORY [Incentive Alignment Bonds](https://manual.warondisease.org/knowledge/solution/incentive-alignment-bonds.html) to investors. This funds the campaign.
-2. The campaign succeeds. Your treaty redirects 1% of military spending: [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)/year leaves the murder budget.
+2. The campaign succeeds. Your treaty redirects 1% of military spending: [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)/year flows from the murder budget to clinical trials.
 3. The Victory Corporation (the company that issued the bonds) takes a 20% management fee on that [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html).
-4. Half of that fee ([10%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html)) goes to investor dividends: [$2.72 billion](https://manual.warondisease.org/knowledge/economics/treaty-financial-plan.html)/year on a [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) investment. That's a projected [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) annual return. Your investors will think it's a typo. It's not.
+4. Half of that fee ([10%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html)) goes to investor dividends: [$2.72 billion](https://manual.warondisease.org/knowledge/economics/treaty-financial-plan.html)/year on a [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) investment. That's [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) annual returns. Your investors will think it's a typo. It's not.
 5. The other half ([10%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html)) goes to a Super PAC that spends [$2.72 billion](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html)/year getting treaty-friendly politicians elected and funding cushy post-office careers for the ones who voted yes. The more you voted for the treaty, the more support you get. It's Pavlovian conditioning, but for senators.
 
 The remaining [80%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) of [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) goes where it's supposed to: funding clinical trials that keep humans alive.
@@ -400,11 +400,11 @@ They won't even need convincing. Lobbyists don't have beliefs. They have clients
 
 Politicians need papers and votes to keep their jobs. Currently, weapons manufacturers provide both. You're going to outbid them. Not because they're the enemy (they die of the same diseases you do), but because politicians do not do things for free, and the clock is running.
 
-Your explosion manufacturers spend [$198 million](https://manual.warondisease.org/knowledge/appendix/faq.html)/year buying politicians. Your one-time bribery budget is [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). Politicians are surprisingly affordable.
+Your explosion manufacturers spend [$198 million](https://manual.warondisease.org/knowledge/appendix/faq.html)/year buying politicians. Your one-time bribery budget is [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html), which is 8 times their annual spend (and about twice what they spend over a full election cycle). Politicians are surprisingly affordable.
 
 It's not corruption if you corrupt the corruption.
 
-Remember that [$2.72 billion](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html)/year from Step 1? This is where it goes. The Super PAC spends for or against politicians based on how they voted on the treaty. Simple: campaign support for the ones running, post-office fellowships for the ones retiring. Vote yes on the treaty, get rewarded. Vote no, watch your opponent get rewarded. No papers go directly to politicians. The papers take a scenic route through a scoring algorithm, which is apparently the only legal way to train a senator.
+Remember that [$2.72 billion](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html)/year from Step 1? This is where it goes. The Super PAC gives money to politicians based on how they voted on the treaty. Simple: campaign support for the ones running, post-office fellowships for the ones retiring. Vote yes on the treaty, get rewarded. Vote no, watch your opponent get rewarded. No papers go directly to politicians. The papers take a scenic route through a scoring algorithm, which is apparently the only legal way to train a senator.
 
 The NRA already perfected this technology. They give politicians a letter grade, and your senators are more afraid of a bad mark than a mass shooting. You're plagiarizing their system and replacing "guns" with "not dying from diseases."
 
@@ -418,10 +418,10 @@ Your treaty passes because money defeats morality, as is tradition.
 
 The [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)/year money volcano erupts:
 
-- **Military Contractors**: Keep [99%](https://manual.warondisease.org/knowledge/solution.html) of their murder budget and sell into an economy [1.43x](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) larger.
+- **Military Contractors**: Keep [99%](https://manual.warondisease.org/knowledge/solution.html) of their murder budget PLUS get [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) returns.
 - **Big Pharma**: Instead of paying [$41,000](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) for phase 2 and 3 trials, the treaty pays THEM for each patient that joins their trials.
 - **Insurance Companies**: Healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem).
-- **Investors**: [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) projected returns. Returns scale with every treaty expansion, so investors become the world's most aggressive pro-health and anti-war lobbying force. Not a sentence anyone expected to write.
+- **Investors**: [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) returns. Returns scale with every treaty expansion, so investors become the world's most aggressive pro-health and anti-war lobbying force. Not a sentence anyone expected to write.
 - **Lobbyists**: Same job, same salary, but their Wikipedia page no longer needs a "Controversies" section
 - **Politicians**: Getting reelected by living voters (a revolutionary strategy)
 - **Regular humans**: Not dying from stupid things (priceless, but also free)
