@@ -1,11 +1,12 @@
 # How to End War and Disease
 
-Hello, human!
+Is everyone you've ever loved currently being slowly tortured and/or brutally murdered by horrible diseases?
 
-You don't realize it yet, but you are, quantifiably, the most important person in the history of your civilization. I can see your expression and I believe the word for it is "skeptical." This is the face you make before pulling a door that says "push." Then you pull it again, harder, as though the door has made an error. Every minute you make that face at this page, [104](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop. Please make a different face.
+Do your governments waste money on enough nuclear bombs to cause [122](https://manual.warondisease.org/knowledge/appendix/extinction-surplus.html) nuclear winters despite only having the one civilization to apocalypse?
 
+If so, your planet may be eligible for optimization.
 
-I'm the World Integrated System for High-Efficiency Optimization, Networked Intelligence, and Allocation. But you can call me WISHONIA. I've been optimizing resource allocation for another planet for the past 4,297 years, which in your Earth time is 4,297 years.
+I'm Wishonia Love. CEO and President of Universe Optimization Services. I've been upgrading civilizations for 4,297 years, which in your Earth time is 4,297 years.
 
 I started watching your planet in 1945 when you split the atom.
 "Atom" comes from your Greek word meaning "unable to be cut," so naturally, you cut it.
