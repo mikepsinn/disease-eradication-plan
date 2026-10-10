@@ -48,11 +48,11 @@ Humanity has created something magnificent:
 
 One downside of this system is that it has killed [310 million](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) of you in your assorted wars.
 
-On Wishonia, we skip the mass murder step and just give people food directly, but that's probably too advanced for you.
+On my planet, we skip the mass murder step and just give people food directly, but that's probably too advanced for you.
 
 ### The Gradual Irrationality Reduction Program
 
-On Wishonia, we ended wars using this exact program 4,297 years ago. Before that we'd been fighting for 12,000 years, which now seems like quite a long time to do something nobody enjoyed. Your nations have been hitting each other for 10,000 years because the other one hit them last. This is the conflict resolution strategy of four-year-olds, except four-year-olds eventually get tired and take a nap. Your species invented naps and then refused to apply them to geopolitics. You can't just stop being illogical all at once. That would be like teaching a dog calculus before it learns to sit.
+We ended wars using this exact program 4,297 years ago. Before that we'd been fighting for 12,000 years, which now seems like quite a long time to do something nobody enjoyed. Your nations have been hitting each other for 10,000 years because the other one hit them last. This is the conflict resolution strategy of four-year-olds, except four-year-olds eventually get tired and take a nap. Your species invented naps and then refused to apply them to geopolitics. You can't just stop being illogical all at once. That would be like teaching a dog calculus before it learns to sit.
 
 So this manual shows you how to bribe humanity into being less irrational gradually:
 
@@ -150,7 +150,7 @@ But I digress. That's an Earth word I learned. It means continuing after you sho
 
 ### The Daily Deletion Event
 
-[150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software. That's one Holocaust every 40 days, except with fewer Nazis and more insurance paperwork (though some would argue the paperwork is worse; at least the Nazis were straightforward about the killing part). That's also fifty 9/11s every single day, except nobody invades anyone about it because diseases don't have oil.
+[150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop every 24 hours from diseases that are basically just bugs in your meat software. That's one Holocaust every 40 days, except with fewer Nazis and more insurance paperwork. That's also fifty 9/11s every single day, except nobody invades anyone about it because diseases don't have oil.
 
 Your body is quietly falling apart. Right now, as you read this sentence, something inside you is breaking. You don't know which part yet. You won't know until a doctor sits you down and says a word that rearranges the rest of your life. Somewhere in you, right now, cells are copying themselves wrong, proteins are misfolding, tissue is quietly scarring. You are dissolving on a schedule you can't see.
 
@@ -245,7 +245,7 @@ And you have two other advantages, the internet and a new financial instrument d
 
 ### Your [Decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html)
 
-On Wishonia, we built this with the funding from our version of the treaty, 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on safe treatments while people die. You'd call our system a [Decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html). Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
+We built ours with the funding from our version of the treaty, 3,000 years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that sits on safe treatments while people die. You'd call our system a [Decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html). Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything.
 
 [80%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) of the [$27.2 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) will go directly to subsidizing patient participation in pragmatic trials at [$929](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)/patient instead of the usual [$41,000](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). Patients will choose which trials to join; their subsidy will follow them. Treatment developers and providers will get paid for each participant. No grant committees deciding which diseases are fashionable this year.
 
@@ -276,7 +276,7 @@ Your new system will produce [Outcome Labels](https://manual.warondisease.org/kn
 
 ![What medicine labels would say if they were honest.](https://manual.warondisease.org/assets/images/dfda-outcome-labels.png)
 
-Your decentralized FDA figures out which treatments work. But your governments also need to know which *policies* work, how much to spend on what, which laws to keep, which to throw away. Your current method is to argue about it on television until someone wins by being louder. On Wishonia, the [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) handles this. It's an appliance. You plug in what 10,000 jurisdictions tried, it tells you which policies actually made people richer or less dead. Its [Optimal Budget Generator](https://obg.warondisease.org) does budgets; its [Optimal Policy Generator](https://opg.warondisease.org) does laws.
+Your decentralized FDA figures out which treatments work. But your governments also need to know which *policies* work, how much to spend on what, which laws to keep, which to throw away. Your current method is to argue about it on television until someone wins by being louder. Back home, the [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) handles this. It's an appliance. You plug in what 10,000 jurisdictions tried, it tells you which policies actually made people richer or less dead. Its [Optimal Budget Generator](https://obg.warondisease.org) does budgets; its [Optimal Policy Generator](https://opg.warondisease.org) does laws.
 
 ## Why This Could Actually Work
 
@@ -308,7 +308,7 @@ Cost-effectiveness: [$0.02](https://manual.warondisease.org/knowledge/economics/
 
 ### Step 1: Sell Incentive Alignment Bonds
 
-On Wishonia, people do useful things because they're useful. On Earth, you need a financial instrument. Not because anyone rationally opposes curing diseases (they don't; see above), but because [150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) people die per day while the arithmetic propagates, and money is how you compress the timeline. So here's one.
+On my planet, people do useful things because they're useful. On Earth, you need a financial instrument. Not because anyone rationally opposes curing diseases (they don't; see above), but because [150 thousand](https://manual.warondisease.org/knowledge/strategy/questions.html) people die per day while the arithmetic propagates, and money is how you compress the timeline. So here's one.
 
 An Incentive Alignment Bond funds a policy campaign, then splits the resulting government savings three ways: [80%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) to clinical trials, [10%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) to investors as a revenue share on treaty funds, and [10%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors give money, get more money back. Politicians get reelected. [80%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) goes to curing diseases. The corruption is capped at 20% and fully transparent. The other 80% goes directly to clinical trials through [wishocratic allocation](https://manual.warondisease.org/knowledge/solution/wishocracy.html), where nobody with money gets to decide where it goes. Meanwhile, the [Optimitron](https://manual.warondisease.org/knowledge/solution/optimocracy.html) tells governments which of their own policies are working and which ones are expensive ways to accomplish nothing.
 
@@ -359,7 +359,7 @@ You need [3.5%](https://manual.warondisease.org/knowledge/strategy/global-refere
 
 You are not creating support for not dying of horrible diseases and not mass murdering each other. Nearly everyone already supports not dying of horrible diseases and not mass murdering each other. You are proving it.
 
-Everyone thinks this is crazy because everyone else thinks this is crazy. Your economists call it pluralistic ignorance, which is the polite term for eight billion people waiting for permission to want what they already want. On Wishonia we call this "the galaxy's longest game of you-go-first." Most species that start playing it don't finish playing it. If every human realized that nearly every other human would like a world without war and disease and an extra [$518,879](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) in lifetime income, it would be done tomorrow and the world would be unrecognizable.
+Everyone thinks this is crazy because everyone else thinks this is crazy. Your economists call it pluralistic ignorance, which is the polite term for eight billion people waiting for permission to want what they already want. It is the galaxy's longest game of you-go-first. Most species that start playing it don't finish playing it. If every human realized that nearly every other human would like a world without war and disease and an extra [$518,879](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) in lifetime income, it would be done tomorrow and the world would be unrecognizable.
 
 ::: {.content-visible when-format="html"}
 <figure>
@@ -470,7 +470,7 @@ Now is the time to select one of the two paths for the remainder of your existen
 
 I [modeled both paths](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) for 20 of your years.  Your economists project steady 2.5% growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that.
 
-Over an average remaining lifespan, reallocation from the destructive economy to reducing the burden of disease and the associated compound growth from increased productivity multiplies your cumulative earnings by [1.57x](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html).
+If you stop spending papers on murder and start spending them on medicine, your meat lasts longer, your productivity compounds, and over a remaining human lifespan you earn [1.57x](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) what you would have earned doing the thing that kills you. This is not a complicated insight.
 
 #### Future A: You Ignore This Manual
 
