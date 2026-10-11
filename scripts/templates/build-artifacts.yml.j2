@@ -280,9 +280,19 @@ jobs:
         run: |
           $epub = Get-ChildItem kdp-files -Filter *.epub | Select-Object -First 1
           $output = New-Item -ItemType Directory -Force -Path kindle-output
-          $process = Start-Process -FilePath $env:KINDLE_PREVIEWER -ArgumentList "`"$($epub.FullName)`"", "-convert", "-output", "`"$($output.FullName)`"" -Wait -PassThru
-          Write-Host "Kindle Previewer exit code: $($process.ExitCode)"
+          $process = Start-Process -FilePath $env:KINDLE_PREVIEWER -ArgumentList "`"$($epub.FullName)`"", "-convert", "-output", "`"$($output.FullName)`"" -PassThru
+          # Kindle Previewer sometimes stays open after it converts, so wait for
+          # the summary it writes at the end instead of waiting for it to exit
           $summary = Join-Path $output.FullName "Summary_Log.csv"
+          $deadline = (Get-Date).AddMinutes(12)
+          while (-not $process.HasExited -and -not (Test-Path $summary) -and (Get-Date) -lt $deadline) {
+            Start-Sleep -Seconds 5
+          }
+          Start-Sleep -Seconds 10
+          if (-not $process.HasExited) {
+            Write-Host "Stopping Kindle Previewer, which did not exit after converting"
+            Stop-Process -Id $process.Id -Force
+          }
           if (Test-Path $summary) { Get-Content $summary }
           # Kindle Previewer writes a KPF only when Enhanced Typesetting works
           $kpf = Get-ChildItem $output.FullName -Recurse -Filter *.kpf | Select-Object -First 1

@@ -222,6 +222,11 @@ def test_optional_kindle_check_cannot_fail_the_release() -> None:
     release_job = workflow[workflow.index("  release-builds:"):]
 
     assert "continue-on-error: true" in kindle_job
+    # Kindle Previewer can stay open after converting; the step waits for its summary file, not its exit
+    convert_step = kindle_job[kindle_job.index("Convert the EPUB to KPF"):kindle_job.index("Upload the KPF")]
+    assert "-Wait" not in convert_step
+    assert "Summary_Log.csv" in convert_step
+    assert "Stop-Process" in convert_step
     assert "      - check-kindle-manual-paperback\n" in release_job
     assert 'select(.key | startswith("build-"))' in release_job
     assert "github.event_name != 'pull_request'" in release_job
