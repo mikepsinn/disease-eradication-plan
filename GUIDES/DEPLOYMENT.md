@@ -45,7 +45,7 @@ Output lands in `_build_temp/<config>/`. A local build can sweep in stray, gitig
 
 Uploads keep the file names, so `https://github.com/mikepsinn/disease-eradication-plan/releases/download/latest-builds/<file>` always points at the newest build. If one paper fails, the release still gets every other file and the run turns red.
 
-The book job renders `_quarto-manual-paperback.yml` and releases the files KDP takes: the EPUB (Kindle-fixed by `render-quarto.py`), the eBook cover, the 7x10 paperback interior PDF, and a DOCX. The paperback cover (back, spine, and front in one PDF) is not built; make it with KDP Cover Creator. A Windows job then tries to turn the EPUB into a KPF with Kindle Previewer. Kindle Previewer writes a KPF only when Enhanced Typesetting works, so a missing KPF is a warning about the EPUB, and the job never blocks the release.
+The book job renders `_quarto-manual-paperback.yml` once per format, because with `freeze: auto` a multi-format render reuses the first format's results and the later formats lose their figures. A format that fails is left out, and the others still reach the release. It releases the files KDP takes: the EPUB (Kindle-fixed by `render-quarto.py`), the eBook cover, the 7x10 paperback interior PDF, and a DOCX. The paperback cover (back, spine, and front in one PDF) is not built; make it with KDP Cover Creator. A Windows job then tries to turn the EPUB into a KPF with Kindle Previewer. Kindle Previewer writes a KPF only when Enhanced Typesetting works, so a missing KPF is a warning about the EPUB, and the job never blocks the release.
 
 The Zenodo step publishes each paper that passes LLM PDF validation, which runs only when the `LLM_VALIDATION` secret is `true`.
 

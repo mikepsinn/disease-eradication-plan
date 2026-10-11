@@ -153,12 +153,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The 1% Treaty: An Incentive-Compatible Approach to"
         run: python scripts/render-quarto.py 1-pct-treaty-impact --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -279,12 +279,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The 1% Treaty"
         run: python scripts/render-quarto.py 1-percent-treaty --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -405,12 +405,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Algorithmic Public Administration: A Protocol for "
         run: python scripts/render-quarto.py algorithmic-public-administration --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -531,12 +531,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build How Much Does It Cost to Buy All the Governments?"
         run: python scripts/render-quarto.py cost-of-change --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -657,12 +657,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Court of Humanity"
         run: python scripts/render-quarto.py court-of-humanity --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -783,12 +783,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Ubiquitous Pragmatic Trial Impact Analysis"
         run: python scripts/render-quarto.py dfda-impact --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -909,12 +909,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Continuous Evidence Generation Protocol: Two-S"
         run: python scripts/render-quarto.py dfda-spec --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -1035,12 +1035,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Drug Development Cost Increase Analysis"
         run: python scripts/render-quarto.py drug-development-cost --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -1161,12 +1161,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Earth Optimization Prize"
         run: python scripts/render-quarto.py earth-optimization-prize --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -1287,12 +1287,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Earth Optimization Prize Protocol: Technical Speci"
         run: python scripts/render-quarto.py earth-optimization-prize-protocol --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -1413,12 +1413,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Choose Your Own Earth: A World Without the Politic"
         run: python scripts/render-quarto.py gdp-trajectories --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -1539,12 +1539,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Humanity v. Government"
         run: python scripts/render-quarto.py humanity-v-government --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -1665,12 +1665,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build I Am Retarded"
         run: python scripts/render-quarto.py i-am-retarded --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -1791,12 +1791,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Incentive Alignment Bonds: Making Public Goods Fin"
         run: python scripts/render-quarto.py iab --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -1917,12 +1917,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Invisible Graveyard: Quantifying the Mortality"
         run: python scripts/render-quarto.py invisible-graveyard --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -2043,12 +2043,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Funniest Joke in the Universe"
         run: python scripts/render-quarto.py joke --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -2169,12 +2169,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Loving Takeover"
         run: python scripts/render-quarto.py loving-takeover --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -2295,27 +2295,55 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render Build KDP Book Files (EPUB + PDF + DOCX)"
-        run: python scripts/render-quarto.py manual-paperback
+
+
+      # One render per format: with freeze, a multi-format render runs each
+      # chapter once and the later formats find no figures
+      - name: "Render the book (EPUB)"
+        if: "!cancelled()"
+        run: python scripts/render-quarto.py manual-paperback --to epub
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
-        timeout-minutes: 150
+        timeout-minutes: 60
+
+
+      # One render per format: with freeze, a multi-format render runs each
+      # chapter once and the later formats find no figures
+      - name: "Render the book (DOCX)"
+        if: "!cancelled()"
+        run: python scripts/render-quarto.py manual-paperback --to docx
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 60
+
+
+      # One render per format: with freeze, a multi-format render runs each
+      # chapter once and the later formats find no figures
+      - name: "Render the book (PDF)"
+        if: "!cancelled()"
+        run: python scripts/render-quarto.py manual-paperback --to pdf
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 60
 
 
       - name: Collect the KDP files
+        # A format that failed is left out, so the files that did build still reach the release
+        if: "!cancelled()"
         run: |
           mkdir -p kdp-files
 
-          cp "assets/epubs/How-to-End-War-and-Disease.epub" "kdp-files/How-to-End-War-and-Disease.epub"
+          if [ -f "assets/epubs/How-to-End-War-and-Disease.epub" ]; then cp "assets/epubs/How-to-End-War-and-Disease.epub" "kdp-files/How-to-End-War-and-Disease.epub"; else echo "::warning::assets/epubs/How-to-End-War-and-Disease.epub was not built"; fi
 
-          cp "assets/cover/book-cover-3.jpg" "kdp-files/How-to-End-War-and-Disease-ebook-cover.jpg"
+          if [ -f "assets/cover/book-cover-3.jpg" ]; then cp "assets/cover/book-cover-3.jpg" "kdp-files/How-to-End-War-and-Disease-ebook-cover.jpg"; else echo "::warning::assets/cover/book-cover-3.jpg was not built"; fi
 
-          cp "assets/pdfs/How-to-End-War-and-Disease-Paperback.pdf" "kdp-files/How-to-End-War-and-Disease-Paperback.pdf"
+          if [ -f "assets/pdfs/How-to-End-War-and-Disease-Paperback.pdf" ]; then cp "assets/pdfs/How-to-End-War-and-Disease-Paperback.pdf" "kdp-files/How-to-End-War-and-Disease-Paperback.pdf"; else echo "::warning::assets/pdfs/How-to-End-War-and-Disease-Paperback.pdf was not built"; fi
 
-          cp "assets/docx/How-to-End-War-and-Disease-Paperback.docx" "kdp-files/How-to-End-War-and-Disease-Paperback.docx"
+          if [ -f "assets/docx/How-to-End-War-and-Disease-Paperback.docx" ]; then cp "assets/docx/How-to-End-War-and-Disease-Paperback.docx" "kdp-files/How-to-End-War-and-Disease-Paperback.docx"; else echo "::warning::assets/docx/How-to-End-War-and-Disease-Paperback.docx was not built"; fi
 
 
       - name: Upload KDP files artifact
+        if: "!cancelled()"
         uses: actions/upload-artifact@v4
         with:
           name: kdp-files-manual-paperback
@@ -2421,12 +2449,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Optimal Budget Generator: A Causal Inference P"
         run: python scripts/render-quarto.py obg --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -2547,12 +2575,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Optimal Policy Generator: A Causal Inference P"
         run: python scripts/render-quarto.py opg --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -2673,12 +2701,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Optimocracy: Causal Inference on Cross-Jurisdictio"
         run: python scripts/render-quarto.py optimocracy --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -2799,12 +2827,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Organized Violence Tax"
         run: python scripts/render-quarto.py organized-violence-tax --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -2925,12 +2953,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Political Dysfunction Tax"
         run: python scripts/render-quarto.py political-dysfunction-tax --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -3051,12 +3079,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Right to Trial & FDA Upgrade Act"
         run: python scripts/render-quarto.py right-to-trial --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -3177,12 +3205,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Patient's Right to Trial Act: Potential Impact of "
         run: python scripts/render-quarto.py right-to-trial-impact --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -3296,12 +3324,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build The Survey to End War and Disease"
         run: python scripts/render-quarto.py survey-to-end-war-and-disease --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -3422,12 +3450,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build United States Efficiency Audit"
         run: python scripts/render-quarto.py us-efficiency-audit --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -3548,12 +3576,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Wishocracy: Solving the Democratic Principal-Agent"
         run: python scripts/render-quarto.py wishocracy --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -3674,12 +3702,12 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+
       - name: "Render Build Wishonia's Wager: Any Finite Action Is Rational Wh"
         run: python scripts/render-quarto.py wishonias-wager --to pdf
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
         timeout-minutes: 30
-
 
 
       - name: Upload PDFs artifact
@@ -3732,6 +3760,8 @@ jobs:
   check-kindle-manual-paperback:
     name: "Check the EPUB in Kindle Previewer"
     needs: build-manual-paperback
+    # The EPUB can exist even when the PDF or DOCX step failed
+    if: ${{ !cancelled() && needs.build-manual-paperback.result != 'skipped' }}
     runs-on: windows-latest
     # Kindle Previewer has no Linux build and no documented silent install,
     # so a failure here warns but never blocks the release

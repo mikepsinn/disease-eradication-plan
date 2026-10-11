@@ -148,27 +148,41 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
-      - name: "Render {{ job.display_name }}"
-        run: python scripts/render-quarto.py {{ job.config_name }}{% if job.artifact_render_format %} --to {{ job.artifact_render_format }}{% endif %}
+{% if job.kdp_files %}
+{% for format in job.downloadable_formats %}
+      # One render per format: with freeze, a multi-format render runs each
+      # chapter once and the later formats find no figures
+      - name: "Render the book ({{ format | upper }})"
+        if: "!cancelled()"
+        run: python scripts/render-quarto.py {{ job.config_name }} --to {{ format }}
         env:
           GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
         timeout-minutes: {{ job.timeout_minutes }}
 
-{% if job.kdp_files %}
+{% endfor %}
       - name: Collect the KDP files
+        # A format that failed is left out, so the files that did build still reach the release
+        if: "!cancelled()"
         run: |
           mkdir -p kdp-files
 {% for file in job.kdp_files %}
-          cp "{{ file.source }}" "kdp-files/{{ file.name }}"
+          if [ -f "{{ file.source }}" ]; then cp "{{ file.source }}" "kdp-files/{{ file.name }}"; else echo "::warning::{{ file.source }} was not built"; fi
 {% endfor %}
 
       - name: Upload KDP files artifact
+        if: "!cancelled()"
         uses: actions/upload-artifact@v4
         with:
           name: kdp-files-{{ job.config_name }}
           path: kdp-files/
           if-no-files-found: error
 {% else %}
+      - name: "Render {{ job.display_name }}"
+        run: python scripts/render-quarto.py {{ job.config_name }}{% if job.artifact_render_format %} --to {{ job.artifact_render_format }}{% endif %}
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
+        timeout-minutes: {{ job.timeout_minutes }}
+
 {% if "pdf" in job.downloadable_formats %}
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
@@ -234,6 +248,8 @@ jobs:
   check-kindle-{{ job.config_name }}:
     name: "Check the EPUB in Kindle Previewer"
     needs: build-{{ job.config_name }}
+    # The EPUB can exist even when the PDF or DOCX step failed
+    if: {% raw %}${{ !cancelled() && {% endraw %}needs.build-{{ job.config_name }}.result != 'skipped' }}
     runs-on: windows-latest
     # Kindle Previewer has no Linux build and no documented silent install,
     # so a failure here warns but never blocks the release

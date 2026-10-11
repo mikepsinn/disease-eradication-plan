@@ -161,6 +161,19 @@ def test_kdp_book_builds_artifacts_but_never_deploys_or_goes_to_zenodo() -> None
     assert all(not job.kdp_files for name, job in artifact_jobs.items() if name != "manual-paperback")
 
 
+def test_kdp_book_renders_each_format_separately_and_keeps_what_built() -> None:
+    workflow = render_artifacts_workflow()
+    book_job = workflow[workflow.index("  build-manual-paperback:"):workflow.index("  check-kindle-manual-paperback:")]
+
+    # A multi-format render reuses the first format's frozen results, which lack the other formats' figures
+    assert "render-quarto.py manual-paperback\n" not in book_job
+    for render_format in ("epub", "pdf", "docx"):
+        assert f"run: python scripts/render-quarto.py manual-paperback --to {render_format}\n" in book_job
+    collect_step = book_job[book_job.index("Collect the KDP files"):book_job.index("Upload KDP files artifact")]
+    assert 'if: "!cancelled()"' in collect_step
+    assert "was not built" in collect_step
+
+
 def test_artifacts_build_nightly_and_only_explicit_runs_reach_zenodo() -> None:
     workflow = render_artifacts_workflow()
 

@@ -205,7 +205,7 @@ def infer_timeout(config_name: str, project_type: str) -> int:
     elif config_name == "manual":
         return 75  # Large multi-format build
     elif config_name in KDP_CONFIGS:
-        return 150  # Whole book three times: EPUB, PDF, and DOCX
+        return 60  # Per format; the book renders EPUB, PDF, and DOCX in separate steps
     else:
         return 30  # Standard papers and larger papers
 
