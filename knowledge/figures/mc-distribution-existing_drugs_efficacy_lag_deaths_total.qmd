@@ -87,7 +87,7 @@ clean_spines(ax2)
 
 exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
 ax2.annotate(f'{exceed_baseline_pct:.0f}% chance of\nexceeding baseline',
-             xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
+             xy=(baseline, exceed_baseline_pct), xytext=(10, 10), textcoords='offset points',
              fontsize=9, ha='left',
              arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
 
