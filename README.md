@@ -535,7 +535,7 @@ people will be unnecessarily tortured and brutally murdered by diseases. Every a
 Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts. Every minute of delay, [104](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop. Your vote saves [2.6 lives](https://manual.warondisease.org/knowledge/strategy/nonprofit-coalition-strategy.html) and prevents [468 thousand hours](https://manual.warondisease.org/knowledge/strategy/nonprofit-coalition-strategy.html) of suffering.
 
 
-The universe is literally offering you eternal life, and you're thinking about it.
+The universe is offering you a world without war and disease, and you're thinking about it.
 
 This is why aliens don't visit.
 
