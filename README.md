@@ -520,10 +520,6 @@ You don't need to know a billionaire. You're six degrees of separation from one.
 
 The same forwarding fuels Path B at the same time. Every human in the chain also votes at warondisease.org, and every vote counts toward the [4.13 billion](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) that no government on Earth can politely ignore. You don't have to pick which chain wins. Your thirty seconds runs both.
 
-This is a chain reaction, and it runs on greed.
-
-Every person in the chain will do exactly what you're about to do, for exactly the same selfish reasons. Not to save the world. Because it makes them money.
-
 Humans aren't stupid. You invented cheese, which is milk you left out until it went bad but in a good way. That's genius. You just need to apply that same innovation to not dying.
 
 Here is what should scare you: if this works, the world becomes unrecognizable. Not slightly better. Unrecognizable. Disease eradicated, income quadrupled, your species freed from the thing that has been eating it alive since before you invented writing. That future is so good your brain can't render it.
@@ -539,7 +535,7 @@ people will be unnecessarily tortured and brutally murdered by diseases. Every a
 Go to [warondisease.org](https://warondisease.org) and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts. Every minute of delay, [104](https://manual.warondisease.org/knowledge/strategy/questions.html) humans permanently stop. Your vote saves [2.6 lives](https://manual.warondisease.org/knowledge/strategy/nonprofit-coalition-strategy.html) and prevents [468 thousand hours](https://manual.warondisease.org/knowledge/strategy/nonprofit-coalition-strategy.html) of suffering.
 
 
-The universe is literally offering you infinite money and eternal life, and you're thinking about it.
+The universe is offering you a world without war and disease, and you're thinking about it.
 
 This is why aliens don't visit.
 
