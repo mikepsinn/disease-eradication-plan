@@ -1011,24 +1011,28 @@ def _strip_confidence_intervals(variables_path: Path, verbose: bool = True) -> i
         return 0
 
     with open(variables_path, encoding="utf-8") as f:
-        content = f.read()
+        # A paper that uses no variables gets a file with only comments
+        variables = yaml.safe_load(f) or {}
 
-    original = content
+    # Edit the parsed values, not the file text: YAML wraps long strings and
+    # writes the space that starts a wrapped line as "\ ", so cutting
+    # " (95% CI: ...)" out of the text can strand the backslash.
     stripped = 0
+    for name, value in variables.items():
+        if not isinstance(value, str):
+            continue
+        # Display text: " (95% CI: $10.5M-$19.5M)" or " (90% CI: 8 years-18 years)"
+        value, display_count = re.subn(r' \(9[05]% CI: [^)]+\)', '', value)
+        # Title attribute: " | 95% CI: [$78, $100]", leaving the next pipe in place
+        value, title_count = re.subn(r' \| 9[05]% CI: \[[^\]]*\]', '', value)
+        if display_count or title_count:
+            variables[name] = value
+            stripped += display_count + title_count
 
-    # Strip CI from display text: " (95% CI: $10.5M-$19.5M)" or " (90% CI: 8 years-18 years)"
-    # Pattern: space, open paren, "95% CI: " or "90% CI: ", content up to closing paren
-    content, n = re.subn(r' \(9[05]% CI: [^)]+\)', '', content)
-    stripped += n
-
-    # Strip CI from title attributes: "| 95% CI: [$78, $100] |" or "| 90% CI: [8 years, 18 years] |"
-    # Keep the surrounding pipes clean (remove leading pipe + CI + trailing pipe, leave one pipe)
-    content, n = re.subn(r' \| 9[05]% CI: \[[^\]]*\]', '', content)
-    stripped += n
-
-    if content != original:
+    if stripped:
+        # Same style as generate_filtered_variables_yml, which keeps LaTeX newlines escaped
         with open(variables_path, "w", encoding="utf-8", newline='\n') as f:
-            f.write(content)
+            yaml.dump(variables, f, allow_unicode=True, default_flow_style=False, sort_keys=True, default_style='"')
 
     if verbose:
         if stripped > 0:
