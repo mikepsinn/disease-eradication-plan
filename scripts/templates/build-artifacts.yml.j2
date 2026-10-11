@@ -225,7 +225,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: {% raw %}${{ secrets.ZENODO_TOKEN }}{% endraw %}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild {{ job.config_name }}
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py {{ job.config_name }}
 {% endif %}
 {% endfor %}
 {% for job in jobs if job.kdp_files %}

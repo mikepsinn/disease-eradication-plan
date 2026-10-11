@@ -1,3 +1,4 @@
+import importlib.util
 import io
 import sys
 from pathlib import Path
@@ -179,6 +180,25 @@ def test_artifacts_build_nightly_and_only_explicit_runs_reach_zenodo() -> None:
     for job in extract_artifact_job_configs(PROJECT_ROOT):
         build_job = workflow[workflow.index(f"  build-{job.config_name}:"):]
         assert build_job.index("needs: changes") < build_job.index("if: needs.changes.outputs.build == 'true'")
+
+
+def test_zenodo_steps_pass_only_arguments_the_upload_script_accepts(monkeypatch) -> None:
+    script = PROJECT_ROOT / "scripts" / "upload-all-zenodo-and-save-dois.py"
+    spec = importlib.util.spec_from_file_location("upload_all_zenodo", script)
+    assert spec and spec.loader
+    upload_script = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(upload_script)
+
+    commands = [
+        line.split(f"python scripts/{script.name}", 1)[1].split()
+        for line in render_artifacts_workflow().splitlines()
+        if f"run: python scripts/{script.name}" in line
+    ]
+    assert commands
+    for arguments in commands:
+        monkeypatch.setattr(sys, "argv", [script.name, *arguments])
+        # argparse exits with status 2 on an unknown flag
+        upload_script.parse_args()
 
 
 def test_optional_kindle_check_cannot_fail_the_release() -> None:

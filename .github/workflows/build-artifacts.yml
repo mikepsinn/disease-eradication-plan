@@ -202,7 +202,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild 1-pct-treaty-impact
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py 1-pct-treaty-impact
 
 
   build-1-percent-treaty:
@@ -327,7 +328,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild 1-percent-treaty
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py 1-percent-treaty
 
 
   build-algorithmic-public-administration:
@@ -452,7 +454,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild algorithmic-public-administration
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py algorithmic-public-administration
 
 
   build-cost-of-change:
@@ -577,7 +580,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild cost-of-change
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py cost-of-change
 
 
   build-court-of-humanity:
@@ -702,7 +706,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild court-of-humanity
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py court-of-humanity
 
 
   build-dfda-impact:
@@ -827,7 +832,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-impact
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py dfda-impact
 
 
   build-dfda-spec:
@@ -952,7 +958,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-spec
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py dfda-spec
 
 
   build-drug-development-cost:
@@ -1077,7 +1084,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild drug-development-cost
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py drug-development-cost
 
 
   build-earth-optimization-prize:
@@ -1202,7 +1210,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild earth-optimization-prize
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py earth-optimization-prize
 
 
   build-earth-optimization-prize-protocol:
@@ -1327,7 +1336,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild earth-optimization-prize-protocol
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py earth-optimization-prize-protocol
 
 
   build-gdp-trajectories:
@@ -1452,7 +1462,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild gdp-trajectories
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py gdp-trajectories
 
 
   build-humanity-v-government:
@@ -1577,7 +1588,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild humanity-v-government
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py humanity-v-government
 
 
   build-i-am-retarded:
@@ -1702,7 +1714,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild i-am-retarded
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py i-am-retarded
 
 
   build-iab:
@@ -1827,7 +1840,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild iab
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py iab
 
 
   build-invisible-graveyard:
@@ -1952,7 +1966,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild invisible-graveyard
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py invisible-graveyard
 
 
   build-joke:
@@ -2077,7 +2092,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild joke
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py joke
 
 
   build-loving-takeover:
@@ -2202,7 +2218,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild loving-takeover
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py loving-takeover
 
 
   build-manual-paperback:
@@ -2453,7 +2470,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild obg
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py obg
 
 
   build-opg:
@@ -2578,7 +2596,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild opg
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py opg
 
 
   build-optimocracy:
@@ -2703,7 +2722,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild optimocracy
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py optimocracy
 
 
   build-organized-violence-tax:
@@ -2828,7 +2848,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild organized-violence-tax
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py organized-violence-tax
 
 
   build-political-dysfunction-tax:
@@ -2953,7 +2974,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild political-dysfunction-tax
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py political-dysfunction-tax
 
 
   build-right-to-trial:
@@ -3078,7 +3100,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild right-to-trial
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py right-to-trial
 
 
   build-right-to-trial-impact:
@@ -3322,7 +3345,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild survey-to-end-war-and-disease
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py survey-to-end-war-and-disease
 
 
   build-us-efficiency-audit:
@@ -3447,7 +3471,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild us-efficiency-audit
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py us-efficiency-audit
 
 
   build-wishocracy:
@@ -3572,7 +3597,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishocracy
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py wishocracy
 
 
   build-wishonias-wager:
@@ -3697,7 +3723,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishonias-wager
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py wishonias-wager
 
 
 
