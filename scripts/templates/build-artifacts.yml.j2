@@ -24,7 +24,8 @@ permissions:
 
 concurrency:
   group: "artifact-builds-{% raw %}${{ github.ref }}{% endraw %}"
-  cancel-in-progress: true
+  # The nightly run waits, so it never cuts off a manual run halfway through its Zenodo uploads
+  cancel-in-progress: {% raw %}${{ github.event_name != 'schedule' }}{% endraw %}
 
 jobs:
   changes:

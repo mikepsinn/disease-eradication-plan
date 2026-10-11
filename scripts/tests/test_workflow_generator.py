@@ -166,6 +166,8 @@ def test_artifacts_build_nightly_and_only_explicit_runs_reach_zenodo() -> None:
 
     assert "schedule:" in workflow
     assert "refs/heads/master" not in workflow
+    # A nightly run must queue behind a manual Zenodo run, not cancel it
+    assert "cancel-in-progress: ${{ github.event_name != 'schedule' }}" in workflow
     zenodo_conditions = [
         line.strip()
         for line in workflow.splitlines()
