@@ -138,6 +138,60 @@ def test_pdf_llm_validation_is_explicitly_opt_in() -> None:
         assert all(line == expected for line in key_lines)
 
 
+def render_artifacts_workflow() -> str:
+    return generate_workflow(PROJECT_ROOT, extract_artifact_job_configs(PROJECT_ROOT), "build-artifacts.yml.j2")
+
+
+def test_kdp_book_builds_artifacts_but_never_deploys_or_goes_to_zenodo() -> None:
+    artifact_jobs = {job.config_name: job for job in extract_artifact_job_configs(PROJECT_ROOT)}
+    book = artifact_jobs["manual-paperback"]
+
+    assert "manual-paperback" not in {job.config_name for job in extract_deploy_job_configs(PROJECT_ROOT)}
+    assert not book.upload_to_zenodo
+    assert book.artifact_render_format is None
+    assert [file.name for file in book.kdp_files] == [
+        "How-to-End-War-and-Disease.epub",
+        "How-to-End-War-and-Disease-ebook-cover.jpg",
+        "How-to-End-War-and-Disease-Paperback.pdf",
+        "How-to-End-War-and-Disease-Paperback.docx",
+    ]
+    # render-quarto.py fixes the EPUB for Kindle in assets/, not in _build_temp/
+    assert book.kdp_files[0].source == "assets/epubs/How-to-End-War-and-Disease.epub"
+    assert all(not job.kdp_files for name, job in artifact_jobs.items() if name != "manual-paperback")
+
+
+def test_artifacts_build_nightly_and_only_explicit_runs_reach_zenodo() -> None:
+    workflow = render_artifacts_workflow()
+
+    assert "schedule:" in workflow
+    assert "refs/heads/master" not in workflow
+    zenodo_conditions = [
+        line.strip()
+        for line in workflow.splitlines()
+        if line.strip().startswith("if:") and "publish_zenodo" in line
+    ]
+    assert zenodo_conditions
+    assert all(
+        condition == "if: startsWith(github.ref, 'refs/tags/v') "
+        "|| (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)"
+        for condition in zenodo_conditions
+    )
+    for job in extract_artifact_job_configs(PROJECT_ROOT):
+        build_job = workflow[workflow.index(f"  build-{job.config_name}:"):]
+        assert build_job.index("needs: changes") < build_job.index("if: needs.changes.outputs.build == 'true'")
+
+
+def test_optional_kindle_check_cannot_fail_the_release() -> None:
+    workflow = render_artifacts_workflow()
+    kindle_job = workflow[workflow.index("  check-kindle-manual-paperback:"):workflow.index("  release-builds:")]
+    release_job = workflow[workflow.index("  release-builds:"):]
+
+    assert "continue-on-error: true" in kindle_job
+    assert "      - check-kindle-manual-paperback\n" in release_job
+    assert 'select(.key | startswith("build-"))' in release_job
+    assert "github.event_name != 'pull_request'" in release_job
+
+
 def test_checked_in_workflows_match_their_generators() -> None:
     workflow_cases = (
         (

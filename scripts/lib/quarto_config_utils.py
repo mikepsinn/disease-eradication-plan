@@ -52,7 +52,6 @@ NON_PAPER_CONFIGS: Set[str] = {
 
 # Configs that never get a deploy or artifact workflow job
 NON_DEPLOYABLE_CONFIGS: Set[str] = {
-    "manual-paperback", # Paperback/PDF/EPUB render config
     "test",             # Test config
     "shared-defaults",  # Template file
 }

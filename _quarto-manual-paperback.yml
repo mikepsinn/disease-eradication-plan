@@ -13,6 +13,8 @@ dih-render:
   docx-output-file: "How-to-End-War-and-Disease-Paperback.docx"
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
   strip-bib-fields: [abstract, note]
+  # The book goes to KDP, not Zenodo
+  zenodo: false
 
 # Podcast-specific overrides (used by generate_audiobook.py RSS generation)
 dih-podcast:
@@ -36,8 +38,8 @@ dih-podcast:
     paint chips with food until they forget paint chips were ever an
     option.
 
-    The universe is literally offering you infinite money and eternal
-    life, and you're thinking about it. This is why aliens don't visit.
+    The universe is offering you a world without war and disease, and
+    you're thinking about it. This is why aliens don't visit.
   description-suffix: "Vote to redirect 1% of the murder budget to medicine. It takes 15 seconds and mass participation makes the treaty politically unavoidable.\n\nhttps://warondisease.org"
 
 book:

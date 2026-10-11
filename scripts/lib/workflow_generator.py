@@ -20,6 +20,8 @@ from typing import List
 logger = logging.getLogger("dih.workflow")
 
 DOWNLOADABLE_FORMATS = ("pdf", "epub", "docx")
+# Configs whose outputs are uploaded to Amazon KDP by hand
+KDP_CONFIGS = ("manual-paperback",)
 GENERATED_WORKFLOW_HEADER = """# AUTO-GENERATED FILE. DO NOT EDIT DIRECTLY.
 # Source: scripts/templates/{template_name}
 # Generator: scripts/lib/workflow_generator.py
@@ -45,6 +47,14 @@ except ModuleNotFoundError:
 
 
 @dataclass
+class ReleaseFile:
+    """A built file and the name it gets in the GitHub release."""
+    source: str                   # "assets/epubs/How-to-End-War-and-Disease.epub"
+    name: str                     # "How-to-End-War-and-Disease.epub"
+    kdp_use: str                  # "Kindle eBook manuscript"
+
+
+@dataclass
 class JobConfig:
     """Workflow job configuration extracted from Quarto config."""
     config_name: str              # "economics"
@@ -61,6 +71,8 @@ class JobConfig:
     deploy_to_cloudflare: bool    # True when cloudflare-pages-project is configured
     # Member paper configs whose PDFs a papers site renders and bundles
     paper_pdf_configs: List[str] = field(default_factory=list)
+    # Files to upload to Amazon KDP; empty for every config but the book
+    kdp_files: List[ReleaseFile] = field(default_factory=list)
 
     @classmethod
     def from_quarto_config(cls, config_path: Path) -> "JobConfig":
@@ -109,6 +121,7 @@ class JobConfig:
         ]
         if paper_pdf_configs:
             timeout += 15 * len(paper_pdf_configs)
+        kdp_files = infer_kdp_files(config_name, config)
 
         return cls(
             config_name=config_name,
@@ -124,7 +137,31 @@ class JobConfig:
             upload_to_zenodo=upload_zenodo,
             deploy_to_cloudflare=deploy_to_cloudflare,
             paper_pdf_configs=paper_pdf_configs,
+            kdp_files=kdp_files,
         )
+
+
+def infer_kdp_files(config_name: str, config: dict) -> List[ReleaseFile]:
+    """
+    List the KDP upload files where render-quarto.py leaves them.
+
+    render-quarto.py copies each output to assets/ and fixes the EPUB there
+    for Kindle, so the copies in assets/ are the ones to upload.
+    """
+    if config_name not in KDP_CONFIGS:
+        return []
+
+    formats = config['format']
+    pdf_name = formats['pdf']['output-file']
+    epub_name = formats['epub']['output-file']
+    docx_name = config.get('dih-render', {}).get('docx-output-file') or formats['docx']['output-file']
+    cover = Path(formats['epub']['epub-cover-image'])
+    return [
+        ReleaseFile(f"assets/epubs/{epub_name}", epub_name, "Kindle eBook manuscript"),
+        ReleaseFile(cover.as_posix(), f"{Path(epub_name).stem}-ebook-cover{cover.suffix}", "Kindle eBook cover"),
+        ReleaseFile(f"assets/pdfs/{pdf_name}", pdf_name, "Paperback manuscript (interior)"),
+        ReleaseFile(f"assets/docx/{docx_name}", docx_name, "Editable copy (not needed for KDP)"),
+    ]
 
 
 def infer_artifact_render_format(
@@ -150,6 +187,9 @@ def derive_display_name(config_name: str, title: str) -> str:
     """Derive job display name from config name and title."""
     if config_name == "book":
         return "Build Main Book (HTML + PDF + EPUB)"
+    elif config_name in KDP_CONFIGS:
+        # The website job already uses the book title
+        return "Build KDP Book Files (EPUB + PDF + DOCX)"
     elif title:
         # Use title if available
         return f"Build {title[:50]}"  # Limit length
@@ -164,6 +204,8 @@ def infer_timeout(config_name: str, project_type: str) -> int:
         return 75  # HTML + PDF + EPUB
     elif config_name == "manual":
         return 75  # Large multi-format build
+    elif config_name in KDP_CONFIGS:
+        return 150  # Whole book three times: EPUB, PDF, and DOCX
     else:
         return 30  # Standard papers and larger papers
 

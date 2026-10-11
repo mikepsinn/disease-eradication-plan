@@ -34,7 +34,20 @@ Output lands in `_build_temp/<config>/`. A local build can sweep in stray, gitig
 
 ## Downloadable artifacts
 
-`.github/workflows/build-artifacts.yml` builds the PDFs, EPUBs, and DOCX files and uploads papers to Zenodo. It runs on manual dispatch, or on a push to `master`; the default branch is `develop`, so in practice it runs when someone starts it.
+`.github/workflows/build-artifacts.yml` (generated from `scripts/templates/build-artifacts.yml.j2`) builds the paper PDFs and the book's KDP files, then puts them on a GitHub release.
+
+| Trigger | Builds | Release | Zenodo |
+|---|---|---|---|
+| Nightly from `develop` | Only if a file that can change an output changed since the last successful run | `latest-builds` | No |
+| Manual dispatch | Always | `latest-builds` | Only with "Also upload the paper PDFs to Zenodo" checked |
+| Push of a `v*` tag | Always | A release named after the tag | Yes |
+| Pull request that changes the workflow | Always, as a test | None | No |
+
+Uploads keep the file names, so `https://github.com/mikepsinn/disease-eradication-plan/releases/download/latest-builds/<file>` always points at the newest build. If one paper fails, the release still gets every other file and the run turns red.
+
+The book job renders `_quarto-manual-paperback.yml` and releases the files KDP takes: the EPUB (Kindle-fixed by `render-quarto.py`), the eBook cover, the 7x10 paperback interior PDF, and a DOCX. The paperback cover (back, spine, and front in one PDF) is not built; make it with KDP Cover Creator. A Windows job then tries to turn the EPUB into a KPF with Kindle Previewer. Kindle Previewer writes a KPF only when Enhanced Typesetting works, so a missing KPF is a warning about the EPUB, and the job never blocks the release.
+
+The Zenodo step publishes each paper that passes LLM PDF validation, which runs only when the `LLM_VALIDATION` secret is `true`.
 
 ## When a run fails
 

@@ -4,23 +4,86 @@
 # Make changes in the source template or generator, then regenerate.
 
 on:
+  schedule:
+    # Nightly from develop; the changes job ends the run when nothing changed
+    - cron: "17 8 * * *"
   workflow_dispatch:
+    inputs:
+      publish_zenodo:
+        description: "Also upload the paper PDFs to Zenodo"
+        type: boolean
+        default: false
   push:
-    branches: [master]
+    # A version tag builds an edition and uploads the papers to Zenodo
+    tags: ["v*"]
+  pull_request:
+    branches: [develop]
+    paths:
+      - .github/workflows/build-artifacts.yml
 
 name: Build Downloadable Artifacts
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
-  group: "artifact-builds"
+  group: "artifact-builds-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
+  changes:
+    name: "Check for changes since the last build"
+    runs-on: ubuntu-latest
+    outputs:
+      build: ${{ steps.check.outputs.build }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compare with the last successful build
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # Only the nightly run skips; a manual run, a tag, or a workflow change always builds
+          if [ "$GITHUB_EVENT_NAME" != "schedule" ]; then
+            echo "build=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          last_sha="$(gh run list --workflow build-artifacts.yml --branch "$GITHUB_REF_NAME" --status success --limit 1 --json headSha --jq '.[0].headSha // ""')"
+          if [ -z "$last_sha" ]; then
+            echo "No earlier successful build."
+            echo "build=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if ! git fetch --no-tags --depth=1 origin "$last_sha"; then
+            echo "Cannot fetch $last_sha."
+            echo "build=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # A failed diff must stop the step, not read as "nothing changed"
+          changed="$(git diff --name-only "$last_sha" HEAD)"
+          build=false
+          while IFS= read -r path; do
+            case "$path" in
+              .github/workflows/build-artifacts.yml) build=true ;;
+              # Agent, CI, hook, and guide files cannot change a build
+              .claude/*|.github/*|.husky/*|GUIDES/*) ;;
+              */*) build=true ;;
+              # Top-level notes such as AGENTS.md and todo.md
+              *.md) ;;
+              "") ;;
+              *) build=true ;;
+            esac
+          done <<< "$changed"
+          echo "Last successful build: $last_sha. Build needed: $build"
+          echo "build=$build" >> "$GITHUB_OUTPUT"
 
   build-1-pct-treaty-impact:
     name: "Build The 1% Treaty: An Incentive-Compatible Approach to"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -96,12 +159,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-1-pct-treaty-impact
           path: _build_temp/1-pct-treaty-impact/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -133,16 +198,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The 1% Treaty: An Incentive-Compatible Approach to PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The 1% Treaty: An Incentive-Compatible Approach to PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild 1-pct-treaty-impact
 
 
-
   build-1-percent-treaty:
     name: "Build The 1% Treaty"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -218,12 +284,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-1-percent-treaty
           path: _build_temp/1-percent-treaty/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -255,16 +323,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The 1% Treaty PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The 1% Treaty PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild 1-percent-treaty
 
 
-
   build-algorithmic-public-administration:
     name: "Build Algorithmic Public Administration: A Protocol for "
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -340,12 +409,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-algorithmic-public-administration
           path: _build_temp/algorithmic-public-administration/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -377,16 +448,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Algorithmic Public Administration: A Protocol for  PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Algorithmic Public Administration: A Protocol for  PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild algorithmic-public-administration
 
 
-
   build-cost-of-change:
     name: "Build How Much Does It Cost to Buy All the Governments?"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -462,12 +534,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-cost-of-change
           path: _build_temp/cost-of-change/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -499,16 +573,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build How Much Does It Cost to Buy All the Governments? PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build How Much Does It Cost to Buy All the Governments? PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild cost-of-change
 
 
-
   build-court-of-humanity:
     name: "Build The Court of Humanity"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -584,12 +659,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-court-of-humanity
           path: _build_temp/court-of-humanity/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -621,16 +698,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Court of Humanity PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Court of Humanity PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild court-of-humanity
 
 
-
   build-dfda-impact:
     name: "Build Ubiquitous Pragmatic Trial Impact Analysis"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -706,12 +784,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-dfda-impact
           path: _build_temp/dfda-impact/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -743,16 +823,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Ubiquitous Pragmatic Trial Impact Analysis PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Ubiquitous Pragmatic Trial Impact Analysis PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-impact
 
 
-
   build-dfda-spec:
     name: "Build The Continuous Evidence Generation Protocol: Two-S"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -828,12 +909,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-dfda-spec
           path: _build_temp/dfda-spec/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -865,16 +948,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Continuous Evidence Generation Protocol: Two-S PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Continuous Evidence Generation Protocol: Two-S PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild dfda-spec
 
 
-
   build-drug-development-cost:
     name: "Build Drug Development Cost Increase Analysis"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -950,12 +1034,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-drug-development-cost
           path: _build_temp/drug-development-cost/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -987,16 +1073,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Drug Development Cost Increase Analysis PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Drug Development Cost Increase Analysis PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild drug-development-cost
 
 
-
   build-earth-optimization-prize:
     name: "Build The Earth Optimization Prize"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1072,12 +1159,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-earth-optimization-prize
           path: _build_temp/earth-optimization-prize/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -1109,16 +1198,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Earth Optimization Prize PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Earth Optimization Prize PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild earth-optimization-prize
 
 
-
   build-earth-optimization-prize-protocol:
     name: "Build Earth Optimization Prize Protocol: Technical Speci"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1194,12 +1284,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-earth-optimization-prize-protocol
           path: _build_temp/earth-optimization-prize-protocol/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -1231,16 +1323,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Earth Optimization Prize Protocol: Technical Speci PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Earth Optimization Prize Protocol: Technical Speci PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild earth-optimization-prize-protocol
 
 
-
   build-gdp-trajectories:
     name: "Build Choose Your Own Earth: A World Without the Politic"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1316,12 +1409,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-gdp-trajectories
           path: _build_temp/gdp-trajectories/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -1353,16 +1448,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Choose Your Own Earth: A World Without the Politic PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Choose Your Own Earth: A World Without the Politic PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild gdp-trajectories
 
 
-
   build-humanity-v-government:
     name: "Build Humanity v. Government"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1438,12 +1534,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-humanity-v-government
           path: _build_temp/humanity-v-government/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -1475,16 +1573,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Humanity v. Government PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Humanity v. Government PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild humanity-v-government
 
 
-
   build-i-am-retarded:
     name: "Build I Am Retarded"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1560,12 +1659,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-i-am-retarded
           path: _build_temp/i-am-retarded/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -1597,16 +1698,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build I Am Retarded PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build I Am Retarded PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild i-am-retarded
 
 
-
   build-iab:
     name: "Build Incentive Alignment Bonds: Making Public Goods Fin"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1682,12 +1784,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-iab
           path: _build_temp/iab/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -1719,16 +1823,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Incentive Alignment Bonds: Making Public Goods Fin PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Incentive Alignment Bonds: Making Public Goods Fin PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild iab
 
 
-
   build-invisible-graveyard:
     name: "Build The Invisible Graveyard: Quantifying the Mortality"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1804,12 +1909,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-invisible-graveyard
           path: _build_temp/invisible-graveyard/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -1841,16 +1948,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Invisible Graveyard: Quantifying the Mortality PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Invisible Graveyard: Quantifying the Mortality PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild invisible-graveyard
 
 
-
   build-joke:
     name: "Build The Funniest Joke in the Universe"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -1926,12 +2034,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-joke
           path: _build_temp/joke/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -1963,16 +2073,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Funniest Joke in the Universe PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Funniest Joke in the Universe PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild joke
 
 
-
   build-loving-takeover:
     name: "Build The Loving Takeover"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2048,12 +2159,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-loving-takeover
           path: _build_temp/loving-takeover/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -2085,16 +2198,143 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Loving Takeover PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Loving Takeover PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild loving-takeover
 
 
+  build-manual-paperback:
+    name: "Build KDP Book Files (EPUB + PDF + DOCX)"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Cache Quarto freeze
+        uses: actions/cache@v4
+        with:
+          path: _freeze
+          key: quarto-freeze-manual-paperback-${{ hashFiles('**/*.qmd', '**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-manual-paperback-
+            quarto-freeze-
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Cache validation results
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: validation-cache-${{ runner.os }}-${{ hashFiles('.cache/pdf-validation-cache.json') }}
+          restore-keys: |
+            validation-cache-${{ runner.os }}-
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y graphviz
+
+      - name: Install Python dependencies
+        run: uv pip install --system -r requirements.txt
+
+      - name: Install dih_models package
+        run: uv pip install --system -e .
+
+      - name: Install Jupyter kernel
+        run: |
+          python -m ipykernel install --user --name dih-project-kernel --display-name "DIH Project"
+
+      - name: Cache TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: ~/.TinyTeX
+          key: tinytex-${{ runner.os }}-${{ hashFiles('.github/workflows/build-artifacts.yml') }}
+          restore-keys: |
+            tinytex-${{ runner.os }}-
+
+      - name: Install LaTeX
+        run: |
+          if [ ! -d ~/.TinyTeX ]; then
+            quarto install tinytex
+          fi
+          tlmgr_path="$(find ~/.TinyTeX/bin -name tlmgr -print -quit)"
+          test -n "$tlmgr_path"
+          "$tlmgr_path" update --self || true
+          "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
+
+      - name: "Render Build KDP Book Files (EPUB + PDF + DOCX)"
+        run: python scripts/render-quarto.py manual-paperback
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: ${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}
+        timeout-minutes: 150
+
+
+      - name: Collect the KDP files
+        run: |
+          mkdir -p kdp-files
+
+          cp "assets/epubs/How-to-End-War-and-Disease.epub" "kdp-files/How-to-End-War-and-Disease.epub"
+
+          cp "assets/cover/book-cover-3.jpg" "kdp-files/How-to-End-War-and-Disease-ebook-cover.jpg"
+
+          cp "assets/pdfs/How-to-End-War-and-Disease-Paperback.pdf" "kdp-files/How-to-End-War-and-Disease-Paperback.pdf"
+
+          cp "assets/docx/How-to-End-War-and-Disease-Paperback.docx" "kdp-files/How-to-End-War-and-Disease-Paperback.docx"
+
+
+      - name: Upload KDP files artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kdp-files-manual-paperback
+          path: kdp-files/
+          if-no-files-found: error
+
+
+      - name: Upload validation checklists
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-checklists-manual-paperback
+          path: pdf-validation-checklist-*.md
+          if-no-files-found: ignore
+
+      - name: Upload LaTeX logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-manual-paperback
+          path: |
+            logs/build-manual-paperback.log
+            _build_temp/manual-paperback/*.log
+            _build_temp/manual-paperback/**/*.log
+            _build_temp/manual-paperback/*.aux
+            _build_temp/manual-paperback/**/*.aux
+            _build_temp/manual-paperback/*.toc
+            _build_temp/manual-paperback/**/*.toc
+            _build_temp/manual-paperback/*.out
+            _build_temp/manual-paperback/**/*.out
+          retention-days: 7
+
+
 
   build-obg:
     name: "Build The Optimal Budget Generator: A Causal Inference P"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2170,12 +2410,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-obg
           path: _build_temp/obg/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -2207,16 +2449,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Optimal Budget Generator: A Causal Inference P PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Optimal Budget Generator: A Causal Inference P PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild obg
 
 
-
   build-opg:
     name: "Build The Optimal Policy Generator: A Causal Inference P"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2292,12 +2535,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-opg
           path: _build_temp/opg/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -2329,16 +2574,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Optimal Policy Generator: A Causal Inference P PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Optimal Policy Generator: A Causal Inference P PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild opg
 
 
-
   build-optimocracy:
     name: "Build Optimocracy: Causal Inference on Cross-Jurisdictio"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2414,12 +2660,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-optimocracy
           path: _build_temp/optimocracy/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -2451,16 +2699,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Optimocracy: Causal Inference on Cross-Jurisdictio PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Optimocracy: Causal Inference on Cross-Jurisdictio PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild optimocracy
 
 
-
   build-organized-violence-tax:
     name: "Build The Organized Violence Tax"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2536,12 +2785,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-organized-violence-tax
           path: _build_temp/organized-violence-tax/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -2573,16 +2824,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Organized Violence Tax PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Organized Violence Tax PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild organized-violence-tax
 
 
-
   build-political-dysfunction-tax:
     name: "Build The Political Dysfunction Tax"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2658,12 +2910,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-political-dysfunction-tax
           path: _build_temp/political-dysfunction-tax/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -2695,16 +2949,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Political Dysfunction Tax PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Political Dysfunction Tax PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild political-dysfunction-tax
 
 
-
   build-right-to-trial:
     name: "Build Right to Trial & FDA Upgrade Act"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2780,12 +3035,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-right-to-trial
           path: _build_temp/right-to-trial/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -2817,16 +3074,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Right to Trial & FDA Upgrade Act PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Right to Trial & FDA Upgrade Act PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild right-to-trial
 
 
-
   build-right-to-trial-impact:
     name: "Build Patient's Right to Trial Act: Potential Impact of "
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -2902,12 +3160,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-right-to-trial-impact
           path: _build_temp/right-to-trial-impact/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -2940,9 +3200,10 @@ jobs:
 
 
 
-
   build-survey-to-end-war-and-disease:
     name: "Build The Survey to End War and Disease"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -3018,12 +3279,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-survey-to-end-war-and-disease
           path: _build_temp/survey-to-end-war-and-disease/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -3055,16 +3318,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build The Survey to End War and Disease PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build The Survey to End War and Disease PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild survey-to-end-war-and-disease
 
 
-
   build-us-efficiency-audit:
     name: "Build United States Efficiency Audit"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -3140,12 +3404,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-us-efficiency-audit
           path: _build_temp/us-efficiency-audit/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -3177,16 +3443,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build United States Efficiency Audit PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build United States Efficiency Audit PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild us-efficiency-audit
 
 
-
   build-wishocracy:
     name: "Build Wishocracy: Solving the Democratic Principal-Agent"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -3262,12 +3529,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-wishocracy
           path: _build_temp/wishocracy/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -3299,16 +3568,17 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Wishocracy: Solving the Democratic Principal-Agent PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Wishocracy: Solving the Democratic Principal-Agent PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishocracy
 
 
-
   build-wishonias-wager:
     name: "Build Wishonia's Wager: Any Finite Action Is Rational Wh"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -3384,12 +3654,14 @@ jobs:
         timeout-minutes: 30
 
 
+
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-wishonias-wager
           path: _build_temp/wishonias-wager/**/*.pdf
           if-no-files-found: error
+
 
 
 
@@ -3421,20 +3693,82 @@ jobs:
           retention-days: 7
 
 
-      - name: "Upload Build Wishonia's Wager: Any Finite Action Is Rational Wh PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload Build Wishonia's Wager: Any Finite Action Is Rational Wh PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild wishonias-wager
 
 
 
+  check-kindle-manual-paperback:
+    name: "Check the EPUB in Kindle Previewer"
+    needs: build-manual-paperback
+    runs-on: windows-latest
+    # Kindle Previewer has no Linux build and no documented silent install,
+    # so a failure here warns but never blocks the release
+    continue-on-error: true
+    timeout-minutes: 30
+    steps:
+      - name: Download the KDP files
+        uses: actions/download-artifact@v4
+        with:
+          name: kdp-files-manual-paperback
+          path: kdp-files
+
+      - name: Install Kindle Previewer
+        shell: pwsh
+        run: |
+          Invoke-WebRequest -Uri "https://d2bzeorukaqrvt.cloudfront.net/KindlePreviewerInstaller.exe" -OutFile KindlePreviewerInstaller.exe
+          Start-Process -FilePath .\KindlePreviewerInstaller.exe -ArgumentList "/S" -Wait
+          $previewer = Join-Path $env:LOCALAPPDATA "Amazon\Kindle Previewer 3\Kindle Previewer 3.exe"
+          if (-not (Test-Path $previewer)) {
+            Get-ChildItem -Path $env:LOCALAPPDATA, $env:ProgramFiles -Filter "Kindle Previewer*" -Recurse -Depth 3 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
+            throw "Kindle Previewer is not at $previewer"
+          }
+          "KINDLE_PREVIEWER=$previewer" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+
+      - name: Convert the EPUB to KPF
+        shell: pwsh
+        timeout-minutes: 15
+        run: |
+          $epub = Get-ChildItem kdp-files -Filter *.epub | Select-Object -First 1
+          $output = New-Item -ItemType Directory -Force -Path kindle-output
+          $process = Start-Process -FilePath $env:KINDLE_PREVIEWER -ArgumentList "`"$($epub.FullName)`"", "-convert", "-output", "`"$($output.FullName)`"" -Wait -PassThru
+          Write-Host "Kindle Previewer exit code: $($process.ExitCode)"
+          $summary = Join-Path $output.FullName "Summary_Log.csv"
+          if (Test-Path $summary) { Get-Content $summary }
+          # Kindle Previewer writes a KPF only when Enhanced Typesetting works
+          $kpf = Get-ChildItem $output.FullName -Recurse -Filter *.kpf | Select-Object -First 1
+          if (-not $kpf) {
+            throw "Kindle Previewer made no KPF, so Enhanced Typesetting is probably off. See Summary_Log.csv."
+          }
+          New-Item -ItemType Directory -Force -Path kindle-kpf | Out-Null
+          Copy-Item $kpf.FullName (Join-Path kindle-kpf "$($epub.BaseName).kpf")
+
+      - name: Upload the KPF
+        uses: actions/upload-artifact@v4
+        with:
+          name: kindle-kpf-manual-paperback
+          path: kindle-kpf/*.kpf
+          if-no-files-found: error
+
+      - name: Upload Kindle Previewer logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kindle-previewer-logs-manual-paperback
+          path: kindle-output/
+          if-no-files-found: ignore
+
 
   release-builds:
-    name: "Release PDFs, EPUBs, and DOCX"
-    if: github.ref == 'refs/heads/master'
+    name: "Release PDFs, EPUBs, DOCX, and KDP files"
+    # Release whatever built, even when one paper fails; the last step still fails the run
+    if: ${{ !cancelled() && needs.changes.outputs.build == 'true' && github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest
     needs:
+      - changes
 
       - build-1-pct-treaty-impact
 
@@ -3470,6 +3804,8 @@ jobs:
 
       - build-loving-takeover
 
+      - build-manual-paperback
+
       - build-obg
 
       - build-opg
@@ -3492,6 +3828,9 @@ jobs:
 
       - build-wishonias-wager
 
+
+      - check-kindle-manual-paperback
+
     permissions:
       contents: write
     steps:
@@ -3500,24 +3839,71 @@ jobs:
         with:
           path: release-files
 
-      - name: Create GitHub release with build artifacts
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: latest-builds
-          name: Latest Builds
-          body: |
-            Auto-generated downloadable artifacts from the latest master build.
+      - name: Publish the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          # The nightly build refreshes latest-builds; a version tag gets its own release
+          tag=latest-builds
+          title="Latest Builds"
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            tag="$GITHUB_REF_NAME"
+            title="$GITHUB_REF_NAME"
+          fi
 
-            **Built:** ${{ github.event.head_commit.timestamp || github.run_id }}
-            **Commit:** ${{ github.sha }}
+          cat > release-notes.md <<NOTES
+          Built from commit $GITHUB_SHA on $(date -u +%Y-%m-%d).
 
-            ## Available Formats
-            - **PDFs**: Individual papers and books
-            - **EPUBs**: E-reader formats
-            - **DOCX**: Editable document exports
-          files: |
-            release-files/**/*.pdf
-            release-files/**/*.epub
-            release-files/**/*.docx
-          prerelease: false
-          make_latest: true
+
+          ## Upload to Amazon KDP
+
+          | File | KDP field |
+          |---|---|
+          | How-to-End-War-and-Disease.epub | Kindle eBook manuscript |
+          | How-to-End-War-and-Disease-ebook-cover.jpg | Kindle eBook cover |
+          | How-to-End-War-and-Disease-Paperback.pdf | Paperback manuscript (interior) |
+          | How-to-End-War-and-Disease-Paperback.docx | Editable copy (not needed for KDP) |
+
+          A .kpf file is here only when Kindle Previewer could convert the EPUB with Enhanced Typesetting. You can upload either the .kpf or the .epub as the Kindle eBook manuscript.
+
+          The paperback cover (back, spine, and front in one PDF) is not built yet. Make it with KDP Cover Creator.
+
+
+          ## Papers
+
+          The other PDFs are the papers.
+          NOTES
+
+          shopt -s nullglob
+          files=()
+          for dir in release-files/pdfs-* release-files/epubs-* release-files/docx-* release-files/kdp-files-* release-files/kindle-kpf-*; do
+            while IFS= read -r -d '' file; do
+              files+=("$file")
+            done < <(find "$dir" -type f -print0)
+          done
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "::error::No build produced a file to release."
+            exit 1
+          fi
+
+          if gh release view "$tag" > /dev/null 2>&1; then
+            gh release edit "$tag" --title "$title" --notes-file release-notes.md
+          else
+            gh release create "$tag" --target "$GITHUB_SHA" --title "$title" --notes-file release-notes.md
+          fi
+          # --clobber replaces files of the same name, so download links stay the same
+          gh release upload "$tag" "${files[@]}" --clobber
+          echo "Released ${#files[@]} files to $tag"
+
+
+      - name: Fail the run if a build failed
+        env:
+          NEEDS: ${{ toJSON(needs) }}
+        run: |
+          # The Kindle Previewer check is optional, so only the build jobs count
+          failed="$(jq -r 'to_entries[] | select(.key | startswith("build-")) | select(.value.result != "success") | .key' <<< "$NEEDS")"
+          if [ -n "$failed" ]; then
+            echo "::error::These builds failed, so their files in the release are old or missing: $(echo $failed)"
+            exit 1
+          fi
