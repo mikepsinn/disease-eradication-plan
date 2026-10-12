@@ -40,13 +40,13 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 This appendix documents all 446 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 150
-- Calculated values: 222
+- External sources (peer-reviewed): 149
+- Calculated values: 223
 - Core definitions: 74
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (222 parameters) • [External Data Sources](#sec-external) (150 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
+[Calculated Values](#sec-calculated) (223 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -555,8 +555,6 @@ Rate_{part} \\
 \end{gathered}
 $$
 
-**Methodology**: [@clinical-trial-patient-participation-rate]
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -782,6 +780,52 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_median_after_tax_income_year_20.qmd >}}
+
+:::
+
+### Current Trial Participation Rate Among Willing Patients: 0.177% {#sec-current_willing_patient_participation_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual clinical trial slots per patient willing to join a drug trial (1.9M slots / 1.08B willing patients). A capacity ratio, not a measured enrollment share: not every slot goes to a willing chronic-disease patient
+
+**Inputs**:
+
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
+- [Global Patients Willing to Participate in Clinical Trials](#sec-willing_trial_participants_global) 🔢: 1.08 billion people
+
+$$
+\begin{gathered}
+Rate_{part,willing} \\
+= \frac{Slots_{curr}}{N_{willing}} \\
+= \frac{1.9M}{1.08B} \\
+= 0.177\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_willing_patient_participation_rate.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_willing_patient_participation_rate.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_willing_patient_participation_rate.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_willing_patient_participation_rate.qmd >}}
 
 :::
 
@@ -18452,18 +18496,6 @@ Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. Studi
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Current clinical trial participation rate (0.06% of population)
-
-**Source**: [@clinical-trial-patient-participation-rate]
 
 *✓ High confidence*
 

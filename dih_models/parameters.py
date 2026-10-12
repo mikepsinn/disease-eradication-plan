@@ -2106,7 +2106,6 @@ CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
 CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
     CURRENT_TRIAL_SLOTS_AVAILABLE / CURRENT_DISEASE_PATIENTS_GLOBAL,
     manual_ref="knowledge/problem.qmd",
-    source_ref="clinical-trial-patient-participation-rate",
     source_type="calculated",
     description="Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
     display_name="Current Patient Participation Rate in Clinical Trials",
@@ -10025,18 +10024,6 @@ DEFENSE_SECTOR_RETENTION_PCT = Parameter(
     latex_symbol=r"Retain_{def}",  # LaTeX symbol for equations
 )  # 99% retention
 
-CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
-    0.0006,
-    manual_ref="knowledge/solution/dfda.qmd",
-    source_ref=ReferenceID.CLINICAL_TRIAL_PATIENT_PARTICIPATION_RATE,
-    source_type="external",
-    description="Current clinical trial participation rate (0.06% of population)",
-    display_name="Current Clinical Trial Participation Rate",
-    unit="rate",
-    keywords=["0%", "rct", "people", "clinical study", "clinical trial", "research trial", "randomized controlled trial"],
-    latex_symbol=r"Rate_{part,curr}",  # LaTeX symbol for equations
-)  # 0.06% participation
-
 PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT = Parameter(
     0.448,
     manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
@@ -10066,6 +10053,21 @@ WILLING_TRIAL_PARTICIPANTS_GLOBAL = Parameter(
     compute=lambda ctx: ctx["CURRENT_DISEASE_PATIENTS_GLOBAL"] * ctx["PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT"],
     latex_symbol=r"N_{willing}",  # LaTeX symbol for equations
 )  # 1.075 billion willing participants
+
+CURRENT_WILLING_PATIENT_PARTICIPATION_RATE = Parameter(
+    CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
+    source_type="calculated",
+    description="Annual clinical trial slots per patient willing to join a drug trial (1.9M slots / 1.08B willing patients). A capacity ratio, not a measured enrollment share: not every slot goes to a willing chronic-disease patient",
+    display_name="Current Trial Participation Rate Among Willing Patients",
+    unit="rate",
+    formula="CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL",
+    confidence="medium",
+    keywords=["0.18%", "1 in 566", "willing", "access", "participation", "trial slots", "clinical trial"],
+    inputs=['CURRENT_TRIAL_SLOTS_AVAILABLE', 'WILLING_TRIAL_PARTICIPANTS_GLOBAL'],
+    compute=lambda ctx: ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"] / ctx["WILLING_TRIAL_PARTICIPANTS_GLOBAL"],
+    latex_symbol=r"Rate_{part,willing}",  # LaTeX symbol for equations
+)  # 0.18% of willing patients get a trial slot (1 in 566)
 
 DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL = Parameter(
     WILLING_TRIAL_PARTICIPANTS_GLOBAL / CURRENT_TRIAL_SLOTS_AVAILABLE,
