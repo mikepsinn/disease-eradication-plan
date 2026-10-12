@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 221 parameters used in the analysis, organized by type:
+This appendix documents all 223 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 83
-- Calculated values: 99
+- Calculated values: 101
 - Core definitions: 39
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (99 parameters) • [External Data Sources](#sec-external) (83 parameters) • [Core Definitions](#sec-definitions) (39 parameters)
+[Calculated Values](#sec-calculated) (101 parameters) • [External Data Sources](#sec-external) (83 parameters) • [Core Definitions](#sec-definitions) (39 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -320,8 +320,6 @@ Rate_{part} \\
 \end{gathered}
 $$
 
-**Methodology**: [@clinical-trial-patient-participation-rate]
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -337,6 +335,52 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_patient_participation_rate.qmd >}}
+
+:::
+
+### Current Trial Participation Rate Among Willing Patients: 0.177% {#sec-current_willing_patient_participation_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share of patients willing to join clinical trials who get a trial slot each year (1.9M slots / 1.08B willing patients)
+
+**Inputs**:
+
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
+- [Global Patients Willing to Participate in Clinical Trials](#sec-willing_trial_participants_global) 🔢: 1.08 billion people
+
+$$
+\begin{gathered}
+Rate_{part,willing} \\
+= \frac{Slots_{curr}}{N_{willing}} \\
+= \frac{1.9M}{1.08B} \\
+= 0.177\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_willing_patient_participation_rate.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_willing_patient_participation_rate.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_willing_patient_participation_rate.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_willing_patient_participation_rate.qmd >}}
 
 :::
 
@@ -7315,6 +7359,44 @@ $$
 
 :::
 
+### Global Patients Willing to Participate in Clinical Trials: 1.08 billion people {#sec-willing_trial_participants_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global chronic disease patients willing to participate in trials (2.4B × 44.8%)
+
+**Inputs**:
+
+- [Global Population with Chronic Diseases](#sec-current_disease_patients_global) 📊: 2.4 billion people (95% CI: 2 billion people - 2.8 billion people)
+- [Patient Willingness to Participate in Clinical Trials](#sec-patient_willingness_trial_participation_pct) 📊: 44.8% (95% CI: 40% - 50%)
+
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-willing_trial_participants_global.qmd >}}
+
+{{< include ../figures/sensitivity-table-willing_trial_participants_global.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-willing_trial_participants_global.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-willing_trial_participants_global.qmd >}}
+
+:::
+
 ## External Data Sources {#sec-external}
 
 Parameters sourced from peer-reviewed publications, institutional databases, and authoritative reports.
@@ -7438,18 +7520,6 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 Current active trials at any given time (3-5 year duration)
 
 **Source**: [@clinicaltrials-gov-enrollment-data-2025]
-
-*✓ High confidence*
-
-:::
-
-### Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Current clinical trial participation rate (0.06% of population)
-
-**Source**: [@clinical-trial-patient-participation-rate]
 
 *✓ High confidence*
 
@@ -8580,6 +8650,30 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 #### Input Distribution
 
 {{< include ../figures/distribution-nih_standard_research_cost_per_qaly.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
+### Patient Willingness to Participate in Clinical Trials: 44.8% {#sec-patient_willingness_trial_participation_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)
+
+**Source**: [@patient-willingness-clinical-trials]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [40%, 50%] • Distribution: Normal (SE: 2.5%)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 40% and 50% (±11%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-patient_willingness_trial_participation_pct.qmd >}}
 
 *~ Medium confidence*
 

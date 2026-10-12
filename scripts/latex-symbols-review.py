@@ -115,9 +115,8 @@ SYMBOLS = {
     # CPI (1)
     "CPI_MULTIPLIER_1980_TO_2024": r"CPI_{80-24}",  # FIXED
 
-    # CURRENT (11)
+    # CURRENT (10)
     "CURRENT_ACTIVE_TRIALS": r"Trials_{active}",  # FIXED
-    "CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE": r"Rate_{part,curr}",  # FIXED
     "CURRENT_COMBINATION_EXPLORATION_YEARS": r"T_{explore,combo}",  # FIXED
     "CURRENT_DISEASE_PATIENTS_GLOBAL": r"N_{patients}",  # FIXED
     "CURRENT_DRUG_APPROVALS_PER_YEAR": r"Drugs_{ann,curr}",  # FIXED

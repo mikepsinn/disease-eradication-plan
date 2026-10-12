@@ -54,7 +54,7 @@ do: "Cite this analysis as the backing for the cost-effectiveness numbers, then 
 
 There are {{< var safe_compounds_count >}} that have already been proven safe for human consumption. There are {{< var diseases_without_effective_treatment >}} with zero approved treatments. The number of possible combinations between those safe compounds and those untreated diseases is {{< var drug_disease_combinations_possible >}}. The fraction that has actually been tested is {{< var exploration_ratio >}}. At the current rate of {{< var new_disease_first_treatments_per_year_nounit >}} per year, testing the rest would take ~{{< var status_quo_queue_clearance_years >}}. Your species is sitting on a combinatorial goldmine of potential cures and has chosen to explore it with a teaspoon.
 
-Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available_nounit >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
+Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available_nounit >}} participate in trials annually ({{< var current_patient_participation_rate >}}).
 
 **The Solution:** An open protocol for embedded pragmatic trials [@dfda-spec-paper-2025]: the learning-health-system model that PCORnet already runs at small scale (ADAPTABLE was a PCORnet trial [@adaptable-trial]), given a common standard that existing DCT platforms, EHRs, and health apps adopt, like HTTP or FHIR rather than a platform. The protocol enables:
 
@@ -124,7 +124,7 @@ A disease that would receive its first effective treatment in year 200 under the
 
 **Total timeline shift:** {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} = {{< var dfda_trial_capacity_treatment_acceleration_years >}} + {{< var efficacy_lag_years >}}
 
-**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dfda_annual_trial_funding >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the protocol enables {{< var dfda_patients_fundable_annually_nounit >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. Currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
+**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dfda_annual_trial_funding >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the protocol enables {{< var dfda_patients_fundable_annually_nounit >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. Currently only {{< var current_willing_patient_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 ## Capabilities
 

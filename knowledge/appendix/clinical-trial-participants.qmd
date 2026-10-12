@@ -90,7 +90,7 @@ Or **~5 million** if counting all clinical research (observational, device, beha
 
 ### Among those who could benefit and are willing to help:
 
-Using the conservative IQVIA figure ({{< var current_trial_slots_available >}} ÷ {{< var willing_trial_participants_global >}} = 0.18%), your odds of actually getting into a drug trial are **1 in 566**.
+Using the conservative IQVIA figure ({{< var current_trial_slots_available >}} ÷ {{< var willing_trial_participants_global >}} = {{< var current_willing_patient_participation_rate >}}), your odds of actually getting into a drug trial are **1 in 566**.
 
 Even if you count all clinical research (5M ÷ {{< var willing_trial_participants_global >}} = 0.46%), your odds are only **1 in 215**.
 
