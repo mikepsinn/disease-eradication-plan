@@ -213,6 +213,9 @@ format:
       - scripts/filters/epub-transforms.lua
     output-file: "How-to-End-War-and-Disease.epub"
     epub-cover-image: assets/cover/h2ewd-epub-1600x2400.jpg
+    # Store metadata: Wishonia Love (author) and Mike P. Sinn (translator).
+    # See the author override in scripts/filters/epub-transforms.lua.
+    epub-metadata: assets/epub-metadata.xml
     html-math-method:
       method: webtex
       url: "https://latex.codecogs.com/svg.latex?"
