@@ -52,6 +52,7 @@ The Zenodo step publishes each paper that passes LLM PDF validation, which runs 
 ## When a run fails
 
 - `ConnectionReset` or a timeout in a render step is a network flake: use "Re-run failed jobs".
+- "Graphviz did not install after 3 attempts" means apt could not reach the Ubuntu mirrors. `.github/actions/install-graphviz` caps and retries each apt call, so this fails in minutes instead of hanging; use "Re-run failed jobs".
 - An authentication error in `deploy-redirect-worker` means the CI token does not cover a zone in `_ROUTE_ZONES`. See the API token section of `cloudflare/README.md`.
 - "Redirect target is not live" means a site in the redirect map is not serving yet. The previous Worker stays deployed, so legacy links keep working.
 - For a failing host in `verify-live-sites`, run `pnpm monitor:uptimerobot:check` locally to see where it ends up.

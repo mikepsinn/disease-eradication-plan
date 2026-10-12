@@ -232,6 +232,22 @@ def test_optional_kindle_check_cannot_fail_the_release() -> None:
     assert "github.event_name != 'pull_request'" in release_job
 
 
+def test_no_build_step_can_hang_for_githubs_six_hour_default() -> None:
+    artifacts = render_artifacts_workflow()
+    publish = generate_workflow(PROJECT_ROOT, extract_deploy_job_configs(PROJECT_ROOT), "publish.yml.j2")
+
+    for job in extract_artifact_job_configs(PROJECT_ROOT):
+        build_job = artifacts[artifacts.index(f"  build-{job.config_name}:"):]
+        header = build_job[:build_job.index("    steps:")]
+        assert "\n    timeout-minutes: " in header
+    # An uncapped apt-get held three paper jobs in this step for over 40 minutes
+    for workflow in (artifacts, publish):
+        assert "apt-get" not in workflow
+        assert workflow.count("uses: ./.github/actions/install-graphviz\n        timeout-minutes: 10\n") == (
+            workflow.count("- name: Install Graphviz")
+        )
+
+
 def test_checked_in_workflows_match_their_generators() -> None:
     workflow_cases = (
         (

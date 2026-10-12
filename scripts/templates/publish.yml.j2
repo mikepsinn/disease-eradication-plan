@@ -168,9 +168,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: |

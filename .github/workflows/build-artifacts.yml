@@ -86,6 +86,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -121,9 +124,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -212,6 +214,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -247,9 +252,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -338,6 +342,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -373,9 +380,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -464,6 +470,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -499,9 +508,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -590,6 +598,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -625,9 +636,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -716,6 +726,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -751,9 +764,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -842,6 +854,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -877,9 +892,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -968,6 +982,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -1003,9 +1020,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -1094,6 +1110,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -1129,9 +1148,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -1220,6 +1238,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -1255,9 +1276,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -1346,6 +1366,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -1381,9 +1404,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -1472,6 +1494,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -1507,9 +1532,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -1598,6 +1622,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -1633,9 +1660,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -1724,6 +1750,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -1759,9 +1788,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -1850,6 +1878,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -1885,9 +1916,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -1976,6 +2006,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -2011,9 +2044,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -2102,6 +2134,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -2137,9 +2172,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -2228,6 +2262,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 210
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -2263,9 +2300,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -2382,6 +2418,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -2417,9 +2456,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -2508,6 +2546,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -2543,9 +2584,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -2634,6 +2674,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -2669,9 +2712,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -2760,6 +2802,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -2795,9 +2840,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -2886,6 +2930,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -2921,9 +2968,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -3012,6 +3058,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -3047,9 +3096,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -3138,6 +3186,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -3173,9 +3224,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -3257,6 +3307,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -3292,9 +3345,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -3383,6 +3435,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -3418,9 +3473,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -3509,6 +3563,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -3544,9 +3601,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -3635,6 +3691,9 @@ jobs:
     needs: changes
     if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: 60
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -3670,9 +3729,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
