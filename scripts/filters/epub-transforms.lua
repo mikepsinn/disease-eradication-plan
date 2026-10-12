@@ -3,12 +3,17 @@
 -- PDF doesn't need this (Pandoc drops raw HTML automatically for LaTeX).
 
 -- Override author metadata for EPUB title page and OPF.
--- Book-level YAML keeps Mike P. Sinn for HTML; this filter swaps to Wishonia for EPUB only.
+-- Book-level YAML keeps Mike P. Sinn for HTML; this filter swaps to Wishonia Love for EPUB only.
+-- The author lines only label the title page. The OPF creators (author
+-- Wishonia Love, translator Mike P. Sinn) come from assets/epub-metadata.xml, which
+-- Pandoc keeps off the title page. The project-wide metadata.creator is
+-- dropped, or the OPF and title page would list Mike P. Sinn a second time.
 function Meta(meta)
   meta.author = pandoc.MetaList({
-    pandoc.MetaInlines({pandoc.Str("By"), pandoc.Space(), pandoc.Str("Wishonia")}),
+    pandoc.MetaInlines({pandoc.Str("By"), pandoc.Space(), pandoc.Str("Wishonia"), pandoc.Space(), pandoc.Str("Love")}),
     pandoc.MetaInlines({pandoc.Str("Translated"), pandoc.Space(), pandoc.Str("by"), pandoc.Space(), pandoc.Str("Mike"), pandoc.Space(), pandoc.Str("P."), pandoc.Space(), pandoc.Str("Sinn")})
   })
+  meta.creator = nil
   return meta
 end
 

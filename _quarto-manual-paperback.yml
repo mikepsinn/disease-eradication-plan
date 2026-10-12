@@ -13,6 +13,8 @@ dih-render:
   docx-output-file: "How-to-End-War-and-Disease-Paperback.docx"
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
   strip-bib-fields: [abstract, note]
+  # The book goes to KDP, not Zenodo
+  zenodo: false
 
 # Podcast-specific overrides (used by generate_audiobook.py RSS generation)
 dih-podcast:
@@ -36,8 +38,8 @@ dih-podcast:
     paint chips with food until they forget paint chips were ever an
     option.
 
-    The universe is literally offering you infinite money and eternal
-    life, and you're thinking about it. This is why aliens don't visit.
+    The universe is offering you a world without war and disease, and
+    you're thinking about it. This is why aliens don't visit.
   description-suffix: "Vote to redirect 1% of the murder budget to medicine. It takes 15 seconds and mass participation makes the treaty politically unavoidable.\n\nhttps://warondisease.org"
 
 book:
@@ -210,7 +212,10 @@ format:
     filters:
       - scripts/filters/epub-transforms.lua
     output-file: "How-to-End-War-and-Disease.epub"
-    epub-cover-image: assets/cover/book-cover-3.jpg
+    epub-cover-image: assets/cover/h2ewd-epub-1600x2400.jpg
+    # Store metadata: Wishonia Love (author) and Mike P. Sinn (translator).
+    # See the author override in scripts/filters/epub-transforms.lua.
+    epub-metadata: assets/epub-metadata.xml
     html-math-method:
       method: webtex
       url: "https://latex.codecogs.com/svg.latex?"
@@ -223,7 +228,7 @@ format:
   docx:
     output-file: "How-to-End-War-and-Disease-Paperback.docx"
     author:
-      - "By Wishonia"
+      - "By Wishonia Love"
       - "Translated by Mike P. Sinn"
     fig-format: png
     toc: true
@@ -241,7 +246,7 @@ format:
     colorlinks: false  # Print-friendly: no colored links
     link-citations: true
     date: ""
-    author: "Wishonia (translated by Mike P. Sinn)"
+    author: "Wishonia Love (translated by Mike P. Sinn)"
     include-in-header:
       - callout-bw.tex
       - institute-header.tex

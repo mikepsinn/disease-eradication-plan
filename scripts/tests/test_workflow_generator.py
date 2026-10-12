@@ -1,3 +1,4 @@
+import importlib.util
 import io
 import sys
 from pathlib import Path
@@ -136,6 +137,115 @@ def test_pdf_llm_validation_is_explicitly_opt_in() -> None:
         ]
         assert key_lines
         assert all(line == expected for line in key_lines)
+
+
+def render_artifacts_workflow() -> str:
+    return generate_workflow(PROJECT_ROOT, extract_artifact_job_configs(PROJECT_ROOT), "build-artifacts.yml.j2")
+
+
+def test_kdp_book_builds_artifacts_but_never_deploys_or_goes_to_zenodo() -> None:
+    artifact_jobs = {job.config_name: job for job in extract_artifact_job_configs(PROJECT_ROOT)}
+    book = artifact_jobs["manual-paperback"]
+
+    assert "manual-paperback" not in {job.config_name for job in extract_deploy_job_configs(PROJECT_ROOT)}
+    assert not book.upload_to_zenodo
+    assert book.artifact_render_format is None
+    assert [file.name for file in book.kdp_files] == [
+        "How-to-End-War-and-Disease.epub",
+        "How-to-End-War-and-Disease-ebook-cover.jpg",
+        "How-to-End-War-and-Disease-Paperback.pdf",
+        "How-to-End-War-and-Disease-Paperback.docx",
+    ]
+    # render-quarto.py fixes the EPUB for Kindle in assets/, not in _build_temp/
+    assert book.kdp_files[0].source == "assets/epubs/How-to-End-War-and-Disease.epub"
+    assert all(not job.kdp_files for name, job in artifact_jobs.items() if name != "manual-paperback")
+
+
+def test_kdp_book_renders_each_format_separately_and_keeps_what_built() -> None:
+    workflow = render_artifacts_workflow()
+    book_job = workflow[workflow.index("  build-manual-paperback:"):workflow.index("  check-kindle-manual-paperback:")]
+
+    # A multi-format render reuses the first format's frozen results, which lack the other formats' figures
+    assert "render-quarto.py manual-paperback\n" not in book_job
+    for render_format in ("epub", "pdf", "docx"):
+        assert f"run: python scripts/render-quarto.py manual-paperback --to {render_format}\n" in book_job
+    collect_step = book_job[book_job.index("Collect the KDP files"):book_job.index("Upload KDP files artifact")]
+    assert 'if: "!cancelled()"' in collect_step
+    assert "was not built" in collect_step
+
+
+def test_artifacts_build_nightly_and_only_explicit_runs_reach_zenodo() -> None:
+    workflow = render_artifacts_workflow()
+
+    assert "schedule:" in workflow
+    assert "refs/heads/master" not in workflow
+    # A nightly run must queue behind a manual Zenodo run, not cancel it
+    assert "cancel-in-progress: ${{ github.event_name != 'schedule' }}" in workflow
+    zenodo_conditions = [
+        line.strip()
+        for line in workflow.splitlines()
+        if line.strip().startswith("if:") and "publish_zenodo" in line
+    ]
+    assert zenodo_conditions
+    assert all(
+        condition == "if: startsWith(github.ref, 'refs/tags/v') "
+        "|| (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)"
+        for condition in zenodo_conditions
+    )
+    for job in extract_artifact_job_configs(PROJECT_ROOT):
+        build_job = workflow[workflow.index(f"  build-{job.config_name}:"):]
+        assert build_job.index("needs: changes") < build_job.index("if: needs.changes.outputs.build == 'true'")
+
+
+def test_zenodo_steps_pass_only_arguments_the_upload_script_accepts(monkeypatch) -> None:
+    script = PROJECT_ROOT / "scripts" / "upload-all-zenodo-and-save-dois.py"
+    spec = importlib.util.spec_from_file_location("upload_all_zenodo", script)
+    assert spec and spec.loader
+    upload_script = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(upload_script)
+
+    commands = [
+        line.split(f"python scripts/{script.name}", 1)[1].split()
+        for line in render_artifacts_workflow().splitlines()
+        if f"run: python scripts/{script.name}" in line
+    ]
+    assert commands
+    for arguments in commands:
+        monkeypatch.setattr(sys, "argv", [script.name, *arguments])
+        # argparse exits with status 2 on an unknown flag
+        upload_script.parse_args()
+
+
+def test_optional_kindle_check_cannot_fail_the_release() -> None:
+    workflow = render_artifacts_workflow()
+    kindle_job = workflow[workflow.index("  check-kindle-manual-paperback:"):workflow.index("  release-builds:")]
+    release_job = workflow[workflow.index("  release-builds:"):]
+
+    assert "continue-on-error: true" in kindle_job
+    # Kindle Previewer can stay open after converting; the step waits for its summary file, not its exit
+    convert_step = kindle_job[kindle_job.index("Convert the EPUB to KPF"):kindle_job.index("Upload the KPF")]
+    assert "-Wait" not in convert_step
+    assert "Summary_Log.csv" in convert_step
+    assert "Stop-Process" in convert_step
+    assert "      - check-kindle-manual-paperback\n" in release_job
+    assert 'select(.key | startswith("build-"))' in release_job
+    assert "github.event_name != 'pull_request'" in release_job
+
+
+def test_no_build_step_can_hang_for_githubs_six_hour_default() -> None:
+    artifacts = render_artifacts_workflow()
+    publish = generate_workflow(PROJECT_ROOT, extract_deploy_job_configs(PROJECT_ROOT), "publish.yml.j2")
+
+    for job in extract_artifact_job_configs(PROJECT_ROOT):
+        build_job = artifacts[artifacts.index(f"  build-{job.config_name}:"):]
+        header = build_job[:build_job.index("    steps:")]
+        assert "\n    timeout-minutes: " in header
+    # An uncapped apt-get held three paper jobs in this step for over 40 minutes
+    for workflow in (artifacts, publish):
+        assert "apt-get" not in workflow
+        assert workflow.count("uses: ./.github/actions/install-graphviz\n        timeout-minutes: 10\n") == (
+            workflow.count("- name: Install Graphviz")
+        )
 
 
 def test_checked_in_workflows_match_their_generators() -> None:

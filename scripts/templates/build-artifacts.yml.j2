@@ -1,22 +1,89 @@
 on:
+  schedule:
+    # Nightly from develop; the changes job ends the run when nothing changed
+    - cron: "17 8 * * *"
   workflow_dispatch:
+    inputs:
+      publish_zenodo:
+        description: "Also upload the paper PDFs to Zenodo"
+        type: boolean
+        default: false
   push:
-    branches: [master]
+    # A version tag builds an edition and uploads the papers to Zenodo
+    tags: ["v*"]
+  pull_request:
+    branches: [develop]
+    paths:
+      - .github/workflows/build-artifacts.yml
 
 name: Build Downloadable Artifacts
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
-  group: "artifact-builds"
-  cancel-in-progress: true
+  group: "artifact-builds-{% raw %}${{ github.ref }}{% endraw %}"
+  # The nightly run waits, so it never cuts off a manual run halfway through its Zenodo uploads
+  cancel-in-progress: {% raw %}${{ github.event_name != 'schedule' }}{% endraw %}
 
 jobs:
+  changes:
+    name: "Check for changes since the last build"
+    runs-on: ubuntu-latest
+    outputs:
+      build: {% raw %}${{ steps.check.outputs.build }}{% endraw %}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compare with the last successful build
+        id: check
+        env:
+          GH_TOKEN: {% raw %}${{ github.token }}{% endraw %}
+        run: |
+          # Only the nightly run skips; a manual run, a tag, or a workflow change always builds
+          if [ "$GITHUB_EVENT_NAME" != "schedule" ]; then
+            echo "build=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          last_sha="$(gh run list --workflow build-artifacts.yml --branch "$GITHUB_REF_NAME" --status success --limit 1 --json headSha --jq '.[0].headSha // ""')"
+          if [ -z "$last_sha" ]; then
+            echo "No earlier successful build."
+            echo "build=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if ! git fetch --no-tags --depth=1 origin "$last_sha"; then
+            echo "Cannot fetch $last_sha."
+            echo "build=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # A failed diff must stop the step, not read as "nothing changed"
+          changed="$(git diff --name-only "$last_sha" HEAD)"
+          build=false
+          while IFS= read -r path; do
+            case "$path" in
+              .github/workflows/build-artifacts.yml) build=true ;;
+              # Agent, CI, hook, and guide files cannot change a build
+              .claude/*|.github/*|.husky/*|GUIDES/*) ;;
+              */*) build=true ;;
+              # Top-level notes such as AGENTS.md and todo.md
+              *.md) ;;
+              "") ;;
+              *) build=true ;;
+            esac
+          done <<< "$changed"
+          echo "Last successful build: $last_sha. Build needed: $build"
+          echo "build=$build" >> "$GITHUB_OUTPUT"
 {% for job in jobs %}
   build-{{ job.config_name }}:
     name: "{{ job.display_name }}"
+    needs: changes
+    if: needs.changes.outputs.build == 'true'
     runs-on: ubuntu-latest
+    # Render steps have their own limits; this caps the setup and upload
+    # steps, which would otherwise get GitHub's 6-hour default
+    timeout-minutes: {{ job.timeout_minutes * ((job.downloadable_formats | length) if job.kdp_files else 1) + 30 }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -52,9 +119,8 @@ jobs:
           enable-cache: true
 
       - name: Install Graphviz
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y graphviz
+        uses: ./.github/actions/install-graphviz
+        timeout-minutes: 10
 
       - name: Install Python dependencies
         run: uv pip install --system -r requirements.txt
@@ -84,6 +150,35 @@ jobs:
           "$tlmgr_path" update --self || true
           "$tlmgr_path" install fontspec unicode-math lualatex-math luaotfload || true
 
+{% if job.kdp_files %}
+{% for format in job.downloadable_formats %}
+      # One render per format: with freeze, a multi-format render runs each
+      # chapter once and the later formats find no figures
+      - name: "Render the book ({{ format | upper }})"
+        if: "!cancelled()"
+        run: python scripts/render-quarto.py {{ job.config_name }} --to {{ format }}
+        env:
+          GOOGLE_GENERATIVE_AI_API_KEY: {% raw %}${{ secrets.LLM_VALIDATION == 'true' && secrets.GOOGLE_GENERATIVE_AI_API_KEY || '' }}{% endraw %}
+        timeout-minutes: {{ job.timeout_minutes }}
+
+{% endfor %}
+      - name: Collect the KDP files
+        # A format that failed is left out, so the files that did build still reach the release
+        if: "!cancelled()"
+        run: |
+          mkdir -p kdp-files
+{% for file in job.kdp_files %}
+          if [ -f "{{ file.source }}" ]; then cp "{{ file.source }}" "kdp-files/{{ file.name }}"; else echo "::warning::{{ file.source }} was not built"; fi
+{% endfor %}
+
+      - name: Upload KDP files artifact
+        if: "!cancelled()"
+        uses: actions/upload-artifact@v4
+        with:
+          name: kdp-files-{{ job.config_name }}
+          path: kdp-files/
+          if-no-files-found: error
+{% else %}
       - name: "Render {{ job.display_name }}"
         run: python scripts/render-quarto.py {{ job.config_name }}{% if job.artifact_render_format %} --to {{ job.artifact_render_format }}{% endif %}
         env:
@@ -116,6 +211,7 @@ jobs:
           path: _build_temp/{{ job.config_name }}/**/*.docx
           if-no-files-found: error
 {% endif %}
+{% endif %}
 
       - name: Upload validation checklists
         uses: actions/upload-artifact@v4
@@ -142,22 +238,100 @@ jobs:
           retention-days: 7
 
 {% if job.upload_to_zenodo %}
-      - name: "Upload {{ job.display_name }} PDF to Zenodo (draft)"
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      - name: "Upload {{ job.display_name }} PDF to Zenodo"
+        if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.publish_zenodo)
         env:
           ZENODO_TOKEN: {% raw %}${{ secrets.ZENODO_TOKEN }}{% endraw %}
-        run: python scripts/upload-all-zenodo-and-save-dois.py --no-rebuild {{ job.config_name }}
+        # The PDF rendered above is newer than its sources, so the script uploads it without a rebuild
+        run: python scripts/upload-all-zenodo-and-save-dois.py {{ job.config_name }}
 {% endif %}
+{% endfor %}
+{% for job in jobs if job.kdp_files %}
+  check-kindle-{{ job.config_name }}:
+    name: "Check the EPUB in Kindle Previewer"
+    needs: build-{{ job.config_name }}
+    # The EPUB can exist even when the PDF or DOCX step failed
+    if: {% raw %}${{ !cancelled() && {% endraw %}needs.build-{{ job.config_name }}.result != 'skipped' }}
+    runs-on: windows-latest
+    # Kindle Previewer has no Linux build and no documented silent install,
+    # so a failure here warns but never blocks the release
+    continue-on-error: true
+    timeout-minutes: 30
+    steps:
+      - name: Download the KDP files
+        uses: actions/download-artifact@v4
+        with:
+          name: kdp-files-{{ job.config_name }}
+          path: kdp-files
 
+      - name: Install Kindle Previewer
+        shell: pwsh
+        run: |
+          Invoke-WebRequest -Uri "https://d2bzeorukaqrvt.cloudfront.net/KindlePreviewerInstaller.exe" -OutFile KindlePreviewerInstaller.exe
+          Start-Process -FilePath .\KindlePreviewerInstaller.exe -ArgumentList "/S" -Wait
+          $previewer = Join-Path $env:LOCALAPPDATA "Amazon\Kindle Previewer 3\Kindle Previewer 3.exe"
+          if (-not (Test-Path $previewer)) {
+            Get-ChildItem -Path $env:LOCALAPPDATA, $env:ProgramFiles -Filter "Kindle Previewer*" -Recurse -Depth 3 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
+            throw "Kindle Previewer is not at $previewer"
+          }
+          "KINDLE_PREVIEWER=$previewer" | Out-File -FilePath $env:GITHUB_ENV -Append -Encoding utf8
+
+      - name: Convert the EPUB to KPF
+        shell: pwsh
+        timeout-minutes: 15
+        run: |
+          $epub = Get-ChildItem kdp-files -Filter *.epub | Select-Object -First 1
+          $output = New-Item -ItemType Directory -Force -Path kindle-output
+          $process = Start-Process -FilePath $env:KINDLE_PREVIEWER -ArgumentList "`"$($epub.FullName)`"", "-convert", "-output", "`"$($output.FullName)`"" -PassThru
+          # Kindle Previewer sometimes stays open after it converts, so wait for
+          # the summary it writes at the end instead of waiting for it to exit
+          $summary = Join-Path $output.FullName "Summary_Log.csv"
+          $deadline = (Get-Date).AddMinutes(12)
+          while (-not $process.HasExited -and -not (Test-Path $summary) -and (Get-Date) -lt $deadline) {
+            Start-Sleep -Seconds 5
+          }
+          Start-Sleep -Seconds 10
+          if (-not $process.HasExited) {
+            Write-Host "Stopping Kindle Previewer, which did not exit after converting"
+            Stop-Process -Id $process.Id -Force
+          }
+          if (Test-Path $summary) { Get-Content $summary }
+          # Kindle Previewer writes a KPF only when Enhanced Typesetting works
+          $kpf = Get-ChildItem $output.FullName -Recurse -Filter *.kpf | Select-Object -First 1
+          if (-not $kpf) {
+            throw "Kindle Previewer made no KPF, so Enhanced Typesetting is probably off. See Summary_Log.csv."
+          }
+          New-Item -ItemType Directory -Force -Path kindle-kpf | Out-Null
+          Copy-Item $kpf.FullName (Join-Path kindle-kpf "$($epub.BaseName).kpf")
+
+      - name: Upload the KPF
+        uses: actions/upload-artifact@v4
+        with:
+          name: kindle-kpf-{{ job.config_name }}
+          path: kindle-kpf/*.kpf
+          if-no-files-found: error
+
+      - name: Upload Kindle Previewer logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kindle-previewer-logs-{{ job.config_name }}
+          path: kindle-output/
+          if-no-files-found: ignore
 {% endfor %}
 
   release-builds:
-    name: "Release PDFs, EPUBs, and DOCX"
-    if: github.ref == 'refs/heads/master'
+    name: "Release PDFs, EPUBs, DOCX, and KDP files"
+    # Release whatever built, even when one paper fails; the last step still fails the run
+    if: {% raw %}${{ !cancelled() && needs.changes.outputs.build == 'true' && github.event_name != 'pull_request' }}{% endraw %}
     runs-on: ubuntu-latest
     needs:
+      - changes
 {% for job in jobs %}
       - build-{{ job.config_name }}
+{% endfor %}
+{% for job in jobs if job.kdp_files %}
+      - check-kindle-{{ job.config_name }}
 {% endfor %}
     permissions:
       contents: write
@@ -167,24 +341,70 @@ jobs:
         with:
           path: release-files
 
-      - name: Create GitHub release with build artifacts
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: latest-builds
-          name: Latest Builds
-          body: |
-            Auto-generated downloadable artifacts from the latest master build.
+      - name: Publish the GitHub release
+        env:
+          GH_TOKEN: {% raw %}${{ github.token }}{% endraw %}
+          GH_REPO: {% raw %}${{ github.repository }}{% endraw %}
+        run: |
+          # The nightly build refreshes latest-builds; a version tag gets its own release
+          tag=latest-builds
+          title="Latest Builds"
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            tag="$GITHUB_REF_NAME"
+            title="$GITHUB_REF_NAME"
+          fi
 
-            **Built:** {% raw %}${{ github.event.head_commit.timestamp || github.run_id }}{% endraw %}
-            **Commit:** {% raw %}${{ github.sha }}{% endraw %}
+          cat > release-notes.md <<NOTES
+          Built from commit $GITHUB_SHA on $(date -u +%Y-%m-%d).
+{% for job in jobs if job.kdp_files %}
 
-            ## Available Formats
-            - **PDFs**: Individual papers and books
-            - **EPUBs**: E-reader formats
-            - **DOCX**: Editable document exports
-          files: |
-            release-files/**/*.pdf
-            release-files/**/*.epub
-            release-files/**/*.docx
-          prerelease: false
-          make_latest: true
+          ## Upload to Amazon KDP
+
+          | File | KDP field |
+          |---|---|
+{%- for file in job.kdp_files %}
+          | {{ file.name }} | {{ file.kdp_use }} |
+{%- endfor %}
+
+          A .kpf file is here only when Kindle Previewer could convert the EPUB with Enhanced Typesetting. You can upload either the .kpf or the .epub as the Kindle eBook manuscript.
+
+          The paperback cover (back, spine, and front in one PDF) is not built yet. Make it with KDP Cover Creator.
+{% endfor %}
+
+          ## Papers
+
+          The other PDFs are the papers.
+          NOTES
+{% raw %}
+          shopt -s nullglob
+          files=()
+          for dir in release-files/pdfs-* release-files/epubs-* release-files/docx-* release-files/kdp-files-* release-files/kindle-kpf-*; do
+            while IFS= read -r -d '' file; do
+              files+=("$file")
+            done < <(find "$dir" -type f -print0)
+          done
+          if [ "${#files[@]}" -eq 0 ]; then
+            echo "::error::No build produced a file to release."
+            exit 1
+          fi
+
+          if gh release view "$tag" > /dev/null 2>&1; then
+            gh release edit "$tag" --title "$title" --notes-file release-notes.md
+          else
+            gh release create "$tag" --target "$GITHUB_SHA" --title "$title" --notes-file release-notes.md
+          fi
+          # --clobber replaces files of the same name, so download links stay the same
+          gh release upload "$tag" "${files[@]}" --clobber
+          echo "Released ${#files[@]} files to $tag"
+{% endraw %}
+
+      - name: Fail the run if a build failed
+        env:
+          NEEDS: {% raw %}${{ toJSON(needs) }}{% endraw %}
+        run: |
+          # The Kindle Previewer check is optional, so only the build jobs count
+          failed="$(jq -r 'to_entries[] | select(.key | startswith("build-")) | select(.value.result != "success") | .key' <<< "$NEEDS")"
+          if [ -n "$failed" ]; then
+            echo "::error::These builds failed, so their files in the release are old or missing: $(echo $failed)"
+            exit 1
+          fi

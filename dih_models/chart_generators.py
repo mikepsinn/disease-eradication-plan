@@ -578,6 +578,9 @@ def generate_monte_carlo_distribution_chart_qmd(
     _table_include_unit = _summary_table_includes_unit(units)
 
     # Generate QMD with embedded Python
+    # Annotation labels sit a fixed number of points from their arrow. At a
+    # multiple of the value instead, a narrow distribution puts the label many
+    # axis widths off the chart, and the tight PDF crop stretches to reach it.
     qmd_content = f'''```{{python}}
 #| echo: false
 #| fig-cap: "Monte Carlo Distribution: {display_name} (10,000 simulations)"
@@ -667,7 +670,7 @@ clean_spines(ax2)
 
 exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
 ax2.annotate(f'{{exceed_baseline_pct:.0f}}% chance of\\nexceeding baseline',
-             xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
+             xy=(baseline, exceed_baseline_pct), xytext=(10, 10), textcoords='offset points',
              fontsize=9, ha='left',
              arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
 
@@ -802,6 +805,9 @@ def generate_cdf_chart_qmd(
         p90 = sorted_s[int(len(sorted_s) * 0.90)]
         thresholds = [p10, p50, p90]
 
+    # Annotation labels sit a fixed number of points from their arrow. At a
+    # multiple of the value instead, a narrow distribution puts the label many
+    # axis widths off the chart, and the tight PDF crop stretches to reach it.
     qmd_content = f'''```{{python}}
 #| echo: false
 #| fig-cap: "Probability of Exceeding Threshold: {display_name}"
@@ -853,7 +859,7 @@ for thresh in thresholds:
     # Add label with formatted threshold value (use format_parameter_value for full units)
 
     ax.annotate(f'{{exceed_pct:.0f}}% chance\\n≥ {{format_parameter_value(thresh, units)}}',
-                xy=(thresh, exceed_pct), xytext=(thresh * 1.05, exceed_pct + 5),
+                xy=(thresh, exceed_pct), xytext=(8, 8), textcoords='offset points',
                 fontsize=10, ha='left', weight='bold',
                 bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, alpha=0.9))
 

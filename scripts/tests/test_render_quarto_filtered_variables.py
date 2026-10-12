@@ -4,6 +4,7 @@ from pathlib import Path
 from urllib.robotparser import RobotFileParser
 
 import pytest
+import yaml
 
 from dih_models.llms_txt_generator import generate_robots_txt
 
@@ -169,3 +170,31 @@ format:
     parser.parse(robots.splitlines())
     assert parser.can_fetch("ExampleBot", site_url)
     assert parser.site_maps() == [sitemap_url]
+
+
+def test_stripping_confidence_intervals_keeps_wrapped_yaml_valid(tmp_path: Path) -> None:
+    module = load_render_quarto_module()
+    variables_path = tmp_path / "_variables.yml"
+    # Copied from the KDP book build: the display CI starts on a wrapped line,
+    # whose leading space YAML writes as "\ "
+    variables_path.write_text(
+        '"current_disease_patients_global": "<a href=\\"#sec-current_disease_patients_global\\"\\\n'
+        '  \\ class=\\"parameter-link\\" title=\\"Global population with chronic diseases\\\n'
+        '  \\ | 95% CI: [2 billion people, 2.8 billion people] | Dist: Lognormal\\\n'
+        '  \\ | Unit: people\\">2.4 billion people\\\n'
+        '  \\ (95% CI: 2 billion people-2.8 billion people)</a>"\n'
+        '"plain_number": "604"\n',
+        encoding="utf-8",
+    )
+
+    assert module._strip_confidence_intervals(variables_path, verbose=False) == 2
+
+    variables = yaml.safe_load(variables_path.read_text(encoding="utf-8"))
+    assert variables == {
+        "current_disease_patients_global": (
+            '<a href="#sec-current_disease_patients_global" class="parameter-link" '
+            'title="Global population with chronic diseases | Dist: Lognormal | Unit: people">'
+            "2.4 billion people</a>"
+        ),
+        "plain_number": "604",
+    }

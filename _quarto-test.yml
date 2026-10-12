@@ -114,6 +114,7 @@ format:
       - scripts/filters/epub-transforms.lua
     output-file: "test-book.epub"
     # Author override handled by Lua filter (scripts/filters/epub-transforms.lua)
+    epub-metadata: assets/epub-metadata.xml
     epub-cover-image: assets/cover/book-cover-3.jpg
     html-math-method:
       method: webtex
