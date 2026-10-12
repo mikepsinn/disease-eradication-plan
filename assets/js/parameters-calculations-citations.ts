@@ -5390,7 +5390,7 @@ export const CURRENT_WILLING_PATIENT_PARTICIPATION_RATE: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_willing_patient_participation_rate",
   unit: "rate",
   displayName: "Current Trial Participation Rate Among Willing Patients",
-  description: "Share of patients willing to join clinical trials who get a trial slot each year (1.9M slots / 1.08B willing patients)",
+  description: "Annual clinical trial slots per patient willing to join a drug trial (1.9M slots / 1.08B willing patients). A capacity ratio, not a measured enrollment share: not every slot goes to a willing chronic-disease patient",
   sourceType: "calculated",
   confidence: "medium",
   formula: "CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL",

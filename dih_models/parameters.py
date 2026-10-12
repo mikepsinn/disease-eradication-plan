@@ -10058,7 +10058,7 @@ CURRENT_WILLING_PATIENT_PARTICIPATION_RATE = Parameter(
     CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Share of patients willing to join clinical trials who get a trial slot each year (1.9M slots / 1.08B willing patients)",
+    description="Annual clinical trial slots per patient willing to join a drug trial (1.9M slots / 1.08B willing patients). A capacity ratio, not a measured enrollment share: not every slot goes to a willing chronic-disease patient",
     display_name="Current Trial Participation Rate Among Willing Patients",
     unit="rate",
     formula="CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL",
