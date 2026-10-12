@@ -212,7 +212,7 @@ format:
     filters:
       - scripts/filters/epub-transforms.lua
     output-file: "How-to-End-War-and-Disease.epub"
-    epub-cover-image: assets/cover/book-cover-3.jpg
+    epub-cover-image: assets/cover/h2ewd-epub-1600x2400.jpg
     html-math-method:
       method: webtex
       url: "https://latex.codecogs.com/svg.latex?"
@@ -225,7 +225,7 @@ format:
   docx:
     output-file: "How-to-End-War-and-Disease-Paperback.docx"
     author:
-      - "By Wishonia"
+      - "By Wishonia Love"
       - "Translated by Mike P. Sinn"
     fig-format: png
     toc: true
@@ -243,7 +243,7 @@ format:
     colorlinks: false  # Print-friendly: no colored links
     link-citations: true
     date: ""
-    author: "Wishonia (translated by Mike P. Sinn)"
+    author: "Wishonia Love (translated by Mike P. Sinn)"
     include-in-header:
       - callout-bw.tex
       - institute-header.tex

@@ -2335,7 +2335,7 @@ jobs:
 
           if [ -f "assets/epubs/How-to-End-War-and-Disease.epub" ]; then cp "assets/epubs/How-to-End-War-and-Disease.epub" "kdp-files/How-to-End-War-and-Disease.epub"; else echo "::warning::assets/epubs/How-to-End-War-and-Disease.epub was not built"; fi
 
-          if [ -f "assets/cover/book-cover-3.jpg" ]; then cp "assets/cover/book-cover-3.jpg" "kdp-files/How-to-End-War-and-Disease-ebook-cover.jpg"; else echo "::warning::assets/cover/book-cover-3.jpg was not built"; fi
+          if [ -f "assets/cover/h2ewd-epub-1600x2400.jpg" ]; then cp "assets/cover/h2ewd-epub-1600x2400.jpg" "kdp-files/How-to-End-War-and-Disease-ebook-cover.jpg"; else echo "::warning::assets/cover/h2ewd-epub-1600x2400.jpg was not built"; fi
 
           if [ -f "assets/pdfs/How-to-End-War-and-Disease-Paperback.pdf" ]; then cp "assets/pdfs/How-to-End-War-and-Disease-Paperback.pdf" "kdp-files/How-to-End-War-and-Disease-Paperback.pdf"; else echo "::warning::assets/pdfs/How-to-End-War-and-Disease-Paperback.pdf was not built"; fi
 
