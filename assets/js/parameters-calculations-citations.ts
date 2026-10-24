@@ -2607,10 +2607,10 @@ export const PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT: Parameter = {
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-patient_willingness_trial_participation_pct",
   unit: "percentage",
   displayName: "Patient Willingness to Participate in Clinical Trials",
-  description: "Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)",
+  description: "Share of adult hospital patients who would probably or certainly join a hypothetical drug trial (1,118 recently discharged patients, Geneva University Hospitals). The 40% to 50% range is wider than the study's 95% CI (41.9% to 47.8%), because one Swiss survey stands in for patients worldwide",
   sourceType: "external",
-  sourceRef: "patient-willingness-clinical-trials",
-  sourceUrl: "https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-015-1105-3",
+  sourceRef: "patient-willingness-drug-trial-2020",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7183682/",
   confidence: "medium",
   confidenceInterval: [0.4, 0.5],
   stdError: 0.025,
@@ -18127,18 +18127,28 @@ export const citations: Record<string, Citation> = {
         URL: "https://jamanetwork.com/journals/jama/article-abstract/2674671",
         note: "Papanicolas et al., 2018, JAMA | Highly cited comparison of healthcare spending across OECD countries",
   },
-  "patient-willingness-clinical-trials": {
-        id: "patient-willingness-clinical-trials",
+  "patient-willingness-drug-trial-2020": {
+        id: "patient-willingness-drug-trial-2020",
         type: "article-journal",
-        title: "Patient willingness to participate in clinical trials",
+        title: "Study design factors influencing patients' willingness to participate in clinical research: a randomised vignette-based study",
         author: [
           {
-            literal: "Trials"
+            family: "Gayet-Ageron",
+            given: "Angèle"
+          },
+          {
+            family: "Rudaz",
+            given: "Sandrine"
+          },
+          {
+            family: "Perneger",
+            given: "Thomas"
           },
         ],
-        'container-title': "Trials: Patients' Willingness Survey",
-        URL: "https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-015-1105-3",
-        note: "Trials: Patients' Willingness Survey | Applied Clinical Trials: Patient Participation | PMC: Study Design Factors",
+        issued: { 'date-parts': [[2020]] },
+        'container-title': "BMC Medical Research Methodology",
+        URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7183682/",
+        note: "Mailed survey of 1,118 adults recently discharged from Geneva University Hospitals, each shown a hypothetical drug-trial vignette",
   },
   "pcornet-infrastructure-funding": {
         id: "pcornet-infrastructure-funding",
