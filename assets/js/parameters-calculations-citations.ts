@@ -517,21 +517,6 @@ export const CURRENT_ACTIVE_TRIALS: Parameter = {
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
 
-export const CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE: Parameter = {
-  value: 0.0006,
-  parameterName: "CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE",
-  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_clinical_trial_participation_rate",
-  unit: "rate",
-  displayName: "Current Clinical Trial Participation Rate",
-  description: "Current clinical trial participation rate (0.06% of population)",
-  sourceType: "external",
-  sourceRef: "clinical-trial-patient-participation-rate",
-  sourceUrl: "https://www.fightcancer.org/policy-resources/barriers-patient-enrollment-therapeutic-clinical-trials-cancer",
-  confidence: "high",
-  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/solution/dfda.html",
-  manualPageTitle: "A Decentralized FDA",
-};
-
 export const CURRENT_DISEASE_PATIENTS_GLOBAL: Parameter = {
   value: 2400000000.0,
   parameterName: "CURRENT_DISEASE_PATIENTS_GLOBAL",
@@ -5248,8 +5233,6 @@ export const CURRENT_PATIENT_PARTICIPATION_RATE: Parameter = {
   displayName: "Current Patient Participation Rate in Clinical Trials",
   description: "Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
   sourceType: "calculated",
-  sourceRef: "clinical-trial-patient-participation-rate",
-  sourceUrl: "https://www.fightcancer.org/policy-resources/barriers-patient-enrollment-therapeutic-clinical-trials-cancer",
   confidence: "high",
   formula: "CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS",
   latex: "\\begin{gathered}\nRate_{part} \\\\\n= \\frac{Slots_{curr}}{N_{patients}} \\\\\n= \\frac{1.9M}{2.4B} \\\\\n= 0.0792\\%\n\\end{gathered}",
@@ -5399,6 +5382,24 @@ export const CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20: Parameter = {
   computeExpr: "((((CURRENT_TRAJECTORY_AVG_INCOME_YEAR_20 * (1.0 - (GLOBAL_MILITARY_SHARE_OF_GDP * Math.pow(((1.0 + GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR) / (1.0 + GDP_BASELINE_GROWTH_RATE)), 20.0)))) * GLOBAL_MEDIAN_TO_MEAN_INCOME_RATIO) * Math.pow((1.0 - GLOBAL_MEDIAN_SHARE_EROSION_RATE_ANNUAL), 20.0)) * (1.0 - GLOBAL_EFFECTIVE_TAX_RATE_MEDIAN))",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/gdp-trajectories.html",
   manualPageTitle: "Please Select an Earth: A) Everyone Gets Rich B) Somalia, but Everywhere",
+};
+
+export const CURRENT_WILLING_PATIENT_PARTICIPATION_RATE: Parameter = {
+  value: 0.00176711309524,
+  parameterName: "CURRENT_WILLING_PATIENT_PARTICIPATION_RATE",
+  calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-current_willing_patient_participation_rate",
+  unit: "rate",
+  displayName: "Current Trial Participation Rate Among Willing Patients",
+  description: "Annual clinical trial slots per patient willing to join a drug trial (1.9M slots / 1.08B willing patients). A capacity ratio, not a measured enrollment share: not every slot goes to a willing chronic-disease patient",
+  sourceType: "calculated",
+  confidence: "medium",
+  formula: "CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL",
+  latex: "\\begin{gathered}\nRate_{part,willing} = \\frac{Slots_{curr}}{N_{willing}} = \\frac{1.9M}{1.08B} = 0.177\\%\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\end{gathered}",
+  confidenceInterval: [0.00139269229144, 0.00222239725743],
+  inputs: ["CURRENT_TRIAL_SLOTS_AVAILABLE", "WILLING_TRIAL_PARTICIPANTS_GLOBAL"],
+  computeExpr: "(CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL)",
+  manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
+  manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
 };
 
 export const DECENTRALIZED_CONGRESS_SAVINGS_PER_CITIZEN_ANNUAL: Parameter = {
@@ -15397,7 +15398,6 @@ export const parameters = {
   CPI_MULTIPLIER_1980_TO_2024,
   CROWD_DECISION_ACCURACY,
   CURRENT_ACTIVE_TRIALS,
-  CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE,
   CURRENT_DISEASE_PATIENTS_GLOBAL,
   CURRENT_DRUG_APPROVALS_PER_YEAR,
   CURRENT_TRIALS_PER_YEAR,
@@ -15685,6 +15685,7 @@ export const parameters = {
   CURRENT_TRAJECTORY_GDP_YEAR_20,
   CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_15,
   CURRENT_TRAJECTORY_MEDIAN_AFTER_TAX_INCOME_YEAR_20,
+  CURRENT_WILLING_PATIENT_PARTICIPATION_RATE,
   DECENTRALIZED_CONGRESS_SAVINGS_PER_CITIZEN_ANNUAL,
   DEFENSE_TAKEOVER_COST_ACTIVIST,
   DEFENSE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS,
@@ -16609,19 +16610,6 @@ export const citations: Record<string, Citation> = {
         'container-title': "PLOS One",
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4444136/",
         note: "Analysis of 7,646 trials in ClinicalTrials.gov results database as of February 2013",
-  },
-  "clinical-trial-patient-participation-rate": {
-        id: "clinical-trial-patient-participation-rate",
-        type: "article-journal",
-        title: "Clinical trial patient participation rate",
-        author: [
-          {
-            literal: "ACS CAN"
-          },
-        ],
-        'container-title': "ACS CAN: Barriers to Clinical Trial Enrollment",
-        URL: "https://www.fightcancer.org/policy-resources/barriers-patient-enrollment-therapeutic-clinical-trials-cancer",
-        note: "ACS CAN: Barriers to Clinical Trial Enrollment | HINTS: Clinical Trial Participation",
   },
   "clinical-trials-puzzle-interactome": {
         id: "clinical-trials-puzzle-interactome",
@@ -19109,10 +19097,10 @@ export const citations: Record<string, Citation> = {
 /** Summary statistics */
 export const PARAMETER_STATS = {
   total: 904,
-  external: 254,
-  calculated: 462,
+  external: 253,
+  calculated: 463,
   definitions: 188,
-  citations: 197,
+  citations: 196,
 } as const;
 
 // ============================================================================

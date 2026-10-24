@@ -2429,21 +2429,6 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
       "chapterTitle": "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease"
     },
-    "CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE": {
-      "value": 0.0006,
-      "formatted": "0.06%",
-      "unit": "rate",
-      "description": "Current clinical trial participation rate (0.06% of population)",
-      "displayName": "Current Clinical Trial Participation Rate",
-      "sourceType": "external",
-      "sourceRef": "clinical-trial-patient-participation-rate",
-      "sourceUrl": "https://www.fightcancer.org/policy-resources/barriers-patient-enrollment-therapeutic-clinical-trials-cancer",
-      "confidence": "high",
-      "formula": null,
-      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-current_clinical_trial_participation_rate",
-      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/solution/dfda.html",
-      "chapterTitle": "A Decentralized FDA"
-    },
     "CURRENT_COMBINATION_EXPLORATION_YEARS": {
       "value": 13672803.030303031,
       "formatted": "13.7 million years",
@@ -2533,8 +2518,8 @@
       "description": "Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
       "displayName": "Current Patient Participation Rate in Clinical Trials",
       "sourceType": "calculated",
-      "sourceRef": "clinical-trial-patient-participation-rate",
-      "sourceUrl": "https://www.fightcancer.org/policy-resources/barriers-patient-enrollment-therapeutic-clinical-trials-cancer",
+      "sourceRef": null,
+      "sourceUrl": null,
       "confidence": "high",
       "formula": "CURRENT_TRIAL_SLOTS / DISEASE_PATIENTS",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-current_patient_participation_rate",
@@ -2774,6 +2759,27 @@
         2300000.0
       ],
       "distribution": "lognormal",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
+      "chapterTitle": "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease"
+    },
+    "CURRENT_WILLING_PATIENT_PARTICIPATION_RATE": {
+      "value": 0.0017671130952380952,
+      "formatted": "0.177%",
+      "unit": "rate",
+      "description": "Annual clinical trial slots per patient willing to join a drug trial (1.9M slots / 1.08B willing patients). A capacity ratio, not a measured enrollment share: not every slot goes to a willing chronic-disease patient",
+      "displayName": "Current Trial Participation Rate Among Willing Patients",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "medium",
+      "formula": "CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-current_willing_patient_participation_rate",
+      "latex": "\\begin{gathered}\nRate_{part,willing} = \\frac{Slots_{curr}}{N_{willing}} = \\frac{1.9M}{1.08B} = 0.177\\%\n\\\\[0.5em]\n\\text{where } N_{willing} = N_{patients} \\times Pct_{willing} = 2.4B \\times 44.8\\% = 1.08B\n\\end{gathered}",
+      "inputs": [
+        "CURRENT_TRIAL_SLOTS_AVAILABLE",
+        "WILLING_TRIAL_PARTICIPANTS_GLOBAL"
+      ],
+      "computeExpr": "(CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
       "chapterTitle": "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease"
     },
