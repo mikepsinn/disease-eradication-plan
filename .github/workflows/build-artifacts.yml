@@ -163,11 +163,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-1-pct-treaty-impact
-          path: _build_temp/1-pct-treaty-impact/**/*.pdf
+          path: _build_temp/1-pct-treaty-impact/_site/1-pct-treaty-impact/*.pdf
           if-no-files-found: error
 
 
@@ -291,11 +292,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-1-percent-treaty
-          path: _build_temp/1-percent-treaty/**/*.pdf
+          path: _build_temp/1-percent-treaty/_site/1-percent-treaty/*.pdf
           if-no-files-found: error
 
 
@@ -419,11 +421,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-algorithmic-public-administration
-          path: _build_temp/algorithmic-public-administration/**/*.pdf
+          path: _build_temp/algorithmic-public-administration/_site/algorithmic-public-administration/*.pdf
           if-no-files-found: error
 
 
@@ -547,11 +550,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-cost-of-change
-          path: _build_temp/cost-of-change/**/*.pdf
+          path: _build_temp/cost-of-change/_site/cost-of-change/*.pdf
           if-no-files-found: error
 
 
@@ -675,11 +679,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-court-of-humanity
-          path: _build_temp/court-of-humanity/**/*.pdf
+          path: _build_temp/court-of-humanity/_site/court-of-humanity/*.pdf
           if-no-files-found: error
 
 
@@ -803,11 +808,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-dfda-impact
-          path: _build_temp/dfda-impact/**/*.pdf
+          path: _build_temp/dfda-impact/_site/dfda-impact/*.pdf
           if-no-files-found: error
 
 
@@ -931,11 +937,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-dfda-spec
-          path: _build_temp/dfda-spec/**/*.pdf
+          path: _build_temp/dfda-spec/_site/dfda-spec/*.pdf
           if-no-files-found: error
 
 
@@ -1059,11 +1066,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-drug-development-cost
-          path: _build_temp/drug-development-cost/**/*.pdf
+          path: _build_temp/drug-development-cost/_site/drug-development-cost/*.pdf
           if-no-files-found: error
 
 
@@ -1187,11 +1195,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-earth-optimization-prize
-          path: _build_temp/earth-optimization-prize/**/*.pdf
+          path: _build_temp/earth-optimization-prize/_site/least-bad-idea-prize/*.pdf
           if-no-files-found: error
 
 
@@ -1315,11 +1324,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-earth-optimization-prize-protocol
-          path: _build_temp/earth-optimization-prize-protocol/**/*.pdf
+          path: _build_temp/earth-optimization-prize-protocol/_site/earth-optimization-prize-protocol/*.pdf
           if-no-files-found: error
 
 
@@ -1443,11 +1453,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-gdp-trajectories
-          path: _build_temp/gdp-trajectories/**/*.pdf
+          path: _build_temp/gdp-trajectories/_site/gdp-trajectories/*.pdf
           if-no-files-found: error
 
 
@@ -1571,11 +1582,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-humanity-v-government
-          path: _build_temp/humanity-v-government/**/*.pdf
+          path: _build_temp/humanity-v-government/_site/humanity-v-government/*.pdf
           if-no-files-found: error
 
 
@@ -1699,11 +1711,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-i-am-retarded
-          path: _build_temp/i-am-retarded/**/*.pdf
+          path: _build_temp/i-am-retarded/_site/i-am-retarded/*.pdf
           if-no-files-found: error
 
 
@@ -1827,11 +1840,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-iab
-          path: _build_temp/iab/**/*.pdf
+          path: _build_temp/iab/_site/iab/*.pdf
           if-no-files-found: error
 
 
@@ -1955,11 +1969,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-invisible-graveyard
-          path: _build_temp/invisible-graveyard/**/*.pdf
+          path: _build_temp/invisible-graveyard/_site/invisible-graveyard/*.pdf
           if-no-files-found: error
 
 
@@ -2083,11 +2098,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-joke
-          path: _build_temp/joke/**/*.pdf
+          path: _build_temp/joke/_site/joke/*.pdf
           if-no-files-found: error
 
 
@@ -2211,11 +2227,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-loving-takeover
-          path: _build_temp/loving-takeover/**/*.pdf
+          path: _build_temp/loving-takeover/_site/loving-takeover/*.pdf
           if-no-files-found: error
 
 
@@ -2495,11 +2512,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-obg
-          path: _build_temp/obg/**/*.pdf
+          path: _build_temp/obg/_site/obg/*.pdf
           if-no-files-found: error
 
 
@@ -2623,11 +2641,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-opg
-          path: _build_temp/opg/**/*.pdf
+          path: _build_temp/opg/_site/opg/*.pdf
           if-no-files-found: error
 
 
@@ -2751,11 +2770,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-optimocracy
-          path: _build_temp/optimocracy/**/*.pdf
+          path: _build_temp/optimocracy/_site/optimocracy/*.pdf
           if-no-files-found: error
 
 
@@ -2879,11 +2899,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-organized-violence-tax
-          path: _build_temp/organized-violence-tax/**/*.pdf
+          path: _build_temp/organized-violence-tax/_site/organized-violence-tax/*.pdf
           if-no-files-found: error
 
 
@@ -3007,11 +3028,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-political-dysfunction-tax
-          path: _build_temp/political-dysfunction-tax/**/*.pdf
+          path: _build_temp/political-dysfunction-tax/_site/political-dysfunction-tax/*.pdf
           if-no-files-found: error
 
 
@@ -3135,11 +3157,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-right-to-trial
-          path: _build_temp/right-to-trial/**/*.pdf
+          path: _build_temp/right-to-trial/_site/right-to-trial/*.pdf
           if-no-files-found: error
 
 
@@ -3263,11 +3286,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-right-to-trial-impact
-          path: _build_temp/right-to-trial-impact/**/*.pdf
+          path: _build_temp/right-to-trial-impact/_site/right-to-trial-impact/*.pdf
           if-no-files-found: error
 
 
@@ -3384,11 +3408,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-survey-to-end-war-and-disease
-          path: _build_temp/survey-to-end-war-and-disease/**/*.pdf
+          path: _build_temp/survey-to-end-war-and-disease/_site/survey-to-end-war-and-disease/*.pdf
           if-no-files-found: error
 
 
@@ -3512,11 +3537,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-us-efficiency-audit
-          path: _build_temp/us-efficiency-audit/**/*.pdf
+          path: _build_temp/us-efficiency-audit/_site/us-efficiency-audit/*.pdf
           if-no-files-found: error
 
 
@@ -3640,11 +3666,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-wishocracy
-          path: _build_temp/wishocracy/**/*.pdf
+          path: _build_temp/wishocracy/_site/wishocracy/*.pdf
           if-no-files-found: error
 
 
@@ -3768,11 +3795,12 @@ jobs:
         timeout-minutes: 30
 
 
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-wishonias-wager
-          path: _build_temp/wishonias-wager/**/*.pdf
+          path: _build_temp/wishonias-wager/_site/wishonias-wager/*.pdf
           if-no-files-found: error
 
 
@@ -3969,6 +3997,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
+          NEEDS: ${{ toJSON(needs) }}
         run: |
           # The nightly build refreshes latest-builds; a version tag gets its own release
           tag=latest-builds
@@ -4012,6 +4041,13 @@ jobs:
             echo "::error::No build produced a file to release."
             exit 1
           fi
+          # A release holds one file per name; two uploads of one name make --clobber delete the other's file
+          names="$(printf '%s\n' "${files[@]##*/}" | sort)"
+          duplicates="$(uniq -d <<< "$names")"
+          if [ -n "$duplicates" ]; then
+            echo "::error::More than one build made each of these files: $(echo $duplicates)"
+            exit 1
+          fi
 
           if gh release view "$tag" > /dev/null 2>&1; then
             gh release edit "$tag" --title "$title" --notes-file release-notes.md
@@ -4021,6 +4057,18 @@ jobs:
           # --clobber replaces files of the same name, so download links stay the same
           gh release upload "$tag" "${files[@]}" --clobber
           echo "Released ${#files[@]} files to $tag"
+
+          # Remove files no build makes now, such as a renamed paper. After a failed build, keep its last good file.
+          failed="$(jq -r 'to_entries[] | select(.key | startswith("build-")) | select(.value.result != "success") | .key' <<< "$NEEDS")"
+          if [ -z "$failed" ]; then
+            assets="$(gh release view "$tag" --json assets --jq '.assets[].name')"
+            while IFS= read -r asset; do
+              if [ -n "$asset" ] && ! grep -qxF -- "$asset" <<< "$names"; then
+                gh release delete-asset "$tag" "$asset" --yes
+                echo "Removed $asset"
+              fi
+            done <<< "$assets"
+          fi
 
 
       - name: Fail the run if a build failed

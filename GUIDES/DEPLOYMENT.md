@@ -43,7 +43,7 @@ Output lands in `_build_temp/<config>/`. A local build can sweep in stray, gitig
 | Push of a `v*` tag | Always | A release named after the tag | Yes |
 | Pull request that changes the workflow | Always, as a test | None | No |
 
-Uploads keep the file names, so `https://github.com/mikepsinn/disease-eradication-plan/releases/download/latest-builds/<file>` always points at the newest build. If one paper fails, the release still gets every other file and the run turns red.
+Uploads keep the file names, so `https://github.com/mikepsinn/disease-eradication-plan/releases/download/latest-builds/<file>` always points at the newest build. If one paper fails, the release still gets every other file and the run turns red. When every build passes, the release step also removes files that no build makes now, such as a renamed paper.
 
 The book job renders `_quarto-manual-paperback.yml` once per format, because with `freeze: auto` a multi-format render reuses the first format's results and the later formats lose their figures. A format that fails is left out, and the others still reach the release. It releases the files KDP takes: the EPUB (Kindle-fixed by `render-quarto.py`), the eBook cover, the 7x10 paperback interior PDF, and a DOCX. The paperback cover (back, spine, and front in one PDF) is not built; make it with KDP Cover Creator. A Windows job then tries to turn the EPUB into a KPF with Kindle Previewer. Kindle Previewer writes a KPF only when Enhanced Typesetting works, so a missing KPF is a warning about the EPUB, and the job never blocks the release.
 
@@ -53,6 +53,7 @@ The Zenodo step publishes each paper that passes LLM PDF validation, which runs 
 
 - `ConnectionReset` or a timeout in a render step is a network flake: use "Re-run failed jobs".
 - "Graphviz did not install after 3 attempts" means apt could not reach the Ubuntu mirrors. `.github/actions/install-graphviz` caps and retries each apt call, so this fails in minutes instead of hanging; use "Re-run failed jobs".
+- "More than one build made each of these files" means two builds wrote files with the same name. A release holds one file per name, so give one of them a different `pdf-output-file`.
 - An authentication error in `deploy-redirect-worker` means the CI token does not cover a zone in `_ROUTE_ZONES`. See the API token section of `cloudflare/README.md`.
 - "Redirect target is not live" means a site in the redirect map is not serving yet. The previous Worker stays deployed, so legacy links keep working.
 - For a failing host in `verify-live-sites`, run `pnpm monitor:uptimerobot:check` locally to see where it ends up.

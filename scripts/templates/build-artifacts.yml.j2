@@ -186,11 +186,12 @@ jobs:
         timeout-minutes: {{ job.timeout_minutes }}
 
 {% if "pdf" in job.downloadable_formats %}
+      # Only the output folder: _freeze/ also holds every chart as a PDF, with names that repeat across chapters
       - name: Upload PDFs artifact
         uses: actions/upload-artifact@v4
         with:
           name: pdfs-{{ job.config_name }}
-          path: _build_temp/{{ job.config_name }}/**/*.pdf
+          path: {{ job.build_dir }}/*.pdf
           if-no-files-found: error
 {% endif %}
 
@@ -199,7 +200,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: epubs-{{ job.config_name }}
-          path: _build_temp/{{ job.config_name }}/**/*.epub
+          path: {{ job.build_dir }}/*.epub
           if-no-files-found: error
 {% endif %}
 
@@ -208,7 +209,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: docx-{{ job.config_name }}
-          path: _build_temp/{{ job.config_name }}/**/*.docx
+          path: {{ job.build_dir }}/*.docx
           if-no-files-found: error
 {% endif %}
 {% endif %}
@@ -345,6 +346,7 @@ jobs:
         env:
           GH_TOKEN: {% raw %}${{ github.token }}{% endraw %}
           GH_REPO: {% raw %}${{ github.repository }}{% endraw %}
+          NEEDS: {% raw %}${{ toJSON(needs) }}{% endraw %}
         run: |
           # The nightly build refreshes latest-builds; a version tag gets its own release
           tag=latest-builds
@@ -387,6 +389,13 @@ jobs:
             echo "::error::No build produced a file to release."
             exit 1
           fi
+          # A release holds one file per name; two uploads of one name make --clobber delete the other's file
+          names="$(printf '%s\n' "${files[@]##*/}" | sort)"
+          duplicates="$(uniq -d <<< "$names")"
+          if [ -n "$duplicates" ]; then
+            echo "::error::More than one build made each of these files: $(echo $duplicates)"
+            exit 1
+          fi
 
           if gh release view "$tag" > /dev/null 2>&1; then
             gh release edit "$tag" --title "$title" --notes-file release-notes.md
@@ -396,6 +405,18 @@ jobs:
           # --clobber replaces files of the same name, so download links stay the same
           gh release upload "$tag" "${files[@]}" --clobber
           echo "Released ${#files[@]} files to $tag"
+
+          # Remove files no build makes now, such as a renamed paper. After a failed build, keep its last good file.
+          failed="$(jq -r 'to_entries[] | select(.key | startswith("build-")) | select(.value.result != "success") | .key' <<< "$NEEDS")"
+          if [ -z "$failed" ]; then
+            assets="$(gh release view "$tag" --json assets --jq '.assets[].name')"
+            while IFS= read -r asset; do
+              if [ -n "$asset" ] && ! grep -qxF -- "$asset" <<< "$names"; then
+                gh release delete-asset "$tag" "$asset" --yes
+                echo "Removed $asset"
+              fi
+            done <<< "$assets"
+          fi
 {% endraw %}
 
       - name: Fail the run if a build failed

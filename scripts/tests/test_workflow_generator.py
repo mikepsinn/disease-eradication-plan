@@ -1,5 +1,6 @@
 import importlib.util
 import io
+import re
 import sys
 from pathlib import Path
 
@@ -230,6 +231,25 @@ def test_optional_kindle_check_cannot_fail_the_release() -> None:
     assert "      - check-kindle-manual-paperback\n" in release_job
     assert 'select(.key | startswith("build-"))' in release_job
     assert "github.event_name != 'pull_request'" in release_job
+
+
+def test_release_gets_only_final_files_with_unique_names() -> None:
+    workflow = render_artifacts_workflow()
+    release_job = workflow[workflow.index("  release-builds:"):]
+
+    # _freeze/ holds every chart as a PDF; 27 repeated names made the release upload fail every night
+    for job in extract_artifact_job_configs(PROJECT_ROOT):
+        build_job = workflow[workflow.index(f"  build-{job.config_name}:"):]
+        build_job = build_job[:re.search(r"\n  \S", build_job).start()]
+        paths = [line.strip() for line in build_job.splitlines() if line.strip().startswith("path: _build_temp/")]
+        for path in paths:
+            assert path.rsplit("/", 1)[0] == f"path: {job.build_dir}"
+        assert len(paths) == (0 if job.kdp_files else len(job.downloadable_formats))
+    assert "uniq -d" in release_job
+    assert release_job.index("uniq -d") < release_job.index("gh release upload")
+    # Old files go only after every build passed, so a failed paper keeps its last good PDF
+    prune = release_job[release_job.index("gh release upload"):]
+    assert prune.index('if [ -z "$failed" ]') < prune.index("gh release delete-asset")
 
 
 def test_no_build_step_can_hang_for_githubs_six_hour_default() -> None:
