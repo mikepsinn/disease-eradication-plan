@@ -49,8 +49,8 @@ SYNC_METADATA_KEYS = {
     "linkedin",
     # Language
     "language",
-    # Legal (these are universal)
-    "copyright",
+    # Legal (these are universal). No "copyright": papers carry a license and a
+    # publication year, not a copyright notice.
     "copyright-year",
     "license",
     "license-url",

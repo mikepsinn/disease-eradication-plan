@@ -1,0 +1,155 @@
+---
+title: "Patient's Right to Trial Act: Potential Impact of Adoption in All 50 States"
+description: "A conditional schedule-shift model of state legislation that lets post-Phase-1 treatments finance their own evidence generation and accelerates treatments for global diseases and aging."
+published: true
+image: /assets/og/patient-right-to-trial-act-og-bw.png
+tags:
+  - right-to-try
+  - right-to-trial
+  - state-policy
+  - clinical-trials
+  - health-economics
+---
+
+{{< include /knowledge/includes/setup-parameters.qmd >}}
+
+::: {.callout-note appearance="simple"}
+**Please help us improve this impact analysis.** We want to help policymakers and the public understand the enormous potential benefits of universal patient access to clinical trials and a continually learning system for global treatment-effectiveness rankings and outcome labels. Comment below, or highlight any text and log in with Hypothesis to leave a note. Co-authors welcome.
+:::
+
+## The short version
+
+If all 50 states adopt [Universal Right to Try](https://papers.acceleratedmedicine.org/right-to-trial.html) [@right-to-trial-paper-2025] with Evidence and the mature system produces the modeled increase in treatment discovery, the average first effective treatment arrives {{< var state_rtt_treatment_acceleration_years >}} sooner. Summed across future generations, that schedule shift prevents {{< var state_rtt_treatment_acceleration_suffering_years >}} of disability-equivalent suffering, averts roughly {{< var state_rtt_treatment_acceleration_lives_saved >}} from diseases and aging, and restores {{< var state_rtt_treatment_acceleration_dalys >}} of healthy life. Each range is the 90% interval (5th to 95th percentile) from the model's Monte Carlo simulation. These are conditional lifetime totals, not a count of people alive today, and passing a law does not automatically produce the modeled scientific effect.
+
+The scale comes from a queue calculation. About {{< var diseases_without_effective_treatment >}} rare diseases still have no effective treatment, and roughly {{< var new_disease_first_treatments_per_year_nounit >}} diseases receive their first effective treatment each year. At that pace, exploring the queue takes approximately {{< var status_quo_queue_clearance_years >}}, and the average therapeutic target waits about {{< var status_quo_avg_years_to_first_treatment >}}. The model uses this queue as a proxy for the wider therapeutic frontier and asks how much the wait shrinks if the discovery rate rises.
+
+The problem is not a shortage of possible treatments. Many post-Phase-1 compounds, repurposed drugs, combinations, doses, and disease-specific uses are never tested because nobody can finance conventional Phase 2 and Phase 3 trials.
+
+Universal Right to Try with Evidence changes that financing constraint. Licensed centers provide eligible experimental treatments while patients or payers cover treatment-related care, trial-site services, and permitted study costs. Trial participants follow shared protocols, and other eligible uses contribute separately labeled observational outcomes. Treatments that were not economically viable to investigate become testable. State law does not waive federal authorization or evidence requirements.
+
+Implementation costs about {{< var state_rtt_implementation_cost_total >}}: the 50-state campaign, common evidence standards, and the shared registry's first ten years, after which participating centers fund the registry. At the central estimate, that is {{< var state_rtt_implementation_cost_per_daly >}} per healthy year restored, with future years discounted at the same {{< var npv_discount_rate_standard >}} used for costs.
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_lives_saved.qmd >}}
+
+## What the legislation changes
+
+Montana has already created licensed experimental treatment centers. Senate Bill 535 covers treatments that have completed Phase 1 but are not approved for general FDA use. It permits centers to establish payment arrangements, charges a $10,000 license application fee and $5,000 annual renewal fee, and directs 2% of annual net profits toward access for qualifying Montana residents [@montana-sb535-2025].
+
+That creates a lawful state-regulated place to provide experimental treatment. It does not by itself create a clinical trial system. Montana's rules require centers to track treatment, patient outcomes, and serious adverse events, but the rules explicitly state that the centers do not administer clinical trials [@montana-etc-rules-2026]. Observational outcomes can reveal promising or dangerous signals. Without a credible comparison, they cannot reliably show that a treatment caused the result.
+
+The model bill adds four requirements:
+
+1. **Enroll.** Register a prospective protocol, obtain informed consent, report serious safety events, and place each patient in the applicable federal trial or treatment-access pathway.
+2. **Compare.** Prespecify outcomes and use simple randomization or another adequate control when feasible. Without an adequate comparison, label the result a signal, not a validated treatment effect.
+3. **Pool.** Send standardized, de-identified baseline and outcome data to a shared registry.
+4. **Publish.** Continuously publish results for each treatment-condition pair, including negative and harmful results.
+
+The result is access with evidence. Participating patients receive treatments that sponsors make available and contribute to a common learning system. Every result can improve the next treatment decision.
+
+## Why treatments that cannot attract conventional funding matter
+
+A candidate treatment can have completed initial human safety testing and still be commercially impossible to develop. A conventional Phase 3 trial costs about {{< var traditional_phase3_cost_per_patient >}} per participant. The existing model estimates that an embedded pragmatic trial can reduce that to approximately {{< var dfda_pragmatic_trial_cost_per_patient >}} per participant, a {{< var dfda_trial_cost_reduction_factor >}} reduction.
+
+That does not mean every trial becomes {{< var dfda_trial_cost_reduction_factor >}} cheaper. Complex and high-risk studies will still need specialized sites, procedures, and monitoring. It means routine care can often replace dedicated research visits and duplicate data collection while retaining prespecified outcomes, safety reporting, reliable analysis, and a comparison group.
+
+The pool of stranded candidates is large: roughly {{< var safe_compounds_count >}} with established human safety profiles, counting approved drugs and food substances already recognized as safe, and most sit outside patent protection. The moment a trial proves a cheap unpatented compound works, any manufacturer can sell it at commodity prices, so no sponsor can recoup a conventional Phase 3 bill. Metformin is the standard example: an FDA-cleared trial of the generic diabetes drug against aging itself, tracking 3,000 people over five years at an estimated $30 million to $50 million, sat unfunded for more than six years because no company could profit from a positive result [@tame-metformin-funding-2022].
+
+The candidate pool is much larger than a count of compounds. One compound may be tested for several diseases, doses, combinations, or subtypes. Additional candidates do not multiply disease burden. They increase the chance that the first effective treatment for each condition is found sooner.
+
+## One policy-effect input instead of a pretend forecast
+
+Nobody knows how many centers will open, how many patients will enroll, how many shelved treatments will return, or what fraction of well-designed evaluations will find an effective treatment. Modeling each unknown as a separate multiplier would manufacture precision and create opportunities to count the same benefit twice.
+
+The model compresses the entire policy mechanism into one uncertain input: a treatment-discovery multiplier of {{< var state_rtt_treatment_discovery_multiplier >}}. It represents:
+
+- patient or payer funding of treatment and evidence generation;
+- treatments revived because conventional trials were not economically viable;
+- enough candidate-condition pairs and eligible participants to sustain evaluation;
+- protocols capable of producing credible efficacy evidence; and
+- the share of completed evaluations that find a first effective treatment.
+
+The central value is a calibration assumption, not an observed causal estimate. The automatic Monte Carlo samples uncertainty in this multiplier, launch cost, avoidable disease burden, and their upstream inputs. It does not capture political adoption risk or model-form uncertainty in using the rare-disease queue as a proxy for the wider therapeutic frontier. The physical health totals (lives, healthy years, suffering) are undiscounted counts. The cost ratios discount health at {{< var npv_discount_rate_standard >}}, the same rate applied to costs, so a healthy year a century from now counts for far less than one next year.
+
+## The calculation, one step at a time
+
+The arithmetic asks how much sooner the average first treatment arrives if the discovery rate increases:
+
+| Step | Question | Conditional result |
+|:---|:---|---:|
+| 1 | How long would the remaining treatment queue take at the current discovery rate? | {{< var status_quo_queue_clearance_years >}} |
+| 2 | How long does the average therapeutic target wait? | {{< var status_quo_avg_years_to_first_treatment >}} |
+| 3 | How much earlier does treatment arrive at the modeled discovery rate? | {{< var state_rtt_treatment_acceleration_years >}} |
+| 4 | How many global healthy years does that schedule shift restore? | {{< var state_rtt_treatment_acceleration_dalys >}} |
+| 5 | What is the average shift worth today, discounting future years at {{< var npv_discount_rate_standard >}}? | {{< var state_rtt_treatment_acceleration_years_discounted >}} |
+| 6 | What is the campaign and registry-launch cost per restored healthy year, in present value? | {{< var state_rtt_implementation_cost_per_daly >}} |
+
+The full calculation is:
+
+{{< var state_rtt_implementation_cost_per_daly_latex >}}
+
+The rare-disease treatment queue is the clearest available count of diseases still awaiting a first effective treatment. The model uses it as a proxy for the pace of exploring the wider therapeutic frontier, then applies the resulting schedule shift to eventually avoidable global disease and aging-related burden. That is the model's strongest assumption. It is stated directly because it drives the scale of the result.
+
+## What the headline numbers mean
+
+The estimate of {{< var state_rtt_treatment_acceleration_lives_saved_nounit >}} premature deaths prevented exceeds the current world population because it sums deaths prevented across approximately {{< var state_rtt_treatment_acceleration_years_nounit >}} years of future generations. It is a schedule-shift estimate, not a count of currently identifiable people.
+
+The {{< var state_rtt_treatment_acceleration_suffering_years_nounit >}} years of suffering are disability-weighted equivalents ({{< var state_rtt_treatment_acceleration_suffering_hours_nounit >}} hours, if you prefer to be horrified hourly). A disability weight of 0.25 sustained for four years counts as one full-disability-equivalent year. It does not mean that every year represents maximum conscious pain.
+
+The global estimate assumes discoveries become public knowledge and eventually benefit patients outside the United States. The access right itself remains state law.
+
+The model does not count the uncertain direct health effect on participating patients. Earlier access to an effective treatment could help them immediately. Ineffective or unsafe treatments could harm them. Those effects are real, but they are a separate channel from the treatment-discovery schedule shift and are not included in the headline totals.
+
+## What it costs
+
+The launch cost is {{< var state_rtt_implementation_cost_total >}}: the 50-state campaign, common evidence standards, and the shared registry's first ten years. Participating centers then sustain the registry through license or enrollment assessments. The model does not require a new state appropriation.
+
+The conditional cost per DALY divides that launch cost by the present value of the health benefit, discounted at {{< var npv_discount_rate_standard >}}, if all 50 states adopt and the mature system produces the modeled discovery rate. It excludes patient and payer spending on treatment delivery because those payments buy care and evidence generation rather than consuming the launch budget.
+
+At the central estimate, the modeled launch cost per life saved is {{< var state_rtt_implementation_cost_per_life_saved >}}, with future deaths prevented discounted to present value so they compare with GiveWell's near-term lives. The midpoint of GiveWell's cited modeled range across top charities is {{< var state_rtt_vs_givewell_cost_per_life_multiplier_nounit >}} times that figure [@givewell-cost-per-life-saved]. The scopes differ: the GiveWell number counts full program costs, while this numerator counts only the campaign and registry launch that unlock treatment, sponsor, payer, clinic, and investor spending.
+
+Three economic effects are left out because each is hard to estimate and they overlap one another and the discovery multiplier: price competition once several post-Phase-1 treatments target the same condition, substitution of cheap unpatented treatments for expensive patented ones, and lower medical and caregiving spending when aging and chronic disease are treated earlier. Summing them would double count. The model treats them the way it treats the direct participant effect: real, unmodeled, and excluded from the headline totals. Every excluded channel biases the conditional cost per healthy year against the policy.
+
+{{< include ../figures/state-rtt-givewell-cost-comparison.qmd >}}
+
+The cost-per-DALY Monte Carlo shows uncertainty in the conditional estimate itself:
+
+{{< include ../figures/mc-distribution-state_rtt_implementation_cost_per_daly.qmd >}}
+
+For any funding decision, multiply the conditional benefit by your own probability that the money produces full adoption, mature implementation, and the modeled scientific effect. Equivalently, divide the conditional cost per life saved by that probability. Keeping that judgment outside the model avoids another arbitrary scenario parameter.
+
+## What commercial capital can finance
+
+Review, compliance, clinical administration, manufacturing, monitoring, data infrastructure, and successful treatment assets can all produce revenue. Commercial capital can therefore finance:
+
+- experimental treatment review board services and compliance;
+- licensed treatment and pragmatic-trial sites;
+- manufacturing and distribution;
+- treatment sponsors and holders of shelved post-Phase-1 assets;
+- interoperable registry, analytics, and monitoring infrastructure; and
+- payer contracts that condition coverage on evidence production.
+
+The campaign, evidence standards, and registry are the one layer that cannot earn revenue; everything downstream can pay for itself.
+
+{{< include ../figures/state-rtt-commercial-evidence-flywheel.qmd >}}
+
+The flywheel maps possible cash flows, not promised investor returns. Actual returns depend on lawful charging, treatment demand, reimbursement, liability, protocol quality, and whether the evidence changes clinical or regulatory decisions.
+
+## The federal boundary
+
+State legislation does not approve drugs, waive federal trial authorization, or lower FDA's evidence standard. Federal Right to Try is limited to eligible patients who are unable to participate in a clinical trial involving the drug [@fda-right-to-try-eligibility]. A patient enrolled in an interventional pragmatic trial must instead participate under an active investigational new drug application or another applicable FDA-authorized pathway. Patients who cannot join a trial may contribute separately labeled observational outcomes through federal Right to Try or expanded access if eligible.
+
+FDA's standard remains substantial evidence from adequate and well-controlled investigations. FDA guidance allows one rigorous investigation plus confirmatory evidence in some circumstances, while still requiring sufficient safety evidence and a favorable benefit-risk assessment [@fda-substantial-evidence-guidance-2026]. FDA also supports streamlined randomized trials integrated into routine clinical practice [@fda-routine-practice-rct-guidance-2024]. Project Pragmatica applies this design logic to approved oncology products through simpler eligibility and routine-practice enrollment [@fda-project-pragmatica-2025]. These programs show that pragmatic design can reduce collection burden. They do not authorize states to bypass federal law.
+
+Federal charging rules also remain in force. An IND sponsor needs FDA authorization to charge for an investigational drug and generally may recover only direct drug costs. Trial sites may separately recover pharmacy, nursing, equipment, and study-related procedure costs without authorization under that charging rule [@fda-charging-investigational-drugs-2024]. The model therefore assumes that patients or payers cover treatment delivery, site services, and permitted study costs. Whether lawful revenue is sufficient to sustain the modeled discovery multiplier remains uncertain.
+
+Medicare already uses the analogous payment principle in Coverage with Evidence Development. Specified services may be covered within an approved study while evidence is collected, then CMS can reconsider coverage using the results [@cms-coverage-evidence-development-2024]. Universal Right to Try with Evidence applies the same basic idea outside Medicare: access now, standardized evidence from every use, and stronger decisions over time. The [Continuous Evidence Generation Protocol](https://doi.org/10.5281/zenodo.18203375) [@dfda-spec-paper-2025] provides one compatible technical design. The legislation does not need to mandate that specific protocol.
+
+## Montana can prove it works
+
+Montana has already completed the politically difficult first step. It created the licensed-center and independent-review framework. Infinita describes a coordinated pathway involving experimental treatment review board review, licensed clinical administration, monitoring, evidence generation, and early commercialization for post-Phase-1 therapies [@infinita-montana-pathway-2026].
+
+The next step is a transparent Montana demonstration that adds interoperable enrollment, credible comparisons, pooled outcomes, documented fees, and safety monitoring. If that system produces useful evidence while remaining commercially sustainable, other states have a model they can copy.
+
+The original Right to Try model spread from its first state in 2014 to 41 states by 2018 [@goldwater-rtt-41-states-2018]. That history establishes a distribution channel, not a guarantee. The evidence amendment must prove its value in operation.
+
+Any implementing bill should require Enroll, Compare, Pool, and Publish. That turns 50 possible access experiments into one continually learning treatment system.

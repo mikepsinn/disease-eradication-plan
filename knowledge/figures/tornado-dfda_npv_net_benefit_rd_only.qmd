@@ -20,14 +20,14 @@ display_name = "NPV Net Benefit (R&D Only)"
 
 # Baseline and units
 
-baseline = 388741518712.06226
+baseline = 267959730694.86127
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT', 'DIH_NPV_UPFRONT_COST_INITIATIVES', 'DIH_NPV_ANNUAL_OPEX_INITIATIVES', 'DFDA_NPV_ANNUAL_OPEX', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_NPV_UPFRONT_COST', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
-driver_labels = ['Annual Global Spending on Clinical Trials', 'Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient', 'DIH Broader Initiatives Upfront Cost', 'DIH Broader Initiatives Annual OPEX', 'Pragmatic Trial Platform Core Framework Annual OPEX', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Core Framework Build Cost', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
-impacts_low = [-64936445170.53815, 8089709123.588867, -9484503322.842163, 79750000.0, 60564440.14111328, 67815112.55236816, 33220960.944213867, 19932576.56652832, 19932576.56652832, 15000000.0, 13288384.377685547, 6644192.188842773]
-impacts_high = [97404667755.80725, -20136763936.240784, 5946633035.750244, -120250000.0, -92979210.92089844, -64403031.417663574, -46509345.32196045, -33220960.944213867, -26576768.75543213, -25000000.0, -19932576.56652832, -6644192.188842773]
+drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'PHASE_2_3_CLINICAL_TRIAL_COST_PCT', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT', 'DIH_NPV_UPFRONT_COST_INITIATIVES', 'DIH_NPV_ANNUAL_OPEX_INITIATIVES', 'DFDA_NPV_ANNUAL_OPEX', 'DFDA_OPEX_PLATFORM_MAINTENANCE', 'DFDA_OPEX_STAFF', 'DFDA_OPEX_INFRASTRUCTURE', 'DFDA_NPV_UPFRONT_COST', 'DFDA_OPEX_REGULATORY', 'DFDA_OPEX_COMMUNITY']
+driver_labels = ['Annual Global Spending on Clinical Trials', 'Phase 2/3 Share of Clinical Trial Costs', 'Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient', 'DIH Broader Initiatives Upfront Cost', 'DIH Broader Initiatives Annual OPEX', 'Pragmatic Trial Platform Core Framework Annual OPEX', 'Pragmatic Trial Platform Maintenance Costs', 'Pragmatic Trial Platform Staff Costs', 'Pragmatic Trial Platform Infrastructure Costs', 'Pragmatic Trial Platform Core Framework Build Cost', 'Pragmatic Trial Platform Regulatory Coordination Costs', 'Pragmatic Trial Platform Community Support Costs']
+impacts_low = [-44806147167.671326, -19480933551.16153, 5581899295.276245, -6544307292.761078, 79750000.0, 60564440.14111328, 67815112.55236816, 33220960.944213867, 19932576.56652832, 19932576.56652832, 15000000.0, 13288384.377685547, 6644192.188842773]
+impacts_high = [67209220751.50696, 19480933551.1615, -13894367116.006165, 4103176794.6676636, -120250000.0, -92979210.9208374, -64403031.41763306, -46509345.32192993, -33220960.944244385, -26576768.755371094, -25000000.0, -19932576.566558838, -6644192.188842773]
 
 # Convert deltas to absolute values (baseline + delta)
 

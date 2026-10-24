@@ -100,7 +100,7 @@ export interface ImageAuthorMetadata {
   author?: string
   /** Copyright notice */
   copyright?: string
-  /** License type (e.g., 'CC BY-NC 4.0') */
+  /** License type (e.g., 'CC BY 4.0') */
   license?: string
   /** License URL */
   licenseUrl?: string
@@ -215,8 +215,8 @@ export interface ImageSearchMatch {
 export const DEFAULT_IMAGE_METADATA: Partial<ImageGenerationMetadata> = {
   author: 'Mike P. Sinn',
   copyright: '© Mike P. Sinn - WarOnDisease.org',
-  license: 'CC BY-NC 4.0',
-  licenseUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',
+  license: 'CC BY 4.0',
+  licenseUrl: 'https://creativecommons.org/licenses/by/4.0/',
   website: 'https://WarOnDisease.org',
   credit: 'WarOnDisease.org',
 }

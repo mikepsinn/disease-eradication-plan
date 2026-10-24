@@ -151,6 +151,13 @@ def generate_all_paper_parameters_qmd(
             if paper_path.exists():
                 qmd_files_to_scan.append(paper_path)
 
+        # A papers site needs the union of its member papers' parameters
+        for paper in dih_render.get("papers", []):
+            member_config = load_quarto_config(project_root / f"_quarto-{paper['config']}.yml")
+            member_path = project_root / member_config["dih-render"]["index-source"]
+            if member_path.exists() and member_path not in qmd_files_to_scan:
+                qmd_files_to_scan.append(member_path)
+
         # Also scan all chapters listed in book.chapters
         chapter_files = _extract_chapters_from_config(config)
         for chapter_file in chapter_files:

@@ -231,7 +231,7 @@ import re as _re
 
 def _strip_confidence_intervals(text: str) -> str:
     """Remove (95% CI: ...) parentheticals — they make abstracts unreadable."""
-    return _re.sub(r"\s*\(95% CI:\s*[^)]+\)", "", text)
+    return _re.sub(r"\s*\(9[05]% CI:\s*[^)]+\)", "", text)
 
 
 def get_paper_metadata(paper_key: str, info: dict) -> dict:
@@ -274,7 +274,7 @@ def get_paper_metadata(paper_key: str, info: dict) -> dict:
     keywords = ((config.get("metadata") or {}).get("keywords")) or []
     tags = [str(k) for k in keywords[:10]] if isinstance(keywords, list) else []
 
-    license_name = (config.get("metadata") or {}).get("license") or "CC BY-NC 4.0"
+    license_name = (config.get("metadata") or {}).get("license") or "CC BY 4.0"
     zenodo_doi = (config.get("metadata") or {}).get("doi")
 
     return {

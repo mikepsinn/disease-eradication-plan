@@ -180,8 +180,9 @@ class ValueWithCI:
 
 def _format_ci_display(central_value: float, unit: str | None,
                        ci_low: float, ci_high: float,
-                       include_unit: bool = True) -> str:
-    """Format a value with 95% CI as a display string.
+                       include_unit: bool = True,
+                       label: str = "95% CI") -> str:
+    """Format a value with a confidence interval as a display string.
 
     Args:
         central_value: The central/deterministic value.
@@ -189,10 +190,13 @@ def _format_ci_display(central_value: float, unit: str | None,
         ci_high: Upper bound of confidence interval.
         unit: Unit string (e.g. "deaths", "USD").
         include_unit: Whether to include the unit text in the formatted output.
+        label: Interval label. Author-specified confidence_interval tuples are
+            treated as 95% intervals by the sampler; Monte Carlo p5-p95 bounds
+            are a 90% interval and must be labeled "90% CI".
 
     Returns:
         String like "416 million deaths (95% CI: 225 million deaths-630 million deaths)"
-        or without units: "416 million (95% CI: 225 million-630 million)"
+        or without units: "416 million (90% CI: 225 million-630 million)"
     """
     central_formatted = format_parameter_value(central_value, unit, include_unit=include_unit, ratio_suffix=False)
 
@@ -203,7 +207,7 @@ def _format_ci_display(central_value: float, unit: str | None,
         ci_low_formatted = format_parameter_value(ci_low, unit, include_unit=include_unit, ratio_suffix=False)
         ci_high_formatted = format_parameter_value(ci_high, unit, include_unit=include_unit, ratio_suffix=False)
 
-    return f"{central_formatted} (95% CI: {ci_low_formatted}-{ci_high_formatted})"
+    return f"{central_formatted} ({label}: {ci_low_formatted}-{ci_high_formatted})"
 
 
 def generate_variables_yml(
@@ -297,7 +301,7 @@ def generate_variables_yml(
 
             if has_meaningful_uncertainty:
                 ci_bounds = (p5, p95)
-                display_value_with_ci = _format_ci_display(central_value, unit, p5, p95, include_unit=True)
+                display_value_with_ci = _format_ci_display(central_value, unit, p5, p95, include_unit=True, label="90% CI")
                 value_with_ci = ValueWithCI(value, display_value_with_ci)
 
         # Generate formatted HTML with tooltip

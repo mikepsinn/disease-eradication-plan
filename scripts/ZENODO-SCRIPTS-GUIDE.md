@@ -31,7 +31,7 @@ All Zenodo uploads now include comprehensive metadata automatically extracted fr
 | **description** | Abstract from QMD frontmatter or config | Full abstract with resolved variables, dollar sign escaping |
 | **creators** | `author` field | Authors with affiliations and ORCIDs |
 | **keywords** | `metadata.keywords` | Subject keywords (max 10) |
-| **license** | `metadata.license` | License identifier (e.g., `cc-by-nc-4.0`) |
+| **license** | `metadata.license` | License identifier (e.g., `cc-by-4.0`) |
 | **rights** | Auto-generated from license + author | Copyright statement: "© 2026 Author Name. Licensed under License" |
 | **references** | `references.bib` | Only citations actually used in paper (with DOIs when available) |
 | **publisher** | `metadata.zenodo.publisher` or `metadata.publisher` | Publishing organization |

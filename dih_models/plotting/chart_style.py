@@ -16,6 +16,7 @@ Usage:
 """
 
 import logging
+import math
 import warnings
 from functools import lru_cache
 from pathlib import Path
@@ -360,7 +361,12 @@ def format_tick_value(value, unit=None, prefix_currency=True):
         is_currency = any(curr in unit_lower for curr in ["usd", "dollar", "eur", "euro", "gbp", "pound", "currency"])
 
     # Format with appropriate suffix
-    if abs_value >= 1e12:
+    if 0 < abs_value < 0.01:
+        # Preserve useful precision for sub-cent currency values and other
+        # small axis scales instead of collapsing every tick to 0.00.
+        decimal_places = -int(math.floor(math.log10(abs_value))) + 2
+        formatted = f"{abs_value:.{decimal_places}f}".rstrip("0").rstrip(".")
+    elif abs_value >= 1e12:
         formatted = f"{abs_value / 1e12:.1f}T"
     elif abs_value >= 1e9:
         formatted = f"{abs_value / 1e9:.1f}B"

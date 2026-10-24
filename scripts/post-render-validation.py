@@ -32,14 +32,13 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent / "lib"))
 
 from dih_models.yaml_utils import load_quarto_config
+from dih_models.image_paths import local_image_path
 from lib.yaml_sync_utils import strip_confidence_intervals
 
 # Set UTF-8 encoding for stdout
 if sys.platform == "win32":
-    import codecs
-
-    sys.stdout = codecs.getwriter("utf-8")(sys.stdout.buffer, "strict")
-    sys.stderr = codecs.getwriter("utf-8")(sys.stderr.buffer, "strict")
+    sys.stdout.reconfigure(encoding='utf-8')  # type: ignore[attr-defined]
+    sys.stderr.reconfigure(encoding='utf-8')  # type: ignore[attr-defined]
 
 # Detect GitHub Actions environment
 IN_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
@@ -387,10 +386,18 @@ def check_broken_internal_links(content, file_path, output_dir):
         for match, attr_type in all_matches:
             href_value = match.group(1)
 
-            # Skip external links (http, https, mailto, etc.)
+            # Check project-hosted resources in the rendered output as well.
+            # Keep cross-site navigation links outside this local-file check.
             parsed = urlparse(href_value)
-            if parsed.scheme in ('http', 'https', 'mailto', 'ftp', 'tel'):
+            if attr_type == 'src':
+                local_path = local_image_path(href_value, Path.cwd())
+                if local_path is None:
+                    continue
+                decoded_href = unquote(local_path)
+            elif parsed.scheme or parsed.netloc:
                 continue
+            else:
+                decoded_href = unquote(parsed.path)
 
             # Skip anchor-only links (fragments)
             if href_value.startswith('#'):
@@ -399,14 +406,6 @@ def check_broken_internal_links(content, file_path, output_dir):
             # Skip data URIs and javascript: links
             if href_value.startswith('data:') or href_value.startswith('javascript:'):
                 continue
-
-            # This is an internal link - check if it exists
-            # Decode URL encoding
-            decoded_href = unquote(href_value)
-
-            # Remove fragment if present
-            if '#' in decoded_href:
-                decoded_href = decoded_href.split('#')[0]
 
             # Resolve relative to current file's directory
             if decoded_href.startswith('/'):

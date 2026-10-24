@@ -201,7 +201,7 @@ def strip_qmd_markup(content: str) -> str:
     content = re.sub(r'(?<!\w)\$(?!\d)([^$\n]+)\$(?!\d)', '', content)
 
     # Remove confidence intervals: (95% CI: $X-$Y), (95% CI: X-Y), 95% CI [X, Y]
-    content = re.sub(r'\s*\(95% CI:[^)]+\)', '', content)
+    content = re.sub(r'\s*\(9[05]% CI:[^)]+\)', '', content)
     content = re.sub(r',?\s*95% CI\s*\*?\*?\[[^\]]+\]\*?\*?', '', content)
 
     # Remove HTML comments

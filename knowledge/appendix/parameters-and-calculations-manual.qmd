@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 753 parameters used in the analysis, organized by type:
+This appendix documents all 782 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 222
-- Calculated values: 380
-- Core definitions: 151
+- Calculated values: 401
+- Core definitions: 159
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (380 parameters) • [External Data Sources](#sec-external) (222 parameters) • [Core Definitions](#sec-definitions) (151 parameters)
+[Calculated Values](#sec-calculated) (401 parameters) • [External Data Sources](#sec-external) (222 parameters) • [Core Definitions](#sec-definitions) (159 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -245,6 +245,46 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-automated_revenue_service_savings_per_american_annual.qmd >}}
+
+:::
+
+### Bed Nets Cost per DALY: $184 {#sec-bed_nets_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per DALY for insecticide-treated bed nets: GiveWell's Against Malaria Foundation cost per life saved divided by the discounted life-years of a child death averted (a full life expectancy at the standard discount rate, life-years accruing continuously). Discounted at the same rate and with the same continuous timing as the dFDA and treaty cost-per-DALY figures so comparisons are like for like. GiveWell publishes cost per life saved, not cost per DALY. Bed nets are the standard benchmark for cost-effective global health spending.
+
+**Inputs**:
+
+- [GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)](#sec-givewell_cost_per_life_max) 📊: $5,500 (95% CI: $3,000 - $8,000)
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+Cost_{nets} \\
+= Cost_{GW,max} / ((1 - (1 \\
++ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
+\end{gathered}
+$$
+
+**Methodology**: [@givewell-cost-per-life-saved]
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-bed_nets_cost_per_daly.qmd >}}
+
+{{< include ../figures/sensitivity-table-bed_nets_cost_per_daly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-bed_nets_cost_per_daly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-bed_nets_cost_per_daly.qmd >}}
 
 :::
 
@@ -2274,7 +2314,7 @@ $$
 
 :::
 
-### Corporate Damages Forward Settlement Value Per Capita: $10.6 million {#sec-corporate_damages_forward_settlement_value_per_capita}
+### Corporate Damages Forward Settlement Value Per Capita: $940,697 {#sec-corporate_damages_forward_settlement_value_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2282,55 +2322,32 @@ Forward treaty settlement value per living human from the 1% Treaty impact model
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $7.53 quadrillion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
 \begin{gathered}
 V_{settlement,pc} \\
 = \frac{Value_{max}}{Pop_{global}} \\
-= \frac{\$84800T}{8B} \\
-= \$10.6M
+= \frac{\$7530T}{8B} \\
+= \$941K
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -2349,6 +2366,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -5028,8 +5054,6 @@ Rate_{part} \\
 \end{gathered}
 $$
 
-**Methodology**: [@clinical-trial-patient-participation-rate]
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -5294,6 +5318,52 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_median_after_tax_income_year_20.qmd >}}
+
+:::
+
+### Current Trial Participation Rate Among Willing Patients: 0.177% {#sec-current_willing_patient_participation_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual clinical trial slots per patient willing to join a drug trial (1.9M slots / 1.08B willing patients). A capacity ratio, not a measured enrollment share: not every slot goes to a willing chronic-disease patient
+
+**Inputs**:
+
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
+- [Global Patients Willing to Participate in Clinical Trials](#sec-willing_trial_participants_global) 🔢: 1.08 billion people
+
+$$
+\begin{gathered}
+Rate_{part,willing} \\
+= \frac{Slots_{curr}}{N_{willing}} \\
+= \frac{1.9M}{1.08B} \\
+= 0.177\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_willing_patient_participation_rate.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_willing_patient_participation_rate.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_willing_patient_participation_rate.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_willing_patient_participation_rate.qmd >}}
 
 :::
 
@@ -6450,23 +6520,24 @@ $$
 
 :::
 
-### Annual R&D Savings from Pragmatic Trials: $58.6 billion {#sec-dfda_benefit_rd_only_annual}
+### Annual R&D Savings from Pragmatic Trials: $40.5 billion {#sec-dfda_benefit_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual benefit from pragmatic trial R&D savings (trial cost reduction, secondary component)
+Annual benefit from pragmatic trial R&D savings: trial cost reduction applied to the Phase 2/3 efficacy share of global trial spending (Phase 1 safety trials retain traditional design and cost)
 
 **Inputs**:
 
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60 billion (95% CI: $50 billion - $75 billion)
+- [Phase 2/3 Share of Clinical Trial Costs](#sec-phase_2_3_clinical_trial_cost_pct) 📊: 69% (SE: ±5%)
 - [Pragmatic Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -6496,32 +6567,31 @@ $$
 
 :::
 
-### Direct Pragmatic Trial Funding Cost per DALY: $0.842 {#sec-dfda_direct_funding_cost_per_daly}
+### Direct Pragmatic Trial Funding Cost per DALY: $9.62 {#sec-dfda_direct_funding_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.
+Cost per DALY at direct funding level for the therapeutic space exploration period, with costs and DALYs discounted at the same standard rate. Still highly cost-effective vs bed nets.
 
 **Inputs**:
 
-- [Direct Pragmatic Trial Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476 billion
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [Direct Pragmatic Trial Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $483 billion
+- [Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted) 🔢: 50.2 billion DALYs
 
 $$
 \begin{gathered}
 Cost_{direct,DALY} \\
-= \frac{NPV_{direct}}{DALYs_{max}} \\
-= \frac{\$476B}{565B} \\
-= \$0.842
+= \frac{NPV_{direct}}{DALYs_{max}^{PV}} \\
+= \frac{\$483B}{50.2B} \\
+= \$9.62
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \frac{T_{queue,trial}}{Funding_{trial,ref} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$476B
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -6591,32 +6661,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 *~ Medium confidence*
@@ -6637,11 +6684,11 @@ $$
 
 :::
 
-### Direct Pragmatic Trial Funding NPV (Exploration Period): $476 billion {#sec-dfda_direct_funding_queue_clearance_npv}
+### Direct Pragmatic Trial Funding NPV (Exploration Period): $483 billion {#sec-dfda_direct_funding_queue_clearance_npv}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
+NPV of annual direct funding for the therapeutic space exploration period, spent continuously through each year (the same timing convention as the discounted DALYs it is divided by). Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
 
 **Inputs**:
 
@@ -6652,9 +6699,8 @@ NPV of annual direct funding for the therapeutic space exploration period. Fundi
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \frac{T_{queue,trial}}{Funding_{trial,ref} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$476B
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -6739,7 +6785,7 @@ $$
 
 :::
 
-### Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 178 thousand:1 {#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag}
+### Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 15.6 thousand:1 {#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -6747,55 +6793,32 @@ ROI from directly funding pragmatic clinical trials over the therapeutic space e
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
-- [Direct Pragmatic Trial Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476 billion
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $7.53 quadrillion
+- [Direct Pragmatic Trial Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $483 billion
 
 $$
 \begin{gathered}
 ROI_{direct,max} \\
 = \frac{Value_{max}}{NPV_{direct}} \\
-= \frac{\$84800T}{\$476B} \\
-= 178{,}000
+= \frac{\$7530T}{\$483B} \\
+= 15{,}600
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -6814,6 +6837,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -6857,18 +6889,8 @@ where:
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \frac{T_{queue,trial}}{Funding_{trial,ref} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$476B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 *✓ High confidence*
@@ -7354,7 +7376,7 @@ $$
 
 :::
 
-### Annual Net Savings from Pragmatic Trials (R&D Only): $58.6 billion {#sec-dfda_net_savings_rd_only_annual}
+### Annual Net Savings from Pragmatic Trials (R&D Only): $40.4 billion {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7362,24 +7384,24 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
 - [Total Annual Pragmatic Trial Platform Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -7457,7 +7479,7 @@ $$
 
 :::
 
-### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $389 billion {#sec-dfda_npv_benefit_rd_only}
+### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $269 billion {#sec-dfda_npv_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7465,7 +7487,7 @@ NPV of pragmatic trial R&D savings only with 5-year adoption ramp (10-year horiz
 
 **Inputs**:
 
-- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6 billion
+- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $40.4 billion
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -7493,7 +7515,7 @@ $$
 
 :::
 
-### NPV Net Benefit (R&D Only): $389 billion {#sec-dfda_npv_net_benefit_rd_only}
+### NPV Net Benefit (R&D Only): $268 billion {#sec-dfda_npv_net_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7501,15 +7523,15 @@ NPV net benefit using R&D savings only (benefits minus costs)
 
 **Inputs**:
 
-- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $269 billion
 - [Pragmatic Trial Platform Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
 NPV_{net,RD} \\
 = NPV_{RD} - Cost_{platform,total} \\
-= \$389B - \$611M \\
-= \$389B
+= \$269B - \$611M \\
+= \$268B
 \end{gathered}
 $$
 where:
@@ -7524,17 +7546,17 @@ $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -7963,7 +7985,7 @@ $$
 
 :::
 
-### Daily R&D Savings from Trial Cost Reduction: $161 million {#sec-dfda_rd_savings_daily}
+### Daily R&D Savings from Trial Cost Reduction: $111 million {#sec-dfda_rd_savings_daily}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -7971,23 +7993,23 @@ Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
 **Inputs**:
 
-- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
 
 $$
 \begin{gathered}
 Savings_{RD,daily} \\
 = Benefit_{RD,ann} \times 0.00274 \\
-= \$58.6B \times 0.00274 \\
-= \$161M
+= \$40.5B \times 0.00274 \\
+= \$111M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -8017,7 +8039,7 @@ $$
 
 :::
 
-### ROI from Pragmatic Trial R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
+### ROI from Pragmatic Trial R&D Savings Only: 439:1 {#sec-dfda_roi_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -8025,15 +8047,15 @@ ROI from pragmatic trial R&D savings only (10-year NPV, most conservative estima
 
 **Inputs**:
 
-- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $269 billion
 - [Pragmatic Trial Platform Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
 ROI_{RD} \\
 = \frac{NPV_{RD}}{Cost_{platform,total}} \\
-= \frac{\$389B}{\$611M} \\
-= 637
+= \frac{\$269B}{\$611M} \\
+= 439
 \end{gathered}
 $$
 where:
@@ -8048,17 +8070,17 @@ $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -8277,7 +8299,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).
+Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology). Undiscounted physical count of healthy years; cost-effectiveness ratios and dollar values use DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED so costs and health are discounted at the same rate.
 
 **Inputs**:
 
@@ -8388,54 +8410,26 @@ $$
 
 :::
 
-### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $84.8 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+### Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 50.2 billion DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total economic value from the combined treatment timeline shift. DALYs valued at standard economic rate.
+Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity](#sec-dfda_queue_clearance_years) 🔢: 36 years
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
 \begin{gathered}
-Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -8454,6 +8448,124 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+:::
+
+### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $7.53 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Present value of the combined treatment timeline shift: discounted DALYs valued at the standard economic rate per QALY.
+
+**Inputs**:
+
+- [Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted) 🔢: 50.2 billion DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -13252,7 +13364,7 @@ $$
 
 :::
 
-### IAB Mechanism Benefit-Cost Ratio: 230:1 {#sec-iab_mechanism_benefit_cost_ratio}
+### IAB Mechanism Benefit-Cost Ratio: 205:1 {#sec-iab_mechanism_benefit_cost_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -13260,15 +13372,15 @@ Benefit-Cost Ratio of the IAB mechanism itself
 
 **Inputs**:
 
-- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $172 billion
+- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $154 billion
 - [IAB Mechanism Annual Cost (High Estimate)](#sec-iab_mechanism_annual_cost): $750 million (95% CI: $160 million - $750 million)
 
 $$
 \begin{gathered}
 BCR_{IAB} \\
 = \frac{Benefit_{peace+RD}}{Cost_{IAB,ann}} \\
-= \frac{\$172B}{\$750M} \\
-= 230
+= \frac{\$154B}{\$750M} \\
+= 205
 \end{gathered}
 $$
 where:
@@ -13276,8 +13388,8 @@ $$
 \begin{gathered}
 Benefit_{peace+RD} \\
 = Benefit_{peace,soc} + Benefit_{RD,ann} \\
-= \$114B + \$58.6B \\
-= \$172B
+= \$114B + \$40.5B \\
+= \$154B
 \end{gathered}
 $$
 where:
@@ -13379,9 +13491,9 @@ where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -13901,6 +14013,888 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-lost_prosperity_npv_perpetuity_total.qmd >}}
+
+:::
+
+### Court of Humanity Expected Social Value: $11.4 billion {#sec-mechanism_court_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the Court of Humanity: P(success) * annual peace dividend. Expenditure ($30M).
+
+**Inputs**:
+
+- [P(Success | Court of Humanity Funded)](#sec-mechanism_court_of_humanity_p_success): 0.1:1 (95% CI: 0.03:1 - 0.25:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{court} \\
+= P_{court} \times Benefit_{peace,soc} \\
+= 0.1 \times \$114B \\
+= \$11.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_court_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_court_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_court_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_court_ev.qmd >}}
+
+:::
+
+### dFDA Expected Social Value: $79.5 billion {#sec-mechanism_dfda_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the dFDA: P(success) * annual peace dividend. Platform build is expenditure ($500M).
+
+**Inputs**:
+
+- [P(Success | dFDA Funded)](#sec-mechanism_dfda_p_success): 0.7:1 (95% CI: 0.4:1 - 0.9:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{dFDA} \\
+= P_{dFDA} \times Benefit_{peace,soc} \\
+= 0.7 \times \$114B \\
+= \$79.5B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_dfda_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_dfda_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_dfda_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_dfda_ev.qmd >}}
+
+:::
+
+### IAB Expected Social Value: $68.1 billion {#sec-mechanism_iab_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from IABs: P(success) * annual peace dividend. Investor capital is returned with interest, not spent.
+
+**Inputs**:
+
+- [P(Success | IABs Funded)](#sec-mechanism_iab_p_success): 0.6:1 (95% CI: 0.3:1 - 0.85:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{IAB} \\
+= P_{IAB} \times Benefit_{peace,soc} \\
+= 0.6 \times \$114B \\
+= \$68.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_iab_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_iab_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_iab_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_iab_ev.qmd >}}
+
+:::
+
+### IAB Net Cost (Annual): $50 million {#sec-mechanism_iab_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net annual cost of IABs to EOS: administration only (investor capital is returned, not spent)
+
+**Inputs**:
+
+- [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1 billion
+- [IAB Admin Cost Rate](#sec-mechanism_iab_admin_rate): 0.05:1
+
+$$
+\begin{gathered}
+C_{IAB,net} \\
+= Cost_{campaign} \times r_{IAB,admin} \\
+= \$1B \times 0.05 \\
+= \$50M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{campaign} \\
+= Budget_{viral,base} + Budget_{lobby,treaty} \\
++ Budget_{reserve} \\
+= \$250M + \$650M + \$100M \\
+= \$1B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_iab_net_cost.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_iab_net_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_iab_net_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_iab_net_cost.qmd >}}
+
+:::
+
+### Loving Takeover Expected Social Value: $108 billion {#sec-mechanism_loving_takeover_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the Loving Takeover: P(success) * annual peace dividend. Capital is deployed into shares (retained and appreciating), not spent.
+
+**Inputs**:
+
+- [P(Success | Loving Takeover Funded)](#sec-mechanism_loving_takeover_p_success): 0.95:1 (95% CI: 0.8:1 - 0.99:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{takeover} \\
+= P_{takeover} \times Benefit_{peace,soc} \\
+= 0.95 \times \$114B \\
+= \$108B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_loving_takeover_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_loving_takeover_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_loving_takeover_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_loving_takeover_ev.qmd >}}
+
+:::
+
+### Loving Takeover Net Cost (Annual): $17.5 billion {#sec-mechanism_loving_takeover_net_cost}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Net annual cost of the Loving Takeover: opportunity cost only (capital deployed into shares is retained, not spent). At 2% annual opportunity cost rate.
+
+**Inputs**:
+
+- [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
+- [Mechanism Opportunity Cost Rate](#sec-mechanism_opportunity_cost_rate): 0.02:1 (95% CI: 0:1 - 0.05:1)
+
+$$
+\begin{gathered}
+C_{takeover,net} \\
+= C_{takeover} \times r_{opp} \\
+= \$873B \times 0.02 \\
+= \$17.5B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{takeover} \\
+= (MarketCap_{US} \\
++ MarketCap_{allied}) \times f_{control} \times m_{premium}
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_loving_takeover_net_cost.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_loving_takeover_net_cost.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_loving_takeover_net_cost.qmd >}}
+
+:::
+
+### Referendum Expected Social Value: $34.1 billion {#sec-mechanism_referendum_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the global referendum: P(success) * annual peace dividend. Expenditure ($250M).
+
+**Inputs**:
+
+- [P(Success | Referendum Funded)](#sec-mechanism_referendum_p_success): 0.3:1 (95% CI: 0.1:1 - 0.55:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{referendum} \\
+= P_{referendum} \times Benefit_{peace,soc} \\
+= 0.3 \times \$114B \\
+= \$34.1B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_referendum_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_referendum_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_referendum_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_referendum_ev.qmd >}}
+
+:::
+
+### Treaty Campaign Expected Social Value: $45.4 billion {#sec-mechanism_treaty_campaign_ev}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Expected annual social value from the treaty campaign: P(success) * annual peace dividend. Lobbying + referendum is expenditure ($1B).
+
+**Inputs**:
+
+- [P(Success | Treaty Campaign Funded)](#sec-mechanism_treaty_campaign_p_success): 0.4:1 (95% CI: 0.15:1 - 0.7:1)
+- [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
+
+$$
+\begin{gathered}
+EV_{campaign} \\
+= P_{campaign} \times Benefit_{peace,soc} \\
+= 0.4 \times \$114B \\
+= \$45.4B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Benefit_{peace,soc} \\
+= Cost_{war,total} \times Reduce_{treaty} \\
+= \$11.4T \times 1\% \\
+= \$114B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,total} \\
+= Cost_{war,direct} + Cost_{war,indirect} \\
+= \$7.66T + \$3.7T \\
+= \$11.4T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,direct} \\
+= Loss_{life,conflict} + Damage_{infra,total} \\
++ Disruption_{trade} + Spending_{mil} \\
+= \$2.45T + \$1.88T + \$616B + \$2.72T \\
+= \$7.66T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Loss_{life,conflict} \\
+= Cost_{combat,human} + Cost_{state,human} \\
++ Cost_{terror,human} \\
+= \$2.34T + \$27B + \$83B \\
+= \$2.45T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Damage_{infra,total} \\
+= Damage_{comms} + Damage_{edu} + Damage_{energy} \\
++ Damage_{health} + Damage_{transport} + Damage_{water} \\
+= \$298B + \$234B + \$422B + \$166B + \$487B + \$268B \\
+= \$1.88T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Disruption_{trade} \\
+= Disruption_{currency} + Disruption_{energy} \\
++ Disruption_{shipping} + Disruption_{supply} \\
+= \$57.4B + \$125B + \$247B + \$187B \\
+= \$616B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{war,indirect} \\
+= Damage_{env} + Loss_{growth,mil} + Loss_{capital,conflict} \\
++ Cost_{psych} + Cost_{refugee} + Cost_{vet} \\
+= \$100B + \$2.72T + \$300B + \$232B + \$150B + \$200B \\
+= \$3.7T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-mechanism_treaty_campaign_ev.qmd >}}
+
+{{< include ../figures/sensitivity-table-mechanism_treaty_campaign_ev.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-mechanism_treaty_campaign_ev.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-mechanism_treaty_campaign_ev.qmd >}}
 
 :::
 
@@ -19124,7 +20118,7 @@ $$
 
 :::
 
-### Shirt Program Expected Value per Dollar: 424 million:1 {#sec-shirt_program_expected_value_per_dollar}
+### Shirt Program Expected Value per Dollar: 37.6 million:1 {#sec-shirt_program_expected_value_per_dollar}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -19132,7 +20126,7 @@ Probability-weighted expected value per foundation-escrow dollar: treaty value m
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $7.53 quadrillion
 - [Shirt Cascade Probability Given Seed](#sec-shirt_cascade_probability_given_seed): 25% (95% CI: 5% - 60%)
 - [Shirt Seed Program Total Cost](#sec-shirt_seed_program_total_usd) 🔢: $50 million
 
@@ -19146,40 +20140,17 @@ where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -19198,6 +20169,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -19264,7 +20244,7 @@ $$
 
 :::
 
-### Shirt Program ROI Ratio: 1696 million:1 {#sec-shirt_program_roi_ratio}
+### Shirt Program ROI Ratio: 151 million:1 {#sec-shirt_program_roi_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -19272,55 +20252,32 @@ Unconditional ROI ratio: treaty-trajectory total economic value divided by the s
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $7.53 quadrillion
 - [Shirt Seed Program Total Cost](#sec-shirt_seed_program_total_usd) 🔢: $50 million
 
 $$
 \begin{gathered}
 ROI_{shirt} \\
 = \frac{Value_{max}}{C_{seed,total}} \\
-= \frac{\$84800T}{\$50M} \\
-= 1.7B
+= \frac{\$7530T}{\$50M} \\
+= 151M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -19339,6 +20296,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -19443,7 +20409,7 @@ $$
 
 :::
 
-### Shirt Value per Wearer: $10.6 million {#sec-shirt_value_per_wearer_usd}
+### Shirt Value per Wearer: $940,697 {#sec-shirt_value_per_wearer_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -19451,55 +20417,32 @@ Treaty-trajectory economic value per shirt-wearing human: total treaty value (DF
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $7.53 quadrillion
 - [Global Population in 2024](#sec-global_population_2024) 📊: 8 billion of people (95% CI: 7.8 billion of people - 8.2 billion of people)
 
 $$
 \begin{gathered}
 V_{wearer} \\
 = \frac{Value_{max}}{Pop_{global}} \\
-= \frac{\$84800T}{8B} \\
-= \$10.6M
+= \frac{\$7530T}{8B} \\
+= \$941K
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -19518,6 +20461,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -19572,6 +20524,629 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-shirt_value_per_wearer_usd.qmd >}}
+
+:::
+
+### Universal Right to Try with Evidence Implementation Cost per DALY: $0.00237 {#sec-state_rtt_implementation_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional implementation cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once, with DALYs discounted at the standard rate so the near-term launch cost is compared with health benefits in present value.
+
+**Inputs**:
+
+- [Universal Right to Try with Evidence Implementation Cost](#sec-state_rtt_implementation_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
+- [Discounted Treatment Acceleration from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_years_discounted) 🔢: 10.3 years
+
+$$
+\begin{gathered}
+Cost_{RTT,DALY} \\
+= C_{RTT} / (DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT}^{PV})
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT}^{PV} \\
+= [A\left(\frac{T_{queue,SQ}}{k_{RTT}}\right) - A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_implementation_cost_per_daly.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_implementation_cost_per_daly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_implementation_cost_per_daly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_implementation_cost_per_daly.qmd >}}
+
+:::
+
+### Universal Right to Try with Evidence Implementation Cost per Life Saved: $0.125 {#sec-state_rtt_implementation_cost_per_life_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional implementation cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate, and discounts future deaths prevented at the standard rate so they compare with near-term costs and with GiveWell's near-term lives saved.
+
+**Inputs**:
+
+- [Universal Right to Try with Evidence Implementation Cost](#sec-state_rtt_implementation_cost_total): $65 million (95% CI: $25 million - $200 million)
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7,500 deaths/day)
+- [Eventually Avoidable Death Percentage](#sec-eventually_avoidable_death_pct): 92.6% (95% CI: 50% - 98%)
+- [Discounted Treatment Acceleration from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_years_discounted) 🔢: 10.3 years
+
+$$
+\begin{gathered}
+Cost_{RTT,life} \\
+= C_{RTT} / (Deaths_{disease,daily} \times \text{DAYS\_PER\_YEAR} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV})
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT}^{PV} \\
+= [A\left(\frac{T_{queue,SQ}}{k_{RTT}}\right) - A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_implementation_cost_per_life_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_implementation_cost_per_life_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_implementation_cost_per_life_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_implementation_cost_per_life_saved.qmd >}}
+
+:::
+
+### DALYs Averted from Universal Right to Try with Evidence: 483 billion DALYs {#sec-state_rtt_treatment_acceleration_dalys}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional lifetime DALYs averted by shifting the global treatment-discovery schedule forward. By design, this applies the therapeutic-discovery timeline proxy to the eventually avoidable burden of all global diseases and aging-related degeneration. It is a schedule-shift calculation across future generations, not an observed epidemiological forecast.
+
+**Inputs**:
+
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
+- [Average Treatment Acceleration from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_years) 🔢: 181 years
+
+$$
+\begin{gathered}
+DALYs_{RTT} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT} \\
+= 2.88B \times 92.6\% \times 181 \\
+= 483B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_dalys.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_dalys.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_dalys.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_dalys.qmd >}}
+
+:::
+
+### Lives Saved from Universal Right to Try with Evidence: 9.19 billion deaths {#sec-state_rtt_treatment_acceleration_lives_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional cumulative premature deaths from global diseases and aging prevented across future generations by shifting the treatment-discovery schedule forward. The total can exceed the current population because it sums deaths prevented over the full acceleration period.
+
+**Inputs**:
+
+- [Global Daily Deaths from Disease and Aging](#sec-global_disease_deaths_daily) 📊: 150 thousand deaths/day (SE: ±7,500 deaths/day)
+- [Eventually Avoidable Death Percentage](#sec-eventually_avoidable_death_pct): 92.6% (95% CI: 50% - 98%)
+- [Average Treatment Acceleration from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_years) 🔢: 181 years
+
+$$
+\begin{gathered}
+Lives_{RTT} \\
+= Deaths_{disease,daily} \times Pct_{avoid,death} \times T_{accel,RTT} \times 365 \\
+= 150{,}000 \times 92.6\% \times 181 \times 365 \\
+= 9.19B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_lives_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_lives_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_lives_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_lives_saved.qmd >}}
+
+:::
+
+### Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence: 1.65 quadrillion hours {#sec-state_rtt_treatment_acceleration_suffering_hours}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.
+
+**Inputs**:
+
+- [DALYs Averted from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_dalys) 🔢: 483 billion DALYs
+- [YLD Proportion of Total DALYs](#sec-global_yld_proportion_of_dalys) 📊: 0.39 proportion (SE: ±0.03 proportion)
+
+$$
+\begin{gathered}
+Hours_{suffer,RTT} \\
+= DALYs_{RTT} \times Pct_{YLD} \times 8760 \\
+= 483B \times 0.39 \times 8760 \\
+= 1650T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{RTT} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT} \\
+= 2.88B \times 92.6\% \times 181 \\
+= 483B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_suffering_hours.qmd >}}
+
+:::
+
+### Disability-Equivalent Suffering Years Prevented by Universal Right to Try with Evidence: 189 billion years {#sec-state_rtt_treatment_acceleration_suffering_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional disability-equivalent years of suffering prevented by the treatment schedule shift: the years-lived-with-disability share of the DALYs averted. A disability weight of 0.25 sustained for four years equals one full-disability-equivalent year; it does not claim every year is a year of maximum conscious pain.
+
+**Inputs**:
+
+- [DALYs Averted from Universal Right to Try with Evidence](#sec-state_rtt_treatment_acceleration_dalys) 🔢: 483 billion DALYs
+- [YLD Proportion of Total DALYs](#sec-global_yld_proportion_of_dalys) 📊: 0.39 proportion (SE: ±0.03 proportion)
+
+$$
+\begin{gathered}
+Years_{suffer,RTT} \\
+= DALYs_{RTT} \times Pct_{YLD} \\
+= 483B \times 0.39 \\
+= 189B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{RTT} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT} \\
+= 2.88B \times 92.6\% \times 181 \\
+= 483B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_suffering_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_suffering_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_suffering_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_suffering_years.qmd >}}
+
+:::
+
+### Average Treatment Acceleration from Universal Right to Try with Evidence: 181 years {#sec-state_rtt_treatment_acceleration_years}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average years earlier the first effective treatment arrives across the global therapeutic frontier after all 50 states adopt Universal Right to Try with Evidence. Uses the same schedule-shift structure as the 1% Treaty impact model: the status quo discovery timeline multiplied by one minus the inverse treatment-discovery multiplier.
+
+**Inputs**:
+
+- [Status Quo Average Years to First Treatment](#sec-status_quo_avg_years_to_first_treatment) 🔢: 222 years
+- [Universal Right to Try with Evidence Treatment Discovery Multiplier](#sec-state_rtt_treatment_discovery_multiplier): 5.48x (95% CI: 1.1x - 15x)
+
+$$
+\begin{gathered}
+T_{accel,RTT} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{RTT}}\right) \\
+= 222 \times \left(1 - \frac{1}{5.48}\right) \\
+= 181
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_years.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_years.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_years.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_years.qmd >}}
+
+:::
+
+### Discounted Treatment Acceleration from Universal Right to Try with Evidence: 10.3 years {#sec-state_rtt_treatment_acceleration_years_discounted}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Present value, in years, of the average treatment schedule shift from Universal Right to Try with Evidence, discounted at the standard social discount rate. Same timing as the undiscounted shift: first treatments are found evenly over the status quo clearance period, versus evenly over that period divided by the discovery multiplier. The cost-per-DALY and cost-per-life ratios use it so the near-term launch cost is compared with health benefits in present value, as in the 1% Treaty model. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].
+
+**Inputs**:
+
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Universal Right to Try with Evidence Treatment Discovery Multiplier](#sec-state_rtt_treatment_discovery_multiplier): 5.48x (95% CI: 1.1x - 15x)
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+T_{accel,RTT}^{PV} \\
+= [A\left(\frac{T_{queue,SQ}}{k_{RTT}}\right) - A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_treatment_acceleration_years_discounted.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_treatment_acceleration_years_discounted.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_treatment_acceleration_years_discounted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_treatment_acceleration_years_discounted.qmd >}}
+
+:::
+
+### Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint: 36.1kx {#sec-state_rtt_vs_givewell_cost_per_life_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. Right to Try lives saved are discounted to present value at the standard rate so they compare with GiveWell's near-term lives saved. The cost scopes differ: the Right to Try numerator counts only the campaign and registry launch and excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.
+
+**Inputs**:
+
+- [GiveWell Midpoint of Modeled Cost per Life Saved Range](#sec-givewell_cost_per_life_avg) 📊: $4,500
+- [Universal Right to Try with Evidence Implementation Cost per Life Saved](#sec-state_rtt_implementation_cost_per_life_saved) 🔢: $0.125
+
+$$
+\begin{gathered}
+k_{RTT,GiveWell} \\
+= \frac{Cost_{GW,avg}}{Cost_{RTT,life}} \\
+= \frac{\$4.5K}{\$0.125} \\
+= 36{,}100
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{RTT,life} \\
+= C_{RTT} / (Deaths_{disease,daily} \times \text{DAYS\_PER\_YEAR} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV})
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{accel,RTT}^{PV} \\
+= [A\left(\frac{T_{queue,SQ}}{k_{RTT}}\right) - A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_vs_givewell_cost_per_life_multiplier.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_vs_givewell_cost_per_life_multiplier.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_vs_givewell_cost_per_life_multiplier.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_vs_givewell_cost_per_life_multiplier.qmd >}}
 
 :::
 
@@ -19676,6 +21251,147 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-status_quo_queue_clearance_years.qmd >}}
+
+:::
+
+### Cost per Life Saved per Verified Response (Conditional on Passage): $2.5 {#sec-survey_cost_per_life_saved}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per life saved for one verified survey response, conditional on the treaty passing: blended activation cost per participant divided by lives saved per verified voter. Not probability-weighted; the probability-weighted campaign figure is TREATY_EXPECTED_COST_PER_DALY.
+
+**Inputs**:
+
+- [Activation Cost per Participant](#sec-global_coordination_activation_cost_per_participant) 🔢: $6.5
+- [Lives Saved per Verified Voter](#sec-voter_lives_saved) 🔢: 2.6 lives
+
+$$
+\begin{gathered}
+C_{life,resp} \\
+= \frac{C_{activate,pp}}{Lives_{voter}} \\
+= \frac{\$6.5}{2.6} \\
+= \$2.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+C_{activate,pp} \\
+= R_{activate} + C_{verify,pp} \\
+= \$5 + \$1.5 \\
+= \$6.5
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{voter} \\
+= \frac{Lives_{max}}{N_{voters,global}} \\
+= \frac{10.7B}{4.13B} \\
+= 2.6
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Lives_{max} \\
+= Deaths_{disease,daily} \times T_{accel,max} \times 338 \\
+= 150{,}000 \times 212 \times 338 \\
+= 10.7B
+\end{gathered}
+$$
+where:
+$$
+T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
+$$
+where:
+$$
+\begin{gathered}
+T_{accel} \\
+= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
+= 222 \times \left(1 - \frac{1}{12.3}\right) \\
+= 204
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{first,SQ} \\
+= T_{queue,SQ} \times 0.5 \\
+= 443 \times 0.5 \\
+= 222
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-survey_cost_per_life_saved.qmd >}}
+
+{{< include ../figures/sensitivity-table-survey_cost_per_life_saved.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-survey_cost_per_life_saved.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-survey_cost_per_life_saved.qmd >}}
 
 :::
 
@@ -20071,7 +21787,7 @@ $$
 
 :::
 
-### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 11.5x {#sec-treaty_benefit_multiplier_vs_vaccines}
+### Treaty System Benefit Multiplier vs Childhood Vaccination Programs: 10.3x {#sec-treaty_benefit_multiplier_vs_vaccines}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -20080,14 +21796,14 @@ Treaty system benefit multiplier vs childhood vaccination programs
 **Inputs**:
 
 - [Estimated Annual Global Economic Benefit from Childhood Vaccination Programs](#sec-childhood_vaccination_annual_benefit) 📊: $15 billion (SE: ±$4.5 billion)
-- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $172 billion
+- [1% treaty Basic Annual Benefits (Peace + R&D Savings)](#sec-treaty_peace_plus_rd_annual_benefits) 🔢: $154 billion
 
 $$
 \begin{gathered}
 k_{treaty:vax} \\
 = \frac{Benefit_{peace+RD}}{Benefit_{vax,ann}} \\
-= \frac{\$172B}{\$15B} \\
-= 11.5
+= \frac{\$154B}{\$15B} \\
+= 10.3
 \end{gathered}
 $$
 where:
@@ -20095,8 +21811,8 @@ $$
 \begin{gathered}
 Benefit_{peace+RD} \\
 = Benefit_{peace,soc} + Benefit_{RD,ann} \\
-= \$114B + \$58.6B \\
-= \$172B
+= \$114B + \$40.5B \\
+= \$154B
 \end{gathered}
 $$
 where:
@@ -20198,9 +21914,9 @@ where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -20317,23 +22033,23 @@ $$
 
 :::
 
-### Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.00177 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
+### Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.02 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.
+Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput, with DALYs discounted at the standard rate. Only counts campaign cost; ignores economic benefits from funding and R&D savings.
 
 **Inputs**:
 
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1 billion
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted) 🔢: 50.2 billion DALYs
 
 $$
 \begin{gathered}
 Cost_{treaty,DALY} \\
-= \frac{Cost_{campaign}}{DALYs_{max}} \\
-= \frac{\$1B}{565B} \\
-= \$0.00177
+= \frac{Cost_{campaign}}{DALYs_{max}^{PV}} \\
+= \frac{\$1B}{50.2B} \\
+= \$0.0199
 \end{gathered}
 $$
 where:
@@ -20349,32 +22065,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -20393,6 +22086,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -20875,32 +22577,32 @@ $$
 
 :::
 
-### Expected Cost per DALY (Risk-Adjusted): $0.177 {#sec-treaty_expected_cost_per_daly}
+### Expected Cost per DALY (Risk-Adjusted): $1.99 {#sec-treaty_expected_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).
+Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this is still more cost-effective than bed nets (BED_NETS_COST_PER_DALY).
 
 **Inputs**:
 
-- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.00177
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.02
 - [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
 \begin{gathered}
 E[Cost_{DALY}] \\
 = \frac{Cost_{treaty,DALY}}{P_{success}} \\
-= \frac{\$0.00177}{1\%} \\
-= \$0.177
+= \frac{\$0.0199}{1\%} \\
+= \$1.99
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Cost_{treaty,DALY} \\
-= \frac{Cost_{campaign}}{DALYs_{max}} \\
-= \frac{\$1B}{565B} \\
-= \$0.00177
+= \frac{Cost_{campaign}}{DALYs_{max}^{PV}} \\
+= \frac{\$1B}{50.2B} \\
+= \$0.0199
 \end{gathered}
 $$
 where:
@@ -20916,32 +22618,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -20960,6 +22639,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -21017,7 +22705,7 @@ $$
 
 :::
 
-### Expected Treaty ROI (Risk-Adjusted): 848 thousand:1 {#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag}
+### Expected Treaty ROI (Risk-Adjusted): 75.3 thousand:1 {#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -21025,15 +22713,15 @@ Expected ROI for 1% treaty accounting for political success probability uncertai
 
 **Inputs**:
 
-- [Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 84.8 million:1
+- [Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 7.53 million:1
 - [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
 \begin{gathered}
 E[ROI_{max}] \\
 = ROI_{max} \times P_{success} \\
-= 84.8M \times 1\% \\
-= 848{,}000
+= 7.53M \times 1\% \\
+= 75{,}300
 \end{gathered}
 $$
 where:
@@ -21041,48 +22729,25 @@ $$
 \begin{gathered}
 ROI_{max} \\
 = \frac{Value_{max}}{Cost_{campaign}} \\
-= \frac{\$84800T}{\$1B} \\
-= 84.8M
+= \frac{\$7530T}{\$1B} \\
+= 7.53M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -21101,6 +22766,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -21170,7 +22844,7 @@ $$
 
 :::
 
-### Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x {#sec-treaty_expected_vs_bed_nets_multiplier}
+### Expected Cost-Effectiveness vs Bed Nets Multiplier: 92.1x {#sec-treaty_expected_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -21178,15 +22852,23 @@ Expected value multiplier vs bed nets (accounts for political uncertainty at 1% 
 
 **Inputs**:
 
-- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
-- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $0.177
+- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 🔢: $184
+- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $1.99
 
 $$
 \begin{gathered}
 E[k_{nets}] \\
 = \frac{Cost_{nets}}{E[Cost_{DALY}]} \\
-= \frac{\$89}{\$0.177} \\
-= 503
+= \frac{\$184}{\$1.99} \\
+= 92.1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{nets} \\
+= Cost_{GW,max} / ((1 - (1 \\
++ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
 \end{gathered}
 $$
 where:
@@ -21194,17 +22876,17 @@ $$
 \begin{gathered}
 E[Cost_{DALY}] \\
 = \frac{Cost_{treaty,DALY}}{P_{success}} \\
-= \frac{\$0.00177}{1\%} \\
-= \$0.177
+= \frac{\$0.0199}{1\%} \\
+= \$1.99
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Cost_{treaty,DALY} \\
-= \frac{Cost_{campaign}}{DALYs_{max}} \\
-= \frac{\$1B}{565B} \\
-= \$0.00177
+= \frac{Cost_{campaign}}{DALYs_{max}^{PV}} \\
+= \frac{\$1B}{50.2B} \\
+= \$0.0199
 \end{gathered}
 $$
 where:
@@ -21220,32 +22902,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -21264,6 +22923,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -21934,7 +23602,7 @@ $$
 
 :::
 
-### 1% treaty Basic Annual Benefits (Peace + R&D Savings): $172 billion {#sec-treaty_peace_plus_rd_annual_benefits}
+### 1% treaty Basic Annual Benefits (Peace + R&D Savings): $154 billion {#sec-treaty_peace_plus_rd_annual_benefits}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -21943,14 +23611,14 @@ Basic annual benefits: peace dividend + pragmatic trial R&D savings only (2 of 8
 **Inputs**:
 
 - [Annual Peace Dividend from 1% Reduction in Total War Costs](#sec-peace_dividend_annual_societal_benefit) 🔢: $114 billion
-- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
 
 $$
 \begin{gathered}
 Benefit_{peace+RD} \\
 = Benefit_{peace,soc} + Benefit_{RD,ann} \\
-= \$114B + \$58.6B \\
-= \$172B
+= \$114B + \$40.5B \\
+= \$154B
 \end{gathered}
 $$
 where:
@@ -22052,9 +23720,9 @@ where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -23026,7 +24694,7 @@ $$
 
 :::
 
-### Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8 million:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
+### Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 7.53 million:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -23034,55 +24702,32 @@ Treaty ROI from elimination of efficacy lag plus earlier treatment discovery fro
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $7.53 quadrillion
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1 billion
 
 $$
 \begin{gathered}
 ROI_{max} \\
 = \frac{Value_{max}}{Cost_{campaign}} \\
-= \frac{\$84800T}{\$1B} \\
-= 84.8M
+= \frac{\$7530T}{\$1B} \\
+= 7.53M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -23101,6 +24746,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -26270,7 +27924,7 @@ $$
 
 :::
 
-### Cost-Effectiveness vs Bed Nets Multiplier: 50.3kx {#sec-treaty_vs_bed_nets_multiplier}
+### Cost-Effectiveness vs Bed Nets Multiplier: 9.2kx {#sec-treaty_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -26278,24 +27932,32 @@ How many times more cost-effective than bed nets (using bed net cost per DALY mi
 
 **Inputs**:
 
-- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
-- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.00177
+- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 🔢: $184
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.02
 
 $$
 \begin{gathered}
 k_{treaty:nets} \\
 = \frac{Cost_{nets}}{Cost_{treaty,DALY}} \\
-= \frac{\$89}{\$0.00177} \\
-= 50{,}300
+= \frac{\$184}{\$0.0199} \\
+= 9{,}210
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{nets} \\
+= Cost_{GW,max} / ((1 - (1 \\
++ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Cost_{treaty,DALY} \\
-= \frac{Cost_{campaign}}{DALYs_{max}} \\
-= \frac{\$1B}{565B} \\
-= \$0.00177
+= \frac{Cost_{campaign}}{DALYs_{max}^{PV}} \\
+= \frac{\$1B}{50.2B} \\
+= \$0.0199
 \end{gathered}
 $$
 where:
@@ -26311,32 +27973,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -26355,6 +27994,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -26737,7 +28385,7 @@ $$
 
 :::
 
-### Treaty Campaign Leverage vs Direct Funding: 476x {#sec-treaty_vs_direct_funding_leverage}
+### Treaty Campaign Leverage vs Direct Funding: 483x {#sec-treaty_vs_direct_funding_leverage}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -26745,33 +28393,32 @@ How many times more cost-effective the treaty campaign is vs direct pragmatic tr
 
 **Inputs**:
 
-- [Direct Pragmatic Trial Funding Cost per DALY](#sec-dfda_direct_funding_cost_per_daly) 🔢: $0.842
-- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.00177
+- [Direct Pragmatic Trial Funding Cost per DALY](#sec-dfda_direct_funding_cost_per_daly) 🔢: $9.62
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.02
 
 $$
 \begin{gathered}
 Leverage_{treaty} \\
 = \frac{Cost_{direct,DALY}}{Cost_{treaty,DALY}} \\
-= \frac{\$0.842}{\$0.00177} \\
-= 476
+= \frac{\$9.62}{\$0.0199} \\
+= 483
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Cost_{direct,DALY} \\
-= \frac{NPV_{direct}}{DALYs_{max}} \\
-= \frac{\$476B}{565B} \\
-= \$0.842
+= \frac{NPV_{direct}}{DALYs_{max}^{PV}} \\
+= \frac{\$483B}{50.2B} \\
+= \$9.62
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \frac{T_{queue,trial}}{Funding_{trial,ref} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$476B
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -26841,41 +28488,18 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Cost_{treaty,DALY} \\
-= \frac{Cost_{campaign}}{DALYs_{max}} \\
-= \frac{\$1B}{565B} \\
-= \$0.00177
+= \frac{Cost_{campaign}}{DALYs_{max}^{PV}} \\
+= \frac{\$1B}{50.2B} \\
+= \$0.0199
 \end{gathered}
 $$
 where:
@@ -33726,30 +35350,6 @@ Average annual stock market return (10%)
 
 :::
 
-### Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.
-
-**Source**: [@givewell-cost-per-life-saved]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$78, $100] • Distribution: Normal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $78 and $100 (±12%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
 ### Beef Caloric Conversion Efficiency: 3% {#sec-beef_feed_calorie_efficiency_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -33991,18 +35591,6 @@ Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. Studi
 Current active trials at any given time (3-5 year duration)
 
 **Source**: [@clinicaltrials-gov-enrollment-data-2025]
-
-*✓ High confidence*
-
-:::
-
-### Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Current clinical trial participation rate (0.06% of population)
-
-**Source**: [@clinical-trial-patient-participation-rate]
 
 *✓ High confidence*
 
@@ -34684,13 +36272,41 @@ Global median per-capita household income as measured by the Gallup World Poll (
 
 :::
 
-### Givewell Cost per Life Saved (Maximum): $5,500 {#sec-givewell_cost_per_life_max}
+### GiveWell Midpoint of Modeled Cost per Life Saved Range: $4,500 {#sec-givewell_cost_per_life_avg}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-GiveWell cost per life saved (Against Malaria Foundation)
+Midpoint of GiveWell's cited $3,500 to $5,500 modeled cost-per-life-saved range across top charities
 
 **Source**: [@givewell-cost-per-life-saved]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate): $5,500 {#sec-givewell_cost_per_life_max}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+GiveWell cost per life saved (Against Malaria Foundation). GiveWell estimates ~$3,000 to ~$8,000 per death averted across the locations where it funds AMF campaigns (as of December 2023).
+
+**Source**: [@givewell-cost-per-life-saved]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3,000, $8,000] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3,000 and $8,000 (±45%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-givewell_cost_per_life_max.qmd >}}
 
 *✓ High confidence*
 
@@ -36471,6 +38087,26 @@ Phase I safety trial duration
 **Source**: [@bio-clinical-development-2021]
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### Phase 2/3 Share of Clinical Trial Costs: 69% {#sec-phase_2_3_clinical_trial_cost_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)
+
+**Source**: [@global-clinical-trials-market-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5%)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-phase_2_3_clinical_trial_cost_pct.qmd >}}
+
+*✓ High confidence*
 
 :::
 
@@ -38758,6 +40394,16 @@ Number of sovereign heads of state/government
 
 :::
 
+### Childhood Vaccination Cost per DALY (Estimated): $30 {#sec-childhood_vaccination_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Estimated cost per DALY for US childhood vaccination programs. Note: US cost-effectiveness studies primarily use cost per QALY (Quality-Adjusted Life Year) rather than cost per DALY. This estimate is derived from program costs and benefits for comparison purposes only.
+
+*Core definition*
+
+:::
+
 ### Concentrated Interest Sector Market Cap: $5 trillion {#sec-concentrated_interest_sector_market_cap_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -39103,16 +40749,6 @@ Pragmatic trial platform staff costs (minimal, AI-assisted)
 ::: {.callout-note collapse="true" title="📊 Details"}
 
 Target pragmatic trial cost per patient in USD
-
-*Core definition*
-
-:::
-
-### Pragmatic Trial Platform One-Time Build Cost: $40 million {#sec-dfda_upfront_build}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Pragmatic trial platform one-time build cost (central estimate)
 
 *Core definition*
 
@@ -39582,6 +41218,80 @@ Maximum bond investment for lobbyist incentives
 
 :::
 
+### P(Success | Court of Humanity Funded): 0.1:1 {#sec-mechanism_court_of_humanity_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given Court of Humanity operational. Lowest direct causal link: court rulings are non-binding but create political pressure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.03:1, 0.25:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.03:1 and 0.25:1 (±110%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_court_of_humanity_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### P(Success | dFDA Funded): 0.7:1 {#sec-mechanism_dfda_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability that a funded dFDA produces sufficient cures to create political momentum for the treaty. High because clinical trials mechanically produce treatments; the platform reduces cost per trial.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.4:1, 0.9:1]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.4:1 and 0.9:1 (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_dfda_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### IAB Admin Cost Rate: 0.05:1 {#sec-mechanism_iab_admin_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual administrative cost of IABs as fraction of principal (legal, compliance, reporting). The principal itself is investor capital returned with interest, not EOS expenditure.
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### P(Success | IABs Funded): 0.6:1 {#sec-mechanism_iab_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given full IAB issuance. High because lobbying is a proven mechanism and IABs align politician incentives directly.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.3:1, 0.85:1]
+
+**What this means**: There's significant uncertainty here. The true value likely falls between 0.3:1 and 0.85:1 (±46%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_iab_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
 ### P(Success | Loving Takeover Funded): 0.95:1 {#sec-mechanism_loving_takeover_p_success}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -39597,6 +41307,64 @@ Probability of treaty passage given full funding of the Loving Takeover (mechani
 #### Input Distribution
 
 {{< include ../figures/distribution-mechanism_loving_takeover_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### Mechanism Opportunity Cost Rate: 0.02:1 {#sec-mechanism_opportunity_cost_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual opportunity cost rate for capital deployment mechanisms (forgone excess return vs market). Defense stocks historically return near-market, so excess opportunity cost is low.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0:1, 0.05:1] • Distribution: Fixed
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0:1 and 0.05:1 (±125%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The fixed distribution means values follow a specific statistical pattern.*
+
+*Core definition*
+
+:::
+
+### P(Success | Referendum Funded): 0.3:1 {#sec-mechanism_referendum_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given a successful global referendum demonstrating majority support. Non-binding but creates political pressure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.1:1, 0.55:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.1:1 and 0.55:1 (±75%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_referendum_p_success.qmd >}}
+
+*Core definition*
+
+:::
+
+### P(Success | Treaty Campaign Funded): 0.4:1 {#sec-mechanism_treaty_campaign_p_success}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Probability of treaty passage given full funding of the lobbying + referendum campaign ($1B). Depends on political will after lobbying and public pressure.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [0.15:1, 0.7:1]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 0.15:1 and 0.7:1 (±69%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-mechanism_treaty_campaign_p_success.qmd >}}
 
 *Core definition*
 
@@ -39733,16 +41501,6 @@ Average Phase 2/3 efficacy testing cost per drug that pharma must fund (~60% of 
 #### Input Distribution
 
 {{< include ../figures/distribution-pharma_phase_2_3_cost_barrier.qmd >}}
-
-*Core definition*
-
-:::
-
-### Pre-1962 Validation Years: 77 years {#sec-pre_1962_validation_years}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Years of empirical validation for physician-led pragmatic trials (1883-1960)
 
 *Core definition*
 
@@ -40123,6 +41881,50 @@ Perceived social friction cost of wearing a political message in public, express
 #### Input Distribution
 
 {{< include ../figures/distribution-shirt_wearing_friction_cost_usd.qmd >}}
+
+*Core definition*
+
+:::
+
+### Universal Right to Try with Evidence Implementation Cost: $65 million {#sec-state_rtt_implementation_cost_total}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Total implementation cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This launch-cost numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$25 million, $200 million] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between $25 million and $200 million (±135%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_implementation_cost_total.qmd >}}
+
+*Core definition*
+
+:::
+
+### Universal Right to Try with Evidence Treatment Discovery Multiplier: 5.48x {#sec-state_rtt_treatment_discovery_multiplier}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Conditional multiplier on the worldwide first-treatment discovery rate after all 50 states adopt and a mature pooled pragmatic-trial system operates under applicable federal authorization. The 5.48x central calibration reproduces the prior model's 82.2 versus 15 first treatments per year; it is an assumption, not an observed effect estimate. This single input incorporates patient or payer funding of treatment delivery, trial-site services, and permitted study costs, newly viable post-Phase-1 treatment-condition pairs, evaluable protocol quality, candidate supply, and scientific success. Its range describes productivity of an operating system, not the separate probability that advocacy achieves full adoption and implementation.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1.1x, 15x] • Distribution: Lognormal
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1.1x and 15x (±127%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-state_rtt_treatment_discovery_multiplier.qmd >}}
 
 *Core definition*
 

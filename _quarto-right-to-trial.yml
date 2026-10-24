@@ -4,29 +4,31 @@ project:
   execute-dir: project
   resources:
     - knowledge/data/
-    - assets/
-    - _redirects
+    - "assets/!(scoreboard-embed.html)"
     - robots.txt
     - llms.txt
   render:
     # Paper is copied to index.qmd by render script
     - index.qmd
-    - knowledge/appendix/parameters-and-calculations.qmd
 
 # Custom fields for render-quarto.py
 dih-render:
   emoji: "⚖️"
   index-source: knowledge/appendix/right-to-trial-fda-upgrade-act.qmd
-  redirect-from: https://right-to-trial.warondisease.org
+  redirect-from:
+    - https://right-to-trial.warondisease.org
+    - https://right-to-trial.acceleratedmedicine.org
+    - https://rtt-fda-upgrade-act.acceleratedmedicine.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: right-to-trial-fda-upgrade-act.pdf
-  netlify-site-id: "f0cfd162-dc07-474f-9b19-367ce1c1616f"
-  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: false  # Legislative text, not academic paper
   concept-terms:
     - term: "Right to Trial"
       aliases:
+        - "Right to Trial and FDA Upgrade Act"
         - "Right-to-Trial and FDA Upgrade Act"
+        - "Universal Right to Try"
+        - "Universal Right to Try and FDA Upgrade Act"
       manual-target: knowledge/solution/dfda.qmd
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A gavel with a medical cross/caduceus symbol."
@@ -41,23 +43,23 @@ author:
     email: m@warondisease.org
     orcid: 0009-0006-0212-1094
     affiliations:
-      - name: "International Campaign to End War and Disease"
-        url: https://warondisease.org
+      - name: "Institute for Accelerated Medicine"
+        url: https://acceleratedmedicine.org
 
 website:
   title: "Right to Trial & FDA Upgrade Act"
-  description: 'Act to modernize medical research and treatment access through an open-source FDA.gov v2, giving patients the right to participate in trials.'
-  site-url: https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html
+  description: 'A universal right to try, with evidence. The Act authorizes commercial access after initial human safety testing and makes every covered treatment use teach us something.'
+  site-url: https://papers.acceleratedmedicine.org/right-to-trial.html
   favicon: assets/icons/dih-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "[Institute for Accelerated Medicine](https://acceleratedmedicine.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/right-to-trial-fda-upgrade-act.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
     right:
       - text: "dFDA Protocol"
-        href: https://dfda-spec.warondisease.org
+        href: https://papers.acceleratedmedicine.org/dfda-protocol.html
       - text: "VOTE"
         href: https://WarOnDisease.org
 
@@ -71,6 +73,7 @@ execute:
     PYTHONPATH: "."
 
 metadata:
+  image: "https://manual.warondisease.org/assets/og/right-to-trial-og-1200x630.jpg"
   doi: "10.5281/zenodo.19076852"
   # Zenodo Concept DOI (stable across all versions - use for citations and new versions)
   importance: 76
@@ -79,10 +82,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "Clinical Trials, Drug Development, Healthcare Reform, Regulatory Policy, Patient Rights"
   category: "Legislative Text, Public Policy, Healthcare Reform"
@@ -104,18 +107,16 @@ metadata:
     - patient-rights
     - open-data
     - decentralized-trials
-    - fda-v2
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
-  publisher: "International Campaign to End War and Disease"
-  publisher-url: "https://warondisease.org"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
+  publisher: "Institute for Accelerated Medicine"
+  publisher-url: "https://acceleratedmedicine.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
   issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
   source-url: "https://github.com/wishonia/earth-optimization-protocol"
@@ -127,20 +128,18 @@ metadata:
   medium: "Digital"
   twitter-site: "https://x.com/warondisease"
   twitter-creator: "https://x.com/warondisease"
-  og-site-name: "Right to Trial Act"
+  og-site-name: "Right to Trial & FDA Upgrade Act"
 
   # Identifiers
   # doi: ""
 
-  # Open Graph metadata (enables per-page custom OG images)
   open-graph: true
-  image: "https://manual.warondisease.org/assets/og/right-to-trial-og-1200x630.jpg"
 
   # Publication tracking
   publishing:
     own-site:
-      url: "https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html"
-      status: pending
+      url: "https://papers.acceleratedmedicine.org/right-to-trial.html"
+      status: deployed
     preprints:
       - platform: zenodo
         status: auto-uploaded
@@ -203,7 +202,7 @@ format:
   pdf:
     output-file: "right-to-trial-fda-upgrade-act.pdf"
     documentclass: article
-    institute: "International Campaign to End War and Disease"
+    institute: "Institute for Accelerated Medicine"
     echo: false
     toc: true
     toc-depth: 3
@@ -215,7 +214,7 @@ format:
       - callout-bw.tex
       - institute-header.tex
       - text: |
-          \paperurl{https://manual.warondisease.org/knowledge/appendix/right-to-trial-fda-upgrade-act.html}
+          \paperurl{https://papers.acceleratedmedicine.org/right-to-trial.html}
     geometry:
       - top=1in
       - bottom=1in

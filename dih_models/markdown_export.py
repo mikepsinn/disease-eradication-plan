@@ -22,8 +22,8 @@ MANUAL_BASE_URL = "https://manual.warondisease.org"
 
 
 def strip_confidence_intervals(text: str) -> str:
-    """Strip '(95% CI: ...)' from resolved variable text."""
-    return re.sub(r'\s*\(95% CI:\s*[^)]+\)', '', text)
+    """Strip '(95% CI: ...)' or '(90% CI: ...)' from resolved variable text."""
+    return re.sub(r'\s*\(9[05]% CI:\s*[^)]+\)', '', text)
 
 
 def normalize_parameter_link_key(name: str) -> str:

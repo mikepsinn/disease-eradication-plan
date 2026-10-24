@@ -1,0 +1,27 @@
+<%
+// Listing template for a papers site home page. Lays each paper out the way
+// knowledge/papers.qmd does: title, then the full-width image, then the
+// abstract. Quarto's built-in listings either float the image beside the text
+// (default) or crop it into a card (grid).
+//
+// Emits markdown, not raw HTML: abstracts contain {{< var >}} shortcodes, and
+// Quarto only resolves shortcodes in markdown.
+const linkText = (text) => String(text).replace(/([\[\]])/g, "\\$1");
+%>
+<% for (const item of items) { %>
+::: {.paper-entry}
+
+### [<%- linkText(item.title) %>](<%- item.path %>) {.paper-entry-title .unnumbered .unlisted}
+
+<% if (item.image) { %>
+[![<%- linkText(item.title) %>](<%- item.image %>){.paper-entry-image}](<%- item.path %>)
+<% } %>
+
+<% if (item.description) { %>
+::: {.paper-entry-abstract}
+<%= item.description %>
+:::
+<% } %>
+
+:::
+<% } %>

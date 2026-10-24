@@ -44,8 +44,9 @@ async function extractSiteUrls(): Promise<
 > {
   const results: Array<{ configFile: string; siteUrl: string }> = [];
 
-  // Find all _quarto*.yml files in the root directory (not in _build_temp)
-  const configFiles = await glob("_quarto*.yml", {
+  // Source configs only: _quarto.yml is a generated copy of whichever config
+  // was rendered last, so its site-url may be stale.
+  const configFiles = await glob("_quarto-*.yml", {
     cwd: process.cwd(),
     absolute: true,
   });
@@ -122,6 +123,23 @@ async function checkDomain(
     // Handle redirects
     if (response.status >= 300 && response.status < 400) {
       const redirectUrl = response.headers.get("location") || undefined;
+
+      // A canonical site-url may redirect within its own host (Pages 308s
+      // "page.html" to "page"). Leaving the host means the site is not being
+      // served: a catch-all redirect once sent every paper site to the manual.
+      const redirectHost = redirectUrl ? new URL(redirectUrl, siteUrl).hostname.toLowerCase() : undefined;
+      if (redirectHost !== new URL(siteUrl).hostname.toLowerCase()) {
+        return {
+          configFile,
+          siteUrl,
+          status: "error",
+          statusCode: response.status,
+          redirectUrl,
+          error: "Canonical URL redirects to another host",
+          responseTime,
+        };
+      }
+
       return {
         configFile,
         siteUrl,

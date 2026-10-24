@@ -26,11 +26,11 @@ youtube-thumbnail: /assets/podcast/parameters-and-calculations-youtube.jpg
 ---
 
 ::: {.content-visible when-format="epub"}
-Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html/knowledge/appendix/parameters-and-calculations.html](https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html/knowledge/appendix/parameters-and-calculations.html).
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://papers.acceleratedmedicine.org/knowledge/appendix/parameters-and-calculations.html](https://papers.acceleratedmedicine.org/knowledge/appendix/parameters-and-calculations.html).
 :::
 
 ::: {.content-visible when-format="docx"}
-Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html/knowledge/appendix/parameters-and-calculations.html](https://manual.warondisease.org/knowledge/appendix/dfda-impact-paper.html/knowledge/appendix/parameters-and-calculations.html).
+Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo distributions are available at [https://papers.acceleratedmedicine.org/knowledge/appendix/parameters-and-calculations.html](https://papers.acceleratedmedicine.org/knowledge/appendix/parameters-and-calculations.html).
 :::
 
 ::::: {.content-visible unless-format="epub"}
@@ -38,20 +38,60 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 117 parameters used in the analysis, organized by type:
+This appendix documents all 106 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 42
-- Calculated values: 53
-- Core definitions: 22
+- External sources (peer-reviewed): 37
+- Calculated values: 49
+- Core definitions: 20
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (53 parameters) • [External Data Sources](#sec-external) (42 parameters) • [Core Definitions](#sec-definitions) (22 parameters)
+[Calculated Values](#sec-calculated) (49 parameters) • [External Data Sources](#sec-external) (37 parameters) • [Core Definitions](#sec-definitions) (20 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Bed Nets Cost per DALY: $184 {#sec-bed_nets_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per DALY for insecticide-treated bed nets: GiveWell's Against Malaria Foundation cost per life saved divided by the discounted life-years of a child death averted (a full life expectancy at the standard discount rate, life-years accruing continuously). Discounted at the same rate and with the same continuous timing as the dFDA and treaty cost-per-DALY figures so comparisons are like for like. GiveWell publishes cost per life saved, not cost per DALY. Bed nets are the standard benchmark for cost-effective global health spending.
+
+**Inputs**:
+
+- [GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)](#sec-givewell_cost_per_life_max) 📊: $5,500 (95% CI: $3,000 - $8,000)
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+Cost_{nets} \\
+= Cost_{GW,max} / ((1 - (1 \\
++ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
+\end{gathered}
+$$
+
+**Methodology**: [@givewell-cost-per-life-saved]
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-bed_nets_cost_per_daly.qmd >}}
+
+{{< include ../figures/sensitivity-table-bed_nets_cost_per_daly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-bed_nets_cost_per_daly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-bed_nets_cost_per_daly.qmd >}}
+
+:::
 
 ### Combination Therapy Space: 45.1 billion combinations {#sec-combination_therapy_disease_space}
 
@@ -222,6 +262,90 @@ $$
 
 :::
 
+### Current Patient Participation Rate in Clinical Trials: 0.0792% {#sec-current_patient_participation_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)
+
+**Inputs**:
+
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
+- [Global Population with Chronic Diseases](#sec-current_disease_patients_global) 📊: 2.4 billion people (95% CI: 2 billion people - 2.8 billion people)
+
+$$
+\begin{gathered}
+Rate_{part} \\
+= \frac{Slots_{curr}}{N_{patients}} \\
+= \frac{1.9M}{2.4B} \\
+= 0.0792\%
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_patient_participation_rate.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_patient_participation_rate.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_patient_participation_rate.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_patient_participation_rate.qmd >}}
+
+:::
+
+### Current Trial Participation Rate Among Willing Patients: 0.177% {#sec-current_willing_patient_participation_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual clinical trial slots per patient willing to join a drug trial (1.9M slots / 1.08B willing patients). A capacity ratio, not a measured enrollment share: not every slot goes to a willing chronic-disease patient
+
+**Inputs**:
+
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
+- [Global Patients Willing to Participate in Clinical Trials](#sec-willing_trial_participants_global) 🔢: 1.08 billion people
+
+$$
+\begin{gathered}
+Rate_{part,willing} \\
+= \frac{Slots_{curr}}{N_{willing}} \\
+= \frac{1.9M}{1.08B} \\
+= 0.177\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_willing_patient_participation_rate.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_willing_patient_participation_rate.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_willing_patient_participation_rate.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_willing_patient_participation_rate.qmd >}}
+
+:::
+
 ### Total Annual Pragmatic Trial Platform Operational Costs: $40 million {#sec-dfda_annual_opex}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -264,23 +388,24 @@ $$
 
 :::
 
-### Annual R&D Savings from Pragmatic Trials: $58.6 billion {#sec-dfda_benefit_rd_only_annual}
+### Annual R&D Savings from Pragmatic Trials: $40.5 billion {#sec-dfda_benefit_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual benefit from pragmatic trial R&D savings (trial cost reduction, secondary component)
+Annual benefit from pragmatic trial R&D savings: trial cost reduction applied to the Phase 2/3 efficacy share of global trial spending (Phase 1 safety trials retain traditional design and cost)
 
 **Inputs**:
 
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60 billion (95% CI: $50 billion - $75 billion)
+- [Phase 2/3 Share of Clinical Trial Costs](#sec-phase_2_3_clinical_trial_cost_pct) 📊: 69% (SE: ±5%)
 - [Pragmatic Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -310,32 +435,31 @@ $$
 
 :::
 
-### Direct Pragmatic Trial Funding Cost per DALY: $0.842 {#sec-dfda_direct_funding_cost_per_daly}
+### Direct Pragmatic Trial Funding Cost per DALY: $9.62 {#sec-dfda_direct_funding_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.
+Cost per DALY at direct funding level for the therapeutic space exploration period, with costs and DALYs discounted at the same standard rate. Still highly cost-effective vs bed nets.
 
 **Inputs**:
 
-- [Direct Pragmatic Trial Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476 billion
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [Direct Pragmatic Trial Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $483 billion
+- [Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted) 🔢: 50.2 billion DALYs
 
 $$
 \begin{gathered}
 Cost_{direct,DALY} \\
-= \frac{NPV_{direct}}{DALYs_{max}} \\
-= \frac{\$476B}{565B} \\
-= \$0.842
+= \frac{NPV_{direct}}{DALYs_{max}^{PV}} \\
+= \frac{\$483B}{50.2B} \\
+= \$9.62
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \frac{T_{queue,trial}}{Funding_{trial,ref} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$476B
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -405,32 +529,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 *~ Medium confidence*
@@ -451,11 +552,11 @@ $$
 
 :::
 
-### Direct Pragmatic Trial Funding NPV (Exploration Period): $476 billion {#sec-dfda_direct_funding_queue_clearance_npv}
+### Direct Pragmatic Trial Funding NPV (Exploration Period): $483 billion {#sec-dfda_direct_funding_queue_clearance_npv}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
+NPV of annual direct funding for the therapeutic space exploration period, spent continuously through each year (the same timing convention as the discounted DALYs it is divided by). Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
 
 **Inputs**:
 
@@ -466,9 +567,8 @@ NPV of annual direct funding for the therapeutic space exploration period. Fundi
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \frac{T_{queue,trial}}{Funding_{trial,ref} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$476B
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -553,7 +653,7 @@ $$
 
 :::
 
-### Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 178 thousand:1 {#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag}
+### Direct Funding ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 15.6 thousand:1 {#sec-dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -561,55 +661,32 @@ ROI from directly funding pragmatic clinical trials over the therapeutic space e
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
-- [Direct Pragmatic Trial Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476 billion
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $7.53 quadrillion
+- [Direct Pragmatic Trial Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $483 billion
 
 $$
 \begin{gathered}
 ROI_{direct,max} \\
 = \frac{Value_{max}}{NPV_{direct}} \\
-= \frac{\$84800T}{\$476B} \\
-= 178{,}000
+= \frac{\$7530T}{\$483B} \\
+= 15{,}600
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -628,6 +705,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -671,18 +757,8 @@ where:
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \frac{T_{queue,trial}}{Funding_{trial,ref} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$476B
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 *✓ High confidence*
@@ -795,72 +871,6 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_efficacy_lag_elimination_deaths_averted.qmd >}}
-
-:::
-
-### Total Economic Loss from Disease Eradication Delay: $1.32 quadrillion {#sec-dfda_efficacy_lag_elimination_economic_value}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total economic loss from delaying disease eradication by 8.2 years (PRIMARY estimate, 2024 USD). Values global DALYs at standardized US/International normative rate ($150k) rather than local ability-to-pay, representing the full human capital loss.
-
-**Inputs**:
-
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 8.77 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
-
-$$
-\begin{gathered}
-Value_{lag} \\
-= DALYs_{lag} \times Value_{QALY} \\
-= 8.77B \times \$150K \\
-= \$1320T
-\end{gathered}
-$$
-where:
-$$
-DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.9B + 873M = 8.77B
-$$
-where:
-$$
-\begin{gathered}
-YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{lag} \\
-= T_{lag} \times Deaths_{disease,daily} \times 338 \\
-= 8.2 \times 150{,}000 \times 338 \\
-= 416M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-YLD_{lag} \\
-= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
-= 416M \times 6 \times 0.35 \\
-= 873M
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-dfda_efficacy_lag_elimination_economic_value.qmd >}}
-
-{{< include ../figures/sensitivity-table-dfda_efficacy_lag_elimination_economic_value.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_economic_value.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-dfda_efficacy_lag_elimination_economic_value.qmd >}}
 
 :::
 
@@ -1030,7 +1040,7 @@ $$
 
 :::
 
-### Annual Net Savings from Pragmatic Trials (R&D Only): $58.6 billion {#sec-dfda_net_savings_rd_only_annual}
+### Annual Net Savings from Pragmatic Trials (R&D Only): $40.4 billion {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1038,24 +1048,24 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
 - [Total Annual Pragmatic Trial Platform Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -1133,7 +1143,7 @@ $$
 
 :::
 
-### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $389 billion {#sec-dfda_npv_benefit_rd_only}
+### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $269 billion {#sec-dfda_npv_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1141,7 +1151,7 @@ NPV of pragmatic trial R&D savings only with 5-year adoption ramp (10-year horiz
 
 **Inputs**:
 
-- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6 billion
+- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $40.4 billion
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -1169,7 +1179,7 @@ $$
 
 :::
 
-### NPV Net Benefit (R&D Only): $389 billion {#sec-dfda_npv_net_benefit_rd_only}
+### NPV Net Benefit (R&D Only): $268 billion {#sec-dfda_npv_net_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1177,15 +1187,15 @@ NPV net benefit using R&D savings only (benefits minus costs)
 
 **Inputs**:
 
-- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $269 billion
 - [Pragmatic Trial Platform Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
 NPV_{net,RD} \\
 = NPV_{RD} - Cost_{platform,total} \\
-= \$389B - \$611M \\
-= \$389B
+= \$269B - \$611M \\
+= \$268B
 \end{gathered}
 $$
 where:
@@ -1200,17 +1210,17 @@ $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -1583,7 +1593,7 @@ $$
 
 :::
 
-### ROI from Pragmatic Trial R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
+### ROI from Pragmatic Trial R&D Savings Only: 439:1 {#sec-dfda_roi_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1591,15 +1601,15 @@ ROI from pragmatic trial R&D savings only (10-year NPV, most conservative estima
 
 **Inputs**:
 
-- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $269 billion
 - [Pragmatic Trial Platform Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
 ROI_{RD} \\
 = \frac{NPV_{RD}}{Cost_{platform,total}} \\
-= \frac{\$389B}{\$611M} \\
-= 637
+= \frac{\$269B}{\$611M} \\
+= 439
 \end{gathered}
 $$
 where:
@@ -1614,17 +1624,17 @@ $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -1769,7 +1779,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).
+Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology). Undiscounted physical count of healthy years; cost-effectiveness ratios and dollar values use DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED so costs and health are discounted at the same rate.
 
 **Inputs**:
 
@@ -1880,54 +1890,26 @@ $$
 
 :::
 
-### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $84.8 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+### Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 50.2 billion DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total economic value from the combined treatment timeline shift. DALYs valued at standard economic rate.
+Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity](#sec-dfda_queue_clearance_years) 🔢: 36 years
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
 \begin{gathered}
-Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -1946,6 +1928,124 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+:::
+
+### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $7.53 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Present value of the combined treatment timeline shift: discounted DALYs valued at the standard economic rate per QALY.
+
+**Inputs**:
+
+- [Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted) 🔢: 50.2 billion DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -2961,547 +3061,6 @@ $$
 
 :::
 
-### Thalidomide DALYs Per Event: 41,760 DALYs {#sec-thalidomide_dalys_per_event}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total DALYs per US-scale thalidomide event (YLL + YLD)
-
-**Inputs**:
-
-- [Thalidomide YLD Per Event](#sec-thalidomide_yld_per_event) 🔢: 12,960 years
-- [Thalidomide YLL Per Event](#sec-thalidomide_yll_per_event) 🔢: 28,800 years
-
-$$
-\begin{gathered}
-DALY_{thal} \\
-= YLD_{thal} + YLL_{thal} \\
-= 13{,}000 + 28{,}800 \\
-= 41{,}800
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-YLD_{thal} \\
-= DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
-= 0.4 \times 540 \times 60 \\
-= 13{,}000
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,survive} \\
-= N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
-= 900 \times (1 - 40\%) \\
-= 540
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-YLL_{thal} \\
-= Deaths_{thal} \times 80 \\
-= 360 \times 80 \\
-= 28{,}800
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{thal} \\
-= Rate_{thal,mort} \times N_{thal,US,prevent} \\
-= 40\% \times 900 \\
-= 360
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-thalidomide_dalys_per_event.qmd >}}
-
-{{< include ../figures/sensitivity-table-thalidomide_dalys_per_event.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-thalidomide_dalys_per_event.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-thalidomide_dalys_per_event.qmd >}}
-
-:::
-
-### Thalidomide Deaths Per Event: 360 deaths {#sec-thalidomide_deaths_per_event}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Deaths per US-scale thalidomide event
-
-**Inputs**:
-
-- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
-- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
-
-$$
-\begin{gathered}
-Deaths_{thal} \\
-= Rate_{thal,mort} \times N_{thal,US,prevent} \\
-= 40\% \times 900 \\
-= 360
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-thalidomide_deaths_per_event.qmd >}}
-
-{{< include ../figures/sensitivity-table-thalidomide_deaths_per_event.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-thalidomide_deaths_per_event.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-thalidomide_deaths_per_event.qmd >}}
-
-:::
-
-### Thalidomide Survivors Per Event: 540 cases {#sec-thalidomide_survivors_per_event}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Survivors per US-scale thalidomide event
-
-**Inputs**:
-
-- [Thalidomide Mortality Rate](#sec-thalidomide_mortality_rate) 📊: 40% (95% CI: 35% - 45%)
-- [Thalidomide US Cases Prevented](#sec-thalidomide_us_cases_prevented) 🔢: 900 cases
-
-$$
-\begin{gathered}
-N_{thal,survive} \\
-= N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
-= 900 \times (1 - 40\%) \\
-= 540
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-thalidomide_survivors_per_event.qmd >}}
-
-{{< include ../figures/sensitivity-table-thalidomide_survivors_per_event.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-thalidomide_survivors_per_event.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-thalidomide_survivors_per_event.qmd >}}
-
-:::
-
-### Thalidomide US Cases Prevented: 900 cases {#sec-thalidomide_us_cases_prevented}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Estimated US thalidomide cases prevented by FDA rejection
-
-**Inputs**:
-
-- [Thalidomide Cases Worldwide](#sec-thalidomide_cases_worldwide) 📊: 15,000 cases (95% CI: 10,000 cases - 20,000 cases)
-- [US Population Share 1960](#sec-thalidomide_us_population_share_1960) 📊: 6% (95% CI: 5.5% - 6.5%)
-
-$$
-\begin{gathered}
-N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900
-\end{gathered}
-$$
-
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-thalidomide_us_cases_prevented.qmd >}}
-
-{{< include ../figures/sensitivity-table-thalidomide_us_cases_prevented.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-thalidomide_us_cases_prevented.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-thalidomide_us_cases_prevented.qmd >}}
-
-:::
-
-### Thalidomide YLD Per Event: 12,960 years {#sec-thalidomide_yld_per_event}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Years Lived with Disability per thalidomide event
-
-**Inputs**:
-
-- [Thalidomide Disability Weight](#sec-thalidomide_disability_weight) 📊: 0.4:1 (95% CI: 0.32:1 - 0.48:1)
-- [Thalidomide Survivors Per Event](#sec-thalidomide_survivors_per_event) 🔢: 540 cases
-- [Thalidomide Survivor Lifespan](#sec-thalidomide_survivor_lifespan) 📊: 60 years (95% CI: 50 years - 70 years)
-
-$$
-\begin{gathered}
-YLD_{thal} \\
-= DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
-= 0.4 \times 540 \times 60 \\
-= 13{,}000
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,survive} \\
-= N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
-= 900 \times (1 - 40\%) \\
-= 540
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-thalidomide_yld_per_event.qmd >}}
-
-{{< include ../figures/sensitivity-table-thalidomide_yld_per_event.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-thalidomide_yld_per_event.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-thalidomide_yld_per_event.qmd >}}
-
-:::
-
-### Thalidomide YLL Per Event: 28,800 years {#sec-thalidomide_yll_per_event}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Years of Life Lost per thalidomide event (infant deaths)
-
-**Inputs**:
-
-- [Thalidomide Deaths Per Event](#sec-thalidomide_deaths_per_event) 🔢: 360 deaths
-
-$$
-\begin{gathered}
-YLL_{thal} \\
-= Deaths_{thal} \times 80 \\
-= 360 \times 80 \\
-= 28{,}800
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{thal} \\
-= Rate_{thal,mort} \times N_{thal,US,prevent} \\
-= 40\% \times 900 \\
-= 360
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-thalidomide_yll_per_event.qmd >}}
-
-{{< include ../figures/sensitivity-table-thalidomide_yll_per_event.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-thalidomide_yll_per_event.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-thalidomide_yll_per_event.qmd >}}
-
-:::
-
-### Ratio of Type II Error Cost to Type I Error Benefit: 3,389:1 {#sec-type_ii_error_cost_ratio}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Ratio of Type II error cost to Type I error benefit (harm from delay vs. harm prevented)
-
-**Inputs**:
-
-- [Total DALYs Lost from Disease Eradication Delay](#sec-dfda_efficacy_lag_elimination_dalys) 🔢: 8.77 billion DALYs
-- [Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024)](#sec-type_i_error_benefit_dalys) 🔢: 2.59 million DALYs
-
-$$
-\begin{gathered}
-Ratio_{TypeII} \\
-= \frac{DALYs_{lag}}{DALY_{TypeI}} \\
-= \frac{8.77B}{2.59M} \\
-= 3{,}390
-\end{gathered}
-$$
-where:
-$$
-DALYs_{lag} = YLL_{lag} + YLD_{lag} = 7.9B + 873M = 8.77B
-$$
-where:
-$$
-\begin{gathered}
-YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{lag} \\
-= T_{lag} \times Deaths_{disease,daily} \times 338 \\
-= 8.2 \times 150{,}000 \times 338 \\
-= 416M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-YLD_{lag} \\
-= Deaths_{lag} \times T_{suffering} \times DW_{chronic} \\
-= 416M \times 6 \times 0.35 \\
-= 873M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-DALY_{TypeI} \\
-= DALY_{thal} \times 62 \\
-= 41{,}800 \times 62 \\
-= 2.59M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-DALY_{thal} \\
-= YLD_{thal} + YLL_{thal} \\
-= 13{,}000 + 28{,}800 \\
-= 41{,}800
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-YLD_{thal} \\
-= DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
-= 0.4 \times 540 \times 60 \\
-= 13{,}000
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,survive} \\
-= N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
-= 900 \times (1 - 40\%) \\
-= 540
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-YLL_{thal} \\
-= Deaths_{thal} \times 80 \\
-= 360 \times 80 \\
-= 28{,}800
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{thal} \\
-= Rate_{thal,mort} \times N_{thal,US,prevent} \\
-= 40\% \times 900 \\
-= 360
-\end{gathered}
-$$
-*~ Medium confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-type_ii_error_cost_ratio.qmd >}}
-
-{{< include ../figures/sensitivity-table-type_ii_error_cost_ratio.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-type_ii_error_cost_ratio.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-type_ii_error_cost_ratio.qmd >}}
-
-:::
-
-### Maximum DALYs Saved by FDA Preventing Unsafe Drugs (1962-2024): 2.59 million DALYs {#sec-type_i_error_benefit_dalys}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Maximum DALYs saved by FDA preventing unsafe drugs over 62-year period 1962-2024 (extreme overestimate: one Thalidomide-scale event per year)
-
-**Inputs**:
-
-- [Thalidomide DALYs Per Event](#sec-thalidomide_dalys_per_event) 🔢: 41,760 DALYs
-
-$$
-\begin{gathered}
-DALY_{TypeI} \\
-= DALY_{thal} \times 62 \\
-= 41{,}800 \times 62 \\
-= 2.59M
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-DALY_{thal} \\
-= YLD_{thal} + YLL_{thal} \\
-= 13{,}000 + 28{,}800 \\
-= 41{,}800
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-YLD_{thal} \\
-= DW_{thal} \times N_{thal,survive} \times LE_{thal} \\
-= 0.4 \times 540 \times 60 \\
-= 13{,}000
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,survive} \\
-= N_{thal,US,prevent} \times (1 - Rate_{thal,mort}) \\
-= 900 \times (1 - 40\%) \\
-= 540
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-N_{thal,US,prevent} \\
-= N_{thal,global} \times Pct_{US,1960} \\
-= 15{,}000 \times 6\% \\
-= 900
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-YLL_{thal} \\
-= Deaths_{thal} \times 80 \\
-= 360 \times 80 \\
-= 28{,}800
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-Deaths_{thal} \\
-= Rate_{thal,mort} \times N_{thal,US,prevent} \\
-= 40\% \times 900 \\
-= 360
-\end{gathered}
-$$
-*? Low confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-type_i_error_benefit_dalys.qmd >}}
-
-{{< include ../figures/sensitivity-table-type_i_error_benefit_dalys.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-type_i_error_benefit_dalys.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-type_i_error_benefit_dalys.qmd >}}
-
-:::
-
 ### Unexplored Therapeutic Frontier: 99.7% {#sec-unexplored_ratio}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3545,6 +3104,44 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-unexplored_ratio.qmd >}}
+
+:::
+
+### Global Patients Willing to Participate in Clinical Trials: 1.08 billion people {#sec-willing_trial_participants_global}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global chronic disease patients willing to participate in trials (2.4B × 44.8%)
+
+**Inputs**:
+
+- [Global Population with Chronic Diseases](#sec-current_disease_patients_global) 📊: 2.4 billion people (95% CI: 2 billion people - 2.8 billion people)
+- [Patient Willingness to Participate in Clinical Trials](#sec-patient_willingness_trial_participation_pct) 📊: 44.8% (95% CI: 40% - 50%)
+
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-willing_trial_participants_global.qmd >}}
+
+{{< include ../figures/sensitivity-table-willing_trial_participants_global.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-willing_trial_participants_global.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-willing_trial_participants_global.qmd >}}
 
 :::
 
@@ -3612,30 +3209,6 @@ Mean exclusion rate in antidepressant trials (86.1% of real-world patients exclu
 
 :::
 
-### Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.
-
-**Source**: [@givewell-cost-per-life-saved]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$78, $100] • Distribution: Normal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $78 and $100 (±12%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
 ### Disability Weight for Untreated Chronic Conditions: 0.35 weight {#sec-chronic_disease_disability_weight}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3653,18 +3226,6 @@ Disability weight for untreated chronic conditions (WHO Global Burden of Disease
 {{< include ../figures/distribution-chronic_disease_disability_weight.qmd >}}
 
 *~ Medium confidence • 📊 Peer-reviewed*
-
-:::
-
-### Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Current clinical trial participation rate (0.06% of population)
-
-**Source**: [@clinical-trial-patient-participation-rate]
-
-*✓ High confidence*
 
 :::
 
@@ -3796,6 +3357,30 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 :::
 
+### GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate): $5,500 {#sec-givewell_cost_per_life_max}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+GiveWell cost per life saved (Against Malaria Foundation). GiveWell estimates ~$3,000 to ~$8,000 per death averted across the locations where it funds AMF campaigns (as of December 2023).
+
+**Source**: [@givewell-cost-per-life-saved]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3,000, $8,000] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3,000 and $8,000 (±45%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-givewell_cost_per_life_max.qmd >}}
+
+*✓ High confidence*
+
+:::
+
 ### Global Annual DALY Burden: 2.88 billion DALYs/year {#sec-global_annual_daly_burden}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -3873,6 +3458,26 @@ Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing 
 **Technical**: Distribution: Fixed
 
 *✓ High confidence*
+
+:::
+
+### Global Life Expectancy (2024): 73.4 years {#sec-global_life_expectancy_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global life expectancy at birth (2024), WHO global figure. Was previously set to 79 (developed-country treatment access), which the adversarial review flagged: a measured external parameter must carry the measured value; access optimism belongs in explicit forward-looking parameters, not in a present-day data point.
+
+**Source**: [@who-global-health-estimates-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 2 years)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-global_life_expectancy_2024.qmd >}}
+
+*✓ High confidence • 📊 Peer-reviewed • Updated 2024*
 
 :::
 
@@ -3996,6 +3601,30 @@ Typical cost per QALY for standard NIH-funded medical research portfolio. Reflec
 
 :::
 
+### Patient Willingness to Participate in Clinical Trials: 44.8% {#sec-patient_willingness_trial_participation_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)
+
+**Source**: [@patient-willingness-clinical-trials]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [40%, 50%] • Distribution: Normal (SE: 2.5%)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between 40% and 50% (±11%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-patient_willingness_trial_participation_pct.qmd >}}
+
+*~ Medium confidence*
+
+:::
+
 ### Pharma Drug Development Cost (Current System): $2.6 billion {#sec-pharma_drug_development_cost_current}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4029,6 +3658,26 @@ Phase I safety trial duration
 **Source**: [@bio-clinical-development-2021]
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### Phase 2/3 Share of Clinical Trial Costs: 69% {#sec-phase_2_3_clinical_trial_cost_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)
+
+**Source**: [@global-clinical-trials-market-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5%)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-phase_2_3_clinical_trial_cost_pct.qmd >}}
+
+*✓ High confidence*
 
 :::
 
@@ -4077,18 +3726,6 @@ Pre-1962 drug development cost adjusted to 2024 dollars ($6.5M × 3.80 = $24.7M,
 {{< include ../figures/distribution-pre_1962_drug_development_cost_2024_usd.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
-### Pre-1962 Physician Count (Unverified): 144 thousand physicians {#sec-pre_1962_physician_count}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Estimated physicians conducting real-world efficacy trials pre-1962 (unverified estimate)
-
-**Source**: [@pre-1962-physician-trials]
-
-*? Low confidence*
 
 :::
 
@@ -4232,18 +3869,6 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 :::
 
-### Return on Investment from Smallpox Eradication Campaign: 280:1 {#sec-smallpox_eradication_roi}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Return on investment from smallpox eradication campaign
-
-**Source**: [@smallpox-eradication-roi]
-
-*✓ High confidence*
-
-:::
-
 ### Standard Economic Value per QALY: $150,000 {#sec-standard_economic_qaly_value_usd}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4259,126 +3884,6 @@ Standard economic value per QALY
 #### Input Distribution
 
 {{< include ../figures/distribution-standard_economic_qaly_value_usd.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-### Thalidomide Cases Worldwide: 15,000 cases {#sec-thalidomide_cases_worldwide}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Total thalidomide birth defect cases worldwide (1957-1962)
-
-**Source**: [@thalidomide-scandal]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [10,000 cases, 20,000 cases] • Distribution: Lognormal
-
-**What this means**: There's significant uncertainty here. The true value likely falls between 10,000 cases and 20,000 cases (±33%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-thalidomide_cases_worldwide.qmd >}}
-
-*~ Medium confidence*
-
-:::
-
-### Thalidomide Disability Weight: 0.4:1 {#sec-thalidomide_disability_weight}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Disability weight for thalidomide survivors (limb deformities, organ damage)
-
-**Source**: [@thalidomide-survivors-health]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [0.32:1, 0.48:1] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 0.32:1 and 0.48:1 (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-thalidomide_disability_weight.qmd >}}
-
-*~ Medium confidence*
-
-:::
-
-### Thalidomide Mortality Rate: 40% {#sec-thalidomide_mortality_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Mortality rate for thalidomide-affected infants (died within first year)
-
-**Source**: [@thalidomide-scandal]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [35%, 45%] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 35% and 45% (±13%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-thalidomide_mortality_rate.qmd >}}
-
-*✓ High confidence*
-
-:::
-
-### Thalidomide Survivor Lifespan: 60 years {#sec-thalidomide_survivor_lifespan}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Average lifespan for thalidomide survivors
-
-**Source**: [@thalidomide-survivors-health]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [50 years, 70 years] • Distribution: Lognormal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 50 years and 70 years (±17%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-thalidomide_survivor_lifespan.qmd >}}
-
-*~ Medium confidence*
-
-:::
-
-### US Population Share 1960: 6% {#sec-thalidomide_us_population_share_1960}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-US share of world population in 1960
-
-**Source**: [@us-census-world-population-1960]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [5.5%, 6.5%] • Distribution: Lognormal
-
-**What this means**: We're quite confident in this estimate. The true value likely falls between 5.5% and 6.5% (±8%). This represents a narrow range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The lognormal distribution means values can't go negative and have a longer tail toward higher values (common for costs and populations).*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-thalidomide_us_population_share_1960.qmd >}}
 
 *✓ High confidence*
 
@@ -4614,16 +4119,6 @@ Pragmatic trial platform staff costs (minimal, AI-assisted)
 
 :::
 
-### Pragmatic Trial Platform One-Time Build Cost: $40 million {#sec-dfda_upfront_build}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Pragmatic trial platform one-time build cost (central estimate)
-
-*Core definition*
-
-:::
-
 ### Pragmatic Trial Platform One-Time Build Cost (Maximum): $46 million {#sec-dfda_upfront_build_max}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -4745,16 +4240,6 @@ Standard time horizon for NPV analysis
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*Core definition*
-
-:::
-
-### Pre-1962 Validation Years: 77 years {#sec-pre_1962_validation_years}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Years of empirical validation for physician-led pragmatic trials (1883-1960)
 
 *Core definition*
 

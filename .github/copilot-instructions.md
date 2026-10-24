@@ -150,7 +150,7 @@ quarto preview index.qmd          # Live preview
 
 ## Attribution and Licensing
 
-- Project licensed under CC BY-NC 4.0
+- Project licensed under CC BY 4.0
 - Contributors get credit but not automatic co-authorship
 - All contributions must respect the open-source license
 

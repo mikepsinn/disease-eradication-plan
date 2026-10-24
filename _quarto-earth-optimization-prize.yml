@@ -5,7 +5,6 @@ project:
   resources:
     - knowledge/data/
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
   render:
@@ -19,8 +18,6 @@ dih-render:
   index-source: knowledge/strategy/earth-optimization-prize.qmd
   redirect-from: https://prize.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
-  netlify-site-id: "4b864c23-3f9e-4a83-a6dc-9a2f7690eb80"
-  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "Earth Optimization Prize"
@@ -50,7 +47,7 @@ website:
   favicon: assets/icons/least-bad-idea-prize-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "[International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -78,10 +75,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "Mechanism Design, Prize Design, Public Choice, Governance Reform, Implementation Markets"
   category: "Academic Paper, Mechanism Design, Prize Theory, Public Policy"
@@ -107,15 +104,14 @@ metadata:
     - incentive-compatibility
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
   issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
   source-url: "https://github.com/wishonia/earth-optimization-protocol"

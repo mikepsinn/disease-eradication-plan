@@ -740,8 +740,8 @@ def extract_zenodo_metadata(quarto_config: dict, paper_key: str, project_root: P
         "CC BY-SA 4.0": "cc-by-sa-4.0",
         "MIT": "mit",
     }
-    quarto_license = metadata.get("license", "CC BY-NC 4.0")
-    zenodo_license = license_map.get(quarto_license, "cc-by-nc-4.0")
+    quarto_license = metadata.get("license", "CC BY 4.0")
+    zenodo_license = license_map.get(quarto_license, "cc-by-4.0")
 
     # Related identifiers (link to live website)
     related = []

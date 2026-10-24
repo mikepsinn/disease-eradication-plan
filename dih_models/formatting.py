@@ -9,6 +9,41 @@ if TYPE_CHECKING:
     # Use string forward reference to avoid importing Parameter
     Parameter = Any
 
+# Monte Carlo draws are seeded and reproducible, but the last 1-2 bits of a
+# float64 still vary with the BLAS/CPU doing the arithmetic. Emitting full
+# repr precision into committed artifacts therefore produced a spurious
+# ~600-file diff whenever the generator ran on a different machine. Rounding
+# to 12 significant digits absorbs that noise (float64 carries ~15-17) while
+# leaving far more precision than any chart or readout can resolve.
+EMBEDDED_FLOAT_SIG_DIGITS = 12
+
+
+def round_significant(value: Any, digits: int = EMBEDDED_FLOAT_SIG_DIGITS) -> Any:
+    """Round a float to a fixed number of significant digits.
+
+    Significant digits rather than decimal places: embedded values span
+    sub-cent probabilities to quadrillions of dollars, so a fixed decimal
+    count would flatten one end and fail to round the other.
+
+    Integers pass through untouched. They are exact by construction, and
+    rounding one past 12 digits would silently change its value.
+    """
+    if isinstance(value, bool) or not isinstance(value, float):
+        return value
+    if value == 0.0 or not math.isfinite(value):
+        return value
+    return round(value, -int(math.floor(math.log10(abs(value)))) + (digits - 1))
+
+
+def round_significant_seq(values: Any, digits: int = EMBEDDED_FLOAT_SIG_DIGITS) -> list:
+    """Round a sequence for embedding, returning a plain list.
+
+    Accepts numpy arrays as well as lists; the plain-list return keeps
+    f-string interpolation emitting valid comma-separated Python.
+    """
+    return [round_significant(v, digits) for v in values]
+
+
 def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str | None = None, include_unit: bool = True, ratio_suffix: bool = True) -> str:
     """
     Universal formatter - handles Parameter objects, auto-scales based on value.
@@ -135,7 +170,14 @@ def format_parameter_value(param: Union[float, int, str, "Parameter"], unit: str
             formatted_num = f"${clean_number(f'{raw_dollars:.2f}')}"
         elif abs_raw >= 0.01:
             formatted_num = f"${clean_number(f'{raw_dollars:.3f}')}"
+        elif abs_raw >= 1e-6:
+            # Fixed-point with 3 significant digits: ":.3g" flips to
+            # scientific notation below 1e-4 ("$4.1e-05"), useless in prose.
+            decimals = -int(math.floor(math.log10(abs_raw))) + 2
+            formatted_num = f"${clean_number(f'{raw_dollars:.{decimals}f}')}"
         elif abs_raw > 0:
+            # Sub-microdollar values only appear as float noise in stats
+            # tables; scientific notation is more compact than 12+ decimals.
             formatted_num = f"${raw_dollars:.3g}"
         else:
             formatted_num = "$0"

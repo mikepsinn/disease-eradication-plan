@@ -1661,6 +1661,20 @@ NIH_ANNUAL_BUDGET = Parameter(
     latex_symbol=r"Budget_{NIH}",  # LaTeX symbol for equations
 )
 
+FDA_ANNUAL_PROGRAM_BUDGET = Parameter(
+    7_055_869_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_ref="fda-fy2026-operating-plan",
+    source_type=SourceType.EXTERNAL,
+    description="FDA total program level in the FY 2026 operating plan. This is used only for a budget-scale comparison, not as an estimate of FDA cost-effectiveness.",
+    display_name="FDA Annual Program Budget",
+    unit="USD",
+    confidence="high",
+    distribution="fixed",
+    keywords=["fda", "budget", "annual", "program level", "fy 2026"],
+    latex_symbol=r"Budget_{FDA}",
+)
+
 NIH_CLINICAL_TRIALS_SPENDING_PCT = Parameter(
     0.033,
     manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
@@ -2092,7 +2106,6 @@ CURRENT_DISEASE_PATIENTS_GLOBAL = Parameter(
 CURRENT_PATIENT_PARTICIPATION_RATE = Parameter(
     CURRENT_TRIAL_SLOTS_AVAILABLE / CURRENT_DISEASE_PATIENTS_GLOBAL,
     manual_ref="knowledge/problem.qmd",
-    source_ref="clinical-trial-patient-participation-rate",
     source_type="calculated",
     description="Current patient participation rate in clinical trials (0.08% = 1.9M participants / 2.4B disease patients)",
     display_name="Current Patient Participation Rate in Clinical Trials",
@@ -3090,23 +3103,39 @@ DFDA_PATIENTS_FUNDABLE_ANNUALLY = Parameter(
 # RECURRING ANNUAL BENEFITS (These repeat every year forever)
 # ==============================================================================
 
-# R&D Savings from Trial Cost Reduction (~$50B/year recurring)
+PHASE_2_3_CLINICAL_TRIAL_COST_PCT = Parameter(
+    0.69,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
+    source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
+    source_type="external",
+    description="Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)",
+    display_name="Phase 2/3 Share of Clinical Trial Costs",
+    unit="percentage",
+    confidence="high",
+    keywords=["phase 2", "phase 3", "efficacy", "cost", "clinical trials", "breakdown"],
+    distribution="normal",
+    std_error=0.05,  # ±7% uncertainty in cost allocation estimates
+    latex_symbol=r"Pct_{P2+P3}",  # LaTeX symbol for equations
+)  # 69% of trial costs are Phase 2/3 efficacy testing
+
+# R&D Savings from Trial Cost Reduction (~$40B/year recurring).
+# Only Phase 2/3 efficacy spending is addressable: Phase 1 first-in-human trials keep their
+# current design and cost under the dFDA model, and Phase 4 is conservatively excluded.
 DFDA_BENEFIT_RD_ONLY_ANNUAL = Parameter(
-    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * DFDA_TRIAL_COST_REDUCTION_PCT,
+    GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL * PHASE_2_3_CLINICAL_TRIAL_COST_PCT * DFDA_TRIAL_COST_REDUCTION_PCT,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Annual benefit from pragmatic trial R&D savings (trial cost reduction, secondary component)",
+    description="Annual benefit from pragmatic trial R&D savings: trial cost reduction applied to the Phase 2/3 efficacy share of global trial spending (Phase 1 safety trials retain traditional design and cost)",
     display_name="Annual R&D Savings from Pragmatic Trials",
     unit="USD/year",
-    formula="TRIAL_SPENDING × COST_REDUCTION_PCT",
+    formula="TRIAL_SPENDING × PHASE_2_3_SHARE × COST_REDUCTION_PCT",
     keywords=["rd savings", "pragmatic trials", "real world evidence", "rct", "clinical trial"],
-    # Uncertainty derived from inputs (TRIAL_SPENDING × COST_REDUCTION_PCT)
-    validation_min=25_000_000_000,   # Floor: 30% cost reduction at $83B market
-    validation_max=65_000_000_000,   # Ceiling: 70% cost reduction at $97B market
-    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "DFDA_TRIAL_COST_REDUCTION_PCT"],
-    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] * ctx["DFDA_TRIAL_COST_REDUCTION_PCT"],
+    validation_min=15_000_000_000,   # Floor: 30% cost reduction on 60% of $83B market
+    validation_max=65_000_000_000,   # Ceiling: 97% cost reduction on 69% of $97B market
+    inputs=["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL", "PHASE_2_3_CLINICAL_TRIAL_COST_PCT", "DFDA_TRIAL_COST_REDUCTION_PCT"],
+    compute=lambda ctx: ctx["GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL"] * ctx["PHASE_2_3_CLINICAL_TRIAL_COST_PCT"] * ctx["DFDA_TRIAL_COST_REDUCTION_PCT"],
     latex_symbol=r"Benefit_{RD,ann}",  # LaTeX symbol for equations
-)  # $41.5B from automating Phase 2/3/4 trials
+)  # ~$40.4B: $60B × 69% × 97.7%
 
 # Note: DFDA_BENEFIT_DISEASE_ERADICATION_DELAY_ANNUAL defined later (after DFDA_AVOIDED_DISEASE_ERADICATION_DELAY_COST_ANNUAL)
 
@@ -4385,7 +4414,7 @@ EVENTUALLY_AVOIDABLE_DEATH_PCT = Parameter(
 
 GLOBAL_EVENTUALLY_AVOIDABLE_DISEASE_DEATHS_DAILY = Parameter(
     GLOBAL_DISEASE_DEATHS_DAILY * (1 - _unavoidable_pct),
-    manual_ref="knowledge/appendix/where-am-i-wrong.qmd",
+    manual_ref="knowledge/appendix/bombs-vs-biotech-roi.qmd",
     source_type="calculated",
     description="Daily global deaths that are eventually avoidable with sufficient biomedical research. Each day the disease-eradication date slips adds roughly this many deaths to the total schedule cost.",
     display_name="Eventually Avoidable Deaths per Day",
@@ -8282,20 +8311,7 @@ TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
 # Clinical Trial Phase Cost Breakdown
 # Source: Global clinical trials market ~$60B annually
 # Phase 2: ~$15-25B (24%), Phase 3: ~$29-45B (45%), combined ~69%
-PHASE_2_3_CLINICAL_TRIAL_COST_PCT = Parameter(
-    0.69,
-    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
-    source_ref=ReferenceID.GLOBAL_CLINICAL_TRIALS_MARKET_2024,
-    source_type="external",
-    description="Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)",
-    display_name="Phase 2/3 Share of Clinical Trial Costs",
-    unit="percentage",
-    confidence="high",
-    keywords=["phase 2", "phase 3", "efficacy", "cost", "clinical trials", "breakdown"],
-    distribution="normal",
-    std_error=0.05,  # ±7% uncertainty in cost allocation estimates
-    latex_symbol=r"Pct_{P2+P3}",  # LaTeX symbol for equations
-)  # 69% of trial costs are Phase 2/3 efficacy testing
+# PHASE_2_3_CLINICAL_TRIAL_COST_PCT is defined earlier, next to DFDA_BENEFIT_RD_ONLY_ANNUAL, which uses it.
 
 # Cost barrier pharma faces for Phase 2/3 (per drug)
 # Current drug development: $2.6B (PHARMA_DRUG_DEVELOPMENT_COST_CURRENT), ~60% is Phase 2/3/4 efficacy testing
@@ -8816,7 +8832,7 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
     float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).",
+    description="Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology). Undiscounted physical count of healthy years; cost-effectiveness ratios and dollar values use DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED so costs and health are discounted at the same rate.",
     display_name="Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
     unit="DALYs",
     formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × TIMELINE_SHIFT",
@@ -8825,20 +8841,97 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS = Parameter(
     inputs=['GLOBAL_ANNUAL_DALY_BURDEN', 'EVENTUALLY_AVOIDABLE_DALY_PCT', 'DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS'],
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS"],
     latex_symbol=r"DALYs_{max}",  # LaTeX symbol for equations
-)  # ~549B DALYs averted (vs old 200B - now includes non-fatal chronic diseases)
+)  # ~565B DALYs averted (undiscounted)
+
+
+def _timeline_shift_discounted_years(
+    status_quo_clearance_years: float,
+    dfda_clearance_years: float,
+    efficacy_lag_years: float,
+    discount_rate: float,
+) -> float:
+    """Present value, in years, of the average treatment timeline shift.
+
+    Same structure as the undiscounted shift: first treatments arrive evenly over
+    the status quo clearance period plus the efficacy lag, versus evenly over the
+    dFDA clearance period with no lag. Each disease's burden is averted from its
+    dFDA arrival until its status quo arrival, discounted continuously at
+    ln(1 + discount_rate). At a zero rate this reduces to
+    T_SQ/2 + lag - T_dFDA/2, the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS.
+    """
+    if discount_rate == 0:
+        return status_quo_clearance_years / 2 + efficacy_lag_years - dfda_clearance_years / 2
+    rho = math.log(1 + discount_rate)
+
+    def avg_discount_factor(period_years: float) -> float:
+        # Mean of e^(-rho*t) for t uniform on [0, period_years]; 1 when everything arrives at t=0
+        if period_years == 0:
+            return 1.0
+        return -math.expm1(-rho * period_years) / (rho * period_years)
+
+    return (
+        avg_discount_factor(dfda_clearance_years)
+        - math.exp(-rho * efficacy_lag_years) * avg_discount_factor(status_quo_clearance_years)
+    ) / rho
+
+
+DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED = Parameter(
+    float(GLOBAL_ANNUAL_DALY_BURDEN)
+    * float(EVENTUALLY_AVOIDABLE_DALY_PCT)
+    * _timeline_shift_discounted_years(
+        float(STATUS_QUO_QUEUE_CLEARANCE_YEARS),
+        float(DFDA_QUEUE_CLEARANCE_YEARS),
+        float(EFFICACY_LAG_YEARS),
+        float(NPV_DISCOUNT_RATE_STANDARD),
+    ),
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
+    source_type="calculated",
+    description="Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard "
+                "social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, "
+                "US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health "
+                "makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising "
+                "uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the "
+                "undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. "
+                "A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].",
+    display_name="Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
+    unit="DALYs",
+    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × [A(DFDA_QUEUE_CLEARANCE_YEARS) - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-EFFICACY_LAG_YEARS) × A(STATUS_QUO_QUEUE_CLEARANCE_YEARS)] / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
+    confidence="low",
+    keywords=["dalys", "discounted", "present value", "timeline shift", "cost effectiveness", "keeler-cretin"],
+    inputs=[
+        "GLOBAL_ANNUAL_DALY_BURDEN",
+        "EVENTUALLY_AVOIDABLE_DALY_PCT",
+        "STATUS_QUO_QUEUE_CLEARANCE_YEARS",
+        "DFDA_QUEUE_CLEARANCE_YEARS",
+        "EFFICACY_LAG_YEARS",
+        "NPV_DISCOUNT_RATE_STANDARD",
+    ],
+    # Inline arithmetic (not the helper) so the TypeScript generator can translate it for the calculator
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DALY_BURDEN"]
+    * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"]
+    * (
+        (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
+        / (ctx["DFDA_QUEUE_CLEARANCE_YEARS"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
+        - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["EFFICACY_LAG_YEARS"]
+        * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"])
+        / (ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
+    )
+    / math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]),
+    latex_symbol=r"DALYs_{max}^{PV}",
+)
 
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE = Parameter(
-    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
+    float(DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED) * float(STANDARD_ECONOMIC_QALY_VALUE_USD),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Total economic value from the combined treatment timeline shift. DALYs valued at standard economic rate.",
+    description="Present value of the combined treatment timeline shift: discounted DALYs valued at the standard economic rate per QALY.",
     display_name="Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
     unit="USD",
-    formula="DALYS × STANDARD_QALY_VALUE",
+    formula="DISCOUNTED_DALYS × STANDARD_QALY_VALUE",
     confidence="low",
-    keywords=["total", "economic", "value", "timeline shift", "USD"],
-    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
-    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
+    keywords=["total", "economic", "value", "timeline shift", "USD", "present value"],
+    inputs=['DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED', 'STANDARD_ECONOMIC_QALY_VALUE_USD'],
+    compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED"] * ctx["STANDARD_ECONOMIC_QALY_VALUE_USD"],
     latex_symbol=r"Value_{max}",  # LaTeX symbol for equations
 )
 
@@ -9093,6 +9186,266 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_SUFFERING_HOURS = Parameter(
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"] * ctx["GLOBAL_YLD_PROPORTION_OF_DALYS"] * HOURS_PER_YEAR,
     latex_symbol=r"Hours_{suffer,max}",  # LaTeX symbol for equations
 )  # ~1,875 trillion hours from full timeline shift (vs old 193T - now based on WHO YLD proportion)
+
+# ============================================================================
+# UNIVERSAL RIGHT TO TRY WITH EVIDENCE
+# Conditional impact if all 50 states adopt and the system remains in force.
+# The model intentionally has two uncertain inputs: total implementation cost
+# and the resulting treatment-discovery multiplier. Existing global disease
+# burden parameters supply the rest of the Treaty-style calculation.
+# ============================================================================
+
+STATE_RTT_IMPLEMENTATION_COST_TOTAL = Parameter(
+    65_000_000,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Total implementation cost of adopting Universal Right to Try with Evidence in all 50 states: a central $15 million campaign estimate covering legislation or amendment in all 50 states plus $50 million for the shared registry's first ten years. The model bill requires participating centers to fund continued registry operation after year ten. This launch-cost numerator excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs. The wide interval represents campaign and infrastructure cost uncertainty without separate scenario parameters.",
+    display_name="Universal Right to Try with Evidence Implementation Cost",
+    unit="USD",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(25_000_000, 200_000_000),
+    keywords=["right to try", "right to trial", "state legislation", "campaign", "registry", "implementation cost"],
+    latex_symbol=r"C_{RTT}",
+)
+
+STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER = Parameter(
+    5.48,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="definition",
+    description="Conditional multiplier on the worldwide first-treatment discovery rate after all 50 states adopt and a mature pooled pragmatic-trial system operates under applicable federal authorization. The 5.48x central calibration reproduces the prior model's 82.2 versus 15 first treatments per year; it is an assumption, not an observed effect estimate. This single input incorporates patient or payer funding of treatment delivery, trial-site services, and permitted study costs, newly viable post-Phase-1 treatment-condition pairs, evaluable protocol quality, candidate supply, and scientific success. Its range describes productivity of an operating system, not the separate probability that advocacy achieves full adoption and implementation.",
+    display_name="Universal Right to Try with Evidence Treatment Discovery Multiplier",
+    unit="x",
+    confidence="low",
+    distribution="lognormal",
+    confidence_interval=(1.1, 15.0),
+    keywords=["right to try", "right to trial", "treatment discovery", "trial capacity", "self-funding", "multiplier"],
+    latex_symbol=r"k_{RTT}",
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_YEARS = Parameter(
+    float(STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT)
+    * (1 - 1 / float(STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Average years earlier the first effective treatment arrives across the global therapeutic frontier after all 50 states adopt Universal Right to Try with Evidence. Uses the same schedule-shift structure as the 1% Treaty impact model: the status quo discovery timeline multiplied by one minus the inverse treatment-discovery multiplier.",
+    display_name="Average Treatment Acceleration from Universal Right to Try with Evidence",
+    unit="years",
+    formula="STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT × (1 - 1 / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)",
+    confidence="low",
+    inputs=["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"],
+    compute=lambda ctx: ctx["STATUS_QUO_AVG_YEARS_TO_FIRST_TREATMENT"]
+    * (1 - 1 / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"]),
+    keywords=["right to try", "right to trial", "treatment acceleration", "cure schedule", "years"],
+    latex_symbol=r"T_{accel,RTT}",
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED = Parameter(
+    _timeline_shift_discounted_years(
+        float(STATUS_QUO_QUEUE_CLEARANCE_YEARS),
+        float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER),
+        0.0,
+        float(NPV_DISCOUNT_RATE_STANDARD),
+    ),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Present value, in years, of the average treatment schedule shift from Universal Right to Try with Evidence, "
+                "discounted at the standard social discount rate. Same timing as the undiscounted shift: first treatments "
+                "are found evenly over the status quo clearance period, versus evenly over that period divided by the "
+                "discovery multiplier. The cost-per-DALY and cost-per-life ratios use it so the near-term launch cost is "
+                "compared with health benefits in present value, as in the 1% Treaty model. "
+                "A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].",
+    display_name="Discounted Treatment Acceleration from Universal Right to Try with Evidence",
+    unit="years",
+    formula="[A(STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER) - A(STATUS_QUO_QUEUE_CLEARANCE_YEARS)] / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
+    confidence="low",
+    inputs=["STATUS_QUO_QUEUE_CLEARANCE_YEARS", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER", "NPV_DISCOUNT_RATE_STANDARD"],
+    # Inline arithmetic (not the helper) so the TypeScript generator can translate it for the calculator
+    compute=lambda ctx: (
+        (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -(ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"]))
+        / (ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
+        - (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"])
+        / (ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
+    )
+    / math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]),
+    keywords=["right to try", "right to trial", "treatment acceleration", "discounted", "present value", "years"],
+    latex_symbol=r"T_{accel,RTT}^{PV}",
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_DALYS = Parameter(
+    float(GLOBAL_ANNUAL_DALY_BURDEN)
+    * float(EVENTUALLY_AVOIDABLE_DALY_PCT)
+    * float(STATE_RTT_TREATMENT_ACCELERATION_YEARS),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional lifetime DALYs averted by shifting the global treatment-discovery schedule forward. By design, this applies the therapeutic-discovery timeline proxy to the eventually avoidable burden of all global diseases and aging-related degeneration. It is a schedule-shift calculation across future generations, not an observed epidemiological forecast.",
+    display_name="DALYs Averted from Universal Right to Try with Evidence",
+    unit="DALYs",
+    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+    confidence="low",
+    inputs=["GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DALY_BURDEN"]
+    * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"]
+    * ctx["STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    keywords=["right to try", "right to trial", "DALY", "disease burden", "schedule shift"],
+    latex_symbol=r"DALYs_{RTT}",
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_LIVES_SAVED = Parameter(
+    float(GLOBAL_DISEASE_DEATHS_DAILY)
+    * DAYS_PER_YEAR
+    * float(EVENTUALLY_AVOIDABLE_DEATH_PCT)
+    * float(STATE_RTT_TREATMENT_ACCELERATION_YEARS),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional cumulative premature deaths from global diseases and aging prevented across future generations by shifting the treatment-discovery schedule forward. The total can exceed the current population because it sums deaths prevented over the full acceleration period.",
+    display_name="Lives Saved from Universal Right to Try with Evidence",
+    unit="deaths",
+    formula="GLOBAL_DISEASE_DEATHS_DAILY × DAYS_PER_YEAR × EVENTUALLY_AVOIDABLE_DEATH_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS",
+    confidence="low",
+    inputs=["GLOBAL_DISEASE_DEATHS_DAILY", "EVENTUALLY_AVOIDABLE_DEATH_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    compute=lambda ctx: ctx["GLOBAL_DISEASE_DEATHS_DAILY"]
+    * DAYS_PER_YEAR
+    * ctx["EVENTUALLY_AVOIDABLE_DEATH_PCT"]
+    * ctx["STATE_RTT_TREATMENT_ACCELERATION_YEARS"],
+    keywords=["right to try", "right to trial", "lives saved", "premature deaths", "schedule shift"],
+    latex_symbol=r"Lives_{RTT}",
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_HOURS = Parameter(
+    float(STATE_RTT_TREATMENT_ACCELERATION_DALYS)
+    * float(GLOBAL_YLD_PROPORTION_OF_DALYS)
+    * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional disability-equivalent hours prevented by the treatment schedule shift. Converts the years-lived-with-disability share of DALYs into hours; it does not claim every hour is an hour of conscious pain.",
+    display_name="Disability-Equivalent Suffering Hours Prevented by Universal Right to Try with Evidence",
+    unit="hours",
+    formula="STATE_RTT_TREATMENT_ACCELERATION_DALYS × GLOBAL_YLD_PROPORTION_OF_DALYS × HOURS_PER_YEAR",
+    confidence="low",
+    inputs=["STATE_RTT_TREATMENT_ACCELERATION_DALYS", "GLOBAL_YLD_PROPORTION_OF_DALYS"],
+    compute=lambda ctx: ctx["STATE_RTT_TREATMENT_ACCELERATION_DALYS"]
+    * ctx["GLOBAL_YLD_PROPORTION_OF_DALYS"]
+    * HOURS_PER_YEAR,
+    keywords=["right to try", "right to trial", "suffering", "disability", "YLD", "hours"],
+    latex_symbol=r"Hours_{suffer,RTT}",
+    hide_ci=True,
+)
+
+STATE_RTT_TREATMENT_ACCELERATION_SUFFERING_YEARS = Parameter(
+    float(STATE_RTT_TREATMENT_ACCELERATION_DALYS)
+    * float(GLOBAL_YLD_PROPORTION_OF_DALYS),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional disability-equivalent years of suffering prevented by the treatment schedule shift: the years-lived-with-disability share of the DALYs averted. A disability weight of 0.25 sustained for four years equals one full-disability-equivalent year; it does not claim every year is a year of maximum conscious pain.",
+    display_name="Disability-Equivalent Suffering Years Prevented by Universal Right to Try with Evidence",
+    unit="years",
+    formula="STATE_RTT_TREATMENT_ACCELERATION_DALYS × GLOBAL_YLD_PROPORTION_OF_DALYS",
+    confidence="low",
+    inputs=["STATE_RTT_TREATMENT_ACCELERATION_DALYS", "GLOBAL_YLD_PROPORTION_OF_DALYS"],
+    compute=lambda ctx: ctx["STATE_RTT_TREATMENT_ACCELERATION_DALYS"]
+    * ctx["GLOBAL_YLD_PROPORTION_OF_DALYS"],
+    keywords=["right to try", "right to trial", "suffering", "disability", "YLD", "years"],
+    latex_symbol=r"Years_{suffer,RTT}",
+)
+
+STATE_RTT_IMPLEMENTATION_COST_PER_DALY = Parameter(
+    float(STATE_RTT_IMPLEMENTATION_COST_TOTAL)
+    / (float(GLOBAL_ANNUAL_DALY_BURDEN) * float(EVENTUALLY_AVOIDABLE_DALY_PCT) * float(STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional implementation cost per DALY if all 50 states adopt, a mature pooled pragmatic-trial system operates under applicable federal authorization, and the modeled treatment-discovery acceleration occurs. The numerator includes the 50-state campaign and ten-year registry launch costs, excludes patient or payer spending on treatment delivery, trial-site services, and permitted study costs, and assumes center assessments fund the registry thereafter. The denominator counts the global treatment schedule shift once, with DALYs discounted at the standard rate so the near-term launch cost is compared with health benefits in present value.",
+    display_name="Universal Right to Try with Evidence Implementation Cost per DALY",
+    unit="USD/DALY",
+    formula="STATE_RTT_IMPLEMENTATION_COST_TOTAL / (GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)",
+    confidence="low",
+    inputs=["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "GLOBAL_ANNUAL_DALY_BURDEN", "EVENTUALLY_AVOIDABLE_DALY_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"],
+    compute=lambda ctx: ctx["STATE_RTT_IMPLEMENTATION_COST_TOTAL"]
+    / (ctx["GLOBAL_ANNUAL_DALY_BURDEN"] * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"] * ctx["STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"]),
+    keywords=["right to try", "right to trial", "cost per DALY", "GiveWell", "implementation cost"],
+    latex_symbol=r"Cost_{RTT,DALY}",
+)
+
+STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED = Parameter(
+    float(STATE_RTT_IMPLEMENTATION_COST_TOTAL)
+    / (
+        float(GLOBAL_DISEASE_DEATHS_DAILY)
+        * DAYS_PER_YEAR
+        * float(EVENTUALLY_AVOIDABLE_DEATH_PCT)
+        * float(STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)
+    ),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional implementation cost per modeled premature death prevented if all 50 states adopt, a mature pooled pragmatic-trial system operates, and the modeled treatment-discovery acceleration occurs. This uses the same campaign and registry numerator as the cost-per-DALY estimate, and discounts future deaths prevented at the standard rate so they compare with near-term costs and with GiveWell's near-term lives saved.",
+    display_name="Universal Right to Try with Evidence Implementation Cost per Life Saved",
+    unit="USD/life",
+    formula="STATE_RTT_IMPLEMENTATION_COST_TOTAL / (GLOBAL_DISEASE_DEATHS_DAILY × DAYS_PER_YEAR × EVENTUALLY_AVOIDABLE_DEATH_PCT × STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED)",
+    confidence="low",
+    inputs=["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "GLOBAL_DISEASE_DEATHS_DAILY", "EVENTUALLY_AVOIDABLE_DEATH_PCT", "STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"],
+    compute=lambda ctx: ctx["STATE_RTT_IMPLEMENTATION_COST_TOTAL"]
+    / (
+        ctx["GLOBAL_DISEASE_DEATHS_DAILY"]
+        * DAYS_PER_YEAR
+        * ctx["EVENTUALLY_AVOIDABLE_DEATH_PCT"]
+        * ctx["STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED"]
+    ),
+    keywords=["right to try", "right to trial", "cost per life saved", "GiveWell", "implementation cost"],
+    latex_symbol=r"Cost_{RTT,life}",
+)
+
+STATE_RTT_FDA_BUDGET_EQUIVALENT_HOURS = Parameter(
+    float(STATE_RTT_IMPLEMENTATION_COST_TOTAL) / float(FDA_ANNUAL_PROGRAM_BUDGET) * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Hours of the FDA annual program budget equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about FDA cost-effectiveness.",
+    display_name="Universal Right to Try with Evidence Cost in FDA Budget Hours",
+    unit="hours",
+    formula="STATE_RTT_IMPLEMENTATION_COST_TOTAL ÷ FDA_ANNUAL_PROGRAM_BUDGET × 8,760",
+    confidence="low",
+    inputs=["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "FDA_ANNUAL_PROGRAM_BUDGET"],
+    compute=lambda ctx: ctx["STATE_RTT_IMPLEMENTATION_COST_TOTAL"]
+    / ctx["FDA_ANNUAL_PROGRAM_BUDGET"]
+    * HOURS_PER_YEAR,
+    keywords=["right to try", "right to trial", "fda", "budget", "hours", "scale comparison"],
+    latex_symbol=r"Hours_{RTT,FDA}",
+    hide_ci=True,
+)
+
+STATE_RTT_NIH_BUDGET_EQUIVALENT_HOURS = Parameter(
+    float(STATE_RTT_IMPLEMENTATION_COST_TOTAL) / float(NIH_ANNUAL_BUDGET) * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Hours of the NIH annual budget equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states. This is a scale comparison, not a claim about NIH cost-effectiveness.",
+    display_name="Universal Right to Try with Evidence Cost in NIH Budget Hours",
+    unit="hours",
+    formula="STATE_RTT_IMPLEMENTATION_COST_TOTAL ÷ NIH_ANNUAL_BUDGET × 8,760",
+    confidence="low",
+    inputs=["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "NIH_ANNUAL_BUDGET"],
+    compute=lambda ctx: ctx["STATE_RTT_IMPLEMENTATION_COST_TOTAL"]
+    / ctx["NIH_ANNUAL_BUDGET"]
+    * HOURS_PER_YEAR,
+    keywords=["right to try", "right to trial", "nih", "budget", "hours", "scale comparison"],
+    latex_symbol=r"Hours_{RTT,NIH}",
+    hide_ci=True,
+)
+
+STATE_RTT_US_MILITARY_OVERSPEND_EQUIVALENT_HOURS = Parameter(
+    float(STATE_RTT_IMPLEMENTATION_COST_TOTAL) / float(US_GOV_WASTE_MILITARY_OVERSPEND) * HOURS_PER_YEAR,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Hours of estimated annual US military spending above the first-principles baseline for preventing direct attacks on people in the United States equal to the full central launch cost for adopting Universal Right to Try with Evidence in all 50 states.",
+    display_name="Universal Right to Try with Evidence Cost in US Military Overspend Hours",
+    unit="hours",
+    formula="STATE_RTT_IMPLEMENTATION_COST_TOTAL ÷ US_GOV_WASTE_MILITARY_OVERSPEND × 8,760",
+    confidence="low",
+    inputs=["STATE_RTT_IMPLEMENTATION_COST_TOTAL", "US_GOV_WASTE_MILITARY_OVERSPEND"],
+    compute=lambda ctx: ctx["STATE_RTT_IMPLEMENTATION_COST_TOTAL"]
+    / ctx["US_GOV_WASTE_MILITARY_OVERSPEND"]
+    * HOURS_PER_YEAR,
+    keywords=["right to try", "right to trial", "military overspend", "budget", "hours", "reallocation"],
+    latex_symbol=r"Hours_{RTT,mil}",
+    hide_ci=True,
+)
 
 # Pragmatic trial system targets (using trial capacity multiplier)
 DFDA_TRIALS_PER_YEAR_CAPACITY = Parameter(
@@ -9671,18 +10024,6 @@ DEFENSE_SECTOR_RETENTION_PCT = Parameter(
     latex_symbol=r"Retain_{def}",  # LaTeX symbol for equations
 )  # 99% retention
 
-CURRENT_CLINICAL_TRIAL_PARTICIPATION_RATE = Parameter(
-    0.0006,
-    manual_ref="knowledge/solution/dfda.qmd",
-    source_ref=ReferenceID.CLINICAL_TRIAL_PATIENT_PARTICIPATION_RATE,
-    source_type="external",
-    description="Current clinical trial participation rate (0.06% of population)",
-    display_name="Current Clinical Trial Participation Rate",
-    unit="rate",
-    keywords=["0%", "rct", "people", "clinical study", "clinical trial", "research trial", "randomized controlled trial"],
-    latex_symbol=r"Rate_{part,curr}",  # LaTeX symbol for equations
-)  # 0.06% participation
-
 PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT = Parameter(
     0.448,
     manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
@@ -9712,6 +10053,21 @@ WILLING_TRIAL_PARTICIPANTS_GLOBAL = Parameter(
     compute=lambda ctx: ctx["CURRENT_DISEASE_PATIENTS_GLOBAL"] * ctx["PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT"],
     latex_symbol=r"N_{willing}",  # LaTeX symbol for equations
 )  # 1.075 billion willing participants
+
+CURRENT_WILLING_PATIENT_PARTICIPATION_RATE = Parameter(
+    CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL,
+    manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
+    source_type="calculated",
+    description="Annual clinical trial slots per patient willing to join a drug trial (1.9M slots / 1.08B willing patients). A capacity ratio, not a measured enrollment share: not every slot goes to a willing chronic-disease patient",
+    display_name="Current Trial Participation Rate Among Willing Patients",
+    unit="rate",
+    formula="CURRENT_TRIAL_SLOTS_AVAILABLE / WILLING_TRIAL_PARTICIPANTS_GLOBAL",
+    confidence="medium",
+    keywords=["0.18%", "1 in 566", "willing", "access", "participation", "trial slots", "clinical trial"],
+    inputs=['CURRENT_TRIAL_SLOTS_AVAILABLE', 'WILLING_TRIAL_PARTICIPANTS_GLOBAL'],
+    compute=lambda ctx: ctx["CURRENT_TRIAL_SLOTS_AVAILABLE"] / ctx["WILLING_TRIAL_PARTICIPANTS_GLOBAL"],
+    latex_symbol=r"Rate_{part,willing}",  # LaTeX symbol for equations
+)  # 0.18% of willing patients get a trial slot (1 in 566)
 
 DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL = Parameter(
     WILLING_TRIAL_PARTICIPANTS_GLOBAL / CURRENT_TRIAL_SLOTS_AVAILABLE,
@@ -9836,9 +10192,11 @@ GIVEWELL_COST_PER_LIFE_MAX = Parameter(
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
-    description="GiveWell cost per life saved (Against Malaria Foundation)",
-    display_name="Givewell Cost per Life Saved (Maximum)",
+    description="GiveWell cost per life saved (Against Malaria Foundation). GiveWell estimates ~$3,000 to ~$8,000 per death averted across the locations where it funds AMF campaigns (as of December 2023).",
+    display_name="GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)",
     unit="USD/life",
+    distribution="normal",
+    confidence_interval=(3_000, 8_000),  # GiveWell AMF page: range across funded locations
     keywords=["6k", "costs", "funding", "investment", "givewell", "life", "max"],
     latex_symbol=r"Cost_{GW,max}",  # LaTeX symbol for equations
 )  # Against Malaria Foundation
@@ -9848,12 +10206,13 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
     source_type="external",
-    description="GiveWell average cost per life saved across top charities",
-    display_name="Givewell Average Cost per Life Saved Across Top Charities",
+    description="Midpoint of GiveWell's cited $3,500 to $5,500 modeled cost-per-life-saved range across top charities",
+    display_name="GiveWell Midpoint of Modeled Cost per Life Saved Range",
     unit="USD/life",
+    distribution="fixed",
     keywords=["4k", "costs", "funding", "investment", "givewell", "life", "avg"],
     latex_symbol=r"Cost_{GW,avg}",  # LaTeX symbol for equations
-)  # Midpoint of top charities
+)  # Midpoint of cited $3,500 to $5,500 range
 
 # Historical public health comparisons
 SMALLPOX_ERADICATION_ROI = Parameter(
@@ -10158,18 +10517,26 @@ BASELINE_LIVES_SAVED_ANNUAL = Parameter(
 
 # Cost per DALY benchmarks for comparison
 BED_NETS_COST_PER_DALY = Parameter(
-    89,
+    float(GIVEWELL_COST_PER_LIFE_MAX)
+    / ((1 - (1 + float(NPV_DISCOUNT_RATE_STANDARD)) ** -float(GLOBAL_LIFE_EXPECTANCY_2024))
+       / math.log(1 + float(NPV_DISCOUNT_RATE_STANDARD))),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_ref=ReferenceID.GIVEWELL_COST_PER_LIFE_SAVED,
-    source_type="external",
-    peer_reviewed=True,  # GiveWell synthesizes peer-reviewed research and undergoes extensive expert review
-    description="GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.",
+    source_type="calculated",
+    description="Cost per DALY for insecticide-treated bed nets: GiveWell's Against Malaria Foundation cost per life saved "
+                "divided by the discounted life-years of a child death averted (a full life expectancy at the standard "
+                "discount rate, life-years accruing continuously). Discounted at the same rate and with the same continuous "
+                "timing as the dFDA and treaty cost-per-DALY figures so comparisons are like for like. GiveWell publishes cost per life saved, not cost per DALY. Bed nets are the standard "
+                "benchmark for cost-effective global health spending.",
     display_name="Bed Nets Cost per DALY",
     unit="USD/DALY",
-    confidence="high",
+    formula="GIVEWELL_COST_PER_LIFE_MAX / ((1 - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-GLOBAL_LIFE_EXPECTANCY_2024)) / ln(1 + NPV_DISCOUNT_RATE_STANDARD))",
+    confidence="medium",
     keywords=["givewell", "bed nets", "malaria", "cost effectiveness", "benchmark", "comparison"],
-    distribution="normal",  # Well-studied intervention with systematic cost tracking
-    confidence_interval=(78, 100),  # Documented GiveWell range
+    inputs=["GIVEWELL_COST_PER_LIFE_MAX", "NPV_DISCOUNT_RATE_STANDARD", "GLOBAL_LIFE_EXPECTANCY_2024"],
+    compute=lambda ctx: ctx["GIVEWELL_COST_PER_LIFE_MAX"]
+    / ((1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["GLOBAL_LIFE_EXPECTANCY_2024"])
+       / math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"])),
     latex_symbol=r"Cost_{nets}",  # LaTeX symbol for equations
 )
 
@@ -10345,17 +10712,17 @@ NIH_TRADITIONAL_TRIAL_MAX_EFFICIENCY_PCT = Parameter(
 # value since it ignores the $77B/year in economic benefits (R&D savings + peace dividend).
 
 TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
-    TREATY_CAMPAIGN_TOTAL_COST / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
+    TREATY_CAMPAIGN_TOTAL_COST / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description="Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.",
+    description="Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput, with DALYs discounted at the standard rate. Only counts campaign cost; ignores economic benefits from funding and R&D savings.",
     display_name="Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)",
     unit="USD/DALY",
-    formula="CAMPAIGN_COST ÷ DALYS_TIMELINE_SHIFT",
+    formula="CAMPAIGN_COST ÷ DISCOUNTED_DALYS_TIMELINE_SHIFT",
     confidence="high",
     keywords=["bang for buck", "cost effectiveness", "value for money", "disease burden", "cost per daly", "givewell"],
-    inputs=["TREATY_CAMPAIGN_TOTAL_COST", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
-    compute=lambda ctx: ctx["TREATY_CAMPAIGN_TOTAL_COST"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
+    inputs=["TREATY_CAMPAIGN_TOTAL_COST", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED"],
+    compute=lambda ctx: ctx["TREATY_CAMPAIGN_TOTAL_COST"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED"],
     latex_symbol=r"Cost_{treaty,DALY}",  # LaTeX symbol for equations
 )  # Cost per DALY using full timeline shift
 
@@ -10365,9 +10732,9 @@ TREATY_EXPECTED_COST_PER_DALY = Parameter(
     TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG / POLITICAL_SUCCESS_PROBABILITY,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",
-    description=f"Expected cost per DALY accounting for political success probability uncertainty. "
-                f"Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, "
-                f"this is still more cost-effective than bed nets (${BED_NETS_COST_PER_DALY}/DALY).",
+    description="Expected cost per DALY accounting for political success probability uncertainty. "
+                "Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, "
+                "this is still more cost-effective than bed nets (BED_NETS_COST_PER_DALY).",
     display_name="Expected Cost per DALY (Risk-Adjusted)",
     unit="USD/DALY",
     formula="CONDITIONAL_COST_PER_DALY ÷ POLITICAL_SUCCESS_PROBABILITY",    confidence="low",
@@ -10386,35 +10753,37 @@ TREATY_EXPECTED_COST_PER_DALY = Parameter(
 DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV = Parameter(
     DFDA_ANNUAL_TRIAL_FUNDING
     * (1 - (1 + NPV_DISCOUNT_RATE_STANDARD) ** -DFDA_QUEUE_CLEARANCE_YEARS)
-    / NPV_DISCOUNT_RATE_STANDARD,
+    / math.log(1 + float(NPV_DISCOUNT_RATE_STANDARD)),
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
     source_type="calculated",  # NPV calculation from funding, discount rate, and time horizon
-    description="NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
+    description="NPV of annual direct funding for the therapeutic space exploration period, spent continuously through each year (the same timing convention as the discounted DALYs it is divided by). Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.",
     display_name="Direct Pragmatic Trial Funding NPV (Exploration Period)",
     unit="USD",
-    formula="ANNUAL_FUNDING × [(1 - (1 + r)^-T) / r] where T = exploration time",
+    formula="DFDA_ANNUAL_TRIAL_FUNDING × (1 - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-DFDA_QUEUE_CLEARANCE_YEARS)) / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
     keywords=["philanthropy", "direct funding", "alternative", "npv", "exploration"],
     inputs=['DFDA_ANNUAL_TRIAL_FUNDING', 'NPV_DISCOUNT_RATE_STANDARD', 'DFDA_QUEUE_CLEARANCE_YEARS'],
     compute=lambda ctx: ctx["DFDA_ANNUAL_TRIAL_FUNDING"]
         * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
-        / ctx["NPV_DISCOUNT_RATE_STANDARD"],
+        / math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]),
     latex_symbol=r"NPV_{direct}",  # LaTeX symbol for equations
-)  # ~$541.9B NPV
+)  # ~$483B NPV
 
-# Cost per DALY for direct funding scenario
+# Cost per DALY for direct funding scenario. Costs and DALYs are both discounted at
+# NPV_DISCOUNT_RATE_STANDARD; mixing discounted costs with undiscounted DALYs triggers the
+# Keeler-Cretin paradox (delaying the program always "improves" the ratio).
 DFDA_DIRECT_FUNDING_COST_PER_DALY = Parameter(
-    DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS,
+    DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV / DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED,
     manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
     source_type="calculated",  # Derived from NPV and DALYs
-    description="Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.",
+    description="Cost per DALY at direct funding level for the therapeutic space exploration period, with costs and DALYs discounted at the same standard rate. Still highly cost-effective vs bed nets.",
     display_name="Direct Pragmatic Trial Funding Cost per DALY",
     unit="USD/DALY",
-    formula="NPV_DIRECT_FUNDING ÷ DALYS_TIMELINE_SHIFT",    confidence="medium",
+    formula="NPV_DIRECT_FUNDING ÷ DISCOUNTED_DALYS_TIMELINE_SHIFT",    confidence="medium",
     keywords=["philanthropy", "direct funding", "cost effectiveness"],
-    inputs=["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
-    compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS"],
+    inputs=["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV", "DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED"],
+    compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"] / ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED"],
     latex_symbol=r"Cost_{direct,DALY}",  # LaTeX symbol for equations
-)  # ~$0.98/DALY
+)  # ~$9.62/DALY
 
 # Direct funding ROI
 DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
@@ -10430,7 +10799,7 @@ DFDA_DIRECT_FUNDING_ROI_TRIAL_CAPACITY_PLUS_EFFICACY_LAG = Parameter(
     inputs=["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE", "DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"],
     compute=lambda ctx: ctx["DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_ECONOMIC_VALUE"] / ctx["DFDA_DIRECT_FUNDING_QUEUE_CLEARANCE_NPV"],
     latex_symbol=r"ROI_{direct,max}",  # LaTeX symbol for equations
-)  # ~152,000:1 ROI
+)  # ~15,600:1 ROI (benefits and costs both discounted)
 
 # Direct funding vs bed nets comparison
 DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
@@ -10446,7 +10815,23 @@ DFDA_DIRECT_FUNDING_VS_BED_NETS_MULTIPLIER = Parameter(
     inputs=['BED_NETS_COST_PER_DALY', 'DFDA_DIRECT_FUNDING_COST_PER_DALY'],
     compute=lambda ctx: ctx["BED_NETS_COST_PER_DALY"] / ctx["DFDA_DIRECT_FUNDING_COST_PER_DALY"],
     latex_symbol=r"k_{direct,nets}",  # LaTeX symbol for equations
-)  # ~90× more cost-effective than bed nets
+)  # ~19× more cost-effective than bed nets
+
+STATE_RTT_VS_GIVEWELL_COST_PER_LIFE_MULTIPLIER = Parameter(
+    GIVEWELL_COST_PER_LIFE_AVG / STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED,
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Conditional cost-effectiveness of adopting Universal Right to Try with Evidence in all 50 states relative to the midpoint of GiveWell's cited modeled cost-per-life-saved range. Right to Try lives saved are discounted to present value at the standard rate so they compare with GiveWell's near-term lives saved. The cost scopes differ: the Right to Try numerator counts only the campaign and registry launch and excludes patient and payer spending on treatment delivery, trial-site services, and permitted study costs, while the GiveWell figure includes full program costs. This comparison is valid only if full adoption and mature implementation produce the modeled treatment schedule shift.",
+    display_name="Universal Right to Try with Evidence Cost-Effectiveness vs GiveWell Range Midpoint",
+    unit="x",
+    formula="GIVEWELL_COST_PER_LIFE_AVG ÷ STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED",
+    confidence="low",
+    inputs=["GIVEWELL_COST_PER_LIFE_AVG", "STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED"],
+    compute=lambda ctx: ctx["GIVEWELL_COST_PER_LIFE_AVG"] / ctx["STATE_RTT_IMPLEMENTATION_COST_PER_LIFE_SAVED"],
+    keywords=["right to try", "right to trial", "GiveWell", "cost per life saved", "cost effectiveness"],
+    latex_symbol=r"k_{RTT,GiveWell}",
+    hide_ci=True,
+)
 
 # Treaty campaign leverage vs direct funding
 TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
@@ -10461,7 +10846,7 @@ TREATY_VS_DIRECT_FUNDING_LEVERAGE = Parameter(
     inputs=['DFDA_DIRECT_FUNDING_COST_PER_DALY', 'TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG'],
     compute=lambda ctx: ctx["DFDA_DIRECT_FUNDING_COST_PER_DALY"] / ctx["TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG"],
     latex_symbol=r"Leverage_{treaty}",  # LaTeX symbol for equations
-)  # ~542× - treaty campaign achieves massive leverage
+)  # ~483× - treaty campaign achieves massive leverage
 
 # Cost-effectiveness multipliers vs. bed nets
 TREATY_VS_BED_NETS_MULTIPLIER = Parameter(
@@ -11095,6 +11480,22 @@ GLOBAL_COORDINATION_ACTIVATION_BUDGET = Parameter(
     compute=lambda ctx: ctx["GLOBAL_REGISTERED_VOTERS"] * ctx["GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT"] + ctx["GLOBAL_COORDINATION_PLATFORM_AND_OPERATIONS_COST"],
     keywords=["activation", "budget", "coordination", "institutional", "referral", "verification", "majority of humanity"],
     latex_symbol=r"B_{activate}",
+)
+
+SURVEY_COST_PER_LIFE_SAVED = Parameter(
+    float(GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT) / float(VOTER_LIVES_SAVED),
+    manual_ref="knowledge/strategy/survey-to-end-war-and-disease.qmd",
+    source_type="calculated",
+    description="Cost per life saved for one verified survey response, conditional on the treaty passing: "
+                "blended activation cost per participant divided by lives saved per verified voter. "
+                "Not probability-weighted; the probability-weighted campaign figure is TREATY_EXPECTED_COST_PER_DALY.",
+    display_name="Cost per Life Saved per Verified Response (Conditional on Passage)",
+    unit="USD",
+    formula="GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT / VOTER_LIVES_SAVED",
+    inputs=["GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT", "VOTER_LIVES_SAVED"],
+    compute=lambda ctx: ctx["GLOBAL_COORDINATION_ACTIVATION_COST_PER_PARTICIPANT"] / ctx["VOTER_LIVES_SAVED"],
+    keywords=["cost per life", "verified response", "survey", "coordination", "cost-effectiveness", "conditional"],
+    latex_symbol=r"C_{life,resp}",
 )
 
 RETIREMENT_EQUIVALENT_2_CLAIMS_TARGET_PAYOUT = Parameter(

@@ -234,7 +234,7 @@ from dih_models.footer_generator import generate_footer_html
 from dih_models.links_generator import generate_links_qmd
 from dih_models.subdomain_redirects_generator import generate_subdomain_redirects_js
 from dih_models.readme_generator import generate_readme
-from generate_redirects import generate_redirects
+from generate_redirects import generate_cloudflare_redirects
 from dih_models.quarto_references_generator import update_references_from_quarto
 from dih_models.references_bib_utils import sort_bib_file, validate_bib_file
 from dih_models.typescript_generator import generate_typescript_parameters, generate_typescript_survey
@@ -471,7 +471,7 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
 
     lines = ["# Parameter Summary\n"]
     lines.append("One parameter per line for easy searching and copy-pasting.\n")
-    lines.append("Format: `PARAMETER_NAME: value (95% CI: low-high)`\n\n")
+    lines.append("Format: `PARAMETER_NAME: value (95% CI: low-high)` for specified intervals, `(90% CI: low-high)` for Monte Carlo 5th-95th percentiles\n\n")
 
     for param_name, param_data in sorted(parameters.items()):
         value = param_data["value"]
@@ -518,7 +518,7 @@ def generate_parameter_summary(parameters: Dict[str, Dict[str, Any]], output_pat
                 if len(parts) > 1:
                     unit_suffix = " " + parts[-1]
 
-            line = f"{param_name}: {formatted_value} (95% CI: {p5_formatted}-{p95_formatted}{unit_suffix})\n"
+            line = f"{param_name}: {formatted_value} (90% CI: {p5_formatted}-{p95_formatted}{unit_suffix})\n"
         else:
             # No uncertainty data - just include the formatted value
             line = f"{param_name}: {formatted_value}\n"
@@ -1148,7 +1148,7 @@ def main():
         # Copy TypeScript parameters file to consuming repos
         import shutil
         ts_copy_targets = [
-            Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
+            Path(r"E:\code\dih-neobrutalist\lib\parameters-calculations-citations.ts"),
             project_root.parent / "optimitron" / "packages" / "data" / "src" / "parameters" / "parameters-calculations-citations.ts",
         ]
         for copy_dest in ts_copy_targets:
@@ -1676,7 +1676,7 @@ def main():
         # Copy TypeScript parameters file to consuming repos
         import shutil
         ts_copy_targets = [
-            Path(r"E:\code\obsidian\websites\dih-earth\lib\parameters-calculations-citations.ts"),
+            Path(r"E:\code\dih-neobrutalist\lib\parameters-calculations-citations.ts"),
             project_root.parent / "optimitron" / "packages" / "data" / "src" / "parameters" / "parameters-calculations-citations.ts",
         ]
         for copy_dest in ts_copy_targets:
@@ -1790,10 +1790,10 @@ def main():
     logger.debug("[*] Generating README.md from QMD sources...")
     readme_path = generate_readme(project_root, chapter_mapping=chapter_mapping)
 
-    # Generate _redirects file from Quarto config redirect-from fields
-    logger.debug("[*] Generating _redirects from Quarto configs...")
-    redirects_path = generate_redirects(project_root)
-    logger.debug(f"[OK] Generated {redirects_path}")
+    # Generate the Cloudflare redirect Worker map and routes from redirect-from fields
+    logger.debug("[*] Generating Cloudflare redirect Worker config...")
+    for cloudflare_path in generate_cloudflare_redirects(project_root):
+        logger.debug(f"[OK] Generated {cloudflare_path}")
 
     # Final validation and sort of references.bib
     logger.debug("[*] Validating and sorting references.bib...")

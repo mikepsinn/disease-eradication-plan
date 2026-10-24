@@ -23,7 +23,7 @@ This document tracks all papers and publications from this project and their pub
 | 2 | The 1% Treaty (Economics) | Paper | [impact.warondisease.org](https://impact.warondisease.org) | 1-percent-treaty-impact.pdf | Draft |
 | 3 | Incentive Alignment Bonds | Paper | [iab.warondisease.org](https://iab.warondisease.org) | incentive-alignment-bonds-paper.pdf | Draft |
 | 4 | Wishocracy (RAPPA) | Paper | [paper.wishocracy.org](https://paper.wishocracy.org) | wishocracy-rappa-paper.pdf | Draft |
-| 5 | dFDA Spec (Methodology) | Paper | [spec.dfda.earth](https://spec.dfda.earth) | dfda-spec-paper.pdf | Draft |
+| 5 | dFDA Spec (Methodology) | Paper | [dfda-protocol.acceleratedmedicine.org](https://papers.acceleratedmedicine.org/dfda-protocol.html) | dfda-spec-paper.pdf | Draft |
 | 6 | dFDA Impact (ROI Analysis) | Paper | [dfda-impact.warondisease.org](https://dfda-impact.warondisease.org) | dfda-impact-paper.pdf | Draft |
 
 ---
@@ -151,7 +151,7 @@ A governance mechanism that employs Randomized Aggregated Pairwise Preference Al
 
 **Source:** `_quarto-dfda-spec.yml`
 **QMD:** `knowledge/appendix/dfda-spec-paper.qmd`
-**Website:** https://spec.dfda.earth
+**Website:** https://papers.acceleratedmedicine.org/dfda-protocol.html
 **Formats:** HTML, PDF
 
 ### Abstract
@@ -161,7 +161,7 @@ We present the Predictor Impact Score (PIS), a novel composite metric operationa
 
 | Platform | Status | Category | Notes |
 |----------|--------|----------|-------|
-| **Own Website** | Deployed | Self-hosted | https://spec.dfda.earth |
+| **Own Website** | Deployed | Self-hosted | https://papers.acceleratedmedicine.org/dfda-protocol.html |
 | **medRxiv** | TODO | Preprint | Health sciences preprint |
 | **arXiv** | TODO | Preprint | stat.ME (Methodology) |
 | **SSRN** | TODO | Preprint | Health Economics |
@@ -218,7 +218,7 @@ Analysis and Return on Investment - How to slash per-patient trial costs by up t
 ## Cross-Platform Publication Strategy
 
 ### Tier 1: Immediate (Self-Hosted)
-All publications deployed to own domains via Quarto + GitHub Pages/Netlify.
+The book and the Institute papers site deploy to Cloudflare Pages via Quarto.
 
 ### Tier 2: Preprint Servers (Week 1-2)
 1. **SSRN** - All papers (economics, political science, health)
@@ -288,7 +288,7 @@ Target journals by paper type:
 ```yaml
 # .github/workflows/publish.yml
 - Zenodo draft upload for all papers (economics, iab, wishocracy, dfda-spec, dfda-impact)
-- Netlify deployment for all sites
+- Cloudflare Pages deployment for the book and the Institute papers site
 ```
 
 ### Potential to Automate
@@ -329,10 +329,11 @@ python scripts/publish-zenodo.py --list
 
 ## Notes
 
-- All publications licensed CC BY-NC 4.0
+- Current original project content is licensed CC BY 4.0 (commercial reuse allowed with attribution).
+- Existing external deposits may still display older license metadata; update that metadata when publishing their next versions.
 - Author: Mike P. Sinn, Institute for Accelerated Medicine
 - ORCID: [0009-0006-0212-1094](https://orcid.org/0009-0006-0212-1094)
-- Contact: mike@warondisease.org
+- Contact: m@warondisease.org
 - GitHub: https://github.com/wishonia/earth-optimization-protocol
 
 ---

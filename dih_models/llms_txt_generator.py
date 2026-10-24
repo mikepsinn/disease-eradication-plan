@@ -24,6 +24,7 @@ import logging
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from urllib.parse import urljoin, urlsplit
 
 from dih_models.yaml_utils import load_quarto_config
 
@@ -79,7 +80,8 @@ def extract_site_info(config_path: Path, config_name: str) -> Optional[Dict[str,
 
     # Build PDF URL
     pdf_url = None
-    if pdf_file and site_url:
+    # A manual chapter URL is not a directory containing a deployed PDF.
+    if pdf_file and site_url and not urlsplit(site_url).path.endswith(".html"):
         base_url = site_url.rstrip("/")
         pdf_url = f"{base_url}/{pdf_file}"
 
@@ -204,7 +206,7 @@ def generate_llms_txt(project_root: Path) -> Path:
         "",
         "> Academic research project proposing the 1% Treaty: redirecting 1% of global military spending to pragmatic clinical trials. Contains peer-reviewed analyses, governance frameworks, and implementation strategies.",
         "",
-        "This project consists of multiple interconnected research papers on health economics, regulatory reform, and democratic governance. All content is licensed under CC BY-NC 4.0.",
+        "This project consists of multiple interconnected research papers on health economics, regulatory reform, and democratic governance. Original project content is licensed under CC BY 4.0. Third-party material retains its own rights and license terms.",
         "",
         "## Core Concepts",
         "",
@@ -249,7 +251,7 @@ def generate_llms_txt(project_root: Path) -> Path:
         "## Author",
         "",
         "Mike P. Sinn",
-        "- Email: mike@warondisease.org",
+        "- Email: m@warondisease.org",
         "- Website: https://mikesinn.com",
         "- ORCID: 0009-0006-0212-1094",
         "",
@@ -264,7 +266,9 @@ def generate_llms_txt(project_root: Path) -> Path:
         "",
         "## License",
         "",
-        "CC BY-NC 4.0 - Creative Commons Attribution-NonCommercial 4.0 International",
+        "[CC BY 4.0 - Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/)",
+        "",
+        "Commercial sharing and adaptation are allowed with appropriate credit, a link to the license, and an indication of changes.",
         "",
     ])
 
@@ -277,25 +281,40 @@ def generate_llms_txt(project_root: Path) -> Path:
     return output_path
 
 
-def generate_robots_txt(project_root: Path) -> Path:
+def generate_robots_txt(project_root: Path, site_url: Optional[str] = None) -> Path:
     """
-    Generate robots.txt that allows all crawlers.
+    Generate robots.txt that welcomes crawling and AI content use.
 
     User-agent: * with Allow: / permits all crawlers (including AI).
-    No need to explicitly list each one.
+    Content Signals explicitly welcome training, search, and AI input.
 
     Args:
         project_root: Root directory of the project
+        site_url: URL of the site being built (defaults to the manual config)
 
     Returns:
         Path to the generated robots.txt file
     """
     content = """# robots.txt - Allow all crawlers (including AI)
 # https://www.robotstxt.org/
+# Content Signals: https://contentsignals.org/
+# AI training, search indexing, and AI input are welcome.
 
 User-agent: *
 Allow: /
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
 """
+
+    if site_url is None:
+        manual_config = load_quarto_config(project_root / "_quarto-manual.yml")
+        site_url = (manual_config.get("website") or {}).get("site-url") or (manual_config.get("book") or {}).get("site-url")
+    if site_url:
+        parsed = urlsplit(site_url)
+        site_url = parsed._replace(netloc=parsed.netloc.lower()).geturl().rstrip("/")
+        # Manual chapter URLs share the manual's root sitemap. Standalone
+        # sites can have their own host or deployment subdirectory.
+        sitemap_url = urljoin(site_url, "/sitemap.xml") if parsed.path.endswith(".html") else f"{site_url}/sitemap.xml"
+        content += f"\nSitemap: {sitemap_url}\n"
 
     output_path = project_root / "robots.txt"
     with open(output_path, "w", encoding="utf-8", newline="\n") as f:

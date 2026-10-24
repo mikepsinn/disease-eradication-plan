@@ -49,7 +49,7 @@ for thresh in thresholds:
     # Add label with formatted threshold value (use format_parameter_value for full units)
 
     ax.annotate(f'{exceed_pct:.0f}% chance\n≥ {format_parameter_value(thresh, units)}',
-                xy=(thresh, exceed_pct), xytext=(thresh * 1.05, exceed_pct + 5),
+                xy=(thresh, exceed_pct), xytext=(8, 8), textcoords='offset points',
                 fontsize=10, ha='left', weight='bold',
                 bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, alpha=0.9))
 
@@ -76,4 +76,4 @@ add_png_metadata(
 plt.show()
 ```
 
-*This exceedance probability chart shows the likelihood that War-Redirect Aging Pleading Cutoff Year will exceed any given threshold. Higher curves indicate more favorable outcomes with greater certainty.*
+*This exceedance probability chart shows the likelihood that War-Redirect Aging Pleading Cutoff Year will exceed any given threshold. The higher the curve at a threshold, the more likely the value exceeds it.*

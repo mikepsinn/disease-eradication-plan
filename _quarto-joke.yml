@@ -47,7 +47,7 @@ website:
   favicon: assets/icons/joke-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2026 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "[International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/joke-paper.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -75,10 +75,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "Mechanism Design, Collective Action, Social Proof, Assurance Contracts, Viral Marketing, Foundation Strategy"
   category: "Working Paper, Foundation Pitch, Collective Action, Mechanism Design"
@@ -105,15 +105,14 @@ metadata:
     - 1-percent-treaty
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2026 Mike P. Sinn"
   copyright-year: "2026"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
   issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
   source-url: "https://github.com/wishonia/earth-optimization-protocol"
@@ -126,7 +125,7 @@ metadata:
   og-site-name: "The Funniest Joke in the Universe"
 
   open-graph: true
-  image: "https://manual.warondisease.org/assets/og/joke-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og-images/knowledge/appendix/joke-og-bw-academic.jpg"
 
   # Canonical site is the manual; this YAML exists for PDF/EPUB build for Zenodo etc.
   publishing:

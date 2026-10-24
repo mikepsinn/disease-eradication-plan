@@ -1,118 +1,107 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate Netlify _redirects file from Quarto config redirect-from fields.
+"""Generate the Cloudflare redirect Worker config from Quarto redirect-from fields.
 
-Reads all _quarto-*.yml files in the project root. For each config that has
-dih-render.redirect-from, generates 301 redirect rules from the old subdomain
-to the canonical manual URL (website.site-url or book.site-url).
+Reads all _quarto-*.yml files in the project root. The configs are the only
+place a redirect is declared: dih-render.redirect-from (one legacy URL or a
+list) 301s to the config's canonical URL (website.site-url or book.site-url),
+and dih-render.page-redirects 301s a legacy host to one page of that site.
 
-Preserves any manually-added lines in the existing _redirects file that fall
-outside the auto-generated section.
+Outputs:
+- cloudflare/redirect-worker/redirect-map.json (host -> canonical URL map for
+  the Cloudflare redirect Worker)
+- cloudflare/redirect-worker/wrangler.jsonc (Worker config with one route per
+  legacy host, so live hosts never invoke the Worker)
+
+Host rules cannot live in a Pages _redirects file: Pages ignores domain-level
+rules and follows every other rule even when a static file matches, so a
+catch-all there redirects the whole site.
 """
 import sys
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")  # pyright: ignore[reportAttributeAccessIssue]
 
+import json
 from pathlib import Path
-from dih_models.yaml_utils import load_quarto_config
+from urllib.parse import urlparse
 
-# Markers for the auto-generated section
-_START_MARKER = "# --- BEGIN AUTO-GENERATED REDIRECTS (do not edit) ---"
-_END_MARKER = "# --- END AUTO-GENERATED REDIRECTS ---"
+from dih_models.subdomain_redirects_generator import collect_subdomain_redirects
 
+# Zones whose hosts get Worker routes. A route can only be created in a zone
+# that exists on the Cloudflare account; add "dih.earth" here once that zone
+# is on Cloudflare, otherwise the Worker deploy fails.
+_ROUTE_ZONES = ("warondisease.org", "dfda.earth", "acceleratedmedicine.org")
+_KNOWN_ZONES = ("warondisease.org", "dfda.earth", "dih.earth", "acceleratedmedicine.org")
 
-def _get_site_url(config: dict) -> str | None:
-    """Extract the canonical site-url from a Quarto config."""
-    # website-type projects
-    url = (config.get("website") or {}).get("site-url")
-    if url:
-        return url
-    # book-type projects
-    url = (config.get("book") or {}).get("site-url")
-    return url
+_WORKER_NAME = "legacy-subdomain-redirects"
 
 
-def _get_title(config: dict) -> str | None:
-    """Extract a human-readable title for the comment line."""
-    title = (config.get("website") or {}).get("title")
-    if title:
-        return title
-    title = (config.get("book") or {}).get("title")
-    return title
+def _zone_for_host(host: str) -> str | None:
+    """Return the known Cloudflare zone a host belongs to, if any."""
+    for zone in _KNOWN_ZONES:
+        if host == zone or host.endswith(f".{zone}"):
+            return zone
+    return None
 
 
-def generate_redirects(project_root: Path | str) -> Path:
-    """Generate _redirects file from Quarto configs.
+def generate_cloudflare_redirects(project_root: Path | str) -> list[Path]:
+    """Generate the Cloudflare redirect Worker's map and wrangler config.
 
-    Returns the path to the written _redirects file.
+    Returns the paths of the written files.
     """
     project_root = Path(project_root)
-    redirects_path = project_root / "_redirects"
+    worker_dir = project_root / "cloudflare" / "redirect-worker"
+    worker_dir.mkdir(parents=True, exist_ok=True)
 
-    # Collect redirect rules from all _quarto-*.yml configs
-    configs = sorted(project_root.glob("_quarto-*.yml"))
+    redirects = collect_subdomain_redirects(project_root)
 
-    rules: list[str] = []
-    for config_path in configs:
-        config = load_quarto_config(config_path)
-        dih_render = config.get("dih-render") or {}
-        redirect_from = dih_render.get("redirect-from")
-        if not redirect_from:
-            continue
+    # A redirect source that is also a redirect target would loop forever.
+    target_hosts = {
+        parsed.hostname.lower()
+        for parsed in (urlparse(url) for url in redirects.values())
+        if parsed.hostname
+    }
+    looping_hosts = sorted(host for host in redirects if host in target_hosts)
+    if looping_hosts:
+        raise ValueError(
+            f"Redirect sources also appear as targets (would loop): {looping_hosts}"
+        )
 
-        site_url = _get_site_url(config)
-        if not site_url:
-            continue
+    map_path = worker_dir / "redirect-map.json"
+    map_path.write_text(
+        json.dumps(redirects, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
-        # Strip trailing slash from both URLs for consistency
-        redirect_from = redirect_from.rstrip("/")
-        site_url = site_url.rstrip("/")
-
-        title = _get_title(config) or config_path.stem
-        rules.append(f"# {title}")
-        rules.append(f"{redirect_from}  {site_url}  301!")
-        rules.append(f"{redirect_from}/  {site_url}  301!")
-        rules.append(f"{redirect_from}/*  {site_url}  301!")
-        rules.append("")
-
-    # Build the auto-generated section
-    auto_lines = [
-        _START_MARKER,
-        "# Redirect from old subdomain sites to canonical manual URLs",
-        "# Auto-generated by scripts/generate-redirects.py",
-        "",
+    routes = [
+        {"pattern": f"{host}/*", "zone_name": zone}
+        for host in redirects
+        if (zone := _zone_for_host(host)) in _ROUTE_ZONES
     ]
-    auto_lines.extend(rules)
-    auto_lines.append(_END_MARKER)
-    auto_section = "\n".join(auto_lines)
 
-    # Read existing _redirects and preserve manual lines
-    manual_content = ""
-    if redirects_path.exists():
-        existing = redirects_path.read_text(encoding="utf-8")
-        start_idx = existing.find(_START_MARKER)
-        end_idx = existing.find(_END_MARKER)
-        if start_idx != -1 and end_idx != -1:
-            # Strip the old auto-generated section, keep everything else
-            before = existing[:start_idx].rstrip("\n")
-            after = existing[end_idx + len(_END_MARKER):].lstrip("\n")
-            parts = [p for p in [before, after] if p.strip()]
-            manual_content = "\n\n".join(parts)
-        else:
-            # No markers found; treat entire file as manual content
-            manual_content = existing.strip()
-    manual_content = manual_content.strip()
+    config = {
+        "name": _WORKER_NAME,
+        "main": "worker.js",
+        "compatibility_date": "2026-08-01",
+        "routes": routes,
+    }
+    config_path = worker_dir / "wrangler.jsonc"
+    config_path.write_text(
+        "// AUTO-GENERATED by scripts/generate_redirects.py - do not edit.\n"
+        "// Hosts come from dih-render.redirect-from in _quarto-*.yml; regenerate\n"
+        "// with the generate-everything script. Deployed by the publish workflow.\n"
+        + json.dumps(config, indent=2)
+        + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
-    # Put host-specific redirects before broad fallback rules.
-    parts = [p for p in [auto_section, manual_content] if p.strip()]
-    final = "\n\n".join(parts) + "\n"
-
-    redirects_path.write_text(final, encoding="utf-8")
-    return redirects_path
+    return [map_path, config_path]
 
 
 if __name__ == "__main__":
     project_root = Path(__file__).resolve().parent.parent
-    out = generate_redirects(project_root)
-    print(f"[OK] Generated {out}")
+    for path in generate_cloudflare_redirects(project_root):
+        print(f"[OK] Generated {path}")

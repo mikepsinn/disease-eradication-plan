@@ -5,7 +5,6 @@ project:
   resources:
     - knowledge/data/
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
 
@@ -14,10 +13,11 @@ dih-render:
   emoji: "📜"
   index-source: knowledge/economics/1-pct-treaty-impact.qmd
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
-  redirect-from: https://impact.warondisease.org
+  redirect-from:
+    - https://impact.warondisease.org
+    - https://impact.dih.earth
+    - https://models.dih.earth
   pdf-output-file: 1-percent-treaty-impact.pdf
-  netlify-site-id: "8cb62a4c-0a10-4a92-a9ab-088c5b2cf094"
-  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   concept-terms:
     - term: "1% Treaty"
@@ -43,8 +43,8 @@ book:
       affiliations:
         - name: "International Campaign to End War and Disease"
           url: https://warondisease.org
-  description: '6.65 thousand diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7 billion deaths. At $0.00177/DALY, 50.3kx more cost-effective than the best existing interventions. The result holds across every specified adoption pathway.'
-  abstract: "6.65 thousand diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2B/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7 billion deaths, valued at $84.8 quadrillion. Cost-effectiveness: $0.00177/DALY, 50.3kx better than bed nets. Even at 1% probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Benefit estimates are independent of how adoption is achieved; six adoption pathways are costed separately and the cost-effectiveness conclusion survives substituting any of them."
+  description: '6,650 diseases have zero FDA-approved treatments; at current trial capacity, exploring them takes ~443 years. Redirecting 1% of military spending scales capacity 12.3x, cutting the timeline to ~36 years and preventing 10.7 billion deaths. At $0.02/DALY, 9.3kx more cost-effective than the best existing interventions. The result holds across every specified adoption pathway.'
+  abstract: '6,650 diseases have 0 FDA-approved treatments. At current trial capacity (15 diseases/year), exploring the therapeutic search space takes ~443 years. Redirect 1% of military spending ($27.2 billion/year) to pragmatic clinical trials. Trial capacity jumps 12.3x. Search space explored in ~36 years instead of centuries. Average treatment reaches patients 212 years sooner. Timeline shift saves 10.7 billion deaths, valued at $7.53 quadrillion. Cost-effectiveness: $0.02/DALY, 9.3kx better than bed nets. Even at 1% probability of treaty adoption, risk-adjusted cost-effectiveness remains superior to the best existing global health interventions. Benefit estimates are independent of how adoption is achieved; several specified adoption pathways are costed separately and the cost-effectiveness conclusion survives substituting any of them.'
   site-url: https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html
   favicon: assets/icons/economics-favicon.png
   page-navigation: true
@@ -112,10 +112,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   # title: Removed - each page defines its own title in frontmatter
   # description: Removed from metadata section to allow page-level descriptions to override for og:description
   # (Book-level description is already set in the 'book' section above)
@@ -156,15 +156,14 @@ metadata:
     - impact-investing
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 The International Campaign to End War and Disease"
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/mikepsinn"
   issue-url: "https://github.com/mikepsinn"
   source-url: "https://github.com/mikepsinn"

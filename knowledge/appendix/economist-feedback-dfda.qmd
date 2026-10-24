@@ -85,10 +85,10 @@ The logic is five steps. Each depends on the one above it.
 | Input | Value | Derivation |
 |:------|------:|:-----------|
 | Direct funding NPV | {{< var dfda_direct_funding_queue_clearance_npv >}} | NPV at {{< var npv_discount_rate_standard >}} social discount rate over exploration period |
-| DALYs averted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} | Step 4 (undiscounted) |
-| **Cost per DALY** | **{{< var dfda_direct_funding_cost_per_daly >}}** | = NPV / DALYs |
+| DALYs averted, discounted | {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_discounted >}} | Step 4, discounted at {{< var npv_discount_rate_standard >}} |
+| **Cost per DALY** | **{{< var dfda_direct_funding_cost_per_daly >}}** | = NPV / discounted DALYs |
 
-Note: Costs are discounted at {{< var npv_discount_rate_standard >}}; DALYs are undiscounted (standard in GBD methodology). Discounting DALYs at 3% would reduce them but also strengthen the cost-effectiveness ratio since the denominator shrinks less than the numerator.
+Note: Costs and DALYs are both discounted at {{< var npv_discount_rate_standard >}}. Discounting costs but not DALYs would make the program look better the longer it is delayed (the Keeler-Cretin paradox).
 
 ## Key Assumptions Requiring Sign-Off
 

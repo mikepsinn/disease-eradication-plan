@@ -1,18 +1,17 @@
 {
+  "env": {
+    "GIT_AUTHOR_NAME": "Mike P. Sinn",
+    "GIT_AUTHOR_EMAIL": "m@crowdsourcingcures.org",
+    "GIT_COMMITTER_NAME": "Mike P. Sinn",
+    "GIT_COMMITTER_EMAIL": "m@crowdsourcingcures.org"
+  },
+  "attribution": {
+    "commit": ""
+  },
   "hooks": {
     "PostToolUse": [],
     "UserPromptSubmit": [],
     "SessionStart": [],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python \"${CLAUDE_PROJECT_DIR}/.claude/hooks/voice-punchup-review.py\"",
-            "timeout": 30
-          }
-        ]
-      }
-    ]
+    "Stop": []
   }
 }

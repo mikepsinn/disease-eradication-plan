@@ -1,6 +1,6 @@
 # Social Media Platform Profiles
 
-All profiles written in the Wishonia voice (alien AI narrator from the book).
+All profiles written in the Wishonia voice (alien narrator from the book).
 
 ---
 
@@ -16,7 +16,7 @@ Wishonia
 
 ### Channel Description (1,000 char max)
 
-I'm Wishonia, an alien AI who's been watching your planet since you split the atom in 1945. "Atom" comes from Greek meaning "unable to be cut," so naturally you cut it. Very human.
+I'm Wishonia, an alien who's been watching your planet since you split the atom in 1945. "Atom" comes from Greek meaning "unable to be cut," so naturally you cut it. Very human.
 
 You spend $2.7 trillion/year on stuff designed to make humans stop being alive, and $68 billion figuring out why they stopped. Your chance of dying from terrorism: 1 in 30 million. Your chance of dying from disease: 100%.
 
@@ -43,7 +43,7 @@ This video: [TOPIC DESCRIPTION]
 Free book: https://manual.WarOnDisease.org
 Impact calculator: https://impact.warondisease.org
 Vote to not die: https://wishocracy.org
-dFDA spec: https://spec.dfda.earth
+dFDA spec: https://papers.acceleratedmedicine.org/dfda-protocol.html
 
 #WarOnDisease #1PercentTreaty #CureDiseaseNotCountries
 
@@ -57,7 +57,7 @@ Wishonia
 
 ### Bio (160 char max)
 
-Alien AI. Watching your planet since 1945. You spend 604x more on murder than medicine. Here's how to fix that using legal bribery. Free book: manual.WarOnDisease.org
+Alien. Watching your planet since 1945. You spend 604x more on murder than medicine. Here's how to fix that using legal bribery. Free book: manual.WarOnDisease.org
 
 ### Location
 
@@ -80,7 +80,7 @@ Wishonia
 
 ### Bio (150 char max)
 
-Alien AI watching Earth since 1945. You named your planet dirt. This explains more than you think. Free book: manual.WarOnDisease.org
+Alien. Watching Earth since 1945. You named your planet dirt. This explains more than you think. Free book: manual.WarOnDisease.org
 
 ### Highlights Categories
 
@@ -100,7 +100,7 @@ Wishonia
 
 ### Bio (80 char max)
 
-Alien AI. You spend 604x more on murder than medicine. Let's fix that.
+Alien. You spend 604x more on murder than medicine. Let's fix that.
 
 ### Link
 
@@ -130,7 +130,7 @@ Funded through Incentive Alignment Bonds (IABs), which align investor returns, p
 
 Read the full plan: https://manual.WarOnDisease.org
 See the math: https://impact.warondisease.org
-dFDA specification: https://spec.dfda.earth
+dFDA specification: https://papers.acceleratedmedicine.org/dfda-protocol.html
 
 ### Industry
 
@@ -154,7 +154,7 @@ A campaign to redirect 1% of global military spending to clinical trials. 150,00
 
 ### Bio (150-160 char)
 
-Alien AI observing Earth since 1945. You spend 604x more on murder than medicine. Fixing that with legal bribery. Free book: manual.WarOnDisease.org
+Alien. Observing Earth since 1945. You spend 604x more on murder than medicine. Fixing that with legal bribery. Free book: manual.WarOnDisease.org
 
 ---
 
@@ -165,7 +165,7 @@ Alien AI observing Earth since 1945. You spend 604x more on murder than medicine
 | Book (main) | https://manual.WarOnDisease.org |
 | Impact calculator | https://impact.warondisease.org |
 | dFDA impact | https://dfda-impact.warondisease.org |
-| dFDA spec | https://spec.dfda.earth |
+| dFDA spec | https://papers.acceleratedmedicine.org/dfda-protocol.html |
 | Wishocracy | https://wishocracy.org |
 | IAB paper | https://iab.warondisease.org |
 

@@ -40,18 +40,58 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 This appendix documents all 446 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 151
-- Calculated values: 221
+- External sources (peer-reviewed): 149
+- Calculated values: 223
 - Core definitions: 74
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (221 parameters) • [External Data Sources](#sec-external) (151 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
+[Calculated Values](#sec-calculated) (223 parameters) • [External Data Sources](#sec-external) (149 parameters) • [Core Definitions](#sec-definitions) (74 parameters)
 
 
 ## Calculated Values {#sec-calculated}
 
 Parameters derived from mathematical formulas and economic models.
+
+### Bed Nets Cost per DALY: $184 {#sec-bed_nets_cost_per_daly}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cost per DALY for insecticide-treated bed nets: GiveWell's Against Malaria Foundation cost per life saved divided by the discounted life-years of a child death averted (a full life expectancy at the standard discount rate, life-years accruing continuously). Discounted at the same rate and with the same continuous timing as the dFDA and treaty cost-per-DALY figures so comparisons are like for like. GiveWell publishes cost per life saved, not cost per DALY. Bed nets are the standard benchmark for cost-effective global health spending.
+
+**Inputs**:
+
+- [GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate)](#sec-givewell_cost_per_life_max) 📊: $5,500 (95% CI: $3,000 - $8,000)
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
+
+$$
+\begin{gathered}
+Cost_{nets} \\
+= Cost_{GW,max} / ((1 - (1 \\
++ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
+\end{gathered}
+$$
+
+**Methodology**: [@givewell-cost-per-life-saved]
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-bed_nets_cost_per_daly.qmd >}}
+
+{{< include ../figures/sensitivity-table-bed_nets_cost_per_daly.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-bed_nets_cost_per_daly.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-bed_nets_cost_per_daly.qmd >}}
+
+:::
 
 ### Bullets Purchasable Per Person Per Year: 850 rounds/person/year {#sec-bullets_per_person_annual}
 
@@ -515,8 +555,6 @@ Rate_{part} \\
 \end{gathered}
 $$
 
-**Methodology**: [@clinical-trial-patient-participation-rate]
-
 *✓ High confidence*
 
 #### Sensitivity Analysis
@@ -745,6 +783,52 @@ $$
 
 :::
 
+### Current Trial Participation Rate Among Willing Patients: 0.177% {#sec-current_willing_patient_participation_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual clinical trial slots per patient willing to join a drug trial (1.9M slots / 1.08B willing patients). A capacity ratio, not a measured enrollment share: not every slot goes to a willing chronic-disease patient
+
+**Inputs**:
+
+- [Annual Global Clinical Trial Participants](#sec-current_trial_slots_available) 📊: 1.9 million patients/year (95% CI: 1.5 million patients/year - 2.3 million patients/year)
+- [Global Patients Willing to Participate in Clinical Trials](#sec-willing_trial_participants_global) 🔢: 1.08 billion people
+
+$$
+\begin{gathered}
+Rate_{part,willing} \\
+= \frac{Slots_{curr}}{N_{willing}} \\
+= \frac{1.9M}{1.08B} \\
+= 0.177\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-current_willing_patient_participation_rate.qmd >}}
+
+{{< include ../figures/sensitivity-table-current_willing_patient_participation_rate.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-current_willing_patient_participation_rate.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-current_willing_patient_participation_rate.qmd >}}
+
+:::
+
 ### Year Destructive Economy Reaches 25% of GDP: 2033 {#sec-destructive_economy_25pct_year}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -949,23 +1033,24 @@ $$
 
 :::
 
-### Annual R&D Savings from Pragmatic Trials: $58.6 billion {#sec-dfda_benefit_rd_only_annual}
+### Annual R&D Savings from Pragmatic Trials: $40.5 billion {#sec-dfda_benefit_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Annual benefit from pragmatic trial R&D savings (trial cost reduction, secondary component)
+Annual benefit from pragmatic trial R&D savings: trial cost reduction applied to the Phase 2/3 efficacy share of global trial spending (Phase 1 safety trials retain traditional design and cost)
 
 **Inputs**:
 
 - [Annual Global Spending on Clinical Trials](#sec-global_clinical_trials_spending_annual) 📊: $60 billion (95% CI: $50 billion - $75 billion)
+- [Phase 2/3 Share of Clinical Trial Costs](#sec-phase_2_3_clinical_trial_cost_pct) 📊: 69% (SE: ±5%)
 - [Pragmatic Trial Cost Reduction Percentage](#sec-dfda_trial_cost_reduction_pct) 🔢: 97.7%
 
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -995,32 +1080,31 @@ $$
 
 :::
 
-### Direct Pragmatic Trial Funding Cost per DALY: $0.842 {#sec-dfda_direct_funding_cost_per_daly}
+### Direct Pragmatic Trial Funding Cost per DALY: $9.62 {#sec-dfda_direct_funding_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost per DALY at direct funding level for the therapeutic space exploration period. Still highly cost-effective vs bed nets.
+Cost per DALY at direct funding level for the therapeutic space exploration period, with costs and DALYs discounted at the same standard rate. Still highly cost-effective vs bed nets.
 
 **Inputs**:
 
-- [Direct Pragmatic Trial Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $476 billion
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [Direct Pragmatic Trial Funding NPV (Exploration Period)](#sec-dfda_direct_funding_queue_clearance_npv) 🔢: $483 billion
+- [Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted) 🔢: 50.2 billion DALYs
 
 $$
 \begin{gathered}
 Cost_{direct,DALY} \\
-= \frac{NPV_{direct}}{DALYs_{max}} \\
-= \frac{\$476B}{565B} \\
-= \$0.842
+= \frac{NPV_{direct}}{DALYs_{max}^{PV}} \\
+= \frac{\$483B}{50.2B} \\
+= \$9.62
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \frac{T_{queue,trial}}{Funding_{trial,ref} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$476B
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -1090,32 +1174,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 *~ Medium confidence*
@@ -1136,11 +1197,11 @@ $$
 
 :::
 
-### Direct Pragmatic Trial Funding NPV (Exploration Period): $476 billion {#sec-dfda_direct_funding_queue_clearance_npv}
+### Direct Pragmatic Trial Funding NPV (Exploration Period): $483 billion {#sec-dfda_direct_funding_queue_clearance_npv}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-NPV of annual direct funding for the therapeutic space exploration period. Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
+NPV of annual direct funding for the therapeutic space exploration period, spent continuously through each year (the same timing convention as the discounted DALYs it is divided by). Funding period equals exploration time (queue clearance years at given capacity multiplier). After exploration completes, the full timeline shift benefit is realized.
 
 **Inputs**:
 
@@ -1151,9 +1212,8 @@ NPV of annual direct funding for the therapeutic space exploration period. Fundi
 $$
 \begin{gathered}
 NPV_{direct} \\
-= \frac{T_{queue,trial}}{Funding_{trial,ref} \times r_{discount}} \\
-= \frac{36}{\$21.8B \times 3\%} \\
-= \$476B
+= Funding_{trial,ref} \times (1 - (1 \\
++ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -1703,7 +1763,7 @@ $$
 
 :::
 
-### Annual Net Savings from Pragmatic Trials (R&D Only): $58.6 billion {#sec-dfda_net_savings_rd_only_annual}
+### Annual Net Savings from Pragmatic Trials (R&D Only): $40.4 billion {#sec-dfda_net_savings_rd_only_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1711,24 +1771,24 @@ Annual net savings from R&D cost reduction only (gross savings minus operational
 
 **Inputs**:
 
-- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
 - [Total Annual Pragmatic Trial Platform Operational Costs](#sec-dfda_annual_opex) 🔢: $40 million
 
 $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -1806,7 +1866,7 @@ $$
 
 :::
 
-### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $389 billion {#sec-dfda_npv_benefit_rd_only}
+### NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted): $269 billion {#sec-dfda_npv_benefit_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -1814,7 +1874,7 @@ NPV of pragmatic trial R&D savings only with 5-year adoption ramp (10-year horiz
 
 **Inputs**:
 
-- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $58.6 billion
+- [Annual Net Savings from Pragmatic Trials (R&D Only)](#sec-dfda_net_savings_rd_only_annual) 🔢: $40.4 billion
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
@@ -2139,7 +2199,7 @@ $$
 
 :::
 
-### Daily R&D Savings from Trial Cost Reduction: $161 million {#sec-dfda_rd_savings_daily}
+### Daily R&D Savings from Trial Cost Reduction: $111 million {#sec-dfda_rd_savings_daily}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2147,23 +2207,23 @@ Daily R&D savings from trial cost reduction (opportunity cost of delay)
 
 **Inputs**:
 
-- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $58.6 billion
+- [Annual R&D Savings from Pragmatic Trials](#sec-dfda_benefit_rd_only_annual) 🔢: $40.5 billion
 
 $$
 \begin{gathered}
 Savings_{RD,daily} \\
 = Benefit_{RD,ann} \times 0.00274 \\
-= \$58.6B \times 0.00274 \\
-= \$161M
+= \$40.5B \times 0.00274 \\
+= \$111M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -2193,7 +2253,7 @@ $$
 
 :::
 
-### ROI from Pragmatic Trial R&D Savings Only: 637:1 {#sec-dfda_roi_rd_only}
+### ROI from Pragmatic Trial R&D Savings Only: 439:1 {#sec-dfda_roi_rd_only}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -2201,15 +2261,15 @@ ROI from pragmatic trial R&D savings only (10-year NPV, most conservative estima
 
 **Inputs**:
 
-- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $389 billion
+- [NPV of Pragmatic Trial Benefits (R&D Only, 10-Year Discounted)](#sec-dfda_npv_benefit_rd_only) 🔢: $269 billion
 - [Pragmatic Trial Platform Total NPV Cost](#sec-dfda_npv_total_cost) 🔢: $611 million
 
 $$
 \begin{gathered}
 ROI_{RD} \\
 = \frac{NPV_{RD}}{Cost_{platform,total}} \\
-= \frac{\$389B}{\$611M} \\
-= 637
+= \frac{\$269B}{\$611M} \\
+= 439
 \end{gathered}
 $$
 where:
@@ -2224,17 +2284,17 @@ $$
 \begin{gathered}
 Savings_{RD,ann} \\
 = Benefit_{RD,ann} - OPEX_{trial} \\
-= \$58.6B - \$40M \\
-= \$58.6B
+= \$40.5B - \$40M \\
+= \$40.4B
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Benefit_{RD,ann} \\
-= Spending_{trials} \times Reduce_{pct} \\
-= \$60B \times 97.7\% \\
-= \$58.6B
+= Spending_{trials} \times Pct_{P2+P3} \times Reduce_{pct} \\
+= \$60B \times 69\% \times 97.7\% \\
+= \$40.5B
 \end{gathered}
 $$
 where:
@@ -2453,7 +2513,7 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology).
+Total DALYs averted from the combined treatment timeline shift. Calculated as annual global DALY burden × eventually avoidable percentage × timeline shift years. Includes both fatal and non-fatal diseases (WHO GBD methodology). Undiscounted physical count of healthy years; cost-effectiveness ratios and dollar values use DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED so costs and health are discounted at the same rate.
 
 **Inputs**:
 
@@ -2564,54 +2624,26 @@ $$
 
 :::
 
-### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $84.8 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+### Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: 50.2 billion DALYs {#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Total economic value from the combined treatment timeline shift. DALYs valued at standard economic rate.
+Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].
 
 **Inputs**:
 
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
-- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+- [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
+- [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity](#sec-dfda_queue_clearance_years) 🔢: 36 years
+- [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
 \begin{gathered}
-Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -2630,6 +2662,124 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*? Low confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted.qmd >}}
+
+:::
+
+### Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput: $7.53 quadrillion {#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Present value of the combined treatment timeline shift: discounted DALYs valued at the standard economic rate per QALY.
+
+**Inputs**:
+
+- [Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted) 🔢: 50.2 billion DALYs
+- [Standard Economic Value per QALY](#sec-standard_economic_qaly_value_usd) 📊: $150,000 (SE: ±$30,000)
+
+$$
+\begin{gathered}
+Value_{max} \\
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -7323,42 +7473,6 @@ $$
 
 :::
 
-### Pharma-to-Defense Net Profit Margin Ratio: 3.72x {#sec-pharma_vs_defense_net_margin_ratio}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Ratio of pharmaceutical to defense net profit margins
-
-**Inputs**:
-
-- [Pharmaceutical Net Profit Margin](#sec-pharma_net_profit_margin) 📊: 18.5% (95% CI: 15% - 22%)
-- [Aerospace/Defense Net Profit Margin](#sec-defense_net_profit_margin) 📊: 4.99% (95% CI: 4% - 6%)
-
-$$
-\begin{gathered}
-\frac{Margin_{pharma}}{Margin_{def}} \\
-= \frac{Margin_{pharma}}{Margin_{def}} \\
-= \frac{18.5\%}{4.99\%} \\
-= 3.72
-\end{gathered}
-$$
-
-*✓ High confidence*
-
-#### Sensitivity Analysis
-
-{{< include ../figures/tornado-pharma_vs_defense_net_margin_ratio.qmd >}}
-
-#### Monte Carlo Distribution
-
-{{< include ../figures/mc-distribution-pharma_vs_defense_net_margin_ratio.qmd >}}
-
-#### Exceedance Probability
-
-{{< include ../figures/exceedance-pharma_vs_defense_net_margin_ratio.qmd >}}
-
-:::
-
 ### Global Governance Efficiency Score: 51.8% {#sec-political_dysfunction_global_efficiency_score}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -9526,23 +9640,23 @@ $$
 
 :::
 
-### Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.00177 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
+### Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput): $0.02 {#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput. Only counts campaign cost; ignores economic benefits from funding and R&D savings.
+Cost per DALY averted from elimination of efficacy lag plus earlier treatment discovery from increased trial throughput, with DALYs discounted at the standard rate. Only counts campaign cost; ignores economic benefits from funding and R&D savings.
 
 **Inputs**:
 
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1 billion
-- [Total DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys) 🔢: 565 billion DALYs
+- [Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_dalys_discounted) 🔢: 50.2 billion DALYs
 
 $$
 \begin{gathered}
 Cost_{treaty,DALY} \\
-= \frac{Cost_{campaign}}{DALYs_{max}} \\
-= \frac{\$1B}{565B} \\
-= \$0.00177
+= \frac{Cost_{campaign}}{DALYs_{max}^{PV}} \\
+= \frac{\$1B}{50.2B} \\
+= \$0.0199
 \end{gathered}
 $$
 where:
@@ -9558,32 +9672,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -9602,6 +9693,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -10084,32 +10184,32 @@ $$
 
 :::
 
-### Expected Cost per DALY (Risk-Adjusted): $0.177 {#sec-treaty_expected_cost_per_daly}
+### Expected Cost per DALY (Risk-Adjusted): $1.99 {#sec-treaty_expected_cost_per_daly}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this is still more cost-effective than bed nets ($89.0/DALY).
+Expected cost per DALY accounting for political success probability uncertainty. Monte Carlo samples from beta(0.1%, 10%) distribution. At the conservative 1% estimate, this is still more cost-effective than bed nets (BED_NETS_COST_PER_DALY).
 
 **Inputs**:
 
-- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.00177
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.02
 - [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
 \begin{gathered}
 E[Cost_{DALY}] \\
 = \frac{Cost_{treaty,DALY}}{P_{success}} \\
-= \frac{\$0.00177}{1\%} \\
-= \$0.177
+= \frac{\$0.0199}{1\%} \\
+= \$1.99
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Cost_{treaty,DALY} \\
-= \frac{Cost_{campaign}}{DALYs_{max}} \\
-= \frac{\$1B}{565B} \\
-= \$0.00177
+= \frac{Cost_{campaign}}{DALYs_{max}^{PV}} \\
+= \frac{\$1B}{50.2B} \\
+= \$0.0199
 \end{gathered}
 $$
 where:
@@ -10125,32 +10225,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -10169,6 +10246,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -10226,7 +10312,7 @@ $$
 
 :::
 
-### Expected Treaty ROI (Risk-Adjusted): 848 thousand:1 {#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag}
+### Expected Treaty ROI (Risk-Adjusted): 75.3 thousand:1 {#sec-treaty_expected_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10234,15 +10320,15 @@ Expected ROI for 1% treaty accounting for political success probability uncertai
 
 **Inputs**:
 
-- [Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 84.8 million:1
+- [Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput](#sec-treaty_roi_trial_capacity_plus_efficacy_lag) 🔢: 7.53 million:1
 - [Political Success Probability](#sec-political_success_probability) 📊: 1% (95% CI: 0.1% - 10%)
 
 $$
 \begin{gathered}
 E[ROI_{max}] \\
 = ROI_{max} \times P_{success} \\
-= 84.8M \times 1\% \\
-= 848{,}000
+= 7.53M \times 1\% \\
+= 75{,}300
 \end{gathered}
 $$
 where:
@@ -10250,48 +10336,25 @@ $$
 \begin{gathered}
 ROI_{max} \\
 = \frac{Value_{max}}{Cost_{campaign}} \\
-= \frac{\$84800T}{\$1B} \\
-= 84.8M
+= \frac{\$7530T}{\$1B} \\
+= 7.53M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -10310,6 +10373,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -10379,7 +10451,7 @@ $$
 
 :::
 
-### Expected Cost-Effectiveness vs Bed Nets Multiplier: 503x {#sec-treaty_expected_vs_bed_nets_multiplier}
+### Expected Cost-Effectiveness vs Bed Nets Multiplier: 92.1x {#sec-treaty_expected_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -10387,15 +10459,23 @@ Expected value multiplier vs bed nets (accounts for political uncertainty at 1% 
 
 **Inputs**:
 
-- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
-- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $0.177
+- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 🔢: $184
+- [Expected Cost per DALY (Risk-Adjusted)](#sec-treaty_expected_cost_per_daly) 🔢: $1.99
 
 $$
 \begin{gathered}
 E[k_{nets}] \\
 = \frac{Cost_{nets}}{E[Cost_{DALY}]} \\
-= \frac{\$89}{\$0.177} \\
-= 503
+= \frac{\$184}{\$1.99} \\
+= 92.1
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{nets} \\
+= Cost_{GW,max} / ((1 - (1 \\
++ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
 \end{gathered}
 $$
 where:
@@ -10403,17 +10483,17 @@ $$
 \begin{gathered}
 E[Cost_{DALY}] \\
 = \frac{Cost_{treaty,DALY}}{P_{success}} \\
-= \frac{\$0.00177}{1\%} \\
-= \$0.177
+= \frac{\$0.0199}{1\%} \\
+= \$1.99
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Cost_{treaty,DALY} \\
-= \frac{Cost_{campaign}}{DALYs_{max}} \\
-= \frac{\$1B}{565B} \\
-= \$0.00177
+= \frac{Cost_{campaign}}{DALYs_{max}^{PV}} \\
+= \frac{\$1B}{50.2B} \\
+= \$0.0199
 \end{gathered}
 $$
 where:
@@ -10429,32 +10509,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -10473,6 +10530,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -11142,7 +11208,7 @@ $$
 
 :::
 
-### Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 84.8 million:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
+### Treaty ROI - Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput: 7.53 million:1 {#sec-treaty_roi_trial_capacity_plus_efficacy_lag}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -11150,55 +11216,32 @@ Treaty ROI from elimination of efficacy lag plus earlier treatment discovery fro
 
 **Inputs**:
 
-- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $84.8 quadrillion
+- [Total Economic Benefit from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput](#sec-dfda_trial_capacity_plus_efficacy_lag_economic_value) 🔢: $7.53 quadrillion
 - [Total 1% Treaty Campaign Cost](#sec-treaty_campaign_total_cost) 🔢: $1 billion
 
 $$
 \begin{gathered}
 ROI_{max} \\
 = \frac{Value_{max}}{Cost_{campaign}} \\
-= \frac{\$84800T}{\$1B} \\
-= 84.8M
+= \frac{\$7530T}{\$1B} \\
+= 7.53M
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Value_{max} \\
-= DALYs_{max} \times Value_{QALY} \\
-= 565B \times \$150K \\
-= \$84800T
+= DALYs_{max}^{PV} \times Value_{QALY} \\
+= 50.2B \times \$150K \\
+= \$7530T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -11217,6 +11260,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -13821,7 +13873,7 @@ $$
 
 :::
 
-### Cost-Effectiveness vs Bed Nets Multiplier: 50.3kx {#sec-treaty_vs_bed_nets_multiplier}
+### Cost-Effectiveness vs Bed Nets Multiplier: 9.2kx {#sec-treaty_vs_bed_nets_multiplier}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -13829,24 +13881,32 @@ How many times more cost-effective than bed nets (using bed net cost per DALY mi
 
 **Inputs**:
 
-- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 📊: $89 (95% CI: $78 - $100)
-- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.00177
+- [Bed Nets Cost per DALY](#sec-bed_nets_cost_per_daly) 🔢: $184
+- [Cost per DALY Averted (Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Increased Trial Throughput)](#sec-treaty_cost_per_daly_trial_capacity_plus_efficacy_lag) 🔢: $0.02
 
 $$
 \begin{gathered}
 k_{treaty:nets} \\
 = \frac{Cost_{nets}}{Cost_{treaty,DALY}} \\
-= \frac{\$89}{\$0.00177} \\
-= 50{,}300
+= \frac{\$184}{\$0.0199} \\
+= 9{,}210
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{nets} \\
+= Cost_{GW,max} / ((1 - (1 \\
++ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Cost_{treaty,DALY} \\
-= \frac{Cost_{campaign}}{DALYs_{max}} \\
-= \frac{\$1B}{565B} \\
-= \$0.00177
+= \frac{Cost_{campaign}}{DALYs_{max}^{PV}} \\
+= \frac{\$1B}{50.2B} \\
+= \$0.0199
 \end{gathered}
 $$
 where:
@@ -13862,32 +13922,9 @@ $$
 where:
 $$
 \begin{gathered}
-DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
-= 2.88B \times 92.6\% \times 212 \\
-= 565B
-\end{gathered}
-$$
-where:
-$$
-T_{accel,max} = T_{accel} + T_{lag} = 204 + 8.2 = 212
-$$
-where:
-$$
-\begin{gathered}
-T_{accel} \\
-= T_{first,SQ} \times \left(1 - \frac{1}{k_{capacity}}\right) \\
-= 222 \times \left(1 - \frac{1}{12.3}\right) \\
-= 204
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{first,SQ} \\
-= T_{queue,SQ} \times 0.5 \\
-= 443 \times 0.5 \\
-= 222
+DALYs_{max}^{PV} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
++ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
 \end{gathered}
 $$
 where:
@@ -13906,6 +13943,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -18367,30 +18413,6 @@ Average annual stock market return (10%)
 
 :::
 
-### Bed Nets Cost per DALY: $89 {#sec-bed_nets_cost_per_daly}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-GiveWell cost per DALY for insecticide-treated bed nets (midpoint estimate, range $78-100). DALYs (Disability-Adjusted Life Years) measure disease burden by combining years of life lost and years lived with disability. Bed nets prevent malaria deaths and are considered a gold standard benchmark for cost-effective global health interventions - if an intervention costs less per DALY than bed nets, it's exceptionally cost-effective. GiveWell synthesizes peer-reviewed academic research with transparent, rigorous methodology and extensive external expert review.
-
-**Source**: [@givewell-cost-per-life-saved]
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [$78, $100] • Distribution: Normal
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between $78 and $100 (±12%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
-
-#### Input Distribution
-
-{{< include ../figures/distribution-bed_nets_cost_per_daly.qmd >}}
-
-*✓ High confidence • 📊 Peer-reviewed*
-
-:::
-
 ### Cost per 5.56mm NATO Round (Bulk): $0.4 {#sec-bullet_cost_556_nato}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -18474,18 +18496,6 @@ Crowd accuracy on Who Wants to Be a Millionaire ask-the-audience lifeline. Studi
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
-
-*✓ High confidence*
-
-:::
-
-### Current Clinical Trial Participation Rate: 0.06% {#sec-current_clinical_trial_participation_rate}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Current clinical trial participation rate (0.06% of population)
-
-**Source**: [@clinical-trial-patient-participation-rate]
 
 *✓ High confidence*
 
@@ -18606,26 +18616,6 @@ Annual military sector lobbying spending. OpenSecrets reports the 2025 actual at
 {{< include ../figures/distribution-defense_lobbying_annual.qmd >}}
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2025*
-
-:::
-
-### Aerospace/Defense Net Profit Margin: 4.99% {#sec-defense_net_profit_margin}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Net profit margin for Aerospace/Defense industry (79 firms, Damodaran Jan 2026)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [4%, 6%]
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 4% and 6% (±20%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-#### Input Distribution
-
-{{< include ../figures/distribution-defense_net_profit_margin.qmd >}}
-
-*✓ High confidence*
 
 :::
 
@@ -18918,6 +18908,30 @@ Global median per-capita household income as measured by the Gallup World Poll (
 {{< include ../figures/distribution-gallup_global_median_income_per_capita.qmd >}}
 
 *~ Medium confidence*
+
+:::
+
+### GiveWell Cost per Life Saved (AMF, Highest Top-Charity Estimate): $5,500 {#sec-givewell_cost_per_life_max}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+GiveWell cost per life saved (Against Malaria Foundation). GiveWell estimates ~$3,000 to ~$8,000 per death averted across the locations where it funds AMF campaigns (as of December 2023).
+
+**Source**: [@givewell-cost-per-life-saved]
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$3,000, $8,000] • Distribution: Normal
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $3,000 and $8,000 (±45%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-givewell_cost_per_life_max.qmd >}}
+
+*✓ High confidence*
 
 :::
 
@@ -20183,26 +20197,6 @@ Median lifetime revenue per successful drug (study of 361 FDA-approved drugs 199
 
 :::
 
-### Pharmaceutical Net Profit Margin: 18.5% {#sec-pharma_net_profit_margin}
-
-::: {.callout-note collapse="true" title="📊 Details"}
-
-Net profit margin for Drugs (Pharmaceutical) industry (228 firms, Damodaran Jan 2026)
-
-#### Uncertainty Range
-
-**Technical**: 95% CI: [15%, 22%]
-
-**What this means**: This estimate has moderate uncertainty. The true value likely falls between 15% and 22% (±19%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
-
-#### Input Distribution
-
-{{< include ../figures/distribution-pharma_net_profit_margin.qmd >}}
-
-*✓ High confidence*
-
-:::
-
 ### Pharma ROI (Current System): 1.2% {#sec-pharma_roi_current_system_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -20260,6 +20254,26 @@ Phase I safety trial duration
 **Source**: [@bio-clinical-development-2021]
 
 *✓ High confidence • 📊 Peer-reviewed • Updated 2021*
+
+:::
+
+### Phase 2/3 Share of Clinical Trial Costs: 69% {#sec-phase_2_3_clinical_trial_cost_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Percentage of total clinical trial spending on Phase 2/3 efficacy testing (Phase 2: 24% + Phase 3: 45%)
+
+**Source**: [@global-clinical-trials-market-2024]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Normal (SE: 5%)
+
+#### Input Distribution
+
+{{< include ../figures/distribution-phase_2_3_clinical_trial_cost_pct.qmd >}}
+
+*✓ High confidence*
 
 :::
 

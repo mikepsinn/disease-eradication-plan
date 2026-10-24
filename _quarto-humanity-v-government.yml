@@ -5,7 +5,6 @@ project:
   resources:
     - knowledge/data/
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
   render:
@@ -19,8 +18,6 @@ dih-render:
   index-source: knowledge/appendix/humanity-v-government.qmd
   redirect-from: https://humanity-v-government.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org
-  netlify-site-id: ""  # TODO: create Netlify site and add ID
-  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true
   concept-terms:
     - term: "Negligent Mass Homicide"
@@ -41,13 +38,13 @@ author:
         url: https://warondisease.org
 
 website:
-  title: "The People of Earth v. Their Governments"
+  title: "Humanity v. Government"
   description: "An indictment for negligent mass homicide separating historical body counts from forward-looking treaty-settlement exposure, with a 1% military reallocation as the only remedy commensurate with the offense."
   site-url: https://manual.warondisease.org/knowledge/appendix/humanity-v-government.html
   favicon: assets/icons/humanity-v-government-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "[International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/humanity-v-government.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -73,17 +70,17 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "Mortality Accounting, Government Failure, Regulatory Economics, Public Choice"
   category: "Academic Paper, Public Policy, Political Science, Health Economics"
   coi-statement: "The author declares no competing interests beyond a vested interest in not being killed by any of the three counts described herein, an interest shared with the rest of the species."
   data-availability: "All parameters, formulas, and citations are publicly available at https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html"
   ethics-statement: "This paper does not involve human subjects. The defendants do, however, involve all of them."
-  funding: "This research received no funding. The defendants' research budget is approximately $97 trillion per year in opportunity cost."
+  funding: "This research received no funding. The defendants' research budget is approximately $101 trillion per year in opportunity cost."
   github-profile: "https://github.com/mikepsinn"
   linkedin: "https://www.linkedin.com/in/mikesinn"
   orcid-url: "https://orcid.org/0009-0006-0212-1094"
@@ -100,15 +97,14 @@ metadata:
     - clinical-trials
   version: "1.1"
   edition: "Working Paper"
-  copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
   issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
   source-url: "https://github.com/wishonia/earth-optimization-protocol"
@@ -126,7 +122,7 @@ metadata:
   # doi: ""
 
   open-graph: true
-  image: "https://manual.warondisease.org/assets/og/humanity-v-government-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og-images/knowledge/appendix/humanity-v-government-og-retro-academic.png"
 
   publishing:
     own-site:

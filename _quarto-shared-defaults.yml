@@ -57,10 +57,10 @@ metadata:
   human-author: "Mike P. Sinn"
 
   # Contact information
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
 
   # Academic profiles
   github-profile: "https://github.com/mikepsinn"
@@ -79,18 +79,17 @@ metadata:
   version: "0.9"
   edition: "Working Draft"
 
-  # Copyright and licensing
-  copyright: "© 2025 Mike P. Sinn"
+  # Licensing (copyright-year is the publication year citations use)
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
 
   # Publisher
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
 
   # Repository (default - can be overridden per project)
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
@@ -147,7 +146,7 @@ links:
   action:
     - label: "Vote"
       url: "https://WarOnDisease.org"
-      subtitle: "15 seconds. 38 lives saved."
+      subtitle: "15 seconds. 2.6 lives saved."
       icon: "fa-solid fa-check-to-slot"
       primary: true
   support:

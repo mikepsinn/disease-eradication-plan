@@ -6,7 +6,6 @@ project:
     - knowledge/data/
     - knowledge/appendix/presidential-commission-print.html
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
   # pre-render:
@@ -18,10 +17,22 @@ project:
 dih-render:
   index-source: index-manual.qmd  # Simple copy, no path transformation needed
   # No target-url - this IS the main book site
-  netlify-site-id: "4e36b0d6-9b80-49e2-bf16-eb4d2f79f062"
-  netlify-cname: "manual-warondisease-org.netlify.app"
-  # Strip "(95% CI: ...)" from variable display values for general-audience reading
+  cloudflare-pages-project: "warondisease-manual"
+  # Legacy hosts that redirect to one page of this site instead of its home page
+  page-redirects:
+    - from: https://links.warondisease.org
+      to: knowledge/links.html
+    - from: https://listen.warondisease.org
+      to: knowledge/podcast.html
+    - from: https://papers.warondisease.org
+      to: knowledge/papers.html
+  # Keep "(90% CI: ...)" in the HTML; site-enhancements.js hides it until the reader asks
   show-confidence-intervals: true
+  # Write page.llms.md beside each page for AI tools (scripts/lib/markdown_twins.py)
+  markdown-twins: true
+  # Quarto puts the book bibliography on the first page with a ::: {#refs} block.
+  # The appendix papers have one for their PDFs; this keeps it here (scripts/lib/page_citations.py).
+  references-page: knowledge/references.qmd
   # parameter-link-format defaults to html (links work in HTML, stripped by Lua filter for EPUB/PDF)
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
@@ -31,7 +42,7 @@ website:
 
 book:
   title: 'How to End War and Disease'
-  subtitle: "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia"
+  subtitle: "A Step-by-Step Guide to Optimizing Your Terrible Civilization"
   author:
     - name: Mike P. Sinn
       email: m@warondisease.org
@@ -39,7 +50,7 @@ book:
       affiliations:
         - name: "International Campaign to End War and Disease"
           url: https://warondisease.org
-  description: "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia"
+  description: "A Step-by-Step Guide to Optimizing Your Terrible Civilization"
   # cover-image: cover.jpg
   favicon: assets/icons/book-favicon.png
   site-url: https://manual.WarOnDisease.org
@@ -83,7 +94,7 @@ book:
           - href: knowledge/references.qmd
             text: "References & Citations"
   page-footer:
-    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[Get Manual](/knowledge/links.html) | [Listen](/knowledge/podcast.html) | [All Papers](/knowledge/papers.html)"
     right: "[Support](https://warondisease.org/donate) | [Vote](https://WarOnDisease.org)"
   chapters:
@@ -167,16 +178,18 @@ book:
         - knowledge/futures/moronia.qmd # ✅ Path A: Moronia ~10p
         - knowledge/futures/wishonia.qmd # ✅ Path B: Wishonia ~13p
         - knowledge/appendix/faq.qmd # ✅ Demolishing Objections ~15p
-        - knowledge/appendix/where-am-i-wrong.qmd # Full argument for the 1% treaty in one breath; FAQ with strongest known objections and refutations
+        - knowledge/appendix/bombs-vs-biotech-roi.qmd # Bombs vs. Biotechnology: sourced cost-benefit analysis with GDP channels, biotech margins, FAQ
 
     - part: "For Institutions"
       chapters:
         - knowledge/strategy/initiating-node-memo.qmd
         - knowledge/grant-proposal/earth-optimization-prize-90-day-pilot.qmd
-        - knowledge/grant-proposal/voter-acquisition-grant.qmd # Coordinator-model grant proposal template (GAVI benchmarks, voter targets, ask cadence)
+        - knowledge/grant-proposal/voter-acquisition-grant.qmd # Global survey grant proposal (five questions, $150K first-year budget, publication plan)
         - knowledge/operations/sff-application-draft.qmd # SFF application working draft (shareholder demand campaign + EOS equity); published:false working doc
         - knowledge/strategy/prize-institution-outreach-email.qmd
         - knowledge/strategy/ic2ewd-supporter-survey.qmd # IC2EWD supporter survey (A/B choice, complete case for endorsement)
+        - knowledge/strategy/survey-to-end-war-and-disease.qmd # The Survey to End War and Disease: hypothesis paper (five questions, predictions, benefits, calculations). Standalone paper config: _quarto-survey-to-end-war-and-disease.yml
+        - knowledge/strategy/survey-organization-kit.qmd # Organization terms for distributing the survey (unique link, anonymized report, recognition, compensation)
 
     - part: "The Plan"
       chapters:
@@ -230,13 +243,9 @@ book:
         - knowledge/appendix/love-letter.qmd # The warm, anyone-can-send letter to a defense contractor board ("I love you, I do not want you to suffer and die of horrible diseases"); friendly front door to the demand letter; one share upgrades it to a binding demand
         - knowledge/appendix/lawsuit.qmd # Master shareholder demand letter against defense contractor boards; Caremark 2.0 duty-of-care theory
         - knowledge/appendix/pre-filled-demand-letters.qmd # 8 per-contractor fact sheets (addresses, tickers, lobbying spend, filing forum) to plug into the master demand letter
-        - knowledge/appendix/board-member-research.qmd # Protocol for extracting CEO and board details from DEF 14A proxy statements to personalize the demand letter
-        - knowledge/appendix/counsel-outreach.qmd # Pro bono / contingency law firm list + pitch letter for recruiting plaintiff-side counsel
-        - knowledge/appendix/press-release.qmd # Press release template + journalist target list by beat for simultaneous distribution with the demand letter
-        - knowledge/appendix/plaintiff-media-kit.qmd # Op-ed template + social media kit + interview Q&A + T+60d follow-up press release
+        - knowledge/appendix/plaintiff-media-kit.qmd # Press release + journalist list + op-ed + social media kit + interview Q&A + T+60d follow-up
         - knowledge/appendix/filing-day-checklist.qmd # Single printable one-page checklist for filing day
         - knowledge/appendix/shareholder-proposal-14a-8.qmd # SEC Rule 14a-8 shareholder proposal template; escalation after the 60-day demand-letter window
-        - knowledge/appendix/litigation-phase.qmd # Post-response decision tree, derivative complaint structural template, settlement playbook
         # ── Escalation ──
         - knowledge/appendix/loving-takeover.qmd # ~$90/global human to buy controlling stake in Western defense primes; redirects lobbying to championing the 1% treaty. Loving because existing shareholders, employees, and directors are intended beneficiaries of the long-term strategy
 
@@ -281,6 +290,7 @@ book:
         - knowledge/appendix/dfda-spec-paper.qmd # Standalone paper config: _quarto-dfda-spec.yml
         - knowledge/appendix/earth-optimization-prize-protocol.qmd # Protocol spec for interoperable prize pools
         - knowledge/appendix/right-to-trial-fda-upgrade-act.qmd # Standalone paper config: _quarto-right-to-trial.yml
+        - knowledge/appendix/state-right-to-trial-impact.qmd
         - knowledge/appendix/drug-development-cost-analysis.qmd # Standalone paper config: _quarto-drug-development-cost.yml
         - knowledge/appendix/algorithmic-public-administration-paper.qmd # Standalone paper config: _quarto-algorithmic-public-administration.yml
         - knowledge/appendix/correcting-the-ais.qmd # LLM correction templates; chapter-only
@@ -291,12 +301,9 @@ book:
         # - knowledge/appendix/joke.qmd
         # - knowledge/appendix/notice-of-termination.qmd
         # - knowledge/appendix/lawsuit.qmd
-        # - knowledge/appendix/board-member-research.qmd
-        # - knowledge/appendix/counsel-outreach.qmd
-        # - knowledge/appendix/press-release.qmd
         # - knowledge/appendix/loving-takeover.qmd
         # MOVED to "For Skeptics" part:
-        # - knowledge/appendix/where-am-i-wrong.qmd
+        # - knowledge/appendix/bombs-vs-biotech-roi.qmd
 
     - part: "References"
       chapters:
@@ -320,10 +327,10 @@ metadata:
   human-author: "Mike P. Sinn"
 
   # Author contact information
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   
   # Bibliographic metadata
   # title: Removed - each page defines its own title in frontmatter
@@ -347,16 +354,16 @@ metadata:
   # Copyright and licensing
   copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
   # rights: moved to EPUB copyright page - Pandoc puts Dublin Core 'rights' on the title page
-  # rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  # rights: "Creative Commons Attribution 4.0 International License"
   
   # Publication information
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   
   # Repository information
   repo-url: "https://github.com/mikepsinn"
@@ -432,12 +439,12 @@ links:
       primary: true
   buy:
     - label: "Amazon Paperback"
-      url: "https://www.amazon.com/dp/B0GPLXFMMT"
+      url: "https://warondisease.org/amazon/paperback"
       subtitle: "Ink on murdered tree, delivered to your dwelling"
       icon: "fa-brands fa-amazon"
       primary: true
     - label: "Amazon Kindle"
-      url: "https://www.amazon.com/dp/B0GPBH77XN"
+      url: "https://warondisease.org/amazon/ebook"
       subtitle: "Beamed directly into your glowing rectangle"
       icon: "fa-brands fa-amazon"
     - label: "All Retailers"

@@ -712,6 +712,9 @@ def generate_survey(
     # Select top N for survey
     selected_params = ranked_params[:top_n]
 
+    def fmt(name: str) -> str:
+        return format_parameter_value(parameters[name]["value"])
+
     # Generate questions for each parameter
     survey = {
         "metadata": {
@@ -725,12 +728,12 @@ def generate_survey(
             "version_date": "2025-12-12"
         },
         "introduction": {
-            "overview": "This survey validates the economic model for a proposed 1% Global Health Security Treaty that would redirect 1% of global military spending ($113.5B/year) to medical research and clinical trial infrastructure.",
+            "overview": f"This survey validates the economic model for a proposed 1% Global Health Security Treaty that would redirect 1% of global military spending ({fmt('TREATY_ANNUAL_FUNDING')}/year) to medical research and clinical trial infrastructure.",
             "main_claims": [
-                "416 million lives saved over 50 years through accelerated drug development",
-                "Cost-effectiveness: $27 per DALY averted (3.3x better than bed nets at $89/DALY)",
-                "ROI: 450x return on R&D savings alone (10-year NPV, most conservative estimate)",
-                "Political feasibility: 1-10% success probability over 20 years"
+                f"{fmt('DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_LIVES_SAVED')} averted by treatments arriving {fmt('DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_YEARS')} sooner on average",
+                f"Cost-effectiveness: {fmt('TREATY_COST_PER_DALY_TRIAL_CAPACITY_PLUS_EFFICACY_LAG')} per DALY averted, DALYs discounted at the standard rate ({fmt('TREATY_VS_BED_NETS_MULTIPLIER')} better than bed nets at {fmt('BED_NETS_COST_PER_DALY')}/DALY)",
+                f"ROI: {fmt('DFDA_ROI_RD_ONLY')} return on R&D savings alone (10-year NPV, most conservative estimate)",
+                f"Political feasibility: {fmt('POLITICAL_SUCCESS_PROBABILITY')} central success probability"
             ],
             "your_role": "As an economist, you're being asked to validate the parameters, calculations, and assumptions underlying these claims. Your feedback will be used to refine the model and strengthen the economic case for the treaty.",
             "survey_structure": [

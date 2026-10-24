@@ -5,7 +5,6 @@ project:
   resources:
     - knowledge/data/
     - assets/
-    - _redirects
     - robots.txt
     - llms.txt
   render:
@@ -20,10 +19,6 @@ dih-render:
   redirect-from: https://wager.warondisease.org
   fallback-404-redirect-domain: https://manual.WarOnDisease.org  # Redirects here if path doesn't exist on this site
   pdf-output-file: wishonias-wager.pdf
-  # TODO: create a dedicated Netlify site and replace this ID before first deploy.
-  # Until then this points at the shared manual site app so local renders succeed.
-  netlify-site-id: "REPLACE_WITH_NEW_NETLIFY_SITE_ID"
-  netlify-cname: "manual-warondisease-org.netlify.app"
   show-confidence-intervals: true  # Show 95% CI ranges for calculated values in academic papers
   # Image generation prompts (used by scripts/images/generate-project-branding-images.ts)
   favicon-prompt: "An infinity symbol balanced on a coin, black outline on white."
@@ -48,7 +43,7 @@ website:
   favicon: assets/icons/wishonias-wager-favicon.png
   page-navigation: true
   page-footer:
-    left: "© 2025 [International Campaign to End War and Disease](https://warondisease.org) | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)"
+    left: "[International Campaign to End War and Disease](https://warondisease.org) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)"
     center: "[PDF](/wishonias-wager.pdf) | [All Papers](https://manual.warondisease.org/knowledge/papers.html)"
     right: "[VOTE](https://WarOnDisease.org)"
   navbar:
@@ -78,10 +73,10 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
   author-website: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "Decision Theory, Philosophy of Religion, Expected-Value Reasoning, Longevity, Applied Ethics"
   category: "Academic Paper, Philosophy, Decision Theory"
@@ -105,15 +100,14 @@ metadata:
     - pragmatic-argument
   version: "1.0"
   edition: "Working Paper"
-  copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
-  rights: "Creative Commons Attribution-NonCommercial 4.0 International License"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
+  rights: "Creative Commons Attribution 4.0 International License"
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   repo-url: "https://github.com/wishonia/earth-optimization-protocol"
   issue-url: "https://github.com/wishonia/earth-optimization-protocol/issues"
   source-url: "https://github.com/wishonia/earth-optimization-protocol"
@@ -132,7 +126,7 @@ metadata:
 
   # Open Graph metadata
   open-graph: true
-  image: "https://manual.warondisease.org/assets/og/wishonias-wager-og-1200x630.jpg"
+  image: "https://manual.warondisease.org/assets/og-images/knowledge/proof/wishonias-wager-og-bw-academic.jpg"
 
   # Publication tracking
   publishing:

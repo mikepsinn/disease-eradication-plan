@@ -13,10 +13,12 @@ dih-render:
   docx-output-file: "How-to-End-War-and-Disease-Paperback.docx"
   favicon-prompt: "A white SKULL with a prohibition sign (red circle with diagonal line) through it and black outlines"
   strip-bib-fields: [abstract, note]
+  # The book goes to KDP, not Zenodo
+  zenodo: false
 
 # Podcast-specific overrides (used by generate_audiobook.py RSS generation)
 dih-podcast:
-  author: "Wishonia"
+  author: "Wishonia Love"
   podcast-description: |
     I've been watching your planet since 1945. You spend 604 times more
     on your capacity for mass murder than on testing which medicines work. This is a manual
@@ -36,13 +38,13 @@ dih-podcast:
     paint chips with food until they forget paint chips were ever an
     option.
 
-    The universe is literally offering you infinite money and eternal
-    life, and you're thinking about it. This is why aliens don't visit.
+    The universe is offering you a world without war and disease, and
+    you're thinking about it. This is why aliens don't visit.
   description-suffix: "Vote to redirect 1% of the murder budget to medicine. It takes 15 seconds and mass participation makes the treaty politically unavoidable.\n\nhttps://warondisease.org"
 
 book:
   title: 'How to End War and Disease'
-  subtitle: "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia"
+  subtitle: "A Step-by-Step Guide to Optimizing Your Terrible Civilization"
   author:
     - name: Mike P. Sinn
       email: m@warondisease.org
@@ -50,7 +52,7 @@ book:
       affiliations:
         - name: "International Campaign to End War and Disease"
           url: https://warondisease.org
-  description: "The Complete Idiot's Guide to Legally Bribing Your Way to Utopia"
+  description: "A Step-by-Step Guide to Optimizing Your Terrible Civilization"
   site-url: https://manual.WarOnDisease.org
   chapters:
     - index.qmd
@@ -163,9 +165,9 @@ metadata:
   primary-author: "Mike P. Sinn"
   byline: "Mike P. Sinn"
   human-author: "Mike P. Sinn"
-  author-email: "mike@warondisease.org"
+  author-email: "m@warondisease.org"
   author-url: "https://mikesinn.com"
-  contact: "mike@warondisease.org"
+  contact: "m@warondisease.org"
   language: "en-US"
   subject: "Public Health, Medical Research, Peace Economics, Health Economics, Policy Reform"
   category: "Non-fiction, Public Policy, Health Economics, Peace Studies"
@@ -174,12 +176,12 @@ metadata:
   edition: "First Edition"
   copyright: "© 2025 Mike P. Sinn"
   copyright-year: "2025"
-  license: "CC BY-NC 4.0"
-  license-url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  license: "CC BY 4.0"
+  license-url: "https://creativecommons.org/licenses/by/4.0/"
   publisher: "International Campaign to End War and Disease"
   publisher-url: "https://warondisease.org"
   publisher-name: "Mike P. Sinn"
-  publisher-email: "mike@warondisease.org"
+  publisher-email: "m@warondisease.org"
   geographic-coverage: "Global"
   audience: "General Public, Policy Makers, Investors, Healthcare Professionals, Researchers"
   format: "Book"
@@ -197,7 +199,7 @@ metadata:
   open-graph: true
   image: "https://manual.WarOnDisease.org/assets/og/manual-paperback-og-1200x630.jpg"
   orcid-url: "https://orcid.org/0009-0006-0212-1094"
-  rights: Creative Commons Attribution-NonCommercial 4.0 International License
+  rights: Creative Commons Attribution 4.0 International License
   twitter-creator: "https://x.com/warondisease"
   twitter-site: "https://x.com/warondisease"
   bibliography:
@@ -210,7 +212,10 @@ format:
     filters:
       - scripts/filters/epub-transforms.lua
     output-file: "How-to-End-War-and-Disease.epub"
-    epub-cover-image: assets/cover/book-cover-3.jpg
+    epub-cover-image: assets/cover/h2ewd-epub-1600x2400.jpg
+    # Store metadata: Wishonia Love (author) and Mike P. Sinn (translator).
+    # See the author override in scripts/filters/epub-transforms.lua.
+    epub-metadata: assets/epub-metadata.xml
     html-math-method:
       method: webtex
       url: "https://latex.codecogs.com/svg.latex?"
@@ -223,7 +228,7 @@ format:
   docx:
     output-file: "How-to-End-War-and-Disease-Paperback.docx"
     author:
-      - "By Wishonia"
+      - "By Wishonia Love"
       - "Translated by Mike P. Sinn"
     fig-format: png
     toc: true
@@ -241,7 +246,7 @@ format:
     colorlinks: false  # Print-friendly: no colored links
     link-citations: true
     date: ""
-    author: "Wishonia (translated by Mike P. Sinn)"
+    author: "Wishonia Love (translated by Mike P. Sinn)"
     include-in-header:
       - callout-bw.tex
       - institute-header.tex

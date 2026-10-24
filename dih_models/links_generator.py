@@ -168,6 +168,7 @@ aliases:
   - /links
 podcast-image: /assets/podcast/links-podcast.jpg
 youtube-thumbnail: /assets/podcast/links-youtube.jpg
+image: /assets/og-images/knowledge/links-og-bw-academic.jpg
 ---
 
 ```{{=html}}
@@ -231,6 +232,7 @@ aliases:
   - /listen
 podcast-image: /assets/podcast/podcast-podcast.jpg
 youtube-thumbnail: /assets/podcast/podcast-youtube.jpg
+image: /assets/og-images/knowledge/podcast-og-bw-academic.jpg
 ---
 
 ```{{=html}}

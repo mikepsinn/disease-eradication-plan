@@ -9,6 +9,7 @@ aliases:
   - /links
 podcast-image: /assets/podcast/links-podcast.jpg
 youtube-thumbnail: /assets/podcast/links-youtube.jpg
+image: /assets/og-images/knowledge/links-og-bw-academic.jpg
 ---
 
 ```{=html}
@@ -80,14 +81,14 @@ youtube-thumbnail: /assets/podcast/links-youtube.jpg
 <div class="links-page">
 
 <div class="tagline">
-  The Complete Idiot's Guide to Legally Bribing Your Way to Utopia<br><br>
+  A Step-by-Step Guide to Optimizing Your Terrible Civilization<br><br>
 </div>
 
 <h2>Do Something (15 Seconds)</h2>
 
 <a href="https://WarOnDisease.org" class="link-btn primary">
   <i class="fa-solid fa-check-to-slot" aria-hidden="true"></i> Vote
-  <span class="btn-sub">15 seconds. 38 lives saved.</span>
+  <span class="btn-sub">15 seconds. 2.6 lives saved.</span>
 </a>
 
 <h2>Skull Vibration Ports</h2>
@@ -99,12 +100,12 @@ youtube-thumbnail: /assets/podcast/links-youtube.jpg
 
 <h2>Murdered Trees</h2>
 
-<a href="https://www.amazon.com/dp/B0GPLXFMMT" class="link-btn primary">
+<a href="https://warondisease.org/amazon/paperback" class="link-btn primary">
   <i class="fa-brands fa-amazon" aria-hidden="true"></i> Amazon Paperback
   <span class="btn-sub">Ink on murdered tree, delivered to your dwelling</span>
 </a>
 
-<a href="https://www.amazon.com/dp/B0GPBH77XN" class="link-btn">
+<a href="https://warondisease.org/amazon/ebook" class="link-btn">
   <i class="fa-brands fa-amazon" aria-hidden="true"></i> Amazon Kindle
   <span class="btn-sub">Beamed directly into your glowing rectangle</span>
 </a>

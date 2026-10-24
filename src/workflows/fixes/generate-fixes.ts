@@ -5,7 +5,7 @@
  */
 
 import "dotenv/config";
-import { WishoniaVoltAgent } from "../../agents/wishonia-voltagent";
+import { WISHONIAVoltAgent } from "../../agents/wishonia-voltagent";
 import { writeFile, readFile } from "fs/promises";
 import { EnhancedTodo } from "../../agents/todo-manager-enhanced";
 
@@ -89,7 +89,7 @@ async function main() {
   // Check if we should run a full scan first
   if (options.full) {
     console.log("Running full scan...");
-    const wishonia = new WishoniaVoltAgent();
+    const wishonia = new WISHONIAVoltAgent();
     await wishonia.init();
     await wishonia.processAllFiles();
     console.log("✅ Full scan complete\n");

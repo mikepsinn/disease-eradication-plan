@@ -1,6 +1,6 @@
 # WISHONIA Agent System
 
-WISHONIA (WISdom and Health Optimization Network Intelligence Agent) is a superintelligent AI economist agent that systematically perfects the book by finding issues, validating content, and maintaining a comprehensive todo list.
+WISHONIA is an alien economist who systematically perfects the book by finding issues, validating content, and maintaining a comprehensive todo list.
 
 ## Overview
 
@@ -73,7 +73,7 @@ WISHONIA tracks review status using frontmatter hash fields:
 - `lastClaimValidationHash`
 - `lastReferenceLinkingHash`
 - `lastConsistencyCheckHash`
-- `lastWishoniaFullReviewHash`
+- `lastWISHONIAFullReviewHash`
 
 ## Integration with Git
 
@@ -105,10 +105,10 @@ The system uses VoltAgent with:
 You can create custom workflows by importing the components:
 
 ```typescript
-import { WishoniaVoltAgent } from "./wishonia-voltagent";
+import { WISHONIAVoltAgent } from "./wishonia-voltagent";
 import { EnhancedTodoManager } from "./todo-manager-enhanced";
 
-const wishonia = new WishoniaVoltAgent();
+const wishonia = new WISHONIAVoltAgent();
 await wishonia.init();
 await wishonia.processFile("path/to/file.qmd");
 ```

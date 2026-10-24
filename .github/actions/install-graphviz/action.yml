@@ -1,0 +1,26 @@
+name: Install Graphviz
+description: >-
+  Install Graphviz with time-capped, retried apt calls. An uncapped
+  apt-get once held three paper jobs in this step for over 40 minutes, and a
+  job without its own limit can wait 6 hours.
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        # apt rebuilds the man-db index after every install; nothing here reads man pages
+        sudo rm -f /var/lib/man-db/auto-update
+        apt_opts=(-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30)
+        for attempt in 1 2 3; do
+          if timeout 180 sudo apt-get "${apt_opts[@]}" update -qq &&
+             timeout 300 sudo apt-get "${apt_opts[@]}" install -y graphviz; then
+            dot -V
+            exit 0
+          fi
+          echo "::warning::Graphviz install attempt $attempt failed or stalled"
+          # A killed apt can leave dpkg half-configured for the next attempt
+          sudo dpkg --configure -a || true
+          sleep 10
+        done
+        echo "::error::Graphviz did not install after 3 attempts"
+        exit 1

@@ -94,8 +94,8 @@ def extract_paper_citation_info(config_path: Path, config_name: str) -> Optional
     if not doi:
         return None  # Skip papers without DOI
 
-    # Get author info from config.author list
-    authors = config.get("author", [])
+    # Get author info from config.author list (book-type configs nest it under book)
+    authors = config.get("author") or (config.get("book") or {}).get("author", [])
     author_name = None
 
     if isinstance(authors, list) and authors:
@@ -225,6 +225,11 @@ def needs_update(existing: Dict[str, Any], new_metadata: Dict[str, Any]) -> bool
 
     # Compare DOI
     if existing.get("doi", "").lower() != new_metadata.get("doi", "").lower():
+        return True
+
+    # Compare institution. Generated entries are @techreport with no journal or
+    # publisher, so the parser reports their institution as "source".
+    if normalize(existing.get("source", "")) != normalize(new_metadata.get("institution", "")):
         return True
 
     # Check for junk in note field that needs cleaning

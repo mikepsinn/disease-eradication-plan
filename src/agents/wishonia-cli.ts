@@ -5,7 +5,7 @@
  */
 
 import "dotenv/config";
-import { WishoniaVoltAgent } from "./wishonia-voltagent";
+import { WISHONIAVoltAgent } from "./wishonia-voltagent";
 
 async function main() {
   const args = process.argv.slice(2);
@@ -25,7 +25,7 @@ async function main() {
 
   console.log("\n🧠 WISHONIA - WISdom and Health Optimization Network Intelligence Agent\n");
 
-  const wishonia = new WishoniaVoltAgent();
+  const wishonia = new WISHONIAVoltAgent();
   await wishonia.init();
 
   try {

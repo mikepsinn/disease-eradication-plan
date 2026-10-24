@@ -399,7 +399,7 @@ def generate_upload_instructions(
         f"{album}",
         f"",
         f"### Subtitle",
-        f"The Complete Idiot's Guide to Legally Bribing Your Way to Utopia",
+        "A Step-by-Step Guide to Optimizing Your Terrible Civilization",
         f"",
         f"### Author",
         f"{artist}",

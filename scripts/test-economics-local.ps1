@@ -42,7 +42,7 @@ Write-Host "  1. Pull Docker image (first time only, ~2GB)" -ForegroundColor Yel
 Write-Host "  2. Install Python dependencies in container" -ForegroundColor Yellow
 Write-Host "  3. Render economics site (HTML + PDF)" -ForegroundColor Yellow
 Write-Host "  4. Upload artifacts (viewable in ./act-artifacts/)" -ForegroundColor Yellow
-Write-Host "  5. Skip Netlify deployment (no secrets in local test)" -ForegroundColor Yellow
+Write-Host "  5. Skip deployment (no secrets in local test)" -ForegroundColor Yellow
 Write-Host ""
 Write-Host "This may take 15-30 minutes on first run..." -ForegroundColor Yellow
 Write-Host ""

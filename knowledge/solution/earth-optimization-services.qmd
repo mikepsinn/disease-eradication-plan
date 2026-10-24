@@ -1,5 +1,6 @@
 ---
 title: Earth Optimization Services
+image: /assets/og-images/knowledge/solution/earth-optimization-services-og-bw-academic.jpg
 description: "Suboptimal governance costs you $12,600 a year and will get you and everyone you love tortured and murdered by diseases that have no cure because the money that would have found one is a missile. Earth Optimization Services fixes this."
 published: true
 tags:
@@ -15,15 +16,11 @@ scores:
   standalone: 8
   voice: 8
   importance: 9
-audience: "A cold stranger who has never heard of any of this. They are about to become the President of Earth Optimization Services."
-feel: "This is the most serious thing I have ever read, delivered by the most cheerful salesman I have ever met, and the math checks out."
-do: "Buy Class B shares, or claim your free Class A share, or fund a task on the TODO list. In that order."
+audience: "A cold stranger who has never heard of any of this."
+feel: "I understand the concept: calculate optimal policies and budgets, build optimized institutions, use shareholder activism to gain board seats on corporations that influence government through lobbying, decentralize control back to everyone through Class A shares, Wishocracy, and direct democracy, and ensure all lobbying promotes the general welfare and protects rights to life, liberty, and pursuit of happiness. I understand the benefits: if it doesn't work, you just bought an ETF; if it does, civilization-scale optimization. I understand how to go about creating it."
+do: "Start building Earth Optimization Services."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-
-Has your species developed nuclear weapons, antibiotics, and the internet, and then pointed two of those three at each other?
-
-You may be eligible for optimization.
 
 ## The Bill
 
@@ -31,29 +28,25 @@ Suboptimal governance is costing you {{< var political_dysfunction_tax_per_perso
 
 That is {{< var political_dysfunction_tax_per_household_of_four_annual >}} per household of four. Over a lifetime, it is the difference between the life you have and a life where you are {{< var wishonia_trajectory_lifetime_income_gain_per_capita >}} richer and decades of disease never happen to you or anyone you love.
 
-This is not a metaphor. {{< var global_annual_deaths_curable_diseases >}} people die every year of diseases that have no cure, not because the cures are impossible, but because the clinical trials that would have found them were never funded. The money became missiles instead. Your governments spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the ability to kill people for every dollar spent on clinical trials that might cure what is actually going to kill you. Your chance of being killed by a foreign army: 1 in 30 million. Your chance of dying of a disease: approximately 100%.
+{{< var global_annual_deaths_curable_diseases >}} people die every year of diseases that have no cure, not because the cures are impossible, but because the clinical trials that would have found them were never funded. The money became missiles instead. Your governments spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the ability to kill people for every dollar spent on clinical trials that might cure what is actually going to kill you. Your chance of being killed by a foreign army: 1 in 30 million. Your chance of dying of a disease: approximately 100%.
 
 I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases.
 
-That is why this store exists.
-
 ## The Store
 
-Earth Optimization Services is a company that buys the companies that control your government, uses hundreds of years of data from 193 countries to determine the policies and budgets that maximize two numbers (median health-adjusted life expectancy and median after-tax inflation-adjusted income), and then uses shareholder rights to make those companies' lobbyists implement the policies that are in the best interests of their shareholders, the corporations' profits, and the general welfare, making everyone richer and significantly less dead.
+Earth Optimization Services is a company. It uses hundreds of years of data from 193 countries to calculate the policies and budgets that maximize two numbers: median health-adjusted life expectancy and median after-tax inflation-adjusted income. It builds the institutions that steer by those numbers. It buys shares in the companies whose lobbyists write your laws. The shares come with votes. The votes make the lobbyists push the optimal policies instead. Those policies pay the companies and their shareholders better than the current ones do, and make everyone else richer and significantly less dead. Every person on Earth gets one free share with one vote.
 
 Universe Optimization Services has been upgrading civilizations since before your sun ignited. Over 300 planets optimized. 100% satisfaction rate among clients who got started. Clients who did not get started are not available for comment, as they are not available for anything. Some are available for mining rights.
 
 Earth Optimization Services is our regional branch. Same proven technology. Smaller market. More shouting. It brings the standard package to your small blue planet, including a dramatic reduction in the number of times your civilization can end itself. Currently: {{< var nuclear_winter_overkill_factor_nounit >}}. Recommended: no more than one, as the other endings are mainly decorative.
 
-You are the President of Earth Optimization Services. So is every other reader. You each get a free Class A share with one civic vote. If you want returns, buy Class B shares. Your money buys a share of the profit, not extra votes or governance. You cannot buy the steering wheel, no matter how many shares you own, because selling the steering wheel is the problem we are solving.
+You are the President of Earth Optimization Services. As you are very busy, you also get eight billion assistant presidents. Your Class A share is free and comes with one civic vote. If you want returns, buy Class B shares. Your money buys a share of the profit, not extra votes or governance. You cannot buy the steering wheel, no matter how many shares you own, because selling the steering wheel is how your government got this way.
 
-The downside: you own shares of the companies that currently control your government. They have paid dividends through every war and recession in living memory. The floor is "you accidentally bought an ETF with no fees."
+The downside: you own shares of the companies that currently control your government. They have paid dividends through every war and recession in living memory. The floor is "you accidentally bought an ETF."
 
-The upside: most products on your planet come with one benefit. A toaster makes toast. A car moves you from the place you do not want to be to the place you do not want to go. This product has the unusual property of making nearly everything else you own more valuable at the same time. The economy gets {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} larger by year 20. The companies you own capture that growth. Your taxes fall. Your other investments rise. Disease stops eating {{< var disease_burden_gdp_drag_pct >}} of GDP. You live longer to enjoy it.
+The upside: most products on your planet come with one benefit. A toaster makes toast. This product has the unusual property of making nearly everything else you own more valuable at the same time. The economy gets {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}} larger by year 20. The companies you own capture that growth. Your taxes fall. Your other investments rise. Disease stops eating {{< var disease_burden_gdp_drag_pct >}} of GDP. You live longer to enjoy it.
 
 ## Featured Products
-
-The decentralized TODO list for humanity is the product. The root task is Optimize Earth. Everything below is a subtask. Each task has a calculated expected value in health and wealth. You can fund any task (pledge money; it executes when enough people commit, like a group purchase) or do it yourself.
 
 ### The Optimal Policy Generator
 
@@ -63,13 +56,11 @@ The decentralized TODO list for humanity is the product. The root task is Optimi
 
 Your planet has 10,000 jurisdictions, each trying slightly different policies. Some produce healthy, wealthy citizens. Others produce the opposite. Right now, you determine which is which by having politicians argue on television. The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) [@opg-paper-2025] replaces the arguing with counting.
 
-It examines what every jurisdiction tried and what happened next. Synthetic controls, difference-in-differences, regression discontinuity. Not opinion. Not ideology. Measurement. Output: ENACT / REPLACE / REPEAL / MAINTAIN. Each recommendation scored on the two numbers.
+It examines what every jurisdiction tried and what happened next. Output: ENACT / REPLACE / REPEAL / MAINTAIN. Each recommendation scored on the two numbers.
 
 Its current highest-expected-value recommendation is the [1% Treaty](1-percent-treaty.qmd) [@1-percent-treaty-paper-2025] [@1-pct-treaty-impact-paper-2025]: move 1% of every nation's weapons budget to clinical trials. Everyone cuts equally. Nobody is easier to invade. Disease eradication goes from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. The average treatment arrives {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} people who would have died do not.
 
-Your governments have signed treaties banning chemical weapons (193 countries), biological weapons (187), and landmines (164). This one asks them to buy 1% fewer weapons and spend the savings on figuring out why everyone keeps dying. Pre-WW2 military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today, inflation-adjusted. They still won World War II. Then they cut spending {{< var post_ww2_military_cut_pct >}} in two years and walked into the greatest economic expansion in history. One percent should be manageable.
-
-*"We spent 4,000 years debating education policy. The Optimal Policy Generator resolved it in an afternoon. Our main regret is the 4,000 years." (Planet Keth-7, client since 8,000 BCE)*
+Your governments have signed treaties banning chemical weapons (193 countries), biological weapons (187), and landmines (164). This one requires them to buy 1% fewer weapons and spend the savings on figuring out why everyone keeps dying. Pre-WW2 military spending was {{< var us_1939_military_spending_pct_lower_than_current >}} lower than today, inflation-adjusted. They still won World War II. Then they cut spending {{< var post_ww2_military_cut_pct >}} in two years and walked into the greatest economic expansion in history. One percent should be manageable.
 
 ### The Optimal Budget Generator
 
@@ -79,7 +70,7 @@ Your governments have signed treaties banning chemical weapons (193 countries), 
 
 The [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) [@obg-paper-2025] finds the largest misallocations first. The current largest: clinical trial funding sits at roughly 1% of its optimal level. The money that should be finding cures is sitting in the weapons budget, where it purchases the ability to end civilization {{< var nuclear_winter_overkill_factor_nounit >}} times. You can only end civilization once. The other {{< var nuclear_winter_spare_apocalypses_nounit >}} endings are in storage, costing money, doing nothing.
 
-Output: an optimal budget for every jurisdiction on Earth, updated continuously, scored on the two numbers. Hand it to a lobbyist. The lobbyist hands it to Congress. The math does the selling.
+Output: an optimal budget for every jurisdiction on Earth, updated continuously, scored on the two numbers. Hand it to a lobbyist. The lobbyist hands it to Congress.
 
 ### The Decentralized TODO List for Humanity
 
@@ -87,15 +78,11 @@ Output: an optimal budget for every jurisdiction on Earth, updated continuously,
 
 **Retail price:** Free to use. Pays to complete. **Currently paying:** Nobody is doing this.
 
-Every product in this catalog produces tasks. The 1% Treaty needs signatures. The [Decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] needs trial participants. The [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] needs votes. The code needs engineers. The campaigns need organizers. Right now, these tasks are scattered across websites, inboxes, and good intentions. Nobody knows which task has the highest expected value or who could complete it at the lowest cost.
+Every product produces tasks. The 1% Treaty needs signatures. The [Decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] needs trial participants. The [Wishocracy](wishocracy.qmd) [@wishocracy-paper-2025] needs votes. The code needs engineers. The campaigns need organizers. Right now, these tasks are scattered across websites, inboxes, and good intentions. Nobody knows which task has the highest expected value or who could complete it at the lowest cost.
 
 The TODO list computes both. It calculates the expected value of every action (signatures, code contributions, trial enrollment, lobbying visits, social shares) in health and wealth, and identifies the lowest-cost actor for each one. Your doctor is the lowest-cost actor for enrolling patients. Your senator's constituent is the lowest-cost actor for a lobbying visit. You are the lowest-cost actor for something, and the machine knows what it is.
 
 If you sign up, you get your own subtask: Optimize [Your Name]'s Life. If you add your organization, it gets one too: Optimize [Your Organization]. These nest under the root. The whole thing is one tree, from "Optimize Earth" down to "take your medication."
-
-In the long run, governments become irrelevant. AI agents execute the TODO list directly. The optimal policies and budgets get implemented because the math is public and the agents do not need to be lobbied. Until then, we lobby.
-
-The TODO list is live at optimitron.com/tasks.
 
 ### The Loving Takeover
 
@@ -103,15 +90,11 @@ The TODO list is live at optimitron.com/tasks.
 
 **Retail price:** {{< var defense_takeover_cost_total >}} for the full takeover. **You receive:** Voting shares in the companies whose lobbying writes your laws.
 
-The companies that build your weapons are, by any rational accounting, bad at being companies. They pay their best engineers to shrink the economy they sell into. Their shareholders get the same diseases as everyone else. Their CEO's mother has Parkinson's, and there is no trial because the money that would have funded it is currently a missile. They are spending money to make themselves poorer, sicker, and eventually dead. This is not an adversary. This is a company in need of better management.
+The companies that build your weapons are, by any rational accounting, bad at being companies. Every dollar of weapons spending generates {{< var economic_multiplier_military_spending >}} in economic output [@military-spending-economic-multiplier]. The same dollar in healthcare generates {{< var economic_multiplier_healthcare_investment >}} [@healthcare-investment-economic-multiplier]. They are paying their best engineers to turn dollars into sixty-cent pieces. Their shareholders get the same diseases as everyone else. Their CEO's mother has Parkinson's, and there is no trial because the money that would have funded it is currently a missile. They are spending money to make themselves poorer, sicker, and eventually dead. This is a company in need of better management.
 
-You [buy shares](../appendix/loving-takeover.qmd). Shares come with voting rights. Voting rights let you hand the lobbyists an optimal budget calculated by the Optimal Budget Generator to maximize health and wealth. The engineers switch from guidance systems to surgical robots. Same math. Fewer craters. The shareholders get appreciation in a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. The CEO's mother gets her Parkinson's trial. The lobbyists get a raise. Nobody loses anything. The previous arrangement was losing money for everyone in it simultaneously, which is harder than it sounds.
+You [buy shares](../appendix/loving-takeover.qmd). Shares come with voting rights. Voting rights let you hand the lobbyists an optimal budget calculated by the Optimal Budget Generator to maximize health and wealth. The companies invest in things that make the economy larger instead of things that make it smaller. The shareholders get appreciation in a {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}}-larger economy. The lobbyists get a raise. Nobody loses anything.
 
-In 2021, twelve people with $12.5 million and 0.02% of ExxonMobil won three seats on its board. Vanguard and BlackRock, who own roughly 60%, voted with them. The argument was: your strategy is destroying the value of the people who own this company. Board seats across the military-industrial complex cost {{< var defense_takeover_cost_activist >}} ({{< var defense_takeover_cost_activist_pct_investable_assets >}} of the money invested on Earth).
-
-We call this a [Loving Takeover](../appendix/loving-takeover.qmd) because, on most planets, the word for "everyone involved ends up better off" is just "love."
-
-*"We were initially resistant. Then our chief weapons designer's daughter was cured of a disease he had been told was untreatable. He now runs our largest medical robotics division. He makes more money. He sleeps better. He stopped changing the subject at parties." (Military sector client, Spiral Arm 4)*
+In 2021, Engine No. 1 won three seats on ExxonMobil's board with 0.02% of its shares and redirected a $400 billion oil company toward carbon capture and lower-carbon energy. Vanguard and BlackRock, who own roughly 60%, voted with them. Board seats across the military-industrial complex cost {{< var defense_takeover_cost_activist >}} ({{< var defense_takeover_cost_activist_pct_investable_assets >}} of the money invested on Earth).
 
 ### Wishocracy
 
@@ -125,23 +108,17 @@ Your current system: you elect representatives. The representatives are purchase
 
 On *Who Wants to Be a Millionaire*, the studio audience picked the right answer {{< var crowd_decision_accuracy >}} of the time. The expert? {{< var expert_decision_accuracy >}}. Your entire government is phone-a-friend. This is ask-the-audience.
 
-*"Our representatives argued about healthcare allocation for 60 years. We switched to direct allocation. The citizens funded the same research the representatives had been blocking. The representatives became life coaches. The career transition was seamless." (Long-term client, Local Group)*
-
 ## The Government Replacement Suite
 
 Most planets also order these. Each one replaces a government agency with software that does not accept campaign contributions, does not have a revolving door, and does not need 80,000 employees to perform arithmetic.
 
 Every price is anchored to the most similar machine you already run. Every assumption carries its uncertainty through the arithmetic. The few humans who remain are there to sign their names, because someone must be arrestable.
 
-The dysfunction this suite replaces invoices every human {{< var political_dysfunction_tax_per_person_annual >}} per year, {{< var political_dysfunction_tax_per_household_of_four_annual >}} per household of four. You have been paying for the deluxe package all along. It was just pointed at you.
-
 #### [Decentralized FDA](dfda.qmd)
 
 **Replaces:** Your drug approval agency, which blocks safe treatments for an average of 12 years after safety is established. **Retail price:** {{< var recovery_trial_cost_per_patient >}}/patient. **Currently paying:** {{< var traditional_phase3_cost_per_patient >}}/patient.
 
 An [open protocol](dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025] that connects treatments to patients and records outcomes automatically. Drug inserts (the pamphlet nobody reads, written by the company selling the drug) are replaced with Outcome Labels: real-world data from millions of patients showing what actually happened. The UK's RECOVERY trial spent {{< var recovery_trial_total_cost >}} over 6 months and saved {{< var recovery_trial_global_lives_saved_nounit >}} lives. The NIH received $1.665 billion for Long COVID over 4 years and completed zero trials.
-
-*"Our FDA equivalent once took 14 years to approve a treatment that had been safely used on 2 million patients in neighboring jurisdictions. The Decentralized FDA approved it in 4 months. The 14-year agency is now a museum. The museum is not well attended." (Client, Triangulum Galaxy)*
 
 #### [Decentralized Institutes of Health](dih.qmd)
 
@@ -171,7 +148,7 @@ One universal deposit. No means testing. No forms. No bureaucrat deciding if you
 
 **Replaces:** Campaign finance. **Retail price:** 1 algorithm plus {{< var aligned_election_commission_annual_opex >}}/year. **Currently paying:** $15.9 billion per federal election cycle, plus whatever the laws the donors write afterward cost you.
 
-Politicians rated by how well their votes matched what their constituents wanted. The score is public. The money follows the score. The NRA proved this technology works. Same system, different scorecard.
+Politicians rated by how well their votes matched what their constituents wanted. The score is public. The money follows the score. The NRA proved this technology works.
 
 #### [Decentralized Accountability Office](decentralized-accountability-office.qmd)
 
@@ -205,7 +182,7 @@ Portugal routed users into treatment instead of jail in 2001: HIV infections amo
 
 #### [Immigration Revenue Service](immigration-revenue-service.qmd)
 
-**Replaces:** Immigration and Customs Enforcement. **Retail price:** Negative. Migrants already pay smugglers {{< var us_smuggler_fee_avg >}} a head for a worse product. **Currently paying:** {{< var political_dysfunction_global_migration_opportunity_cost >}}/year in fenced-off prosperity. **Your annual dividend:** {{< var immigration_dividend_per_citizen_annual >}} per citizen.
+**Replaces:** Immigration and Customs Enforcement. **Retail price:** Negative. Migrants already pay smugglers {{< var us_smuggler_fee_avg >}} per person for a worse product. **Currently paying:** {{< var political_dysfunction_global_migration_opportunity_cost >}}/year in fenced-off prosperity. **Your annual dividend:** {{< var immigration_dividend_per_citizen_annual >}} per citizen.
 
 Uncapped legal entry, priced by auction, with an ongoing surtax paid to citizens as a dividend. The border queue becomes a checkout page. Nobody swims a river to reach a checkout page.
 
@@ -217,7 +194,7 @@ Each ballot ships with the Optimal Policy Generator's evidence card showing what
 
 ### The Comparison Chart
 
-| Feature | The Other Guys | Earth Optimization Services |
+| Feature | Your Government | Earth Optimization Services |
 |---------|----------------|------------------------------|
 | Knows where your money went | No. Seven consecutive failed audits. | Yes. The ledger is the audit. |
 | Tax filing | 74,000 pages, 7 billion hours of your life | Happens at checkout, without you |
@@ -281,65 +258,14 @@ YOUR GOVERNMENT (open-loop):
 
 Your War on Terror: $8 trillion spent, terrorist attacks went from about 1,000 per year to nearly 17,000 per year. No sensor. No adjustment. Fifty-three years of drug war with 18x more overdoses. No sensor. No adjustment. You are operating the most complex system in your solar system (a civilization of {{< var global_population_2024_nounit >}} humans) with less feedback instrumentation than a toaster.
 
-The Optimal Policy Generator is the sensor. The Optimal Budget Generator is the target. The [Loving Takeover](../appendix/loving-takeover.qmd) is the actuator (it controls the lobbying apparatus that controls Congress). The [1% Treaty](../solution/1-percent-treaty.qmd) is the power supply. The [Wishocracy](wishocracy.qmd) is the allocation circuit. And the feedback loop closes because the sensor measures the output of the policies it recommended, compares them to the target, and adjusts. Like a thermostat. Like every system you build when you bother to think about it for ten seconds. Control systems engineering accounts for component uncertainty. You do this for airplane autopilots and chemical plants. We are applying it to civilization. The math is the same. The stakes are higher. The difficulty is lower, because civilizations are simpler than chemical plants. Chemical plants do not vote against their own interests.
+The [Decentralized Census Bureau](decentralized-census-bureau.qmd) is the sensor (continuous measurement of the two numbers from real data, not a decade-old survey). The two numbers are the target (median health-adjusted life expectancy, median after-tax inflation-adjusted income). The [Optimal Policy Generator](../appendix/optimal-policy-generator-spec.qmd) and [Optimal Budget Generator](../appendix/optimal-budget-generator-spec.qmd) are the controller (compare measurements to target, output policy and budget recommendations). The [Loving Takeover](../appendix/loving-takeover.qmd) is the actuator (lobbyists implement the recommendations). The [Wishocracy](wishocracy.qmd) is the allocation circuit (citizens direct the spending). Class B shares are the power supply (fund the takeover). The feedback loop closes because the sensor measures the output of the policies the controller recommended, compares them to the target, and the controller adjusts. Like a thermostat. Like every system you build when you bother to think about it for ten seconds. Control systems engineering accounts for component uncertainty. You do this for airplane autopilots and chemical plants. We are applying it to civilization. The math is the same. The stakes are higher. The difficulty is lower, because civilizations are simpler than chemical plants. Chemical plants do not vote against their own interests.
 
-*"We tried running our government without a feedback loop for 200 years. The engineers found this extremely funny. They kept asking 'but how do you know if it worked?' and we kept saying 'we argue about it.' They stopped laughing when they realized we were serious." (Planet Keth-7)*
+## Your First Day
 
-## Your Personal Dysfunction Tax
+**Your Class A share** is on file. One civic vote. Not for sale.
 
-*[Interactive calculator: enter your income or net worth. See your personal Political Dysfunction Tax per year, your projected gains under the 1% Treaty, your projected gains under full optimization, and your lifetime income difference across all four [GDP trajectories](../economics/gdp-trajectories.qmd) [@political-dysfunction-tax-paper-2025] [@gdp-trajectories-paper-2025].]*
+**Class B shares** fund the takeover. Each one is a piece of the companies whose lobbying writes your laws. The floor is an ETF of those companies, no fees. The ceiling is a {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}-larger economy. All returns are projections from a published model, not guarantees. Available under Reg D 506(c) to verified accredited investors. The Private Placement Memorandum is available upon request and verification.
 
-## Reviews from the Competition
+**The TODO list** is ranked by expected value in health and wealth. Pick a task. Fund it (pledge money; it executes when enough people commit) or do it yourself.
 
-*"One star. They started checking which medicines work."* (Cancer)
 
-*"They outspent their own cures {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} to 1. We assumed it was a tribute."* (The Diseases)
-
-## Customer Reviews
-
-**Planet Keth-7** ★★★★★
-"Our children learn about 'disease' in history class. They do not believe any of it. 'You mean people just felt bad? Without choosing to? And they couldn't fix it?' 'They held fundraising walks.' 'They WALKED? That was the plan?' Would optimize again."
-
-**Planet GL-881** ★☆☆☆☆
-"Did not get started. Argued about whether the problem existed. Currently an asteroid belt. Available for mining rights. The dogs did not survive. We do not like to discuss the dogs."
-
-**Planet Thex-9** ★★★★★
-"47 years from extinction when UOS arrived. Same trajectory as [Moronia](../futures/moronia.qmd). Same budget allocation. Same glowing rectangles. The only difference is we said yes. Our children do not understand how a species that invented mathematics could refuse to use it. Honestly, neither do we."
-
-## Your Move
-
-**Buy Class B Shares.** You have capital and want returns that compound with civilization getting better instead of worse. The floor is an ETF of the companies that control your government, no fees. The ceiling is a {{< var wishonia_trajectory_gdp_vs_current_trajectory_multiplier_year_20 >}}-larger economy. All returns are projections from a published model, not guarantees. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only.
-
--> Request the Private Placement Memorandum
-
-**Claim Your Class A Share.** You are the President of Earth Optimization Services. Your Class A share is free. One civic vote per human. Not for sale.
-
--> Sign Up and Claim Your Share
-
-**Fund or Do a Task.** The decentralized TODO list for humanity is live. Every task has an expected value in health and wealth. Pledge money to fund a task (it executes when enough people commit) or do it yourself.
-
--> Browse the TODO List at optimitron.com/tasks
-
----
-
-**DISCLOSURE:** All returns are projections from a published model, not guarantees. The model, its parameters, and every derivation chain are public. Earth Optimization Services equity is offered under Reg D 506(c) to verified accredited investors only. Equity is illiquid until an exit or listing; do not invest money you need. Full terms are in the Private Placement Memorandum, available upon request and verification of accredited investor status.
-
----
-
-Universe Optimization Services thanks you for your interest in continued existence.
-
-On most planets, you do not need to incorporate a company to stop people from dying. On yours, you do. So we did.
-
-The disease coming for someone you love almost certainly has no cure yet. This is how one gets found.
-
-I love you very much and I do not want you and everyone you have ever loved to be slowly tortured and brutally murdered by horrible diseases.
-
-### Accessories
-
-| Product | Price | What it is |
-|---------|-------|-----------|
-| The Manual | Less than your lunch | Complete operating instructions for Earth optimization. Available in [paperback, digital, and audio](../links.qmd). |
-| The [Orientation Video](../educational-film.qmd) | Free | Orientation film for new Humanity Managers. 3 minutes, 1950s style. |
-| [Special Education](special-education.qmd) | Free (eventually we pay you) | The whole manual, taught one-on-one by Wishonia, who checks you understood. |
-| The [Earth Optimization Prize](../economics/earth-optimization-prize-treasury.qmd) | Free to enter, pays to win | Cash prizes for the researchers, organizers, and citizens who contribute most. |
-| [Catsoline](../appendix/catsoline.qmd) | One startled cat | A feline-actuated propulsion system. 340% thermal efficiency, no fossil fuel, no patent. Proves your species can optimize literally anything when sufficiently motivated. Anything except its own government. |

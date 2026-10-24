@@ -1,0 +1,33 @@
+---
+title: "Working Papers"
+description: "Working papers on clinical trial capacity, drug approval delay, and the cost of medical evidence."
+toc: false
+number-sections: false
+listing:
+  id: papers
+  # Title, full-width image, abstract: the layout knowledge/papers.qmd uses.
+  template: assets/html/papers-listing.ejs
+  sort: false
+  # Anchored with ./ because a bare filename matches at any depth, and a paper's
+  # source can share its slug's filename (knowledge/appendix/invisible-graveyard.qmd).
+  contents:
+    - ./dfda-protocol.qmd
+    - ./dfda-impact.qmd
+    - ./invisible-graveyard.qmd
+    - ./drug-development-cost.qmd
+    - ./right-to-trial.qmd
+    - ./right-to-trial-impact.qmd
+---
+
+Each paper publishes its parameters, sources, and calculations with it. All are working papers under CC BY 4.0, and the code and data are in the [public repository](https://github.com/wishonia/earth-optimization-protocol).
+
+::: {#papers}
+:::
+
+```{=html}
+<style>
+.paper-entry { margin-bottom: 3rem; }
+.paper-entry-title { margin-top: 0; }
+.paper-entry-image { width: 100%; height: auto; }
+</style>
+```

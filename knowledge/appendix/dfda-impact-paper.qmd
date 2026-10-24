@@ -1,11 +1,11 @@
 ---
-title: 'Ubiquitous Pragmatic Trial Impact Analysis: How to Prevent a Year of Death and Suffering for 84 Cents'
+title: 'Ubiquitous Pragmatic Trial Impact Analysis'
 description: Only {{< var new_disease_first_treatments_per_year >}} get their first treatment each year. With {{< var diseases_without_effective_treatment >}} lacking effective treatments, the backlog would take {{< var status_quo_queue_clearance_years >}} to clear. Integrating pragmatic trials into standard healthcare increases trial capacity {{< var dfda_trial_capacity_multiplier >}}, cutting that timeline from {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}. The average untreated disease gets a treatment {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} earlier, saving {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} at {{< var dfda_direct_funding_cost_per_daly >}} per year of healthy life saved.
 abstract: |
   Of {{< var drug_disease_combinations_possible >}} plausible drug-disease pairings, only
   {{< var exploration_ratio >}} have been clinically tested. At the current discovery rate of
   {{< var new_disease_first_treatments_per_year >}}, clearing this backlog would take
-  ~{{< var status_quo_queue_clearance_years >}}. A decentralized FDA integrating pragmatic clinical
+  ~{{< var status_quo_queue_clearance_years >}}. An open protocol integrating pragmatic clinical
   trials into standard healthcare at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs.
   {{< var traditional_phase3_cost_per_patient >}} traditional) increases trial capacity
   {{< var dfda_trial_capacity_multiplier >}}, reducing backlog clearance to
@@ -20,8 +20,8 @@ abstract: |
   ({{< var bed_nets_cost_per_daly >}}/DALY) at vastly greater scale. Using standard health economic
   valuation ({{< var standard_economic_qaly_value_usd >}}/DALY, the US cost-effectiveness threshold;
   conservative relative to EPA/DOT Value of Statistical Life estimates), full impact yields
-  {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in cumulative value
-  ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} cumulative DALYs over the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift, not annual;
+  {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}} in present value
+  ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys_discounted >}} after discounting health at the same rate as costs;
   {{< var dfda_direct_funding_roi_trial_capacity_plus_efficacy_lag >}}:1 ROI).
 jel:
   - I18
@@ -54,11 +54,11 @@ do: "Cite this analysis as the backing for the cost-effectiveness numbers, then 
 
 There are {{< var safe_compounds_count >}} that have already been proven safe for human consumption. There are {{< var diseases_without_effective_treatment >}} with zero approved treatments. The number of possible combinations between those safe compounds and those untreated diseases is {{< var drug_disease_combinations_possible >}}. The fraction that has actually been tested is {{< var exploration_ratio >}}. At the current rate of {{< var new_disease_first_treatments_per_year_nounit >}} per year, testing the rest would take ~{{< var status_quo_queue_clearance_years >}}. Your species is sitting on a combinatorial goldmine of potential cures and has chosen to explore it with a teaspoon.
 
-Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available_nounit >}} participate in trials annually ({{< var current_clinical_trial_participation_rate >}}).
+Of {{< var current_disease_patients_global >}} with chronic disease, only {{< var current_trial_slots_available_nounit >}} participate in trials annually ({{< var current_patient_participation_rate >}}).
 
-**The Solution:** A [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025], an open protocol (like HTTP/FHIR, not a competing platform) that existing DCT platforms, EHRs, and health apps adopt to integrate pragmatic clinical trials into standard healthcare, enabling:
+**The Solution:** An open protocol for embedded pragmatic trials [@dfda-spec-paper-2025]: the learning-health-system model that PCORnet already runs at small scale (ADAPTABLE was a PCORnet trial [@adaptable-trial]), given a common standard that existing DCT platforms, EHRs, and health apps adopt, like HTTP or FHIR rather than a platform. The protocol enables:
 
-1. **Subsidized Patient Participation**: Patients receive subsidies to participate in trials, making participation accessible and incentivized
+1. **Subsidized Patient Participation**: Patients receive subsidies that offset the costs of taking part (time, travel, devices)
 2. **Universal Trial Access**: Any patient can join trials from home via their phone or computer - no travel to research centers required
 3. **Real-World Data Aggregation**: Outcomes from all participants are aggregated into a unified database
 4. **Treatment Rankings**: Standardized effectiveness rankings for every treatment-condition pair, updated continuously with real-world evidence
@@ -102,13 +102,9 @@ The economic value figure ({{< var dfda_trial_capacity_plus_efficacy_lag_economi
 
 {{< var dfda_direct_funding_cost_per_daly_latex >}}
 
-### Interpreting These Figures: Cumulative, Not Annual
-
-These are **cumulative benefits over the entire acceleration period**, not annual figures. This is the same methodology used to value smallpox eradication (program cost -> total future lives saved) and climate infrastructure investments: the one-time benefit of permanently accelerating medical progress.
-
-**Interpreting the Timeline Figure:** The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} figure represents a **discovery capacity model** of medical research. Think of the therapeutic search space as the set of all untested drug-disease combinations, with trial capacity determining how fast we can explore it.
-
 ### The Discovery Capacity Model {#the-discovery-capacity-model}
+
+The {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} figure comes from a **discovery capacity model** of medical research. Think of the therapeutic search space as the set of all untested drug-disease combinations, with trial capacity determining how fast we can explore it.
 
 | Parameter | Status Quo | Proposed | Impact |
 |:---|:---:|:---:|:---|
@@ -119,7 +115,7 @@ These are **cumulative benefits over the entire acceleration period**, not annua
 
 **Why treatments arriving sooner saves lives:**
 
-A disease that would receive its first effective treatment in year 200 under the status quo might receive it in year 16 with the framework. During those 184 years, people die from that disease who could have been saved. The {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} figure captures the cumulative lives saved across all diseases during their acceleration periods.
+A disease that would receive its first effective treatment in year 200 under the status quo might receive it in year 16 with the protocol. During those 184 years, people die from that disease who could have been saved. The {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} figure captures the cumulative lives saved across all diseases during their acceleration periods.
 
 **The two components:**
 
@@ -128,7 +124,7 @@ A disease that would receive its first effective treatment in year 200 under the
 
 **Total timeline shift:** {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} = {{< var dfda_trial_capacity_treatment_acceleration_years >}} + {{< var efficacy_lag_years >}}
 
-**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dfda_annual_trial_funding >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the framework enables {{< var dfda_patients_fundable_annually_nounit >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. This removes the primary bottleneck to medical progress: currently less than {{< var current_clinical_trial_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
+**How the {{< var dfda_trial_capacity_multiplier >}} capacity increase works:** With {{< var dfda_annual_trial_funding >}}/year in trial funding at {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (based on ADAPTABLE trial), the protocol enables {{< var dfda_patients_fundable_annually_nounit >}} annual trial participants vs. current {{< var current_trial_slots_available >}}, increasing trial completion rate from {{< var new_disease_first_treatments_per_year >}} to {{< var dfda_first_treatments_per_year >}}. Currently only {{< var current_willing_patient_participation_rate >}} of willing patients can access trials, and over {{< var safe_compounds_count >}} proven-safe (FDA-approved drugs + GRAS substances) remain untested for most conditions they could improve.
 
 ## Capabilities
 
@@ -140,7 +136,7 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 
 - Register treatments through any protocol-compliant system
 - Access aggregated effectiveness data across all participating platforms
-- Receive automatic liability coverage through protocol governance
+- Receive liability coverage through the protocol's pooled insurance
 - Benefit from standardized outcome reporting across the network
 
 **For Patients (via participating apps and platforms):**
@@ -155,44 +151,7 @@ The protocol enables existing systems (DCT platforms, EHRs, health apps) to:
 
 ![A map of how sick people might meet doctors, if everyone agreed to use the same computer system. They won't.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-core-model-an-open-coordination-protocol-bw-academic.jpg)
 
-### Key Capabilities
-
-- **Treatment Rankings**: Every treatment for every condition ranked by real-world effectiveness, updated continuously as new data arrives
-- **Outcome Labels**: Standardized "nutrition facts for drugs" showing effectiveness rates, side effects, and outcomes from real patients
-- **Universal Trial Access**: Any patient can participate from anywhere via phone/computer
-- **Real-Time Surveillance**: Continuous data on efficacy, side effects, and drug interactions
-- **Federated Data Architecture**: Data stays in source systems (EHR platforms, consumer health apps) while queries run across all sources
-
-### Potential Impact on the Status Quo
-
-- **Speed of Trials**: Reduced overhead and automated data capture compresses timelines.
-- **Cost of Trials**: Using existing healthcare encounters, telemedicine, and EHR data to drastically cut per-patient costs (modeled on pragmatic trials like Oxford RECOVERY and the US-based ADAPTABLE trial).
-- **Scale & Scope**: Enables testing many more drugs, off-label indications, unpatentable treatments, nutraceuticals, and personalized medicine approaches.
-- **Innovation Incentives**: Lower R&D costs increase profitability and encourage more entrants/innovation in the life sciences.
-
-## Addressing Key Concerns
-
-### Historical Validation: Pre-1962 Physician-Led Efficacy Testing
-
-The decentralized physician-led efficacy model is not theoretical. It operated successfully from 1883 to 1960, providing {{< var pre_1962_validation_years >}} of empirical validation.
-
-**How the pre-1962 system worked:**
-
-From 1883 to 1960, {{< var pre_1962_physician_count >}} across America tested drug efficacy on real patients in routine clinical practice. The Journal of the American Medical Association (JAMA) compiled observational reports, leading medical experts peer-reviewed the aggregated data, and effective treatments received endorsement. This decentralized approach successfully identified antibiotics, vaccines, and countless surgical techniques.
-
-**Cost comparison demonstrates dramatic efficiency:**
-
-| Era | Cost per Drug (2024 USD) | System |
-|:---|:---|:---|
-| **Pre-1962** | {{< var pre_1962_drug_development_cost_2024_usd >}} | Decentralized physician-led efficacy testing |
-| **Post-1962** | {{< var pharma_drug_development_cost_current >}} | Centralized pharmaceutical company trials |
-| **Cost Increase** | {{< var drug_cost_increase_pre1962_to_current_multiplier >}} | Regulatory mandate, not drug complexity |
-
-The cost explosion began exactly when efficacy testing was centralized within pharmaceutical companies. This wasn't a natural evolution of drug development or increasing drug complexity. The same types of compounds (small molecules, biologics) that cost {{< var pre_1962_drug_development_cost_2024_usd >}} to develop in 1960 now cost {{< var pharma_drug_development_cost_current >}}.
-
-**The thalidomide success story:** Thalidomide is often cited as justification for the 1962 amendments, but the US *already* blocked thalidomide under existing 1938 safety regulations. The FDA's Frances Kelsey refused approval based on inadequate safety data, not efficacy requirements. The 1962 amendments added *efficacy* proof requirements, not additional safety testing.
-
-**Implications:** This model returns to decentralized physician-led efficacy testing but with modern automation (electronic health records, AI-assisted analysis, real-time data aggregation), targeting the same 50-95% cost reductions that the pre-1962 system achieved.
+## Scenario and Assumptions
 
 ### Why "Eventually Avoidable" Matters
 
@@ -208,201 +167,49 @@ A critical assumption in this analysis is that {{< var eventually_avoidable_deat
 
 **What if this assumption is wrong?**
 
-Even if only 25% of deaths are eventually avoidable (half our estimate), the framework still generates {{< var dfda_roi_rd_only >}}:1 ROI from R&D savings alone, independent of health benefits. These deaths will eventually be preventable with sufficient research progress. The health impact figures scale linearly with avoidability assumptions, but the cost-saving case doesn't depend on them.
+The health impact figures scale linearly with this assumption: at 50% avoidability (the low end of the confidence interval), lives saved and DALYs averted roughly halve and cost per DALY roughly doubles, still far below the bed nets benchmark. The R&D savings case ({{< var dfda_roi_rd_only >}}:1 ROI) does not depend on it at all.
 
 ### Trial Funding Scenario
 
 This analysis models a scenario with {{< var dfda_annual_trial_funding >}}/year allocated to pragmatic clinical trials. At {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, this funds approximately {{< var dfda_patients_fundable_annually_nounit >}} patient-years annually.
 
-![With proper funding, we could solve the backlog in 36 years instead of 443. Your great-great-great-great-great-great-great-grandchildren will be so pleased.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-funding-scenario-bw-academic.jpg)
-
 ### On the Funding Assumption
 
 This analysis demonstrates what becomes possible when the funding constraint is removed. The {{< var dfda_annual_trial_funding >}}/year figure is achievable through multiple mechanisms:
 
-- **Philanthropic mega-donors**: A single Gates Foundation-scale commitment could fund the protocol infrastructure and initial years
+- **Philanthropic mega-donors**: A single Gates Foundation-scale commitment could fund the protocol build, though not the trial budget
 - **Sovereign wealth funds**: Norway's $1.4T fund or similar could view this as humanity-scale infrastructure
 - **WHO/multilateral coordination**: Comparable to GAVI or the Global Fund
 - **Military reallocation**: Less than 1% of global military spending ({{< var global_military_spending_annual_2024 >}}/year)
-- **Industry consortium**: Pharma collectively spends {{< var global_clinical_trials_spending_annual >}}/year on trials; even 10% redirection exceeds this threshold
+- **Industry consortium**: Pharma collectively spends {{< var global_clinical_trials_spending_annual >}}/year on trials; redirecting just over a third of it would cover this budget
 
-The **returns justify the funding**, not vice versa. At {{< var dfda_roi_rd_only >}}:1 ROI, any rational capital allocator would fund this if they believed the analysis.
+## Protocol Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates}
 
-**Trial Capacity Impact:** See [The Discovery Capacity Model](#the-discovery-capacity-model) for the full comparison of status quo vs. framework trial capacity metrics.
+The protocol is open standards and APIs that existing clinical trial systems adopt, the way HTTP lets any browser reach any website and FHIR lets health records move between systems. Like HTTP and FHIR, it needs a steward: an open standards body, modeled on HL7, that publishes the specification, runs conformance testing, and administers the pooled liability insurance. The steward holds no patient data (records stay in the source EHRs and apps and are queried in place) and runs no trials. The technical specification [@dfda-spec-paper-2025] itemizes the build; the rough-order-of-magnitude totals:
 
-**The Untested Treatment Backlog:**
+- **Upfront protocol build** (reference implementation, conformance suite, compliance and legal setup, ~2.5 years): \$37.5M - {{< var dfda_upfront_build_max >}}
+- **Annual protocol operations** (hosting, maintenance, security audits, participant support): \$11M - \$26.5M/year. At 5 million participants that is \$2.20 - \$5.30 per participant per year; each additional participant costs pennies, since nearly all of the cost is fixed.
+- **Integration adoption fund** (one-time, to help EHR and DCT platforms connect): \$20M - \$50M
 
-Approximately {{< var diseases_without_effective_treatment >}} have zero FDA-approved treatments. At current trial capacity ({{< var new_disease_first_treatments_per_year >}}), systematically testing all {{< var drug_disease_combinations_possible >}} plausible pairings would take ~{{< var status_quo_queue_clearance_years >}}. With {{< var dfda_trial_capacity_multiplier >}} capacity, this drops to ~{{< var dfda_queue_clearance_years >}}.
-
-## Framework Costs (ROM Estimates) {#dfda-framework-costs-rom-estimates}
-
-> **Protocol Infrastructure Costs**
->
-> This is protocol infrastructure, open standards and APIs that existing clinical trial systems adopt. This is analogous to HTTP enabling any browser to access any website, or FHIR enabling health data interoperability.
->
-> - **Upfront protocol/API build:** \$15–25M
-> - **Annual protocol operations:** \$5–12M
-> - **Integration adoption fund:** \$20-50M (one-time, to support EHR and DCT platform adoption)
-> - **Total initiative:** ~\$40-75M upfront, \$5-12M annual
->
-> **Using What Already Exists**: The protocol builds on existing infrastructure (DCT platforms, major EHR systems, academic medical centers, and consumer health apps). These organizations have invested billions in infrastructure that becomes more valuable through protocol interoperability.
-
-![How much it costs to make all the medical computer systems talk to each other, assuming they want to. They don't want to.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-framework-costs-rom-estimates-dfda-framework-costs-rom-estim-bw-academic.jpg)
-
-This section provides a **Rough Order of Magnitude (ROM)** cost estimate for the protocol infrastructure that enables decentralized clinical trials.
-
-### Upfront Build Costs (30 Months) {#upfront-build-costs}
-
-1. **Core Engineering & Development Effort:**
-
-   - _Basis:_ ~75 FTEs _2.5 years_ \$200k/FTE/year
-   - _Activities:_ Detailed design, Core framework development (API, storage, mapping/validation, auth), reference frontend, initial plugin interfaces, testing, documentation, initial deployment.
-
-   The engineering cost is calculated as:
-
-   $$
-   C_{\text{engineering}} = N_{\text{FTEs}} \times T \times C_{\text{FTE}} = 75 \times 2.5 \times \$200\text{k} = \$37.5\text{M}
-   $$
-
-   Where $N_{\text{FTEs}} = 75$ is the number of full-time equivalents, $T = 2.5$ years is the development timeline, and $C_{\text{FTE}} = \$200\text{k}$ per FTE per year.
-
-   - **Estimated ROM:** \$35 - {{< var dfda_upfront_build >}}
-
-2. **Infrastructure Setup & Initial Cloud Costs:**
-
-   - _Activities:_ Establishing cloud accounts, VPCs, Kubernetes cluster (EKS) setup, database provisioning (RDS/TimescaleDB), S3 buckets, CI/CD pipeline setup, initial IaC development (Terraform).
-   - _Costs:_ Includes initial compute/storage during development/testing, potential small upfront reservations.
-   - **Estimated ROM:** [\$1 - \$3 Million](#upfront-build-costs)
-
-3. **Software Licenses & Tooling (Initial):**
-
-   - _Examples:_ Potential costs for monitoring tools (Datadog), security scanners (Snyk), specialized libraries, collaboration tools if not already covered.
-   - **Estimated ROM:** [\$0.5 - \$1 Million](#upfront-build-costs)
-
-4. **Compliance, Legal & Security (Initial Setup):**
-
-   - _Activities:_ Initial HIPAA/GDPR compliance assessment, policy development, security architecture review, legal consultation for data sharing frameworks.
-   - **Estimated ROM:** [\$1 - \$2 Million](#upfront-build-costs)
-
-The total upfront cost is the sum of all components:
-
-$$
-C_0 = C_{\text{engineering}} + C_{\text{infrastructure}} + C_{\text{software}} + C_{\text{compliance}}
-$$
-
-Where:
-
-- $C_{\text{engineering}} = \$35 - \$40$ million (Core Engineering & Development)
-- $C_{\text{infrastructure}} = \$1 - \$3$ million (Infrastructure Setup & Initial Cloud Costs)
-- $C_{\text{software}} = \$0.5 - \$1$ million (Software Licenses & Tooling)
-- $C_{\text{compliance}} = \$1 - \$2$ million (Compliance, Legal & Security)
-
-> **Total Estimated Upfront Cost (ROM): \$37.5 - {{< var dfda_upfront_build_max >}}**
-
-_Note: This ROM estimate focuses **only on the Core framework build effort and associated setup**. It represents the foundational first step. A full global implementation requires significant additional investment in broader initiatives to achieve goals of global integration, legal harmonization, and massive scale. These crucial, follow-on costs are estimated separately in the [Scenario Based ROM Estimates for Broader Initiative Costs](#scenario-based-rom-estimates-for-broader-initiative-costs) section below and include:_
-
-- _Global EHR/Data Source Integration Effort:_ Building/buying connectors for _thousands_ of systems worldwide.
-- _Large-Scale Plugin Development:_ Funding the library of data importers, analysis tools, and visualization plugins.
-- _International Legal/Regulatory Harmonization:_ Major diplomatic and legal efforts to create a global standard.
-- _Global Rollout & Adoption:_ Costs associated with driving adoption and providing training worldwide.
-- _Massive-Scale Infrastructure:_ Scaling hardware and cloud resources beyond initial targets to support millions of users.
-
-The following sections provide ROM estimates for both the ongoing operational costs of the Core framework and for these essential broader initiatives.
+These figures cover the protocol, not the trials. Trial participation is funded separately (the {{< var dfda_annual_trial_funding >}}/year scenario above); the protocol coordinates information and does not move the money.
 
 ### Who Participates
 
-The protocol creates value by enabling interoperability among existing clinical trial infrastructure. These organizations represent the network that would adopt and benefit from the protocol:
+The protocol connects existing clinical trial infrastructure:
 
-| Participant | Current Investment | How They Integrate | What They Gain |
-|-------------|-------------------|-------------------|----------------|
-| **DCT Platforms** | $1B+ collectively in VC funding | Adopt outcome reporting standards | Interoperability, larger patient pools, regulatory credibility |
-| **Major EHR Systems** | Billions in infrastructure | Enable federated queries | New revenue from research queries, competitive differentiation |
-| **Pharma Sponsors** | {{< var global_clinical_trials_spending_annual >}}/year on trials | Submit trials via compliant systems | Lower costs, faster enrollment, real-world evidence |
-| **Academic Medical Centers** | Research infrastructure | Contribute federated data nodes | Research funding, publication opportunities |
-| **Consumer Health Apps** | Consumer health data | Report patient outcomes to protocol | User engagement, clinical validation |
+| Participant | Current Investment | How They Integrate |
+|-------------|-------------------|-------------------|
+| **DCT Platforms** | $1B+ collectively in VC funding | Adopt outcome reporting standards |
+| **Major EHR Systems** | Billions in infrastructure | Enable federated queries |
+| **Pharma Sponsors** | {{< var global_clinical_trials_spending_annual >}}/year on trials | Submit trials via compliant systems |
+| **Academic Medical Centers** | Research infrastructure | Contribute federated data nodes |
+| **Consumer Health Apps** | Consumer health data | Report patient outcomes to protocol |
 
-### Why This Matters
+DCT platforms and major EHR systems have already built the infrastructure for patient recruitment, data collection, and trial management. The protocol doesn't replicate this work; it makes their existing investments more valuable by letting data flow across systems. Each has a reason to connect: DCT platforms and academic centers gain larger patient pools and trial funding, EHR vendors gain a market for research queries, and sponsors gain cheaper trials and faster enrollment.
 
-DCT platforms (collectively raising over $1B in venture funding) and major EHR systems have already built the infrastructure for patient recruitment, data collection, and trial management. The protocol doesn't replicate this work - it makes their existing investments more valuable by enabling data to flow across systems.
+### Broader Initiative Costs (Scenario Estimates)
 
-### Annual Operational Costs (5M MAU Target Scale) {#annual-operational-costs}
-
-1. **Cloud Infrastructure Costs (AWS):**
-
-   - _Components:_ EKS cluster, RDS/TimescaleDB hosting, S3 storage & requests, SQS messaging, API Gateway usage, Data Transfer (egress), CloudWatch logging/monitoring.
-   - _Basis:_ Highly dependent on actual usage patterns, data retrieval frequency, processing intensity. Assumes optimized resource usage.
-   - **Estimated ROM:** \$5 - \$15 Million / year (Very sensitive to scale and usage patterns)
-
-2. **Ongoing Engineering, Maintenance & Operations:**
-
-   - _Team Size:_ Assume ~20 FTEs (SREs, DevOps, Core Maintainers, Security).
-   - _Basis:_ 20 FTEs \* \$200k/FTE/year
-
-   The ongoing engineering cost is calculated as:
-
-   $$
-   C_{\text{engineering}}^{\text{ops}} = N_{\text{FTEs}}^{\text{ops}} \times C_{\text{FTE}} = 20 \times \$200\text{k} = \$4\text{M}/\text{year}
-   $$
-
-   Where $N_{\text{FTEs}}^{\text{ops}} = 20$ is the number of FTEs for ongoing operations.
-
-   - **Estimated ROM:** \$4 - \$6 Million / year
-
-3. **Software Licenses & Tooling (Ongoing):**
-
-   - _Examples:_ Monitoring (Datadog/New Relic), Error Tracking (Sentry), Security Tools, potential DB license/support costs at scale.
-   - **Estimated ROM:** \$0.5 - \$1.5 Million / year
-
-4. **Compliance & Auditing (Ongoing):**
-
-   - _Activities:_ Regular security audits (penetration tests, compliance checks), maintaining certifications, legal reviews.
-   - **Estimated ROM:** \$0.5 - \$1 Million / year
-
-5. **Support (User & Developer):**
-
-   - _Activities:_ Tier 1/2 support for protocol participants and third-party plugin developers.
-   - **Estimated ROM:** \$1 - \$3 Million / year (Scales with user base)
-
-The total annual operational cost is the sum of all components:
-
-$$
-C_{\text{op}} = C_{\text{cloud}} + C_{\text{engineering}} + C_{\text{software}} + C_{\text{compliance}} + C_{\text{support}}
-$$
-
-Where:
-
-- $C_{\text{cloud}} = \$5 - \$15$ million/year (Cloud Infrastructure Costs)
-- $C_{\text{engineering}} = \$4 - \$6$ million/year (Ongoing Engineering, Maintenance & Operations)
-- $C_{\text{software}} = \$0.5 - \$1.5$ million/year (Software Licenses & Tooling)
-- $C_{\text{compliance}} = \$0.5 - \$1$ million/year (Compliance & Auditing)
-- $C_{\text{support}} = \$1 - \$3$ million/year (Support)
-
-> **Total Estimated Annual Operations (Platform Only, ROM): \$11 - \$26.5 Million / year**
-
-#### Marginal Cost Analysis per User
-
-The **5M MAU** target is an illustrative milestone used for these initial ROM estimates, not the ultimate goal for the framework, which is to support hundreds of millions or billions of users. At this initial scale, you can analyze the cost on a per-user basis.
-
-- **Average Cost Range Per User (at 5M MAU):**
-  - Based on the total annual operational cost range of **[\$11M - \$26.5M](#annual-operational-costs)**, the average cost per user is:
-    $$
-    \frac{\$11,000,000 \text{ to } \$26,500,000}{5{,}000{,}000 \text{ users}} = \mathbf{\$2.20 \text{ to } \$5.30 \text{ per user per year}}
-    $$
-
-- **Marginal Cost Per Additional User:**
-  - As federated data infrastructure, the framework has high fixed costs (protocol development, core engineering) but very low variable costs. Therefore, the **marginal cost** of supporting one additional participant is expected to be a small fraction of the average cost, likely **pennies per year**. This cost will decrease further as the protocol achieves greater economies of scale, making it exceptionally efficient at supporting a global participant base.
-
-_(Note: The underlying cloud infrastructure cost ($5M-$15M/year) is a top-down ROM estimate. A more granular, bottom-up analysis based on projected per-user storage, data transfer, and compute would provide further support for these figures and is a key area for future refinement of this model.)_
-
-*Note on Participant Financial Contributions:*
-
-This cost estimate **covers building the protocol infrastructure, not paying patients for trial participation.** Trial participation costs would be handled separately through funding mechanisms (government grants, foundation funding, or sponsor payments). The protocol coordinates information exchange but doesn't move money around directly.
-
-_This estimate excludes costs for governance structure and plugin development._
-
-### Scenario Based ROM Estimates for Broader Initiative Costs
-
-This table presents point estimates for each scenario, with the overall range of possibilities captured by comparing the Best, Medium, and Worst Case columns.
+Beyond the core protocol, global integration, legal harmonization, and rollout costs depend on how much automation and vendor cooperation actually materialize:
 
 | Component                                    | Best Case (Upfront / Annual) | Medium Case (Upfront / Annual) | Worst Case (Upfront / Annual) | Key Assumptions & Variables Driving Range                                                                  |
 | :------------------------------------------- | :--------------------------- | :----------------------------- | :---------------------------- | :--------------------------------------------------------------------------------------------------------- |
@@ -411,37 +218,21 @@ This table presents point estimates for each scenario, with the overall range of
 | **Legal/Regulatory Harmonization**           | $1.5M / ~$0                  | $60M / $3M                     | $300M / $30M                  | Effectiveness of AI legal tools, political will, complexity of global law.                                 |
 | **Global Rollout & Adoption**                | ~$0 / ~$0                    | $12M / $3M                     | $125M / $30M                  | Need for training/support beyond protocol adoption, user interface complexity.                               |
 | **Governance Operations**                    | ~$0 / ~$0                    | ~$1M / $0.3M                   | ~$6M / $1M                    | Automation level, need for audits, grants, core support staff.                                             |
-| **--- TOTAL ---**                            | **~$4.5M / ~$0**             | **~$213M / ~$18.3M**           | **~$1.98B+ / ~$221M+**        | Represents total initiative cost excluding Core framework build/ops.                                        |
+| **--- TOTAL ---**                            | **~$4.5M / ~$0**             | **~$213M / ~$18.3M**           | **~$1.98B+ / ~$221M+**        | Total initiative cost excluding core protocol build/ops.                                        |
 
 {{< include ../figures/dfda-broader-initiative-costs-scenario-comparison-column-chart.qmd >}}
 
-#### Interpretation
-
-Even when pursuing efficient strategies, the potential cost for the full initiative for a decentralized framework (beyond the Core framework) varies dramatically based on real-world execution challenges. The Medium Case suggests upfront costs in the low hundreds of millions and annual costs in the low tens of millions, while the Worst Case pushes towards multi-billion dollar upfront figures and annual costs in the hundreds of millions, dominated by integration, plugin funding, and legal costs if automation and community efforts fall short.
-
-#### Summary
-
-Based on the detailed technical specification, a ROM estimate suggests:
-
-- **Initial Core framework Build (~2.5 years): ~\$37.5 - {{< var dfda_upfront_build_max >}}**
-- **Annual Core framework Operations (at ~5M MAU scale): [~\$11 - \$26.5 Million](#annual-operational-costs)** (These framework operational costs are distinct from the financial flows of patient contributions and the NIH Trial Participation Cost Discount Fund, and also exclude plugin ecosystem costs not covered by protocol bounties)
-
-The core protocol infrastructure build costs tens of millions; the broader global initiative (integration, legal frameworks, rollout) accounts for the larger cost estimates detailed in the scenario table above.
+The medium case puts the full initiative in the low hundreds of millions upfront and the low tens of millions per year. The worst case, dominated by integration and legal costs if automation and vendor cooperation fall short, reaches ~$2B upfront and ~$220M/year. The core protocol costs tens of millions; the broader initiative is where the large numbers live.
 
 ## Benefit Analysis - Quantifying the Savings
 
-This section quantifies the potential societal benefits of a decentralized FDA, focusing primarily on R&D cost savings and health outcome improvements.
+This section quantifies the potential societal benefits of the protocol, focusing primarily on R&D cost savings and health outcome improvements.
 
 ### Market Size and Impact
 
-The global pharmaceutical and medical device R&D market is vast. Annual global spending on clinical trials is approximately {{< var global_clinical_trials_spending_annual >}}. Much of this spending is made dramatically more efficient through protocol standardization. If such a framework enables even a fraction of these trials to use pragmatic designs, the economic impact will be substantial.
+Annual global spending on clinical trials is approximately {{< var global_clinical_trials_spending_annual >}}. Much of this spending could be made far more efficient through protocol standardization.
 
 - **Current Average Costs**: Estimates suggest {{< var pharma_drug_development_cost_current >}} to bring a new drug from discovery through FDA approval, spread across ~10 years.
-- **Clinical Trial Phase Breakdown**:
-  - Phase I: \$2 - \$5 million/trial (smaller scale).
-  - Phase II: \$10 - \$50 million/trial (depending on disease area).
-  - Phase III: \$100M - \$500M/trial (large patient populations).
-
 - **Per-Patient Phase III Costs**: Often {{< var traditional_phase3_cost_per_patient >}} (site fees, overhead, staff, monitoring, data management).
 
 ### Decentralized Trial Costs Modeled on Pragmatic Trials
@@ -455,14 +246,14 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 - **ADAPTABLE Trial (PCORnet)**: The US-based ADAPTABLE trial [@adaptable-trial] ({{< var adaptable_trial_total_cost >}} / {{< var adaptable_trial_patients >}} = **{{< var adaptable_trial_cost_per_patient >}}/patient**) provides a more representative benchmark for pragmatic trial costs in typical healthcare settings without emergency conditions.
 
-- **Framework Cost Projection**: Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
+- **Protocol Cost Projection**: Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE. Confidence interval ($500-$3,000) captures range from RECOVERY-like efficiency to complex chronic disease trials.
 
 **Input: Pragmatic Trial Cost Distribution**
 
 {{< include ../figures/distribution-dfda_pragmatic_trial_cost_per_patient.qmd >}}
 
 - **Extrapolation to New System**:
-  - A well-integrated global framework could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} in many cases, especially for pragmatic or observational designs.
+  - A well-integrated global protocol could achieve {{< var dfda_pragmatic_trial_cost_per_patient >}} in many cases, especially for pragmatic or observational designs.
   - Up to **~{{< var dfda_trial_cost_reduction_factor >}} cost reduction** is achievable by comparing pragmatic trial costs ({{< var dfda_pragmatic_trial_cost_per_patient >}}) against traditional costs of {{< var traditional_phase3_cost_per_patient >}}.
 
   The cost reduction factor:
@@ -475,75 +266,30 @@ The global pharmaceutical and medical device R&D market is vast. Annual global s
 
 ### Scope of Cost Reduction
 
-This reduction applies to trials amenable to pragmatic design - approximately 70% of Phase III trial volume by patient count (chronic disease management, comparative effectiveness, dose optimization). First-in-human studies, novel mechanism trials, and high-risk interventions retain traditional controlled protocols. The confidence interval ($500-$3,000/patient) captures this heterogeneity: simple comparative studies approach RECOVERY-level efficiency while complex trials remain closer to traditional costs. The headline {{< var dfda_trial_cost_reduction_pct >}} figure represents the **weighted average** across the addressable trial market, not a claim that every trial achieves this reduction.
+The reduction applies to Phase II/III efficacy trials, which are {{< var phase_2_3_clinical_trial_cost_pct >}} of global trial spending. Phase I first-in-human trials keep their current design and cost, and Phase IV is excluded from the savings to stay conservative. Within efficacy trials, per-patient cost varies with the endpoints: simple comparative studies approach RECOVERY's {{< var recovery_trial_cost_per_patient >}} while trials needing imaging or biopsies run closer to \$3,000. The {{< var dfda_pragmatic_trial_cost_per_patient >}} central estimate and its confidence interval already carry that spread, so the {{< var dfda_trial_cost_reduction_pct >}} figure is not discounted a second time for trial complexity.
 
-### Overall Savings
+### Gross R&D Savings from the Protocol {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
 
-1. **By Reducing Per-Patient Costs**
-
-   - If a trial with 5,000 participants costs {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient, total cost is ~\$6 million, versus \$200 - \$600 million under traditional models.
-   - This magnitude of savings can drastically reduce the total cost of clinical development.
-
-   For a trial with $x$ participants, the total cost savings is:
-
-   $$
-   S_{\text{trial}}(x) = (c_t - c_d) \cdot x
-   $$
-
-   Where:
-   - $c_t$ is the traditional cost per patient ({{< var traditional_phase3_cost_per_patient >}})
-   - $c_d$ is the decentralized cost per patient ({{< var dfda_pragmatic_trial_cost_per_patient >}})
-
-   For a trial with $x = 5,000$ participants, savings are approximately:
-
-   $$(\text{Traditional} - \text{Pragmatic}) \times 5{,}000 \approx \$194\text{M per trial}$$
-
-2. **Volume of Trials & Speed**
-
-   - Faster, cheaper trials allow more drug candidates, off-label uses, nutraceuticals, and personalized dosing strategies to be tested.
-   - Shorter development cycles reduce carrying costs and risk, further increasing ROI for sponsors.
-
-3. **Regulatory Savings**
-
-   - A unified protocol standard with automated data audits cuts bureaucratic duplication across multiple countries, drastically lowering compliance costs.
-
-4. **Transparent, Standardized Environment**
-
-   - The transparent nature of the protocol creates a standardized operating environment. Outcome data is visible across the entire network, enabling sponsors to benchmark their trial designs and reduce operational costs, further driving down R&D expenditure beyond the technical efficiencies of pragmatic trials.
-
-### Economic Value of Earlier Access to Treatments
-
-- Faster approvals and access to effective treatments can save lives and improve quality of life.
-- **Value of a Statistical Life (VSL):** U.S. agencies use ~{{< var value_of_statistical_life >}} per life saved.
-- **QALY Framework:** Standard willingness-to-pay is **$100,000–{{< var standard_economic_qaly_value_usd >}} per QALY gained**.
-- These benefits are additive to direct cost savings and can be substantial depending on the scale of acceleration.
-
-![When people don't die, economists can count them twice: once for being alive and again for feeling good. Death is very expensive.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-economic-value-of-earlier-access-to-treatments-bw-academic.jpg)
-
-### Gross R&D Savings from a Decentralized FDA {#gross-r-and-d-savings-from-implementing-a-decentralized-framework}
-
-- **Parameter**: Percentage reduction in addressable clinical trial costs due to a decentralized FDA.
+- **Parameter**: Percentage reduction in addressable clinical trial costs due to the protocol.
 - **Central Estimate**: {{< var dfda_trial_cost_reduction_pct >}} ({{< var dfda_trial_cost_reduction_factor >}})
 - **Source/Rationale**:
   - Decentralized Clinical Trials (DCTs) demonstrate significant cost reductions [@dct-cost-reductions-evidence] through reduced site management, travel, and streamlined data collection.
-  - **Empirical evidence**: ADAPTABLE trial achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US settings. Harvard meta-analysis of 108 pragmatic trials found median cost of {{< var pmc_pragmatic_trial_median_cost_per_patient >}}/patient.
-  - **Our estimate**: {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient (vs. {{< var traditional_phase3_cost_per_patient >}} traditional). This deliberately uses ADAPTABLE as a conservative baseline; actual costs may be lower.
-  - **Confidence interval** captures uncertainty from complex chronic disease trials to highly efficient EHR-integrated designs.
 
 The annual gross R&D savings can be calculated as:
 
 $$
-S_{\text{annual}} = \alpha \cdot R_d
+S_{\text{annual}} = \alpha \cdot \phi \cdot R_d
 $$
 
 Where:
 
 - $\alpha \in [0,1]$ is the cost reduction percentage (as decimal)
+- $\phi$ = {{< var phase_2_3_clinical_trial_cost_pct >}}, the Phase II/III share of trial spending
 - $R_d$ = {{< var global_clinical_trials_spending_annual >}} global clinical trial spending
 
 **Base Case Calculation:**
 
-Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial costs of {{< var dfda_pragmatic_trial_cost_per_patient >}} vs traditional {{< var traditional_phase3_cost_per_patient >}}):
+Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial costs of {{< var dfda_pragmatic_trial_cost_per_patient >}} vs traditional {{< var traditional_phase3_cost_per_patient >}}) on the Phase II/III share of spending:
 
 {{< var dfda_benefit_rd_only_annual_latex >}}
 
@@ -555,105 +301,33 @@ Using {{< var dfda_trial_cost_reduction_pct >}} cost reduction (pragmatic trial 
 
 ### Post-Safety Efficacy Lag Elimination {#regulatory-delay-avoidance}
 
-### Relative Magnitude
-
-Efficacy lag elimination ({{< var efficacy_lag_years >}}) is the **smaller** of the two timeline shift components. Discovery acceleration from {{< var dfda_trial_capacity_multiplier >}} trial capacity contributes {{< var dfda_trial_capacity_treatment_acceleration_years >}}, over 10× more health impact. This section details the efficacy lag component; see [The Discovery Capacity Model](#the-discovery-capacity-model) for the dominant component.
-
-**One of two health benefits of a decentralized FDA comes from eliminating the "efficacy lag"**, the {{< var efficacy_lag_years >}} Phase II/III delay between Phase I safety verification and final approval. **Critical: This does NOT eliminate safety testing.** Phase I safety testing ({{< var phase_1_safety_duration_years >}}) is preserved.
-
-![We keep the part where we check if drugs kill you immediately. We skip the part where we wait 8 years to see if they work.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-post-safety-efficacy-lag-elimination-regulatory-delay-avoida-bw-academic.jpg)
-
-#### The Efficacy Lag Problem
-
-A [comprehensive quantitative analysis](https://invisible-graveyard.warondisease.org) of post-safety efficacy lag costs (1962-2024) found:
-
-- **Total Deaths**: {{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} eventually avoidable deaths over {{< var efficacy_lag_years >}} efficacy lag (1962-2024)
-- **Total DALYs**: {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} Disability-Adjusted Life Years lost
-- **Total Timeline Shift**: One-time {{< var efficacy_lag_years >}} acceleration in disease eradication
-
-The analysis shows that for every 1 unit of harm the FDA prevents through safety testing, it generates **{{< var type_ii_error_cost_ratio >}} units** of harm through efficacy delay (Type II vs. Type I error ratio).
-
-![For every person saved by making you wait for treatment, 3,070 people die from waiting. It's called being careful.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-efficacy-lag-problem-bw-academic.jpg)
-
-**Input: Efficacy Lag Duration Distribution**
-
-{{< include ../figures/distribution-efficacy_lag_years.qmd >}}
-
-#### How a Decentralized Framework Eliminates the Efficacy Lag
-
-Such a framework provides **provisional access post-Phase I** via trial participation:
-
-1. **Phase I Safety Testing**: Maintained at {{< var phase_1_safety_duration_years >}} (no change)
-2. **Post-Phase I Access**: Patients can access drugs through trial participation immediately after safety verification
-3. **Continuous Efficacy Monitoring**: Real-world evidence replaces the {{< var efficacy_lag_years >}} pre-market efficacy delay
-
-This eliminates the post-safety efficacy lag (the Phase II/III portion, while preserving Phase I safety testing) by enabling real-world evidence collection during trials.
-
-#### Quantified Benefits (Efficacy Lag Component Only)
-
-![What happens when you give people medicine 8 years earlier: they live longer and economists get to make bigger numbers.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-quantified-benefits-efficacy-lag-component-only-bw-academic.jpg)
-
-The elimination of the post-safety efficacy lag by such a framework achieves a one-time {{< var efficacy_lag_years >}} timeline acceleration (the smaller component of the total {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} shift):
-
-- **Total DALYs Averted**: {{< var dfda_efficacy_lag_elimination_dalys_nounit >}} (total one-time impact from {{< var efficacy_lag_years >}} timeline shift)
-- **Total Economic Value**: {{< var dfda_efficacy_lag_elimination_economic_value >}} ({{< var dfda_efficacy_lag_elimination_dalys >}} at $150,000/DALY, cumulative over {{< var efficacy_lag_years >}} of accelerated treatment access)
-- **Deaths Prevented**: {{< var dfda_efficacy_lag_elimination_deaths_averted_nounit >}} (total over the {{< var efficacy_lag_years >}} period)
-
-{{< var dfda_efficacy_lag_elimination_dalys_latex >}}
-
-{{< var dfda_efficacy_lag_elimination_economic_value_latex >}}
-
-{{< var dfda_efficacy_lag_elimination_deaths_averted_latex >}}
-
-#### Efficacy Lag Elimination - Uncertainty Analysis
-
-{{< include ../figures/mc-distribution-dfda_efficacy_lag_elimination_dalys.qmd >}}
-
-{{< include ../figures/tornado-dfda_efficacy_lag_elimination_dalys.qmd >}}
-
-This represents the health benefits from eliminating the post-safety efficacy lag **only**. The efficacy lag ({{< var efficacy_lag_years >}}) is one of two components of the total timeline shift:
-
-1. **Efficacy lag elimination**: {{< var efficacy_lag_years >}} (this section)
-2. **Trial capacity/discovery acceleration**: {{< var dfda_trial_capacity_treatment_acceleration_years >}} (from {{< var dfda_trial_capacity_multiplier >}} more trials)
-
-The **combined total** timeline shift is {{< var dfda_trial_capacity_plus_efficacy_lag_years >}}, yielding {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}. See [The Receipts](#key-findings) for the combined totals.
-
-For detailed methodology and assumptions on efficacy lag, see [https://invisible-graveyard.warondisease.org](https://invisible-graveyard.warondisease.org).
+The smaller of the two timeline-shift components. Once a treatment has passed Phase I safety testing ({{< var phase_1_safety_duration_years >}}, unchanged), patients can take it through trial participation rather than waiting the {{< var efficacy_lag_years >}} that Phase II/III currently add before approval, with efficacy measured from the trial data as it accumulates. Removing that wait contributes {{< var efficacy_lag_years >}} of the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} total shift ({{< var dfda_efficacy_lag_elimination_dalys >}}, {{< var dfda_efficacy_lag_elimination_deaths_averted >}}); discovery acceleration contributes the other {{< var dfda_trial_capacity_treatment_acceleration_years >}}, over 10× more. Methodology for the lag estimate: [invisible-graveyard.warondisease.org](https://invisible-graveyard.warondisease.org).
 
 ### Safety and Risk Management
 
 **Common concern**: Won't faster trials with lower costs compromise safety?
 
-![Traditional safety monitoring versus actually paying attention. One watches 2,000 people for a few months. The other watches everyone forever.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-safety-and-risk-management-bw-academic.jpg)
-
-**The evidence indicates the opposite.** The proposed system provides superior safety monitoring compared to traditional trials across multiple dimensions.
-
 #### Current System Limitations: Dangerously Blind to Real-World Harms
-
-![Current drug safety: please voluntarily report if you die. Proposed drug safety: computers notice when you die.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-current-system-limitations-dangerously-blind-to-real-world-h-bw-academic.jpg)
-
-### Caution
 
 **The current system is not safe - it just appears safe because harms go undetected.**
 
 The FDA's voluntary adverse event reporting system (MedWatch) captures only **1-10% of actual adverse events**. Long-term harms that develop gradually over years - the most insidious and deadly kind - are virtually invisible:
 
-- **Vioxx** (rofecoxib): Caused 38,000-55,000 cardiovascular deaths over 5 years before detection through voluntary reporting. With automated EHR pharmacovigilance, the elevated MI risk would have been detected within 6-12 months.
+- **Vioxx** (rofecoxib): Caused 38,000-55,000 cardiovascular deaths over 5 years before detection through voluntary reporting
 - **Hormone Replacement Therapy**: Prescribed for decades before the Women's Health Initiative revealed increased cancer and cardiovascular risk - risks invisible to voluntary reporting
 - **Opioids**: The overdose crisis killed 500,000+ Americans; the addiction signal was undetectable in short trials with cherry-picked populations
 - **Avandia** (rosiglitazone): 83,000 excess heart attacks estimated before restrictions; signal emerged years post-approval
-- **Thalidomide** (1950s): The disaster that prompted regulatory reform - yet the current system would **still miss** a thalidomide-like harm if it manifested gradually rather than as obvious birth defects
 
-The current "safety" system doesn't prevent harm - it **delays detection** until bodies accumulate. A global automated pharmacovigilance system with continuous EHR monitoring would detect these signals in months, not years or decades.
+The current "safety" system doesn't prevent harm - it **delays detection** until bodies accumulate. Continuous EHR monitoring across a treated population compares outcomes to matched controls as prescriptions accumulate, rather than waiting for doctors to notice, remember, and file a report.
 
 **Specific limitations of the current system:**
 
 - Voluntary adverse event reporting captures only 1-10% of actual events
-- Traditional Phase III trials test 100-300 patients for 3-12 months, then monitoring stops
+- Traditional Phase III trials follow 300-3,000 patients for months to a few years, then monitoring stops
 - Approximately 50% of trial results go unpublished, with publication bias favoring positive findings 3:1
 - {{< var antidepressant_trial_exclusion_rate >}} of patients excluded due to age, comorbidities, or medications - safety signals in these populations go undetected
 - Long-term effects (>1 year) rarely captured in pre-approval trials
-- No systematic mechanism to detect gradual harms that develop over years
+- FDA's Sentinel System already runs automated surveillance on claims and dispensing data from more than 100 million people [@sentinel-information-for-providers], but it answers specific safety questions the agency poses; no routine screen watches every marketed drug for gradual harms
 
 #### Proposed System Safety Advantages
 
@@ -661,7 +335,7 @@ The current "safety" system doesn't prevent harm - it **delays detection** until
 
 ![The old way makes you wait 8 years to find out if your medicine works. The new way tells you immediately and keeps checking. Revolutionary.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-proposed-system-safety-advantages-bw-academic.jpg)
 
-2. **Continuous Population-Scale Monitoring**: Pragmatic trials with 10,000-100,000+ participants monitored continuously through EHR integration detect safety problems faster than small, time-limited traditional trials. The RECOVERY trial identified both effective treatments (dexamethasone) and harmful ones (hydroxychloroquine) in under 100 days with 47,000 patients.
+2. **Continuous Population-Scale Monitoring**: Pragmatic trials with 10,000-100,000+ participants monitored continuously through EHR integration detect safety problems faster than small, time-limited traditional trials. The RECOVERY trial identified an effective treatment (dexamethasone) and an ineffective one (hydroxychloroquine) within about 100 days of launch, and went on to enroll 47,000 patients.
 
 3. **Universal Data Collection**: The system automatically collects and publishes outcome data on all treatments, eliminating the publication bias that currently hides negative results.
 
@@ -669,36 +343,21 @@ The current "safety" system doesn't prevent harm - it **delays detection** until
 
 5. **Immediate Mass Notification**: When safety signals are detected, all patients taking the drug receive automated alerts through patient portals, enabling immediate clinical review.
 
-#### Detection Timeline Comparison
-
-The following table quantifies how automated EHR monitoring would have changed outcomes for major drug safety disasters:
-
-| Drug | Harm | Voluntary Reporting Detection | Projected EHR Detection | Deaths During Delay |
-|:---|:---|:---|:---|:---|
-| **Vioxx** | Cardiovascular events | 5 years (1999-2004) | 6-12 months | 38,000-55,000 |
-| **Avandia** | Heart attacks | 8 years post-approval | 12-18 months | ~83,000 excess events |
-| **Opioids** | Addiction/overdose | Decades | 2-3 years | 500,000+ deaths |
-| **HRT** | Cancer/cardiovascular | 40+ years | 3-5 years | Unknown (millions affected) |
-
-**Why the difference?** Automated EHR surveillance compares treated patients to matched controls continuously. The Vioxx cardiovascular signal would trigger statistical alerts after ~5,000 prescriptions (1.2% elevated event rate vs. expected background). Voluntary reporting requires doctors to notice, remember, and file paperwork, capturing only 1-10% of events.
-
 #### Comparative Safety Surveillance
 
 | Safety Dimension | Traditional Trials | Pragmatic Trials + EHR Monitoring |
 |:---|:---|:---|
-| Sample size | 100-300 patients | 10,000-100,000+ patients |
+| Sample size | 300-3,000 patients | 10,000-100,000+ patients |
 | Patient selection | {{< var antidepressant_trial_exclusion_rate >}} excluded | All volunteers (real-world populations) |
 | Monitoring duration | 3-12 months (then stops) | Continuous via EHR (indefinite) |
 | Publication rate | ~50% unpublished | 100% automatically published |
-| Adverse event detection | Voluntary reporting (1-10% capture) | Automated surveillance (100% capture) |
+| Adverse event detection | Voluntary reporting (1-10% capture) | Automated EHR surveillance of every enrolled patient |
 
 #### Pooled Liability Insurance
 
-The framework includes pooled liability coverage for sponsors, reducing individual company risk while ensuring patient compensation for adverse events. This removes a major barrier to trial participation for smaller sponsors while maintaining accountability.
+The protocol includes pooled liability coverage for sponsors, reducing individual company risk while ensuring patient compensation for adverse events. This removes a major barrier to trial participation for smaller sponsors while maintaining accountability.
 
-**Type II Error Dominance**: For every person protected from an unsafe drug (Type I error prevention), {{< var type_ii_error_cost_ratio >}} people die from delayed access to beneficial treatments (Type II errors). The current system prevents harm from unsafe drugs, but causes {{< var type_ii_error_cost_ratio >}} more deaths through delays. Phase I safety testing is preserved in this framework; the ratio quantifies the cost of the *efficacy lag*, not safety testing. (See [Historical Validation](#historical-validation-pre-1962-physician-led-efficacy-testing) for the thalidomide context.)
-
-## ROI Analysis for a Decentralized FDA {#simplified-roi-scenario}
+## ROI Analysis {#simplified-roi-scenario}
 
 ### Monte Carlo Distributions
 
@@ -712,9 +371,7 @@ The framework includes pooled liability coverage for sponsors, reducing individu
 
 ## Research Acceleration Mechanism
 
-The {{< var dfda_trial_capacity_multiplier >}} research acceleration transforms our ability to explore the vast therapeutic space where undiscovered cures already exist.
-
-![If you test 12 drugs at once instead of one drug at a time, you learn about 12 drugs. Mathematics.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-research-acceleration-mechanism-bw-academic.jpg)
+The {{< var dfda_trial_capacity_multiplier >}} research acceleration transforms our ability to explore a therapeutic space that is almost entirely untested.
 
 ### The Unexplored Therapeutic Frontier
 
@@ -727,9 +384,7 @@ The fundamental problem isn't that cures are hard to discover. It's that we're b
 
 {{< var exploration_ratio_latex >}}
 
-The cures likely already exist among tested-safe compounds. We just haven't looked. See [The Untapped Therapeutic Frontier](../problem/untapped-therapeutic-frontier.qmd) for detailed analysis of this exploration gap, and [The Discovery Capacity Model](#the-discovery-capacity-model) for the quantitative framework showing how {{< var dfda_trial_capacity_multiplier >}} trial capacity produces the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.
-
-![We've tested 0.342% of possible treatments. The remaining 99.658% might cure everything or nothing, but we'll never know at this rate.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
+Some of those treatments are probably sitting among compounds already proven safe. Nobody has looked. See [The Discovery Capacity Model](#the-discovery-capacity-model) for how {{< var dfda_trial_capacity_multiplier >}} trial capacity produces the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.
 
 ### Addressing the Returns Question: Diminishing, Linear, or Compounding?
 
@@ -752,8 +407,6 @@ The diminishing returns objection assumes we've exhausted low-hanging fruit. But
 4. **Most biology is untargeted**: Only {{< var human_interactome_targeted_pct >}} of the human interactome has been targeted. We're ignoring 88% of our own biology.
 
 5. **RECOVERY found treatments in months**: The Oxford trial discovered multiple effective COVID treatments rapidly *because it looked systematically*.
-
-**You cannot have diminishing returns when you've barely started.**
 
 #### Mathematical Framework: When Would Diminishing Returns Dominate?
 
@@ -813,7 +466,7 @@ $$
 
 **Timeline to Crossover:**
 
-At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require ~1,500 years at current pace or ~125 years with the framework. For combination therapies ({{< var combination_therapy_disease_space >}}), reaching 53% exploration would take millions of years.
+At current exploration of {{< var exploration_ratio >}} (<1%), reaching the 53% crossover would require ~1,500 years at current pace or ~125 years with the protocol. For combination therapies ({{< var combination_therapy_disease_space >}}), reaching 53% exploration would take millions of years.
 
 **Conclusion**: For any plausible planning horizon, learning effects dominate. Diminishing returns is a theoretical concern for civilizations operating on multi-century timescales, not a practical constraint for the next 100+ years of medical research.
 
@@ -824,15 +477,14 @@ Given genuine uncertainty about whether returns are diminishing or compounding, 
 1. **It's the neutral prior**: Without strong evidence for either diminishing or compounding returns, linearity is the least assumptive model
 2. **It may underestimate benefits**: If platform technologies and learning effects produce compounding returns, our projections are conservative
 3. **It's empirically defensible**: The RECOVERY trial's success (multiple treatments found with increased search) is consistent with linear or better returns
-4. **It avoids both failure modes**: Assuming diminishing returns would justify inaction; assuming compounding returns might overstate benefits. Linearity is the responsible middle ground
 
-**Bottom line**: Even under the conservative linear assumption, {{< var dfda_trial_capacity_multiplier >}} more trials produces {{< var dfda_trial_capacity_multiplier >}} more discoveries from a space that is 99%+ unexplored. The expected value calculation remains overwhelmingly positive.
+**Bottom line**: Even under the conservative linear assumption, {{< var dfda_trial_capacity_multiplier >}} more trials produces {{< var dfda_trial_capacity_multiplier >}} more discoveries from a space that is 99%+ unexplored.
 
 ![Three guesses about whether cures get harder to find over time, easier to find, or stay the same. We picked the boring one.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-the-conservative-default-linear-assumption-bw-academic.jpg)
 
 #### Funding Level vs. Cost-Effectiveness
 
-While the analysis above addresses whether *trials* produce proportionally more *cures*, a separate question is how *funding level* affects *cost per DALY averted*. The acceleration formula $T_{accel} = T_{baseline} \times (1 - 1/k)$, where $k$ is the trial capacity multiplier, produces natural diminishing returns: each additional dollar buys less acceleration as $k$ grows. @fig-funding-vs-cost-per-daly shows cost per DALY rising with funding, while @fig-funding-vs-dalys-averted shows total DALYs approaching an asymptotic ceiling.
+While the analysis above addresses whether *trials* produce proportionally more *cures*, a separate question is how *funding level* affects *cost per DALY averted*. The acceleration formula $T_{accel} = T_{baseline} \times (1 - 1/k)$, where $k$ is the trial capacity multiplier, produces natural diminishing returns: each additional dollar buys less acceleration as $k$ grows. @fig-funding-vs-cost-per-daly shows cost per DALY falling as funding rises, with diminishing returns, while @fig-funding-vs-dalys-averted shows total DALYs approaching an asymptotic ceiling.
 
 {{< include ../figures/funding-vs-cost-per-daly-line-chart.qmd >}}
 
@@ -846,7 +498,6 @@ The proposed funding level ({{< var dfda_annual_trial_funding >}}/year) sits in 
 
    - Tufts Center for the Study of Drug Development often cited for \$1.0 - \$2.6 billion/drug.
    - Journal articles and industry reports (IQVIA, Deloitte) also highlight \$2+ billion figures.
-   - Oxford RECOVERY trial: {{< var recovery_trial_cost_per_patient >}}/patient (exceptional NHS/COVID conditions). ADAPTABLE trial: {{< var adaptable_trial_cost_per_patient >}}/patient (typical US pragmatic trial). Our projections use {{< var dfda_pragmatic_trial_cost_per_patient >}}/patient based on ADAPTABLE; confidence interval captures uncertainty.
 
 2. **ROI Calculation Method**:
 
@@ -858,28 +509,21 @@ The proposed funding level ({{< var dfda_annual_trial_funding >}}/year) sits in 
    - The largest uncertainties revolve around uptake speed, regulatory harmonization, and participant willingness.
    - Projections assume widespread adoption by major pharmaceutical companies and global health authorities.
 
-4. **Secondary Benefits**:
-
-   - Quality-of-life improvements, lower healthcare costs from faster drug innovation, and potentially fewer adverse events from earlier detection.
-   - These are positive externalities that can significantly enlarge real ROI from a societal perspective.
-
 ## Conclusion
 
-A decentralized FDA transforms the centralized regulatory approach into a global, decentralized model, reducing clinical trial costs by a factor of {{< var dfda_trial_cost_reduction_factor >}}, accelerating approval timelines, and expanding therapeutic coverage to neglected diseases. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront plus discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends {{< var global_clinical_trials_spending_annual >}} annually on clinical trials, a {{< var dfda_trial_cost_reduction_pct >}} reduction yields an ROI of **{{< var dfda_roi_rd_only >}}:1** at scale.
+The protocol reduces clinical trial costs by a factor of {{< var dfda_trial_cost_reduction_factor >}}, brings treatments to patients sooner, and extends trials to diseases no sponsor would otherwise fund. The 10-year NPV total cost is {{< var dfda_npv_total_cost >}} (upfront plus discounted annual operations), generating {{< var dfda_npv_net_benefit_rd_only >}} in net R&D savings. Given that the pharmaceutical industry collectively spends {{< var global_clinical_trials_spending_annual >}} annually on clinical trials, {{< var phase_2_3_clinical_trial_cost_pct >}} of it on Phase II/III efficacy testing, a {{< var dfda_trial_cost_reduction_pct >}} reduction on that share yields an ROI of **{{< var dfda_roi_rd_only >}}:1** at scale.
 
-Beyond direct savings, the effects on medical progress are substantial: expanded therapeutic exploration, real-time treatment effectiveness rankings, and research on off-patent treatments that currently lack commercial incentives. With appropriate privacy protections and international coordination, this framework enables evidence-based personalized medicine at global scale.
+Beyond direct savings, the effects on medical progress are substantial: expanded therapeutic exploration, real-time treatment effectiveness rankings, and research on off-patent treatments that currently lack commercial incentives. With appropriate privacy protections and international coordination, the protocol enables evidence-based personalized medicine at global scale.
 
 ### Disclaimer
 
-All figures in this document are estimates based on publicly available information, industry benchmarks, and simplifying assumptions. Real-world costs, savings, and ROI will vary greatly depending on the scope of implementation, the speed of adoption, regulatory cooperation, and numerous other factors. Nonetheless, this high-level exercise illustrates the substantial potential gains from a global, decentralized, continuously learning clinical trial and regulatory system.
+All figures in this document are estimates based on publicly available information, industry benchmarks, and simplifying assumptions. Real-world costs, savings, and ROI will vary greatly depending on the scope of implementation, the speed of adoption, regulatory cooperation, and numerous other factors. Nonetheless, this high-level exercise illustrates the substantial potential gains from a global, continuously learning clinical trial system.
 
 ## Verification: Complete Derivation Chains
 
 For economist verification, this section provides complete derivation chains for all headline figures. Each metric traces back to primary data sources.
 
 ### Trial Capacity Multiplier Derivation
-
-![If you spend more money on trials, you can run more trials. This required a diagram.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-trial-capacity-multiplier-derivation-bw-academic.jpg)
 
 **Result:** {{< var dfda_trial_capacity_multiplier >}}
 
@@ -913,8 +557,6 @@ For economist verification, this section provides complete derivation chains for
 
 ### Lives Saved Derivation
 
-![When you cure diseases 212 years early, you save everyone who would have died in those 212 years. It adds up.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-lives-saved-derivation-bw-academic.jpg)
-
 **Result:** {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}
 
 **Step 1: Daily mortality from eventually avoidable causes**
@@ -934,21 +576,20 @@ For economist verification, this section provides complete derivation chains for
 
 **Result:** {{< var dfda_direct_funding_cost_per_daly >}}
 
-**Step 1: Total protocol infrastructure cost (10-year NPV)**
+**Step 1: Total cost (NPV of {{< var dfda_annual_trial_funding >}}/year trial funding over the {{< var dfda_queue_clearance_years >}} clearance period, discounted at {{< var npv_discount_rate_standard >}})**
 
-- NPV total cost: {{< var dfda_npv_total_cost >}}
+The protocol infrastructure itself ({{< var dfda_npv_total_cost >}} 10-year NPV) is small next to the trial funding, which is what actually buys the DALYs, so the trial funding is the numerator.
 
-**Step 2: DALYs averted**
+**Step 2: DALYs averted, discounted at the same {{< var npv_discount_rate_standard >}}**
 
 - Total DALYs: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_nounit >}}
+- Present value: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys_discounted_nounit >}}
 
 **Step 3: Calculate cost per DALY**
 
 {{< var dfda_direct_funding_cost_per_daly_latex >}}
 
-**Comparison**: Malaria bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY. This framework operates at vastly greater scale while achieving competitive cost-effectiveness.
-
-![This costs 84 cents per year of healthy life saved. Mosquito nets cost $89. We give medals to the mosquito net people.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-cost-per-daly-derivation-bw-academic.jpg)
+**Comparison**: Malaria bed nets cost {{< var bed_nets_cost_per_daly >}}/DALY. The protocol operates at vastly greater scale while achieving competitive cost-effectiveness.
 
 ### ROI Derivation
 
@@ -974,7 +615,7 @@ For economist verification, this section provides complete derivation chains for
 | Trial Capacity | {{< var dfda_trial_capacity_multiplier >}} | Funding, trial costs | ADAPTABLE trial, ClinicalTrials.gov |
 | Timeline Shift | {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} | Efficacy lag, backlog model | FDA approval data, disease registry |
 | Lives Saved | {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} | Mortality rates, timeline | WHO GBD, mortality statistics |
-| Cost/DALY | {{< var dfda_direct_funding_cost_per_daly >}} | NPV costs, DALYs | ROM estimates, DALY calculations |
+| Cost/DALY | {{< var dfda_direct_funding_cost_per_daly >}} | Trial funding NPV, DALYs | Funding scenario, WHO GBD |
 | ROI | {{< var dfda_roi_rd_only >}}:1 | Costs, savings | NPV analysis with 5-year ramp |
 
 All parameters, confidence intervals, and Monte Carlo distributions are documented in [Parameters and Calculations](/knowledge/appendix/parameters-and-calculations.qmd).
@@ -993,7 +634,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 ### Adoption Rate Assumptions
 
-**Assumption:** Framework adoption follows a 5-year ramp (20%, 40%, 60%, 80%, 100%) before reaching full capacity.
+**Assumption:** Protocol adoption follows a 5-year ramp (20%, 40%, 60%, 80%, 100%) before reaching full capacity.
 
 **Justification:** Based on historical technology adoption curves in healthcare (EHR adoption, telemedicine during COVID). The ramp is built into NPV calculations.
 
@@ -1013,7 +654,7 @@ This analysis rests on several core assumptions that should be made explicit for
 
 **Justification:** Historical trend shows ~70% reduction in age-adjusted mortality since 1900. Most major disease categories have known biological mechanisms amenable to intervention. See [Why "Eventually Avoidable" Matters](#why-eventually-avoidable-matters).
 
-**Sensitivity:** Health impact scales linearly with this assumption. At 25% avoidability (half the estimate), health benefits are halved. R&D savings are unaffected.
+**Sensitivity:** Health impact scales linearly with this assumption. At 50% avoidability (the low end of the confidence interval), health benefits fall by roughly half. R&D savings are unaffected.
 
 ### Counterfactual Baseline Specification
 
@@ -1021,21 +662,19 @@ This cost-effectiveness analysis uses the **status quo** as the baseline counter
 
 **Why status quo is the appropriate baseline:**
 
-1. **No comparable interventions exist**: There is no competing proposal that would achieve similar trial cost reductions at scale
+1. **No comparable interventions exist at scale**: PCORnet and RECOVERY demonstrate the per-patient cost; no competing proposal funds pragmatic trials at this volume
 2. **Historical trend supports it**: Trial costs have increased, not decreased, over the past 50 years ({{< var drug_cost_increase_pre1962_to_current_multiplier >}} since 1962)
 3. **Incremental improvements are marginal**: Ongoing digitization efforts (DCT platforms, EHR integration) produce 10-20% efficiency gains, not the {{< var dfda_trial_cost_reduction_pct >}} reduction from pragmatic trial design
 
 **Alternative counterfactual scenarios:**
 
-1. **Organic efficiency improvement**: Clinical trial costs decrease 2-3% annually through technology adoption. Under this scenario, the marginal impact of the framework is reduced by the amount of improvement that would occur anyway. At 3%/year organic improvement over 10 years, approximately 26% of the cost reduction would occur regardless, reducing the framework's attributable benefit to ~74% of projections.
+1. **Organic efficiency improvement**: Clinical trial costs decrease 2-3% annually through technology adoption. Under this scenario, the marginal impact of the protocol is reduced by the amount of improvement that would occur anyway. At 3%/year organic improvement over 10 years, approximately 26% of the cost reduction would occur regardless, reducing the protocol's attributable benefit to ~74% of projections.
 
 2. **Alternative government priorities**: Funds are allocated to other health investments (NIH grants, hospital infrastructure, insurance subsidies). Each alternative use would require separate cost-benefit analysis. However, none of these alternatives address the core trial cost problem; they operate within the existing high-cost system.
 
-3. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually). The framework ROI of {{< var dfda_roi_rd_only >}}:1 substantially exceeds this threshold.
+3. **Return to taxpayers**: Funds are returned via tax cuts, enabling private consumption and investment. Under this scenario, the opportunity cost equals the weighted average return on private capital (approximately {{< var npv_discount_rate_standard >}} annually). The protocol ROI of {{< var dfda_roi_rd_only >}}:1 substantially exceeds this threshold.
 
 **Methodological note:** The analysis uses the neutral status quo baseline to avoid biasing results in either direction. Sensitivity analysis (tornado diagrams) demonstrates robustness across baseline assumptions.
-
-The analysis uses the neutral status quo baseline to avoid biasing results in either direction.
 
 ### Methodology Validation Against Accepted Benchmarks
 
@@ -1049,21 +688,17 @@ This analysis uses standard health economics methodology identical to that emplo
 | NPV with discount rate | Standard cost-benefit analysis | CBO, OMB Circular A-94 |
 | Long-horizon cumulative impact | Social cost of carbon | EPA, IPCC, Stern Review |
 
-The large headline figures reflect the cumulative value of permanent infrastructure, the same methodology used to value smallpox eradication ($300M program valued at total future lives saved) and climate economics (multi-trillion dollar damage estimates that exceed annual GDP). Our 95% confidence intervals span nearly an order of magnitude, wider than most published health economics studies.
+Our 90% confidence intervals on the headline figures span a factor of three or more.
 
 ## Appendix Calculation Frameworks and Detailed Analysis
-
-This appendix provides the detailed models and data used in the cost-benefit analysis.
 
 ### Calculation Framework - NPV Methodology {#calculation-framework---npv-methodology}
 
 Uses 10-year NPV horizon (standard business practice). See [Verification: Complete Derivation Chains](#verification-complete-derivation-chains) for full methodology.
 
-### Financial Analysis Summary {#financial-analysis-summary}
+### Health Impact Uncertainty Analysis {#financial-analysis-summary}
 
-#### Health Impact Uncertainty Analysis
-
-The Monte Carlo distributions below show the range of health impact estimates across 10,000 simulations, accounting for uncertainty in timeline shift, mortality rates, and avoidable percentages:
+These Monte Carlo distributions show the range of health impact estimates across 10,000 simulations, accounting for uncertainty in timeline shift, mortality rates, and avoidable percentages:
 
 **Lives Saved Distribution:**
 
@@ -1085,7 +720,7 @@ We present a cost-utility analysis using the **quality-adjusted life years (QALY
 
   Where $Q_0$/$Q_1$ = quality of life (0-1) before/after, $T_0$/$T_1$ = years of life before/after.
 
-- **Cost-Effectiveness**: A decentralized FDA achieves cost-effectiveness through dual pathways:
+- **Cost-Effectiveness**: The protocol achieves cost-effectiveness through dual pathways:
   1. **R&D Savings**: {{< var dfda_benefit_rd_only_annual >}}+ annual savings from {{< var dfda_trial_cost_reduction_pct >}} trial cost reduction
   2. **Health Gains**: {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} averted from the full timeline shift (~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} from {{< var dfda_trial_capacity_multiplier >}} trial capacity + efficacy lag elimination)
 
@@ -1099,39 +734,17 @@ We present a cost-utility analysis using the **quality-adjusted life years (QALY
 
 #### QALY Benefit Streams Breakdown
 
-The total DALY impact ({{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}}) derives from three distinct benefit streams with varying levels of empirical support:
+Three mechanisms contribute to the {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift behind the {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} figure, with different evidence strength. The model does not apportion DALYs among them; the derivation above treats them together.
 
-**A. Accelerated Development of Existing Pipeline Drugs**
+- **A. Faster development of pipeline drugs.** Higher trial capacity shortens development time for treatments already in the pipeline. Confidence: high; each month of delay in cancer treatment raises mortality risk by roughly 10% [@systematic-review; @lshtm-every-month-delayed-cancer-treatment-can-raise-risk-de].
+- **B. Better prevention from population-scale outcome data.** Comprehensive outcome data identifies at-risk populations and measures real-world effectiveness. Confidence: medium; the value of prevention is established, the gain from more data is not.
+- **C. Trials for diseases no sponsor will fund.** {{< var rare_diseases_count_global_nounit >}}+ rare diseases, 95% without an approved treatment, become feasible to study at {{< var dfda_pragmatic_trial_cost_per_patient >}} per patient instead of {{< var traditional_phase3_cost_per_patient >}}. Confidence: lower; sound in theory, unproven at scale.
 
-Health gains from bringing effective treatments to patients faster through shortened development and approval timelines:
-
-- **Baseline:** Research shows treatment delays significantly increase mortality. Cancer studies indicate approximately 10% increased mortality risk per month of delay.
-- **Mechanism:** {{< var dfda_trial_capacity_multiplier >}} trial capacity reduces average development time
-- **Confidence:** High. Well-documented costs of delayed access (84,000 life-years lost per year of delay in cancer therapies alone)
-
-**B. Improved Preventative Care via Real-World Evidence**
-
-Value of using comprehensive data to optimize preventative care and treatment effectiveness:
-
-- **Baseline:** Cancer screenings alone have saved millions of life-years; significant untapped potential remains
-- **Mechanism:** Large-scale identification of at-risk populations and real-world effectiveness measurement enables personalized prevention
-- **Confidence:** Medium. Preventative care benefits are well-established, but scale of improvement from comprehensive data remains uncertain
-
-**C. Enabling Research for Previously Untreatable Diseases**
-
-Opens research pathways for conditions currently ignored because trials are too expensive to bother:
-
-- **Baseline:** {{< var rare_diseases_count_global_nounit >}}+ rare diseases, 95% lack FDA-approved treatments
-- **Mechanism:** Radically lower per-patient costs ({{< var dfda_pragmatic_trial_cost_per_patient >}} vs {{< var traditional_phase3_cost_per_patient >}}) make rare disease R&D economically feasible
-- **Confidence:** Lower. Economic viability of rare disease research is theoretically sound but empirically unproven at scale
-
-**Conservative Approach:** Base case uses median estimates across all three streams; sensitivity analysis demonstrates positive returns even when using R&D savings alone ({{< var dfda_roi_rd_only >}}:1 ROI independent of health benefits).
-
-![Three different ways this saves 565 billion years of human suffering. We made them into a pie chart.](/assets/images/dfda-impact-paper/dfda-impact-paper-section-qaly-benefit-streams-breakdown-bw-academic.jpg)
+The R&D savings case ({{< var dfda_roi_rd_only >}}:1 ROI) stands on its own if all three health mechanisms are set to zero.
 
 #### DALY Sensitivity Analysis
 
-The following auto-generated sensitivity analyses show how cost-effectiveness varies based on uncertainty in input parameters. These use Monte Carlo simulation with uncertainty propagation from parameter distributions.
+The following sensitivity analyses show how cost-effectiveness varies based on uncertainty in input parameters. These use Monte Carlo simulation with uncertainty propagation from parameter distributions.
 
 **Key DALY Outcomes:**
 
@@ -1139,21 +752,15 @@ The following auto-generated sensitivity analyses show how cost-effectiveness va
 
 {{< include ../figures/tornado-dfda_trial_capacity_plus_efficacy_lag_dalys.qmd >}}
 
-### Comparative Cost-Effectiveness - A Decentralized Framework vs Other Interventions
+### Comparative Cost-Effectiveness vs Other Interventions
 
-To provide context for the impact of a global pragmatic trial system's infrastructure, the chart below visualizes its cost-effectiveness against other well-understood public health programs. The metric used is **Quality-Adjusted Life Years (QALYs) Gained per $1 Million of Spending**. A higher number signifies greater cost-effectiveness.
+For context, the table compares the protocol's cost-effectiveness against other well-understood public health programs, measured as **Quality-Adjusted Life Years (QALYs) Gained per $1 Million of Spending**. A higher number signifies greater cost-effectiveness. The comparison is not quite like for like: smallpox eradication and childhood vaccination each targeted one disease, while this funds the discovery process itself, the difference between fixing one pothole and repaving the road.
 
 For standard interventions, this value is calculated as `$1,000,000 / ICER`, where the ICER (Incremental Cost-Effectiveness Ratio) is the cost to gain one QALY. For **dominant** interventions that are both more effective and less expensive, the ICER is negative, and this metric isn't strictly applicable. For these cases, an illustrative range is used to represent their high value.
 
-All data used in the chart is derived from the table and sources below.
-
-![How much healthy life you buy per million dollars spent on various health things. Some are better than others. We fund the others.](../../assets/images/qaly-comparison-chart.png)
-
-The following table provides the data and sources that support the chart. The list is ordered to match the chart's presentation.
-
 | Intervention                           | QALYs Gained per $1M Spending<a href="#ref_chart_calc">¹</a> | Typical ICER Range (Cost per QALY Gained)               | Classification                   | Source / Evidence                                                                                                                                                                                                                                                   |
 | :------------------------------------- | :----------------------------------------------------------: | :------------------------------------------------------ | :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Decentralized Framework for Drug Assessment** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#dfda-icer-analysis---cost-utility-framework). Based on {{< var dfda_npv_annual_opex >}}-{{< var dfda_npv_annual_opex_total >}} annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.                                                                              |
+| **This protocol** |                     **Dominant**                      | **Cost-Saving + Health Gain** | **Dominant**                     | [This analysis's Sensitivity Analysis](#dfda-icer-analysis---cost-utility-framework). Based on {{< var dfda_npv_annual_opex >}}-{{< var dfda_npv_annual_opex_total >}} annual costs generating {{< var dfda_trial_capacity_plus_efficacy_lag_dalys >}} from ~{{< var dfda_trial_capacity_plus_efficacy_lag_years >}} timeline shift.                                                                              |
 | **Smallpox Eradication**               |      **100,000+**<a href="#ref_dominant">³</a>      | **Dominant** (Cost-Saving)                              | **Dominant**                     | The $300M program (1967-1980) prevents 5M annual deaths. Benefit-cost ratio exceeds 100:1. Standard ICER calculation is impractical due to its uncommon scale. (WHO, 2010 [@who-smallpox-eradication-commemoration]) |
 | **Childhood Vaccinations**             |        **22+**<a href="#ref_dominant">³</a>         | Often **Dominant** to **~$100,000**                     | Dominant / Highly Cost-Effective | CDC estimates routine childhood vaccinations prevent 32M hospitalizations and 1.1M deaths among 1994-2023 US birth cohorts, with $2.9T in societal cost savings. (CDC, 2023 [@childhood-vaccinations-prevent-deaths])                                 |
 | **Clean Water Programs**               |                       **100 **                        | **~$1,000 - $10,000**                                   | Highly Cost-Effective            | WHO estimates household water treatment costs $100-$500/DALY averted. Community water supply improvements cost $200/DALY. (WHO, 2004 [@who-clean-water-daly-costs])                                              |
@@ -1167,13 +774,8 @@ The following table provides the data and sources that support the chart. The li
 
 <a id="ref_chart_calc"></a>¹ **QALYs per $1M Calculation**:
 
-- For a decentralized framework: `(Annual QALYs Gained) / (Annual Cost in Millions)`
+- For the protocol: `(Annual QALYs Gained) / (Annual Cost in Millions)`
 - Ranges reflect conservative to optimistic scenarios accounting for parameter uncertainties
-
-<a id="ref_dfda_icer"></a>² **Cost-Dominant Interpretation**:
-
-- All scenarios for the framework show extremely low cost per DALY while generating net economic benefits that exceed costs
-- The framework is "dominant" - more effective and less costly than the status quo
 
 <a id="ref_dominant"></a>³ **Dominant Interventions**:
 
@@ -1190,36 +792,14 @@ The following table provides the data and sources that support the chart. The li
 
 ## Comparison to Other Major Public Investments
 
-To provide context for the estimated costs of a global pragmatic trial system, it is useful to compare them to other significant U.S. government investments in health and technology. The projected 'Lean Ecosystem' cost for the framework of approximately **{{< var dfda_npv_annual_opex_total >}} per year** (covering Core framework operations plus medium-scope broader initiatives) is modest in comparison to other major federal projects.
+To provide context for the estimated costs of a global pragmatic trial system, it is useful to compare them to other significant U.S. government investments in health and technology. The projected 'Lean Ecosystem' cost for the protocol of approximately **{{< var dfda_npv_annual_opex_total >}} per year** (core protocol operations plus the medium-case broader initiative) is modest in comparison to other major federal projects.
 
-| Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to Framework's Annual Cost | Source / Note                                                              |
+| Initiative / Project                 | Approximate Cost / Budget (Annualized)                                                             | Comparison to Protocol's Annual Cost | Source / Note                                                              |
 | :----------------------------------- | :------------------------------------------------------------------------------------------------- | :------------------------------------ | :------------------------------------------------------------------------- |
-| **Decentralized Framework (Lean Ecosystem)** | **~{{< var dfda_npv_annual_opex_total >}} / year**                                                                           | **1x (Baseline)**                     | [This analysis](#simplified-roi-scenario)                                  |
+| **This protocol (Lean Ecosystem)** | **~{{< var dfda_npv_annual_opex_total >}} / year**                                                                           | **1x (Baseline)**                     | [This analysis](#simplified-roi-scenario)                                  |
 | **Cancer Moonshot Initiative**       | **~\$257 Million / year [@cancer-budget]** ($1.8B over 7 years)          | **~6.4x**                             | 21st Century Cures Act [@21st-century-cures-act-2016]          |
 | **NIH "All of Us" Research Program** | **~$500M / year** (FY23 Approx. Budget) | **~12.5x**                            | NIH Budget [@global-gov-med-research-spending]              |
 | **HealthCare.gov (Initial Build)**   | **~\$1.7 - \$2.1 Billion [@gao-healthcare-gov-costs]** (Total Upfront Cost)        | **~42x - 52x** (of one year's cost)   | GAO Reports / Public Reporting [@gao-healthcare-gov-costs] |
 | **National Cancer Institute (NCI)**  | **~\$7.2 Billion / year [@nih-institute-budgets-fy24]** (FY25 Budget)                 | **~180x**                             | NCI Budget Data [@nih-institute-budgets-fy24]                 |
 
 {{< include ../figures/dfda-vs-federal-health-programs-comparison-bar-chart.qmd >}}
-
-**Translation for Budget Committees:** The estimated annual cost of this initiative is an order of magnitude smaller than the budgets for other major national health priorities like the "All of Us" program or the Cancer Moonshot. It represents approximately **0.55%** of the NCI's annual budget (calculated from the system's [annual cost](#simplified-roi-scenario) and NCI budget [@nih-institute-budgets-fy24]). This comparison underscores that such an infrastructure is not only a high-leverage investment (due to its massive ROI) but also a remarkably cost-effective one relative to the scale of federal health and technology spending.
-
-## Why This Differs from Failed Megaprojects
-
-Large-scale interventions face legitimate skepticism. The development economics literature documents numerous failures: infrastructure megaprojects that exceed budgets by 50-100%, foreign aid programs with negative or negligible returns, and "grand challenges" that fail to materialize promised benefits.
-
-![Why giant health IT projects fail (they're giant) versus why small connected systems work (they're small).](/assets/images/dfda-impact-paper/dfda-impact-paper-section-why-this-differs-from-failed-megaprojects-bw-academic.jpg)
-
-This intervention differs in five critical ways:
-
-1. **Proven Technology**: Unlike speculative moonshots, pragmatic trials using existing EHR infrastructure have been validated. The RECOVERY trial enrolled 47,000+ patients at {{< var recovery_trial_cost_per_patient >}}/patient. ADAPTABLE achieved {{< var adaptable_trial_cost_per_patient >}}/patient in routine US healthcare settings. This isn't "we hope this works" - it's "we've proven this works, now scale it."
-
-2. **Marginal Extension, Not Novel System**: The framework extends existing clinical trial infrastructure rather than replacing it. Hospitals already have EHRs. Patients already take medications. We're adding a coordination layer and outcome tracking, not building from scratch.
-
-3. **Self-Correcting Feedback**: Unlike infrastructure projects where failures compound, the protocol has built-in error correction. If a treatment doesn't work, the data shows it. If costs exceed projections, we can adjust scope. The framework generates its own performance metrics.
-
-4. **Historical Precedent**: Smallpox eradication ({{< var smallpox_eradication_roi >}}:1 ROI) and childhood vaccination programs demonstrate that systematic health interventions can achieve extraordinary returns. The difference: those targeted specific diseases. This targets the discovery process itself, which is the difference between fixing one pothole and repaving the road.
-
-5. **Modern Infrastructure Makes This Possible Now**: The convergence of electronic health records (major EHR systems covering 57% of US hospitals), consumer wearables (billions of devices tracking health metrics), federated data networks (querying 300M+ patient records without moving data), and AI-powered analysis enables systematic outcome tracking at scale that wasn't feasible even a decade ago. This isn't speculation about future technology - it's deployment of existing, proven infrastructure.
-
----

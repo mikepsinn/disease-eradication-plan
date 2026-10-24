@@ -53,7 +53,7 @@ This approach:
 
 The main CI workflow (`publish.yml`) automatically:
 1. Builds each paper's PDF
-2. Deploys to Netlify
+2. Deploys to Cloudflare Pages
 3. Uploads PDF as draft to Zenodo
 
 This happens on every push to master - your Zenodo drafts stay up-to-date automatically.

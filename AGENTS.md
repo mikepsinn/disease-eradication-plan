@@ -29,6 +29,7 @@ Quarto book: "How to End War and Disease" - getting nations to sign a 1% treaty 
 | Rule | Requirement |
 |------|-------------|
 | Agent commits | Only when explicitly requested; review the complete diff and stage only intended files |
+| Identity | Author and committer: `Mike P. Sinn <m@crowdsourcingcures.org>` (set in `.claude/settings.json`). Never commit as Claude or another agent; no `Co-Authored-By` agent trailer |
 | Pre-commit | Full artifact generation, Pyright, and repository-wide validation run automatically; never use `--no-verify` unless explicitly requested |
 | Generated changes | The commit succeeds; review and commit any generated changes left in the worktree |
 

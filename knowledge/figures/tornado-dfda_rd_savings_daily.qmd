@@ -20,14 +20,14 @@ display_name = "Daily R&D Savings from Trial Cost Reduction"
 
 # Baseline and units
 
-baseline = 160658870.698296
+baseline = 110854620.78182425
 
 # Tornado data from sensitivity analysis
 
-drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT']
-driver_labels = ['Annual Global Spending on Clinical Trials', 'Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient']
-impacts_low = [-26776478.449716, 3335783.4948212802, -3910925.4928165674]
-impacts_high = [40164717.67457402, -8303374.540594697, 2452088.2058135867]
+drivers = ['GLOBAL_CLINICAL_TRIALS_SPENDING_ANNUAL', 'PHASE_2_3_CLINICAL_TRIAL_COST_PCT', 'DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT', 'TRADITIONAL_PHASE3_COST_PER_PATIENT']
+driver_labels = ['Annual Global Spending on Clinical Trials', 'Phase 2/3 Share of Clinical Trial Costs', 'Pragmatic Trial Cost per Patient', 'Phase 3 Cost per Patient']
+impacts_low = [-18475770.13030404, -8032943.534914821, 2301690.6114266664, -2698538.5900434256]
+impacts_high = [27713655.195456043, 8032943.5349148065, -5729328.43301034, 1691940.862011373]
 
 # Convert deltas to absolute values (baseline + delta)
 

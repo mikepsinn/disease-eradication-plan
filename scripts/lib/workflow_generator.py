@@ -13,14 +13,21 @@ if sys.platform == 'win32':
 
 import logging
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import List
-from urllib.parse import urlparse
 
 logger = logging.getLogger("dih.workflow")
 
 DOWNLOADABLE_FORMATS = ("pdf", "epub", "docx")
+# Configs whose outputs are uploaded to Amazon KDP by hand
+KDP_CONFIGS = ("manual-paperback",)
+GENERATED_WORKFLOW_HEADER = """# AUTO-GENERATED FILE. DO NOT EDIT DIRECTLY.
+# Source: scripts/templates/{template_name}
+# Generator: scripts/lib/workflow_generator.py
+# Make changes in the source template or generator, then regenerate.
+
+"""
 
 # Add project root to path for dih_models imports
 _project_root = str(Path(__file__).parent.parent.parent)
@@ -40,6 +47,14 @@ except ModuleNotFoundError:
 
 
 @dataclass
+class ReleaseFile:
+    """A built file and the name it gets in the GitHub release."""
+    source: str                   # "assets/epubs/How-to-End-War-and-Disease.epub"
+    name: str                     # "How-to-End-War-and-Disease.epub"
+    kdp_use: str                  # "Kindle eBook manuscript"
+
+
+@dataclass
 class JobConfig:
     """Workflow job configuration extracted from Quarto config."""
     config_name: str              # "economics"
@@ -50,13 +65,17 @@ class JobConfig:
     configured_formats: List[str] # e.g. ["html", "pdf"]
     downloadable_formats: List[str]  # subset of configured_formats
     artifact_render_format: str | None  # explicit --to format, or None for all configured formats
-    netlify_site_id: str | None   # Configured site ID, used as a deploy opt-in
-    netlify_secret: str           # GitHub secret that stores the deploy site ID
+    bundle_pdf_with_site: bool     # Render and bundle the PDF before the HTML deploy
+    cloudflare_pages_project: str | None  # Explicit Pages project name and deploy opt-in
     upload_to_zenodo: bool        # True for papers
-    deploy_to_netlify: bool       # True for all
+    deploy_to_cloudflare: bool    # True when cloudflare-pages-project is configured
+    # Member paper configs whose PDFs a papers site renders and bundles
+    paper_pdf_configs: List[str] = field(default_factory=list)
+    # Files to upload to Amazon KDP; empty for every config but the book
+    kdp_files: List[ReleaseFile] = field(default_factory=list)
 
     @classmethod
-    def from_quarto_config(cls, config_path: Path, manual_host: str | None = None) -> "JobConfig":
+    def from_quarto_config(cls, config_path: Path) -> "JobConfig":
         """Extract job config from _quarto-*.yml file."""
         config_name = config_path.stem.replace("_quarto-", "")
 
@@ -72,29 +91,37 @@ class JobConfig:
         else:
             title = config.get('website', {}).get('title', '')
 
-        # Get Netlify site ID from dih-render section for setup inventory and deploy opt-in
+        # An explicit Pages project opts this config into production deployment.
         dih_render = config.get('dih-render', {})
-        netlify_site_id = dih_render.get('netlify-site-id')
-        site_url = get_config_site_url(config)
+        cloudflare_pages_project = dih_render.get('cloudflare-pages-project')
         configured_formats = list(config.get('format', {}).keys())
         downloadable_formats = [fmt for fmt in configured_formats if fmt in DOWNLOADABLE_FORMATS]
         artifact_render_format = infer_artifact_render_format(
             configured_formats=configured_formats,
             downloadable_formats=downloadable_formats,
         )
+        bundle_pdf_with_site = bool(
+            'html' in configured_formats
+            and 'pdf' in configured_formats
+            and dih_render.get('pdf-output-file')
+        )
 
         # Derive values
         display_name = derive_display_name(config_name, title)
         timeout = infer_timeout(config_name, project_type)
         build_dir = infer_build_dir(config_name, output_dir, project_type)
-        netlify_secret = derive_netlify_secret(config_name)
         upload_zenodo = should_upload_to_zenodo(config_name, config)
-        deploy_to_netlify = should_deploy_to_netlify(
-            config_name=config_name,
-            site_url=site_url,
-            netlify_site_id=netlify_site_id,
-            manual_host=manual_host,
-        )
+        deploy_to_cloudflare = bool(cloudflare_pages_project)
+        paper_pdf_configs = [
+            paper["config"]
+            for paper in dih_render.get("papers", [])
+            if load_quarto_config(config_path.parent / f"_quarto-{paper['config']}.yml")
+            .get("dih-render", {})
+            .get("pdf-output-file")
+        ]
+        if paper_pdf_configs:
+            timeout += 15 * len(paper_pdf_configs)
+        kdp_files = infer_kdp_files(config_name, config)
 
         return cls(
             config_name=config_name,
@@ -105,27 +132,36 @@ class JobConfig:
             configured_formats=configured_formats,
             downloadable_formats=downloadable_formats,
             artifact_render_format=artifact_render_format,
-            netlify_site_id=netlify_site_id,
-            netlify_secret=netlify_secret,
+            bundle_pdf_with_site=bundle_pdf_with_site,
+            cloudflare_pages_project=cloudflare_pages_project,
             upload_to_zenodo=upload_zenodo,
-            deploy_to_netlify=deploy_to_netlify,
+            deploy_to_cloudflare=deploy_to_cloudflare,
+            paper_pdf_configs=paper_pdf_configs,
+            kdp_files=kdp_files,
         )
 
 
-def get_config_site_url(config: dict) -> str | None:
-    """Extract canonical site URL from website or book config."""
-    return (
-        config.get('website', {}).get('site-url')
-        or config.get('book', {}).get('site-url')
-    )
+def infer_kdp_files(config_name: str, config: dict) -> List[ReleaseFile]:
+    """
+    List the KDP upload files where render-quarto.py leaves them.
 
+    render-quarto.py copies each output to assets/ and fixes the EPUB there
+    for Kindle, so the copies in assets/ are the ones to upload.
+    """
+    if config_name not in KDP_CONFIGS:
+        return []
 
-def get_hostname(url: str | None) -> str | None:
-    """Extract lowercase hostname from URL."""
-    if not url:
-        return None
-    hostname = urlparse(url).hostname
-    return hostname.lower() if hostname else None
+    formats = config['format']
+    pdf_name = formats['pdf']['output-file']
+    epub_name = formats['epub']['output-file']
+    docx_name = config.get('dih-render', {}).get('docx-output-file') or formats['docx']['output-file']
+    cover = Path(formats['epub']['epub-cover-image'])
+    return [
+        ReleaseFile(f"assets/epubs/{epub_name}", epub_name, "Kindle eBook manuscript"),
+        ReleaseFile(cover.as_posix(), f"{Path(epub_name).stem}-ebook-cover{cover.suffix}", "Kindle eBook cover"),
+        ReleaseFile(f"assets/pdfs/{pdf_name}", pdf_name, "Paperback manuscript (interior)"),
+        ReleaseFile(f"assets/docx/{docx_name}", docx_name, "Editable copy (not needed for KDP)"),
+    ]
 
 
 def infer_artifact_render_format(
@@ -151,6 +187,9 @@ def derive_display_name(config_name: str, title: str) -> str:
     """Derive job display name from config name and title."""
     if config_name == "book":
         return "Build Main Book (HTML + PDF + EPUB)"
+    elif config_name in KDP_CONFIGS:
+        # The website job already uses the book title
+        return "Build KDP Book Files (EPUB + PDF + DOCX)"
     elif title:
         # Use title if available
         return f"Build {title[:50]}"  # Limit length
@@ -165,6 +204,8 @@ def infer_timeout(config_name: str, project_type: str) -> int:
         return 75  # HTML + PDF + EPUB
     elif config_name == "manual":
         return 75  # Large multi-format build
+    elif config_name in KDP_CONFIGS:
+        return 60  # Per format; the book renders EPUB, PDF, and DOCX in separate steps
     else:
         return 30  # Standard papers and larger papers
 
@@ -174,13 +215,6 @@ def infer_build_dir(config_name: str, output_dir: str, project_type: str) -> str
     # Use output-dir directly from Quarto config - it's the source of truth
     # Pattern: _build_temp/{config}/{output_dir}
     return f"_build_temp/{config_name}/{output_dir}"
-
-
-def derive_netlify_secret(config_name: str) -> str:
-    """Derive Netlify secret name from config name."""
-    if config_name in ("book", "manual"):
-        return "NETLIFY_MAIN_SITE_ID"
-    return f"NETLIFY_{config_name.upper().replace('-', '_')}_SITE_ID"
 
 
 def should_upload_to_zenodo(config_name: str, config: dict) -> bool:
@@ -195,32 +229,6 @@ def should_upload_to_zenodo(config_name: str, config: dict) -> bool:
     return True
 
 
-def should_deploy_to_netlify(
-    config_name: str,
-    site_url: str | None,
-    netlify_site_id: str | None,
-    manual_host: str | None,
-) -> bool:
-    """
-    Decide whether this config should get its own Netlify deploy job.
-
-    Path-based papers that now live under the manual host are rendered and
-    validated independently, but they should not deploy to their legacy
-    standalone Netlify sites.
-    """
-    if not netlify_site_id:
-        return False
-
-    if config_name in {"manual", "book"}:
-        return True
-
-    site_host = get_hostname(site_url)
-    if manual_host and site_host == manual_host:
-        return False
-
-    return True
-
-
 def extract_job_configs(project_root: Path) -> List[JobConfig]:
     """
     Scan _quarto-*.yml files and extract workflow job configs.
@@ -229,15 +237,6 @@ def extract_job_configs(project_root: Path) -> List[JobConfig]:
         List of JobConfig objects, one per discovered config
     """
     configs = []
-
-    manual_host = None
-    manual_config_path = project_root / "_quarto-manual.yml"
-    if manual_config_path.exists():
-        try:
-            manual_config = load_quarto_config(manual_config_path)
-            manual_host = get_hostname(get_config_site_url(manual_config))
-        except Exception as e:
-            logger.warning("Could not determine manual host from %s: %s", manual_config_path.name, e)
 
     for yml_path in project_root.glob("_quarto-*.yml"):
         # Skip build temp files
@@ -250,7 +249,7 @@ def extract_job_configs(project_root: Path) -> List[JobConfig]:
             continue
 
         try:
-            job_config = JobConfig.from_quarto_config(yml_path, manual_host=manual_host)
+            job_config = JobConfig.from_quarto_config(yml_path)
             configs.append(job_config)
         except Exception as e:
             logger.warning("Skipping %s: %s", yml_path.name, e)
@@ -260,8 +259,8 @@ def extract_job_configs(project_root: Path) -> List[JobConfig]:
 
 
 def extract_deploy_job_configs(project_root: Path) -> List[JobConfig]:
-    """Get jobs that should deploy to Netlify."""
-    return [job for job in extract_job_configs(project_root) if job.deploy_to_netlify]
+    """Get jobs that should deploy to Cloudflare Pages."""
+    return [job for job in extract_job_configs(project_root) if job.deploy_to_cloudflare]
 
 
 def extract_artifact_job_configs(project_root: Path) -> List[JobConfig]:
@@ -287,7 +286,8 @@ def generate_workflow(project_root: Path, job_configs: List[JobConfig], template
     env = Environment(loader=FileSystemLoader(str(template_dir)))
     template = env.get_template(template_name)
 
-    return template.render(jobs=job_configs)
+    header = GENERATED_WORKFLOW_HEADER.format(template_name=template_name)
+    return header + template.render(jobs=job_configs)
 
 
 def regenerate_workflow(project_root: Path) -> None:

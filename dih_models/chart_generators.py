@@ -38,7 +38,11 @@ Usage:
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from dih_models.formatting import format_parameter_value
+from dih_models.formatting import (
+    format_parameter_value,
+    round_significant as _round_sig,
+    round_significant_seq as _round_seq,
+)
 from dih_models.latex_generation import smart_title_case
 
 
@@ -574,6 +578,9 @@ def generate_monte_carlo_distribution_chart_qmd(
     _table_include_unit = _summary_table_includes_unit(units)
 
     # Generate QMD with embedded Python
+    # Annotation labels sit a fixed number of points from their arrow. At a
+    # multiple of the value instead, a narrow distribution puts the label many
+    # axis widths off the chart, and the tight PDF crop stretches to reach it.
     qmd_content = f'''```{{python}}
 #| echo: false
 #| fig-cap: "Monte Carlo Distribution: {display_name} (10,000 simulations)"
@@ -592,13 +599,13 @@ setup_chart_style()
 
 # Simulation results
 
-samples = {samples[:1000] if len(samples) > 1000 else samples}  # Truncate for embedding
-baseline = {baseline}
-mean = {mean}
-std = {std}
-p5 = {p5}
-p50 = {p50}
-p95 = {p95}
+samples = {_round_seq(samples[:1000] if len(samples) > 1000 else samples)}  # Truncate for embedding
+baseline = {_round_sig(baseline)}
+mean = {_round_sig(mean)}
+std = {_round_sig(std)}
+p5 = {_round_sig(p5)}
+p50 = {_round_sig(p50)}
+p95 = {_round_sig(p95)}
 display_name = "{display_name}"
 units = "{units}"
 
@@ -634,13 +641,13 @@ ax1.set_title('Distribution of Outcomes', fontsize=12, weight='bold')
 ax1.legend(loc='upper right', fontsize=9)
 clean_spines(ax1)
 
-# --- Right: CDF (Cumulative Probability) ---
+# --- Right: Exceedance Probability (survival curve, 100 - CDF) ---
 
 sorted_samples = np.sort(samples)
-cumulative = np.arange(1, len(sorted_samples) + 1) / len(sorted_samples)
+exceedance = 100 - np.arange(1, len(sorted_samples) + 1) / len(sorted_samples) * 100
 
-ax2.plot(sorted_samples, cumulative * 100, color=COLOR_BLACK, linewidth=2)
-ax2.fill_between(sorted_samples, 0, cumulative * 100, alpha=0.1, color=COLOR_BLACK)
+ax2.plot(sorted_samples, exceedance, color=COLOR_BLACK, linewidth=2)
+ax2.fill_between(sorted_samples, 0, exceedance, alpha=0.1, color=COLOR_BLACK)
 
 # Apply tick formatter for readable labels (K, M, B suffixes, $ for USD)
 
@@ -654,7 +661,7 @@ ax2.axhline(95, color=COLOR_BLACK, linestyle=':', linewidth=1, alpha=0.5)
 ax2.axvline(p50, color=COLOR_BLACK, linestyle='--', linewidth=1, alpha=0.5)
 
 ax2.set_xlabel(f'{{display_name}} ({{units}})' if units else display_name, fontsize=11)
-ax2.set_ylabel('Cumulative Probability (%)', fontsize=11)
+ax2.set_ylabel('Probability of Exceeding (%)', fontsize=11)
 ax2.set_title('Probability of Exceeding Value', fontsize=12, weight='bold')
 ax2.set_ylim(0, 100)
 clean_spines(ax2)
@@ -663,7 +670,7 @@ clean_spines(ax2)
 
 exceed_baseline_pct = (np.array(samples) > baseline).sum() / len(samples) * 100
 ax2.annotate(f'{{exceed_baseline_pct:.0f}}% chance of\\nexceeding baseline',
-             xy=(baseline, exceed_baseline_pct), xytext=(baseline * 1.1, exceed_baseline_pct + 10),
+             xy=(baseline, exceed_baseline_pct), xytext=(10, 10), textcoords='offset points',
              fontsize=9, ha='left',
              arrowprops=dict(arrowstyle='->', color=COLOR_BLACK, lw=1))
 
@@ -699,7 +706,7 @@ plt.show()
 | Standard Deviation | {format_parameter_value(std, units, include_unit=_table_include_unit)} |
 | 90% Range (5th-95th percentile) | [{format_parameter_value(p5, units, include_unit=_table_include_unit)}, {format_parameter_value(p95, units, include_unit=_table_include_unit)}] |
 
-*The histogram shows the distribution of {display_name} across 10,000 Monte Carlo simulations. The CDF (right) shows the probability of the outcome exceeding any given value, which is useful for risk assessment.*
+*The histogram shows {min(len(samples), 1000):,} of the {len(samples):,} Monte Carlo draws for {display_name}; the summary statistics use all {len(samples):,}. The exceedance curve (right) shows the probability of the outcome exceeding any given value.*
 '''
 
     # Write QMD file
@@ -798,6 +805,9 @@ def generate_cdf_chart_qmd(
         p90 = sorted_s[int(len(sorted_s) * 0.90)]
         thresholds = [p10, p50, p90]
 
+    # Annotation labels sit a fixed number of points from their arrow. At a
+    # multiple of the value instead, a narrow distribution puts the label many
+    # axis widths off the chart, and the tight PDF crop stretches to reach it.
     qmd_content = f'''```{{python}}
 #| echo: false
 #| fig-cap: "Probability of Exceeding Threshold: {display_name}"
@@ -816,8 +826,8 @@ setup_chart_style()
 
 # Monte Carlo samples
 
-samples = {samples[:2000] if len(samples) > 2000 else samples}
-thresholds = {thresholds}
+samples = {_round_seq(samples[:2000] if len(samples) > 2000 else samples)}
+thresholds = {_round_seq(thresholds)}
 display_name = "{display_name}"
 units = "{units}"
 
@@ -849,7 +859,7 @@ for thresh in thresholds:
     # Add label with formatted threshold value (use format_parameter_value for full units)
 
     ax.annotate(f'{{exceed_pct:.0f}}% chance\\n≥ {{format_parameter_value(thresh, units)}}',
-                xy=(thresh, exceed_pct), xytext=(thresh * 1.05, exceed_pct + 5),
+                xy=(thresh, exceed_pct), xytext=(8, 8), textcoords='offset points',
                 fontsize=10, ha='left', weight='bold',
                 bbox=dict(boxstyle='round,pad=0.3', facecolor=COLOR_WHITE, edgecolor=COLOR_BLACK, alpha=0.9))
 
@@ -876,7 +886,7 @@ add_png_metadata(
 plt.show()
 ```
 
-*This exceedance probability chart shows the likelihood that {display_name} will exceed any given threshold. Higher curves indicate more favorable outcomes with greater certainty.*
+*This exceedance probability chart shows the likelihood that {display_name} will exceed any given threshold. The higher the curve at a threshold, the more likely the value exceeds it.*
 '''
 
     # Write QMD file
