@@ -174,7 +174,7 @@ The US government waste estimate of {{< var us_gov_waste_total >}} ({{< var us_g
 
 ![How America wastes money, by category. Healthcare, military, regulations, taxes, housing. It's like a pie chart of inefficiency, and every slice is surprisingly large.](/assets/images/optimocracy-paper/optimocracy-paper-section-alternative-estimation-bottom-up-policy-cost-accounting-bw-academic.jpg)
 
-International comparisons reinforce this estimate: the US spends {{< var us_vs_switzerland_spending_gap >}} percentage points MORE of GDP than Switzerland yet achieves {{< var us_vs_switzerland_life_expectancy_gap >}} FEWER years of life expectancy.
+International comparisons reinforce this estimate: the US spends {{< var us_vs_switzerland_spending_gap >}} of GDP MORE than Switzerland yet achieves {{< var us_vs_switzerland_life_expectancy_gap >}} FEWER years of life expectancy.
 
 ### Why Information Doesn't Solve the Problem
 
@@ -252,6 +252,54 @@ Health and wealth aren't contested values requiring democratic selection. They'r
 ![Rules-based systems work better. When you publish the results, politicians look bad for ignoring them. Shame, but quantified and public.](/assets/images/optimocracy-paper/optimocracy-paper-section-precedents-that-work-bw-academic.jpg)
 
 **Credible commitment:** Published rules make deviation visible. Multiple institutions report outcomes. Politicians vote freely, but alignment with recommendations is tracked publicly. This raises the political cost of ignoring evidence.
+
+## Related Work: Earlier Attempts to Compute Optimal Policy {#sec-related-work}
+
+Optimocracy is not the first attempt to choose policies and budgets from data. Earlier work falls into six groups. Each group solves part of the problem. None combines cross-jurisdiction causal estimates, one welfare function that covers every budget category, and a mechanism that makes politicians act on the result.
+
+### Statistical Policy Learning
+
+Econometricians have formal methods that turn causal estimates into welfare-maximizing decisions. Empirical welfare maximization chooses, from a set of allowed policy rules, the one with the highest estimated average welfare in experimental data, and its welfare approaches the best achievable at a known rate [@kitagawa2018]. Athey and Wager extend policy learning to observational data, choosing whom to treat under budget, fairness, or simplicity constraints, with guarantees on the regret of the chosen policy [@athey2021]. Manski treats choosing a policy from sample data as a statistical decision problem for a utilitarian planner and evaluates candidate rules by their maximum regret [@manski2004]. These methods are the formal core of the [Optimal Policy Generator](https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html) [@opg-paper-2025] and the [Optimal Budget Generator](https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html) [@obg-paper-2025]. They choose whom to treat within one program; Optimocracy applies the same logic across programs and jurisdictions.
+
+### Budget-Allocation Models
+
+Two modeling programs already compute better budget allocations for real governments. Policy Priority Inference models how governments split budgets across interdependent policy issues [@castaneda2018] and links how a government spreads its budget across programs to the expected movement of development indicators [@guerrero2020]. A UNDP study of Colombia using the model projected that only 18% of Sustainable Development Goal indicators would reach their 2030 targets at the current pace, and that a 20% budget increase would raise this only to 20%; the authors report that reallocating spending toward budget-responsive indicators would do more than adding money [@castaneda2024]. Optima computes the split of a fixed HIV budget across programs that best meets goals such as fewer infections or deaths [@kerr2015]. Using Optima models for 44 countries, Kelly and colleagues estimated that allocating existing HIV budgets optimally over 2016 to 2030 could avert about 7.4 million additional infections (uncertainty range 3.9 to 14.0 million), a 26% drop in incidence, with no new money [@kelly2018]. At least 23 national governments have run Optima analyses, and Sudan and Belarus moved their actual HIV budgets toward the recommended allocation [@stuart2018].
+
+These are the closest precedents for the Optimal Budget Generator. They optimize within one sector or toward fixed targets, and they calibrate on one country's history rather than estimating causal effects across many jurisdictions.
+
+### Priority-Setting Systems
+
+Several institutions already publish ranked lists of high-return spending:
+
+- **Disease Control Priorities** modeled a 218-intervention essential health package that, fully implemented in lower-middle-income countries, would avert an estimated 4.2 million premature deaths a year by 2030, at a total cost of about 5% of national income [@jamison2018]. A full package for low-income countries costs about $79 per person per year, and its highest-priority half about half as much [@watkins2020].
+- **The Lancet Commission on Investing in Health** estimates that countries choosing to do so could halve the probability of dying before age 70 by 2050 by focusing on 15 conditions, at an extra cost of about 1 to 2% of GDP in health spending in poorer countries. It names tobacco control as by far the most important policy outside the health sector [@jamison2024].
+- **The World Health Organization** list endorsed in 2023 names 28 "best buy" interventions against noncommunicable diseases, each costing about I$100 or less per healthy life year gained in poorer countries, starting with higher tobacco taxes [@who-ncd-best-buys-2024].
+- **The Copenhagen Consensus** commissioned estimates that 12 policies costing about $35 billion a year in poorer countries could save about 4.2 million lives a year and yield about $1.1 trillion a year in economic benefits [@lomborg2023].
+- **GiveWell** estimates the cost per life saved of its top charities at about $3,000 to $5,500 [@givewell-cost-per-life-saved].
+- **The Washington State Institute for Public Policy** has been directed by its legislature since the 1990s to rank programs by estimated return on investment and by the chance that each will at least break even, and it uses that model in the state's policy and budget process [@wsipp-benefit-cost-2024; @wsipp-benefit-cost-results].
+- **Health technology assessment** sets spending thresholds per quality-adjusted life year. Claxton and colleagues estimate that the English NHS gives up roughly one quality-adjusted life year for every £13,000 of spending it displaces [@claxton2015].
+
+These systems show that the answers are often already known. Their common limit is adoption: governments rarely move money to match the rankings. None of them treats military budgets as a funding source, and none ranks pragmatic-trial infrastructure explicitly. The incentive layer of Optimocracy targets the adoption gap.
+
+### Evidence on Budget Size and Composition
+
+Public economics gives the direction of change more clearly than exact levels. In rich countries, a government larger by 10 percentage points of GDP is associated with annual growth 0.5 to 1 percentage point lower, although the authors warn against reading this as causal [@bergh2011]. OECD economists find that public investment and education spending raise long-run growth, pensions and subsidies lower it, and very large governments reduce growth unless government is highly effective [@fournier2016]. The IMF estimates that, on average, about 30% of the potential gains from public investment are lost to inefficiency [@imf-public-investment-efficiency-2015]. The socially optimal level of research and development spending is, conservatively, at least two to four times actual US spending [@jones1998]. The optimal share of spending devoted to health rises with income and is likely to exceed 30% in the United States by mid-century [@hall2007]. Across 133 US policy changes, direct investments in low-income children's health and education delivered the most welfare per dollar of net government cost, and many recovered their cost through later taxes and lower transfers [@hendren2020].
+
+### AI and Simulation
+
+Machine learning has designed policies in simulated worlds. In simulated economies of learning agents, a reinforcement-learning tax planner beat the Saez optimal-tax formula by more than 8% on utilitarian welfare in a four-agent setting (2% with ten agents); the authors stress that the results are not ready for real-world policy [@zheng2022]. In an incentivized online investment game, a redistribution rule designed by reinforcement learning won majority votes against human-designed rules, for example 66% of votes against strict equal sharing [@koster2022]. An AI mediator wrote group statements on contested policy questions that participants preferred to those of trained human mediators 56% of the time in a head-to-head test [@tessler2024]. These systems learn from simulations or volunteer experiments. Optimocracy learns from outcomes observed in jurisdictions that actually adopted policies.
+
+### Market and Mechanism Approaches
+
+Futarchy proposes that voters define a measure of national welfare while speculative decision markets determine which policies are expected to raise it [@hanson2013]. Quadratic funding matches small contributions so that public goods are funded efficiently under the authors' model [@buterin2019]. An advance market commitment for pneumococcal vaccine paid for results rather than research; its designers report that three vaccines were developed and more than 150 million children immunized [@kremer2020]. Linear programming for optimal allocation goes back to Kantorovich's 1939 work on planning production [@kantorovich1960; @koopmans1960]. Optimocracy uses these mechanisms as components: prediction markets as one input, and payment for results in its funding layer.
+
+### What Optimocracy Adds
+
+Stated narrowly, Optimocracy adds three things:
+
+1. **One welfare function for every category.** We found no earlier system that sets budget levels across all categories from cross-jurisdiction causal estimates of one fixed welfare function, with a universal cash payment and lower taxes as benchmarks.
+2. **Military budgets as a funding source.** None of the priority-setting systems above treats military spending as the pool that pays for health research.
+3. **An adoption mechanism.** Most earlier systems publish recommendations and stop. Optima's real budget shifts happened where governments asked for the analysis [@stuart2018]. Optimocracy adds public alignment scores and campaign incentives so that following the evidence pays.
 
 ## Mechanism Design
 
@@ -339,7 +387,7 @@ The primary analytical engine uses **causal inference on cross-jurisdictional ti
 Supplementary methods include:
 
 1. **Randomized controlled trials**: Allocate experimental budgets to estimate causal effects of novel interventions with no historical variation to learn from
-2. **Prediction markets**: Aggregate distributed information about allocation effectiveness for forward-looking decisions
+2. **Prediction markets**: Aggregate distributed information about allocation effectiveness for forward-looking decisions [@hanson2013]
 3. **Machine learning**: Identify complex nonlinear patterns in the cross-jurisdictional dataset that traditional econometric methods may miss
 
 The execution system publishes recommendations and tracks politician alignment. The alignment score is the input any [adoption mechanism](#sec-adoption-mechanisms) acts on, and the layer is indifferent to which one does. Outcome measurement validates the system over time.
@@ -793,7 +841,7 @@ Optimocracy optimizes governance through two complementary mechanisms, each addr
 
 The **Optimal Budget Generator (OBG)** framework answers: "How should we allocate the budget to maximize welfare?"
 
-Each spending category has an optimal level - not just a marginal return. Too little means underinvestment and foregone welfare gains; too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), budget allocation is zero-sum: spending more on one category means less for others. OBG generates integrated recommendations that balance these tradeoffs.
+Each spending category has an optimal level - not just a marginal return. Too little means underinvestment and foregone welfare gains; too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), every budget dollar has other uses: another category, a universal cash payment, or staying with the taxpayer. OBG compares all of these, so it chooses the size of the budget as well as its composition.
 
 | Spending Level | Health Analogy | Budget Interpretation |
 |----------------|----------------|----------------------|
@@ -803,18 +851,20 @@ Each spending category has an optimal level - not just a marginal return. Too li
 
 The OBG framework combines three evidence sources:
 
-1. **Reference country benchmarking**: What do high-performing peer countries spend?
-2. **Diminishing returns modeling**: Where is the "knee" of the spending-outcome curve?
-3. **Cost-effectiveness threshold analysis**: Which interventions pass standard health economics thresholds?
+1. **Diminishing returns modeling**: Where is the "knee" of the spending-outcome curve?
+2. **Cost-effectiveness threshold analysis**: Which interventions pass standard health economics thresholds?
+3. **Reference country benchmarking**: What do high-performing peer countries spend? This enters the models as data, and gives only a placeholder target by itself, because copying peers can copy their mistakes.
+
+Every program must beat two outside options: a universal cash payment and lower taxes. For each goal, OBG also compares delivery methods (public provision, vouchers, cash, prizes, payment for results) against cash.
 
 The **Budget Impact Score (BIS)** measures our *confidence* in each category's target estimate based on the quality of causal evidence. Categories with strong RCT evidence have high BIS; categories with only cross-sectional correlations have low BIS.
 
-**Example output**:
+**Example output** (illustrative numbers; only the trials and vaccination targets are derived in the OBG specification, and the others are placeholders):
 
 | Category | Current | Target | Gap | Evidence |
 |----------|---------|-----|-----|----------|
 | **Pragmatic clinical trials** | $0.5B | $50B | **+$49.5B** | A (RCTs) |
-| Vaccinations | $8B | $35B | +$27B | A (RCTs) |
+| Vaccinations | $8B | $16B | +$8B | A (RCTs) |
 | Basic research | $45B | $90B | +$45B | B (spillovers) |
 | Military | $850B | $459B | -$391B | C (benchmarks) |
 

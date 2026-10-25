@@ -7595,7 +7595,7 @@ US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP = Parameter(
 )
 
 US_VS_SWITZERLAND_SPENDING_GAP = Parameter(
-    3.0,  # 38.0 - 35.0 = 3.0%
+    0.03,  # 38% - 35% = 3 percentage points of GDP
     manual_ref="knowledge/solution/optimocracy.qmd",
     source_ref="oecd-govt-spending",
     source_type="definition",
@@ -7604,14 +7604,14 @@ US_VS_SWITZERLAND_SPENDING_GAP = Parameter(
     description="Government spending gap: US spends 3 percentage points MORE of GDP than "
                 "Switzerland yet achieves worse outcomes.",
     display_name="US-Switzerland Spending Gap",
-    unit="percent",
+    unit="percentage points",
     formula="US_SPENDING - SWITZERLAND_SPENDING = 38% - 35%",
     keywords=["spending", "gap", "comparison"],
     latex_symbol=r"\Delta G_{US:CH}",
 )
 
 US_VS_SINGAPORE_SPENDING_GAP = Parameter(
-    23.0,  # 38.0 - 15.0 = 23.0%
+    0.23,  # 38% - 15% = 23 percentage points of GDP
     manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="oecd-govt-spending",
     source_type="definition",
@@ -7620,7 +7620,7 @@ US_VS_SINGAPORE_SPENDING_GAP = Parameter(
     description="Government spending gap: US spends 23 percentage points MORE of GDP than "
                 "Singapore yet achieves 6.6 fewer years of life expectancy.",
     display_name="US-Singapore Spending Gap",
-    unit="percent",
+    unit="percentage points",
     formula="US_SPENDING - SINGAPORE_SPENDING = 38% - 15%",
     keywords=["spending", "gap", "comparison", "Singapore"],
     latex_symbol=r"\Delta G_{US:SG}",

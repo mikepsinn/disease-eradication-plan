@@ -15088,10 +15088,10 @@ export const US_POLITICAL_EFFORT_MULTIPLIER: Parameter = {
 };
 
 export const US_VS_SINGAPORE_SPENDING_GAP: Parameter = {
-  value: 23.0,
+  value: 0.23,
   parameterName: "US_VS_SINGAPORE_SPENDING_GAP",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_vs_singapore_spending_gap",
-  unit: "percent",
+  unit: "percentage points",
   displayName: "US-Singapore Spending Gap",
   description: "Government spending gap: US spends 23 percentage points MORE of GDP than Singapore yet achieves 6.6 fewer years of life expectancy.",
   sourceType: "definition",
@@ -15122,10 +15122,10 @@ export const US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP: Parameter = {
 };
 
 export const US_VS_SWITZERLAND_SPENDING_GAP: Parameter = {
-  value: 3.0,
+  value: 0.03,
   parameterName: "US_VS_SWITZERLAND_SPENDING_GAP",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_vs_switzerland_spending_gap",
-  unit: "percent",
+  unit: "percentage points",
   displayName: "US-Switzerland Spending Gap",
   description: "Government spending gap: US spends 3 percentage points MORE of GDP than Switzerland yet achieves worse outcomes.",
   sourceType: "definition",

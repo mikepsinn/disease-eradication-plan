@@ -311,6 +311,16 @@ OPG is designed to generate deployable, evidence-weighted recommendations. Retro
 
 **Benefit-Cost Analysis Tradition**: The broader benefit-cost literature [@sunstein2002; @viscusi2018] provides theoretical foundations for policy evaluation but typically focuses on individual project or regulation assessment rather than systematic cross-jurisdiction recommendation generation.
 
+**State benefit-cost ranking**: The Washington State Institute for Public Policy has been directed by its legislature to rank programs by estimated return on investment and by the chance that each will at least break even, and it uses that model in the state's policy and budget process [@wsipp-benefit-cost-2024]. WSIPP shows that a government can use ranked benefit-cost evidence routinely, but it covers programs in one state, and it does not draw on other jurisdictions' policy changes.
+
+### Computational Policy Optimization
+
+**Statistical policy learning**: Empirical welfare maximization chooses, from a set of allowed policy rules, the one with the highest estimated average welfare in experimental data [@kitagawa2018]. Athey and Wager extend policy learning to observational data under budget, fairness, or simplicity constraints [@athey2021], and Manski evaluates policy rules chosen from sample data by their maximum regret [@manski2004]. These methods supply the decision theory that OPG applies. They choose whom to treat within one program; OPG chooses which policies a jurisdiction should enact, replace, repeal, or maintain.
+
+**AI policy design in simulation**: Reinforcement-learning tax planners have beaten the Saez optimal-tax formula in simulated economies, by more than 8% on utilitarian welfare with four agents and 2% with ten; the authors stress that the results are not ready for real-world policy [@zheng2022]. OPG uses observed outcomes from jurisdictions that adopted policies, not simulated agents.
+
+For a full survey of earlier attempts to compute optimal policy and budgets, see [Related Work in the Optimocracy paper](optimocracy-paper.qmd#sec-related-work).
+
 ### This Framework's Contribution
 
 ![How OPG is different from traditional evaluation: it's personalized, comprehensive, and uses actual data instead of vibes.](/assets/images/optimal-policy-generator-spec/optimal-policy-generator-spec-section-this-framework-s-contribution-bw-academic.jpg)
