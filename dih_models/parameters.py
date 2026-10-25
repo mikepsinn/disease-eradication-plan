@@ -10027,16 +10027,16 @@ DEFENSE_SECTOR_RETENTION_PCT = Parameter(
 PATIENT_WILLINGNESS_TRIAL_PARTICIPATION_PCT = Parameter(
     0.448,
     manual_ref="knowledge/problem/nih-fails-2-institute-health.qmd",
-    source_ref=ReferenceID.PATIENT_WILLINGNESS_CLINICAL_TRIALS,
+    source_ref=ReferenceID.PATIENT_WILLINGNESS_DRUG_TRIAL_2020,
     source_type="external",
-    description="Patient willingness to participate in drug trials (44.8% in surveys, 88% when actually approached)",
+    description="Share of adult hospital patients who would probably or certainly join a hypothetical drug trial (1,118 recently discharged patients, Geneva University Hospitals). The 40% to 50% range is wider than the study's 95% CI (41.9% to 47.8%), because one Swiss survey stands in for patients worldwide",
     display_name="Patient Willingness to Participate in Clinical Trials",
     unit="percentage",
     confidence="medium",
     keywords=["willingness", "willing", "volunteer", "interest", "clinical trial", "participation", "survey"],
     distribution="normal",
-    confidence_interval=(0.40, 0.50),  # ±11% variation from survey heterogeneity
-    std_error=0.025,  # Survey response variance across populations
+    confidence_interval=(0.40, 0.50),  # Wider than the study's 41.9%-47.8% CI: one Swiss survey stands in for all patients
+    std_error=0.025,
     latex_symbol=r"Pct_{willing}",  # LaTeX symbol for equations
 )  # 44.8% willing for drug trials specifically
 

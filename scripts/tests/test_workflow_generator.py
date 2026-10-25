@@ -240,7 +240,9 @@ def test_release_gets_only_final_files_with_unique_names() -> None:
     # _freeze/ holds every chart as a PDF; 27 repeated names made the release upload fail every night
     for job in extract_artifact_job_configs(PROJECT_ROOT):
         build_job = workflow[workflow.index(f"  build-{job.config_name}:"):]
-        build_job = build_job[:re.search(r"\n  \S", build_job).start()]
+        next_job = re.search(r"\n  \S", build_job)
+        assert next_job
+        build_job = build_job[:next_job.start()]
         paths = [line.strip() for line in build_job.splitlines() if line.strip().startswith("path: _build_temp/")]
         for path in paths:
             assert path.rsplit("/", 1)[0] == f"path: {job.build_dir}"

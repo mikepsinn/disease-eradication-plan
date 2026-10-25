@@ -954,6 +954,7 @@ class ReferenceID(str, Enum):
     PARTNERSHIP_AFRICA_CANADA_REAP_2012 = "partnership-africa-canada-reap-2012"
     PATIENT_ACCESS_CLINICAL_TRIALS = "patient-access-clinical-trials"
     PATIENT_WILLINGNESS_CLINICAL_TRIALS = "patient-willingness-clinical-trials"
+    PATIENT_WILLINGNESS_DRUG_TRIAL_2020 = "patient-willingness-drug-trial-2020"
     PATIENTSLIKEME_ADVOCACY = "patientslikeme-advocacy"
     PATRICK_SOON_SHIONG_CANCER_RESEARCH_FOCUS = "patrick-soon-shiong-cancer-research-focus"
     PATRIOT_ACT_PASSAGE = "patriot-act-passage"
