@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 66 parameters used in the analysis, organized by type:
+This appendix documents all 67 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 24
+- External sources (peer-reviewed): 25
 - Calculated values: 27
 - Core definitions: 15
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (27 parameters) • [External Data Sources](#sec-external) (24 parameters) • [Core Definitions](#sec-definitions) (15 parameters)
+[Calculated Values](#sec-calculated) (27 parameters) • [External Data Sources](#sec-external) (25 parameters) • [Core Definitions](#sec-definitions) (15 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1566,13 +1566,13 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 :::
 
-### Return on Investment from Childhood Vaccination Programs: 13:1 {#sec-childhood_vaccination_roi}
+### Return on Investment from Childhood Vaccination Programs: 10.9:1 {#sec-childhood_vaccination_roi}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Return on investment from childhood vaccination programs
+Societal benefit-cost ratio of routine US childhood immunization (children born 1994-2023; medical and productivity savings)
 
-**Source**: [@childhood-vaccination-roi]
+**Source**: [@childhood-vaccination-economic-benefits]
 
 *✓ High confidence*
 
@@ -1997,6 +1997,18 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 #### Input Distribution
 
 {{< include ../figures/distribution-recovery_trial_cost_per_patient.qmd >}}
+
+*✓ High confidence*
+
+:::
+
+### Return on Investment from Smallpox Eradication Campaign: 159:1 {#sec-smallpox_eradication_roi}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global benefit-cost ratio of the smallpox eradication campaign (Barrett 2013; CSIS 2023 gives 400:1)
+
+**Source**: [@barrett2013]
 
 *✓ High confidence*
 

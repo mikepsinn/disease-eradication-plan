@@ -1482,14 +1482,14 @@
       "chapterTitle": "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease"
     },
     "CHILDHOOD_VACCINATION_ROI": {
-      "value": 13.0,
-      "formatted": "13:1",
+      "value": 10.9,
+      "formatted": "10.9:1",
       "unit": "ratio",
-      "description": "Return on investment from childhood vaccination programs",
+      "description": "Societal benefit-cost ratio of routine US childhood immunization (children born 1994-2023; medical and productivity savings)",
       "displayName": "Return on Investment from Childhood Vaccination Programs",
       "sourceType": "external",
-      "sourceRef": "childhood-vaccination-roi",
-      "sourceUrl": "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm",
+      "sourceRef": "childhood-vaccination-economic-benefits",
+      "sourceUrl": "https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm",
       "confidence": "high",
       "formula": null,
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-childhood_vaccination_roi",
@@ -12499,14 +12499,14 @@
       "chapterTitle": "Your Personal Benefits"
     },
     "SMALLPOX_ERADICATION_ROI": {
-      "value": 280.0,
-      "formatted": "280:1",
+      "value": 159.0,
+      "formatted": "159:1",
       "unit": "ratio",
-      "description": "Return on investment from smallpox eradication campaign",
+      "description": "Global benefit-cost ratio of the smallpox eradication campaign (Barrett 2013; CSIS 2023 gives 400:1)",
       "displayName": "Return on Investment from Smallpox Eradication Campaign",
       "sourceType": "external",
-      "sourceRef": "smallpox-eradication-roi",
-      "sourceUrl": "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation",
+      "sourceRef": "barrett2013",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/",
       "confidence": "high",
       "formula": null,
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-smallpox_eradication_roi",
@@ -17985,6 +17985,24 @@
       "pages": "",
       "number": ""
     },
+    "abadie2003": {
+      "id": "abadie2003",
+      "title": "The Economic Costs of Conflict: A Case Study of the Basque Country",
+      "author": "Abadie, Alberto and Gardeazabal, Javier",
+      "year": "2003",
+      "source": "American Economic Review",
+      "url": "https://doi.org/10.1257/000282803321455188",
+      "urls": [
+        "https://doi.org/10.1257/000282803321455188"
+      ],
+      "quote": "This article investigates the economic effects of conflict, using the terrorist conflict in the Basque Country as a case study. We find that, after the outbreak of terrorism in the late 1960's, per capita GDP in the Basque Country declined about 10 percentage points relative to a synthetic control region without terrorism.",
+      "note": "First application of the synthetic control method.",
+      "type": "article",
+      "doi": "10.1257/000282803321455188",
+      "volume": "93",
+      "pages": "113-132",
+      "number": "1"
+    },
     "abadie2010": {
       "id": "abadie2010",
       "title": "Synthetic Control Methods for Comparative Case Studies: Estimating the Effect of California's Tobacco Control Program",
@@ -18008,16 +18026,18 @@
       "title": "Comparative Politics and the Synthetic Control Method",
       "author": "Abadie, Alberto and Diamond, Alexis and Hainmueller, Jens",
       "year": "2015",
-      "source": "Abadie",
-      "url": "",
-      "urls": [],
-      "quote": "The synthetic control method provides a systematic way to construct comparison units in comparative case studies, making explicit the weights assigned to each unit.",
-      "note": "Abadie, A., Diamond, A., & Hainmueller, J. (2015). Comparative Politics and the Synthetic Control Method. AJPS, 59(2), 495-510.",
+      "source": "American Journal of Political Science",
+      "url": "https://doi.org/10.1111/ajps.12116",
+      "urls": [
+        "https://doi.org/10.1111/ajps.12116"
+      ],
+      "quote": "The synthetic control method provides a systematic way to choose comparison units in comparative case studies. This systematization opens the door to precise quantitative inference in small-sample comparative studies, without precluding the application of qualitative approaches. ... We illustrate the main ideas behind the synthetic control method by estimating the economic impact of the 1990 German reunification on West Germany.",
+      "note": "Published online April 2014; print issue February 2015.",
       "type": "article",
-      "doi": "",
+      "doi": "10.1111/ajps.12116",
       "volume": "59",
       "pages": "495-510",
-      "number": ""
+      "number": "2"
     },
     "abadie2021": {
       "id": "abadie2021",
@@ -18488,13 +18508,13 @@
       "urls": [
         "https://www.aeaweb.org/articles?id=10.1257/jep.24.2.3"
       ],
-      "quote": "The primary engine driving improvement has been a focus on the quality of empirical research designs. Additional sources: https://www.aeaweb.org/articles?id=10.1257/jep.24.2.3",
-      "note": "Angrist & Pischke, 2010, Journal of Economic Perspectives",
+      "quote": "We argue that the primary engine driving improvement has been a focus on the quality of empirical research designs. The advantages of a good research design are perhaps most easily apparent in research using random assignment.",
+      "note": "",
       "type": "article",
       "doi": "10.1257/jep.24.2.3",
       "volume": "24",
       "pages": "3-30",
-      "number": ""
+      "number": "2"
     },
     "animal-diseases-eradicated-by-vets": {
       "id": "animal-diseases-eradicated-by-vets",
@@ -19123,6 +19143,24 @@
       "pages": "155-184",
       "number": "2"
     },
+    "barrett2013": {
+      "id": "barrett2013",
+      "title": "Economic Considerations for the Eradication Endgame",
+      "author": "Barrett, Scott",
+      "year": "2013",
+      "source": "Philosophical Transactions of the Royal Society B: Biological Sciences",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/"
+      ],
+      "quote": "Adding up, the benefit-cost ratio for the entire world would have been about ((\\$350 + \\$1070) / 0.03)/\\$298, approximately 159:1.",
+      "note": "Source of the 159:1 smallpox eradication benefit-cost ratio (section 4a).",
+      "type": "article",
+      "doi": "10.1098/rstb.2012.0149",
+      "volume": "368",
+      "pages": "20120149",
+      "number": "1623"
+    },
     "barro2011": {
       "id": "barro2011",
       "title": "Macroeconomic Effects from Government Purchases and Taxes",
@@ -19159,12 +19197,14 @@
       "id": "batini2021",
       "title": "Building Back Better: How Big Are Green Spending Multipliers?",
       "author": "Batini, Nicoletta and Di Serio, Mario and Fragetta, Matteo and Melina, Giovanni and Waldron, Anthony",
-      "year": "2021",
+      "year": "2022",
       "source": "Ecological Economics",
-      "url": "",
-      "urls": [],
+      "url": "https://doi.org/10.1016/j.ecolecon.2021.107305",
+      "urls": [
+        "https://doi.org/10.1016/j.ecolecon.2021.107305"
+      ],
       "quote": "",
-      "note": "Finds renewable energy multipliers (1.1-1.7) are significantly higher than fossil fuel multipliers (0.4-0.7)",
+      "note": "Published online December 2021; earlier version IMF Working Paper WP/21/87 (2021). Finds renewable energy multipliers (1.1-1.7) are significantly higher than fossil fuel multipliers (0.4-0.7), depending on horizon and specification.",
       "type": "article",
       "doi": "10.1016/j.ecolecon.2021.107305",
       "volume": "193",
@@ -19194,16 +19234,18 @@
       "title": "A Theory of Competition Among Pressure Groups for Political Influence",
       "author": "Becker, Gary S.",
       "year": "1983",
-      "source": "Becker",
-      "url": "",
-      "urls": [],
-      "quote": "Political equilibrium depends on the efficiency of each group in producing pressure, the effect of additional pressure on their influence, the number of persons in different groups, and the deadweight cost of taxes and subsidies.",
-      "note": "Becker, G. S. (1983). A Theory of Competition Among Pressure Groups. QJE, 98(3), 371-400.",
+      "source": "The Quarterly Journal of Economics",
+      "url": "https://doi.org/10.2307/1886017",
+      "urls": [
+        "https://doi.org/10.2307/1886017"
+      ],
+      "quote": "This paper presents a theory of competition among pressure groups for political influence. Political equilibrium depends on the efficiency of each group in producing pressure, the effect of additional pressure on their influence, the number of persons in different groups, and the deadweight cost of taxes and subsidies. An increase in deadweight costs discourages pressure by subsidized groups and encourages pressure by taxpayers. This analysis unifies the view that governments correct market failures with the view that they favor the politically powerful: both are produced by the competition for political favors.",
+      "note": "",
       "type": "article",
-      "doi": "",
+      "doi": "10.2307/1886017",
       "volume": "98",
       "pages": "371-400",
-      "number": ""
+      "number": "3"
     },
     "bergh2011": {
       "id": "bergh2011",
@@ -19899,16 +19941,18 @@
       "title": "Difference-in-Differences with Multiple Time Periods",
       "author": "Callaway, Brantly and Sant'Anna, Pedro H. C.",
       "year": "2021",
-      "source": "Callaway",
-      "url": "",
-      "urls": [],
-      "quote": "When treatment timing varies across units, standard two-way fixed effects estimators can be severely biased. We propose alternative estimators that are robust to treatment effect heterogeneity.",
-      "note": "Callaway, B. & Sant'Anna, P. H. C. (2021). DiD with Multiple Time Periods. JoE, 225(2), 200-230.",
+      "source": "Journal of Econometrics",
+      "url": "https://doi.org/10.1016/j.jeconom.2020.12.001",
+      "urls": [
+        "https://doi.org/10.1016/j.jeconom.2020.12.001"
+      ],
+      "quote": "In this article, we consider identification, estimation, and inference procedures for treatment effect parameters using Difference-in-Differences (DiD) with (i) multiple time periods, (ii) variation in treatment timing, and (iii) when the \"parallel trends assumption\" holds potentially only after conditioning on observed covariates. We show that a family of causal effect parameters are identified in staggered DiD setups, even if differences in observed characteristics create non-parallel outcome dynamics between groups.",
+      "note": "",
       "type": "article",
       "doi": "10.1016/j.jeconom.2020.12.001",
       "volume": "225",
       "pages": "200-230",
-      "number": ""
+      "number": "2"
     },
     "cambridge-pe-vc-benchmark-2024": {
       "id": "cambridge-pe-vc-benchmark-2024",
@@ -20084,13 +20128,13 @@
       "title": "Evidence-Based Policy: A Practical Guide to Doing It Better",
       "author": "Cartwright, Nancy and Hardie, Jeremy",
       "year": "2012",
-      "source": "Cartwright",
+      "source": "Oxford University Press",
       "url": "",
       "urls": [],
       "quote": "The key to evidence-based policy is understanding that evidence of effectiveness elsewhere is not evidence of effectiveness here without support for the claim that the causal mechanism will operate in the new setting.",
-      "note": "Cartwright, N. & Hardie, J. (2012). Evidence-Based Policy. Oxford University Press.",
+      "note": "",
       "type": "book",
-      "doi": "",
+      "doi": "10.1093/acprof:osobl/9780199841608.001.0001",
       "volume": "",
       "pages": "",
       "number": ""
@@ -20359,6 +20403,24 @@
       ],
       "quote": "",
       "note": "",
+      "type": "misc",
+      "doi": "",
+      "volume": "",
+      "pages": "",
+      "number": ""
+    },
+    "cbo2018-cost-estimates": {
+      "id": "cbo2018-cost-estimates",
+      "title": "The Congressional Budget Office's Baseline Projections and Cost Estimates: Process and Principles",
+      "author": "Hadley, Mark",
+      "year": "2018",
+      "source": "",
+      "url": "https://democrats-budget.house.gov/sites/evo-subsites/democrats-budget.house.gov/files/documents/Mark%20Hadley%20Testimony%202.6.18.pdf",
+      "urls": [
+        "https://democrats-budget.house.gov/sites/evo-subsites/democrats-budget.house.gov/files/documents/Mark%20Hadley%20Testimony%202.6.18.pdf"
+      ],
+      "quote": "For bills that would authorize discretionary activities or programs (those whose funding is controlled by annual appropriation acts), cost estimates typically provide budgetary information for a 5-year period. For bills that would affect mandatory spending or revenues, the period is 10 years. For most tax legislation, CBO uses estimates provided by the staff of the Joint Committee on Taxation (JCT).",
+      "note": "CBO publication 53539 (www.cbo.gov/publication/53539). cbo.gov blocks automated access, so the text was verified from the copy posted by the House Budget Committee.",
       "type": "misc",
       "doi": "",
       "volume": "",
@@ -20810,41 +20872,39 @@
     },
     "childhood-vaccination-economic-benefits": {
       "id": "childhood-vaccination-economic-benefits",
-      "title": "Childhood vaccination economic benefits",
-      "author": "CDC MMWR",
-      "year": "1994",
-      "source": "CDC MMWR",
+      "title": "Health and Economic Benefits of Routine Childhood Immunizations in the Era of the Vaccines for Children Program -- United States, 1994-2023",
+      "author": "Zhou, Fangjun and Jatlaoui, Tara C. and Leidner, Andrew J. and Carter, Rosalind J. and Dong, Xiaoyu and Santoli, Jeanne M. and Stokley, Shannon and Daskalakis, Demetre C. and Peacock, Georgina",
+      "year": "2024",
+      "source": "MMWR. Morbidity and Mortality Weekly Report",
       "url": "https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm",
       "urls": [
-        "https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm",
-        "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24"
+        "https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm"
       ],
-      "quote": "US programs (1994-2023): \\$540B direct savings, \\$2.7T societal savings (~\\$18B/year direct, ~\\$90B/year societal) Global (2001-2020): \\$820B value for 10 diseases in 73 countries (~\\$41B/year) ROI: \\$11 return per \\$1 invested Measles vaccination alone saved 93.7M lives (61% of 154M total) over 50 years (1974-2024) Additional sources: https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm | https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)00850-X/fulltext",
-      "note": "CDC MMWR, Childhood Immunizations 1994-2023 | The Lancet, 50 Years of Expanded Programme on Immunization | https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)00850-X/fulltext",
+      "quote": "Among approximately 117 million children born during 1994-2023, routine childhood vaccinations will have prevented approximately 508 million lifetime cases of illness, 32 million hospitalizations, and 1,129,000 deaths, at a net savings of \\$540 billion in direct costs and \\$2.7 trillion in societal costs. The payer and societal benefit-cost ratios for routine childhood immunizations were 3.3 and 10.9, respectively. Every \\$1 spent on childhood immunizations results in a savings of approximately \\$11.",
+      "note": "PMID 39116024. US only. Payer and societal benefit-cost ratios 3.3 and 10.9. Derived averages: about \\$18B/year direct and \\$90B/year societal over 30 birth cohorts. Global figures previously in this entry (\\$820B for 73 countries, 2001-2020; 93.7M lives saved by measles vaccination, Lancet 2024 EPI paper) come from other sources and were not verified here.",
       "type": "article",
-      "doi": "",
-      "volume": "",
-      "pages": "",
-      "number": ""
+      "doi": "10.15585/mmwr.mm7331a2",
+      "volume": "73",
+      "pages": "682-685",
+      "number": "31"
     },
     "childhood-vaccination-roi": {
       "id": "childhood-vaccination-roi",
-      "title": "Childhood Vaccination (US) ROI",
-      "author": "CDC",
-      "year": "2017",
-      "source": "CDC",
+      "title": "Benefits from Immunization During the Vaccines for Children Program Era -- United States, 1994-2013",
+      "author": "Whitney, Cynthia G. and Zhou, Fangjun and Singleton, James and Schuchat, Anne",
+      "year": "2014",
+      "source": "MMWR. Morbidity and Mortality Weekly Report",
       "url": "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm",
       "urls": [
-        "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm",
-        "https://vaxopedia.org/2017/10/01/what-are-the-benefits-of-vaccines/"
+        "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm"
       ],
-      "quote": "Economic analysis for 2009 alone found that each dollar invested in vaccines saved more than $10 in total societal costs In a 2005 study on the economic impact of routine childhood immunization in the United States, researchers estimated that for every dollar spent, the vaccination program saved more than $5 in direct costs and approximately $11 in additional costs to society. Additional sources: https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm | https://vaxopedia.org/2017/10/01/what-are-the-benefits-of-vaccines/",
-      "note": "CDC, Link | Vaxopedia, Link",
+      "quote": "Modeling estimated that, among children born during 1994-2013, vaccination will prevent an estimated 322 million illnesses, 21 million hospitalizations, and 732,000 deaths over the course of their lifetimes, at a net savings of \\$295 billion in direct costs and \\$1.38 trillion in total societal costs.",
+      "note": "PMID 24759657; PMCID PMC4584777. For the 2009 US birth cohort (Zhou et al., Pediatrics 2014) the report gives about \\$3 in direct benefits and \\$10 in societal benefits per \\$1. It contains no 13:1 figure.",
       "type": "article",
       "doi": "",
-      "volume": "",
-      "pages": "",
-      "number": ""
+      "volume": "63",
+      "pages": "352-355",
+      "number": "16"
     },
     "childhood-vaccinations-prevent-deaths": {
       "id": "childhood-vaccinations-prevent-deaths",
@@ -21272,6 +21332,24 @@
       "volume": "",
       "pages": "",
       "number": ""
+    },
+    "claxton1999": {
+      "id": "claxton1999",
+      "title": "The Irrelevance of Inference: A Decision-Making Approach to the Stochastic Evaluation of Health Care Technologies",
+      "author": "Claxton, Karl",
+      "year": "1999",
+      "source": "Journal of Health Economics",
+      "url": "https://doi.org/10.1016/S0167-6296(98)00039-3",
+      "urls": [
+        "https://doi.org/10.1016/S0167-6296(98)00039-3"
+      ],
+      "quote": "Decisions should be based only on the mean net benefits irrespective of whether differences are statistically significant or fall outside a Bayesian range of equivalence. ... The distribution of net benefit is only relevant to deciding whether more information is required. A framework for decision making and establishing the value of additional information is presented which is consistent with the decision rules in CEA.",
+      "note": "PMID 10537899.",
+      "type": "article",
+      "doi": "10.1016/S0167-6296(98)00039-3",
+      "volume": "18",
+      "pages": "341-364",
+      "number": "3"
     },
     "claxton2015": {
       "id": "claxton2015",
@@ -22089,16 +22167,16 @@
     "copenhagenconsensus2023": {
       "id": "copenhagenconsensus2023",
       "title": "Halftime for SDGs: Child Immunization",
-      "author": "Copenhagen Consensus",
+      "author": "Patenaude, Bryan and Sriudomporn, Salin and Mak, Joshua",
       "year": "2023",
-      "source": "",
+      "source": "Copenhagen Consensus Center",
       "url": "https://copenhagenconsensus.com/publication/halftime-sdgs-child-immunization",
       "urls": [
         "https://copenhagenconsensus.com/publication/halftime-sdgs-child-immunization"
       ],
       "quote": "",
-      "note": "Analysis calculating benefit-cost ratio of 101:1 for childhood immunization programs in low- and middle-income countries, 2023-2030",
-      "type": "misc",
+      "note": "Benefit-cost ratio of 101 for expanding immunization (9 vaccines, 10 antigens) in 80 low- and lower-middle-income countries, 2023-2030, versus 2022 coverage: costs US\\$7.582 billion (health-system perspective), benefits US\\$762.172 billion (value of a statistical life-year). Peer-reviewed version: Patenaude, Sriudomporn and Mak (2023), Journal of Benefit-Cost Analysis 14(S1):136-180, doi:10.1017/bca.2023.11.",
+      "type": "techreport",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -23288,17 +23366,17 @@
     },
     "deworming-cost-per-daly": {
       "id": "deworming-cost-per-daly",
-      "title": "Cost per DALY for Deworming Programs",
+      "title": "Cost-Effectiveness in \\$/DALY for Deworming Interventions",
       "author": "GiveWell",
-      "year": "",
-      "source": "GiveWell: Cost-Effectiveness in $/DALY for Deworming",
+      "year": "2011",
+      "source": "",
       "url": "https://www.givewell.org/international/technical/programs/deworming/cost-effectiveness",
       "urls": [
         "https://www.givewell.org/international/technical/programs/deworming/cost-effectiveness"
       ],
-      "quote": "Schistosomiasis treatment: \\$28.19-\\$70.48 per DALY (using arithmetic means with varying disability weights) Soil-transmitted helminths (STH) treatment: \\$82.54 per DALY (midpoint estimate) Note: GiveWell explicitly states this 2011 analysis is \"out of date\" and their current methodology focuses on long-term income effects rather than short-term health DALYs Additional sources: https://www.givewell.org/international/technical/programs/deworming/cost-effectiveness",
-      "note": "GiveWell: Cost-Effectiveness in $/DALY for Deworming",
-      "type": "article",
+      "quote": "Schistosomiasis treatment: \\$28.19 to \\$70.48 per DALY. Soil-transmitted helminth (STH) treatment: \\$82.54 per DALY.",
+      "note": "GiveWell labels this page: \"This page is out of date. We have retained it out of transparency.\" GiveWell's current analysis is its Combination Deworming report (last updated March 2025), which values deworming mainly by later-life income effects and says \"our best guess is that deworming is comparably cost-effective to our priority programs.\"",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -24157,14 +24235,14 @@
     },
     "drutman2015": {
       "id": "drutman2015",
-      "title": "The Business of America is Lobbying",
+      "title": "The Business of America is Lobbying: How Corporations Became Politicized and Politics Became More Corporate",
       "author": "Drutman, Lee",
       "year": "2015",
       "source": "Oxford University Press",
       "url": "",
       "urls": [],
       "quote": "",
-      "note": "Documents growth of corporate lobbying and 34:1 ratio of business-to-public-interest lobbying",
+      "note": "Documents the growth of corporate lobbying: business spends about \\$34 on lobbying for every \\$1 spent by unions and public-interest groups combined. No 100:1 return-on-lobbying figure and no Social Security lobbying comparison was found in the book or its reviews.",
       "type": "book",
       "doi": "10.1093/acprof:oso/9780190215514.001.0001",
       "volume": "",
@@ -28101,21 +28179,37 @@
       "pages": "307--348",
       "number": "4"
     },
-    "hahn2000": {
-      "id": "hahn2000",
+    "hahn1996": {
+      "id": "hahn1996",
       "title": "Regulatory Reform: What Do the Government's Numbers Tell Us?",
       "author": "Hahn, Robert W.",
-      "year": "2000",
-      "source": "",
+      "year": "1996",
+      "source": "Oxford University Press and AEI Press",
       "url": "",
       "urls": [],
-      "quote": "A review of 48 regulatory impact analyses finds substantial variation in methodology and quality, with many failing to provide adequate justification for regulatory choices.",
-      "note": "Hahn, R. W. (2000). Regulatory Reform. In Risks, Costs, and Lives Saved, 208-253.",
+      "quote": "",
+      "note": "",
       "type": "incollection",
-      "doi": "",
+      "doi": "10.1093/oso/9780195211740.003.0010",
       "volume": "",
       "pages": "208-253",
       "number": ""
+    },
+    "hahn2000": {
+      "id": "hahn2000",
+      "title": "Assessing Regulatory Impact Analyses: The Failure of Agencies to Comply with Executive Order 12,866",
+      "author": "Hahn, Robert W. and Burnett, Jason K. and Chan, Yee-Ho I. and Mader, Elizabeth A. and Moyle, Petrea R.",
+      "year": "2000",
+      "source": "Harvard Journal of Law and Public Policy",
+      "url": "",
+      "urls": [],
+      "quote": "We construct a new dataset that includes analyses of forty-eight major health, safety, and environmental regulations from mid-1996 to mid-1999. ... agencies only quantified net benefits (the dollar value of expected benefits minus expected costs) for 29 percent of the forty-eight rules, even though the executive order directs agencies to show that the benefits of a regulation \"justify\" the costs.",
+      "note": "Pages from the reference list of Harrington and Morgenstern, RFF Discussion Paper 04-04 (2004). Findings summarized in Hahn and Litan's June 2000 AEI-Brookings Joint Center testimony.",
+      "type": "article",
+      "doi": "",
+      "volume": "23",
+      "pages": "859-884",
+      "number": "3"
     },
     "hall2007": {
       "id": "hall2007",
@@ -28286,12 +28380,14 @@
       "id": "haskins2009",
       "title": "Show Me the Evidence: Obama's Fight for Rigor and Results in Social Policy",
       "author": "Haskins, Ron and Margolis, Greg",
-      "year": "2009",
-      "source": "Haskins",
-      "url": "",
-      "urls": [],
+      "year": "2014",
+      "source": "Brookings Institution Press",
+      "url": "https://www.brookings.edu/books/show-me-the-evidence/",
+      "urls": [
+        "https://www.brookings.edu/books/show-me-the-evidence/"
+      ],
       "quote": "The federal government spends hundreds of billions of dollars annually on social programs with little rigorous evidence of effectiveness.",
-      "note": "Haskins, R. & Margolis, G. (2009). Show Me the Evidence. Brookings Institution Press.",
+      "note": "Release date 1 December 2014 (Brookings); some library catalogs list c2015. 319 pages.",
       "type": "book",
       "doi": "",
       "volume": "",
@@ -28635,15 +28731,15 @@
     "higgins2011": {
       "id": "higgins2011",
       "title": "Cochrane Handbook for Systematic Reviews of Interventions",
-      "author": "Higgins, Julian P. T. and Green, Sally",
+      "author": "",
       "year": "2011",
-      "source": "Higgins",
-      "url": "https://handbook-5-1.cochrane.org/",
+      "source": "The Cochrane Collaboration",
+      "url": "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/archive/v5.1.0",
       "urls": [
-        "https://handbook-5-1.cochrane.org/"
+        "https://www.cochrane.org/authors/handbooks-and-manuals/handbook/archive/v5.1.0"
       ],
       "quote": "Heterogeneity in systematic reviews refers to variability among studies. I² describes the percentage of variability in effect estimates that is due to heterogeneity rather than sampling error.",
-      "note": "Higgins, J. P. T. & Green, S. (2011). Cochrane Handbook for Systematic Reviews.",
+      "note": "Recommended citation in the handbook: \"Higgins JPT, Green S (editors). Cochrane Handbook for Systematic Reviews of Interventions Version 5.1.0 [updated March 2011]. The Cochrane Collaboration, 2011.\" The old handbook-5-1.cochrane.org address now redirects to the Cochrane handbook page.",
       "type": "book",
       "doi": "",
       "volume": "",
@@ -28804,19 +28900,19 @@
       "id": "housing-misallocation-comment",
       "title": "Housing Constraints and Spatial Misallocation: Comment",
       "author": "Greaney, Brian",
-      "year": "2023",
+      "year": "2026",
       "source": "American Economic Journal: Macroeconomics",
       "url": "https://www.aeaweb.org/articles?id=10.1257/mac.20230141&from=f",
       "urls": [
         "https://www.aeaweb.org/articles?id=10.1257/mac.20230141&from=f"
       ],
       "quote": "",
-      "note": "",
+      "note": "Comment on Hsieh and Moretti (2019), American Economic Journal: Macroeconomics 11(2):1-39. Issue dated April 2026.",
       "type": "article",
-      "doi": "",
-      "volume": "",
-      "pages": "",
-      "number": ""
+      "doi": "10.1257/mac.20230141",
+      "volume": "18",
+      "pages": "409-428",
+      "number": "2"
     },
     "howey-test-securities": {
       "id": "howey-test-securities",
@@ -29150,18 +29246,18 @@
     },
     "icer-qaly-methodology": {
       "id": "icer-qaly-methodology",
-      "title": "ICER QALY methodology and standards",
-      "author": "ICER",
-      "year": "2024",
-      "source": "ICER",
+      "title": "Cost-Effectiveness, the QALY, and the evLY",
+      "author": "Institute for Clinical and Economic Review",
+      "year": "2026",
+      "source": "",
       "url": "https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/",
       "urls": [
         "https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/",
         "https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf"
       ],
-      "quote": "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives, and therefore the metric has served as a fundamental component of cost-effectiveness analyses in the US and around the world for more than 30 years. ICER's health benefit price benchmark (HBPB) will continue to be reported using the standard range from \\$100,000 to \\$150,000 per QALY and per evLYG. Additional sources: https://icer.org/our-approach/methods-process/cost-effectiveness-the-qaly-and-the-evlyg/ | https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf",
-      "note": "ICER, Cost-Effectiveness, the QALY, and the evLYG | ICER, Reference Case 4.0",
-      "type": "article",
+      "quote": "The quality-adjusted life year (QALY) is the academic standard for measuring how well all different kinds of medical treatments lengthen and/or improve patients' lives. [Reference Case:] Health benefit price benchmark (HBPB) will be reported using standard range from \\$100,000 to \\$150,000 per evLY gained and QALY.",
+      "note": "Undated web page (footer: (c) ICER, 2026); formerly titled \"Cost-Effectiveness, the QALY, and the evLYG\". The \\$100,000 to \\$150,000 benchmark is in ICER's Reference Case for Economic Evaluations (current as of October 22, 2026), https://icer.org/wp-content/uploads/2024/02/Reference-Case-4.3.25.pdf, not on this page.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -29364,13 +29460,13 @@
       "title": "Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction",
       "author": "Imbens, Guido W. and Rubin, Donald B.",
       "year": "2015",
-      "source": "Imbens",
+      "source": "Cambridge University Press",
       "url": "",
       "urls": [],
       "quote": "The potential outcomes framework provides a rigorous foundation for defining causal effects and understanding the assumptions required for their identification.",
-      "note": "Imbens, G. W. & Rubin, D. B. (2015). Causal Inference. Cambridge University Press.",
+      "note": "",
       "type": "book",
-      "doi": "",
+      "doi": "10.1017/CBO9781139025751",
       "volume": "",
       "pages": "",
       "number": ""
@@ -30430,7 +30526,7 @@
     "kangas2020": {
       "id": "kangas2020",
       "title": "Suomen perustulokokeilun arviointi [Evaluation of the Finnish Basic Income Experiment]",
-      "author": "Kangas, Olli and Jauhiainen, Signe and Simanainen, Miska and Ylikännö, Minna",
+      "author": "",
       "year": "2020",
       "source": "Sosiaali- ja terveysministeriö (Ministry of Social Affairs and Health)",
       "url": "https://urn.fi/URN:ISBN:978-952-00-9890-2",
@@ -35108,18 +35204,18 @@
       "title": "Unobservable Selection and Coefficient Stability: Theory and Evidence",
       "author": "Oster, Emily",
       "year": "2019",
-      "source": "Oster",
+      "source": "Journal of Business & Economic Statistics",
       "url": "https://www.tandfonline.com/doi/abs/10.1080/07350015.2016.1227711",
       "urls": [
         "https://www.tandfonline.com/doi/abs/10.1080/07350015.2016.1227711"
       ],
-      "quote": "A common approach to evaluating robustness to omitted variable bias is to observe coefficient movements after inclusion of controls. This is informative only if selection on observables is informative about selection on unobservables. Additional sources: https://www.tandfonline.com/doi/abs/10.1080/07350015.2016.1227711",
-      "note": "Oster, 2019, JBES",
+      "quote": "A common approach to evaluating robustness to omitted variable bias is to observe coefficient movements after inclusion of controls. This is informative only if selection on observables is informative about selection on unobservables.",
+      "note": "Published online 2017; print issue 2019.",
       "type": "article",
       "doi": "10.1080/07350015.2016.1227711",
       "volume": "37",
       "pages": "187-204",
-      "number": ""
+      "number": "2"
     },
     "ostp-p3co-guidance-2017": {
       "id": "ostp-p3co-guidance-2017",
@@ -35377,21 +35473,21 @@
     },
     "ozawa2016": {
       "id": "ozawa2016",
-      "title": "Economic Benefits of Vaccination Programs",
-      "author": "Ozawa, S. and Clark, S. and Portnoy, A. and others",
+      "title": "Return On Investment From Childhood Immunization In Low- And Middle-Income Countries, 2011--20",
+      "author": "Ozawa, Sachiko and Clark, Samantha and Portnoy, Allison and Grewal, Simrun and Brenzel, Logan and Walker, Damian G.",
       "year": "2016",
-      "source": "Ozawa",
+      "source": "Health Affairs",
       "url": "https://www.healthaffairs.org/doi/10.1377/hlthaff.2015.1086",
       "urls": [
         "https://www.healthaffairs.org/doi/10.1377/hlthaff.2015.1086"
       ],
-      "quote": "Systematic review of vaccination economic benefits across 94 low- and middle-income countries found that every dollar invested in childhood vaccination generates approximately \\$16 in healthcare cost savings and \\$44 in broader economic returns when accounting for productivity gains.",
-      "note": "Ozawa, S., et al. (2016). Return On Investment From Childhood Immunization In Low- And Middle-Income Countries, 2011-20. Health Affairs, 35(2), 199-207.",
+      "quote": "Based on the costs of illnesses averted, we estimated that projected immunizations will yield a net return about 16 times greater than costs over the decade (uncertainty range: 10-25). Using a full-income approach, which quantifies the value that people place on living longer and healthier lives, we found that net returns amounted to 44 times the costs (uncertainty range: 27-67).",
+      "note": "Modelled return on investment of vaccines against ten antigens in 94 low- and middle-income countries over 2011-2020.",
       "type": "article",
-      "doi": "",
-      "volume": "",
-      "pages": "",
-      "number": ""
+      "doi": "10.1377/hlthaff.2015.1086",
+      "volume": "35",
+      "pages": "199--207",
+      "number": "2"
     },
     "pandemics-vs-wars": {
       "id": "pandemics-vs-wars",
@@ -35414,20 +35510,20 @@
     "papanicolas2018": {
       "id": "papanicolas2018",
       "title": "Health Care Spending in the United States and Other High-Income Countries",
-      "author": "Papanicolas, Irene et al.",
+      "author": "Papanicolas, Irene and Woskie, Liana R. and Jha, Ashish K.",
       "year": "2018",
-      "source": "Papanicolas et al.",
+      "source": "JAMA",
       "url": "https://jamanetwork.com/journals/jama/article-abstract/2674671",
       "urls": [
         "https://jamanetwork.com/journals/jama/article-abstract/2674671"
       ],
-      "quote": "The US spent approximately twice as much as other high-income countries on medical care (mean per capita: \\$9,892 vs \\$5,289), with similar utilization but much higher prices. Administrative costs accounted for 8% of US spending vs 1-3% in other countries. US spending on pharmaceuticals was \\$1,443 per capita vs \\$749 elsewhere. Despite spending more, US health outcomes are not better. Additional sources: https://jamanetwork.com/journals/jama/article-abstract/2674671",
-      "note": "Papanicolas et al., 2018, JAMA | Highly cited comparison of healthcare spending across OECD countries",
+      "quote": "In 2016, the US spent 17.8% of its gross domestic product on health care, and spending in the other countries ranged from 9.6% (Australia) to 12.4% (Switzerland). The US had almost double the health spending per capita (mean, \\$9403) compared with the other countries (range, \\$3377-\\$6808; mean of all 11 countries, \\$5419). Administrative costs of care accounted for 8% in the US vs a range of 1% to 3% in the other countries. For pharmaceutical costs, spending per capita was \\$1443 in the US vs a range of \\$466 to \\$939 in other countries (mean of all 11 countries, \\$749). Life expectancy in the US was the lowest of the 11 countries at 78.8 years, and infant mortality was the highest. The United States spent approximately twice as much as other high-income countries on medical care, yet utilization rates in the United States were largely similar to those in other nations.",
+      "note": "PMID 29536101. Erratum: JAMA 2018;319(17):1824. Highly cited comparison of US health spending with 10 high-income countries.",
       "type": "article",
-      "doi": "",
-      "volume": "",
-      "pages": "",
-      "number": ""
+      "doi": "10.1001/jama.2018.1150",
+      "volume": "319",
+      "pages": "1024-1039",
+      "number": "10"
     },
     "pape-dying-to-win": {
       "id": "pape-dying-to-win",
@@ -35939,13 +36035,13 @@
       "title": "Systematic Reviews in the Social Sciences: A Practical Guide",
       "author": "Petticrew, Mark and Roberts, Helen",
       "year": "2006",
-      "source": "Petticrew",
+      "source": "Blackwell Publishing",
       "url": "",
       "urls": [],
       "quote": "Systematic reviews can help policymakers by providing a rigorous and transparent method for synthesizing research evidence on the effectiveness of social interventions.",
-      "note": "Petticrew, M. & Roberts, H. (2006). Systematic Reviews in the Social Sciences. Blackwell.",
+      "note": "",
       "type": "book",
-      "doi": "",
+      "doi": "10.1002/9780470754887",
       "volume": "",
       "pages": "",
       "number": ""
@@ -36729,18 +36825,18 @@
     },
     "philipson2008": {
       "id": "philipson2008",
-      "title": "Cost-benefit Analysis of the FDA: The Case of the Prescription Drug User Fee Acts",
-      "author": "Philipson, Tomas and Berndt, Ernst R. and Gottschalk, Adrian H. and Sun, Eric",
+      "title": "Cost-Benefit Analysis of the FDA: The Case of the Prescription Drug User Fee Acts",
+      "author": "Philipson, Tomas and Berndt, Ernst R. and Gottschalk, Adrian H. B. and Sun, Eric",
       "year": "2008",
       "source": "Journal of Public Economics",
       "url": "https://www.sciencedirect.com/science/article/abs/pii/S0047272708000054",
       "urls": [
         "https://www.sciencedirect.com/science/article/abs/pii/S0047272708000054"
       ],
-      "quote": "Faster drug approvals under PDUFA saved 140,000 to 310,000 life years from patients who had more rapid access to drugs, though this benefit was partially offset by an estimated 56,000 life years lost due to adverse events... Consumer welfare increased between \\$7 billion and \\$20 billion.",
+      "quote": "We find that PDUFA raised the private surplus of producers, and thus innovative returns, by about \\$7 to \\$11 billion. ... PDUFA raised consumer welfare between \\$7 and \\$20 billion; thus the combined social surplus was raised by \\$14 to \\$31 billion. Converting these economic gains into equivalent health benefits, we find that the more rapid access of drugs on the market enabled by PDUFA saved the equivalent of 140,000 to 310,000 life years. ... an extreme upper bound of about 56,000 life years were lost.",
       "note": "",
       "type": "article",
-      "doi": "",
+      "doi": "10.1016/j.jpubeco.2007.09.010",
       "volume": "92",
       "pages": "1306-1325",
       "number": "5-6"
@@ -38026,17 +38122,18 @@
     },
     "recovery-trial-summary-quote": {
       "id": "recovery-trial-summary-quote",
-      "title": "RECOVERY Trial Summary Quote",
-      "author": "Oxford University News",
-      "year": "",
-      "source": "Oxford University News",
+      "title": "The RECOVERY Trial: Two Years On",
+      "author": "University of Oxford",
+      "year": "2022",
+      "source": "",
       "url": "https://www.ox.ac.uk/news/features/recovery-trial-two-years",
       "urls": [
-        "https://www.ox.ac.uk/news/features/recovery-trial-two-years"
+        "https://www.ox.ac.uk/news/features/recovery-trial-two-years",
+        "https://www.oxfordsparks.ox.ac.uk/news/the-recovery-trial-two-years-on/"
       ],
-      "quote": "One trial. Over 47,000 participants. Nearly 200 hospital sites, across six countries. Ten results. Four effective COVID-19 treatments... Through discovering four treatments that effectively reduce deaths from COVID-19, it is certain that the study has saved thousands – if not millions – of lives worldwide. Additional sources: https://www.ox.ac.uk/news/features/recovery-trial-two-years",
-      "note": "Oxford University News, Link",
-      "type": "article",
+      "quote": "One trial. Over 47,000 participants. Nearly 200 hospital sites, across six countries. Ten results. Four effective COVID-19 treatments... it is certain that the study has saved thousands - if not millions - of lives worldwide.",
+      "note": "Second-anniversary feature. ox.ac.uk blocks automated access; the same text is on Oxford Sparks, dated 23 March 2022: https://www.oxfordsparks.ox.ac.uk/news/the-recovery-trial-two-years-on/",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -38561,6 +38658,24 @@
       "volume": "1",
       "pages": "83-98",
       "number": ""
+    },
+    "sanders2016": {
+      "id": "sanders2016",
+      "title": "Recommendations for Conduct, Methodological Practices, and Reporting of Cost-effectiveness Analyses: Second Panel on Cost-Effectiveness in Health and Medicine",
+      "author": "Sanders, Gillian D. and Neumann, Peter J. and Basu, Anirban and Brock, Dan W. and Feeny, David and Krahn, Murray and Kuntz, Karen M. and Meltzer, David O. and Owens, Douglas K. and Prosser, Lisa A. and Salomon, Joshua A. and Sculpher, Mark J. and Trikalinos, Thomas A. and Russell, Louise B. and Siegel, Joanna E. and Ganiats, Theodore G.",
+      "year": "2016",
+      "source": "JAMA",
+      "url": "https://doi.org/10.1001/jama.2016.12195",
+      "urls": [
+        "https://doi.org/10.1001/jama.2016.12195"
+      ],
+      "quote": "The concept of a \"reference case\" and a set of standard methodological practices that all cost-effectiveness analyses should follow to improve quality and comparability are recommended. All cost-effectiveness analyses should report 2 reference case analyses: one based on a health care sector perspective and another based on a societal perspective. ... This special communication reviews these recommendations and others concerning the estimation of the consequences of interventions, the valuation of health outcomes, and the reporting of cost-effectiveness analyses.",
+      "note": "PMID 27623463. Erratum: JAMA 2016;316(18):1924.",
+      "type": "article",
+      "doi": "10.1001/jama.2016.12195",
+      "volume": "316",
+      "pages": "1093-1103",
+      "number": "10"
     },
     "satterthwaite1975": {
       "id": "satterthwaite1975",
@@ -39138,18 +39253,17 @@
     },
     "smallpox-eradication-roi": {
       "id": "smallpox-eradication-roi",
-      "title": "Smallpox Eradication ROI",
-      "author": "CSIS",
-      "year": "",
-      "source": "CSIS",
+      "title": "Smallpox Eradication: A Model for Global Cooperation",
+      "author": "Bristol, Nellie",
+      "year": "2023",
+      "source": "",
       "url": "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation",
       "urls": [
-        "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation",
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/"
+        "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation"
       ],
-      "quote": "Adding up, the benefit–cost ratio for the entire world would have been about \\$(($350 + $1070) ÷ 0.03)/$298 ≈ 159:1\\$. These are huge numbers. Smallpox Eradication: Model for Global Cooperation. Additional sources: https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation | https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/",
-      "note": "CSIS, Smallpox Eradication Model: Global Cooperation | PMC3720047, Link",
-      "type": "article",
+      "quote": "Globally, benefits outweighed costs by a ratio of 400-to-1.",
+      "note": "Published 17 May 2023. For the 159:1 global benefit-cost calculation cite barrett2013.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -39455,16 +39569,18 @@
       "title": "The Theory of Economic Regulation",
       "author": "Stigler, George J.",
       "year": "1971",
-      "source": "Stigler",
-      "url": "",
-      "urls": [],
+      "source": "The Bell Journal of Economics and Management Science",
+      "url": "https://doi.org/10.2307/3003160",
+      "urls": [
+        "https://doi.org/10.2307/3003160"
+      ],
       "quote": "As a rule, regulation is acquired by the industry and is designed and operated primarily for its benefit.",
-      "note": "Stigler, G. J. (1971). The Theory of Economic Regulation. Bell Journal of Economics, 2(1), 3-21.",
+      "note": "The quoted thesis is on p. 3 (verified via Carrigan and Coglianese's chapter on the article, GW Regulatory Studies Center).",
       "type": "article",
-      "doi": "",
+      "doi": "10.2307/3003160",
       "volume": "2",
       "pages": "3-21",
-      "number": ""
+      "number": "1"
     },
     "stiglitz-bilmes2008": {
       "id": "stiglitz-bilmes2008",
@@ -39668,11 +39784,11 @@
       "title": "The Cost-Benefit State: The Future of Regulatory Protection",
       "author": "Sunstein, Cass R.",
       "year": "2002",
-      "source": "Sunstein",
+      "source": "American Bar Association, Section of Administrative Law and Regulatory Practice",
       "url": "",
       "urls": [],
       "quote": "Cost-benefit analysis, properly understood, is not only a useful tool but also an indispensable safeguard against both excessive and insufficient regulation.",
-      "note": "Sunstein, C. R. (2002). The Cost-Benefit State. American Bar Association.",
+      "note": "",
       "type": "book",
       "doi": "",
       "volume": "",
@@ -40196,17 +40312,17 @@
     },
     "thenation-revolving-door": {
       "id": "thenation-revolving-door",
-      "title": "The Pentagon's Revolving Door Keeps Spinning",
-      "author": "The Nation",
-      "year": "2021",
-      "source": "The Nation",
+      "title": "The Pentagon's Revolving Door Keeps Spinning: 2021 in Review",
+      "author": "Project On Government Oversight",
+      "year": "2022",
+      "source": "",
       "url": "https://www.pogo.org/analyses/the-pentagons-revolving-door-keeps-spinning-2021-in-review",
       "urls": [
         "https://www.pogo.org/analyses/the-pentagons-revolving-door-keeps-spinning-2021-in-review"
       ],
-      "quote": "From 2009 to 2019, approximately 380 high-ranking Department of Defense officials and military officers transitioned to become lobbyists, board members, executives, or consultants for military contractors. Former members of Congress routinely transition to lucrative lobbying and consulting careers in the defense sector, with compensation often 10-20 times their congressional salary. Additional sources: https://www.pogo.org/analyses/the-pentagons-revolving-door-keeps-spinning-2021-in-review",
-      "note": "The Nation, The Pentagon's Revolving Door",
-      "type": "article",
+      "quote": "POGO identified at least 36 people who left senior Pentagon positions for defense or defense-adjacent firms in 2021, 46 instances of such hiring in all; the hiring firms received about \\$89 billion in Pentagon contract obligations in fiscal 2021.",
+      "note": "pogo.org blocks automated access; content verified from search-engine extracts, individual author NOT VERIFIED. The \"380 officials\" figure in the old abstract is from POGO's 2018 report \"Brass Parachutes\" (2008-2018), not this article. No source found for \"10-20 times congressional salary\".",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -40681,17 +40797,17 @@
     },
     "un2018": {
       "id": "un2018",
-      "title": "Corruption Costs Global Economy \\$2.6 Trillion Annually",
-      "author": "United Nations",
+      "title": "Pervasive Corruption Costs \\$2.6 Trillion; Disproportionately Affects \"Poor and Vulnerable\" Says UN Chief",
+      "author": "UN News",
       "year": "2018",
       "source": "",
-      "url": "https://www.unodc.org/unodc/en/frontpage/2018/December/corruption-costs-the-global-economy-us-2_6-trillion-annually-says-un-anti-corruption-day.html",
+      "url": "https://news.un.org/en/story/2018/09/1018892",
       "urls": [
-        "https://www.unodc.org/unodc/en/frontpage/2018/December/corruption-costs-the-global-economy-us-2_6-trillion-annually-says-un-anti-corruption-day.html"
+        "https://news.un.org/en/story/2018/09/1018892"
       ],
-      "quote": "Corruption costs 5% of global GDP annually (~\\$2.6 trillion)",
-      "note": "",
-      "type": "article",
+      "quote": "Citing World Economic Forum estimates that corruption costs at least \\$2.6 trillion, or five per cent of global gross domestic product. And according to the World Bank, businesses and individuals pay more than \\$1 trillion in bribes each year.",
+      "note": "Report of Secretary-General Guterres's remarks to the Security Council, 10 September 2018. The \\$2.6 trillion figure is a World Economic Forum estimate; the \\$1 trillion bribery figure is attributed to the World Bank. The basis of the \\$2.6 trillion figure is disputed (Global Anticorruption Blog, 2015 and 2018). The previous UNODC URL for this key now returns 404.",
+      "type": "misc",
       "doi": "",
       "volume": "",
       "pages": "",
@@ -41915,13 +42031,13 @@
       "title": "Pricing Lives: Guideposts for a Safer Society",
       "author": "Viscusi, W. Kip",
       "year": "2018",
-      "source": "Viscusi",
+      "source": "Princeton University Press",
       "url": "",
       "urls": [],
       "quote": "The value of a statistical life provides a consistent metric for evaluating the benefits of risk reduction policies across domains.",
-      "note": "Viscusi, W. K. (2018). Pricing Lives. Princeton University Press.",
+      "note": "",
       "type": "book",
-      "doi": "",
+      "doi": "10.2307/j.ctvc772d8",
       "volume": "",
       "pages": "",
       "number": ""
@@ -42414,21 +42530,21 @@
     },
     "who-choice-daly-value": {
       "id": "who-choice-daly-value",
-      "title": "WHO-CHOICE DALY Valuation (\\$1-3x$ GDP per capita)",
-      "author": "World Health Organization",
-      "year": "",
-      "source": "World Health Organization",
-      "url": "https://www.who.int/activities/choosing-interventions-that-are-cost-effective-(who-choice",
+      "title": "Cost-Effectiveness Thresholds: Pros and Cons",
+      "author": "Bertram, Melanie Y. and Lauer, Jeremy A. and De Joncheere, Kees and Edejer, Tessa and Hutubessy, Raymond and Kieny, Marie-Paule and Hill, Suzanne R.",
+      "year": "2016",
+      "source": "Bulletin of the World Health Organization",
+      "url": "https://doi.org/10.2471/BLT.15.164418",
       "urls": [
-        "https://www.who.int/activities/choosing-interventions-that-are-cost-effective-(who-choice"
+        "https://doi.org/10.2471/BLT.15.164418"
       ],
-      "quote": "In the CHOICE project, we have used a threshold of three times GDP per capita for an intervention to be considered 'cost-effective' and a threshold of one times GDP per capita to be considered 'very cost-effective'. Additional sources: https://www.who.int/activities/choosing-interventions-that-are-cost-effective-(who-choice",
-      "note": "World Health Organization, Cost-effectiveness thresholds/cost-effectiveness-thresholds)",
+      "quote": "In 2001, the World Health Organization's Commission on Macroeconomics in Health suggested cost-effectiveness thresholds based on multiples of a country's per-capita gross domestic product (GDP). In some contexts, in choosing which health interventions to fund and which not to fund, these thresholds have been used as decision rules. However, experience with the use of such GDP-based thresholds in decision-making processes at country level shows them to lack country specificity and this, in addition to uncertainty in the modelled cost-effectiveness ratios, can lead to the wrong decision on how to spend health-care resources.",
+      "note": "PMID 27994285. Authors are WHO staff. WHO-CHOICE's 2021 methods update (Bertram et al., Int J Health Policy Manag 10(11):673-677) says it now uses no threshold: \"No threshold is used to define interventions as cost-effective or not.\"",
       "type": "article",
-      "doi": "",
-      "volume": "",
-      "pages": "",
-      "number": ""
+      "doi": "10.2471/BLT.15.164418",
+      "volume": "94",
+      "pages": "925-930",
+      "number": "12"
     },
     "who-clean-water-daly-costs": {
       "id": "who-clean-water-daly-costs",
@@ -42450,22 +42566,21 @@
     },
     "who-cost-effectiveness-threshold": {
       "id": "who-cost-effectiveness-threshold",
-      "title": "Cost-effectiveness threshold (\\$50,000/QALY)",
-      "author": "PMC",
-      "year": "",
-      "source": "PMC",
+      "title": "Country-Level Cost-Effectiveness Thresholds: Initial Estimates and the Need for Further Research",
+      "author": "Woods, Beth and Revill, Paul and Sculpher, Mark and Claxton, Karl",
+      "year": "2016",
+      "source": "Value in Health",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5193154/",
       "urls": [
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5193154/",
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9278384/"
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5193154/"
       ],
-      "quote": "The \\$50,000/QALY threshold is widely used in US health economics literature, originating from dialysis cost benchmarks in the 1980s. In US cost-utility analyses, 77.5% of authors use either \\$50,000 or \\$100,000 per QALY as reference points. Most successful health programs cost \\$3,000-10,000 per QALY. WHO-CHOICE uses GDP per capita multiples (1× GDP/capita = \"very cost-effective\", 3× GDP/capita = \"cost-effective\"), which for the US (~\\$70,000 GDP/capita) translates to \\$70,000-\\$210,000/QALY thresholds. Additional sources: https://pmc.ncbi.nlm.nih.gov/articles/PMC5193154/ | https://pmc.ncbi.nlm.nih.gov/articles/PMC9278384/",
-      "note": "PMC, Country-Level Cost-Effectiveness Thresholds | WHO, WHO-CHOICE Methods Update",
+      "quote": "Cost-effectiveness thresholds (CETs) are typically used to assess whether an intervention is worthwhile and should reflect health opportunity cost. Nevertheless, CETs used by some decision makers, such as the World Health Organization that suggested CETs of 1 to 3 times the gross domestic product (GDP) per capita, do not. ... values of £20,000 to £30,000 and \\$50,000 have commonly been applied in the United Kingdom and the United States, respectively. ... these estimates ... suggest that routinely used CETs have been too high.",
+      "note": "PMID 27987642. The old abstract's \"77.5% of authors\" and \"most successful health programs cost \\$3,000-10,000 per QALY\" do not appear in this paper.",
       "type": "article",
-      "doi": "",
-      "volume": "",
-      "pages": "",
-      "number": ""
+      "doi": "10.1016/j.jval.2016.02.017",
+      "volume": "19",
+      "pages": "929-935",
+      "number": "8"
     },
     "who-covid-deaths": {
       "id": "who-covid-deaths",

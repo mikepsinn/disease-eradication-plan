@@ -63,7 +63,7 @@ Same logic as your [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-i
 
 If you're thinking "just publish the results and politicians will do the right thing," I have some bad news about your species.
 
-The Copenhagen Consensus already publishes rigorous benefit-cost analyses [@copenhagenconsensus2023]. Childhood vaccination: 101:1 returns. Pragmatic clinical trials: {{< var dfda_roi_rd_only >}}:1. Agricultural subsidies: less than 1:1. The answer key is public. It's been public for years. Your governments ignore it. You have the cheat sheet, and you're still failing the test on purpose.
+The Copenhagen Consensus already publishes rigorous benefit-cost analyses. Vaccinating more children in 80 of the poorest countries: 101:1 [@copenhagenconsensus2023]. Pragmatic clinical trials, by the math in your own [dFDA impact analysis](../appendix/dfda-impact-paper.qmd): {{< var dfda_roi_rd_only >}}:1 [@dfda-impact-paper-2025]. The answer key is public. It's been public for years. Your governments ignore it. You have the cheat sheet, and you're still failing the test on purpose.
 
 ![Evidence says do this thing. Politicians say no because it won't get them reelected. You built a system where saving lives loses votes.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-information-alone-fails-bw-academic.jpg)
 
@@ -100,7 +100,7 @@ This doesn't require government permission. The Evidence Machine operates as a p
 
 "But won't someone corrupt the measurement system?" Yes. This is the right question. It's the only question that matters.
 
-Currently, your lobbying industry has thousands of capture points. Committee earmarks, agency decisions, regulatory rulings, budget amendments, riders on unrelated bills. Each one is cheap to influence. Your federal lobbyists spend {{< var us_total_lobbying_annual >}} per year {{< var us_total_lobbying_annual_cite >}} with estimated 100:1 returns [@drutman2015]. Your democracy is a vending machine, and the buttons are labeled.
+Currently, your lobbying industry has thousands of capture points. Committee earmarks, agency decisions, regulatory rulings, budget amendments, riders on unrelated bills. Each one is cheap to influence. Your federal lobbyists spend {{< var us_total_lobbying_annual >}} per year {{< var us_total_lobbying_annual_cite >}}. Companies that lobbied for one 2004 tax break got back $220 for every dollar [@alexander2009]. Your democracy is a vending machine, and the buttons are labeled.
 
 ![Lobbyists currently have thousands of people to corrupt. Optimocracy gives them one target protected by multiple watchdogs. You're trying to make corruption impractical instead of illegal.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
 

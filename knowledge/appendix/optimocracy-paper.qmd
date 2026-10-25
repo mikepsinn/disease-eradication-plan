@@ -149,8 +149,8 @@ The following table synthesizes estimates from peer-reviewed research:
 |--------------|--------|-------------|------------------------|------------|
 | **US regulatory accumulation (1980-2012)** | @coffey2020 | Counterfactual growth trajectory | 25% of GDP ($4T annually) | Low^†^ |
 | **US regulation (1949-2005)** | @dawson2013 | Panel regression, regulatory index | GDP would be 3.5x higher | Low^†^ |
-| **Global corruption** | @un2018 | Multiple estimation approaches | 5% of GDP (~$5T/year) | Medium |
-| **FDA drug delays (1960-2001)** | @philipson2008 | Consumer/producer surplus | 140M life-years lost | Medium |
+| **Global corruption** | @un2018 | WEF estimate cited by UN Secretary-General | ≥$2.6T/year (~5% of world GDP) | Low |
+| **FDA review delays before user fees (PDUFA I/II)** | @philipson2008 | Consumer/producer surplus | 140,000-310,000 life-years (gained once PDUFA sped reviews) | Medium |
 | **Trade barriers** | @costinot2015 | Gravity models | 5-10% of GDP | High |
 | **Occupational licensing** | @kleiner2013 | Labor market distortion | 2-3% of GDP | High |
 
@@ -174,7 +174,7 @@ The US government waste estimate of {{< var us_gov_waste_total >}} ({{< var us_g
 
 ![How America wastes money, by category. Healthcare, military, regulations, taxes, housing. It's like a pie chart of inefficiency, and every slice is surprisingly large.](/assets/images/optimocracy-paper/optimocracy-paper-section-alternative-estimation-bottom-up-policy-cost-accounting-bw-academic.jpg)
 
-International comparisons reinforce this estimate: the US spends {{< var us_vs_switzerland_spending_gap >}} of GDP MORE than Switzerland yet achieves {{< var us_vs_switzerland_life_expectancy_gap >}} FEWER years of life expectancy.
+International comparisons reinforce this estimate: the US spends {{< var us_vs_switzerland_spending_gap >}} of GDP MORE than Switzerland (a percentage-point gap) yet achieves {{< var us_vs_switzerland_life_expectancy_gap >}} FEWER years of life expectancy.
 
 ### Why Information Doesn't Solve the Problem
 
@@ -482,7 +482,7 @@ This two-metric system is used by both the [Optimal Policy Generator](optimal-po
 
 ### Capture Resistance
 
-Under current governance, 12,000+ federal lobbyists spend $4+ billion annually with estimated 100:1 returns [@drutman2015]. Every budget line item is a lobbying opportunity.
+Under current governance, federal lobbyists spend {{< var us_total_lobbying_annual >}} per year {{< var us_total_lobbying_annual_cite >}}, and the payoff can be enormous: companies that lobbied for one 2004 tax break got back more than $220 for every dollar spent [@alexander2009]. Every budget line item is a lobbying opportunity.
 
 ![Lobbyists currently have thousands of people to corrupt. Optimocracy gives them one target protected by multiple watchdogs. You're trying to make corruption impractical instead of illegal.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
 
@@ -591,7 +591,7 @@ For deeper engagement with democratic theory objections, see [Appendix B](#appen
 
 ![Optimocracy beats normal government at charitable giving, money efficiency, and not getting corrupted. Being better than government is a low bar, but here we are.](/assets/images/optimocracy-paper/optimocracy-paper-section-testable-predictions-bw-academic.jpg)
 
-A publishable theory must generate falsifiable predictions. This section presents predictions that would confirm or refute the Optimocracy thesis. (Note: Existing evidence already supports the general case for algorithmic over discretionary allocation; formula programs like Social Security show lower lobbying intensity than discretionary programs [@drutman2015]. The predictions below are specific to Optimocracy.)
+A publishable theory must generate falsifiable predictions. This section presents predictions that would confirm or refute the Optimocracy thesis. (The predictions below are specific to Optimocracy.)
 
 **Prediction 1: Private Optimocracy funds will outperform traditional philanthropic allocation on chosen metrics.**
 
@@ -688,7 +688,7 @@ The scoreboard has no teeth on its own. Four mechanisms could give it some. They
 
 **1. Direct institutional adoption.** An agency, a foundation, a sovereign wealth fund, or a large philanthropy uses the recommendations because they are correct. This costs nothing beyond producing the analysis, requires no political entity, and is how cost-effectiveness research already moves money at GiveWell and Open Philanthropy. It is slow and it is bounded by the budgets of institutions that already wanted to be evidence-driven. The [GiveWell Outcome Fund deployment](#concrete-first-deployment-the-givewell-outcome-fund) below is this mechanism. Try it first, because it is free.
 
-**2. Corporate lobbying redirection.** The organizations that spend {{< var us_total_lobbying_annual >}} per year lobbying the US federal government [@drutman2015] are, with few exceptions, publicly traded. Their shares carry votes. Their boards direct their lobbying budgets. A shareholder who can demonstrate that a company's lobbying produces negative returns for that company's own shareholders is making a fiduciary argument, not a political one, and fiduciary arguments are the kind that institutional investors are obligated to evaluate. Engine No. 1 won three ExxonMobil board seats in 2021 holding 0.02% of the shares, because the three largest index-fund managers found the economic case persuasive. Military contractors alone direct {{< var defense_lobbying_annual >}} per year [@lobbying-spend-defense]. This mechanism buys the apparatus rather than renting its output, so the expenditure is an asset that persists rather than a campaign cost that recurs. It is also slower than writing a check and it is subject to proxy rules, disclosure thresholds, and the possibility that the board simply wins the vote.
+**2. Corporate lobbying redirection.** The organizations that spend {{< var us_total_lobbying_annual >}} per year lobbying the US federal government {{< var us_total_lobbying_annual_cite >}} are, with few exceptions, publicly traded. Their shares carry votes. Their boards direct their lobbying budgets. A shareholder who can demonstrate that a company's lobbying produces negative returns for that company's own shareholders is making a fiduciary argument, not a political one, and fiduciary arguments are the kind that institutional investors are obligated to evaluate. Engine No. 1 won three ExxonMobil board seats in 2021 holding 0.02% of the shares, because the three largest index-fund managers found the economic case persuasive. Military contractors alone direct {{< var defense_lobbying_annual >}} per year [@lobbying-spend-defense]. This mechanism buys the apparatus rather than renting its output, so the expenditure is an asset that persists rather than a campaign cost that recurs. It is also slower than writing a check and it is subject to proxy rules, disclosure thresholds, and the possibility that the board simply wins the vote.
 
 **3. Independent expenditure (the SuperPAC).** Fund the campaigns of legislators who score well. This is the fastest mechanism and the most legible, and it is developed in detail below. It is also rent: the money is spent, the alignment lasts one cycle, and a better-funded opponent can outbid it at the next election. Its cost scales with the number of races, not with the quality of the analysis.
 
@@ -724,7 +724,7 @@ Political feasibility is a cost, not a binary. In a companion analysis (see [How
 |-----------|---------------|
 | Match all lobbying expenditure (1.5×) | $6.6B/year |
 | Match all federal campaign spending | $10B/cycle |
-| Match full Congress career incentives (535 × ~$10M NPV)^[Post-Congress lobbying compensation averages 10-20× congressional salary [@thenation-revolving-door]; $174K × 15 × 10 years ≈ $10M NPV.] | $5.35B one-time |
+| Match full Congress career incentives (535 × ~$10M NPV)^[Assumption: post-Congress lobbying pay of about 15 times the $174K congressional salary for 10 years, about $10M. We found no published estimate of this multiple, so treat it as an assumption.] | $5.35B one-time |
 | **Total US maximum reform investment** | **~$25B** |
 
 For reforms like the [1% Treaty](../solution/1-percent-treaty.qmd) ($2.5T NPV conservative estimate), this implies ~100:1 ROI. Political reform is dramatically underinvested relative to its expected value.
@@ -1011,7 +1011,7 @@ The challenge shifts from "what should we optimize?" (self-evident) to "how do w
 
 #### Mechanism Design: The Revelation Principle
 
-The Revelation Principle [@myerson1981; @maskin1999] states that data reporters only tell the truth when lying costs more than it's worth.
+The Revelation Principle [@myerson1979; @myerson1981] says that any outcome a reporting system can reach, some system can also reach with every reporter simply telling the truth, provided truth-telling is each reporter's best move (incentive compatibility). The design job for data reporters is to make an honest report pay at least as well as any lie. Implementation theory adds a harder test: every equilibrium of the system, not just the honest one, must produce a good outcome [@maskin1999].
 
 ![The more expensive lying becomes, the more attractive truth-telling looks. Economics discovered honesty. Only took a few thousand years.](/assets/images/optimocracy-paper/optimocracy-paper-section-mechanism-design-the-revelation-principle-bw-academic.jpg)
 

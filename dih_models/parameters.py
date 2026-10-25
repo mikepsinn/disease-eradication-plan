@@ -10216,28 +10216,28 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
 
 # Historical public health comparisons
 SMALLPOX_ERADICATION_ROI = Parameter(
-    280,
+    159,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
-    source_ref=ReferenceID.SMALLPOX_ERADICATION_ROI,
+    source_ref=ReferenceID.BARRETT2013,
     source_type="external",
-    description="Return on investment from smallpox eradication campaign",
+    description="Global benefit-cost ratio of the smallpox eradication campaign (Barrett 2013; CSIS 2023 gives 400:1)",
     display_name="Return on Investment from Smallpox Eradication Campaign",
     unit="ratio",
     keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"],
     latex_symbol=r"ROI_{smallpox}",  # LaTeX symbol for equations
-)  # 159:1 to 280:1 estimated
+)  # 159:1 (Barrett 2013), conservative vs CSIS 400:1
 
 CHILDHOOD_VACCINATION_ROI = Parameter(
-    13,
+    10.9,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
-    source_ref=ReferenceID.CHILDHOOD_VACCINATION_ROI,
+    source_ref=ReferenceID.CHILDHOOD_VACCINATION_ECONOMIC_BENEFITS,
     source_type="external",
-    description="Return on investment from childhood vaccination programs",
+    description="Societal benefit-cost ratio of routine US childhood immunization (children born 1994-2023; medical and productivity savings)",
     display_name="Return on Investment from Childhood Vaccination Programs",
     unit="ratio",
     keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"],
     latex_symbol=r"ROI_{vax}",  # LaTeX symbol for equations
-)  # 13:1
+)  # 10.9:1 societal (3.3:1 payer), CDC MMWR 2024
 
 POLIO_VACCINATION_ROI = Parameter(
     39,

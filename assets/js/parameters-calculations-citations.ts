@@ -387,15 +387,15 @@ export const CHILDHOOD_VACCINATION_ANNUAL_BENEFIT: Parameter = {
 };
 
 export const CHILDHOOD_VACCINATION_ROI: Parameter = {
-  value: 13.0,
+  value: 10.9,
   parameterName: "CHILDHOOD_VACCINATION_ROI",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-childhood_vaccination_roi",
   unit: "ratio",
   displayName: "Return on Investment from Childhood Vaccination Programs",
-  description: "Return on investment from childhood vaccination programs",
+  description: "Societal benefit-cost ratio of routine US childhood immunization (children born 1994-2023; medical and productivity savings)",
   sourceType: "external",
-  sourceRef: "childhood-vaccination-roi",
-  sourceUrl: "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm",
+  sourceRef: "childhood-vaccination-economic-benefits",
+  sourceUrl: "https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
@@ -3230,15 +3230,15 @@ export const SINGAPORE_LIFE_EXPECTANCY: Parameter = {
 };
 
 export const SMALLPOX_ERADICATION_ROI: Parameter = {
-  value: 280.0,
+  value: 159.0,
   parameterName: "SMALLPOX_ERADICATION_ROI",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-smallpox_eradication_roi",
   unit: "ratio",
   displayName: "Return on Investment from Smallpox Eradication Campaign",
-  description: "Return on investment from smallpox eradication campaign",
+  description: "Global benefit-cost ratio of the smallpox eradication campaign (Barrett 2013; CSIS 2023 gives 400:1)",
   sourceType: "external",
-  sourceRef: "smallpox-eradication-roi",
-  sourceUrl: "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation",
+  sourceRef: "barrett2013",
+  sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/",
   confidence: "high",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/economics/1-pct-treaty-impact.html",
   manualPageTitle: "The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease",
@@ -16395,6 +16395,21 @@ export const citations: Record<string, Citation> = {
         URL: "https://pubmed.ncbi.nlm.nih.gov/26276679/",
         note: "Zimmerman et al., Mayo Clinic Proceedings, 2015 | Preskorn et al., Journal of Psychiatric Practice, 2015 | Wolters Kluwer: Antidepressant Trials Exclude Most Real World Patients",
   },
+  "barrett2013": {
+        id: "barrett2013",
+        type: "article-journal",
+        title: "Economic Considerations for the Eradication Endgame",
+        author: [
+          {
+            family: "Barrett",
+            given: "Scott"
+          },
+        ],
+        issued: { 'date-parts': [[2013]] },
+        'container-title': "Philosophical Transactions of the Royal Society B: Biological Sciences",
+        URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3720047/",
+        note: "Source of the 159:1 smallpox eradication benefit-cost ratio (section 4a).",
+  },
   "bio-clinical-development-2021": {
         id: "bio-clinical-development-2021",
         type: "article-journal",
@@ -16531,30 +16546,76 @@ export const citations: Record<string, Citation> = {
   "childhood-vaccination-economic-benefits": {
         id: "childhood-vaccination-economic-benefits",
         type: "article-journal",
-        title: "Childhood vaccination economic benefits",
+        title: "Health and Economic Benefits of Routine Childhood Immunizations in the Era of the Vaccines for Children Program -- United States, 1994-2023",
         author: [
           {
-            literal: "CDC MMWR"
+            family: "Zhou",
+            given: "Fangjun"
+          },
+          {
+            family: "Jatlaoui",
+            given: "Tara C."
+          },
+          {
+            family: "Leidner",
+            given: "Andrew J."
+          },
+          {
+            family: "Carter",
+            given: "Rosalind J."
+          },
+          {
+            family: "Dong",
+            given: "Xiaoyu"
+          },
+          {
+            family: "Santoli",
+            given: "Jeanne M."
+          },
+          {
+            family: "Stokley",
+            given: "Shannon"
+          },
+          {
+            family: "Daskalakis",
+            given: "Demetre C."
+          },
+          {
+            family: "Peacock",
+            given: "Georgina"
           },
         ],
-        issued: { 'date-parts': [[1994]] },
-        'container-title': "CDC MMWR",
+        issued: { 'date-parts': [[2024]] },
+        'container-title': "MMWR. Morbidity and Mortality Weekly Report",
         URL: "https://www.cdc.gov/mmwr/volumes/73/wr/mm7331a2.htm",
-        note: "CDC MMWR, Childhood Immunizations 1994-2023 | The Lancet, 50 Years of Expanded Programme on Immunization | https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)00850-X/fulltext",
+        note: "PMID 39116024. US only. Payer and societal benefit-cost ratios 3.3 and 10.9. Derived averages: about \\$18B/year direct and \\$90B/year societal over 30 birth cohorts. Global figures previously in this entry (\\$820B for 73 countries, 2001-2020; 93.7M lives saved by measles vaccination, Lancet 2024 EPI paper) come from other sources and were not verified here.",
   },
   "childhood-vaccination-roi": {
         id: "childhood-vaccination-roi",
         type: "article-journal",
-        title: "Childhood Vaccination (US) ROI",
+        title: "Benefits from Immunization During the Vaccines for Children Program Era -- United States, 1994-2013",
         author: [
           {
-            literal: "CDC"
+            family: "Whitney",
+            given: "Cynthia G."
+          },
+          {
+            family: "Zhou",
+            given: "Fangjun"
+          },
+          {
+            family: "Singleton",
+            given: "James"
+          },
+          {
+            family: "Schuchat",
+            given: "Anne"
           },
         ],
-        issued: { 'date-parts': [[2017]] },
-        'container-title': "CDC",
+        issued: { 'date-parts': [[2014]] },
+        'container-title': "MMWR. Morbidity and Mortality Weekly Report",
         URL: "https://www.cdc.gov/mmwr/preview/mmwrhtml/mm6316a4.htm",
-        note: "CDC, Link | Vaxopedia, Link",
+        note: "PMID 24759657; PMCID PMC4584777. For the 2009 US birth cohort (Zhou et al., Pediatrics 2014) the report gives about \\$3 in direct benefits and \\$10 in societal benefits per \\$1. It contains no 13:1 figure.",
   },
   "chronic-illness-workforce-productivity-loss": {
         id: "chronic-illness-workforce-productivity-loss",
@@ -16754,16 +16815,16 @@ export const citations: Record<string, Citation> = {
   },
   "deworming-cost-per-daly": {
         id: "deworming-cost-per-daly",
-        type: "article-journal",
-        title: "Cost per DALY for Deworming Programs",
+        type: "webpage",
+        title: "Cost-Effectiveness in \\$/DALY for Deworming Interventions",
         author: [
           {
             literal: "GiveWell"
           },
         ],
-        'container-title': "GiveWell: Cost-Effectiveness in $/DALY for Deworming",
+        issued: { 'date-parts': [[2011]] },
         URL: "https://www.givewell.org/international/technical/programs/deworming/cost-effectiveness",
-        note: "GiveWell: Cost-Effectiveness in $/DALY for Deworming",
+        note: "GiveWell labels this page: \"This page is out of date. We have retained it out of transparency.\" GiveWell's current analysis is its Combination Deworming report (last updated March 2025), which values deworming mainly by later-life income effects and says \"our best guess is that deworming is comparably cost-effective to our priority programs.\"",
   },
   "disease-cost-alzheimers-1300b": {
         id: "disease-cost-alzheimers-1300b",
@@ -18119,13 +18180,22 @@ export const citations: Record<string, Citation> = {
         title: "Health Care Spending in the United States and Other High-Income Countries",
         author: [
           {
-            literal: "Papanicolas, Irene et al."
+            family: "Papanicolas",
+            given: "Irene"
+          },
+          {
+            family: "Woskie",
+            given: "Liana R."
+          },
+          {
+            family: "Jha",
+            given: "Ashish K."
           },
         ],
         issued: { 'date-parts': [[2018]] },
-        'container-title': "Papanicolas et al.",
+        'container-title': "JAMA",
         URL: "https://jamanetwork.com/journals/jama/article-abstract/2674671",
-        note: "Papanicolas et al., 2018, JAMA | Highly cited comparison of healthcare spending across OECD countries",
+        note: "PMID 29536101. Erratum: JAMA 2018;319(17):1824. Highly cited comparison of US health spending with 10 high-income countries.",
   },
   "patient-willingness-drug-trial-2020": {
         id: "patient-willingness-drug-trial-2020",
@@ -18567,16 +18637,17 @@ export const citations: Record<string, Citation> = {
   },
   "smallpox-eradication-roi": {
         id: "smallpox-eradication-roi",
-        type: "article-journal",
-        title: "Smallpox Eradication ROI",
+        type: "webpage",
+        title: "Smallpox Eradication: A Model for Global Cooperation",
         author: [
           {
-            literal: "CSIS"
+            family: "Bristol",
+            given: "Nellie"
           },
         ],
-        'container-title': "CSIS",
+        issued: { 'date-parts': [[2023]] },
         URL: "https://www.csis.org/analysis/smallpox-eradication-model-global-cooperation",
-        note: "CSIS, Smallpox Eradication Model: Global Cooperation | PMC3720047, Link",
+        note: "Published 17 May 2023. For the 159:1 global benefit-cost calculation cite barrett2013.",
   },
   "standard-medical-research-roi": {
         id: "standard-medical-research-roi",
@@ -18914,15 +18985,29 @@ export const citations: Record<string, Citation> = {
   "who-cost-effectiveness-threshold": {
         id: "who-cost-effectiveness-threshold",
         type: "article-journal",
-        title: "Cost-effectiveness threshold (\\$50,000/QALY)",
+        title: "Country-Level Cost-Effectiveness Thresholds: Initial Estimates and the Need for Further Research",
         author: [
           {
-            literal: "PMC"
+            family: "Woods",
+            given: "Beth"
+          },
+          {
+            family: "Revill",
+            given: "Paul"
+          },
+          {
+            family: "Sculpher",
+            given: "Mark"
+          },
+          {
+            family: "Claxton",
+            given: "Karl"
           },
         ],
-        'container-title': "PMC",
+        issued: { 'date-parts': [[2016]] },
+        'container-title': "Value in Health",
         URL: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5193154/",
-        note: "PMC, Country-Level Cost-Effectiveness Thresholds | WHO, WHO-CHOICE Methods Update",
+        note: "PMID 27987642. The old abstract's \"77.5% of authors\" and \"most successful health programs cost \\$3,000-10,000 per QALY\" do not appear in this paper.",
   },
   "who-gho-life-expectancy-age-60-2021": {
         id: "who-gho-life-expectancy-age-60-2021",
@@ -19110,7 +19195,7 @@ export const PARAMETER_STATS = {
   external: 253,
   calculated: 463,
   definitions: 188,
-  citations: 196,
+  citations: 197,
 } as const;
 
 // ============================================================================
