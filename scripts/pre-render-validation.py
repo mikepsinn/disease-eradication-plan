@@ -1584,6 +1584,36 @@ def check_variable_link_targets(variables_data=None):
         logger.debug("  All variable link targets OK")
 
 
+RAW_LATEX_NAME_PATTERN = re.compile(
+    r'\\text\{([A-Z][A-Z0-9]*(?:\\_[A-Z0-9]+)+)\}'      # \text{DEATHS\_TOTAL}
+    r'|(?<![\\{A-Za-z])([A-Z][A-Z0-9]*(?:_[A-Z0-9]+){2,})'  # bare REMAINING_LIFE_EXPECTANCY_AT_60
+)
+
+
+def check_latex_variable_raw_names(variables_data=None):
+    """
+    Check that generated _latex variables contain no raw UPPER_SNAKE names.
+
+    A raw name means the parameter's formula string names something that is not a
+    parameter with a latex_symbol. It renders as one long word that cannot wrap and
+    runs past the page margin (KDP rejects the paperback).
+    """
+    if not isinstance(variables_data, dict):
+        return
+
+    for var_name, value in variables_data.items():
+        if not var_name.endswith("_latex") or not isinstance(value, str):
+            continue
+        names = sorted({(a or b).replace("\\_", "_") for a, b in RAW_LATEX_NAME_PATTERN.findall(value)})
+        if names:
+            errors.append(ValidationError(
+                "_variables.yml", 0,
+                f"Variable '{var_name}' shows raw name(s) {', '.join(names)}",
+                "Use real parameter names in formula=, or add latex_symbol= to the named parameter, "
+                "then regenerate. Raw names cannot wrap and overflow the PDF margin."
+            ))
+
+
 def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str], lines: List[str]):
     """
     Check for Quarto variables that are referenced but not defined in _variables.yml
@@ -2202,6 +2232,7 @@ def main():
     # Check variable link targets in _variables.yml (reuses parsed data)
     logger.debug("Checking variable link targets in _variables.yml...")
     check_variable_link_targets(variables_data)
+    check_latex_variable_raw_names(variables_data)
 
     # Load defined parameters from dih_models/parameters.py
     logger.debug("Loading defined parameters from dih_models/parameters.py...")

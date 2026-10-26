@@ -534,7 +534,8 @@ DESTRUCTIVE_ECONOMY_25PCT_YEAR = Parameter(
                 "when extraction rates exceed 20-30% of economic output.",
     display_name="Year Destructive Economy Reaches 25% of GDP",
     unit="year",
-    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.25 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.25 / GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP) / ln(1 + g_{destruct} - GDP_BASELINE_GROWTH_RATE), where g_{destruct} is the spending-weighted "
+            "growth of military spending and cybercrime",
     keywords=["destructive", "economy", "timeline", "year", "25%", "instability"],
     inputs=_destruct_inputs,
     compute=_destruct_year_compute(0.25),
@@ -552,7 +553,8 @@ DESTRUCTIVE_ECONOMY_35PCT_YEAR = Parameter(
                 "parasitic load threshold.",
     display_name="Year Destructive Economy Reaches 35% of GDP (Terminal Parasitic Load)",
     unit="year",
-    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.35 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.35 / GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP) / ln(1 + g_{destruct} - GDP_BASELINE_GROWTH_RATE), where g_{destruct} is the spending-weighted "
+            "growth of military spending and cybercrime",
     keywords=["destructive", "economy", "timeline", "year", "35%", "terminal parasitic load", "collapse"],
     inputs=_destruct_inputs,
     compute=_destruct_year_compute(0.35),
@@ -569,7 +571,8 @@ DESTRUCTIVE_ECONOMY_50PCT_YEAR = Parameter(
                 "states because whatever gets created gets looted fast enough to kill productive investment.",
     display_name="Year Destructive Economy Reaches 50% of GDP",
     unit="year",
-    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.50 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.50 / GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP) / ln(1 + g_{destruct} - GDP_BASELINE_GROWTH_RATE), where g_{destruct} is the spending-weighted "
+            "growth of military spending and cybercrime",
     keywords=["destructive", "economy", "timeline", "year", "50%", "crossover"],
     inputs=_destruct_inputs,
     compute=_destruct_year_compute(0.50),
@@ -16629,6 +16632,7 @@ IRS_ANNUAL_OPERATING_BUDGET = Parameter(
     confidence="high",
     last_updated="2024-04",
     keywords=["irs", "internal revenue service", "budget", "appropriation", "12.3b"],
+    latex_symbol=r"Budget_{IRS}",
 )
 
 # --- Automated Revenue Service (replaces the IRS) ---
@@ -16673,6 +16677,7 @@ AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX = Parameter(
         * ctx["AUTOMATED_REVENUE_SERVICE_ALL_IN_COST_PER_TRANSACTION"]
     ),
     keywords=["automated revenue service", "settlement tax", "irs replacement", "operating cost", "opex"],
+    latex_symbol=r"Cost_{ARS}",
 )
 
 AUTOMATED_REVENUE_SERVICE_SAVINGS_PER_AMERICAN_ANNUAL = Parameter(
@@ -16937,6 +16942,7 @@ US_SMUGGLER_FEE_AVG = Parameter(
     confidence="high",
     last_updated="2023-04",
     keywords=["coyote", "smuggler fee", "immigration", "border", "revealed preference"],
+    latex_symbol=r"Fee_{smuggler}",
 )
 
 IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME = Parameter(
@@ -16949,6 +16955,7 @@ IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME = Parameter(
     distribution="lognormal",
     confidence_interval=(1_000_000, 5_000_000),
     keywords=["immigration", "priced entry", "volume", "visa sales"],
+    latex_symbol=r"N_{entry}",
 )
 
 IMMIGRATION_ENTRY_REVENUE_ANNUAL = Parameter(
@@ -16962,6 +16969,7 @@ IMMIGRATION_ENTRY_REVENUE_ANNUAL = Parameter(
     inputs=["IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME", "US_SMUGGLER_FEE_AVG"],
     compute=lambda ctx: ctx["IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME"] * ctx["US_SMUGGLER_FEE_AVG"],
     keywords=["immigration", "entry fees", "revenue", "smuggler market capture"],
+    latex_symbol=r"Rev_{entry}",
 )
 
 CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034 = Parameter(
@@ -16976,6 +16984,7 @@ CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034 = Parameter(
     confidence="high",
     last_updated="2024-07",
     keywords=["cbo", "immigration surge", "deficit reduction", "fiscal impact"],
+    latex_symbol=r"\Delta D_{surge}",
 )
 
 IMMIGRATION_DIVIDEND_PER_CITIZEN_ANNUAL = Parameter(

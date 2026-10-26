@@ -74,7 +74,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -1321,8 +1321,8 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -1994,8 +1994,8 @@ HALE improvement at year 15 under Treaty Trajectory. It includes both closing th
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -2505,8 +2505,8 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:

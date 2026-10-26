@@ -141,7 +141,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -2256,7 +2256,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:

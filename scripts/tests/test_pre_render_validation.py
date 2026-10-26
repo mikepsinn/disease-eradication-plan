@@ -308,3 +308,19 @@ def test_manual_pages_redirect_missing_target(manual_url_project: Path) -> None:
     assert len(module.errors) == 1
     assert module.errors[0].file == "cloudflare/pages/manual/_redirects"
     assert module.errors[0].line == 2
+
+
+def test_latex_variable_raw_names_are_errors() -> None:
+    module = load_pre_render_validation_module()
+    module.errors.clear()
+
+    module.check_latex_variable_raw_names({
+        "yll_latex": r"$$ YLL = \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - 60) $$",
+        "ok_latex": r"$$ YLL = Deaths_{lag} \times (e_{60} - (Age_{death} - 60)) \times \text{VSLY} $$",
+        "not_latex": r"DEATHS\_TOTAL",
+    })
+
+    assert len(module.errors) == 1
+    assert "yll_latex" in module.errors[0].message
+    assert "DEATHS_TOTAL" in module.errors[0].message
+    assert "REMAINING_LIFE_EXPECTANCY_AT_60" in module.errors[0].message

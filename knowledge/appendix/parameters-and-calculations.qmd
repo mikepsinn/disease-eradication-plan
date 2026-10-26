@@ -223,7 +223,7 @@ Annual operating cost of the Automated Revenue Service: design transaction volum
 
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
+Cost_{ARS} \\
 = Automated_{annual} \times Cost_{all} \\
 = 500B \times \$0.0003 \\
 = \$150M
@@ -269,14 +269,13 @@ Annual savings per American from replacing the IRS and the tax-compliance burden
 $$
 \begin{gathered}
 Savings_{ann} \\
-= (\text{TAX\_COMPLIANCE\_BURDEN} \\
-+ \text{IRS\_BUDGET} − \text{ARS\_BUDGET}) / \text{US\_POPULATION}
+= ( W_{tax} + Budget_{IRS} - Cost_{ARS} ) / Pop_{US}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
+Cost_{ARS} \\
 = Automated_{annual} \times Cost_{all} \\
 = 500B \times \$0.0003 \\
 = \$150M
@@ -1798,7 +1797,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -1999,7 +1998,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -2116,7 +2115,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -2437,7 +2436,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -5959,9 +5958,8 @@ Annual savings per citizen from putting the zombie policies to direct evidence-a
 $$
 \begin{gathered}
 Savings_{ann} \\
-= (\text{TARIFFS} + \text{CORPORATE\_WELFARE} \\
-+ \text{AG\_SUBSIDIES} \\
-+ \text{FOSSIL\_SUBSIDIES}) / \text{US\_POPULATION}
+= ( W_{tariffs} + W_{corporate} + W_{agriculture} \\
++ W_{fossil} ) / Pop_{US}
 \end{gathered}
 $$
 
@@ -7049,7 +7047,7 @@ $$
 \begin{gathered}
 Y_{25\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.25 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.25}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -7113,7 +7111,7 @@ $$
 \begin{gathered}
 Y_{35\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.35 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.35}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -7173,7 +7171,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -7911,7 +7909,7 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
 \end{gathered}
 $$
 where:
@@ -8029,7 +8027,7 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
 \end{gathered}
 $$
 where:
@@ -8140,7 +8138,7 @@ Years of Life Lost from disease eradication delay deaths (PRIMARY estimate). Yea
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
 \end{gathered}
 $$
 where:
@@ -11056,7 +11054,7 @@ Trial participants the SAME NIH clinical-trials allocation funds each year at dF
 $$
 \begin{gathered}
 Fundable \\
-= \text{NIH\_BUDGET} \times \text{TRIALS\_PCT} / \text{PRAGMATIC\_COST\_PER\_PATIENT}
+= Budget_{NIH} \times \frac{Pct_{NIH,trials}}{Cost_{pragmatic,pt}}
 \end{gathered}
 $$
 
@@ -11991,7 +11989,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -12084,7 +12082,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -12566,7 +12564,7 @@ Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One
 $$
 \begin{gathered}
 Loss_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60)) \times \text{VSLY}
+= Deaths_{lag,total} \times (e_{60} - (Age_{death,delay} - 60)) \times Value_{QALY}
 \end{gathered}
 $$
 where:
@@ -12670,10 +12668,7 @@ Efficacy testing time vs Oxford RECOVERY trial (8.2 years ÷ 3 months = 32.8x sl
 - [Oxford RECOVERY Trial Duration](#sec-oxford_recovery_trial_duration_months) 📊: 3 months
 
 $$
-\begin{gathered}
-k_{FDA:RECOVERY} \\
-= T_{lag} \times \text{MONTHS\_PER\_YEAR} / T_{RECOVERY}
-\end{gathered}
+k_{FDA:RECOVERY} = (T_{lag} \times 12) / T_{RECOVERY}
 $$
 
 **Methodology**: [@recovery-trial-82x-cost-reduction]
@@ -15869,7 +15864,7 @@ Combined steady-state annual operating cost of the priced government-replacement
 $$
 \begin{gathered}
 Cost_{opex,ann} \\
-= Cost_{opex,ann} + Cost_{opex,ann} + Cost_{opex,ann} \\
+= Cost_{ARS} + Cost_{opex,ann} + Cost_{opex,ann} \\
 + Cost_{opex,ann} + Cost_{net,ann} + Cost_{opex,ann} \\
 = \$150M + \$100M + \$7M + \$15M + \$7.5M + \$20M \\
 = \$300M
@@ -15878,7 +15873,7 @@ $$
 where:
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
+Cost_{ARS} \\
 = Automated_{annual} \times Cost_{all} \\
 = 500B \times \$0.0003 \\
 = \$150M
@@ -15934,7 +15929,7 @@ where:
 $$
 \begin{gathered}
 Cost_{opex,ann} \\
-= Cost_{opex,ann} + Cost_{opex,ann} + Cost_{opex,ann} \\
+= Cost_{ARS} + Cost_{opex,ann} + Cost_{opex,ann} \\
 + Cost_{opex,ann} + Cost_{net,ann} + Cost_{opex,ann} \\
 = \$150M + \$100M + \$7M + \$15M + \$7.5M + \$20M \\
 = \$300M
@@ -15943,7 +15938,7 @@ $$
 where:
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
+Cost_{ARS} \\
 = Automated_{annual} \times Cost_{all} \\
 = 500B \times \$0.0003 \\
 = \$150M
@@ -16355,15 +16350,14 @@ Annual per-citizen dividend from priced entry: entry-fee revenue redirected from
 $$
 \begin{gathered}
 Dividend_{ann} \\
-= (\text{ENTRY\_FEES} \\
-+ \text{SURGE\_FISCAL\_SURPLUS} / 10 years) / \text{US\_POPULATION}
+= ( Rev_{entry} + \frac{\Delta D_{surge}}{10} ) / Pop_{US}
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
-Ratio_{ann} \\
-= Ratio_{ann} \times US \\
+Rev_{entry} \\
+= N_{entry} \times Fee_{smuggler} \\
 = 2M \times \$6.94K \\
 = \$13.9B
 \end{gathered}
@@ -16404,8 +16398,8 @@ Annual entry-fee revenue under priced entry at the smuggler-revealed price: mone
 
 $$
 \begin{gathered}
-Ratio_{ann} \\
-= Ratio_{ann} \times US \\
+Rev_{entry} \\
+= N_{entry} \times Fee_{smuggler} \\
 = 2M \times \$6.94K \\
 = \$13.9B
 \end{gathered}
@@ -18522,7 +18516,7 @@ Trial participants the NIH's current clinical-trials allocation funds each year 
 $$
 \begin{gathered}
 Fundable \\
-= \text{NIH\_BUDGET} \times \text{TRIALS\_PCT} / \text{TRADITIONAL\_COST\_PER\_PATIENT}
+= Budget_{NIH} \times \frac{Pct_{NIH,trials}}{Cost_{P3,pt}}
 \end{gathered}
 $$
 
@@ -20106,10 +20100,10 @@ where:
 $$
 \begin{gathered}
 Fund_{20yr,ratchet} \\
-= \text{GLOBAL\_MILITARY} \times (0.01 \times 3 \\
+= Spending_{mil} \times ( 0.01 \times 3 \\
 + \min\left(0.02, s_{ratchet}\right) \times 4 \\
 + \min\left(0.05, s_{ratchet}\right) \times 5 \\
-+ s_{ratchet} \times 8)
++ s_{ratchet} \times 8 )
 \end{gathered}
 $$
 where:
@@ -21360,7 +21354,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -21469,7 +21463,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -21566,7 +21560,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -22210,7 +22204,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -22303,7 +22297,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -25390,7 +25384,7 @@ Conditional implementation cost per modeled premature death prevented if all 50 
 $$
 \begin{gathered}
 Cost_{RTT,life} \\
-= C_{RTT} / (Deaths_{disease,daily} \times \text{DAYS\_PER\_YEAR} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV})
+= C_{RTT} / ( Deaths_{disease,daily} \times 365 \times Pct_{avoid,death} \times T_{accel,RTT}^{PV} )
 \end{gathered}
 $$
 where:
@@ -26001,7 +25995,7 @@ where:
 $$
 \begin{gathered}
 Cost_{RTT,life} \\
-= C_{RTT} / (Deaths_{disease,daily} \times \text{DAYS\_PER\_YEAR} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV})
+= C_{RTT} / ( Deaths_{disease,daily} \times 365 \times Pct_{avoid,death} \times T_{accel,RTT}^{PV} )
 \end{gathered}
 $$
 where:
@@ -27339,10 +27333,10 @@ Cumulative treaty funding over 20 years with IAB ratchet expansion following roa
 $$
 \begin{gathered}
 Fund_{20yr,ratchet} \\
-= \text{GLOBAL\_MILITARY} \times (0.01 \times 3 \\
+= Spending_{mil} \times ( 0.01 \times 3 \\
 + \min\left(0.02, s_{ratchet}\right) \times 4 \\
 + \min\left(0.05, s_{ratchet}\right) \times 5 \\
-+ s_{ratchet} \times 8)
++ s_{ratchet} \times 8 )
 \end{gathered}
 $$
 
@@ -29972,7 +29966,7 @@ where:
 $$
 \begin{gathered}
 Loss_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60)) \times \text{VSLY}
+= Deaths_{lag,total} \times (e_{60} - (Age_{death,delay} - 60)) \times Value_{QALY}
 \end{gathered}
 $$
 where:
@@ -34162,7 +34156,7 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
 \end{gathered}
 $$
 where:
@@ -38757,7 +38751,7 @@ Wishonia disease-cure fraction over 15 years under full implementation. Uses ful
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -38870,7 +38864,7 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -38994,7 +38988,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -39123,7 +39117,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -39273,7 +39267,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -39504,7 +39498,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -39621,7 +39615,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -39693,7 +39687,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -39850,7 +39844,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -39979,7 +39973,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -40115,7 +40109,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -40284,7 +40278,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -40418,7 +40412,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -40700,7 +40694,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -40893,7 +40887,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -41067,7 +41061,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -41224,7 +41218,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -41531,7 +41525,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:

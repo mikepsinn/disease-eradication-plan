@@ -66,7 +66,7 @@ Annual operating cost of the Automated Revenue Service: design transaction volum
 
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
+Cost_{ARS} \\
 = Automated_{annual} \times Cost_{all} \\
 = 500B \times \$0.0003 \\
 = \$150M
@@ -470,7 +470,7 @@ Combined steady-state annual operating cost of the priced government-replacement
 $$
 \begin{gathered}
 Cost_{opex,ann} \\
-= Cost_{opex,ann} + Cost_{opex,ann} + Cost_{opex,ann} \\
+= Cost_{ARS} + Cost_{opex,ann} + Cost_{opex,ann} \\
 + Cost_{opex,ann} + Cost_{net,ann} + Cost_{opex,ann} \\
 = \$150M + \$100M + \$7M + \$15M + \$7.5M + \$20M \\
 = \$300M
@@ -479,7 +479,7 @@ $$
 where:
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
+Cost_{ARS} \\
 = Automated_{annual} \times Cost_{all} \\
 = 500B \times \$0.0003 \\
 = \$150M
@@ -535,7 +535,7 @@ where:
 $$
 \begin{gathered}
 Cost_{opex,ann} \\
-= Cost_{opex,ann} + Cost_{opex,ann} + Cost_{opex,ann} \\
+= Cost_{ARS} + Cost_{opex,ann} + Cost_{opex,ann} \\
 + Cost_{opex,ann} + Cost_{net,ann} + Cost_{opex,ann} \\
 = \$150M + \$100M + \$7M + \$15M + \$7.5M + \$20M \\
 = \$300M
@@ -544,7 +544,7 @@ $$
 where:
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
+Cost_{ARS} \\
 = Automated_{annual} \times Cost_{all} \\
 = 500B \times \$0.0003 \\
 = \$150M
@@ -1782,7 +1782,7 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -1952,7 +1952,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -2077,7 +2077,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:

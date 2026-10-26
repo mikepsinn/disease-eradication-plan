@@ -208,7 +208,7 @@ Conditional implementation cost per modeled premature death prevented if all 50 
 $$
 \begin{gathered}
 Cost_{RTT,life} \\
-= C_{RTT} / (Deaths_{disease,daily} \times \text{DAYS\_PER\_YEAR} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV})
+= C_{RTT} / ( Deaths_{disease,daily} \times 365 \times Pct_{avoid,death} \times T_{accel,RTT}^{PV} )
 \end{gathered}
 $$
 where:
@@ -707,7 +707,7 @@ where:
 $$
 \begin{gathered}
 Cost_{RTT,life} \\
-= C_{RTT} / (Deaths_{disease,daily} \times \text{DAYS\_PER\_YEAR} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV})
+= C_{RTT} / ( Deaths_{disease,daily} \times 365 \times Pct_{avoid,death} \times T_{accel,RTT}^{PV} )
 \end{gathered}
 $$
 where:

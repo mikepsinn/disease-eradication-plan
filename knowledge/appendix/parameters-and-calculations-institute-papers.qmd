@@ -836,7 +836,7 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
 \end{gathered}
 $$
 where:
@@ -940,7 +940,7 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
 \end{gathered}
 $$
 where:
@@ -1041,7 +1041,7 @@ Years of Life Lost from disease eradication delay deaths (PRIMARY estimate). Yea
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
 \end{gathered}
 $$
 where:
@@ -3493,7 +3493,7 @@ Conditional implementation cost per modeled premature death prevented if all 50 
 $$
 \begin{gathered}
 Cost_{RTT,life} \\
-= C_{RTT} / (Deaths_{disease,daily} \times \text{DAYS\_PER\_YEAR} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV})
+= C_{RTT} / ( Deaths_{disease,daily} \times 365 \times Pct_{avoid,death} \times T_{accel,RTT}^{PV} )
 \end{gathered}
 $$
 where:
@@ -3992,7 +3992,7 @@ where:
 $$
 \begin{gathered}
 Cost_{RTT,life} \\
-= C_{RTT} / (Deaths_{disease,daily} \times \text{DAYS\_PER\_YEAR} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV})
+= C_{RTT} / ( Deaths_{disease,daily} \times 365 \times Pct_{avoid,death} \times T_{accel,RTT}^{PV} )
 \end{gathered}
 $$
 where:
@@ -4491,7 +4491,7 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
 \end{gathered}
 $$
 where:

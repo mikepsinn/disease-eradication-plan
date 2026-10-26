@@ -24,6 +24,7 @@ Usage:
 
 import re
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Any, Dict, List, Optional, Tuple
 
 from .formatting import format_parameter_value
@@ -611,18 +612,87 @@ def extract_lambda_body_from_file(param_name: str, params_file: Path) -> str | N
 
     param_def = content[start:end]
 
-    # Find compute=lambda ctx: ... pattern
-    compute_match = re.search(
-        r'compute\s*=\s*lambda\s+ctx\s*:\s*(.+?)(?=,\s*\n\s*\)|$)',
-        param_def,
-        re.DOTALL
-    )
-    if compute_match:
-        body = compute_match.group(1).strip()
-        body = body.rstrip(',').strip()
-        return body
+    # Find compute=lambda ctx: ... and read up to the first top-level comma or
+    # closing paren, so arguments after compute= (latex_symbol=...) are excluded
+    compute_match = re.search(r'compute\s*=\s*lambda\s+ctx\s*:', param_def)
+    if not compute_match:
+        return None
 
-    return None
+    out = []
+    depth = 0
+    quote = None
+    i = compute_match.end()
+    while i < len(param_def):
+        c = param_def[i]
+        if quote:
+            out.append(c)
+            if c == quote and param_def[i - 1] != '\\':
+                quote = None
+        elif c in '"\'':
+            quote = c
+            out.append(c)
+        elif c == '#':
+            while i < len(param_def) and param_def[i] != '\n':
+                i += 1
+            continue
+        elif c in '([{':
+            depth += 1
+            out.append(c)
+        elif c in ')]}':
+            if depth == 0:
+                break
+            depth -= 1
+            out.append(c)
+        elif c == ',' and depth == 0:
+            break
+        else:
+            out.append(c)
+        i += 1
+
+    body = ''.join(out).strip()
+    return body or None
+
+
+# UPPER_SNAKE names in a formula string (parameter-like identifiers)
+_FORMULA_NAME_RE = re.compile(r'\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b')
+
+# Python constructs that formula_to_latex cannot render
+_UNRENDERABLE_LAMBDA_PARTS = ('ctx', 'lambda', ' for ', ' if ', 'math.', 'np.', 'sum(', 'abs(',
+                              'round(', 'float(', 'int(', 'len(', 'range(', '[', '{')
+
+
+def unknown_formula_names(formula: str, known: Any) -> list[str]:
+    """Return the UPPER_SNAKE names in a formula string that are not keys of `known`."""
+    return sorted({name for name in _FORMULA_NAME_RE.findall(formula) if name not in known})
+
+
+def formula_from_compute_source(param_name: str, params_file: Path) -> str | None:
+    """Rebuild a formula string from the compute lambda, which always uses real parameter names.
+
+    Returns None when the lambda uses Python that formula_to_latex cannot render.
+    """
+    body = extract_lambda_body_from_file(param_name, params_file)
+    if not body:
+        return None
+    body = re.sub(r'ctx\[\s*["\']([A-Za-z0-9_]+)["\']\s*\]', r'\1', body)
+    # Numeric literals only (1_000_000 -> 1000000), not digits inside names
+    body = re.sub(r'(?<![A-Za-z0-9_])\d[\d_]*', lambda m: m.group(0).replace('_', ''), body)
+    # Module-level numeric constants (DAYS_PER_YEAR = 365) become their values
+    source = params_file.read_text(encoding="utf-8")
+
+    def _constant_value(m: re.Match) -> str:
+        const = re.search(rf'^{m.group(0)}\s*=\s*(\d[\d_.]*)\s*(?:#.*)?$', source, re.MULTILINE)
+        return const.group(1).replace('_', '') if const else m.group(0)
+
+    body = _FORMULA_NAME_RE.sub(_constant_value, body)
+    body = re.sub(r',\s*\)', ')', body)  # trailing commas in multi-line calls
+    body = re.sub(r'\s+', ' ', body).strip()
+    if any(part in body for part in _UNRENDERABLE_LAMBDA_PARTS):
+        return None
+    # Calls to helper functions cannot be shown as math; only min and max can
+    if any(func not in ('min', 'max') for func in re.findall(r'\b([A-Za-z_][A-Za-z0-9_]*)\s*\(', body)):
+        return None
+    return body
 
 
 def lambda_to_sympy_latex(lambda_body: str, var_names: list[str]) -> str | None:
@@ -806,7 +876,8 @@ def formula_to_latex(formula: str, parameters: dict, lhs: str) -> str | None:
         result = []
         i = 0
         while i < len(s):
-            if s[i] == '(' and s[i+1:i+6] == r'\frac':
+            # Skip parens that already follow \left (e.g. \ln\left(\frac...\right))
+            if s[i] == '(' and s[i+1:i+6] == r'\frac' and not s[:i].endswith(r'\left'):
                 # Find matching close paren
                 depth = 0
                 j = i
@@ -1533,6 +1604,20 @@ def generate_auto_latex(
     # For complex operations, convert formula string to LaTeX
     if operation == 'complex':
         formula = getattr(param_value, 'formula', '') or ''
+        # A formula that names something other than a parameter renders as raw
+        # uppercase text that cannot wrap and runs past the page margin. The
+        # compute lambda always uses real names, so build the equation from it.
+        renderable = {
+            name for name, meta in parameters.items()
+            if getattr(meta.get('value') if isinstance(meta, dict) else meta, 'latex_symbol', None)
+        }
+        if formula and params_file and unknown_formula_names(formula, renderable):
+            derived = formula_from_compute_source(param_name, params_file)
+            symbols = {d['name']: SimpleNamespace(latex_symbol=d['symbolic']) for d in input_data}
+            if derived and not unknown_formula_names(derived, symbols):
+                derived_latex = formula_to_latex(derived, symbols, lhs_short)
+                if derived_latex:
+                    return derived_latex
         if formula and parameters:
             formula_latex = formula_to_latex(formula, parameters, lhs_short)
             if formula_latex:

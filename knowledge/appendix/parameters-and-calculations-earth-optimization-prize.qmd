@@ -867,8 +867,8 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -979,7 +979,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -1176,7 +1176,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -1285,15 +1285,15 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{wish,extra,15}
+= ( f_{cure,15,wish} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{wish,extra,15} )
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -1602,7 +1602,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -1831,7 +1831,7 @@ $$
 \begin{gathered}
 Y_{25\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.25 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.25}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -1885,7 +1885,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -3140,7 +3140,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -3229,7 +3229,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -3330,7 +3330,7 @@ Total economic loss from delaying existing drugs over 8.2-year efficacy lag. One
 $$
 \begin{gathered}
 Loss_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60)) \times \text{VSLY}
+= Deaths_{lag,total} \times (e_{60} - (Age_{death,delay} - 60)) \times Value_{QALY}
 \end{gathered}
 $$
 where:
@@ -4954,7 +4954,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -5056,7 +5056,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -5148,7 +5148,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -5213,8 +5213,8 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -5675,7 +5675,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -5768,7 +5768,7 @@ $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \frac{\ln\left(\frac{0.50}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}
 \end{gathered}
 $$
 where:
@@ -6597,8 +6597,8 @@ HALE improvement at year 15 under Treaty Trajectory. It includes both closing th
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -6731,8 +6731,8 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -7798,8 +7798,8 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -7859,8 +7859,8 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -8087,7 +8087,7 @@ where:
 $$
 \begin{gathered}
 Loss_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60)) \times \text{VSLY}
+= Deaths_{lag,total} \times (e_{60} - (Age_{death,delay} - 60)) \times Value_{QALY}
 \end{gathered}
 $$
 where:
@@ -10611,7 +10611,7 @@ Wishonia disease-cure fraction over 15 years under full implementation. Uses ful
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -10724,7 +10724,7 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -10844,7 +10844,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -10965,15 +10965,15 @@ HALE improvement at year 15 under Wishonia Trajectory. It includes closing the c
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{wish,extra,15}
+= ( f_{cure,15,wish} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{wish,extra,15} )
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11109,15 +11109,15 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{wish,extra,15}
+= ( f_{cure,15,wish} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{wish,extra,15} )
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11339,7 +11339,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11448,15 +11448,15 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{wish,extra,15}
+= ( f_{cure,15,wish} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{wish,extra,15} )
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11515,15 +11515,15 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{wish,extra,15}
+= ( f_{cure,15,wish} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{wish,extra,15} )
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11676,7 +11676,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11801,7 +11801,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -11965,7 +11965,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{15}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{15}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -12206,7 +12206,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:
@@ -12386,7 +12386,7 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left( 1.0, Treatments_{new,ann} \times min( k_{capacity} \times \left(\frac{s_{mil,max}}{0.01}\right), k_{capacity,max}) \times \frac{20}{N_{untreated}}\right)
 \end{gathered}
 $$
 where:

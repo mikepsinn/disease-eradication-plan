@@ -899,8 +899,8 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -2798,8 +2798,8 @@ HALE improvement at year 15 under Treaty Trajectory. It includes both closing th
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -2932,8 +2932,8 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
@@ -3999,8 +3999,8 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= ( f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
++ \Delta HALE_{treaty,longevity,15} )
 \end{gathered}
 $$
 where:
