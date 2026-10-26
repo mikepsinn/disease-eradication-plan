@@ -355,3 +355,17 @@ def test_display_math_raw_names_are_errors_outside_code() -> None:
     assert len(module.errors) == 1
     assert module.errors[0].line == 7
     assert "MONTHS_PER_YEAR" in module.errors[0].message
+
+
+def test_hand_written_display_math_wider_than_the_page_is_an_error() -> None:
+    module = load_pre_render_validation_module()
+    module.errors.clear()
+
+    long_sum = " + ".join(f"\\text{{Cost}}_{{{i}}}" for i in range(30))
+    content = f"Intro.\n\n$$\nX = {long_sum}\n$$\n\n$$\nY = a + b\n$$\n"
+    module.check_display_math_widths(content, "knowledge/chapter.qmd", content.split("\n"))
+    module.check_display_math_widths(content, "knowledge/appendix/parameters-and-calculations-x.qmd", content.split("\n"))
+
+    assert len(module.errors) == 1
+    assert module.errors[0].file == "knowledge/chapter.qmd"
+    assert module.errors[0].line == 3

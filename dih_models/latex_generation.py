@@ -862,7 +862,7 @@ def formula_equation(
         return None
     latex = f"{lhs} = {symbolic[0]}"
     computed = _evaluate_formula(node, values)
-    verified = computed is not None and math.isclose(computed, result_value, rel_tol=1e-6, abs_tol=1e-12)
+    verified = computed is not None and math.isclose(computed, result_value, rel_tol=1e-6)
     if verified:
         numeric = _emit_latex(node, numbers)
         if numeric is not None and numeric[0] != symbolic[0]:

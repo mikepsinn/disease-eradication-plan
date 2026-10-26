@@ -1555,9 +1555,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \Delta_{HALE} \\
-+ \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times 10.1 + 6 \\
+= \Delta HALE_{treaty,longevity,15} \\
++ f_{cure,15,treaty} \times \Delta_{HALE} \\
+= 6 + 100\% \times 10.1 \\
 = 16.1
 \end{gathered}
 $$
@@ -1584,6 +1584,10 @@ K_{treaty,15} \\
 + 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
 = 814
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -2006,9 +2010,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \Delta_{HALE} \\
-+ \Delta HALE_{wish,extra,15} \\
-= 100\% \times 10.1 + 16.7 \\
+= \Delta HALE_{wish,extra,15} \\
++ f_{cure,15,wish} \times \Delta_{HALE} \\
+= 16.7 + 100\% \times 10.1 \\
 = 26.8
 \end{gathered}
 $$
@@ -2020,6 +2024,10 @@ f_{cure,15,wish} \\
 = \min\left(1, \frac{15 \times \min\left(\frac{12.3 \times 87.6\%}{1\%}, 566\right) \times 15}{6{,}650}\right) \\
 = 100\%
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -6611,9 +6619,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \Delta_{HALE} \\
-+ \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times 10.1 + 6 \\
+= \Delta HALE_{treaty,longevity,15} \\
++ f_{cure,15,treaty} \times \Delta_{HALE} \\
+= 6 + 100\% \times 10.1 \\
 = 16.1
 \end{gathered}
 $$
@@ -6640,6 +6648,10 @@ K_{treaty,15} \\
 + 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
 = 814
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -18435,9 +18447,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \Delta_{HALE} \\
-+ \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times 10.1 + 6 \\
+= \Delta HALE_{treaty,longevity,15} \\
++ f_{cure,15,treaty} \times \Delta_{HALE} \\
+= 6 + 100\% \times 10.1 \\
 = 16.1
 \end{gathered}
 $$
@@ -18537,6 +18549,10 @@ N_{untreated} \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -24591,16 +24607,15 @@ HALE improvement at year 15 under Treaty Trajectory. It includes both closing th
 **Inputs**:
 
 - [Treaty Disease Cure Fraction (15yr, Ratchet Schedule)](#sec-treaty_disease_cure_fraction_15yr) 🔢: 100%
-- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
+- [Life Expectancy to HALE Gap](#sec-global_hale_gap) 🔢: 10.1 years
 - [Treaty Longevity HALE Gain at Year 15](#sec-treaty_longevity_hale_gain_year_15) 🔢: 6 years
 
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \Delta_{HALE} \\
-+ \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times 10.1 + 6 \\
+= \Delta HALE_{treaty,longevity,15} \\
++ f_{cure,15,treaty} \times \Delta_{HALE} \\
+= 6 + 100\% \times 10.1 \\
 = 16.1
 \end{gathered}
 $$
@@ -24700,6 +24715,10 @@ N_{untreated} \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -24751,9 +24770,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \Delta_{HALE} \\
-+ \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times 10.1 + 6 \\
+= \Delta HALE_{treaty,longevity,15} \\
++ f_{cure,15,treaty} \times \Delta_{HALE} \\
+= 6 + 100\% \times 10.1 \\
 = 16.1
 \end{gathered}
 $$
@@ -24853,6 +24872,10 @@ N_{untreated} \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -26080,9 +26103,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \Delta_{HALE} \\
-+ \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times 10.1 + 6 \\
+= \Delta HALE_{treaty,longevity,15} \\
++ f_{cure,15,treaty} \times \Delta_{HALE} \\
+= 6 + 100\% \times 10.1 \\
 = 16.1
 \end{gathered}
 $$
@@ -26109,6 +26132,10 @@ K_{treaty,15} \\
 + 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
 = 814
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -26160,9 +26187,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \Delta_{HALE} \\
-+ \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times 10.1 + 6 \\
+= \Delta HALE_{treaty,longevity,15} \\
++ f_{cure,15,treaty} \times \Delta_{HALE} \\
+= 6 + 100\% \times 10.1 \\
 = 16.1
 \end{gathered}
 $$
@@ -26262,6 +26289,10 @@ N_{untreated} \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -35410,16 +35441,15 @@ HALE improvement at year 15 under Wishonia Trajectory. It includes closing the c
 **Inputs**:
 
 - [Wishonia Disease Cure Fraction (15yr, Full Implementation)](#sec-wishonia_disease_cure_fraction_15yr) 🔢: 100%
-- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
+- [Life Expectancy to HALE Gap](#sec-global_hale_gap) 🔢: 10.1 years
 - [Wishonia Extra HALE Gain at Year 15](#sec-wishonia_extra_hale_gain_year_15) 🔢: 16.7 years
 
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \Delta_{HALE} \\
-+ \Delta HALE_{wish,extra,15} \\
-= 100\% \times 10.1 + 16.7 \\
+= \Delta HALE_{wish,extra,15} \\
++ f_{cure,15,wish} \times \Delta_{HALE} \\
+= 16.7 + 100\% \times 10.1 \\
 = 26.8
 \end{gathered}
 $$
@@ -35508,6 +35538,10 @@ N_{untreated} \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -35569,9 +35603,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \Delta_{HALE} \\
-+ \Delta HALE_{wish,extra,15} \\
-= 100\% \times 10.1 + 16.7 \\
+= \Delta HALE_{wish,extra,15} \\
++ f_{cure,15,wish} \times \Delta_{HALE} \\
+= 16.7 + 100\% \times 10.1 \\
 = 26.8
 \end{gathered}
 $$
@@ -35660,6 +35694,10 @@ N_{untreated} \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -35923,9 +35961,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \Delta_{HALE} \\
-+ \Delta HALE_{wish,extra,15} \\
-= 100\% \times 10.1 + 16.7 \\
+= \Delta HALE_{wish,extra,15} \\
++ f_{cure,15,wish} \times \Delta_{HALE} \\
+= 16.7 + 100\% \times 10.1 \\
 = 26.8
 \end{gathered}
 $$
@@ -35937,6 +35975,10 @@ f_{cure,15,wish} \\
 = \min\left(1, \frac{15 \times \min\left(\frac{12.3 \times 87.6\%}{1\%}, 566\right) \times 15}{6{,}650}\right) \\
 = 100\%
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$
@@ -35998,9 +36040,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times \Delta_{HALE} \\
-+ \Delta HALE_{wish,extra,15} \\
-= 100\% \times 10.1 + 16.7 \\
+= \Delta HALE_{wish,extra,15} \\
++ f_{cure,15,wish} \times \Delta_{HALE} \\
+= 16.7 + 100\% \times 10.1 \\
 = 26.8
 \end{gathered}
 $$
@@ -36089,6 +36131,10 @@ N_{untreated} \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
 \end{gathered}
+$$
+where:
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
 $$
 where:
 $$

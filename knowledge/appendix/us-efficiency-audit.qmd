@@ -194,7 +194,12 @@ We categorize resource losses using engineering terminology rather than politica
 
 The Aggregate Efficiency Gap (AEG) sums losses across all categories:
 
-$$\text{AEG} = \sum_{i} \text{Friction}_i + \sum_{j} \text{Leakage}_j + \sum_{k} \text{Parasitic}_k + \sum_{l} \text{Transmission}_l + \sum_{m} \text{Idle}_m + \sum_{n} \text{Conversion}_n + \sum_{o} \text{Negative}_o$$
+$$
+\begin{aligned}
+\text{AEG} = {} & \sum_{i} \text{Friction}_i + \sum_{j} \text{Leakage}_j + \sum_{k} \text{Parasitic}_k + \sum_{l} \text{Transmission}_l \\
+& + \sum_{m} \text{Idle}_m + \sum_{n} \text{Conversion}_n + \sum_{o} \text{Negative}_o
+\end{aligned}
+$$
 
 We employ Monte Carlo simulation to generate confidence intervals, recognizing uncertainty in loss estimates (particularly where data opacity exists, such as the DoD's inability to audit 61% of assets).
 

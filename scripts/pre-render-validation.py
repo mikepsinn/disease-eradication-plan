@@ -1615,6 +1615,17 @@ def check_latex_variable_raw_names(variables_data=None):
             ))
 
 
+def _display_math_blocks(content: str):
+    """(line_number, body) for each $$...$$ block outside fenced code (OJS template strings contain "$$")."""
+    if "$$" not in content:
+        return []
+    prose = re.sub(r"^```.*?^```", lambda m: "\n" * m.group(0).count("\n"), content, flags=re.S | re.M)
+    return [
+        (prose[: block.start()].count("\n") + 1, block.group(1))
+        for block in re.finditer(r"\$\$(.*?)\$\$", prose, re.S)
+    ]
+
+
 def check_display_math_raw_names(content: str, filepath: str, lines: List[str]):
     """
     Check display math ($$...$$) in a QMD file for raw UPPER_SNAKE names.
@@ -1622,20 +1633,36 @@ def check_display_math_raw_names(content: str, filepath: str, lines: List[str]):
     Generated parameter appendices build equations separately from _variables.yml, so
     a raw name can reach a PDF even when the variables are clean.
     """
-    if "$$" not in content:
-        return
-    # Code blocks can hold "$$" (OJS template strings); blank them, keeping line numbers
-    prose = re.sub(r"^```.*?^```", lambda m: "\n" * m.group(0).count("\n"), content, flags=re.S | re.M)
-    for block in re.finditer(r"\$\$(.*?)\$\$", prose, re.S):
-        names = sorted({(a or b).replace("\\_", "_") for a, b in RAW_LATEX_NAME_PATTERN.findall(block.group(1))})
+    for line_number, body in _display_math_blocks(content):
+        names = sorted({(a or b).replace("\\_", "_") for a, b in RAW_LATEX_NAME_PATTERN.findall(body)})
         if names:
-            line_number = prose[: block.start()].count("\n") + 1
             errors.append(ValidationError(
                 filepath, line_number,
                 f"Display math shows raw name(s) {', '.join(names)}",
                 "Use real parameter names in formula=, or add latex_symbol= to the named parameter, "
                 "then regenerate. Raw names cannot wrap and overflow the PDF margin."
             ))
+
+
+def check_display_math_widths(content: str, filepath: str, lines: List[str]):
+    """
+    Check that no line of hand-written display math is wider than the PDF text block.
+
+    Generated parameter appendices are skipped: they hold the same equations as
+    _variables.yml, which check_latex_variable_line_widths measures once.
+    """
+    if os.path.basename(filepath).startswith("parameters-and-calculations"):
+        return
+    for line_number, body in _display_math_blocks(content):
+        for math_line in latex_display_lines(f"$${body}$$"):
+            width = latex_line_width_pt(math_line)
+            if width is not None and width > LATEX_LINE_MAX_WIDTH_PT:
+                errors.append(ValidationError(
+                    filepath, line_number,
+                    f"Display math line is {width:.0f}pt wide (limit {LATEX_LINE_MAX_WIDTH_PT}pt)",
+                    "Break it into lines with \\begin{aligned} or \\begin{gathered} and \\\\, "
+                    "or move prose out of the equation."
+                ))
 
 
 # Paperback text block is 405pt wide (7in trim, 0.875in inner, 0.5in outer margin).
@@ -2066,6 +2093,7 @@ def validate_file(
     check_unclosed_code_blocks(content, filepath, lines)
     check_duplicate_latex_variables(content, filepath, lines)
     check_display_math_raw_names(content, filepath, lines)
+    check_display_math_widths(content, filepath, lines)
 
 
 def check_source_image_dpi():
