@@ -11,17 +11,12 @@ from __future__ import annotations
 import re
 from functools import lru_cache
 
-import matplotlib
+from matplotlib.font_manager import FontProperties
+from matplotlib.mathtext import MathTextParser
 
-matplotlib.use("Agg")
-
-from matplotlib import rcParams  # noqa: E402
-from matplotlib.font_manager import FontProperties  # noqa: E402
-from matplotlib.mathtext import MathTextParser  # noqa: E402
-
-rcParams["mathtext.fontset"] = "cm"
+# Computer Modern set on the font itself, so importing this module changes no global settings
 _PARSER = MathTextParser("path")
-_FONT = FontProperties(size=10)
+_FONT = FontProperties(size=10, math_fontfamily="cm")
 
 _ENVIRONMENT_RE = re.compile(r"\\(?:begin|end)\{(?:gathered|aligned|split)\}")
 _LINE_BREAK_RE = re.compile(r"\\\\(?:\[[^\]]*\])?")

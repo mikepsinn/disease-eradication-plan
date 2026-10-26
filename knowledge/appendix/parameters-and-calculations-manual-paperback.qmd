@@ -4146,7 +4146,9 @@ Efficacy testing time vs Oxford RECOVERY trial (8.2 years ÷ 3 months = 32.8x sl
 $$
 \begin{gathered}
 k_{FDA:RECOVERY} \\
-= T_{lag} \times \text{MONTHS\_PER\_YEAR} / T_{RECOVERY}
+= \frac{T_{lag} \times \underbrace{12}_{\text{months/yr}}}{T_{RECOVERY}} \\
+= \frac{8.2 \times 12}{3} \\
+= 32.8
 \end{gathered}
 $$
 

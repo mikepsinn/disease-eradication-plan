@@ -1615,6 +1615,29 @@ def check_latex_variable_raw_names(variables_data=None):
             ))
 
 
+def check_display_math_raw_names(content: str, filepath: str, lines: List[str]):
+    """
+    Check display math ($$...$$) in a QMD file for raw UPPER_SNAKE names.
+
+    Generated parameter appendices build equations separately from _variables.yml, so
+    a raw name can reach a PDF even when the variables are clean.
+    """
+    if "$$" not in content:
+        return
+    # Code blocks can hold "$$" (OJS template strings); blank them, keeping line numbers
+    prose = re.sub(r"^```.*?^```", lambda m: "\n" * m.group(0).count("\n"), content, flags=re.S | re.M)
+    for block in re.finditer(r"\$\$(.*?)\$\$", prose, re.S):
+        names = sorted({(a or b).replace("\\_", "_") for a, b in RAW_LATEX_NAME_PATTERN.findall(block.group(1))})
+        if names:
+            line_number = prose[: block.start()].count("\n") + 1
+            errors.append(ValidationError(
+                filepath, line_number,
+                f"Display math shows raw name(s) {', '.join(names)}",
+                "Use real parameter names in formula=, or add latex_symbol= to the named parameter, "
+                "then regenerate. Raw names cannot wrap and overflow the PDF margin."
+            ))
+
+
 # Paperback text block is 405pt wide (7in trim, 0.875in inner, 0.5in outer margin).
 # The mathtext estimate reads about 5% narrow on long lines, so keep that much margin.
 LATEX_LINE_MAX_WIDTH_PT = 385
@@ -2042,6 +2065,7 @@ def validate_file(
     check_figure_file_frontmatter(content, filepath, lines)
     check_unclosed_code_blocks(content, filepath, lines)
     check_duplicate_latex_variables(content, filepath, lines)
+    check_display_math_raw_names(content, filepath, lines)
 
 
 def check_source_image_dpi():

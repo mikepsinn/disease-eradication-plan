@@ -338,3 +338,20 @@ def test_latex_variable_wide_lines_are_errors() -> None:
 
     assert len(module.errors) == 1
     assert "wide_latex" in module.errors[0].message
+
+
+def test_display_math_raw_names_are_errors_outside_code() -> None:
+    module = load_pre_render_validation_module()
+    module.errors.clear()
+
+    content = (
+        "Text.\n\n"
+        "```{ojs}\nconst s = `${sign}$${x}`; const t = `$${y}`;\n```\n\n"
+        "$$\nk = T_{lag} \\times \\text{MONTHS\\_PER\\_YEAR}\n$$\n\n"
+        "$$\nk = T_{lag} \\times \\underbrace{12}_{\\text{months/yr}}\n$$\n"
+    )
+    module.check_display_math_raw_names(content, "appendix.qmd", content.split("\n"))
+
+    assert len(module.errors) == 1
+    assert module.errors[0].line == 7
+    assert "MONTHS_PER_YEAR" in module.errors[0].message

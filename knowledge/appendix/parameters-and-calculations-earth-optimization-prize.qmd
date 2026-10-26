@@ -974,9 +974,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times (73.4 - 63.3) + 6 \\
+= 100\% \times 10.1 + 6 \\
 = 16.1
 \end{gathered}
 $$
@@ -1425,9 +1425,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,wish} \times \Delta_{HALE} \\
 + \Delta HALE_{wish,extra,15} \\
-= 100\% \times (73.4 - 63.3) + 16.7 \\
+= 100\% \times 10.1 + 16.7 \\
 = 26.8
 \end{gathered}
 $$
@@ -5697,9 +5697,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times (73.4 - 63.3) + 6 \\
+= 100\% \times 10.1 + 6 \\
 = 16.1
 \end{gathered}
 $$
@@ -7282,9 +7282,9 @@ HALE improvement at year 15 under Treaty Trajectory. It includes both closing th
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times (73.4 - 63.3) + 6 \\
+= 100\% \times 10.1 + 6 \\
 = 16.1
 \end{gathered}
 $$
@@ -7435,9 +7435,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times (73.4 - 63.3) + 6 \\
+= 100\% \times 10.1 + 6 \\
 = 16.1
 \end{gathered}
 $$
@@ -8614,9 +8614,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times (73.4 - 63.3) + 6 \\
+= 100\% \times 10.1 + 6 \\
 = 16.1
 \end{gathered}
 $$
@@ -8694,9 +8694,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,treaty} \times \Delta_{HALE} \\
 + \Delta HALE_{treaty,longevity,15} \\
-= 100\% \times (73.4 - 63.3) + 6 \\
+= 100\% \times 10.1 + 6 \\
 = 16.1
 \end{gathered}
 $$
@@ -12267,9 +12267,9 @@ HALE improvement at year 15 under Wishonia Trajectory. It includes closing the c
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,wish} \times \Delta_{HALE} \\
 + \Delta HALE_{wish,extra,15} \\
-= 100\% \times (73.4 - 63.3) + 16.7 \\
+= 100\% \times 10.1 + 16.7 \\
 = 26.8
 \end{gathered}
 $$
@@ -12419,9 +12419,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,wish} \times \Delta_{HALE} \\
 + \Delta HALE_{wish,extra,15} \\
-= 100\% \times (73.4 - 63.3) + 16.7 \\
+= 100\% \times 10.1 + 16.7 \\
 = 26.8
 \end{gathered}
 $$
@@ -12773,9 +12773,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,wish} \times \Delta_{HALE} \\
 + \Delta HALE_{wish,extra,15} \\
-= 100\% \times (73.4 - 63.3) + 16.7 \\
+= 100\% \times 10.1 + 16.7 \\
 = 26.8
 \end{gathered}
 $$
@@ -12848,9 +12848,9 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{wish,15} \\
-= f_{cure,15,wish} \times (LE_{global} - HALE_{0}) \\
+= f_{cure,15,wish} \times \Delta_{HALE} \\
 + \Delta HALE_{wish,extra,15} \\
-= 100\% \times (73.4 - 63.3) + 16.7 \\
+= 100\% \times 10.1 + 16.7 \\
 = 26.8
 \end{gathered}
 $$

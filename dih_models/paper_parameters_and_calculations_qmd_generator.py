@@ -200,7 +200,8 @@ def generate_all_paper_parameters_qmd(
             available_refs=available_refs,
             params_file=params_file,
             citation_data=citation_data,
-            site_url=site_url
+            site_url=site_url,
+            latex_parameters=parameters,
         )
 
         if count > 0:
