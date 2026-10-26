@@ -1533,7 +1533,7 @@ def generate_expanded_latex(
     param_value: Any,
     parameters: Dict[str, Dict[str, Any]],
     params_file: Optional[Path] = None,
-    max_depth: int = 10,
+    max_depth: int = 30,
     _depth: int = 0,
     _visited: set | None = None,
     _memoized: dict | None = None,
@@ -1564,7 +1564,8 @@ def generate_expanded_latex(
         param_value: Parameter object with metadata
         parameters: Full parameters dict for looking up input values
         params_file: Path to parameters.py for lambda extraction
-        max_depth: Maximum recursion depth (prevents infinite loops)
+        max_depth: Maximum recursion depth. Cycles are caught separately; a deeper chain
+            raises instead of silently dropping its lower derivation steps
         _depth: Current recursion depth (internal use)
         _visited: Set of already-visited params (cycle detection, internal use)
         _memoized: Cache of already-generated LaTeX (prevents duplication, internal use)
@@ -1596,10 +1597,6 @@ def generate_expanded_latex(
         return None
     _visited = _visited | {param_name}
     
-    # Depth limit
-    if _depth > max_depth:
-        return None
-    
     # Generate equation for this level
     this_level = generate_auto_latex(param_name, param_value, parameters, params_file)
     if this_level is None:
@@ -1628,12 +1625,17 @@ def generate_expanded_latex(
         if has_inputs and has_compute:
             calculated_inputs.append((inp_name, inp_value))
     
-    # If no calculated inputs or at max depth, return single equation
-    if not calculated_inputs or _depth >= max_depth:
+    # If no calculated inputs, return single equation
+    if not calculated_inputs:
         # Cache and mark as shown
         _memoized[param_name] = this_level
         _globally_shown.add(param_name)
         return this_level
+    if _depth >= max_depth:
+        raise ValueError(
+            f"Derivation of {param_name} is deeper than max_depth={max_depth}; raise the limit "
+            "so its input derivations are not dropped"
+        )
     
     # Build multi-step derivation as separate blocks.
     # Each block is a self-contained equation. Callers split on LATEX_BLOCK_SEP

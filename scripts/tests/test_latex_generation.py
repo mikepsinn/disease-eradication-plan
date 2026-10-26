@@ -1,11 +1,15 @@
 from pathlib import Path
 
+import pytest
+
 from dih_models.latex_generation import (
+    LATEX_BLOCK_SEP,
     extract_lambda_body_from_file,
     formula_equation,
     formula_from_compute_source,
     formula_to_latex,
     generate_auto_latex,
+    generate_expanded_latex,
     infer_operation_from_compute,
     unit_constant_symbol,
 )
@@ -190,3 +194,30 @@ def test_nonlinear_single_input_is_not_a_constant_division() -> None:
 
     tripled = _Param(6.0, unit="x", inputs=["R_X"], compute=lambda ctx: ctx["R_X"] * 3)
     assert infer_operation_from_compute(tripled, ["R_X"]) == ("multiply_constant", 3.0)
+
+
+def _doubling_chain(length: int) -> dict:
+    """X_0 is a leaf; X_i = 2 × X_(i-1) for i = 1..length."""
+    parameters = {"X_0": {"value": _Param(1.0, unit="x", latex_symbol="x_{0}")}}
+    for i in range(1, length + 1):
+        prev = f"X_{i - 1}"
+        parameters[f"X_{i}"] = {"value": _Param(2.0 ** i, unit="x", latex_symbol=f"x_{{{i}}}", inputs=[prev],
+                                                compute=lambda ctx, prev=prev: ctx[prev] * 2)}
+    return parameters
+
+
+def test_deep_derivation_keeps_every_step() -> None:
+    parameters = _doubling_chain(14)
+
+    latex = generate_expanded_latex("X_14", parameters["X_14"]["value"], parameters)
+
+    assert latex is not None
+    assert len(latex.split(LATEX_BLOCK_SEP)) == 14
+    assert latex.split(LATEX_BLOCK_SEP)[-1].startswith("x_{1} = x_{0} \\times 2")
+
+
+def test_derivation_deeper_than_the_limit_fails_loudly() -> None:
+    parameters = _doubling_chain(6)
+
+    with pytest.raises(ValueError, match="deeper than max_depth=3"):
+        generate_expanded_latex("X_6", parameters["X_6"]["value"], parameters, max_depth=3)

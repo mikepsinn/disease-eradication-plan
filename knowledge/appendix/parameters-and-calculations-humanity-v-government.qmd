@@ -6269,6 +6269,16 @@ $$
 where:
 $$
 \begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
 k_{capacity,max} \\
 = \frac{N_{willing}}{Slots_{curr}} \\
 = \frac{1.08B}{1.9M} \\

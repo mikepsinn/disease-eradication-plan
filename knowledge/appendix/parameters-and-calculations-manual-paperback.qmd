@@ -8606,6 +8606,33 @@ $$
 where:
 $$
 \begin{gathered}
+Cost_{combat,human} \\
+= Deaths_{combat} \times VSL \\
+= 234{,}000 \times \$10M \\
+= \$2.34T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{state,human} \\
+= Deaths_{state} \times VSL \\
+= 2{,}700 \times \$10M \\
+= \$27B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{terror,human} \\
+= Deaths_{terror} \times VSL \\
+= 8{,}300 \times \$10M \\
+= \$83B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
 Damage_{infra,total} \\
 = Damage_{comms} + Damage_{edu} + Damage_{energy} \\
 + Damage_{health} + Damage_{transport} + Damage_{water} \\
@@ -8692,6 +8719,25 @@ N_{fundable,ref} \\
 = \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
 = \frac{\$21.8B}{\$929} \\
 = 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
 \end{gathered}
 $$
 where:
@@ -9058,6 +9104,16 @@ Subsidies_{trial,ref} \\
 = Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
 \end{gathered}
 $$
 where:
@@ -9461,6 +9517,16 @@ Subsidies_{trial,ref} \\
 = Funding_{trial,ref} - OPEX_{trial} \\
 = \$21.8B - \$40M \\
 = \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
 \end{gathered}
 $$
 where:
