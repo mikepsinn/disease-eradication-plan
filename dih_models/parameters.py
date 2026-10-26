@@ -7595,7 +7595,7 @@ US_VS_SWITZERLAND_LIFE_EXPECTANCY_GAP = Parameter(
 )
 
 US_VS_SWITZERLAND_SPENDING_GAP = Parameter(
-    3.0,  # 38.0 - 35.0 = 3.0%
+    0.03,  # 38% - 35% = 3 percentage points of GDP
     manual_ref="knowledge/solution/optimocracy.qmd",
     source_ref="oecd-govt-spending",
     source_type="definition",
@@ -7604,14 +7604,14 @@ US_VS_SWITZERLAND_SPENDING_GAP = Parameter(
     description="Government spending gap: US spends 3 percentage points MORE of GDP than "
                 "Switzerland yet achieves worse outcomes.",
     display_name="US-Switzerland Spending Gap",
-    unit="percent",
+    unit="percentage points",
     formula="US_SPENDING - SWITZERLAND_SPENDING = 38% - 35%",
     keywords=["spending", "gap", "comparison"],
     latex_symbol=r"\Delta G_{US:CH}",
 )
 
 US_VS_SINGAPORE_SPENDING_GAP = Parameter(
-    23.0,  # 38.0 - 15.0 = 23.0%
+    0.23,  # 38% - 15% = 23 percentage points of GDP
     manual_ref="knowledge/appendix/us-efficiency-audit.qmd",
     source_ref="oecd-govt-spending",
     source_type="definition",
@@ -7620,7 +7620,7 @@ US_VS_SINGAPORE_SPENDING_GAP = Parameter(
     description="Government spending gap: US spends 23 percentage points MORE of GDP than "
                 "Singapore yet achieves 6.6 fewer years of life expectancy.",
     display_name="US-Singapore Spending Gap",
-    unit="percent",
+    unit="percentage points",
     formula="US_SPENDING - SINGAPORE_SPENDING = 38% - 15%",
     keywords=["spending", "gap", "comparison", "Singapore"],
     latex_symbol=r"\Delta G_{US:SG}",
@@ -10216,28 +10216,28 @@ GIVEWELL_COST_PER_LIFE_AVG = Parameter(
 
 # Historical public health comparisons
 SMALLPOX_ERADICATION_ROI = Parameter(
-    280,
+    159,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
-    source_ref=ReferenceID.SMALLPOX_ERADICATION_ROI,
+    source_ref=ReferenceID.BARRETT2013,
     source_type="external",
-    description="Return on investment from smallpox eradication campaign",
+    description="Global benefit-cost ratio of the smallpox eradication campaign (Barrett 2013; CSIS 2023 gives 400:1)",
     display_name="Return on Investment from Smallpox Eradication Campaign",
     unit="ratio",
     keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"],
     latex_symbol=r"ROI_{smallpox}",  # LaTeX symbol for equations
-)  # 159:1 to 280:1 estimated
+)  # 159:1 (Barrett 2013), conservative vs CSIS 400:1
 
 CHILDHOOD_VACCINATION_ROI = Parameter(
-    13,
+    10.9,
     manual_ref="knowledge/economics/1-pct-treaty-impact.qmd",
-    source_ref=ReferenceID.CHILDHOOD_VACCINATION_ROI,
+    source_ref=ReferenceID.CHILDHOOD_VACCINATION_ECONOMIC_BENEFITS,
     source_type="external",
-    description="Return on investment from childhood vaccination programs",
+    description="Societal benefit-cost ratio of routine US childhood immunization (children born 1994-2023; medical and productivity savings)",
     display_name="Return on Investment from Childhood Vaccination Programs",
     unit="ratio",
     keywords=["bcr", "benefit cost ratio", "economic return", "investment return", "return on investment", "benefit", "profit"],
     latex_symbol=r"ROI_{vax}",  # LaTeX symbol for equations
-)  # 13:1
+)  # 10.9:1 societal (3.3:1 payer), CDC MMWR 2024
 
 POLIO_VACCINATION_ROI = Parameter(
     39,
@@ -11845,10 +11845,13 @@ US_MILITARY_SPENDING_1947_ANNUAL_2024USD = Parameter(
 US_MILITARY_SPENDING_2024_ANNUAL = Parameter(
     886_000_000_000,
     manual_ref="knowledge/problem/unrepresentative-democracy.qmd",
-    source_ref=ReferenceID.US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS,
+    source_ref="crs-r48057-2024",
     source_type="external",
-    description="US military spending in 2024 in constant dollars",
-    display_name="US Military Spending in 2024",
+    description="US military budget for FY2024: defense discretionary budget authority "
+                "($886.3B, the FY2024 defense spending cap; CRS R48057). This is budget "
+                "authority, not outlays: actual FY2024 national defense outlays were $874.0B "
+                "(Monthly Treasury Statement). Equal to constant 2024 dollars for 2024.",
+    display_name="US Military Budget, FY2024",
     unit="USD",
     distribution="fixed",
     keywords=["2024", "current", "peacetime", "constant dollars"],

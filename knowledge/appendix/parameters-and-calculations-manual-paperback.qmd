@@ -14608,7 +14608,7 @@ How much lower pre-WW2 (1939) US military spending was than today's peacetime bu
 **Inputs**:
 
 - [US Military Spending in 1939 (Constant 2024 Dollars)](#sec-us_military_spending_1939_annual_2024usd) 📊: $29 billion
-- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [US Military Budget, FY2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
 
 $$
 \begin{gathered}
@@ -14720,7 +14720,7 @@ US military spending above the first-principles homeland-defense optimum. Curren
 
 **Inputs**:
 
-- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [US Military Budget, FY2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
 - [First-Principles Optimal US Defense Budget](#sec-us_defense_first_principles_optimal) 🔢: $184 billion
 
 $$
@@ -15141,7 +15141,7 @@ Ratio of current US military spending to pre-WW2 baseline in constant dollars ($
 
 **Inputs**:
 
-- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [US Military Budget, FY2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
 - [US Military Spending in 1939 (Constant 2024 Dollars)](#sec-us_military_spending_1939_annual_2024usd) 📊: $29 billion
 
 $$
@@ -18453,13 +18453,13 @@ Number of billionaires globally (Forbes 2024 count)
 
 :::
 
-### Return on Investment from Childhood Vaccination Programs: 13:1 {#sec-childhood_vaccination_roi}
+### Return on Investment from Childhood Vaccination Programs: 10.9:1 {#sec-childhood_vaccination_roi}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Return on investment from childhood vaccination programs
+Societal benefit-cost ratio of routine US childhood immunization (children born 1994-2023; medical and productivity savings)
 
-**Source**: [@childhood-vaccination-roi]
+**Source**: [@childhood-vaccination-economic-benefits]
 
 *✓ High confidence*
 
@@ -20609,13 +20609,13 @@ Pre-death suffering period during post-safety efficacy testing delay (average ye
 
 :::
 
-### Return on Investment from Smallpox Eradication Campaign: 280:1 {#sec-smallpox_eradication_roi}
+### Return on Investment from Smallpox Eradication Campaign: 159:1 {#sec-smallpox_eradication_roi}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Return on investment from smallpox eradication campaign
+Global benefit-cost ratio of the smallpox eradication campaign (Barrett 2013; CSIS 2023 gives 400:1)
 
-**Source**: [@smallpox-eradication-roi]
+**Source**: [@barrett2013]
 
 *✓ High confidence*
 
@@ -21229,13 +21229,13 @@ US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2
 
 :::
 
-### US Military Spending in 2024: $886 billion {#sec-us_military_spending_2024_annual}
+### US Military Budget, FY2024: $886 billion {#sec-us_military_spending_2024_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-US military spending in 2024 in constant dollars
+US military budget for FY2024: defense discretionary budget authority ($886.3B, the FY2024 defense spending cap; CRS R48057). This is budget authority, not outlays: actual FY2024 national defense outlays were $874.0B (Monthly Treasury Statement). Equal to constant 2024 dollars for 2024.
 
-**Source**: [@us-military-spending-historical-constant-dollars]
+**Source**: [@crs-r48057-2024]
 
 #### Uncertainty Range
 
@@ -22513,7 +22513,7 @@ Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of 
 
 :::
 
-### US-Switzerland Spending Gap: 300% {#sec-us_vs_switzerland_spending_gap}
+### US-Switzerland Spending Gap: 3% {#sec-us_vs_switzerland_spending_gap}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 

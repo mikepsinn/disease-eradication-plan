@@ -26911,6 +26911,7 @@ $$
 - [Earth Optimization Fund](../economics/earth-optimization-fund.html)
 - [Humanity v. Government](../appendix/humanity-v-government.html)
 - [How Much Does It Cost to Buy All the Governments?](../appendix/cost-of-change-analysis.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
 - [Medical Research Spending: The Lie](../appendix/global-government-medical-research-spending.html)
 - [API & Data Indexes](../appendix/api-and-data.html)
@@ -34478,7 +34479,7 @@ How much lower pre-WW2 (1939) US military spending was than today's peacetime bu
 **Inputs**:
 
 - [US Military Spending in 1939 (Constant 2024 Dollars)](#sec-us_military_spending_1939_annual_2024usd) 📊: $29 billion
-- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [US Military Budget, FY2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
 
 $$
 \begin{gathered}
@@ -34562,7 +34563,7 @@ Implied cut from current US military spending (~$886B) to the first-principles h
 **Inputs**:
 
 - [First-Principles Optimal US Defense Budget](#sec-us_defense_first_principles_optimal) 🔢: $184 billion
-- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [US Military Budget, FY2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
 
 $$
 \begin{gathered}
@@ -34601,6 +34602,7 @@ $$
 **Used in:**
 
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 - [The Cost-Benefit Analysis of Global Hegemony](../appendix/cost-benefit-of-hegemony.html)
 
 :::
@@ -34649,9 +34651,12 @@ $$
 **Used in:**
 
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
 - [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
+- [Optimocracy: The Evidence Machine](../solution/optimocracy.html)
 - [The Cost-Benefit Analysis of Global Hegemony](../appendix/cost-benefit-of-hegemony.html)
+- [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](../appendix/optimocracy-paper.html)
 
 :::
 
@@ -35106,7 +35111,7 @@ US military spending above the first-principles homeland-defense optimum. Curren
 
 **Inputs**:
 
-- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [US Military Budget, FY2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
 - [First-Principles Optimal US Defense Budget](#sec-us_defense_first_principles_optimal) 🔢: $184 billion
 
 $$
@@ -35146,8 +35151,11 @@ $$
 **Used in:**
 
 - [United States Efficiency Audit](../appendix/us-efficiency-audit.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [Optimocracy: The Evidence Machine](../solution/optimocracy.html)
 - [Wishonia](../futures/wishonia.html)
+- [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](../appendix/optimocracy-paper.html)
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 
 :::
@@ -35979,7 +35987,7 @@ Ratio of current US military spending to pre-WW2 baseline in constant dollars ($
 
 **Inputs**:
 
-- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [US Military Budget, FY2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
 - [US Military Spending in 1939 (Constant 2024 Dollars)](#sec-us_military_spending_1939_annual_2024usd) 📊: $29 billion
 
 $$
@@ -42048,13 +42056,13 @@ Estimated annual global economic benefit from childhood vaccination programs (me
 
 :::
 
-### Return on Investment from Childhood Vaccination Programs: 13:1 {#sec-childhood_vaccination_roi}
+### Return on Investment from Childhood Vaccination Programs: 10.9:1 {#sec-childhood_vaccination_roi}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Return on investment from childhood vaccination programs
+Societal benefit-cost ratio of routine US childhood immunization (children born 1994-2023; medical and productivity savings)
 
-**Source**: [@childhood-vaccination-roi]
+**Source**: [@childhood-vaccination-economic-benefits]
 
 *✓ High confidence*
 
@@ -46224,19 +46232,20 @@ Singapore life expectancy at birth. 6.6 years LONGER than US (84.1 vs 77.5) desp
 
 :::
 
-### Return on Investment from Smallpox Eradication Campaign: 280:1 {#sec-smallpox_eradication_roi}
+### Return on Investment from Smallpox Eradication Campaign: 159:1 {#sec-smallpox_eradication_roi}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Return on investment from smallpox eradication campaign
+Global benefit-cost ratio of the smallpox eradication campaign (Barrett 2013; CSIS 2023 gives 400:1)
 
-**Source**: [@smallpox-eradication-roi]
+**Source**: [@barrett2013]
 
 *✓ High confidence*
 
 **Used in:**
 
 - [The 1% Treaty: An Incentive-Compatible Approach to Ending War and Disease](../economics/1-pct-treaty-impact.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 
 :::
 
@@ -47326,13 +47335,13 @@ US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2
 
 :::
 
-### US Military Spending in 2024: $886 billion {#sec-us_military_spending_2024_annual}
+### US Military Budget, FY2024: $886 billion {#sec-us_military_spending_2024_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-US military spending in 2024 in constant dollars
+US military budget for FY2024: defense discretionary budget authority ($886.3B, the FY2024 defense spending cap; CRS R48057). This is budget authority, not outlays: actual FY2024 national defense outlays were $874.0B (Monthly Treasury Statement). Equal to constant 2024 dollars for 2024.
 
-**Source**: [@us-military-spending-historical-constant-dollars]
+**Source**: [@crs-r48057-2024]
 
 #### Uncertainty Range
 
@@ -47344,11 +47353,14 @@ US military spending in 2024 in constant dollars
 
 - [Unrepresentative Democracy](../problem/unrepresentative-democracy.html)
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [Optimocracy: The Evidence Machine](../solution/optimocracy.html)
 - [The Loving Takeover](../appendix/loving-takeover.html)
 - [Earth Optimization Fund](../economics/earth-optimization-fund.html)
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [The Cost-Benefit Analysis of Global Hegemony](../appendix/cost-benefit-of-hegemony.html)
+- [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](../appendix/optimocracy-paper.html)
 
 :::
 
@@ -47492,6 +47504,7 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 
 - [Algorithmic Public Administration](../appendix/algorithmic-public-administration-paper.html)
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
+- [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](../appendix/optimocracy-paper.html)
 - [Unrepresentative Democracy](../problem/unrepresentative-democracy.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 - [Optimocracy: The Evidence Machine](../solution/optimocracy.html)
@@ -47499,7 +47512,6 @@ Total US federal lobbying expenditure in 2024 (record year). Source: OpenSecrets
 - [How Much Does It Cost to Buy All the Governments?](../appendix/cost-of-change-analysis.html)
 - [Wishonia](../futures/wishonia.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
-- [Optimocracy: Causal Inference on Cross-Jurisdictional Policy Data to Maximize Median Health and Wealth](../appendix/optimocracy-paper.html)
 
 :::
 
@@ -51156,6 +51168,7 @@ US Coast Guard (actual budget ~$14B). Maritime homeland security and coastal def
 
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 
 :::
 
@@ -51183,6 +51196,7 @@ Cyber defense of critical infrastructure: the primary modern attack vector that 
 
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 
 :::
 
@@ -51210,6 +51224,7 @@ Continental air and missile defense plus early warning (NORAD, ground-based midc
 
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 
 :::
 
@@ -51237,6 +51252,7 @@ Mobilization hedge: defense R&D, a maintained industrial base, and a professiona
 
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 
 :::
 
@@ -51264,6 +51280,7 @@ National Guard / territorial land defense: a citizen-soldier reserve (the Switze
 
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 
 :::
 
@@ -51291,6 +51308,7 @@ Survivable nuclear second strike: an SSBN-centric minimum credible deterrent (~1
 
 - [The Eisenhower Curve](../economics/eisenhower-curve.html)
 - [The Political Dysfunction Tax](../appendix/political-dysfunction-tax.html)
+- [The Optimal Budget Generator: A Causal Inference Protocol for Maximizing Median Health and Wealth Through Public Goods Funding](../appendix/optimal-budget-generator-spec.html)
 
 :::
 
@@ -51344,7 +51362,7 @@ Fraction of campaign + lobbying spending needed to achieve policy reform. Accoun
 
 :::
 
-### US-Singapore Spending Gap: 2300% {#sec-us_vs_singapore_spending_gap}
+### US-Singapore Spending Gap: 23% {#sec-us_vs_singapore_spending_gap}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -51378,7 +51396,7 @@ Life expectancy gap: Switzerland vs US. Switzerland achieves 6.5 extra years of 
 
 :::
 
-### US-Switzerland Spending Gap: 300% {#sec-us_vs_switzerland_spending_gap}
+### US-Switzerland Spending Gap: 3% {#sec-us_vs_switzerland_spending_gap}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 

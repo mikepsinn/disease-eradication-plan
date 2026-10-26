@@ -1198,7 +1198,7 @@ Ratio of current US military spending to pre-WW2 baseline in constant dollars ($
 
 **Inputs**:
 
-- [US Military Spending in 2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [US Military Budget, FY2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
 - [US Military Spending in 1939 (Constant 2024 Dollars)](#sec-us_military_spending_1939_annual_2024usd) 📊: $29 billion
 
 $$
@@ -3372,13 +3372,13 @@ US military spending in 1939 (pre-WW2 baseline) in constant 2024 dollars
 
 :::
 
-### US Military Spending in 2024: $886 billion {#sec-us_military_spending_2024_annual}
+### US Military Budget, FY2024: $886 billion {#sec-us_military_spending_2024_annual}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-US military spending in 2024 in constant dollars
+US military budget for FY2024: defense discretionary budget authority ($886.3B, the FY2024 defense spending cap; CRS R48057). This is budget authority, not outlays: actual FY2024 national defense outlays were $874.0B (Monthly Treasury Statement). Equal to constant 2024 dollars for 2024.
 
-**Source**: [@us-military-spending-historical-constant-dollars]
+**Source**: [@crs-r48057-2024]
 
 #### Uncertainty Range
 

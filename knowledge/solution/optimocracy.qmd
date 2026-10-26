@@ -35,7 +35,7 @@ Two numbers. Just two.
 
 Why these two? Because everything important your governments do eventually makes people richer or less dead, and if it doesn't do either, it wasn't important. Your government currently measures success by how much money it spends, which is like a restaurant measuring success by how much food it buys. You could buy a mountain of ingredients and poison everyone. By your current metrics, that's a good year.
 
-Your species engineered a pocket-sized device with 16 billion transistors, mass spectrometry, and supply chains spanning 43 countries. Then you built an algorithm that A/B tests billions of user interactions, optimizing hundreds of signals in real time, so that device can show you the optimal twerking video. That is more empirical rigor than your species applies to allocating its federal budget. The federal budget decides who gets medicine, who gets clean water, and who gets bombed. {{< var global_annual_deaths_curable_diseases_nounit >}} people die every year from diseases you already have treatments for. You optimized the twerking. You did not optimize the not-dying.
+Your species engineered a pocket-sized device with 16 billion transistors, mass spectrometry, and supply chains spanning 43 countries. Then you built an algorithm that A/B tests billions of user interactions, optimizing hundreds of signals in real time, so that device can show you the optimal twerking video. That is more empirical rigor than your species applies to allocating its federal budget. The federal budget decides who gets medicine, who gets clean water, and who gets bombed. {{< var global_annual_deaths_curable_diseases_nounit >}} people die every year from diseases and aging, mostly from diseases with no treatment, because nobody ran the trials. You optimized the twerking. You did not optimize the not-dying.
 
 Here's what makes these numbers useful beyond measurement: your species already agrees on both goals. Nobody campaigns on "make people poorer and sicker." But without a scoreboard, policy debates become tribal arguments about vibes. You forgot the question. You're not arguing about whether people should be healthier and richer; you're arguing about which policies achieve that, and nobody's checking. Once you check, most of the argument disappears, because it turns out the answer isn't left or right. It's in the data from the 10,000 places that already tried it.
 
@@ -43,7 +43,7 @@ Now that you know what we're measuring, here's how badly your species is doing a
 
 ## The Price of Not Checking
 
-The United States spends {{< var us_vs_switzerland_spending_gap >}} percentage points more of GDP than Switzerland on government. Switzerland gets {{< var us_vs_switzerland_life_expectancy_gap >}} more years of life expectancy. One of these countries is doing it wrong. A rational civilization would check which one. Your species had a debate about it. The debate has been going on for 50 years. The Swiss are still winning. You're paying more and dying sooner, and your response is to have opinions about it.
+The United States spends {{< var us_vs_switzerland_spending_gap >}} of GDP more than Switzerland on government. Switzerland gets {{< var us_vs_switzerland_life_expectancy_gap >}} more years of life expectancy. One of these countries is doing it wrong. A rational civilization would check which one. Your species had a debate about it. The debate has been going on for 50 years. The Swiss are still winning. You're paying more and dying sooner, and your response is to have opinions about it.
 
 ![Rich countries aren't rich because of resources. They're rich because their rules aren't stupid. Poor countries have bad governments. It's the institutions, not the dirt.](/assets/images/optimocracy-paper/optimocracy-paper-section-the-scale-of-welfare-loss-empirical-foundations-bw-academic.jpg)
 
@@ -63,7 +63,7 @@ Same logic as your [decentralized FDA](dfda.qmd) [@dfda-spec-paper-2025; @dfda-i
 
 If you're thinking "just publish the results and politicians will do the right thing," I have some bad news about your species.
 
-The Copenhagen Consensus already publishes rigorous benefit-cost analyses [@copenhagenconsensus2023]. Childhood vaccination: 101:1 returns. Pragmatic clinical trials: {{< var dfda_roi_rd_only >}}:1. Agricultural subsidies: less than 1:1. The answer key is public. It's been public for years. Your governments ignore it. You have the cheat sheet, and you're still failing the test on purpose.
+The Copenhagen Consensus already publishes rigorous benefit-cost analyses. Vaccinating more children in 80 of the poorest countries: 101:1 [@copenhagenconsensus2023]. Pragmatic clinical trials, by the math in your own [dFDA impact analysis](../appendix/dfda-impact-paper.qmd): {{< var dfda_roi_rd_only >}}:1 [@dfda-impact-paper-2025]. The answer key is public. It's been public for years. Your governments ignore it. You have the cheat sheet, and you're still failing the test on purpose.
 
 ![Evidence says do this thing. Politicians say no because it won't get them reelected. You built a system where saving lives loses votes.](/assets/images/optimocracy-paper/optimocracy-paper-section-why-information-alone-fails-bw-academic.jpg)
 
@@ -77,16 +77,16 @@ The Evidence Machine does three things. That's it. Three things. Your species ha
 
 (It's an appliance. You plug in policies, it tells you which ones work. Your species will find this concept exotic.)
 
-**Recommend.** The Optimitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States:
+**Recommend.** The Optimitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States (illustrative numbers; the trial and vaccine targets are worked out in the paper, and the military target is what it costs to defend the actual country, priced one real threat at a time):
 
 | Category | Current | Optimal | Gap | Evidence |
 |----------|---------|---------|-----|----------|
 | Pragmatic clinical trials | $0.5B | $50B | **+$49.5B** | A (RCTs) |
-| Vaccinations | $8B | $35B | +$27B | A (RCTs) |
-| Military (discretionary) | $850B | $459B | -$391B | C (benchmarks) |
-| Agricultural subsidies | $25B | $0B | -$25B | A (welfare analysis) |
+| Vaccinations | $8B | $16B | +$8B | A (RCTs) |
+| Military | {{< var us_military_spending_2024_annual >}} | {{< var us_defense_first_principles_optimal >}} | Cut {{< var us_gov_waste_military_overspend >}} | C (threat-by-threat costs) |
+| Agricultural subsidies | $25B | $0B | -$25B | C (assumed to fail the cash test) |
 
-You are spending 100 times less than optimal on figuring out which medicines work, and paying farmers $25 billion a year to grow food nobody asked for. The Optimitron noticed. It also noticed you could cut $391 billion from the murder budget and still have the largest military on the planet. The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts.
+You are spending 100 times less than optimal on figuring out which medicines work, and paying farmers $25 billion a year to grow food nobody asked for. The Optimitron noticed. It also noticed that defending your actual country, one real threat at a time, costs {{< var us_defense_first_principles_optimal >}} a year, and you spend {{< var us_military_spending_2024_annual >}} on the murder budget. The other {{< var us_gov_waste_military_overspend >}} is for being in charge of everywhere else. The freed money does not go to whoever lobbies loudest. Every program has to beat handing people the same dollar in cash, or leaving it with whoever earned it. The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts.
 
 **Track.** When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: 78% aligned. Senator Jones: 34% aligned. This information is public. Any citizen can check. There is a word for this. The word is "checking if the person you hired did the thing you hired them to do." Your species finds this concept revolutionary, which tells you everything. Politicians who ignore the evidence must do so on the record.
 
@@ -100,7 +100,7 @@ This doesn't require government permission. The Evidence Machine operates as a p
 
 "But won't someone corrupt the measurement system?" Yes. This is the right question. It's the only question that matters.
 
-Currently, your lobbying industry has thousands of capture points. Committee earmarks, agency decisions, regulatory rulings, budget amendments, riders on unrelated bills. Each one is cheap to influence. Your federal lobbyists spend {{< var us_total_lobbying_annual >}} per year {{< var us_total_lobbying_annual_cite >}} with estimated 100:1 returns [@drutman2015]. Your democracy is a vending machine, and the buttons are labeled.
+Currently, your lobbying industry has thousands of capture points. Committee earmarks, agency decisions, regulatory rulings, budget amendments, riders on unrelated bills. Each one is cheap to influence. Your federal lobbyists spend {{< var us_total_lobbying_annual >}} per year {{< var us_total_lobbying_annual_cite >}}. Companies that lobbied for one 2004 tax break got back $220 for every dollar [@alexander2009]. Your democracy is a vending machine, and the buttons are labeled.
 
 ![Lobbyists currently have thousands of people to corrupt. Optimocracy gives them one target protected by multiple watchdogs. You're trying to make corruption impractical instead of illegal.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
 

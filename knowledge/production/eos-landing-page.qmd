@@ -705,7 +705,7 @@ The gap between the red and blue lines should be visually emphasized (shaded reg
 
 **Context** (displayed below projections, smaller text):
 
-> Historical public health ROI: smallpox eradication 280:1, childhood vaccination 13:1, Human Genome Project $1T economic impact. These are context for the scale of returns public health interventions have produced, not predictions for this investment.
+> Historical public health ROI: smallpox eradication {{< var smallpox_eradication_roi >}}:1, childhood vaccination {{< var childhood_vaccination_roi >}}:1, Human Genome Project $1T economic impact. These are context for the scale of returns public health interventions have produced, not predictions for this investment.
 
 **DISCLOSURE** (always visible, not fine print):
 

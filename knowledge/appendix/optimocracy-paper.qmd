@@ -149,8 +149,8 @@ The following table synthesizes estimates from peer-reviewed research:
 |--------------|--------|-------------|------------------------|------------|
 | **US regulatory accumulation (1980-2012)** | @coffey2020 | Counterfactual growth trajectory | 25% of GDP ($4T annually) | Low^†^ |
 | **US regulation (1949-2005)** | @dawson2013 | Panel regression, regulatory index | GDP would be 3.5x higher | Low^†^ |
-| **Global corruption** | @un2018 | Multiple estimation approaches | 5% of GDP (~$5T/year) | Medium |
-| **FDA drug delays (1960-2001)** | @philipson2008 | Consumer/producer surplus | 140M life-years lost | Medium |
+| **Global corruption** | @un2018 | WEF estimate cited by UN Secretary-General | ≥$2.6T/year (~5% of world GDP) | Low |
+| **FDA review delays before user fees (PDUFA I/II)** | @philipson2008 | Consumer/producer surplus | 140,000-310,000 life-years (gained once PDUFA sped reviews) | Medium |
 | **Trade barriers** | @costinot2015 | Gravity models | 5-10% of GDP | High |
 | **Occupational licensing** | @kleiner2013 | Labor market distortion | 2-3% of GDP | High |
 
@@ -174,7 +174,7 @@ The US government waste estimate of {{< var us_gov_waste_total >}} ({{< var us_g
 
 ![How America wastes money, by category. Healthcare, military, regulations, taxes, housing. It's like a pie chart of inefficiency, and every slice is surprisingly large.](/assets/images/optimocracy-paper/optimocracy-paper-section-alternative-estimation-bottom-up-policy-cost-accounting-bw-academic.jpg)
 
-International comparisons reinforce this estimate: the US spends {{< var us_vs_switzerland_spending_gap >}} percentage points MORE of GDP than Switzerland yet achieves {{< var us_vs_switzerland_life_expectancy_gap >}} FEWER years of life expectancy.
+International comparisons reinforce this estimate: the US spends {{< var us_vs_switzerland_spending_gap >}} of GDP MORE than Switzerland (a percentage-point gap) yet achieves {{< var us_vs_switzerland_life_expectancy_gap >}} FEWER years of life expectancy.
 
 ### Why Information Doesn't Solve the Problem
 
@@ -252,6 +252,56 @@ Health and wealth aren't contested values requiring democratic selection. They'r
 ![Rules-based systems work better. When you publish the results, politicians look bad for ignoring them. Shame, but quantified and public.](/assets/images/optimocracy-paper/optimocracy-paper-section-precedents-that-work-bw-academic.jpg)
 
 **Credible commitment:** Published rules make deviation visible. Multiple institutions report outcomes. Politicians vote freely, but alignment with recommendations is tracked publicly. This raises the political cost of ignoring evidence.
+
+## Related Work: Earlier Attempts to Compute Optimal Policy {#sec-related-work}
+
+Optimocracy is not the first attempt to choose policies and budgets from data. Earlier work falls into six groups. Each group solves part of the problem. None combines cross-jurisdiction causal estimates, one welfare function that covers every budget category, and a mechanism that makes politicians act on the result.
+
+### Statistical Policy Learning
+
+Econometricians have formal methods that turn causal estimates into welfare-maximizing decisions. Empirical welfare maximization chooses, from a set of allowed policy rules, the one with the highest estimated average welfare in experimental data, and its welfare approaches the best achievable at a known rate [@kitagawa2018]. Athey and Wager extend policy learning to observational data, choosing whom to treat under budget, fairness, or simplicity constraints, with guarantees on the regret of the chosen policy [@athey2021]. Manski treats choosing a policy from sample data as a statistical decision problem for a utilitarian planner and evaluates candidate rules by their maximum regret [@manski2004]. These methods are the formal core of the [Optimal Policy Generator](https://manual.warondisease.org/knowledge/appendix/optimal-policy-generator-spec.html) [@opg-paper-2025] and the [Optimal Budget Generator](https://manual.warondisease.org/knowledge/appendix/optimal-budget-generator-spec.html) [@obg-paper-2025]. They choose whom to treat within one program; Optimocracy applies the same logic across programs and jurisdictions.
+
+### Budget-Allocation Models
+
+Two modeling programs already compute better budget allocations for real governments. Policy Priority Inference models how governments split budgets across interdependent policy issues [@castaneda2018] and links how a government spreads its budget across programs to the expected movement of development indicators [@guerrero2020]. A UNDP study of Colombia using the model projected that only 18% of Sustainable Development Goal indicators would reach their 2030 targets at the current pace, and that a 20% budget increase would raise this only to 20%; the authors report that reallocating spending toward budget-responsive indicators would do more than adding money [@castaneda2024]. Optima computes the split of a fixed HIV budget across programs that best meets goals such as fewer infections or deaths [@kerr2015]. Using Optima models for 44 countries, Kelly and colleagues estimated that allocating existing HIV budgets optimally over 2016 to 2030 could avert about 7.4 million additional infections (uncertainty range 3.9 to 14.0 million), a 26% drop in incidence, with no new money [@kelly2018]. At least 23 national governments have run Optima analyses, and Sudan and Belarus moved their actual HIV budgets toward the recommended allocation [@stuart2018].
+
+These are the closest precedents for the Optimal Budget Generator. They optimize within one sector or toward fixed targets, and they calibrate on one country's history rather than estimating causal effects across many jurisdictions.
+
+### Priority-Setting Systems
+
+Several institutions already publish ranked lists of high-return spending:
+
+- **Disease Control Priorities** modeled a 218-intervention essential health package that, fully implemented in lower-middle-income countries, would avert an estimated 4.2 million premature deaths a year by 2030, at a total cost of about 5% of national income [@jamison2018]. A full package for low-income countries costs about $79 per person per year, and its highest-priority half about half as much [@watkins2020].
+- **The Lancet Commission on Investing in Health** estimates that countries choosing to do so could halve the probability of dying before age 70 by 2050 by focusing on 15 conditions, at an extra cost of about 1 to 2% of GDP in health spending in poorer countries. It names tobacco control as by far the most important policy outside the health sector [@jamison2024].
+- **The World Health Organization** list endorsed in 2023 names 28 "best buy" interventions against noncommunicable diseases, each costing about I$100 or less per healthy life year gained in poorer countries, starting with higher tobacco taxes [@who-ncd-best-buys-2024].
+- **The Copenhagen Consensus** commissioned estimates that 12 policies costing about $35 billion a year in poorer countries could save about 4.2 million lives a year and yield about $1.1 trillion a year in economic benefits [@lomborg2023].
+- **GiveWell** estimates the cost per life saved of its top charities at about $3,000 to $5,500 [@givewell-cost-per-life-saved].
+- **The Washington State Institute for Public Policy** has been directed by its legislature since the 1990s to rank programs by estimated return on investment and by the chance that each will at least break even, and it uses that model in the state's policy and budget process [@wsipp-benefit-cost-2024; @wsipp-benefit-cost-results].
+- **Health technology assessment** sets spending thresholds per quality-adjusted life year. Claxton and colleagues estimate that the English NHS gives up roughly one quality-adjusted life year for every £13,000 of spending it displaces [@claxton2015].
+
+These systems show that the answers are often already known. Their common limit is adoption: governments rarely move money to match the rankings. None of them treats military budgets as a funding source, and none ranks pragmatic-trial infrastructure explicitly. The incentive layer of Optimocracy targets the adoption gap.
+
+### Evidence on Budget Size and Composition
+
+Public economics gives the direction of change more clearly than exact levels. In rich countries, a government larger by 10 percentage points of GDP is associated with annual growth 0.5 to 1 percentage point lower, although the authors warn against reading this as causal [@bergh2011]. OECD economists find that public investment and education spending raise long-run growth, pensions and subsidies lower it, and very large governments reduce growth unless government is highly effective [@fournier2016]. The IMF estimates that, on average, about 30% of the potential gains from public investment are lost to inefficiency [@imf-public-investment-efficiency-2015]. The socially optimal level of research and development spending is, conservatively, at least two to four times actual US spending [@jones1998]. The optimal share of spending devoted to health rises with income and is likely to exceed 30% in the United States by mid-century [@hall2007]. Across 133 US policy changes, direct investments in low-income children's health and education delivered the most welfare per dollar of net government cost, and many recovered their cost through later taxes and lower transfers [@hendren2020].
+
+Efficiency frontier methods ask a different question: how much output a government could get from the money it already spends. Data envelopment analysis [@charnes1978] and stochastic frontier analysis [@aigner1977] estimate a best-practice frontier from observed inputs and outputs, and applied to public spending they measure each government's distance from it [@afonso2005]. Across 20 OECD countries in 2009-2013, spending could have fallen by 26.8% on average with the same public performance [@afonso-kazemi-2017]. These studies measure waste at current levels; they do not say what the levels should be.
+
+### AI and Simulation
+
+Machine learning has designed policies in simulated worlds. In simulated economies of learning agents, a reinforcement-learning tax planner beat the Saez optimal-tax formula by more than 8% on utilitarian welfare in a four-agent setting (2% with ten agents); the authors stress that the results are not ready for real-world policy [@zheng2022]. In an incentivized online investment game, a redistribution rule designed by reinforcement learning won majority votes against human-designed rules, for example 66% of votes against strict equal sharing [@koster2022]. An AI mediator wrote group statements on contested policy questions that participants preferred to those of trained human mediators 56% of the time in a head-to-head test [@tessler2024]. These systems learn from simulations or volunteer experiments. Optimocracy learns from outcomes observed in jurisdictions that actually adopted policies.
+
+### Market and Mechanism Approaches
+
+Futarchy proposes that voters define a measure of national welfare while speculative decision markets determine which policies are expected to raise it [@hanson2013]. Quadratic funding matches small contributions so that public goods are funded efficiently under the authors' model [@buterin2019]. An advance market commitment for pneumococcal vaccine paid for results rather than research; its designers report that three vaccines were developed and more than 150 million children immunized [@kremer2020]. Linear programming for optimal allocation goes back to Kantorovich's 1939 work on planning production [@kantorovich1960; @koopmans1960]. Optimocracy uses these mechanisms as components: prediction markets as one input, and payment for results in its funding layer.
+
+### What Optimocracy Adds
+
+Stated narrowly, Optimocracy adds three things:
+
+1. **One welfare function for every category.** We found no earlier system that sets budget levels across all categories from cross-jurisdiction causal estimates of one fixed welfare function, with a universal cash payment and lower taxes as benchmarks.
+2. **Military budgets as a funding source.** None of the priority-setting systems above treats military spending as the pool that pays for health research.
+3. **An adoption mechanism.** Most earlier systems publish recommendations and stop. Optima's real budget shifts happened where governments asked for the analysis [@stuart2018]. Optimocracy adds public alignment scores and campaign incentives so that following the evidence pays.
 
 ## Mechanism Design
 
@@ -339,7 +389,7 @@ The primary analytical engine uses **causal inference on cross-jurisdictional ti
 Supplementary methods include:
 
 1. **Randomized controlled trials**: Allocate experimental budgets to estimate causal effects of novel interventions with no historical variation to learn from
-2. **Prediction markets**: Aggregate distributed information about allocation effectiveness for forward-looking decisions
+2. **Prediction markets**: Aggregate distributed information about allocation effectiveness for forward-looking decisions [@hanson2013]
 3. **Machine learning**: Identify complex nonlinear patterns in the cross-jurisdictional dataset that traditional econometric methods may miss
 
 The execution system publishes recommendations and tracks politician alignment. The alignment score is the input any [adoption mechanism](#sec-adoption-mechanisms) acts on, and the layer is indifferent to which one does. Outcome measurement validates the system over time.
@@ -434,7 +484,7 @@ This two-metric system is used by both the [Optimal Policy Generator](optimal-po
 
 ### Capture Resistance
 
-Under current governance, 12,000+ federal lobbyists spend $4+ billion annually with estimated 100:1 returns [@drutman2015]. Every budget line item is a lobbying opportunity.
+Under current governance, federal lobbyists spend {{< var us_total_lobbying_annual >}} per year {{< var us_total_lobbying_annual_cite >}}, and the payoff can be enormous: companies that lobbied for one 2004 tax break got back more than $220 for every dollar spent [@alexander2009]. Every budget line item is a lobbying opportunity.
 
 ![Lobbyists currently have thousands of people to corrupt. Optimocracy gives them one target protected by multiple watchdogs. You're trying to make corruption impractical instead of illegal.](/assets/images/optimocracy-paper/optimocracy-paper-section-capture-resistance-bw-academic.jpg)
 
@@ -543,7 +593,7 @@ For deeper engagement with democratic theory objections, see [Appendix B](#appen
 
 ![Optimocracy beats normal government at charitable giving, money efficiency, and not getting corrupted. Being better than government is a low bar, but here we are.](/assets/images/optimocracy-paper/optimocracy-paper-section-testable-predictions-bw-academic.jpg)
 
-A publishable theory must generate falsifiable predictions. This section presents predictions that would confirm or refute the Optimocracy thesis. (Note: Existing evidence already supports the general case for algorithmic over discretionary allocation; formula programs like Social Security show lower lobbying intensity than discretionary programs [@drutman2015]. The predictions below are specific to Optimocracy.)
+A publishable theory must generate falsifiable predictions. This section presents predictions that would confirm or refute the Optimocracy thesis. (The predictions below are specific to Optimocracy.)
 
 **Prediction 1: Private Optimocracy funds will outperform traditional philanthropic allocation on chosen metrics.**
 
@@ -640,7 +690,7 @@ The scoreboard has no teeth on its own. Four mechanisms could give it some. They
 
 **1. Direct institutional adoption.** An agency, a foundation, a sovereign wealth fund, or a large philanthropy uses the recommendations because they are correct. This costs nothing beyond producing the analysis, requires no political entity, and is how cost-effectiveness research already moves money at GiveWell and Open Philanthropy. It is slow and it is bounded by the budgets of institutions that already wanted to be evidence-driven. The [GiveWell Outcome Fund deployment](#concrete-first-deployment-the-givewell-outcome-fund) below is this mechanism. Try it first, because it is free.
 
-**2. Corporate lobbying redirection.** The organizations that spend {{< var us_total_lobbying_annual >}} per year lobbying the US federal government [@drutman2015] are, with few exceptions, publicly traded. Their shares carry votes. Their boards direct their lobbying budgets. A shareholder who can demonstrate that a company's lobbying produces negative returns for that company's own shareholders is making a fiduciary argument, not a political one, and fiduciary arguments are the kind that institutional investors are obligated to evaluate. Engine No. 1 won three ExxonMobil board seats in 2021 holding 0.02% of the shares, because the three largest index-fund managers found the economic case persuasive. Military contractors alone direct {{< var defense_lobbying_annual >}} per year [@lobbying-spend-defense]. This mechanism buys the apparatus rather than renting its output, so the expenditure is an asset that persists rather than a campaign cost that recurs. It is also slower than writing a check and it is subject to proxy rules, disclosure thresholds, and the possibility that the board simply wins the vote.
+**2. Corporate lobbying redirection.** The organizations that spend {{< var us_total_lobbying_annual >}} per year lobbying the US federal government {{< var us_total_lobbying_annual_cite >}} are, with few exceptions, publicly traded. Their shares carry votes. Their boards direct their lobbying budgets. A shareholder who can demonstrate that a company's lobbying produces negative returns for that company's own shareholders is making a fiduciary argument, not a political one, and fiduciary arguments are the kind that institutional investors are obligated to evaluate. Engine No. 1 won three ExxonMobil board seats in 2021 holding 0.02% of the shares, because the three largest index-fund managers found the economic case persuasive. Military contractors alone direct {{< var defense_lobbying_annual >}} per year [@lobbying-spend-defense]. This mechanism buys the apparatus rather than renting its output, so the expenditure is an asset that persists rather than a campaign cost that recurs. It is also slower than writing a check and it is subject to proxy rules, disclosure thresholds, and the possibility that the board simply wins the vote.
 
 **3. Independent expenditure (the SuperPAC).** Fund the campaigns of legislators who score well. This is the fastest mechanism and the most legible, and it is developed in detail below. It is also rent: the money is spent, the alignment lasts one cycle, and a better-funded opponent can outbid it at the next election. Its cost scales with the number of races, not with the quality of the analysis.
 
@@ -676,7 +726,7 @@ Political feasibility is a cost, not a binary. In a companion analysis (see [How
 |-----------|---------------|
 | Match all lobbying expenditure (1.5×) | $6.6B/year |
 | Match all federal campaign spending | $10B/cycle |
-| Match full Congress career incentives (535 × ~$10M NPV)^[Post-Congress lobbying compensation averages 10-20× congressional salary [@thenation-revolving-door]; $174K × 15 × 10 years ≈ $10M NPV.] | $5.35B one-time |
+| Match full Congress career incentives (535 × ~$10M NPV)^[Assumption: post-Congress lobbying pay of about 15 times the $174K congressional salary for 10 years, about $10M. We found no published estimate of this multiple, so treat it as an assumption.] | $5.35B one-time |
 | **Total US maximum reform investment** | **~$25B** |
 
 For reforms like the [1% Treaty](../solution/1-percent-treaty.qmd) ($2.5T NPV conservative estimate), this implies ~100:1 ROI. Political reform is dramatically underinvested relative to its expected value.
@@ -793,7 +843,7 @@ Optimocracy optimizes governance through two complementary mechanisms, each addr
 
 The **Optimal Budget Generator (OBG)** framework answers: "How should we allocate the budget to maximize welfare?"
 
-Each spending category has an optimal level - not just a marginal return. Too little means underinvestment and foregone welfare gains; too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), budget allocation is zero-sum: spending more on one category means less for others. OBG generates integrated recommendations that balance these tradeoffs.
+Each spending category has an optimal level - not just a marginal return. Too little means underinvestment and foregone welfare gains; too much means diminishing returns. But unlike the Recommended Daily Allowance for nutrients (where you can meet all targets simultaneously), every budget dollar has other uses: another category, a universal cash payment, or staying with the taxpayer. OBG compares all of these, so it chooses the size of the budget as well as its composition.
 
 | Spending Level | Health Analogy | Budget Interpretation |
 |----------------|----------------|----------------------|
@@ -803,20 +853,22 @@ Each spending category has an optimal level - not just a marginal return. Too li
 
 The OBG framework combines three evidence sources:
 
-1. **Reference country benchmarking**: What do high-performing peer countries spend?
-2. **Diminishing returns modeling**: Where is the "knee" of the spending-outcome curve?
-3. **Cost-effectiveness threshold analysis**: Which interventions pass standard health economics thresholds?
+1. **Diminishing returns modeling**: Where is the "knee" of the spending-outcome curve?
+2. **Cost-effectiveness threshold analysis**: Which interventions pass standard health economics thresholds?
+3. **Efficiency frontiers**: What is the most that any jurisdiction gets at each spending level? For defense, the frontier is the least cost of the capabilities that defending the country requires. Peer-country spending enters the models as data and never sets a target by itself, because copying peers copies their mistakes, and a target set as a multiple of current spending copies today's mistakes.
+
+Every program must beat two outside options: a universal cash payment and lower taxes. For each goal, OBG also compares delivery methods (public provision, vouchers, cash, prizes, payment for results) against cash.
 
 The **Budget Impact Score (BIS)** measures our *confidence* in each category's target estimate based on the quality of causal evidence. Categories with strong RCT evidence have high BIS; categories with only cross-sectional correlations have low BIS.
 
-**Example output**:
+**Example output** (illustrative numbers; the trials and vaccination targets come from worked examples in the OBG specification, and the military target from its threat-based cost frontier; basic research has evidence on direction only):
 
 | Category | Current | Target | Gap | Evidence |
 |----------|---------|-----|-----|----------|
 | **Pragmatic clinical trials** | $0.5B | $50B | **+$49.5B** | A (RCTs) |
-| Vaccinations | $8B | $35B | +$27B | A (RCTs) |
-| Basic research | $45B | $90B | +$45B | B (spillovers) |
-| Military | $850B | $459B | -$391B | C (benchmarks) |
+| Vaccinations | $8B | $16B | +$8B | A (RCTs) |
+| Basic research | $45B | Not derived | Increase likely | Direction only |
+| Military | {{< var us_military_spending_2024_annual >}} | {{< var us_defense_first_principles_optimal >}} | Cut {{< var us_gov_waste_military_overspend >}} | C (threat-by-threat costs) |
 
 For the complete methodology including estimation procedures, validation framework, and worked examples, see [Optimal Budget Generator Specification](https://obg.warondisease.org).
 
@@ -961,7 +1013,7 @@ The challenge shifts from "what should we optimize?" (self-evident) to "how do w
 
 #### Mechanism Design: The Revelation Principle
 
-The Revelation Principle [@myerson1981; @maskin1999] states that data reporters only tell the truth when lying costs more than it's worth.
+The Revelation Principle [@myerson1979; @myerson1981] says that any outcome a reporting system can reach, some system can also reach with every reporter simply telling the truth, provided truth-telling is each reporter's best move (incentive compatibility). The design job for data reporters is to make an honest report pay at least as well as any lie. Implementation theory adds a harder test: every equilibrium of the system, not just the honest one, must produce a good outcome [@maskin1999].
 
 ![The more expensive lying becomes, the more attractive truth-telling looks. Economics discovered honesty. Only took a few thousand years.](/assets/images/optimocracy-paper/optimocracy-paper-section-mechanism-design-the-revelation-principle-bw-academic.jpg)
 

@@ -234,7 +234,7 @@ Each policy change creates a before/after comparison. Each jurisdiction that did
 
 1. **Data fragmentation**: Policy records scattered across legislative databases, government archives, academic papers
 2. **Computational limits**: Meta-analysis at this scale requires modern infrastructure
-3. **Methodological advances**: Synthetic control (2003), modern DiD (2021) are recent
+3. **Methodological advances**: Synthetic control (2003) [@abadie2003] and modern staggered difference-in-differences (2021) [@callaway2021] are recent
 4. **Incentive structures**: No existing institution has mandate + capability + incentive
 
 OPG aggregates fragmented evidence, applies modern causal inference at scale, and produces actionable output.
@@ -310,6 +310,16 @@ OPG is designed to generate deployable, evidence-weighted recommendations. Retro
 **Congressional Budget Office (CBO)**: CBO provides nonpartisan fiscal scoring of proposed legislation. While valuable for budget discipline, CBO: (1) estimates budgetary effects rather than welfare; (2) evaluates what is proposed rather than what should be proposed; (3) is reactive rather than proactive.
 
 **Benefit-Cost Analysis Tradition**: The broader benefit-cost literature [@sunstein2002; @viscusi2018] provides theoretical foundations for policy evaluation but typically focuses on individual project or regulation assessment rather than systematic cross-jurisdiction recommendation generation.
+
+**State benefit-cost ranking**: The Washington State Institute for Public Policy has been directed by its legislature to rank programs by estimated return on investment and by the chance that each will at least break even, and it uses that model in the state's policy and budget process [@wsipp-benefit-cost-2024]. WSIPP shows that a government can use ranked benefit-cost evidence routinely. Its estimates are calibrated to Washington State, although its meta-analyses draw on program evaluations from other places. It ranks programs, not the laws and regulations that OPG evaluates.
+
+### Computational Policy Optimization
+
+**Statistical policy learning**: Empirical welfare maximization chooses, from a set of allowed policy rules, the one with the highest estimated average welfare in experimental data [@kitagawa2018]. Athey and Wager extend policy learning to observational data under budget, fairness, or simplicity constraints [@athey2021], and Manski evaluates policy rules chosen from sample data by their maximum regret [@manski2004]. These methods supply the decision theory that OPG applies. They choose whom to treat within one program; OPG chooses which policies a jurisdiction should enact, replace, repeal, or maintain.
+
+**AI policy design in simulation**: Reinforcement-learning tax planners have beaten the Saez optimal-tax formula in simulated economies, by more than 8% on utilitarian welfare with four agents and 2% with ten; the authors stress that the results are not ready for real-world policy [@zheng2022]. OPG uses observed outcomes from jurisdictions that adopted policies, not simulated agents.
+
+For a full survey of earlier attempts to compute optimal policy and budgets, see [Related Work in the Optimocracy paper](optimocracy-paper.qmd#sec-related-work).
 
 ### This Framework's Contribution
 
@@ -421,7 +431,7 @@ $$
 
 which is maximized when prior uncertainty is high and decision stakes are large.
 
-*Proof*: Standard Bayesian decision theory [@cartwright2012]. ∎
+*Proof*: Standard Bayesian decision theory [@claxton1999]. ∎
 
 **Corollary 1 (Trial Prioritization)**: Policies with (1) high prior variance in effect estimates, (2) large potential welfare impact, and (3) low trial cost should be prioritized for experimental validation. See @sec-trial-prioritization for implementation.
 

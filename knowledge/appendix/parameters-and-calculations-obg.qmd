@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 66 parameters used in the analysis, organized by type:
+This appendix documents all 80 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 24
-- Calculated values: 27
-- Core definitions: 15
+- External sources (peer-reviewed): 27
+- Calculated values: 31
+- Core definitions: 22
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (27 parameters) • [External Data Sources](#sec-external) (24 parameters) • [Core Definitions](#sec-definitions) (15 parameters)
+[Calculated Values](#sec-calculated) (31 parameters) • [External Data Sources](#sec-external) (27 parameters) • [Core Definitions](#sec-definitions) (22 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -1056,6 +1056,175 @@ $$
 
 :::
 
+### Annual Funding from 1% of Global Military Spending Redirected to DIH: $27.2 billion {#sec-treaty_annual_funding}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual funding from 1% of global military spending redirected to DIH
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+
+$$
+\begin{gathered}
+Funding_{treaty} \\
+= Spending_{mil} \times Reduce_{treaty} \\
+= \$2.72T \times 1\% \\
+= \$27.2B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_annual_funding.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_annual_funding.qmd >}}
+
+:::
+
+### First-Principles Defense Cut (%): 79.2% {#sec-us_defense_first_principles_cut_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Implied cut from current US military spending (~$886B) to the first-principles homeland-defense optimum (~$184B): ~79%. For comparison, the US cut military spending 87.6% in two years after WWII.
+
+**Inputs**:
+
+- [First-Principles Optimal US Defense Budget](#sec-us_defense_first_principles_optimal) 🔢: $184 billion
+- [US Military Budget, FY2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+
+$$
+\begin{gathered}
+Cut_{FP} \\
+= 1 - \frac{D_{optimal}}{Spending_{US,2024}} \\
+= 1 - \frac{\$184B}{\$886B} \\
+= 79.2\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{optimal} \\
+= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
++ D_{hedge} \\
+= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
+= \$184B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_defense_first_principles_cut_pct.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_defense_first_principles_cut_pct.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_defense_first_principles_cut_pct.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_defense_first_principles_cut_pct.qmd >}}
+
+:::
+
+### First-Principles Optimal US Defense Budget: $184 billion {#sec-us_defense_first_principles_optimal}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+First-principles optimal US homeland-defense budget: the bottom-up sum of what defending the United States actually requires at efficient prices. Nuclear second strike $30B + homeland air/missile defense $35B + Coast Guard $14B + National Guard $30B + cyber defense $15B + mobilization hedge $60B = ~$184B. Honest range ~$130-260B. Compare: current ~$886B. Restraint-school proposals (Posen, Cato) and peer benchmarks land higher (~$450-675B) because they cost reduced hegemony and allied/peer deterrence, not homeland defense.
+
+**Inputs**:
+
+- [First-Principles Defense: Nuclear Second Strike](#sec-us_defense_fp_nuclear_deterrent): $30 billion (95% CI: $20 billion - $50 billion)
+- [First-Principles Defense: Homeland Air & Missile Defense](#sec-us_defense_fp_homeland_air_missile): $35 billion (95% CI: $25 billion - $50 billion)
+- [First-Principles Defense: Coast Guard](#sec-us_defense_fp_coast_guard): $14 billion (95% CI: $12 billion - $16 billion)
+- [First-Principles Defense: National Guard](#sec-us_defense_fp_national_guard): $30 billion (95% CI: $24 billion - $40 billion)
+- [First-Principles Defense: Cyber Defense](#sec-us_defense_fp_cyber): $15 billion (95% CI: $10 billion - $25 billion)
+- [First-Principles Defense: Mobilization Hedge](#sec-us_defense_fp_mobilization_hedge): $60 billion (95% CI: $40 billion - $100 billion)
+
+$$
+\begin{gathered}
+D_{optimal} \\
+= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
++ D_{hedge} \\
+= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
+= \$184B
+\end{gathered}
+$$
+
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_defense_first_principles_optimal.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_defense_first_principles_optimal.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_defense_first_principles_optimal.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_defense_first_principles_optimal.qmd >}}
+
+:::
+
+### Military Overspend: $702 billion {#sec-us_gov_waste_military_overspend}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military spending above the first-principles homeland-defense optimum. Current US military spending (~$886B) supports global power projection (~750 overseas bases). A bottom-up, threat-by-threat homeland-defense budget is ~$184B (nuclear second strike $30B, homeland air/missile defense $35B, Coast Guard $14B, National Guard $30B, cyber defense $15B, mobilization hedge $60B). Delta = $886B - $184B = ~$702B 'Hegemony Tax'. [CATEGORY 1: Direct Spending]
+
+**Inputs**:
+
+- [US Military Budget, FY2024](#sec-us_military_spending_2024_annual) 📊: $886 billion
+- [First-Principles Optimal US Defense Budget](#sec-us_defense_first_principles_optimal) 🔢: $184 billion
+
+$$
+\begin{gathered}
+W_{military} \\
+= Spending_{US,2024} - D_{optimal} \\
+= \$886B - \$184B \\
+= \$702B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+D_{optimal} \\
+= D_{nuclear} + D_{air} + D_{cg} + D_{guard} + D_{cyber} \\
++ D_{hedge} \\
+= \$30B + \$35B + \$14B + \$30B + \$15B + \$60B \\
+= \$184B
+\end{gathered}
+$$
+*~ Medium confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-us_gov_waste_military_overspend.qmd >}}
+
+{{< include ../figures/sensitivity-table-us_gov_waste_military_overspend.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-us_gov_waste_military_overspend.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-us_gov_waste_military_overspend.qmd >}}
+
+:::
+
 ### Global Patients Willing to Participate in Clinical Trials: 1.08 billion people {#sec-willing_trial_participants_global}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1566,13 +1735,13 @@ Cost per patient in ADAPTABLE trial ($14M PCORI grant / 15,076 patients). Note: 
 
 :::
 
-### Return on Investment from Childhood Vaccination Programs: 13:1 {#sec-childhood_vaccination_roi}
+### Return on Investment from Childhood Vaccination Programs: 10.9:1 {#sec-childhood_vaccination_roi}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Return on investment from childhood vaccination programs
+Societal benefit-cost ratio of routine US childhood immunization (children born 1994-2023; medical and productivity savings)
 
-**Source**: [@childhood-vaccination-roi]
+**Source**: [@childhood-vaccination-economic-benefits]
 
 *✓ High confidence*
 
@@ -1765,6 +1934,22 @@ Annual global spending on clinical trials (Industry: $45-60B + Government: $3-6B
 Global nominal GDP (2025 estimate). From Political Dysfunction Tax paper citing StatisticsTimes/IMF World Economic Outlook. Used for calculating global opportunity costs as percentage of world economic output. Note: Latest IMF data shows $117T.
 
 **Source**: [@political-dysfunction-tax-paper-2025]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### Global Military Spending in 2024: $2.72 trillion {#sec-global_military_spending_annual_2024}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global military spending in 2024
+
+**Source**: [@global-military-spending]
 
 #### Uncertainty Range
 
@@ -2002,6 +2187,18 @@ RECOVERY trial cost per patient. Note: RECOVERY was an outlier - hospital-based 
 
 :::
 
+### Return on Investment from Smallpox Eradication Campaign: 159:1 {#sec-smallpox_eradication_roi}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Global benefit-cost ratio of the smallpox eradication campaign (Barrett 2013; CSIS 2023 gives 400:1)
+
+**Source**: [@barrett2013]
+
+*✓ High confidence*
+
+:::
+
 ### Phase 3 Cost per Patient: $41,000 {#sec-traditional_phase3_cost_per_patient}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -2049,6 +2246,22 @@ US military spending at WW2 peak (1945) in constant 2024 dollars
 US military spending in 1947 (post-WW2 trough, 2 years after peak) in constant 2024 dollars
 
 **Source**: [@us-military-spending-historical-constant-dollars]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### US Military Budget, FY2024: $886 billion {#sec-us_military_spending_2024_annual}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US military budget for FY2024: defense discretionary budget authority ($886.3B, the FY2024 defense spending cap; CRS R48057). This is budget authority, not outlays: actual FY2024 national defense outlays were $874.0B (Monthly Treasury Statement). Equal to constant 2024 dollars for 2024.
+
+**Source**: [@crs-r48057-2024]
 
 #### Uncertainty Range
 
@@ -2355,6 +2568,152 @@ R&D spillover multiplier: each $1 in directed medical research produces $2 in ad
 #### Input Distribution
 
 {{< include ../figures/distribution-rd_spillover_multiplier.qmd >}}
+
+*Core definition*
+
+:::
+
+### 1% Reduction in Military Spending/War Costs from Treaty: 1% {#sec-treaty_reduction_pct}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+1% reduction in military spending/war costs from treaty
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: Coast Guard: $14 billion {#sec-us_defense_fp_coast_guard}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+US Coast Guard (actual budget ~$14B). Maritime homeland security and coastal defense.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$12 billion, $16 billion] • Distribution: Normal (SE: $1.5 billion)
+
+**What this means**: This estimate has moderate uncertainty. The true value likely falls between $12 billion and $16 billion (±14%). This represents a reasonable range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_coast_guard.qmd >}}
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: Cyber Defense: $15 billion {#sec-us_defense_fp_cyber}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Cyber defense of critical infrastructure: the primary modern attack vector that crosses oceans in milliseconds and is not stopped by geography.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$10 billion, $25 billion] • Distribution: Normal (SE: $4 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $10 billion and $25 billion (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_cyber.qmd >}}
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: Homeland Air & Missile Defense: $35 billion {#sec-us_defense_fp_homeland_air_missile}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Continental air and missile defense plus early warning (NORAD, ground-based midcourse defense, interceptor aircraft). Defensive only; no expeditionary or power-projection air power.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$25 billion, $50 billion] • Distribution: Normal (SE: $7 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $25 billion and $50 billion (±36%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_homeland_air_missile.qmd >}}
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: Mobilization Hedge: $60 billion {#sec-us_defense_fp_mobilization_hedge}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Mobilization hedge: defense R&D, a maintained industrial base, and a professional cadre force. The WWII lesson is to maintain the capacity to scale, not a standing empire: a peer buildup gives years of warning, and the US went from the 17th-ranked army in 1939 to victory in four years. This is the cheapest insurance and the most neglected.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$40 billion, $100 billion] • Distribution: Normal (SE: $15 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $40 billion and $100 billion (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_mobilization_hedge.qmd >}}
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: National Guard: $30 billion {#sec-us_defense_fp_national_guard}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+National Guard / territorial land defense: a citizen-soldier reserve (the Switzerland model) for homeland defense and disaster response.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$24 billion, $40 billion] • Distribution: Normal (SE: $4 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $24 billion and $40 billion (±27%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_national_guard.qmd >}}
+
+*Core definition*
+
+:::
+
+### First-Principles Defense: Nuclear Second Strike: $30 billion {#sec-us_defense_fp_nuclear_deterrent}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Survivable nuclear second strike: an SSBN-centric minimum credible deterrent (~100-200 survivable warheads on ballistic-missile submarines). The one threat geography does not neutralize. Drops the first-strike-attractive ICBM silos and the bomber leg. The UK and France each sustain continuous-at-sea deterrents within total defense budgets under $80B.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [$20 billion, $50 billion] • Distribution: Normal (SE: $8 billion)
+
+**What this means**: There's significant uncertainty here. The true value likely falls between $20 billion and $50 billion (±50%). This represents a wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+*The normal distribution means values cluster around the center with equal chances of being higher or lower.*
+
+#### Input Distribution
+
+{{< include ../figures/distribution-us_defense_fp_nuclear_deterrent.qmd >}}
 
 *Core definition*
 
