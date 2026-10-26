@@ -39,15 +39,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 904 parameters used in the analysis, organized by type:
+This appendix documents all 906 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 253
-- Calculated values: 463
+- External sources (peer-reviewed): 254
+- Calculated values: 464
 - Core definitions: 188
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (463 parameters) • [External Data Sources](#sec-external) (253 parameters) • [Core Definitions](#sec-definitions) (188 parameters)
+[Calculated Values](#sec-calculated) (464 parameters) • [External Data Sources](#sec-external) (254 parameters) • [Core Definitions](#sec-definitions) (188 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5998,13 +5998,13 @@ Realistic entry cost: capital to take an activist (non-control) equity position 
 
 - [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
 - [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
-- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 0.05:1 (95% CI: 0.01:1 - 0.1:1)
+- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 5% (95% CI: 1% - 10%)
 
 $$
 \begin{gathered}
 C_{activist} \\
 = f_{activist} \times (MarketCap_{US} + MarketCap_{allied}) \\
-= 0.05 \times (\$836B + \$132B) \\
+= 5\% \times (\$836B + \$132B) \\
 = \$48.4B
 \end{gathered}
 $$
@@ -6025,6 +6025,7 @@ $$
 
 **Used in:**
 
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
 
@@ -6054,7 +6055,7 @@ $$
 \begin{gathered}
 C_{activist} \\
 = f_{activist} \times (MarketCap_{US} + MarketCap_{allied}) \\
-= 0.05 \times (\$836B + \$132B) \\
+= 5\% \times (\$836B + \$132B) \\
 = \$48.4B
 \end{gathered}
 $$
@@ -6076,6 +6077,43 @@ $$
 
 - [Earth Optimization Services Pitch](../economics/eos-pitch.html)
 - [Earth Optimization Services](../solution/earth-optimization-services.html)
+
+:::
+
+### Military Engine No. 1-Size Stake Cost: $194 million {#sec-defense_takeover_cost_engine_no_1_stake}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share cost of holding Engine No. 1's ExxonMobil stake fraction in every major Western military contractor. Shares only; proxy-campaign costs are extra.
+
+**Inputs**:
+
+- [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
+- [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
+- [Engine No. 1 ExxonMobil Stake Fraction](#sec-engine_no_1_exxon_stake_fraction) 📊: 0.02%
+
+$$
+\begin{gathered}
+C_{EngineNo1} \\
+= f_{EngineNo1} \times (MarketCap_{US} + MarketCap_{allied}) \\
+= 0.02\% \times (\$836B + \$132B) \\
+= \$194M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-defense_takeover_cost_engine_no_1_stake.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-defense_takeover_cost_engine_no_1_stake.qmd >}}
+
+**Used in:**
+
+- [The Loving Takeover](../appendix/loving-takeover.html)
 
 :::
 
@@ -12713,7 +12751,7 @@ Realistic cost to take an activist (non-control) stake across EVERY government-c
 - [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
 - [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
 - [Government-Controlling Sectors Top-5 Market Cap](#sec-gov_controlling_sectors_top5_market_cap) 📊: $16.7 trillion (95% CI: $15 trillion - $18 trillion)
-- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 0.05:1 (95% CI: 0.01:1 - 0.1:1)
+- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 5% (95% CI: 1% - 10%)
 
 $$
 \begin{gathered}
@@ -12799,14 +12837,14 @@ Ceiling cost for influence over every government-controlling industry: the buy-o
 **Inputs**:
 
 - [Military Takeover Cost (Outright-Control Ceiling)](#sec-defense_takeover_cost_total) 🔢: $873 billion
-- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 0.05:1 (95% CI: 0.01:1 - 0.1:1)
+- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 5% (95% CI: 1% - 10%)
 - [Government-Controlling Sectors Top-5 Market Cap](#sec-gov_controlling_sectors_top5_market_cap) 📊: $16.7 trillion (95% CI: $15 trillion - $18 trillion)
 
 $$
 \begin{gathered}
 C_{influence} \\
 = C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
-= \$873B + 0.05 \times \$16.7T \\
+= \$873B + 5\% \times \$16.7T \\
 = \$1.71T
 \end{gathered}
 $$
@@ -12858,7 +12896,7 @@ $$
 \begin{gathered}
 C_{influence} \\
 = C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
-= \$873B + 0.05 \times \$16.7T \\
+= \$873B + 5\% \times \$16.7T \\
 = \$1.71T
 \end{gathered}
 $$
@@ -12912,7 +12950,7 @@ $$
 \begin{gathered}
 C_{influence} \\
 = C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
-= \$873B + 0.05 \times \$16.7T \\
+= \$873B + 5\% \times \$16.7T \\
 = \$1.71T
 \end{gathered}
 $$
@@ -12975,7 +13013,7 @@ $$
 \begin{gathered}
 C_{influence} \\
 = C_{takeover} + f_{activist} \times MarketCap_{sectors} \\
-= \$873B + 0.05 \times \$16.7T \\
+= \$873B + 5\% \times \$16.7T \\
 = \$1.71T
 \end{gathered}
 $$
@@ -41798,13 +41836,13 @@ Annual probability of being killed by terrorism expressed as '1 in X'. An Americ
 
 - [The 1% Treaty](../solution/1-percent-treaty.html)
 - [The Funniest Joke in the Universe](../appendix/joke.html)
-- [The Loving Takeover](../appendix/loving-takeover.html)
 - [I Am Retarded](../problem/i-am-retarded.html)
 - [Special Education](../solution/special-education.html)
 - [Bombs vs. Biotechnology: The ROI](../appendix/bombs-vs-biotech-roi.html)
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Vandalism Handout](../appendix/handout.html)
 - [Notice of Termination](../appendix/notice-of-termination.html)
+- [The Loving Takeover](../appendix/loving-takeover.html)
 - [Correcting the AIs](../appendix/correcting-the-ais.html)
 
 :::
@@ -42865,6 +42903,26 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 - [Declaration of Optimization](../strategy/declaration-of-optimization.html)
 - [The Planetary Constitutional Convention](../strategy/planetary-constitutional-convention.html)
 - [Health Dividend](../economics/health-dividend.html)
+
+:::
+
+### Engine No. 1 ExxonMobil Stake Fraction: 0.02% {#sec-engine_no_1_exxon_stake_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of ExxonMobil shares Engine No. 1 held (about $40M) when it won three of its four board nominees in May 2021
+
+**Source**: [@engine-no-1-exxon-2021]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+**Used in:**
+
+- [The Loving Takeover](../appendix/loving-takeover.html)
 
 :::
 
@@ -49893,7 +49951,7 @@ Modeled annual legal entries under uncapped priced entry. Anchored to the most s
 
 :::
 
-### Activist Stake Fraction: 0.05:1 {#sec-influence_activist_stake_fraction}
+### Activist Stake Fraction: 5% {#sec-influence_activist_stake_fraction}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -49901,15 +49959,19 @@ Activist equity stake assumed sufficient to win board influence when combined wi
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [0.01:1, 0.1:1]
+**Technical**: 95% CI: [1%, 10%]
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 0.01:1 and 0.1:1 (±90%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 10% (±90%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
 {{< include ../figures/distribution-influence_activist_stake_fraction.qmd >}}
 
 *Core definition*
+
+**Used in:**
+
+- [The Loving Takeover](../appendix/loving-takeover.html)
 
 :::
 

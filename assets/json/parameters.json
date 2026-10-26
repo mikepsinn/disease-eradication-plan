@@ -3006,7 +3006,7 @@
       "confidence": "high",
       "formula": "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * INFLUENCE_ACTIVIST_STAKE_FRACTION",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-defense_takeover_cost_activist",
-      "latex": "\\begin{gathered}\nC_{activist} \\\\\n= f_{activist} \\times (MarketCap_{US} + MarketCap_{allied}) \\\\\n= 0.05 \\times (\\$836B + \\$132B) \\\\\n= \\$48.4B\n\\end{gathered}",
+      "latex": "\\begin{gathered}\nC_{activist} \\\\\n= f_{activist} \\times (MarketCap_{US} + MarketCap_{allied}) \\\\\n= 5\\% \\times (\\$836B + \\$132B) \\\\\n= \\$48.4B\n\\end{gathered}",
       "inputs": [
         "DEFENSE_PRIMES_MARKET_CAP_ALLIED",
         "DEFENSE_PRIMES_MARKET_CAP_US",
@@ -3028,12 +3028,34 @@
       "confidence": "high",
       "formula": "DEFENSE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-defense_takeover_cost_activist_pct_investable_assets",
-      "latex": "\\begin{gathered}\nC_{activist}/A_{investable} = \\frac{C_{activist}}{Assets_{invest}} = \\frac{\\$48.4B}{\\$305T} = 0.0159\\%\n\\\\[0.5em]\n\\text{where } C_{activist} = f_{activist} \\times (MarketCap_{US} + MarketCap_{allied}) = 0.05 \\times (\\$836B + \\$132B) = \\$48.4B\n\\end{gathered}",
+      "latex": "\\begin{gathered}\nC_{activist}/A_{investable} = \\frac{C_{activist}}{Assets_{invest}} = \\frac{\\$48.4B}{\\$305T} = 0.0159\\%\n\\\\[0.5em]\n\\text{where } C_{activist} = f_{activist} \\times (MarketCap_{US} + MarketCap_{allied}) = 5\\% \\times (\\$836B + \\$132B) = \\$48.4B\n\\end{gathered}",
       "inputs": [
         "DEFENSE_TAKEOVER_COST_ACTIVIST",
         "GLOBAL_INVESTABLE_ASSETS"
       ],
       "computeExpr": "(DEFENSE_TAKEOVER_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS)",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+      "chapterTitle": "The Loving Takeover"
+    },
+    "DEFENSE_TAKEOVER_COST_ENGINE_NO_1_STAKE": {
+      "value": 193600000.0,
+      "formatted": "$194 million",
+      "unit": "USD",
+      "description": "Share cost of holding Engine No. 1's ExxonMobil stake fraction in every major Western military contractor. Shares only; proxy-campaign costs are extra.",
+      "displayName": "Military Engine No. 1-Size Stake Cost",
+      "sourceType": "calculated",
+      "sourceRef": null,
+      "sourceUrl": null,
+      "confidence": "high",
+      "formula": "(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * ENGINE_NO_1_EXXON_STAKE_FRACTION",
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-defense_takeover_cost_engine_no_1_stake",
+      "latex": "\\begin{gathered}\nC_{EngineNo1} \\\\\n= f_{EngineNo1} \\times (MarketCap_{US} + MarketCap_{allied}) \\\\\n= 0.02\\% \\times (\\$836B + \\$132B) \\\\\n= \\$194M\n\\end{gathered}",
+      "inputs": [
+        "DEFENSE_PRIMES_MARKET_CAP_ALLIED",
+        "DEFENSE_PRIMES_MARKET_CAP_US",
+        "ENGINE_NO_1_EXXON_STAKE_FRACTION"
+      ],
+      "computeExpr": "((DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * ENGINE_NO_1_EXXON_STAKE_FRACTION)",
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
       "chapterTitle": "The Loving Takeover"
     },
@@ -5290,6 +5312,22 @@
       "chapterUrl": "https://manual.WarOnDisease.org/knowledge/problem/untapped-therapeutic-frontier.html",
       "chapterTitle": "The Untapped Therapeutic Frontier"
     },
+    "ENGINE_NO_1_EXXON_STAKE_FRACTION": {
+      "value": 0.0002,
+      "formatted": "0.02%",
+      "unit": "rate",
+      "description": "Fraction of ExxonMobil shares Engine No. 1 held (about $40M) when it won three of its four board nominees in May 2021",
+      "displayName": "Engine No. 1 ExxonMobil Stake Fraction",
+      "sourceType": "external",
+      "sourceRef": "engine-no-1-exxon-2021",
+      "sourceUrl": "https://businesslawreview.uchicago.edu/online-archive/hedge-fund-activism-engine-no-1",
+      "confidence": "high",
+      "formula": null,
+      "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-engine_no_1_exxon_stake_fraction",
+      "distribution": "fixed",
+      "chapterUrl": "https://manual.WarOnDisease.org/knowledge/appendix/loving-takeover.html",
+      "chapterTitle": "The Loving Takeover"
+    },
     "EOS_EQUITY_VALUE_V": {
       "value": 74066666666666.67,
       "formatted": "$74.1 trillion",
@@ -5839,7 +5877,7 @@
       "confidence": "medium",
       "formula": "DEFENSE_TAKEOVER_COST_TOTAL + INFLUENCE_ACTIVIST_STAKE_FRACTION * GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-full_influence_cost_activist",
-      "latex": "\\begin{gathered}\nC_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 0.05 \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+      "latex": "\\begin{gathered}\nC_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 5\\% \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
       "inputs": [
         "DEFENSE_TAKEOVER_COST_TOTAL",
         "GOV_CONTROLLING_SECTORS_TOP5_MARKET_CAP",
@@ -5861,7 +5899,7 @@
       "confidence": "high",
       "formula": "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_POPULATION_2024",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-full_influence_cost_per_human",
-      "latex": "\\begin{gathered}\nC_{influence,pp} = \\frac{C_{influence}}{Pop_{global}} = \\frac{\\$1.71T}{8B} = \\$214\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 0.05 \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+      "latex": "\\begin{gathered}\nC_{influence,pp} = \\frac{C_{influence}}{Pop_{global}} = \\frac{\\$1.71T}{8B} = \\$214\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 5\\% \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
       "inputs": [
         "FULL_INFLUENCE_COST_ACTIVIST",
         "GLOBAL_POPULATION_2024"
@@ -5882,7 +5920,7 @@
       "confidence": "high",
       "formula": "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_ANNUAL_SAVINGS",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-full_influence_pct_annual_savings",
-      "latex": "\\begin{gathered}\nC_{influence}/S_{annual} = \\frac{C_{influence}}{S_{annual}} = \\frac{\\$1.71T}{\\$31.1T} = 5.5\\%\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 0.05 \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\\\[0.5em]\n\\text{where } S_{annual} = s_{global} \\times GDP_{global} = 27\\% \\times \\$115T = \\$31.1T\n\\end{gathered}",
+      "latex": "\\begin{gathered}\nC_{influence}/S_{annual} = \\frac{C_{influence}}{S_{annual}} = \\frac{\\$1.71T}{\\$31.1T} = 5.5\\%\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 5\\% \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\\\[0.5em]\n\\text{where } S_{annual} = s_{global} \\times GDP_{global} = 27\\% \\times \\$115T = \\$31.1T\n\\end{gathered}",
       "inputs": [
         "FULL_INFLUENCE_COST_ACTIVIST",
         "GLOBAL_ANNUAL_SAVINGS"
@@ -5903,7 +5941,7 @@
       "confidence": "high",
       "formula": "FULL_INFLUENCE_COST_ACTIVIST / GLOBAL_INVESTABLE_ASSETS",
       "calculationUrl": "https://manual.warondisease.org/knowledge/appendix/parameters-and-calculations.html#sec-full_influence_pct_investable_assets",
-      "latex": "\\begin{gathered}\nC_{influence}/A_{investable} = \\frac{C_{influence}}{Assets_{invest}} = \\frac{\\$1.71T}{\\$305T} = 0.56\\%\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 0.05 \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
+      "latex": "\\begin{gathered}\nC_{influence}/A_{investable} = \\frac{C_{influence}}{Assets_{invest}} = \\frac{\\$1.71T}{\\$305T} = 0.56\\%\n\\\\[0.5em]\n\\text{where } C_{influence} = C_{takeover} + f_{activist} \\times MarketCap_{sectors} = \\$873B + 5\\% \\times \\$16.7T = \\$1.71T\n\\\\[0.5em]\n\\text{where } C_{takeover} = (MarketCap_{US} + MarketCap_{allied}) \\times f_{control} \\times m_{premium}\n\\end{gathered}",
       "inputs": [
         "FULL_INFLUENCE_COST_ACTIVIST",
         "GLOBAL_INVESTABLE_ASSETS"
@@ -8555,8 +8593,8 @@
     },
     "INFLUENCE_ACTIVIST_STAKE_FRACTION": {
       "value": 0.05,
-      "formatted": "0.05:1",
-      "unit": "ratio",
+      "formatted": "5%",
+      "unit": "rate",
       "description": "Activist equity stake assumed sufficient to win board influence when combined with index-fund votes, rather than buying outright control. Grounded in activist-investing precedent: Engine No. 1 won three ExxonMobil board seats with 0.02%, and Carl Icahn typically operates with 1-10% positions. 5% is a deliberately conservative central case; the real floor is far lower, because institutional investors hold 70-85% of every prime (the Big Three index managers alone hold roughly 20-30%, per the primes' own proxy statements) and supply the votes once shown the financial case.",
       "displayName": "Activist Stake Fraction",
       "sourceType": "definition",

@@ -1,9 +1,9 @@
 ---
 title: 'The Loving Takeover'
-description: 'The companies that lobby your government to spend 604 dollars on mass-murder capacity for every dollar on curing diseases that are 30 million times more likely to kill you than a terrorist are publicly traded. How to buy their shares, replace the boards, and hand the lobbyists a budget that nearly doubles median income and adds 12 healthy years per person.'
+description: 'The companies that lobby your government to spend 604 dollars on mass-murder capacity for every dollar on curing the diseases that kill almost everyone are publicly traded. How to buy their shares, replace the boards, and hand the lobbyists a budget that nearly doubles median income and adds 12 healthy years per person who benefits.'
 image: /assets/og-images/knowledge/appendix/loving-takeover-og-bw-academic.jpg
 abstract: |
-  Governments spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the military for every dollar on clinical trials. The nuclear arsenal is {{< var nuclear_winter_overkill_factor_nounit >}} times the size needed to end civilization once. The {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}-to-1 ratio is the output of a chain: military contractors pay lobbyists, lobbyists instruct Congress, boards approve the lobbying, and shareholders elect the boards. The shareholder link is the cheapest to change. A holding company buys shares in the contractors, makes the case to the index funds that already hold a fifth to a third of each one, elects new directors, and hands the lobbyists a budget that nearly doubles median income and adds 12 healthy years per person. Buying everything outright would cost {{< var defense_takeover_cost_total >}}, or {{< var defense_takeover_cost_per_human >}} per person. A campaign that wins board seats with the index funds' votes costs far less. Engine No. 1 did it at ExxonMobil in 2021 with 0.02 percent of the shares.
+  Governments spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on the military for every dollar on clinical trials. The nuclear arsenal is {{< var nuclear_winter_overkill_factor_nounit >}} times the size needed to end civilization once. The {{< var military_to_government_clinical_trials_spending_ratio_nounit >}}-to-1 ratio is the output of a chain: military contractors pay lobbyists, lobbyists instruct Congress, boards approve the lobbying, and shareholders elect the boards. The shareholder link is the cheapest to change. A holding company buys shares in the contractors, makes the case to the index funds that already hold a fifth to a third of each one, elects new directors, and hands the lobbyists a budget that nearly doubles median income and adds 12 healthy years per person who benefits. Buying everything outright would cost {{< var defense_takeover_cost_total >}}, or {{< var defense_takeover_cost_per_human >}} per person. A campaign that wins board seats with the index funds' votes costs far less. Engine No. 1 did it at ExxonMobil in 2021 with 0.02 percent of the shares.
 aliases:
   - /loving-takeover.html
   - /funniest-loving-takeover.html
@@ -50,7 +50,7 @@ scores:
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
 
-The companies that lobby your government to build infinity bombs and spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on mass-murder capacity for every dollar on curing diseases that are {{< var annual_terrorism_death_risk_denominator_nounit >}} times more likely to kill you than a terrorist are publicly traded. Anyone can buy their shares. Each share carries a vote for the board of directors. The board tells the lobbyists what to say. This is how you change what they say, what it costs, and what happens to your income and lifespan when you do.
+The companies that lobby your government to build infinity bombs and spend {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars on mass-murder capacity for every dollar on curing the diseases that kill almost everyone are publicly traded. Anyone can buy their shares. Each share carries a vote for the board of directors. The board tells the lobbyists what to say. This is how you change what they say, what it costs, and what happens to your income and lifespan when you do.
 
 ## The Problem
 
@@ -68,7 +68,7 @@ Nobody voted for {{< var military_to_government_clinical_trials_spending_ratio_n
 2. The lobbyists tell Congress to buy enough bombs for {{< var nuclear_winter_overkill_factor_nounit >}} apocalypses even though there is one civilization to apocalypse.
 3. Congress buys them. Over the twenty years of the Afghanistan war, the five biggest military contractors spent $1.1 billion on lobbying and received $2.02 trillion in contracts. That is $1,813 back for every dollar spent [@lobbying-roi-calc].
 4. A Princeton study of 1,779 policy decisions found that organized business groups get the policies they lobby for and the preferences of average citizens have almost no effect [@gilens2014]. [Unrepresentative Democracy](../problem/unrepresentative-democracy.qmd) has the details.
-5. Every dollar that buys a bomb is a dollar that does not test a treatment for the diseases that are {{< var annual_terrorism_death_risk_denominator_nounit >}} times more likely to kill you than a terrorist.
+5. Every dollar that buys a bomb is a dollar that does not test a treatment for the diseases that kill almost everyone. Your odds of being killed by a terrorist this year are 1 in {{< var annual_terrorism_death_risk_denominator_nounit >}}.
 6. Each contractor's board of directors approves the lobbying budget and the message.
 7. Shareholders elect the board.
 
@@ -82,14 +82,14 @@ The boards tell the same lobbyists to argue for the budget that nearly doubles m
 2. The treaty passes. {{< var treaty_annual_funding >}} a year moves from weapons to trials.
 3. The trials run on the diseases that have no treatment, through a [decentralized trial system](../solution/dfda.qmd) [@dfda-spec-paper-2025] that cuts the cost per patient by {{< var dfda_trial_cost_reduction_pct >}}.
 4. Treatments arrive for the {{< var diseases_without_effective_treatment >}} that have none today. Millions of people who were going to die stop dying. Each one starts earning instead of costing.
-5. At year 15, world GDP is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} what it would be on the current path. Over a lifetime, the median person gains {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} in after-tax income and {{< var avg_life_extension_per_beneficiary >}} healthy years. The [full model](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] shows every assumption.
+5. At year 15, world GDP is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} what it would be on the current path. Over a lifetime, the average person earns {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} more, and each person who benefits gets {{< var avg_life_extension_per_beneficiary >}} more healthy years. The [full model](../economics/1-pct-treaty-impact.qmd) [@1-pct-treaty-impact-paper-2025] shows every assumption.
 
-What the median person gets:
+What a person gets:
 
 | | Current path | Treaty path |
 |---|---:|---:|
 | Median after-tax income at year 20 | {{< var current_trajectory_median_after_tax_income_year_20 >}} | {{< var treaty_trajectory_median_after_tax_income_year_20 >}} |
-| Lifetime income gain per person | | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
+| Average lifetime income gain per person | | {{< var treaty_trajectory_lifetime_income_gain_per_capita >}} |
 | Extra healthy years per person who benefits | | {{< var avg_life_extension_per_beneficiary >}} |
 
 A military contractor's revenue is a share of the military budget. If the economy is {{< var treaty_trajectory_gdp_vs_current_trajectory_multiplier_year_15 >}} larger, the budget is larger in dollars at the same share of GDP, so revenue rises without winning a single new contract. The engineers who build guidance systems can build diagnostic instruments, and net margins in pharmaceuticals are {{< var pharma_vs_defense_net_margin_ratio >}} the net margins in weapons. And the directors are people. They get the same treatments as everyone else.
@@ -109,8 +109,8 @@ You do not need a majority. Each tier gets you something.
 | Stake | What it gets you | Cost across the big Western military contractors |
 |---|---|---:|
 | One share | A [letter the board must read](love-letter.qmd), and the right to [sue the directors](lawsuit.qmd) if they ignore it | About $200 |
-| Under 1 percent, plus a campaign | Board seats, if the index funds vote with you | $75 million to $200 million |
-| 1 to 5 percent | An agenda item at every annual meeting | $10 billion to $48 billion |
+| {{< var engine_no_1_exxon_stake_fraction >}}, Engine No. 1's stake at ExxonMobil, plus a campaign | Board seats, if the index funds vote with you | {{< var defense_takeover_cost_engine_no_1_stake >}} in shares, before campaign costs |
+| {{< var influence_activist_stake_fraction >}} | An agenda item at every annual meeting | {{< var defense_takeover_cost_activist >}} |
 | 50.1 percent | Nobody has to agree with you | {{< var defense_takeover_cost_total >}} |
 
 Start with one share. The letter is written, with [eight pre-filled versions](pre-filled-demand-letters.qmd), one per contractor. If the board ignores it for 60 days, the next step is a [shareholder proposal](shareholder-proposal-14a-8.qmd) on the annual ballot.
@@ -179,6 +179,6 @@ Against the {{< var defense_takeover_cost_per_human >}}: the treaty path adds {{
 
 ### The plan: campaigns with the index funds' votes
 
-A campaign that wins board seats with the index funds' votes costs $75 million to $200 million across all the big Western contractors. Engine No. 1 did it at ExxonMobil for $40 million. The first letter costs one share, about $200.
+Buying Engine No. 1's stake size in every big Western contractor costs {{< var defense_takeover_cost_engine_no_1_stake >}} in shares, before campaign costs. Engine No. 1 won three ExxonMobil board seats with a stake worth about $40 million [@engine-no-1-exxon-2021]. The first letter costs one share, about $200.
 
 You could instead [buy the politicians directly](cost-of-change-analysis.qmd), for about {{< var us_political_reform_investment_total >}} in the United States. That money is spent, and it must be spent again every election. Shares are an asset. If the campaign fails, you still own them.

@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 153 parameters used in the analysis, organized by type:
+This appendix documents all 157 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 57
-- Calculated values: 67
-- Core definitions: 29
+- External sources (peer-reviewed): 58
+- Calculated values: 69
+- Core definitions: 30
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (67 parameters) • [External Data Sources](#sec-external) (57 parameters) • [Core Definitions](#sec-definitions) (29 parameters)
+[Calculated Values](#sec-calculated) (69 parameters) • [External Data Sources](#sec-external) (58 parameters) • [Core Definitions](#sec-definitions) (30 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -260,6 +260,76 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-current_trajectory_median_after_tax_income_year_20.qmd >}}
+
+:::
+
+### Military Activist-Stake Cost (Realistic Entry): $48.4 billion {#sec-defense_takeover_cost_activist}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Realistic entry cost: capital to take an activist (non-control) equity position across all major Western military contractors, bought near market price with no control premium. Board influence comes from the financial argument plus the index-fund votes, not from outright control. This capital buys shares the fund keeps, so the true net cost is far lower than this gross figure. Contrast with the buy-outright ceiling (DEFENSE_TAKEOVER_COST_TOTAL).
+
+**Inputs**:
+
+- [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
+- [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
+- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 5% (95% CI: 1% - 10%)
+
+$$
+\begin{gathered}
+C_{activist} \\
+= f_{activist} \times (MarketCap_{US} + MarketCap_{allied}) \\
+= 5\% \times (\$836B + \$132B) \\
+= \$48.4B
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-defense_takeover_cost_activist.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-defense_takeover_cost_activist.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-defense_takeover_cost_activist.qmd >}}
+
+:::
+
+### Military Engine No. 1-Size Stake Cost: $194 million {#sec-defense_takeover_cost_engine_no_1_stake}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share cost of holding Engine No. 1's ExxonMobil stake fraction in every major Western military contractor. Shares only; proxy-campaign costs are extra.
+
+**Inputs**:
+
+- [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
+- [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
+- [Engine No. 1 ExxonMobil Stake Fraction](#sec-engine_no_1_exxon_stake_fraction) 📊: 0.02%
+
+$$
+\begin{gathered}
+C_{EngineNo1} \\
+= f_{EngineNo1} \times (MarketCap_{US} + MarketCap_{allied}) \\
+= 0.02\% \times (\$836B + \$132B) \\
+= \$194M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-defense_takeover_cost_engine_no_1_stake.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-defense_takeover_cost_engine_no_1_stake.qmd >}}
 
 :::
 
@@ -6320,6 +6390,22 @@ Fraction of GDP currently lost to disease (productivity losses + medical costs d
 
 :::
 
+### Engine No. 1 ExxonMobil Stake Fraction: 0.02% {#sec-engine_no_1_exxon_stake_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of ExxonMobil shares Engine No. 1 held (about $40M) when it won three of its four board nominees in May 2021
+
+**Source**: [@engine-no-1-exxon-2021]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### Gallup Global Median Per-Capita Income (2013, PPP): $2,920 {#sec-gallup_global_median_income_per_capita}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -7607,6 +7693,26 @@ Share of longer-run life-extension gains that have plausibly materialized into h
 #### Uncertainty Range
 
 **Technical**: Distribution: Fixed
+
+*Core definition*
+
+:::
+
+### Activist Stake Fraction: 5% {#sec-influence_activist_stake_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Activist equity stake assumed sufficient to win board influence when combined with index-fund votes, rather than buying outright control. Grounded in activist-investing precedent: Engine No. 1 won three ExxonMobil board seats with 0.02%, and Carl Icahn typically operates with 1-10% positions. 5% is a deliberately conservative central case; the real floor is far lower, because institutional investors hold 70-85% of every prime (the Big Three index managers alone hold roughly 20-30%, per the primes' own proxy statements) and supply the votes once shown the financial case.
+
+#### Uncertainty Range
+
+**Technical**: 95% CI: [1%, 10%]
+
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 10% (±90%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+
+#### Input Distribution
+
+{{< include ../figures/distribution-influence_activist_stake_fraction.qmd >}}
 
 *Core definition*
 

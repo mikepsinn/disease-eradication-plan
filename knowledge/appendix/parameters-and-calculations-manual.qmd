@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 782 parameters used in the analysis, organized by type:
+This appendix documents all 784 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 222
-- Calculated values: 401
+- External sources (peer-reviewed): 223
+- Calculated values: 402
 - Core definitions: 159
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (401 parameters) • [External Data Sources](#sec-external) (222 parameters) • [Core Definitions](#sec-definitions) (159 parameters)
+[Calculated Values](#sec-calculated) (402 parameters) • [External Data Sources](#sec-external) (223 parameters) • [Core Definitions](#sec-definitions) (159 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -5418,13 +5418,13 @@ Realistic entry cost: capital to take an activist (non-control) equity position 
 
 - [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
 - [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
-- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 0.05:1 (95% CI: 0.01:1 - 0.1:1)
+- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 5% (95% CI: 1% - 10%)
 
 $$
 \begin{gathered}
 C_{activist} \\
 = f_{activist} \times (MarketCap_{US} + MarketCap_{allied}) \\
-= 0.05 \times (\$836B + \$132B) \\
+= 5\% \times (\$836B + \$132B) \\
 = \$48.4B
 \end{gathered}
 $$
@@ -5469,7 +5469,7 @@ $$
 \begin{gathered}
 C_{activist} \\
 = f_{activist} \times (MarketCap_{US} + MarketCap_{allied}) \\
-= 0.05 \times (\$836B + \$132B) \\
+= 5\% \times (\$836B + \$132B) \\
 = \$48.4B
 \end{gathered}
 $$
@@ -5486,6 +5486,39 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-defense_takeover_cost_activist_pct_investable_assets.qmd >}}
+
+:::
+
+### Military Engine No. 1-Size Stake Cost: $194 million {#sec-defense_takeover_cost_engine_no_1_stake}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Share cost of holding Engine No. 1's ExxonMobil stake fraction in every major Western military contractor. Shares only; proxy-campaign costs are extra.
+
+**Inputs**:
+
+- [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
+- [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
+- [Engine No. 1 ExxonMobil Stake Fraction](#sec-engine_no_1_exxon_stake_fraction) 📊: 0.02%
+
+$$
+\begin{gathered}
+C_{EngineNo1} \\
+= f_{EngineNo1} \times (MarketCap_{US} + MarketCap_{allied}) \\
+= 0.02\% \times (\$836B + \$132B) \\
+= \$194M
+\end{gathered}
+$$
+
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-defense_takeover_cost_engine_no_1_stake.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-defense_takeover_cost_engine_no_1_stake.qmd >}}
 
 :::
 
@@ -10570,7 +10603,7 @@ Realistic cost to take an activist (non-control) stake across EVERY government-c
 - [US Military Primes Market Cap](#sec-defense_primes_market_cap_us) 📊: $836 billion
 - [Allied Military Primes Market Cap](#sec-defense_primes_market_cap_allied) 📊: $132 billion
 - [Government-Controlling Sectors Top-5 Market Cap](#sec-gov_controlling_sectors_top5_market_cap) 📊: $16.7 trillion (95% CI: $15 trillion - $18 trillion)
-- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 0.05:1 (95% CI: 0.01:1 - 0.1:1)
+- [Activist Stake Fraction](#sec-influence_activist_stake_fraction): 5% (95% CI: 1% - 10%)
 
 $$
 \begin{gathered}
@@ -36044,6 +36077,22 @@ Regulatory delay for efficacy testing (Phase II/III) post-safety verification. B
 
 :::
 
+### Engine No. 1 ExxonMobil Stake Fraction: 0.02% {#sec-engine_no_1_exxon_stake_fraction}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Fraction of ExxonMobil shares Engine No. 1 held (about $40M) when it won three of its four board nominees in May 2021
+
+**Source**: [@engine-no-1-exxon-2021]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
 ### EOS Social Value Capture Rate: 2.2% {#sec-eos_social_value_capture_pct}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -41164,7 +41213,7 @@ Modeled annual legal entries under uncapped priced entry. Anchored to the most s
 
 :::
 
-### Activist Stake Fraction: 0.05:1 {#sec-influence_activist_stake_fraction}
+### Activist Stake Fraction: 5% {#sec-influence_activist_stake_fraction}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
@@ -41172,9 +41221,9 @@ Activist equity stake assumed sufficient to win board influence when combined wi
 
 #### Uncertainty Range
 
-**Technical**: 95% CI: [0.01:1, 0.1:1]
+**Technical**: 95% CI: [1%, 10%]
 
-**What this means**: This estimate is highly uncertain. The true value likely falls between 0.01:1 and 0.1:1 (±90%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
+**What this means**: This estimate is highly uncertain. The true value likely falls between 1% and 10% (±90%). This represents a very wide range that our Monte Carlo simulations account for when calculating overall uncertainty in the results.
 
 #### Input Distribution
 
