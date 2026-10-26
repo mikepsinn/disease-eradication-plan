@@ -285,6 +285,8 @@ These systems show that the answers are often already known. Their common limit 
 
 Public economics gives the direction of change more clearly than exact levels. In rich countries, a government larger by 10 percentage points of GDP is associated with annual growth 0.5 to 1 percentage point lower, although the authors warn against reading this as causal [@bergh2011]. OECD economists find that public investment and education spending raise long-run growth, pensions and subsidies lower it, and very large governments reduce growth unless government is highly effective [@fournier2016]. The IMF estimates that, on average, about 30% of the potential gains from public investment are lost to inefficiency [@imf-public-investment-efficiency-2015]. The socially optimal level of research and development spending is, conservatively, at least two to four times actual US spending [@jones1998]. The optimal share of spending devoted to health rises with income and is likely to exceed 30% in the United States by mid-century [@hall2007]. Across 133 US policy changes, direct investments in low-income children's health and education delivered the most welfare per dollar of net government cost, and many recovered their cost through later taxes and lower transfers [@hendren2020].
 
+Efficiency frontier methods ask a different question: how much output a government could get from the money it already spends. Data envelopment analysis [@charnes1978] and stochastic frontier analysis [@aigner1977] estimate a best-practice frontier from observed inputs and outputs, and applied to public spending they measure each government's distance from it [@afonso2005]. Across 20 OECD countries in 2009-2013, spending could have fallen by 26.8% on average with the same public performance [@afonso-kazemi-2017]. These studies measure waste at current levels; they do not say what the levels should be.
+
 ### AI and Simulation
 
 Machine learning has designed policies in simulated worlds. In simulated economies of learning agents, a reinforcement-learning tax planner beat the Saez optimal-tax formula by more than 8% on utilitarian welfare in a four-agent setting (2% with ten agents); the authors stress that the results are not ready for real-world policy [@zheng2022]. In an incentivized online investment game, a redistribution rule designed by reinforcement learning won majority votes against human-designed rules, for example 66% of votes against strict equal sharing [@koster2022]. An AI mediator wrote group statements on contested policy questions that participants preferred to those of trained human mediators 56% of the time in a head-to-head test [@tessler2024]. These systems learn from simulations or volunteer experiments. Optimocracy learns from outcomes observed in jurisdictions that actually adopted policies.
@@ -853,20 +855,20 @@ The OBG framework combines three evidence sources:
 
 1. **Diminishing returns modeling**: Where is the "knee" of the spending-outcome curve?
 2. **Cost-effectiveness threshold analysis**: Which interventions pass standard health economics thresholds?
-3. **Reference country benchmarking**: What do high-performing peer countries spend? This enters the models as data, and gives only a placeholder target by itself, because copying peers can copy their mistakes.
+3. **Efficiency frontiers**: What is the most that any jurisdiction gets at each spending level? For defense, the frontier is the least cost of the capabilities that defending the country requires. Peer-country spending enters the models as data and never sets a target by itself, because copying peers copies their mistakes, and a target set as a multiple of current spending copies today's mistakes.
 
 Every program must beat two outside options: a universal cash payment and lower taxes. For each goal, OBG also compares delivery methods (public provision, vouchers, cash, prizes, payment for results) against cash.
 
 The **Budget Impact Score (BIS)** measures our *confidence* in each category's target estimate based on the quality of causal evidence. Categories with strong RCT evidence have high BIS; categories with only cross-sectional correlations have low BIS.
 
-**Example output** (illustrative numbers; only the trials and vaccination targets are derived in the OBG specification, and the others are placeholders):
+**Example output** (illustrative numbers; the trials and vaccination targets come from worked examples in the OBG specification, and the military target from its threat-based cost frontier; basic research has evidence on direction only):
 
 | Category | Current | Target | Gap | Evidence |
 |----------|---------|-----|-----|----------|
 | **Pragmatic clinical trials** | $0.5B | $50B | **+$49.5B** | A (RCTs) |
 | Vaccinations | $8B | $16B | +$8B | A (RCTs) |
-| Basic research | $45B | $90B | +$45B | B (spillovers) |
-| Military | $850B | $459B | -$391B | C (benchmarks) |
+| Basic research | $45B | Not derived | Increase likely | Direction only |
+| Military | {{< var us_military_spending_2024_annual >}} | {{< var us_defense_first_principles_optimal >}} | Cut {{< var us_gov_waste_military_overspend >}} | C (threat-by-threat costs) |
 
 For the complete methodology including estimation procedures, validation framework, and worked examples, see [Optimal Budget Generator Specification](https://obg.warondisease.org).
 

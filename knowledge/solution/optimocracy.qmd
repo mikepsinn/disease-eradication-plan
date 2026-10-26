@@ -77,16 +77,16 @@ The Evidence Machine does three things. That's it. Three things. Your species ha
 
 (It's an appliance. You plug in policies, it tells you which ones work. Your species will find this concept exotic.)
 
-**Recommend.** The Optimitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States (illustrative numbers; only the first two targets are derived so far):
+**Recommend.** The Optimitron has two settings. The [Optimal Budget Generator](https://obg.warondisease.org) [@obg-paper-2025] answers "how much should you spend on what?" The [Optimal Policy Generator](https://opg.warondisease.org) [@opg-paper-2025] answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States (illustrative numbers; the trial and vaccine targets are worked out in the paper, and the military target is what it costs to defend the actual country, priced one real threat at a time):
 
 | Category | Current | Optimal | Gap | Evidence |
 |----------|---------|---------|-----|----------|
 | Pragmatic clinical trials | $0.5B | $50B | **+$49.5B** | A (RCTs) |
 | Vaccinations | $8B | $16B | +$8B | A (RCTs) |
-| Military (discretionary) | $850B | $459B | -$391B | C (benchmarks) |
-| Agricultural subsidies | $25B | $0B | -$25B | A (welfare analysis) |
+| Military | {{< var us_military_spending_2024_annual >}} | {{< var us_defense_first_principles_optimal >}} | Cut {{< var us_gov_waste_military_overspend >}} | C (threat-by-threat costs) |
+| Agricultural subsidies | $25B | $0B | -$25B | C (assumed to fail the cash test) |
 
-You are spending 100 times less than optimal on figuring out which medicines work, and paying farmers $25 billion a year to grow food nobody asked for. The Optimitron noticed. It also noticed you could cut $391 billion from the murder budget and still have the largest military on the planet. The freed money does not go to whoever lobbies loudest. Every program has to beat handing people the same dollar in cash, or leaving it with whoever earned it. The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts.
+You are spending 100 times less than optimal on figuring out which medicines work, and paying farmers $25 billion a year to grow food nobody asked for. The Optimitron noticed. It also noticed that defending your actual country, one real threat at a time, costs {{< var us_defense_first_principles_optimal >}} a year, and you spend {{< var us_military_spending_2024_annual >}} on the murder budget. The other {{< var us_gov_waste_military_overspend >}} is for being in charge of everywhere else. The freed money does not go to whoever lobbies loudest. Every program has to beat handing people the same dollar in cash, or leaving it with whoever earned it. The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts.
 
 **Track.** When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: 78% aligned. Senator Jones: 34% aligned. This information is public. Any citizen can check. There is a word for this. The word is "checking if the person you hired did the thing you hired them to do." Your species finds this concept revolutionary, which tells you everything. Politicians who ignore the evidence must do so on the record.
 
