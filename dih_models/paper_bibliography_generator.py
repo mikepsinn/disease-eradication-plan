@@ -277,7 +277,14 @@ def generate_filtered_variables_yml(
         # Use default_style='"' to preserve double-quoted strings with escaped newlines
         # This matches the format of _variables.yml and prevents LaTeX equations
         # from being reformatted with literal newlines (which can cause issues)
-        yaml.dump(filtered, f, allow_unicode=True, default_flow_style=False, sort_keys=True, default_style='"')
+        # width=sys.maxsize disables PyYAML line folding so every value stays on
+        # one line like the source file. render-quarto.py post-processes this file
+        # with plain-text regexes (CI stripping, link conversion); a fold inside a
+        # value left "\</span>" behind, which YAML rejects as an unknown escape.
+        yaml.dump(
+            filtered, f, allow_unicode=True, default_flow_style=False,
+            sort_keys=True, default_style='"', width=sys.maxsize,
+        )
 
     return len(filtered)
 
