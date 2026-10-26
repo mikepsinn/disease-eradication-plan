@@ -4014,11 +4014,11 @@ export const US_MILITARY_SPENDING_2024_ANNUAL: Parameter = {
   parameterName: "US_MILITARY_SPENDING_2024_ANNUAL",
   calculationsUrl: "https://manual.WarOnDisease.org/calculations.html#sec-us_military_spending_2024_annual",
   unit: "USD",
-  displayName: "US Military Spending in 2024",
-  description: "US military spending in 2024 in constant dollars",
+  displayName: "US Military Budget, FY2024",
+  description: "US military budget for FY2024: defense discretionary budget authority ($886.3B, the FY2024 defense spending cap; CRS R48057). This is budget authority, not outlays: actual FY2024 national defense outlays were $874.0B (Monthly Treasury Statement). Equal to constant 2024 dollars for 2024.",
   sourceType: "external",
-  sourceRef: "us-military-spending-historical-constant-dollars",
-  sourceUrl: "https://www.davemanuel.com/us-defense-spending-history-military-budget-data.php",
+  sourceRef: "crs-r48057-2024",
+  sourceUrl: "https://www.congress.gov/crs_external_products/R/PDF/R48057/R48057.2.pdf",
   confidence: "high",
   distribution: "fixed",
   manualPageUrl: "https://manual.WarOnDisease.org/knowledge/problem/unrepresentative-democracy.html",
@@ -16771,6 +16771,20 @@ export const citations: Record<string, Citation> = {
         URL: "https://www.congress.gov/crs_external_products/IF/PDF/IF12647/IF12647.2.pdf",
         note: "Table 1: FY2024 enacted IRS appropriations total \\$12.32 billion. Verified quote: \"In FY2024, appropriations accounted for 58% (\\$12.3 billion) of the \\$21.0 billion IRS budget.\"",
   },
+  "crs-r48057-2024": {
+        id: "crs-r48057-2024",
+        type: "webpage",
+        title: "FY2024 NDAA Funding Authorizations and Legislative Activity: In Brief",
+        author: [
+          {
+            family: "McGarry",
+            given: "Brendan W."
+          },
+        ],
+        issued: { 'date-parts': [[2024]] },
+        URL: "https://www.congress.gov/crs_external_products/R/PDF/R48057/R48057.2.pdf",
+        note: "May 2, 2024. Fetched as PDF and read from the extracted text (summary page). The \\$886.3 billion is FY2024 defense discretionary budget authority, not outlays.",
+  },
   "cs-global-wealth-report-2023": {
         id: "cs-global-wealth-report-2023",
         type: "article-journal",
@@ -19195,7 +19209,7 @@ export const PARAMETER_STATS = {
   external: 253,
   calculated: 463,
   definitions: 188,
-  citations: 197,
+  citations: 198,
 } as const;
 
 // ============================================================================

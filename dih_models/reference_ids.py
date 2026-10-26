@@ -302,6 +302,7 @@ class ReferenceID(str, Enum):
     CRS_CRISPR_NIH_FUNDING_2011_2018 = "crs-crispr-nih-funding-2011-2018"
     CRS_DEFENSE_PRIMER_NUCLEAR_FORCES = "crs-defense-primer-nuclear-forces"
     CRS_IRS_APPROPRIATIONS_FY2025 = "crs-irs-appropriations-fy2025"
+    CRS_R48057_2024 = "crs-r48057-2024"
     CRS_WAR_COSTS_2010 = "crs-war-costs-2010"
     CS_GLOBAL_WEALTH_REPORT_2023 = "cs-global-wealth-report-2023"
     CSIS_BAD_IDEA_NAVY_TRADE = "csis-bad-idea-navy-trade"

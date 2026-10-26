@@ -11845,10 +11845,13 @@ US_MILITARY_SPENDING_1947_ANNUAL_2024USD = Parameter(
 US_MILITARY_SPENDING_2024_ANNUAL = Parameter(
     886_000_000_000,
     manual_ref="knowledge/problem/unrepresentative-democracy.qmd",
-    source_ref=ReferenceID.US_MILITARY_SPENDING_HISTORICAL_CONSTANT_DOLLARS,
+    source_ref="crs-r48057-2024",
     source_type="external",
-    description="US military spending in 2024 in constant dollars",
-    display_name="US Military Spending in 2024",
+    description="US military budget for FY2024: defense discretionary budget authority "
+                "($886.3B, the FY2024 defense spending cap; CRS R48057). This is budget "
+                "authority, not outlays: actual FY2024 national defense outlays were $874.0B "
+                "(Monthly Treasury Statement). Equal to constant 2024 dollars for 2024.",
+    display_name="US Military Budget, FY2024",
     unit="USD",
     distribution="fixed",
     keywords=["2024", "current", "peacetime", "constant dollars"],
