@@ -60,6 +60,7 @@ from lib.quarto_config_utils import (
     get_qmd_files_for_config,
 )
 from dih_models.image_paths import local_image_path
+from dih_models.latex_width import latex_display_lines, latex_line_width_pt
 from dih_models.markdown_export import split_qmd_frontmatter
 from dih_models.subdomain_redirects_generator import collect_subdomain_redirects
 from dih_models.yaml_utils import load_quarto_config
@@ -1614,6 +1615,35 @@ def check_latex_variable_raw_names(variables_data=None):
             ))
 
 
+# Paperback text block is 405pt wide (7in trim, 0.875in inner, 0.5in outer margin).
+# The mathtext estimate reads about 5% narrow on long lines, so keep that much margin.
+LATEX_LINE_MAX_WIDTH_PT = 385
+
+
+def check_latex_variable_line_widths(variables_data=None):
+    """
+    Check that no line of a generated _latex variable is wider than the PDF text block.
+
+    Display math cannot wrap. An over-wide line runs into the margin, and KDP rejects
+    the paperback ("text is outside the margins").
+    """
+    if not isinstance(variables_data, dict):
+        return
+    for var_name, value in variables_data.items():
+        if not var_name.endswith("_latex") or not isinstance(value, str):
+            continue
+        for line in latex_display_lines(value):
+            width = latex_line_width_pt(line)
+            if width is not None and width > LATEX_LINE_MAX_WIDTH_PT:
+                errors.append(ValidationError(
+                    "_variables.yml", 0,
+                    f"Variable '{var_name}' has a {width:.0f}pt equation line "
+                    f"(limit {LATEX_LINE_MAX_WIDTH_PT}pt): {line[:80]}",
+                    "Split the formula with an intermediate parameter, or break the line at a "
+                    "top-level + or =, then regenerate."
+                ))
+
+
 def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str], lines: List[str]):
     """
     Check for Quarto variables that are referenced but not defined in _variables.yml
@@ -2233,6 +2263,7 @@ def main():
     logger.debug("Checking variable link targets in _variables.yml...")
     check_variable_link_targets(variables_data)
     check_latex_variable_raw_names(variables_data)
+    check_latex_variable_line_widths(variables_data)
 
     # Load defined parameters from dih_models/parameters.py
     logger.debug("Loading defined parameters from dih_models/parameters.py...")

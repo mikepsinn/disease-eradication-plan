@@ -110,7 +110,9 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60)) \\
+= 416M \times (21 - (62 - 60)) \\
+= 7.9B
 \end{gathered}
 $$
 where:
@@ -214,7 +216,9 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60)) \\
+= 416M \times (21 - (62 - 60)) \\
+= 7.9B
 \end{gathered}
 $$
 where:
@@ -315,7 +319,9 @@ Years of Life Lost from disease eradication delay deaths (PRIMARY estimate). Yea
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60)) \\
+= 416M \times (21 - (62 - 60)) \\
+= 7.9B
 \end{gathered}
 $$
 where:
@@ -1084,7 +1090,9 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60)) \\
+= 416M \times (21 - (62 - 60)) \\
+= 7.9B
 \end{gathered}
 $$
 where:

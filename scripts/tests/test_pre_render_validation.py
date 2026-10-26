@@ -324,3 +324,17 @@ def test_latex_variable_raw_names_are_errors() -> None:
     assert "yll_latex" in module.errors[0].message
     assert "DEATHS_TOTAL" in module.errors[0].message
     assert "REMAINING_LIFE_EXPECTANCY_AT_60" in module.errors[0].message
+
+
+def test_latex_variable_wide_lines_are_errors() -> None:
+    module = load_pre_render_validation_module()
+    module.errors.clear()
+
+    long_sum = " + ".join(f"Cost_{{item{i}}}" for i in range(30))
+    module.check_latex_variable_line_widths({
+        "wide_latex": "$$\n\\begin{gathered}\nX \\\\\n= " + long_sum + "\n\\end{gathered}\n$$",
+        "ok_latex": "$$\n\\begin{gathered}\nX \\\\\n= a + b\n\\end{gathered}\n$$",
+    })
+
+    assert len(module.errors) == 1
+    assert "wide_latex" in module.errors[0].message
