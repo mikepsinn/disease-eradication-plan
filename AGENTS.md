@@ -28,6 +28,7 @@ Quarto book: "How to End War and Disease" - getting nations to sign a 1% treaty 
 
 | Rule | Requirement |
 |------|-------------|
+| Branch names | `feature/<short-kebab-case-description>` for features and fixes, cut from `develop`; one branch per PR. No `claude/`, `codex/`, `agent/`, or `ccr-` prefixes and no random suffixes. If a tool named the branch, rename it before the first push (`git branch -m feature/<description>`); a pushed branch keeps its name |
 | Agent commits | Only when explicitly requested; review the complete diff and stage only intended files |
 | Identity | Author and committer: `Mike P. Sinn <m@crowdsourcingcures.org>` (set in `.claude/settings.json`). Never commit as Claude or another agent; no `Co-Authored-By` agent trailer |
 | Pre-commit | Full artifact generation, Pyright, and repository-wide validation run automatically; never use `--no-verify` unless explicitly requested |
