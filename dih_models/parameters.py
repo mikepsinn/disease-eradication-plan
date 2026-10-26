@@ -15428,10 +15428,24 @@ INFLUENCE_ACTIVIST_STAKE_FRACTION = Parameter(
     source_type="definition",
     description="Activist equity stake assumed sufficient to win board influence when combined with index-fund votes, rather than buying outright control. Grounded in activist-investing precedent: Engine No. 1 won three ExxonMobil board seats with 0.02%, and Carl Icahn typically operates with 1-10% positions. 5% is a deliberately conservative central case; the real floor is far lower, because institutional investors hold 70-85% of every prime (the Big Three index managers alone hold roughly 20-30%, per the primes' own proxy statements) and supply the votes once shown the financial case.",
     display_name="Activist Stake Fraction",
-    unit="ratio",
+    unit="rate",
     confidence_interval=(0.01, 0.10),
     keywords=["activist", "engine no. 1", "icahn", "board seat", "proxy"],
     latex_symbol=r"f_{activist}",
+)
+
+ENGINE_NO_1_EXXON_STAKE_FRACTION = Parameter(
+    0.0002,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_ref=ReferenceID.ENGINE_NO_1_EXXON_2021,
+    source_type="external",
+    confidence="high",
+    description="Fraction of ExxonMobil shares Engine No. 1 held (about $40M) when it won three of its four board nominees in May 2021",
+    display_name="Engine No. 1 ExxonMobil Stake Fraction",
+    unit="rate",
+    keywords=["engine no. 1", "exxonmobil", "activist", "board seat", "proxy fight"],
+    latex_symbol=r"f_{EngineNo1}",
+    distribution="fixed",
 )
 
 DEFENSE_TAKEOVER_ACQUISITION_PREMIUM = Parameter(
@@ -15472,6 +15486,21 @@ DEFENSE_TAKEOVER_COST_ACTIVIST = Parameter(
     compute=lambda ctx: (ctx["DEFENSE_PRIMES_MARKET_CAP_US"] + ctx["DEFENSE_PRIMES_MARKET_CAP_ALLIED"]) * ctx["INFLUENCE_ACTIVIST_STAKE_FRACTION"],
     keywords=["loving takeover", "activist", "entry cost", "board seat", "engine no. 1"],
     latex_symbol=r"C_{activist}",
+)
+
+DEFENSE_TAKEOVER_COST_ENGINE_NO_1_STAKE = Parameter(
+    (DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * ENGINE_NO_1_EXXON_STAKE_FRACTION,
+    manual_ref="knowledge/appendix/loving-takeover.qmd",
+    source_type="calculated",
+    description="Share cost of holding Engine No. 1's ExxonMobil stake fraction in every major Western military contractor. "
+                "Shares only; proxy-campaign costs are extra.",
+    display_name="Military Engine No. 1-Size Stake Cost",
+    unit="USD",
+    formula="(DEFENSE_PRIMES_MARKET_CAP_US + DEFENSE_PRIMES_MARKET_CAP_ALLIED) * ENGINE_NO_1_EXXON_STAKE_FRACTION",
+    inputs=["DEFENSE_PRIMES_MARKET_CAP_US", "DEFENSE_PRIMES_MARKET_CAP_ALLIED", "ENGINE_NO_1_EXXON_STAKE_FRACTION"],
+    compute=lambda ctx: (ctx["DEFENSE_PRIMES_MARKET_CAP_US"] + ctx["DEFENSE_PRIMES_MARKET_CAP_ALLIED"]) * ctx["ENGINE_NO_1_EXXON_STAKE_FRACTION"],
+    keywords=["loving takeover", "activist", "engine no. 1", "board seat", "entry cost"],
+    latex_symbol=r"C_{EngineNo1}",
 )
 
 DEFENSE_TAKEOVER_COST_ACTIVIST_PCT_INVESTABLE_ASSETS = Parameter(

@@ -22,7 +22,7 @@ low = 0.01
 high = 0.1
 dist_type = "normal"
 display_name = "Activist Stake Fraction"
-unit = "ratio"
+unit = "rate"
 
 # Calculate distribution parameters
 

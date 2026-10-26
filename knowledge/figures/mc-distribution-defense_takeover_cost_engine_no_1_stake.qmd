@@ -1,0 +1,9 @@
+**Monte Carlo note:** Military Engine No. 1-Size Stake Cost is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.936e-04)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | $194 million |
+| Mean (expected value) | $194 million |
+| Median (50th percentile) | $194 million |
+| Standard Deviation | $0 |
+| 90% Range (5th-95th percentile) | [$194 million, $194 million] |
