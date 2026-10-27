@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 94 parameters used in the analysis, organized by type:
+This appendix documents all 97 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 38
-- Calculated values: 39
+- Calculated values: 42
 - Core definitions: 17
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (39 parameters) • [External Data Sources](#sec-external) (38 parameters) • [Core Definitions](#sec-definitions) (17 parameters)
+[Calculated Values](#sec-calculated) (42 parameters) • [External Data Sources](#sec-external) (38 parameters) • [Core Definitions](#sec-definitions) (17 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -63,18 +63,17 @@ Calendar year when the destructive economy (military + cybercrime) reaches 50% o
 
 - [Destructive Economy Base Year](#sec-destructive_economy_base_year): 2025
 - [Destructive Economy as % of GDP](#sec-global_destructive_economy_pct_gdp) 🔢: 11.5%
-- [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
-- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
+- [Destructive Economy Growth Rate](#sec-global_destructive_economy_growth_rate) 🔢: 12.6%
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
-- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
-- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2 trillion
-- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5 trillion
 
 $$
 \begin{gathered}
 Y_{50\%} \\
 = Y_0 \\
-+ \frac{\ln\left(0.50 / \text{DESTRUCTIVE\_PCT\_GDP}\right)}{\ln\left(1 + \text{DESTRUCTIVE\_GROWTH} - \text{GDP\_GROWTH}\right)}
++ \operatorname{round}\left(\frac{\ln\left(\frac{0.5}{r_{destruct:GDP}}\right)}{\ln\left(1 + g_{destruct} - g_{base}\right)}\right) \\
+= 2025 \\
++ \operatorname{round}\left(\frac{\ln\left(\frac{0.5}{11.5\%}\right)}{\ln\left(1 + 12.6\% - 2.5\%\right)}\right) \\
+= 2040
 \end{gathered}
 $$
 where:
@@ -93,6 +92,17 @@ Cost_{destruct} \\
 = Spending_{mil} + Cost_{cyber} \\
 = \$2.72T + \$10.5T \\
 = \$13.2T
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+g_{destruct} \\
+= \frac{Spending_{mil}}{Cost_{destruct}} \times g_{mil,10yr} \\
++ \frac{Cost_{cyber}}{Cost_{destruct}} \times g_{cyber} \\
+= \frac{\$2.72T}{\$13.2T} \times 3.4\% \\
++ \frac{\$10.5T}{\$13.2T} \times 15\% \\
+= 12.6\%
 \end{gathered}
 $$
 *✓ High confidence*
@@ -990,6 +1000,51 @@ $$
 
 :::
 
+### Destructive Economy Growth Rate: 12.6% {#sec-global_destructive_economy_growth_rate}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Annual growth rate of the destructive economy (military spending plus cybercrime): each component's growth rate weighted by its share of the total.
+
+**Inputs**:
+
+- [Global Military Spending in 2024](#sec-global_military_spending_annual_2024) 📊: $2.72 trillion
+- [Global Destructive Economy (2025)](#sec-global_destructive_economy_annual_2025) 🔢: $13.2 trillion
+- [Military Spending Real CAGR (10-Year)](#sec-global_military_spending_real_cagr_10yr) 📊: 3.4%
+- [Global Cybercrime Costs (2025)](#sec-global_cybercrime_cost_annual_2025) 📊: $10.5 trillion
+- [Cybercrime Cost CAGR](#sec-global_cybercrime_cagr) 📊: 15%
+
+$$
+\begin{gathered}
+g_{destruct} \\
+= \frac{Spending_{mil}}{Cost_{destruct}} \times g_{mil,10yr} \\
++ \frac{Cost_{cyber}}{Cost_{destruct}} \times g_{cyber} \\
+= \frac{\$2.72T}{\$13.2T} \times 3.4\% \\
++ \frac{\$10.5T}{\$13.2T} \times 15\% \\
+= 12.6\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Cost_{destruct} \\
+= Spending_{mil} + Cost_{cyber} \\
+= \$2.72T + \$10.5T \\
+= \$13.2T
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_destructive_economy_growth_rate.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_destructive_economy_growth_rate.qmd >}}
+
+:::
+
 ### Destructive Economy as % of GDP: 11.5% {#sec-global_destructive_economy_pct_gdp}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1030,6 +1085,39 @@ $$
 
 :::
 
+### Life Expectancy to HALE Gap: 10.1 years {#sec-global_hale_gap}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Gap between life expectancy and healthy life expectancy. Represents years lived with disability or disease that could be recovered by curing diseases.
+
+**Inputs**:
+
+- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
+- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
+
+$$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
+$$
+
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-global_hale_gap.qmd >}}
+
+{{< include ../figures/sensitivity-table-global_hale_gap.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-global_hale_gap.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-global_hale_gap.qmd >}}
+
+:::
+
 ### Global Median After-Tax Consumable Income (2025): $2,138 {#sec-global_median_after_tax_income_2025}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1046,7 +1134,10 @@ Median after-tax consumable income today: mean income x (1 - military share) x m
 $$
 \begin{gathered}
 \tilde{m}_{0} \\
-= \bar{y}_{0} \times (1 - s_{mil}) \times \rho_{med} \times (1 - \tau_{med})
+= \bar{y}_{0} \times (1 - s_{mil}) \times \rho_{med} \\
+\times (1 - \tau_{med}) \\
+= \$14.4K \times (1 - 2.37\%) \times 0.203 \times (1 - 25\%) \\
+= \$2.14K
 \end{gathered}
 $$
 where:
@@ -1321,15 +1412,34 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= \Delta HALE_{treaty,longevity,15} \\
++ f_{cure,15,treaty} \times \Delta_{HALE} \\
+= 6 + 100\% \times 10.1 \\
+= 16.1
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 3 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+= \min\left(1, \frac{K_{treaty,15}}{T_{queue,SQ}}\right) \\
+= \min\left(1, \frac{814}{443}\right) \\
+= 100\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
 \end{gathered}
 $$
 where:
@@ -1407,6 +1517,10 @@ N_{untreated} \\
 $$
 where:
 $$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
+$$
+where:
+$$
 \begin{gathered}
 \Delta HALE_{treaty,longevity,15} \\
 = T_{extend} \times \rho_{HALE,15} \times f_{cure,15,treaty} \\
@@ -1454,8 +1568,15 @@ where:
 $$
 \begin{gathered}
 \tilde{m}_{treaty,15} \\
-= \bar{y}_{treaty,15} \times (1 - s_{mil} \times (1 - s_{ratchet})) \times \rho_{med} \times (1 - e_{med})^{15} \times (1 \\
-+ r_{relief} \times f_{cure,15,treaty}) \times (1 - \tau_{med})
+= \bar{y}_{treaty,15} \\
+\times (1 - s_{mil} \times (1 - s_{ratchet})) \\
+\times \rho_{med} \times (1 - e_{med})^{15} \\
+\times (1 + r_{relief} \times f_{cure,15,treaty}) \\
+\times (1 - \tau_{med}) \\
+= \$26.7K \times (1 - 2.37\% \times (1 - 10\%)) \times 0.203 \\
+\times (1 - 0\%)^{15} \times (1 + 10\% \times 100\%) \\
+\times (1 - 25\%) \\
+= \$4.38K
 \end{gathered}
 $$
 where:
@@ -1471,16 +1592,19 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,15} \\
-= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,15} \\
-+ g_{peace,treaty,15} + g_{cyber,treaty,15} \\
-+ g_{health,treaty,15})^{15}
+= GDP_{global} \\
+\times (1 + g_{base} + g_{redirect,treaty,15} + g_{peace,treaty,15} + g_{cyber,treaty,15} + g_{health,treaty,15})^{15} \\
+= \$115T \\
+\times (1 + 2.5\% + 0.807\% + 0.435\% + 0.402\% + 0.818\%)^{15} \\
+= \$238T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{redirect,treaty,15} \\
-= \bar{s}_{treaty,15} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= \bar{s}_{treaty,15} \times \Delta g_{30\%} \\
+\times m_{spillover} \times 1.67 \\
 = 4.4\% \times 5.5\% \times 2 \times 1.67 \\
 = 0.807\%
 \end{gathered}
@@ -1489,8 +1613,8 @@ where:
 $$
 \begin{gathered}
 \bar{s}_{treaty,15} \\
-= s_{ratchet} \times 0.212 \\
-= 10\% \times 0.212 \\
+= \frac{0.01 \times 3 + \min\left(0.02, s_{ratchet}\right) \times 4 + \min\left(0.05, s_{ratchet}\right) \times 5 + s_{ratchet} \times 3}{15} \\
+= \frac{0.01 \times 3 + \min\left(0.02, 10\%\right) \times 4 + \min\left(0.05, 10\%\right) \times 5 + 10\% \times 3}{15} \\
 = 4.4\%
 \end{gathered}
 $$
@@ -1498,7 +1622,11 @@ where:
 $$
 \begin{gathered}
 g_{peace,treaty,15} \\
-= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+= \frac{Benefit_{peace,soc}}{GDP_{global}} \\
+\times \frac{\bar{s}_{treaty,15}}{Reduce_{treaty}} \\
+\times \varepsilon_{conflict} \\
+= \frac{\$114B}{\$115T} \times \frac{4.4\%}{1\%} \times 1 \\
+= 0.435\%
 \end{gathered}
 $$
 where:
@@ -1600,15 +1728,18 @@ where:
 $$
 \begin{gathered}
 g_{cyber,treaty,15} \\
-= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,15} \times \varepsilon_{conflict}
+= \frac{Cost_{cyber}}{GDP_{global}} \times \bar{s}_{treaty,15} \\
+\times \varepsilon_{conflict} \\
+= \frac{\$10.5T}{\$115T} \times 4.4\% \times 1 \\
+= 0.402\%
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{health,treaty,15} \\
-= \frac{f_{cure,15,treaty} - d_{disease}}{-7.22} \\
-= \frac{100\% - 13\%}{-7.22} \\
+= (1 + f_{cure,15,treaty} \times d_{disease})^{\frac{1}{15}} - 1 \\
+= (1 + 100\% \times 13\%)^{\frac{1}{15}} - 1 \\
 = 0.818\%
 \end{gathered}
 $$
@@ -1616,7 +1747,24 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 3 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+= \min\left(1, \frac{K_{treaty,15}}{T_{queue,SQ}}\right) \\
+= \min\left(1, \frac{814}{443}\right) \\
+= 100\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
 \end{gathered}
 $$
 where:
@@ -1801,15 +1949,18 @@ Annual GDP growth bonus by year 15 from reducing cybercrime drag as the treaty w
 $$
 \begin{gathered}
 g_{cyber,treaty,15} \\
-= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,15} \times \varepsilon_{conflict}
+= \frac{Cost_{cyber}}{GDP_{global}} \times \bar{s}_{treaty,15} \\
+\times \varepsilon_{conflict} \\
+= \frac{\$10.5T}{\$115T} \times 4.4\% \times 1 \\
+= 0.402\%
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 \bar{s}_{treaty,15} \\
-= s_{ratchet} \times 0.212 \\
-= 10\% \times 0.212 \\
+= \frac{0.01 \times 3 + \min\left(0.02, s_{ratchet}\right) \times 4 + \min\left(0.05, s_{ratchet}\right) \times 5 + s_{ratchet} \times 3}{15} \\
+= \frac{0.01 \times 3 + \min\left(0.02, 10\%\right) \times 4 + \min\left(0.05, 10\%\right) \times 5 + 10\% \times 3}{15} \\
 = 4.4\%
 \end{gathered}
 $$
@@ -1839,15 +1990,30 @@ Fraction of currently untreatable diseases with a first effective treatment by y
 
 **Inputs**:
 
-- [Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
-- [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
-- [Treaty Ratchet Terminal Redirect Share](#sec-treaty_ratchet_terminal_share): 10% (95% CI: 1% - 19%)
+- [Treaty Cumulative Trial Capacity Years (15yr, Ratchet Schedule)](#sec-treaty_trial_capacity_cumulative_years_15yr) 🔢: 814 years
 - [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
 
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 3 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+= \min\left(1, \frac{K_{treaty,15}}{T_{queue,SQ}}\right) \\
+= \min\left(1, \frac{814}{443}\right) \\
+= 100\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
 \end{gathered}
 $$
 where:
@@ -1954,8 +2120,8 @@ Average military-to-medicine reallocation share over 15 years under the treaty t
 $$
 \begin{gathered}
 \bar{s}_{treaty,15} \\
-= s_{ratchet} \times 0.212 \\
-= 10\% \times 0.212 \\
+= \frac{0.01 \times 3 + \min\left(0.02, s_{ratchet}\right) \times 4 + \min\left(0.05, s_{ratchet}\right) \times 5 + s_{ratchet} \times 3}{15} \\
+= \frac{0.01 \times 3 + \min\left(0.02, 10\%\right) \times 4 + \min\left(0.05, 10\%\right) \times 5 + 10\% \times 3}{15} \\
 = 4.4\%
 \end{gathered}
 $$
@@ -1987,22 +2153,40 @@ HALE improvement at year 15 under Treaty Trajectory. It includes both closing th
 **Inputs**:
 
 - [Treaty Disease Cure Fraction (15yr, Ratchet Schedule)](#sec-treaty_disease_cure_fraction_15yr) 🔢: 100%
-- [Global Healthy Life Expectancy (HALE)](#sec-global_hale_current) 📊: 63.3 years (SE: ±1.5 years)
-- [Global Life Expectancy (2024)](#sec-global_life_expectancy_2024) 📊: 73.4 years (SE: ±2 years)
+- [Life Expectancy to HALE Gap](#sec-global_hale_gap) 🔢: 10.1 years
 - [Treaty Longevity HALE Gain at Year 15](#sec-treaty_longevity_hale_gain_year_15) 🔢: 6 years
 
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= \Delta HALE_{treaty,longevity,15} \\
++ f_{cure,15,treaty} \times \Delta_{HALE} \\
+= 6 + 100\% \times 10.1 \\
+= 16.1
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 3 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+= \min\left(1, \frac{K_{treaty,15}}{T_{queue,SQ}}\right) \\
+= \min\left(1, \frac{814}{443}\right) \\
+= 100\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
 \end{gathered}
 $$
 where:
@@ -2080,6 +2264,10 @@ N_{untreated} \\
 $$
 where:
 $$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
+$$
+where:
+$$
 \begin{gathered}
 \Delta HALE_{treaty,longevity,15} \\
 = T_{extend} \times \rho_{HALE,15} \times f_{cure,15,treaty} \\
@@ -2119,8 +2307,8 @@ Annualized GDP growth bonus by year 15 from lower disease burden under the treat
 $$
 \begin{gathered}
 g_{health,treaty,15} \\
-= \frac{f_{cure,15,treaty} - d_{disease}}{-7.22} \\
-= \frac{100\% - 13\%}{-7.22} \\
+= (1 + f_{cure,15,treaty} \times d_{disease})^{\frac{1}{15}} - 1 \\
+= (1 + 100\% \times 13\%)^{\frac{1}{15}} - 1 \\
 = 0.818\%
 \end{gathered}
 $$
@@ -2128,7 +2316,24 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 3 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+= \min\left(1, \frac{K_{treaty,15}}{T_{queue,SQ}}\right) \\
+= \min\left(1, \frac{814}{443}\right) \\
+= 100\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
 \end{gathered}
 $$
 where:
@@ -2246,7 +2451,24 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 3 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+= \min\left(1, \frac{K_{treaty,15}}{T_{queue,SQ}}\right) \\
+= \min\left(1, \frac{814}{443}\right) \\
+= 100\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
 \end{gathered}
 $$
 where:
@@ -2357,7 +2579,11 @@ Annual GDP growth bonus by year 15 from explicit avoided war-cost drag under the
 $$
 \begin{gathered}
 g_{peace,treaty,15} \\
-= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+= \frac{Benefit_{peace,soc}}{GDP_{global}} \\
+\times \frac{\bar{s}_{treaty,15}}{Reduce_{treaty}} \\
+\times \varepsilon_{conflict} \\
+= \frac{\$114B}{\$115T} \times \frac{4.4\%}{1\%} \times 1 \\
+= 0.435\%
 \end{gathered}
 $$
 where:
@@ -2459,8 +2685,8 @@ where:
 $$
 \begin{gathered}
 \bar{s}_{treaty,15} \\
-= s_{ratchet} \times 0.212 \\
-= 10\% \times 0.212 \\
+= \frac{0.01 \times 3 + \min\left(0.02, s_{ratchet}\right) \times 4 + \min\left(0.05, s_{ratchet}\right) \times 5 + s_{ratchet} \times 3}{15} \\
+= \frac{0.01 \times 3 + \min\left(0.02, 10\%\right) \times 4 + \min\left(0.05, 10\%\right) \times 5 + 10\% \times 3}{15} \\
 = 4.4\%
 \end{gathered}
 $$
@@ -2505,15 +2731,34 @@ where:
 $$
 \begin{gathered}
 \Delta HALE_{treaty,15} \\
-= f_{cure,15,treaty} \times \text{GLOBAL\_HALE\_GAP} \\
-+ \Delta HALE_{treaty,longevity,15}
+= \Delta HALE_{treaty,longevity,15} \\
++ f_{cure,15,treaty} \times \Delta_{HALE} \\
+= 6 + 100\% \times 10.1 \\
+= 16.1
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 3 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+= \min\left(1, \frac{K_{treaty,15}}{T_{queue,SQ}}\right) \\
+= \min\left(1, \frac{814}{443}\right) \\
+= 100\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
 \end{gathered}
 $$
 where:
@@ -2591,6 +2836,10 @@ N_{untreated} \\
 $$
 where:
 $$
+\Delta_{HALE} = LE_{global} - HALE_{0} = 73.4 - 63.3 = 10.1
+$$
+where:
+$$
 \begin{gathered}
 \Delta HALE_{treaty,longevity,15} \\
 = T_{extend} \times \rho_{HALE,15} \times f_{cure,15,treaty} \\
@@ -2631,7 +2880,8 @@ Annual GDP growth bonus by year 15 from redirecting military spending to medical
 $$
 \begin{gathered}
 g_{redirect,treaty,15} \\
-= \bar{s}_{treaty,15} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= \bar{s}_{treaty,15} \times \Delta g_{30\%} \\
+\times m_{spillover} \times 1.67 \\
 = 4.4\% \times 5.5\% \times 2 \times 1.67 \\
 = 0.807\%
 \end{gathered}
@@ -2640,8 +2890,8 @@ where:
 $$
 \begin{gathered}
 \bar{s}_{treaty,15} \\
-= s_{ratchet} \times 0.212 \\
-= 10\% \times 0.212 \\
+= \frac{0.01 \times 3 + \min\left(0.02, s_{ratchet}\right) \times 4 + \min\left(0.05, s_{ratchet}\right) \times 5 + s_{ratchet} \times 3}{15} \\
+= \frac{0.01 \times 3 + \min\left(0.02, 10\%\right) \times 4 + \min\left(0.05, 10\%\right) \times 5 + 10\% \times 3}{15} \\
 = 4.4\%
 \end{gathered}
 $$
@@ -2686,16 +2936,19 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,15} \\
-= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,15} \\
-+ g_{peace,treaty,15} + g_{cyber,treaty,15} \\
-+ g_{health,treaty,15})^{15}
+= GDP_{global} \\
+\times (1 + g_{base} + g_{redirect,treaty,15} + g_{peace,treaty,15} + g_{cyber,treaty,15} + g_{health,treaty,15})^{15} \\
+= \$115T \\
+\times (1 + 2.5\% + 0.807\% + 0.435\% + 0.402\% + 0.818\%)^{15} \\
+= \$238T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{redirect,treaty,15} \\
-= \bar{s}_{treaty,15} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= \bar{s}_{treaty,15} \times \Delta g_{30\%} \\
+\times m_{spillover} \times 1.67 \\
 = 4.4\% \times 5.5\% \times 2 \times 1.67 \\
 = 0.807\%
 \end{gathered}
@@ -2704,8 +2957,8 @@ where:
 $$
 \begin{gathered}
 \bar{s}_{treaty,15} \\
-= s_{ratchet} \times 0.212 \\
-= 10\% \times 0.212 \\
+= \frac{0.01 \times 3 + \min\left(0.02, s_{ratchet}\right) \times 4 + \min\left(0.05, s_{ratchet}\right) \times 5 + s_{ratchet} \times 3}{15} \\
+= \frac{0.01 \times 3 + \min\left(0.02, 10\%\right) \times 4 + \min\left(0.05, 10\%\right) \times 5 + 10\% \times 3}{15} \\
 = 4.4\%
 \end{gathered}
 $$
@@ -2713,7 +2966,11 @@ where:
 $$
 \begin{gathered}
 g_{peace,treaty,15} \\
-= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+= \frac{Benefit_{peace,soc}}{GDP_{global}} \\
+\times \frac{\bar{s}_{treaty,15}}{Reduce_{treaty}} \\
+\times \varepsilon_{conflict} \\
+= \frac{\$114B}{\$115T} \times \frac{4.4\%}{1\%} \times 1 \\
+= 0.435\%
 \end{gathered}
 $$
 where:
@@ -2815,15 +3072,18 @@ where:
 $$
 \begin{gathered}
 g_{cyber,treaty,15} \\
-= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,15} \times \varepsilon_{conflict}
+= \frac{Cost_{cyber}}{GDP_{global}} \times \bar{s}_{treaty,15} \\
+\times \varepsilon_{conflict} \\
+= \frac{\$10.5T}{\$115T} \times 4.4\% \times 1 \\
+= 0.402\%
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{health,treaty,15} \\
-= \frac{f_{cure,15,treaty} - d_{disease}}{-7.22} \\
-= \frac{100\% - 13\%}{-7.22} \\
+= (1 + f_{cure,15,treaty} \times d_{disease})^{\frac{1}{15}} - 1 \\
+= (1 + 100\% \times 13\%)^{\frac{1}{15}} - 1 \\
 = 0.818\%
 \end{gathered}
 $$
@@ -2831,7 +3091,24 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 3 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+= \min\left(1, \frac{K_{treaty,15}}{T_{queue,SQ}}\right) \\
+= \min\left(1, \frac{814}{443}\right) \\
+= 100\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
 \end{gathered}
 $$
 where:
@@ -2943,16 +3220,19 @@ Projected global GDP at year 15 under the optimistic treaty take-hold path. Comp
 $$
 \begin{gathered}
 GDP_{treaty,15} \\
-= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,15} \\
-+ g_{peace,treaty,15} + g_{cyber,treaty,15} \\
-+ g_{health,treaty,15})^{15}
+= GDP_{global} \\
+\times (1 + g_{base} + g_{redirect,treaty,15} + g_{peace,treaty,15} + g_{cyber,treaty,15} + g_{health,treaty,15})^{15} \\
+= \$115T \\
+\times (1 + 2.5\% + 0.807\% + 0.435\% + 0.402\% + 0.818\%)^{15} \\
+= \$238T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{redirect,treaty,15} \\
-= \bar{s}_{treaty,15} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= \bar{s}_{treaty,15} \times \Delta g_{30\%} \\
+\times m_{spillover} \times 1.67 \\
 = 4.4\% \times 5.5\% \times 2 \times 1.67 \\
 = 0.807\%
 \end{gathered}
@@ -2961,8 +3241,8 @@ where:
 $$
 \begin{gathered}
 \bar{s}_{treaty,15} \\
-= s_{ratchet} \times 0.212 \\
-= 10\% \times 0.212 \\
+= \frac{0.01 \times 3 + \min\left(0.02, s_{ratchet}\right) \times 4 + \min\left(0.05, s_{ratchet}\right) \times 5 + s_{ratchet} \times 3}{15} \\
+= \frac{0.01 \times 3 + \min\left(0.02, 10\%\right) \times 4 + \min\left(0.05, 10\%\right) \times 5 + 10\% \times 3}{15} \\
 = 4.4\%
 \end{gathered}
 $$
@@ -2970,7 +3250,11 @@ where:
 $$
 \begin{gathered}
 g_{peace,treaty,15} \\
-= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+= \frac{Benefit_{peace,soc}}{GDP_{global}} \\
+\times \frac{\bar{s}_{treaty,15}}{Reduce_{treaty}} \\
+\times \varepsilon_{conflict} \\
+= \frac{\$114B}{\$115T} \times \frac{4.4\%}{1\%} \times 1 \\
+= 0.435\%
 \end{gathered}
 $$
 where:
@@ -3072,15 +3356,18 @@ where:
 $$
 \begin{gathered}
 g_{cyber,treaty,15} \\
-= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,15} \times \varepsilon_{conflict}
+= \frac{Cost_{cyber}}{GDP_{global}} \times \bar{s}_{treaty,15} \\
+\times \varepsilon_{conflict} \\
+= \frac{\$10.5T}{\$115T} \times 4.4\% \times 1 \\
+= 0.402\%
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{health,treaty,15} \\
-= \frac{f_{cure,15,treaty} - d_{disease}}{-7.22} \\
-= \frac{100\% - 13\%}{-7.22} \\
+= (1 + f_{cure,15,treaty} \times d_{disease})^{\frac{1}{15}} - 1 \\
+= (1 + 100\% \times 13\%)^{\frac{1}{15}} - 1 \\
 = 0.818\%
 \end{gathered}
 $$
@@ -3088,7 +3375,24 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 3 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+= \min\left(1, \frac{K_{treaty,15}}{T_{queue,SQ}}\right) \\
+= \min\left(1, \frac{814}{443}\right) \\
+= 100\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
 \end{gathered}
 $$
 where:
@@ -3202,8 +3506,15 @@ Median after-tax consumable income at year 15 under the Treaty Trajectory. Same 
 $$
 \begin{gathered}
 \tilde{m}_{treaty,15} \\
-= \bar{y}_{treaty,15} \times (1 - s_{mil} \times (1 - s_{ratchet})) \times \rho_{med} \times (1 - e_{med})^{15} \times (1 \\
-+ r_{relief} \times f_{cure,15,treaty}) \times (1 - \tau_{med})
+= \bar{y}_{treaty,15} \\
+\times (1 - s_{mil} \times (1 - s_{ratchet})) \\
+\times \rho_{med} \times (1 - e_{med})^{15} \\
+\times (1 + r_{relief} \times f_{cure,15,treaty}) \\
+\times (1 - \tau_{med}) \\
+= \$26.7K \times (1 - 2.37\% \times (1 - 10\%)) \times 0.203 \\
+\times (1 - 0\%)^{15} \times (1 + 10\% \times 100\%) \\
+\times (1 - 25\%) \\
+= \$4.38K
 \end{gathered}
 $$
 where:
@@ -3219,16 +3530,19 @@ where:
 $$
 \begin{gathered}
 GDP_{treaty,15} \\
-= GDP_{global} \times (1 + g_{base} + g_{redirect,treaty,15} \\
-+ g_{peace,treaty,15} + g_{cyber,treaty,15} \\
-+ g_{health,treaty,15})^{15}
+= GDP_{global} \\
+\times (1 + g_{base} + g_{redirect,treaty,15} + g_{peace,treaty,15} + g_{cyber,treaty,15} + g_{health,treaty,15})^{15} \\
+= \$115T \\
+\times (1 + 2.5\% + 0.807\% + 0.435\% + 0.402\% + 0.818\%)^{15} \\
+= \$238T
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{redirect,treaty,15} \\
-= \bar{s}_{treaty,15} \times \Delta g_{30\%} \times m_{spillover} \times 1.67 \\
+= \bar{s}_{treaty,15} \times \Delta g_{30\%} \\
+\times m_{spillover} \times 1.67 \\
 = 4.4\% \times 5.5\% \times 2 \times 1.67 \\
 = 0.807\%
 \end{gathered}
@@ -3237,8 +3551,8 @@ where:
 $$
 \begin{gathered}
 \bar{s}_{treaty,15} \\
-= s_{ratchet} \times 0.212 \\
-= 10\% \times 0.212 \\
+= \frac{0.01 \times 3 + \min\left(0.02, s_{ratchet}\right) \times 4 + \min\left(0.05, s_{ratchet}\right) \times 5 + s_{ratchet} \times 3}{15} \\
+= \frac{0.01 \times 3 + \min\left(0.02, 10\%\right) \times 4 + \min\left(0.05, 10\%\right) \times 5 + 10\% \times 3}{15} \\
 = 4.4\%
 \end{gathered}
 $$
@@ -3246,7 +3560,11 @@ where:
 $$
 \begin{gathered}
 g_{peace,treaty,15} \\
-= \left(\frac{Benefit_{peace,soc}}{GDP_{global}}\right) \times \left(\frac{\bar{s}_{treaty,15}}{Reduce_{treaty}}\right) \times \varepsilon_{conflict}
+= \frac{Benefit_{peace,soc}}{GDP_{global}} \\
+\times \frac{\bar{s}_{treaty,15}}{Reduce_{treaty}} \\
+\times \varepsilon_{conflict} \\
+= \frac{\$114B}{\$115T} \times \frac{4.4\%}{1\%} \times 1 \\
+= 0.435\%
 \end{gathered}
 $$
 where:
@@ -3348,15 +3666,18 @@ where:
 $$
 \begin{gathered}
 g_{cyber,treaty,15} \\
-= \left(\frac{Cost_{cyber}}{GDP_{global}}\right) \times \bar{s}_{treaty,15} \times \varepsilon_{conflict}
+= \frac{Cost_{cyber}}{GDP_{global}} \times \bar{s}_{treaty,15} \\
+\times \varepsilon_{conflict} \\
+= \frac{\$10.5T}{\$115T} \times 4.4\% \times 1 \\
+= 0.402\%
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 g_{health,treaty,15} \\
-= \frac{f_{cure,15,treaty} - d_{disease}}{-7.22} \\
-= \frac{100\% - 13\%}{-7.22} \\
+= (1 + f_{cure,15,treaty} \times d_{disease})^{\frac{1}{15}} - 1 \\
+= (1 + 100\% \times 13\%)^{\frac{1}{15}} - 1 \\
 = 0.818\%
 \end{gathered}
 $$
@@ -3364,7 +3685,24 @@ where:
 $$
 \begin{gathered}
 f_{cure,15,treaty} \\
-= \min\left(1.0, (3 \times min(k_{capacity} \times \left(\frac{0.01}{0.01}\right), k_{capacity,max}) + 4 \times min(k_{capacity} \times (min(0.02, s_{ratchet})/0.01), k_{capacity,max}) + 5 \times min(k_{capacity} \times (min(0.05, s_{ratchet})/0.01), k_{capacity,max}) + 3 \times min(k_{capacity} \times \left(\frac{s_{ratchet}}{0.01}\right), k_{capacity,max})) / T_{queue,SQ}\right)
+= \min\left(1, \frac{K_{treaty,15}}{T_{queue,SQ}}\right) \\
+= \min\left(1, \frac{814}{443}\right) \\
+= 100\%
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
 \end{gathered}
 $$
 where:
@@ -3482,6 +3820,106 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-treaty_trajectory_median_after_tax_income_year_15.qmd >}}
+
+:::
+
+### Treaty Cumulative Trial Capacity Years (15yr, Ratchet Schedule): 814 years {#sec-treaty_trial_capacity_cumulative_years_15yr}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Trial-capacity-years over 15 years under the treaty ratchet schedule (1% for 3 years, 2% for 4, 5% for 5, terminal share for 3). Each phase's capacity is the 1%-funding capacity multiplier scaled by the phase redirect share, capped by the physical willing-participant ceiling. One capacity-year clears one status-quo year of the treatment queue.
+
+**Inputs**:
+
+- [Pragmatic Trial Capacity Multiplier at Treaty-Scale Funding](#sec-dfda_trial_capacity_multiplier) 🔢: 12.3x
+- [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
+- [Treaty Ratchet Terminal Redirect Share](#sec-treaty_ratchet_terminal_share): 10% (95% CI: 1% - 19%)
+
+$$
+\begin{gathered}
+K_{treaty,15} \\
+= 3 \times \min\left(\frac{k_{capacity} \times 0.01}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 4 \times \min\left(\frac{k_{capacity} \times \min\left(0.02, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 5 \times \min\left(\frac{k_{capacity} \times \min\left(0.05, s_{ratchet}\right)}{Reduce_{treaty}}, k_{capacity,max}\right) \\
++ 3 \times \min\left(\frac{k_{capacity} \times s_{ratchet}}{Reduce_{treaty}}, k_{capacity,max}\right) \\
+= 3 \times \min\left(\frac{12.3 \times 0.01}{1\%}, 566\right) \\
++ 4 \times \min\left(\frac{12.3 \times \min\left(0.02, 10\%\right)}{1\%}, 566\right) \\
++ 5 \times \min\left(\frac{12.3 \times \min\left(0.05, 10\%\right)}{1\%}, 566\right) \\
++ 3 \times \min\left(\frac{12.3 \times 10\%}{1\%}, 566\right) \\
+= 814
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity,max} \\
+= \frac{N_{willing}}{Slots_{curr}} \\
+= \frac{1.08B}{1.9M} \\
+= 566
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{willing} \\
+= N_{patients} \times Pct_{willing} \\
+= 2.4B \times 44.8\% \\
+= 1.08B
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-treaty_trial_capacity_cumulative_years_15yr.qmd >}}
+
+{{< include ../figures/sensitivity-table-treaty_trial_capacity_cumulative_years_15yr.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-treaty_trial_capacity_cumulative_years_15yr.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-treaty_trial_capacity_cumulative_years_15yr.qmd >}}
 
 :::
 

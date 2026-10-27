@@ -129,6 +129,8 @@ def wrap_latex_for_mobile(latex: str, max_width: int = 60) -> str:
                 if len(part) > max_width:
                     # Try to break long sums/products within this part
                     wrapped_part = _break_long_expression(part, max_width)
+                    if wrapped_part == part:
+                        wrapped_part = _break_long_expression(part, max_width, break_on='\\times')
                     lines.append(f"= {wrapped_part}")
                 else:
                     lines.append(f"= {part}")
@@ -157,8 +159,8 @@ def wrap_latex_for_mobile(latex: str, max_width: int = 60) -> str:
 
 def _split_at_top_level_operator(expr: str, operator: str) -> list[str]:
     r"""
-    Split expression on operator, but only at top level (not inside braces
-    or inside \left...\right delimiter groups).
+    Split expression on operator, but only at top level (not inside braces,
+    plain parentheses, or \left...\right delimiter groups).
 
     \left and \right MUST stay on the same line in gathered/aligned environments,
     so splits inside them would produce invalid LaTeX.
@@ -174,6 +176,7 @@ def _split_at_top_level_operator(expr: str, operator: str) -> list[str]:
     current = []
     brace_depth = 0
     left_depth = 0
+    paren_depth = 0
     i = 0
 
     while i < len(expr):
@@ -189,8 +192,10 @@ def _split_at_top_level_operator(expr: str, operator: str) -> list[str]:
             i += 6
             continue
 
+        top_level = brace_depth == 0 and left_depth == 0 and paren_depth == 0
+
         # Check for multi-char operator like \times
-        if operator == '\\times' and expr[i:i+6] == '\\times' and brace_depth == 0 and left_depth == 0:
+        if operator == '\\times' and expr[i:i+6] == '\\times' and top_level:
             parts.append(''.join(current).strip())
             current = []
             i += 6
@@ -207,7 +212,11 @@ def _split_at_top_level_operator(expr: str, operator: str) -> list[str]:
         elif char == '}':
             brace_depth -= 1
             current.append(char)
-        elif char == '+' and operator == '+' and brace_depth == 0 and left_depth == 0:
+        elif char in '()':
+            # A break inside a parenthesised factor reads as "(1 \\ + x)"
+            paren_depth += 1 if char == '(' else -1
+            current.append(char)
+        elif char == '+' and operator == '+' and top_level:
             parts.append(''.join(current).strip())
             current = []
         else:

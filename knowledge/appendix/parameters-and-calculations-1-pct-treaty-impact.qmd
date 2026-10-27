@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 223 parameters used in the analysis, organized by type:
+This appendix documents all 225 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 83
-- Calculated values: 101
+- Calculated values: 103
 - Core definitions: 39
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (101 parameters) • [External Data Sources](#sec-external) (83 parameters) • [Core Definitions](#sec-definitions) (39 parameters)
+[Calculated Values](#sec-calculated) (103 parameters) • [External Data Sources](#sec-external) (83 parameters) • [Core Definitions](#sec-definitions) (39 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -106,8 +106,9 @@ Cost per DALY for insecticide-treated bed nets: GiveWell's Against Malaria Found
 $$
 \begin{gathered}
 Cost_{nets} \\
-= Cost_{GW,max} / ((1 - (1 \\
-+ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
+= \frac{Cost_{GW,max}}{\frac{1 - (1 + r_{discount})^{-LE_{global}}}{\ln\left(1 + r_{discount}\right)}} \\
+= \frac{\$5.5K}{\frac{1 - (1 + 3\%)^{-73.4}}{\ln\left(1 + 3\%\right)}} \\
+= \$184
 \end{gathered}
 $$
 
@@ -400,8 +401,10 @@ UPPER-BOUND cost to acquire outright controlling stakes (50.1%) in all major Wes
 $$
 \begin{gathered}
 C_{takeover} \\
-= (MarketCap_{US} \\
-+ MarketCap_{allied}) \times f_{control} \times m_{premium}
+= (MarketCap_{US} + MarketCap_{allied}) \times f_{control} \\
+\times m_{premium} \\
+= (\$836B + \$132B) \times 0.501 \times 1.8 \\
+= \$873B
 \end{gathered}
 $$
 
@@ -533,8 +536,9 @@ where:
 $$
 \begin{gathered}
 NPV_{direct} \\
-= Funding_{trial,ref} \times (1 - (1 \\
-+ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
+= \frac{Funding_{trial,ref} \times (1 - (1 + r_{discount})^{-T_{queue,trial}})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{\$21.8B \times (1 - (1 + 3\%)^{-36})}{\ln\left(1 + 3\%\right)} \\
+= \$483B
 \end{gathered}
 $$
 where:
@@ -605,8 +609,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *~ Medium confidence*
@@ -642,8 +665,9 @@ NPV of annual direct funding for the therapeutic space exploration period, spent
 $$
 \begin{gathered}
 NPV_{direct} \\
-= Funding_{trial,ref} \times (1 - (1 \\
-+ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
+= \frac{Funding_{trial,ref} \times (1 - (1 + r_{discount})^{-T_{queue,trial}})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{\$21.8B \times (1 - (1 + 3\%)^{-36})}{\ln\left(1 + 3\%\right)} \\
+= \$483B
 \end{gathered}
 $$
 where:
@@ -746,7 +770,9 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60)) \\
+= 416M \times (21 - (62 - 60)) \\
+= 7.9B
 \end{gathered}
 $$
 where:
@@ -850,7 +876,9 @@ where:
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60)) \\
+= 416M \times (21 - (62 - 60)) \\
+= 7.9B
 \end{gathered}
 $$
 where:
@@ -951,7 +979,9 @@ Years of Life Lost from disease eradication delay deaths (PRIMARY estimate). Yea
 $$
 \begin{gathered}
 YLL_{lag} \\
-= \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - (\text{MEAN\_AGE\_OF\_DEATH} - 60))
+= Deaths_{lag} \times (e_{60} - (Age_{death,delay} - 60)) \\
+= 416M \times (21 - (62 - 60)) \\
+= 7.9B
 \end{gathered}
 $$
 where:
@@ -1270,8 +1300,8 @@ where:
 $$
 \begin{gathered}
 PV_{OPEX} \\
-= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
-= \frac{10}{\$40M \times 3\%} \\
+= \frac{OPEX_{total} \times (1 - (1 + r_{discount})^{-T_{horizon}})}{r_{discount}} \\
+= \frac{\$40M \times (1 - (1 + 3\%)^{-10})}{3\%} \\
 = \$342M
 \end{gathered}
 $$
@@ -1326,8 +1356,8 @@ Present value of annual opex over 10 years (NPV formula)
 $$
 \begin{gathered}
 PV_{OPEX} \\
-= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
-= \frac{10}{\$40M \times 3\%} \\
+= \frac{OPEX_{total} \times (1 - (1 + r_{discount})^{-T_{horizon}})}{r_{discount}} \\
+= \frac{\$40M \times (1 - (1 + 3\%)^{-10})}{3\%} \\
 = \$342M
 \end{gathered}
 $$
@@ -1381,8 +1411,8 @@ where:
 $$
 \begin{gathered}
 PV_{OPEX} \\
-= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
-= \frac{10}{\$40M \times 3\%} \\
+= \frac{OPEX_{total} \times (1 - (1 + r_{discount})^{-T_{horizon}})}{r_{discount}} \\
+= \frac{\$40M \times (1 - (1 + 3\%)^{-10})}{3\%} \\
 = \$342M
 \end{gathered}
 $$
@@ -1572,6 +1602,107 @@ $$
 
 :::
 
+### Average Discount Factor over dFDA Queue Clearance: 0.616x {#sec-dfda_queue_average_discount_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average discount factor over the dFDA queue clearance period: the mean of (1+r)^(-t) for t spread evenly over [0, T]. Equals A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)).
+
+**Inputs**:
+
+- [Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity](#sec-dfda_queue_clearance_years) 🔢: 36 years
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_queue_average_discount_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_queue_average_discount_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_queue_average_discount_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_queue_average_discount_factor.qmd >}}
+
+:::
+
 ### Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity: 36 years {#sec-dfda_queue_clearance_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1740,8 +1871,8 @@ where:
 $$
 \begin{gathered}
 PV_{OPEX} \\
-= \frac{T_{horizon}}{OPEX_{total} \times r_{discount}} \\
-= \frac{10}{\$40M \times 3\%} \\
+= \frac{OPEX_{total} \times (1 - (1 + r_{discount})^{-T_{horizon}})}{r_{discount}} \\
+= \frac{\$40M \times (1 - (1 + 3\%)^{-10})}{3\%} \\
 = \$342M
 \end{gathered}
 $$
@@ -1935,7 +2066,8 @@ Total DALYs averted from the combined treatment timeline shift. Calculated as an
 $$
 \begin{gathered}
 DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \\
+\times T_{accel,max} \\
 = 2.88B \times 92.6\% \times 212 \\
 = 565B
 \end{gathered}
@@ -2039,22 +2171,41 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].
+Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years.
 
 **Inputs**:
 
 - [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
 - [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
-- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
-- [Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity](#sec-dfda_queue_clearance_years) 🔢: 36 years
+- [Average Discount Factor over dFDA Queue Clearance](#sec-dfda_queue_average_discount_factor) 🔢: 0.616x
+- [Average Discount Factor over Status Quo Queue Clearance](#sec-status_quo_queue_average_discount_factor) 🔢: 0.0763x
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -2073,15 +2224,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -2119,6 +2261,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *? Low confidence*
@@ -2162,8 +2313,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -2182,15 +2352,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -2228,6 +2389,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *? Low confidence*
@@ -2385,7 +2555,8 @@ where:
 $$
 \begin{gathered}
 DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \\
+\times T_{accel,max} \\
 = 2.88B \times 92.6\% \times 212 \\
 = 565B
 \end{gathered}
@@ -4018,7 +4189,8 @@ Annual welfare cost of avoidable disease globally. Calculated as global DALY bur
 $$
 \begin{gathered}
 Burden_{disease} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times Value_{QALY} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \\
+\times Value_{QALY} \\
 = 2.88B \times 92.6\% \times \$150K \\
 = \$400T
 \end{gathered}
@@ -4151,7 +4323,8 @@ where:
 $$
 \begin{gathered}
 Burden_{disease} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times Value_{QALY} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \\
+\times Value_{QALY} \\
 = 2.88B \times 92.6\% \times \$150K \\
 = \$400T
 \end{gathered}
@@ -4850,8 +5023,10 @@ where:
 $$
 \begin{gathered}
 C_{takeover} \\
-= (MarketCap_{US} \\
-+ MarketCap_{allied}) \times f_{control} \times m_{premium}
+= (MarketCap_{US} + MarketCap_{allied}) \times f_{control} \\
+\times m_{premium} \\
+= (\$836B + \$132B) \times 0.501 \times 1.8 \\
+= \$873B
 \end{gathered}
 $$
 *✓ High confidence*
@@ -5252,7 +5427,8 @@ where:
 $$
 \begin{gathered}
 Burden_{disease} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times Value_{QALY} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \\
+\times Value_{QALY} \\
 = 2.88B \times 92.6\% \times \$150K \\
 = \$400T
 \end{gathered}
@@ -5793,6 +5969,61 @@ $$
 
 :::
 
+### Average Discount Factor over Status Quo Queue Clearance: 0.0763x {#sec-status_quo_queue_average_discount_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average discount factor over the status quo queue clearance period: the mean of (1+r)^(-t) for t spread evenly over [0, T]. Equals A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)).
+
+**Inputs**:
+
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-status_quo_queue_average_discount_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-status_quo_queue_average_discount_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-status_quo_queue_average_discount_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-status_quo_queue_average_discount_factor.qmd >}}
+
+:::
+
 ### Status Quo Therapeutic Space Exploration Time: 443 years {#sec-status_quo_queue_clearance_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -6143,8 +6374,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -6163,15 +6413,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -6209,6 +6450,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *✓ High confidence*
@@ -6271,8 +6521,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -6291,15 +6560,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -6337,6 +6597,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *? Low confidence*
@@ -6398,8 +6667,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -6418,15 +6706,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -6464,6 +6743,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 where:
@@ -6519,8 +6807,9 @@ where:
 $$
 \begin{gathered}
 Cost_{nets} \\
-= Cost_{GW,max} / ((1 - (1 \\
-+ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
+= \frac{Cost_{GW,max}}{\frac{1 - (1 + r_{discount})^{-LE_{global}}}{\ln\left(1 + r_{discount}\right)}} \\
+= \frac{\$5.5K}{\frac{1 - (1 + 3\%)^{-73.4}}{\ln\left(1 + 3\%\right)}} \\
+= \$184
 \end{gathered}
 $$
 where:
@@ -6555,8 +6844,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -6575,15 +6883,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -6621,6 +6920,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *? Low confidence*
@@ -6823,8 +7131,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -6843,15 +7170,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -6889,6 +7207,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 where:
@@ -6942,8 +7269,9 @@ where:
 $$
 \begin{gathered}
 Cost_{nets} \\
-= Cost_{GW,max} / ((1 - (1 \\
-+ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
+= \frac{Cost_{GW,max}}{\frac{1 - (1 + r_{discount})^{-LE_{global}}}{\ln\left(1 + r_{discount}\right)}} \\
+= \frac{\$5.5K}{\frac{1 - (1 + 3\%)^{-73.4}}{\ln\left(1 + 3\%\right)}} \\
+= \$184
 \end{gathered}
 $$
 where:
@@ -6969,8 +7297,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -6989,15 +7336,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -7035,6 +7373,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *✓ High confidence*
@@ -7087,8 +7434,9 @@ where:
 $$
 \begin{gathered}
 NPV_{direct} \\
-= Funding_{trial,ref} \times (1 - (1 \\
-+ r_{discount})^{-T_{queue,trial}}) / \ln\left(1 + r_{discount}\right)
+= \frac{Funding_{trial,ref} \times (1 - (1 + r_{discount})^{-T_{queue,trial}})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{\$21.8B \times (1 - (1 + 3\%)^{-36})}{\ln\left(1 + 3\%\right)} \\
+= \$483B
 \end{gathered}
 $$
 where:
@@ -7159,8 +7507,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 where:

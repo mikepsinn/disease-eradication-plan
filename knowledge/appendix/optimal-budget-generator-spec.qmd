@@ -343,7 +343,10 @@ $$
 **Proposition 1 (Equimarginal Principle with Outside Options).** *At the optimum, every funded use of money has the same marginal welfare, and that common value equals the marginal cost of raising revenue:*
 
 $$
-W_{i}'(q_{i}^*)\, f_{im}'(s_{im}^*) = W_c'(s_c^*) = C'(B^*) = \lambda^* \quad \text{for every funded mechanism and for the cash payment if } s_c^* > 0
+\begin{gathered}
+W_{i}'(q_{i}^*)\, f_{im}'(s_{im}^*) = W_c'(s_c^*) = C'(B^*) = \lambda^* \\
+\text{for every funded mechanism, and for the cash payment if } s_c^* > 0
+\end{gathered}
 $$
 
 *A mechanism with $W_{i}'(q_i^*)\, f_{im}'(0) < \lambda^*$ receives no money. Because the goal's welfare depends only on total output, a second mechanism that reaches the same people adds no welfare beyond the output it produces, so duplicate mechanisms cannot raise the optimal budget.*

@@ -60,6 +60,7 @@ from lib.quarto_config_utils import (
     get_qmd_files_for_config,
 )
 from dih_models.image_paths import local_image_path
+from dih_models.latex_width import latex_display_lines, latex_line_width_pt
 from dih_models.markdown_export import split_qmd_frontmatter
 from dih_models.subdomain_redirects_generator import collect_subdomain_redirects
 from dih_models.yaml_utils import load_quarto_config
@@ -1584,6 +1585,115 @@ def check_variable_link_targets(variables_data=None):
         logger.debug("  All variable link targets OK")
 
 
+RAW_LATEX_NAME_PATTERN = re.compile(
+    r'\\text\{([A-Z][A-Z0-9]*(?:\\_[A-Z0-9]+)+)\}'      # \text{DEATHS\_TOTAL}
+    r'|(?<![\\{A-Za-z])([A-Z][A-Z0-9]*(?:_[A-Z0-9]+){2,})'  # bare REMAINING_LIFE_EXPECTANCY_AT_60
+)
+
+
+def check_latex_variable_raw_names(variables_data=None):
+    """
+    Check that generated _latex variables contain no raw UPPER_SNAKE names.
+
+    A raw name means the parameter's formula string names something that is not a
+    parameter with a latex_symbol. It renders as one long word that cannot wrap and
+    runs past the page margin (KDP rejects the paperback).
+    """
+    if not isinstance(variables_data, dict):
+        return
+
+    for var_name, value in variables_data.items():
+        if not var_name.endswith("_latex") or not isinstance(value, str):
+            continue
+        names = sorted({(a or b).replace("\\_", "_") for a, b in RAW_LATEX_NAME_PATTERN.findall(value)})
+        if names:
+            errors.append(ValidationError(
+                "_variables.yml", 0,
+                f"Variable '{var_name}' shows raw name(s) {', '.join(names)}",
+                "Use real parameter names in formula=, or add latex_symbol= to the named parameter, "
+                "then regenerate. Raw names cannot wrap and overflow the PDF margin."
+            ))
+
+
+def _display_math_blocks(content: str):
+    """(line_number, body) for each $$...$$ block outside fenced code (OJS template strings contain "$$")."""
+    if "$$" not in content:
+        return []
+    prose = re.sub(r"^```.*?^```", lambda m: "\n" * m.group(0).count("\n"), content, flags=re.S | re.M)
+    return [
+        (prose[: block.start()].count("\n") + 1, block.group(1))
+        for block in re.finditer(r"\$\$(.*?)\$\$", prose, re.S)
+    ]
+
+
+def check_display_math_raw_names(content: str, filepath: str, lines: List[str]):
+    """
+    Check display math ($$...$$) in a QMD file for raw UPPER_SNAKE names.
+
+    Generated parameter appendices build equations separately from _variables.yml, so
+    a raw name can reach a PDF even when the variables are clean.
+    """
+    for line_number, body in _display_math_blocks(content):
+        names = sorted({(a or b).replace("\\_", "_") for a, b in RAW_LATEX_NAME_PATTERN.findall(body)})
+        if names:
+            errors.append(ValidationError(
+                filepath, line_number,
+                f"Display math shows raw name(s) {', '.join(names)}",
+                "Use real parameter names in formula=, or add latex_symbol= to the named parameter, "
+                "then regenerate. Raw names cannot wrap and overflow the PDF margin."
+            ))
+
+
+def check_display_math_widths(content: str, filepath: str, lines: List[str]):
+    """
+    Check that no line of hand-written display math is wider than the PDF text block.
+
+    Generated parameter appendices are skipped: they hold the same equations as
+    _variables.yml, which check_latex_variable_line_widths measures once.
+    """
+    if os.path.basename(filepath).startswith("parameters-and-calculations"):
+        return
+    for line_number, body in _display_math_blocks(content):
+        for math_line in latex_display_lines(f"$${body}$$"):
+            width = latex_line_width_pt(math_line)
+            if width is not None and width > LATEX_LINE_MAX_WIDTH_PT:
+                errors.append(ValidationError(
+                    filepath, line_number,
+                    f"Display math line is {width:.0f}pt wide (limit {LATEX_LINE_MAX_WIDTH_PT}pt)",
+                    "Break it into lines with \\begin{aligned} or \\begin{gathered} and \\\\, "
+                    "or move prose out of the equation."
+                ))
+
+
+# Paperback text block is 405pt wide (7in trim, 0.875in inner, 0.5in outer margin).
+# The mathtext estimate reads about 5% narrow on long lines, so keep that much margin.
+LATEX_LINE_MAX_WIDTH_PT = 385
+
+
+def check_latex_variable_line_widths(variables_data=None):
+    """
+    Check that no line of a generated _latex variable is wider than the PDF text block.
+
+    Display math cannot wrap. An over-wide line runs into the margin, and KDP rejects
+    the paperback ("text is outside the margins").
+    """
+    if not isinstance(variables_data, dict):
+        return
+    for var_name, value in variables_data.items():
+        if not var_name.endswith("_latex") or not isinstance(value, str):
+            continue
+        for line in latex_display_lines(value):
+            width = latex_line_width_pt(line)
+            if width is not None and width > LATEX_LINE_MAX_WIDTH_PT:
+                errors.append(ValidationError(
+                    "_variables.yml", 0,
+                    f"Variable '{var_name}' has a {width:.0f}pt equation line "
+                    f"(limit {LATEX_LINE_MAX_WIDTH_PT}pt): {line[:80]}",
+                    "Split the formula with an intermediate parameter, or break the line at a "
+                    "top-level + or =, then regenerate."
+                ))
+
+
 def check_unknown_variables(content: str, filepath: str, defined_vars: Set[str], lines: List[str]):
     """
     Check for Quarto variables that are referenced but not defined in _variables.yml
@@ -1982,6 +2092,8 @@ def validate_file(
     check_figure_file_frontmatter(content, filepath, lines)
     check_unclosed_code_blocks(content, filepath, lines)
     check_duplicate_latex_variables(content, filepath, lines)
+    check_display_math_raw_names(content, filepath, lines)
+    check_display_math_widths(content, filepath, lines)
 
 
 def check_source_image_dpi():
@@ -2202,6 +2314,8 @@ def main():
     # Check variable link targets in _variables.yml (reuses parsed data)
     logger.debug("Checking variable link targets in _variables.yml...")
     check_variable_link_targets(variables_data)
+    check_latex_variable_raw_names(variables_data)
+    check_latex_variable_line_widths(variables_data)
 
     # Load defined parameters from dih_models/parameters.py
     logger.debug("Loading defined parameters from dih_models/parameters.py...")

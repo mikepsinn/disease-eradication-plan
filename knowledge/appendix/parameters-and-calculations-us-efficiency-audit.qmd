@@ -66,8 +66,8 @@ Annual operating cost of the Automated Revenue Service: design transaction volum
 
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
-= Automated_{annual} \times Cost_{all} \\
+Cost_{revenue} \\
+= N_{tx} \times Cost_{tx} \\
 = 500B \times \$0.0003 \\
 = \$150M
 \end{gathered}
@@ -112,7 +112,12 @@ $$
 $$
 where:
 $$
-GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
+\begin{gathered}
+GDP_{base,20} \\
+= GDP_{global} \times (1 + g_{base})^{20} \\
+= \$115T \times (1 + 2.5\%)^{20} \\
+= \$188T
+\end{gathered}
 $$
 #### Uncertainty Range
 
@@ -142,7 +147,12 @@ Global GDP at year 20 under status-quo current trajectory growth.
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 
 $$
-GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
+\begin{gathered}
+GDP_{base,20} \\
+= GDP_{global} \times (1 + g_{base})^{20} \\
+= \$115T \times (1 + 2.5\%)^{20} \\
+= \$188T
+\end{gathered}
 $$
 
 *✓ High confidence*
@@ -920,9 +930,9 @@ Combined steady-state annual operating cost of the priced government-replacement
 
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
-= Cost_{opex,ann} + Cost_{opex,ann} + Cost_{opex,ann} \\
-+ Cost_{opex,ann} + Cost_{net,ann} + Cost_{opex,ann} \\
+Cost_{suite} \\
+= Cost_{revenue} + Cost_{univ.security} + Cost_{elections} \\
++ Cost_{census} + Cost_{monetary} + Cost_{securities} \\
 = \$150M + \$100M + \$7M + \$15M + \$7.5M + \$20M \\
 = \$300M
 \end{gathered}
@@ -930,8 +940,8 @@ $$
 where:
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
-= Automated_{annual} \times Cost_{all} \\
+Cost_{revenue} \\
+= N_{tx} \times Cost_{tx} \\
 = 500B \times \$0.0003 \\
 = \$150M
 \end{gathered}
@@ -939,8 +949,8 @@ $$
 where:
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
-= Pop_{US} \times Cost_{ann} \\
+Cost_{univ.security} \\
+= Pop_{US} \times Cost_{citizen} \\
 = 335M \times \$0.3 \\
 = \$100M
 \end{gathered}
@@ -976,8 +986,8 @@ The whole priced replacement suite's operating cost per citizen per year: roughl
 
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
-= \frac{Cost_{opex,ann}}{Pop_{US}} \\
+Cost_{suite,pc} \\
+= \frac{Cost_{suite}}{Pop_{US}} \\
 = \frac{\$300M}{335M} \\
 = \$0.896
 \end{gathered}
@@ -985,9 +995,9 @@ $$
 where:
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
-= Cost_{opex,ann} + Cost_{opex,ann} + Cost_{opex,ann} \\
-+ Cost_{opex,ann} + Cost_{net,ann} + Cost_{opex,ann} \\
+Cost_{suite} \\
+= Cost_{revenue} + Cost_{univ.security} + Cost_{elections} \\
++ Cost_{census} + Cost_{monetary} + Cost_{securities} \\
 = \$150M + \$100M + \$7M + \$15M + \$7.5M + \$20M \\
 = \$300M
 \end{gathered}
@@ -995,8 +1005,8 @@ $$
 where:
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
-= Automated_{annual} \times Cost_{all} \\
+Cost_{revenue} \\
+= N_{tx} \times Cost_{tx} \\
 = 500B \times \$0.0003 \\
 = \$150M
 \end{gathered}
@@ -1004,8 +1014,8 @@ $$
 where:
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
-= Pop_{US} \times Cost_{ann} \\
+Cost_{univ.security} \\
+= Pop_{US} \times Cost_{citizen} \\
 = 335M \times \$0.3 \\
 = \$100M
 \end{gathered}
@@ -1728,8 +1738,8 @@ Annual operating cost of the Universal Security Administration: population times
 
 $$
 \begin{gathered}
-Cost_{opex,ann} \\
-= Pop_{US} \times Cost_{ann} \\
+Cost_{univ.security} \\
+= Pop_{US} \times Cost_{citizen} \\
 = 335M \times \$0.3 \\
 = \$100M
 \end{gathered}
@@ -2244,7 +2254,7 @@ The US efficiency gap per person per year: the audit's total governance dysfunct
 
 $$
 \begin{gathered}
-US_{annual} \\
+W_{pc} \\
 = \frac{W_{total,US}}{Pop_{US}} \\
 = \frac{\$4.98T}{335M} \\
 = \$14.9K
@@ -2810,11 +2820,14 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 - [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
 - [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
 - [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left(1, \frac{Treatments_{new,ann} \times \min\left(\frac{k_{capacity} \times s_{mil,max}}{Reduce_{treaty}}, k_{capacity,max}\right) \times 20}{N_{untreated}}\right) \\
+= \min\left(1, \frac{15 \times \min\left(\frac{12.3 \times 87.6\%}{1\%}, 566\right) \times 20}{6{,}650}\right) \\
+= 100\%
 \end{gathered}
 $$
 where:
@@ -2984,7 +2997,9 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left(1, \frac{Treatments_{new,ann} \times \min\left(\frac{k_{capacity} \times s_{mil,max}}{Reduce_{treaty}}, k_{capacity,max}\right) \times 20}{N_{untreated}}\right) \\
+= \min\left(1, \frac{15 \times \min\left(\frac{12.3 \times 87.6\%}{1\%}, 566\right) \times 20}{6{,}650}\right) \\
+= 100\%
 \end{gathered}
 $$
 where:
@@ -3109,7 +3124,9 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left(1, \frac{Treatments_{new,ann} \times \min\left(\frac{k_{capacity} \times s_{mil,max}}{Reduce_{treaty}}, k_{capacity,max}\right) \times 20}{N_{untreated}}\right) \\
+= \min\left(1, \frac{15 \times \min\left(\frac{12.3 \times 87.6\%}{1\%}, 566\right) \times 20}{6{,}650}\right) \\
+= 100\%
 \end{gathered}
 $$
 where:
@@ -3178,7 +3195,12 @@ N_{untreated} \\
 $$
 where:
 $$
-GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
+\begin{gathered}
+GDP_{base,20} \\
+= GDP_{global} \times (1 + g_{base})^{20} \\
+= \$115T \times (1 + 2.5\%)^{20} \\
+= \$188T
+\end{gathered}
 $$
 *✓ High confidence*
 

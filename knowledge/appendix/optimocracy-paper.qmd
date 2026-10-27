@@ -650,7 +650,10 @@ Optimocracy provides the *what* (evidence-based recommendations); the SuperPAC p
 The SuperPAC maximizes expected governance improvement per dollar. For each race, calculate:
 
 $$
-E[\Delta G] = \text{alignment\_gap} \times \text{position\_power} \times \text{win\_probability\_shift} \times P(\text{marginal\_dollar\_matters})
+\begin{aligned}
+E[\Delta G] = {} & \text{alignment\_gap} \times \text{position\_power} \\
+& \times \text{win\_probability\_shift} \times P(\text{marginal\_dollar\_matters})
+\end{aligned}
 $$
 
 **Factors:**

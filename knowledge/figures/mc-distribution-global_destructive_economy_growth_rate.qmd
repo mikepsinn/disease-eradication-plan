@@ -1,0 +1,9 @@
+**Monte Carlo note:** Destructive Economy Growth Rate is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.000e-12)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 12.6% |
+| Mean (expected value) | 12.6% |
+| Median (50th percentile) | 12.6% |
+| Standard Deviation | 5.55e-15% |
+| 90% Range (5th-95th percentile) | [12.6%, 12.6%] |

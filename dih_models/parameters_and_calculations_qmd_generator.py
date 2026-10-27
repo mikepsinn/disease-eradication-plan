@@ -112,6 +112,7 @@ def generate_parameters_and_calculations_qmd(
     citation_data: Dict[str, Dict[str, Any]] | None = None,
     site_url: str | None = None,
     chapter_mapping: Dict[str, list] | None = None,
+    latex_parameters: Dict[str, Dict[str, Any]] | None = None,
 ):
     """
     Generate comprehensive parameters-and-calculations.qmd appendix.
@@ -131,6 +132,9 @@ def generate_parameters_and_calculations_qmd(
         params_file: Path to parameters.py (for auto-generating latex equations)
         citation_data: Pre-parsed citation data from parse_references_bib() (optional, for performance).
                        If not provided, will parse references.bib automatically.
+        latex_parameters: Full parameters dict for building equations, when `parameters` is a
+                       per-paper subset. Formulas name constants (MONTHS_PER_YEAR) that are no
+                       parameter's input, so a subset renders them as raw names.
 
     Returns:
         Number of parameters included in the generated file
@@ -326,7 +330,9 @@ def generate_parameters_and_calculations_qmd(
             # Priority: hardcoded latex > auto-generated expanded latex > formula
             # Expanded equations show the complete derivation chain for AI verification
             hardcoded_latex = getattr(value, "latex", None)
-            expanded_latex = generate_expanded_latex(param_name, value, parameters, params_file=params_file) if not hardcoded_latex else None
+            expanded_latex = generate_expanded_latex(
+                param_name, value, latex_parameters or parameters, params_file=params_file
+            ) if not hardcoded_latex else None
 
             if hardcoded_latex:
                 # Wrap for mobile if equation is wide

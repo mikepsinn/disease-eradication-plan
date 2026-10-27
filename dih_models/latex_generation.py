@@ -22,6 +22,8 @@ Usage:
     )
 """
 
+import ast
+import math
 import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
@@ -256,7 +258,17 @@ def smart_title_case(param_name: str) -> str:
     return ' '.join(result)
 
 
-def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, str | float | None]:
+def _same_constant(c1: float, c2: float) -> bool:
+    """True when two probes recover the same constant. Relative, so tiny or huge constants
+    from nonlinear formulas (2.7e-38 vs 1.4e-61) do not pass as equal."""
+    return math.isclose(c1, c2, rel_tol=1e-6)
+
+
+def infer_operation_from_compute(
+    param_value: Any,
+    inputs: list,
+    probes: tuple[float, float, float, tuple[float, ...]] = (2.0, 1.0, 5.0, (5.0, 7.0, 11.0)),
+) -> tuple[str, str | float | None]:
     """
     Infer operation type by testing the compute function with known values.
 
@@ -277,7 +289,8 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
 
     # Create test context with distinct values that make operations distinguishable
     # Use values like [2, 3, 4, ...] so we can identify the operation
-    test_vals = [2.0 + i for i in range(n)]
+    start, step, single_second, second_set = probes
+    test_vals = [start + step * i for i in range(n)]
     ctx = {name: val for name, val in zip(inputs, test_vals)}
 
     try:
@@ -296,7 +309,7 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
 
         # Test with a second value to detect constant operations
         # Use a different test value to extract the constant
-        v2 = 5.0
+        v2 = single_second
         ctx2 = {inputs[0]: v2}
         try:
             r2 = param_value.compute(ctx2)
@@ -309,7 +322,7 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
         if abs(v1) > 0.01 and abs(v2) > 0.01:
             c1 = r1 / v1
             c2 = r2 / v2
-            if abs(c1 - c2) < 0.01:
+            if _same_constant(c1, c2):
                 # Constant multiplication detected
                 return 'multiply_constant', c1
 
@@ -318,7 +331,7 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
         # Therefore: c = r1 - v1 = r2 - v2 (should be equal)
         c1 = r1 - v1
         c2 = r2 - v2
-        if abs(c1 - c2) < 0.01:
+        if _same_constant(c1, c2):
             # Constant addition detected
             return 'add_constant', c1
 
@@ -328,7 +341,7 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
         if abs(r1) > 0.01 and abs(r2) > 0.01:
             c1 = v1 / r1
             c2 = v2 / r2
-            if abs(c1 - c2) < 0.01:
+            if _same_constant(c1, c2):
                 # Constant division detected
                 return 'divide_constant', c1
 
@@ -336,13 +349,13 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
         # Case 1: r = v - c, then c = v - r
         c1 = v1 - r1
         c2 = v2 - r2
-        if abs(c1 - c2) < 0.01:
+        if _same_constant(c1, c2):
             return 'subtract_constant', c1
 
         # Case 2: r = c - v, then c = r + v
         c1 = r1 + v1
         c2 = r2 + v2
-        if abs(c1 - c2) < 0.01:
+        if _same_constant(c1, c2):
             return 'constant_minus_var', c1
 
         return 'transform', None
@@ -386,7 +399,7 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
         else:
             # Check for "A × B × constant" pattern
             # Test with second set of values to verify constant multiplier
-            test_vals2 = [5.0, 7.0]
+            test_vals2 = list(second_set[:2])
             ctx2 = {name: val for name, val in zip(inputs, test_vals2)}
             try:
                 result2 = param_value.compute(ctx2)
@@ -555,7 +568,7 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
             product1 *= v  # e.g., 2 * 3 * 4 = 24
 
         if abs(product1) > 0.01:
-            test_vals2 = [5.0, 7.0, 11.0][:n]  # Use first n values
+            test_vals2 = list(second_set[:n])  # Use first n values
             ctx2 = {name: val for name, val in zip(inputs, test_vals2)}
             try:
                 result2 = param_value.compute(ctx2)
@@ -573,6 +586,29 @@ def infer_operation_from_compute(param_value: Any, inputs: list) -> tuple[str, s
                 pass
 
         return 'complex', None
+
+
+# A second, unrelated probe set: a detection must hold at both to be trusted
+_SECOND_PROBES = (2.6, 1.37, 6.3, (4.1, 8.9, 13.7))
+
+
+def infer_stable_operation(param_value: Any, inputs: list) -> tuple[str, str | float | None]:
+    """Operation detected at two probe sets, or 'complex' when they disagree.
+
+    Probes see a formula at only a few points, so a nonlinear formula can look like a
+    template at one set ((1+f d)^(1/15) - 1 passed as (f - d) / -7.22). Disagreement sends
+    the parameter to the formula path, whose numbers are checked against the real value.
+    """
+    first = infer_operation_from_compute(param_value, inputs)
+    if first[0] in ('complex', 'transform', 'identity'):
+        return first
+    second = infer_operation_from_compute(param_value, inputs, probes=_SECOND_PROBES)
+    same_constant = (
+        math.isclose(first[1], second[1], rel_tol=1e-6)
+        if isinstance(first[1], float) and isinstance(second[1], float)
+        else first[1] == second[1]
+    )
+    return first if first[0] == second[0] and same_constant else ('complex', None)
 
 
 def _as_float(value: str | float | None) -> float | None:
@@ -611,18 +647,229 @@ def extract_lambda_body_from_file(param_name: str, params_file: Path) -> str | N
 
     param_def = content[start:end]
 
-    # Find compute=lambda ctx: ... pattern
-    compute_match = re.search(
-        r'compute\s*=\s*lambda\s+ctx\s*:\s*(.+?)(?=,\s*\n\s*\)|$)',
-        param_def,
-        re.DOTALL
-    )
-    if compute_match:
-        body = compute_match.group(1).strip()
-        body = body.rstrip(',').strip()
-        return body
+    # Find compute=lambda ctx: ... and read up to the first top-level comma or
+    # closing paren, so arguments after compute= (latex_symbol=...) are excluded
+    compute_match = re.search(r'compute\s*=\s*lambda\s+ctx\s*:', param_def)
+    if not compute_match:
+        return None
 
+    out = []
+    depth = 0
+    quote = None
+    i = compute_match.end()
+    while i < len(param_def):
+        c = param_def[i]
+        if quote:
+            out.append(c)
+            if c == quote and param_def[i - 1] != '\\':
+                quote = None
+        elif c in '"\'':
+            quote = c
+            out.append(c)
+        elif c == '#':
+            while i < len(param_def) and param_def[i] != '\n':
+                i += 1
+            continue
+        elif c in '([{':
+            depth += 1
+            out.append(c)
+        elif c in ')]}':
+            if depth == 0:
+                break
+            depth -= 1
+            out.append(c)
+        elif c == ',' and depth == 0:
+            break
+        else:
+            out.append(c)
+        i += 1
+
+    body = ''.join(out).strip()
+    return body or None
+
+
+# Python constructs that the formula parser cannot show as math
+_UNRENDERABLE_LAMBDA_PARTS = ('ctx', 'lambda', ' for ', ' if ', 'math.', 'np.', 'sum(',
+                              'int(', 'len(', 'range(', '[', '{')
+
+# Math-module calls in compute lambdas and their formula-string names
+_MATH_CALL_RE = re.compile(r'\b(?:[A-Za-z_]*math|np)\.(log|exp|sqrt)\(')
+
+# Functions the formula parser can render (formula-string name -> LaTeX command)
+_LATEX_FUNCS = {'min': r'\min', 'max': r'\max', 'ln': r'\ln', 'log': r'\ln',
+                'round': r'\operatorname{round}'}
+_EVAL_FUNCS = {'min': min, 'max': max, 'ln': math.log, 'log': math.log, 'round': round,
+               'exp': math.exp, 'sqrt': math.sqrt, 'abs': abs}
+
+# A call to any function the parser renders (simple operation templates cannot show these)
+_FUNCTION_CALL_RE = re.compile(r'\b(?:min|max|round|ln|log|exp|sqrt|abs)\s*\(')
+
+# Module-level unit constants (MONTHS_PER_YEAR) shown as labelled numbers
+_UNIT_CONSTANT_RE = re.compile(r'^([A-Z]+)_PER_([A-Z]+)$')
+_UNIT_ABBREVIATIONS = {'YEAR': 'yr', 'HOUR': 'hr', 'MINUTE': 'min', 'SECOND': 's'}
+
+
+def formula_from_compute_source(param_name: str, params_file: Path) -> str | None:
+    """Rebuild a formula string from the compute lambda, which always uses real parameter names.
+
+    Returns None when the lambda uses Python that the formula parser cannot render.
+    """
+    body = extract_lambda_body_from_file(param_name, params_file)
+    if not body:
+        return None
+    body = re.sub(r'ctx\[\s*["\']([A-Za-z0-9_]+)["\']\s*\]', r'\1', body)
+    body = _MATH_CALL_RE.sub(lambda m: {'log': 'ln'}.get(m.group(1), m.group(1)) + '(', body)
+    # Numeric literals only (1_000_000 -> 1000000), not digits inside names
+    body = re.sub(r'(?<![A-Za-z0-9_])\d[\d_]*', lambda m: m.group(0).replace('_', ''), body)
+    body = re.sub(r'\bfloat\(', '(', body)
+    body = re.sub(r',\s*\)', ')', body)  # trailing commas in multi-line calls
+    body = re.sub(r'\s+', ' ', body).strip()
+    if any(part in body for part in _UNRENDERABLE_LAMBDA_PARTS):
+        return None
+    # Calls to helper functions cannot be shown as math
+    if any(func not in _EVAL_FUNCS for func in re.findall(r'\b([A-Za-z_][A-Za-z0-9_]*)\s*\(', body)):
+        return None
+    return body
+
+
+def unit_constant_symbol(name: str, value: float) -> str | None:
+    """LaTeX for a unit constant such as MONTHS_PER_YEAR: the number with a label under it."""
+    match = _UNIT_CONSTANT_RE.match(name)
+    if not match:
+        return None
+    unit, per = match.groups()
+    label = f"{unit.lower()}/{_UNIT_ABBREVIATIONS.get(per, per.lower())}"
+    return rf"\underbrace{{{_format_literal(value)}}}_{{\text{{{label}}}}}"
+
+
+def _format_literal(value: float) -> str:
+    """A number literal from a formula, exactly as written (no rounding to 3 sig figs)."""
+    if isinstance(value, float) and value.is_integer():
+        value = int(value)
+    if isinstance(value, int):
+        return f"{value:,}".replace(',', '{,}') if abs(value) >= 10_000 else str(value)
+    text = f"{value:.10g}"
+    return round_to_n_sigfigs(value, 6) if 'e' in text else text
+
+
+def _parse_formula(formula: str) -> ast.expr | None:
+    """Parse a formula string (× ÷ ^ allowed) into a Python expression tree, or None for prose."""
+    s = formula.strip()
+    for sep in (', where ', '; '):
+        if sep in s:
+            s = s[:s.index(sep)]
+    s = (s.replace('×', '*').replace('÷', '/').replace('−', '-')
+         .replace(' x ', ' * ').replace('^', '**'))
+    try:
+        tree = ast.parse(s, mode='eval')
+    except SyntaxError:  # prose formulas ("A × 20 YEARS") are expected; the caller falls back
+        return None
+    return tree.body
+
+
+# Operator precedence for deciding where parentheses are needed
+_ADD, _MUL, _UNARY, _FRAC, _POW, _ATOM = range(1, 7)
+
+
+def _paren(latex: str) -> str:
+    return rf'\left({latex}\right)' if r'\frac' in latex else f'({latex})'
+
+
+def _emit_latex(node: ast.AST, names: Dict[str, str]) -> tuple[str, int] | None:
+    """Render an expression tree as LaTeX. None if it holds an unknown name or construct."""
+    if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)) and not isinstance(node.value, bool):
+        return _format_literal(node.value), _ATOM
+    if isinstance(node, ast.Name):
+        symbol = names.get(node.id)
+        if symbol is None:
+            return None
+        return symbol, (_ATOM if not symbol.startswith('-') else _UNARY)
+    if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.USub, ast.UAdd)):
+        inner = _emit_latex(node.operand, names)
+        if inner is None:
+            return None
+        text = _paren(inner[0]) if inner[1] <= _ADD or inner[0].startswith('-') else inner[0]
+        return ('-' if isinstance(node.op, ast.USub) else '') + text, _UNARY
+    if isinstance(node, ast.BinOp):
+        left = _emit_latex(node.left, names)
+        right = _emit_latex(node.right, names)
+        if left is None or right is None:
+            return None
+        (l_text, l_prec), (r_text, r_prec) = left, right
+        if isinstance(node.op, ast.Div):
+            return rf'\frac{{{l_text}}}{{{r_text}}}', _FRAC
+        if isinstance(node.op, (ast.Add, ast.Sub)):
+            wrap_right = r_text.startswith('-') or (isinstance(node.op, ast.Sub) and r_prec <= _ADD)
+            op = '+' if isinstance(node.op, ast.Add) else '-'
+            return f"{l_text} {op} {_paren(r_text) if wrap_right else r_text}", _ADD
+        if isinstance(node.op, ast.Mult):
+            l_text = _paren(l_text) if l_prec <= _ADD else l_text
+            r_text = _paren(r_text) if r_prec <= _UNARY else r_text
+            return rf"{l_text} \times {r_text}", _MUL
+        if isinstance(node.op, ast.Pow):
+            base = _paren(l_text) if l_prec < _ATOM else l_text
+            if '^' in base and not base.startswith(('(', r'\left')):
+                base = f"{{{base}}}"
+            return f"{base}^{{{r_text}}}", _POW
+        return None
+    if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and not node.keywords:
+        args = [_emit_latex(arg, names) for arg in node.args]
+        if not args or any(arg is None for arg in args):
+            return None
+        texts = [arg[0] for arg in args if arg is not None]
+        func = node.func.id
+        if func in _LATEX_FUNCS:
+            return rf"{_LATEX_FUNCS[func]}\left({', '.join(texts)}\right)", _ATOM
+        if func == 'exp' and len(texts) == 1:
+            return f"e^{{{texts[0]}}}", _POW
+        if func == 'sqrt' and len(texts) == 1:
+            return rf"\sqrt{{{texts[0]}}}", _ATOM
+        if func == 'abs' and len(texts) == 1:
+            return rf"\left|{texts[0]}\right|", _ATOM
     return None
+
+
+def _evaluate_formula(node: ast.expr, values: Dict[str, float]) -> float | None:
+    """Evaluate a formula tree already accepted by _emit_latex (names, numbers, + - × ÷ ^, safe calls)."""
+    code = compile(ast.Expression(body=node), '<formula>', 'eval')
+    try:
+        result = eval(code, {'__builtins__': {}}, {**_EVAL_FUNCS, **values})
+    except (ArithmeticError, ValueError):  # a formula that cannot be evaluated gets no number line
+        return None
+    return float(result) if isinstance(result, (int, float)) else None
+
+
+def formula_equation(
+    formula: str,
+    lhs: str,
+    symbols: Dict[str, str],
+    numbers: Dict[str, str],
+    values: Dict[str, float],
+    result_value: float,
+    result_formatted: str,
+) -> tuple[str, bool] | None:
+    """Build "LHS = symbolic = numbers = result" from a formula string.
+
+    Returns (latex, verified). verified is True when the formula, evaluated with the input
+    values, reproduces the parameter value; only then are the number and result lines added.
+    Returns None when the formula is prose or names something without a symbol.
+    """
+    node = _parse_formula(formula)
+    if node is None:
+        return None
+    symbolic = _emit_latex(node, symbols)
+    if symbolic is None:
+        return None
+    latex = f"{lhs} = {symbolic[0]}"
+    computed = _evaluate_formula(node, values)
+    verified = computed is not None and math.isclose(computed, result_value, rel_tol=1e-6)
+    if verified:
+        numeric = _emit_latex(node, numbers)
+        if numeric is not None and numeric[0] != symbolic[0]:
+            latex += f" = {numeric[0]}"
+        if result_formatted not in (symbolic[0], numeric[0] if numeric else None):
+            latex += f" = {result_formatted}"
+    return latex, verified
 
 
 def lambda_to_sympy_latex(lambda_body: str, var_names: list[str]) -> str | None:
@@ -652,6 +899,19 @@ def formula_to_latex(formula: str, parameters: dict, lhs: str) -> str | None:
     # Strip trailing prose after semicolons
     if '; ' in formula:
         formula = formula[:formula.index('; ')]
+
+    # Parse as an expression first: handles nesting, fractions and parentheses exactly.
+    # The regex steps below remain for prose-like formulas that do not parse.
+    names = {}
+    for name_key, meta in parameters.items():
+        val = meta['value'] if isinstance(meta, dict) else meta
+        sym = getattr(val, 'latex_symbol', None)
+        if sym:
+            names[name_key] = sym
+    node = _parse_formula(formula)
+    rendered = _emit_latex(node, names) if node is not None else None
+    if rendered is not None:
+        return f"{lhs} = {rendered[0]}"
 
     s = formula
 
@@ -703,7 +963,8 @@ def formula_to_latex(formula: str, parameters: dict, lhs: str) -> str | None:
                             if depth == 0:
                                 break
                         j += 1
-                    inner = s[i + len(func) + 1:j]
+                    # Recurse so nested calls (min inside min) also render upright
+                    inner = _convert_functions(s[i + len(func) + 1:j])
                     result.append(f'\\{func}\\left({inner}\\right)')
                     i = j + 1
                     matched = True
@@ -806,7 +1067,8 @@ def formula_to_latex(formula: str, parameters: dict, lhs: str) -> str | None:
         result = []
         i = 0
         while i < len(s):
-            if s[i] == '(' and s[i+1:i+6] == r'\frac':
+            # Skip parens that already follow \left (e.g. \ln\left(\frac...\right))
+            if s[i] == '(' and s[i+1:i+6] == r'\frac' and not s[:i].endswith(r'\left'):
                 # Find matching close paren
                 depth = 0
                 j = i
@@ -918,6 +1180,9 @@ def format_latex_value(value: float, unit: str) -> str:
             return f"{round_to_n_sigfigs(value * 100, 3)}\\%"
         else:
             return f"{round_to_n_sigfigs(value, 3)}\\%"
+    elif unit_lower == "year" and float(value).is_integer():
+        # Calendar year (2033), not a quantity (1{,}430 years)
+        return str(int(value))
     else:
         # Non-currency, non-percentage
         if abs_val >= 1e12:
@@ -1268,7 +1533,7 @@ def generate_expanded_latex(
     param_value: Any,
     parameters: Dict[str, Dict[str, Any]],
     params_file: Optional[Path] = None,
-    max_depth: int = 10,
+    max_depth: int = 30,
     _depth: int = 0,
     _visited: set | None = None,
     _memoized: dict | None = None,
@@ -1299,7 +1564,8 @@ def generate_expanded_latex(
         param_value: Parameter object with metadata
         parameters: Full parameters dict for looking up input values
         params_file: Path to parameters.py for lambda extraction
-        max_depth: Maximum recursion depth (prevents infinite loops)
+        max_depth: Maximum recursion depth. Cycles are caught separately; a deeper chain
+            raises instead of silently dropping its lower derivation steps
         _depth: Current recursion depth (internal use)
         _visited: Set of already-visited params (cycle detection, internal use)
         _memoized: Cache of already-generated LaTeX (prevents duplication, internal use)
@@ -1331,10 +1597,6 @@ def generate_expanded_latex(
         return None
     _visited = _visited | {param_name}
     
-    # Depth limit
-    if _depth > max_depth:
-        return None
-    
     # Generate equation for this level
     this_level = generate_auto_latex(param_name, param_value, parameters, params_file)
     if this_level is None:
@@ -1363,12 +1625,17 @@ def generate_expanded_latex(
         if has_inputs and has_compute:
             calculated_inputs.append((inp_name, inp_value))
     
-    # If no calculated inputs or at max depth, return single equation
-    if not calculated_inputs or _depth >= max_depth:
+    # If no calculated inputs, return single equation
+    if not calculated_inputs:
         # Cache and mark as shown
         _memoized[param_name] = this_level
         _globally_shown.add(param_name)
         return this_level
+    if _depth >= max_depth:
+        raise ValueError(
+            f"Derivation of {param_name} is deeper than max_depth={max_depth}; raise the limit "
+            "so its input derivations are not dropped"
+        )
     
     # Build multi-step derivation as separate blocks.
     # Each block is a self-contained equation. Callers split on LATEX_BLOCK_SEP
@@ -1432,6 +1699,68 @@ def generate_expanded_latex(
     return result
 
 
+def _formula_based_latex(
+    param_name: str,
+    param_value: Any,
+    parameters: Dict[str, Dict[str, Any]],
+    params_file: Optional[Path],
+    input_data: list[dict],
+    lhs: str,
+    result_formatted: str,
+) -> str | None:
+    """Equation for a parameter whose compute is not a simple pattern.
+
+    Tries the author's formula string, then the formula rebuilt from the compute lambda.
+    The first one that reproduces the parameter value wins and gets number lines; if none
+    does, the first that renders is shown symbol-only. Prose formulas use the regex path.
+    """
+    formula = getattr(param_value, 'formula', '') or ''
+    candidates = [formula] if formula else []
+    derived = formula_from_compute_source(param_name, params_file) if params_file else None
+    if derived:
+        candidates.append(derived)
+
+    # Symbols, display numbers and values for every name the candidates use
+    symbols: Dict[str, str] = {}
+    numbers: Dict[str, str] = {}
+    values: Dict[str, float] = {}
+    for name in set(re.findall(r'[A-Za-z_][A-Za-z0-9_]*', ' '.join(candidates))):
+        meta = parameters.get(name)
+        value = meta.get('value') if isinstance(meta, dict) else meta
+        if not isinstance(value, (int, float)):
+            continue
+        values[name] = float(value)
+        symbol = getattr(value, 'latex_symbol', None)
+        if symbol is None and type(value) in (int, float):
+            symbol = unit_constant_symbol(name, value)
+        if symbol:
+            symbols[name] = symbol
+            formatted = format_latex_value(float(value), getattr(value, 'unit', '') or '')
+            numbers[name] = _format_literal(value) if symbol.startswith(r'\underbrace') else formatted
+    for d in input_data:
+        symbols.setdefault(d['name'], d['symbolic'])
+        numbers.setdefault(d['name'], d['formatted'])
+    # Multi-token numbers (1.5 \times 10^{-7}) need parentheses to stay one factor
+    numbers = {k: (f"({v})" if ' ' in v else v) for k, v in numbers.items()}
+
+    first_rendered = None
+    for candidate in candidates:
+        built = formula_equation(candidate, lhs, symbols, numbers, values,
+                                 float(param_value), result_formatted)
+        if built is None:
+            continue
+        latex, verified = built
+        if verified:
+            return latex
+        if first_rendered is None:
+            first_rendered = latex
+    if first_rendered:
+        return first_rendered
+    if formula and parameters:
+        return formula_to_latex(formula, parameters, lhs)
+    return None
+
+
 def generate_auto_latex(
     param_name: str,
     param_value: Any,
@@ -1477,7 +1806,14 @@ def generate_auto_latex(
     result_unit = getattr(param_value, 'unit', '') or ''
 
     # Infer operation type from compute function
-    operation, order = infer_operation_from_compute(param_value, inputs)
+    operation, order = infer_stable_operation(param_value, inputs)
+    # Probing with test values cannot see function calls (min(1, A / B) probes as A / B),
+    # so a compute that calls one is rendered from its formula instead of a simple template
+    if operation != 'complex':
+        source = (formula_from_compute_source(param_name, params_file) if params_file else None) \
+            or getattr(param_value, 'formula', '') or ''
+        if _FUNCTION_CALL_RE.search(source):
+            operation, order = 'complex', None
 
     # Get input values and format them
     # Pass all input names as siblings so we can extract distinguishing suffixes
@@ -1530,13 +1866,13 @@ def generate_auto_latex(
     else:
         lhs_short = create_latex_variable_name(param_name, result_display)
 
-    # For complex operations, convert formula string to LaTeX
+    # For complex operations, render the formula string; if it is prose or names something
+    # other than a parameter, rebuild the formula from the compute lambda instead.
     if operation == 'complex':
-        formula = getattr(param_value, 'formula', '') or ''
-        if formula and parameters:
-            formula_latex = formula_to_latex(formula, parameters, lhs_short)
-            if formula_latex:
-                return formula_latex
+        formula_latex = _formula_based_latex(
+            param_name, param_value, parameters, params_file, input_data, lhs_short, result_formatted)
+        if formula_latex:
+            return formula_latex
 
     # Build equation based on inferred operation type
     # Format: LHS = Symbolic formula = Numeric values = Result
@@ -1769,11 +2105,8 @@ def generate_auto_latex(
         # string directly before giving up.
         formula = getattr(param_value, 'formula', '') or ''
         if '÷' in formula or '×' in formula or '+' in formula or '-' in formula:
-            if formula and parameters:
-                formula_latex = formula_to_latex(formula, parameters, lhs_short)
-                if formula_latex:
-                    return formula_latex
-            return None
+            return _formula_based_latex(
+                param_name, param_value, parameters, params_file, input_data, lhs_short, result_formatted)
         inp = input_data[0]
         latex = f"{lhs_short} = {inp['symbolic']} = {inp['formatted']} = {result_formatted}"
 

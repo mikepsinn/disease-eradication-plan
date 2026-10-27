@@ -1,0 +1,9 @@
+**Monte Carlo note:** 80-Year Future-Value Factor for the Growing War Cost Stream is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.721e-07)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 172.1kx |
+| Mean (expected value) | 172.1kx |
+| Median (50th percentile) | 172.1kx |
+| Standard Deviation | 2.91e-11x |
+| 90% Range (5th-95th percentile) | [172.1kx, 172.1kx] |

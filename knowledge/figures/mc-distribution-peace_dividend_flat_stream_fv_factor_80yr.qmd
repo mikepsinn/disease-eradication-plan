@@ -1,0 +1,9 @@
+**Monte Carlo note:** 80-Year Future-Value Factor for a Flat Stream is effectively deterministic across the current sampled inputs, so a histogram would mostly visualize floating-point residue instead of real uncertainty. (range 0.000e+00 <= tolerance 1.356e-07)
+
+| Statistic | Value |
+|:----------|------:|
+| Baseline (deterministic) | 135.6kx |
+| Mean (expected value) | 135.6kx |
+| Median (50th percentile) | 135.6kx |
+| Standard Deviation | 0x |
+| 90% Range (5th-95th percentile) | [135.6kx, 135.6kx] |
