@@ -190,7 +190,7 @@ In this Act:
 
 (c) **Required Use.** The applicable core outcome set for a condition is its recognized condition-specific set or, if none is recognized, the default set. Each right-to-trial protocol shall collect the applicable core outcome set in addition to any other outcomes it specifies. Outcome records contributed under section 305 shall use the applicable core outcome set where practicable.
 
-(d) **Common Data Standards.** Core outcome data shall be recorded and exchanged using openly published data standards recognized by the Secretary, so that records from different qualified evidence systems can be combined. Recognition of a data standard does not require a particular vendor or architecture within the meaning of section 301(e).
+(d) **Common Data Standards.** Core outcome data shall be recorded and exchanged using openly published data standards recognized by the Secretary, so that records from different qualified evidence systems can be combined. The Secretary shall recognize at least one such standard not later than 180 days after enactment. Until a standard is recognized, a qualified evidence system may use any openly published, documented data standard and shall identify it in its public reporting. Recognition of a data standard does not require a particular vendor or architecture within the meaning of section 301(e).
 
 ### SEC. 305. OUTCOMES FROM ANY TREATMENT
 
@@ -213,7 +213,7 @@ In this Act:
 (b) **Contents.** Each outcome label shall state, in plain language and in machine-readable form:
 
 1. the number of patients, the shares from right-to-trial protocols and from contributed outcome records, and follow-up completeness;
-2. for each measure in the applicable core outcome set, the share of patients who improved, did not change, or worsened, and the time since treatment began;
+2. for each measure in the applicable core outcome set, the share of patients who improved, did not change, or worsened or, for event measures such as mortality, the share who had the event, and the time since treatment began;
 3. the estimated effect, its uncertainty interval, and the comparator, if any;
 4. rates of discontinuation, serious adverse events, and the most frequently reported side effects;
 5. the doses and durations used;
