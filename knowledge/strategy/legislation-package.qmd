@@ -18,10 +18,10 @@ scores:
   importance: 6
 audience: "An organizer or recruiter who wants to actually get the treaty into law and needs ready-made bills and a step-by-step way to pass them."
 feel: "Armed: the bills are already written and built to pass, so they could walk into a politician's office tomorrow."
-do: "Pick a bill, start with Right to Try, and hand it to a politician they can reach, then bundle the rest into a must-pass vote."
+do: "Pick a bill, start with the Right to Trial & FDA Upgrade Act, and hand it to a politician they can reach, then bundle the rest into a must-pass vote."
 ---
 {{< include /knowledge/includes/setup-parameters.qmd >}}
-Here's how democracy actually works: Lobbyists write bills and give them to politicians who can't read. Those politicians vote based on who donated most to their campaign. This chapter is five bills, pre-written, ready to hand to whichever politician you can afford. You're about to become the best lobbyist in history, except your bills actually help people instead of killing them.
+Here's how democracy actually works: Lobbyists write bills and give them to politicians who can't read. Those politicians vote based on who donated most to their campaign. Here are four bills, pre-written, ready to hand to whichever politician you can afford. You're about to become the best lobbyist in history, except your bills actually help people instead of killing them.
 
 Each bill is designed to pass because it gives politicians what they crave: money, votes, and the ability to claim they did something.
 
@@ -140,99 +140,45 @@ Opposition means explaining why you're against transparency and dying children. 
 
 ![Make votes public. Politicians can't vote against curing disease when everyone's watching. Transparency as a weapon.](/assets/images/legislation-package/legislation-package-section-the-poison-pills-for-opposition-bw-academic.jpg)
 
-## The Parallel Track Act: Your Regulatory Revolution
+## The Right to Trial & FDA Upgrade Act: Try It, Write It Down
 
-This act creates your [decentralized FDA](../solution/dfda.qmd) [@dfda-spec-paper-2025; @dfda-impact-paper-2025]. It builds a legal pathway for treatments to operate outside the FDA's 17-year death march. Patients get choices. Researchers get freedom. People stop dying while waiting for approval.
+A drug passes its first human safety tests. Then patients wait {{< var efficacy_lag_years >}} while your FDA checks whether it works. This bill lets them stop waiting, on one condition: every patient who tries the treatment gets their results recorded, so the next patient knows more than they did.
 
-![FDA process: slow, centralized, careful. Parallel Track: fast, decentralized, slightly less careful. One saves lives faster, the other saves careers.](/assets/images/legislation-package/legislation-package-section-the-parallel-track-act-your-regulatory-revolution-bw-academic.jpg)
-
-### The Legal Architecture
-
-#### Section 1: The Parallel Pathway
-
-![Patients get drugs faster, AI watches for problems, insurance covers disasters. You built a safety net so you could move faster.](/assets/images/legislation-package/legislation-package-section-section-1-the-parallel-pathway-bw-academic.jpg)
-
-- "Patients may access treatments in active trials with informed consent"
-- "Researchers may conduct trials without FDA pre-approval"
-- "Insurance must cover parallel track treatments" (critical provision)
-- "Results must be publicly reported" (transparency requirement)
-
-**Section 2: Safety Provisions (So They Can't Call You Reckless)**
-
-- AI monitoring for adverse events
-- Automatic trial suspension if harm detected
-- Mandatory liability insurance for researchers
-- Extra protections for vulnerable populations
-
-##### Section 3: The Data Revolution
-
-![Four types of data flow into approval process: trial results, real-world use, patient feedback, foreign trials. FDA discovers other countries also test drugs.](/assets/images/legislation-package/legislation-package-section-section-3-the-data-revolution-bw-academic.jpg)
-
-- All trial data becomes public (after privacy protection)
-- Real-world evidence counts toward approval
-- Patient-reported outcomes given equal weight
-- Foreign trial data accepted (why waste good science?)
-
-### Why Politicians Will Vote Yes (They Have No Choice)
-
-Politicians are terrified of being blamed for the next thalidomide. They are not terrified of being blamed for the 150,000 who die daily from untested treatments. Your species fears the wrong risk by a factor of {{< var type_ii_error_cost_ratio >}}. The pitch is simple: more data makes things safer, not less. Monitoring a million patients in real time catches problems faster than testing a thousand patients for a decade.
-
-![Old way: test on 1,000 people for 10 years, approve drug. New way: monitor 1 million people in real time. You invented crowd-sourced not dying.](/assets/images/legislation-package/legislation-package-section-the-safety-argument-bw-academic.jpg)
-
-Your politicians come in two flavors. One flavor says "freedom" and the other says "access." They mean the same thing but in different fonts. Both flavors vote yes on letting dying people try medicine, because the alternative is explaining on television why bureaucrats should decide who lives.
-
-### The Implementation Trick
-
-Start with terminal diseases only. Nobody argues against letting dying people try treatments. Once it works, expand to chronic diseases. Then everything else. Classic foot-in-door technique.
-
-![The foot-in-the-door strategy. First you let dying people try medicine. Then everyone else gets jealous and wants to try medicine too.](/assets/images/legislation-package/legislation-package-section-the-implementation-trick-bw-academic.jpg)
-
-## The Right to Try Expansion Act: Medical Freedom
-
-Current Right to Try laws are useless. They require FDA permission (defeats the purpose) and manufacturers can refuse (they often do). Here's the version that actually works.
+The full text is the [Right to Trial & FDA Upgrade Act](../appendix/right-to-trial-fda-upgrade-act.qmd) [@right-to-trial-paper-2025]. Hand a politician that, not a summary.
 
 ![Current process: fill out forms until you die. Proposed process: try the medicine.](/assets/images/legislation-package/legislation-package-section-the-right-to-try-expansion-act-medical-freedom-bw-academic.jpg)
 
-### The Provisions That Matter
+### What It Does
 
-#### Section 1: Absolute Right
+- Any patient with any condition, including aging, may buy a treatment that has finished Phase 1 safety testing, if a licensed provider recommends it and a supplier agrees to sell it.
+- No FDA application or individual FDA permission is required.
+- Every use runs under a protocol registered before treatment starts. Outcomes and side effects are recorded, and results are published, including the failures.
+- An ethics board reviews each protocol. One board can approve a protocol for every site in every state.
+- The FDA can suspend any protocol that shows a significant risk of harm.
+- Anyone can run an evidence registry: a company, a nonprofit, a university, or a government. The FDA may not reject evidence just because it came from routine care instead of a traditional trial.
+- Every registry publishes an Outcome Label for each treatment and condition in a common format: how many people tried it, how many got better or worse, and the side effects. Patients can add outcomes from anything they take, including approved drugs and supplements, and anyone may publish treatment rankings built from the labels.
 
-- "Any patient may access any treatment in trials"
-- "Manufacturers must provide at cost + 15%" (reasonable profit)
-- "Insurance must cover if cheaper than standard care"
-- "No FDA approval needed for dying patients"
+### What It Does Not Do
 
-![The four pillars of letting people try not to die. It's like the Bill of Rights, but for medicine instead of guns.](/assets/images/legislation-package/legislation-package-section-section-1-absolute-right-bw-academic.jpg)
+- It does not force anyone to make, sell, prescribe, or pay for anything.
+- It does not cap prices. Suppliers may charge a profit, because that profit is what pays for testing treatments nobody would otherwise fund.
+- It does not create an entitlement. Patients, insurers, charities, or employers may pay. None must.
+- It does not spend new federal money. The FDA runs it on its existing budget plus cost-based fees.
+- It does not let the government rank treatments, and it does not require any insurer to use anyone else's rankings.
 
-##### Section 2: The Subsidy System
+### Why It Passes
 
-![Poor people get free medicine. Rich people can afford medicine. The middle gets to choose between medicine and food, like usual.](/assets/images/legislation-package/legislation-package-section-section-2-the-subsidy-system-bw-academic.jpg)
+It asks Congress for no new money, so there is no appropriations fight to lose.
 
-- Subsidies from a [1% Treaty](../solution/1-percent-treaty.qmd) Fund make treatments affordable
-- Sliding scale based on income
-- Full coverage for those below 200% poverty line
-- Catastrophic protection for everyone else
+Politicians are terrified of being blamed for the next thalidomide. They are not terrified of being blamed for the patients who die waiting, because those deaths happen one at a time and never make the news. Your species fears the wrong risk by a factor of {{< var type_ii_error_cost_ratio >}}. The pitch is simple: more data makes things safer, not less. Monitoring a million patients in real time catches problems faster than testing a thousand patients for a decade.
 
-###### Section 3: The Data Exchange
+![Old way: test on 1,000 people for 10 years, approve drug. New way: monitor 1 million people in real time. You invented crowd-sourced not dying.](/assets/images/legislation-package/legislation-package-section-the-safety-argument-bw-academic.jpg)
 
-![People take medicine. Medicine works or doesn't. We write it down. Medicine gets better. You invented learning, but medical.](/assets/images/legislation-package/legislation-package-section-section-3-the-data-exchange-bw-academic.jpg)
+Your species has libertarians, progressives, religious groups, and patient groups. They agree on almost nothing. They all agree dying is bad. One flavor of politician hears "freedom." The other hears "access." The opposition has to explain on television why a dying patient may not try a treatment that already passed its safety tests. The new line for every hearing is one question: "Why won't you let me try to live?"
 
-- Patients provide outcome data in exchange for access
-- Data improves treatments for everyone
-- Creates massive real-world evidence database
-- Accelerates learning by 100X
+### If Congress Stalls
 
-### The Emotional Blackmail Strategy
-
-Politicians already parade dying children at press conferences. You are just changing the script. The new line is one question: "Why won't you let me try to live?"
-
-![Step 1: Dying people tell their stories. Step 2: Politicians feel bad. Step 3: Politicians do something because everyone is watching.](/assets/images/legislation-package/legislation-package-section-the-emotional-blackmail-strategy-bw-academic.jpg)
-
-Create a "Death Clock" website. Show people dying while waiting for treatments available elsewhere. Update it live during hearings. Make opposition morally impossible.
-
-Your species has libertarians, progressives, religious groups, and patient groups. They agree on almost nothing. They all agree dying is bad. When the Koch Brothers and Bernie Sanders agree, politicians panic and pass your bill. This is the only bipartisan coalition in human history that required zero compromise, because "not dying" is not a partisan position. It just looks like one because nobody proposed it.
-
-![The only thing that unites libertarians, progressives, and religious people: everyone agrees dying is bad.](/assets/images/legislation-package/legislation-package-section-the-coalition-building-bw-academic.jpg)
+States can start without it. The state version, the [Patient's Right to Trial Act](../appendix/state-right-to-trial-impact.qmd), adds similar evidence rules to state-licensed experimental treatment centers like the ones Montana authorized in 2025 [@montana-sb535-2025]. State law cannot waive federal rules, so the federal Act is still the goal. If all 50 states adopt the state version and it works as modeled, it averts roughly {{< var state_rtt_treatment_acceleration_lives_saved >}} across future generations, for about {{< var state_rtt_implementation_cost_total >}} in implementation costs.
 
 ## The Budget Reallocation Act: Moving the Money
 
@@ -301,27 +247,18 @@ Year 5: The 1% Treaty is no longer controversial. It is a line item. Nobody reme
 
 ## The Legislative Strategy: Order of Operations
 
-Here's how you pass all five bills:
+Here's how you pass all four bills:
 
 ### Phase 1: Build Momentum
 
-1. **Right to Try Expansion** goes first (emotional, bipartisan)
+1. **The Right to Trial & FDA Upgrade Act** goes first (bipartisan, no new spending)
 2. Creates patient demand for more access
-3. Shows system can handle parallel tracks
+3. Fills public registries with results the funding bills can point to
 4. Politicians get credit for "saving lives"
 
 ![Sick people get medicine. Medicine works. Politicians notice people like not dying. System reinforces itself like a functional feedback loop.](/assets/images/legislation-package/legislation-package-section-phase-1-build-momentum-bw-academic.jpg)
 
-### Phase 2: Create Infrastructure
-
-![Researchers can finally do research. You had to write a law for this.](/assets/images/legislation-package/legislation-package-section-phase-2-create-infrastructure-bw-academic.jpg)
-
-1. **The Parallel Track Act** comes next
-2. Builds on Right to Try success
-3. Creates legal framework for trials
-4. Researchers start preparing for new system
-
-### Phase 3: Fund the System
+### Phase 2: Fund the System
 
 ![Three laws walk into a bar. They combine into one mega-law because voting once is easier than voting three times.](/assets/images/legislation-package/legislation-package-section-phase-3-fund-the-system-bw-academic.jpg)
 
@@ -344,7 +281,7 @@ Politicians can't vote against it without catastrophic consequences. Success bec
 
 ## Conclusion: Democracy Theater at Its Finest
 
-None of this changes how democracy works. That's the point. Five bills that convert a system profiting from death into one profiting from life.
+None of this changes how democracy works. That's the point. Four bills that convert a system profiting from death into one profiting from life.
 
 ![Cures create grateful voters. Grateful voters demand more cures. Politicians who resist get voted out. Darwin, but for policy.](/assets/images/legislation-package/legislation-package-section-conclusion-democracy-theater-at-its-finest-bw-academic.jpg)
 
