@@ -34,7 +34,7 @@ This Act may be cited as the **"Right to Trial and FDA Upgrade Act."**
 
 ### SEC. 102. PURPOSE
 
-The purpose of this Act is to establish a universal right to seek investigational treatment after initial human safety testing while protecting voluntary supply, informed consent, reasonable safety standards, and the production of useful evidence.
+The purpose of this Act is to establish a universal right to seek investigational treatment after initial human safety testing while protecting voluntary supply, informed consent, reasonable safety standards, and the production of useful, comparable evidence that anyone may publish.
 
 ### SEC. 103. FINDINGS
 
@@ -45,6 +45,7 @@ Congress finds the following:
 3. Permitting willing suppliers to earn revenue after initial human safety testing can finance further investigation of treatments that could not otherwise pay for phase 2 or phase 3 trials.
 4. Pragmatic and decentralized trials can study treatments in routine care and include patients who would not qualify for conventional trials.
 5. Federal law should protect access without promising that a treatment works, requiring anyone to supply it, or requiring anyone else to pay for it.
+6. Patients cannot compare treatments for their condition because outcomes are measured in incompatible ways, are rarely published in comparable form, and carry legal risk for the people who publish them.
 
 ### SEC. 104. DEFINITIONS
 
@@ -60,6 +61,11 @@ In this Act:
 4. **Right-to-trial protocol** means a prospectively registered plan for providing an eligible investigational treatment and collecting the minimum evidence required by section 203.
 5. **Qualified evidence system** means a public, nonprofit, or private registry or platform that satisfies section 301.
 6. **Secretary** means the Secretary of Health and Human Services, acting through the Commissioner of Food and Drugs where appropriate.
+7. **Treatment** means a drug, biological product, device, diagnostic, dietary supplement, food, procedure, behavioral intervention, or combination of them, whether approved, cleared, licensed, investigational, or not subject to premarket review.
+8. **Treatment-condition pair** means a treatment, including its dose range and route where relevant, used for a specified condition.
+9. **Core outcome set** means the minimum outcome measures for a condition published or recognized under section 304.
+10. **Outcome label** means the standardized public summary of results for a treatment-condition pair required by section 306.
+11. **Treatment ranking** means any comparison, score, or ordering of two or more treatments for a condition that is derived from outcome data.
 
 ## TITLE II: UNIVERSAL RIGHT TO TRY AND LEARN
 
@@ -75,7 +81,7 @@ In this Act:
 
 (c) **Protections Retained.** Nothing in subsection (b) exempts a person from applicable manufacturing and quality standards, prohibitions on false or misleading statements, or the consent, ethical review, evidence, safety-reporting, and liability requirements of this Act. No person may represent an eligible investigational treatment as safe or effective beyond what reliable evidence supports.
 
-(d) **No Compelled Participation.** Except for the duty under section 203(g) to record the disposition of a formal request received through a qualified evidence system, nothing in this Act requires a manufacturer, provider, facility, ethics board, evidence system, insurer, employer, or other person to manufacture, recommend, provide, administer, review, record, or pay for a treatment.
+(d) **No Compelled Participation.** Except for the duty under section 203(g) to record the disposition of a formal request received through a qualified evidence system and the duty under section 305(c) to transmit records at a patient's direction, nothing in this Act requires a manufacturer, provider, facility, ethics board, evidence system, insurer, employer, or other person to manufacture, recommend, provide, administer, review, record, or pay for a treatment.
 
 (e) **Clinical Judgment.** A provider may decline or discontinue treatment when the provider reasonably believes that the expected risks exceed the expected benefits for the patient.
 
@@ -102,7 +108,7 @@ In this Act:
 
 ### SEC. 203. EVERY TREATMENT USE GENERATES EVIDENCE
 
-(a) **Prospective Registration.** Before treatment begins, the right-to-trial protocol must be registered with a qualified evidence system and identify the treatment, condition, eligibility criteria, outcomes, follow-up period, safety-monitoring plan, and the supplier, sponsor, provider, or evidence-system operator responsible for evidence submission.
+(a) **Prospective Registration.** Before treatment begins, the right-to-trial protocol must be registered with a qualified evidence system and identify the treatment, condition, eligibility criteria, outcomes (including the core outcome set required by section 304), follow-up period, safety-monitoring plan, and the supplier, sponsor, provider, or evidence-system operator responsible for evidence submission.
 
 (b) **Minimum Evidence.** Subject to subsection (c), the responsible party must collect and submit the following information for every treatment use:
 
@@ -116,7 +122,7 @@ In this Act:
 
 (d) **Reliable Claims.** A protocol making a causal claim about treatment effects must use randomization or another adequate comparator when feasible and a prespecified analysis. Results without an adequate comparator must be clearly labeled observational and may not be represented as proving causation.
 
-(e) **Public Results.** A qualified evidence system shall publish timely, deidentified aggregate results, including negative and inconclusive results, in a searchable and machine-readable form. Individually identifiable information may not be publicly disclosed.
+(e) **Public Results.** A qualified evidence system shall publish timely, deidentified aggregate results, including negative and inconclusive results, in a searchable and machine-readable form, and shall report them in outcome labels under section 306. Individually identifiable information may not be publicly disclosed.
 
 (f) **Safety Reporting.** Serious and unexpected adverse events must be reported promptly to the supplier, reviewing ethics board, qualified evidence system, and Secretary under timelines established by the Secretary.
 
@@ -144,7 +150,7 @@ In this Act:
 
 (d) **Surviving Family.** A patient's heirs or other family members are not liable for an unpaid treatment obligation unless they separately agreed to assume it before treatment.
 
-## TITLE III: COMPETING EVIDENCE SYSTEMS AND FDA USE
+## TITLE III: COMPETING EVIDENCE SYSTEMS, OUTCOME LABELS, AND FDA USE
 
 ### SEC. 301. QUALIFIED EVIDENCE SYSTEMS
 
@@ -168,11 +174,90 @@ In this Act:
 
 ### SEC. 303. PUBLIC LEARNING
 
-(a) **Interoperable Catalog.** The Secretary shall maintain or designate a public catalog through which patients, providers, and researchers can find registered protocols and aggregate results across qualified evidence systems.
+(a) **Interoperable Catalog.** The Secretary shall maintain or designate a public catalog through which patients, providers, and researchers can find registered protocols, aggregate results, and outcome labels across qualified evidence systems. The catalog shall display outcome labels as published and may let users search, filter, and sort them, but may not present a federal treatment ranking or recommendation.
 
 (b) **International Evidence.** A qualified evidence system may accept compatible evidence generated outside the United States when collection and use comply with applicable law.
 
-(c) **No Ownership Mandate.** Nothing in this Act transfers ownership of a patient's identifiable health data or requires public disclosure of trade secrets, manufacturing information, or identifiable health information.
+(c) **No Ownership Mandate.** Nothing in this Act transfers ownership of a patient's identifiable health data or, except as provided in subsection (d), requires public disclosure of trade secrets, manufacturing information, or identifiable health information.
+
+(d) **Results Are Public.** Deidentified aggregate outcome, adverse-event, dose, and follow-up results generated or contributed under this Act, including outcome labels, are not trade secrets or confidential commercial information for purposes of this Act, section 552(b)(4) of title 5, United States Code, or section 1905 of title 18, United States Code. A contract term that prohibits or delays their publication beyond the timelines in sections 203(e) and 306 is unenforceable. Formulations, manufacturing processes, and other manufacturing information remain protected.
+
+### SEC. 304. CORE OUTCOME SETS
+
+(a) **Default Set.** Not later than 180 days after enactment, the Secretary shall publish a default core outcome set for any condition without a recognized condition-specific set. The default set shall include mortality, a validated generic patient-reported measure of health status, serious adverse events, and treatment discontinuation.
+
+(b) **Condition-Specific Sets.** The Secretary shall recognize a condition-specific core outcome set developed through an open, documented process that includes patients, clinicians, and researchers, when every measure in the set is validated and free to use. Any person may petition to recognize, revise, or retire a set. The Secretary shall decide each petition within 180 days and publish the reasons.
+
+(c) **Required Use.** The applicable core outcome set for a condition is its recognized condition-specific set or, if none is recognized, the default set. Each right-to-trial protocol shall collect the applicable core outcome set in addition to any other outcomes it specifies. Outcome records contributed under section 305 shall use the applicable core outcome set where practicable.
+
+(d) **Common Data Standards.** Core outcome data shall be recorded and exchanged using openly published data standards recognized by the Secretary, so that records from different qualified evidence systems can be combined. Recognition of a data standard does not require a particular vendor or architecture within the meaning of section 301(e).
+
+### SEC. 305. OUTCOMES FROM ANY TREATMENT
+
+(a) **Voluntary Contribution.** A patient or legally authorized representative may contribute outcome records to a qualified evidence system for any treatment the patient uses, including an approved product used for an approved or unapproved use, a dietary supplement, a food, a procedure, or a behavioral intervention, whether or not the treatment is provided under a right-to-trial protocol.
+
+(b) **Consent.** A qualified evidence system may collect contributed outcome records only with the patient's documented consent describing the data collected, permitted uses, privacy protections, and public reporting. A patient may withdraw consent to future collection at any time.
+
+(c) **Patient-Directed Records.** A covered entity, as defined in section 160.103 of title 45, Code of Federal Regulations, shall transmit a patient's electronic health information to a qualified evidence system at the patient's direction under section 164.524 of title 45, Code of Federal Regulations. A refusal or unreasonable delay by a health care provider, health information network, or developer of certified health information technology in transmitting a patient's electronic health information to a qualified evidence system at the patient's direction is information blocking under section 3022 of the Public Health Service Act unless an exception established under that section applies.
+
+(d) **Comparison Data.** A right-to-trial protocol may use contributed outcome records as comparison data when the protocol prespecifies how they will be selected and analyzed.
+
+(e) **No New Intended Use.** Contributing, collecting, analyzing, or publishing outcome records under this section does not by itself make a treatment investigational, constitute a clinical investigation, or establish a new intended use of the treatment by any person.
+
+(f) **Observational Results.** Results based on contributed outcome records are observational unless collected under a protocol with randomization or another adequate comparator, and shall be labeled as required by section 203(d).
+
+### SEC. 306. OUTCOME LABELS
+
+(a) **Duty to Publish.** A qualified evidence system shall publish an outcome label for each treatment-condition pair for which it holds outcome records from enough patients that publication meets the deidentification standards in section 164.514 of title 45, Code of Federal Regulations. The system shall update each label at least quarterly while it receives new records for that pair.
+
+(b) **Contents.** Each outcome label shall state, in plain language and in machine-readable form:
+
+1. the number of patients, the shares from right-to-trial protocols and from contributed outcome records, and follow-up completeness;
+2. for each measure in the applicable core outcome set, the share of patients who improved, did not change, or worsened, and the time since treatment began;
+3. the estimated effect, its uncertainty interval, and the comparator, if any;
+4. rates of discontinuation, serious adverse events, and the most frequently reported side effects;
+5. the doses and durations used;
+6. whether the evidence is randomized, otherwise controlled, or observational, with a plain statement of known limitations and risks of bias; and
+7. the date of the last update and the operator's conflicts of interest.
+
+(c) **Common Format.** Not later than 1 year after enactment, and after public comment, the Secretary shall publish a model outcome label format and machine-readable schema so that labels for the same treatment-condition pair are comparable across qualified evidence systems. The Secretary may revise the format but may not approve, edit, rank, or withhold the content of any outcome label.
+
+(d) **Combined Labels.** Any person may combine published outcome labels, or outcome records the person is authorized to use, from multiple qualified evidence systems into a combined outcome label if the person publishes the methods used.
+
+(e) **Approved Labeling Unchanged.** An outcome label does not replace or amend approved product labeling. The Secretary may consider outcome labels and their underlying records as evidence under section 302.
+
+### SEC. 307. INDEPENDENT TREATMENT RANKINGS
+
+(a) **No Federal Rankings.** Nothing in this Act authorizes the Secretary or any other federal officer to publish a treatment ranking, recommend one treatment over another, or endorse a ranking published by another person.
+
+(b) **Open Publication.** Any person may publish outcome labels, treatment rankings, and the methods used to produce them, using public results or outcome records the person is authorized to use.
+
+(c) **Safe Harbor.** Publication of an outcome label or treatment ranking that meets the conditions in subsection (d) is not, by itself:
+
+1. labeling, advertising, or promotion of a drug, biological product, or device under the Federal Food, Drug, and Cosmetic Act;
+2. evidence of intended use under section 201.128 or 801.4 of title 21, Code of Federal Regulations;
+3. a device or device software function under section 201(h) of the Federal Food, Drug, and Cosmetic Act, including when displayed in software that lets a user filter results by condition, age, sex, or other patient characteristics; or
+4. the practice of medicine or pharmacy.
+
+(d) **Conditions.** The safe harbor applies only when the publisher:
+
+1. publishes its methods and inclusion criteria before applying them, and logs every later change with its date and reason;
+2. includes every treatment for the condition that meets its inclusion criteria, including competitors' treatments and negative, inconclusive, and harmful results;
+3. distinguishes randomized, otherwise controlled, and observational evidence as required by section 203(d);
+4. discloses its funding sources and any financial interest in a ranked treatment; and
+5. states that the label or ranking summarizes results in groups of patients and is not individual medical advice.
+
+(e) **Limits.** The safe harbor does not apply to:
+
+1. software that diagnoses a condition or directs the treatment of a specific patient, rather than displaying results in groups of patients;
+2. advertising or promotional material that quotes an outcome label or treatment ranking selectively or without its statement of limitations; or
+3. a false or misleading statement.
+
+### SEC. 308. NO COVERAGE MANDATE
+
+(a) **Payers.** Nothing in this Act requires any insurer, employer, federal health program, or other payer to use an outcome label or treatment ranking, or authorizes the Secretary to use one to deny, limit, or condition coverage or payment.
+
+(b) **Existing Limits Preserved.** Nothing in this Act modifies section 1182 of the Social Security Act (42 U.S.C. 1320e-1).
 
 ## TITLE IV: NONINTERFERENCE AND IMPLEMENTATION
 
@@ -204,7 +289,7 @@ In this Act:
 
 1. **Preregistered plan.** Before the access right in section 201 takes effect, the Comptroller General, in consultation with independent health economists, biostatisticians, patient representatives, and drug-development researchers, shall publish a timestamped evaluation protocol and baseline in a permanent public repository. The initial protocol shall remain available. Every later amendment must be logged publicly with its date, reason, and affected analyses. The protocol shall identify outcomes, comparison groups, statistical methods, subgroup analyses, and criteria for interpreting success or failure.
 2. **Access and market outcomes.** The Comptroller General shall report annually on requests, enrollments, supplier refusals, posted prices, payments, treatment supply, supplier entry, market concentration, and participation by patient subgroup.
-3. **Health and evidence outcomes.** The annual report shall include mortality, condition-specific quality-adjusted life years, patient-reported outcomes, displacement of effective care, serious adverse events, follow-up completeness, missingness, protocol deviations, treatment-condition pairs reaching prespecified evidence thresholds, time to reliable answers, independent replications, and regulatory uses of the evidence.
+3. **Health and evidence outcomes.** The annual report shall include mortality, condition-specific quality-adjusted life years, patient-reported outcomes, displacement of effective care, serious adverse events, follow-up completeness, missingness, protocol deviations, treatment-condition pairs reaching prespecified evidence thresholds, outcome labels published, time to reliable answers, independent replications, and regulatory uses of the evidence.
 4. **Methods and uncertainty.** Reports shall distinguish randomized from observational evidence, identify biases and spillovers, publish uncertainty intervals and sensitivity analyses, and release reproducible code and nonidentifiable data to the maximum extent permitted by law.
 5. **Economic evaluation.** Public implementation cost, real treatment resources, patient financial burden, treatment prices, medical spending, and net health shall be reported separately. Benefits from earlier access, faster discovery, medical-cost changes, research-cost changes, and option value shall be defined as mutually exclusive channels before aggregation. The evaluation must reconcile interactions and overlap among the channels, and non-additive or overlapping benefits may not be summed.
 6. **Counterfactual.** The evaluation shall compare outcomes under this Act with the best available counterfactual, including expanded access, the existing federal Right to Try Act, accelerated approval, off-label treatment, and contemporaneous medical progress unrelated to this Act.

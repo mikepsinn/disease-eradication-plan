@@ -24,6 +24,7 @@ keywords:
   - defense spending
   - healthcare administration
   - regulatory burden
+  - drug regulation
   - OECD benchmarking
   - Monte Carlo simulation
 jel:
@@ -318,6 +319,7 @@ The following subsystem audits provide detailed component breakdowns. Each subsy
 | **Justice and Prohibition** | Direct Spending Waste | Drug war ({{< var us_gov_waste_drug_war >}}) |
 | **Regulatory and Tax Compliance** | Compliance Burden + Policy-Induced GDP Loss | Tax compliance ({{< var us_gov_waste_tax_compliance >}}), Regulatory red tape ({{< var us_gov_waste_regulatory_red_tape >}}), Housing/zoning ({{< var us_gov_waste_housing_zoning >}}) |
 | **Subsidies and Transfers** | Direct Spending Waste + Policy-Induced GDP Loss | Corporate welfare ({{< var us_gov_waste_corporate_welfare >}}), Fossil fuel subsidies ({{< var us_gov_waste_fossil_fuel_subsidies >}}), Agricultural subsidies ({{< var us_gov_waste_agricultural_subsidies >}}), Tariffs ({{< var us_gov_waste_tariffs >}}) |
+| **[Drug and Device Regulation (FDA)](#subsystem-audit-fda)** | Context only (not in core total) | Budget ({{< var fda_annual_program_budget >}}) and a ledger of specific rules |
 
 ## Subsystem Audit: Defense
 
@@ -528,6 +530,61 @@ The Jones Act requires domestic shipping on U.S.-built, U.S.-crewed vessels. Res
 
 NEPA and Jones Act estimates above are additional policy frictions discussed for context and are not separately added to the core model total here.
 
+## Subsystem Audit: Drug and Device Regulation (FDA) {#subsystem-audit-fda}
+
+**[Context only: not added to the core model total]**
+
+The Food and Drug Administration spends {{< var fda_annual_program_budget >}} a year [@fda-fy2026-operating-plan]. Its budget is not where its costs are. Its rules set how long a treatment waits, and how much its testing costs, before anyone may sell it. Sponsors and patients pay those costs, and no federal budget records them.
+
+### Budget Context
+
+| Program | FY 2026 program level | Paid by industry user fees |
+|---------|----------------------:|---------------------------:|
+| Human Drugs | $2.50 billion | $1.81 billion (73%) |
+| Human Foods | $1.18 billion | $13 million (1%) |
+| Devices and Radiological Health | $914 million | $459 million (50%) |
+| Rent, buildings, and other activities | $819 million | $254 million (31%) |
+| Tobacco Products | $688 million | $688 million (100%) |
+| Biologics | $601 million | $342 million (57%) |
+| Animal Drugs and Foods | $279 million | $61 million (22%) |
+| National Center for Toxicological Research | $72 million | $0 |
+| **Total** | **{{< var fda_annual_program_budget >}}** | **$3.63 billion (51%)** |
+
+*Source: FY 2026 FDA Operating Plan, budget as of November 12, 2025 [@fda-fy2026-operating-plan]. Percentages are this audit's arithmetic on the plan's figures.*
+
+The companies the FDA regulates pay half of its budget and nearly three quarters of its drug program. The Prescription Drug User Fee Act alone pays $1.12 billion of the drug center's costs. The agency funds 18,219 full-time equivalent staff.
+
+This audit does not estimate the marginal value of each FDA program, because the book has no evidence base for one. The ledger below looks where the costs are: the rules.
+
+### Rule Ledger
+
+Each row is a specific rule, the cost the book already estimates for it, what the rule protects, and the section of the [Right to Trial & FDA Upgrade Act](right-to-trial-fda-upgrade-act.qmd) [@right-to-trial-paper-2025] that changes it. "Not estimated" means the book has no parameter for that rule's cost. Costs come from the book's own models, not from regulatory impact analyses, and are worldwide.
+
+| Rule | What it requires | Estimated cost | What it protects | Upgrade Act change |
+|------|------------------|----------------|------------------|--------------------|
+| **Efficacy proof before sale:** FDCA §505(a) and (d); 21 CFR 314.126 (1962 Kefauver-Harris Amendments) | "Substantial evidence" from "adequate and well-controlled investigations" before a drug may be sold | {{< var efficacy_lag_years >}} wait after safety testing; {{< var existing_drugs_efficacy_lag_deaths_total >}} among patients waiting for drugs later approved (1962-2024), valued at {{< var existing_drugs_efficacy_lag_economic_loss >}} | Patients from unsafe or ineffective drugs. The book's upper estimate of harm prevented by blocking unsafe drugs is {{< var type_i_error_benefit_dalys >}} over the same period; the harm from delay is {{< var type_ii_error_cost_ratio >}} times larger | 201(a), 201(b)(1): access after Phase 1 without approval. 302(b): the FDA may not reject evidence only because it is pragmatic. The approval standard is unchanged |
+| **Trial format:** 21 CFR part 312 (IND, sponsor and investigator duties); 21 CFR 314.126 | An IND, sponsor monitoring, investigator records, and study designs the FDA accepts as adequate and well-controlled | {{< var traditional_phase3_cost_per_patient >}} per Phase 3 patient versus {{< var dfda_pragmatic_trial_cost_per_patient >}} in embedded pragmatic trials ({{< var dfda_trial_cost_reduction_factor >}}); {{< var pharma_phase_2_3_cost_barrier >}} of Phase 2/3 testing per drug and {{< var efficacy_lag_cumulative_excess_cost >}} since 1962; development cost up {{< var drug_cost_increase_pre1962_to_current_multiplier >}} since before 1962 | Data quality, randomization, and blinding | 201(b)(1): part 312 does not apply to covered uses. 203(d): causal claims still need a comparator |
+| **Charging limits:** 21 CFR 312.7 and 312.8; for devices, 21 CFR 812.7 | Prior written FDA authorization to charge; recovery of "only the direct costs"; no commercial distribution or promotion | Not estimated. Blocks the revenue that could pay for Phase 2 and 3 testing of treatments no sponsor can otherwise afford to test | Patients from paying for unproven products | 201(b)(3) and 205: prices are negotiated freely and disclosed at consent |
+| **Narrow access:** Right to Try Act, 21 U.S.C. 360bbb-0a; expanded access, 21 CFR 312.300-312.320 | A "life-threatening disease or condition," exhausted approved options, and inability to join a clinical trial (Right to Try); FDA review of each expanded-access request | Not estimated | Patients with non-fatal conditions from unproven treatments | 104(2) and 201(a): any condition, including aging. 201(b): no individual FDA authorization |
+| **Device premarket review:** FDCA §§510(k), 513(f)(2), 515, and 520(g); 21 CFR part 812 | Clearance or approval before sale; an investigational device exemption for studies | Not estimated | Patients from unsafe or ineffective devices | 201(b)(2): these do not apply to covered uses |
+| **Comparison and intended-use rules:** 21 CFR 202.1(e)(6)(ii), 201.128, and 801.4 | No claim that a drug beats another without substantial evidence; a maker's statements and knowledge of off-label use can establish a new intended use | Not estimated. Exposes makers that take part in outcome labels or treatment rankings | Patients from misleading promotion | 307: safe harbor for complete, prespecified labels and rankings. False statements and selective quotes stay covered |
+| **Software as a device:** FDCA §§201(h) and 520(o)(1)(E) | Decision-support software is exempt only if it serves a health care professional who can independently review its basis | Not estimated. Patient-facing treatment rankings risk device regulation | Patients from unvalidated diagnostic software | 307(c)(3): displaying results in groups of patients, including filtered results, is not a device function |
+| **Confidential results:** 21 CFR 312.130 and 314.430; 18 U.S.C. 1905 | The FDA does not disclose the existence of, or data in, unapproved INDs and applications. ClinicalTrials.gov results reporting (42 CFR part 11) covers summary results of most Phase 2 and later trials, not Phase 1 | Not estimated. Phase 1 results, patient-level data, and the FDA's analyses of unapproved products stay private; {{< var current_trial_abandonment_rate >}} of trials never finish | Sponsors' competitive information | 203(e) and 303(d): results generated under the Act are public and are not trade secrets. Traditional applications are unchanged |
+
+### Why the FDA Is Not in the Total
+
+The costs above stay out of the {{< var us_gov_waste_total >}} total for five reasons:
+
+1. **Scope.** The audit counts annual U.S. losses. The ledger's costs are worldwide, and most are cumulative since 1962.
+2. **Overlap with healthcare.** The healthcare component ({{< var us_gov_waste_healthcare_inefficiency >}}) includes high U.S. prices, part of which reflects the development costs in the trial-format row.
+3. **Overlap with red tape.** The red-tape component ({{< var us_gov_waste_regulatory_red_tape >}}) is a share of GDP that does not exclude FDA compliance.
+4. **Overlap with the global estimate.** [The Political Dysfunction Tax](political-dysfunction-tax.qmd) already counts {{< var political_dysfunction_global_health_opportunity_cost >}} a year in lives lost and healthspan denied by slow regulation of health innovation.
+5. **Overlap within the ledger.** The first two rows are two costs of the same law: time and money. They are not additive, and the other rows have no separate estimate.
+
+### FDA Subsystem Summary
+
+No FDA component enters the core model. A U.S. annual component would need the U.S. share of the efficacy-lag losses, net of the overlaps above. The book does not yet estimate one.
+
 ## Subsystem Audit: Subsidies and Transfers
 
 **[Direct Spending Waste + Policy-Induced GDP Loss]**
@@ -727,6 +784,7 @@ Political cycles (2-4 years) misalign with infrastructure and policy cycles (10-
 - Intergenerational costs (debt burden on future)
 - Second-order behavioral effects
 - International competitiveness losses
+- Costs of FDA drug and device rules, which are worldwide, mostly cumulative, and overlap the healthcare component (see [Subsystem Audit: Drug and Device Regulation](#subsystem-audit-fda))
 - Monetary-cycle distortion and financial-crisis losses: the 2007-09 crisis alone cost an estimated $6-14 trillion [@dallas-fed-crisis-cost-2013], but no honest annualization exists, so it is cited rather than summed (see [the Algorithmic Monetary Authority](../solution/algorithmic-monetary-authority.qmd))
 
 Including these factors would increase the efficiency gap estimate substantially.
