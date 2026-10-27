@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 784 parameters used in the analysis, organized by type:
+This appendix documents all 785 parameters used in the analysis, organized by type:
 
-- External sources (peer-reviewed): 223
+- External sources (peer-reviewed): 224
 - Calculated values: 402
 - Core definitions: 159
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (402 parameters) • [External Data Sources](#sec-external) (223 parameters) • [Core Definitions](#sec-definitions) (159 parameters)
+[Calculated Values](#sec-calculated) (402 parameters) • [External Data Sources](#sec-external) (224 parameters) • [Core Definitions](#sec-definitions) (159 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -36172,6 +36172,22 @@ Land animals slaughtered for meat globally per year, ~83 billion in 2022 (UN FAO
 Reduction in global farmland if the world shifted off meat and dairy while still feeding everyone, more than 75% (~4.1 billion down to ~1 billion hectares; University of Oxford LEAP, reporting Poore & Nemecek 2018, Science). Oxford's illustrative equivalent: an area the size of the US, China, EU, and Australia combined. A hypothetical full-shift model, not a forecast.
 
 **Source**: [@oxford-leap-food-impacts]
+
+#### Uncertainty Range
+
+**Technical**: Distribution: Fixed
+
+*✓ High confidence*
+
+:::
+
+### FDA Annual Program Budget: $7.06 billion {#sec-fda_annual_program_budget}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+FDA total program level in the FY 2026 operating plan. This is used only for a budget-scale comparison, not as an estimate of FDA cost-effectiveness.
+
+**Source**: [@fda-fy2026-operating-plan]
 
 #### Uncertainty Range
 
