@@ -1671,24 +1671,24 @@ Counterfactual calendar year when biological aging becomes a treatable risk fact
 - [War-Redirect Aging Pleading Cutoff Year](#sec-war_trial_redirect_aging_pleading_cutoff_year) 🔢: 1990
 
 $$
-Y_{aging,redirect} = Y_{aging,plead} = 1{,}990 = 1{,}990
+Y_{aging,redirect} = Y_{aging,plead} = 1990 = 1990
 $$
 where:
 $$
 \begin{gathered}
 Y_{aging,plead} \\
 = Y_{disease,plead} + T_{aging,lag} \\
-= 1{,}950 + 40 \\
-= 1{,}990
+= 1950 + 40 \\
+= 1990
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Y_{disease,plead} \\
-= Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} \\
-= 1{,}900 + 14 + 36 \\
-= 1{,}950
+= \operatorname{round}\left(Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial}\right) \\
+= \operatorname{round}\left(1900 + 14 + 36\right) \\
+= 1950
 \end{gathered}
 $$
 where:
@@ -1788,17 +1788,17 @@ $$
 \begin{gathered}
 Y_{aging,plead} \\
 = Y_{disease,plead} + T_{aging,lag} \\
-= 1{,}950 + 40 \\
-= 1{,}990
+= 1950 + 40 \\
+= 1990
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 Y_{disease,plead} \\
-= Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} \\
-= 1{,}900 + 14 + 36 \\
-= 1{,}950
+= \operatorname{round}\left(Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial}\right) \\
+= \operatorname{round}\left(1900 + 14 + 36\right) \\
+= 1950
 \end{gathered}
 $$
 where:
@@ -1898,9 +1898,9 @@ Aggressive prosecutor pleading cutoff year for presumptive disease-death plainti
 $$
 \begin{gathered}
 Y_{disease,plead} \\
-= Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} \\
-= 1{,}900 + 14 + 36 \\
-= 1{,}950
+= \operatorname{round}\left(Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial}\right) \\
+= \operatorname{round}\left(1900 + 14 + 36\right) \\
+= 1950
 \end{gathered}
 $$
 where:
@@ -2081,20 +2081,15 @@ Counterfactual calendar year for practical infectious-disease control in the agg
 - [War-Redirect Disease Pleading Cutoff Year](#sec-war_trial_redirect_disease_pleading_cutoff_year) 🔢: 1950
 
 $$
-\begin{gathered}
-Y_{infectious,redirect} \\
-= Y_{disease,plead} \\
-= 1{,}950 \\
-= 1{,}950
-\end{gathered}
+Y_{infectious,redirect} = Y_{disease,plead} = 1950 = 1950
 $$
 where:
 $$
 \begin{gathered}
 Y_{disease,plead} \\
-= Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} \\
-= 1{,}900 + 14 + 36 \\
-= 1{,}950
+= \operatorname{round}\left(Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial}\right) \\
+= \operatorname{round}\left(1900 + 14 + 36\right) \\
+= 1950
 \end{gathered}
 $$
 where:
@@ -2226,15 +2221,15 @@ Counterfactual calendar year for practical control of major non-aging disease bu
 - [War-Redirect Disease Pleading Cutoff Year](#sec-war_trial_redirect_disease_pleading_cutoff_year) 🔢: 1950
 
 $$
-Y_{disease,redirect} = Y_{disease,plead} = 1{,}950 = 1{,}950
+Y_{disease,redirect} = Y_{disease,plead} = 1950 = 1950
 $$
 where:
 $$
 \begin{gathered}
 Y_{disease,plead} \\
-= Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial} \\
-= 1{,}900 + 14 + 36 \\
-= 1{,}950
+= \operatorname{round}\left(Y_{redirect,start} + T_{tool,bootstrap} + T_{queue,trial}\right) \\
+= \operatorname{round}\left(1900 + 14 + 36\right) \\
+= 1950
 \end{gathered}
 $$
 where:

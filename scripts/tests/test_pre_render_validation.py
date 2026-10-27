@@ -308,3 +308,64 @@ def test_manual_pages_redirect_missing_target(manual_url_project: Path) -> None:
     assert len(module.errors) == 1
     assert module.errors[0].file == "cloudflare/pages/manual/_redirects"
     assert module.errors[0].line == 2
+
+
+def test_latex_variable_raw_names_are_errors() -> None:
+    module = load_pre_render_validation_module()
+    module.errors.clear()
+
+    module.check_latex_variable_raw_names({
+        "yll_latex": r"$$ YLL = \text{DEATHS\_TOTAL} \times (REMAINING_LIFE_EXPECTANCY_AT_60 - 60) $$",
+        "ok_latex": r"$$ YLL = Deaths_{lag} \times (e_{60} - (Age_{death} - 60)) \times \text{VSLY} $$",
+        "not_latex": r"DEATHS\_TOTAL",
+    })
+
+    assert len(module.errors) == 1
+    assert "yll_latex" in module.errors[0].message
+    assert "DEATHS_TOTAL" in module.errors[0].message
+    assert "REMAINING_LIFE_EXPECTANCY_AT_60" in module.errors[0].message
+
+
+def test_latex_variable_wide_lines_are_errors() -> None:
+    module = load_pre_render_validation_module()
+    module.errors.clear()
+
+    long_sum = " + ".join(f"Cost_{{item{i}}}" for i in range(30))
+    module.check_latex_variable_line_widths({
+        "wide_latex": "$$\n\\begin{gathered}\nX \\\\\n= " + long_sum + "\n\\end{gathered}\n$$",
+        "ok_latex": "$$\n\\begin{gathered}\nX \\\\\n= a + b\n\\end{gathered}\n$$",
+    })
+
+    assert len(module.errors) == 1
+    assert "wide_latex" in module.errors[0].message
+
+
+def test_display_math_raw_names_are_errors_outside_code() -> None:
+    module = load_pre_render_validation_module()
+    module.errors.clear()
+
+    content = (
+        "Text.\n\n"
+        "```{ojs}\nconst s = `${sign}$${x}`; const t = `$${y}`;\n```\n\n"
+        "$$\nk = T_{lag} \\times \\text{MONTHS\\_PER\\_YEAR}\n$$\n\n"
+        "$$\nk = T_{lag} \\times \\underbrace{12}_{\\text{months/yr}}\n$$\n"
+    )
+    module.check_display_math_raw_names(content, "appendix.qmd", content.split("\n"))
+
+    assert len(module.errors) == 1
+    assert module.errors[0].line == 7
+    assert "MONTHS_PER_YEAR" in module.errors[0].message
+
+
+def test_hand_written_display_math_wider_than_the_page_is_an_error() -> None:
+    module = load_pre_render_validation_module()
+    module.errors.clear()
+
+    long_sum = " + ".join(f"\\text{{Cost}}_{{{i}}}" for i in range(30))
+    content = f"Intro.\n\n$$\nX = {long_sum}\n$$\n\n$$\nY = a + b\n$$\n"
+    module.check_display_math_widths(content, "knowledge/chapter.qmd", content.split("\n"))
+    module.check_display_math_widths(content, "knowledge/appendix/parameters-and-calculations-x.qmd", content.split("\n"))
+
+    assert len(module.errors) == 1
+    assert module.errors[0].file == "knowledge/chapter.qmd"
+    assert module.errors[0].line == 3

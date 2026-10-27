@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 79 parameters used in the analysis, organized by type:
+This appendix documents all 81 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 28
-- Calculated values: 33
+- Calculated values: 35
 - Core definitions: 18
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (33 parameters) • [External Data Sources](#sec-external) (28 parameters) • [Core Definitions](#sec-definitions) (18 parameters)
+[Calculated Values](#sec-calculated) (35 parameters) • [External Data Sources](#sec-external) (28 parameters) • [Core Definitions](#sec-definitions) (18 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -68,8 +68,9 @@ Cost per DALY for insecticide-treated bed nets: GiveWell's Against Malaria Found
 $$
 \begin{gathered}
 Cost_{nets} \\
-= Cost_{GW,max} / ((1 - (1 \\
-+ r_{discount})^{-LE_{global}}) / \ln\left(1 + r_{discount}\right))
+= \frac{Cost_{GW,max}}{\frac{1 - (1 + r_{discount})^{-LE_{global}}}{\ln\left(1 + r_{discount}\right)}} \\
+= \frac{\$5.5K}{\frac{1 - (1 + 3\%)^{-73.4}}{\ln\left(1 + 3\%\right)}} \\
+= \$184
 \end{gathered}
 $$
 
@@ -114,7 +115,12 @@ $$
 $$
 where:
 $$
-GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
+\begin{gathered}
+GDP_{base,20} \\
+= GDP_{global} \times (1 + g_{base})^{20} \\
+= \$115T \times (1 + 2.5\%)^{20} \\
+= \$188T
+\end{gathered}
 $$
 #### Uncertainty Range
 
@@ -144,7 +150,12 @@ Global GDP at year 20 under status-quo current trajectory growth.
 - [Baseline Global GDP Growth Rate](#sec-gdp_baseline_growth_rate): 2.5%
 
 $$
-GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
+\begin{gathered}
+GDP_{base,20} \\
+= GDP_{global} \times (1 + g_{base})^{20} \\
+= \$115T \times (1 + 2.5\%)^{20} \\
+= \$188T
+\end{gathered}
 $$
 
 *✓ High confidence*
@@ -300,6 +311,107 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-dfda_patients_fundable_annually.qmd >}}
+
+:::
+
+### Average Discount Factor over dFDA Queue Clearance: 0.616x {#sec-dfda_queue_average_discount_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average discount factor over the dFDA queue clearance period: the mean of (1+r)^(-t) for t spread evenly over [0, T]. Equals A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)).
+
+**Inputs**:
+
+- [Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity](#sec-dfda_queue_clearance_years) 🔢: 36 years
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+k_{capacity} \\
+= \frac{N_{fundable,ref}}{Slots_{curr}} \\
+= \frac{23.4M}{1.9M} \\
+= 12.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{fundable,ref} \\
+= \frac{Subsidies_{trial,ref}}{Cost_{pragmatic,pt}} \\
+= \frac{\$21.8B}{\$929} \\
+= 23.4M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+Subsidies_{trial,ref} \\
+= Funding_{trial,ref} - OPEX_{trial} \\
+= \$21.8B - \$40M \\
+= \$21.8B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+OPEX_{trial} \\
+= Cost_{platform} + Cost_{staff} + Cost_{infra} \\
++ Cost_{regulatory} + Cost_{community} \\
+= \$15M + \$10M + \$8M + \$5M + \$2M \\
+= \$40M
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-dfda_queue_average_discount_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-dfda_queue_average_discount_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-dfda_queue_average_discount_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-dfda_queue_average_discount_factor.qmd >}}
 
 :::
 
@@ -475,7 +587,8 @@ Total DALYs averted from the combined treatment timeline shift. Calculated as an
 $$
 \begin{gathered}
 DALYs_{max} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,max} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \\
+\times T_{accel,max} \\
 = 2.88B \times 92.6\% \times 212 \\
 = 565B
 \end{gathered}
@@ -579,22 +692,41 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].
+Present value of the DALYs averted by the combined treatment timeline shift, discounted at the standard social discount rate (the same rate applied to costs). Standard cost-effectiveness practice (WHO-CHOICE, US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years.
 
 **Inputs**:
 
 - [Global Annual DALY Burden](#sec-global_annual_daly_burden) 📊: 2.88 billion DALYs/year (SE: ±150 million DALYs/year)
 - [Eventually Avoidable DALY Percentage](#sec-eventually_avoidable_daly_pct): 92.6% (95% CI: 50% - 98%)
-- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
-- [Therapeutic Space Exploration Time at Treaty-Scale Trial Capacity](#sec-dfda_queue_clearance_years) 🔢: 36 years
+- [Average Discount Factor over dFDA Queue Clearance](#sec-dfda_queue_average_discount_factor) 🔢: 0.616x
+- [Average Discount Factor over Status Quo Queue Clearance](#sec-status_quo_queue_average_discount_factor) 🔢: 0.0763x
 - [Regulatory Delay for Efficacy Testing Post-Safety Verification](#sec-efficacy_lag_years) 📊: 8.2 years (SE: ±2 years)
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -613,15 +745,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -659,6 +782,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *? Low confidence*
@@ -702,8 +834,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -722,15 +873,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -768,6 +910,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *? Low confidence*
@@ -1217,8 +1368,8 @@ where:
 $$
 \begin{gathered}
 Cost_{US,total} \\
-= (Cost_{campaign} \\
-+ Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}
+= (Cost_{campaign} + Cost_{lobby} \times 2) \times \mu_{effort} \\
++ Cost_{career}
 \end{gathered}
 $$
 where:
@@ -1378,6 +1529,61 @@ $$
 
 :::
 
+### Average Discount Factor over Status Quo Queue Clearance: 0.0763x {#sec-status_quo_queue_average_discount_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average discount factor over the status quo queue clearance period: the mean of (1+r)^(-t) for t spread evenly over [0, T]. Equals A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)).
+
+**Inputs**:
+
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-status_quo_queue_average_discount_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-status_quo_queue_average_discount_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-status_quo_queue_average_discount_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-status_quo_queue_average_discount_factor.qmd >}}
+
+:::
+
 ### Status Quo Therapeutic Space Exploration Time: 443 years {#sec-status_quo_queue_clearance_years}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -1531,8 +1737,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -1551,15 +1776,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -1597,6 +1813,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *✓ High confidence*
@@ -1649,8 +1874,27 @@ where:
 $$
 \begin{gathered}
 DALYs_{max}^{PV} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times [A(T_{queue,trial}) - (1 \\
-+ r_{discount})^{-T_{lag}} \times A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{DALYs_{global,ann} \times Pct_{avoid,DALY} \times (A_{dFDA} - (1 + r_{discount})^{-T_{lag}} \times A_{SQ})}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{2.88B \times 92.6\% \times (0.616 - (1 + 3\%)^{-8.2} \times 0.0763)}{\ln\left(1 + 3\%\right)} \\
+= 50.2B
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{dFDA} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,trial}}}{T_{queue,trial} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-36}}{36 \times \ln\left(1 + 3\%\right)} \\
+= 0.616
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,trial} \\
+= \frac{T_{queue,SQ}}{k_{capacity}} \\
+= \frac{443}{12.3} \\
+= 36
 \end{gathered}
 $$
 where:
@@ -1669,15 +1913,6 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
-\end{gathered}
-$$
-where:
-$$
-\begin{gathered}
-T_{queue,trial} \\
-= \frac{T_{queue,SQ}}{k_{capacity}} \\
-= \frac{443}{12.3} \\
-= 36
 \end{gathered}
 $$
 where:
@@ -1715,6 +1950,15 @@ OPEX_{trial} \\
 + Cost_{regulatory} + Cost_{community} \\
 = \$15M + \$10M + \$8M + \$5M + \$2M \\
 = \$40M
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 where:
@@ -1797,8 +2041,8 @@ Total upper-bound investment for US political reform: (campaign spending + 2 yea
 $$
 \begin{gathered}
 Cost_{US,total} \\
-= (Cost_{campaign} \\
-+ Cost_{lobby} \times 2) \times \mu_{effort} + Cost_{career}
+= (Cost_{campaign} + Cost_{lobby} \times 2) \times \mu_{effort} \\
++ Cost_{career}
 \end{gathered}
 $$
 
@@ -1871,11 +2115,14 @@ Wishonia disease-cure fraction over 20 years under full implementation. Uses ful
 - [Wishonia Military Reallocation Physical Max Share](#sec-wishonia_military_reallocation_physical_max_share) 🔢: 87.6%
 - [Maximum Trial Capacity Multiplier (Physical Limit)](#sec-dfda_max_trial_capacity_multiplier_physical) 🔢: 566x
 - [Diseases Without Effective Treatment](#sec-diseases_without_effective_treatment) 🔢: 6,650 diseases
+- [1% Reduction in Military Spending/War Costs from Treaty](#sec-treaty_reduction_pct): 1%
 
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left(1, \frac{Treatments_{new,ann} \times \min\left(\frac{k_{capacity} \times s_{mil,max}}{Reduce_{treaty}}, k_{capacity,max}\right) \times 20}{N_{untreated}}\right) \\
+= \min\left(1, \frac{15 \times \min\left(\frac{12.3 \times 87.6\%}{1\%}, 566\right) \times 20}{6{,}650}\right) \\
+= 100\%
 \end{gathered}
 $$
 where:
@@ -2045,7 +2292,9 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left(1, \frac{Treatments_{new,ann} \times \min\left(\frac{k_{capacity} \times s_{mil,max}}{Reduce_{treaty}}, k_{capacity,max}\right) \times 20}{N_{untreated}}\right) \\
+= \min\left(1, \frac{15 \times \min\left(\frac{12.3 \times 87.6\%}{1\%}, 566\right) \times 20}{6{,}650}\right) \\
+= 100\%
 \end{gathered}
 $$
 where:
@@ -2170,7 +2419,9 @@ where:
 $$
 \begin{gathered}
 f_{cure,20,wish} \\
-= \min\left(1.0, Treatments_{new,ann} \times min(\text{TRIAL\_CAPACITY\_MULTIPLIER} \times \left(\frac{s_{mil,max}}{0.01}\right), \text{MAX\_TRIAL\_CAPACITY\_MULTIPLIER\_PHYSICAL}) \times \frac{20}{N_{untreated}}\right)
+= \min\left(1, \frac{Treatments_{new,ann} \times \min\left(\frac{k_{capacity} \times s_{mil,max}}{Reduce_{treaty}}, k_{capacity,max}\right) \times 20}{N_{untreated}}\right) \\
+= \min\left(1, \frac{15 \times \min\left(\frac{12.3 \times 87.6\%}{1\%}, 566\right) \times 20}{6{,}650}\right) \\
+= 100\%
 \end{gathered}
 $$
 where:
@@ -2239,7 +2490,12 @@ N_{untreated} \\
 $$
 where:
 $$
-GDP_{base,20} = GDP_{global} \times (1 + g_{base})^{20}
+\begin{gathered}
+GDP_{base,20} \\
+= GDP_{global} \times (1 + g_{base})^{20} \\
+= \$115T \times (1 + 2.5\%)^{20} \\
+= \$188T
+\end{gathered}
 $$
 *✓ High confidence*
 

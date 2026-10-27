@@ -492,6 +492,27 @@ _mil_share = 2_720_000_000_000 / (2_720_000_000_000 + 10_500_000_000_000)
 _cyber_share = 10_500_000_000_000 / (2_720_000_000_000 + 10_500_000_000_000)
 _destructive_growth = _mil_share * 0.034 + _cyber_share * 0.15  # ~12.6% weighted
 
+GLOBAL_DESTRUCTIVE_ECONOMY_GROWTH_RATE = Parameter(
+    GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025 * GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR
+    + GLOBAL_CYBERCRIME_COST_ANNUAL_2025 / GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025 * GLOBAL_CYBERCRIME_CAGR,
+    manual_ref="knowledge/economics/gdp-trajectories.qmd",
+    source_type="calculated",
+    description="Annual growth rate of the destructive economy (military spending plus cybercrime): "
+                "each component's growth rate weighted by its share of the total.",
+    display_name="Destructive Economy Growth Rate",
+    unit="percent",
+    formula="GLOBAL_MILITARY_SPENDING_ANNUAL_2024 / GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025 × GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR "
+            "+ GLOBAL_CYBERCRIME_COST_ANNUAL_2025 / GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025 × GLOBAL_CYBERCRIME_CAGR",
+    keywords=["destructive", "economy", "growth", "military", "cybercrime"],
+    inputs=["GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025",
+            "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GLOBAL_CYBERCRIME_COST_ANNUAL_2025", "GLOBAL_CYBERCRIME_CAGR"],
+    compute=lambda ctx: ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]
+    * ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR"]
+    + ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]
+    * ctx["GLOBAL_CYBERCRIME_CAGR"],
+    latex_symbol=r"g_{destruct}",
+)
+
 DESTRUCTIVE_ECONOMY_BASE_YEAR = Parameter(
     2025,
     manual_ref="knowledge/economics/gdp-trajectories.qmd",
@@ -513,16 +534,13 @@ _years_to_35pct = _math.log(0.35 / 0.115) / _math.log(1 + _ratio_growth)
 _years_to_50pct = _math.log(0.50 / 0.115) / _math.log(1 + _ratio_growth)
 
 # Calendar years when destructive economy thresholds are reached
-_destruct_inputs = ["DESTRUCTIVE_ECONOMY_BASE_YEAR", "GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP", "GLOBAL_CYBERCRIME_CAGR", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR", "GDP_BASELINE_GROWTH_RATE", "GLOBAL_MILITARY_SPENDING_ANNUAL_2024", "GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025", "GLOBAL_CYBERCRIME_COST_ANNUAL_2025"]
+_destruct_inputs = ["DESTRUCTIVE_ECONOMY_BASE_YEAR", "GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP", "GLOBAL_DESTRUCTIVE_ECONOMY_GROWTH_RATE", "GDP_BASELINE_GROWTH_RATE"]
 
 def _destruct_year_compute(threshold):
     """Return a compute lambda for the calendar year when destructive economy reaches threshold."""
     return lambda ctx: ctx["DESTRUCTIVE_ECONOMY_BASE_YEAR"] + round(
         _math.log(threshold / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP"])
-        / _math.log(1 + (
-            (ctx["GLOBAL_MILITARY_SPENDING_ANNUAL_2024"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_10YR"]
-            + (ctx["GLOBAL_CYBERCRIME_COST_ANNUAL_2025"] / ctx["GLOBAL_DESTRUCTIVE_ECONOMY_ANNUAL_2025"]) * ctx["GLOBAL_CYBERCRIME_CAGR"]
-        ) - ctx["GDP_BASELINE_GROWTH_RATE"])
+        / _math.log(1 + ctx["GLOBAL_DESTRUCTIVE_ECONOMY_GROWTH_RATE"] - ctx["GDP_BASELINE_GROWTH_RATE"])
     )
 
 DESTRUCTIVE_ECONOMY_25PCT_YEAR = Parameter(
@@ -534,7 +552,8 @@ DESTRUCTIVE_ECONOMY_25PCT_YEAR = Parameter(
                 "when extraction rates exceed 20-30% of economic output.",
     display_name="Year Destructive Economy Reaches 25% of GDP",
     unit="year",
-    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.25 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + round(ln(0.25 / GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP) / "
+            "ln(1 + GLOBAL_DESTRUCTIVE_ECONOMY_GROWTH_RATE - GDP_BASELINE_GROWTH_RATE))",
     keywords=["destructive", "economy", "timeline", "year", "25%", "instability"],
     inputs=_destruct_inputs,
     compute=_destruct_year_compute(0.25),
@@ -552,7 +571,8 @@ DESTRUCTIVE_ECONOMY_35PCT_YEAR = Parameter(
                 "parasitic load threshold.",
     display_name="Year Destructive Economy Reaches 35% of GDP (Terminal Parasitic Load)",
     unit="year",
-    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.35 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + round(ln(0.35 / GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP) / "
+            "ln(1 + GLOBAL_DESTRUCTIVE_ECONOMY_GROWTH_RATE - GDP_BASELINE_GROWTH_RATE))",
     keywords=["destructive", "economy", "timeline", "year", "35%", "terminal parasitic load", "collapse"],
     inputs=_destruct_inputs,
     compute=_destruct_year_compute(0.35),
@@ -569,7 +589,8 @@ DESTRUCTIVE_ECONOMY_50PCT_YEAR = Parameter(
                 "states because whatever gets created gets looted fast enough to kill productive investment.",
     display_name="Year Destructive Economy Reaches 50% of GDP",
     unit="year",
-    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + ln(0.50 / DESTRUCTIVE_PCT_GDP) / ln(1 + DESTRUCTIVE_GROWTH - GDP_GROWTH)",
+    formula="DESTRUCTIVE_ECONOMY_BASE_YEAR + round(ln(0.50 / GLOBAL_DESTRUCTIVE_ECONOMY_PCT_GDP) / "
+            "ln(1 + GLOBAL_DESTRUCTIVE_ECONOMY_GROWTH_RATE - GDP_BASELINE_GROWTH_RATE))",
     keywords=["destructive", "economy", "timeline", "year", "50%", "crossover"],
     inputs=_destruct_inputs,
     compute=_destruct_year_compute(0.50),
@@ -1341,6 +1362,41 @@ _pd_r = 0.13
 _pd_fv_treaty = _pd_compound_fv(_pd_C, _pd_g, _pd_p, _pd_r, 80)
 _pd_fv_abolition = _pd_compound_fv_abolition(_pd_C, _pd_g, _pd_r, 80)
 
+# Future-value factors for 80 yearly payments invested at r until year 80. Multiplying an
+# annual amount by a factor gives its year-80 future value.
+PEACE_DIVIDEND_GROWING_STREAM_FV_FACTOR_80YR = Parameter(
+    ((1 + float(PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE)) ** 80 - (1 + float(GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR)) ** 80)
+    / (float(PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE) - float(GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR)),
+    manual_ref="knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Future value at year 80 of a stream that starts at 1 and grows with real military spending, "
+                "each year invested at the long-term real return: the sum over t=0..79 of (1+g)^t (1+r)^(79-t), "
+                "in closed form (geometric series, r != g).",
+    display_name="80-Year Future-Value Factor for the Growing War Cost Stream",
+    unit="x",
+    formula="((1 + PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE)^80 - (1 + GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR)^80) / (PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE - GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR)",
+    inputs=["PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE", "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"],
+    compute=lambda ctx: ((1 + ctx["PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE"]) ** 80 - (1 + ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"]) ** 80)
+    / (ctx["PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE"] - ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"]),
+    keywords=["future value", "compounding", "annuity", "peace dividend"],
+    latex_symbol=r"F_{growing}",
+)
+
+PEACE_DIVIDEND_FLAT_STREAM_FV_FACTOR_80YR = Parameter(
+    ((1 + float(PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE)) ** 80 - 1) / float(PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE),
+    manual_ref="knowledge/economics/peace-dividend.qmd",
+    source_type="calculated",
+    description="Future value at year 80 of a flat stream of 1 per year, each year invested at the long-term "
+                "real return: the sum over t=0..79 of (1+r)^(79-t), in closed form (geometric series, r > 0).",
+    display_name="80-Year Future-Value Factor for a Flat Stream",
+    unit="x",
+    formula="((1 + PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE)^80 - 1) / PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE",
+    inputs=["PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE"],
+    compute=lambda ctx: ((1 + ctx["PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE"]) ** 80 - 1) / ctx["PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE"],
+    keywords=["future value", "compounding", "annuity", "peace dividend"],
+    latex_symbol=r"F_{flat}",
+)
+
 PEACE_DIVIDEND_LIFETIME_PER_PERSON_COMPOUNDED = Parameter(
     _pd_fv_treaty / 8_000_000_000,
     manual_ref="knowledge/economics/peace-dividend.qmd",
@@ -1353,21 +1409,19 @@ PEACE_DIVIDEND_LIFETIME_PER_PERSON_COMPOUNDED = Parameter(
                 "that weapons spending displaced, not a literal brokerage account.",
     display_name="Per-Person Peace Dividend Compounded at 13% over 80 Years",
     unit="USD",
-    formula="[Σ_{t=0..79} (C(1+g)^t - C(1-p)) × (1+r)^(79-t)] / GLOBAL_POPULATION_2024",
+    formula="GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × (PEACE_DIVIDEND_GROWING_STREAM_FV_FACTOR_80YR - (1 - TREATY_REDUCTION_PCT) × PEACE_DIVIDEND_FLAT_STREAM_FV_FACTOR_80YR) / GLOBAL_POPULATION_2024",
     inputs=[
         "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST",
-        "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR",
+        "PEACE_DIVIDEND_GROWING_STREAM_FV_FACTOR_80YR",
         "TREATY_REDUCTION_PCT",
-        "PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE",
+        "PEACE_DIVIDEND_FLAT_STREAM_FV_FACTOR_80YR",
         "GLOBAL_POPULATION_2024",
     ],
-    compute=lambda ctx: _pd_compound_fv(
-        ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"],
-        ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"],
-        ctx["TREATY_REDUCTION_PCT"],
-        ctx["PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE"],
-        80,
-    ) / ctx["GLOBAL_POPULATION_2024"],
+    # Savings in year t are the baseline cost C(1+g)^t minus the flat treaty-world cost C(1-p)
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"]
+    * (ctx["PEACE_DIVIDEND_GROWING_STREAM_FV_FACTOR_80YR"]
+       - (1 - ctx["TREATY_REDUCTION_PCT"]) * ctx["PEACE_DIVIDEND_FLAT_STREAM_FV_FACTOR_80YR"])
+    / ctx["GLOBAL_POPULATION_2024"],
     keywords=["per-person", "compounded", "future value", "investment", "peace dividend"],
     latex_symbol=r"FV_{pp,treaty}",
 )
@@ -1385,19 +1439,15 @@ GLOBAL_WAR_COST_LIFETIME_PER_PERSON_ABOLITION_COMPOUNDED = Parameter(
                 "all of it.",
     display_name="Per-Person War Cost (Full Abolition) Compounded at 13% over 80 Years",
     unit="USD",
-    formula="[Σ_{t=0..79} C(1+g)^t × (1+r)^(79-t)] / GLOBAL_POPULATION_2024",
+    formula="GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST × PEACE_DIVIDEND_GROWING_STREAM_FV_FACTOR_80YR / GLOBAL_POPULATION_2024",
     inputs=[
         "GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST",
-        "GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR",
-        "PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE",
+        "PEACE_DIVIDEND_GROWING_STREAM_FV_FACTOR_80YR",
         "GLOBAL_POPULATION_2024",
     ],
-    compute=lambda ctx: _pd_compound_fv_abolition(
-        ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"],
-        ctx["GLOBAL_MILITARY_SPENDING_REAL_CAGR_20YR"],
-        ctx["PEACE_DIVIDEND_INVESTMENT_REAL_RETURN_RATE"],
-        80,
-    ) / ctx["GLOBAL_POPULATION_2024"],
+    compute=lambda ctx: ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"]
+    * ctx["PEACE_DIVIDEND_GROWING_STREAM_FV_FACTOR_80YR"]
+    / ctx["GLOBAL_POPULATION_2024"],
     keywords=["per-person", "abolition", "compounded", "future value", "ceiling"],
     latex_symbol=r"FV_{pp,abolition}",
 )
@@ -8875,6 +8925,40 @@ def _timeline_shift_discounted_years(
     ) / rho
 
 
+DFDA_QUEUE_AVERAGE_DISCOUNT_FACTOR = Parameter(
+    (1 - (1 + float(NPV_DISCOUNT_RATE_STANDARD)) ** -(float(DFDA_QUEUE_CLEARANCE_YEARS)))
+    / ((float(DFDA_QUEUE_CLEARANCE_YEARS)) * math.log(1 + float(NPV_DISCOUNT_RATE_STANDARD))),
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
+    source_type="calculated",
+    description="Average discount factor over the dFDA queue clearance period: the mean of (1+r)^(-t) "
+                "for t spread evenly over [0, T]. Equals A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)).",
+    display_name="Average Discount Factor over dFDA Queue Clearance",
+    unit="x",
+    formula="(1 - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-DFDA_QUEUE_CLEARANCE_YEARS)) / (DFDA_QUEUE_CLEARANCE_YEARS × ln(1 + NPV_DISCOUNT_RATE_STANDARD))",
+    inputs=["DFDA_QUEUE_CLEARANCE_YEARS", "NPV_DISCOUNT_RATE_STANDARD"],
+    compute=lambda ctx: (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -(ctx["DFDA_QUEUE_CLEARANCE_YEARS"]))
+    / ((ctx["DFDA_QUEUE_CLEARANCE_YEARS"]) * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"])),
+    keywords=["discount factor", "present value", "annuity", "queue clearance"],
+    latex_symbol=r"A_{dFDA}",
+)
+
+STATUS_QUO_QUEUE_AVERAGE_DISCOUNT_FACTOR = Parameter(
+    (1 - (1 + float(NPV_DISCOUNT_RATE_STANDARD)) ** -(float(STATUS_QUO_QUEUE_CLEARANCE_YEARS)))
+    / ((float(STATUS_QUO_QUEUE_CLEARANCE_YEARS)) * math.log(1 + float(NPV_DISCOUNT_RATE_STANDARD))),
+    manual_ref="knowledge/appendix/dfda-impact-paper.qmd",
+    source_type="calculated",
+    description="Average discount factor over the status quo queue clearance period: the mean of (1+r)^(-t) "
+                "for t spread evenly over [0, T]. Equals A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)).",
+    display_name="Average Discount Factor over Status Quo Queue Clearance",
+    unit="x",
+    formula="(1 - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-STATUS_QUO_QUEUE_CLEARANCE_YEARS)) / (STATUS_QUO_QUEUE_CLEARANCE_YEARS × ln(1 + NPV_DISCOUNT_RATE_STANDARD))",
+    inputs=["STATUS_QUO_QUEUE_CLEARANCE_YEARS", "NPV_DISCOUNT_RATE_STANDARD"],
+    compute=lambda ctx: (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -(ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"]))
+    / ((ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"]) * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"])),
+    keywords=["discount factor", "present value", "annuity", "queue clearance"],
+    latex_symbol=r"A_{SQ}",
+)
+
 DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED = Parameter(
     float(GLOBAL_ANNUAL_DALY_BURDEN)
     * float(EVENTUALLY_AVOIDABLE_DALY_PCT)
@@ -8891,30 +8975,26 @@ DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS_DISCOUNTED = Parameter(
                 "US Second Panel, ICER) discounts costs and health at the same rate; discounting costs but not health "
                 "makes any program look better the longer it is delayed (Keeler-Cretin paradox). Also prices the rising "
                 "uncertainty of benefits centuries out. Use for cost per DALY, ROI, and dollar values; use the "
-                "undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years. "
-                "A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].",
+                "undiscounted DFDA_TRIAL_CAPACITY_PLUS_EFFICACY_LAG_DALYS for counts of healthy years.",
     display_name="Discounted DALYs from Elimination of Efficacy Lag Plus Earlier Treatment Discovery from Higher Trial Throughput",
     unit="DALYs",
-    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × [A(DFDA_QUEUE_CLEARANCE_YEARS) - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-EFFICACY_LAG_YEARS) × A(STATUS_QUO_QUEUE_CLEARANCE_YEARS)] / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
+    formula="GLOBAL_ANNUAL_DALY_BURDEN × EVENTUALLY_AVOIDABLE_DALY_PCT × (DFDA_QUEUE_AVERAGE_DISCOUNT_FACTOR - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-EFFICACY_LAG_YEARS) × STATUS_QUO_QUEUE_AVERAGE_DISCOUNT_FACTOR) / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
     confidence="low",
     keywords=["dalys", "discounted", "present value", "timeline shift", "cost effectiveness", "keeler-cretin"],
     inputs=[
         "GLOBAL_ANNUAL_DALY_BURDEN",
         "EVENTUALLY_AVOIDABLE_DALY_PCT",
-        "STATUS_QUO_QUEUE_CLEARANCE_YEARS",
-        "DFDA_QUEUE_CLEARANCE_YEARS",
+        "DFDA_QUEUE_AVERAGE_DISCOUNT_FACTOR",
+        "STATUS_QUO_QUEUE_AVERAGE_DISCOUNT_FACTOR",
         "EFFICACY_LAG_YEARS",
         "NPV_DISCOUNT_RATE_STANDARD",
     ],
-    # Inline arithmetic (not the helper) so the TypeScript generator can translate it for the calculator
     compute=lambda ctx: ctx["GLOBAL_ANNUAL_DALY_BURDEN"]
     * ctx["EVENTUALLY_AVOIDABLE_DALY_PCT"]
     * (
-        (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["DFDA_QUEUE_CLEARANCE_YEARS"])
-        / (ctx["DFDA_QUEUE_CLEARANCE_YEARS"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
+        ctx["DFDA_QUEUE_AVERAGE_DISCOUNT_FACTOR"]
         - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["EFFICACY_LAG_YEARS"]
-        * (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"])
-        / (ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
+        * ctx["STATUS_QUO_QUEUE_AVERAGE_DISCOUNT_FACTOR"]
     )
     / math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]),
     latex_symbol=r"DALYs_{max}^{PV}",
@@ -9240,6 +9320,23 @@ STATE_RTT_TREATMENT_ACCELERATION_YEARS = Parameter(
     latex_symbol=r"T_{accel,RTT}",
 )
 
+STATE_RTT_QUEUE_AVERAGE_DISCOUNT_FACTOR = Parameter(
+    (1 - (1 + float(NPV_DISCOUNT_RATE_STANDARD)) ** -(float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)))
+    / ((float(STATUS_QUO_QUEUE_CLEARANCE_YEARS) / float(STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER)) * math.log(1 + float(NPV_DISCOUNT_RATE_STANDARD))),
+    manual_ref="knowledge/appendix/state-right-to-trial-impact.qmd",
+    source_type="calculated",
+    description="Average discount factor over the status quo queue clearance period divided by the Right to Try discovery multiplier: the mean of (1+r)^(-t) "
+                "for t spread evenly over [0, T]. Equals A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)).",
+    display_name="Average Discount Factor over Right to Try Queue Clearance",
+    unit="x",
+    formula="(1 - (1 + NPV_DISCOUNT_RATE_STANDARD)^(-(STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER))) / ((STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER) × ln(1 + NPV_DISCOUNT_RATE_STANDARD))",
+    inputs=["STATUS_QUO_QUEUE_CLEARANCE_YEARS", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER", "NPV_DISCOUNT_RATE_STANDARD"],
+    compute=lambda ctx: (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -(ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"]))
+    / ((ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"]) * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"])),
+    keywords=["discount factor", "present value", "annuity", "queue clearance"],
+    latex_symbol=r"A_{RTT}",
+)
+
 STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED = Parameter(
     _timeline_shift_discounted_years(
         float(STATUS_QUO_QUEUE_CLEARANCE_YEARS),
@@ -9253,20 +9350,13 @@ STATE_RTT_TREATMENT_ACCELERATION_YEARS_DISCOUNTED = Parameter(
                 "discounted at the standard social discount rate. Same timing as the undiscounted shift: first treatments "
                 "are found evenly over the status quo clearance period, versus evenly over that period divided by the "
                 "discovery multiplier. The cost-per-DALY and cost-per-life ratios use it so the near-term launch cost is "
-                "compared with health benefits in present value, as in the 1% Treaty model. "
-                "A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].",
+                "compared with health benefits in present value, as in the 1% Treaty model.",
     display_name="Discounted Treatment Acceleration from Universal Right to Try with Evidence",
     unit="years",
-    formula="[A(STATUS_QUO_QUEUE_CLEARANCE_YEARS / STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER) - A(STATUS_QUO_QUEUE_CLEARANCE_YEARS)] / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
+    formula="(STATE_RTT_QUEUE_AVERAGE_DISCOUNT_FACTOR - STATUS_QUO_QUEUE_AVERAGE_DISCOUNT_FACTOR) / ln(1 + NPV_DISCOUNT_RATE_STANDARD)",
     confidence="low",
-    inputs=["STATUS_QUO_QUEUE_CLEARANCE_YEARS", "STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER", "NPV_DISCOUNT_RATE_STANDARD"],
-    # Inline arithmetic (not the helper) so the TypeScript generator can translate it for the calculator
-    compute=lambda ctx: (
-        (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -(ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"]))
-        / (ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] / ctx["STATE_RTT_TREATMENT_DISCOVERY_MULTIPLIER"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
-        - (1 - (1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]) ** -ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"])
-        / (ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"] * math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]))
-    )
+    inputs=["STATE_RTT_QUEUE_AVERAGE_DISCOUNT_FACTOR", "STATUS_QUO_QUEUE_AVERAGE_DISCOUNT_FACTOR", "NPV_DISCOUNT_RATE_STANDARD"],
+    compute=lambda ctx: (ctx["STATE_RTT_QUEUE_AVERAGE_DISCOUNT_FACTOR"] - ctx["STATUS_QUO_QUEUE_AVERAGE_DISCOUNT_FACTOR"])
     / math.log(1 + ctx["NPV_DISCOUNT_RATE_STANDARD"]),
     keywords=["right to try", "right to trial", "treatment acceleration", "discounted", "present value", "years"],
     latex_symbol=r"T_{accel,RTT}^{PV}",
@@ -10962,7 +11052,7 @@ MISALLOCATION_FACTOR_DEATH_VS_SAVING = Parameter(
     description="Misallocation factor: cost to kill vs cost to save",
     display_name="Misallocation Factor: Cost to Kill vs Cost to Save",
     unit="x",
-    formula="COST_PER_DEATH ÷ COST_PER_LIFE_SAVED",
+    formula="GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST ÷ (GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL × GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL)",
     keywords=["multiple", "fatalities", "casualties", "deaths", "investigation", "r&d", "science"],
     inputs=['GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL', 'GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST', 'GLOBAL_COST_PER_LIFE_SAVED_MED_RESEARCH_ANNUAL'],
     compute=lambda ctx: (ctx["GLOBAL_ANNUAL_DIRECT_INDIRECT_WAR_COST"] / ctx["GLOBAL_ANNUAL_CONFLICT_DEATHS_TOTAL"])
@@ -12227,17 +12317,34 @@ TREATY_EFFECTIVE_REALLOCATION_SHARE_YEAR_20 = Parameter(
     latex_symbol=r"\bar{s}_{treaty,20}",
 )
 
-TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
-    min(
-        1.0,
-        (
-            3 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (0.01 / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
-            + 4 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.02, _S_ratchet) / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
-            + 5 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.05, _S_ratchet) / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
-            + 8 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (_S_ratchet / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
-        )
-        / float(STATUS_QUO_QUEUE_CLEARANCE_YEARS),
+TREATY_TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR = Parameter(
+    3 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (0.01 / float(TREATY_REDUCTION_PCT)), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+    + 4 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.02, _S_ratchet) / float(TREATY_REDUCTION_PCT)), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+    + 5 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.05, _S_ratchet) / float(TREATY_REDUCTION_PCT)), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+    + 8 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (_S_ratchet / float(TREATY_REDUCTION_PCT)), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)),
+    manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
+    source_type="calculated",
+    description="Trial-capacity-years over 20 years under the treaty ratchet schedule (1% for 3 years, "
+                "2% for 4, 5% for 5, terminal share for 8). Each phase's capacity is the 1%-funding "
+                "capacity multiplier scaled by the phase redirect share, capped by the physical "
+                "willing-participant ceiling. One capacity-year clears one status-quo year of the treatment queue.",
+    display_name="Treaty Cumulative Trial Capacity Years (20yr, Ratchet Schedule)",
+    unit="years",
+    formula="3 × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × 0.01 ÷ TREATY_REDUCTION_PCT, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4 × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × min(0.02, TREATY_RATCHET_TERMINAL_SHARE) ÷ TREATY_REDUCTION_PCT, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5 × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × min(0.05, TREATY_RATCHET_TERMINAL_SHARE) ÷ TREATY_REDUCTION_PCT, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 8 × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × TREATY_RATCHET_TERMINAL_SHARE ÷ TREATY_REDUCTION_PCT, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)",
+    inputs=["DFDA_TRIAL_CAPACITY_MULTIPLIER", "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
+            "TREATY_REDUCTION_PCT", "TREATY_RATCHET_TERMINAL_SHARE"],
+    compute=lambda ctx: (
+        3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.01 / ctx["TREATY_REDUCTION_PCT"]), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+        + 4 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.02, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / ctx["TREATY_REDUCTION_PCT"]), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+        + 5 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.05, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / ctx["TREATY_REDUCTION_PCT"]), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+        + 8 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (ctx["TREATY_RATCHET_TERMINAL_SHARE"] / ctx["TREATY_REDUCTION_PCT"]), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
     ),
+    keywords=["treaty", "trial capacity", "ratchet", "cumulative", "20 year"],
+    latex_symbol=r"K_{treaty,20}",
+)
+
+TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
+    min(1.0, float(TREATY_TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR) / float(STATUS_QUO_QUEUE_CLEARANCE_YEARS)),
     manual_ref="knowledge/appendix/political-dysfunction-tax.qmd",
     source_type="calculated",
     description="Fraction of currently untreatable diseases with a first effective treatment by "
@@ -12249,18 +12356,10 @@ TREATY_DISEASE_CURE_FRACTION_20YR = Parameter(
                 "queue-clearance figure quoted elsewhere is the flat-1% case by construction.",
     display_name="Treaty Disease Cure Fraction (20yr, Ratchet Schedule)",
     unit="rate",
-    formula="min(1.0, (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(0.01/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(min(0.02, TREATY_RATCHET_TERMINAL_SHARE)/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(min(0.05, TREATY_RATCHET_TERMINAL_SHARE)/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 8×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(TREATY_RATCHET_TERMINAL_SHARE/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ STATUS_QUO_QUEUE_CLEARANCE_YEARS)",
-    inputs=["DFDA_TRIAL_CAPACITY_MULTIPLIER", "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
-            "TREATY_RATCHET_TERMINAL_SHARE", "STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
+    formula="min(1.0, TREATY_TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR ÷ STATUS_QUO_QUEUE_CLEARANCE_YEARS)",
+    inputs=["TREATY_TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR", "STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
     compute=lambda ctx: min(
-        1.0,
-        (
-            3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.01 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 4 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.02, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 5 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.05, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 8 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (ctx["TREATY_RATCHET_TERMINAL_SHARE"] / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-        )
-        / ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
+        1.0, ctx["TREATY_TRIAL_CAPACITY_CUMULATIVE_YEARS_20YR"] / ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"]
     ),
     keywords=["treaty", "disease", "cure fraction", "20 year", "queue", "ratchet"],
     latex_symbol=r"f_{cure,20,treaty}",
@@ -12384,20 +12483,21 @@ WISHONIA_DISEASE_CURE_FRACTION_20YR_FULL = Parameter(
                 "Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
     display_name="Wishonia Disease Cure Fraction (20yr, Full Implementation)",
     unit="rate",
-    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × min(TRIAL_CAPACITY_MULTIPLIER × (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE ÷ 0.01), MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) × 20 ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE ÷ TREATY_REDUCTION_PCT, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) × 20 ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
         "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
         "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
         "DISEASES_WITHOUT_EFFECTIVE_TREATMENT",
+        "TREATY_REDUCTION_PCT",
     ],
     compute=lambda ctx: min(
         1.0,
         ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"]
         * min(
             ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]
-            * (ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"] / 0.01),
+            * (ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"] / ctx["TREATY_REDUCTION_PCT"]),
             ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"],
         )
         * 20
@@ -12738,17 +12838,34 @@ GLOBAL_POPULATION_2040_PROJECTED = Parameter(
     latex_symbol=r"Pop_{2040}",
 )
 
-TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
-    min(
-        1.0,
-        (
-            3 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (0.01 / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
-            + 4 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.02, _S_ratchet) / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
-            + 5 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.05, _S_ratchet) / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
-            + 3 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (_S_ratchet / 0.01), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
-        )
-        / float(STATUS_QUO_QUEUE_CLEARANCE_YEARS),
+TREATY_TRIAL_CAPACITY_CUMULATIVE_YEARS_15YR = Parameter(
+    3 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (0.01 / float(TREATY_REDUCTION_PCT)), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+    + 4 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.02, _S_ratchet) / float(TREATY_REDUCTION_PCT)), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+    + 5 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (min(0.05, _S_ratchet) / float(TREATY_REDUCTION_PCT)), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL))
+    + 3 * min(float(DFDA_TRIAL_CAPACITY_MULTIPLIER) * (_S_ratchet / float(TREATY_REDUCTION_PCT)), float(DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)),
+    manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
+    source_type="calculated",
+    description="Trial-capacity-years over 15 years under the treaty ratchet schedule (1% for 3 years, "
+                "2% for 4, 5% for 5, terminal share for 3). Each phase's capacity is the 1%-funding "
+                "capacity multiplier scaled by the phase redirect share, capped by the physical "
+                "willing-participant ceiling. One capacity-year clears one status-quo year of the treatment queue.",
+    display_name="Treaty Cumulative Trial Capacity Years (15yr, Ratchet Schedule)",
+    unit="years",
+    formula="3 × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × 0.01 ÷ TREATY_REDUCTION_PCT, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4 × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × min(0.02, TREATY_RATCHET_TERMINAL_SHARE) ÷ TREATY_REDUCTION_PCT, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5 × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × min(0.05, TREATY_RATCHET_TERMINAL_SHARE) ÷ TREATY_REDUCTION_PCT, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 3 × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × TREATY_RATCHET_TERMINAL_SHARE ÷ TREATY_REDUCTION_PCT, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)",
+    inputs=["DFDA_TRIAL_CAPACITY_MULTIPLIER", "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
+            "TREATY_REDUCTION_PCT", "TREATY_RATCHET_TERMINAL_SHARE"],
+    compute=lambda ctx: (
+        3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.01 / ctx["TREATY_REDUCTION_PCT"]), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+        + 4 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.02, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / ctx["TREATY_REDUCTION_PCT"]), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+        + 5 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.05, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / ctx["TREATY_REDUCTION_PCT"]), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
+        + 3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (ctx["TREATY_RATCHET_TERMINAL_SHARE"] / ctx["TREATY_REDUCTION_PCT"]), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
     ),
+    keywords=["treaty", "trial capacity", "ratchet", "cumulative", "15 year"],
+    latex_symbol=r"K_{treaty,15}",
+)
+
+TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
+    min(1.0, float(TREATY_TRIAL_CAPACITY_CUMULATIVE_YEARS_15YR) / float(STATUS_QUO_QUEUE_CLEARANCE_YEARS)),
     manual_ref="knowledge/strategy/earth-optimization-prize.qmd",
     source_type="calculated",
     description="Fraction of currently untreatable diseases with a first effective treatment by "
@@ -12760,18 +12877,10 @@ TREATY_DISEASE_CURE_FRACTION_15YR = Parameter(
                 "queue-clearance figure quoted elsewhere is the flat-1% case by construction.",
     display_name="Treaty Disease Cure Fraction (15yr, Ratchet Schedule)",
     unit="rate",
-    formula="min(1.0, (3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(0.01/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 4×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(min(0.02, TREATY_RATCHET_TERMINAL_SHARE)/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 5×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(min(0.05, TREATY_RATCHET_TERMINAL_SHARE)/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) + 3×min(DFDA_TRIAL_CAPACITY_MULTIPLIER×(TREATY_RATCHET_TERMINAL_SHARE/0.01), DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL)) ÷ STATUS_QUO_QUEUE_CLEARANCE_YEARS)",
-    inputs=["DFDA_TRIAL_CAPACITY_MULTIPLIER", "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
-            "TREATY_RATCHET_TERMINAL_SHARE", "STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
+    formula="min(1.0, TREATY_TRIAL_CAPACITY_CUMULATIVE_YEARS_15YR ÷ STATUS_QUO_QUEUE_CLEARANCE_YEARS)",
+    inputs=["TREATY_TRIAL_CAPACITY_CUMULATIVE_YEARS_15YR", "STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
     compute=lambda ctx: min(
-        1.0,
-        (
-            3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (0.01 / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 4 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.02, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 5 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (min(0.05, ctx["TREATY_RATCHET_TERMINAL_SHARE"]) / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-            + 3 * min(ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"] * (ctx["TREATY_RATCHET_TERMINAL_SHARE"] / 0.01), ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"])
-        )
-        / ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"],
+        1.0, ctx["TREATY_TRIAL_CAPACITY_CUMULATIVE_YEARS_15YR"] / ctx["STATUS_QUO_QUEUE_CLEARANCE_YEARS"]
     ),
     keywords=["treaty", "disease", "cure fraction", "15 year", "queue", "ratchet"],
     latex_symbol=r"f_{cure,15,treaty}",
@@ -12887,20 +12996,21 @@ WISHONIA_DISEASE_CURE_FRACTION_15YR = Parameter(
                 "Uses full trial-capacity scaling and applies an upper bound of 100% of untreated disease classes.",
     display_name="Wishonia Disease Cure Fraction (15yr, Full Implementation)",
     unit="rate",
-    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR * min(TRIAL_CAPACITY_MULTIPLIER * (WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE / 0.01), MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) * 15 / DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
+    formula="min(1.0, NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR × min(DFDA_TRIAL_CAPACITY_MULTIPLIER × WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE ÷ TREATY_REDUCTION_PCT, DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL) × 15 ÷ DISEASES_WITHOUT_EFFECTIVE_TREATMENT)",
     inputs=[
         "NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR",
         "DFDA_TRIAL_CAPACITY_MULTIPLIER",
         "WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE",
         "DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL",
         "DISEASES_WITHOUT_EFFECTIVE_TREATMENT",
+        "TREATY_REDUCTION_PCT",
     ],
     compute=lambda ctx: min(
         1.0,
         ctx["NEW_DISEASE_FIRST_TREATMENTS_PER_YEAR"]
         * min(
             ctx["DFDA_TRIAL_CAPACITY_MULTIPLIER"]
-            * (ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"] / 0.01),
+            * (ctx["WISHONIA_MILITARY_REALLOCATION_PHYSICAL_MAX_SHARE"] / ctx["TREATY_REDUCTION_PCT"]),
             ctx["DFDA_MAX_TRIAL_CAPACITY_MULTIPLIER_PHYSICAL"],
         )
         * 15
@@ -13289,9 +13399,9 @@ TREATY_HALE_GAIN_YEAR_15 = Parameter(
     display_name="Treaty HALE Gain at Year 15",
     unit="years",
     formula="TREATY_DISEASE_CURE_FRACTION_15YR × GLOBAL_HALE_GAP + TREATY_LONGEVITY_HALE_GAIN_YEAR_15",
-    inputs=["TREATY_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_CURRENT", "GLOBAL_LIFE_EXPECTANCY_2024", "TREATY_LONGEVITY_HALE_GAIN_YEAR_15"],
+    inputs=["TREATY_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_GAP", "TREATY_LONGEVITY_HALE_GAIN_YEAR_15"],
     compute=lambda ctx: (
-        ctx["TREATY_DISEASE_CURE_FRACTION_15YR"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"])
+        ctx["TREATY_DISEASE_CURE_FRACTION_15YR"] * ctx["GLOBAL_HALE_GAP"]
         + ctx["TREATY_LONGEVITY_HALE_GAIN_YEAR_15"]
     ),
     keywords=["HALE", "gain", "treaty", "year 15", "healthy years"],
@@ -13308,9 +13418,9 @@ WISHONIA_HALE_GAIN_YEAR_15 = Parameter(
     display_name="Wishonia HALE Gain at Year 15",
     unit="years",
     formula="WISHONIA_DISEASE_CURE_FRACTION_15YR × GLOBAL_HALE_GAP + WISHONIA_EXTRA_HALE_GAIN_YEAR_15",
-    inputs=["WISHONIA_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_CURRENT", "GLOBAL_LIFE_EXPECTANCY_2024", "WISHONIA_EXTRA_HALE_GAIN_YEAR_15"],
+    inputs=["WISHONIA_DISEASE_CURE_FRACTION_15YR", "GLOBAL_HALE_GAP", "WISHONIA_EXTRA_HALE_GAIN_YEAR_15"],
     compute=lambda ctx: (
-        ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * (ctx["GLOBAL_LIFE_EXPECTANCY_2024"] - ctx["GLOBAL_HALE_CURRENT"])
+        ctx["WISHONIA_DISEASE_CURE_FRACTION_15YR"] * ctx["GLOBAL_HALE_GAP"]
         + ctx["WISHONIA_EXTRA_HALE_GAIN_YEAR_15"]
     ),
     keywords=["HALE", "gain", "wishonia", "year 15", "healthy years"],
@@ -15991,7 +16101,7 @@ MECHANISM_SHIRT_CASCADE_EV = Parameter(
     display_name="Shirt Cascade Expected Social Value",
     unit="USD",
     keywords=["mechanism", "cost-effectiveness", "shirt cascade", "ev"],
-    latex_symbol=r"EV_{shirt}",
+    latex_symbol=r"EV_{shirt,ann}",
     formula="MECHANISM_SHIRT_CASCADE_P_SUCCESS * PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT",
     inputs=["MECHANISM_SHIRT_CASCADE_P_SUCCESS", "PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
     compute=lambda ctx: ctx["MECHANISM_SHIRT_CASCADE_P_SUCCESS"] * ctx["PEACE_DIVIDEND_ANNUAL_SOCIETAL_BENEFIT"],
@@ -16658,6 +16768,7 @@ IRS_ANNUAL_OPERATING_BUDGET = Parameter(
     confidence="high",
     last_updated="2024-04",
     keywords=["irs", "internal revenue service", "budget", "appropriation", "12.3b"],
+    latex_symbol=r"Budget_{IRS}",
 )
 
 # --- Automated Revenue Service (replaces the IRS) ---
@@ -16671,6 +16782,7 @@ AUTOMATED_REVENUE_SERVICE_ANNUAL_TRANSACTION_VOLUME = Parameter(
     unit="transactions",
     distribution="fixed",
     keywords=["automated revenue service", "transactions", "settlement volume", "capacity"],
+    latex_symbol=r"N_{tx}",
 )
 
 AUTOMATED_REVENUE_SERVICE_ALL_IN_COST_PER_TRANSACTION = Parameter(
@@ -16683,6 +16795,7 @@ AUTOMATED_REVENUE_SERVICE_ALL_IN_COST_PER_TRANSACTION = Parameter(
     distribution="lognormal",
     confidence_interval=(0.0001, 0.001),
     keywords=["automated revenue service", "cost per transaction", "all-in", "payment rails", "blockchain"],
+    latex_symbol=r"Cost_{tx}",
 )
 
 AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX = Parameter(
@@ -16702,6 +16815,7 @@ AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX = Parameter(
         * ctx["AUTOMATED_REVENUE_SERVICE_ALL_IN_COST_PER_TRANSACTION"]
     ),
     keywords=["automated revenue service", "settlement tax", "irs replacement", "operating cost", "opex"],
+    latex_symbol=r"Cost_{revenue}",
 )
 
 AUTOMATED_REVENUE_SERVICE_SAVINGS_PER_AMERICAN_ANNUAL = Parameter(
@@ -16723,6 +16837,7 @@ AUTOMATED_REVENUE_SERVICE_SAVINGS_PER_AMERICAN_ANNUAL = Parameter(
         ctx["US_GOV_WASTE_TAX_COMPLIANCE"] + ctx["IRS_ANNUAL_OPERATING_BUDGET"] - ctx["AUTOMATED_REVENUE_SERVICE_ANNUAL_OPEX"]
     ) / ctx["US_POPULATION_2024"],
     keywords=["automated revenue service", "dividend", "per capita", "savings per american"],
+    latex_symbol=r"Savings_{revenue,pc}",
 )
 
 # --- Universal Security Administration (replaces welfare administration) ---
@@ -16737,6 +16852,7 @@ UNIVERSAL_SECURITY_ADMIN_ALL_IN_COST_PER_CITIZEN_ANNUAL = Parameter(
     distribution="lognormal",
     confidence_interval=(0.10, 1.00),
     keywords=["universal security administration", "cost per citizen", "all-in", "identity", "aadhaar"],
+    latex_symbol=r"Cost_{citizen}",
 )
 
 UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX = Parameter(
@@ -16755,6 +16871,7 @@ UNIVERSAL_SECURITY_ADMIN_ANNUAL_OPEX = Parameter(
         ctx["US_POPULATION_2024"] * ctx["UNIVERSAL_SECURITY_ADMIN_ALL_IN_COST_PER_CITIZEN_ANNUAL"]
     ),
     keywords=["universal security administration", "ubi", "welfare replacement", "operating cost", "opex"],
+    latex_symbol=r"Cost_{univ.security}",
 )
 
 # --- Aligned Election Commission (replaces campaign finance) ---
@@ -16769,6 +16886,7 @@ ALIGNED_ELECTION_COMMISSION_ANNUAL_OPEX = Parameter(
     distribution="lognormal",
     confidence_interval=(2_000_000, 20_000_000),
     keywords=["aligned election commission", "alignment score", "campaign finance replacement", "operating cost", "opex"],
+    latex_symbol=r"Cost_{elections}",
 )
 
 # --- Decentralized Census Bureau (the sensor array) ---
@@ -16783,6 +16901,7 @@ DECENTRALIZED_CENSUS_BUREAU_ANNUAL_OPEX = Parameter(
     distribution="lognormal",
     confidence_interval=(5_000_000, 40_000_000),
     keywords=["decentralized census bureau", "sensor array", "measurement", "operating cost", "opex"],
+    latex_symbol=r"Cost_{census}",
 )
 
 # --- Algorithmic Monetary Authority (replaces the Federal Reserve) ---
@@ -16797,6 +16916,7 @@ ALGORITHMIC_MONETARY_AUTHORITY_ANNUAL_OPEX = Parameter(
     distribution="lognormal",
     confidence_interval=(3_000_000, 20_000_000),
     keywords=["algorithmic monetary authority", "federal reserve replacement", "monetary policy", "operating cost", "opex"],
+    latex_symbol=r"Cost_{monetary}",
 )
 
 # --- Transparent Securities Commission (replaces the SEC wealth gate) ---
@@ -16811,6 +16931,7 @@ TRANSPARENT_SECURITIES_COMMISSION_ANNUAL_OPEX = Parameter(
     distribution="lognormal",
     confidence_interval=(8_000_000, 50_000_000),
     keywords=["transparent securities commission", "sec replacement", "fraud detection", "operating cost", "opex"],
+    latex_symbol=r"Cost_{securities}",
 )
 
 # --- DIH same-budget efficiency (no treaty, no new money) ---
@@ -16826,6 +16947,7 @@ NIH_TRIAL_PATIENTS_FUNDABLE_STATUS_QUO = Parameter(
     inputs=["NIH_ANNUAL_BUDGET", "NIH_CLINICAL_TRIALS_SPENDING_PCT", "TRADITIONAL_PHASE3_COST_PER_PATIENT"],
     compute=lambda ctx: ctx["NIH_ANNUAL_BUDGET"] * ctx["NIH_CLINICAL_TRIALS_SPENDING_PCT"] / ctx["TRADITIONAL_PHASE3_COST_PER_PATIENT"],
     keywords=["nih", "trial capacity", "status quo", "patients fundable"],
+    latex_symbol=r"Patients_{NIH}",
 )
 
 DIH_NIH_SAME_BUDGET_PATIENTS_FUNDABLE = Parameter(
@@ -16839,6 +16961,7 @@ DIH_NIH_SAME_BUDGET_PATIENTS_FUNDABLE = Parameter(
     inputs=["NIH_ANNUAL_BUDGET", "NIH_CLINICAL_TRIALS_SPENDING_PCT", "DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
     compute=lambda ctx: ctx["NIH_ANNUAL_BUDGET"] * ctx["NIH_CLINICAL_TRIALS_SPENDING_PCT"] / ctx["DFDA_PRAGMATIC_TRIAL_COST_PER_PATIENT"],
     keywords=["dih", "nih", "same budget", "pragmatic trials", "procurement efficiency"],
+    latex_symbol=r"Patients_{DIH}",
 )
 
 # --- Suite-level aggregates and per-citizen dividends ---
@@ -16854,6 +16977,7 @@ US_GOV_WASTE_PER_CAPITA_ANNUAL = Parameter(
     inputs=["US_GOV_WASTE_TOTAL", "US_POPULATION_2024"],
     compute=lambda ctx: ctx["US_GOV_WASTE_TOTAL"] / ctx["US_POPULATION_2024"],
     keywords=["efficiency gap", "per capita", "dysfunction", "waste per person"],
+    latex_symbol=r"W_{pc}",
 )
 
 GOV_REPLACEMENT_SUITE_ANNUAL_OPEX = Parameter(
@@ -16886,6 +17010,7 @@ GOV_REPLACEMENT_SUITE_ANNUAL_OPEX = Parameter(
         + ctx["TRANSPARENT_SECURITIES_COMMISSION_ANNUAL_OPEX"]
     ),
     keywords=["suite", "operating cost", "government replacement", "total opex"],
+    latex_symbol=r"Cost_{suite}",
 )
 
 GOV_REPLACEMENT_SUITE_OPEX_PER_CITIZEN_ANNUAL = Parameter(
@@ -16899,6 +17024,7 @@ GOV_REPLACEMENT_SUITE_OPEX_PER_CITIZEN_ANNUAL = Parameter(
     inputs=["GOV_REPLACEMENT_SUITE_ANNUAL_OPEX", "US_POPULATION_2024"],
     compute=lambda ctx: ctx["GOV_REPLACEMENT_SUITE_ANNUAL_OPEX"] / ctx["US_POPULATION_2024"],
     keywords=["suite", "per citizen", "operating cost", "dollar per person"],
+    latex_symbol=r"Cost_{suite,pc}",
 )
 
 DECENTRALIZED_CONGRESS_SAVINGS_PER_CITIZEN_ANNUAL = Parameter(
@@ -16923,6 +17049,7 @@ DECENTRALIZED_CONGRESS_SAVINGS_PER_CITIZEN_ANNUAL = Parameter(
         + ctx["US_GOV_WASTE_AGRICULTURAL_SUBSIDIES"] + ctx["US_GOV_WASTE_FOSSIL_FUEL_SUBSIDIES"]
     ) / ctx["US_POPULATION_2024"],
     keywords=["decentralized congress", "dividend", "per capita", "zombie tariff"],
+    latex_symbol=r"Savings_{congress,pc}",
 )
 
 DRUG_TREATMENT_ADMIN_SAVINGS_PER_CITIZEN_ANNUAL = Parameter(
@@ -16936,6 +17063,7 @@ DRUG_TREATMENT_ADMIN_SAVINGS_PER_CITIZEN_ANNUAL = Parameter(
     inputs=["US_GOV_WASTE_DRUG_WAR", "US_POPULATION_2024"],
     compute=lambda ctx: ctx["US_GOV_WASTE_DRUG_WAR"] / ctx["US_POPULATION_2024"],
     keywords=["drug treatment administration", "dividend", "per capita", "drug war"],
+    latex_symbol=r"Savings_{drug,pc}",
 )
 
 DEPARTMENT_OF_PEACE_SAVINGS_PER_AMERICAN_ANNUAL = Parameter(
@@ -16949,6 +17077,7 @@ DEPARTMENT_OF_PEACE_SAVINGS_PER_AMERICAN_ANNUAL = Parameter(
     inputs=["US_GOV_WASTE_MILITARY_OVERSPEND", "US_POPULATION_2024"],
     compute=lambda ctx: ctx["US_GOV_WASTE_MILITARY_OVERSPEND"] / ctx["US_POPULATION_2024"],
     keywords=["department of peace", "dividend", "per capita", "military overspend"],
+    latex_symbol=r"Savings_{peace,pc}",
 )
 
 # --- Immigration Revenue Service (replaces ICE) ---
@@ -16966,6 +17095,7 @@ US_SMUGGLER_FEE_AVG = Parameter(
     confidence="high",
     last_updated="2023-04",
     keywords=["coyote", "smuggler fee", "immigration", "border", "revealed preference"],
+    latex_symbol=r"Fee_{smuggler}",
 )
 
 IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME = Parameter(
@@ -16978,6 +17108,7 @@ IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME = Parameter(
     distribution="lognormal",
     confidence_interval=(1_000_000, 5_000_000),
     keywords=["immigration", "priced entry", "volume", "visa sales"],
+    latex_symbol=r"N_{entry}",
 )
 
 IMMIGRATION_ENTRY_REVENUE_ANNUAL = Parameter(
@@ -16991,6 +17122,7 @@ IMMIGRATION_ENTRY_REVENUE_ANNUAL = Parameter(
     inputs=["IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME", "US_SMUGGLER_FEE_AVG"],
     compute=lambda ctx: ctx["IMMIGRATION_PRICED_ENTRY_ANNUAL_VOLUME"] * ctx["US_SMUGGLER_FEE_AVG"],
     keywords=["immigration", "entry fees", "revenue", "smuggler market capture"],
+    latex_symbol=r"Rev_{entry}",
 )
 
 CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034 = Parameter(
@@ -17005,26 +17137,43 @@ CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034 = Parameter(
     confidence="high",
     last_updated="2024-07",
     keywords=["cbo", "immigration surge", "deficit reduction", "fiscal impact"],
+    latex_symbol=r"\Delta D_{surge}",
+)
+
+CBO_IMMIGRATION_SURGE_WINDOW_YEARS = Parameter(
+    10,
+    manual_ref="knowledge/solution/immigration-revenue-service.qmd",
+    source_type="definition",
+    distribution="fixed",
+    description="Years over which the CBO immigration-surge deficit reduction is spread to annualize it.",
+    display_name="CBO Immigration Surge Window",
+    unit="years",
+    keywords=["CBO", "immigration", "window", "annualize"],
+    latex_symbol=r"T_{CBO}",
 )
 
 IMMIGRATION_DIVIDEND_PER_CITIZEN_ANNUAL = Parameter(
-    (IMMIGRATION_ENTRY_REVENUE_ANNUAL + CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034 / 10)
+    (IMMIGRATION_ENTRY_REVENUE_ANNUAL + CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034 / CBO_IMMIGRATION_SURGE_WINDOW_YEARS)
     / US_POPULATION_2024,
     manual_ref="knowledge/solution/immigration-revenue-service.qmd",
     source_type="calculated",
     description="Annual per-citizen dividend from priced entry: entry-fee revenue redirected from smugglers to the Treasury, plus the annualized fiscal surplus the CBO measured from a surge of comparable volume. A floor: excludes the surtax stream and the retired enforcement budget.",
     display_name="Immigration Dividend per Citizen per Year",
     unit="USD",
-    formula="(ENTRY_FEES + SURGE_FISCAL_SURPLUS / 10 years) / US_POPULATION",
+    formula="(IMMIGRATION_ENTRY_REVENUE_ANNUAL + CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034 "
+            "/ CBO_IMMIGRATION_SURGE_WINDOW_YEARS) / US_POPULATION_2024",
     inputs=[
         "IMMIGRATION_ENTRY_REVENUE_ANNUAL",
         "CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034",
+        "CBO_IMMIGRATION_SURGE_WINDOW_YEARS",
         "US_POPULATION_2024",
     ],
     compute=lambda ctx: (
-        ctx["IMMIGRATION_ENTRY_REVENUE_ANNUAL"] + ctx["CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034"] / 10
+        ctx["IMMIGRATION_ENTRY_REVENUE_ANNUAL"]
+        + ctx["CBO_IMMIGRATION_SURGE_DEFICIT_REDUCTION_2024_2034"] / ctx["CBO_IMMIGRATION_SURGE_WINDOW_YEARS"]
     ) / ctx["US_POPULATION_2024"],
     keywords=["immigration", "dividend", "per capita", "citizen shareholder"],
+    latex_symbol=r"Dividend_{immigration,pc}",
 )
 
 # ==============================================================================

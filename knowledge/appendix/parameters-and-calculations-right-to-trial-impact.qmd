@@ -38,15 +38,15 @@ Full methodology details, LaTeX equations, sensitivity analyses, and Monte Carlo
 
 ## Overview {#sec-parameters-and-calculations}
 
-This appendix documents all 27 parameters used in the analysis, organized by type:
+This appendix documents all 29 parameters used in the analysis, organized by type:
 
 - External sources (peer-reviewed): 8
-- Calculated values: 13
+- Calculated values: 15
 - Core definitions: 6
 
 ### Quick Navigation
 
-[Calculated Values](#sec-calculated) (13 parameters) • [External Data Sources](#sec-external) (8 parameters) • [Core Definitions](#sec-definitions) (6 parameters)
+[Calculated Values](#sec-calculated) (15 parameters) • [External Data Sources](#sec-external) (8 parameters) • [Core Definitions](#sec-definitions) (6 parameters)
 
 
 ## Calculated Values {#sec-calculated}
@@ -146,14 +146,27 @@ Conditional implementation cost per DALY if all 50 states adopt, a mature pooled
 $$
 \begin{gathered}
 Cost_{RTT,DALY} \\
-= C_{RTT} / (DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT}^{PV})
+= \frac{C_{RTT}}{DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT}^{PV}} \\
+= \frac{\$65M}{2.88B \times 92.6\% \times 10.3} \\
+= \$0.00237
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 T_{accel,RTT}^{PV} \\
-= [A\left(\frac{T_{queue,SQ}}{k_{RTT}}\right) - A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{A_{RTT} - A_{SQ}}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{0.38 - 0.0763}{\ln\left(1 + 3\%\right)} \\
+= 10.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{RTT} \\
+= \frac{1 - (1 + r_{discount})^{-\frac{T_{queue,SQ}}{k_{RTT}}}}{\frac{T_{queue,SQ}}{k_{RTT}} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-\frac{443}{5.48}}}{\frac{443}{5.48} \times \ln\left(1 + 3\%\right)} \\
+= 0.38
 \end{gathered}
 $$
 where:
@@ -172,6 +185,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *? Low confidence*
@@ -208,14 +230,27 @@ Conditional implementation cost per modeled premature death prevented if all 50 
 $$
 \begin{gathered}
 Cost_{RTT,life} \\
-= C_{RTT} / (Deaths_{disease,daily} \times \text{DAYS\_PER\_YEAR} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV})
+= \frac{C_{RTT}}{Deaths_{disease,daily} \times \underbrace{365}_{\text{days/yr}} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV}} \\
+= \frac{\$65M}{150{,}000 \times 365 \times 92.6\% \times 10.3} \\
+= \$0.125
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 T_{accel,RTT}^{PV} \\
-= [A\left(\frac{T_{queue,SQ}}{k_{RTT}}\right) - A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{A_{RTT} - A_{SQ}}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{0.38 - 0.0763}{\ln\left(1 + 3\%\right)} \\
+= 10.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{RTT} \\
+= \frac{1 - (1 + r_{discount})^{-\frac{T_{queue,SQ}}{k_{RTT}}}}{\frac{T_{queue,SQ}}{k_{RTT}} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-\frac{443}{5.48}}}{\frac{443}{5.48} \times \ln\left(1 + 3\%\right)} \\
+= 0.38
 \end{gathered}
 $$
 where:
@@ -236,6 +271,15 @@ N_{untreated} \\
 = 6{,}650
 \end{gathered}
 $$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
+\end{gathered}
+$$
 *? Low confidence*
 
 #### Sensitivity Analysis
@@ -254,6 +298,62 @@ $$
 
 :::
 
+### Average Discount Factor over Right to Try Queue Clearance: 0.38x {#sec-state_rtt_queue_average_discount_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average discount factor over the status quo queue clearance period divided by the Right to Try discovery multiplier: the mean of (1+r)^(-t) for t spread evenly over [0, T]. Equals A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)).
+
+**Inputs**:
+
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Universal Right to Try with Evidence Treatment Discovery Multiplier](#sec-state_rtt_treatment_discovery_multiplier): 5.48x (95% CI: 1.1x - 15x)
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+A_{RTT} \\
+= \frac{1 - (1 + r_{discount})^{-\frac{T_{queue,SQ}}{k_{RTT}}}}{\frac{T_{queue,SQ}}{k_{RTT}} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-\frac{443}{5.48}}}{\frac{443}{5.48} \times \ln\left(1 + 3\%\right)} \\
+= 0.38
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-state_rtt_queue_average_discount_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-state_rtt_queue_average_discount_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-state_rtt_queue_average_discount_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-state_rtt_queue_average_discount_factor.qmd >}}
+
+:::
+
 ### DALYs Averted from Universal Right to Try with Evidence: 483 billion DALYs {#sec-state_rtt_treatment_acceleration_dalys}
 
 ::: {.callout-note collapse="true" title="📊 Details"}
@@ -269,7 +369,8 @@ Conditional lifetime DALYs averted by shifting the global treatment-discovery sc
 $$
 \begin{gathered}
 DALYs_{RTT} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \\
+\times T_{accel,RTT} \\
 = 2.88B \times 92.6\% \times 181 \\
 = 483B
 \end{gathered}
@@ -343,7 +444,8 @@ Conditional cumulative premature deaths from global diseases and aging prevented
 $$
 \begin{gathered}
 Lives_{RTT} \\
-= Deaths_{disease,daily} \times Pct_{avoid,death} \times T_{accel,RTT} \times 365 \\
+= Deaths_{disease,daily} \times Pct_{avoid,death} \\
+\times T_{accel,RTT} \times 365 \\
 = 150{,}000 \times 92.6\% \times 181 \times 365 \\
 = 9.19B
 \end{gathered}
@@ -425,7 +527,8 @@ where:
 $$
 \begin{gathered}
 DALYs_{RTT} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \\
+\times T_{accel,RTT} \\
 = 2.88B \times 92.6\% \times 181 \\
 = 483B
 \end{gathered}
@@ -507,7 +610,8 @@ where:
 $$
 \begin{gathered}
 DALYs_{RTT} \\
-= DALYs_{global,ann} \times Pct_{avoid,DALY} \times T_{accel,RTT} \\
+= DALYs_{global,ann} \times Pct_{avoid,DALY} \\
+\times T_{accel,RTT} \\
 = 2.88B \times 92.6\% \times 181 \\
 = 483B
 \end{gathered}
@@ -634,18 +738,29 @@ $$
 
 ::: {.callout-note collapse="true" title="📊 Details"}
 
-Present value, in years, of the average treatment schedule shift from Universal Right to Try with Evidence, discounted at the standard social discount rate. Same timing as the undiscounted shift: first treatments are found evenly over the status quo clearance period, versus evenly over that period divided by the discovery multiplier. The cost-per-DALY and cost-per-life ratios use it so the near-term launch cost is compared with health benefits in present value, as in the 1% Treaty model. A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)) is the average discount factor over [0, T].
+Present value, in years, of the average treatment schedule shift from Universal Right to Try with Evidence, discounted at the standard social discount rate. Same timing as the undiscounted shift: first treatments are found evenly over the status quo clearance period, versus evenly over that period divided by the discovery multiplier. The cost-per-DALY and cost-per-life ratios use it so the near-term launch cost is compared with health benefits in present value, as in the 1% Treaty model.
 
 **Inputs**:
 
-- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
-- [Universal Right to Try with Evidence Treatment Discovery Multiplier](#sec-state_rtt_treatment_discovery_multiplier): 5.48x (95% CI: 1.1x - 15x)
+- [Average Discount Factor over Right to Try Queue Clearance](#sec-state_rtt_queue_average_discount_factor) 🔢: 0.38x
+- [Average Discount Factor over Status Quo Queue Clearance](#sec-status_quo_queue_average_discount_factor) 🔢: 0.0763x
 - [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
 
 $$
 \begin{gathered}
 T_{accel,RTT}^{PV} \\
-= [A\left(\frac{T_{queue,SQ}}{k_{RTT}}\right) - A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{A_{RTT} - A_{SQ}}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{0.38 - 0.0763}{\ln\left(1 + 3\%\right)} \\
+= 10.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{RTT} \\
+= \frac{1 - (1 + r_{discount})^{-\frac{T_{queue,SQ}}{k_{RTT}}}}{\frac{T_{queue,SQ}}{k_{RTT}} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-\frac{443}{5.48}}}{\frac{443}{5.48} \times \ln\left(1 + 3\%\right)} \\
+= 0.38
 \end{gathered}
 $$
 where:
@@ -664,6 +779,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *? Low confidence*
@@ -707,14 +831,27 @@ where:
 $$
 \begin{gathered}
 Cost_{RTT,life} \\
-= C_{RTT} / (Deaths_{disease,daily} \times \text{DAYS\_PER\_YEAR} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV})
+= \frac{C_{RTT}}{Deaths_{disease,daily} \times \underbrace{365}_{\text{days/yr}} \times Pct_{avoid,death} \times T_{accel,RTT}^{PV}} \\
+= \frac{\$65M}{150{,}000 \times 365 \times 92.6\% \times 10.3} \\
+= \$0.125
 \end{gathered}
 $$
 where:
 $$
 \begin{gathered}
 T_{accel,RTT}^{PV} \\
-= [A\left(\frac{T_{queue,SQ}}{k_{RTT}}\right) - A(T_{queue,SQ})] / \ln\left(1 + r_{discount}\right)
+= \frac{A_{RTT} - A_{SQ}}{\ln\left(1 + r_{discount}\right)} \\
+= \frac{0.38 - 0.0763}{\ln\left(1 + 3\%\right)} \\
+= 10.3
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{RTT} \\
+= \frac{1 - (1 + r_{discount})^{-\frac{T_{queue,SQ}}{k_{RTT}}}}{\frac{T_{queue,SQ}}{k_{RTT}} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-\frac{443}{5.48}}}{\frac{443}{5.48} \times \ln\left(1 + 3\%\right)} \\
+= 0.38
 \end{gathered}
 $$
 where:
@@ -733,6 +870,15 @@ N_{untreated} \\
 = N_{rare} \times 0.95 \\
 = 7{,}000 \times 0.95 \\
 = 6{,}650
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
 \end{gathered}
 $$
 *? Low confidence*
@@ -806,6 +952,61 @@ $$
 #### Exceedance Probability
 
 {{< include ../figures/exceedance-status_quo_avg_years_to_first_treatment.qmd >}}
+
+:::
+
+### Average Discount Factor over Status Quo Queue Clearance: 0.0763x {#sec-status_quo_queue_average_discount_factor}
+
+::: {.callout-note collapse="true" title="📊 Details"}
+
+Average discount factor over the status quo queue clearance period: the mean of (1+r)^(-t) for t spread evenly over [0, T]. Equals A(T) = (1 - (1+r)^(-T)) / (T ln(1+r)).
+
+**Inputs**:
+
+- [Status Quo Therapeutic Space Exploration Time](#sec-status_quo_queue_clearance_years) 🔢: 443 years
+- [Standard Discount Rate for NPV Analysis](#sec-npv_discount_rate_standard): 3%
+
+$$
+\begin{gathered}
+A_{SQ} \\
+= \frac{1 - (1 + r_{discount})^{-T_{queue,SQ}}}{T_{queue,SQ} \times \ln\left(1 + r_{discount}\right)} \\
+= \frac{1 - (1 + 3\%)^{-443}}{443 \times \ln\left(1 + 3\%\right)} \\
+= 0.0763
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+T_{queue,SQ} \\
+= \frac{N_{untreated}}{Treatments_{new,ann}} \\
+= \frac{6{,}650}{15} \\
+= 443
+\end{gathered}
+$$
+where:
+$$
+\begin{gathered}
+N_{untreated} \\
+= N_{rare} \times 0.95 \\
+= 7{,}000 \times 0.95 \\
+= 6{,}650
+\end{gathered}
+$$
+*✓ High confidence*
+
+#### Sensitivity Analysis
+
+{{< include ../figures/tornado-status_quo_queue_average_discount_factor.qmd >}}
+
+{{< include ../figures/sensitivity-table-status_quo_queue_average_discount_factor.qmd >}}
+
+#### Monte Carlo Distribution
+
+{{< include ../figures/mc-distribution-status_quo_queue_average_discount_factor.qmd >}}
+
+#### Exceedance Probability
+
+{{< include ../figures/exceedance-status_quo_queue_average_discount_factor.qmd >}}
 
 :::
 
