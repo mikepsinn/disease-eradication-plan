@@ -31,7 +31,7 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 26:48 The Solution: A 1% Treaty
 29:12 Your Decentralized FDA
 34:18 Why This Could Actually Work
-36:10 The Math
+36:09 The Math
 37:32 The 5-Step Plan
 47:34 How This Manual Could Fix Everything
 48:22 Choose Your Own Adventure
@@ -218,9 +218,9 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 - **Visual:** Every box in the chain turns off at once. The Orderly stops, holding the cup, and reads the wall.
 - **Motion / sound:** **HOLD.** Silence for one beat.
 
-### S33 · 00:10:46 · Cue: "Not building a nuclear bomb requires nothing. Rocks do it every day."
+### S33 · 00:10:36 · Cue: "Building a nuclear bomb requires mass spectrometers… Not building a nuclear bomb requires nothing. Rocks do it every day."
 - **Layer:** B
-- **Visual:** Start a little earlier, at "Building a nuclear bomb requires…": a huge centrifuge cascade with hundreds of pipes. Then, on the cue: two rocks of different colors sit side by side in the sun. A tiny heart floats up between them.
+- **Visual:** A huge centrifuge cascade with hundreds of pipes. Then, on "Not building a nuclear bomb requires nothing": two rocks of different colors sit side by side in the sun. A tiny heart floats up between them.
 
 ### S34 · 00:11:03 · Cue: "You already admitted improvement is physically possible… Getting one billionaire to read a PDF is."
 - **Layer:** B
@@ -251,8 +251,8 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 
 ### S39 · 00:13:02 · Cue: "Step five, give papers you get back from the government back to the rich humans forever…"
 - **Layer:** B
-- **Visual:** A pie chart: "$27.2 BILLION / YEAR." The big teal slice (80%) flows into a hospital. A 10% slice flows to a box "POLITICIANS WHO VOTED YES." A 10% slice flows back to the Rich Human with an infinity sign on it.
-- **On screen:** "80% clinical trials · 10% politicians who voted yes · 10% investors, forever"
+- **Visual:** A pie chart: "$27.2 BILLION / YEAR." The big teal slice (80%) flows into a hospital. A 10% slice flows to a box "FUND FOR YES VOTERS," which turns into campaign posters and a "POST-OFFICE CAREERS" door. A 10% slice flows back to the Rich Human with an infinity sign on it.
+- **On screen:** "80% clinical trials · 10% fund that rewards yes votes (campaigns, post-office careers) · 10% investors, forever"
 
 ## Part 8: Why Your Leaders Aren't the Problem
 
@@ -497,9 +497,9 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 - **Visual:** A clean, simple Outcome Label, like a food nutrition label, slides onto a pill bottle.
 - **On screen:** Example label: "Took it: 10,000 people · Got better: 62% · No change: 30% · Side effects: 8%" (mark it "EXAMPLE").
 
-### S85 · 00:33:57 · Cue: "Your decentralized FDA figures out which treatments work, but your governments also need to know which policies work… On Wishonia, the Optimitron handles this."
+### S85 · 00:33:36 · Cue: "Your decentralized FDA figures out which treatments work, but your governments also need to know which policies work… On Wishonia, the Optimitron handles this."
 - **Layer:** A
-- **Visual:** Start at "Your decentralized FDA figures out…": on the wall screen, two humans argue loudly on a TV panel show. Then the Optimitron sits on Wishonia's desk like a toaster. Wishonia feeds in a card stack "10,000 JURISDICTIONS." Two policy cards pop out like toast: "OPTIMAL BUDGET" and "OPTIMAL POLICY."
+- **Visual:** On the wall screen, two humans argue loudly on a TV panel show. Then the Optimitron sits on Wishonia's desk like a toaster. Wishonia feeds in a card stack "10,000 JURISDICTIONS." Two policy cards pop out like toast: "OPTIMAL BUDGET" and "OPTIMAL POLICY."
 - **Wishonia:** `happy-smile` + `body-point-right`.
 - **On screen:** "It's an appliance."
 
@@ -527,7 +527,7 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 
 ## Part 17: The Math
 
-### S90 · 00:36:10 · Cue: "The math. Remember the 212 years timeline shift?…"
+### S90 · 00:36:09 · Cue: "The math. Remember the 212 years timeline shift?…"
 - **Layer:** A title card → B
 - **Visual:** An equation builds on a chalkboard: years gained × $150,000 per healthy year × the global disease burden = $84.8 quadrillion. Divided by $1 billion = 84.8 million : 1.
 - **On screen:** "$84.8 quadrillion in total economic value" / "Return: 84.8 million : 1"
@@ -552,7 +552,7 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 ### S94 · 00:37:39 · Cue: "Step one, sell incentive alignment bonds. On Wishonia, people do useful things because they're useful…"
 - **Layer:** B
 - **Visual:** A fancy bond certificate. It splits into three streams: 80% teal to clinical trials, 10% to investors, 10% to a Super PAC. The two 10% streams pour into a glass box with a lid labeled "CORRUPTION (CAPPED AT 20%, FULLY TRANSPARENT)."
-- **On screen:** "80% trials · 10% investors · 10% politicians who vote yes"
+- **On screen:** "80% trials · 10% investors · 10% Super PAC (campaigns and post-office careers for yes votes)"
 
 ### S95 · 00:38:17 · Cue: "The corruption is capped at 20% and fully transparent. The other 80% goes directly to clinical trials through wishocratic allocation…"
 - **Layer:** B
@@ -571,7 +571,7 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 
 ### S98 · 00:40:31 · Cue: "The other half, 10%, goes to a super PAC…"
 - **Layer:** B
-- **Visual:** The Super PAC backpack hands treats to senators who voted yes. A senator sits up like a well-trained dog.
+- **Visual:** The Super PAC backpack pays for campaign billboards for senators who voted yes, and opens a "POST-OFFICE CAREERS" door for the ones who retire. No money touches a senator. A bell rings, and a senator who voted yes sits up like a well-trained dog.
 - **On screen:** "Pavlovian conditioning, but for senators"
 
 ### S99 · 00:40:55 · Cue: "The remaining 80% of $27.2 billion goes where it's supposed to…"
@@ -588,9 +588,9 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 - **Layer:** B
 - **Visual:** A small evolution chart of the red loop growing on its own like a vine. Then a gardener's hand plants a teal loop on purpose.
 
-### S102 · 00:42:27 · Cue: "Step two… Make humans click a button to not die. You need 3.5% of humanity to vote yes…"
+### S102 · 00:42:27 · Cue: "Make humans click a button to not die. You need 3.5% of humanity to vote yes…"
 - **Layer:** B
-- **Visual:** A giant retro button: "YES." The question appears above it. Start the scene at "Step two" with a door-2 card from S93.
+- **Visual:** Open on the door-2 card from S93 (the audio does not say "Step two"). Then a giant retro button: "YES." The question appears above it.
 - **On screen:** "Should your country redirect 1% of military spending to fund clinical trials?" / "Needed: 3.5% of humanity"
 
 ### S103 · 00:42:45 · Cue: "A political scientist named Erica Chenoweth studied every major political movement…"
@@ -620,7 +620,7 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 
 ### S108 · 00:45:07 · Cue: "Politicians are surprisingly affordable. It's not corruption if you corrupt the corruption…"
 - **Layer:** B
-- **Visual:** The papers take a scenic route through a winding track labeled "SCORING ALGORITHM" before they reach a senator. Vote yes → a reward drops. Vote no → the reward drops on the opponent instead. Then report cards with letter grades are handed to senators, who sweat. For the mass-shooting line, show the report card only; no guns.
+- **Visual:** The papers take a scenic route through a winding track labeled "SCORING ALGORITHM" and come out as campaign posters, never as cash in a hand. Vote yes → the posters carry that senator's name, and retirees get a "POST-OFFICE FELLOWSHIP" desk. Vote no → the posters carry the opponent's name instead. Then report cards with letter grades are handed to senators, who sweat. For the mass-shooting line, show the report card only; no guns.
 - **On screen:** "It's not corruption if you corrupt the corruption."
 
 ### S109 · 00:46:08 · Cue: "Step 5. Enjoy. Everyone gets rich and nobody dies… The $27.2 billion a year money volcano erupts."
