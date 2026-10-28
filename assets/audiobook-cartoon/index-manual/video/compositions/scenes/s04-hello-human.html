@@ -6,7 +6,6 @@
     #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; }
     #s04-bg, #s04-cast, #s04-front { position: absolute; inset: 0; }
     #s04-camera { position: absolute; inset: 0; transform-origin: 1300px 500px; }
-    #s04-title { position: absolute; left: 120px; top: 150px; width: 900px; font-size: 168px; }
     #s04-card {
       position: absolute; left: 110px; top: 140px; width: 860px; padding: 40px 48px 46px;
       background: #F6EBD2; border: 7px solid #1A1426; border-radius: 26px; box-shadow: 12px 14px 0 #1A1426;
@@ -20,7 +19,6 @@
       <div id="s04-bg"></div>
       <div id="s04-cast"></div>
       <div id="s04-front"></div>
-      <div id="s04-title" class="kit-big">Hello,<br />human</div>
       <div id="s04-card">
         <div id="s04-you" class="kit-big">YOU:</div>
         <div class="s04-line" id="s04-l1"><span class="s04-hi">quantifiably</span> the most</div>
@@ -49,9 +47,7 @@
       // slow push-in under everything
       tl.fromTo(q("camera"), { scale: 1 }, { scale: 1.04, duration: D, ease: "none" }, 0);
 
-      // chapter title, then the card
-      tl.fromTo(q("title"), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0);
-      tl.to(q("title"), { opacity: 0, y: -40, duration: 0.4, ease: "power2.in" }, cue("You") - 0.5);
+      // no title card in Part 2 (style bible, section 1)
       tl.fromTo(q("card"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, cue("you", 2) - 0.2);
       tl.fromTo(q("you"), { scale: 0.6, transformOrigin: "0% 50%" }, { scale: 1, duration: 0.5, ease: "back.out(2)" }, cue("you", 2) - 0.1);
       tl.fromTo(q("l1"), { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, cue("quantifiably,"));

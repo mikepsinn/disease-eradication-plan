@@ -13,7 +13,7 @@ Wishonia: Layer A shows Wishonia large behind the desk. Layer B shows Wishonia i
 
 ## S04 · 0.00 · Layer A · "Hello, human."
 
-- Chapter title "Hello, human" on the sunburst. Wishonia rises into the frame (`happy-smile` + `body-presenting`).
+- No title card (the narration starts at once). Wishonia rises into the frame (`happy-smile` + `body-presenting`).
 - "you are" → card "YOU:"; "quantifiably", "important", "history" → the three lines of "quantifiably the most important person in the history of your civilization".
 - "expression" → Wishonia leans toward the camera and squints (`skeptical-smile`); the card slides away.
 - "skeptical" → `body-arms-crossed`.
