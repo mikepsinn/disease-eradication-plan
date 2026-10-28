@@ -1,0 +1,104 @@
+<template id="s07-template">
+  <!-- S07 · Layer B · The 604 bar (first use), then quiz question 1 with a pencil ticking YES. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; }
+    #s07-bg, #s07-art, #s07-pip { position: absolute; inset: 0; }
+    #s07-ratio { position: absolute; left: 520px; top: 150px; font-size: 118px; white-space: nowrap; }
+    #s07-ratio .r { color: #D7322B; }
+    #s07-ratio .t { color: #1FA39A; }
+    #s07-lab-w { position: absolute; left: 150px; top: 880px; width: 340px; text-align: center; font-size: 30px; color: #D7322B; }
+    #s07-lab-m { position: absolute; left: 470px; top: 880px; width: 240px; text-align: center; font-size: 24px; line-height: 1.05; color: #157F78; }
+    #s07-card {
+      position: absolute; left: 1000px; top: 110px; width: 830px; height: 470px; padding: 28px 40px;
+      background: #FBF5E6; border: 5px solid #1B1B1B; box-shadow: 10px 12px 0 #1B1B1B;
+      background-image: repeating-linear-gradient(transparent 0 57px, rgba(31, 163, 154, 0.35) 57px 59px);
+    }
+    #s07-card::before { content: ""; position: absolute; left: 92px; top: 0; bottom: 0; width: 3px; background: rgba(215, 50, 43, 0.6); }
+    #s07-head { position: absolute; left: 120px; top: 24px; font-size: 32px; color: #D7322B; }
+    #s07-q { position: absolute; left: 120px; top: 84px; width: 660px; font-size: 56px; line-height: 1.12; }
+    #s07-opts { position: absolute; left: 120px; top: 330px; width: 700px; height: 110px; }
+    #s07-notes { position: absolute; left: 1000px; top: 640px; width: 640px; }
+    .s07-note { font-size: 34px; margin-bottom: 12px; }
+    .s07-note b { color: #157F78; }
+  </style>
+  <div id="root" data-composition-id="s07" data-width="1920" data-height="1080" data-start="0" data-duration="19.74">
+    <div id="s07-bg" class="clip" data-start="0" data-duration="19.74" data-track-index="0"></div>
+    <div id="s07-art"></div>
+    <div id="s07-ratio" class="kit-big"><span class="r">604</span> : <span class="t">1</span></div>
+    <div id="s07-lab-w" class="kit-label">Weapons</div>
+    <div id="s07-lab-m" class="kit-label">Testing which<br />medicines work</div>
+    <div id="s07-notes">
+      <div class="s07-note kit-label" id="s07-n1"><b class="s07-ck"></b> Cut military spending 87% before</div>
+      <div class="s07-note kit-label" id="s07-n2"><b class="s07-ck"></b> Signed global treaties</div>
+    </div>
+    <div id="s07-card">
+      <div id="s07-head" class="kit-label">Question 1</div>
+      <div id="s07-q" class="kit-label">Is it physically possible they'd redirect 1%?</div>
+      <div id="s07-opts"></div>
+    </div>
+    <div id="s07-pip"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part-02.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "s07";
+      var D = KIT.scene(ID).duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      // the red tower: a side view of a stack of papers, 700 px tall; the teal stack is one paper
+      var layers = "";
+      for (var i = 0; i < 64; i++) {
+        var y = 860 - (i + 1) * 11;
+        layers += '<rect x="' + (170 + ((i * 7) % 5) - 2) + '" y="' + y + '" width="300" height="11" fill="' + (i % 2 ? C.war : "#E35A4F") + '" stroke="' + C.line + '" stroke-width="1.6"/>';
+      }
+      q("art").innerHTML = KIT.svg(1920, 1080,
+        KIT.paperDefs(ID + "a") +
+        '<path d="M110,862 H760" stroke="' + C.line + '" stroke-width="6"/>' +
+        '<g id="s07-tower">' + layers +
+          '<rect x="168" y="156" width="304" height="704" fill="url(#' + ID + 'a-hred)" opacity="0.45"/>' +
+          '<rect x="168" y="156" width="304" height="704" fill="none" stroke="' + C.line + '" stroke-width="5"/></g>' +
+        '<g id="s07-one"><rect x="530" y="849" width="120" height="11" fill="' + C.med + '" stroke="' + C.line + '" stroke-width="2.5"/></g>' +
+        '<g transform="translate(590,800)"><g id="s07-walker">' + KIT.money("med", 0) + "</g></g>"
+      );
+      q("opts").innerHTML = KIT.svg(700, 110,
+        KIT.checkbox(0, 10, 80) + '<text x="104" y="78" font-family="Oswald" font-weight="600" font-size="60" fill="' + C.line + '">YES</text>' +
+        KIT.checkbox(330, 10, 80) + '<text x="434" y="78" font-family="Oswald" font-weight="600" font-size="60" fill="' + C.line + '">NO</text>' +
+        KIT.tick(0, 6, 84) +
+        '<g transform="translate(70,58)"><g id="s07-pencil">' + KIT.pencil() + "</g></g>"
+      );
+
+      document.querySelectorAll(".s07-ck").forEach(function (b) { b.innerHTML = KIT.checkSvg(34); });
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), { scene: ID, x: 1620, y: 590, w: 280, pip: { cx: 1760, cy: 740, r: 128 } });
+
+      // the tower rises on "604"; the ratio and labels land after it
+      tl.fromTo("#s07-tower", { scaleY: 0, transformOrigin: "50% 100%" }, { scaleY: 1, transformOrigin: "50% 100%", duration: 1.4, ease: "power3.out" }, cue("604") - 0.1);
+      tl.fromTo("#s07-one", { opacity: 0 }, { opacity: 1, duration: 0.2 }, cue("testing"));
+      tl.fromTo("#s07-walker", { x: 140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, cue("testing"));
+      tl.fromTo(q("ratio"), { opacity: 0, scale: 0.6, transformOrigin: "0% 50%" }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, cue("times"));
+      tl.fromTo(q("lab-w"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, cue("weapons"));
+      tl.fromTo(q("lab-m"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, cue("medicines"));
+
+      // the quiz card slides in, with the two facts as notes
+      tl.fromTo(q("card"), { x: 1100, rotation: 6 }, { x: 0, rotation: -1.5, duration: 0.6, ease: "power3.out" }, cue("Given") - 0.2);
+      tl.fromTo(q("n1"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3 }, cue("87%"));
+      tl.fromTo(q("n2"), { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.3 }, cue("treaties,"));
+      // the pencil ticks YES on "1%?"
+      var tk = cue("1%?");
+      tl.fromTo("#s07-pencil", { x: 300, y: -60, opacity: 0 }, { x: 0, y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, tk - 0.9);
+      tl.fromTo(q("opts").querySelector(".tick"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power1.in" }, tk);
+      tl.to("#s07-pencil", { x: 50, y: -70, duration: 0.35, ease: "power1.in" }, tk);
+      tl.set({}, {}, D);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

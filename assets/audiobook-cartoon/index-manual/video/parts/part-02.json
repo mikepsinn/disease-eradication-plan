@@ -1,0 +1,81 @@
+{
+  "id": "part-02",
+  "title": "Hello, human",
+  "audio": { "start": 108.5, "end": 255.38 },
+  "scenes": [
+    {
+      "id": "s04",
+      "file": "compositions/scenes/s04-hello-human.html",
+      "cue": "Hello,",
+      "approx": 108,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "Hello,", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "expression,", "expr": "skeptical", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "skeptical.", "expr": "skeptical", "rest": "smile", "body": "arms-crossed", "mode": "big" }
+      ]
+    },
+    {
+      "id": "s05",
+      "file": "compositions/scenes/s05-push-door.html",
+      "cue": "This",
+      "approx": 124,
+      "layer": "B",
+      "wishonia": [{ "cue": "This", "expr": "eyeroll", "rest": "smile", "body": "idle", "mode": "pip" }]
+    },
+    {
+      "id": "s06",
+      "file": "compositions/scenes/s06-the-numbers.html",
+      "cue": "By",
+      "approx": 141,
+      "layer": "A",
+      "wishonia": [{ "cue": "By", "expr": "neutral", "rest": "smile", "body": "counting", "mode": "big" }]
+    },
+    {
+      "id": "s07",
+      "file": "compositions/scenes/s07-604-bar.html",
+      "cue": "Your",
+      "approx": 158,
+      "layer": "B",
+      "wishonia": [{ "cue": "Your", "expr": "thinking", "rest": "closed", "body": "idle", "mode": "pip" }]
+    },
+    {
+      "id": "s08",
+      "file": "compositions/scenes/s08-quiz.html",
+      "cue": "Would",
+      "approx": 178,
+      "layer": "B",
+      "wishonia": [{ "cue": "Would", "expr": "neutral", "rest": "smile", "body": "idle", "mode": "pip" }]
+    },
+    {
+      "id": "s09",
+      "file": "compositions/scenes/s09-billionaire-quiz.html",
+      "cue": "Do",
+      "approx": 200,
+      "layer": "B",
+      "wishonia": [{ "cue": "Do", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "pip" }]
+    },
+    {
+      "id": "s10",
+      "file": "compositions/scenes/s10-top-hats.html",
+      "cue": "If",
+      "approx": 218.5,
+      "layer": "B",
+      "wishonia": [
+        { "cue": "If", "expr": "neutral", "rest": "smile", "body": "idle", "mode": "pip" },
+        { "cue": "stop", "expr": "annoyed", "rest": "closed", "body": "idle", "mode": "pip" }
+      ]
+    },
+    {
+      "id": "s11",
+      "file": "compositions/scenes/s11-aligned.html",
+      "cue": "But",
+      "approx": 237.8,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "But", "expr": "excited", "rest": "closed", "body": "excited", "mode": "big" },
+        { "cue": "The", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "big" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "index-manual-cartoon",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build-timing.mjs",
+    "dev": "hyperframes preview",
+    "check": "hyperframes check",
+    "render": "hyperframes render --quality high --output ../../../audiobook/pilot/part-02-hello-human.mp4"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.113"
+  }
+}

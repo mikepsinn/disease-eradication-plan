@@ -1,0 +1,55 @@
+# Episode 1 cartoon: HyperFrames project
+
+The cartoon video for audiobook episode 1, "How to End War and Disease (for Busy People)", built with [HyperFrames](https://github.com/heygen-com/hyperframes) (HTML + GSAP rendered to MP4). The voice is the audiobook MP3. There is no text-to-speech. The plan, the scene script and the style bible are in the folder above this one.
+
+The pilot is **Part 2, "Hello, human"** (01:48 to 04:15 of the MP3, scenes S04 to S11).
+
+| File | Purpose |
+| --- | --- |
+| `STORYBOARD.md` | Part 2, scene by scene: cue word, layer, what moves on which word |
+| `parts/part-02.json` | The audio cut, and for each scene: cue word, composition file, Wishonia states |
+| `tools/build-part.mjs` | Cuts the MP3, copies the sprites, writes `data/part-02.js` and `index.html` |
+| `data/part-02.js` | Generated: scene times, words, mouth track, blinks, caption groups |
+| `index.html` | Generated: the root composition (scenes, captions, voice) |
+| `compositions/scenes/*.html` | One composition for each scene |
+| `compositions/captions.html` | Captions from the word timings, with the spoken word highlighted |
+| `assets/js/kit.js` | Shared code: cue times, the Wishonia rig, and all SVG art for both layers |
+| `assets/fonts/` | Fraunces, Oswald and Inter (SIL Open Font License; license files next to them) |
+| `assets/vendor/gsap.min.js` | GSAP 3.15.0, so that renders work offline ([license](https://gsap.com/standard-license)) |
+
+Not in git (see `.gitignore`): `assets/audio/` (the audio cut), `assets/sprites/` (copies of `transmit/public/assets/sprites/alien/`), `renders/` and `snapshots/`. The episode MP3 downloads to `assets/audiobook/cartoon/` at the repository root, which is also ignored.
+
+## Rebuilding
+
+Requires Node 22+ and ffmpeg. HyperFrames needs a Chrome headless shell. In a Claude Code cloud session, use the pre-installed one:
+
+```bash
+export HYPERFRAMES_BROWSER_PATH=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell
+```
+
+On another computer, run `npx hyperframes browser ensure` once.
+
+```bash
+npm install                                  # installs the pinned hyperframes CLI
+node tools/build-part.mjs parts/part-02.json # audio cut, sprites, data/part-02.js, index.html
+npx hyperframes check                        # lint, runtime, layout, motion, contrast
+npx hyperframes snapshot --at 5,20,40 --describe false   # look at frames
+npx hyperframes render --quality high --output ../../../audiobook/cartoon/part-02-hello-human.mp4
+```
+
+Always pass `--describe false` to `snapshot`. Otherwise it sends the frames to Gemini when a Gemini key is set.
+
+Rendering Part 2 (147 s, 30 fps) took about 8 minutes on 4 CPU cores with no GPU.
+
+## How it works
+
+- **Timing comes from the words.** `build-part.mjs` finds each scene's start from its cue word in `word-timings.json`. Each scene starts its animations with `KIT.cue("s07", "604")`, which gives that word's start in scene time. If the timings change, rebuild; the scenes follow.
+- **Lip-sync.** Each word's letters are spread over its duration and mapped with `CHAR_TO_VISEME` (the same table as `packages/wishonia-widget/src/core/viseme-map.ts` in mikepsinn/optimitron). A pause of 0.18 s or more shows the resting mouth of the current state. `getHeadName` falls back to an available mouth.
+- **Blinks and idle motion** follow `transmit/public/assets/js/characters.js`: `blink-smile` for 150 ms in pauses, and a head rock from -2° to +2° on a 7-second loop.
+- **Determinism.** No `Math.random` and no clock: confetti uses a seeded generator, and everything that changes over time is a function of the seek time (`KIT.onTime`).
+
+## Adding the other parts
+
+1. Copy `parts/part-02.json` to `parts/part-NN.json`. Set the audio cut and the scenes from `cartoon-script.md`.
+2. Write one composition for each scene in `compositions/scenes/`, with `kit.js` for the art and `KIT.cue` for the timing. Load `data/part-NN.js` in each one.
+3. Run the build, the check and the render for that part. Join the parts with ffmpeg.

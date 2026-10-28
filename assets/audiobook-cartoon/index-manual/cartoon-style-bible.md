@@ -140,22 +140,25 @@ All of these are original designs for this project. Do not base them on characte
 
 ---
 
-## 5. Image-generator prompts (starting points)
+## 5. Drawing the art in code
 
-Add the scene details from the script to these base prompts. For Wishonia, put the real sprites into the scene. Do not generate a new Wishonia.
+All art is drawn in code (SVG and CSS). Do not use AI images. The shared drawing functions are in `video/assets/js/kit.js`. Use them, so that all parts look the same.
 
-- **Layer A background:** "flat 2D cartoon background, 1970s retro poster style, sunburst rays in red orange yellow periwinkle and cream, neon cyan perspective grid floor, thick dark outlines, paper grain texture, floating space office above Earth with a desk and a large retro wall screen, no characters"
-- **Layer B base:** "black and white engraved cross-hatched infographic illustration on cream paper, vintage hand-drawn diagram with labels, banners and arrows, single accent colors red (#D7322B) and teal (#1FA39A)"
-- **Humans:** "simple rounded bean-shaped cartoon people, short limbs, dot eyes, small rivets at elbows and knees, small round light on the chest, engraved line style"
-- **Papers:** "small walking paper money rectangles with stick legs and a tiny generic oval portrait, engraved line style, red paper and teal paper"
+- **Layer A (`KIT.office`):** SVG sunburst rays from the horizon, a half-sun of rings, and a navy floor with a neon cyan perspective grid, in the cover colors. A dark halo behind Wishonia makes Wishonia stand out. Props: `KIT.desk` (in front of Wishonia), `KIT.mug`, `KIT.cabinet` ("EARTH: CASE #847") and `KIT.wallScreen`.
+- **Layer B (`KIT.paper`):** cream paper with a double rule border. Do not use full-frame SVG filters (such as a grain texture): in the render they paint through from scenes that are not on screen and wash out the colors. `KIT.paperDefs` gives the hatch patterns (diagonal, cross, fine, red and teal). Use black lines, and only the two accent colors: red `#D7322B` (war money) and teal `#1FA39A` (medicine money). For teal text on cream, use the darker `#157F78`, so that the text is easy to read.
+- **Characters (original designs):** `KIT.bean` (a bean-shaped human with dot eyes, rivets at the elbows and knees, and a chest light; four gray tones for skin), `KIT.money` (a paper bill with stick legs and a generic oval portrait), `KIT.tophat`, the countdown board (`KIT.countdownBoard`, 104 per minute), and the quiz parts (`KIT.checkbox`, `KIT.tick`, `KIT.pencil`).
+- **Wishonia:** the real sprite PNGs only (section 2). `KIT.mountWishonia` puts the head on the body as in `characters.js`, swaps the mouth from `word-timings.json`, shows `blink-smile` in pauses, and rocks the head ±2° on the 7-second loop. Layer A shows Wishonia large. Layer B shows Wishonia in a round corner frame (PiP).
+- **Text:** big numbers use Fraunces Black (soft), labels use Oswald SemiBold, captions use Inter. The font files and their licenses (SIL Open Font License) are in `video/assets/fonts/`. Draw check marks and arrows as SVG, because the fonts do not have all symbols.
 
 ---
 
-## 6. Building it with the existing video pipeline
+## 6. Building it with HyperFrames
 
-`mikepsinn/optimitron/videos/care-integrated-clinical-trials` already renders narrated explainers with HyperFrames (HTML + GSAP → MP4). It supports a recorded voice with word timings in place of text-to-speech. For this episode:
+The video is a HyperFrames project (HTML + GSAP, rendered to MP4) in `video/`. It follows `mikepsinn/optimitron/videos/care-integrated-clinical-trials`, but it uses the audiobook MP3 as the voice, so there is no text-to-speech step. `video/README.md` gives the commands.
 
-- Use the audiobook MP3 as the voice, and `word-timings.json` for the word timings and captions.
-- Build each scene from the script as one HyperFrames composition.
-- Drive Wishonia's mouth with `amplitudeToViseme` or `CHAR_TO_VISEME` (section 2).
-- A 62-minute render is long. Render each part (chapter) on its own, then join the parts with ffmpeg.
+- **One part at a time.** `video/parts/part-NN.json` gives the audio cut and, for each scene, its cue word, its composition file, and the Wishonia states (`expression`, resting mouth, body pose, large or PiP).
+- **The build step** (`node tools/build-part.mjs parts/part-NN.json`) cuts the MP3, copies the sprites, and writes `data/part-NN.js` and `index.html`. The data file has the scene start times (found from the cue words), the words, the mouth track (`CHAR_TO_VISEME`, closed in pauses), the blinks, and the caption groups.
+- **One composition for each scene** (`compositions/scenes/sNN-*.html`). Each scene starts its animations on the spoken words with `KIT.cue(scene, "word")`, so the motion stays in sync with the voice.
+- **Captions** (`compositions/captions.html`) come from the same word timings. The spoken word is highlighted.
+- **Check, then render:** `npx hyperframes check`, look at frames with `npx hyperframes snapshot --describe false`, then `npx hyperframes render`. Render each part on its own, then join the parts with ffmpeg.
+- Keep the renders, the MP3 and the audio cuts out of git.
