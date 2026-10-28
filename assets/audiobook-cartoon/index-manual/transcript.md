@@ -2,10 +2,11 @@
 
 Audiobook episode 1. Timestamped transcript.
 
-- Audio: https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.487df96e.mp3
+- Audio: <https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.487df96e.mp3>
 - Length: 01:02:05
 - Method: Whisper (small.en) speech-to-text. Names and spelling corrected by hand. Numbers double-checked with a larger model (medium.en).
 - Note: this audio edition uses some different numbers from the current text at manual.warondisease.org (for example 97 million war deaths and 13,000 warheads). This transcript follows the audio.
+- Known error in the audio: at 00:25:18 the narrator says a participation rate of 0.06%, but 1.9 million trial slots for 1.08 billion patients is about 0.18% (the current book text says 0.177%).
 
 Each paragraph starts with its time in the audio as [HH:MM:SS].
 
@@ -180,4 +181,3 @@ Each paragraph starts with its time in the audio as [HH:MM:SS].
 **[01:00:24]** Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. Those are not metaphors. Those are people. They have names you'll never learn because they died while you were deciding if this was worth 15 seconds. I didn't know is no longer available to you. The universe is literally offering you infinite money and eternal life and you're thinking about it. This is why aliens don't visit. Thank you so much for taking the time to end war and disease. But if at any point you decide you're too busy, please press the share button on your glowing rectangle in case one of your friends have a free afternoon to end war and disease instead. And if you're too busy to even do that, please leave a really, really, really good rating and review so we overcome the pro-war algorithmic suppression and find someone with more spare time for ending wars and diseases.
 
 **[01:01:24]** The good review doesn't have to be true. They don't check. But if you're too busy to even do that, the absolute least you could do is take 15 seconds to go to warondisease.org and make your wishocratic allocation, telling us what fraction of humanity's resources should go to explosions versus clinical trials and vote. If the 1% treaty passes, your vote will be personally to blame for saving 38.4 lives and preventing 6.9 million hours of suffering. Go to warondisease.org right now. Love you. Bye.
-

@@ -32,7 +32,7 @@ The episode uses two visual layers. Each layer has a different job.
 
 - Big numbers use a heavy retro serif (like the cover title), in black with a cream outline.
 - **Use the numbers the narrator says.** The audiobook edition has some different figures from the current website (for example 97 million war deaths, 13,000 warheads, 3,070 : 1). The script already uses the audio figures.
-- Chapter title cards use Layer A: the sunburst, the grid floor, and the title in the cover font. The chapter list is at the top of the script.
+- Chapter title cards use Layer A: the sunburst, the grid floor, and the title in the cover font. Use one only where the script says "title card" (where the narrator reads the heading). Parts whose first line is not a heading, such as Part 2 "Hello, human", start without a card, so the narration is not interrupted. The chapter list is at the top of the script.
 - Keep on-screen text short. The narrator says the words; the screen shows the number or the label.
 
 ### Motion
@@ -136,7 +136,7 @@ All of these are original designs for this project. Do not base them on characte
 3. **The countdown board.** It sits in a corner during the opening and the ending.
 4. **Wishonia's mug sip.** Before a big punchline, Wishonia sips coffee. After the punchline, Wishonia puts the mug down slowly.
 5. **The case file.** Wishonia stamps the Earth case file: "SUBOPTIMAL" (after the FDA part) and finally "ELIGIBLE FOR OPTIMIZATION" (the ending).
-6. **Chapter cards.** Each part starts with a 2-second sunburst title card.
+6. **Chapter cards.** A 2-second sunburst title card, where the script says "title card" (see section 1).
 
 ---
 

@@ -18,5 +18,6 @@ Plan and timing files for a cartoon video of audiobook episode 1 (chapter slug `
 ## Notes
 
 - The audio is a different edition from the current `index-manual.qmd`. It has extra parts (the "Hello, human" quiz, the long ending, the outro), it leaves some parts out (the pencil, the Earth Optimization Game), and some numbers are different (for example 97 million war deaths, 13,000 warheads, 3,070 : 1). The transcript and the script follow the audio.
+- Known error in the audio: at 00:25:18 the narrator says 0.06% participation, but the numbers given (1.9 million slots, 1.08 billion patients) make about 0.18%. The transcript keeps what is said; the script does not show the wrong percentage.
 - The theme song (00:20 to 01:40) is marked as music and not transcribed.
 - Transcript: Whisper (small.en), names and spelling corrected by hand, numbers double-checked with Whisper medium.en (both models agree).
