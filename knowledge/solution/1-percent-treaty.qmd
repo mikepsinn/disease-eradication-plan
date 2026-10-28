@@ -6,7 +6,7 @@ description: Your governments possess nuclear weapons sufficient to end civiliza
 # Zenodo, OSF and the papers list read it.
 paper-abstract: |
   Since 1913, the world's governments have spent
-  {{< var cumulative_military_spending_fed_era >}} (in today's dollars) on their
+  {{< var cumulative_military_spending_fed_era >}} (in 2024 dollars) on their
   militaries. Since 1900, wars, genocides and state-made famines have killed about
   {{< var war_deaths_since_1900_nounit >}} people, an estimated
   {{< var war_children_killed_since_1900_nounit >}} of them children. Governments
