@@ -32,7 +32,7 @@ The episode uses two visual layers. Each layer has a different job.
 
 - Big numbers use a heavy retro serif (like the cover title), in black with a cream outline.
 - **Use the numbers the narrator says.** The audiobook edition has some different figures from the current website (for example 97 million war deaths, 13,000 warheads, 3,070 : 1). The script already uses the audio figures.
-- Chapter title cards use Layer A: the sunburst, the grid floor, and the title in the cover font. The chapter list is at the top of the script.
+- Chapter title cards use Layer A: the sunburst, the grid floor, and the title in the cover font. Use one only where the script says "title card" (where the narrator reads the heading). Parts whose first line is not a heading, such as Part 2 "Hello, human", start without a card, so the narration is not interrupted. The chapter list is at the top of the script.
 - Keep on-screen text short. The narrator says the words; the screen shows the number or the label.
 
 ### Motion
@@ -47,7 +47,7 @@ The episode uses two visual layers. Each layer has a different job.
 
 Wishonia already has a full sprite set. Use it. Do not redesign the character.
 
-- **Where the sprites are:** the originals are in `mikepsinn/disease-eradication-plan` (branch `develop`) → `transmit/public/assets/sprites/alien/`, at full resolution (heads 1024×1024, bodies 1343×768). The 12 seed images that the sprites were made from are in `alien/sources/`. `mikepsinn/optimitron` has reduced copies in `apps/optimitron/public/sprites/wishonia/` (some are only 512 px). **Use the originals for video.** A contact sheet of all 59 sprites, with their file names, is next to this file: `wishonia-contact-sheet.png`.
+- **Where the sprites are:** the originals are in `mikepsinn/disease-eradication-plan` (branch `develop`; the 59 files used here are as of commit `5d6cad7`) → `transmit/public/assets/sprites/alien/`, at full resolution (heads 1024×1024, bodies 1343×768). The 12 seed images that the sprites were made from are in `alien/sources/`. `mikepsinn/optimitron` has reduced copies in `apps/optimitron/public/sprites/wishonia/` (some are only 512 px). **Use the originals for video.** A contact sheet of all 59 sprites, with their file names, is next to this file: `wishonia-contact-sheet.png`.
 - **Design:** blue skin, a black bob haircut with straight bangs, two thin antennae with ball tips, large eyes with dark lashes. An orange 1960s-style mod dress with a darker swirl pattern and a small white brooch at the neck. Blue arms.
 - **Name on screen:** "WISHONIA." The full name is "World Integrated System for High-efficiency Optimization Networked Intelligence and Allocation" (the audio spells it out at 04:15).
 
@@ -136,7 +136,7 @@ All of these are original designs for this project. Do not base them on characte
 3. **The countdown board.** It sits in a corner during the opening and the ending.
 4. **Wishonia's mug sip.** Before a big punchline, Wishonia sips coffee. After the punchline, Wishonia puts the mug down slowly.
 5. **The case file.** Wishonia stamps the Earth case file: "SUBOPTIMAL" (after the FDA part) and finally "ELIGIBLE FOR OPTIMIZATION" (the ending).
-6. **Chapter cards.** Each part starts with a 2-second sunburst title card.
+6. **Chapter cards.** A 2-second sunburst title card, where the script says "title card" (see section 1).
 
 ---
 

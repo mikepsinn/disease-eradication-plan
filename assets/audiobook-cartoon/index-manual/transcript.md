@@ -2,10 +2,11 @@
 
 Audiobook episode 1. Timestamped transcript.
 
-- Audio: https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.487df96e.mp3
+- Audio: <https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.487df96e.mp3>
 - Length: 01:02:05
 - Method: Whisper (small.en) speech-to-text. Names and spelling corrected by hand. Numbers double-checked with a larger model (medium.en).
 - Note: this audio edition uses some different numbers from the current text at manual.warondisease.org (for example 97 million war deaths and 13,000 warheads). This transcript follows the audio.
+- Known error in the audio: at 00:25:18 the narrator says a participation rate of 0.06%, but 1.9 million trial slots for 1.08 billion patients is about 0.18% (the current book text says 0.177%).
 
 Each paragraph starts with its time in the audio as [HH:MM:SS].
 
@@ -105,7 +106,7 @@ Each paragraph starts with its time in the audio as [HH:MM:SS].
 
 **[00:32:51]** Side effects include death, listed between constipation and mild rash, as if your organs failing is roughly as inconvenient as dry skin. The label says individual results may vary, meaning outcomes range from cured to deceased, both technically qualifying. It also says ask your doctor, but your doctor has seven minutes per appointment and just googled your condition in the hallway. Your new system will produce outcome labels that tell you what actually happens when real humans take a drug. Not what a marketing department hopes happens, not what a lawyer is comfortable admitting happens. What happens? Your decentralized FDA figures out which treatments work, but your governments also need to know which policies work, how much to spend on what, which laws to keep, which to throw away.
 
-**[00:33:49]** Your current method is to argue about it on television until someone wins by being louder. On Wishonia, the Optimitron handles this. It's an appliance. You plug in what 10,000 jurisdictions tried, it tells you which policies actually made people richer or less dead. Its optimal budget generator does budgets. Its optimal policy generator does laws. Why this could actually work. Unlike everything else humanity has tried, the evidence. Humans usually want proof before they stop doing something stupid, which is interesting because you never required proof before starting. the RECOVERY trial tested six treatments on 48,000 patients for $500 per patient instead of the usual $41,000 per patient.
+**[00:33:49]** Your current method is to argue about it on television until someone wins by being louder. On Wishonia, the Optimitron handles this. It's an appliance. You plug in what 10,000 jurisdictions tried, it tells you which policies actually made people richer or less dead. Its optimal budget generator does budgets. Its optimal policy generator does laws. Why this could actually work. Unlike everything else humanity has tried, the evidence. Humans usually want proof before they stop doing something stupid, which is interesting because you never required proof before starting. The RECOVERY trial tested six treatments on 48,000 patients for $500 per patient instead of the usual $41,000 per patient.
 
 **[00:34:45]** That's an 82 times cost reduction, not in theory, in reality, during a pandemic while panicking. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic. After World War II, humans cut military spending by 87.6% in two years and stumbled into the greatest economic boom in history by running out of people to shoot at. You're now spending 30.6 times the pre-World War II baseline in inflation-adjusted dollars. You're asking for 1%. Even people who really, really love exploding people should be able to handle 1%.
 
@@ -180,4 +181,3 @@ Each paragraph starts with its time in the audio as [HH:MM:SS].
 **[01:00:24]** Your vote saves 38.4 lives and prevents 6.9 million hours of suffering. Those are not metaphors. Those are people. They have names you'll never learn because they died while you were deciding if this was worth 15 seconds. I didn't know is no longer available to you. The universe is literally offering you infinite money and eternal life and you're thinking about it. This is why aliens don't visit. Thank you so much for taking the time to end war and disease. But if at any point you decide you're too busy, please press the share button on your glowing rectangle in case one of your friends have a free afternoon to end war and disease instead. And if you're too busy to even do that, please leave a really, really, really good rating and review so we overcome the pro-war algorithmic suppression and find someone with more spare time for ending wars and diseases.
 
 **[01:01:24]** The good review doesn't have to be true. They don't check. But if you're too busy to even do that, the absolute least you could do is take 15 seconds to go to warondisease.org and make your wishocratic allocation, telling us what fraction of humanity's resources should go to explosions versus clinical trials and vote. If the 1% treaty passes, your vote will be personally to blame for saving 38.4 lives and preventing 6.9 million hours of suffering. Go to warondisease.org right now. Love you. Bye.
-
