@@ -260,8 +260,10 @@ def get_paper_metadata(paper_key: str, info: dict) -> dict:
         title = qmd_fm.get("title") or paper_key
 
     # Abstract: prefer qmd frontmatter abstract, then book/website description
+    # ("paper-abstract" is an abstract that Quarto must not print on the page)
     abstract = (
-        qmd_fm.get("abstract")
+        qmd_fm.get("paper-abstract")
+        or qmd_fm.get("abstract")
         or qmd_fm.get("description")
         or (config.get("website") or {}).get("description")
         or (config.get("book") or {}).get("description")

@@ -170,8 +170,10 @@ def extract_paper_info(
     # Prefer QMD abstract > book.abstract > book.description
     # Skip qmd_frontmatter "description" since that's a page-level SEO field
     # that may differ from the book-level description used in README/papers
+    # "paper-abstract" is an abstract that Quarto must not print on the page
     raw_abstract = (
-        qmd_frontmatter.get("abstract")
+        qmd_frontmatter.get("paper-abstract")
+        or qmd_frontmatter.get("abstract")
         or (config["book"].get("abstract") if "book" in config else None)
         or description
     )
