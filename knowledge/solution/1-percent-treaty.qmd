@@ -6,7 +6,7 @@ description: Your governments possess nuclear weapons sufficient to end civiliza
 # Zenodo, OSF and the papers list read it.
 paper-abstract: |
   Your public servants used {{< var cumulative_military_spending_fed_era >}} of
-  their salary to murder approximately {{< var war_deaths_since_1900_nounit >}}
+  your money to murder approximately {{< var war_deaths_since_1900_nounit >}}
   humans over the last century of their employment. The murdered included 930,000
   doctors, 310,000 scientists, 620,000 engineers, and
   {{< var war_children_killed_since_1900_nounit >}} children who will never grow up
@@ -14,29 +14,27 @@ paper-abstract: |
   {{< var military_to_government_clinical_trials_spending_ratio_nounit >}} dollars
   on the capacity for orphan manufacturing for every one dollar spent on the trials
   that might cure what is actually going to kill their citizens. Someone you love
-  is, at this moment, suffering from a disease because the treatment that would
-  help them exists untested on a shelf, because the money that would have tested it
-  was busy turning into a missile.
+  is, at this moment, suffering from a disease because a compound that might help
+  them sits untested on a shelf, because the money that would have tested it was
+  busy turning into a missile.
 
   This treaty requires the undersigned nations to be 1% more rational. Each signatory
   redirects exactly one percent of its military budget to pragmatic clinical
-  trials, perpetual [Incentive Alignment Bond](../appendix/incentive-alignment-bonds-paper.qmd)
-  returns, and a Political Incentive Fund that scores legislators
-  on compliance. Every nation cuts equally, so no country gets weaker. Trial
-  capacity scales {{< var dfda_trial_capacity_multiplier >}}. The backlog of
-  {{< var diseases_without_effective_treatment_nounit >}} untreated diseases drops from
-  {{< var status_quo_queue_clearance_years >}} to {{< var dfda_queue_clearance_years >}}.
-  Treatments arrive {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}}
-  years sooner. {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}}
-  preventable deaths averted, valued at
-  {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}.
+  trials, perpetual Incentive Alignment Bond returns, and a Political Incentive Fund
+  that scores legislators on compliance. Every nation cuts the same 1%, so the
+  balance of power does not change. Trial capacity grows
+  {{< var dfda_trial_capacity_multiplier >}}. The time to find first treatments for
+  the {{< var diseases_without_effective_treatment_nounit >}} diseases that have none
+  drops from {{< var status_quo_queue_clearance_years >}} to
+  {{< var dfda_queue_clearance_years >}}. Treatments arrive
+  {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} years sooner on
+  average. Over those years, that averts about
+  {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved_nounit >}} deaths, with a
+  present value of {{< var dfda_trial_capacity_plus_efficacy_lag_economic_value >}}.
 
   The percentage can go up. It never goes down. The Treaty is the settlement offer
-  for the liability established in
-  [Humanity v. Government](../appendix/humanity-v-government.qmd), adjudicated
-  through the [Court of Humanity](court-of-humanity.qmd),
-  with the economic case quantified in
-  [1% Treaty Impact](../economics/1-pct-treaty-impact.qmd).
+  for the claims in Humanity v. Government, with the economic case quantified in
+  1% Treaty Impact.
 published: true
 author:
   - name: Mike P. Sinn
@@ -137,7 +135,7 @@ WHEREAS, [pragmatic clinical trials built into ordinary healthcare](../appendix/
 
 WHEREAS, discovering treatments centuries sooner is [projected](../economics/1-pct-treaty-impact.qmd) to prevent approximately {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}} and {{< var dfda_trial_capacity_plus_efficacy_lag_suffering_hours >}} of human suffering [@1-pct-treaty-impact-paper-2025], which are not metaphors and refer to specific future humans with specific future plans for next Tuesday;
 
-WHEREAS, someone you love is, at this moment, suffering from a disease because the treatment that would help them exists untested on a shelf, because the money that would have tested it was busy turning into a missile; that missile incinerated a child who might have grown up to discover the cure; you lose the treatment, you lose the scientist, you get the inflation, you get the tax bill, you get to pay for her murder;
+WHEREAS, someone you love is, at this moment, suffering from a disease because a compound that might help them sits untested on a shelf, because the money that would have tested it was busy turning into a missile; that missile incinerated a child who might have grown up to discover the cure; you lose the trial, you lose the scientist, you get the inflation, you get the tax bill, you get to pay for her murder;
 
 WHEREAS, this is suboptimal;
 
