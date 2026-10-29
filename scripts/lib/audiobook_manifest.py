@@ -81,50 +81,36 @@ _AUDIO_FIELDS = {
 def sync_manifest_from_config(chapters: list[dict], paths: AudiobookPaths | None = None):
     """Sync manifest chapter entries with the current book config.
 
-    For each chapter in the config, ensures the manifest entry has the correct
-    index/title/path/part. If the path at a given index changed (chapter was
-    inserted/reordered), stale audio fields are cleared. Entries for indices
-    no longer in the config are removed.
+    Entries are matched to config chapters by QMD path and given that chapter's
+    index/title/path/part, so when a chapter is inserted, cut or moved, every
+    entry moves with its chapter instead of another chapter's audio landing on
+    it. Audio fields that don't match the chapter's slug are cleared, and entries
+    for chapters no longer in the config are removed.
 
-    Useful after chapter insertion/reordering to fix stale manifest entries.
+    chapters must be the whole book config, not a filtered subset.
     """
     manifest = read_manifest(paths)
-    manifest_path = paths.manifest if paths else MANIFEST_PATH
-    existing = {ch['index']: ch for ch in manifest.get('chapters', [])}
-    config_indices = set()
+    by_path = {ch['path']: ch for ch in manifest.get('chapters', []) if ch.get('path')}
+    synced = []
 
     for ch in chapters:
-        idx = ch['index']
-        config_indices.add(idx)
-        new_path = ch['path']
-        expected_slug = Path(new_path).stem
-        new_fields = {'index': idx, 'path': new_path, 'title': ch.get('title', ''), 'part': ch.get('part')}
+        expected_slug = Path(ch['path']).stem
+        entry = by_path.pop(ch['path'], {})
+        if entry and entry.get('index') != ch['index']:
+            print(f"  [SYNC] {expected_slug}: index {entry.get('index')} -> {ch['index']}")
+        old_audio = entry.get('audio_file', '')
+        if old_audio and Path(old_audio).stem != expected_slug:
+            for field in _AUDIO_FIELDS:
+                entry.pop(field, None)
+            print(f"  [SYNC] {expected_slug}: audio_file {Path(old_audio).stem} doesn't match, cleared stale audio fields")
+        entry.update({'index': ch['index'], 'path': ch['path'], 'title': ch.get('title', ''), 'part': ch.get('part')})
+        synced.append(entry)
 
-        if idx in existing:
-            old_path = existing[idx].get('path')
-            old_audio = existing[idx].get('audio_file', '')
-            old_audio_slug = Path(old_audio).stem if old_audio else ''
+    for stale in by_path.values():
+        print(f"  [SYNC] Removing manifest entry for {Path(stale['path']).stem} (not in the book config)")
 
-            if (old_path and old_path != new_path) or (old_audio_slug and old_audio_slug != expected_slug):
-                # Path changed at this index OR audio_file doesn't match the slug:
-                # clear stale audio fields
-                for field in _AUDIO_FIELDS:
-                    existing[idx].pop(field, None)
-                reason = f"path {Path(old_path).stem} -> {expected_slug}" if old_path != new_path else f"audio_file {old_audio_slug} != {expected_slug}"
-                print(f"  [SYNC] Index {idx}: {reason}, cleared stale audio fields")
-            existing[idx].update(new_fields)
-        else:
-            existing[idx] = new_fields
-
-    # Remove entries for indices no longer in config
-    removed = set(existing.keys()) - config_indices
-    for idx in removed:
-        print(f"  [SYNC] Removing stale manifest entry for index {idx}")
-        del existing[idx]
-
-    manifest['chapters'] = [existing[k] for k in sorted(existing.keys())]
+    manifest['chapters'] = synced
     write_manifest(manifest, paths)
-    print(f"  [OK] Manifest synced with config ({len(chapters)} chapters): {manifest_path.relative_to(PROJECT_ROOT)}")
 
 
 def save_text_results(results: list[dict], paths: AudiobookPaths | None = None):
