@@ -7,7 +7,7 @@ Plan and timing files for a cartoon video of audiobook episode 1 (chapter slug `
 | `cartoon-script.md` | 137 scenes in 24 parts. Each scene has its start time in the MP3, the cue words, the visuals, the Wishonia sprites, and the on-screen text. Also YouTube chapter markers and short-video cuts. |
 | `cartoon-style-bible.md` | The look (two visual layers), Wishonia's sprites, layout and lip-sync, the other characters, sensitive-content rules, and how to build the video. |
 | `transcript.md` | Full transcript, one paragraph at a time, each with its [HH:MM:SS] time. |
-| `transcript.srt` | Subtitles for the full episode (970 cues). |
+| `transcript.srt` | Subtitles for the full episode (969 cues). |
 | `word-timings.json` | Start and end time of every spoken word, for lip-sync and captions. |
 | `wishonia-contact-sheet.png` | All 59 Wishonia sprites from `transmit/public/assets/sprites/alien/`, with their file names. |
 | `video/` | The HyperFrames project that renders the cartoon (HTML + GSAP to MP4). The pilot is Part 2, "Hello, human". See `video/README.md`. |
