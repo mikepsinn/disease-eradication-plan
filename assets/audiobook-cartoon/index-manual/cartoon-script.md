@@ -235,7 +235,7 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 ### S30 · 00:09:29 · Cue: "This is your planet's diagnostic criteria. I looked up the last person…"
 
 - **Layer:** A
-- **Visual:** Do not draw any religious figure. Wishonia reads a file, closes it slowly, and glances at a gauge on the wall: "DISTANCE FROM EARTH: SEVERAL LIGHT-YEARS." Wishonia pats the gauge.
+- **Visual:** Wishonia reads a file, closes it slowly, and glances at a gauge on the wall: "DISTANCE FROM EARTH: SEVERAL LIGHT-YEARS." Wishonia pats the gauge.
 - **Wishonia:** `sad-closed` + `body-hand-chest`, then `smirk-closed`.
 
 ### S31 · 00:09:47 · Cue: "Anyway, here's what you tell the orderly…"
