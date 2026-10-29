@@ -8,7 +8,7 @@
 //   assets/audio/<id>.mp3 the cut of the episode MP3 (git-ignored)
 //   assets/sprites/       copies of the Wishonia sprites (git-ignored)
 import { execFileSync } from "node:child_process";
-import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -180,7 +180,10 @@ writeFileSync(
 // ── Audio cut and sprites (git-ignored) ─────────────────────────────────
 if (!existsSync(MP3)) {
   mkdirSync(dirname(MP3), { recursive: true });
-  execFileSync("curl", ["-sS", "-o", MP3, MP3_URL], { stdio: "inherit" });
+  // -f: an HTTP error fails the build instead of saving the error page as the MP3.
+  // Download to a temporary file first, so a failed or partial download is never reused.
+  execFileSync("curl", ["-fsS", "-o", `${MP3}.part`, MP3_URL], { stdio: "inherit" });
+  renameSync(`${MP3}.part`, MP3);
 }
 mkdirSync(join(VIDEO, "assets/audio"), { recursive: true });
 execFileSync(

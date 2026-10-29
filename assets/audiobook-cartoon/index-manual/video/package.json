@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node tools/build-timing.mjs",
+    "build": "node tools/build-part.mjs parts/part-02.json",
     "dev": "hyperframes preview",
     "check": "hyperframes check",
     "render": "hyperframes render --quality high --output ../../../audiobook/pilot/part-02-hello-human.mp4"
