@@ -6,7 +6,7 @@
     "build": "node tools/build-part.mjs parts/part-02.json",
     "dev": "hyperframes preview",
     "check": "hyperframes check",
-    "render": "hyperframes render --quality high --output ../../../audiobook/pilot/part-02-hello-human.mp4"
+    "render": "hyperframes render --quality high --output ../../../audiobook/cartoon/part-02-hello-human.mp4"
   },
   "devDependencies": {
     "hyperframes": "0.8.113"
