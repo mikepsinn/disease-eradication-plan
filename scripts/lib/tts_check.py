@@ -19,6 +19,8 @@ WHISPER_MODEL = "small.en"
 # Whisper mishears a word or two all the time; runs this long are the TTS, not Whisper.
 MAX_EXTRA_WORDS = 3     # invented words in one place
 MAX_MISSING_WORDS = 6   # text words skipped in one place
+MAX_REPLACED_WORDS = 4  # different words in place of the text's, unless they sound alike
+MIN_SOUND_ALIKE = 0.5   # letter similarity above which a replaced run is Whisper mishearing it
 TRIM_PAD_S = 0.3        # audio kept after the last real word when trimming
 
 # Narration spells numbers out and Whisper writes digits, so numbers are left out of the comparison.
@@ -48,16 +50,20 @@ def _tokens(text: str) -> list[str]:
             if t not in NUMBER_WORDS and not any(c.isdigit() for c in t)]
 
 
+def _ends_with_number(text: str) -> bool:
+    words = re.findall(r"[a-z0-9]+(?:'[a-z]+)?", text.lower().replace("’", "'"))
+    return bool(words) and (words[-1] in NUMBER_WORDS or any(c.isdigit() for c in words[-1]))
+
+
 def _transcribe(wav_path: Path) -> list[tuple[str, float, float]]:
-    """(token, start_s, end_s) for every word Whisper hears."""
+    """(word, start_s, end_s) for every word Whisper hears, as Whisper writes it."""
     global _model
     with _model_lock:
         if _model is None:
             from faster_whisper import WhisperModel
             _model = WhisperModel(WHISPER_MODEL, device="cpu", compute_type="int8")
         segments, _ = _model.transcribe(str(wav_path), language="en", word_timestamps=True)
-        return [(tok, w.start, w.end)
-                for seg in segments for w in (seg.words or []) for tok in _tokens(w.word)]
+        return [(w.word, w.start, w.end) for seg in segments for w in (seg.words or [])]
 
 
 def _trim(wav_path: Path, end_s: float) -> None:
@@ -72,7 +78,8 @@ def _trim(wav_path: Path, end_s: float) -> None:
 def check_chunk(wav_path: Path, text: str) -> ChunkCheck:
     """Compare the voiced chunk with its text; trim invented words after the end in place."""
     said = _tokens(text)
-    heard = _transcribe(wav_path)
+    words = _transcribe(wav_path)
+    heard = [(tok, start, end) for word, start, end in words for tok in _tokens(word)]
     heard_tokens = [tok for tok, _, _ in heard]
     opcodes = difflib.SequenceMatcher(None, said, heard_tokens, autojunk=False).get_opcodes()
     equal = [op for op in opcodes if op[0] == "equal"]
@@ -83,14 +90,25 @@ def check_chunk(wav_path: Path, text: str) -> ChunkCheck:
     _, _, last_i, _, last_j = equal[-1]
     # Invented words after the text ran out: cut them off at the end of the last real word.
     if len(said) - last_i <= 1 and len(heard_tokens) - last_j >= MAX_EXTRA_WORDS:
-        end_s = heard[last_j - 1][2] + TRIM_PAD_S
-        end_s = min(end_s, heard[last_j][1] - 0.02)
+        first_extra_s = heard[last_j][1]
+        last_real_s = heard[last_j - 1][2]
+        # A number that ends the text is left out of the comparison but is still spoken: keep it.
+        if _ends_with_number(text):
+            last_real_s = max([last_real_s] + [end for _, start, end in words if start < first_extra_s])
+        # Stop before the next word Whisper hears, even one left out of the comparison.
+        next_starts = [start for _, start, _ in words if start >= last_real_s - 0.01]
+        end_s = min([last_real_s + TRIM_PAD_S] + [start - 0.02 for start in next_starts])
         check.trimmed_s = heard[-1][2] - end_s
         _trim(wav_path, end_s)
         opcodes = [op for op in opcodes if op[3] < last_j]
 
     for tag, i1, i2, j1, j2 in opcodes:
         if tag == "equal":
+            continue
+        text_run, heard_run = " ".join(said[i1:i2]), " ".join(heard_tokens[j1:j2])
+        if (tag == "replace" and max(i2 - i1, j2 - j1) >= MAX_REPLACED_WORDS
+                and difflib.SequenceMatcher(None, text_run, heard_run, autojunk=False).ratio() < MIN_SOUND_ALIKE):
+            check.problems.append(f"said \"{heard_run}\" instead of \"{text_run}\"")
             continue
         extra, missing = (j2 - j1) - (i2 - i1), (i2 - i1) - (j2 - j1)
         if extra >= MAX_EXTRA_WORDS:
