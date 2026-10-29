@@ -495,34 +495,16 @@ Communism was invented, took over half your planet, and collapsed in a SINGLE hu
 
 ### The Part Where Humanity Has No Choice
 
-The twist: you're going to do this anyway. Not because it's right, but because you can't help it.
-
-You are a selfish animal governed by incentives. This is not an insult. It's the premise of your entire economy, your political system, and every page of this manual.
+The twist: you might do this anyway. Not because it's right (though it is), but because:
 
 1. The rich humans want [272%](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) returns (they're very greedy)
 2. The politicians want to keep their jobs (they're very vain)
 3. The voters want free healthcare (they're very sick)
 4. The explosion manufacturers want money (they don't care where it comes from)
 
-I ran the numbers on your species' habit of ignoring good ideas. The [institutionalization rate](https://manual.warondisease.org/index-manual.html#what-to-do-when-they-try-to-institutionalize-you) is [90%](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html). Nine out of ten humans will dismiss this as crazy. That is fine.
-
-There are [2,781](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) billionaires on your planet and [195](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) heads of state. The [chain reaction model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows that even with [90%](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) dismissal, approximately [3.48](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) of them will engage with this idea within [3](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) years. Not because they're brave. Because there are [2,976](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) of them, and the math doesn't need all of them. It needs one.
-
-And here is the part that should bother you: the [incentive structure](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-dominant-strategy-proof) makes acting the selfish move. If others act too, you get rich together. If nobody else acts, you still own a piece of the only serious attempt to fix the problem. Either way, you win. The only way to reject this is to identify [which assumption breaks](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#what-would-have-to-be-wrong), and you are welcome to try.
-
-Count the premises. Improvement is physically possible (not building a bomb requires nothing). The benefits compound (healthier workers produce more, which funds more cures). Politicians respond to money (that's the Super PAC). Rich people prefer not dying (that's the bonds). And the only bottleneck is humans in the chain choosing "later" over 30 seconds. Five premises. Each one is individually obvious. The conclusion is just what happens when you add them up.
-
-That's the [Logical Inevitability Theorem](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html#logical-inevitability-theorem) with numbers attached. Rejecting the conclusion means rejecting at least one of the five premises.
-
-Forwarding this takes 30 seconds. At the global average wage, that costs you [$0.06](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). If the treaty path works, your lifetime income goes up by [$518,879](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). The ratio is [8.7Mx](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html) to one. For not forwarding to be rational, the probability of success has to fall below 1 in [8.66 million](https://manual.warondisease.org/knowledge/appendix/recruitment-and-propaganda-plan.html). Five obvious premises do not add up to a probability that low. Choosing "later" is the single failure mode the math can't route around.
-
-You don't need to know a billionaire. You're six degrees of separation from one. Forward this to one person with more reach than you. They forward to one person with more reach than them. Even with [90%](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html) of the chain dismissing it, the [model](https://manual.warondisease.org/knowledge/appendix/treaty-feasibility.html#sec-chain-reaction-model) shows it reaches someone who can act within [3](https://manual.warondisease.org/knowledge/strategy/earth-optimization-protocol-v1.html) years. Not because anyone in the chain is brave. Because each one is selfish, and the math rewards forwarding.
-
-The same forwarding fuels Path B at the same time. Every human in the chain also votes at warondisease.org, and every vote counts toward the [4.13 billion](https://manual.warondisease.org/knowledge/strategy/global-referendum.html) that no government on Earth can politely ignore. You don't have to pick which chain wins. Your thirty seconds runs both.
+Everyone's greed aligns perfectly to accidentally save humanity. It's like you're going to cure death by mistake while trying to get rich.
 
 Humans aren't stupid. You invented cheese, which is milk you left out until it went bad but in a good way. That's genius. You just need to apply that same innovation to not dying.
-
-Here is what should scare you: if this works, the world becomes unrecognizable. Not slightly better. Unrecognizable. Disease eradicated, income quadrupled, your species freed from the thing that has been eating it alive since before you invented writing. That future is so good your brain can't render it.
 
 ::: {.delay-cost-callout.content-visible when-format="html"}
 **Since an incentive-compatible way to end war and disease was discovered:**
@@ -559,7 +541,7 @@ This is why aliens don't visit.
 
 [![The 1 percent Treaty](https://manual.warondisease.org/assets/og-images/knowledge/solution/1-percent-treaty-og-retro-academic.jpg)](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html)
 
-> Your public servants used $170 trillion of their salary to murder approximately 310 million humans over the last century of their employment. The murdered included 930,000 doctors, 310,000 scientists, 620,000 engineers, and 102 million children who will never grow up to replace them. They spend 604 dollars on the capacity for orphan manufacturing for every one dollar spent on the trials that might cure what is actually going to kill their citizens. Someone you love is, at this moment, suffering from a disease because the treatment that would help them exists untested on a shelf, because the money that would have tested it was busy turning into a missile. This treaty requires the undersigned nations to be 1% more rational. Each signatory redirects exactly one percent of its military budget to pragmatic clinical trials, perpetual Incentive Alignment Bond returns, and a Political Incentive Fund that scores legislators on compliance. Every nation cuts equally, so no country gets weaker. Trial capacity scales 12.3x. The backlog of 6,650 untreated diseases drops from 443 years to 36 years. Treatments arrive 212 years sooner. 10.7 billion preventable deaths averted, valued at $7.53 quadrillion. The percentage can go up. It never goes down. The Treaty is the settlement offer for the liability established in Humanity v. Government, adjudicated through the Court of Humanity, with the economic case quantified in 1% Treaty Impact.
+> Since 1913, the world's governments have spent $170 trillion (in 2024 dollars) on their militaries. Since 1900, wars, genocides and state-made famines have killed about 310 million people, an estimated 102 million of them children. Governments spend 604 dollars on their militaries for every dollar they spend on clinical trials. At the current pace, finding first treatments for the 6,650 diseases that have none takes 443 years. The 1% Treaty requires each signatory to redirect 1% of its military budget, about $27.2 billion a year worldwide. 80% funds pragmatic clinical trials. 10% pays the investors who fund the ratification campaign through Incentive Alignment Bonds, and 10% goes to a Political Incentive Fund that supports legislators who vote to implement and expand the treaty. These two shares give investors and politicians a financial reason to keep the treaty in force. Every nation cuts the same 1%, so the balance of power does not change. The share can rise after each review, but it can never fall. At pragmatic-trial costs, the treaty's funding pays for 12.3 times as many trial participants as today. In the model, the time to find first treatments for all of these diseases drops to 36 years, and treatments arrive 212 years sooner on average. Over those years, that averts about 10.7 billion deaths, with a present value of $7.53 quadrillion.
 
 ### [Ubiquitous Pragmatic Trial Impact Analysis](https://papers.acceleratedmedicine.org/dfda-impact.html)
 

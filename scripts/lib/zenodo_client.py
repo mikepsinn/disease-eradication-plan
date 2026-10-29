@@ -574,14 +574,15 @@ def extract_abstract_from_qmd(paper_key: str, quarto_config: dict, project_root:
         with open(qmd_path, encoding="utf-8") as f:
             content = f.read()
 
-        # Try to extract abstract from frontmatter first
+        # Try to extract abstract from frontmatter first.
+        # "paper-abstract" is an abstract that Quarto must not print on the page.
         import re
         frontmatter_match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
         if frontmatter_match:
             try:
                 frontmatter = yaml_safe_load(frontmatter_match.group(1))
-                if isinstance(frontmatter, dict) and "abstract" in frontmatter:
-                    abstract = frontmatter["abstract"]
+                if isinstance(frontmatter, dict):
+                    abstract = frontmatter.get("paper-abstract") or frontmatter.get("abstract")
                     if abstract:
                         # Resolve variables and return
                         return resolve_quarto_variables(str(abstract), project_root)
