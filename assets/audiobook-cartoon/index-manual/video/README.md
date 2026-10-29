@@ -2,14 +2,21 @@
 
 The cartoon video for audiobook episode 1, "How to End War and Disease (for Busy People)", built with [HyperFrames](https://github.com/heygen-com/hyperframes) (HTML + GSAP rendered to MP4). The voice is the audiobook MP3. There is no text-to-speech. The plan, the scene script and the style bible are in the folder above this one.
 
-The pilot is **Part 2, "Hello, human"** (01:48 to 04:15 of the MP3, scenes S04 to S11).
+**Part 1, "Opening"** (`parts/part-01.json`, `compositions/scenes/part-01/`) is the first part built on the current audio, in the theme song's look, with stick-figure humans and synthesized sound effects. The storyboards for every part are in `storyboards/`, one per part. The old pilot, Part 2 "Hello, human" (`parts/part-02.json`, `compositions/scenes/s*.html`), was built on the March 2026 audio, whose narration is no longer in the episode.
+
+Every part renders twice: 16:9 (1920 × 1080) and the tall phone version, 9:16 (1080 × 1920).
 
 | File | Purpose |
 | --- | --- |
 | `STORYBOARD.md` | Part 2, scene by scene: cue word, layer, what moves on which word |
 | `parts/part-02.json` | The audio cut, and for each scene: cue word, composition file, Wishonia states |
-| `tools/build-part.mjs` | Cuts the MP3, copies the sprites, writes `data/part-02.js` and `index.html` |
-| `data/part-02.js` | Generated: scene times, words, mouth track, blinks, caption groups |
+| `storyboards/part-NN-*.md` | One storyboard per part, for review before anything is animated |
+| `storyboards/part-NN-*.sketch.mjs` | The sketch of each scene's key moment, drawn with `kit.js` |
+| `storyboards/part-NN-*.html` | Generated: the sketch sheet to review (`node tools/storyboard-sheet.mjs storyboards/part-NN-*.md`; add `--inline <file>` for a self-contained copy to publish) |
+| `tools/word-timings.mjs` | Rebuilds `../word-timings.json` and the transcripts from the audiobook pipeline's alignment |
+| `tools/build-part.mjs` | Cuts the MP3, mixes in the sound effects, copies the sprites and media, writes `data/part-NN.js` and `index.html` (`--aspect 9x16` for the tall version) |
+| `tools/sfx.py` | Synthesizes the sound effects (thunk, stamp, slide whistle and so on) with numpy; nothing is downloaded |
+| `data/part-NN.js` | Generated: scene times, words, mouth track, blinks, caption groups, sound times |
 | `index.html` | Generated: the root composition (scenes, captions, voice) |
 | `compositions/scenes/*.html` | One composition for each scene |
 | `compositions/captions.html` | Captions from the word timings, with the spoken word highlighted |
@@ -31,11 +38,17 @@ On another computer, run `npx hyperframes browser ensure` once.
 
 ```bash
 npm install                                  # installs the pinned hyperframes CLI
-node tools/build-part.mjs parts/part-02.json # audio cut, sprites, data/part-02.js, index.html
+node tools/build-part.mjs parts/part-01.json # audio cut with sound effects, sprites, data/part-01.js, index.html
 npx hyperframes check                        # lint, runtime, layout, motion, contrast
 npx hyperframes snapshot --at 5,20,40 --describe false   # look at frames
-npx hyperframes render --quality high --output ../../../audiobook/cartoon/part-02-hello-human.mp4
+npx hyperframes render --quality high --output ../../../audiobook/cartoon/part-01-opening.mp4
+node tools/build-part.mjs parts/part-01.json --aspect 9x16   # then the tall version
+npx hyperframes render --quality high --output ../../../audiobook/cartoon/part-01-opening-9x16.mp4
 ```
+
+Captions: the 9:16 version has them burned in (Shorts, Reels and TikTok scroll with the sound off). The 16:9 version has none on the picture; upload `data/part-NN.srt` (written by every build) to YouTube as its closed captions. `--captions` burns them into 16:9 anyway.
+
+Build and render one shape at a time: the build rewrites `index.html`, `data/part.js` and the compositions' canvas size. Media too big for git (the theme song music video) is read from the main checkout when the build runs in a worktree.
 
 Always pass `--describe false` to `snapshot`. Otherwise it sends the frames to Gemini when a Gemini key is set.
 

@@ -1,0 +1,323 @@
+<template id="earth-means-dirt-template">
+  <!-- earth-means-dirt · Layer A (storyboards/part-01-opening.md): zoom out of the wall screen (fire-on-fire's cave, where the
+       two charred cavemen pull new burning sticks out of the fire).
+       A close-up of the Earth case file's label: "dirt." → the marker strikes out EARTH; "dirt." → it writes DIRT;
+       "Okay," → the pen hovers; "want..." → the shrug; after "want..." → the file moves from the E drawer to D, which slams. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+    #earth-means-dirt-cam, #earth-means-dirt-bg, #earth-means-dirt-back, #earth-means-dirt-wish, #earth-means-dirt-front, #earth-means-dirt-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="earth-means-dirt" data-width="1920" data-height="1080" data-start="0" data-duration="11">
+    <div id="earth-means-dirt-cam">
+      <div id="earth-means-dirt-bg"></div>
+      <div id="earth-means-dirt-back"></div>
+      <div id="earth-means-dirt-wish"></div>
+      <div id="earth-means-dirt-front"></div>
+    </div>
+    <div id="earth-means-dirt-board"><div id="earth-means-dirt-board-in"></div></div>
+    <div id="earth-means-dirt-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "earth-means-dirt";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, O = KIT.OFFICE;
+      var ink = 'stroke="' + C.ink + '"';
+
+      // The office with the filing cabinet. 16:9 has no room for the cabinet beside the standard wall screen, so the
+      // screen moves right and Wishonia is a little smaller; 9:16 keeps the standard office, with the cabinet beside her.
+      // cab and callout: top-left and scale. frame and zoom: fire-on-fire's frame and KIT.enter's starting scale.
+      var L = V
+        ? { screen: O.screen, wish: O.wish, halo: O.halo, desk: O.desk, mug: [952, 1173, 1.1],
+            cab: [40, 893, 1.05], callout: [125, 410, 1.22], frame: [1080, 1920], zoom: 4.7 }
+        : { screen: [420, 190, 820, 520], wish: { x: 1280, y: 80, w: 600 }, halo: [1580, 350], desk: [1220, 905, 700], mug: [1790, 800, 1.5],
+            cab: [50, 406, 1.45], callout: [490, 250, 1], frame: [1920, 1080], zoom: 2.9 };
+      var S = L.screen, hole = [S[0] + 34, S[1] + 34, S[2] - 68, S[3] - 68];
+
+      q("bg").innerHTML = KIT.office(L.halo[0], L.halo[1]);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      function txt(x, y, size, fill, text, extra) {
+        return '<text x="' + x + '" y="' + y + '" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + fill + '" ' + (extra || "") + ">" + text + "</text>";
+      }
+
+      // ── The wall screen: fire-on-fire's last frame, copied from fire-on-fire.html (keep the copies the same):
+      // the cave, the campfire, and the two charred cavemen reaching into it for new sticks. ──
+      var FF = V
+        ? { outer: "M44,1876 V900 Q60,520 380,480 H720 Q1020,520 1036,900 V1876 Z", inner: "M90,1876 V1000 Q120,700 400,670 H700 Q960,700 990,1000 V1876 Z",
+            ground: [90, 990, 1400], stage: [540, 1400, 1.45], drips: [[255, 712], [470, 670], [640, 670]] }
+        : { outer: "M44,1036 V420 Q200,130 520,100 H1400 Q1720,130 1876,420 V1036 Z", inner: "M240,1036 V520 Q360,250 640,230 H1280 Q1560,250 1680,520 V1036 Z",
+            ground: [240, 1680, 820], stage: [910, 820, 1.2], drips: [[560, 250], [780, 230], [1010, 230], [1420, 262]] };
+      var HS = 2, SEP = 150, FIRE = 0.8;
+      var FLAME = "M0,0 C-34,-10 -30,-60 -8,-96 C-6,-70 10,-62 14,-84 C34,-56 40,-14 0,0 Z";
+      // ── The cavemen, copied from fire-on-fire.html (keep the copies the same) ──
+      // Each is drawn in person units facing left (the fire and the other caveman are to the left, the other D2 units away);
+      // B's group is mirrored. A pose is a KIT.person plus animal-hide spots, and maybe a burning stick in the near (left)
+      // hand, flames all over (fire), or charred with its pupils shifted (eyes).
+      var D2 = (2 * SEP) / HS;
+      var CAVEMEN = {
+        A: { tone: 2, outfit: "shirt", color: 2, hair: 0, look: "left", spots: [[-9, -8], [8, 2], [-6, 17], [9, 22], [-1, 28]] },
+        B: { tone: 0, outfit: "dress", color: 3, hair: 1, hairColor: "#5A3A22", look: "left", spots: [[-6, -10], [7, 0], [-14, 26], [12, 32], [-2, 42], [22, 46], [-24, 46]] },
+      };
+      var DOWN = [[-15, -5], [15, 5]];
+      var POSES = {
+        stand: { arms: DOWN, mood: "flat" },
+        smile: { arms: [[-50, -60], [15, 5]], mood: "smile" },
+        reach: { arms: [[-35, -50], [15, 5]], mood: "eager" },
+        hold: { arms: [[-110, -150], [15, 5]], mood: "smile", stick: { dir: [-0.8, -0.6], len: 60 } },
+        // A aims high (at B's head), B aims low (at A's belly), so the two sticks do not lie on one line
+        windA: { arms: [[-175, 150], [15, 5]], mood: "flat", brows: true, stick: { to: [-D2 + 20, -60], len: 60 } },
+        jabA: { arms: [[-100, -105], [15, 5]], mood: "flat", brows: true, stick: { to: [-D2 + 20, -60] } },
+        windB: { arms: [[20, -60], [15, 5]], mood: "flat", brows: true, stick: { to: [-D2 + 16, 8], len: 60 } },
+        jabB: { arms: [[-80, -75], [15, 5]], mood: "flat", brows: true, stick: { to: [-D2 + 16, 8] } },
+        fl1: { arms: [[-160, -175], [160, 175]], mood: "eager", fire: true },
+        fl2: { arms: [[-125, -160], [125, 160]], mood: "eager", fire: true },
+        c0: { arms: DOWN, charred: true, look: null },
+        c1: { arms: DOWN, charred: true, eyes: [-1.5, 0] },
+        c2: { arms: DOWN, charred: true, eyes: [-1.5, 2.2] },
+        c3: { arms: [[-35, -50], [15, 5]], charred: true, eyes: [-1.5, 2.2] },
+        c4: { arms: [[-110, -150], [15, 5]], charred: true, eyes: [-1.5, 0], stick: { dir: [-0.8, -0.6], len: 60 } },
+      };
+      // The near hand of a pose (KIT.person's arm: shoulder at (-17, -26), two 26-unit segments).
+      function handAt(a) {
+        var r1 = (a[0] * Math.PI) / 180, r2 = (a[1] * Math.PI) / 180;
+        return [-17 + 26 * Math.sin(r1) + 26 * Math.sin(r2), -26 + 26 * Math.cos(r1) + 26 * Math.cos(r2)];
+      }
+      // A burning stick held at hand h, toward a point (to) or along dir; its flame is a KIT.flames.
+      function stickSvg(h, st) {
+        var dx = st.to ? st.to[0] - h[0] : st.dir[0], dy = st.to ? st.to[1] - h[1] : st.dir[1], n = Math.hypot(dx, dy);
+        var len = st.len || n, ux = dx / n, uy = dy / n, tip = [h[0] + ux * len, h[1] + uy * len];
+        var d = "M" + (h[0] - ux * 10).toFixed(1) + "," + (h[1] - uy * 10).toFixed(1) + " L" + tip[0].toFixed(1) + "," + tip[1].toFixed(1);
+        return '<path d="' + d + '" stroke="' + C.line + '" stroke-width="9" stroke-linecap="round"/><path d="' + d + '" stroke="#7A5230" stroke-width="4.5" stroke-linecap="round"/>' +
+          KIT.flames(tip[0].toFixed(1), (tip[1] + 3).toFixed(1), 0.26);
+      }
+      function poseSvg(who, name) {
+        var base = CAVEMEN[who], sp = POSES[name], o = {}, k;
+        for (k in base) if (k !== "spots") o[k] = base[k];
+        o.arms = sp.arms; o.mood = sp.mood; o.brows = sp.brows;
+        if (sp.look !== undefined) o.look = sp.look;
+        if (sp.charred) o.charred = true;
+        var m = KIT.person(o);
+        if (!sp.charred) {
+          var spots = base.spots.map(function (s) { return '<ellipse cx="' + s[0] + '" cy="' + s[1] + '" rx="3.6" ry="2.6" fill="' + C.rust + '" opacity="0.85"/>'; }).join("");
+          m = m.replace('<g class="arm-l">', spots + '<g class="arm-l">');
+        }
+        if (sp.eyes) m = m.replace(/<circle cx="([-\d.]+)" cy="([-\d.]+)" r="1.8"/g, function (x, cx, cy) {
+          return '<circle cx="' + (+cx + sp.eyes[0]) + '" cy="' + (+cy + sp.eyes[1]) + '" r="1.8"';
+        });
+        if (sp.fire) m += KIT.fireOn(o);
+        return m;
+      }
+      // The pose's stick (drawn on a layer over both cavemen, so each tip shows on the other one).
+      function poseStick(name) {
+        var sp = POSES[name];
+        return sp.stick ? stickSvg(handAt(sp.arms[0]), sp.stick) : "";
+      }
+      // Where each caveman stands (stage units) and its mirror.
+      function placeOf(who) { return "translate(" + (who === "A" ? SEP : -SEP) + ",-208) scale(" + (who === "A" ? HS : -HS) + "," + HS + ")"; }
+      // ── end of the copied part ──
+      function ffFrame(fw, fh) {
+        var pat = function (s) { return "url(#" + ID + "-" + s + ")"; };
+        var drips = FF.drips.map(function (d, i) {
+          var w = 26 + (i % 2) * 14, h = 50 + (i % 3) * 22;
+          return '<path d="M' + (d[0] - w / 2) + "," + (d[1] - 4) + " L" + d[0] + "," + (d[1] + h) + " L" + (d[0] + w / 2) + "," + (d[1] - 4) + ' Z" fill="' + pat("hatch") + '" stroke="' + C.line + '" stroke-width="4" stroke-linejoin="round"/>';
+        }).join("");
+        var cave = '<path d="' + FF.outer + " " + FF.inner + '" fill="#E4D9B8" fill-rule="evenodd" stroke="' + C.line + '" stroke-width="5"/>' +
+          '<path d="' + FF.outer + " " + FF.inner + '" fill="' + pat("cross") + '" fill-rule="evenodd" opacity="0.55"/>' + drips +
+          '<path d="M' + FF.ground[0] + "," + FF.ground[2] + " H" + FF.ground[1] + '" stroke="' + C.line + '" stroke-width="5"/>';
+        function flame(k, fill, pattern) {
+          return '<path transform="translate(0,-14) scale(' + k + ')" d="' + FLAME + '" fill="' + fill + '" stroke="' + C.line + '" stroke-width="' + (4 / k).toFixed(2) + '" stroke-linejoin="round"/>' +
+            (pattern ? '<path transform="translate(0,-14) scale(' + k + ')" d="' + FLAME + '" fill="' + pat(pattern) + '" opacity="0.6"/>' : "");
+        }
+        var logs = '<g stroke="' + C.line + '" stroke-width="5"><rect x="-120" y="-36" width="240" height="32" rx="16" fill="' + C.tan + '" transform="rotate(12 0 -20)"/>' +
+          '<rect x="-120" y="-36" width="240" height="32" rx="16" fill="' + C.rust + '" transform="rotate(-12 0 -20)"/></g>' +
+          [-130, -90, 90, 130].map(function (x) { return '<ellipse cx="' + x + '" cy="-12" rx="26" ry="14" fill="#D8CDB0" stroke="' + C.line + '" stroke-width="4"/>'; }).join("");
+        var fuel = [1, -1].map(function (sx) {
+          var d = "M" + 12 * sx + ",-50 L" + 58 * sx + ",-228";
+          return '<path d="' + d + '" stroke="' + C.line + '" stroke-width="11" stroke-linecap="round"/><path d="' + d + '" stroke="#7A5230" stroke-width="5.5" stroke-linecap="round"/>';
+        }).join("");
+        var fire = '<g transform="scale(' + FIRE + ')"><circle cx="0" cy="-110" r="230" fill="' + C.orange + '" opacity="0.2"/>' + logs + fuel +
+          flame(2.6, C.war, "hred") + flame(1.8, C.orange) + flame(1.05, C.yellow) + "</g>";
+        // the cavemen reaching in (c3); the beat at the start of this scene (c4): each pulls out a new burning stick
+        var men = ["B", "A"].map(function (who) {
+          return '<g transform="' + placeOf(who) + '"><g id="' + ID + "-ff" + who + '-c3">' + poseSvg(who, "c3") + "</g>" +
+            '<g id="' + ID + "-ff" + who + '-c4" opacity="0">' + poseSvg(who, "c4") + "</g></g>";
+        }).join("") + ["B", "A"].map(function (who) {
+          return '<g transform="' + placeOf(who) + '"><g id="' + ID + "-ff" + who + '-c4-stick" opacity="0">' + poseStick("c4") + "</g></g>";
+        }).join("");
+        // KIT.paper, with the paper run past the frame to fill the rest of the screen
+        return '<rect x="' + -fw + '" y="' + -fh + '" width="' + 3 * fw + '" height="' + 3 * fh + '" fill="' + C.paper + '"/>' +
+          '<rect x="30" y="30" width="' + (fw - 60) + '" height="' + (fh - 60) + '" fill="none" stroke="' + C.line + '" stroke-width="5"/>' +
+          '<rect x="44" y="44" width="' + (fw - 88) + '" height="' + (fh - 88) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          KIT.star(fw - 92, 96, 22, C.orange) + KIT.star(fw - 130, 140, 10, C.yellow) + KIT.star(84, fh - 84, 18, C.orange) + cave +
+          '<g transform="translate(' + FF.stage[0] + "," + FF.stage[1] + ") scale(" + FF.stage[2] + ')">' + fire + men + "</g>";
+      }
+      // KIT.enter scales about `at`, which stays put on screen. This `at` puts the whole starting view inside the
+      // screen's picture (the screen's center would show the bezel at the start), and the frame sits where that
+      // view lands.
+      var fw = L.frame[0], fh = L.frame[1], z = 1 / L.zoom;
+      function origin(h0, hl, f) { return (h0 + (hl - f * z) / 2) / (1 - z); }
+      var at = [origin(hole[0], hole[2], fw), origin(hole[1], hole[3], fh)];
+      var mini = '<g transform="translate(' + (at[0] * (1 - z)).toFixed(2) + "," + (at[1] * (1 - z)).toFixed(2) + ") scale(" + z.toFixed(4) + ')">' + ffFrame(fw, fh) + "</g>";
+
+      // ── The filing cabinet, in its own units (230 x 330): drawers D, E and F. An open drawer's front sits OPEN
+      // lower, showing the dark inside. E is open with Earth's case file sticking up (its body's top at FA); the
+      // file's copy in D (hidden, top at FB) is the one that drops in at the end. ──
+      var OPEN = 12, FA = 120, FB = 16, LIFT = -204;
+      function folder(pre) {
+        // the case file, its body's top-left at (0,0); pre: id prefix for the copy whose label gets edited
+        return '<rect x="0" y="0" width="170" height="112" rx="4" fill="#E2B865" ' + ink + ' stroke-width="4"/>' +
+          '<path d="M14,1 L20,-34 H130 L136,1 Z" fill="#E2B865" ' + ink + ' stroke-width="3" stroke-linejoin="round"/>' +
+          txt(24, -6, 14, C.ink, "EARTH: CASE #847") +
+          "<path " + (pre ? 'id="' + pre + '-strike" ' : "") + 'd="M21,-10.5 L63,-12" stroke="' + C.red + '" stroke-width="2.6" stroke-linecap="round" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="' + (pre ? 1 : 0) + '"/>' +
+          (pre ? '<g id="' + pre + '-dirt">' : "<g>") + txt(26, -20, 11, C.red, "DIRT", 'letter-spacing="1"') + "</g>";
+      }
+      function slot(i) { return 18 + i * 104; }
+      function front(key, i, letter) {
+        var y = slot(i);
+        return '<g id="earth-means-dirt-front-' + key + '">' +
+          '<rect x="16" y="' + y + '" width="198" height="92" rx="6" fill="#7486A3" ' + ink + ' stroke-width="6"/>' +
+          '<rect x="85" y="' + (y + 12) + '" width="60" height="38" rx="4" fill="' + C.cream + '" ' + ink + ' stroke-width="3"/>' +
+          txt(115, y + 42, 30, C.ink, letter, 'text-anchor="middle"') +
+          '<rect x="90" y="' + (y + 60) + '" width="50" height="14" rx="7" fill="' + C.ink + '"/></g>';
+      }
+      function inside(key, i) { return '<rect id="earth-means-dirt-int-' + key + '" x="22" y="' + slot(i) + '" width="186" height="16" fill="' + C.ink + '"/>'; }
+      var cabinet = '<rect x="0" y="0" width="230" height="330" rx="10" fill="' + C.peri + '" ' + ink + ' stroke-width="6"/>' +
+        inside("d", 0) + '<g transform="translate(30,' + FB + ')"><g id="earth-means-dirt-fb">' + folder("") + "</g></g>" + front("d", 0, "D") +
+        inside("e", 1) + '<g transform="translate(30,' + FA + ')"><g id="earth-means-dirt-fa">' + folder(ID + "-fa") + "</g></g>" +
+        '<g transform="translate(0,' + OPEN + ')">' + front("e", 1, "E") + "</g>" + front("f", 2, "F") +
+        '<path id="earth-means-dirt-bang" d="M-8,36 L-30,26 M-8,64 L-34,64 M-8,92 L-30,102 M238,36 L260,26 M238,64 L264,64 M238,92 L260,102" ' + ink + ' stroke-width="5" stroke-linecap="round"/>';
+      var cb = L.cab, cs = cb[2];
+      var cab = '<g transform="translate(' + cb[0] + "," + cb[1] + ") scale(" + cs + ')"><g id="earth-means-dirt-cab">' + cabinet + "</g></g>";
+
+      // ── The close-up of the file's label, in its own units (680 x 230), with Wishonia's marker ──
+      var co = L.callout, ch = 230 * co[2];
+      var tab = [cb[0] + 44 * cs - 9, cb[1] + (FA - 34) * cs - 9, cb[0] + 166 * cs + 9, cb[1] + FA * cs + 9];
+      var lead = V ? [tab[2], (tab[1] + tab[3]) / 2, co[0] + 120, co[1] + ch - 10] : [tab[2], (tab[1] + tab[3]) / 2, co[0] + 10, co[1] + ch - 10];
+      var dash = ink + ' stroke-width="4" stroke-dasharray="12 8" fill="none"';
+      var pointer = '<g id="earth-means-dirt-pointer"><rect x="' + tab[0] + '" y="' + tab[1] + '" width="' + (tab[2] - tab[0]) + '" height="' + (tab[3] - tab[1]) + '" rx="12" ' + dash + "/>" +
+        '<path d="M' + lead[0] + "," + lead[1] + " L" + lead[2] + "," + lead[3] + '" ' + dash + "/></g>";
+      var DIRT = ["M0,72 V0 C64,0 64,72 0,72", "M76,0 V72", "M104,72 V0 C156,0 156,40 104,40 L150,72", "M170,0 H228", "M199,0 V72"];
+      var letters = DIRT.map(function (d) {
+        return '<path class="earth-means-dirt-dl" d="' + d + '" fill="none" stroke="' + C.red + '" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+      }).join("");
+      // A point of the DIRT letters (drawn at (98, 26), tilted -4 degrees) in callout units.
+      var DA = (-4 * Math.PI) / 180;
+      function dp(p) {
+        var dx = p[0] - 114, dy = p[1] - 36;
+        return [212 + dx * Math.cos(DA) - dy * Math.sin(DA), 62 + dx * Math.sin(DA) + dy * Math.cos(DA)];
+      }
+      // the marker, its nib at (0,0)
+      var marker = '<g id="earth-means-dirt-marker"><g transform="rotate(-40)">' +
+        '<path d="M0,0 L22,-9 L22,9 Z" fill="' + C.red + '" ' + ink + ' stroke-width="3" stroke-linejoin="round"/>' +
+        '<rect x="20" y="-13" width="22" height="26" rx="3" fill="' + C.ink + '"/>' +
+        '<rect x="40" y="-17" width="132" height="34" rx="8" fill="' + C.cream + '" ' + ink + ' stroke-width="4"/>' +
+        '<rect x="112" y="-17" width="22" height="34" fill="' + C.red + '" ' + ink + ' stroke-width="3"/>' +
+        '<rect x="170" y="-12" width="10" height="24" rx="3" fill="' + C.red + '" ' + ink + ' stroke-width="3"/></g></g>';
+      var callout = '<g transform="translate(' + co[0] + "," + co[1] + ") scale(" + co[2] + ')"><g id="earth-means-dirt-callout">' +
+        '<rect x="10" y="12" width="680" height="230" rx="10" fill="' + C.ink + '" opacity="0.85"/>' +
+        '<rect x="0" y="0" width="680" height="230" rx="10" fill="#FBF6E6" ' + ink + ' stroke-width="6"/>' +
+        txt(81, 190, 96, C.ink, "EARTH") + txt(332, 190, 56, C.ink, ": CASE #847") +
+        '<path id="earth-means-dirt-strike" d="M71,155 L341,147" stroke="' + C.red + '" stroke-width="11" stroke-linecap="round" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>' +
+        '<g transform="translate(98,26) rotate(-4 114 36)">' + letters + "</g></g>" + marker + "</g>";
+
+      q("back").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + KIT.wallScreen(S[0], S[1], S[2], S[3]) +
+        '<defs><clipPath id="earth-means-dirt-hole"><rect x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" rx="22"/></clipPath></defs>' +
+        '<g clip-path="url(#earth-means-dirt-hole)">' + mini + "</g>" + cab + pointer + callout);
+      var mug = '<g transform="translate(' + L.mug[0] + "," + L.mug[1] + ") scale(" + L.mug[2] + ')">' + KIT.mug(0, 0) + "</g>";
+      q("front").innerHTML = KIT.svg(W, H, KIT.desk(L.desk[0], L.desk[1], L.desk[2]) + mug);
+
+      q("board-in").innerHTML = KIT.countdownBoard();
+      KIT.placeBoard(q("board"), q("board-in"));
+      var board = q("board-in").firstChild;
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("wish"), { scene: ID, x: L.wish.x, y: L.wish.y, w: L.wish.w });
+      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.enter(tl, q("cam"), "zoom out of the wall screen", at);
+      // On the screen, a beat after fire-on-fire's last "fire." plus 0.6 s (the small whoosh): both cavemen pull new burning
+      // sticks out of the fire (they will do it again).
+      var tf = KIT.scene("fire-on-fire").start + KIT.after("fire-on-fire", "fire.", 2) + 0.6 - sc.start;
+      ["A", "B"].forEach(function (who) {
+        var m = "#" + ID + "-ff" + who;
+        tl.set(m + "-c3", { opacity: 0 }, tf);
+        tl.set([m + "-c4", m + "-c4-stick"], { opacity: 1 }, tf);
+        var fl = document.querySelector(m + "-c4-stick .flames");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.2 }, { scale: 1, duration: 0.12, ease: "back.out(2)" }, tf);
+      });
+
+      // "Earth,": the close-up of the label pops out of the file in the E drawer.
+      var tE = cue("Earth");
+      tl.fromTo("#earth-means-dirt-callout", { opacity: 0, scale: 0.25, transformOrigin: "0% 100%" }, { opacity: 1, scale: 1, transformOrigin: "0% 100%", duration: 0.35, ease: "back.out(1.4)" }, tE);
+      tl.fromTo("#earth-means-dirt-pointer", { opacity: 0 }, { opacity: 1, duration: 0.2 }, tE);
+
+      // "dirt." (first): the marker strikes out EARTH (the squeak), in the close-up and on the file itself.
+      var t1 = cue("dirt."), mk = "#earth-means-dirt-marker";
+      var draw = function (sel, t, d, ease) { tl.fromTo(sel, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: d, ease: ease }, t); };
+      tl.fromTo(mk, { x: 760, y: -40, opacity: 0 }, { x: 71, y: 155, opacity: 1, duration: 0.4, ease: "power2.out" }, KIT.before(ID, "dirt."));
+      draw("#earth-means-dirt-strike", t1, 0.26, "power1.inOut");
+      draw("#earth-means-dirt-fa-strike", t1, 0.26, "power1.inOut");
+      tl.to(mk, { x: 341, y: 147, duration: 0.26, ease: "power1.inOut" }, t1);
+      tl.to(mk, { x: 372, y: 118, duration: 0.25, ease: "power2.out" }, t1 + 0.3);
+
+      // "dirt." (second): it writes DIRT above (the second squeak), stroke by stroke, the nib on each stroke.
+      var t2 = cue("dirt.", 2);
+      var STROKES = [[[0, 72], [0, 0], [48, 36], [0, 72]], [[76, 0], [76, 72]], [[104, 72], [104, 0], [143, 20], [104, 40], [150, 72]], [[170, 0], [228, 0]], [[199, 0], [199, 72]]];
+      var WIN = [[0, 0.11], [0.12, 0.17], [0.18, 0.29], [0.3, 0.34], [0.35, 0.4]];
+      var start = dp(STROKES[0][0]);
+      tl.to(mk, { x: start[0], y: start[1], duration: 0.3, ease: "power2.inOut" }, t2 - 0.35);
+      var dl = document.querySelectorAll(".earth-means-dirt-dl");
+      STROKES.forEach(function (st, i) {
+        var t0 = t2 + WIN[i][0], d = WIN[i][1] - WIN[i][0], n = st.length - 1;
+        draw(dl[i], t0, d, "none");
+        if (i) {
+          var p0 = dp(st[0]);
+          tl.to(mk, { x: p0[0], y: p0[1], duration: 0.01, ease: "none" }, t0 - 0.01);
+        }
+        for (var j = 1; j <= n; j++) {
+          var p = dp(st[j]);
+          tl.to(mk, { x: p[0], y: p[1], duration: d / n, ease: "none" }, t0 + (d * (j - 1)) / n);
+        }
+      });
+      tl.fromTo("#earth-means-dirt-fa-dirt", { opacity: 0 }, { opacity: 1, duration: 0.3 }, t2);
+
+      // "Okay,": the pen hovers over the label.
+      tl.to(mk, { x: 352, y: 20, duration: 0.25, ease: "power2.out" }, t2 + 0.45);
+      tl.to(mk, { y: 6, duration: 0.3, repeat: 3, yoyo: true, ease: "sine.inOut" }, cue("Okay,"));
+
+      // "want...": the shrug (her pose); the pen leaves. Then the file comes up out of E and drops into D,
+      // which slams a beat after "want..." (the slam).
+      var tW = cue("want..."), tS = KIT.after(ID, "want...");
+      tl.to(mk, { x: 760, y: -60, opacity: 0, duration: 0.3, ease: "power2.in" }, tW);
+      tl.to("#earth-means-dirt-pointer", { opacity: 0, duration: 0.2 }, tW);
+      var lift = tW + 0.06, swap = lift + 0.24;
+      tl.to("#earth-means-dirt-fa", { y: LIFT, duration: 0.2, ease: "power2.out" }, lift);
+      tl.to("#earth-means-dirt-front-e", { y: -OPEN, duration: 0.12, ease: "power2.in" }, lift + 0.14);
+      tl.to("#earth-means-dirt-int-e", { opacity: 0, duration: 0.04 }, lift + 0.24);
+      tl.fromTo("#earth-means-dirt-front-d", { y: 0 }, { y: OPEN, duration: 0.08, ease: "power2.out" }, lift + 0.16);
+      tl.fromTo("#earth-means-dirt-int-d", { opacity: 0 }, { opacity: 1, duration: 0.04 }, lift + 0.16);
+      // the lifted file is clear of the D drawer here, so the copy behind D's front takes over and falls in
+      tl.to("#earth-means-dirt-fa", { opacity: 0, duration: 0.01 }, swap);
+      tl.fromTo("#earth-means-dirt-fb", { opacity: 0 }, { opacity: 1, duration: 0.01 }, swap);
+      tl.fromTo("#earth-means-dirt-fb", { y: FA + LIFT - FB }, { y: 0, duration: 0.24, ease: "power2.in" }, swap);
+      tl.to("#earth-means-dirt-front-d", { y: 0, duration: 0.05, ease: "power3.in" }, tS - 0.05);
+      tl.to("#earth-means-dirt-fb", { opacity: 0, duration: 0.01 }, tS - 0.02);
+      tl.to("#earth-means-dirt-int-d", { opacity: 0, duration: 0.02 }, tS - 0.02);
+      tl.to("#earth-means-dirt-cab", { keyframes: [{ x: -7, duration: 0.04 }, { x: 6, duration: 0.06 }, { x: -3, duration: 0.06 }, { x: 0, duration: 0.06 }] }, tS);
+      tl.fromTo("#earth-means-dirt-bang", { opacity: 0 }, { opacity: 1, duration: 0.03 }, tS);
+      tl.to("#earth-means-dirt-bang", { opacity: 0, duration: 0.25 }, tS + 0.15);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

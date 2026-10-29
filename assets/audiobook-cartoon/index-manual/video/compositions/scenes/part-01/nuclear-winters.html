@@ -1,0 +1,345 @@
+<template id="nuclear-winters-template">
+  <!-- nuclear-winters · Layer B (storyboards/part-01-opening.md): continues loved-ones with no seam (the skeleton family
+       and the Grim Reaper in the portrait). On "nuclear" the HOLD ends: the portrait leaves, the form moves over and
+       question 2 types on. "bombs": a stockpile of 122 grumpy little warheads pops up; when the Earth appears they all
+       lean at it. "hundred": row by row each warhead blinks into a red snowflake with a puff; the two-wheel counter
+       overflows and a third wheel is bolted on. "winters": snow falls on the one Earth; its one human looks up and puts
+       on a scarf; a drift buries him to the chin, teeth chattering; on "apocalypse?" he freezes into an ice block.
+       Then the pencil comes in over YES (the tick lands on the wall screen in eligible). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #nuclear-winters-cam, #nuclear-winters-bg, #nuclear-winters-art, #nuclear-winters-pip, #nuclear-winters-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="nuclear-winters" data-width="1920" data-height="1080" data-start="0" data-duration="10.76">
+    <div id="nuclear-winters-cam">
+      <div id="nuclear-winters-bg"></div>
+      <div id="nuclear-winters-art"></div>
+      <div id="nuclear-winters-board"><div id="nuclear-winters-board-in"></div></div>
+      <div id="nuclear-winters-pip"></div>
+      <div id="nuclear-winters-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "nuclear-winters";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+
+      // ── Shared with eligible.html, whose wall screen shows this scene's last frame: keep the two copies the same. ──
+      // Where things end up, for each canvas shape. form: where FORM_AT moves to (top-left corner and scale).
+      var L = V
+        ? { form: { x: 175.2, y: 1007.6, s: 0.76 }, earth: { x: 225, y: 700, r: 105 }, guy: 0.8,
+            grid: { x: 470, y: 470, dx: 50, dy: 33, r: 11 }, civX: 225, winX: 720, labY: 884,
+            wheel: { lab: 30, w: 42, h: 58, gap: 5, fs: 46, pad: 7 } }
+        : { form: { x: 110, y: 200, s: 720 / 820 }, earth: { x: 990, y: 560, r: 110 }, guy: 0.9,
+            grid: { x: 1170, y: 200, dx: 40, dy: 44, r: 13 }, civX: 990, winX: 1370, labY: 748,
+            wheel: { lab: 34, w: 50, h: 70, gap: 6, fs: 56, pad: 8 } };
+      // A red six-armed snowflake around (0,0).
+      function flake(r) {
+        var d = "", k, a;
+        for (k = 0; k < 3; k++) {
+          a = (k * Math.PI) / 3;
+          d += "M" + (-r * Math.cos(a)).toFixed(1) + "," + (-r * Math.sin(a)).toFixed(1) + " L" + (r * Math.cos(a)).toFixed(1) + "," + (r * Math.sin(a)).toFixed(1) + " ";
+        }
+        for (k = 0; k < 6; k++) {
+          a = (k * Math.PI) / 3;
+          var px = 0.58 * r * Math.cos(a), py = 0.58 * r * Math.sin(a);
+          [-1, 1].forEach(function (s) {
+            var b = a + (s * Math.PI) / 4;
+            d += "M" + px.toFixed(1) + "," + py.toFixed(1) + " l" + (0.36 * r * Math.cos(b)).toFixed(1) + "," + (0.36 * r * Math.sin(b)).toFixed(1) + " ";
+          });
+        }
+        return '<path d="' + d + '" fill="none" stroke="' + C.war + '" stroke-width="' + (r * 0.25).toFixed(1) + '" stroke-linecap="round"/>';
+      }
+      // The snowdrift on the Earth at height p (0 to 1): a pile on the Earth's surface between +-a, flat across the
+      // human and flaring out at the foot, that reaches his neck (just under the scarf) at p = 1. driftY: its top at x
+      // (from the Earth's center).
+      function driftY(x, p) {
+        var E = L.earth, a = E.r * 0.9, u = Math.abs(x / a), peak = 124 * L.guy - 6;
+        var s = Math.min(1, Math.max(0, (u - 0.34) / 0.66)), bell = 1 - s * s * (3 - 2 * s);
+        var lump = 1 + 0.06 * Math.sin(6 * Math.PI * x / a) * s;
+        return E.y - Math.sqrt(E.r * E.r - x * x) - p * peak * bell * lump;
+      }
+      function driftD(p) {
+        var E = L.earth, a = E.r * 0.9, n = 36, pts = [];
+        for (var i = 0; i <= n; i++) {
+          var x = -a + (2 * a * i) / n;
+          pts.push((E.x + x).toFixed(1) + "," + driftY(x, p).toFixed(1));
+        }
+        return "M" + pts.join(" L") + " A" + E.r + "," + E.r + " 0 0 0 " + (E.x - a).toFixed(1) + "," + (E.y - Math.sqrt(E.r * E.r - a * a)).toFixed(1) + " Z";
+      }
+      // Snow-lump lines inside the drift: short arcs at [x, height fraction] (they rise with it).
+      function lumpsD(p) {
+        var E = L.earth, w = E.r * 0.16;
+        return [[-0.42, 0.55], [0.36, 0.7], [-0.05, 0.86]].map(function (m) {
+          var x = m[0] * E.r, y0 = E.y - Math.sqrt(E.r * E.r - x * x), y = y0 + (driftY(x, p) - y0) * m[1];
+          return "M" + (E.x + x - w).toFixed(1) + "," + y.toFixed(1) + " q" + w.toFixed(1) + "," + (-w * 0.55).toFixed(1) + " " + (2 * w).toFixed(1) + ",0";
+        }).join(" ");
+      }
+      // The Earth, its one human (a: facing us, b: looking up, with the scarf, chattering teeth and the ice block), the
+      // drift, the 122 snowflakes and the two counters. The markup is the last frame; nuclear-winters animates up to it.
+      function nwArt(pid) {
+        var G = L.grid, S = L.wheel, E = L.earth;
+        var label = function (x, text, color) {
+          return '<text x="' + x + '" y="' + L.labY + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + S.lab + '" letter-spacing="1" fill="' + color + '">' + text + "</text>";
+        };
+        var wheel = function (x, y, digit, did) {
+          return '<rect x="' + x + '" y="' + y + '" width="' + S.w + '" height="' + S.h + '" rx="6" fill="' + C.slate + '"/>' +
+            "<text" + (did ? ' id="' + did + '"' : "") + ' x="' + (x + S.w / 2) + '" y="' + (y + S.h / 2 + S.fs * 0.36).toFixed(1) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + S.fs + '" fill="' + C.yellow + '">' + digit + "</text>" +
+            '<path d="M' + x + "," + (y + S.h / 2) + " h" + S.w + '" stroke="' + C.ink + '" stroke-width="2.5"/>';
+        };
+        var top = L.labY + Math.round(S.lab * 0.42), hh = S.h + 2 * S.pad;
+        var flakes = "";
+        for (var i = 0; i < 122; i++) {
+          var row = Math.floor(i / 11), col = i % 11;
+          flakes += '<g transform="translate(' + (G.x + col * G.dx) + "," + (G.y + row * G.dy) + ')"><g class="' + pid + '-flake" data-row="' + row + '">' + flake(G.r) + "</g></g>";
+        }
+        var cw = S.w + 2 * S.pad;
+        var civ = '<g id="' + pid + '-civ">' + label(L.civX, "CIVILIZATIONS:", C.line) +
+          '<rect x="' + (L.civX - cw / 2) + '" y="' + top + '" width="' + cw + '" height="' + hh + '" rx="10" fill="' + C.navy + '" stroke="' + C.ink + '" stroke-width="4"/>' +
+          wheel(L.civX - S.w / 2, top + S.pad, "1") + "</g>";
+        var mw = 2 * S.w + S.gap + 2 * S.pad, mx = L.winX - mw / 2, ax = mx + S.pad - S.gap - S.w;
+        var bolt = function (bx, by) {
+          return '<g transform="translate(' + bx + "," + by + ')"><g class="' + pid + '-bolt"><circle r="6" fill="' + C.cream + '" stroke="' + C.ink + '" stroke-width="2.5"/><path d="M-3.5,0 h7" stroke="' + C.ink + '" stroke-width="2.2"/></g></g>';
+        };
+        var winters = '<g id="' + pid + '-winters">' + label(L.winX, "NUCLEAR WINTERS:", C.war) +
+          '<g id="' + pid + '-main"><rect x="' + mx + '" y="' + top + '" width="' + mw + '" height="' + hh + '" rx="10" fill="' + C.navy + '" stroke="' + C.ink + '" stroke-width="4"/>' +
+          wheel(mx + S.pad, top + S.pad, "0", pid + "-d1") + wheel(mx + S.pad + S.w + S.gap, top + S.pad, "0", pid + "-d0") + "</g>" +
+          // the third wheel, on a mismatched plate, bolted over the housing's edge
+          '<g id="' + pid + '-addon"><rect x="' + (ax - S.pad) + '" y="' + (top - 5) + '" width="' + (mx + 4 - ax + S.pad) + '" height="' + (hh + 10) + '" rx="4" fill="' + C.tan + '" stroke="' + C.ink + '" stroke-width="4"/>' +
+          wheel(ax, top + S.pad, "1") + bolt(mx + 1, top + 4) + bolt(mx + 1, top + hh - 4) + "</g></g>";
+        var k = E.r / 110;
+        var land = "M-75,-45 C-60,-80 -10,-85 5,-60 C20,-40 -5,-20 10,0 C25,20 -10,35 -30,25 C-50,15 -85,0 -75,-45 Z " +
+          "M25,15 C50,0 80,10 85,35 C88,60 60,80 40,70 C20,60 10,30 25,15 Z M40,-70 C55,-78 75,-60 65,-45 C55,-35 35,-50 40,-70 Z";
+        var ink = C.line;
+        var guy = { tone: 2, outfit: "shirt", color: 1, hair: 0, mood: "flat" };
+        var guyB = { tone: 2, outfit: "shirt", color: 1, hair: 0, mood: "flat", look: "right" };
+        var scarf = '<g id="' + pid + '-scarf"><path d="M-16,-37 Q0,-30 16,-37 L17,-24 Q0,-17 -17,-24 Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+          '<path d="M-15,-30.5 Q0,-24 15,-30.5" fill="none" stroke="' + C.cream + '" stroke-width="2.6"/></g>' +
+          '<g id="' + pid + '-tail"><path d="M7,-29 L17,-28 L20,6 L10,7 Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+          '<path d="M11,7 v6 M14.5,6.5 v6 M18,6 v6" stroke="' + ink + '" stroke-width="2.2" stroke-linecap="round"/></g>';
+        // chattering teeth where the mouth is (the jaw is the lower row)
+        var row2 = function (y) {
+          return '<rect x="0" y="' + y + '" width="15" height="5" rx="1.2" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.6"/><path d="M5,' + y + " v5 M10," + y + ' v5" stroke="' + ink + '" stroke-width="1.2"/>';
+        };
+        var teeth = '<g id="' + pid + '-teeth">' + row2(-52.5) + '<g id="' + pid + '-jaw">' + row2(-47.5) + "</g></g><!--head-end-->";
+        // the ice block around the head and scarf, with a glint
+        var ice = '<g id="' + pid + '-ice"><g transform="rotate(-6 -6 -53)">' +
+          '<rect x="-40" y="-88" width="68" height="70" rx="8" fill="#CDEBE8" fill-opacity="0.45" stroke="' + ink + '" stroke-width="3.2"/>' +
+          '<path d="M-32,-60 V-80 H-14 M18,-80 H21 M-32,-50 V-46" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/></g>' +
+          '<g transform="translate(18,-74)"><g id="' + pid + '-glint">' + KIT.star(0, 0, 15, C.line) + KIT.star(0, 0, 11, "#FFFFFF") + "</g></g></g>";
+        var gy = E.y - E.r - 102 * L.guy + 4;
+        var earth = '<g id="' + pid + '-earth"><g transform="translate(' + E.x + "," + E.y + ") scale(" + k.toFixed(3) + ')">' +
+          '<circle r="110" fill="#FBF5E4" stroke="' + ink + '" stroke-width="6"/>' +
+          '<path d="' + land + '" fill="url(#' + pid + '-hatch)" stroke="' + ink + '" stroke-width="3.5" stroke-linejoin="round"/></g>' +
+          '<g transform="translate(' + E.x + "," + gy.toFixed(1) + ") scale(" + L.guy + ')">' +
+          '<g id="' + pid + '-guy-a">' + KIT.person(guy) + "</g>" +
+          '<g id="' + pid + '-guy-b">' + KIT.person(guyB).replace("<!--head-end-->", teeth) + scarf + ice + "</g></g>" +
+          // the drift, in front of the human, with a few snow-lump lines
+          '<path id="' + pid + '-drift" d="' + driftD(1) + '" fill="#FFFFFF" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<path id="' + pid + '-lumps" d="' + lumpsD(1) + '" fill="none" stroke="#8FB3AF" stroke-width="3" stroke-linecap="round"/></g>';
+        return { flakes: flakes, civ: civ, winters: winters, earth: earth };
+      }
+      // ── end of the shared part ──
+
+      // loved-ones' room, drawn the same way, so the first frame is loved-ones' last: the family are skeletons and the
+      // Grim Reaper stands behind them (as loved-ones leaves him).
+      var R = V
+        ? { frame: [160, 450, 760, 400], inner: [180, 470, 720, 360], people: { x: 300, dx: 160, y: 650, s: 1.75 },
+            mantel: [110, 850, 860, 40], base: [140, 890, 800, 60], reaper: [700, 767, 1.75] }
+        : { frame: [150, 270, 640, 400], inner: [170, 290, 600, 360], people: { x: 275, dx: 130, y: 430, s: 1.6 },
+            mantel: [100, 670, 740, 40], base: [130, 710, 680, 150], reaper: [600, 530, 1.6] };
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      function rect(r, fill, extra) {
+        return '<rect x="' + r[0] + '" y="' + r[1] + '" width="' + r[2] + '" height="' + r[3] + '" fill="' + fill + '" ' + (extra || "") + "/>";
+      }
+      var people = [0, 1, 2, 3].map(function (i) {
+        return '<g transform="translate(' + (R.people.x + i * R.people.dx) + "," + R.people.y + ") scale(" + R.people.s + ')">' + KIT.person({ skeleton: true }) + "</g>";
+      }).join("");
+      var reaper = '<g transform="translate(' + R.reaper[0] + "," + R.reaper[1] + ") scale(" + R.reaper[2] + ')">' + KIT.reaper() + "</g>";
+      var room = '<g id="nuclear-winters-room">' + rect(R.frame, C.rust, 'stroke="' + C.ink + '" stroke-width="6"') +
+        '<defs><clipPath id="nuclear-winters-clip">' + rect(R.inner, "#fff") + "</clipPath></defs>" +
+        rect(R.inner, C.cream) + '<g clip-path="url(#nuclear-winters-clip)">' + rect(R.inner, "url(#nuclear-winters-fine)", 'opacity="0.35"') + reaper + people + "</g>" +
+        rect(R.mantel, C.tan, 'stroke="' + C.line + '" stroke-width="5"') + rect(R.base, "url(#nuclear-winters-hatch)", 'stroke="' + C.line + '" stroke-width="5"') + "</g>";
+
+      // The stockpile: one grumpy warhead (the theme song's rocket) per snowflake, standing in the snowflakes' grid,
+      // crowded (each row overlaps the one behind), and a puff per warhead for the moment it turns into a snowflake.
+      var G = L.grid, WS = V ? 0.8 : 0.95;
+      function warhead() {
+        var ink = 'stroke="' + C.line + '" stroke-width="2.6" stroke-linejoin="round"';
+        var body = "M-12,-36 C-12,-48 -5,-56 0,-58 C5,-56 12,-48 12,-36";
+        return '<path d="M-12,-21 L-21,-5 L-21,2 L-12,-6 Z M12,-21 L21,-5 L21,2 L12,-6 Z" fill="' + C.slate + '" ' + ink + "/>" +
+          '<path d="' + body + ' V-8 Q12,-2 6,-2 H-6 Q-12,-2 -12,-8 Z" fill="#FBF6E6" ' + ink + "/>" +
+          '<path d="' + body + ' Z" fill="' + C.war + '" ' + ink + "/>" +
+          '<path d="M-9.5,-32 L-2.5,-28 M9.5,-32 L2.5,-28 M-5.5,-13 Q0,-18 5.5,-13" fill="none" stroke="' + C.line + '" stroke-width="2.6" stroke-linecap="round"/>' +
+          '<circle cx="-5" cy="-23.5" r="2.4" fill="' + C.line + '"/><circle cx="5" cy="-23.5" r="2.4" fill="' + C.line + '"/>';
+      }
+      var wr = KIT.rng(847), heads = "", puffs = "";
+      for (var i = 0; i < 122; i++) {
+        var row = Math.floor(i / 11), col = i % 11, cx = G.x + col * G.dx, cy = G.y + row * G.dy;
+        var jx = (wr() - 0.5) * 4, jr = (wr() - 0.5) * 12;
+        heads += '<g transform="translate(' + (cx + jx).toFixed(1) + "," + (cy + 26 * WS).toFixed(1) + ") rotate(" + jr.toFixed(1) + ") scale(" + WS + ')"><g class="nuclear-winters-wh" data-row="' + row + '">' + warhead() + "</g></g>";
+        puffs += '<g transform="translate(' + cx + "," + cy + ')"><g class="nuclear-winters-puff" data-row="' + row + '" opacity="0">' +
+          '<circle r="' + (G.r * 1.25).toFixed(1) + '" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="2.4"/>' +
+          '<circle cx="' + (-G.r * 0.9).toFixed(1) + '" cy="' + (G.r * 0.5).toFixed(1) + '" r="' + (G.r * 0.7).toFixed(1) + '" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="2.4"/></g></g>';
+      }
+      // Snow falling on the Earth, from "winters": each flake falls once and melts into the drift where it lands.
+      var E = L.earth, sr = KIT.rng(122), snowN = 34, snow = [], snowSvg = "";
+      for (var j = 0; j < snowN; j++) {
+        var sx = (sr() * 2 - 1) * E.r * 0.85;
+        snow.push({ x: sx, t: 0, dur: 0.95 + sr() * 0.3, sway: 6 + sr() * 6 });
+        snowSvg += '<g transform="translate(' + (E.x + sx).toFixed(1) + ',0)"><g class="nuclear-winters-snow">' + flake(V ? 8 : 10) + "</g></g>";
+      }
+
+      // The form with both questions, at loved-ones' place. Question 2 and its boxes start hidden, and the paper starts
+      // at its one-question height; the pencil waits off to the side for the end.
+      var F = KIT.FORM_AT;
+      var form = KIT.form(ID, F.x, F.y, F.w, [{ lines: KIT.FORM_Q[0] }, { lines: KIT.FORM_Q[1] }], { size: F.size });
+      var h1 = KIT.form(ID + "-one", F.x, F.y, F.w, [{ lines: KIT.FORM_Q[0] }], { size: F.size }).h;
+      var box = form.boxes[1];
+      var pencil = '<g transform="translate(' + (box.x + 6) + "," + (box.y + 40) + ')"><g id="nuclear-winters-pencil">' + KIT.pencil() + "</g></g>";
+      var art = nwArt(ID);
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + room + art.flakes + '<g id="nuclear-winters-stock">' + heads + "</g>" + puffs +
+        art.earth + '<g id="nuclear-winters-fall">' + snowSvg + "</g>" + art.civ + art.winters +
+        '<g id="nuclear-winters-form">' + form.svg + pencil + "</g>");
+
+      var formG = q("form");
+      formG.querySelector("#nuclear-winters-tick-0 .tick").setAttribute("stroke-dashoffset", "0");
+      var paperRects = [formG.querySelectorAll("rect")[0], formG.querySelectorAll("rect")[1]];
+      var texts = formG.querySelectorAll("text");
+      var fine = texts[texts.length - 1];
+      // question 2's YES / NO boxes and labels: the four elements before its tick, gathered into one group
+      var tick1 = q("tick-1"), boxG = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      var parts = [];
+      for (var el = tick1.previousElementSibling, n = 0; n < 4; n++, el = el.previousElementSibling) parts.unshift(el);
+      tick1.parentNode.insertBefore(boxG, parts[0]);
+      parts.forEach(function (p) { boxG.appendChild(p); });
+      var q2 = formG.querySelectorAll('.form-line[data-q="1"]');
+
+      q("board-in").innerHTML = KIT.countdownBoard();
+      KIT.placeBoard(q("board"), q("board-in"));
+      var board = q("board-in").firstChild;
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
+      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+
+      // Held from loved-ones until "nuclear": question 2 hidden, the paper one question tall.
+      tl.fromTo(paperRects, { attr: { height: h1 } }, { attr: { height: form.h }, duration: 0.45, ease: "power2.inOut" }, cue("nuclear") + 0.15);
+      tl.fromTo(fine, { attr: { y: F.y + h1 - 22 } }, { attr: { y: F.y + form.h - 22 }, duration: 0.45, ease: "power2.inOut" }, cue("nuclear") + 0.15);
+      tl.fromTo(q2, { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 0.38 }, cue("nuclear") + 0.3);
+      tl.fromTo(boxG, { opacity: 0 }, { opacity: 1, duration: 0.2 }, cue("nuclear") + 0.75);
+
+      // "nuclear": the portrait (skeletons, Reaper and all) and the mantel slide out; the form moves over as one object.
+      var nu = cue("nuclear");
+      tl.to("#nuclear-winters-room", { x: -1100, duration: 0.45, ease: "power2.in" }, nu);
+      tl.fromTo(formG, { x: 0, y: 0, scale: 1, svgOrigin: F.x + " " + F.y },
+        { x: L.form.x - F.x, y: L.form.y - F.y, scale: L.form.s, svgOrigin: F.x + " " + F.y, duration: 0.55, ease: "power2.inOut" }, nu + 0.05);
+
+      // "bombs": the stockpile pops up out of the floor, front rows first.
+      var whs = document.querySelectorAll(".nuclear-winters-wh");
+      gsap.set(whs, { svgOrigin: "0 0" });
+      for (var wrow = 0; wrow < 12; wrow++) {
+        tl.fromTo(document.querySelectorAll('.nuclear-winters-wh[data-row="' + wrow + '"]'), { scaleY: 0, scaleX: 0.5, opacity: 0 },
+          { scaleY: 1, scaleX: 1, opacity: 1, duration: 0.22, ease: "back.out(2.4)" }, cue("bombs") + (11 - wrow) * 0.028);
+      }
+
+      // The one Earth with its one human, then the counter, both before the snowflakes. The warheads all lean at it.
+      tl.fromTo("#nuclear-winters-earth", { opacity: 0, scale: 0.4, transformOrigin: "50% 60%" }, { opacity: 1, scale: 1, transformOrigin: "50% 60%", duration: 0.35, ease: "back.out(1.7)" }, cue("cause"));
+      tl.to(whs, { rotation: -14, duration: 0.3, ease: "back.out(2)", stagger: { each: 0.002 } }, cue("cause") + 0.1);
+      tl.fromTo("#nuclear-winters-winters", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }, cue("one"));
+
+      // "hundred": row by row, faster and faster, each warhead blinks into a snowflake in a puff; the 122nd goes alone.
+      var rowT = [], t = cue("hundred"), step = 0.16;
+      for (var r = 0; r < 11; r++) { rowT.push(t); t += step; step *= 0.86; }
+      rowT.push(rowT[10] + 0.17);
+      rowT.forEach(function (rt, row) {
+        var sel = '[data-row="' + row + '"]';
+        tl.to(document.querySelectorAll(".nuclear-winters-wh" + sel), { scaleX: 1.5, scaleY: 0.2, opacity: 0, duration: 0.06, ease: "power2.in" }, rt);
+        var pf = document.querySelectorAll(".nuclear-winters-puff" + sel);
+        tl.fromTo(pf, { opacity: 0, scale: 0.5, svgOrigin: "0 0" }, { opacity: 1, scale: 1, svgOrigin: "0 0", duration: 0.06, ease: "power2.out" }, rt);
+        tl.to(pf, { opacity: 0, scale: 1.7, duration: 0.2, ease: "power1.in" }, rt + 0.07);
+        tl.fromTo(document.querySelectorAll(".nuclear-winters-flake" + sel), { scale: 0, opacity: 0, svgOrigin: "0 0" },
+          { scale: 1, opacity: 1, svgOrigin: "0 0", duration: 0.14, ease: "back.out(2.5)" }, rt + 0.03);
+      });
+      // The counter has two wheels: past 99 it shows 10, 21, 22 and shudders, until a third wheel is bolted on.
+      var d1 = q("d1"), d0 = q("d0");
+      KIT.onTime(tl, D, function (lt) {
+        var n = 0;
+        rowT.forEach(function (rt, row) { if (lt >= rt) n += row < 11 ? 11 : 1; });
+        var a = String(Math.floor(n / 10) % 10), b = String(n % 10);
+        if (d1.textContent !== a) d1.textContent = a;
+        if (d0.textContent !== b) d0.textContent = b;
+      });
+      tl.fromTo("#nuclear-winters-main", { x: 0 }, { x: 5, duration: 0.04, repeat: 9, yoyo: true, ease: "none" }, rowT[9]);
+      var clank = KIT.after(ID, "twenty-two");
+      tl.fromTo("#nuclear-winters-addon", { opacity: 0, y: -90 }, { opacity: 1, y: 0, duration: 0.2, ease: "power3.in" }, clank - 0.2);
+      tl.fromTo("#nuclear-winters-winters", { y: 0 }, { y: 5, duration: 0.05, repeat: 1, yoyo: true, ease: "power1.out", immediateRender: false }, clank);
+      tl.fromTo(".nuclear-winters-bolt", { rotation: 0, svgOrigin: "0 0" }, { rotation: 180, svgOrigin: "0 0", duration: 0.25, ease: "power2.out" }, clank + 0.08);
+
+      // "despite": the human looks up at the snow. "only": he quietly wraps a scarf on.
+      var de = cue("despite");
+      tl.to("#nuclear-winters-guy-a", { opacity: 0, duration: 0.01 }, de);
+      tl.fromTo("#nuclear-winters-guy-b", { opacity: 0 }, { opacity: 1, duration: 0.01 }, de);
+      tl.fromTo("#nuclear-winters-guy-b .head", { rotation: 0, svgOrigin: "0 -34" }, { rotation: -28, svgOrigin: "0 -34", duration: 0.25, ease: "power2.out" }, de);
+      var arm = "#nuclear-winters-guy-b .arm-r", sc0 = cue("only");
+      tl.fromTo(arm, { rotation: 0, svgOrigin: "17 -26" }, { rotation: 100, svgOrigin: "17 -26", duration: 0.15, ease: "power2.out" }, sc0 + 0.05);
+      tl.fromTo("#nuclear-winters-scarf", { scaleX: 0, svgOrigin: "17 -30" }, { scaleX: 1, svgOrigin: "17 -30", duration: 0.2, ease: "power2.out" }, sc0 + 0.12);
+      tl.fromTo("#nuclear-winters-tail", { rotation: -130, opacity: 0, svgOrigin: "12 -28" }, { rotation: 0, opacity: 1, svgOrigin: "12 -28", duration: 0.22, ease: "back.out(2)" }, sc0 + 0.25);
+      tl.to(arm, { rotation: 0, svgOrigin: "17 -26", duration: 0.18, ease: "power2.inOut" }, sc0 + 0.37);
+
+      // "winters": the snow starts falling on the Earth; from "having" the drift grows until, by "apocalypse?", only his
+      // head and scarf stick out of it.
+      var fz = cue("apocalypse?") + 0.35, g0 = cue("having") - 0.1, g1 = cue("apocalypse?") + 0.05;
+      var grow = function (lt) { var u = Math.min(1, Math.max(0, (lt - g0) / (g1 - g0))); return u * u * (3 - 2 * u); };
+      var driftEl = q("drift"), lumpsEl = q("lumps");
+      KIT.onTime(tl, D, function (lt) {
+        var p = grow(lt);
+        driftEl.setAttribute("d", driftD(p));
+        lumpsEl.setAttribute("d", lumpsD(p));
+        driftEl.setAttribute("opacity", p > 0 ? 1 : 0);
+        lumpsEl.setAttribute("opacity", p > 0.3 ? 1 : 0);
+      });
+      var fallFrom = E.y - E.r - (V ? 260 : 300), t0 = cue("winters"), span = cue("civilization") + 0.5 - t0;
+      document.querySelectorAll(".nuclear-winters-snow").forEach(function (s, i) {
+        var f = snow[i], ts = t0 + (i / snowN) * span, tland = ts + f.dur;
+        var yl = driftY(f.x, grow(tland)) - 4;
+        tl.fromTo(s, { y: fallFrom }, { y: yl, duration: f.dur, ease: "none" }, ts);
+        tl.fromTo(s, { opacity: 0 }, { opacity: 1, duration: 0.12 }, ts);
+        tl.fromTo(s, { x: -f.sway }, { x: f.sway, duration: f.dur / 2, repeat: 1, yoyo: true, ease: "sine.inOut" }, ts);
+        tl.to(s, { opacity: 0, duration: 0.12 }, tland);
+      });
+
+      // "one civilization": the Earth's counter, one wheel.
+      tl.fromTo("#nuclear-winters-civ", { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.3, ease: "back.out(2)" }, cue("one", 2));
+
+      // "civilization": his teeth chatter and he shivers, until "apocalypse?" freezes him solid in a block of ice.
+      var ch = cue("civilization"), beats = Math.round((fz - ch) / 0.05);
+      if (beats % 2) beats += 1;
+      tl.fromTo("#nuclear-winters-guy-b .mouth", { opacity: 1 }, { opacity: 0, duration: 0.01 }, ch);
+      tl.fromTo("#nuclear-winters-teeth", { opacity: 0 }, { opacity: 1, duration: 0.01 }, ch);
+      tl.fromTo("#nuclear-winters-jaw", { y: 0 }, { y: 3.5, duration: 0.05, repeat: beats - 1, yoyo: true, ease: "none" }, ch);
+      tl.fromTo("#nuclear-winters-guy-b", { x: 0 }, { x: 1.6, duration: 0.05, repeat: beats - 1, yoyo: true, ease: "none", immediateRender: false }, ch);
+      tl.fromTo("#nuclear-winters-ice", { opacity: 0, scale: 1.35, svgOrigin: "-6 -53" }, { opacity: 1, scale: 1, svgOrigin: "-6 -53", duration: 0.12, ease: "back.out(2)" }, fz);
+      tl.fromTo("#nuclear-winters-glint", { scale: 0, rotation: -45, svgOrigin: "0 0" }, { scale: 1, rotation: 0, svgOrigin: "0 0", duration: 0.25, ease: "back.out(3)" }, fz + 0.1);
+
+      // Then the pencil comes in over question 2's YES (the tick and its scratch land in eligible, on the wall screen).
+      tl.fromTo("#nuclear-winters-pencil", { opacity: 0, x: 300, y: 120 }, { opacity: 1, x: 0, y: 0, duration: 0.28, ease: "power2.out" }, KIT.after(ID, "apocalypse?") + 0.02);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

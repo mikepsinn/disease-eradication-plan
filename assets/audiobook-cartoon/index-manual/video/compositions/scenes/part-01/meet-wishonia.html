@@ -1,0 +1,302 @@
+<template id="meet-wishonia-template">
+  <!-- meet-wishonia · Layer A (storyboards/part-01-opening.md): Wishonia introduces herself. A brass nameplate slides onto
+       the desk and keeps growing, off the edge of the desk, to fit the title; the wall screen shows the years, and a 1950s
+       unit converter cranks, overheats and blows up in a little mushroom cloud. The charred, bent, smoking wreck blinks,
+       still dings, and spits out its singed card: 4,297 years. Then HOLD while she looks at the camera. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+    #meet-wishonia-cam, #meet-wishonia-bg, #meet-wishonia-back, #meet-wishonia-wish, #meet-wishonia-front, #meet-wishonia-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="meet-wishonia" data-width="1920" data-height="1080" data-start="0" data-duration="15.72">
+    <div id="meet-wishonia-cam">
+      <div id="meet-wishonia-bg"></div>
+      <div id="meet-wishonia-back"></div>
+      <div id="meet-wishonia-wish"></div>
+      <div id="meet-wishonia-front"></div>
+    </div>
+    <div id="meet-wishonia-board"><div id="meet-wishonia-board-in"></div></div>
+    <div id="meet-wishonia-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "meet-wishonia";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, O = KIT.OFFICE;
+      var S = O.screen, hole = [S[0] + 34, S[1] + 34, S[2] - 68, S[3] - 68];
+      var ink = 'stroke="' + C.ink + '"';
+
+      // The standard office, as eligible leaves it (this is a cut). Per shape: the years on the wall screen, the
+      // converter (its box's top-left and scale), and the nameplate, which stands between the out-tray and the stamp
+      // and grows to the left (right: its right edge; left1: where its left end stops, if not just past the title).
+      var L = V
+        ? { label: [540, 306, 40], num: [540, 400, 92], conv: [250, 472, 0.95],
+            plate: { right: 790, left1: -40, top: 1178, h: 76, name: 38, title: 28, pad: 22 } }
+        : { label: [520, 292, 40], num: [520, 396, 100], conv: [200, 470, 1],
+            plate: { right: 1568, top: 804, h: 92, name: 48, title: 30, pad: 23 } };
+
+      q("bg").innerHTML = KIT.office(O.halo[0], O.halo[1]);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      function txt(x, y, size, fam, fill, text, extra) {
+        return '<text x="' + x + '" y="' + y + '" font-family="' + fam + '" font-weight="' + (fam === "Fraunces" ? 900 : 600) + '" font-size="' + size + '" fill="' + fill + '" ' + (extra || "") + ">" + text + "</text>";
+      }
+
+      // ── eligible's last frame: copied from eligible.html (keep the copies the same) ──
+      // The wall screen closed in on the ticked form (and, in 16:9, the edge of nuclear-winters' Earth).
+      var NW = V ? { form: { x: 175.2, y: 1007.6, s: 0.76 } } : { form: { x: 110, y: 200, s: 720 / 820 }, earth: { x: 990, y: 560 } };
+      var F = KIT.FORM_AT, fs = NW.form.s;
+      var mini = KIT.form(ID + "-mini", F.x, F.y, F.w, [{ lines: KIT.FORM_Q[0] }, { lines: KIT.FORM_Q[1] }], { size: F.size });
+      var fw = F.w * fs, fh = mini.h * fs;
+      var k = Math.min((hole[2] - 60) / fw, (hole[3] - 40) / fh);
+      var mx = hole[0] + hole[2] / 2 - (NW.form.x + fw / 2) * k, my = hole[1] + hole[3] / 2 - (NW.form.y + fh / 2) * k;
+      var land = "M-75,-45 C-60,-80 -10,-85 5,-60 C20,-40 -5,-20 10,0 C25,20 -10,35 -30,25 C-50,15 -85,0 -75,-45 Z " +
+        "M25,15 C50,0 80,10 85,35 C88,60 60,80 40,70 C20,60 10,30 25,15 Z M40,-70 C55,-78 75,-60 65,-45 C55,-35 35,-50 40,-70 Z";
+      var nwEarth = NW.earth ? '<g transform="translate(' + NW.earth.x + "," + NW.earth.y + ')"><circle r="110" fill="#FBF5E4" stroke="' + C.line + '" stroke-width="6"/>' +
+        '<path d="' + land + '" fill="url(#' + ID + '-mini-hatch)" stroke="' + C.line + '" stroke-width="3.5" stroke-linejoin="round"/></g>' : "";
+      var was = '<g id="meet-wishonia-was"><g transform="translate(' + mx.toFixed(2) + "," + my.toFixed(2) + ") scale(" + k.toFixed(4) + ')">' + nwEarth +
+        '<g transform="translate(' + (NW.form.x - fs * F.x).toFixed(2) + "," + (NW.form.y - fs * F.y).toFixed(2) + ") scale(" + fs + ')">' + mini.svg + "</g></g></g>";
+      // The desk: Earth's stamped file in the PLANETS out-tray on Venus and Mars, the stamp back at rest, the mug.
+      var EP = V
+        ? { tray: { x: 45, w: 230, lip: 1385, bottom: 1440, venus: 1262, mars: 1300, fs: 22, lab: 26 },
+            file: { x: 300, y: 1262, w: 440, h: 178, tab: [360, 1228, 240, 34], fs: 24 },
+            mark: { w: 330, h: 108, fs: 35 }, stamp: { rest: [870, 1250], k: 0.86 }, mug: [952, 1173, 1.1], land: { x: 53, y: 1342, s: 0.5 } }
+        : { tray: { x: 985, w: 225, lip: 852, bottom: 903, venus: 740, mars: 778, fs: 20, lab: 24 },
+            file: { x: 1215, y: 742, w: 350, h: 158, tab: [1265, 708, 210, 34], fs: 22 },
+            mark: { w: 270, h: 90, fs: 29 }, stamp: { rest: [1660, 903], k: 1 }, mug: [1775, 800, 1.5], land: { x: 993, y: 818, s: 0.6 } };
+      var T = EP.tray, Fl = EP.file, M = EP.mark, A = EP.land;
+      function folder(x, y, w, fill, text, size) {
+        return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + (T.bottom - y) + '" rx="4" fill="' + fill + '" ' + ink + ' stroke-width="4"/>' +
+          '<rect x="' + (x + 9) + '" y="' + (y + 7) + '" width="' + (w - 18) + '" height="' + (size + 12) + '" fill="' + C.cream + '" ' + ink + ' stroke-width="2.5"/>' +
+          '<text x="' + (x + w / 2) + '" y="' + (y + 7 + size + 3) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + C.ink + '">' + text + "</text>";
+      }
+      var trayBack = '<g transform="rotate(-2 ' + (T.x + T.w / 2) + " " + T.venus + ')">' + folder(T.x + 12, T.venus, T.w - 22, C.orange, "VENUS: TOO HOT", T.fs) + "</g>" +
+        '<g transform="rotate(1.5 ' + (T.x + T.w / 2) + " " + T.mars + ')">' + folder(T.x + 6, T.mars, T.w - 16, C.tan, "MARS: NOBODY HOME", T.fs) + "</g>";
+      var trayFront = '<rect x="' + T.x + '" y="' + T.lip + '" width="' + T.w + '" height="' + (T.bottom - T.lip) + '" rx="6" fill="' + C.rust + '" ' + ink + ' stroke-width="5"/>' +
+        '<rect x="' + (T.x + T.w / 2 - 68) + '" y="' + (T.lip + 9) + '" width="136" height="' + (T.bottom - T.lip - 18) + '" rx="3" fill="' + C.cream + '" ' + ink + ' stroke-width="3"/>' +
+        '<text x="' + (T.x + T.w / 2) + '" y="' + ((T.lip + T.bottom) / 2 + T.lab * 0.36).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + T.lab + '" letter-spacing="2" fill="' + C.ink + '">PLANETS</text>';
+      var mcx = Fl.x + Fl.w / 2, mcy = Fl.y + Fl.h / 2;
+      var mark = '<g transform="translate(' + mcx + "," + mcy + ') rotate(-6)"><g opacity="0.92">' +
+        '<rect x="' + -M.w / 2 + '" y="' + -M.h / 2 + '" width="' + M.w + '" height="' + M.h + '" rx="4" fill="none" stroke="' + C.red + '" stroke-width="6"/>' +
+        '<rect x="' + (-M.w / 2 + 9) + '" y="' + (-M.h / 2 + 9) + '" width="' + (M.w - 18) + '" height="' + (M.h - 18) + '" fill="none" stroke="' + C.red + '" stroke-width="2.5"/>' +
+        '<text y="' + (-M.h * 0.06).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + M.fs + '" letter-spacing="1" fill="' + C.red + '">MAY BE ELIGIBLE</text>' +
+        '<text y="' + (M.h * 0.3).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + M.fs + '" letter-spacing="1" fill="' + C.red + '">FOR OPTIMIZATION</text></g></g>';
+      var file = '<g transform="translate(' + A.x + "," + A.y + ") scale(" + A.s + ") translate(" + -Fl.x + "," + -Fl.tab[1] + ')">' +
+        '<rect x="' + Fl.tab[0] + '" y="' + Fl.tab[1] + '" width="' + Fl.tab[2] + '" height="' + (Fl.tab[3] + 10) + '" rx="6" fill="#E2B865" ' + ink + ' stroke-width="5"/>' +
+        '<text x="' + (Fl.tab[0] + Fl.tab[2] / 2) + '" y="' + (Fl.tab[1] + Fl.tab[3] / 2 + Fl.fs * 0.36).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + Fl.fs + '" fill="' + C.ink + '">EARTH: CASE #847</text>' +
+        '<rect x="' + Fl.x + '" y="' + Fl.y + '" width="' + Fl.w + '" height="' + Fl.h + '" rx="4" fill="#E2B865" ' + ink + ' stroke-width="5"/>' + mark + "</g>";
+      var stamp = '<g transform="translate(' + EP.stamp.rest[0] + "," + EP.stamp.rest[1] + ') scale(' + EP.stamp.k + ')" ' + ink + ' stroke-width="5" stroke-linejoin="round">' +
+        '<rect x="-80" y="-18" width="160" height="18" rx="3" fill="' + C.red + '"/>' +
+        '<rect x="-72" y="-54" width="144" height="38" rx="5" fill="' + C.tan + '"/>' +
+        '<rect x="-17" y="-104" width="34" height="52" fill="' + C.rust + '"/>' +
+        '<circle cx="0" cy="-124" r="26" fill="' + C.yellow + '"/></g>';
+      var mug = '<g transform="translate(' + EP.mug[0] + "," + EP.mug[1] + ") scale(" + EP.mug[2] + ')">' + KIT.mug(0, 0) + "</g>";
+      // ── end of the copied part ──
+
+      // ── Wall screen: the years, and the converter that rises in under them ──
+      var years = '<g id="meet-wishonia-years">' +
+        '<g id="meet-wishonia-ylabel">' + txt(L.label[0], L.label[1], L.label[2], "Oswald", C.line, "UPGRADING CIVILIZATIONS:", 'text-anchor="middle" letter-spacing="1"') + "</g>" +
+        '<g id="meet-wishonia-ynum">' + txt(L.num[0] + 5, L.num[1] + 6, L.num[2], "Fraunces", C.orange, "4,297 years", 'text-anchor="middle"') +
+        txt(L.num[0], L.num[1], L.num[2], "Fraunces", C.ink, "4,297 years", 'text-anchor="middle"') + "</g></g>";
+
+      // The converter, in its own units: a 340 x 190 box with two dials, a gear window, a crank, a chimney and a bell.
+      // It overheats and blows up; the wreck (drawn separately, in the same units) has the output card behind it.
+      function gearPath(cx, cy, r, n) {
+        var d = "";
+        for (var i = 0; i < n * 4; i++) {
+          var a = (Math.PI * 2 * i) / (n * 4), rr = i % 4 === 1 || i % 4 === 2 ? r + 7 : r;
+          d += (i ? " L" : "M") + (cx + rr * Math.cos(a)).toFixed(1) + "," + (cy + rr * Math.sin(a)).toFixed(1);
+        }
+        return d + " Z";
+      }
+      function dial(id, cx, cy) {
+        var ticks = "";
+        for (var i = 0; i < 9; i++) {
+          var a = ((135 + i * 33.75) * Math.PI) / 180;
+          ticks += "M" + (cx + 29 * Math.cos(a)).toFixed(1) + "," + (cy + 29 * Math.sin(a)).toFixed(1) + " L" + (cx + 35 * Math.cos(a)).toFixed(1) + "," + (cy + 35 * Math.sin(a)).toFixed(1) + " ";
+        }
+        return '<circle cx="' + cx + '" cy="' + cy + '" r="40" fill="#FBF6E6" ' + ink + ' stroke-width="4"/>' +
+          '<path d="' + ticks + '" ' + ink + ' stroke-width="3"/>' +
+          '<g id="meet-wishonia-' + id + '"><path d="M' + cx + "," + cy + " V" + (cy - 30) + '" stroke="' + C.red + '" stroke-width="5" stroke-linecap="round"/></g>' +
+          '<circle cx="' + cx + '" cy="' + cy + '" r="6" fill="' + C.ink + '"/>';
+      }
+      var puffs = [[34, -62, 15], [12, -80, 19], [-12, -96, 24]].map(function (p) {
+        return '<circle class="meet-wishonia-puff" cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '" fill="#E9E1CC" ' + ink + ' stroke-width="3"/>';
+      }).join("");
+      var machine =
+        '<rect x="26" y="186" width="44" height="12" rx="3" fill="' + C.ink + '"/><rect x="270" y="186" width="44" height="12" rx="3" fill="' + C.ink + '"/>' +
+        '<rect id="meet-wishonia-body" x="0" y="0" width="340" height="190" rx="18" fill="' + C.peri + '" ' + ink + ' stroke-width="5"/>' +
+        '<rect x="14" y="16" width="312" height="150" rx="10" fill="' + C.cream + '" ' + ink + ' stroke-width="3"/>' +
+        dial("nl", 70, 92) + dial("nr", 270, 92) +
+        '<defs><clipPath id="meet-wishonia-gwin"><circle cx="170" cy="92" r="42"/></clipPath></defs>' +
+        '<circle cx="170" cy="92" r="44" fill="' + C.ink + '"/><g clip-path="url(#meet-wishonia-gwin)">' +
+        '<g id="meet-wishonia-g1"><path d="' + gearPath(156, 80, 24, 10) + '" fill="' + C.yellow + '" ' + ink + ' stroke-width="3"/><circle cx="156" cy="80" r="7" fill="' + C.ink + '"/></g>' +
+        '<g id="meet-wishonia-g2"><path d="' + gearPath(190, 112, 14, 7) + '" fill="' + C.orange + '" ' + ink + ' stroke-width="3"/><circle cx="190" cy="112" r="5" fill="' + C.ink + '"/></g></g>' +
+        '<circle cx="170" cy="92" r="44" fill="none" stroke="' + C.tan + '" stroke-width="4"/>' +
+        '<path d="M138,172 v10 M154,172 v10 M170,172 v10 M186,172 v10 M202,172 v10" ' + ink + ' stroke-width="4" stroke-linecap="round"/>' +
+        '<rect x="34" y="-40" width="26" height="40" fill="' + C.ink + '"/><rect x="28" y="-50" width="38" height="12" rx="3" fill="' + C.ink + '"/>' + puffs +
+        '<g id="meet-wishonia-bell"><rect x="296" y="-12" width="8" height="12" fill="' + C.ink + '"/><path d="M278,-12 A22,22 0 0 1 322,-12 Z" fill="' + C.yellow + '" ' + ink + ' stroke-width="4"/><circle cx="300" cy="-36" r="5" fill="' + C.ink + '"/></g>' +
+        '<g id="meet-wishonia-crank"><path d="M-2,120 V84" ' + ink + ' stroke-width="9" stroke-linecap="round"/><circle cx="-2" cy="82" r="9" fill="' + C.red + '" ' + ink + ' stroke-width="3"/></g>' +
+        '<circle cx="-2" cy="120" r="9" fill="' + C.cream + '" ' + ink + ' stroke-width="3"/>';
+      // The wreck: burnt black, the top dented, the right foot snapped off (the box slumps onto that corner), the chimney
+      // bent over, a gear sprung out on its spring, the crank hanging limp, two white eyes where the dials were, three
+      // wisps of smoke, the sooty bell that still works, and the singed output card behind it all.
+      var soot = "#2B2420", soot2 = "#3D332C", soot3 = "#5E4E42";
+      var eye = function (s, cx, cy) {
+        return '<circle cx="' + cx + '" cy="' + cy + '" r="40" fill="' + soot3 + '" ' + ink + ' stroke-width="4"/>' +
+          '<path d="M' + (cx - 30) + "," + (cy - 20) + " l12,8 l-4,10 l14,6 M" + (cx + 26) + "," + (cy + 24) + ' l-10,-6 l2,-10" fill="none" stroke="#8A776A" stroke-width="3" stroke-linejoin="round"/>' +
+          '<defs><clipPath id="meet-wishonia-eye' + s + '"><circle cx="' + cx + '" cy="' + cy + '" r="22"/></clipPath></defs>' +
+          '<circle cx="' + cx + '" cy="' + cy + '" r="22" fill="#FFFFFF" ' + ink + ' stroke-width="2.5"/><circle cx="' + (cx + 3) + '" cy="' + (cy + 2) + '" r="8" fill="' + C.ink + '"/>' +
+          '<g clip-path="url(#meet-wishonia-eye' + s + ')"><rect class="meet-wishonia-lid" x="' + (cx - 24) + '" y="' + (cy - 24) + '" width="48" height="48" fill="' + soot + '"/></g>' +
+          '<circle cx="' + cx + '" cy="' + cy + '" r="22" fill="none" ' + ink + ' stroke-width="2.5"/>';
+      };
+      var wisp = function (x, y) {
+        return '<g transform="translate(' + x + "," + y + ')"><g class="meet-wishonia-wisp"><path d="M0,0 q-9,-11 0,-22 q9,-11 0,-22" fill="none" stroke="#8C8782" stroke-width="7" stroke-linecap="round" opacity="0.9"/></g></g>';
+      };
+      var wcard = '<g id="meet-wishonia-wcard">' +
+        '<rect x="335" y="12" width="330" height="164" rx="8" fill="#F4E9CF" stroke="#5A3E2B" stroke-width="5"/>' +
+        '<path d="M628,12 H657 Q665,12 665,20 V74 Q656,62 650,64 Q646,46 636,42 Q640,26 628,12 Z" fill="#3B2A1E" opacity="0.85"/>' +
+        '<path d="M335,150 Q350,146 352,176 H343 Q335,176 335,168 Z" fill="#3B2A1E" opacity="0.6"/>' +
+        txt(503, 62, 30, "Oswald", C.line, "IN EARTH TIME:", 'text-anchor="middle" letter-spacing="1"') +
+        '<path d="M388,78 H618" stroke="' + C.orange + '" stroke-width="3"/>' +
+        txt(506, 141, 46, "Fraunces", C.orange, "4,297 years", 'text-anchor="middle"') + txt(503, 138, 46, "Fraunces", C.ink, "4,297 years", 'text-anchor="middle"') + "</g>";
+      var wreck = '<g id="meet-wishonia-wreck" opacity="0">' +
+        '<rect x="268" y="192" width="44" height="12" rx="3" fill="' + C.ink + '" transform="rotate(-24 290 198)"/>' +
+        '<g transform="rotate(-3 20 196)">' + wcard +
+        '<rect x="26" y="186" width="44" height="12" rx="3" fill="' + C.ink + '"/>' +
+        '<g transform="rotate(-38 47 2)"><rect x="34" y="-40" width="26" height="42" fill="' + C.ink + '"/><rect x="28" y="-50" width="38" height="12" rx="3" fill="' + C.ink + '"/></g>' +
+        '<path d="M210,10 l-12,-8 l22,-6 l-18,-9 l22,-6 l-16,-8" fill="none" stroke="#9A9088" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>' +
+        '<path d="' + gearPath(212, -34, 11, 7) + '" fill="' + soot3 + '" ' + ink + ' stroke-width="3"/><circle cx="212" cy="-34" r="4" fill="' + C.ink + '"/>' +
+        '<path d="M2,12 Q2,-2 16,0 L116,4 L146,24 L172,10 L326,4 Q340,4 340,18 L342,178 Q342,192 328,192 L14,190 Q0,190 0,176 Z" fill="' + soot + '" ' + ink + ' stroke-width="5" stroke-linejoin="round"/>' +
+        '<path d="M16,28 L112,20 L144,38 L172,26 L324,18 L326,164 L18,166 Z" fill="' + soot2 + '" ' + ink + ' stroke-width="3" stroke-linejoin="round"/>' +
+        eye("l", 70, 96) + eye("r", 270, 96) +
+        '<circle cx="170" cy="96" r="40" fill="' + C.ink + '"/><path d="' + gearPath(160, 86, 20, 9) + '" fill="' + soot3 + '" ' + ink + ' stroke-width="3"/>' +
+        '<path d="M136,174 v10 M152,176 v9 M170,174 v6 M186,175 v10" ' + ink + ' stroke-width="4" stroke-linecap="round"/>' +
+        '<path d="M-2,122 V160" ' + ink + ' stroke-width="9" stroke-linecap="round"/><circle cx="-2" cy="162" r="9" fill="#6E2A1E" ' + ink + ' stroke-width="3"/>' +
+        '<circle cx="-2" cy="122" r="9" fill="' + soot3 + '" ' + ink + ' stroke-width="3"/>' +
+        '<g transform="rotate(14 300 -2)"><g id="meet-wishonia-wbell"><rect x="296" y="-12" width="8" height="12" fill="' + C.ink + '"/><path d="M278,-12 A22,22 0 0 1 322,-12 Z" fill="#8F6E2E" ' + ink + ' stroke-width="4"/><circle cx="300" cy="-36" r="5" fill="' + C.ink + '"/></g>' +
+        '<path id="meet-wishonia-wding" d="M300,-48 V-62 M272,-36 L260,-46 M328,-36 L340,-46" ' + ink + ' stroke-width="4" stroke-linecap="round"/></g>' +
+        wisp(10, -58) + wisp(146, 8) + wisp(320, -4) + "</g></g>";
+      var cv = L.conv;
+      var converter = '<g transform="translate(' + cv[0] + "," + cv[1] + ") scale(" + cv[2] + ')"><g id="meet-wishonia-conv">' +
+        '<g id="meet-wishonia-clean"><g id="meet-wishonia-shake">' + machine + "</g></g>" + wreck + "</g></g>";
+      // The blast: a little mushroom cloud standing on the converter's spot, and a white flash on the screen.
+      var blast = '<g transform="translate(' + (cv[0] + 170 * cv[2]).toFixed(1) + "," + (cv[1] + 198 * cv[2]).toFixed(1) + ") scale(" + (V ? 0.42 : 0.48) + ')"><g id="meet-wishonia-blast">' + KIT.nuke() + "</g></g>" +
+        '<rect id="meet-wishonia-flash" x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" fill="#FFFFFF" opacity="0"/>';
+      q("back").innerHTML = KIT.svg(W, H, KIT.wallScreen(S[0], S[1], S[2], S[3]) + KIT.paperDefs(ID + "-mini") +
+        '<defs><clipPath id="meet-wishonia-hole"><rect x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" rx="22"/></clipPath></defs>' +
+        '<g clip-path="url(#meet-wishonia-hole)">' + was + years + converter + blast + "</g>");
+      // both questions ticked, as eligible ends
+      document.querySelectorAll("#meet-wishonia-was .tick").forEach(function (t) { t.setAttribute("stroke-dashoffset", "0"); });
+
+      // ── The nameplate ──
+      // Text widths per pixel of font size, measured in Chromium with the project fonts; textLength pins them.
+      var P = L.plate;
+      var nameW = 6.2565 * P.name, aW = 9.3462 * P.title, bW = 15.1808 * P.title, sp = 0.2346 * P.title;
+      var R = P.right, L0 = R - Math.max(nameW, aW) - 2 * P.pad;
+      var a0 = L0 + P.pad, b0 = a0 + aW + sp;
+      // the title slides left with the growing plate until its end reaches the right edge
+      var shift = R - P.pad - (b0 + bW);
+      var L1 = P.left1 !== undefined ? P.left1 : a0 + shift - P.pad;
+      var c0 = (L0 + R) / 2, c1 = (a0 + R - P.pad) / 2 + shift / 2;
+      var clipX = L1 - 100, clip0 = a0 + aW + 2, clip1 = R - P.pad + 3;
+      var top = P.top, ph = P.h, ty = top + ph - P.title * 0.33;
+      var plate = '<defs><clipPath id="meet-wishonia-tclip"><rect id="meet-wishonia-tclip-r" x="' + clipX + '" y="' + (top - 10) + '" width="' + (clip0 - clipX) + '" height="' + (ph + 20) + '"/></clipPath></defs>' +
+        '<g id="meet-wishonia-plate">' +
+        '<rect id="meet-wishonia-pbase" x="' + (L0 - 12) + '" y="' + (top - 9) + '" width="' + (R - L0 + 24) + '" height="' + (ph + 18) + '" rx="8" fill="' + C.rust + '" ' + ink + ' stroke-width="5"/>' +
+        '<rect id="meet-wishonia-pface" x="' + L0 + '" y="' + top + '" width="' + (R - L0) + '" height="' + ph + '" rx="5" fill="' + C.yellow + '" ' + ink + ' stroke-width="3"/>' +
+        '<rect id="meet-wishonia-pshine" x="' + (L0 + 7) + '" y="' + (top + 6) + '" width="' + (R - L0 - 14) + '" height="' + (ph - 12) + '" rx="3" fill="none" stroke="#F6D98A" stroke-width="2"/>' +
+        '<g id="meet-wishonia-name">' + txt(c0, top + P.name * 1.02, P.name, "Oswald", C.ink, "WISHONIA LOVE", 'text-anchor="middle" textLength="' + nameW.toFixed(1) + '"') + "</g>" +
+        '<g clip-path="url(#meet-wishonia-tclip)"><g id="meet-wishonia-title">' +
+        '<g id="meet-wishonia-ta">' + txt(a0, ty, P.title, "Inter", C.ink, "CEO and President,", 'textLength="' + aW.toFixed(1) + '"') + "</g>" +
+        txt(b0, ty, P.title, "Inter", C.ink, "Universe Optimization Services", 'textLength="' + bW.toFixed(1) + '"') + "</g></g></g>";
+      // The plate stands in front of the out-tray and slides in behind the stamp and the mug.
+      q("front").innerHTML = KIT.svg(W, H, KIT.desk.apply(null, O.desk) + trayBack + file + trayFront + plate + stamp + mug);
+
+      q("board-in").innerHTML = KIT.countdownBoard();
+      KIT.placeBoard(q("board"), q("board-in"));
+      var board = q("board-in").firstChild;
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("wish"), { scene: ID, x: O.wish.x, y: O.wish.y, w: O.wish.w });
+      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+
+      // "Wishonia": the plate slides onto the desk. "President": the title line appears under the name.
+      tl.fromTo("#meet-wishonia-plate", { x: W - L0 + 60 }, { x: 0, duration: 0.5, ease: "power3.out" }, cue("Wishonia"));
+      tl.fromTo("#meet-wishonia-ta", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }, cue("President"));
+      // "Universe Optimization Services": the plate keeps growing, off the edge of the desk, until the title fits.
+      var u = cue("Universe"), GROW = 1.3;
+      function grow(sel, from, to) { tl.fromTo(sel, { attr: from }, { attr: to, duration: GROW, ease: "power2.out" }, u); }
+      grow("#meet-wishonia-pbase", { x: L0 - 12, width: R - L0 + 24 }, { x: L1 - 12, width: R - L1 + 24 });
+      grow("#meet-wishonia-pface", { x: L0, width: R - L0 }, { x: L1, width: R - L1 });
+      grow("#meet-wishonia-pshine", { x: L0 + 7, width: R - L0 - 14 }, { x: L1 + 7, width: R - L1 - 14 });
+      grow("#meet-wishonia-tclip-r", { width: clip0 - clipX }, { width: clip1 - clipX });
+      tl.fromTo("#meet-wishonia-title", { x: 0 }, { x: shift, duration: GROW, ease: "power2.out" }, u);
+      tl.fromTo("#meet-wishonia-name", { x: 0 }, { x: c1 - c0, duration: GROW, ease: "power2.out" }, u);
+
+      // "four thousand" (first): the screen switches from the form to the years.
+      var t4 = cue("four");
+      tl.to("#meet-wishonia-was", { opacity: 0, duration: 0.1 }, t4);
+      tl.fromTo("#meet-wishonia-ylabel", { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }, t4 + 0.05);
+      tl.fromTo("#meet-wishonia-ynum", { opacity: 0, scale: 1.6, transformOrigin: "50% 60%" }, { opacity: 1, scale: 1, transformOrigin: "50% 60%", duration: 0.3, ease: "back.out(2)" }, t4 + 0.15);
+
+      // "which": the converter rises into the screen. "Earth time": it cranks (the whirr): crank, gears and both dials
+      // spin, it shakes harder and harder, glows red, puffs steam and rattles its bell, until 1.1 s later, where the
+      // clank used to be, it blows up: a white flash, the room shakes, a little mushroom cloud (the boom).
+      var te = cue("Earth"), tk = te + 1.1;
+      tl.fromTo("#meet-wishonia-conv", { y: 300 }, { y: 0, duration: 0.3, ease: "power3.out" }, cue("which"));
+      function spin(sel, origin, from, to) {
+        tl.fromTo(sel, { rotation: from, svgOrigin: origin }, { rotation: to, svgOrigin: origin, duration: tk - te, ease: "power1.in" }, te);
+      }
+      spin("#meet-wishonia-crank", "-2 120", 0, 1080);
+      spin("#meet-wishonia-g1", "156 80", 0, 720);
+      spin("#meet-wishonia-g2", "190 112", 0, -1234);
+      spin("#meet-wishonia-nl", "70 92", -120, 780);
+      spin("#meet-wishonia-nr", "270 92", -120, -660);
+      tl.fromTo("#meet-wishonia-body", { attr: { fill: C.peri } }, { attr: { fill: "#D8573A" }, duration: tk - te, ease: "power2.in" }, te);
+      gsap.set("#meet-wishonia-shake", { svgOrigin: "170 190" });
+      tl.fromTo("#meet-wishonia-shake", { x: -2 }, { x: 2, duration: 0.05, repeat: 11, yoyo: true, ease: "sine.inOut" }, te);
+      tl.fromTo("#meet-wishonia-shake", { x: -5, rotation: -2 }, { x: 5, rotation: 2, duration: 0.04, repeat: 11, yoyo: true, ease: "none", immediateRender: false }, te + 0.6);
+      tl.fromTo("#meet-wishonia-bell", { y: 0 }, { y: -4, duration: 0.04, repeat: 11, yoyo: true, ease: "none" }, te + 0.6);
+      document.querySelectorAll(".meet-wishonia-puff").forEach(function (p, i) {
+        [0, 1].forEach(function (k) {
+          var t = te + 0.3 + k * 0.4 + i * 0.08;
+          tl.fromTo(p, { opacity: 0, scale: 0.3, x: 0, y: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.12, ease: "back.out(2)" }, t);
+          tl.to(p, { x: -16, y: -24, opacity: 0, duration: 0.25, ease: "power1.in" }, t + 0.13);
+        });
+      });
+      KIT.boom(tl, "#meet-wishonia-blast", tk, { flash: "#meet-wishonia-flash", shake: q("cam") });
+      // Under the flash the converter becomes its wreck; the cloud clears.
+      tl.to("#meet-wishonia-clean", { opacity: 0, duration: 0.01 }, tk + 0.04);
+      tl.fromTo("#meet-wishonia-wreck", { opacity: 0 }, { opacity: 1, duration: 0.01 }, tk + 0.04);
+      tl.to("#meet-wishonia-blast", { opacity: 0, duration: 0.45, ease: "power1.in" }, tk + 1.15);
+      // The wreck smokes; its eyes pop open in the soot and blink.
+      var tb = KIT.after(ID, "years.", 2);
+      document.querySelectorAll(".meet-wishonia-wisp").forEach(function (w, i) {
+        var t = tk + 0.5 + i * 0.1;
+        gsap.set(w, { svgOrigin: "0 0" });
+        tl.fromTo(w, { rotation: -9, scaleY: 0.9 }, { rotation: 9, scaleY: 1.1, duration: (tb - t) / 6, repeat: 5, yoyo: true, ease: "sine.inOut" }, t);
+      });
+      var lids = document.querySelectorAll(".meet-wishonia-lid");
+      lids.forEach(function (lid) { gsap.set(lid, { scaleY: 1, svgOrigin: (+lid.getAttribute("x") + 24) + " " + lid.getAttribute("y") }); });
+      tl.to(lids, { keyframes: [{ scaleY: 0, duration: 0.08, ease: "power2.out" }, { scaleY: 0, duration: 0.3 }, { scaleY: 1, duration: 0.05 }, { scaleY: 0, duration: 0.07 }] }, tk + 1.62);
+
+      // after "years." (second): the wreck's bell still dings and the singed card slides out with the same number.
+      // Then HOLD for the look.
+      tl.to("#meet-wishonia-wbell", { keyframes: [{ y: -10, duration: 0.08, ease: "power2.out" }, { y: 0, duration: 0.2, ease: "bounce.out" }] }, tb);
+      tl.fromTo("#meet-wishonia-wding", { opacity: 0 }, { opacity: 1, duration: 0.04 }, tb);
+      tl.to("#meet-wishonia-wding", { opacity: 0, duration: 0.3 }, tb + 0.2);
+      tl.fromTo("#meet-wishonia-wcard", { x: -332, opacity: 0 }, { x: 0, opacity: 1, duration: 0.32, ease: "back.out(1.3)" }, tb);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

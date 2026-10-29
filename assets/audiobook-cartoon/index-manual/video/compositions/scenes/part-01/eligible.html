@@ -1,0 +1,282 @@
+<template id="eligible-template">
+  <!-- eligible · Layer A (storyboards/part-01-opening.md): zoom out of the wall screen, which still shows nuclear-winters'
+       last frame; it closes in on the form and the pencil ticks YES on question 2. "If" → the stamp lifts; before
+       "eligible" → a huff on it; "eligible" → the stamp slams onto EARTH: CASE #847 (MAY BE ELIGIBLE FOR OPTIMIZATION);
+       after "optimization." → the file slides into the PLANETS out-tray on top of Venus and Mars. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+    #eligible-cam, #eligible-bg, #eligible-screen, #eligible-wish, #eligible-front, #eligible-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="eligible" data-width="1920" data-height="1080" data-start="0" data-duration="5.3">
+    <div id="eligible-cam">
+      <div id="eligible-bg"></div>
+      <div id="eligible-screen"></div>
+      <div id="eligible-wish"></div>
+      <div id="eligible-front"></div>
+    </div>
+    <div id="eligible-board"><div id="eligible-board-in"></div></div>
+    <div id="eligible-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "eligible";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var O = KIT.OFFICE;
+
+      // ── Copied from nuclear-winters.html, to draw its last frame on the wall screen: keep the two copies the same. ──
+      // Where things end up, for each canvas shape. form: where FORM_AT moves to (top-left corner and scale).
+      var L = V
+        ? { form: { x: 175.2, y: 1007.6, s: 0.76 }, earth: { x: 225, y: 700, r: 105 }, guy: 0.8,
+            grid: { x: 470, y: 470, dx: 50, dy: 33, r: 11 }, civX: 225, winX: 720, labY: 884,
+            wheel: { lab: 30, w: 42, h: 58, gap: 5, fs: 46, pad: 7 } }
+        : { form: { x: 110, y: 200, s: 720 / 820 }, earth: { x: 990, y: 560, r: 110 }, guy: 0.9,
+            grid: { x: 1170, y: 200, dx: 40, dy: 44, r: 13 }, civX: 990, winX: 1370, labY: 748,
+            wheel: { lab: 34, w: 50, h: 70, gap: 6, fs: 56, pad: 8 } };
+      // A red six-armed snowflake around (0,0).
+      function flake(r) {
+        var d = "", k, a;
+        for (k = 0; k < 3; k++) {
+          a = (k * Math.PI) / 3;
+          d += "M" + (-r * Math.cos(a)).toFixed(1) + "," + (-r * Math.sin(a)).toFixed(1) + " L" + (r * Math.cos(a)).toFixed(1) + "," + (r * Math.sin(a)).toFixed(1) + " ";
+        }
+        for (k = 0; k < 6; k++) {
+          a = (k * Math.PI) / 3;
+          var px = 0.58 * r * Math.cos(a), py = 0.58 * r * Math.sin(a);
+          [-1, 1].forEach(function (s) {
+            var b = a + (s * Math.PI) / 4;
+            d += "M" + px.toFixed(1) + "," + py.toFixed(1) + " l" + (0.36 * r * Math.cos(b)).toFixed(1) + "," + (0.36 * r * Math.sin(b)).toFixed(1) + " ";
+          });
+        }
+        return '<path d="' + d + '" fill="none" stroke="' + C.war + '" stroke-width="' + (r * 0.25).toFixed(1) + '" stroke-linecap="round"/>';
+      }
+      // The snowdrift on the Earth at height p (0 to 1): a pile on the Earth's surface between +-a, flat across the
+      // human and flaring out at the foot, that reaches his neck (just under the scarf) at p = 1. driftY: its top at x
+      // (from the Earth's center).
+      function driftY(x, p) {
+        var E = L.earth, a = E.r * 0.9, u = Math.abs(x / a), peak = 124 * L.guy - 6;
+        var s = Math.min(1, Math.max(0, (u - 0.34) / 0.66)), bell = 1 - s * s * (3 - 2 * s);
+        var lump = 1 + 0.06 * Math.sin(6 * Math.PI * x / a) * s;
+        return E.y - Math.sqrt(E.r * E.r - x * x) - p * peak * bell * lump;
+      }
+      function driftD(p) {
+        var E = L.earth, a = E.r * 0.9, n = 36, pts = [];
+        for (var i = 0; i <= n; i++) {
+          var x = -a + (2 * a * i) / n;
+          pts.push((E.x + x).toFixed(1) + "," + driftY(x, p).toFixed(1));
+        }
+        return "M" + pts.join(" L") + " A" + E.r + "," + E.r + " 0 0 0 " + (E.x - a).toFixed(1) + "," + (E.y - Math.sqrt(E.r * E.r - a * a)).toFixed(1) + " Z";
+      }
+      // Snow-lump lines inside the drift: short arcs at [x, height fraction] (they rise with it).
+      function lumpsD(p) {
+        var E = L.earth, w = E.r * 0.16;
+        return [[-0.42, 0.55], [0.36, 0.7], [-0.05, 0.86]].map(function (m) {
+          var x = m[0] * E.r, y0 = E.y - Math.sqrt(E.r * E.r - x * x), y = y0 + (driftY(x, p) - y0) * m[1];
+          return "M" + (E.x + x - w).toFixed(1) + "," + y.toFixed(1) + " q" + w.toFixed(1) + "," + (-w * 0.55).toFixed(1) + " " + (2 * w).toFixed(1) + ",0";
+        }).join(" ");
+      }
+      // The Earth, its one human (a: facing us, b: looking up, with the scarf, chattering teeth and the ice block), the
+      // drift, the 122 snowflakes and the two counters. The markup is the last frame; nuclear-winters animates up to it.
+      function nwArt(pid) {
+        var G = L.grid, S = L.wheel, E = L.earth;
+        var label = function (x, text, color) {
+          return '<text x="' + x + '" y="' + L.labY + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + S.lab + '" letter-spacing="1" fill="' + color + '">' + text + "</text>";
+        };
+        var wheel = function (x, y, digit, did) {
+          return '<rect x="' + x + '" y="' + y + '" width="' + S.w + '" height="' + S.h + '" rx="6" fill="' + C.slate + '"/>' +
+            "<text" + (did ? ' id="' + did + '"' : "") + ' x="' + (x + S.w / 2) + '" y="' + (y + S.h / 2 + S.fs * 0.36).toFixed(1) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + S.fs + '" fill="' + C.yellow + '">' + digit + "</text>" +
+            '<path d="M' + x + "," + (y + S.h / 2) + " h" + S.w + '" stroke="' + C.ink + '" stroke-width="2.5"/>';
+        };
+        var top = L.labY + Math.round(S.lab * 0.42), hh = S.h + 2 * S.pad;
+        var flakes = "";
+        for (var i = 0; i < 122; i++) {
+          var row = Math.floor(i / 11), col = i % 11;
+          flakes += '<g transform="translate(' + (G.x + col * G.dx) + "," + (G.y + row * G.dy) + ')"><g class="' + pid + '-flake" data-row="' + row + '">' + flake(G.r) + "</g></g>";
+        }
+        var cw = S.w + 2 * S.pad;
+        var civ = '<g id="' + pid + '-civ">' + label(L.civX, "CIVILIZATIONS:", C.line) +
+          '<rect x="' + (L.civX - cw / 2) + '" y="' + top + '" width="' + cw + '" height="' + hh + '" rx="10" fill="' + C.navy + '" stroke="' + C.ink + '" stroke-width="4"/>' +
+          wheel(L.civX - S.w / 2, top + S.pad, "1") + "</g>";
+        var mw = 2 * S.w + S.gap + 2 * S.pad, mx = L.winX - mw / 2, ax = mx + S.pad - S.gap - S.w;
+        var bolt = function (bx, by) {
+          return '<g transform="translate(' + bx + "," + by + ')"><g class="' + pid + '-bolt"><circle r="6" fill="' + C.cream + '" stroke="' + C.ink + '" stroke-width="2.5"/><path d="M-3.5,0 h7" stroke="' + C.ink + '" stroke-width="2.2"/></g></g>';
+        };
+        var winters = '<g id="' + pid + '-winters">' + label(L.winX, "NUCLEAR WINTERS:", C.war) +
+          '<g id="' + pid + '-main"><rect x="' + mx + '" y="' + top + '" width="' + mw + '" height="' + hh + '" rx="10" fill="' + C.navy + '" stroke="' + C.ink + '" stroke-width="4"/>' +
+          wheel(mx + S.pad, top + S.pad, "0", pid + "-d1") + wheel(mx + S.pad + S.w + S.gap, top + S.pad, "0", pid + "-d0") + "</g>" +
+          // the third wheel, on a mismatched plate, bolted over the housing's edge
+          '<g id="' + pid + '-addon"><rect x="' + (ax - S.pad) + '" y="' + (top - 5) + '" width="' + (mx + 4 - ax + S.pad) + '" height="' + (hh + 10) + '" rx="4" fill="' + C.tan + '" stroke="' + C.ink + '" stroke-width="4"/>' +
+          wheel(ax, top + S.pad, "1") + bolt(mx + 1, top + 4) + bolt(mx + 1, top + hh - 4) + "</g></g>";
+        var k = E.r / 110;
+        var land = "M-75,-45 C-60,-80 -10,-85 5,-60 C20,-40 -5,-20 10,0 C25,20 -10,35 -30,25 C-50,15 -85,0 -75,-45 Z " +
+          "M25,15 C50,0 80,10 85,35 C88,60 60,80 40,70 C20,60 10,30 25,15 Z M40,-70 C55,-78 75,-60 65,-45 C55,-35 35,-50 40,-70 Z";
+        var ink = C.line;
+        var guy = { tone: 2, outfit: "shirt", color: 1, hair: 0, mood: "flat" };
+        var guyB = { tone: 2, outfit: "shirt", color: 1, hair: 0, mood: "flat", look: "right" };
+        var scarf = '<g id="' + pid + '-scarf"><path d="M-16,-37 Q0,-30 16,-37 L17,-24 Q0,-17 -17,-24 Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+          '<path d="M-15,-30.5 Q0,-24 15,-30.5" fill="none" stroke="' + C.cream + '" stroke-width="2.6"/></g>' +
+          '<g id="' + pid + '-tail"><path d="M7,-29 L17,-28 L20,6 L10,7 Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+          '<path d="M11,7 v6 M14.5,6.5 v6 M18,6 v6" stroke="' + ink + '" stroke-width="2.2" stroke-linecap="round"/></g>';
+        // chattering teeth where the mouth is (the jaw is the lower row)
+        var row2 = function (y) {
+          return '<rect x="0" y="' + y + '" width="15" height="5" rx="1.2" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.6"/><path d="M5,' + y + " v5 M10," + y + ' v5" stroke="' + ink + '" stroke-width="1.2"/>';
+        };
+        var teeth = '<g id="' + pid + '-teeth">' + row2(-52.5) + '<g id="' + pid + '-jaw">' + row2(-47.5) + "</g></g><!--head-end-->";
+        // the ice block around the head and scarf, with a glint
+        var ice = '<g id="' + pid + '-ice"><g transform="rotate(-6 -6 -53)">' +
+          '<rect x="-40" y="-88" width="68" height="70" rx="8" fill="#CDEBE8" fill-opacity="0.45" stroke="' + ink + '" stroke-width="3.2"/>' +
+          '<path d="M-32,-60 V-80 H-14 M18,-80 H21 M-32,-50 V-46" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/></g>' +
+          '<g transform="translate(18,-74)"><g id="' + pid + '-glint">' + KIT.star(0, 0, 15, C.line) + KIT.star(0, 0, 11, "#FFFFFF") + "</g></g></g>";
+        var gy = E.y - E.r - 102 * L.guy + 4;
+        var earth = '<g id="' + pid + '-earth"><g transform="translate(' + E.x + "," + E.y + ") scale(" + k.toFixed(3) + ')">' +
+          '<circle r="110" fill="#FBF5E4" stroke="' + ink + '" stroke-width="6"/>' +
+          '<path d="' + land + '" fill="url(#' + pid + '-hatch)" stroke="' + ink + '" stroke-width="3.5" stroke-linejoin="round"/></g>' +
+          '<g transform="translate(' + E.x + "," + gy.toFixed(1) + ") scale(" + L.guy + ')">' +
+          '<g id="' + pid + '-guy-a">' + KIT.person(guy) + "</g>" +
+          '<g id="' + pid + '-guy-b">' + KIT.person(guyB).replace("<!--head-end-->", teeth) + scarf + ice + "</g></g>" +
+          // the drift, in front of the human, with a few snow-lump lines
+          '<path id="' + pid + '-drift" d="' + driftD(1) + '" fill="#FFFFFF" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<path id="' + pid + '-lumps" d="' + lumpsD(1) + '" fill="none" stroke="#8FB3AF" stroke-width="3" stroke-linecap="round"/></g>';
+        return { flakes: flakes, civ: civ, winters: winters, earth: earth };
+      }
+      // ── end of the shared part ──
+
+      // Desk props for each canvas shape. In 9:16 the desk top is at 1250, just under Wishonia's chin, so the flat
+      // things (file, tray) lie across the desk edge and the standing things (stamp, mug) stand on it.
+      var P = V
+        ? { tray: { x: 45, w: 230, lip: 1385, bottom: 1440, venus: 1262, mars: 1300, fs: 22, lab: 26 },
+            file: { x: 300, y: 1262, w: 440, h: 178, tab: [360, 1228, 240, 34], fs: 24 },
+            mark: { w: 330, h: 108, fs: 35 }, stamp: { rest: [870, 1250], up: [870, 1070], k: 0.86 },
+            mug: [952, 1173, 1.1], land: { x: 53, y: 1342, s: 0.5 } }
+        : { tray: { x: 985, w: 225, lip: 852, bottom: 903, venus: 740, mars: 778, fs: 20, lab: 24 },
+            file: { x: 1215, y: 742, w: 350, h: 158, tab: [1265, 708, 210, 34], fs: 22 },
+            mark: { w: 270, h: 90, fs: 29 }, stamp: { rest: [1660, 903], up: [1660, 688], k: 1 },
+            mug: [1775, 800, 1.5], land: { x: 993, y: 818, s: 0.6 } };
+      var Fl = P.file, mcx = Fl.x + Fl.w / 2, mcy = Fl.y + Fl.h / 2;
+      // Wishonia's mouth, from her rig box (the head sprite's mouth is at 60% across, 81% down).
+      var hw = O.wish.w * 0.95, mouth = [O.wish.x + O.wish.w * 0.025 + 0.605 * hw, O.wish.y + 0.81 * hw];
+
+      q("bg").innerHTML = KIT.office(O.halo[0], O.halo[1]);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // The wall screen still shows nuclear-winters' last frame, at the size the zoom-out starts from (KIT.enter
+      // starts it at KIT.zoomView(S).out), so the first frame of the zoom is that frame at full size.
+      var S = O.screen, hole = [S[0] + 34, S[1] + 34, S[2] - 68, S[3] - 68];
+      var zv = KIT.zoomView(S), Z = zv.out, at = zv.at;
+      var F = KIT.FORM_AT;
+      var mini = KIT.form(ID + "-mini", F.x, F.y, F.w, [{ lines: KIT.FORM_Q[0] }, { lines: KIT.FORM_Q[1] }], { size: F.size });
+      var box = mini.boxes[1];
+      var pencil = '<g transform="translate(' + (box.x + 6) + "," + (box.y + 40) + ')"><g id="eligible-pencil">' + KIT.pencil() + "</g></g>";
+      var fs = L.form.s;
+      var formAt = '<g transform="translate(' + (L.form.x - fs * F.x).toFixed(2) + "," + (L.form.y - fs * F.y).toFixed(2) + ") scale(" + fs + ')">' + mini.svg + pencil + "</g>";
+      var art = nwArt(ID + "-mini");
+      q("screen").innerHTML = KIT.svg(W, H, KIT.wallScreen.apply(null, S) + KIT.paperDefs(ID + "-mini") +
+        '<defs><clipPath id="eligible-hole"><rect x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" rx="22"/></clipPath></defs>' +
+        '<g clip-path="url(#eligible-hole)"><g transform="translate(' + (at[0] * (1 - 1 / Z)).toFixed(2) + "," + (at[1] * (1 - 1 / Z)).toFixed(2) + ") scale(" + (1 / Z).toFixed(4) + ')">' +
+        '<g id="eligible-mini"><g id="eligible-mini-rest">' + art.flakes + art.earth + art.civ + art.winters + "</g>" + formAt + "</g></g></g>");
+      // nuclear-winters' end state: question 1 ticked, the human looking up, in the scarf, buried to the chin and frozen
+      // in his ice block with his teeth bared (the drift, teeth and ice are drawn that way), the counter at 122
+      document.querySelector("#eligible-mini-tick-0 .tick").setAttribute("stroke-dashoffset", "0");
+      q("mini-guy-a").setAttribute("opacity", "0");
+      document.querySelector("#eligible-mini-guy-b .head").setAttribute("transform", "rotate(-28 0 -34)");
+      document.querySelector("#eligible-mini-guy-b .mouth").setAttribute("opacity", "0");
+      q("mini-d1").textContent = "2";
+      q("mini-d0").textContent = "2";
+
+      // The desk and its props.
+      var ink = 'stroke="' + C.ink + '"';
+      function folder(x, y, w, fill, text, size) {
+        return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + (P.tray.bottom - y) + '" rx="4" fill="' + fill + '" ' + ink + ' stroke-width="4"/>' +
+          '<rect x="' + (x + 9) + '" y="' + (y + 7) + '" width="' + (w - 18) + '" height="' + (size + 12) + '" fill="' + C.cream + '" ' + ink + ' stroke-width="2.5"/>' +
+          '<text x="' + (x + w / 2) + '" y="' + (y + 7 + size + 3) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + C.ink + '">' + text + "</text>";
+      }
+      var T = P.tray;
+      var trayBack = '<g transform="rotate(-2 ' + (T.x + T.w / 2) + " " + T.venus + ')">' + folder(T.x + 12, T.venus, T.w - 22, C.orange, "VENUS: TOO HOT", T.fs) + "</g>" +
+        '<g transform="rotate(1.5 ' + (T.x + T.w / 2) + " " + T.mars + ')">' + folder(T.x + 6, T.mars, T.w - 16, C.tan, "MARS: NOBODY HOME", T.fs) + "</g>";
+      var trayFront = '<rect x="' + T.x + '" y="' + T.lip + '" width="' + T.w + '" height="' + (T.bottom - T.lip) + '" rx="6" fill="' + C.rust + '" ' + ink + ' stroke-width="5"/>' +
+        '<rect x="' + (T.x + T.w / 2 - 68) + '" y="' + (T.lip + 9) + '" width="136" height="' + (T.bottom - T.lip - 18) + '" rx="3" fill="' + C.cream + '" ' + ink + ' stroke-width="3"/>' +
+        '<text x="' + (T.x + T.w / 2) + '" y="' + ((T.lip + T.bottom) / 2 + T.lab * 0.36).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + T.lab + '" letter-spacing="2" fill="' + C.ink + '">PLANETS</text>';
+      var M = P.mark;
+      var mark = '<g transform="translate(' + mcx + "," + mcy + ') rotate(-6)"><g id="eligible-mark" opacity="0.92">' +
+        '<rect x="' + -M.w / 2 + '" y="' + -M.h / 2 + '" width="' + M.w + '" height="' + M.h + '" rx="4" fill="none" stroke="' + C.red + '" stroke-width="6"/>' +
+        '<rect x="' + (-M.w / 2 + 9) + '" y="' + (-M.h / 2 + 9) + '" width="' + (M.w - 18) + '" height="' + (M.h - 18) + '" fill="none" stroke="' + C.red + '" stroke-width="2.5"/>' +
+        '<text y="' + (-M.h * 0.06).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + M.fs + '" letter-spacing="1" fill="' + C.red + '">MAY BE ELIGIBLE</text>' +
+        '<text y="' + (M.h * 0.3).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + M.fs + '" letter-spacing="1" fill="' + C.red + '">FOR OPTIMIZATION</text></g></g>';
+      var file = '<g id="eligible-file">' +
+        '<rect x="' + Fl.tab[0] + '" y="' + Fl.tab[1] + '" width="' + Fl.tab[2] + '" height="' + (Fl.tab[3] + 10) + '" rx="6" fill="#E2B865" ' + ink + ' stroke-width="5"/>' +
+        '<text x="' + (Fl.tab[0] + Fl.tab[2] / 2) + '" y="' + (Fl.tab[1] + Fl.tab[3] / 2 + Fl.fs * 0.36).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + Fl.fs + '" fill="' + C.ink + '">EARTH: CASE #847</text>' +
+        '<rect x="' + Fl.x + '" y="' + Fl.y + '" width="' + Fl.w + '" height="' + Fl.h + '" rx="4" fill="#E2B865" ' + ink + ' stroke-width="5"/>' + mark + "</g>";
+      // The rubber stamp, drawn up from the middle of its pad's bottom edge.
+      var stamp = '<g transform="translate(' + P.stamp.rest[0] + "," + P.stamp.rest[1] + ')"><g id="eligible-stamp"><g transform="scale(' + P.stamp.k + ')" ' + ink + ' stroke-width="5" stroke-linejoin="round">' +
+        '<rect x="-80" y="-18" width="160" height="18" rx="3" fill="' + C.red + '"/>' +
+        '<rect x="-72" y="-54" width="144" height="38" rx="5" fill="' + C.tan + '"/>' +
+        '<rect x="-17" y="-104" width="34" height="52" fill="' + C.rust + '"/>' +
+        '<circle cx="0" cy="-124" r="26" fill="' + C.yellow + '"/></g></g></g>';
+      var mug = '<g transform="translate(' + P.mug[0] + "," + P.mug[1] + ") scale(" + P.mug[2] + ')">' + KIT.mug(0, 0) + "</g>";
+      // the huff: a small cloud of breath
+      var puff = '<g transform="translate(' + mouth[0].toFixed(1) + "," + mouth[1].toFixed(1) + ')"><g id="eligible-puff" opacity="0" fill="' + C.cream + '" ' + ink + ' stroke-width="3">' +
+        '<circle cx="-17" cy="3" r="14"/><circle cx="20" cy="4" r="13"/><circle cx="3" cy="-7" r="18"/></g></g>';
+      q("front").innerHTML = KIT.svg(W, H, KIT.desk.apply(null, O.desk) + trayBack +
+        '<defs><clipPath id="eligible-desktop"><rect x="0" y="0" width="' + W + '" height="' + T.bottom + '"/></clipPath></defs><g clip-path="url(#eligible-desktop)">' + file + "</g>" + trayFront + stamp + mug + puff);
+
+      q("board-in").innerHTML = KIT.countdownBoard();
+      KIT.placeBoard(q("board"), q("board-in"));
+      var board = q("board-in").firstChild;
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("wish"), { scene: ID, x: O.wish.x, y: O.wish.y, w: O.wish.w });
+      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.enter(tl, q("cam"), "zoom out of the wall screen", zv);
+
+      // The screen: from nuclear-winters' frame, it closes in on the form, and the pencil ticks question 2 on the
+      // scratch (placed a beat and 1.2 s after "apocalypse?", which falls here).
+      // (the inner group's move is relative to the outer zoom-out size: from p -> m p + a to p -> k p + b)
+      var m = 1 / Z, fw = F.w * fs, fh = mini.h * fs;
+      var k = Math.min((hole[2] - 60) / fw, (hole[3] - 40) / fh);
+      var b = [hole[0] + hole[2] / 2 - (L.form.x + fw / 2) * k, hole[1] + hole[3] / 2 - (L.form.y + fh / 2) * k];
+      tl.to("#eligible-mini", { x: (b[0] - at[0] * (1 - m)) / m, y: (b[1] - at[1] * (1 - m)) / m, scale: k / m, svgOrigin: "0 0", duration: 0.32, ease: "power2.inOut" }, 0.5);
+      tl.to("#eligible-mini-rest", { opacity: 0, duration: 0.24 }, 0.56);
+      var nw = KIT.scene("nuclear-winters");
+      var scratch = nw.start + KIT.after("nuclear-winters", "apocalypse?") + 1.2 - sc.start;
+      KIT.drawTick(tl, "#eligible-mini-tick-1 .tick", scratch);
+      tl.to("#eligible-pencil", { x: 40, y: -50, duration: 0.25, ease: "power2.inOut" }, scratch);
+      tl.to("#eligible-pencil", { x: 400, y: 160, opacity: 0, duration: 0.35, ease: "power2.in" }, scratch + 0.4);
+
+      // "If": the stamp lifts (a little after the word, once the desk is in view at the end of the zoom).
+      var up = [P.stamp.up[0] - P.stamp.rest[0], P.stamp.up[1] - P.stamp.rest[1]];
+      var hit = [mcx - P.stamp.rest[0], mcy + M.h * 0.2 - P.stamp.rest[1]];
+      var stampEl = "#eligible-stamp";
+      tl.fromTo(stampEl, { x: 0, y: 0 }, { x: up[0], y: up[1], duration: 0.35, ease: "back.out(1.4)" }, cue("If") + 0.45);
+      // before "eligible": a huff of breath from Wishonia's mouth onto the stamp, which waits
+      var huff = KIT.before(ID, "eligible");
+      var to = [P.stamp.up[0] - mouth[0], P.stamp.up[1] - 10 - mouth[1]];
+      tl.fromTo("#eligible-puff", { opacity: 0, x: 0, y: 0, scale: 0.4, svgOrigin: "0 0" },
+        { opacity: 1, x: to[0] * 0.45, y: to[1] * 0.45, scale: 1, svgOrigin: "0 0", duration: 0.15, ease: "power1.out" }, huff);
+      tl.to("#eligible-puff", { opacity: 0, x: to[0], y: to[1], scale: 1.5, duration: 0.22, ease: "power1.in" }, huff + 0.15);
+      // "eligible": the stamp slams on the word (the stamp sound), squashes, the ink is there, the room shakes
+      var slam = cue("eligible");
+      tl.to(stampEl, { x: hit[0], y: hit[1], duration: 0.12, ease: "power3.in" }, slam - 0.12);
+      tl.fromTo(stampEl, { scaleX: 1, scaleY: 1, transformOrigin: "50% 100%" }, { scaleX: 1.08, scaleY: 0.84, transformOrigin: "50% 100%", duration: 0.05, repeat: 1, yoyo: true, ease: "power1.out" }, slam);
+      tl.fromTo("#eligible-mark", { opacity: 0, scale: 1.12, svgOrigin: "0 0" }, { opacity: 0.92, scale: 1, svgOrigin: "0 0", duration: 0.08, ease: "power2.out" }, slam);
+      tl.fromTo(q("cam"), { y: 0 }, { y: 8, duration: 0.05, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, slam);
+      tl.to(stampEl, { keyframes: [{ x: hit[0] / 2, y: hit[1] / 2 - 20, duration: 0.18, ease: "power1.out" }, { x: 0, y: 0, duration: 0.2, ease: "power1.in" }] }, slam + 0.12);
+
+      // after "optimization.": the file slides into the out-tray, on top of the other planets
+      var A = P.land;
+      tl.fromTo("#eligible-file", { x: 0, y: 0, scale: 1, svgOrigin: Fl.x + " " + Fl.tab[1] },
+        { x: A.x - Fl.x, y: A.y - Fl.tab[1], scale: A.s, svgOrigin: Fl.x + " " + Fl.tab[1], duration: 0.42, ease: "power2.inOut" }, KIT.after(ID, "optimization."));
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

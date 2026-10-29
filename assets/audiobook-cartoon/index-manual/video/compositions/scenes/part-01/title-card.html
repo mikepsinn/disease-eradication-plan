@@ -1,0 +1,87 @@
+<template id="title-card-template">
+  <!-- title-card · Layer A title card (storyboards/part-01-opening.md): the title words slam in on the spoken words;
+       a busy human sprints past on "Busy"; the sun sinks a little after "Civilization". -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #title-card-cam, #title-card-bg, #title-card-sun, #title-card-art, #title-card-grain { position: absolute; inset: 0; }
+    #title-card-words { position: absolute; left: 0; right: 0; top: 230px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .title-card-line { display: flex; gap: 0.28em; font-size: 150px; }
+    #title-card-words .title-card-w { display: block; color: #F3ECD0; }
+    /* cream with a navy outline: it sits on the mustard sun */
+    #title-card-busy-people { font-family: "Oswald"; font-weight: 600; font-size: 64px; letter-spacing: 0.04em; color: #F3ECD0; margin-top: 6px;
+      text-shadow: 3px 3px 0 #0B1A33, -3px 3px 0 #0B1A33, 3px -3px 0 #0B1A33, -3px -3px 0 #0B1A33, 0 4px 0 #0B1A33, 0 -4px 0 #0B1A33, 4px 0 0 #0B1A33, -4px 0 0 #0B1A33; }
+    #title-card-sub { margin-top: 26px; padding: 14px 40px; border-radius: 999px; background: #061D3E; border: 4px solid #E5903B;
+      font-family: "Inter"; font-weight: 700; font-size: 42px; color: #F3ECD0; text-align: center; }
+    .tall #title-card-words { top: 300px; }
+    .tall .title-card-line { font-size: 128px; }
+    .tall #title-card-sub { font-size: 40px; max-width: 900px; }
+  </style>
+  <div id="root" data-composition-id="title-card" data-width="1920" data-height="1080" data-start="0" data-duration="8.52">
+    <div id="title-card-cam">
+      <div id="title-card-bg"></div>
+      <div id="title-card-sun"></div>
+      <div id="title-card-words"></div>
+      <div id="title-card-art"></div>
+      <div id="title-card-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "title-card";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      if (V) document.getElementById(ID + "-cam").parentNode.classList.add("tall");
+
+      q("bg").innerHTML = KIT.office(-2000, 0, { noSun: true, noHalo: true });
+      q("sun").innerHTML = KIT.svg(W, H, '<g id="title-card-sun-g">' + KIT.sun(W / 2, KIT.horizon, 1.15) + "</g>");
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // The title, one span per spoken word, in the order they are said.
+      var lines = V ? [["HOW", "TO", "END"], ["WAR", "AND"], ["DISEASE"]] : [["HOW", "TO", "END"], ["WAR", "AND", "DISEASE"]];
+      var spoken = ["How", "to", "End", "War", "and", "Disease"];
+      var html = lines.map(function (line) {
+        return '<div class="title-card-line">' + line.map(function (w) { return '<span class="title-card-w kit-big" data-w="' + w + '">' + w + "</span>"; }).join("") + "</div>";
+      }).join("") + '<div id="title-card-busy-people">(for Busy People)</div><div id="title-card-sub">A Step-by-Step Guide to Optimizing Your Terrible Civilization</div>';
+      q("words").innerHTML = html;
+
+      // The busy human, sprinting along the bottom with an eye on a wristwatch; then his skeleton, in the
+      // same bowler, strolling back the other way and still checking the watch (busy people run out of time).
+      var runner = KIT.person({ tone: 2, outfit: "suit", hat: "bowler", mood: "eager", look: "right", arms: [[-70, -120], [60, 40]] });
+      var bones = KIT.person({ skeleton: true, hat: "bowler", look: "left", arms: [[20, 10], [-70, -120]] });
+      var gy = V ? 1300 : 930, gs = V ? 1.5 : 1.3;
+      q("art").innerHTML = KIT.svg(W, H, '<g id="title-card-runner" transform="translate(-200,' + gy + ") scale(" + gs + ')">' + runner + "</g>" +
+        '<g transform="translate(0,' + gy + ')"><g id="title-card-skel"><g transform="scale(' + gs + ')">' + bones + "</g></g></g>");
+
+      var tl = gsap.timeline({ paused: true });
+      var els = document.querySelectorAll("#title-card-words .title-card-w");
+      spoken.forEach(function (w, i) {
+        tl.fromTo(els[i], { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2)" }, cue(w));
+      });
+      tl.fromTo("#title-card-busy-people", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, cue("Busy") - 0.1);
+      tl.fromTo("#title-card-runner", { x: -200 }, { x: W + 200, duration: 1.4, ease: "none" }, cue("Busy"));
+      // the skeleton strolls in from the right on "Step-by-Step", legs swinging, until the card ends
+      var stroll = cue("Step-by-Step"), skel = document.getElementById("title-card-skel");
+      tl.fromTo(skel, { x: W + 150 }, { x: W * 0.55, duration: D - stroll, ease: "none" }, stroll);
+      [[".leg-l", "-8 30", 14], [".leg-r", "8 30", -14]].forEach(function (g) {
+        var leg = skel.querySelector(g[0]);
+        gsap.set(leg, { svgOrigin: g[1] });
+        tl.fromTo(leg, { rotation: g[2] }, { rotation: -g[2], duration: 0.4, repeat: Math.floor((D - stroll) / 0.4), yoyo: true, ease: "sine.inOut" }, stroll);
+      });
+      tl.fromTo("#title-card-sub", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, cue("Step-by-Step"));
+      // the sun sinks a little, as if embarrassed by "Terrible Civilization"
+      tl.to("#title-card-sun-g", { y: 40, duration: 0.8, ease: "power2.inOut" }, KIT.after(ID, "Civilization"));
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

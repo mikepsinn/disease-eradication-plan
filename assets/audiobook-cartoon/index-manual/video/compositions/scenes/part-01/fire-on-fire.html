@@ -1,0 +1,258 @@
+<template id="fire-on-fire-template">
+  <!-- fire-on-fire · Layer B (storyboards/part-01-opening.md): in a cave two cavemen light a campfire and smile; each pulls a
+       burning stick out of it, and they jab each other; both go up in flames, yelping and hopping; the flames go out with a puff
+       and they stand there charred and smoking, blinking; they look at each other, at the fire, and reach in for new sticks. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #fire-on-fire-cam, #fire-on-fire-bg, #fire-on-fire-art, #fire-on-fire-pip, #fire-on-fire-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="fire-on-fire" data-width="1920" data-height="1080" data-start="0" data-duration="5.84">
+    <div id="fire-on-fire-cam">
+      <div id="fire-on-fire-bg"></div>
+      <div id="fire-on-fire-art"></div>
+      <div id="fire-on-fire-board"><div id="fire-on-fire-board-in"></div></div>
+      <div id="fire-on-fire-pip"></div>
+      <div id="fire-on-fire-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "fire-on-fire";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var P = function (s) { return ID + "-" + s; };
+      var g = function (s) { return "#" + P(s); };
+
+      // The cave (outer and inner arch), the ground line, and the stage: the campfire at the stage origin on the ground,
+      // drawn at FIRE scale, with a caveman on each side of it, SEP stage units out (earth-means-dirt copies this table).
+      var L = V
+        ? { outer: "M44,1876 V900 Q60,520 380,480 H720 Q1020,520 1036,900 V1876 Z", inner: "M90,1876 V1000 Q120,700 400,670 H700 Q960,700 990,1000 V1876 Z",
+            ground: [90, 990, 1400], stage: [540, 1400, 1.45], drips: [[255, 712], [470, 670], [640, 670]] }
+        : { outer: "M44,1036 V420 Q200,130 520,100 H1400 Q1720,130 1876,420 V1036 Z", inner: "M240,1036 V520 Q360,250 640,230 H1280 Q1560,250 1680,520 V1036 Z",
+            ground: [240, 1680, 820], stage: [910, 820, 1.2], drips: [[560, 250], [780, 230], [1010, 230], [1420, 262]] };
+      var HS = 2, SEP = 150, FIRE = 0.8;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      var drips = L.drips.map(function (d, i) {
+        var w = 26 + (i % 2) * 14, h = 50 + (i % 3) * 22;
+        return '<path d="M' + (d[0] - w / 2) + "," + (d[1] - 4) + " L" + d[0] + "," + (d[1] + h) + " L" + (d[0] + w / 2) + "," + (d[1] - 4) + ' Z" fill="url(#' + P("hatch") + ')" stroke="' + C.line + '" stroke-width="4" stroke-linejoin="round"/>';
+      }).join("");
+      var cave = '<path d="' + L.outer + " " + L.inner + '" fill="#E4D9B8" fill-rule="evenodd" stroke="' + C.line + '" stroke-width="5"/>' +
+        '<path d="' + L.outer + " " + L.inner + '" fill="url(#' + P("cross") + ')" fill-rule="evenodd" opacity="0.55"/>' + drips +
+        '<path d="M' + L.ground[0] + "," + L.ground[2] + " H" + L.ground[1] + '" stroke="' + C.line + '" stroke-width="5"/>';
+
+      // Campfire (stage units, ground at y 0). Each flame sits in a flicker group inside the light-up group.
+      var FLAME = "M0,0 C-34,-10 -30,-60 -8,-96 C-6,-70 10,-62 14,-84 C34,-56 40,-14 0,0 Z";
+      function flame(id, k, fill, pattern) {
+        return '<g id="' + P(id) + '"><path transform="translate(0,-14) scale(' + k + ')" d="' + FLAME + '" fill="' + fill + '" stroke="' + C.line + '" stroke-width="' + (4 / k).toFixed(2) + '" stroke-linejoin="round"/>' +
+          (pattern ? '<path transform="translate(0,-14) scale(' + k + ')" d="' + FLAME + '" fill="url(#' + P(pattern) + ')" opacity="0.6"/>' : "") + "</g>";
+      }
+      var logs = '<g stroke="' + C.line + '" stroke-width="5"><rect x="-120" y="-36" width="240" height="32" rx="16" fill="' + C.tan + '" transform="rotate(12 0 -20)"/>' +
+        '<rect x="-120" y="-36" width="240" height="32" rx="16" fill="' + C.rust + '" transform="rotate(-12 0 -20)"/></g>' +
+        [-130, -90, 90, 130].map(function (x) { return '<ellipse cx="' + x + '" cy="-12" rx="26" ry="14" fill="#D8CDB0" stroke="' + C.line + '" stroke-width="4"/>'; }).join("");
+      var sparks = [[-40, -230, 14], [30, -270, 10], [60, -210, 12]].map(function (sp, i) {
+        return '<g transform="translate(' + sp[0] + "," + sp[1] + ')"><g id="' + P("spark-" + i) + '">' + KIT.star(0, 0, sp[2], C.yellow) + "</g></g>";
+      }).join("");
+      // two more sticks in the fire, their cold ends poking out toward each caveman's reaching hand (fire units)
+      var fuel = [1, -1].map(function (sx) {
+        var d = "M" + 12 * sx + ",-50 L" + 58 * sx + ",-228";
+        return '<path d="' + d + '" stroke="' + C.line + '" stroke-width="11" stroke-linecap="round"/><path d="' + d + '" stroke="#7A5230" stroke-width="5.5" stroke-linecap="round"/>';
+      }).join("");
+      var fire = '<g transform="scale(' + FIRE + ')"><circle id="' + P("glow") + '" cx="0" cy="-110" r="230" fill="' + C.orange + '" opacity="0"/>' + logs + fuel +
+        '<g id="' + P("flames") + '">' + flame("f-out", 2.6, C.war, "hred") + flame("f-mid", 1.8, C.orange) + flame("f-in", 1.05, C.yellow) + "</g>" + sparks + "</g>";
+
+      // ── The cavemen, copied to earth-means-dirt.html (keep the copies the same) ──
+      // Each is drawn in person units facing left (the fire and the other caveman are to the left, the other D2 units away);
+      // B's group is mirrored. A pose is a KIT.person plus animal-hide spots, and maybe a burning stick in the near (left)
+      // hand, flames all over (fire), or charred with its pupils shifted (eyes).
+      var D2 = (2 * SEP) / HS;
+      var CAVEMEN = {
+        A: { tone: 2, outfit: "shirt", color: 2, hair: 0, look: "left", spots: [[-9, -8], [8, 2], [-6, 17], [9, 22], [-1, 28]] },
+        B: { tone: 0, outfit: "dress", color: 3, hair: 1, hairColor: "#5A3A22", look: "left", spots: [[-6, -10], [7, 0], [-14, 26], [12, 32], [-2, 42], [22, 46], [-24, 46]] },
+      };
+      var DOWN = [[-15, -5], [15, 5]];
+      var POSES = {
+        stand: { arms: DOWN, mood: "flat" },
+        smile: { arms: [[-50, -60], [15, 5]], mood: "smile" },
+        reach: { arms: [[-35, -50], [15, 5]], mood: "eager" },
+        hold: { arms: [[-110, -150], [15, 5]], mood: "smile", stick: { dir: [-0.8, -0.6], len: 60 } },
+        // A aims high (at B's head), B aims low (at A's belly), so the two sticks do not lie on one line
+        windA: { arms: [[-175, 150], [15, 5]], mood: "flat", brows: true, stick: { to: [-D2 + 20, -60], len: 60 } },
+        jabA: { arms: [[-100, -105], [15, 5]], mood: "flat", brows: true, stick: { to: [-D2 + 20, -60] } },
+        windB: { arms: [[20, -60], [15, 5]], mood: "flat", brows: true, stick: { to: [-D2 + 16, 8], len: 60 } },
+        jabB: { arms: [[-80, -75], [15, 5]], mood: "flat", brows: true, stick: { to: [-D2 + 16, 8] } },
+        fl1: { arms: [[-160, -175], [160, 175]], mood: "eager", fire: true },
+        fl2: { arms: [[-125, -160], [125, 160]], mood: "eager", fire: true },
+        c0: { arms: DOWN, charred: true, look: null },
+        c1: { arms: DOWN, charred: true, eyes: [-1.5, 0] },
+        c2: { arms: DOWN, charred: true, eyes: [-1.5, 2.2] },
+        c3: { arms: [[-35, -50], [15, 5]], charred: true, eyes: [-1.5, 2.2] },
+        c4: { arms: [[-110, -150], [15, 5]], charred: true, eyes: [-1.5, 0], stick: { dir: [-0.8, -0.6], len: 60 } },
+      };
+      // The near hand of a pose (KIT.person's arm: shoulder at (-17, -26), two 26-unit segments).
+      function handAt(a) {
+        var r1 = (a[0] * Math.PI) / 180, r2 = (a[1] * Math.PI) / 180;
+        return [-17 + 26 * Math.sin(r1) + 26 * Math.sin(r2), -26 + 26 * Math.cos(r1) + 26 * Math.cos(r2)];
+      }
+      // A burning stick held at hand h, toward a point (to) or along dir; its flame is a KIT.flames.
+      function stickSvg(h, st) {
+        var dx = st.to ? st.to[0] - h[0] : st.dir[0], dy = st.to ? st.to[1] - h[1] : st.dir[1], n = Math.hypot(dx, dy);
+        var len = st.len || n, ux = dx / n, uy = dy / n, tip = [h[0] + ux * len, h[1] + uy * len];
+        var d = "M" + (h[0] - ux * 10).toFixed(1) + "," + (h[1] - uy * 10).toFixed(1) + " L" + tip[0].toFixed(1) + "," + tip[1].toFixed(1);
+        return '<path d="' + d + '" stroke="' + C.line + '" stroke-width="9" stroke-linecap="round"/><path d="' + d + '" stroke="#7A5230" stroke-width="4.5" stroke-linecap="round"/>' +
+          KIT.flames(tip[0].toFixed(1), (tip[1] + 3).toFixed(1), 0.26);
+      }
+      function poseSvg(who, name) {
+        var base = CAVEMEN[who], sp = POSES[name], o = {}, k;
+        for (k in base) if (k !== "spots") o[k] = base[k];
+        o.arms = sp.arms; o.mood = sp.mood; o.brows = sp.brows;
+        if (sp.look !== undefined) o.look = sp.look;
+        if (sp.charred) o.charred = true;
+        var m = KIT.person(o);
+        if (!sp.charred) {
+          var spots = base.spots.map(function (s) { return '<ellipse cx="' + s[0] + '" cy="' + s[1] + '" rx="3.6" ry="2.6" fill="' + C.rust + '" opacity="0.85"/>'; }).join("");
+          m = m.replace('<g class="arm-l">', spots + '<g class="arm-l">');
+        }
+        if (sp.eyes) m = m.replace(/<circle cx="([-\d.]+)" cy="([-\d.]+)" r="1.8"/g, function (x, cx, cy) {
+          return '<circle cx="' + (+cx + sp.eyes[0]) + '" cy="' + (+cy + sp.eyes[1]) + '" r="1.8"';
+        });
+        if (sp.fire) m += KIT.fireOn(o);
+        return m;
+      }
+      // The pose's stick (drawn on a layer over both cavemen, so each tip shows on the other one).
+      function poseStick(name) {
+        var sp = POSES[name];
+        return sp.stick ? stickSvg(handAt(sp.arms[0]), sp.stick) : "";
+      }
+      // Where each caveman stands (stage units) and its mirror.
+      function placeOf(who) { return "translate(" + (who === "A" ? SEP : -SEP) + ",-208) scale(" + (who === "A" ? HS : -HS) + "," + HS + ")"; }
+      // ── end of the copied part ──
+
+      var ORDER = ["stand", "smile", "reach", "hold", "wind", "jab", "fl1", "fl2", "c0", "c1", "c2", "c3"];
+      var specOf = function (who, name) { return name === "wind" || name === "jab" ? name + who : name; };
+      // Soot (the puff the flames go out in), in KIT.nuke's cloud style, around a caveman standing still.
+      var SOOT = [[0, -88, 32], [-26, -58, 30], [26, -58, 30], [0, -34, 30], [-30, -20, 32], [30, -20, 32], [-28, 20, 32], [28, 20, 32], [-18, 56, 30], [18, 56, 30], [0, 82, 22], [0, -116, 20]];
+      function soot() {
+        var outline = SOOT.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + C.line + '" stroke="' + C.line + '" stroke-width="10"/>'; }).join("");
+        var body = SOOT.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#8E8780"/>'; }).join("");
+        var hi = SOOT.filter(function (c, i) { return i % 2 === 0; }).map(function (c) {
+          return '<circle cx="' + (c[0] - c[2] * 0.25) + '" cy="' + (c[1] - c[2] * 0.3) + '" r="' + c[2] * 0.42 + '" fill="#C9C2B8" opacity="0.85"/>';
+        }).join("");
+        return outline + body + hi;
+      }
+      function caveman(who) {
+        var poses = ORDER.map(function (name, i) {
+          return '<g id="' + P(who + "-" + name) + '"' + (i ? ' opacity="0"' : "") + ">" + poseSvg(who, specOf(who, name)) + "</g>";
+        }).join("");
+        return '<g transform="' + placeOf(who) + '"><g id="' + P(who + "-run") + '"><g id="' + P(who + "-hop") + '">' + poses + "</g></g></g>";
+      }
+      function sticks(who) {
+        return '<g transform="' + placeOf(who) + '">' + ["hold", "wind", "jab"].map(function (name) {
+          return '<g id="' + P(who + "-" + name + "-stick") + '" opacity="0">' + poseStick(specOf(who, name)) + "</g>";
+        }).join("") + "</g>";
+      }
+      var sootOf = function (who) { return '<g transform="' + placeOf(who) + '"><g id="' + P(who + "-soot") + '" opacity="0">' + soot() + "</g></g>"; };
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + cave +
+        '<g transform="translate(' + L.stage[0] + "," + L.stage[1] + ") scale(" + L.stage[2] + ')">' + fire +
+        caveman("B") + caveman("A") + sticks("B") + sticks("A") + sootOf("B") + sootOf("A") + "</g>");
+
+      q("board-in").innerHTML = KIT.countdownBoard();
+      KIT.placeBoard(q("board"), q("board-in"));
+      var board = q("board-in").firstChild;
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
+      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.enter(tl, q("cam"), "slide left");
+      var both = function (s) { return [g("A-" + s), g("B-" + s)]; };
+      var all = function (sel) { return document.querySelectorAll(g("A-" + sel) + ", " + g("B-" + sel)); };
+      // Pivots, set once while untransformed.
+      [[[g("flames"), g("f-out"), g("f-mid"), g("f-in")], "0 -14"], [both("soot"), "0 -10"], [all("fl1 .on-fire"), "0 20"],
+        [all("hold-stick .flames"), "0 0"], [all("c0 .char-eyes"), "0 -58"]].forEach(function (o) { gsap.set(o[0], { svgOrigin: o[1] }); });
+      // Pose swaps: each caveman shows one pose (and its stick) at a time.
+      var cur = { A: "stand", B: "stand" };
+      var STICK = { hold: 1, wind: 1, jab: 1 };
+      function to(name, t) {
+        ["A", "B"].forEach(function (who) {
+          var from = cur[who];
+          tl.set(g(who + "-" + from), { opacity: 0 }, t);
+          if (STICK[from]) tl.set(g(who + "-" + from + "-stick"), { opacity: 0 }, t);
+          tl.set(g(who + "-" + name), { opacity: 1 }, t);
+          if (STICK[name]) tl.set(g(who + "-" + name + "-stick"), { opacity: 1 }, t);
+          cur[who] = name;
+        });
+      }
+      // a yoyo that runs an even number of halves, so it ends where it started, exactly at t1
+      function settle(el, from, toV, t0, t1, half) {
+        var n = Math.max(2, 2 * Math.round((t1 - t0) / (2 * half)));
+        var v = {}; for (var k in toV) v[k] = toV[k];
+        v.duration = (t1 - t0) / n; v.yoyo = true; v.repeat = n - 1; v.ease = "sine.inOut";
+        tl.fromTo(el, from, v, t0);
+      }
+
+      // "fire" (first): whoosh, the campfire lights; both cavemen smile at it, one warming a hand.
+      var t1 = cue("fire");
+      tl.fromTo(g("flames"), { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2.2)" }, t1);
+      tl.fromTo(g("glow"), { opacity: 0 }, { opacity: 0.2, duration: 0.3 }, t1);
+      [0, 1, 2].forEach(function (i) {
+        tl.fromTo(g("spark-" + i), { y: 60, opacity: 0, scale: 0.4 }, { y: -40, opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" }, t1 + 0.05 + i * 0.07);
+        tl.to(g("spark-" + i), { opacity: 0, duration: 0.2 }, t1 + 0.4 + i * 0.07);
+      });
+      to("smile", t1 + 0.15);
+      // the flames flicker until the end, landing back on their drawn shape at the cut (earth-means-dirt's copy is still)
+      var fl = t1 + 0.35;
+      settle(g("f-out"), { scaleY: 1, scaleX: 1 }, { scaleY: 0.9, scaleX: 1.04 }, fl, D, 0.15);
+      settle(g("f-mid"), { scaleX: 1 }, { scaleX: 0.86 }, fl, D, 0.11);
+      settle(g("f-in"), { scaleY: 1 }, { scaleY: 1.14 }, fl, D, 0.09);
+
+      // "using": each reaches into the fire and comes out with a burning stick.
+      var tu = cue("using"), tH = tu + 0.22;
+      to("reach", tu);
+      to("hold", tH);
+      tl.fromTo(all("hold-stick .flames"), { scale: 0.2 }, { scale: 1, duration: 0.12, ease: "back.out(2)" }, tH);
+      // "set": they wind up, frowning at each other; "yourself": the jab, A high and B low.
+      var ty = cue("yourself"), tC = ty + 0.08;
+      to("wind", cue("set"));
+      to("jab", ty);
+      ["hold", "wind", "jab"].forEach(function (name) {
+        KIT.flicker(tl, P("A-" + name + "-stick"), tH, tC);
+        KIT.flicker(tl, P("B-" + name + "-stick"), tH, tC);
+      });
+      // they catch: flames all over both (the whoosh and the yelps), arms up, hopping and running back and forth.
+      var t2 = cue("fire", 2), tX = t2 + 0.08;
+      to("fl1", tC);
+      tl.fromTo(all("fl1 .on-fire"), { scale: 0.3 }, { scale: 1, duration: 0.12, ease: "power2.out" }, tC);
+      for (var k = 1, tk = tC + 0.1; tk < tX - 0.04; k++, tk += 0.1) to(k % 2 ? "fl2" : "fl1", tk);
+      ["A", "B"].forEach(function (who) { KIT.flicker(tl, q(who + "-fl1"), tC, tX); KIT.flicker(tl, q(who + "-fl2"), tC, tX); });
+      settle(both("hop"), { y: 0 }, { y: -14 }, tC, t2 - 0.02, 0.09);
+      settle(both("run"), { x: 0 }, { x: 14 }, tC, t2 - 0.02, 0.18);
+
+      // "fire." (last): the flames go out in a puff of soot (the sizzle); it clears on two charred cavemen, smoking, blinking.
+      tl.fromTo(both("soot"), { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.08, ease: "power2.out" }, t2);
+      to("c0", tX);
+      tl.to(both("soot"), { opacity: 0, scale: 1.2, duration: 0.3, ease: "power1.in" }, t2 + 0.15);
+      var wisps = document.querySelectorAll(["c0", "c1", "c2", "c3"].map(function (n) { return g("A-" + n) + " .smoke, " + g("B-" + n) + " .smoke"; }).join(", "));
+      settle(wisps, { y: 0, opacity: 1 }, { y: -6, opacity: 0.5 }, t2 + 0.1, D - 0.04, 0.16);
+      tl.fromTo(all("c0 .char-eyes"), { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.inOut" }, t2 + 0.5);
+      // Then they look at each other, then down at the fire, and each reaches in for a new stick (they will do it again).
+      to("c1", t2 + 0.64);
+      to("c2", t2 + 0.88);
+      to("c3", t2 + 1.08);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,106 @@
+<template id="loved-ones-template">
+  <!-- loved-ones · Layer B (storyboards/part-01-opening.md): the Planet Eligibility Check form and a smiling family
+       portrait whose chest lights blink red; YES is ticked on "diseases?", the countdown board lands, then HOLD. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #loved-ones-cam, #loved-ones-bg, #loved-ones-art, #loved-ones-pip, #loved-ones-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="loved-ones" data-width="1920" data-height="1080" data-start="0" data-duration="8.72">
+    <div id="loved-ones-cam">
+      <div id="loved-ones-bg"></div>
+      <div id="loved-ones-art"></div>
+      <div id="loved-ones-board"><div id="loved-ones-board-in"></div></div>
+      <div id="loved-ones-pip"></div>
+      <div id="loved-ones-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "loved-ones";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+
+      // The portrait (frame, picture, people) and the mantel, for each canvas shape. The form sits at KIT.FORM_AT.
+      var L = V
+        ? { frame: [160, 450, 760, 400], inner: [180, 470, 720, 360], people: { x: 300, dx: 160, y: 650, s: 1.75 },
+            mantel: [110, 850, 860, 40], base: [140, 890, 800, 60], reaper: [700, 767, 1.75] }
+        : { frame: [150, 270, 640, 400], inner: [170, 290, 600, 360], people: { x: 275, dx: 130, y: 430, s: 1.6 },
+            mantel: [100, 670, 740, 40], base: [130, 710, 680, 150], reaper: [600, 530, 1.6] };
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      function rect(r, fill, extra) {
+        return '<rect x="' + r[0] + '" y="' + r[1] + '" width="' + r[2] + '" height="' + r[3] + '" fill="' + fill + '" ' + (extra || "") + "/>";
+      }
+      // Each family member is drawn twice in the same spot: alive (p) and as a skeleton (b), for the x-ray.
+      var looks = [{ outfit: "suit", hair: 0 }, { outfit: "dress", hair: 1, color: 0 }, { outfit: "shirt", hair: 0, color: 1 }, { outfit: "dress", hair: 1, color: 3 }];
+      var people = looks.map(function (o, i) {
+        o.tone = i; o.mood = "smile"; o.light = "off";
+        var b = { skeleton: true };
+        return '<g transform="translate(' + (L.people.x + i * L.people.dx) + "," + L.people.y + ") scale(" + L.people.s + ')">' +
+          '<g id="loved-ones-p' + i + '">' + KIT.person(o) + '</g><g id="loved-ones-b' + i + '" opacity="0">' + KIT.person(b) + "</g></g>";
+      }).join("");
+      // The Grim Reaper (the theme song's), rising behind the family, his skull between the last two heads.
+      var R = L.reaper;
+      var reaper = '<g transform="translate(' + R[0] + "," + R[1] + ") scale(" + R[2] + ')"><g id="loved-ones-reaper">' + KIT.reaper() + "</g></g>";
+      var portrait = '<g id="loved-ones-portrait">' + rect(L.frame, C.rust, 'stroke="' + C.ink + '" stroke-width="6"') +
+        '<defs><clipPath id="loved-ones-clip">' + rect(L.inner, "#fff") + "</clipPath></defs>" +
+        rect(L.inner, C.cream) + '<g clip-path="url(#loved-ones-clip)">' + rect(L.inner, "url(#loved-ones-fine)", 'opacity="0.35"') + reaper + people + "</g></g>";
+      var mantel = rect(L.mantel, C.tan, 'stroke="' + C.line + '" stroke-width="5"') + rect(L.base, "url(#loved-ones-hatch)", 'stroke="' + C.line + '" stroke-width="5"');
+
+      // The 1950s mail-in form, question 1 only.
+      var F = KIT.FORM_AT;
+      var form = KIT.form(ID, F.x, F.y, F.w, [{ lines: KIT.FORM_Q[0] }], { size: F.size });
+      var box = form.boxes[0];
+      // The pencil: tweened on the inner group, because GSAP would read the outer translate() as its x and y.
+      var pencil = '<g transform="translate(' + (box.x + 6) + "," + (box.y + 40) + ')"><g id="loved-ones-pencil">' + KIT.pencil() + "</g></g>";
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + portrait + mantel + '<g id="loved-ones-form">' + form.svg + "</g>" + pencil);
+
+      // The countdown board drops into the corner on "diseases?" and stays for the rest of the opening.
+      q("board-in").innerHTML = KIT.countdownBoard();
+      KIT.placeBoard(q("board"), q("board-in"));
+      var board = q("board-in").firstChild;
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
+      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.enter(tl, q("cam"), "slide left");
+
+      var lines = document.querySelectorAll("#loved-ones-form .form-line");
+      tl.fromTo("#loved-ones-form", { x: 260, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, cue("Is"));
+      lines.forEach(function (el, i) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.25 }, cue("Is") + 0.35 + i * 0.55); });
+      tl.fromTo("#loved-ones-portrait", { opacity: 0, scale: 0.92, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.4, ease: "back.out(1.6)" }, cue("loved"));
+      // "tortured": the chest lights blink red, one by one, while the smiles stay
+      [0, 1, 2, 3].forEach(function (i) {
+        var light = document.querySelector("#loved-ones-p" + i + " .chest-light");
+        var t = cue("tortured") + i * 0.16;
+        tl.to(light, { attr: { fill: C.war }, duration: 0.05 }, t);
+        tl.fromTo(light, { opacity: 1 }, { opacity: 0.35, duration: 0.18, repeat: 3, yoyo: true, ease: "none" }, t + 0.05);
+      });
+      // "brutally": the Grim Reaper rises up behind them, grinning
+      tl.fromTo(q("reaper"), { y: 300 }, { y: 0, duration: 0.45, ease: "back.out(1.4)" }, cue("brutally"));
+      // "murdered": they x-ray into skeletons one by one, and the skulls keep smiling
+      [0, 1, 2, 3].forEach(function (i) { KIT.xray(tl, q("p" + i), q("b" + i), cue("murdered") + i * 0.16); });
+      // "diseases?": the pencil swoops in, ticks YES and leaves; the board drops in; then HOLD (nothing moves to the end)
+      var d = cue("diseases?");
+      tl.fromTo("#loved-ones-pencil", { opacity: 0, x: 300, y: 120 }, { opacity: 1, x: 0, y: 0, duration: 0.3, ease: "power2.out" }, d - 0.3);
+      KIT.drawTick(tl, "#loved-ones-tick-0 .tick", d);
+      tl.to("#loved-ones-pencil", { x: 40, y: -50, duration: 0.25, ease: "power2.inOut" }, d);
+      tl.to("#loved-ones-pencil", { x: 400, y: 160, opacity: 0, duration: 0.35, ease: "power2.in" }, d + 0.4);
+      tl.fromTo(q("board"), { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.45, ease: "bounce.out" }, d + 0.3);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

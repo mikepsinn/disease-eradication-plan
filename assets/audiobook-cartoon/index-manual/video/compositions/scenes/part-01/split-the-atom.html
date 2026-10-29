@@ -1,0 +1,336 @@
+<template id="split-the-atom-template">
+  <!-- split-the-atom · Layer B (storyboards/part-01-opening.md): "1945" stamps on; the ATOM card is snipped in half;
+       a proud human powers bulbs and a toaster with an atom; then two humans aim their atoms at each other in the dark,
+       fire them, and the bomb goes off: a white flash, a mushroom cloud, then both standing there charred, blinking, and the
+       charred toaster pops up two slices of black toast. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #split-the-atom-cam, #split-the-atom-bg, #split-the-atom-art, #split-the-atom-pip, #split-the-atom-grain { position: absolute; inset: 0; }
+    #split-the-atom-flash { position: absolute; inset: -40px; background: #FFFFFF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="split-the-atom" data-width="1920" data-height="1080" data-start="0" data-duration="25.24">
+    <div id="split-the-atom-cam">
+      <div id="split-the-atom-bg"></div>
+      <div id="split-the-atom-art"></div>
+      <!-- the blast's white flash: over the Earth art, under Wishonia's corner frame (her reaction stays visible) -->
+      <div id="split-the-atom-flash"></div>
+      <div id="split-the-atom-pip"></div>
+    </div>
+    <!-- outside the zoom, so the board stays in its corner as in the office scene before -->
+    <div id="split-the-atom-board"><div id="split-the-atom-board-in"></div></div>
+    <div id="split-the-atom-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "split-the-atom";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var P = function (s) { return ID + "-" + s; };
+      var f = function (n) { return n.toFixed(1); };
+
+      // stamp: center x, y, scale. card: top-left x, y, scale (drawn 680 x 250, cut at x 490); split: how far the halves part.
+      // A and B stand at ax and bx (feet at y + 104 s) from "I assumed" on; A first pops up at the cut.
+      // The workbench is drawn in its own units (u px each), with A's outstretched hand at its origin.
+      // nuke: the mushroom cloud's scale (KIT.nuke is about 520 wide and 560 tall), standing on the floor between them.
+      var L = V
+        ? { stamp: [400, 600, 0.85], card: [115, 880, 1.25], split: [-50, 60], s: 2.0, ax: 200, bx: 910, y: 1192, bulbs: 3, gap: 60, popY: 520, floor: [60, 1020], nuke: 1.15 }
+        : { stamp: [1420, 220, 0.9], card: [300, 380, 1.25], split: [-80, 90], s: 2.3, ax: 480, bx: 1460, y: 621, bulbs: 4, gap: 70, popY: 380, floor: [90, 1600], nuke: 1.1 };
+      var s = L.s, u = s / 1.8, CUT = 490;
+      var cutX = L.card[0] + CUT * L.card[2];
+      // In person units: A's raised left hand and the atom floating above it, A's right hand held out (the plug), B's mirror image.
+      var HAND_A = [-30.4, -76], ATOM_A = [-32.4, -98], HAND_OUT = [61.35, -0.4], ATOM_B = [32.4, -98];
+      var hx = L.ax + s * HAND_OUT[0], hy = L.y + s * HAND_OUT[1];
+      var T = 55, F = 188, TOAST_X = 100, TOAST_W = 130, TOAST_TOP = T - 86, BULB0 = 290;
+      var tableR = BULB0 + (L.bulbs - 1) * L.gap + 40;
+      var floorY = L.y + 104 * s;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── Drawings ──
+      function stamp() {
+        return '<g transform="translate(' + L.stamp[0] + "," + L.stamp[1] + ") scale(" + L.stamp[2] + ') rotate(-6)"><g id="' + P("stamp") + '">' +
+          '<rect x="-220" y="-110" width="440" height="190" rx="14" fill="none" stroke="' + C.war + '" stroke-width="9"/>' +
+          '<rect x="-204" y="-94" width="408" height="158" rx="8" fill="none" stroke="' + C.war + '" stroke-width="3"/>' +
+          '<text x="0" y="40" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="150" fill="' + C.war + '">1945</text>' +
+          '<rect x="-220" y="-110" width="440" height="190" fill="url(#' + P("hatch") + ')" opacity="0.12"/></g></g>';
+      }
+      var CARD = '<rect x="10" y="12" width="680" height="250" fill="' + C.ink + '" opacity="0.85"/>' +
+        '<rect x="0" y="0" width="680" height="250" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="5"/>' +
+        '<rect x="0" y="0" width="680" height="250" fill="url(#' + P("fine") + ')" opacity="0.16"/>' +
+        '<text x="48" y="100" fill="' + C.line + '"><tspan font-family="Fraunces" font-weight="900" font-size="84">ATOM</tspan>' +
+        '<tspan dx="14" font-family="Inter" font-style="italic" font-weight="600" font-size="36">(Greek):</tspan></text>' +
+        '<path d="M48,128 H632" stroke="' + C.orange + '" stroke-width="4"/>' +
+        '<text x="48" y="206" font-family="Inter" font-weight="600" font-size="62" fill="' + C.line + '">unable to be</text>' +
+        '<text x="' + (CUT + 22) + '" y="206" font-family="Inter" font-weight="600" font-size="62" fill="' + C.line + '">cut</text>';
+      var jag = [];
+      for (var j = 0; j <= 12; j++) jag.push(CUT + (j % 2 ? 9 : -9) + "," + (-20 + j * 25));
+      // Scissors: pivot at (0,0), blades up, handles down; k scales them. Each half opens by rotating.
+      function half(k, id) {
+        return '<g' + (id ? ' id="' + id + '"' : "") + '><path d="M' + -6 * k + "," + 8 * k + " L" + 6 * k + "," + 8 * k + " L" + k + "," + -100 * k + ' Z" fill="#E6E2D6" stroke="' + C.line + '" stroke-width="' + 3 * k + '" stroke-linejoin="round"/>' +
+          '<path d="M0,' + 6 * k + " L0," + 34 * k + '" stroke="' + C.line + '" stroke-width="' + 6 * k + '"/>' +
+          '<ellipse cx="0" cy="' + 52 * k + '" rx="' + 12 * k + '" ry="' + 17 * k + '" fill="none" stroke="' + C.orange + '" stroke-width="' + 6 * k + '"/>' +
+          '<ellipse cx="0" cy="' + 52 * k + '" rx="' + 12 * k + '" ry="' + 17 * k + '" fill="none" stroke="' + C.line + '" stroke-width="' + 1.6 * k + '"/></g>';
+      }
+      function scissors(k, ids, open) {
+        var a = open || 0;
+        return '<g transform="rotate(' + a + ')">' + half(k, ids && ids[0]) + '</g><g transform="rotate(' + -a + ')">' + half(k, ids && ids[1]) + "</g>" +
+          '<circle cx="0" cy="0" r="' + 4 * k + '" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="' + 1.6 * k + '"/>';
+      }
+      // A glowing atom in person units at (x, y).
+      function atom(x, y) {
+        var orbit = function (a) { return '<ellipse cx="' + x + '" cy="' + y + '" rx="25" ry="8.5" fill="none" stroke="' + C.line + '" stroke-width="2.6" transform="rotate(' + a + " " + x + " " + y + ')"/>'; };
+        return '<circle class="glow" cx="' + x + '" cy="' + y + '" r="31" fill="' + C.war + '" opacity="0.24"/>' +
+          '<circle class="glow" cx="' + x + '" cy="' + y + '" r="20" fill="' + C.yellow + '" opacity="0.5"/>' +
+          orbit(0) + orbit(60) + orbit(120) +
+          '<circle cx="' + x + '" cy="' + y + '" r="8" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
+          '<circle cx="' + (x + 25) + '" cy="' + y + '" r="3.4" fill="' + C.line + '"/><circle cx="' + (x - 12) + '" cy="' + (y - 19) + '" r="3.4" fill="' + C.line + '"/>';
+      }
+      function at(x, y, k, inner) {
+        return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')">' + inner + "</g>";
+      }
+      // Workbench parts, in bench units (A's outstretched hand at 0,0; the table top at y T).
+      function bulb(i, x, pre) {
+        var r = 26, cy = T - 50, rays = "";
+        for (var k = 0; k < 8; k++) {
+          var a = (k * Math.PI) / 4;
+          rays += '<path d="M' + f(x + (r + 9) * Math.cos(a)) + "," + f(cy + (r + 9) * Math.sin(a)) + " L" + f(x + (r + 20) * Math.cos(a)) + "," + f(cy + (r + 20) * Math.sin(a)) + '" stroke="' + C.orange + '" stroke-width="5" stroke-linecap="round"/>';
+        }
+        return '<circle cx="' + x + '" cy="' + cy + '" r="' + r + '" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="4"/>' +
+          '<circle cx="' + x + '" cy="' + cy + '" r="' + r + '" fill="url(#' + P("cross") + ')" opacity="0.35"/>' +
+          '<g id="' + P(pre + "lit-" + i) + '" opacity="0">' + rays + '<circle cx="' + x + '" cy="' + cy + '" r="' + r + '" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="4"/></g>' +
+          '<path d="M' + (x - 9) + "," + (cy + 8) + " l4.5,-12 l4.5,12 l4.5,-12 l4.5,12" + '" fill="none" stroke="' + C.line + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+          '<rect x="' + (x - 12) + '" y="' + (T - 28) + '" width="24" height="28" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="3"/>' +
+          '<path d="M' + (x - 12) + "," + (T - 19) + " h24 M" + (x - 12) + "," + (T - 10) + ' h24" stroke="' + C.line + '" stroke-width="2"/>';
+      }
+      function toaster(pre) {
+        var x = TOAST_X, w = TOAST_W, t = TOAST_TOP, sw = w / 2 - 26;
+        return '<g id="' + P(pre + "toaster") + '"><rect x="' + x + '" y="' + t + '" width="' + w + '" height="86" rx="20" fill="#E4E0D2" stroke="' + C.line + '" stroke-width="5"/>' +
+          '<rect x="' + x + '" y="' + t + '" width="' + w + '" height="86" rx="20" fill="url(#' + P("fine") + ')" opacity="0.3"/>' +
+          '<rect x="' + (x + 18) + '" y="' + (t + 7) + '" width="' + sw + '" height="9" rx="4" fill="' + C.line + '"/><rect x="' + (x + w / 2 + 8) + '" y="' + (t + 7) + '" width="' + sw + '" height="9" rx="4" fill="' + C.line + '"/>' +
+          '<g id="' + P(pre + "toaster-glow") + '" opacity="0"><rect x="' + (x + 20) + '" y="' + (t + 9) + '" width="' + (sw - 4) + '" height="5" rx="2" fill="' + C.orange + '"/><rect x="' + (x + w / 2 + 10) + '" y="' + (t + 9) + '" width="' + (sw - 4) + '" height="5" rx="2" fill="' + C.orange + '"/></g>' +
+          '<rect x="' + (x + w - 4) + '" y="' + (t + 26) + '" width="16" height="10" rx="3" fill="' + C.rust + '" stroke="' + C.line + '" stroke-width="2.5"/>' +
+          '<circle cx="' + (x + w - 28) + '" cy="' + (t + 60) + '" r="8" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="2.5"/>' +
+          '<path d="M' + (x + 20) + "," + (t + 40) + " h" + (w - 70) + '" stroke="' + C.line + '" stroke-width="2" opacity="0.4"/></g>';
+      }
+      // A slice of toast, burnt black (it pops out of the burnt toaster after the blast).
+      function toast(i) {
+        var sw = TOAST_W / 2 - 26, x = i ? TOAST_X + TOAST_W / 2 + 10 : TOAST_X + 20, w = sw - 4, t = TOAST_TOP + 6;
+        return '<g id="' + P("toast-" + i) + '"><path d="M' + x + "," + (t + 64) + " V" + (t + 10) + " q0,-10 " + w / 2 + ",-10 q" + w / 2 + ",0 " + w / 2 + ",10 V" + (t + 64) + ' Z" fill="#2A221C" stroke="' + C.line + '" stroke-width="4"/>' +
+          '<rect x="' + (x + 5) + '" y="' + (t + 8) + '" width="' + (w - 10) + '" height="56" rx="4" fill="#3B312A"/>' +
+          '<circle cx="' + (x + w * 0.35) + '" cy="' + (t + 26) + '" r="2.4" fill="#5A4C40"/><circle cx="' + (x + w * 0.62) + '" cy="' + (t + 44) + '" r="2" fill="#5A4C40"/></g>';
+      }
+      // Burn a drawing's markup (as KIT's charred people are burnt): every color but the ink turns a dark brown of the same lightness.
+      function burn(markup) {
+        var ink = C.line.toUpperCase();
+        return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, a, col) {
+          if (col.toUpperCase() === ink) return m;
+          var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + l * 46);
+          return a + '="rgb(' + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ')"';
+        });
+      }
+      // A cloud of soot in KIT.nuke's style (navy outline, a body, highlights on every other puff), around (0,0).
+      function soot(circles) {
+        var outline = circles.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + C.line + '" stroke="' + C.line + '" stroke-width="10"/>'; }).join("");
+        var body = circles.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#8E8780"/>'; }).join("");
+        var hi = circles.filter(function (c, i) { return i % 2 === 0; }).map(function (c) {
+          return '<circle cx="' + (c[0] - c[2] * 0.25) + '" cy="' + (c[1] - c[2] * 0.3) + '" r="' + c[2] * 0.42 + '" fill="#C9C2B8" opacity="0.85"/>';
+        }).join("");
+        return outline + body + hi;
+      }
+
+      // ── Assemble ──
+      var A1 = KIT.person({ tone: 1, outfit: "shirt", color: 0, hair: 0, mood: "smile", arms: [[200, 190], [50, 70]] });
+      var A2 = KIT.person({ tone: 1, outfit: "shirt", color: 0, hair: 0, mood: "flat", brows: true, look: "right", arms: [[200, 190], [20, 10]] });
+      var B1 = KIT.person({ tone: 3, outfit: "dress", color: 3, hair: 1, mood: "smile", arms: [[-20, -10], [160, 170]] });
+      var B2 = KIT.person({ tone: 3, outfit: "dress", color: 3, hair: 1, mood: "flat", brows: true, look: "left", arms: [[-20, -10], [160, 170]] });
+      // After the blast: the same two, charred, frozen in the aim (the arm turned AIM degrees about its shoulder).
+      var AIM = 95;
+      var A3 = KIT.person({ tone: 1, outfit: "shirt", color: 0, hair: 0, look: "right", charred: true, arms: [[200 - AIM, 190 - AIM], [20, 10]] });
+      var B3 = KIT.person({ tone: 3, outfit: "dress", color: 3, hair: 1, look: "left", charred: true, arms: [[-20, -10], [160 + AIM, 170 + AIM]] });
+      // Where the aimed atoms are (world), and the middle, where they meet.
+      function turn(p, o, deg) {
+        var r = (deg * Math.PI) / 180, dx = p[0] - o[0], dy = p[1] - o[1];
+        return [o[0] + dx * Math.cos(r) - dy * Math.sin(r), o[1] + dx * Math.sin(r) + dy * Math.cos(r)];
+      }
+      var aimA = turn(ATOM_A, [-17, -26], AIM), aimB = turn(ATOM_B, [17, -26], -AIM);
+      var aimAw = [L.ax + s * aimA[0], L.y + s * aimA[1]], aimBw = [L.bx + s * aimB[0], L.y + s * aimB[1]];
+      var MID = [(aimAw[0] + aimBw[0]) / 2, (aimAw[1] + aimBw[1]) / 2];
+      var aAtom = [L.ax + s * ATOM_A[0], L.y + s * ATOM_A[1]];
+      var boxIn = [hx + u * 30, hy + u * (T - 12)];
+      var cord = '<path id="' + P("cord") + '" d="M' + f(aAtom[0]) + "," + f(aAtom[1] + 26 * s) + " C" + f(aAtom[0] - 30 * s) + "," + f(L.y + 40 * s) + " " + f(hx - 20 * s) + "," + f(L.y + 70 * s) + " " + f(boxIn[0]) + "," + f(boxIn[1]) +
+        '" fill="none" stroke="' + C.line + '" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+      var A = at(L.ax, L.y, s, '<g id="' + P("A-move") + '"><g id="' + P("A-pop") + '"><g id="' + P("A-d1") + '">' + A1 + '</g><g id="' + P("A-d2") + '" opacity="0">' + A2 + "</g>" +
+        '<g id="' + P("A-d3") + '" opacity="0">' + A3 + "</g>" +
+        '<g transform="translate(' + HAND_A[0] + "," + (HAND_A[1] - 22) + ')"><g id="' + P("A-scis") + '">' + scissors(0.45, null, 14) + "</g></g></g></g>");
+      var B = at(L.bx, L.y, s, '<g id="' + P("B-pop") + '"><g id="' + P("B-d1") + '">' + B1 + '</g><g id="' + P("B-d2") + '" opacity="0">' + B2 + "</g>" +
+        '<g id="' + P("B-d3") + '" opacity="0">' + B3 + "</g></g>");
+      var card = '<g transform="translate(' + L.card[0] + "," + L.card[1] + ") scale(" + L.card[2] + ')"><g id="' + P("card") + '">' +
+        '<defs><clipPath id="' + P("clip-l") + '"><polygon points="-30,-30 ' + jag.join(" ") + ' -30,300"/></clipPath>' +
+        '<clipPath id="' + P("clip-r") + '"><polygon points="720,-30 ' + jag.join(" ") + ' 720,300"/></clipPath></defs>' +
+        '<g id="' + P("half-l") + '"><g clip-path="url(#' + P("clip-l") + ')">' + CARD + "</g></g>" +
+        '<g id="' + P("half-r") + '"><g clip-path="url(#' + P("clip-r") + ')">' + CARD + "</g></g>" +
+        '<path id="' + P("dash") + '" d="M' + CUT + ",-14 V264" + '" stroke="' + C.line + '" stroke-width="3" stroke-dasharray="12 9" opacity="0"/></g>' +
+        '<g transform="translate(' + CUT + ',-30) rotate(180)"><g id="' + P("scis") + '">' + scissors(3.2, [P("sc1"), P("sc2")]) + "</g></g></g>";
+      // The workbench; pre "b-" is its burnt copy, which takes over in the flash.
+      function benchSvg(pre) {
+        var bulbs = "";
+        for (var b = 0; b < L.bulbs; b++) bulbs += bulb(b, BULB0 + b * L.gap, pre);
+        var plug = '<g id="' + P(pre + "plug") + '"><rect x="-7" y="-9" width="22" height="18" rx="4" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="3"/>' +
+          '<path d="M15,-4 h12 M15,4 h12" stroke="' + C.line + '" stroke-width="3.5"/></g>';
+        return '<g id="' + P(pre + "table") + '"' + (pre ? ' opacity="0"' : "") + ">" +
+          '<path d="M' + (TOAST_X + 4) + "," + (T - 14) + " C" + (TOAST_X - 30) + "," + (T - 4) + " -30,60 0,0" + '" fill="none" stroke="' + C.line + '" stroke-width="4"/>' + plug +
+          '<rect x="30" y="-30" width="40" height="' + (T + 30) + '" rx="4" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="4"/>' +
+          '<rect x="38" y="-9" width="24" height="18" rx="3" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="2.5"/><rect x="38" y="20" width="24" height="18" rx="3" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="2.5"/>' +
+          '<path d="M70,' + (T - 4) + " H" + (tableR - 30) + '" stroke="' + C.line + '" stroke-width="4"/>' +
+          toaster(pre) + bulbs +
+          '<rect x="-10" y="' + T + '" width="' + (tableR + 10) + '" height="16" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="4"/>' +
+          '<path d="M10,' + (T + 16) + " V" + F + " M" + (tableR - 20) + "," + (T + 16) + " V" + F + '" stroke="' + C.line + '" stroke-width="8" stroke-linecap="round"/></g>';
+      }
+      var bench = at(hx, hy, u, benchSvg("") + burn(benchSvg("b-")));
+      var floor = '<path id="' + P("floor") + '" d="M' + L.floor[0] + "," + f(floorY) + " H" + L.floor[1] + '" stroke="' + C.line + '" stroke-width="5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+      var dark = '<rect id="' + P("dark") + '" width="' + W + '" height="' + H + '" fill="' + C.deep + '" opacity="0"/>';
+      // Above the dark: the two atoms (rotating with their arms, then fired across), and the toast.
+      var atomA = at(L.ax, L.y, s, '<g id="' + P("atomA-fly") + '"><g id="' + P("atomA-rot") + '"><g id="' + P("atomA-pop") + '">' + atom(ATOM_A[0], ATOM_A[1]) + "</g></g></g>");
+      var atomB = at(L.bx, L.y, s, '<g id="' + P("atomB-fly") + '"><g id="' + P("atomB-up") + '"><g id="' + P("atomB-rot") + '">' + atom(ATOM_B[0], ATOM_B[1]) + "</g></g></g>");
+      // The atoms' streaks to the middle, the scorch on the floor, the mushroom cloud, and the soot around each human.
+      var streak = function (id, p) {
+        var d = "M" + f(p[0]) + "," + f(p[1]) + " L" + f(MID[0]) + "," + f(MID[1]);
+        return '<g id="' + P(id) + '"><path class="streak" d="' + d + '" stroke="' + C.war + '" stroke-width="' + 7 * s + '" stroke-linecap="round" opacity="0.75" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>' +
+          '<path class="streak" d="' + d + '" stroke="' + C.yellow + '" stroke-width="' + 3 * s + '" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></g>';
+      };
+      var scorch = '<ellipse id="' + P("scorch") + '" cx="' + f(MID[0]) + '" cy="' + f(floorY + 2) + '" rx="' + 300 * L.nuke + '" ry="' + 14 * L.nuke + '" fill="#2A221C" opacity="0"/>';
+      var cloud = '<g transform="translate(' + f(MID[0]) + "," + f(floorY) + ") scale(" + L.nuke + ')"><g id="' + P("nuke") + '">' + KIT.nuke() + "</g></g>";
+      // Soot in person units, around A (aiming right; B's is the mirror image).
+      var SOOT = [[0, -84, 36], [34, -62, 32], [-30, -50, 34], [70, -40, 26], [28, -24, 38], [-28, 2, 38], [30, 22, 40], [-22, 52, 36], [22, 68, 34], [0, 88, 24], [-4, -116, 24]];
+      var sootA = at(L.ax, L.y, s, '<g id="' + P("sootA") + '" opacity="0">' + soot(SOOT) + "</g>");
+      var sootB = at(L.bx, L.y, s, '<g id="' + P("sootB") + '" opacity="0">' + soot(SOOT.map(function (c) { return [-c[0], c[1], c[2]]; })) + "</g>");
+      var toasts = at(hx, hy, u, '<defs><clipPath id="' + P("clip-toast") + '"><rect x="-1000" y="-1000" width="3000" height="' + (1000 + TOAST_TOP + 4) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P("clip-toast") + ')">' + toast(0) + toast(1) + "</g>");
+      var spark = [cutX + s * HAND_A[0], L.y + s * (HAND_A[1] - 72)];
+      var star = '<g transform="translate(' + f(spark[0]) + "," + f(spark[1]) + ')"><g id="' + P("spark") + '">' + KIT.star(0, 0, 34, C.yellow) + KIT.star(0, 0, 18, C.cream) + "</g></g>";
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + stamp() + floor + scorch + cord + A + B + card + bench + dark +
+        streak("streakA", aimAw) + streak("streakB", aimBw) + atomA + atomB + toasts + cloud + sootA + sootB + star);
+
+      q("board-in").innerHTML = KIT.countdownBoard();
+      KIT.placeBoard(q("board"), q("board-in"));
+      var board = q("board-in").firstChild;
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
+      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.enter(tl, q("cam"), "zoom into the wall screen", KIT.OFFICE.screen);
+      var g = function (s2) { return "#" + P(s2); };
+      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t); };
+      var hide = function (el, t) { tl.to(el, { opacity: 0, duration: 0.01 }, t); };
+      // Pivots, set once while every element is untransformed (svgOrigin in a tween is read through the element's current transform).
+      var armA = document.querySelector(g("A-d2") + " .arm-l"), armB = document.querySelector(g("B-d2") + " .arm-r");
+      [[g("stamp"), "0 -15"], [g("card"), "340 125"], [g("scis"), "0 0"], [g("sc1"), "0 0"], [g("sc2"), "0 0"], [g("half-l"), "245 125"], [g("half-r"), "585 125"],
+        [g("spark"), "0 0"], [g("A-scis"), "0 0"], [g("atomA-pop"), ATOM_A.join(" ")], [[armA, g("atomA-rot")], "-17 -26"], [[armB, g("atomB-rot")], "17 -26"],
+        [g("toast-0"), (TOAST_X + 40) + " " + TOAST_TOP], [g("toast-1"), (TOAST_X + 90) + " " + TOAST_TOP], [g("sootA"), "15 -10"], [g("sootB"), "-15 -10"],
+        [document.querySelectorAll(g("A-d3") + " .char-eyes, " + g("B-d3") + " .char-eyes"), "0 -58"]].forEach(function (o) { gsap.set(o[0], { svgOrigin: o[1] }); });
+
+      // "nineteen forty-five": the 1945 stamp slams down.
+      tl.fromTo(g("stamp"), { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in" }, cue("nineteen"));
+      // "Greek": the dictionary card drops in; "naturally,": a dotted cut line appears on it.
+      tl.fromTo(g("card"), { opacity: 0, y: -70, rotation: -5 }, { opacity: 1, y: 0, rotation: 0, duration: 0.4, ease: "back.out(1.7)" }, cue("Greek"));
+      tl.fromTo(g("dash"), { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "steps(3)" }, cue("naturally,"));
+      // "cut" (second): giant scissors swoop in and open; a beat after "it.": snip, and the halves part.
+      var tc = cue("cut", 2), snip = KIT.after(ID, "it.");
+      tl.fromTo(g("scis"), { x: -700, y: 160, rotation: -30, opacity: 0 }, { x: 0, y: 0, rotation: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, tc - 0.1);
+      tl.fromTo(g("sc1"), { rotation: 0 }, { rotation: 16, duration: 0.3, ease: "power2.out" }, tc + 0.1);
+      tl.fromTo(g("sc2"), { rotation: 0 }, { rotation: -16, duration: 0.3, ease: "power2.out" }, tc + 0.1);
+      tl.to([g("sc1"), g("sc2")], { rotation: 0, duration: 0.07, ease: "power3.in" }, snip - 0.07);
+      hide(g("dash"), snip);
+      tl.to(g("half-l"), { x: L.split[0], y: 34, rotation: -9, duration: 0.45, ease: "power2.out" }, snip);
+      tl.to(g("half-r"), { x: L.split[1], y: 46, rotation: 13, duration: 0.45, ease: "power2.out" }, snip);
+      tl.to(g("scis"), { y: 90, opacity: 0, duration: 0.25, ease: "power2.in" }, snip + 0.15);
+      // "very human of you": a proud human pops up between the halves with the scissors held high.
+      var ti = cue("I", 2);
+      tl.fromTo(g("A-move"), { x: (cutX - L.ax) / s }, { x: 0, duration: 0.6, ease: "power2.inOut" }, ti + 0.2);
+      tl.fromTo(g("A-pop"), { y: L.popY }, { y: 0, duration: 0.4, ease: "back.out(1.6)" }, cue("very"));
+      tl.to(g("A-pop"), { y: -12, duration: 0.12, yoyo: true, repeat: 1, ease: "power1.out" }, cue("human") + 0.1);
+      tl.fromTo(g("spark"), { scale: 0, rotation: 0 }, { scale: 1, rotation: 45, duration: 0.2, ease: "back.out(2)" }, cue("human") + 0.1);
+      tl.to(g("spark"), { scale: 0, duration: 0.2, ease: "power2.in" }, cue("human") + 0.5);
+
+      // "I assumed": the card halves fall away, the scissors get tossed, A steps over to the workbench.
+      tl.to(g("half-l"), { y: 900, rotation: -40, opacity: 0, duration: 0.7, ease: "power2.in" }, ti);
+      tl.to(g("half-r"), { y: 900, rotation: 50, opacity: 0, duration: 0.7, ease: "power2.in" }, ti);
+      tl.fromTo(g("A-scis"), { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: -60, y: -260, rotation: -300, opacity: 0, duration: 0.6, ease: "power2.out" }, ti);
+      tl.fromTo(g("floor"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.5, ease: "power2.out" }, ti + 0.4);
+      tl.fromTo(g("table"), { y: 500, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.2)" }, ti + 0.5);
+      // "unlock": an atom appears over the raised hand and its cord plugs into the box.
+      var tu = cue("unlock");
+      tl.fromTo(g("atomA-pop"), { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2.5)" }, tu);
+      tl.fromTo(g("cord"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.5, ease: "power2.inOut" }, tu + 0.25);
+      // "free": the bulbs light one by one (the switch click); "energy.": A plugs in the toaster and bounces.
+      var tf = cue("free"), te = cue("energy.");
+      for (var i = 0; i < L.bulbs; i++) tl.fromTo(g("lit-" + i), { opacity: 0 }, { opacity: 1, duration: 0.04 }, tf + i * 0.12);
+      tl.to(g("plug"), { x: 9, duration: 0.12, ease: "power2.in" }, te);
+      show(g("toaster-glow"), te + 0.12);
+      tl.to(g("A-pop"), { y: -12, duration: 0.14, yoyo: true, repeat: 3, ease: "sine.inOut" }, te + 0.15);
+      // "can": a second human pops up, also holding an atom.
+      tl.fromTo([g("B-pop"), g("atomB-up")], { y: L.popY }, { y: 0, duration: 0.4, ease: "back.out(1.6)" }, cue("can"));
+
+      // "pointing": unplugged, the bulbs and toaster go dark; the humans turn and aim the atoms at each other.
+      var tp = cue("pointing");
+      tl.to(g("cord"), { opacity: 0, duration: 0.15 }, tp);
+      for (var k2 = 0; k2 < L.bulbs; k2++) tl.to(g("lit-" + k2), { opacity: 0, duration: 0.05 }, tp + (L.bulbs - 1 - k2) * 0.06);
+      tl.to(g("toaster-glow"), { opacity: 0, duration: 0.05 }, tp + 0.2);
+      tl.fromTo(g("dark"), { opacity: 0 }, { opacity: 0.62, duration: 0.5, ease: "power1.inOut" }, tp);
+      hide(g("A-d1"), tp + 0.15); show(g("A-d2"), tp + 0.15);
+      hide(g("B-d1"), tp + 0.15); show(g("B-d2"), tp + 0.15);
+      tl.fromTo([armA, g("atomA-rot")], { rotation: 0 }, { rotation: AIM, duration: 0.75, ease: "sine.inOut" }, tp + 0.1);
+      tl.fromTo([armB, g("atomB-rot")], { rotation: 0 }, { rotation: -AIM, duration: 0.75, ease: "sine.inOut" }, tp + 0.1);
+      tl.fromTo(document.querySelectorAll("#" + ID + "-art .glow"), { scale: 1, transformOrigin: "50% 50%" }, { scale: 1.25, transformOrigin: "50% 50%", duration: 0.3, yoyo: true, repeat: 5, ease: "sine.inOut" }, tp);
+
+      // "each": they fire. The atoms streak to the middle (the zap) and meet on "other!"; the arms kick back.
+      var tE = cue("each"), tO = cue("other!"), fly = tO - tE;
+      tl.fromTo(g("atomA-fly"), { x: 0, y: 0 }, { x: (MID[0] - aimAw[0]) / s, y: (MID[1] - aimAw[1]) / s, duration: fly, ease: "power2.in" }, tE);
+      tl.fromTo(g("atomB-fly"), { x: 0, y: 0 }, { x: (MID[0] - aimBw[0]) / s, y: (MID[1] - aimBw[1]) / s, duration: fly, ease: "power2.in" }, tE);
+      tl.fromTo(document.querySelectorAll(g("streakA") + " .streak, " + g("streakB") + " .streak"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: fly, ease: "power2.in" }, tE);
+      tl.to(armA, { rotation: AIM - 14, duration: 0.07, yoyo: true, repeat: 1, ease: "power2.out" }, tE);
+      tl.to(armB, { rotation: -AIM + 14, duration: 0.07, yoyo: true, repeat: 1, ease: "power2.out" }, tE);
+
+      // "other!": the bomb (the boom). A white flash and a shake; the mushroom cloud rises where the atoms met. Under the
+      // flash, the dark goes, everything is burnt, and soot hides the two humans.
+      KIT.boom(tl, g("nuke"), tO, { flash: q("flash"), shake: q("cam") });
+      // and a smaller rumble as the cloud climbs, once the flash has faded enough to see it
+      tl.fromTo(q("cam"), { y: 0 }, { y: 6, duration: 0.05, repeat: 11, yoyo: true, ease: "none", immediateRender: false }, tO + 0.45);
+      var tF = tO + 0.05;
+      [g("A-d2"), g("B-d2"), g("atomA-fly"), g("atomB-fly"), g("streakA"), g("streakB"), g("table"), g("dark")].forEach(function (el) { tl.set(el, { opacity: 0 }, tF); });
+      [g("A-d3"), g("B-d3"), g("b-table")].forEach(function (el) { show(el, tF); });
+      tl.fromTo(g("scorch"), { opacity: 0 }, { opacity: 0.55, duration: 0.01 }, tF);
+      tl.fromTo([g("sootA"), g("sootB")], { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.01 }, tF);
+      tl.to([g("sootA"), g("sootB")], { scale: 1.06, duration: 0.8, ease: "sine.out" }, tF + 0.05);
+      // "That's": the soot and the cloud thin away: both are standing exactly where they were, charred, hair up, smoking.
+      var tT = cue("That's");
+      tl.to([g("sootA"), g("sootB")], { opacity: 0, scale: 1.2, duration: 0.35, ease: "power1.in" }, tT - 0.3);
+      tl.to(g("nuke"), { opacity: 0, duration: 0.55, ease: "power1.in" }, tT - 0.25);
+      var wisps = document.querySelectorAll(g("A-d3") + " .smoke, " + g("B-d3") + " .smoke");
+      tl.fromTo(wisps, { y: 0, opacity: 1 }, { y: -6, opacity: 0.5, duration: 0.22, yoyo: true, repeat: Math.floor((D - tT) / 0.22), ease: "sine.inOut" }, tT - 0.1);
+      // Only the eyes move: they blink, one, the other, then both on "like".
+      var blink = function (sel, t) { tl.fromTo(sel, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.inOut" }, t); };
+      var eyesA = g("A-d3") + " .char-eyes", eyesB = g("B-d3") + " .char-eyes";
+      blink(eyesA, tT + 0.3); blink(eyesB, tT + 0.42);
+      blink([eyesA, eyesB], cue("like"));
+      // "kind": the burnt toaster pops up two slices of black toast (the toaster pop).
+      var tk = cue("kind");
+      tl.fromTo(g("toast-0"), { y: 0, rotation: 0 }, { y: -70, rotation: -10, duration: 0.18, ease: "power3.out" }, tk);
+      tl.fromTo(g("toast-1"), { y: 0, rotation: 0 }, { y: -82, rotation: 9, duration: 0.18, ease: "power3.out" }, tk + 0.02);
+      tl.fromTo(g("b-toaster"), { y: 0 }, { y: -6, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.out" }, tk);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

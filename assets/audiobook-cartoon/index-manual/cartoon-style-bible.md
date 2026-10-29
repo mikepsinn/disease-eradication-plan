@@ -8,23 +8,23 @@ The audiobook MP3 is the voice track. Do not record new narration. All times in 
 
 ## 1. Look
 
-The episode uses two visual layers. Each layer has a different job.
+The episode uses two visual layers. Each layer has a different job. Both match the theme song music video that opens the episode, so the cartoon continues its look: mid-century flat illustration in its palette (measured from its keyframes): deep navy `#112845` and `#061D3E`, slate `#273049`, burnt orange `#E5903B`, cream `#F3ECD0`, rust `#904B2E`, tan `#B47E52`, with mustard `#E8B04A` stars. Flat shapes, atomic stars and boomerangs, and a fine print grain over every drawn frame.
 
 ### Layer A: Wishonia's office (the cosmic layer)
 
 - Use this layer when Wishonia talks *to* the viewer: the opening, the jokes, the verdicts, and the ending.
-- Match the podcast cover: 1970s retro sunburst rays (red, orange, yellow, periwinkle blue, cream), a half-sun on the horizon, and a neon cyan perspective grid floor.
-- Use flat 2D shapes, thick dark outlines, and a slight paper-grain texture. Use gradients only on the sunburst.
+- A navy wall with slate and deep-navy geometric panels, mustard and cream atomic stars and orange boomerangs; a rising orange sun on the horizon; a tiled floor.
+- Use flat 2D shapes and dark navy outlines. No gradients.
 - The office floats in space above Earth. It has a desk, a filing cabinet labeled **"EARTH: CASE #847"**, a coffee mug, and a large retro wall screen. The wall screen shows the Earth footage (Layer B).
-- Wishonia's blue skin and orange dress already match the cover palette. Keep the sunburst behind Wishonia slightly darker, so that Wishonia stands out from it.
+- Wishonia's blue skin and orange dress already match the palette. A mustard disc behind Wishonia's head makes Wishonia stand out from the navy wall.
 
-### Layer B: Earth evidence (the engraving layer)
+### Layer B: Earth evidence (the diagram layer)
 
 - Use this layer when the audio describes what humans do: money, wars, the FDA, the treaty mechanics.
-- Match the episode art: black-and-white engraved, cross-hatched, hand-drawn infographic style on cream paper. Use banners, pipes, funnels, factories, and labels with arrows.
-- Use only **two** accent colors on top of the black and white:
-  - **Murder-money red** (`#D7322B`) for weapons, war, and the money that funds them.
-  - **Medicine teal** (`#1FA39A`) for clinical trials, cures, and the money that funds them.
+- Flat cream paper diagrams in the music video's printed style: navy lines, halftone-dot fills (in place of cross-hatching), a few orange and mustard stars. Use banners, pipes, funnels, factories, and labels with arrows.
+- Use only **two** accent colors for money and its effects:
+  - **Murder-money red** (`#C8452E`) for weapons, war, and the money that funds them.
+  - **Medicine teal** (`#2F8F86`) for clinical trials, cures, and the money that funds them.
 - When the money moves from war to medicine, the paper changes from red to teal. This is the main visual idea of the whole episode.
 - Wishonia can stay on screen in Layer B as a small talking head in a round corner frame ("PiP" in the script).
 
@@ -32,7 +32,7 @@ The episode uses two visual layers. Each layer has a different job.
 
 - Big numbers use a heavy retro serif (like the cover title), in black with a cream outline.
 - **Use the numbers the narrator says.** The audiobook edition has some different figures from the current website (for example 97 million war deaths, 13,000 warheads, 3,070 : 1). The script already uses the audio figures.
-- Chapter title cards use Layer A: the sunburst, the grid floor, and the title in the cover font. Use one only where the script says "title card" (where the narrator reads the heading). Parts whose first line is not a heading, such as Part 2 "Hello, human", start without a card, so the narration is not interrupted. The chapter list is at the top of the script.
+- Chapter title cards use Layer A: the navy wall, the rising sun and the stars, and the title in the cover font. Use one only where the script says "title card" (where the narrator reads the heading). Parts whose first line is not a heading, such as Part 2 "Hello, human", start without a card, so the narration is not interrupted. The chapter list is at the top of the script.
 - Keep on-screen text short. The narrator says the words; the screen shows the number or the label.
 
 ### Motion
@@ -40,6 +40,18 @@ The episode uses two visual layers. Each layer has a different job.
 - Use limited animation. Most shots are illustrated plates with slow push-ins and pans, plus a few looping actions (2–4 frames).
 - Animate the paper money a lot. It is the main "actor" of Layer B: it walks, runs, flows through pipes, and changes color.
 - **HOLD** on dark facts. When the audio states a death toll, stop all motion for 1–2 seconds. Do not add jokes on top of those lines.
+
+### Comedy
+
+The narration already tells its joke. The picture's job is a second joke that the words do not say.
+
+1. **Every scene has a visual joke of its own:** a background gag, a detail that contradicts the line, an escalation, or a callback to an earlier gag. A scene that only shows what the narrator says gets one, or gets merged into its neighbor.
+2. **Land the payoff a beat after the line.** Setups go up before or on the words; the visual punchline comes about 0.4 s after the spoken punchline ends, then holds. In a storyboard's Moves, `"word" →` starts on the word, `after "word" →` a beat after it ends, and `before "word" →` half a second before it starts.
+3. **Someone reacts to the big lines.** Wishonia changes expression in the corner frame, or looks slowly at the camera in the office; a human turns its head slowly. The reaction is often the laugh.
+4. **Do not repeat the captions.** The captions already show the words, so a label or counter goes on screen only when the number is itself the joke.
+5. **Threes with a twist, and callbacks.** Two of a kind, then a wrong third. Bring earlier gags back changed.
+6. **Go all the way, like the theme song.** A threat always pays off on screen. The bomb goes off: a white flash, a mushroom cloud, then the humans standing there charred black and smoking, hair straight up, only their eyes blinking. The spark spreads until the whole person is on fire and running in circles. The dying turn into skeletons, and the skeletons keep smiling. The button is the humans doing it again. This is Looney Tunes violence: nobody bleeds; everybody is charred, flattened, frozen or a skeleton. The kit draws these (`KIT.person` with `skeleton` or `charred`, `KIT.flames`, `KIT.nuke`, `KIT.xray`). The cheerful voice against the horror is the joke, so the horror has to be seen.
+7. **Sound.** Each scene gets one or two cartoon sound effects on its gags (a rubber-stamp thunk, a cash-register ding, a boing, a slide whistle, a record scratch, a toaster pop), listed on its storyboard's Sound line. No music under the narration except the theme. A HOLD is silent.
 
 ---
 
@@ -49,7 +61,7 @@ Wishonia already has a full sprite set. Use it. Do not redesign the character.
 
 - **Where the sprites are:** the originals are in `mikepsinn/disease-eradication-plan` (branch `develop`; the 59 files used here are as of commit `5d6cad7`) → `transmit/public/assets/sprites/alien/`, at full resolution (heads 1024×1024, bodies 1343×768). The 12 seed images that the sprites were made from are in `alien/sources/`. `mikepsinn/optimitron` has reduced copies in `apps/optimitron/public/sprites/wishonia/` (some are only 512 px). **Use the originals for video.** A contact sheet of all 59 sprites, with their file names, is next to this file: `wishonia-contact-sheet.png`.
 - **Design:** blue skin, a black bob haircut with straight bangs, two thin antennae with ball tips, large eyes with dark lashes. An orange 1960s-style mod dress with a darker swirl pattern and a small white brooch at the neck. Blue arms.
-- **Name on screen:** "WISHONIA." The full name is "World Integrated System for High-efficiency Optimization Networked Intelligence and Allocation" (the audio spells it out at 04:15).
+- **Name on screen:** "WISHONIA." The full name is "World Integrated System for High-efficiency Optimization Networked Intelligence and Allocation" (the theme song sings it out).
 
 ### How the sprites fit together
 
@@ -95,9 +107,10 @@ All of these are original designs for this project. Do not base them on characte
 
 ### The Humans ("meat robots")
 
-- Simple, rounded bean-shaped bodies, short arms and legs, dot eyes. Small rivets at the elbows and knees (the "meat robot" joke).
-- Each human has a small round **"check engine" light** on the chest. It blinks red when a disease starts. Use this gentle sign in place of any image of sickness.
-- Use many skin tones and hair shapes.
+- **Stick figures in simple clothes:** a round head with a simple face (dot eyes, eyebrows, a line or open mouth), line arms and legs, and plain clothes over the body: a shirt, a dress, a suit, a lab coat, scrubs or overalls. Who someone is comes from clothes, hat, props and pose, the way OverSimplified tells whole wars. Wishonia is a detailed cartoon; the humans are the simple diagrams Wishonia draws of them.
+- Each human has a small round **"check engine" light** on the chest, over the clothes. It blinks red when a disease starts.
+- Four skin tones on the heads, four clothing colors, and several hair shapes.
+- They act with posture and timing: a slow head turn, an arm thrown up, a slump. The faces stay simple.
 
 ### The Papers (money)
 
@@ -109,23 +122,23 @@ All of these are original designs for this project. Do not base them on characte
 
 | Character | Design | Used in |
 |---|---|---|
-| The Rich Human | Bean human in a top hat, sitting on a hill of papers. Later wears a button: "I PREFER LIVING." | Quiz, Paper Distribution, bonds |
-| The Loud Human | Bean human with a megaphone instead of a head. | Step 2 (marketing) |
-| The Lobbyist | Bean human with a briefcase that has a funnel on top. | Paper Distribution, Bribe the Bribers |
-| The Politician | Bean human with a very wide tie. The tie flips between red and blue (the "red team / blue team" gag). | Leaders, Purchase Democracy |
-| The Weapons Maker | Bean human in a hard hat. Factory chimneys are shaped like missiles. | Leaders loop, Enjoy |
-| The Orderly | Very tall bean human in white scrubs, sliding a medicine cup through a door slot. | Institutionalize scene |
-| Grandma | Bean human with hair curlers, holding a 1940s war-bond poster. | What Grandma got |
+| The Rich Human | A human in a suit, top hat, monocle and mustache, sitting on a hill of papers. Later wears a button: "I PREFER LIVING." (`KIT.cast("richHuman")`) | Quiz, Paper Distribution, bonds |
+| The Loud Human | A human with a megaphone instead of a head. (`KIT.cast("loudHuman")`) | Step 2 (marketing) |
+| The Lobbyist | A human in a suit and bowler with a briefcase that has a funnel on it. (`KIT.cast("lobbyist")`) | Paper Distribution, Bribe the Bribers |
+| The Politician | A human in a suit with a very wide tie. The tie flips between red and blue (the "red team / blue team" gag). (`KIT.cast("politician")`) | Leaders, Purchase Democracy |
+| The Weapons Maker | A human in overalls and a hard hat. Factory chimneys are shaped like missiles. (`KIT.cast("weaponsMaker")`) | Leaders loop, Enjoy |
+| The Orderly | A very tall human in white scrubs, sliding a medicine cup through a door slot. (`KIT.cast("orderly")`) | Institutionalize scene |
+| Grandma | A human in a dress with hair curlers, holding a 1940s war-bond poster. (`KIT.cast("grandma")`) | What Grandma got |
+| The Scientist | A human in a lab coat with a clipboard. (`KIT.cast("scientist")`) | The trials, the dFDA |
 | The Democracy Dog | A round dog chasing its own tail. The tail is made of papers; later it is made of teal pills. | Leaders loop |
 | The Optimitron | A 1970s countertop appliance (a toaster–microwave hybrid) with two big dials: **HEALTH** and **WEALTH**. Policy cards pop out of it like toast. | Optimitron, Step 1 |
 | The Calculator | A desk calculator with eyes. It shows "ERROR," screams, and walks off the desk. | The Math |
 | The Countdown Board | A retro flip-number board: "HUMANS TERMINATED BY CURABLE DISEASES SINCE THIS VIDEO STARTED." It counts about 1.7 per second (104 per minute). | Hello human, The Problem, Closing |
 
-### Rules for sensitive content
+### Real people, brands and weapons
 
-- The audio mentions the Holocaust and Nazis, 9/11, a crucifixion, a mass shooting, a dying child, and war deaths. Show these as plain text cards or as empty, quiet scenes. Do not draw victims, Nazis, uniforms, weapons in use, religious figures, or a sick child.
-- Never draw real, identifiable politicians, executives, companies, or brand logos. Use the generic bean humans and plain signs. Real names (Eisenhower, Erica Chenoweth) appear as text only.
-- Weapons can be silly objects (missiles with price tags, a submarine in a field). Never show a weapon hitting a person.
+- Never draw real, identifiable politicians, executives, companies, or brand logos. Use the generic humans and plain signs. Real names (Eisenhower, Erica Chenoweth) appear as text only.
+- Weapons are silly objects (missiles with price tags, a submarine in a field).
 
 ---
 
@@ -136,7 +149,7 @@ All of these are original designs for this project. Do not base them on characte
 3. **The countdown board.** It sits in a corner during the opening and the ending.
 4. **Wishonia's mug sip.** Before a big punchline, Wishonia sips coffee. After the punchline, Wishonia puts the mug down slowly.
 5. **The case file.** Wishonia stamps the Earth case file: "SUBOPTIMAL" (after the FDA part) and finally "ELIGIBLE FOR OPTIMIZATION" (the ending).
-6. **Chapter cards.** A 2-second sunburst title card, where the script says "title card" (see section 1).
+6. **Chapter cards.** A 2-second title card in the office colors (navy wall, rising sun, stars), where the script says "title card" (see section 1).
 
 ---
 
@@ -144,9 +157,16 @@ All of these are original designs for this project. Do not base them on characte
 
 All art is drawn in code (SVG and CSS). Do not use AI images. The shared drawing functions are in `video/assets/js/kit.js`. Use them, so that all parts look the same.
 
-- **Layer A (`KIT.office`):** SVG sunburst rays from the horizon, a half-sun of rings, and a navy floor with a neon cyan perspective grid, in the cover colors. A dark halo behind Wishonia makes Wishonia stand out. Props: `KIT.desk` (in front of Wishonia), `KIT.mug`, `KIT.cabinet` ("EARTH: CASE #847") and `KIT.wallScreen`.
-- **Layer B (`KIT.paper`):** cream paper with a double rule border. Do not use full-frame SVG filters (such as a grain texture): in the render they paint through from scenes that are not on screen and wash out the colors. `KIT.paperDefs` gives the hatch patterns (diagonal, cross, fine, red and teal). Use black lines, and only the two accent colors: red `#D7322B` (war money) and teal `#1FA39A` (medicine money). For teal text on cream, use the darker `#157F78`, so that the text is easy to read.
-- **Characters (original designs):** `KIT.bean` (a bean-shaped human with dot eyes, rivets at the elbows and knees, and a chest light; four gray tones for skin), `KIT.money` (a paper bill with stick legs and a generic oval portrait), `KIT.tophat`, the countdown board (`KIT.countdownBoard`, 104 per minute), and the quiz parts (`KIT.checkbox`, `KIT.tick`, `KIT.pencil`).
+One exception: the first 1:40 of episode 1 (the theme song) is the existing music video, `assets/music-video/wishonia-theme-song-music-video.mp4`, which was made from AI keyframes. The drawn style starts at the title card. See `video/storyboards/part-01-opening.md`, scene theme-music-video.
+
+- **Palette (`KIT.C`):** the theme song colors (section 1). Take every color from `KIT.C`, so that a palette change stays one edit.
+- **Layer A (`KIT.office`):** the navy wall with geometric panels, atomic stars (`KIT.star`) and boomerangs (`KIT.boomerang`), the rising orange sun, the tiled floor, and a mustard disc behind Wishonia's head. Props: `KIT.desk` (in front of Wishonia), `KIT.mug`, `KIT.cabinet` ("EARTH: CASE #847") and `KIT.wallScreen`. `KIT.OFFICE` gives the standard positions for each canvas shape (wall screen, Wishonia, desk, the disc), so that the office stays the same from scene to scene.
+- **Both canvas shapes:** every scene is drawn for 16:9 (1920 × 1080) and for the tall phone version, 9:16 (1080 × 1920); `KIT.V` is true for 9:16. Each scene has its own layout for each shape, not a scaled copy. In 9:16, Wishonia's corner frame is top right, the countdown board top left, and the captions sit at y 1470 to 1700.
+- **Transitions (`KIT.enter`):** "slide left" (Earth to Earth), "zoom into the wall screen" (office to Earth) and "zoom out of the wall screen" (Earth to office, with a small copy of the last Earth picture on the screen).
+- **The eligibility form (`KIT.form`, `KIT.FORM_Q`, `KIT.FORM_AT`):** the 1950s mail-in form of loved-ones, nuclear-winters and eligible, with its YES/NO boxes and the fine print.
+- **Layer B (`KIT.paper`):** cream paper with a navy and orange double rule border and a few stars. `KIT.paperDefs` gives the halftone-dot fills (the ids keep their old names: hatch, cross, fine, hred, hteal). Use navy lines, and only the two accent colors for money: red `#C8452E` (war money) and teal `#2F8F86` (medicine money). For teal text on cream, use the darker `#1F6E68`, so that the text is easy to read.
+- **Print grain (`KIT.grain`):** a fine speckle pattern laid over the whole frame, last. Do not use full-frame SVG filters for it: in the render they paint through from scenes that are not on screen and wash out the colors.
+- **Characters (original designs):** `KIT.person(o)` (a stick-figure human in simple clothes, with a chest light; `KIT.cast(name)` gives the recurring characters above; the old name `KIT.bean` now draws a person too, and `tools/cast-sheet.mjs` draws the cast sheet), `KIT.money` (a paper bill with stick legs and a generic oval portrait), `KIT.tophat`, the countdown board (`KIT.countdownBoard`, 104 per minute), and the quiz parts (`KIT.checkbox`, `KIT.tick`, `KIT.pencil`).
 - **Wishonia:** the real sprite PNGs only (section 2). `KIT.mountWishonia` puts the head on the body as in `characters.js`, swaps the mouth from `word-timings.json`, shows `blink-smile` in pauses, and rocks the head ±2° on the 7-second loop. Layer A shows Wishonia large. Layer B shows Wishonia in a round corner frame (PiP).
 - **Text:** big numbers use Fraunces Black (soft), labels use Oswald SemiBold, captions use Inter. The font files and their licenses (SIL Open Font License) are in `video/assets/fonts/`. Draw check marks and arrows as SVG, because the fonts do not have all symbols.
 
@@ -157,8 +177,9 @@ All art is drawn in code (SVG and CSS). Do not use AI images. The shared drawing
 The video is a HyperFrames project (HTML + GSAP, rendered to MP4) in `video/`. It follows `mikepsinn/optimitron/videos/care-integrated-clinical-trials`, but it uses the audiobook MP3 as the voice, so there is no text-to-speech step. `video/README.md` gives the commands.
 
 - **One part at a time.** `video/parts/part-NN.json` gives the audio cut and, for each scene, its cue word, its composition file, and the Wishonia states (`expression`, resting mouth, body pose, large or PiP).
-- **The build step** (`node tools/build-part.mjs parts/part-NN.json`) cuts the MP3, copies the sprites, and writes `data/part-NN.js` and `index.html`. The data file has the scene start times (found from the cue words), the words, the mouth track (`CHAR_TO_VISEME`, closed in pauses), the blinks, and the caption groups.
-- **One composition for each scene** (`compositions/scenes/sNN-*.html`). Each scene starts its animations on the spoken words with `KIT.cue(scene, "word")`, so the motion stays in sync with the voice.
+- **The build step** (`node tools/build-part.mjs parts/part-NN.json`, add `--aspect 9x16` for the tall version) cuts the MP3, mixes in the part's sound effects (`tools/sfx.py` makes them; nothing is downloaded), copies the sprites and other media, and writes `data/part-NN.js` and `index.html`. The data file has the scene start times (found from the cue words), the words, the mouth track (`CHAR_TO_VISEME`, closed in pauses), the blinks, the caption groups and the sound times. Build and render one shape at a time: the build rewrites files that both shapes use.
+- **One composition for each scene** (`compositions/scenes/part-NN/<scene-id>.html`). Each scene starts its animations on the spoken words with `KIT.cue(scene, "word")`, `KIT.after` (a beat after the word) or `KIT.before`, so the motion stays in sync with the voice.
+- **SVG and GSAP:** never tween x, y, scale or rotation on an SVG element that has a `transform` attribute (GSAP reads it as the start and the element jumps). Position an outer group and tween an inner one.
 - **Captions** (`compositions/captions.html`) come from the same word timings. The spoken word is highlighted.
 - **Check, then render:** `npx hyperframes check`, look at frames with `npx hyperframes snapshot --describe false`, then `npx hyperframes render`. Render each part on its own, then join the parts with ffmpeg.
 - Keep the renders, the MP3 and the audio cuts out of git.

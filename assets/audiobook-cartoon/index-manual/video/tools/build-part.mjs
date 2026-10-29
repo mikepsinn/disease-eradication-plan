@@ -1,27 +1,44 @@
 // Build one part of the episode cartoon from the audiobook MP3 and word-timings.json.
 //
-//   node tools/build-part.mjs parts/part-02.json
+//   node tools/build-part.mjs parts/part-01.json [--aspect 9x16]
+//
+// --aspect 9x16 builds the tall phone version (1080 x 1920); the default is 16:9 (1920 x 1080).
 //
 // Writes (relative to the video project):
-//   data/<id>.js          scene times, words, mouth track, blinks and caption groups (committed)
+//   data/<id>.js          scene times, words, mouth track, blinks, caption groups and sounds (committed)
+//   data/part.js          a copy of it, for the compositions every part shares (git-ignored)
+//   data/aspect.js        the canvas shape of this build (git-ignored)
 //   index.html            the root composition for this part (committed)
-//   assets/audio/<id>.mp3 the cut of the episode MP3 (git-ignored)
+//   assets/audio/<id>.mp3 the cut of the episode MP3 with the part's sound effects mixed in (git-ignored)
 //   assets/sprites/       copies of the Wishonia sprites (git-ignored)
+//   assets/sfx/           the sound effects, made by tools/sfx.py (git-ignored)
+//   the part's "media"    other footage, such as the theme song music video (git-ignored)
+//
+// A part file's "sounds" list places sound effects on spoken words:
+//   { "scene": "pentagon", "cue": "Square", "n": 1, "at": "after", "sfx": "thud", "volume": 0.8 }
+// "at" is "on" (the word's start), "after" (a beat after it ends) or "before" (half a second early).
 import { execFileSync } from "node:child_process";
-import { cpSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const VIDEO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const PLAN = resolve(VIDEO, "..");
 const REPO = resolve(PLAN, "../../..");
-const MP3_URL = "https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.487df96e.mp3";
-const MP3 = join(REPO, "assets/audiobook/cartoon/index-manual.mp3");
+const MP3_URL = "https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.cbaf659d.mp3";
+// Named after the MP3, so that a cached copy of an older episode is never used by mistake.
+const MP3 = join(REPO, "assets/audiobook/cartoon", MP3_URL.split("/").pop());
 const SPRITES = join(REPO, "transmit/public/assets/sprites/alien");
 
 const part = JSON.parse(readFileSync(resolve(VIDEO, process.argv[2] ?? "parts/part-02.json"), "utf8"));
 const START = part.audio.start;
 const DURATION = round(part.audio.end - START);
+const aspectAt = process.argv.indexOf("--aspect");
+const ASPECT = aspectAt > 0 ? process.argv[aspectAt + 1] : "16x9";
+const [W, H] = ASPECT === "9x16" ? [1080, 1920] : [1920, 1080];
+// Captions are burned in only on the phone version (Shorts, Reels and TikTok scroll with the sound off).
+// The 16:9 version goes to YouTube with data/<id>.srt as closed captions instead; --captions burns them in anyway.
+const BURN_CAPTIONS = ASPECT === "9x16" || process.argv.includes("--captions");
 
 function round(x) {
   return Math.round(x * 1000) / 1000;
@@ -66,7 +83,7 @@ scenes.forEach((sc, i) => {
 const states = [];
 for (const sc of scenes) {
   let after = sc.start;
-  for (const st of sc.wishonia) {
+  for (const st of sc.wishonia || []) {
     const t = states.length === 0 ? 0 : sc.wishonia.indexOf(st) === 0 ? sc.start : findWord(st.cue, after);
     after = t;
     states.push({ t: round(t), expr: st.expr, rest: st.rest, body: st.body, mode: st.mode, scene: sc.id });
@@ -157,7 +174,30 @@ const captionGroups = captions.map((g, i) => {
   return { s: g.words[0].s, e: round(end), words: g.words };
 });
 
-// ── Write data/<id>.js ──────────────────────────────────────────────────
+// Scenes whose words are already on screen (a title card) get no captions.
+const quiet = scenes.filter((sc) => (part.noCaptions || []).includes(sc.id));
+const shownCaptions = captionGroups.filter((g) => !quiet.some((sc) => g.s >= sc.start - 0.01 && g.s < sc.start + sc.duration));
+
+// ── Sound effects on spoken words ───────────────────────────────────────
+function wordIn(sc, cue, n) {
+  const want = norm(cue);
+  let k = n || 1;
+  const hit = words.find((w) => w.s >= sc.start - 0.05 && w.s < sc.start + sc.duration && norm(w.w) === want && --k === 0);
+  if (!hit) throw new Error(`Sound cue "${cue}" (${n || 1}) not in scene ${sc.id}`);
+  return hit;
+}
+const sounds = (part.sounds || []).map((sd) => {
+  const sc = scenes.find((s) => s.id === sd.scene);
+  if (!sc) throw new Error(`Sound for unknown scene ${sd.scene}`);
+  let t = sc.start;
+  if (sd.cue !== undefined) {
+    const w = wordIn(sc, sd.cue, sd.n);
+    t = sd.at === "after" ? w.e + 0.35 : sd.at === "before" ? w.s - 0.5 : w.s;
+  }
+  return { t: round(Math.max(0, t + (sd.offset || 0))), sfx: sd.sfx, volume: sd.volume ?? 0.6 };
+});
+
+// ── Write data/<id>.js, data/part.js and data/aspect.js ─────────────────
 const data = {
   id: part.id,
   title: part.title,
@@ -168,16 +208,25 @@ const data = {
   words,
   mouth,
   blinks,
-  captions: captionGroups,
+  captions: shownCaptions,
+  sounds,
 };
 mkdirSync(join(VIDEO, "data"), { recursive: true });
-writeFileSync(
-  join(VIDEO, "data", `${part.id}.js`),
-  `// Generated by tools/build-part.mjs from parts/${part.id}.json and word-timings.json. Do not edit.\n` +
-    `window.HF_PART = ${JSON.stringify(data)};\n`,
-);
+const dataJs = `// Generated by tools/build-part.mjs from parts/${part.id}.json and word-timings.json. Do not edit.\n` +
+  `window.HF_PART = ${JSON.stringify(data)};\n`;
+writeFileSync(join(VIDEO, "data", `${part.id}.js`), dataJs);
+writeFileSync(join(VIDEO, "data", "part.js"), dataJs);
+writeFileSync(join(VIDEO, "data", "aspect.js"), `// Generated by tools/build-part.mjs. Do not edit.\nwindow.HF_ASPECT = ${JSON.stringify(ASPECT)};\n`);
+// Closed captions for the 16:9 upload: every caption group, the title card's too, in part time.
+function srtTime(t) {
+  const ms = Math.round(t * 1000);
+  const pad = (n, k = 2) => String(n).padStart(k, "0");
+  return `${pad(Math.floor(ms / 3600000))}:${pad(Math.floor(ms / 60000) % 60)}:${pad(Math.floor(ms / 1000) % 60)},${pad(ms % 1000, 3)}`;
+}
+writeFileSync(join(VIDEO, "data", `${part.id}.srt`), captionGroups.map((g, i) =>
+  `${i + 1}\n${srtTime(g.s)} --> ${srtTime(g.e)}\n${g.words.map((w) => w.w).join(" ")}\n`).join("\n"));
 
-// ── Audio cut and sprites (git-ignored) ─────────────────────────────────
+// ── Audio cut with the sound effects, sprites and media (git-ignored) ───
 if (!existsSync(MP3)) {
   mkdirSync(dirname(MP3), { recursive: true });
   // -f: an HTTP error fails the build instead of saving the error page as the MP3.
@@ -186,27 +235,52 @@ if (!existsSync(MP3)) {
   renameSync(`${MP3}.part`, MP3);
 }
 mkdirSync(join(VIDEO, "assets/audio"), { recursive: true });
-execFileSync(
-  "ffmpeg",
-  ["-y", "-loglevel", "error", "-ss", String(START), "-to", String(part.audio.end), "-i", MP3,
-    "-ac", "2", "-ar", "44100", "-b:a", "192k", join(VIDEO, "assets/audio", `${part.id}.mp3`)],
-  { stdio: "inherit" },
-);
+const voice = join(VIDEO, "assets/audio", `${part.id}.voice.wav`);
+execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-ss", String(START), "-to", String(part.audio.end), "-i", MP3, "-ac", "2", "-ar", "44100", voice], { stdio: "inherit" });
+const SFX = join(VIDEO, "assets/sfx");
+if (sounds.length) execFileSync("python", ["-I", join(VIDEO, "tools/sfx.py"), SFX], { stdio: "inherit" });
+const inputs = ["-i", voice];
+const chains = [];
+sounds.forEach((sd, i) => {
+  const file = join(SFX, `${sd.sfx}.wav`);
+  if (!existsSync(file)) throw new Error(`No sound effect ${sd.sfx} (have: ${readdirSync(SFX).join(", ")})`);
+  inputs.push("-i", file);
+  const ms = Math.round(sd.t * 1000);
+  chains.push(`[${i + 1}]adelay=${ms}|${ms},volume=${sd.volume}[s${i}]`);
+});
+const mix = sounds.length ? [...chains, `[0]${sounds.map((_, i) => `[s${i}]`).join("")}amix=inputs=${sounds.length + 1}:normalize=0:duration=first[out]`].join(";") : null;
+execFileSync("ffmpeg", ["-y", "-loglevel", "error", ...inputs, ...(mix ? ["-filter_complex", mix, "-map", "[out]"] : []),
+  "-ac", "2", "-ar", "44100", "-b:a", "192k", join(VIDEO, "assets/audio", `${part.id}.mp3`)], { stdio: "inherit" });
 cpSync(SPRITES, join(VIDEO, "assets/sprites"), {
   recursive: true,
   filter: (src) => !src.includes("/sources"),
 });
+// Media too big for git lives only in the main checkout, so a worktree reads it from there.
+const MAIN = resolve(execFileSync("git", ["-C", REPO, "rev-parse", "--path-format=absolute", "--git-common-dir"], { encoding: "utf8" }).trim(), "..");
+for (const m of part.media || []) {
+  const to = join(VIDEO, m.to);
+  mkdirSync(dirname(to), { recursive: true });
+  if (!existsSync(to)) copyFileSync(existsSync(join(REPO, m.from)) ? join(REPO, m.from) : join(MAIN, m.from), to);
+  if (m.lastFrame && !existsSync(join(VIDEO, m.lastFrame))) {
+    // Decode the last second and keep overwriting one PNG, which leaves the final frame
+    // (the video track can end before the audio, so a seek close to the end finds nothing).
+    execFileSync("ffmpeg", ["-y", "-loglevel", "error", "-sseof", "-1.5", "-i", to, "-update", "1", join(VIDEO, m.lastFrame)], { stdio: "inherit" });
+  }
+}
 
-// ── Keep each composition's root duration equal to its scene length ─────
-function setRootDuration(file, id, duration) {
+// ── Keep each composition's root duration and size equal to its scene ───
+function setRoot(file, id, duration) {
   const path = join(VIDEO, file);
   if (!existsSync(path)) return;
-  const html = readFileSync(path, "utf8");
-  const re = new RegExp(`(data-composition-id="${id}"[^>]*?data-duration=")[0-9.]+(")`);
-  writeFileSync(path, html.replace(re, `$1${duration}$2`).replace(/(class="clip" data-start="0" data-duration=")[0-9.]+(")/g, `$1${duration}$2`));
+  let html = readFileSync(path, "utf8");
+  html = html.replace(new RegExp(`(data-composition-id="${id}"[^>]*?data-duration=")[0-9.]+(")`), `$1${duration}$2`)
+    .replace(/(class="clip" data-start="0" data-duration=")[0-9.]+(")/g, `$1${duration}$2`)
+    .replace(new RegExp(`(data-composition-id="${id}"[^>]*?data-width=")[0-9]+(")`), `$1${W}$2`)
+    .replace(new RegExp(`(data-composition-id="${id}"[^>]*?data-height=")[0-9]+(")`), `$1${H}$2`);
+  writeFileSync(path, html);
 }
-for (const sc of scenes) setRootDuration(sc.file, sc.id, sc.duration);
-setRootDuration("compositions/captions.html", "captions", DURATION);
+for (const sc of scenes) setRoot(sc.file, sc.id, sc.duration);
+setRoot("compositions/captions.html", "captions", DURATION);
 
 // ── Write index.html ────────────────────────────────────────────────────
 const sceneDivs = scenes
@@ -219,6 +293,8 @@ const sceneDivs = scenes
         data-start="${sc.start}"
         data-duration="${sc.duration}"
         data-track-index="${i % 2}"
+        data-width="${W}"
+        data-height="${H}"
       ></div>`,
   )
   .join("\n");
@@ -228,12 +304,12 @@ const index = `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
+    <meta name="viewport" content="width=${W}, height=${H}" />
     <script src="assets/vendor/gsap.min.js"></script>
     <style>
       * { margin: 0; padding: 0; box-sizing: border-box; }
-      html, body { width: 1920px; height: 1080px; overflow: hidden; background: #000; }
-      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #f3ead3; }
+      html, body { width: ${W}px; height: ${H}px; overflow: hidden; background: #000; }
+      #root { position: relative; width: ${W}px; height: ${H}px; overflow: hidden; background: #112845; }
       .scene { position: absolute; inset: 0; width: 100%; height: 100%; }
     </style>
   </head>
@@ -243,11 +319,11 @@ const index = `<!doctype html>
       data-composition-id="main"
       data-start="0"
       data-duration="${DURATION}"
-      data-width="1920"
-      data-height="1080"
+      data-width="${W}"
+      data-height="${H}"
     >
 ${sceneDivs}
-      <div
+${BURN_CAPTIONS ? `      <div
         id="el-captions"
         class="scene clip"
         data-composition-id="captions"
@@ -256,8 +332,10 @@ ${sceneDivs}
         data-start="0"
         data-duration="${DURATION}"
         data-track-index="4"
+        data-width="${W}"
+        data-height="${H}"
       ></div>
-      <audio
+` : ""}      <audio
         id="el-voice"
         src="assets/audio/${part.id}.mp3"
         data-start="0"
@@ -277,5 +355,5 @@ ${sceneDivs}
 `;
 writeFileSync(join(VIDEO, "index.html"), index);
 
-console.log(`${part.id}: ${DURATION}s, ${scenes.length} scenes, ${words.length} words, ${mouth.length} mouth shapes, ${blinks.length} blinks, ${captionGroups.length} caption groups`);
+console.log(`${part.id} (${ASPECT}): ${DURATION}s, ${scenes.length} scenes, ${words.length} words, ${mouth.length} mouth shapes, ${blinks.length} blinks, ${BURN_CAPTIONS ? `${shownCaptions.length} burned-in caption groups` : `captions in data/${part.id}.srt`}, ${sounds.length} sounds`);
 for (const sc of scenes) console.log(`  ${sc.id} ${sc.start.toFixed(2)} +${sc.duration.toFixed(2)}`);
