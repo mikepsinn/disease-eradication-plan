@@ -1001,19 +1001,49 @@
       tl.set(bones, { opacity: i % 2 ? 0 : 1 }, t + i * 0.06);
     }
   }
-  // The Grim Reaper from the theme song: a hooded black robe, a grinning skull and a scythe. Drawn
-  // around (0,0) with its feet at y 100, a head taller than a person. Parts: .reaper-scythe, .head.
-  function reaper() {
-    var ink = C.line, robe = "#141B2B";
-    return '<g class="reaper">' +
-      '<g class="reaper-scythe"><path d="M46,98 L64,-196" stroke="' + ink + '" stroke-width="13" stroke-linecap="round"/><path d="M46,98 L64,-196" stroke="' + C.tan + '" stroke-width="7" stroke-linecap="round"/>' +
-      '<path d="M64,-196 C20,-236 -60,-236 -104,-196 C-60,-214 10,-210 60,-170 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/></g>' +
-      '<path d="M-46,100 C-52,20 -44,-60 -34,-110 C-30,-150 -16,-176 0,-178 C16,-176 30,-150 34,-110 C44,-60 52,20 46,100 Z" fill="' + robe + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
-      '<path d="M-26,-112 C-26,-146 -14,-160 0,-160 C14,-160 26,-146 26,-112 C14,-104 -14,-104 -26,-112 Z" fill="#000"/>' +
-      '<g class="head"><circle cx="0" cy="-130" r="17" fill="' + BONE + '" stroke="' + ink + '" stroke-width="3"/><ellipse cx="-6" cy="-133" rx="4.5" ry="5.5" fill="' + ink + '"/><ellipse cx="6" cy="-133" rx="4.5" ry="5.5" fill="' + ink + '"/>' +
-      '<path d="M-8,-120 Q0,-115 8,-120 M-4,-121 v4 M0,-120 v4 M4,-121 v4" fill="none" stroke="' + ink + '" stroke-width="1.8" stroke-linecap="round"/></g>' +
-      '<circle cx="46" cy="-40" r="9" fill="' + BONE + '" stroke="' + ink + '" stroke-width="2.5"/>' +
-      '<path d="M-40,40 C-30,10 -10,0 0,0 C10,0 30,10 40,40" fill="none" stroke="' + ink + '" stroke-width="3" opacity="0.5"/></g>';
+  // The Grim Reaper from the theme song: generated cut-out art in assets/art/reaper/ (AGENTS.md, Generated art), drawn
+  // around (0,0) with the hem at y 100 and the hood's tip at about y -190, a head taller than a person.
+  // o.pose: "scythe" (the default: leaning on his scythe), "hug" (arms spread wide), "clipboard" (a blank clipboard and
+  // a pencil: draw the marks on it in code), "sulk" (arms folded, head down) or "puppet" for a move no pose has: the
+  // body, a face in the hood (.head; o.face "grin", "sulk" or "delight") and two arms that turn at REAPER.shoulder
+  // (svgOrigin): .reaper-arm-open (screen left, an open hand) and .reaper-arm-grip (screen right, a fist that holds
+  // things; REAPER.hand is where its hand is at 0 degrees). o.arms: their start angles [left, right], 0 hanging,
+  // positive turning outward and up. o.scythe: true puts the scythe in the fist (.reaper-scythe, turning with it).
+  // o.only draws one layer, to put the body behind something and the arms in front of it: "body" (with the face),
+  // "arms", or "scythe" (the scythe alone, where the fist would hold it).
+  var REAPER = {
+    art: "assets/art/reaper/",
+    // boxes [x, y, w, h] in Reaper units (the poses' sheet pixels / 3, the puppet's x 0.302)
+    pose: { scythe: [-81, -216, 154.3, 316], hug: [-90.7, -190.7, 178.7, 291], clipboard: [-63.3, -190.7, 120, 290.7], sulk: [-62, -178.7, 110.7, 278.7] },
+    body: [-80.1, -190, 159.2, 290],
+    face: [-19, -176, 38, 57],
+    shoulder: [[-34, -113], [27, -113]],
+    // each arm's image size and its shoulder point, in its own pixels
+    arm: { open: [143, 516, 72, 12], grip: [144, 485, 74, 12] },
+    hand: [[-28, 10], [19, 19]],
+    // the scythe's box with its grip at the fist
+    scythe: [-98.2, -132, 136.2, 278.4],
+  };
+  function reaper(o) {
+    o = o || {};
+    var pose = o.pose || "scythe", A = REAPER.art;
+    function img(name, b) { return '<image href="' + A + name + '.webp" x="' + b[0] + '" y="' + b[1] + '" width="' + b[2] + '" height="' + b[3] + '"/>'; }
+    var scythe = '<g class="reaper-scythe">' + img("prop-scythe", REAPER.scythe) + "</g>";
+    if (o.only === "scythe") return scythe;
+    if (pose !== "puppet") {
+      if (!REAPER.pose[pose]) throw new Error("KIT.reaper: no pose " + pose);
+      return '<g class="reaper reaper-' + pose + '">' + img(pose, REAPER.pose[pose]) + "</g>";
+    }
+    var s = REAPER.body[2] / 527, arms = o.arms || [0, 0];
+    function arm(kind, i) {
+      var a = REAPER.arm[kind], sh = REAPER.shoulder[i];
+      var b = [sh[0] - a[2] * s, sh[1] - a[3] * s, a[0] * s, a[1] * s];
+      var deg = (i === 0 ? 1 : -1) * arms[i];
+      return '<g transform="rotate(' + deg + " " + sh[0] + " " + sh[1] + ')"><g class="reaper-arm-' + kind + '">' +
+        (i === 1 && o.scythe ? scythe : "") + img("arm-" + kind, b) + "</g></g>";
+    }
+    var body = o.only === "arms" ? "" : img("body", REAPER.body) + '<g class="head">' + img("face-" + (o.face || "grin"), REAPER.face) + "</g>";
+    return '<g class="reaper reaper-puppet">' + body + (o.only === "body" ? "" : arm("open", 0) + arm("grip", 1)) + "</g>";
   }
 
   // A walking paper bill around (0,0), 96 x 50, legs to y=48, always money green. kind: "war" (a missile seal),
@@ -1075,7 +1105,7 @@
     svg: svg, el: el, office: office, desk: desk, mug: mug, cabinet: cabinet, wallScreen: wallScreen,
     // bean is the old name: every human is now person() (the bean drawing stays as beanClassic).
     paper: paper, paperDefs: paperDefs, grain: grain, star: star, boomerang: boomerang, sun: sun, horizon: V ? 1180 : 610, person: HUMANS.person, cast: HUMANS.cast, CAST: HUMANS.CAST, castOpts: HUMANS.castOpts, rig: HUMANS.rig, bean: HUMANS.person, beanClassic: bean, money: money, moneySeal: moneySeal, tophat: tophat,
-    flames: flames, fireOn: HUMANS.fireOn, flicker: flicker, nuke: nuke, boom: boom, xray: xray, reaper: reaper,
+    flames: flames, fireOn: HUMANS.fireOn, flicker: flicker, nuke: nuke, boom: boom, xray: xray, reaper: reaper, REAPER: REAPER,
     checkbox: checkbox, tick: tick, checkSvg: checkSvg, pencil: pencil,
   };
 })();

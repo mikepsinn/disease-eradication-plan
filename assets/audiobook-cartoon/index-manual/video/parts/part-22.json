@@ -2,119 +2,166 @@
   "id": "part-22",
   "title": "How This Manual Could Fix Everything",
   "storyboard": "storyboards/part-22-how-this-manual-could-fix-everything.md",
-  "audio": { "start": 2843.704, "end": 2893.004 },
-  "noCaptions": ["how-this-manual-could-fix-everything-title"],
+  "audio": {
+    "start": 2843.704,
+    "end": 2893.004
+  },
+  "noCaptions": [
+    "how-this-manual-could-fix-everything-title"
+  ],
   "scenes": [
-    { "id": "how-this-manual-could-fix-everything-title", "file": "compositions/scenes/part-22/how-this-manual-could-fix-everything-title.html", "cue": "How", "approx": 2843.7, "layer": "A" },
-    { "id": "manual-toolbox", "file": "compositions/scenes/part-22/manual-toolbox.html", "cue": "This", "approx": 2847.2, "layer": "A",
+    {
+      "id": "how-this-manual-could-fix-everything-title",
+      "file": "compositions/scenes/part-22/how-this-manual-could-fix-everything-title.html",
+      "cue": "How",
+      "approx": 2843.7,
+      "layer": "A"
+    },
+    {
+      "id": "manual-contains",
+      "file": "compositions/scenes/part-22/manual-contains.html",
+      "cue": "This",
+      "approx": 2847.2,
+      "layer": "A",
       "wishonia": [
-        { "cue": "This", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
-        { "cue": "multiplication", "expr": "surprised", "rest": "oh", "body": "presenting", "mode": "big" },
-        { "cue": "Exact", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
-        { "cue": "order", "expr": "happy", "rest": "smile", "body": "counting", "mode": "big" }
-      ] },
-    { "id": "not-a-bribe-label-maker", "file": "compositions/scenes/part-22/not-a-bribe-label-maker.html", "cue": "Legal", "approx": 2865.6, "layer": "A",
+        {
+          "cue": "This",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "contains:",
+          "expr": "lookright",
+          "rest": "oh",
+          "body": "presenting",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "manual-toolbox",
+      "file": "compositions/scenes/part-22/manual-toolbox.html",
+      "cue": "Pictures",
+      "approx": 2848.9,
+      "layer": "B"
+    },
+    {
+      "id": "not-a-bribe-label-maker",
+      "file": "compositions/scenes/part-22/not-a-bribe-label-maker.html",
+      "cue": "Legal",
+      "approx": 2865.6,
+      "layer": "B"
+    },
+    {
+      "id": "dysfunction-engine",
+      "file": "compositions/scenes/part-22/dysfunction-engine.html",
+      "cue": "Everything",
+      "approx": 2881.2,
+      "layer": "B"
+    },
+    {
+      "id": "bribe-humanity",
+      "file": "compositions/scenes/part-22/bribe-humanity.html",
+      "cue": "I'm",
+      "approx": 2885.5,
+      "layer": "A",
       "wishonia": [
-        { "cue": "Legal", "expr": "smirk", "rest": "smile", "body": "presenting", "mode": "big" },
-        { "cue": "appliance", "expr": "happy", "rest": "smile", "body": "open-palms", "mode": "big" },
-        { "cue": "feelings,", "expr": "neutral", "rest": "smile", "body": "hand-chest", "mode": "big" },
-        { "cue": "Templates", "expr": "smirk", "rest": "smile", "body": "presenting", "mode": "big" }
-      ] },
-    { "id": "bribe-humanity", "file": "compositions/scenes/part-22/bribe-humanity.html", "cue": "Everything", "approx": 2881.2, "layer": "A",
-      "wishonia": [
-        { "cue": "Everything", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "big" },
-        { "cue": "asking", "expr": "neutral", "rest": "smile", "body": "palms-down", "mode": "big" },
-        { "cue": "bribe", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "big" }
-      ] }
+        {
+          "cue": "I'm",
+          "expr": "neutral",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "better",
+          "expr": "eyeroll",
+          "rest": "closed",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "bribe",
+          "expr": "smirk",
+          "rest": "ee",
+          "body": "palms-down",
+          "mode": "big"
+        },
+        {
+          "cue": "humanity",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "dying.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    }
   ],
   "sounds": [
-    { "scene": "how-this-manual-could-fix-everything-title", "cue": "How", "sfx": "thunk" },
-    { "scene": "how-this-manual-could-fix-everything-title", "cue": "This", "sfx": "thunk" },
-    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Manual", "sfx": "thunk" },
-    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Could", "sfx": "thunk" },
-    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Fix", "sfx": "thunk" },
-    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Fix", "offset": 0.05, "sfx": "whoosh", "volume": 0.25 },
-    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Everything.", "sfx": "thunk", "volume": 0.7 },
-    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Everything.", "at": "after", "sfx": "clank", "volume": 0.45 },
-    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Everything.", "at": "after", "offset": 0.45, "sfx": "squeak", "volume": 0.4 },
-    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Everything.", "at": "after", "offset": 0.7, "sfx": "squeak", "volume": 0.4 },
+    { "scene": "how-this-manual-could-fix-everything-title", "cue": "How", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Everything.", "sfx": "click", "volume": 0.45 },
+    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Everything.", "offset": 0.3, "sfx": "click", "volume": 0.45 },
+    { "scene": "how-this-manual-could-fix-everything-title", "cue": "Everything.", "at": "after", "sfx": "clank", "volume": 0.35 },
 
-    { "scene": "manual-toolbox", "cue": "This", "sfx": "slam", "volume": 0.5 },
-    { "scene": "manual-toolbox", "cue": "contains:", "sfx": "clank", "volume": 0.35 },
-    { "scene": "manual-toolbox", "cue": "contains:", "offset": 0.15, "sfx": "click", "volume": 0.4 },
-    { "scene": "manual-toolbox", "cue": "contains:", "offset": 0.3, "sfx": "click", "volume": 0.4 },
-    { "scene": "manual-toolbox", "cue": "contains:", "offset": 0.45, "sfx": "click", "volume": 0.4 },
-    { "scene": "manual-toolbox", "cue": "contains:", "offset": 0.6, "sfx": "click", "volume": 0.4 },
-    { "scene": "manual-toolbox", "cue": "Pictures", "sfx": "pop", "volume": 0.45 },
+    { "scene": "manual-contains", "cue": "This", "sfx": "slam", "volume": 0.5 },
+    { "scene": "manual-contains", "cue": "contains:", "sfx": "clank", "volume": 0.35 },
+    { "scene": "manual-contains", "cue": "contains:", "offset": 0.2, "sfx": "click", "volume": 0.4 },
+    { "scene": "manual-contains", "cue": "contains:", "offset": 0.4, "sfx": "click", "volume": 0.4 },
+
+    { "scene": "manual-toolbox", "cue": "Pictures", "sfx": "pop", "volume": 0.4 },
     { "scene": "manual-toolbox", "cue": "hard", "sfx": "boing", "volume": 0.3 },
-    { "scene": "manual-toolbox", "cue": "dying).", "sfx": "zap", "volume": 0.35 },
-    { "scene": "manual-toolbox", "cue": "dying).", "at": "after", "sfx": "whoosh", "volume": 0.3 },
-    { "scene": "manual-toolbox", "cue": "math", "sfx": "pop", "volume": 0.4 },
+    { "scene": "manual-toolbox", "cue": "dying).", "sfx": "zap", "volume": 0.3 },
     { "scene": "manual-toolbox", "cue": "(addition", "sfx": "click", "volume": 0.4 },
     { "scene": "manual-toolbox", "cue": "(addition", "offset": 0.12, "sfx": "click", "volume": 0.4 },
     { "scene": "manual-toolbox", "cue": "(addition", "offset": 0.24, "sfx": "click", "volume": 0.4 },
-    { "scene": "manual-toolbox", "cue": "mostly,", "sfx": "ding", "volume": 0.35 },
-    { "scene": "manual-toolbox", "cue": "multiplication).", "sfx": "pop", "volume": 0.3 },
-    { "scene": "manual-toolbox", "cue": "multiplication).", "offset": 0.5, "sfx": "yelp", "volume": 0.45 },
+    { "scene": "manual-toolbox", "cue": "mostly,", "sfx": "ding", "volume": 0.3 },
+    { "scene": "manual-toolbox", "cue": "multiplication).", "offset": 0.5, "sfx": "yelp", "volume": 0.4 },
     { "scene": "manual-toolbox", "cue": "amounts", "sfx": "pop", "volume": 0.3 },
     { "scene": "manual-toolbox", "cue": "amounts", "offset": 0.15, "sfx": "pop", "volume": 0.3 },
     { "scene": "manual-toolbox", "cue": "amounts", "offset": 0.3, "sfx": "pop", "volume": 0.3 },
-    { "scene": "manual-toolbox", "cue": "specific", "sfx": "boing", "volume": 0.35 },
-    { "scene": "manual-toolbox", "cue": "humans.", "at": "after", "sfx": "slam", "volume": 0.45 },
-    { "scene": "manual-toolbox", "cue": "humans.", "at": "after", "offset": 0.12, "sfx": "yelp", "volume": 0.4 },
-    { "scene": "manual-toolbox", "cue": "order", "sfx": "slide-up", "volume": 0.35 },
-    { "scene": "manual-toolbox", "cue": "(very", "sfx": "squeak", "volume": 0.35 },
-    { "scene": "manual-toolbox", "cue": "important).", "sfx": "boom", "volume": 0.5 },
-    { "scene": "manual-toolbox", "cue": "important).", "at": "after", "sfx": "sizzle", "volume": 0.3 },
-    { "scene": "manual-toolbox", "cue": "important).", "at": "after", "offset": 0.3, "sfx": "squeak", "volume": 0.35 },
-    { "scene": "manual-toolbox", "cue": "important).", "at": "after", "offset": 0.55, "sfx": "clank", "volume": 0.4 },
+    { "scene": "manual-toolbox", "cue": "humans.", "at": "after", "sfx": "slam", "volume": 0.4 },
+    { "scene": "manual-toolbox", "cue": "humans.", "at": "after", "offset": 0.1, "sfx": "yelp", "volume": 0.35 },
+    { "scene": "manual-toolbox", "cue": "(very", "sfx": "squeak", "volume": 0.3 },
+    { "scene": "manual-toolbox", "cue": "important).", "sfx": "boom", "volume": 0.55 },
+    { "scene": "manual-toolbox", "cue": "important).", "at": "after", "sfx": "sizzle", "volume": 0.25 },
 
     { "scene": "not-a-bribe-label-maker", "cue": "Legal", "sfx": "clank", "volume": 0.4 },
-    { "scene": "not-a-bribe-label-maker", "cue": "ways", "sfx": "pop", "volume": 0.35 },
-    { "scene": "not-a-bribe-label-maker", "cue": "call", "sfx": "pat", "volume": 0.35 },
     { "scene": "not-a-bribe-label-maker", "cue": "bribes", "sfx": "typewriter", "volume": 0.3 },
     { "scene": "not-a-bribe-label-maker", "cue": "bribes", "offset": 0.5, "sfx": "thunk", "volume": 0.4 },
     { "scene": "not-a-bribe-label-maker", "cue": "other", "sfx": "thunk", "volume": 0.4 },
     { "scene": "not-a-bribe-label-maker", "cue": "things.", "sfx": "thunk", "volume": 0.45 },
-    { "scene": "not-a-bribe-label-maker", "cue": "things.", "at": "after", "sfx": "sparkle", "volume": 0.45 },
-    { "scene": "not-a-bribe-label-maker", "cue": "appliance", "sfx": "whirr", "volume": 0.4 },
-    { "scene": "not-a-bribe-label-maker", "cue": "governments", "sfx": "boing", "volume": 0.3 },
-    { "scene": "not-a-bribe-label-maker", "cue": "policies", "sfx": "click", "volume": 0.4 },
-    { "scene": "not-a-bribe-label-maker", "cue": "work", "sfx": "slide-down", "volume": 0.4 },
-    { "scene": "not-a-bribe-label-maker", "cue": "work", "offset": 0.35, "sfx": "hammer", "volume": 0.3 },
-    { "scene": "not-a-bribe-label-maker", "cue": "work", "at": "after", "offset": 0.45, "sfx": "pop", "volume": 0.45 },
-    { "scene": "not-a-bribe-label-maker", "cue": "work", "at": "after", "offset": 0.5, "sfx": "sizzle", "volume": 0.25 },
-    { "scene": "not-a-bribe-label-maker", "cue": "feelings,", "sfx": "huff", "volume": 0.4 },
-    { "scene": "not-a-bribe-label-maker", "cue": "feelings,", "offset": 0.4, "sfx": "huff", "volume": 0.35 },
-    { "scene": "not-a-bribe-label-maker", "cue": "governing).", "at": "after", "sfx": "toaster", "volume": 0.6 },
-    { "scene": "not-a-bribe-label-maker", "cue": "governing).", "at": "after", "offset": 0.15, "sfx": "ding", "volume": 0.35 },
-    { "scene": "not-a-bribe-label-maker", "cue": "Templates", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "not-a-bribe-label-maker", "cue": "tricking", "sfx": "click", "volume": 0.4 },
-    { "scene": "not-a-bribe-label-maker", "cue": "politicians", "sfx": "pat", "volume": 0.35 },
-    { "scene": "not-a-bribe-label-maker", "cue": "saving", "sfx": "slam", "volume": 0.6 },
-    { "scene": "not-a-bribe-label-maker", "cue": "lives.", "sfx": "slide-up", "volume": 0.35 },
-    { "scene": "not-a-bribe-label-maker", "cue": "lives.", "offset": 0.35, "sfx": "ding", "volume": 0.4 },
+    { "scene": "not-a-bribe-label-maker", "cue": "appliance", "sfx": "whirr", "volume": 0.35 },
+    { "scene": "not-a-bribe-label-maker", "cue": "work", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "not-a-bribe-label-maker", "cue": "work", "at": "after", "sfx": "pop", "volume": 0.4 },
+    { "scene": "not-a-bribe-label-maker", "cue": "work", "at": "after", "offset": 0.05, "sfx": "sizzle", "volume": 0.25 },
+    { "scene": "not-a-bribe-label-maker", "cue": "feelings,", "sfx": "huff", "volume": 0.35 },
+    { "scene": "not-a-bribe-label-maker", "cue": "governing).", "at": "after", "sfx": "toaster", "volume": 0.55 },
+    { "scene": "not-a-bribe-label-maker", "cue": "governing).", "at": "after", "offset": 0.15, "sfx": "ding", "volume": 0.3 },
+    { "scene": "not-a-bribe-label-maker", "cue": "saving", "sfx": "slam", "volume": 0.5 },
+    { "scene": "not-a-bribe-label-maker", "cue": "lives.", "sfx": "slide-up", "volume": 0.3 },
+    { "scene": "not-a-bribe-label-maker", "cue": "lives.", "offset": 0.35, "sfx": "ding", "volume": 0.35 },
 
-    { "scene": "bribe-humanity", "cue": "Everything", "sfx": "switch", "volume": 0.5 },
-    { "scene": "bribe-humanity", "cue": "Everything", "offset": 0.1, "sfx": "hum", "volume": 0.25 },
-    { "scene": "bribe-humanity", "cue": "WITH", "sfx": "pop", "volume": 0.35 },
-    { "scene": "bribe-humanity", "cue": "human", "sfx": "cash-register", "volume": 0.45 },
-    { "scene": "bribe-humanity", "cue": "dysfunction,", "sfx": "whirr", "volume": 0.4 },
-    { "scene": "bribe-humanity", "cue": "dysfunction,", "offset": 0.4, "sfx": "pop", "volume": 0.3 },
-    { "scene": "bribe-humanity", "cue": "dysfunction,", "offset": 0.6, "sfx": "pop", "volume": 0.3 },
-    { "scene": "bribe-humanity", "cue": "dysfunction,", "offset": 0.8, "sfx": "pop", "volume": 0.3 },
-    { "scene": "bribe-humanity", "cue": "against", "sfx": "thunk", "volume": 0.35 },
-    { "scene": "bribe-humanity", "cue": "it.", "at": "after", "sfx": "fire", "volume": 0.35 },
-    { "scene": "bribe-humanity", "cue": "humans.", "n": 2, "sfx": "slide-down", "volume": 0.5 },
-    { "scene": "bribe-humanity", "cue": "humans.", "n": 2, "offset": 1.2, "sfx": "thunk", "volume": 0.15 },
-    { "scene": "bribe-humanity", "cue": "bribe", "sfx": "slam", "volume": 0.55 },
-    { "scene": "bribe-humanity", "cue": "bribe", "offset": 0.2, "sfx": "slam", "volume": 0.45 },
-    { "scene": "bribe-humanity", "cue": "bribe", "offset": 0.45, "sfx": "sparkle", "volume": 0.35 },
-    { "scene": "bribe-humanity", "cue": "humanity", "sfx": "squeak", "volume": 0.3 },
-    { "scene": "bribe-humanity", "cue": "not", "n": 3, "sfx": "tick", "volume": 0.5 },
-    { "scene": "bribe-humanity", "cue": "not", "n": 3, "offset": 0.12, "sfx": "tick", "volume": 0.5 },
-    { "scene": "bribe-humanity", "cue": "not", "n": 3, "offset": 0.24, "sfx": "tick", "volume": 0.5 },
-    { "scene": "bribe-humanity", "cue": "dying.", "offset": 0.1, "sfx": "squeak", "volume": 0.35 },
-    { "scene": "bribe-humanity", "cue": "dying.", "at": "after", "offset": 0.15, "sfx": "crickets", "volume": 0.3 }
+    { "scene": "dysfunction-engine", "cue": "WITH", "sfx": "whirr", "volume": 0.35 },
+    { "scene": "dysfunction-engine", "cue": "human", "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "dysfunction-engine", "cue": "dysfunction,", "sfx": "pop", "volume": 0.3 },
+    { "scene": "dysfunction-engine", "cue": "dysfunction,", "offset": 0.25, "sfx": "pop", "volume": 0.3 },
+    { "scene": "dysfunction-engine", "cue": "dysfunction,", "offset": 0.5, "sfx": "pop", "volume": 0.3 },
+    { "scene": "dysfunction-engine", "cue": "against", "sfx": "thunk", "volume": 0.35 },
+    { "scene": "dysfunction-engine", "cue": "it.", "at": "after", "offset": -0.2, "sfx": "fire", "volume": 0.35 },
+
+    { "scene": "bribe-humanity", "cue": "humans.", "n": 2, "at": "after", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "bribe-humanity", "cue": "bribe", "sfx": "slam", "volume": 0.5 },
+    { "scene": "bribe-humanity", "cue": "bribe", "offset": 0.4, "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "bribe-humanity", "cue": "not", "n": 2, "sfx": "squeak", "volume": 0.3 },
+    { "scene": "bribe-humanity", "cue": "dying.", "at": "after", "sfx": "crickets", "volume": 0.3 }
   ]
 }

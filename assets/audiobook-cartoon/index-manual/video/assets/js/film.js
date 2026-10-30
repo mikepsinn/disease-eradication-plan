@@ -10,7 +10,7 @@
 //   KIT.camera(views, keys, anchor)           a keyed camera over one plate (Layer B)
 //   KIT.smooth(u), KIT.mix(a, b, u), KIT.burn(markup)   smoothstep, a color between two, a drawing charred
 //
-// Copy the reference scenes in compositions/scenes/style-atomic/part-02/ for the element layout each one expects.
+// Copy the reference scenes in compositions/scenes/part-02/ for the element layout each one expects.
 (function () {
   var K = window.KIT;
   if (K.film) return;

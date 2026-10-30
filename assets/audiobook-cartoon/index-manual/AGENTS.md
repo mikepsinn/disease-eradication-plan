@@ -8,7 +8,7 @@ Read these first:
 - `video/assets/js/film.js`: the film look's shared code (`KIT.film`, `KIT.studio`, `KIT.iris`, `KIT.camera`). Every scene of Parts 2 to 27 loads it after `kit.js`.
 - `video/assets/js/props/*.js`: the shared props library (`KIT.props.<name>`, documented at each function; `node video/tools/props-sheet.mjs [file]` draws them) and `KIT.titleScene` (title.js; copy `video/compositions/scenes/_templates/title-card.html` for a part's title card). Use these and the cast instead of drawing your own versions.
 - `video/storyboards/README.md`: every part, the shorts and the props (generated).
-- `video/compositions/scenes/style-atomic/part-02/` (`video/parts/part-02-atomic.json`): Part 2 in the film look, the reference for every kind of shot: the title card, a host shot that irises in (host-opens), a plate the camera travels round (money-loop), a death toll (the-toll) and a host shot with a guest that irises out (host-closes). Copy their form.
+- `video/compositions/scenes/part-02/` (`video/parts/part-02.json`): Part 2 in the film look, the reference for every kind of shot: the title card, a host shot that irises in (host-opens), a plate the camera travels round (money-loop), a death toll (the-toll) and a host shot with a guest that irises out (host-closes). Copy their form.
 - `video/storyboards/part-01-opening.md`: the storyboard form. Part 1's scenes are in the earlier office look; do not copy their look.
 
 ## The process
@@ -78,8 +78,12 @@ Read these first:
 - A frame taken on a cue word catches the move just starting. To judge where things end up, snapshot a moment after the move settles.
 - `tools/scene-check.mjs` checks one scene in isolation (both shapes, page errors, a contact sheet) and is safe to run while another part builds or renders. For lower-level checks (for example a camera transform), load its template in headless Chrome with `puppeteer-core` from `video/node_modules`, seek with `window.__timelines[id].seek(t, false)` (without `false` the `KIT.onTime` callbacks can stay silent) and read the computed styles. Set `window.HF_ASPECT = "9x16"` before `kit.js` loads to see the tall version without a build.
 
-**Art**
-- All art is drawn in code. The only AI-made footage is the theme song music video in Part 1.
+**Art.** Art is drawn in code, with two exceptions: the theme song music video in Part 1, and generated cut-outs (`video/assets/art/<name>/`) for the few things code draws badly.
+
+**Generated art**
+- Generate a thing only when all of these hold: its shape is organic (cloth, faces, hands, fur, tattered edges); it is seen big and long (about a sixth of the frame or more, for a couple of seconds); it moves as a whole or in a few parts (swapping poses, turning an arm, changing a face); it comes back across parts; and it carries no words or numbers. If the code version looks like a placeholder at its real size and screen time, compare the two in a real frame; Codex is free, so the test takes a minute.
+- Generated so far: the Grim Reaper (`KIT.reaper`). Candidates when their scenes are made: the disease blob, the Democracy Dog, the screaming Calculator, the robot and the Optimitron, and the grumpy missile where it is shown big. People, money, papers, signs, buildings, maps, charts and labels stay in code.
+- `video/tools/art-gen.sh` makes a sheet and `video/tools/art-cutout.py` cuts it into WebP pieces. Make two sheets per character from the same references: whole poses side by side at one size, and a puppet (the body without arms or head, each arm alone, the faces). Keep the sheets in `assets/art/<name>/sheets/` as the references for new poses. A kit function places the pieces in its own units from the boxes art-cutout prints, as `KIT.reaper` does. Words and numbers on the art go on top, in code.
 
 ## Working with several agents
 

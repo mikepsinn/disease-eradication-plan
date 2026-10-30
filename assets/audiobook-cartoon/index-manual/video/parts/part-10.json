@@ -2,184 +2,229 @@
   "id": "part-10",
   "title": "The Cost of War",
   "storyboard": "storyboards/part-10-cost-of-war.md",
-  "audio": { "start": 1035.224, "end": 1154.904 },
-  "noCaptions": ["cost-of-war-title"],
+  "audio": {
+    "start": 1035.224,
+    "end": 1154.904
+  },
+  "noCaptions": [
+    "cost-of-war-title"
+  ],
   "scenes": [
-    { "id": "cost-of-war-title", "file": "compositions/scenes/part-10/cost-of-war-title.html", "cue": "The", "approx": 1035.224, "layer": "A" },
-    { "id": "murder-shopping-cart", "file": "compositions/scenes/part-10/murder-shopping-cart.html", "cue": "Humans", "approx": 1037.9, "layer": "B",
+    {
+      "id": "cost-of-war-title",
+      "file": "compositions/scenes/part-10/cost-of-war-title.html",
+      "cue": "The",
+      "approx": 1035.224,
+      "layer": "A"
+    },
+    {
+      "id": "cash-register",
+      "file": "compositions/scenes/part-10/cash-register.html",
+      "cue": "Humans",
+      "approx": 1038.0,
+      "layer": "A",
       "wishonia": [
-        { "cue": "Humans", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "specifically", "expr": "skeptical", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "warheads-in-the-cart", "file": "compositions/scenes/part-10/warheads-in-the-cart.html", "cue": "There", "approx": 1046.6, "layer": "B",
+        { "cue": "Humans", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "trillion", "expr": "excited", "rest": "ee", "body": "wide-gesture", "mode": "big" },
+        { "cue": "specifically", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "big" },
+        { "cue": "alive:", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "big" }
+      ]
+    },
+    {
+      "id": "warheads-in-the-cart",
+      "file": "compositions/scenes/part-10/warheads-in-the-cart.html",
+      "cue": "There",
+      "approx": 1046.6,
+      "layer": "B"
+    },
+    {
+      "id": "cart-gadgets",
+      "file": "compositions/scenes/part-10/cart-gadgets.html",
+      "cue": "There",
+      "approx": 1057.4,
+      "layer": "B"
+    },
+    {
+      "id": "probably",
+      "file": "compositions/scenes/part-10/probably.html",
+      "cue": "(probably).",
+      "approx": 1069.2,
+      "layer": "A",
       "wishonia": [
-        { "cue": "There", "expr": "thinking", "rest": "closed", "body": "counting", "mode": "pip" },
-        { "cue": "apocalypses", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "pip" }
-      ] },
-    { "id": "cart-gadgets", "file": "compositions/scenes/part-10/cart-gadgets.html", "cue": "There", "approx": 1057.3, "layer": "B",
+        { "cue": "(probably).", "expr": "skeptical", "rest": "closed", "body": "shrug", "mode": "big" }
+      ]
+    },
+    {
+      "id": "nothing-papers",
+      "file": "compositions/scenes/part-10/nothing-papers.html",
+      "cue": "Since",
+      "approx": 1071.1,
+      "layer": "B"
+    },
+    {
+      "id": "paycheck-shrinks",
+      "file": "compositions/scenes/part-10/paycheck-shrinks.html",
+      "cue": "Consequently",
+      "approx": 1087.3,
+      "layer": "B"
+    },
+    {
+      "id": "bought-the-other-thing",
+      "file": "compositions/scenes/part-10/bought-the-other-thing.html",
+      "cue": "One",
+      "approx": 1093.7,
+      "layer": "B"
+    },
+    {
+      "id": "stopped-in-1900",
+      "file": "compositions/scenes/part-10/stopped-in-1900.html",
+      "cue": "Through",
+      "approx": 1101.7,
+      "layer": "B"
+    },
+    {
+      "id": "604-times-less",
+      "file": "compositions/scenes/part-10/604-times-less.html",
+      "cue": "Today,",
+      "approx": 1124.1,
+      "layer": "B"
+    },
+    {
+      "id": "odds-of-dying",
+      "file": "compositions/scenes/part-10/odds-of-dying.html",
+      "cue": "Your",
+      "approx": 1131.7,
+      "layer": "B"
+    },
+    {
+      "id": "cancer-oil-reserves",
+      "file": "compositions/scenes/part-10/cancer-oil-reserves.html",
+      "cue": "If",
+      "approx": 1140.1,
+      "layer": "B"
+    },
+    {
+      "id": "submarine-on-land",
+      "file": "compositions/scenes/part-10/submarine-on-land.html",
+      "cue": "Instead,",
+      "approx": 1144.5,
+      "layer": "B"
+    },
+    {
+      "id": "periscope",
+      "file": "compositions/scenes/part-10/periscope.html",
+      "cue": "as",
+      "approx": 1152.1,
+      "layer": "A",
       "wishonia": [
-        { "cue": "There", "expr": "surprised", "rest": "oh", "body": "idle", "mode": "pip" },
-        { "cue": "murder-bots.", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "pip" },
-        { "cue": "zero", "expr": "happy", "rest": "smile", "body": "open-palms", "mode": "pip" },
-        { "cue": "attacking", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "pip" },
-        { "cue": "(probably).", "expr": "skeptical", "rest": "closed", "body": "shrug", "mode": "pip" }
-      ] },
-    { "id": "nothing-papers", "file": "compositions/scenes/part-10/nothing-papers.html", "cue": "Since", "approx": 1071.0, "layer": "B",
-      "wishonia": [
-        { "cue": "Since", "expr": "neutral", "rest": "closed", "body": "point-right", "mode": "pip" },
-        { "cue": "murdering", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" }
-      ] },
-    { "id": "paycheck-shrinks", "file": "compositions/scenes/part-10/paycheck-shrinks.html", "cue": "Consequently", "approx": 1087.2, "layer": "B",
-      "wishonia": [
-        { "cue": "Consequently", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "ninety-seven", "expr": "eyeroll", "rest": "closed", "body": "idle", "mode": "pip" }
-      ] },
-    { "id": "bought-the-other-thing", "file": "compositions/scenes/part-10/bought-the-other-thing.html", "cue": "One", "approx": 1093.6, "layer": "B",
-      "wishonia": [
-        { "cue": "One", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "bought", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "stopped-in-1900", "file": "compositions/scenes/part-10/stopped-in-1900.html", "cue": "Through", "approx": 1101.7, "layer": "B",
-      "wishonia": [
-        { "cue": "Through", "expr": "thinking", "rest": "small", "body": "thinking", "mode": "pip" },
-        { "cue": "richer", "expr": "happy", "rest": "smile", "body": "open-palms", "mode": "pip" },
-        { "cue": "disease", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "fourteen", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "604-times-less", "file": "compositions/scenes/part-10/604-times-less.html", "cue": "Today,", "approx": 1124.1, "layer": "B",
-      "wishonia": [
-        { "cue": "Today,", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "pip" },
-        { "cue": "military", "expr": "eyeroll", "rest": "closed", "body": "idle", "mode": "pip" }
-      ] },
-    { "id": "odds-of-dying", "file": "compositions/scenes/part-10/odds-of-dying.html", "cue": "Your", "approx": 1131.6, "layer": "B",
-      "wishonia": [
-        { "cue": "Your", "expr": "neutral", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "percent.", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" }
-      ] },
-    { "id": "cancer-oil-reserves", "file": "compositions/scenes/part-10/cancer-oil-reserves.html", "cue": "If", "approx": 1140.0, "layer": "B",
-      "wishonia": [{ "cue": "If", "expr": "smirk", "rest": "smile", "body": "hands-hips", "mode": "pip" }] },
-    { "id": "submarine-on-land", "file": "compositions/scenes/part-10/submarine-on-land.html", "cue": "Instead,", "approx": 1144.4, "layer": "B",
-      "wishonia": [
-        { "cue": "Instead,", "expr": "annoyed", "rest": "closed", "body": "arms-crossed", "mode": "pip" },
-        { "cue": "submarines", "expr": "skeptical", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "live", "expr": "eyeroll", "rest": "smile", "body": "shrug", "mode": "pip" }
-      ] }
+        { "cue": "as", "expr": "annoyed", "rest": "closed", "body": "palms-down", "mode": "big" },
+        { "cue": "live", "expr": "eyeroll", "rest": "smile", "body": "shrug", "mode": "big" },
+        { "cue": "land.", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "big" }
+      ]
+    }
   ],
   "sounds": [
-    { "scene": "cost-of-war-title", "cue": "The", "sfx": "thunk" },
-    { "scene": "cost-of-war-title", "cue": "Cost", "sfx": "thunk" },
-    { "scene": "cost-of-war-title", "cue": "of", "sfx": "thunk" },
-    { "scene": "cost-of-war-title", "cue": "War.", "sfx": "thunk" },
-    { "scene": "cost-of-war-title", "cue": "War.", "at": "after", "sfx": "cash-register", "volume": 0.45 },
+    { "scene": "cost-of-war-title", "cue": "The", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "cost-of-war-title", "cue": "War.", "at": "after", "sfx": "cash-register", "volume": 0.4 },
 
-    { "scene": "murder-shopping-cart", "cue": "Humans", "sfx": "squeak", "volume": 0.4 },
-    { "scene": "murder-shopping-cart", "cue": "trillion", "sfx": "cash-register", "volume": 0.45 },
-    { "scene": "murder-shopping-cart", "cue": "stop", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "murder-shopping-cart", "cue": "alive:", "sfx": "boing", "volume": 0.35 },
+    { "scene": "cash-register", "cue": "two", "sfx": "typewriter", "volume": 0.3 },
+    { "scene": "cash-register", "cue": "trillion", "sfx": "cash-register", "volume": 0.45 },
+    { "scene": "cash-register", "cue": "every", "sfx": "ding", "volume": 0.3 },
+    { "scene": "cash-register", "cue": "year", "sfx": "ding", "volume": 0.3 },
+    { "scene": "cash-register", "cue": "alive:", "sfx": "boing", "volume": 0.45 },
 
+    { "scene": "warheads-in-the-cart", "cue": "There", "sfx": "squeak", "volume": 0.35 },
     { "scene": "warheads-in-the-cart", "cue": "twelve", "sfx": "clank", "volume": 0.35 },
-    { "scene": "warheads-in-the-cart", "cue": "twelve", "offset": 0.2, "sfx": "clank", "volume": 0.35 },
-    { "scene": "warheads-in-the-cart", "cue": "twelve", "offset": 0.4, "sfx": "clank", "volume": 0.35 },
-    { "scene": "warheads-in-the-cart", "cue": "nuclear", "sfx": "thunk", "volume": 0.5 },
-    { "scene": "warheads-in-the-cart", "cue": "warheads", "sfx": "scratch", "volume": 0.4 },
+    { "scene": "warheads-in-the-cart", "cue": "twelve", "offset": 0.25, "sfx": "clank", "volume": 0.35 },
     { "scene": "warheads-in-the-cart", "cue": "hundred", "n": 2, "sfx": "pop", "volume": 0.22 },
-    { "scene": "warheads-in-the-cart", "cue": "hundred", "n": 2, "offset": 0.18, "sfx": "pop", "volume": 0.22 },
-    { "scene": "warheads-in-the-cart", "cue": "hundred", "n": 2, "offset": 0.34, "sfx": "pop", "volume": 0.22 },
-    { "scene": "warheads-in-the-cart", "cue": "hundred", "n": 2, "offset": 0.48, "sfx": "pop", "volume": 0.22 },
-    { "scene": "warheads-in-the-cart", "cue": "hundred", "n": 2, "offset": 0.6, "sfx": "pop", "volume": 0.22 },
-    { "scene": "warheads-in-the-cart", "cue": "hundred", "n": 2, "offset": 0.7, "sfx": "pop", "volume": 0.22 },
-    { "scene": "warheads-in-the-cart", "cue": "times,", "sfx": "ding", "volume": 0.3 },
-    { "scene": "warheads-in-the-cart", "cue": "first", "sfx": "tick", "volume": 0.45 },
-    { "scene": "warheads-in-the-cart", "cue": "first", "offset": 0.14, "sfx": "tick", "volume": 0.45 },
-    { "scene": "warheads-in-the-cart", "cue": "apocalypses", "sfx": "stamp", "volume": 0.6 },
+    { "scene": "warheads-in-the-cart", "cue": "hundred", "n": 2, "offset": 0.2, "sfx": "pop", "volume": 0.22 },
+    { "scene": "warheads-in-the-cart", "cue": "hundred", "n": 2, "offset": 0.36, "sfx": "pop", "volume": 0.22 },
+    { "scene": "warheads-in-the-cart", "cue": "hundred", "n": 2, "offset": 0.5, "sfx": "pop", "volume": 0.22 },
+    { "scene": "warheads-in-the-cart", "cue": "apocalypses", "sfx": "stamp", "volume": 0.5 },
     { "scene": "warheads-in-the-cart", "cue": "don't", "sfx": "slide-down", "volume": 0.4 },
     { "scene": "warheads-in-the-cart", "cue": "take).", "at": "after", "sfx": "boom", "volume": 0.6 },
 
-    { "scene": "cart-gadgets", "cue": "There", "n": 1, "sfx": "sizzle", "volume": 0.35 },
-    { "scene": "cart-gadgets", "cue": "murder-bots.", "sfx": "clank", "volume": 0.5 },
-    { "scene": "cart-gadgets", "cue": "jets", "sfx": "airplane", "volume": 0.4 },
+    { "scene": "cart-gadgets", "cue": "There", "n": 1, "sfx": "sizzle", "volume": 0.3 },
+    { "scene": "cart-gadgets", "cue": "murder-bots.", "sfx": "clank", "volume": 0.45 },
+    { "scene": "cart-gadgets", "cue": "jets", "sfx": "airplane", "volume": 0.35 },
     { "scene": "cart-gadgets", "cue": "hospitals.", "at": "after", "sfx": "slam", "volume": 0.55 },
-    { "scene": "cart-gadgets", "cue": "Force", "sfx": "boing", "volume": 0.4 },
-    { "scene": "cart-gadgets", "cue": "zero", "sfx": "whoosh", "volume": 0.3 },
-    { "scene": "cart-gadgets", "cue": "attacking", "offset": 0.2, "sfx": "zap", "volume": 0.45 },
-    { "scene": "cart-gadgets", "cue": "earthquake", "sfx": "thunk", "volume": 0.5 },
-    { "scene": "cart-gadgets", "cue": "machine", "sfx": "whirr", "volume": 0.4 },
-    { "scene": "cart-gadgets", "cue": "(probably).", "at": "after", "sfx": "boom", "volume": 0.4 },
-    { "scene": "cart-gadgets", "cue": "(probably).", "at": "after", "offset": 0.3, "sfx": "typewriter", "volume": 0.35 },
+    { "scene": "cart-gadgets", "cue": "zero", "sfx": "whoosh", "volume": 0.25 },
+    { "scene": "cart-gadgets", "cue": "attacking", "offset": 0.3, "sfx": "zap", "volume": 0.4 },
+    { "scene": "cart-gadgets", "cue": "kind", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "cart-gadgets", "cue": "earthquake", "sfx": "whirr", "volume": 0.35 },
 
-    { "scene": "nothing-papers", "cue": "nineteen", "sfx": "clank", "volume": 0.45 },
-    { "scene": "nothing-papers", "cue": "printed", "sfx": "hammer", "volume": 0.35 },
-    { "scene": "nothing-papers", "cue": "trillion", "sfx": "cash-register", "volume": 0.45 },
-    { "scene": "nothing-papers", "cue": "nothing", "sfx": "crickets", "volume": 0.3 },
-    { "scene": "nothing-papers", "cue": "nothing-papers", "sfx": "squeak", "volume": 0.35 },
-    { "scene": "nothing-papers", "cue": "nothing-papers", "offset": 0.3, "sfx": "squeak", "volume": 0.35 },
+    { "scene": "probably", "cue": "(probably).", "at": "after", "sfx": "boom", "volume": 0.4 },
+    { "scene": "probably", "cue": "(probably).", "at": "after", "offset": 0.6, "sfx": "clank", "volume": 0.35 },
+
+    { "scene": "nothing-papers", "cue": "nineteen", "sfx": "clank", "volume": 0.4 },
+    { "scene": "nothing-papers", "cue": "printed", "sfx": "hammer", "volume": 0.3 },
+    { "scene": "nothing-papers", "cue": "trillion", "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "nothing-papers", "cue": "nothing", "sfx": "crickets", "volume": 0.25 },
+    { "scene": "nothing-papers", "cue": "nothing-papers", "sfx": "squeak", "volume": 0.3 },
     { "scene": "nothing-papers", "cue": "murdering", "sfx": "slide-down", "volume": 0.4 },
     { "scene": "nothing-papers", "cue": "three", "sfx": "boom", "volume": 0.55 },
-    { "scene": "nothing-papers", "cue": "valuable", "sfx": "slam", "volume": 0.45 },
-    { "scene": "nothing-papers", "cue": "valuable", "offset": 0.45, "sfx": "slam", "volume": 0.45 },
-    { "scene": "nothing-papers", "cue": "building.", "offset": 0.2, "sfx": "pat", "volume": 0.5 },
+    { "scene": "nothing-papers", "cue": "humans", "sfx": "thunk", "volume": 0.55 },
+    { "scene": "nothing-papers", "cue": "valuable", "sfx": "slam", "volume": 0.4 },
+    { "scene": "nothing-papers", "cue": "valuable", "offset": 0.45, "sfx": "slam", "volume": 0.4 },
+    { "scene": "nothing-papers", "cue": "building.", "offset": 0.2, "sfx": "pat", "volume": 0.45 },
 
     { "scene": "paycheck-shrinks", "cue": "paycheck", "sfx": "whoosh", "volume": 0.3 },
-    { "scene": "paycheck-shrinks", "cue": "ninety-seven", "sfx": "slide-down", "volume": 0.45 },
+    { "scene": "paycheck-shrinks", "cue": "ninety-seven", "sfx": "slide-down", "volume": 0.4 },
     { "scene": "paycheck-shrinks", "cue": "less", "sfx": "pop", "volume": 0.4 },
     { "scene": "paycheck-shrinks", "cue": "destruction.", "at": "after", "sfx": "slam", "volume": 0.55 },
 
-    { "scene": "bought-the-other-thing", "cue": "trillion", "sfx": "thunk", "volume": 0.6 },
-    { "scene": "bought-the-other-thing", "cue": "years", "sfx": "thunk", "volume": 0.5 },
-    { "scene": "bought-the-other-thing", "cue": "spending.", "sfx": "ding", "volume": 0.35 },
-    { "scene": "bought-the-other-thing", "cue": "You", "sfx": "slam", "volume": 0.55 },
-    { "scene": "bought-the-other-thing", "cue": "You", "offset": 0.12, "sfx": "slide-up", "volume": 0.45 },
-    { "scene": "bought-the-other-thing", "cue": "bought", "sfx": "typewriter", "volume": 0.35 },
-    { "scene": "bought-the-other-thing", "cue": "thing.", "sfx": "stamp", "volume": 0.6 },
-    { "scene": "bought-the-other-thing", "cue": "thing.", "at": "after", "sfx": "thunk", "volume": 0.3 },
+    { "scene": "bought-the-other-thing", "cue": "trillion", "sfx": "thunk", "volume": 0.55 },
+    { "scene": "bought-the-other-thing", "cue": "years", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "bought-the-other-thing", "cue": "spending.", "sfx": "ding", "volume": 0.3 },
+    { "scene": "bought-the-other-thing", "cue": "You", "sfx": "slam", "volume": 0.5 },
+    { "scene": "bought-the-other-thing", "cue": "You", "offset": 0.12, "sfx": "slide-up", "volume": 0.4 },
+    { "scene": "bought-the-other-thing", "cue": "bought", "sfx": "typewriter", "volume": 0.3 },
+    { "scene": "bought-the-other-thing", "cue": "thing.", "sfx": "stamp", "volume": 0.55 },
+    { "scene": "bought-the-other-thing", "cue": "thing.", "at": "after", "sfx": "squeak", "volume": 0.2 },
 
     { "scene": "stopped-in-1900", "cue": "compounding", "sfx": "pop", "volume": 0.3 },
-    { "scene": "stopped-in-1900", "cue": "compounding", "offset": 0.2, "sfx": "pop", "volume": 0.3 },
-    { "scene": "stopped-in-1900", "cue": "nineteen", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "stopped-in-1900", "cue": "stopped", "sfx": "pop", "volume": 0.3 },
+    { "scene": "stopped-in-1900", "cue": "stopped", "offset": 0.2, "sfx": "pop", "volume": 0.3 },
     { "scene": "stopped-in-1900", "cue": "twenty-three", "sfx": "slide-up", "volume": 0.4 },
-    { "scene": "stopped-in-1900", "cue": "richer", "sfx": "pop", "volume": 0.5 },
-    { "scene": "stopped-in-1900", "cue": "richer", "offset": 0.1, "sfx": "sparkle", "volume": 0.4 },
-    { "scene": "stopped-in-1900", "cue": "ten", "sfx": "snip", "volume": 0.55 },
-    { "scene": "stopped-in-1900", "cue": "years", "sfx": "squeak", "volume": 0.35 },
-    { "scene": "stopped-in-1900", "cue": "life.", "sfx": "zap", "volume": 0.4 },
-    { "scene": "stopped-in-1900", "cue": "thirty-three", "sfx": "cash-register", "volume": 0.45 },
+    { "scene": "stopped-in-1900", "cue": "richer", "sfx": "pop", "volume": 0.45 },
+    { "scene": "stopped-in-1900", "cue": "richer", "offset": 0.1, "sfx": "sparkle", "volume": 0.35 },
+    { "scene": "stopped-in-1900", "cue": "ten", "sfx": "snip", "volume": 0.5 },
+    { "scene": "stopped-in-1900", "cue": "life.", "sfx": "zap", "volume": 0.35 },
+    { "scene": "stopped-in-1900", "cue": "thirty-three", "sfx": "cash-register", "volume": 0.4 },
     { "scene": "stopped-in-1900", "cue": "six", "sfx": "pop", "volume": 0.4 },
-    { "scene": "stopped-in-1900", "cue": "dollars.", "at": "after", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "stopped-in-1900", "cue": "dollars.", "n": 2, "at": "after", "sfx": "thunk", "volume": 0.4 },
 
-    { "scene": "604-times-less", "cue": "trials:", "sfx": "squeak", "volume": 0.4 },
-    { "scene": "604-times-less", "cue": "six", "sfx": "slide-up", "volume": 0.45 },
+    { "scene": "604-times-less", "cue": "trials:", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "604-times-less", "cue": "six", "sfx": "slide-up", "volume": 0.4 },
     { "scene": "604-times-less", "cue": "four", "sfx": "clank", "volume": 0.4 },
-    { "scene": "604-times-less", "cue": "less", "sfx": "slide-down", "volume": 0.45 },
-    { "scene": "604-times-less", "cue": "military", "sfx": "thunk", "volume": 0.5 },
-    { "scene": "604-times-less", "cue": "spending.", "sfx": "thunk", "volume": 0.45 },
-    { "scene": "604-times-less", "cue": "spending.", "at": "after", "sfx": "slam", "volume": 0.6 },
-    { "scene": "604-times-less", "cue": "spending.", "at": "after", "offset": 0.25, "sfx": "squeak", "volume": 0.35 },
+    { "scene": "604-times-less", "cue": "less", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "604-times-less", "cue": "spending.", "n": 2, "sfx": "thunk", "volume": 0.4 },
+    { "scene": "604-times-less", "cue": "spending.", "n": 2, "at": "after", "sfx": "slam", "volume": 0.55 },
+    { "scene": "604-times-less", "cue": "spending.", "n": 2, "at": "after", "offset": 0.25, "sfx": "squeak", "volume": 0.3 },
 
-    { "scene": "odds-of-dying", "cue": "terrorism:", "sfx": "whirr", "volume": 0.4 },
-    { "scene": "odds-of-dying", "cue": "thirty", "sfx": "tick", "volume": 0.45 },
-    { "scene": "odds-of-dying", "cue": "thirty", "offset": 0.2, "sfx": "tick", "volume": 0.45 },
-    { "scene": "odds-of-dying", "cue": "million.", "sfx": "click", "volume": 0.5 },
-    { "scene": "odds-of-dying", "cue": "million.", "at": "after", "sfx": "thunk", "volume": 0.45 },
-    { "scene": "odds-of-dying", "cue": "disease:", "sfx": "whirr", "volume": 0.4 },
-    { "scene": "odds-of-dying", "cue": "percent.", "sfx": "click", "volume": 0.5 },
+    { "scene": "odds-of-dying", "cue": "terrorism:", "sfx": "whirr", "volume": 0.35 },
+    { "scene": "odds-of-dying", "cue": "thirty", "sfx": "tick", "volume": 0.4 },
+    { "scene": "odds-of-dying", "cue": "thirty", "offset": 0.2, "sfx": "tick", "volume": 0.4 },
+    { "scene": "odds-of-dying", "cue": "million.", "sfx": "click", "volume": 0.45 },
+    { "scene": "odds-of-dying", "cue": "million.", "at": "after", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "odds-of-dying", "cue": "disease:", "sfx": "whirr", "volume": 0.35 },
+    { "scene": "odds-of-dying", "cue": "percent.", "sfx": "click", "volume": 0.45 },
 
-    { "scene": "cancer-oil-reserves", "cue": "oil", "sfx": "pop", "volume": 0.45 },
-    { "scene": "cancer-oil-reserves", "cue": "reserves,", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "cancer-oil-reserves", "cue": "reserves,", "offset": 0.3, "sfx": "cash-register", "volume": 0.35 },
-    { "scene": "cancer-oil-reserves", "cue": "cured", "sfx": "airplane", "volume": 0.35 },
-    { "scene": "cancer-oil-reserves", "cue": "cured", "offset": 0.35, "sfx": "boom", "volume": 0.55 },
-    { "scene": "cancer-oil-reserves", "cue": "two", "sfx": "sizzle", "volume": 0.3 },
-    { "scene": "cancer-oil-reserves", "cue": "three.", "sfx": "thunk", "volume": 0.5 },
+    { "scene": "cancer-oil-reserves", "cue": "oil", "sfx": "pop", "volume": 0.4 },
+    { "scene": "cancer-oil-reserves", "cue": "reserves,", "offset": 0.3, "sfx": "woof", "volume": 0.4 },
+    { "scene": "cancer-oil-reserves", "cue": "you", "sfx": "scratch", "volume": 0.3 },
+    { "scene": "cancer-oil-reserves", "cue": "cured", "offset": 0.1, "sfx": "boom", "volume": 0.5 },
+    { "scene": "cancer-oil-reserves", "cue": "three.", "sfx": "thunk", "volume": 0.45 },
 
-    { "scene": "submarine-on-land", "cue": "repair", "sfx": "squeak", "volume": 0.35 },
-    { "scene": "submarine-on-land", "cue": "money", "offset": 0.3, "sfx": "slide-down", "volume": 0.35 },
-    { "scene": "submarine-on-land", "cue": "tubes", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "submarine-on-land", "cue": "money", "offset": 0.2, "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "submarine-on-land", "cue": "tubes", "sfx": "whoosh", "volume": 0.3 },
     { "scene": "submarine-on-land", "cue": "more", "sfx": "slide-up", "volume": 0.3 },
-    { "scene": "submarine-on-land", "cue": "countries", "sfx": "whoosh", "volume": 0.45 },
-    { "scene": "submarine-on-land", "cue": "countries", "offset": 0.4, "sfx": "boom", "volume": 0.55 },
-    { "scene": "submarine-on-land", "cue": "submarines", "sfx": "slide-up", "volume": 0.35 },
-    { "scene": "submarine-on-land", "cue": "underwater,", "sfx": "pop", "volume": 0.45 },
-    { "scene": "submarine-on-land", "cue": "land.", "at": "after", "sfx": "thunk", "volume": 0.45 },
-    { "scene": "submarine-on-land", "cue": "land.", "at": "after", "offset": 0.2, "sfx": "squeak", "volume": 0.35 }
+    { "scene": "submarine-on-land", "cue": "countries", "offset": 0.4, "sfx": "boom", "volume": 0.5 },
+    { "scene": "submarine-on-land", "cue": "submarines", "sfx": "slide-up", "volume": 0.3 },
+    { "scene": "submarine-on-land", "cue": "underwater,", "sfx": "pop", "volume": 0.4 },
+    { "scene": "submarine-on-land", "cue": "underwater,", "offset": 0.5, "sfx": "thunk", "volume": 0.4 },
+
+    { "scene": "periscope", "cue": "useful", "sfx": "slide-up", "volume": 0.3 },
+    { "scene": "periscope", "cue": "land.", "sfx": "squeak", "volume": 0.3 }
   ]
 }

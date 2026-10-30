@@ -2,138 +2,703 @@
   "id": "part-01",
   "title": "Opening",
   "storyboard": "storyboards/part-01-opening.md",
-  "audio": { "start": 0, "end": 258.46 },
-  "noCaptions": ["title-card"],
+  "audio": {
+    "start": 0,
+    "end": 258.464
+  },
+  "noCaptions": [
+    "title-card"
+  ],
   "media": [
-    { "from": "assets/music-video/wishonia-theme-song-music-video.mp4", "to": "assets/video/theme-song-music-video.mp4", "lastFrame": "assets/video/theme-song-last-frame.png" }
+    {
+      "from": "assets/music-video/wishonia-theme-song-music-video.mp4",
+      "to": "assets/video/theme-song-music-video.mp4",
+      "lastFrame": "assets/video/theme-song-last-frame.png"
+    }
   ],
   "scenes": [
-    { "id": "theme-music-video", "file": "compositions/scenes/part-01/theme-music-video.html", "cue": "You're", "approx": 3, "layer": "video" },
-    { "id": "title-card", "file": "compositions/scenes/part-01/title-card.html", "cue": "How", "approx": 100, "layer": "A" },
-    { "id": "loved-ones", "file": "compositions/scenes/part-01/loved-ones.html", "cue": "Is", "approx": 108.5, "layer": "B",
-      "wishonia": [{ "cue": "Is", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" }] },
-    { "id": "nuclear-winters", "file": "compositions/scenes/part-01/nuclear-winters.html", "cue": "Do", "approx": 117.3, "layer": "B",
-      "wishonia": [{ "cue": "Do", "expr": "thinking", "rest": "closed", "body": "idle", "mode": "pip" }] },
-    { "id": "eligible", "file": "compositions/scenes/part-01/eligible.html", "cue": "If", "approx": 128, "layer": "A",
+    {
+      "id": "theme-music-video",
+      "file": "compositions/scenes/part-01/theme-music-video.html",
+      "cue": "You're",
+      "approx": 3,
+      "layer": "video"
+    },
+    {
+      "id": "title-card",
+      "file": "compositions/scenes/part-01/title-card.html",
+      "cue": "How",
+      "approx": 100.3,
+      "layer": "A"
+    },
+    {
+      "id": "loved-ones",
+      "file": "compositions/scenes/part-01/loved-ones.html",
+      "cue": "Is",
+      "approx": 108.8,
+      "layer": "B"
+    },
+    {
+      "id": "nuclear-winters",
+      "file": "compositions/scenes/part-01/nuclear-winters.html",
+      "cue": "waste",
+      "approx": 118.4,
+      "layer": "B"
+    },
+    {
+      "id": "eligible",
+      "file": "compositions/scenes/part-01/eligible.html",
+      "cue": "If",
+      "approx": 128.3,
+      "layer": "A",
       "wishonia": [
-        { "cue": "If", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
-        { "cue": "eligible", "expr": "happy", "rest": "smile", "body": "palms-down", "mode": "big" }
-      ] },
-    { "id": "meet-wishonia", "file": "compositions/scenes/part-01/meet-wishonia.html", "cue": "I'm", "approx": 133.3, "layer": "A",
+        {
+          "cue": "If",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "eligible",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "palms-down",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "meet-wishonia",
+      "file": "compositions/scenes/part-01/meet-wishonia.html",
+      "cue": "I'm",
+      "approx": 133.6,
+      "layer": "A",
       "wishonia": [
-        { "cue": "I'm", "expr": "happy", "rest": "smile", "body": "hand-chest", "mode": "big" },
-        { "cue": "Earth", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "big" }
-      ] },
-    { "id": "split-the-atom", "file": "compositions/scenes/part-01/split-the-atom.html", "cue": "I", "approx": 149.2, "layer": "B",
+        {
+          "cue": "I'm",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "hand-chest",
+          "mode": "big"
+        },
+        {
+          "cue": "Earth",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "open-palms",
+          "mode": "big"
+        },
+        {
+          "cue": "years.",
+          "expr": "smirk",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "split-the-atom",
+      "file": "compositions/scenes/part-01/split-the-atom.html",
+      "cue": "I",
+      "approx": 149.3,
+      "layer": "B"
+    },
+    {
+      "id": "my-surprise",
+      "file": "compositions/scenes/part-01/my-surprise.html",
+      "cue": "You",
+      "approx": 167.2,
+      "layer": "A",
       "wishonia": [
-        { "cue": "I", "expr": "neutral", "rest": "smile", "body": "idle", "mode": "pip" },
-        { "cue": "surprise", "expr": "surprised", "rest": "oh", "body": "idle", "mode": "pip" }
-      ] },
-    { "id": "fire-on-fire", "file": "compositions/scenes/part-01/fire-on-fire.html", "cue": "discovering", "approx": 174.4, "layer": "B",
-      "wishonia": [{ "cue": "discovering", "expr": "eyeroll", "rest": "closed", "body": "idle", "mode": "pip" }] },
-    { "id": "earth-means-dirt", "file": "compositions/scenes/part-01/earth-means-dirt.html", "cue": "The", "approx": 180.2, "layer": "A",
+        {
+          "cue": "You",
+          "expr": "neutral",
+          "rest": "smile",
+          "body": "open-palms",
+          "mode": "big"
+        },
+        {
+          "cue": "surprise",
+          "expr": "surprised",
+          "rest": "oh",
+          "body": "open-palms",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "pointing-at-each-other",
+      "file": "compositions/scenes/part-01/pointing-at-each-other.html",
+      "cue": "when",
+      "approx": 169.2,
+      "layer": "B"
+    },
+    {
+      "id": "fire-on-fire",
+      "file": "compositions/scenes/part-01/fire-on-fire.html",
+      "cue": "discovering",
+      "approx": 174.6,
+      "layer": "B"
+    },
+    {
+      "id": "earth-means-dirt",
+      "file": "compositions/scenes/part-01/earth-means-dirt.html",
+      "cue": "The",
+      "approx": 180.4,
+      "layer": "A",
       "wishonia": [
-        { "cue": "The", "expr": "skeptical", "rest": "closed", "body": "idle", "mode": "big" },
-        { "cue": "want...", "expr": "skeptical", "rest": "closed", "body": "shrug", "mode": "big" }
-      ] },
-    { "id": "pentagon", "file": "compositions/scenes/part-01/pentagon.html", "cue": "I", "approx": 191.2, "layer": "B",
-      "wishonia": [{ "cue": "I", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "pip" }] },
-    { "id": "papers-with-presidents", "file": "compositions/scenes/part-01/papers-with-presidents.html", "cue": "However,", "approx": 202.6, "layer": "B",
-      "wishonia": [{ "cue": "However,", "expr": "thinking", "rest": "small", "body": "idle", "mode": "pip" }] },
-    { "id": "without-with-papers", "file": "compositions/scenes/part-01/without-with-papers.html", "cue": "Without", "approx": 220.4, "layer": "B",
-      "wishonia": [
-        { "cue": "Without", "expr": "neutral", "rest": "smile", "body": "idle", "mode": "pip" },
-        { "cue": "profitable", "expr": "eyeroll", "rest": "smile", "body": "idle", "mode": "pip" }
-      ] },
-    { "id": "604-papers", "file": "compositions/scenes/part-01/604-papers.html", "cue": "In", "approx": 248.4, "layer": "B",
-      "wishonia": [{ "cue": "In", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "pip" }] }
+        {
+          "cue": "The",
+          "expr": "skeptical",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "want...",
+          "expr": "skeptical",
+          "rest": "closed",
+          "body": "shrug",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "pentagon",
+      "file": "compositions/scenes/part-01/pentagon.html",
+      "cue": "I",
+      "approx": 191.4,
+      "layer": "B"
+    },
+    {
+      "id": "papers-with-presidents",
+      "file": "compositions/scenes/part-01/papers-with-presidents.html",
+      "cue": "However,",
+      "approx": 202.8,
+      "layer": "B"
+    },
+    {
+      "id": "without-with-papers",
+      "file": "compositions/scenes/part-01/without-with-papers.html",
+      "cue": "Without",
+      "approx": 220.6,
+      "layer": "B"
+    },
+    {
+      "id": "604-papers",
+      "file": "compositions/scenes/part-01/604-papers.html",
+      "cue": "In",
+      "approx": 248.6,
+      "layer": "B"
+    }
   ],
   "sounds": [
-    { "scene": "title-card", "cue": "How", "sfx": "thunk" },
-    { "scene": "title-card", "cue": "End", "sfx": "thunk" },
-    { "scene": "title-card", "cue": "War", "sfx": "thunk" },
-    { "scene": "title-card", "cue": "Disease", "sfx": "thunk" },
-    { "scene": "title-card", "cue": "Busy", "sfx": "whistle", "volume": 0.45 },
-    { "scene": "loved-ones", "cue": "Is", "sfx": "typewriter", "volume": 0.4 },
-    { "scene": "loved-ones", "cue": "brutally", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "loved-ones", "cue": "murdered", "sfx": "zap", "volume": 0.3 },
-    { "scene": "loved-ones", "cue": "diseases?", "sfx": "scratch", "volume": 0.5 },
-    { "scene": "nuclear-winters", "cue": "nuclear", "sfx": "typewriter", "volume": 0.35 },
-    { "scene": "nuclear-winters", "cue": "bombs", "sfx": "boing", "volume": 0.35 },
-    { "scene": "nuclear-winters", "cue": "hundred", "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 0.16, "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 0.3, "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 0.42, "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 0.52, "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 0.61, "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 0.68, "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 0.75, "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 0.8, "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 0.85, "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 0.89, "sfx": "pop", "volume": 0.22 },
-    { "scene": "nuclear-winters", "cue": "hundred", "offset": 1.06, "sfx": "pop", "volume": 0.3 },
-    { "scene": "nuclear-winters", "cue": "twenty-two", "at": "after", "sfx": "clank", "volume": 0.45 },
-    { "scene": "nuclear-winters", "cue": "winters", "sfx": "whoosh", "volume": 0.3 },
-    { "scene": "nuclear-winters", "cue": "civilization", "sfx": "typewriter", "volume": 0.3 },
-    { "scene": "nuclear-winters", "cue": "civilization", "offset": 0.75, "sfx": "typewriter", "volume": 0.3 },
-    { "scene": "nuclear-winters", "cue": "apocalypse?", "offset": 0.35, "sfx": "ding", "volume": 0.3 },
-    { "scene": "nuclear-winters", "cue": "apocalypse?", "at": "after", "offset": 1.2, "sfx": "scratch", "volume": 0.5 },
-    { "scene": "eligible", "cue": "eligible", "at": "before", "sfx": "huff", "volume": 0.5 },
-    { "scene": "eligible", "cue": "eligible", "sfx": "stamp", "volume": 0.8 },
-    { "scene": "eligible", "cue": "optimization.", "at": "after", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "meet-wishonia", "cue": "Wishonia", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "meet-wishonia", "cue": "Universe", "sfx": "whoosh", "volume": 0.45 },
-    { "scene": "meet-wishonia", "cue": "Earth", "sfx": "whirr", "volume": 0.4 },
-    { "scene": "meet-wishonia", "cue": "Earth", "offset": 1.1, "sfx": "boom", "volume": 0.42 },
-    { "scene": "meet-wishonia", "cue": "years.", "n": 2, "at": "after", "sfx": "bell", "volume": 0.55 },
-    { "scene": "split-the-atom", "cue": "it.", "at": "after", "sfx": "snip", "volume": 0.6 },
-    { "scene": "split-the-atom", "cue": "free", "sfx": "switch", "volume": 0.6 },
-    { "scene": "split-the-atom", "cue": "pointing", "sfx": "hum", "volume": 0.3 },
-    { "scene": "split-the-atom", "cue": "each", "sfx": "zap", "volume": 0.45 },
-    { "scene": "split-the-atom", "cue": "other!", "offset": 0.1, "sfx": "boom", "volume": 0.65 },
-    { "scene": "split-the-atom", "cue": "That's", "sfx": "sizzle", "volume": 0.35 },
-    { "scene": "split-the-atom", "cue": "kind", "sfx": "toaster", "volume": 0.7 },
-    { "scene": "fire-on-fire", "cue": "fire", "sfx": "fire", "volume": 0.45 },
-    { "scene": "fire-on-fire", "cue": "yourself", "offset": 0.08, "sfx": "fire", "volume": 0.5 },
-    { "scene": "fire-on-fire", "cue": "yourself", "offset": 0.12, "sfx": "yelp", "volume": 0.4 },
-    { "scene": "fire-on-fire", "cue": "yourself", "offset": 0.38, "sfx": "yelp", "volume": 0.35 },
-    { "scene": "fire-on-fire", "cue": "fire.", "n": 2, "sfx": "sizzle", "volume": 0.45 },
-    { "scene": "fire-on-fire", "cue": "fire.", "n": 2, "at": "after", "offset": 0.6, "sfx": "fire", "volume": 0.3 },
-    { "scene": "earth-means-dirt", "cue": "dirt.", "sfx": "marker", "volume": 0.5 },
-    { "scene": "earth-means-dirt", "cue": "dirt.", "n": 2, "sfx": "marker", "volume": 0.5 },
-    { "scene": "earth-means-dirt", "cue": "want...", "at": "after", "sfx": "slam", "volume": 0.55 },
-    { "scene": "pentagon", "cue": "war", "sfx": "pop", "volume": 0.45 },
-    { "scene": "pentagon", "cue": "Pentagon", "sfx": "scratch", "volume": 0.4 },
-    { "scene": "pentagon", "cue": "Pentagon", "offset": 0.5, "sfx": "splat", "volume": 0.5 },
-    { "scene": "pentagon", "cue": "five", "sfx": "tick", "volume": 0.5 },
-    { "scene": "pentagon", "cue": "five", "offset": 0.14, "sfx": "tick", "volume": 0.5 },
-    { "scene": "pentagon", "cue": "five", "offset": 0.28, "sfx": "tick", "volume": 0.5 },
-    { "scene": "pentagon", "cue": "five", "offset": 0.42, "sfx": "tick", "volume": 0.5 },
-    { "scene": "pentagon", "cue": "five", "offset": 0.56, "sfx": "tick", "volume": 0.5 },
-    { "scene": "pentagon", "cue": "a", "offset": 0.05, "sfx": "slide-down", "volume": 0.45 },
-    { "scene": "pentagon", "cue": "Rectangle", "sfx": "thunk", "volume": 0.6 },
-    { "scene": "pentagon", "cue": "Square", "sfx": "thunk", "volume": 0.6 },
-    { "scene": "pentagon", "cue": "Square", "at": "after", "sfx": "thunk", "volume": 0.6 },
-    { "scene": "pentagon", "cue": "Square", "at": "after", "offset": 0.15, "sfx": "woof", "volume": 0.5 },
-    { "scene": "papers-with-presidents", "cue": "paper", "sfx": "squeak", "volume": 0.45 },
-    { "scene": "papers-with-presidents", "cue": "money,", "sfx": "whoosh", "volume": 0.45 },
-    { "scene": "papers-with-presidents", "cue": "value", "offset": 0.16, "sfx": "splat", "volume": 0.6 },
-    { "scene": "papers-with-presidents", "cue": "everyone", "offset": 0.1, "sfx": "boing", "volume": 0.45 },
-    { "scene": "papers-with-presidents", "cue": "hard", "sfx": "pop", "volume": 0.6 },
-    { "scene": "papers-with-presidents", "cue": "enough.", "sfx": "sparkle", "volume": 0.5 },
-    { "scene": "papers-with-presidents", "cue": "enough.", "at": "after", "sfx": "thunk", "volume": 0.4 },
-    { "scene": "without-with-papers", "cue": "Without", "sfx": "crickets", "volume": 0.3 },
-    { "scene": "without-with-papers", "cue": "papers", "n": 2, "at": "after", "sfx": "zap", "volume": 0.35 },
-    { "scene": "without-with-papers", "cue": "papers", "n": 3, "at": "after", "sfx": "zap", "volume": 0.35 },
-    { "scene": "without-with-papers", "cue": "WITH", "sfx": "hammer", "volume": 0.4 },
-    { "scene": "without-with-papers", "cue": "this", "n": 1, "at": "after", "sfx": "boom", "volume": 0.5 },
-    { "scene": "without-with-papers", "cue": "wars", "at": "after", "sfx": "pop", "volume": 0.35 },
-    { "scene": "without-with-papers", "cue": "more", "sfx": "cash-register", "volume": 0.45 },
-    { "scene": "without-with-papers", "cue": "profitable", "sfx": "cash-register", "volume": 0.45 },
-    { "scene": "604-papers", "cue": "six", "sfx": "slide-up", "volume": 0.45 },
-    { "scene": "604-papers", "cue": "four", "sfx": "airplane", "volume": 0.4 },
-    { "scene": "604-papers", "cue": "one", "sfx": "slide-down", "volume": 0.45 },
-    { "scene": "604-papers", "cue": "work.", "at": "after", "offset": 0.6, "sfx": "splat", "volume": 0.55 },
-    { "scene": "604-papers", "cue": "work.", "at": "after", "offset": 0.85, "sfx": "squeak", "volume": 0.35 }
+    {
+      "scene": "title-card",
+      "cue": "How",
+      "sfx": "whirr",
+      "volume": 0.25
+    },
+    {
+      "scene": "title-card",
+      "cue": "Disease",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "title-card",
+      "cue": "Busy",
+      "sfx": "whistle",
+      "volume": 0.45
+    },
+    {
+      "scene": "loved-ones",
+      "cue": "brutally",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "loved-ones",
+      "cue": "diseases?",
+      "at": "after",
+      "sfx": "pop",
+      "volume": 0.5
+    },
+    {
+      "scene": "nuclear-winters",
+      "cue": "nuclear",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "nuclear-winters",
+      "cue": "hundred",
+      "sfx": "pop",
+      "volume": 0.25
+    },
+    {
+      "scene": "nuclear-winters",
+      "cue": "twenty-two",
+      "sfx": "pop",
+      "volume": 0.25
+    },
+    {
+      "scene": "nuclear-winters",
+      "cue": "winters",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "nuclear-winters",
+      "cue": "despite",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "nuclear-winters",
+      "cue": "civilization",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "nuclear-winters",
+      "cue": "apocalypse?",
+      "offset": 0.35,
+      "sfx": "ding",
+      "volume": 0.3
+    },
+    {
+      "scene": "eligible",
+      "cue": "so,",
+      "sfx": "scratch",
+      "volume": 0.45
+    },
+    {
+      "scene": "eligible",
+      "cue": "so,",
+      "offset": 0.35,
+      "sfx": "scratch",
+      "volume": 0.45
+    },
+    {
+      "scene": "eligible",
+      "cue": "eligible",
+      "at": "before",
+      "sfx": "huff",
+      "volume": 0.5
+    },
+    {
+      "scene": "eligible",
+      "cue": "eligible",
+      "sfx": "stamp",
+      "volume": 0.8
+    },
+    {
+      "scene": "eligible",
+      "cue": "optimization.",
+      "at": "after",
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "meet-wishonia",
+      "cue": "Wishonia",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "meet-wishonia",
+      "cue": "Universe",
+      "sfx": "whoosh",
+      "volume": 0.45
+    },
+    {
+      "scene": "meet-wishonia",
+      "cue": "Earth",
+      "sfx": "whirr",
+      "volume": 0.4
+    },
+    {
+      "scene": "meet-wishonia",
+      "cue": "Earth",
+      "offset": 1.1,
+      "sfx": "boom",
+      "volume": 0.42
+    },
+    {
+      "scene": "meet-wishonia",
+      "cue": "years.",
+      "n": 2,
+      "at": "after",
+      "sfx": "bell",
+      "volume": 0.55
+    },
+    {
+      "scene": "split-the-atom",
+      "cue": "nineteen",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "split-the-atom",
+      "cue": "it.",
+      "at": "after",
+      "sfx": "snip",
+      "volume": 0.6
+    },
+    {
+      "scene": "split-the-atom",
+      "cue": "free",
+      "sfx": "switch",
+      "volume": 0.6
+    },
+    {
+      "scene": "split-the-atom",
+      "cue": "energy.",
+      "offset": 0.3,
+      "sfx": "toaster",
+      "volume": 0.6
+    },
+    {
+      "scene": "my-surprise",
+      "cue": "surprise",
+      "sfx": "whistle",
+      "volume": 0.35
+    },
+    {
+      "scene": "pointing-at-each-other",
+      "cue": "when",
+      "sfx": "switch",
+      "volume": 0.5
+    },
+    {
+      "scene": "pointing-at-each-other",
+      "cue": "pointing",
+      "sfx": "hum",
+      "volume": 0.3
+    },
+    {
+      "scene": "pointing-at-each-other",
+      "cue": "each",
+      "sfx": "zap",
+      "volume": 0.45
+    },
+    {
+      "scene": "pointing-at-each-other",
+      "cue": "other!",
+      "offset": 0.1,
+      "sfx": "boom",
+      "volume": 0.65
+    },
+    {
+      "scene": "pointing-at-each-other",
+      "cue": "That's",
+      "sfx": "sizzle",
+      "volume": 0.35
+    },
+    {
+      "scene": "pointing-at-each-other",
+      "cue": "kind",
+      "sfx": "toaster",
+      "volume": 0.7
+    },
+    {
+      "scene": "fire-on-fire",
+      "cue": "fire",
+      "sfx": "fire",
+      "volume": 0.45
+    },
+    {
+      "scene": "fire-on-fire",
+      "cue": "yourself",
+      "offset": 0.08,
+      "sfx": "fire",
+      "volume": 0.5
+    },
+    {
+      "scene": "fire-on-fire",
+      "cue": "yourself",
+      "offset": 0.12,
+      "sfx": "yelp",
+      "volume": 0.4
+    },
+    {
+      "scene": "fire-on-fire",
+      "cue": "fire.",
+      "n": 2,
+      "sfx": "sizzle",
+      "volume": 0.45
+    },
+    {
+      "scene": "earth-means-dirt",
+      "cue": "dirt.",
+      "sfx": "marker",
+      "volume": 0.5
+    },
+    {
+      "scene": "earth-means-dirt",
+      "cue": "dirt.",
+      "n": 2,
+      "sfx": "marker",
+      "volume": 0.5
+    },
+    {
+      "scene": "earth-means-dirt",
+      "cue": "want...",
+      "at": "after",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "earth-means-dirt",
+      "cue": "want...",
+      "at": "after",
+      "offset": 0.05,
+      "sfx": "huff",
+      "volume": 0.35
+    },
+    {
+      "scene": "pentagon",
+      "cue": "war",
+      "sfx": "pop",
+      "volume": 0.45
+    },
+    {
+      "scene": "pentagon",
+      "cue": "Pentagon",
+      "offset": 0.5,
+      "sfx": "splat",
+      "volume": 0.5
+    },
+    {
+      "scene": "pentagon",
+      "cue": "five",
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "pentagon",
+      "cue": "five",
+      "offset": 0.14,
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "pentagon",
+      "cue": "five",
+      "offset": 0.28,
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "pentagon",
+      "cue": "five",
+      "offset": 0.42,
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "pentagon",
+      "cue": "five",
+      "offset": 0.56,
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "pentagon",
+      "cue": "a",
+      "offset": 0.05,
+      "sfx": "slide-down",
+      "volume": 0.45
+    },
+    {
+      "scene": "pentagon",
+      "cue": "Rectangle",
+      "sfx": "thunk",
+      "volume": 0.6
+    },
+    {
+      "scene": "pentagon",
+      "cue": "Square",
+      "sfx": "thunk",
+      "volume": 0.6
+    },
+    {
+      "scene": "pentagon",
+      "cue": "Square",
+      "at": "after",
+      "sfx": "thunk",
+      "volume": 0.6
+    },
+    {
+      "scene": "pentagon",
+      "cue": "Square",
+      "at": "after",
+      "offset": 0.15,
+      "sfx": "woof",
+      "volume": 0.5
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "paper",
+      "sfx": "squeak",
+      "volume": 0.45
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "money,",
+      "sfx": "whoosh",
+      "volume": 0.45
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "value",
+      "offset": 0.16,
+      "sfx": "splat",
+      "volume": 0.6
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "everyone",
+      "offset": 0.1,
+      "sfx": "boing",
+      "volume": 0.45
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "hard",
+      "sfx": "pop",
+      "volume": 0.6
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "enough.",
+      "sfx": "sparkle",
+      "volume": 0.5
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "enough.",
+      "at": "after",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "Without",
+      "sfx": "crickets",
+      "volume": 0.3
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "many",
+      "sfx": "click",
+      "volume": 0.45
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "papers",
+      "n": 2,
+      "at": "after",
+      "sfx": "zap",
+      "volume": 0.35
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "papers",
+      "n": 3,
+      "at": "after",
+      "sfx": "zap",
+      "volume": 0.35
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "free).",
+      "at": "after",
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "WITH",
+      "sfx": "hammer",
+      "volume": 0.4
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "this",
+      "n": 1,
+      "at": "after",
+      "sfx": "boom",
+      "volume": 0.5
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "wars",
+      "at": "after",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "more",
+      "sfx": "cash-register",
+      "volume": 0.45
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "profitable",
+      "sfx": "cash-register",
+      "volume": 0.45
+    },
+    {
+      "scene": "without-with-papers",
+      "cue": "papers",
+      "n": 8,
+      "at": "after",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "604-papers",
+      "cue": "six",
+      "sfx": "slide-up",
+      "volume": 0.45
+    },
+    {
+      "scene": "604-papers",
+      "cue": "weapons",
+      "sfx": "airplane",
+      "volume": 0.4
+    },
+    {
+      "scene": "604-papers",
+      "cue": "for",
+      "sfx": "slide-down",
+      "volume": 0.45
+    },
+    {
+      "scene": "604-papers",
+      "cue": "paper",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "604-papers",
+      "cue": "work.",
+      "at": "after",
+      "sfx": "splat",
+      "volume": 0.55
+    },
+    {
+      "scene": "604-papers",
+      "cue": "work.",
+      "at": "after",
+      "offset": 0.3,
+      "sfx": "squeak",
+      "volume": 0.35
+    }
   ]
 }

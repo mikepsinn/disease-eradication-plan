@@ -9,7 +9,7 @@
 // fonts embedded, a Comment button on each scene) for publishing as a page people comment on.
 // The drawings for each scene are in storyboards/<name>.sketch.mjs.
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import vm from "node:vm";
@@ -27,9 +27,13 @@ const altPaths = process.argv.flatMap((a, i, all) => (a === "--alt" ? [resolve(V
 const nameAt = process.argv.indexOf("--name");
 const htmlOut = mdPath.replace(/\.md$/, altPaths.length ? `.${nameAt > 0 ? process.argv[nameAt + 1] : "compare"}.html` : ".html");
 
-// ── The kit, run outside a browser (its drawing functions only return strings) ──
-const sandbox = { window: {}, document: { createElement: () => ({}), head: { appendChild() {} } } };
-vm.runInNewContext(readFileSync(join(VIDEO, "assets/js/kit.js"), "utf8"), sandbox);
+// ── The kit, run outside a browser (its drawing functions only return strings): kit.js, the film look's
+// drawings (KIT.studioWall, KIT.lectern, KIT.atom, KIT.STUDIO) and the props library (KIT.props.*) ──
+const sandbox = { window: {}, document: { createElement: () => ({}), getElementById: () => null, head: { appendChild() {} } } };
+vm.createContext(sandbox);
+for (const f of ["kit.js", "film.js", ...readdirSync(join(VIDEO, "assets/js/props")).filter((n) => n.endsWith(".js")).sort().map((n) => "props/" + n)]) {
+  vm.runInContext(readFileSync(join(VIDEO, "assets/js", f), "utf8"), sandbox, { filename: f });
+}
 const K = sandbox.window.KIT;
 const C = K.C;
 
@@ -89,6 +93,12 @@ const H = {
     const x = 1626, y = 693, w = 274;
     return `<defs><clipPath id="${id}-pip"><rect width="1920" height="1080"/></clipPath></defs>` +
       `<g clip-path="url(#${id}-pip)"><g transform="translate(${2 * x + w},0) scale(-1,1)">${H.wish(x, y, w, head, body)}</g></g>`;
+  },
+  // A host shot (Layer A, style C, 16:9): the studio wall, Wishonia at KIT.STUDIO.wish with the given head and
+  // body sprites, the lectern in front of her, then `front` (more markup in front, canvas px).
+  host(head, body = "presenting", front = "") {
+    const S = K.STUDIO;
+    return K.studioWall() + H.wish(S.wish.x, S.wish.y, S.wish.w, head, body) + K.lectern() + front;
   },
   // A caption as the captions track shows it: the spoken words, the word being said highlighted.
   cap(text, active) {
@@ -224,6 +234,11 @@ function spriteDefs(inline) {
     return `<symbol id="spr-${name}" viewBox="0 0 ${w} ${h}"><image href="${href}" width="${w}" height="${h}"/></symbol>`;
   }).join("");
 }
+// The kit's generated art (KIT.reaper and the like) is referenced from the video folder, as the scenes see it.
+function artHref(path, inline) {
+  const file = join(VIDEO, path);
+  return inline ? `data:image/webp;base64,${readFileSync(file).toString("base64")}` : relative(dirname(htmlOut), file).replace(/\\/g, "/");
+}
 function imageHref(file, inline) {
   if (!inline) return relative(dirname(htmlOut), file).replace(/\\/g, "/");
   const dir = join(REPO, "assets/audiobook/cartoon/sheet-images");
@@ -288,10 +303,12 @@ function page(inlineMode) {
 </article>`;
     }).join("\n")).join("\n");
 
-  const seamMap = frames.map((f, i) => `<li><span class="seam-name">${esc(f.id)}</span>${i + 1 < frames.length ? `<span class="seam-chip">${esc(frames[i + 1].transition_in)}</span>` : `<span class="seam-chip end">cut to The Human Economy</span>`}</li>`).join("");
-  const palette = [["Murder-money red", C.war], ["Medicine teal", C.med], ["Engraving paper", C.paper], ["Line", C.line], ["Sunburst red", C.red], ["Orange", C.orange], ["Yellow", C.yellow], ["Periwinkle", C.peri], ["Grid cyan", C.cyan], ["Navy floor", C.navy]];
+  const seamMap = frames.map((f, i) => `<li><span class="seam-name">${esc(f.id)}</span>${i + 1 < frames.length ? `<span class="seam-chip">${esc(frames[i + 1].transition_in)}</span>` : `<span class="seam-chip end">end of part</span>`}</li>`).join("");
+  const palette = [["Studio wall", "#E3C88F"], ["Plate field", "#C8B07B"], ["Cream", C.cream], ["Navy", C.navy], ["Money", C.money], ["Money seal", C.moneyDark], ["Weapons red", C.war], ["Medicine teal", C.med], ["Orange", C.orange], ["Mustard", C.yellow]];
+  // front.part is `N, "Title"`.
+  const [, partNo = "?", partTitle = ""] = (front.part || "").match(/^(\d+),\s*"?(.*?)"?$/) || [];
 
-  return `<title>${ALT ? ALT.pageTitle || "Opening Style Comparison" : "Episode 1 Opening Storyboard"}</title>
+  return `<title>${ALT ? ALT.pageTitle || "Opening Style Comparison" : `Part ${partNo} Storyboard`}</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
 ${fontFaces(inlineMode)}
@@ -367,7 +384,7 @@ ${spriteDefs(inlineMode)}
   ${ALT ? `<h1>${ALTS.length > 1 ? esc(ALT.pageTitle) : `Part 1: current look vs ${esc(ALT.label)}`}</h1>
   <p class="dek">${esc(ALT.dek)}</p>
   ${ALTS.map((a, k) => `<div class="decided"><h2>${ALTS.length > 1 ? `${k + 1}. ${esc(a.label)}` : `What the ${esc(a.label)} version changes`}</h2><ul>${a.notes.map((d) => `<li>${inline(d)}</li>`).join("")}</ul></div>`).join("\n  ")}
-  <p class="how">${pairs.length} scenes at the same key moment, layout and words${ALTS.length > 1 ? "; only the humans change" : ", one of each kind of shot"}. Comment on the version you prefer${inlineMode ? " with the Comment button, or the comment tool on any frame" : ""}.</p>` : `<h1>Part 1: Opening<span class="ver">${esc(front.version || "v1")}</span></h1>
+  <p class="how">${pairs.length} scenes at the same key moment, layout and words${ALTS.length > 1 ? "; only the humans change" : ", one of each kind of shot"}. Comment on the version you prefer${inlineMode ? " with the Comment button, or the comment tool on any frame" : ""}.</p>` : `<h1>Part ${esc(partNo)}: ${esc(partTitle)}<span class="ver">${esc(front.version || "v1")}</span></h1>
   <p class="dek">${esc(front.message)}</p>
   <p class="tag">${esc(front.format.replace("x", " × "))} · ${esc(front.duration)} · ${frames.length} scenes · audio ${esc(front.audio)}</p>
   ${changes.map((c) => `<div class="decided"><h2>${esc(c.title)}</h2><ul>${c.items.map((d) => `<li>${inline(d)}</li>`).join("")}</ul></div>`).join("")}
@@ -386,11 +403,11 @@ ${ALT ? "" : `<section class="closing">
       <p><span style="font-family:var(--label);font-weight:600;font-size:18px;text-transform:uppercase;letter-spacing:.04em">Oswald SemiBold</span> labels and signs</p>
       <p><span style="font-weight:700;font-size:17px">Inter</span> captions and form text</p>
     </div>
-    <ul class="bans">${bans.map((b) => `<li>${inline(b)}</li>`).join("")}<li>Only red and teal on the engraving paper.</li></ul>
+    <ul class="bans">${bans.map((b) => `<li>${inline(b)}</li>`).join("")}</ul>
   </div>
 </section>`}
 </div>
-`.replace(/@@IMG(\d+)@@/g, (_, i) => imageHref(images[Number(i)], inlineMode)) + `${inlineMode ? `<script>
+`.replace(/@@IMG(\d+)@@/g, (_, i) => imageHref(images[Number(i)], inlineMode)).replace(/href="(assets\/art\/[^"]+)"/g, (_, path) => `href="${artHref(path, inlineMode)}"`) + `${inlineMode ? `<script>
 (async () => {
   let comments = null;
   try { comments = await window.claude?.use?.("comments"); } catch (e) { comments = null; }

@@ -2,135 +2,153 @@
   "id": "part-03",
   "title": "The Gradual Irrationality Reduction Program",
   "storyboard": "storyboards/part-03-gradual-irrationality-reduction.md",
-  "audio": { "start": 298.184, "end": 388.384 },
-  "noCaptions": ["irrationality-reduction-title"],
+  "audio": {
+    "start": 298.184,
+    "end": 388.384
+  },
+  "noCaptions": [
+    "title-card"
+  ],
   "scenes": [
-    { "id": "irrationality-reduction-title", "file": "compositions/scenes/part-03/irrationality-reduction-title.html", "cue": "The", "approx": 298.2, "layer": "A" },
-    { "id": "wishonia-war-timeline", "file": "compositions/scenes/part-03/wishonia-war-timeline.html", "cue": "We", "approx": 302.3, "layer": "A",
+    {
+      "id": "title-card",
+      "file": "compositions/scenes/part-03/title-card.html",
+      "cue": "The",
+      "approx": 298.2,
+      "layer": "A"
+    },
+    {
+      "id": "host-opens",
+      "file": "compositions/scenes/part-03/host-opens.html",
+      "cue": "We",
+      "approx": 302.3,
+      "layer": "A",
       "wishonia": [
         { "cue": "We", "expr": "happy", "rest": "smile", "body": "hand-chest", "mode": "big" },
         { "cue": "Before", "expr": "thinking", "rest": "closed", "body": "thinking", "mode": "big" },
         { "cue": "nobody", "expr": "skeptical", "rest": "closed", "body": "shrug", "mode": "big" }
-      ] },
-    { "id": "nations-foam-bats", "file": "compositions/scenes/part-03/nations-foam-bats.html", "cue": "Your", "approx": 317.6, "layer": "B",
+      ]
+    },
+    {
+      "id": "nations-foam-bats",
+      "file": "compositions/scenes/part-03/nations-foam-bats.html",
+      "cue": "Your",
+      "approx": 317.6,
+      "layer": "B"
+    },
+    {
+      "id": "toddlers-take-nap",
+      "file": "compositions/scenes/part-03/toddlers-take-nap.html",
+      "cue": "This",
+      "approx": 323.8,
+      "layer": "B"
+    },
+    {
+      "id": "dog-calculus",
+      "file": "compositions/scenes/part-03/dog-calculus.html",
+      "cue": "You",
+      "approx": 338.8,
+      "layer": "B"
+    },
+    {
+      "id": "host-manual",
+      "file": "compositions/scenes/part-03/host-manual.html",
+      "cue": "So",
+      "approx": 345.9,
+      "layer": "A",
       "wishonia": [
-        { "cue": "Your", "expr": "neutral", "rest": "smile", "body": "point-right", "mode": "pip" },
-        { "cue": "last.", "expr": "eyeroll", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "toddlers-take-nap", "file": "compositions/scenes/part-03/toddlers-take-nap.html", "cue": "This", "approx": 323.8, "layer": "B",
+        { "cue": "So", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "bribe", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "big" },
+        { "cue": "gradually:", "expr": "lookright", "rest": "smile", "body": "idle", "mode": "big" }
+      ]
+    },
+    {
+      "id": "year-one-to-twenty",
+      "file": "compositions/scenes/part-03/year-one-to-twenty.html",
+      "cue": "Year",
+      "approx": 352.9,
+      "layer": "B"
+    },
+    {
+      "id": "paint-chips",
+      "file": "compositions/scenes/part-03/paint-chips.html",
+      "cue": "It's",
+      "approx": 374.5,
+      "layer": "B"
+    },
+    {
+      "id": "host-closes",
+      "file": "compositions/scenes/part-03/host-closes.html",
+      "cue": "until",
+      "approx": 384.4,
+      "layer": "A",
       "wishonia": [
-        { "cue": "This", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "pip" },
-        { "cue": "nap.", "expr": "happy", "rest": "closed", "body": "hand-chest", "mode": "pip" },
-        { "cue": "refused", "expr": "annoyed", "rest": "frown", "body": "hands-hips", "mode": "pip" }
-      ] },
-    { "id": "dog-calculus", "file": "compositions/scenes/part-03/dog-calculus.html", "cue": "You", "approx": 338.8, "layer": "B",
-      "wishonia": [
-        { "cue": "You", "expr": "thinking", "rest": "small", "body": "thinking", "mode": "pip" },
-        { "cue": "dog", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "slider-year-one-to-twenty", "file": "compositions/scenes/part-03/slider-year-one-to-twenty.html", "cue": "So", "approx": 345.9, "layer": "B",
-      "wishonia": [
-        { "cue": "So", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "Year", "expr": "happy", "rest": "smile", "body": "counting", "mode": "pip" },
-        { "cue": "WHAT?!", "expr": "excited", "rest": "open", "body": "excited", "mode": "pip" }
-      ] },
-    { "id": "paint-chips", "file": "compositions/scenes/part-03/paint-chips.html", "cue": "It's", "approx": 374.5, "layer": "B",
-      "wishonia": [
-        { "cue": "It's", "expr": "neutral", "rest": "smile", "body": "listening", "mode": "pip" },
-        { "cue": "option.", "expr": "smirk", "rest": "smile", "body": "hands-hips", "mode": "pip" }
-      ] }
+        { "cue": "until", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "option.", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "big" }
+      ]
+    }
   ],
   "sounds": [
-    { "scene": "irrationality-reduction-title", "cue": "Gradual", "sfx": "whoosh", "volume": 0.3 },
-    { "scene": "irrationality-reduction-title", "cue": "Irrationality", "sfx": "whoosh", "volume": 0.3 },
-    { "scene": "irrationality-reduction-title", "cue": "Reduction", "sfx": "whoosh", "volume": 0.3 },
-    { "scene": "irrationality-reduction-title", "cue": "Program.", "offset": 0.6, "sfx": "thunk", "volume": 0.5 },
-    { "scene": "irrationality-reduction-title", "cue": "Program.", "at": "after", "sfx": "tick", "volume": 0.55 },
+    { "scene": "title-card", "cue": "Gradual", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "title-card", "cue": "Program.", "offset": 0.6, "sfx": "thunk", "volume": 0.5 },
+    { "scene": "title-card", "cue": "Program.", "at": "after", "sfx": "tick", "volume": 0.55 },
 
-    { "scene": "wishonia-war-timeline", "cue": "We", "offset": 0.1, "sfx": "thunk", "volume": 0.5 },
-    { "scene": "wishonia-war-timeline", "cue": "ended", "sfx": "huff", "volume": 0.35 },
-    { "scene": "wishonia-war-timeline", "cue": "program", "sfx": "switch", "volume": 0.55 },
-    { "scene": "wishonia-war-timeline", "cue": "four", "sfx": "marker", "volume": 0.45 },
-    { "scene": "wishonia-war-timeline", "cue": "years", "n": 1, "sfx": "bell", "volume": 0.4 },
-    { "scene": "wishonia-war-timeline", "cue": "thousand", "n": 2, "sfx": "typewriter", "volume": 0.35 },
-    { "scene": "wishonia-war-timeline", "cue": "which", "sfx": "whirr", "volume": 0.35 },
-    { "scene": "wishonia-war-timeline", "cue": "enjoyed.", "sfx": "whoosh", "volume": 0.45 },
-    { "scene": "wishonia-war-timeline", "cue": "enjoyed.", "offset": 0.35, "sfx": "slam", "volume": 0.5 },
-    { "scene": "wishonia-war-timeline", "cue": "enjoyed.", "at": "after", "sfx": "switch", "volume": 0.55 },
+    { "scene": "host-opens", "cue": "exact", "sfx": "huff", "volume": 0.35 },
+    { "scene": "host-opens", "cue": "four", "sfx": "bell", "volume": 0.25 },
+    { "scene": "host-opens", "cue": "twelve", "sfx": "typewriter", "volume": 0.35 },
+    { "scene": "host-opens", "cue": "enjoyed.", "sfx": "whoosh", "volume": 0.45 },
+    { "scene": "host-opens", "cue": "enjoyed.", "offset": 0.35, "sfx": "slam", "volume": 0.5 },
 
     { "scene": "nations-foam-bats", "cue": "hitting", "sfx": "boing", "volume": 0.45 },
     { "scene": "nations-foam-bats", "cue": "hitting", "offset": 0.15, "sfx": "pop", "volume": 0.3 },
     { "scene": "nations-foam-bats", "cue": "each", "sfx": "boing", "volume": 0.45 },
-    { "scene": "nations-foam-bats", "cue": "each", "offset": 0.15, "sfx": "pop", "volume": 0.3 },
     { "scene": "nations-foam-bats", "cue": "ten", "sfx": "whirr", "volume": 0.35 },
-    { "scene": "nations-foam-bats", "cue": "thousand", "sfx": "boing", "volume": 0.3 },
-    { "scene": "nations-foam-bats", "cue": "thousand", "offset": 0.2, "sfx": "boing", "volume": 0.3 },
     { "scene": "nations-foam-bats", "cue": "years", "sfx": "zap", "volume": 0.4 },
     { "scene": "nations-foam-bats", "cue": "because", "sfx": "scratch", "volume": 0.45 },
-    { "scene": "nations-foam-bats", "cue": "last.", "sfx": "pop", "volume": 0.4 },
     { "scene": "nations-foam-bats", "cue": "last.", "at": "after", "sfx": "boing", "volume": 0.5 },
 
-    { "scene": "toddlers-take-nap", "cue": "conflict", "sfx": "squeak", "volume": 0.45 },
     { "scene": "toddlers-take-nap", "cue": "resolution", "sfx": "squeak", "volume": 0.45 },
-    { "scene": "toddlers-take-nap", "cue": "eventually", "sfx": "squeak", "volume": 0.3 },
+    { "scene": "toddlers-take-nap", "cue": "four-year-olds,", "sfx": "squeak", "volume": 0.4 },
     { "scene": "toddlers-take-nap", "cue": "tired", "sfx": "huff", "volume": 0.45 },
     { "scene": "toddlers-take-nap", "cue": "nap.", "sfx": "thunk", "volume": 0.4 },
     { "scene": "toddlers-take-nap", "cue": "nap.", "at": "after", "sfx": "hum", "volume": 0.2 },
-    { "scene": "toddlers-take-nap", "cue": "invented", "sfx": "whoosh", "volume": 0.3 },
-    { "scene": "toddlers-take-nap", "cue": "invented", "offset": 0.35, "sfx": "click", "volume": 0.6 },
-    { "scene": "toddlers-take-nap", "cue": "naps", "sfx": "sparkle", "volume": 0.45 },
-    { "scene": "toddlers-take-nap", "cue": "refused", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "toddlers-take-nap", "cue": "refused", "offset": 0.3, "sfx": "boing", "volume": 0.35 },
-    { "scene": "toddlers-take-nap", "cue": "geopolitics.", "sfx": "stamp", "volume": 0.75 },
-    { "scene": "toddlers-take-nap", "cue": "geopolitics.", "offset": 0.55, "sfx": "boom", "volume": 0.35 },
+    { "scene": "toddlers-take-nap", "cue": "naps", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "toddlers-take-nap", "cue": "refused", "sfx": "boing", "volume": 0.45 },
+    { "scene": "toddlers-take-nap", "cue": "geopolitics.", "sfx": "boom", "volume": 0.6 },
 
-    { "scene": "dog-calculus", "cue": "illogical", "sfx": "scratch", "volume": 0.4 },
-    { "scene": "dog-calculus", "cue": "once.", "sfx": "tick", "volume": 0.5 },
-    { "scene": "dog-calculus", "cue": "calculus", "sfx": "scratch", "volume": 0.45 },
-    { "scene": "dog-calculus", "cue": "calculus", "offset": 0.35, "sfx": "whistle", "volume": 0.4 },
-    { "scene": "dog-calculus", "cue": "before", "sfx": "fire", "volume": 0.45 },
-    { "scene": "dog-calculus", "cue": "sit.", "at": "after", "sfx": "splat", "volume": 0.5 },
-    { "scene": "dog-calculus", "cue": "sit.", "at": "after", "offset": 0.05, "sfx": "sizzle", "volume": 0.35 },
-    { "scene": "dog-calculus", "cue": "sit.", "at": "after", "offset": 0.35, "sfx": "thunk", "volume": 0.35 },
+    { "scene": "dog-calculus", "cue": "You", "sfx": "marker", "volume": 0.4 },
+    { "scene": "dog-calculus", "cue": "calculus", "sfx": "whistle", "volume": 0.35 },
+    { "scene": "dog-calculus", "cue": "before", "sfx": "fire", "volume": 0.35 },
+    { "scene": "dog-calculus", "cue": "sit.", "sfx": "splat", "volume": 0.45 },
+    { "scene": "dog-calculus", "cue": "sit.", "offset": 0.2, "sfx": "sizzle", "volume": 0.3 },
 
-    { "scene": "slider-year-one-to-twenty", "cue": "manual", "sfx": "thunk", "volume": 0.55 },
-    { "scene": "slider-year-one-to-twenty", "cue": "shows", "sfx": "slide-up", "volume": 0.35 },
-    { "scene": "slider-year-one-to-twenty", "cue": "bribe", "sfx": "clank", "volume": 0.45 },
-    { "scene": "slider-year-one-to-twenty", "cue": "Year", "n": 1, "sfx": "pop", "volume": 0.35 },
-    { "scene": "slider-year-one-to-twenty", "cue": "murder", "sfx": "slide-down", "volume": 0.35 },
-    { "scene": "slider-year-one-to-twenty", "cue": "medicine", "sfx": "pop", "volume": 0.4 },
-    { "scene": "slider-year-one-to-twenty", "cue": "money", "n": 2, "sfx": "click", "volume": 0.5 },
-    { "scene": "slider-year-one-to-twenty", "cue": "steps).", "sfx": "boing", "volume": 0.35 },
-    { "scene": "slider-year-one-to-twenty", "cue": "Year", "n": 2, "sfx": "pop", "volume": 0.35 },
-    { "scene": "slider-year-one-to-twenty", "cue": "die!", "sfx": "pat", "volume": 0.5 },
-    { "scene": "slider-year-one-to-twenty", "cue": "percent", "n": 2, "sfx": "pop", "volume": 0.3 },
-    { "scene": "slider-year-one-to-twenty", "cue": "percent", "n": 2, "offset": 0.3, "sfx": "click", "volume": 0.5 },
-    { "scene": "slider-year-one-to-twenty", "cue": "Year", "n": 3, "sfx": "pop", "volume": 0.35 },
-    { "scene": "slider-year-one-to-twenty", "cue": "five:", "sfx": "pop", "volume": 0.25 },
-    { "scene": "slider-year-one-to-twenty", "cue": "five:", "offset": 0.15, "sfx": "pop", "volume": 0.25 },
-    { "scene": "slider-year-one-to-twenty", "cue": "five:", "offset": 0.3, "sfx": "pop", "volume": 0.25 },
-    { "scene": "slider-year-one-to-twenty", "cue": "weird.", "at": "after", "sfx": "boom", "volume": 0.55 },
-    { "scene": "slider-year-one-to-twenty", "cue": "Year", "n": 4, "sfx": "pop", "volume": 0.35 },
-    { "scene": "slider-year-one-to-twenty", "cue": "ten:", "sfx": "whirr", "volume": 0.35 },
-    { "scene": "slider-year-one-to-twenty", "cue": "war?", "offset": 0.3, "sfx": "crickets", "volume": 0.25 },
-    { "scene": "slider-year-one-to-twenty", "cue": "Year", "n": 5, "sfx": "pop", "volume": 0.35 },
-    { "scene": "slider-year-one-to-twenty", "cue": "twenty:", "sfx": "slide-up", "volume": 0.35 },
-    { "scene": "slider-year-one-to-twenty", "cue": "WHAT?!", "sfx": "boing", "volume": 0.5 },
-    { "scene": "slider-year-one-to-twenty", "cue": "WHAT?!", "offset": 0.12, "sfx": "boing", "volume": 0.45 },
-    { "scene": "slider-year-one-to-twenty", "cue": "WHAT?!", "offset": 0.3, "sfx": "thunk", "volume": 0.4 },
+    { "scene": "host-manual", "cue": "manual", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "host-manual", "cue": "bribe", "sfx": "boing", "volume": 0.4 },
 
-    { "scene": "paint-chips", "cue": "paint", "n": 1, "sfx": "snip", "volume": 0.4 },
-    { "scene": "paint-chips", "cue": "all", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "paint-chips", "cue": "cry.", "sfx": "yelp", "volume": 0.55 },
-    { "scene": "paint-chips", "cue": "cry.", "offset": 0.25, "sfx": "splat", "volume": 0.45 },
-    { "scene": "paint-chips", "cue": "cry.", "at": "after", "sfx": "thunk", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "Year", "n": 1, "sfx": "tick", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "murder", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "year-one-to-twenty", "cue": "medicine", "sfx": "ding", "volume": 0.35 },
+    { "scene": "year-one-to-twenty", "cue": "steps).", "sfx": "boing", "volume": 0.35 },
+    { "scene": "year-one-to-twenty", "cue": "Year", "n": 2, "sfx": "tick", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "die!", "sfx": "pat", "volume": 0.45 },
+    { "scene": "year-one-to-twenty", "cue": "Year", "n": 3, "sfx": "tick", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "weird.\".", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "year-one-to-twenty", "cue": "Year", "n": 4, "sfx": "tick", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "war?\".", "at": "after", "sfx": "crickets", "volume": 0.35 },
+    { "scene": "year-one-to-twenty", "cue": "Year", "n": 5, "sfx": "tick", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "WHAT?!\".", "sfx": "boing", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "WHAT?!\".", "at": "after", "sfx": "boing", "volume": 0.4 },
+
+    { "scene": "paint-chips", "cue": "chips.", "sfx": "snip", "volume": 0.4 },
+    { "scene": "paint-chips", "cue": "all", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "paint-chips", "cue": "cry.", "sfx": "yelp", "volume": 0.4 },
+    { "scene": "paint-chips", "cue": "cry.", "offset": 0.3, "sfx": "splat", "volume": 0.45 },
+    { "scene": "paint-chips", "cue": "cry.", "at": "after", "sfx": "slam", "volume": 0.45 },
     { "scene": "paint-chips", "cue": "gradually", "sfx": "pop", "volume": 0.35 },
     { "scene": "paint-chips", "cue": "replace", "sfx": "pop", "volume": 0.35 },
-    { "scene": "paint-chips", "cue": "food", "sfx": "pop", "volume": 0.3 },
-    { "scene": "paint-chips", "cue": "food", "offset": 0.12, "sfx": "pop", "volume": 0.3 },
-    { "scene": "paint-chips", "cue": "forget", "sfx": "whoosh", "volume": 0.25 },
-    { "scene": "paint-chips", "cue": "option.", "sfx": "click", "volume": 0.55 },
-    { "scene": "paint-chips", "cue": "option.", "at": "after", "sfx": "huff", "volume": 0.3 },
-    { "scene": "paint-chips", "cue": "option.", "at": "after", "offset": 0.45, "sfx": "woof", "volume": 0.3 }
+    { "scene": "paint-chips", "cue": "food", "sfx": "pop", "volume": 0.35 },
+
+    { "scene": "host-closes", "cue": "until", "sfx": "pat", "volume": 0.3 },
+    { "scene": "host-closes", "cue": "option.", "sfx": "huff", "volume": 0.4 }
   ]
 }

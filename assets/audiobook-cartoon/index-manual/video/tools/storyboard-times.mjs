@@ -82,7 +82,8 @@ for (const file of files) {
   const out = blocks.map((block, i) => {
     const s = starts[i].t;
     const e = i + 1 < blocks.length ? starts[i + 1].t : part.end;
-    const said = words.filter((w) => w.start >= s - 0.01 && w.start < e - 0.01).map((w) => w.word).join(" ");
+    // The transcript keeps the book's em-dashes ("force—not"); the storyboards use none.
+    const said = words.filter((w) => w.start >= s - 0.01 && w.start < e - 0.01).map((w) => w.word).join(" ").replace(/\s*—\s*/g, ", ");
     let b = setField(block, "time", `${mmss(s)} to ${mmss(e)} (${(e - s).toFixed(1)} s)`, "cue");
     b = setField(b, "voiceover", said ? `"${said}"` : "none (music)", "time");
     return b;

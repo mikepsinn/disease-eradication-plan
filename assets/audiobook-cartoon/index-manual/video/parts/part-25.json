@@ -2,274 +2,281 @@
   "id": "part-25",
   "title": "Choose Your Own Adventure",
   "storyboard": "storyboards/part-25-choose-your-own-adventure.md",
-  "audio": { "start": 3091.044, "end": 3337.744 },
-  "noCaptions": ["choose-your-own-adventure-title"],
+  "audio": {
+    "start": 3091.044,
+    "end": 3337.744
+  },
+  "noCaptions": [
+    "choose-your-own-adventure-title"
+  ],
   "scenes": [
-    { "id": "choose-your-own-adventure-title", "file": "compositions/scenes/part-25/choose-your-own-adventure-title.html", "cue": "Choose", "approx": 3091.0, "layer": "A" },
-    { "id": "fork-in-the-road", "file": "compositions/scenes/part-25/fork-in-the-road.html", "cue": "Now", "approx": 3093.1, "layer": "A",
+    {
+      "id": "choose-your-own-adventure-title",
+      "file": "compositions/scenes/part-25/choose-your-own-adventure-title.html",
+      "cue": "Choose",
+      "approx": 3091.0,
+      "layer": "A"
+    },
+    {
+      "id": "fork-in-the-road",
+      "file": "compositions/scenes/part-25/fork-in-the-road.html",
+      "cue": "Now",
+      "approx": 3093.1,
+      "layer": "A",
       "wishonia": [
         { "cue": "Now", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
-        { "cue": "existence.", "expr": "happy", "rest": "smile", "body": "wide-gesture", "mode": "big" }
-      ] },
-    { "id": "economists-straight-line", "file": "compositions/scenes/part-25/economists-straight-line.html", "cue": "I", "approx": 3098.1, "layer": "B",
+        { "cue": "existence.", "expr": "happy", "rest": "smile", "body": "wide-gesture", "mode": "big" },
+        { "cue": "I", "expr": "neutral", "rest": "smile", "body": "open-palms", "mode": "big" }
+      ]
+    },
+    {
+      "id": "economists-straight-line",
+      "file": "compositions/scenes/part-25/economists-straight-line.html",
+      "cue": "Your",
+      "approx": 3101.3,
+      "layer": "B"
+    },
+    {
+      "id": "earn-1-57-times",
+      "file": "compositions/scenes/part-25/earn-1-57-times.html",
+      "cue": "If",
+      "approx": 3112.6,
+      "layer": "B"
+    },
+    {
+      "id": "not-complicated",
+      "file": "compositions/scenes/part-25/not-complicated.html",
+      "cue": "This",
+      "approx": 3129.9,
+      "layer": "A",
       "wishonia": [
-        { "cue": "I", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "economists", "expr": "skeptical", "rest": "smile", "body": "arms-crossed", "mode": "pip" },
-        { "cue": "Good", "expr": "smirk", "rest": "smile", "body": "shrug", "mode": "pip" }
-      ] },
-    { "id": "earn-1-57-times", "file": "compositions/scenes/part-25/earn-1-57-times.html", "cue": "If", "approx": 3112.6, "layer": "B",
+        { "cue": "This", "expr": "eyeroll", "rest": "closed", "body": "palms-down", "mode": "big" },
+        { "cue": "insight.", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "big" }
+      ]
+    },
+    {
+      "id": "future-a-2027",
+      "file": "compositions/scenes/part-25/future-a-2027.html",
+      "cue": "Future",
+      "approx": 3133.0,
+      "layer": "B"
+    },
+    {
+      "id": "future-a-2033",
+      "file": "compositions/scenes/part-25/future-a-2033.html",
+      "cue": "Year",
+      "approx": 3146.9,
+      "layer": "B"
+    },
+    {
+      "id": "future-a-2035",
+      "file": "compositions/scenes/part-25/future-a-2035.html",
+      "cue": "Year",
+      "approx": 3158.6,
+      "layer": "B"
+    },
+    {
+      "id": "future-a-2040",
+      "file": "compositions/scenes/part-25/future-a-2040.html",
+      "cue": "Year",
+      "approx": 3178.3,
+      "layer": "B"
+    },
+    {
+      "id": "audit-side-eye",
+      "file": "compositions/scenes/part-25/audit-side-eye.html",
+      "cue": "audit.",
+      "approx": 3190.4,
+      "layer": "A",
       "wishonia": [
-        { "cue": "If", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "one", "expr": "happy", "rest": "smile", "body": "counting", "mode": "pip" },
-        { "cue": "complicated", "expr": "eyeroll", "rest": "smile", "body": "shrug", "mode": "pip" }
-      ] },
-    { "id": "future-a-2027", "file": "compositions/scenes/part-25/future-a-2027.html", "cue": "Future", "approx": 3133.0, "layer": "B",
+        { "cue": "audit.", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "big" }
+      ]
+    },
+    {
+      "id": "rot-in-place",
+      "file": "compositions/scenes/part-25/rot-in-place.html",
+      "cue": "Your",
+      "approx": 3191.5,
+      "layer": "B"
+    },
+    {
+      "id": "future-a-2043",
+      "file": "compositions/scenes/part-25/future-a-2043.html",
+      "cue": "Year",
+      "approx": 3208.1,
+      "layer": "B"
+    },
+    {
+      "id": "cockroach-manual",
+      "file": "compositions/scenes/part-25/cockroach-manual.html",
+      "cue": "Year",
+      "approx": 3219.6,
+      "layer": "B"
+    },
+    {
+      "id": "future-b-2028",
+      "file": "compositions/scenes/part-25/future-b-2028.html",
+      "cue": "Future",
+      "approx": 3229.7,
+      "layer": "B"
+    },
+    {
+      "id": "future-b-2032",
+      "file": "compositions/scenes/part-25/future-b-2032.html",
+      "cue": "Year",
+      "approx": 3247.0,
+      "layer": "B"
+    },
+    {
+      "id": "future-b-2035",
+      "file": "compositions/scenes/part-25/future-b-2035.html",
+      "cue": "Year",
+      "approx": 3270.0,
+      "layer": "B"
+    },
+    {
+      "id": "retrospect-look",
+      "file": "compositions/scenes/part-25/retrospect-look.html",
+      "cue": "retrospect.",
+      "approx": 3283.1,
+      "layer": "A",
       "wishonia": [
-        { "cue": "Future", "expr": "neutral", "rest": "smile", "body": "point-right", "mode": "pip" },
-        { "cue": "six", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "weird.", "expr": "eyeroll", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "future-a-2033", "file": "compositions/scenes/part-25/future-a-2033.html", "cue": "Year", "approx": 3146.9, "layer": "B",
-      "wishonia": [
-        { "cue": "Year", "expr": "thinking", "rest": "closed", "body": "thinking", "mode": "pip" },
-        { "cue": "worse", "expr": "smirk", "rest": "smile", "body": "hands-hips", "mode": "pip" }
-      ] },
-    { "id": "future-a-2035", "file": "compositions/scenes/part-25/future-a-2035.html", "cue": "Year", "approx": 3158.6, "layer": "B",
-      "wishonia": [
-        { "cue": "Year", "expr": "annoyed", "rest": "closed", "body": "arms-crossed", "mode": "pip" },
-        { "cue": "nurse", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "profiting", "expr": "annoyed", "rest": "frown", "body": "hands-hips", "mode": "pip" }
-      ] },
-    { "id": "future-a-2040", "file": "compositions/scenes/part-25/future-a-2040.html", "cue": "Year", "approx": 3178.3, "layer": "B",
-      "wishonia": [
-        { "cue": "Year", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "fake", "expr": "eyeroll", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "rot-in-place", "file": "compositions/scenes/part-25/rot-in-place.html", "cue": "Your", "approx": 3191.5, "layer": "B",
-      "wishonia": [
-        { "cue": "Your", "expr": "neutral", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "organs", "expr": "thinking", "rest": "small", "body": "thinking", "mode": "pip" },
-        { "cue": "global", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" }
-      ] },
-    { "id": "future-a-2043", "file": "compositions/scenes/part-25/future-a-2043.html", "cue": "Year", "approx": 3208.1, "layer": "B",
-      "wishonia": [
-        { "cue": "Year", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "survivors", "expr": "eyeroll", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "cockroach-manual", "file": "compositions/scenes/part-25/cockroach-manual.html", "cue": "Year", "approx": 3219.6, "layer": "B",
-      "wishonia": [
-        { "cue": "Year", "expr": "neutral", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "find", "expr": "smirk", "rest": "smile", "body": "hands-hips", "mode": "pip" }
-      ] },
-    { "id": "future-b-2028", "file": "compositions/scenes/part-25/future-b-2028.html", "cue": "Future", "approx": 3229.7, "layer": "B",
-      "wishonia": [
-        { "cue": "Future", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "Investors", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "pip" }
-      ] },
-    { "id": "future-b-2032", "file": "compositions/scenes/part-25/future-b-2032.html", "cue": "Year", "approx": 3247.0, "layer": "B",
-      "wishonia": [
-        { "cue": "Year", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "Nobody", "expr": "neutral", "rest": "smile", "body": "palms-down", "mode": "pip" },
-        { "cue": "op-eds", "expr": "eyeroll", "rest": "smile", "body": "shrug", "mode": "pip" }
-      ] },
-    { "id": "future-b-2035", "file": "compositions/scenes/part-25/future-b-2035.html", "cue": "Year", "approx": 3270.0, "layer": "B",
-      "wishonia": [
-        { "cue": "Year", "expr": "happy", "rest": "smile", "body": "open-palms", "mode": "pip" },
-        { "cue": "economists", "expr": "smirk", "rest": "smile", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "future-b-2040", "file": "compositions/scenes/part-25/future-b-2040.html", "cue": "Year", "approx": 3284.5, "layer": "B",
-      "wishonia": [
-        { "cue": "Year", "expr": "happy", "rest": "smile", "body": "idle", "mode": "pip" },
-        { "cue": "Healthier", "expr": "happy", "rest": "smile", "body": "counting", "mode": "pip" },
-        { "cue": "suspect", "expr": "smirk", "rest": "smile", "body": "hands-hips", "mode": "pip" }
-      ] },
-    { "id": "future-b-2048", "file": "compositions/scenes/part-25/future-b-2048.html", "cue": "Year", "approx": 3301.4, "layer": "B",
-      "wishonia": [
-        { "cue": "Year", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "fifty-six", "expr": "excited", "rest": "open", "body": "excited", "mode": "pip" },
-        { "cue": "children", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "pip" },
-        { "cue": "subject.", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "fax-machine-lifetime", "file": "compositions/scenes/part-25/fax-machine-lifetime.html", "cue": "Communism", "approx": 3314.6, "layer": "B",
-      "wishonia": [
-        { "cue": "Communism", "expr": "skeptical", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "mass", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" },
-        { "cue": "TERRIBLE", "expr": "annoyed", "rest": "closed", "body": "palms-down", "mode": "pip" }
-      ] },
-    { "id": "dont-know-what-to-tell-you", "file": "compositions/scenes/part-25/dont-know-what-to-tell-you.html", "cue": "You", "approx": 3327.8, "layer": "A",
+        { "cue": "retrospect.", "expr": "skeptical", "rest": "closed", "body": "hands-hips", "mode": "big" }
+      ]
+    },
+    {
+      "id": "future-b-2040",
+      "file": "compositions/scenes/part-25/future-b-2040.html",
+      "cue": "Year",
+      "approx": 3284.5,
+      "layer": "B"
+    },
+    {
+      "id": "future-b-2048",
+      "file": "compositions/scenes/part-25/future-b-2048.html",
+      "cue": "Year",
+      "approx": 3301.4,
+      "layer": "B"
+    },
+    {
+      "id": "fax-machine-lifetime",
+      "file": "compositions/scenes/part-25/fax-machine-lifetime.html",
+      "cue": "Communism",
+      "approx": 3314.6,
+      "layer": "B"
+    },
+    {
+      "id": "dont-know-what-to-tell-you",
+      "file": "compositions/scenes/part-25/dont-know-what-to-tell-you.html",
+      "cue": "You",
+      "approx": 3327.8,
+      "layer": "A",
       "wishonia": [
         { "cue": "You", "expr": "neutral", "rest": "smile", "body": "open-palms", "mode": "big" },
         { "cue": "receive", "expr": "smirk", "rest": "closed", "body": "idle", "mode": "big" },
         { "cue": "tell", "expr": "eyeroll", "rest": "closed", "body": "shrug", "mode": "big" }
-      ] }
+      ]
+    }
   ],
   "sounds": [
-    { "scene": "choose-your-own-adventure-title", "cue": "Choose", "sfx": "thunk", "volume": 0.6 },
-    { "scene": "choose-your-own-adventure-title", "cue": "Your", "sfx": "thunk", "volume": 0.6 },
-    { "scene": "choose-your-own-adventure-title", "cue": "Own", "sfx": "thunk", "volume": 0.6 },
-    { "scene": "choose-your-own-adventure-title", "cue": "Adventure.", "sfx": "thunk", "volume": 0.6 },
-    { "scene": "choose-your-own-adventure-title", "cue": "Adventure.", "at": "after", "sfx": "pop", "volume": 0.4 },
+    { "scene": "choose-your-own-adventure-title", "cue": "Choose", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "choose-your-own-adventure-title", "cue": "Adventure.", "at": "after", "sfx": "squeak", "volume": 0.3 },
 
-    { "scene": "fork-in-the-road", "cue": "select", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "fork-in-the-road", "cue": "two", "sfx": "pop", "volume": 0.45 },
-    { "scene": "fork-in-the-road", "cue": "paths", "offset": 0.12, "sfx": "pop", "volume": 0.45 },
-    { "scene": "fork-in-the-road", "cue": "remainder", "sfx": "pat", "volume": 0.35 },
-    { "scene": "fork-in-the-road", "cue": "existence.", "sfx": "sparkle", "volume": 0.45 },
+    { "scene": "fork-in-the-road", "cue": "select", "sfx": "boing", "volume": 0.4 },
+    { "scene": "fork-in-the-road", "cue": "existence.", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "fork-in-the-road", "cue": "modeled", "sfx": "whoosh", "volume": 0.35 },
 
-    { "scene": "economists-straight-line", "cue": "I", "sfx": "whoosh", "volume": 0.3 },
-    { "scene": "economists-straight-line", "cue": "modeled", "offset": 0.3, "sfx": "slide-down", "volume": 0.35 },
-    { "scene": "economists-straight-line", "cue": "twenty", "sfx": "tick", "volume": 0.45 },
-    { "scene": "economists-straight-line", "cue": "twenty", "offset": 0.2, "sfx": "tick", "volume": 0.45 },
-    { "scene": "economists-straight-line", "cue": "steady", "sfx": "marker", "volume": 0.5 },
-    { "scene": "economists-straight-line", "cue": "every", "sfx": "pop", "volume": 0.35 },
+    { "scene": "economists-straight-line", "cue": "project", "sfx": "marker", "volume": 0.35 },
     { "scene": "economists-straight-line", "cue": "simultaneously", "sfx": "boing", "volume": 0.4 },
-    { "scene": "economists-straight-line", "cue": "luck", "sfx": "clank", "volume": 0.45 },
-    { "scene": "economists-straight-line", "cue": "that.", "n": 2, "sfx": "slam", "volume": 0.6 },
-    { "scene": "economists-straight-line", "cue": "that.", "n": 2, "offset": 0.15, "sfx": "splat", "volume": 0.55 },
-    { "scene": "economists-straight-line", "cue": "that.", "n": 2, "at": "after", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "economists-straight-line", "cue": "that.", "n": 2, "sfx": "slam", "volume": 0.5 },
+    { "scene": "economists-straight-line", "cue": "that.", "n": 2, "at": "after", "sfx": "squeak", "volume": 0.3 },
 
-    { "scene": "earn-1-57-times", "cue": "spending", "sfx": "squeak", "volume": 0.35 },
-    { "scene": "earn-1-57-times", "cue": "start", "sfx": "whistle", "volume": 0.4 },
-    { "scene": "earn-1-57-times", "cue": "spending", "n": 2, "sfx": "whirr", "volume": 0.35 },
-    { "scene": "earn-1-57-times", "cue": "medicine,", "sfx": "sparkle", "volume": 0.45 },
-    { "scene": "earn-1-57-times", "cue": "compounds,", "sfx": "pop", "volume": 0.4 },
-    { "scene": "earn-1-57-times", "cue": "compounds,", "offset": 0.4, "sfx": "pop", "volume": 0.45 },
-    { "scene": "earn-1-57-times", "cue": "one", "sfx": "slide-up", "volume": 0.4 },
-    { "scene": "earn-1-57-times", "cue": "seven", "sfx": "ding", "volume": 0.45 },
-    { "scene": "earn-1-57-times", "cue": "kills", "sfx": "whistle", "volume": 0.4 },
-    { "scene": "earn-1-57-times", "cue": "kills", "offset": 0.45, "sfx": "boom", "volume": 0.6 },
-    { "scene": "earn-1-57-times", "cue": "complicated", "sfx": "stamp", "volume": 0.6 },
-    { "scene": "earn-1-57-times", "cue": "insight.", "offset": 0.6, "sfx": "thunk", "volume": 0.4 },
+    { "scene": "earn-1-57-times", "cue": "start", "sfx": "whistle", "volume": 0.35 },
+    { "scene": "earn-1-57-times", "cue": "medicine,", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "earn-1-57-times", "cue": "one", "sfx": "slide-up", "volume": 0.35 },
+    { "scene": "earn-1-57-times", "cue": "times", "sfx": "ding", "volume": 0.3 },
+    { "scene": "earn-1-57-times", "cue": "you.", "n": 4, "sfx": "boom", "volume": 0.6 },
 
-    { "scene": "future-a-2027", "cue": "A:", "sfx": "switch", "volume": 0.5 },
-    { "scene": "future-a-2027", "cue": "Ignore", "sfx": "pop", "volume": 0.35 },
-    { "scene": "future-a-2027", "cue": "Manual.", "offset": 0.6, "sfx": "thunk", "volume": 0.5 },
-    { "scene": "future-a-2027", "cue": "twenty-seven:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "future-a-2027", "cue": "six", "sfx": "slide-up", "volume": 0.45 },
-    { "scene": "future-a-2027", "cue": "work.", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "not-complicated", "cue": "insight.", "offset": 0.2, "sfx": "thunk", "volume": 0.5 },
+
+    { "scene": "future-a-2027", "cue": "A:", "sfx": "click", "volume": 0.3 },
+    { "scene": "future-a-2027", "cue": "Manual.", "at": "after", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "future-a-2027", "cue": "six", "sfx": "slide-up", "volume": 0.4 },
     { "scene": "future-a-2027", "cue": "finds", "sfx": "boing", "volume": 0.4 },
-    { "scene": "future-a-2027", "cue": "weird.", "at": "after", "sfx": "splat", "volume": 0.5 },
+    { "scene": "future-a-2027", "cue": "weird.", "at": "after", "sfx": "splat", "volume": 0.35 },
 
-    { "scene": "future-a-2033", "cue": "thirty-three:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "future-a-2033", "cue": "twenty-five", "sfx": "slide-up", "volume": 0.4 },
-    { "scene": "future-a-2033", "cue": "collapsed", "sfx": "slam", "volume": 0.45 },
-    { "scene": "future-a-2033", "cue": "technology", "sfx": "whirr", "volume": 0.35 },
-    { "scene": "future-a-2033", "cue": "planning.", "at": "after", "sfx": "zap", "volume": 0.35 },
-    { "scene": "future-a-2033", "cue": "planning.", "at": "after", "offset": 0.35, "sfx": "pop", "volume": 0.45 },
+    { "scene": "future-a-2033", "cue": "twenty-five", "sfx": "slide-up", "volume": 0.35 },
+    { "scene": "future-a-2033", "cue": "technology", "sfx": "whirr", "volume": 0.3 },
+    { "scene": "future-a-2033", "cue": "planning.", "at": "after", "sfx": "zap", "volume": 0.3 },
+    { "scene": "future-a-2033", "cue": "planning.", "at": "after", "offset": 0.5, "sfx": "pop", "volume": 0.35 },
 
-    { "scene": "future-a-2035", "cue": "thirty-five:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "future-a-2035", "cue": "ransomware", "sfx": "typewriter", "volume": 0.35 },
-    { "scene": "future-a-2035", "cue": "pays", "sfx": "cash-register", "volume": 0.45 },
-    { "scene": "future-a-2035", "cue": "engineering.", "at": "after", "sfx": "splat", "volume": 0.5 },
-    { "scene": "future-a-2035", "cue": "extortion", "sfx": "marker", "volume": 0.45 },
-    { "scene": "future-a-2035", "cue": "gauze.", "sfx": "slide-down", "volume": 0.4 },
-    { "scene": "future-a-2035", "cue": "clicks", "sfx": "click", "volume": 0.6 },
-    { "scene": "future-a-2035", "cue": "countdown", "sfx": "tick", "volume": 0.45 },
-    { "scene": "future-a-2035", "cue": "countdown", "offset": 0.45, "sfx": "tick", "volume": 0.45 },
-    { "scene": "future-a-2035", "cue": "countdown", "offset": 0.9, "sfx": "tick", "volume": 0.45 },
-    { "scene": "future-a-2035", "cue": "dose.", "offset": 0.1, "sfx": "boom", "volume": 0.55 },
-    { "scene": "future-a-2035", "cue": "dose.", "at": "after", "sfx": "sizzle", "volume": 0.35 },
+    { "scene": "future-a-2035", "cue": "ransomware", "sfx": "typewriter", "volume": 0.3 },
+    { "scene": "future-a-2035", "cue": "engineering.", "sfx": "splat", "volume": 0.4 },
+    { "scene": "future-a-2035", "cue": "extortion", "sfx": "slide-down", "volume": 0.3 },
+    { "scene": "future-a-2035", "cue": "clicks", "sfx": "click", "volume": 0.35 },
+    { "scene": "future-a-2035", "cue": "timer", "sfx": "tick", "volume": 0.4 },
+    { "scene": "future-a-2035", "cue": "dose.", "sfx": "boom", "volume": 0.6 },
 
-    { "scene": "future-a-2040", "cue": "forty:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "future-a-2040", "cue": "fifty", "sfx": "slide-up", "volume": 0.4 },
-    { "scene": "future-a-2040", "cue": "percent.", "offset": 0.5, "sfx": "clank", "volume": 0.4 },
-    { "scene": "future-a-2040", "cue": "agents", "sfx": "hammer", "volume": 0.3 },
-    { "scene": "future-a-2040", "cue": "ones.", "at": "after", "sfx": "slam", "volume": 0.5 },
-    { "scene": "future-a-2040", "cue": "collapses", "sfx": "thunk", "volume": 0.6 },
+    { "scene": "future-a-2040", "cue": "percent.", "sfx": "clank", "volume": 0.4 },
+    { "scene": "future-a-2040", "cue": "ones.", "sfx": "slam", "volume": 0.45 },
+    { "scene": "future-a-2040", "cue": "collapses", "sfx": "thunk", "volume": 0.45 },
     { "scene": "future-a-2040", "cue": "evade", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "future-a-2040", "cue": "audit.", "sfx": "crickets", "volume": 0.25 },
+    { "scene": "future-a-2040", "cue": "can", "n": 2, "sfx": "whoosh", "volume": 0.3 },
 
-    { "scene": "rot-in-place", "cue": "fall;", "sfx": "clank", "volume": 0.5 },
-    { "scene": "rot-in-place", "cue": "rot", "sfx": "hum", "volume": 0.3 },
-    { "scene": "rot-in-place", "cue": "body", "sfx": "pop", "volume": 0.4 },
+    { "scene": "audit-side-eye", "cue": "audit.", "sfx": "crickets", "volume": 0.25 },
+
+    { "scene": "rot-in-place", "cue": "fall;", "sfx": "clank", "volume": 0.4 },
     { "scene": "rot-in-place", "cue": "another.", "sfx": "slam", "volume": 0.4 },
-    { "scene": "rot-in-place", "cue": "fled", "sfx": "pat", "volume": 0.4 },
-    { "scene": "rot-in-place", "cue": "global", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "rot-in-place", "cue": "Colombia.", "n": 2, "at": "after", "sfx": "slide-down", "volume": 0.45 },
-    { "scene": "rot-in-place", "cue": "Colombia.", "n": 2, "at": "after", "offset": 0.45, "sfx": "splat", "volume": 0.25 },
+    { "scene": "rot-in-place", "cue": "Colombia.", "n": 2, "at": "after", "offset": -0.15, "sfx": "slide-down", "volume": 0.4 },
 
-    { "scene": "future-a-2043", "cue": "forty-three:", "sfx": "pop", "volume": 0.4 },
     { "scene": "future-a-2043", "cue": "wars", "sfx": "boing", "volume": 0.35 },
-    { "scene": "future-a-2043", "cue": "nuclear.", "offset": 0.15, "sfx": "boom", "volume": 0.65 },
-    { "scene": "future-a-2043", "cue": "nuclear.", "at": "after", "sfx": "sizzle", "volume": 0.35 },
-    { "scene": "future-a-2043", "cue": "survivors", "sfx": "slide-down", "volume": 0.35 },
-    { "scene": "future-a-2043", "cue": "argue", "offset": 0.3, "sfx": "clank", "volume": 0.5 },
-    { "scene": "future-a-2043", "cue": "separate", "sfx": "pop", "volume": 0.45 },
-    { "scene": "future-a-2043", "cue": "columns.", "sfx": "marker", "volume": 0.45 },
-    { "scene": "future-a-2043", "cue": "columns.", "offset": 0.3, "sfx": "marker", "volume": 0.45 },
+    { "scene": "future-a-2043", "cue": "nuclear.", "sfx": "boom", "volume": 0.6 },
+    { "scene": "future-a-2043", "cue": "argue", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "future-a-2043", "cue": "argue", "offset": 0.6, "sfx": "clank", "volume": 0.4 },
+    { "scene": "future-a-2043", "cue": "columns.", "sfx": "marker", "volume": 0.3 },
 
-    { "scene": "cockroach-manual", "cue": "forty-five:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "cockroach-manual", "cue": "Cockroaches", "sfx": "scratch", "volume": 0.35 },
-    { "scene": "cockroach-manual", "cue": "intelligence.", "offset": 0.3, "sfx": "boing", "volume": 0.35 },
-    { "scene": "cockroach-manual", "cue": "fifty:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "cockroach-manual", "cue": "manual,", "sfx": "huff", "volume": 0.4 },
-    { "scene": "cockroach-manual", "cue": "confused.", "at": "after", "sfx": "pop", "volume": 0.4 },
+    { "scene": "cockroach-manual", "cue": "intelligence.", "sfx": "boing", "volume": 0.35 },
+    { "scene": "cockroach-manual", "cue": "manual,", "sfx": "huff", "volume": 0.35 },
+    { "scene": "cockroach-manual", "cue": "confused.", "at": "after", "sfx": "pop", "volume": 0.35 },
 
-    { "scene": "future-b-2028", "cue": "Future", "sfx": "whoosh", "volume": 0.5 },
-    { "scene": "future-b-2028", "cue": "B:", "sfx": "switch", "volume": 0.5 },
-    { "scene": "future-b-2028", "cue": "Follow", "sfx": "pop", "volume": 0.35 },
-    { "scene": "future-b-2028", "cue": "twenty-eight:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "future-b-2028", "cue": "passes.", "offset": 0.3, "sfx": "stamp", "volume": 0.75 },
-    { "scene": "future-b-2028", "cue": "becomes", "sfx": "whirr", "volume": 0.35 },
-    { "scene": "future-b-2028", "cue": "medicine", "offset": 0.4, "sfx": "sparkle", "volume": 0.45 },
-    { "scene": "future-b-2028", "cue": "typo.", "at": "after", "sfx": "thunk", "volume": 0.5 },
-    { "scene": "future-b-2028", "cue": "alive", "sfx": "cash-register", "volume": 0.45 },
-    { "scene": "future-b-2028", "cue": "dead", "offset": 0.3, "sfx": "crickets", "volume": 0.25 },
+    { "scene": "future-b-2028", "cue": "Future", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "future-b-2028", "cue": "passes.", "sfx": "stamp", "volume": 0.45 },
+    { "scene": "future-b-2028", "cue": "money.", "n": 2, "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "future-b-2028", "cue": "typo.", "sfx": "huff", "volume": 0.35 },
+    { "scene": "future-b-2028", "cue": "typo.", "at": "after", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "future-b-2028", "cue": "alive", "sfx": "cash-register", "volume": 0.35 },
+    { "scene": "future-b-2028", "cue": "dead", "sfx": "clank", "volume": 0.4 },
 
-    { "scene": "future-b-2032", "cue": "thirty-two:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "future-b-2032", "cue": "patients.", "sfx": "ding", "volume": 0.45 },
-    { "scene": "future-b-2032", "cue": "patients.", "offset": 0.3, "sfx": "sparkle", "volume": 0.4 },
-    { "scene": "future-b-2032", "cue": "centuries", "sfx": "whirr", "volume": 0.35 },
-    { "scene": "future-b-2032", "cue": "now.", "sfx": "clank", "volume": 0.5 },
-    { "scene": "future-b-2032", "cue": "cured", "sfx": "tick", "volume": 0.45 },
-    { "scene": "future-b-2032", "cue": "cured", "offset": 0.1, "sfx": "tick", "volume": 0.45 },
-    { "scene": "future-b-2032", "cue": "moving.", "sfx": "pat", "volume": 0.4 },
-    { "scene": "future-b-2032", "cue": "progress.", "sfx": "bell", "volume": 0.4 },
-    { "scene": "future-b-2032", "cue": "fast.", "at": "after", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "future-b-2032", "cue": "patients.", "sfx": "ding", "volume": 0.3 },
+    { "scene": "future-b-2032", "cue": "centuries", "sfx": "whirr", "volume": 0.3 },
+    { "scene": "future-b-2032", "cue": "now.", "sfx": "clank", "volume": 0.4 },
+    { "scene": "future-b-2032", "cue": "fast.", "at": "after", "sfx": "slide-down", "volume": 0.35 },
 
-    { "scene": "future-b-2035", "cue": "thirty-five:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "future-b-2035", "cue": "destruction", "sfx": "whistle", "volume": 0.35 },
-    { "scene": "future-b-2035", "cue": "production,", "sfx": "hammer", "volume": 0.35 },
-    { "scene": "future-b-2035", "cue": "produced.", "sfx": "pop", "volume": 0.35 },
-    { "scene": "future-b-2035", "cue": "produced.", "at": "after", "sfx": "boing", "volume": 0.4 },
-    { "scene": "future-b-2035", "cue": "publish", "sfx": "typewriter", "volume": 0.35 },
-    { "scene": "future-b-2035", "cue": "obvious", "sfx": "thunk", "volume": 0.45 },
-    { "scene": "future-b-2035", "cue": "retrospect.", "at": "after", "sfx": "whistle", "volume": 0.35 },
+    { "scene": "future-b-2035", "cue": "destruction", "sfx": "whistle", "volume": 0.3 },
+    { "scene": "future-b-2035", "cue": "production,", "sfx": "hammer", "volume": 0.3 },
+    { "scene": "future-b-2035", "cue": "get", "sfx": "boing", "volume": 0.4 },
+    { "scene": "future-b-2035", "cue": "publish", "sfx": "typewriter", "volume": 0.3 },
+    { "scene": "future-b-2035", "cue": "obvious", "sfx": "slide-up", "volume": 0.3 },
 
-    { "scene": "future-b-2040", "cue": "forty:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "future-b-2040", "cue": "compounding", "sfx": "whirr", "volume": 0.35 },
-    { "scene": "future-b-2040", "cue": "compounding", "offset": 0.4, "sfx": "woof", "volume": 0.45 },
-    { "scene": "future-b-2040", "cue": "work", "sfx": "hammer", "volume": 0.35 },
-    { "scene": "future-b-2040", "cue": "earn", "sfx": "cash-register", "volume": 0.4 },
-    { "scene": "future-b-2040", "cue": "spend", "sfx": "ding", "volume": 0.4 },
-    { "scene": "future-b-2040", "cue": "cures", "sfx": "slam", "volume": 0.45 },
-    { "scene": "future-b-2040", "cue": "healthier.", "n": 2, "sfx": "sparkle", "volume": 0.45 },
-    { "scene": "future-b-2040", "cue": "variable.", "sfx": "typewriter", "volume": 0.35 },
-    { "scene": "future-b-2040", "cue": "variable.", "at": "after", "sfx": "slide-up", "volume": 0.4 },
+    { "scene": "future-b-2040", "cue": "compounding", "sfx": "whirr", "volume": 0.3 },
+    { "scene": "future-b-2040", "cue": "compounding", "offset": 0.5, "sfx": "woof", "volume": 0.35 },
+    { "scene": "future-b-2040", "cue": "cures", "sfx": "slam", "volume": 0.4 },
+    { "scene": "future-b-2040", "cue": "variable.", "at": "after", "offset": -0.2, "sfx": "slide-up", "volume": 0.4 },
 
-    { "scene": "future-b-2048", "cue": "forty-eight:", "sfx": "pop", "volume": 0.4 },
-    { "scene": "future-b-2048", "cue": "fifty-six", "sfx": "slide-up", "volume": 0.45 },
-    { "scene": "future-b-2048", "cue": "point", "sfx": "airplane", "volume": 0.35 },
+    { "scene": "future-b-2048", "cue": "fifty-six", "sfx": "slide-up", "volume": 0.4 },
+    { "scene": "future-b-2048", "cue": "point", "sfx": "airplane", "volume": 0.3 },
     { "scene": "future-b-2048", "cue": "richer", "sfx": "boing", "volume": 0.4 },
-    { "scene": "future-b-2048", "cue": "path", "sfx": "slide-down", "volume": 0.45 },
-    { "scene": "future-b-2048", "cue": "war", "sfx": "scratch", "volume": 0.4 },
-    { "scene": "future-b-2048", "cue": "subject.", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "future-b-2048", "cue": "subject.", "at": "after", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "future-b-2048", "cue": "path", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "future-b-2048", "cue": "subject.", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "future-b-2048", "cue": "subject.", "at": "after", "sfx": "squeak", "volume": 0.3 },
 
-    { "scene": "fax-machine-lifetime", "cue": "Communism", "offset": 0.1, "sfx": "click", "volume": 0.6 },
-    { "scene": "fax-machine-lifetime", "cue": "half", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "fax-machine-lifetime", "cue": "collapsed", "sfx": "slide-down", "volume": 0.4 },
-    { "scene": "fax-machine-lifetime", "cue": "lifetime.", "sfx": "ding", "volume": 0.5 },
-    { "scene": "fax-machine-lifetime", "cue": "lifetime.", "offset": 0.25, "sfx": "zap", "volume": 0.3 },
-    { "scene": "fax-machine-lifetime", "cue": "fax", "sfx": "thunk", "volume": 0.5 },
-    { "scene": "fax-machine-lifetime", "cue": "machines.", "sfx": "scratch", "volume": 0.45 },
-    { "scene": "fax-machine-lifetime", "cue": "TERRIBLE", "sfx": "stamp", "volume": 0.8 },
+    { "scene": "fax-machine-lifetime", "cue": "lifetime.", "sfx": "zap", "volume": 0.3 },
+    { "scene": "fax-machine-lifetime", "cue": "machines.", "sfx": "pat", "volume": 0.35 },
+    { "scene": "fax-machine-lifetime", "cue": "TERRIBLE", "sfx": "stamp", "volume": 0.5 },
 
-    { "scene": "dont-know-what-to-tell-you", "cue": "You", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "dont-know-what-to-tell-you", "cue": "internet", "sfx": "switch", "volume": 0.5 },
-    { "scene": "dont-know-what-to-tell-you", "cue": "click", "sfx": "click", "volume": 0.6 },
-    { "scene": "dont-know-what-to-tell-you", "cue": "money.", "sfx": "toaster", "volume": 0.6 },
-    { "scene": "dont-know-what-to-tell-you", "cue": "happen,", "sfx": "boing", "volume": 0.4 },
-    { "scene": "dont-know-what-to-tell-you", "cue": "genuinely", "offset": 0.5, "sfx": "thunk", "volume": 0.25 }
+    { "scene": "dont-know-what-to-tell-you", "cue": "click", "sfx": "click", "volume": 0.4 },
+    { "scene": "dont-know-what-to-tell-you", "cue": "money.", "sfx": "toaster", "volume": 0.4 },
+    { "scene": "dont-know-what-to-tell-you", "cue": "happen,", "sfx": "boing", "volume": 0.35 },
+    { "scene": "dont-know-what-to-tell-you", "cue": "genuinely", "sfx": "thunk", "volume": 0.3 }
   ]
 }

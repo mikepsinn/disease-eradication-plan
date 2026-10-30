@@ -2,12 +2,12 @@
 format: 1920x1080
 duration: 1:59.7
 message: "Humans spend $2.72 trillion a year on killing, and since 1913 have printed $170 trillion for it, enough for 38,000 years of clinical trials; they bought the other thing."
-arc: Title card with a price tag too long for the card → the politician's murder shopping cart fills up (warheads, a spare that goes off, a murder-bot, an invisible jet, Space Force, an earthquake machine) → the 1913 press prints nothing-papers that bomb a crowd and flatten the houses → the paycheck buys one crumb → a thumb on the scale: $170 trillion against 38,000 years of trials, and the receipt → the 1900 counterfactual: the fat cat and the skeleton → the 604 bar topples onto the medicine paper → the guarded wheel and the unguarded one → the army cures cancer for its oil → the murder tube blows a country off the map, and a submarine hides in a puddle
+arc: Title card with a price tag too long for the card → Wishonia rings up $2.72 trillion on a cash register and a baby missile springs out of the drawer → the murder mart: warheads by the heap, a spare that goes off, a murder-bot, an invisible jet that flattens a hospital, Space Force zapped from inside the cart, an earthquake machine → the quake reaches the studio → the 1913 press prints dotted nothing-papers that bomb Part 2's skeleton family under the same 310,000,000 and flatten the town, and the paycheck buys one crumb → the checkout: a thumb on the scale leaves the trials hanging out of reach, and the receipt → the fork at 1900: the fat cat and the skeleton → the 604 bar topples onto the medicine paper → the guarded wheel and the unguarded one → Part 8's leashed missile sniffs out the oil on cancer's head and drags the army in → the repair money flips back to war, a missile blows a country off the map, and a submarine hides in a puddle → a periscope rises out of Wishonia's coffee
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 10, "The Cost of War"
 audio: index-manual.cbaf659d.mp3, 17:15.2 to 19:14.9
-version: v2
+version: v3
 ---
 
 # Part 10 storyboard: "The Cost of War"
@@ -16,285 +16,360 @@ Times are MP3 times. They come from each scene's cue word in `../../word-timings
 
 Scenes are named, not numbered. Use the name in feedback ("loved-ones: make the form smaller"). The number in each heading is only the order.
 
-Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper; the money is green, and its seal says what it buys (a red missile for war, a teal cross for medicine). "PiP" means Wishonia in her Layer B corner: standing in the bottom right corner in 16:9 (cut off by the frame's bottom edge), in her flying saucer at the top right in 9:16, with her gesture body showing.
+Look, characters and rules: `../../cartoon-style-bible.md`. The part is the 1950s atomic-age instructional film. Layer A is Wishonia at her lectern on the studio set (`KIT.studio`), talking to the viewer. Layer B is an illustrated plate on a plain field that the camera travels over (`KIT.camera`), one framing per phrase; Wishonia is only the voice there. Scenes with the same plate name are one drawing, and the camera keeps traveling from one into the next with no seam. The money is money green; its seal says what it buys (a missile for war, a cross for medicine; no seal on plain pay). Part 2 (`compositions/scenes/part-02/`) is the reference for every kind of shot.
 
-**Spine.** Shopping. The part is one shopping trip. The politician pushes the murder shopping cart, the weapons maker stocks it, and the shopping list ticks a line for every item (murder-shopping-cart, warheads-in-the-cart, cart-gadgets). The 1913 press pays for 110 years of carts (nothing-papers), the paycheck pays for the press (paycheck-shrinks), the scale rings up the choice and prints the receipt (bought-the-other-thing), and the 604 bar shows the same choice today. Every weapon is a silly object with a price tag.
+**Spine.** Shopping. The part is one shopping trip, from the till to the receipt. Wishonia rings up the year's bill on a cash register beside her lectern (cash-register); the politician pushes the cart down the aisle of the murder mart while the weapons maker stocks it (warheads-in-the-cart, cart-gadgets); the 1913 press prints the money for 110 years of carts, and the town pays for it in flattened houses and a crumb of bread (nothing-papers, paycheck-shrinks); the checkout rings up the choice and hands YOU the receipt (bought-the-other-thing). The rest of the part is what the money could have bought and what it did buy: the fork at 1900, the 604 bar, the guarded wheel, the army at the oil, the submarine in the puddle. Every weapon is a silly object with a price tag.
 
-**Running gag.** The shopping list. It unrolls from the cart's handle in murder-shopping-cart, runs off the edge of the frame, and the politician ticks one line per item, "12,241 NUCLEAR WARHEADS" to "EARTHQUAKE MACHINE (PROBABLY)".
+**Running gag.** Things from the war world reach the studio, three times: the baby missile springs out of Wishonia's cash register (cash-register), the earthquake machine's quake shakes her set (probably), and a periscope rises out of her coffee mug and turns to look at her (periscope).
 
-**YOU.** The viewer is the busy human in the bowler from Part 1's title card (`{ tone: 2, outfit: "suit", hat: "bowler" }`, the same options in every scene, so he is the same man): he buys the crumb in paycheck-shrinks, is both men in stopped-in-1900 (the fat cat on the left, his skeleton in the same bowler on the right, as in Part 1), waits at the disease wheel in odds-of-dying, and walks past the puddle in submarine-on-land.
+**The baby missile.** The weapons maker's grinning cradled missile (the cast prop), here in a frilly bonnet with a rattle. It springs out of the register, rides in the cart's child seat through the whole murder mart (the blast does not touch it), and gobbles YOU's papers on the right road in stopped-in-1900.
 
-**Callback.** The 122 red snowflakes from nuclear-winters (Part 1) fill the warheads' tag.
+**YOU.** The viewer is the busy human in the bowler from Part 1's title card (`{ tone: 2, outfit: "suit", hat: "bowler" }`, the same options in every scene, so he is the same man): he buys the crumb in paycheck-shrinks, takes the receipt at the checkout in bought-the-other-thing, is both men in stopped-in-1900 (the fat cat on the left road, his skeleton in the same bowler on the right, as in Part 1), waits his turn at the disease wheel in odds-of-dying, and trips over the submarine in submarine-on-land.
 
-**Callback.** The 604 bar from 604-papers (Part 1) comes back in 604-times-less, changed: the medicine paper now wears a hard hat and dodges the falling paper, and then the whole stack falls on it.
+**Callbacks.** From Part 1 (nuclear-winters): the 122 red snowflakes fill the warhead heap's tag. From Part 1 (604-papers) and Part 6: the 604 bar, changed: the medicine paper now wears a hard hat and dodges the falling paper, and then the whole stack falls on it. From Part 2 (money-loop): the printing press with the empty tray is the 1913 press, and the moth that flew out of its tray comes out again, ancient now, with a long white beard; the weapons maker's smiling missile is the baby in the drawer and the cart; the bomb's charred, blinking survivors. From Part 2 (the-toll): the nothing-papers' bomb falls on Part 2's own field, gray headstones to the horizon, where the skeleton family still stands holding their loaves, and the same "310,000,000" stamps into the sky in the same place. From Part 8 (fifty-nine-elevens): the weapons maker's smiling missile on its red leash, nose to the ground like a bloodhound; there it walked past the disease because diseases have no oil, and here it finds the derrick on the cancer blob's head and drags the army in.
 
-**Callback.** The shopping cart comes back in official-murder-budget (Part 11), the 1913 press and the shrinking paycheck are stations in loop-not-line-item (Part 11), and the receipt comes back in murder-receipt (Part 12).
+**Set up here.** The cart, heaped with warheads, the frowning murder-bot and the question-mark crate, comes back in official-murder-budget (Part 11), its tag now reading the register's "$2.72 TRILLION / YEAR". The 1913 press and the shrinking paycheck are stations 1 and 3 of the loop in loop-not-line-item (Part 11). The receipt from bought-the-other-thing, its "WAR" and "CLINICAL TRIALS ... $0.00" lines at the top, comes back as murder-receipt (Part 12). The medicine paper's dented hard hat comes back in future-a-2027 (Part 25). Record their drawing options at the top of their scene files so the later parts can copy them.
 
-**Held frame.** nothing-papers, from "humans" to "valuable". odds-of-dying, from "percent." to the end of the scene.
+**Held frame.** nothing-papers, from after "humans" (Part 2's skeleton family under "310,000,000") until "valuable". odds-of-dying, from after "percent." to the end of the scene. Nothing moves in either, and there is no sound.
+
+**Transitions.** The title card comes up from black and goes down to black; cash-register irises in on Wishonia's face. Every other change between a host shot and a plate, or between two plates, is a straight cut. warheads-in-the-cart and cart-gadgets are one plate (murder-mart), nothing-papers and paycheck-shrinks one plate (1913-press), cancer-oil-reserves and submarine-on-land one plate (desert): within a plate the next scene starts on the last one's final frame and the camera keeps traveling. periscope irises out on her face, to black.
 
 **Bans for this part.**
-- No real people or logos.
-- No slideshow (a new text card every scene) and no screensaver (motion that says nothing). Every Layer B scene has an actor that moves on the words.
-- Captions keep-out: nothing important in the bottom 17% of the frame.
-- No real banknotes, weapons models, uniforms, flags or company marks; weapons are silly engraved objects with price tags.
+- The army in cancer-oil-reserves flies a plain pennant (its only words are "CURED: 2003"), not a national flag.
 
-## Changes from v1
+## Changes from v2
 
-- The humans are the stereotype cast: the politician pushes the cart, cranks the 1913 press and puts his thumb on the scale; the weapons maker stocks the cart and guards the terrorism wheel; the scientist rides the trial crate and the invasion tank; the fat cat is what YOU become in the 1900 world.
-- murder-shopping-cart slides in from the title card; the card is not the office, so there is no wall screen to zoom into (Part 1's title card slides too).
-- Every threat pays off on screen: the spare warhead goes off and chars the shoppers, the invisible jet parks on the hospital, the murder-bot zaps the Space Force guard, the nothing-papers bomb a crowd into skeletons, YOU dies 10.1 years early, the 604 bar topples, the army "cures" cancer, and the murder tube blows a small country off the map.
-- cancer-oil-reserves: the researchers are now an invasion force (with the scientist riding the tank), because the oil joke is a war joke.
-- Money: "red papers" are green war papers with the red missile seal, "teal papers" green medicine papers with the teal cross; the paychecks and the 1900 stacks are plain green.
-- Props use the shared library names; Sound lines added.
+- The office, the cream diagram paper and Wishonia's corner are gone: the part is three host shots at the lectern (cash-register, probably, periscope) and seven illustrated plates the camera travels over, one framing per phrase.
+- The opening line is now a host shot: Wishonia rings up $2.72 trillion on a cash register beside her lectern, and the purchase, the baby missile in a bonnet, springs out of the drawer. The cart rolls into the aisle on the next line, with the baby missile in its child seat.
+- The shopping list and its ticked lines, the split-screen headers, the life rulers, "-97%", "604 : 1" and the "SMALL COUNTRY" map label are cut, because they wrote the narration out. A fork at a 1900 signpost, life candles, a shrinking paper and two price tags side by side show the same facts as pictures.
+- Jokes that needed Wishonia's corner are restaged: the Space Force guard's sweep past her corner becomes his binocular view of an empty sky; the earthquake now shakes her studio, and the submarine's last look at us becomes a periscope rising out of her coffee.
+- Scenes that continue share one plate (murder-mart, 1913-press, desert), and the bakery now stands in the same town the nothing-papers flattened.
 
 ## Scene 1 · cost-of-war-title
 
 - id: cost-of-war-title
 - act: Title
-- transition_in: cut
-- key: after "War.": the title in, the price tag hanging from WAR, its ribbon of zeros running off the bottom of the card
+- transition_in: cut (up from black)
+- key: after "War.": the heading under the atom, the price tag hanging from the R of WAR flipped to "$", its ribbon of zeros running down off the bottom of the card
 - cue: "The Cost of War."
 - time: 17:15.2 to 17:18.0 (2.8 s)
 - voiceover: "The Cost of War."
 - layer: A, title card
-- scene: The sunburst title card (`KIT.titleScene`) with the part's heading.
-- wishonia: not on screen
+- scene: The period title card (`KIT.titleScene`): the heading in the cover font on plain navy under the film's emblem. Lines, 16:9: `[{ words: ["THE", "COST", "OF"], style: "small" }, ["WAR"]]`; 9:16: the same. The gag is a price tag pinned to the bottom corner of the R (`c.pin("WAR", "bottomright", ...)`), so it moves with the word.
 - props: titleScene, priceTag
-- status: outline
+- status: planned
 
-Moves: "The" → the title words slam in, one per spoken word ("The", "Cost", "of", "War."). "War." → a price tag on a string drops from the R and swings. after "War." → the tag flips over: a "$" and then a ribbon of zeros that unrolls down off the bottom of the card, still unrolling when the card ends.
+Moves: "The" → the card comes up from black with the whole heading on it, the emblem's paper electrons running round their orbits. "War." → a blank price tag (`KIT.props.priceTag`) drops on its string from the corner of the R and swings. after "War." → it flips over to "$", and a paper ribbon of zeros slides out of its end and runs down off the bottom of the card, still sliding as the card goes down to black.
 
-Sound: a thunk on each title word; a cash-register ding as the tag flips.
+Sound: a projector whirr on "The"; a cash-register ding as the tag flips.
 
-On screen: "THE COST OF WAR" / the tag: "$000,000,000,000,000...". No: no figure on the tag; the next scene says it. Why: the narrator reads the heading, and the price does not fit on the card.
+On screen: "THE COST OF WAR" / the tag's "$" / the ribbon's "000,000,000,000,000...".
 
-## Scene 2 · murder-shopping-cart
+No: no figure on the tag; the next scene rings it up.
 
-- id: murder-shopping-cart
-- act: The shopping cart
-- transition_in: slide left
-- key: after "alive:": the cart parked, its tag on "$2.72 TRILLION / YEAR", the baby missile in the child seat, the shopping list running off the frame, the politician licking his pencil
+Why: the narrator reads the heading, and the price does not fit on the card.
+
+## Scene 2 · cash-register
+
+- id: cash-register
+- act: The bill
+- transition_in: iris in on her face
+- key: after "alive:": Wishonia at the lectern side-eyeing the cash register beside her, its pop-up window showing "$2.72 TRILLION", the drawer open and a grinning baby missile in a frilly bonnet bobbing out of it on a jack-in-the-box spring, shaking its rattle
 - cue: "Humans spend two point seven two trillion"
 - time: 17:18.0 to 17:26.6 (8.7 s)
 - voiceover: "Humans spend two point seven two trillion dollars every year on stuff designed specifically to make humans stop being alive:"
-- layer: B
-- scene: The politician pushes a giant engraved shopping cart into a store aisle; a baby missile rides in the child seat; the cart's tag reads $2.72 trillion a year, and a long shopping list unrolls from the handle.
-- wishonia: PiP, neutral-smile + body-presenting, then skeptical-closed + body-arms-crossed on "specifically"
-- props: shoppingCart, priceTag, scroll (the shopping list), missile (the baby), money("war"), politician
-- status: outline
+- layer: A, host
+- scene: The studio set (`KIT.studio`), Wishonia large at the lectern. A big brass 1950s cash register (a bank of round keys, a side crank, a pop-up price window on top, a cash drawer) stands on a little side table at her right, its top level with the lectern's, in the free wall right of the lectern (`KIT.STUDIO.right`).
+- wishonia: neutral-smile + body-presenting; excited-ee + body-wide-gesture on "trillion"; smirk-smile + body-open-palms on "specifically"; sideeye-closed + body-idle on "alive:"
+- props: studio, lectern, cash register (drawn in the scene), the baby missile (the weapons maker's cast prop, with a bonnet and a rattle)
+- status: planned
 
-Moves: "Humans" → the politician (`KIT.cast("politician")`: the toothy grin, the wide tie, the flag pin) pushes a giant shopping cart in from the left, one wheel squeaking; war papers trickle out between the basket's wires. "spend" → in the child seat, a baby missile in a bonnet (the weapons maker's grinning missile) shakes a rattle. "trillion" → the cart's price tag swings up and flips to "$2.72 TRILLION / YEAR". "every year" → the politician pats the tag, proud. "stop being alive:" → a shopping list unrolls from the handle, bounces down the aisle and keeps rolling off the right edge of the frame; it is blank under its heading. after "alive:" → the politician licks his pencil.
+Moves: "Humans" → the iris opens on her face; the register already stands on its table beside her. "two point seven two" → its keys go down by themselves, one per spoken figure. "trillion" → ka-ching: the flags spring up in its window, "$2.72 TRILLION". "every year" → it rings the same sale up again, and again, a little faster: every year. "stuff designed specifically" → the drawer slides open a crack and something inside it rattles. "alive:" → the drawer shoots open and the purchase springs up out of it on a jack-in-the-box spring: the weapons maker's grinning baby missile in a frilly bonnet, shaking its rattle at her. after "alive:" → it bobs on its spring and coos; she side-eyes it.
 
-Sound: a squeaky wheel as the cart rolls in; a cash-register ding on the tag; a whoosh as the list unrolls; a boing as it bounces.
+Sound: a typewriter clatter for the keys on "two"; a cash-register ding on "trillion"; two dings on "every year"; a boing as the spring pops.
 
-On screen: "$2.72 TRILLION / YEAR" / "SHOPPING LIST". Why: the year's bill, as a cart the next two scenes fill.
+On screen: "$2.72 TRILLION" in the register's window.
+
+No: no "per year" in the window; the repeat rings say it.
+
+Why: the year's bill, rung up like groceries, and the thing it buys, designed to kill and dressed as a baby.
 
 ## Scene 3 · warheads-in-the-cart
 
 - id: warheads-in-the-cart
-- act: The shopping cart
-- transition_in: same form (no seam)
-- key: on "don't": the warhead heap in the sagging cart, its tag full of 122 red snowflakes, the last one tagged SPARE, the SPARE warhead rolling off the top
+- act: The murder mart
+- transition_in: cut
+- key: on "apocalypses": the cart sagging under a heap of grinning warheads, the heap's big tag full of 122 red snowflakes, a SPARE tag just caught on the warhead at the top, the weapons maker throwing his arms up (ta-da), the politician beaming at the handle, the baby missile peeking out of the child seat
 - cue: "There are twelve thousand"
 - time: 17:26.6 to 17:37.4 (10.8 s)
 - voiceover: "There are twelve thousand, two hundred and forty-one nuclear warheads (enough to end civilization one hundred and twenty-two times, just in case the first one hundred and twenty-one apocalypses don't take)."
-- layer: B
-- scene: The weapons maker tips a wheelbarrow of warheads into the cart; the heap's tag fills with 122 red snowflakes and the last one is tagged SPARE; then the spare rolls off and goes off.
-- wishonia: PiP, thinking-closed + body-counting, then smirk-smile on "apocalypses"
-- props: shoppingCart, bomb, priceTag, scroll, weaponsMaker, politician, KIT.nuke
-- status: outline
+- layer: B, plate murder-mart
+- scene: The murder mart: one long 1950s supermarket aisle standing on a plain field, drawn once. Left to right: a produce bin heaped with warheads, a shelf of boxed murder-bots, an empty showroom spot under a hanging price tag, a little hospital on a display stand, and a stack of crates. The politician pushes the cart from station to station and the camera travels with it. Here: the warhead bin.
+- props: shoppingCart (drawn large), the baby missile, bomb (the warheads, each with a face and its own tiny priceTag), priceTag (the heap's big tag; "SPARE"), politician, weaponsMaker, KIT.nuke, KIT.boom
+- status: planned
 
-Moves: "There" → the first frame is murder-shopping-cart's last. "twelve thousand" → the weapons maker (`KIT.cast("weaponsMaker")`: the barrel chest, the hard hat, the cigar) tips a wheelbarrow, and a heap of warheads pours into the cart, each a fat grinning cartoon bomb with its own tiny price tag; the cart sinks on its wheels, and the baby missile waves at him. "warheads" → the politician ticks the list's first line: "12,241 NUCLEAR WARHEADS". "end civilization" → the heap's big tag swings out. "one hundred and twenty-two" → the tag fills with 122 red snowflakes, row by row, faster and faster (the grid from nuclear-winters). "first one hundred and twenty-one" → 121 snowflakes get a small tick. "apocalypses" → the last snowflake gets its own little tag, "SPARE", and so does the warhead on top of the heap. "don't take" → the SPARE warhead wobbles and rolls off the top of the heap. after "take)." → it hits the floor: a white flash, the frame shakes, a little mushroom cloud.
+Moves: "There" → cut to the aisle: the politician (`KIT.cast("politician")`) pushes a giant shopping cart (`KIT.props.shoppingCart`) in from the left, one wheel squeaking, the baby missile from the register riding in the child seat in its bonnet. "twelve thousand" → at the warhead bin the weapons maker (`KIT.cast("weaponsMaker")`, a grocer's apron over his barrel chest) tips a wheelbarrow, and warheads pour into the cart: fat grinning bombs (`KIT.props.bomb`), each with its own tiny price tag. The cart sinks on its wheels, and the baby missile waves at them. "nuclear warheads" → the heap rises over the top of the basket. "end civilization" → the camera pushes in on the heap's big price tag as it swings out. "one hundred and twenty-two" → the tag fills with 122 red snowflakes, row by row, faster and faster (the grid from nuclear-winters). "apocalypses" → the camera pulls back to the cart; the weapons maker tosses a little "SPARE" tag up onto the warhead at the top of the heap, where its string catches on the fuse, and throws both arms up: ta-da. "don't take" → the SPARE warhead wobbles and rolls off the top. after "take)." → it hits the floor: a white flash, the frame shakes, and a mushroom cloud (`KIT.nuke`, `KIT.boom`) stands up out of the aisle.
 
-Sound: clanks as the warheads pour in; a thunk as the cart sinks; a pencil scratch on the tick; a pop per row of snowflakes, speeding up, and a ding when the tag is full; ticks as the 121 get their marks; a stamp on SPARE; a falling whistle as the spare rolls off; a boom.
+Sound: a squeak as the cart rolls in; clanks as the warheads pour in; pops as the snowflake rows fill, speeding up; a stamp as SPARE goes on; a falling slide whistle as it rolls off; a boom.
 
-On screen: "12,241 NUCLEAR WARHEADS" (the list line) / "ENDS CIVILIZATION: 122×" / "SPARE". Why: the cart's biggest item, the overkill as a number, and the spare going off before anyone needs it.
+On screen: the tag's 122 red snowflakes / "SPARE".
+
+No: no "122×" and no list; the snowflakes are the number.
+
+Why: the cart's biggest item, the overkill as a count, and the spare going off before anyone needs it.
 
 ## Scene 4 · cart-gadgets
 
 - id: cart-gadgets
-- act: The shopping cart
-- transition_in: same form (no seam)
-- key: after "(probably).": the charred pair still shopping, the robot, the price tag on empty air over the crushed hospital, the guard's bones in a heap under his helmet, the question-mark crate rattling, the floor cracked under the cart
+- act: The murder mart
+- transition_in: same plate (no seam)
+- key: after "attacking you).": the frowning murder-bot in the cart, smoke curling off its pincer, the Space Force guard on top of the heap a grinning skeleton in his fishbowl helmet, still looking up through his binoculars, the charred politician blinking at the handle
 - cue: "There are A.I. murder-bots."
-- time: 17:37.4 to 17:51.1 (13.7 s)
-- voiceover: "There are A.I. murder-bots. There are invisible jets that cost more than hospitals. There is a Space Force (to fight the zero aliens attacking you). And there is some kind of earthquake machine (probably)."
-- layer: B
-- scene: The smoke clears on the charred shoppers, who keep shopping: a murder-bot, an invisible jet that parks on a hospital, a Space Force guard who sees no aliens, and a crate with a question mark.
-- wishonia: PiP, surprised-oh, then smirk-smile on "murder-bots.", happy-smile + body-open-palms on "zero" (a "not us" wave), sideeye-closed + body-arms-crossed on "attacking", skeptical-closed + body-shrug on "(probably)."
-- props: shoppingCart, priceTag, scroll, robot, hospital, earthquake-crate, space-helmet, binoculars, weaponsMaker, politician, human, KIT.xray
-- status: outline
+- time: 17:37.4 to 17:49.2 (11.8 s)
+- voiceover: "There are A.I. murder-bots. There are invisible jets that cost more than hospitals. There is a Space Force (to fight the zero aliens attacking you). And there is some kind of earthquake machine"
+- layer: B, plate murder-mart
+- scene: The same aisle; the cart travels on past the robot shelf, the invisible jet's empty spot and the hospital to the crates.
+- props: shoppingCart, robot, priceTag (the jet's, the hospital's), hospital, bomb, the baby missile, binoculars and a fishbowl helmet (drawn), crate with a crank (drawn), politician, weaponsMaker, person (the guard: a beanpole), KIT.xray
+- status: planned
 
-Moves: "There" → the first frame is warheads-in-the-cart's last: the mushroom cloud thins away on the politician and the weapons maker, charred black and smoking, hair straight up, only their eyes blinking; the baby missile is fine. The weapons maker tosses a fresh SPARE onto the heap. "murder-bots." → a robot (`KIT.props.robot`) with a frowning face drops into the cart, and its eyes light red; the list ticks "AI MURDER-BOT". "invisible jets" → nothing drops in; only a price tag lands, hanging on its string from empty air, and the weapons maker presents it, arms wide; the list ticks "INVISIBLE JET". "hospitals." → a small hospital (`KIT.props.hospital`) slides in beside the cart, and the invisible jet sets down on it: the hospital crunches flat under nothing at all, tire tracks across its roof, the price tag still hanging over the wreck. "Space Force" → a beanpole human in a fishbowl space helmet climbs onto the heap and scans the empty sky through binoculars; the list ticks "SPACE FORCE". "zero aliens" → his binoculars sweep across the sky, right past Wishonia's corner; she waves: not us. He sees nothing. "attacking you)." → behind him, the murder-bot turns its head, aims and zaps him: he x-rays into a grinning skeleton, still looking up through the binoculars. "earthquake machine" → a crate with a crank and a big question mark drops into the cart, and the weapons maker cranks it. "(probably)." → the crate rattles. after "(probably)." → the whole frame shakes, a crack zigzags across the floor under the cart, and the skeleton falls apart into a heap of bones in the cart, his helmet rolling to the top; the list ticks "EARTHQUAKE MACHINE (PROBABLY)".
+Moves: "There" → the first frame is warheads-in-the-cart's last. The mushroom cloud thins away on the politician and the weapons maker, charred black and smoking, hair straight up, only their eyes blinking; the baby missile in the child seat is fine. The weapons maker tosses a fresh SPARE onto the heap, and the politician pushes on. "murder-bots." → at the robot shelf a frowning tin robot (`KIT.props.robot`, its chest light red) hops down out of its box into the cart and folds its pincers. "invisible jets" → the cart stops at an empty spot under a hanging price tag; the weapons maker presents the nothing, arms wide. "cost more than" → the camera travels on to a little hospital (`KIT.props.hospital`) on a display stand, its own price tag half as long as the jet's. after "hospitals." → the invisible jet sets down on it: the hospital crunches flat under nothing at all, tire tracks across its roof, the jet's tag still hanging over the wreck. "Space Force" → back at the cart, a beanpole guard in a fishbowl space helmet climbs onto the heap with binoculars. "zero aliens" → his binocular view (two black circles over the plate's empty sky) sweeps left, then right: nothing, one cloud, nothing. "attacking you)." → back on him: behind him the murder-bot turns its head, raises a pincer and zaps him (`KIT.xray`) into a grinning skeleton, still looking up through the binoculars. "some kind of" → a crate with a crank and a big question mark on its side drops into the cart. "earthquake" → the weapons maker cranks it, and it starts to rattle. "machine" → the whole heap jiggles, and the skeleton falls apart into a pile of bones, his fishbowl helmet rolling to the top.
 
-Sound: a sizzle as the smoke clears; a clank as the robot drops in; an airplane whoosh for the jet nobody can see; a slam as the hospital crunches; a boing as the guard climbs up; a whoosh for the binoculars' sweep; a zap; a thunk as the crate drops in; a whirr for the crank; a low boom for the quake and a clatter of bones.
+Sound: a sizzle as the smoke clears; a clank as the robot drops in; an airplane whoosh for the jet nobody can see; a slam as the hospital crunches; a whoosh for the binocular sweep; a zap; a thunk as the crate lands; a whirr for the crank.
 
-On screen: the list lines "AI MURDER-BOT" / "INVISIBLE JET" / "SPACE FORCE" / "EARTHQUAKE MACHINE (PROBABLY)". No: no real aircraft or uniforms. Why: the rest of the bill as silly objects, and the only attack in the scene comes from inside the cart.
+On screen: the price tags (the jet's long one, the hospital's short one) / the "?" on the crate.
 
-## Scene 5 · nothing-papers
+No: the jet is never drawn, only its tag, its tire tracks and its weight.
+
+Why: the rest of the bill as silly objects, and the only attack in the scene comes from inside the cart.
+
+## Scene 5 · probably
+
+- id: probably
+- act: The murder mart
+- transition_in: cut
+- key: after "(probably).": Wishonia at the lectern mid-shrug, the studio jolted sideways, a crack zigzagging up the wall behind her, plaster dust sifting onto her bob, her coffee mug walking off the edge of the lectern
+- cue: "(probably)."
+- time: 17:49.2 to 17:51.1 (1.9 s)
+- voiceover: "(probably)."
+- layer: A, host (reaction cut)
+- scene: The studio set, her coffee mug on the lectern. The earthquake machine works, and its quake reaches her.
+- wishonia: skeptical-closed + body-shrug
+- props: studio, lectern, mug (drawn)
+- status: planned
+
+Moves: "(probably)." → cut to Wishonia at the lectern, shrugging; her coffee mug sits on the lectern. after "(probably)." → the whole studio shakes (the camera jolts left and right), a crack zigzags up the wall behind her, plaster dust sifts down onto her bob, and the mug walks to the edge of the lectern and drops off. She does not move.
+
+Sound: a low boom for the quake; a clank as the mug lands.
+
+On screen: nothing new.
+
+Why: the machine nobody can describe does exactly what it says, and it reaches the narrator.
+
+## Scene 6 · nothing-papers
 
 - id: nothing-papers
-- act: The bill since 1913
-- transition_in: slide left
-- key: the HOLD: the crowd of grinning skeletons under the last of the smoke, the counters on "$170 TRILLION" and "310,000,000"
+- act: Since 1913
+- transition_in: cut
+- key: the HOLD: Part 2's own field, gray headstones running to the horizon, the skeleton family from Part 2 still standing in the middle of it holding their loaves (only the bread in color), the last of the smoke drifting off them, "310,000,000" stamped in the sky over them where Part 2 put it
 - cue: "Since nineteen thirteen"
 - time: 17:51.1 to 18:07.3 (16.2 s)
 - voiceover: "Since nineteen thirteen, your governments have printed one hundred and seventy trillion dollars out of nothing and spent these nothing-papers on murdering three hundred and ten million humans and destroying many valuable things those humans spent their entire lives building."
-- layer: B
-- scene: The politician cranks a printing press stamped "1913" that prints dotted-outline war papers out of an empty tray; the papers fold into a bomb that falls on a crowd; then they march over a row of houses, a bridge and a workshop, which fold flat behind them.
-- wishonia: PiP, neutral-closed + body-point-right, then sad-closed on "murdering"
-- props: printingPress, money("war") in dotted outline, bomb, house, factory (the workshop), bridge, politician, human, KIT.nuke, KIT.xray
-- status: outline
+- layer: B, plate 1913-press
+- scene: The 1913 press: one plate, drawn once. On the left the printing press on a plain field; a road runs right from it to Part 2's own field (the-toll's plate: ground and sky gone gray, rows of headstones to the horizon, and the family from Part 2's loop standing in the middle as skeletons, holding their loaves, as Part 2 left them), and on past it to a little town (a row of houses, a bridge over a creek, a little workshop shed), the worker's house and the bakery (paycheck-shrinks). The camera travels right with the papers.
+- props: printingPress (label "1913", tray 0), money("war") in dotted outline, the moth (from Part 2, aged), politician, the skeleton family, their loaves and the headstones (copied from Part 2's the-toll: the same options, scale and colors), person (the worker in overalls), house, a bridge and a workshop shed (drawn), KIT.nuke
+- status: planned
 
-Moves: "nineteen thirteen," → a printing press (`KIT.props.printingPress`) stamped "1913" thumps to life; the politician cranks it, grinning. "printed" → war papers start popping out of it. "trillion" → the pile's counter: "$170 TRILLION". "nothing" → the camera finds the paper tray: empty. The papers coming out are drawn in dotted outline only; the politician peers into the empty tray, shrugs and keeps cranking. "nothing-papers" → the dotted papers line up and march off to the right. "murdering" → they fold themselves into one big dotted bomb, which drops on a crowd of everyday humans: a white flash. "humans" → the smoke clears on a crowd of grinning skeletons, still standing; a second counter: "310,000,000". HOLD until "valuable". "valuable" → the dotted papers march on across a row of houses (`KIT.props.house`), a bridge and a workshop (`KIT.props.factory`), which fold flat behind them like cardboard. "entire lives building." → a worker in overalls stands by his flattened house, holding a hammer, and taps one nail into it.
+Moves: "nineteen thirteen," → the printing press (`KIT.props.printingPress`, its plaque "1913") thumps to life; the politician cranks it, grinning. "printed" → war papers pop out of it onto a heap. "trillion" → "$170 TRILLION" stamps into the sky over the heap. "nothing" → the camera pushes into the paper tray: empty, a cobweb across it; the moth from Part 2 crawls out, ancient now, a long white beard, and flaps off slowly. Pulling back: the papers popping out of the press are drawn in dotted outline only, dotted green with a dotted seal, and so is the heap. "nothing-papers" → the dotted papers hop off the heap, line up and march off to the right; the camera travels with them into Part 2's gray field, and stops on the skeleton family, still standing there grinning with their loaves. "murdering" → the papers jump up and fold themselves into one big dotted bomb, which falls on the family; the three skulls tilt up at it, still grinning. "three hundred" → a white flash, the frame shakes, a mushroom cloud. "humans" → the smoke clears: the family stands exactly as before, still holding their loaves, and "310,000,000" stamps into the sky over them, the same number in the same place as in Part 2. HOLD until "valuable". "valuable" → the dotted papers come back together out of the last of the smoke, none the worse (there was nothing to them), and march on into the town; the camera travels with them, and the houses (`KIT.props.house`), the bridge and the workshop fold flat behind them like cardboard, one after another. "entire lives building." → the camera finds a worker in overalls standing by his flattened house with a hammer; on "building." he bends down and taps one nail into it.
 
-Sound: a clank as the press starts; hammer thumps as it prints; a cash-register ding on the counter; crickets for the empty tray; squeaky paper footsteps; a falling whistle and a boom; silence for the HOLD; a slam as the buildings fold; one tap of the hammer.
+Sound: a clank as the press starts; hammer thumps as it prints; a cash-register ding on "trillion"; crickets in the empty tray; squeaky paper footsteps; a falling slide whistle and a boom; the thunk of Part 2's number landing; silence for the HOLD; two slams as the buildings fold; one tap of the hammer.
 
-On screen: "1913" / "$170 TRILLION" / "310,000,000". No: nothing moves and nothing is funny in the HOLD. Why: where the money came from (nothing) and what it bought.
+On screen: "1913" (the press's plaque) / "$170 TRILLION" / "310,000,000".
 
-## Scene 6 · paycheck-shrinks
+No: no new crowd: the toll is Part 2's family, drawn as Part 2 drew them.
+
+Why: where the money came from (nothing) and what it bought: the toll Part 2 already counted, on the same family, under the same number.
+
+## Scene 7 · paycheck-shrinks
 
 - id: paycheck-shrinks
-- act: The bill since 1913
-- transition_in: slide left
-- key: after "destruction.": the bakery folded flat around them, YOU in the open air holding the sliver of paycheck and one crumb
+- act: Since 1913
+- transition_in: same plate (no seam)
+- key: after "destruction.": the bakery folded flat around them, YOU and the baker standing in the open air in the flattened town, YOU holding a sliver of paycheck and one crumb
 - cue: "Consequently your paycheck"
 - time: 18:07.3 to 18:13.7 (6.4 s)
 - voiceover: "Consequently your paycheck now buys ninety-seven percent less due to the aforementioned destruction."
-- layer: B
-- scene: YOU slides a paycheck across a bakery counter; it shrinks to a sliver and buys one crumb; then the bakery folds flat like the houses outside.
-- wishonia: PiP, neutral-smile + body-presenting, then eyeroll-closed on "ninety-seven"
-- props: money("plain") as the paycheck, bakery, bread, house, human (YOU, the baker)
-- status: outline
+- layer: B, plate 1913-press
+- scene: The same town, at the bakery next to the worker's flattened house: the last building standing, a little shop with a striped awning and a counter window.
+- props: money("plain") as the paycheck, a bakery (drawn: a house with an awning and a counter), a loaf, person (YOU; the baker, a pear-shaped woman in an apron)
+- status: planned
 
-Moves: "paycheck" → YOU slides a full-size paycheck (plain green, "PAYCHECK" on it) across a bakery counter; the baker, a pear-shaped woman in an apron, sets down a big loaf. "ninety-seven percent less" → the paycheck shrinks to a sliver; the baker takes back the loaf and sets down one crumb with tweezers. "aforementioned destruction." → YOU looks out of the bakery window at the flattened houses from nothing-papers. after "destruction." → the bakery folds flat around them like cardboard; YOU and the baker stand in the open, YOU holding his crumb.
+Moves: "Consequently" → the first frame is nothing-papers' last; the camera travels on from the worker to the bakery next door. "paycheck" → YOU, in his bowler, slides a full-size paycheck (a plain green paper, no seal) across the counter; the baker sets down a big loaf. "ninety-seven percent less" → the paycheck shrinks to a sliver between his fingers; the baker takes the loaf back and sets down one crumb with tweezers. "aforementioned destruction." → YOU turns and looks out over the flattened town. after "destruction." → the bakery folds flat around them like cardboard; YOU and the baker stand in the open air, YOU holding his crumb.
 
 Sound: a paper whoosh across the counter; a falling slide whistle as the paycheck shrinks; a pop for the crumb; a slam as the bakery folds.
 
-On screen: "PAYCHECK" / "-97%". Why: the viewer pays for the press in every paycheck.
+On screen: nothing (the sliver is the number).
 
-## Scene 7 · bought-the-other-thing
+No: no "-97%".
+
+Why: the viewer pays for the press in every paycheck.
+
+## Scene 8 · bought-the-other-thing
 
 - id: bought-the-other-thing
-- act: The bill since 1913
-- transition_in: slide left
-- key: after "thing.": the war pan on the floor with SOLD on the mountain, the politician's thumb still on it, the receipt hanging out of the base, the right pan empty and high, a puff of dust on the horizon
+- act: The checkout
+- transition_in: cut
+- key: after "thing.": the war pan slammed down on the counter, SOLD on the war mountain, the politician's thumb still on it; the right pan stuck at the top of its swing with the crate and the scientist still on it, high out of everyone's reach, the scientist holding her flask down toward YOU; YOU in front of the counter holding the long receipt
 - cue: "One hundred and seventy trillion"
 - time: 18:13.7 to 18:21.7 (8.1 s)
 - voiceover: "One hundred and seventy trillion dollars is equal to thirty-eight thousand years of government clinical trial spending. You bought the other thing."
-- layer: B
-- scene: A giant balance scale holds a mountain of war papers against a teal crate of 38,000 years of clinical trials with the scientist sitting on it; the politician puts his thumb on the scale.
-- wishonia: PiP, neutral-smile + body-presenting, then sideeye-closed + body-arms-crossed on "bought"
-- props: balanceScale, money("war"), trial-crate, receipt, priceTag (SOLD), scientist, politician
-- status: outline
+- layer: B, plate checkout
+- scene: The checkout: a store counter on a plain field, a giant brass balance scale standing on it as the store's scale, the politician behind it as the clerk, YOU in front of it.
+- props: balanceScale, money("war") (the mountain), a crate (drawn; "38,000 YEARS"), scientist, politician, the receipt (drawn), priceTag ("SOLD"), person (YOU)
+- status: planned
 
-Moves: "One hundred and seventy trillion" → a mountain of war papers thumps onto the left pan of a giant balance scale (`KIT.props.balanceScale`), which sinks. "thirty-eight thousand years" → a teal crate stenciled "38,000 YEARS OF CLINICAL TRIALS" lands on the right pan, the scientist (`KIT.cast("scientist")`: the bun, the big glasses, the flask) sitting on top and waving her flask; the scale comes level. "You" → the politician strolls in and presses one thumb down on the war pan: it slams to the floor, and the right pan catapults the crate and the scientist up out of the frame. "bought" → a receipt prints out of the scale's base. "other thing." → a red "SOLD" tag (`KIT.props.priceTag`) slaps onto the war mountain. after "thing." → far off on the horizon, a small puff of dust where the crate came down.
+Moves: "One hundred and seventy trillion" → a mountain of war papers thumps onto the left pan of the scale (`KIT.props.balanceScale`), which sinks. "thirty-eight thousand years" → a crate stenciled "38,000 YEARS" lands on the right pan with the scientist (`KIT.cast("scientist")`) sitting on top, waving her flask; the scale comes level. "You" → the politician presses one thumb down on the war pan: it slams onto the counter, and the right pan shoots up as high as the beam goes, the crate and the scientist still on it; she grabs a pan string and hangs on. "bought" → a long receipt prints out of the scale's base into YOU's hands, and the camera pushes in on it. "other thing." → a red "SOLD" tag slaps onto the war mountain. after "thing." → the camera pulls back: the high pan sways gently, and up on the crate the scientist leans out and holds her flask down toward YOU, a long way out of reach.
 
-Sound: a thunk as each load lands and a ding as the scale comes level; a slam and a rising slide whistle for the thumb and the catapult; a typewriter rattle as the receipt prints; a stamp for SOLD; a far-off thunk.
+Sound: a thunk as each load lands and a ding as the scale levels; a slam and a rising slide whistle as the thumb sends the right pan up; a typewriter rattle as the receipt prints; a stamp for SOLD; a small squeak as the high pan sways.
 
-On screen: "38,000 YEARS OF CLINICAL TRIALS" (the crate) / the receipt: "WAR ... $170,000,000,000,000" and "CLINICAL TRIALS ... $0.00" / "SOLD". Why: the war bill priced in trials, and the choice humans made, with a thumb on the scale.
+On screen: "38,000 YEARS" (the crate) / the receipt: "WAR ... $170,000,000,000,000" and "CLINICAL TRIALS ... $0.00" / "SOLD".
 
-## Scene 8 · stopped-in-1900
+Why: the war bill priced in trials, and the choice humans made, with a thumb on the scale: the trials are still there, just out of reach.
+
+## Scene 9 · stopped-in-1900
 
 - id: stopped-in-1900
-- act: The bill since 1913
-- transition_in: slide left
-- key: after "dollars." (second): left, the fat cat hugging a stack 23.2 times taller, holding "$333,636 / YEAR"; right, YOU's grinning skeleton in the bowler holding "$14,375 / YEAR", his jaw on the floor, his life ruler short a piece
+- act: The fork at 1900
+- transition_in: cut
+- key: after "dollars." (second): the pull-back on both roads from the "1900" signpost: on the left, YOU as the fat cat beside a stack of papers twice his height, lighting his cigar off his life candle, his paycheck "$333,636 / YEAR" flipped up; on the right, YOU's grinning skeleton in the bowler beside one paper and a bitten, snuffed candle stub, holding out "$14,375 / YEAR", his jaw on the road
 - cue: "Through compounding effects"
 - time: 18:21.7 to 18:44.1 (22.4 s)
 - voiceover: "Through compounding effects, if your governments had stopped spending on murder in nineteen hundred you would be twenty-three point two times richer today, and disease would not be stealing ten point one years of your life. The average person would earn three hundred and thirty-three thousand, six hundred and thirty-six dollars per year instead of fourteen thousand, three hundred and seventy-five dollars."
-- layer: B
-- scene: Split screen, YOU twice: on the left, "STOPPED IN 1900", one plain paper doubles into a tall stack and he turns into the fat cat; on the right, "WHAT YOU DID", a short stack, a disease blob steals ten years off his life ruler, and he ends a skeleton.
-- wishonia: PiP, thinking-small + body-thinking, then happy-smile + body-open-palms on "richer", sad-closed on "disease", sideeye-closed + body-arms-crossed on "fourteen"
-- props: money("plain"), sign (the two headers), diseaseBlob, life-ruler, richHuman, human (YOU), KIT.xray
-- status: outline
+- layer: B, plate two-roads
+- scene: A road on a plain field forks at a signpost reading "1900" (`KIT.props.sign`, one post): the left road, the one where the spending stopped, and the right road, the one taken. Each road has the same station: YOU, his plain papers and his life candle (a tall lit candle on a brass holder standing on the road beside him; the two candles start the same height).
+- props: sign ("1900"), money("plain"), the life candles (drawn), politician, the baby missile, diseaseBlob, richHuman, person (YOU), KIT.xray
+- status: planned
 
-Moves: "Through" → a line splits the paper in two; YOU stands on each side, each on one plain paper. "compounding" → on the left, the paper splits into 2, 4, 8, 16, stacking up. "nineteen hundred" → headers drop in on signs (`KIT.props.sign`): left "STOPPED IN 1900", right "WHAT YOU DID". "twenty-three point two times" → the left stack climbs and stops at 23.2 times the right one. "richer" → a puff of smoke, and left-YOU is the fat cat (`KIT.cast("richHuman")`): the egg body, a top hat for his bowler, monocle, cigar, hugging the stack. "ten point one years" → a life ruler appears under each of them; a disease blob (`KIT.props.diseaseBlob`) snaps 10.1 years off the end of the right ruler and walks off with it under its arm. "life." → right-YOU steps to the new end of his short ruler and x-rays into a grinning skeleton, bowler still on (his skeleton from Part 1's title card). "three hundred and thirty-three thousand" → the fat cat's paycheck flips up: "$333,636 / YEAR". "six hundred and thirty-six" → his monocle pops out. "fourteen thousand" → the skeleton holds up his paycheck: "$14,375 / YEAR". after "dollars." (second) → the skeleton's jaw drops off onto the floor.
+Moves: "Through" → YOU stands at the fork by the "1900" signpost, one plain paper in his hand, his life candle burning beside him. "compounding effects," → he splits in two like a double exposure, and one YOU, with his own candle and paper, steps onto each road; the camera pulls back to see both roads. "stopped spending on murder" → on the left road the paper splits into 2, 4, 8, 16, stacking up in his arms; on the right road it splits just as fast, but the politician stands beside him feeding each new paper to the baby missile, which gobbles it. "twenty-three point two times" → the camera tilts up with the left stack as it climbs past his head and stops, the last 0.2 a torn sliver on top: 23.2 times the right one. "richer" → a puff of smoke, and left-YOU is the fat cat (`KIT.cast("richHuman")`: a top hat for his bowler, the monocle, the cigar), hugging the stack. "disease" → the camera travels to the right road: a disease blob (`KIT.props.diseaseBlob`) waddles up to right-YOU's candle. "ten point one years" → it bites the top third off the candle and walks off chewing. "life." → the stub's flame gutters out in a puff of smoke, and right-YOU x-rays (`KIT.xray`) into a grinning skeleton, bowler still on. "three hundred and thirty-three thousand" → back on the left road: the fat cat leans over and lights his cigar off his candle, and his paycheck flips up over him, "$333,636 / YEAR". "six hundred and thirty-six" → his monocle pops out. "fourteen thousand" → on the right road the skeleton holds his paycheck out at arm's length, "$14,375 / YEAR". after "dollars." (second) → the camera pulls back to both roads, and the skeleton's jaw drops off onto the road.
 
-Sound: pops as the papers split; a thunk as the headers land; a rising slide whistle as the stack climbs; a pop and a sparkle for the fat cat; a snip as the ruler breaks; squeaky footsteps for the blob; an x-ray zap; a cash-register ding; a pop for the monocle; a thunk for the jaw.
+Sound: pops as the papers split; a rising slide whistle as the stack climbs; a pop and a sparkle for the fat cat; a snip for the bite; an x-ray zap; a cash-register ding for the big paycheck; a pop for the monocle; a thunk for the jaw.
 
-On screen: "STOPPED IN 1900" / "WHAT YOU DID" / "23.2×" / "10.1 YEARS" / "$333,636 / YEAR" / "$14,375 / YEAR". No: plain papers on both sides; this money is not redirected, so no seals. Why: what the spending cost each person, in money and in years.
+On screen: "1900" (the signpost) / "$333,636 / YEAR" / "$14,375 / YEAR".
 
-## Scene 9 · 604-times-less
+No: plain papers on both roads, no seals: this money is not redirected. No "23.2×" and no "10.1 YEARS": the stack and the candle are the numbers.
+
+Why: what the spending cost each person, in money and in years.
+
+## Scene 10 · 604-times-less
 
 - id: 604-times-less
 - act: Today
-- transition_in: slide left
-- key: after "spending.": the 604 bar toppled onto the medicine paper, one little arm waving out of the heap, the hard hat rolled clear, "604 : 1"
+- transition_in: cut
+- key: after "spending.": the 604 stack toppled onto the medicine paper, one little arm waving out of the heap, the dented hard hat rolled clear
 - cue: "Today, government spending on clinical trials"
 - time: 18:44.1 to 18:51.7 (7.5 s)
 - voiceover: "Today, government spending on clinical trials: six hundred and four times less than military spending."
-- layer: B
-- scene: The 604 bar from 604-papers: a tall stack of war papers next to one small medicine paper, which now wears a hard hat.
-- wishonia: PiP, sideeye-closed + body-arms-crossed, then eyeroll-closed on "military"
-- props: 604-bar (copied from Part 1's 604-papers), money("war"), money("med"), hard-hat, satellite
-- status: outline
+- layer: B, plate 604-bar
+- scene: The 604 bar from 604-papers (Part 1), on a plain field under a plain sky: a stack of war papers that rises past the clouds, beside one medicine paper, which now wears a hard hat.
+- props: money("war"), money("med"), a hard hat (drawn), a satellite (drawn: a ball with four whip antennas), clouds
+- status: planned
 
-Moves: "clinical trials:" → one medicine paper walks in and stands alone; this time it wears a tiny hard hat. "six hundred and four" → the war stack rises beside it and the camera tilts up with it; at the top it bonks a satellite out of the sky. "times less" → the camera falls back down to the medicine paper. "military" → "604 : 1" and the labels land; one war paper slides off the top of the stack, and the medicine paper looks up and takes one smart step to the side. "spending." → the paper lands where it stood; the medicine paper grins at us. after "spending." → the whole stack tips over and buries it; one little arm pokes out of the heap and waves weakly, and the hard hat rolls out.
+Moves: "clinical trials:" → one medicine paper walks in on its stick legs and stands alone on the field; this time it wears a tiny hard hat. "six hundred and four" → the war stack rises beside it, and the camera tilts up with it, past the clouds; at the top it bonks a satellite out of the sky. "times less" → the camera falls back down to the medicine paper. "military" → one war paper slides off the top; the medicine paper looks up at its shadow and takes one smart step to the side. "spending." (the second) → the paper lands where it stood; the medicine paper grins at us. after "spending." → the whole stack tips over and buries it; one little arm pokes out of the heap and waves weakly, and the hard hat, dented, rolls out.
 
-Sound: squeaky footsteps; a rising slide whistle; a clank as the satellite is bonked; a falling slide whistle; a thunk as "604 : 1" lands; a thunk as the paper misses; a slam as the stack topples; a tiny squeak from under it.
+Sound: squeaky footsteps; a rising slide whistle as the stack climbs; a clank as the satellite is bonked; a falling slide whistle on the way down; a thunk as the paper misses; a slam as the stack topples; a tiny squeak from under it.
 
-On screen: "604 : 1" / "MILITARY SPENDING" / "CLINICAL TRIALS". Why: the 604 bar, as the choice still made today; the medicine paper learned from last time and still loses.
+On screen: nothing (the bar is the number).
 
-## Scene 10 · odds-of-dying
+Why: the 604 bar, as the choice still made today; the medicine paper learned from last time and still loses.
+
+## Scene 11 · odds-of-dying
 
 - id: odds-of-dying
 - act: Today
-- transition_in: slide left
-- key: the HOLD: wheel two stopped on "DISEASE: 100%", YOU's chest light red; wheel one behind its sandbags and missiles, stopped on a blank
+- transition_in: cut
+- key: the HOLD, pulled back to both booths: on the right the DISEASE wheel stopped, YOU alone in front of it with his chest light red; on the left the TERRORISM booth inside its sandbags, barbed wire and missiles, the weapons maker on guard, its wheel stopped on a blank
 - cue: "Your chance of dying from terrorism"
 - time: 18:51.7 to 19:00.1 (8.4 s)
 - voiceover: "Your chance of dying from terrorism: one in thirty million. Your chance of dying from disease: one hundred percent."
-- layer: B
-- scene: Two carnival prize wheels: the terrorism wheel inside a fortress of sandbags, barbed wire and missiles; the disease wheel unguarded, spun by a disease blob, with YOU waiting in front of it.
-- wishonia: PiP, neutral-closed, then sad-closed on "percent."
-- props: prize-wheel (two), sandbags, barbed-wire, missile, sign, diseaseBlob, weaponsMaker, politician, human (YOU)
-- status: outline
+- layer: B, plate midway
+- scene: A carnival midway on a plain field with two prize-wheel booths: on the left the TERRORISM booth inside a fortress of sandbags, barbed wire and a ring of grumpy missiles, guarded by the weapons maker; on the right the DISEASE booth, alone, no guard, a disease blob at its wheel and YOU waiting in front of it.
+- props: two prize-wheel booths with marquees (drawn), sandbags and barbed wire (drawn), missile (`KIT.props.missile`), diseaseBlob, weaponsMaker, politician, person (YOU)
+- status: planned
 
-Moves: "terrorism:" → wheel one, behind sandbags, barbed wire and a ring of missiles (`KIT.props.missile`), guarded by the weapons maker; the politician spins it; its one red sliver is too thin to see. "one in thirty million." → it stops on a blank slot; its sign: "TERRORISM: 1 IN 30,000,000". after "million." → the weapons maker drops another ring of sandbags around it and adds one more missile. "disease:" → wheel two stands alone, no guard; a disease blob (`KIT.props.diseaseBlob`) spins it, grinning; every slot reads "DISEASE"; YOU stands in front of it, waiting his turn. "one hundred percent." → it stops: "DISEASE: 100%"; YOU's chest light comes on red. HOLD to the end of the scene.
+Moves: "terrorism:" → the TERRORISM booth: its wheel has one thin red slot among thousands of blank ones; the politician spins it. "one in thirty million." → it clicks to a stop on a blank, and the booth's marquee lights up "1 IN 30,000,000". after "million." → the weapons maker drops another ring of sandbags round the booth and stands one more missile in the ring. "disease:" → the camera travels right to the DISEASE booth: no guard, no sandbags; a disease blob (`KIT.props.diseaseBlob`) spins its wheel, grinning; every slot on it reads "YOU"; YOU stands in front of it alone, waiting his turn. "one hundred percent." → it stops (on YOU, like every slot), its marquee lights up "100%", and YOU's chest light comes on red; the camera eases back to take in both booths. HOLD to the end of the scene.
 
-Sound: a whirr as each wheel spins and ticks as the first one slows; a click as each stops; a thunk as the sandbags land; then silence for the HOLD.
+Sound: a whirr as each wheel spins, and ticks as the first one slows; a click as each stops; a thunk as the sandbags land; then silence for the HOLD.
 
-On screen: "TERRORISM: 1 IN 30,000,000" / "DISEASE: 100%". No: nothing moves and nothing is funny in the HOLD. Why: what humans guard against versus what kills them.
+On screen: the marquees "TERRORISM" and "DISEASE" / "1 IN 30,000,000" / "100%" / "YOU" on every slot of the disease wheel.
 
-## Scene 11 · cancer-oil-reserves
+Why: what humans guard against versus what kills them.
+
+## Scene 12 · cancer-oil-reserves
 
 - id: cancer-oil-reserves
 - act: Today
-- transition_in: slide left
-- key: on "three.": the charred cancer blob blinking, its derrick still pumping, the "CURED: 2003" flag planted on its head by the helmeted invasion force
+- transition_in: cut
+- key: on "three.": the charred cancer blob blinking, the derrick on its head still pumping, the "CURED: 2003" pennant just planted in its head and the scientist beside it in her army helmet saluting; the leashed missile sitting up at its feet without a scorch on it, wagging its fins, its leash running back to the barrel of the tank skidded to a stop on the left, soldiers' helmets peeking out of the hatch
 - cue: "If cancer had oil reserves"
 - time: 19:00.1 to 19:04.5 (4.5 s)
 - voiceover: "If cancer had oil reserves, you would have cured it by two thousand and three."
-- layer: B
-- scene: A grumpy cancer blob with an oil derrick on its head; the army invades it, bombs it and plants a flag.
-- wishonia: PiP, smirk-smile + body-hands-hips
-- props: diseaseBlob, oil-derrick, tank, bomb, flag, weaponsMaker, scientist, human (soldiers), KIT.nuke
-- status: outline
+- layer: B, plate desert
+- scene: The desert: one plate of dry, cracked ground under a plain sky, drawn once. Left to right: the cancer blob, the color-flip funnel, a shore with a little island country across a strip of sea, and a puddle in the cracked ground at the foot of the funnel (submarine-on-land). Here: the cancer blob.
+- props: diseaseBlob (label "CANCER"), missile (`KIT.props.missile`, smiling) and its red leash (Part 8's, as fifty-nine-elevens draws them), an oil derrick (drawn, as Part 8's), a tank (drawn), a pennant (drawn), scientist, person (soldiers in helmets), KIT.nuke, KIT.burn
+- status: planned
 
-Moves: "cancer" → a grumpy disease blob (`KIT.props.diseaseBlob`) labeled "CANCER" sits on the paper. "oil reserves," → an oil derrick pops up on its head and starts pumping, and a black gusher sprays up; at the edge of the frame, the weapons maker's eyes turn into dollar signs. "cured" → an invasion force charges in from the left: a tank, soldiers in helmets, and the scientist riding the tank in an army helmet, her flask fixed on a bayonet; bombs (`KIT.props.bomb`) drop: a flash and a boom. "two thousand and three." → the smoke clears on a charred blob, blinking; a soldier plants a flag on its head: "CURED: 2003". The derrick keeps pumping.
+Moves: "cancer" → cut to the desert: a grumpy disease blob in a "CANCER" sash (`KIT.props.diseaseBlob`) sits alone on the cracked ground. Part 8's leashed missile sniffs in from the left, nose to the ground like a bloodhound, its leash running off the edge of the frame, and walks straight past the blob, as it did in Part 8. "oil" → a little oil derrick pops up on the blob's head and starts pumping. "reserves," → the missile stops dead, swings round and points at the derrick like a bird dog: nose out, one fin raised, quivering. "you" → it bolts for the blob and the leash snaps taut; the camera pulls back on what is on the other end, dragged in across the desert on locked treads: a silly tank, the leash tied round its barrel, the scientist (`KIT.cast("scientist")`) riding on top in an army helmet, her flask fixed to the end of the barrel like a bayonet, soldiers in helmets hanging on behind. "cured" → the tank fires point-blank: a white flash, the frame shakes, and a mushroom cloud (`KIT.nuke`) stands over the blob. "two thousand and three." → the smoke clears on a charred blob, blinking, the derrick still pumping on its head; the scientist plants a pennant in its head, "CURED: 2003", and salutes; the missile, without a scorch on it, sits up at the blob's feet and wags its fins.
 
-Sound: a pop as the derrick appears; a whoosh for the gusher and a cash-register ding for the dollar eyes; an airplane whoosh as the force charges; a boom; a sizzle as the smoke clears; a thunk for the flagpole.
+Sound: a pop as the derrick appears; a woof as the missile points; a scratch as the tank skids in; a boom; a thunk for the pennant.
 
-On screen: "CANCER" / "CURED: 2003". No: no real flags, uniforms or vehicles. Why: the joke under the numbers: humans send the army where the oil is.
+On screen: "CANCER" (the sash) / "CURED: 2003" (the pennant).
 
-## Scene 12 · submarine-on-land
+No: no gusher (Part 8 has one) and no dollar eyes; the missile does the wanting.
+
+Why: the joke under the numbers: the missile that walked past the disease in Part 8 finds it the moment it has oil, and the army comes with it.
+
+## Scene 13 · submarine-on-land
 
 - id: submarine-on-land
 - act: Today
-- transition_in: slide left
-- key: after "land.": the pull-back: a dry, cracked field, the submarine's tail and spinning propeller sticking out of a puddle, houses behind, the tripped human flat on the ground, the periscope turned to the camera
+- transition_in: same plate (no seam)
+- key: after "underwater,": the submarine's tail and spinning propeller sticking up out of a puddle in the cracked desert, YOU flat on his face beside it, his bowler rolling away
 - cue: "Instead, you spent the repair money"
-- time: 19:04.5 to 19:14.9 (10.4 s)
-- voiceover: "Instead, you spent the repair money on murder tubes that cost more than countries and submarines that hide underwater, as if that's somehow useful when you live on land."
-- layer: B
-- scene: Medicine papers go into the color-flip funnel and come out war papers (the flip in reverse), roll into a missile that costs more than a country and blows that country off the map; then a submarine hides in a puddle in a dry field.
-- wishonia: PiP, annoyed-closed + body-arms-crossed, then skeptical-closed on "submarines", eyeroll-smile + body-shrug on "live"
-- props: colorFlipFunnel, money("med"), money("war"), missile, priceTag, worldMap, submarine, puddle, house, human, KIT.nuke
-- status: outline
+- time: 19:04.5 to 19:12.1 (7.6 s)
+- voiceover: "Instead, you spent the repair money on murder tubes that cost more than countries and submarines that hide underwater,"
+- layer: B, plate desert
+- scene: The same desert; the camera travels right from the charred blob to the funnel and the shore, then back to the puddle.
+- props: colorFlipFunnel, money("med"), money("war"), a long grinning missile (drawn), priceTag (two), a little island country (drawn: a castle, three houses, a palm), a submarine (drawn), a puddle, person (YOU), KIT.nuke
+- status: planned
 
-Moves: "repair money" → medicine papers walk into the color-flip funnel (`KIT.props.colorFlipFunnel`) and come out with war seals: the flip, in reverse. "murder tubes" → the war papers roll themselves up into one long grinning missile (`KIT.props.missile`). "cost more" → its price tag (`KIT.props.priceTag`) unfolds, and unfolds. "than countries" → the tag is bigger than a small country on the engraved map (`KIT.props.worldMap`) pinned up beside it, labeled "SMALL COUNTRY". "countries" → the missile launches at the map: a flash and a boom; a smoking, charred hole where the small country was, and the tag flutters down into it. "submarines" → a periscope rises out of a puddle. "hide underwater," → the submarine ducks; only its tail sticks out of the puddle, propeller spinning. "live on land." → pull back: the puddle sits in a dry, cracked field in front of a row of houses (`KIT.props.house`). after "land." → a passing human trips over the submarine's tail and falls flat; the periscope swivels slowly to look at him, then at us.
+Moves: "Instead," → the first frame is cancer-oil-reserves' last; the camera travels right past the charred blob. "repair money" → a line of medicine papers walking toward the blob is turned aside into the color-flip funnel (`KIT.props.colorFlipFunnel`) and comes out with missile seals: the flip, in reverse. "murder tubes" → the war papers roll themselves up into one long grinning missile. "cost more" → its price tag unfolds, and unfolds. "than countries" → the camera pulls back to the shore: across the water sits a little island country (a castle, three houses, a palm) with its own price tag, and the missile's tag is now longer than the whole island. "countries" → the missile launches across the water: a flash and a boom; a smoking, charred crater where the island was, and the island's tag flutters down into the sea. "submarines" → the camera swings back to the cracked ground at the foot of the funnel: a periscope rises out of a puddle. "hide underwater," → the submarine ducks; only its tail sticks out of the puddle, propeller spinning in the air, and YOU, walking past, trips over it and falls flat.
 
-Sound: squeaky paper footsteps; a falling slide whistle as the seals flip back to war; a whoosh as the papers roll up; a rising whistle as the tag unfolds; a whoosh for the launch and a boom; a rising whistle for the periscope; a bloop as the submarine ducks; a thunk as the human falls; a squeak for the periscope.
+Sound: a falling slide whistle as the seals flip back; a whoosh as the papers roll up; a rising slide whistle as the tag unfolds; a boom for the launch; a rising whistle for the periscope; a pop as it ducks; a thunk as YOU falls.
 
-On screen: "MURDER TUBE" / "MORE THAN A COUNTRY" (the tag) / "SMALL COUNTRY". Why: where the repair money went; the reverse flip shows the episode's main idea backwards, which is what humans do now.
+On screen: the two price tags ("$" and a long run of digits on the missile's, a shorter one on the island's).
+
+No: no map and no "SMALL COUNTRY": the two tags side by side are the comparison.
+
+Why: where the repair money went; the reverse flip shows the episode's main idea backwards, which is what humans do now.
+
+## Scene 14 · periscope
+
+- id: periscope
+- act: Today
+- transition_in: cut
+- key: on "land.": Wishonia at the lectern side-eyeing a periscope that has risen out of her coffee mug and turned to look at her, the crack from the quake still in the wall behind her
+- cue: "as if that's somehow useful"
+- time: 19:12.1 to 19:14.9 (2.8 s)
+- voiceover: "as if that's somehow useful when you live on land."
+- layer: A, host
+- scene: The studio set, as probably left it: the crack still zigzags up the wall, and her mug is back on the lectern with a chip out of its rim.
+- wishonia: annoyed-closed + body-palms-down; eyeroll-smile + body-shrug on "live"; sideeye-closed + body-arms-crossed on "land."
+- props: studio, lectern, mug (drawn), a periscope (drawn)
+- status: planned
+
+Moves: "as if" → cut to Wishonia at the lectern; the crack from the quake is still in the wall behind her, and her chipped mug is back on the lectern. "useful" → a periscope rises out of the coffee, dripping, and looks around. "live on land." → it swivels and looks at her; she side-eyes it. after "land." → it swivels slowly round to look at the camera, and the iris closes on her face, to black.
+
+Sound: a rising slide whistle as the periscope comes up; a squeak as it swivels.
+
+On screen: nothing new.
+
+Why: the submarine has found the only water on land, and it is her coffee.

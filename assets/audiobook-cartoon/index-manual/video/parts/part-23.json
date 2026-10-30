@@ -2,200 +2,221 @@
   "id": "part-23",
   "title": "But You Don't Need to Understand Any of That",
   "storyboard": "storyboards/part-23-you-dont-need-to-understand.md",
-  "audio": { "start": 2893.004, "end": 3043.46 },
-  "noCaptions": ["you-dont-need-to-understand-title"],
+  "audio": {
+    "start": 2893.004,
+    "end": 3043.46
+  },
+  "noCaptions": [
+    "you-dont-need-to-understand-title"
+  ],
   "scenes": [
-    { "id": "you-dont-need-to-understand-title", "file": "compositions/scenes/part-23/you-dont-need-to-understand-title.html", "cue": "But", "approx": 2893.0, "layer": "A" },
-    { "id": "juggling-five-steps", "file": "compositions/scenes/part-23/juggling-five-steps.html", "cue": "You", "approx": 2895.58, "layer": "B",
+    {
+      "id": "you-dont-need-to-understand-title",
+      "file": "compositions/scenes/part-23/you-dont-need-to-understand-title.html",
+      "cue": "But",
+      "approx": 2893.0,
+      "layer": "A"
+    },
+    {
+      "id": "juggling-five-steps",
+      "file": "compositions/scenes/part-23/juggling-five-steps.html",
+      "cue": "You",
+      "approx": 2895.58,
+      "layer": "A",
       "wishonia": [
-        { "cue": "You", "expr": "neutral", "rest": "smile", "body": "counting", "mode": "pip" },
-        { "cue": "objection:", "expr": "thinking", "rest": "small", "body": "thinking", "mode": "pip" },
-        { "cue": "Correct.", "expr": "smirk", "rest": "closed", "body": "open-palms", "mode": "pip" }
-      ] },
-    { "id": "pencil-on-tv", "file": "compositions/scenes/part-23/pencil-on-tv.html", "cue": "Nobody", "approx": 2911.8, "layer": "B",
+        { "cue": "You", "expr": "neutral", "rest": "smile", "body": "counting", "mode": "big" },
+        { "cue": "objection:", "expr": "thinking", "rest": "small", "body": "thinking", "mode": "big" },
+        { "cue": "Correct.", "expr": "smirk", "rest": "closed", "body": "open-palms", "mode": "big" }
+      ]
+    },
+    {
+      "id": "pencil-on-tv",
+      "file": "compositions/scenes/part-23/pencil-on-tv.html",
+      "cue": "Nobody",
+      "approx": 2911.8,
+      "layer": "B"
+    },
+    {
+      "id": "pencil-parts-map",
+      "file": "compositions/scenes/part-23/pencil-parts-map.html",
+      "cue": "The",
+      "approx": 2921.82,
+      "layer": "B"
+    },
+    {
+      "id": "pencil-strangers",
+      "file": "compositions/scenes/part-23/pencil-strangers.html",
+      "cue": "Literally",
+      "approx": 2933.66,
+      "layer": "B"
+    },
+    {
+      "id": "empty-central-office",
+      "file": "compositions/scenes/part-23/empty-central-office.html",
+      "cue": "No",
+      "approx": 2944.46,
+      "layer": "B"
+    },
+    {
+      "id": "price-system-pencils",
+      "file": "compositions/scenes/part-23/price-system-pencils.html",
+      "cue": "A",
+      "approx": 2953.0,
+      "layer": "B"
+    },
+    {
+      "id": "billions-a-day",
+      "file": "compositions/scenes/part-23/billions-a-day.html",
+      "cue": "Your",
+      "approx": 2969.62,
+      "layer": "A",
       "wishonia": [
-        { "cue": "Nobody", "expr": "thinking", "rest": "small", "body": "thinking", "mode": "pip" },
-        { "cue": "economists", "expr": "neutral", "rest": "smile", "body": "point-right", "mode": "pip" }
-      ] },
-    { "id": "pencil-parts-map", "file": "compositions/scenes/part-23/pencil-parts-map.html", "cue": "The", "approx": 2921.82, "layer": "B",
+        { "cue": "Your", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "big" },
+        { "cue": "noticing.", "expr": "eyeroll", "rest": "closed", "body": "arms-crossed", "mode": "big" }
+      ]
+    },
+    {
+      "id": "cured-disease-jar",
+      "file": "compositions/scenes/part-23/cured-disease-jar.html",
+      "cue": "Now",
+      "approx": 2974.42,
+      "layer": "B"
+    },
+    {
+      "id": "cure-chain-lagos-to-new-york",
+      "file": "compositions/scenes/part-23/cure-chain-lagos-to-new-york.html",
+      "cue": "The",
+      "approx": 2980.78,
+      "layer": "B"
+    },
+    {
+      "id": "cure-chain-delhi-dhaka",
+      "file": "compositions/scenes/part-23/cure-chain-delhi-dhaka.html",
+      "cue": "The",
+      "approx": 2998.18,
+      "layer": "B"
+    },
+    {
+      "id": "millions-cooperated",
+      "file": "compositions/scenes/part-23/millions-cooperated.html",
+      "cue": "Literally",
+      "approx": 3015.42,
+      "layer": "B"
+    },
+    {
+      "id": "two-numbers-did-it",
+      "file": "compositions/scenes/part-23/two-numbers-did-it.html",
+      "cue": "Two",
+      "approx": 3026.44,
+      "layer": "B"
+    },
+    {
+      "id": "the-switch",
+      "file": "compositions/scenes/part-23/the-switch.html",
+      "cue": "The",
+      "approx": 3035.46,
+      "layer": "A",
       "wishonia": [
-        { "cue": "The", "expr": "neutral", "rest": "smile", "body": "point-right", "mode": "pip" },
-        { "cue": "slightest", "expr": "smirk", "rest": "closed", "body": "shrug", "mode": "pip" }
-      ] },
-    { "id": "pencil-strangers", "file": "compositions/scenes/part-23/pencil-strangers.html", "cue": "Literally", "approx": 2933.66, "layer": "B",
-      "wishonia": [
-        { "cue": "Literally", "expr": "happy", "rest": "smile", "body": "wide-gesture", "mode": "pip" },
-        { "cue": "hate", "expr": "surprised", "rest": "oh", "body": "idle", "mode": "pip" }
-      ] },
-    { "id": "empty-central-office", "file": "compositions/scenes/part-23/empty-central-office.html", "cue": "No", "approx": 2944.46, "layer": "B",
-      "wishonia": [
-        { "cue": "No", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "price-system-pencils", "file": "compositions/scenes/part-23/price-system-pencils.html", "cue": "A", "approx": 2953.0, "layer": "B",
-      "wishonia": [
-        { "cue": "A", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "selfishness", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "pip" },
-        { "cue": "noticing.", "expr": "eyeroll", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "cured-disease-jar", "file": "compositions/scenes/part-23/cured-disease-jar.html", "cue": "Now", "approx": 2974.42, "layer": "B",
-      "wishonia": [
-        { "cue": "Now", "expr": "happy", "rest": "smile", "body": "point-right", "mode": "pip" },
-        { "cue": "There", "expr": "thinking", "rest": "closed", "body": "thinking", "mode": "pip" }
-      ] },
-    { "id": "cure-chain-lagos-to-new-york", "file": "compositions/scenes/part-23/cure-chain-lagos-to-new-york.html", "cue": "The", "approx": 2980.78, "layer": "B",
-      "wishonia": [
-        { "cue": "The", "expr": "thinking", "rest": "small", "body": "point-right", "mode": "pip" },
-        { "cue": "greed", "expr": "smirk", "rest": "smile", "body": "hands-hips", "mode": "pip" }
-      ] },
-    { "id": "cure-chain-delhi-dhaka", "file": "compositions/scenes/part-23/cure-chain-delhi-dhaka.html", "cue": "The", "approx": 2998.18, "layer": "B",
-      "wishonia": [
-        { "cue": "The", "expr": "neutral", "rest": "smile", "body": "point-right", "mode": "pip" },
-        { "cue": "no.", "expr": "eyeroll", "rest": "smile", "body": "shrug", "mode": "pip" },
-        { "cue": "worked.", "expr": "excited", "rest": "open", "body": "excited", "mode": "pip" }
-      ] },
-    { "id": "millions-cooperated", "file": "compositions/scenes/part-23/millions-cooperated.html", "cue": "Literally", "approx": 3015.42, "layer": "B",
-      "wishonia": [
-        { "cue": "Literally", "expr": "happy", "rest": "smile", "body": "wide-gesture", "mode": "pip" },
-        { "cue": "sitting", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
-      ] },
-    { "id": "two-numbers-did-it", "file": "compositions/scenes/part-23/two-numbers-did-it.html", "cue": "Two", "approx": 3026.44, "layer": "B",
-      "wishonia": [
-        { "cue": "Two", "expr": "smirk", "rest": "smile", "body": "counting", "mode": "pip" },
-        { "cue": "done.", "expr": "smirk", "rest": "closed", "body": "hands-hips", "mode": "pip" }
-      ] },
-    { "id": "the-switch", "file": "compositions/scenes/part-23/the-switch.html", "cue": "The", "approx": 3035.46, "layer": "B",
-      "wishonia": [
-        { "cue": "The", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "pip" },
-        { "cue": "Here", "expr": "happy", "rest": "smile", "body": "point-right", "mode": "pip" }
-      ] }
+        { "cue": "The", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "build", "expr": "smirk", "rest": "smile", "body": "palms-down", "mode": "big" },
+        { "cue": "Here", "expr": "happy", "rest": "smile", "body": "point-right", "mode": "big" },
+        { "cue": "switch.", "expr": "smirk", "rest": "closed", "body": "point-right", "mode": "big" }
+      ]
+    }
   ],
   "sounds": [
-    { "scene": "you-dont-need-to-understand-title", "cue": "But", "sfx": "thunk" },
-    { "scene": "you-dont-need-to-understand-title", "cue": "Need", "sfx": "thunk" },
-    { "scene": "you-dont-need-to-understand-title", "cue": "Understand", "sfx": "thunk" },
-    { "scene": "you-dont-need-to-understand-title", "cue": "Understand", "offset": 0.1, "sfx": "whistle", "volume": 0.3 },
-    { "scene": "you-dont-need-to-understand-title", "cue": "Any", "sfx": "fire", "volume": 0.4 },
-    { "scene": "you-dont-need-to-understand-title", "cue": "That.", "sfx": "thunk" },
-    { "scene": "you-dont-need-to-understand-title", "cue": "That.", "offset": 0.25, "sfx": "sizzle", "volume": 0.4 },
+    { "scene": "you-dont-need-to-understand-title", "cue": "But", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "you-dont-need-to-understand-title", "cue": "Understand", "sfx": "whistle", "volume": 0.3 },
+    { "scene": "you-dont-need-to-understand-title", "cue": "Any", "sfx": "fire", "volume": 0.35 },
+    { "scene": "you-dont-need-to-understand-title", "cue": "That.", "sfx": "thunk", "volume": 0.45 },
 
-    { "scene": "juggling-five-steps", "cue": "bonds,", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "juggling-five-steps", "cue": "lobbyists,", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "juggling-five-steps", "cue": "PACs,", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "juggling-five-steps", "cue": "F.D.A.,", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "juggling-five-steps", "cue": "appliance", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "juggling-five-steps", "cue": "appliance", "offset": 0.5, "sfx": "boing", "volume": 0.4 },
-    { "scene": "juggling-five-steps", "cue": "optimizes", "sfx": "toaster", "volume": 0.55 },
-    { "scene": "juggling-five-steps", "cue": "objection:", "sfx": "pop", "volume": 0.5 },
-    { "scene": "juggling-five-steps", "cue": "Correct.", "sfx": "splat", "volume": 0.6 },
-    { "scene": "juggling-five-steps", "cue": "Correct.", "offset": 0.15, "sfx": "clank", "volume": 0.45 },
-    { "scene": "juggling-five-steps", "cue": "Correct.", "offset": 0.45, "sfx": "squeak", "volume": 0.35 },
+    { "scene": "juggling-five-steps", "cue": "bonds,", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "juggling-five-steps", "cue": "appliance", "sfx": "boing", "volume": 0.35 },
+    { "scene": "juggling-five-steps", "cue": "optimizes", "sfx": "toaster", "volume": 0.4 },
+    { "scene": "juggling-five-steps", "cue": "Correct.", "sfx": "splat", "volume": 0.5 },
+    { "scene": "juggling-five-steps", "cue": "Correct.", "at": "after", "sfx": "squeak", "volume": 0.25 },
 
-    { "scene": "pencil-on-tv", "cue": "pencil", "sfx": "pop", "volume": 0.45 },
-    { "scene": "pencil-on-tv", "cue": "economists", "sfx": "switch", "volume": 0.55 },
-    { "scene": "pencil-on-tv", "cue": "said:", "sfx": "whirr", "volume": 0.4 },
-    { "scene": "pencil-on-tv", "cue": "world", "sfx": "ding", "volume": 0.35 },
-    { "scene": "pencil-on-tv", "cue": "this", "sfx": "fire", "volume": 0.4 },
-    { "scene": "pencil-on-tv", "cue": "pencil.", "n": 3, "offset": 0.05, "sfx": "boom", "volume": 0.6 },
-    { "scene": "pencil-on-tv", "cue": "pencil.", "n": 3, "offset": 0.5, "sfx": "sizzle", "volume": 0.35 },
+    { "scene": "pencil-on-tv", "cue": "Nobody", "offset": 0.3, "sfx": "pop", "volume": 0.35 },
+    { "scene": "pencil-on-tv", "cue": "economists", "sfx": "switch", "volume": 0.4 },
+    { "scene": "pencil-on-tv", "cue": "said:", "sfx": "whirr", "volume": 0.3 },
+    { "scene": "pencil-on-tv", "cue": "make", "sfx": "ding", "volume": 0.3 },
+    { "scene": "pencil-on-tv", "cue": "pencil.", "n": 3, "sfx": "boom", "volume": 0.6 },
 
-    { "scene": "pencil-parts-map", "cue": "wood", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "pencil-parts-map", "cue": "Washington.", "sfx": "thunk", "volume": 0.5 },
-    { "scene": "pencil-parts-map", "cue": "graphite", "sfx": "slide-down", "volume": 0.45 },
-    { "scene": "pencil-parts-map", "cue": "mines", "sfx": "pop", "volume": 0.45 },
-    { "scene": "pencil-parts-map", "cue": "rubber", "sfx": "boing", "volume": 0.4 },
-    { "scene": "pencil-parts-map", "cue": "Malaya.", "sfx": "boing", "volume": 0.4 },
-    { "scene": "pencil-parts-map", "cue": "ferrule,", "sfx": "whirr", "volume": 0.35 },
+    { "scene": "pencil-parts-map", "cue": "wood", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "pencil-parts-map", "cue": "Washington.", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "pencil-parts-map", "cue": "graphite", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "pencil-parts-map", "cue": "mines", "sfx": "pop", "volume": 0.35 },
+    { "scene": "pencil-parts-map", "cue": "rubber", "sfx": "boing", "volume": 0.3 },
+    { "scene": "pencil-parts-map", "cue": "Malaya.", "sfx": "boing", "volume": 0.3 },
     { "scene": "pencil-parts-map", "cue": "from.", "n": 4, "sfx": "splat", "volume": 0.35 },
 
-    { "scene": "pencil-strangers", "cue": "thousands", "sfx": "pop", "volume": 0.4 },
-    { "scene": "pencil-strangers", "cue": "cooperated", "sfx": "pat", "volume": 0.4 },
-    { "scene": "pencil-strangers", "cue": "pencil.", "sfx": "click", "volume": 0.5 },
-    { "scene": "pencil-strangers", "cue": "religions,", "sfx": "boing", "volume": 0.35 },
-    { "scene": "pencil-strangers", "cue": "hate", "sfx": "huff", "volume": 0.45 },
-    { "scene": "pencil-strangers", "cue": "met.", "sfx": "slam", "volume": 0.5 },
-    { "scene": "pencil-strangers", "cue": "met.", "offset": 0.2, "sfx": "yelp", "volume": 0.35 },
-    { "scene": "pencil-strangers", "cue": "met.", "at": "after", "sfx": "pop", "volume": 0.45 },
+    { "scene": "pencil-strangers", "cue": "thousands", "sfx": "pop", "volume": 0.35 },
+    { "scene": "pencil-strangers", "cue": "cooperated", "sfx": "pat", "volume": 0.3 },
+    { "scene": "pencil-strangers", "cue": "pencil.", "sfx": "click", "volume": 0.4 },
+    { "scene": "pencil-strangers", "cue": "religions,", "sfx": "boing", "volume": 0.3 },
+    { "scene": "pencil-strangers", "cue": "met.", "sfx": "slam", "volume": 0.45 },
+    { "scene": "pencil-strangers", "cue": "met.", "offset": 0.1, "sfx": "yelp", "volume": 0.3 },
+    { "scene": "pencil-strangers", "cue": "met.", "at": "after", "offset": 0.3, "sfx": "pop", "volume": 0.4 },
 
-    { "scene": "empty-central-office", "cue": "No", "sfx": "squeak", "volume": 0.4 },
-    { "scene": "empty-central-office", "cue": "gave", "sfx": "bell", "volume": 0.45 },
-    { "scene": "empty-central-office", "cue": "orders", "sfx": "bell", "volume": 0.45 },
-    { "scene": "empty-central-office", "cue": "orders", "offset": 0.4, "sfx": "clank", "volume": 0.45 },
-    { "scene": "empty-central-office", "cue": "thousands", "sfx": "crickets", "volume": 0.3 },
-    { "scene": "empty-central-office", "cue": "enforced", "sfx": "thunk", "volume": 0.5 },
-    { "scene": "empty-central-office", "cue": "not", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "empty-central-office", "cue": "gave", "sfx": "bell", "volume": 0.3 },
+    { "scene": "empty-central-office", "cue": "orders", "sfx": "bell", "volume": 0.3 },
+    { "scene": "empty-central-office", "cue": "orders", "offset": 0.4, "sfx": "clank", "volume": 0.35 },
+    { "scene": "empty-central-office", "cue": "thousands", "sfx": "crickets", "volume": 0.25 },
+    { "scene": "empty-central-office", "cue": "enforced", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "empty-central-office", "cue": "not", "sfx": "slide-down", "volume": 0.3 },
 
-    { "scene": "price-system-pencils", "cue": "cents.", "sfx": "cash-register", "volume": 0.5 },
-    { "scene": "price-system-pencils", "cue": "strangers", "sfx": "pop", "volume": 0.35 },
-    { "scene": "price-system-pencils", "cue": "dozens", "sfx": "tick", "volume": 0.45 },
-    { "scene": "price-system-pencils", "cue": "dozens", "offset": 0.2, "sfx": "tick", "volume": 0.45 },
-    { "scene": "price-system-pencils", "cue": "planned", "sfx": "whoosh", "volume": 0.35 },
-    { "scene": "price-system-pencils", "cue": "runs", "sfx": "squeak", "volume": 0.4 },
-    { "scene": "price-system-pencils", "cue": "money,", "sfx": "cash-register", "volume": 0.45 },
-    { "scene": "price-system-pencils", "cue": "price", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "price-system-pencils", "cue": "selfishness", "sfx": "whirr", "volume": 0.45 },
-    { "scene": "price-system-pencils", "cue": "pencils.", "sfx": "pop", "volume": 0.4 },
-    { "scene": "price-system-pencils", "cue": "billions", "sfx": "whirr", "volume": 0.4 },
-    { "scene": "price-system-pencils", "cue": "day", "sfx": "clank", "volume": 0.4 },
-    { "scene": "price-system-pencils", "cue": "noticing.", "sfx": "slam", "volume": 0.55 },
+    { "scene": "price-system-pencils", "cue": "cents.", "sfx": "ding", "volume": 0.3 },
+    { "scene": "price-system-pencils", "cue": "dozens", "sfx": "pop", "volume": 0.35 },
+    { "scene": "price-system-pencils", "cue": "planned", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "price-system-pencils", "cue": "runs", "sfx": "squeak", "volume": 0.25 },
+    { "scene": "price-system-pencils", "cue": "money,", "sfx": "cash-register", "volume": 0.35 },
+    { "scene": "price-system-pencils", "cue": "selfishness", "sfx": "typewriter", "volume": 0.3 },
+    { "scene": "price-system-pencils", "cue": "pencils.", "sfx": "cash-register", "volume": 0.45 },
 
-    { "scene": "cured-disease-jar", "cue": "Now", "sfx": "switch", "volume": 0.55 },
-    { "scene": "cured-disease-jar", "cue": "Now", "offset": 0.1, "sfx": "sizzle", "volume": 0.25 },
-    { "scene": "cured-disease-jar", "cue": "disease.", "sfx": "ding", "volume": 0.4 },
-    { "scene": "cured-disease-jar", "cue": "cure", "sfx": "slam", "volume": 0.5 },
-    { "scene": "cured-disease-jar", "cue": "cure", "offset": 0.15, "sfx": "yelp", "volume": 0.35 },
+    { "scene": "billions-a-day", "cue": "billions", "sfx": "pat", "volume": 0.3 },
+    { "scene": "billions-a-day", "cue": "day", "sfx": "pat", "volume": 0.35 },
+    { "scene": "billions-a-day", "cue": "noticing.", "sfx": "slam", "volume": 0.45 },
 
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "Lagos", "sfx": "pop", "volume": 0.45 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "cheaper", "sfx": "snip", "volume": 0.55 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "know", "n": 1, "sfx": "scratch", "volume": 0.4 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "Brussels", "sfx": "pop", "volume": 0.45 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "passed", "sfx": "stamp", "volume": 0.6 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "know", "n": 2, "sfx": "scratch", "volume": 0.4 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "Manila", "sfx": "pop", "volume": 0.45 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "million", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "know", "n": 3, "sfx": "scratch", "volume": 0.4 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "York", "sfx": "pop", "volume": 0.45 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "greed", "sfx": "cash-register", "volume": 0.5 },
-    { "scene": "cure-chain-lagos-to-new-york", "cue": "campaign.", "sfx": "pop", "volume": 0.5 },
+    { "scene": "cured-disease-jar", "cue": "Now", "sfx": "switch", "volume": 0.4 },
+    { "scene": "cured-disease-jar", "cue": "disease.", "sfx": "ding", "volume": 0.3 },
+    { "scene": "cured-disease-jar", "cue": "cure", "sfx": "slam", "volume": 0.45 },
+    { "scene": "cured-disease-jar", "cue": "cure", "offset": 0.1, "sfx": "yelp", "volume": 0.3 },
 
-    { "scene": "cure-chain-delhi-dhaka", "cue": "know", "n": 1, "sfx": "scratch", "volume": 0.4 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "Delhi", "sfx": "pop", "volume": 0.45 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "yes", "sfx": "thunk", "volume": 0.55 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "funded", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "no.", "sfx": "boing", "volume": 0.4 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "no.", "offset": 0.2, "sfx": "slam", "volume": 0.5 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "politician", "n": 2, "sfx": "thunk", "volume": 0.45 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "know", "n": 2, "sfx": "scratch", "volume": 0.4 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "Dhaka", "sfx": "pop", "volume": 0.45 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "enrollment", "sfx": "click", "volume": 0.5 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "data", "sfx": "hum", "volume": 0.35 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "proved", "sfx": "yelp", "volume": 0.4 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "worked.", "sfx": "zap", "volume": 0.5 },
-    { "scene": "cure-chain-delhi-dhaka", "cue": "worked.", "offset": 0.25, "sfx": "ding", "volume": 0.45 },
+    { "scene": "cure-chain-lagos-to-new-york", "cue": "cheaper", "sfx": "snip", "volume": 0.4 },
+    { "scene": "cure-chain-lagos-to-new-york", "cue": "passed", "sfx": "stamp", "volume": 0.45 },
+    { "scene": "cure-chain-lagos-to-new-york", "cue": "voters.", "sfx": "pop", "volume": 0.35 },
+    { "scene": "cure-chain-lagos-to-new-york", "cue": "know", "n": 3, "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "cure-chain-lagos-to-new-york", "cue": "greed", "sfx": "cash-register", "volume": 0.35 },
+    { "scene": "cure-chain-lagos-to-new-york", "cue": "campaign.", "sfx": "pop", "volume": 0.4 },
 
-    { "scene": "millions-cooperated", "cue": "millions", "sfx": "slide-up", "volume": 0.4 },
-    { "scene": "millions-cooperated", "cue": "millions", "offset": 0.4, "sfx": "pop", "volume": 0.35 },
-    { "scene": "millions-cooperated", "cue": "cooperated", "sfx": "hum", "volume": 0.3 },
-    { "scene": "millions-cooperated", "cue": "sitting", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "millions-cooperated", "cue": "central", "sfx": "crickets", "volume": 0.3 },
-    { "scene": "millions-cooperated", "cue": "police", "sfx": "squeak", "volume": 0.4 },
-    { "scene": "millions-cooperated", "cue": "given.", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "cure-chain-delhi-dhaka", "cue": "know", "n": 1, "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "cure-chain-delhi-dhaka", "cue": "yes", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "cure-chain-delhi-dhaka", "cue": "because", "sfx": "squeak", "volume": 0.2 },
+    { "scene": "cure-chain-delhi-dhaka", "cue": "because", "offset": 0.3, "sfx": "squeak", "volume": 0.2 },
+    { "scene": "cure-chain-delhi-dhaka", "cue": "no.", "sfx": "pop", "volume": 0.3 },
+    { "scene": "cure-chain-delhi-dhaka", "cue": "politician", "n": 2, "sfx": "thunk", "volume": 0.35 },
+    { "scene": "cure-chain-delhi-dhaka", "cue": "enrollment", "sfx": "click", "volume": 0.4 },
+    { "scene": "cure-chain-delhi-dhaka", "cue": "proved", "sfx": "yelp", "volume": 0.35 },
+    { "scene": "cure-chain-delhi-dhaka", "cue": "worked.", "sfx": "splat", "volume": 0.45 },
+    { "scene": "cure-chain-delhi-dhaka", "cue": "worked.", "offset": 0.3, "sfx": "ding", "volume": 0.3 },
 
-    { "scene": "two-numbers-did-it", "cue": "numbers", "sfx": "slide-up", "volume": 0.45 },
-    { "scene": "two-numbers-did-it", "cue": "Scoreboard", "sfx": "tick", "volume": 0.45 },
-    { "scene": "two-numbers-did-it", "cue": "Scoreboard", "offset": 0.15, "sfx": "tick", "volume": 0.45 },
-    { "scene": "two-numbers-did-it", "cue": "them", "sfx": "sparkle", "volume": 0.4 },
-    { "scene": "two-numbers-did-it", "cue": "committee,", "sfx": "thunk", "volume": 0.45 },
-    { "scene": "two-numbers-did-it", "cue": "charity,", "sfx": "thunk", "volume": 0.45 },
-    { "scene": "two-numbers-did-it", "cue": "plan", "sfx": "thunk", "volume": 0.45 },
-    { "scene": "two-numbers-did-it", "cue": "ever", "sfx": "tick", "volume": 0.5 },
-    { "scene": "two-numbers-did-it", "cue": "done.", "offset": 0.3, "sfx": "splat", "volume": 0.5 },
+    { "scene": "millions-cooperated", "cue": "millions", "sfx": "slide-up", "volume": 0.3 },
+    { "scene": "millions-cooperated", "cue": "millions", "offset": 0.3, "sfx": "pop", "volume": 0.3 },
+    { "scene": "millions-cooperated", "cue": "disease.", "sfx": "ding", "volume": 0.3 },
+    { "scene": "millions-cooperated", "cue": "sitting", "sfx": "crickets", "volume": 0.25 },
+    { "scene": "millions-cooperated", "cue": "police", "sfx": "squeak", "volume": 0.3 },
+    { "scene": "millions-cooperated", "cue": "given.", "sfx": "slide-down", "volume": 0.3 },
 
-    { "scene": "the-switch", "cue": "machinery.", "n": 1, "sfx": "clank", "volume": 0.5 },
-    { "scene": "the-switch", "cue": "build", "sfx": "squeak", "volume": 0.4 },
-    { "scene": "the-switch", "cue": "machinery.", "n": 2, "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "the-switch", "cue": "machinery.", "n": 2, "offset": 0.25, "sfx": "thunk", "volume": 0.4 },
-    { "scene": "the-switch", "cue": "turn", "sfx": "clank", "volume": 0.45 },
-    { "scene": "the-switch", "cue": "Here", "sfx": "whoosh", "volume": 0.4 },
-    { "scene": "the-switch", "cue": "switch.", "sfx": "zap", "volume": 0.45 }
+    { "scene": "two-numbers-did-it", "cue": "Two", "sfx": "slide-up", "volume": 0.3 },
+    { "scene": "two-numbers-did-it", "cue": "numbers", "sfx": "switch", "volume": 0.4 },
+    { "scene": "two-numbers-did-it", "cue": "them", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "two-numbers-did-it", "cue": "ever", "sfx": "tick", "volume": 0.4 },
+    { "scene": "two-numbers-did-it", "cue": "done.", "sfx": "splat", "volume": 0.45 },
+
+    { "scene": "the-switch", "cue": "build", "sfx": "squeak", "volume": 0.25 },
+    { "scene": "the-switch", "cue": "machinery.", "n": 2, "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "the-switch", "cue": "machinery.", "n": 2, "offset": 0.3, "sfx": "thunk", "volume": 0.4 },
+    { "scene": "the-switch", "cue": "turn", "sfx": "clank", "volume": 0.35 },
+    { "scene": "the-switch", "cue": "switch.", "sfx": "zap", "volume": 0.35 }
   ]
 }
