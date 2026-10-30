@@ -4,8 +4,15 @@ The second MP3 in the paperback feed (`https://static.warondisease.org/assets/au
 
 | File | What it is |
 |---|---|
-| `word-timings.json` | Spoken words for the opening, in full MP3 time. Whisper (`stable-ts`, base) on the published MP3. Only the first 50 seconds of the chapter are timed so far. |
-| `video/` | The HyperFrames project. Part 1 is the opening, through "400 million years." |
+| `word-timings.json` | Spoken words for the first 12 minutes of the chapter, in full MP3 time. Whisper (`stable-ts`, base) on the published MP3. The transcript ends mid-sentence near 820 seconds. |
+| `video/storyboards/` | The review package for the first act. Six parts, 23 scenes, from the title through "out of hand." Each part has a storyboard, a sketch module, and an HTML sheet with one still per scene. |
+| `video/` | The HyperFrames project. A 43-second Part 1 render exists from before this review. Leave it until the sheets are marked up. |
+
+## Review
+
+Open `video/storyboards/part-01-genetic-slavery.html` through `part-06-out-of-hand.html`. Each frame is that scene's key moment. Nothing in parts 2 through 6 moves yet. Comment by scene name.
+
+The package stops before "The selfish gene made you illogical," about 7:45 of the MP3. The rest of the chapter is not boarded.
 
 ## Source audio
 
@@ -13,4 +20,4 @@ The second MP3 in the paperback feed (`https://static.warondisease.org/assets/au
 
 The theme song is the first 99.98 seconds (the same cold open as episode 1). Chapter speech starts at 100.24 seconds: "Genetic slavery." The published narration is the full chapter, including "How Hydrogen Learned to Worry." The file `narration-txt-chapters/genetic-slavery.prepared.txt` on the CDN is a shorter script and does not match this MP3.
 
-Part 1 uses 100.24s to 143.34s. The next line, "Then, hydrogen atoms," is the start of part 2.
+The six storyboard parts use 100.24s to 465.34s.

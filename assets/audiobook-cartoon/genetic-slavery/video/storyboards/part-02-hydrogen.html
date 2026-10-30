@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<title>Part 2: Hydrogen</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+@font-face{font-family:"Fraunces";src:url("../assets/fonts/Fraunces-Black-Soft.woff2") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:"Oswald";src:url("../assets/fonts/Oswald-SemiBold.woff2") format("woff2");font-weight:600;font-display:block}
+@font-face{font-family:"Inter";src:url("../assets/fonts/Inter-Variable.woff2") format("woff2");font-weight:100 900;font-display:block}
+/* Layout: a contact sheet, three 16:9 frames across, grouped under act bars. */
+:root{
+  --bg:#E8E6EE; --surface:#F7F6FA; --fg:#1A1426; --muted:#5D5872; --rule:#CFCBDA; --accent:#C7361F; --chip:#E0DDEA;
+  --display:"Fraunces", Georgia, serif; --label:"Oswald", "Arial Narrow", sans-serif; --body:"Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#13111B;--surface:#1D1A27;--fg:#EEEAF6;--muted:#A6A0B9;--rule:#34304A;--accent:#F08A24;--chip:#2A2638;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13111B;--surface:#1D1A27;--fg:#EEEAF6;--muted:#A6A0B9;--rule:#34304A;--accent:#F08A24;--chip:#2A2638;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;margin:0}
+.wrap{max-width:1560px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+header{display:grid;gap:12px;margin-bottom:28px;max-width:980px}
+.kicker{font-family:var(--label);text-transform:uppercase;letter-spacing:.08em;font-size:14px;color:var(--muted);margin:0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(34px,5vw,60px);line-height:1;margin:0;text-wrap:balance}
+h1 .ver{font-family:var(--label);font-weight:600;font-size:.32em;letter-spacing:.06em;vertical-align:middle;color:var(--surface);background:var(--accent);border-radius:4px;padding:3px 8px;margin-left:10px}
+.dek{margin:0;max-width:68ch;color:var(--fg)}
+.tag{font-family:var(--label);letter-spacing:.05em;font-size:14px;color:var(--muted);margin:0;font-variant-numeric:tabular-nums}
+.decided{margin:4px 0 0;padding:14px 18px;background:var(--surface);border:1px solid var(--rule);border-radius:8px}
+.decided h2{font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin:0 0 6px;color:var(--muted)}
+.decided ol,.decided ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.how{margin:0;color:var(--muted);max-width:72ch}
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:22px 20px}
+.act{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:18px 0 -6px;padding-bottom:6px;border-bottom:2px solid var(--fg);font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:18px}
+.act-count{font-size:13px;color:var(--muted)}
+.cell{display:grid;gap:8px;align-content:start;min-width:0}
+.frame{aspect-ratio:16/9;max-width:100%;border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px var(--rule),0 6px 18px rgba(16,12,30,.18);background:#000}
+.frame svg{display:block;width:100%;height:100%}
+.meta{display:flex;justify-content:space-between;gap:8px;font-family:var(--label);letter-spacing:.04em;font-size:15px;font-variant-numeric:tabular-nums}
+.meta .name{font-weight:600}
+.meta .when{color:var(--muted);white-space:nowrap}
+.note{margin:0;font-size:14px}
+.shows{display:block;color:var(--muted);margin-top:2px}
+.foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font-family:var(--label);font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;background:var(--chip);border-radius:999px;padding:3px 10px;color:var(--fg)}
+.comment{display:none;font:600 13px var(--body);color:var(--fg);background:transparent;border:1.5px solid var(--fg);border-radius:999px;padding:4px 12px;cursor:pointer;margin-left:auto}
+.can-comment .comment{display:inline-block}
+.comment:hover{background:var(--fg);color:var(--surface)}
+.comment:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+details{font-size:14px;border-top:1px solid var(--rule);padding-top:6px}
+summary{cursor:pointer;font-family:var(--label);letter-spacing:.04em;text-transform:uppercase;font-size:13px;color:var(--muted)}
+details p{margin:8px 0 0;max-width:70ch}
+.vo{font-style:italic}
+code{font-size:.92em}
+.closing{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:20px;margin-top:36px}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;min-width:0}
+.panel h2{font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:16px;margin:0 0 12px}
+.seams{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center}
+.seams li{display:flex;align-items:center;gap:4px}
+.seam-name{font-family:var(--label);font-size:14px}
+.seam-chip{font-size:12px;color:var(--muted);border:1px dashed var(--rule);border-radius:999px;padding:1px 8px}
+.seam-chip.end{border-style:solid}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:0 0 14px;padding:0;list-style:none}
+.swatches li{display:flex;align-items:center;gap:8px;font-size:13px}
+.swatches i{width:26px;height:26px;border-radius:4px;box-shadow:0 0 0 1px var(--rule);flex:none}
+.types{display:grid;gap:6px;margin:0 0 14px}
+.types p{margin:0}
+.bans{margin:0;padding-left:18px;display:grid;gap:3px;font-size:14px}
+.pairs{display:grid;gap:34px}
+.pair{border-top:2px solid var(--fg);padding-top:10px}
+.sides{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.sides figure{margin:0;display:grid;gap:6px;min-width:0}
+.sides figcaption{font-family:var(--label);text-transform:uppercase;letter-spacing:.05em;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+
+
+</defs></svg>
+<div class="wrap">
+<header>
+  <p class="kicker">Genetic Slavery · paperback MP3 2</p>
+  <h1>Part 2: Hydrogen<span class="ver">v1</span></h1>
+  <p class="dek">Hydrogen was hired with low expectations, the stars are a factory, and the job ends in an explosion every time.</p>
+  <p class="tag">1920 × 1080 · 0:37.3 · 3 scenes · audio genetic-slavery.680f0446.mp3, 02:23.5 to 03:00.8</p>
+  
+  <div class="decided"><h2>Decided</h2><ol><li>Hydrogen is one atom with a name tag, bored, until the clump catches fire.</li><li>The stars are a factory. The product leaves. The building does not survive the shift.</li><li>The 100% stamp hits the wreck, and the next nine billion years are the same wreck on a calendar.</li></ol></div>
+  <p class="how">Each frame is the scene's key moment, drawn with the production art: placement, words and look. Nothing moves yet. Scenes are named; use the name in feedback.</p>
+</header>
+<main class="sheet">
+<h2 class="act"><span>Hydrogen</span><span class="act-count">1 scene</span></h2><article class="cell" id="frame-01" data-scene="low-expectations" data-comment-target>
+  <div class="frame"><svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="One hydrogen atom, a stamp reading LOW EXPECTATIONS, and a small clump already on fire."><rect width="1920" height="1080" fill="#061D3E"/><circle cx="700" cy="520" r="70" fill="#F3ECD0" stroke="#112845" stroke-width="8"/><text x="700" y="530" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="48" letter-spacing="1.92" fill="#112845" >H</text><rect x="860" y="250" width="70" height="90" fill="#B47E52" stroke="#112845" stroke-width="6"/><g transform="rotate(-8 1180 420)"><rect x="900" y="360" width="620" height="120" rx="8" fill="#F3ECD0" stroke="#C8452E" stroke-width="8"/><text x="1210" y="440" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="42" letter-spacing="1.68" fill="#C8452E" >LOW EXPECTATIONS</text></g><g transform="translate(700,700)"><circle cx="-72" cy="10" r="28" fill="#E5903B" stroke="#112845" stroke-width="5"/><circle cx="-36" cy="-20" r="28" fill="#E5903B" stroke="#112845" stroke-width="5"/><circle cx="0" cy="10" r="28" fill="#E5903B" stroke="#112845" stroke-width="5"/><circle cx="36" cy="-20" r="28" fill="#E5903B" stroke="#112845" stroke-width="5"/><circle cx="72" cy="10" r="28" fill="#E5903B" stroke="#112845" stroke-width="5"/></g><defs><pattern id="f01-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="0.9" fill="#000" opacity="0.1"/><circle cx="6.5" cy="7" r="0.8" fill="#FFF" opacity="0.12"/><circle cx="7" cy="1.5" r="0.6" fill="#000" opacity="0.08"/></pattern></defs><rect width="1920" height="1080" fill="url(#f01-grain)" pointer-events="none"/></svg></div>
+  <div class="meta"><span class="name">01 · low-expectations</span><span class="when">B · 2:23.5–2:37.8</span></div>
+  <p class="note"><strong>First:</strong> &quot;hydrogen&quot; → one small atom drifts in, name tag H. <span class="shows">Drawn: one hydrogen atom with a name tag, a stamp reading LOW EXPECTATIONS, the clump already on fire.</span></p>
+  <div class="foot"><span class="chip" title="Transition into this scene">cut</span></div>
+  <details><summary>Narration and moves</summary>
+    <p class="vo">&quot;hydrogen atoms, which had been drifting around doing nothing, hydrogen is the simplest element because the universe started with low expectations, began clumping together until they got so dense they caught fire.&quot;</p>
+    <p><strong>Moves:</strong> &quot;hydrogen&quot; → one small atom drifts in, name tag H. &quot;nothing,&quot; → it yawns. It does not travel. &quot;expectations,&quot; → a stamp hits the empty space beside it: LOW EXPECTATIONS. &quot;clumping&quot; → more H atoms bump into it until they are one lump. &quot;fire.&quot; → the lump catches. It stays burning.</p>
+    <p>Sound: a tick on &quot;nothing.&quot; A whoosh on &quot;fire.&quot;</p><p>On screen: &quot;H&quot;, &quot;LOW EXPECTATIONS&quot;. No: no caption that says &quot;hydrogen is the simplest element.&quot; The stamp is that sentence. Why: the universe's hiring standard is the joke.</p>
+  </details>
+</article>
+<h2 class="act"><span>Stars</span><span class="act-count">1 scene</span></h2><article class="cell" id="frame-02" data-scene="called-stars" data-comment-target>
+  <div class="frame"><svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A factory with STARS on the roof, bars marked C and O leaving the side, and cracks in the wall."><rect width="1920" height="1080" fill="#061D3E"/><g transform="translate(700,280)"><rect x="0" y="80" width="520" height="360" fill="#B47E52" stroke="#112845" stroke-width="8"/><rect x="40" y="0" width="440" height="90" fill="#112845" stroke="#F3ECD0" stroke-width="6"/><text x="260" y="58" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="42" letter-spacing="1.68" fill="#F3ECD0" >STARS</text><path d="M40,200 L180,80 L300,220 L480,60" fill="none" stroke="#C8452E" stroke-width="8"/><rect x="540" y="180" width="90" height="50" fill="#F3ECD0" stroke="#112845" stroke-width="5"/><text x="585" y="214" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="28" letter-spacing="1.12" fill="#112845" >C</text><rect x="540" y="250" width="90" height="50" fill="#F3ECD0" stroke="#112845" stroke-width="5"/><text x="585" y="284" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="28" letter-spacing="1.12" fill="#112845" >O</text></g><text x="960" y="860" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="36" letter-spacing="1.44" fill="#F3ECD0" >IN</text><text x="1500" y="860" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="36" letter-spacing="1.44" fill="#F3ECD0" >OUT, THEN THE ROOF</text><defs><pattern id="f02-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="0.9" fill="#000" opacity="0.1"/><circle cx="6.5" cy="7" r="0.8" fill="#FFF" opacity="0.12"/><circle cx="7" cy="1.5" r="0.6" fill="#000" opacity="0.08"/></pattern></defs><rect width="1920" height="1080" fill="url(#f02-grain)" pointer-events="none"/></svg></div>
+  <div class="meta"><span class="name">02 · called-stars</span><span class="when">B · 2:37.8–2:53.5</span></div>
+  <p class="note"><strong>First:</strong> &quot;fires&quot; → the fire is still there. <span class="shows">Drawn: a factory with STAR on the roof, a carbon bar and an oxygen bar coming out a side door, the walls already cracked.</span></p>
+  <div class="foot"><span class="chip" title="Transition into this scene">cut</span></div>
+  <details><summary>Narration and moves</summary>
+    <p class="vo">&quot;These fires are called stars. Stars are the universe's first manufacturing process. They take hydrogen, crush it into heavier elements like carbon and oxygen, and then explode, scattering their products across space. The&quot;</p>
+    <p><strong>Moves:</strong> &quot;fires&quot; → the fire is still there. &quot;stars.&quot; → a factory drops around it. The roof sign says STARS. &quot;manufacturing&quot; → a conveyor starts. &quot;hydrogen,&quot; → H atoms go in the front door. &quot;carbon&quot; → a bar marked C comes out the side. &quot;oxygen,&quot; → a bar marked O follows it. &quot;explode,&quot; → the walls crack. after &quot;space.&quot; → the roof is off and the bars are in the air. The sign STARS is still attached to a flying piece of roof.</p>
+    <p>Sound: a clank on &quot;stars.&quot; A boom on &quot;explode.&quot;</p><p>On screen: &quot;STARS&quot;, &quot;C&quot;, &quot;O&quot;. No: no equation. Why: a star is a factory that finishes the shift by blowing up.</p>
+  </details>
+</article>
+<h2 class="act"><span>The shift</span><span class="act-count">1 scene</span></h2><article class="cell" id="frame-03" data-scene="fatality-rate" data-comment-target>
+  <div class="frame"><svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A ruined factory with a stamp reading FATALITY RATE 100%, beside a calendar stopped at 9,000,000,000 YEARS."><rect width="1920" height="1080" fill="#061D3E"/><g transform="translate(280,360)"><rect x="40" y="80" width="400" height="220" fill="#273049" stroke="#112845" stroke-width="8" transform="rotate(-6 240 190)"/><rect x="80" y="20" width="300" height="70" fill="#112845" transform="rotate(-18 230 50)"/><g transform="rotate(-8 360 200)"><rect x="60" y="140" width="560" height="110" fill="#F3ECD0" stroke="#C8452E" stroke-width="8"/><text x="340" y="212" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="36" letter-spacing="1.44" fill="#C8452E" >FATALITY RATE 100%</text></g></g><rect x="1100" y="300" width="520" height="420" rx="8" fill="#F3ECD0" stroke="#112845" stroke-width="8"/><text x="1360" y="380" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="32" letter-spacing="1.28" fill="#112845" >ON THE JOB</text><text x="1363.2" y="564.48" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="64" fill="#0B1A33">9,000,000,000</text><text x="1360" y="560" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="64" fill="#C8452E" stroke="#F3ECD0" stroke-width="5.76" stroke-linejoin="round" style="paint-order:stroke">9,000,000,000</text><text x="1360" y="640" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="36" letter-spacing="1.44" fill="#112845" >YEARS</text><defs><pattern id="f03-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="0.9" fill="#000" opacity="0.1"/><circle cx="6.5" cy="7" r="0.8" fill="#FFF" opacity="0.12"/><circle cx="7" cy="1.5" r="0.6" fill="#000" opacity="0.08"/></pattern></defs><rect width="1920" height="1080" fill="url(#f03-grain)" pointer-events="none"/></svg></div>
+  <div class="meta"><span class="name">03 · fatality-rate</span><span class="when">B · 2:53.5–3:00.8</span></div>
+  <p class="note"><strong>First:</strong> &quot;fatality&quot; → a rubber stamp hangs over the wreck. <span class="shows">Drawn: the ruined factory with a stamp FATALITY RATE 100%, and a calendar reading 9,000,000,000 YEARS.</span></p>
+  <div class="foot"><span class="chip" title="Transition into this scene">cut</span></div>
+  <details><summary>Narration and moves</summary>
+    <p class="vo">&quot;workplace fatality rate is 100%. This went on for about 9 billion years.&quot;</p>
+    <p><strong>Moves:</strong> &quot;fatality&quot; → a rubber stamp hangs over the wreck. &quot;100%.&quot; → the stamp slams down: FATALITY RATE 100%. &quot;9&quot; → a wall calendar flips. after &quot;years.&quot; → it stops on 9,000,000,000 YEARS. The wreck has not been cleaned up. The stamp is still on it.</p>
+    <p>Sound: a slam on &quot;100%.&quot;</p><p>On screen: &quot;FATALITY RATE 100%&quot;, &quot;9,000,000,000 YEARS&quot;. No: no funeral and no second factory. Why: the job posting and the length of the posting are the same picture.</p>
+  </details>
+</article>
+</main>
+<section class="closing">
+  <div class="panel"><h2>Transitions</h2><ul class="seams"><li><span class="seam-name">low-expectations</span><span class="seam-chip">cut</span></li><li><span class="seam-name">called-stars</span><span class="seam-chip">cut</span></li><li><span class="seam-name">fatality-rate</span><span class="seam-chip end">cut to Everything Went Wrong</span></li></ul></div>
+  <div class="panel"><h2>Tokens and bans</h2>
+    <ul class="swatches"><li><i style="background:#86AD6E"></i>Money green <code>#86AD6E</code></li><li><i style="background:#3B6644"></i>Money seal <code>#3B6644</code></li><li><i style="background:#C8452E"></i>Stamp red <code>#C8452E</code></li><li><i style="background:#2F8F86"></i>Medicine teal <code>#2F8F86</code></li><li><i style="background:#F3ECD0"></i>Engraving paper <code>#F3ECD0</code></li><li><i style="background:#112845"></i>Line <code>#112845</code></li><li><i style="background:#E5903B"></i>Mustard <code>#E5903B</code></li><li><i style="background:#E8B04A"></i>Yellow <code>#E8B04A</code></li><li><i style="background:#112845"></i>Navy <code>#112845</code></li></ul>
+    <div class="types">
+      <p><span style="font-family:var(--display);font-weight:900;font-size:22px">Fraunces Black</span> big numbers and titles</p>
+      <p><span style="font-family:var(--label);font-weight:600;font-size:18px;text-transform:uppercase;letter-spacing:.04em">Oswald SemiBold</span> labels and signs</p>
+      <p><span style="font-weight:700;font-size:17px">Inter</span> captions and form text</p>
+    </div>
+    <ul class="bans"><li>No lecture diagram with arrows between a star and a label.</li><li>No second joke in fatality-rate. The stamp is the joke, and the calendar repeats it.</li></ul>
+  </div>
+</section>
+</div>
+
+
+</body>
+</html>

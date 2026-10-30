@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<title>Part 4: Meat Taxi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+@font-face{font-family:"Fraunces";src:url("../assets/fonts/Fraunces-Black-Soft.woff2") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:"Oswald";src:url("../assets/fonts/Oswald-SemiBold.woff2") format("woff2");font-weight:600;font-display:block}
+@font-face{font-family:"Inter";src:url("../assets/fonts/Inter-Variable.woff2") format("woff2");font-weight:100 900;font-display:block}
+/* Layout: a contact sheet, three 16:9 frames across, grouped under act bars. */
+:root{
+  --bg:#E8E6EE; --surface:#F7F6FA; --fg:#1A1426; --muted:#5D5872; --rule:#CFCBDA; --accent:#C7361F; --chip:#E0DDEA;
+  --display:"Fraunces", Georgia, serif; --label:"Oswald", "Arial Narrow", sans-serif; --body:"Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#13111B;--surface:#1D1A27;--fg:#EEEAF6;--muted:#A6A0B9;--rule:#34304A;--accent:#F08A24;--chip:#2A2638;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13111B;--surface:#1D1A27;--fg:#EEEAF6;--muted:#A6A0B9;--rule:#34304A;--accent:#F08A24;--chip:#2A2638;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;margin:0}
+.wrap{max-width:1560px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+header{display:grid;gap:12px;margin-bottom:28px;max-width:980px}
+.kicker{font-family:var(--label);text-transform:uppercase;letter-spacing:.08em;font-size:14px;color:var(--muted);margin:0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(34px,5vw,60px);line-height:1;margin:0;text-wrap:balance}
+h1 .ver{font-family:var(--label);font-weight:600;font-size:.32em;letter-spacing:.06em;vertical-align:middle;color:var(--surface);background:var(--accent);border-radius:4px;padding:3px 8px;margin-left:10px}
+.dek{margin:0;max-width:68ch;color:var(--fg)}
+.tag{font-family:var(--label);letter-spacing:.05em;font-size:14px;color:var(--muted);margin:0;font-variant-numeric:tabular-nums}
+.decided{margin:4px 0 0;padding:14px 18px;background:var(--surface);border:1px solid var(--rule);border-radius:8px}
+.decided h2{font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin:0 0 6px;color:var(--muted)}
+.decided ol,.decided ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.how{margin:0;color:var(--muted);max-width:72ch}
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:22px 20px}
+.act{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:18px 0 -6px;padding-bottom:6px;border-bottom:2px solid var(--fg);font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:18px}
+.act-count{font-size:13px;color:var(--muted)}
+.cell{display:grid;gap:8px;align-content:start;min-width:0}
+.frame{aspect-ratio:16/9;max-width:100%;border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px var(--rule),0 6px 18px rgba(16,12,30,.18);background:#000}
+.frame svg{display:block;width:100%;height:100%}
+.meta{display:flex;justify-content:space-between;gap:8px;font-family:var(--label);letter-spacing:.04em;font-size:15px;font-variant-numeric:tabular-nums}
+.meta .name{font-weight:600}
+.meta .when{color:var(--muted);white-space:nowrap}
+.note{margin:0;font-size:14px}
+.shows{display:block;color:var(--muted);margin-top:2px}
+.foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font-family:var(--label);font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;background:var(--chip);border-radius:999px;padding:3px 10px;color:var(--fg)}
+.comment{display:none;font:600 13px var(--body);color:var(--fg);background:transparent;border:1.5px solid var(--fg);border-radius:999px;padding:4px 12px;cursor:pointer;margin-left:auto}
+.can-comment .comment{display:inline-block}
+.comment:hover{background:var(--fg);color:var(--surface)}
+.comment:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+details{font-size:14px;border-top:1px solid var(--rule);padding-top:6px}
+summary{cursor:pointer;font-family:var(--label);letter-spacing:.04em;text-transform:uppercase;font-size:13px;color:var(--muted)}
+details p{margin:8px 0 0;max-width:70ch}
+.vo{font-style:italic}
+code{font-size:.92em}
+.closing{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:20px;margin-top:36px}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;min-width:0}
+.panel h2{font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:16px;margin:0 0 12px}
+.seams{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center}
+.seams li{display:flex;align-items:center;gap:4px}
+.seam-name{font-family:var(--label);font-size:14px}
+.seam-chip{font-size:12px;color:var(--muted);border:1px dashed var(--rule);border-radius:999px;padding:1px 8px}
+.seam-chip.end{border-style:solid}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:0 0 14px;padding:0;list-style:none}
+.swatches li{display:flex;align-items:center;gap:8px;font-size:13px}
+.swatches i{width:26px;height:26px;border-radius:4px;box-shadow:0 0 0 1px var(--rule);flex:none}
+.types{display:grid;gap:6px;margin:0 0 14px}
+.types p{margin:0}
+.bans{margin:0;padding-left:18px;display:grid;gap:3px;font-size:14px}
+.pairs{display:grid;gap:34px}
+.pair{border-top:2px solid var(--fg);padding-top:10px}
+.sides{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.sides figure{margin:0;display:grid;gap:6px;min-width:0}
+.sides figcaption{font-family:var(--label);text-transform:uppercase;letter-spacing:.05em;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+
+
+</defs></svg>
+<div class="wrap">
+<header>
+  <p class="kicker">Genetic Slavery · paperback MP3 2</p>
+  <h1>Part 4: Meat Taxi<span class="ver">v1</span></h1>
+  <p class="dek">A molecule looks up from the work and asks about a meeting. The answer is a taxi. Chemistry is driving.</p>
+  <p class="tag">1920 × 1080 · 0:48.5 · 3 scenes · audio genetic-slavery.680f0446.mp3, 04:02.0 to 04:50.5</p>
+  
+  <div class="decided"><h2>Decided</h2><ol><li>The molecule asks the question in a speech balloon. The stars do not answer. A smaller balloon answers.</li><li>The taxi's roof sign says MEAT. The driver is a flask. The passenger is the person.</li><li>The renovation is a cutaway: three floors, and the old pipes still run through the new room.</li></ol></div>
+  <p class="how">Each frame is the scene's key moment, drawn with the production art: placement, words and look. Nothing moves yet. Scenes are named; use the name in feedback.</p>
+</header>
+<main class="sheet">
+<h2 class="act"><span>The question</span><span class="act-count">1 scene</span></h2><article class="cell" id="frame-01" data-scene="anxious-meeting" data-comment-target>
+  <div class="frame"><svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A hydrogen atom in an office chair looking up at the stars, asking why it is anxious about a meeting tomorrow. A smaller balloon answers that anxiety copied better."><rect width="1920" height="1080" fill="#061D3E"/><circle cx="200" cy="120" r="6" fill="#F3ECD0"/><circle cx="420" cy="80" r="4" fill="#F3ECD0"/><circle cx="700" cy="140" r="5" fill="#F3ECD0"/><rect x="620" y="640" width="200" height="40" fill="#B47E52"/><rect x="680" y="560" width="80" height="90" fill="#112845"/><circle cx="760" cy="500" r="70" fill="#E8B04A" stroke="#112845" stroke-width="8"/><text x="760" y="512" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="40" letter-spacing="1.6" fill="#112845" >H</text><rect x="860" y="220" width="900" height="220" rx="28" fill="#F3ECD0" stroke="#112845" stroke-width="6"/><text x="1310" y="320" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="32" letter-spacing="1.28" fill="#112845" >WHY AM I ANXIOUS ABOUT</text><text x="1310" y="380" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="32" letter-spacing="1.28" fill="#112845" >A MEETING TOMORROW?</text><rect x="1040" y="470" width="560" height="90" rx="16" fill="#F3ECD0" stroke="#112845" stroke-width="6"/><text x="1320" y="528" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="28" letter-spacing="1.12" fill="#112845" >ANXIETY COPIED BETTER</text><defs><pattern id="f01-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="0.9" fill="#000" opacity="0.1"/><circle cx="6.5" cy="7" r="0.8" fill="#FFF" opacity="0.12"/><circle cx="7" cy="1.5" r="0.6" fill="#000" opacity="0.08"/></pattern></defs><rect width="1920" height="1080" fill="url(#f01-grain)" pointer-events="none"/></svg></div>
+  <div class="meta"><span class="name">01 · anxious-meeting</span><span class="when">B · 4:02.0–4:38.5</span></div>
+  <p class="note"><strong>First:</strong> &quot;complicated,&quot; → the molecule is bigger, in a small chair. <span class="shows">Drawn: a molecule in an office chair looking up, balloon &quot;WHY AM I ANXIOUS ABOUT A MEETING TOMORROW?&quot;.</span></p>
+  <div class="foot"><span class="chip" title="Transition into this scene">cut</span></div>
+  <details><summary>Narration and moves</summary>
+    <p class="vo">&quot;can see that the molecules competing with other copying molecules eventually produced a copying molecule so complicated, it could look up at the stars that made it and ask, why am I anxious about a meeting tomorrow? The answer is, because anxiety made your ancestors copy more effectively than calm did. You are a temporary vehicle that copying molecules built to make more copying molecules. And the vehicle has become sentient enough to realize this. Which is either the most beautiful or the most horrifying thing in the universe, depending on how you feel about being a&quot;</p>
+    <p><strong>Moves:</strong> &quot;complicated,&quot; → the molecule is bigger, in a small chair. &quot;stars&quot; → three dots appear above it. &quot;ask,&quot; → it looks up. &quot;tomorrow?&quot; → the balloon: WHY AM I ANXIOUS ABOUT A MEETING TOMORROW? &quot;answer&quot; → a smaller balloon, from offscreen, starts. &quot;calm&quot; → the small balloon finishes: ANXIETY COPIED BETTER. The molecule does not look comforted.</p>
+    <p>Sound: a squeak on &quot;tomorrow?&quot;</p><p>On screen: the question balloon and &quot;ANXIETY COPIED BETTER&quot;. No: no calendar that says MONDAY. Why: the meeting is funnier as a balloon than as a schedule.</p>
+  </details>
+</article>
+<h2 class="act"><span>The taxi</span><span class="act-count">1 scene</span></h2><article class="cell" id="frame-02" data-scene="meat-taxi" data-comment-target>
+  <div class="frame"><svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A taxi with MEAT on the roof sign, a flask in the driver's seat, and a person in the back."><rect width="1920" height="1080" fill="#061D3E"/><rect y="860" width="1920" height="220" fill="#B47E52"/><g transform="translate(480,560)"><rect x="0" y="80" width="720" height="220" rx="20" fill="#E8B04A" stroke="#112845" stroke-width="8"/><rect x="60" y="110" width="200" height="90" fill="#5C6F8E" stroke="#112845" stroke-width="6"/><rect x="300" y="110" width="200" height="90" fill="#5C6F8E" stroke="#112845" stroke-width="6"/><circle cx="160" cy="300" r="40" fill="#112845"/><circle cx="560" cy="300" r="40" fill="#112845"/><rect x="250" y="-70" width="220" height="70" rx="8" fill="#112845"/><text x="360" y="-22" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="36" letter-spacing="1.44" fill="#F3ECD0" >MEAT</text></g><g transform="translate(640,760)"><rect x="-28" y="-80" width="56" height="70" rx="8" fill="#2F8F86" stroke="#112845" stroke-width="4"/><rect x="-8" y="-96" width="16" height="20" fill="#F3ECD0" stroke="#112845" stroke-width="3"/></g><g transform="translate(900,700) scale(0.55)"><g class="person"><g class="leg-l"><path d="M-12.4,30.8 L-14.7,65.2 L-15.2,97.7 L-8.2,97.9 L-6.3,65.8 L-1.4,32.0 Z" fill="#112845" stroke="#112845" stroke-width="4.4" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-12.4,30.8 L-14.7,65.2 L-15.2,97.7 L-8.2,97.9 L-6.3,65.8 L-1.4,32.0 Z" fill="#B47E52"/><path d="M-5.9,96.3 L-15.1,95.8 L-27.8,102.3 L-26.6,104.3 L-5.9,104.3 Z" fill="#112845" stroke="#112845" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-5.9,96.3 L-15.1,95.8 L-27.8,102.3 L-26.6,104.3 L-5.9,104.3 Z" fill="#112845"/></g><g class="leg-r"><path d="M1.4,32.0 L6.3,65.8 L8.2,97.9 L15.2,97.7 L14.7,65.2 L12.4,30.8 Z" fill="#112845" stroke="#112845" stroke-width="4.4" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M1.4,32.0 L6.3,65.8 L8.2,97.9 L15.2,97.7 L14.7,65.2 L12.4,30.8 Z" fill="#B47E52"/><path d="M17.4,96.3 L8.2,95.8 L-4.4,102.3 L-3.3,104.3 L17.4,104.3 Z" fill="#112845" stroke="#112845" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M17.4,96.3 L8.2,95.8 L-4.4,102.3 L-3.3,104.3 L17.4,104.3 Z" fill="#112845"/></g><g transform="rotate(0.0 0 31.4)"><path d="M-5.8,-32.1 L2.3,-30.2 L5.5,-19.4 L-5.5,-19.4 Z" fill="#112845" stroke="#112845" stroke-width="3.6" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-5.8,-32.1 L2.3,-30.2 L5.5,-19.4 L-5.5,-19.4 Z" fill="#A87B57"/><path d="M-28.7,-16.4 L-21.0,-23.4 L21.0,-23.4 L28.7,-16.4 L34.4,5.6 L28.7,29.4 L-28.7,29.4 L-34.4,5.6 Z" fill="#112845" stroke="#112845" stroke-width="4.4" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-28.7,-16.4 L-21.0,-23.4 L21.0,-23.4 L28.7,-16.4 L34.4,5.6 L28.7,29.4 L-28.7,29.4 L-34.4,5.6 Z" fill="#FBF6E6"/><defs><pattern id="kit-hd1d" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="#112845"/></pattern><clipPath id="kit-hd1c"><path d="M-28.7,-16.4 L-21.0,-23.4 L21.0,-23.4 L28.7,-16.4 L34.4,5.6 L28.7,29.4 L-28.7,29.4 L-34.4,5.6 Z"/></clipPath></defs><rect x="11.5" y="-240" width="200" height="400" fill="url(#kit-hd1d)" opacity="0.22" clip-path="url(#kit-hd1c)"/><path d="M-6,-23.36642069574865 L0,-13.366420695748651 L6,-23.36642069574865 Z" fill="#A87B57"/><path d="M-1.0,-14.4 L-9.0,-23.9 L-10.5,-15.4 Z" fill="#112845" stroke="#112845" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M1.0,-14.4 L9.0,-23.9 L10.5,-15.4 Z" fill="#112845" stroke="#112845" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-1.0,-14.4 L-9.0,-23.9 L-10.5,-15.4 Z" fill="#FBF6E6"/><path d="M1.0,-14.4 L9.0,-23.9 L10.5,-15.4 Z" fill="#FBF6E6"/><path d="M-15.0,-4.4 L15.0,-4.4 L17.0,33.4 L-17.0,33.4 Z" fill="#112845" stroke="#112845" stroke-width="3.6" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-15.0,-4.4 L15.0,-4.4 L17.0,33.4 L-17.0,33.4 Z" fill="#B47E52"/><path d="M-13,-4.366420695748651 L-19.125051685795185,-21.36642069574865 M13,-4.366420695748651 L19.125051685795185,-21.36642069574865" fill="none" stroke="#B47E52" stroke-width="4.5" stroke-linejoin="miter" stroke-linecap="round"/><rect x="-14" y="-3.3664206957486513" width="4" height="4" fill="#E8B04A"/><rect x="10" y="-3.3664206957486513" width="4" height="4" fill="#E8B04A"/><circle class="chest-light" cx="-14.0" cy="-12.4" r="4.5" fill="#E9E1CC" stroke="#112845" stroke-width="2"/><g class="head"><g transform="translate(-2,-45.5) scale(-0.960,0.960)"><path d="M-15.0,-14.0 L-9.0,-22.0 L4.0,-23.0 L13.0,-17.0 L15.0,-8.0 L25.9,-1.0 L26.9,5.0 L19.0,8.0 L21.0,15.0 L17.0,22.0 L7.0,26.5 L-8.0,25.5 L-18.0,18.0 L-20.0,6.0 L-17.0,-4.0 Z" fill="#112845" stroke="#112845" stroke-width="4.4" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-15.0,-14.0 L-9.0,-22.0 L4.0,-23.0 L13.0,-17.0 L15.0,-8.0 L25.9,-1.0 L26.9,5.0 L19.0,8.0 L21.0,15.0 L17.0,22.0 L7.0,26.5 L-8.0,25.5 L-18.0,18.0 L-20.0,6.0 L-17.0,-4.0 Z" fill="#A87B57"/><path d="M-12.0,-3.0 L-17.5,-2.0 L-18.0,6.0 L-12.0,8.0 Z" fill="#A87B57" stroke="#112845" stroke-width="2" stroke-linejoin="miter"/><path d="M-10.0,20.0 Q3.0,25.0 15.0,18.0" fill="none" stroke="#112845" stroke-width="1.6" stroke-linejoin="miter" stroke-linecap="round"/><path d="M17.0,11.0 Q20.0,14.0 17.0,18.0" fill="none" stroke="#112845" stroke-width="1.4" stroke-linejoin="miter" stroke-linecap="round"/><path d="M-16.0,4.0 L-18.0,-8.0 L-14.0,-20.0 L-4.0,-27.0 L10.0,-28.5 L21.0,-22.0 L16.0,-18.5 L13.0,-14.5 L4.0,-15.5 L-6.0,-13.0 L-9.0,-7.0 L-10.0,3.0 L-13.0,4.0 Z" fill="#112845" stroke="#112845" stroke-width="1.6" stroke-linejoin="miter"/><g class="eye"><path d="M-8.7,-4.0 Q-2.5,-10.3 3.7,-4.4 Q-2.5,0.1 -8.7,-4.0 Z" fill="#FBF6E6" stroke="#112845" stroke-width="1"/><circle class="pupil" cx="-0.9" cy="-4.3" r="2" fill="#112845"/><path d="M-9.5,-3.6 Q-2.5,-10.9 4.3,-4.6" fill="none" stroke="#112845" stroke-width="1.9" stroke-linecap="round"/></g><g class="eye"><path d="M6.2,-4.0 Q10.8,-9.8 15.4,-4.4 Q10.8,-0.3 6.2,-4.0 Z" fill="#FBF6E6" stroke="#112845" stroke-width="1"/><circle class="pupil" cx="11.9" cy="-4.3" r="2" fill="#112845"/><path d="M5.4,-3.6 Q10.8,-10.4 16.0,-4.6" fill="none" stroke="#112845" stroke-width="1.9" stroke-linecap="round"/></g><path class="brows" d="M-9.5,-11.5 L-3.2,-13.0 L4.5,-15.0 M5.4,-15.0 L10.3,-14.0 L16.2,-11.5" fill="none" stroke="#112845" stroke-width="2.6" stroke-linejoin="miter"/><path class="mouth" d="M0.0,15.5 Q7.0,10.5 14.0,14.5" fill="none" stroke="#112845" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="miter"/><path d="M-16,-17 L-13,-36 L-2,-32 L7,-38 L18,-32 L19,-17 Z" fill="#24304D" stroke="#112845" stroke-width="2.2" stroke-linejoin="miter"/><path d="M-16,-22 H19" stroke="#E5903B" stroke-width="3"/><path d="M-29,-20 L-17,-19 H23 L39,-10 L21,-14 H-19 Z" fill="#24304D" stroke="#112845" stroke-width="2.2" stroke-linejoin="miter"/><!--face-end--></g><!--head-end--></g><g class="arm-l"><path d="M-32.9,-12.8 L-26.4,10.8 L-23.7,35.1 L-7.9,32.4 L-13.8,7.4 L-24.5,-15.9 Z" fill="#112845" stroke="#112845" stroke-width="3.6" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-32.9,-12.8 L-26.4,10.8 L-23.7,35.1 L-7.9,32.4 L-13.8,7.4 L-24.5,-15.9 Z" fill="#A87B57"/><path d="M-35.0,-12.1 L-28.2,4.6 L-16.9,0.5 L-22.3,-16.7 Z" fill="#112845" stroke="#112845" stroke-width="4.4" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-35.0,-12.1 L-28.2,4.6 L-16.9,0.5 L-22.3,-16.7 Z" fill="#FBF6E6"/><g transform="translate(-15.8,33.7) rotate(-10.0) scale(1.15,1.15)"><path d="M-2.6,-1.0 L2.6,-1.0 L4.0,6.0 L2.2,11.5 L-1.2,12.0 L-3.6,7.5 Z" fill="#112845" stroke="#112845" stroke-width="2.608695652173913" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M2.4,1.5 L7.0,5.5 L3.4,7.0 Z" fill="#112845" stroke="#112845" stroke-width="2.608695652173913" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-2.6,-1.0 L2.6,-1.0 L4.0,6.0 L2.2,11.5 L-1.2,12.0 L-3.6,7.5 Z" fill="#A87B57"/><path d="M2.4,1.5 L7.0,5.5 L3.4,7.0 Z" fill="#A87B57"/></g></g><g class="arm-r"><path d="M24.5,-15.9 L13.8,7.4 L7.9,32.4 L23.7,35.1 L26.4,10.8 L32.9,-12.8 Z" fill="#112845" stroke="#112845" stroke-width="3.6" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M24.5,-15.9 L13.8,7.4 L7.9,32.4 L23.7,35.1 L26.4,10.8 L32.9,-12.8 Z" fill="#A87B57"/><path d="M22.3,-16.7 L16.9,0.5 L28.2,4.6 L35.0,-12.1 Z" fill="#112845" stroke="#112845" stroke-width="4.4" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M22.3,-16.7 L16.9,0.5 L28.2,4.6 L35.0,-12.1 Z" fill="#FBF6E6"/><g transform="translate(15.8,33.7) rotate(10.0) scale(-1.15,1.15)"><path d="M-2.6,-1.0 L2.6,-1.0 L4.0,6.0 L2.2,11.5 L-1.2,12.0 L-3.6,7.5 Z" fill="#112845" stroke="#112845" stroke-width="2.608695652173913" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M2.4,1.5 L7.0,5.5 L3.4,7.0 Z" fill="#112845" stroke="#112845" stroke-width="2.608695652173913" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="M-2.6,-1.0 L2.6,-1.0 L4.0,6.0 L2.2,11.5 L-1.2,12.0 L-3.6,7.5 Z" fill="#A87B57"/><path d="M2.4,1.5 L7.0,5.5 L3.4,7.0 Z" fill="#A87B57"/></g></g></g></g></g><defs><pattern id="f02-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="0.9" fill="#000" opacity="0.1"/><circle cx="6.5" cy="7" r="0.8" fill="#FFF" opacity="0.12"/><circle cx="7" cy="1.5" r="0.6" fill="#000" opacity="0.08"/></pattern></defs><rect width="1920" height="1080" fill="url(#f02-grain)" pointer-events="none"/></svg></div>
+  <div class="meta"><span class="name">02 · meat-taxi</span><span class="when">B · 4:38.5–4:45.6</span></div>
+  <p class="note"><strong>First:</strong> &quot;vehicle&quot; → an empty taxi rolls in. <span class="shows">Drawn: a taxi, roof sign MEAT, a flask in the driver's seat, a person in the back.</span></p>
+  <div class="foot"><span class="chip" title="Transition into this scene">cut</span></div>
+  <details><summary>Narration and moves</summary>
+    <p class="vo">&quot;meat taxi for chemistry. But the vehicle wasn't built all at once. It was built in layers, like a&quot;</p>
+    <p><strong>Moves:</strong> &quot;vehicle&quot; → an empty taxi rolls in. &quot;molecules&quot; (the second one, &quot;more copying molecules&quot;) → a flask climbs into the driver's seat. &quot;realize&quot; → the person in the back sits up, finally looking at the driver. &quot;chemistry.&quot; → the roof sign lights: MEAT. after &quot;chemistry.&quot; → the person is still looking. The flask is not.</p>
+    <p>Sound: a car horn, short, on &quot;chemistry.&quot;</p><p>On screen: &quot;MEAT&quot;. No: no fare on the meter. Why: the sign is the job description.</p>
+  </details>
+</article>
+<h2 class="act"><span>The renovation</span><span class="act-count">1 scene</span></h2><article class="cell" id="frame-03" data-scene="bad-renovation" data-comment-target>
+  <div class="frame"><svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A three-story building cut open. The pipes from the first floor run straight up through the rooms above."><rect width="1920" height="1080" fill="#061D3E"/><rect x="560" y="640" width="800" height="200" fill="#B47E52" stroke="#112845" stroke-width="8"/><text x="620" y="690" text-anchor="start" font-family="Oswald" font-weight="600" font-size="32" letter-spacing="1.28" fill="#112845" >1</text><rect x="560" y="440" width="800" height="200" fill="#F3ECD0" stroke="#112845" stroke-width="8"/><text x="620" y="490" text-anchor="start" font-family="Oswald" font-weight="600" font-size="32" letter-spacing="1.28" fill="#112845" >2</text><rect x="560" y="240" width="800" height="200" fill="#E8B04A" stroke="#112845" stroke-width="8"/><text x="620" y="290" text-anchor="start" font-family="Oswald" font-weight="600" font-size="32" letter-spacing="1.28" fill="#112845" >3</text><path d="M700,840 V280 M900,840 V360 M1100,840 V300" fill="none" stroke="#C8452E" stroke-width="14" stroke-linecap="round"/><defs><pattern id="f03-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="0.9" fill="#000" opacity="0.1"/><circle cx="6.5" cy="7" r="0.8" fill="#FFF" opacity="0.12"/><circle cx="7" cy="1.5" r="0.6" fill="#000" opacity="0.08"/></pattern></defs><rect width="1920" height="1080" fill="url(#f03-grain)" pointer-events="none"/></svg></div>
+  <div class="meta"><span class="name">03 · bad-renovation</span><span class="when">B · 4:45.6–4:50.5</span></div>
+  <p class="note"><strong>First:</strong> &quot;layers,&quot; → the building is one floor. <span class="shows">Drawn: a cutaway of three floors, old pipes running straight through the new room.</span></p>
+  <div class="foot"><span class="chip" title="Transition into this scene">cut</span></div>
+  <details><summary>Narration and moves</summary>
+    <p class="vo">&quot;bad renovation, where nobody removed the previous tenets plumbing.&quot;</p>
+    <p><strong>Moves:</strong> &quot;layers,&quot; → the building is one floor. &quot;renovation,&quot; → a second floor is hammered on, then a third. &quot;plumbing.&quot; → the pipes from the first floor punch up through the furniture of the third. They do not get rerouted. The top floor's lamp is plumbed into the bottom floor's pipe.</p>
+    <p>Sound: a hammer on &quot;renovation.&quot; A clank on &quot;plumbing.&quot;</p><p>On screen: no words, unless a tiny &quot;1&quot;, &quot;2&quot;, &quot;3&quot; on the floors. No: no sign that says BRAIN. The next part names the tenants. Why: this scene only has to show that nobody removed the previous work.</p>
+  </details>
+</article>
+</main>
+<section class="closing">
+  <div class="panel"><h2>Transitions</h2><ul class="seams"><li><span class="seam-name">anxious-meeting</span><span class="seam-chip">cut</span></li><li><span class="seam-name">meat-taxi</span><span class="seam-chip">cut</span></li><li><span class="seam-name">bad-renovation</span><span class="seam-chip end">cut to Three Brains</span></li></ul></div>
+  <div class="panel"><h2>Tokens and bans</h2>
+    <ul class="swatches"><li><i style="background:#86AD6E"></i>Money green <code>#86AD6E</code></li><li><i style="background:#3B6644"></i>Money seal <code>#3B6644</code></li><li><i style="background:#C8452E"></i>Stamp red <code>#C8452E</code></li><li><i style="background:#2F8F86"></i>Medicine teal <code>#2F8F86</code></li><li><i style="background:#F3ECD0"></i>Engraving paper <code>#F3ECD0</code></li><li><i style="background:#112845"></i>Line <code>#112845</code></li><li><i style="background:#E5903B"></i>Mustard <code>#E5903B</code></li><li><i style="background:#E8B04A"></i>Yellow <code>#E8B04A</code></li><li><i style="background:#112845"></i>Navy <code>#112845</code></li></ul>
+    <div class="types">
+      <p><span style="font-family:var(--display);font-weight:900;font-size:22px">Fraunces Black</span> big numbers and titles</p>
+      <p><span style="font-family:var(--label);font-weight:600;font-size:18px;text-transform:uppercase;letter-spacing:.04em">Oswald SemiBold</span> labels and signs</p>
+      <p><span style="font-weight:700;font-size:17px">Inter</span> captions and form text</p>
+    </div>
+    <ul class="bans"><li>No diagram of a cell with labels on the organelles.</li><li>The taxi is the explanation. Do not also print the sentence &quot;you are a meat taxi&quot; under it.</li></ul>
+  </div>
+</section>
+</div>
+
+
+</body>
+</html>

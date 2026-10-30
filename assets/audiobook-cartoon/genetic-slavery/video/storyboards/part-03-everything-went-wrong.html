@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<title>Part 3: Everything Went Wrong</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+@font-face{font-family:"Fraunces";src:url("../assets/fonts/Fraunces-Black-Soft.woff2") format("woff2");font-weight:900;font-display:block}
+@font-face{font-family:"Oswald";src:url("../assets/fonts/Oswald-SemiBold.woff2") format("woff2");font-weight:600;font-display:block}
+@font-face{font-family:"Inter";src:url("../assets/fonts/Inter-Variable.woff2") format("woff2");font-weight:100 900;font-display:block}
+/* Layout: a contact sheet, three 16:9 frames across, grouped under act bars. */
+:root{
+  --bg:#E8E6EE; --surface:#F7F6FA; --fg:#1A1426; --muted:#5D5872; --rule:#CFCBDA; --accent:#C7361F; --chip:#E0DDEA;
+  --display:"Fraunces", Georgia, serif; --label:"Oswald", "Arial Narrow", sans-serif; --body:"Inter", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#13111B;--surface:#1D1A27;--fg:#EEEAF6;--muted:#A6A0B9;--rule:#34304A;--accent:#F08A24;--chip:#2A2638;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13111B;--surface:#1D1A27;--fg:#EEEAF6;--muted:#A6A0B9;--rule:#34304A;--accent:#F08A24;--chip:#2A2638;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5;margin:0}
+.wrap{max-width:1560px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+header{display:grid;gap:12px;margin-bottom:28px;max-width:980px}
+.kicker{font-family:var(--label);text-transform:uppercase;letter-spacing:.08em;font-size:14px;color:var(--muted);margin:0}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(34px,5vw,60px);line-height:1;margin:0;text-wrap:balance}
+h1 .ver{font-family:var(--label);font-weight:600;font-size:.32em;letter-spacing:.06em;vertical-align:middle;color:var(--surface);background:var(--accent);border-radius:4px;padding:3px 8px;margin-left:10px}
+.dek{margin:0;max-width:68ch;color:var(--fg)}
+.tag{font-family:var(--label);letter-spacing:.05em;font-size:14px;color:var(--muted);margin:0;font-variant-numeric:tabular-nums}
+.decided{margin:4px 0 0;padding:14px 18px;background:var(--surface);border:1px solid var(--rule);border-radius:8px}
+.decided h2{font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:14px;margin:0 0 6px;color:var(--muted)}
+.decided ol,.decided ul{margin:0;padding-left:20px;display:grid;gap:4px}
+.how{margin:0;color:var(--muted);max-width:72ch}
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,400px),1fr));gap:22px 20px}
+.act{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin:18px 0 -6px;padding-bottom:6px;border-bottom:2px solid var(--fg);font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:18px}
+.act-count{font-size:13px;color:var(--muted)}
+.cell{display:grid;gap:8px;align-content:start;min-width:0}
+.frame{aspect-ratio:16/9;max-width:100%;border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px var(--rule),0 6px 18px rgba(16,12,30,.18);background:#000}
+.frame svg{display:block;width:100%;height:100%}
+.meta{display:flex;justify-content:space-between;gap:8px;font-family:var(--label);letter-spacing:.04em;font-size:15px;font-variant-numeric:tabular-nums}
+.meta .name{font-weight:600}
+.meta .when{color:var(--muted);white-space:nowrap}
+.note{margin:0;font-size:14px}
+.shows{display:block;color:var(--muted);margin-top:2px}
+.foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font-family:var(--label);font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;background:var(--chip);border-radius:999px;padding:3px 10px;color:var(--fg)}
+.comment{display:none;font:600 13px var(--body);color:var(--fg);background:transparent;border:1.5px solid var(--fg);border-radius:999px;padding:4px 12px;cursor:pointer;margin-left:auto}
+.can-comment .comment{display:inline-block}
+.comment:hover{background:var(--fg);color:var(--surface)}
+.comment:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+details{font-size:14px;border-top:1px solid var(--rule);padding-top:6px}
+summary{cursor:pointer;font-family:var(--label);letter-spacing:.04em;text-transform:uppercase;font-size:13px;color:var(--muted)}
+details p{margin:8px 0 0;max-width:70ch}
+.vo{font-style:italic}
+code{font-size:.92em}
+.closing{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:20px;margin-top:36px}
+.panel{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:18px 20px;min-width:0}
+.panel h2{font-family:var(--label);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:16px;margin:0 0 12px}
+.seams{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 4px;align-items:center}
+.seams li{display:flex;align-items:center;gap:4px}
+.seam-name{font-family:var(--label);font-size:14px}
+.seam-chip{font-size:12px;color:var(--muted);border:1px dashed var(--rule);border-radius:999px;padding:1px 8px}
+.seam-chip.end{border-style:solid}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:0 0 14px;padding:0;list-style:none}
+.swatches li{display:flex;align-items:center;gap:8px;font-size:13px}
+.swatches i{width:26px;height:26px;border-radius:4px;box-shadow:0 0 0 1px var(--rule);flex:none}
+.types{display:grid;gap:6px;margin:0 0 14px}
+.types p{margin:0}
+.bans{margin:0;padding-left:18px;display:grid;gap:3px;font-size:14px}
+.pairs{display:grid;gap:34px}
+.pair{border-top:2px solid var(--fg);padding-top:10px}
+.sides{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.sides figure{margin:0;display:grid;gap:6px;min-width:0}
+.sides figcaption{font-family:var(--label);text-transform:uppercase;letter-spacing:.05em;font-size:14px;color:var(--muted)}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+
+
+</defs></svg>
+<div class="wrap">
+<header>
+  <p class="kicker">Genetic Slavery · paperback MP3 2</p>
+  <h1>Part 3: Everything Went Wrong<span class="ver">v1</span></h1>
+  <p class="dek">On a rock named Dirt, carbon learns to copy itself, and the rest of your civilization is a footnote under that sentence.</p>
+  <p class="tag">1920 × 1080 · 1:01.2 · 4 scenes · audio genetic-slavery.680f0446.mp3, 03:00.8 to 04:02.0</p>
+  
+  <div class="decided"><h2>Decided</h2><ol><li>Three &quot;unremarkable&quot; stamps, then the rock is labeled DIRT in the proudest letters on the plate.</li><li>Carbon bonds with whoever is standing nearby. The trick is a second copy popping out of the first.</li><li>The banner EVERYTHING WENT WRONG drops on that copy and never comes down.</li><li>Economy, politics, wars, and trials are four lines. You are the footnote, and the footnote is then enlarged until it is the frame.</li></ol></div>
+  <p class="how">Each frame is the scene's key moment, drawn with the production art: placement, words and look. Nothing moves yet. Scenes are named; use the name in feedback.</p>
+</header>
+<main class="sheet">
+<h2 class="act"><span>Dirt</span><span class="act-count">1 scene</span></h2><article class="cell" id="frame-01" data-scene="named-dirt" data-comment-target>
+  <div class="frame"><svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Three crossed-out stamps reading UNREMARKABLE, and a small rock with a large nameplate DIRT."><rect width="1920" height="1080" fill="#061D3E"/><g transform="translate(420,280) rotate(-8)"><rect x="-170" y="-40" width="340" height="80" fill="none" stroke="#C8452E" stroke-width="6"/><text x="0" y="12" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="28" letter-spacing="1.12" fill="#C8452E" >UNREMARKABLE</text><path d="M-150,-20 L150,20" stroke="#C8452E" stroke-width="8"/></g><g transform="translate(980,240) rotate(6)"><rect x="-170" y="-40" width="340" height="80" fill="none" stroke="#C8452E" stroke-width="6"/><text x="0" y="12" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="28" letter-spacing="1.12" fill="#C8452E" >UNREMARKABLE</text><path d="M-150,-20 L150,20" stroke="#C8452E" stroke-width="8"/></g><g transform="translate(1500,300) rotate(-4)"><rect x="-170" y="-40" width="340" height="80" fill="none" stroke="#C8452E" stroke-width="6"/><text x="0" y="12" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="28" letter-spacing="1.12" fill="#C8452E" >UNREMARKABLE</text><path d="M-150,-20 L150,20" stroke="#C8452E" stroke-width="8"/></g><ellipse cx="960" cy="700" rx="160" ry="90" fill="#B47E52" stroke="#112845" stroke-width="8"/><rect x="760" y="560" width="400" height="80" rx="8" fill="#F3ECD0" stroke="#112845" stroke-width="6"/><text x="963.2" y="626.48" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="64" fill="#0B1A33">DIRT</text><text x="960" y="622" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="64" fill="#0B1A33" stroke="#F3ECD0" stroke-width="5.76" stroke-linejoin="round" style="paint-order:stroke">DIRT</text><defs><pattern id="f01-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="0.9" fill="#000" opacity="0.1"/><circle cx="6.5" cy="7" r="0.8" fill="#FFF" opacity="0.12"/><circle cx="7" cy="1.5" r="0.6" fill="#000" opacity="0.08"/></pattern></defs><rect width="1920" height="1080" fill="url(#f01-grain)" pointer-events="none"/></svg></div>
+  <div class="meta"><span class="name">01 · named-dirt</span><span class="when">B · 3:00.8–3:14.7</span></div>
+  <p class="note"><strong>First:</strong> &quot;rock&quot; → a small rock. <span class="shows">Drawn: a small rock labeled DIRT, three crossed-out stamps reading UNREMARKABLE.</span></p>
+  <div class="foot"><span class="chip" title="Transition into this scene">cut</span></div>
+  <details><summary>Narration and moves</summary>
+    <p class="vo">&quot;Then, on one, unremarkable rock orbiting one unremarkable star, in one unremarkable galaxy, the one you named Dirt, carbon atoms started doing something unusual. Carbon is the&quot;</p>
+    <p><strong>Moves:</strong> &quot;rock&quot; → a small rock. &quot;unremarkable&quot; (the second one, on &quot;star&quot;) → a stamp UNREMARKABLE hits a dot, the star. &quot;galaxy,&quot; → the same stamp hits a faint spiral. &quot;Dirt,&quot; → the rock gets a nameplate, DIRT, bigger than the rock. after &quot;unusual.&quot; → the three stamps are already crossed out. The nameplate is not.</p>
+    <p>Sound: a stamp thunk on each &quot;unremarkable.&quot; A ding on &quot;Dirt.&quot;</p><p>On screen: &quot;UNREMARKABLE&quot; three times, crossed out, and &quot;DIRT&quot;. No: no solar-system orrery. Why: the only remarkable thing they did with the rock was the name.</p>
+  </details>
+</article>
+<h2 class="act"><span>Carbon</span><span class="act-count">1 scene</span></h2><article class="cell" id="frame-02" data-scene="promiscuous-carbon" data-comment-target>
+  <div class="frame"><svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A carbon atom holding hands with hydrogen, oxygen, and nitrogen, and a clipboard that says it will bond with almost anything."><rect width="1920" height="1080" fill="#061D3E"/><path d="M960,520 L520,300 M960,520 L1400,280 M960,520 L1180,820" stroke="#F3ECD0" stroke-width="10"/><circle cx="960" cy="520" r="70" fill="#E8B04A" stroke="#112845" stroke-width="8"/><text x="960" y="536" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="48" letter-spacing="1.92" fill="#112845" >C</text><circle cx="520" cy="300" r="70" fill="#F3ECD0" stroke="#112845" stroke-width="8"/><text x="520" y="316" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="48" letter-spacing="1.92" fill="#112845" >H</text><circle cx="1400" cy="280" r="70" fill="#E5903B" stroke="#112845" stroke-width="8"/><text x="1400" y="296" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="48" letter-spacing="1.92" fill="#112845" >O</text><circle cx="1180" cy="820" r="70" fill="#5C6F8E" stroke="#112845" stroke-width="8"/><text x="1180" y="836" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="48" letter-spacing="1.92" fill="#112845" >N</text><rect x="180" y="700" width="620" height="140" rx="10" fill="#F3ECD0" stroke="#112845" stroke-width="6"/><text x="490" y="785" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="32" letter-spacing="1.28" fill="#112845" >WILL BOND WITH ALMOST ANYTHING</text><defs><pattern id="f02-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="0.9" fill="#000" opacity="0.1"/><circle cx="6.5" cy="7" r="0.8" fill="#FFF" opacity="0.12"/><circle cx="7" cy="1.5" r="0.6" fill="#000" opacity="0.08"/></pattern></defs><rect width="1920" height="1080" fill="url(#f02-grain)" pointer-events="none"/></svg></div>
+  <div class="meta"><span class="name">02 · promiscuous-carbon</span><span class="when">B · 3:14.7–3:30.0</span></div>
+  <p class="note"><strong>First:</strong> &quot;promiscuous&quot; → a C atom, arms out. <span class="shows">Drawn: one carbon with its arms around H, O, and N, clipboard reading WILL BOND WITH ALMOST ANYTHING.</span></p>
+  <div class="foot"><span class="chip" title="Transition into this scene">cut</span></div>
+  <details><summary>Narration and moves</summary>
+    <p class="vo">&quot;most promiscuous element in the periodic table. It will bond with almost anything. On your particular rock, it bonded with hydrogen, oxygen, and nitrogen in arrangements that could do one very specific trick.&quot;</p>
+    <p><strong>Moves:</strong> &quot;promiscuous&quot; → a C atom, arms out. &quot;anything.&quot; → a clipboard hangs off one arm: WILL BOND WITH ALMOST ANYTHING. &quot;hydrogen,&quot; → an H steps in and links arms. &quot;oxygen,&quot; → an O links on. &quot;nitrogen&quot; → an N links on. The clipboard does not come down.</p>
+    <p>Sound: a pop on each new atom.</p><p>On screen: &quot;C&quot;, &quot;H&quot;, &quot;O&quot;, &quot;N&quot;, &quot;WILL BOND WITH ALMOST ANYTHING&quot;. No: no lecture about valence. Why: the clipboard is the whole personality.</p>
+  </details>
+</article>
+<h2 class="act"><span>The trick</span><span class="act-count">1 scene</span></h2><article class="cell" id="frame-03" data-scene="copy-themselves" data-comment-target>
+  <div class="frame"><svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Two identical little molecules under a banner that reads EVERYTHING WENT WRONG."><rect width="1920" height="1080" fill="#061D3E"/><g transform="translate(700,520)"><circle cx="-40" cy="0" r="36" fill="#E8B04A" stroke="#112845" stroke-width="6"/><circle cx="40" cy="-10" r="28" fill="#F3ECD0" stroke="#112845" stroke-width="6"/><circle cx="10" cy="40" r="24" fill="#E5903B" stroke="#112845" stroke-width="6"/></g><g transform="translate(1100,520)"><circle cx="-40" cy="0" r="36" fill="#E8B04A" stroke="#112845" stroke-width="6"/><circle cx="40" cy="-10" r="28" fill="#F3ECD0" stroke="#112845" stroke-width="6"/><circle cx="10" cy="40" r="24" fill="#E5903B" stroke="#112845" stroke-width="6"/></g><rect x="260" y="160" width="1400" height="140" fill="#C8452E" stroke="#112845" stroke-width="8"/><text x="963.6" y="270.04" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="72" fill="#0B1A33">EVERYTHING WENT WRONG</text><text x="960" y="265" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="72" fill="#F3ECD0" stroke="#F3ECD0" stroke-width="6.4799999999999995" stroke-linejoin="round" style="paint-order:stroke">EVERYTHING WENT WRONG</text><defs><pattern id="f03-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="0.9" fill="#000" opacity="0.1"/><circle cx="6.5" cy="7" r="0.8" fill="#FFF" opacity="0.12"/><circle cx="7" cy="1.5" r="0.6" fill="#000" opacity="0.08"/></pattern></defs><rect width="1920" height="1080" fill="url(#f03-grain)" pointer-events="none"/></svg></div>
+  <div class="meta"><span class="name">03 · copy-themselves</span><span class="when">B · 3:30.0–3:54.5</span></div>
+  <p class="note"><strong>First:</strong> &quot;Copy&quot; → the group pulls a small lever. <span class="shows">Drawn: two identical molecules, and a banner already down reading EVERYTHING WENT WRONG.</span></p>
+  <div class="foot"><span class="chip" title="Transition into this scene">cut</span></div>
+  <details><summary>Narration and moves</summary>
+    <p class="vo">&quot;Copy themselves. This was the moment everything went wrong. The molecules that were better at copying made more copies. The ones that were worse at copying made fewer. This is the entire plot of the next four billion years. It is also the entire plot of your economy, your politics, your wars, and your inability to fund clinical trials.&quot;</p>
+    <p><strong>Moves:</strong> &quot;Copy&quot; → the group pulls a small lever. &quot;themselves.&quot; → an identical group pops out beside it. &quot;wrong.&quot; → a banner drops over both: EVERYTHING WENT WRONG. &quot;more&quot; → the pair becomes four. &quot;fewer.&quot; → a faded pair at the edge shrinks. The banner stays.</p>
+    <p>Sound: a pop on &quot;themselves.&quot; A slam on &quot;wrong.&quot;</p><p>On screen: &quot;EVERYTHING WENT WRONG&quot;. No: no family tree. Why: copying is the whole plot, and the banner says how the plot turned out.</p>
+  </details>
+</article>
+<h2 class="act"><span>The footnote</span><span class="act-count">1 scene</span></h2><article class="cell" id="frame-04" data-scene="including-you" data-comment-target>
+  <div class="frame"><svg viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A page with four small lines, economy, politics, wars, clinical trials, and a huge footnote: 1. INCLUDING YOU."><rect width="1920" height="1080" fill="#F3ECD0"/><text x="200" y="180" text-anchor="start" font-family="Oswald" font-weight="600" font-size="36" letter-spacing="1.44" fill="#112845" >THE PLOT</text><text x="200" y="280" text-anchor="start" font-family="Inter" font-weight="600" font-size="42" fill="#112845">ECONOMY</text><text x="200" y="332.5" text-anchor="start" font-family="Inter" font-weight="600" font-size="42" fill="#112845">POLITICS</text><text x="200" y="385" text-anchor="start" font-family="Inter" font-weight="600" font-size="42" fill="#112845">WARS</text><text x="200" y="437.5" text-anchor="start" font-family="Inter" font-weight="600" font-size="42" fill="#112845">clinical trials</text><path d="M160,560 H1760" stroke="#112845" stroke-width="3"/><text x="204.6" y="786.44" text-anchor="start" font-family="Fraunces" font-weight="900" font-size="92" fill="#0B1A33">1. INCLUDING YOU</text><text x="200" y="780" text-anchor="start" font-family="Fraunces" font-weight="900" font-size="92" fill="#C8452E" stroke="#F3ECD0" stroke-width="8.28" stroke-linejoin="round" style="paint-order:stroke">1. INCLUDING YOU</text><defs><pattern id="f04-grain" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r="0.9" fill="#000" opacity="0.1"/><circle cx="6.5" cy="7" r="0.8" fill="#FFF" opacity="0.12"/><circle cx="7" cy="1.5" r="0.6" fill="#000" opacity="0.08"/></pattern></defs><rect width="1920" height="1080" fill="url(#f04-grain)" pointer-events="none"/></svg></div>
+  <div class="meta"><span class="name">04 · including-you</span><span class="when">B · 3:54.5–4:02.0</span></div>
+  <p class="note"><strong>First:</strong> &quot;plot&quot; → a page with one line already there, the banner's sentence in small type. <span class="shows">Drawn: four small lines of the plot, and the footnote INCLUDING YOU blown up to half the frame.</span></p>
+  <div class="foot"><span class="chip" title="Transition into this scene">cut</span></div>
+  <details><summary>Narration and moves</summary>
+    <p class="vo">&quot;Everything else is a footnote. Including you. You&quot;</p>
+    <p><strong>Moves:</strong> &quot;plot&quot; → a page with one line already there, the banner's sentence in small type. &quot;economy,&quot; → a line, ECONOMY. &quot;politics,&quot; → POLITICS. &quot;wars,&quot; → WARS. &quot;trials.&quot; → CLINICAL TRIALS, written smaller than the others, as if the page ran out of room. &quot;footnote.&quot; → a tiny 1 at the bottom. after &quot;you.&quot; → the footnote enlarges until INCLUDING YOU fills the bottom half. The four lines stay small above it.</p>
+    <p>Sound: a tick on each line. A slide-up on &quot;you.&quot;</p><p>On screen: &quot;ECONOMY&quot;, &quot;POLITICS&quot;, &quot;WARS&quot;, &quot;CLINICAL TRIALS&quot;, &quot;1. INCLUDING YOU&quot;. No: no portrait of the reader. Why: the reader is a footnote, and then the footnote is the only type you can read.</p>
+  </details>
+</article>
+</main>
+<section class="closing">
+  <div class="panel"><h2>Transitions</h2><ul class="seams"><li><span class="seam-name">named-dirt</span><span class="seam-chip">cut</span></li><li><span class="seam-name">promiscuous-carbon</span><span class="seam-chip">cut</span></li><li><span class="seam-name">copy-themselves</span><span class="seam-chip">cut</span></li><li><span class="seam-name">including-you</span><span class="seam-chip end">cut to Meat Taxi</span></li></ul></div>
+  <div class="panel"><h2>Tokens and bans</h2>
+    <ul class="swatches"><li><i style="background:#86AD6E"></i>Money green <code>#86AD6E</code></li><li><i style="background:#3B6644"></i>Money seal <code>#3B6644</code></li><li><i style="background:#C8452E"></i>Stamp red <code>#C8452E</code></li><li><i style="background:#2F8F86"></i>Medicine teal <code>#2F8F86</code></li><li><i style="background:#F3ECD0"></i>Engraving paper <code>#F3ECD0</code></li><li><i style="background:#112845"></i>Line <code>#112845</code></li><li><i style="background:#E5903B"></i>Mustard <code>#E5903B</code></li><li><i style="background:#E8B04A"></i>Yellow <code>#E8B04A</code></li><li><i style="background:#112845"></i>Navy <code>#112845</code></li></ul>
+    <div class="types">
+      <p><span style="font-family:var(--display);font-weight:900;font-size:22px">Fraunces Black</span> big numbers and titles</p>
+      <p><span style="font-family:var(--label);font-weight:600;font-size:18px;text-transform:uppercase;letter-spacing:.04em">Oswald SemiBold</span> labels and signs</p>
+      <p><span style="font-weight:700;font-size:17px">Inter</span> captions and form text</p>
+    </div>
+    <ul class="bans"><li>No periodic-table poster with every element filled in.</li><li>No narrator caption repeating &quot;this was the moment everything went wrong.&quot; The banner is that sentence.</li></ul>
+  </div>
+</section>
+</div>
+
+
+</body>
+</html>
