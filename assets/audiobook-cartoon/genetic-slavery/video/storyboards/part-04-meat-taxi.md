@@ -15,71 +15,71 @@ Times come from the cue words. A move starts on the quoted word. `after "word"` 
 
 ## Decided
 
-1. The molecule asks the question in a speech balloon. The stars do not answer. A smaller balloon answers.
-2. The taxi's roof sign says MEAT. The driver is a flask. The passenger is the person.
-3. The renovation is a cutaway: three floors, and the old pipes still run through the new room.
+1. Hydrogen is awake in bed. The balloon is the meeting.
+2. The person is the taxi. A flask rides on the shoulders. The roof sign says MEAT.
+3. One pipe from the old floor runs straight through the new sofa. No sign that says BRAIN.
 
 **Bans for this part.**
 
-- No diagram of a cell with labels on the organelles.
-- The taxi is the explanation. Do not also print the sentence "you are a meat taxi" under it.
+- No diagram of a cell.
+- Do not print "you are a meat taxi" under the picture. The sign says MEAT.
 
 ## Scene 1 · anxious-meeting
 
 - id: anxious-meeting
 - act: The question
 - transition_in: cut
-- key: a molecule in an office chair looking up, balloon "WHY AM I ANXIOUS ABOUT A MEETING TOMORROW?"
+- key: hydrogen awake in a dark bedroom, balloon "WHY AM I ANXIOUS ABOUT A MEETING TOMORROW?"
 - cue: "anxious about"
 - time: 04:02.0 to 04:38.5 (36.5 s)
 - voiceover: "can see that the molecules competing with other copying molecules eventually produced a copying molecule so complicated, it could look up at the stars that made it and ask, why am I anxious about a meeting tomorrow? The answer is, because anxiety made your ancestors copy more effectively than calm did. You are a temporary vehicle that copying molecules built to make more copying molecules. And the vehicle has become sentient enough to realize this. Which is either the most beautiful or the most horrifying thing in the universe, depending on how you feel about being a"
 - layer: B
-- scene: The copying molecule has grown a chair. The stars are a few dots.
-- props: molecule, chair, balloon
-- status: sketch
+- scene: Night. A window with one moon. A bed.
+- props: bed, hydrogen, balloon
+- status: plates
 
-Moves: "complicated," → the molecule is bigger, in a small chair. "stars" → three dots appear above it. "ask," → it looks up. "tomorrow?" → the balloon: WHY AM I ANXIOUS ABOUT A MEETING TOMORROW? "answer" → a smaller balloon, from offscreen, starts. "calm" → the small balloon finishes: ANXIETY COPIED BETTER. The molecule does not look comforted.
+Moves: "stars" → the atom pops up against the pillow, awake. "tomorrow?" → the balloon drops in: WHY AM I ANXIOUS ABOUT A MEETING TOMORROW? It stays up. Nothing answers it.
 
 Sound: a squeak on "tomorrow?"
 
-On screen: the question balloon and "ANXIETY COPIED BETTER". No: no calendar that says MONDAY. Why: the meeting is funnier as a balloon than as a schedule.
+On screen: the question, on the balloon. No: no second balloon and no calendar. Why: the meeting is funnier as something the atom says in the dark.
 
 ## Scene 2 · meat-taxi
 
 - id: meat-taxi
 - act: The taxi
 - transition_in: cut
-- key: a taxi, roof sign MEAT, a flask in the driver's seat, a person in the back
+- key: a person standing, a flask riding on the shoulders, a sign reading MEAT
 - cue: "meat taxi"
 - time: 04:38.5 to 04:45.6 (7.1 s)
 - voiceover: "meat taxi for chemistry. But the vehicle wasn't built all at once. It was built in layers, like a"
 - layer: B
-- scene: The vehicle, at the curb.
-- props: taxi, flask, person
-- status: sketch
+- scene: Khaki field. One person. The person is the vehicle.
+- props: person, flask, sign
+- status: plates
 
-Moves: "vehicle" → an empty taxi rolls in. "molecules" (the second one, "more copying molecules") → a flask climbs into the driver's seat. "realize" → the person in the back sits up, finally looking at the driver. "chemistry." → the roof sign lights: MEAT. after "chemistry." → the person is still looking. The flask is not.
+Moves: "meat" → the flask pops onto the shoulders. "taxi" → the sign drops above the head: MEAT.
 
-Sound: a car horn, short, on "chemistry."
+Sound: a pop on "meat."
 
-On screen: "MEAT". No: no fare on the meter. Why: the sign is the job description.
+On screen: "MEAT". No: no fare and no second sentence. Why: the sign is the job, and the body is the cab.
 
 ## Scene 3 · bad-renovation
 
 - id: bad-renovation
 - act: The renovation
 - transition_in: cut
-- key: a cutaway of three floors, old pipes running straight through the new room
+- key: a new sofa with a pipe from the floor running straight through it
 - cue: "bad renovation"
 - time: 04:45.6 to 04:50.5 (5.0 s)
 - voiceover: "bad renovation, where nobody removed the previous tenets plumbing."
 - layer: B
-- scene: A building cut open. Three landlords. One set of pipes.
-- props: building, pipes
-- status: sketch
+- scene: A room. One sofa. The floor is the old work.
+- props: sofa, pipe
+- status: plates
 
-Moves: "layers," → the building is one floor. "renovation," → a second floor is hammered on, then a third. "plumbing." → the pipes from the first floor punch up through the furniture of the third. They do not get rerouted. The top floor's lamp is plumbed into the bottom floor's pipe.
+Moves: "plumbing." → the pipe grows up out of the floor and through the sofa. It is not rerouted.
 
-Sound: a hammer on "renovation." A clank on "plumbing."
+Sound: a clank on "plumbing."
 
-On screen: no words, unless a tiny "1", "2", "3" on the floors. No: no sign that says BRAIN. The next part names the tenants. Why: this scene only has to show that nobody removed the previous work.
+On screen: no words. No: no sign that says BRAIN, and no floor numbers. Why: the pipe through the new furniture is the whole renovation.

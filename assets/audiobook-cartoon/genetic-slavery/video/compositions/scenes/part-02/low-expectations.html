@@ -1,0 +1,34 @@
+<template id="low-expectations-template">
+  <!-- low-expectations: a blank resume, one hydrogen in the chair, a HIRED stamp. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #low-expectations-weave, #low-expectations-shake, #low-expectations-film { position: absolute; inset: 0; }
+    #low-expectations-svg { position: absolute; inset: 0; overflow: visible; }
+    #low-expectations-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="low-expectations" data-width="1920" data-height="1080" data-start="0" data-duration="14.24">
+    <div id="low-expectations-weave">
+      <div id="low-expectations-shake"><svg id="low-expectations-svg"><g id="low-expectations-cam"></g></svg></div>
+      <div id="low-expectations-flash"></div>
+    </div>
+    <div id="low-expectations-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="lib/plates.js"></script>
+  <script>
+    GS.play("low-expectations", 3, function (S) {
+      S.cam.innerHTML = GS.lowExpectations("low-expectations");
+      S.hide("atom");
+      S.hide("hired");
+      S.pop("atom", S.cue("hydrogen"), 0.4);
+      S.slam("hired", S.cue("expectations,"));
+    });
+  </script>
+</template>

@@ -1,7 +1,7 @@
 {
   "id": "part-01",
   "title": "Genetic Slavery",
-  "audio": { "start": 100.24, "end": 143.34 },
+  "audio": { "start": 100.24, "end": 143.54 },
   "noCaptions": ["genetic-slavery-title"],
   "scenes": [
     { "id": "genetic-slavery-title", "file": "compositions/scenes/part-01/genetic-slavery-title.html", "cue": "genetic", "approx": 100.24, "layer": "A" },
@@ -12,6 +12,7 @@
   ],
   "sounds": [
     { "scene": "genetic-slavery-title", "cue": "genetic", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "genetic-slavery-title", "cue": "slavery.", "sfx": "clank", "volume": 0.45 },
     { "scene": "six-oh-four", "cue": "604", "sfx": "cash-register", "volume": 0.4 },
     { "scene": "six-oh-four", "cue": "not", "sfx": "slam", "volume": 0.45 },
     { "scene": "hardware", "cue": "rocks", "sfx": "clank", "volume": 0.35 },

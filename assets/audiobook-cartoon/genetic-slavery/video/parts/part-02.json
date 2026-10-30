@@ -1,0 +1,57 @@
+{
+  "id": "part-02",
+  "title": "Hydrogen",
+  "audio": {
+    "start": 143.54,
+    "end": 180.84
+  },
+  "scenes": [
+    {
+      "id": "low-expectations",
+      "file": "compositions/scenes/part-02/low-expectations.html",
+      "cue": "hydrogen",
+      "approx": 144.2,
+      "layer": "B"
+    },
+    {
+      "id": "called-stars",
+      "file": "compositions/scenes/part-02/called-stars.html",
+      "cue": "These",
+      "approx": 157.78,
+      "layer": "B"
+    },
+    {
+      "id": "fatality-rate",
+      "file": "compositions/scenes/part-02/fatality-rate.html",
+      "cue": "workplace",
+      "approx": 173.54,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "low-expectations",
+      "cue": "expectations,",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "called-stars",
+      "cue": "stars.",
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "called-stars",
+      "cue": "explode,",
+      "sfx": "boom",
+      "volume": 0.45
+    },
+    {
+      "scene": "fatality-rate",
+      "cue": "100%.",
+      "sfx": "slam",
+      "volume": 0.5
+    }
+  ]
+}

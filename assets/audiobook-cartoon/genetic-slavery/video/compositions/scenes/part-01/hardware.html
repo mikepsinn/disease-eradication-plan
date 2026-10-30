@@ -1,82 +1,50 @@
 <template id="hardware-template">
-  <!-- hardware: a stone computer, some rocks, a stranger, then a mushroom cloud. -->
+  <!-- hardware: a stone computer on a hoard of rocks, a gift-ribboned red button, a charred stranger, a cloud. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #061D3E; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #hardware-weave, #hardware-shake, #hardware-film { position: absolute; inset: 0; }
+    #hardware-svg { position: absolute; inset: 0; overflow: visible; }
+    #hardware-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
   </style>
   <div id="root" data-composition-id="hardware" data-width="1920" data-height="1080" data-start="0" data-duration="10.8">
-    <div id="hardware-weave" style="position:absolute;inset:0">
-      <div id="hardware-cam" style="position:absolute;inset:0"></div>
+    <div id="hardware-weave">
+      <div id="hardware-shake"><svg id="hardware-svg"><g id="hardware-cam"></g></svg></div>
+      <div id="hardware-flash"></div>
     </div>
-    <div id="hardware-film" style="position:absolute;inset:0;pointer-events:none"></div>
+    <div id="hardware-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
   <script src="assets/js/film.js"></script>
+  <script src="lib/plates.js"></script>
   <script>
-    (function () {
-      var ID = "hardware";
-      var sc = KIT.scene(ID), D = sc.duration, W = KIT.W, H = KIT.H, V = KIT.V, C = KIT.C;
-      var q = function (n) { return document.getElementById(ID + "-" + n); };
-      var floor = V ? 1500 : 900;
-      var cx = V ? 540 : 860;
-      var cy = floor - (V ? 280 : 220);
-      var rock = function (x, y, rx, ry) {
-        return '<g class="rock" opacity="0" transform="translate(' + x + "," + y + ')">' +
-          '<ellipse cx="0" cy="0" rx="' + rx + '" ry="' + ry + '" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="7"/>' +
-          '<ellipse cx="' + (-rx * 0.25) + '" cy="' + (-ry * 0.28) + '" rx="' + rx * 0.3 + '" ry="' + ry * 0.22 + '" fill="' + C.cream + '"/></g>';
-      };
-      var box =
-        '<g id="' + ID + '-box">' +
-        '<rect x="-190" y="-230" width="380" height="280" rx="18" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="8"/>' +
-        '<rect x="-155" y="-200" width="310" height="170" rx="8" fill="' + C.navy + '" stroke="' + C.line + '" stroke-width="5"/>' +
-        '<text id="' + ID + '-soft" x="0" y="-100" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="42" fill="' + C.cream + '" opacity="0">SOFTWARE</text>' +
-        '<g id="' + ID + '-stamp" opacity="0">' +
-        '<rect x="-168" y="-28" width="336" height="70" rx="6" fill="' + C.cream + '" stroke="' + C.war + '" stroke-width="7"/>' +
-        '<text x="0" y="16" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="34" fill="' + C.war + '">200,000 YEARS</text></g>' +
-        '<rect x="-70" y="50" width="140" height="22" rx="4" fill="' + C.rust + '" stroke="' + C.line + '" stroke-width="4"/>' +
-        "</g>";
-      var sky = '<rect width="' + W + '" height="' + H + '" fill="' + C.deep + '"/>' +
-        '<rect y="' + floor + '" width="' + W + '" height="' + (H - floor) + '" fill="' + C.tan + '"/>' +
-        '<rect y="' + floor + '" width="' + W + '" height="8" fill="' + C.line + '"/>';
-      var rocks = rock(cx - 210, floor - 36, 78, 48) + rock(cx - 40, floor - 52, 96, 58) + rock(cx + 140, floor - 32, 70, 44);
-      var cloud = '<g id="' + ID + '-nuke" transform="translate(' + cx + "," + (floor - 10) + ') scale(0.72)" opacity="0">' + KIT.nuke() + "</g>";
-      q("cam").innerHTML = KIT.svg(W, H, sky + '<g id="' + ID + '-rig" transform="translate(' + cx + "," + cy + ')">' + box + "</g>" + rocks + cloud);
-      var who = document.createElement("div");
-      who.id = ID + "-who";
-      who.style.cssText = "position:absolute;width:300px;height:360px;opacity:0";
-      who.style.width = "420px";
-      who.style.height = "520px";
-      who.innerHTML = KIT.svg(420, 520, '<g transform="translate(210,250) scale(1.7)">' + KIT.person({ tone: 4, mood: "cross", look: "left" }) + "</g>");
-      q("cam").appendChild(who);
-
-      var tl = gsap.timeline({ paused: true });
-      window.__timelines[ID] = tl;
-      KIT.film(tl, ID, q("weave"), q("film"), 9);
-      var tSoft = KIT.cue(ID, "software");
-      var tOld = KIT.cue(ID, "200,000-year-old");
-      var tRocks = KIT.cue(ID, "rocks");
-      var tStr = KIT.cue(ID, "strangers");
-      var tNuke = KIT.cue(ID, "nuclear");
-      gsap.set("#" + ID + "-box", { svgOrigin: "0 40" });
-      tl.from("#" + ID + "-rig", { opacity: 0, y: 30, duration: 0.35 }, 0.1);
-      tl.to("#" + ID + "-soft", { opacity: 1, duration: 0.2 }, tSoft);
-      tl.fromTo("#" + ID + "-stamp", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power2.out", svgOrigin: "0 0" }, tOld);
-      q("cam").querySelectorAll(".rock").forEach(function (r, i) {
-        tl.to(r, { opacity: 1, duration: 0.12 }, tRocks + i * 0.08);
-      });
-      var fromX = V ? 700 : 1500;
-      var toX = V ? 560 : 1120;
-      gsap.set(who, { left: fromX, top: floor - 500 });
-      tl.to(who, { opacity: 1, left: toX, duration: 0.45, ease: "power2.out" }, tStr);
-      tl.to("#" + ID + "-box", { rotation: -6, duration: 0.35, svgOrigin: "0 40" }, tStr + 0.15);
-      tl.to(".rock", { opacity: 0, duration: 0.15 }, tNuke);
-      tl.set("#" + ID + "-nuke", { opacity: 1 }, tNuke);
-      KIT.boom(tl, "#" + ID + "-nuke", tNuke);
-    })();
+    GS.play("hardware", 31, function (S) {
+      S.cam.innerHTML = GS.hardware("hardware");
+      S.hide("face");
+      S.hide("corner");
+      S.hide("button");
+      S.hide("hoard");
+      S.hide("trail");
+      S.hide("cloud");
+      S.hide("charred");
+      S.pop("face", S.cue("software"), 0.3);
+      S.drop("corner", S.cue("200,000-year-old"), 0.28);
+      S.grow("hoard", S.cue("rocks"), 0.4);
+      S.tl.set(S.g("machine"), { y: 78 }, 0);
+      S.tl.to(S.g("machine"), { y: 0, duration: 0.45, ease: "power2.out" }, S.cue("rocks"));
+      S.tl.set(S.g("stranger"), { x: 1200 }, 0);
+      S.tl.to(S.g("stranger"), { x: 0, duration: 1.05, ease: "power2.out" }, S.cue("strangers,"));
+      S.pop("button", S.cue("nuclear"), 0.26);
+      var hit = S.after("weapons.");
+      if (hit > S.D - 0.35) hit = Math.max(0, S.D - 0.55);
+      S.tl.set(S.g("stranger"), { opacity: 0 }, hit);
+      S.tl.set(S.g("charred"), { opacity: 1 }, hit);
+      S.tl.fromTo(S.g("trail"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, hit);
+      S.pop("cloud", hit, 0.35);
+    });
   </script>
 </template>

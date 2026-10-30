@@ -1,0 +1,51 @@
+{
+  "id": "part-04",
+  "title": "Meat Taxi",
+  "audio": {
+    "start": 242.04,
+    "end": 290.54
+  },
+  "scenes": [
+    {
+      "id": "anxious-meeting",
+      "file": "compositions/scenes/part-04/anxious-meeting.html",
+      "cue": "anxious",
+      "approx": 252.56,
+      "layer": "B"
+    },
+    {
+      "id": "meat-taxi",
+      "file": "compositions/scenes/part-04/meat-taxi.html",
+      "cue": "meat",
+      "approx": 278.52,
+      "layer": "B"
+    },
+    {
+      "id": "bad-renovation",
+      "file": "compositions/scenes/part-04/bad-renovation.html",
+      "cue": "bad",
+      "approx": 285.58,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "anxious-meeting",
+      "cue": "tomorrow?",
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "meat-taxi",
+      "cue": "meat",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "bad-renovation",
+      "cue": "plumbing.",
+      "sfx": "clank",
+      "volume": 0.45
+    }
+  ]
+}

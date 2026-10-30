@@ -1,0 +1,91 @@
+{
+  "id": "part-03",
+  "title": "Everything Went Wrong",
+  "audio": {
+    "start": 180.84,
+    "end": 242.04
+  },
+  "scenes": [
+    {
+      "id": "named-dirt",
+      "file": "compositions/scenes/part-03/named-dirt.html",
+      "cue": "unremarkable",
+      "approx": 182.28,
+      "layer": "B"
+    },
+    {
+      "id": "promiscuous-carbon",
+      "file": "compositions/scenes/part-03/promiscuous-carbon.html",
+      "cue": "promiscuous",
+      "approx": 195.22,
+      "layer": "B"
+    },
+    {
+      "id": "copy-themselves",
+      "file": "compositions/scenes/part-03/copy-themselves.html",
+      "cue": "Copy",
+      "approx": 210.02,
+      "layer": "B"
+    },
+    {
+      "id": "including-you",
+      "file": "compositions/scenes/part-03/including-you.html",
+      "cue": "Everything",
+      "approx": 234.46,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "named-dirt",
+      "cue": "unremarkable",
+      "sfx": "stamp",
+      "volume": 0.4,
+      "n": 1
+    },
+    {
+      "scene": "named-dirt",
+      "cue": "unremarkable",
+      "sfx": "stamp",
+      "volume": 0.4,
+      "n": 2
+    },
+    {
+      "scene": "named-dirt",
+      "cue": "unremarkable",
+      "sfx": "stamp",
+      "volume": 0.4,
+      "n": 3
+    },
+    {
+      "scene": "named-dirt",
+      "cue": "Dirt,",
+      "sfx": "ding",
+      "volume": 0.45
+    },
+    {
+      "scene": "promiscuous-carbon",
+      "cue": "anything.",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "copy-themselves",
+      "cue": "themselves.",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "copy-themselves",
+      "cue": "wrong.",
+      "sfx": "slam",
+      "volume": 0.5
+    },
+    {
+      "scene": "including-you",
+      "cue": "you.",
+      "sfx": "slide-up",
+      "volume": 0.4
+    }
+  ]
+}

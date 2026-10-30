@@ -1,70 +1,40 @@
 <template id="owners-manual-template">
-  <!-- owners-manual: a book drops on a brain. The cover turns to YOU. -->
+  <!-- owners-manual: a man reads OWNER'S MANUAL, YOU, while his brain sneaks up with a lit bomb. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #061D3E; }
-    #owners-manual-book {
-      position: absolute; width: 460px; height: 280px; opacity: 0;
-      background: #112845; color: #F3ECD0; border: 8px solid #F3ECD0; border-radius: 6px 16px 16px 6px;
-      box-shadow: 12px 14px 0 #0B0805;
-      display: flex; align-items: center; justify-content: center; text-align: center;
-      font-family: Oswald, sans-serif; font-weight: 600; letter-spacing: 0.04em;
-    }
-    #owners-manual-book .face { position: absolute; inset: 18px; display: flex; align-items: center; justify-content: center; }
-    #owners-manual-book .you { font-family: Fraunces, serif; font-weight: 900; font-size: 120px; color: #C8452E; opacity: 0; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #9B6A45; }
+    #owners-manual-weave, #owners-manual-shake, #owners-manual-film { position: absolute; inset: 0; }
+    #owners-manual-svg { position: absolute; inset: 0; overflow: visible; }
+    #owners-manual-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
   </style>
   <div id="root" data-composition-id="owners-manual" data-width="1920" data-height="1080" data-start="0" data-duration="4.82">
-    <div id="owners-manual-weave" style="position:absolute;inset:0">
-      <div id="owners-manual-cam" style="position:absolute;inset:0"></div>
+    <div id="owners-manual-weave">
+      <div id="owners-manual-shake"><svg id="owners-manual-svg"><g id="owners-manual-cam"></g></svg></div>
+      <div id="owners-manual-flash"></div>
     </div>
-    <div id="owners-manual-film" style="position:absolute;inset:0;pointer-events:none"></div>
+    <div id="owners-manual-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
   <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="lib/plates.js"></script>
   <script>
-    (function () {
-      var ID = "owners-manual";
-      var sc = KIT.scene(ID), D = sc.duration, W = KIT.W, H = KIT.H, V = KIT.V, C = KIT.C;
-      var q = function (n) { return document.getElementById(ID + "-" + n); };
-      var floor = V ? 1560 : 920;
-      var cx = W / 2, cy = floor - (V ? 340 : 260);
-      var lobe = function (x, y, rx, ry) {
-        return '<ellipse cx="' + x + '" cy="' + y + '" rx="' + rx + '" ry="' + ry + '" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="8"/>';
-      };
-      var brain = '<g id="' + ID + '-brain" transform="translate(' + cx + "," + cy + ')">' +
-        lobe(-70, 10, 120, 90) + lobe(70, 10, 120, 90) + lobe(0, -20, 80, 70) +
-        '<path d="M-20,40 Q0,70 20,40" fill="none" stroke="' + C.line + '" stroke-width="6" stroke-linecap="round"/>' +
-        "</g>";
-      var sky = '<rect width="' + W + '" height="' + H + '" fill="' + C.deep + '"/>' +
-        '<rect y="' + floor + '" width="' + W + '" height="' + (H - floor) + '" fill="' + C.tan + '"/>' +
-        '<rect y="' + floor + '" width="' + W + '" height="8" fill="' + C.line + '"/>';
-      q("cam").innerHTML = KIT.svg(W, H, sky + brain);
-      var book = document.createElement("div");
-      book.id = ID + "-book";
-      var bw = V ? 520 : 460, bh = V ? 300 : 260;
-      book.style.width = bw + "px";
-      book.style.height = bh + "px";
-      book.style.fontSize = (V ? 48 : 42) + "px";
-      book.style.left = (cx - bw / 2) + "px";
-      book.style.top = (cy - bh / 2 - 20) + "px";
-      book.innerHTML = '<div class="face cover">OWNER\'S<br>MANUAL</div><div class="face you">YOU</div>';
-      q("cam").appendChild(book);
-
-      var tl = gsap.timeline({ paused: true });
-      window.__timelines[ID] = tl;
-      KIT.film(tl, ID, q("weave"), q("film"), 12);
-      var tMan = KIT.cue(ID, "manual");
-      var tKill = KIT.cue(ID, "kill");
-      gsap.set(book, { y: -420 });
-      tl.to(book, { opacity: 1, y: 0, duration: 0.35, ease: "power3.in" }, tMan);
-      tl.to("#" + ID + "-brain", { y: 16, duration: 0.12, yoyo: true, repeat: 1 }, tMan + 0.32);
-      tl.to(book.querySelector(".cover"), { opacity: 0, duration: 0.15 }, tKill);
-      tl.to(book.querySelector(".you"), { opacity: 1, duration: 0.2 }, tKill + 0.05);
-    })();
+    GS.play("owners-manual", 41, function (S) {
+      S.cam.innerHTML = GS.ownersManual("owners-manual");
+      S.hide("lid");
+      S.hide("bomb");
+      S.hide("cord");
+      S.drop("book", S.cue("manual"), 0.32);
+      S.tl.set(S.g("brain"), { x: -360, y: -200, opacity: 0 }, 0);
+      S.tl.set(S.g("lid"), { opacity: 1 }, S.cue("brain"));
+      S.tl.to(S.g("brain"), { opacity: 1, duration: 0.2 }, S.cue("brain"));
+      S.tl.to(S.g("brain"), { x: 0, y: 0, duration: 0.65, ease: "power2.inOut" }, S.cue("kill"));
+      S.tl.set(S.g("bomb"), { opacity: 1 }, S.cue("kill"));
+      S.tl.to(S.g("cord"), { opacity: 1, duration: 0.25 }, S.cue("kill") + 0.4);
+    });
   </script>
 </template>

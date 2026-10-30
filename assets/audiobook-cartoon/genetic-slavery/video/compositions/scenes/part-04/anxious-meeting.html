@@ -1,0 +1,35 @@
+<template id="anxious-meeting-template">
+  <!-- anxious-meeting: hydrogen awake in bed, a balloon about the meeting. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #1C2438; }
+    #anxious-meeting-weave, #anxious-meeting-shake, #anxious-meeting-film { position: absolute; inset: 0; }
+    #anxious-meeting-svg { position: absolute; inset: 0; overflow: visible; }
+    #anxious-meeting-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="anxious-meeting" data-width="1920" data-height="1080" data-start="0" data-duration="36.48">
+    <div id="anxious-meeting-weave">
+      <div id="anxious-meeting-shake"><svg id="anxious-meeting-svg"><g id="anxious-meeting-cam"></g></svg></div>
+      <div id="anxious-meeting-flash"></div>
+    </div>
+    <div id="anxious-meeting-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="lib/plates.js"></script>
+  <script>
+    GS.play("anxious-meeting", 29, function (S) {
+      S.cam.innerHTML = GS.anxious("anxious-meeting");
+      S.hide("atom");
+      S.hide("ask");
+      S.hide("ans");
+      S.pop("atom", S.cue("stars"), 0.35);
+      S.drop("ask", S.cue("tomorrow?"), 0.4);
+    });
+  </script>
+</template>

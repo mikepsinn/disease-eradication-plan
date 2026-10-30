@@ -1,0 +1,36 @@
+<template id="nothing-about-it-template">
+  <!-- nothing-about-it: a person shrugs at a chalkboard and the mirror skeleton shrugs too. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #E6D3A8; }
+    #nothing-about-it-weave, #nothing-about-it-shake, #nothing-about-it-film { position: absolute; inset: 0; }
+    #nothing-about-it-svg { position: absolute; inset: 0; overflow: visible; }
+    #nothing-about-it-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="nothing-about-it" data-width="1920" data-height="1080" data-start="0" data-duration="38.32">
+    <div id="nothing-about-it-weave">
+      <div id="nothing-about-it-shake"><svg id="nothing-about-it-svg"><g id="nothing-about-it-cam"></g></svg></div>
+      <div id="nothing-about-it-flash"></div>
+    </div>
+    <div id="nothing-about-it-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="lib/plates.js"></script>
+  <script>
+    GS.play("nothing-about-it", 59, function (S) {
+      S.cam.innerHTML = GS.nothingAbout("nothing-about-it");
+      S.hide("me-up");
+      S.hide("skel-up");
+      S.tl.set(S.g("me"), { opacity: 0 }, S.cue("it."));
+      S.tl.set(S.g("me-up"), { opacity: 1 }, S.cue("it."));
+      S.tl.set(S.g("skel"), { opacity: 0 }, S.cue("it."));
+      S.tl.set(S.g("skel-up"), { opacity: 1 }, S.cue("it."));
+    });
+  </script>
+</template>

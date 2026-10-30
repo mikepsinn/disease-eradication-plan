@@ -1,0 +1,38 @@
+<template id="named-dirt-template">
+  <!-- named-dirt: a rock under glass, three crossed-out UNREMARKABLE stamps, a DIRT nameplate. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #named-dirt-weave, #named-dirt-shake, #named-dirt-film { position: absolute; inset: 0; }
+    #named-dirt-svg { position: absolute; inset: 0; overflow: visible; }
+    #named-dirt-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="named-dirt" data-width="1920" data-height="1080" data-start="0" data-duration="14.38">
+    <div id="named-dirt-weave">
+      <div id="named-dirt-shake"><svg id="named-dirt-svg"><g id="named-dirt-cam"></g></svg></div>
+      <div id="named-dirt-flash"></div>
+    </div>
+    <div id="named-dirt-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="lib/plates.js"></script>
+  <script>
+    GS.play("named-dirt", 11, function (S) {
+      S.cam.innerHTML = GS.namedDirt("named-dirt");
+      ["s1", "s2", "s3", "x1", "x2", "x3", "plate"].forEach(function (s) { S.hide(s); });
+      S.slam("s1", S.cue("unremarkable", 1));
+      S.slam("x1", S.after("unremarkable", 1));
+      S.slam("s2", S.cue("unremarkable", 2));
+      S.slam("x2", S.after("unremarkable", 2));
+      S.slam("s3", S.cue("unremarkable", 3));
+      S.slam("x3", S.after("unremarkable", 3));
+      S.drop("plate", S.cue("Dirt,"), 0.3);
+    });
+  </script>
+</template>

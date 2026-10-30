@@ -1,87 +1,37 @@
 <template id="six-oh-four-template">
-  <!-- six-oh-four: 604 war bills against one medicine bill. The political plaque gets crossed out. -->
+  <!-- six-oh-four: a tower of war bills, the Weapons Maker, the Scientist's one medicine bill, the plaque crossed out. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #061D3E; }
-    #six-oh-four-plaque {
-      position: absolute; left: 50%; transform: translateX(-50%); opacity: 0;
-      background: #F3ECD0; color: #112845; border: 6px solid #112845; border-radius: 8px;
-      font-family: Oswald, sans-serif; font-weight: 600; letter-spacing: 0.04em; text-align: center;
-      box-shadow: 8px 8px 0 #112845;
-    }
-    #six-oh-four-x { position: absolute; inset: -8px; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #six-oh-four-weave, #six-oh-four-shake, #six-oh-four-film { position: absolute; inset: 0; }
+    #six-oh-four-svg { position: absolute; inset: 0; overflow: visible; }
+    #six-oh-four-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
   </style>
   <div id="root" data-composition-id="six-oh-four" data-width="1920" data-height="1080" data-start="0" data-duration="8.98">
-    <div id="six-oh-four-weave" style="position:absolute;inset:0">
-      <div id="six-oh-four-cam" style="position:absolute;inset:0"></div>
+    <div id="six-oh-four-weave">
+      <div id="six-oh-four-shake"><svg id="six-oh-four-svg"><g id="six-oh-four-cam"></g></svg></div>
+      <div id="six-oh-four-flash"></div>
     </div>
-    <div id="six-oh-four-film" style="position:absolute;inset:0;pointer-events:none"></div>
+    <div id="six-oh-four-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
   <script src="assets/js/film.js"></script>
+  <script src="lib/plates.js"></script>
   <script>
-    (function () {
-      var ID = "six-oh-four";
-      var sc = KIT.scene(ID), D = sc.duration, W = KIT.W, H = KIT.H, V = KIT.V, C = KIT.C;
-      var q = function (n) { return document.getElementById(ID + "-" + n); };
-      var floor = V ? 1280 : 860;
-      var gx = V ? 540 : 520, gy = floor - (V ? 200 : 170);
-      var mx = V ? 540 : 1460, my = V ? floor + 280 : floor - 150;
-      var stack = "";
-      for (var i = 0; i < 9; i++) {
-        stack += '<g class="wb" opacity="0" transform="translate(' + gx + "," + (gy - i * (V ? 42 : 32)) + ") scale(" + (V ? 3.1 : 2.5) + ')">' + KIT.money("war", 0) + "</g>";
-      }
-      var med = '<g id="' + ID + '-med" opacity="0" transform="translate(' + mx + "," + my + ") scale(" + (V ? 3.3 : 2.7) + ')">' + KIT.money("med", 0) + "</g>";
-      var numY = V ? 280 : 220;
-      var oneX = V ? 250 : mx;
-      var oneY = V ? floor + 360 : floor - 280;
-      function big(id, x, y, text, size) {
-        return '<g transform="translate(' + x + "," + y + ')"><g id="' + id + '" opacity="0">' +
-          '<text text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + size + '" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="' + (size * 0.045) + '" paint-order="stroke">' + text + "</text></g></g>";
-      }
-      function label(x, y, text) {
-        return '<text x="' + x + '" y="' + y + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + (V ? 42 : 36) + '" fill="' + C.cream + '" letter-spacing="2">' + text + "</text>";
-      }
-      var sky = '<rect width="' + W + '" height="' + H + '" fill="' + C.deep + '"/>' +
-        '<rect y="' + floor + '" width="' + W + '" height="' + (H - floor) + '" fill="' + C.tan + '"/>' +
-        '<rect y="' + floor + '" width="' + W + '" height="8" fill="' + C.line + '"/>';
-      q("cam").innerHTML = KIT.svg(W, H, sky + stack + med +
-        big(ID + "-n604", gx, numY, "604", V ? 220 : 200) +
-        big(ID + "-n1", oneX, oneY, "1", V ? 140 : 120) +
-        '<g id="' + ID + '-labw" opacity="0">' + label(gx, floor + (V ? 80 : 64), "WEAPONS") + "</g>" +
-        '<g id="' + ID + '-labm" opacity="0">' + label(mx, (V ? floor + 430 : floor + 64), "CURING DISEASE") + "</g>");
-      var plaque = document.createElement("div");
-      plaque.id = ID + "-plaque";
-      plaque.style.top = (V ? 440 : 70) + "px";
-      plaque.style.fontSize = (V ? 54 : 48) + "px";
-      plaque.style.padding = "16px 28px 18px";
-      plaque.innerHTML = "POLITICAL PROBLEM" +
-        '<svg id="' + ID + '-x" viewBox="0 0 100 40" preserveAspectRatio="none"><path class="xx" d="M6,6 L94,34 M94,6 L6,34" fill="none" stroke="' + C.war + '" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>';
-      q("cam").appendChild(plaque);
-
-      var tl = gsap.timeline({ paused: true });
-      window.__timelines[ID] = tl;
-      KIT.film(tl, ID, q("weave"), q("film"), 4);
-      var t604 = KIT.cue(ID, "604");
-      var tCure = KIT.cue(ID, "curing");
-      var tPol = KIT.cue(ID, "political");
-      var tNot = KIT.cue(ID, "not");
-      tl.to("#" + ID + "-labw", { opacity: 1, duration: 0.15 }, t604);
-      q("cam").querySelectorAll(".wb").forEach(function (b, i) {
-        tl.to(b, { opacity: 1, duration: 0.06 }, t604 + i * 0.045);
-      });
-      tl.fromTo("#" + ID + "-n604", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)", svgOrigin: "0 0" }, t604 + 0.15);
-      tl.to("#" + ID + "-med", { opacity: 1, duration: 0.2 }, tCure);
-      tl.to("#" + ID + "-labm", { opacity: 1, duration: 0.15 }, tCure);
-      tl.fromTo("#" + ID + "-n1", { opacity: 0, scale: 1.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", svgOrigin: "0 0" }, tCure);
-      tl.to(plaque, { opacity: 1, duration: 0.2, y: 0 }, tPol);
-      gsap.set(plaque, { y: -24 });
-      tl.to("#" + ID + "-x .xx", { strokeDashoffset: 0, duration: 0.22, ease: "power2.out" }, tNot);
-    })();
+    GS.play("six-oh-four", 23, function (S) {
+      S.cam.innerHTML = GS.sixOhFour("six-oh-four");
+      S.grow("tower", S.cue("604"), 0.55);
+      S.drop("n604", S.cue("604"), 0.4);
+      S.hide("sci-show");
+      S.tl.set(S.g("sci-wait"), { opacity: 0 }, S.cue("curing"));
+      S.tl.set(S.g("sci-show"), { opacity: 1 }, S.cue("curing"));
+      S.pop("med", S.cue("curing"), 0.35);
+      S.drop("plaque", S.cue("political"), 0.32);
+      S.slam("xmark", S.after("not."));
+    });
   </script>
 </template>

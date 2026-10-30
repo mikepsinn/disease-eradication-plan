@@ -1,0 +1,64 @@
+{
+  "id": "part-06",
+  "title": "Out of Hand",
+  "audio": {
+    "start": 373.54,
+    "end": 465.34
+  },
+  "scenes": [
+    {
+      "id": "nothing-about-it",
+      "file": "compositions/scenes/part-06/nothing-about-it.html",
+      "cue": "Finally,",
+      "approx": 373.58,
+      "layer": "B"
+    },
+    {
+      "id": "looked-funny",
+      "file": "compositions/scenes/part-06/looked-funny.html",
+      "cue": "cortisol",
+      "approx": 411.86,
+      "layer": "B"
+    },
+    {
+      "id": "no-license",
+      "file": "compositions/scenes/part-06/no-license.html",
+      "cue": "survive,",
+      "approx": 425.54,
+      "layer": "B"
+    },
+    {
+      "id": "out-of-hand",
+      "file": "compositions/scenes/part-06/out-of-hand.html",
+      "cue": "nobody.",
+      "approx": 459.8,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "nothing-about-it",
+      "cue": "mechanics,",
+      "sfx": "scratch",
+      "volume": 0.3
+    },
+    {
+      "scene": "looked-funny",
+      "cue": "cortisol",
+      "sfx": "splat",
+      "volume": 0.5
+    },
+    {
+      "scene": "no-license",
+      "cue": "license,",
+      "sfx": "snip",
+      "volume": 0.4
+    },
+    {
+      "scene": "out-of-hand",
+      "cue": "hand.",
+      "sfx": "pop",
+      "volume": 0.4
+    }
+  ]
+}

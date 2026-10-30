@@ -1,0 +1,33 @@
+<template id="out-of-hand-template">
+  <!-- out-of-hand: a lineup of one hydrogen with a match. The sign says NOBODY. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #D9C7A2; }
+    #out-of-hand-weave, #out-of-hand-shake, #out-of-hand-film { position: absolute; inset: 0; }
+    #out-of-hand-svg { position: absolute; inset: 0; overflow: visible; }
+    #out-of-hand-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="out-of-hand" data-width="1920" data-height="1080" data-start="0" data-duration="5.54">
+    <div id="out-of-hand-weave">
+      <div id="out-of-hand-shake"><svg id="out-of-hand-svg"><g id="out-of-hand-cam"></g></svg></div>
+      <div id="out-of-hand-flash"></div>
+    </div>
+    <div id="out-of-hand-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="lib/plates.js"></script>
+  <script>
+    GS.play("out-of-hand", 71, function (S) {
+      S.cam.innerHTML = GS.lineup("out-of-hand");
+      S.hide("flame");
+      S.slam("sign", 0.08);
+      S.pop("flame", S.cue("hand."), 0.22);
+    });
+  </script>
+</template>

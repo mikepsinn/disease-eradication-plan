@@ -1,0 +1,38 @@
+<template id="no-license-template">
+  <!-- no-license: one car, the lizard has the license and the keys, two torn licenses on the floor. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #no-license-weave, #no-license-shake, #no-license-film { position: absolute; inset: 0; }
+    #no-license-svg { position: absolute; inset: 0; overflow: visible; }
+    #no-license-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="no-license" data-width="1920" data-height="1080" data-start="0" data-duration="34.26">
+    <div id="no-license-weave">
+      <div id="no-license-shake"><svg id="no-license-svg"><g id="no-license-cam"></g></svg></div>
+      <div id="no-license-flash"></div>
+    </div>
+    <div id="no-license-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="lib/plates.js"></script>
+  <script>
+    GS.play("no-license", 67, function (S) {
+      S.cam.innerHTML = GS.noLicense("no-license");
+      S.hide("loved");
+      S.hide("under");
+      S.hide("bad1");
+      S.hide("bad2");
+      S.show("loved", S.cue("loved,"));
+      S.show("under", S.cue("understand"));
+      S.slam("bad1", S.cue("license,"));
+      S.slam("bad2", S.after("license,"));
+    });
+  </script>
+</template>

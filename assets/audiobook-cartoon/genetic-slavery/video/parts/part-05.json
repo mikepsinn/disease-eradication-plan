@@ -1,0 +1,83 @@
+{
+  "id": "part-05",
+  "title": "Three Brains",
+  "audio": {
+    "start": 290.54,
+    "end": 373.54
+  },
+  "scenes": [
+    {
+      "id": "lizard-brain",
+      "file": "compositions/scenes/part-05/lizard-brain.html",
+      "cue": "reptilian",
+      "approx": 291.36,
+      "layer": "B"
+    },
+    {
+      "id": "still-running",
+      "file": "compositions/scenes/part-05/still-running.html",
+      "cue": "still",
+      "approx": 321.78,
+      "layer": "B"
+    },
+    {
+      "id": "nursery-depot",
+      "file": "compositions/scenes/part-05/nursery-depot.html",
+      "cue": "nursery",
+      "approx": 334.04,
+      "layer": "B"
+    },
+    {
+      "id": "already-committed",
+      "file": "compositions/scenes/part-05/already-committed.html",
+      "cue": "thinking",
+      "approx": 366.62,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "lizard-brain",
+      "cue": "Breathe,",
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "lizard-brain",
+      "cue": "eat,",
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "lizard-brain",
+      "cue": "fight,",
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "lizard-brain",
+      "cue": "flee,",
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "still-running",
+      "cue": "permission.",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "nursery-depot",
+      "cue": "upgrade",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "already-committed",
+      "cue": "arrives,",
+      "sfx": "click",
+      "volume": 0.4,
+      "at": "before"
+    }
+  ]
+}

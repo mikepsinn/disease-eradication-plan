@@ -1,0 +1,36 @@
+<template id="still-running-template">
+  <!-- still-running: the lizard pumps the heart while the owner sleeps. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #still-running-weave, #still-running-shake, #still-running-film { position: absolute; inset: 0; }
+    #still-running-svg { position: absolute; inset: 0; overflow: visible; }
+    #still-running-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="still-running" data-width="1920" data-height="1080" data-start="0" data-duration="12.26">
+    <div id="still-running-weave">
+      <div id="still-running-shake"><svg id="still-running-svg"><g id="still-running-cam"></g></svg></div>
+      <div id="still-running-flash"></div>
+    </div>
+    <div id="still-running-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="lib/plates.js"></script>
+  <script>
+    GS.play("still-running", 43, function (S) {
+      S.cam.innerHTML = GS.stillRunning("still-running");
+      S.hide("heart");
+      S.hide("tag");
+      S.pop("heart", S.cue("heart"), 0.28);
+      gsap.set(S.g("heart"), { svgOrigin: "460 420" });
+      S.tl.to(S.g("heart"), { scale: 1.08, duration: 0.34, yoyo: true, repeat: 7, ease: "sine.inOut" }, S.cue("beating"));
+      S.drop("tag", S.cue("permission."), 0.3);
+    });
+  </script>
+</template>
