@@ -58,7 +58,6 @@
     { "scene": "loved-ones", "cue": "brutally", "sfx": "whoosh", "volume": 0.35 },
     { "scene": "loved-ones", "cue": "murdered", "sfx": "zap", "volume": 0.3 },
     { "scene": "loved-ones", "cue": "diseases?", "sfx": "scratch", "volume": 0.5 },
-    { "scene": "loved-ones", "cue": "diseases?", "offset": 0.3, "sfx": "slam", "volume": 0.45 },
     { "scene": "nuclear-winters", "cue": "nuclear", "sfx": "typewriter", "volume": 0.35 },
     { "scene": "nuclear-winters", "cue": "bombs", "sfx": "boing", "volume": 0.35 },
     { "scene": "nuclear-winters", "cue": "hundred", "sfx": "pop", "volume": 0.22 },

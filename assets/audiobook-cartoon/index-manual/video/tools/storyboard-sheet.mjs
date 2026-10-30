@@ -83,12 +83,12 @@ const H = {
     const bodyTop = Math.round(w * 0.95 - (w * 12) / 140);
     return sprite(`body-${body}`, x, y + bodyTop, w, Math.round((w * 768) / 1343)) + sprite(head, x + Math.round(w * 0.025), y, Math.round(w * 0.95), Math.round(w * 0.95));
   },
-  // The round corner frame of Layer B (same place as the pilot's scenes).
+  // Wishonia in her Layer B corner (KIT.cornerOpts, 16:9): standing in the bottom right, mirrored to point
+  // into the frame, cut off by the frame's bottom edge.
   pip(id, head, body = "idle") {
-    const cx = 1760, cy = 740, r = 128;
-    return `<defs><clipPath id="${id}-pip"><circle cx="${cx}" cy="${cy}" r="${r}"/></clipPath></defs>` +
-      `<circle cx="${cx}" cy="${cy}" r="${r + 13}" fill="${C.line}"/><circle cx="${cx}" cy="${cy}" r="${r + 7}" fill="${C.cream}"/>` +
-      `<g clip-path="url(#${id}-pip)"><circle cx="${cx}" cy="${cy}" r="${r}" fill="url(#sheet-pip-sky)"/>${H.wish(1620, 590, 280, head, body)}</g>`;
+    const x = 1626, y = 693, w = 274;
+    return `<defs><clipPath id="${id}-pip"><rect width="1920" height="1080"/></clipPath></defs>` +
+      `<g clip-path="url(#${id}-pip)"><g transform="translate(${2 * x + w},0) scale(-1,1)">${H.wish(x, y, w, head, body)}</g></g>`;
   },
   // A caption as the captions track shows it: the spoken words, the word being said highlighted.
   cap(text, active) {
@@ -358,7 +358,7 @@ code{font-size:.92em}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<radialGradient id="sheet-pip-sky" cx="50%" cy="70%" r="60%"><stop offset="0" stop-color="${C.yellow}"/><stop offset=".4" stop-color="${C.orange}"/><stop offset=".68" stop-color="${C.rust}"/><stop offset=".92" stop-color="${C.navy}"/></radialGradient>
+
 ${spriteDefs(inlineMode)}
 </defs></svg>
 <div class="wrap">

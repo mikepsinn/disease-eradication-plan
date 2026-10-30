@@ -17,7 +17,6 @@
       <div id="meet-wishonia-wish"></div>
       <div id="meet-wishonia-front"></div>
     </div>
-    <div id="meet-wishonia-board"><div id="meet-wishonia-board-in"></div></div>
     <div id="meet-wishonia-grain"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
@@ -221,13 +220,9 @@
       // The plate stands in front of the out-tray and slides in behind the stamp and the mug.
       q("front").innerHTML = KIT.svg(W, H, KIT.desk.apply(null, O.desk) + trayBack + file + trayFront + plate + stamp + mug);
 
-      q("board-in").innerHTML = KIT.countdownBoard();
-      KIT.placeBoard(q("board"), q("board-in"));
-      var board = q("board-in").firstChild;
 
       var tl = gsap.timeline({ paused: true });
       KIT.mountWishonia(tl, q("wish"), { scene: ID, x: O.wish.x, y: O.wish.y, w: O.wish.w });
-      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
 
       // "Wishonia": the plate slides onto the desk. "President": the title line appears under the name.
       tl.fromTo("#meet-wishonia-plate", { x: W - L0 + 60 }, { x: 0, duration: 0.5, ease: "power3.out" }, cue("Wishonia"));

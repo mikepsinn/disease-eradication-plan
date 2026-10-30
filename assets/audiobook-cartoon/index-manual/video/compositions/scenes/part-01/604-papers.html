@@ -16,7 +16,6 @@
       <div id="604-papers-bg" style="position: absolute; inset: 0;"></div>
       <div id="604-papers-view" style="position: absolute; overflow: hidden;"><div id="604-papers-world" style="position: absolute;"></div></div>
       <div id="604-papers-type" style="position: absolute; inset: 0;"></div>
-      <div id="604-papers-board"><div id="604-papers-board-in"></div></div>
       <div id="604-papers-pip" style="position: absolute; inset: 0;"></div>
       <div id="604-papers-grain" style="position: absolute; inset: 0;"></div>
     </div>
@@ -81,10 +80,10 @@
       var x0 = L.sx - L.sw / 2, bills = "";
       for (var y = L.G - 12; y >= top - 0.5; y -= 12) {
         var j = Math.round((rnd() - 0.5) * 9), wj = Math.round((rnd() - 0.5) * 6);
-        bills += '<rect x="' + (x0 + j) + '" y="' + y + '" width="' + (L.sw + wj) + '" height="12" rx="2" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="2"/>' +
-          '<path d="M' + (x0 + j + 8) + "," + (y + 4) + " H" + (x0 + j + L.sw + wj - 8) + '" stroke="#F3B9A8" stroke-width="1.4" opacity="0.7"/>';
+        bills += '<rect x="' + (x0 + j) + '" y="' + y + '" width="' + (L.sw + wj) + '" height="12" rx="2" fill="' + C.money + '" stroke="' + C.line + '" stroke-width="2"/>' +
+          '<path d="M' + (x0 + j + 8) + "," + (y + 4) + " H" + (x0 + j + L.sw + wj - 8) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>';
       }
-      bills += '<rect x="' + (x0 - 6) + '" y="' + top + '" width="' + (L.sw + 12) + '" height="' + L.sh + '" fill="url(#' + ID + '-hred)" opacity="0.35"/>';
+      bills += '<rect x="' + (x0 - 6) + '" y="' + top + '" width="' + (L.sw + 12) + '" height="' + L.sh + '" fill="url(#' + ID + '-hatch)" opacity="0.12"/>';
       var bs = 2.08;
       var topBill = '<g transform="translate(' + L.sx + "," + (top - 48 * bs) + ") scale(" + bs + ')"><g id="' + ID + '-topbill">' + KIT.money("war", 0.5) + "</g></g>";
       var stack = '<defs><clipPath id="' + ID + '-above"><rect x="0" y="' + (-TOP) + '" width="' + W + '" height="' + (TOP + L.G) + '"/></clipPath></defs>' +
@@ -144,13 +143,9 @@
         '<g id="' + ID + '-lab-w">' + label(L.weapons[0], L.weapons[1], L.weapons[2], "WEAPONS", C.war) + "</g>" +
         '<g id="' + ID + '-lab-t">' + L.testing.map(function (t) { return label(t[1], t[2], L.tsize, t[0], "#1D6E67"); }).join("") + "</g>");
 
-      q("board-in").innerHTML = KIT.countdownBoard();
-      KIT.placeBoard(q("board"), q("board-in"));
-      var board = q("board-in").firstChild;
 
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
-      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
       KIT.enter(tl, q("cam"), "slide left");
 
       var six = cue("six"), four = cue("four"), one = cue("one");

@@ -22,11 +22,12 @@ The episode uses two visual layers. Each layer has a different job. Both match t
 
 - Use this layer when the audio describes what humans do: money, wars, the FDA, the treaty mechanics.
 - Flat cream paper diagrams in the music video's printed style: navy lines, halftone-dot fills (in place of cross-hatching), a few orange and mustard stars. Use banners, pipes, funnels, factories, and labels with arrows.
-- Use only **two** accent colors for money and its effects:
-  - **Murder-money red** (`#C8452E`) for weapons, war, and the money that funds them.
-  - **Medicine teal** (`#2F8F86`) for clinical trials, cures, and the money that funds them.
-- When the money moves from war to medicine, the paper changes from red to teal. This is the main visual idea of the whole episode.
-- Wishonia can stay on screen in Layer B as a small talking head in a round corner frame ("PiP" in the script).
+- Money is always **money green** (`KIT.C.money`), like a real bill, so nobody has to learn what a red rectangle means.
+- Two accent colors say what the money buys:
+  - **Murder-money red** (`#C8452E`) for weapons and war: war money carries a red seal with a little missile.
+  - **Medicine teal** (`#2F8F86`) for clinical trials and cures: medicine money carries a teal seal with a white cross.
+- When the money moves from war to medicine, the bill's seal flips from the red missile to the teal cross. This is the main visual idea of the whole episode. Where a storyboard says "red papers" it means war money (green, red seal), and "teal papers" means medicine money (green, teal seal).
+- Wishonia can stay on screen in Layer B ("PiP" in the script). In 16:9 she stands in the bottom right corner, cut off at the thighs by the frame's bottom edge; in 9:16, where the captions and the apps' buttons fill the bottom, she rides a small 1950s flying saucer at the top right. Both show her whole gesture body (pointing, shrugging, arms crossed), mirrored so she points into the frame at what she is talking about, with a cream-and-navy cut-out edge.
 
 ### Text on screen
 
@@ -47,7 +48,7 @@ The narration already tells its joke. The picture's job is a second joke that th
 
 1. **Every scene has a visual joke of its own:** a background gag, a detail that contradicts the line, an escalation, or a callback to an earlier gag. A scene that only shows what the narrator says gets one, or gets merged into its neighbor.
 2. **Land the payoff a beat after the line.** Setups go up before or on the words; the visual punchline comes about 0.4 s after the spoken punchline ends, then holds. In a storyboard's Moves, `"word" →` starts on the word, `after "word" →` a beat after it ends, and `before "word" →` half a second before it starts.
-3. **Someone reacts to the big lines.** Wishonia changes expression in the corner frame, or looks slowly at the camera in the office; a human turns its head slowly. The reaction is often the laugh.
+3. **Someone reacts to the big lines.** Wishonia changes expression or gesture in her corner, or looks slowly at the camera in the office; a human turns its head slowly. The reaction is often the laugh.
 4. **Do not repeat the captions.** The captions already show the words, so a label or counter goes on screen only when the number is itself the joke.
 5. **Threes with a twist, and callbacks.** Two of a kind, then a wrong third. Bring earlier gags back changed.
 6. **Go all the way, like the theme song.** A threat always pays off on screen. The bomb goes off: a white flash, a mushroom cloud, then the humans standing there charred black and smoking, hair straight up, only their eyes blinking. The spark spreads until the whole person is on fire and running in circles. The dying turn into skeletons, and the skeletons keep smiling. The button is the humans doing it again. This is Looney Tunes violence: nobody bleeds; everybody is charred, flattened, frozen or a skeleton. The kit draws these (`KIT.person` with `skeleton` or `charred`, `KIT.flames`, `KIT.nuke`, `KIT.xray`). The cheerful voice against the horror is the joke, so the horror has to be seen.
@@ -107,33 +108,35 @@ All of these are original designs for this project. Do not base them on characte
 
 ### The Humans ("meat robots")
 
-- **Stick figures in simple clothes:** a round head with a simple face (dot eyes, eyebrows, a line or open mouth), line arms and legs, and plain clothes over the body: a shirt, a dress, a suit, a lab coat, scrubs or overalls. Who someone is comes from clothes, hat, props and pose, the way OverSimplified tells whole wars. Wishonia is a detailed cartoon; the humans are the simple diagrams Wishonia draws of them.
+- **Stereotypes you read from the silhouette,** as the theme song draws them (its keyframes are the reference: the fat cat, the woman with the megaphone, the masked crook, the politician at the podium, the scientist with the magnifying glass). Each body is one big clothing shape: the fat cat an egg on stub legs, the politician a padded inverted triangle, the businessman a refrigerator box, the crook a hunched trench coat, the worker a barrel, the beanpole a plank, a woman an hourglass or a pear.
+- **A small head with a big nose:** 3/4 view, the nose breaking the outline, almond eyes with heavy lids like Wishonia's, thin angled brows, a jowly, lantern-jawed or long sly face.
+- **One stereotype tell each:** a top hat and cigar, a domino mask and fedora, a toothy grin, a bubbling flask. **Greedy** puts dollar signs in the eyes.
+- **Sharp and angular, never rounded:** polygons with hard corners, thin navy lines, tapered limbs with sharp elbows and knees, narrow hands, pointed shoes. Rounded heads, thick outlines, stubby limbs and mitten hands read as toy people. Print shading: orange edges on navy suits, halftone dots on light cloth.
 - Each human has a small round **"check engine" light** on the chest, over the clothes. It blinks red when a disease starts.
-- Four skin tones on the heads, four clothing colors, and several hair shapes.
-- They act with posture and timing: a slow head turn, an arm thrown up, a slump. The faces stay simple.
+- Four skin tones and four clothing colors. An everyday human gets a body type and proportions of its own from its outfit, skin tone and color, so a crowd is a cast of 1950s types, and the same human looks the same in every scene.
+- They act with posture and timing: a slow head turn, an arm thrown up, a slump, a hunch.
 
 ### The Papers (money)
 
 - Small paper rectangles with stick legs and a tiny oval portrait of a generic, unnamed old man in a wig. Do not copy any real banknote.
-- Red papers = murder money. Teal papers = medicine money.
+- Always money green. A red missile seal = murder money; a teal cross seal = medicine money; no seal = plain money (`KIT.money("war" | "med" | "plain")`).
 - They run toward whoever calls them. They form lines, crowds, and rivers. They jump into funnels.
 
 ### Recurring Earth characters
 
 | Character | Design | Used in |
 |---|---|---|
-| The Rich Human | A human in a suit, top hat, monocle and mustache, sitting on a hill of papers. Later wears a button: "I PREFER LIVING." (`KIT.cast("richHuman")`) | Quiz, Paper Distribution, bonds |
+| The Rich Human | A fat cat: a navy egg on stub legs, jowls, top hat, monocle, walrus mustache, cigar and gold watch chain, hugging a stack of cash, smug. Sits on a hill of papers. Later wears a button: "I PREFER LIVING." (`KIT.cast("richHuman")`) | Quiz, Paper Distribution, bonds |
 | The Loud Human | A human with a megaphone instead of a head. (`KIT.cast("loudHuman")`) | Step 2 (marketing) |
-| The Lobbyist | A human in a suit and bowler with a briefcase that has a funnel on it. (`KIT.cast("lobbyist")`) | Paper Distribution, Bribe the Bribers |
-| The Politician | A human in a suit with a very wide tie. The tie flips between red and blue (the "red team / blue team" gag). (`KIT.cast("politician")`) | Leaders, Purchase Democracy |
-| The Weapons Maker | A human in overalls and a hard hat. Factory chimneys are shaped like missiles. (`KIT.cast("weaponsMaker")`) | Leaders loop, Enjoy |
-| The Orderly | A very tall human in white scrubs, sliding a medicine cup through a door slot. (`KIT.cast("orderly")`) | Institutionalize scene |
-| Grandma | A human in a dress with hair curlers, holding a 1940s war-bond poster. (`KIT.cast("grandma")`) | What Grandma got |
-| The Scientist | A human in a lab coat with a clipboard. (`KIT.cast("scientist")`) | The trials, the dFDA |
+| The Lobbyist | A masked crook: fedora pulled low, domino mask, popped-collar trench coat, gloves, tiptoeing with a fistful of cash and a briefcase leaking money. (`KIT.cast("lobbyist")`) | Paper Distribution, Bribe the Bribers |
+| The Politician | A lantern jaw, a grin full of teeth, slick hair, a flag pin and a very wide tie, waving a bill. The tie flips between red and blue (the "red team / blue team" gag). (`KIT.cast("politician")`) | Leaders, Purchase Democracy |
+| The Weapons Maker | A barrel-chested worker with a tiny head under a hard hat, Popeye forearms and a cigar, cradling a smiling missile like a baby. Factory chimneys are shaped like missiles. (`KIT.cast("weaponsMaker")`) | Leaders loop, Enjoy |
+| The Orderly | A beanpole in scrubs with a long neck and long arms, holding out a medicine cup (and sliding it through a door slot). (`KIT.cast("orderly")`) | Institutionalize scene |
+| Grandma | Hunched, pear-shaped, in curlers, cat-eye glasses and an apron, waving her 1940s war-bond poster overhead. (`KIT.cast("grandma")`) | What Grandma got |
+| The Scientist | A lab coat, a hair bun and big glasses, holding up a bubbling flask, with a clipboard. (`KIT.cast("scientist")`) | The trials, the dFDA |
 | The Democracy Dog | A round dog chasing its own tail. The tail is made of papers; later it is made of teal pills. | Leaders loop |
 | The Optimitron | A 1970s countertop appliance (a toaster–microwave hybrid) with two big dials: **HEALTH** and **WEALTH**. Policy cards pop out of it like toast. | Optimitron, Step 1 |
 | The Calculator | A desk calculator with eyes. It shows "ERROR," screams, and walks off the desk. | The Math |
-| The Countdown Board | A retro flip-number board: "HUMANS TERMINATED BY CURABLE DISEASES SINCE THIS VIDEO STARTED." It counts about 1.7 per second (104 per minute). | Hello human, The Problem, Closing |
 
 ### Real people, brands and weapons
 
@@ -144,12 +147,11 @@ All of these are original designs for this project. Do not base them on characte
 
 ## 4. Recurring gags and devices
 
-1. **The 604 bar.** A tall red stack of papers next to one small teal paper. It returns every time the audio says "604."
-2. **The color flip.** Red paper goes into a funnel and comes out teal. Use it every time money is "redirected."
-3. **The countdown board.** It sits in a corner during the opening and the ending.
-4. **Wishonia's mug sip.** Before a big punchline, Wishonia sips coffee. After the punchline, Wishonia puts the mug down slowly.
-5. **The case file.** Wishonia stamps the Earth case file: "SUBOPTIMAL" (after the FDA part) and finally "ELIGIBLE FOR OPTIMIZATION" (the ending).
-6. **Chapter cards.** A 2-second title card in the office colors (navy wall, rising sun, stars), where the script says "title card" (see section 1).
+1. **The 604 bar.** A tall stack of war money (red seals) next to one small medicine bill (teal seal). It returns every time the audio says "604."
+2. **The seal flip.** War money goes into a funnel and comes out medicine money: the red missile seal flips to the teal cross. Use it every time money is "redirected."
+3. **Wishonia's mug sip.** Before a big punchline, Wishonia sips coffee. After the punchline, Wishonia puts the mug down slowly.
+4. **The case file.** Wishonia stamps the Earth case file: "SUBOPTIMAL" (after the FDA part) and finally "ELIGIBLE FOR OPTIMIZATION" (the ending).
+5. **Chapter cards.** A 2-second title card in the office colors (navy wall, rising sun, stars), where the script says "title card" (see section 1).
 
 ---
 
@@ -161,13 +163,13 @@ One exception: the first 1:40 of episode 1 (the theme song) is the existing musi
 
 - **Palette (`KIT.C`):** the theme song colors (section 1). Take every color from `KIT.C`, so that a palette change stays one edit.
 - **Layer A (`KIT.office`):** the navy wall with geometric panels, atomic stars (`KIT.star`) and boomerangs (`KIT.boomerang`), the rising orange sun, the tiled floor, and a mustard disc behind Wishonia's head. Props: `KIT.desk` (in front of Wishonia), `KIT.mug`, `KIT.cabinet` ("EARTH: CASE #847") and `KIT.wallScreen`. `KIT.OFFICE` gives the standard positions for each canvas shape (wall screen, Wishonia, desk, the disc), so that the office stays the same from scene to scene.
-- **Both canvas shapes:** every scene is drawn for 16:9 (1920 × 1080) and for the tall phone version, 9:16 (1080 × 1920); `KIT.V` is true for 9:16. Each scene has its own layout for each shape, not a scaled copy. In 9:16, Wishonia's corner frame is top right, the countdown board top left, and the captions sit at y 1470 to 1700.
+- **Both canvas shapes:** every scene is drawn for 16:9 (1920 × 1080) and for the tall phone version, 9:16 (1080 × 1920); `KIT.V` is true for 9:16. Each scene has its own layout for each shape, not a scaled copy. In 9:16, Wishonia's saucer is top right and the captions sit at y 1470 to 1700.
 - **Transitions (`KIT.enter`):** "slide left" (Earth to Earth), "zoom into the wall screen" (office to Earth) and "zoom out of the wall screen" (Earth to office, with a small copy of the last Earth picture on the screen).
 - **The eligibility form (`KIT.form`, `KIT.FORM_Q`, `KIT.FORM_AT`):** the 1950s mail-in form of loved-ones, nuclear-winters and eligible, with its YES/NO boxes and the fine print.
-- **Layer B (`KIT.paper`):** cream paper with a navy and orange double rule border and a few stars. `KIT.paperDefs` gives the halftone-dot fills (the ids keep their old names: hatch, cross, fine, hred, hteal). Use navy lines, and only the two accent colors for money: red `#C8452E` (war money) and teal `#2F8F86` (medicine money). For teal text on cream, use the darker `#1F6E68`, so that the text is easy to read.
+- **Layer B (`KIT.paper`):** cream paper with a navy and orange double rule border and a few stars. `KIT.paperDefs` gives the halftone-dot fills (the ids keep their old names: hatch, cross, fine, hred, hteal). Use navy lines. Money is money green with a red seal (war) or a teal seal (medicine) (section 1, Layer B). For teal text on cream, use the darker `#1F6E68`, so that the text is easy to read.
 - **Print grain (`KIT.grain`):** a fine speckle pattern laid over the whole frame, last. Do not use full-frame SVG filters for it: in the render they paint through from scenes that are not on screen and wash out the colors.
-- **Characters (original designs):** `KIT.person(o)` (a stick-figure human in simple clothes, with a chest light; `KIT.cast(name)` gives the recurring characters above; the old name `KIT.bean` now draws a person too, and `tools/cast-sheet.mjs` draws the cast sheet), `KIT.money` (a paper bill with stick legs and a generic oval portrait), `KIT.tophat`, the countdown board (`KIT.countdownBoard`, 104 per minute), and the quiz parts (`KIT.checkbox`, `KIT.tick`, `KIT.pencil`).
-- **Wishonia:** the real sprite PNGs only (section 2). `KIT.mountWishonia` puts the head on the body as in `characters.js`, swaps the mouth from `word-timings.json`, shows `blink-smile` in pauses, and rocks the head ±2° on the 7-second loop. Layer A shows Wishonia large. Layer B shows Wishonia in a round corner frame (PiP).
+- **Characters (original designs):** `KIT.person(o)` (a stereotype human, with a chest light; `KIT.cast(name)` gives the recurring characters above, with their props and pose unless the scene poses the arms; `KIT.rig(o)` gives a person's pivots and hands; the old name `KIT.bean` now draws a person too, and `tools/cast-sheet.mjs` draws the cast sheet), `KIT.money` (a paper bill with stick legs and a generic oval portrait), `KIT.tophat`, and the quiz parts (`KIT.checkbox`, `KIT.tick`, `KIT.pencil`).
+- **Wishonia:** the real sprite PNGs only (section 2). `KIT.mountWishonia` puts the head on the body as in `characters.js`, swaps the mouth from `word-timings.json`, shows `blink-smile` in pauses, and rocks the head ±2° on the 7-second loop. Layer A shows Wishonia large. Layer B shows her in the corner (`KIT.cornerOpts`: standing in 16:9, in her saucer in 9:16).
 - **Text:** big numbers use Fraunces Black (soft), labels use Oswald SemiBold, captions use Inter. The font files and their licenses (SIL Open Font License) are in `video/assets/fonts/`. Draw check marks and arrows as SVG, because the fonts do not have all symbols.
 
 ---

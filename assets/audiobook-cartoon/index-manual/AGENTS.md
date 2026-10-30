@@ -27,10 +27,10 @@ Read these first:
 
 **Both shapes.** Keep-out zones:
 
-| | Captions | Wishonia's corner frame (Layer B) | Countdown board |
-| --- | --- | --- | --- |
-| 16:9 | nothing important below y 900 | circle at (1760, 740), r 128 | top left, x < 440 and y < 190 |
-| 9:16 | y 1470 to 1700 (keep above 1450) | circle at (902, 300), r 122 | top left, x < 400 and y < 200 |
+| | Captions | Wishonia's corner (Layer B, `KIT.cornerOpts`) |
+| --- | --- | --- |
+| 16:9 | none burned in (YouTube's captions and controls sit there), so nothing important below y 900 | standing in the bottom right: x 1600 to 1920, y 690 to the bottom |
+| 9:16 | y 1470 to 1700 (keep above 1450) | her saucer at the top right: x 740 to 1040, y 60 to 430 |
 
 **GSAP on SVG**
 - Never tween x, y, scale or rotation on an SVG element that has a `transform` attribute: GSAP reads it as its start and the element jumps. Position an outer group; tween an inner one.
@@ -41,10 +41,15 @@ Read these first:
 - Determinism: no `Math.random` (use `KIT.rng`), no `Date`, no timers, finite repeats.
 - A scene id that starts with a digit (`604-papers`) is not a valid CSS selector. Get its elements with `getElementById`.
 
+**People**
+- People come in many shapes, so never hard-code a pivot or a hand. `KIT.rig(o)` (with the same options you drew the person with; `KIT.castOpts(name, extra)` for a cast member) gives the shoulders and hips (svgOrigin for arms and legs), the neck (for the head), the hands, mouth and eyes.
+- `plain: true` gives the standard build (shoulders at (±17, -26)) when a gag needs a predictable body; otherwise each human's build comes from its outfit, skin tone and color.
+- `<!--head-end-->` (person units) and `<!--face-end-->` (the face's own units, facing +x) are where to add things to a head. The eyes are `.eye` groups with a `.pupil`.
+
 **Offices and zooms**
 - Office scenes use the `KIT.OFFICE` positions. A scene that moves its wall screen (earth-means-dirt in 16:9) makes the next zoom-in scene pass that screen box to `KIT.enter`.
 - Wall-screen zooms go through `KIT.zoomView` and `KIT.enter`. An office scene that zooms out draws the previous Earth frame inside its screen with `KIT.zoomView(screen).mini`, so the zoom starts on that frame.
-- In scenes that zoom, keep the countdown board and the grain outside the camera wrapper, so they stay put.
+- In scenes that zoom, keep the grain outside the camera wrapper, so it stays put.
 
 **Continuity**
 - A scene that continues the last one ("same form (no seam)", a cut between two office scenes, a zoom-out) starts on the last scene's final frame.

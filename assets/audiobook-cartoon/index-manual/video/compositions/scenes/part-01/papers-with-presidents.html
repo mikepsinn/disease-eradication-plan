@@ -16,7 +16,6 @@
     <div id="papers-with-presidents-cam">
       <div id="papers-with-presidents-bg"></div>
       <div id="papers-with-presidents-art"></div>
-      <div id="papers-with-presidents-board"><div id="papers-with-presidents-board-in"></div></div>
       <div id="papers-with-presidents-pip"></div>
       <div id="papers-with-presidents-grain"></div>
     </div>
@@ -33,7 +32,7 @@
       var q = function (s) { return document.getElementById(ID + "-" + s); };
       var cue = function (w, n) { return KIT.cue(ID, w, n); };
       var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
-      var INK = C.line, CARD = "#FBF5E4", BILL = "#E9E1CC";
+      var INK = C.line, CARD = "#FBF5E4", BILL = C.money;
 
       // Layout for each canvas shape. crowd: each conga human's feet; s: their scale; bs: the paper's scale; feet:
       // the conga line's ground; stop/end: where the paper stands after walking in, and at the end; m: how far off
@@ -118,14 +117,14 @@
         for (k in b) o[k] = b[k];
         return o;
       }
-      // Eyes squeezed shut: drop person()'s two eye dots (looking right, they sit at (-1,-58) and (15,-58)) for > <.
+      // Eyes squeezed shut: drop person()'s two .eye groups for > < (in the face's own units, where the eyes sit at
+      // x -2.5 and 10.8, y -4), so they go with the head if it pops off.
       function squint(svg) {
         var n = 0;
-        var out = svg.replace(/<circle cx="[-\d.]+" cy="-58" r="3.2" fill="[^"]+"\/>/g, function () { n++; return ""; });
+        var out = svg.replace(/<g class="eye">[\s\S]*?<\/g>/g, function () { n++; return ""; });
         if (n !== 2) throw new Error("squint: expected 2 eyes, found " + n);
-        var e = function (x, k) { return "M" + (x - 4.5 * k) + ",-61.5 l" + 4.5 * k + ",3.5 l" + -4.5 * k + ",3.5"; };
-        // inside the head, so the eyes go with it if it pops off
-        return out.replace("<!--head-end-->", '<path d="' + e(-1, 1) + " " + e(15, -1) + '" fill="none" stroke="' + INK + '" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><!--head-end-->');
+        var e = function (x, k) { return "M" + (x - 4.5 * k) + ",-7.5 l" + 4.5 * k + ",3.5 l" + -4.5 * k + ",3.5"; };
+        return out.replace("<!--face-end-->", '<path d="' + e(-2.5, 1) + " " + e(10.8, -1) + '" fill="none" stroke="' + INK + '" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><!--face-end-->');
       }
       // The slow human: bored, then looking right (too late), surprised (the drawing that gets flattened), limping
       // after the line (sad, arms out) and squeezing his eyes shut at the back of it. #<id>-slow is placed every
@@ -189,14 +188,9 @@
       // the slow human under both, so the line walks over him.
       q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + slow + '<g id="' + ID + '-bill">' + bill() + "</g>" + crowd + callout + banner);
 
-      // The countdown board stays in the corner (it dropped in during loved-ones).
-      q("board-in").innerHTML = KIT.countdownBoard();
-      KIT.placeBoard(q("board"), q("board-in"));
-      var board = q("board-in").firstChild;
 
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
-      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
       KIT.enter(tl, q("cam"), "slide left");
 
       var T = {
@@ -336,7 +330,8 @@
         var jg = q("h" + i + "-j"), j = slot[i];
         var bored = g.querySelector(".pwp-bored"), look = g.querySelector(".pwp-look"), conga = g.querySelector(".pwp-conga"), strain = g.querySelector(".pwp-strain");
         var head = bored.querySelector(".head"), cl = conga.querySelector(".leg-l"), cr = conga.querySelector(".leg-r");
-        pivot(jg, "0 100"); pivot(head, "0 -34"); pivot(cl, "-8 30"); pivot(cr, "8 30");
+        var rg = KIT.rig(mix(LOOKS[i], { look: "right", arms: ARMS }));
+        pivot(jg, "0 100"); pivot(head, KIT.rig(LOOKS[i]).neck.join(" ")); pivot(cl, rg.hip[0].join(" ")); pivot(cr, rg.hip[1].join(" "));
         // "only": everyone sags, heads drooping, and holds still
         var droop = (rnd() < 0.5 ? -1 : 1) * (9 + rnd() * 6);
         tl.fromTo(head, { rotation: 0 }, { rotation: droop, duration: 0.5, ease: "power2.inOut" }, T.only + i * 0.015);
@@ -363,7 +358,7 @@
       // his head and looks right long after the line has gone.
       var sj = q("slow-j"), sv = function (c) { return slowG.querySelector(".pwp-" + c); };
       var sBored = sv("bored"), sLate = sv("late"), sFlat = sv("flat"), sLimp = sv("limp"), sStrain = sv("strain"), sHead = sBored.querySelector(".head");
-      pivot(sj, "0 100"); pivot(sHead, "0 -34");
+      pivot(sj, "0 100"); pivot(sHead, KIT.rig(SLOW).neck.join(" "));
       tl.fromTo(sHead, { rotation: 0 }, { rotation: 13, duration: 0.5, ease: "power2.inOut" }, T.only);
       tl.fromTo(sj, { scaleY: 1 }, { scaleY: 0.93, duration: 0.5, ease: "power2.inOut" }, T.only);
       tl.to(sHead, { rotation: 0, duration: 0.45, ease: "sine.inOut" }, T.late);
@@ -382,7 +377,7 @@
       tl.set(sFlat, { opacity: 0 }, T.pop);
       tl.set(sLimp, { opacity: 1 }, T.pop);
       var sLeg = sLimp.querySelector(".leg-r");
-      pivot(sLeg, "8 30");
+      pivot(sLeg, KIT.rig(mix(SLOW, { look: "right" })).hip[1].join(" "));
       swing(sLeg, -22, T.limp0, T.limp1 - T.limp0, 3);
       // at the back of the line: eyes shut, trembling with the rest
       tl.set(sLimp, { opacity: 0 }, T.limp1 + 0.05);
@@ -393,7 +388,7 @@
       // beat after "enough." (thunk), still squeezing its eyes shut.
       var front = humans[slot.indexOf(0)], fHead = front.querySelector(".pwp-strain .head"), burst = front.querySelector(".pwp-burst");
       var mid = (T.head + T.land) / 2;
-      pivot(fHead, "2 -56"); pivot(burst, "0 0");
+      pivot(fHead, KIT.rig(mix(LOOKS[slot.indexOf(0)], { look: "right" })).head.join(" ")); pivot(burst, "0 0");
       tl.fromTo(fHead, { y: 0, rotation: 0 }, { y: -185, rotation: 540, duration: mid - T.head, ease: "power2.out" }, T.head);
       tl.to(fHead, { y: 0, rotation: 900, duration: T.land - mid, ease: "power2.in" }, mid);
       tl.to(fHead, { y: -14, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.out" }, T.land);

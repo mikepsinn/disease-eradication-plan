@@ -16,8 +16,6 @@
       <div id="pentagon-art"></div>
       <div id="pentagon-pip"></div>
     </div>
-    <!-- outside the zoom, so the board stays in its corner as in the office scene before -->
-    <div id="pentagon-board"><div id="pentagon-board-in"></div></div>
     <div id="pentagon-grain"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
@@ -182,14 +180,9 @@
         }).join("");
       });
 
-      // The countdown board stays in the corner (it dropped in during loved-ones).
-      q("board-in").innerHTML = KIT.countdownBoard();
-      KIT.placeBoard(q("board"), q("board-in"));
-      var board = q("board-in").firstChild;
 
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
-      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
       // earth-means-dirt moves its wall screen right in 16:9 (to fit the cabinet); 9:16 keeps the standard one
       KIT.enter(tl, q("cam"), "zoom into the wall screen", V ? KIT.OFFICE.screen : [420, 190, 820, 520]);
 

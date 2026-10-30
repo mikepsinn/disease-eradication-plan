@@ -16,7 +16,7 @@ Times are MP3 times. They come from each scene's cue word in `../../word-timings
 
 Scenes are named, not numbered. Use the name in feedback ("loved-ones: make the form smaller"). The number in each heading is only the order.
 
-Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper with red (war money) and teal (medicine money). "PiP" means Wishonia talks from the round corner frame.
+Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper; the money is green, and its seal says what it buys (a red missile for war, a teal cross for medicine). "PiP" means Wishonia in her Layer B corner: standing in the bottom right corner in 16:9 (cut off by the frame's bottom edge), in her flying saucer at the top right in 9:16, with her gesture body showing.
 
 **Spine.** The wait sign. One plain enamel sign hangs over the ticket window at the front of the queue to not die. In queue-to-not-die its top line reads "15 PER YEAR" and its bottom line, "WAIT TIME FROM HERE:", spins without stopping. The window turns out to be the warehouse's, and at the end of untested-warehouse the digits stop on "443 YEARS". In weirdly-calm the same 443 years stands next to the viewer's own "80 YEARS". The part is one long wait, and the sign keeps score.
 

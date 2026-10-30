@@ -16,7 +16,7 @@ Times are MP3 times. They come from each scene's cue word in `../../word-timings
 
 Scenes are named, not numbered. Use the name in feedback ("loved-ones: make the form smaller"). The number in each heading is only the order.
 
-Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper with red (war money) and teal (medicine money). "PiP" means Wishonia talks from the round corner frame.
+Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper; the money is green, and its seal says what it buys (a red missile for war, a teal cross for medicine). "PiP" means Wishonia in her Layer B corner: standing in the bottom right corner in 16:9 (cut off by the frame's bottom edge), in her flying saucer at the top right in 9:16, with her gesture body showing.
 
 **Spine.** The engraved world map. The pencil's parts fly across it in pencil-parts-map, its strangers line its routes in pencil-strangers, the cure's chain of strangers spans it in the two cure-chain scenes, and in millions-cooperated it fills with dots. The pencil half and the disease half use the same map, the same TV set and the same empty office, so the second half reads as a copy of the first.
 

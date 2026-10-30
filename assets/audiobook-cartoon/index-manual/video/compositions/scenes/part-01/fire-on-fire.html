@@ -13,7 +13,6 @@
     <div id="fire-on-fire-cam">
       <div id="fire-on-fire-bg"></div>
       <div id="fire-on-fire-art"></div>
-      <div id="fire-on-fire-board"><div id="fire-on-fire-board-in"></div></div>
       <div id="fire-on-fire-pip"></div>
       <div id="fire-on-fire-grain"></div>
     </div>
@@ -79,8 +78,8 @@
       // hand, flames all over (fire), or charred with its pupils shifted (eyes).
       var D2 = (2 * SEP) / HS;
       var CAVEMEN = {
-        A: { tone: 2, outfit: "shirt", color: 2, hair: 0, look: "left", spots: [[-9, -8], [8, 2], [-6, 17], [9, 22], [-1, 28]] },
-        B: { tone: 0, outfit: "dress", color: 3, hair: 1, hairColor: "#5A3A22", look: "left", spots: [[-6, -10], [7, 0], [-14, 26], [12, 32], [-2, 42], [22, 46], [-24, 46]] },
+        A: { tone: 2, outfit: "shirt", color: 2, hair: 0, look: "left", plain: true, spots: [[-9, -8], [8, 2], [-6, 17], [9, 22], [-1, 28]] },
+        B: { tone: 0, outfit: "dress", color: 3, hair: 1, hairColor: "#5A3A22", look: "left", plain: true, spots: [[-6, -10], [7, 0], [-14, 26], [12, 32], [-2, 42], [22, 46], [-24, 46]] },
       };
       var DOWN = [[-15, -5], [15, 5]];
       var POSES = {
@@ -95,16 +94,20 @@
         jabB: { arms: [[-80, -75], [15, 5]], mood: "flat", brows: true, stick: { to: [-D2 + 16, 8] } },
         fl1: { arms: [[-160, -175], [160, 175]], mood: "eager", fire: true },
         fl2: { arms: [[-125, -160], [125, 160]], mood: "eager", fire: true },
-        c0: { arms: DOWN, charred: true, look: null },
-        c1: { arms: DOWN, charred: true, eyes: [-1.5, 0] },
-        c2: { arms: DOWN, charred: true, eyes: [-1.5, 2.2] },
-        c3: { arms: [[-35, -50], [15, 5]], charred: true, eyes: [-1.5, 2.2] },
-        c4: { arms: [[-110, -150], [15, 5]], charred: true, eyes: [-1.5, 0], stick: { dir: [-0.8, -0.6], len: 60 } },
+        c0: { arms: DOWN, charred: true },
+        c1: { arms: DOWN, charred: true, eyes: [1.5, 0] },
+        c2: { arms: DOWN, charred: true, eyes: [1.5, 2.2] },
+        c3: { arms: [[-35, -50], [15, 5]], charred: true, eyes: [1.5, 2.2] },
+        c4: { arms: [[-110, -150], [15, 5]], charred: true, eyes: [1.5, 0], stick: { dir: [-0.8, -0.6], len: 60 } },
       };
-      // The near hand of a pose (KIT.person's arm: shoulder at (-17, -26), two 26-unit segments).
-      function handAt(a) {
-        var r1 = (a[0] * Math.PI) / 180, r2 = (a[1] * Math.PI) / 180;
-        return [-17 + 26 * Math.sin(r1) + 26 * Math.sin(r2), -26 + 26 * Math.cos(r1) + 26 * Math.cos(r2)];
+      // A caveman's options for a pose: the base, then the pose's arms, mood and look.
+      function poseOpts(who, name) {
+        var base = CAVEMEN[who], sp = POSES[name], o = {}, k;
+        for (k in base) if (k !== "spots") o[k] = base[k];
+        o.arms = sp.arms; o.mood = sp.mood; o.brows = sp.brows;
+        if (sp.look !== undefined) o.look = sp.look;
+        if (sp.charred) o.charred = true;
+        return o;
       }
       // A burning stick held at hand h, toward a point (to) or along dir; its flame is a KIT.flames.
       function stickSvg(h, st) {
@@ -115,11 +118,7 @@
           KIT.flames(tip[0].toFixed(1), (tip[1] + 3).toFixed(1), 0.26);
       }
       function poseSvg(who, name) {
-        var base = CAVEMEN[who], sp = POSES[name], o = {}, k;
-        for (k in base) if (k !== "spots") o[k] = base[k];
-        o.arms = sp.arms; o.mood = sp.mood; o.brows = sp.brows;
-        if (sp.look !== undefined) o.look = sp.look;
-        if (sp.charred) o.charred = true;
+        var base = CAVEMEN[who], sp = POSES[name], o = poseOpts(who, name);
         var m = KIT.person(o);
         if (!sp.charred) {
           var spots = base.spots.map(function (s) { return '<ellipse cx="' + s[0] + '" cy="' + s[1] + '" rx="3.6" ry="2.6" fill="' + C.rust + '" opacity="0.85"/>'; }).join("");
@@ -131,10 +130,10 @@
         if (sp.fire) m += KIT.fireOn(o);
         return m;
       }
-      // The pose's stick (drawn on a layer over both cavemen, so each tip shows on the other one).
-      function poseStick(name) {
+      // The pose's stick in the near hand (drawn on a layer over both cavemen, so each tip shows on the other one).
+      function poseStick(who, name) {
         var sp = POSES[name];
-        return sp.stick ? stickSvg(handAt(sp.arms[0]), sp.stick) : "";
+        return sp.stick ? stickSvg(KIT.rig(poseOpts(who, name)).hand[0], sp.stick) : "";
       }
       // Where each caveman stands (stage units) and its mirror.
       function placeOf(who) { return "translate(" + (who === "A" ? SEP : -SEP) + ",-208) scale(" + (who === "A" ? HS : -HS) + "," + HS + ")"; }
@@ -160,7 +159,7 @@
       }
       function sticks(who) {
         return '<g transform="' + placeOf(who) + '">' + ["hold", "wind", "jab"].map(function (name) {
-          return '<g id="' + P(who + "-" + name + "-stick") + '" opacity="0">' + poseStick(specOf(who, name)) + "</g>";
+          return '<g id="' + P(who + "-" + name + "-stick") + '" opacity="0">' + poseStick(who, specOf(who, name)) + "</g>";
         }).join("") + "</g>";
       }
       var sootOf = function (who) { return '<g transform="' + placeOf(who) + '"><g id="' + P(who + "-soot") + '" opacity="0">' + soot() + "</g></g>"; };
@@ -169,19 +168,15 @@
         '<g transform="translate(' + L.stage[0] + "," + L.stage[1] + ") scale(" + L.stage[2] + ')">' + fire +
         caveman("B") + caveman("A") + sticks("B") + sticks("A") + sootOf("B") + sootOf("A") + "</g>");
 
-      q("board-in").innerHTML = KIT.countdownBoard();
-      KIT.placeBoard(q("board"), q("board-in"));
-      var board = q("board-in").firstChild;
 
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
-      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
       KIT.enter(tl, q("cam"), "slide left");
       var both = function (s) { return [g("A-" + s), g("B-" + s)]; };
       var all = function (sel) { return document.querySelectorAll(g("A-" + sel) + ", " + g("B-" + sel)); };
       // Pivots, set once while untransformed.
       [[[g("flames"), g("f-out"), g("f-mid"), g("f-in")], "0 -14"], [both("soot"), "0 -10"], [all("fl1 .on-fire"), "0 20"],
-        [all("hold-stick .flames"), "0 0"], [all("c0 .char-eyes"), "0 -58"]].forEach(function (o) { gsap.set(o[0], { svgOrigin: o[1] }); });
+        [all("hold-stick .flames"), "0 0"], [all("c0 .char-eyes"), KIT.rig({}).faceEyes.join(" ")]].forEach(function (o) { gsap.set(o[0], { svgOrigin: o[1] }); });
       // Pose swaps: each caveman shows one pose (and its stick) at a time.
       var cur = { A: "stand", B: "stand" };
       var STICK = { hold: 1, wind: 1, jab: 1 };

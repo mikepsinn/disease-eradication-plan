@@ -16,7 +16,7 @@ Times are MP3 times. They come from each scene's cue word in `../../word-timings
 
 Scenes are named, not numbered. Use the name in feedback ("loved-ones: make the form smaller"). The number in each heading is only the order.
 
-Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper with red (war money) and teal (medicine money). "PiP" means Wishonia talks from the round corner frame.
+Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper; the money is green, and its seal says what it buys (a red missile for war, a teal cross for medicine). "PiP" means Wishonia in her Layer B corner: standing in the bottom right corner in 16:9 (cut off by the frame's bottom edge), in her flying saucer at the top right in 9:16, with her gesture body showing.
 
 **Spine.** The countdown board, then one body. The board fills the frame at 150,000 a day, shrinks to the top-left corner and keeps counting while the same number becomes a calendar and a row of date tags. It slides out when the camera turns to one human reading, and the part ends inside that human: first the breaking parts, then the blueprint that says each part can be fixed.
 

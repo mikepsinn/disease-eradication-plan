@@ -16,7 +16,7 @@ Times are MP3 times. They come from each scene's cue word in `../../word-timings
 
 Scenes are named, not numbered. Use the name in feedback ("loved-ones: make the form smaller"). The number in each heading is only the order.
 
-Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper with red (war money) and teal (medicine money). "PiP" means Wishonia talks from the round corner frame.
+Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper; the money is green, and its seal says what it buys (a red missile for war, a teal cross for medicine). "PiP" means Wishonia in her Layer B corner: standing in the bottom right corner in 16:9 (cut off by the frame's bottom edge), in her flying saucer at the top right in 9:16, with her gesture body showing.
 
 **Spine.** The Democracy Dog and its loop. The dog first runs in democracy-dog-loop, chasing a tail of red papers around four stations; the loop grows a face in loop-is-evil, snaps in redirect-math, holds both politicians in red-blue-ties, and in better-loop-teal-tail the same dog chases a tail of teal pills and gets reelected.
 

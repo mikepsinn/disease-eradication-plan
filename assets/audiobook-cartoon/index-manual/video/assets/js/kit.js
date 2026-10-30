@@ -16,6 +16,8 @@
     navy: "#112845", deep: "#061D3E", slate: "#273049", rust: "#904B2E", tan: "#B47E52", cyan: "#7FB5B0", ink: "#0B1A33",
     // Layer B: the Earth diagrams
     paper: "#F3ECD0", line: "#112845", war: "#C8452E", med: "#2F8F86",
+    // money is always money green; its seal says what it buys (red missile = war, teal cross = medicine)
+    money: "#86AD6E", moneyDark: "#3B6644", moneyEdge: "#6F9A5C",
   };
 
   // ── Time ──────────────────────────────────────────────────────────────
@@ -122,7 +124,7 @@
     return { rot: -2 + 4 * k, lift: k };
   }
 
-  // Build a Wishonia rig in `parent`. opts: { scene, x, y, w, pip: {cx, cy, r} }.
+  // Build a Wishonia rig in `parent`. opts: { scene, x, y, w, corner } (corner: from KIT.cornerOpts).
   // Head 95% of width, centered; body full width below, overlapping the head by 12/140 of the width.
   function mountWishonia(tl, parent, opts) {
     var sc = scene(opts.scene);
@@ -142,15 +144,17 @@
     var rig = document.createElement("div");
     rig.className = "kit-wish-rig";
     rig.style.cssText = "position:absolute;left:" + opts.x + "px;top:" + opts.y + "px;width:" + w + "px;height:" + Math.round(w * 1.5) + "px;";
-    if (opts.pip) {
-      var r = opts.pip.r;
-      frame.style.cssText = "position:absolute;left:" + (opts.pip.cx - r) + "px;top:" + (opts.pip.cy - r) + "px;width:" + 2 * r + "px;height:" + 2 * r + "px;border-radius:50%;overflow:hidden;" +
-        "background:radial-gradient(circle at 50% 70%, #E8B04A 0, #E5903B 40%, #904B2E 68%, #112845 92%);" +
-        "box-shadow:0 0 0 7px " + C.cream + ", 0 0 0 13px " + C.line + ";";
-      rig.style.left = opts.x - (opts.pip.cx - r) + "px";
-      rig.style.top = opts.y - (opts.pip.cy - r) + "px";
-    } else {
-      frame.style.cssText = "position:absolute;inset:0;";
+    frame.style.cssText = "position:absolute;inset:0;" + (opts.corner ? "overflow:hidden;" : "");
+    var craft = frame;
+    if (opts.corner) {
+      // Mirrored, so her pointing and presenting bodies point into the frame; a cream-and-navy cut-out edge
+      // keeps her readable over the diagram.
+      rig.style.transform = "scaleX(-1)";
+      rig.style.filter = ["4px 0", "-4px 0", "0 4px", "0 -4px"].map(function (d) { return "drop-shadow(" + d + " 0 " + C.cream + ")"; }).join(" ") + " " +
+        ["3px 0", "-3px 0", "0 3px", "0 -3px"].map(function (d) { return "drop-shadow(" + d + " 0 " + C.line + ")"; }).join(" ");
+      craft = document.createElement("div");
+      craft.style.cssText = "position:absolute;inset:0;";
+      frame.appendChild(craft);
     }
     var bodyBox = document.createElement("div");
     bodyBox.style.cssText = "position:absolute;left:0;top:" + Math.round(w * 0.95 - (w * 12) / 140) + "px;width:" + w + "px;height:" + Math.round((w * 768) / 1343) + "px;";
@@ -170,7 +174,9 @@
     Object.keys(heads).forEach(function (h) { addImg(headBox, h, headImgs); });
     rig.appendChild(bodyBox);
     rig.appendChild(headBox);
-    frame.appendChild(rig);
+    if (opts.corner === "saucer") craft.appendChild(saucerLayer(opts, true));
+    craft.appendChild(rig);
+    if (opts.corner === "saucer") craft.appendChild(saucerLayer(opts, false));
     parent.appendChild(frame);
 
     var shown = { head: null, body: null };
@@ -190,8 +196,26 @@
       }
       var b = bob(t);
       headBox.style.transform = "translateY(" + (-b.lift * w * 2 / 140).toFixed(2) + "px) rotate(" + b.rot.toFixed(3) + "deg)";
+      // The saucer hovers: a slow bob and tilt.
+      if (opts.corner === "saucer") craft.style.transform = "translateY(" + (Math.sin(t * 1.9) * 5).toFixed(2) + "px) rotate(" + (Math.sin(t * 1.1) * 1.2).toFixed(3) + "deg)";
     });
-    return { frame: frame, rig: rig };
+    return { frame: frame, rig: rig, craft: craft };
+  }
+  // Wishonia's flying saucer (9:16): the far rim behind her (back) or the hull in front, which hides
+  // where the body sprite ends. Sized from the rig width; the rim sits at her hips.
+  function saucerLayer(opts, back) {
+    var k = opts.w / 280, cx = opts.x + opts.w / 2, cy = opts.y + 318 * k, rx = 150 * k, ry = 24 * k;
+    var inner = back
+      ? '<ellipse cx="' + cx + '" cy="' + cy + '" rx="' + rx + '" ry="' + ry + '" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="6"/>'
+      : '<path d="M' + (cx - rx) + "," + cy + " A" + rx + "," + ry + " 0 0 0 " + (cx + rx) + "," + cy + " L" + (cx + rx * 1.12) + "," + (cy + 22 * k) + " Q" + cx + "," + (cy + 70 * k) + " " + (cx - rx * 1.12) + "," + (cy + 22 * k) + ' Z" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="6" stroke-linejoin="round"/>' +
+        '<path d="M' + (cx - rx) + "," + cy + " A" + rx + "," + ry + " 0 0 0 " + (cx + rx) + "," + cy + '" fill="none" stroke="' + C.cream + '" stroke-width="7"/>' +
+        '<path d="M' + (cx - rx * 0.8) + "," + (cy + 52 * k) + " Q" + cx + "," + (cy + 96 * k) + " " + (cx + rx * 0.8) + "," + (cy + 52 * k) + ' Z" fill="' + C.orange + '" stroke="' + C.line + '" stroke-width="5"/>' +
+        [-0.7, -0.35, 0, 0.35, 0.7].map(function (d) { return '<circle cx="' + (cx + d * rx) + '" cy="' + (cy + 30 * k - Math.abs(d) * 12 * k) + '" r="' + 9 * k + '" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="3"/>'; }).join("");
+    var layer = document.createElement("div");
+    layer.className = back ? "kit-saucer-back" : "kit-saucer";
+    layer.style.cssText = "position:absolute;inset:0;";
+    layer.innerHTML = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + " " + H + '" style="position:absolute;inset:0;overflow:visible">' + inner + "</svg>";
+    return layer;
   }
 
   // ── SVG helpers ──────────────────────────────────────────────────────
@@ -401,15 +425,11 @@
     ["2. Enough nuclear bombs for", "122 nuclear winters?"],
   ];
 
-  // Wishonia's round corner frame (Layer B): bottom right in 16:9, top right in 9:16.
-  function pipOpts(scene) {
-    var r = V ? 122 : 128, cx = V ? 902 : 1760, cy = V ? 300 : 740, w = V ? 266 : 280;
-    return { scene: scene, x: cx - Math.round(w / 2), y: cy - Math.round(w * 0.54), w: w, pip: { cx: cx, cy: cy, r: r } };
-  }
-  // The countdown board, in the top-left corner from loved-ones on.
-  function placeBoard(wrap, inner) {
-    wrap.style.cssText = "position:absolute;left:" + (V ? 40 : 56) + "px;top:" + (V ? 70 : 52) + "px;";
-    inner.style.cssText = "position:relative;transform-origin:0 0;transform:scale(" + (V ? 0.62 : 0.68) + ");";
+  // Wishonia in Layer B: in 16:9 she stands in the bottom right corner, cut off at the thighs by the
+  // frame's bottom edge; in 9:16 (where captions and the apps' buttons fill the bottom) she rides her
+  // flying saucer in the top right. Both show her whole gesture body, mirrored to point into the frame.
+  function cornerOpts(scene) {
+    return V ? { scene: scene, x: 770, y: 70, w: 240, corner: "saucer" } : { scene: scene, x: 1626, y: 693, w: 274, corner: "stand" };
   }
   // Scene transitions (cartoon-script rule: Layer B is the footage on the office wall screen).
   // cam: a wrapper around the whole scene; at: the wall screen's center in this layout.
@@ -492,205 +512,433 @@
       "</g>";
   }
 
-  // The humans (cartoon-style-bible.md section 3): stick figures in simple clothes, drawn around
-  // (0,0) with the head near y -78 and the feet at y 100, the same footprint as the old bean.
-  // o: { tone 0..3 (skin), outfit "shirt"|"dress"|"suit"|"labcoat"|"scrubs"|"overalls", color 0..3,
-  //      hair 0 short | 1 long | 2 bald, hat "top"|"bowler"|"hard"|"curlers", tie "wide", stache,
-  //      prop "monocle"|"briefcase"|"megaphone"|"poster"|"clipboard", tall, light "red"|"teal",
-  //      mood "smile"|"eager"|"sad"|"flat" (or the old mouth "smile"|"o"|"frown"|"flat"),
-  //      look "right"|"left", arms [[a1, a2], [b1, b2]] (deg, 0 = down), brows }
-  // No joint dots: the limbs bend without them. Parts animators reach with querySelector: .arm-l, .arm-r, .leg-l, .leg-r, .head, .brows, .mouth, .chest-light.
-  var CLOTHES = ["#E5903B", "#5C6F8E", "#B47E52", "#E8B04A"];
-  var PANTS = "#273049";
-  function hatSvg(kind, cx, hatTop) {
+  // The humans (cartoon-style-bible.md section 3), drawn as the theme song draws them: stereotypes you read
+  // from the silhouette. Each body is one big clothing shape (the fat cat an egg on stub legs, the politician
+  // an inverted triangle with a jaw, the crook a hunched trench coat), a small 3/4 head with a big nose, one
+  // stereotype tell, sharp polygons with thin navy lines, and print shading (orange edges on navy, halftone
+  // dots on light cloth). Drawn around (0,0), feet at y 100.
+  // o: { tone 0..3, outfit "shirt"|"dress"|"suit"|"labcoat"|"scrubs"|"overalls", color 0..3 (or colorHex),
+  //      hair 0 short | 1 woman | 2 bald, hat "top"|"bowler"|"fedora"|"hard"|"curlers", tie "wide", tieColor,
+  //      stache, cigar, glasses, mask, gloves, prop "monocle"|"megaphone"|"briefcase"|"poster"|"clipboard",
+  //      hold (a prop between both hands) / holdL / holdR: "cash"|"bill"|"moneybag"|"briefcase"|"poster"|
+  //      "clipboard"|"flask"|"cup"|"missile"|"magnifier", tall, light "red"|"teal",
+  //      mood "smile"|"grin"|"smug"|"eager"|"sad"|"worried"|"cross"|"flat"|"greedy" ($ eyes),
+  //      look "right"|"left" (no look faces right, eyes on the camera), arms [[a1, a2], [b1, b2]] (deg, 0 = down),
+  //      brows, plain (the standard build: no random proportions), kind, head, hairStyle, build {...} }
+  // A person without a kind gets a stable build of its own from its tone, color and outfit, so a crowd is a
+  // cast of 1950s types. Parts: .arm-l .arm-r .leg-l .leg-r .head .eye .pupil .brows .mouth .chest-light;
+  // KIT.rig(o) gives the pivots (shoulders, hips, neck, hands, mouth, eyes) in the person's units.
+  // <!--head-end--> sits in the .head group in person units; <!--face-end--> in the face's own units.
+  var BONE = "#F1EAD6"; // bone, for the skeletons and the Reaper
+  var HUMANS = (function () {
     var ink = C.line;
-    return {
-      top: '<rect x="' + (cx - 16) + '" y="' + (hatTop - 30) + '" width="32" height="30" rx="2" fill="' + ink + '"/><rect x="' + (cx - 16) + '" y="' + (hatTop - 9) + '" width="32" height="5" fill="' + C.war + '"/><rect x="' + (cx - 27) + '" y="' + (hatTop - 3) + '" width="54" height="6" rx="3" fill="' + ink + '"/>',
-      bowler: '<path d="M' + (cx - 18) + "," + (hatTop + 2) + " Q" + cx + "," + (hatTop - 22) + " " + (cx + 18) + "," + (hatTop + 2) + ' Z" fill="' + ink + '"/><rect x="' + (cx - 27) + '" y="' + hatTop + '" width="54" height="5" rx="2.5" fill="' + ink + '"/>',
-      hard: '<path d="M' + (cx - 24) + "," + (hatTop + 6) + " Q" + cx + "," + (hatTop - 24) + " " + (cx + 24) + "," + (hatTop + 6) + ' Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/><rect x="' + (cx - 29) + '" y="' + (hatTop + 3) + '" width="58" height="6" rx="3" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4"/>',
-      curlers: [-14, 0, 14].map(function (dx) { return '<circle cx="' + (cx + dx) + '" cy="' + (hatTop + 4) + '" r="6.5" fill="#E9B4C1" stroke="' + ink + '" stroke-width="2.2"/>'; }).join(""),
-    }[kind] || "";
-  }
-
-  // The gag versions of a person (cartoon-style-bible.md, Comedy 6): o.skeleton draws the same pose as
-  // bones, still smiling, still in its hat; o.charred draws it burnt black and smoking, hair blown
-  // straight up, only the eyes white (its .smoke wisps can drift up). Same footprint and part classes.
-  var BONE = "#F1EAD6";
-  function skeleton(o) {
-    var ink = C.line;
-    var dir = o.look === "right" ? 1 : o.look === "left" ? -1 : 0, cx = dir * 2;
-    var arms = o.arms || [[20, 10], [-20, -10]];
-    var stretch = o.tall ? 1.35 : 1, hy = -56 - (stretch - 1) * 60, R = 22, neckY = hy + R, hipY = 30, sy = -26 - (stretch - 1) * 30;
-    function bonePath(d, w) {
-      return '<path d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="' + (w + 4) + '" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '<path d="' + d + '" fill="none" stroke="' + BONE + '" stroke-width="' + w + '" stroke-linecap="round" stroke-linejoin="round"/>';
+    var SKIN = ["#F4E3CC", "#D9B48F", "#A87B57", "#6F4B33"];
+    var CLOTH = ["#E5903B", "#5C6F8E", "#B47E52", "#E8B04A"];
+    var PANTS = "#273049", NAVY = "#24304D", LAPEL = "#1A2238", WHITE = "#FBF6E6", COAT = "#3A4766", SCRUBS = "#DDE9E6";
+    var LW = 4.4, uid = 0;
+    function P(x, y) { return x.toFixed(1) + "," + y.toFixed(1); }
+    function polyD(pts) { return "M" + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + " Z"; }
+    function poly(pts) { return 'path d="' + polyD(pts) + '"'; }
+    function flipX(pts) { return pts.map(function (p) { return [-p[0], p[1]]; }); }
+    function copy(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+    // Shapes drawn twice, a navy pass under the fill, so touching shapes of one color share one outline.
+    function solid(tags, col, w) {
+      w = w || LW;
+      return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+        tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
     }
-    function knob(x, y, r) { return '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + r + '" fill="' + BONE + '" stroke="' + ink + '" stroke-width="2.2"/>'; }
-    function limb(x0, y0, a, len, cls, foot) {
+    function line(d, col, w) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"/>'; }
+    function seg(x, y, a, len) {
       var r1 = (a[0] * Math.PI) / 180, r2 = (a[1] * Math.PI) / 180;
-      var ex = x0 + len * Math.sin(r1), ey = y0 + len * Math.cos(r1), hx = ex + len * Math.sin(r2), hy2 = ey + len * Math.cos(r2);
-      return '<g class="' + cls + '">' + bonePath("M" + x0 + "," + y0 + " L" + ex.toFixed(1) + "," + ey.toFixed(1) + " L" + hx.toFixed(1) + "," + hy2.toFixed(1), 5) +
-        (foot ? '<ellipse cx="' + (hx + foot * 5).toFixed(1) + '" cy="' + (hy2 + 2).toFixed(1) + '" rx="9" ry="4.5" fill="' + BONE + '" stroke="' + ink + '" stroke-width="2.2"/>' : knob(hx, hy2, 5)) + "</g>";
-    }
-    var ribs = "";
-    for (var k = 0; k < 4; k++) {
-      var y = neckY + 9 + k * 8, w = 15 - k * 1.8;
-      ribs += bonePath("M" + -w + "," + (y + 5) + " Q0," + (y - 4) + " " + w + "," + (y + 5), 3);
-    }
-    var ex = function (s) { return cx + s * 8 + dir * 4; };
-    var skull = '<g class="head"><circle cx="' + cx + '" cy="' + hy + '" r="' + R + '" fill="' + BONE + '" stroke="' + ink + '" stroke-width="4.5"/>' +
-      '<ellipse cx="' + ex(-1) + '" cy="' + (hy - 3) + '" rx="5.5" ry="6.5" fill="' + ink + '"/><ellipse cx="' + ex(1) + '" cy="' + (hy - 3) + '" rx="5.5" ry="6.5" fill="' + ink + '"/>' +
-      '<path d="M' + (cx + dir * 3 - 3) + "," + (hy + 6) + ' l3,-6 l3,6 Z" fill="' + ink + '"/>' +
-      '<path class="mouth" d="M' + (cx - 10) + "," + (hy + 12) + " Q" + cx + "," + (hy + 17) + " " + (cx + 10) + "," + (hy + 12) + " M" + (cx - 5) + "," + (hy + 11) + " v5 M" + cx + "," + (hy + 12) + " v5 M" + (cx + 5) + "," + (hy + 11) + ' v5" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round"/>' +
-      hatSvg(o.hat, cx, hy - R) + "</g>";
-    return '<g class="person skeleton">' + limb(-8, hipY, [-10, -4], 34, "leg-l", -1) + limb(8, hipY, [10, 4], 34, "leg-r", 1) +
-      bonePath("M0," + neckY + " V" + (hipY - 4), 5) + ribs +
-      '<path d="M-13,' + (hipY - 7) + " Q0," + (hipY + 9) + " 13," + (hipY - 7) + " Q0," + (hipY - 1) + " -13," + (hipY - 7) + ' Z" fill="' + BONE + '" stroke="' + ink + '" stroke-width="2.5"/>' +
-      bonePath("M-17," + sy + " Q0," + (sy - 5) + " 17," + sy, 4) +
-      '<circle class="chest-light" cx="0" cy="' + (neckY + 14) + '" r="0" fill="none"/>' +
-      limb(-17, sy, arms[0], 26, "arm-l") + limb(17, sy, arms[1], 26, "arm-r") + skull + "</g>";
-  }
-  // Burn a person's markup: every fill and stroke but the ink turns a dark brown of the same lightness.
-  function charify(markup, o) {
-    var ink = C.line.toUpperCase();
-    function dark(col) {
-      var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255;
-      var v = Math.round(28 + l * 46);
-      return "rgb(" + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ")";
-    }
-    var out = markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, attr, col) {
-      return col.toUpperCase() === ink ? m : attr + '="' + dark(col) + '"';
-    });
-    var dir = o.look === "right" ? 1 : o.look === "left" ? -1 : 0, cx = dir * 2, hy = -56 - ((o.tall ? 1.35 : 1) - 1) * 60;
-    var eye = function (s) {
-      var x = cx + s * 8 + dir * 5;
-      return '<circle cx="' + x + '" cy="' + (hy - 2) + '" r="5" fill="#FFFFFF" stroke="' + C.line + '" stroke-width="1.5"/><circle cx="' + x + '" cy="' + (hy - 2) + '" r="1.8" fill="' + C.line + '"/>';
-    };
-    var hair = '<path d="M' + (cx - 17) + "," + (hy - 14) + " l-8,-22 l12,10 l1,-24 l9,19 l6,-23 l5,22 l11,-16 l-3,23 l12,-6 l-9,15 Z" + '" fill="#1B1714" stroke="' + C.line + '" stroke-width="2"/>';
-    var smoke = '<g class="smoke">' + [-12, 2, 15].map(function (dx, i) {
-      var x = cx + dx, y = hy - 42 - i * 4;
-      return '<path d="M' + x + "," + y + " q-7,-9 0,-18 q7,-9 0,-18" + '" fill="none" stroke="#8C8782" stroke-width="4" stroke-linecap="round" opacity="0.85"/>';
-    }).join("") + "</g>";
-    return out.replace("<!--head-end-->", hair + '<g class="char-eyes">' + eye(-1) + eye(1) + "</g>" + smoke);
-  }
-  function person(o) {
-    o = o || {};
-    if (o.skeleton) return skeleton(o);
-    if (o.charred) {
-      var plain = {}, k;
-      for (k in o) plain[k] = o[k];
-      plain.charred = false; plain.hair = 2; plain.mood = "flat"; plain.prop = null; plain.stache = false;
-      if (!o.keepHat) plain.hat = null;
-      return charify(person(plain), o);
-    }
-    var ink = C.line;
-    var skin = TONES[(o.tone || 0) % TONES.length];
-    var cloth = o.colorHex || CLOTHES[(o.color === undefined ? o.tone || 0 : o.color) % CLOTHES.length];
-    var outfit = o.outfit || (o.hair === 1 ? "dress" : ["shirt", "suit", "shirt", "overalls"][(o.tone || 0) % 4]);
-    var mood = o.mood || (o.mouth === "smile" ? "smile" : o.mouth === "o" ? "eager" : o.mouth === "frown" ? "sad" : "flat");
-    if (o.brows && mood === "flat") mood = "cross";
-    var dir = o.look === "right" ? 1 : o.look === "left" ? -1 : 0;
-    var arms = o.arms || [[20, 10], [-20, -10]];
-    var stretch = o.tall ? 1.35 : 1;
-    var hy = -56 - (stretch - 1) * 60, R = 22;
-    var neckY = hy + R, hipY = 30;
-    var longCoat = outfit === "labcoat" || outfit === "scrubs";
-    function seg(x, y, a1, a2, len) {
-      var r1 = (a1 * Math.PI) / 180, r2 = (a2 * Math.PI) / 180;
       var ex = x + len * Math.sin(r1), ey = y + len * Math.cos(r1);
-      return { ex: ex, ey: ey, hx: ex + len * Math.sin(r2), hy: ey + len * Math.cos(r2) };
+      return { x: x, y: y, ex: ex, ey: ey, hx: ex + len * Math.sin(r2), hy: ey + len * Math.cos(r2) };
     }
-    var sleeve = outfit === "dress" || outfit === "overalls" ? null : outfit === "labcoat" ? "#F7F4EC" : outfit === "scrubs" ? "#DDE9E6" : outfit === "suit" ? "#2E3440" : cloth;
-    function arm(x, a, cls) {
-      var s = seg(x, -26 - (stretch - 1) * 30, a[0], a[1], 26);
-      var x0 = x, y0 = -26 - (stretch - 1) * 30;
-      return '<g class="' + cls + '">' +
-        (sleeve ? '<path d="M' + x0 + "," + y0 + " L" + s.ex.toFixed(1) + "," + s.ey.toFixed(1) + '" stroke="' + ink + '" stroke-width="12" stroke-linecap="round"/><path d="M' + x0 + "," + y0 + " L" + s.ex.toFixed(1) + "," + s.ey.toFixed(1) + '" stroke="' + sleeve + '" stroke-width="8" stroke-linecap="round"/>' : "") +
-        '<path d="M' + (sleeve ? s.ex.toFixed(1) + "," + s.ey.toFixed(1) : x0 + "," + y0 + " L" + s.ex.toFixed(1) + "," + s.ey.toFixed(1)) + " L" + s.hx.toFixed(1) + "," + s.hy.toFixed(1) + '" fill="none" stroke="' + ink + '" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '<circle cx="' + s.hx.toFixed(1) + '" cy="' + s.hy.toFixed(1) + '" r="5.5" fill="' + skin + '" stroke="' + ink + '" stroke-width="2.4"/></g>';
+    function nrm(ax, ay, bx, by) { var dx = bx - ax, dy = by - ay, L = Math.sqrt(dx * dx + dy * dy) || 1; return [-dy / L, dx / L]; }
+    // A two-segment limb as one tapered polygon with a mitred (sharp) elbow or knee.
+    function limb(s, w0, w1, w2) {
+      var nA = nrm(s.x, s.y, s.ex, s.ey), nB = nrm(s.ex, s.ey, s.hx, s.hy);
+      var sx = nA[0] + nB[0], sy = nA[1] + nB[1], q = sx * sx + sy * sy;
+      function side(k) {
+        var mid = q > 0.6 ? [[s.ex + (k * sx * w1) / q, s.ey + (k * sy * w1) / q]]
+          : [[s.ex + (k * nA[0] * w1) / 2, s.ey + (k * nA[1] * w1) / 2], [s.ex + (k * nB[0] * w1) / 2, s.ey + (k * nB[1] * w1) / 2]];
+        return [[s.x + (k * nA[0] * w0) / 2, s.y + (k * nA[1] * w0) / 2]].concat(mid, [[s.hx + (k * nB[0] * w2) / 2, s.hy + (k * nB[1] * w2) / 2]]);
+      }
+      return poly(side(1).concat(side(-1).reverse()));
     }
-    function leg(sx, cls) {
-      var s = seg(sx * 8, hipY, sx * 10, sx * 4, 34);
-      var pants = outfit === "suit" || outfit === "overalls" || outfit === "scrubs";
-      var col = outfit === "scrubs" ? "#DDE9E6" : PANTS;
-      var d = "M" + sx * 8 + "," + hipY + " L" + s.ex.toFixed(1) + "," + s.ey.toFixed(1) + " L" + s.hx.toFixed(1) + "," + s.hy.toFixed(1);
-      return '<g class="' + cls + '">' +
-        (pants ? '<path d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="' + d + '" fill="none" stroke="' + col + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>'
-          : '<path d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>') +
-        '<ellipse cx="' + (s.hx + sx * 5).toFixed(1) + '" cy="' + (s.hy + 2).toFixed(1) + '" rx="10" ry="5" fill="' + ink + '"/></g>';
+    // The first part of the upper arm (a short sleeve), as a tapered quad.
+    function upperQuad(s, w0, w1, t) {
+      var x1 = s.x + (s.ex - s.x) * t, y1 = s.y + (s.ey - s.y) * t, n = nrm(s.x, s.y, x1, y1);
+      return poly([[s.x + n[0] * w0 / 2, s.y + n[1] * w0 / 2], [x1 + n[0] * w1 / 2, y1 + n[1] * w1 / 2], [x1 - n[0] * w1 / 2, y1 - n[1] * w1 / 2], [s.x - n[0] * w0 / 2, s.y - n[1] * w0 / 2]]);
     }
-    var top = neckY + 4, sh = 17;
-    var body = {
-      shirt: '<path d="M' + -sh + "," + top + " Q0," + (top - 4) + " " + sh + "," + top + " L14," + (hipY + 2) + " L-14," + (hipY + 2) + ' Z" fill="' + cloth + '" stroke="' + ink + '" stroke-width="3.5" stroke-linejoin="round"/>',
-      dress: '<path d="M-12,' + top + " Q0," + (top - 4) + " 12," + top + " L32,52 Q0,58 -32,52 Z" + '" fill="' + cloth + '" stroke="' + ink + '" stroke-width="3.5" stroke-linejoin="round"/><path d="M-10,' + (top + 14) + ' H10" stroke="' + ink + '" stroke-width="2" opacity="0.5"/>',
-      suit: '<path d="M' + -sh + "," + top + " Q0," + (top - 4) + " " + sh + "," + top + " L15," + (hipY + 4) + " L-15," + (hipY + 4) + ' Z" fill="#2E3440" stroke="' + ink + '" stroke-width="3.5" stroke-linejoin="round"/><path d="M-7,' + top + " L0," + (top + 16) + " L7," + top + ' Z" fill="#FFF" stroke="' + ink + '" stroke-width="2"/>' +
-        (o.tie === "wide" ? '<path d="M-3,' + (top + 2) + " L-14," + (hipY - 2) + " L0," + (hipY + 6) + " L14," + (hipY - 2) + " L3," + (top + 2) + ' Z" fill="' + (o.tieColor || C.war) + '" stroke="' + ink + '" stroke-width="2"/>' : '<path d="M0,' + (top + 3) + " l-3,5 l3,14 l3,-14 z" + '" fill="' + (o.tieColor || ink) + '"/>'),
-      labcoat: '<path d="M' + -sh + "," + top + " Q0," + (top - 4) + " " + sh + "," + top + " L18,58 L-18,58 Z" + '" fill="#F7F4EC" stroke="' + ink + '" stroke-width="3.5" stroke-linejoin="round"/><path d="M0,' + (top + 2) + ' V58 M-6,' + top + " L0," + (top + 14) + " L6," + top + '" fill="none" stroke="' + ink + '" stroke-width="2"/><rect x="5" y="' + (top + 20) + '" width="8" height="6" fill="none" stroke="' + ink + '" stroke-width="1.6"/>',
-      scrubs: '<path d="M' + -sh + "," + top + " Q0," + (top - 4) + " " + sh + "," + top + " L15," + (hipY + 6) + " L-15," + (hipY + 6) + ' Z" fill="#DDE9E6" stroke="' + ink + '" stroke-width="3.5" stroke-linejoin="round"/><path d="M-6,' + top + " L0," + (top + 10) + " L6," + top + '" fill="none" stroke="' + ink + '" stroke-width="2"/>',
-      overalls: '<path d="M-13,' + (top + 12) + " H13 L14," + (hipY + 4) + " L-14," + (hipY + 4) + ' Z" fill="' + cloth + '" stroke="' + ink + '" stroke-width="3.5" stroke-linejoin="round"/><path d="M-10,' + (top + 12) + " L-12," + top + " M10," + (top + 12) + " L12," + top + '" stroke="' + cloth + '" stroke-width="5"/><path d="M0,' + top + " V" + (top + 12) + '" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>',
-    }[outfit];
-    var spine = outfit === "overalls" ? '<path d="M0,' + neckY + " V" + hipY + '" stroke="' + ink + '" stroke-width="6" stroke-linecap="round"/>' : "";
-    var cx = dir * 2;
-    var ex = function (k) { return cx + k * 8 + dir * 5; };
-    var eyes = '<circle cx="' + ex(-1) + '" cy="' + (hy - 2) + '" r="' + (mood === "eager" ? 4.4 : 3.2) + '" fill="' + ink + '"/><circle cx="' + ex(1) + '" cy="' + (hy - 2) + '" r="' + (mood === "eager" ? 4.4 : 3.2) + '" fill="' + ink + '"/>';
-    var brows = {
-      eager: "M" + (ex(-1) - 5) + "," + (hy - 12) + " q5,-5 10,0 M" + (ex(1) - 5) + "," + (hy - 12) + " q5,-5 10,0",
-      smile: "",
-      sad: "M" + (ex(-1) - 5) + "," + (hy - 8) + " L" + (ex(-1) + 4) + "," + (hy - 12) + " M" + (ex(1) + 5) + "," + (hy - 8) + " L" + (ex(1) - 4) + "," + (hy - 12),
-      cross: "M" + (ex(-1) - 5) + "," + (hy - 13) + " L" + (ex(-1) + 4) + "," + (hy - 9) + " M" + (ex(1) + 5) + "," + (hy - 13) + " L" + (ex(1) - 4) + "," + (hy - 9),
-      flat: "M" + (ex(-1) - 5) + "," + (hy - 9) + " h10 M" + (ex(1) - 5) + "," + (hy - 9) + " h10",
-    }[mood];
-    var mx = cx + dir * 5, my = hy + 9;
-    var mouth = {
-      eager: "M" + (mx - 4) + "," + my + " a4.5,6 0 1 0 9,0 a4.5,6 0 1 0 -9,0",
-      smile: "M" + (mx - 9) + "," + (my - 2) + " q9,9 18,0",
-      sad: "M" + (mx - 8) + "," + (my + 3) + " q8,-6 16,0",
-      cross: "M" + (mx - 7) + "," + (my + 1) + " h14",
-      flat: "M" + (mx - 7) + "," + my + " h14",
-    }[mood];
-    var hair = o.hair === 1
-      ? '<path d="M' + (cx - 25) + "," + (hy + 12) + " Q" + (cx - 28) + "," + (hy - 30) + " " + cx + "," + (hy - 28) + " Q" + (cx + 28) + "," + (hy - 30) + " " + (cx + 25) + "," + (hy + 12) + " Q" + (cx + 19) + "," + (hy - 12) + " " + cx + "," + (hy - 15) + " Q" + (cx - 19) + "," + (hy - 12) + " " + (cx - 25) + "," + (hy + 12) + ' Z" fill="' + (o.hairColor || ink) + '"/>'
-      : o.hair === 2 ? "" : '<path d="M' + (cx - 20) + "," + (hy - 8) + " Q" + (cx - 18) + "," + (hy - 27) + " " + (cx + 2) + "," + (hy - 26) + " Q" + (cx + 22) + "," + (hy - 26) + " " + (cx + 21) + "," + (hy - 8) + " Q" + (cx + 4) + "," + (hy - 18) + " " + (cx - 20) + "," + (hy - 8) + ' Z" fill="' + (o.hairColor || ink) + '"/>';
-    var hatTop = hy - R;
-    var hat = hatSvg(o.hat, cx, hatTop);
-    var stache = o.stache ? '<path d="M' + (mx - 10) + "," + (my - 4) + " q5,-5 10,0 q5,-5 10,0 q-10,5 -20,0 z" + '" fill="' + ink + '"/>' : "";
-    var monocle = o.prop === "monocle" ? '<circle cx="' + ex(1) + '" cy="' + (hy - 2) + '" r="7.5" fill="none" stroke="' + C.yellow + '" stroke-width="2.4"/><path d="M' + (ex(1) + 6) + "," + (hy + 3) + " q8,14 2,28" + '" fill="none" stroke="' + C.yellow + '" stroke-width="1.6"/>' : "";
-    var head = o.prop === "megaphone"
-      ? '<g class="head"><path d="M-8,' + (hy + 16) + " L-8," + (hy - 4) + " L24," + (hy - 22) + " L24," + (hy + 34) + " Z" + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/><ellipse cx="24" cy="' + (hy + 6) + '" rx="6" ry="28" fill="' + ink + '"/></g>'
-      : '<g class="head"><circle cx="' + cx + '" cy="' + hy + '" r="' + R + '" fill="' + skin + '" stroke="' + ink + '" stroke-width="4.5"/>' + hair + eyes +
-        '<path class="brows" d="' + brows + '" fill="none" stroke="' + ink + '" stroke-width="3" stroke-linecap="round"' + (brows ? "" : ' opacity="0"') + "/>" +
-        '<path class="mouth" d="' + mouth + '" fill="' + (mood === "eager" ? ink : "none") + '" stroke="' + ink + '" stroke-width="3" stroke-linecap="round"/>' + stache + monocle + hat + "<!--head-end--></g>";
-    var handR = seg(17, -26 - (stretch - 1) * 30, arms[1][0], arms[1][1], 26);
-    var handL = seg(-17, -26 - (stretch - 1) * 30, arms[0][0], arms[0][1], 26);
-    var prop = {
-      briefcase: '<g transform="translate(' + handR.hx.toFixed(1) + "," + handR.hy.toFixed(1) + ')"><rect x="-16" y="4" width="32" height="24" rx="3" fill="#6B4A2F" stroke="' + ink + '" stroke-width="2.6"/><path d="M-6,4 v-5 h12 v5" fill="none" stroke="' + ink + '" stroke-width="2.4"/><path d="M-12,28 L-4,40 H4 L12,28" fill="' + C.paper + '" stroke="' + ink + '" stroke-width="2.4"/></g>',
-      poster: '<g transform="translate(' + handL.hx.toFixed(1) + "," + handL.hy.toFixed(1) + ')"><rect x="-34" y="-46" width="40" height="52" fill="' + C.paper + '" stroke="' + ink + '" stroke-width="2.6"/><text x="-14" y="-24" text-anchor="middle" font-family="Oswald" font-size="11" fill="' + C.war + '">BUY</text><text x="-14" y="-10" text-anchor="middle" font-family="Oswald" font-size="11" fill="' + ink + '">BONDS</text></g>',
-      clipboard: '<g transform="translate(' + handR.hx.toFixed(1) + "," + handR.hy.toFixed(1) + ')"><rect x="-4" y="-24" width="22" height="30" rx="2" fill="#B98A55" stroke="' + ink + '" stroke-width="2.4"/><rect x="0" y="-20" width="14" height="22" fill="' + C.paper + '"/></g>',
-    }[o.prop] || "";
-    var light = o.light === "red" ? C.war : o.light === "teal" ? C.med : "#E9E1CC";
-    return '<g class="person">' + (longCoat ? "" : leg(-1, "leg-l") + leg(1, "leg-r")) + spine +
-      '<path d="M0,' + neckY + " V" + (top + 2) + '" stroke="' + ink + '" stroke-width="6" stroke-linecap="round"/>' + body +
-      (longCoat ? leg(-1, "leg-l") + leg(1, "leg-r") : "") +
-      '<circle class="chest-light" cx="0" cy="' + (top + 10) + '" r="6.5" fill="' + light + '" stroke="' + ink + '" stroke-width="2.6"/>' +
-      arm(-17, arms[0], "arm-l") + arm(17, arms[1], "arm-r") + head + prop + "</g>";
-  }
-  // The recurring humans (style bible section 3), as presets for person().
-  var CAST = {
-    richHuman: { tone: 0, outfit: "suit", hat: "top", stache: true, prop: "monocle" },
-    politician: { tone: 1, outfit: "suit", tie: "wide", hair: 0 },
-    lobbyist: { tone: 2, outfit: "suit", hat: "bowler", prop: "briefcase" },
-    weaponsMaker: { tone: 3, outfit: "overalls", color: 1, hat: "hard" },
-    orderly: { tone: 2, outfit: "scrubs", tall: true, hair: 2 },
-    grandma: { tone: 0, outfit: "dress", color: 3, hair: 1, hairColor: "#B9B5AE", hat: "curlers", prop: "poster" },
-    loudHuman: { tone: 1, outfit: "shirt", color: 0, prop: "megaphone" },
-    scientist: { tone: 3, outfit: "labcoat", hair: 1, prop: "clipboard" },
-  };
-  function cast(name, extra) {
-    var o = {}, k;
-    for (k in CAST[name]) o[k] = CAST[name][k];
-    for (k in extra || {}) o[k] = extra[k];
-    return person(o);
-  }
+    // Print shading: halftone dots over the right part of a light shape (ids are unique on the page).
+    function dots(pts, x0, op) {
+      var id = "kit-hd" + ++uid;
+      return '<defs><pattern id="' + id + 'd" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="' + ink + '"/></pattern><clipPath id="' + id + 'c"><path d="' + polyD(pts) + '"/></clipPath></defs>' +
+        '<rect x="' + x0.toFixed(1) + '" y="-240" width="200" height="400" fill="url(#' + id + 'd)" opacity="' + (op || 0.3) + '" clip-path="url(#' + id + 'c)"/>';
+    }
+    function hatSvg(kind, cx, hatTop) {
+      return {
+        top: '<rect x="' + (cx - 15) + '" y="' + (hatTop - 36) + '" width="30" height="36" fill="' + ink + '"/><rect x="' + (cx - 15) + '" y="' + (hatTop - 11) + '" width="30" height="6" fill="' + C.orange + '"/><path d="M' + (cx - 27) + "," + (hatTop + 2) + " L" + (cx - 23) + "," + (hatTop - 4) + " H" + (cx + 23) + " L" + (cx + 27) + "," + (hatTop + 2) + ' Z" fill="' + ink + '"/>',
+        bowler: '<path d="M' + (cx - 17) + "," + (hatTop + 1) + " L" + (cx - 13) + "," + (hatTop - 16) + " L" + cx + "," + (hatTop - 21) + " L" + (cx + 13) + "," + (hatTop - 16) + " L" + (cx + 17) + "," + (hatTop + 1) + ' Z" fill="' + ink + '"/><path d="M' + (cx - 28) + "," + (hatTop + 4) + " L" + (cx - 22) + "," + (hatTop - 1) + " H" + (cx + 22) + " L" + (cx + 28) + "," + (hatTop + 4) + ' Z" fill="' + ink + '"/>',
+        // pulled low over the eyes, the brim tipped down in front
+        fedora: '<path d="M' + (cx - 17) + "," + (hatTop + 9) + " L" + (cx - 14) + "," + (hatTop - 10) + " L" + (cx - 3) + "," + (hatTop - 6) + " L" + (cx + 6) + "," + (hatTop - 12) + " L" + (cx + 17) + "," + (hatTop - 6) + " L" + (cx + 18) + "," + (hatTop + 9) + ' Z" fill="' + NAVY + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/><path d="M' + (cx - 17) + "," + (hatTop + 4) + " H" + (cx + 18) + '" stroke="' + C.orange + '" stroke-width="3"/><path d="M' + (cx - 30) + "," + (hatTop + 6) + " L" + (cx - 18) + "," + (hatTop + 7) + " H" + (cx + 22) + " L" + (cx + 38) + "," + (hatTop + 16) + " L" + (cx + 20) + "," + (hatTop + 12) + " H" + (cx - 20) + ' Z" fill="' + NAVY + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/>',
+        hard: '<path d="M' + (cx - 23) + "," + (hatTop + 5) + " L" + (cx - 18) + "," + (hatTop - 13) + " L" + cx + "," + (hatTop - 20) + " L" + (cx + 18) + "," + (hatTop - 13) + " L" + (cx + 23) + "," + (hatTop + 5) + ' Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="miter"/><path d="M' + (cx - 30) + "," + (hatTop + 8) + " L" + (cx - 26) + "," + (hatTop + 3) + " H" + (cx + 26) + " L" + (cx + 30) + "," + (hatTop + 8) + ' Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/>',
+        curlers: [-14, 0, 14].map(function (dx) { return '<rect x="' + (cx + dx - 6) + '" y="' + (hatTop - 5) + '" width="12" height="11" rx="2" fill="#E9B4C1" stroke="' + ink + '" stroke-width="2"/>'; }).join(""),
+      }[kind] || "";
+    }
+    // Props held in a hand (or between both), drawn around the hand.
+    function cashStack(n) {
+      var out = "";
+      for (var i = 0; i < n; i++) out += '<rect x="' + (-17 + (i % 2)) + '" y="' + (-i * 4.2) + '" width="34" height="5" fill="' + C.money + '" stroke="' + ink + '" stroke-width="1.4"/>';
+      return out + '<rect x="-4" y="' + (-n * 4.2 + 3) + '" width="8" height="' + (n * 4.2 + 2) + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="1.2"/>';
+    }
+    var PROPS = {
+      cash: function () { return '<g transform="translate(0,-4)">' + cashStack(5) + "</g>"; },
+      bill: function () { return '<g transform="rotate(-20)"><rect x="-15" y="-9" width="30" height="16" fill="' + C.money + '" stroke="' + ink + '" stroke-width="1.8"/><ellipse cx="0" cy="-1" rx="4.5" ry="5" fill="' + C.cream + '" stroke="' + C.moneyDark + '" stroke-width="1.2"/></g>'; },
+      moneybag: function () { return solid([poly([[-6, -8], [6, -8], [3, -3], [14, 6], [16, 18], [8, 26], [-8, 26], [-16, 18], [-14, 6], [-3, -3]])], C.money, 3) + line("M-6,-3 H6", ink, 2.4) + '<path d="M3,6 C-4,4 -4,10 0,11 C4,12 4,18 -3,16 M0,4 V19" fill="none" stroke="' + C.cream + '" stroke-width="2.4"/>'; },
+      briefcase: function () { return solid([poly([[-17, 6], [17, 6], [17, 30], [-17, 30]])], "#6B4A2F", 2.6) + line("M-6,6 V1 H6 V6", ink, 2.2) + '<g transform="translate(6,6) rotate(-25)">' + solid([poly([[-6, -12], [8, -12], [8, 0], [-6, 0]])], C.money, 1.8) + "</g>"; },
+      poster: function () { return '<g transform="translate(-14,-20)">' + solid([poly([[-20, -26], [20, -26], [20, 26], [-20, 26]])], C.paper, 2.6) + '<text x="0" y="-4" text-anchor="middle" font-family="Oswald" font-size="11" fill="' + C.war + '">BUY</text><text x="0" y="10" text-anchor="middle" font-family="Oswald" font-size="11" fill="' + ink + '">BONDS</text></g>'; },
+      clipboard: function () { return solid([poly([[-4, -26], [18, -26], [18, 6], [-4, 6]])], "#B98A55", 2.2) + '<rect x="0" y="-22" width="14" height="24" fill="' + C.paper + '"/>' + line("M2,-16 H12 M2,-11 H12 M2,-6 H9", ink, 1.2); },
+      flask: function () { return solid([poly([[-3, -22], [3, -22], [3, -12], [11, 4], [-11, 4], [-3, -12]])], WHITE, 2.4) + '<path d="M' + P(-8, -2) + " L" + P(8, -2) + " L" + P(10.5, 3.5) + " L" + P(-10.5, 3.5) + ' Z" fill="' + C.med + '"/><circle cx="2" cy="-27" r="2.5" fill="' + C.med + '"/><circle cx="-2" cy="-33" r="1.8" fill="' + C.med + '"/>'; },
+      cup: function () { return solid([poly([[-7, -10], [7, -10], [5, 2], [-5, 2]])], WHITE, 2.2) + '<circle cx="-1.5" cy="-12" r="2.2" fill="' + C.war + '"/><circle cx="2.5" cy="-12.5" r="2.2" fill="' + C.med + '"/>'; },
+      // a small grinning missile, cradled like a baby
+      missile: function () { return '<g transform="translate(0,-6) rotate(-14)">' + solid([poly([[-34, -7], [14, -7], [30, 0], [14, 7], [-34, 7]]), poly([[-34, -7], [-44, -17], [-40, -7]]), poly([[-34, 7], [-44, 17], [-40, 7]])], C.war, 2.6) + '<path d="M14,-7 L30,0 L14,7 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' + line("M-4,2 Q2,6 8,2", ink, 1.8) + '<circle cx="-2" cy="-2.5" r="1.6" fill="' + ink + '"/><circle cx="6" cy="-2.5" r="1.6" fill="' + ink + '"/></g>'; },
+      magnifier: function () { return line("M0,0 L-6,14", ink, 5) + '<circle cx="5" cy="-11" r="11" fill="#FFFFFF" fill-opacity="0.35" stroke="' + ink + '" stroke-width="3.4"/>'; },
+    };
+
+    // ── Builds and the recurring cast ──────────────────────────────────
+    var BUILD0 = { hs: 0.92, legs: 1, th: 1, tw: 1, neck: 0.8, nose: 1, chin: 1, arms: 1, armL: 1, feet: 1.15, hand: 1.15, hunch: 0, legPose: null };
+    // The cast's signature props and pose come with its default arms; a scene that poses the arms gets the
+    // person without them (pass hold/holdL/holdR to keep one).
+    var CAST = {
+      richHuman: { tone: 0, kind: "egg", head: "jowls", mood: "smug", hat: "top", stache: true, prop: "monocle", cigar: true, hold: "cash", arms: [[22, 72], [-22, -72]], build: { hs: 0.8, legs: 0.42, th: 1.25, tw: 1.08, neck: 0, nose: 1.2, feet: 1 } },
+      politician: { tone: 1, kind: "vee", head: "jaw", hairStyle: "slick", mood: "grin", tie: "wide", flagPin: true, arms: [[-8, -3], [150, 172]], holdR: "bill", build: { hs: 1, legs: 1.08, tw: 1.1, neck: 0.5, chin: 1.25 } },
+      lobbyist: { tone: 2, kind: "coat", head: "long", hat: "fedora", mask: true, gloves: true, mood: "smug", arms: [[-10, -4], [40, 150]], holdR: "cash", holdL: "briefcase", build: { hs: 0.9, legs: 0.95, th: 1.05, neck: 0.4, nose: 1.8, hunch: 14, legPose: [[-12, -26], [25, -5]] } },
+      weaponsMaker: { tone: 3, kind: "barrel", head: "jaw", colorHex: "#5C6F8E", hat: "hard", mood: "grin", cigar: true, arms: [[32, 84], [-32, -84]], hold: "missile", build: { hs: 0.66, tw: 1.15, arms: 1.35, legs: 0.78, neck: 0, hand: 1.35 } },
+      scientist: { tone: 3, kind: "lab", hair: 1, hairStyle: "bun", glasses: true, mood: "eager", arms: [[-30, -120], [-10, -4]], holdL: "flask", holdR: "clipboard", build: { hs: 1.08, legs: 0.95, neck: 0.8, hunch: 6 } },
+      grandma: { tone: 0, kind: "pear", hair: 1, hairColor: "#B9B5AE", hat: "curlers", glasses: true, color: 3, mood: "smile", arms: [[-150, -172], [-10, -4]], holdL: "poster", build: { hs: 1, legs: 0.62, th: 0.88, hunch: 14, nose: 1.4, feet: 0.95 } },
+      orderly: { tone: 2, kind: "twig", head: "plain", hair: 2, mood: "flat", arms: [[-6, -2], [60, 92]], holdR: "cup", build: { hs: 0.72, legs: 1.3, th: 1.2, neck: 2.4, armL: 1.25 } },
+      loudHuman: { tone: 1, kind: "shirt", color: 0, prop: "megaphone", mood: "smile", build: { legs: 1.1, tw: 0.85 } },
+    };
+    function hash(o) {
+      var h = 2166136261, s = [o.tone || 0, o.color === undefined ? -1 : o.color, o.outfit || "", o.hair || 0, o.seed || 0].join("|");
+      for (var i = 0; i < s.length; i++) h = Math.imul(h ^ s.charCodeAt(i), 16777619);
+      return h >>> 0;
+    }
+    var PLAIN_KIND = { suit: "vee", shirt: "shirt", dress: "hourglass", overalls: "barrel", labcoat: "lab", scrubs: "twig" };
+    // An everyday human: the outfit picks a family of shapes, the hash picks one and its proportions.
+    function everyday(o) {
+      var r = rng(hash(o)), pick = function (a) { return a[Math.floor(r() * a.length)]; }, between = function (a, z) { return a + (z - a) * r(); };
+      var woman = o.hair === 1, outfit = o.outfit || (woman ? "dress" : "shirt");
+      var kind = { suit: pick(["box", "vee", "egg", "box"]), shirt: pick(["shirt", "shirt", "barrel", "twig"]), dress: pick(["hourglass", "hourglass", "pear"]), overalls: "barrel", labcoat: "lab", scrubs: "twig" }[outfit] || "shirt";
+      var b = { hs: between(0.82, 1.06), legs: between(0.78, 1.15), th: between(0.9, 1.12), tw: between(0.88, 1.15), neck: between(0.3, 1.4), nose: between(0.9, 1.9), chin: between(0.9, 1.3) };
+      if (kind === "egg") { b.legs = between(0.45, 0.65); b.hs = between(0.78, 0.9); b.neck = 0; }
+      if (kind === "twig") { b.legs = between(1.15, 1.32); b.neck = between(1.2, 2.2); b.hs = between(0.72, 0.88); }
+      return { kind: kind, b: b, head: woman ? "woman" : pick(["plain", "jaw", "jowls", "plain", "long"]), hairStyle: woman ? pick(["flip", "bun", "flip"]) : o.hair === 2 ? "bald" : pick(["short", "slick", "short", "bald"]), hat: !woman && r() < 0.25 ? "fedoraUp" : null, glasses: r() < 0.2 };
+    }
+    function resolve(o) {
+      var woman = o.hair === 1, d = o.kind ? { kind: o.kind, b: {} } : o.plain ? { kind: PLAIN_KIND[o.outfit || (woman ? "dress" : "shirt")], b: o.outfit === "overalls" ? { tw: 0.6 } : {} } : everyday(o), b = copy(BUILD0, d.b), k;
+      if (o.tall) { b.legs = Math.max(b.legs, 1.3); b.neck = Math.max(b.neck, 2); b.th = Math.max(b.th, 1.15); }
+      for (k in o.build || {}) b[k] = o.build[k];
+      return {
+        kind: d.kind, b: b, head: o.head || d.head || (woman ? "woman" : "plain"),
+        hairStyle: o.hairStyle || d.hairStyle || (woman ? "flip" : o.hair === 2 ? "bald" : "short"),
+        hat: o.hat !== undefined ? o.hat : d.hat, glasses: o.glasses || d.glasses,
+      };
+    }
+    function lay(b) {
+      var L = 37 * b.legs, lp = b.legPose || [[-6, -2], [6, 2]];
+      var drop = function (a) { return Math.cos((a[0] * Math.PI) / 180) + Math.cos((a[1] * Math.PI) / 180); };
+      var hipY = 99.8 - L * Math.max(drop(lp[0]), drop(lp[1])), sY = hipY - 52 * b.th;
+      return { L: L, lp: lp, hipY: hipY, sY: sY, T: sY - 4, Wy: hipY - 8 * b.th, hy: sY - 4 - 10 * b.neck - 19 * b.hs };
+    }
+    // Where each kind's arms hang: shoulder pivot (±ax, ay) and the length of each arm segment.
+    function armGeo(kind, b, l) {
+      var T = l.T, tw = b.tw;
+      return {
+        egg: [30 * tw, T + 9, 22], vee: [27 * tw, T + 3, 26], box: [26 * tw, T + 3, 26], coat: [19, T + 4, 26], hourglass: [13, T + 3, 25],
+        lab: [19, T + 3, 26], barrel: [30 * tw, T + 6, 25], pear: [11, T + 4, 24], twig: [15, T + 3, 26], shirt: [17 * tw, T + 4, 26],
+      }[kind];
+    }
+    // The pivots and points of a person, in the person's units. Shoulders, hips, neck and head are where the
+    // part groups rotate (their svgOrigin); hands, mouth and eyes are where things touch them, after the lean.
+    function rig(o) {
+      o = o || {};
+      if (o.skeleton) o = copy(o, { skeleton: false });
+      var R = resolve(o), b = R.b, l = lay(b), g = armGeo(R.kind, b, l), dir = o.look === "right" ? 1 : o.look === "left" ? -1 : 0, f = dir || 1;
+      var arms = o.arms || CAST_ARMS(o), len = g[2] * b.armL, hx = 7 * (0.7 + 0.3 * b.tw);
+      var th = (b.hunch * f * Math.PI) / 180, cs = Math.cos(th), sn = Math.sin(th);
+      var lean = function (p) { var x = p[0], y = p[1] - l.hipY; return [x * cs - y * sn, l.hipY + x * sn + y * cs]; };
+      var hand = [0, 1].map(function (i) { var s = seg((i ? 1 : -1) * g[0], g[1], arms[i], len); return [s.hx, s.hy]; });
+      var my = 12 + 2.5 * (b.chin - 1) + (R.head === "jaw" ? 2 : 0);
+      return {
+        kind: R.kind, build: b, hipY: l.hipY, hy: l.hy, hs: b.hs, facing: f, lean: b.hunch * f, armLength: len,
+        shoulder: [[-g[0], g[1]], [g[0], g[1]]], hip: [[-hx, l.hipY], [hx, l.hipY]], neck: [dir * 2, l.hy + 18 * b.hs], head: [dir * 2, l.hy],
+        handLocal: hand, hand: hand.map(lean), mouth: lean([dir * 2 + f * 7 * b.hs, l.hy + my * b.hs]), eyes: lean([dir * 2 + f * 4.2 * b.hs, l.hy - 4 * b.hs]),
+        top: lean([dir * 2, l.hy - 23 * b.hs]), faceEyes: [4.2, -4],
+      };
+    }
+    function CAST_ARMS(o) { return [[20, 10], [-20, -10]]; }
+
+    // ── Heads: 3/4 view facing +x, around (0, 0) ─────────────────────
+    function headPts(shape, b) {
+      var n = b.nose - 1, c = b.chin - 1;
+      return {
+        plain: [[-16, -12], [-10, -21], [4, -23], [14, -16], [16, -6], [23 + 9 * n, 4 + 3 * n], [17, 6 + 1.5 * n], [17.5, 11], [16, 19 + 5 * c], [10, 24 + 6 * c], [-4, 22 + 6 * c], [-13, 13 + 3 * c], [-16, 2]],
+        jaw: [[-15, -13], [-10, -22], [4, -24], [14, -17], [16, -7], [23 + 9 * n, 3 + 3 * n], [17, 5 + 1.5 * n], [18.5, 11], [19, 22 + 5 * c], [13, 28 + 6 * c], [-6, 27 + 6 * c], [-16, 17 + 3 * c], [-16, 2]],
+        jowls: [[-15, -14], [-9, -22], [4, -23], [13, -17], [15, -8], [24 + 6 * n, -1], [25 + 6 * n, 5], [19, 8], [21, 15], [17, 22], [7, 26 + 3 * c], [-8, 25 + 3 * c], [-18, 18], [-20, 6], [-17, -4]],
+        long: [[-14, -14], [-9, -24], [4, -25], [13, -18], [15, -7], [26 + 10 * n, 6 + 3 * n], [17, 7 + n], [17, 12], [14, 21 + 6 * c], [6, 30 + 7 * c], [-5, 23 + 6 * c], [-12, 12], [-14, 0]],
+        woman: [[-15, -12], [-9, -21], [4, -22], [13, -15], [15, -5], [19.5 + 6 * n, 3 + 2 * n], [15.5, 5.5 + n], [16, 10], [13, 18 + 4 * c], [5, 24 + 6 * c], [-5, 19 + 5 * c], [-12, 10 + 2 * c], [-15, 1]],
+      }[shape];
+    }
+    var EYES = [[-2.5, 6.2, 3.7], [10.8, 4.6, 3.4]]; // [x, half width, height] of the near and the far eye
+    function face(o, R, mood, skin) {
+      var b = R.b, woman = R.head === "woman", px = o.look ? 1.6 : 0, my = 12 + 2.5 * (b.chin - 1) + (R.head === "jaw" ? 2 : 0);
+      var eyes = EYES.map(function (e, i) {
+        var x = e[0], y = -4, rx = e[1] * (woman ? 1.1 : 1), ry = e[2] * (mood === "eager" ? 1.5 : 1);
+        if (mood === "greedy") return '<g class="eye"><path d="M' + P(x + 3, y - 4) + " C" + P(x + 3, y - 7) + " " + P(x - 3, y - 7) + " " + P(x - 3, y - 4) + " C" + P(x - 3, y - 1) + " " + P(x + 3, y - 1) + " " + P(x + 3, y + 2) + " C" + P(x + 3, y + 5) + " " + P(x - 3, y + 5) + " " + P(x - 3, y + 2) + " M" + P(x, y - 8.5) + " V" + (y + 6.5) + '" fill="none" stroke="' + C.moneyDark + '" stroke-width="2.4"/></g>';
+        var top = mood === "flat" || mood === "smug" ? y - ry * 0.55 : mood === "cross" ? y - ry * 1.1 : y - ry * 1.7;
+        var bot = mood === "smile" || mood === "grin" || mood === "smug" ? y + ry * 0.45 : y + ry * 1.1;
+        return '<g class="eye"><path d="M' + P(x - rx, y) + " Q" + P(x, top) + " " + P(x + rx, y - 0.4) + " Q" + P(x, bot) + " " + P(x - rx, y) + ' Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="1"/>' +
+          '<circle class="pupil" cx="' + (x + px * (i ? 0.7 : 1)).toFixed(1) + '" cy="' + (y - 0.3).toFixed(1) + '" r="' + (mood === "eager" ? 1.8 : mood === "worried" ? 1.6 : 2) + '" fill="' + ink + '"/>' +
+          '<path d="M' + P(x - rx - 0.8, y + 0.4) + " Q" + P(x, top - 0.6) + " " + P(x + rx + 0.6, y - 0.6) + '" fill="none" stroke="' + ink + '" stroke-width="' + (woman ? 2.4 : 1.9) + '" stroke-linecap="round"/>' +
+          (woman ? line("M" + P(i ? x + rx : x - rx - 0.5, y - 0.6) + " l" + (i ? 2.4 : -3.2) + ",-2.6", ink, 2) : "") + "</g>";
+      }).join("");
+      var BR = { smile: [-8.5, -11, -9.5], grin: [-9, -12, -10], eager: [-10.5, -13.5, -11.5], sad: [-7.5, -9, -11], worried: [-7, -9, -12], cross: [-11, -9, -6.5], flat: [-8.5, -8.5, -8.5], smug: [-9, -10, -12.5], greedy: [-11, -13, -11] }[mood] || [-8.5, -11, -9.5];
+      var brows = EYES.map(function (e, i) {
+        var x = e[0], w = e[1] + 0.8, y = -4, bb = i ? [BR[2], BR[1], BR[0]] : BR;
+        if (mood === "sad" || mood === "cross" || mood === "worried") bb = i ? [BR[2], (BR[1] + BR[2]) / 2, BR[0]] : BR;
+        return "M" + P(x - w, y + bb[0]) + " L" + P(x - w * 0.1, y + bb[1]) + " L" + P(x + w, y + bb[2]);
+      }).join(" ");
+      var grin = "M" + P(-1, my - 1) + " Q" + P(7, my + 1) + " " + P(15.5, my - 2) + " Q" + P(9, my + 8.5) + " " + P(-1, my - 1) + " Z";
+      var mouth = {
+        smile: grin, greedy: grin,
+        grin: "M" + P(-4, my - 2) + " L" + P(17, my - 3) + " L" + P(12, my + 8) + " L" + P(2, my + 8) + " Z",
+        smug: "M" + P(0, my + 1) + " Q" + P(8, my + 3) + " " + P(15, my - 3),
+        eager: "M" + P(1, my - 1) + " L" + P(14, my - 1.5) + " L" + P(10.5, my + 7) + " L" + P(4, my + 7) + " Z",
+        sad: "M" + P(0, my + 3) + " Q" + P(7, my - 2) + " " + P(14, my + 2),
+        worried: "M" + P(0, my + 2) + " L" + P(4, my) + " L" + P(8, my + 2) + " L" + P(12, my) + " L" + P(15, my + 1.5),
+        cross: "M" + P(1, my + 1) + " L" + P(14, my + 0.5) + " M" + P(1, my + 1) + " l-1.5,2",
+        flat: "M" + P(2, my + 1) + " L" + P(13, my + 0.5),
+      }[mood] || "M" + P(2, my + 1) + " L" + P(13, my + 0.5);
+      var filled = mood === "smile" || mood === "grin" || mood === "greedy" ? WHITE : mood === "eager" ? ink : "none";
+      var teeth = mood === "grin" ? line("M" + P(2.5, my - 2.5) + " V" + (my + 8) + " M" + P(7.5, my - 2.6) + " V" + (my + 8) + " M" + P(12.5, my - 2.8) + " V" + (my + 8) + " M" + P(-1, my + 3) + " H16", ink, 1.1) : "";
+      var crease = mood === "smile" || mood === "grin" || mood === "smug" || mood === "greedy" ? line("M" + P(-3.5, my - 5) + " Q" + P(-5, my) + " " + P(-2, my + 3), ink, 1.5) : "";
+      var hairCol = o.hairColor || ink, hs = ' fill="' + hairCol + '" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"';
+      var hair = {
+        short: [[-16, 4], [-18, -8], [-14, -20], [-4, -27], [10, -28.5], [21, -22], [16, -18.5], [13, -14.5], [4, -15.5], [-6, -13], [-9, -7], [-10, 3], [-13, 4]],
+        slick: [[-16, 2], [-18, -10], [-12, -24], [2, -30], [18, -28], [24, -21], [15, -17], [12, -14], [2, -16], [-7, -13], [-10, -6], [-11, 2]],
+        bald: [[-16, 3], [-18, -6], [-15, -13], [-11, -8], [-10, 2]],
+        flip: [[-15, -11], [-10, -22], [4, -24.5], [15, -18], [16.5, -13], [12, -13.5], [9.5, -11.5], [7, -14], [2, -13.5], [-1, -11.5], [-4, -14], [-11, -12.5], [-12, -5]],
+        bun: [[-15, -9], [-11, -21], [4, -24], [15, -17], [16, -12], [6, -16], [-6, -13], [-12, -4]],
+      }[R.hairStyle];
+      var back = R.hairStyle === "flip" ? "<" + poly([[-22, 13], [-30, 18], [-25, 5], [-25, -14], [-15, -27], [2, -31], [17, -26], [24, -14], [23, 6], [30, 15], [17, 13], [12, 2], [-10, 2]]) + hs + "/>"
+        : R.hairStyle === "bun" ? "<" + poly([[-24, -22], [-16, -32], [-6, -30], [-8, -20], [-18, -16]]) + hs + "/>" : "";
+      var shine = R.hairStyle === "slick" ? line("M" + P(-4, -25) + " L" + P(12, -25.5), C.peri, 2.2) : R.hairStyle === "bald" ? line("M" + P(-6, -18) + " L" + P(3, -20.5), "#FFFFFF", 2.2) : "";
+      var ear = "<" + poly([[-12, -3], [-17.5, -2], [-18, 6], [-12, 8]]) + ' fill="' + skin + '" stroke="' + ink + '" stroke-width="2" stroke-linejoin="miter"/>';
+      var chinLine = R.head === "jowls" ? line("M" + P(-10, 20) + " Q" + P(3, 25) + " " + P(15, 18), ink, 1.6) + line("M" + P(17, 11) + " Q" + P(20, 14) + " " + P(17, 18), ink, 1.4) : R.head === "jaw" ? line("M" + P(7, 25 + 6 * (b.chin - 1)) + " v-3", ink, 1.4) : "";
+      var stache = o.stache ? "<" + poly([[1, my - 3], [9, my - 5.5], [17, my - 4.5], [26, my - 10], [21, my - 1], [9, my - 1.5], [0, my - 0.5], [-7, my - 7]]) + ' fill="' + ink + '"/>' : "";
+      var monocle = o.prop === "monocle" ? '<circle cx="' + EYES[1][0] + '" cy="-4" r="6.4" fill="none" stroke="' + C.yellow + '" stroke-width="2.4"/>' + line("M" + (EYES[1][0] + 5) + ",0 q7,14 0,30", C.yellow, 1.5) : "";
+      var glasses = R.glasses ? '<path d="M-10,-10 H5 L4,0 H-9 Z M6.5,-10 L16,-9.5 L15.5,-0.5 L7,0 Z" fill="#FFFFFF" fill-opacity="0.2" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="miter"/>' + line("M5,-7 H6.5 M-10,-7 L-17,-5", ink, 2.6) + (woman ? line("M-10,-10 L-13,-13 M16,-9.5 L19,-13", ink, 2.6) : "") : "";
+      var mask = o.mask ? '<path d="M-17,-11 L18,-12 L19,-1 L13,1 L9,-3 L4,1 L-4,-2 L-10,1 L-17,-1 Z" fill="' + ink + '"/>' +
+        [0, 1].map(function (i) { var x = EYES[i][0]; return '<path d="M' + P(x - 4, -4.5) + " Q" + P(x, -8) + " " + P(x + 4, -5) + " Q" + P(x, -2) + " " + P(x - 4, -4.5) + ' Z" fill="' + WHITE + '"/><circle cx="' + (x + 1.2) + '" cy="-4.8" r="1.5" fill="' + ink + '"/>'; }).join("") : "";
+      var cigar = o.cigar ? '<g transform="translate(' + P(13, my + 2) + ') rotate(-12)">' + solid([poly([[0, -2.6], [22, -2.6], [22, 2.6], [0, 2.6]])], "#7A4A2A", 2) + '<rect x="19" y="-2.6" width="4" height="5.2" fill="#C9C2B5"/><rect x="5" y="-2.6" width="3" height="5.2" fill="' + C.war + '"/></g>' +
+        '<path d="M' + P(37, my - 6) + " q-5,-6 0,-11 q5,-6 0,-11" + '" fill="none" stroke="#8C8782" stroke-width="2.4" stroke-linecap="round"/>' : "";
+      return back + solid([poly(headPts(R.head, b))], skin, LW) + ear + chinLine + (hair ? "<" + poly(hair) + hs + "/>" : "") + shine + eyes + mask + glasses +
+        '<path class="brows" d="' + brows + '" fill="none" stroke="' + ink + '" stroke-width="' + (woman ? 1.9 : 2.6) + '" stroke-linejoin="miter"' + (o.mask ? ' opacity="0"' : "") + "/>" +
+        '<path class="mouth" d="' + mouth + '" fill="' + filled + '" stroke="' + ink + '" stroke-width="' + (filled !== "none" ? 1.8 : 2.2) + '" stroke-linecap="round" stroke-linejoin="miter"/>' +
+        teeth + crease + stache + cigar + monocle;
+    }
+
+    function person(o) {
+      o = o || {};
+      if (o.skeleton) return skeleton(o);
+      if (o.charred) {
+        var plain = copy(o, { charred: false, mood: "flat", stache: false, cigar: false, hold: null, holdL: null, holdR: null, prop: o.prop === "megaphone" ? "megaphone" : null, hairStyle: "bald" });
+        if (!o.keepHat) plain.hat = null;
+        return charify(person(plain), o);
+      }
+      if (o.prop === "briefcase" || o.prop === "clipboard") o = copy(o, { prop: null, holdR: o.holdR || o.prop });
+      if (o.prop === "poster") o = copy(o, { prop: null, holdL: o.holdL || "poster" });
+      var R = resolve(o), b = R.b, l = lay(b), T = l.T, hipY = l.hipY, Wy = l.Wy, kind = R.kind, g = armGeo(kind, b, l);
+      var skin = SKIN[(o.tone || 0) % SKIN.length];
+      var cloth = o.colorHex || CLOTH[(o.color === undefined ? o.tone || 0 : o.color) % CLOTH.length];
+      var mood = o.mood || (o.mouth === "smile" ? "smile" : o.mouth === "o" ? "eager" : o.mouth === "frown" ? "sad" : "flat");
+      if (o.brows && mood === "flat") mood = "cross";
+      var dir = o.look === "right" ? 1 : o.look === "left" ? -1 : 0, f = dir || 1, tw = b.tw;
+      var arms = o.arms || CAST_ARMS(o);
+      var woman = R.head === "woman";
+      var V = function (depth, col) { return '<path d="M-6,' + (T - 3) + " L0," + (T + depth) + " L6," + (T - 3) + ' Z" fill="' + (col || WHITE) + '"/>'; };
+      var tie = function (len, wide) {
+        return wide ? solid([poly([[-3, T + 1], [3, T + 1], [12, T + len - 8], [0, T + len + 2], [-12, T + len - 8]])], o.tieColor || C.war, 2.4)
+          : solid([poly([[-2, T + 1], [2, T + 1], [3.5, T + len - 5], [0, T + len], [-3.5, T + len - 5]])], o.tieColor || C.orange, 2);
+      };
+      var lapels = function (len) {
+        var L = [[-6, T - 3], [-13, T + 1], [-9.5, T + 7], [-13, T + 9], [-2.5, T + len], [0, T + len - 4]];
+        return solid([poly(L), poly(flipX(L))], LAPEL, 2.2) + line("M" + P(-13, T + 9) + " L" + P(-2.5, T + len) + " M" + P(13, T + 9) + " L" + P(2.5, T + len), C.orange, 1.6);
+      };
+      var collar = V(7, skin) + solid([poly([[-1, T + 6], [-9, T - 3.5], [-10.5, T + 5]]), poly([[1, T + 6], [9, T - 3.5], [10.5, T + 5]])], WHITE, 2.6);
+      var belt = function (y, w) { return '<rect x="' + -w + '" y="' + y + '" width="' + 2 * w + '" height="4.5" fill="' + ink + '"/><rect x="-3" y="' + (y - 0.5) + '" width="6" height="5.5" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1.4"/>'; };
+      var buttons = function (ys, x) { return ys.map(function (y) { return '<rect x="' + ((x || 0) - 1.3) + '" y="' + y.toFixed(1) + '" width="2.6" height="2.6" fill="' + C.cream + '"/>'; }).join(""); };
+      var pocketSq = function (x, y) { return '<path d="M' + P(x, y) + " l7,0 l-2,-4.5 l-2,2.5 l-1.5,-2.5 Z" + '" fill="' + C.orange + '"/>'; };
+      var edge = function (d) { return line(d, C.orange, 1.6); };
+
+      // Each kind: the body, its sleeves (sl: widths at shoulder, elbow, wrist; bare: skin forearms with a short
+      // sleeve), the trousers and the chest light.
+      var KINDS = {
+        egg: function () {
+          var w = 44 * tw, bot = hipY + 14, h = bot - T;
+          var pts = [[-20, T - 1], [20, T - 1], [w * 0.8, T + 10], [w, T + h * 0.42], [w * 0.92, T + h * 0.75], [w * 0.55, bot - 2], [0, bot + 1], [-w * 0.55, bot - 2], [-w * 0.92, T + h * 0.75], [-w, T + h * 0.42], [-w * 0.8, T + 10]];
+          return { svg: solid([poly(pts)], NAVY) + V(20) + tie(28) + lapels(46) + line("M" + P(-22, T + h * 0.55) + " Q" + P(-8, T + h * 0.66) + " " + P(8, T + h * 0.55), C.yellow, 2) +
+            buttons([T + h * 0.5, T + h * 0.68]) + pocketSq(-w * 0.62, T + 18) + edge("M" + P(w * 0.82, T + 14) + " L" + P(w * 0.97, T + h * 0.42)), sl: [15, 12.5, 11], pants: NAVY, light: [16, T + 16] };
+        },
+        vee: function () {
+          var w = 33 * tw, pts = [[-6, T - 3], [6, T - 3], [w - 4, T - 1], [w, T + 4], [13, Wy], [15, hipY + 8], [2, hipY + 8], [0, hipY + 4], [-2, hipY + 8], [-15, hipY + 8], [-13, Wy], [-w, T + 4], [-w + 4, T - 1]];
+          return { svg: solid([poly(pts)], NAVY) + V(24) + tie(28, o.tie === "wide") + lapels(28) + buttons([hipY - 3]) + pocketSq(-w * 0.62, T + 14) + edge("M" + P(w - 2, T + 5) + " L" + P(14.5, Wy)) +
+            (o.flagPin ? '<rect x="' + w * 0.42 + '" y="' + (T + 9) + '" width="7" height="5" fill="' + C.war + '"/><rect x="' + w * 0.42 + '" y="' + (T + 9) + '" width="3" height="2.5" fill="' + NAVY + '"/>' : ""), sl: [11, 9, 7.5], pants: NAVY, light: [w * 0.35, T + 18] };
+        },
+        box: function () {
+          var w = 31 * tw, pts = [[-w, T], [w, T], [w - 2, hipY + 8], [2, hipY + 8], [0, hipY + 4], [-2, hipY + 8], [-w + 2, hipY + 8]];
+          return { svg: solid([poly(pts)], o.colorHex || NAVY) + V(24) + tie(26) + lapels(30) + buttons([hipY - 6, hipY]) + edge("M" + P(w - 3, T + 4) + " L" + P(w - 4.5, hipY + 4)), sl: [12, 10, 8], pants: NAVY, light: [w * 0.4, T + 16] };
+        },
+        coat: function () {
+          var pts = [[-8, T - 2], [8, T - 2], [21, T + 2], [24, Wy], [31, hipY + 30], [-31, hipY + 30], [-24, Wy], [-21, T + 2]], cw = [[-6, T - 2], [-18, T - 18], [-22, T + 6], [-10, T + 14]];
+          return { svg: solid([poly(pts)], COAT) + dots(pts, 8, 0.25) + solid([poly(cw), poly(flipX(cw))], COAT, 2.6) + belt(Wy + 2, 25) + buttons([T + 16, T + 24, Wy + 12, Wy + 20]) + buttons([T + 16, T + 24, Wy + 12, Wy + 20], -9) +
+            '<g transform="translate(16,' + (Wy + 16) + ') rotate(-14)">' + solid([poly([[-6, -9], [8, -9], [8, 2], [-6, 2]])], C.money, 1.6) + "</g>" + solid([poly([[8, Wy + 14], [22, Wy + 14], [22, Wy + 19], [8, Wy + 19]])], COAT, 2), sl: [13, 11, 11], pants: PANTS, light: [-12, T + 10] };
+        },
+        hourglass: function () {
+          var pts = [[-15, T + 2], [-11, T - 2], [-5, T - 3], [5, T - 3], [11, T - 2], [15, T + 2], [8, Wy], [31, hipY + 30], [16, hipY + 34], [0, hipY + 31], [-16, hipY + 34], [-31, hipY + 30], [-8, Wy]];
+          return { svg: solid([poly(pts)], cloth) + dots(pts, 6, 0.28) + V(8, skin) + line("M-8," + Wy + " H8", ink, 3.4) + buttons([T + 10, T + 16]) +
+            [-8, -4, 0, 4, 8].map(function (x) { return '<circle cx="' + x + '" cy="' + (T + 7 - Math.abs(x) * 0.25) + '" r="1.9" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="0.8"/>'; }).join(""), sl: [8.5, 7, 6], bare: true, short: cloth, light: [8, T + 13] };
+        },
+        lab: function () {
+          var panel = [[-24, T + 2], [-18, T - 2], [-6, T - 3], [-2, T + 26], [-2, hipY + 34], [-25, hipY + 34]];
+          return { svg: solid([poly([[-20, T], [20, T], [16, hipY], [-16, hipY]])], woman ? cloth : WHITE) + V(8, skin) + (woman ? "" : tie(20)) +
+            solid([poly(panel), poly(flipX(panel))], "#F7F4EC") + dots(flipX(panel), 8, 0.22) + line("M" + P(-6, T - 3) + " L" + P(-11, T + 4) + " L" + P(-7, T + 8) + " M" + P(6, T - 3) + " L" + P(11, T + 4) + " L" + P(7, T + 8), ink, 1.6) +
+            '<path d="M7,' + (T + 15) + ' h9 v7 h-9 z" fill="none" stroke="' + ink + '" stroke-width="1.6"/>' + line("M9.5," + (T + 16) + " v-6", C.war, 2.2) + line("M13," + (T + 16) + " v-5", C.med, 2.2), sl: [11, 9, 8], sleeve: "#F7F4EC", pants: PANTS, light: [-10, T + 14] };
+        },
+        barrel: function () {
+          var shirt = [[-30, T + 4], [-22, T - 3], [22, T - 3], [30, T + 4], [36, T + 26], [30, hipY - 2], [-30, hipY - 2], [-36, T + 26]].map(function (p) { return [p[0] * tw, p[1]]; }), denim = o.colorHex || cloth;
+          return { svg: solid([poly(shirt)], WHITE) + dots(shirt, 12 * tw, 0.22) + collar + solid([poly([[-15, T + 16], [15, T + 16], [17, hipY + 2], [-17, hipY + 2]])], denim, 3.6) +
+            line("M-13," + (T + 16) + " L" + -20 * tw + "," + (T - 1) + " M13," + (T + 16) + " L" + 20 * tw + "," + (T - 1), denim, 4.5) + '<rect x="-14" y="' + (T + 17) + '" width="4" height="4" fill="' + C.yellow + '"/><rect x="10" y="' + (T + 17) + '" width="4" height="4" fill="' + C.yellow + '"/>', sl: [9, 13, 16], bare: true, short: WHITE, pants: denim, light: [-14, T + 8] };
+        },
+        pear: function () {
+          var pts = [[-13, T + 2], [-9, T - 2], [9, T - 2], [13, T + 2], [20, Wy + 6], [28, hipY + 22], [0, hipY + 25], [-28, hipY + 22], [-20, Wy + 6]], apron = [[-11, Wy + 2], [11, Wy + 2], [16, hipY + 20], [-16, hipY + 20]];
+          return { svg: solid([poly(pts)], cloth) + solid([poly(apron)], C.cream, 2.4) + dots(apron, 4, 0.2) + V(7, skin) + '<circle cx="-6" cy="' + (T + 8) + '" r="2.6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1"/>', sl: [8, 7, 6], sleeve: cloth, light: [6, T + 12] };
+        },
+        twig: function () {
+          var col = o.colorHex || SCRUBS, pts = [[-17, T + 2], [-13, T - 2], [13, T - 2], [17, T + 2], [16, hipY + 6], [-16, hipY + 6]];
+          return { svg: solid([poly(pts)], col) + dots(pts, 6, 0.22) + '<path d="M-6,' + (T - 2) + " L0," + (T + 10) + " L6," + (T - 2) + ' Z" fill="' + skin + '" stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="miter"/><path d="M5,' + (T + 18) + ' h8 v7 h-8 z" fill="none" stroke="' + ink + '" stroke-width="1.6"/>', sl: [8, 7, 6], bare: true, short: col, pants: col, light: [-8, T + 12] };
+        },
+        shirt: function () {
+          var w = 24 * tw, pts = [[-w, T + 2], [-w + 5, T - 2], [-5, T - 3], [5, T - 3], [w - 5, T - 2], [w, T + 2], [13.5, Wy], [14.5, hipY + 1], [-14.5, hipY + 1], [-13.5, Wy]];
+          return { svg: solid([poly(pts)], cloth) + dots(pts, 6, 0.26) + collar + belt(hipY - 5, 14.5), sl: [6.5, 5.5, 4.5], bare: true, short: cloth, pants: PANTS, light: [w * 0.45, T + 13] };
+        },
+      };
+      var body = KINDS[kind](), len = g[2] * b.armL, k = b.arms, hk = b.hand;
+
+      function leg(i, sx, cls) {
+        var a = l.lp[i].map(function (v) { return v * (b.legPose ? f : 1); });
+        var s = seg(sx * 7 * (0.7 + 0.3 * tw), hipY, a, l.L), gx = b.legPose ? f : dir || sx, ax = s.hx, ay = s.hy, fl = b.feet;
+        var shoe = poly([[ax - gx * 5 * fl, ay - 3.5], [ax + gx * 3 * fl, ay - 4], [ax + gx * (woman ? 11 : 14) * fl, ay + 2.5], [ax + gx * (woman ? 10 : 13) * fl, ay + 4.5], [ax - gx * 5 * fl, ay + 4.5]]);
+        var heel = woman ? poly([[ax - gx * 4.5, ay + 3], [ax - gx * 1.5, ay + 3], [ax - gx * 2.5, ay + 7], [ax - gx * 4.5, ay + 7]]) : null;
+        var ankle = { x: s.x, y: s.y, ex: s.ex, ey: s.ey, hx: s.hx, hy: s.hy - 2 };
+        var lg = body.pants ? solid([limb(ankle, 11, 8.5, 7)], body.pants) : solid([limb(ankle, 6.5, 5, 4)], skin, 3.6);
+        return '<g class="' + cls + '">' + lg + solid(heel ? [shoe, heel] : [shoe], ink, 2.4) + "</g>";
+      }
+      function hand(s, side, hold) {
+        var a = (Math.atan2(s.hx - s.ex, s.hy - s.ey) * 180) / Math.PI, glove = o.gloves ? NAVY : skin;
+        return '<g transform="translate(' + P(s.hx, s.hy) + ") rotate(" + (-a).toFixed(1) + ") scale(" + (-side * hk).toFixed(2) + "," + hk.toFixed(2) + ')">' +
+          solid([poly([[-2.6, -1], [2.6, -1], [4, 6], [2.2, 11.5], [-1.2, 12], [-3.6, 7.5]]), poly([[2.4, 1.5], [7, 5.5], [3.4, 7]])], glove, 3 / hk) + "</g>" +
+          (hold && PROPS[hold] ? '<g transform="translate(' + P(s.hx + side * 2, s.hy + 6) + ')">' + PROPS[hold]() + "</g>" : "");
+      }
+      function arm(i, sx, cls) {
+        var s = seg(sx * g[0], g[1], arms[i], len), sl = body.sl, out;
+        if (body.bare) out = solid([limb(s, sl[0] * Math.sqrt(k), sl[1] * k, sl[2] * k)], skin, 3.6) + solid([upperQuad(s, (sl[0] + 4.5) * Math.sqrt(k), (sl[0] + 3) * Math.sqrt(k), 0.72)], body.short);
+        else out = solid([limb(s, sl[0] * k, sl[1] * k, sl[2] * k)], body.sleeve || NAVY) + (body.sleeve ? "" : solid([upperQuad({ x: s.ex + (s.hx - s.ex) * 0.84, y: s.ey + (s.hy - s.ey) * 0.84, ex: s.hx, ey: s.hy }, sl[2] * k, sl[2] * k, 1)], WHITE, 2.6));
+        return '<g class="' + cls + '">' + out + hand(s, sx, i ? o.holdR : o.holdL) + "</g>";
+      }
+      var hs = b.hs;
+      var head = o.prop === "megaphone"
+        ? '<g class="head"><g transform="translate(0,' + l.hy.toFixed(1) + ')"><path d="M-8,16 L-8,-4 L24,-22 L24,34 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="miter"/><path d="M24,-22 L30,6 L24,34 Z" fill="' + ink + '"/><!--face-end--></g><!--head-end--></g>'
+        : '<g class="head"><g transform="translate(' + dir * 2 + "," + l.hy.toFixed(1) + ") scale(" + (f * hs).toFixed(3) + "," + hs.toFixed(3) + ')">' + face(o, R, mood, skin) +
+          (R.hat === "fedoraUp" ? hatSvg("fedora", 1, -26) : hatSvg(R.hat, 1, -22)) + "<!--face-end--></g><!--head-end--></g>";
+      var neck = solid([poly([[-4 * hs + dir * 2, l.hy + 14 * hs], [4.5 * hs + dir * 2, l.hy + 16 * hs], [5.5, T + 1], [-5.5, T + 1]])], skin, 3.6);
+      var held = "";
+      if (o.hold && PROPS[o.hold]) {
+        var hl = seg(-g[0], g[1], arms[0], len), hr = seg(g[0], g[1], arms[1], len);
+        held = '<g transform="translate(' + P((hl.hx + hr.hx) / 2, (hl.hy + hr.hy) / 2 + 2) + ')">' + PROPS[o.hold]() + "</g>";
+      }
+      var light = o.light === "red" ? C.war : o.light === "teal" ? C.med : "#E9E1CC";
+      // The upper body leans or hunches from the hips (forward = the way the head faces).
+      return '<g class="person">' + leg(0, -1, "leg-l") + leg(1, 1, "leg-r") +
+        '<g transform="rotate(' + (b.hunch * f).toFixed(1) + " 0 " + hipY.toFixed(1) + ')">' + neck + body.svg +
+        '<circle class="chest-light" cx="' + body.light[0].toFixed(1) + '" cy="' + body.light[1].toFixed(1) + '" r="4.5" fill="' + light + '" stroke="' + ink + '" stroke-width="2"/>' +
+        head + arm(0, -1, "arm-l") + arm(1, 1, "arm-r") + held + "</g></g>";
+    }
+
+    // The skeleton gag (cartoon-style-bible.md, Comedy 6): the same height and lean, bones as thin as anyone's
+    // (a fat cat's too), still grinning, still in its hat, monocle, cigar or mask.
+    function skeleton(o) {
+      var R = resolve(o), b = R.b, l = lay(b), g = armGeo(R.kind, b, l), arms = o.arms || CAST_ARMS(o), f = o.look === "left" ? -1 : 1;
+      function bone(d, w) {
+        return '<path d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="' + (w + 3.4) + '" stroke-linecap="square" stroke-linejoin="miter"/><path d="' + d + '" fill="none" stroke="' + BONE + '" stroke-width="' + w + '" stroke-linecap="square" stroke-linejoin="miter"/>';
+      }
+      function bones(x0, y0, a, len, cls, foot) {
+        var s = seg(x0, y0, a, len);
+        var end = foot ? solid([poly([[s.hx - foot * 5, s.hy - 2], [s.hx + foot * 14, s.hy + 2], [s.hx - foot * 5, s.hy + 4]])], BONE, 3) : solid([poly([[s.hx - 3.5, s.hy - 1], [s.hx + 3.5, s.hy - 1], [s.hx, s.hy + 10]])], BONE, 3);
+        return '<g class="' + cls + '">' + bone("M" + P(x0, y0) + " L" + P(s.ex, s.ey) + " L" + P(s.hx, s.hy), 4) + end + "</g>";
+      }
+      var ribs = "", hx = 7 * (0.7 + 0.3 * b.tw);
+      for (var k = 0; k < Math.max(3, Math.round(4 * b.th)); k++) { var y = l.sY + 4 + k * 7.5, w = 16 - k * 2; ribs += bone("M" + -w + "," + (y + 5) + " L0," + (y - 1) + " L" + w + "," + (y + 5), 2.6); }
+      var skull = '<g class="head"><g transform="translate(0,' + l.hy.toFixed(1) + ") scale(" + (f * b.hs).toFixed(3) + "," + b.hs.toFixed(3) + ')">' +
+        solid([poly([[-16, -6], [-12, -19], [0, -23], [12, -19], [16, -6], [14, 6], [8, 11], [8, 20], [-8, 20], [-8, 11], [-14, 6]])], BONE, LW) +
+        '<path d="M-12,-6 L-3,-7 L-4,2 L-10,1 Z M12,-6 L3,-7 L4,2 L10,1 Z" fill="' + ink + '"/><path d="M-2.5,9 L0,3 L2.5,9 Z" fill="' + ink + '"/>' +
+        '<path class="mouth" d="M-9,13 L9,13 M-4.5,11 v7 M0,11 v7 M4.5,11 v7" fill="none" stroke="' + ink + '" stroke-width="1.8"/>' +
+        (o.prop === "monocle" ? '<circle cx="7" cy="-3" r="6.4" fill="none" stroke="' + C.yellow + '" stroke-width="2.4"/>' : "") +
+        (o.cigar ? '<g transform="translate(6,14) rotate(-12)">' + solid([poly([[0, -2.6], [22, -2.6], [22, 2.6], [0, 2.6]])], "#7A4A2A", 2) + '<rect x="19" y="-2.6" width="4" height="5.2" fill="#C9C2B5"/></g>' : "") +
+        (o.mask ? '<path d="M-17,-11 L18,-12 L19,-1 L13,1 L9,-3 L4,1 L-4,-2 L-10,1 L-17,-1 Z" fill="' + ink + '" opacity="0.92"/>' : "") +
+        hatSvg(R.hat === "fedoraUp" ? "fedora" : R.hat, 0, -22) + "<!--face-end--></g><!--head-end--></g>";
+      return '<g class="person skeleton">' + bones(-hx, l.hipY, l.lp[0], l.L, "leg-l", -1) + bones(hx, l.hipY, l.lp[1], l.L, "leg-r", 1) +
+        '<g transform="rotate(' + (b.hunch * f).toFixed(1) + " 0 " + l.hipY.toFixed(1) + ')">' + bone("M0," + (l.hy + 20 * b.hs).toFixed(1) + " V" + (l.hipY - 4), 4) + ribs +
+        solid([poly([[-14, l.hipY - 7], [14, l.hipY - 7], [8, l.hipY + 5], [-8, l.hipY + 5]])], BONE, 3) + bone("M" + -g[0] + "," + g[1] + " L0," + (l.sY - 4) + " L" + g[0] + "," + g[1], 3.4) +
+        '<circle class="chest-light" cx="0" cy="' + (l.sY + 10) + '" r="0" fill="none"/>' + bones(-g[0], g[1], arms[0], g[2] * b.armL, "arm-l") + bones(g[0], g[1], arms[1], g[2] * b.armL, "arm-r") + skull + "</g></g>";
+    }
+    // The charred gag: every color but the ink goes a dark brown of the same lightness; the hair blows straight
+    // up, only the eyes stay white (.char-eyes, pupils r 1.8), and .smoke wisps rise (all in the face's units).
+    function charify(markup, o) {
+      var inkU = ink.toUpperCase();
+      function dark(col) {
+        var n = parseInt(col.slice(1), 16), lum = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + lum * 46);
+        return "rgb(" + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ")";
+      }
+      var out = markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{3,6})"/g, function (m, attr, col) {
+        if (col.length === 4) col = "#" + col[1] + col[1] + col[2] + col[2] + col[3] + col[3];
+        return col.toUpperCase() === inkU ? m : attr + '="' + dark(col) + '"';
+      });
+      var eye = function (x) { return '<circle cx="' + x + '" cy="-4" r="4.6" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.4"/><circle cx="' + x + '" cy="-4" r="1.8" fill="' + ink + '"/>'; };
+      var hair = "<" + poly([[-15, -14], [-22, -34], [-10, -24], [-7, -46], [0, -27], [6, -48], [10, -26], [20, -40], [17, -20], [26, -26], [16, -12]]) + ' fill="#1B1714" stroke="' + ink + '" stroke-width="1.8"/>';
+      var smoke = '<g class="smoke">' + [-12, 2, 15].map(function (dx, i) { return line("M" + dx + "," + (-48 - i * 4) + " l-6,-9 l6,-9 l-6,-9", "#8C8782", 3.6); }).join("") + "</g>";
+      return out.replace(/<g class="eye">[\s\S]*?<\/g>/g, "").replace("<!--face-end-->", hair + '<g class="char-eyes">' + eye(EYES[0][0]) + eye(EYES[1][0]) + "</g>" + smoke);
+    }
+    // Flames all over a person, on this build's hips, shoulders and head (put it inside the person's group).
+    function fireOn(o) {
+      var r = rig(o || {}), R = resolve(o || {}), l = lay(R.b);
+      return '<g class="on-fire">' + flames(-2, l.hipY + 8, 0.95) + flames(r.shoulder[0][0] - 6, r.shoulder[0][1] + 10, 0.5) + flames(r.shoulder[1][0] + 6, r.shoulder[1][1] + 10, 0.5) + flames(r.top[0], r.top[1] + 8, 0.62) + "</g>";
+    }
+    // A cast member's options (for KIT.rig too): the preset, then the scene's.
+    function castOpts(name, extra) {
+      var o = copy(CAST[name], extra);
+      if (extra && extra.arms) {
+        if (!("hold" in extra)) o.hold = null;
+        if (!("holdL" in extra)) o.holdL = null;
+        if (!("holdR" in extra)) o.holdR = null;
+      }
+      return o;
+    }
+    function cast(name, extra) { return person(castOpts(name, extra)); }
+    return { person: person, cast: cast, castOpts: castOpts, CAST: CAST, rig: rig, fireOn: fireOn };
+  })();
 
   // ── Gags (cartoon-style-bible.md, Comedy 6) ─────────────────────────
   // A flame of three tongues, its base at (x, y), about 100 * s tall. Each tongue is an untransformed
@@ -701,11 +949,6 @@
       return '<g transform="translate(' + dx + ',0) scale(' + k + ')"><g class="flame"><path d="' + FLAME_D + '" fill="' + fill + '" stroke="' + C.line + '" stroke-width="' + (4 / k).toFixed(1) + '" stroke-linejoin="round"/></g></g>';
     };
     return '<g transform="translate(' + x + "," + y + ") scale(" + (s || 1) + ')"><g class="flames">' + tongue(C.war, 1, 0) + tongue(C.orange, 0.68, 2) + tongue(C.yellow, 0.38, 3) + "</g></g>";
-  }
-  // Flames all over a person, in the person's own units (put it inside the person's group, after it).
-  function fireOn(o) {
-    var hy = -56 - ((o && o.tall ? 1.35 : 1) - 1) * 60;
-    return '<g class="on-fire">' + flames(-2, 34, 0.95) + flames(-26, -14, 0.5) + flames(26, -14, 0.5) + flames(2, hy - 12, 0.62) + "</g>";
   }
   // Flicker every .flame under `root` (an element or a selector) from t0 to t1, with finite repeats.
   function flicker(tl, root, t0, t1) {
@@ -773,10 +1016,17 @@
       '<path d="M-40,40 C-30,10 -10,0 0,0 C10,0 30,10 40,40" fill="none" stroke="' + ink + '" stroke-width="3" opacity="0.5"/></g>';
   }
 
-  // A walking paper bill around (0,0), 96 x 50, legs to y=48. color: "war" | "med".
-  function money(color, legs) {
-    var fill = color === "med" ? C.med : C.war;
-    var dark = color === "med" ? "#1D5E59" : "#8E2E1E";
+  // A walking paper bill around (0,0), 96 x 50, legs to y=48, always money green. kind: "war" (a red
+  // missile seal), "med" (a teal cross seal) or "plain" (no seal).
+  function moneySeal(kind, x, y, r) {
+    if (kind !== "war" && kind !== "med") return "";
+    var mark = kind === "war"
+      ? '<path d="M' + (x - r * 0.55) + "," + (y + r * 0.35) + " L" + (x + r * 0.35) + "," + (y - r * 0.55) + " l" + r * 0.2 + "," + r * 0.2 + " Z" + '" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="' + (r * 0.28).toFixed(1) + '" stroke-linejoin="round"/>'
+      : '<path d="M' + x + "," + (y - r * 0.55) + " V" + (y + r * 0.55) + " M" + (x - r * 0.55) + "," + y + " H" + (x + r * 0.55) + '" stroke="#FFFFFF" stroke-width="' + (r * 0.34).toFixed(1) + '" stroke-linecap="round"/>';
+    return '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + (kind === "war" ? C.war : C.med) + '" stroke="' + C.line + '" stroke-width="2"/>' + mark;
+  }
+  function money(kind, legs) {
+    var fill = C.money, dark = C.moneyDark;
     var l = legs === undefined ? 0 : legs;
     return '<g class="money">' +
       '<path class="legs" d="M-16,24 l' + (-6 + l * 10) + ',22 h-8 M16,24 l' + (6 - l * 10) + ',22 h8" fill="none" stroke="' + C.line + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>' +
@@ -785,7 +1035,8 @@
       '<ellipse cx="0" cy="0" rx="13" ry="15" fill="' + C.paper + '" stroke="' + dark + '" stroke-width="2"/>' +
       '<circle cx="0" cy="-2" r="5" fill="none" stroke="' + dark + '" stroke-width="1.8"/>' +
       '<path d="M-7,-4 q-3,6 0,10 M7,-4 q3,6 0,10 M-6,10 q6,-5 12,0" fill="none" stroke="' + dark + '" stroke-width="1.6"/>' +
-      '<circle cx="-31" cy="0" r="5" fill="none" stroke="' + dark + '" stroke-width="2"/><circle cx="31" cy="0" r="5" fill="none" stroke="' + dark + '" stroke-width="2"/>' +
+      '<circle cx="-31" cy="0" r="5" fill="none" stroke="' + dark + '" stroke-width="2"/>' +
+      (kind === "war" || kind === "med" ? moneySeal(kind, 31, 0, 10) : '<circle cx="31" cy="0" r="5" fill="none" stroke="' + dark + '" stroke-width="2"/>') +
       "</g>";
   }
   function tophat(fill) {
@@ -809,30 +1060,8 @@
       '<path d="M0,0 l18,-10 l2,14 Z" fill="' + C.line + '"/><path d="M138,-80 l12,20 l14,-8 l-12,-20 Z" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="4"/></g>';
   }
 
-  // Countdown board: "HUMANS TERMINATED BY CURABLE DISEASES SINCE THIS VIDEO STARTED", 104 per minute.
-  var PER_SECOND = 104 / 60;
-  function countdownBoard() {
-    var digits = "";
-    for (var i = 0; i < 6; i++) {
-      digits += '<span class="kit-flip"><span class="kit-flip-d">0</span></span>';
-    }
-    return '<div class="kit-board"><div class="kit-board-title">HUMANS TERMINATED BY CURABLE DISEASES<br>SINCE THIS VIDEO STARTED</div><div class="kit-board-digits">' + digits + "</div></div>";
-  }
-  function setBoard(board, t) {
-    var n = Math.floor(t * PER_SECOND);
-    var s = String(n);
-    while (s.length < 6) s = "0" + s;
-    var ds = board.querySelectorAll(".kit-flip-d");
-    for (var i = 0; i < ds.length; i++) if (ds[i].textContent !== s[i]) ds[i].textContent = s[i];
-  }
-
   // Shared CSS (fonts are declared in each composition file).
   var css =
-    ".kit-board{position:absolute;width:560px;padding:16px 20px 18px;background:#061D3E;border:6px solid #0B1A33;border-radius:14px;box-shadow:0 0 0 4px #F3ECD0,0 0 0 9px #E5903B;}" +
-    ".kit-board-title{font-family:Oswald;font-size:23px;line-height:1.2;letter-spacing:0.06em;color:#F3ECD0;text-align:center;margin-bottom:10px;}" +
-    ".kit-board-digits{display:flex;gap:8px;justify-content:center;}" +
-    ".kit-flip{position:relative;display:inline-flex;align-items:center;justify-content:center;width:64px;height:84px;background:#273049;border-radius:6px;font-family:Fraunces;font-size:64px;color:#E8B04A;overflow:hidden;}" +
-    ".kit-flip::after{content:'';position:absolute;left:0;right:0;top:41px;height:2px;background:#0B1A33;}" +
     ".kit-big{font-family:Fraunces;font-weight:900;color:#1A1426;line-height:0.95;text-shadow:3px 3px 0 #F6EBD2,-3px 3px 0 #F6EBD2,3px -3px 0 #F6EBD2,-3px -3px 0 #F6EBD2,0 4px 0 #F6EBD2,0 -4px 0 #F6EBD2,4px 0 0 #F6EBD2,-4px 0 0 #F6EBD2,6px 8px 0 #1A1426;}" +
     ".kit-label{font-family:Oswald;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:#1B1B1B;}";
   var style = document.createElement("style");
@@ -840,13 +1069,13 @@
   document.head.appendChild(style);
 
   window.KIT = {
-    P: P, C: C, V: V, W: W, H: H, OFFICE: OFFICE, form: form, FORM_Q: FORM_Q, FORM_AT: FORM_AT, pipOpts: pipOpts, placeBoard: placeBoard, zoomView: zoomView, enter: enter, drawTick: drawTick,
+    P: P, C: C, V: V, W: W, H: H, OFFICE: OFFICE, form: form, FORM_Q: FORM_Q, FORM_AT: FORM_AT, cornerOpts: cornerOpts, zoomView: zoomView, enter: enter, drawTick: drawTick,
     scene: scene, cue: cue, cueEnd: cueEnd, after: after, before: before, rng: rng, onTime: onTime,
     mountWishonia: mountWishonia, wishoniaAt: wishoniaAt,
     svg: svg, el: el, office: office, desk: desk, mug: mug, cabinet: cabinet, wallScreen: wallScreen,
     // bean is the old name: every human is now person() (the bean drawing stays as beanClassic).
-    paper: paper, paperDefs: paperDefs, grain: grain, star: star, boomerang: boomerang, sun: sun, horizon: V ? 1180 : 610, person: person, cast: cast, CAST: CAST, bean: person, beanClassic: bean, money: money, tophat: tophat,
-    flames: flames, fireOn: fireOn, flicker: flicker, nuke: nuke, boom: boom, xray: xray, reaper: reaper,
-    checkbox: checkbox, tick: tick, checkSvg: checkSvg, pencil: pencil, countdownBoard: countdownBoard, setBoard: setBoard,
+    paper: paper, paperDefs: paperDefs, grain: grain, star: star, boomerang: boomerang, sun: sun, horizon: V ? 1180 : 610, person: HUMANS.person, cast: HUMANS.cast, CAST: HUMANS.CAST, castOpts: HUMANS.castOpts, rig: HUMANS.rig, bean: HUMANS.person, beanClassic: bean, money: money, moneySeal: moneySeal, tophat: tophat,
+    flames: flames, fireOn: HUMANS.fireOn, flicker: flicker, nuke: nuke, boom: boom, xray: xray, reaper: reaper,
+    checkbox: checkbox, tick: tick, checkSvg: checkSvg, pencil: pencil,
   };
 })();

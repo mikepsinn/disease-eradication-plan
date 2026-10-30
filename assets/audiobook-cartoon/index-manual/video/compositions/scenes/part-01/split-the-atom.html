@@ -19,8 +19,6 @@
       <div id="split-the-atom-flash"></div>
       <div id="split-the-atom-pip"></div>
     </div>
-    <!-- outside the zoom, so the board stays in its corner as in the office scene before -->
-    <div id="split-the-atom-board"><div id="split-the-atom-board-in"></div></div>
     <div id="split-the-atom-grain"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
@@ -48,7 +46,8 @@
       var s = L.s, u = s / 1.8, CUT = 490;
       var cutX = L.card[0] + CUT * L.card[2];
       // In person units: A's raised left hand and the atom floating above it, A's right hand held out (the plug), B's mirror image.
-      var HAND_A = [-30.4, -76], ATOM_A = [-32.4, -98], HAND_OUT = [61.35, -0.4], ATOM_B = [32.4, -98];
+      var RA = KIT.rig({ tone: 1, outfit: "shirt", color: 0, hair: 0, plain: true, arms: [[200, 190], [50, 70]] }), RB = KIT.rig({ tone: 3, outfit: "dress", color: 3, hair: 1, plain: true, arms: [[-20, -10], [160, 170]] });
+      var HAND_A = RA.hand[0], ATOM_A = [HAND_A[0] - 2, HAND_A[1] - 22], HAND_OUT = RA.hand[1], ATOM_B = [RB.hand[1][0] + 2, RB.hand[1][1] - 22];
       var hx = L.ax + s * HAND_OUT[0], hy = L.y + s * HAND_OUT[1];
       var T = 55, F = 188, TOAST_X = 100, TOAST_W = 130, TOAST_TOP = T - 86, BULB0 = 290;
       var tableR = BULB0 + (L.bulbs - 1) * L.gap + 40;
@@ -150,20 +149,20 @@
       }
 
       // ── Assemble ──
-      var A1 = KIT.person({ tone: 1, outfit: "shirt", color: 0, hair: 0, mood: "smile", arms: [[200, 190], [50, 70]] });
-      var A2 = KIT.person({ tone: 1, outfit: "shirt", color: 0, hair: 0, mood: "flat", brows: true, look: "right", arms: [[200, 190], [20, 10]] });
-      var B1 = KIT.person({ tone: 3, outfit: "dress", color: 3, hair: 1, mood: "smile", arms: [[-20, -10], [160, 170]] });
-      var B2 = KIT.person({ tone: 3, outfit: "dress", color: 3, hair: 1, mood: "flat", brows: true, look: "left", arms: [[-20, -10], [160, 170]] });
+      var A1 = KIT.person({ tone: 1, outfit: "shirt", color: 0, hair: 0, plain: true, mood: "smile", arms: [[200, 190], [50, 70]] });
+      var A2 = KIT.person({ tone: 1, outfit: "shirt", color: 0, hair: 0, plain: true, mood: "flat", brows: true, look: "right", arms: [[200, 190], [20, 10]] });
+      var B1 = KIT.person({ tone: 3, outfit: "dress", color: 3, hair: 1, plain: true, mood: "smile", arms: [[-20, -10], [160, 170]] });
+      var B2 = KIT.person({ tone: 3, outfit: "dress", color: 3, hair: 1, plain: true, mood: "flat", brows: true, look: "left", arms: [[-20, -10], [160, 170]] });
       // After the blast: the same two, charred, frozen in the aim (the arm turned AIM degrees about its shoulder).
       var AIM = 95;
-      var A3 = KIT.person({ tone: 1, outfit: "shirt", color: 0, hair: 0, look: "right", charred: true, arms: [[200 - AIM, 190 - AIM], [20, 10]] });
-      var B3 = KIT.person({ tone: 3, outfit: "dress", color: 3, hair: 1, look: "left", charred: true, arms: [[-20, -10], [160 + AIM, 170 + AIM]] });
+      var A3 = KIT.person({ tone: 1, outfit: "shirt", color: 0, hair: 0, plain: true, look: "right", charred: true, arms: [[200 - AIM, 190 - AIM], [20, 10]] });
+      var B3 = KIT.person({ tone: 3, outfit: "dress", color: 3, hair: 1, plain: true, look: "left", charred: true, arms: [[-20, -10], [160 + AIM, 170 + AIM]] });
       // Where the aimed atoms are (world), and the middle, where they meet.
       function turn(p, o, deg) {
         var r = (deg * Math.PI) / 180, dx = p[0] - o[0], dy = p[1] - o[1];
         return [o[0] + dx * Math.cos(r) - dy * Math.sin(r), o[1] + dx * Math.sin(r) + dy * Math.cos(r)];
       }
-      var aimA = turn(ATOM_A, [-17, -26], AIM), aimB = turn(ATOM_B, [17, -26], -AIM);
+      var aimA = turn(ATOM_A, RA.shoulder[0], AIM), aimB = turn(ATOM_B, RB.shoulder[1], -AIM);
       var aimAw = [L.ax + s * aimA[0], L.y + s * aimA[1]], aimBw = [L.bx + s * aimB[0], L.y + s * aimB[1]];
       var MID = [(aimAw[0] + aimBw[0]) / 2, (aimAw[1] + aimBw[1]) / 2];
       var aAtom = [L.ax + s * ATOM_A[0], L.y + s * ATOM_A[1]];
@@ -222,13 +221,9 @@
       q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + stamp() + floor + scorch + cord + A + B + card + bench + dark +
         streak("streakA", aimAw) + streak("streakB", aimBw) + atomA + atomB + toasts + cloud + sootA + sootB + star);
 
-      q("board-in").innerHTML = KIT.countdownBoard();
-      KIT.placeBoard(q("board"), q("board-in"));
-      var board = q("board-in").firstChild;
 
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
-      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
       KIT.enter(tl, q("cam"), "zoom into the wall screen", KIT.OFFICE.screen);
       var g = function (s2) { return "#" + P(s2); };
       var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t); };
@@ -236,9 +231,9 @@
       // Pivots, set once while every element is untransformed (svgOrigin in a tween is read through the element's current transform).
       var armA = document.querySelector(g("A-d2") + " .arm-l"), armB = document.querySelector(g("B-d2") + " .arm-r");
       [[g("stamp"), "0 -15"], [g("card"), "340 125"], [g("scis"), "0 0"], [g("sc1"), "0 0"], [g("sc2"), "0 0"], [g("half-l"), "245 125"], [g("half-r"), "585 125"],
-        [g("spark"), "0 0"], [g("A-scis"), "0 0"], [g("atomA-pop"), ATOM_A.join(" ")], [[armA, g("atomA-rot")], "-17 -26"], [[armB, g("atomB-rot")], "17 -26"],
+        [g("spark"), "0 0"], [g("A-scis"), "0 0"], [g("atomA-pop"), ATOM_A.join(" ")], [[armA, g("atomA-rot")], RA.shoulder[0].join(" ")], [[armB, g("atomB-rot")], RB.shoulder[1].join(" ")],
         [g("toast-0"), (TOAST_X + 40) + " " + TOAST_TOP], [g("toast-1"), (TOAST_X + 90) + " " + TOAST_TOP], [g("sootA"), "15 -10"], [g("sootB"), "-15 -10"],
-        [document.querySelectorAll(g("A-d3") + " .char-eyes, " + g("B-d3") + " .char-eyes"), "0 -58"]].forEach(function (o) { gsap.set(o[0], { svgOrigin: o[1] }); });
+        [document.querySelectorAll(g("A-d3") + " .char-eyes, " + g("B-d3") + " .char-eyes"), RA.faceEyes.join(" ")]].forEach(function (o) { gsap.set(o[0], { svgOrigin: o[1] }); });
 
       // "nineteen forty-five": the 1945 stamp slams down.
       tl.fromTo(g("stamp"), { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.16, ease: "power4.in" }, cue("nineteen"));

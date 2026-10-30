@@ -63,7 +63,7 @@ figcaption{font-family:var(--label);text-transform:uppercase;letter-spacing:.05e
 <div class="wrap">
 <p class="kicker">How to End War and Disease (for Busy People) · Episode 1 cartoon</p>
 <h1>Cast Sheet</h1>
-<p class="dek">The humans as stick figures in simple clothes, drawn with the production kit. Who someone is comes from clothes, hat and props; the rivets at the elbows and knees and the chest light keep the meat-robot joke. Four skin tones, four clothing colors.</p>
+<p class="dek">The humans as the theme song draws them: stereotypes you read from the silhouette, sharp and angular, drawn with the production kit. Each recurring character has its own shape, face and props; the chest light keeps the meat-robot joke.</p>
 <div class="grid">
 ${frame("c1", label(960, 120, "THE RECURRING HUMANS", 40) + cast1, "The recurring humans: Rich Human, Politician, Lobbyist, Weapons Maker, Orderly")}
 ${frame("c2", label(960, 120, "MORE HUMANS", 40) + cast2, "Grandma, the Loud Human, a scientist and two everyday humans")}

@@ -16,7 +16,7 @@ Times are MP3 times. They come from each scene's cue word in `../../word-timings
 
 Scenes are named, not numbered. Use the name in feedback ("loved-ones: make the form smaller"). The number in each heading is only the order.
 
-Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper with red (war money) and teal (medicine money). "PiP" means Wishonia talks from the round corner frame.
+Look, characters and rules: `../../cartoon-style-bible.md`. Layer A is Wishonia's sunburst office; Layer B is the engraved Earth paper; the money is green, and its seal says what it buys (a red missile for war, a teal cross for medicine). "PiP" means Wishonia in her Layer B corner: standing in the bottom right corner in 16:9 (cut off by the frame's bottom edge), in her flying saucer at the top right in 9:16, with her gesture body showing.
 
 **Spine.** The scroll and one stream of papers. The five steps glow on Wishonia's scroll in sacred-scroll, and every step scene opens on its numbered card from that scroll. One stream of plain (uncolored) papers leaves the Rich Human's hill in Step 1 and passes through every step; in Step 5 the treaty's red papers go through the color-flip funnel and come out teal, and a tenth of them walk back up the hill.
 

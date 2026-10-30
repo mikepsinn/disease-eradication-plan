@@ -7,7 +7,7 @@ Audiobook episode 1 · Narrator: Wishonia · Length of audio: 01:02:05
 - **Voice track:** use the audiobook MP3 as it is. Do not record new narration. Every time in this script is a time in that MP3.
 - **Scenes:** each scene starts at its time and runs until the next scene starts. The "Cue" line gives the first words of the narration at that point, so an editor can find the spot by ear.
 - **Look and characters:** see `cartoon-style-bible.md`. Layer **A** = Wishonia's retro sunburst office. Layer **B** = black-and-white engraved Earth diagrams with red (war money) and teal (medicine money).
-- **Wishonia:** the line "Wishonia:" names the sprites to use, as `expression` + `body pose`, from the sprite set in `transmit/public/assets/sprites/alien/`. The mouth shapes come from lip-sync (see the style bible). "PiP" means Wishonia talks from a small corner frame while the Earth diagram fills the screen.
+- **Wishonia:** the line "Wishonia:" names the sprites to use, as `expression` + `body pose`, from the sprite set in `transmit/public/assets/sprites/alien/`. The mouth shapes come from lip-sync (see the style bible). "PiP" means Wishonia stays in her Layer B corner while the Earth diagram fills the screen (standing in the bottom right corner in 16:9, in her flying saucer at the top right in 9:16).
 - **On screen:** text that must appear on screen. **Use the numbers the narrator says.** The audiobook is a different edition from the website, and some numbers are different.
 - **HOLD:** stop all motion for 1–2 seconds. These are the death tolls and the serious lines. Do not put jokes on top of them.
 - **Subtitles:** `transcript.srt` has captions for the full episode. `word-timings.json` has the time of every word, for automatic lip-sync and caption tools.

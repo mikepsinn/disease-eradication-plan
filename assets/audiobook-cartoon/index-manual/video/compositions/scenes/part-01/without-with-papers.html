@@ -17,7 +17,6 @@
     <div id="without-with-papers-cam">
       <div id="without-with-papers-bg"></div>
       <div id="without-with-papers-art"></div>
-      <div id="without-with-papers-board"><div id="without-with-papers-board-in"></div></div>
       <div id="without-with-papers-pip"></div>
       <div id="without-with-papers-grain"></div>
     </div>
@@ -59,16 +58,21 @@
       function text(x, y, size, t, fill, family, extra) {
         return '<text x="' + x + '" y="' + y + '" font-family="' + (family || "Inter") + '" font-weight="' + (family === "Oswald" ? 600 : 700) + '" font-size="' + size + '" fill="' + (fill || ink) + '" ' + (extra || "") + ">" + t + "</text>";
       }
-      // A human sitting on the ground, legs splayed out to the sides (the leg groups are never tweened).
-      function sitting(svg) {
-        return svg.replace('<g class="leg-l">', '<g class="leg-l" transform="rotate(70 -8 30)">').replace('<g class="leg-r">', '<g class="leg-r" transform="rotate(-70 8 30)">');
+      // A human sitting on the ground, legs splayed out to the sides about its hips (the leg groups are never tweened).
+      function sitting(svg, o) {
+        var hip = KIT.rig(o).hip;
+        return svg.replace('<g class="leg-l">', '<g class="leg-l" transform="rotate(70 ' + hip[0].join(" ") + ')">').replace('<g class="leg-r">', '<g class="leg-r" transform="rotate(-70 ' + hip[1].join(" ") + ')">');
       }
-      // Move a person's eyes up (dy < 0) or down.
+      // Move a person's pupils up (dy < 0) or down, in the face's units.
       function eyes(svg, dy) {
-        return svg.replace(/cy="-58" r="(3\.2|4\.4)"/g, function (m, r) { return 'cy="' + (-58 + dy) + '" r="' + r + '"'; });
+        return svg.replace(/<circle class="pupil" cx="([-\d.]+)" cy="([-\d.]+)"/g, function (m, cx, cy) { return '<circle class="pupil" cx="' + cx + '" cy="' + (+cy + dy * 0.5) + '"'; });
       }
-      // Put a prop in a person's left hand (it then swings with the arm).
-      function inLeftHand(svg, prop) { return svg.replace('<g class="arm-l">', '<g class="arm-l">' + prop); }
+      // Put a prop in a person's left hand (it then swings with the arm). The prop is drawn for a hand at `at`;
+      // it moves to where this person's left hand is.
+      function inLeftHand(svg, prop, o, at) {
+        var h = KIT.rig(o).handLocal[0];
+        return svg.replace('<g class="arm-l">', '<g class="arm-l"><g transform="translate(' + (h[0] - at[0]).toFixed(1) + "," + (h[1] - at[1]).toFixed(1) + ')">' + prop + "</g>");
+      }
       var FEET = -102 * S, SIT = -46 * S;
 
       // ── Left: WITHOUT PAPERS ─────────────────────────────────────────
@@ -83,9 +87,9 @@
       // The patient outside the hospital (a thermometer in its mouth, its check-engine light blinking), and its skeleton.
       var therm = '<path d="M3,-45 L25,-53" stroke="' + ink + '" stroke-width="5.5" stroke-linecap="round"/><path d="M3,-45 L25,-53" stroke="#FFF" stroke-width="2.6" stroke-linecap="round"/>' +
         '<circle cx="25" cy="-53" r="3.4" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.6"/>';
-      var patient = { tone: 1, outfit: "shirt", color: 1, mood: "sad", arms: [[14, 4], [-14, -4]] };
-      var h1 = at(140, SIT, S, g("h1-a", sitting(KIT.person(patient)) + therm) +
-        g("h1-b", sitting(KIT.person(Object.assign({ skeleton: true }, patient))) + therm, 'opacity="0"'));
+      var patient = { tone: 1, outfit: "shirt", color: 1, mood: "sad", plain: true, arms: [[14, 4], [-14, -4]] };
+      var h1 = at(140, SIT, S, g("h1-a", sitting(KIT.person(patient), patient) + therm) +
+        g("h1-b", sitting(KIT.person(Object.assign({ skeleton: true }, patient)), patient) + therm, 'opacity="0"'));
       var cricket = at(208, -2, 1, '<path d="M-4,-4 l-7,-9 l-4,12 M2,-4 l3,4" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round"/>' +
         '<ellipse cx="0" cy="-7" rx="10" ry="5" fill="' + ink + '"/><circle cx="10" cy="-9" r="4" fill="' + ink + '"/><path d="M12,-12 q6,-12 15,-9" fill="none" stroke="' + ink + '" stroke-width="1.6"/>' +
         g("chirp", '<path d="M24,-20 q5,4 0,9 M31,-24 q8,7 0,17" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round"/>', 'opacity="0"'));
@@ -97,11 +101,12 @@
         [[290, -50, 6], [332, -28, 4], [362, -58, 5]].map(function (b) { return '<circle cx="' + b[0] + '" cy="' + b[1] + '" r="' + b[2] + '" fill="' + cream + '" ' + st(2) + "/>"; }).join("") +
         rect(292, -272, 66, 12, cream, st(4)) + '<path d="M292,-160 L264,-100" stroke="#FFF" stroke-width="7" stroke-linecap="round" opacity="0.8"/>';
       // The scientist, and its skeleton: still in the open lab coat, still holding the clipboard.
-      var coat = '<path d="M-17,-30 L-6,-28 L-5,58 L-19,58 Z M17,-30 L6,-28 L5,58 L19,58 Z" fill="#F7F4EC" ' + st(3) + "/>";
-      var clip = '<g transform="translate(3.6,24)"><rect x="-4" y="-24" width="22" height="30" rx="2" fill="#B98A55" stroke="' + ink + '" stroke-width="2.4"/>' +
+      var sciO = KIT.castOpts("scientist", { mood: "flat" }), sci = KIT.rig(sciO);
+      var coat = '<g transform="rotate(' + sci.lean.toFixed(1) + " 0 " + sci.hipY.toFixed(1) + ')"><path d="M-21,-28 L-6,-26 L-5,60 L-23,60 Z M21,-28 L6,-26 L5,60 L23,60 Z" fill="#F7F4EC" ' + st(3) + "/></g>";
+      var clip = '<g transform="translate(' + sci.hand[1].join(",") + ')"><rect x="-4" y="-24" width="22" height="30" rx="2" fill="#B98A55" stroke="' + ink + '" stroke-width="2.4"/>' +
         rect(0, -20, 14, 22, C.paper) + "</g>";
-      var sciBones = sitting(KIT.cast("scientist", { skeleton: true })).replace('<g class="arm-l">', coat + '<g class="arm-l">');
-      var h2 = at(462, SIT, S, g("h2-a", sitting(KIT.cast("scientist", { mood: "flat" }))) + g("h2-b", sciBones + clip, 'opacity="0"'));
+      var sciBones = sitting(KIT.cast("scientist", { skeleton: true }), sciO).replace('<g class="arm-l">', coat + '<g class="arm-l">');
+      var h2 = at(462, SIT, S, g("h2-a", sitting(KIT.cast("scientist", { mood: "flat" }), sciO)) + g("h2-b", sciBones + clip, 'opacity="0"'));
       // The cobweb between the scientist's head and the flask, and its spider.
       var wc = [405, -128], anchors = [[362, -150], [384, -95], [440, -119], [447, -137]];
       var web = anchors.map(function (a) { return "M" + wc[0] + "," + wc[1] + " L" + a[0] + "," + a[1]; }).join(" ");
@@ -118,7 +123,7 @@
         at(wc[0], wc[1], 1, g("spider", '<path d="M-7,-3 l-5,-4 M-7,0 h-7 M-7,3 l-5,5 M7,-3 l5,-4 M7,0 h7 M7,3 l5,5" stroke="' + ink + '" stroke-width="1.8" stroke-linecap="round"/><circle r="5" fill="' + ink + '"/>', 'opacity="0"'));
 
       // The hungry human: front, looking at the wheat, and looking down into an empty wallet (a moth comes out).
-      var hungry = { tone: 2, outfit: "shirt", color: 2, hair: 0, mood: "sad" };
+      var hungry = { tone: 2, outfit: "shirt", color: 2, hair: 0, mood: "sad", plain: true };
       var wallet = at(7.5, -14, 1.3, rect(-15, -10, 30, 18, "#6B4A2F", st(2.4)) + rect(-11, -7, 22, 11, "#2A1D12") + '<path d="M0,-10 V8" stroke="' + ink + '" stroke-width="1.6"/>');
       var moth = at(7.5, -22, 1.3, g("moth", g("moth-w", '<path d="M0,0 l-10,-7 l2,10 Z M0,0 l10,-7 l-2,10 Z" fill="#E9E1CC" ' + st(1.8) + "/>") + '<ellipse rx="1.8" ry="4.5" fill="' + ink + '"/>', 'opacity="0"'));
       var growl = g("growl", '<path d="M24,0 l6,3 l-6,3 l6,3 M33,-4 l6,3 l-6,3 l6,3" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>', 'opacity="0"');
@@ -173,12 +178,15 @@
       var hammer = '<path d="M-62,-12 L-85,-52" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/><path d="M-62,-12 L-85,-52" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>' +
         rect(-101, -63, 30, 14, "#9AA4B5", st(3) + ' rx="2" transform="rotate(-30 -86 -56)"');
       var smithO = { look: "left", arms: [[-100, -60], [-20, -10]] };
-      var grin = '<g class="mouth"><path d="M-17,-50 Q-7,-36 3,-50 Z" fill="#FFFFFF" stroke="' + ink + '" stroke-width="2" stroke-linejoin="round"/>' +
-        '<path d="M-17,-50 H3 M-12,-50 v4 M-7,-50 v5 M-2,-50 v4" fill="none" stroke="' + ink + '" stroke-width="1.4"/></g>';
+      // (in the face's own units, which face +x)
+      var grin = '<g class="mouth"><path d="M-3,12 Q7,26 17,11 Z" fill="#FFFFFF" stroke="' + ink + '" stroke-width="2" stroke-linejoin="round"/>' +
+        '<path d="M-3,12 H17 M2,12 v5 M7,12 v6 M12,12 v5" fill="none" stroke="' + ink + '" stroke-width="1.4"/></g>';
+      // the hand the hammer and the marker are drawn for
+      var SMITH_HAND = [-65.1, -17.5], POL_HAND = [-65.8, -26];
       var smithBurnt = KIT.cast("weaponsMaker", Object.assign({ charred: true, keepHat: true }, smithO)).replace(/<path class="mouth"[^>]*\/>/, grin);
-      var smith = at(255, FEET, S, g("smith", g("smith-a", inLeftHand(KIT.cast("weaponsMaker", Object.assign({ mood: "flat" }, smithO)), hammer)) +
-        g("smith-b", inLeftHand(KIT.cast("weaponsMaker", Object.assign({ mood: "eager" }, smithO)), hammer), 'opacity="0"') +
-        g("smith-c", inLeftHand(smithBurnt, hammer), 'opacity="0"')));
+      var smith = at(255, FEET, S, g("smith", g("smith-a", inLeftHand(KIT.cast("weaponsMaker", Object.assign({ mood: "flat" }, smithO)), hammer, KIT.castOpts("weaponsMaker", smithO), SMITH_HAND)) +
+        g("smith-b", inLeftHand(KIT.cast("weaponsMaker", Object.assign({ mood: "eager" }, smithO)), hammer, KIT.castOpts("weaponsMaker", smithO), SMITH_HAND), 'opacity="0"') +
+        g("smith-c", inLeftHand(smithBurnt, hammer, KIT.castOpts("weaponsMaker", smithO), SMITH_HAND), 'opacity="0"')));
       // The easel and its map, with the war arrows (drawn on) and the politician's red marker.
       function arrowHead(ex, ey, dx, dy) {
         var n = Math.hypot(dx, dy), ux = dx / n, uy = dy / n, s = 13;
@@ -197,8 +205,8 @@
         rect(330, -124, 170, 8, C.tan, st(3));
       var marker = '<path d="M-60,-24 L-84,-33" stroke="' + ink + '" stroke-width="10" stroke-linecap="round"/><path d="M-60,-24 L-84,-33" stroke="' + C.war + '" stroke-width="6" stroke-linecap="round"/>';
       var polO = { look: "left", arms: [[-110, -70], [-20, -10]] };
-      var politician = at(545, FEET, S, g("pol", g("pol-a", inLeftHand(KIT.cast("politician", Object.assign({ mood: "flat" }, polO)), marker)) +
-        g("pol-b", inLeftHand(KIT.cast("politician", Object.assign({ mood: "eager" }, polO)), marker), 'opacity="0"')));
+      var politician = at(545, FEET, S, g("pol", g("pol-a", inLeftHand(KIT.cast("politician", Object.assign({ mood: "flat" }, polO)), marker, KIT.castOpts("politician", polO), POL_HAND)) +
+        g("pol-b", inLeftHand(KIT.cast("politician", Object.assign({ mood: "eager" }, polO)), marker, KIT.castOpts("politician", polO), POL_HAND), 'opacity="0"')));
       // The hill is the top of the Earth under a skin of dirt. On "planet" the dirt cracks and falls off both sides and
       // shows the globe, with a big bite out of its top (molten inside, empty paper behind). Papers sprout from the bite.
       var hillD = "M607.2,0 A140,140 0 1 1 868.8,0 Z"; // a ball of radius 140 sunk 50 into the ground, centered at x 738
@@ -227,7 +235,8 @@
         return Math.max.apply(null, bite.map(function (b) { var dx = x - b[0]; return Math.abs(dx) < b[2] ? b[1] + Math.sqrt(b[2] * b[2] - dx * dx) : -999; }));
       }
       var leafBill = function (w, h) {
-        return rect(0, -h / 2, w, h, C.war, st(2) + ' rx="2"') + '<ellipse cx="' + w / 2 + '" cy="0" rx="' + (h * 0.24).toFixed(1) + '" ry="' + (h * 0.3).toFixed(1) + '" fill="' + C.paper + '" stroke="#8E2E1E" stroke-width="1.2"/>';
+        return rect(0, -h / 2, w, h, C.money, st(2) + ' rx="2"') + '<ellipse cx="' + w / 2 + '" cy="0" rx="' + (h * 0.24).toFixed(1) + '" ry="' + (h * 0.3).toFixed(1) + '" fill="' + C.paper + '" stroke="' + C.moneyDark + '" stroke-width="1.2"/>' +
+          KIT.moneySeal("war", w * 0.84, 0, h * 0.24);
       };
       var sprouts = [[704, 66, -1], [724, 104, 1], [744, 86, -1], [764, 112, 1], [786, 74, -1]].map(function (sp, k) {
         var x = sp[0], base = floorY(x) + 8, top = base - sp[1], bend = sp[2] * 10;
@@ -247,8 +256,8 @@
       var shovel = '<path d="M16.6,-42.5 L75.2,42.4" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/><path d="M16.6,-42.5 L75.2,42.4" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>' +
         '<path d="M23.2,-47.1 L10,-37.9" stroke="' + ink + '" stroke-width="6" stroke-linecap="round"/>' +
         '<path d="M84.3,36.2 L96.6,59.3 Q90,70 83.4,68.4 L66.1,48.6 Z" fill="#9AA4B5" ' + st(3) + "/>";
-      var digO = { tone: 0, outfit: "overalls", color: 0, hair: 0, arms: [[60, 120], [30, 60]] };
-      var lookOver = V ? eyes(KIT.person(Object.assign({ mood: "flat" }, digO)), -5).replace('<g class="head">', '<g class="head" transform="rotate(-10 0 -34)">')
+      var digO = { tone: 0, outfit: "overalls", color: 0, hair: 0, plain: true, arms: [[60, 120], [30, 60]] };
+      var lookOver = V ? eyes(KIT.person(Object.assign({ mood: "flat" }, digO)), -5).replace('<g class="head">', '<g class="head" transform="rotate(-10 ' + KIT.rig(digO).neck.join(" ") + ')">')
         : KIT.person(Object.assign({ mood: "flat", look: "left" }, digO));
       var drop = function (id, x, y, hidden) { return g(id, '<path d="M' + x + "," + y + " q-6,9 0,13 q6,-4 0,-13 Z" + '" fill="#DCEBF0" ' + st(1.8) + "/>", hidden ? 'opacity="0"' : ""); };
       var sweatDrops = [0, 1, 2, 3, 4].map(function (i) { return drop("drop-" + i, 24, -82, true); }).join("");
@@ -299,13 +308,9 @@
         '<path d="' + L.divider + '" stroke="' + ink + '" stroke-width="3"/>' + heads +
         at(L.left[0], L.left[1], L.left[2], leftArt) + at(L.right[0], L.right[1], L.right[2], g("right", rightArt, 'opacity="0.45"')) + lineSvg);
 
-      q("board-in").innerHTML = KIT.countdownBoard();
-      KIT.placeBoard(q("board"), q("board-in"));
-      var board = q("board-in").firstChild;
 
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
-      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
       KIT.enter(tl, q("cam"), "slide left");
       var set = function (id, v, t) { tl.set(q(id), { opacity: v }, t); };
 
@@ -381,13 +386,14 @@
       });
       // the hammer: six quick hits with the hammering sound (0.15 s apart from "WITH"), then steady to the end
       var arms = [q("smith-a").querySelector(".arm-l"), q("smith-b").querySelector(".arm-l"), q("smith-c").querySelector(".arm-l")];
-      tl.fromTo(arms, { rotation: 0, svgOrigin: "-17 -26" }, { rotation: 35, svgOrigin: "-17 -26", duration: 0.075, repeat: 9, yoyo: true, ease: "power1.inOut" }, WITH);
-      tl.to(arms, { rotation: 35, svgOrigin: "-17 -26", duration: 0.16, repeat: Math.floor((D - 0.4 - (WITH + 0.81)) / 0.16) | 1, yoyo: true, ease: "power2.inOut" }, WITH + 0.81);
+      var SMITH_SH = KIT.rig(KIT.castOpts("weaponsMaker", smithO)).shoulder[0].join(" "), POL_SH = KIT.rig(KIT.castOpts("politician", polO)).shoulder[0].join(" ");
+      tl.fromTo(arms, { rotation: 0, svgOrigin: SMITH_SH }, { rotation: 35, svgOrigin: SMITH_SH, duration: 0.075, repeat: 9, yoyo: true, ease: "power1.inOut" }, WITH);
+      tl.to(arms, { rotation: 35, svgOrigin: SMITH_SH, duration: 0.16, repeat: Math.floor((D - 0.4 - (WITH + 0.81)) / 0.16) | 1, yoyo: true, ease: "power2.inOut" }, WITH + 0.81);
       set("spark-on", 1, WITH);
       tl.fromTo(q("spark"), { scale: 0.7, transformOrigin: "50% 50%" }, { scale: 1.25, transformOrigin: "50% 50%", duration: 0.12, repeat: Math.floor((D - WITH) / 0.12) - 1, yoyo: true, ease: "none" }, WITH);
       // the politician scribbles at the map; the digger rocks into the hill and throws dirt
       var polArms = [q("pol-a").querySelector(".arm-l"), q("pol-b").querySelector(".arm-l")];
-      tl.fromTo(polArms, { rotation: 0, svgOrigin: "-17 -26" }, { rotation: -9, svgOrigin: "-17 -26", duration: 0.11, repeat: Math.floor((D - 0.3 - WITH) / 0.11) | 1, yoyo: true, ease: "sine.inOut" }, WITH + 0.1);
+      tl.fromTo(polArms, { rotation: 0, svgOrigin: POL_SH }, { rotation: -9, svgOrigin: POL_SH, duration: 0.11, repeat: Math.floor((D - 0.3 - WITH) / 0.11) | 1, yoyo: true, ease: "sine.inOut" }, WITH + 0.1);
       tl.fromTo(q("rock"), { rotation: 0, svgOrigin: "0 100" }, { rotation: 8, svgOrigin: "0 100", duration: 0.3, repeat: 41, yoyo: true, ease: "sine.inOut" }, WITH + 0.1);
       clodTimes.forEach(function (t, i) {
         var c = q("clod-" + i), r = KIT.rng(30 + i), dx = -120 - r() * 50, hgt = 90 + r() * 60, dy = 46 + r() * 6;

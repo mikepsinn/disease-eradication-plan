@@ -1,6 +1,6 @@
 <template id="loved-ones-template">
   <!-- loved-ones · Layer B (storyboards/part-01-opening.md): the Planet Eligibility Check form and a smiling family
-       portrait whose chest lights blink red; YES is ticked on "diseases?", the countdown board lands, then HOLD. -->
+       portrait whose chest lights blink red; YES is ticked on "diseases?", then HOLD. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
@@ -12,7 +12,6 @@
     <div id="loved-ones-cam">
       <div id="loved-ones-bg"></div>
       <div id="loved-ones-art"></div>
-      <div id="loved-ones-board"><div id="loved-ones-board-in"></div></div>
       <div id="loved-ones-pip"></div>
       <div id="loved-ones-grain"></div>
     </div>
@@ -67,14 +66,9 @@
       var pencil = '<g transform="translate(' + (box.x + 6) + "," + (box.y + 40) + ')"><g id="loved-ones-pencil">' + KIT.pencil() + "</g></g>";
       q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + portrait + mantel + '<g id="loved-ones-form">' + form.svg + "</g>" + pencil);
 
-      // The countdown board drops into the corner on "diseases?" and stays for the rest of the opening.
-      q("board-in").innerHTML = KIT.countdownBoard();
-      KIT.placeBoard(q("board"), q("board-in"));
-      var board = q("board-in").firstChild;
 
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.pipOpts(ID));
-      KIT.onTime(tl, D, function (t) { KIT.setBoard(board, sc.start + t); });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
       KIT.enter(tl, q("cam"), "slide left");
 
       var lines = document.querySelectorAll("#loved-ones-form .form-line");
@@ -92,13 +86,12 @@
       tl.fromTo(q("reaper"), { y: 300 }, { y: 0, duration: 0.45, ease: "back.out(1.4)" }, cue("brutally"));
       // "murdered": they x-ray into skeletons one by one, and the skulls keep smiling
       [0, 1, 2, 3].forEach(function (i) { KIT.xray(tl, q("p" + i), q("b" + i), cue("murdered") + i * 0.16); });
-      // "diseases?": the pencil swoops in, ticks YES and leaves; the board drops in; then HOLD (nothing moves to the end)
+      // "diseases?": the pencil swoops in, ticks YES and leaves; then HOLD (nothing moves to the end)
       var d = cue("diseases?");
       tl.fromTo("#loved-ones-pencil", { opacity: 0, x: 300, y: 120 }, { opacity: 1, x: 0, y: 0, duration: 0.3, ease: "power2.out" }, d - 0.3);
       KIT.drawTick(tl, "#loved-ones-tick-0 .tick", d);
       tl.to("#loved-ones-pencil", { x: 40, y: -50, duration: 0.25, ease: "power2.inOut" }, d);
       tl.to("#loved-ones-pencil", { x: 400, y: 160, opacity: 0, duration: 0.35, ease: "power2.in" }, d + 0.4);
-      tl.fromTo(q("board"), { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.45, ease: "bounce.out" }, d + 0.3);
       tl.set({}, {}, D);
       window.__timelines[ID] = tl;
     })();

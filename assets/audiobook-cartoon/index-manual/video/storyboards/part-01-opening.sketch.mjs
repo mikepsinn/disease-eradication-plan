@@ -1,6 +1,6 @@
 // Sketches for storyboards/part-01-opening.md: each scene's key moment as SVG on a 1920 x 1080 frame.
 // Built into the review sheet by tools/storyboard-sheet.mjs. Coordinates follow the pilot's scenes:
-// Wishonia's corner frame at (1760, 740), the desk top at y 905, captions below y 896.
+// Wishonia standing in the bottom right corner (x 1600 to 1920, y 690 down), the desk top at y 905, captions below y 896.
 
 const Q1 = ["1. Everyone you've ever loved: being", "slowly tortured and/or murdered by", "horrible diseases?"];
 const Q2 = ["2. Enough nuclear bombs for", "122 nuclear winters?"];
@@ -54,7 +54,7 @@ export default {
   "loved-ones"(H, id) {
     const { K, C } = H;
     const family = [0, 1, 2, 3].map((t, i) => H.at(330 + i * 110, 540, 0.95, K.bean({ tone: t, light: "red", mouth: "smile", hair: i % 3, look: "camera", mood: "smile" }))).join("");
-    const svg = K.paper(id) + H.board(116.3) +
+    const svg = K.paper(id) +
       `<rect x="170" y="290" width="600" height="360" fill="${C.line}"/><rect x="190" y="310" width="560" height="320" fill="#FBF5E4"/><rect x="190" y="310" width="560" height="320" fill="url(#${id}-fine)" opacity="0.35"/>` + family +
       `<rect x="110" y="650" width="720" height="40" fill="url(#${id}-cross)" stroke="${C.line}" stroke-width="5"/><rect x="140" y="690" width="660" height="150" fill="url(#${id}-hatch)" stroke="${C.line}" stroke-width="5"/>` +
       H.form(880, 150, 820, "PLANET ELIGIBILITY CHECK", [{ lines: Q1, yes: true }], { size: 36 }) +
@@ -68,7 +68,7 @@ export default {
     let flakes = "";
     for (let i = 0; i < 122; i++) flakes += flake(1190 + (i % 11) * 40, 200 + Math.floor(i / 11) * 44, C);
     const land = `<path d="M930,500 q30,-40 70,-20 q30,30 10,60 q-40,20 -60,0 Z M1010,600 q40,-10 60,20 q-10,40 -50,30 Z" fill="url(#${id}-hatch)" stroke="${C.line}" stroke-width="3"/>`;
-    const svg = K.paper(id) + H.board(126.9) +
+    const svg = K.paper(id) +
       H.form(110, 200, 720, "PLANET ELIGIBILITY CHECK", [{ lines: Q1, yes: true }, { lines: Q2, yes: true }], { size: 30 }) +
       `<circle cx="1000" cy="560" r="110" fill="#FBF5E4" stroke="${C.line}" stroke-width="6"/>` + land +
       H.label(1000, 730, 40, "CIVILIZATIONS: 1") + flakes + H.label(1390, 760, 40, "NUCLEAR WINTERS: 122", "middle", C.war) +
@@ -84,7 +84,7 @@ export default {
       `<g transform="rotate(-8 950 760)"><rect x="700" y="690" width="500" height="140" fill="none" stroke="${C.red}" stroke-width="7"/><rect x="712" y="702" width="476" height="116" fill="none" stroke="${C.red}" stroke-width="2.5"/>` +
       H.label(950, 752, 46, "MAY BE ELIGIBLE", "middle", C.red) + H.label(950, 806, 46, "FOR OPTIMIZATION", "middle", C.red) + "</g></g>";
     const stamp = `<g stroke="${C.ink}" stroke-width="6"><rect x="1080" y="470" width="150" height="40" rx="6" fill="${C.red}"/><rect x="1130" y="400" width="50" height="74" fill="#B65A2B"/><circle cx="1155" cy="388" r="34" fill="${C.ink}"/></g>`;
-    const svg = K.office(1460) + K.wallScreen(110, 214, 640, 420) + mini + H.board(131) +
+    const svg = K.office(1460) + K.wallScreen(110, 214, 640, 420) + mini +
       H.wish(1200, 100, 600, "happy-smile", "palms-down") + K.desk(1080, 905, 820) + H.at(1760, 800, 1.5, K.mug(0, 0)) +
       folder + stamp + H.cap("your planet may be eligible for optimization.", "eligible");
     return { svg, alt: "The office: the eligibility form is on the wall screen; on the desk the Earth case file is stamped MAY BE ELIGIBLE FOR OPTIMIZATION; Wishonia smiles with the stamp lifted." };
@@ -99,7 +99,7 @@ export default {
       H.label(640, 540, 30, "IN EARTH TIME") + H.big(640, 620, 64, "4,297 years");
     const plate = `<rect x="1130" y="790" width="500" height="106" rx="6" fill="#B65A2B" stroke="${C.ink}" stroke-width="6"/><rect x="1150" y="804" width="460" height="78" rx="4" fill="${C.yellow}" stroke="${C.ink}" stroke-width="3"/>` +
       H.label(1380, 842, 36, "WISHONIA LOVE", "middle", C.ink) + H.text(1380, 870, 19, ["CEO and President, Universe Optimization Services"], { anchor: "middle", fill: C.ink, weight: 600 });
-    const svg = K.office(1420) + K.wallScreen(110, 190, 820, 520) + screen + H.board(144) +
+    const svg = K.office(1420) + K.wallScreen(110, 190, 820, 520) + screen +
       H.wish(1080, 70, 660, "smirk-smile", "open-palms") + K.desk(1000, 905, 900) + H.at(1780, 800, 1.5, K.mug(0, 0)) + plate +
       H.cap("which in your Earth time is four thousand, two hundred and ninety-seven years.", "earth");
     return { svg, alt: "Wishonia behind the desk with open palms and a smirk; a brass nameplate reads WISHONIA LOVE, CEO and President, Universe Optimization Services; the wall screen shows 4,297 years and a converter dial showing 4,297 years in Earth time." };
@@ -112,7 +112,7 @@ export default {
       `<path d="M458,170 l16,30 l-14,26 l18,28 l-12,30 l14,32" fill="none" stroke="${C.line}" stroke-width="3" stroke-dasharray="7 6"/>` +
       `<g stroke="${C.line}" stroke-width="5" fill="none"><circle cx="790" cy="170" r="20"/><circle cx="790" cy="228" r="20"/><path d="M806,182 L880,214 M806,216 L880,184"/></g>`;
     const bulbs = [...Array(7)].map((_, i) => bulb(560 + i * 130, 420, `url(#${id}-cross)`)).join("");
-    const svg = K.paper(id) + H.board(170) + H.big(1330, 220, 120, "1945") + card + bulbs +
+    const svg = K.paper(id) + H.big(1330, 220, 120, "1945") + card + bulbs +
       H.at(640, 680, 1.5, K.bean({ tone: 0, light: "off", mouth: "flat", brows: true, arms: [[16, 8], [90, 90]] })) +
       H.at(1280, 680, 1.5, K.bean({ tone: 2, light: "off", mouth: "flat", brows: true, arms: [[-90, -90], [-16, -8]] })) +
       atom(820, 668, C) + atom(1100, 668, C) +
@@ -124,7 +124,7 @@ export default {
     const { K, C } = H;
     const cave = `<path d="M40,1040 V420 Q200,120 520,90 H1400 Q1720,120 1880,420 V1040 Z M240,1040 V520 Q360,250 640,230 H1280 Q1560,250 1680,520 V1040 Z" fill="url(#${id}-cross)" fill-rule="evenodd" stroke="${C.line}" stroke-width="5"/>`;
     const logs = `<g stroke="${C.line}" stroke-width="5"><rect x="700" y="770" width="240" height="34" rx="16" fill="#FBF5E4" transform="rotate(14 820 787)"/><rect x="700" y="770" width="240" height="34" rx="16" fill="#FBF5E4" transform="rotate(-14 820 787)"/></g>`;
-    const svg = K.paper(id) + cave + `<path d="M240,820 H1680" stroke="${C.line}" stroke-width="5"/>` + H.board(178) +
+    const svg = K.paper(id) + cave + `<path d="M240,820 H1680" stroke="${C.line}" stroke-width="5"/>` +
       logs + flame(820, 770, 1.6, C, id) +
       H.at(1180, 700, 1.6, K.bean({ tone: 3, light: "off", mouth: "o", brows: true, arms: [[-135, -160], [-60, -100]] })) +
       flame(1092, 668, 0.42, C, id) +
@@ -140,7 +140,7 @@ export default {
       `<text x="912" y="470" font-family="Oswald" font-weight="600" font-size="44" fill="${C.ink}">: CASE #847</text>` +
       `<text x="730" y="400" font-family="Fraunces" font-weight="900" font-size="76" fill="${C.red}" transform="rotate(-6 730 400)">DIRT</text>` +
       `<path d="M640,500 L560,420" stroke="${C.ink}" stroke-width="5" stroke-dasharray="10 8"/>`;
-    const svg = K.office(1420) + H.at(200, 330, 1.55, K.cabinet(0, 0)) + callout + H.board(188) +
+    const svg = K.office(1420) + H.at(200, 330, 1.55, K.cabinet(0, 0)) + callout +
       H.wish(1100, 80, 640, "skeptical-closed", "shrug") + K.desk(1000, 905, 900) + H.at(1780, 800, 1.5, K.mug(0, 0)) +
       H.cap("Okay, if that's what you want...", "want");
     return { svg, alt: "Wishonia shrugs behind the desk; a close-up of the case-file label shows EARTH crossed out in red and DIRT written above it." };
@@ -150,7 +150,7 @@ export default {
     const { K, C } = H;
     const pent = (r) => [...Array(5)].map((_, i) => { const a = -Math.PI / 2 + (i * 2 * Math.PI) / 5; return `${(420 + r * Math.cos(a)).toFixed(1)},${(590 + r * Math.sin(a)).toFixed(1)}`; }).join(" ");
     const windows = (x0, y0, cols, rows, s) => { let w = ""; for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) w += `<rect x="${x0 + c * s}" y="${y0 + r * s}" width="${s * 0.6}" height="${s * 0.6}" fill="url(#${id}-hatch)" stroke="${C.line}" stroke-width="2.5"/>`; return w; };
-    const svg = K.paper(id) + H.board(200) + `<path d="M100,790 H1600" stroke="${C.line}" stroke-width="5"/>` +
+    const svg = K.paper(id) + `<path d="M100,790 H1600" stroke="${C.line}" stroke-width="5"/>` +
       `<polygon points="${pent(190)}" fill="url(#${id}-hatch)" stroke="${C.line}" stroke-width="6"/><polygon points="${pent(170)}" fill="none" stroke="${C.line}" stroke-width="2"/><polygon points="${pent(78)}" fill="#FBF5E4" stroke="${C.line}" stroke-width="5"/>` +
       sign(420, 230, "THE PENTAGON", H, C) +
       `<rect x="760" y="410" width="400" height="380" fill="#FBF5E4" stroke="${C.line}" stroke-width="6"/>` + windows(796, 446, 5, 4, 72) +
@@ -169,7 +169,7 @@ export default {
     const banner = `<path d="M210,130 H1610 l-40,70 l40,70 H210 l40,-70 Z" fill="#FBF5E4" stroke="${C.line}" stroke-width="5"/>` +
       H.label(910, 190, 44, "MONEY") + H.text(910, 244, 32, ["pretend value that becomes real value if everyone pretends hard enough"], { anchor: "middle", weight: 600 });
     const trail = `<path d="M880,620 C960,560 1040,600 1110,590" fill="none" stroke="${C.line}" stroke-width="4" stroke-dasharray="12 10"/>`;
-    const svg = K.paper(id) + H.board(216) + banner + crowd + trail + H.at(1260, 590, 2.4, H.plainMoney(0.7)) +
+    const svg = K.paper(id) + banner + crowd + trail + H.at(1260, 590, 2.4, H.plainMoney(0.7)) +
       H.pip(id, "thinking-small") + H.cap("These papers are called “money,”", "money");
     return { svg, alt: "A crowd of bean humans turned toward one plain paper bill walking away on stick legs; the banner defines MONEY as pretend value that becomes real value if everyone pretends hard enough." };
   },
@@ -186,7 +186,7 @@ export default {
       `<circle cx="1500" cy="470" r="46" fill="${C.line}"/><path d="M1530,436 q20,-30 44,-26" fill="none" stroke="${C.line}" stroke-width="5"/><rect x="1430" y="510" width="80" height="36" fill="#FBF5E4" stroke="${C.line}" stroke-width="3" transform="rotate(-10 1470 528)"/>${H.label(1470, 538, 22, "$$$", "middle", C.war)}` +
       `<rect x="1040" y="480" width="260" height="140" fill="#FBF5E4" stroke="${C.line}" stroke-width="4"/><path d="M1070,590 q60,-80 120,-40 M1170,520 l20,30 l14,-36 Z" fill="none" stroke="${C.war}" stroke-width="7"/>` +
       ["Build bombs", "Start wars", "Destroy the planet"].map((t, i) => H.tick(1040, 654 + i * 64, 48, C.war) + H.text(1110, 696 + i * 64, 38, [t], { weight: 700 })).join("");
-    const svg = K.paper(id) + H.board(245) +
+    const svg = K.paper(id) +
       `<path d="M960,140 V860 M970,140 V860" stroke="${C.line}" stroke-width="3"/>` +
       H.label(480, 230, 54, "WITHOUT PAPERS") + H.label(1440, 230, 54, "WITH PAPERS", "middle", C.war) + left + right +
       H.pip(id, "eyeroll-smile") + H.cap("Destroy the planet (surprisingly profitable in papers).", "profitable");
@@ -195,7 +195,7 @@ export default {
 
   "604-papers"(H, id) {
     const { K, C } = H;
-    const svg = K.paper(id) + H.board(256) +
+    const svg = K.paper(id) +
       `<rect x="700" y="150" width="200" height="672" fill="${C.war}" stroke="${C.line}" stroke-width="5"/><rect x="700" y="150" width="200" height="672" fill="url(#${id}-hred)"/>` +
       [...Array(28)].map((_, i) => `<path d="M700,${174 + i * 24} H900" stroke="${C.line}" stroke-width="1.6"/>`).join("") +
       H.at(800, 138, 2.08, K.money("war")) + H.at(1160, 797, 1, K.money("med")) +
