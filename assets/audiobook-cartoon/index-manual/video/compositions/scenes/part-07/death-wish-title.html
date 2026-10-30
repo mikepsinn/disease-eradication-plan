@@ -1,0 +1,190 @@
+<template id="death-wish-title-template">
+  <!-- death-wish-title · Layer A title card (storyboards/part-07-humanitys-death-wish.md), built by KIT.titleScene: the
+       heading slams in one word per spoken word. A woman stands at the bottom of the card, hands clasped under her chin,
+       gazing up at the wall's atomic stars. On "Death" one mustard star comes loose and falls, trailing sparkles; on
+       "Wish." she squeezes her eyes shut and wishes on it, and as it falls it grows fins and a nose cone: a missile.
+       It lands on her (white flash, a small mushroom cloud behind the title, the card shakes); the smoke clears on her
+       charred black and smoking, hair straight up, hands still clasped, and only her eyes blink. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="death-wish-title" data-width="1920" data-height="1080" data-start="0" data-duration="2.32">
+    <div id="death-wish-title-cam">
+      <div id="death-wish-title-bg"></div>
+      <div id="death-wish-title-sun"></div>
+      <div id="death-wish-title-back"></div>
+      <div id="death-wish-title-words"></div>
+      <div id="death-wish-title-art"></div>
+    </div>
+    <div id="death-wish-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "death-wish-title",
+      lines: [["HUMANITY'S"], ["DEATH", "WISH"]],
+      linesTall: [["HUMANITY'S"], ["DEATH"], ["WISH"]],
+      spoken: ["Humanity's", "Death", "Wish."],
+      gag: function (c) {
+        var ID = c.id, tl = c.tl, C = c.C, V = c.V, W = c.W, H = c.H, D = c.D, ink = C.line;
+        var P = ID + "-";
+        function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+        function el(id) { return document.getElementById(P + id); }
+
+        // The wisher: an everyday woman (pear build, flip hair), hands clasped under her chin.
+        var WISH = { tone: 3, hair: 1, outfit: "dress", color: 1, seed: 1 };
+        var r0 = KIT.rig(WISH);
+        // Two-segment arm IK in the person's units: both hands meet just under the chin, elbows out and down.
+        function reach(side, target) {
+          var s = r0.shoulder[side], L = r0.armLength, dx = target[0] - s[0], dy = target[1] - s[1];
+          var d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * L * 0.995), th = (Math.atan2(dx, dy) * 180) / Math.PI, ph = (Math.acos(d / (2 * L)) * 180) / Math.PI;
+          var k = side ? -1 : 1; // left elbow out to the left, right elbow out to the right
+          return [th - k * ph, th + k * ph];
+        }
+        var chin = [r0.mouth[0] - 1, r0.mouth[1] + 13];
+        var o = Object.assign({ arms: [reach(0, [chin[0] - 3, chin[1]]), reach(1, [chin[0] + 3, chin[1]])], look: "right", mood: "smile" }, WISH);
+        var r = KIT.rig(o), neck = r.neck.join(" ");
+        // the head tipped back to look up at the stars, pupils up and to the right
+        function tipped(svg) {
+          return svg.replace('<g class="head">', '<g class="head" transform="rotate(-14 ' + neck + ')">');
+        }
+        function lookUp(svg) {
+          return svg.replace(/<circle class="pupil" cx="([-\d.]+)" cy="([-\d.]+)"/g, function (m, cx, cy) { return '<circle class="pupil" cx="' + (+cx + 0.8) + '" cy="' + (+cy - 2.2) + '"'; });
+        }
+        // eyes squeezed shut (face units): a tight arc with two crease lines at the outer corner
+        var EYE = [[-2.5, 6.8], [10.8, 5]];
+        function shut(svg) {
+          var i = 0;
+          return svg.replace(/<g class="eye">[\s\S]*?<\/g>/g, function () {
+            var e = EYE[Math.min(i++, 1)], x = e[0], w = e[1];
+            return '<g class="eye"><path d="M' + (x - w) + ",-4.5 Q" + x + ",-1 " + (x + w) + ',-4.5" fill="none" stroke="' + ink + '" stroke-width="3.2" stroke-linecap="round"/>' +
+              '<path d="M' + (x - w - 1) + ",-6 l-3.4,-2.4 M" + (x - w - 1) + ',-3.5 l-3.8,0.5" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round"/></g>';
+          });
+        }
+        var gaze = tipped(lookUp(KIT.person(o)));
+        var wish = tipped(shut(KIT.person(Object.assign({}, o, { mood: "eager" }))));
+        var burnt = KIT.person(Object.assign({}, o, { charred: true }));
+
+        // Where she stands: bottom center, under the words. Her feet (y 100) on the floor.
+        var S = V ? 2.8 : 2.45, FX = W / 2, FY = V ? 1400 : 975, TY = FY - 100 * S;
+        var head = [FX + S * r.top[0], TY + S * r.top[1]];
+
+        // Smoke puffs that hide the swap and thin out (person units, around her body).
+        var puffs = [[-34, 40, 30], [30, 30, 32], [0, -10, 36], [-26, -60, 28], [26, -70, 30], [0, -110, 32], [-10, 80, 26], [24, 86, 24]].map(function (p, i) {
+          return '<g transform="translate(' + p[0] + "," + p[1] + ')"><g class="' + P + 'puff"><circle r="' + p[2] + '" fill="#C9C2B5" stroke="' + ink + '" stroke-width="2.4"/>' +
+            '<circle cx="' + (-p[2] * 0.3) + '" cy="' + (-p[2] * 0.3) + '" r="' + (p[2] * 0.45) + '" fill="#E4DFD3"/></g></g>';
+        }).join("");
+        var scorch = '<ellipse cx="0" cy="102" rx="70" ry="9" fill="#1B1714" opacity="0.85"/>';
+
+        // The wisher swaying on her heels (pivot: her feet). MS: the missile's size (its nose tip is the path point).
+        var MS = V ? 1.45 : 1.3;
+        c.art.innerHTML = KIT.svg(W, H,
+          '<g transform="translate(' + FX + "," + TY + ") scale(" + S + ')">' + g("scorch", scorch, 'opacity="0"') +
+          g("sway", g("gaze", gaze) + g("wish", wish, 'opacity="0"') + g("burnt", burnt, 'opacity="0"')) + g("puffs", puffs) + "</g>" +
+          // the falling thing: a star that turns into a missile, its nose tip on the path point
+          '<g id="' + P + 'faller" opacity="0"><g id="' + P + 'star-spin">' + KIT.star(0, 0, V ? 30 : 26, C.yellow) + KIT.star(0, 0, V ? 11 : 9, C.cream) + "</g>" +
+          '<g id="' + P + 'mis-rot"><g id="' + P + 'mis-grow"><g transform="translate(0,' + 160 * MS + ")scale(" + MS + ')">' + KIT.props.missile({ mood: "smug" }) + "</g>" +
+          '<g id="' + P + 'glint">' + KIT.star(0, 0, 12, "#FFFFFF") + KIT.star(0, 0, 5, C.yellow) + "</g></g></g></g>" +
+          g("trail", "") +
+          '<rect id="' + P + 'flash" x="0" y="0" width="' + W + '" height="' + H + '" fill="#FFFFFF" opacity="0"/>');
+
+        // The wall star that comes loose: the office's mustard star (0.62, 0.07 of the wall), covered with a patch
+        // of wall and redrawn here so it can fall. It is high up, clear of the words.
+        var SX = W * 0.62, SY = (V ? 1180 : 610) * 0.07 * 1.6, SR = 26;
+        c.back.innerHTML = KIT.svg(W, H,
+          '<circle cx="' + SX + '" cy="' + SY + '" r="' + (SR + 3) + '" fill="' + C.navy + '"/>' +
+          '<g transform="translate(' + SX + "," + SY + ')"><g id="' + P + 'wall-star">' + KIT.star(0, 0, SR, C.yellow) + "</g></g>" +
+          // the cloud stands farther back than she does (higher on the floor), so it rises behind her and the title
+          '<g transform="translate(' + FX + "," + (V ? 1270 : 712) + ") scale(" + (V ? 1.05 : 0.95) + ')">' + g("nuke", KIT.nuke()) + "</g>");
+
+        var tDeath = c.cue("Death"), tWish = c.cue("Wish."), loose = tDeath + 0.08, hit = tWish + 0.8;
+        // the path: from the wall star to the top of her head, in a slight arc, falling faster and faster
+        var P0 = [SX, SY], P2 = [head[0] + 4, head[1] + 6], P1 = [SX + (V ? 90 : 150), (SY + P2[1]) / 2 - (V ? 80 : 40)];
+        function bez(u) {
+          var a = (1 - u) * (1 - u), b = 2 * u * (1 - u), d = u * u;
+          return [a * P0[0] + b * P1[0] + d * P2[0], a * P0[1] + b * P1[1] + d * P2[1]];
+        }
+        function prog(t) { var x = Math.max(0, Math.min(1, (t - loose) / (hit - loose))); return Math.pow(x, 1.7); }
+
+        // the sparkle trail: little stars dropped along the path that twinkle and fade
+        var trail = el("trail"), tr = "", times = [];
+        for (var i = 0; i < 9; i++) {
+          var tt = loose + 0.02 + i * 0.075, p = bez(prog(tt));
+          times.push(tt);
+          tr += '<g transform="translate(' + p[0].toFixed(1) + "," + p[1].toFixed(1) + ')"><g class="' + P + 'spark" opacity="0">' + KIT.star(0, 0, 9 - i * 0.4, i % 2 ? C.cream : C.yellow) + "</g></g>";
+        }
+        trail.innerHTML = tr;
+        trail.querySelectorAll("." + P + "spark").forEach(function (s, i) {
+          gsap.set(s, { svgOrigin: "0 0" });
+          tl.fromTo(s, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1.3, duration: 0.05, ease: "power2.out" }, times[i]);
+          tl.to(s, { opacity: 0, scale: 0.2, rotation: 90, duration: 0.4, ease: "power1.in" }, times[i] + 0.05);
+        });
+
+        // "Death": the wall star wobbles, pops loose (sparkle) and starts to fall.
+        var ws = el("wall-star"), faller = el("faller"), rot = el("mis-rot"), grow = el("mis-grow"), spin = el("star-spin");
+        gsap.set(ws, { svgOrigin: "0 0" });
+        tl.fromTo(ws, { rotation: 0 }, { rotation: 14, duration: 0.03, repeat: 1, yoyo: true, ease: "none" }, tDeath);
+        tl.set(ws, { opacity: 0 }, loose);
+        tl.set(faller, { opacity: 1 }, loose);
+        gsap.set([spin, grow, el("glint")], { svgOrigin: "0 0" });
+        tl.fromTo(spin, { rotation: 0 }, { rotation: 300, duration: hit - loose, ease: "power1.in" }, loose);
+        // "Wish.": as it falls it grows fins and a nose cone; a glint on its tip
+        tl.fromTo(spin, { scale: 1 }, { scale: 0, duration: 0.16, ease: "power2.in" }, tWish + 0.02);
+        tl.fromTo(grow, { scale: 0 }, { scale: 1, duration: 0.24, ease: "back.out(2.2)" }, tWish + 0.04);
+        tl.fromTo(el("glint"), { scale: 0.4, rotation: 0 }, { scale: 1.2, rotation: 45, duration: 0.12, repeat: 5, yoyo: true, ease: "sine.inOut" }, tWish + 0.2);
+        KIT.onTime(tl, D, function (t) {
+          var u = prog(t), p = bez(u), q = bez(Math.min(1, u + 0.01)), vx = q[0] - p[0], vy = q[1] - p[1];
+          if (u >= 1) { vx = P2[0] - bez(0.99)[0]; vy = P2[1] - bez(0.99)[1]; }
+          faller.setAttribute("transform", "translate(" + p[0].toFixed(1) + "," + p[1].toFixed(1) + ")");
+          rot.setAttribute("transform", "rotate(" + ((Math.atan2(vx, -vy) * 180) / Math.PI).toFixed(1) + ")");
+        });
+        tl.set(faller, { opacity: 0 }, hit);
+
+        // She sways dreamily, gazing up; on "Wish." she squeezes her eyes shut and rises onto her toes.
+        var sway = el("sway");
+        gsap.set(sway, { svgOrigin: "0 100" });
+        tl.fromTo(sway, { rotation: -2 }, { rotation: 2, duration: 0.45, repeat: 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.set(el("gaze"), { opacity: 0 }, tWish);
+        tl.set(el("wish"), { opacity: 1 }, tWish);
+        tl.to(sway, { rotation: 0, y: -5, scaleY: 1.03, duration: 0.18, ease: "power2.out" }, tWish);
+        // the hit: white flash, a small mushroom cloud behind her and the title, the card shakes; smoke swallows her
+        tl.set(el("wish"), { opacity: 0 }, hit);
+        tl.set(el("burnt"), { opacity: 1 }, hit);
+        tl.set(sway, { y: 0, scaleY: 1 }, hit);
+        tl.set(el("scorch"), { opacity: 1 }, hit);
+        // (the card is 2.3 s long, so the flash is shorter than KIT.boom's: in, a beat of white, out by the reveal)
+        // (without its cream ring, which would sit at her head height)
+        el("nuke").querySelector(".nuke-ring").innerHTML = "";
+        KIT.boom(tl, el("nuke"), hit, { shake: c.cam });
+        tl.fromTo(el("flash"), { opacity: 0 }, { opacity: 1, duration: 0.03 }, hit);
+        tl.to(el("flash"), { opacity: 0, duration: 0.18, ease: "power1.out" }, hit + 0.07);
+        el("puffs").querySelectorAll("." + P + "puff").forEach(function (pf, i) {
+          gsap.set(pf, { svgOrigin: "0 0" });
+          tl.fromTo(pf, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.25, duration: 0.08, ease: "power2.out" }, hit + 0.02);
+          tl.to(pf, { opacity: 0, scale: 1.7, y: -24 - (i % 3) * 10, x: (i % 2 ? 1 : -1) * 14, duration: 0.22, ease: "power1.in" }, hit + 0.06 + (i % 4) * 0.02);
+        });
+        // only her eyes blink
+        var eyes = el("burnt").querySelector(".char-eyes");
+        gsap.set(eyes, { svgOrigin: "4 -4" });
+        tl.fromTo(eyes, { scaleY: 1 }, { scaleY: 0.08, duration: 0.05, repeat: 1, yoyo: true, ease: "power1.inOut" }, hit + 0.42);
+        // the smoke wisps off her hair keep curling
+        var smoke = el("burnt").querySelector(".smoke");
+        gsap.set(smoke, { svgOrigin: "0 -48" });
+        tl.fromTo(smoke, { scaleX: 1 }, { scaleX: -1, duration: 0.14, repeat: 3, yoyo: true, ease: "sine.inOut" }, hit + 0.08);
+        // KIT.boom's cloud keeps billowing for 2.4 s; the card ends first, so its tweens stop at the cut.
+        tl.getChildren(false, true, false).forEach(function (tw) {
+          if (tw.startTime() >= D) tl.remove(tw);
+          else if (tw.startTime() + tw.totalDuration() > D) tw.duration((D - tw.startTime()) / ((tw.repeat() || 0) + 1));
+        });
+      },
+    });
+  </script>
+</template>

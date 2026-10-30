@@ -1,0 +1,905 @@
+<template id="debug-37-trillion-cells-template">
+  <!-- debug-37-trillion-cells · Layer B (storyboards/part-04-institutionalize.md): one long scene with one camera.
+       S0 BODY: Part 2's hungry human (pockets still turned out) strolls along the paper chewing Wishonia's club sandwich
+       (Part 2's, his enormous bite already gone) while
+       the street scrolls under him; on "less" a tag drops onto his shoulder: LESS CRAZY GOAL: cure disease.
+       S1 CELLS: on "thirty-seven" the camera dives through his chest light into a field of cells, each with its own
+       check-engine light; "37,000,000,000,000 cells" types on and is too long for the frame; on "thousand" the lights
+       go red one by one, faster and faster, each with a tiny red tag; on "chemistry" the molecule chains knot, then
+       tie into a bow. S2 ORGANS: on "organs" the camera pulls back to his printed organs; a bite drops into the
+       stomach; a laptop by the liver tries to simulate it (3%) and catches fire; germs race the bloodstream; a pill
+       cannon's first pill bounces off a brand-new spike, the second is eaten, cap and all, and the germ turns into a
+       big grinning disease that burps the cap back; the Scientist rappels in with a wrench, her to-do list unrolls
+       off the bottom of the frame; on "once." every light goes red; on "While" his footstep knocks her flat.
+       S3 BODY: on "walking" the camera pulls all the way out: he is still strolling and chewing, tag and all; a big
+       bite on "using"; after "itself." a tiny yelp from his chest, a pat, a shrug, and he keeps eating.
+       The grain sits outside the camera wrapper, so it stays put through the zooms. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #debug-37-trillion-cells-cam, #debug-37-trillion-cells-bg, #debug-37-trillion-cells-pip, #debug-37-trillion-cells-grain { position: absolute; inset: 0; }
+    #debug-37-trillion-cells-view { position: absolute; overflow: hidden; }
+    #debug-37-trillion-cells-street, #debug-37-trillion-cells-street-in, #debug-37-trillion-cells-cells, #debug-37-trillion-cells-organs { position: absolute; }
+    #debug-37-trillion-cells-grain { pointer-events: none; }
+  </style>
+  <div id="root" data-composition-id="debug-37-trillion-cells" data-width="1920" data-height="1080" data-start="0" data-duration="30.1">
+    <div id="debug-37-trillion-cells-cam">
+      <div id="debug-37-trillion-cells-bg"></div>
+      <div id="debug-37-trillion-cells-view">
+        <div id="debug-37-trillion-cells-street"><div id="debug-37-trillion-cells-street-in"></div></div>
+        <div id="debug-37-trillion-cells-cells"></div>
+        <div id="debug-37-trillion-cells-organs"></div>
+      </div>
+      <div id="debug-37-trillion-cells-pip"></div>
+    </div>
+    <div id="debug-37-trillion-cells-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "debug-37-trillion-cells";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, INK = C.line, WHITE = "#FBF6E6", OFF = "#E9E1CC";
+
+      // ── Small drawing helpers (the HUMANS technique: a navy pass under each fill, hard corners) ──────
+      function R1(v) { return String(Math.round(v * 10) / 10); }
+      function P(p) { return R1(p[0]) + "," + R1(p[1]); }
+      function dPoly(a) { return "M" + a.map(P).join(" L") + " Z"; }
+      function dLine(a) { return "M" + a.map(P).join(" L"); }
+      function solid(d, col, w, extra) {
+        return '<path d="' + d + '" fill="' + INK + '" stroke="' + INK + '" stroke-width="' + (w || 5) + '" stroke-linejoin="miter" stroke-miterlimit="8"/>' +
+          '<path d="' + d + '" fill="' + col + '"' + (extra || "") + "/>";
+      }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || INK) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra || "") + "/>"; }
+      function tube(pts, w, col) { return line(dLine(pts), INK, w + 8) + line(dLine(pts), col, w); }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function clamp(v) { return Math.max(0, Math.min(1, v)); }
+      function smooth(v) { v = clamp(v); return v * v * (3 - 2 * v); }
+      function lerp(a, b, k) { return a + (b - a) * k; }
+      function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+      function txt(x, y, s, size, col, anchor, extra) {
+        return '<text x="' + R1(x) + '" y="' + R1(y) + '" text-anchor="' + (anchor || "middle") + '" font-family="Oswald" font-weight="600" font-size="' + R1(size) + '" fill="' + col + '"' + (extra || "") + ">" + esc(s) + "</text>";
+      }
+      var uid = 0;
+      // Halftone dots over the part of a shape right of x0 (pattern from KIT.paperDefs).
+      function dots(d, x0, op, pat) {
+        var id = ID + "-dc" + ++uid;
+        return '<defs><clipPath id="' + id + '"><path d="' + d + '"/></clipPath></defs><rect x="' + R1(x0) + '" y="-3000" width="6000" height="6000" fill="url(#' + ID + "-" + (pat || "fine") + ')" opacity="' + (op || 0.3) + '" clip-path="url(#' + id + ')"/>';
+      }
+      function bbox(a) {
+        var xs = a.map(function (p) { return p[0]; }), ys = a.map(function (p) { return p[1]; });
+        return [Math.min.apply(null, xs), Math.min.apply(null, ys), Math.max.apply(null, xs), Math.max.apply(null, ys)];
+      }
+
+      // ── Times ───────────────────────────────────────────────────────────────────────────────────
+      var T = {
+        less: cue("less"), dive: cue("thirty-seven"), tril: cue("trillion"), cells: cue("cells"), cellsEnd: KIT.cueEnd(ID, "cells"),
+        thou: cue("thousand"), chem: cue("chemistry"), und: cue("understand,"), organs: cue("organs"),
+        sim: cue("simulate,"), fire: KIT.after(ID, "simulate,"), path: cue("pathogens"), evolve: cue("evolve"),
+        treat: cue("treatments."), burp: KIT.after(ID, "treatments."), debug: cue("debug"), all: cue("all"),
+        once: cue("once."), whl: cue("While"), walk: cue("walking"), using: cue("using"), yelp: KIT.after(ID, "itself."),
+      };
+
+      // ── Layout for each canvas shape ───────────────────────────────────────────────────────────
+      // Street: X, G (his feet), S (his scale), TS (the tag's scale), v (the ground's speed, matched to his
+      // stride), PER (the scenery repeat), k (the scenery's scale). Cells: band (the label's ribbon), lab (the
+      // label: left x, baseline, size, its length, and the width it shrinks to), hexR (cell
+      // size), heroes (the cells with molecule chains). Organs: torso, loop [x0, y0, x1, y1, corner], each organ
+      // [x, y, scale], lap (the laptop), bottle [x, y, size], hit (where the lead germ stops), sci [x, feet y, scale].
+      var L = V
+        ? { X: 470, G: 1360, S: 4.3, TS: 1.45, v: 212, PER: 900, k: 1.5,
+            band: [478, 650], lab: { x0: 70, base: 610, size: 124, len: 1660, fit: 960 }, hexR: 104, hexOff: [10, 30],
+            heroes: [[290, 860], [760, 1020], [420, 1250]],
+            torso: [[470, 20], [610, 20], [610, 110], [632, 130], [800, 190], [955, 262], [1008, 362], [998, 600], [982, 900], [972, 1960], [108, 1960], [98, 900], [82, 600], [72, 362], [125, 262], [280, 190], [448, 130], [470, 110]],
+            cx: 495, trach: 300, loop: [100, 470, 860, 1400, 70],
+            lungL: [300, 720, 0.95], lungR: [690, 720, 0.95], heart: [495, 840, 0.95], liver: [330, 1110, 0.95], stomach: [690, 1135, 0.9],
+            lap: [258, 1032, 2.8], bottle: [997, 1400, 1.15], hit: 640, blob: 1, gs: 1.1, sci: [290, 1403, 1.35],
+            strip: { w: 118, len: 700, fs: 17, step: 27 }, pill: 1, lr: 15 }
+        : { X: 860, G: 860, S: 3.3, TS: 1.3, v: 148, PER: 1200, k: 1,
+            band: [62, 238], lab: { x0: 110, base: 204, size: 150, len: 2050, fit: 1660 }, hexR: 116, hexOff: [-30, 30],
+            heroes: [[560, 560], [1010, 420], [1340, 650]],
+            torso: [[738, 20], [882, 20], [882, 110], [904, 128], [1150, 168], [1302, 230], [1352, 330], [1332, 560], [1302, 800], [1292, 1100], [328, 1100], [318, 800], [288, 560], [268, 330], [318, 230], [470, 168], [716, 128], [738, 110]],
+            cx: 810, trach: 236, loop: [330, 185, 1265, 845, 80],
+            lungL: [575, 385, 1], lungR: [1045, 385, 1], heart: [830, 465, 1], liver: [590, 685, 1], stomach: [1035, 702, 1],
+            lap: [500, 603, 3.2], bottle: [1452, 845, 1.6], hit: 965, blob: 1.05, gs: 1.2, sci: [690, 849, 1.4],
+            strip: { w: 128, len: 420, fs: 18, step: 27 }, pill: 1.15, lr: 15 };
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("view").style.cssText = "left:46px;top:46px;width:" + (W - 92) + "px;height:" + (H - 92) + "px;";
+      ["street", "cells", "organs"].forEach(function (n) { q(n).style.cssText = "left:-46px;top:-46px;width:" + W + "px;height:" + H + "px;"; });
+      q("street-in").style.cssText = "left:0;top:0;width:" + W + "px;height:" + H + "px;";
+
+      // ═════════════════════════════════════════════════════════════════════════════════════════════
+      // S0 / S3: THE STREET
+      // ═════════════════════════════════════════════════════════════════════════════════════════════
+      // The walking human: Part 2's hungry human, drawn with the options food-directly's header gives (a skinny everyday
+      // human in a short-sleeved tan shirt, his pockets still turned out), delighted now, eating Wishonia's club sandwich
+      // (food-directly's sandwich(), copied below) with his enormous Part 2 bite already gone. Facing right; the sandwich
+      // in his near hand in front of his chest; his far arm swings. The other arm drawings (patting his chest, shrugging,
+      // the bite) are drawn by person() and moved in below.
+      var HUM = { tone: 1, outfit: "shirt", color: 2, plain: true, mood: "smile", look: "right", build: { tw: 0.72, legs: 1.2, neck: 1.5, hs: 0.86 } };
+      var RH = KIT.rig(HUM), SHO = RH.shoulder, ALEN = RH.armLength, SY = SHO[0][1], SW = 0.9;
+      // (food-directly's arm solver: the two arm angles that put the hand of the shoulder at Sp on point Hp)
+      function reach(Sp, Hp, len) {
+        var dx = Hp[0] - Sp[0], dy = Hp[1] - Sp[1], d = Math.min(Math.hypot(dx, dy), 2 * len * 0.995);
+        var base = (Math.atan2(dx, dy) * 180) / Math.PI, al = (Math.acos(d / (2 * len)) * 180) / Math.PI;
+        var elbowY = function (a1) { return Math.cos((a1 * Math.PI) / 180); };
+        return elbowY(base - al) >= elbowY(base + al) ? [base - al, base + al] : [base + al, base - al];
+      }
+      var clm = KIT.person(HUM).match(/class="chest-light" cx="([-\d.]+)" cy="([-\d.]+)"/), CL = [+clm[1], +clm[2]];
+      // where the sandwich sits (its bottom middle, his units): in his hand in front of his chest, and up at his mouth for
+      // the bite on "using" (today's bite circle, at (-8, -22) in the sandwich's units, goes to his mouth)
+      var HOLD = [30, SY + 17], BITEAT = [RH.mouth[0] + 3 + 8 * SW, RH.mouth[1] + 22 * SW];
+      var ARM_SW = reach(SHO[1], [HOLD[0], HOLD[1] + 2], ALEN), ARM_BITE = reach(SHO[1], [BITEAT[0] + 5, BITEAT[1] + 2], ALEN);
+      var ARM_FREE = [2, -4], ARM_PAT = reach(SHO[0], [CL[0] - 1, CL[1] + 2], ALEN), ARM_SHRUG = reach(SHO[0], [-34, SY + 14], ALEN);
+      var humO = mix(HUM, { arms: [ARM_FREE, ARM_SW] });
+      var humSvg = KIT.person(humO);
+      var MOUTH_Y = (RH.mouth[1] - RH.hy) / RH.hs;   // his mouth, in the face's own units (it chews about there)
+      // his pockets, turned out (food-directly's pockets()): two white flaps hanging out of his trousers at the hips
+      function pockets() {
+        return [-1, 1].map(function (s) {
+          var x0 = s * 11, y0 = RH.hipY + 1;
+          return '<path d="' + dPoly([[x0, y0], [x0 + s * 11, y0 + 2], [x0 + s * 9, y0 + 14], [x0 + s * 1.5, y0 + 12]]) + '" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="2" stroke-linejoin="round"/>' +
+            '<path d="M' + R1(x0 + s * 3) + "," + R1(y0 + 6) + " l" + s * 5 + ',1" stroke="' + INK + '" stroke-width="1.2"/>';
+        }).join("");
+      }
+
+      // Wishonia's club sandwich: food-directly's sandwich(), in its own units (36 wide, 40 tall, its bottom middle on
+      // (0, 0); the toothpick, its frill and the olive stick up to y -58). bites: how many bites are gone: 1, Part 2's
+      // enormous bite out of the top corner nearest him (food-directly's BITE); 2, and today's, deeper in.
+      function biteShape(cx, cy) {
+        var pts = [], i, th, r;
+        for (i = 0; i < 60; i++) { th = (i * 2 * Math.PI) / 60; r = 13 + 2.4 * Math.abs(Math.sin(3.5 * th)); pts.push([cx + r * Math.cos(th), cy + r * Math.sin(th)]); }
+        return dPoly(pts);
+      }
+      var BITE1 = biteShape(-15, -30), BITE2 = biteShape(-8, -22);
+      function sandwich(bites) {
+        var slab = function (y, h, fill, extra) {
+          return '<path d="M-18,' + y + " h36 v" + -h + ' h-36 Z" fill="' + fill + '" stroke="' + INK + '" stroke-width="2.2" stroke-linejoin="round"/>' + (extra || "");
+        };
+        var toast = function (y, top) {
+          return top ? '<path d="M-18,' + y + " V" + (y - 4) + " Q-18," + (y - 8) + " -13," + (y - 8) + " H13 Q18," + (y - 8) + " 18," + (y - 4) + " V" + y + ' Z" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.2" stroke-linejoin="round"/>' +
+            '<path d="M-14,' + (y - 5) + ' H14" stroke="' + C.orange + '" stroke-width="1.6"/>'
+            : slab(y, 7, C.yellow, '<path d="M-15,' + (y - 3.5) + ' H15" stroke="' + C.orange + '" stroke-width="1.6"/>');
+        };
+        var lettuce = "M-22,-27 L-18,-31 L-14,-27 L-10,-31 L-6,-27 L-2,-31 L2,-27 L6,-31 L10,-27 L14,-31 L18,-27 L22,-31 L21,-25 H-21 Z";
+        var body = toast(0) + slab(-7, 5, C.rust) +
+          '<path d="M-18,-12 h36 v-4 h-36 Z M4,-12 l4,6 l3,-6 Z" fill="' + C.orange + '" stroke="' + INK + '" stroke-width="2" stroke-linejoin="round"/>' +
+          toast(-16) + slab(-23, 4, C.war, '<circle cx="-9" cy="-25" r="1.1" fill="' + C.cream + '"/><circle cx="3" cy="-25" r="1.1" fill="' + C.cream + '"/><circle cx="12" cy="-25" r="1.1" fill="' + C.cream + '"/>') +
+          '<path d="' + lettuce + '" fill="' + C.money + '" stroke="' + INK + '" stroke-width="2" stroke-linejoin="round"/>' + toast(-32, true) +
+          '<path d="M2,-38 V-57" stroke="' + C.tan + '" stroke-width="2.4"/>' +
+          '<path d="M2,-57 l-5,-3 l3,-3 l-1,-5 l4,2 l3,-4 l2,5 l4,0 l-2,4 l3,3 Z" fill="' + C.orange + '" stroke="' + INK + '" stroke-width="1.4" stroke-linejoin="round"/>' +
+          '<ellipse cx="2" cy="-46" rx="5.5" ry="4.5" fill="' + C.moneyDark + '" stroke="' + INK + '" stroke-width="1.8"/><circle cx="4" cy="-47" r="1.8" fill="' + C.war + '"/>';
+        // each bite's toothmarked edge shows only where the other bite has not taken the sandwich away
+        var edge = function (d, m) { return '<g' + (m ? ' mask="url(#' + ID + "-sm" + m + ')"' : "") + '><path d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="2.2"/></g>'; };
+        return '<g mask="url(#' + ID + "-sm" + (bites === 2 ? "12" : "1") + ')">' + body + "</g>" +
+          '<g clip-path="url(#' + ID + '-sbody)">' + (bites === 2 ? edge(BITE1, "2") + edge(BITE2, "1") : edge(BITE1)) + "</g>";
+      }
+      function sandMask(id, ds) {
+        return '<mask id="' + ID + "-sm" + id + '" maskUnits="userSpaceOnUse" x="-40" y="-80" width="80" height="100"><rect x="-40" y="-80" width="80" height="100" fill="#FFFFFF"/>' +
+          ds.map(function (d) { return '<path d="' + d + '" fill="#000000"/>'; }).join("") + "</mask>";
+      }
+      var sandDefs = "<defs>" + sandMask("1", [BITE1]) + sandMask("2", [BITE2]) + sandMask("12", [BITE1, BITE2]) +
+        '<clipPath id="' + ID + '-sbody"><rect x="-18" y="-40" width="36" height="40"/></clipPath></defs>';
+      var sandSvg = '<g id="' + ID + '-sand"><g transform="translate(' + P(HOLD) + ") scale(" + SW + ')">' +
+        '<g id="' + ID + '-sand1">' + sandwich(1) + "</g>" + '<g id="' + ID + '-sand2" opacity="0">' + sandwich(2) + "</g></g></g>";
+      // crumbs from today's bite (they fly off his mouth)
+      var crumbs = '<g transform="translate(' + P([RH.mouth[0] + 5, RH.mouth[1] + 3]) + ')">' + [[-2, 0, 20], [3, -2, 60], [0, 3, 110], [5, 2, 150], [-4, 2, 200]].map(function (c) {
+        return '<g class="crumb" opacity="0"><rect x="' + (c[0] - 1.6) + '" y="' + (c[1] - 1.2) + '" width="3.2" height="2.6" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="0.9" transform="rotate(' + c[2] + " " + c[0] + " " + c[1] + ')"/></g>';
+      }).join("") + "</g>";
+      // The yelp: a small spiky speech burst on his chest, its tail at the chest light (where it came from).
+      var burstPts = [];
+      for (var bi = 0; bi < 18; bi++) { var ba = (bi * Math.PI) / 9, br = bi % 2 ? 10 : 18; burstPts.push([Math.cos(ba) * br * 1.25, Math.sin(ba) * br]); }
+      var yelp = '<g transform="translate(' + R1(CL[0] - 13) + "," + R1(CL[1] - 8) + ')"><g id="' + ID + '-yelp" opacity="0">' + solid(dPoly(burstPts), WHITE, 3) +
+        '<path d="M5,12 L15,11.5 L11,4" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="2.2" stroke-linejoin="miter"/>' + txt(0, 4.5, "ow!", 12, INK) + "</g></g>";
+
+      var walker = '<g transform="translate(' + L.X + "," + (L.G - 100 * L.S) + ") scale(" + L.S + ')">' + sandDefs + '<g id="' + ID + '-hum">' + humSvg + "</g>" + sandSvg + crumbs + yelp + "</g>";
+      // The tag on a string (KIT.props.priceTag), tied to his near shoulder; it hangs out in front of him.
+      var TAGAT = [L.X + (RH.shoulder[1][0] + 4) * L.S, L.G - 100 * L.S + (RH.shoulder[1][1] - 2) * L.S];
+      var tag = '<g transform="translate(' + P(TAGAT) + ") scale(" + L.TS + ')"><g id="' + ID + '-tag">' +
+        '<path d="M0,0 V-2000" stroke="' + INK + '" stroke-width="1.8" id="' + ID + '-tagline"/>' +
+        KIT.props.priceTag({ text: "LESS CRAZY GOAL: cure disease", angle: 14 }) + "</g></g>";
+
+      // The scenery (drawn in screen units, scale k): lampposts, hedges, a hydrant, the sidewalk's joints.
+      var k = L.k, G = L.G;
+      function lamppost(x) {
+        var h = 520 * k;
+        return solid(dPoly([[x - 24 * k, G], [x + 24 * k, G], [x + 16 * k, G - 34 * k], [x - 16 * k, G - 34 * k]]), C.slate, 4) +
+          solid(dPoly([[x - 8 * k, G - 30 * k], [x + 8 * k, G - 30 * k], [x + 6 * k, G - h], [x - 6 * k, G - h]]), C.slate, 4) + line("M" + R1(x + 4 * k) + "," + R1(G - 40 * k) + " L" + R1(x + 3 * k) + "," + R1(G - h + 8 * k), C.orange, 2) +
+          solid(dPoly([[x - 26 * k, G - h - 8 * k], [x + 26 * k, G - h - 8 * k], [x + 12 * k, G - h + 4 * k], [x - 12 * k, G - h + 4 * k]]), INK, 3) +
+          solid(dPoly([[x - 24 * k, G - h - 10 * k], [x + 24 * k, G - h - 10 * k], [x + 32 * k, G - h - 72 * k], [x - 32 * k, G - h - 72 * k]]), C.yellow, 4) +
+          line("M" + R1(x) + "," + R1(G - h - 12 * k) + " V" + R1(G - h - 70 * k), INK, 2.4) + line("M" + R1(x - 14 * k) + "," + R1(G - h - 24 * k) + " L" + R1(x - 18 * k) + "," + R1(G - h - 56 * k), "#FFFFFF", 3, ' opacity="0.7"') +
+          solid(dPoly([[x - 40 * k, G - h - 72 * k], [x + 40 * k, G - h - 72 * k], [x + 14 * k, G - h - 98 * k], [x - 14 * k, G - h - 98 * k]]), INK, 3) +
+          solid(dPoly([[x - 5 * k, G - h - 98 * k], [x + 5 * k, G - h - 98 * k], [x, G - h - 116 * k]]), INK, 2);
+      }
+      function hedge(x, w, seed) {
+        var r = KIT.rng(seed), top = [], n = Math.round(w / (34 * k));
+        for (var i = 0; i <= n; i++) top.push([x + (w * i) / n, G - (i % 2 ? 118 : 96) * k - r() * 14 * k]);
+        var pts = [[x - 8 * k, G]].concat([[x - 10 * k, G - 60 * k]], top, [[x + w + 10 * k, G - 60 * k], [x + w + 8 * k, G]]), d = dPoly(pts);
+        return solid(d, C.cyan, 4.5) + dots(d, x + w * 0.5, 0.3, "hatch") + top.filter(function (p, i) { return i % 2; }).map(function (p) {
+          return line("M" + R1(p[0] - 10 * k) + "," + R1(p[1] + 26 * k) + " L" + R1(p[0]) + "," + R1(p[1] + 14 * k) + " L" + R1(p[0] + 10 * k) + "," + R1(p[1] + 26 * k), INK, 2, ' opacity="0.5"');
+        }).join("");
+      }
+      function hydrant(x) {
+        var body = [[x - 17 * k, G], [x + 17 * k, G], [x + 15 * k, G - 62 * k], [x - 15 * k, G - 62 * k]];
+        return solid(dPoly([[x - 26 * k, G], [x + 26 * k, G], [x + 22 * k, G - 9 * k], [x - 22 * k, G - 9 * k]]), C.war, 3.4) + solid(dPoly(body), C.war, 4) + dots(dPoly(body), x + 2 * k, 0.3, "hred") +
+          solid(dPoly([[x - 30 * k, G - 44 * k], [x + 30 * k, G - 44 * k], [x + 30 * k, G - 32 * k], [x - 30 * k, G - 32 * k]]), C.war, 3) +
+          solid(dPoly([[x - 21 * k, G - 62 * k], [x + 21 * k, G - 62 * k], [x + 12 * k, G - 80 * k], [x - 12 * k, G - 80 * k]]), C.war, 4) +
+          solid(dPoly([[x - 4 * k, G - 80 * k], [x + 4 * k, G - 80 * k], [x + 3 * k, G - 88 * k], [x - 3 * k, G - 88 * k]]), INK, 2.4) + line("M" + R1(x - 15 * k) + "," + R1(G - 66 * k) + " H" + R1(x + 15 * k), C.yellow, 3);
+      }
+      var scenery = "", joints = "";
+      for (var rep = -1; rep <= Math.ceil(W / L.PER) + 1; rep++) {
+        var ox = rep * L.PER;
+        scenery += hedge(ox + 0.32 * L.PER, 0.42 * L.PER, 40 + (rep & 1)) + lamppost(ox + 0.12 * L.PER) + hydrant(ox + 0.86 * L.PER);
+        for (var jx = 0; jx < L.PER; jx += 150 * k) joints += line("M" + R1(ox + jx) + "," + R1(G + 4) + " L" + R1(ox + jx - 14 * k) + "," + R1(G + 46 * k), INK, 2.4, ' opacity="0.55"');
+      }
+      var ground = '<rect x="0" y="' + G + '" width="' + W + '" height="' + R1(48 * k) + '" fill="' + WHITE + '"/><rect x="0" y="' + G + '" width="' + W + '" height="' + R1(48 * k) + '" fill="url(#' + ID + '-fine)" opacity="0.22"/>' +
+        '<rect x="0" y="' + R1(G + 48 * k) + '" width="' + W + '" height="' + R1(16 * k) + '" fill="' + C.peri + '"/><rect x="0" y="' + R1(G + 64 * k) + '" width="' + W + '" height="' + H + '" fill="' + C.slate + '"/>' +
+        '<rect x="0" y="' + R1(G + 64 * k) + '" width="' + W + '" height="' + H + '" fill="url(#' + ID + '-hatch)" opacity="0.35"/>' +
+        line("M0," + G + " H" + W, INK, 5) + line("M0," + R1(G + 48 * k) + " H" + W, INK, 4) + line("M0," + R1(G + 64 * k) + " H" + W, INK, 4);
+      var dash = "";
+      for (var dx = 0; dx < W + L.PER; dx += 200 * k) dash += '<rect x="' + R1(dx) + '" y="' + R1(G + 120 * k) + '" width="' + R1(90 * k) + '" height="' + R1(10 * k) + '" fill="' + C.yellow + '"/>';
+      var sky = KIT.star(W * 0.08, V ? 330 : 140, 20, C.orange) + KIT.star(W * 0.3, V ? 210 : 230, 11, C.yellow) + KIT.star(W * 0.62, V ? 520 : 110, 15, C.yellow) +
+        KIT.boomerang(W * (V ? 0.62 : 0.74), V ? 300 : 190, 0.9, C.orange, -18);
+      q("street-in").innerHTML = KIT.svg(W, H, '<rect width="' + W + '" height="' + H + '" fill="' + C.paper + '"/>' + sky +
+        '<g id="' + ID + '-scroll">' + scenery + "</g>" + ground + '<g id="' + ID + '-scroll2">' + joints + dash + "</g>" +
+        '<ellipse cx="' + L.X + '" cy="' + (G + 4) + '" rx="' + R1(30 * L.S) + '" ry="' + R1(5 * L.S) + '" fill="url(#' + ID + '-fine)" opacity="0.7"/>' +
+        '<g id="' + ID + '-bob">' + walker + tag + "</g>");
+
+      // Move the other arm drawings (the far arm patting his chest and shrugging, the near arm up for the bite) into the
+      // walking human's drawing, and his turned-out pockets in under his arms.
+      var humG = q("hum"), mainArmL = humG.querySelector(".arm-l"), mainArmR = humG.querySelector(".arm-r");
+      function svgG(markup) { var g = document.createElementNS("http://www.w3.org/2000/svg", "g"); g.innerHTML = markup; return g; }
+      function armFrom(arms, cls) {
+        var arm = svgG(KIT.person(mix(HUM, { arms: arms }))).querySelector("." + cls);
+        arm.setAttribute("opacity", "0");
+        return arm;
+      }
+      var altArms = [ARM_PAT, ARM_SHRUG].map(function (a) {
+        var arm = armFrom([a, ARM_SW], "arm-l");
+        mainArmL.parentNode.insertBefore(arm, mainArmL.nextSibling);
+        return arm;
+      });
+      var biteArm = armFrom([ARM_FREE, ARM_BITE], "arm-r");
+      mainArmR.parentNode.insertBefore(biteArm, mainArmR.nextSibling);
+      mainArmL.parentNode.insertBefore(svgG(pockets()), mainArmL);
+      var chestLight = humG.querySelector(".chest-light");
+      var C0 = [L.X + CL[0] * L.S, L.G - 100 * L.S + CL[1] * L.S];   // his chest light on screen: the camera's dive point
+
+      // ═════════════════════════════════════════════════════════════════════════════════════════════
+      // S1: THE CELLS
+      // ═════════════════════════════════════════════════════════════════════════════════════════════
+      var hr = L.hexR, hw = Math.sqrt(3) * hr, vj = {}, jr = KIT.rng(711), cells = [];
+      function vert(x, y) {
+        var key = Math.round(x) + "," + Math.round(y);
+        if (!vj[key]) vj[key] = [(jr() - 0.5) * 0.34 * hr, (jr() - 0.5) * 0.34 * hr];
+        return [x + vj[key][0], y + vj[key][1]];
+      }
+      for (var cj = -1; cj * 1.5 * hr < H + hr; cj++) {
+        for (var ci = -1; ci * hw < W + hw; ci++) {
+          var ccx = ci * hw + (cj % 2 ? hw / 2 : 0) + L.hexOff[0], ccy = cj * 1.5 * hr + L.hexOff[1], vs = [];
+          for (var kk = 0; kk < 6; kk++) { var ang = ((-90 + 60 * kk) * Math.PI) / 180; vs.push(vert(ccx + hr * Math.cos(ang), ccy + hr * Math.sin(ang))); }
+          var cen = vs.reduce(function (a, p) { return [a[0] + p[0] / 6, a[1] + p[1] / 6]; }, [0, 0]);
+          cells.push({ x: cen[0], y: cen[1], local: vs.map(function (p) { return [(p[0] - cen[0]) * 0.9, (p[1] - cen[1]) * 0.9]; }) });
+        }
+      }
+      // the three cells with molecule chains: the nearest to each hero point
+      var heroIdx = L.heroes.map(function (h) {
+        var best = 0;
+        cells.forEach(function (c, i) { if (Math.hypot(c.x - h[0], c.y - h[1]) < Math.hypot(cells[best].x - h[0], cells[best].y - h[1])) best = i; });
+        return best;
+      });
+      // A light shows (and later goes red) only where nothing covers it: not under the label's ribbon, Wishonia's
+      // corner, the 9:16 captions, or the frame's edges.
+      function lightShows(x, y) {
+        if (x < 70 || x > W - 70 || y < 70) return false;
+        if (y > L.band[0] - 20 && y < L.band[1] + 24) return false;
+        if (V) return !(x > 720 && y < 455) && y < 1440;
+        return !(x > 1580 && y > 670) && y < 960;
+      }
+      var NM = 15, mk = hr / 116;
+      function cellSvg(c, i) {
+        var d = dPoly(c.local), r = KIT.rng(100 + i), hero = heroIdx.indexOf(i) >= 0, lx = 0.36 * hr, ly = 0.3 * hr, lr = 0.1 * hr;
+        var nuc = [];
+        for (var a = 0; a < 5; a++) { var an = (a * 2 * Math.PI) / 5 + r(); nuc.push([-0.16 * hr + Math.cos(an) * (0.2 + r() * 0.08) * hr, -0.12 * hr + Math.sin(an) * (0.2 + r() * 0.08) * hr]); }
+        var mito = function (x, y, rot) {
+          var m = [[-0.13, 0], [-0.08, -0.06], [0.08, -0.06], [0.13, 0], [0.08, 0.06], [-0.08, 0.06]].map(function (p) { return [p[0] * hr, p[1] * hr]; });
+          return '<g transform="translate(' + R1(x) + "," + R1(y) + ") rotate(" + R1(rot) + ')">' + solid(dPoly(m), C.orange, 3) +
+            line("M" + R1(-0.09 * hr) + ",0 l" + R1(0.03 * hr) + "," + R1(-0.03 * hr) + " l" + R1(0.03 * hr) + "," + R1(0.06 * hr) + " l" + R1(0.03 * hr) + "," + R1(-0.06 * hr) + " l" + R1(0.03 * hr) + "," + R1(0.03 * hr), INK, 1.4) + "</g>";
+        };
+        var inner = hero ? "" : solid(dPoly(nuc), C.peri, 3.4) + dots(dPoly(nuc), -0.16 * hr, 0.35, "fine") + '<circle cx="' + R1(-0.18 * hr) + '" cy="' + R1(-0.14 * hr) + '" r="' + R1(0.05 * hr) + '" fill="' + INK + '"/>' +
+          mito(-0.3 * hr, 0.36 * hr, -20 + r() * 40) + mito(0.24 * hr, -0.4 * hr, 10 + r() * 40);
+        var light = "", show = lightShows(c.x + lx, c.y + ly);
+        if (show) {
+          light = '<g transform="translate(' + R1(lx) + "," + R1(ly) + ')"><g class="clight"><circle r="' + R1(lr) + '" fill="' + OFF + '" stroke="' + INK + '" stroke-width="3"/>' +
+            '<circle class="clight-red" r="' + R1(lr) + '" fill="' + C.war + '" stroke="' + INK + '" stroke-width="3" opacity="0"/></g></g>' +
+            '<g transform="translate(' + R1(lx + lr * 0.6) + "," + R1(ly + lr * 0.6) + ") scale(" + R1(0.62 * mk * 100) / 100 + ')"><g class="ctag">' + KIT.props.priceTag({ text: "!", color: C.war, ink: WHITE, angle: 40 }) + "</g></g>";
+        }
+        var chain = "";
+        if (hero) {
+          chain = '<g transform="scale(' + R1(mk * 100) / 100 + ')"><g class="mol"><polyline class="mol-bond" fill="none" stroke="' + INK + '" stroke-width="5" stroke-linejoin="round" points=""/>';
+          for (var m = 0; m < NM; m++) chain += '<circle class="mol-atom" r="' + (m % 3 ? 8 : 10) + '" fill="' + [C.orange, C.med, C.yellow, C.war, C.peri][m % 5] + '" stroke="' + INK + '" stroke-width="3"/>';
+          chain += '<circle class="mol-knot" r="0" fill="' + C.war + '" stroke="' + INK + '" stroke-width="3"/></g>' +
+            '<g transform="translate(0,-74)"><g class="mol-q" opacity="0"><text x="0" y="0" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="64" fill="' + INK + '" stroke="' + C.cream + '" stroke-width="6" style="paint-order:stroke">?</text></g></g></g>';
+        }
+        return '<g transform="translate(' + R1(c.x) + "," + R1(c.y) + ')"><g class="cell" data-i="' + i + '">' + solid(d, WHITE, 4.5) + dots(d, 0.1 * hr, 0.26, "fine") + inner + chain + light + "</g></g>";
+      }
+      var cellsMarkup = cells.map(cellSvg).join("");
+
+      // The label: "37,000,000,000,000 cells", one tspan per character, typed on. It is too long for the frame: the
+      // 37 stays put and the zeros keep coming off the right edge, then the whole thing shrinks to fit.
+      var LAB = "37,000,000,000,000 cells", lb = L.lab;
+      var typeAt = LAB.split("").map(function (ch, i) {
+        if (i === 0) return T.dive + 0.42;
+        if (i === 1) return T.dive + 0.5;
+        if (i < 18) return T.tril + ((i - 2) * (T.cells - T.tril)) / 16;
+        return T.cells + (i - 18) * 0.055;
+      });
+      // (one style attribute only: the HTML parser keeps the first of two, and without paint-order the cream
+      // stroke paints over the glyphs and shows Fraunces' overlapping contours inside the 3 and the 7)
+      function labText(dx, dy, attrs) {
+        return '<text x="' + (lb.x0 + dx) + '" y="' + (lb.base + dy) + '" font-family="Fraunces" font-weight="900" font-size="' + lb.size + '" textLength="' + lb.len + '" lengthAdjust="spacingAndGlyphs" style="white-space:pre;paint-order:stroke" ' + attrs + ">" +
+          LAB.split("").map(function (ch) { return '<tspan class="lab-ch" fill-opacity="0" stroke-opacity="0">' + esc(ch) + "</tspan>"; }).join("") + "</text>";
+      }
+      var bandY = L.band, bandMid = (bandY[0] + bandY[1]) / 2;
+      var band = '<g id="' + ID + '-band"><rect x="20" y="' + (bandY[0] + 10) + '" width="' + (W - 40) + '" height="' + (bandY[1] - bandY[0]) + '" fill="' + C.ink + '" opacity="0.8"/>' +
+        '<rect x="10" y="' + bandY[0] + '" width="' + (W - 20) + '" height="' + (bandY[1] - bandY[0]) + '" fill="' + C.paper + '" stroke="' + INK + '" stroke-width="6"/>' +
+        '<rect x="10" y="' + (bandY[0] + 12) + '" width="' + (W - 20) + '" height="' + (bandY[1] - bandY[0] - 24) + '" fill="none" stroke="' + C.orange + '" stroke-width="2.5"/>' +
+        '<g id="' + ID + '-lab">' + labText(lb.size * 0.05, lb.size * 0.07, 'fill="' + C.ink + '"') +
+        labText(0, 0, 'fill="' + C.ink + '" stroke="' + C.cream + '" stroke-width="' + R1(lb.size * 0.08) + '" stroke-linejoin="round"') + "</g></g>";
+      var R0 = 4.5 * L.S;   // the porthole starts the size of his chest light
+      q("cells").innerHTML = KIT.svg(W, H, '<defs><clipPath id="' + ID + '-port"><circle id="' + ID + '-port-c" cx="' + R1(C0[0]) + '" cy="' + R1(C0[1]) + '" r="' + R1(R0) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-port)"><rect width="' + W + '" height="' + H + '" fill="' + C.tan + '"/><rect width="' + W + '" height="' + H + '" fill="url(#' + ID + '-hatch)" opacity="0.28"/>' +
+        '<g id="' + ID + '-cdive"><g id="' + ID + '-cworld">' + cellsMarkup + "</g>" + band + "</g></g>");
+
+      // ═════════════════════════════════════════════════════════════════════════════════════════════
+      // S2: THE ORGANS
+      // ═════════════════════════════════════════════════════════════════════════════════════════════
+      function light(x, y, r) {
+        return '<g transform="translate(' + R1(x) + "," + R1(y) + ')"><g class="olight"><circle r="' + r + '" fill="' + OFF + '" stroke="' + INK + '" stroke-width="3.4"/>' +
+          '<circle class="olight-red" r="' + r + '" fill="' + C.war + '" stroke="' + INK + '" stroke-width="3.4" opacity="0"/>' +
+          '<path d="M' + R1(-r * 0.55) + "," + R1(-r * 0.1) + " Q" + R1(-r * 0.5) + "," + R1(-r * 0.55) + " " + R1(-r * 0.05) + "," + R1(-r * 0.6) + '" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity="0.8"/>' +
+          '<circle class="olight-ring" r="' + r + '" fill="none" stroke="' + C.war + '" stroke-width="4" opacity="0"/></g></g>';
+      }
+      function organ(name, at, pts, fill, pat, extra, lights) {
+        var d = dPoly(pts), b = bbox(pts);
+        return '<g transform="translate(' + at[0] + "," + at[1] + ") scale(" + at[2] + ')"><g id="' + ID + "-" + name + '">' + solid(d, fill, 5) + dots(d, b[0] + (b[2] - b[0]) * 0.55, 0.3, pat) + (extra || "") +
+          lights.map(function (l) { return light(l[0], l[1], L.lr); }).join("") + "</g></g>";
+      }
+      var LUNG = [[-20, -175], [35, -150], [75, -80], [95, 20], [110, 140], [60, 172], [-60, 168], [-118, 120], [-128, 0], [-108, -110], [-70, -160]];
+      var LUNG_R = [[20, -175], [-35, -150], [-75, -80], [-92, 0], [-62, 46], [-98, 96], [-110, 140], [-60, 172], [60, 168], [118, 120], [128, 0], [108, -110], [70, -160]];
+      function bronchi(f) {
+        return line(dLine([[40 * f, -120], [10 * f, -60], [-20 * f, 10]]), INK, 3, ' opacity="0.55"') + line(dLine([[10 * f, -60], [-60 * f, -70]]), INK, 2.4, ' opacity="0.55"') +
+          line(dLine([[-20 * f, 10], [-70 * f, 40]]), INK, 2.4, ' opacity="0.55"') + line(dLine([[-20 * f, 10], [10 * f, 100]]), INK, 2.4, ' opacity="0.55"') +
+          line(dLine([[95 * f, -10], [-100 * f, 60]]), INK, 2.2, ' opacity="0.4"');
+      }
+      var HEART = [[-78, -30], [-50, -70], [-12, -62], [10, -78], [55, -72], [85, -35], [80, 20], [40, 70], [0, 100], [-40, 65], [-72, 20]];
+      var AORTA = [[-16, -62], [-20, -106], [-4, -126], [30, -128], [52, -108], [58, -76], [42, -72], [38, -98], [26, -108], [6, -108], [4, -90], [6, -66]];
+      var VESSELS = [[[-6, -120], [3, -123], [3, -150], [-6, -150]], [[11, -126], [19, -127], [20, -154], [11, -154]], [[26, -125], [34, -122], [37, -146], [28, -149]]];
+      var LIVER = [[-200, -80], [165, -88], [205, -58], [150, 0], [30, 62], [-150, 85], [-206, 25]];
+      var STOMACH = [[-120, -25], [-95, -60], [-40, -95], [40, -92], [105, -55], [130, 15], [100, 85], [20, 110], [-55, 92], [-35, 40], [-80, 15]];
+      function orgPt(o, p, flip) { return [o[0] + p[0] * o[2] * (flip ? -1 : 1), o[1] + p[1] * o[2]]; }
+
+      var lp = L.loop, LR = lp[4];
+      // the bloodstream: a rounded loop (down the left side, along the bottom, up the right, back along the top)
+      var loop = [[lp[0], lp[1] + LR]];
+      function arc(cx, cy, a0, a1) { for (var i = 1; i <= 10; i++) { var a = a0 + ((a1 - a0) * i) / 10; loop.push([cx + LR * Math.cos(a), cy + LR * Math.sin(a)]); } }
+      arc(lp[0] + LR, lp[3] - LR, Math.PI, Math.PI / 2); arc(lp[2] - LR, lp[3] - LR, Math.PI / 2, 0);
+      arc(lp[2] - LR, lp[1] + LR, 0, -Math.PI / 2); arc(lp[0] + LR, lp[1] + LR, -Math.PI / 2, -Math.PI);
+      var loopLen = [0];
+      for (var li = 1; li < loop.length; li++) loopLen.push(loopLen[li - 1] + Math.hypot(loop[li][0] - loop[li - 1][0], loop[li][1] - loop[li - 1][1]));
+      var LOOPL = loopLen[loopLen.length - 1];
+      function loopAt(s) {
+        s = ((s % LOOPL) + LOOPL) % LOOPL;
+        for (var i = 1; i < loop.length; i++) if (loopLen[i] >= s) { var f = (s - loopLen[i - 1]) / (loopLen[i] - loopLen[i - 1] || 1); return [lerp(loop[i - 1][0], loop[i][0], f), lerp(loop[i - 1][1], loop[i][1], f)]; }
+        return loop[0];
+      }
+      var S_BOTTOM = (lp[3] - lp[1] - 2 * LR) + (Math.PI * LR) / 2 * 0.9967;   // where the bottom stretch starts
+      var S_HIT = S_BOTTOM + (L.hit - lp[0] - LR);
+
+      // the esophagus (behind the organs) and the windpipe with its two bronchi
+      var st = L.stomach, cx = L.cx;
+      var eso = [[cx + 18, 20], [cx + 18, L.trach - 20], [cx + 70, L.trach + 120], orgPt(st, [-60, -40]), orgPt(st, [-30, -70])];
+      var bronL = orgPt(L.lungL, [40, -120]), bronR = orgPt(L.lungR, [-40, -120]);
+      var trach = tube(eso, 26, "#E8C98A") + tube([[cx, 20], [cx, L.trach]], 26, WHITE) + tube([[cx, L.trach], [cx - 30, L.trach + 30], bronL], 18, WHITE) + tube([[cx, L.trach], [cx + 30, L.trach + 30], bronR], 18, WHITE);
+      for (var ty = 50; ty < L.trach - 6; ty += 22) trach += line("M" + (cx - 13) + "," + ty + " H" + (cx + 13), INK, 2.2, ' opacity="0.6"');
+      var torsoD = dPoly(L.torso);
+      var torso = solid(torsoD, WHITE, 7) + dots(torsoD, cx + 160, 0.18, "hatch") + line(dLine([[cx - 70, L.trach + 330 * L.lungL[2]], [cx, L.trach + 300 * L.lungL[2]], [cx + 70, L.trach + 330 * L.lungL[2]]]), INK, 2, ' opacity="0.25"');
+
+      var blood = '<path d="' + dLine(loop) + ' Z" fill="none" stroke="' + INK + '" stroke-width="40" stroke-linejoin="round"/>' +
+        '<path d="' + dLine(loop) + ' Z" fill="none" stroke="' + C.war + '" stroke-width="30" stroke-linejoin="round"/>' +
+        '<path d="' + dLine(loop) + ' Z" fill="none" stroke="url(#' + ID + '-hred)" stroke-width="30" stroke-linejoin="round" opacity="0.5"/>' +
+        '<path id="' + ID + '-flow" d="' + dLine(loop) + ' Z" fill="none" stroke="' + C.cream + '" stroke-width="8" stroke-linecap="round" stroke-dasharray="3 30" opacity="0.8"/>';
+
+      var heartExtra = VESSELS.map(function (v) { return solid(dPoly(v), C.rust, 4); }).join("") + solid(dPoly(AORTA), C.rust, 4) + line(dLine([[-40, -10], [-10, 30], [30, 20], [55, -20]]), INK, 2.4, ' opacity="0.5"');
+      var liverExtra = line(dLine([[-20, -84], [-40, 10], [-80, 70]]), INK, 2.6, ' opacity="0.5"');
+      var stomachExtra = line(dLine([[-60, -40], [-20, -55], [20, -40], [60, -50]]), INK, 2.2, ' opacity="0.45"') + line(dLine([[-40, 10], [0, -5], [40, 10], [80, 0]]), INK, 2.2, ' opacity="0.45"') +
+        line(dLine([[-20, 60], [20, 45], [60, 55]]), INK, 2.2, ' opacity="0.45"');
+      var organsMarkup =
+        organ("lungL", L.lungL, LUNG, C.orange, "hatch", bronchi(1), [[-55, 70], [10, -95]]) +
+        organ("lungR", L.lungR, LUNG_R, C.orange, "hatch", bronchi(-1), [[55, 70], [-10, -95]]) +
+        organ("liver", L.liver, LIVER, C.rust, "hatch", liverExtra, [[100, -30], [-150, 20]]) +
+        organ("stomach", L.stomach, STOMACH, C.yellow, "hatch", stomachExtra + '<g id="' + ID + '-bitein" opacity="0"></g>', [[70, 50]]) +
+        organ("heart", L.heart, HEART, C.war, "hred", heartExtra, [[-20, 20]]);
+
+      // The bite: a little wedge of the sandwich (it rides the esophagus, then sits in the stomach).
+      function biteSvg() {
+        return solid(dPoly([[-14, 9], [14, 9], [4, -12]]), "#F2DFB0", 3.4) + '<path d="M-10,3 H11 M-7,-3 H8" stroke="' + C.war + '" stroke-width="2.6"/><path d="M-12,6 H12" stroke="' + C.cyan + '" stroke-width="2"/>';
+      }
+
+      // The laptop (KIT.props.laptop) on the liver: LIVER SIMULATION, stuck at 3%. Then it catches fire.
+      var ls = L.lap[2];
+      var lapScreen = '<g id="' + ID + '-lapscr" opacity="0"><rect x="-24" y="-42" width="48" height="31" fill="' + C.ink + '"/>' +
+        txt(0, -34, "LIVER", 6.2, C.cream, "middle", ' letter-spacing="0.4"') + txt(0, -27.4, "SIMULATION", 6.2, C.cream, "middle", ' letter-spacing="0.2"') +
+        '<rect x="-17" y="-25.2" width="34" height="3.2" fill="none" stroke="' + C.cream + '" stroke-width="0.8"/><rect x="-17" y="-25.2" width="1.4" height="3.2" fill="' + C.war + '"/>' +
+        '<g id="' + ID + '-lap3">' + txt(0, -12.6, "3%", 9.4, C.yellow) + "</g></g>";
+      var laptop = '<g transform="translate(' + L.lap[0] + "," + L.lap[1] + ") scale(" + ls + ')"><g id="' + ID + '-laptop">' + KIT.props.laptop({}).replace("<!--laptop-screen-->", lapScreen) + "</g></g>";
+      var fk = ls / 3.2;
+      var fire = '<g transform="translate(' + L.lap[0] + "," + R1(L.lap[1] - 8 * ls) + ')"><g id="' + ID + '-fire">' + KIT.flames(-46 * fk, 10 * fk, 0.8 * fk) + KIT.flames(52 * fk, 12 * fk, 0.85 * fk) + KIT.flames(0, 0, 1.3 * fk) + "</g></g>";
+      var puffs = "";
+      for (var pi = 0; pi < 6; pi++) {
+        puffs += '<g transform="translate(' + R1(L.lap[0] + (pi % 3 - 1) * 22 * fk) + "," + R1(L.lap[1] - 46 * ls) + ')"><g class="puff" opacity="0">' +
+          '<circle r="' + R1(16 * fk) + '" fill="#D8D2C2" stroke="' + INK + '" stroke-width="3"/><circle cx="' + R1(12 * fk) + '" cy="' + R1(-6 * fk) + '" r="' + R1(11 * fk) + '" fill="#D8D2C2" stroke="' + INK + '" stroke-width="3"/></g></g>';
+      }
+
+      // The pill cannon: KIT.props.pillBottle on its side on a little carriage, its cap pointing left.
+      var bt = L.bottle, bs = bt[2], CAPTIP = [bt[0] - 106 * bs - 4, bt[1]];
+      var carriage = solid(dPoly([[-122 * bs, 26 * bs], [6 * bs, 26 * bs], [-4 * bs, 44 * bs], [-112 * bs, 44 * bs]]), C.rust, 4) +
+        [-96, -22].map(function (wx) {
+          return solid('M' + R1(wx * bs - 15 * bs) + "," + R1(46 * bs) + " a" + R1(15 * bs) + "," + R1(15 * bs) + " 0 1 0 " + R1(30 * bs) + ",0 a" + R1(15 * bs) + "," + R1(15 * bs) + " 0 1 0 " + R1(-30 * bs) + ",0 Z", C.tan, 4) +
+            line("M" + R1(wx * bs - 12 * bs) + "," + R1(46 * bs) + " H" + R1(wx * bs + 12 * bs) + " M" + R1(wx * bs) + "," + R1(34 * bs) + " V" + R1(58 * bs), INK, 2.4);
+        }).join("");
+      var bottle = '<g transform="translate(' + bt[0] + "," + bt[1] + ')"><g id="' + ID + '-bottle">' + carriage + '<g transform="rotate(-90) scale(' + bs + ')">' + KIT.props.pillBottle({}) + "</g></g></g>";
+      function capsule(sc) {
+        var half = [[-16, -3.4], [-12.8, -7.2], [0, -7.2], [0, 7.2], [-12.8, 7.2], [-16, 3.4]].map(function (p) { return [p[0] * sc, p[1] * sc]; });
+        return solid(dPoly(half), C.med, 3) + solid(dPoly(half.map(function (p) { return [-p[0], p[1]]; })), WHITE, 3);
+      }
+      var pills = [1, 2].map(function (n) {
+        return '<g transform="translate(' + P(CAPTIP) + ')"><g id="' + ID + "-pill" + n + '" opacity="0">' + capsule(L.pill * 1.15) + "</g></g>";
+      }).join("");
+
+      // The germs (KIT.props.germ): their outer groups are placed every frame (their base point).
+      var gs = L.gs;
+      var spike = '<g id="' + ID + '-spike"><path d="M17,-38 L58,-30 L17,-22 Z" fill="' + INK + '" stroke="' + INK + '" stroke-width="3.6" stroke-linejoin="miter"/><path d="M17,-38 L58,-30 L17,-22 Z" fill="' + C.yellow + '"/></g>';
+      var germs = [0, 1, 2].map(function (n) {
+        return '<g id="' + ID + "-germ" + n + '"><g transform="scale(' + gs + ')"><g id="' + ID + "-germ" + n + '-s">' + (n === 0 ? spike : "") +
+          KIT.props.germ({ mood: n === 0 ? "grin" : n === 1 ? "smug" : "grin", color: n === 2 ? "orange" : "yellow" }) + "</g></g></g>";
+      }).join("");
+      // The disease the lead germ turns into (KIT.props.diseaseBlob), and the cap it burps back.
+      var BB = L.blob, BLOBAT = [L.hit, lp[3] + 12];
+      var blob = '<g transform="translate(' + P(BLOBAT) + ')"><g id="' + ID + '-blob" opacity="0"><g transform="scale(' + BB + ')">' + KIT.props.diseaseBlob({ color: "yellow", mood: "grin", seed: 6 }) + "</g></g></g>";
+      var MOUTH = [BLOBAT[0], BLOBAT[1] - 70 * BB];
+      var burpPuff = '<g transform="translate(' + R1(MOUTH[0] + 20) + "," + R1(MOUTH[1] - 6) + ')"><g id="' + ID + '-burp" opacity="0">' +
+        [[0, 0, 14], [16, -10, 11], [24, 6, 9]].map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="3"/>'; }).join("") + "</g></g>";
+      var burpCap = '<g transform="translate(' + P(MOUTH) + ')"><g id="' + ID + '-bcap" opacity="0"><g transform="scale(' + bs + ') translate(0,95)" id="' + ID + '-bcap-art"></g></g></g>';
+
+      // The Scientist (KIT.cast("scientist")), tiny, on a rope: A working (clipboard, wrench at her side), B alarmed
+      // (wrench up). A navy wrench is drawn at her free hand.
+      function wrench() {
+        return '<path d="M-3.2,6 L-3.2,-30 L-8.5,-33 L-10.5,-44 L-6,-50 L-3,-43 L3,-43 L6,-50 L10.5,-44 L8.5,-33 L3.2,-30 L3.2,6 Z" fill="' + INK + '" stroke="' + INK + '" stroke-width="2" stroke-linejoin="miter"/>' +
+          '<path d="M-1,2 V-28" stroke="' + C.peri + '" stroke-width="1.6"/><circle cx="0" cy="9" r="5" fill="' + INK + '"/><circle cx="0" cy="9" r="2" fill="' + C.paper + '"/>';
+      }
+      // She stands in the bloodstream facing right, at the disease: the clipboard in her near (front) hand, the wrench
+      // in the far one.
+      var ARM_CLIP = [87, -63], ARM_WA = [-18, -6], ARM_WB = [177, 174];
+      var SCI_A = KIT.castOpts("scientist", { look: "right", arms: [ARM_WA, ARM_CLIP], holdR: "clipboard", mood: "eager" });
+      var SCI_B = KIT.castOpts("scientist", { look: "right", arms: [ARM_WB, ARM_CLIP], holdR: "clipboard", mood: "worried" });
+      var RA = KIT.rig(SCI_A), RB = KIT.rig(SCI_B), SS = L.sci[2];
+      var sciAt = [L.sci[0], L.sci[1] - 100 * SS];
+      var rope = line("M-3," + R1(RA.hipY - 4) + " V-4000", INK, 7) + line("M-3," + R1(RA.hipY - 4) + " V-4000", C.tan, 3.4) +
+        '<circle cx="-3" cy="' + R1(RA.hipY - 2) + '" r="4.5" fill="none" stroke="' + C.yellow + '" stroke-width="3"/>';
+      var sci = '<g transform="translate(' + P(sciAt) + ") scale(" + SS + ')"><g id="' + ID + '-sci-drop">' + rope + '<g id="' + ID + '-sci-fall"><g id="' + ID + '-sci-spin">' +
+        '<g id="' + ID + '-sciA">' + KIT.person(SCI_A) + '<g id="' + ID + '-wrA"><g transform="translate(' + P(RA.hand[0]) + ') rotate(-160)">' + wrench() + "</g></g></g>" +
+        '<g id="' + ID + '-sciB" opacity="0">' + KIT.person(SCI_B) + '<g transform="translate(' + P(RB.hand[0]) + ') rotate(-8)">' + wrench() + "</g></g>" +
+        '<g transform="translate(0,96)"><g id="' + ID + '-clank" opacity="0">' + [-1, 1].map(function (s) { return line("M" + 20 * s + ",0 l" + 14 * s + ",-6 M" + 22 * s + ",8 l" + 16 * s + ",4", INK, 3); }).join("") + "</g></g>" +
+        "</g></g></g></g>";
+      // Her to-do list: a long strip from under the clipboard, revealed downward (and off the bottom of the frame).
+      // It hangs from the clipboard's bottom and falls in front of her, to the right of her legs.
+      var sp = L.strip, CLIPB = [RA.hand[1][0] + 9, RA.hand[1][1] + 12];
+      var STRIP0 = [sciAt[0] + CLIPB[0] * SS - 12 + sp.w / 2, sciAt[1] + CLIPB[1] * SS];
+      var items = ["Fix heart", "Fix lungs", "Fix liver", "Fix stomach", "Simulate liver", "Beat germs", "Learn chemistry"];
+      for (var it = 1; items.length * sp.step < sp.len; it++) items.push("Fix cell #" + it);
+      var stripD = dPoly([[-sp.w / 2, 0], [sp.w / 2, 0], [sp.w / 2, sp.len + 40], [-sp.w / 2, sp.len + 40]]);
+      var stripArt = solid(stripD, WHITE, 4) + dots(stripD, sp.w * 0.15, 0.2, "fine") + txt(-sp.w / 2 + 12, 30, "TO DO:", sp.fs + 2, INK, "start", ' letter-spacing="1"') +
+        line("M" + R1(-sp.w / 2 + 12) + ",36 H" + R1(sp.w / 2 - 12), C.orange, 2) +
+        items.map(function (s, i) {
+          var y = 64 + i * sp.step;
+          return '<rect x="' + R1(-sp.w / 2 + 10) + '" y="' + R1(y - sp.fs * 0.72) + '" width="' + R1(sp.fs * 0.72) + '" height="' + R1(sp.fs * 0.72) + '" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="1.8"/>' +
+            txt(-sp.w / 2 + 16 + sp.fs * 0.72, y, s, sp.fs * 0.86, INK, "start");
+        }).join("");
+      var strip = '<g transform="translate(' + P(STRIP0) + ')"><g id="' + ID + '-strip"><defs><clipPath id="' + ID + '-stripclip"><rect id="' + ID + '-stripclip-r" x="' + (-sp.w - 20) + '" y="-4" width="' + (2 * sp.w + 40) + '" height="0"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-stripclip)">' + stripArt + "</g>" +
+        '<g id="' + ID + '-roll" opacity="0"><rect x="' + R1(-sp.w / 2 - 6) + '" y="-9" width="' + R1(sp.w + 12) + '" height="18" rx="9" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="4"/>' +
+        line("M" + R1(-sp.w / 2 + 2) + ",-2 H" + R1(sp.w / 2 - 2), INK, 1.6, ' opacity="0.5"') + "</g></g></g>";
+      // The bite on its way down the esophagus (behind the organs), then in the stomach (in front).
+      var biteRide = '<g id="' + ID + '-bite" opacity="0"><g transform="scale(' + R1(1.6 * L.stomach[2] * 10) / 10 + ')">' + biteSvg() + "</g></g>";
+
+      // (no background of its own: the paper behind shows around the torso, so on the pull-out the torso alone
+      // shrinks into his chest)
+      q("organs").innerHTML = KIT.svg(W, H, "" +
+        '<g id="' + ID + '-oworld">' + torso + trach + biteRide + blood + organsMarkup + laptop + puffs + fire + bottle + pills + germs + blob + burpPuff + burpCap + sci + strip + "</g>");
+      // the bite in the stomach (stomach units)
+      q("bitein").innerHTML = '<g transform="translate(-30,-30) rotate(-14) scale(1.6)">' + biteSvg() + "</g>";
+      // the burped cap: a copy of the bottle's own cap
+      var capNode = q("bottle").querySelector(".pill-cap");
+      q("bcap-art").appendChild(capNode.cloneNode(true));
+
+      // ═════════════════════════════════════════════════════════════════════════════════════════════
+      // THE TIMELINE
+      // ═════════════════════════════════════════════════════════════════════════════════════════════
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      function pivot(el, o) { gsap.set(el, { svgOrigin: Array.isArray(o) ? R1(o[0]) + " " + R1(o[1]) : o }); }
+      function nrep(dur, per) { return Math.max(1, Math.floor(dur / per)); }
+
+      // ── The walk (all scene long; the street is only on screen in S0 and S3) ─────────────────────
+      var STEP = 0.4, AMP = 16, nStep = nrep(D, STEP);
+      var legL = humG.querySelector(".leg-l"), legR = humG.querySelector(".leg-r"), head = humG.querySelector(".head"), armR = humG.querySelector(".arm-r");
+      var mouthEl = head.querySelector(".mouth"), sand = q("sand");
+      pivot(legL, RH.hip[0]); pivot(legR, RH.hip[1]); pivot(mainArmL, RH.shoulder[0]); pivot(head, RH.neck);
+      pivot(mouthEl, "7 " + R1(MOUTH_Y));
+      altArms.forEach(function (a) { pivot(a, RH.shoulder[0]); });
+      tl.fromTo(legL, { rotation: -AMP }, { rotation: AMP, duration: STEP, repeat: nStep - 1, yoyo: true, ease: "sine.inOut" }, 0);
+      tl.fromTo(legR, { rotation: AMP }, { rotation: -AMP, duration: STEP, repeat: nStep - 1, yoyo: true, ease: "sine.inOut" }, 0);
+      var armEnd = T.yelp + 0.05;
+      tl.fromTo(mainArmL, { rotation: 14 }, { rotation: -14, duration: STEP, repeat: nrep(armEnd, STEP) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+      // chewing: the head nods and the mouth munches, in two runs around the big bite (harder after it)
+      var BITE = T.using, SHRUG = T.yelp + 0.22;
+      function chew(t0, t1, big) {
+        var n = nrep(t1 - t0, 0.21);
+        tl.fromTo(head, { rotation: -1.5 }, { rotation: big ? 3.5 : 2, duration: 0.21, repeat: n - 1, yoyo: true, ease: "sine.inOut" }, t0);
+        tl.fromTo(mouthEl, { scaleY: 0.2, scaleX: 0.85 }, { scaleY: big ? 2.2 : 1.5, scaleX: 1.05, duration: 0.21, repeat: n - 1, yoyo: true, ease: "sine.inOut" }, t0);
+      }
+      chew(0, BITE - 0.02); chew(BITE + 0.42, T.yelp - 0.02, true);
+      // ground and body bob, every frame (the bob stops while the camera dives through the chest light)
+      var scroll = q("scroll"), scroll2 = q("scroll2"), bob = q("bob");
+
+      // ── S0: "less": the tag drops onto his shoulder and swings (boing) ───────────────────────────
+      var tagG = q("tag"), tagSwing = tagG.querySelector(".tag-swing");
+      pivot(tagSwing, "0 0");
+      tl.fromTo(tagG, { y: -(TAGAT[1] + 300) / L.TS }, { y: 0, duration: 0.24, ease: "power2.in" }, T.less - 0.24);
+      // the string it was lowered on snaps away once it lands
+      tl.fromTo(q("tagline"), { opacity: 1, y: 0 }, { opacity: 0, y: -120, duration: 0.18, ease: "power2.in", immediateRender: false }, T.less + 0.06);
+      tl.to(tagG, { y: -9, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, T.less);
+      [[-26, 0.16], [18, 0.2], [-11, 0.2], [6, 0.2], [-3, 0.2]].reduce(function (t, s) { tl.to(tagSwing, { rotation: s[0], duration: s[1], ease: "sine.inOut" }, t); return t + s[1]; }, T.less);
+      tl.to(tagSwing, { rotation: 4, duration: STEP, repeat: nrep(T.dive - T.less - 1.0, STEP) - 1, yoyo: true, ease: "sine.inOut" }, T.less + 0.96);
+      tl.fromTo(tagSwing, { rotation: -3 }, { rotation: 4, duration: STEP, repeat: nrep(D - T.walk, STEP) - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, T.walk);
+
+      // ── "thirty-seven": the dive through his chest light (whoosh) ─────────────────────────────────
+      var street = q("street"), streetIn = q("street-in"), cellsDiv = q("cells"), organsDiv = q("organs");
+      var o0 = R1(C0[0]) + "px " + R1(C0[1]) + "px";
+      tl.fromTo(street, { scale: 1, transformOrigin: o0 }, { scale: 9, transformOrigin: o0, duration: 0.62, ease: "power2.in" }, T.dive);
+      tl.set(street, { opacity: 0 }, T.dive + 0.64);
+      tl.fromTo(cellsDiv, { opacity: 0 }, { opacity: 1, duration: 0.01 }, T.dive);
+      pivot(q("cdive"), C0);
+      tl.fromTo(q("cdive"), { scale: 0.35 }, { scale: 1, duration: 0.62, ease: "power2.in" }, T.dive);
+      tl.fromTo(q("port-c"), { attr: { r: R0 } }, { attr: { r: 2800 }, duration: 0.62, ease: "power3.in" }, T.dive);
+      tl.fromTo(q("cworld"), { scale: 1 }, { scale: 1.07, svgOrigin: W / 2 + " " + H / 2, duration: T.organs - T.dive - 0.6, ease: "none" }, T.dive + 0.6);
+      tl.fromTo(q("band"), { y: -(L.band[1] + 40) }, { y: 0, duration: 0.3, ease: "back.out(1.6)" }, T.dive + 0.3);
+      // the label types on (each character's two tspans)
+      var shadowCh = q("lab").querySelectorAll("text")[0].querySelectorAll(".lab-ch"), mainCh = q("lab").querySelectorAll("text")[1].querySelectorAll(".lab-ch");
+      typeAt.forEach(function (t, i) {
+        tl.set([shadowCh[i], mainCh[i]], { attr: { "fill-opacity": 1, "stroke-opacity": 1 } }, t);
+      });
+      var FIT = T.cellsEnd + 0.12, labG = q("lab");
+      var fs = lb.fit / lb.len, txF = W / 2 - (lb.x0 + lb.len / 2) * fs, tyF = bandMid - fs * (lb.base - lb.size * 0.36);
+
+      // ── S1 cells: alive (breathing), then the lights go red one by one, faster and faster ─────────
+      var cellEls = q("cworld").querySelectorAll(".cell");
+      Array.prototype.forEach.call(cellEls, function (el, i) {
+        var r = KIT.rng(300 + i), per = 1 + r() * 0.7;
+        pivot(el, "0 0");
+        tl.fromTo(el, { scale: 0.98 }, { scale: 1.03, duration: per, repeat: nrep(T.organs - T.dive + 0.8, per) - 1, yoyo: true, ease: "sine.inOut" }, T.dive - 0.1 + r() * 0.4);
+      });
+      var lights = Array.prototype.slice.call(q("cworld").querySelectorAll(".clight"));
+      var order = lights.map(function (el, i) { return i; }), sr = KIT.rng(7000);
+      for (var oi = order.length - 1; oi > 0; oi--) { var oj = Math.floor(sr() * (oi + 1)), tmpo = order[oi]; order[oi] = order[oj]; order[oj] = tmpo; }
+      // the five that pop with a sound go first, and are near the middle of the frame, where the eye is
+      var central = function (li) {
+        var c = cells[+lights[li].closest(".cell").getAttribute("data-i")], x = c.x + 0.36 * hr, y = c.y + 0.3 * hr;
+        return x > W * 0.2 && x < W * 0.78 && y > L.band[1] + 60 && y < (V ? 1380 : 860);
+      };
+      var firstFive = order.filter(central).slice(0, 5);
+      order = firstFive.concat(order.filter(function (li) { return firstFive.indexOf(li) < 0; }));
+      var popAt = [0, 0.2, 0.36, 0.5, 0.62].map(function (o) { return T.thou + o; }), gap = 0.11, tNext = popAt[4];
+      order.forEach(function (li, n) {
+        var t;
+        if (n < 5) t = popAt[n];
+        else { tNext += gap; gap = Math.max(0.022, gap * 0.87); t = tNext; }
+        var el = lights[li], red = el.querySelector(".clight-red"), tagEl = el.parentNode.nextSibling ? el.parentNode.nextSibling.querySelector(".ctag") : null;
+        pivot(el, "0 0");
+        tl.set(red, { opacity: 1 }, t);
+        tl.fromTo(el, { scale: 1 }, { scale: 1.7, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, t);
+        if (tagEl) {
+          pivot(tagEl, "0 0");
+          tl.fromTo(tagEl, { scale: 0 }, { scale: 1, duration: 0.16, ease: "back.out(2.4)" }, t + 0.03);
+          var sw = tagEl.querySelector(".tag-swing");
+          pivot(sw, "0 0");
+          tl.fromTo(sw, { rotation: -30 }, { rotation: 0, duration: 0.5, ease: "elastic.out(1,0.4)", immediateRender: false }, t + 0.03);
+        }
+      });
+      // "chemistry": the molecule chains tie themselves in a knot (squeak), then in a bow; a "?" on "understand,"
+      function resample(pts, n) {
+        var ls2 = [0];
+        for (var i = 1; i < pts.length; i++) ls2.push(ls2[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+        var tot = ls2[ls2.length - 1], out = [];
+        for (var j = 0; j < n; j++) {
+          var s = (tot * j) / (n - 1), m = 1;
+          while (m < ls2.length - 1 && ls2[m] < s) m++;
+          var f = (s - ls2[m - 1]) / (ls2[m] - ls2[m - 1] || 1);
+          out.push([lerp(pts[m - 1][0], pts[m][0], f), lerp(pts[m - 1][1], pts[m][1], f)]);
+        }
+        return out;
+      }
+      var KNOT = [], BOW = [];
+      for (var u = -Math.PI; u <= Math.PI + 1e-6; u += Math.PI / 60) KNOT.push([20 * u - 56 * Math.sin(u), -46 * Math.cos(u) - 4]);
+      KNOT = resample(KNOT, NM);
+      (function () {
+        var b = [[-48, 52], [-4, 4]];
+        for (var a = 0.35; a >= 0.35 - 2 * Math.PI; a -= Math.PI / 24) b.push([-38 + 36 * Math.cos(a), -10 + 27 * Math.sin(a)]);
+        for (var a2 = Math.PI - 0.35; a2 <= 3 * Math.PI - 0.35; a2 += Math.PI / 24) b.push([38 + 36 * Math.cos(a2), -10 + 27 * Math.sin(a2)]);
+        b.push([4, 4], [48, 52]);
+        BOW = resample(b, NM);
+      })();
+      var mols = Array.prototype.map.call(q("cworld").querySelectorAll(".mol"), function (g) {
+        return { bond: g.querySelector(".mol-bond"), atoms: g.querySelectorAll(".mol-atom"), knot: g.querySelector(".mol-knot") };
+      });
+      var KNOTT = T.chem, BOWT = T.chem + 0.72;
+      q("cworld").querySelectorAll(".mol-q").forEach(function (el, i) {
+        pivot(el, "0 0");
+        tl.fromTo(el, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2.4)" }, T.und + i * 0.12);
+        tl.to(el, { rotation: 12, duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, T.und + 0.25 + i * 0.12);
+      });
+
+      // ── "organs": pull back to the organs (whoosh) ───────────────────────────────────────────────
+      var hq = L.heart, oq = R1(hq[0]) + "px " + R1(hq[1]) + "px";
+      tl.to(cellsDiv, { scale: 0.12, transformOrigin: oq, duration: 0.55, ease: "power2.in" }, T.organs);
+      tl.to(cellsDiv, { opacity: 0, duration: 0.32, ease: "power1.in" }, T.organs + 0.04);
+      tl.fromTo(organsDiv, { opacity: 0, scale: 6, transformOrigin: oq }, { opacity: 1, scale: 1, transformOrigin: oq, duration: 0.6, ease: "power2.out" }, T.organs);
+      var S2END = T.walk + 0.6;
+      tl.fromTo(q("flow"), { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": -(S2END - T.organs) * 120 }, duration: S2END - T.organs, ease: "none" }, T.organs);
+      // the heart beats, the lungs breathe
+      var heartG = q("heart"), lungs = [q("lungL"), q("lungR")], liverG = q("liver"), stomachG = q("stomach");
+      pivot(heartG, "0 0"); lungs.forEach(function (g) { pivot(g, "0 0"); });
+      tl.fromTo(heartG, { scale: 1 }, { scale: 1.07, duration: 0.11, repeat: nrep(S2END - T.organs, 0.35) - 1, yoyo: true, repeatDelay: 0.24, ease: "power2.out" }, T.organs);
+      lungs.forEach(function (g) { tl.fromTo(g, { scale: 1 }, { scale: 1.035, duration: 1.1, repeat: nrep(S2END - T.organs, 1.1) - 1, yoyo: true, ease: "sine.inOut" }, T.organs); });
+      // a bite of the sandwich rides the esophagus down into the stomach
+      var biteG = q("bite"), biteIn = q("bitein");
+      var B0 = T.organs + 0.42, B1 = T.organs + 0.95, esoLen = [0];
+      for (var ei = 1; ei < eso.length; ei++) esoLen.push(esoLen[ei - 1] + Math.hypot(eso[ei][0] - eso[ei - 1][0], eso[ei][1] - eso[ei - 1][1]));
+      function esoAt(f) {
+        var s = f * esoLen[esoLen.length - 1];
+        for (var i = 1; i < eso.length; i++) if (esoLen[i] >= s) { var g = (s - esoLen[i - 1]) / (esoLen[i] - esoLen[i - 1]); return [lerp(eso[i - 1][0], eso[i][0], g), lerp(eso[i - 1][1], eso[i][1], g)]; }
+        return eso[eso.length - 1];
+      }
+      tl.set(biteG, { opacity: 1 }, B0); tl.set(biteG, { opacity: 0 }, B1);
+      tl.set(biteIn, { opacity: 1 }, B1);
+      pivot(biteIn, "-30 -18");
+      tl.fromTo(biteIn, { scaleY: 0.6, scaleX: 1.3 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(3)", immediateRender: false }, B1);
+      tl.fromTo(stomachG, { y: 0 }, { y: 6, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, B1);
+
+      // ── "simulate,": the laptop boots (LIVER SIMULATION 3%), shakes and smokes (whirr), then burns (fire) ──
+      var lap = q("laptop"), lapScr = q("lapscr");
+      tl.set(lapScr, { opacity: 1 }, T.sim); tl.set(lapScr, { opacity: 0.2 }, T.sim + 0.06); tl.set(lapScr, { opacity: 1 }, T.sim + 0.12);
+      tl.to(q("lap3"), { opacity: 0.45, duration: 0.12, yoyo: true, repeat: nrep(S2END - T.sim - 0.2, 0.12) - 1, ease: "steps(1)" }, T.sim + 0.2);
+      tl.fromTo(lap, { x: -1 }, { x: 1.2, duration: 0.045, repeat: nrep(T.fire - T.sim, 0.045) - 1, yoyo: true, ease: "none" }, T.sim);
+      tl.to(lap, { x: 0, duration: 0.05 }, T.fire);
+      var fireG = q("fire");
+      pivot(fireG, "0 0");
+      tl.fromTo(fireG, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.24, ease: "back.out(2.2)" }, T.fire);
+      KIT.flicker(tl, fireG, T.fire, S2END);
+      q("oworld").querySelectorAll(".puff").forEach(function (el, i) {
+        pivot(el, "0 0");
+        var t0 = T.sim + 0.12 + i * 0.17;
+        tl.fromTo(el, { y: 0, scale: 0.5, opacity: 0.95 }, { y: -170 * fk, x: (i % 2 ? 26 : -18) * fk, scale: 1.5, opacity: 0, duration: 1.0, repeat: nrep(S2END - t0, 1.0) - 1, ease: "power1.out", immediateRender: false }, t0);
+      });
+
+      // ── germs: they race the bloodstream on "pathogens"; the lead one stops in front of the cannon ──
+      var germEls = [0, 1, 2].map(function (n) { return q("germ" + n); }), germS = germEls.map(function (g, n) { return q("germ" + n + "-s"); });
+      var ARRIVE = T.evolve + 0.2, S_START = 30;
+      germS.forEach(function (g, n) {
+        pivot(g, "0 -30");
+        tl.fromTo(g, { scale: 0 }, { scale: 1, duration: 0.18, ease: "back.out(2.4)" }, T.path + n * 0.12);
+        var body = g.querySelector(".germ-body");
+        pivot(body, "0 -30");
+        tl.fromTo(body, { rotation: -10 }, { rotation: 10, duration: 0.16 + n * 0.03, repeat: nrep(S2END - T.path, 0.16 + n * 0.03) - 1, yoyo: true, ease: "sine.inOut" }, T.path);
+      });
+      // the first pill (pop), the spike, the bounce (boing)
+      var bottleG = q("bottle"), cap = bottleG.querySelector(".pill-cap"), p1 = q("pill1"), p2 = q("pill2"), spikeG = q("spike");
+      var HIT1 = T.evolve + 0.25, front = L.hit + 58 * gs - CAPTIP[0];
+      pivot(spikeG, "17 -30");
+      tl.fromTo(bottleG, { x: 0 }, { x: 16, duration: 0.05, ease: "power2.out" }, T.evolve);
+      tl.to(bottleG, { x: 0, duration: 0.3, ease: "power2.inOut" }, T.evolve + 0.05);
+      tl.set(p1, { opacity: 1 }, T.evolve);
+      tl.fromTo(p1, { x: 0, y: 0, rotation: 0 }, { x: front, y: 0, duration: HIT1 - T.evolve, ease: "none" }, T.evolve);
+      tl.fromTo(spikeG, { scaleX: 0, scaleY: 0.3 }, { scaleX: 1, scaleY: 1, duration: 0.12, ease: "back.out(3)" }, HIT1 - 0.1);
+      tl.to(p1, { x: front + 170, y: -230, rotation: 380, duration: 0.42, ease: "power2.out" }, HIT1);
+      tl.to(p1, { x: front + 290, y: H - CAPTIP[1] + 80, rotation: 760, duration: 0.55, ease: "power2.in" }, HIT1 + 0.42);
+      // the second pill, cap and all; the germ eats it (splat) and turns into the disease
+      var FIRE2 = T.treat - 0.26, mouthDX = L.hit - CAPTIP[0];
+      tl.fromTo(bottleG, { x: 0 }, { x: 20, duration: 0.05, ease: "power2.out", immediateRender: false }, FIRE2);
+      tl.to(bottleG, { x: 0, duration: 0.3, ease: "power2.inOut" }, FIRE2 + 0.05);
+      tl.set(p2, { opacity: 1 }, FIRE2);
+      tl.fromTo(p2, { x: 0, y: 0 }, { x: mouthDX, y: 6 * gs, duration: T.treat - FIRE2, ease: "none" }, FIRE2);
+      tl.fromTo(cap, { y: 0, x: 0 }, { y: (mouthDX + 24) / bs, x: -3, duration: T.treat - FIRE2 + 0.02, ease: "none" }, FIRE2 + 0.02);
+      tl.set([p2, cap], { opacity: 0 }, T.treat + 0.02);
+      var g0 = germS[0];
+      tl.to(g0, { scaleX: 1.4, scaleY: 0.7, duration: 0.06, ease: "power2.out" }, T.treat);
+      tl.to(g0, { scaleX: 2.1, scaleY: 2.1, duration: 0.18, ease: "power2.in" }, T.treat + 0.06);
+      tl.set(germEls[0], { opacity: 0 }, T.treat + 0.24);
+      var blobG = q("blob");
+      pivot(blobG, "0 0");
+      tl.set(blobG, { opacity: 1 }, T.treat + 0.22);
+      tl.fromTo(blobG, { scale: 0.45 }, { scale: 1, duration: 0.36, ease: "back.out(2.2)", immediateRender: false }, T.treat + 0.22);
+      var blobBody = blobG.querySelector(".blob-body"), blobArms = [blobG.querySelector(".blob-arm-l"), blobG.querySelector(".blob-arm-r")];
+      pivot(blobBody, "0 0");
+      blobArms.forEach(function (a, i) {
+        pivot(a, a.getAttribute("data-pivot"));
+        tl.fromTo(a, { rotation: 0 }, { rotation: i ? -7 : 7, duration: 0.25, repeat: nrep(S2END - T.treat - 0.6, 0.25) - 1, yoyo: true, ease: "sine.inOut" }, T.treat + 0.6);
+      });
+      // after "treatments.": the burp (huff): the cap shoots out and lands crooked on the cannon
+      var bcap = q("bcap"), CAPLAND = [bt[0] - 50 * bs - MOUTH[0], bt[1] - 40 * bs - MOUTH[1]];
+      tl.to(blobBody, { scaleY: 1.16, scaleX: 0.9, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, T.burp - 0.04);
+      var burpG = q("burp");
+      pivot(burpG, "0 0");
+      tl.fromTo(burpG, { opacity: 1, scale: 0.4 }, { opacity: 0, scale: 2.6, duration: 0.55, ease: "power1.out", immediateRender: false }, T.burp);
+      tl.set(bcap, { opacity: 1 }, T.burp);
+      tl.fromTo(bcap, { x: 0 }, { x: CAPLAND[0], duration: 0.55, ease: "none" }, T.burp);
+      tl.fromTo(bcap, { y: 0 }, { y: Math.min(0, CAPLAND[1]) - 190, duration: 0.27, ease: "power2.out" }, T.burp);
+      tl.to(bcap, { y: CAPLAND[1], duration: 0.28, ease: "power2.in" }, T.burp + 0.27);
+      tl.fromTo(bcap, { rotation: 0 }, { rotation: 520 - 20, duration: 0.55, ease: "none" }, T.burp);
+      tl.to(bcap, { y: CAPLAND[1] - 12, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.out" }, T.burp + 0.55);
+
+      // ── "debug": the Scientist rappels in (clank); "all": her list unrolls off the frame (slide whistle) ──
+      var sciDrop = q("sci-drop"), sciFall = q("sci-fall"), sciSpin = q("sci-spin"), sciA = q("sciA"), sciB = q("sciB");
+      tl.fromTo(sciDrop, { y: -(sciAt[1] / SS + 200) }, { y: 0, duration: 0.75, ease: "power1.in" }, T.debug - 0.75);
+      pivot(sciSpin, "0 100");
+      tl.fromTo(sciSpin, { scaleY: 1 }, { scaleY: 0.8, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.debug);
+      var clank = q("clank");
+      tl.set(clank, { opacity: 1 }, T.debug); tl.set(clank, { opacity: 0 }, T.debug + 0.3);
+      var stripR = q("stripclip-r"), roll = q("roll"), UNROLL = 0.85, ROLLY = H - STRIP0[1] + 80;
+      tl.set(roll, { opacity: 1 }, T.all);
+      tl.fromTo(stripR, { attr: { height: 0 } }, { attr: { height: Math.max(sp.len + 60, ROLLY + 20) }, duration: UNROLL, ease: "power1.in" }, T.all);
+      tl.fromTo(roll, { y: 0 }, { y: ROLLY, duration: UNROLL * (ROLLY / Math.max(sp.len + 60, ROLLY + 20)), ease: "power1.in" }, T.all);
+      // she gets to work: four taps of the wrench
+      var armWA = sciA.querySelector(".arm-l"), wrA = q("wrA");
+      pivot(armWA, RA.shoulder[0]); pivot(wrA, RA.shoulder[0]);
+      tl.fromTo([armWA, wrA], { rotation: 0 }, { rotation: -24, duration: 0.11, repeat: 7, yoyo: true, ease: "power2.in" }, T.all + UNROLL + 0.05);
+      // "once.": every light goes red at once (alarm bell); she spins round, wrench up
+      var oLights = q("oworld").querySelectorAll(".olight");
+      oLights.forEach(function (el) {
+        tl.set(el.querySelector(".olight-red"), { opacity: 1 }, T.once);
+        var ring = el.querySelector(".olight-ring");
+        pivot(ring, "0 0");
+        tl.fromTo(ring, { scale: 1, opacity: 1 }, { scale: 2.6, opacity: 0, duration: 0.4, repeat: 2, ease: "power1.out", immediateRender: false }, T.once);
+        tl.to(el.querySelector(".olight-red"), { opacity: 0.35, duration: 0.15, yoyo: true, repeat: nrep(T.walk - T.once - 1.3, 0.15) - 1, ease: "steps(1)" }, T.once + 1.25);
+      });
+      [sciA, sciB].forEach(function (g) { tl.set(g.querySelector(".chest-light"), { attr: { fill: C.war } }, T.once); });
+      pivot(sciSpin, "0 100");
+      tl.fromTo(sciSpin, { scaleX: 1 }, { scaleX: -1, duration: 0.15, ease: "power1.inOut", immediateRender: false }, T.once);
+      tl.to(sciSpin, { scaleX: 1, duration: 0.15, ease: "power1.inOut" }, T.once + 0.15);
+      tl.set(sciA, { opacity: 0 }, T.once + 0.07); tl.set(sciB, { opacity: 1 }, T.once + 0.07);
+      // "While": THUMP, his footstep (slam): the whole inside lurches and everything bounces; she falls on her back
+      var ow = q("oworld"), W0 = T.whl;
+      tl.fromTo(ow, { y: 0 }, { y: V ? 60 : 44, duration: 0.06, ease: "power2.in" }, W0);
+      tl.to(ow, { y: 0, duration: 0.6, ease: "elastic.out(1,0.35)" }, W0 + 0.06);
+      [heartG, liverG, stomachG].concat(lungs).forEach(function (g, i) {
+        tl.fromTo(g, { y: 0 }, { y: -16, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, W0 + 0.08 + i * 0.02);
+      });
+      tl.fromTo(lap, { y: 0 }, { y: -7, duration: 0.09, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, W0 + 0.08);
+      tl.fromTo(blobBody, { scaleY: 1, scaleX: 1 }, { scaleY: 0.72, scaleX: 1.14, duration: 0.07, ease: "power2.out", immediateRender: false }, W0 + 0.06);
+      tl.to(blobBody, { scaleY: 1, scaleX: 1, duration: 0.5, ease: "elastic.out(1,0.35)" }, W0 + 0.13);
+      // (she faces right, so her back is to the left: she tips over to the left, about a point above her feet)
+      pivot(sciFall, "0 78");
+      tl.fromTo(sciFall, { rotation: 0 }, { rotation: -90, duration: 0.22, ease: "power3.in" }, W0 + 0.06);
+      tl.to(sciFall, { rotation: -82, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.out" }, W0 + 0.28);
+      var CB = [CLIPB[0], CLIPB[1] - 78], CBn = [CB[1], -CB[0]], stripG = q("strip");
+      tl.fromTo(stripG, { x: 0, y: 0 }, { x: (CBn[0] - CB[0]) * SS, y: (CBn[1] - CB[1]) * SS, duration: 0.22, ease: "power3.in" }, W0 + 0.06);
+
+      // ── "walking": the camera pulls all the way out (whoosh); his walk never stopped ──────────────
+      var oz = o0;
+      // the street comes up solid at once (at 6x, his suit fills the frame) and the organs shrink into his chest
+      tl.to(organsDiv, { scale: 0.08, transformOrigin: oz, duration: 0.5, ease: "power2.in" }, T.walk);
+      tl.to(organsDiv, { opacity: 0, duration: 0.14, ease: "none" }, T.walk + 0.38);
+      tl.set(street, { opacity: 1, scale: 1 }, T.walk);
+      tl.fromTo(streetIn, { scale: 6, transformOrigin: oz }, { scale: 1, transformOrigin: oz, duration: 0.62, ease: "power2.inOut", immediateRender: false }, T.walk);
+      tl.fromTo(streetIn, { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "none", immediateRender: false }, T.walk);
+      // "using": a big bite: his near arm snaps the sandwich up to his mouth (food-directly's bite pose), his head dips
+      // into it, today's bite is gone when it comes back down, and crumbs fly
+      tl.set(armR, { opacity: 0 }, BITE); tl.set(biteArm, { opacity: 1 }, BITE);
+      tl.set(sand, { x: BITEAT[0] - HOLD[0], y: BITEAT[1] - HOLD[1] }, BITE);
+      tl.to(head, { rotation: 7, duration: 0.08, ease: "power2.in" }, BITE + 0.04);
+      tl.to(head, { rotation: 0, duration: 0.12, ease: "power1.out" }, BITE + 0.22);
+      tl.set(q("sand1"), { opacity: 0 }, BITE + 0.12); tl.set(q("sand2"), { opacity: 1 }, BITE + 0.12);
+      tl.set(armR, { opacity: 1 }, BITE + 0.3); tl.set(biteArm, { opacity: 0 }, BITE + 0.3);
+      tl.set(sand, { x: 0, y: 0 }, BITE + 0.3);
+      Array.prototype.forEach.call(q("bob").querySelectorAll(".crumb"), function (el, i) {
+        tl.set(el, { opacity: 1 }, BITE + 0.12);
+        tl.fromTo(el, { x: 0, y: 0 }, { x: 5 + i * 3, y: 26 + (i % 3) * 9, duration: 0.45, ease: "power1.in" }, BITE + 0.12);
+        tl.set(el, { opacity: 0 }, BITE + 0.57);
+      });
+      // after "itself.": a tiny yelp from his chest (its light blinks red), a pat on the chest, a shrug, and he eats on
+      var yelpG = q("yelp");
+      pivot(yelpG, "0 0");
+      tl.fromTo(yelpG, { opacity: 0, scale: 0.15 }, { opacity: 1, scale: 0.72, duration: 0.1, ease: "back.out(3)" }, T.yelp);
+      tl.to(yelpG, { opacity: 0, duration: 0.14 }, T.yelp + 0.36);
+      tl.set(chestLight, { attr: { fill: C.war } }, T.yelp); tl.set(chestLight, { attr: { fill: OFF } }, T.yelp + 0.42);
+      tl.set(mainArmL, { opacity: 0 }, T.yelp + 0.04); tl.set(altArms[0], { opacity: 1 }, T.yelp + 0.04);
+      tl.fromTo(altArms[0], { rotation: 0 }, { rotation: -9, duration: 0.04, yoyo: true, repeat: 3, ease: "power1.inOut" }, T.yelp + 0.05);
+      tl.set(altArms[0], { opacity: 0 }, SHRUG); tl.set(altArms[1], { opacity: 1 }, SHRUG);
+      tl.fromTo(head, { rotation: 0 }, { rotation: -9, duration: 0.1, ease: "power2.out", immediateRender: false }, SHRUG);
+      tl.to(head, { rotation: 0, duration: 0.1, ease: "power2.inOut" }, SHRUG + 0.16);
+      // and he eats on: one more munch to the end
+      tl.fromTo(mouthEl, { scaleY: 0.2 }, { scaleY: 1.6, duration: 0.1, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, Math.min(SHRUG + 0.08, D - 0.2));
+
+      // ── Every frame: the street scrolls and he bobs; the label scrolls and fits; the molecules; the germs ──
+      var KN = mols.length ? 1 : 0;
+      KIT.onTime(tl, D, function (t) {
+        // street
+        var sx = -((L.v * t) % L.PER);
+        scroll.setAttribute("transform", "translate(" + R1(sx) + ",0)");
+        scroll2.setAttribute("transform", "translate(" + R1(sx) + ",0)");
+        var damp = 1 - smooth((t - (T.dive - 0.35)) / 0.3) + smooth((t - T.walk) / 0.3);
+        bob.setAttribute("transform", "translate(0," + R1(-Math.abs(Math.sin((Math.PI * t) / STEP)) * 3.4 * L.S * clamp(damp)) + ")");
+        // label: types on off the right edge, then shrinks to fit the ribbon
+        var kf = clamp((t - FIT) / 0.42);
+        var e = kf < 1 ? 1 + 2.2 * Math.pow(kf - 1, 3) + 1.2 * Math.pow(kf - 1, 2) : 1;
+        if (kf === 0) e = 0;
+        labG.setAttribute("transform", "translate(" + R1(lerp(0, txF, e)) + "," + R1(lerp(0, tyF, e)) + ") scale(" + (Math.round(lerp(1, fs, e) * 1000) / 1000) + ")");
+        // molecules: a wobbling chain, then a knot, then a bow
+        if (t > T.dive - 0.2 && t < T.organs + 0.6) {
+          var k1 = smooth((t - KNOTT) / 0.4), k2 = smooth((t - BOWT) / 0.5);
+          mols.forEach(function (m, mi) {
+            var pts = [];
+            for (var i = 0; i < NM; i++) {
+              var wx = -66 + (132 * i) / (NM - 1), wy = 13 * Math.sin(i * 0.85 + t * 5 + mi * 2);
+              var x = lerp(lerp(wx, KNOT[i][0], k1), BOW[i][0], k2), y = lerp(lerp(wy, KNOT[i][1], k1), BOW[i][1], k2);
+              var jig = (1 - k1) * 0 + k2 * Math.sin(t * 9 + i) * 0.8;
+              pts.push([x, y + jig]);
+            }
+            m.bond.setAttribute("points", pts.map(P).join(" "));
+            Array.prototype.forEach.call(m.atoms, function (a, i) { a.setAttribute("cx", R1(pts[i][0])); a.setAttribute("cy", R1(pts[i][1])); });
+            m.knot.setAttribute("r", R1(13 * k2));
+            m.knot.setAttribute("cx", "0"); m.knot.setAttribute("cy", "2");
+          });
+        }
+        // the bite on its way down
+        if (t >= B0 && t < B1) { var bp = esoAt(smooth((t - B0) / (B1 - B0))); biteG.setAttribute("transform", "translate(" + P(bp) + ") rotate(" + R1((t - B0) * 300) + ")"); }
+        // germs: race (pathogens), the lead one stops before the cannon, the others bunch up behind it, then hop
+        // onto the disease's shoulders like henchmen
+        if (t >= T.path - 0.05 && t < S2END) {
+          var pr = clamp((t - T.path) / (ARRIVE - T.path)), sL = lerp(S_START, S_HIT, 1 - (1 - pr) * (1 - pr));
+          if (t > HIT1) sL -= 26 * Math.exp(-7 * (t - HIT1)) * Math.sin(Math.min(Math.PI, (t - HIT1) * 14));
+          germEls.forEach(function (g, n) {
+            var s = n === 0 ? sL : Math.min(sL - 120 * n, S_HIT - 78 * n * gs) + (t > ARRIVE ? 0 : 0), p = loopAt(s), base = [p[0], p[1] + 30 * gs];
+            var hop0 = T.treat + 0.5 + n * 0.08;
+            if (n > 0 && t > hop0) {
+              var perch = [BLOBAT[0] + (n === 1 ? -52 : 54) * BB, BLOBAT[1] - (n === 1 ? 128 : 124) * BB], hk = clamp((t - hop0) / 0.36);
+              var from = loopAt(S_HIT - 78 * n * gs);
+              base = [lerp(from[0], perch[0], hk), lerp(from[1] + 30 * gs, perch[1], hk) - Math.sin(hk * Math.PI) * 120];
+              if (hk === 1) base[1] -= Math.abs(Math.sin((t - hop0) * 7 + n)) * 6;
+            } else if (t > ARRIVE && n === 0) base[1] -= Math.abs(Math.sin(t * 6)) * 5;
+            if (t > W0 + 0.06 && t < W0 + 0.5) base[1] -= Math.sin(clamp((t - W0 - 0.06) / 0.44) * Math.PI) * 26;
+            g.setAttribute("transform", "translate(" + P(base) + ")");
+          });
+        }
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

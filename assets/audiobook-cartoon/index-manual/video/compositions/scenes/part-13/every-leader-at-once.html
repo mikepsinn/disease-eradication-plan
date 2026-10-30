@@ -1,0 +1,459 @@
+<template id="every-leader-at-once-template">
+  <!-- every-leader-at-once · Layer B (storyboards/part-13-one-percent-treaty.md): the scene slides in on the bare engraved
+       Earth. "crazy.": a carved cuckoo-clock bird springs out of a hole in the North Pole on its spring, cuckoos twice and
+       springs back in. "But": YOU (the busy human in the bowler) walks in at the globe's foot with eight plain papers on
+       leashes, trotting like small dogs (the squeaks on "papers"); "persuade": he lets go and they scatter round the
+       globe, one to each country, and the color-flip funnel ("1%") and the lab, with the scientist, rise out of the floor.
+       "every", "country", "Earth": a leader (the politician in a plain sash, on a tall stack of war papers) pops up out of
+       each country and catches his plain paper; a beat after "Earth" (ka-ching) he pockets it: dollar eyes, $ signs.
+       "simultaneously": every leader lifts the top war paper off his stack at the same moment while YOU conducts; the one
+       at the back (L2, under the globe) is 0.45 s late and the others glare at him. "redirect": the papers fly in arcs into
+       the funnel; "percent": the lever pulls, they drop, and the red missile seal in its window flips to the teal cross.
+       "clinical trials.": medicine papers march out of the spout and dive into the lab's flask while the scientist waves
+       them in; the round flask boils over. "That's it.": the leaders dust off their hands, each stack a paper shorter.
+       "That's" (second): THE 1% TREATY snaps down over the globe like a window blind (one line of print, then empty paper);
+       "treaty.": its bottom roll keeps going, bonks L2 on the head, and stars circle it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #every-leader-at-once-cam, #every-leader-at-once-bg, #every-leader-at-once-art, #every-leader-at-once-pip, #every-leader-at-once-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="every-leader-at-once" data-width="1920" data-height="1080" data-start="0" data-duration="12.44">
+    <div id="every-leader-at-once-cam">
+      <div id="every-leader-at-once-bg"></div>
+      <div id="every-leader-at-once-art"></div>
+      <div id="every-leader-at-once-pip"></div>
+    </div>
+    <div id="every-leader-at-once-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "every-leader-at-once";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+      var f1 = function (n) { return String(Math.round(n * 10) / 10); };
+      var g = function (id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; };
+      var at = function (x, y, inner, s, rot) {
+        return '<g transform="translate(' + f1(x) + "," + f1(y) + ")" + (rot ? " rotate(" + f1(rot) + ")" : "") + (s && s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>";
+      };
+      var el = function (id) { return document.getElementById(P + id); };
+      var rotPt = function (p, deg) { var r = (deg * Math.PI) / 180, c = Math.cos(r), s = Math.sin(r); return [p[0] * c - p[1] * s, p[0] * s + p[1] * c]; };
+
+      // ── The cuckoo (the "crazy" running gag; copied to next-page.html) ──
+      // A carved wooden cuckoo-clock bird, about 46 wide, on a navy zigzag spring of 4 turns, 60 long, drawn around the
+      // spring's base at (0,0) pointing up; the bird faces +x. A tan body with a rust wing and tail, an orange open beak,
+      // one almond eye with a heavy lid, thin navy outlines with miter corners, carved grooves.
+      // Parts (untransformed groups; pivots in data-ox/data-oy): .cuckoo (everything; pop it out with scaleY 0 -> 1,
+      // back.out, about (0,0)), .cuckoo-bird (the bird on its perch, (0,-60): bob it), .cuckoo-jaw (the lower beak, its
+      // hinge (21,-79): rotation 0 -> 30 opens it; twice for "cuckoo"), .eye with .pupil.
+      function cuckoo() {
+        var pt = function (p) { return p[0] + "," + p[1]; };
+        var poly = function (pts, fill, w) {
+          return '<path d="M' + pts.map(pt).join(" L") + ' Z" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + (w || 2.4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/>';
+        };
+        var zig = [[0, 0]];
+        for (var i = 1; i < 8; i++) zig.push([i % 2 ? -7 : 7, -7.5 * i]);
+        zig.push([0, -60]);
+        var spring = '<g class="cuckoo-spring"><path d="M' + zig.map(pt).join(" L") + '" fill="none" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="miter" stroke-miterlimit="8"/>' +
+          '<path d="M' + zig.map(pt).join(" L") + '" fill="none" stroke="' + C.peri + '" stroke-width="1.2" stroke-linejoin="miter" stroke-miterlimit="8"/></g>';
+        var bird =
+          poly([[-6, -63], [6, -63], [6, -58], [-6, -58]], C.rust, 2) +
+          poly([[-13, -72], [-24, -84], [-22, -69], [-12, -63]], C.rust) +
+          poly([[-15, -71], [-5, -79], [6, -81], [10, -88], [16, -91], [21, -88], [23, -81], [20, -73], [13, -65], [-2, -61], [-12, -63]], C.tan) +
+          '<path d="M-8,-66 L4,-64 M-11,-69 L-3,-72 M14,-74 L19,-77" fill="none" stroke="' + ink + '" stroke-width="1.3" opacity="0.6"/>' +
+          poly([[-9, -70], [2, -77], [9, -72], [4, -66], [-6, -65]], C.rust, 2.2) +
+          '<path d="M-5,-68 L4,-73 M-2,-66 L6,-70" fill="none" stroke="' + C.orange + '" stroke-width="1.2"/>' +
+          poly([[21, -85], [31, -83], [21.5, -79.5]], C.orange, 2) +
+          '<g class="cuckoo-jaw" data-ox="21" data-oy="-79">' + poly([[21.5, -79], [30, -78], [20.5, -75.5]], C.orange, 2) + "</g>" +
+          '<g class="eye"><path d="M12.5,-84.5 Q16,-88 19.5,-85 Q16,-82 12.5,-84.5 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="1.2"/>' +
+          '<circle class="pupil" cx="16.6" cy="-84.8" r="1.5" fill="' + ink + '"/>' +
+          '<path d="M11.8,-84.2 Q16,-89.6 20.3,-85.4" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round"/></g>';
+        return '<g class="cuckoo" data-ox="0" data-oy="0">' + spring + '<g class="cuckoo-bird" data-ox="0" data-oy="-60">' + bird + "</g></g>";
+      }
+
+      // ── Layout, per canvas shape ──
+      // gc, r: the globe's center and radius. ST: each radial stack's height; LS: the leaders' scale. floor: the ground
+      // line under the globe (YOU, L2's stack, the funnel and the lab stand on it). fun / lab / sci: x and scale of the
+      // color-flip funnel, the lab and the scientist on the floor. you: where YOU stops. scr: the treaty scroll's size.
+      // ck: the cuckoo's size.
+      var L = V
+        ? { gc: [560, 830], r: 150, ST: 120, LS: 0.9, floor: 1420, fun: [825, 0.95], lab: [332, 0.68], sci: [188, 0.62, "right"], you: 92, scr: 2.34, ck: 2.0, floorX: [56, 1024] }
+        : { gc: [490, 455], r: 140, ST: 90, LS: 0.8, floor: 870, fun: [1090, 1.55], lab: [1385, 1.05], sci: [1560, 0.82, "left"], you: 215, scr: 2.22, ck: 1.9, floorX: [70, 1590] };
+      var LS = L.LS, RT = L.r + L.ST, G = L.gc, FL = L.floor;
+      var PS = 0.7; // the papers' scale in person units (so 0.5 on screen next to a leader)
+      var REST = [[12, 4], [-12, -4]];
+
+      // The leaders: L0..L3 from the part notes (tone and plain sash), plus four more with the sash colors swapped. Seven
+      // stand on the globe at angle th (degrees clockwise from the North Pole); L2, the late one at the back, stands on
+      // the floor under the globe. wave: which pop sound brings him up (0 "every", 1 "country", 2 "Earth").
+      var LEADERS = [
+        { k: "e1", tone: 0, sash: C.peri, th: -112.5, wave: 1 },
+        { k: "l1", tone: 1, sash: C.yellow, th: -75, wave: 0 },
+        { k: "e2", tone: 1, sash: C.tan, th: -37.5, wave: 1 },
+        { k: "l0", tone: 0, sash: C.orange, th: 0, wave: 0 },
+        { k: "e3", tone: 2, sash: C.orange, th: 37.5, wave: 1 },
+        { k: "l3", tone: 3, sash: C.tan, th: 75, wave: 0 },
+        { k: "e4", tone: 3, sash: C.yellow, th: 112.5, wave: 2 },
+        { k: "l2", tone: 2, sash: C.peri, ground: true, wave: 2 },
+      ];
+      var BODY_H = 200 * LS; // feet to the top of the hair, on screen
+      var l2Feet = G[1] + L.r + 48 + BODY_H;
+      var rnd = KIT.rng(1301);
+
+      // Person units -> canvas, for leader i (feet at (0,100) in person units).
+      function toWorld(Ld, p) {
+        if (Ld.ground) return [G[0] + p[0] * LS, l2Feet + (p[1] - 100) * LS];
+        var v = rotPt([p[0] * LS, (p[1] - 100) * LS - RT], Ld.th);
+        return [G[0] + v[0], G[1] + v[1]];
+      }
+      function polO(Ld, extra) { return KIT.castOpts("politician", Object.assign({ tone: Ld.tone, flagPin: false, arms: REST }, extra || {})); }
+      // A plain diagonal sash, over the jacket and under the arms (no emblem): left shoulder to right hip.
+      function withSash(o, col) {
+        var R = KIT.rig(o), T = R.shoulder[1][1] - 3, w = R.shoulder[1][0] * 33 / 27, Wy = R.hipY - 8;
+        var a = [-w * 0.66, T + 1], b = [13, Wy + 4], dx = b[0] - a[0], dy = b[1] - a[1], n = Math.hypot(dx, dy), nx = (-dy / n) * 5.5, ny = (dx / n) * 5.5;
+        var pts = [[a[0] + nx, a[1] + ny], [b[0] + nx, b[1] + ny], [b[0] - nx, b[1] - ny], [a[0] - nx, a[1] - ny]];
+        var band = '<path d="M' + pts.map(function (p) { return f1(p[0]) + "," + f1(p[1]); }).join(" L") + ' Z" fill="' + col + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/>' +
+          '<path d="M' + f1(a[0] + nx * 0.45) + "," + f1(a[1] + ny * 0.45) + " L" + f1(b[0] + nx * 0.45) + "," + f1(b[1] + ny * 0.45) + '" stroke="' + C.cream + '" stroke-width="1.1" opacity="0.7"/>';
+        return KIT.person(o).replace('<g class="arm-l">', band + '<g class="arm-l">');
+      }
+      // A stack of flat bills seen edge on, from y0 (its base) up by h, w wide, in the current frame.
+      function stack(y0, h, w) {
+        var out = "", n = Math.round(h / 9);
+        for (var i = 0; i < n; i++) {
+          var y = y0 - (i + 1) * (h / n), j = Math.round((rnd() - 0.5) * 7), wj = Math.round((rnd() - 0.5) * 6);
+          out += '<rect x="' + f1(-w / 2 + j) + '" y="' + f1(y) + '" width="' + (w + wj) + '" height="' + f1(h / n) + '" rx="1.5" fill="' + C.money + '" stroke="' + ink + '" stroke-width="1.8"/>' +
+            '<path d="M' + f1(-w / 2 + j + 6) + "," + f1(y + 3) + " H" + f1(w / 2 + j + wj - 6) + '" stroke="#D4E4C6" stroke-width="1.2" opacity="0.7"/>' +
+            (i % 3 === 1 ? '<circle cx="' + f1(w / 2 + j + wj - 9) + '" cy="' + f1(y + h / n / 2) + '" r="2.6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1"/>' : "");
+        }
+        return out + '<rect x="' + f1(-w / 2 - 4) + '" y="' + f1(y0 - h) + '" width="' + f1(w + 8) + '" height="' + f1(h) + '" fill="url(#' + P + 'hatch)" opacity="0.12"/>';
+      }
+      var bill = function (kind, legs) { return KIT.money(kind, legs); };
+      // Two leg drawings for a walking bill (swapped by the onTime below).
+      var walker = function (kind, cls) { return '<g class="' + P + cls + '-a">' + bill(kind, 0.05) + '</g><g class="' + P + cls + '-b" opacity="0">' + bill(kind, 0.95) + "</g>"; };
+
+      // ── The leaders ──
+      var RIG = KIT.rig(polO(LEADERS[0])), SH_R = RIG.shoulder[1], SH_L = RIG.shoulder[0], HAND_R = RIG.hand[1], HAND_L = RIG.hand[0];
+      var HELD = [HAND_R[0], HAND_R[1] + 10];                       // the held war paper's center, arm down
+      var UP = [2 * SH_R[0] - HELD[0], 2 * SH_R[1] - HELD[1]];        // ... after the arm turns 180 degrees about the shoulder
+      var WAR_AT = [52, 100 - 48 * PS];                               // the top war paper, standing on the stack beside his feet
+      var leadersSvg = "", l2Svg = "";
+      LEADERS.forEach(function (Ld, i) {
+        var moods = Ld.k === "l2" ? ["grin", "greedy", "worried", "flat"] : ["grin", "greedy", "cross", "smug"];
+        var look = Ld.ground ? null : Ld.th < 0 ? "left" : "right";
+        var persons = moods.map(function (m, j) {
+          var o = polO(Ld, { mood: m, look: j === 2 && !Ld.ground ? look : undefined });
+          return '<g class="' + P + "mood-" + i + '" data-m="' + m + '"' + (j ? ' opacity="0"' : "") + ">" + withSash(o, Ld.sash) + "</g>";
+        }).join("");
+        var dollars = g("cash-" + i, ['<text x="-26" y="-118" font-family="Fraunces" font-weight="900" font-size="40" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2.4" paint-order="stroke">$</text>',
+          '<text x="8" y="-128" font-family="Fraunces" font-weight="900" font-size="32" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2.2" paint-order="stroke">$</text>'].join(""), 'opacity="0"');
+        var inner =
+          at(WAR_AT[0], WAR_AT[1], g("wa-" + i, at(0, 0, bill("war", 0.5), PS))) +
+          persons +
+          at(HAND_L[0], HAND_L[1] + 10, g("pl-" + i, at(0, 0, bill("plain", 0.5), PS), 'opacity="0"')) +
+          g("wb-rot-" + i, at(HELD[0], HELD[1], g("wb-spin-" + i, at(0, 0, bill("war", 0.5), PS))), 'opacity="0"') +
+          dollars + (Ld.k === "l2" ? g("stars", "") : "");
+        var person = at(0, 0, at(0, -100, g("lead-" + i, inner)), LS);
+        if (Ld.ground) {
+          l2Svg = '<g transform="translate(' + G[0] + ',0)">' + g("rise-" + i, stack(FL, FL - l2Feet, 120 * LS) + at(0, l2Feet, person)) + "</g>";
+        } else {
+          leadersSvg += at(G[0], G[1], g("rise-" + i, stack(-L.r, L.ST, 120 * LS) + at(0, -RT, person)), 1, Ld.th);
+        }
+      });
+
+      // ── The globe, the cuckoo's hole, the cuckoo ──
+      var NP = [G[0], G[1] - L.r];
+      var globe = at(G[0], G[1] + L.r, KIT.props.earthGlobe({ r: L.r }));
+      var hole = at(NP[0], NP[1] + 2, g("hole", '<ellipse cx="0" cy="0" rx="17" ry="6" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/><ellipse cx="0" cy="0.5" rx="11" ry="3.6" fill="' + C.deep + '"/>'));
+      var bird = at(NP[0], NP[1] + 1, cuckoo(), L.ck);
+
+      // ── The floor, the funnel, the lab and the scientist (they rise out of the floor) ──
+      var floorSvg = '<path d="M' + L.floorX[0] + "," + FL + " H" + L.floorX[1] + '" stroke="' + ink + '" stroke-width="5"/>' +
+        [0.06, 0.2, 0.5, 0.74, 0.9].map(function (fx) {
+          var x = L.floorX[0] + fx * (L.floorX[1] - L.floorX[0]);
+          return '<path d="M' + f1(x) + "," + FL + " l-6,-13 M" + f1(x + 6) + "," + FL + " l2,-17 M" + f1(x + 12) + "," + FL + ' l8,-11" stroke="' + ink + '" stroke-width="3" stroke-linecap="round"/>';
+        }).join("");
+      var FX = L.fun[0], FK = L.fun[1], LX = L.lab[0], LK = L.lab[1];
+      var SCI_O = KIT.castOpts("scientist", { look: L.sci[2] }), SCI_R = KIT.rig(SCI_O);
+      var flipCard = at(-34, -129, g("flip-war", KIT.moneySeal("war", 0, 0, 14)) + g("flip-med", KIT.moneySeal("med", 0, 0, 14), 'opacity="0"'));
+      var funnel = at(FX, FL, g("fun-shake", KIT.props.colorFlipFunnel({ label: "1%", inN: 5, outN: 0 }) + flipCard), FK);
+      // the round flask's boil-over: a puff and three drops of orange, over the flask at (52,-234) in lab units
+      var boil = g("boil", '<circle cx="52" cy="-246" r="17" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/><circle cx="38" cy="-238" r="11" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>' +
+        '<circle cx="66" cy="-240" r="12" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/><circle cx="48" cy="-250" r="6" fill="' + C.orange + '"/>' +
+        [[30, -262], [74, -266], [56, -276]].map(function (d) { return '<path d="M' + d[0] + "," + d[1] + ' q-4,7 0,10 q4,-3 0,-10 Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="1.6"/>'; }).join(""), 'opacity="0"');
+      var lab = at(LX, FL, g("lab", KIT.props.lab() + boil), LK);
+      var sci = at(L.sci[0], FL, at(0, -100, g("sci", KIT.person(SCI_O)), 1), L.sci[1]);
+      var setClip = '<defs><clipPath id="' + P + 'above"><rect x="0" y="0" width="' + W + '" height="' + (FL + 2) + '"/></clipPath></defs>';
+      var set = setClip + '<g clip-path="url(#' + P + 'above)">' + g("set-fun", funnel) + g("set-lab", lab + sci) + "</g>";
+
+      // ── YOU and the pack of plain papers on leashes ──
+      var YOU = { tone: 2, outfit: "suit", hat: "bowler" };
+      var youO = function (extra) { return Object.assign({}, YOU, extra); };
+      var YOU_WALK = youO({ look: "right", mood: "eager", arms: [[12, 4], [70, 96]] }), YOU_GO = youO({ look: "right", mood: "grin", arms: [[-150, -172], [150, 172]] }), YOU_REST = youO({ look: "right", mood: "smug", arms: REST });
+      var YR = KIT.rig(YOU_WALK), YOU_H = YR.hand[1];
+      var youSvg = at(0, FL, at(0, -100, g("you-walk", KIT.person(YOU_WALK)) + g("you-go", KIT.person(YOU_GO), 'opacity="0"') + g("you-rest", KIT.person(YOU_REST), 'opacity="0"')), LS);
+      var handW = [YOU_H[0] * LS, FL + (YOU_H[1] - 100) * LS];
+      var PSW = PS * LS, paperFeet = 48 * PSW;
+      // the papers: two rows trotting ahead of him (pack units: YOU stands at x 0)
+      var PACK = [];
+      for (var pi = 0; pi < 8; pi++) PACK.push([(80 + (pi >> 1) * 62 + (pi % 2) * 26) * LS / 0.8, FL - paperFeet - (pi % 2) * 4]);
+      var leashes = "", packPapers = "";
+      PACK.forEach(function (p, i) {
+        leashes += '<path d="M' + f1(handW[0]) + "," + f1(handW[1]) + " Q" + f1((handW[0] + p[0]) / 2) + "," + f1(Math.max(handW[1], p[1] - 10) + 22) + " " + f1(p[0] - 30 * PSW) + "," + f1(p[1] - 12 * PSW) +
+          '" fill="none" stroke="' + ink + '" stroke-width="2.2"/>';
+        packPapers += at(p[0], p[1], g("pp-" + i, at(0, 0, walker("plain", "ppl-" + i), PSW)));
+      });
+      var pack = g("pack", g("leash", leashes) + youSvg + packPapers);
+
+      // ── Flying war papers, marching medicine papers, the treaty scroll ──
+      var flyers = "";
+      LEADERS.forEach(function (Ld, i) {
+        var s = toWorld(Ld, UP);
+        flyers += at(s[0], s[1], g("fly-" + i, g("fly-spin-" + i, at(0, 0, bill("war", 0.5), PSW)), 'opacity="0"'));
+      });
+      var SPOUT = [FX, FL - 24 * FK], WK = 0.5 * FK;
+      var marchers = "";
+      for (var mi = 0; mi < 8; mi++) marchers += at(SPOUT[0], SPOUT[1], g("mk-" + mi, at(0, 0, walker("med", "mkl-" + mi), WK), 'opacity="0"'));
+      var SCROLL_BOTTOM = G[1] + L.r + 16;
+      var treaty = KIT.props.scroll({ text: "THE 1% TREATY", lines: ["Redirect 1% of military spending to clinical trials."], signatures: 0, wax: false });
+      var scroll = at(G[0], SCROLL_BOTTOM, g("scroll", at(0, 0, treaty, L.scr), 'opacity="0"'));
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + floorSvg + set + globe + hole + bird + leadersSvg + l2Svg + pack + flyers + marchers + scroll);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var setO = function (e, o) { gsap.set(e, { svgOrigin: o }); };
+
+      var tCrazy = cue("crazy."), tBut = cue("But"), tPapers = cue("papers"), tPers = cue("persuade");
+      var tPop = [cue("every"), cue("country"), cue("Earth")], tCash = KIT.after(ID, "Earth"), tSim = cue("simultaneously"), tRed = cue("redirect");
+      var tPct = cue("percent"), tClin = cue("clinical"), tTrials = cue("trials."), tIt1 = cue("That's"), tIt = cue("it."), tThat2 = cue("That's", 2), tTreaty = cue("treaty.");
+
+      // "crazy.": the hole opens at the North Pole, the cuckoo springs out (boing), cuckoos twice (the squeak) and
+      // springs back in.
+      var ck = q("art").querySelector(".cuckoo");
+      var hole2 = el("hole"), jaw = ck.querySelector(".cuckoo-jaw"), cbird = ck.querySelector(".cuckoo-bird");
+      setO(hole2, "0 0"); setO(ck, "0 0"); setO(jaw, "21 -79"); setO(cbird, "0 -60");
+      tl.fromTo(hole2, { scale: 0 }, { scale: 1, duration: 0.1, ease: "back.out(2)" }, tCrazy - 0.12);
+      tl.fromTo(ck, { scaleY: 0, scaleX: 0.7 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(3)" }, tCrazy);
+      tl.fromTo(jaw, { rotation: 0 }, { rotation: 32, duration: 0.07, yoyo: true, repeat: 3, ease: "power1.inOut", immediateRender: false }, tCrazy + 0.18);
+      tl.fromTo(cbird, { rotation: 0 }, { rotation: -10, duration: 0.07, yoyo: true, repeat: 3, ease: "power1.inOut", immediateRender: false }, tCrazy + 0.18);
+      tl.to(ck, { scaleY: 0, scaleX: 0.7, duration: 0.18, ease: "back.in(2)" }, tCrazy + 0.62);
+      tl.to(hole2, { scale: 0, duration: 0.1, ease: "power2.in" }, tCrazy + 0.8);
+
+      // "the leader": the funnel and the lab with its scientist rise out of the floor (after the papers have scattered).
+      var tSet = cue("leader") - 0.1;
+      tl.fromTo(el("set-fun"), { y: 560 }, { y: 0, duration: 0.45, ease: "back.out(1.4)" }, tSet);
+      tl.fromTo(el("set-lab"), { y: 460 }, { y: 0, duration: 0.45, ease: "back.out(1.4)" }, tSet + 0.16);
+
+      // "papers": YOU walks in with the pack on leashes (the squeaks); his legs swing.
+      var packEl = el("pack"), walkT0 = tBut + 0.06, walkT1 = tPers - 0.08;
+      tl.fromTo(packEl, { x: -420 }, { x: L.you, duration: walkT1 - walkT0, ease: "power1.out" }, walkT0);
+      var you = el("you-walk");
+      [[".leg-l", YR.hip[0], 16], [".leg-r", YR.hip[1], -16]].forEach(function (lg) {
+        var e = you.querySelector(lg[0]);
+        setO(e, lg[1].join(" "));
+        tl.fromTo(e, { rotation: lg[2] }, { rotation: -lg[2], duration: 0.16, repeat: Math.floor((walkT1 - walkT0) / 0.16), yoyo: true, ease: "sine.inOut" }, walkT0);
+      });
+      // "persuade": he lets go (arms up), the leashes drop, and the papers scatter round the globe (the whoosh).
+      tl.set(el("you-walk"), { opacity: 0 }, tPers);
+      tl.set(el("you-go"), { opacity: 1 }, tPers);
+      tl.to(el("leash"), { opacity: 0, y: 14, duration: 0.18, ease: "power2.in" }, tPers);
+      tl.set(el("you-go"), { opacity: 0 }, tPers + 0.55);
+      tl.set(el("you-rest"), { opacity: 1 }, tPers + 0.55);
+
+      // Each paper runs to its leader's country: the spot on the rim (or the floor under the globe for L2), standing
+      // out from the surface. RIM[i] is the paper's center there, ROT[i] its tilt.
+      var RIM = [], RUN = [];
+      LEADERS.forEach(function (Ld, i) {
+        var c = Ld.ground ? [G[0] + 40, FL - paperFeet] : (function () { var v = rotPt([0, -(L.r + paperFeet + 2)], Ld.th); return [G[0] + v[0], G[1] + v[1]]; })();
+        RIM.push(c);
+        var pp = el("pp-" + i), from = PACK[i], dx = c[0] - L.you - from[0], dy = c[1] - from[1], dur = 0.38 + Math.hypot(dx, dy) / 2600;
+        setO(pp, "0 0");
+        tl.to(pp, { x: dx, duration: dur, ease: "power1.inOut" }, tPers + 0.04 * i);
+        tl.to(pp, { y: Math.min(dy, 0) - 70, duration: dur * 0.5, ease: "power2.out" }, tPers + 0.04 * i);
+        tl.to(pp, { y: dy, duration: dur * 0.5, ease: "power2.in" }, tPers + 0.04 * i + dur * 0.5);
+        tl.to(pp, { rotation: Ld.ground ? 0 : Ld.th, duration: dur, ease: "power1.inOut" }, tPers + 0.04 * i);
+        RUN.push([tPers + 0.04 * i, tPers + 0.04 * i + dur]);
+      });
+
+      // "every", "country", "Earth": the leaders pop up out of their countries on their stacks (the pops); each one's
+      // paper hops into his left hand.
+      LEADERS.forEach(function (Ld, i) {
+        var t = tPop[Ld.wave] + (i % 3) * 0.04, rise = el("rise-" + i);
+        setO(rise, Ld.ground ? G[0] - G[0] + " " + FL : "0 " + -L.r);
+        tl.fromTo(rise, { scaleY: 0, scaleX: 0.5 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(1.8)" }, t);
+        var hw = toWorld(Ld, [HAND_L[0], HAND_L[1] + 10]), pp = el("pp-" + i);
+        tl.to(pp, { x: hw[0] - L.you - PACK[i][0], y: hw[1] - PACK[i][1], duration: 0.22, ease: "power2.out" }, t + 0.12);
+        tl.set(pp, { opacity: 0 }, t + 0.34);
+        tl.set(el("pl-" + i), { opacity: 1 }, t + 0.34);
+      });
+      // a beat after "Earth" (ka-ching): every leader pockets his paper, his eyes turn to dollars, and $ signs pop up.
+      var moods = function (i) { return document.querySelectorAll("." + P + "mood-" + i); };
+      var showMood = function (i, m, t) {
+        Array.prototype.forEach.call(moods(i), function (e) { tl.set(e, { opacity: e.getAttribute("data-m") === m ? 1 : 0 }, t); });
+      };
+      LEADERS.forEach(function (Ld, i) {
+        var pl = el("pl-" + i), cash = el("cash-" + i);
+        setO(pl, "0 0");
+        tl.to(pl, { x: 12, y: -40, scale: 0.2, duration: 0.14, ease: "power2.in" }, tCash - 0.06);
+        tl.set(pl, { opacity: 0 }, tCash + 0.08);
+        showMood(i, "greedy", tCash);
+        setO(cash, "0 -118");
+        tl.fromTo(cash, { opacity: 0, scale: 0.3, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: 0.16, ease: "back.out(2.5)" }, tCash);
+        tl.to(cash, { opacity: 0, y: -26, duration: 0.3, ease: "power1.in" }, tCash + 0.5);
+      });
+
+      // "simultaneously": every leader lifts his top war paper at the same moment, like a chorus line (the rising
+      // whistle): it hops into his right hand and the arm swings up overhead. L2 is 0.45 s late (the squeak); the
+      // others turn and glare at him. YOU conducts.
+      var armsR = function (i) { return Array.prototype.slice.call(document.querySelectorAll("#" + P + "lead-" + i + " .arm-r")); };
+      var armsL = function (i) { return Array.prototype.slice.call(document.querySelectorAll("#" + P + "lead-" + i + " .arm-l")); };
+      var lateI = LEADERS.length - 1, tLate = tSim + 0.45;
+      LEADERS.forEach(function (Ld, i) {
+        var t = i === lateI ? tLate : tSim, wa = el("wa-" + i), wbRot = el("wb-rot-" + i), wbSpin = el("wb-spin-" + i), ar = armsR(i);
+        setO(ar, SH_R.join(" ")); setO(armsL(i), SH_L.join(" ")); setO(wbRot, SH_R.join(" ")); setO(wbSpin, "0 0");
+        tl.to(wa, { x: HELD[0] - WAR_AT[0], y: HELD[1] - WAR_AT[1], duration: 0.1, ease: "power2.out" }, t);
+        tl.set(wa, { opacity: 0 }, t + 0.1);
+        tl.set(wbRot, { opacity: 1 }, t + 0.1);
+        tl.fromTo(ar.concat([wbRot]), { rotation: 0 }, { rotation: -180, duration: 0.24, ease: "back.out(1.4)", immediateRender: false }, t + 0.1);
+        tl.fromTo(wbSpin, { rotation: 0 }, { rotation: 180, duration: 0.24, ease: "back.out(1.4)", immediateRender: false }, t + 0.1);
+        if (i === lateI) showMood(i, "worried", tLate);
+        else { showMood(i, "cross", tLate); showMood(i, "greedy", tLate + 0.7); }
+      });
+      tl.set(el("you-rest"), { opacity: 0 }, tSim - 0.08);
+      tl.set(el("you-go"), { opacity: 1 }, tSim - 0.08);
+      tl.set(el("you-go"), { opacity: 0 }, tRed + 0.5);
+      tl.set(el("you-rest"), { opacity: 1 }, tRed + 0.5);
+      showMood(lateI, "greedy", tLate + 0.7);
+
+      // "redirect": they all throw (the whoosh); the papers fly in arcs into the funnel's mouth, and each lands in it.
+      var MOUTH = [FX, FL - 262 * FK], inBills = el("set-fun").querySelectorAll(".funnel-in .funnel-bill");
+      var arrive = [];
+      LEADERS.forEach(function (Ld, i) {
+        var t = i === lateI ? tRed + 0.18 : tRed, s = toWorld(Ld, UP), ar = armsR(i), wbRot = el("wb-rot-" + i);
+        tl.to(ar.concat([wbRot]), { rotation: -112, duration: 0.1, ease: "power2.in" }, t);
+        tl.set(wbRot, { opacity: 0 }, t + 0.02);
+        tl.to(ar, { rotation: 0, duration: 0.4, ease: "power2.inOut" }, t + 0.35);
+        var fly = el("fly-" + i), spin = el("fly-spin-" + i), tx = MOUTH[0] + ((i % 5) - 2) * 26 * FK - s[0], ty = MOUTH[1] - 30 * FK - s[1];
+        var dur = 0.42 + Math.hypot(tx, ty) / 2400, apex = Math.min(ty, 0) - 110;
+        if (V) apex = Math.max(apex, 450 - s[1]); // in 9:16, stay under Wishonia's saucer
+        tl.set(fly, { opacity: 1 }, t + 0.02);
+        tl.fromTo(fly, { x: 0 }, { x: tx, duration: dur, ease: "none", immediateRender: false }, t + 0.02);
+        tl.fromTo(fly, { y: 0 }, { y: apex, duration: dur * 0.45, ease: "power2.out", immediateRender: false }, t + 0.02);
+        tl.to(fly, { y: ty, duration: dur * 0.55, ease: "power2.in" }, t + 0.02 + dur * 0.45);
+        setO(spin, "0 0");
+        tl.fromTo(spin, { rotation: Ld.th || 0, scale: 1 }, { rotation: (Ld.th || 0) + (i % 2 ? 1 : -1) * 360, scale: (0.55 * FK) / PSW, duration: dur, ease: "none", immediateRender: false }, t + 0.02);
+        tl.set(fly, { opacity: 0 }, t + 0.02 + dur);
+        arrive.push(t + 0.02 + dur);
+      });
+      arrive.sort(function (a, b) { return a - b; });
+      Array.prototype.forEach.call(inBills, function (b, k) {
+        var t = arrive[Math.min(k, arrive.length - 1)];
+        tl.fromTo(b, { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.12, ease: "bounce.out" }, t - 0.04);
+      });
+
+      // "percent": the lever pulls, the papers drop in, and in the window the red missile seal flips to the teal cross
+      // (the ding). The machine rumbles while it works.
+      var lever = el("set-fun").querySelector(".funnel-lever"), fw = el("flip-war"), fm = el("flip-med");
+      setO(lever, "80 -112"); setO(fw, "0 0"); setO(fm, "0 0");
+      tl.to(lever, { rotation: 50, duration: 0.12, ease: "power2.in" }, tPct - 0.12);
+      tl.to(inBills, { y: 70, duration: 0.18, ease: "power2.in", stagger: 0.03 }, tPct - 0.04);
+      tl.to(fw, { scaleX: 0, duration: 0.07, ease: "power1.in" }, tPct);
+      tl.fromTo(fm, { scaleX: 0 }, { scaleX: 1, duration: 0.07, ease: "power1.out", immediateRender: false }, tPct + 0.07);
+      tl.set(fm, { opacity: 0 }, 0);
+      tl.set(fm, { opacity: 1 }, tPct + 0.07);
+      tl.to(lever, { rotation: 0, duration: 0.3, ease: "back.out(2)" }, tPct + 0.5);
+      tl.fromTo(el("fun-shake"), { x: 0 }, { x: 3, duration: 0.05, repeat: Math.floor((tClin - tPct - 0.3) / 0.05), yoyo: true, ease: "none", immediateRender: false }, tPct + 0.15);
+
+      // "clinical trials.": the medicine papers march out of the spout (the squeak), on to the bench, and dive into the
+      // big flask; the scientist waves them in with her clipboard, and the round flask boils over (the pop).
+      var MDIR = LX > FX ? 1 : -1, FLASK = [LX - 40 * LK, FL - 198 * LK], BENCH = LX - MDIR * (158 * LK + 26 * WK);
+      var marchT = [];
+      for (var k = 0; k < 8; k++) {
+        var m = el("mk-" + k), t0 = tClin + k * 0.12, walkEnd = t0 + 0.08 + Math.abs(BENCH - SPOUT[0]) / 620;
+        setO(m, "0 0");
+        tl.set(m, { opacity: 1 }, t0);
+        tl.fromTo(m, { scale: 0.2, x: 0, y: 0 }, { scale: 1, duration: 0.1, ease: "back.out(2)", immediateRender: false }, t0);
+        tl.to(m, { x: BENCH - SPOUT[0], duration: walkEnd - t0 - 0.06, ease: "none" }, t0 + 0.06);
+        tl.to(m, { x: FLASK[0] - SPOUT[0], duration: 0.22, ease: "none" }, walkEnd);
+        tl.to(m, { y: FLASK[1] - SPOUT[1] - 70 * LK, duration: 0.11, ease: "power2.out" }, walkEnd);
+        tl.to(m, { y: FLASK[1] - SPOUT[1], duration: 0.11, ease: "power2.in" }, walkEnd + 0.11);
+        tl.to(m, { scale: 0, rotation: 200, duration: 0.1, ease: "power2.in" }, walkEnd + 0.16);
+        marchT.push([t0 + 0.06, walkEnd]);
+      }
+      var sciArm = el("sci").querySelector(".arm-r");
+      setO(sciArm, SCI_R.shoulder[1].join(" "));
+      tl.fromTo(sciArm, { rotation: 0 }, { rotation: -55, duration: 0.16, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, tClin - 0.1);
+      var boilEl = el("boil");
+      setO(boilEl, "52 -236");
+      tl.fromTo(boilEl, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.16, ease: "back.out(2.5)" }, tTrials + 0.2);
+      tl.to(boilEl, { opacity: 0, y: -30, scale: 1.25, duration: 0.5, ease: "power1.in" }, tTrials + 0.6);
+      var bubbles = el("lab").querySelectorAll(".lab-bubble");
+      Array.prototype.forEach.call(bubbles, function (b, j) {
+        setO(b, b.getAttribute("data-ox") + " " + b.getAttribute("data-oy"));
+        tl.fromTo(b, { y: 8, scale: 0.6 }, { y: -14, scale: 1.15, duration: 0.5, repeat: Math.floor((D - tSet - 0.6 - j * 0.09) / 0.5) - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, tSet + 0.6 + j * 0.09);
+      });
+      KIT.flicker(tl, el("lab"), tSet + 0.5, D - 0.15);
+
+      // "That's it.": the leaders dust off their hands (the pat), smug; each stack is a paper shorter.
+      LEADERS.forEach(function (Ld, i) {
+        if (i !== lateI) showMood(i, "smug", tIt1);
+        tl.to(armsL(i), { rotation: -38, duration: 0.09, repeat: 3, yoyo: true, ease: "sine.inOut" }, tIt - 0.1);
+        tl.to(armsR(i), { rotation: 38, duration: 0.09, repeat: 3, yoyo: true, ease: "sine.inOut" }, tIt - 0.1);
+      });
+
+      // "That's" (second): the treaty snaps down over the globe like a window blind (the whoosh): the rolled scroll drops
+      // into place and unrolls. "treaty.": its bottom roll keeps going and bonks L2 on the head (the boing); stars circle it.
+      var scr = el("scroll"), reveal = scr.querySelector(".scroll-reveal"), rollB = scr.querySelector(".scroll-roll-bottom");
+      var bonkY = (l2Feet - BODY_H + 4 - SCROLL_BOTTOM) / L.scr;
+      tl.set(scr, { opacity: 1 }, tThat2 - 0.02);
+      tl.fromTo(scr, { y: -SCROLL_BOTTOM - 40 }, { y: 0, duration: 0.14, ease: "power3.in", immediateRender: false }, tThat2 - 0.02);
+      tl.fromTo(reveal, { attr: { height: 0 } }, { attr: { height: 150 }, duration: tTreaty - tThat2 - 0.16, ease: "power2.in", immediateRender: false }, tThat2 + 0.12);
+      tl.fromTo(rollB, { y: -150 }, { y: 0, duration: tTreaty - tThat2 - 0.16, ease: "power2.in", immediateRender: false }, tThat2 + 0.12);
+      tl.set(reveal, { attr: { height: 0 } }, 0);
+      tl.set(rollB, { y: -150 }, 0);
+      tl.to(rollB, { y: bonkY, duration: 0.07, ease: "power1.in" }, tTreaty - 0.04);
+      tl.to(rollB, { y: 0, duration: 0.3, ease: "bounce.out" }, tTreaty + 0.03);
+      var l2lead = el("lead-" + lateI);
+      setO(l2lead, "0 100");
+      tl.fromTo(l2lead, { scaleY: 1, scaleX: 1 }, { scaleY: 0.82, scaleX: 1.12, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tTreaty + 0.03);
+      showMood(lateI, "flat", tTreaty + 0.03);
+      var starsG = el("stars"), STAR_C = [0, -112];
+      starsG.innerHTML = [0, 1, 2, 3].map(function (j) { return '<g class="' + P + 'star" opacity="0">' + KIT.star(0, 0, 11, j % 2 ? C.yellow : C.orange) + "</g>"; }).join("");
+      var starEls = starsG.querySelectorAll("." + P + "star"), tStars = tTreaty + 0.08;
+
+      // Per frame: the walking bills' legs, and the stars' orbit.
+      var legPairs = function (cls) { var a = document.querySelectorAll("." + P + cls + "-a"), b = document.querySelectorAll("." + P + cls + "-b"); return [a[0], b[0]]; };
+      var packLegs = PACK.map(function (p, i) { return legPairs("ppl-" + i); });
+      var markLegs = []; for (var j2 = 0; j2 < 8; j2++) markLegs.push(legPairs("mkl-" + j2));
+      var swap = function (pair, on, t, rate) { var ph = on ? Math.floor(t / rate) % 2 : 0; pair[0].setAttribute("opacity", ph ? 0 : 1); pair[1].setAttribute("opacity", ph ? 1 : 0); };
+      KIT.onTime(tl, D, function (t) {
+        packLegs.forEach(function (pr, i) { swap(pr, (t >= walkT0 && t < walkT1) || (t >= RUN[i][0] && t < RUN[i][1]), t + i * 0.03, 0.07); });
+        markLegs.forEach(function (pr, i) { swap(pr, t >= marchT[i][0] && t < marchT[i][1], t, 0.06); });
+        Array.prototype.forEach.call(starEls, function (s, j) {
+          if (t < tStars) { s.setAttribute("opacity", 0); return; }
+          var a = (t - tStars) * 7 + (j * Math.PI) / 2;
+          s.setAttribute("opacity", 1);
+          s.setAttribute("transform", "translate(" + (STAR_C[0] + Math.cos(a) * 34).toFixed(1) + "," + (STAR_C[1] + Math.sin(a) * 10).toFixed(1) + ")");
+        });
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

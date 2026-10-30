@@ -1,0 +1,767 @@
+<template id="defund-the-loop-template">
+  <!-- defund-the-loop · Layer B (storyboards/part-11-civilization-countdown.md): the ledger loop as loop-not-line-item
+       left it, war papers racing round it. "treaty": a 1% TREATY scroll unrolls in the ring (whoosh) and folds itself into
+       a railroad switch; "breaks": it slams into the ring at the bottom and tears it open (clank); every war paper that
+       reaches the gap drops out into the color-flip funnel. "Redirect": the funnel's lever pulls and it rattles;
+       "medical": they come out with the teal cross seal (ding) and walk into the lab, where the Scientist holds the door.
+       "rewarding": the factory's bullseye flips back to SUCCESS (cash register) and papers walk in. "crime": the Builder
+       pulls off his mask and walks to the factory; "irrational,": the Kid shuts his laptop (click), unmasks and follows
+       the papers to the lab. "defund": the press runs dry (a moth flies out), the factory's missile chimneys go out one by
+       one (sizzle), the lamps go dark, the THINGS THAT DESTROY stack drains and lowers the Weapons Maker; "cycle." he
+       finds no papers and lays his missile down asleep. "outlaw": the Politician hammers an ILLEGAL sign onto the ring
+       (hammer); the last war paper runs straight past it; "defund" (2): it drops through the gap and comes out teal
+       (ding). After "it.": the empty loop wobbles and falls flat (clank), and the fuse sputters out (sizzle). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #defund-the-loop-cam, #defund-the-loop-bg, #defund-the-loop-art, #defund-the-loop-pip, #defund-the-loop-fuse, #defund-the-loop-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="defund-the-loop" data-width="1920" data-height="1080" data-start="0" data-duration="17.78">
+    <div id="defund-the-loop-cam">
+      <div id="defund-the-loop-bg"></div>
+      <div id="defund-the-loop-art"></div>
+      <div id="defund-the-loop-pip"></div>
+    </div>
+    <!-- the fuse burns in its own layer, above the camera (the slide does not move it) and under the grain -->
+    <div id="defund-the-loop-fuse"></div>
+    <div id="defund-the-loop-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "defund-the-loop";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function el(cx, cy, rx, ry) { return 'ellipse cx="' + n1(cx) + '" cy="' + n1(cy) + '" rx="' + n1(rx) + '" ry="' + n1(ry) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function txt(x, y, size, s, col, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" font-family="Oswald" font-weight="600" font-size="' + size + '" text-anchor="middle" fill="' + (col || ink) + '"' + (extra ? " " + extra : "") + ">" + s + "</text>";
+      }
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+      function smooth(k) { k = clamp(k, 0, 1); return k * k * (3 - 2 * k); }
+      function backOut(k) { var c1 = 1.5, c3 = c1 + 1; return 1 + c3 * Math.pow(k - 1, 3) + c1 * Math.pow(k - 1, 2); }
+      // a yoyo repeat count that ends by the scene's end: whole half-cycles of dur that fit in the time left after t0
+      function reps(t0, dur, t1) { return Math.max(1, Math.floor(((t1 === undefined ? D - 0.05 : t1) - t0) / dur) - 1); }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene, and here it goes out. ──
+      // The civilization is a cartoon bomb: a small Earth with a navy screw collar and a lit fuse that burns by part
+      // time (L = L0 - k t), so it is continuous across scenes. At tOut it stops burning: the spark sputters twice and
+      // goes out in a grey puff, the stub droops, and the Earth lets out one smoke ring.
+      function fuse(layer, tl, tOut) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2, o: [110, 86], h: 66 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6, o: [112, 52], h: 32 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        var puff = g("puff", S([ci(-10, 0, 12), ci(8, -6, 14), ci(4, 9, 10)], "#C9C2B5", 2.6), 'opacity="0"');
+        var ring = g("smoke-ring", '<ellipse cx="0" cy="0" rx="14" ry="5" fill="none" stroke="#8C8782" stroke-width="5"/>', 'opacity="0"');
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark + puff +
+          at(c[0] + c[2] / 2, c[1] - 6, 1, ring));
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        var Lout = Fz.L0 - Fz.k * (t0 + tOut), pOut = a.getPointAtLength(Lout);
+        // the drooping stub: the same start, then hanging down from about where the fuse ran flat
+        function droop(k) {
+          var x1 = Fz.o[0] + 38, y1 = Fz.h + 6 * k, x2 = Fz.o[0] + 38 + (Lout - 50) * (1 - 0.45 * k), y2 = Fz.h + 70 * k;
+          return "M" + Fz.o[0] + "," + Fz.o[1] + " Q" + (Fz.o[0] + 6) + "," + (Fz.o[1] - 22) + " " + x1 + "," + y1 + " Q" + n1((x1 + x2) / 2 + 10) + "," + n1(Fz.h + 4 * k) + " " + n1(x2) + "," + n1(y2);
+        }
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + Math.min(lt, tOut))), p;
+          if (lt < tOut + 0.3) {
+            a.setAttribute("d", Fz.d); b.setAttribute("d", Fz.d);
+            p = a.getPointAtLength(Lc);
+          } else {
+            var k = smooth((lt - tOut - 0.3) / 0.35), d = droop(k);
+            a.setAttribute("d", d); b.setAttribute("d", d);
+            p = pOut;
+          }
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke"), flare = document.getElementById(P + "spark-flare");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        gsap.set(flare, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: reps(0, 0.09, tOut), yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: reps(0, 0.4, tOut), yoyo: true, ease: "sine.inOut" }, 0);
+        // sputter, sputter, out
+        tl.to(flare, { scale: 0.35, duration: 0.06 }, tOut);
+        tl.to(flare, { scale: 1.3, duration: 0.07 }, tOut + 0.08);
+        tl.to(flare, { scale: 0.3, duration: 0.06 }, tOut + 0.17);
+        tl.to(flare, { scale: 1, duration: 0.06 }, tOut + 0.24);
+        tl.to(flare, { scale: 0, duration: 0.08 }, tOut + 0.31);
+        tl.to(sm, { opacity: 0, duration: 0.1 }, tOut + 0.3);
+        var pf = document.getElementById(P + "puff");
+        tl.set(pf, { attr: { transform: "translate(" + n1(pOut.x) + "," + n1(pOut.y) + ")" } }, 0);
+        var pfIn = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        while (pf.firstChild) pfIn.appendChild(pf.firstChild);
+        pf.appendChild(pfIn);
+        gsap.set(pfIn, { svgOrigin: "0 0" });
+        tl.fromTo(pf, { opacity: 0 }, { opacity: 1, duration: 0.05, immediateRender: false }, tOut + 0.3);
+        tl.fromTo(pfIn, { scale: 0.3, y: 0 }, { scale: 1.4, y: -16, duration: Math.min(0.45, D - 0.02 - tOut - 0.3), ease: "power2.out", immediateRender: false }, tOut + 0.3);
+        tl.to(pf, { opacity: 0, duration: 0.25 }, tOut + 0.55 > D - 0.27 ? D - 0.27 : tOut + 0.55);
+        var sr = document.getElementById(P + "smoke-ring");
+        gsap.set(sr, { svgOrigin: "0 0" });
+        tl.fromTo(sr, { opacity: 0, scale: 0.4, y: 0 }, { opacity: 1, scale: 1.3, y: -22, duration: Math.max(0.12, D - 0.02 - tOut - 0.36), ease: "power1.out", immediateRender: false }, tOut + 0.34);
+      }
+
+      // ── THE LEDGER LOOP: copied from loop-not-line-item (this scene starts on its last frame); change both. ──────
+      // One MILITARY line of a ledger page, a strip of cream ledger paper 52 wide (navy edges, two blue rules, the red
+      // margin rule at its seam), bent into a big upright ring. RING: its centerline ellipse. The war papers run
+      // clockwise round the inside of it like a loop-the-loop, feet on the strip. Six station lamps sit on the strip at
+      // ST (degrees, 0 = 3 o'clock, -90 = the top, clockwise), each with its label tag inside the ring at TAG.
+      var LAY = V
+        ? { ring: { cx: 540, cy: 880, rx: 320, ry: 350, w: 52 }, G: 1430, bs: 0.54,
+            st: [-90, -40, 35, 100, 150, 210], tagSize: 25,
+            tag: [[540, 650], [677, 768], [681, 975], [540, 1104], [399, 975], [403, 768]] }
+        : { ring: { cx: 870, cy: 450, rx: 390, ry: 205, w: 52 }, G: 880, bs: 0.5,
+            st: [-90, -40, 38, 112, 152, 208], tagSize: 22,
+            tag: [[870, 352], [1050, 398], [1050, 503], [880, 548], [668, 488], [668, 394]] };
+      var RG = LAY.ring, HW = RG.w / 2;
+      var TAGS = ["PRINT MONEY", "INFLATION", "WORK PAYS LESS", V ? "TALENT TO\nCYBERCRIME" : "TALENT TO CYBERCRIME", "DESTRUCTIVE\nECONOMY GROWS", "MORE MILITARY\nSPENDING"];
+
+      // The ring's centerline by arc length: s = 0 at the top, increasing clockwise. at(s): the point, the unit
+      // tangent (the way the papers run) and the outward normal.
+      function track(E) {
+        var N = 1440, th = [], s = [0], px = [], py = [];
+        for (var i = 0; i <= N; i++) {
+          var a = -Math.PI / 2 + (2 * Math.PI * i) / N;
+          th.push(a); px.push(E.cx + E.rx * Math.cos(a)); py.push(E.cy + E.ry * Math.sin(a));
+          if (i) s.push(s[i - 1] + Math.hypot(px[i] - px[i - 1], py[i] - py[i - 1]));
+        }
+        var L = s[N];
+        function thAt(sv) {
+          sv = ((sv % L) + L) % L;
+          var lo = 0, hi = N;
+          while (hi - lo > 1) { var m = (lo + hi) >> 1; if (s[m] <= sv) lo = m; else hi = m; }
+          return th[lo] + (th[hi] - th[lo]) * ((sv - s[lo]) / (s[hi] - s[lo] || 1));
+        }
+        function pointAt(a) {
+          var tx = -E.rx * Math.sin(a), ty = E.ry * Math.cos(a), tl2 = Math.hypot(tx, ty);
+          var nx = E.ry * Math.cos(a), ny = E.rx * Math.sin(a), nl = Math.hypot(nx, ny);
+          return { x: E.cx + E.rx * Math.cos(a), y: E.cy + E.ry * Math.sin(a), tx: tx / tl2, ty: ty / tl2, nx: nx / nl, ny: ny / nl, th: a };
+        }
+        return {
+          L: L, at: function (sv) { return pointAt(thAt(sv)); }, pointAt: pointAt,
+          sAt: function (deg) {
+            var a = (deg * Math.PI) / 180, k = ((a + Math.PI / 2) / (2 * Math.PI)) % 1;
+            var i = Math.round(((k + 1) % 1) * N);
+            return s[i];
+          },
+        };
+      }
+      var T = track(RG);
+      // The strip's centerline as points: u 0..1 runs from the seam at the bottom clockwise round to the seam.
+      function ringPts(n, E) {
+        var out = [];
+        for (var i = 0; i <= n; i++) { var a = Math.PI / 2 + (2 * Math.PI * i) / n; out.push([E.cx + E.rx * Math.cos(a), E.cy + E.ry * Math.sin(a)]); }
+        return out;
+      }
+      function ptsD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L"); }
+      // The strip: navy edges, cream paper, two blue rules, MILITARY lettered along it (two textPaths on the
+      // centerline, so the page shows one line item and the ring two), and the red margin rule at the seam.
+      var TXT_A = "MILITARY . . . . . . . . . . . . . . . . $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$";
+      var TXT_B = "MILITARY . . . . . . . . . . $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$";
+      function stripSvg(pre, d, lenA, offB, lenB) {
+        return '<path id="' + pre + 'strip-sh" d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="' + (RG.w + 6) + '" opacity="0.18" transform="translate(6,8)"/>' +
+          '<path id="' + pre + 'strip-a" d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="' + (RG.w + 5) + '"/>' +
+          '<path id="' + pre + 'strip-b" d="' + d + '" fill="none" stroke="#FBF6E6" stroke-width="' + (RG.w - 1) + '"/>' +
+          '<path id="' + pre + 'strip-c" d="' + d + '" fill="none" stroke="#8FA7C4" stroke-width="' + (RG.w - 12) + '"/>' +
+          '<path id="' + pre + 'strip-d" d="' + d + '" fill="none" stroke="#FBF6E6" stroke-width="' + (RG.w - 15) + '"/>' +
+          '<path id="' + pre + 'strip-path" d="' + d + '" fill="none" stroke="none"/>' +
+          '<text font-family="Oswald" font-weight="600" font-size="22" fill="' + ink + '" dominant-baseline="central">' +
+          '<textPath href="#' + pre + 'strip-path" startOffset="16" textLength="' + lenA + '" lengthAdjust="spacing">' + TXT_A + "</textPath></text>" +
+          '<text font-family="Oswald" font-weight="600" font-size="22" fill="' + ink + '" dominant-baseline="central">' +
+          '<textPath href="#' + pre + 'strip-path" startOffset="' + offB + '" textLength="' + lenB + '" lengthAdjust="spacing">' + TXT_B + "</textPath></text>" +
+          '<path id="' + pre + 'strip-m" d="M0,0" fill="none" stroke="' + C.war + '" stroke-width="3"/>';
+      }
+      function setStrip(pre, pts) {
+        var d = ptsD(pts);
+        ["strip-sh", "strip-a", "strip-b", "strip-c", "strip-d", "strip-path"].forEach(function (k) { document.getElementById(pre + k).setAttribute("d", d); });
+        // the red margin rule across the strip, a little way in from its start
+        var a = pts[2], b = pts[3], dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l;
+        document.getElementById(pre + "strip-m").setAttribute("d", "M" + pt(a[0] + nx * HW, a[1] + ny * HW) + " L" + pt(a[0] - nx * HW, a[1] - ny * HW));
+      }
+      // A station lamp on the strip: number k, unlit (cream) with a lit face on top (here lit from the start).
+      function lamp(k) {
+        var p = T.at(T.sAt(LAY.st[k]));
+        return at(p.x, p.y, 1, g("lamp" + k, S([ci(0, 0, 17)], C.cream, 3.4) + txt(0, 7.5, 19, String(k + 1), ink) +
+          g("lamp-on" + k, S([ci(0, 0, 17)], C.yellow, 3.4) + F(ci(0, 0, 10), C.orange) + txt(0, 7.5, 19, String(k + 1), ink))));
+      }
+      // A label tag inside the ring (the world map's label style: Oswald navy on cream, navy outline).
+      function tag(k) {
+        var lines = TAGS[k].split("\n"), fs = LAY.tagSize, w = Math.max.apply(null, lines.map(function (l) { return l.length; })) * fs * 0.5 + 30, h = lines.length * fs * 1.15 + 16;
+        var c = LAY.tag[k], body = S([pg(R(-w / 2, -h / 2, w, h))], "#FBF6E6", 3.4) + line("M" + n1(-w / 2 + 6) + "," + n1(-h / 2 + 6) + " H" + n1(w / 2 - 6), C.orange, 1.6);
+        lines.forEach(function (l, i) { body += txt(0, -h / 2 + 8 + fs * 0.95 + i * fs * 1.15, fs, l, ink, 'letter-spacing="0.8"'); });
+        return at(c[0], c[1], 1, g("tag" + k, body));
+      }
+      // A walking paper bill (KIT.money) with its two strides, for flipping between them as it runs.
+      function bill(id, kind, attrs) {
+        return g(id, '<g class="st0">' + KIT.money(kind, 0) + '</g><g class="st1" opacity="0">' + KIT.money(kind, 1) + "</g>" +
+          '<g class="trail" opacity="0">' + line("M58,-14 H104 M62,2 H122 M58,18 H98", ink, 5) + "</g>", attrs);
+      }
+      // Place a bill at arc s of the ring, feet on the strip's inner edge, the right way up for a loop-the-loop.
+      function onRing(elm, s, k, legs, trail) {
+        var p = T.at(s), bs = LAY.bs * (k === undefined ? 1 : k), off = HW + 46 * bs;
+        var x = p.x - p.nx * off, y = p.y - p.ny * off, rot = (Math.atan2(-p.nx, p.ny) * 180) / Math.PI;
+        elm.setAttribute("transform", "translate(" + n1(x) + "," + n1(y) + ") rotate(" + rot.toFixed(1) + ") scale(" + bs.toFixed(3) + ")");
+        if (legs !== undefined) { elm.children[0].setAttribute("opacity", legs ? 0 : 1); elm.children[1].setAttribute("opacity", legs ? 1 : 0); }
+        elm.children[2].setAttribute("opacity", trail || 0);
+      }
+
+      // ── THE PEOPLE (storyboard Cast; the Builder's and the Kid's options are fixed so they match every scene) ──
+      var BUILDER = { tone: 1, outfit: "overalls", color: 0, seed: 7, mood: "eager" };
+      var KID = { tone: 2, outfit: "shirt", color: 3, seed: 11, mood: "eager", mask: true, build: { hs: 1.3, legs: 0.6, th: 0.75, neck: 0.5 } };
+      // the Builder's hammer, hanging head-down from a hand at (x, y), in person units
+      function hammer(h) {
+        return '<g transform="translate(' + pt(h[0], h[1] + 4) + ') rotate(8)">' + S([pg(R(-2.4, -4, 4.8, 30))], C.tan, 2.4) + S([pg(R(-9, 24, 18, 9))], C.slate, 2.4) + line("M-7,27 H7", C.orange, 1.2) + "</g>";
+      }
+      // the baby missile the Weapons Maker cradles (kit.js's held "missile", copied); asleep: eyes shut, lying flat
+      function babyMissile(asleep) {
+        var eyes = asleep ? line("M-4,-3 q2,2 4,0 M4,-3 q2,2 4,0", ink, 1.4) : F(ci(-2, -2.5, 1.6), ink) + F(ci(6, -2.5, 1.6), ink);
+        return '<g transform="rotate(' + (asleep ? 0 : -14) + ')">' + S([pg([[-34, -7], [14, -7], [30, 0], [14, 7], [-34, 7]]), pg([[-34, -7], [-44, -17], [-40, -7]]), pg([[-34, 7], [-44, 17], [-40, 7]])], C.war, 2.6) +
+          '<path d="M14,-7 L30,0 L14,7 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' + line(asleep ? "M-3,3 Q2,5 7,3" : "M-4,2 Q2,6 8,2", ink, 1.8) + eyes + "</g>";
+      }
+      // A stack of war papers seen edge-on (as destroy-beats-make's THINGS THAT DESTROY stack): w wide, n bills on y 0.
+      function billStack(w, n, seed) {
+        var r = KIT.rng(seed), out = "";
+        for (var i = 0; i < n; i++) {
+          var y = -12 * (i + 1), j = Math.round((r() - 0.5) * 10), wj = Math.round((r() - 0.5) * 8), x0 = -w / 2 + j, ww = w + wj;
+          out += '<rect x="' + x0 + '" y="' + y + '" width="' + ww + '" height="12" rx="2" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' +
+            '<path d="M' + (x0 + 8) + "," + (y + 4) + " H" + (x0 + ww - 22) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>' +
+            '<circle cx="' + (i % 2 ? x0 + ww - 9 : x0 + 9) + '" cy="' + (y + 6) + '" r="3.6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.2"/>';
+        }
+        return out;
+      }
+      // the winner's rosette from destroy-beats-make
+      function rosette() {
+        var pts = [];
+        for (var i = 0; i < 24; i++) { var a = (i * Math.PI) / 12, rr = i % 2 ? 17 : 22; pts.push([rr * Math.cos(a), rr * Math.sin(a)]); }
+        return S([pg([[-12, 6], [-3, 6], [-8, 40], [-15, 34]]), pg([[3, 6], [12, 6], [15, 34], [8, 40]])], C.war, 2.6) + S([pg(pts)], C.yellow, 3) + S([ci(0, 0, 11)], C.war, 2.4) + KIT.star(0, 0, 7, C.cream);
+      }
+      // a domino mask, flung off (its own units, about 36 x 12)
+      function maskArt() { return S([pg([[-18, -5], [18, -6], [19, 4], [13, 6], [8, 2], [3, 6], [-3, 3], [-9, 6], [-18, 4]])], ink, 2) + F(el(-9, 0, 4, 2.6), C.cream) + F(el(9, 0, 4, 2.6), C.cream); }
+
+      // ── Layout (loop-not-line-item's, plus this scene's own pieces) ──────────────────────────────────────
+      // press, pol: the 1913 press and the Politician on top of the ring (x, scale); s4: the Builder's stool (x, scale);
+      // s5: the stack (x, width, top height); wm: the Weapons Maker's scale; sw: where the treaty breaks the ring (deg);
+      // ill: where the ILLEGAL sign goes (deg); fun: the funnel (x, scale); lab: (x, width, height, the Scientist's scale);
+      // fac: the factory (x, scale, the SUCCESS sign's scale in factory units).
+      var L = V
+        ? { press: [540, 0.42], pol: [654, 0.6], s4: [452, 0.95], s5: [100, 104, 520], wm: 0.76, sw: 81, ill: -55, kidLap: 0.95, lap: 1.4,
+            fun: [590, 0.5], lab: [748, 140, 136, 0.66], fac: [935, 0.42, 1.35] }
+        : { press: [870, 0.4], pol: [992, 0.6], s4: [640, 1.08], s5: [215, 136, 440], wm: 0.98, sw: 97, ill: -62, kidLap: 1.05, lap: 1.6,
+            fun: [820, 0.6], lab: [1040, 200, 165, 0.8], fac: [1350, 0.55, 1.2] };
+      var G = LAY.G, ringTop = RG.cy - RG.ry - HW, ringBot = RG.cy + RG.ry + HW;
+      function ringOuterY(x) { var k = (x - RG.cx) / (RG.rx + HW); return RG.cy - (RG.ry + HW) * Math.sqrt(Math.max(0, 1 - k * k)); }
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // The ring as loop-not-line-item left it (closed, every lamp lit, every tag up).
+      var rowLen = V ? 896 : 1040;
+      var offB = Math.max(rowLen + 40, T.L / 2 + 70), strip = stripSvg(P, ptsD(ringPts(160, RG)), rowLen - 40, offB, Math.max(200, T.L - offB - 40));
+      var lamps = "", tags = "";
+      for (var k = 0; k < 6; k++) { lamps += lamp(k); tags += tag(k); }
+
+      // The treaty switch where the ring breaks: in the strip's own frame at SW (x along the way the papers run, y toward
+      // the inside), a torn gap in the strip, the switch blade that turns the papers out through it, its lever with a
+      // yellow ball, and the treaty's red wax seal on a little plate.
+      var sSw = T.sAt(L.sw), pSw = T.at(sSw), swRot = (Math.atan2(pSw.ty, pSw.tx) * 180) / Math.PI;
+      function zig(x, s) { var d = "M" + x + "," + (-HW - 6); for (var i = 1; i <= 8; i++) d += " L" + (x + (i % 2 ? s * 6 : 0)) + "," + n1(-HW - 6 + ((2 * HW + 12) * i) / 8); return d; }
+      var gapArt = F(pg(R(-26, -HW - 6, 52, 2 * HW + 12)), C.paper) + line(zig(-26, -1), ink, 3.4) + line(zig(26, 1), ink, 3.4);
+      var switchArt = S([pg([[-58, HW + 6], [-46, HW + 14], [30, -HW - 4], [18, -HW - 12]])], C.slate, 3.4) + line("M-50,"+ n1(HW + 6) + " L22," + n1(-HW - 6), C.orange, 1.8) +
+        S([pg([[-70, HW + 4], [-62, HW + 4], [-62, HW + 46], [-70, HW + 46]])], C.navy, 3) + S([ci(-66, HW + 52, 9)], C.yellow, 3) +
+        at(46, HW + 26, 1, S([pg(R(-26, -15, 52, 30))], "#FBF6E6", 3) + txt(-6, 7, 17, "1%", ink) +
+          S([pg([[12, -9], [18, -11], [23, -6], [22, 1], [17, 5], [10, 4], [7, -2]])], C.war, 2) + KIT.star(15, -3, 5, C.cream));
+      var swPlace = at(pSw.x, pSw.y, 1, g("gap", gapArt, 'opacity="0"') + g("switch", g("switch-in", switchArt), 'opacity="0"'), swRot.toFixed(1));
+
+      // The treaty scroll, unrolling in the middle of the ring, then folding itself into the switch.
+      var scrS = V ? 1.15 : 0.95;
+      var scrollArt = at(RG.cx, RG.cy + 80 * scrS, scrS, g("scroll", KIT.props.scroll({ text: "1% Treaty", signatures: 4 })));
+
+      // The ILLEGAL sign the Politician hammers onto the ring (it springs up out of the strip).
+      var pIll = T.at(T.sAt(L.ill)), illS = V ? 0.62 : 0.56, illX = pIll.x + pIll.nx * HW, illY = pIll.y + pIll.ny * HW + 4;
+      var illArt = at(illX, illY, illS, g("ill", g("ill-in", KIT.props.sign({ text: "ILLEGAL", posts: 1, color: C.war, height: 36 })), 'opacity="0"'));
+
+      // Station 1: the press on the ring's top; the Politician beside it on the ring, first cranking (his left arm solved
+      // onto the crank's knob), then turned round with a mallet.
+      var PR = L.press, prX = PR[0], prS = PR[1], prY = ringTop + 2;
+      var knob0 = [prX + 178 * prS, prY - 183 * prS];
+      var polS = L.pol[1], polX = L.pol[0], polY = ringOuterY(polX) + 4;
+      var polRig = KIT.rig(KIT.castOpts("politician", { look: "left", arms: [[-90, -90], [16, 6]] }));
+      var sh = polRig.shoulder[0], len = polRig.armLength;
+      var tx = (knob0[0] - polX) / polS, ty = (knob0[1] - (polY - 100 * polS)) / polS;
+      var dxk = tx - sh[0], dyk = ty - sh[1], dk = Math.min(Math.hypot(dxk, dyk), 2 * len * 0.985);
+      // (angles: 0 = down, -90 = left; the upper arm turned toward down puts the elbow below the line to the knob)
+      var alpha = (Math.atan2(dxk, dyk) * 180) / Math.PI, beta = (Math.acos(dk / (2 * len)) * 180) / Math.PI;
+      var polO = KIT.castOpts("politician", { look: "left", arms: [[alpha + beta, alpha - beta], [16, 6]] });
+      polRig = KIT.rig(polO);
+      var shS = [polX + polRig.shoulder[0][0] * polS, polY - 100 * polS + polRig.shoulder[0][1] * polS];
+      var polHO = KIT.castOpts("politician", { look: "right", arms: [[-12, -6], [150, 178]] }), polHR = KIT.rig(polHO);
+      var hR = polHR.hand[1];
+      var mallet = '<g transform="translate(' + pt(hR[0], hR[1] + 2) + ') rotate(-8)">' + S([pg(R(-2.6, -36, 5.2, 40))], C.tan, 2.4) + S([pg(R(-12, -50, 24, 15))], C.rust, 2.6) + line("M-9,-46 H9", C.orange, 1.4) + "</g>";
+      var pressArt = at(prX, prY, prS, KIT.props.printingPress({ seal: "war", label: "1913", tray: 3 }));
+      var moth = g("moth", g("moth-fl", S([pg([[0, 0], [-16, -12], [-14, 4]]), pg([[0, 0], [16, -12], [14, 4]])], C.cream, 2.4)) + S([el(0, 0, 3.5, 9)], C.tan, 2), 'opacity="0"');
+      var polArt = at(polX, polY - 100 * polS, polS, g("pol-a", g("pol", KIT.person(polO))) +
+        g("pol-b", g("pol-h", KIT.person(polHO) + g("pol-mallet", mallet)), 'opacity="0"'));
+
+      // Station 4: the shared desk, the Builder at its right end (masked, typing) and the Kid at its left end on a high
+      // stool, masked too, at his own little laptop.
+      var S4x = L.s4[0], s4s = L.s4[1], ks = 0.7 * s4s;
+      var SEAT = { legPose: [[85, 10], [95, 15]] }; // (the kit mirrors a leg pose for look "left")
+      var b4O = mix(BUILDER, { look: "left", mask: true, mood: "grin", arms: [[-62, -100], [-48, -96]], build: SEAT }), b4R = KIT.rig(b4O);
+      var b4uO = mix(b4O, { mask: false, mood: "smile" });
+      var seatY = G - 100 * s4s + (b4R.hipY + 7) * s4s;
+      var hands4 = b4R.hand.map(function (h) { return [S4x + h[0] * s4s, G - 100 * s4s + h[1] * s4s]; });
+      var lapX = Math.min(hands4[0][0], hands4[1][0]) - 8, deskTop = Math.max(hands4[0][1], hands4[1][1]) + 6;
+      var lapHalf = 56 * 0.6 * L.lap, kidLapX = lapX - lapHalf - 10 - 34 * L.kidLap;
+      var kSeatO = mix(KID, { look: "right", arms: [[62, 100], [48, 96]], build: mix(KID.build, SEAT) }), kR = KIT.rig(kSeatO);
+      var kHand = Math.max(kR.hand[0][0], kR.hand[1][0]), kHandY = Math.max(kR.hand[0][1], kR.hand[1][1]);
+      var kidX = kidLapX - 16 - kHand * ks, kidOY = deskTop - 4 - kHandY * ks, kSeatY = kidOY + (kR.hipY + 7) * ks;
+      var deskX0 = kidLapX - 34 * L.kidLap - 18, deskX1 = lapX + 52;
+      var screen = '<rect x="-24" y="-42" width="48" height="31" fill="' + C.cyan + '" opacity="0.35"/>' +
+        '<g transform="translate(0,-27)">' + KIT.moneySeal("war", 0, 0, 8.5) + "</g>" + line("M-19,-37 h10 M-19,-15 h14 M10,-15 h9", C.cream, 1.6);
+      var desk = S([pg(R(deskX0, deskTop, deskX1 - deskX0, 11))], C.tan, 3.4) + line("M" + n1(deskX0 + 6) + "," + n1(deskTop + 3) + " H" + n1(deskX1 - 6), C.cream, 2) +
+        S([pg([[deskX0 + 12, deskTop + 11], [deskX0 + 21, deskTop + 11], [deskX0 + 15, G], [deskX0 + 6, G]]), pg([[deskX1 - 21, deskTop + 11], [deskX1 - 12, deskTop + 11], [deskX1 - 6, G], [deskX1 - 15, G]])], C.navy, 3);
+      function stoolAt(x, y, w) { return S([pg(R(x - w / 2, y, w, 9))], C.slate, 3) + S([pg([[x - w / 2 + 6, y + 9], [x - w / 2 + 13, y + 9], [x - w / 2 + 8, G], [x - w / 2, G]]), pg([[x + w / 2 - 13, y + 9], [x + w / 2 - 6, y + 9], [x + w / 2, G], [x + w / 2 - 8, G]])], C.navy, 3); }
+      var lap = at(lapX, deskTop, L.lap, g("lap", KIT.props.laptop({}).replace("<!--laptop-screen-->", g("lap-on", screen))));
+      var kLap = at(kidLapX, deskTop, L.kidLap, g("klap", KIT.props.laptop({ color: C.tan }).replace("<!--laptop-screen-->", g("klap-on", screen))));
+      var bWalkO = mix(BUILDER, { look: "right", mood: "smile", arms: [[-14, -8], [14, 8]] }), bWR = KIT.rig(bWalkO);
+      var kWalkO = mix(KID, { look: "right", mask: false, mood: "smile", arms: [[-16, -8], [16, 8]] }), kWR = KIT.rig(kWalkO);
+      var s4Art = stoolAt(S4x, seatY, 60) + stoolAt(kidX, kSeatY, 44) + desk + lap + kLap +
+        at(S4x, G - 100 * s4s, s4s, g("b4", g("b4-in", KIT.person(b4O))) + g("b4u", KIT.person(b4uO), 'opacity="0"')) +
+        at(kidX, kidOY, ks, g("k4", g("k4-in", KIT.person(kSeatO))) + g("k4u", KIT.person(mix(kSeatO, { mask: false, mood: "smile" })), 'opacity="0"')) +
+        g("bwalk", at(S4x, G - 100 * s4s, s4s, g("bw-bob", g("bw-in", KIT.person(bWalkO) + hammer(bWR.hand[1])))), 'opacity="0"') +
+        g("kwalk", at(kidX, G - 100 * ks, ks, g("kw-bob", g("kw-in", KIT.person(kWalkO)))), 'opacity="0"') +
+        g("bmask", at(0, 0, s4s, maskArt()), 'opacity="0"') + g("kmask", at(0, 0, ks * 0.9, maskArt()), 'opacity="0"');
+
+      // Stations 5 and 6: the THINGS THAT DESTROY stack (full, clipped from the top as it drains) with the Weapons
+      // Maker on it, cradling his baby missile; later he lays it on the ground, asleep.
+      var S5 = L.s5, nMax = Math.ceil(S5[2] / 12) + 1;
+      var stackArt = '<defs><clipPath id="' + P + 'stack-clip"><rect id="' + P + 'stack-rect" x="' + (S5[0] - S5[1]) + '" y="' + (G - S5[2]) + '" width="' + 2 * S5[1] + '" height="' + (S5[2] + 2) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'stack-clip)">' + at(S5[0], G, 1, billStack(S5[1], nMax, 51)) + "</g>";
+      var wmFullO = KIT.castOpts("weaponsMaker"), wmDownO = KIT.castOpts("weaponsMaker", { arms: [[22, 40], [-22, -40]], mood: "smile" });
+      var wmR = KIT.rig(wmFullO), wmS = L.wm;
+      var wmArt = g("wm-ride", at(S5[0], -100 * wmS, wmS, g("wm", g("wm-rock", g("wm-full", KIT.person(wmFullO)) + g("wm-down", KIT.person(wmDownO), 'opacity="0"')))) +
+        at(S5[0] + S5[1] / 2 - 4, 46, 0.95, g("ros", rosette())));
+      var zz = [0, 1, 2].map(function (i) { return g("z" + i, txt(0, 0, 22 - i * 3, "z", ink), 'opacity="0"'); }).join("");
+      var sleepX = S5[0] + 66 * wmS + 10, sleeper = at(sleepX, G - 9 * wmS * 1.4, wmS * 1.4, g("sleep", babyMissile(true)), "") + at(sleepX + 18, G - 40, 1, zz);
+      var sleepArt = g("sleeper", sleeper, 'opacity="0"');
+
+      // The color-flip funnel (its own bills hidden: these papers are drawn here), on the ground under the gap.
+      var FN = L.fun, fx = FN[0], fs = FN[1], mouthY = G - 262 * fs, spoutY = G - 40 * fs;
+      var funnelArt = at(fx, G, fs, g("fun", g("fun-in", KIT.props.colorFlipFunnel({ inN: 0, outN: 0 }))));
+
+      // The lab: a little cream building with LAB on its teal cornice, a round window of bubbling flasks, an open door
+      // on its left side, and the Scientist beside the door, holding it, waving the papers in.
+      var LB = L.lab, lx = LB[0], lw = LB[1], lh = LB[2], dw = Math.round(lw * 0.27), dh = Math.round(lh * 0.68);
+      var dx0 = lx - lw / 2 + 14, dx1 = dx0 + dw, labDoor = (dx0 + dx1) / 2;
+      var labArt = (function () {
+        var x0 = lx - lw / 2, y0 = G - lh, out = "";
+        out += S([pg(R(x0, y0, lw, lh))], "#FBF6E6", 4) + F(pg(R(x0 + 4, y0 + 30, lw - 8, lh - 34)), C.cream, 'opacity="0.5"');
+        out += S([pg(R(x0 - 8, y0 - 6, lw + 16, 32))], C.med, 3.4) + txt(lx + 14, y0 + 19, 24, "LAB", C.cream, 'letter-spacing="4"') +
+          S([ci(x0 + 22, y0 + 10, 13)], C.cream, 2.6) + F(pg([[x0 + 19, y0 + 1], [x0 + 25, y0 + 1], [x0 + 25, y0 + 7], [x0 + 31, y0 + 7], [x0 + 31, y0 + 13], [x0 + 25, y0 + 13], [x0 + 25, y0 + 19], [x0 + 19, y0 + 19], [x0 + 19, y0 + 13], [x0 + 13, y0 + 13], [x0 + 13, y0 + 7], [x0 + 19, y0 + 7]]), C.med);
+        // the round window with two bubbling flasks
+        var wx = x0 + lw * 0.68, wy = y0 + 32 + (lh - 32) * 0.42, wr = Math.min(lw * 0.2, (lh - 32) * 0.3);
+        out += S([ci(wx, wy, wr)], C.cyan, 3.4) + F(ci(wx, wy, wr - 5), "#DCEFEA") +
+          S([pg([[wx - 13, wy + wr * 0.7], [wx - 3, wy + wr * 0.7], [wx - 6, wy - 2], [wx - 6, wy - 12], [wx - 10, wy - 12], [wx - 10, wy - 2]])], C.cream, 2) + F(pg([[wx - 12, wy + wr * 0.6], [wx - 4, wy + wr * 0.6], [wx - 6, wy + 4], [wx - 10, wy + 4]]), C.med) +
+          S([ci(wx + 9, wy + 5, 8)], C.cream, 2) + F(pg([[wx + 2, wy + 6], [wx + 16, wy + 6], [wx + 14, wy + 11], [wx + 4, wy + 11]]), C.money) +
+          '<g id="' + P + 'bub">' + F(ci(wx - 8, wy - 18, 3), C.cream, 'stroke="' + ink + '" stroke-width="1.4"') + F(ci(wx + 9, wy - 8, 2.4), C.cream, 'stroke="' + ink + '" stroke-width="1.4"') + "</g>" +
+          line("M" + n1(wx - wr) + "," + wy + " H" + n1(wx + wr), ink, 2);
+        // the dark doorway and its frame
+        out += F(pg(R(dx0, G - dh, dw, dh)), C.deep) + line("M" + dx0 + "," + G + " V" + n1(G - dh) + " H" + dx1 + " V" + G, ink, 4) + line("M" + (dx0 - 4) + "," + n1(G - dh - 5) + " H" + (dx1 + 4), C.tan, 5);
+        return out;
+      })();
+      // the door leaf, swung open toward us on its hinge (the doorway's right edge)
+      var leaf = S([pg([[dx1, G - dh], [dx1 + dw * 0.42, G - dh - 8], [dx1 + dw * 0.42, G + 4], [dx1, G]])], C.rust, 3.4) + S([ci(dx1 + dw * 0.32, G - dh * 0.48, 3.4)], C.yellow, 2);
+      var sciO = KIT.castOpts("scientist", { look: "left", arms: [[-58, -96], [150, 172]], holdL: null, holdR: "flask" }), sciR = KIT.rig(sciO), sciS = LB[3];
+      var sciX = dx1 + dw * 0.42 + 18 - sciR.hand[0][0] * sciS * 0.4 + 12;
+      var sciArt = at(sciX, G - 100 * sciS, sciS, g("sci", KIT.person(sciO)));
+
+      // The factory from production-irrational, clean again: missile chimneys smoking, its door shut, and on its roof
+      // the SUCCESS sign still flipped to the red-and-cream bullseye side.
+      var FC = L.fac, fcx = FC[0], fcs = FC[1], sgs = FC[2];
+      var succ = KIT.props.sign({ text: "SUCCESS", posts: 1, height: 22 });
+      var cw = Math.round(7 * 34 * 0.56 + 64), chh = Math.round(34 * 1.75), ctop = -22 - chh;
+      var bull = S([pg(R(-cw / 2, ctop, cw, chh))], "#FBF6E6", 5) + [26, 19, 12, 5].map(function (r, i) { return F(ci(0, ctop + chh / 2, r), i % 2 ? C.cream : C.war, 'stroke="' + ink + '" stroke-width="2"'); }).join("") +
+        F(pg(R(-cw / 2 + 10, ctop + chh / 2 - 2, cw / 2 - 40, 4)), C.war) + F(pg(R(40, ctop + chh / 2 - 2, cw / 2 - 50, 4)), C.war);
+      var signArt = at(0, -222, sgs, line("M0,-22 V0", ink, 7) + g("sg-flip", g("sg-succ", succ, 'opacity="0"') + g("sg-bull", bull)));
+      var facArt = at(fcx, G, fcs, g("fac", g("fac-in", KIT.props.factory({ label: "" }) + signArt)));
+      var facDoor = fcx;
+
+      // The papers: war papers on the ring (and the press's), each also drawn as a medicine paper walking out of the funnel.
+      var NB = 14, gap = T.L / NB, flyIdx = V ? [2, 6, 9, 12] : [1, 4, 8, 11];
+      var ringIdx = [];
+      for (var b0 = 0; b0 < NB; b0++) if (flyIdx.indexOf(b0) < 0) ringIdx.push(b0);
+      var pressAt = [1.2, 3.0, 4.8, 6.6, 8.4];
+      var nWar = ringIdx.length + pressAt.length + 1, wars = "", meds = "";
+      for (var w0 = 0; w0 < nWar; w0++) { wars += bill("war" + w0, "war", 'opacity="0"'); meds += bill("med" + w0, "med", 'opacity="0"'); }
+
+      var ground = line("M60," + G + " H" + (W - 60), ink, 5) + [0.05, 0.36, 0.62].map(function (f) {
+        var gx = 70 + f * (W - 140);
+        return line("M" + gx + "," + G + " l-6,-14 M" + (gx + 6) + "," + G + " l2,-18 M" + (gx + 12) + "," + G + " l8,-12", ink, 3);
+      }).join("");
+
+      var topArt = g("top", g("top-in", pressArt + illArt + polArt + at(0, 0, 1, moth)));
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + ground +
+        stackArt + g("wm-all", wmArt) + sleepArt +
+        g("lab-all", g("lab-pop", labArt + leaf + sciArt), 'opacity="0"') +
+        g("fac-all", g("fac-pop", facArt), 'opacity="0"') +
+        g("fun-all", g("fun-pop", funnelArt), 'opacity="0"') +
+        s4Art +
+        g("ring-fall", g("ring-wob", g("ring-in", strip + lamps + tags + wars + swPlace))) +
+        topArt + meds + scrollArt);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      // ── Cues ─────────────────────────────────────────────────────────────────────────────────
+      var tTreaty = cue("treaty"), tBreaks = cue("breaks"), tRedir = cue("Redirect"), tMed = cue("medical"), tRes = cue("research,");
+      var tMake = cue("make"), tRew = cue("rewarding"), tCrime = cue("crime"), tIrr = cue("irrational,"), tDef = cue("defund");
+      var tMach = cue("machine"), tPov = cue("poverty"), tCycle = cue("cycle."), tYou = cue("You"), tOut = cue("outlaw");
+      var tDef2 = cue("defund", 2), tEnd = KIT.after(ID, "it."), tFuse = tEnd + 0.4;
+      fuse(q("fuse"), tl, tFuse);
+
+      // ── The treaty: the scroll unrolls ("treaty", whoosh), folds into a switch and slams into the ring ("breaks", clank),
+      // tearing it open ──
+      var scroll = q("scroll"), reveal = scroll.querySelector(".scroll-reveal"), rollB = scroll.querySelector(".scroll-roll-bottom");
+      gsap.set(scroll, { svgOrigin: "0 -84" });
+      tl.fromTo(scroll, { scale: 0, opacity: 1 }, { scale: 1, duration: 0.12, ease: "back.out(2)" }, Math.max(0, tTreaty - 0.1));
+      tl.fromTo(reveal, { attr: { height: 0 } }, { attr: { height: 150 }, duration: 0.2, ease: "power2.out" }, tTreaty);
+      tl.fromTo(rollB, { y: -150 }, { y: 0, duration: 0.2, ease: "power2.out" }, tTreaty);
+      tl.to(scroll, { scaleY: 0.12, scaleX: 0.5, rotation: 30, duration: 0.1, ease: "power2.in" }, tBreaks - 0.14);
+      tl.set(scroll, { opacity: 0 }, tBreaks - 0.04);
+      var swIn = q("switch-in");
+      gsap.set(swIn, { svgOrigin: "0 0" });
+      tl.set(q("switch"), { opacity: 1 }, tBreaks - 0.06);
+      tl.fromTo(swIn, { y: 120, scale: 0.4 }, { y: 0, scale: 1, duration: 0.07, ease: "power2.in" }, tBreaks - 0.07);
+      tl.fromTo(swIn, { scaleX: 1.25, scaleY: 0.7 }, { scaleX: 1, scaleY: 1, duration: 0.3, ease: "elastic.out(1.2,0.4)", immediateRender: false }, tBreaks);
+      tl.set(q("gap"), { opacity: 1 }, tBreaks);
+      var ringIn = q("ring-in");
+      tl.fromTo(ringIn, { y: 0 }, { y: 6, duration: 0.04, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, tBreaks);
+      // the funnel rises under the gap as the ring breaks
+      tl.set(q("fun-all"), { opacity: 1 }, tBreaks);
+      var funPop = q("fun-pop");
+      gsap.set(funPop, { svgOrigin: fx + " " + G });
+      tl.fromTo(funPop, { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, tBreaks + 0.05);
+
+      // ── The war papers: the ring's slow down after the break; each paper that reaches the gap drops into the funnel ──
+      function ringDist(t) { var u = Math.min(t, 1.1); return 380 * t + (1900 - 380) * (1.1 - Math.pow(1.1 - u, 2) / 1.1) / 2; }
+      function wrapL(v) { return ((v % T.L) + T.L) % T.L; }
+      var papers = [];
+      ringIdx.forEach(function (bi) {
+        var s0 = -bi * gap + 520, cap = null, prev = null;
+        for (var t = tBreaks; t < D && cap === null; t += 0.004) {
+          var s = s0 + ringDist(t);
+          if (prev !== null && wrapL(s - sSw) < wrapL(prev - sSw)) cap = t;
+          prev = s;
+        }
+        papers.push({ kind: "ring", s0: s0, cap: cap });
+      });
+      var vPress = V ? 420 : 380;
+      pressAt.forEach(function (e) { papers.push({ kind: "press", e: e, v: vPress, cap: e + sSw / vPress }); });
+      var lastE = tOut - 0.22, lastCap = tDef2 - 0.42;
+      papers.push({ kind: "last", e: lastE, v: sSw / (lastCap - lastE), cap: lastCap });
+      // the order they drop into the funnel, and the times they come out teal ("medical" first, then a steady march)
+      var order = papers.map(function (p, i) { return i; }).sort(function (a, b) { return papers[a].cap - papers[b].cap; });
+      var tFirst = tMed, nextOut = tFirst, labN = 0, facN = 0;
+      order.forEach(function (i, k) {
+        var p = papers[i];
+        p.out = p.kind === "last" ? tDef2 : Math.max(nextOut, p.cap + 0.9);
+        nextOut = p.out + 0.26;
+        // the first ones go to the lab ("research,"), the next to the factory, then they take turns; the last one: the lab
+        p.dest = p.kind === "last" ? "lab" : k < 4 ? "lab" : k < 9 ? "fac" : k % 2 ? "lab" : "fac";
+        if (p.dest === "lab") labN++; else facN++;
+      });
+      var warEls = [], medEls = [];
+      for (var w1 = 0; w1 < nWar; w1++) { warEls.push(q("war" + w1)); medEls.push(q("med" + w1)); }
+      var DROP = 0.24, POP = 0.22, vWalk = V ? 190 : 230, bsG = LAY.bs;
+      var doorX = { lab: labDoor, fac: facDoor };
+      var outX = fx + 12;
+      KIT.onTime(tl, D, function (t) {
+        papers.forEach(function (p, i) {
+          var we = warEls[i], me = medEls[i];
+          // on the ring (or not yet printed)
+          var onR = false, s = 0;
+          if (p.kind === "ring") { s = p.s0 + ringDist(t); onR = p.cap === null || t < p.cap; }
+          else { s = (t - p.e) * p.v; onR = t >= p.e && t < p.cap; }
+          if (onR) {
+            we.setAttribute("opacity", 1);
+            var pop = p.kind === "ring" ? 1 : s < 30 ? 0.35 + 0.65 * (s / 30) : 1, fast = p.kind === "ring" && t < 0.9;
+            onRing(we, s, pop, Math.floor(s / (fast ? 22 : 15)) % 2, fast ? 1 - t / 0.9 : 0);
+          } else if (t >= p.cap && t < p.cap + DROP) {
+            // out through the gap and down into the funnel's mouth
+            var k = (t - p.cap) / DROP, a = T.at(sSw), x0 = a.x - a.nx * (HW + 23), y0 = a.y - a.ny * (HW + 23);
+            var x = x0 + (fx - x0) * k, y = y0 + (mouthY + 6 - y0) * k * k - 40 * Math.sin(Math.PI * k) * 0;
+            var rot0 = (Math.atan2(-a.nx, a.ny) * 180) / Math.PI;
+            we.setAttribute("opacity", 1);
+            we.setAttribute("transform", "translate(" + n1(x) + "," + n1(y) + ") rotate(" + n1(rot0 * (1 - k) + 200 * k) + ") scale(" + (bsG * (1 - 0.45 * k)).toFixed(3) + ")");
+            we.children[2].setAttribute("opacity", 0);
+          } else we.setAttribute("opacity", 0);
+          // the medicine paper: out of the spout, a hop down, then a walk to its door, then in
+          if (t < p.out) { me.setAttribute("opacity", 0); return; }
+          var dt = t - p.out, door = doorX[p.dest], dist = door - outX, walkT = Math.abs(dist) / vWalk, gy = G - 46 * bsG;
+          var mx, my, sc2 = bsG, op = 1, legs = 0;
+          if (dt < POP) { var kk = dt / POP; mx = fx + 12 * kk; my = spoutY + (gy - spoutY) * kk - 26 * Math.sin(Math.PI * kk); sc2 = bsG * (0.4 + 0.6 * kk); }
+          else if (dt < POP + walkT) { var w = (dt - POP) * vWalk; mx = outX + Math.sign(dist) * w; my = gy - Math.abs(Math.sin(w / 15 * Math.PI)) * 3; legs = Math.floor(w / 14) % 2; }
+          else if (dt < POP + walkT + 0.3) { var ke = (dt - POP - walkT) / 0.3; mx = door; my = gy - 6 * ke; sc2 = bsG * (1 - 0.45 * ke); op = 1 - ke; }
+          else op = 0;
+          me.setAttribute("opacity", op.toFixed(2));
+          if (op > 0) {
+            me.setAttribute("transform", "translate(" + n1(mx) + "," + n1(my) + ") scale(" + sc2.toFixed(3) + ")");
+            me.children[0].setAttribute("opacity", legs ? 0 : 1); me.children[1].setAttribute("opacity", legs ? 1 : 0);
+          }
+        });
+      });
+
+      // ── "Redirect": the funnel's lever pulls and the funnel rattles; "medical": the first teal paper pops out (ding) ──
+      var lever = q("fun").querySelector(".funnel-lever"), funIn = q("fun-in");
+      gsap.set(lever, { svgOrigin: "80 -112" });
+      tl.fromTo(lever, { rotation: 0 }, { rotation: 50, duration: 0.15, ease: "back.out(2)", immediateRender: false }, tRedir);
+      gsap.set(funIn, { svgOrigin: "0 0" });
+      tl.fromTo(funIn, { rotation: -1.2 }, { rotation: 1.2, duration: 0.06, repeat: reps(tRedir, 0.06, tMed + 0.1), yoyo: true, ease: "none", immediateRender: false }, tRedir);
+      tl.to(funIn, { rotation: 0, duration: 0.05 }, tMed + 0.12);
+
+      // ── The lab rises on "the war money" with the Scientist at its door; he waves the papers in ──
+      tl.set(q("lab-all"), { opacity: 1 }, tMed - 0.75);
+      var labPop = q("lab-pop");
+      gsap.set(labPop, { svgOrigin: lx + " " + G });
+      tl.fromTo(labPop, { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, tMed - 0.75);
+      var sciArm = q("sci").querySelector(".arm-r");
+      gsap.set(sciArm, { svgOrigin: sciR.shoulder[1].join(" ") });
+      tl.fromTo(sciArm, { rotation: -14 }, { rotation: 14, duration: 0.22, repeat: reps(tMed - 0.4, 0.22), yoyo: true, ease: "sine.inOut", immediateRender: false }, tMed - 0.4);
+      var bub = q("bub");
+      tl.fromTo(bub, { y: 0, opacity: 1 }, { y: -10, opacity: 0.2, duration: 0.6, repeat: reps(tMed - 0.75, 0.6), ease: "power1.out", immediateRender: false }, tMed - 0.75);
+
+      // ── The factory rises on "make", its bullseye up; on "rewarding" it flips back to SUCCESS (cash register) ──
+      tl.set(q("fac-all"), { opacity: 1 }, tMake - 0.1);
+      var facPop = q("fac-pop");
+      gsap.set(facPop, { svgOrigin: fcx + " " + G });
+      tl.fromTo(facPop, { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, tMake - 0.1);
+      var flip = q("sg-flip");
+      gsap.set(flip, { svgOrigin: "0 -50" });
+      tl.to(flip, { scaleX: 0, duration: 0.1, ease: "power2.in" }, tRew - 0.1);
+      tl.set(q("sg-bull"), { opacity: 0 }, tRew);
+      tl.set(q("sg-succ"), { opacity: 1 }, tRew);
+      tl.to(flip, { scaleX: 1, duration: 0.25, ease: "back.out(3)" }, tRew);
+      var fac = q("fac");
+      var facDoorEl = fac.querySelector(".factory-door");
+      gsap.set(facDoorEl, { svgOrigin: "0 -172" });
+      var firstFac = Math.min.apply(null, papers.filter(function (p) { return p.dest === "fac"; }).map(function (p) { return p.out + POP + Math.abs(facDoor - outX) / vWalk; }));
+      tl.fromTo(facDoorEl, { scaleY: 1 }, { scaleY: 0.05, duration: 0.3, ease: "power2.out", immediateRender: false }, Math.max(tMake + 0.4, firstFac - 0.5));
+      // its smoke puffs bob; on "defund" its missile chimneys go out one by one (sizzle)
+      var smokes = fac.querySelectorAll(".factory-smoke");
+      Array.prototype.forEach.call(smokes, function (sm, i) {
+        tl.fromTo(sm, { y: 0 }, { y: -8, duration: 0.5 + i * 0.08, repeat: reps(tMake, 0.5 + i * 0.08, tDef + i * 0.22), yoyo: true, ease: "sine.inOut", immediateRender: false }, tMake);
+        gsap.set(sm, { svgOrigin: "0 -260" });
+        tl.to(sm, { opacity: 0, y: -30, duration: 0.25, ease: "power2.in" }, tDef + i * 0.22);
+      });
+      var chims = fac.querySelectorAll(".factory-chimney");
+      Array.prototype.forEach.call(chims, function (ch, i) {
+        gsap.set(ch, { svgOrigin: ch.dataset.ox + " " + ch.dataset.oy });
+        tl.fromTo(ch, { scaleY: 1, scaleX: 1 }, { scaleY: 0.9, scaleX: 1.08, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tDef + i * 0.22);
+      });
+
+      // ── Station 4: the Builder pulls off his mask on "crime" and walks to the factory; on "irrational," the Kid shuts his
+      // laptop (click), unmasks and follows the papers to the lab ──
+      function fling(id, x0, y0, t0, dir) {
+        var m = q(id);
+        tl.set(m, { opacity: 1 }, t0);
+        KIT.onTime(tl, D, function (t) {
+          if (t < t0) return;
+          var dt = t - t0, x = x0 + dir * 140 * dt, y = y0 - 260 * dt + 600 * dt * dt;
+          m.setAttribute("transform", "translate(" + n1(x) + "," + n1(Math.min(y, G - 6)) + ") rotate(" + n1(dir * 600 * dt) + ")");
+        });
+      }
+      var bEye = [S4x + b4R.eyes[0] * s4s, G - 100 * s4s + b4R.eyes[1] * s4s];
+      tl.set(q("b4"), { opacity: 0 }, tCrime);
+      tl.set(q("b4u"), { opacity: 1 }, tCrime);
+      fling("bmask", bEye[0], bEye[1], tCrime, -1);
+      var bLid = q("lap").querySelector(".laptop-lid");
+      gsap.set(bLid, { svgOrigin: "0 -7.2" });
+      tl.to(bLid, { scaleY: 0.06, duration: 0.12, ease: "power2.in" }, tCrime + 0.12);
+      var bStand = tCrime + 0.3, bArrive = Math.min(tDef - 0.1, bStand + Math.abs(facDoor - S4x) / (vWalk * 1.4));
+      tl.set(q("b4u"), { opacity: 0 }, bStand);
+      tl.set(q("bwalk"), { opacity: 1 }, bStand);
+      function walk(id, bobId, inId, rig, from, to, t0, t1, scale) {
+        var grp = q(id), bob = q(bobId), root = q(inId);
+        tl.fromTo(grp, { x: 0 }, { x: to - from, duration: t1 - t0, ease: "none", immediateRender: false }, t0);
+        var n = Math.max(2, Math.round((t1 - t0) / 0.14)), d = (t1 - t0) / n;
+        tl.fromTo(bob, { y: 0 }, { y: -5 * scale, duration: d, repeat: n - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, t0);
+        var lg = root.querySelector(".leg-l"), rg = root.querySelector(".leg-r"), al = root.querySelector(".arm-l"), ar = root.querySelector(".arm-r");
+        gsap.set(lg, { svgOrigin: rig.hip[0].join(" ") }); gsap.set(rg, { svgOrigin: rig.hip[1].join(" ") });
+        gsap.set(al, { svgOrigin: rig.shoulder[0].join(" ") }); gsap.set(ar, { svgOrigin: rig.shoulder[1].join(" ") });
+        tl.fromTo([lg, ar], { rotation: -22 }, { rotation: 22, duration: d, repeat: n - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, t0);
+        tl.fromTo([rg, al], { rotation: 22 }, { rotation: -22, duration: d, repeat: n - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, t0);
+        tl.to([lg, rg, al, ar], { rotation: 0, duration: 0.06 }, t1);
+        // in at the door: a little shrink and gone
+        gsap.set(root, { svgOrigin: "0 100" });
+        tl.to(root, { scale: 0.6, opacity: 0, duration: 0.25, ease: "power1.in" }, t1 + 0.05);
+      }
+      walk("bwalk", "bw-bob", "bw-in", bWR, S4x, facDoor, bStand + 0.05, bArrive, s4s);
+      var kEye = [kidX + kR.eyes[0] * ks, kidOY + kR.eyes[1] * ks];
+      var kLid = q("klap").querySelector(".laptop-lid");
+      gsap.set(kLid, { svgOrigin: "0 -7.2" });
+      tl.to(kLid, { scaleY: 0.06, duration: 0.1, ease: "power2.in" }, tIrr);
+      tl.set(q("k4"), { opacity: 0 }, tIrr + 0.22);
+      tl.set(q("k4u"), { opacity: 1 }, tIrr + 0.22);
+      fling("kmask", kEye[0], kEye[1], tIrr + 0.22, -1);
+      var kStand = tIrr + 0.5, kArrive = kStand + Math.abs(labDoor - kidX) / (vWalk * 1.35);
+      tl.set(q("k4u"), { opacity: 0 }, kStand);
+      tl.set(q("kwalk"), { opacity: 1 }, kStand);
+      walk("kwalk", "kw-bob", "kw-in", kWR, kidX, labDoor, kStand + 0.05, kArrive, ks);
+      // they type until they quit
+      [["b4-in", b4R, tCrime], ["k4-in", kR, tIrr]].forEach(function (a) {
+        var root = q(a[0]), al = root.querySelector(".arm-l"), ar = root.querySelector(".arm-r");
+        gsap.set(al, { svgOrigin: a[1].shoulder[0].join(" ") }); gsap.set(ar, { svgOrigin: a[1].shoulder[1].join(" ") });
+        tl.fromTo(ar, { rotation: 0 }, { rotation: 7, duration: 0.08, repeat: reps(0, 0.08, a[2]), yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(al, { rotation: 4 }, { rotation: -4, duration: 0.11, repeat: reps(0, 0.11, a[2]), yoyo: true, ease: "sine.inOut" }, 0);
+      });
+
+      // ── "defund": the press runs dry: its tray is empty and a moth flutters out; the lamps go dark round the ring ──
+      var press = q("top").querySelector(".prop-printingPress"), plate = press.querySelector(".press-plate"), crank = press.querySelector(".press-crank");
+      var trayPaper = press.querySelector(".press-tray-paper");
+      tl.set(trayPaper, { opacity: 0 }, tDef);
+      var mothG = q("moth"), mothFl = q("moth-fl");
+      var mx0 = prX - 148 * prS, my0 = prY - 214 * prS;
+      tl.set(mothG, { opacity: 1 }, tDef + 0.1);
+      KIT.onTime(tl, D, function (t) {
+        var dt = t - tDef - 0.1;
+        if (dt < 0) { mothG.setAttribute("transform", "translate(" + n1(mx0) + "," + n1(my0) + ") scale(0.8)"); return; }
+        mothG.setAttribute("transform", "translate(" + n1(mx0 - 70 * dt + 18 * Math.sin(dt * 9)) + "," + n1(my0 - 60 * dt - 10 * Math.abs(Math.sin(dt * 6))) + ") scale(0.8)");
+      });
+      tl.to(mothG, { opacity: 0, duration: 0.3 }, tDef + 2.2);
+      gsap.set(mothFl, { svgOrigin: "0 0" });
+      tl.fromTo(mothFl, { scaleY: 1 }, { scaleY: 0.2, duration: 0.06, repeat: reps(tDef + 0.1, 0.06, tDef + 2.5), yoyo: true, ease: "none", immediateRender: false }, tDef + 0.1);
+      // the lamps: station 4 goes dark when the Builder quits, the rest one by one on "machine"
+      tl.set(q("lamp-on3"), { opacity: 0 }, tCrime + 0.2);
+      [0, 1, 2, 4, 5].forEach(function (k, i) { tl.set(q("lamp-on" + k), { opacity: 0 }, tMach + i * 0.13); });
+
+      // The crank turns as the Politician cranks (faster once the press runs dry), the plate stamps a paper out at each
+      // printing, and stamps on nothing after "defund"; his left arm follows the knob.
+      var stamps = pressAt.slice();
+      for (var ds = tDef + 0.3; ds < tYou; ds += 0.42) stamps.push(ds);
+      stamps.push(lastE - 0.05);
+      var polArm = q("pol").querySelector(".arm-l"), shL = polRig.shoulder[0];
+      var a0 = Math.atan2(knob0[1] - shS[1], knob0[0] - shS[0]), tStop = tYou + 0.05;
+      KIT.onTime(tl, D, function (t) {
+        var tt = Math.min(t, tStop), ang = -(220 * Math.min(tt, tDef) + 520 * Math.max(0, tt - tDef));
+        crank.setAttribute("transform", "rotate(" + n1(ang) + " 136 -150)");
+        var r = (ang * Math.PI) / 180, kx = 136 + 42 * Math.cos(r) + 33 * Math.sin(r), ky = -150 + 42 * Math.sin(r) - 33 * Math.cos(r);
+        var kS = [prX + kx * prS, prY + ky * prS], da = ((Math.atan2(kS[1] - shS[1], kS[0] - shS[0]) - a0) * 180) / Math.PI;
+        if (da > 180) da -= 360; if (da < -180) da += 360;
+        polArm.setAttribute("transform", "rotate(" + n1(da) + " " + n1(shL[0]) + " " + n1(shL[1]) + ")");
+        var down = 0;
+        stamps.forEach(function (st) { var d = t - st; if (d > -0.08 && d < 0) down = Math.max(down, 1 + d / 0.08); else if (d >= 0 && d < 0.16) down = Math.max(down, 1 - d / 0.16); });
+        plate.setAttribute("transform", "translate(0," + n1(46 * down) + ")");
+      });
+
+      // ── "poverty": the stack drains and lowers the Weapons Maker to the ground; "cycle.": he looks round for papers,
+      // finds none, and lays his baby missile down, asleep ──
+      var rect = q("stack-rect"), wmRide = q("wm-ride"), tDrain = tPov, tDrained = tPov + 0.9;
+      KIT.onTime(tl, D, function (t) {
+        var h = S5[2] * (1 - smooth((t - tDrain) / (tDrained - tDrain)));
+        h = Math.round(h / 12) * 12;
+        rect.setAttribute("y", n1(G - h)); rect.setAttribute("height", n1(h + 2));
+        wmRide.setAttribute("transform", "translate(0," + n1(G - h) + ")");
+      });
+      var ros = q("ros");
+      gsap.set(ros, { svgOrigin: "0 0" });
+      tl.to(ros, { opacity: 0, scale: 0.4, rotation: 90, duration: 0.3 }, tDrain + 0.2);
+      var wmHead = q("wm-full").querySelector(".head");
+      gsap.set(wmHead, { svgOrigin: wmR.neck.join(" ") });
+      tl.to(wmHead, { rotation: -14, duration: 0.14 }, tCycle);
+      tl.to(wmHead, { rotation: 12, duration: 0.18 }, tCycle + 0.28);
+      tl.to(wmHead, { rotation: 0, duration: 0.14 }, tCycle + 0.58);
+      var rock = q("wm-rock");
+      gsap.set(rock, { svgOrigin: "0 100" });
+      tl.fromTo(rock, { rotation: -4 }, { rotation: 4, duration: 0.45, repeat: reps(0.2, 0.45, tCycle), yoyo: true, ease: "sine.inOut" }, 0.2);
+      tl.to(rock, { rotation: 0, scaleY: 0.9, duration: 0.2 }, tCycle + 0.75);
+      tl.to(rock, { scaleY: 1, duration: 0.2 }, tCycle + 1.0);
+      tl.set(q("wm-full"), { opacity: 0 }, tCycle + 0.9);
+      tl.set(q("wm-down"), { opacity: 1 }, tCycle + 0.9);
+      tl.set(q("sleeper"), { opacity: 1 }, tCycle + 0.9);
+      var sl = q("sleep");
+      gsap.set(sl, { svgOrigin: "0 9" });
+      tl.fromTo(sl, { scaleY: 1 }, { scaleY: 0.92, duration: 0.7, repeat: reps(tCycle + 1.1, 0.7), yoyo: true, ease: "sine.inOut", immediateRender: false }, tCycle + 1.1);
+      [0, 1, 2].forEach(function (i) {
+        var z = q("z" + i), t0 = tCycle + 1.1 + i * 0.45;
+        tl.fromTo(z, { opacity: 0, x: 0, y: 0 }, { opacity: 1, x: 10 + i * 6, y: -24 - i * 14, duration: 0.6, ease: "power1.out", immediateRender: false }, t0);
+        tl.to(z, { opacity: 0.6, duration: 0.6 }, t0 + 0.6);
+      });
+
+      // ── "outlaw": the Politician turns round with a mallet and hammers the ILLEGAL sign onto the ring (hammer); the
+      // last war paper, coughed out by the dry press, runs straight past it ──
+      tl.set(q("pol-a"), { opacity: 0 }, tYou);
+      tl.set(q("pol-b"), { opacity: 1 }, tYou);
+      var polH = q("pol-h"), polHArm = polH.querySelector(".arm-r"), mal = q("pol-mallet");
+      gsap.set([polHArm, mal], { svgOrigin: polHR.shoulder[1].join(" ") });
+      [tOut, tOut + 0.24].forEach(function (th, i) {
+        tl.fromTo([polHArm, mal], { rotation: -20 }, { rotation: 62, duration: 0.09, ease: "power3.in", immediateRender: false }, th - 0.09);
+        tl.to([polHArm, mal], { rotation: -20, duration: 0.14, ease: "power2.out" }, th + 0.02);
+      });
+      tl.set(q("ill"), { opacity: 1 }, tOut);
+      var ill = q("ill-in");
+      gsap.set(ill, { svgOrigin: "0 0" });
+      tl.fromTo(ill, { scaleY: 0 }, { scaleY: 1.12, duration: 0.12, ease: "back.out(3)", immediateRender: false }, tOut);
+      tl.to(ill, { scaleY: 0.9, duration: 0.06 }, tOut + 0.24);
+      tl.to(ill, { scaleY: 1, duration: 0.2, ease: "back.out(3)" }, tOut + 0.3);
+
+      // ── After "it.": the empty loop wobbles, then falls flat like a dropped hoop (clank); the press, the Politician and
+      // his sign come down with it ──
+      var wob = q("ring-wob"), fall = q("ring-fall"), top = q("top"), topIn = q("top-in");
+      var bx = RG.cx, by = ringBot;
+      gsap.set(wob, { svgOrigin: bx + " " + by });
+      gsap.set(fall, { svgOrigin: bx + " " + by });
+      tl.fromTo(wob, { rotation: 0 }, { rotation: 3.5, duration: 0.12, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, tEnd - 0.5);
+      tl.fromTo(fall, { scaleY: 1 }, { scaleY: 0.1, duration: 0.3, ease: "power3.in", immediateRender: false }, tEnd - 0.3);
+      tl.to(fall, { scaleY: 0.14, duration: 0.1, ease: "power1.out" }, tEnd);
+      tl.to(fall, { scaleY: 0.12, duration: 0.12, ease: "power1.in" }, tEnd + 0.1);
+      var drop = by - 0.12 * (by - ringTop) - ringTop;
+      tl.fromTo(top, { y: 0 }, { y: drop, duration: 0.34, ease: "power3.in", immediateRender: false }, tEnd - 0.3);
+      tl.fromTo(top, { y: drop }, { y: drop - 14, duration: 0.1, ease: "power1.out", immediateRender: false }, tEnd + 0.04);
+      tl.to(top, { y: drop, duration: 0.12, ease: "power1.in" }, tEnd + 0.14);
+      gsap.set(polH, { svgOrigin: "0 100" });
+      tl.to(polH, { rotation: 70, duration: 0.25, ease: "power2.in" }, tEnd + 0.05);
+      tl.to(ill, { rotation: 80, duration: 0.25, ease: "power2.in" }, tEnd + 0.02);
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

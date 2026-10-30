@@ -1,0 +1,461 @@
+<template id="meat-robot-blueprint-template">
+  <!-- meat-robot-blueprint · Layer B (storyboards/part-08-daily-deletion-event.md): slide left. "meat" → a navy blueprint
+       unrolls from its roll at the top: the reader, standing, in cream lines, MEAT ROBOT, MODEL: HUMAN in the title
+       block; Wishonia's corner slides back in. His heart beats, his lungs breathe, the vacuum tube in his head glows.
+       "worn-out" → his kneecap springs out on a coil (boing). "parts." → his heart, an old jalopy engine with an
+       exhaust pipe, coughs black smoke (huff) and keeps sputtering. After "parts." → the tube flickers and pops (pop),
+       the lungs sag like patched bellows, and the beetle from deletion-board crawls out of his chest light and scuttles
+       off across the sheet. "Every" → five red marker circles draw on, tagged 1 KNEE ... 5 CELLS (marker). "solvable" →
+       a teal wrench pops up by each tag (five pops). "engineering" → the wrenches turn (clank): the knee snaps back, the
+       smoke stops, the tube lights, the lungs fill, the chest light goes teal. "problem." → a rubber stamp slams
+       EVERY FAILURE: SOLVABLE into the title block (stamp). After "problem." → wrench 5 swings over and comes down on the
+       beetle: splat. Hold; thought-incorrect zooms out of this last frame (it copies bpArt). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #meat-robot-blueprint-cam, #meat-robot-blueprint-zoom, #meat-robot-blueprint-bg, #meat-robot-blueprint-art, #meat-robot-blueprint-pip, #meat-robot-blueprint-grain { position: absolute; inset: 0; }
+    /* The reader drawn as blueprint line art: every shape of KIT.person becomes a thin cream line (the CSS beats the
+       presentation attributes); the halftone shading is dropped; the chest light keeps its own colors. */
+    .meat-robot-blueprint-fig path, .meat-robot-blueprint-fig rect, .meat-robot-blueprint-fig ellipse,
+    .meat-robot-blueprint-fig circle:not(.chest-light) { fill: none; stroke: #F3ECD0; stroke-width: 0.95px; stroke-linejoin: miter; }
+    .meat-robot-blueprint-fig rect[fill^="url"] { display: none; }
+    .meat-robot-blueprint-fig circle.pupil { fill: #F3ECD0; }
+  </style>
+  <div id="root" data-composition-id="meat-robot-blueprint" data-width="1920" data-height="1080" data-start="0" data-duration="6.74">
+    <div id="meat-robot-blueprint-cam">
+      <div id="meat-robot-blueprint-zoom">
+        <div id="meat-robot-blueprint-bg"></div>
+        <div id="meat-robot-blueprint-art"></div>
+      </div>
+      <div id="meat-robot-blueprint-pip"></div>
+      <div id="meat-robot-blueprint-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "meat-robot-blueprint";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+
+      // ── The blueprint: copied into thought-incorrect.html, which zooms out of this scene's last frame (keep the two
+      //    copies the same). bpArt(pid, fin) draws it with ids prefixed pid; fin true draws the last frame (everything
+      //    fixed and stamped, the beetle flat under wrench 5), fin false the first (rolled up, nothing drawn on). ──
+      var BP = (function () {
+        var CREAM = C.cream, INK = C.line, TEAL_INK = "#1F6E68", SOOT = "#4A423C", OFF = "#24304D";
+        // READER (falling-apart, dissolving-on-schedule, Part 9's weirdly-calm), arms out like a service-manual figure.
+        var FIG = { tone: 3, outfit: "shirt", color: 3, arms: [[-28, -14], [28, 14]] };
+        // Per shape: the sheet [x, y, w, h]; the figure [x, feet y, scale]; the title block [x, y, w, h] and its font
+        // sizes; the tags' font size and height; each tag's anchor [x, y, side] (side L: the tag ends at x; R: starts at
+        // x) and its wrench [jaw x, jaw y, handle angle]; the beetle's scale and where it ends up.
+        var L = V
+          ? { sheet: [56, 104, 968, 1318], fig: [520, 1380, 5], title: [86, 130, 600, 360], tfs: [68, 44, 24, 36], tagFs: 34, tagH: 52, wk: 0.95,
+              tags: { knee: [790, 1210, "R"], heart: [262, 1018, "L"], lungs: [262, 800, "L"], brain: [262, 596, "L"], cells: [790, 930, "R"] },
+              wr: { knee: [806, 1146, -18], heart: [246, 954, 198], lungs: [246, 736, 198], brain: [246, 532, 198], cells: [806, 866, -18] },
+              bug: 2.1, bugEnd: [850, 1358] }
+          : { sheet: [104, 76, 1472, 818], fig: [590, 862, 4.4], title: [1062, 112, 476, 430], tfs: [58, 38, 22, 44], tagFs: 30, tagH: 46, wk: 0.85,
+              tags: { knee: [830, 724, "R"], heart: [420, 520, "L"], lungs: [420, 380, "L"], brain: [420, 193, "L"], cells: [830, 509, "R"] },
+              wr: { knee: [845, 668, -18], heart: [405, 464, 198], lungs: [405, 324, 198], brain: [405, 137, 198], cells: [845, 453, -18] },
+              bug: 2, bugEnd: [1290, 842] };
+        var F = L.fig, s = F[2];
+        function fp(px, py) { return [F[0] + px * s, F[1] - 100 * s + py * s]; }
+        function n1(v) { return (+v).toFixed(1); }
+        function P(p) { return n1(p[0]) + "," + n1(p[1]); }
+        function polyD(pts) { return "M" + pts.map(P).join(" L") + " Z"; }
+        // Oswald SemiBold advance widths, in em (measured; title.js)
+        var ADV = { "0": 0.543, "1": 0.384, "2": 0.506, "3": 0.506, "4": 0.515, "5": 0.502, "6": 0.531, "7": 0.428, "8": 0.516, "9": 0.53, " ": 0.25, A: 0.538, B: 0.574, C: 0.553, D: 0.573, E: 0.438, F: 0.425, G: 0.572, H: 0.6, I: 0.29, J: 0.339, K: 0.552, L: 0.433, M: 0.695, N: 0.554, O: 0.576, P: 0.552, Q: 0.576, R: 0.583, S: 0.505, T: 0.438, U: 0.578, V: 0.522, W: 0.704, X: 0.508, Y: 0.49, Z: 0.43, ".": 0.232, ",": 0.227, ":": 0.261 };
+        function textW(t, size) { var w = 0; for (var i = 0; i < t.length; i++) w += ADV[t[i]] || 0.55; return w * size; }
+        function txt(x, y, size, fill, t, extra) {
+          return '<text x="' + n1(x) + '" y="' + n1(y) + '" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + fill + '" ' + (extra || "") + ">" + t + "</text>";
+        }
+
+        // The reader's pivots, in person units: the knee that springs, the forearm with the cells, the chest light.
+        var R = KIT.rig(FIG), legL = 37 * R.build.legs, a6 = (6 * Math.PI) / 180;
+        var KNEE = [R.hip[1][0] + legL * Math.sin(a6), R.hip[1][1] + legL * Math.cos(a6)];
+        var sh = R.shoulder[1], ar = (FIG.arms[1][0] * Math.PI) / 180, elbow = [sh[0] + R.armLength * Math.sin(ar), sh[1] + R.armLength * Math.cos(ar)];
+        var CELLS = [elbow[0] + (R.hand[1][0] - elbow[0]) * 0.5, elbow[1] + (R.hand[1][1] - elbow[1]) * 0.5];
+        var person = KIT.person(FIG);
+        var lm = person.match(/class="chest-light" cx="([-\d.]+)" cy="([-\d.]+)"/);
+        var LIGHT = [+lm[1], +lm[2]];
+        var HEART = [0, 13], LUNGS = [-0.5, -9.5], TUBE = [-5, -52];
+        // The five callouts, in the order they are numbered: the marker loop [center (person units), rx, ry (units)].
+        var PARTS = [
+          { key: "knee", n: 1, label: "KNEE", c: KNEE, rx: 11, ry: 10 },
+          { key: "heart", n: 2, label: "HEART", c: HEART, rx: 9, ry: 9 },
+          { key: "lungs", n: 3, label: "LUNGS", c: LUNGS, rx: 20, ry: 12.5 },
+          { key: "brain", n: 4, label: "BRAIN", c: TUBE, rx: 9, ry: 12 },
+          { key: "cells", n: 5, label: "CELLS", c: CELLS, rx: 9, ry: 9 },
+        ];
+
+        // ── Pieces ──
+        // A shape with a cream halo under its navy outline (so navy things read on the navy sheet).
+        function halo(d, fill, w) {
+          return '<path d="' + d + '" fill="' + CREAM + '" stroke="' + CREAM + '" stroke-width="' + (w + 5) + '" stroke-linejoin="miter"/>' +
+            '<path d="' + d + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + w + '" stroke-linejoin="miter"/>';
+        }
+        // A teal open-end wrench around its jaw (0,0), the handle along +x to the ring at x 96.
+        function wrench() {
+          var oct = function (cx, cy, r) { var p = []; for (var i = 0; i < 8; i++) { var a = (Math.PI / 8) * (2 * i + 1); p.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); } return p; };
+          var head = [[-19, -7], [-19, -10], [-9, -19], [7, -19], [17, -9], [19, 0], [17, 9], [7, 19], [-9, 19], [-19, 10], [-19, 7], [-5, 7], [-5, -7]];
+          return halo(polyD([[12, -7], [86, -5.5], [86, 5.5], [12, 7]]), C.med, 4) + halo(polyD(head), C.med, 4) + halo(polyD(oct(96, 0, 13)), C.med, 4) +
+            '<path d="' + polyD(oct(96, 0, 5.5)) + '" fill="' + INK + '"/>' +
+            '<path d="M22,-2.5 H78" stroke="' + CREAM + '" stroke-width="2.4" opacity="0.7"/><path d="M-12,-12 L4,-14" stroke="' + CREAM + '" stroke-width="2.4" opacity="0.7"/>';
+        }
+        // The beetle (deletion-board's): about 44 long around (0,0), facing +x, seen from above: a navy shell with an
+        // orange edge highlight and a center split, a small head with white eyes and a grin, two antennae and six thin
+        // miter-jointed legs (classes .<pid>-lega / -legb: the two tripods, each pivoting at data-hip).
+        function beetle(pid, fin) {
+          function legs(x, side, fwd, i) {
+            var d = "M" + x + "," + side * 8 + " L" + (x + fwd * 0.45) + "," + side * 15 + " L" + (x + fwd) + "," + side * 20;
+            var tri = (i % 2 === 0) === (side < 0) ? "a" : "b"; // tripod a: front left, middle right, back left
+            return '<g class="' + pid + "-leg" + tri + '" data-hip="' + x + " " + side * 8 + '"><path d="' + d + '" fill="none" stroke="' + CREAM + '" stroke-width="5.5" stroke-linejoin="miter"/>' +
+              '<path d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="2.2" stroke-linejoin="miter"/></g>';
+          }
+          var shell = [[-20, 0], [-18, -8], [-10, -12], [2, -12.5], [9, -9.5], [12.5, -4], [12.5, 4], [9, 9.5], [2, 12.5], [-10, 12], [-18, 8]];
+          var head = [[12, -5.5], [18, -6.5], [22, -3], [22, 3], [18, 6.5], [12, 5.5]];
+          var ant = "M21,-3 L27,-9 L31,-8 M21,3 L27,9 L31,8";
+          return [6, -2, -10].map(function (x, i) { return legs(x, -1, [6, 0, -6][i], i) + legs(x, 1, [6, 0, -6][i], i); }).join("") +
+            '<path d="' + ant + '" fill="none" stroke="' + CREAM + '" stroke-width="5" stroke-linejoin="miter"/><path d="' + ant + '" fill="none" stroke="' + INK + '" stroke-width="1.8" stroke-linejoin="miter"/>' +
+            halo(polyD(head), INK, 2) + halo(polyD(shell), INK, 2.2) +
+            '<path d="M-16,-6.5 L-9,-9.6 L2,-10" fill="none" stroke="' + C.orange + '" stroke-width="2.2"/>' +
+            '<path d="M-19,0 L3,0 M3,-11.5 L5.5,0 L3,11.5" fill="none" stroke="#3A4766" stroke-width="1.6"/>' +
+            '<circle cx="18" cy="-3.2" r="2.5" fill="#FFFFFF"/><circle cx="18" cy="3.2" r="2.5" fill="#FFFFFF"/>' +
+            '<g class="' + pid + '-pupils"' + (fin ? ' transform="translate(0.6,-0.8)"' : "") + '><circle cx="19" cy="-3.2" r="1.2" fill="' + INK + '"/><circle cx="19" cy="3.2" r="1.2" fill="' + INK + '"/></g>' +
+            '<path d="M21.2,-2.6 Q24.6,0 21.2,2.6 Q22.4,0 21.2,-2.6 Z" fill="#FFFFFF" stroke="' + INK + '" stroke-width="0.8"/>';
+        }
+        // The same beetle after the wrench: flat on the floor (y 0), legs splayed, X eyes, antennae limp.
+        function flatBug() {
+          var shell = [[-26, 0], [-22, -5], [-8, -7], [10, -7], [18, -5], [22, 0]], head = [[20, 0], [22, -4], [30, -4], [33, 0]];
+          var legs = "M-24,0 L-31,-1 L-37,1 M-16,0 L-24,4 L-31,4 M-6,0 L-10,5 L-16,7 M4,0 L8,5 L14,7 M12,0 L19,4 L26,4", ant = "M31,-3 L37,-3 L42,2 M31,-1 L36,2 L37,7";
+          var line2 = function (d, w) { return '<path d="' + d + '" fill="none" stroke="' + CREAM + '" stroke-width="' + (w + 3.4) + '" stroke-linejoin="miter"/><path d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="' + w + '" stroke-linejoin="miter"/>'; };
+          return line2(legs, 2.2) + line2(ant, 1.8) + halo(polyD(shell), INK, 2.2) + halo(polyD(head), INK, 2) +
+            '<path d="M-20,-3.4 L-8,-5.4 L8,-5.4" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+            '<path d="M23.6,-3.2 l2.4,2.4 m0,-2.4 l-2.4,2.4 M27.6,-3.2 l2.4,2.4 m0,-2.4 l-2.4,2.4" stroke="#FFFFFF" stroke-width="1.1"/>';
+        }
+        // The vacuum tube (the brain), standing on (0, 9): a glass bulb, its glow, the filament, a crack and a pop star.
+        function tube(pid, fin) {
+          return '<ellipse id="' + pid + '-glow" cx="0" cy="-2" rx="7" ry="9" fill="' + C.yellow + '" opacity="0.55"/>' +
+            '<path d="M-4.2,6 L-4.2,-5 L-2.6,-10 L2.6,-10 L4.2,-5 L4.2,6 Z" fill="' + CREAM + '" fill-opacity="0.12" stroke="' + CREAM + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+            '<path id="' + pid + '-fil" d="M-2,5 L-2,-2.5 L0,-6 L2,-2.5 L2,5" fill="none" stroke="' + C.yellow + '" stroke-width="1"/>' +
+            '<path d="M-5,6 H5 V9 H-5 Z" fill="' + C.slate + '" stroke="' + CREAM + '" stroke-width="0.8"/><path d="M-3,9 V11 M0,9 V11 M3,9 V11" stroke="' + CREAM + '" stroke-width="0.7"/>' +
+            '<path id="' + pid + '-crack" d="M-3.6,-7 L-1.4,-4.6 L-2.8,-2.4 L0.2,0.4 L-0.8,2.4" fill="none" stroke="#FFFFFF" stroke-width="0.7" opacity="0"/>' +
+            '<g id="' + pid + '-tpop" opacity="0">' + KIT.star(0, -5, 16, "#FFFFFF", 6) + KIT.star(0, -5, 9, C.yellow, 6) + "</g>" +
+            // glass shards that fly off when it pops (hidden)
+            [[-1, -1], [1, -1.2], [-1.2, 0.3], [1.1, 0.4]].map(function (d, i) {
+              return '<g id="' + pid + "-tsh" + i + '" opacity="0" data-d="' + d[0] + " " + d[1] + '"><path d="M' + (d[0] * 3) + "," + (-5 + d[1] * 3) + " l" + (d[0] * 2.4) + ",-1.6 l0.8,2.6 Z" + '" fill="' + CREAM + '" stroke="' + CREAM + '" stroke-width="0.5"/></g>';
+            }).join("");
+        }
+        // A lung as a patched bellows, standing on (0,0): pleated sides, pleat lines across, a nozzle on top.
+        function lung(patch) {
+          var body = [[-4.6, -15], [4.6, -15], [6, -12], [4.4, -9], [6, -6], [4.4, -3], [6, 0], [-6, 0], [-4.4, -3], [-6, -6], [-4.4, -9], [-6, -12]];
+          return '<path d="' + polyD(body) + '" fill="' + C.rust + '" stroke="' + CREAM + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+            '<path d="M-4.4,-9 H4.4 M-6,-6 H6 M-4.4,-3 H4.4 M-6,-12 H6" stroke="' + CREAM + '" stroke-width="0.5" opacity="0.8"/>' +
+            (patch ? '<path d="M-3.4,-8 H1 V-4 H-3.4 Z" fill="' + C.tan + '" stroke="' + CREAM + '" stroke-width="0.6"/><path d="M-2.8,-7.4 L0.4,-4.6 M0.4,-7.4 L-2.8,-4.6" stroke="' + CREAM + '" stroke-width="0.4"/>' : "");
+        }
+        function puff() {
+          var cs = [[0, 0, 3.2], [3.4, -2, 2.8], [1.2, -4.6, 2.6], [-2.6, -3, 2.2]];
+          return cs.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + CREAM + '" stroke="' + CREAM + '" stroke-width="1.4"/>'; }).join("") +
+            cs.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + SOOT + '"/>'; }).join("") + '<circle cx="-0.6" cy="-1" r="1" fill="#6E6660"/>';
+        }
+        // A hand-drawn marker loop around an ellipse (a little over one turn, pathLength 1 so it can be drawn on).
+        function loop(cx, cy, rx, ry, seed) {
+          var r = KIT.rng(seed), pts = [], a0 = -2.4 + r() * 0.5;
+          for (var i = 0; i <= 48; i++) {
+            var u = i / 48, a = a0 + u * Math.PI * 2.16, k = 1 - 0.03 + 0.08 * u + (r() - 0.5) * 0.02;
+            pts.push([cx + rx * k * Math.cos(a), cy + ry * k * Math.sin(a)]);
+          }
+          return "M" + pts.map(P).join(" L");
+        }
+        // The coil from the knee to the sprung kneecap, d units long.
+        function coilD(d) {
+          var out = "M0,0";
+          for (var k = 1; k < 10; k++) out += " L" + n1((k / 10) * d) + "," + (k % 2 ? -2.6 : 2.6);
+          return out + " L" + n1(d) + ",0";
+        }
+
+        function art(pid, fin) {
+          var S = L.sheet, sx = S[0], sy = S[1], sw = S[2], shh = S[3];
+          var defs = '<defs><pattern id="' + pid + '-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40,0 H0 V40" fill="none" stroke="' + CREAM + '" stroke-width="1.2" opacity="0.14"/></pattern>' +
+            '<clipPath id="' + pid + '-sheetclip"><rect id="' + pid + '-reveal" x="' + (sx - 20) + '" y="' + sy + '" width="' + (sw + 40) + '" height="' + (fin ? shh : 0) + '"/></clipPath></defs>';
+          var sheet = '<rect x="' + (sx + 8) + '" y="' + (sy + 10) + '" width="' + sw + '" height="' + shh + '" fill="' + C.ink + '" opacity="0.35"/>' +
+            '<rect x="' + sx + '" y="' + sy + '" width="' + sw + '" height="' + shh + '" fill="' + C.navy + '" stroke="' + INK + '" stroke-width="4"/>' +
+            '<rect x="' + sx + '" y="' + sy + '" width="' + sw + '" height="' + shh + '" fill="url(#' + pid + '-grid)"/>' +
+            '<rect x="' + (sx + 18) + '" y="' + (sy + 26) + '" width="' + (sw - 36) + '" height="' + (shh - 44) + '" fill="none" stroke="' + CREAM + '" stroke-width="3"/>' +
+            '<rect x="' + (sx + 26) + '" y="' + (sy + 34) + '" width="' + (sw - 52) + '" height="' + (shh - 60) + '" fill="none" stroke="' + CREAM + '" stroke-width="1.2" opacity="0.6"/>';
+          // the floor line he stands on, dashed
+          var fl = F[1] + 2;
+          sheet += '<path d="M' + (sx + 40) + "," + fl + " H" + (sx + sw - 40) + '" stroke="' + CREAM + '" stroke-width="2.5" stroke-dasharray="18 10" opacity="0.55"/>';
+
+          // ── the title block ──
+          var T = L.title, tx = T[0], ty = T[1], tw = T[2], th = T[3], fs = L.tfs, hd = 175; // hd: the rule under the title lines
+          var title = '<rect x="' + tx + '" y="' + ty + '" width="' + tw + '" height="' + th + '" fill="' + CREAM + '" stroke="' + INK + '" stroke-width="4"/>' +
+            '<rect x="' + (tx + 8) + '" y="' + (ty + 8) + '" width="' + (tw - 16) + '" height="' + (th - 16) + '" fill="none" stroke="' + INK + '" stroke-width="1.6"/>' +
+            txt(tx + tw / 2, ty + th * 0.08 + fs[0] * 0.95, fs[0], INK, "MEAT ROBOT,", 'text-anchor="middle" letter-spacing="2"') +
+            txt(tx + tw / 2, ty + th * 0.08 + fs[0] * 0.95 + fs[1] * 1.2, fs[1], C.war, "MODEL: HUMAN", 'text-anchor="middle" letter-spacing="2"') +
+            '<path d="M' + (tx + 8) + "," + (ty + hd) + " H" + (tx + tw - 8) + '" stroke="' + C.orange + '" stroke-width="3"/>' +
+            txt(tx + tw * 0.25, ty + hd + fs[2] * 1.45, fs[2], INK, "DWG. NO. 847", 'text-anchor="middle" letter-spacing="1"') +
+            txt(tx + tw * 0.73, ty + hd + fs[2] * 1.45, fs[2], INK, "WARRANTY: NONE", 'text-anchor="middle" letter-spacing="1"') +
+            '<path d="M' + (tx + tw * 0.48) + "," + (ty + hd) + " V" + (ty + hd + fs[2] * 2.1) + " M" + (tx + 8) + "," + (ty + hd + fs[2] * 2.1) + " H" + (tx + tw - 8) + '" stroke="' + INK + '" stroke-width="1.6"/>';
+          var markTop = ty + hd + fs[2] * 2.1, mc = [tx + tw / 2, (markTop + ty + th - 8) / 2];
+          var mark = KIT.props.stampMark({ text: "EVERY FAILURE:\nSOLVABLE", color: TEAL_INK, angle: -6, fontSize: fs[3] });
+          var mcy = +mark.match(/data-cy="([-\d.]+)"/)[1];
+          var markG = '<g transform="translate(' + n1(mc[0]) + "," + n1(mc[1] - mcy) + ')"><g id="' + pid + '-mark"' + (fin ? "" : ' opacity="0"') + ">" + mark + "</g></g>";
+          // the rubber stamp that makes it, as wide as the mark, tilted like it (hidden in the last frame)
+          var mw = 14 * fs[3] * 0.58 + 40, stk = mw / 88;
+          var stampG = fin ? "" : '<g transform="translate(' + n1(mc[0]) + "," + n1(mc[1] + 18) + ') rotate(-6)"><g id="' + pid + '-stamp"><g transform="scale(' + stk.toFixed(3) + ')">' + KIT.props.stamp({ text: "", color: C.med }) + "</g></g></g>";
+
+          // ── the figure: the reader in cream lines, and his parts on top (all in person units) ──
+          var lightOn = fin ? C.med : OFF;
+          var fig = person.replace(/(class="chest-light"[^>]*?)r="[^"]*"/, '$1r="0"');
+          var lightG = '<circle id="' + pid + '-light" class="chest-light" cx="' + LIGHT[0] + '" cy="' + LIGHT[1] + '" r="3.6" fill="' + lightOn + '" stroke="' + CREAM + '" stroke-width="1.1"/>';
+          var at = function (p, inner, id) { return '<g transform="translate(' + n1(p[0]) + "," + n1(p[1]) + ')"><g id="' + pid + "-" + id + '">' + inner + "</g></g>"; };
+          var parts =
+            // the windpipe to the lungs
+            '<path d="M-0.5,-27 V-20 M-8,-16 L-0.5,-20 L7,-16" fill="none" stroke="' + CREAM + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+            at([-8, -1], lung(true), "lungl") + at([7, -1], lung(false), "lungr") +
+            // the heart: a faceted engine block with an exhaust pipe
+            '<g transform="translate(' + HEART[0] + "," + HEART[1] + ')"><path d="M-3,-4 L-7,-8.5 L-8.6,-7.2" fill="none" stroke="' + CREAM + '" stroke-width="2.2"/><path d="M-3,-4 L-7,-8.5 L-8.6,-7.2" fill="none" stroke="' + C.slate + '" stroke-width="1.1"/>' +
+            '<g id="' + pid + '-heart"><path d="' + polyD([[0, 5.5], [-5.8, -0.5], [-5.8, -3.6], [-3.6, -5.8], [-1.6, -5.8], [0, -4], [1.6, -5.8], [3.6, -5.8], [5.8, -3.6], [5.8, -0.5]]) + '" fill="' + C.war + '" stroke="' + CREAM + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+            '<path d="M-3.4,-3 L-1.6,-1.4 M2,-3.6 L3.6,-2" stroke="' + CREAM + '" stroke-width="0.6"/></g></g>' +
+            at(TUBE, tube(pid, fin), "tube") +
+            // the cells on his forearm: four round, one lopsided (round again once fixed)
+            '<g transform="translate(' + n1(CELLS[0]) + "," + n1(CELLS[1]) + ')">' + [[-2.6, -2.2], [2.4, -2.6], [-2.8, 2.6], [2.6, 2.4]].map(function (c) {
+              return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="2.1" fill="' + C.med + '" fill-opacity="0.35" stroke="' + CREAM + '" stroke-width="0.6"/><circle cx="' + c[0] + '" cy="' + c[1] + '" r="0.6" fill="' + CREAM + '"/>';
+            }).join("") +
+            '<g id="' + pid + '-badcell"' + (fin ? ' opacity="0"' : "") + '><path d="M-0.4,-1.6 L2.4,-0.6 L1.2,1.8 L2,3.4 L-1.6,2.2 L-2.2,-0.4 Z" fill="' + C.war + '" fill-opacity="0.75" stroke="' + CREAM + '" stroke-width="0.6"/><circle cx="-0.6" cy="0" r="0.6" fill="' + CREAM + '"/><circle cx="1" cy="1.6" r="0.5" fill="' + CREAM + '"/></g>' +
+            '<g id="' + pid + '-goodcell"' + (fin ? "" : ' opacity="0"') + '><circle cx="0" cy="0.4" r="2.1" fill="' + C.med + '" fill-opacity="0.35" stroke="' + CREAM + '" stroke-width="0.6"/><circle cx="0" cy="0.4" r="0.6" fill="' + CREAM + '"/></g></g>' +
+            // the knee: a coil (zero long until it springs) and the kneecap on its end
+            '<g transform="translate(' + n1(KNEE[0]) + "," + n1(KNEE[1]) + ')"><path id="' + pid + '-coil" d="' + coilD(0) + '" fill="none" stroke="' + CREAM + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+            '<g id="' + pid + '-cap"><path d="' + polyD([[-2, -4.6], [2, -4.6], [4.6, -2], [4.6, 2], [2, 4.6], [-2, 4.6], [-4.6, 2], [-4.6, -2]]) + '" fill="' + C.tan + '" stroke="' + CREAM + '" stroke-width="0.9"/>' +
+            '<path d="M-1.8,-1.8 L1.8,1.8 M1.8,-1.8 L-1.8,1.8" stroke="' + INK + '" stroke-width="0.8"/></g></g>';
+          // black smoke puffs from the exhaust pipe's end (hidden until they cough out)
+          var pipe = [HEART[0] - 8.6, HEART[1] - 7.2], puffs = "";
+          if (!fin) for (var i = 0; i < 7; i++) puffs += '<g transform="translate(' + n1(pipe[0]) + "," + n1(pipe[1]) + ')"><g id="' + pid + "-puff" + i + '" opacity="0">' + puff() + "</g></g>";
+          var figG = '<g transform="translate(' + n1(F[0]) + "," + n1(F[1] - 100 * s) + ") scale(" + s + ')"><g class="' + pid + '-fig">' + fig + "</g>" + parts + lightG + puffs + "</g>";
+
+          // ── the callouts: marker loops, leader lines and tags ──
+          var calls = "";
+          PARTS.forEach(function (p, i) {
+            var c = fp(p.c[0], p.c[1]), rx = p.rx * s, ry = p.ry * s, tg = L.tags[p.key];
+            var tt = Math.atan2((tg[1] - c[1]) * rx, (tg[0] - c[0]) * ry), edge = [c[0] + rx * 1.06 * Math.cos(tt), c[1] + ry * 1.06 * Math.sin(tt)];
+            var hgt = L.tagH, fsz = L.tagFs, br = hgt * 0.38, lw = textW(p.label, fsz), tw2 = 12 + 2 * br + 10 + lw + 14;
+            var x0 = tg[2] === "L" ? tg[0] - tw2 : tg[0];
+            var off = fin ? "0" : "1";
+            calls += '<path id="' + pid + "-loop" + i + '" d="' + loop(c[0], c[1], rx, ry, 80 + i) + '" fill="none" stroke="' + C.war + '" stroke-width="' + (V ? 7 : 6.5) + '" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="' + off + '"/>' +
+              '<path id="' + pid + "-lead" + i + '" d="M' + P(edge) + " L" + n1(tg[0]) + "," + n1(tg[1]) + '" fill="none" stroke="' + C.war + '" stroke-width="4" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="' + off + '"/>' +
+              '<g id="' + pid + "-tag" + i + '"' + (fin ? "" : ' opacity="0"') + ' data-at="' + n1(tg[0]) + " " + n1(tg[1]) + '">' +
+              '<rect x="' + n1(x0) + '" y="' + n1(tg[1] - hgt / 2) + '" width="' + n1(tw2) + '" height="' + hgt + '" fill="' + CREAM + '" stroke="' + INK + '" stroke-width="3"/>' +
+              '<circle cx="' + n1(x0 + 12 + br) + '" cy="' + n1(tg[1]) + '" r="' + n1(br) + '" fill="' + C.war + '" stroke="' + INK + '" stroke-width="2"/>' +
+              txt(x0 + 12 + br, tg[1] + fsz * 0.31, fsz * 0.86, CREAM, String(p.n), 'text-anchor="middle"') +
+              txt(x0 + 12 + 2 * br + 10, tg[1] + fsz * 0.36, fsz, INK, p.label, 'letter-spacing="1"') + "</g>";
+          });
+          // the wrenches, by the tags; in the last frame wrench 5 lies across the flattened beetle
+          var wrs = "", be = L.bugEnd;
+          PARTS.forEach(function (p, i) {
+            var w = L.wr[p.key], inner = '<g transform="scale(' + L.wk + ')">' + wrench() + "</g>", tr = "";
+            if (fin) tr = p.key === "cells" ? ' transform="translate(' + n1(be[0] + 6 - w[0]) + "," + n1(F[1] - 4 - 7 * L.bug - 14 - w[1]) + ') rotate(-190)"' : ' transform="rotate(' + w[2] + ')"';
+            wrs += '<g transform="translate(' + w[0] + "," + w[1] + ')"><g id="' + pid + "-wr" + i + '"' + tr + ">" + inner + "</g></g>";
+          });
+          // the beetle walking (position, pop-in squash, turn, then the drawing at its scale), and flat (the last frame)
+          var bug = fin ? "" : '<g id="' + pid + '-bug"><g id="' + pid + '-bugsq"><g id="' + pid + '-bugrot"><g transform="scale(' + L.bug + ')">' + beetle(pid, fin) + "</g></g></g></g>";
+          var flatY = F[1] - 4;
+          bug += '<g transform="translate(' + be[0] + "," + flatY + ')"><g id="' + pid + '-flat"' + (fin ? "" : ' opacity="0"') + '><g transform="scale(' + L.bug + ')">' + flatBug() + "</g></g></g>";
+          var splat = '<g id="' + pid + '-splat"' + (fin ? "" : ' opacity="0"') + ">" + [[-1, -0.15], [-0.75, -0.8], [0, -1], [0.75, -0.8], [1, -0.15]].map(function (d) {
+            return '<path d="M' + n1(be[0] + d[0] * 96) + "," + n1(flatY - 12 + d[1] * 44) + " l" + n1(d[0] * 30) + "," + n1(d[1] * 22) + '" stroke="' + CREAM + '" stroke-width="5" stroke-linecap="round"/>';
+          }).join("") + "</g>";
+
+          // the rolls: the top one fixed, the bottom one unrolls down with the sheet
+          var roll = function (y) {
+            return '<rect x="' + (sx - 14) + '" y="' + (y - 15) + '" width="' + (sw + 28) + '" height="30" fill="' + C.deep + '" stroke="' + INK + '" stroke-width="4"/>' +
+              '<path d="M' + (sx - 8) + "," + (y - 6) + " H" + (sx + sw + 8) + '" stroke="' + C.peri + '" stroke-width="4"/>' +
+              '<rect x="' + (sx - 26) + '" y="' + (y - 19) + '" width="16" height="38" fill="' + CREAM + '" stroke="' + INK + '" stroke-width="3.5"/>' +
+              '<rect x="' + (sx + sw + 10) + '" y="' + (y - 19) + '" width="16" height="38" fill="' + CREAM + '" stroke="' + INK + '" stroke-width="3.5"/>';
+          };
+          var rolls = roll(sy) + '<g id="' + pid + '-roll2"' + (fin ? ' transform="translate(0,' + shh + ')"' : "") + ">" + roll(sy + 14) + "</g>";
+
+          return defs + '<g clip-path="url(#' + pid + '-sheetclip)">' + sheet + title + markG + figG + calls + bug + splat + wrs + "</g>" + rolls + stampG;
+        }
+        return { L: L, art: art, fp: fp, PARTS: PARTS, LIGHT: LIGHT, coilD: coilD, FIG: FIG };
+      })();
+      // ── end of the copied part ──
+
+      var L = BP.L, s = L.fig[2];
+      q("bg").innerHTML = KIT.paper(ID);
+      q("art").innerHTML = KIT.svg(W, H, BP.art(ID, false));
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      var tMeat = cue("meat"), tWorn = cue("worn-out"), tParts = cue("parts."), aParts = KIT.after(ID, "parts.");
+      var tEvery = cue("Every"), tSolv = cue("solvable"), tEng = cue("engineering"), tProb = cue("problem."), aProb = KIT.after(ID, "problem.");
+
+      // "meat": the blueprint unrolls from its roll (whoosh) and Wishonia's corner slides back in.
+      var SH = L.sheet[3];
+      tl.fromTo(q("reveal"), { attr: { height: 0 } }, { attr: { height: SH }, duration: 0.42, ease: "power2.out" }, tMeat);
+      tl.fromTo(q("roll2"), { y: 0 }, { y: SH, duration: 0.42, ease: "power2.out" }, tMeat);
+      tl.fromTo(q("pip"), { x: 440 }, { x: 0, duration: 0.45, ease: "power3.out" }, tMeat + 0.05);
+
+      // The camera leans in on him from "worn-out" while the parts break, and backs out on "Every" for the callouts.
+      // (The grain and Wishonia's corner stay outside the push.)
+      var ZO = V ? "520px 940px" : "590px 480px", ZK = 1.3;
+      tl.fromTo(q("zoom"), { scale: 1, transformOrigin: ZO }, { scale: ZK, transformOrigin: ZO, duration: 0.5, ease: "power2.inOut" }, tWorn - 0.2);
+      tl.to(q("zoom"), { scale: 1, duration: 0.45, ease: "power2.inOut" }, tEvery - 0.15);
+
+      // The machine running: the heart beats, the lungs breathe, the tube glows.
+      var heart = q("heart"), lungL = q("lungl"), lungR = q("lungr"), lungs = [lungL, lungR];
+      gsap.set(heart, { svgOrigin: "0 0" });
+      lungs.forEach(function (l) { gsap.set(l, { svgOrigin: "0 0" }); });
+      tl.fromTo(heart, { scale: 1 }, { scale: 1.16, duration: 0.11, repeat: 7, yoyo: true, ease: "power1.out" }, 0.55);
+      tl.fromTo(lungs, { scaleY: 1 }, { scaleY: 1.09, duration: 0.5, repeat: 1, yoyo: true, ease: "sine.inOut" }, 0.5);
+
+      // "parts.": the heart coughs like an old jalopy (huff) and keeps sputtering black smoke until "engineering".
+      var coughs = [tParts, tParts + 0.42, tParts + 0.9, tParts + 1.3, tParts + 1.78, tParts + 2.2, tParts + 2.6].filter(function (t) { return t < tEng - 0.45; });
+      coughs.forEach(function (t, i) {
+        var big = t < tEvery ? (i === 0 ? 2.6 : 1.7) : 0.9;
+        tl.to(heart, { keyframes: [{ scaleX: 1.25 * (i ? 0.92 : 1), scaleY: 0.78, rotation: i % 2 ? 6 : -6, duration: 0.06, ease: "power2.out" }, { scaleX: 1, scaleY: 1, rotation: 0, duration: 0.14, ease: "back.out(3)" }] }, t);
+        var p = q("puff" + i);
+        gsap.set(p, { svgOrigin: "0 0" });
+        tl.fromTo(p, { opacity: 0, scale: 0.4 * big, x: 0, y: 0 }, { opacity: 1, scale: 1.1 * big, x: -9, y: -5, duration: 0.14, ease: "power2.out", immediateRender: true }, t);
+        tl.to(p, { scale: 1.7 * big, x: -26, y: -22, duration: 0.5, ease: "power1.out" }, t + 0.14);
+        tl.to(p, { opacity: 0, scale: 2.1 * big, x: -36, y: -34, duration: 0.4, ease: "power1.in" }, t + 0.64);
+      });
+
+      // "worn-out": the kneecap springs out on its coil (boing) and wobbles there; "engineering": it snaps back.
+      // The chest light blinks red from "worn-out" and goes teal on the fix. (Both are functions of time.)
+      var coil = q("coil"), cap = q("cap"), light = q("light");
+      function springOut(u) { return u <= 0 ? 0 : 1 - Math.exp(-5 * u) * Math.cos(2 * Math.PI * 2.4 * u); }
+      KIT.onTime(tl, D, function (t) {
+        var d = 0;
+        if (t >= tWorn && t < tEng) d = 22 * springOut(t - tWorn);
+        else if (t >= tEng) {
+          var u = (t - tEng) / 0.12;
+          d = u < 1 ? 22 * (1 - u * u) : -1.6 * Math.exp(-6 * (t - tEng - 0.12)) * Math.sin(2 * Math.PI * 3 * (t - tEng - 0.12));
+        }
+        coil.setAttribute("d", BP.coilD(Math.max(0, d)));
+        cap.setAttribute("transform", "translate(" + d.toFixed(2) + ",0)");
+        var col = "#24304D";
+        if (t >= tWorn && t < tEng + 0.1) col = Math.floor((t - tWorn) / 0.18) % 2 ? "#24304D" : C.war;
+        else if (t >= tEng + 0.1) col = C.med;
+        light.setAttribute("fill", col);
+      });
+
+      // After "parts.": the tube flickers and pops (pop): a crack, a white star, the glow out, the filament grey.
+      var glow = q("glow"), fil = q("fil"), crack = q("crack"), tpop = q("tpop");
+      for (var k = 0; k < 5; k++) {
+        tl.set(glow, { opacity: k % 2 ? 0.55 : 0.08 }, aParts - 0.32 + k * 0.065);
+        tl.set(fil, { attr: { stroke: k % 2 ? C.yellow : "#8A8278" } }, aParts - 0.32 + k * 0.065);
+      }
+      tl.set(glow, { opacity: 0 }, aParts);
+      tl.set(fil, { attr: { stroke: "#5E5A55" } }, aParts);
+      tl.set(crack, { opacity: 1 }, aParts);
+      gsap.set(tpop, { svgOrigin: "0 -5" });
+      tl.fromTo(tpop, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.3, duration: 0.07, ease: "power2.out", immediateRender: false }, aParts);
+      tl.to(tpop, { opacity: 0, scale: 1.8, duration: 0.18, ease: "power1.in" }, aParts + 0.08);
+      [0, 1, 2, 3].forEach(function (i) {
+        var sh = q("tsh" + i), d = sh.getAttribute("data-d").split(" ").map(Number);
+        gsap.set(sh, { svgOrigin: "0 -5" });
+        tl.fromTo(sh, { opacity: 1, x: 0, y: 0, rotation: 0 }, { keyframes: [{ x: d[0] * 9, y: d[1] * 7 - 4, rotation: d[0] * 160, duration: 0.18, ease: "power2.out" }, { x: d[0] * 13, y: 14, rotation: d[0] * 300, opacity: 0, duration: 0.3, ease: "power2.in" }], immediateRender: false }, aParts);
+      });
+      // ... the lungs sag like patched bellows ...
+      tl.to(lungL, { scaleY: 0.5, scaleX: 1.16, rotation: -12, duration: 0.32, ease: "bounce.out" }, aParts + 0.1);
+      tl.to(lungR, { scaleY: 0.56, scaleX: 1.14, rotation: 10, duration: 0.32, ease: "bounce.out" }, aParts + 0.16);
+
+      // ... and the beetle crawls out of his chest light and scuttles off: down his side, then along the floor.
+      var bug = q("bug"), bugSq = q("bugsq"), bugRot = q("bugrot");
+      var LP = BP.fp(BP.LIGHT[0], BP.LIGHT[1]), P1 = BP.fp(15, 30), P2 = [BP.fp(16, 0)[0], L.bugEnd[1]], E = L.bugEnd;
+      var tOut = aParts + 0.12, tDown = tOut + 0.25, tFloor = tDown + 1.05, tTurn = tFloor + 0.18, tStop = aProb - 0.5;
+      gsap.set(bugSq, { svgOrigin: "0 9" });
+      gsap.set(bugRot, { svgOrigin: "0 0" });
+      tl.fromTo(bug, { x: LP[0], y: LP[1] }, { x: LP[0] + 4, y: LP[1] + 8, duration: 0.25, ease: "power1.out" }, tOut);
+      tl.fromTo(bugSq, { scale: 0 }, { scale: 1, duration: 0.22, ease: "back.out(2.5)" }, tOut);
+      tl.fromTo(bugRot, { rotation: 70 }, { rotation: 82, duration: 0.25 }, tOut);
+      tl.to(bug, { keyframes: [{ x: P1[0], y: P1[1], duration: (tFloor - tDown) * 0.42, ease: "none" }, { x: P2[0], y: P2[1], duration: (tFloor - tDown) * 0.58, ease: "none" }] }, tDown);
+      tl.to(bugRot, { rotation: 0, duration: tTurn - tFloor, ease: "power1.inOut" }, tFloor);
+      tl.to(bug, { x: E[0], y: E[1], duration: tStop - tTurn, ease: "none" }, tTurn);
+      // the legs scuttle, the two tripods in turn, while it moves
+      var legsA = document.querySelectorAll("." + ID + "-lega"), legsB = document.querySelectorAll("." + ID + "-legb");
+      Array.prototype.forEach.call(legsA, function (el) { gsap.set(el, { svgOrigin: el.getAttribute("data-hip") }); });
+      Array.prototype.forEach.call(legsB, function (el) { gsap.set(el, { svgOrigin: el.getAttribute("data-hip") }); });
+      var nStep = Math.floor((tStop - tOut) / 0.08);
+      tl.fromTo(legsA, { rotation: -18 }, { rotation: 18, duration: 0.08, repeat: nStep - 1, yoyo: true, ease: "none", immediateRender: false }, tOut);
+      tl.fromTo(legsB, { rotation: 18 }, { rotation: -18, duration: 0.08, repeat: nStep - 1, yoyo: true, ease: "none", immediateRender: false }, tOut);
+      tl.to(Array.prototype.slice.call(legsA).concat(Array.prototype.slice.call(legsB)), { rotation: 0, duration: 0.06 }, tOut + nStep * 0.08);
+      // it stops, looks up at what is coming
+      tl.to(bugRot, { rotation: -18, duration: 0.14, ease: "power2.out" }, tStop + 0.1);
+      tl.to(document.querySelectorAll("." + ID + "-pupils"), { x: 0.6, y: -0.8, duration: 0.1 }, tStop + 0.1);
+
+      // "Every": five red marker loops draw on, a leader line runs out of each, and its tag lands (marker).
+      BP.PARTS.forEach(function (p, i) {
+        var t = tEvery + i * 0.13;
+        tl.fromTo(q("loop" + i), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.24, ease: "power1.inOut" }, t);
+        tl.fromTo(q("lead" + i), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.1, ease: "none" }, t + 0.22);
+        var tag = q("tag" + i);
+        gsap.set(tag, { svgOrigin: tag.getAttribute("data-at") });
+        tl.fromTo(tag, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.16, ease: "back.out(2.5)" }, t + 0.3);
+      });
+
+      // "solvable": a teal wrench pops up by each tag, one after another (five pops).
+      var wr = BP.PARTS.map(function (p, i) { return q("wr" + i); });
+      BP.PARTS.forEach(function (p, i) {
+        var a = L.wr[p.key][2];
+        gsap.set(wr[i], { svgOrigin: "0 0", rotation: a, scale: 0 });
+        tl.fromTo(wr[i], { scale: 0, rotation: a + 40 }, { scale: 1, rotation: a, duration: 0.24, ease: "back.out(2.6)" }, tSolv + i * 0.1);
+      });
+      // "engineering": the wrenches turn (clank), and everything is fixed: the knee snaps back (above), the smoke stops,
+      // the tube lights, the lungs fill, the odd cell is round again, the chest light goes teal (above).
+      BP.PARTS.forEach(function (p, i) {
+        var a = L.wr[p.key][2];
+        tl.to(wr[i], { rotation: a - 42, duration: 0.1, repeat: 3, yoyo: true, ease: "power2.inOut" }, tEng + i * 0.02);
+      });
+      tl.set(crack, { opacity: 0 }, tEng + 0.1);
+      tl.set(fil, { attr: { stroke: C.yellow } }, tEng + 0.1);
+      tl.fromTo(glow, { opacity: 0 }, { opacity: 0.95, duration: 0.08, immediateRender: false }, tEng + 0.1);
+      tl.to(glow, { opacity: 0.55, duration: 0.4 }, tEng + 0.2);
+      lungs.forEach(function (l, i) {
+        tl.to(l, { scaleY: 1.12, scaleX: 1, rotation: 0, duration: 0.3, ease: "back.out(2.2)" }, tEng + 0.12 + i * 0.04);
+        tl.to(l, { scaleY: 1, duration: 0.6, ease: "sine.inOut" }, tEng + 0.5);
+      });
+      tl.to(q("badcell"), { opacity: 0, duration: 0.12 }, tEng + 0.15);
+      tl.to(q("goodcell"), { opacity: 1, duration: 0.12 }, tEng + 0.15);
+      // the heart runs smooth again: steady beats, ending at rest
+      tl.fromTo(heart, { scale: 1 }, { scale: 1.16, duration: 0.11, repeat: 9, yoyo: true, ease: "power1.out", immediateRender: false }, tEng + 0.3);
+
+      // "problem.": the rubber stamp slams EVERY FAILURE: SOLVABLE into the title block (stamp), then lifts away.
+      var stamp = q("stamp"), mark = q("mark");
+      gsap.set(stamp, { svgOrigin: "0 0" });
+      tl.fromTo(stamp, { y: -H }, { y: 0, duration: 0.16, ease: "power3.in" }, tProb - 0.16);
+      tl.fromTo(stamp, { scaleY: 1, scaleX: 1 }, { scaleY: 0.86, scaleX: 1.06, duration: 0.05, repeat: 1, yoyo: true, ease: "power1.out", immediateRender: false }, tProb);
+      tl.to(stamp, { y: -H, duration: 0.3, ease: "power2.in" }, tProb + 0.18);
+      var mcy = +mark.querySelector(".stamp-mark").getAttribute("data-cy");
+      gsap.set(mark, { svgOrigin: "0 " + mcy });
+      tl.fromTo(mark, { opacity: 0, scale: 1.12 }, { opacity: 1, scale: 1, duration: 0.07, ease: "power2.out", immediateRender: false }, tProb);
+
+      // After "problem.": wrench 5 swings up off its tag and comes down on the beetle like a hammer: splat. Hold.
+      var w5 = wr[4], wp = L.wr.cells, up = [E[0] + 80 - wp[0], E[1] - (V ? 300 : 260) - wp[1]], hit = [E[0] + 6 - wp[0], L.fig[1] - 4 - 7 * L.bug - 14 - wp[1]];
+      tl.to(w5, { x: up[0], y: up[1], rotation: -80, duration: 0.26, ease: "power2.out" }, aProb - 0.42);
+      tl.to(w5, { x: hit[0], y: hit[1], rotation: -190, duration: 0.16, ease: "power3.in" }, aProb - 0.16);
+      // under it the beetle is flat: legs out, X eyes; the splat lines stay
+      var flat = q("flat"), so = E[0] + " " + (L.fig[1] - 16);
+      gsap.set(flat, { svgOrigin: "0 0" });
+      tl.set(bug, { opacity: 0 }, aProb);
+      tl.fromTo(flat, { opacity: 0, scaleX: 0.7, scaleY: 2.2 }, { opacity: 1, scaleX: 1, scaleY: 1, duration: 0.07, ease: "power3.out", immediateRender: false }, aProb);
+      tl.fromTo(q("splat"), { opacity: 0, scale: 0.6, svgOrigin: so }, { opacity: 1, scale: 1, svgOrigin: so, duration: 0.08, ease: "power2.out", immediateRender: false }, aProb);
+      tl.to(w5, { keyframes: [{ y: hit[1] - 12, rotation: -186, duration: 0.08, ease: "power1.out" }, { y: hit[1], rotation: -190, duration: 0.1, ease: "power2.in" }] }, aProb + 0.03);
+      tl.fromTo(q("cam"), { y: 0 }, { y: 6, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, aProb);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

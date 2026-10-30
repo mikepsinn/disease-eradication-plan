@@ -1,0 +1,444 @@
+<template id="neighbors-house-template">
+  <!-- neighbors-house · Layer B (storyboards/part-11-civilization-countdown.md). Two houses: the neighbor's
+       (mailbox FAILED STATE) and the Watcher's (mailbox YOU), whose picture window shows the Watcher sipping tea as
+       he watches. "neighbor's": flames start on the neighbor's roof (fire); "burn": they take the house, which turns
+       black and burns down to a charred frame (fire); one ember floats up and drifts slowly toward the Watcher's
+       house. "gasoline": the ground under his house opens in a cutaway: the basement is packed with red gas cans,
+       each with the war seal (clank). "own": the ember sinks toward the basement window. "basement.": one more can
+       tumbles down the stairs (clank) and the ember drops in. A beat later (+0.35): a white flash, a boom, a mushroom
+       cloud; the house is gone, and the Watcher stands on the bare floor, charred black, smoking, hair straight up,
+       still holding his teacup, blinking (sizzle). The fuse burns in the top-left corner.
+       The charred Watcher (his storyboard options plus charred: true) comes back in try-all-three. Here he is drawn
+       at the house's scale: 1.4 in 16:9, 1.3 in 9:16 (about 250 and 230 px tall). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #neighbors-house-cam, #neighbors-house-bg, #neighbors-house-art, #neighbors-house-pip, #neighbors-house-fuse, #neighbors-house-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="neighbors-house" data-width="1920" data-height="1080" data-start="0" data-duration="8.04">
+    <div id="neighbors-house-cam">
+      <div id="neighbors-house-bg"></div>
+      <div id="neighbors-house-art"></div>
+      <div id="neighbors-house-pip"></div>
+    </div>
+    <!-- the fuse burns in its own layer, above the camera (the slide does not move it) and under the grain -->
+    <div id="neighbors-house-fuse"></div>
+    <div id="neighbors-house-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script>
+    (function () {
+      var ID = "neighbors-house";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function el(cx, cy, rx, ry) { return 'ellipse cx="' + n1(cx) + '" cy="' + n1(cy) + '" rx="' + n1(rx) + '" ry="' + n1(ry) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function text(x, y, size, t, fill, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + (fill || ink) + '"' + (extra ? " " + extra : "") + ">" + t + "</text>";
+      }
+      // Two-link arm IK: the angles (deg, 0 = down, + toward +x) that put a hand of segment length len at target.
+      function ik(sh, target, len, bend) {
+        var dx = target[0] - sh[0], dy = target[1] - sh[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len - 0.5);
+        var base = (Math.atan2(dx, dy) * 180) / Math.PI, off = (Math.acos(d / (2 * len)) * 180) / Math.PI;
+        return [base + bend * off, base - bend * off];
+      }
+      // The charred look for a drawing that is not a person (as kit.js chars people): every color but the ink
+      // goes a dark brown of the same lightness.
+      function charColors(markup) {
+        var inkU = ink.toUpperCase();
+        return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, attr, col) {
+          if (col.toUpperCase() === inkU) return m;
+          var n = parseInt(col.slice(1), 16), lum = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(26 + lum * 40);
+          return attr + '="rgb(' + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ')"';
+        });
+      }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene (copied from war-through-wifi). ──
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ── Layout, per canvas shape ──────────────────────────────────────────────────────────────────
+      // 16:9: the two houses side by side on one street. 9:16: the neighbor's house smaller, further back on its own
+      // lawn line, and the Watcher's house big in front, its basement filling the frame below.
+      // L: [x, ground y, scale] of each house; mail: [x, ground y, scale] of each mailbox; BD: the basement's depth
+      // (house units); cloud: the mushroom cloud's scale; ember: the ember's drift, from the fire to the basement window.
+      var L = V
+        ? { LH: [300, 640, 0.85], RH: [560, 1000, 1.3], mailL: [850, 640, 0.9], mailR: [935, 1000, 1.1], BD: 325, cloud: 0.85, back: true }
+        : { LH: [440, 660, 1.4], RH: [1170, 660, 1.4], mailL: [664, 660, 1.25], mailR: [1384, 660, 1.25], BD: 152, cloud: 0.8, back: false };
+      var LH = L.LH, RH = L.RH, G = RH[1], HS = RH[2];
+      // the basement window (house units), where the ember goes in
+      var BWIN = [30, -14, 52, 22];
+      var WINDOW = [-178, -146, 108, 66]; // the picture window (house units)
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The ground: a band of soil under the street, the frame's whole width ──
+      var soilCol = "#E6D5AA", SB = H - 44;
+      var soil = F(pg(R(44, G, W - 88, SB - G)), soilCol) + F(pg(R(44, G, W - 88, SB - G)), "url(#" + P + "hatch)", 'opacity="0.22"');
+      var rk = KIT.rng(5);
+      for (var i = 0; i < 26; i++) {
+        var sx = 70 + rk() * (W - 140), sy = G + 30 + rk() * (SB - G - 60), sr = 4 + rk() * 7;
+        if (sx > RH[0] - 280 * HS && sx < RH[0] + 260 * HS && sy < G + (L.BD + 30) * HS) continue;
+        soil += S([el(sx, sy, sr * 1.4, sr)], i % 3 ? "#CDB98C" : C.tan, 2.4);
+      }
+      if (L.back) soil = F(pg(R(44, LH[1], W - 88, G - LH[1])), "#EFE3BF") + line("M44," + LH[1] + " H" + (W - 44), ink, 3.4) + soil;
+      var tufts = "";
+      [0.06, 0.2, 0.47, 0.71, 0.93].forEach(function (f) {
+        var gx = 60 + f * (W - 120);
+        tufts += line("M" + gx + "," + G + " l-6,-14 M" + (gx + 6) + "," + G + " l2,-18 M" + (gx + 12) + "," + G + " l8,-12", ink, 3);
+      });
+      var groundLine = line("M44," + G + " H" + (W - 44), ink, 5) + tufts;
+
+      // ── The basement under the Watcher's house (house units): concrete walls, stairs down on the left, and rows
+      // of red gas cans with the war seal. One gap on the bottom row, for the last can. ──
+      function gasCan(k) {
+        // a jerrycan standing on y 0, 52 wide, 70 tall: red, a handle, a spout, the embossed X, the war seal on a label
+        var body = [[-26, 0], [26, 0], [26, -60], [19, -66], [-12, -66], [-26, -52]];
+        return S([pg([[-22, -52], [-14, -60], [-19, -66], [-28, -58]])], C.slate, 2.6) +
+          S([pg(body)], C.war, 3.4) + line("M-20,-6 L20,-48 M20,-6 L-20,-48", "#8E2E1E", 2.2, 'opacity="0.7"') +
+          line("M23,-6 V-58", C.orange, 1.8) +
+          S([pg([[-8, -66], [18, -66], [16, -76], [-6, -76]])], C.war, 2.6) + F(pg(R(-1, -73, 4, 5)), ink) + F(pg(R(7, -73, 4, 5)), ink) +
+          S([ci(2, -30, 14)], C.cream, 2.2) + KIT.moneySeal("war", 2, -30, 10.5);
+      }
+      var BD = L.BD, bx0 = -214, bx1 = 206, stairs = 70;
+      var cans = [], CW = 54, row0 = bx0 + stairs + 18;
+      var rowsN = Math.floor((BD - 6) / 72);
+      for (var rI = 0; rI < rowsN; rI++) {
+        for (var cI = 0; cI < 6; cI++) {
+          if (rI === 0 && cI === 0) continue; // the gap the last can tumbles into
+          if (rowsN > 2 && rI === rowsN - 1 && cI > 3) continue; // a tall basement's top row is not full
+          cans.push([row0 + 29 + cI * CW + (rI % 2 ? 6 : 0), BD - rI * 72]);
+        }
+      }
+      var steps = "";
+      for (var st = 0; st < 6; st++) steps += S([pg(R(bx0, BD - (st + 1) * (BD / 6.4), stairs - st * (stairs / 6.5), BD / 6.4))], "#C9C2B5", 2.4);
+      var basementIn = S([pg(R(bx0, 6, bx1 - bx0, BD))], "#D8D1C1", 4) +
+        F(pg(R(bx0, 6, bx1 - bx0, BD)), "url(#" + P + "fine)", 'opacity="0.35"') +
+        line("M" + (bx0 + 4) + "," + (6 + BD * 0.5) + " H" + (bx1 - 4) + " M" + (bx0 + 4) + "," + (6 + BD * 0.25) + " H" + (bx1 - 4) + " M" + (bx0 + 4) + "," + (6 + BD * 0.75) + " H" + (bx1 - 4), ink, 1.2, 'opacity="0.25"') +
+        S([pg(R(bx0, BD - 2, bx1 - bx0, 8))], C.slate, 3) + steps +
+        // the bare bulb on its cord
+        line("M60,6 V40", ink, 2) + S([ci(60, 46, 7)], C.yellow, 2.2) +
+        g("cans", cans.map(function (c) { return at(c[0], c[1], 1, gasCan()); }).join(""));
+      // the last can, which tumbles down the stairs into the gap (its own group: moved by the timeline)
+      var lastCanAt = [row0 + 29, BD];
+      var lastCan = at(lastCanAt[0], lastCanAt[1], 1, g("can-last", g("can-last-spin", at(0, -36, 1, gasCan()), "")));
+      // the inside after the blast: blackened, empty, smoking
+      var basementBurnt = g("bsmt-burnt", S([pg(R(bx0, 6, bx1 - bx0, BD))], "#2A211C", 4) +
+        F(pg(R(bx0, 6, bx1 - bx0, BD)), "url(#" + P + "cross)", 'opacity="0.35"') +
+        [[-120, 0.7], [-20, 0.85], [90, 0.6], [150, 0.9]].map(function (s) { return at(s[0], BD - 4, 1, KIT.flames(0, 0, s[1] * 0.45)); }).join(""), 'opacity="0"');
+      // the soil over it before the cutaway opens: two halves that slide apart
+      var coverL = g("cover-l", F(pg(R(bx0 - 8, 4, (bx1 - bx0) / 2 + 8, BD + 10)), soilCol) + F(pg(R(bx0 - 8, 4, (bx1 - bx0) / 2 + 8, BD + 10)), "url(#" + P + "hatch)", 'opacity="0.22"'));
+      var coverR = g("cover-r", F(pg(R((bx0 + bx1) / 2, 4, (bx1 - bx0) / 2 + 8, BD + 10)), soilCol) + F(pg(R((bx0 + bx1) / 2, 4, (bx1 - bx0) / 2 + 8, BD + 10)), "url(#" + P + "hatch)", 'opacity="0.22"'));
+      // the cutaway's jagged edge, drawn on as it opens
+      var jag = "M" + (bx0 - 10) + ",6";
+      for (var jy = 6; jy < BD + 8; jy += 18) jag += " L" + (bx0 - 10 - (jy % 36 ? 7 : 0)) + "," + jy;
+      jag += " L" + (bx0 - 10) + "," + (BD + 10);
+      for (var jx = bx0; jx < bx1 + 10; jx += 18) jag += " L" + jx + "," + (BD + 10 + (jx % 36 ? 7 : 0));
+      jag += " L" + (bx1 + 10) + "," + (BD + 10);
+      for (var jy2 = BD + 8; jy2 > 6; jy2 -= 18) jag += " L" + (bx1 + 10 + (jy2 % 36 ? 7 : 0)) + "," + jy2;
+      jag += " L" + (bx1 + 10) + ",6";
+      var cutEdge = g("cut-edge", '<path d="' + jag + '" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>');
+      var basementClip = '<defs><clipPath id="' + P + 'bclip"><rect x="' + (bx0 - 20) + '" y="3" width="' + (bx1 - bx0 + 40) + '" height="' + (BD + 30) + '"/></clipPath></defs>';
+      var basement = basementClip + '<g clip-path="url(#' + P + 'bclip)">' + g("bsmt", basementIn + lastCan + basementBurnt) + coverL + coverR + "</g>" + cutEdge;
+
+      // ── The Watcher (storyboard Cast: the refrigerator-box businessman with his teacup), facing the neighbor ──
+      var WO = { tone: 0, outfit: "suit", color: 1, seed: 3, mood: "smug", look: "left" };
+      var WR = KIT.rig(WO);
+      function teacup(h) {
+        var x = h[0] + 1, y = h[1] - 3, st2 = 'stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="miter"';
+        return '<g transform="translate(' + n1(x) + "," + n1(y) + ')">' +
+          '<path d="M-11,1 L11,1 L8,4 L-8,4 Z" fill="' + C.cream + '" ' + st2 + "/>" +
+          '<path d="M-7,-6 q-6,0 -5,4 q1,3 6,2" fill="none" stroke="' + ink + '" stroke-width="1.8"/>' +
+          '<path d="M-7,-10 L7,-10 L5,1 L-5,1 Z" fill="#FBF6E6" ' + st2 + "/>" +
+          '<path d="M-6.4,-6.5 H6.4" stroke="' + C.orange + '" stroke-width="1.6"/></g>';
+      }
+      // poses: the cup held at the chest, and the cup at his lips (a sip)
+      var CUP = { hold: [-22, -8], sip: [-17, -32] };
+      function wOpts(pose, extra) {
+        var a = ik(WR.shoulder[0], CUP[pose], WR.armLength, -1);
+        return mix(WO, mix({ arms: [a, [8, -4]] }, extra));
+      }
+      function watcher(pose, extra) {
+        var o = wOpts(pose, extra);
+        return KIT.person(o) + teacup(KIT.rig(o).hand[0]);
+      }
+      // In the window: the head and shoulders, clipped to the glass (house units).
+      var wx = WINDOW[0] + WINDOW[2] / 2 + 2, wy = WINDOW[1] + 30 - WR.hy;
+      var winClip = '<defs><clipPath id="' + P + 'wclip"><rect x="' + WINDOW[0] + '" y="' + WINDOW[1] + '" width="' + WINDOW[2] + '" height="' + WINDOW[3] + '"/></clipPath></defs>';
+      var inWindow = winClip + '<g clip-path="url(#' + P + 'wclip)">' + F(pg(R(WINDOW[0], WINDOW[1], WINDOW[2], WINDOW[3])), "#3A4766") +
+        F(pg([[WINDOW[0], WINDOW[1]], [WINDOW[0] + 26, WINDOW[1]], [WINDOW[0] + 10, WINDOW[1] + WINDOW[3]], [WINDOW[0], WINDOW[1] + WINDOW[3]]]), C.cream) +
+        '<g transform="translate(' + n1(wx) + "," + n1(wy) + ')">' + g("w-rise", g("w-hold", watcher("hold")) + g("w-sip", watcher("sip"), 'opacity="0"')) + "</g></g>" +
+        F(pg(R(WINDOW[0], WINDOW[1], WINDOW[2], WINDOW[3])), "none", 'stroke="' + ink + '" stroke-width="3.6"') +
+        line("M" + (WINDOW[0] + WINDOW[2] - 30) + "," + (WINDOW[1] + WINDOW[3] - 8) + " L" + (WINDOW[0] + WINDOW[2] - 16) + "," + (WINDOW[1] + 10), C.cream, 2.4, 'opacity="0.6"');
+      // The charred Watcher on the bare floor after the blast (house units; the floor slab's top is y -10).
+      var WC = mix(WO, { charred: true });
+      var aC = ik(WR.shoulder[0], [-20, -4], WR.armLength, -1);
+      var charO = mix(WC, { arms: [aC, [6, -2]] });
+      var charredW = KIT.person(charO) + teacup(KIT.rig(charO).hand[0]);
+      var afterX = -40, afterY = -10 - 100;
+
+      // ── The houses ──
+      var houseR = KIT.props.house({ variant: 0 });
+      var bwin = S([pg(R(BWIN[0], BWIN[1], BWIN[2], BWIN[3]))], C.slate, 3) + line("M" + (BWIN[0] + 26) + "," + BWIN[1] + " V" + (BWIN[1] + BWIN[3]), ink, 2) +
+        line("M" + (BWIN[0] + 6) + "," + (BWIN[1] + 16) + " L" + (BWIN[0] + 12) + "," + (BWIN[1] + 5), C.cream, 2);
+      var rightHouse = g("rh", houseR + inWindow + bwin);
+      // the slab left when the house is gone
+      var slab = g("slab", S([pg(R(-232, -10, 452, 10))], "#4A3F38", 3) + line("M-220,-6 H200", "#6E5F52", 1.6), 'opacity="0"');
+      // debris that flies off at the blast (house units): roof shards, the door, a shutter, a shrub
+      var debris = [
+        { d: S([pg([[-60, -230], [40, -236], [20, -200], [-70, -196]])], C.slate, 3), to: [-260, -420, -160] },
+        { d: S([pg([[60, -226], [120, -214], [100, -180], [50, -190]])], C.slate, 3), to: [300, -380, 220] },
+        { d: S([pg(R(-46, -152, 50, 146))], C.war, 3), to: [-120, -520, 300] },
+        { d: S([pg(R(-196, -148, 15, 70))], C.peri, 3), to: [-380, -260, -200] },
+        { d: S([pg(R(140, -112, 40, 30))], C.tan, 3), to: [380, -300, 160] },
+        { d: S([pg([[0, -280], [8, -300], [16, -280]])], C.rust, 3), to: [120, -560, 400] },
+      ];
+      var debrisSvg = debris.map(function (d, k) { return g("deb" + k, d.d, 'opacity="0"'); }).join("");
+
+      // The neighbor's house: the house, its charred version on top (faded in as it burns), the black frame behind.
+      var houseL = KIT.props.house({ variant: 3 });
+      var frameBeam = function (d) { return line(d, ink, 11, 'stroke-linecap="square"') + line(d, "#2A211C", 6, 'stroke-linecap="square"'); };
+      var frame = frameBeam("M-200,0 V-176 M-120,0 V-176 M-46,0 V-176 M30,0 V-150 M100,0 V-176 M206,0 V-146") +
+        frameBeam("M-206,-176 H100 M100,-148 H206") +
+        frameBeam("M-220,-172 L-186,-234 H82 L104,-196 M-150,-234 L-162,-176 M-80,-234 L-78,-176 M10,-234 L4,-176") +
+        frameBeam("M94,-146 L152,-208 L176,-180") +
+        S([pg(R(-176, -274, 34, 98))], "#3A2E28", 3.4) + S([pg(R(-181, -282, 44, 9))], "#2A211C", 3) +
+        [[-200, -176], [-46, -176], [100, -176], [-186, -234], [82, -234], [152, -208], [206, -146]].map(function (p, k) {
+          return F(ci(p[0], p[1], 5), k % 2 ? C.orange : C.yellow, 'opacity="0.9"');
+        }).join("");
+      var smokeCol = function (k, x, y, s) {
+        return at(x, y, s, g("fsmoke" + k, [[0, 0, 18], [-10, -34, 24], [8, -74, 30]].map(function (p) { return S([ci(p[0], p[1], p[2])], "#8C8782", 3); }).join(""), 'opacity="0"'));
+      };
+      var frameSmoke = smokeCol(0, -150, -250, 1) + smokeCol(1, 30, -240, 1.2) + smokeCol(2, 150, -220, 0.9);
+      // the flames: three on the roof first, then the whole house (each an outer position and an inner scale group)
+      var FLAMES = [[-130, -232, 0.75], [-30, -236, 0.9], [60, -230, 0.7], [-150, -150, 0.9], [-60, -120, 1.1], [40, -150, 1.0], [150, -200, 0.9], [160, -110, 1.0], [-200, -80, 0.8]];
+      var flamesSvg = FLAMES.map(function (f, k) { return at(f[0], f[1], 1, g("fl" + k, KIT.flames(0, 0, f[2]))); }).join("");
+      var embers = [[-150, -176, 0.35], [-46, -176, 0.3], [100, -176, 0.32], [10, -234, 0.28], [152, -208, 0.3]];
+      var embersSvg = embers.map(function (f, k) { return at(f[0], f[1], 1, g("efl" + k, KIT.flames(0, 0, f[2]))); }).join("");
+      var leftHouse = frameSmoke + g("lframe", frame + embersSvg, 'opacity="0"') +
+        g("lhouse", g("lh-norm", houseL) + g("lh-char", charColors(KIT.props.house({ variant: 3 })), 'opacity="0"')) + flamesSvg;
+
+      // ── The mailboxes: a box on a post, the flag, and a name board hanging under it ──
+      function mailbox(id, label, boxCol, w) {
+        var post = S([pg(R(-5, -112, 10, 112))], C.tan, 3);
+        var box = S([pg([[-34, -112], [34, -112], [34, -146], [26, -154], [-26, -154], [-34, -146]])], boxCol, 3.4) +
+          line("M-28,-118 H28", ink, 1.6, 'opacity="0.5"') + line("M30,-116 V-146", C.orange, 1.6);
+        var flag = S([pg([[36, -124], [42, -124], [42, -160], [36, -160]])], C.war, 2.4) + S([pg([[42, -160], [60, -160], [60, -146], [42, -146]])], C.war, 2.4);
+        var bw = w, board = '<g id="' + P + id + '-board"><g id="' + P + id + '-flip">' +
+          S([pg(R(-bw / 2, -98, bw, 40))], "#FBF6E6", 3.4) + F(pg(R(-bw / 2 + 5, -93, bw - 10, 30)), "none", 'stroke="' + C.orange + '" stroke-width="1.6"') +
+          g(id + "-name", text(0, -69, 25, label, ink, 'letter-spacing="1.5"'), 'opacity="0"') + "</g></g>" +
+          line("M" + (-bw / 2 + 12) + ",-98 V-108 M" + (bw / 2 - 12) + ",-98 V-108", ink, 2.4);
+        return post + line("M-60,-108 H60", ink, 3.4, 'opacity="0"') + box + flag + line("M" + (-bw / 2 + 12) + ",-108 H" + (bw / 2 - 12), ink, 3) + board;
+      }
+      var mbL = at(L.mailL[0], L.mailL[1], L.mailL[2], g("mbl", mailbox("ml", "FAILED STATE", C.peri, 184)));
+      var mbR = at(L.mailR[0], L.mailR[1], L.mailR[2], g("mbr", mailbox("mr", "YOU", C.cream, 92)));
+
+      // ── The ember: an orange spark with a mustard glow; its drift is a path it follows by time ──
+      var lhx = LH[0], lhy = LH[1], LS = LH[2];
+      var bwinX = RH[0] + (BWIN[0] + BWIN[2] / 2) * HS, bwinY = G + (BWIN[1] + BWIN[3] / 2) * HS;
+      var e0 = [lhx + 0 * LS, lhy - 230 * LS], emberD = V
+        ? "M" + pt(e0[0], e0[1]) + " C" + pt(e0[0] + 40, e0[1] - 150) + " " + pt(560, 330) + " " + pt(690, 450) + " S" + pt(880, 660) + " " + pt(800, 800) + " S" + pt(bwinX + 50, bwinY - 120) + " " + pt(bwinX, bwinY - 30) + " L" + pt(bwinX, bwinY + 30)
+        : "M" + pt(e0[0], e0[1]) + " C" + pt(e0[0] + 60, e0[1] - 160) + " " + pt(760, 140) + " " + pt(880, 250) + " S" + pt(1100, 300) + " " + pt(1230, 360) + " S" + pt(bwinX + 80, bwinY - 120) + " " + pt(bwinX, bwinY - 30) + " L" + pt(bwinX, bwinY + 30);
+      var ember = '<path id="' + P + 'ember-path" d="' + emberD + '" fill="none" stroke="none"/>' +
+        g("ember", F(ci(0, 0, 26), C.yellow, 'opacity="0.35"') + F(ci(0, 0, 15), C.yellow) + KIT.star(0, 0, 13, C.orange) + S([ci(0, 0, 7)], C.orange, 2) + F(ci(-2, -2, 2.6), "#FFFFFF"), 'opacity="0"');
+
+      // ── The blast: the mushroom cloud standing where the house was, behind the Watcher, and the white flash ──
+      var cloud = at(RH[0] + 10 * HS, G, L.cloud, g("cloud", KIT.nuke()));
+      var flash = g("flash", F(pg(R(0, 0, W, H)), "#FFFFFF"), 'opacity="0"');
+
+      // Put it together: the far side first (in 9:16 the neighbor's house is on its own lawn line, behind).
+      var house = function (h, inner) { return at(h[0], h[1], h[2], inner); };
+      var art = KIT.paperDefs(ID) + soil + (L.back ? house(LH, leftHouse) + mbL : "") + groundLine +
+        house(RH, basement) + (L.back ? "" : house(LH, leftHouse) + mbL) +
+        cloud + house(RH, g("rh-all", rightHouse) + slab + debrisSvg) + mbR +
+        house(RH, at(afterX, afterY, 1, g("w-after", g("w-after-in", charredW)), "")) + ember + flash;
+      q("art").innerHTML = KIT.svg(W, H, art);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      fuse(q("fuse"), tl);
+      var show = function (id, t) { tl.set(q(id), { opacity: 1 }, t); };
+      var hide = function (id, t) { tl.set(q(id), { opacity: 0 }, t); };
+      // finite repeats that end inside the scene: a yoyo of `dur` repeated to fill `span` seconds
+      function reps(span, dur) { return Math.max(1, Math.floor(span / dur) - 1); }
+      // KIT.boom's blast, with the last billow cut to end with the scene (the blast is 0.7 s before the cut)
+      function boom(root, t) {
+        var part = function (c) { return root.querySelector("." + c); };
+        var base = part("nuke-base"), stem = part("nuke-stem"), ring = part("nuke-ring"), cap = part("nuke-cap");
+        gsap.set(base, { svgOrigin: "0 0" }); gsap.set(stem, { svgOrigin: "0 -60" }); gsap.set(ring, { svgOrigin: "0 -258" }); gsap.set(cap, { svgOrigin: "0 -450" });
+        tl.fromTo(base, { scaleX: 0.15, scaleY: 0.2, opacity: 0 }, { scaleX: 1, scaleY: 1, opacity: 1, duration: 0.45, ease: "power3.out" }, t);
+        tl.fromTo(stem, { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.6, ease: "power2.out" }, t + 0.03);
+        tl.fromTo(cap, { scale: 0.15, y: 330, opacity: 0 }, { scale: 1, y: 0, opacity: 1, duration: Math.min(0.8, D - t - 0.05), ease: "power2.out" }, t + 0.03);
+        tl.fromTo(ring, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: Math.min(0.5, D - t - 0.35), ease: "back.out(1.6)" }, t + 0.3);
+      }
+
+      // Both chimneys puff from the start (the house prop's smoke columns).
+      Array.prototype.forEach.call(q("art").querySelectorAll(".house-puff"), function (p, k) {
+        gsap.set(p, { svgOrigin: p.dataset.ox + " " + p.dataset.oy });
+        tl.fromTo(p, { scale: 0.8, y: 0 }, { scale: 1.15, y: -8, duration: 0.7, repeat: reps(D - (k % 3) * 0.2, 0.7), yoyo: true, ease: "sine.inOut" }, (k % 3) * 0.2);
+      });
+
+      // "countries": the neighbor's mailbox board flips over to FAILED STATE; "someone": his flips to YOU and the
+      // Watcher rises into his picture window; "watches": he turns smugly to the neighbor's house and sips.
+      function flipBoard(id, t) {
+        var f = q(id + "-flip");
+        gsap.set(f, { svgOrigin: "0 -78" });
+        tl.to(f, { scaleX: 0, duration: 0.09, ease: "power1.in" }, t);
+        show(id + "-name", t + 0.09);
+        tl.to(f, { scaleX: 1, duration: 0.14, ease: "back.out(2)" }, t + 0.09);
+      }
+      flipBoard("ml", cue("countries"));
+      flipBoard("mr", cue("someone"));
+      tl.fromTo(q("w-rise"), { y: 90 }, { y: 0, duration: 0.3, ease: "back.out(1.6)" }, cue("someone") - 0.1);
+      var sip = function (t0, t1) { hide("w-hold", t0); show("w-sip", t0); hide("w-sip", t1); show("w-hold", t1); };
+      sip(cue("watches") + 0.1, cue("watches") + 0.75);
+      sip(cue("down") + 0.2, cue("down") + 0.9);
+      sip(cue("gasoline") + 0.25, cue("own"));
+
+      // "neighbor's": flames start on its roof (fire); "burn": they take the whole house (fire), which goes black;
+      // "down": it burns down to the charred frame, which smokes; small flames stay on the beams.
+      var tN = cue("neighbor's"), tB = cue("burn"), tDown = cue("down");
+      FLAMES.forEach(function (f, k) {
+        var e = q("fl" + k), t = k < 3 ? tN + k * 0.06 : tB + (k - 3) * 0.05;
+        gsap.set(e, { svgOrigin: "0 0" });
+        tl.fromTo(e, { scale: 0 }, { scale: k < 3 ? 0.55 : 1, duration: 0.25, ease: "back.out(2)" }, t);
+        if (k < 3) tl.to(e, { scale: 1.25, duration: 0.3, ease: "power2.out" }, tB);
+        tl.to(e, { scale: 0, y: k < 3 ? 120 : 40, duration: 0.45, ease: "power2.in" }, tDown + 0.35 + (k % 3) * 0.06);
+      });
+      KIT.flicker(tl, q("art"), tN, D - 0.2);
+      tl.to(q("lh-char"), { opacity: 1, duration: 0.45, ease: "none" }, tB + 0.1);
+      var lh = q("lhouse");
+      gsap.set(lh, { svgOrigin: "0 0" });
+      show("lframe", tDown + 0.3);
+      tl.to(lh, { scaleY: 0, scaleX: 1.06, duration: 0.55, ease: "power2.in" }, tDown + 0.3);
+      embers.forEach(function (f, k) {
+        var e = q("efl" + k);
+        gsap.set(e, { svgOrigin: "0 0" });
+        tl.fromTo(e, { scale: 0 }, { scale: 1, duration: 0.2, ease: "back.out(2)" }, tDown + 0.6 + k * 0.05);
+      });
+      [0, 1, 2].forEach(function (k) {
+        var s = q("fsmoke" + k), t = tDown + 0.7 + k * 0.15;
+        tl.fromTo(s, { opacity: 0, y: 20, scale: 0.6, svgOrigin: "0 0" }, { opacity: 0.85, y: -10, scale: 1, svgOrigin: "0 0", duration: 0.6, ease: "power1.out" }, t);
+        tl.to(s, { y: -40, opacity: 0.55, duration: 1.4, ease: "sine.inOut" }, t + 0.6);
+      });
+
+      // The ember: up out of the fire on "burn", drifting slowly over toward the Watcher's house; "own": it sinks to the
+      // basement window; "basement.": it drops in.
+      var ePath = q("ember-path"), eLen = ePath.getTotalLength(), eEl = q("ember");
+      var tE0 = tB + 0.35, tOwn = cue("own"), tBase = cue("basement."), tIn = tBase + 0.12;
+      KIT.onTime(tl, D, function (lt) {
+        var f;
+        if (lt < tE0 || lt > tIn + 0.08) { eEl.setAttribute("opacity", "0"); return; }
+        if (lt < tOwn) f = 0.78 * ((lt - tE0) / (tOwn - tE0));
+        else if (lt < tBase) f = 0.78 + 0.12 * ((lt - tOwn) / (tBase - tOwn));
+        else f = 0.9 + 0.1 * Math.min(1, (lt - tBase) / 0.12);
+        var p = ePath.getPointAtLength(eLen * f), wob = Math.sin(lt * 7) * 3;
+        eEl.setAttribute("opacity", "1");
+        eEl.setAttribute("transform", "translate(" + n1(p.x + wob) + "," + n1(p.y) + ")");
+      });
+
+      // "gasoline": the ground under his house opens in a cutaway: the basement full of gas cans (clank).
+      var tG = cue("gasoline");
+      tl.to(q("cover-l"), { x: -260, opacity: 0, duration: 0.3, ease: "power2.in" }, tG);
+      tl.to(q("cover-r"), { x: 260, opacity: 0, duration: 0.3, ease: "power2.in" }, tG);
+      tl.to(q("cut-edge").firstChild, { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power1.out" }, tG);
+      tl.fromTo(q("cans"), { y: 0 }, { y: -6, duration: 0.07, repeat: 3, yoyo: true, ease: "power1.out", immediateRender: false }, tG + 0.25);
+
+      // "basement.": one more can tumbles down the stairs into the gap (clank).
+      var lc = q("can-last"), lcs = q("can-last-spin");
+      gsap.set(lcs, { svgOrigin: "0 -36" });
+      var stairTop = [bx0 + 10 - lastCanAt[0], -BD + 40];
+      tl.fromTo(lc, { x: stairTop[0], y: stairTop[1], opacity: 0 }, { x: stairTop[0] * 0.45, y: stairTop[1] * 0.45, opacity: 1, duration: 0.14, ease: "power1.in" }, tBase - 0.12);
+      tl.to(lc, { x: 0, y: 0, duration: 0.14, ease: "bounce.out" }, tBase + 0.02);
+      tl.fromTo(lcs, { rotation: -180 }, { rotation: 0, duration: 0.28, ease: "power1.out" }, tBase - 0.12);
+
+      // A beat later (+0.35): the flash, the boom, the mushroom cloud; the house is gone; the Watcher stands on the
+      // bare floor, charred, smoking, still holding the teacup (sizzle at +0.7), and blinks.
+      var tBoom = tBase + 0.35;
+      tl.fromTo(q("flash"), { opacity: 0 }, { opacity: 1, duration: 0.03 }, tBoom);
+      tl.to(q("flash"), { opacity: 0, duration: 0.24, ease: "power1.out" }, tBoom + 0.07);
+      boom(q("cloud"), tBoom + 0.02);
+      tl.fromTo(q("art"), { x: 0 }, { x: 12, duration: 0.04, repeat: 9, yoyo: true, ease: "none", immediateRender: false }, tBoom);
+      hide("rh-all", tBoom + 0.02);
+      show("slab", tBoom + 0.02);
+      hide("cans", tBoom + 0.02); hide("can-last", tBoom + 0.02);
+      show("bsmt-burnt", tBoom + 0.02);
+      debris.forEach(function (d, k) {
+        var e = q("deb" + k);
+        gsap.set(e, { svgOrigin: "0 -150" });
+        tl.fromTo(e, { opacity: 1, x: 0, y: 0, rotation: 0 }, { x: d.to[0], y: d.to[1], rotation: d.to[2], duration: 0.6, ease: "power2.out", immediateRender: false }, tBoom + 0.02);
+        tl.to(e, { opacity: 0, duration: 0.2 }, tBoom + 0.5);
+      });
+      tl.fromTo(q("w-after"), { opacity: 0 }, { opacity: 1, duration: 0.01 }, tBoom + 0.06);
+      var wa = q("w-after-in");
+      gsap.set(wa, { svgOrigin: "0 100" });
+      tl.fromTo(wa, { scaleY: 0.86, scaleX: 1.08 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "elastic.out(1.2,0.4)", immediateRender: false }, tBoom + 0.06);
+      var smoke = wa.querySelector(".smoke");
+      tl.fromTo(smoke, { y: 0, opacity: 0.9 }, { y: -8, opacity: 0.4, duration: 0.15, repeat: reps(D - tBoom - 0.36, 0.15), yoyo: true, ease: "sine.inOut" }, tBoom + 0.36);
+      var eyes = wa.querySelector(".char-eyes");
+      var er = KIT.rig(charO).eyes;
+      gsap.set(eyes, { svgOrigin: n1(er[0]) + " " + n1(er[1]) });
+      [tBoom + 0.42].forEach(function (b) {
+        tl.fromTo(eyes, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "none", immediateRender: false }, b);
+      });
+      // the YOU mailbox leans over in the blast, the board swinging
+      var mr = q("mbr");
+      gsap.set(mr, { svgOrigin: "0 0" });
+      tl.to(mr, { rotation: 14, duration: 0.2, ease: "power2.out" }, tBoom + 0.02);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

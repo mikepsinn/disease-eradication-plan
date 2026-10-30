@@ -1,0 +1,183 @@
+<template id="unexplored-therapeutic-frontier-title-template">
+  <!-- unexplored-therapeutic-frontier-title · Layer A title card (storyboards/part-09-unexplored-therapeutic-frontier.md),
+       built by KIT.titleScene (assets/js/props/title.js). "THE UNEXPLORED" slams in on "Unexplored", then
+       "THERAPEUTIC" and "FRONTIER" on their words. On "Therapeutic" a tiny scientist in a pith helmet marches in
+       along the floor, magnifying glass first. On "Frontier" a dotted explorer's line runs from the last letter of
+       FRONTIER down to the floor and off the right edge, and she follows it off. A beat after "Frontier." she runs
+       back flat out, arms up, chased by a grinning disease blob five times her height; her helmet flies off and
+       lands on the blob, which keeps it. Both are gone before the cut. No Wishonia, no captions. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="unexplored-therapeutic-frontier-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.62">
+    <div id="unexplored-therapeutic-frontier-title-cam">
+      <div id="unexplored-therapeutic-frontier-title-bg"></div>
+      <div id="unexplored-therapeutic-frontier-title-sun"></div>
+      <div id="unexplored-therapeutic-frontier-title-back"></div>
+      <div id="unexplored-therapeutic-frontier-title-words"></div>
+      <div id="unexplored-therapeutic-frontier-title-art"></div>
+    </div>
+    <div id="unexplored-therapeutic-frontier-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "unexplored-therapeutic-frontier-title",
+      // "The" is said in 0.1 s, so THE and UNEXPLORED land together on "Unexplored" (one thunk), as the storyboard asks.
+      lines: [{ words: ["THE", "UNEXPLORED"], cue: "Unexplored" }, ["THERAPEUTIC"], ["FRONTIER"]],
+      linesTall: [{ words: ["THE"], cue: "Unexplored" }, { words: ["UNEXPLORED"], cue: "Unexplored" }, ["THERAPEUTIC"], ["FRONTIER"]],
+      spoken: ["Therapeutic", "Frontier."],
+      gag: function (c) {
+        var C = c.C, ink = C.line, tl = c.tl, V = c.V, id = c.id, W = c.W;
+        var P = function (x, y) { return x.toFixed(1) + "," + y.toFixed(1); };
+        var el = function (s) { return document.getElementById(id + "-" + s); };
+        var layer = function (inner) {
+          var d = document.createElement("div");
+          d.style.cssText = "position:absolute;left:0;top:0;width:" + W + "px;height:" + c.H + "px;";
+          d.innerHTML = '<svg width="' + W + '" height="' + c.H + '" viewBox="0 0 ' + W + " " + c.H + '" style="position:absolute;inset:0;overflow:visible">' + inner + "</svg>";
+          return d;
+        };
+        var poly = function (pts, fill, sw) {
+          return '<path d="M' + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + ' Z" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + (sw || 2.4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/>';
+        };
+
+        // The floor she walks on (her feet), her scale and the blob's (she is about 130 px tall in 16:9 with her
+        // helmet, the blob about 460: it runs in front of the heading, so its grin stays in view).
+        var GY = V ? 1440 : 866, S = V ? 0.86 : 0.68, BS = V ? 3.6 : 3.0;
+
+        // ── The pith helmet, in the face's own units (facing +x, sitting on the hat line at y -22) ──
+        var KHAKI = "#E3D3A6";
+        var HELMET = poly([[-16, -21], [-14, -32], [-7, -39], [3, -42], [12, -39], [18, -31], [20, -21]], KHAKI, 2.4) +
+          '<path d="M-12,-31 L2,-38 M-4,-23 L6,-40 M8,-23 L13,-37" stroke="#C6B184" stroke-width="2.2" fill="none"/>' +
+          poly([[-16, -26], [20, -26], [20, -22], [-16, -22]], C.rust, 1.8) +
+          poly([[-26, -19], [-20, -23], [24, -23], [32, -17], [23, -15], [-19, -15]], KHAKI, 2.4) +
+          '<circle cx="3" cy="-43" r="2.6" fill="' + KHAKI + '" stroke="' + ink + '" stroke-width="1.6"/>';
+        var withHelmet = function (svg) { return svg.replace("<!--face-end-->", HELMET + "<!--face-end-->"); };
+
+        // ── The marcher: magnifying glass held out in front, eager ──
+        var marchO = KIT.castOpts("scientist", { arms: [[-24, -12], [78, 96]], holdR: "magnifier", look: "right", mood: "eager" });
+        var mr = KIT.rig(marchO);
+        var marcher = '<g transform="translate(0,' + (GY - 100 * S).toFixed(1) + ')"><g id="' + id + '-march"><g id="' + id + '-march-bob"><g transform="scale(' + S + ')">' +
+          withHelmet(KIT.person(marchO)) + "</g></g></g></g>";
+
+        // ── The runner: arms up, mouth open, no helmet (the flying one is drawn on its own) ──
+        var runO = KIT.castOpts("scientist", { arms: [[-158, -176], [150, 172]], look: "left", mood: "eager" });
+        var rr = KIT.rig(runO);
+        var speed = [-18, 2, 22].map(function (dy, i) {
+          return '<path d="M' + P(40 + i * 14, dy) + " H" + (150 + i * 30) + '" stroke="' + C.cream + '" stroke-width="5" stroke-linecap="round" opacity="0.85"/>';
+        }).join("");
+        var runner = '<g transform="translate(0,' + (GY - 100 * S).toFixed(1) + ')"><g id="' + id + '-run">' +
+          '<g transform="translate(0,' + (40 * S).toFixed(1) + ')">' + speed + "</g>" +
+          '<g transform="scale(' + S + ')">' + KIT.person(runO) + "</g></g></g>";
+
+        // The flying helmet: its center on her head (after the lean), facing left like her.
+        var hs = rr.build.hs, headC = [rr.eyes[0] + 4.2 * hs, rr.eyes[1] + 4 * hs];
+        var helmetFly = '<g id="' + id + '-hat-move"><g id="' + id + '-hat-spin"><g transform="scale(' + (-hs * S).toFixed(3) + "," + (hs * S).toFixed(3) + ')">' + HELMET + "</g></g></g>";
+
+        // ── The disease blob: grinning, claws up, hopping after her ──
+        var blobInner = KIT.props.diseaseBlob({ color: "rust", mood: "grin", arms: "up", seed: 6 });
+        // her helmet, as it sits on the blob once it lands (blob units: the same size on screen as on her head)
+        var kb = (hs * S) / BS;
+        var blobHat = '<g id="' + id + '-blob-hat" opacity="0"><g transform="translate(-4,-128) rotate(-10) scale(' + (-kb).toFixed(3) + "," + kb.toFixed(3) + ')">' + HELMET + "</g></g>";
+        var blob = '<g transform="translate(0,' + GY.toFixed(1) + ')"><g id="' + id + '-blob"><g transform="scale(' + BS + ')">' +
+          '<ellipse cx="0" cy="2" rx="80" ry="7" fill="' + C.ink + '" opacity="0.35"/><g id="' + id + '-blob-hop">' + blobInner + blobHat + "</g></g></g></g>";
+
+        // ── The dotted explorer's line: from FRONTIER's last letter down to the floor and off the right edge ──
+        var fr = c.word("FRONTIER").box, p0 = [fr.x + fr.w + 16, fr.y + fr.h * 0.55];
+        var route = V
+          ? "M" + P(p0[0], p0[1]) + " C" + P(p0[0] + 110, p0[1] + 30) + " " + P(p0[0] + 40, GY - 140) + " " + P(p0[0] + 120, GY - 12) + " S" + P(W - 20, GY + 8) + " " + P(W + 40, GY + 6)
+          : "M" + P(p0[0], p0[1]) + " C" + P(p0[0] + 130, p0[1] + 14) + " " + P(p0[0] + 90, GY - 70) + " " + P(p0[0] + 250, GY - 8) + " S" + P(W - 70, GY + 8) + " " + P(W + 40, GY + 6);
+        var routeSvg = '<defs><mask id="' + id + '-route-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="' + W + '" height="' + c.H + '">' +
+          '<path id="' + id + '-route-reveal" d="' + route + '" fill="none" stroke="#FFFFFF" stroke-width="40" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></mask></defs>' +
+          '<g mask="url(#' + id + '-route-mask)">' +
+          '<path d="' + route + '" fill="none" stroke="' + ink + '" stroke-width="13" stroke-linecap="round" stroke-dasharray="0.1 22"/>' +
+          '<path d="' + route + '" fill="none" stroke="' + C.cream + '" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 22"/>' +
+          // the start of the route: a small ring at the R, like a map's "you are here"
+          '<circle cx="' + p0[0].toFixed(1) + '" cy="' + p0[1].toFixed(1) + '" r="9" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/></g>';
+
+        c.back.appendChild(layer(routeSvg));
+        c.art.appendChild(layer(blob + marcher + runner + helmetFly));
+
+        var march = el("march"), run = el("run"), hatMove = el("hat-move"), hatSpin = el("hat-spin"), blobG = el("blob"), hop = el("blob-hop");
+        var tTher = c.cue("Therapeutic"), tFront = c.cue("Frontier."), tRun = c.after("Frontier."), D = c.D;
+
+        // "Therapeutic": she marches in from the left, magnifying glass first, and keeps going: along the floor,
+        // under FRONTIER, onto the dotted line and off the right edge (tiny quick steps).
+        var tOff = tRun - 0.06;
+        tl.fromTo(march, { x: -140 }, { x: W + 80, duration: tOff - tTher, ease: "none" }, tTher);
+        var steps = Math.floor((tOff - tTher) / 0.13);
+        [[".leg-l", 0, 20], [".leg-r", 1, -20]].forEach(function (g) {
+          var leg = march.querySelector(g[0]);
+          gsap.set(leg, { svgOrigin: mr.hip[g[1]].join(" ") });
+          tl.fromTo(leg, { rotation: g[2] }, { rotation: -g[2], duration: 0.13, repeat: steps, yoyo: true, ease: "sine.inOut" }, tTher);
+        });
+        var swingArm = march.querySelector(".arm-l");
+        gsap.set(swingArm, { svgOrigin: mr.shoulder[0].join(" ") });
+        tl.fromTo(swingArm, { rotation: -14 }, { rotation: 14, duration: 0.13, repeat: steps, yoyo: true, ease: "sine.inOut" }, tTher);
+        // a little bob on each step
+        tl.fromTo(el("march-bob"), { y: 0 }, { y: -4, duration: 0.065, repeat: steps * 2 + 1, yoyo: true, ease: "sine.out" }, tTher);
+
+        // "Frontier": the dotted line runs from the last letter down to the floor and off the right edge.
+        tl.to(el("route-reveal"), { attr: { "stroke-dashoffset": 0 }, duration: 0.44, ease: "power1.inOut" }, tFront);
+
+        // After "Frontier.": she runs back flat out, right to left, arms up, chased by the blob.
+        var rx0 = W + 70, rx1 = -320, dR = V ? 0.74 : 0.84;
+        var rX = function (t) { return rx0 + ((rx1 - rx0) * (t - tRun)) / dR; };
+        tl.fromTo(run, { x: rx0 }, { x: rx1, duration: dR, ease: "none" }, tRun);
+        var runSteps = Math.floor(dR / 0.07);
+        [[".leg-l", 0, 34], [".leg-r", 1, -34]].forEach(function (g) {
+          var leg = run.querySelector(g[0]);
+          gsap.set(leg, { svgOrigin: rr.hip[g[1]].join(" ") });
+          tl.fromTo(leg, { rotation: g[2] }, { rotation: -g[2], duration: 0.07, repeat: runSteps, yoyo: true, ease: "none" }, tRun);
+        });
+        [[".arm-l", 0, 16], [".arm-r", 1, -16]].forEach(function (g) {
+          var arm = run.querySelector(g[0]);
+          gsap.set(arm, { svgOrigin: rr.shoulder[g[1]].join(" ") });
+          tl.fromTo(arm, { rotation: -g[2] }, { rotation: g[2], duration: 0.07, repeat: runSteps, yoyo: true, ease: "none" }, tRun);
+        });
+
+        // The blob: in a beat behind her, hopping, and gaining.
+        var tB0 = tRun + 0.13, dB = V ? 0.84 : 0.92, bx0 = W + 120 * BS, bx1 = -170 * BS, HOP = 0.12;
+        var bX = function (t) { return bx0 + ((bx1 - bx0) * (t - tB0)) / dB; };
+        tl.fromTo(blobG, { x: bx0 }, { x: bx1, duration: dB, ease: "none" }, tB0);
+        var hops = Math.floor(dB / HOP);
+        tl.fromTo(hop, { y: 0 }, { y: -26, duration: HOP, repeat: hops, yoyo: true, ease: "power1.out" }, tB0);
+        var body = blobG.querySelector(".blob-body");
+        gsap.set(body, { svgOrigin: body.getAttribute("data-pivot") });
+        tl.fromTo(body, { scaleY: 0.9, scaleX: 1.06 }, { scaleY: 1.06, scaleX: 0.96, duration: HOP, repeat: hops, yoyo: true, ease: "power1.out" }, tB0);
+        ["l", "r"].forEach(function (s, i) {
+          var arm = blobG.querySelector(".blob-arm-" + s);
+          gsap.set(arm, { svgOrigin: arm.getAttribute("data-pivot") });
+          tl.fromTo(arm, { rotation: i ? 12 : -12 }, { rotation: i ? -10 : 10, duration: HOP, repeat: hops, yoyo: true, ease: "sine.inOut" }, tB0);
+        });
+        // its pupils on her, ahead of it
+        blobG.querySelectorAll(".pupil").forEach(function (p) { gsap.set(p, { x: -3 }); });
+
+        // Her helmet: on her head until the yelp, then it flies off backwards, spinning, and lands on the blob's head
+        // (on a hop's low point, so the two meet), where it stays.
+        var tPop = tRun + 0.25; // the yelp
+        var tLand = tB0 + 2 * HOP * Math.max(1, Math.round((tPop + 0.32 - tB0) / (2 * HOP)));
+        var hy = GY - 100 * S + headC[1] * S, hx = function (t) { return rX(t) + headC[0] * S; };
+        var landX = bX(tLand) - 4 * BS, landY = GY - 128 * BS;
+        gsap.set(hatSpin, { transformOrigin: "50% 50%" });
+        tl.fromTo(hatMove, { x: hx(tRun), y: hy }, { x: hx(tPop), y: hy, duration: tPop - tRun, ease: "none" }, tRun);
+        tl.to(hatMove, { x: landX, duration: tLand - tPop, ease: "none" }, tPop);
+        var apex = Math.min(hy, landY) - (V ? 90 : 70);
+        tl.to(hatMove, { y: apex, duration: (tLand - tPop) * 0.45, ease: "power2.out" }, tPop);
+        tl.to(hatMove, { y: landY, duration: (tLand - tPop) * 0.55, ease: "power2.in" }, tPop + (tLand - tPop) * 0.45);
+        tl.fromTo(hatSpin, { rotation: 0 }, { rotation: 350, duration: tLand - tPop, ease: "power1.inOut" }, tPop);
+        tl.set(hatMove, { opacity: 0 }, tLand);
+        tl.set(el("blob-hat"), { opacity: 1 }, tLand);
+        tl.set(hatMove, { opacity: 0 }, D - 0.01);
+      },
+    });
+  </script>
+</template>

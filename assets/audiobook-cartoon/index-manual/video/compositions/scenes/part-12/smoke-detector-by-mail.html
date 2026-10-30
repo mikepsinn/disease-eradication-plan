@@ -1,0 +1,526 @@
+<template id="smoke-detector-by-mail-template">
+  <!-- smoke-detector-by-mail · Layer B (storyboards/part-12-fda-unsafe-and-ineffective.md). The living room of the house
+       that burns in fire-department-water (the house's variant 1: the room's wall is that house's teal wall). A parade
+       of medicine papers marches in along the floorboards; on "mostly" a crack opens under the front of it and the
+       front three hang in the air; on "wasted," they drop through, the next two walk off the edge after them, and the
+       last one stops at the edge, teeters, looks down at the fire glowing in the basement and gulps. Smoke curls up out
+       of the crack; on "smoke" the camera tilts up the wall (9:16: the room stands tall, so the camera only leans in)
+       to a sleeping smoke detector on the ceiling, with eyes and a tiny mailbox flag. "detector": it wakes and sniffs.
+       "works": it writes a letter, RE: SMOKE, and folds it into an envelope. "by": it licks a stamp and slaps it on.
+       "mail.": the flag goes up. After "mail.": flames roll along the ceiling and swallow it; the smoke clears on it
+       charred black and smoking, its white eyes blinking, the singed letter still held up and the flag still raised. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #smoke-detector-by-mail-cam, #smoke-detector-by-mail-bg, #smoke-detector-by-mail-room, #smoke-detector-by-mail-pip, #smoke-detector-by-mail-grain { position: absolute; inset: 0; }
+    #smoke-detector-by-mail-room { clip-path: inset(44px); }
+    #smoke-detector-by-mail-world { position: absolute; left: 0; top: 0; }
+  </style>
+  <div id="root" data-composition-id="smoke-detector-by-mail" data-width="1920" data-height="1080" data-start="0" data-duration="8.96">
+    <div id="smoke-detector-by-mail-cam">
+      <div id="smoke-detector-by-mail-bg"></div>
+      <div id="smoke-detector-by-mail-room"><div id="smoke-detector-by-mail-world"></div></div>
+      <div id="smoke-detector-by-mail-pip"></div>
+      <div id="smoke-detector-by-mail-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "smoke-detector-by-mail";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+      var WHITE = "#FBF6E6", SMOKE = "#8C8782";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function text(x, y, size, t, fill, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + (fill || ink) + '"' + (extra ? " " + extra : "") + ">" + t + "</text>";
+      }
+      // Points on a circle, n facets (round things stay faceted).
+      function ring(cx, cy, r, n, a0) {
+        var out = [];
+        for (var i = 0; i < n; i++) { var a = ((a0 || 0) + (i * 360) / n) * Math.PI / 180; out.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); }
+        return out;
+      }
+      // Print shading: halftone dots over the part of a shape right of x0 (ids unique on the page).
+      var hd = 0;
+      function dots(pts, x0, op) {
+        var id = P + "hd" + ++hd, ys = pts.map(function (p) { return p[1]; }), xs = pts.map(function (p) { return p[0]; });
+        var y0 = Math.min.apply(null, ys) - 2, y1 = Math.max.apply(null, ys) + 2, x1 = Math.max.apply(null, xs) + 2;
+        return '<defs><pattern id="' + id + 'd" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="' + ink + '"/></pattern><clipPath id="' + id + 'c"><path d="' + polyD(pts) + '"/></clipPath></defs>' +
+          '<rect x="' + n1(x0) + '" y="' + n1(y0) + '" width="' + n1(Math.max(0, x1 - x0)) + '" height="' + n1(y1 - y0) + '" fill="url(#' + id + 'd)" opacity="' + (op || 0.28) + '" clip-path="url(#' + id + 'c)"/>';
+      }
+      // The charred look for a drawing that is not a person (as kit.js chars people, and Part 11's neighbors-house
+      // chars its house): every color but the ink goes a dark brown of the same lightness.
+      function charColors(markup) {
+        var inkU = ink.toUpperCase();
+        return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, attr, col) {
+          if (col.toUpperCase() === inkU) return m;
+          var n = parseInt(col.slice(1), 16), lum = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(26 + lum * 40);
+          return attr + '="rgb(' + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ')"';
+        });
+      }
+      function puff(cx, cy, r, col) {
+        var cs = [[cx, cy, r], [cx - r * 0.72, cy + r * 0.3, r * 0.62], [cx + r * 0.74, cy + r * 0.34, r * 0.56]];
+        return S(cs.map(function (c) { return ci(c[0], c[1], c[2]); }), col || SMOKE, 3.2) + F(ci(cx - r * 0.32, cy - r * 0.34, r * 0.3), C.cream, 'opacity="0.4"');
+      }
+
+      // ── THE SMOKE DETECTOR (Part 14 copies this: smoke-detector-live) ─────────────────────────────────────────
+      // A round ceiling smoke detector with a face, drawn face-on around its disc's center (0, 0): a cream disc
+      // (r 60) with a ring of grill slots, a red LED, almond eyes with heavy lids, and a tiny red mailbox flag on its
+      // right side, hanging from a slate mount whose top (the ceiling) is at y -84.
+      // o: { charred (dark brown, white eyes, smoke wisps), flag "up" | "down" (default down), eyes "open" | "shut" }
+      // Parts (untransformed groups; data-pivot="x y" in these units, for gsap.set(el, { svgOrigin })):
+      //   .sd-body (0 -84: the whole detector, to sniff or shiver), .sd-flag (57 -20: a down flag goes up with
+      //   rotation -90), .sd-eyes-open / .sd-eyes-shut (swap them), .sd-led, .sd-tongue (opacity 0; show it to lick),
+      //   .sd-char-eyes (charred: blink with scaleY about 0 -8), .sd-smoke (charred: the wisps).
+      function smokeDetector(o) {
+        o = o || {};
+        var disc = ring(0, 0, 60, 28, 0), mount = [[-34, -84], [34, -84], [30, -60], [-30, -60]];
+        var slots = "";
+        for (var i = 0; i < 20; i++) {
+          var a = (i * 18 + 9) * Math.PI / 180;
+          slots += "M" + pt(49 * Math.cos(a), 49 * Math.sin(a)) + " L" + pt(55 * Math.cos(a), 55 * Math.sin(a)) + " ";
+        }
+        var eye = function (x, k) {
+          // an almond with a pupil, under a heavy lid (the disc's color down to a third of the eye) and a lash line
+          return '<path d="M' + pt(x - 12, -8) + " Q" + pt(x, -20) + " " + pt(x + 12, -8.5) + " Q" + pt(x, 2) + " " + pt(x - 12, -8) + ' Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="1.6"/>' +
+            '<circle class="pupil" cx="' + n1(x + 1.5 * k) + '" cy="-8" r="3.6" fill="' + ink + '"/>' +
+            '<path d="M' + pt(x - 12.6, -8) + " Q" + pt(x, -21) + " " + pt(x + 12.6, -8.6) + " L" + pt(x + 11.5, -11.6) + " Q" + pt(x, -16.5) + " " + pt(x - 11.5, -11) + ' Z" fill="' + WHITE + '"/>' +
+            line("M" + pt(x - 12.8, -7.6) + " Q" + pt(x, -12.4) + " " + pt(x + 12.8, -8.4), ink, 2.4) +
+            line("M" + pt(x - 13 * k, -26 + (k > 0 ? 2 : 0)) + " L" + pt(x + 9 * k, -24 + (k > 0 ? 0 : 2)), ink, 2.2);
+        };
+        var shut = function (x) {
+          return line("M" + pt(x - 12, -9) + " Q" + pt(x, -2.5) + " " + pt(x + 12, -9), ink, 2.4) + line("M" + pt(x - 7, -5) + " l-2,3.5 M" + pt(x, -4) + " l0,4 M" + pt(x + 7, -5) + " l2,3.5", ink, 1.6);
+        };
+        var flagArt = S([pg([[54, -18], [60, -18], [60, -66], [54, -66]])], C.slate, 2.4) + S([pg([[60, -66], [84, -66], [84, -50], [60, -50]])], C.war, 2.6) +
+          line("M62,-63 H82", C.cream, 1.6, 'opacity="0.6"') + S([ci(57, -20, 4.5)], C.yellow, 2);
+        var flag = '<g class="sd-flag" data-pivot="57 -20">' + (o.flag === "up" ? "<g>" : '<g transform="rotate(90 57 -20)">') + flagArt + "</g></g>";
+        var body = S([pg(mount)], C.slate, 3.4) + line("M-28,-80 H28", C.orange, 1.6) +
+          S([pg(disc)], WHITE) + dots(disc, 18, 0.25) +
+          '<circle cx="0" cy="0" r="44" fill="none" stroke="' + ink + '" stroke-width="1.6" opacity="0.45"/>' +
+          '<path d="' + slots + '" fill="none" stroke="' + ink + '" stroke-width="3.2" stroke-linecap="square"/>' +
+          '<g class="sd-led">' + S([ci(0, -36, 4.6)], C.war, 2.2) + F(ci(-1.4, -37.4, 1.4), "#FFFFFF", 'opacity="0.8"') + "</g>" +
+          '<g class="sd-eyes-open"' + (o.eyes === "shut" ? ' opacity="0"' : "") + ">" + eye(-19, 1) + eye(19, 1) + "</g>" +
+          '<g class="sd-eyes-shut"' + (o.eyes === "shut" ? "" : ' opacity="0"') + ">" + shut(-19) + shut(19) + "</g>" +
+          '<g class="sd-tongue" opacity="0">' + S([pg([[-6, 25], [6, 25], [7, 37], [3, 42], [-3, 42], [-7, 37]])], "#E58A97", 2.4) + line("M0,28 V37", "#B35A66", 1.4) + "</g>" +
+          line("M-11,24 Q0,29 11,24", ink, 2.6) + flag;
+        if (!o.charred) return '<g class="sd"><g class="sd-body" data-pivot="0 -84">' + body + "</g></g>";
+        // charred: dark brown, the flag up, the eyes white and wide, smoke wisps curling off the rim
+        var cbody = charColors(body.replace(/<g class="sd-eyes-open"[\s\S]*?<g class="sd-tongue"/, '<g class="sd-tongue"').replace('<g class="sd-tongue" opacity="0">', '<g class="sd-tongue" opacity="0" display="none">'));
+        var white = function (x) { return S([ci(x, -8, 10)], "#FFFFFF", 2.2) + F(ci(x + 1.5, -7, 3.6), ink); };
+        var smoke = '<g class="sd-smoke">' + [[-44, -40], [-6, -66], [40, -46]].map(function (p, i) {
+          return line("M" + pt(p[0], p[1]) + " l-6,-10 l6,-10 l-6,-10 l6,-10", SMOKE, 3.6);
+        }).join("") + "</g>";
+        return '<g class="sd sd-charred"><g class="sd-body" data-pivot="0 -84">' + cbody +
+          '<g class="sd-char-eyes" data-pivot="0 -8">' + white(-19) + white(19) + "</g>" + smoke + "</g></g>";
+      }
+
+      // ── THE LETTER (copied in fire-department-water: the same envelope flutters onto the burnt house) ──
+      // A cream airmail envelope around (0, 0), 128 x 80, with a red-and-navy striped border, RE: SMOKE in Oswald and
+      // (o.stamp) a small postage stamp top right. o.singed: browned, with burnt corners.
+      function envelope(o) {
+        o = o || {};
+        var w = 128, h = 80, x0 = -w / 2, y0 = -h / 2, paper = o.singed ? "#C9A877" : WHITE, stripes = "";
+        var id = P + "env" + ++hd;
+        for (var k = -10; k < 24; k++) {
+          var x = x0 - 40 + k * 10;
+          stripes += F(pg([[x, y0 - 2], [x + 5, y0 - 2], [x + 5 + h, y0 + h + 2], [x + h, y0 + h + 2]]), k % 2 ? C.war : C.navy);
+        }
+        var inner = R(x0 + 7, y0 + 7, w - 14, h - 14);
+        var out = S([pg(R(x0, y0, w, h))], paper, 3.4) +
+          '<defs><clipPath id="' + id + '"><path d="' + polyD(R(x0, y0, w, h)) + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + id + ')">' + stripes + "</g>" + F(pg(inner), paper) +
+          text(-4, 9, 22, "RE: SMOKE", ink, 'letter-spacing="1"') + line("M-34,18 H26", ink, 1.4, 'opacity="0.45"');
+        if (o.stamp) out += stampSvg(40, -20);
+        if (o.singed) {
+          // burnt corners and a scorched edge
+          out += F(pg([[x0 - 2, y0 - 2], [x0 + 26, y0 - 2], [x0 + 18, y0 + 6], [x0 + 10, y0 + 4], [x0 + 6, y0 + 16], [x0 - 2, y0 + 22]]), "#2A211C") +
+            F(pg([[w / 2 + 2, h / 2 + 2], [w / 2 - 30, h / 2 + 2], [w / 2 - 20, h / 2 - 7], [w / 2 - 10, h / 2 - 3], [w / 2 - 5, h / 2 - 18], [w / 2 + 2, h / 2 - 24]]), "#2A211C") +
+            line("M" + pt(x0 + 26, y0 - 1) + " L" + pt(x0 + 18, y0 + 7) + " L" + pt(x0 + 10, y0 + 5) + " L" + pt(x0 + 6, y0 + 17) + " L" + pt(x0 - 1, y0 + 23), C.orange, 1.6) +
+            F(pg(R(x0, y0, w, h)), "#3A2A1C", 'opacity="0.22"');
+        }
+        return out;
+      }
+      // A small postage stamp around (cx, cy): a perforated cream square with a teal star.
+      function stampSvg(cx, cy) {
+        var s = 11, perf = "";
+        for (var i = -1; i <= 1; i++) perf += F(ci(cx + i * 7, cy - s, 1.6), WHITE) + F(ci(cx + i * 7, cy + s, 1.6), WHITE) + F(ci(cx - s, cy + i * 7, 1.6), WHITE) + F(ci(cx + s, cy + i * 7, 1.6), WHITE);
+        return S([pg(R(cx - s, cy - s, 2 * s, 2 * s))], C.yellow, 2.2) + F(pg(R(cx - s + 4, cy - s + 4, 2 * s - 8, 2 * s - 8)), C.med) + KIT.star(cx, cy, 6, WHITE) + perf;
+      }
+      // The sheet the detector writes on before folding it: lined, RE: SMOKE at the top, three scribbled lines.
+      function sheet() {
+        var x0 = -58, y0 = -62, w = 116, h = 124;
+        return S([pg(R(x0, y0, w, h))], WHITE, 3.2) + dots(R(x0, y0, w, h), 30, 0.18) +
+          line("M-48,-26 H48 M-48,-6 H48 M-48,14 H48 M-48,34 H48", C.peri, 1.2, 'opacity="0.7"') +
+          text(0, -36, 20, "RE: SMOKE", ink, 'letter-spacing="1"') +
+          [-12, 8, 28].map(function (y, i) {
+            return '<path class="sd-scribble" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M-44,' + y + " q5,-7 10,0 t10,0 t10,0 t10,0 t10,0 t10,0 t10,0" + (i < 2 ? " t10,0 t8,0" : "") + '" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round"/>';
+          }).join("");
+      }
+
+      // ── Layout, per canvas shape ──────────────────────────────────────────────────────────────────────────────
+      // WH: the room's height (16:9 is two screens tall: the camera tilts from the floor up to the ceiling; 9:16 is one
+      // tall frame); CEIL: the ceiling line; F: the top of the floor; FW: where feet stand; ck: the crack's two edges;
+      // par: the parade (scale, spacing, speed, the front paper's x at t 0, where the last one stops); det: the
+      // detector's disc center and scale; tilt: the world's y before the tilt (16:9).
+      var L = V
+        ? { WH: H, CEIL: 124, F: 1310, FW: 1350, ck: [400, 760], par: { s: 1.0, gap: 125, v: 312, x0: -104, stop: 380 },
+            det: [400, 270, 1.65], lamp: 130, pic: [640, 660, 300, 220], win: null, push: 1.07 }
+        : { WH: 1900, CEIL: 112, F: 1640, FW: 1680, ck: [760, 1200], par: { s: 1.3, gap: 165, v: 484, x0: -100, stop: 735 },
+            det: [800, 280, 2.0], lamp: 190, pic: [300, 980, 330, 230], win: [1200, 250, 380, 560], tilt: -820 };
+      var WH = L.WH, CEIL = L.CEIL, FL = L.F, FW = L.FW, CK = L.ck, PAR = L.par, DET = L.det;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      var world = q("world");
+      world.style.width = W + "px";
+      world.style.height = WH + "px";
+
+      // ── The room: the ceiling, the teal wallpaper (the house's wall), a window, a picture, a floor lamp,
+      // the baseboard and the floorboards ──
+      var room = F(pg(R(0, 0, W, WH)), C.cyan);
+      for (var sx = 30; sx < W; sx += 64) room += F(pg(R(sx, CEIL, 22, FL - CEIL)), "#76ACA7");
+      var rs = KIT.rng(12);
+      for (var yy = CEIL + 90; yy < FL - 60; yy += 150) for (var xx = 60 + ((yy / 150) % 2) * 96; xx < W; xx += 192) room += KIT.star(xx + (rs() - 0.5) * 20, yy, 9, C.cream).replace("/>", ' opacity="0.55"/>');
+      room += S([pg(R(-10, -10, W + 20, CEIL - 2))], "#E9E1CC", 3) + S([pg(R(-10, CEIL - 14, W + 20, 16))], C.tan, 3) + line("M0," + (CEIL - 10) + " H" + W, C.cream, 1.6, 'opacity="0.6"');
+      if (L.win) {
+        var wn = L.win, wx = wn[0], wy = wn[1], ww = wn[2], wh = wn[3];
+        room += S([pg(R(wx - 14, wy - 14, ww + 28, wh + 28))], WHITE, 3.4) + S([pg(R(wx, wy, ww, wh))], "#CDE5E2", 3) +
+          line("M" + (wx + ww / 2) + "," + wy + " V" + (wy + wh) + " M" + wx + "," + (wy + wh / 2) + " H" + (wx + ww), WHITE, 9) +
+          line("M" + (wx + 30) + "," + (wy + wh - 40) + " L" + (wx + 90) + "," + (wy + 40), "#FFFFFF", 4, 'opacity="0.7"') +
+          S([pg([[wx - 40, wy - 30], [wx + 70, wy - 30], [wx + 40, wy + wh + 30], [wx - 50, wy + wh + 30]]), pg([[wx + ww + 40, wy - 30], [wx + ww - 70, wy - 30], [wx + ww - 40, wy + wh + 30], [wx + ww + 50, wy + wh + 30]])], C.orange, 3.4) +
+          line("M" + (wx - 10) + "," + (wy - 20) + " L" + (wx - 18) + "," + (wy + wh + 20) + " M" + (wx + 30) + "," + (wy - 20) + " L" + (wx + 14) + "," + (wy + wh + 20), C.rust, 2, 'opacity="0.6"') +
+          S([pg(R(wx - 60, wy - 44, ww + 120, 12))], C.tan, 3);
+      }
+      // the picture: a little sailboat in a frame
+      var pc = L.pic, px = pc[0], py = pc[1], pw = pc[2], ph = pc[3];
+      room += S([pg(R(px, py, pw, ph))], C.rust, 3.4) + S([pg(R(px + 16, py + 16, pw - 32, ph - 32))], "#E9E1CC", 2.4) +
+        F(pg([[px + 16, py + ph * 0.66], [px + pw - 16, py + ph * 0.66], [px + pw - 16, py + ph - 16], [px + 16, py + ph - 16]]), C.peri) +
+        S([pg([[px + pw * 0.32, py + ph * 0.62], [px + pw * 0.7, py + ph * 0.62], [px + pw * 0.62, py + ph * 0.72], [px + pw * 0.38, py + ph * 0.72]])], C.tan, 2.4) +
+        S([pg([[px + pw * 0.5, py + ph * 0.24], [px + pw * 0.5, py + ph * 0.6], [px + pw * 0.33, py + ph * 0.6]]), pg([[px + pw * 0.53, py + ph * 0.3], [px + pw * 0.53, py + ph * 0.6], [px + pw * 0.66, py + ph * 0.6]])], WHITE, 2.4) +
+        KIT.star(px + pw * 0.8, py + ph * 0.3, 12, C.yellow) + line("M" + (px + pw / 2 - 40) + "," + py + " L" + (px + pw / 2) + "," + (py - 40) + " L" + (px + pw / 2 + 40) + "," + py, ink, 2.4);
+      // the floor lamp: a cone shade on a pole
+      var lx = L.lamp;
+      room += S([pg([[lx - 3, FW - 330], [lx + 3, FW - 330], [lx + 3, FW - 14], [lx - 3, FW - 14]])], C.slate, 2.4) + S([pg([[lx - 34, FW - 4], [lx + 34, FW - 4], [lx + 24, FW - 16], [lx - 24, FW - 16]])], C.slate, 3) +
+        S([pg([[lx - 30, FW - 330], [lx + 30, FW - 330], [lx + 56, FW - 410], [lx - 56, FW - 410]])], C.yellow, 3.4) + dots([[lx - 30, FW - 330], [lx + 30, FW - 330], [lx + 56, FW - 410], [lx - 56, FW - 410]], lx + 10, 0.3);
+      // the baseboard and the floorboards (a band of planks seen a little from above)
+      room += S([pg(R(-10, FL - 34, W + 20, 34))], WHITE, 3) + S([pg(R(-10, FL, W + 20, WH - FL + 10))], C.tan, 3.4);
+      var planks = "", pr = KIT.rng(5);
+      for (var py2 = FL + 30, row = 0; py2 < WH; py2 += 36 + row * 6, row++) {
+        planks += "M0," + py2 + " H" + W + " ";
+        for (var px2 = (row % 2) * 140 + pr() * 60; px2 < W; px2 += 260 + pr() * 80) planks += "M" + n1(px2) + "," + (py2 - 30 - row * 3) + " V" + py2 + " ";
+      }
+      room += line(planks, ink, 1.6, 'opacity="0.5"') + line("M0," + (FL + 6) + " H" + W, C.cream, 2, 'opacity="0.5"');
+
+      // ── The crack: a jagged hole in the floorboards that opens from a split to its full width, dark down below, a
+      // fire glowing at its bottom later (the basement is burning) ──
+      var cx0 = CK[0], cx1 = CK[1], ccx = (cx0 + cx1) / 2, cbot = Math.min(WH, FL + (V ? 260 : 250));
+      var hole = [[cx0, FL + 4], [cx0 + 40, FL + 12], [cx0 + 70, FL + 2], [cx0 + 120, FL + 14], [ccx - 30, FL + 4], [ccx + 20, FL + 13], [ccx + 60, FL + 3], [cx1 - 90, FL + 12], [cx1 - 40, FL + 2], [cx1, FL + 10],
+        [cx1 - 14, FL + 60], [cx1 - 4, FL + 110], [cx1 - 24, cbot], [cx0 + 26, cbot], [cx0 + 6, FL + 120], [cx0 + 16, FL + 60]];
+      var crack = S([pg(hole)], "#1B1714", 3.4) +
+        // broken plank ends (splinters) along both sides
+        S([pg([[cx0 - 6, FL + 38], [cx0 + 22, FL + 44], [cx0 + 8, FL + 52], [cx0 + 24, FL + 58], [cx0 - 6, FL + 64]]), pg([[cx1 + 6, FL + 70], [cx1 - 24, FL + 76], [cx1 - 8, FL + 84], [cx1 - 26, FL + 92], [cx1 + 6, FL + 98]])], C.tan, 2.4) +
+        g("glow", F('ellipse cx="' + n1(ccx) + '" cy="' + n1(cbot - 30) + '" rx="' + n1((cx1 - cx0) * 0.42) + '" ry="70"', C.orange, 'opacity="0.55"') +
+          F('ellipse cx="' + n1(ccx) + '" cy="' + n1(cbot - 20) + '" rx="' + n1((cx1 - cx0) * 0.28) + '" ry="40"', C.yellow, 'opacity="0.6"') +
+          [[-0.25, 0.42], [0.02, 0.55], [0.28, 0.4]].map(function (f) { return KIT.flames(ccx + f[0] * (cx1 - cx0), cbot + 4, f[1]); }).join(""), 'opacity="0"');
+      var crackG = '<g id="' + P + 'crack" data-pivot="' + n1(ccx) + " " + n1(FL) + '">' + crack + "</g>";
+      // the papers that fall are clipped to the room above the feet line plus the hole, so they drop into it
+      var clipId = P + "fallclip";
+      var clipDef = '<defs><clipPath id="' + clipId + '"><path d="' + polyD(R(-200, -200, W + 400, FW + 8 + 200)) + '"/><path d="' + polyD(hole) + '"/></clipPath></defs>';
+
+      // ── The parade: six medicine papers, each with two leg drawings to swap as they march, and a sweat drop for
+      // the last one. Each is drawn with its feet at (0, 0); the scene sets its whole transform every frame. ──
+      var papers = "";
+      for (var i = 0; i < 6; i++) {
+        papers += g("p" + i, '<g transform="translate(0,-46)"><g class="pa">' + KIT.money("med", 0.05) + '</g><g class="pb" opacity="0">' + KIT.money("med", 0.95) + "</g></g>" +
+          (i === 5 ? g("sweat", F(pg([[0, -14], [6, -2], [4, 5], [-4, 5], [-6, -2]]), "#9CCFE0", 'stroke="' + ink + '" stroke-width="2"'), 'opacity="0"') : ""));
+      }
+
+      // ── The smoke: puffs that rise out of the crack, up the wall, and spread under the ceiling; and the layer of smoke
+      // gathering under the ceiling ──
+      var NP = 16, puffs = "";
+      for (var k = 0; k < NP; k++) puffs += g("sm" + k, puff(0, 0, 26 + (k % 3) * 6), 'opacity="0"');
+      var smokeLayer = g("haze", F(pg(R(0, CEIL - 4, W, V ? 150 : 170)), SMOKE, 'opacity="0.5"') +
+        [0.1, 0.3, 0.5, 0.7, 0.9].map(function (f, j) { return puff(W * f, CEIL + (V ? 150 : 170), 44 + (j % 2) * 10); }).join(""), 'opacity="0"');
+
+      // ── The detector, its arms (drawn every frame), the sheet and the envelope, the pen and the stamp in its right
+      // hand, and the Zs while it sleeps ──
+      var DX = DET[0], DY = DET[1], DS = DET[2];
+      var detector = at(DX, DY, DS,
+        g("zz", [0, 1, 2].map(function (j) { return g("z" + j, text(0, 0, 18 + j * 5, "z", C.navy), 'opacity="0"'); }).join("")) +
+        g("arm-l", "") + g("arm-r", "") +
+        g("sheet-at", g("sheet", sheet()), 'opacity="0" transform="translate(-6,140)"') +
+        g("env-at", g("env", envelope({ stamp: false }) + g("env-stamp", stampSvg(40, -20), 'opacity="0"')) + g("env-singed", envelope({ stamp: true, singed: true }), 'opacity="0"'), 'opacity="0" transform="translate(-6,128)"') +
+        g("body", smokeDetector({ flag: "down", eyes: "shut" })) + g("body-char", smokeDetector({ charred: true, flag: "up" }), 'opacity="0"') +
+        g("hand-l", "") + g("hand-r", g("pen", '<g transform="rotate(30)">' + S([pg([[-3, -26], [3, -26], [3, 2], [0, 8], [-3, 2]])], C.yellow, 2) + F(pg([[-3, 2], [3, 2], [0, 8]]), ink) + S([pg(R(-3, -30, 6, 5))], C.war, 1.6) + "</g>", 'opacity="0"') +
+          g("hstamp", stampSvg(0, -6), 'opacity="0"')) +
+        g("sniff", line("M-26,32 q-6,4 -12,2 M-24,40 q-6,4 -12,2 M26,32 q6,4 12,2 M24,40 q6,4 12,2", ink, 2), 'opacity="0"'));
+
+      // ── The fire on the ceiling: a row of flames that rolls along it (none just round the detector, which one big
+      // flame swallows), and the smoke cloud the detector comes out of ──
+      var rowX = [], fx;
+      for (fx = V ? 70 : 90; fx < W; fx += V ? 120 : 150) if (Math.abs(fx - DX) > (V ? 150 : 190)) rowX.push(fx);
+      var fBase = CEIL + (V ? 120 : 150), fS = V ? 1.15 : 1.4;
+      var rowFlames = rowX.map(function (x, j) { return '<g transform="translate(' + x + "," + fBase + ')">' + g("rf" + j, KIT.flames(0, 0, fS * (0.85 + (j % 3) * 0.12))) + "</g>"; }).join("");
+      var engulf = '<g transform="translate(' + DX + "," + n1(DY + 120 * DS / 2) + ')">' + g("engulf", KIT.flames(-30 * DS, 0, 1.5 * DS) + KIT.flames(30 * DS, 0, 1.4 * DS) + KIT.flames(0, 10, 2.2 * DS)) + "</g>";
+      var cloud = '<g transform="translate(' + DX + "," + DY + ')">' + g("cloud", [[0, 0, 70], [-70, 30, 52], [72, 26, 56], [-30, -40, 48], [40, -36, 50], [0, 60, 50]].map(function (c) { return puff(c[0] * DS / 2, c[1] * DS / 2, c[2] * DS / 2); }).join("")) + "</g>";
+
+      world.innerHTML = KIT.svg(W, WH, KIT.paperDefs(ID) + clipDef + room + crackG + '<g clip-path="url(#' + clipId + ')">' + papers + "</g>" +
+        puffs + smokeLayer + detector + g("fire", rowFlames + engulf) + cloud);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      function pivot(el) { gsap.set(el, { svgOrigin: el.getAttribute("data-pivot") }); }
+
+      var T = {
+        open: cue("mostly"), waste: cue("wasted,"), because: cue("because"), system: cue("system"), approves: cue("approves"),
+        smoke: cue("smoke"), det: cue("detector"), works: cue("works"), by: cue("by"), mail: cue("mail."), fire: KIT.after(ID, "mail."),
+      };
+      // the camera: 16:9 tilts from the floor up to the ceiling, arriving as the detector wakes; 9:16 leans in on it
+      T.tilt0 = T.smoke - 0.3; T.tilt1 = T.det + 0.02;
+
+      // ── The papers, every frame ──
+      var G = 2600, pEls = [], sweat = q("sweat");
+      for (i = 0; i < 6; i++) pEls.push({ g: q("p" + i), a: q("p" + i).querySelector(".pa"), b: q("p" + i).querySelector(".pb") });
+      var sp = PAR;
+      function xb(i, t) { return sp.x0 + sp.v * t - sp.gap * i; }
+      // when each walker steps off the edge (the 4th and 5th), and when the last one comes to a stop
+      var tOff = [3, 4].map(function (i) { return (CK[0] + 6 - sp.x0 + sp.gap * i) / sp.v; });
+      var tStop = (sp.stop - sp.x0 + sp.gap * 5) / sp.v;
+      T.look = Math.max(T.system + 0.2, tStop + 0.75); T.gulp = T.look + 0.35;
+      function smooth(x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); }
+      function paperAt(i, t) {
+        var o = { x: xb(i, t), y: 0, rot: 0, rx: 0, ry: -23, s: 1, sy: 1, legs: 0, op: 1 };
+        var walkPhase = function (d) { return Math.floor(d / 16) % 2; };
+        if (i < 3) {
+          // the front three: frozen in mid-air when the floor goes, a look down, then the drop on "wasted,"
+          var tf = T.waste + i * 0.06;
+          if (t >= T.open) {
+            o.x = xb(i, T.open);
+            o.legs = Math.floor((t - T.open) / 0.07) % 2;
+            if (t >= T.open + 0.12 && t < tf) { o.rot = 10 * smooth((t - T.open - 0.12) / 0.12); o.rx = 0; o.ry = -23; }
+          } else o.legs = walkPhase(o.x - sp.x0);
+          if (t >= tf) {
+            var a = t - tf;
+            o.y = 0.5 * G * a * a; o.rot = 10 + (i % 2 ? -1 : 1) * 260 * a; o.s = Math.max(0.45, 1 - 0.8 * a); o.legs = Math.floor(a / 0.05) % 2;
+            o.op = a > 0.85 ? 0 : 1;
+          }
+          o.bob = t < T.open ? -Math.abs(Math.sin(((o.x - sp.x0) / 32) * Math.PI)) * 5 : 0;
+          return o;
+        }
+        if (i < 5) {
+          var to = tOff[i - 3];
+          o.legs = walkPhase(o.x - sp.x0);
+          o.bob = -Math.abs(Math.sin(((o.x - sp.x0) / 32) * Math.PI)) * 5;
+          if (t >= to) {
+            var a2 = t - to;
+            o.x = xb(i, to) + sp.v * 0.5 * a2;
+            o.y = 0.5 * G * a2 * a2; o.rot = (i % 2 ? 1 : -1) * 240 * a2 + 20 * Math.min(1, a2 * 8); o.s = Math.max(0.45, 1 - 0.8 * a2); o.legs = Math.floor(a2 / 0.05) % 2; o.bob = 0;
+            o.op = a2 > 0.85 ? 0 : 1;
+          }
+          return o;
+        }
+        // the last one: it slows to a stop at the edge, teeters on its back foot, catches itself, looks down at the
+        // glow, gulps, and stands there trembling
+        var e = xb(5, t), edge = sp.stop - 60;
+        o.x = e < edge ? e : sp.stop - 60 * Math.exp(-(e - edge) / 60);
+        o.legs = walkPhase(o.x - sp.x0);
+        o.bob = t < tStop ? -Math.abs(Math.sin(((o.x - sp.x0) / 32) * Math.PI)) * 5 * Math.min(1, (sp.stop - o.x) / 30) : 0;
+        o.rx = -22; o.ry = 0;
+        if (t >= tStop - 0.1) {
+          var u = t - (tStop - 0.1);
+          var wob = 16 * Math.sin(u * 2 * Math.PI * 2.6) * Math.exp(-2.4 * u);
+          o.rot = 9 * Math.exp(-3 * u) + wob - 4 * smooth(u / 0.9);
+          o.legs = u < 0.9 ? Math.floor(u / 0.05) % 2 : 0;
+        }
+        if (t >= T.look) o.rot += 14 * smooth((t - T.look) / 0.18) - 9 * smooth((t - T.gulp - 0.25) / 0.3);
+        if (t >= T.gulp && t < T.gulp + 0.35) { var gu = (t - T.gulp) / 0.35; o.sy = 1 - 0.14 * Math.sin(gu * Math.PI) + 0.08 * Math.sin(gu * Math.PI * 2); }
+        if (t >= T.gulp + 0.4) o.x += 1.4 * Math.sin(t * 70);
+        return o;
+      }
+      KIT.onTime(tl, D, function (t) {
+        pEls.forEach(function (p, i) {
+          var o = paperAt(i, t), s = sp.s * o.s;
+          p.g.setAttribute("transform", "translate(" + n1(o.x) + "," + n1(FW + o.y + (o.bob || 0) * s) + ") scale(" + s.toFixed(3) + "," + (s * o.sy).toFixed(3) + ") rotate(" + o.rot.toFixed(1) + "," + o.rx + "," + o.ry + ")");
+          p.g.setAttribute("opacity", o.op);
+          p.a.setAttribute("opacity", o.legs ? 0 : 1);
+          p.b.setAttribute("opacity", o.legs ? 1 : 0);
+        });
+        // the sweat drop flies off the last paper's top on the gulp
+        var su = t - T.gulp;
+        sweat.setAttribute("opacity", su > 0 && su < 0.6 ? 1 - Math.max(0, su - 0.4) / 0.2 : 0);
+        sweat.setAttribute("transform", "translate(" + n1(30 + su * 60) + "," + n1(-70 - 120 * su + 260 * su * su) + ")");
+      });
+
+      // ── The crack opens on "mostly" (snip): from a split to its full width ──
+      var crackEl = q("crack");
+      pivot(crackEl);
+      tl.fromTo(crackEl, { scaleX: 0.02, scaleY: 0.2 }, { scaleX: 1, scaleY: 1, duration: 0.24, ease: "back.out(1.4)" }, T.open);
+      // the basement fire glows up at the bottom of the hole as the last paper stops (it looks down at it)
+      var glow = q("glow");
+      tl.fromTo(glow, { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.in" }, tStop);
+      KIT.flicker(tl, glow, tStop, D);
+
+      // ── The smoke, every frame: each puff is born in the crack, rises up the wall, and spreads under the ceiling ──
+      var SR = V ? 600 : 620, births = [], b0 = tStop + 0.2;
+      for (k = 0; k < NP; k++) births.push(b0 + k * ((T.fire - b0 + 0.2) / NP));
+      var smEls = births.map(function (b, k) { return q("sm" + k); }), sr = KIT.rng(31), sway = births.map(function () { return (sr() - 0.5) * 2; });
+      KIT.onTime(tl, D, function (t) {
+        smEls.forEach(function (el, k) {
+          var a = t - births[k];
+          if (a < 0) { el.setAttribute("opacity", 0); return; }
+          var y = FL - 10 - a * SR, top = CEIL + 70, spread = 0;
+          if (y < top) { spread = (top - y) * 1.2; y = top - (top - y) * 0.15; }
+          var x = ccx + sway[k] * 80 + Math.sin(a * 3 + k) * 26 + (DX - ccx) * smooth((FL - y) / (FL - CEIL)) * 0.5 + (k % 2 ? 1 : -1) * spread;
+          var sc2 = 0.5 + Math.min(1.4, a * 0.5), op = Math.min(1, a / 0.25) * (spread > 0 ? Math.max(0, 1 - spread / 500) : 1);
+          el.setAttribute("opacity", op.toFixed(2));
+          el.setAttribute("transform", "translate(" + n1(x) + "," + n1(y) + ") scale(" + sc2.toFixed(2) + ")");
+        });
+      });
+      tl.fromTo(q("haze"), { opacity: 0 }, { opacity: 0.85, duration: T.fire - T.tilt0, ease: "power1.in" }, T.tilt0);
+
+      // ── The camera: "smoke": the tilt up the wall (16:9) or a lean in on the detector (9:16) ──
+      if (!V) tl.fromTo(world, { y: L.tilt }, { y: 0, duration: T.tilt1 - T.tilt0, ease: "power2.inOut" }, T.tilt0);
+      else {
+        gsap.set(world, { transformOrigin: DX + "px " + DY + "px" });
+        tl.fromTo(world, { scale: 1 }, { scale: L.push, duration: 0.8, ease: "power2.inOut" }, T.tilt0);
+      }
+
+      // ── The detector ──
+      var body = q("body"), bodyEl = body.querySelector(".sd-body"), eyesOpen = body.querySelector(".sd-eyes-open"), eyesShut = body.querySelector(".sd-eyes-shut");
+      var led = body.querySelector(".sd-led"), tongue = body.querySelector(".sd-tongue"), flag = body.querySelector(".sd-flag");
+      pivot(bodyEl); pivot(flag);
+      // the LED blinks while it sleeps (it is on, after all)
+      for (var tb = 0.4; tb < T.fire; tb += 0.9) { tl.set(led, { opacity: 0.25 }, tb); tl.set(led, { opacity: 1 }, tb + 0.45); }
+      // asleep: Zs float up from it until it wakes
+      [0, 1, 2].map(function (j) {
+        var z = q("z" + j), t0 = T.tilt0 - 1.2 + j * 0.4;
+        tl.fromTo(z, { opacity: 0, x: 40 + j * 8, y: -60 }, { opacity: 1, x: 70 + j * 14, y: -110 - j * 20, duration: 0.6, ease: "sine.out" }, t0);
+        tl.to(z, { opacity: 0, x: 84 + j * 14, y: -150 - j * 20, duration: 0.5, ease: "sine.in" }, Math.min(t0 + 0.6, T.det - 0.05));
+      });
+      // "detector": the eyes open, and it sniffs (huff): two quick upward twitches, with sniff lines
+      tl.set(eyesShut, { opacity: 0 }, T.det);
+      tl.set(eyesOpen, { opacity: 1 }, T.det);
+      tl.fromTo(bodyEl, { scaleY: 1 }, { scaleY: 1.06, duration: 0.07, yoyo: true, repeat: 3, ease: "power2.out", immediateRender: false }, T.det + 0.12);
+      var sniff = q("sniff");
+      tl.fromTo(sniff, { opacity: 0 }, { opacity: 1, duration: 0.05, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, T.det + 0.12);
+      tl.set(sniff, { opacity: 0 }, T.det + 0.5);
+      body.querySelectorAll(".sd-eyes-open .pupil").forEach(function (pu) { tl.to(pu, { y: 3, x: 1, duration: 0.15 }, T.det + 0.45); });
+
+      // "works": the sheet appears in its left hand and the pen scribbles RE: SMOKE and three lines (marker), then the
+      // sheet folds into the envelope just before "by"
+      var sheetAt = q("sheet-at"), sheetEl = q("sheet"), envAt = q("env-at"), envEl = q("env"), envStamp = q("env-stamp"), envSinged = q("env-singed");
+      var tFold = Math.min(T.works + 0.2, T.by - 0.08);
+      tl.fromTo(sheetAt, { opacity: 0 }, { opacity: 1, duration: 0.04 }, T.works - 0.06);
+      gsap.set(sheetEl, { svgOrigin: "0 0" });
+      tl.fromTo(sheetEl, { scale: 0.3 }, { scale: 1, duration: 0.1, ease: "back.out(2)" }, T.works - 0.06);
+      sheetEl.querySelectorAll(".sd-scribble").forEach(function (s, j) {
+        tl.fromTo(s, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: (tFold - T.works) / 3, ease: "none" }, T.works + (j * (tFold - T.works)) / 3);
+      });
+      tl.to(sheetEl, { scaleY: 0, duration: 0.05, ease: "power2.in" }, tFold);
+      tl.set(sheetAt, { opacity: 0 }, tFold + 0.05);
+      tl.set(envAt, { opacity: 1 }, tFold + 0.05);
+      gsap.set(envEl, { svgOrigin: "0 0" });
+      tl.fromTo(envEl, { scaleY: 0 }, { scaleY: 1, duration: 0.07, ease: "back.out(2)" }, tFold + 0.05);
+      // "by": it licks a stamp (pop) and slaps it on the corner
+      var tLick = T.by, tSlap = Math.min(T.by + 0.16, T.mail - 0.06);
+      tl.set(tongue, { opacity: 1 }, tLick);
+      tl.set(tongue, { opacity: 0 }, tLick + 0.12);
+      tl.set(envStamp, { opacity: 1 }, tSlap);
+      gsap.set(envStamp, { svgOrigin: "40 -20" });
+      tl.fromTo(envStamp, { scale: 1.6 }, { scale: 1, duration: 0.06, ease: "power3.in" }, tSlap);
+      // "mail.": the flag goes up (squeak), with a wobble
+      tl.fromTo(flag, { rotation: 0 }, { rotation: -90, duration: 0.22, ease: "back.out(2.6)" }, T.mail);
+      tl.to(bodyEl, { rotation: -3, duration: 0.12, yoyo: true, repeat: 1, ease: "sine.inOut" }, T.mail);
+
+      // The arms, every frame: two thin navy arms from the shoulders to the hands, bent at the elbow. The left hand
+      // holds the letter by its left edge; the right hand writes, licks the stamp and slaps it on, then rests.
+      var armL = q("arm-l"), armR = q("arm-r"), handL = q("hand-l"), handR = q("hand-r"), pen = q("pen"), hstamp = q("hstamp");
+      var SHL = [-34, 46], SHR = [34, 46];
+      var keysR = [[0, 58, 96], [T.works - 0.08, 58, 96], [T.works, -40, 108], [tFold, 32, 110], [tFold + 0.04, 46, 100], [tLick - 0.02, 14, 38], [tLick + 0.1, 14, 38], [tSlap, 40, 104], [tSlap + 0.12, 46, 96], [D, 50, 98]];
+      var keysL = [[0, -58, 96], [T.works - 0.08, -58, 96], [T.works, -62, 130], [D, -66, 128]];
+      function key(keys, t) {
+        for (var j = 1; j < keys.length; j++) if (t < keys[j][0]) {
+          var a = keys[j - 1], b = keys[j], u = smooth((t - a[0]) / Math.max(0.001, b[0] - a[0]));
+          return [a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u];
+        }
+        var z = keys[keys.length - 1];
+        return [z[1], z[2]];
+      }
+      function armD(sh, h, side) {
+        var mx = (sh[0] + h[0]) / 2 + side * 14, my = (sh[1] + h[1]) / 2 + 12;
+        return "M" + pt(sh[0], sh[1]) + " L" + pt(mx, my) + " L" + pt(h[0], h[1]);
+      }
+      function handSvg() { return S([ci(0, 0, 6)], WHITE, 2.4); }
+      handL.innerHTML = handSvg();
+      handR.insertAdjacentHTML("afterbegin", handSvg());
+      KIT.onTime(tl, D, function (t) {
+        var hR = key(keysR, t), hL = key(keysL, t);
+        // writing: the pen hand scribbles along each line
+        if (t >= T.works && t < tFold) {
+          var u = (t - T.works) / (tFold - T.works), ln = Math.min(2, Math.floor(u * 3)), f = u * 3 - ln;
+          hR = [-40 + f * 76, 128 + ln * 20 + Math.sin(f * 40) * 3];
+        }
+        armL.innerHTML = line(armD(SHL, hL, -1), ink, 4.6);
+        armR.innerHTML = line(armD(SHR, hR, 1), ink, 4.6);
+        handL.setAttribute("transform", "translate(" + pt(hL[0], hL[1]) + ")");
+        handR.setAttribute("transform", "translate(" + pt(hR[0], hR[1]) + ")");
+        pen.setAttribute("opacity", t >= T.works - 0.08 && t < tFold + 0.04 ? 1 : 0);
+        hstamp.setAttribute("opacity", t >= tFold + 0.04 && t < tSlap ? 1 : 0);
+      });
+
+      // ── After "mail.": the fire rolls along the ceiling (fire), one big flame swallows the detector, it comes out of
+      // a cloud of smoke charred black, still holding up the singed letter with its flag up, and blinks ──
+      var tF = T.fire, sweepV = V ? 3400 : 4200;
+      rowX.forEach(function (x, j) {
+        var el = q("rf" + j), t0 = tF + x / sweepV;
+        gsap.set(el, { svgOrigin: "0 0" });
+        tl.fromTo(el, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.18, ease: "back.out(2)" }, t0);
+      });
+      KIT.flicker(tl, q("fire"), tF, D);
+      var engulfEl = q("engulf"), cloudEl = q("cloud"), tEng = tF + DX / sweepV - 0.04, tSwap = tEng + 0.14;
+      gsap.set(engulfEl, { svgOrigin: "0 0" });
+      tl.fromTo(engulfEl, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, tEng);
+      tl.to(engulfEl, { scale: 0.2, opacity: 0, duration: 0.2, ease: "power2.in" }, tSwap + 0.06);
+      gsap.set(cloudEl, { svgOrigin: "0 0" });
+      tl.fromTo(cloudEl, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.12, ease: "power2.out" }, tSwap - 0.04);
+      tl.to(cloudEl, { scale: 1.5, opacity: 0, duration: 0.3, ease: "power1.in" }, tSwap + 0.1);
+      tl.set(body, { opacity: 0 }, tSwap);
+      tl.set(q("body-char"), { opacity: 1 }, tSwap);
+      tl.set(envEl, { opacity: 0 }, tSwap);
+      tl.set(envSinged, { opacity: 1 }, tSwap);
+      tl.set([handL, handR], { opacity: 0.85 }, tSwap);
+      var cEyes = q("body-char").querySelector(".sd-char-eyes"), cSmoke = q("body-char").querySelector(".sd-smoke");
+      pivot(cEyes);
+      tl.fromTo(cEyes, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "none", immediateRender: false }, Math.min(D - 0.12, tSwap + 0.42));
+      tl.fromTo(cSmoke, { y: 0, opacity: 0.9 }, { y: -10, opacity: 0.5, duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, tSwap);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

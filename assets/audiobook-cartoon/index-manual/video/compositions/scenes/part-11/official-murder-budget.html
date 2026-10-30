@@ -1,0 +1,218 @@
+<template id="official-murder-budget-template">
+  <!-- official-murder-budget · Layer B (storyboards/part-11-civilization-countdown.md). Slides in from the title card.
+       "And": Part 10's shopping cart stands parked, heaped with grinning warheads in tiny price tags (the top one tagged
+       SPARE), the frowning robot and the question-mark crank box; the Weapons Maker leans on its handle, cradling his
+       baby missile, the cart's tag still on Part 10's "$2.72 TRILLION / YEAR". "official": the tag spins on its string
+       and comes round as OFFICIAL MURDER BUDGET (pop). "budget.": a shadow slides over the cart and the man from the
+       right, and a second cart 1.9 times the size, with no tag, rolls up behind it (whoosh) and stops (thunk). after
+       "budget.": the Weapons Maker looks slowly up at it, and his cigar droops. The fuse burns in the top-left corner.
+       cybercrime-10-trillion starts on this scene's last frame. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #official-murder-budget-cam, #official-murder-budget-bg, #official-murder-budget-art, #official-murder-budget-pip, #official-murder-budget-fuse, #official-murder-budget-grain { position: absolute; inset: 0; }
+    /* the big cart's shadow: its own drawing, every fill and line in navy (presentation attributes lose to CSS) */
+    #official-murder-budget-shadow * { fill: #112845 !important; stroke: #112845 !important; }
+  </style>
+  <div id="root" data-composition-id="official-murder-budget" data-width="1920" data-height="1080" data-start="0" data-duration="3.28">
+    <div id="official-murder-budget-cam">
+      <div id="official-murder-budget-bg"></div>
+      <div id="official-murder-budget-art"></div>
+      <div id="official-murder-budget-pip"></div>
+    </div>
+    <!-- the civilization fuse: above the camera (the slide does not move it), under the grain -->
+    <div id="official-murder-budget-fuse"></div>
+    <div id="official-murder-budget-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "official-murder-budget";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function txt(x, y, size, s, col, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + (col || ink) + '"' + (extra ? " " + extra : "") + ">" + s + "</text>";
+      }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene. ──
+      // The civilization is a cartoon bomb: a small Earth with a navy screw collar and a lit fuse that burns by part
+      // time (L = L0 - k t), so it is continuous across scenes. Returns the spark's flare group (scale it to flare).
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ── THE TWO CARTS: copied in cybercrime-10-trillion (which starts on this scene's last frame); change both. ──
+      // destroy-beats-make rolls these two carts in: the positions and scales are listed at the top of
+      // cybercrime-10-trillion.html. Cart units are KIT.props.shoppingCart's (facing right, the floor at y 0, the basket
+      // x -40..54, y -74..-38, the grip at (-53,-91)). A cart [x, s, m] puts its (u, v) at (x + m s u, G + s v); m -1
+      // mirrors it to face left. small: Part 10's cart, heaped, facing left, so its handle is on the right; wm: the
+      // Weapons Maker [x of his feet, scale], standing at that handle in the gap between the carts and leaning back on it;
+      // big: the same cart at 1.9 times the scale, facing right, on the far side of the gap, on the same floor.
+      var CART = V
+        ? { G: 1380, small: [210, 2.0, -1], wm: [440, 2.0], big: [775, 3.8, 1], tagS: 1.3, shadowDx: -460 }
+        : { G: 820, small: [480, 2.4, -1], wm: [745, 2.3], big: [1124, 4.56, 1], tagS: 1.6, shadowDx: -470 };
+      var G = CART.G;
+      function cpt(c, u, v) { return [c[0] + (c[2] || 1) * c[1] * u, G + c[1] * v]; }
+      function cartAt(c, inner, id) {
+        return '<g transform="translate(' + n1(c[0]) + "," + G + ") scale(" + (c[2] || 1) * c[1] + "," + c[1] + ')">' + (id ? g(id, inner) : inner) + "</g>";
+      }
+      // Part 10's things in the small cart (in cart units, drawn unmirrored at their mirrored spots, so the tags read):
+      // the warhead heap (grinning bombs, each in its own tiny price tag, the top one SPARE), the frowning robot at the
+      // back and the question-mark crank box at the front.
+      function cartLoad(c) {
+        function put(u, v, inner) { var p = cpt(c, u, v); return at(p[0], p[1], c[1], inner); }
+        var out = put(-27, -50, at(0, 0, 0.36, g("robot", KIT.props.robot({ mood: "grumpy", arms: [[16, 6], [-24, -12]] }))));
+        var crate = S([pg(R(-11, -22, 22, 22))], C.tan, 2.2) + line("M-9,-7 H9 M-9,-15 H9", C.rust, 1) + txt(0, -4.5, 17, "?", ink) +
+          line("M-11,-12 h-6 v-8", ink, 2.4) + S([pg(R(-20, -24, 6, 4))], C.war, 1.4);
+        out += put(41, -72, crate);
+        [[-12, -66, 1], [10, -68, 0], [31, -64, 1], [-2, -86, 0], [21, -87, 1], [8, -107, 2]].forEach(function (b) {
+          var tag = b[2] === 2 ? "SPARE" : "$";
+          out += put(b[0], b[1], KIT.props.bomb({ size: 0.3, lit: false, face: b[2] === 1 ? "grin" : b[2] === 2 ? "smug" : undefined }) +
+            at(-9, -21, 1, KIT.props.priceTag({ text: tag, size: b[2] === 2 ? 0.4 : 0.32, angle: b[2] === 2 ? 14 : 34 })));
+        });
+        return out;
+      }
+      // The Weapons Maker with a cigar of his own in place of the kit's, so it can droop: #<id> in the face's units,
+      // pivot (0, 0) at his lips. MY: this build's mouth line in face units (12, plus 2 for the "jaw" head).
+      var MY = 14;
+      function wmDraw(extra, cigId) {
+        var o = KIT.castOpts("weaponsMaker", mix({ cigar: false }, extra));
+        var cig = '<g transform="translate(13,' + (MY + 2) + ')"><g id="' + P + cigId + '">' +
+          '<g transform="rotate(-12)">' + S([pg([[0, -2.6], [22, -2.6], [22, 2.6], [0, 2.6]])], "#7A4A2A", 2) +
+          '<rect x="19" y="-2.6" width="4" height="5.2" fill="#C9C2B5"/><rect x="5" y="-2.6" width="3" height="5.2" fill="' + C.war + '"/></g>' +
+          line("M25,-9 q-5,-6 0,-11 q5,-6 0,-11", "#8C8782", 2.4) + "</g></g>";
+        return KIT.person(o).replace("<!--face-end-->", cig + "<!--face-end-->");
+      }
+      // The small cart's tag hangs from its basket's front-top corner, slanting down across the basket.
+      var TAG_KNOT = [54, -74], TAG_ANGLE = 20;
+      var WMO = KIT.castOpts("weaponsMaker", { cigar: false }), wmR = KIT.rig(WMO);
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      var SM = CART.small, BG = CART.big, WM = CART.wm;
+      // the small cart's tag on its basket's front-top corner, two faces: Part 10's price, then the new one
+      var knot = cpt(SM, TAG_KNOT[0], TAG_KNOT[1]);
+      var tags = at(knot[0], knot[1], 1, g("tag-a", KIT.props.priceTag({ text: "$2.72 TRILLION / YEAR", angle: TAG_ANGLE, size: CART.tagS })) +
+        g("tag-b", KIT.props.priceTag({ text: "OFFICIAL MURDER BUDGET", angle: TAG_ANGLE, size: CART.tagS }), 'opacity="0"'));
+      var bigCart = cartAt(BG, KIT.props.shoppingCart({}));
+      var shadow = cartAt([BG[0] + CART.shadowDx, BG[1] * 1.08, 1], KIT.props.shoppingCart({}));
+      var smallCart = g("small", cartAt(SM, KIT.props.shoppingCart({})) + cartLoad(SM));
+      var wm = at(WM[0], G - 100 * WM[1], WM[1], g("wm-lean", g("wm", wmDraw({}, "cig"))));
+      var ground = line("M60," + G + " H" + (W - 60), ink, 5) +
+        [0.06, 0.24, 0.47, 0.71, 0.9].map(function (f) {
+          var gx = 70 + f * (W - 140);
+          return line("M" + gx + "," + G + " l-6,-14 M" + (gx + 6) + "," + G + " l2,-18 M" + (gx + 12) + "," + G + " l8,-12", ink, 3);
+        }).join("");
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + ground +
+        g("big-roll", g("big-rock", bigCart)) + smallCart + wm + tags +
+        g("shadow-roll", g("shadow", shadow, 'opacity="0.2"')));
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      fuse(q("fuse"), tl);
+
+      // "And": he leans back on the handle, cradling his baby missile (a slow rock), puffing his cigar; the robot frowns.
+      var lean = q("wm-lean");
+      gsap.set(lean, { svgOrigin: "0 100" });
+      tl.fromTo(lean, { rotation: -6 }, { rotation: -8, duration: 0.8, repeat: 1, yoyo: true, ease: "sine.inOut" }, 0);
+      var head = q("wm").querySelector(".head"), cig = q("cig");
+      gsap.set(head, { svgOrigin: wmR.neck.join(" ") });
+      gsap.set(cig, { svgOrigin: "0 0" });
+      tl.fromTo(cig, { rotation: 0 }, { rotation: -8, duration: 0.18, repeat: 3, yoyo: true, ease: "sine.inOut" }, 0.5);
+      var robotHead = q("robot").querySelector(".robot-head");
+      gsap.set(robotHead, { svgOrigin: robotHead.getAttribute("data-pivot") });
+
+      // "official": the tag spins round on its string and comes back as OFFICIAL MURDER BUDGET (pop).
+      var off = cue("official"), ta = q("tag-a"), tb = q("tag-b");
+      gsap.set([ta, tb], { svgOrigin: "0 0" });
+      tl.to(ta, { scaleX: 0, duration: 0.08, ease: "power2.in" }, off - 0.06);
+      tl.set(ta, { opacity: 0 }, off + 0.02);
+      tl.set(tb, { opacity: 1 }, off + 0.02);
+      tl.fromTo(tb, { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "back.out(2.5)", immediateRender: false }, off + 0.02);
+      var swing = tb.querySelector(".tag-swing");
+      gsap.set(swing, { svgOrigin: "0 0" });
+      tl.fromTo(swing, { rotation: 0 }, { rotation: -7, duration: 0.2, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, off + 0.24);
+      // the robot turns its head to read it, and frowns harder
+      tl.to(robotHead, { rotation: -12, duration: 0.2, ease: "power2.out" }, off + 0.25);
+
+      // "budget.": the shadow slides over them from the right; the big cart rolls up behind (whoosh) and stops (thunk).
+      var bud = cue("budget."), stop = KIT.after(ID, "budget."), roll = stop - bud;
+      // (each starts with its left edge on the frame's right edge; the shadow is 1.08 times the cart, CART.shadowDx to its left)
+      tl.fromTo(q("shadow-roll"), { x: W - (BG[0] + CART.shadowDx - 60 * BG[1] * 1.08) }, { x: 0, duration: roll, ease: "power2.out" }, bud - 0.15);
+      tl.fromTo(q("big-roll"), { x: W - (BG[0] - 60 * BG[1]) }, { x: 0, duration: roll, ease: "power2.out" }, bud);
+      Array.prototype.forEach.call(q("big-roll").querySelectorAll(".cart-wheel"), function (w) {
+        gsap.set(w, { svgOrigin: w.dataset.cx + " " + w.dataset.cy });
+        tl.fromTo(w, { rotation: -900 }, { rotation: 0, duration: roll, ease: "power2.out" }, bud);
+      });
+      var rk = q("big-rock");
+      gsap.set(rk, { svgOrigin: (BG[0] + 56 * BG[1]) + " " + G });
+      tl.to(rk, { rotation: 2.2, duration: 0.08, ease: "power2.out" }, stop);
+      tl.to(rk, { rotation: -0.8, duration: 0.1, ease: "sine.inOut" }, stop + 0.08);
+      tl.to(rk, { rotation: 0, duration: 0.12, ease: "sine.out" }, stop + 0.18);
+      // the floor jumps a little under the thunk
+      tl.fromTo(q("small"), { y: 0 }, { y: -4, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, stop);
+
+      // after "budget.": he looks slowly up at it, eyes up, and his cigar droops.
+      tl.to(lean, { rotation: -3, duration: 0.5, ease: "sine.inOut" }, stop + 0.05);
+      tl.to(head, { rotation: -26, duration: 0.5, ease: "sine.inOut" }, stop + 0.05);
+      tl.to(q("wm").querySelectorAll(".pupil"), { y: -1.4, x: 0.6, duration: 0.3 }, stop + 0.1);
+      tl.to(cig, { rotation: 62, duration: 0.35, ease: "power2.in" }, stop + 0.22);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

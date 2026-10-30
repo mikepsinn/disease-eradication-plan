@@ -1,0 +1,204 @@
+<template id="daily-deletion-event-title-template">
+  <!-- daily-deletion-event-title · Layer A title card (storyboards/part-08-daily-deletion-event.md), built by KIT.titleScene
+       (assets/js/props/title.js). A woman with a handbag strolls in along the floor; "THE PROBLEM" slams in on "Problem.",
+       "The Daily Deletion Event" slides up on "Daily". On "Deletion" a giant pencil swoops down eraser first and rubs her
+       out in three strokes, head to feet, leaving a heap of eraser crumbs and her handbag. On "Event." the pencil lifts
+       away and the handbag tips over; a beat later a department-store starburst slaps onto the corner of the card:
+       EVERY DAY! EVERYONE QUALIFIES! (stamp, then a cash-register ding and its sparkles). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="daily-deletion-event-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.9">
+    <div id="daily-deletion-event-title-cam">
+      <div id="daily-deletion-event-title-bg"></div>
+      <div id="daily-deletion-event-title-sun"></div>
+      <div id="daily-deletion-event-title-back"></div>
+      <div id="daily-deletion-event-title-words"></div>
+      <div id="daily-deletion-event-title-art"></div>
+    </div>
+    <div id="daily-deletion-event-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V;
+      KIT.titleScene({
+        id: "daily-deletion-event-title",
+        // Both headings are read in one breath, so each line comes in whole on its word.
+        lines: [
+          { words: ["THE", "PROBLEM"], cue: "Problem." },
+          { words: ["The", "Daily", "Deletion", "Event"], style: "small", cue: "Daily" },
+        ],
+        linesTall: [
+          { words: ["THE"], cue: "Problem." },
+          { words: ["PROBLEM"], cue: "Problem." },
+          { words: ["The", "Daily"], style: "small", scale: 0.62, cue: "Daily" },
+          { words: ["Deletion", "Event"], style: "small", scale: 0.62, cue: "Daily" },
+        ],
+        spoken: [],
+        cy: V ? 600 : 370,
+        gag: function (c) {
+          var C = c.C, ink = C.line, tl = c.tl, W = c.W, H = c.H, id = c.id, P = id + "-";
+          var $ = function (s) { return document.getElementById(P + s); };
+          function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+          function pt(x, y) { return n1(x) + "," + n1(y); }
+          function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+          function solid(list, col, w) {
+            w = w || 4.4;
+            return list.map(function (p) { return '<path d="' + polyD(p) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+              list.map(function (p) { return '<path d="' + polyD(p) + '" fill="' + col + '"/>'; }).join("");
+          }
+          function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+          function g(name, inner, attrs) { return '<g id="' + P + name + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+          function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+          function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+
+          // Layout per shape. floor: her feet; s: her scale; x0 -> x1: her walk (she stops under the pencil);
+          // star: the starburst's center, radius and tilt.
+          var L = V
+            ? { floor: 1440, s: 2.5, x0: -180, x1: 420, star: [830, 236, 168, -10], textSize: 42 }
+            : { floor: 900, s: 2.3, x0: -180, x1: 640, star: [1712, 196, 156, -12], textSize: 40 };
+
+          // ── The stroller: an everyday woman in an hourglass dress, her handbag on her right forearm ──
+          var STROLLER = { tone: 1, outfit: "dress", hair: 1, color: 0, look: "right", mood: "smile", arms: [[-14, -8], [8, 92]] };
+          var WORRY = mix(STROLLER, { mood: "worried" });
+          var rg = KIT.rig(STROLLER);
+          var hand = rg.handLocal[1];
+          // the handbag: a peri trapezoid with a mustard clasp, hanging from the hand by its strap (person units,
+          // around the strap's top at (0, 0); its bottom at y 26)
+          var bag = line("M-8,12 Q0,-5 8,12", ink, 3.6) + line("M-8,12 Q0,-5 8,12", C.yellow, 1.6) +
+            solid([[[-13, 11], [13, 11], [16, 26], [-16, 26]]], C.peri, 3) +
+            '<path d="M-12,15 H12" stroke="' + C.cream + '" stroke-width="1.4" opacity="0.6"/>' + solid([[[-3, 9], [3, 9], [3, 14], [-3, 14]]], C.yellow, 1.6);
+          // Her bands, top to bottom, erased one per stroke (person units).
+          var bandY = [rg.top[1] - 30, rg.neck[1] + 6, rg.hipY + 12, 112];
+          var CLIP = P + "clip";
+          var woman = '<defs><clipPath id="' + CLIP + '"><rect id="' + P + 'cliprect" x="-90" y="' + bandY[0] + '" width="180" height="420"/></clipPath></defs>' +
+            '<g clip-path="url(#' + CLIP + ')">' + g("calm", KIT.person(STROLLER)) + g("worry", KIT.person(WORRY), 'opacity="0"') + "</g>";
+          // the bag hangs from her hand until her arm is rubbed out, then drops to the floor (feet at y 100)
+          var bagG = '<g id="' + P + 'bag">' + at(hand[0], hand[1] - 2, 1, '<g id="' + P + 'bag-tip">' + bag + "</g>") + "</g>";
+          var walker = '<g id="' + P + 'walker"><g id="' + P + 'bob">' + at(0, -100, 1, woman + bagG) + "</g></g>";
+
+          // ── The eraser crumbs: pink rubber bits that fall from the eraser and heap round her feet ──
+          var rnd = KIT.rng(808), crumbs = "", CR = [];
+          for (var i = 0; i < 30; i++) {
+            var cx = (rnd() - 0.5) * 84, cy = -2 - (1 - Math.pow(cx / 46, 2)) * (6 + rnd() * 12), r = 3.4 + rnd() * 3.4, a = rnd() * Math.PI;
+            var pts = [0, 1, 2, 3, 4].map(function (k) { var aa = a + (k * Math.PI * 2) / 5, rr = r * (0.7 + 0.3 * ((k * 7) % 3) / 2); return [cx + rr * Math.cos(aa), cy + rr * Math.sin(aa)]; });
+            crumbs += g("crumb" + i, solid([pts], i % 3 ? "#E9A296" : "#D97A6A", 2), 'opacity="0"');
+            CR.push({ x: cx, y: cy, stroke: Math.min(2, Math.floor(i / 10)), k: i });
+          }
+
+          // ── The giant pencil, eraser first: (0, 0) of #pencil is the middle of the eraser cap, the point up-right ──
+          var PS = V ? 4.6 : 4.2;
+          // (the kit's pencil, its outline thinned to the humans' line weight at this size)
+          var pencil = '<g id="' + P + 'pencil"><g transform="rotate(146.7) scale(' + PS + ') translate(-151,76)">' + KIT.pencil().replace(/stroke-width="4"/g, 'stroke-width="1.5"') + "</g></g>";
+
+          // ── The starburst: a mustard star with a red one inside it, the sale lines in cream ──
+          var S = L.star, R0 = S[2], spikes = 26, outer = [], innerP = [];
+          for (var k = 0; k < spikes * 2; k++) {
+            var ang = (k * Math.PI) / spikes - Math.PI / 2, rr = k % 2 ? R0 * 0.8 : R0;
+            outer.push([rr * Math.cos(ang), rr * Math.sin(ang)]);
+            innerP.push([rr * 0.86 * Math.cos(ang), rr * 0.86 * Math.sin(ang)]);
+          }
+          var ts = L.textSize, lines3 = ["EVERY DAY!", "EVERYONE", "QUALIFIES!"];
+          var words = lines3.map(function (t, j) {
+            var y = (j - 1) * ts * 1.08 + ts * 0.36;
+            return '<text x="3" y="' + n1(y + 3) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + ts + '" fill="' + ink + '" letter-spacing="1.5">' + t + "</text>" +
+              '<text x="0" y="' + n1(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + ts + '" fill="' + C.cream + '" letter-spacing="1.5">' + t + "</text>";
+          }).join("");
+          var sparks = [[-1.08, -0.62, 20], [1.02, -0.78, 15], [1.12, 0.5, 18], [-0.86, 0.94, 14], [0.12, -1.22, 12], [0.3, 1.2, 16]].map(function (s2, j) {
+            return at(s2[0] * R0, s2[1] * R0, 1, g("spark" + j, KIT.star(0, 0, s2[2], j % 2 ? C.cream : C.yellow) + KIT.star(0, 0, s2[2] * 0.45, C.orange), 'opacity="0"'));
+          }).join("");
+          var burst = at(S[0], S[1], 1, '<g id="' + P + 'burst">' + '<path d="' + polyD(outer.map(function (p) { return [p[0] + 8, p[1] + 10]; })) + '" fill="' + C.ink + '" opacity="0.85"/>' +
+            solid([outer], C.yellow, 5) + solid([innerP], C.war, 3) + '<circle r="' + n1(R0 * 0.62) + '" fill="none" stroke="' + C.cream + '" stroke-width="2.4" stroke-dasharray="6 7" opacity="0.7"/>' +
+            g("burst-words", words) + "</g>" + sparks, S[3]);
+
+          var svgEl = document.createElement("div");
+          svgEl.style.cssText = "position:absolute;inset:0;";
+          svgEl.innerHTML = KIT.svg(W, H, '<g id="' + P + 'crumbs-at">' + crumbs + "</g>" + walker + pencil + burst);
+          c.art.appendChild(svgEl);
+
+          // ── Timing (scene seconds, from the words) ──
+          var tDel = c.cue("Deletion"), tEv = c.cue("Event."), tAfter = c.after("Event.");
+          var tStop = tDel - 0.14, e0 = tDel + 0.06, strokeT = 0.18;
+          var walker$ = $("walker"), bob$ = $("bob");
+          gsap.set(walker$, { x: L.x0, y: L.floor, scale: L.s, svgOrigin: "0 0" });
+          // She strolls in from "The" and stops under the pencil's shadow.
+          tl.to(walker$, { x: L.x1, duration: tStop, ease: "none" }, 0);
+          var steps = Math.floor(tStop / 0.32);
+          tl.fromTo(bob$, { y: 0 }, { y: -5, duration: 0.16, repeat: steps * 2 - 1, yoyo: true, ease: "sine.inOut" }, 0);
+          // her legs and her free arm swing (each drawing has its own); svgOrigin on the hips and the shoulder
+          ["calm", "worry"].forEach(function (nm) {
+            var p = $(nm), legL = p.querySelector(".leg-l"), legR = p.querySelector(".leg-r"), armL = p.querySelector(".arm-l");
+            gsap.set(legL, { svgOrigin: pt(rg.hip[0][0], rg.hip[0][1]).replace(",", " ") });
+            gsap.set(legR, { svgOrigin: pt(rg.hip[1][0], rg.hip[1][1]).replace(",", " ") });
+            gsap.set(armL, { svgOrigin: pt(rg.shoulder[0][0], rg.shoulder[0][1]).replace(",", " ") });
+            tl.fromTo(legL, { rotation: -16 }, { rotation: 16, duration: 0.32, repeat: steps - 1, yoyo: true, ease: "sine.inOut" }, 0);
+            tl.fromTo(legR, { rotation: 16 }, { rotation: -16, duration: 0.32, repeat: steps - 1, yoyo: true, ease: "sine.inOut" }, 0);
+            tl.fromTo(armL, { rotation: 18 }, { rotation: -18, duration: 0.32, repeat: steps - 1, yoyo: true, ease: "sine.inOut" }, 0);
+            tl.to([legL, legR, armL], { rotation: 0, duration: 0.12, ease: "power2.out" }, tStop);
+          });
+          // she looks up at the pencil coming down (worried)
+          tl.set($("calm"), { opacity: 0 }, tStop);
+          tl.set($("worry"), { opacity: 1 }, tStop);
+
+          // The pencil swoops down from the top right, eraser first, and arrives on her head as "Deletion" starts.
+          var px = L.x1, top = L.floor - 100 * L.s; // screen x of her middle; screen y of person-y 0
+          var Y = function (py) { return top + py * L.s; };
+          var pen$ = $("pencil");
+          gsap.set(pen$, { svgOrigin: "0 0" });
+          tl.fromTo(pen$, { x: px + 900, y: -620, rotation: 0 }, { x: px + 12 * L.s, y: Y(bandY[0] + 18), rotation: -6, duration: 0.3, ease: "power3.out" }, e0 - 0.3);
+          // three strokes: each scrubs across one band (right, left, right) while the clip slides down past it
+          var cr$ = $("cliprect");
+          for (var b = 0; b < 3; b++) {
+            var t0 = e0 + b * strokeT, yMid = Y((bandY[b] + bandY[b + 1]) / 2);
+            tl.to(pen$, { x: px - 26 * L.s, y: yMid - 10, rotation: 5, duration: strokeT * 0.5, ease: "sine.inOut" }, t0);
+            tl.to(pen$, { x: px + 26 * L.s, y: yMid + 10, rotation: -5, duration: strokeT * 0.5, ease: "sine.inOut" }, t0 + strokeT * 0.5);
+            tl.to(cr$, { attr: { y: bandY[b + 1] }, duration: strokeT, ease: "none" }, t0);
+          }
+          // the handbag drops when her arm goes (stroke 2) and lands standing on the floor
+          var bag$ = $("bag"), bagLand = 100 - (hand[1] - 2) - 26;
+          tl.to(bag$, { y: bagLand, duration: 0.2, ease: "power2.in" }, e0 + strokeT * 1.6);
+          tl.to(bag$, { y: bagLand - 6, duration: 0.07, ease: "power1.out" }, e0 + strokeT * 1.6 + 0.2);
+          tl.to(bag$, { y: bagLand, duration: 0.07, ease: "power1.in" }, e0 + strokeT * 1.6 + 0.27);
+          // crumbs fall from the eraser while it scrubs and heap round her feet
+          var heap$ = $("crumbs-at");
+          heap$.setAttribute("transform", "translate(" + n1(px) + "," + n1(L.floor) + ") scale(" + L.s + ")");
+          CR.forEach(function (cc) {
+            var el = $("crumb" + cc.k), t0 = e0 + cc.stroke * strokeT + (cc.k % 7) * 0.022;
+            var fromY = (Y((bandY[cc.stroke] + bandY[cc.stroke + 1]) / 2) - L.floor) / L.s;
+            tl.set(el, { opacity: 1 }, t0);
+            tl.fromTo(el, { y: fromY - cc.y }, { y: 0, duration: 0.16 + (cc.k % 3) * 0.03, ease: "bounce.out", immediateRender: false }, t0);
+          });
+          // "Event.": the pencil lifts away, and the handbag tips over onto its side (pop)
+          tl.to(pen$, { x: px + 1000, y: -700, rotation: 14, duration: 0.34, ease: "power2.in" }, tEv);
+          var tip$ = $("bag-tip");
+          gsap.set(tip$, { svgOrigin: "16 26" });
+          tl.to(tip$, { rotation: 90, duration: 0.22, ease: "bounce.out" }, tEv);
+
+          // A beat after "Event.": the starburst slaps onto the corner (stamp) and rings up (cash-register ding).
+          var burst$ = $("burst");
+          gsap.set(burst$, { svgOrigin: "0 0" });
+          tl.fromTo(burst$, { opacity: 0, scale: 2.4, rotation: -24 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.13, ease: "power4.in" }, tAfter - 0.13);
+          tl.fromTo(burst$, { x: 0 }, { x: 7, duration: 0.035, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, tAfter);
+          var ding = tAfter + 0.12;
+          var bw$ = $("burst-words");
+          gsap.set(bw$, { svgOrigin: "0 0" });
+          tl.fromTo(bw$, { scale: 1 }, { scale: 1.1, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, ding);
+          for (var j = 0; j < 6; j++) {
+            var sp = $("spark" + j);
+            gsap.set(sp, { svgOrigin: "0 0" });
+            tl.fromTo(sp, { opacity: 0, scale: 0, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.16, ease: "back.out(3)" }, ding + j * 0.03);
+            tl.to(sp, { scale: 0.7, duration: 0.12, ease: "sine.inOut" }, ding + 0.2 + j * 0.02);
+          }
+        },
+      });
+    })();
+  </script>
+</template>

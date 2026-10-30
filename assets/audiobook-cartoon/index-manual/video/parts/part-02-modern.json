@@ -1,0 +1,43 @@
+{
+  "id": "part-02-modern",
+  "title": "The Human Economy (style test: modern limited animation)",
+  "storyboard": "storyboards/part-02-the-human-economy.md",
+  "audio": { "start": 258.464, "end": 298.184 },
+  "noCaptions": ["human-economy-title"],
+  "scenes": [
+    { "id": "human-economy-title", "file": "compositions/scenes/style-modern/part-02/human-economy-title.html", "cue": "Human", "approx": 258.5, "layer": "B" },
+    { "id": "magnificent", "file": "compositions/scenes/style-modern/part-02/magnificent.html", "cue": "Humanity", "approx": 260.8, "layer": "B" },
+    { "id": "print", "file": "compositions/scenes/style-modern/part-02/print.html", "cue": "You", "approx": 264.2, "layer": "B" },
+    { "id": "weapons-makers", "file": "compositions/scenes/style-modern/part-02/weapons-makers.html", "cue": "You", "approx": 268.3, "layer": "B" },
+    { "id": "destroy", "file": "compositions/scenes/style-modern/part-02/destroy.html", "cue": "They", "approx": 271.3, "layer": "B" },
+    { "id": "jobs", "file": "compositions/scenes/style-modern/part-02/jobs.html", "cue": "This", "approx": 274.2, "layer": "B" },
+    { "id": "buy-food", "file": "compositions/scenes/style-modern/part-02/buy-food.html", "cue": "People", "approx": 277.5, "layer": "B" },
+    { "id": "the-economy", "file": "compositions/scenes/style-modern/part-02/the-economy.html", "cue": "This", "approx": 281.5, "layer": "B" },
+    { "id": "killed", "file": "compositions/scenes/style-modern/part-02/killed.html", "cue": "killed", "approx": 286.3, "layer": "B" },
+    { "id": "food-directly", "file": "compositions/scenes/style-modern/part-02/food-directly.html", "cue": "On", "approx": 290.8, "layer": "A",
+      "wishonia": [
+        { "cue": "On", "expr": "smirk", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "just", "expr": "smirk", "rest": "smile", "body": "point-right", "mode": "big" },
+        { "cue": "but", "expr": "smirk", "rest": "closed", "body": "idle", "mode": "big" },
+        { "cue": "you.", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "big" }
+      ] }
+  ],
+  "sounds": [
+    { "scene": "human-economy-title", "cue": "Human", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "human-economy-title", "cue": "Economy.", "sfx": "thunk", "volume": 0.55 },
+    { "scene": "magnificent", "cue": "magnificent:", "sfx": "switch", "volume": 0.6 },
+    { "scene": "print", "cue": "policy\").", "sfx": "pop", "volume": 0.45 },
+    { "scene": "weapons-makers", "cue": "makers.", "at": "after", "sfx": "ding", "volume": 0.4 },
+    { "scene": "destroy", "cue": "destroy", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "destroy", "cue": "everything.", "sfx": "boom", "volume": 0.7 },
+    { "scene": "jobs", "cue": "papers.", "sfx": "pop", "volume": 0.4 },
+    { "scene": "buy-food", "cue": "grows", "sfx": "slide-up", "volume": 0.35 },
+    { "scene": "buy-food", "cue": "free).", "sfx": "stamp", "volume": 0.45 },
+    { "scene": "the-economy", "cue": "economy\".", "sfx": "whirr", "volume": 0.3 },
+    { "scene": "the-economy", "cue": "downside", "sfx": "scratch", "volume": 0.5 },
+    { "scene": "killed", "cue": "killed", "sfx": "zap", "volume": 0.25 },
+    { "scene": "killed", "cue": "million", "sfx": "thunk", "volume": 0.6 },
+    { "scene": "food-directly", "cue": "give", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "food-directly", "cue": "directly,", "sfx": "pop", "volume": 0.45 }
+  ]
+}

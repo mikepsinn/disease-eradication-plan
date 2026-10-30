@@ -1,0 +1,328 @@
+<template id="cancer-oil-reserves-template">
+  <!-- cancer-oil-reserves · Layer B (storyboards/part-10-cost-of-war.md): a grumpy disease blob in a CANCER sash plops down
+       ("cancer"); an oil derrick pops up on its head ("oil") and a black gusher sprays up ("reserves,"); the weapons maker leans
+       in from the edge of the frame and his eyes turn into dollar signs. On "cured" the invasion force charges in from the left:
+       a silly tank with the scientist riding it in a helmet, her flask on a bayonet, and soldiers in helmets; a plane drops
+       grinning bombs; a white flash and a mushroom cloud. The smoke clears ("two") on a charred blob, blinking, its derrick
+       still pumping; on "three." a soldier's thrown flag sticks in its head: "CURED: 2003". -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #cancer-oil-reserves-cam, #cancer-oil-reserves-bg, #cancer-oil-reserves-art, #cancer-oil-reserves-pip, #cancer-oil-reserves-grain { position: absolute; inset: 0; }
+    #cancer-oil-reserves-flash { position: absolute; inset: -40px; background: #FFFFFF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="cancer-oil-reserves" data-width="1920" data-height="1080" data-start="0" data-duration="4.461">
+    <div id="cancer-oil-reserves-cam">
+      <div id="cancer-oil-reserves-bg"></div>
+      <div id="cancer-oil-reserves-art"></div>
+      <!-- the bombs' white flash: over the Earth art, under Wishonia's corner frame -->
+      <div id="cancer-oil-reserves-flash"></div>
+      <div id="cancer-oil-reserves-pip"></div>
+    </div>
+    <div id="cancer-oil-reserves-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "cancer-oil-reserves";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var P = function (s) { return ID + "-" + s; };
+      var f = function (n) { return (+n).toFixed(1); };
+      var OIL = "#1B1714";
+
+      // Per canvas shape. G: the ground. blob: the cancer blob (x, scale). tank: the tank (x, scale). sol: the soldiers (x, scale);
+      // the last one throws the flag. wm: where the weapons maker leans in from the right edge (x, y of his feet, scale, lean).
+      // plane: its flight height. nuke: the mushroom cloud's scale. flagX: where the flag sticks, as a fraction of the blob's half width.
+      var L = V
+        ? { G: 1380, blob: { x: 690, s: 1.75 }, tank: { x: 200, s: 0.7 }, sol: [[330, 1.25], [440, 1.25]], wm: { x: 1100, y: 940, s: 2.1, lean: -24 },
+            plane: 540, nuke: 0.8, flagX: -0.42, cloth: 1 }
+        : { G: 850, blob: { x: 1040, s: 1.9 }, tank: { x: 400, s: 1.0 }, sol: [[640, 1.55], [760, 1.55]], wm: { x: 1945, y: 640, s: 2.3, lean: -24 },
+            plane: 175, nuke: 0.9, flagX: -0.42, cloth: 1.15 };
+      var G = L.G, B = L.blob;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      function g(id, inner, attrs) { return '<g id="' + P(id) + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + s + ')">' + inner + "</g>"; }
+      // Burn a drawing's markup (as KIT's charred people are burnt): every color but the ink and the kept ones (the eye
+      // whites, the sash and its letters) turns a dark brown of the same lightness.
+      function burn(markup, keep) {
+        var ink = C.line.toUpperCase();
+        return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, a, col) {
+          var u = col.toUpperCase();
+          if (u === ink || keep.indexOf(u) >= 0) return m;
+          var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + l * 46);
+          return a + '="rgb(' + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ')"';
+        });
+      }
+      // A cloud of soot in KIT.nuke's style, around (0, 0) (split-the-atom's).
+      function soot(circles) {
+        return circles.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + C.line + '" stroke="' + C.line + '" stroke-width="10"/>'; }).join("") +
+          circles.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#8E8780"/>'; }).join("") +
+          circles.filter(function (c, i) { return i % 2 === 0; }).map(function (c) { return '<circle cx="' + (c[0] - c[2] * 0.25) + '" cy="' + (c[1] - c[2] * 0.3) + '" r="' + c[2] * 0.42 + '" fill="#C9C2B8" opacity="0.85"/>'; }).join("");
+      }
+
+      // ── The cancer blob, grumpy, in its sash; and its charred twin (eyes, sash and letters spared) ──
+      var BLOB_TOP = -150; // the blob's top in its own units (it sits on y 0)
+      var blobArt = KIT.props.diseaseBlob({ mood: "cross", color: "yellow", label: "CANCER", seed: 2 });
+      var charArt = burn(KIT.props.diseaseBlob({ mood: "scared", color: "yellow", label: "CANCER", seed: 2 }), ["#FBF6E6", C.cream.toUpperCase(), C.war.toUpperCase()]);
+      var wisps = g("wisps", [-30, 10, 48].map(function (dx, i) {
+        return '<path class="wisp" d="M' + dx + "," + (BLOB_TOP - 6 - i * 4) + ' l-7,-11 l7,-11 l-7,-11" fill="none" stroke="#8C8782" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>';
+      }).join(""), 'opacity="0"');
+
+      // ── The derrick on its head: a lattice tower (the gusher sprays from its crown) and a pump jack that nods at its foot ──
+      // In blob units, its feet on the blob's top at (DX, BLOB_TOP + 8).
+      var DX = 34, DY = BLOB_TOP + 10, TH = 120, TW = 44;
+      function derrick() {
+        var l = DX - TW / 2, r = DX + TW / 2, tl = DX - 7, tr = DX + 7, ty = DY - TH, braces = "";
+        for (var i = 0; i < 4; i++) {
+          var y0 = DY - (i * TH) / 4, y1 = DY - ((i + 1) * TH) / 4, w0 = TW / 2 - (i * (TW / 2 - 7)) / 4, w1 = TW / 2 - ((i + 1) * (TW / 2 - 7)) / 4;
+          braces += "M" + f(DX - w0) + "," + f(y0) + " L" + f(DX + w1) + "," + f(y1) + " M" + f(DX + w0) + "," + f(y0) + " L" + f(DX - w1) + "," + f(y1) + " M" + f(DX - w1) + "," + f(y1) + " H" + f(DX + w1) + " ";
+        }
+        var tower = '<path d="M' + l + "," + DY + " L" + tl + "," + ty + " M" + r + "," + DY + " L" + tr + "," + ty + '" stroke="' + C.line + '" stroke-width="5.5" stroke-linecap="square"/>' +
+          '<path d="' + braces + '" stroke="' + C.line + '" stroke-width="2.4" fill="none"/>' +
+          '<path d="M' + l + "," + DY + " L" + tl + "," + ty + " M" + r + "," + DY + " L" + tr + "," + ty + '" stroke="' + C.rust + '" stroke-width="2.2"/>' +
+          '<rect x="' + (DX - 11) + '" y="' + (ty - 8) + '" width="22" height="10" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
+          '<rect x="' + (l - 8) + '" y="' + (DY - 4) + '" width="' + (TW + 16) + '" height="8" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="2.6"/>';
+        // the pump jack, left of the tower: an A-frame and a walking beam with a horse head, rocking about (PX, PY)
+        var PX = DX - 52, PY = DY - 30;
+        var frame = '<path d="M' + (PX - 12) + "," + DY + " L" + PX + "," + PY + " L" + (PX + 12) + "," + DY + '" fill="none" stroke="' + C.line + '" stroke-width="5"/>' +
+          '<path d="M' + (PX - 12) + "," + DY + " L" + PX + "," + PY + " L" + (PX + 12) + "," + DY + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>';
+        var beam = '<path d="M' + (PX - 36) + "," + (PY - 4) + " H" + (PX + 30) + " V" + (PY + 4) + " H" + (PX - 36) + ' Z" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
+          '<path d="M' + (PX - 36) + "," + (PY - 9) + " L" + (PX - 46) + "," + (PY - 2) + " L" + (PX - 44) + "," + (PY + 14) + " L" + (PX - 34) + "," + (PY + 6) + ' Z" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
+          '<path d="M' + (PX - 45) + "," + (PY + 13) + " V" + (DY - 2) + '" stroke="' + C.line + '" stroke-width="2"/>' +
+          '<rect x="' + (PX + 22) + '" y="' + (PY - 9) + '" width="14" height="18" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="2.4"/>' +
+          '<circle cx="' + PX + '" cy="' + PY + '" r="3.4" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1.6"/>';
+        return { art: tower + frame + g("beam", beam), pivot: PX + " " + PY, crown: [DX, ty - 8] };
+      }
+      var DR = derrick();
+
+      // ── The gusher: a black column from the crown to above the frame, a splashing top and raining drops ──
+      var crownY = G + B.s * DR.crown[1], crownX = B.x + B.s * DR.crown[0], topY = V ? 150 : 40;
+      function gusher() {
+        var h = crownY - topY, x = crownX;
+        var col = '<path d="M' + (x - 8) + "," + crownY + " C" + (x - 14) + "," + f(crownY - h * 0.4) + " " + (x - 30) + "," + f(topY + 60) + " " + (x - 40) + "," + topY +
+          " L" + (x + 40) + "," + topY + " C" + (x + 30) + "," + f(topY + 60) + " " + (x + 14) + "," + f(crownY - h * 0.4) + " " + (x + 8) + "," + crownY + ' Z" fill="' + OIL + '" stroke="' + C.line + '" stroke-width="4"/>' +
+          '<path d="M' + (x - 3) + "," + (crownY - 10) + " C" + (x - 6) + "," + f(crownY - h * 0.4) + " " + (x - 14) + "," + f(topY + 80) + " " + (x - 20) + "," + (topY + 20) + '" fill="none" stroke="' + C.slate + '" stroke-width="5" stroke-linecap="round"/>';
+        var crown = [[-58, 0, 26], [-22, -18, 30], [20, -16, 32], [56, 2, 26], [0, 10, 30]].map(function (c) {
+          return '<circle cx="' + (x + c[0]) + '" cy="' + (topY + c[1]) + '" r="' + c[2] + '" fill="' + OIL + '" stroke="' + C.line + '" stroke-width="4"/>';
+        }).join("") + '<circle cx="' + (x - 26) + '" cy="' + (topY - 24) + '" r="7" fill="' + C.slate + '"/>';
+        return { col: g("gush-col", col + crown), x: x };
+      }
+      var GU = gusher();
+      // Oil drops raining down around the blob, each on its own lane (they loop from the top of the gusher to the ground).
+      var rnd = KIT.rng(2003), drops = "";
+      for (var i = 0; i < 12; i++) {
+        var dx = (rnd() - 0.5) * (V ? 520 : 760), r0 = 6 + rnd() * 6;
+        drops += '<g transform="translate(' + f(GU.x + dx) + "," + (topY + 20) + ')"><g class="drop" data-i="' + i + '"><path d="M0,' + (-r0 * 1.6) + " Q" + f(r0) + ",0 0," + f(r0) + " Q" + f(-r0) + ",0 0," + f(-r0 * 1.6) + ' Z" fill="' + OIL + '" stroke="' + C.line + '" stroke-width="2"/></g></g>';
+      }
+      drops = g("drops", drops, 'opacity="0"');
+
+      // ── The weapons maker leans in from the right edge, his baby missile in his arms; his eyes turn to dollar signs ──
+      var wmO = KIT.castOpts("weaponsMaker", { look: "left" });
+      var wm = '<defs><clipPath id="' + P("edge") + '"><rect x="46" y="46" width="' + (W - 92) + '" height="' + (H - 92) + '"/></clipPath></defs><g clip-path="url(#' + P("edge") + ')">' +
+        '<g transform="translate(' + L.wm.x + "," + L.wm.y + ')">' + g("wm", '<g transform="rotate(' + L.wm.lean + ") scale(" + L.wm.s + ') translate(0,-100)">' +
+          g("wm-a", KIT.person(wmO)) + g("wm-b", KIT.person(KIT.castOpts("weaponsMaker", { look: "left", mood: "greedy" })), 'opacity="0"') + "</g>") +
+        g("ding", [[-150, -330, 22], [-110, -400, 14], [-190, -380, 12]].map(function (s) { return KIT.star(s[0], s[1], s[2], C.yellow); }).join(""), 'opacity="0"') + "</g></g>";
+
+      // ── The invasion force ──
+      // A dome helmet in the face's own units (the head's top is at y -22), for everyone in the force.
+      var HELMET = '<path d="M-21,-3 C-23,-26 -11,-37 2,-37 C15,-37 25,-26 23,-3 Z" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
+        '<path d="M-25,-3 L25,-3 L23,2 L-23,2 Z" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="2.2"/><path d="M-12,-30 Q-4,-35 6,-34" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+        '<path d="M-17,1 L-11,17" stroke="' + C.line + '" stroke-width="1.6"/>';
+      function helmeted(markup) { return markup.replace("<!--face-end-->", HELMET + "<!--face-end-->"); }
+      // The tank (in its own units, standing on y 0, facing right): treads, a hull, a turret with an open hatch, a long barrel.
+      function tankParts() {
+        var tread = "M-176,-50 L-160,-62 L160,-62 L178,-48 L166,-4 L150,0 L-150,0 L-166,-6 Z", wheels = "";
+        for (var k = 0; k < 6; k++) wheels += '<circle cx="' + (-130 + k * 52) + '" cy="-27" r="19" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="3.4"/><circle cx="' + (-130 + k * 52) + '" cy="-27" r="6" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="2"/>';
+        var teeth = "";
+        for (var x = -150; x <= 150; x += 20) teeth += "M" + x + ",-62 v-5 ";
+        var hull = "M-160,-62 L-140,-112 L130,-112 L176,-62 Z";
+        var back = '<path d="' + tread + '" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="4" stroke-linejoin="miter"/>' + wheels +
+          '<path d="' + teeth + '" stroke="' + C.line + '" stroke-width="4"/>' +
+          '<path d="' + hull + '" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="4.4" stroke-linejoin="miter"/>' +
+          '<path d="' + hull + '" fill="url(#' + P("hatch") + ')" opacity="0.2"/><path d="M-136,-106 H126" stroke="' + C.orange + '" stroke-width="2.4"/>' +
+          '<circle cx="150" cy="-82" r="9" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="2.6"/><circle cx="128" cy="-82" r="9" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
+          // the barrel, with a cork on a string at the muzzle
+          '<path d="M40,-160 L232,-176 L234,-160 L42,-146 Z" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="4" stroke-linejoin="miter"/>' +
+          '<path d="M226,-182 L246,-184 L248,-154 L228,-152 Z" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="3.4"/>' +
+          '<path d="M248,-170 Q262,-150 256,-128" fill="none" stroke="' + C.line + '" stroke-width="2"/><path d="M250,-130 L262,-130 L260,-118 L252,-118 Z" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="2.4"/>';
+        // the turret's front (drawn over the rider's legs) and the hatch rim
+        var turret = "M-92,-112 L-80,-176 L52,-176 L74,-140 L66,-112 Z";
+        var front = '<path d="' + turret + '" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="4.4" stroke-linejoin="miter"/>' +
+          '<path d="' + turret + '" fill="url(#' + P("hatch") + ')" opacity="0.2"/><path d="M-76,-170 H48" stroke="' + C.orange + '" stroke-width="2.4"/>' +
+          '<path d="M-50,-180 L10,-180 L14,-172 L-54,-172 Z" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="3"/>' +
+          '<circle cx="-60" cy="-140" r="5" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="2"/><circle cx="40" cy="-140" r="5" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="2"/>';
+        return { back: back, front: front, hatch: [-20, -178] };
+      }
+      var TK = tankParts(), ts = L.tank.s;
+      // The scientist stands in the hatch (her legs hidden in the turret), helmeted, her flask skewered on a bayonet held high.
+      var sciO = KIT.castOpts("scientist", { look: "right", mood: "eager", arms: [[-150, -172], [40, 70]] }), sciR = KIT.rig(sciO);
+      var SS = 1.0; // the scientist, in tank units
+      var sh = sciR.hand[0];
+      var bayonet = '<g transform="translate(' + f(sh[0]) + "," + f(sh[1]) + ') rotate(28)">' +
+        '<path d="M-3,40 L-3,-46 L3,-46 L3,40 Z" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="2.4"/>' +
+        '<path d="M-2.5,-46 L0,-78 L2.5,-46 Z" fill="#D9D4C6" stroke="' + C.line + '" stroke-width="2"/>' +
+        '<g transform="translate(0,-60) scale(1.3)"><path d="M-3,-22 L3,-22 L3,-12 L11,4 L-11,4 L-3,-12 Z" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="2.2"/><path d="M-8,-2 L8,-2 L10.5,3.5 L-10.5,3.5 Z" fill="' + C.med + '"/></g></g>';
+      var sci = '<g transform="translate(' + TK.hatch[0] + "," + (TK.hatch[1] + 6 - (sciR.hipY + 6) * SS) + ") scale(" + SS + ')">' + g("sci", helmeted(KIT.person(sciO)) + bayonet) + "</g>";
+      var tank = at(L.tank.x, G, ts, g("tank", g("tank-bob", TK.back + sci + TK.front)));
+      // The soldiers: everyday humans in helmets, charging (and later cheering).
+      var SOL = [{ tone: 0, outfit: "shirt", color: 2, hat: null, look: "right" }, { tone: 3, outfit: "overalls", color: 1, hat: null, look: "right" }];
+      var RUN = { arms: [[60, 110], [-50, -20]], build: { legPose: [[-38, -84], [40, 8]] }, mood: "eager" };
+      var CHEER = { arms: [[-160, -172], [160, 172]], mood: "grin" };
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b) o[k] = b[k]; return o; }
+      var soldiers = L.sol.map(function (s, i) {
+        var o = SOL[i];
+        return at(s[0], G - 100 * s[1], s[1], g("sol" + i, g("sol" + i + "-bob", g("sol" + i + "-run", helmeted(KIT.person(mix(o, RUN)))) +
+          g("sol" + i + "-cheer", helmeted(KIT.person(mix(o, CHEER))), 'opacity="0"'))));
+      }).join("");
+
+      // ── The flag: a plain pennant on a pole, "CURED: 2003", thrown like a javelin by the front soldier ──
+      var CL = 1 * L.cloth;
+      var flagArt = '<path d="M-3,0 L-3,-200 L3,-200 L3,0 Z" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
+        '<path d="M-3,0 L0,14 L3,0 Z" fill="#D9D4C6" stroke="' + C.line + '" stroke-width="2"/><circle cx="0" cy="-204" r="6" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="2"/>' +
+        '<g transform="scale(' + CL + ')">' + g("cloth", '<path d="M-3,-196 L-236,-190 L-224,-160 L-240,-130 L-3,-124 Z" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="3.4" stroke-linejoin="miter"/>' +
+          '<path d="M-14,-188 L-222,-183 M-14,-132 L-224,-137" stroke="' + C.war + '" stroke-width="4"/>' +
+          '<text x="-118" y="-148" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="31" letter-spacing="1.5" fill="' + C.line + '">CURED: 2003</text>') + "</g>";
+      // where it sticks: on the blob's head, left of the derrick (in frame px)
+      var flagAt = [B.x + B.s * 82 * L.flagX, G + B.s * (BLOB_TOP + 22)];
+      var flag = '<g transform="translate(' + f(flagAt[0]) + "," + f(flagAt[1]) + ')">' + g("flag", g("flag-wob", flagArt)) + "</g>";
+
+      // ── The plane and its grinning bombs ──
+      var plane = '<g id="' + P("plane") + '"><g transform="scale(' + (V ? 1.05 : 1.25) + ')">' +
+        '<path d="M-112,-12 h-46 M-104,8 h-34 M-96,26 h-22" stroke="' + C.line + '" stroke-width="4" stroke-linecap="round" opacity="0.55"/>' +
+        '<path d="M-66,-4 L-86,-46 L-60,-46 L-38,-10 Z" fill="' + C.orange + '" stroke="' + C.line + '" stroke-width="4" stroke-linejoin="round"/>' +
+        '<path d="M-80,-4 Q-44,-24 28,-22 Q72,-20 80,0 Q72,18 28,18 L-58,12 Q-82,8 -80,-4 Z" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="4.5" stroke-linejoin="round"/>' +
+        '<path d="M-66,4 H72" stroke="' + C.war + '" stroke-width="6"/>' +
+        [-26, -6, 14].map(function (wx) { return '<circle cx="' + wx + '" cy="-8" r="5" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="2.5"/>'; }).join("") +
+        '<ellipse cx="-8" cy="8" rx="36" ry="9" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="4"/>' +
+        '<circle cx="80" cy="0" r="6" fill="' + C.line + '"/>' + g("prop", '<ellipse cx="86" cy="0" rx="4" ry="28" fill="' + C.line + '" opacity="0.75"/>') + "</g></g>";
+      var bombs = [0, 1, 2].map(function (i) { return g("bomb" + i, '<g transform="scale(' + (V ? 0.7 : 0.8) + ')"><g transform="translate(0,42)">' + KIT.props.bomb({ face: "grin" }) + "</g></g>", 'opacity="0"'); }).join("");
+
+      // ── The blast: a mushroom cloud standing on the blob's spot and soot hiding the blob for the swap ──
+      var cloud = at(B.x, G, L.nuke, g("nuke", KIT.nuke()));
+      var sootArt = at(B.x, G - B.s * 70, B.s, g("soot", soot([[0, -60, 40], [44, -40, 38], [-46, -38, 40], [70, 0, 34], [-74, 4, 34], [30, 18, 44], [-28, 22, 44], [0, -96, 30], [80, -60, 26], [-84, -62, 26]]), 'opacity="0"'));
+
+      var ground = '<path d="M60,' + G + " H" + (V ? W - 60 : 1590) + '" stroke="' + C.line + '" stroke-width="5"/>' +
+        [0.06, 0.3, 0.55, 0.78].map(function (fr) { var x = 60 + fr * ((V ? W : 1650) - 120); return '<path d="M' + f(x) + "," + G + " l-6,-14 M" + f(x + 6) + "," + G + " l2,-18 M" + f(x + 12) + "," + G + ' l8,-12" stroke="' + C.line + '" stroke-width="3" stroke-linecap="round"/>'; }).join("") +
+        // a slick of oil spreading on the ground under the blob
+        g("slick", '<ellipse cx="' + B.x + '" cy="' + (G + 6) + '" rx="' + f(B.s * 120) + '" ry="12" fill="' + OIL + '" opacity="0.85"/>', 'opacity="0"');
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + ground + GU.col +
+        at(B.x, G, B.s, g("blob-drop", g("derrick", DR.art) + g("blob-a", blobArt) + g("blob-b", charArt + wisps, 'opacity="0"') + "")) +
+        flag + drops + cloud + sootArt + tank + soldiers + wm + bombs + plane);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      var tCan = cue("cancer"), tOil = cue("oil"), tRes = cue("reserves,"), tCur = cue("cured"), tTwo = cue("two"), tThr = cue("three.");
+      var tDing = tRes + 0.3, tBoom = tCur + 0.35;
+
+      // Pivots, set once while everything is untransformed.
+      var derr = q("derrick");
+      gsap.set(derr, { svgOrigin: DX + " " + DY });
+      gsap.set(q("beam"), { svgOrigin: DR.pivot });
+      gsap.set(q("blob-drop"), { svgOrigin: "0 0" });
+      gsap.set(q("gush-col"), { svgOrigin: f(GU.x) + " " + f(crownY) });
+      gsap.set(q("flag-wob"), { svgOrigin: "0 0" });
+      gsap.set(q("flag"), { svgOrigin: "0 0" });
+      gsap.set(q("wm"), { svgOrigin: "0 0" });
+      gsap.set(q("soot"), { svgOrigin: "0 -20" });
+      gsap.set(q("ding"), { svgOrigin: "-150 -360" });
+      var eyesB = q("blob-b").querySelectorAll(".eye");
+      gsap.set(eyesB[0], { svgOrigin: "-20.4 -98" });
+      gsap.set(eyesB[1], { svgOrigin: "20.4 -98" });
+
+      // "cancer": the blob plops down onto the paper, grumpy.
+      tl.fromTo(q("blob-drop"), { y: -60, scaleY: 1.15, scaleX: 0.9 }, { y: 0, scaleY: 1, scaleX: 1, duration: 0.14, ease: "power2.in" }, tCan - 0.14);
+      tl.to(q("blob-drop"), { scaleY: 0.86, scaleX: 1.1, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.out" }, tCan);
+      // "oil": a derrick pops up out of its head (the pop) and starts to pump; the blob looks up at it.
+      tl.fromTo(derr, { scaleY: 0, scaleX: 0.5 }, { scaleY: 1, scaleX: 1, duration: 0.26, ease: "back.out(2.2)" }, tOil);
+      var nod = 0.32, n = Math.floor((D - tOil - 0.2) / nod);
+      tl.fromTo(q("beam"), { rotation: -13 }, { rotation: 13, duration: nod, ease: "sine.inOut", repeat: n, yoyo: true }, tOil + 0.2);
+      tl.to(q("blob-a").querySelectorAll(".pupil"), { y: -4, duration: 0.15 }, tOil + 0.05);
+      // "reserves,": the gusher sprays up (the whoosh) and keeps going; drops rain and a slick spreads.
+      tl.fromTo(q("gush-col"), { scaleY: 0, scaleX: 0.5 }, { scaleY: 1, scaleX: 1, duration: 0.28, ease: "power2.out" }, tRes);
+      tl.fromTo(q("gush-col"), { scaleX: 1 }, { scaleX: 1.1, duration: 0.18, ease: "sine.inOut", repeat: Math.floor((D - tRes - 0.3) / 0.18), yoyo: true, immediateRender: false }, tRes + 0.3);
+      tl.set(q("drops"), { opacity: 1 }, tRes + 0.15);
+      Array.prototype.forEach.call(q("drops").querySelectorAll(".drop"), function (d, i) {
+        var per = 0.62 + (i % 4) * 0.07, start = tRes + 0.15 + (i % 6) * 0.1, fall = G - topY - 10;
+        tl.fromTo(d, { y: 0, opacity: 1 }, { y: fall, duration: per, ease: "power1.in", repeat: Math.floor((D - start) / per), immediateRender: false }, start);
+      });
+      tl.fromTo(q("slick"), { opacity: 0, scaleX: 0.3, transformOrigin: "50% 50%" }, { opacity: 1, scaleX: 1, transformOrigin: "50% 50%", duration: 0.8, ease: "power1.out" }, tRes + 0.4);
+      // the weapons maker leans in from the edge; a beat later his eyes turn into dollar signs (the cash register)
+      tl.fromTo(q("wm"), { x: 260 }, { x: 0, duration: 0.24, ease: "back.out(1.6)" }, tRes + 0.02);
+      tl.set(q("wm-a"), { opacity: 0 }, tDing);
+      tl.set(q("wm-b"), { opacity: 1 }, tDing);
+      tl.fromTo(q("wm"), { scale: 1 }, { scale: 1.08, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, tDing);
+      tl.fromTo(q("ding"), { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.16, ease: "back.out(3)" }, tDing);
+      tl.to(q("ding"), { opacity: 0, duration: 0.2 }, tDing + 0.45);
+
+      // "cured": the plane crosses overhead and drops three grinning bombs; the force charges in from the left (the whoosh).
+      var pA = tCur - 0.45, pB = tCur + 0.95, rel = tCur + 0.03, fall = tBoom - rel;
+      var pX = function (t) { return -260 + ((t - pA) / (pB - pA)) * (W + 520); };
+      tl.fromTo(q("plane"), { x: -260, y: L.plane }, { x: W + 260, y: L.plane - 30, duration: pB - pA, ease: "none" }, pA);
+      tl.fromTo(q("prop"), { scaleY: 1, transformOrigin: "50% 50%" }, { scaleY: 0.15, transformOrigin: "50% 50%", duration: 0.05, repeat: Math.floor((pB - pA) / 0.05), yoyo: true, ease: "none" }, pA);
+      [0, 1, 2].forEach(function (i) {
+        var x0 = pX(rel) - 30 + i * 30, x1 = B.x + (i - 1) * B.s * 60, y1 = G - B.s * 90 - i * 10;
+        tl.set(q("bomb" + i), { opacity: 1 }, rel + i * 0.03);
+        tl.fromTo(q("bomb" + i), { x: x0, y: L.plane + 30, rotation: -30 }, { x: x1, y: y1, rotation: 40 + i * 20, duration: fall - i * 0.03, ease: "power2.in", immediateRender: false }, rel + i * 0.03);
+        tl.set(q("bomb" + i), { opacity: 0 }, tBoom);
+      });
+      tl.fromTo(q("tank"), { x: -W * 0.55 }, { x: 0, duration: 0.6, ease: "power2.out" }, tCur - 0.08);
+      tl.fromTo(q("tank-bob"), { y: 0 }, { y: -6, duration: 0.08, repeat: 7, yoyo: true, ease: "sine.inOut" }, tCur - 0.08);
+      L.sol.forEach(function (s, i) {
+        tl.fromTo(q("sol" + i), { x: -W * 0.5 }, { x: 0, duration: 0.55, ease: "power2.out" }, tCur + 0.02 + i * 0.05);
+        tl.fromTo(q("sol" + i + "-bob"), { y: 0 }, { y: -12, duration: 0.09, repeat: 5, yoyo: true, ease: "power1.out" }, tCur + 0.02 + i * 0.05);
+      });
+      // the boom: a white flash, a shake and a mushroom cloud on the blob; under the flash the blob is charred and soot hides it
+      tl.fromTo(q("flash"), { opacity: 0 }, { opacity: 1, duration: 0.03 }, tBoom);
+      tl.to(q("flash"), { opacity: 0, duration: 0.3, ease: "power2.in" }, tBoom + 0.08);
+      tl.fromTo(q("cam"), { x: 0 }, { x: 14, duration: 0.04, repeat: 7, yoyo: true, ease: "none", immediateRender: false }, tBoom);
+      KIT.boom(tl, q("nuke"), tBoom);
+      tl.set(q("blob-a"), { opacity: 0 }, tBoom + 0.02);
+      tl.set(q("blob-b"), { opacity: 1 }, tBoom + 0.02);
+      tl.fromTo(q("soot"), { opacity: 0 }, { opacity: 1, duration: 0.01 }, tBoom + 0.02);
+      // "two": the cloud and the soot thin away (the sizzle): the blob is charred and smoking, and blinks. The derrick pumps on.
+      tl.to(q("nuke"), { opacity: 0, duration: 0.3, ease: "power1.in" }, tTwo - 0.04);
+      tl.to(q("soot"), { opacity: 0, scale: 1.2, duration: 0.28, ease: "power1.in" }, tTwo);
+      tl.set(q("wisps"), { opacity: 1 }, tTwo);
+      tl.fromTo(q("wisps").querySelectorAll(".wisp"), { y: 0, opacity: 1 }, { y: -8, opacity: 0.45, duration: 0.2, yoyo: true, repeat: Math.floor((D - tTwo) / 0.2), ease: "sine.inOut", immediateRender: false }, tTwo);
+      var blink = function (t) { tl.fromTo(eyesB, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, t); };
+      blink(tTwo + 0.36);
+      blink(tThr + 0.4);
+      // the front soldier throws the flag like a javelin; on "three." it sticks in the blob's head (the thunk) and wobbles.
+      // The soldiers cheer and the scientist waves her bayonet.
+      var thrower = L.sol[L.sol.length - 1], t0 = tThr - 0.34;
+      var from = [thrower[0] + 20 * thrower[1], G - 160 * thrower[1]];
+      tl.fromTo(q("flag"), { x: from[0] - flagAt[0], y: from[1] - flagAt[1], rotation: 55, opacity: 0 },
+        { x: (from[0] - flagAt[0]) * 0.45, y: Math.min(from[1], flagAt[1]) - flagAt[1] - 140, rotation: 40, opacity: 1, duration: 0.17, ease: "power2.out" }, t0);
+      tl.to(q("flag"), { x: 0, y: 0, rotation: 14, duration: 0.17, ease: "power2.in" }, t0 + 0.17);
+      tl.fromTo(q("flag-wob"), { rotation: 0 }, { rotation: -18, duration: 0.1, ease: "power2.out" }, tThr);
+      [[8, 0.1], [-6, 0.1], [3, 0.1], [-1.5, 0.1]].reduce(function (t, k) { tl.to(q("flag-wob"), { rotation: k[0] - 0, duration: k[1], ease: "sine.inOut" }, t); return t + k[1]; }, tThr + 0.1);
+      tl.to(q("blob-drop"), { scaleY: 0.92, scaleX: 1.05, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.out" }, tThr);
+      L.sol.forEach(function (s, i) {
+        tl.set(q("sol" + i + "-run"), { opacity: 0 }, tThr + 0.06 + i * 0.05);
+        tl.set(q("sol" + i + "-cheer"), { opacity: 1 }, tThr + 0.06 + i * 0.05);
+        tl.fromTo(q("sol" + i + "-bob"), { y: 0 }, { y: -16, duration: 0.12, yoyo: true, repeat: 3, ease: "power1.out", immediateRender: false }, tThr + 0.06 + i * 0.05);
+      });
+      gsap.set(q("sci"), { svgOrigin: f(sciR.hip[0][0] + 7) + " " + f(sciR.hipY) });
+      tl.fromTo(q("sci"), { rotation: 0 }, { rotation: 6, duration: 0.12, yoyo: true, repeat: Math.floor((D - tCur - 0.3) / 0.12), ease: "sine.inOut" }, tCur + 0.3);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

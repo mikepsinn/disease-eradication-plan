@@ -16,7 +16,7 @@
     navy: "#112845", deep: "#061D3E", slate: "#273049", rust: "#904B2E", tan: "#B47E52", cyan: "#7FB5B0", ink: "#0B1A33",
     // Layer B: the Earth diagrams
     paper: "#F3ECD0", line: "#112845", war: "#C8452E", med: "#2F8F86",
-    // money is always money green; its seal says what it buys (red missile = war, teal cross = medicine)
+    // money is always money green, never red; its dark green seal says what it buys (a missile = war, a cross = medicine)
     money: "#86AD6E", moneyDark: "#3B6644", moneyEdge: "#6F9A5C",
   };
 
@@ -1016,14 +1016,14 @@
       '<path d="M-40,40 C-30,10 -10,0 0,0 C10,0 30,10 40,40" fill="none" stroke="' + ink + '" stroke-width="3" opacity="0.5"/></g>';
   }
 
-  // A walking paper bill around (0,0), 96 x 50, legs to y=48, always money green. kind: "war" (a red
-  // missile seal), "med" (a teal cross seal) or "plain" (no seal).
+  // A walking paper bill around (0,0), 96 x 50, legs to y=48, always money green. kind: "war" (a missile seal),
+  // "med" (a cross seal) or "plain" (no seal). The seals are dark green with a cream mark: money is never red.
   function moneySeal(kind, x, y, r) {
     if (kind !== "war" && kind !== "med") return "";
     var mark = kind === "war"
-      ? '<path d="M' + (x - r * 0.55) + "," + (y + r * 0.35) + " L" + (x + r * 0.35) + "," + (y - r * 0.55) + " l" + r * 0.2 + "," + r * 0.2 + " Z" + '" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="' + (r * 0.28).toFixed(1) + '" stroke-linejoin="round"/>'
-      : '<path d="M' + x + "," + (y - r * 0.55) + " V" + (y + r * 0.55) + " M" + (x - r * 0.55) + "," + y + " H" + (x + r * 0.55) + '" stroke="#FFFFFF" stroke-width="' + (r * 0.34).toFixed(1) + '" stroke-linecap="round"/>';
-    return '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + (kind === "war" ? C.war : C.med) + '" stroke="' + C.line + '" stroke-width="2"/>' + mark;
+      ? '<path d="M' + (x - r * 0.55) + "," + (y + r * 0.35) + " L" + (x + r * 0.35) + "," + (y - r * 0.55) + " l" + r * 0.2 + "," + r * 0.2 + " Z" + '" fill="' + C.cream + '" stroke="' + C.cream + '" stroke-width="' + (r * 0.28).toFixed(1) + '" stroke-linejoin="round"/>'
+      : '<path d="M' + x + "," + (y - r * 0.55) + " V" + (y + r * 0.55) + " M" + (x - r * 0.55) + "," + y + " H" + (x + r * 0.55) + '" stroke="' + C.cream + '" stroke-width="' + (r * 0.34).toFixed(1) + '" stroke-linecap="round"/>';
+    return '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + C.moneyDark + '" stroke="' + C.line + '" stroke-width="2"/>' + mark;
   }
   function money(kind, legs) {
     var fill = C.money, dark = C.moneyDark;

@@ -1,0 +1,415 @@
+<template id="failed-states-template">
+  <!-- failed-states · Layer B (storyboards/part-11-civilization-countdown.md). The world map: "where this already
+       happened", three little blasts pop up on it; "failed" stamps the heading FAILED STATES over it (stamp);
+       "Somalia,", "Libya," and "Syria." drop their tags on (thunk each), and the third tears (snip): "PARTS OF SY"
+       stays stuck and "RIA" flutters off. "The": the camera pushes in on the Horn of Africa, where a small factory
+       pops up on a map road, puffing; "collapsed,": it folds flat (slide-down whistle). "warlord": a toll gate goes up
+       where it stood (clank), and the Masked Crook in an army helmet three sizes too big pops up beside it with a sack;
+       war papers walk up and hop into it. "restart": the Hut Builder walks up with planks and a hammer; "builds
+       something": she hammers a little plank hut together (hammer); "taken.": the Crook's gloved hand lifts the hut off
+       the map, up out of her reach (whoosh). After "taken.": she keeps hammering the air where it was, then looks up.
+       The fuse burns in the top-left corner. No flags, emblems or costumes: the warlord is the Crook. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #failed-states-cam, #failed-states-bg, #failed-states-art, #failed-states-pip, #failed-states-fuse, #failed-states-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="failed-states" data-width="1920" data-height="1080" data-start="0" data-duration="17.36">
+    <div id="failed-states-cam">
+      <div id="failed-states-bg"></div>
+      <div id="failed-states-art"></div>
+      <div id="failed-states-pip"></div>
+    </div>
+    <!-- the fuse burns in its own layer, above the camera (the slide does not move it) and under the grain -->
+    <div id="failed-states-fuse"></div>
+    <div id="failed-states-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "failed-states";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function el(cx, cy, rx, ry) { return 'ellipse cx="' + n1(cx) + '" cy="' + n1(cy) + '" rx="' + n1(rx) + '" ry="' + n1(ry) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function text(x, y, size, t, fill, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + (fill || ink) + '"' + (extra ? " " + extra : "") + ">" + t + "</text>";
+      }
+      function reps(span, dur) { return Math.max(1, Math.floor(span / dur) - 1); }
+      // Two-link arm IK: the angles (deg, 0 = down, + toward +x) that put a hand of segment length len at target.
+      function ik(sh, target, len, bend) {
+        var dx = target[0] - sh[0], dy = target[1] - sh[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len - 0.5);
+        var base = (Math.atan2(dx, dy) * 180) / Math.PI, off = (Math.acos(d / (2 * len)) * 180) / Math.PI;
+        return [base + bend * off, base - bend * off];
+      }
+      // Put a prop in a person's hand (it then swings with the arm): the prop is drawn around (0,0) at the hand.
+      function inHand(svg, prop, o, side) {
+        var h = KIT.rig(o).handLocal[side], cls = side ? "arm-r" : "arm-l";
+        return svg.replace('<g class="' + cls + '">', '<g class="' + cls + '"><g transform="translate(' + n1(h[0]) + "," + n1(h[1]) + ')">' + prop + "</g>");
+      }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene (copied from war-through-wifi). ──
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ── Layout, per canvas shape ──────────────────────────────────────────────────────────────────
+      // map: [center x, base y, width] of the world map card; stampAt: the FAILED STATES heading [x, base y, size];
+      // tags: where each place's tag sits, as [dx, dy] from its point and the side it hangs off ("l": the tag to the
+      // right, "r": to the left); Z: the push-in; horn: where the Somalia point ends up on screen after it.
+      // Phase 2 (after the push-in), in screen px: road: the baseline; PS: the people's scale; factory [x, scale];
+      // gate: x of the booth; crook: x; hut: x of its center; builder: x where she stops; sackTo: x of the sack.
+      var L = V
+        ? { map: [540, 1320, 940], stampAt: [440, 700, 1.6], tagSize: 34, Z: 2.5, horn: [700, 640],
+            tags: { so: [[34, 18], "l"], li: [[-34, 6], "r"], sy: [[-30, -50], "r"] },
+            road: 1390, PS: 1.5, factory: [760, 0.82], gate: [940, 1.0], crook: 620, hut: 335, builder: 130, enter: -180, papersFrom: 60 }
+        : { map: [880, 890, 1100], stampAt: [880, 352, 1.8], tagSize: 38, Z: 2.6, horn: [1210, 350],
+            tags: { so: [[36, 18], "l"], li: [[-36, 6], "r"], sy: [[34, -54], "l"] }, tagsB: { sy: [[40, -2], "l"] },
+            road: 820, PS: 1.7, factory: [1080, 0.95], gate: [1390, 1.25], crook: 860, hut: 590, builder: 360, enter: -200, papersFrom: 60 };
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The world map: where a map point (0..400, 0..220) lands for a map card of width w at (mx, my) ──
+      function mapGeo(w, mx, my) {
+        var h = Math.round(w * 0.62), m = Math.round(w * 0.055), iw = w - 2 * m, ih = h - 2 * m;
+        var ix = mx - w / 2 + m, iy = my - h - 9 + m;
+        return { h: h, at: function (p) { return [ix + (p[0] * iw) / 400, iy + (p[1] * ih) / 220]; } };
+      }
+      // the three places (map units), roughly where they are on the made-up map
+      var PLACES = { so: [254, 113], li: [218, 92], sy: [249, 78] };
+      var MAPW = L.map[2], geoA = mapGeo(MAPW, L.map[0], L.map[1]);
+      var markers = ["so", "li", "sy"].map(function (k) { return [PLACES[k][0] / 400, PLACES[k][1] / 220, "boom"]; });
+
+      // A label tag in group 1's style: Oswald navy capitals on a cream tag with a navy outline and a navy drop
+      // shadow, hanging off its place on a leader line. side "l": the tag to the right of (x, y); "r": to the left.
+      var TS = L.tagSize;
+      function tagW(t) { return t.length * TS * 0.52 + 26; }
+      function tagBox(x0, x1, y) { return R(x0, y - TS * 0.68, x1 - x0, TS * 1.36); }
+      function tag(t, x, y, side) {
+        var w = tagW(t), x0 = side === "l" ? x : x - w, box = tagBox(x0, x0 + w, y);
+        return F(pg(box.map(function (p) { return [p[0] + 5, p[1] + 6]; })), ink) + S([pg(box)], "#FBF6E6", 3.4) +
+          text(x0 + 13, y + TS * 0.36, TS, t, ink, 'letter-spacing="1.5"');
+      }
+      // The torn tag: "PARTS OF SY" and "RIA", split on a zigzag tear (two groups, so the right piece can fall off).
+      function tornTag(x, y, side, ids, gone) {
+        var tA = "PARTS OF SY", tB = "RIA", wA = tagW(tA) - 13, wB = tagW(tB) - 13, x0 = side === "l" ? x : x - wA - wB, tx = x0 + wA;
+        var y0 = y - TS * 0.68, y1 = y + TS * 0.68, zz = [];
+        for (var k = 0; k <= 6; k++) zz.push([tx + (k % 2 ? 5 : -5), y0 + ((y1 - y0) * k) / 6]);
+        var left = [[x0, y0]].concat(zz).concat([[x0, y1]]), right = [[x0 + wA + wB, y0], [x0 + wA + wB, y1]].concat(zz.slice().reverse());
+        var sh = function (pts) { return pts.map(function (p) { return [p[0] + 5, p[1] + 6]; }); };
+        return g(ids[0], F(pg(sh(left)), ink) + S([pg(left)], "#FBF6E6", 3.4) + text(tx - 6, y + TS * 0.36, TS, tA, ink, 'letter-spacing="1.5" text-anchor="end"')) +
+          (gone ? "" : g(ids[1], g(ids[1] + "-in", F(pg(sh(right)), ink) + S([pg(right)], "#FBF6E6", 3.4) + text(tx + 6, y + TS * 0.36, TS, tB, ink, 'letter-spacing="1.5"'))));
+      }
+      function leader(p, q2) { return line("M" + pt(p[0], p[1]) + " L" + pt(q2[0], q2[1]), ink, 2.6); }
+      // the tags, by place: the tag (dropping in as #tag-<k>) and its leader line
+      function tagSet(geo, prefix, torn) {
+        return ["so", "li", "sy"].map(function (k) {
+          var tg = (prefix === "b-" && L.tagsB && L.tagsB[k]) || L.tags[k];
+          var p = geo.at(PLACES[k]), d = tg[0], side = tg[1], tp = [p[0] + d[0], p[1] + d[1]];
+          var inner = leader(p, [tp[0] + (side === "l" ? 4 : -4), tp[1]]) +
+            (k === "sy" ? tornTag(tp[0], tp[1], side, [prefix + "sy-a", prefix + "sy-b"], torn === "gone") : tag({ so: "SOMALIA", li: "LIBYA" }[k], tp[0], tp[1], side));
+          return g(prefix + "tag-" + k, inner);
+        }).join("");
+      }
+      var mapA = at(L.map[0], L.map[1], 1, KIT.props.worldMap({ w: MAPW, markers: markers }));
+      var heading = at(L.stampAt[0], L.stampAt[1], 1, g("stamp", KIT.props.stampMark({ text: "FAILED STATES", size: L.stampAt[2], angle: -6 })));
+      var zoomA = g("zoom-a", mapA + tagSet(geoA, "a-") + heading);
+
+      // ── After the push-in: the same map drawn big (so its lines stay thin), the tags at their new places, and the
+      // pieces standing on a map road (screen px). ──
+      var Z = L.Z, wB = Math.round(MAPW * Z), geoB0 = mapGeo(wB, 0, 0), so0 = geoB0.at(PLACES.so);
+      var mxB = L.horn[0] - so0[0], myB = L.horn[1] - so0[1], geoB = mapGeo(wB, mxB, myB);
+      var soA = geoA.at(PLACES.so), zx = L.horn[0] - soA[0], zy = L.horn[1] - soA[1];
+      var mapB = at(mxB, myB, 1, KIT.props.worldMap({ w: wB, markers: markers }));
+      var RY = L.road, road = S([pg(R(30, RY - 16, W - 60, 58))], "#E2D3A9", 3.6) + F(pg(R(30, RY - 16, W - 60, 58)), "url(#" + P + "hatch)", 'opacity="0.18"') +
+        line("M44," + (RY + 13) + " H" + (W - 44), C.cream, 4, 'stroke-dasharray="26 18"');
+      var PS = L.PS;
+
+      // The factory (the productive economy): KIT.props.factory with plain brick chimneys in place of its missiles.
+      var fac = KIT.props.factory({ label: "FACTORY" }), roof = -222;
+      var bricks = [[-150, 108], [-62, 130], [26, 100]].map(function (c) {
+        var x = c[0], top = roof + 1 - c[1] + 6;
+        return S([pg(R(x - 15, top, 30, c[1] - 6))], C.rust, 3.4) + S([pg(R(x - 19, top - 8, 38, 10))], C.slate, 3) +
+          line("M" + (x - 15) + "," + (top + 14) + " H" + (x + 15) + " M" + (x - 15) + "," + (top + 34) + " H" + (x + 15) + " M" + (x - 15) + "," + (top + 54) + " H" + (x + 15) + " M" + (x - 2) + "," + top + " V" + (top + 14) + " M" + (x + 6) + "," + (top + 14) + " V" + (top + 34), ink, 1.2, 'opacity="0.5"');
+      }).join("");
+      fac = fac.replace(/<g class="factory-chimney"/g, '<g class="factory-chimney" opacity="0"');
+      var factory = at(L.factory[0], RY, L.factory[1], g("fac", g("fac-in", bricks + fac)) +
+        g("dust", [[-200, -20, 40], [-90, -34, 52], [40, -30, 50], [170, -18, 40]].map(function (d) { return S([ci(d[0], d[1], d[2])], "#C9C2B5", 3.4); }).join(""), 'opacity="0"'));
+
+      // The toll gate (screen px at scale 1, base on y 0): a booth with a TOLL sign and a striped barrier arm on a
+      // post, the arm reaching left across the road (its pivot on the post).
+      var GK = L.gate[1], ARM = [-112, -96];
+      var stripes = "";
+      for (var sx = -420; sx < -112; sx += 36) stripes += F(pg([[sx, -105], [sx + 18, -105], [sx + 18, -87], [sx, -87]]), C.war);
+      var arm = g("arm", S([pg(R(-430, -106, 318, 20))], "#FBF6E6", 3.6) + stripes + F(pg(R(-430, -106, 318, 20)), "none", 'stroke="' + ink + '" stroke-width="3.6"') +
+        S([pg(R(-100, -112, 34, 32))], C.slate, 3) + line("M-98,-110 H-70", C.orange, 1.6));
+      var booth = S([pg(R(-58, -158, 116, 158))], "#FBF6E6", 4) + F(pg(R(0, -158, 58, 158)), "url(#" + P + "hatch)", 'opacity="0.2"') +
+        S([pg(R(-42, -128, 84, 46))], C.slate, 3.4) + line("M-30,-90 L-14,-124", C.cream, 2.6, 'opacity="0.6"') +
+        S([pg(R(-50, -82, 100, 8))], C.tan, 2.6) + S([pg([[-76, -158], [76, -158], [58, -186], [-58, -186]])], C.slate, 3.6) + line("M-56,-182 H56", C.orange, 1.8) +
+        S([pg(R(-44, -218, 88, 30))], "#FBF6E6", 3.4) + text(0, -194, 24, "TOLL", C.war, 'text-anchor="middle" letter-spacing="3"');
+      var post = S([pg(R(-124, -118, 24, 118))], C.slate, 3.4) + line("M-104,-114 V-4", C.orange, 1.6);
+      var gate = at(L.gate[0], RY, GK, g("gate", g("gate-in", booth + post + '<g transform="translate(' + ARM[0] + "," + ARM[1] + ')">' + g("arm-swing", '<g transform="translate(' + -ARM[0] + "," + -ARM[1] + ')">' + arm + "</g>") + "</g>")));
+
+      // The Masked Crook as the warlord: no fedora, an army helmet three sizes too big (a plain slate dome with a
+      // brim, no insignia) in the face's own units, facing left toward the road.
+      var helmet = S([pg([[-40, -8], [-38, -30], [-26, -50], [-6, -60], [16, -60], [36, -50], [46, -32], [48, -8]])], C.slate, 3.4) +
+        line("M-30,-34 L-22,-46 L-6,-54", C.cream, 2.4, 'opacity="0.55"') + line("M42,-30 L44,-10", C.orange, 2) +
+        S([pg([[-50, -10], [56, -10], [60, -3], [-54, -3]])], C.slate, 3) + line("M-36,-4 L-30,26", ink, 2.2) + line("M38,-4 L30,24", ink, 2.2);
+      var crookBase = { hat: null, look: "left" };
+      function crookO(arms) { return KIT.castOpts("lobbyist", mix(crookBase, { arms: arms })); }
+      function crook(arms) { return KIT.person(crookO(arms)).replace("<!--face-end-->", helmet + "<!--face-end-->"); }
+      var CR0 = KIT.rig(crookO([[-10, -4], [10, 4]]));
+      var CPOSE = {
+        hold: [[-35, -95], [8, 2]],   // the sack held out in his front hand
+        rest: [[-6, -2], [10, 4]],    // hands free, the sack at his feet
+        reach: [[-60, -100], [10, 4]], // reaching for the hut
+        lift: [[-168, -182], [172, 178]], // holding it up over his head, out of reach
+      };
+      var crookSvg = Object.keys(CPOSE).map(function (k, i) { return g("cr-" + k, crook(CPOSE[k]), i ? 'opacity="0"' : ""); }).join("");
+      var crY = RY - 100 * PS;
+      // the sack: a green money bag (in px), at his front hand while he holds it
+      var handHold = KIT.rig(crookO(CPOSE.hold)).hand[0];
+      var sackAt = [L.crook + handHold[0] * PS, crY + handHold[1] * PS + 6];
+      var sack = g("sack", g("sack-sq", S([pg([[-12, -14], [12, -14], [6, -6], [26, 10], [30, 32], [16, 46], [-16, 46], [-30, 32], [-26, 10], [-6, -6]])], C.money, 3.4) +
+        line("M-12,-6 H12", ink, 3.4) + line("M8,10 C-6,6 -6,18 0,20 C6,22 6,32 -6,30 M1,6 V34", C.cream, 3.6)));
+      var crookArt = at(L.crook, crY, 1, g("crook", g("crook-in", '<g transform="scale(' + PS + ')">' + crookSvg + "</g>")));
+      var KS = PS / 1.35, sackArt = at(sackAt[0], sackAt[1], KS, sack);
+
+      // The war papers that pay the toll: they walk in along the road and hop into the sack.
+      var BS = 0.6 * PS;
+      var papers = [0, 1, 2].map(function (i) { return at(L.papersFrom - i * 90, RY - 48 * BS, BS, g("pp" + i, g("pp-hop" + i, KIT.money("war", i % 2 ? 0.8 : 0.2)), 'opacity="0"')); }).join("");
+
+      // The Hut Builder (storyboard Cast), facing right, a hammer in her front hand and planks under her back arm.
+      var HB = { tone: 3, hair: 1, outfit: "dress", color: 2, seed: 5, mood: "eager", look: "right" };
+      var hammer = '<g transform="rotate(-40)">' + line("M0,4 L0,-30", ink, 7) + line("M0,4 L0,-30", C.tan, 3.6) + S([pg(R(-12, -40, 26, 11))], "#9AA4B5", 2.6) + "</g>";
+      var HPOSE = {
+        walk1: { arms: [[-25, -10], [30, 100]], legs: [[-28, -12], [26, 6]] },
+        walk2: { arms: [[-25, -10], [30, 100]], legs: [[22, 4], [-24, -10]] },
+        up: { arms: [[-10, -4], [150, 175]] },
+        down: { arms: [[-10, -4], [70, 110]] },
+      };
+      function hbO(k, extra) { var p = HPOSE[k]; return mix(HB, mix({ arms: p.arms, build: p.legs ? { legPose: p.legs } : undefined }, extra)); }
+      function hb(k, extra) {
+        var o = hbO(k, extra);
+        return inHand(KIT.person(o), hammer, o, 1);
+      }
+      // the planks she carries (px, beside her hip), and her face looking up at the end (pupils raised, head tilted)
+      var planks = g("planks", [0, 1, 2].map(function (i) { return S([pg(R(-70 + i * 4, -6 - i * 9, 150, 9))], i % 2 ? C.tan : "#C99A63", 2.4); }).join(""));
+      var lookUp = function (svg, o) {
+        var nk = KIT.rig(o).neck;
+        return svg.replace(/<circle class="pupil" cx="([-\d.]+)" cy="([-\d.]+)"/g, function (m, cx, cy) { return '<circle class="pupil" cx="' + cx + '" cy="' + (+cy - 2.2) + '"'; })
+          .replace('<g class="head">', '<g class="head" transform="rotate(-16 ' + nk[0] + " " + nk[1] + ')">');
+      };
+      var hbSvg = g("hb-walk1", hb("walk1")) + g("hb-walk2", hb("walk2"), 'opacity="0"') +
+        g("hb-up", hb("up"), 'opacity="0"') + g("hb-down", hb("down"), 'opacity="0"') +
+        g("hb-look", lookUp(hb("up", { mood: "worried" }), hbO("up")), 'opacity="0"');
+      var hbY = RY - 100 * PS;
+      var hbArt = at(L.builder, hbY, 1, g("hb", g("hb-bob", '<g transform="scale(' + PS + ')">' + hbSvg + "</g>" + at(-6 * PS, 46 * PS, PS * 0.9, planks))));
+
+      // The hut she builds (px, standing on the road at its center x): four wall planks, a door, a peaked roof.
+      var HUT = 0.7 * PS;
+      var wallPl = [-60, -30, 0, 30].map(function (x, i) {
+        return g("hp" + i, S([pg(R(x, -118, 30, 118))], i % 2 ? C.tan : "#C99A63", 3) + line("M" + (x + 6) + ",-100 V-10", ink, 1.2, 'opacity="0.4"') + F(ci(x + 15, -100, 2.2), ink) + F(ci(x + 15, -18, 2.2), ink), 'opacity="0"');
+      }).join("");
+      var hutRoof = g("hroof", S([pg([[-80, -114], [0, -186], [80, -114], [66, -108], [0, -168], [-66, -108]])], C.rust, 3.4) + S([pg([[-66, -108], [0, -168], [66, -108]])], "#C99A63", 3) +
+        line("M-40,-136 L40,-136 M-20,-152 L20,-152", ink, 1.4, 'opacity="0.5"'), 'opacity="0"');
+      var hutDoor = g("hdoor", S([pg(R(-16, -64, 32, 64))], C.ink, 2.6), 'opacity="0"');
+      var hutArt = at(L.hut, RY, 1, g("hut", g("hut-wob", '<g transform="scale(' + HUT + ')">' + wallPl + hutDoor + hutRoof + "</g>")));
+      // hammer sparks where she hits
+      var bang = at(L.hut - 64 * HUT, RY - 70 * HUT, 1, g("bang", KIT.star(0, 0, 18, C.yellow) + KIT.star(0, 0, 9, "#FFFFFF"), 'opacity="0"'));
+
+      // Put it together: the zoomed map (phase 1) and the close-up (phase 2), both clipped inside the paper border.
+      var clip = '<defs><clipPath id="' + P + 'frame"><rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '"/></clipPath></defs>';
+      var phase2 = g("close", mapB + tagSet(geoB, "b-", "gone") + road + factory + gate + papers + sackArt + crookArt + hutArt + hbArt + bang, 'opacity="0"');
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + clip + '<g clip-path="url(#' + P + 'frame)">' + zoomA + phase2 + "</g>");
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      fuse(q("fuse"), tl);
+      var show = function (id, t) { tl.set(q(id), { opacity: 1 }, t); };
+      var hide = function (id, t) { tl.set(q(id), { opacity: 0 }, t); };
+
+      // "places", "already", "happened.": a little blast pops up at each place.
+      var mk = q("zoom-a").querySelectorAll(".map-marker");
+      [cue("places"), cue("already"), cue("happened.")].forEach(function (t, i) {
+        var m = mk[i];
+        gsap.set(m, { svgOrigin: m.dataset.ox + " " + m.dataset.oy });
+        tl.fromTo(m, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(3)" }, t);
+      });
+      // "failed": the heading stamps on over the map (stamp).
+      var stp = q("stamp").querySelector(".stamp-mark");
+      gsap.set(stp, { svgOrigin: "0 " + stp.dataset.cy });
+      tl.fromTo(stp, { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.12, ease: "power3.in" }, cue("failed") - 0.08);
+      tl.fromTo(q("zoom-a"), { y: 0 }, { y: 5, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, cue("failed") + 0.04);
+      // "Somalia,", "Libya,", "Syria.": each tag drops onto the map (thunk).
+      [["so", cue("Somalia,")], ["li", cue("Libya,")], ["sy", cue("Syria.")]].forEach(function (k) {
+        tl.fromTo(q("a-tag-" + k[0]), { y: -70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.24, ease: "bounce.out" }, k[1] - 0.12);
+      });
+      // ... and the third tears (snip): "RIA" flutters off, "PARTS OF SY" stays stuck.
+      var tear = cue("Syria.") + 0.4, rB = q("a-sy-b-in");
+      gsap.set(rB, { svgOrigin: n1(geoA.at(PLACES.sy)[0] + L.tags.sy[0][0]) + " " + n1(geoA.at(PLACES.sy)[1] + L.tags.sy[0][1]) });
+      tl.to(rB, { rotation: 28, x: 30, y: 40, duration: 0.18, ease: "power2.out" }, tear);
+      tl.to(rB, { rotation: -18, x: 70, y: 200, duration: 0.35, ease: "sine.inOut" }, tear + 0.18);
+      tl.to(rB, { rotation: 36, x: 40, y: 420, opacity: 0, duration: 0.4, ease: "sine.in" }, tear + 0.53);
+
+      // "The": the camera pushes in on the Horn of Africa; the close-up (drawn big, crisp) takes over at the end.
+      var tZ = cue("The") - 0.2, soPt = geoA.at(PLACES.so);
+      gsap.set(q("zoom-a"), { svgOrigin: n1(soPt[0]) + " " + n1(soPt[1]) });
+      tl.to(q("zoom-a"), { scale: Z, x: zx, y: zy, duration: 0.6, ease: "power2.inOut" }, tZ);
+      tl.to(q("close"), { opacity: 1, duration: 0.06, ease: "none" }, tZ + 0.55);
+      hide("zoom-a", tZ + 0.62);
+
+      // "productive": the factory pops up on the road, puffing; "collapsed,": it folds flat (slide-down), in a puff of dust.
+      var fi = q("fac-in");
+      gsap.set(fi, { svgOrigin: "0 0" });
+      tl.fromTo(fi, { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: "back.out(2)" }, cue("productive"));
+      var puffs = q("fac").querySelectorAll(".factory-puff");
+      Array.prototype.forEach.call(puffs, function (p, k) {
+        gsap.set(p, { svgOrigin: p.dataset.ox + " " + p.dataset.oy });
+        tl.fromTo(p, { scale: 0.7 }, { scale: 1.2, duration: 0.3, repeat: 2, yoyo: true, ease: "sine.inOut" }, cue("productive") + 0.2 + (k % 3) * 0.08);
+      });
+      var tCol = cue("collapsed,");
+      tl.to(fi, { scaleY: 0.05, scaleX: 1.08, duration: 0.42, ease: "power3.in" }, tCol);
+      var dust = q("dust");
+      gsap.set(dust, { svgOrigin: "0 0" });
+      tl.fromTo(dust, { opacity: 0, scale: 0.4 }, { opacity: 0.9, scale: 1, duration: 0.25, ease: "power2.out", immediateRender: false }, tCol + 0.4);
+      tl.to(dust, { opacity: 0, scale: 1.3, y: -20, duration: 0.5, ease: "power1.in" }, tCol + 0.7);
+
+      // "warlord": the toll gate goes up where it stood (clank), its arm swinging down across the road; the Crook pops
+      // up beside it in his huge helmet, holding his sack out.
+      var tWar = cue("warlord"), gi = q("gate-in"), sw = q("arm-swing");
+      gsap.set(gi, { svgOrigin: "0 0" });
+      tl.fromTo(gi, { scaleY: 0 }, { scaleY: 1, duration: 0.24, ease: "back.out(2.2)" }, tWar - 0.04);
+      gsap.set(sw, { svgOrigin: "0 0" });
+      tl.fromTo(sw, { rotation: 82 }, { rotation: 0, duration: 0.3, ease: "bounce.out" }, tWar + 0.12);
+      var ci2 = q("crook-in");
+      gsap.set(ci2, { svgOrigin: "0 " + n1(100 * PS) });
+      tl.fromTo(ci2, { scaleY: 0 }, { scaleY: 1, duration: 0.26, ease: "back.out(2)" }, tWar + 0.08);
+      tl.fromTo(q("sack"), { opacity: 0 }, { opacity: 1, duration: 0.05 }, tWar + 0.2);
+      // the helmet wobbles on his head as he lands (the whole head group)
+      Array.prototype.forEach.call(q("crook").querySelectorAll(".head"), function (hd, k) {
+        gsap.set(hd, { svgOrigin: n1(CR0.neck[0]) + " " + n1(CR0.neck[1]) });
+        if (k === 0) tl.fromTo(hd, { rotation: -10 }, { rotation: 0, duration: 0.5, ease: "elastic.out(1.4,0.3)", immediateRender: false }, tWar + 0.3);
+      });
+
+      // "economy replaced it,": three war papers walk up the road and hop into his sack; it swells each time.
+      var sackPt = [sackAt[0], sackAt[1] - 10], sq = q("sack-sq");
+      gsap.set(sq, { svgOrigin: "0 46" });
+      [0, 1, 2].forEach(function (i) {
+        var p0 = L.papersFrom - i * 90, t0 = cue("economy", 2) + i * 0.3, arrive = t0 + 0.55, b = q("pp" + i), hop = q("pp-hop" + i);
+        var dx = sackPt[0] - 70 - p0;
+        tl.set(b, { opacity: 1 }, t0);
+        tl.fromTo(b, { x: (-200 - p0) / BS }, { x: dx / BS, duration: arrive - t0, ease: "none" }, t0);
+        tl.fromTo(hop, { y: 0 }, { y: -12, duration: 0.09, repeat: 5, yoyo: true, ease: "power1.out" }, t0);
+        tl.to(b, { x: (dx + 70) / BS, y: (sackPt[1] - (RY - 48 * BS) - 70) / BS, scale: 0.8, duration: 0.14, ease: "power1.out" }, arrive);
+        tl.to(b, { y: (sackPt[1] - (RY - 48 * BS)) / BS, scale: 0.2, opacity: 0, duration: 0.12, ease: "power1.in" }, arrive + 0.14);
+        tl.to(sq, { scale: 1 + 0.14 * (i + 1), duration: 0.14, ease: "back.out(3)" }, arrive + 0.24);
+      });
+      // "nobody": he sets the fat sack down at his feet.
+      var tNob = cue("nobody");
+      hide("cr-hold", tNob); show("cr-rest", tNob);
+      tl.to(q("sack"), { x: 8 / KS, y: (RY - 46 * KS - sackAt[1] + 2) / KS, duration: 0.18, ease: "power2.in" }, tNob);
+
+      // "restart": the Hut Builder walks up the road with her planks and hammer.
+      var tRe = cue("restart"), stopAt = tRe + 0.9;
+      tl.fromTo(q("hb"), { x: L.enter - L.builder }, { x: 0, duration: stopAt - tRe, ease: "power1.out" }, tRe);
+      var cur = "hb-walk1";
+      function pose(id, t) { if (id !== cur) { hide(cur, t); show(id, t); cur = id; } }
+      for (var wt = tRe, k2 = 0; wt < stopAt - 0.05; wt += 0.13, k2++) pose(k2 % 2 ? "hb-walk2" : "hb-walk1", wt);
+      tl.fromTo(q("hb-bob"), { y: 0 }, { y: -8, duration: 0.13, repeat: 5, yoyo: true, ease: "sine.inOut" }, tRe);
+      pose("hb-walk1", stopAt);
+
+      // "builds something": she hammers (hammer) and the hut goes up plank by plank, then its door and its roof.
+      var tBu = cue("builds"), hits = [];
+      var tLook = Math.min(KIT.after(ID, "taken.") + 0.55, D - 0.4);
+      for (var ht = tBu - 0.1; ht < tLook - 0.12; ht += 0.26) hits.push(ht); // a hit (the arm down) lands on "builds"
+      hits.forEach(function (t) { pose("hb-up", t); pose("hb-down", t + 0.1); });
+      tl.set(q("planks"), { opacity: 0 }, tBu);
+      [0, 1, 2, 3].forEach(function (i) {
+        var e = q("hp" + i);
+        gsap.set(e, { svgOrigin: n1(-45 + i * 30) + " 0" });
+        tl.fromTo(e, { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.14, ease: "back.out(2.5)" }, tBu + i * 0.12);
+      });
+      tl.fromTo(q("hdoor"), { opacity: 0 }, { opacity: 1, duration: 0.05 }, tBu + 0.5);
+      gsap.set(q("hroof"), { svgOrigin: "0 -114" });
+      tl.fromTo(q("hroof"), { opacity: 0, y: -60 }, { opacity: 1, y: 0, duration: 0.2, ease: "bounce.out" }, cue("something") + 0.1);
+      hits.forEach(function (t, i) {
+        if (t + 0.1 > cue("taken.")) return;
+        tl.fromTo(q("bang"), { opacity: 1, scale: 0.5, svgOrigin: "0 0" }, { opacity: 0, scale: 1.3, svgOrigin: "0 0", duration: 0.12, immediateRender: false }, t + 0.1);
+      });
+
+      // "taken.": the Crook steps over, his gloved hand takes the hut by its roof and lifts it up out of her reach
+      // (whoosh); she keeps hammering the air where it was, then looks up.
+      var tTk = cue("taken."), crDx = -(L.crook - L.hut) * 0.32;
+      hide("cr-rest", tTk - 0.25); show("cr-reach", tTk - 0.25);
+      tl.to(q("crook"), { x: crDx, duration: 0.2, ease: "power2.out" }, tTk - 0.25);
+      var lh2 = KIT.rig(crookO(CPOSE.lift)).hand, liftMid = [(lh2[0][0] + lh2[1][0]) / 2, Math.min(lh2[0][1], lh2[1][1]) - 16];
+      var up = [L.crook + crDx + liftMid[0] * PS - L.hut, crY + liftMid[1] * PS - RY];
+      hide("cr-reach", tTk); show("cr-lift", tTk);
+      tl.to(q("hut"), { x: up[0], y: up[1], duration: 0.22, ease: "power2.out" }, tTk);
+      // ... and walks off a step with it, away from her
+      var back = (L.crook - L.hut) * 0.5;
+      tl.to(q("crook"), { x: crDx + back, duration: 0.35, ease: "power1.inOut" }, tTk + 0.3);
+      tl.to(q("hut"), { x: up[0] + back, duration: 0.35, ease: "power1.inOut" }, tTk + 0.3);
+      gsap.set(q("hut-wob"), { svgOrigin: "0 " + n1(-186 * HUT) });
+      tl.fromTo(q("hut-wob"), { rotation: -5 }, { rotation: 5, duration: 0.3, repeat: reps(D - tTk - 0.3, 0.3), yoyo: true, ease: "sine.inOut" }, tTk + 0.25);
+      tl.set(q(cur), { opacity: 0 }, tLook);
+      ["hb-up", "hb-down", "hb-walk1", "hb-walk2"].forEach(function (id) { hide(id, tLook); });
+      show("hb-look", tLook);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

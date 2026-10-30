@@ -1,0 +1,399 @@
+<template id="one-twenty-one-apocalypses-template">
+  <!-- one-twenty-one-apocalypses · Layer B (storyboards/part-13-one-percent-treaty.md): the scene slides in on the empty
+       paper. "war,": nuclear-winters' grid of 122 red snowflakes slides in with its counter on 122 (the bolted-on third
+       wheel still there). "minus": the lone 122nd flake lifts off, opens two eyes and hovers beside the grid, whistling.
+       "warheads": a stack of 100 grumpy missiles drops in beside a tiny Earth with one waving human on top; "threshold":
+       a ruled "ENDS CIVILIZATION" line across its top; "civilization": the 100 lean at the Earth, a white flash, a small
+       mushroom cloud, and the human stands there charred, hair up, blinking. "twelve": the real stack shoots up behind
+       it out of the top of the frame, a ruled line whizzing past every 100, while a counter rolls to 12,241 and the
+       charred human looks up, and up. "twenty-one": the grid counter flips 122 to 121, one wheel. "civilizational":
+       the 121 go off row by row, faster and faster, each a flash and a little mushroom cloud; "collapses": the last row
+       and a big shake. "instead": the clouds clear on 121 smoking scorch marks. "twenty-two." (second): the stray
+       flake looks back and gulps. "sufficient.": a stamp slams MORE THAN SUFFICIENT across the scorched grid; the
+       thump knocks the stray flake off its spot and it drifts off the edge of the frame. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #one-twenty-one-apocalypses-cam, #one-twenty-one-apocalypses-bg, #one-twenty-one-apocalypses-art, #one-twenty-one-apocalypses-pip, #one-twenty-one-apocalypses-grain { position: absolute; inset: 0; }
+    #one-twenty-one-apocalypses-flash { position: absolute; inset: -40px; background: #FFFFFF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="one-twenty-one-apocalypses" data-width="1920" data-height="1080" data-start="0" data-duration="22.02">
+    <div id="one-twenty-one-apocalypses-cam">
+      <div id="one-twenty-one-apocalypses-bg"></div>
+      <div id="one-twenty-one-apocalypses-art"></div>
+      <!-- the blasts' white flash: over the Earth art, under Wishonia's corner (her reaction stays visible) -->
+      <div id="one-twenty-one-apocalypses-flash"></div>
+      <div id="one-twenty-one-apocalypses-pip"></div>
+    </div>
+    <div id="one-twenty-one-apocalypses-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "one-twenty-one-apocalypses";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+      var f1 = function (n) { return String(Math.round(n * 10) / 10); };
+      var at = function (x, y, inner, s) { return '<g transform="translate(' + f1(x) + "," + f1(y) + ")" + (s && s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; };
+      var all = function (cls) { return document.querySelectorAll("." + P + cls); };
+
+      // Per canvas shape. grid: nuclear-winters' 11 x 11 + 1 grid (top-left flake, spacing, flake radius); winX, labY:
+      // the grid counter's middle and label line. hover: where the stray flake hovers (and its scale there); exit: the
+      // point off the frame it drifts to. ground: the line the tiny Earth and the stacks stand on. stack: the left
+      // missile's x, the spacing across and up, the missile size; side: 1 when the stack stands right of the Earth
+      // (the missiles lean left and the human looks right), -1 when it stands left of it. wc: the 12,241 counter
+      // (middle x, top y). mark: the MORE THAN SUFFICIENT stamp's middle and font size; stampS: the rubber stamp's size.
+      // In 9:16 the tall stack runs up the left edge, clear of the saucer (x 740 to 1040, y 60 to 430); the grid fills
+      // the middle under the saucer, its counter and the hovering stray between the stack and the saucer.
+      var L = V
+        ? { grid: { x: 318, y: 492, dx: 63, dy: 54, r: 21 }, winX: 548, labY: 336, hover: [520, 196], hs: 2.1, exit: [660, -150],
+            ground: 1400, groundX: [70, 610], globe: { x: 432, r: 48 }, guy: 0.8, stack: { x: 92, dx: 18, dy: 23, s: 0.2 }, side: -1, nukeS: 0.4,
+            wc: { x: 790, y: 1180 }, mark: { x: 633, y: 762, fs: 84 }, stampS: 4.6 }
+        : { grid: { x: 160, y: 262, dx: 52, dy: 48, r: 17 }, winX: 450, labY: 104, hover: [840, 310], hs: 2.6, exit: [1010, -130],
+            ground: 840, groundX: [860, 1340], globe: { x: 968, r: 42 }, guy: 0.64, stack: { x: 1110, dx: 20, dy: 23, s: 0.2 }, side: 1, nukeS: 0.32,
+            wc: { x: 1462, y: 330 }, mark: { x: 420, y: 505, fs: 80 }, stampS: 4.4 };
+      var SD = L.side;
+      var G = L.grid, S = L.stack, WHL = { lab: 34, w: 50, h: 70, gap: 6, fs: 56, pad: 8 };
+      var BLOCK = 10 * S.dy, MH = 160 * S.s; // one block of 100 warheads in the stack; one missile's height
+      // The ruled line on top of block k: the nose tips of row 10k - 1 (row 0 stands on the ground).
+      var lineY = function (k) { return L.ground - BLOCK * k - (MH - S.dy); };
+      var colL = S.x - 22, colR = S.x + 9 * S.dx + 22, colMid = (colL + colR) / 2;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── From nuclear-winters.html (nwArt): the red six-armed snowflake, the grid and the counter. ──
+      function flake(r) {
+        var d = "", k, a;
+        for (k = 0; k < 3; k++) {
+          a = (k * Math.PI) / 3;
+          d += "M" + (-r * Math.cos(a)).toFixed(1) + "," + (-r * Math.sin(a)).toFixed(1) + " L" + (r * Math.cos(a)).toFixed(1) + "," + (r * Math.sin(a)).toFixed(1) + " ";
+        }
+        for (k = 0; k < 6; k++) {
+          a = (k * Math.PI) / 3;
+          var px = 0.58 * r * Math.cos(a), py = 0.58 * r * Math.sin(a);
+          [-1, 1].forEach(function (s) {
+            var b = a + (s * Math.PI) / 4;
+            d += "M" + px.toFixed(1) + "," + py.toFixed(1) + " l" + (0.36 * r * Math.cos(b)).toFixed(1) + "," + (0.36 * r * Math.sin(b)).toFixed(1) + " ";
+          });
+        }
+        return '<path d="' + d + '" fill="none" stroke="' + C.war + '" stroke-width="' + (r * 0.25).toFixed(1) + '" stroke-linecap="round"/>';
+      }
+      function wheel(x, y, digits, ids, S2) {
+        S2 = S2 || WHL;
+        var tx = f1(+x + S2.w / 2), ty = (+y + S2.h / 2 + S2.fs * 0.36).toFixed(1);
+        return '<rect x="' + x + '" y="' + y + '" width="' + S2.w + '" height="' + S2.h + '" rx="6" fill="' + C.slate + '"/>' +
+          digits.map(function (d, i) {
+            return "<text" + (ids && ids[i] ? ' id="' + P + ids[i] + '"' : "") + ' x="' + tx + '" y="' + ty + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + S2.fs + '" fill="' + C.yellow + '">' + d + "</text>";
+          }).join("") +
+          '<path d="M' + x + "," + (y + S2.h / 2) + " h" + S2.w + '" stroke="' + C.ink + '" stroke-width="2.5"/>';
+      }
+      // The grid counter on 122: two wheels in the housing, the third wheel on its mismatched plate, bolted on. The
+      // ones wheel holds a "2" and a "1" (the flip on "twenty-one").
+      function counterArt() {
+        var top = L.labY + Math.round(WHL.lab * 0.42), hh = WHL.h + 2 * WHL.pad;
+        var mw = 2 * WHL.w + WHL.gap + 2 * WHL.pad, mx = L.winX - mw / 2, ax = mx + WHL.pad - WHL.gap - WHL.w;
+        var bolt = function (bx, by) {
+          return '<g transform="translate(' + bx + "," + by + ')"><g class="' + P + 'bolt"><circle r="6" fill="' + C.cream + '" stroke="' + C.ink + '" stroke-width="2.5"/><path d="M-3.5,0 h7" stroke="' + C.ink + '" stroke-width="2.2"/></g></g>';
+        };
+        var ones = [mx + WHL.pad + WHL.w + WHL.gap, top + WHL.pad];
+        return {
+          svg: '<g id="' + P + 'winters"><text x="' + L.winX + '" y="' + L.labY + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + WHL.lab + '" letter-spacing="1" fill="' + C.war + '">NUCLEAR WINTERS:</text>' +
+            '<g id="' + P + 'main"><rect x="' + mx + '" y="' + top + '" width="' + mw + '" height="' + hh + '" rx="10" fill="' + C.navy + '" stroke="' + C.ink + '" stroke-width="4"/>' +
+            wheel(mx + WHL.pad, top + WHL.pad, ["2"]) + wheel(ones[0], ones[1], ["2", "1"], ["d0a", "d0b"]) + "</g>" +
+            '<g id="' + P + 'addon"><rect x="' + (ax - WHL.pad) + '" y="' + (top - 5) + '" width="' + (mx + 4 - ax + WHL.pad) + '" height="' + (hh + 10) + '" rx="4" fill="' + C.tan + '" stroke="' + C.ink + '" stroke-width="4"/>' +
+            wheel(ax, top + WHL.pad, ["1"]) + bolt(mx + 1, top + 4) + bolt(mx + 1, top + hh - 4) + "</g></g>",
+          onesMid: [ones[0] + WHL.w / 2, ones[1] + WHL.h / 2],
+        };
+      }
+      // ── end of the nuclear-winters copy ──
+
+      // The 12,241 counter: five wheels with a comma, under "WARHEADS:".
+      var WC = { w: 44, h: 62, fs: 50, gap: 4, cg: 18, pad: 8, lab: 30 };
+      function warheadCounter() {
+        var tw = 5 * WC.w + 3 * WC.gap + WC.cg + 2 * WC.pad, x0 = L.wc.x - tw / 2, y0 = L.wc.y, xs = [], x = x0 + WC.pad;
+        for (var i = 0; i < 5; i++) { xs.push(x); x += WC.w + (i === 1 ? WC.cg : WC.gap); }
+        return '<g id="' + P + 'wc"><text x="' + L.wc.x + '" y="' + (y0 - 12) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + WC.lab + '" letter-spacing="1" fill="' + ink + '">WARHEADS:</text>' +
+          '<rect x="' + f1(x0) + '" y="' + y0 + '" width="' + f1(tw) + '" height="' + (WC.h + 2 * WC.pad) + '" rx="10" fill="' + C.navy + '" stroke="' + C.ink + '" stroke-width="4"/>' +
+          xs.map(function (wx, i) { return wheel(f1(wx), y0 + WC.pad, ["0"], ["wd" + i], WC); }).join("") +
+          '<text x="' + f1(xs[1] + WC.w + WC.cg / 2) + '" y="' + (y0 + WC.pad + WC.h - 6) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + WC.fs + '" fill="' + C.yellow + '">,</text></g>';
+      }
+      // A ruled line across the stack with its "ENDS CIVILIZATION" tag in the middle.
+      function ruled(y, fs, id) {
+        var tw = 17 * fs * 0.52 + 18, th = fs + 10;
+        return '<g' + (id ? ' id="' + P + id + '"' : "") + '><path' + (id ? ' id="' + P + id + '-line"' : "") + ' d="M' + colL + "," + f1(y) + " H" + colR + '" stroke="' + C.war + '" stroke-width="4" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"/>' +
+          '<g transform="translate(' + f1(colMid) + "," + f1(y) + ')"><g' + (id ? ' id="' + P + id + '-tag"' : "") + '><rect x="' + f1(-tw / 2) + '" y="' + f1(-th / 2) + '" width="' + f1(tw) + '" height="' + th + '" fill="#FBF6E6" stroke="' + C.war + '" stroke-width="2.5"/>' +
+          '<text x="0" y="' + f1(fs * 0.36) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + fs + '" letter-spacing="0.5" fill="' + C.war + '">ENDS CIVILIZATION</text></g></g></g>';
+      }
+      // Burn a drawing (as KIT's charred people are burnt): every color but the ink turns a dark brown of the same lightness.
+      function burn(markup) {
+        var inkU = ink.toUpperCase();
+        return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, a, col) {
+          if (col.toUpperCase() === inkU) return m;
+          var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + l * 46);
+          return a + '="rgb(' + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ')"';
+        });
+      }
+      // A scorch mark where a flake was: a jagged black splat with an ember.
+      function splat(rnd) {
+        var pts = [], n = 12;
+        for (var k = 0; k < n; k++) {
+          var a = (k / n) * Math.PI * 2 + rnd() * 0.3, rr = G.r * (k % 2 ? 0.55 + rnd() * 0.25 : 1.0 + rnd() * 0.4);
+          pts.push(f1(rr * Math.cos(a)) + "," + f1(rr * Math.sin(a)));
+        }
+        return '<path d="M' + pts.join(" L") + ' Z" fill="#2A221C" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"/><circle r="' + f1(G.r * 0.3) + '" fill="#5A4636"/>';
+      }
+      var wispD = "M0,0 l" + f1(-0.22 * G.r) + "," + f1(-0.36 * G.r) + " l" + f1(0.22 * G.r) + "," + f1(-0.36 * G.r) + " l" + f1(-0.22 * G.r) + "," + f1(-0.36 * G.r);
+
+      // ── The grid: 121 flakes (rows 0 to 10), each with its flash, its little mushroom cloud, its scorch and its smoke. ──
+      var MS = (G.dx * 1.02) / 520; // the little mushroom clouds, about one grid step wide
+      var sr = KIT.rng(121), flakes = "", scorch = "", wisps = "", minis = "", bursts = "";
+      for (var i = 0; i < 121; i++) {
+        var row = Math.floor(i / 11), col = i % 11, x = G.x + col * G.dx, y = G.y + row * G.dy, dr = ' data-row="' + row + '" data-col="' + col + '"';
+        flakes += at(x, y, '<g class="' + P + 'flake"' + dr + ">" + flake(G.r) + "</g>");
+        scorch += at(x, y, '<g class="' + P + 'scorch"' + dr + ' opacity="0">' + splat(sr) + "</g>");
+        wisps += at(x + (sr() - 0.5) * 6, y - G.r * 0.3, '<g class="' + P + 'wisp"' + dr + ' opacity="0"><path d="' + wispD + '" fill="none" stroke="#8C8782" stroke-width="' + f1(G.r * 0.16) + '" stroke-linecap="round" stroke-linejoin="round"/></g>');
+        minis += at(x, y + G.r * 0.75, '<g class="' + P + 'mn"' + dr + ' opacity="0"><g transform="scale(' + MS.toFixed(4) + ')"><use href="#' + P + 'mini"/></g></g>');
+        bursts += at(x, y, '<g class="' + P + 'burst"' + dr + ' opacity="0">' + KIT.star(0, 0, G.r * 2.3, C.yellow, 8) + KIT.star(0, 0, G.r * 1.6, "#FFFFFF", 8) + "</g>");
+      }
+      var counter = counterArt();
+      var grid = '<g id="' + P + 'grid">' + scorch + flakes + wisps + minis + bursts + "</g>";
+
+      // ── The stray: the lone 122nd flake (row 11), with the only face in the grid. Nested: lift (fly to the hover spot),
+      // knock (the stamp's thump and the drift off), bob (hovering), body (looks and gulps). ──
+      var r = G.r, lone = [G.x, G.y + 11 * G.dy];
+      var eye = function (ex) {
+        return '<ellipse cx="' + f1(ex) + '" cy="' + f1(-0.06 * r) + '" rx="' + f1(0.21 * r) + '" ry="' + f1(0.17 * r) + '" fill="#FBF6E6" stroke="' + ink + '" stroke-width="' + f1(0.06 * r) + '"/>' +
+          '<path d="M' + f1(ex - 0.25 * r) + "," + f1(-0.04 * r) + " Q" + f1(ex) + "," + f1(-0.34 * r) + " " + f1(ex + 0.24 * r) + "," + f1(-0.08 * r) + '" fill="none" stroke="' + ink + '" stroke-width="' + f1(0.1 * r) + '" stroke-linecap="round"/>';
+      };
+      var face = '<g id="' + P + 'face" opacity="0"><circle r="' + f1(0.68 * r) + '" fill="#FBF6E6" stroke="' + C.war + '" stroke-width="' + f1(0.1 * r) + '"/>' +
+        '<g id="' + P + 'eyes">' + eye(-0.27 * r) + eye(0.27 * r) +
+        '<g id="' + P + 'pupils"><circle cx="' + f1(-0.27 * r) + '" cy="' + f1(-0.04 * r) + '" r="' + f1(0.095 * r) + '" fill="' + ink + '"/><circle cx="' + f1(0.27 * r) + '" cy="' + f1(-0.04 * r) + '" r="' + f1(0.095 * r) + '" fill="' + ink + '"/></g></g>' +
+        // the mouths: whistling (an o), flat, and the gulp (a wobble)
+        '<ellipse id="' + P + 'm-o" cx="0" cy="' + f1(0.36 * r) + '" rx="' + f1(0.08 * r) + '" ry="' + f1(0.1 * r) + '" fill="' + ink + '"/>' +
+        '<path id="' + P + 'm-flat" d="M' + f1(-0.14 * r) + "," + f1(0.36 * r) + " H" + f1(0.14 * r) + '" stroke="' + ink + '" stroke-width="' + f1(0.07 * r) + '" stroke-linecap="round" opacity="0"/>' +
+        '<path id="' + P + 'm-wavy" d="M' + f1(-0.2 * r) + "," + f1(0.38 * r) + " l" + f1(0.1 * r) + "," + f1(-0.07 * r) + " l" + f1(0.1 * r) + "," + f1(0.07 * r) + " l" + f1(0.1 * r) + "," + f1(-0.07 * r) + " l" + f1(0.1 * r) + "," + f1(0.07 * r) + '" fill="none" stroke="' + ink + '" stroke-width="' + f1(0.07 * r) + '" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>' +
+        '<g transform="translate(' + f1(0.62 * r) + "," + f1(-0.5 * r) + ')"><g id="' + P + 'sweat" opacity="0"><path d="M0,' + f1(-0.2 * r) + " Q" + f1(0.13 * r) + "," + f1(0.02 * r) + " 0," + f1(0.12 * r) + " Q" + f1(-0.13 * r) + "," + f1(0.02 * r) + " 0," + f1(-0.2 * r) + ' Z" fill="' + C.cyan + '" stroke="' + ink + '" stroke-width="' + f1(0.05 * r) + '"/></g></g></g>';
+      var stray = '<g id="' + P + 'stray-slide">' + at(lone[0], lone[1], '<g id="' + P + 'stray"><g id="' + P + 'stray-knock"><g id="' + P + 'stray-bob"><g id="' + P + 'stray-body">' + flake(r) + face + "</g></g></g></g>") + "</g>";
+      // Two music notes for the whistle, rising from the hover spot.
+      var note = function (i) {
+        return at(L.hover[0] + r * L.hs * 0.9, L.hover[1] - r * L.hs * 0.55, '<g class="' + P + 'note" opacity="0"><g transform="scale(' + (i ? 1.15 : 0.95) + ')"><ellipse cx="0" cy="0" rx="7" ry="5" transform="rotate(-22)" fill="' + ink + '"/>' +
+          '<path d="M6,-2 V-28 q9,4 10,13" fill="none" stroke="' + ink + '" stroke-width="2.8" stroke-linecap="round"/></g></g>');
+      };
+
+      // ── The right side: the tiny Earth and its human, the stack of 100, the real stack behind it, the 12,241 counter. ──
+      var defs = '<defs><g id="' + P + 'msl">' + KIT.props.missile({ size: S.s }) + '</g><g id="' + P + 'mini">' + KIT.nuke() + "</g></defs>";
+      var mr = KIT.rng(100), stack = "";
+      for (var j = 0; j < 10; j++) for (var c2 = 0; c2 < 10; c2++) {
+        stack += at(S.x + c2 * S.dx + (mr() - 0.5) * 2, L.ground - j * S.dy, '<g transform="rotate(' + ((mr() - 0.5) * 5).toFixed(1) + ')"><g class="' + P + 'wh"><use href="#' + P + 'msl"/></g></g>');
+      }
+      // The real stack: rows from below the ground (hidden by the clip) to above the frame top, one ruled line per
+      // block of 100; it streams up by moving its rows up modulo one block.
+      var jTop = Math.ceil((L.ground + 10) / S.dy), colRows = "", colLines = "";
+      for (j = -10; j <= jTop; j++) for (c2 = 0; c2 < 10; c2++) colRows += '<use href="#' + P + 'msl" x="' + (S.x + c2 * S.dx) + '" y="' + (L.ground - j * S.dy) + '"/>';
+      for (var k = 0; k <= Math.ceil(jTop / 10) + 1; k++) colLines += ruled(lineY(k), 15);
+      var column = '<defs><clipPath id="' + P + 'colclip"><rect id="' + P + 'colrect" x="' + (colL - 4) + '" y="' + f1(lineY(1)) + '" width="' + (colR - colL + 8) + '" height="' + f1(L.ground + 4 - lineY(1)) + '"/></clipPath></defs>' +
+        '<g id="' + P + 'column" opacity="0" clip-path="url(#' + P + 'colclip)"><g id="' + P + 'colshift">' + colRows + colLines + "</g></g>";
+      // The tiny Earth (and its burnt copy), the human on top (waving, then charred and looking up), the cloud.
+      var gx = L.globe.x, gr = L.globe.r, gs = L.guy;
+      var guyA = { tone: 1, outfit: "shirt", color: 2, hair: 0, mood: "smile", arms: [[18, 6], [150, 172]] };
+      var guyB = { tone: 1, outfit: "shirt", color: 2, hair: 0, charred: true, look: SD > 0 ? "right" : "left", arms: [[18, 6], [150, 172]] };
+      var RA = KIT.rig(guyA), RB = KIT.rig(guyB);
+      var guy = at(0, -2 * gr - 100 * gs, '<g id="' + P + 'guy-lean"><g id="' + P + 'guy-a">' + KIT.person(guyA) + '</g><g id="' + P + 'guy-b" opacity="0">' + KIT.person(guyB) + "</g></g>", gs);
+      var earth = at(gx, L.ground, '<g id="' + P + 'earth"><g id="' + P + 'globe">' + KIT.props.earthGlobe({ r: gr }) + '</g><g id="' + P + 'globe-b" opacity="0">' + burn(KIT.props.earthGlobe({ r: gr })) + "</g>" + guy + "</g>");
+      var gnuke = at(gx, L.ground - 2 * gr + 8, '<g id="' + P + 'gnuke">' + KIT.nuke() + "</g>", L.nukeS);
+      var ground = '<path id="' + P + 'ground" d="M' + L.groundX[0] + "," + L.ground + " H" + L.groundX[1] + '" stroke="' + ink + '" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"/>';
+      var right = '<g id="' + P + 'right">' + ground + column + '<g id="' + P + 'stack-drop"><g id="' + P + 'stack-squash">' + stack + "</g></g>" +
+        ruled(lineY(1), 20, "thr") + earth + gnuke + warheadCounter() +
+        at(L.wc.x + 150, L.wc.y - 10, '<g id="' + P + 'ding" opacity="0">' + KIT.star(0, 0, 24, C.orange) + KIT.star(0, 0, 13, C.yellow) + "</g>") + "</g>";
+
+      // ── The stamp and its mark, over the grid. ──
+      var markSvg = KIT.props.stampMark({ text: "MORE THAN\nSUFFICIENT", fontSize: L.mark.fs }), markCy = +/data-cy="(-?[\d.]+)"/.exec(markSvg)[1];
+      var mark = at(L.mark.x, L.mark.y - markCy, markSvg);
+      var stamp = at(L.mark.x, L.mark.y + 40, '<g id="' + P + 'stamp">' + KIT.props.stamp({ text: "SUFFICIENT", size: L.stampS }) + "</g>");
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + defs + '<g id="' + P + 'slide">' + grid + counter.svg + "</g>" + right + mark + stray + note(0) + note(1) + stamp);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t); };
+      var hide = function (el, t) { tl.fromTo(el, { opacity: 1 }, { opacity: 0, duration: 0.01, immediateRender: false }, t); };
+      var swapTo = function (els, t) { els.forEach(function (e, i) { (i === els.length - 1 ? show : hide)(e, t); }); };
+
+      // Pivots, set once while everything is untransformed.
+      var flakeEls = all("flake"), markEl = document.querySelector("#" + P + "art .stamp-mark");
+      gsap.set([flakeEls, all("burst"), all("mn"), all("wh"), q("stray"), q("stray-knock"), q("stray-body"), q("ding"), document.querySelectorAll("#" + P + "stamp .stamp-head")], { svgOrigin: "0 0" });
+      gsap.set([q("d0a"), q("d0b")], { svgOrigin: counter.onesMid.join(" ") });
+      gsap.set(q("eyes"), { svgOrigin: "0 " + f1(-0.06 * r) });
+      gsap.set(markEl, { svgOrigin: "0 " + markCy });
+      gsap.set(q("earth"), { svgOrigin: gx + " " + L.ground });
+      gsap.set(q("stack-squash"), { svgOrigin: f1(colMid) + " " + L.ground });
+      gsap.set(q("thr-tag"), { svgOrigin: "0 0" });
+      gsap.set(q("guy-lean"), { svgOrigin: "0 100" });
+      var headB = document.querySelector("#" + P + "guy-b .head"), armA = document.querySelector("#" + P + "guy-a .arm-r");
+      gsap.set(headB, { svgOrigin: RB.neck.join(" ") });
+      gsap.set(armA, { svgOrigin: RA.shoulder[1].join(" ") });
+      var wcEl = q("wc"), wcBox = wcEl.getBBox();
+      gsap.set(wcEl, { svgOrigin: f1(wcBox.x + wcBox.width / 2) + " " + f1(wcBox.y + wcBox.height / 2) });
+      var winEl = q("winters"), winBox = winEl.getBBox();
+      gsap.set(winEl, { svgOrigin: f1(winBox.x + winBox.width / 2) + " " + f1(winBox.y + winBox.height / 2) });
+
+      // The words.
+      var tWar = cue("war,"), tCap = cue("capacity"), t22a = cue("twenty-two"), tMinus = cue("minus"), tSince = cue("Since");
+      var tWh = cue("warheads"), tThr = cue("threshold"), tEnd = cue("ending"), tCiv = cue("civilization"), tCivA = KIT.after(ID, "civilization");
+      var tTw = cue("twelve"), tFo = cue("forty-one,"), tSet = cue("settling"), t21 = cue("twenty-one"), tCz = cue("civilizational");
+      var tCol = cue("collapses"), tIns = cue("instead"), t22b = cue("twenty-two.", 2), tSuf = cue("sufficient."), tSufA = KIT.after(ID, "sufficient.");
+
+      // "war,": the grid and its counter slide in (the whoosh), the stray flake still in its place at the bottom.
+      tl.fromTo([q("slide"), q("stray-slide")], { x: -1000 }, { x: 0, duration: 0.5, ease: "power3.out" }, tWar);
+      // "capacity": a twinkle runs across the grid. "twenty-two": the counter shows off its 122.
+      flakeEls.forEach(function (el) {
+        var d = +el.getAttribute("data-row") + +el.getAttribute("data-col");
+        tl.fromTo(el, { scale: 1 }, { scale: 1.3, duration: 0.11, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, tCap + d * 0.022);
+      });
+      tl.fromTo(winEl, { scale: 1 }, { scale: 1.08, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, t22a);
+
+      // "minus": the lone flake lifts off, opens its eyes, flies to its spot beside the grid and hovers there, whistling.
+      var HS = L.hs, hdx = L.hover[0] - lone[0], hdy = L.hover[1] - lone[1];
+      tl.fromTo(q("stray"), { x: 0, y: 0, scale: 1 }, { y: -40, scale: 1.3, duration: 0.16, ease: "power2.out" }, tMinus);
+      tl.to(q("stray"), { x: hdx, y: hdy, scale: HS, duration: 0.5, ease: "power2.inOut" }, tMinus + 0.16);
+      tl.fromTo(q("face"), { opacity: 0 }, { opacity: 1, duration: 0.08 }, tMinus + 0.04);
+      tl.fromTo(q("eyes"), { scaleY: 0.1 }, { scaleY: 1, duration: 0.14, ease: "back.out(2)" }, tMinus + 0.08);
+      var bobN = Math.floor((tSuf - 0.1 - (tMinus + 0.7)) / 0.62);
+      if (bobN % 2 === 0) bobN -= 1;
+      tl.fromTo(q("stray-bob"), { y: 0 }, { y: -6 / HS * 2, duration: 0.62, yoyo: true, repeat: bobN, ease: "sine.inOut" }, tMinus + 0.7);
+      document.querySelectorAll("." + P + "note").forEach(function (n, ni) {
+        var t0 = tMinus + 0.55 + ni * 0.6;
+        tl.fromTo(n, { opacity: 0, x: 0, y: 0 }, { opacity: 1, x: 10, y: -30, duration: 0.35, ease: "power1.out" }, t0);
+        tl.to(n, { opacity: 0, x: 26, y: -78, duration: 0.6, ease: "power1.in" }, t0 + 0.35);
+      });
+      // the whistle stops: the o becomes a flat little mouth
+      hide(q("m-o"), tSince - 0.1); show(q("m-flat"), tSince - 0.1);
+
+      // "Since": the ground draws in and the tiny Earth pops up with its human, who waves. "warheads": the stack of
+      // 100 drops in (the thunk).
+      tl.fromTo(q("ground"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power2.out" }, tSince - 0.25);
+      tl.fromTo(q("earth"), { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, tSince);
+      tl.fromTo(armA, { rotation: 0 }, { rotation: -22, duration: 0.18, yoyo: true, repeat: 5, ease: "sine.inOut" }, tSince + 0.3);
+      tl.fromTo(q("stack-drop"), { y: -(L.ground + 200) }, { y: 0, duration: 0.28, ease: "power3.in" }, tWh - 0.28);
+      tl.fromTo(q("stack-squash"), { scaleY: 1, scaleX: 1 }, { scaleY: 0.9, scaleX: 1.04, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tWh);
+      // "threshold": the ruled line and its tag across the top of the 100.
+      tl.fromTo(q("thr-line"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power2.out" }, tThr);
+      tl.fromTo(q("thr-tag"), { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2.2)" }, tThr + 0.15);
+
+      // "ending": the 100 lean at the Earth. "civilization": the flash, the little mushroom cloud; under the flash the
+      // Earth burns black and its human is charred, hair up, smoking, blinking.
+      var whs = all("wh");
+      tl.fromTo(whs, { rotation: 0 }, { rotation: -14 * SD, duration: 0.25, ease: "back.out(2)", stagger: { each: 0.002 } }, tEnd - 0.12);
+      KIT.boom(tl, q("gnuke"), tCiv, { flash: q("flash"), shake: q("cam") });
+      swapTo([q("globe"), q("globe-b")], tCiv + 0.05);
+      swapTo([q("guy-a"), q("guy-b")], tCiv + 0.05);
+      tl.to(q("gnuke"), { opacity: 0, duration: 0.45, ease: "power1.in" }, tCiv + 0.6);
+      tl.to(whs, { rotation: 0, duration: 0.3, ease: "power2.inOut" }, tCiv + 0.9);
+      var smoke = document.querySelectorAll("#" + P + "guy-b .smoke");
+      tl.fromTo(smoke, { y: 0, opacity: 0.4 }, { y: -6, opacity: 1, duration: 0.24, yoyo: true, repeat: Math.floor((D - 0.05 - (tCivA - 0.1)) / 0.24) - 1, ease: "sine.inOut" }, tCivA - 0.1);
+      var charEyes = document.querySelector("#" + P + "guy-b .char-eyes");
+      gsap.set(charEyes, { svgOrigin: RB.faceEyes.join(" ") });
+      var blink = function (t) { tl.fromTo(charEyes, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, t); };
+      blink(tCiv + 1.12); blink(tCiv + 1.3);
+
+      // "twelve": the real stack shoots up behind the 100, out of the top of the frame, a ruled line every 100 whizzing
+      // past, while the counter rolls to 12,241 (it stops on "forty-one,": the ding). The charred human looks up, and up.
+      show(q("column"), tTw);
+      tl.fromTo(wcEl, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, tTw - 0.1);
+      var colRect = q("colrect"), colShift = q("colshift"), TOTAL = ((12241 - 100) / 100) * BLOCK, roll = gsap.parseEase("power3.inOut");
+      var wd = [0, 1, 2, 3, 4].map(function (n) { return q("wd" + n); });
+      KIT.onTime(tl, D, function (lt) {
+        var u = Math.min(1, Math.max(0, (lt - tTw) / (tFo - tTw))), off = TOTAL * roll(u);
+        var top = Math.max(-60, lineY(1) - off);
+        colRect.setAttribute("y", top.toFixed(1));
+        colRect.setAttribute("height", (L.ground + 4 - top).toFixed(1));
+        colShift.setAttribute("transform", "translate(0," + (-(off % BLOCK)).toFixed(2) + ")");
+        var n = String(Math.min(12241, Math.round(100 + (off / BLOCK) * 100)));
+        while (n.length < 5) n = "0" + n;
+        for (var di = 0; di < 5; di++) if (wd[di].textContent !== n[di]) wd[di].textContent = n[di];
+      });
+      tl.fromTo(wcEl, { scale: 1 }, { scale: 1.1, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tFo);
+      tl.fromTo(q("ding"), { opacity: 0, scale: 0.2, rotation: -30 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.18, ease: "back.out(3)" }, tFo);
+      tl.to(q("ding"), { opacity: 0, scale: 0.4, duration: 0.25, ease: "power2.in" }, tFo + 0.5);
+      tl.fromTo(headB, { rotation: 0 }, { rotation: -24 * SD, duration: 0.25, ease: "power2.out" }, tTw + 0.12);
+      tl.to(headB, { rotation: -46 * SD, duration: 0.4, ease: "power2.out" }, tTw + 0.75);
+      tl.fromTo(q("guy-lean"), { rotation: 0 }, { rotation: -9 * SD, duration: 0.4, ease: "power2.out" }, tTw + 0.75);
+      blink(tFo + 0.45);
+      // "settling": he slowly lowers his head and stares at it, blinking.
+      tl.to(headB, { rotation: -10 * SD, duration: 0.9, ease: "sine.inOut" }, tSet);
+      tl.to(q("guy-lean"), { rotation: 0, duration: 0.9, ease: "sine.inOut" }, tSet);
+      blink(tSet + 1.05);
+
+      // "twenty-one": the ones wheel flips from 2 to 1 (the clank), the housing shudders, and the stray hops: it is off the books.
+      tl.fromTo(q("d0a"), { scaleY: 1 }, { scaleY: 0, duration: 0.07, ease: "power2.in", immediateRender: false }, t21);
+      tl.fromTo(q("d0b"), { scaleY: 0 }, { scaleY: 1, duration: 0.09, ease: "back.out(2)" }, t21 + 0.07);
+      tl.fromTo(q("main"), { x: 0 }, { x: 4, duration: 0.04, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, t21);
+      tl.fromTo(q("stray-body"), { y: 0 }, { y: -0.4 * r, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, t21 + 0.3);
+
+      // "civilizational": the 121 go off row by row, bottom row first, faster and faster (the pops), each a flash, then
+      // a little mushroom cloud over its scorch. "collapses": the last row, a white flash and a big shake.
+      var offs = [0, 0.14, 0.27, 0.38, 0.48, 0.57, 0.65, 0.71, 0.76, 0.8];
+      for (var rr = 10; rr >= 0; rr--) {
+        var rt = rr === 0 ? tCol : tCz + offs[10 - rr], sel = '[data-row="' + rr + '"]';
+        var pick = function (cls) { return document.querySelectorAll("." + P + cls + sel); };
+        tl.fromTo(pick("burst"), { opacity: 1, scale: 0.3 }, { scale: 1.25, duration: 0.06, ease: "power2.out", immediateRender: false }, rt);
+        tl.to(pick("burst"), { opacity: 0, scale: 1.4, duration: 0.14, ease: "power1.in" }, rt + 0.07);
+        tl.fromTo(pick("flake"), { scale: 1, opacity: 1 }, { scale: 0, opacity: 0, duration: 0.05, ease: "power2.in", immediateRender: false }, rt);
+        show(pick("scorch"), rt + 0.02);
+        tl.fromTo(pick("mn"), { opacity: 0, scale: 0.15 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, rt + 0.02);
+        tl.to(pick("mn"), { scale: 1.08, y: -3, duration: tIns - rt - 0.35, ease: "sine.out" }, rt + 0.33);
+        // "instead": the clouds clear, top rows first
+        tl.to(pick("mn"), { y: -34, opacity: 0, duration: 0.55, ease: "power1.in" }, tIns + rr * 0.025);
+      }
+      tl.fromTo(q("flash"), { opacity: 0 }, { opacity: 0.9, duration: 0.04, immediateRender: false }, tCol);
+      tl.to(q("flash"), { opacity: 0, duration: 0.6, ease: "power2.in" }, tCol + 0.1);
+      tl.fromTo(q("cam"), { x: 0, y: 0 }, { x: 16, y: 9, duration: 0.04, repeat: 13, yoyo: true, ease: "none", immediateRender: false }, tCol);
+      // the stray, watching: its eyes go wide
+      tl.fromTo(q("eyes"), { scale: 1 }, { scale: 1.35, duration: 0.1, ease: "back.out(2)", immediateRender: false }, tCz + 0.05);
+      tl.to(q("eyes"), { scale: 1, duration: 0.3, ease: "power2.out" }, tIns + 0.6);
+      // the 121 scorch marks smoke
+      for (rr = 0; rr <= 10; rr++) {
+        var ws = document.querySelectorAll("." + P + "wisp" + '[data-row="' + rr + '"]'), t0 = tIns + 0.1 + (rr % 3) * 0.07;
+        tl.fromTo(ws, { opacity: 0, y: 0 }, { opacity: 0.9, y: -4, duration: 0.3, ease: "power1.out" }, t0);
+        tl.fromTo(ws, { y: -4 }, { y: -9, duration: 0.42, yoyo: true, repeat: Math.floor((D - 0.05 - t0 - 0.3) / 0.42) - 1, ease: "sine.inOut", immediateRender: false }, t0 + 0.3);
+      }
+
+      // "twenty-two." (second): the stray looks back at the scorched grid, then gulps (the squeak), a drop of sweat.
+      var px = -0.07 * r;
+      tl.fromTo(q("pupils"), { x: 0, y: 0 }, { x: px, y: 0.02 * r, duration: 0.2, ease: "power2.out", immediateRender: false }, t22b - 0.4);
+      tl.fromTo(q("stray-body"), { rotation: 0 }, { rotation: -10, duration: 0.25, ease: "power2.out", immediateRender: false }, t22b - 0.4);
+      hide(q("m-flat"), t22b); show(q("m-wavy"), t22b);
+      tl.fromTo(q("stray-body"), { scaleY: 1, scaleX: 1 }, { scaleY: 0.82, scaleX: 1.1, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, t22b);
+      tl.fromTo(q("sweat"), { opacity: 0, y: 0 }, { opacity: 1, y: 0.3 * r, duration: 0.5, ease: "power1.in" }, t22b + 0.1);
+      tl.to(q("pupils"), { x: 0, y: 0, duration: 0.25, ease: "power2.inOut" }, t22b + 0.9);
+      tl.to(q("stray-body"), { rotation: 0, duration: 0.3, ease: "power2.inOut" }, t22b + 0.9);
+
+      // "sufficient.": the rubber stamp slams down on the scorched grid (the thunk) and lifts away on MORE THAN
+      // SUFFICIENT. The thump knocks the stray off its spot; after the word it drifts off the edge of the frame.
+      var up = -(L.mark.y + 40 + 120);
+      tl.fromTo(q("stamp"), { y: up }, { y: 0, duration: 0.22, ease: "power3.in" }, tSuf - 0.22);
+      tl.fromTo(document.querySelectorAll("#" + P + "stamp .stamp-head"), { scaleY: 1, scaleX: 1 }, { scaleY: 0.9, scaleX: 1.04, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tSuf);
+      tl.fromTo(markEl, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.05, ease: "power3.in" }, tSuf);
+      tl.to(q("stamp"), { y: up, duration: 0.34, ease: "power2.in" }, tSuf + 0.2);
+      tl.fromTo(q("cam"), { y: 0 }, { y: 8, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, tSuf);
+      var ex = (L.exit[0] - L.hover[0]) / HS, ey = (L.exit[1] - L.hover[1]) / HS;
+      tl.fromTo(q("stray-knock"), { x: 0, y: 0, rotation: 0 }, { x: 26 / HS, y: -30 / HS, rotation: 40, duration: 0.2, ease: "power2.out", immediateRender: false }, tSuf);
+      tl.to(q("stray-knock"), { x: 40 / HS, y: -46 / HS, rotation: 58, duration: tSufA - tSuf - 0.2, ease: "sine.inOut" }, tSuf + 0.2);
+      tl.to(q("stray-knock"), { x: ex, y: ey, rotation: 160, duration: D - 0.05 - tSufA, ease: "power2.in" }, tSufA);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

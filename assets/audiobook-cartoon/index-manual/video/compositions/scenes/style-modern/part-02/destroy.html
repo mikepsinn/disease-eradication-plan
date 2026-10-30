@@ -1,0 +1,119 @@
+<template id="destroy-template">
+  <!-- destroy · style test "modern limited animation" (compositions/scenes/style-modern/STYLE.md).
+       "They make things that destroy everything": a cream sky, one navy line for the horizon, a town of three box
+       houses. On "make" a smug missile, arms crossed, launches from the bottom left; it arcs over in held steps (on
+       twelves, not smooth) and dives on "destroy". On "everything." a white flash, the houses are gone, the sky snaps
+       to red and a mushroom cloud stands where the town was. Then it holds. The camera creeps in on the town the
+       whole time. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    #destroy-weave, #destroy-cam, #destroy-art, #destroy-film { position: absolute; inset: 0; }
+    #destroy-field { position: absolute; inset: -40px; }
+    #destroy-field { background: #F3ECD0; }
+    #destroy-flash { position: absolute; inset: 0; background: #FFFDF4; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="destroy" data-width="1920" data-height="1080" data-start="0" data-duration="2.98">
+    <div id="destroy-weave">
+      <div id="destroy-cam">
+        <div id="destroy-field"></div>
+        <div id="destroy-art"></div>
+      </div>
+      <div id="destroy-flash"></div>
+    </div>
+    <div id="destroy-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "destroy";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var after = function (w, n) { return KIT.after(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      if (V) q("weave").parentNode.classList.add("tall");
+      var tl = gsap.timeline({ paused: true });
+
+      // ── The period film (the same block in every style-modern scene) ──────────
+      // Over the picture and outside the camera: a cream wash (the faded print), a soft vignette the shape of the frame, the grain, a
+      // frame-by-frame flicker and a few specks of dust. Under it, the gate weave: the picture drifts a pixel or two.
+      function film() {
+        var dust = [0, 1, 2].map(function (i) { return '<ellipse id="' + ID + "-dust" + i + '" rx="2" ry="1.4" fill="#1A1410" opacity="0"/>'; }).join("");
+        q("film").innerHTML = KIT.svg(W, H,
+          '<defs><radialGradient id="' + ID + '-vig" cx="0.5" cy="0.48" r="0.72"><stop offset="0.5" stop-color="#140F0A" stop-opacity="0"/><stop offset="0.8" stop-color="#140F0A" stop-opacity="0.12"/><stop offset="1" stop-color="#140F0A" stop-opacity="0.5"/></radialGradient></defs>' +
+          '<rect width="' + W + '" height="' + H + '" fill="' + C.cream + '" opacity="0.07"/>' +
+          '<rect width="' + W + '" height="' + H + '" fill="url(#' + ID + '-vig)"/>' + KIT.grain(ID) + dust +
+          '<rect id="' + ID + '-flick" width="' + W + '" height="' + H + '" fill="#FFF6DD" opacity="0"/>');
+        var flick = document.getElementById(ID + "-flick"), weave = q("weave");
+        var specks = [0, 1, 2].map(function (i) { return document.getElementById(ID + "-dust" + i); });
+        KIT.onTime(tl, D, function (t) {
+          var f = Math.floor((sc.start + t) * 24), r = KIT.rng(f * 7919 + 17);
+          r(); r();
+          flick.setAttribute("opacity", (0.01 + r() * 0.035).toFixed(3));
+          weave.style.transform = "translate(" + (Math.sin(f * 0.83) * 0.9 + (r() - 0.5) * 0.8).toFixed(2) + "px," + (Math.sin(f * 0.29) * 1.4 + (r() - 0.5) * 0.6).toFixed(2) + "px)";
+          specks.forEach(function (s) {
+            s.setAttribute("opacity", r() < 0.16 ? "0.45" : "0");
+            s.setAttribute("cx", (r() * W).toFixed(0));
+            s.setAttribute("cy", (r() * H).toFixed(0));
+            s.setAttribute("rx", (1.4 + r() * 2.4).toFixed(1));
+          });
+        });
+      }
+      film();
+
+      // The horizon line, the town on it (centered at T.x), and the missile's flight: launch point, top of the arc,
+      // and the town. The cloud stands on the horizon at the town.
+      var T = V ? { y: 1160, x: 560, s: 1.15, launch: [70, 1560], top: [300, 330], nuke: 1.25 }
+        : { y: 760, x: 1260, s: 1.15, launch: [260, 1180], top: [760, 170], nuke: 1 };
+      var houses = [[-150, 96, 74], [-24, 120, 104], [112, 92, 82]].map(function (h) {
+        var x = h[0] * T.s, w = h[1] * T.s, ht = h[2] * T.s, y = T.y;
+        return '<rect x="' + (T.x + x) + '" y="' + (y - ht) + '" width="' + w + '" height="' + ht + '" fill="' + C.peri + '"/>' +
+          '<path d="M' + (T.x + x - 8) + "," + (y - ht) + " L" + (T.x + x + w / 2) + "," + (y - ht - w * 0.45) + " L" + (T.x + x + w + 8) + "," + (y - ht) + ' Z" fill="' + C.navy + '"/>' +
+          '<rect x="' + (T.x + x + w * 0.38) + '" y="' + (y - ht * 0.62) + '" width="' + w * 0.24 + '" height="' + w * 0.24 + '" fill="' + C.yellow + '"/>';
+      }).join("");
+      q("art").innerHTML = KIT.svg(W, H,
+        '<path d="M-60,' + T.y + " H" + (W + 60) + '" stroke="' + C.navy + '" stroke-width="6"/>' +
+        '<g id="' + ID + '-town">' + houses + "</g>" +
+        '<g transform="translate(' + T.x + "," + T.y + ") scale(" + T.nuke + ')"><g id="' + ID + '-nuke">' + KIT.nuke() + "</g></g>" +
+        '<g transform="translate(0,0)"><g id="' + ID + '-missile" opacity="0"><g transform="scale(1.6)">' + KIT.props.missile({ mood: "smug", flame: true }) + "</g></g></g>");
+
+      // The flight, in held steps twelve times a second along a curve from the launch to the town, turning to
+      // point along it (the missile's nose is up at rotation 0).
+      var mis = q("missile"), t0 = cue("make"), t1 = cue("everything.");
+      gsap.set(mis, { svgOrigin: "0 -128" });
+      var a = T.launch, b = T.top, c = [T.x, T.y - 30];
+      function at(u) {
+        var x = (1 - u) * (1 - u) * a[0] + 2 * (1 - u) * u * b[0] + u * u * c[0], y = (1 - u) * (1 - u) * a[1] + 2 * (1 - u) * u * b[1] + u * u * c[1];
+        var dx = 2 * (1 - u) * (b[0] - a[0]) + 2 * u * (c[0] - b[0]), dy = 2 * (1 - u) * (b[1] - a[1]) + 2 * u * (c[1] - b[1]);
+        return { x: x, y: y, r: (Math.atan2(dx, -dy) * 180) / Math.PI };
+      }
+      tl.set(mis, { opacity: 1 }, t0);
+      var steps = Math.floor((t1 - t0) * 12);
+      for (var i = 0; i <= steps; i++) {
+        var u = i / steps, k = u < 0.6 ? u / 0.6 * 0.55 : 0.55 + (u - 0.6) / 0.4 * 0.45, p = at(k);
+        tl.set(mis, { x: p.x, y: p.y + 128, rotation: p.r }, t0 + i / 12);
+      }
+      KIT.flicker(tl, mis, t0, t1);
+      // "everything.": the flash, the town gone, the sky red, the cloud, a shake
+      tl.set(mis, { opacity: 0 }, t1);
+      tl.set(q("town"), { opacity: 0 }, t1);
+      tl.set(q("field"), { backgroundColor: C.red }, t1);
+      // a hard white flash, three frames, then the red sky
+      tl.set(q("flash"), { opacity: 1 }, t1);
+      tl.set(q("flash"), { opacity: 0 }, t1 + 0.12);
+      KIT.boom(tl, q("nuke"), t1, { shake: q("cam") });
+      // the camera creeps in on the town (the shake rides on top of it)
+      tl.fromTo(q("cam"), { scale: 1 }, { scale: 1.1, duration: D, ease: "none", transformOrigin: (T.x / W) * 100 + "% " + ((T.y - 60) / H) * 100 + "%" }, 0);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

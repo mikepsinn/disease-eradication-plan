@@ -1,0 +1,649 @@
+<template id="butterfly-net-template">
+  <!-- butterfly-net · Layer B (storyboards/part-04-institutionalize.md). A street corner and a cut-away living room.
+       The patient (the part's spine: a mustard shirt, slick hair) pops up his 1% sign: a war bill hops into the little
+       seal-flip funnel and comes out a medicine bill. On "committed." the Orderly's head rises over the hedge behind him
+       on a neck that will not stop, like a periscope, with a butterfly net. On "programmed" wires spring out of the
+       back of the TV and plug into the backs of the sofa crowd's heads; their eyes go flat. On "news" the TV comes on
+       and the camera pushes in on it (the plugged heads stay in the frame): the Weapons Maker reads the news in a
+       necktie, cradling his missile. Then the chart, LAWS OF NATURE: WAR (a
+       missile hangs over a tiny human), GRAVITY (an apple), WEATHER (a rain cloud). After "weather." the war missile
+       drops and goes off: the tiny human stands there charred, blinking, and the crowd nods along, satisfied. On
+       "assume" the camera pulls back out and every head turns, wires and all, to the patient (in 9:16 they look up
+       at him); his chest light blinks red on "brain"; on
+       "malfunctioning." the crowd points, the Orderly rises up behind the hedge and nets him, and carries him off
+       kicking like a prize butterfly, the 1% sign sticking out of the mesh.
+       In 9:16 the street corner sits on top (the periscope gets the whole sky) and the living room below it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #butterfly-net-cam, #butterfly-net-bg, #butterfly-net-pip, #butterfly-net-grain { position: absolute; inset: 0; }
+    #butterfly-net-view { position: absolute; overflow: hidden; }
+    #butterfly-net-art { position: absolute; }
+  </style>
+  <div id="root" data-composition-id="butterfly-net" data-width="1920" data-height="1080" data-start="0" data-duration="17.74">
+    <div id="butterfly-net-cam">
+      <div id="butterfly-net-bg"></div>
+      <div id="butterfly-net-view"><div id="butterfly-net-art"></div></div>
+      <div id="butterfly-net-pip"></div>
+      <div id="butterfly-net-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "butterfly-net";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var after = function (w, n) { return KIT.after(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, WHITE = "#FBF6E6";
+      var PX = ID + "-";
+
+      // ── Layout, per canvas shape ───────────────────────────────────────
+      // G: the street's ground. hedge: its ends and top. pat/ord: the patient and the Orderly (x, scale). Emax: how far
+      // the periscope neck stretches (px). room: the cut-away living room box (its bottom is the floor). crowd: the sofa
+      // humans' x and scale, sofa: its ends. tv: center, floor, scale. lift / walk: where the netted patient is carried.
+      var L = V
+        ? { G: 720, hedge: { x0: 50, x1: 690, top: 470 }, lamp: { x: 790, top: 540 }, pat: { x: 452, S: 1.7 }, sign: 0.74,
+            ord: { x: 138, S: 1.7 }, Emax: 290, room: { x0: 50, y0: 770, x1: 1030, y1: 1440 }, pic: { x: 112, y: 830, w: 210, h: 158 },
+            crowd: { S: 1.75, xs: [122, 232, 342, 452], sofa: [66, 508] }, tv: { cx: 772, y: 1440, s: 3.1 },
+            lift: [-110, -95], walk: 520, tilt: -24, point: null, zoom: { z: 1.25, at: [623, 1242] } }
+        : { G: 860, hedge: { x0: 50, x1: 565, top: 515 }, lamp: { x: 615, top: 300 }, pat: { x: 420, S: 1.5 }, sign: 0.8,
+            ord: { x: 135, S: 1.5 }, Emax: 225, room: { x0: 662, y0: 170, x1: 1598, y1: 860 }, pic: { x: 790, y: 262, w: 200, h: 150 },
+            crowd: { S: 1.45, xs: [752, 852, 952, 1052], sofa: [702, 1104] }, tv: { cx: 1356, y: 860, s: 2.95 },
+            lift: [-130, -250], walk: 400, tilt: 0, point: [[-108, -112], [-12, -75]], zoom: { z: 1.65, at: [1030, 440] } };
+      var G = L.G, F = L.room.y1; // the street, and the living room floor
+
+      // ── Drawing helpers (the HUMANS technique from kit.js) ─────────────
+      function f1(v) { return String(Math.round(v * 10) / 10); }
+      function pt(x, y) { return f1(x) + "," + f1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      // a shape drawn twice, a navy pass under the fill, so it gets a hard navy outline
+      function solid(d, col, w, extra) {
+        return '<path d="' + d + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 4.4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/>' +
+          '<path d="' + d + '" fill="' + col + '"' + (extra || "") + "/>";
+      }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra || "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + PX + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + f1(x) + "," + f1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function text(x, y, size, t, fill, extra) {
+        return '<text x="' + f1(x) + '" y="' + f1(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + fill + '"' + (extra || "") + ">" + t + "</text>";
+      }
+      // halftone dots over the part of a shape (path d) right of x0
+      var hdN = 0;
+      function dots(d, x0, y0, x1, y1, op, step) {
+        var id = PX + "hd" + ++hdN, s = step || 4;
+        return '<defs><pattern id="' + id + 'p" width="' + s + '" height="' + s + '" patternUnits="userSpaceOnUse"><circle cx="' + s / 2 + '" cy="' + s / 2 + '" r="' + (s * 0.27).toFixed(2) + '" fill="' + ink + '"/></pattern>' +
+          '<clipPath id="' + id + 'c"><path d="' + d + '"/></clipPath></defs>' +
+          '<rect x="' + f1(x0) + '" y="' + f1(y0) + '" width="' + f1(x1 - x0) + '" height="' + f1(y1 - y0) + '" fill="url(#' + id + 'p)" opacity="' + (op || 0.25) + '" clip-path="url(#' + id + 'c)"/>';
+      }
+      function clamp(u) { return u < 0 ? 0 : u > 1 ? 1 : u; }
+      function ss(u) { u = clamp(u); return u * u * (3 - 2 * u); }
+      function backOut(u) { u = clamp(u); var c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(u - 1, 3) + c1 * Math.pow(u - 1, 2); }
+      function lerp(a, b, u) { return a + (b - a) * u; }
+      // a head turning (scaleX 1 -> -1) never goes thinner than about half: it flips across the middle instead
+      function turn(s) { return (s >= 0 ? 1 : -1) * (0.45 + 0.55 * Math.abs(s)); }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      // Two-segment arm from shoulder s to hand target t (person units), segments len long; bend (+1/-1) picks the
+      // elbow's side. Returns the kit's angles [a1, a2] (deg, 0 = down, + toward +x).
+      function ik(s, t, len, bend) {
+        var dx = t[0] - s[0], dy = t[1] - s[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len - 0.01);
+        var base = Math.atan2(dy, dx), al = Math.acos(d / (2 * len)) * bend;
+        var ex = s[0] + len * Math.cos(base + al), ey = s[1] + len * Math.sin(base + al);
+        var hx = s[0] + d * Math.cos(base), hy = s[1] + d * Math.sin(base);
+        var deg = function (x, y) { return (Math.atan2(x, y) * 180) / Math.PI; };
+        return [deg(ex - s[0], ey - s[1]), deg(hx - ex, hy - ey)];
+      }
+      // A person standing on y with its feet: the group transform that puts person units on the canvas.
+      function feet(x, y, S) { return [x, y - 100 * S, S]; }
+      function toScene(T, p) { return [T[0] + p[0] * T[2], T[1] + p[1] * T[2]]; }
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      // The camera window: the paper's inner frame, so the push-in on the TV stays inside the border.
+      q("view").style.cssText = "position:absolute;overflow:hidden;left:46px;top:46px;width:" + (W - 92) + "px;height:" + (H - 92) + "px;";
+      q("art").style.cssText = "position:absolute;left:-46px;top:-46px;width:" + W + "px;height:" + H + "px;";
+
+      // ── The street corner: sidewalk, lamppost, hedge ───────────────────
+      var hx0 = L.hedge.x0, hx1 = L.hedge.x1, ht = L.hedge.top;
+      var street = solid(polyD([[44, G], [V ? 1036 : L.room.x0, G], [V ? 1036 : L.room.x0, G + 26], [44, G + 26]]), "#E4D6B4", 3) +
+        line("M44," + (G + 9) + " H" + (V ? 1036 : L.room.x0), C.tan, 2, ' stroke-dasharray="26 18" opacity="0.7"');
+      var lx = L.lamp.x, lt = L.lamp.top;
+      var lamp = solid(polyD([[lx - 16, G], [lx + 16, G], [lx + 11, G - 22], [lx - 11, G - 22]]), C.slate, 3) +
+        solid(polyD([[lx - 6, G - 20], [lx + 6, G - 20], [lx + 5, lt + 30], [lx - 5, lt + 30]]), C.navy, 3) + line("M" + (lx + 2.5) + "," + (G - 24) + " V" + (lt + 34), C.orange, 1.6) +
+        solid(polyD([[lx - 22, lt + 30], [lx + 22, lt + 30], [lx + 14, lt + 18], [lx - 14, lt + 18]]), C.slate, 3) +
+        solid(polyD([[lx - 18, lt + 18], [lx + 18, lt + 18], [lx + 13, lt - 22], [lx - 13, lt - 22]]), C.yellow, 3) +
+        line("M" + (lx - 8) + "," + (lt + 12) + " L" + (lx - 5) + "," + (lt - 15), "#FFFFFF", 3, ' opacity="0.7"') +
+        solid(polyD([[lx - 26, lt - 22], [lx + 26, lt - 22], [lx + 6, lt - 42], [lx - 6, lt - 42]]), C.navy, 3);
+      // the hedge: a faceted green wall with a bumpy top
+      var bumps = [], n = Math.round((hx1 - hx0) / 44), rh = KIT.rng(41);
+      for (var i = 0; i <= n; i++) {
+        var bx = hx1 - (i / n) * (hx1 - hx0);
+        bumps.push([bx, ht + 16 + rh() * 8]);
+        if (i < n) bumps.push([bx - (hx1 - hx0) / n / 2, ht - rh() * 10]);
+      }
+      var hedgeD = polyD([[hx0, G], [hx1, G]].concat(bumps));
+      var tufts = "";
+      for (var j = 0; j < n * 2; j++) {
+        var tx = hx0 + 24 + rh() * (hx1 - hx0 - 48), ty = ht + 30 + rh() * (G - ht - 70), tw = 14 + rh() * 12;
+        tufts += '<path d="' + polyD([[tx - tw, ty + 6], [tx - tw * 0.4, ty - 8], [tx + tw * 0.3, ty - 4], [tx + tw, ty + 7]]) + '" fill="' + C.moneyEdge + '" opacity="0.55"/>';
+      }
+      var hedge = solid(hedgeD, C.moneyDark, 5) + tufts + dots(hedgeD, hx0 + (hx1 - hx0) * 0.55, ht - 20, hx1 + 4, G, 0.3) +
+        line("M" + pt(hx0 + 6, G - 6) + " H" + f1(hx1 - 6), ink, 3, ' opacity="0.5"');
+
+      // ── The living room (a cut-away box) ───────────────────────────────
+      var R = L.room;
+      var wallD = polyD([[R.x0, R.y0], [R.x1, R.y0], [R.x1, R.y1], [R.x0, R.y1]]);
+      var stripes = "";
+      for (var sx = R.x0 + 24; sx < R.x1; sx += 36) stripes += '<rect x="' + sx + '" y="' + R.y0 + '" width="12" height="' + (R.y1 - R.y0) + '" fill="' + C.tan + '" opacity="0.16"/>';
+      var pic = L.pic;
+      var picture = solid(polyD([[pic.x, pic.y], [pic.x + pic.w, pic.y], [pic.x + pic.w, pic.y + pic.h], [pic.x, pic.y + pic.h]]), "#6B4A2F", 4) +
+        '<rect x="' + (pic.x + 12) + '" y="' + (pic.y + 12) + '" width="' + (pic.w - 24) + '" height="' + (pic.h - 24) + '" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2.5"/>' +
+        '<rect x="' + (pic.x + 12) + '" y="' + (pic.y + pic.h - 40) + '" width="' + (pic.w - 24) + '" height="28" fill="' + C.tan + '"/>' +
+        at(pic.x + pic.w / 2, pic.y + pic.h - 34, 0.16, KIT.nuke()) +
+        '<path d="M' + (pic.x + pic.w / 2) + "," + (pic.y - 4) + " L" + (pic.x + pic.w / 2 - 34) + "," + (pic.y + 2) + " M" + (pic.x + pic.w / 2) + "," + (pic.y - 4) + " L" + (pic.x + pic.w / 2 + 34) + "," + (pic.y + 2) + '" stroke="' + ink + '" stroke-width="2"/>' +
+        '<circle cx="' + (pic.x + pic.w / 2) + '" cy="' + (pic.y - 6) + '" r="4" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>';
+      var room = solid(wallD, C.cream, 6) + stripes + dots(wallD, R.x0 + (R.x1 - R.x0) * 0.6, R.y0, R.x1, R.y1, 0.12, 5) +
+        '<rect x="' + R.x0 + '" y="' + (R.y1 - 22) + '" width="' + (R.x1 - R.x0) + '" height="22" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3"/>' +
+        line("M" + R.x0 + "," + (R.y1 - 20) + " H" + R.x1, C.orange, 1.6) + picture +
+        '<rect x="' + R.x0 + '" y="' + R.y0 + '" width="' + (R.x1 - R.x0) + '" height="' + (R.y1 - R.y0) + '" fill="none" stroke="' + ink + '" stroke-width="6"/>';
+
+      // ── The patient ────────────────────────────────────────────────────
+      // One hand up on the sign's pole, which stands just in front of him (to his right); the other on his hip, so
+      // his chest light shows.
+      var PAT = { tone: 1, outfit: "shirt", color: 3, look: "right" };
+      var pr = KIT.rig(PAT), psh = pr.shoulder, plen = pr.armLength;
+      var gxP = psh[1][0] + 13, gUp = [gxP, pr.top[1] + 2], gLo = [gxP, psh[1][1] - 6];
+      PAT.arms = [ik(psh[0], [-21, pr.hipY - 6], plen, 1), ik(psh[1], gUp, plen, 1)];
+      var poleBot = gLo[1] + 22, cardBot = pr.top[1] - 18, SK = L.sign;
+      var signH = (poleBot - cardBot) / SK; // the prop's post length below the card, in sign units
+
+      // The sign: "1%" over a little war bill, the seal-flip funnel and an empty spot (sign units; the card is 310 x 174).
+      var FS = 44, CARD_H = 174;
+      function signArt(ids, final) {
+        var bottom = -signH, yb = bottom - 14, I = function (s) { return ids ? ' id="' + PX + s + '"' : ""; };
+        var base = KIT.props.sign({ text: "1%\n          \n ", fontSize: FS, posts: 1, height: signH });
+        var arrow = function (x0, x1, y) { return line("M" + x0 + "," + y + " H" + (x1 - 6), ink, 3) + '<path d="' + polyD([[x1, y], [x1 - 9, y - 6], [x1 - 9, y + 6]]) + '" fill="' + ink + '"/>'; };
+        var spot = '<rect x="81" y="' + (yb - 33) + '" width="46" height="24" rx="3" fill="none" stroke="' + ink + '" stroke-width="2.2" stroke-dasharray="5 4" opacity="0.55"/>';
+        var bill = final ? "" : '<g transform="translate(-104,' + f1(yb - 21) + ') scale(0.46)"><g' + I("sbill") + ">" + KIT.money("war", 0) + "</g></g>";
+        var fun = '<g transform="translate(0,' + f1(yb) + ') scale(0.3)"><g' + I("sfun") + ">" + KIT.props.colorFlipFunnel({ inN: 0, outN: 0 }) + "</g></g>";
+        var med = '<g transform="translate(104,' + f1(yb - 21) + ') scale(0.46)"><g' + I("smed") + (final ? "" : ' opacity="0"') + ">" + KIT.money("med", 0) + "</g></g>";
+        var spark = ids ? '<g transform="translate(104,' + f1(yb - 46) + ')"><g' + I("spark") + ' opacity="0">' + KIT.star(0, 0, 16, C.yellow) + KIT.star(-26, 10, 8, C.orange) + KIT.star(24, 14, 7, C.orange) + "</g></g>" : "";
+        return base + arrow(-76, -44, yb - 40) + arrow(42, 76, yb - 40) + spot + fun + bill + med + spark;
+      }
+      var signAt = function (inner) { return at(gxP, poleBot, SK, inner); };
+      // the patient's poses, stacked (eager, proud, worried; then netted, in the bundle)
+      var pT = feet(L.pat.x, G, L.pat.S);
+      var patient = at(pT[0], pT[1], pT[2], g("p-jump",
+        signAt(g("sign-pop", signArt(true, false))) +
+        g("pa", KIT.person(mix(PAT, { mood: "eager" }))) +
+        g("pb", KIT.person(mix(PAT, { mood: "smile" })), 'opacity="0"') +
+        g("pc", KIT.person(mix(PAT, { mood: "worried" })), 'opacity="0"')));
+
+      // The bundle: the patient caught in the net (the mesh over him to the knees, the hoop round his knees, the sign
+      // poking out of the top), legs dangling below. Placed by onTime.
+      var HOOP = [4, 56, 44, 10]; // hoop center x, y, rx, ry (person units)
+      var meshTop = pr.top[1] - 14;
+      var meshD = "M" + pt(HOOP[0] - HOOP[2], HOOP[1]) + " C" + pt(-50, -10) + " " + pt(-34, meshTop - 6) + " " + pt(8, meshTop) +
+        " C" + pt(44, meshTop - 4) + " " + pt(58, -12) + " " + pt(HOOP[0] + HOOP[2], HOOP[1]) + " Z";
+      var meshDefs = '<defs><pattern id="' + PX + 'mesh" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">' +
+        '<path d="M0,0 H7 M0,0 V7" stroke="' + ink + '" stroke-width="1" fill="none"/></pattern>' +
+        '<pattern id="' + PX + 'mesh2" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">' +
+        '<path d="M0,0 H9 M0,0 V9" stroke="' + ink + '" stroke-width="1.6" fill="none"/></pattern></defs>';
+      var PD = mix(PAT, { mood: "eager", light: "red" });
+      var bundle = g("bundle-pos", g("bundle-in",
+        signAt(signArt(false, true)) + g("pd", KIT.person(PD)) +
+        '<path d="' + meshD + '" fill="' + C.cream + '" fill-opacity="0.22" stroke="none"/>' +
+        '<path d="' + meshD + '" fill="url(#' + PX + 'mesh)" opacity="0.75" stroke="' + ink + '" stroke-width="2.4"/>' +
+        '<ellipse cx="' + HOOP[0] + '" cy="' + HOOP[1] + '" rx="' + HOOP[2] + '" ry="' + HOOP[3] + '" fill="none" stroke="' + ink + '" stroke-width="5"/>' +
+        '<ellipse cx="' + HOOP[0] + '" cy="' + HOOP[1] + '" rx="' + HOOP[2] + '" ry="' + HOOP[3] + '" fill="none" stroke="' + C.slate + '" stroke-width="2"/>'), 'opacity="0"');
+
+      // ── The Orderly, behind the hedge ──────────────────────────────────
+      var ORD = function (extra) { return KIT.castOpts("orderly", extra); };
+      var oS = L.ord.S, orr = KIT.rig(ORD({ look: "right", arms: [[0, 0], [0, 0]] })), osh = orr.shoulder, olen = orr.armLength;
+      var NR = 34; // the net's hoop radius (orderly units)
+      // A: both hands on an upright handle in front of him. B: the swing's end, the handle aimed at the patient.
+      // C: facing left, carrying the net back over his shoulder.
+      var gA1 = [osh[1][0] + 16, osh[1][1] + 26], gA2 = [osh[1][0] + 16, osh[1][1] - 2];
+      var thUp = (V ? -76 : -82) * Math.PI / 180;
+      var gA2b = [gA1[0] + Math.cos(thUp) * 28, gA1[1] + Math.sin(thUp) * 28];
+      var armsA = [ik(osh[0], gA1, olen, 1), ik(osh[1], gA2b, olen, 1)];
+      var standTop = G + (orr.top[1] - 100) * oS;
+      var sink = Math.max(0, ht + 28 - standTop);
+      var oT0 = feet(L.ord.x, G, oS); // standing; the body offset (sink, rise) is added in onTime
+      var gripA_s = function (oy, dx) { return [oT0[0] + dx + gA1[0] * oS, oT0[1] + oy + gA1[1] * oS]; };
+      // The swing ends with the hoop over the patient's chest; the Orderly has risen so his hands clear the hedge.
+      var gB1 = [osh[1][0] + 10, osh[1][1] + 4];
+      var riseUp = Math.max(0, (oT0[1] + gB1[1] * oS) - (ht - 26));
+      var target = toScene(pT, [6, -8]);
+      var gripB0 = [oT0[0] + gB1[0] * oS, oT0[1] - riseUp + gB1[1] * oS];
+      var thHit = Math.atan2(target[1] - gripB0[1], target[0] - gripB0[0]);
+      var LhHit = Math.sqrt(Math.pow(target[0] - gripB0[0], 2) + Math.pow(target[1] - gripB0[1], 2)) / oS - NR;
+      var gB2 = [gB1[0] + Math.cos(thHit) * 26, gB1[1] + Math.sin(thHit) * 26];
+      var armsB = [ik(osh[0], gB1, olen, 1), ik(osh[1], gB2, olen, 1)];
+      var thC = -38 * Math.PI / 180, gC1 = [osh[1][0] + 2, osh[1][1] + 2], gC2 = [gC1[0] - Math.cos(thC) * 24, gC1[1] - Math.sin(thC) * 24];
+      var armsC = [ik(osh[0], gC2, olen, -1), ik(osh[1], gC1, olen, -1)];
+      // The periscope: the hoop peeks over the hedge, leaning toward the patient.
+      var hcY = ht - NR * oS - 16, gyA = oT0[1] + sink + gA1[1] * oS;
+      var LhUp = (gyA - hcY) / Math.sin(-thUp) / oS - NR;
+      var netDown = Math.max(0, ht + 12 - (gyA - (LhUp + 2 * NR) * oS * Math.sin(-thUp)));
+      // Each pose with a neck extension (a skin column under the head that onTime stretches).
+      var oSkin = "#A87B57", neckTop = orr.neck[1] - 3 * orr.hs;
+      function orderly(name, o) {
+        var m = KIT.person(o), ext = '<g class="bn-neck-ext"><path d="" fill="' + oSkin + '"/><path d="" fill="none" stroke="' + ink + '" stroke-width="3.6"/></g>';
+        return g("o" + name, m.replace('<g class="head">', ext + '<g class="head">'), 'opacity="' + (name === "A" ? 1 : 0) + '"');
+      }
+      var ordArt = g("ord-pos", orderly("A", ORD({ look: "right", arms: armsA })) + orderly("B", ORD({ look: "right", arms: armsB })) +
+        orderly("C", ORD({ look: "left", arms: armsC })));
+      // The net, drawn by onTime: the handle, the bag (mesh) and the hoop. A copy behind the hedge and one in front.
+      function netArt(k) {
+        return g("net-" + k, '<path class="bn-bag" d="" fill="' + C.cream + '" fill-opacity="0.35" stroke="none"/><path class="bn-bag2" d="" fill="url(#' + PX + 'mesh2)" opacity="0.8" stroke="' + ink + '" stroke-width="2.6"/>' +
+          '<path class="bn-h1" d="" stroke="' + ink + '" stroke-width="10" stroke-linecap="round"/><path class="bn-h2" d="" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>' +
+          '<ellipse class="bn-hoop" cx="0" cy="0" rx="1" ry="1" fill="none" stroke="' + ink + '" stroke-width="6.5"/><ellipse class="bn-hoop2" cx="0" cy="0" rx="1" ry="1" fill="none" stroke="' + C.slate + '" stroke-width="2.4"/>');
+      }
+      var behind = '<defs><clipPath id="' + PX + 'behind"><rect x="' + hx0 + '" y="-400" width="' + (W - hx0) + '" height="' + (G + 400) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + PX + 'behind)">' + netArt("back") + ordArt + "</g>";
+
+      // ── The sofa crowd ─────────────────────────────────────────────────
+      var CS = L.crowd.S, CROWD = [
+        { tone: 0, outfit: "suit", color: 1, mood: "smile" },
+        { tone: 2, outfit: "dress", hair: 1, color: 0, mood: "eager" },
+        { tone: 3, outfit: "overalls", color: 2, mood: "smug" },
+        { tone: 1, outfit: "dress", hair: 1, color: 1, mood: "smile" },
+      ];
+      var REST = [[12, 72], [-12, -72]];
+      // The plug in the back of the head (face units, facing +x); the wire leaves it at (-31, -3).
+      var PLUG = '<g class="bn-plug">' + solid(polyD([[-31, -8], [-19, -8], [-19, 2], [-31, 2]]), C.slate, 2.2) + line("M-19,-5.5 H-13 M-19,-0.5 H-13", ink, 1.8) +
+        '<rect x="-29" y="-6.5" width="2.6" height="7" fill="' + C.orange + '"/></g>';
+      var seatY = F - 31 * CS, backY = F - 92 * CS, sofa = L.crowd.sofa;
+      var sofaBack = solid(polyD([[sofa[0] + 14, backY + 10], [sofa[0] + 30, backY], [sofa[1] - 30, backY], [sofa[1] - 14, backY + 10], [sofa[1] - 14, seatY], [sofa[0] + 14, seatY]]), C.orange, 4.4) +
+        line("M" + pt(sofa[0] + 34, backY + 8) + " H" + f1(sofa[1] - 34), C.yellow, 2.4, ' opacity="0.8"') +
+        [0.33, 0.67].map(function (u) { var x = lerp(sofa[0], sofa[1], u); return line("M" + pt(x, backY + 14) + " V" + f1(seatY - 6), C.rust, 2.4); }).join("") +
+        solid(polyD([[sofa[0] + 6, seatY - 4], [sofa[1] - 6, seatY - 4], [sofa[1] - 6, F - 16], [sofa[0] + 6, F - 16]]), C.rust, 4) +
+        dots(polyD([[sofa[0] + 6, seatY - 4], [sofa[1] - 6, seatY - 4], [sofa[1] - 6, F - 16], [sofa[0] + 6, F - 16]]), lerp(sofa[0], sofa[1], 0.5), seatY - 6, sofa[1], F - 14, 0.25) +
+        [sofa[0] + 24, sofa[1] - 24].map(function (x) { return solid(polyD([[x - 7, F - 16], [x + 7, F - 16], [x + 3, F], [x - 3, F]]), ink, 2); }).join("");
+      var sofaArms = [[sofa[0], 1], [sofa[1], -1]].map(function (a) {
+        var x = a[0], s = a[1], d = polyD([[x, seatY - 34], [x + s * 30, seatY - 40], [x + s * 34, F - 16], [x, F - 16]]);
+        return solid(d, C.orange, 4) + line("M" + pt(x + s * 4, seatY - 33) + " L" + pt(x + s * 28, seatY - 38), C.yellow, 2.2);
+      }).join("");
+      var crowdArt = "", crowdT = [], crowdR = [];
+      CROWD.forEach(function (c, i) {
+        var base = mix(c, { build: { legs: 0.5 } });
+        var T = feet(L.crowd.xs[i], F, CS);
+        // 16:9: they turn left to the patient and point at him. 9:16: he is upstairs, so they look up and point up at him.
+        var up = function () {
+          var s0 = toScene(T, KIT.rig(mix(base, { look: "right" })).shoulder[1]), tg = toScene(pT, [0, -30]);
+          var a = (Math.atan2(tg[0] - s0[0], tg[1] - s0[1]) * 180) / Math.PI;
+          return [REST[0], [a, a]];
+        };
+        var oa = mix(base, { look: "right", arms: REST }), ob = mix(base, { look: "right", mood: "flat", arms: REST });
+        var oc = V ? mix(base, { look: "right", mood: "cross", arms: up() }) : mix(base, { look: "left", mood: "cross", arms: L.point });
+        crowdT.push(T);
+        crowdR.push({ b: KIT.rig(ob), c: KIT.rig(oc) });
+        crowdArt += at(T[0], T[1], T[2],
+          g("c" + i + "a", KIT.person(oa)) +
+          g("c" + i + "b", KIT.person(ob).replace("<!--face-end-->", PLUG + "<!--face-end-->"), 'opacity="0"') +
+          g("c" + i + "c", KIT.person(oc).replace("<!--face-end-->", PLUG + "<!--face-end-->"), 'opacity="0"'));
+      });
+      // the wires from the back of the TV to the plugs (their paths are drawn by onTime)
+      var wires = CROWD.map(function (c, i) {
+        return '<path id="' + PX + "wire" + i + '" d="M0,0" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+      }).join("");
+
+      // ── The TV and what it shows (screen units: 80 x 83 from the screen's top left) ──
+      var TV = L.tv;
+      var tvTb = [TV.cx - 58 * TV.s, TV.y - 138 * TV.s]; // where the wires leave the back of the TV
+      // the news: the Weapons Maker at a desk, cradling his missile, in a wide necktie
+      var WM = KIT.castOpts("weaponsMaker", {}), wr = KIT.rig(WM), wT = wr.shoulder[0][1] - 6;
+      var tie = solid(polyD([[-3.5, wT + 1], [3.5, wT + 1], [12, wT + 26], [0, wT + 35], [-12, wT + 26]]), C.war, 2.4) +
+        solid(polyD([[-4, wT - 1], [4, wT - 1], [3, wT + 6], [-3, wT + 6]]), "#8E2E1E", 2) + line("M-5," + (wT + 14) + " L6," + (wT + 20) + " M-7," + (wT + 22) + " L5," + (wT + 28), C.yellow, 1.8);
+      var anchorMan = KIT.cast("weaponsMaker", {}).replace('<circle class="chest-light"', tie + '<circle class="chest-light"');
+      var aS = 0.58;
+      var news = '<rect x="0" y="0" width="80" height="83" fill="' + C.peri + '"/><rect x="0" y="0" width="80" height="18" fill="' + C.navy + '"/>' +
+        '<rect x="0" y="18" width="80" height="2" fill="' + C.orange + '"/>' + KIT.star(12, 9, 4.5, C.yellow) + KIT.star(68, 9, 4.5, C.yellow) + KIT.star(40, 9, 2.5, C.cream) +
+        g("anchor", at(40, 70 - wr.hipY * aS, aS, anchorMan)) +
+        solid(polyD([[2, 64], [78, 64], [76, 83], [4, 83]]), C.rust, 1.6) + '<rect x="4" y="68" width="72" height="3" fill="' + C.cream + '"/>' +
+        line("M58,64 L56,55", ink, 1.4) + '<circle cx="55.5" cy="54" r="2.2" fill="' + ink + '"/>';
+      // the chart: LAWS OF NATURE, three panels
+      var TINY = { tone: 1, outfit: "suit", color: 1, plain: true }, tS = 0.155;
+      var panelX = [3, 28.5, 54], pw = 23, pcx = panelX.map(function (x) { return x + pw / 2; });
+      var tiny = function (k, o, attrs) { return g(k, at(0, 79 - 100 * tS, tS, KIT.person(mix(TINY, o))), attrs); };
+      var cloudD = "M-9,4 C-14,4 -14,-3 -9,-2 C-9,-8 -1,-9 1,-4 C3,-9 11,-8 10,-2 C15,-2 15,4 10,4 Z";
+      var chart = '<rect x="0" y="0" width="80" height="83" fill="' + WHITE + '"/>' + text(40, 10.5, 8.6, "LAWS OF NATURE", ink, ' letter-spacing="0.4"') +
+        '<rect x="6" y="13" width="68" height="1.4" fill="' + C.orange + '"/>' +
+        panelX.map(function (x) { return '<rect x="' + x + '" y="16" width="' + pw + '" height="64" fill="none" stroke="' + ink + '" stroke-width="1.1"/>'; }).join("") +
+        // 1: WAR. The missile hangs on a thread over a tiny human; the cloud of its blast stands behind him.
+        text(pcx[0], 23.5, 5.6, "WAR", C.war) +
+        at(pcx[0], 79, 0.058, g("nuke", KIT.nuke())) +
+        at(pcx[0], 0, 1, tiny("t1a", { mood: "eager" }) + tiny("t1b", { charred: true }, 'opacity="0"')) +
+        g("thread", line("M" + pcx[0] + ",25.5 V30", ink, 0.7)) +
+        at(pcx[0], 30, 1, g("m1fall", at(0, 0, 1, KIT.props.missile({ size: 0.105, mood: "smug", arms: "none" }), 180))) +
+        // 2: GRAVITY. An apple on a branch over a tiny human.
+        text(pcx[1], 23.5, 5.6, "GRAVITY", ink) +
+        line("M51,26 L44,28 L39,27", C.rust, 1.6) + '<path d="M44,28 q2,-4 6,-3 q-2,3 -6,3 Z" fill="' + C.moneyEdge + '" stroke="' + ink + '" stroke-width="0.5"/>' +
+        at(pcx[1], 0, 1, tiny("t2a", { mood: "smile" }) + tiny("t2b", { mood: "worried" }, 'opacity="0"') +
+          g("bump", '<circle cx="1.5" cy="' + (79 - 100 * tS + (-74) * tS) + '" r="1.5" fill="#E9B4C1" stroke="' + ink + '" stroke-width="0.4"/>', 'opacity="0"') +
+          g("dizzy", KIT.star(-4, 79 - 100 * tS - 82 * tS, 1.8, C.yellow) + KIT.star(5, 79 - 100 * tS - 84 * tS, 1.4, C.yellow), 'opacity="0"')) +
+        at(39, 30, 1, g("apple", '<circle cx="0" cy="0" r="2.6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="0.6"/>' + line("M0,-2.4 L0.6,-4", ink, 0.6) +
+          '<circle cx="-0.8" cy="-0.8" r="0.7" fill="#FFFFFF" opacity="0.7"/>')) +
+        // 3: WEATHER. A rain cloud over a tiny human.
+        text(pcx[2], 23.5, 5.6, "WEATHER", ink) +
+        at(pcx[2], 0, 1, tiny("t3a", { mood: "smile" }) + tiny("t3b", { mood: "sad" }, 'opacity="0"') +
+          g("puddle", '<ellipse cx="0" cy="79" rx="9" ry="1.4" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="0.4"/>', 'opacity="0"')) +
+        at(pcx[2], 33, 1, g("cloud", g("rain", [-6, -2.5, 1, 4.5, 8].map(function (x, k) {
+          return g("drop" + k, line("M" + x + "," + (6 + (k % 2) * 3) + " l-1,3.5", C.peri, 0.9), 'opacity="0"');
+        }).join("")) + '<path d="' + cloudD + '" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="0.8"/>' + line("M-6,1 H6", C.peri, 0.7)));
+      var screen = '<g transform="translate(-63,-134)">' +
+        g("scr-news", news, 'opacity="0"') + g("scr-chart", chart, 'opacity="0"') +
+        '<rect id="' + PX + 'scr-flash" x="0" y="0" width="80" height="83" fill="#FFFFFF" opacity="0"/></g>';
+      var tvArt = at(TV.cx, TV.y, TV.s, g("tv-shake", KIT.props.tvSet({}).replace("<!--tv-screen-->", screen)));
+
+      // ── Assemble ───────────────────────────────────────────────────────
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + meshDefs +
+        room + street + lamp + behind + hedge + patient + sofaBack + sofaArms + crowdArt + wires + tvArt + bundle + netArt("front"));
+
+      // ── Timeline ───────────────────────────────────────────────────────
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      // "suggest": up goes the sign (pop), with a little hop.
+      var tSug = cue("suggest");
+      tl.fromTo(q("sign-pop"), { scaleY: 0.15, opacity: 0, svgOrigin: "0 0" }, { scaleY: 1, opacity: 1, svgOrigin: "0 0", duration: 0.32, ease: "back.out(2.2)" }, tSug);
+      tl.fromTo(q("p-jump"), { y: 0 }, { y: -10, duration: 0.12, ease: "power2.out", yoyo: true, repeat: 1, immediateRender: false }, tSug);
+      // "murder": the war bill hops into the funnel (boing)...
+      var tMur = cue("murder"), bill = q("sbill");
+      gsap.set(bill, { svgOrigin: "0 46" });
+      tl.to(bill, { y: 6, scaleY: 0.8, duration: 0.08, ease: "power2.out" }, tMur - 0.1);
+      tl.to(bill, { x: 120, y: -150, scaleY: 1, rotation: 20, duration: 0.2, ease: "power2.out" }, tMur);
+      tl.to(bill, { x: 226, y: -84, scale: 0.5, rotation: 40, duration: 0.18, ease: "power2.in" }, tMur + 0.2);
+      tl.set(bill, { opacity: 0 }, tMur + 0.38);
+      // ...the funnel grinds (its lever pulls itself, the box shakes)...
+      var fun = q("sfun"), lever = fun.querySelector(".funnel-lever");
+      gsap.set(lever, { svgOrigin: "80 -112" });
+      tl.fromTo(lever, { rotation: 0 }, { rotation: 50, duration: 0.15, ease: "power2.out", yoyo: true, repeat: 3, immediateRender: false }, tMur + 0.45);
+      tl.fromTo(fun, { x: 0 }, { x: 5, duration: 0.05, repeat: 13, yoyo: true, ease: "none", immediateRender: false }, tMur + 0.45);
+      // ..."money," (the second): out pops a medicine bill, which hops into the empty spot (sparkle). He beams.
+      var tMed = cue("money,", 2), med = q("smed");
+      gsap.set(med, { svgOrigin: "0 0" });
+      tl.fromTo(med, { x: -226, y: 10, scale: 0.3 }, { x: -110, y: -60, scale: 0.8, duration: 0.16, ease: "power2.out", immediateRender: false }, tMed);
+      tl.set(med, { opacity: 1 }, tMed);
+      tl.to(med, { x: 0, y: 0, scale: 1, duration: 0.18, ease: "bounce.out" }, tMed + 0.16);
+      var spark = q("spark");
+      gsap.set(spark, { svgOrigin: "0 0" });
+      tl.fromTo(spark, { opacity: 0, scale: 0.2, rotation: -40 }, { opacity: 1, scale: 1.2, rotation: 0, duration: 0.18, ease: "back.out(3)", immediateRender: false }, tMed + 0.3);
+      tl.to(spark, { opacity: 0, scale: 0.6, duration: 0.3 }, tMed + 0.75);
+      tl.set(q("pa"), { opacity: 0 }, tMed + 0.34);
+      tl.set(q("pb"), { opacity: 1 }, tMed + 0.34);
+      tl.fromTo(q("sign-pop"), { y: 0 }, { y: -16, duration: 0.12, yoyo: true, repeat: 3, ease: "power2.out", immediateRender: false }, tMed + 0.36);
+
+      // "programmed": the wires plug in, one a click (the last click plugs two), and the eyes go flat.
+      var tPro = cue("programmed"), plugAt = [tPro, tPro + 0.16, tPro + 0.32, tPro + 0.32];
+      CROWD.forEach(function (c, i) {
+        var t = plugAt[i];
+        tl.fromTo(q("wire" + i), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.16, ease: "power2.in", immediateRender: false }, t - 0.16);
+        tl.set(q("c" + i + "a"), { opacity: 0 }, t);
+        tl.set(q("c" + i + "b"), { opacity: 1 }, t);
+      });
+      // "news": the TV switches on: a white flash, the antennae twang, and the Weapons Maker reads the news.
+      var tNews = cue("news"), flash = q("scr-flash");
+      tl.fromTo(flash, { opacity: 0 }, { opacity: 1, duration: 0.04, immediateRender: false }, tNews);
+      tl.to(flash, { opacity: 0, duration: 0.3 }, tNews + 0.06);
+      tl.set(q("scr-news"), { opacity: 1 }, tNews + 0.04);
+      var tvEl = q("tv-shake");
+      [".tv-antenna-l", ".tv-antenna-r"].forEach(function (s, k) {
+        var a = tvEl.querySelector(s);
+        gsap.set(a, { svgOrigin: "0 -156" });
+        tl.fromTo(a, { rotation: 0 }, { rotation: k ? 9 : -9, duration: 0.08, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, tNews);
+      });
+      var aHead = q("anchor").querySelector(".head"), aNeck = wr.neck.join(" ");
+      gsap.set(aHead, { svgOrigin: aNeck });
+      tl.fromTo(aHead, { rotation: 0 }, { rotation: 6, duration: 0.18, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, tNews + 0.1);
+      // "war": the chart slides in over him (whoosh).
+      var tWar = cue("war"), ch = q("scr-chart");
+      tl.fromTo(ch, { x: 80 }, { x: 0, duration: 0.24, ease: "power3.out", immediateRender: false }, tWar);
+      tl.set(ch, { opacity: 1 }, tWar);
+      // "gravity": the apple falls and bonks the tiny human (boing at +0.3), bounces off and rolls away.
+      var tGra = cue("gravity"), apple = q("apple"), headY = 79 - 100 * tS - 74 * tS - 30 - 3;
+      tl.fromTo(apple, { y: 0, x: 0 }, { y: headY, duration: 0.3, ease: "power2.in", immediateRender: false }, tGra);
+      tl.to(apple, { y: headY - 6, x: 3, duration: 0.14, ease: "power2.out" }, tGra + 0.3);
+      tl.to(apple, { y: 79 - 30 - 2.6, x: 8, duration: 0.24, ease: "bounce.out" }, tGra + 0.44);
+      tl.set(q("t2a"), { opacity: 0 }, tGra + 0.3);
+      tl.set(q("t2b"), { opacity: 1 }, tGra + 0.3);
+      tl.set(q("bump"), { opacity: 1 }, tGra + 0.3);
+      tl.set(q("dizzy"), { opacity: 1 }, tGra + 0.32);
+      tl.fromTo(q("dizzy"), { rotation: 0, svgOrigin: "0.5 " + (79 - 100 * tS - 83 * tS) }, { rotation: 360, svgOrigin: "0.5 " + (79 - 100 * tS - 83 * tS), duration: 0.6, repeat: 1, ease: "none", immediateRender: false }, tGra + 0.32);
+      tl.set(q("dizzy"), { opacity: 0 }, tGra + 1.5);
+      // "weather.": a rain cloud slides in over the third tiny human and rains on him.
+      var tWea = cue("weather."), cloud = q("cloud");
+      tl.fromTo(cloud, { y: -40 }, { y: 0, duration: 0.26, ease: "power3.out" }, tWea - 0.1);
+      for (var k = 0; k < 5; k++) {
+        var drop = q("drop" + k), t0d = tWea + 0.12 + k * 0.05;
+        tl.set(drop, { opacity: 1 }, t0d);
+        tl.fromTo(drop, { y: 0 }, { y: 30, duration: 0.3, repeat: Math.floor((D - t0d) / 0.3) - 1, ease: "none", immediateRender: false }, t0d);
+      }
+      tl.set(q("t3a"), { opacity: 0 }, tWea + 0.3);
+      tl.set(q("t3b"), { opacity: 1 }, tWea + 0.3);
+      tl.set(q("puddle"), { opacity: 1 }, tWea + 0.5);
+      tl.fromTo(q("puddle"), { scaleX: 0.3, svgOrigin: "0 79" }, { scaleX: 1, svgOrigin: "0 79", duration: 0.8, immediateRender: false }, tWea + 0.5);
+      // after "weather.": back in panel 1 the thread snaps, the missile drops and goes off (boom): a white flash,
+      // a little mushroom cloud, and the tiny human stands there charred, smoking, blinking.
+      var tBoom = after("weather.");
+      tl.set(q("thread"), { opacity: 0 }, tBoom - 0.18);
+      tl.to(q("m1fall"), { y: 9, duration: 0.18, ease: "power2.in" }, tBoom - 0.18);
+      tl.set(q("m1fall"), { opacity: 0 }, tBoom);
+      // (a quicker flash than KIT.boom's, so the charred tiny human shows a beat after the bang)
+      KIT.boom(tl, q("nuke"), tBoom);
+      tl.fromTo(flash, { opacity: 0 }, { opacity: 1, duration: 0.04, immediateRender: false }, tBoom);
+      tl.to(flash, { opacity: 0, duration: 0.24, ease: "power2.in" }, tBoom + 0.1);
+      // (its last billow would run past the scene: it ends with the scene)
+      tl.getTweensOf(q("nuke").querySelector(".nuke-cap")).forEach(function (tw) { if (tw.endTime() > D) tw.duration(D - tw.startTime()); });
+      tl.fromTo(tvEl, { x: 0 }, { x: 2.5, duration: 0.04, repeat: 9, yoyo: true, ease: "none", immediateRender: false }, tBoom);
+      tl.set(q("t1a"), { opacity: 0 }, tBoom + 0.08);
+      tl.set(q("t1b"), { opacity: 1 }, tBoom + 0.08);
+      var charEyes = q("t1b").querySelector(".char-eyes"), smoke = q("t1b").querySelector(".smoke");
+      gsap.set(charEyes, { svgOrigin: "4 -4" });
+      [tBoom + 0.8, tBoom + 1.5, tBoom + 2.3].forEach(function (tb) {
+        tl.fromTo(charEyes, { scaleY: 1 }, { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, immediateRender: false }, tb);
+      });
+      tl.fromTo(smoke, { y: 0, opacity: 0.9 }, { y: -6, opacity: 0.4, duration: 0.7, repeat: 3, ease: "none", immediateRender: false }, tBoom + 0.3);
+
+      // The patient: worried once every head is on him; "brain": his chest light blinks red (ding).
+      var tAss = cue("assume"), tBrain = cue("brain");
+
+      // The camera: on "news" it pushes in on the TV (the crowd's plugged heads stay in the frame) for the news and
+      // the chart; on "assume" it pulls back out (whoosh) as the heads turn to the patient.
+      var ZM = L.zoom, scr0 = [TV.cx - 23 * TV.s, TV.y - 92.5 * TV.s], artEl = q("art");
+      gsap.set(artEl, { transformOrigin: "0px 0px" });
+      tl.fromTo(artEl, { x: 0, y: 0, scale: 1 }, { x: ZM.at[0] - scr0[0] * ZM.z, y: ZM.at[1] - scr0[1] * ZM.z, scale: ZM.z, duration: 0.85, ease: "power2.inOut", immediateRender: false }, tNews - 0.1);
+      // (it holds a beat after "assume", so the charred tiny human gets a moment up close and the heads start turning
+      // in the close-up; the patient is back in the frame by "brain")
+      tl.to(artEl, { x: 0, y: 0, scale: 1, duration: 0.5, ease: "power2.inOut" }, tAss + 0.12);
+      tl.set(q("pb"), { opacity: 0 }, tAss + 0.45);
+      tl.set(q("pc"), { opacity: 1 }, tAss + 0.45);
+      var light = q("pc").querySelector(".chest-light"), lx0 = +light.getAttribute("cx"), ly0 = +light.getAttribute("cy");
+      // a red glow round the light while it is on (it is small at this size)
+      var glow = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      glow.setAttribute("opacity", "0");
+      glow.innerHTML = '<circle cx="' + lx0 + '" cy="' + ly0 + '" r="9" fill="' + C.war + '" opacity="0.35"/>' +
+        [0, 60, 120, 180, 240, 300].map(function (a) {
+          var r = (a * Math.PI) / 180;
+          return line("M" + pt(lx0 + Math.cos(r) * 9, ly0 + Math.sin(r) * 9) + " L" + pt(lx0 + Math.cos(r) * 15, ly0 + Math.sin(r) * 15), C.war, 2.2);
+        }).join("");
+      q("pc").appendChild(glow);
+      [0, 0.14, 0.28, 0.42, 0.56].forEach(function (d, k) {
+        tl.set(light, { attr: { fill: k % 2 ? "#E9E1CC" : C.war } }, tBrain + d);
+        tl.set(glow, { opacity: k % 2 ? 0 : 1 }, tBrain + d);
+      });
+      // "malfunctioning.": the whole crowd points.
+      var tMal = cue("malfunctioning."), tHit = tMal + 0.3, tLift = after("malfunctioning.");
+      CROWD.forEach(function (c, i) {
+        tl.set(q("c" + i + "b"), { opacity: 0 }, tMal + i * 0.03);
+        tl.set(q("c" + i + "c"), { opacity: 1 }, tMal + i * 0.03);
+      });
+      // the net lands (pop): the patient is in the bundle now, kicking
+      tl.set(q("p-jump"), { opacity: 0 }, tHit);
+      var pd = q("pd"), pdr = KIT.rig(PD);
+      [".leg-l", ".leg-r"].forEach(function (s, k) {
+        var leg = pd.querySelector(s);
+        gsap.set(leg, { svgOrigin: pdr.hip[k].join(" ") });
+        tl.fromTo(leg, { rotation: k ? 18 : -18 }, { rotation: k ? -22 : 22, duration: 0.11, repeat: Math.floor((D - tHit - 0.05) / 0.11) - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, tHit + 0.05);
+      });
+
+      // ── Everything that hangs together, drawn on every seek ────────────
+      // The Orderly (rise, neck, head, pose, walk), the net (behind or in front of the hedge), the bundle and the
+      // crowd's heads with their wires.
+      var tCom = cue("committed."), tScan = tCom + 0.62, tDuck = tAss + 0.05, tRise0 = tBrain + 0.1, tRise1 = tMal - 0.06;
+      var tTurn = tLift + 0.1, tWalk = tLift + 0.22;
+      var EmaxU = L.Emax / oS;
+      var ordPos = q("ord-pos"), ordV = { A: q("oA"), B: q("oB"), C: q("oC") };
+      var ordParts = {};
+      Object.keys(ordV).forEach(function (k) {
+        var e = ordV[k], ext = e.querySelector(".bn-neck-ext").children;
+        ordParts[k] = { head: e.querySelector(".head"), fill: ext[0], side: ext[1] };
+      });
+      var nets = { back: q("net-back"), front: q("net-front") };
+      Object.keys(nets).forEach(function (k) {
+        var e = nets[k];
+        nets[k] = { el: e, bag: e.querySelector(".bn-bag"), bag2: e.querySelector(".bn-bag2"), h1: e.querySelector(".bn-h1"), h2: e.querySelector(".bn-h2"), hoop: e.querySelector(".bn-hoop"), hoop2: e.querySelector(".bn-hoop2") };
+      });
+      var bPos = q("bundle-pos"), bIn = q("bundle-in");
+      var nods = [cue("law") + 0.15, tGra + 0.42, tWea + 0.45, tBoom + 0.15, tBoom + 0.47];
+      var crowdHeads = CROWD.map(function (c, i) {
+        return { b: q("c" + i + "b").querySelector(".head"), c: q("c" + i + "c").querySelector(".head"), wire: q("wire" + i) };
+      });
+
+      function ordState(t) {
+        var oy = sink;
+        if (t > tRise0) oy = lerp(sink, -riseUp, ss((t - tRise0) / (tRise1 - tRise0)));
+        // a tiptoe bob once he is up, and while he scurries off
+        if (t > tRise1) oy += -4 * Math.abs(Math.sin((t - tRise1) * 11));
+        var ext = 0;
+        if (t >= tCom && t < tDuck) ext = EmaxU * backOut((t - tCom) / 0.42);
+        else if (t >= tDuck && t < tRise0) ext = EmaxU * (1 - 0.82 * ss((t - tDuck) / 0.13));
+        else if (t >= tRise0) ext = EmaxU * 0.18 * (1 - ss((t - tRise0) / (tRise1 - tRise0)));
+        // the periscope comes up looking the wrong way, then swivels to the patient
+        var s = turn(t < tScan ? -1 : -1 + 2 * ss((t - tScan) / 0.16));
+        var dx = t < tWalk ? 0 : -L.walk * Math.pow(clamp((t - tWalk) / (D - tWalk)), 1.6);
+        var pose = t < tMal ? "A" : t < tTurn ? "B" : "C";
+        return { oy: oy, ext: ext, s: s, dx: dx, pose: pose };
+      }
+      function ordToScene(o, p) { return [oT0[0] + o.dx + p[0] * oS, oT0[1] + o.oy + p[1] * oS]; }
+      function bundleState(t) {
+        var x = pT[0], y = pT[1], rot = 0;
+        if (t >= tLift) {
+          var u = ss((t - tLift) / 0.3);
+          x += L.lift[0] * u; y += L.lift[1] * u; rot = -10 * u;
+        }
+        if (t >= tWalk) {
+          var o = ordState(t);
+          x += o.dx; y += -6 * Math.abs(Math.sin((t - tWalk) * 11)); rot = -10 + 7 * Math.sin((t - tWalk) * 14);
+        }
+        return { x: x, y: y, rot: rot };
+      }
+      function bundlePoint(b, p) {
+        var r = (b.rot * Math.PI) / 180, px = (p[0] - 4) * oSafe, py = (p[1] - 20) * oSafe;
+        return [b.x + 4 * oSafe + px * Math.cos(r) - py * Math.sin(r), b.y + 20 * oSafe + px * Math.sin(r) + py * Math.cos(r)];
+      }
+      var oSafe = pT[2];
+      function setNet(N, grip, th, Lh, show, R0, tip) {
+        N.el.setAttribute("opacity", show ? 1 : 0);
+        if (!show) return;
+        var ux = Math.cos(th), uy = Math.sin(th), Rp = R0 * oS, end = [grip[0] + ux * Lh * oS, grip[1] + uy * Lh * oS], hc = [end[0] + ux * Rp, end[1] + uy * Rp];
+        var hd = "M" + pt(grip[0] - ux * 10, grip[1] - uy * 10) + " L" + pt(end[0], end[1]);
+        N.h1.setAttribute("d", hd); N.h2.setAttribute("d", hd);
+        [N.hoop, N.hoop2].forEach(function (e) { e.setAttribute("cx", f1(hc[0])); e.setAttribute("cy", f1(hc[1])); e.setAttribute("rx", f1(Rp)); e.setAttribute("ry", f1(Rp)); });
+        // the bag hangs off the hoop toward tip (a unit vector), 1.6 hoop radii long
+        var px = -tip[1], py = tip[0], a = [hc[0] + px * Rp, hc[1] + py * Rp], b = [hc[0] - px * Rp, hc[1] - py * Rp], e = [hc[0] + tip[0] * Rp * 1.7, hc[1] + tip[1] * Rp * 1.7];
+        var bd = "M" + pt(a[0], a[1]) + " Q" + pt(a[0] + tip[0] * Rp * 1.3, a[1] + tip[1] * Rp * 1.3) + " " + pt(e[0], e[1]) + " Q" + pt(b[0] + tip[0] * Rp * 1.3, b[1] + tip[1] * Rp * 1.3) + " " + pt(b[0], b[1]) + " Z";
+        N.bag.setAttribute("d", bd); N.bag2.setAttribute("d", bd);
+      }
+      function hideNetHoop(N) { [N.hoop, N.hoop2, N.bag, N.bag2].forEach(function (e) { e.setAttribute("d", ""); e.setAttribute("rx", 0); e.setAttribute("ry", 0); }); }
+      function netAt(t) {
+        // the hoop end of the handle and the angle, before the catch
+        var o = ordState(t);
+        if (t < tMal) {
+          var lift = t < tCom + 0.06 ? netDown : netDown * (1 - backOut((t - tCom - 0.06) / 0.42));
+          var gp = ordToScene(o, gA1);
+          return { grip: [gp[0], gp[1] + lift], th: thUp, Lh: LhUp };
+        }
+        var u = clamp((t - tMal) / (tHit - tMal));
+        return { grip: ordToScene(o, gB1), th: lerp(thUp, thHit, u * u), Lh: lerp(LhUp, LhHit, u) };
+      }
+
+      KIT.onTime(tl, D, function (t) {
+        var o = ordState(t);
+        ordPos.setAttribute("transform", "translate(" + f1(oT0[0] + o.dx) + "," + f1(oT0[1] + o.oy) + ") scale(" + oS + ")");
+        Object.keys(ordV).forEach(function (k) {
+          var on = k === o.pose, P = ordParts[k];
+          ordV[k].setAttribute("opacity", on ? 1 : 0);
+          if (!on) return;
+          var s = k === "C" ? 1 : o.s, e = o.ext;
+          P.head.setAttribute("transform", "translate(0," + f1(-e) + ") scale(" + s.toFixed(3) + ",1)");
+          var y0 = neckTop - e, y1 = neckTop + 3;
+          P.fill.setAttribute("d", e > 0.5 ? polyD([[-3.6, y0], [3.6, y0], [3.6, y1], [-3.6, y1]]) : "");
+          P.side.setAttribute("d", e > 0.5 ? "M-3.6," + f1(y0) + " V" + f1(y1) + " M3.6," + f1(y0) + " V" + f1(y1) : "");
+        });
+        // the net
+        if (t < tHit) {
+          var n0 = netAt(t), n1 = netAt(Math.max(0, t - 0.04));
+          var hcx = n0.grip[0] + Math.cos(n0.th) * (n0.Lh + NR) * oS, hcy = n0.grip[1] + Math.sin(n0.th) * (n0.Lh + NR) * oS;
+          var pcx0 = n1.grip[0] + Math.cos(n1.th) * (n1.Lh + NR) * oS, pcy0 = n1.grip[1] + Math.sin(n1.th) * (n1.Lh + NR) * oS;
+          // the bag droops back and down, and trails behind the hoop when it moves
+          var vx = hcx - pcx0, vy = hcy - pcy0, tx = -0.55 - vx * 0.08, ty = 1 - vy * 0.08, tn = Math.sqrt(tx * tx + ty * ty);
+          var front = t >= tMal;
+          setNet(nets.back, n0.grip, n0.th, n0.Lh, !front, NR, [tx / tn, ty / tn]);
+          setNet(nets.front, n0.grip, n0.th, n0.Lh, front, NR, [tx / tn, ty / tn]);
+          bPos.setAttribute("opacity", 0);
+        } else {
+          // caught: the handle runs from his hands to the hoop round the patient's knees
+          var b = bundleState(t);
+          bPos.setAttribute("opacity", 1);
+          bIn.setAttribute("transform", "translate(" + f1(b.x) + "," + f1(b.y) + ") rotate(" + f1(b.rot) + " " + f1(4 * oSafe) + "," + f1(20 * oSafe) + ") scale(" + oSafe + ")");
+          var grip = ordToScene(o, o.pose === "C" ? gC1 : gB1), hp = bundlePoint(b, [HOOP[0] - HOOP[2] + 2, HOOP[1]]);
+          nets.back.el.setAttribute("opacity", 0);
+          var N = nets.front;
+          N.el.setAttribute("opacity", 1);
+          var hd = "M" + pt(grip[0], grip[1]) + " L" + pt(hp[0], hp[1]);
+          N.h1.setAttribute("d", hd); N.h2.setAttribute("d", hd);
+          hideNetHoop(N);
+        }
+        // the crowd's heads: nods, then the slow turn to the patient (staggered), with the wires following the plugs
+        var nod = 0;
+        nods.forEach(function (tn) { var u = (t - tn) / 0.34; if (u > 0 && u < 1) nod += 9 * Math.sin(Math.PI * u); });
+        crowdHeads.forEach(function (hh, i) {
+          var rb = crowdR[i].b, rc = crowdR[i].c, T = crowdT[i];
+          var u = ss((t - (tAss + 0.08 * i)) / 0.75), s = V ? 1 : turn(1 - 2 * u), tilt = L.tilt * u;
+          var useC = t >= tMal + i * 0.03, ang, p, ny;
+          if (!useC) {
+            ny = rb.neck[1];
+            ang = nod * s + tilt;
+            hh.b.setAttribute("transform", "rotate(" + ang.toFixed(2) + " 0 " + f1(ny) + ") scale(" + s.toFixed(3) + ",1)");
+            p = [s * (2 - 31 * rb.hs), rb.hy - 3 * rb.hs];
+          } else {
+            ny = rc.neck[1];
+            ang = L.tilt;
+            hh.c.setAttribute("transform", "rotate(" + ang.toFixed(2) + " 0 " + f1(ny) + ")");
+            p = [V ? 2 - 31 * rc.hs : -2 + 31 * rc.hs, rc.hy - 3 * rc.hs];
+          }
+          var r = (ang * Math.PI) / 180, dy = p[1] - ny;
+          var q2 = [p[0] * Math.cos(r) - dy * Math.sin(r), ny + p[0] * Math.sin(r) + dy * Math.cos(r)];
+          var pp = toScene(T, q2), face = useC ? (V ? 1 : -1) : s;
+          var c1 = [tvTb[0] - 50, tvTb[1] - (V ? 120 : 190) - i * 24], c2 = [pp[0] - 95 * (face >= 0 ? 1 : -1) * Math.max(0.35, Math.abs(face)), pp[1] - (V ? 120 : 140)];
+          hh.wire.setAttribute("d", "M" + pt(tvTb[0], tvTb[1]) + " C" + pt(c1[0], c1[1]) + " " + pt(c2[0], c2[1]) + " " + pt(pp[0], pp[1]));
+        });
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

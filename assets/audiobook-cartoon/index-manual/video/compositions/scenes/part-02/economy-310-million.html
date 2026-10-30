@@ -1,0 +1,576 @@
+<template id="economy-310-million-template">
+  <!-- economy-310-million · Layer B (storyboards/part-02-the-human-economy.md): economy-circle's last frame, no seam.
+       "downside" → a record scratch and everything freezes mid-move (the conga with one foot up, the next missile
+       hanging over the farm stand). "killed" → in three runs, clockwise from the press, the color drains out of the
+       circle and every human x-rays into a grinning skeleton in the same pose; only the papers and the 1ST PRIZE
+       rosette keep their color. "hundred" → the track's ties stand up one after another as headstones, all the way
+       round. "million" → 310,000,000 stamps into the middle. Then HOLD: nothing moves to the end. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #economy-310-million-cam, #economy-310-million-bg, #economy-310-million-art, #economy-310-million-pip, #economy-310-million-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="economy-310-million" data-width="1920" data-height="1080" data-start="0" data-duration="6.56">
+    <div id="economy-310-million-cam">
+      <div id="economy-310-million-bg"></div>
+      <div id="economy-310-million-art"></div>
+    </div>
+    <div id="economy-310-million-pip"></div>
+    <div id="economy-310-million-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "economy-310-million";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+
+      // ══ The economy circle (storyboards/part-02-the-human-economy.md, "Spine"). This function is copied verbatim
+      // into economy-circle.html, economy-310-million.html and food-directly.html: change all three together. ══
+      // ecoCircle(pid) draws the circle as economy-circle leaves it (state b): the ring track, five stations on their
+      // plaques (1 the printing press and the Politician at its crank, 2 the WEAPONS factory with the Weapons Maker in
+      // its door and its conveyor, 3 the town bombed flat, 4 the JOBS pay window, 5 the farm stand with its farmer and
+      // its priced wheat), the charred family in hard hats at the farm stand with their loaves, the banner, a closed
+      // ring of 18 walking war-seal papers led by the 1ST PRIZE paper, and the next missile in the air.
+      // Hidden in the same picture: the drained copy of every station (each fill a gray between navy and paper, each
+      // human a grinning skeleton in the same pose), the 32 headstones and the death toll (economy-310-million).
+      // Returns { L, svg, pose(T), ... }: pose(T) puts the moving parts (the papers, the crank, the press plate, the
+      // Politician's arm, the Weapons Maker's eyes, the flying missile) where they are at part time T.
+      function ecoCircle(pid) {
+        var C = KIT.C, V = KIT.V, ink = C.line, WHITE = "#FBF6E6";
+        var Q = function (s) { return pid + "-" + s; };
+        var f = function (n) { return (+n).toFixed(1); };
+        var EC = "economy-circle", CS = KIT.scene(EC).start;
+        var at = function (w, n) { return CS + KIT.cue(EC, w, n); }, after = function (w, n) { return CS + KIT.after(EC, w, n); };
+        var FREEZE = KIT.scene("economy-310-million").start + KIT.cue("economy-310-million", "downside");
+
+        // ── Layout, per shape ──
+        // c, R: the ring (the papers' feet walk on R); ang: where each station meets the ring (degrees clockwise from
+        // the top); ps: the papers' scale. Stations: [x, y (ground), scale]. plaques: [x, y, rx] (the ground spots).
+        var L = V
+          ? { c: [540, 905], R: 268, ps: 0.52, ang: { press: 318, fac: 45, town: 100, farm: 222 },
+              press: [250, 560, 0.62], pol: 1.0, fac: [812, 622, 0.52], wm: [812, 617, 0.6], conv: [978, 622, 0.48, 200],
+              houses: [[874, 975], [966, 975], [920, 1030]], hs: 0.21,
+              fam: { s: 0.6, kid: 0.74, lawn: [[856, 1100], [918, 1103], [974, 1105]], queue: [[880, 1372], [935, 1375], [985, 1377]], stand: [[430, 1382], [492, 1384], [548, 1386]] },
+              jobs: [790, 1362, 0.66], farm: [300, 1362, 0.7], wheat: [80, 178, 280], tagAt: [140, 1100],
+              banner: [330, 820, 420, 74, 40], num: [540, 1010, 62], stone: 0.28,
+              plaques: [[262, 566, 175], [812, 628, 150], [920, 1042, 108], [790, 1368, 100], [238, 1370, 182]],
+              missile: { from: [1003, 570], peak: [660, 470], to: [330, 1110] } }
+          : { c: [810, 455], R: 262, ps: 0.58, ang: { press: 300, fac: 55, town: 100, farm: 228 },
+              press: [400, 325, 0.54], pol: 0.88, fac: [1150, 292, 0.55], wm: [1150, 287, 0.62], conv: [1342, 292, 0.5, 240],
+              houses: [[1235, 615], [1390, 615], [1545, 615]], hs: 0.34,
+              fam: { s: 0.62, kid: 0.74, lawn: [[1300, 700], [1375, 703], [1440, 705]], queue: [[1150, 832], [1215, 835], [1275, 837]], stand: [[565, 818], [630, 821], [690, 823]] },
+              jobs: [1070, 822, 0.72], farm: [455, 795, 0.72], wheat: [95, 235, 300], tagAt: [190, 565],
+              banner: [600, 375, 420, 82, 46], num: [810, 548, 64], stone: 0.3,
+              plaques: [[410, 331, 175], [1150, 298, 180], [1390, 622, 230], [1070, 828, 105], [330, 801, 260]],
+              missile: { from: [1405, 230], peak: [900, 70], to: [470, 525] } };
+        var cx = L.c[0], cy = L.c[1], R = L.R;
+        function pt(th, r) { var a = (th * Math.PI) / 180; return [cx + (r || R) * Math.sin(a), cy - (r || R) * Math.cos(a)]; }
+        function g(id, inner, attrs) { return '<g id="' + Q(id) + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+        function place(x, y, s, inner, flip) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + (flip ? -s : s) + "," + s + ')">' + inner + "</g>"; }
+        // a person stands with its feet at (x, y)
+        function stand(x, y, s, inner) { return place(x, y - 100 * s, s, inner); }
+        function poly(pts) { return "M" + pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L") + " Z"; }
+        function solid(d, fill, w) { return '<path d="' + d + '" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + (w || 3) + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }
+        function line(d, col, w) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linecap="round" stroke-linejoin="round"/>'; }
+        function text(x, y, size, t, fill, fam, extra) {
+          return '<text x="' + f(x) + '" y="' + f(y) + '" text-anchor="middle" font-family="' + (fam || "Oswald") + '" font-weight="' + (fam === "Fraunces" ? 900 : 600) + '" font-size="' + f(size) + '" fill="' + (fill || ink) + '"' + (extra ? " " + extra : "") + ">" + t + "</text>";
+        }
+        function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+
+        // ── The drain (economy-310-million): every color but the navy ink becomes a gray of the same lightness, mixed
+        // from the navy and the paper; ids get a suffix so the copy does not clash with the original. ──
+        var LINE = [17, 40, 69], PAPER = [243, 236, 208];
+        function lum(r, gg, b) { return (0.3 * r + 0.59 * gg + 0.11 * b) / 255; }
+        var L0 = lum(LINE[0], LINE[1], LINE[2]), L1 = lum(PAPER[0], PAPER[1], PAPER[2]);
+        function grayOf(r, gg, b) {
+          var k = Math.max(0, Math.min(1, (lum(r, gg, b) - L0) / (L1 - L0)));
+          return "rgb(" + [0, 1, 2].map(function (i) { return Math.round(LINE[i] + (PAPER[i] - LINE[i]) * k); }).join(",") + ")";
+        }
+        function drain(markup) {
+          var inkU = ink.toUpperCase();
+          return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{3,6})"/g, function (m, attr, col) {
+            if (col.length === 4) col = "#" + col[1] + col[1] + col[2] + col[2] + col[3] + col[3];
+            if (col.toUpperCase() === inkU) return m;
+            var n = parseInt(col.slice(1), 16);
+            return attr + '="' + grayOf(n >> 16, (n >> 8) & 255, n & 255) + '"';
+          }).replace(/(fill|stroke)="rgb\((\d+),(\d+),(\d+)\)"/g, function (m, attr, r, gg, b) {
+            return attr + '="' + grayOf(+r, +gg, +b) + '"';
+          }).replace(/id="([^"]+)"/g, 'id="$1-x"').replace(/url\(#([^)]+)\)/g, "url(#$1-x)");
+        }
+
+        // ── Small drawings ──
+        // A blank plaque: an engraved plinth whose top face is the ground spot (x, y).
+        function plaque(x, y, rx) {
+          var ry = rx * 0.15, h = 12;
+          return solid("M" + f(x - rx) + "," + f(y) + " V" + f(y + h) + " A" + f(rx) + "," + f(ry) + " 0 0 0 " + f(x + rx) + "," + f(y + h) + " V" + f(y) + " Z", C.tan, 3) +
+            '<ellipse cx="' + f(x) + '" cy="' + f(y) + '" rx="' + f(rx) + '" ry="' + f(ry) + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>' +
+            '<ellipse cx="' + f(x) + '" cy="' + f(y) + '" rx="' + f(rx - 10) + '" ry="' + f(ry - 4) + '" fill="none" stroke="' + C.orange + '" stroke-width="1.6"/>';
+        }
+        // A bread loaf, about 40 x 22, standing on (0, 0). (The stand's top three loaves, 6 to 8, are the family's, so they
+        // start hidden: economy-circle shows them until "buy".) bite: a bite out of its right end.
+        function loaf(bite) {
+          var pts = [[-20, 0], [-21, -8], [-15, -17], [-4, -21], [8, -20], [17, -15], [21, -6], [20, 0]];
+          var out = solid(poly(pts), C.tan, 2.4) + '<path d="M-17,-3 Q0,1 17,-3" fill="none" stroke="' + C.rust + '" stroke-width="2"/>' +
+            line("M-11,-15 l5,8 M-2,-18 l5,9 M7,-17 l5,8", C.cream, 2.2);
+          if (bite) out += '<circle cx="22" cy="-13" r="6" fill="' + C.paper + '"/><circle cx="19" cy="-6" r="5" fill="' + C.paper + '"/>' +
+            '<path d="M17.5,-19 A6,6 0 0 0 16.2,-9.6 A5,5 0 0 0 17,-1.2" fill="none" stroke="' + ink + '" stroke-width="2"/>';
+          return out;
+        }
+        // A yellow hard hat whose brim sits on (0, 0), w wide.
+        function hardHat(w) {
+          var k = w / 60;
+          return '<g transform="scale(' + f(k) + ')">' + solid(poly([[-23, 0], [-18, -18], [0, -25], [18, -18], [23, 0]]), C.yellow, 2.6) +
+            solid(poly([[-30, 3], [-26, -2], [26, -2], [30, 3]]), C.yellow, 2.2) + line("M0,-24 V-3", C.orange, 2) + "</g>";
+        }
+        // A war-seal paper without legs, w wide (held in a hand).
+        function heldBill(w) {
+          return '<g transform="scale(' + f(w / 96) + ')"><rect x="-48" y="-25" width="96" height="50" rx="4" fill="' + C.money + '" stroke="' + ink + '" stroke-width="5"/>' +
+            '<ellipse cx="0" cy="0" rx="13" ry="15" fill="' + C.paper + '" stroke="' + C.moneyDark + '" stroke-width="3"/>' + KIT.moneySeal("war", 31, 0, 11) + "</g>";
+        }
+        // The Weapons Maker's cradled missile (kit.js draws it in his arms; the skeleton needs its own copy).
+        function babyMissile() {
+          var s = function (pts, col) { return solid(poly(pts), col, 2.6); };
+          return '<g transform="translate(0,-6) rotate(-14)">' + s([[-34, -7], [14, -7], [30, 0], [14, 7], [-34, 7]], C.war) + s([[-34, -7], [-44, -17], [-40, -7]], C.war) + s([[-34, 7], [-44, 17], [-40, 7]], C.war) +
+            '<path d="M14,-7 L30,0 L14,7 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' + line("M-4,2 Q2,6 8,2", ink, 1.8) +
+            '<circle cx="-2" cy="-2.5" r="1.6" fill="' + ink + '"/><circle cx="6" cy="-2.5" r="1.6" fill="' + ink + '"/></g>';
+        }
+        // The moth from Part 1's empty wallet (without-with-papers).
+        var moth = '<g id="' + Q("moth") + '" opacity="0"><g id="' + Q("moth-w") + '"><path d="M0,0 l-10,-7 l2,10 Z M0,0 l10,-7 l-2,10 Z" fill="#E9E1CC" stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="round"/></g>' +
+          '<ellipse rx="1.8" ry="4.5" fill="' + ink + '"/></g>';
+        // The self-growing wheat from Part 1 (without-with-papers): one stalk, hf tall, at x.
+        function stalk(x, hf) {
+          var st = 'stroke="' + ink + '" stroke-width="2" stroke-linejoin="round"';
+          var out = '<path d="M' + f(x) + ",0 V" + f(-hf) + '" stroke="' + ink + '" stroke-width="3.5" stroke-linecap="round"/>';
+          [[0.42, 1], [0.64, -1]].forEach(function (lf) {
+            var ly = -hf * lf[0];
+            out += '<path d="M' + f(x) + "," + f(ly) + " q" + 14 * lf[1] + ",-6 " + 20 * lf[1] + ",-24 q" + -14 * lf[1] + ",4 " + -20 * lf[1] + ',24 Z" fill="' + C.tan + '" ' + st + "/>";
+          });
+          for (var k = 0; k < 5; k++) {
+            var ky = -hf - 6 - k * 9, side = k % 2 ? 1 : -1;
+            out += '<ellipse cx="' + f(x + side * 5) + '" cy="' + f(ky) + '" rx="6" ry="9" fill="' + C.yellow + '" ' + st + ' transform="rotate(' + side * 24 + " " + f(x + side * 5) + " " + f(ky) + ')"/>' +
+              '<path d="M' + f(x + side * 8) + "," + f(ky - 6) + " l" + side * 6 + ',-10" stroke="' + ink + '" stroke-width="1.5"/>';
+          }
+          return out + '<ellipse cx="' + f(x) + '" cy="' + f(-hf - 52) + '" rx="4.5" ry="7" fill="' + C.yellow + '" ' + st + "/>";
+        }
+        // Cut one <g class="cls"> (with everything nested in it) out of a person's markup: [before, group, after].
+        function cutGroup(svg, cls) {
+          var start = svg.indexOf('<g class="' + cls + '"'), i = start, depth = 0;
+          if (start < 0) throw new Error("cutGroup: no " + cls);
+          var re = /<g[\s>]|<\/g>/g;
+          re.lastIndex = start;
+          var m;
+          while ((m = re.exec(svg))) {
+            depth += m[0] === "</g>" ? -1 : 1;
+            if (depth === 0) { i = m.index + 4; break; }
+          }
+          return [svg.slice(0, start), svg.slice(start, i), svg.slice(i)];
+        }
+        // An arm reaching from the shoulder S to the point H (person units), elbow down: [upper, fore] angles.
+        function reach(S, H, len) {
+          var dx = H[0] - S[0], dy = H[1] - S[1], d = Math.min(Math.hypot(dx, dy), 2 * len * 0.995);
+          var base = (Math.atan2(dx, dy) * 180) / Math.PI, al = (Math.acos(d / (2 * len)) * 180) / Math.PI;
+          var elbowY = function (a1) { return Math.cos((a1 * Math.PI) / 180); };
+          return elbowY(base - al) >= elbowY(base + al) ? [base - al, base + al] : [base + al, base - al];
+        }
+
+        // ── 1. The printing press (mirrored, its crank on the left) and the Politician at the crank ──
+        var PR = L.press, ps = PR[2], CP = 0.575, PRINT0 = at("papers");
+        var axle = [PR[0] - 136 * ps, PR[1] - 150 * ps];
+        var polO = KIT.castOpts("politician", { look: "right", arms: [[-40, 40], [60, 120]] }), polR = KIT.rig(polO), sp = L.pol;
+        // he stands where the crank's axle is just in front of his right shoulder (his feet below the plaque)
+        var SH = polR.shoulder[1], polAt = [axle[0] - sp * (SH[0] + 15), axle[1] + 100 * sp - sp * (SH[1] + 5)];
+        function knob(phi) {
+          var a = (phi * Math.PI) / 180, c = Math.cos(a), s = Math.sin(a);
+          return [PR[0] - ps * (136 + 42 * c + 33 * s), PR[1] + ps * (-150 + 42 * s - 33 * c)];
+        }
+        function polArms(phi) {
+          var k = knob(phi), H = [(k[0] - polAt[0]) / sp, (k[1] - (polAt[1] - 100 * sp)) / sp];
+          return [[-40, 40], reach(SH, H, polR.armLength)];
+        }
+        // eight drawings of his crank arm, one per 45 degrees of the crank
+        function polDraw(o, dead) {
+          var base = cutGroup(KIT.person(mix(o, dead ? { skeleton: true } : {})), "arm-r"), arms = "";
+          for (var i = 0; i < 8; i++) arms += '<g class="pol-arm" data-i="' + i + '" opacity="0">' + cutGroup(KIT.person(mix(o, { arms: polArms(i * 45), skeleton: !!dead })), "arm-r")[1] + "</g>";
+          return base[0] + arms + base[2];
+        }
+        var press = KIT.props.printingPress({ seal: "war", tray: 0 });
+        // the MONETARY POLICY plaque, screwed on over the empty tray (on the right, the press being mirrored)
+        var MP = [PR[0] + 92 * ps, PR[1] - 190 * ps], mpW = V ? 128 : 150, mpH = V ? 50 : 56;
+        var screws = [[-1, -1], [1, -1], [-1, 1], [1, 1]].map(function (s, i) {
+          var x = s[0] * (mpW / 2 - 9), y = s[1] * (mpH / 2 - 9);
+          return '<g transform="translate(' + f(x) + "," + f(y) + ')"><g class="eco-screw"><circle r="4" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="1.6"/>' + line("M-2.6,0 H2.6", ink, 1.4) + "</g></g>";
+        }).join("");
+        var mpArt = '<g transform="translate(' + f(MP[0]) + "," + f(MP[1]) + ')">' + g("mp", '<g transform="rotate(-4)">' +
+          '<rect x="' + f(-mpW / 2 + 5) + '" y="' + f(-mpH / 2 + 6) + '" width="' + mpW + '" height="' + mpH + '" fill="' + C.ink + '" opacity="0.8"/>' +
+          '<rect x="' + f(-mpW / 2) + '" y="' + f(-mpH / 2) + '" width="' + mpW + '" height="' + mpH + '" rx="3" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<rect x="' + f(-mpW / 2 + 5) + '" y="' + f(-mpH / 2 + 5) + '" width="' + (mpW - 10) + '" height="' + (mpH - 10) + '" fill="none" stroke="' + C.rust + '" stroke-width="1.4"/>' +
+          text(0, -mpH * 0.06, mpH * 0.36, "MONETARY", ink, "Oswald", 'letter-spacing="1.5"') + text(0, mpH * 0.34, mpH * 0.36, "POLICY", ink, "Oswald", 'letter-spacing="1.5"') + screws + "</g>") + "</g>";
+        function station1(dead) {
+          var p = place(PR[0], PR[1], ps, press, true) + mpArt;
+          var pol = stand(polAt[0], polAt[1], sp, polDraw(polO, dead));
+          var out = g("press", p) + g("pol", pol);
+          return dead ? out : out + '<g transform="translate(' + f(PR[0] + 148 * ps) + "," + f(PR[1] - 210 * ps) + ')">' + moth + "</g>";
+        }
+
+        // ── 2. The factory, the Weapons Maker in its door, the conveyor and its smiling missiles ──
+        var FA = L.fac, fs = FA[2], WM = L.wm, CV = L.conv;
+        var factory = KIT.props.factory({}).replace('<g class="factory-door" data-ox="0" data-oy="-172">', '<g class="factory-door" data-ox="0" data-oy="-172" transform="translate(0,-172) scale(1,0.06) translate(0,172)">');
+        var wmO = KIT.castOpts("weaponsMaker", {}), conveyor = KIT.props.conveyor({ w: CV[3] });
+        var cmS = V ? 0.3 : 0.36, beltTop = CV[1] - 66 * CV[2];
+        // a smiling missile with a price tag swinging from its nose, standing on (0, 0)
+        function tagMissile(arms) {
+          return KIT.props.missile({ size: cmS, mood: "smile", arms: arms }) + '<g transform="translate(0,' + f(-158 * cmS) + ") scale(" + f(cmS * 1.25) + ')">' + KIT.props.priceTag({ text: "$9,999,999", angle: 70 }) + "</g>";
+        }
+        var CM = [0, 1, 2].map(function (i) { return [CV[0] + (i - 1) * (CV[3] * CV[2] * 0.36), beltTop]; });
+        function station2(dead) {
+          var wr2 = KIT.rig(wmO).handLocal, wm = dead ? '<g class="wm-dead">' + KIT.person(mix(wmO, { skeleton: true })) +
+            '<g transform="translate(' + f((wr2[0][0] + wr2[1][0]) / 2) + "," + f((wr2[0][1] + wr2[1][1]) / 2 + 2) + ')">' + babyMissile() + "</g></g>"
+            : '<g class="wm-grin">' + KIT.person(mix(wmO, { mood: "grin" })) + '</g><g class="wm-greedy" opacity="0">' + KIT.person(mix(wmO, { mood: "greedy" })) + "</g>";
+          return g("factory", place(FA[0], FA[1], fs, factory)) + g("conv", place(CV[0], CV[1], CV[2], conveyor)) + g("wm", stand(WM[0], WM[1], WM[2], wm));
+        }
+        // the three missiles that fly at the town (they start on the belt), and the next one, flying at the family
+        var attack = CM.map(function (p, i) { return '<g transform="translate(' + f(p[0]) + "," + f(p[1]) + ')">' + g("am-" + i, g("am-" + i + "-r", tagMissile("up")), 'opacity="0"') + "</g>"; }).join("");
+
+        // ── 3. The town: three houses, flattened and charred after the bomb, and the mushroom cloud ──
+        function scorch(markup) {
+          return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, attr, col) {
+            if (col.toUpperCase() === ink.toUpperCase()) return m;
+            var n = parseInt(col.slice(1), 16), v = Math.round(30 + lum(n >> 16, (n >> 8) & 255, n & 255) * 60);
+            return attr + '="rgb(' + (v + 10) + "," + v + "," + Math.max(0, v - 8) + ')"';
+          });
+        }
+        var houseArt = [0, 1, 2].map(function (i) { return KIT.props.house({ variant: [0, 1, 2][i], smoke: false }); });
+        // the flat house: squashed, scorched, a bent antenna and a few bricks on top
+        function rubble(i) {
+          var heap = "M-215,0 L-196,-40 L-160,-52 L-140,-96 L-104,-70 L-70,-112 L-30,-80 L6,-118 L40,-84 L84,-104 L118,-66 L158,-82 L196,-40 L215,0 Z";
+          var bits = '<path d="' + heap + '" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="6" stroke-linejoin="miter"/>' +
+            '<path d="M-150,-30 L-120,-62 M-60,-40 L-30,-80 M30,-36 L64,-92 M120,-30 L150,-62" stroke="' + ink + '" stroke-width="4" opacity="0.5"/>' +
+            // the chimney stub, still standing
+            '<path d="M-178,-46 L-176,-196 L-150,-188 L-146,-150 L-136,-170 L-138,-46 Z" fill="#5A3A2A" stroke="' + ink + '" stroke-width="6" stroke-linejoin="miter"/>' +
+            [[-120, -86, 20], [-40, -110, -14], [70, -100, 30], [140, -78, -8], [10, -60, 52]].map(function (b) { return '<rect x="' + (b[0] - 16) + '" y="' + (b[1] - 9) + '" width="32" height="18" fill="#6E4A34" stroke="' + ink + '" stroke-width="5" transform="rotate(' + b[2] + " " + b[0] + " " + b[1] + ')"/>'; }).join("") +
+            // the TV antenna, bent
+            line("M60,-104 L72,-196 L130,-214 M66,-150 L98,-160 M69,-174 L108,-186", ink, 7) +
+            // a door, flat on top, its diamond window still in it
+            '<path d="M-70,-112 L-12,-128 L-6,-112 L-64,-96 Z" fill="' + [C.war, C.yellow, C.med][i] + '" stroke="' + ink + '" stroke-width="5"/>';
+          return scorch('<g transform="scale(1.06,0.32)">' + houseArt[i] + "</g>" + bits);
+        }
+        function station3(dead) {
+          var out = "";
+          L.houses.forEach(function (h, i) {
+            out += place(h[0], h[1], L.hs, (dead ? "" : g("house-" + i, houseArt[i], 'opacity="0"')) + g("rubble-" + i, rubble(i)));
+          });
+          return out;
+        }
+        var nukeAt = [(L.houses[0][0] + L.houses[1][0] + L.houses[2][0]) / 3, Math.max(L.houses[0][1], L.houses[2][1]) + 10];
+
+        // ── 4. The JOBS pay window: a booth that pops out of the rubble, its sign held up by two white-gloved hands
+        // making air quotes, and a hairy forearm with a missile tattoo that reaches out of the window ──
+        var JB = L.jobs, js = JB[2];
+        function glove(side) {
+          // a white glove from behind the sign, two fingers up and crooked (air quotes); .eco-quote fingers bend
+          var s = side;
+          return '<g transform="scale(' + s + ',1)">' + solid(poly([[-12, 30], [-14, 6], [-10, -8], [8, -8], [12, 6], [10, 30]]), WHITE, 3) + line("M-11,14 H11", C.paper, 2) +
+            '<g class="eco-quote">' + solid(poly([[-8, -8], [-9, -30], [-2, -32], [-1, -8]]), WHITE, 2.6) + solid(poly([[1, -8], [2, -34], [9, -33], [8, -8]]), WHITE, 2.6) + "</g>" +
+            solid(poly([[8, 0], [20, -10], [24, -4], [12, 8]]), WHITE, 2.6) + "</g>";
+        }
+        var forearm = '<g id="' + Q("arm") + '">' + solid(poly([[0, -15], [96, -19], [104, -8], [104, 12], [96, 18], [0, 15]]), "#6F4B33", 3) +
+          line("M14,-6 l5,-6 M28,-8 l5,-6 M42,-9 l5,-6 M56,-10 l5,-6 M70,-11 l5,-6 M84,-12 l5,-6 M20,6 l5,-6 M48,5 l5,-6 M76,5 l5,-6", "#2A1D12", 2) +
+          '<g transform="translate(46,2) rotate(-8) scale(0.5)">' + babyMissile() + "</g>" +
+          solid(poly([[100, -16], [118, -14], [124, -4], [120, 14], [102, 16]]), "#6F4B33", 3) + solid(poly([[-4, -18], [10, -18], [10, 18], [-4, 18]]), C.navy, 3) + "</g>";
+        function station4(dead) {
+          var w = 150, h = 120, booth = solid(poly([[-w / 2, 0], [-w / 2, -h], [w / 2, -h], [w / 2, 0]]), C.peri, 3.4) +
+            solid(poly([[-46, -92], [46, -92], [46, -40], [-46, -40]]), C.ink, 3) + solid(poly([[-56, -40], [56, -40], [60, -30], [-60, -30]]), C.tan, 3) +
+            solid(poly([[-w / 2 - 10, -h], [w / 2 + 10, -h], [w / 2, -h + 16], [-w / 2, -h + 16]]), C.war, 3) +
+            line("M" + (-w / 2 + 6) + ",-24 H" + (w / 2 - 6), C.cream, 2) + line("M" + (w / 2 - 4) + "," + (-h + 18) + " V-4", C.orange, 2);
+          var sign = '<g transform="translate(0,' + (-h - 34) + ')">' + '<g transform="translate(-74,6)">' + glove(-1) + '</g><g transform="translate(74,6)">' + glove(1) + "</g>" +
+            '<rect x="-60" y="-26" width="120" height="52" rx="4" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+            '<rect x="-53" y="-19" width="106" height="38" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' + text(0, 14, 38, "JOBS", ink, "Oswald", 'letter-spacing="4"') + "</g>";
+          var arm = dead ? "" : '<g transform="translate(-30,-66)">' + '<g id="' + Q("arm-g") + '" opacity="0">' + forearm + "</g></g>";
+          return place(JB[0], JB[1], js, g("booth", booth + arm + g("sign", sign)));
+        }
+
+        // ── 5. The farm stand, its loaves and FOOD sign, the farmer, and the wheat that grows for free ──
+        var FM = L.farm, fms = FM[2];
+        var farmerO = { tone: 1, outfit: "overalls", color: 2, hair: 0, mood: "smug", look: "left", plain: true }, FS = 1.05 * L.farm[2], FMP = [L.tagAt[0] + 52, L.farm[1] - 6];
+        (function () {
+          var r = KIT.rig(mix(farmerO, { arms: [[0, 0], [0, 0]] })), H = [(L.tagAt[0] + 6 - FMP[0]) / FS, (L.tagAt[1] + 24 - (FMP[1] - 100 * FS)) / FS];
+          farmerO.arms = [reach(r.shoulder[0], H, r.armLength), [20, 10]];
+        })();
+        var farmerWait = { tone: 1, outfit: "overalls", color: 2, hair: 0, mood: "smile", plain: true, arms: [[20, 10], [-20, -10]] };
+        function station5(dead) {
+          var w = 210, cnt = -64;
+          var stall = solid(poly([[-w / 2, 0], [-w / 2, cnt], [w / 2, cnt], [w / 2, 0]]), C.tan, 3.4) + line("M" + (-w / 2 + 8) + ",-40 H" + (w / 2 - 8) + " M" + (-w / 2 + 8) + ",-18 H" + (w / 2 - 8), C.rust, 2) +
+            solid(poly([[-w / 2 - 6, cnt], [w / 2 + 6, cnt], [w / 2 + 6, cnt - 10], [-w / 2 - 6, cnt - 10]]), C.rust, 3);
+          var posts = solid(poly([[-w / 2 + 4, cnt - 10], [-w / 2 + 14, cnt - 10], [-w / 2 + 14, -210], [-w / 2 + 4, -210]]), C.rust, 3) + solid(poly([[w / 2 - 14, cnt - 10], [w / 2 - 4, cnt - 10], [w / 2 - 4, -210], [w / 2 - 14, -210]]), C.rust, 3);
+          var stripes = "";
+          for (var i = 0; i < 7; i++) {
+            var x0 = -w / 2 - 14 + (i * (w + 28)) / 7, x1 = x0 + (w + 28) / 7;
+            stripes += solid(poly([[x0, -232], [x1, -232], [x1, -200], [x0 + (x1 - x0) / 2, -188], [x0, -200]]), i % 2 ? C.cream : C.war, 2.6);
+          }
+          var signArt = '<g transform="translate(0,-262)"><rect x="-58" y="-24" width="116" height="48" rx="4" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+            '<rect x="-51" y="-17" width="102" height="34" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' + text(0, 13, 36, "FOOD", ink, "Oswald", 'letter-spacing="4"') + "</g>" +
+            line("M-30,-238 V-232 M30,-238 V-232", ink, 3);
+          var loaves = [[-70, cnt - 10], [-30, cnt - 10], [10, cnt - 10], [50, cnt - 10], [-50, cnt - 28], [-10, cnt - 28], [30, cnt - 28], [-30, cnt - 46], [10, cnt - 46]]
+            .map(function (p, i) { return '<g transform="translate(' + p[0] + "," + p[1] + ')">' + g("loaf-" + i, loaf(false), i >= 6 ? 'opacity="0"' : "") + "</g>"; }).join("");
+          var person = dead ? KIT.person(mix(farmerO, { skeleton: true })) : KIT.person(farmerO).replace("<!--face-end-->", line("M12,13 L30,4", C.yellow, 2.2) + "<!--face-end-->");
+          var farmer = dead ? stand(FMP[0], FMP[1], FS, person)
+            : g("farmer", stand(FMP[0], FMP[1], FS, person)) + g("farmer-w", stand(FM[0], FM[1] - 6, FS, KIT.person(farmerWait).replace("<!--face-end-->", line("M12,13 L30,4", C.yellow, 2.2) + "<!--face-end-->")), 'opacity="0"');
+          return g("farmer-back", farmer) + place(FM[0], FM[1], fms, g("stall", posts + stripes + signArt + stall + loaves));
+        }
+        // the wheat field behind the stand (stalks drawn at full height, rising out of the ground)
+        var WH = L.wheat, wr = KIT.rng(23), stalks = [];
+        for (var si = 0; si < 9; si++) stalks.push({ x: WH[0] + ((WH[1] - WH[0]) * si) / 8 + (wr() - 0.5) * 8, hf: WH[2] - 60 - Math.round(wr() * 30) });
+        function wheat(dead) {
+          return '<g transform="translate(0,' + f(FM[1]) + ')">' + stalks.map(function (s, i) { return g("stalk-" + i, stalk(s.x, s.hf)); }).join("") + "</g>" +
+            '<g transform="translate(' + f(L.tagAt[0]) + "," + f(L.tagAt[1]) + ')">' + g("tag", KIT.props.priceTag({ text: "$4.99", angle: 18, size: V ? 1.05 : 1.2 })) + "</g>";
+        }
+
+        // ── The family: dad, mom and kid. Drawings: waving at the missiles (alive, then charred), walking with a
+        // hard hat and a paper, and at the stand with a loaf at the mouth, looking up (the last frame). ──
+        var FAM = [{ tone: 2, outfit: "suit", color: 0, hair: 0 }, { tone: 2, outfit: "dress", hair: 1, color: 1 }, { tone: 2, outfit: "shirt", color: 3, hair: 0 }];
+        var famS = function (j) { return L.fam.s * (j === 2 ? L.fam.kid : 1); };
+        // the arm nearest the camera is arm-l (they face left): up to wave, out with a paper, up to the mouth to bite
+        var WAVE = [[-150, -172], [20, 10]], HOLD = [[-30, -96], [20, 10]];
+        function biteArms(o) {
+          var r = KIT.rig(mix(o, { look: "left" }));
+          return [reach(r.shoulder[0], [r.mouth[0] - 4, r.mouth[1] + 8], r.armLength), [20, 10]];
+        }
+        // a hard hat perched on the head (on the charred hair, which stands straight up)
+        function hatOn(o, svg) {
+          var r = KIT.rig(o);
+          return svg.replace("<!--head-end-->", '<g transform="translate(' + f(r.head[0]) + "," + f(r.head[1] - 30 * r.hs) + ')">' + hardHat(46 * r.hs) + "</g><!--head-end-->");
+        }
+        // the head tipped back to look up, by a wrapper around .head (which stays untransformed for tweens)
+        function lookUp(o, svg) {
+          var r = KIT.rig(o);
+          return svg.replace('<g class="head">', '<g transform="rotate(26 ' + f(r.neck[0]) + " " + f(r.neck[1]) + ')"><g class="head">').replace("<!--head-end--></g>", "<!--head-end--></g></g>");
+        }
+        function inHand(o, svg, item) {
+          var h = KIT.rig(o).handLocal[0];
+          return svg.replace('<g class="arm-l">', '<g class="arm-l"><g transform="translate(' + f(h[0]) + "," + f(h[1] + 3) + ')">' + item + "</g>");
+        }
+        var heldLoaf = '<g transform="rotate(-15) scale(0.9)">' + loaf(true) + "</g>";
+        function famDraw(j, dead) {
+          var o = mix(FAM[j], { look: "left" }), bite = mix(o, { arms: biteArms(o) });
+          if (dead) {
+            var bo = mix(bite, { hat: "hard", skeleton: true });
+            return inHand(bite, lookUp(bite, KIT.person(bo)), heldLoaf);
+          }
+          var wave = mix(o, { arms: WAVE, mood: "eager" }), cw = mix(wave, { charred: true });
+          var hold = mix(o, { arms: HOLD, charred: true }), cb = mix(bite, { charred: true });
+          var hidden = ' opacity="0"';
+          return '<g class="fam-wave"' + hidden + ">" + KIT.person(wave) + "</g>" + '<g class="fam-cwave"' + hidden + ">" + KIT.person(cw) + "</g>" +
+            '<g class="fam-hold"' + hidden + ">" + inHand(hold, hatOn(hold, KIT.person(hold)), '<g class="fam-bill"><g transform="rotate(-8)">' + heldBill(36) + '</g></g><g class="fam-loaf" opacity="0"><g transform="translate(0,6)">' + loaf(false) + "</g></g>") + "</g>" +
+            '<g class="fam-bite"' + hidden + ">" + inHand(cb, hatOn(cb, KIT.person(cb)), heldLoaf) + "</g>" +
+            '<g class="fam-up">' + inHand(cb, lookUp(cb, hatOn(cb, KIT.person(cb))), heldLoaf) + "</g>";
+        }
+        function family(dead) {
+          return [0, 1, 2].map(function (j) {
+            var p = L.fam.stand[j], s = famS(j);
+            return dead ? stand(p[0], p[1], s, famDraw(j, true)) : '<g transform="translate(' + f(p[0]) + "," + f(p[1]) + ')">' + g("fam-" + j, place(0, -100 * s, s, famDraw(j, false))) + "</g>";
+          }).join("");
+        }
+
+        // ── The banner and the death toll ──
+        var B = L.banner, nt = 30;
+        function ribbon(dx, dy, fill, extra) {
+          return '<path d="M' + f(B[0] + dx) + "," + f(B[1] + dy) + " H" + f(B[0] + B[2] + dx) + " l" + -nt + "," + f(B[3] / 2) + " l" + nt + "," + f(B[3] / 2) + " H" + f(B[0] + dx) + " l" + nt + "," + f(-B[3] / 2) + ' Z" fill="' + fill + '" ' + (extra || "") + "/>";
+        }
+        var banner = ribbon(9, 9, C.ink, 'opacity="0.85"') + ribbon(0, 0, WHITE, 'stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"') +
+          '<rect x="' + f(B[0] + nt + 10) + '" y="' + f(B[1] + 10) + '" width="' + f(B[2] - 2 * nt - 20) + '" height="' + f(B[3] - 20) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          text(B[0] + B[2] / 2, B[1] + B[3] / 2 + B[4] * 0.36, B[4], "THE ECONOMY", ink, "Oswald", 'letter-spacing="' + f(B[4] * 0.12) + '"');
+        var N = L.num, numAttrs = 'text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + N[2] + '"';
+        var number = '<text x="' + f(N[0] + N[2] * 0.05) + '" y="' + f(N[1] + N[2] * 0.07) + '" ' + numAttrs + ' fill="' + C.ink + '" stroke="' + C.ink + '" stroke-width="' + f(N[2] * 0.05) + '">310,000,000</text>' +
+          '<text x="' + f(N[0]) + '" y="' + f(N[1]) + '" ' + numAttrs + ' fill="#1A1426" stroke="' + C.cream + '" stroke-width="' + f(N[2] * 0.08) + '" stroke-linejoin="round" paint-order="stroke">310,000,000</text>';
+
+        // ── The track: two rails and 32 ties; each tie stands up as a headstone in economy-310-million ──
+        var NT = 32, ties = "", stones = "";
+        for (var ti = 0; ti < NT; ti++) {
+          var th = (ti * 360) / NT, a = pt(th, R - 21), b = pt(th, R + 21), m = pt(th, R);
+          ties += '<path id="' + Q("tie-" + ti) + '" d="M' + f(a[0]) + "," + f(a[1]) + " L" + f(b[0]) + "," + f(b[1]) + '" stroke="' + ink + '" stroke-width="9"/>';
+          stones += '<g transform="translate(' + f(m[0]) + "," + f(m[1] + 6) + ") scale(" + L.stone + ')">' + g("hs-" + ti, KIT.props.headstone({ text: "" }), 'opacity="0"') + "</g>";
+        }
+        var track = '<circle cx="' + cx + '" cy="' + cy + '" r="' + (R - 14) + '" fill="none" stroke="' + ink + '" stroke-width="3.5"/>' +
+          '<circle cx="' + cx + '" cy="' + cy + '" r="' + (R + 14) + '" fill="none" stroke="' + ink + '" stroke-width="3.5"/>';
+
+        // ── The papers: 18 war-seal papers on stick legs, the first one wearing the 1ST PRIZE rosette ──
+        var NP = 18, GAP = 20, QUEUE = 4, HOP = 0.35, BACK = 60, PS = L.ps;
+        var rosette = (function () {
+          var petals = [], n = 16;
+          for (var i = 0; i < n * 2; i++) { var aa = (Math.PI * i) / n, rr = i % 2 ? 30 : 38; petals.push([rr * Math.cos(aa), rr * Math.sin(aa)]); }
+          return '<g id="' + Q("rosette") + '"><g transform="translate(-10,-30)">' +
+            solid(poly([[-12, 10], [-4, 10], [-2, 64], [-10, 56], [-18, 66]]), C.war, 2.6) + solid(poly([[4, 10], [12, 10], [20, 62], [12, 54], [6, 64]]), C.war, 2.6) +
+            solid(poly(petals), C.orange, 2.6) + '<circle r="25" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.6"/>' + '<circle r="20.5" fill="none" stroke="' + C.rust + '" stroke-width="1.4"/>' +
+            text(0, 3, 21, "1ST", ink, "Fraunces") + text(0, 15, 9, "PRIZE", ink, "Oswald", 'letter-spacing="1"') + "</g></g>";
+        })();
+        var papers = "";
+        for (var k = 0; k < NP; k++) {
+          papers += '<g id="' + Q("p" + k) + '"><g id="' + Q("p" + k + "-b") + '"><g class="eco-leg-a">' + KIT.money("war", 0.05) + '</g><g class="eco-leg-b" opacity="0">' + KIT.money("war", 0.95) + "</g>" +
+            (k === 0 ? rosette : "") + "</g></g>";
+        }
+
+        // ── The paper schedule (part time T): S(T) is how far (degrees) the conga's leader has gone from the press. ──
+        var T = {
+          pin: at("magnificent:") + 0.2, strut0: at("magnificent:") + 0.55, strut1: at("print") + 0.45, conga: at("nothing-papers"), cash: at("makers."), fac: at("makers.") + 0.25, close: after("economy"),
+        };
+        var A0 = L.ang.press, AF = (L.ang.fac - A0 + 360) % 360, V2 = (360 - AF) / (T.close - T.fac);
+        function S(t) {
+          if (t <= T.conga) return 0;
+          if (t <= T.fac) { var u = (t - T.conga) / (T.fac - T.conga), h1 = (V2 * (T.fac - T.conga)) / AF, b2 = 3 - h1, c3 = h1 - 2; return AF * (b2 * u * u + c3 * u * u * u); }
+          return AF + V2 * (t - T.fac);
+        }
+        function Sinv(s) { // the time the leader has gone s
+          if (s >= AF) return T.fac + (s - AF) / V2;
+          var a = T.conga, b = T.fac;
+          for (var i = 0; i < 40; i++) { var m = (a + b) / 2; if (S(m) < s) a = m; else b = m; }
+          return (a + b) / 2;
+        }
+        var printAt = [];
+        for (var pk = 1; pk <= QUEUE; pk++) printAt[pk] = PRINT0 + (pk - 1) * CP;
+        for (pk = QUEUE + 1; pk < NP; pk++) printAt[pk] = Sinv(pk * GAP) - HOP;
+        var bed = [PR[0], PR[1] - 100 * ps];
+        // where paper k is at time t: [x (feet), y (feet), visible, dist (for the legs), lean, scale]
+        function paperAt(k, t) {
+          var sc = k === 0 ? 1.15 : 1;
+          if (k === 0 && t < T.conga) {
+            if (t < T.pin) return [pt(180)[0], pt(180)[1], 1, t * 260, 0, sc, "jog", 180];
+            if (t < T.strut0) return [pt(180)[0], pt(180)[1], 1, 0, 0, sc, "", 180];
+            var u = Math.min(1, (t - T.strut0) / (T.strut1 - T.strut0)), e = u * u * (3 - 2 * u), th0 = 180 + ((A0 - 180 + 360) % 360) * e, p0 = pt(th0);
+            return [p0[0], p0[1], 1, R * ((th0 - 180) * Math.PI) / 180, u > 0 && u < 1 ? 1 : 0, sc, "", th0];
+          }
+          var s = S(t) - k * GAP;
+          if (k > 0 && t < printAt[k]) return [bed[0], bed[1], 0, 0, 0, sc];
+          if (k > 0 && t < printAt[k] + HOP) {
+            // the hop from the press bed onto the ring (a queuing paper lands just behind the prize paper)
+            var hu = (t - printAt[k]) / HOP, dest = pt(A0 - (k <= QUEUE ? 8 : 0));
+            return [bed[0] + (dest[0] - bed[0]) * hu, bed[1] + (dest[1] - bed[1]) * hu - Math.sin(hu * Math.PI) * 60, 1, hu * 40, 0, sc * (0.5 + 0.5 * hu)];
+          }
+          if (k <= QUEUE && t < printAt[k] + HOP + (k * GAP - 8) / BACK) {
+            // ... and walks back down the line to the end of the queue
+            var wu = (t - printAt[k] - HOP) / ((k * GAP - 8) / BACK), th1 = A0 - 8 - (k * GAP - 8) * wu, pw = pt(th1);
+            return [pw[0], pw[1], 1, (R * ((k * GAP - 8) * wu) * Math.PI) / 180, 1, sc, "", th1 + 180];
+          }
+          var p = pt(A0 + s);
+          return [p[0], p[1], 1, (R * (S(t) * Math.PI)) / 180, t > T.conga ? 1 : 0, sc, "", A0 + s];
+        }
+
+        // ── The flying missile: launched from the conveyor after "economy", over the farm stand by the freeze ──
+        var MS = L.missile, LAUNCH = T.close;
+        var flyArt = KIT.props.missile({ size: cmS * 1.1, mood: "smile", arms: "up", flame: true });
+        var fly = '<g id="' + Q("fly") + '">' + flyArt + "</g>" + '<g id="' + Q("fly-x") + '" opacity="0">' + drain(flyArt) + "</g>";
+        function missileAt(t) {
+          var u = Math.max(0, Math.min(1, (t - LAUNCH) / (FREEZE - LAUNCH))), e = 1 - (1 - u) * (1 - u);
+          var a = MS.from, b = MS.peak, c2 = MS.to, x = (1 - e) * (1 - e) * a[0] + 2 * (1 - e) * e * b[0] + e * e * c2[0], y = (1 - e) * (1 - e) * a[1] + 2 * (1 - e) * e * b[1] + e * e * c2[1];
+          var dx = 2 * (1 - e) * (b[0] - a[0]) + 2 * e * (c2[0] - b[0]), dy = 2 * (1 - e) * (b[1] - a[1]) + 2 * e * (c2[1] - b[1]);
+          return [x, y, (Math.atan2(dx, -dy) * 180) / Math.PI, t >= LAUNCH ? 1 : 0];
+        }
+
+        // ── Assemble: color (state b), then the drained copies (hidden), the headstones and the number ──
+        var stations = [station1, station2, station3, station4, station5];
+        var svg = KIT.paperDefs(pid) +
+          g("wheat", wheat(false)) + g("wheat-x", drain(wheat(true)), 'opacity="0"') +
+          L.plaques.map(function (p, i) { return g("plq-" + i, plaque(p[0], p[1], p[2])) + g("plq-" + i + "-x", drain(plaque(p[0], p[1], p[2])), 'opacity="0"'); }).join("") +
+          g("track", track + ties) + g("track-x", drain(track + ties), 'opacity="0"') + stones +
+          stations.map(function (st, i) { return g("s" + (i + 1), st(false)) + g("s" + (i + 1) + "-x", drain(st(true)), 'opacity="0"'); }).join("") +
+          g("fam", family(false)) + g("fam-x", drain(family(true)), 'opacity="0"') +
+          '<g transform="translate(' + f(nukeAt[0]) + "," + f(nukeAt[1]) + ") scale(" + (V ? 0.38 : 0.55) + ')">' + g("nuke", KIT.nuke(), 'opacity="0"') + "</g>" +
+          g("banner", banner) + g("banner-x", drain(banner), 'opacity="0"') +
+          attack + fly + g("papers", papers) + g("num", number, 'opacity="0"');
+
+        // ── pose(T, launching): the moving parts at part time T (launching: also show or hide the flying missile) ──
+        var els = null;
+        function pose(t, launching) {
+          if (!els) {
+            els = { p: [], press: document.getElementById(Q("press")), fly: [Q("fly"), Q("fly-x")].map(function (i) { return document.getElementById(i); }) };
+            for (var i = 0; i < NP; i++) {
+              var el = document.getElementById(Q("p" + i));
+              els.p.push({ el: el, a: el.querySelector(".eco-leg-a"), b: el.querySelector(".eco-leg-b") });
+            }
+            els.crank = [els.press, document.getElementById(Q("press-x"))].map(function (e) { return e.querySelector(".press-crank"); });
+            els.plate = [els.press, document.getElementById(Q("press-x"))].map(function (e) { return e.querySelector(".press-plate"); });
+            els.arms = [document.getElementById(Q("s1")), document.getElementById(Q("s1-x"))].map(function (s) { return s.querySelectorAll(".pol-arm"); });
+            els.wm = document.getElementById(Q("wm"));
+          }
+          var tc = Math.max(t, at("print") + 0.06), phi = (360 * (tc - PRINT0)) / CP;
+          els.crank.forEach(function (e) { e.setAttribute("transform", "rotate(" + (phi % 360).toFixed(2) + " 136 -150)"); });
+          var fr = (((tc - PRINT0) / CP) % 1 + 1) % 1, d = Math.min(fr, 1 - fr) * CP, down = Math.max(0, 1 - d / 0.09);
+          els.plate.forEach(function (e) { e.setAttribute("transform", "translate(0," + (46 * down).toFixed(2) + ")"); });
+          var ai = ((Math.round(phi / 45) % 8) + 8) % 8;
+          els.arms.forEach(function (list) { Array.prototype.forEach.call(list, function (a, i) { a.setAttribute("opacity", i === ai ? "1" : "0"); }); });
+          // the Weapons Maker's eyes: dollar signs from "makers.", blinking back once as each paper passes his door
+          var greedy = t >= T.cash;
+          for (var k = 0; k < NP && greedy; k++) {
+            var tk = Sinv(AF + k * GAP);
+            if (k > 0 && t >= tk && t < tk + 0.08) greedy = false;
+          }
+          var gr = els.wm.querySelector(".wm-grin"), gd = els.wm.querySelector(".wm-greedy");
+          gr.setAttribute("opacity", greedy ? "0" : "1");
+          gd.setAttribute("opacity", greedy ? "1" : "0");
+          els.p.forEach(function (p, k) {
+            var o = paperAt(k, t), sc = PS * o[5], step = o[6] === "jog" ? Math.floor(t * 9) : Math.floor(o[3] / 16), ph = step % 2;
+            var hop = o[6] === "jog" ? Math.abs(Math.sin(t * 9 * Math.PI)) * 5 : o[4] ? Math.abs(Math.sin((o[3] / 16) * Math.PI)) * 6 : 0;
+            p.el.setAttribute("opacity", o[2] ? "1" : "0");
+            var lean = o[4] || o[6] === "jog" ? (Math.cos(((o[7] || 0) * Math.PI) / 180) < 0 ? -7 : 7) : 0;
+            p.el.setAttribute("transform", "translate(" + f(o[0]) + "," + f(o[1] - hop) + ") scale(" + sc.toFixed(3) + ") translate(0,-46) rotate(" + lean + " 0 46)");
+            p.a.setAttribute("opacity", ph ? "0" : "1");
+            p.b.setAttribute("opacity", ph ? "1" : "0");
+          });
+          var mm = missileAt(t);
+          // (economy-circle shows it from the launch; later scenes leave its opacity to their own tweens)
+          if (launching) els.fly[0].setAttribute("opacity", mm[3] ? "1" : "0");
+          els.fly.forEach(function (e) { e.setAttribute("transform", "translate(" + f(mm[0]) + "," + f(mm[1]) + ") rotate(" + mm[2].toFixed(1) + ") translate(0," + f(80 * cmS * 1.1) + ")"); });
+        }
+        return { L: L, svg: svg, pose: pose, pt: pt, T: T, FREEZE: FREEZE, S: S, Sinv: Sinv, printAt: printAt, AF: AF, A0: A0, GAP: GAP, NP: NP, NT: NT, PS: PS,
+          polAt: polAt, sp: sp, MP: MP, CM: CM, cmS: cmS, nukeAt: nukeAt, stalks: stalks, FAM: FAM, famS: famS, rig: { pol: polR, wm: KIT.rig(wmO) }, beltTop: beltTop, bed: bed, CP: CP, PRINT0: PRINT0, HOP: HOP };
+      }
+
+      var E = ecoCircle(ID + "-eco"), e = function (s) { return document.getElementById(ID + "-eco-" + s); };
+      q("bg").innerHTML = KIT.paper(ID);
+      q("art").innerHTML = KIT.svg(W, H, E.svg);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      // economy-circle's last frame, still moving for a moment, then frozen on the scratch for good
+      KIT.onTime(tl, D, function (t) { E.pose(Math.min(sc.start + t, E.FREEZE)); });
+
+      // "downside": the record scratch, and a two-frame jolt
+      var scratch = cue("downside");
+      tl.fromTo(q("cam"), { x: 0 }, { x: 7, duration: 0.034, repeat: 1, yoyo: true, ease: "none", immediateRender: false }, scratch);
+
+      // "killed": the drain, in three runs (the three zaps), clockwise from the press. Each station x-rays from its
+      // color drawing to its drained one (every human a skeleton in the same pose).
+      var KILL = cue("killed");
+      var runs = [["s1", "s2", "plq-0", "plq-1"], ["s3", "s4", "plq-2", "plq-3", "fly"], ["s5", "wheat", "fam", "plq-4", "track", "banner"]];
+      runs.forEach(function (run, i) {
+        run.forEach(function (id) { KIT.xray(tl, e(id), e(id + "-x"), KILL + i * 0.3); });
+      });
+
+      // "hundred": the ties stand up as headstones, one after another clockwise from the press (the ticks)
+      var HUN = cue("hundred"), A0 = E.L.ang.press;
+      for (var i = 0; i < E.NT; i++) {
+        var th = (i * 360) / E.NT, t = HUN + ((((th - A0) % 360) + 360) % 360) / 360 * 0.6, hs = e("hs-" + i);
+        tl.set(e("tie-" + i + "-x"), { opacity: 0 }, t);
+        tl.fromTo(hs, { opacity: 0, scaleY: 0, scaleX: 0.7, svgOrigin: "0 0" }, { opacity: 1, scaleY: 1, scaleX: 1, svgOrigin: "0 0", duration: 0.16, ease: "back.out(2.4)" }, t);
+      }
+      // "million": the death toll stamps into the middle of the ring. Then HOLD.
+      var N = E.L.num, MIL = cue("million");
+      tl.fromTo(e("num"), { opacity: 0, scale: 1.6, svgOrigin: N[0] + " " + (N[1] - N[2] * 0.35) }, { opacity: 1, scale: 1, svgOrigin: N[0] + " " + (N[1] - N[2] * 0.35), duration: 0.15, ease: "power3.in" }, MIL);
+      tl.fromTo(q("cam"), { y: 0 }, { y: 6, duration: 0.04, repeat: 1, yoyo: true, ease: "none", immediateRender: false }, MIL + 0.15);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,556 @@
+<template id="sane-insane-buzzer-template">
+  <!-- sane-insane-buzzer · Layer B (storyboards/part-04-institutionalize.md): the 1950s game show "SANE OR INSANE?".
+       "That:" → the grinning host (the Politician) taps card 1 with his star pointer: DEBUG ALL OF HUMAN BIOLOGY AT ONCE;
+       "sane." → the teal SANE lamp, confetti, APPLAUSE, the crowd's arms go up. "Give" → card 2: GIVE 1% FEWER PAPERS TO
+       MURDER-MACHINE BUILDERS, one war bill walks off its pile, and the patient (already in his straitjacket) beams: it is
+       his idea. "murder" → the Weapons Maker in the front row clutches his missile, sweating. "insane." → the host slaps
+       the buzzer (zap), INSANE flashes red, the lid of the contestant's pedestal drops open (clank), the patient hangs in
+       the air a beat and falls through (slide whistle), leaving his eyes behind for a blink; confetti, APPLAUSE, a wink. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #sane-insane-buzzer-cam, #sane-insane-buzzer-bg, #sane-insane-buzzer-art, #sane-insane-buzzer-pip, #sane-insane-buzzer-grain { position: absolute; inset: 0; }
+    #sane-insane-buzzer-flash { position: absolute; inset: -40px; background: #C8452E; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="sane-insane-buzzer" data-width="1920" data-height="1080" data-start="0" data-duration="7.74">
+    <div id="sane-insane-buzzer-cam">
+      <div id="sane-insane-buzzer-bg"></div>
+      <div id="sane-insane-buzzer-art"></div>
+      <!-- the INSANE verdict's red flash: over the set, under Wishonia's corner -->
+      <div id="sane-insane-buzzer-flash"></div>
+      <div id="sane-insane-buzzer-pip"></div>
+    </div>
+    <div id="sane-insane-buzzer-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "sane-insane-buzzer";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+
+      // ── The game show set. Copied into diagnostic-criteria.html, whose wall screen starts on this scene's last frame:
+      // keep the two copies the same. gsArt(pid) draws the set over the paper, every moving part with the id pid-<name>;
+      // gsEnd(pid) sets the last frame (both cards up, INSANE lit, the lid hanging open under the empty pedestal, the
+      // host's hand on the buzzer, the crowd's arms up). People are KIT.person units (feet at y 100), placed with scale s.
+      // Per shape: the floor line (feet), the stage top's band, the marquee [x, y, w, h, font size], the APPLAUSE sign
+      // [x, y, w, h, font size], the board [x, y, w, h], the two cards' top-left corners and scale (drawn 330 x 210), the
+      // lamps' top-left corners and [w, h, font size], the host [x, s], the patient [x, s] on his pedestal [cx, lid y, rx,
+      // ry], the confetti's x range, the spotlight can and the TV camera (16:9), and the audience: tiers of seats [x, FOLKS
+      // index or "wm"] behind a rail.
+      var GS = V
+        ? { floor: 1330, strip: [1317, 1346], marq: [60, 70, 660, 236, 96], sign: [80, 336, 300, 58, 36],
+            board: [50, 440, 980, 392], cards: [[75, 458], [565, 458]], ck: 4 / 3, lamps: [[150, 754], [640, 754]], lamp: [290, 56, 42],
+            host: [540, 2.5], pat: [230, 2.4], ped: [230, 1262, 100, 20], conf: [70, 1010],
+            tiers: [{ rail: 1458, s: 1.9, front: true, seats: [[408, 0], [556, 1], [708, "wm"], [858, 2], [990, 3]] }] }
+        : { floor: 862, strip: [849, 878], marq: [690, 34, 860, 128, 78], sign: [96, 318, 300, 60, 38], spot: [520, 58], cam: [1736, 352],
+            board: [716, 172, 820, 318], cards: [[742, 188], [1164, 188]], ck: 1.06, lamps: [[782, 428], [1204, 428]], lamp: [270, 52, 40],
+            host: [1140, 2.35], pat: [600, 2.35], ped: [600, 800, 98, 19], conf: [70, 1580],
+            tiers: [{ rail: 612, s: 1.35, seats: [[105, 4], [225, 5], [345, 6]] }, { rail: 782, s: 1.55, seats: [[115, 0], [240, 1], [372, "wm"]] }] };
+      var FOLKS = [{ tone: 1, outfit: "dress", hair: 1, color: 3 }, { tone: 3, outfit: "suit", color: 0 }, { tone: 0, outfit: "suit", color: 2 },
+        { tone: 2, outfit: "dress", hair: 1, color: 0 }, { tone: 2, outfit: "dress", hair: 1, color: 1 }, { tone: 0, outfit: "suit", color: 1 }, { tone: 3, outfit: "shirt", color: 2 }];
+      // THE PATIENT (the part's spine), looking at the host.
+      var PAT = { tone: 1, outfit: "shirt", color: 3, look: "right" };
+      var CAN = "#FBF6E6", INK = C.line;
+      function cp(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function n1(v) { return (Math.round(v * 10) / 10).toString(); }
+      function pd(pts) { return "M" + pts.map(function (p) { return n1(p[0]) + "," + n1(p[1]); }).join(" L") + " Z"; }
+      // Shapes drawn twice, a navy pass under the fill (KIT's humans' technique): touching shapes share one outline.
+      function sol(ds, fill, sw) {
+        return ds.map(function (d) { return '<path d="' + d + '" fill="' + INK + '" stroke="' + INK + '" stroke-width="' + (sw || 4.4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          ds.map(function (d) { return '<path d="' + d + '" fill="' + fill + '"/>'; }).join("");
+      }
+      function at(x, y, s, inner) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (s === 1 ? "" : " scale(" + s + ")") + '">' + inner + "</g>"; }
+      function txt(x, y, size, fam, fill, t, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" font-family="' + fam + '" font-weight="' + (fam === "Fraunces" ? 900 : 600) + '" font-size="' + size + '" fill="' + fill + '"' + (extra ? " " + extra : "") + ">" + t + "</text>";
+      }
+      function rays(x, y, w, h, gap, len, col) {
+        var d = "", i;
+        for (i = 0; i < 5; i++) {
+          var fx = x + (w * (i + 0.5)) / 5;
+          d += "M" + n1(fx) + "," + n1(y - gap) + " l0," + -len + " M" + n1(fx) + "," + n1(y + h + gap) + " l0," + len + " ";
+        }
+        d += "M" + n1(x - gap) + "," + n1(y + h / 2) + " l" + -len + ",0 M" + n1(x + w + gap) + "," + n1(y + h / 2) + " l" + len + ",0";
+        return '<path d="' + d + '" stroke="' + col + '" stroke-width="5" stroke-linecap="round"/>';
+      }
+      // A two-segment limb as one polygon with a mitred elbow (as KIT's humans' limbs).
+      function nrm(a, b) { var dx = b[0] - a[0], dy = b[1] - a[1], L = Math.sqrt(dx * dx + dy * dy) || 1; return [-dy / L, dx / L]; }
+      function limbPts(p0, p1, p2, w0, w1, w2) {
+        var nA = nrm(p0, p1), nB = nrm(p1, p2), sx = nA[0] + nB[0], sy = nA[1] + nB[1], qq = sx * sx + sy * sy;
+        function side(k) {
+          var mid = qq > 0.6 ? [[p1[0] + (k * sx * w1) / qq, p1[1] + (k * sy * w1) / qq]]
+            : [[p1[0] + (k * nA[0] * w1) / 2, p1[1] + (k * nA[1] * w1) / 2], [p1[0] + (k * nB[0] * w1) / 2, p1[1] + (k * nB[1] * w1) / 2]];
+          return [[p0[0] + (k * nA[0] * w0) / 2, p0[1] + (k * nA[1] * w0) / 2]].concat(mid, [[p2[0] + (k * nB[0] * w2) / 2, p2[1] + (k * nB[1] * w2) / 2]]);
+        }
+        return side(1).concat(side(-1).reverse());
+      }
+      function bar(a, b, w) { var n = nrm(a, b), h = w / 2; return [[a[0] + n[0] * h, a[1] + n[1] * h], [b[0] + n[0] * h, b[1] + n[1] * h], [b[0] - n[0] * h, b[1] - n[1] * h], [a[0] - n[0] * h, a[1] - n[1] * h]]; }
+
+      // The straitjacket (shared spec with orderly-door-slot): the arms crossed over the chest in long cream canvas
+      // sleeves, a canvas body over the shirt, two navy straps with mustard buckles, halftone dots on the right third.
+      // Drawn in the person's units for options o, between the body and the chest light (the arms are taken out).
+      function jacket(o, jid) {
+        var R = KIT.rig(o), T = R.shoulder[0][1] - 4, hy = R.hipY, w = 24 * R.build.tw;
+        var body = [[-w - 1.5, T + 1], [-w + 4, T - 3.5], [-6, T - 4.5], [6, T - 4.5], [w - 4, T - 3.5], [w + 1.5, T + 1], [w + 0.5, T + 30], [16, hy - 2], [16.5, hy + 3.5], [-16.5, hy + 3.5], [-16, hy - 2], [-w - 0.5, T + 30]];
+        var sl = limbPts([-w + 3, T + 2], [-w - 1.5, T + 30], [w + 2.5, T + 13], 11, 10.5, 9);
+        var sr = limbPts([w - 3, T + 2], [w + 1.5, T + 26], [-w - 2.5, T + 12], 11, 10.5, 9);
+        var cuffL = bar([w - 2, T + 14.6], [w + 2.5, T + 13], 9.4), cuffR = bar([-w + 2, T + 13.4], [-w - 2.5, T + 12], 9.4);
+        var strap = function (y, x0, x1) { return '<rect x="' + n1(x0) + '" y="' + n1(y) + '" width="' + n1(x1 - x0) + '" height="4.6" fill="' + INK + '"/>'; };
+        var buckle = function (x, y) { return '<rect x="' + n1(x) + '" y="' + n1(y - 1.4) + '" width="7" height="7.4" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="1.4"/><path d="M' + n1(x + 3.5) + "," + n1(y - 0.4) + " v5.4" + '" stroke="' + INK + '" stroke-width="1.2"/>'; };
+        var collar = [[-7.5, T - 5.5], [7.5, T - 5.5], [6.5, T - 1], [-6.5, T - 1]];
+        var all = [pd(body), pd(sl), pd(sr)];
+        var shade = '<defs><pattern id="' + jid + 'd" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="' + INK + '"/></pattern>' +
+          '<clipPath id="' + jid + 'c">' + all.map(function (d) { return '<path d="' + d + '"/>'; }).join("") + "</clipPath></defs>" +
+          '<rect x="' + n1(w / 3) + '" y="' + n1(T - 8) + '" width="40" height="80" fill="url(#' + jid + 'd)" opacity="0.28" clip-path="url(#' + jid + 'c)"/>';
+        return '<g class="jacket">' + sol([pd(body)], CAN) + sol([pd(collar)], "#E9E1CC", 3) + strap(T + 4.5, -w - 3, w + 3) + buckle(-3, T + 4.5) +
+          sol([pd(sl)], CAN) + sol([pd(cuffL)], INK, 2) + sol([pd(sr)], CAN) + sol([pd(cuffR)], INK, 2) + shade +
+          strap(hy - 9, -17.5, 17.5) + buckle(3, hy - 9) + "</g>";
+      }
+      // The patient in a mood: no arms (the jacket holds them), the jacket on; worried also looks down.
+      function patient(mood, jid) {
+        var o = cp(PAT, { mood: mood }), m = KIT.person(o).replace(/<g class="arm-[lr]">[\s\S]*?<\/g><\/g>/g, "");
+        m = m.replace('<circle class="chest-light"', jacket(o, jid) + '<circle class="chest-light"');
+        if (mood === "worried") m = m.replace(/(<circle class="pupil" cx="[-\d.]+" cy=")([-\d.]+)/g, function (x, a, b) { return a + (+b + 1.4).toFixed(1); });
+        return m;
+      }
+
+      // The host: the Politician, grinning, a star-tipped pointer in his left hand, his right hand by the buzzer. His
+      // arms only turn about the shoulders, so every pose is a rotation of the rest pose (ROT, in degrees).
+      var HS = GS.host[1], HX = GS.host[0], HY = GS.floor - 100 * HS;
+      var HOST = KIT.castOpts("politician", { arms: [[-14, -4], [-8, 22]], mood: "grin" }), HR = KIT.rig(HOST);
+      var SL = HR.shoulder[0], SR = HR.shoulder[1], HAND = HR.hand[0];
+      function units(p) { return [(p[0] - HX) / HS, (p[1] - HY) / HS]; }
+      function deg(v) { return (Math.atan2(v[1], v[0]) * 180) / Math.PI; }
+      function wrap180(a) { while (a > 180) a -= 360; while (a <= -180) a += 360; return a; }
+      // The pointer runs on from the forearm (4 degrees left of down); its tip touches each card's lower inside corner
+      // area, at one distance R from the shoulder (card 2's contact sets R, card 1's mirrors it about the shoulder).
+      var CK = GS.ck, cardY = GS.cards[0][1] + 184 * CK;
+      var c2 = units([GS.cards[1][0] + 46 * CK, cardY]), c1 = [2 * SL[0] - c2[0], c2[1]];
+      var R2 = Math.hypot(c2[0] - SL[0], c2[1] - SL[1]), dirS = [Math.sin((-4 * Math.PI) / 180), Math.cos((-4 * Math.PI) / 180)];
+      var hv = [HAND[0] - SL[0], HAND[1] - SL[1]], bq = dirS[0] * hv[0] + dirS[1] * hv[1], cq = hv[0] * hv[0] + hv[1] * hv[1] - R2 * R2;
+      var LS = -bq + Math.sqrt(bq * bq - cq), TIP = [HAND[0] + dirS[0] * LS, HAND[1] + dirS[1] * LS];
+      var rest = deg([TIP[0] - SL[0], TIP[1] - SL[1]]);
+      // The buzzer's dome top sits where the right hand lands when the arm turns 32 degrees from rest.
+      var SLAP = -32, rr = (SLAP * Math.PI) / 180, hr0 = [HR.hand[1][0] - SR[0], HR.hand[1][1] - SR[1]];
+      var BZ = [SR[0] + hr0[0] * Math.cos(rr) - hr0[1] * Math.sin(rr), SR[1] + hr0[0] * Math.sin(rr) + hr0[1] * Math.cos(rr)];
+      var ROT = { tap1: wrap180(deg([c1[0] - SL[0], c1[1] - SL[1]]) - rest), tap2: wrap180(deg([c2[0] - SL[0], c2[1] - SL[1]]) - rest), raise: -150, slap: SLAP };
+      var BUZZ = [HX + BZ[0] * HS, HY + BZ[1] * HS + 6 * HS];  // the dome's top (canvas), a hand's depth under the palm
+      // Walker: the war bill that walks off card 2's pile (its own units, half a card unit each): from the pile's top
+      // down to the card's bottom edge and along it to the right corner.
+      var WALK = [329, 96];
+      var FLAP = -3.2;
+
+      function card(pid, i, x, y) {
+        var base = '<rect x="0" y="0" width="330" height="210" rx="8" fill="' + CAN + '" stroke="' + INK + '" stroke-width="5"/>' +
+          '<rect x="10" y="10" width="310" height="190" rx="4" fill="none" stroke="' + C.orange + '" stroke-width="2.4"/>';
+        var back = '<rect x="0" y="0" width="330" height="210" rx="8" fill="' + C.orange + '" stroke="' + INK + '" stroke-width="5"/>' +
+          '<rect x="12" y="12" width="306" height="186" rx="5" fill="none" stroke="' + C.cream + '" stroke-width="3"/>' +
+          KIT.star(46, 44, 15, C.yellow) + KIT.star(286, 168, 13, C.yellow) + KIT.star(290, 42, 8, C.cream) + KIT.star(42, 170, 8, C.cream) +
+          txt(165, 160, 150, "Fraunces", INK, "?", 'text-anchor="middle"') +
+          '<circle cx="268" cy="104" r="22" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3"/>' + txt(268, 116, 32, "Fraunces", INK, String(i + 1), 'text-anchor="middle"');
+        var line = function (yy, size, t) { return txt(22, yy, size, "Oswald", INK, t, 'letter-spacing="0.5"'); };
+        var face;
+        if (i === 0) {
+          // a little human with a warning light on every part (biology, all of it, broken at once)
+          var lights = [[2, -64], [-9, -22], [11, -12], [-3, 2], [-14, 20], [9, 26], [-6, 58], [9, 74], [-20, -6], [21, 4]].map(function (p) {
+            return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="6" fill="' + C.war + '" stroke="' + INK + '" stroke-width="2.4"/>';
+          }).join("");
+          face = base + line(56, 30, "DEBUG ALL OF") + line(96, 30, "HUMAN BIOLOGY") + line(136, 30, "AT ONCE") +
+            at(266, 121, 0.75, KIT.person({ tone: 0, outfit: "shirt", color: 1, plain: true, mood: "worried", arms: [[-40, -30], [40, 30]] }) + '<g id="' + pid + '-lights">' + lights + "</g>");
+        } else {
+          var flat = function (bx, by) {
+            return at(bx, by, 0.62, '<rect x="-48" y="-25" width="96" height="50" rx="4" fill="' + C.money + '" stroke="' + INK + '" stroke-width="4"/>' +
+              '<rect x="-41" y="-18" width="82" height="36" rx="2" fill="none" stroke="' + C.moneyDark + '" stroke-width="2"/>' +
+              '<ellipse cx="0" cy="0" rx="13" ry="15" fill="' + C.paper + '" stroke="' + C.moneyDark + '" stroke-width="2"/>' + KIT.moneySeal("war", 31, 0, 10));
+          };
+          var pile = flat(78, 190) + flat(73, 178) + flat(80, 166) + flat(76, 154);
+          // the walker: two drawings (legs apart, legs crossed) swapped as it steps
+          var walker = at(76, 124, 0.62, '<g id="' + pid + '-walker"><g id="' + pid + '-walk-a">' + KIT.money("war", 0) + '</g><g id="' + pid + '-walk-b" opacity="0">' + KIT.money("war", 1) + "</g></g>");
+          face = base + line(44, 25, "GIVE 1% FEWER PAPERS") + line(74, 25, "TO MURDER-MACHINE") + line(104, 25, "BUILDERS") + pile + walker;
+        }
+        return at(x, y, CK, '<g id="' + pid + "-card" + i + '"><g id="' + pid + "-card" + i + '-back">' + back + '</g><g id="' + pid + "-card" + i + '-face" opacity="0">' + face + "</g></g>");
+      }
+      function lamp(pid, i, x, y) {
+        var L = GS.lamp, w = L[0], h = L[1], t = i ? "INSANE" : "SANE", col = i ? C.war : C.med;
+        var box = function (fill, tc, rule) {
+          return '<rect x="0" y="0" width="' + w + '" height="' + h + '" rx="12" fill="' + fill + '" stroke="' + INK + '" stroke-width="5"/>' +
+            '<rect x="7" y="7" width="' + (w - 14) + '" height="' + (h - 14) + '" rx="7" fill="none" stroke="' + rule + '" stroke-width="2"/>' +
+            txt(w / 2, h / 2 + L[2] * 0.36, L[2], "Fraunces", tc, t, 'text-anchor="middle" letter-spacing="2"');
+        };
+        return at(x, y, 1, box(C.navy, "#3E4A68", "#3E4A68") + '<g id="' + pid + "-lamp" + i + '-on" opacity="0">' + rays(0, 0, w, h, 10, 16, C.yellow) + box(col, C.cream, C.cream) + "</g>");
+      }
+      function marquee(pid) {
+        var M = GS.marq, x = M[0], y = M[1], w = M[2], h = M[3], fs = M[4], i, n;
+        var bulbsOff = "", bulbsA = "", bulbsB = "", pts = [], step = V ? 44 : 42, inset = 15;
+        var nx = Math.round((w - 2 * inset) / step), ny = Math.round((h - 2 * inset) / step);
+        for (i = 0; i < nx; i++) pts.push([x + inset + ((w - 2 * inset) * i) / nx, y + inset]);
+        for (i = 0; i < ny; i++) pts.push([x + w - inset, y + inset + ((h - 2 * inset) * i) / ny]);
+        for (i = nx; i > 0; i--) pts.push([x + inset + ((w - 2 * inset) * i) / nx, y + h - inset]);
+        for (i = ny; i > 0; i--) pts.push([x + inset, y + inset + ((h - 2 * inset) * i) / ny]);
+        pts.forEach(function (p, k) {
+          bulbsOff += '<circle cx="' + n1(p[0]) + '" cy="' + n1(p[1]) + '" r="7.5" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="2.5"/>';
+          var lit = '<circle cx="' + n1(p[0]) + '" cy="' + n1(p[1]) + '" r="11" fill="' + C.yellow + '" opacity="0.45"/><circle cx="' + n1(p[0]) + '" cy="' + n1(p[1]) + '" r="7.5" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.5"/>';
+          if (k % 2) bulbsB += lit; else bulbsA += lit;
+        });
+        var span = function (t, col) { return '<tspan fill="' + col + '">' + t + "</tspan>"; };
+        var words = V ? [span("SANE", "#1F6E68") + span(" OR", INK), span("INSANE", C.war) + span("?", INK)]
+          : [span("SANE", "#1F6E68") + span(" OR ", INK) + span("INSANE", C.war) + span("?", INK)];
+        n = words.length;
+        var lines = words.map(function (t, k) {
+          var by = y + h / 2 + fs * 0.34 + (k - (n - 1) / 2) * fs * 1.0;
+          return '<text x="' + n1(x + w / 2) + '" y="' + n1(by) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + fs + '">' + t + "</text>";
+        }).join("");
+        return '<rect x="' + (x + 8) + '" y="' + (y + 10) + '" width="' + w + '" height="' + h + '" rx="16" fill="' + INK + '" opacity="0.85"/>' +
+          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="16" fill="' + CAN + '" stroke="' + INK + '" stroke-width="7"/>' +
+          '<rect x="' + (x + 30) + '" y="' + (y + 30) + '" width="' + (w - 60) + '" height="' + (h - 60) + '" rx="8" fill="none" stroke="' + C.war + '" stroke-width="2.5"/>' +
+          bulbsOff + '<g id="' + pid + '-bulbs-a">' + bulbsA + '</g><g id="' + pid + '-bulbs-b" opacity="0">' + bulbsB + "</g>" + lines;
+      }
+      function applause(pid) {
+        var S = GS.sign, x = S[0], y = S[1], w = S[2], h = S[3];
+        var box = function (fill, tc) {
+          return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="10" fill="' + fill + '" stroke="' + INK + '" stroke-width="5"/>' +
+            txt(x + w / 2, y + h / 2 + S[4] * 0.36, S[4], "Oswald", tc, "APPLAUSE", 'text-anchor="middle" letter-spacing="4"');
+        };
+        return '<path d="M' + (x + 30) + ",44 V" + y + " M" + (x + w - 30) + ",44 V" + y + '" stroke="' + INK + '" stroke-width="3"/>' +
+          box(C.navy, "#3E4A68") + '<g id="' + pid + '-applause-on" opacity="0">' + rays(x, y, w, h, 9, 15, C.war) + box(C.war, C.cream) + "</g>";
+      }
+      // An audience member (person units): drawing a claps, drawing b throws its arms up. The Weapons Maker cradles his
+      // missile (a) and clutches it, worried, turned away from the stage (b).
+      function folk(pid, j, f, look) {
+        var o = f === "wm" ? KIT.castOpts("weaponsMaker", { look: look }) : cp(FOLKS[f], { look: look, mood: "smile", arms: [[30, 145], [-30, -145]] });
+        var ob = f === "wm" ? KIT.castOpts("weaponsMaker", { look: look === "right" ? "left" : "right", mood: "worried", arms: [[14, 106], [-14, -106]], hold: "missile" }) : cp(FOLKS[f], { look: look, mood: "eager", arms: [[-140, -166], [140, 166]] });
+        var sweat = f === "wm" ? '<g id="' + pid + '-sweat" opacity="0">' + [[-16, -48], [20, -52]].map(function (p, k) {
+          return '<g transform="translate(' + p[0] + "," + p[1] + ')"><g id="' + pid + "-drop" + k + '"><path d="M0,-6 Q5,1 0,5 Q-5,1 0,-6 Z" fill="#CDEBE8" stroke="' + INK + '" stroke-width="1.6"/></g></g>';
+        }).join("") + "</g>" : "";
+        return { o: o, svg: '<g id="' + pid + "-folk" + j + '-a">' + KIT.person(o) + '</g><g id="' + pid + "-folk" + j + '-b" opacity="0">' + KIT.person(ob) + "</g>" + sweat };
+      }
+      function crowd(pid) {
+        var out = "", j = 0;
+        GS.tiers.forEach(function (tier, ti) {
+          var s = tier.s, x0 = V ? 44 : 50, x1 = V ? W - 44 : 440, row = "";
+          tier.seats.forEach(function (seat) {
+            var look = V ? (seat[0] < 540 ? "right" : "left") : "right";
+            var fk = folk(pid, j, seat[1], look), hip = KIT.rig(fk.o).hipY;
+            row += at(seat[0], tier.rail - (hip - 7) * s, s, '<g id="' + pid + "-folk" + j + '">' + fk.svg + "</g>");
+            j++;
+          });
+          // the front row stays between the rail's ends (the last seat's skirt pokes out past the frame otherwise)
+          out += tier.front ? '<defs><clipPath id="' + pid + "-row" + ti + '"><rect x="' + x0 + '" y="-400" width="' + (x1 - x0) + '" height="' + (H + 400) + '"/></clipPath></defs>' +
+            '<g clip-path="url(#' + pid + "-row" + ti + ')">' + row + "</g>" : row;
+          var top = tier.rail, bot = tier.front ? H - 44 : top + 50;
+          out += '<rect x="' + x0 + '" y="' + top + '" width="' + (x1 - x0) + '" height="' + (bot - top) + '" fill="' + (tier.front ? C.rust : C.orange) + '" stroke="' + INK + '" stroke-width="5"/>' +
+            '<path d="M' + x0 + "," + (top + 13) + " H" + x1 + '" stroke="' + C.cream + '" stroke-width="4"/>';
+          for (var sx = x0 + 60; sx < x1 - 20; sx += 130) out += KIT.star(sx, top + (tier.front ? 120 : 33), 9, C.cream);
+          if (!tier.front) out += '<path d="M' + (x0 + 20) + "," + (top + 50) + " V" + GS.floor + " M" + (x1 - 20) + "," + (top + 50) + " V" + GS.floor + '" stroke="' + INK + '" stroke-width="6"/>';
+        });
+        return out;
+      }
+      function gsArt(pid) {
+        var B = GS.board, P = GS.ped, s = GS.pat[1], st = GS.strip;
+        // the studio floor's top, with planks, and the stage front
+        var planks = "";
+        for (var px = 60; px < W - 40; px += 70) planks += "M" + px + "," + st[0] + " l-14," + (st[1] - st[0]) + " ";
+        var stageTop = '<rect x="44" y="' + st[0] + '" width="' + (W - 88) + '" height="' + (st[1] - st[0]) + '" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<path d="' + planks + '" stroke="' + INK + '" stroke-width="2" opacity="0.45"/>';
+        var apron = '<rect x="44" y="' + st[1] + '" width="' + (W - 88) + '" height="' + (H - 44 - st[1]) + '" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="5"/>' +
+          '<path d="M44,' + (st[1] + 14) + " H" + (W - 44) + '" stroke="' + C.yellow + '" stroke-width="4"/>';
+        for (var ax = 110; ax < W - 60; ax += 150) apron += KIT.star(ax, st[1] + 44, 10, C.cream);
+        // the board on its two posts, the cards and the lamps
+        var board = '<path d="M' + (B[0] + 34) + "," + (B[1] + B[3]) + " V" + GS.floor + " M" + (B[0] + B[2] - 34) + "," + (B[1] + B[3]) + " V" + GS.floor + '" stroke="' + INK + '" stroke-width="9"/>' +
+          '<rect x="' + B[0] + '" y="' + B[1] + '" width="' + B[2] + '" height="' + B[3] + '" rx="12" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="6"/>' +
+          '<rect x="' + (B[0] + 8) + '" y="' + (B[1] + 8) + '" width="' + (B[2] - 16) + '" height="' + (B[3] - 16) + '" rx="7" fill="none" stroke="' + C.orange + '" stroke-width="2.4"/>';
+        var cards = card(pid, 0, GS.cards[0][0], GS.cards[0][1]) + card(pid, 1, GS.cards[1][0], GS.cards[1][1]);
+        var lamps = lamp(pid, 0, GS.lamps[0][0], GS.lamps[0][1]) + lamp(pid, 1, GS.lamps[1][0], GS.lamps[1][1]);
+        // the buzzer: a red dome on a cream housing, on a column
+        var bx = BUZZ[0], by = BUZZ[1], dr = 34 * HS / 2.1;
+        var buzzer = '<path d="M' + n1(bx) + "," + n1(by + dr) + " V" + GS.floor + '" stroke="' + INK + '" stroke-width="' + n1(16 * HS / 2.1) + '"/>' +
+          '<path d="M' + n1(bx) + "," + n1(by + dr) + " V" + GS.floor + '" stroke="' + C.cream + '" stroke-width="' + n1(8 * HS / 2.1) + '"/>' +
+          '<rect x="' + n1(bx - dr * 1.6) + '" y="' + (GS.floor - 10) + '" width="' + n1(dr * 3.2) + '" height="14" rx="4" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<rect x="' + n1(bx - dr * 1.25) + '" y="' + n1(by + dr * 0.72) + '" width="' + n1(dr * 2.5) + '" height="' + n1(dr * 0.62) + '" rx="5" fill="' + CAN + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<g id="' + pid + '-dome"><path d="M' + n1(bx - dr) + "," + n1(by + dr * 0.76) + " A" + n1(dr) + "," + n1(dr * 0.8) + " 0 0 1 " + n1(bx + dr) + "," + n1(by + dr * 0.76) + ' Z" fill="' + C.war + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<path d="M' + n1(bx - dr * 0.62) + "," + n1(by + dr * 0.42) + " Q" + n1(bx - dr * 0.5) + "," + n1(by + dr * 0.08) + " " + n1(bx - dr * 0.08) + "," + n1(by) + '" fill="none" stroke="' + C.cream + '" stroke-width="4" stroke-linecap="round"/></g>';
+        var zap = '<g id="' + pid + '-zap" opacity="0">' + [[-1, -0.6], [1, -0.6], [-1.15, 0.25], [1.15, 0.25], [0, -1.2]].map(function (d) {
+          var x0 = bx + d[0] * dr * 1.2, y0 = by + dr * 0.5 + d[1] * dr * 1.2, ux = d[0] * 14, uy = d[1] * 14;
+          var zz = "M" + n1(x0) + "," + n1(y0) + " l" + n1(ux + uy * 0.5) + "," + n1(uy - ux * 0.5) + " l" + n1(-uy * 0.6) + "," + n1(ux * 0.6) + " l" + n1(ux + uy * 0.4) + "," + n1(uy - ux * 0.4);
+          return '<path d="' + zz + '" fill="none" stroke="' + INK + '" stroke-width="8" stroke-linejoin="miter" stroke-linecap="round"/><path d="' + zz + '" fill="none" stroke="' + C.yellow + '" stroke-width="4" stroke-linejoin="miter" stroke-linecap="round"/>';
+        }).join("") + "</g>";
+        // the host, his pointer drawn in his left arm's group so it turns with it
+        var pointer = '<path d="M' + n1(HAND[0] - dirS[0] * 7) + "," + n1(HAND[1] - dirS[1] * 7) + " L" + n1(TIP[0]) + "," + n1(TIP[1]) + '" stroke="' + INK + '" stroke-width="3.6" stroke-linecap="round"/>' +
+          '<path d="M' + n1(HAND[0] - dirS[0] * 6) + "," + n1(HAND[1] - dirS[1] * 6) + " L" + n1(TIP[0]) + "," + n1(TIP[1]) + '" stroke="' + C.cream + '" stroke-width="1.6" stroke-linecap="round"/>' +
+          KIT.star(TIP[0], TIP[1], 9, INK) + KIT.star(TIP[0], TIP[1], 6.5, C.yellow);
+        var host = at(HX, HY, HS, '<g id="' + pid + '-host">' + KIT.person(HOST).replace('<g class="arm-l">', '<g class="arm-l">' + pointer) + "</g>");
+        // the contestant's pedestal: the lid (the trapdoor) on top, the hole under it, the drum's face, the open flap
+        var cx = P[0], ly = P[1], rx = P[2], ry = P[3], bot = st[1] + 2;
+        var hole = '<ellipse id="' + pid + '-hole" cx="' + cx + '" cy="' + ly + '" rx="' + (rx - 7) + '" ry="' + (ry - 3.5) + '" fill="' + C.ink + '" opacity="0"/>';
+        var lidArt = function (id, op) {
+          return '<g id="' + pid + "-" + id + '"' + (op ? ' opacity="0"' : "") + '><ellipse cx="' + cx + '" cy="' + ly + '" rx="' + rx + '" ry="' + ry + '" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="4.5"/>' +
+            '<ellipse cx="' + cx + '" cy="' + ly + '" rx="' + (rx - 16) + '" ry="' + (ry - 6) + '" fill="none" stroke="' + INK + '" stroke-width="2" stroke-dasharray="7 6"/>' +
+            '<path d="M' + (cx - 22) + "," + (ly - 5) + " L" + (cx + 22) + "," + (ly + 5) + " M" + (cx + 22) + "," + (ly - 5) + " L" + (cx - 22) + "," + (ly + 5) + '" stroke="' + C.war + '" stroke-width="4" stroke-linecap="round"/></g>';
+        };
+        var drum = "M" + (cx - rx) + "," + ly + " A" + rx + "," + ry + " 0 0 0 " + (cx + rx) + "," + ly + " L" + (cx + rx) + "," + bot + " A" + rx + "," + ry + " 0 0 1 " + (cx - rx) + "," + bot + " Z";
+        var band = ly + (bot - ly) * 0.36, bandH = (bot - ly) * 0.34;
+        var pedFace = '<path d="' + drum + '" fill="' + C.peri + '" stroke="' + INK + '" stroke-width="5"/>' +
+          '<rect x="' + (cx - rx + 4) + '" y="' + n1(band) + '" width="' + (2 * rx - 8) + '" height="' + n1(bandH) + '" fill="' + CAN + '" stroke="' + INK + '" stroke-width="3"/>' +
+          txt(cx, band + bandH / 2 + bandH * 0.27, n1(bandH * 0.74), "Oswald", INK, "CONTESTANT", 'text-anchor="middle" letter-spacing="2"') +
+          KIT.star(cx - rx + 16, band + bandH / 2, 7, C.war) + KIT.star(cx + rx - 16, band + bandH / 2, 7, C.war);
+        // the patient: three moods (a: flat, b: eager, c: worried), and the eyes he leaves behind when he falls
+        var px = GS.pat[0], py = ly - 100 * s;
+        var pat = at(px, py, s, '<g id="' + pid + '-pat"><g id="' + pid + '-pat-bob"><g id="' + pid + '-pat-a">' + patient("flat", pid + "-jka") + '</g><g id="' + pid + '-pat-b" opacity="0">' + patient("eager", pid + "-jkb") +
+          '</g><g id="' + pid + '-pat-c" opacity="0">' + patient("worried", pid + "-jkc") + "</g></g></g>");
+        var PR = KIT.rig(PAT), hsP = PR.hs, eyesArt = [[-2.5, 6.2, 3.7], [10.8, 4.6, 3.4]].map(function (e) {
+          var ex = PR.head[0] + e[0] * hsP * 1.3, ey = PR.head[1] - 4 * hsP, k = hsP * 2.1, rxe = e[1] * k, rye = e[2] * k;
+          return '<path d="M' + n1(ex - rxe) + "," + n1(ey) + " Q" + n1(ex) + "," + n1(ey - rye * 1.9) + " " + n1(ex + rxe) + "," + n1(ey) + " Q" + n1(ex) + "," + n1(ey + rye * 1.3) + " " + n1(ex - rxe) + "," + n1(ey) + ' Z" fill="#FFFFFF" stroke="' + INK + '" stroke-width="1.4"/>' +
+            '<circle cx="' + n1(ex + 0.6) + '" cy="' + n1(ey + 1.2) + '" r="' + n1(2 * k) + '" fill="' + INK + '"/>';
+        }).join("");
+        var eyes = at(px, py, s, '<g id="' + pid + '-eyes" opacity="0">' + eyesArt + "</g>");
+        // he falls behind the pedestal and the stage front: clip him (and his eyes) to above the stage front
+        var clip = '<defs><clipPath id="' + pid + '-patclip"><rect x="0" y="-400" width="' + W + '" height="' + (st[1] + 400) + '"/></clipPath></defs>';
+        var flap = '<g id="' + pid + '-flapw" opacity="0">' + lidArt("flap", false) + "</g>";
+        // 16:9: a studio spotlight hangs from the ceiling and keeps its beam on the pedestal, whoever is on it
+        var spot = "";
+        if (GS.spot) {
+          var sx = GS.spot[0], sy = GS.spot[1], ang = Math.atan2(ly - sy, cx - sx), ca = Math.cos(ang), sa = Math.sin(ang);
+          var mouth = [sx + ca * 40, sy + sa * 40], nx = -sa, ny = ca;
+          spot = '<path d="M' + n1(mouth[0] + nx * 26) + "," + n1(mouth[1] + ny * 26) + " L" + (cx + rx + 6) + "," + ly + " L" + (cx - rx - 6) + "," + ly + " L" + n1(mouth[0] - nx * 26) + "," + n1(mouth[1] - ny * 26) + ' Z" fill="#FFF3C4" opacity="0.85"/>' +
+            '<ellipse cx="' + cx + '" cy="' + ly + '" rx="' + (rx + 10) + '" ry="' + (ry + 4) + '" fill="#FFF3C4"/>' +
+            '<path d="M' + sx + ",44 V" + (sy - 14) + '" stroke="' + INK + '" stroke-width="4"/>' +
+            '<g transform="translate(' + sx + "," + sy + ") rotate(" + n1((ang * 180) / Math.PI) + ')">' +
+            '<path d="M-22,-20 L30,-26 L42,-32 L42,32 L30,26 L-22,20 Z" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="5" stroke-linejoin="miter"/>' +
+            '<path d="M-8,-21 L-8,21 M8,-23 L8,23" stroke="' + C.orange + '" stroke-width="2.4"/>' +
+            '<rect x="40" y="-30" width="7" height="60" fill="#FFF8DC" stroke="' + INK + '" stroke-width="3"/></g>' +
+            '<path d="M' + (sx - 18) + "," + (sy - 12) + " L" + sx + "," + (sy - 26) + " L" + (sx + 18) + "," + (sy - 12) + '" fill="none" stroke="' + INK + '" stroke-width="4"/>';
+        }
+        // 16:9: the studio's TV camera, on air (its red tally light lit), pointed at the stage
+        var tv = "";
+        if (GS.cam) {
+          var vx = GS.cam[0], vy = GS.cam[1];
+          tv = '<path d="M' + (vx + 20) + "," + (vy + 70) + " V" + GS.floor + '" stroke="' + INK + '" stroke-width="16"/><path d="M' + (vx + 20) + "," + (vy + 70) + " V" + GS.floor + '" stroke="' + C.peri + '" stroke-width="8"/>' +
+            '<path d="M' + (vx + 60) + "," + (vy + 60) + " C" + (vx + 120) + "," + (vy + 160) + " " + (vx + 40) + "," + (vy + 250) + " " + (vx + 110) + "," + (vy + 330) + '" fill="none" stroke="' + INK + '" stroke-width="5"/>' +
+            '<rect x="' + (vx - 70) + '" y="' + (vy - 62) + '" width="170" height="126" rx="14" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="6"/>' +
+            '<path d="M' + (vx - 58) + "," + (vy + 52) + " H" + (vx + 88) + '" stroke="' + C.orange + '" stroke-width="3"/>' +
+            '<path d="M' + (vx - 20) + "," + (vy - 62) + " L" + (vx - 8) + "," + (vy - 92) + " L" + (vx + 74) + "," + (vy - 92) + " L" + (vx + 86) + "," + (vy - 62) + ' Z" fill="' + C.navy + '" stroke="' + INK + '" stroke-width="5" stroke-linejoin="miter"/>' +
+            '<circle cx="' + (vx - 78) + '" cy="' + vy + '" r="52" fill="' + CAN + '" stroke="' + INK + '" stroke-width="5"/>' +
+            [[-1, -0.9, 18], [-1.25, 0.35, 14], [-0.45, 0.6, 12]].map(function (l) {
+              var lx = vx - 78 + l[0] * 26, ly2 = vy + l[1] * 26;
+              return '<rect x="' + n1(lx - 34) + '" y="' + n1(ly2 - l[2]) + '" width="34" height="' + 2 * l[2] + '" fill="' + INK + '"/><circle cx="' + n1(lx - 34) + '" cy="' + n1(ly2) + '" r="' + l[2] + '" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="4"/>' +
+                '<circle cx="' + n1(lx - 38) + '" cy="' + n1(ly2 - l[2] * 0.35) + '" r="' + n1(l[2] * 0.3) + '" fill="' + C.cream + '"/>';
+            }).join("") +
+            '<circle cx="' + (vx + 76) + '" cy="' + (vy - 104) + '" r="16" fill="' + C.war + '" opacity="0.4"/><circle cx="' + (vx + 76) + '" cy="' + (vy - 104) + '" r="10" fill="' + C.war + '" stroke="' + INK + '" stroke-width="3"/>' +
+            '<path d="M' + (vx + 76) + "," + (vy - 94) + " V" + (vy - 92) + '" stroke="' + INK + '" stroke-width="5"/>';
+        }
+        // after the fall: speed lines over the hole and a puff of dust out of it
+        var speed = '<g id="' + pid + '-speed" opacity="0">' + [-0.32, 0, 0.32].map(function (f) {
+          return '<path d="M' + n1(cx + f * rx) + "," + n1(ly - 50 * s / 2.1) + " V" + n1(ly - (260 - Math.abs(f) * 150) * s / 2.1) + '" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>';
+        }).join("") + "</g>";
+        var puff = at(cx, ly - 6, 1, '<g id="' + pid + '-puff" opacity="0">' + [[-44, -6, 22], [42, -8, 20], [-14, -26, 28], [18, -20, 24], [0, -2, 20]].map(function (c) {
+          return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + CAN + '" stroke="' + INK + '" stroke-width="3.5"/>';
+        }).join("") + "</g>");
+        // confetti: two bursts (on "sane." and on "insane."), each piece an outer place and an inner falling group
+        var conf = "", rc = KIT.rng(4411), cols = [C.orange, C.yellow, C.med, C.war, C.peri, CAN];
+        for (var b = 0; b < 2; b++) {
+          for (var k = 0; k < 44; k++) {
+            var fx = GS.conf[0] + rc() * (GS.conf[1] - GS.conf[0]), fy = -30 - rc() * 160, cw = 9 + rc() * 7, ch = 13 + rc() * 8;
+            conf += '<g transform="translate(' + n1(fx) + "," + n1(fy) + ')"><g class="' + pid + "-conf" + b + '" data-r="' + n1(rc() * 4) + '"><rect x="' + n1(-cw / 2) + '" y="' + n1(-ch / 2) + '" width="' + n1(cw) + '" height="' + n1(ch) + '" fill="' + cols[k % 6] + '" stroke="' + INK + '" stroke-width="1.6"/></g></g>';
+          }
+        }
+        var front = GS.tiers[0].front;
+        return stageTop + tv + board + cards + lamps + applause(pid) + marquee(pid) + (front ? "" : crowd(pid)) + buzzer + host + zap +
+          spot + lidArt("lid", false) + hole + clip + '<g clip-path="url(#' + pid + '-patclip)">' + pat + eyes + "</g>" + pedFace + apron + flap + speed + puff + (front ? crowd(pid) : "") + conf;
+      }
+      // The last frame (for diagnostic-criteria's wall screen): sets every moving part where this scene leaves it.
+      function gsEnd(pid) {
+        var g = function (s) { return document.getElementById(pid + "-" + s); };
+        gsap.set([g("card0-back"), g("card1-back"), g("lamp0-on"), g("pat"), g("lid"), g("bulbs-b")], { opacity: 0 });
+        gsap.set([g("card0-face"), g("card1-face"), g("lamp1-on"), g("applause-on"), g("hole"), g("flapw"), g("bulbs-a")], { opacity: 1 });
+        gsap.set(g("flap"), { scaleY: FLAP, svgOrigin: GS.ped[0] + " " + (GS.ped[1] + GS.ped[3]) });
+        gsap.set(g("walker"), { x: WALK[0], y: WALK[1] });
+        gsap.set(document.querySelectorAll("." + pid + "-conf0, ." + pid + "-conf1"), { opacity: 0 });
+        gsap.set(g("host").querySelector(".arm-r"), { rotation: ROT.slap, svgOrigin: SR[0] + " " + SR[1] });
+        var j = 0;
+        GS.tiers.forEach(function (tier) {
+          tier.seats.forEach(function (seat) {
+            if (seat[1] !== "wm") { gsap.set(g("folk" + j + "-a"), { opacity: 0 }); gsap.set(g("folk" + j + "-b"), { opacity: 1 }); }
+            j++;
+          });
+        });
+      }
+      // ── end of the shared part ──
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("art").innerHTML = KIT.svg(W, H, gsArt(ID));
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var g = function (s) { return q(s); };
+      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, t); };
+      var hide = function (el, t) { tl.fromTo(el, { opacity: 1 }, { opacity: 0, duration: 0.01, immediateRender: false }, t); };
+      var swap = function (a, b, t) { hide(a, t); show(b, t); };
+      var armL = g("host").querySelector(".arm-l"), armR = g("host").querySelector(".arm-r");
+      // pivots, set once while everything is untransformed
+      gsap.set(armL, { svgOrigin: SL[0] + " " + SL[1] });
+      gsap.set(armR, { svgOrigin: SR[0] + " " + SR[1] });
+      gsap.set([g("card0"), g("card1")], { svgOrigin: "165 105" });
+      gsap.set(g("flap"), { svgOrigin: GS.ped[0] + " " + (GS.ped[1] + GS.ped[3]) });
+      gsap.set(g("dome"), { svgOrigin: BUZZ[0] + " " + (BUZZ[1] + 34 * HS / 2.1 * 0.76) });
+      gsap.set(g("puff"), { svgOrigin: "0 0" });
+
+      // The marquee's bulbs chase all through (two sets, swapped every 0.2 s).
+      for (var tb = 0.2, n = 0; tb < D - 0.05; tb += 0.2, n++) {
+        tl.set(g("bulbs-a"), { opacity: n % 2 ? 1 : 0 }, tb);
+        tl.set(g("bulbs-b"), { opacity: n % 2 ? 0 : 1 }, tb);
+      }
+      tl.set(g("bulbs-a"), { opacity: 1 }, D - 0.02);
+      tl.set(g("bulbs-b"), { opacity: 0 }, D - 0.02);
+
+      // A card flip: it narrows to its edge, turns over, and opens on its face (a small overshoot).
+      function flip(i, t) {
+        var c = g("card" + i);
+        tl.fromTo(c, { scaleX: 1 }, { scaleX: 0, duration: 0.12, ease: "power2.in", immediateRender: false }, t);
+        swap(g("card" + i + "-back"), g("card" + i + "-face"), t + 0.12);
+        tl.to(c, { scaleX: 1, duration: 0.2, ease: "back.out(2.2)" }, t + 0.12);
+      }
+      // "That:": the host swings his pointer up to card 1 (the whoosh) and taps it over; then back to rest.
+      var t0 = cue("That:");
+      tl.fromTo(armL, { rotation: 0 }, { rotation: ROT.tap1, duration: 0.2, ease: "power2.out" }, t0 + 0.02);
+      tl.to(armL, { rotation: ROT.tap1 - 5, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.inOut" }, t0 + 0.22);
+      flip(0, t0 + 0.26);
+      tl.to(armL, { rotation: 0, duration: 0.3, ease: "power2.inOut" }, t0 + 0.6);
+
+      // "sane.": the teal SANE lamp (the ding), confetti, the APPLAUSE sign, and the crowd throws its arms up.
+      var tS = cue("sane.");
+      [[0, 1], [0.1, 0], [0.16, 1], [0.24, 0], [0.3, 1]].forEach(function (k) { tl.set(g("lamp0-on"), { opacity: k[1] }, tS + k[0]); });
+      tl.set(g("lamp0-on"), { opacity: 0 }, cue("Give") - 0.1);
+      function applaud(t, t1) {
+        for (var a = 0; t + a < t1; a += 0.3) {
+          tl.set(g("applause-on"), { opacity: 1 }, t + a);
+          if (t + a + 0.18 < t1) tl.set(g("applause-on"), { opacity: 0 }, t + a + 0.18);
+        }
+      }
+      applaud(tS + 0.05, cue("Give") + 0.6);
+      tl.set(g("applause-on"), { opacity: 0 }, cue("Give") + 0.62);
+      function confetti(b, t, fall, spread) {
+        var pcs = document.querySelectorAll("." + ID + "-conf" + b), floor = GS.floor - 20;
+        Array.prototype.forEach.call(pcs, function (el, k) {
+          var y0 = +el.parentNode.getAttribute("transform").match(/,([-\d.]+)\)/)[1], dt = (+el.getAttribute("data-r") / 4) * spread, dur = fall * (0.85 + ((k * 37) % 11) / 30);
+          var dx = ((k * 53) % 21) - 10, spin = (((k * 29) % 13) - 6) * 70;
+          tl.fromTo(el, { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: dx * 4, y: floor - y0, rotation: spin, duration: dur, ease: "power1.in", immediateRender: false }, t + dt);
+          tl.fromTo(el, { opacity: 1 }, { opacity: 0, duration: 0.2, immediateRender: false }, t + dt + dur - 0.2);
+        });
+        gsap.set(pcs, { opacity: 0 });
+      }
+      confetti(0, tS + 0.02, 1.7, 0.6);
+
+      // The crowd: arms up a beat after a verdict, then (after "sane.") back to clapping. The Weapons Maker keeps
+      // cradling his missile; on "murder" he clutches it, sweating, until the patient is gone.
+      var folks = [], j = 0;
+      GS.tiers.forEach(function (tier) { tier.seats.forEach(function (seat) { folks.push({ j: j, wm: seat[1] === "wm", o: seat[1] }); j++; }); });
+      folks.forEach(function (f) {
+        var a = g("folk" + f.j + "-a"), b = g("folk" + f.j + "-b"), w = g("folk" + f.j);
+        if (f.wm) return;
+        swap(a, b, tS + 0.12);
+        swap(b, a, cue("Give") - 0.05);
+        swap(a, b, cue("insane.") + 0.5);
+        tl.fromTo(w, { y: 0 }, { y: -8, duration: 0.14, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, tS + 0.12 + f.j * 0.03);
+        tl.fromTo(w, { y: 0 }, { y: -8, duration: 0.14, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, cue("insane.") + 0.5 + f.j * 0.03);
+        // clapping: the hands come apart and back together
+        var arms = a.querySelectorAll(".arm-l, .arm-r"), r = KIT.rig(cp(FOLKS[f.o], { arms: [[30, 145], [-30, -145]] }));
+        gsap.set(arms[0], { svgOrigin: r.shoulder[0][0] + " " + r.shoulder[0][1] });
+        gsap.set(arms[1], { svgOrigin: r.shoulder[1][0] + " " + r.shoulder[1][1] });
+        var tc = cue("Give");
+        tl.fromTo(arms[0], { rotation: 0 }, { rotation: 14, duration: 0.11, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }, tc + f.j * 0.02);
+        tl.fromTo(arms[1], { rotation: 0 }, { rotation: -14, duration: 0.11, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }, tc + f.j * 0.02);
+      });
+
+      // "Give": the pointer swings up to card 2 and taps it over (the whoosh); the patient beams and bounces: his idea.
+      var tG = cue("Give");
+      tl.to(armL, { rotation: ROT.tap2, duration: 0.24, ease: "power2.out" }, tG - 0.28);
+      tl.to(armL, { rotation: ROT.tap2 + 5, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.inOut" }, tG - 0.04);
+      flip(1, tG);
+      tl.to(armL, { rotation: 0, duration: 0.32, ease: "power2.inOut" }, tG + 0.45);
+      swap(g("pat-a"), g("pat-b"), tG + 0.3);
+      tl.fromTo(g("pat-bob"), { y: 0 }, { y: -9, duration: 0.13, yoyo: true, repeat: 7, ease: "sine.out", immediateRender: false }, tG + 0.32);
+      // "one percent fewer papers": the top war bill hops off its pile and walks away along the card, step by step.
+      var tw = cue("one");
+      tl.fromTo(g("walker"), { x: 0, y: 0 }, { x: 34, y: -40, duration: 0.18, ease: "power2.out", immediateRender: false }, tw + 0.1);
+      tl.to(g("walker"), { x: 74, y: WALK[1], duration: 0.22, ease: "power2.in" }, tw + 0.28);
+      for (var st = 0; st < 8; st++) {
+        var ts = tw + 0.5 + st * 0.16;
+        tl.to(g("walker"), { x: 74 + ((WALK[0] - 74) * (st + 1)) / 8, duration: 0.16, ease: "none" }, ts);
+        tl.set(g("walk-a"), { opacity: st % 2 ? 1 : 0 }, ts);
+        tl.set(g("walk-b"), { opacity: st % 2 ? 0 : 1 }, ts);
+      }
+      tl.set(g("walk-a"), { opacity: 1 }, tw + 0.5 + 8 * 0.16);
+      tl.set(g("walk-b"), { opacity: 0 }, tw + 0.5 + 8 * 0.16);
+
+      // "murder": in the front row the Weapons Maker clutches his missile tighter, sweating, until the patient drops.
+      var wm = folks.filter(function (f) { return f.wm; })[0], tM = cue("murder"), tI = cue("insane.");
+      var wmA = g("folk" + wm.j + "-a"), wmB = g("folk" + wm.j + "-b");
+      swap(wmA, wmB, tM);
+      tl.fromTo(g("folk" + wm.j), { x: 0 }, { x: 3, duration: 0.05, yoyo: true, repeat: 11, ease: "none", immediateRender: false }, tM);
+      show(g("sweat"), tM + 0.15);
+      [0, 1].forEach(function (k) {
+        tl.fromTo(g("drop" + k), { x: 0, y: 0, opacity: 1 }, { x: k ? 16 : -16, y: 22, opacity: 0, duration: 0.5, ease: "power1.in", immediateRender: false }, tM + 0.15 + k * 0.35);
+        tl.fromTo(g("drop" + k), { x: 0, y: 0, opacity: 1 }, { x: k ? 16 : -16, y: 22, opacity: 0, duration: 0.5, ease: "power1.in", immediateRender: false }, tM + 0.95 + k * 0.3);
+      });
+      hide(g("sweat"), tI + 0.5);
+      swap(wmB, wmA, tI + 0.5);
+
+      // "insane.": the host's hand goes up (before the word), then slaps the buzzer on it (the zap): the dome squashes,
+      // sparks fly, INSANE flashes red and stays lit, the frame flashes red.
+      tl.to(armR, { rotation: ROT.raise, duration: 0.3, ease: "back.out(1.6)" }, tI - 0.62);
+      tl.to(armR, { rotation: ROT.slap, duration: 0.11, ease: "power3.in" }, tI - 0.11);
+      tl.fromTo(g("dome"), { scaleY: 1, scaleX: 1 }, { scaleY: 0.55, scaleX: 1.15, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tI);
+      tl.fromTo(g("host"), { y: 0 }, { y: 4, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, tI);
+      [[0, 1], [0.06, 0], [0.12, 1], [0.18, 0], [0.24, 1]].forEach(function (k) { tl.set(g("zap"), { opacity: k[1] }, tI + k[0]); });
+      tl.set(g("zap"), { opacity: 0 }, tI + 0.36);
+      [[0, 1], [0.08, 0], [0.16, 1], [0.24, 0], [0.32, 1]].forEach(function (k) { tl.set(g("lamp1-on"), { opacity: k[1] }, tI + k[0]); });
+      tl.fromTo(q("flash"), { opacity: 0 }, { opacity: 0.24, duration: 0.03, immediateRender: false }, tI);
+      tl.to(q("flash"), { opacity: 0, duration: 0.22, ease: "power1.in" }, tI + 0.05);
+      // The patient startles (worried), then the lid drops open under him (the clank): he hangs in the air a beat,
+      // looking down, and falls (the slide whistle). His eyes stay up for a blink, then follow him down.
+      swap(g("pat-b"), g("pat-c"), tI + 0.04);
+      tl.fromTo(g("pat-bob"), { y: 0 }, { y: -16, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tI + 0.04);
+      var tL = tI + 0.3, tF = tI + 0.45;
+      hide(g("lid"), tL);
+      show(g("hole"), tL);
+      show(g("flapw"), tL);
+      tl.fromTo(g("flap"), { scaleY: 1 }, { scaleY: FLAP, duration: 0.12, ease: "power2.in", immediateRender: false }, tL);
+      tl.to(g("flap"), { keyframes: [{ scaleY: FLAP * 0.86, duration: 0.1 }, { scaleY: FLAP * 1.05, duration: 0.1 }, { scaleY: FLAP * 0.96, duration: 0.1 }, { scaleY: FLAP, duration: 0.12 }] }, tL + 0.12);
+      tl.fromTo(g("pat"), { y: 0 }, { y: 420, duration: 0.3, ease: "power2.in", immediateRender: false }, tF);
+      hide(g("pat"), tF + 0.3);
+      var pupils = g("pat-c").querySelectorAll(".eye");
+      tl.set(pupils, { opacity: 0 }, tF);
+      show(g("eyes"), tF);
+      var PRg = KIT.rig(PAT);
+      gsap.set(g("eyes"), { svgOrigin: n1(PRg.head[0] + 4 * PRg.hs) + " " + n1(PRg.head[1] - 4 * PRg.hs) });
+      tl.fromTo(g("eyes"), { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, tF + 0.18);
+      tl.fromTo(g("eyes"), { y: 0 }, { y: 360, duration: 0.14, ease: "power2.in", immediateRender: false }, tF + 0.34);
+      hide(g("eyes"), tF + 0.48);
+      show(g("speed"), tF + 0.17);
+      hide(g("speed"), tF + 0.42);
+      // dust puffs out of the hole
+      tl.fromTo(g("puff"), { opacity: 0, scale: 0.3, y: 0 }, { opacity: 1, scale: 1, y: -18, duration: 0.2, ease: "power2.out", immediateRender: false }, tF + 0.42);
+      tl.to(g("puff"), { opacity: 0, scale: 1.3, y: -40, duration: 0.35, ease: "power1.in" }, tF + 0.66);
+
+      // The show celebrates this one too: confetti, APPLAUSE, the crowd's arms up; the host winks at the camera.
+      confetti(1, tI + 0.48, 0.75, 0.15);
+      applaud(tI + 0.5, D - 0.3);
+      tl.set(g("applause-on"), { opacity: 1 }, D - 0.3);
+      var wink = g("host").querySelectorAll(".eye")[1];
+      gsap.set(wink, { svgOrigin: "10.8 -4" });
+      tl.fromTo(wink, { scaleY: 1 }, { scaleY: 0.1, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, D - 0.62);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

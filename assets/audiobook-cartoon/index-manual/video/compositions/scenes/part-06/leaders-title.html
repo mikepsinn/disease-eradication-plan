@@ -1,0 +1,167 @@
+<template id="leaders-title-template">
+  <!-- leaders-title · Layer A title card (storyboards/part-06-leaders-arent-the-problem.md), built by KIT.titleScene
+       (assets/js/props/title.js). The heading slams in one word per spoken word; on "Leaders" a small Politician pops
+       up in the empty PROBLEM slot, grinning and waving his bill; as the word falls its shadow grows round his feet,
+       and on "Problem." PROBLEM drops out of the sky and flattens him like a pancake (splat): only his grin and his
+       blinking eyes show under the word. A beat later his hand pokes out from under it, still clutching the bill,
+       and waves weakly (squeak). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="leaders-title" data-width="1920" data-height="1080" data-start="0" data-duration="3">
+    <div id="leaders-title-cam">
+      <div id="leaders-title-bg"></div>
+      <div id="leaders-title-sun"></div>
+      <div id="leaders-title-back"></div>
+      <div id="leaders-title-words"></div>
+      <div id="leaders-title-art"></div>
+    </div>
+    <div id="leaders-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "leaders-title",
+      lines: [["WHY", "YOUR", "LEADERS"], ["AREN'T", "THE", "PROBLEM"]],
+      // 9:16: four lines, so the heading can be bigger (LEADERS AREN'T on one line would set it at 106 px) and
+      // PROBLEM gets a line of its own to land on.
+      linesTall: [["WHY", "YOUR"], ["LEADERS"], ["AREN'T", "THE"], ["PROBLEM"]],
+      // PROBLEM does not slam: it is visible from 0.12 s before "Problem." and the gag drops it out of the sky so it
+      // lands on the word (the splat).
+      spoken: ["Why", "Your", "Leaders", "Aren't", "the", { cue: "Problem.", show: "PROBLEM", how: "fade", dur: 0.02, offset: -0.12 }],
+      gag: function (c) {
+        var C = c.C, ink = C.line, tl = c.tl, V = c.V, id = c.id, W = c.W, H = c.H;
+        var K = KIT;
+        var P = function (x, y) { return x.toFixed(1) + "," + y.toFixed(1); };
+        var poly = function (pts, fill, sw) {
+          return '<path d="M' + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + ' Z" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + (sw || 3) + '" stroke-linejoin="miter" stroke-miterlimit="8"/>';
+        };
+        var svgLayer = function (inner) {
+          var d = document.createElement("div");
+          d.style.cssText = "position:absolute;left:0;top:0;width:" + W + "px;height:" + H + "px;";
+          d.innerHTML = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + " " + H + '" style="position:absolute;inset:0;overflow:visible">' + inner + "</svg>";
+          return d;
+        };
+
+        var pw = c.word("PROBLEM"), b = pw.box, base = b.y + b.h;
+        var tLead = c.cue("Leaders"), tPop = tLead + 0.2, tProb = c.cue("Problem."), tWeak = c.after("Problem.");
+        var tDrop = tProb - 0.12;
+
+        // ── The Politician in the empty slot ─────────────────────────────
+        // He stands a little below the letters' baseline (FL), so his pancake ends up just under the word.
+        // As big as fits between the line above and his floor, so his head stays clear of the letters.
+        var li = c.word("PROBLEM").line, above = c.layout.lines[li - 1], FL = base + 46, px = b.x + b.w * 0.42;
+        var S = Math.min(1.1, (FL - (above.y + above.h) - 14) / 186);
+        var PO = KIT.castOpts("politician");
+        var R = KIT.rig(PO);
+        var pol = '<g transform="translate(' + P(px, FL - 100 * S) + ") scale(" + S + ')"><g id="' + id + '-pol">' +
+          '<ellipse id="' + id + '-shadow" cx="0" cy="101" rx="34" ry="7" fill="' + C.ink + '" opacity="0.35"/>' +
+          '<g id="' + id + '-pol-body">' + KIT.cast("politician") + "</g></g></g>";
+
+        // The pancake: a flat strip of navy suit and skin, 1.6 times as wide as he was, its top tucked under the
+        // word's baseline; below the letters only his toothy grin and two blinking eyes show. Canvas px.
+        var pk = 96, py0 = base - 10, py1 = FL + 4, gy = base + 33, gw = 36, gh = 14, gx = px + 8;
+        var teeth = "";
+        for (var i = 1; i < 6; i++) teeth += "M" + P(gx - gw + (2 * gw * i) / 6, gy - gh * 0.45) + " V" + (gy + gh * 0.5).toFixed(1) + " ";
+        var eyeY = base + 15;
+        var pan = '<g id="' + id + '-pancake" opacity="0">' +
+          poly([[px - pk, py1], [px - pk + 8, py0], [px + pk - 8, py0], [px + pk, py1]], "#24304D", 3) +
+          '<path d="M' + P(px - pk + 10, py1 - 3) + " H" + (px + pk - 10).toFixed(1) + '" stroke="' + C.orange + '" stroke-width="2"/>' +
+          poly([[px - 34, py1 - 2], [px - 30, py0 + 2], [px + 56, py0 + 2], [px + 62, py1 - 2]], "#D9B48F", 2.6) +
+          // the grin: a wide row of teeth
+          poly([[gx - gw, gy - gh * 0.5], [gx + gw, gy - gh * 0.6], [gx + gw * 0.82, gy + gh * 0.5], [gx - gw * 0.82, gy + gh * 0.5]], "#FBF6E6", 2.2) +
+          '<path d="' + teeth + "M" + P(gx - gw * 0.9, gy) + " H" + (gx + gw * 0.9).toFixed(1) + '" stroke="' + ink + '" stroke-width="1.4" fill="none"/>' +
+          '<g id="' + id + '-pan-eyes">' + [-1, 1].map(function (k) {
+            var ex = gx + k * 22;
+            return '<ellipse cx="' + ex.toFixed(1) + '" cy="' + eyeY.toFixed(1) + '" rx="9" ry="6" fill="#FFFFFF" stroke="' + ink + '" stroke-width="2"/>' +
+              '<circle cx="' + (ex + 2).toFixed(1) + '" cy="' + eyeY.toFixed(1) + '" r="3" fill="' + ink + '"/>';
+          }).join("") + "</g>" +
+          // his shoes stick out at the left end, and his very wide red tie lies flat out of the right end
+          poly([[px - pk - 2, py1], [px - pk - 26, py1 + 1], [px - pk - 22, py1 - 8], [px - pk - 2, py1 - 9]], ink, 2) +
+          poly([[px + pk - 4, py1 - 15], [px + pk + 10, py1 - 17], [px + pk + 56, py1 - 7], [px + pk + 62, py1 + 1], [px + pk + 50, py1 + 3], [px + pk - 4, py1 - 2]], C.war, 2.4) +
+          '<path d="M' + P(px + pk + 4, py1 - 13) + " L" + P(px + pk + 52, py1 - 4) + '" stroke="' + C.orange + '" stroke-width="1.8" fill="none"/>' + "</g>";
+
+        // Dust puffs on the floor at both ends, and splat lines on the impact.
+        var puffs = [-1, 1].map(function (k) {
+          var x = k < 0 ? px - pk - 10 : b.x + b.w + 6;
+          return '<g transform="translate(' + P(x, FL + 2) + ')"><g class="' + id + '-puff">' +
+            '<circle cx="' + k * 8 + '" cy="-8" r="14" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>' +
+            '<circle cx="' + k * 26 + '" cy="-4" r="10" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>' +
+            '<circle cx="' + k * 40 + '" cy="-12" r="7" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/></g></g>';
+        }).join("");
+        var splat = '<g id="' + id + '-splat" opacity="0">' + [[-1, 0.2], [-1, 0.75], [1, 0.2], [1, 0.75]].map(function (s) {
+          var x = s[0] < 0 ? b.x - 22 : b.x + b.w + 18, y = b.y + b.h * s[1];
+          return '<path d="M' + P(x, y) + " l" + (s[0] * 34) + "," + (s[1] < 0.5 ? -16 : 10) + '" stroke="' + C.cream + '" stroke-width="7" stroke-linecap="round"/>';
+        }).join("") + "</g>";
+
+        // The weak arm: a navy sleeve, a white cuff and a hand still clutching his bill, poking out from under the
+        // word's right end. Drawn around its root (0, 0), pointing up; it pivots there.
+        var hs = V ? 2.0 : 2.3;
+        var arm = '<g transform="translate(' + P(b.x + b.w - 6, FL - 4) + ") scale(" + hs + ')"><g id="' + id + '-weak" opacity="0">' +
+          poly([[-7, 4], [7, 2], [16, -22], [14, -40], [5, -40], [5, -24]], "#24304D", 2.2) +
+          poly([[4, -39], [15, -39], [15, -46], [4, -46]], "#FBF6E6", 1.8) +
+          poly([[5, -46], [14, -46], [16, -55], [12, -61], [7, -60], [4, -53]], "#D9B48F", 2) +
+          '<g transform="translate(13,-60) rotate(-24)"><rect x="-13" y="-8" width="26" height="14" fill="' + C.money + '" stroke="' + ink + '" stroke-width="1.6"/>' +
+          '<ellipse cx="0" cy="-1" rx="4" ry="4.6" fill="' + C.cream + '" stroke="' + C.moneyDark + '" stroke-width="1.1"/></g></g></g>';
+
+        c.back.appendChild(svgLayer(pol + pan));
+        c.art.appendChild(svgLayer(puffs + splat + arm));
+
+        var polG = document.getElementById(id + "-pol"), body = document.getElementById(id + "-pol-body"), shadow = document.getElementById(id + "-shadow");
+        var waveArm = body.querySelector(".arm-r");
+        gsap.set(polG, { svgOrigin: "0 100" });
+        gsap.set(shadow, { svgOrigin: "0 101" });
+        gsap.set(waveArm, { svgOrigin: R.shoulder[1][0].toFixed(1) + " " + R.shoulder[1][1].toFixed(1) });
+
+        // "Leaders" + 0.2: he pops up out of the floor of the slot (pop), grinning, and waves his bill.
+        tl.fromTo(polG, { scaleY: 0, scaleX: 0.6, opacity: 0 }, { scaleY: 1, scaleX: 1, opacity: 1, duration: 0.24, ease: "back.out(2.6)" }, tPop);
+        tl.fromTo(waveArm, { rotation: 0 }, { rotation: -18, duration: 0.14, ease: "sine.inOut", repeat: 3, yoyo: true }, tPop + 0.2);
+        // The falling word's shadow grows round his feet.
+        tl.fromTo(shadow, { scaleX: 0.8, scaleY: 0.8, opacity: 0.25 }, { scaleX: 3.4, scaleY: 1.6, opacity: 0.55, duration: tProb - (tPop + 0.3), ease: "power2.in" }, tPop + 0.3);
+
+        // "Problem.": the word drops out of the sky in 0.12 s and lands on him (splat).
+        var el = pw.el;
+        tl.fromTo(el, { y: -(b.y + b.h + 260) }, { y: 0, duration: tProb - tDrop, ease: "power3.in" }, tDrop);
+        // the landing: the word squashes and springs back, the heading shakes, he goes flat
+        tl.fromTo(el, { scaleY: 1, scaleX: 1, transformOrigin: "50% 100%" }, { scaleY: 0.82, scaleX: 1.06, transformOrigin: "50% 100%", duration: 0.05, ease: "power2.out", immediateRender: false }, tProb);
+        tl.to(el, { scaleY: 1, scaleX: 1, transformOrigin: "50% 100%", duration: 0.28, ease: "back.out(3)" }, tProb + 0.05);
+        tl.fromTo(c.wordsEl, { y: 0 }, { y: 7, duration: 0.035, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, tProb);
+        tl.to(polG, { scaleY: 0.12, scaleX: 1.3, duration: 0.04, ease: "power2.in" }, tProb - 0.02);
+        tl.set(polG, { opacity: 0 }, tProb + 0.03);
+        tl.set(document.getElementById(id + "-pancake"), { opacity: 1 }, tProb + 0.02);
+        tl.set(document.getElementById(id + "-splat"), { opacity: 1 }, tProb);
+        tl.set(document.getElementById(id + "-splat"), { opacity: 0 }, tProb + 0.24);
+        document.querySelectorAll("." + id + "-puff").forEach(function (p, i) {
+          tl.fromTo(p, { opacity: 0, scale: 0.3, x: 0, svgOrigin: "0 0" }, { opacity: 1, scale: 1, x: (i ? 1 : -1) * 26, svgOrigin: "0 0", duration: 0.2, ease: "power2.out" }, tProb);
+          tl.to(p, { opacity: 0, scale: 1.4, x: (i ? 1 : -1) * 46, svgOrigin: "0 0", duration: 0.35, ease: "power1.in" }, tProb + 0.2);
+        });
+        // his eyes blink on the pancake, twice
+        var eyes = document.getElementById(id + "-pan-eyes");
+        var ey = eyeY.toFixed(1);
+        [0.3, 0.95].forEach(function (d) {
+          tl.fromTo(eyes, { scaleY: 1, svgOrigin: "0 " + ey }, { scaleY: 0.1, svgOrigin: "0 " + ey, duration: 0.05, yoyo: true, repeat: 1, ease: "none", immediateRender: false }, tProb + d);
+        });
+
+        // after "Problem.": his hand pokes out from under the word and waves weakly (squeak), still holding the bill.
+        var weak = document.getElementById(id + "-weak");
+        gsap.set(weak, { svgOrigin: "0 0" });
+        var t0 = tWeak - 0.2;
+        tl.set(weak, { opacity: 1 }, t0);
+        tl.fromTo(weak, { rotation: 80, scaleY: 0.2 }, { rotation: 4, scaleY: 1, duration: 0.16, ease: "power2.out", immediateRender: false }, t0);
+        // two limp waves (the squeak lands on the second), then it droops
+        var tEnd = [[20, 0.11], [-2, 0.11], [16, 0.11], [2, 0.11]].reduce(function (t, k) {
+          tl.to(weak, { rotation: k[0], duration: k[1], ease: "sine.inOut" }, t);
+          return t + k[1];
+        }, t0 + 0.16);
+        tl.to(weak, { rotation: 40, duration: Math.max(0.05, c.D - 0.02 - tEnd), ease: "power2.in" }, tEnd);
+      },
+    });
+  </script>
+</template>

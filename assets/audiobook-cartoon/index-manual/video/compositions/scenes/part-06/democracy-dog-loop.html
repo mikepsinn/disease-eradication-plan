@@ -1,0 +1,784 @@
+<template id="democracy-dog-loop-template">
+  <!-- democracy-dog-loop · Layer B (storyboards/part-06-leaders-arent-the-problem.md): a pen draws an empty ring; the
+       psychopath's horns float in and settle on it. Four stations pop up as they are read: the Weapons Maker steps out
+       of his missile-chimney factory and lobs a brick of war papers to the Politician, who pockets it; he fans papers
+       to three voters, who get dollar eyes and vote; the ballots run round the ring into the POWER tap, which spins
+       open and gushes papers up into the factory; the factory belches a bigger brick that buries him, and his grinning
+       head pops out to hug it. On "circular," the pile jumps onto the track and the ring turns; the Democracy Dog drops
+       in, laps it, shows its DEMOCRACY tag, and the camera pushes in on its tail of war papers and tiny grinning
+       skeletons, which rattle. It bites its own tail, yelps, and runs faster. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #democracy-dog-loop-cam, #democracy-dog-loop-zoom, #democracy-dog-loop-bg, #democracy-dog-loop-art, #democracy-dog-loop-pip, #democracy-dog-loop-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="democracy-dog-loop" data-width="1920" data-height="1080" data-start="0" data-duration="28.68">
+    <div id="democracy-dog-loop-cam">
+      <div id="democracy-dog-loop-zoom">
+        <div id="democracy-dog-loop-bg"></div>
+        <div id="democracy-dog-loop-art"></div>
+      </div>
+      <div id="democracy-dog-loop-pip"></div>
+    </div>
+    <div id="democracy-dog-loop-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "democracy-dog-loop";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, INK = C.line;
+
+      // ── LOOP ──────────────────────────────────────────────────────────────────────────────────────────────
+      // LOOP: copied in loop-is-evil, redirect-math, no-rational-beneficiary, red-blue-ties, better-loop-teal-tail; change all.
+      // The part's spine: a ring drawn on the paper (two navy circles 26 apart with 8 arrowheads) and four stations
+      // just outside it: WEAPONS MAKERS at the top (the missile-chimney factory, the Weapons Maker in its door),
+      // POLITICIANS on the left (the Politician behind a podium), VOTES at the bottom (three voters and a ballot box)
+      // and POWER on the right (a brass tap with a cross handle: ballots go in at its foot, papers pour out of its
+      // spout). The ring's power cord runs to a socket at its bottom left. The papers and the dog run counterclockwise.
+      // Angles are clock degrees: 0 at 12 o'clock, 90 at 3, increasing clockwise, so counterclockwise is a falling
+      // angle. loopAt(a, r) is the point at angle a, radius r. Things that run inside the ring (the dog, the track
+      // papers) stand with their feet toward the outside: loopIn(a, r) is their transform ("down" = outward, local +x
+      // = counterclockwise).
+      // loopArt(id, state) returns the markup; state "empty" (the track only), "war", "cut" (war with a gap at
+      // LOOP_G.cut, between POWER and the factory) or "better" (the lab and the Scientist instead of the factory, teal
+      // arrows, no horns, the smiling face). Every part is in the markup, hidden parts at opacity 0 for the scene to
+      // show. Ids (all prefixed "<id>-"):
+      //   ring (the two circles: ring-in, ring-out, each pathLength 1 for a draw-on), spin (turn it about the centre
+      //   with the transform attribute "rotate(deg cx cy)", negative = counterclockwise) holding arrow-0..7 (each
+      //   with arrow-fill-k and arrow-glow-k) and paper-0..7 (track papers; paper-k-in to pop them; .legs to scramble);
+      //   horns (horn-l, horn-r: the outer groups are placed, horn-l-in / horn-r-in tween); face (brows, eyes, grin,
+      //   each a group with an "-in" child to tween; .pupil in the eyes); grounds; cord, plug (plug-in), socket;
+      //   st-weapons: factory (factory-in), wm (wm-in, poses inside); st-politicians: podium, pol (pol-in);
+      //   st-votes: voter-0..2 (voter-k-in), box (box-in); st-power: tap (tap-in), tap-wheel, tap-spout;
+      //   sign-weapons, sign-politicians, sign-votes, sign-power (each with -lit, the plate lit mustard).
+      //   People are in "<key>-in" groups as <g data-pose="base">; a scene adds more poses beside it (loopPose).
+      // loopDog(id, state) returns the Democracy Dog for the ring: <id>-dog (place it with loopIn), <id>-dog-sq
+      // (squash it about its feet, "0 0"), the tag <id>-dog-tag (pivot "0 0"), .tail-charm groups (pivot "0 0") on
+      // its tail: tiny grinning skeletons ("war", "cut") or dead disease blobs ("better").
+      var LOOP_G = V
+        ? { cx: 540, cy: 880, r: 280, w: 26, k: 1.08, cut: 62,
+            factory: [540, 586, 0.66], wm: [540, 586, 0.9], pol: [130, 1010, 1.0], podium: [214, 1010, 0.9],
+            voters: [[322, 1440], [612, 1440], [728, 1440]], vs: 1.12, box: [466, 1440, 1.6],
+            tap: [950, 780, 0.85], socket: [196, 1440], cordA: 222,
+            signs: { weapons: [900, 586, 0.62, 70], politicians: [130, 1010, 0.58, 345], votes: [905, 1440, 0.62, 160], power: [962, 1112, 0.56, 50] },
+            grounds: { weapons: [[380, 700, 586]], politicians: [[44, 252, 1010]], votes: [[160, 1000, 1440]], power: [[858, 1036, 1022], [888, 1036, 1112]] },
+            horn: 1.45, dog: 1.02, paper: 0.42 }
+        : { cx: 800, cy: 500, r: 260, w: 26, k: 1, cut: 62,
+            factory: [800, 226, 0.48], wm: [800, 226, 0.74], pol: [395, 600, 0.95], podium: [470, 600, 0.9],
+            voters: [[698, 895], [900, 895], [985, 895]], vs: 0.7, box: [800, 895, 1.0],
+            tap: [1190, 410, 1.0], socket: [600, 895], cordA: 222,
+            signs: { weapons: [1196, 226, 0.62, 64], politicians: [150, 600, 0.6, 70], votes: [1095, 895, 0.6, 50], power: [1350, 676, 0.6, 100] },
+            grounds: { weapons: [[590, 1010, 226], [1120, 1270, 226]], politicians: [[96, 540, 600]], votes: [[560, 1140, 895]], power: [[1080, 1450, 676]] },
+            horn: 1.35, dog: 0.95, paper: 0.4 };
+      function loopAt(a, r) {
+        var t = (a * Math.PI) / 180;
+        return [LOOP_G.cx + r * Math.sin(t), LOOP_G.cy - r * Math.cos(t)];
+      }
+      function loopIn(a, r, s) {
+        var p = loopAt(a, r);
+        return "translate(" + p[0].toFixed(1) + "," + p[1].toFixed(1) + ") rotate(" + (a + 180).toFixed(2) + ")" + (s ? " scale(" + s + ")" : "");
+      }
+      function loopPerson(id, key, at, s, opts) {
+        return '<g id="' + id + "-" + key + '" transform="translate(' + at[0] + "," + (at[1] - 100 * s).toFixed(1) + ") scale(" + s + ')"><g id="' + id + "-" + key + '-in">' +
+          '<g data-pose="base">' + KIT.person(opts) + "</g></g></g>";
+      }
+      // Add poses to a person drawn by loopPerson: list [[name, opts], ...], each hidden.
+      function loopPose(id, key, list) {
+        var el = document.getElementById(id + "-" + key + "-in");
+        list.forEach(function (p) { el.insertAdjacentHTML("beforeend", '<g data-pose="' + p[0] + '" opacity="0">' + KIT.person(p[1]) + "</g>"); });
+      }
+      var LOOP_PEOPLE = {
+        voters: [{ tone: 0, outfit: "shirt", color: 1 }, { tone: 2, hair: 1, outfit: "dress", color: 3 }, { tone: 3, outfit: "suit", color: 0 }],
+      };
+      function loopArt(id, state) {
+        var G = LOOP_G, k = G.k, cx = G.cx, cy = G.cy, r = G.r, rin = r - G.w / 2, rout = r + G.w / 2, better = state === "better", empty = state === "empty";
+        var P = function (x, y) { return x.toFixed(1) + "," + y.toFixed(1); };
+        var poly = function (pts) { return "M" + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + " Z"; };
+        var solid = function (d, fill, w) { return '<path d="' + d + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + (w || 4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; };
+        var I = function (s) { return id + "-" + s; };
+        var out = "";
+        // the grounds the stations stand on, with a few tufts (each in its station's group: ground-<station>)
+        var ground = function (key) { return '<g id="' + I("ground-" + key) + '">' + G.grounds[key].map(function (g) {
+          var tufts = [0.2, 0.55, 0.85].map(function (f) {
+            var x = g[0] + f * (g[1] - g[0]);
+            return "M" + x + "," + g[2] + " l-5,-12 M" + (x + 5) + "," + g[2] + " l2,-15 M" + (x + 10) + "," + g[2] + " l7,-10";
+          }).join(" ");
+          return '<path d="M' + g[0] + "," + g[2] + " H" + g[1] + '" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/><path d="' + tufts + '" stroke="' + INK + '" stroke-width="3" stroke-linecap="round" fill="none"/>';
+        }).join("") + "</g>"; };
+        // the power cord, from the ring's bottom left to the socket (the scene may redraw the path: loopCord)
+        var A = loopAt(G.cordA, rout - 2), S = G.socket;
+        out += '<g id="' + I("plugset") + '"><g id="' + I("socket") + '"><g transform="translate(' + S[0] + "," + S[1] + ") scale(" + k + ')">' +
+          solid("M-20,0 V-52 H20 V0 Z", "#FBF6E6", 4) + '<rect x="-12" y="-44" width="24" height="34" rx="4" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="2.5"/>' +
+          '<path d="M-5,-34 v9 M5,-34 v9" stroke="' + INK + '" stroke-width="3.4" stroke-linecap="butt"/><circle cx="0" cy="-17" r="2.6" fill="' + INK + '"/></g></g>';
+        out += '<path id="' + I("cord") + '" d="" fill="none" stroke="' + INK + '" stroke-width="' + (5 * k).toFixed(1) + '" stroke-linecap="round"/>' +
+          '<circle cx="' + A[0].toFixed(1) + '" cy="' + A[1].toFixed(1) + '" r="' + (7 * k).toFixed(1) + '" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="3"/>';
+        out += '<g id="' + I("plug") + '"><g transform="scale(' + k + ')"><g id="' + I("plug-in") + '">' +
+          '<path d="M-5,-16 V-26 M5,-16 V-26" stroke="' + C.yellow + '" stroke-width="3.4"/>' + solid("M-11,-16 H11 V6 L6,12 H-6 L-11,6 Z", C.slate, 3) +
+          '<path d="M-7,-10 H7" stroke="' + C.orange + '" stroke-width="1.6"/></g></g></g></g>';
+        // the track: two circles (drawn from 12 o'clock), the turning group with the arrows and the track papers
+        var arrowCol = better ? C.med : C.war;
+        out += '<g id="' + I("ring") + '">' + [["ring-in", rin], ["ring-out", rout]].map(function (c) {
+          return '<circle id="' + I(c[0]) + '" cx="' + cx + '" cy="' + cy + '" r="' + c[1] + '" fill="none" stroke="' + INK + '" stroke-width="4" pathLength="1" stroke-dasharray="1 0" transform="rotate(-90 ' + cx + " " + cy + ')"/>';
+        }).join("") + "</g>";
+        var spin = "";
+        for (var i = 0; i < 8; i++) {
+          var a = 22.5 + 45 * i;
+          if (state === "cut" && Math.abs(((a - G.cut + 540) % 360) - 180) < 16) continue;
+          spin += '<g id="' + I("arrow-" + i) + '" transform="' + loopIn(a, r, k) + '">' +
+            '<path id="' + I("arrow-glow-" + i) + '" d="M14,0 L-9,-12 L-3,0 L-9,12 Z" fill="' + C.war + '" stroke="' + C.war + '" stroke-width="12" stroke-linejoin="round" opacity="0"/>' +
+            '<path id="' + I("arrow-fill-" + i) + '" d="M14,0 L-9,-12 L-3,0 L-9,12 Z" fill="' + (empty ? C.cream : arrowCol) + '" stroke="' + INK + '" stroke-width="2.6" stroke-linejoin="miter"/></g>';
+        }
+        for (var j = 0; j < 8; j++) {
+          spin += '<g id="' + I("paper-" + j) + '" transform="' + loopIn(45 * j, r - 2, G.paper * k) + '"><g id="' + I("paper-" + j + "-in") + '"' + (empty || better ? ' opacity="0"' : "") + ">" +
+            '<g transform="translate(0,-14)">' + KIT.money(better ? "med" : "war", 0.5) + "</g></g></g>";
+        }
+        out += '<g id="' + I("spin") + '">' + spin + "</g>";
+        // the cut (state "cut"): the track snipped open at LOOP_G.cut, its two ends curled
+        if (state === "cut") {
+          var e1 = loopAt(G.cut - 7, rin), e2 = loopAt(G.cut - 7, rout), e3 = loopAt(G.cut + 7, rin), e4 = loopAt(G.cut + 7, rout);
+          out += '<path d="M' + P(e1[0], e1[1]) + " L" + P(e2[0], e2[1]) + " M" + P(e3[0], e3[1]) + " L" + P(e4[0], e4[1]) + '" stroke="' + INK + '" stroke-width="4"/>';
+        }
+        // the horns, on the outer edge at 11 and 1 o'clock (hidden in "empty" and "better")
+        var hornPts = [[-20, 0], [-31, -20], [-36, -44], [-33, -64], [-24, -84], [-21, -64], [-14, -46], [-1, -28], [20, 0]];
+        var horn = function (sx) {
+          var pts = hornPts.map(function (p) { return [p[0] * sx, p[1]]; });
+          return solid(poly(pts), C.war, 4) + '<path d="M' + P(-12 * sx, -50) + " L" + P(-4 * sx, -32) + " L" + P(12 * sx, -8) + '" fill="none" stroke="' + C.orange + '" stroke-width="2.4"/>' +
+            '<path d="M' + P(-28 * sx, -24) + " L" + P(-31 * sx, -46) + '" fill="none" stroke="#E9806A" stroke-width="3" opacity="0.8"/>';
+        };
+        out += '<g id="' + I("horns") + '"' + (empty || better ? ' opacity="0"' : "") + ">" + [["horn-l", -30, 1], ["horn-r", 30, -1]].map(function (h) {
+          var p = loopAt(h[1], rout - 4);
+          return '<g id="' + I(h[0]) + '" transform="translate(' + P(p[0], p[1]) + ") rotate(" + h[1] + ") scale(" + (G.horn * k).toFixed(3) + ')"><g id="' + I(h[0] + "-in") + '">' + horn(h[2]) + "</g></g>";
+        }).join("") + "</g>";
+        // the face in the ring's middle: angry brows, narrow eyes, a fanged grin on the inner bottom arc
+        // ("better": friendly brows, round eyes, a smile)
+        var fk = r / 260, eyeL = better ? "M-128,-52 Q-82,-92 -36,-52 Q-82,-20 -128,-52 Z" : "M-142,-66 L-30,-44 L-46,-24 L-126,-34 Z";
+        var browL = better ? "M-138,-96 L-82,-112 L-28,-98 L-30,-88 L-82,-100 L-136,-86 Z" : "M-150,-98 L-22,-62 L-26,-46 L-150,-82 Z";
+        var mirror = function (d) { return d.replace(/(-?\d+(\.\d+)?),/g, function (m, x) { return (-parseFloat(x)) + ","; }); };
+        var eyes = [eyeL, mirror(eyeL)].map(function (d, n) {
+          var px = n ? 86 : -86, cid = I("eye-clip-" + n);
+          return '<defs><clipPath id="' + cid + '"><path d="' + d + '"/></clipPath></defs><path d="' + d + '" fill="#FBF6E6" stroke="' + INK + '" stroke-width="5" stroke-linejoin="miter"/>' +
+            '<g clip-path="url(#' + cid + ')"><circle class="pupil" cx="' + px + '" cy="-42" r="13" fill="' + (better ? INK : C.war) + '" stroke="' + INK + '" stroke-width="3"/><circle cx="' + (px - 3) + '" cy="-46" r="3" fill="#FFF"/></g>';
+        }).join("");
+        var grin = "", RA = 236, a0 = 120, a1 = 240, deep = better ? 34 : 64;
+        var lip = function (a) { var u = (a - a0) / (a1 - a0); return RA - 12 - deep * Math.sin(Math.PI * u); };
+        var outerPts = [], innerPts = [];
+        for (var g = 0; g <= 24; g++) {
+          var aa = a0 + ((a1 - a0) * g) / 24, rad = (aa * Math.PI) / 180;
+          outerPts.push([RA * Math.sin(rad), -RA * Math.cos(rad)]);
+          innerPts.push([lip(aa) * Math.sin(rad), -lip(aa) * Math.cos(rad)]);
+        }
+        if (better) {
+          grin = '<path d="M' + innerPts.map(function (p) { return P(p[0], p[1]); }).join(" L") + '" fill="none" stroke="' + INK + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>';
+        } else {
+          grin = solid(poly(outerPts.concat(innerPts.slice().reverse())), C.ink, 5);
+          // fangs: two big ones near the corners and small teeth between, hanging from the upper lip (pointing out)
+          [[0.16, 26, 15], [0.84, 26, 15], [0.32, 13, 9], [0.42, 13, 9], [0.5, 13, 9], [0.58, 13, 9], [0.68, 13, 9]].forEach(function (f) {
+            var aa = a0 + (a1 - a0) * f[0], rad = (aa * Math.PI) / 180, ri = lip(aa) - 1, half = (f[2] / ri) * (180 / Math.PI);
+            var b1 = ((aa - half) * Math.PI) / 180, b2 = ((aa + half) * Math.PI) / 180, rt = ri + f[1];
+            grin += solid(poly([[ri * Math.sin(b1), -ri * Math.cos(b1)], [ri * Math.sin(b2), -ri * Math.cos(b2)], [rt * Math.sin(rad), -rt * Math.cos(rad)]]), "#FBF6E6", 3);
+          });
+        }
+        out += '<g id="' + I("face") + '" opacity="0" transform="translate(' + cx + "," + cy + ") scale(" + fk.toFixed(3) + ')">' +
+          '<g id="' + I("eyes") + '"><g id="' + I("eyes-in") + '">' + eyes + "</g></g>" +
+          '<g id="' + I("brows") + '"><g id="' + I("brows-in") + '">' + solid(browL, C.ink, 3) + solid(mirror(browL), C.ink, 3) + "</g></g>" +
+          '<g id="' + I("grin") + '"><g id="' + I("grin-in") + '">' + grin + "</g></g></g>";
+
+        // ── the stations ──
+        var sign = function (key, text) {
+          var g = G.signs[key], m = KIT.props.sign({ text: text, fontSize: 34, height: g[3], posts: 1 });
+          var lit = m.replace('class="sign-posts"', 'class="sign-posts" opacity="0"').replace(/fill="#FBF6E6"/, 'fill="' + C.yellow + '"');
+          return '<g transform="translate(' + g[0] + "," + g[1] + ") scale(" + (g[2] * k).toFixed(3) + ')"><g id="' + I("sign-" + key) + '">' + m + '<g id="' + I("sign-" + key + "-lit") + '" opacity="0">' + lit + "</g></g></g>";
+        };
+        // top: the factory and the Weapons Maker in its door ("better": the lab and the Scientist)
+        var F = G.factory, WM = G.wm;
+        out += '<g id="' + I("st-weapons") + '">' + ground("weapons") + sign("weapons", better ? "SCIENTISTS" : "WEAPONS MAKERS") +
+          '<g id="' + I("factory") + '" transform="translate(' + F[0] + "," + F[1] + ") scale(" + F[2] + ')"><g id="' + I("factory-in") + '">' +
+          (better ? KIT.props.lab({}) : KIT.props.factory({ label: "" })) + "</g></g>" +
+          loopPerson(id, "wm", WM, WM[2], better ? KIT.castOpts("scientist") : KIT.castOpts("weaponsMaker")) + "</g>";
+        // left: the podium and the Politician
+        var PD = G.podium, ps = PD[2];
+        var podium = solid("M-30,0 L-24,-74 H24 L30,0 Z", C.rust, 4) + solid("M-40,-74 L-34,-92 H40 L34,-74 Z", C.tan, 4) +
+          '<path d="M24,-70 L29,-4" stroke="' + C.orange + '" stroke-width="2.4"/>' + KIT.star(0, -44, 13, C.yellow) + KIT.star(0, -44, 5, C.cream);
+        out += '<g id="' + I("st-politicians") + '">' + ground("politicians") + sign("politicians", "POLITICIANS") +
+          loopPerson(id, "pol", G.pol, G.pol[2], KIT.castOpts("politician")) +
+          '<g id="' + I("podium") + '" transform="translate(' + PD[0] + "," + PD[1] + ") scale(" + ps + ')"><g id="' + I("podium-in") + '">' + podium + "</g></g></g>";
+        // bottom: three voters and the ballot box
+        var B = G.box;
+        out += '<g id="' + I("st-votes") + '">' + ground("votes") + sign("votes", "VOTES") +
+          '<g id="' + I("box") + '" transform="translate(' + B[0] + "," + B[1] + ") scale(" + B[2] + ')"><g id="' + I("box-in") + '">' + KIT.props.ballotBox({}) + "</g></g>" +
+          G.voters.map(function (v, n) { return loopPerson(id, "voter-" + n, v, G.vs, LOOP_PEOPLE.voters[n]); }).join("") + "</g>";
+        // right: the POWER tap (around its body; ballots in at the funnel at its foot, papers out of the spout)
+        var T = G.tap, brass = C.yellow;
+        var tap = solid("M-11,30 H11 V262 H-11 Z", brass, 4) + '<path d="M6,34 V258" stroke="' + C.orange + '" stroke-width="2.4"/>' +
+          solid("M-20,24 H20 V36 H-20 Z", C.tan, 3) + solid("M-30,256 H30 V268 H-30 Z", C.slate, 3) +
+          // the funnel at the foot, its mouth facing the ring
+          solid("M-12,206 L-78,180 L-78,262 L-12,238 Z", C.tan, 4) + '<ellipse cx="-78" cy="221" rx="9" ry="41" fill="' + C.ink + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<path d="M-20,212 L-70,192" stroke="' + C.cream + '" stroke-width="2.4" opacity="0.7"/>' +
+          // the spout: a neck out of the body to the left, then down
+          '<g id="' + I("tap-spout") + '">' + solid("M-50,-15 H-126 V13 H-50 Z", brass, 4) + solid("M-140,-15 H-104 V44 H-140 Z", brass, 4) + solid("M-146,40 H-98 V52 H-146 Z", C.tan, 3) +
+          '<path d="M-120,-9 H-56 M-112,-6 V36" stroke="' + C.orange + '" stroke-width="2.4"/></g>' +
+          // the body and its plate
+          solid("M-46,-38 H46 L56,-26 V26 L46,38 H-46 L-56,26 V-26 Z", brass, 4.5) + '<path d="M50,-24 V24" stroke="' + C.orange + '" stroke-width="2.6"/>' +
+          '<path d="M-40,-30 H-14" stroke="#FBF6E6" stroke-width="3" opacity="0.8"/>' +
+          '<rect x="-34" y="-12" width="68" height="26" rx="3" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3"/>' +
+          '<path d="M5,-10 L-8,3 H0 L-5,12 L9,-2 H1 Z" fill="' + C.war + '" stroke="' + INK + '" stroke-width="1.8" stroke-linejoin="miter"/>' +
+          // the stem and the cross handle (spin #tap-wheel about "0 -96")
+          solid("M-7,-38 V-80 H7 V-38 Z", C.tan, 3.4) +
+          '<g id="' + I("tap-wheel") + '">' + [0, 90, 180, 270].map(function (d) {
+            return '<g transform="rotate(' + d + ' 0 -96)">' + solid("M-6,-96 V-138 H6 V-96 Z", brass, 3.4) + '<circle cx="0" cy="-140" r="9" fill="' + C.war + '" stroke="' + INK + '" stroke-width="3.4"/></g>';
+          }).join("") + '<circle cx="0" cy="-96" r="13" fill="' + brass + '" stroke="' + INK + '" stroke-width="4"/><circle cx="0" cy="-96" r="4" fill="' + INK + '"/></g>';
+        out += '<g id="' + I("st-power") + '">' + ground("power") + sign("power", "POWER") +
+          '<g id="' + I("tap") + '" transform="translate(' + T[0] + "," + T[1] + ") scale(" + (T[2] * k).toFixed(3) + ')"><g id="' + I("tap-in") + '">' + tap + "</g></g></g>";
+        return out;
+      }
+      // Where the tap's spout mouth and funnel mouth are (world), and the factory's side door.
+      function loopTap(name) {
+        var T = LOOP_G.tap, s = T[2] * LOOP_G.k, p = { spout: [-122, 52], funnel: [-78, 221] }[name];
+        return [T[0] + p[0] * s, T[1] + p[1] * s];
+      }
+      function loopSideDoor() {
+        var F = LOOP_G.factory;
+        return [F[0] + 170 * F[2], F[1] - 50 * F[2]];
+      }
+      // The cord from the ring to a plug at [x, y] (the plug's prongs end there): a sagging curve.
+      function loopCord(id, plug) {
+        var A = loopAt(LOOP_G.cordA, LOOP_G.r + LOOP_G.w / 2 - 2), k = LOOP_G.k, top = [plug[0], plug[1] - 16 * k];
+        var c1 = [A[0] - 40 * k, A[1] + 60 * k], c2 = [top[0], top[1] - 70 * k];
+        document.getElementById(id + "-cord").setAttribute("d", "M" + A[0].toFixed(1) + "," + A[1].toFixed(1) + " C" + c1[0].toFixed(1) + "," + c1[1].toFixed(1) + " " + c2[0].toFixed(1) + "," + c2[1].toFixed(1) + " " + top[0].toFixed(1) + "," + top[1].toFixed(1));
+        document.getElementById(id + "-plug").setAttribute("transform", "translate(" + plug[0].toFixed(1) + "," + plug[1].toFixed(1) + ")");
+      }
+      // The plug's place in the socket.
+      function loopSocketPlug() { var S = LOOP_G.socket, k = LOOP_G.k; return [S[0], S[1] - 22 * k]; }
+      // The Democracy Dog for the ring (state as loopArt). Charms hang from its tail between the papers.
+      function loopDog(id, state) {
+        var better = state === "better", s = LOOP_G.dog * LOOP_G.k;
+        var dog = KIT.props.democracyDog(better ? { tail: "pills", mood: "smile" } : { tail: "papers", seal: "war" });
+        var R = [46, -64], Q = [108, -150], E = [20, -134];
+        var tailAt = function (t) { var u = 1 - t; return [u * u * R[0] + 2 * u * t * Q[0] + t * t * E[0], u * u * R[1] + 2 * u * t * Q[1] + t * t * E[1]]; };
+        var SK = { skeleton: true, plain: true, outfit: "shirt", arms: [[172, 178], [-30, -14]], build: { legPose: [[-20, 4], [18, 36]] } }, sk = 0.24, hand = KIT.rig(SK).handLocal[0];
+        // [t on the tail, the string's end (dx, dy)]: tied on like tin cans, they trail back and down off the curl,
+        // in a staircase behind the running dog, each hanging by one bony hand
+        var charms = [[0.2, [34, 24]], [0.45, [60, 30]], [0.7, [104, 30]]].map(function (c) {
+          var p = tailAt(c[0]), d = c[1], fig = better
+            ? '<g transform="translate(' + d[0] + "," + (d[1] + 26) + ') scale(0.17)">' + KIT.props.diseaseBlob({ mood: "dead", arms: "none", seed: Math.round(c[0] * 10) }) + "</g>"
+            : '<g transform="translate(' + d[0] + "," + d[1] + ") scale(" + sk + ") translate(" + (-hand[0]).toFixed(1) + "," + (-hand[1]).toFixed(1) + ')">' + KIT.person(SK) + "</g>";
+          return '<g transform="translate(' + p[0].toFixed(1) + "," + p[1].toFixed(1) + ')"><g class="tail-charm"><path d="M0,0 L' + d[0] + "," + d[1] + '" stroke="' + INK + '" stroke-width="2"/>' + fig + "</g></g>";
+        }).join("");
+        // in front of the tail's papers: just before the tail group closes (the collar follows it)
+        var tailEnd = dog.indexOf('<g class="dog-head"'), cut = dog.lastIndexOf("</g>", tailEnd);
+        dog = dog.slice(0, cut) + charms + dog.slice(cut);
+        // the collar tag (counter-mirrored, so its text reads)
+        var tag = '<g transform="translate(-31,-68) scale(-1,1)"><g id="' + id + '-dog-tag"><path d="M0,0 V9" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<path d="M-44,10 H44 L50,22 L44,34 H-44 L-50,22 Z" fill="' + (better ? C.med : C.yellow) + '" stroke="' + INK + '" stroke-width="3.2" stroke-linejoin="miter"/>' +
+          '<text x="0" y="28.5" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="16" letter-spacing="1.2" fill="' + (better ? C.cream : INK) + '">DEMOCRACY</text></g></g>';
+        // speed lines and dust behind it, low, under the trailing charms (its own +x is behind: it faces -x before the mirror)
+        var speed = '<g class="dog-speed" opacity="0">' + [[-10, 58, 84], [-24, 62, 80]].map(function (l) {
+          return '<path d="M' + l[1] + "," + l[0] + " H" + l[2] + '" stroke="' + INK + '" stroke-width="4" stroke-linecap="round"/>';
+        }).join("") + [[64, -6, 9], [84, -12, 12], [104, -4, 8]].map(function (c) {
+          return '<circle class="dog-dust" cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#FBF6E6" stroke="' + INK + '" stroke-width="2.4"/>';
+        }).join("") + "</g>";
+        return '<g id="' + id + '-dog" opacity="0"><g transform="scale(' + (-s).toFixed(3) + "," + s.toFixed(3) + ')"><g id="' + id + '-dog-sq">' + speed + dog + tag + "</g></g></g>";
+      }
+      // ── end LOOP ──────────────────────────────────────────────────────────────────────────────────────────
+
+      var G = LOOP_G, R0 = G.r, k = G.k;
+      var RIN = G.r - G.w / 2, ROUT = G.r + G.w / 2;
+      function f1(n) { return n.toFixed(1); }
+      function clamp01(u) { return u < 0 ? 0 : u > 1 ? 1 : u; }
+      function smooth(u) { u = clamp01(u); return u * u * (3 - 2 * u); }
+      function easeOut(u) { u = clamp01(u); return 1 - (1 - u) * (1 - u); }
+      function easeIn(u) { u = clamp01(u); return u * u; }
+      function lerp(a, b, u) { return a + (b - a) * u; }
+      // the angle swept by a velocity (deg/s) that runs linearly between keys [[t, w], ...], from 0 at the first key
+      function integ(keys, t) {
+        var a = 0;
+        if (t <= keys[0][0]) return 0;
+        for (var i = 0; i < keys.length - 1; i++) {
+          var t0 = keys[i][0], t1 = keys[i + 1][0], w0 = keys[i][1], w1 = keys[i + 1][1];
+          if (t <= t0) break;
+          var dt = Math.min(t, t1) - t0;
+          a += w0 * dt + ((w1 - w0) * dt * dt) / (2 * (t1 - t0));
+        }
+        var last = keys[keys.length - 1];
+        if (t > last[0]) a += last[1] * (t - last[0]);
+        return a;
+      }
+      // The ring's turn and the dog in this scene (loop-is-evil starts from their values at this scene's end).
+      var SPIN_KEYS = [[20.85, 0], [21.8, -70], [26.0, -86], [27.95, -86], [28.3, -150]];
+      function billNoLegs(kind) { return KIT.money(kind).replace(/<path class="legs"[^>]*\/>/, ""); }
+      // a strapped brick of war papers lying flat, its bottom middle at (0,0): 96 wide, n * 6 thick, the top face skewed
+      function wad(n) {
+        var h = n * 6, top = -h, out = "";
+        out += '<path d="M48,' + top + " L64," + (top - 20) + " V-20 L48,0 Z" + '" fill="' + C.moneyDark + '" stroke="' + INK + '" stroke-width="4" stroke-linejoin="miter"/>';
+        out += '<rect x="-48" y="' + top + '" width="96" height="' + h + '" fill="' + C.money + '" stroke="' + INK + '" stroke-width="4"/>';
+        for (var i = 1; i < n; i++) out += '<path d="M-46,' + (top + i * 6) + ' H46" stroke="' + C.moneyDark + '" stroke-width="1.6"/>';
+        out += '<rect x="-9" y="' + top + '" width="18" height="' + h + '" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="2"/>';
+        out += '<g transform="translate(0,' + top + ') matrix(1,0,-0.32,0.4,0,0) translate(0,-25)">' + billNoLegs("war") +
+          '<rect x="-9" y="-25" width="18" height="50" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="2"/></g>';
+        return out;
+      }
+      // a heap of war papers, around its bottom middle (0,0), 220 wide and 170 tall
+      var MOUND = "M-112,0 C-112,-112 -64,-170 0,-170 C64,-170 112,-112 112,0 Z";
+      function mound() {
+        var rnd = KIT.rng(66), out = '<defs><clipPath id="' + ID + '-mound-clip"><path d="' + MOUND + '"/></clipPath></defs>' +
+          '<path d="' + MOUND + '" fill="' + C.money + '" stroke="' + INK + '" stroke-width="5"/><g clip-path="url(#' + ID + '-mound-clip)">';
+        for (var row = 0; row < 6; row++) {
+          for (var c = 0; c < 5; c++) {
+            var x = -100 + c * 50 + (row % 2) * 25 + (rnd() - 0.5) * 14, y = -12 - row * 30 + (rnd() - 0.5) * 8;
+            out += '<g transform="translate(' + f1(x) + "," + f1(y) + ") rotate(" + f1((rnd() - 0.5) * 50) + ') scale(0.62)">' + billNoLegs("war") + "</g>";
+          }
+        }
+        return out + '</g><path d="' + MOUND + '" fill="none" stroke="' + INK + '" stroke-width="5"/>';
+      }
+      // a ballot: a cream card with a check, around (0,0), 22 x 30
+      var BALLOT = '<path d="M-11,-15 H11 V15 H-11 Z" fill="#FBF6E6" stroke="' + INK + '" stroke-width="2.6"/><path d="M-6,-8 H6 M-6,-3 H6" stroke="' + INK + '" stroke-width="1.6"/>' +
+        '<path d="M-5,5 L-1,9 L6,1" fill="none" stroke="' + INK + '" stroke-width="2.6" stroke-linecap="round"/>';
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // the flying things: the brick, the big brick and heap, the fanned papers, the ballots, the gush, the jumpers
+      var fly = "";
+      fly += '<g id="' + ID + '-brick" opacity="0"><g transform="scale(' + (0.72 * k).toFixed(3) + ')"><g id="' + ID + '-brick-in">' + wad(5) + "</g></g></g>";
+      fly += '<g id="' + ID + '-bigbrick" opacity="0"><g transform="scale(' + (1.45 * k).toFixed(3) + ')">' + wad(7) + "</g></g>";
+      var PL = G.pol, ps = PL[2], MK = ps * (V ? 0.86 : 1.05);
+      fly += '<g transform="translate(' + PL[0] + "," + PL[1] + ") scale(" + MK.toFixed(3) + ')"><g id="' + ID + '-mound" opacity="0">' + mound() + "</g></g>";
+      for (var i = 0; i < 3; i++) fly += '<g id="' + ID + "-fan-" + i + '" opacity="0"><g transform="scale(' + (0.42 * k).toFixed(3) + ')">' + KIT.money("war", 0.5) + "</g></g>";
+      for (var b = 0; b < 3; b++) fly += '<g id="' + ID + "-ballot-" + b + '" opacity="0"><g transform="scale(' + (1.1 * k).toFixed(3) + ')">' + BALLOT + "</g></g>";
+      for (var g2 = 0; g2 < 7; g2++) fly += '<g id="' + ID + "-gush-" + g2 + '" opacity="0"><g transform="scale(' + (G.paper * k).toFixed(3) + ')"><g transform="translate(0,-14)">' + KIT.money("war", 0.5) + "</g></g></g>";
+      for (var j = 0; j < 8; j++) fly += '<g id="' + ID + "-jump-" + j + '" opacity="0"><g transform="scale(' + (G.paper * k).toFixed(3) + ')"><g transform="translate(0,-14)">' + KIT.money("war", 0.5) + "</g></g></g>";
+      // the pen that draws the ring
+      fly += '<g id="' + ID + '-pen" opacity="0"><g transform="scale(' + (0.7 * k).toFixed(3) + ')">' + KIT.pencil() + "</g></g>";
+      // the hug: the Politician popping out of the heap, clipped to above the heap's outline
+      var moundWorld = function (sx) { return "translate(" + PL[0] + "," + PL[1] + ") scale(" + sx.toFixed(3) + ")"; };
+      var hugClip = '<defs><clipPath id="' + ID + '-hug-clip" clip-rule="evenodd"><path clip-rule="evenodd" d="M-300,-600 H300 V0 H-300 Z ' + MOUND + '" transform="' + moundWorld(MK) + '"/></clipPath></defs>';
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + hugClip + loopArt(ID, "war") +
+        '<g clip-path="url(#' + ID + '-hug-clip)"><g id="' + ID + '-hug" transform="translate(' + PL[0] + "," + (PL[1] - 100 * ps).toFixed(1) + ") scale(" + ps + ')"><g id="' + ID + '-hug-in">' +
+        KIT.cast("politician", { arms: [[-40, 30], [40, -30]], mood: "grin" }) + "</g></g></g>" +
+        fly + loopDog(ID, "war"));
+      // the arrows start unlit (cream), the papers off the track, the horns away, the stations hidden
+      for (var a8 = 0; a8 < 8; a8++) {
+        q("arrow-fill-" + a8).setAttribute("fill", C.cream);
+        gsap.set(q("paper-" + a8 + "-in"), { opacity: 0 });
+      }
+
+      // ── poses ──
+      var POL = KIT.castOpts("politician"), WMO = KIT.castOpts("weaponsMaker");
+      var mix = function (a, b) { var o = {}, x; for (x in a) o[x] = a[x]; for (x in b) o[x] = b[x]; return o; };
+      loopPose(ID, "pol", [
+        ["catch", mix(POL, { arms: [[-160, -172], [160, 172]], hold: null, holdR: null, mood: "eager" })],
+        ["pocket", mix(POL, { arms: [[40, 120], [-30, -128]], hold: null, holdR: null, mood: "smile" })],
+        ["fan", mix(POL, { arms: [[-12, -4], [70, 100]], hold: null, holdR: "bill", mood: "grin" })],
+      ]);
+      loopPose(ID, "wm", [["throw", mix(WMO, { arms: [[-150, -178], [-32, -84]], hold: null, holdR: "missile", mood: "grin" })]]);
+      var VO = LOOP_PEOPLE.voters;
+      VO.forEach(function (o, n) {
+        var toBox = G.voters[n][0] < G.box[0];
+        loopPose(ID, "voter-" + n, [
+          ["catch", mix(o, { mood: "eager", look: toBox ? "right" : "left", arms: [[-14, -6], [120, 150]], holdR: "bill" })],
+          ["vote", mix(o, { mood: "greedy", look: toBox ? "right" : "left", arms: toBox ? [[-14, -6], [80, 100]] : [[-80, -100], [14, 6]], holdL: toBox ? "bill" : null, holdR: toBox ? null : "bill" })],
+          ["greedy", mix(o, { mood: "greedy", look: toBox ? "right" : "left", arms: [[-14, -6], [120, 150]], holdR: "bill" })],
+        ]);
+      });
+      var POSE_KEYS = ["pol", "wm", "voter-0", "voter-1", "voter-2"];
+      POSE_KEYS.forEach(function (key) {
+        Array.prototype.forEach.call(q(key + "-in").children, function (c) { c.removeAttribute("opacity"); gsap.set(c, { opacity: c.getAttribute("data-pose") === "base" ? 1 : 0 }); });
+      });
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      function pose(key, name, t) {
+        Array.prototype.forEach.call(q(key + "-in").children, function (c) { tl.set(c, { opacity: c.getAttribute("data-pose") === name ? 1 : 0 }, t); });
+      }
+      function pivot(el, o) { gsap.set(el, { svgOrigin: o }); }
+      function popIn(el, t, d) {
+        pivot(el, "0 0");
+        tl.fromTo(el, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: d || 0.32, ease: "back.out(2.2)" }, t);
+      }
+      function lightSign(key, t) {
+        var c = q("sign-" + key + "-lit");
+        tl.fromTo(c, { opacity: 0 }, { opacity: 1, duration: 0.12 }, t);
+        var s = q("sign-" + key);
+        tl.to(s, { scale: 1.12, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, t);
+      }
+      var RUN = [];
+      function run(fn) { RUN.push(fn); }
+      function show(el, on) { el.setAttribute("opacity", on ? 1 : 0); }
+      var at2 = function (el, x, y, rot, s) { el.setAttribute("transform", "translate(" + f1(x) + "," + f1(y) + ")" + (rot ? " rotate(" + rot.toFixed(1) + ")" : "") + (s !== undefined && s !== 1 ? " scale(" + s.toFixed(3) + ")" : "")); };
+      var arcPt = function (p0, p1, h, u) { return [lerp(p0[0], p1[0], u), lerp(p0[1], p1[1], u) - h * 4 * u * (1 - u)]; };
+      var legsD = function (l) { return "M-16,24 l" + (-6 + l * 10).toFixed(1) + ",22 h-8 M16,24 l" + (6 - l * 10).toFixed(1) + ",22 h8"; };
+      function scramble(el, t, f, ph) { var legs = el.querySelector(".legs"); if (legs) legs.setAttribute("d", legsD(0.5 + 0.5 * Math.sin(2 * Math.PI * f * t + ph))); }
+
+      // ── "Your civilization's incentive structure is the": a pen draws the ring, the arrows pop on (unlit) ──
+      var drawT0 = 0.45, drawT1 = 1.75;
+      ["ring-in", "ring-out"].forEach(function (rid, n) {
+        tl.fromTo(q(rid), { attr: { "stroke-dasharray": "0 1" } }, { attr: { "stroke-dasharray": "1 0" }, duration: drawT1 - drawT0, ease: "none" }, drawT0 + n * 0.06);
+      });
+      var pen = q("pen");
+      run(function (t) {
+        var on = t > drawT0 - 0.15 && t < drawT1 + 0.3;
+        show(pen, on);
+        if (!on) return;
+        var u = clamp01((t - drawT0) / (drawT1 - drawT0)), p = loopAt(u * 360, ROUT + 2);
+        if (t > drawT1) { var v = (t - drawT1) / 0.3; p = [p[0] + 160 * v, p[1] - 120 * v]; }
+        if (t < drawT0) { var w0 = (drawT0 - t) / 0.15; p = [p[0] + 120 * w0, p[1] - 90 * w0]; }
+        at2(pen, p[0], p[1], 0);
+      });
+      for (var ai = 0; ai < 8; ai++) {
+        var arw = q("arrow-fill-" + ai);
+        pivot(arw, "0 0");
+        // the arrow order: counterclockwise from 12 o'clock
+        var order = (8 - ai) % 8;
+        tl.fromTo(arw, { scale: 0 }, { scale: 1, duration: 0.18, ease: "back.out(3)" }, 1.55 + order * 0.06);
+      }
+
+      // ── "psychopath:": the horns float in from the left edge and settle on the ring (whoosh) ──
+      var psy = cue("psychopath:");
+      [["horn-l", -30, -1], ["horn-r", 30, 1]].forEach(function (h, n) {
+        var el = q(h[0]), end = loopAt(h[1], ROUT - 4), start = [-120 - n * 90, end[1] + (V ? -160 : 120) - n * 40], t0 = psy + n * 0.12, t1 = t0 + 1.0;
+        run(function (t) {
+          var u = clamp01((t - t0) / (t1 - t0)), e = smooth(u), p = [lerp(start[0], end[0], e), lerp(start[1], end[1], e) + Math.sin(u * Math.PI * 2.2) * 34 * (1 - u)];
+          var rot = lerp(h[1] + 200 * h[2], h[1], easeOut(u));
+          show(el, t >= t0);
+          el.setAttribute("transform", "translate(" + f1(p[0]) + "," + f1(p[1]) + ") rotate(" + rot.toFixed(1) + ") scale(" + (G.horn * k).toFixed(3) + ")");
+        });
+        var hin = q(h[0] + "-in");
+        pivot(hin, "0 0");
+        tl.to(hin, { scaleY: 0.72, scaleX: 1.15, duration: 0.07, ease: "power2.out" }, t1);
+        tl.to(hin, { scaleY: 1, scaleX: 1, duration: 0.4, ease: "elastic.out(1.2, 0.4)" }, t1 + 0.07);
+      });
+
+      // ── "Weapons manufacturers": the factory pops up, the plate lights, the door rolls up and he steps out ──
+      var wT = cue("Weapons"), manT = cue("manufacturers");
+      // the grounds and the cord appear with their stations
+      function groundIn(key, t) { tl.fromTo(q("ground-" + key), { opacity: 0 }, { opacity: 1, duration: 0.2 }, t); }
+      groundIn("weapons", wT);
+      popIn(q("factory-in"), wT, 0.36);
+      popIn(q("sign-weapons"), wT + 0.08);
+      lightSign("weapons", wT + 0.3);
+      var door = q("factory-in").querySelector(".factory-door");
+      pivot(door, "0 -172");
+      tl.fromTo(door, { scaleY: 1 }, { scaleY: 0.05, duration: 0.3, ease: "power2.in" }, manT);
+      var wm = q("wm-in");
+      pivot(wm, "0 100");
+      tl.fromTo(wm, { opacity: 0, scale: 0.72, y: -10 }, { opacity: 1, scale: 1, y: 0, duration: 0.3, ease: "back.out(2)" }, manT + 0.3);
+      // the factory puffs (its smoke breathes) from here on
+      q("factory-in").querySelectorAll(".factory-puff").forEach(function (pf, n) {
+        var c = pf.getAttribute("data-ox") + " " + pf.getAttribute("data-oy");
+        pivot(pf, c);
+        var pd = 0.5 + (n % 3) * 0.13, p0 = wT + 0.4 + (n % 4) * 0.1;
+        tl.fromTo(pf, { scale: 0.85 }, { scale: 1.12, duration: pd, repeat: Math.floor((D - p0) / pd) - 1, yoyo: true, ease: "sine.inOut" }, p0);
+      });
+
+      // ── "give politicians papers.": he lobs a brick; the Politician pops up, catches it and pockets it (ka-ching) ──
+      var giveT = cue("give"), polT = cue("politicians"), papT = cue("papers.");
+      groundIn("politicians", giveT - 0.05);
+      popIn(q("pol-in"), giveT - 0.05);
+      popIn(q("podium-in"), giveT + 0.05);
+      popIn(q("sign-politicians"), giveT + 0.12);
+      pose("pol", "catch", giveT - 0.05);
+      pose("wm", "throw", giveT - 0.2);
+      pose("wm", "base", giveT + 0.35);
+      var WMR = KIT.rig(KIT.castOpts("weaponsMaker", { arms: [[-150, -178], [-32, -84]] })), wmHand = [G.wm[0] + WMR.hand[0][0] * G.wm[2], G.wm[1] - 100 * G.wm[2] + WMR.hand[0][1] * G.wm[2]];
+      var PRc = KIT.rig(KIT.castOpts("politician", { arms: [[-160, -172], [160, 172]] }));
+      var polBase = [PL[0], PL[1] - 100 * ps], polCatch = [polBase[0] + (PRc.hand[0][0] + PRc.hand[1][0]) / 2 * ps, polBase[1] + (PRc.hand[0][1] + PRc.hand[1][1]) / 2 * ps + 14 * k];
+      var PRk = KIT.rig(KIT.castOpts("politician", { arms: [[40, 120], [-30, -128]] })), polChest = [polBase[0] + PRk.shoulder[0][0] * ps * 0.4, polBase[1] + (PRk.shoulder[0][1] + 14) * ps];
+      var brick = q("brick"), brickIn = q("brick-in"), throwT0 = giveT - 0.05, throwT1 = polT + 0.05;
+      run(function (t) {
+        var on = t >= throwT0 && t < papT + 0.02;
+        show(brick, on);
+        if (!on) return;
+        var p, rot = 0;
+        if (t < throwT1) { var u = (t - throwT0) / (throwT1 - throwT0); p = arcPt(wmHand, polCatch, V ? 180 : 170, u); rot = -360 * u; }
+        else { var v = smooth((t - throwT1) / (papT - throwT1)); p = [lerp(polCatch[0], polChest[0], v), lerp(polCatch[1], polChest[1], v)]; }
+        at2(brick, p[0], p[1], rot);
+      });
+      pivot(brickIn, "0 -15");
+      tl.to(brickIn, { scale: 0.15, duration: 0.14, ease: "power2.in" }, papT - 0.14);
+      pose("pol", "pocket", papT - 0.1);
+      // the catch makes him bob; the pocket gets a sparkle
+      var polIn = q("pol-in");
+      tl.to(polIn, { y: 10, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, throwT1);
+      var sparkG = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      sparkG.setAttribute("transform", "translate(" + f1(polChest[0] + 26 * k) + "," + f1(polChest[1] - 24 * k) + ")");
+      sparkG.innerHTML = '<g id="' + ID + '-spark" opacity="0">' + KIT.star(0, 0, 22 * k, C.yellow) + KIT.star(0, 0, 9 * k, "#FFF") + KIT.star(30 * k, 18 * k, 11 * k, C.orange) + "</g>";
+      q("art").firstChild.appendChild(sparkG);
+      pivot(q("spark"), "0 0");
+      tl.fromTo(q("spark"), { opacity: 0, scale: 0.2, rotation: 0 }, { opacity: 1, scale: 1.1, rotation: 45, duration: 0.18, ease: "back.out(2)" }, papT);
+      tl.to(q("spark"), { opacity: 0, scale: 0.6, duration: 0.3 }, papT + 0.35);
+      pose("pol", "base", papT + 0.9);
+
+      // ── "Politicians use the papers to get people to vote": the plate lights, the voters pop up, he fans papers ──
+      var pol2 = cue("Politicians"), useT = cue("use"), pap2 = cue("papers", 2), voteT = cue("vote");
+      lightSign("politicians", pol2);
+      for (var vv = 0; vv < 3; vv++) popIn(q("voter-" + vv + "-in"), useT + vv * 0.1, 0.3);
+      popIn(q("box-in"), useT + 0.05);
+      groundIn("votes", useT);
+      tl.fromTo(q("plugset"), { opacity: 0 }, { opacity: 1, duration: 0.25 }, useT + 0.15);
+      tl.fromTo(q("cord"), { opacity: 0 }, { opacity: 1, duration: 0.25 }, useT + 0.15);
+      popIn(q("sign-votes"), useT + 0.2);
+      pose("pol", "fan", pap2 - 0.15);
+      var PRf = KIT.rig(KIT.castOpts("politician", { arms: [[-12, -4], [70, 100]] })), fanFrom = [polBase[0] + PRf.hand[1][0] * ps, polBase[1] + PRf.hand[1][1] * ps];
+      var catchT = [cue("get"), cue("people"), cue("to", 2)];
+      G.voters.forEach(function (v, n) {
+        var o = VO[n], toBox = v[0] < G.box[0], VR = KIT.rig(mix(o, { arms: [[-14, -6], [120, 150]] })), vb = [v[0], v[1] - 100 * G.vs];
+        var target = [vb[0] + VR.hand[1][0] * G.vs, vb[1] + VR.hand[1][1] * G.vs], el = q("fan-" + n), t0 = pap2 + n * 0.12, t1 = catchT[n] + 0.1;
+        run(function (t) {
+          var on = t >= t0 && t < t1;
+          show(el, on);
+          if (!on) return;
+          var u = easeOut((t - t0) / (t1 - t0)), cp = loopAt(232, ROUT + (V ? 120 : 150)), w = 1 - u;
+          var p = [w * w * fanFrom[0] + 2 * w * u * cp[0] + u * u * target[0], w * w * fanFrom[1] + 2 * w * u * cp[1] + u * u * target[1]];
+          at2(el, p[0], p[1], Math.sin(u * 12) * 18);
+          scramble(el, t, 7, n);
+        });
+        pose("voter-" + n, "catch", t1);
+      });
+      pose("pol", "base", pap2 + 1.1);
+
+      // ── "vote": dollar eyes, the plate lights, the ballots drop in (pop, pop) ──
+      var dropT = [voteT, voteT + 0.2, voteT + 0.38];
+      lightSign("votes", voteT);
+      var slot = [G.box[0] + 4 * G.box[2], G.box[1] - 57 * G.box[2]];
+      G.voters.forEach(function (v, n) {
+        var o = VO[n], toBox = v[0] < G.box[0], VR = KIT.rig(mix(o, { look: toBox ? "right" : "left", arms: toBox ? [[-14, -6], [80, 100]] : [[-80, -100], [14, 6]] }));
+        var vb = [v[0], v[1] - 100 * G.vs], hand = VR.hand[toBox ? 1 : 0], from = [vb[0] + hand[0] * G.vs, vb[1] + hand[1] * G.vs - 6 * k];
+        var el = q("ballot-" + n), t1 = dropT[n], t0 = t1 - 0.32;
+        pose("voter-" + n, "vote", t0 - 0.08);
+        run(function (t) {
+          var on = t >= t0 && t < t1 + 0.12;
+          show(el, on);
+          if (!on) return;
+          if (t < t1) { var u = (t - t0) / (t1 - t0), p = arcPt(from, [slot[0], slot[1] - 10 * k], 40 * k, u); at2(el, p[0], p[1], 0); }
+          else { var w = (t - t1) / 0.12; at2(el, slot[0], slot[1] - 10 * k + 26 * k * w, 0, 1 - w * 0.6); }
+        });
+        pose("voter-" + n, "greedy", t1 + 0.3);
+      });
+      var boxIn = q("box-in");
+      dropT.forEach(function (t) { tl.to(boxIn, { scaleY: 0.9, scaleX: 1.06, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out" }, t + 0.02); });
+
+      // ── "Voting for them gives them the power": the ballots pop out and run round to the tap; it spins open (clank) ──
+      var votingT = cue("Voting"), powT = cue("power");
+      groundIn("power", votingT - 0.1);
+      popIn(q("tap-in"), votingT - 0.1, 0.4);
+      popIn(q("sign-power"), votingT + 0.05);
+      var funnel = loopTap("funnel"), A6 = 180, A4 = 122;
+      for (var bb = 0; bb < 3; bb++) {
+        (function (n) {
+          var el = q("ballot-" + n), tOut = votingT + 0.15 + n * 0.12, tRun = tOut + 0.3, tHop = powT - 0.32 + n * 0.08, tIn = tHop + 0.22;
+          run(function (t) {
+            if (t < tOut || t > tIn) { if (t >= tOut) show(el, false); return; }
+            show(el, true);
+            var p, rot = 0;
+            if (t < tRun) { var u = (t - tOut) / (tRun - tOut), s0 = [slot[0], slot[1] - 4 * k], e0 = loopAt(A6, R0); p = arcPt(s0, e0, 70 * k, u); rot = 360 * u; }
+            else if (t < tHop) { var a = lerp(A6, A4, smooth((t - tRun) / (tHop - tRun))); p = loopAt(a, R0); rot = a + 180 - 90; }
+            else { var v2 = (t - tHop) / (tIn - tHop); p = arcPt(loopAt(A4, R0), funnel, 40 * k, v2); rot = 90 - v2 * 90; }
+            at2(el, p[0], p[1], rot, 1);
+          });
+        })(bb);
+      }
+      var wheel = q("tap-wheel");
+      pivot(wheel, "0 -96");
+      tl.fromTo(wheel, { rotation: 0 }, { rotation: -540, duration: 0.7, ease: "power2.out" }, powT);
+      lightSign("power", powT);
+      var tapIn = q("tap-in");
+      tl.to(tapIn, { x: 4, duration: 0.04, yoyo: true, repeat: 7, ease: "none" }, powT);
+
+      // ── "give more papers to weapons manufacturers.": the spout gushes papers up the track into the factory (whoosh) ──
+      var give2 = cue("give", 2), man2 = cue("manufacturers.", 2), spout = loopTap("spout"), side = loopSideDoor();
+      var sideDoor = q("factory-in").querySelector(".factory-side-door");
+      pivot(sideDoor, "170 -118");
+      tl.fromTo(sideDoor, { scaleY: 1 }, { scaleY: 0.05, duration: 0.2 }, man2 - 0.55);
+      tl.to(sideDoor, { scaleY: 1, duration: 0.2 }, man2 + 0.75);
+      var aLand = 80, aOff = 40;
+      for (var gg = 0; gg < 7; gg++) {
+        (function (n) {
+          var el = q("gush-" + n), t0 = give2 + n * 0.17, tL = t0 + 0.2, tO = man2 - 0.25 + n * 0.1, t3 = tO + 0.2;
+          run(function (t) {
+            var on = t >= t0 && t < t3;
+            show(el, on);
+            if (!on) return;
+            var p, rot;
+            if (t < tL) { var u = (t - t0) / (tL - t0); p = [lerp(spout[0], loopAt(aLand, R0)[0], u), lerp(spout[1], loopAt(aLand, R0)[1], easeIn(u))]; rot = aLand + 180 - 60 * (1 - u); }
+            else if (t < tO) { var a = lerp(aLand, aOff, smooth((t - tL) / (tO - tL))); p = loopAt(a, R0); rot = a + 180; }
+            else { var w = (t - tO) / (t3 - tO); p = arcPt(loopAt(aOff, R0), side, 30 * k, w); rot = lerp(aOff + 180, 180, w); }
+            at2(el, p[0], p[1], rot, 1 - (t > tO ? 0.4 * (t - tO) / (t3 - tO) : 0));
+            scramble(el, t, 8, n);
+          });
+        })(gg);
+      }
+      tl.to(tapIn, { x: 3, duration: 0.05, yoyo: true, repeat: 15, ease: "none" }, give2);
+
+      // ── "Weapons manufacturers give them more papers.": the factory rumbles and belches a bigger brick; it buries him ──
+      var w3 = cue("Weapons", 2), give3 = cue("give", 3), pap4 = cue("papers.", 4), popT = KIT.after(ID, "papers.", 4);
+      var facIn = q("factory-in");
+      pivot(facIn, "0 0");
+      // it chews on the papers it was fed, harder and harder, until it belches
+      tl.to(facIn, { scaleY: 1.03, scaleX: 0.985, duration: 0.14, yoyo: true, repeat: 7, ease: "sine.inOut" }, man2 + 0.45);
+      tl.to(facIn, { scaleY: 1.07, scaleX: 0.96, duration: 0.1, yoyo: true, repeat: 7, ease: "sine.inOut" }, w3 + 0.2);
+      tl.to(facIn, { scaleY: 0.88, scaleX: 1.08, duration: 0.1, ease: "power2.in" }, give3 - 0.1);
+      tl.to(facIn, { scaleY: 1, scaleX: 1, duration: 0.5, ease: "elastic.out(1.1, 0.35)" }, give3);
+      var big = q("bigbrick"), roof = [G.factory[0] - 20 * G.factory[2], G.factory[1] - 230 * G.factory[2]];
+      var buryAt = [PL[0], PL[1] - 150 * ps];
+      run(function (t) {
+        var on = t >= give3 && t < pap4;
+        show(big, on);
+        if (!on) return;
+        var u = (t - give3) / (pap4 - give3), p = arcPt(roof, buryAt, V ? 200 : 130, u);
+        at2(big, p[0], p[1], -200 * u, 0.6 + 0.4 * u);
+      });
+      var moundEl = q("mound");
+      pivot(moundEl, "0 0");
+      tl.fromTo(moundEl, { opacity: 0, scaleY: 0.2, scaleX: 1.3 }, { opacity: 1, scaleY: 1, scaleX: 1, duration: 0.18, ease: "back.out(2)" }, pap4);
+      tl.set([polIn, q("podium-in")], { opacity: 0 }, pap4 + 0.05);
+      var hugIn = q("hug-in");
+      pivot(hugIn, "0 100");
+      tl.fromTo(hugIn, { y: 120 }, { y: -78, duration: 0.3, ease: "back.out(2.6)" }, popT - 0.05);
+      tl.to(hugIn, { rotation: -6, duration: 0.18, yoyo: true, repeat: 1, ease: "sine.inOut" }, popT + 0.3);
+
+      // ── "circular,": the heap jumps onto the track; the arrows light; the ring turns (whirr) ──
+      var circT = cue("circular,");
+      for (var jj = 0; jj < 8; jj++) {
+        (function (n) {
+          var el = q("jump-" + n), t0 = circT - 0.05 + n * 0.05, t1 = t0 + 0.42, home = 45 * n, from = [PL[0] + (n - 3.5) * 18 * k, PL[1] - 120 * ps];
+          run(function (t) {
+            var on = t >= t0 && t < t1;
+            show(el, on);
+            if (!on) return;
+            var u = (t - t0) / (t1 - t0), p = arcPt(from, loopAt(home, R0 - 2), 140 * k, u);
+            at2(el, p[0], p[1], lerp(0, home + 180, u), 1);
+            scramble(el, t, 8, n);
+          });
+          tl.set(q("paper-" + n + "-in"), { opacity: 1 }, t1);
+        })(jj);
+      }
+      tl.to(moundEl, { scaleY: 0, scaleX: 0.6, opacity: 0, duration: 0.45, ease: "power2.in" }, circT + 0.05);
+      tl.to(hugIn, { y: 120, duration: 0.3, ease: "power2.in" }, circT + 0.05);
+      tl.set([polIn, q("podium-in")], { opacity: 1 }, circT + 0.35);
+      pose("pol", "base", circT + 0.35);
+      for (var al = 0; al < 8; al++) {
+        var order2 = (8 - al) % 8, fillEl = q("arrow-fill-" + al);
+        tl.set(fillEl, { attr: { fill: C.war } }, circT + 0.1 + order2 * 0.06);
+        tl.fromTo(fillEl, { scale: 1.6 }, { scale: 1, duration: 0.25, ease: "power2.out", immediateRender: false }, circT + 0.1 + order2 * 0.06);
+      }
+      var spin = q("spin");
+      run(function (t) {
+        spin.setAttribute("transform", "rotate(" + integ(SPIN_KEYS, t).toFixed(2) + " " + G.cx + " " + G.cy + ")");
+        if (t > circT) for (var n = 0; n < 8; n++) scramble(q("paper-" + n), t, 6, n * 1.3);
+      });
+      // after the brick, the Politician waves his bill at everyone
+      var polBase0 = q("pol-in").querySelector('[data-pose="base"] .arm-r');
+      var PRb = KIT.rig(KIT.castOpts("politician"));
+      pivot(polBase0, PRb.shoulder[1].join(" "));
+      tl.fromTo(polBase0, { rotation: 0 }, { rotation: -16, duration: 0.3, repeat: Math.floor((D - circT - 1) / 0.3), yoyo: true, ease: "sine.inOut" }, circT + 0.6);
+
+      // ── "dog": the Democracy Dog drops into the ring, barks, laps it twice and keeps running at the bottom ──
+      var dogT = cue("dog"), lap0 = dogT + 0.38, lap1 = lap0 + 2.0, demT = cue("democracy"), monT = cue("money"), corT = cue("corpses."), biteT = KIT.after(ID, "corpses.") - 0.12;
+      var dogEl = q("dog"), dsq = q("dog-sq"), DS = G.dog * k;
+      var dogLegs = dogEl.querySelectorAll(".dog-leg"), dogSpeed = dogEl.querySelector(".dog-speed");
+      var legPiv = Array.prototype.map.call(dogLegs, function (l) { return l.getAttribute("data-pivot").split(" ").map(Number); });
+      function dogAngle(t) {
+        if (t < lap0) return 180;
+        if (t < lap1) return 180 - 720 * (0.5 - 0.5 * Math.cos(Math.PI * clamp01((t - lap0) / (lap1 - lap0))));
+        return 180;
+      }
+      var charmBase = Array.prototype.map.call(dogEl.querySelectorAll(".tail-charm"), function (c) { return [c.parentNode, c.parentNode.getAttribute("transform")]; });
+      run(function (t) {
+        var on = t >= dogT - 0.3;
+        show(dogEl, on);
+        if (!on) return;
+        var f = t > biteT + 0.2 ? 7.5 : 5.2, running = t > dogT + 0.25, bobv = running ? Math.abs(Math.sin(Math.PI * f * t)) * 6 : 0;
+        if (t < dogT) {
+          var u = clamp01((t - (dogT - 0.3)) / 0.3), y0 = G.cy - RIN - 200, y1 = G.cy + RIN;
+          dogEl.setAttribute("transform", "translate(" + G.cx + "," + f1(lerp(y0, y1, easeIn(u))) + ")");
+        } else {
+          dogEl.setAttribute("transform", loopIn(dogAngle(t), RIN) + " translate(0," + (-bobv).toFixed(1) + ")");
+        }
+        for (var n = 0; n < dogLegs.length; n++) {
+          var ang = running ? 30 * Math.sin(2 * Math.PI * f * t + n * 1.7) : 0;
+          dogLegs[n].setAttribute("transform", "rotate(" + ang.toFixed(1) + " " + legPiv[n][0] + " " + legPiv[n][1] + ")");
+        }
+        dogSpeed.setAttribute("opacity", running ? 1 : 0);
+        Array.prototype.forEach.call(dogSpeed.querySelectorAll(".dog-dust"), function (c, n) {
+          var ph = (t * 3 + n * 0.33) % 1;
+          c.setAttribute("transform", "translate(" + (ph * 40).toFixed(1) + "," + (-ph * 14).toFixed(1) + ")");
+          c.setAttribute("opacity", (1 - ph).toFixed(2));
+        });
+        // the skeletons dangle and swing on their strings as it runs (loop-is-evil runs the same swing on)
+        for (var m = 0; m < charmBase.length; m++) {
+          charmBase[m][0].setAttribute("transform", charmBase[m][1] + " rotate(" + (running ? 9 * Math.sin(2 * Math.PI * 1.7 * t + m * 1.3) : 0).toFixed(1) + ")");
+        }
+      });
+      pivot(dsq, "0 0");
+      tl.fromTo(dsq, { scaleY: 1, scaleX: 1 }, { scaleY: 0.72, scaleX: 1.2, duration: 0.06, ease: "power2.out", immediateRender: false }, dogT);
+      tl.to(dsq, { scaleY: 1, scaleX: 1, duration: 0.4, ease: "elastic.out(1.2, 0.4)" }, dogT + 0.06);
+      var dHead = dogEl.querySelector(".dog-head"), dTail = dogEl.querySelector(".dog-tail"), dEar = dogEl.querySelector(".dog-ear-l");
+      pivot(dHead, dHead.getAttribute("data-pivot"));
+      pivot(dTail, dTail.getAttribute("data-pivot"));
+      pivot(dEar, dEar.getAttribute("data-pivot"));
+      // the woof: the head jerks up, the ear flaps
+      tl.fromTo(dHead, { rotation: 0 }, { rotation: 14, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, dogT + 0.02);
+      tl.fromTo(dEar, { rotation: 0 }, { rotation: -22, duration: 0.07, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, dogT + 0.02);
+      // the tail wags (just out of reach) while it runs
+      tl.fromTo(dTail, { rotation: -6 }, { rotation: 8, duration: 0.16, repeat: Math.floor((biteT - 0.3 - lap0) / 0.16), yoyo: true, ease: "sine.inOut", immediateRender: false }, lap0);
+
+      // ── "democracy": the collar tag swings into view (ding) ──
+      var tag = q("dog-tag");
+      pivot(tag, "0 0");
+      tl.set(tag, { scale: 0 }, 0);
+      tl.fromTo(tag, { scale: 0, rotation: -80 }, { scale: 1.9, rotation: 34, duration: 0.24, ease: "back.out(2)", immediateRender: false }, demT);
+      [[-24, 0.26], [16, 0.24], [-10, 0.22], [5, 0.2], [0, 0.2]].reduce(function (t, kk) { tl.to(tag, { rotation: kk[0], duration: kk[1], ease: "sine.inOut" }, t); return t + kk[1]; }, demT + 0.24);
+      tl.to(tag, { scale: 0.85, duration: 0.5, ease: "power2.inOut" }, demT + 1.5);
+
+      // ── "money": the camera pushes in on the dog; "corpses.": the skeletons on its tail rattle (typewriter) ──
+      var zoom = q("zoom"), Z = 2.6, focus = [G.cx, G.cy + RIN - 72 * DS], to = V ? [540, 860] : [880, 520];
+      gsap.set(zoom, { transformOrigin: "0px 0px" });
+      tl.fromTo(zoom, { x: 0, y: 0, scale: 1 }, { x: to[0] - Z * focus[0], y: to[1] - Z * focus[1], scale: Z, duration: 0.7, ease: "power2.inOut" }, monT - 0.1);
+      var charmEls = dogEl.querySelectorAll(".tail-charm");
+      charmEls.forEach(function (c, n) {
+        pivot(c, "0 0");
+        tl.fromTo(c, { rotation: 0 }, { rotation: n % 2 ? 14 : -14, duration: 0.06, repeat: 11, yoyo: true, ease: "sine.inOut", immediateRender: false }, corT + n * 0.03);
+      });
+
+      // ── after "corpses.": it catches its tail, chomps, yelps (stars), and keeps running with it in its teeth ──
+      // (loop-is-evil starts on this frame, the tail still in its teeth, and lets go on "individual")
+      tl.to(dTail, { rotation: -45, duration: 0.24, ease: "power2.in" }, biteT - 0.28);
+      tl.to(dHead, { rotation: -35, duration: 0.24, ease: "power2.in" }, biteT - 0.28);
+      // the skeletons keep hanging down while the tail swings round (they turn against it)
+      tl.to(charmEls, { rotation: 45, duration: 0.26, ease: "power2.in" }, biteT - 0.24);
+      // the chomp: two quick bites on the bill, then the yelp jerks its head up without letting go
+      tl.to(dHead, { rotation: -29, duration: 0.04, yoyo: true, repeat: 3, ease: "power1.inOut" }, biteT - 0.04);
+      tl.to(dHead, { rotation: -41, duration: 0.07, yoyo: true, repeat: 1, ease: "power2.out" }, biteT + 0.12);
+      tl.to(dsq, { y: -26, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, biteT + 0.12);
+      tl.fromTo(dEar, { rotation: 0 }, { rotation: -26, duration: 0.06, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, biteT + 0.12);
+      var ouch = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      ouch.setAttribute("transform", "translate(30,-120)");
+      ouch.innerHTML = '<g class="dog-ouch" opacity="0">' + KIT.star(0, 0, 26, C.yellow) + KIT.star(0, 0, 11, "#FFF") + KIT.star(30, -18, 12, C.orange) + KIT.star(-24, -22, 9, C.war) + "</g>";
+      dsq.appendChild(ouch);
+      var ouchG = ouch.firstChild;
+      pivot(ouchG, "0 0");
+      tl.fromTo(ouchG, { opacity: 0, scale: 0.3, rotation: 0 }, { opacity: 1, scale: 1.2, rotation: 40, duration: 0.14, ease: "back.out(2)" }, biteT + 0.12);
+      tl.to(ouchG, { opacity: 0, scale: 0.7, duration: 0.25 }, biteT + 0.45);
+
+      KIT.onTime(tl, D, function (t) { for (var n = 0; n < RUN.length; n++) RUN[n](t); });
+      loopCord(ID, loopSocketPlug());
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

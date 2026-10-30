@@ -1,0 +1,644 @@
+<template id="two-hundred-twelve-years-sooner-template">
+  <!-- two-hundred-twelve-years-sooner · Layer B (storyboards/part-14-decentralized-fda.md): same form as accordion-timeline (no seam):
+       the squeezed queue under the sign on 36. "things": two empty arrow slots pop open, "1" and "2". "First,": arrow 1
+       slides in; "sat": Part 9's warehouse shelf slides in with a dusty bottle in cobwebs, a spider lowering itself;
+       "centuries": the bottle hops onto arrow 1 and rides it; "found": it shakes off the dust and its "NEVER TESTED FOR
+       THIS" tag flips to a teal tick; "four": "FOUND 204 YEARS SOONER" lands. "Second,": arrow 2 slides along the floor
+       with Part 12's approval cabinet on it (hourglass on "8.2 YEARS", SAFE bottle, life preserver, handprint, YOU's
+       skeleton slumped against the glass). "eliminating": the hourglass bursts, the padlock pops off, the door swings
+       open. "dying": the SAFE bottle hops out and runs past the skeleton, which reaches for it eight years late;
+       "take": the patient hugs it. "Combined,": arrow 2 is yanked out from under the cabinet and flies into arrow 1,
+       one fat arrow; "twelve": a giant stamp, "212 YEARS SOONER". After "average.": the line cheers and the near
+       humans throw their hats. The queue drawing is copied from accordion-timeline: change both. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #two-hundred-twelve-years-sooner-cam, #two-hundred-twelve-years-sooner-bg, #two-hundred-twelve-years-sooner-art, #two-hundred-twelve-years-sooner-pip, #two-hundred-twelve-years-sooner-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="two-hundred-twelve-years-sooner" data-width="1920" data-height="1080" data-start="0" data-duration="25.34">
+    <div id="two-hundred-twelve-years-sooner-cam">
+      <div id="two-hundred-twelve-years-sooner-bg"></div>
+      <div id="two-hundred-twelve-years-sooner-art"></div>
+      <div id="two-hundred-twelve-years-sooner-pip"></div>
+      <div id="two-hundred-twelve-years-sooner-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "two-hundred-twelve-years-sooner";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var INK = C.line, CARD = "#FBF5E4", WHITE = "#FBF6E6", GREY = "#B9B5AE";
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ══ The queue (the same drawing opens two-hundred-twelve-years-sooner; change both) ══════════════════
+      // AX: where the front of the line stands, at the window; K: how far the accordion squeezes the line toward it.
+      // rows: the serpentine, front row first: feet y, scale s, u0/du: the first human's x and the step to the next
+      // (before the squeeze), n humans, which way they face (toward the front of the line). The last row runs off
+      // the left edge, so the squeeze pulls the back of the line into view. lanes: the brass posts and red ropes in
+      // front of each row (y: their ground), from/to/step in the same x as u. booth: [x, y, w, h]; win: the window
+      // [x, y, w, h]; sign: the wait sign (center x, top, w, h, chain top). grey/bones: the first grey-bearded and
+      // the first skeleton rank; patient: her rank (a third of the way back).
+      var L = V
+        ? { AX: 790, K: 0.32, patient: 4, grey: 12, bones: 20,
+            rows: [{ y: 1440, s: 1.08, u0: 790, du: -150, n: 5, look: "right" }, { y: 1300, s: 0.96, u0: 150, du: 145, n: 5, look: "left" },
+              { y: 1170, s: 0.86, u0: 760, du: -140, n: 5, look: "right" }, { y: 1050, s: 0.77, u0: 170, du: 135, n: 5, look: "left" },
+              { y: 940, s: 0.69, u0: 740, du: -125, n: 26, look: "right" }],
+            lanes: [{ row: 0, y: 1452, from: 840, to: 110, step: 300 }, { row: 1, y: 1312, from: 840, to: 300, step: 270 }, { row: 2, y: 1182, from: 620, to: 120, step: 250 },
+              { row: 3, y: 1061, from: 770, to: 320, step: 225 }, { row: 4, y: 950, from: 560, to: -2450, step: 215 }],
+            booth: [840, 770, 200, 685], win: [858, 1196, 140, 130], tag: [856, 880],
+            sign: { cx: 370, top: 452, w: 640, h: 290, chain: 44, fs: 46, wheel: [92, 136], yfs: 92 } }
+        : { AX: 1230, K: 0.35, patient: 7, grey: 12, bones: 20,
+            rows: [{ y: 880, s: 1.1, u0: 1230, du: -150, n: 8, look: "right" }, { y: 745, s: 0.94, u0: 130, du: 148, n: 8, look: "left" },
+              { y: 625, s: 0.8, u0: 1170, du: -128, n: 30, look: "right" }],
+            lanes: [{ row: 0, y: 895, from: 1270, to: 120, step: 300 }, { row: 1, y: 757, from: 1270, to: 360, step: 296 }, { row: 2, y: 636, from: 1050, to: -2700, step: 256 }],
+            booth: [1290, 400, 310, 505], win: [1312, 640, 172, 130], tag: [1306, 448],
+            sign: { cx: 1450, top: 84, w: 580, h: 250, chain: 44, fs: 42, wheel: [80, 116], yfs: 80 } };
+      var ROWS = L.rows, NQ = 0;
+      ROWS.forEach(function (r) { r.first = NQ; NQ += r.n; });
+      function rowOf(rank) { for (var i = ROWS.length - 1; i >= 0; i--) if (rank >= ROWS[i].first) return i; return 0; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+
+      // The humans in line: every build and tone; the patient (the part's spine) at L.patient.
+      var LOOKS = [
+        { tone: 1, outfit: "shirt", color: 0 }, { tone: 3, outfit: "dress", hair: 1, color: 3 }, { tone: 0, outfit: "suit", color: 2, stache: true },
+        { tone: 2, outfit: "overalls", color: 1 }, { tone: 0, outfit: "dress", hair: 1, color: 0 }, { tone: 3, outfit: "shirt", color: 2 },
+        { tone: 1, outfit: "suit", color: 3 }, { tone: 2, outfit: "shirt", color: 3 }, { tone: 0, outfit: "dress", hair: 1, color: 2 },
+        { tone: 3, outfit: "suit", color: 0 }, { tone: 1, outfit: "overalls", color: 2 }, { tone: 2, outfit: "dress", hair: 1, color: 1, seed: 3 },
+        { tone: 0, outfit: "shirt", color: 1 }, { tone: 1, outfit: "suit", color: 1 }, { tone: 3, outfit: "dress", hair: 1, color: 0 },
+        { tone: 2, outfit: "suit", color: 2 }, { tone: 0, outfit: "overalls", color: 3 }, { tone: 1, outfit: "dress", hair: 1, color: 3, seed: 2 },
+      ];
+      var PATIENT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried" };
+      // Hats the near row throws at the end of two-hundred-twelve-years-sooner (drawn apart from the head).
+      var HATS = V ? { 1: "pillbox", 2: "porkpie", 3: "boater" } : { 1: "pillbox", 2: "boater", 3: "porkpie", 4: "pillbox", 5: "boater", 6: "porkpie" };
+      function lookOf(rank) {
+        if (rank === L.patient) return mix(PATIENT, { look: ROWS[rowOf(rank)].look });
+        var o = mix(LOOKS[rank % LOOKS.length], { seed: (LOOKS[rank % LOOKS.length].seed || 0) + Math.floor(rank / LOOKS.length) * 7, look: ROWS[rowOf(rank)].look, light: "red", mood: "flat" });
+        if (rowOf(rank) === 0) o.hat = null;
+        if (rank >= L.grey) { o.hairColor = GREY; o.build = { hunch: 10 }; o.mood = "sad"; }
+        return o;
+      }
+      function isMan(o) { return o.hair !== 1; }
+
+      // A paper ticket printed with a germ and a number, around (0,0), in person units.
+      var GERMS = ["yellow", "orange", "peri", "rust"];
+      function ticket(n) {
+        return '<g transform="rotate(-12)"><rect x="-19" y="-12" width="38" height="24" fill="' + CARD + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<path d="M-19,-4 a4,4 0 0 1 0,8 M19,-4 a4,4 0 0 0 0,8" fill="' + C.paper + '" stroke="' + INK + '" stroke-width="1.6"/>' +
+          '<g transform="translate(-8,7) scale(0.27)">' + KIT.props.germ({ color: GERMS[n % 4] }) + "</g>" +
+          '<text x="9" y="5" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="12" fill="' + INK + '">' + n + "</text></g>";
+      }
+      // The patient's mustard-and-orange striped scarf, at her neck.
+      function scarf(o) {
+        var n = KIT.rig(o).neck, x = n[0], y = n[1] + 2;
+        var band = [[x - 9, y - 4], [x + 9, y - 5], [x + 10, y + 4], [x - 10, y + 5]];
+        var tail = [[x + 2, y + 2], [x + 9, y + 1], [x + 12, y + 24], [x + 5, y + 26]];
+        var pts = function (p) { return p.map(function (a) { return a[0].toFixed(1) + "," + a[1].toFixed(1); }).join(" "); };
+        return '<polygon points="' + pts(tail) + '" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2" stroke-linejoin="miter"/>' +
+          '<path d="M' + (x + 3.5) + "," + (y + 9) + " L" + (x + 10.5) + "," + (y + 8) + " M" + (x + 4.5) + "," + (y + 17) + " L" + (x + 11.5) + "," + (y + 16) + '" stroke="' + C.orange + '" stroke-width="3"/>' +
+          '<polygon points="' + pts(band) + '" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2" stroke-linejoin="miter"/>' +
+          '<path d="M' + (x - 4) + "," + (y - 4.5) + " L" + (x - 5) + "," + (y + 4.6) + " M" + (x + 3) + "," + (y - 4.8) + " L" + (x + 3.5) + "," + (y + 4.4) + '" stroke="' + C.orange + '" stroke-width="3"/>';
+      }
+      // A long grey beard from the chin to the shoes (Part 9: waiting ages you); it zips back up on the squeeze.
+      function beard(o) {
+        var m = KIT.rig(o).mouth, x = m[0], y = m[1] - 2, f = o.look === "left" ? -1 : 1;
+        var pts = [[x - 9 * f, y], [x + 7 * f, y - 2], [x + 6 * f, y + 30], [x + 9 * f, y + 70], [x + 3 * f, 96], [x - 2 * f, y + 62], [x - 8 * f, y + 26]];
+        return { origin: x + " " + y, svg: '<path d="M' + pts.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" L") + ' Z" fill="#E4E0D8" stroke="' + INK + '" stroke-width="2.2" stroke-linejoin="miter"/>' +
+          '<path d="M' + (x - 2 * f) + "," + (y + 8) + " L" + (x + 1 * f) + "," + (y + 50) + " M" + (x + 3 * f) + "," + (y + 12) + " L" + (x + 5 * f) + "," + (y + 70) + '" stroke="' + GREY + '" stroke-width="1.6" fill="none"/>' };
+      }
+      function cane(o) {
+        var h = KIT.rig(o).hand[0];
+        return '<path d="M' + h[0].toFixed(1) + "," + (h[1] - 4).toFixed(1) + " q-1,-9 -8,-7 M" + h[0].toFixed(1) + "," + (h[1] - 4).toFixed(1) + " L" + (h[0] - 3).toFixed(1) + ',100" fill="none" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>' +
+          '<path d="M' + h[0].toFixed(1) + "," + (h[1] - 4).toFixed(1) + " L" + (h[0] - 3).toFixed(1) + ',100" stroke="' + C.rust + '" stroke-width="2.4"/>';
+      }
+      // Hats, sitting on (0,0) at the top of a head, in the head's size.
+      function hat(kind, k) {
+        var s = function (d, fill) { return '<path d="' + d + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="2.2" stroke-linejoin="miter"/>'; };
+        var art = kind === "pillbox" ? s("M-11,3 L-10,-8 H10 L11,3 Z", C.rust) + '<path d="M-10,-2 H10" stroke="' + C.yellow + '" stroke-width="2.2"/>'
+          : kind === "boater" ? s("M-13,1 L-12,-11 H12 L13,1 Z", C.yellow) + '<path d="M-12.5,-3 H12.5" stroke="' + INK + '" stroke-width="3.4"/>' + s("M-25,4 L-21,-1 H21 L25,4 Z", C.yellow)
+          : s("M-13,1 L-11,-11 H11 L13,1 Z", C.tan) + '<path d="M-12,-3 H12" stroke="' + C.orange + '" stroke-width="3"/>' + s("M-23,4 L-19,-1 H19 L23,4 Z", C.tan);
+        return '<g transform="scale(' + k.toFixed(3) + ')">' + art + "</g>";
+      }
+      // A teal medicine bottle (the library bottle, recolored), on y 0.
+      function tealBottle(size, face) {
+        return KIT.props.pillBottle({ size: size, face: face || "smile", label: "", pills: false }).split(C.orange).join(C.med);
+      }
+      // One human's drawings: the base (in line, ticket in hand) and the variants this scene swaps to.
+      var ARMS_UP_R = [[20, 10], [160, 176]], CHEER = [[-148, -166], [148, 166]];
+      function human(rank) {
+        var o = lookOf(rank), r = rowOf(rank), skel = rank >= L.bones, extra = "";
+        var base = KIT.person(mix(o, { skeleton: skel }));
+        var hand = KIT.rig(o).hand[1], tk = '<g transform="translate(' + (hand[0] + 4).toFixed(1) + "," + (hand[1] + 6).toFixed(1) + ')">' + ticket(17 + rank) + "</g>";
+        var g = '<g class="v-base">' + base + tk + (rank === L.patient ? scarf(o) : "") + (rank >= L.grey && !skel && !isMan(o) ? cane(o) : "") + "</g>";
+        if (rank === L.patient) g += '<g class="v-eager" opacity="0">' + KIT.person(mix(o, { mood: "eager" })) + tk + scarf(o) + "</g>";
+        if (rank < 3) {
+          // served: the bottle held up overhead, its base in the raised hand
+          var so = mix(o, { arms: ARMS_UP_R, mood: "grin", light: "teal" }), sh = KIT.rig(so).hand[1];
+          g += '<g class="v-served" opacity="0">' + KIT.person(so) + '<g transform="translate(' + sh[0].toFixed(1) + "," + (sh[1] + 10).toFixed(1) + ')">' + tealBottle(0.5) + "</g></g>";
+        }
+        // (two-hundred-twelve-years-sooner adds its own drawings here: the hug and the cheer)
+        if (L.more) g += L.more(rank, o, skel);
+        if (rank >= L.grey && !skel && isMan(o)) {
+          var b = beard(o);
+          extra += '<g class="beard" data-o="' + b.origin + '">' + b.svg + "</g>";
+        }
+        if (HATS[rank] && r === 0) {
+          var top = KIT.rig(o).top;
+          extra += '<g transform="translate(' + top[0].toFixed(1) + "," + (top[1] + 5).toFixed(1) + ')"><g class="hat">' + hat(HATS[rank], KIT.rig(o).hs) + "</g></g>";
+        }
+        return '<g id="' + ID + "-p" + rank + '"><ellipse cx="0" cy="101" rx="26" ry="5" fill="url(#' + ID + '-fine)" opacity="0.6"/><g id="' + ID + "-p" + rank + '-j">' + g + extra + "</g></g>";
+      }
+
+      // Brass posts and red velvet ropes: one post around (0,0), 60 tall; the rope ties on at (0,-54).
+      function post() {
+        return '<ellipse cx="0" cy="0" rx="12" ry="4" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<rect x="-3" y="-56" width="6" height="56" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.4"/><path d="M1,-52 V-4" stroke="' + C.orange + '" stroke-width="1.4"/>' +
+          '<circle cx="0" cy="-60" r="6" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.4"/>';
+      }
+      var LANES = L.lanes.map(function (ln, li) {
+        var us = [];
+        for (var u = ln.from; u >= ln.to - 1; u -= ln.step) us.push(u);
+        ln.us = us; ln.s = ROWS[ln.row].s;
+        return ln;
+      });
+      function laneSvg(li) {
+        var ln = LANES[li], ropes = "", posts = "";
+        for (var i = 0; i < ln.us.length - 1; i++) ropes += '<path class="rope-o" fill="none" stroke="' + INK + '" stroke-width="' + (9 * ln.s).toFixed(1) + '" stroke-linecap="round"/><path class="rope" fill="none" stroke="' + C.war + '" stroke-width="' + (5.4 * ln.s).toFixed(1) + '" stroke-linecap="round"/>';
+        ln.us.forEach(function () { posts += '<g class="post">' + post() + "</g>"; });
+        return '<g id="' + ID + "-lane" + li + '"><g class="posts-back">' + posts + "</g>" + ropes + "</g>";
+      }
+
+      // The ticket booth: a clapboard booth with a scalloped awning, the window (its shutter rolls) and the counter.
+      var B = L.booth, WN = L.win;
+      function booth() {
+        var x = B[0], y = B[1], w = B[2], h = B[3], boards = "";
+        for (var yy = y + 40; yy < y + h; yy += 26) boards += '<path d="M' + x + "," + yy + " H" + (x + w) + '" stroke="' + INK + '" stroke-width="1.4" opacity="0.35"/>';
+        var scallops = "";
+        for (var i = 0; i < 7; i++) { var sx = x - 14 + i * ((w + 28) / 7), sw = (w + 28) / 7; scallops += '<path d="M' + sx.toFixed(1) + "," + (y + 18) + " a" + (sw / 2).toFixed(1) + "," + (sw / 2.4).toFixed(1) + ' 0 0 0 ' + sw.toFixed(1) + ',0 Z" fill="' + (i % 2 ? CARD : C.war) + '" stroke="' + INK + '" stroke-width="3"/>'; }
+        return '<rect x="' + (x + 10) + '" y="' + (y + 12) + '" width="' + w + '" height="' + h + '" fill="' + C.ink + '" opacity="0.85"/>' +
+          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="5"/>' +
+          '<rect x="' + (x + w * 0.62) + '" y="' + y + '" width="' + w * 0.38 + '" height="' + h + '" fill="url(#' + ID + '-hatch)" opacity="0.25"/>' + boards +
+          '<path d="M' + (x - 14) + "," + (y + 18) + " L" + (x + 6) + "," + (y - 22) + " H" + (x + w - 6) + " L" + (x + w + 14) + "," + (y + 18) + ' Z" fill="' + C.war + '" stroke="' + INK + '" stroke-width="4" stroke-linejoin="miter"/>' + scallops +
+          '<rect x="' + (WN[0] - 10) + '" y="' + (WN[1] - 10) + '" width="' + (WN[2] + 20) + '" height="' + (WN[3] + 10) + '" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<rect x="' + WN[0] + '" y="' + WN[1] + '" width="' + WN[2] + '" height="' + WN[3] + '" fill="' + C.deep + '"/>' +
+          '<rect x="' + (WN[0] + 8) + '" y="' + (WN[1] + 10) + '" width="' + (WN[2] - 16) + '" height="' + (WN[3] - 10) + '" fill="url(#' + ID + '-fine)" opacity="0.3"/>';
+      }
+      function shutter() {
+        var lines = "";
+        for (var yy = 12; yy < WN[3]; yy += 12) lines += '<path d="M' + WN[0] + "," + (WN[1] + yy) + " H" + (WN[0] + WN[2]) + '" stroke="' + INK + '" stroke-width="2"/>';
+        return '<defs><clipPath id="' + ID + '-winclip"><rect x="' + WN[0] + '" y="' + WN[1] + '" width="' + WN[2] + '" height="' + WN[3] + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + ID + '-winclip)"><g id="' + ID + '-shutter"><rect x="' + WN[0] + '" y="' + WN[1] + '" width="' + WN[2] + '" height="' + WN[3] + '" fill="' + C.peri + '"/>' + lines +
+          '<rect x="' + (WN[0] + WN[2] / 2 - 12) + '" y="' + (WN[1] + WN[3] - 10) + '" width="24" height="6" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="1.6"/></g>' +
+          '<g id="' + ID + '-blur" opacity="0">' + [0.2, 0.45, 0.7].map(function (f) { return '<path d="M' + (WN[0] + 6) + "," + (WN[1] + WN[3] * f) + " H" + (WN[0] + WN[2] - 6) + '" stroke="' + CARD + '" stroke-width="5" opacity="0.7"/>'; }).join("") + "</g></g>" +
+          '<rect x="' + (WN[0] - 26) + '" y="' + (WN[1] + WN[3]) + '" width="' + (WN[2] + 44) + '" height="16" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="3.4"/>';
+      }
+
+      // The wait sign, hanging on two chains: "WAIT TIME FROM HERE:" over three digit wheels and "YEARS".
+      var S = L.sign, SX0 = S.cx - S.w / 2, WH = S.wheel;
+      var WHEEL_X = [], wheels = "";
+      var wy = S.top + S.h * 0.38, wtot = 3 * (WH[0] + 10) + 18 + S.yfs * 2.7, wx0 = S.cx - wtot / 2;
+      function strip(i) {
+        // hundreds: a blank then 0..9 three times; tens and units: 0..9 three times
+        var out = "", n = i === 0 ? 31 : 30;
+        for (var c = 0; c < n; c++) {
+          var d = i === 0 ? (c === 0 ? "" : String((c - 1) % 10)) : String(c % 10);
+          out += '<text x="' + (WH[0] / 2) + '" y="' + (c * WH[1] + WH[1] * 0.78).toFixed(1) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + (WH[1] * 0.8).toFixed(0) + '" fill="' + CARD + '">' + d + "</text>";
+        }
+        return out;
+      }
+      for (var wi = 0; wi < 3; wi++) {
+        var x = wx0 + wi * (WH[0] + 10);
+        WHEEL_X.push(x);
+        wheels += '<defs><clipPath id="' + ID + "-wc" + wi + '"><rect x="0" y="0" width="' + WH[0] + '" height="' + WH[1] + '"/></clipPath></defs>' +
+          '<g transform="translate(' + x.toFixed(1) + "," + wy.toFixed(1) + ')"><rect x="-4" y="-4" width="' + (WH[0] + 8) + '" height="' + (WH[1] + 8) + '" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<g clip-path="url(#' + ID + "-wc" + wi + ')"><g id="' + ID + "-strip" + wi + '">' + strip(wi) + "</g></g>" +
+          '<path d="M0,' + (WH[1] / 2) + " H" + WH[0] + '" stroke="' + INK + '" stroke-width="1.4" opacity="0.5"/><rect x="0" y="0" width="' + WH[0] + '" height="' + (WH[1] * 0.22) + '" fill="' + INK + '" opacity="0.35"/></g>';
+      }
+      var sign = '<g id="' + ID + '-sign">' +
+        '<path d="M' + (SX0 + 60) + "," + S.chain + " V" + S.top + " M" + (SX0 + S.w - 60) + "," + S.chain + " V" + S.top + '" stroke="' + INK + '" stroke-width="5" stroke-dasharray="9 5"/>' +
+        '<rect x="' + (SX0 + 10) + '" y="' + (S.top + 12) + '" width="' + S.w + '" height="' + S.h + '" fill="' + C.ink + '" opacity="0.85"/>' +
+        '<rect x="' + SX0 + '" y="' + S.top + '" width="' + S.w + '" height="' + S.h + '" rx="6" fill="' + CARD + '" stroke="' + INK + '" stroke-width="6"/>' +
+        '<rect x="' + (SX0 + 12) + '" y="' + (S.top + 12) + '" width="' + (S.w - 24) + '" height="' + (S.h - 24) + '" fill="none" stroke="' + C.orange + '" stroke-width="2.5"/>' +
+        '<text x="' + S.cx + '" y="' + (S.top + S.h * 0.27).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + S.fs + '" letter-spacing="2" fill="' + INK + '">WAIT TIME FROM HERE:</text>' +
+        wheels + '<text x="' + (wx0 + 3 * (WH[0] + 10) + 14).toFixed(1) + '" y="' + (wy + WH[1] * 0.8).toFixed(1) + '" font-family="Oswald" font-weight="600" font-size="' + S.yfs + '" letter-spacing="3" fill="' + INK + '">YEARS</text></g>';
+      // which strip cell shows each wheel's digit (443 at the start, then 36 with the hundreds blank)
+      var CELL0 = [25, 24, 23], CELL1 = [0, 3, 6];
+
+      // The "12.3x" tag hanging at the window's corner (two faces, swapped mid-spin).
+      var TAGP = L.tag, TAGO = { angle: V ? 62 : 20, size: V ? 2 : 2.2 };
+      var tag = '<g transform="translate(' + TAGP[0] + "," + TAGP[1] + ')"><circle r="5" fill="' + INK + '"/><g id="' + ID + '-tag">' +
+        '<g class="tag-a">' + KIT.props.priceTag(mix(TAGO, { text: "1×" })) + "</g>" +
+        '<g class="tag-b" opacity="0">' + KIT.props.priceTag(mix(TAGO, { text: "12.3×" })) + "</g></g></g>";
+
+      // ══ Two hundred and twelve years sooner ══════════════════════════════════════════════
+      // The queue starts where accordion-timeline left it: squeezed up to the window, the sign on 36, the beards
+      // gone, the first three holding teal bottles, the patient wide-eyed near the front.
+      // G: s1/s2 the two arrow slots (tail x0, tip x1, top surface y, body height h; s2 lies on the floor in the
+      // space the squeeze emptied); fatH: the merged arrow's body; shelf: the warehouse shelf [x, top, w] and
+      // the dusty bottle (on the arrow at x, scale s, on the shelf at sx); lab/labX: the "FOUND" label's size and
+      // center; cab: the approval cabinet (center x on s2, scale); stamp: the 212 stamp (center x, font, size).
+      var G = V
+        ? { s1: { x0: 50, x1: 720, y: 330, h: 70 }, s2: { x0: 50, x1: 560, y: 1414, h: 34 }, fatH: 104,
+            shelf: [30, 212, 190], dusty: { x: 200, s: 1.15, sx: 118 }, lab: 32, labX: 425,
+            cab: { x: 205, s: 1.35 }, stamp: { x: 455, fs: 32, size: 3.9 } }
+        : { s1: { x0: 90, x1: 1110, y: 370, h: 70 }, s2: { x0: 90, x1: 760, y: 854, h: 40 }, fatH: 104,
+            shelf: [30, 250, 210], dusty: { x: 330, s: 1.2, sx: 128 }, lab: 40, labX: 660,
+            cab: { x: 300, s: 1.15 }, stamp: { x: 700, fs: 44, size: 5 } };
+      var TEALTXT = "#1F6E68";
+
+      // The patient's hug (her SAFE bottle in both arms, the arms drawn again over it) and the cheer at the end.
+      var HUG_ARMS = [[34, 112], [-34, -112]], HUGS = 0.62;
+      function safeBottle(size) {
+        return '<g transform="scale(' + size + ')">' + KIT.props.pillBottle({ face: "smile", label: "SAFE" }) +
+          '<circle cx="19" cy="-15" r="8.5" fill="' + C.med + '" stroke="' + INK + '" stroke-width="2"/><path d="M14.5,-15 L18,-11 L24,-19.5" stroke="#FFFFFF" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>';
+      }
+      var HUG = (function () {
+        var ho = mix(PATIENT, { look: ROWS[0].look, arms: HUG_ARMS, mood: "smile" }), r = KIT.rig(ho);
+        return { o: ho, at: [(r.hand[0][0] + r.hand[1][0]) / 2, (r.hand[0][1] + r.hand[1][1]) / 2 + 36] };
+      })();
+      L.more = function (rank, o, skel) {
+        var out = "";
+        if (rank === L.patient) {
+          var p = KIT.person(HUG.o), arms = p.match(/<g class="arm-[lr]">[\s\S]*?<\/g><\/g>/g).join("");
+          out += '<g class="v-hug" opacity="0">' + p + scarf(HUG.o) + '<g transform="translate(' + HUG.at[0].toFixed(1) + "," + HUG.at[1].toFixed(1) + ')">' + safeBottle(HUGS) + "</g>" + arms + "</g>";
+        } else if (!skel && rank < ROWS[2].first) {
+          var co = mix(o, { arms: CHEER, mood: "grin" }), ch = KIT.rig(co).hand[1];
+          if (rank < 3) co.light = "teal";
+          out += '<g class="v-cheer" opacity="0">' + KIT.person(co) + (rank < 3 ? '<g transform="translate(' + ch[0].toFixed(1) + "," + (ch[1] + 10).toFixed(1) + ')">' + tealBottle(0.5) + "</g>" : "") + "</g>";
+        }
+        return out;
+      };
+
+      // Arrows: a cream arrow with a notched tail, an orange inner rule and a printed shadow; slots are its dashed outline.
+      function arrowD(x0, x1, y, h, head, fl) {
+        var xh = x1 - head;
+        return "M" + x0 + "," + y + " H" + xh + " V" + (y - fl) + " L" + x1 + "," + (y + h / 2) + " L" + xh + "," + (y + h + fl) + " V" + (y + h) + " H" + x0 + " L" + (x0 + Math.min(22, h * 0.45)) + "," + (y + h / 2) + " Z";
+      }
+      function badge(x, y, r, n) {
+        return '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="' + INK + '" stroke="' + CARD + '" stroke-width="3"/>' +
+          '<text x="' + x + '" y="' + (y + r * 0.48).toFixed(1) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + (r * 1.35).toFixed(0) + '" fill="' + CARD + '">' + n + "</text>";
+      }
+      function arrowParts(a, h) { var head = Math.min(72, h * 1.0), fl = Math.max(12, h * 0.3); return { d: arrowD(a.x0, a.x1, a.y, h, head, fl), inner: arrowD(a.x0 + 12, a.x1 - 16, a.y + 7, h - 14, head - 12, fl - 4), head: head }; }
+      function arrowSvg(a, h, num) {
+        var p = arrowParts(a, h), r = Math.min(26, h * 0.42);
+        return '<path d="' + p.d + '" transform="translate(9,9)" fill="' + C.ink + '" opacity="0.85"/>' +
+          '<path d="' + p.d + '" fill="' + CARD + '" stroke="' + INK + '" stroke-width="5" stroke-linejoin="miter"/>' +
+          '<path d="' + p.inner + '" fill="none" stroke="' + C.orange + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          (num ? badge(a.x0 + 26 + r, a.y + h / 2, r, num) : "");
+      }
+      function slotSvg(a, h, num) {
+        var p = arrowParts(a, h), r = Math.min(26, h * 0.42);
+        return '<path d="' + p.d + '" fill="' + CARD + '" fill-opacity="0.55" stroke="' + INK + '" stroke-width="3.4" stroke-dasharray="14 9" stroke-linejoin="miter"/>' + badge(a.x0 + 26 + r, a.y + h / 2, r, num);
+      }
+      var S1 = G.s1, S2 = G.s2, FAT = { x0: S1.x0, x1: S1.x1, y: S1.y };
+      var speed = function (a, h, id) {
+        return '<g id="' + ID + "-" + id + '" opacity="0">' + [0.2, 0.5, 0.8].map(function (f, i) { return '<path d="M' + (a.x0 - 30 - i * 14) + "," + (a.y + h * f) + " h" + (-90 + i * 20) + '" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>'; }).join("") + "</g>";
+      };
+
+      // The dusty bottle from Part 9's warehouse: cobwebs, a dust coat, a spider, its "NEVER TESTED FOR THIS" tag.
+      var DUSTPATH = "M-29,0 H29 V-74 L23,-80 H21 V-86 H27 V-102 L23,-106 H-23 L-27,-102 V-86 H-21 V-80 H-23 L-29,-74 Z";
+      var TAGO2 = { size: 0.85, angle: 16 }, TICKC = [(3 + 113.5 * Math.cos(16 * Math.PI / 180)) * 0.85, (28 + 113.5 * Math.sin(16 * Math.PI / 180)) * 0.85];
+      function dustyBottle() {
+        var web = '<g class="web"><path d="M-54,-132 L-25,-104 M-54,-132 L-29,-80 M-54,-132 L-29,-44 M-54,-132 L-4,-106" stroke="' + INK + '" stroke-width="1.3" fill="none" opacity="0.75"/>' +
+          '<path d="M-47,-125 Q-38,-118 -33,-114 Q-36,-108 -39,-103 M-41,-119 Q-31,-112 -28,-102 Q-32,-92 -34,-85 M-36,-112 Q-26,-104 -22,-96 M-37,-108 Q-32,-80 -31,-70" stroke="' + INK + '" stroke-width="1" fill="none" opacity="0.6"/></g>';
+        var dust = '<g class="dust"><defs><clipPath id="' + ID + '-dclip"><path d="' + DUSTPATH + '"/></clipPath></defs>' +
+          '<rect x="-31" y="-108" width="62" height="110" fill="#8F8A80" opacity="0.45" clip-path="url(#' + ID + '-dclip)"/>' +
+          '<rect x="-31" y="-108" width="62" height="110" fill="url(#' + ID + '-cross)" opacity="0.3" clip-path="url(#' + ID + '-dclip)"/>' +
+          '<path d="M-24,-106 q4,-9 9,-3 q5,-10 10,-2 q5,-8 10,0 q5,-7 9,1 q3,-4 6,4 Z" fill="#D2CDC1" stroke="' + INK + '" stroke-width="1.4" stroke-linejoin="round"/></g>';
+        var spider = '<g class="spider-all"><line class="thread" x1="12" y1="-106" x2="12" y2="-100" stroke="' + INK + '" stroke-width="1.3"/>' +
+          '<g class="spider-pos" transform="translate(12,0)"><g class="spider"><g transform="translate(0,-100)">' +
+          '<path d="M-7,-2 L-13,-8 L-16,-4 M-7,1 L-15,-1 M-7,3 L-14,6 L-15,10 M7,-2 L13,-8 L16,-4 M7,1 L15,-1 M7,3 L14,6 L15,10" stroke="' + INK + '" stroke-width="1.8" fill="none"/>' +
+          '<ellipse cx="0" cy="2" rx="7" ry="8" fill="' + INK + '"/><circle cx="0" cy="-6" r="4" fill="' + INK + '"/><circle cx="-1.5" cy="-6.5" r="1.1" fill="#FFF"/><circle cx="1.5" cy="-6.5" r="1.1" fill="#FFF"/></g></g></g></g>';
+        var tag = '<g transform="translate(22,-84)"><g class="dtag"><g class="dtag-a">' + KIT.props.priceTag(mix(TAGO2, { text: "NEVER TESTED FOR THIS" })) + "</g>" +
+          '<g class="dtag-b" opacity="0">' + KIT.props.priceTag(mix(TAGO2, { text: "                     " })) +
+          '<g transform="translate(' + TICKC[0].toFixed(1) + "," + TICKC[1].toFixed(1) + ') rotate(16)"><path d="M-18,0 L-6,11 L18,-13" fill="none" stroke="' + C.med + '" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g></g></g></g>';
+        var puffs = [[-34, -30], [34, -50], [-30, -90], [30, -100]].map(function (p) { return '<circle class="dpuff" cx="' + p[0] + '" cy="' + p[1] + '" r="12" fill="#D2CDC1" stroke="' + INK + '" stroke-width="2" opacity="0"/>'; }).join("");
+        return web + tag + '<g class="dsad">' + KIT.props.pillBottle({ face: "sad", label: "" }) + "</g>" +
+          '<g class="dhappy" opacity="0">' + KIT.props.pillBottle({ face: "smile", label: "" }) + "</g>" + dust + spider + puffs;
+      }
+      function shelfSvg() {
+        var x = G.shelf[0], y = G.shelf[1], w = G.shelf[2];
+        return '<path d="M' + x + "," + y + " H" + (x + w) + " V" + (y + 14) + " H" + x + ' Z" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<path d="M' + (x + 18) + "," + (y + 14) + " L" + (x + 18) + "," + (y + 46) + " L" + (x + 54) + "," + (y + 14) + '" fill="none" stroke="' + INK + '" stroke-width="5"/>' +
+          '<path d="M' + (x + w - 20) + "," + y + " l20,-26 M" + (x + w - 20) + "," + y + " l-16,-30 M" + (x + w - 20) + "," + y + ' l30,-6" stroke="' + INK + '" stroke-width="1" opacity="0.6"/>';
+      }
+
+      // The approval cabinet from Part 12, drawn standing on (0,0): a glass door on a cream frame, the brass plate,
+      // the padlock on the hasp, the SAFE bottle on the top shelf (its base at (0,-150)), the life preserver on the
+      // bottom shelf, the hourglass on top on "8.2 YEARS", and YOU's skeleton (Part 12's bowler) slumped against
+      // the glass, palm on it.
+      var CK = G.cab.s, YOU = { tone: 2, outfit: "suit", hat: "bowler", look: "left", build: { hunch: 24, legPose: [[-40, 92], [-30, 96]] }, arms: [[-128, -158], [14, 4]] };
+      var YOUR = KIT.rig(YOU), YDX = 104, PALM = [YDX + YOUR.hand[0][0], YOUR.hand[0][1] - 100];
+      function preserver(x, y) {
+        return '<circle cx="' + x + '" cy="' + y + '" r="19" fill="none" stroke="' + INK + '" stroke-width="15"/><circle cx="' + x + '" cy="' + y + '" r="19" fill="none" stroke="' + CARD + '" stroke-width="10"/>' +
+          '<circle cx="' + x + '" cy="' + y + '" r="19" fill="none" stroke="' + C.war + '" stroke-width="10" stroke-dasharray="15 14.85" transform="rotate(-20 ' + x + " " + y + ')"/>';
+      }
+      function handprint(x, y) {
+        return '<g transform="translate(' + x.toFixed(1) + "," + y.toFixed(1) + ') rotate(-20)" fill="' + INK + '" opacity="0.28"><ellipse cx="0" cy="4" rx="7" ry="8"/>' +
+          [-5, -1.6, 1.8, 5.2].map(function (fx, i) { return '<rect x="' + (fx - 1.6) + '" y="' + (-12 + Math.abs(i - 1.5) * 1.5) + '" width="3.2" height="11" rx="1.6"/>'; }).join("") +
+          '<rect x="6" y="2" width="3" height="9" rx="1.5" transform="rotate(-50 7 4)"/></g>';
+      }
+      function cabinetSvg() {
+        var glints = '<path d="M-42,-214 H-24 L-50,-150 H-54 V-184 Z" fill="#FFFFFF" opacity="0.55"/><path d="M-12,-214 H-2 L-40,-118 H-50 Z" fill="#FFFFFF" opacity="0.4"/>';
+        var door = '<g id="' + ID + '-door"><rect x="-54" y="-224" width="108" height="180" fill="#CFE4E0" fill-opacity="0.5" stroke="' + INK + '" stroke-width="3.4"/>' + glints +
+          handprint(PALM[0] - 4, PALM[1]) + '<rect x="46" y="-140" width="10" height="18" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2"/></g>';
+        var hg = '<g id="' + ID + '-hg">' +
+          '<rect x="25" y="-326" width="5" height="64" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="1.6"/><rect x="-30" y="-326" width="5" height="64" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="1.6"/>' +
+          '<path d="M-21,-326 H21 L3,-296 H-3 Z M-3,-292 H3 L21,-262 H-21 Z" fill="#DCEBE8" fill-opacity="0.8" stroke="' + INK + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<path d="M-9,-308 H9 L3,-298 H-3 Z" fill="' + C.yellow + '"/><path d="M-19,-263 Q0,-288 19,-263 Z" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="1.4"/>' +
+          '<path class="stream" d="M0,-298 V-270" stroke="' + C.yellow + '" stroke-width="3" stroke-dasharray="5 4"/></g>';
+        var plateTop = '<g class="pt"><rect x="-34" y="-338" width="68" height="12" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="2.4"/></g>';
+        var plateBase = '<g class="pb"><rect x="-38" y="-262" width="76" height="16" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<text x="0" y="-249.5" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="12.5" fill="' + INK + '">8.2 YEARS</text></g>';
+        var rnd = KIT.rng(212), bits = "";
+        for (var i = 0; i < 18; i++) bits += '<g class="grain" opacity="0"><circle r="' + (2.5 + rnd() * 2).toFixed(1) + '" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="1"/></g>';
+        for (var j = 0; j < 7; j++) bits += '<g class="shard" opacity="0"><path d="M0,-7 L6,5 L-5,4 Z" fill="#DCEBE8" stroke="' + INK + '" stroke-width="1.4"/></g>';
+        var lock = '<g class="lockfly"><g transform="translate(58,-106) scale(0.72)">' + KIT.props.padlock() + "</g></g>";
+        var skel = '<g transform="translate(' + YDX + ',-100)"><g id="' + ID + '-you">' + KIT.person(mix(YOU, { skeleton: true })) + "</g></g>";
+        return '<path d="M-52,-16 L-50,0 H-42 L-44,-16 Z M52,-16 L50,0 H42 L44,-16 Z" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="3"/>' +
+          '<rect x="-56" y="-226" width="124" height="214" fill="' + C.ink + '" opacity="0.85"/>' +
+          '<rect x="-62" y="-232" width="124" height="216" fill="' + CARD + '" stroke="' + INK + '" stroke-width="4.5"/>' +
+          '<rect x="-54" y="-224" width="108" height="180" fill="#E6D9B6"/><rect x="-54" y="-224" width="108" height="180" fill="url(#' + ID + '-fine)" opacity="0.35"/>' +
+          '<rect x="-54" y="-150" width="108" height="7" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="2"/><rect x="-54" y="-82" width="108" height="7" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="2"/>' +
+          preserver(0, -105) + '<g id="' + ID + '-safe-in"><g transform="translate(0,-150)"><g id="' + ID + '-safe-tilt">' + safeBottle(0.62) + "</g></g></g>" +
+          '<rect x="-58" y="-40" width="116" height="24" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<text x="0" y="-23.5" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="13.5" letter-spacing="0.3" fill="' + INK + '">APPROVAL CABINET</text>' +
+          '<path d="M-72,-232 L-66,-246 H66 L72,-232 Z" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="3.6" stroke-linejoin="miter"/>' +
+          door + hg + plateTop + plateBase + lock + skel + bits;
+      }
+      // The running SAFE bottle (stick legs; its feet on (0,0)).
+      var runner = '<g id="' + ID + '-run" opacity="0"><g class="rl"><path d="M-10,-14 L-12,0 h-7" fill="none" stroke="' + INK + '" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></g>' +
+        '<g class="rr"><path d="M10,-14 L12,0 h7" fill="none" stroke="' + INK + '" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></g><g transform="translate(0,-14)">' + safeBottle(1) + "</g></g>";
+
+      // ══ Build ══════════════════════════════════════════════════════════════════════════
+      var people = [];
+      for (var rk = 0; rk < NQ; rk++) people.push(human(rk));
+      var byRow = ROWS.map(function (r, i) { var s = ""; for (var k = r.first + r.n - 1; k >= r.first; k--) s += people[k]; return s; });
+      var row0 = "", back = "";
+      for (var k0 = 0; k0 < ROWS[0].n; k0++) row0 += people[k0];
+      for (var rr = ROWS.length - 1; rr >= 1; rr--) back += byRow[rr] + laneSvg(rr);
+      var fatP = arrowParts(FAT, G.fatH);
+      var labelSvg = '<g id="' + ID + '-label" opacity="0"><text x="' + G.labX + '" y="' + (S1.y + S1.h / 2 + G.lab * 0.36).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + G.lab + '" letter-spacing="2" fill="' + INK + '">FOUND 204 YEARS SOONER</text></g>';
+      var markO = { text: "212 YEARS SOONER", color: TEALTXT, angle: -4, fontSize: G.stamp.fs };
+      var mw = 16 * G.stamp.fs * 0.58 + 40, mh = G.stamp.fs * 0.74 + 34, mr = 4 * Math.PI / 180, mcy = -(mw * Math.sin(mr) + mh * Math.cos(mr)) / 2;
+      var fatMid = FAT.y + G.fatH / 2;
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + back + booth() + shutter() + tag + row0 + laneSvg(0) + sign +
+        '<g id="' + ID + '-slot1">' + slotSvg(S1, S1.h, "1") + "</g>" + '<g id="' + ID + '-slot2">' + slotSvg(S2, S2.h, "2") + "</g>" +
+        speed(S1, S1.h, "speed1") + '<g id="' + ID + '-arrow1">' + arrowSvg(S1, S1.h, "1") + labelSvg + "</g>" +
+        '<g id="' + ID + '-arrow2">' + arrowSvg(S2, S2.h, "2") + "</g>" +
+        '<g transform="translate(' + G.cab.x + "," + S2.y + ')"><g id="' + ID + '-cab"><g transform="scale(' + CK + ')">' + cabinetSvg() + "</g></g></g>" +
+        speed(FAT, G.fatH, "speedf") + '<g id="' + ID + '-fat" opacity="0">' + arrowSvg(FAT, G.fatH) +
+        '<g transform="translate(' + G.stamp.x + "," + (fatMid - mcy).toFixed(1) + ')"><g id="' + ID + '-mark" opacity="0">' + KIT.props.stampMark(markO) + "</g></g></g>" +
+        '<g id="' + ID + '-shelf">' + shelfSvg() + "</g>" + '<g id="' + ID + '-dusty"><g transform="scale(' + G.dusty.s + ')">' + dustyBottle() + "</g></g>" +
+        runner + '<g transform="translate(' + G.stamp.x + "," + fatMid + ')"><g id="' + ID + '-stamp" opacity="0">' + KIT.props.stamp({ text: "", color: TEALTXT, size: G.stamp.size }) + "</g></g>");
+
+      // ══ Time ═══════════════════════════════════════════════════════════════════════════
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      var T = {
+        things: cue("things"), first: cue("First,"), faster: cue("faster:"), sat: cue("sat"), cent: cue("centuries"), found: cue("found"),
+        four: cue("four"), avg: cue("average."), second: cue("Second,"), elim: cue("eliminating"), delay: cue("delay"), proving: cue("proving"),
+        safe: cue("safe"), dying: cue("dying"), take: cue("take"), comb: cue("Combined,"), reach: cue("reach"), twelve: cue("twelve"),
+        cheer: KIT.after(ID, "average.", 2),
+      };
+      T.merge = T.comb + 0.32;
+      function pivot(el, o) { gsap.set(el, { svgOrigin: o }); }
+      function clamp(x) { return Math.max(0, Math.min(1, x)); }
+      function ease(x) { x = clamp(x); return x * x * (3 - 2 * x); }
+
+      // The queue as accordion-timeline's last frame left it (nothing in it moves until the end).
+      var pg = [], pj = [];
+      for (var i = 0; i < NQ; i++) { pg.push(q("p" + i)); pj.push(q("p" + i + "-j")); }
+      function xAt(u) { return L.AX - (L.AX - u) * L.K; }
+      for (var pi = 0; pi < NQ; pi++) {
+        var R0 = ROWS[rowOf(pi)], u0 = R0.u0 + (pi - R0.first) * R0.du;
+        pg[pi].setAttribute("transform", "translate(" + xAt(u0).toFixed(1) + "," + (R0.y - 100 * R0.s).toFixed(1) + ") scale(" + (R0.s * 0.88).toFixed(4) + "," + R0.s + ")");
+      }
+      LANES.forEach(function (ln, li) {
+        var g = q("lane" + li), posts = g.querySelectorAll(".post"), ropes = g.querySelectorAll(".rope"), outs = g.querySelectorAll(".rope-o"), s = ln.s, top = 54 * s;
+        var xs = ln.us.map(xAt);
+        Array.prototype.forEach.call(posts, function (p, j) { p.setAttribute("transform", "translate(" + xs[j].toFixed(1) + "," + ln.y + ") scale(" + s + ")"); });
+        for (var j = 0; j < xs.length - 1; j++) {
+          var d0 = Math.abs(ln.us[j + 1] - ln.us[j]), d = Math.abs(xs[j + 1] - xs[j]), L0 = d0 * 1.03;
+          var sag = Math.min(top - 6 * s, 0.5 * Math.sqrt(Math.max(0, L0 * L0 - d * d)) + 4 * s), y = ln.y - top;
+          var dd = "M" + xs[j].toFixed(1) + "," + y.toFixed(1) + " Q" + ((xs[j] + xs[j + 1]) / 2).toFixed(1) + "," + (y + 2 * sag).toFixed(1) + " " + xs[j + 1].toFixed(1) + "," + y.toFixed(1);
+          ropes[j].setAttribute("d", dd); outs[j].setAttribute("d", dd);
+        }
+      });
+      gsap.set(q("shutter"), { y: -WN[3] * 0.98 });
+      [0, 1, 2].forEach(function (i) { gsap.set(q("strip" + i), { y: -CELL1[i] * WH[1] }); });
+      gsap.set(q("tag").querySelector(".tag-a"), { opacity: 0 });
+      gsap.set(q("tag").querySelector(".tag-b"), { opacity: 1 });
+      Array.prototype.forEach.call(document.querySelectorAll("#" + ID + "-art .beard"), function (b) { pivot(b, b.getAttribute("data-o")); gsap.set(b, { scaleY: 0 }); });
+      for (var gi = L.grey; gi < L.bones; gi++) { pivot(pj[gi], "0 100"); gsap.set(pj[gi], { rotation: (ROWS[rowOf(gi)].look === "left" ? 1 : -1) * 6 }); }
+      [0, 1, 2].forEach(function (i) { gsap.set(pg[i].querySelector(".v-base"), { opacity: 0 }); gsap.set(pg[i].querySelector(".v-served"), { opacity: 1 }); });
+      var pat = pg[L.patient];
+      gsap.set(pat.querySelector(".v-base"), { opacity: 0 });
+      gsap.set(pat.querySelector(".v-eager"), { opacity: 1 });
+
+      // "things": two empty arrow slots pop open over the line, "1" and "2" (two pops).
+      [q("slot1"), q("slot2")].forEach(function (s, i) {
+        var a = i ? S2 : S1;
+        pivot(s, ((a.x0 + a.x1) / 2) + " " + (a.y + a.h / 2));
+        tl.fromTo(s, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(2.2)" }, T.things + i * 0.2);
+      });
+      // "First,": arrow 1 slides into slot 1 (whoosh); "faster:": speed lines, and it lunges forward.
+      var a1 = q("arrow1"), a2 = q("arrow2"), cab = q("cab"), fat = q("fat");
+      tl.fromTo(a1, { x: -(S1.x1 + 60) }, { x: 0, duration: 0.45, ease: "power3.out" }, T.first);
+      var sp1 = q("speed1");
+      tl.fromTo(sp1, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.15 }, T.faster);
+      tl.to(sp1, { opacity: 0, duration: 0.3 }, T.faster + 0.6);
+      tl.to(a1, { x: 26, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, T.faster);
+
+      // "sat": the warehouse shelf slides in at the edge with the dusty bottle on it, and the spider lowers itself.
+      var shelf = q("shelf"), dusty = q("dusty"), DB = dusty;
+      tl.fromTo(shelf, { x: -(G.shelf[0] + G.shelf[2] + 40) }, { x: 0, duration: 0.4, ease: "power3.out" }, T.sat);
+      gsap.set(dusty, { opacity: 0 });
+      tl.set(dusty, { opacity: 1 }, T.sat);
+      var thread = DB.querySelector(".thread"), spider = DB.querySelector(".spider");
+      tl.fromTo(thread, { attr: { y2: -100 } }, { attr: { y2: -60 }, duration: 0.7, ease: "sine.out", immediateRender: false }, T.sat + 0.45);
+      tl.fromTo(spider, { y: 0 }, { y: 40, duration: 0.7, ease: "sine.out", immediateRender: false }, T.sat + 0.45);
+      // "found": the bottle shakes off its dust (puffs), the tag flips to a teal tick (sparkle), the spider drops off.
+      var dustG = DB.querySelector(".dust"), web = DB.querySelector(".web");
+      tl.to(dustG, { opacity: 0, duration: 0.25 }, T.found + 0.05);
+      tl.to(web, { opacity: 0, duration: 0.25 }, T.found + 0.05);
+      tl.set(DB.querySelector(".dsad"), { opacity: 0 }, T.found + 0.15);
+      tl.set(DB.querySelector(".dhappy"), { opacity: 1 }, T.found + 0.15);
+      DB.querySelectorAll(".dpuff").forEach(function (p, i) {
+        pivot(p, p.getAttribute("cx") + " " + p.getAttribute("cy"));
+        tl.set(p, { opacity: 0.9, scale: 0.3 }, T.found + i * 0.04);
+        tl.to(p, { opacity: 0, scale: 1.8, x: (i % 2 ? 1 : -1) * 20, duration: 0.45, ease: "power2.out" }, T.found + i * 0.04);
+      });
+      tl.to(thread, { opacity: 0, duration: 0.05 }, T.found + 0.05);
+      tl.to(spider, { y: 600, rotation: 260, duration: 0.6, ease: "power2.in" }, T.found + 0.05);
+      tl.to(spider, { opacity: 0, duration: 0.1 }, T.found + 0.55);
+      var dtag = DB.querySelector(".dtag");
+      pivot(dtag, "0 0");
+      tl.to(dtag, { scaleX: 0, duration: 0.12, ease: "power1.in" }, T.found);
+      tl.set(DB.querySelector(".dtag-a"), { opacity: 0 }, T.found + 0.12);
+      tl.set(DB.querySelector(".dtag-b"), { opacity: 1 }, T.found + 0.12);
+      tl.to(dtag, { scaleX: 1, duration: 0.18, ease: "back.out(2)" }, T.found + 0.12);
+      tl.to(shelf, { x: -(G.shelf[0] + G.shelf[2] + 40), duration: 0.35, ease: "power2.in" }, T.found + 0.3);
+      // "four": the label lands on arrow 1 (ding).
+      var lab = q("label");
+      pivot(lab, G.labX + " " + (S1.y + S1.h / 2));
+      tl.fromTo(lab, { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power3.in" }, T.four);
+      tl.fromTo(a1, { y: 0 }, { y: 5, duration: 0.06, yoyo: true, repeat: 1, immediateRender: false }, T.four + 0.18);
+
+      // "Second,": arrow 2 slides into slot 2 along the floor with the approval cabinet on it (whoosh).
+      pivot(cab, "0 0");
+      tl.fromTo([a2, cab], { x: -(S2.x1 + 80 + 160 * CK) }, { x: 0, duration: 0.5, ease: "power3.out" }, T.second);
+      tl.fromTo(cab, { rotation: 0 }, { rotation: -3, duration: 0.12, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, T.second + 0.45);
+      // "eliminating": the hourglass bursts and sprays sand (pop), the padlock pops off (clank), the door swings open (squeak).
+      var hg = q("hg"), door = q("door");
+      tl.set(hg, { opacity: 0 }, T.elim);
+      pivot(door, "-54 -134");
+      tl.fromTo(door, { scaleX: 1 }, { scaleX: -0.32, duration: 0.32, ease: "back.out(1.6)", immediateRender: false }, T.elim + 0.5);
+      var lockShackle = cab.querySelector(".padlock-shackle");
+      tl.to(lockShackle, { y: -9, duration: 0.06 }, T.elim + 0.25);
+      // YOU's skeleton: his palm loses the glass as the door swings away and drops; "delay": the skull turns
+      // slowly to the open door; "dying": a beat after the bottle runs past, a bony hand lifts for it, eight years late.
+      var you = q("you"), armL = you.querySelector(".arm-l"), armR = you.querySelector(".arm-r"), skull = you.querySelector(".head");
+      pivot(armL, YOUR.shoulder[0].join(" ")); pivot(armR, YOUR.shoulder[1].join(" ")); pivot(skull, YOUR.neck.join(" ")); pivot(you, "0 100");
+      tl.to(armL, { rotation: -62, duration: 0.3, ease: "power2.in" }, T.elim + 0.62);
+      tl.to(you, { rotation: -7, duration: 0.3, ease: "power2.in" }, T.elim + 0.62);
+      tl.to(skull, { rotation: 22, duration: 1.1, ease: "sine.inOut" }, T.delay);
+      tl.to(armR, { rotation: -112, duration: 1.3, ease: "sine.inOut" }, T.dying + 0.75);
+      // "proving": the SAFE bottle peeks out of the open cabinet, this way and that; "safe": its tick sparkles.
+      var tilt = q("safe-tilt");
+      pivot(tilt, "0 0");
+      tl.to(tilt, { rotation: 12, duration: 0.25, ease: "sine.inOut" }, T.proving);
+      tl.to(tilt, { rotation: -12, duration: 0.35, ease: "sine.inOut" }, T.proving + 0.45);
+      tl.to(tilt, { rotation: 0, duration: 0.2 }, T.proving + 0.9);
+      tl.fromTo(tilt, { scale: 1 }, { scale: 1.18, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.safe);
+      // "dying": it hops out (boing) and runs; "take": the patient takes it and hugs it (pop).
+      tl.set(q("safe-in"), { opacity: 0 }, T.dying);
+      var run = q("run"), rl = run.querySelector(".rl"), rrr = run.querySelector(".rr");
+      pivot(rl, "-10 -14"); pivot(rrr, "10 -14");
+      tl.fromTo(rl, { rotation: -30 }, { rotation: 30, duration: 0.08, yoyo: true, repeat: 9, ease: "sine.inOut", immediateRender: false }, T.dying + 0.3);
+      tl.fromTo(rrr, { rotation: 30 }, { rotation: -30, duration: 0.08, yoyo: true, repeat: 9, ease: "sine.inOut", immediateRender: false }, T.dying + 0.3);
+      tl.set(pat.querySelector(".v-eager"), { opacity: 0 }, T.take);
+      tl.set(pat.querySelector(".v-hug"), { opacity: 1 }, T.take);
+      pivot(pj[L.patient], "0 100");
+      tl.fromTo(pj[L.patient], { scaleY: 1 }, { scaleY: 0.92, duration: 0.08, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, T.take);
+
+      // "Combined,": arrow 2 is yanked out from under the cabinet like a tablecloth and flies up into arrow 1
+      // (whoosh); the cabinet drops to the floor and wobbles; the two become one fat arrow.
+      tl.to(a2, { x: S1.x0 - S2.x0, y: S1.y - S2.y, duration: T.merge - T.comb, ease: "power2.in" }, T.comb);
+      tl.to(cab, { y: S2.h, duration: 0.12, ease: "power2.in" }, T.comb + 0.06);
+      tl.to(cab, { rotation: 4, duration: 0.1, yoyo: true, repeat: 3, ease: "sine.inOut" }, T.comb + 0.18);
+      tl.set([a1, a2, q("slot1"), q("slot2")], { opacity: 0 }, T.merge);
+      tl.set(fat, { opacity: 1 }, T.merge);
+      pivot(fat, ((FAT.x0 + FAT.x1) / 2) + " " + FAT.y);
+      tl.fromTo(fat, { scaleY: 0.55, scaleX: 0.96 }, { scaleY: 1, scaleX: 1, duration: 0.4, ease: "back.out(2.4)", immediateRender: false }, T.merge);
+      // "reach": speed lines, and the fat arrow lunges toward the line.
+      var spf = q("speedf");
+      tl.fromTo(spf, { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.15 }, T.reach);
+      tl.to(spf, { opacity: 0, duration: 0.3 }, T.reach + 0.7);
+      tl.to(fat, { x: 30, duration: 0.14, yoyo: true, repeat: 1, ease: "power2.out" }, T.reach);
+      // "twelve": a giant rubber stamp thumps "212 YEARS SOONER" onto it (stamp).
+      var stamp = q("stamp"), mark = q("mark");
+      tl.set(stamp, { opacity: 1 }, T.twelve - 0.26);
+      tl.fromTo(stamp, { y: -(fatMid + 120) }, { y: 0, duration: 0.26, ease: "power3.in", immediateRender: false }, T.twelve - 0.26);
+      tl.to(stamp, { y: -(fatMid + 160), duration: 0.4, ease: "power2.in" }, T.twelve + 0.14);
+      tl.set(stamp, { opacity: 0 }, T.twelve + 0.56);
+      pivot(mark, "0 " + mcy.toFixed(1));
+      tl.fromTo(mark, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.07, ease: "power2.out", immediateRender: false }, T.twelve);
+      tl.fromTo(fat, { scaleY: 1 }, { scaleY: 0.9, duration: 0.07, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.twelve);
+
+      // after "average.": the line cheers; the near humans throw their hats in the air (three pops); the skeletons rattle.
+      for (var ci = 0; ci < NQ; ci++) {
+        var cv = pg[ci].querySelector(".v-cheer");
+        if (!cv) continue;
+        ["v-base", "v-served", "v-eager"].forEach(function (c) { var v = pg[ci].querySelector("." + c); if (v) tl.set(v, { opacity: 0 }, T.cheer + (ci % 3) * 0.05); });
+        tl.set(cv, { opacity: 1 }, T.cheer + (ci % 3) * 0.05);
+      }
+      var hats = document.querySelectorAll("#" + ID + "-art .hat");
+      Array.prototype.forEach.call(hats, function (h, i) {
+        pivot(h, "0 0");
+        var t0 = T.cheer + (i % 3) * 0.12;
+        tl.to(h, { y: -260 - (i % 3) * 40, rotation: (i % 2 ? 1 : -1) * 300, duration: Math.min(0.5, D - t0 - 0.02), ease: "power2.out" }, t0);
+      });
+      tl.fromTo(pj[L.patient], { y: 0 }, { y: -12, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.cheer);
+      for (var bi = L.bones; bi < NQ; bi++) {
+        pivot(pj[bi], "0 100");
+        var rs = T.cheer + (bi % 3) * 0.02;
+        tl.fromTo(pj[bi], { rotation: 0 }, { rotation: 4, duration: 0.06, repeat: Math.max(1, Math.floor((D - rs) / 0.06) - 1), yoyo: true, ease: "none", immediateRender: false }, rs);
+      }
+
+      // Every frame: the dusty bottle's ride, the SAFE bottle's run, the burst hourglass's sand, shards, plates and lock.
+      var SH = G.shelf, DS = G.dusty.s;
+      // (the shelf slides in on "sat" with power3.out, as its tween above)
+      var SHOFF = -(SH[0] + SH[2] + 40);
+      var shelfSpot = function (t) { var p = clamp((t - T.sat) / 0.4); return [G.dusty.sx + SHOFF * Math.pow(1 - p, 3), SH[1]]; };
+      var onArrow = [S1.x0 + 150, S1.y], spot = [G.dusty.x, S1.y];
+      function dustyAt(t) {
+        var s0 = shelfSpot(t);
+        if (t < T.cent) return [s0[0], s0[1], 0];
+        var p = (t - T.cent) / 0.35;
+        if (p < 1) return [s0[0] + (onArrow[0] - s0[0]) * p, s0[1] + (onArrow[1] - s0[1]) * p - Math.sin(Math.PI * p) * 70, -18 * Math.sin(Math.PI * p)];
+        var x = onArrow[0] + (spot[0] - onArrow[0]) * ease((t - T.cent - 0.35) / 0.45), y = S1.y, hop = 0;
+        [[T.avg, 40], [T.merge, 55], [T.twelve, 30], [T.cheer, 45]].forEach(function (h) { var q2 = (t - h[0]) / 0.36; if (q2 > 0 && q2 < 1) hop = Math.max(hop, Math.sin(Math.PI * q2) * h[1]); });
+        return [x, y - hop, 0];
+      }
+      var shelfPos = [G.cab.x, S2.y - 150 * CK], youX = G.cab.x + YDX * CK;
+      var patX = xAt(ROWS[0].u0 + L.patient * ROWS[0].du), ps = ROWS[0].s;
+      var hugAt = [patX + HUG.at[0] * ps * 0.88, ROWS[0].y - 100 * ps + HUG.at[1] * ps];
+      var landAt = [G.cab.x + 30 * CK, S2.y], runTo = [patX - 70 * ps, S2.y];
+      var sz0 = 0.62 * CK, sz1 = HUGS * ps;
+      function runAt(t) {
+        var a = t - T.dying, hopD = 0.32, runD = T.take - 0.22 - (T.dying + hopD);
+        if (a < 0 || t >= T.take) return null;
+        if (a < hopD) { var p = a / hopD; return [shelfPos[0] + (landAt[0] - shelfPos[0]) * p, shelfPos[1] + (landAt[1] - shelfPos[1]) * p - Math.sin(Math.PI * p) * 80, -25 * Math.sin(Math.PI * p), sz0]; }
+        if (a < hopD + runD) { var p2 = (a - hopD) / runD; return [landAt[0] + (runTo[0] - landAt[0]) * p2, S2.y - Math.abs(Math.sin(p2 * Math.PI * 5)) * 8, 6, sz0 + (sz1 - sz0) * p2 * 0.6]; }
+        var p3 = (t - (T.take - 0.22)) / 0.22, end = [hugAt[0], hugAt[1] + 14 * sz1];
+        return [runTo[0] + (end[0] - runTo[0]) * p3, runTo[1] + (end[1] - runTo[1]) * p3 - Math.sin(Math.PI * p3) * 50, 0, sz0 + (sz1 - sz0) * (0.6 + 0.4 * p3)];
+      }
+      // the burst: each bit flies from the hourglass and lands on the arrow (cabinet units; floor y 0)
+      var rb = KIT.rng(904), bits = [];
+      Array.prototype.forEach.call(cab.querySelectorAll(".grain"), function (g) { bits.push({ el: g, x0: (rb() - 0.5) * 30, y0: -294 + (rb() - 0.5) * 40, vx: (rb() - 0.5) * 520, vy: -260 - rb() * 380, spin: 0, show: true }); });
+      Array.prototype.forEach.call(cab.querySelectorAll(".shard"), function (g) { bits.push({ el: g, x0: (rb() - 0.5) * 30, y0: -294 + (rb() - 0.5) * 40, vx: (rb() - 0.5) * 640, vy: -300 - rb() * 400, spin: (rb() - 0.5) * 1400, show: true }); });
+      // (the plates and the lock are drawn in place; they turn about their own centers c and fall to the floor)
+      bits.push({ el: cab.querySelector(".pt"), x0: 0, y0: 0, vx: 150, vy: -520, spin: 500, floor: 324, c: [0, -332] });
+      bits.push({ el: cab.querySelector(".pb"), x0: 0, y0: 0, vx: -115, vy: -380, spin: -340, floor: 246, c: [0, -254] });
+      bits.push({ el: cab.querySelector(".lockfly"), x0: 0, y0: 0, vx: 170, vy: -300, spin: 420, floor: 106, at: 0.25, c: [58, -114] });
+      var GRAV = 1500, stream = cab.querySelector(".stream");
+      KIT.onTime(tl, D, function (t) {
+        var d = dustyAt(t);
+        dusty.setAttribute("transform", "translate(" + d[0].toFixed(1) + "," + d[1].toFixed(1) + ") rotate(" + d[2].toFixed(1) + ")");
+        var r = runAt(t);
+        run.setAttribute("opacity", r ? "1" : "0");
+        if (r) run.setAttribute("transform", "translate(" + r[0].toFixed(1) + "," + r[1].toFixed(1) + ") rotate(" + r[2].toFixed(1) + ") scale(" + r[3].toFixed(3) + ")");
+        if (t < T.elim) stream.setAttribute("stroke-dashoffset", (-t * 30).toFixed(1));
+        bits.forEach(function (b) {
+          var tau = t - T.elim - (b.at || 0), x = b.x0, y = b.y0, rot = 0;
+          if (tau > 0) {
+            var floor = b.floor === undefined ? -b.y0 : b.floor;
+            // y measured from the start; it lands when it has fallen `floor` below its start
+            var land = (-b.vy + Math.sqrt(b.vy * b.vy + 2 * GRAV * floor)) / GRAV, tt = Math.min(tau, land);
+            x = b.x0 + b.vx * tt; y = b.y0 + b.vy * tt + 0.5 * GRAV * tt * tt; rot = b.spin * tt;
+          }
+          if (b.show) b.el.setAttribute("opacity", tau > 0 ? "1" : "0");
+          b.el.setAttribute("transform", "translate(" + x.toFixed(1) + "," + y.toFixed(1) + ") rotate(" + rot.toFixed(1) + (b.c ? " " + b.c[0] + " " + b.c[1] : "") + ")");
+        });
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

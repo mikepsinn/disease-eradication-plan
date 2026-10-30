@@ -1,0 +1,890 @@
+<template id="museum-of-knowing-template">
+  <!-- museum-of-knowing · Layer B (storyboards/part-07-humanitys-death-wish.md): one long gallery, the Museum of Knowing
+       Better. The camera tracks right with one everyday tourist (a mustard shirt, a camera on a strap, an audio guide on
+       a lanyard) who agrees with every exhibit and is wrecked by each one's opposite:
+       entrance: he pushes through the turnstile, taps his temple and winks (he knows);
+       1, the film: a TV plays WAR IS BAD; he sobs, while through the window behind him a missile streaks past and a
+       mushroom cloud goes up, and he pulls the curtain shut without looking;
+       2, the book: he buys PEACE; his plain paper goes into the TAX funnel and comes out war money (the seal flip, run
+       backwards), hops into a bomb, the bomb rolls to his feet and goes off: charred, he turns a page and it crumbles;
+       3, the prize: the winner rises with her medal, the curtain drops on the weapons maker with a giant check
+       "PAY TO: PEACE", which he hoists and lets fall on her (a little hand and a dove wave from under it);
+       4, the department: the Pentagon model's courtyard missile peeks out, ducks, and five tiny missiles punch holes in
+       the gallery walls; the DEFENSE paint peels off the sign and it says WAR;
+       5, the other department: the scientist in her glass case shakes her flask, the bubbles are grinning germs that
+       bounce all over the gallery; one sits on his shoulder, his check-engine light blinks, he taps the OBSERVABLE
+       HEALTH gauge (stuck on 0) and x-rays into a grinning skeleton, still tapping.
+       The visitor's options are shared with lose-elaborately (his skeleton plays the board game there). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #museum-of-knowing-cam, #museum-of-knowing-bg, #museum-of-knowing-fx, #museum-of-knowing-pip, #museum-of-knowing-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="museum-of-knowing" data-width="1920" data-height="1080" data-start="0" data-duration="32.24">
+    <div id="museum-of-knowing-cam">
+      <div id="museum-of-knowing-bg"></div>
+      <div id="museum-of-knowing-view"><div id="museum-of-knowing-shake"><div id="museum-of-knowing-world"></div></div></div>
+      <div id="museum-of-knowing-fx"></div>
+      <div id="museum-of-knowing-pip"></div>
+    </div>
+    <div id="museum-of-knowing-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "museum-of-knowing";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var aft = function (w, n) { return KIT.after(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+      var CREAM = "#FBF6E6", SKY = "#DCE9E4", SOOT = "#2B2420";
+
+      // ── Layout, per canvas shape ─────────────────────────────────────
+      // Each exhibit is drawn in its own stop's frame (lx 0..STEP); stop k sits at world x k * STEP. 16:9 keeps each
+      // exhibit in x 100..1560 (Wishonia stands at x 1600+, y 690+) and the important parts above y 900; 9:16 keeps the
+      // art above the captions (y 1470) and clear of the saucer (x 740..1040, y 60..430).
+      var L = V
+        ? { floor: 1400, sv: 2.45, rail: 232, wain: 1272, step: 1080,
+            e: { pill: [140, 940], pillTop: 720, lintel: [80, 1000, 690], board: [110, 970, 468, 676], lines: ["MUSEUM OF", "KNOWING BETTER"], fs: 72, turn: 560, vis: [170, 420, 780] },
+            f: { win: [70, 330, 800], tv: [845, 1110, 2.2, 250], vis: 590 },
+            b: { lect: [430, 1160], lbW: 180, vis: 250, fun: [735, 1.85], bomb: [985, 1.25, -1], nuke: 0.95 },
+            p: { stage: [40, 1040, 1300], banner: [160, 720, 410, 500], bfs: 60, curtain: [230, 1015, 606, 1300], stand: 300, pod: [500, 150, 26, 110], wm: [745, 2.85], pram: [945, 0.95], vis: 165, check: [350, 170] },
+            d: { plinth: [730, 320, 1110], R: 165, sign: [255, 1.3, 490], vis: 455 },
+            h: { kase: [250, 270, 1320, 780], sign: [250, 726], vis: 560, step: 60 } }
+        : { floor: 870, sv: 2.25, rail: 120, wain: 772, step: 1920,
+            e: { pill: [540, 1380], pillTop: 330, lintel: [480, 1440, 300], board: [520, 1400, 172, 286], lines: ["MUSEUM OF KNOWING BETTER"], fs: 58, turn: 960, vis: [360, 820, 1150] },
+            f: { win: [150, 190, 600], tv: [1270, 640, 2.4, 270], vis: 790 },
+            b: { lect: [840, 640], lbW: 220, vis: 560, fun: [1140, 1.45], bomb: [1430, 1.5, 1], nuke: 0.92 },
+            p: { stage: [300, 1545, 790], banner: [1050, 1530, 136, 226], bfs: 54, curtain: [430, 1480, 236, 790], stand: 520, pod: [830, 160, 20, 90], wm: [1070, 2.6], pram: [1400, 1.15], vis: 190, check: [340, 160] },
+            d: { plinth: [1000, 340, 620], R: 180, sign: [1360, 1.35, 300], vis: 470 },
+            h: { kase: [330, 290, 790, 330], sign: [330, 292], vis: 760, step: 150 } };
+      var STEP = L.step, FLOOR = L.floor, SV = L.sv, VY = FLOOR - 100 * SV;
+      function wx(k, lx) { return k * STEP + lx; }
+
+      // ── Drawing helpers ──────────────────────────────────────────────
+      function n1(v) { return String(Math.round(v * 10) / 10); }
+      function pts(list) { return list.map(function (p) { return n1(p[0]) + "," + n1(p[1]); }).join(" "); }
+      function poly(list, fill, sw, extra) { return '<polygon points="' + pts(list) + '" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + (sw === undefined ? 4 : sw) + '" stroke-linejoin="miter"' + (extra || "") + "/>"; }
+      function rect(x, y, w, h, fill, sw, extra) { return '<rect x="' + n1(x) + '" y="' + n1(y) + '" width="' + n1(w) + '" height="' + n1(h) + '" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + (sw === undefined ? 4 : sw) + '" stroke-linejoin="miter"' + (extra || "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 3) + '" stroke-linecap="round" stroke-linejoin="round"' + (extra || "") + "/>"; }
+      function txt(x, y, size, s, fill, fam, extra) {
+        var f = fam === "F" ? 'font-family="Fraunces" font-weight="900"' : 'font-family="Oswald" font-weight="600" letter-spacing="' + n1(size * 0.04) + '"';
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" ' + f + ' font-size="' + n1(size) + '" fill="' + (fill || ink) + '"' + (extra || "") + ">" + s + "</text>";
+      }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function el(id) { return document.getElementById(P + id); }
+      function dots(x, y, w, h, op) { return '<rect x="' + n1(x) + '" y="' + n1(y) + '" width="' + n1(w) + '" height="' + n1(h) + '" fill="url(#' + P + 'fine)" opacity="' + (op || 0.35) + '"/>'; }
+      function deg(r) { return (r * 180) / Math.PI; }
+      function clamp01(u) { return u < 0 ? 0 : u > 1 ? 1 : u; }
+      function ease(u, k) { u = clamp01(u); return k === "in" ? u * u : k === "out" ? 1 - (1 - u) * (1 - u) : k === "lin" ? u : u < 0.5 ? 2 * u * u : 1 - 2 * (1 - u) * (1 - u); }
+      // A value over time from keys [[t, v, ease of the segment ending here]]; two keys 0.001 s apart teleport.
+      function track(keys, t) {
+        if (t <= keys[0][0]) return keys[0][1];
+        for (var i = 1; i < keys.length; i++) if (t < keys[i][0]) {
+          var a = keys[i - 1], b = keys[i];
+          return a[1] + (b[1] - a[1]) * ease((t - a[0]) / (b[0] - a[0]), b[2]);
+        }
+        return keys[keys.length - 1][1];
+      }
+      function smoke(cx, cy, r, cls) {
+        return '<g transform="translate(' + n1(cx) + "," + n1(cy) + ')"><g class="' + cls + '"><circle r="' + n1(r) + '" fill="#C9C2B5" stroke="' + ink + '" stroke-width="2.4"/><circle cx="' + n1(-r * 0.3) + '" cy="' + n1(-r * 0.3) + '" r="' + n1(r * 0.45) + '" fill="#E4DFD3"/></g></g>';
+      }
+      function bill(kind) { return KIT.money(kind, 0).replace(/<path class="legs"[^>]*\/>/, ""); }
+
+      // ── Cue times (scene seconds) ────────────────────────────────────
+      var T = {
+        endearing: cue("endearing"), knows: cue("KNOWS"), illogical: cue("illogical:"), movies: cue("movies"), bad: cue("bad"),
+        between: cue("between"), wars: cue("wars", 2), aftWars: aft("wars", 2), books: cue("books"), peace: cue("peace", 1), tax: cue("tax"),
+        buy: cue("buy"), bombs: cue("bombs"), aftBombs: aft("bombs"), prizes: cue("prizes"), promote: cue("promote"), funded: cue("funded"),
+        weapons: cue("weapons"), manu: cue("manufacturers"), aftManu: aft("manufacturers"), dept1: cue("Department", 1), mainly: cue("mainly"),
+        attacks: cue("attacks"), people: cue("people", 2), dept2: cue("Department", 2), makes: cue("makes"), corona: cue("coronaviruses"),
+        and: cue("and"), not: cue("not"), observable: cue("observable"), health: cue("health", 2),
+      };
+      var BOOM = T.bombs + 0.25, SPLAT = T.manu + 0.5;
+      // The camera: four whip pans and one stroll, each ending on the next exhibit.
+      var PAN = [[T.illogical + 0.14, T.illogical + 1.36], [T.aftWars + 0.22, T.aftWars + 0.62], [T.aftBombs + 0.25, T.aftBombs + 0.66],
+        [T.aftManu + 0.31, T.dept1 - 0.04], [T.dept2 - 0.48, T.dept2 - 0.03]];
+      var CAM = [[0, 0]];
+      PAN.forEach(function (p, k) { CAM.push([p[0], k * STEP]); CAM.push([p[1], (k + 1) * STEP, "io"]); });
+
+      // ── The visitor ──────────────────────────────────────────────────
+      var VISITOR = { tone: 1, outfit: "shirt", color: 3, seed: 7 };
+      var R0 = KIT.rig(VISITOR), HS = R0.hs, HD = R0.head, SY = R0.shoulder[0][1];
+      function vo(extra) { return Object.assign({}, VISITOR, extra); }
+      // two-segment arm IK in the person's units (the elbow bends out of the way)
+      function ik(o, side, tg) {
+        var r = KIT.rig(o), sh = r.shoulder[side], Ln = r.armLength, dx = tg[0] - sh[0], dy = tg[1] - sh[1];
+        var d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * Ln * 0.995), th = deg(Math.atan2(dx, dy)), ph = deg(Math.acos(d / (2 * Ln)));
+        return [th - ph, th + ph];
+      }
+      var lm = KIT.person(VISITOR).match(/class="chest-light" cx="([-\d.]+)" cy="([-\d.]+)"/), LIGHT = [+lm[1], +lm[2]];
+      var CAMPOS = [LIGHT[0] + 22, LIGHT[1] + 16];
+      // His camera on a strap and the audio guide on a lanyard: hanging at his chest, or the guide at his ear.
+      function gear(o, mode) {
+        var burnt = o.charred, col = function (c) { return burnt ? SOOT : c; };
+        var r = KIT.rig(o), cx = CAMPOS[0], cy = CAMPOS[1];
+        var strap = line("M-7," + n1(SY - 8) + " L" + n1(cx - 8) + "," + n1(cy - 6) + " M7," + n1(SY - 8) + " L" + n1(cx + 8) + "," + n1(cy - 6), burnt ? "#3A2A22" : C.rust, 2.2);
+        var cam = strap + rect(cx - 11, cy - 7, 22, 14, col(C.slate), 2.2) + rect(cx - 7, cy - 10, 8, 3, col(C.tan), 1.6) +
+          '<circle cx="' + n1(cx + 2) + '" cy="' + n1(cy) + '" r="4.6" fill="' + col(C.peri) + '" stroke="' + ink + '" stroke-width="2"/><circle cx="' + n1(cx + 2) + '" cy="' + n1(cy) + '" r="1.8" fill="' + (burnt ? "#5A4A40" : CREAM) + '"/>';
+        function handset(x, y, rot) {
+          return '<g transform="translate(' + n1(x) + "," + n1(y) + ") rotate(" + rot + ')">' + rect(-4.2, -9, 8.4, 18, col("#2A3550"), 2) +
+            line("M-2,-6 H2 M-2,-3.5 H2 M-2,-1 H2", burnt ? "#5A4A40" : CREAM, 1.1) + '<circle cx="0" cy="4.5" r="1.8" fill="' + col(C.orange) + '"/></g>';
+        }
+        var chest = cam, top = "";
+        if (mode === "ear") {
+          var h = r.hand[0];
+          top = line("M-4," + n1(SY - 9) + " Q" + n1(h[0] - 10) + "," + n1(SY + 6) + " " + n1(h[0] + 1) + "," + n1(h[1] + 2), burnt ? "#3A2A22" : C.orange, 1.6) + handset(h[0] + 1, h[1] - 5, 14);
+        } else {
+          chest += line("M-4," + n1(SY - 9) + " L" + n1(LIGHT[0] - 9) + "," + n1(SY + 20), burnt ? "#3A2A22" : C.orange, 1.6) + handset(LIGHT[0] - 10, SY + 29, -6);
+        }
+        return { chest: chest, top: top };
+      }
+      // A variant: the person with its gear (and any extras on top).
+      function visSvg(o, mode, extra) {
+        var s = KIT.person(o), gs = gear(o, mode);
+        return s.replace('<g class="arm-l">', gs.chest + '<g class="arm-l">') + gs.top + (extra || "");
+      }
+      function wink(svg) { return svg.replace(/<g class="eye">[\s\S]*?<\/g>/, '<g class="eye"><path d="M-8.5,-3 Q-2.5,1 3.5,-3" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round"/></g>'); }
+      // the open PEACE book, around (0, 0), w wide
+      function bookSvg(w, title, burnt, pageCls) {
+        var h = w * 0.42, sp = w * 0.04, c = burnt ? "#5A4636" : C.war;
+        var cover = poly([[-w / 2 - 3, -h / 2 + 2], [0, -h / 2 + 6], [w / 2 + 3, -h / 2 + 2], [w / 2 + 3, h / 2 + 4], [0, h / 2 + 8], [-w / 2 - 3, h / 2 + 4]], c, 2.4);
+        var lp = poly([[-w / 2, -h / 2], [-sp, -h / 2 + 4], [0, -h / 2 + 6], [0, h / 2 + 4], [-sp, h / 2 + 2], [-w / 2, h / 2]], burnt ? "#D9CDB4" : CREAM, 2);
+        var rp = poly([[w / 2, -h / 2], [sp, -h / 2 + 4], [0, -h / 2 + 6], [0, h / 2 + 4], [sp, h / 2 + 2], [w / 2, h / 2]], burnt ? "#D9CDB4" : CREAM, 2);
+        var words = title ? txt(0, h * 0.18, h * 0.62, "PEACE", ink, "F") : "";
+        var turn = pageCls ? '<g class="' + pageCls + '">' + poly([[0, -h / 2 + 6], [sp, -h / 2 + 4], [w / 2 - 2, -h / 2 + 1], [w / 2 - 2, h / 2 - 1], [sp, h / 2 + 2], [0, h / 2 + 4]], burnt ? "#CFC2A6" : CREAM, 1.8) +
+          line("M" + n1(w * 0.1) + "," + n1(-h * 0.2) + " H" + n1(w * 0.4) + " M" + n1(w * 0.1) + "," + n1(-h * 0.02) + " H" + n1(w * 0.4) + " M" + n1(w * 0.1) + "," + n1(h * 0.16) + " H" + n1(w * 0.34), ink, 1, ' opacity="0.5"') + "</g>" : "";
+        return cover + lp + rp + words + turn + (burnt ? line("M" + n1(-w / 2) + "," + n1(h / 2) + " l6,-5 l5,6 l6,-4", SOOT, 2) : "");
+      }
+
+      // His poses. Arm targets are in his own units (feet at y 100); every one faces right unless it says left.
+      var BOOKH = [[2, SY + 34], [30, SY + 34]];
+      var O = {
+        walk: vo({ look: "right", mood: "smile" }),
+        knows: vo({ mood: "grin", arms: [[0, 0], [-20, -10]] }),
+        guide: vo({ look: "right", mood: "smile" }),
+        sob: vo({ look: "right", mood: "sad" }),
+        curtain: vo({ look: "right", mood: "sad" }),
+        book: vo({ look: "right", mood: "eager" }),
+        toss: vo({ look: "right", mood: "smile" }),
+        cbook: vo({ look: "right", charred: true }),
+        cwalk: vo({ look: "right", charred: true }),
+        cclapA: vo({ look: "right", charred: true }),
+        cclapB: vo({ look: "right", charred: true }),
+        cduck: vo({ look: "right", charred: true, build: { legPose: [[60, -20], [70, -10]] } }),
+        clook: vo({ look: "left", charred: true }),
+        ctap: vo({ look: "right", charred: true }),
+      };
+      var EAR = [HD[0] - 14 * HS, HD[1] + 5 * HS], NOSE = [HD[0] + 18 * HS, HD[1] + 15 * HS];
+      O.knows.arms = [ik(O.knows, 0, [HD[0] - 9 * HS, HD[1] - 15 * HS]), [-20, -10]];
+      O.guide.arms = [ik(O.guide, 0, EAR), [-20, -10]];
+      var DAB = [26, SY + 26];
+      O.honk = vo({ look: "right", mood: "sad" });
+      O.honk.arms = [ik(O.honk, 0, EAR), ik(O.honk, 1, NOSE)];
+      O.sob.arms = [ik(O.sob, 0, EAR), ik(O.sob, 1, DAB)];
+      O.curtain.arms = [ik(O.curtain, 0, [-80, SY + 4]), ik(O.curtain, 1, DAB)];
+      O.book.arms = [ik(O.book, 0, BOOKH[0]), ik(O.book, 1, BOOKH[1])];
+      O.toss.arms = [ik(O.toss, 0, [6, SY + 36]), ik(O.toss, 1, [R0.shoulder[1][0] + 28, SY - 44])];
+      O.cbook.arms = O.book.arms;
+      O.cclapA.arms = [ik(O.cclapA, 0, [6, SY + 20]), ik(O.cclapA, 1, [42, SY + 20])];
+      O.cclapB.arms = [ik(O.cclapB, 0, [22, SY + 20]), ik(O.cclapB, 1, [27, SY + 20])];
+      O.cduck.arms = [ik(O.cduck, 0, [KIT.rig(O.cduck).head[0] - 8, KIT.rig(O.cduck).head[1] - 26]), ik(O.cduck, 1, [KIT.rig(O.cduck).head[0] + 12, KIT.rig(O.cduck).head[1] - 28])];
+      // The gauge he taps hangs where this hand reaches (computed below, stop 5).
+      var TAPAT = [R0.shoulder[1][0] + 46, SY - 34];
+      O.ctap.arms = [[20, 10], ik(O.ctap, 1, TAPAT)];
+      O.stap = vo({ skeleton: true, arms: O.ctap.arms });
+
+      var bookW = 52, bookC = [(BOOKH[0][0] + BOOKH[1][0]) / 2, BOOKH[0][1] - 6];
+      var hanky = function (o) {
+        var h = KIT.rig(o).hand[1];
+        return '<g transform="translate(' + n1(h[0] + 4) + "," + n1(h[1] - 2) + ')"><g class="' + P + 'hanky">' + poly([[-7, -8], [6, -10], [10, -1], [7, 9], [-4, 10], [-9, 2]], CREAM, 2) + line("M-3,-6 L1,4 M3,-7 L5,3", ink, 1, ' opacity="0.5"') + "</g></g>";
+      };
+      var tossH = KIT.rig(O.toss).hand;
+      var SVG = {
+        walk: visSvg(O.walk, "hang"),
+        knows: visSvg(O.knows, "hang"),
+        wink: wink(visSvg(O.knows, "hang")),
+        guide: visSvg(O.guide, "ear"),
+        sob: visSvg(O.sob, "ear", hanky(O.sob)),
+        honk: visSvg(O.honk, "ear", hanky(O.honk)),
+        curtain: visSvg(O.curtain, "hang", hanky(O.curtain)),
+        book: visSvg(O.book, "hang", at(bookC[0], bookC[1], 1, bookSvg(bookW, true))),
+        toss: visSvg(O.toss, "hang", at(tossH[0][0] + 4, tossH[0][1] - 6, 0.8, bookSvg(bookW, true))),
+        cbook: visSvg(O.cbook, "hang", at(bookC[0], bookC[1], 1, bookSvg(bookW, true, true, P + "page"))),
+        cwalk: visSvg(O.cwalk, "hang"),
+        cclapA: visSvg(O.cclapA, "hang"),
+        cclapB: visSvg(O.cclapB, "hang"),
+        cduck: visSvg(O.cduck, "hang"),
+        clook: visSvg(O.clook, "hang"),
+        ctap: visSvg(O.ctap, "hang"),
+      };
+      var ALIVE = Object.keys(SVG);
+      // Which pose shows when (the skeleton is switched in by KIT.xray on "health)").
+      var tIn = [PAN[0], PAN[1], PAN[2], PAN[3], PAN[4]].map(function (p) { return p[1]; });
+      var CLAP = T.aftManu + 0.07;
+      var POSE = [[0, "walk"], [T.knows, "knows"], [T.knows + 0.3, "wink"], [T.knows + 0.62, "knows"], [T.illogical - 0.05, "guide"],
+        [T.bad, "sob"], [T.bad + 0.24, "honk"], [T.bad + 0.72, "sob"], [T.aftWars, "curtain"], [T.aftWars + 0.2, "walk"], [tIn[1] + 0.05, "book"], [T.peace - 0.36, "toss"], [T.peace + 0.12, "book"],
+        [BOOM, "cbook"], [tIn[2], "cwalk"],
+        [CLAP, "cclapA"], [CLAP + 0.07, "cclapB"], [CLAP + 0.14, "cclapA"], [CLAP + 0.21, "cclapB"], [CLAP + 0.28, "cclapA"], [CLAP + 0.35, "cclapB"],
+        [CLAP + 0.42, "cclapA"], [CLAP + 0.49, "cclapB"], [CLAP + 0.56, "cwalk"],
+        [T.attacks, "cduck"], [T.attacks + 0.62, "cwalk"], [tIn[4] + 0.95, "clook"], [T.not, "cwalk"], [T.not + 0.6, "ctap"]];
+      // Where he is (world x), and when his legs walk.
+      var WALK = [];
+      var VX = [[0, wx(0, L.e.vis[0])], [T.endearing, wx(0, L.e.vis[1]), "lin"], [T.endearing + 0.55, wx(0, L.e.vis[2]), "out"]];
+      WALK.push([0, T.endearing + 0.55, 0.32, 20]);
+      function go(t0, t1, x1, ez) { VX.push([t0, VX[VX.length - 1][1]]); VX.push([t1, x1, ez || "io"]); WALK.push([t0, t1, 0.3, 22]); }
+      function jump(t, x) { VX.push([t, VX[VX.length - 1][1]]); VX.push([t + 0.001, x, "lin"]); }
+      go(PAN[0][0], PAN[0][1] + 0.1, wx(1, L.f.vis));
+      go(PAN[1][0], PAN[1][1] + 0.05, wx(2, L.b.vis));
+      // after the bomb he is left behind by the camera, and follows into each next exhibit, leaving sooty footprints
+      var FOLLOW = [];
+      [[2, 3, L.p.vis], [3, 4, L.d.vis], [4, 5, L.h.vis]].forEach(function (f) {
+        var t = PAN[f[0]][1], t1 = t + 0.85;
+        jump(t, wx(f[1], -170));
+        go(t + 0.002, t1, wx(f[1], f[2]), "out");
+        FOLLOW.push([t, t1, wx(f[1], -170), wx(f[1], f[2])]);
+      });
+      // on "not" he turns to the gauge and steps up to it
+      go(T.not + 0.05, T.not + 0.55, wx(5, L.h.vis + L.h.step), "io");
+
+      // ── The world ────────────────────────────────────────────────────
+      var WW = 6 * STEP + 200;
+      var wall = "";
+      // picture rail, wainscot and chair rail, baseboard and floor boards
+      wall += '<rect x="0" y="' + L.wain + '" width="' + WW + '" height="' + (FLOOR - L.wain) + '" fill="url(#' + P + 'fine)" opacity="0.22"/>' +
+        line("M0," + L.rail + " H" + WW, ink, 4) + line("M0," + (L.rail + 9) + " H" + WW, C.orange, 2) +
+        line("M0," + L.wain + " H" + WW, ink, 4) + line("M0," + (L.wain + 7) + " H" + WW, C.orange, 1.6) +
+        '<rect x="0" y="' + FLOOR + '" width="' + WW + '" height="' + (H - FLOOR) + '" fill="#E7DCBF"/>' +
+        '<rect x="0" y="' + FLOOR + '" width="' + WW + '" height="' + (H - FLOOR) + '" fill="url(#' + P + 'fine)" opacity="0.25"/>' +
+        line("M0," + FLOOR + " H" + WW, ink, 5) + line("M0," + (FLOOR + 14) + " H" + WW, ink, 1.4, ' opacity="0.5"');
+      for (var fx = 0; fx < WW; fx += 160) wall += line("M" + fx + "," + (FLOOR + 14) + " l-30," + (H - FLOOR), ink, 1.2, ' opacity="0.35"');
+
+      var exh = "", backfx = "", front = "", fin = "";
+
+      // ── Stop 0: the entrance ─────────────────────────────────────────
+      function pillar(x, top, bot, w) {
+        var flutes = "";
+        for (var i = -1; i <= 1; i++) flutes += line("M" + n1(x + i * w * 0.24) + "," + (top + 34) + " V" + (bot - 30), ink, 1.6, ' opacity="0.55"');
+        return rect(x - w / 2, top + 24, w, bot - top - 44, CREAM, 4) + dots(x + w * 0.1, top + 24, w * 0.4, bot - top - 44, 0.3) + flutes +
+          poly([[x - w / 2 - 14, top], [x + w / 2 + 14, top], [x + w / 2 + 6, top + 24], [x - w / 2 - 6, top + 24]], C.tan, 4) +
+          rect(x - w / 2 - 14, bot - 20, w + 28, 20, C.tan, 4);
+      }
+      (function () {
+        var e = L.e, b = e.board, pw = V ? 76 : 64;
+        exh += pillar(wx(0, e.pill[0]), e.pillTop, FLOOR, pw) + pillar(wx(0, e.pill[1]), e.pillTop, FLOOR, pw) +
+          rect(wx(0, e.lintel[0]), e.lintel[2], e.lintel[1] - e.lintel[0], 30, C.tan, 4) +
+          line("M" + wx(0, b[0] + 60) + "," + b[3] + " V" + e.lintel[2] + " M" + wx(0, b[1] - 60) + "," + b[3] + " V" + e.lintel[2], ink, 4) +
+          rect(wx(0, b[0]), b[2], b[1] - b[0], b[3] - b[2], C.deep, 5) + rect(wx(0, b[0]) + 10, b[2] + 10, b[1] - b[0] - 20, b[3] - b[2] - 20, "none", 2, ' stroke="' + C.orange + '"').replace('stroke="' + ink + '" ', "") +
+          KIT.star(wx(0, b[0]) + 34, (b[2] + b[3]) / 2, 13, C.yellow) + KIT.star(wx(0, b[1]) - 34, (b[2] + b[3]) / 2, 13, C.yellow);
+        var lh = e.fs * 1.12, y0 = (b[2] + b[3]) / 2 - ((e.lines.length - 1) * lh) / 2 + e.fs * 0.36;
+        e.lines.forEach(function (s, i) { exh += txt(wx(0, (b[0] + b[1]) / 2), y0 + i * lh, e.fs, s, CREAM); });
+        // the turnstile: a waist-high post with a three-armed rotor at hip height (the rotor in front of him)
+        var tx = wx(0, e.turn);
+        exh += at(tx, FLOOR, SV, rect(-15, -98, 30, 98, C.slate, 3) + rect(-18, -104, 36, 7, C.peri, 2.6) + line("M-12,-60 H12", C.orange, 2.4) + rect(-22, -4, 44, 4, ink, 0));
+        var arm = function (a) { var r = (a * Math.PI) / 180, x = 34 * Math.cos(r), y = 34 * Math.sin(r); return line("M0,0 L" + n1(x) + "," + n1(y), ink, 7.5) + line("M0,0 L" + n1(x) + "," + n1(y), C.peri, 4) + '<circle cx="' + n1(x) + '" cy="' + n1(y) + '" r="3.6" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1.8"/>'; };
+        front += at(tx - 15 * SV, FLOOR - 82 * SV, SV, g("rotor", arm(180) + arm(60) + arm(-60) + '<circle r="5.5" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4"/>'));
+      })();
+
+      // ── Stop 1: the film, and the window behind him ──────────────────
+      var curtH = KIT.rig(O.curtain).hand[0];
+      var CORD = [wx(1, L.f.vis) + SV * curtH[0] - 2, VY + SV * curtH[1]];
+      var WIN = { x0: wx(1, L.f.win[0]), x1: CORD[0] - 26, y0: L.f.win[1], y1: L.f.win[2] };
+      WIN.hz = WIN.y1 - (WIN.y1 - WIN.y0) * 0.28;
+      (function () {
+        var w = WIN, ww = w.x1 - w.x0, cx = (w.x0 + w.x1) / 2;
+        exh += rect(w.x0 - 16, w.y0 - 16, ww + 32, w.y1 - w.y0 + 32, C.tan, 5) +
+          '<defs><clipPath id="' + P + 'win-clip"><rect x="' + n1(w.x0) + '" y="' + w.y0 + '" width="' + n1(ww) + '" height="' + (w.y1 - w.y0) + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + P + 'win-clip)">' + rect(w.x0, w.y0, ww, w.y1 - w.y0, SKY, 0) +
+          [[0.25, 0.22, 1], [0.72, 0.14, 0.8]].map(function (c) {
+            var x = w.x0 + ww * c[0], y = w.y0 + (w.y1 - w.y0) * c[1], s = c[2] * (V ? 1.1 : 1);
+            return '<path d="M' + n1(x - 50 * s) + "," + n1(y + 12 * s) + " q-14,-22 14,-24 q8,-26 38,-14 q22,-14 34,8 q22,4 12,30 Z" + '" fill="' + CREAM + '" stroke="' + ink + '" stroke-width="3"/>';
+          }).join("") +
+          g("win-nuke-at", at(cx + ww * 0.12, w.hz + 6, V ? 0.34 : 0.3, g("win-nuke", KIT.nuke()))) +
+          '<path d="M' + w.x0 + "," + n1(w.hz) + " Q" + n1(w.x0 + ww * 0.3) + "," + n1(w.hz - 46) + " " + n1(w.x0 + ww * 0.55) + "," + n1(w.hz - 8) + " T" + n1(w.x1) + "," + n1(w.hz - 18) + " V" + w.y1 + " H" + w.x0 + ' Z" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<rect x="' + w.x0 + '" y="' + n1(w.hz - 50) + '" width="' + n1(ww) + '" height="' + n1(w.y1 - w.hz + 50) + '" fill="url(#' + P + 'fine)" opacity="0.18"/>' +
+          g("win-mis", at(0, 0, 1, '<g transform="rotate(90) scale(' + (V ? 0.42 : 0.36) + ')">' + KIT.props.missile({ mood: "smug", arms: "none", flame: true }) + "</g>"), 'opacity="0"') +
+          '<rect id="' + P + 'win-flash" x="' + n1(w.x0) + '" y="' + w.y0 + '" width="' + n1(ww) + '" height="' + (w.y1 - w.y0) + '" fill="#FFFFFF" opacity="0"/>' + "</g>" +
+          // the mullions, in front of the view
+          rect(cx - 6, w.y0, 12, w.y1 - w.y0, CREAM, 3) + rect(w.x0, w.y0 + (w.y1 - w.y0) * 0.42 - 6, ww, 12, CREAM, 3) +
+          rect(w.x0 - 26, w.y1 + 14, ww + 52, 16, C.tan, 4);
+        // the curtain rod, the curtain (gathered at the left; its scaleX opens it across) and the pull cord
+        var cy0 = w.y0 - 34, cw = ww + 20, folds = "";
+        for (var x = 26; x < cw; x += 30) folds += line("M" + n1(w.x0 - 14 + x) + "," + (cy0 + 6) + " V" + (w.y1 + 10), "#6E3722", 3);
+        exh += g("curtain", '<rect x="' + n1(w.x0 - 14) + '" y="' + cy0 + '" width="' + n1(cw) + '" height="' + (w.y1 + 10 - cy0) + '" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>' + folds +
+          '<rect x="' + n1(w.x0 - 14) + '" y="' + cy0 + '" width="' + n1(cw) + '" height="' + (w.y1 + 10 - cy0) + '" fill="url(#' + P + 'hatch)" opacity="0.18"/>') +
+          line("M" + n1(w.x0 - 34) + "," + cy0 + " H" + n1(w.x1 + 40), ink, 7) + '<circle cx="' + n1(w.x0 - 38) + '" cy="' + cy0 + '" r="8" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<circle cx="' + n1(w.x1 + 44) + '" cy="' + cy0 + '" r="8" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/>' +
+          g("cord", line("M" + n1(CORD[0]) + "," + cy0 + " V" + n1(CORD[1] - 14), ink, 2.4) + poly([[CORD[0] - 5, CORD[1] - 16], [CORD[0] + 5, CORD[1] - 16], [CORD[0] + 7, CORD[1] + 10], [CORD[0] - 7, CORD[1] + 10]], C.yellow, 2.2));
+        // the TV on its plinth: a two-frame film, "WAR IS BAD"
+        var tv = L.f.tv, tvx = wx(1, tv[0]), pw = tv[3];
+        exh += rect(tvx - pw / 2 - 14, FLOOR - 22, pw + 28, 22, C.tan, 4) + rect(tvx - pw / 2, tv[1] + 18, pw, FLOOR - tv[1] - 40, CREAM, 4) + dots(tvx + pw * 0.15, tv[1] + 18, pw * 0.35, FLOOR - tv[1] - 40, 0.3) +
+          rect(tvx - pw / 2 - 14, tv[1], pw + 28, 18, C.tan, 4);
+        var rain = "";
+        for (var i = 0; i < 14; i++) rain += line("M" + n1(-70 + (i % 7) * 13 + (i > 6 ? 6 : 0)) + "," + n1(-150 + (i > 6 ? 22 : 0)) + " l-5,12", CREAM, 1.4);
+        var helmet = '<rect x="-63" y="-134" width="80" height="83" fill="#26324C"/>' + '<path d="M-63,-60 Q-23,-74 17,-60 V-51 H-63 Z" fill="#5A4636" stroke="' + ink + '" stroke-width="1.5"/>' +
+          '<path d="M-41,-68 Q-41,-92 -23,-92 Q-5,-92 -5,-68 Z" fill="' + C.slate + '" stroke="' + CREAM + '" stroke-width="1.6"/>' + line("M-46,-68 H0", CREAM, 2) +
+          '<g id="' + P + 'rain">' + rain + "</g>" + '<g transform="translate(0,40)">' + '<g id="' + P + 'rain2">' + rain + "</g></g>";
+        var title = '<rect x="-63" y="-134" width="80" height="83" fill="' + C.deep + '"/>' + txt(-23, -97, 19, "WAR IS", CREAM, "F") + txt(-23, -66, 21, "BAD", CREAM, "F") + line("M-50,-58 H4", C.orange, 1.6);
+        var film = g("film-a", helmet, 'opacity="0"') + g("film-b", title, 'opacity="0"') + '<rect id="' + P + 'tv-flash" x="-63" y="-134" width="80" height="83" fill="#FFFFFF" opacity="0"/>';
+        exh += at(tvx, tv[1], tv[2], KIT.props.tvSet({}).replace("<!--tv-screen-->", film));
+      })();
+
+      // ── Stop 2: the book, the TAX funnel and the bomb ────────────────
+      var LECT = [wx(2, L.b.lect[0]), L.b.lect[1]], FUN = [wx(2, L.b.fun[0]), FLOOR], FS = L.b.fun[1], BMB = [wx(2, L.b.bomb[0]), FLOOR], BS = L.b.bomb[1], BF = L.b.bomb[2];
+      var lbW = L.b.lbW;
+      (function () {
+        var x = LECT[0], y = LECT[1];
+        exh += poly([[x - 60, FLOOR], [x + 60, FLOOR], [x + 40, FLOOR - 18], [x - 40, FLOOR - 18]], C.rust, 4) + rect(x - 16, y + 30, 32, FLOOR - y - 48, C.tan, 4) + dots(x, y + 30, 16, FLOOR - y - 48, 0.3) +
+          poly([[x - lbW / 2 - 14, y + 40], [x + lbW / 2 + 14, y + 40], [x + lbW / 2, y + 12], [x - lbW / 2, y + 12]], C.rust, 4) +
+          g("lect-book", at(x, y, 1, bookSvg(lbW, true)));
+        // the funnel, with "TAX" on its box and its seal plate run backwards: plain paper in, war paper out
+        var plate = rect(-58, -151, 116, 44, C.cream, 3) + '<circle cx="-34" cy="-129" r="14" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/><circle cx="-34" cy="-129" r="7" fill="none" stroke="' + C.moneyDark + '" stroke-width="2"/>' +
+          poly([[-13, -132], [3, -132], [3, -138], [15, -129], [3, -120], [3, -126], [-13, -126]], ink, 0) + KIT.moneySeal("war", 36, -129, 14);
+        var funnel = KIT.props.colorFlipFunnel({ label: "TAX", inN: 0, outN: 0 })
+          .replace('<g class="funnel-in">', '<g class="funnel-in">' + g("fin", at(0, -310, 0.55, bill("plain")), 'opacity="0"'));
+        exh += at(FUN[0], FUN[1], FS, g("funnel", funnel + plate));
+        // the bomb, with a hatch on top (it rolls over to him; drawn in front of him)
+        var hatch = '<ellipse cx="-12" cy="-82" rx="13" ry="4.5" fill="' + ink + '"/>' + g("hatch", '<path d="M-25,-83 Q-12,-92 1,-83 Z" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2.2"/>');
+        front += '<g transform="translate(' + BMB[0] + "," + BMB[1] + ')">' + g("bomb-x", g("bomb-rot", '<g transform="scale(' + BF * BS + "," + BS + ')">' + KIT.props.bomb({ lit: false }).replace('<g class="bomb-ball">', '<g class="bomb-ball">') + hatch +
+          at(84, -130, 1, g("fuse-fire", KIT.flames(0, 4, 0.26), 'opacity="0"')) + "</g>")) + "</g>";
+      })();
+      // the paper he pays with, the war paper that comes out, and the bomb's blast behind him
+      var WBS = V ? 1.05 : 0.95;     // the paper's size, big enough to read its seal flip
+      front += g("toss", at(0, 0, V ? 0.8 : 0.75, bill("plain")), 'opacity="0"');
+      front += g("warbill", at(0, 0, 1, g("warbill-sq", '<g transform="scale(' + WBS + ')">' + KIT.money("war", 0.5) + "</g>")), 'opacity="0"');
+      var NUKE2 = [wx(2, L.b.vis) + 40, FLOOR];
+      backfx += at(NUKE2[0], NUKE2[1], L.b.nuke, g("nuke2", KIT.nuke()));
+
+      // ── Stop 3: the prize ────────────────────────────────────────────
+      var PR = L.p, ST = PR.stage, PODX = wx(3, PR.pod[0]), WMX = wx(3, PR.wm[0]), WMS = PR.wm[1];
+      var WIN3 = { tone: 2, hair: 1, outfit: "dress", color: 0 };
+      var w3 = KIT.rig(WIN3), w3o = Object.assign({}, WIN3, { mood: "smile", look: "right", arms: [[16, 6], ik(Object.assign({}, WIN3), 1, [w3.shoulder[1][0] + 18, w3.shoulder[1][1] - 26])] });
+      var w3r = KIT.rig(w3o), DOVEH = w3r.hand[1];
+      function dove(s) {
+        return '<g transform="scale(' + s + ')">' + poly([[-14, -2], [-4, -10], [6, -9], [12, -14], [16, -10], [12, -6], [14, 0], [4, 4], [-8, 4]], "#FFFFFF", 2) +
+          poly([[-6, -6], [2, -18], [6, -8]], "#F1EAD6", 1.8) + '<circle cx="11" cy="-10.5" r="1.3" fill="' + ink + '"/>' + poly([[15.5, -10.5], [19, -9.5], [15.5, -8.5]], C.orange, 1) + "</g>";
+      }
+      var MEDAL = function (s) {
+        return '<g transform="scale(' + s + ')">' + poly([[-7, -22], [-1, -22], [-1, -4], [-7, -4]], C.med, 1.6) + poly([[1, -22], [7, -22], [7, -4], [1, -4]], C.cream, 1.6) +
+          '<circle cx="0" cy="6" r="11" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4"/>' + KIT.star(0, 6, 7, C.cream) + "</g>";
+      };
+      var wmChest = KIT.castOpts("weaponsMaker", { arms: [[0, 0], [0, 0]], hold: null, mood: "grin" }), wmR = KIT.rig(wmChest);
+      var CW = PR.check[0] / WMS, CH = PR.check[1] / WMS;                       // the check, in his units
+      var chestC = [8, wmR.shoulder[0][1] + 34];                               // held at his chest
+      wmChest.arms = [ik(wmChest, 0, [chestC[0] - CW / 2 + 10, chestC[1]]), ik(wmChest, 1, [chestC[0] + CW / 2 - 10, chestC[1]])];
+      // hoisted: over her head, held by its right end
+      var podTop1 = ST[2] - PR.pod[3], herTop = podTop1 + SV * (KIT.rig(WIN3).top[1] - 100);
+      var hoistBottom = herTop - (V ? 26 : 22), hoistCx = PODX + (V ? 22 : 30);
+      var hoistLocal = [(hoistCx - WMX) / WMS, (hoistBottom - (ST[2] - 100 * WMS)) / WMS];
+      var wmHoist = KIT.castOpts("weaponsMaker", { arms: [[0, 0], [0, 0]], hold: null, mood: "grin", look: "left" });
+      wmHoist.arms = [ik(wmHoist, 0, [hoistLocal[0] + CW / 2 - 22, hoistLocal[1] - 6]), ik(wmHoist, 1, [hoistLocal[0] + CW / 2 - 6, hoistLocal[1] - 10])];
+      var wmDrop = KIT.castOpts("weaponsMaker", { arms: [[34, 70], [-34, -70]], hold: null, mood: "grin", look: "left" });
+      function checkSvg(w, h) {
+        return rect(-w / 2, -h / 2, w, h, C.money, 5) + rect(-w / 2 + 10, -h / 2 + 10, w - 20, h - 20, "none", 2, ' stroke="' + C.moneyDark + '"').replace('stroke="' + ink + '" ', "") +
+          txt(-w * 0.27, -h * 0.12, h * 0.15, "PAY TO:", C.moneyDark) + txt(-w * 0.04, h * 0.2, h * 0.32, "PEACE", ink, "F") +
+          line("M" + n1(w * 0.06) + "," + n1(h * 0.34) + " q12,-14 22,0 t22,0 t22,-4", ink, 2.2) + KIT.moneySeal("war", w * 0.34, -h * 0.14, h * 0.17);
+      }
+      (function () {
+        var x0 = wx(3, ST[0]), x1 = wx(3, ST[1]), y = ST[2], cu = PR.curtain, cux0 = wx(3, cu[0]), cux1 = wx(3, cu[1]);
+        // the banner
+        var bn = PR.banner;
+        exh += (bn[2] > L.rail ? line("M" + wx(3, bn[0] + 40) + "," + L.rail + " V" + bn[2] + " M" + wx(3, bn[1] - 40) + "," + L.rail + " V" + bn[2], ink, 3) : "") +
+          poly([[wx(3, bn[0]), bn[2]], [wx(3, bn[1]), bn[2]], [wx(3, bn[1]) - 26, (bn[2] + bn[3]) / 2], [wx(3, bn[1]), bn[3]], [wx(3, bn[0]), bn[3]], [wx(3, bn[0]) + 26, (bn[2] + bn[3]) / 2]], C.deep, 5) +
+          txt(wx(3, (bn[0] + bn[1]) / 2), (bn[2] + bn[3]) / 2 + PR.bfs * 0.36, PR.bfs, "PEACE PRIZE", C.yellow) +
+          KIT.star(wx(3, bn[0]) + 58, (bn[2] + bn[3]) / 2, 11, C.cream) + KIT.star(wx(3, bn[1]) - 58, (bn[2] + bn[3]) / 2, 11, C.cream);
+        // the weapons maker and the pram wait behind the curtain
+        var pram = (function () {
+          var body = '<path d="M-62,-58 H54 Q58,-14 18,-6 H-30 Q-60,-12 -62,-58 Z" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="4"/>' + line("M-58,-50 H52", C.cream, 3) +
+            '<path d="M-62,-58 Q-64,-112 -12,-118 L-6,-58 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>' + line("M-50,-64 L-14,-110 M-36,-60 L-10,-92", C.peri, 2) +
+            line("M54,-52 L84,-92 H96", ink, 5) +
+            [[-36, -4], [28, -4]].map(function (wv) { return '<circle cx="' + wv[0] + '" cy="' + wv[1] + '" r="20" fill="' + CREAM + '" stroke="' + ink + '" stroke-width="4"/>' + line("M" + (wv[0] - 14) + "," + wv[1] + " H" + (wv[0] + 14) + " M" + wv[0] + "," + (wv[1] - 14) + " V" + (wv[1] + 14), ink, 2) + '<circle cx="' + wv[0] + '" cy="' + wv[1] + '" r="4" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1.6"/>'; }).join("");
+          var bonnet = '<path d="M-31,-118 Q-30,-152 0,-162 Q30,-152 31,-118 Q0,-128 -31,-118 Z" fill="' + CREAM + '" stroke="' + ink + '" stroke-width="3"/>' +
+            [-26, -16, -6, 4, 14, 24].map(function (x) { return '<circle cx="' + x + '" cy="' + (-120 - Math.cos(x / 18) * 4) + '" r="5" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.6"/>'; }).join("") +
+            line("M-26,-120 L-36,-96 M26,-120 L36,-96", C.med, 2.4);
+          var baby = '<g transform="translate(6,-40) scale(0.5)">' + g("baby", KIT.props.missile({ mood: "smile", arms: "none", look: "left" }) + bonnet) + "</g>";
+          return baby + body + "</g>";
+        })();
+        exh += at(wx(3, PR.pram[0]), y - 22 * PR.pram[1], PR.pram[1], "<g>" + pram);
+        exh += at(WMX, y - 100 * WMS, WMS, g("wm-chest", KIT.person(wmChest)) + g("wm-hoist", KIT.person(wmHoist), 'opacity="0"') + g("wm-drop", KIT.person(wmDrop), 'opacity="0"'));
+        // the curtain behind her (it drops into the stage); its valance stays
+        var folds = "";
+        for (var x = cux0 + 30; x < cux1; x += 44) folds += line("M" + x + "," + (cu[2] + 30) + " V" + y, "#6E3722", 4);
+        exh += '<defs><clipPath id="' + P + 'curt3-clip"><rect x="' + (cux0 - 10) + '" y="' + cu[2] + '" width="' + (cux1 - cux0 + 20) + '" height="' + (y - cu[2]) + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + P + 'curt3-clip)">' + g("curt3", rect(cux0, cu[2], cux1 - cux0, y - cu[2], C.rust, 4) + folds + '<rect x="' + cux0 + '" y="' + cu[2] + '" width="' + (cux1 - cux0) + '" height="' + (y - cu[2]) + '" fill="url(#' + P + 'hatch)" opacity="0.16"/>') + "</g>";
+        var val = "";
+        for (var x2 = cux0 - 10; x2 < cux1 + 10; x2 += 52) val += "Q" + (x2 + 26) + "," + (cu[2] + 52) + " " + (x2 + 52) + "," + (cu[2] + 34) + " ";
+        exh += '<path d="M' + (cux0 - 10) + "," + (cu[2] - 6) + " H" + (cux1 + 10) + " V" + (cu[2] + 34) + " H" + (cux0 - 10) + ' Z" fill="' + C.deep + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<path d="M' + (cux0 - 10) + "," + (cu[2] + 34) + " " + val + "V" + (cu[2] + 34) + '" fill="' + C.deep + '" stroke="' + ink + '" stroke-width="4"/>' + line("M" + (cux0 - 4) + "," + (cu[2] + 6) + " H" + (cux1 + 4), C.yellow, 2.4);
+        // the stage
+        exh += rect(x0, y, x1 - x0, FLOOR - y, C.tan, 4) + dots(x0 + (x1 - x0) * 0.5, y, (x1 - x0) * 0.5, FLOOR - y, 0.3) + rect(x0 - 8, y - 8, x1 - x0 + 16, 12, C.rust, 4);
+        // the medal on its velvet cushion
+        var sx = wx(3, PR.stand), sh = V ? 120 : 110, ms = V ? 1.6 : 1.55;
+        exh += rect(sx - 12, y - sh, 24, sh, C.slate, 3) + rect(sx - 26, y - 10, 52, 10, C.slate, 3) +
+          '<path d="M' + (sx - 46) + "," + (y - sh) + " Q" + sx + "," + (y - sh - 26) + " " + (sx + 46) + "," + (y - sh) + " Q" + sx + "," + (y - sh + 14) + " " + (sx - 46) + "," + (y - sh) + ' Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="3"/>';
+        fin += at(sx, y - sh - 22 * ms, 1, g("medal", MEDAL(ms) + g("gleam", KIT.star(9 * ms, -2 * ms, 14, "#FFFFFF") + KIT.star(9 * ms, -2 * ms, 6, C.yellow), 'opacity="0"')));
+        // the podium rises out of the stage; she rides it
+        var pw = PR.pod[1], ph1 = PR.pod[3];
+        exh += '<defs><clipPath id="' + P + 'pod-clip"><rect x="' + (PODX - pw) + '" y="0" width="' + (2 * pw) + '" height="' + y + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + P + 'pod-clip)">' + g("pod", rect(PODX - pw / 2, y - ph1, pw, ph1 + 20, C.cream, 4) + dots(PODX, y - ph1, pw / 2, ph1, 0.3) + KIT.star(PODX, y - ph1 * 0.5, Math.min(26, ph1 * 0.3), C.yellow) + rect(PODX - pw / 2 - 6, y - ph1 - 8, pw + 12, 10, C.tan, 3)) + "</g>";
+        exh += at(PODX, y - ph1 - 100 * SV - 8, SV, g("her", g("her-sq", KIT.person(w3o) + at(DOVEH[0] + 2, DOVEH[1] - 13, 0.9, g("dove", dove(1))) + g("her-medal", at(w3r.neck[0] + 1, w3r.shoulder[0][1] + 16, 1, line("M-7,-16 L0,0 L7,-16", C.med, 2) + MEDAL(0.55)), 'opacity="0"'))));
+        // her hand and the dove, poking out from under the check
+        fin += g("check", at(0, 0, 1, g("check-sq", checkSvg(PR.check[0], PR.check[1]))), 'opacity="0"');
+        // her legs, flat as ribbons, sticking out from under the check and down the podium's front; the shoes curl up
+        var podTop = y - ph1 - 8, LL = ph1 * 0.8, lw = V ? 17 : 15;
+        var flatLeg = function (k, x) {
+          // a pointed shoe, toe outward (drawn toe-right, mirrored for the left foot)
+          var sh = '<g transform="scale(' + k + ',1)">' + poly([[-lw * 0.6, -2], [lw * 0.6, -2], [lw * 0.6 + 20, 6], [42, 14], [36, 19], [-lw * 0.7, 17]], C.navy, 3) + "</g>";
+          var stripes = "";
+          for (var s = 0.18; s < 0.9; s += 0.2) stripes += rect(-lw / 2, LL * s, lw, LL * 0.08, C.cream, 0);
+          return '<g transform="translate(' + n1(x) + "," + n1(podTop) + ')"><g class="' + P + 'fleg">' +
+            rect(-lw / 2, -2, lw, LL, "#A87B57", 3) + stripes + rect(-lw / 2, -2, lw, LL, "none", 3) +
+            '<g transform="translate(0,' + n1(LL - 2) + ')"><g class="' + P + 'fshoe" data-k="' + k + '">' + sh + "</g></g></g></g>";
+        };
+        fin += g("flatlegs", flatLeg(-1, PODX + (V ? -10 : -8)) + flatLeg(1, PODX + (V ? 44 : 40)), 'opacity="0"');
+        fin += at(PODX + (V ? 22 : 30) - PR.check[0] / 2 + 6, y - ph1 - 12, SV, g("weak", line("M0,0 L-12,-10 L-16,-24", ink, 7) + line("M0,0 L-12,-10 L-16,-24", "#A87B57", 4) + at(-16, -28, 0.8, dove(1)), 'opacity="0"'));
+        fin += g("splat3", [[-1, -10], [-1, -34], [1, -10], [1, -34]].map(function (s) { return line("M" + n1(s[0] * (PR.check[0] / 2 + 10)) + "," + s[1] + " l" + s[0] * 32 + "," + (s[1] < -20 ? -18 : -2), ink, 5); }).join(""), 'opacity="0"');
+      })();
+
+      // ── Stop 4: the Department of Defense ────────────────────────────
+      var DF = L.d, MX = wx(4, DF.plinth[0]), MY = DF.plinth[2], RR = DF.R, KQ = 0.42, WH = V ? 40 : 36;
+      var CYM = MY - WH - 0.809 * KQ * RR;                        // the roof center
+      function pent(r) { var o = []; for (var k = 0; k < 5; k++) { var a = -Math.PI / 2 + (k * 2 * Math.PI) / 5; o.push([MX + r * Math.cos(a), CYM + KQ * r * Math.sin(a)]); } return o; }
+      var P5 = pent(RR), Y5 = pent(RR * 0.42), PEEL;
+      var YB = CYM + KQ * RR * 0.42 * Math.sin((54 * Math.PI) / 180);   // the courtyard's front edge
+      (function () {
+        var pw = DF.plinth[1];
+        exh += rect(MX - pw / 2 - 14, FLOOR - 22, pw + 28, 22, C.tan, 4) + rect(MX - pw / 2, MY + 18, pw, FLOOR - MY - 40, CREAM, 4) + dots(MX + pw * 0.15, MY + 18, pw * 0.35, FLOOR - MY - 40, 0.3) + rect(MX - pw / 2 - 14, MY, pw + 28, 18, C.tan, 4);
+        // the model: front walls, the roof, the courtyard
+        var walls = "";
+        [[1, 2], [2, 3], [3, 4]].forEach(function (e, i) {
+          var a = P5[e[0]], b = P5[e[1]];
+          walls += poly([a, b, [b[0], b[1] + WH], [a[0], a[1] + WH]], i === 1 ? CREAM : "#E3D8BC", 4);
+          for (var w = 1; w < 4; w++) { var u = w / 4, xx = a[0] + (b[0] - a[0]) * u, yy = a[1] + (b[1] - a[1]) * u; walls += rect(xx - 4, yy + WH * 0.3, 8, WH * 0.35, C.slate, 1.4); }
+        });
+        exh += walls + poly(P5, CREAM, 5) + '<polygon points="' + pts(P5) + '" fill="url(#' + P + 'hatch)" opacity="0.25"/>' + poly(pent(RR * 0.8), "none", 2) +
+          poly(Y5, C.tan, 4);
+        // the grumpy courtyard missile (Part 1's pentagon), clipped at the courtyard's front edge
+        var mis = '<path d="M-22,60 V-150 Q-20,-190 0,-214 Q20,-190 22,-150 V60 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<path d="M-22,-150 Q-20,-190 0,-214 Q20,-190 22,-150 Z" fill="' + CREAM + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<path d="M-22,-138 H22" stroke="' + ink + '" stroke-width="4"/>' +
+          '<circle cx="-10" cy="-100" r="9.5" fill="#FFF" stroke="' + ink + '" stroke-width="3"/><circle cx="10" cy="-100" r="9.5" fill="#FFF" stroke="' + ink + '" stroke-width="3"/>' +
+          '<g id="' + P + 'cy-pupils"><circle cx="-10" cy="-99" r="4.4" fill="' + ink + '"/><circle cx="10" cy="-99" r="4.4" fill="' + ink + '"/></g>' +
+          '<g id="' + P + 'cy-brows"><path d="M-22,-118 L-3,-110 M22,-118 L3,-110" stroke="' + ink + '" stroke-width="5.5" stroke-linecap="round"/></g>' +
+          '<path d="M-10,-71 Q0,-80 10,-71" fill="none" stroke="' + ink + '" stroke-width="4" stroke-linecap="round"/>';
+        exh += '<defs><clipPath id="' + P + 'cy-clip"><rect x="' + (MX - 80) + '" y="' + (YB - 400) + '" width="160" height="400"/></clipPath></defs>' +
+          '<g clip-path="url(#' + P + 'cy-clip)"><g transform="translate(' + MX + "," + n1(YB) + ') scale(' + (V ? 0.62 : 0.58) + ')"><g id="' + P + 'cy-mis">' + mis + "</g></g></g>";
+        // the sign on a stick: DEFENSE painted over the old name, WAR
+        var sg = DF.sign, sx = wx(4, sg[0]), fsz = 30, lines = ["DEPARTMENT OF", " "], wS = Math.round(13 * fsz * 0.56 + 64), lh = fsz * 1.1, hS = Math.round(fsz * 1.75 + lh);
+        var bottom = -sg[2], top = bottom - hS, cyS = (top + bottom) / 2, l2 = cyS + 0.5 * lh + fsz * 0.37;
+        var patch = '<rect x="' + (-wS / 2 + 10) + '" y="' + n1(l2 - fsz * 0.95) + '" width="' + (wS - 20) + '" height="' + n1(fsz * 1.25) + '" fill="#FBF6E6"/>' + txt(0, l2, fsz, "DEFENSE", ink);
+        var curl = '<rect x="' + (-wS / 2 + 8) + '" y="-7" width="' + (wS - 16) + '" height="14" rx="7" fill="#FBF6E6" stroke="' + ink + '" stroke-width="2.4"/>' + line("M" + (-wS / 2 + 14) + ",-2 H" + (wS / 2 - 14), ink, 1, ' opacity="0.5"');
+        exh += at(sx, FLOOR, sg[1], g("sign4", KIT.props.sign({ text: lines.join("\n"), fontSize: fsz, height: sg[2], posts: 1 }) + txt(0, l2, fsz * 1.05, "WAR", C.war) +
+          '<defs><clipPath id="' + P + 'peel-clip"><rect id="' + P + 'peel-rect" x="' + (-wS / 2) + '" y="' + n1(l2 - fsz * 0.95) + '" width="' + wS + '" height="' + n1(fsz * 1.25) + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + P + 'peel-clip)">' + patch + "</g>" + at(0, n1(l2 + fsz * 0.3), 1, g("curl", curl, 'opacity="0"'))));
+        PEEL = { top: l2 - fsz * 0.95, h: fsz * 1.25 };
+      })();
+      // the tiny missiles, out of the five sides, and the holes they punch in the gallery walls
+      var HOLES = V
+        ? [[120, 980], [270, 560], [640, 470], [960, 620], [990, 980]]
+        : [[150, 560], [560, 230], [990, 110], [1280, 210], [1530, 560]];
+      HOLES = HOLES.map(function (h) { return [wx(4, h[0]), h[1]]; });
+      var FROM = [[P5[3][0] - 6, P5[3][1] + WH * 0.5], [P5[4][0] + 10, P5[4][1] - 4], [P5[0][0], P5[0][1] - 6], [P5[1][0] - 10, P5[1][1] - 4], [P5[1][0] + 4, P5[1][1] + WH * 0.5]];
+      (function () {
+        var rnd = KIT.rng(77);
+        HOLES.forEach(function (h, i) {
+          var r = V ? 46 : 40, jag = [];
+          for (var k = 0; k < 14; k++) { var a = (k / 14) * Math.PI * 2, rr = r * (k % 2 ? 0.62 + rnd() * 0.15 : 0.95 + rnd() * 0.2); jag.push([rr * Math.cos(a), rr * Math.sin(a) * 0.9]); }
+          var beam = '<polygon points="' + pts([[-r * 0.5, -r * 0.3], [r * 0.6, -r * 0.4], [r * 2.6, r * 5], [r * 0.6, r * 5]]) + '" fill="#FFF6C8" opacity="0.38"/>';
+          var chunks = [[-1, -1], [1, -0.6], [0.7, 1], [-0.9, 0.8]].map(function (c, j) { return '<g class="' + P + 'chunk" data-dx="' + n1(c[0] * r * 1.6) + '" data-dy="' + n1(c[1] * r * 1.4) + '">' + poly([[-6, -4], [5, -6], [7, 4], [-4, 6]], CREAM, 2) + "</g>"; }).join("");
+          exh += at(h[0], h[1], 1, g("hole-" + i, beam + poly(jag, "#CFE3DE", 4) + KIT.star(r * 0.1, -r * 0.15, r * 0.35, "#FFFFFF") + chunks, 'opacity="0"'));
+          front += g("tiny-" + i, '<g transform="scale(' + (V ? 0.3 : 0.26) + ')"><g transform="translate(0,80)">' + KIT.props.missile({ mood: "smug", arms: "none", flame: true }) + "</g></g>", 'opacity="0"');
+        });
+      })();
+
+      // ── Stop 5: the Department of Health ─────────────────────────────
+      var HC = L.h, KX = wx(5, HC.kase[0]), KW = HC.kase[1], KB = HC.kase[2], KT = HC.kase[3];
+      var sciO = KIT.castOpts("scientist", { mood: "grin" }), sciR = KIT.rig(sciO), SS = SV;
+      var FLASK = [KX + SS * (sciR.hand[0][0] + 2), KB - 100 * SS + SS * (sciR.hand[0][1] - 18)];
+      // the gauge hangs where his tapping hand reaches, from the spot he steps up to
+      var TAPW = [wx(5, HC.vis + HC.step) + SV * KIT.rig(O.ctap).hand[1][0], VY + SV * KIT.rig(O.ctap).hand[1][1]];
+      var GS = V ? 1.5 : 1.45, GAUGE = [TAPW[0] + 64 * GS, TAPW[1] + 100 * GS + 8 * GS];
+      (function () {
+        exh += rect(KX - KW / 2 - 16, KB, KW + 32, FLOOR - KB, C.tan, 4) + dots(KX, KB, KW / 2 + 16, FLOOR - KB, 0.3) +
+          at(KX, KB - 100 * SS, SS, g("sci", KIT.person(sciO))) +
+          rect(KX - KW / 2, KT, KW, KB - KT, "#CFE3DE", 5, ' fill-opacity="0.28"') +
+          line("M" + (KX - KW / 2 + 22) + "," + (KT + 40) + " l60,-30 M" + (KX - KW / 2 + 22) + "," + (KT + 84) + " l90,-50 M" + (KX + KW / 2 - 70) + "," + (KB - 40) + " l50,-28", "#FFFFFF", 4, ' opacity="0.85"') +
+          rect(KX - KW / 2 - 8, KB - 12, KW + 16, 14, C.slate, 3);
+        // the lid, hinged at its left end (germs pop it open)
+        front += at(KX - KW / 2 - 8, KT, 1, g("lid", rect(0, -12, KW + 16, 14, C.slate, 3) + rect(KW / 2 - 8, -22, 32, 10, C.peri, 2.4)));
+        // the sign over the case
+        var sy = HC.sign[1];
+        var s5h = Math.round(30 * 1.75 + 33) * (V ? 1.25 : 1.15);
+        exh += at(KX, sy, 1, g("sign5", line("M-90," + (L.rail - sy) + " L-60," + n1(-s5h) + " M90," + (L.rail - sy) + " L60," + n1(-s5h), ink, 2.4) + '<g transform="scale(' + (V ? 1.25 : 1.15) + ')">' + KIT.props.sign({ text: "DEPARTMENT OF\nHEALTH", fontSize: 30, height: 0, posts: 1 }).replace(/<g class="sign-posts">[\s\S]*?<\/g>/, "") + "</g>"));
+        // the gauge on its wall bracket, stuck on 0
+        exh += rect(GAUGE[0] - 30 * GS, GAUGE[1], 60 * GS, 10, C.slate, 3) + at(GAUGE[0], GAUGE[1], GS, g("gauge", KIT.props.gauge({ label: "OBSERVABLE HEALTH", value: 0, zones: [[0.8, 1, C.med]] })));
+      })();
+      // the germs, the red check-engine light, and the x-ray
+      var GERMC = ["yellow", "orange", "peri", "yellow", "orange"], GZ = V ? 1.1 : 1.0;
+      GERMC.forEach(function (c, i) { front += g("germ-" + i, at(0, 0, GZ, KIT.props.germ({ color: c, mood: i === 1 ? "smug" : "grin" })), 'opacity="0"'); });
+
+      // The visitor: every pose stacked in one group (the onTime below shows one), his skeleton beside them for KIT.xray.
+      var variants = ALIVE.map(function (k) { return '<g id="' + P + "v-" + k + '" style="display:none">' + SVG[k] + "</g>"; }).join("");
+      var gearB = gear(O.stap, "hang");
+      var bones = KIT.person(O.stap).replace('<g class="arm-l">', gearB.chest + '<g class="arm-l">');
+      var tears = (function () {
+        var e = [2 + -2.5 * HS, HD[1] - 4 * HS], e2 = [2 + 10.8 * HS, HD[1] - 4 * HS];
+        var arc = function (a, dir) { return "M" + n1(a[0]) + "," + n1(a[1]) + " Q" + n1(a[0] + dir * 22) + "," + n1(a[1] - 26) + " " + n1(a[0] + dir * 42) + "," + n1(a[1] + 40); };
+        return [arc(e, -1), arc(e2, 1)].map(function (d) { return '<path class="' + P + 'tear" d="' + d + '" fill="none" stroke="' + C.cyan + '" stroke-width="4.2" stroke-linecap="round" stroke-dasharray="7 5"/>'; }).join("");
+      })();
+      var honk = '<g transform="translate(' + n1(NOSE[0] + 14) + "," + n1(NOSE[1] - 6) + ')">' + g("honk", line("M2,-8 l10,-6 M4,0 h12 M2,8 l10,6", ink, 2.2), 'opacity="0"') + "</g>";
+      var pagePuffs = "";
+      for (var a = 0; a < 9; a++) pagePuffs += '<g class="' + P + 'ash" data-i="' + a + '"><polygon points="-2.5,-1.5 2,-2.5 2.5,1.5 -1.5,2.5" fill="' + SOOT + '"/></g>';
+      var puffs = [[-34, 40, 30], [30, 30, 32], [0, -10, 36], [-26, -60, 28], [26, -70, 30], [0, -110, 30], [-10, 80, 24], [24, 86, 22]].map(function (p) { return smoke(p[0], p[1], p[2], P + "vpuff"); }).join("");
+      var soot = [[-1, 0], [1, 0]].map(function (s) { return smoke(0, 0, 9, P + "soot"); });
+      var visG = '<g id="' + P + 'vis"><g id="' + P + 'vis-bob">' + g("alive", variants) + g("bones", bones, 'opacity="0"') +
+        g("tears", tears, 'opacity="0"') + honk + g("ash", at(bookC[0] + bookW * 0.25, bookC[1], 1, pagePuffs)) + g("light", '<circle cx="' + LIGHT[0] + '" cy="' + LIGHT[1] + '" r="5.5" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2"/>', 'opacity="0"') +
+        g("clapsoot", soot.join(""), 'opacity="0"') + g("vpuffs", puffs) + "</g></g>";
+      var feet = "";
+      FOLLOW.forEach(function (f, j) {
+        for (var s = 0; s < 6; s++) {
+          var u = (s + 0.5) / 6, x = f[2] + (f[3] - f[2]) * (1 - (1 - u) * (1 - u)), side = s % 2 ? 8 : -8;
+          feet += '<g class="' + P + 'foot" data-t="' + n1(f[0] + (f[1] - f[0]) * u) + '"><ellipse cx="' + n1(x + side) + '" cy="' + n1(FLOOR + 18 + (s % 2) * 8) + '" rx="' + (V ? 17 : 14) + '" ry="5" fill="' + SOOT + '" opacity="0.8"/></g>';
+        }
+      });
+      q("world").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="' + WW + '" height="' + H + '" viewBox="0 0 ' + WW + " " + H + '" style="position:absolute;left:0;top:0;overflow:visible">' +
+        KIT.paperDefs(ID) + wall + feet + exh + backfx + visG + fin + front + "</svg>";
+
+      // the frame: the Layer B paper fixed, the gallery inside its inner frame moving under the camera
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("view").style.cssText = "position:absolute;overflow:hidden;left:46px;top:46px;width:" + (W - 92) + "px;height:" + (H - 92) + "px;";
+      q("shake").style.cssText = "position:absolute;left:0;top:0;width:" + (W - 92) + "px;height:" + (H - 92) + "px;";
+      q("world").style.cssText = "position:absolute;left:-46px;top:-46px;width:" + WW + "px;height:" + H + "px;";
+      q("fx").innerHTML = KIT.svg(W, H, '<rect id="' + P + 'flash" width="' + W + '" height="' + H + '" fill="#FFFFFF" opacity="0"/>');
+
+      // ── Timeline ─────────────────────────────────────────────────────
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      function pivot(e, o) { gsap.set(e, { svgOrigin: o }); }
+      function pop(e, t, d) { tl.fromTo(e, { opacity: 0 }, { opacity: 1, duration: d || 0.01 }, t); }
+
+      // Everything that follows a path or a schedule is computed per frame (seek-safe).
+      var world = q("world"), vis = el("vis"), bob = el("vis-bob"), VEL = {};
+      ALIVE.forEach(function (k) { VEL[k] = el("v-" + k); });
+      var legs = [];
+      ALIVE.forEach(function (k) {
+        var hip = KIT.rig(O[k]).hip;
+        legs.push([VEL[k].querySelector(".leg-l"), hip[0]], [VEL[k].querySelector(".leg-r"), hip[1]]);
+      });
+      var bh = KIT.rig(O.stap).hip;
+      legs.push([el("bones").querySelector(".leg-l"), bh[0]], [el("bones").querySelector(".leg-r"), bh[1]]);
+      var tapArms = [[VEL.ctap.querySelector(".arm-r"), KIT.rig(O.ctap).shoulder[1]], [el("bones").querySelector(".arm-r"), KIT.rig(O.stap).shoulder[1]]];
+      var knowArm = [VEL.knows.querySelector(".arm-l"), KIT.rig(O.knows).shoulder[0]];
+      var TAPS = [T.observable, T.observable + 0.15, T.observable + 0.3];
+      for (var tt = T.health + 0.2; tt < D - 0.1; tt += 0.2) TAPS.push(tt);
+      function pulse(list, t, d) { var v = 0; list.forEach(function (t0) { var u = (t - t0) / d; if (u >= 0 && u <= 1) v = Math.max(v, Math.sin(u * Math.PI)); }); return v; }
+      var feetEls = document.querySelectorAll("." + P + "foot");
+      var curPose = null;
+      KIT.onTime(tl, D, function (t) {
+        world.style.transform = "translate(" + (-track(CAM, t)).toFixed(1) + "px,0px)";
+        var x = track(VX, t), walkA = 0, lift = 0;
+        WALK.forEach(function (w) { if (t >= w[0] && t <= w[1]) { var ph = ((t - w[0]) / w[2]) * Math.PI * 2; walkA = w[3] * Math.sin(ph) * Math.min(1, (w[1] - t) / 0.12, (t - w[0]) / 0.08); lift = Math.abs(Math.sin(ph)) * 3; } });
+        vis.setAttribute("transform", "translate(" + x.toFixed(1) + "," + VY.toFixed(1) + ") scale(" + SV + ")");
+        if (t > T.bad + 0.05 && t < T.aftWars + 0.2) lift += 1.6 * Math.sin((t - T.bad) * 34);
+        bob.setAttribute("transform", "translate(0," + (-lift).toFixed(2) + ")");
+        legs.forEach(function (l, i) { l[0].setAttribute("transform", "rotate(" + (i % 2 ? -walkA : walkA).toFixed(1) + " " + l[1][0] + " " + l[1][1] + ")"); });
+        var pose = POSE[0][1];
+        POSE.forEach(function (p) { if (t >= p[0] - 1e-6) pose = p[1]; });
+        if (pose !== curPose) { ALIVE.forEach(function (k) { VEL[k].style.display = k === pose ? "" : "none"; }); curPose = pose; }
+        // taps: the temple on "KNOWS", the gauge on "observable"
+        var tp = pulse(TAPS, t, 0.12) * -7;
+        tapArms.forEach(function (a) { a[0].setAttribute("transform", "rotate(" + tp.toFixed(2) + " " + a[1][0] + " " + a[1][1] + ")"); });
+        var kp = pulse([T.knows + 0.02, T.knows + 0.17], t, 0.13) * 8;
+        knowArm[0].setAttribute("transform", "rotate(" + kp.toFixed(2) + " " + knowArm[1][0] + " " + knowArm[1][1] + ")");
+        // sooty footprints, as he steps
+        feetEls.forEach(function (f) { f.style.opacity = t >= +f.getAttribute("data-t") ? 1 : 0; });
+      });
+
+      // ── Entrance ──
+      var rotor = el("rotor");
+      pivot(rotor, "0 0");
+      tl.fromTo(rotor, { rotation: 0 }, { rotation: 120, duration: 0.34, ease: "back.out(1.6)" }, T.endearing);
+      // ── Exhibit 1: the film ──
+      var fa = el("film-a"), fb = el("film-b");
+      tl.fromTo(el("tv-flash"), { opacity: 0 }, { opacity: 1, duration: 0.04 }, T.movies);
+      tl.to(el("tv-flash"), { opacity: 0, duration: 0.2 }, T.movies + 0.06);
+      var fr = T.movies + 0.06, k = 0;
+      while (fr < PAN[1][1]) { var nx = Math.min(fr + 1.05, PAN[1][1]); tl.set(k % 2 ? fb : fa, { opacity: 1 }, fr); tl.set(k % 2 ? fb : fa, { opacity: 0 }, nx); fr = nx; k++; }
+      [el("rain"), el("rain2")].forEach(function (r) { tl.fromTo(r, { y: 0 }, { y: 40, duration: 0.5, repeat: 9, ease: "none" }, T.movies); });
+      // "bad": he bursts into tears (two arcs of water) and honks into a hanky
+      tl.set(el("tears"), { opacity: 1 }, T.bad + 0.05);
+      tl.set(el("tears"), { opacity: 0 }, T.aftWars + 0.2);
+      document.querySelectorAll("." + P + "tear").forEach(function (tr) { tl.fromTo(tr, { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": -24 }, duration: 0.2, repeat: 15, ease: "none" }, T.bad + 0.05); });
+      var hk = VEL.honk.querySelector("." + P + "hanky");
+      pivot(hk, "0 0");
+      tl.fromTo(hk, { scale: 1 }, { scale: 1.45, duration: 0.07, yoyo: true, repeat: 3, ease: "power2.out" }, T.bad + 0.3);
+      tl.fromTo(el("honk"), { opacity: 0, x: -4 }, { opacity: 1, x: 4, duration: 0.08, yoyo: true, repeat: 3 }, T.bad + 0.3);
+      // "between": a missile streaks past outside; "wars).": a mushroom cloud on the horizon and the window flashes
+      var wm = el("win-mis");
+      tl.set(wm, { opacity: 1 }, T.between - 0.05);
+      tl.fromTo(wm, { x: WIN.x0 - 90, y: WIN.y0 + (WIN.y1 - WIN.y0) * 0.3 }, { x: WIN.x1 + 120, y: WIN.y0 + (WIN.y1 - WIN.y0) * 0.24, duration: 0.42, ease: "none" }, T.between - 0.05);
+      tl.set(wm, { opacity: 0 }, T.between + 0.4);
+      KIT.boom(tl, el("win-nuke"), T.wars + 0.06);
+      tl.fromTo(el("win-flash"), { opacity: 0 }, { opacity: 1, duration: 0.04 }, T.wars + 0.06);
+      tl.to(el("win-flash"), { opacity: 0, duration: 0.5, ease: "power2.in" }, T.wars + 0.14);
+      // after "wars).": without looking, he pulls the cord and the curtain shuts
+      var curt = el("curtain");
+      gsap.set(curt, { svgOrigin: n1(WIN.x0 - 14) + " 0" });
+      tl.fromTo(curt, { scaleX: 0.16 }, { scaleX: 1, duration: 0.24, ease: "power3.out" }, T.aftWars + 0.02);
+      gsap.set(el("cord"), { svgOrigin: n1(CORD[0]) + " " + n1(WIN.y0 - 34) });
+      tl.fromTo(el("cord"), { scaleY: 1 }, { scaleY: 1.12, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out" }, T.aftWars);
+
+      // ── Exhibit 2: the book ──
+      tl.set(el("lect-book"), { opacity: 0 }, tIn[1] + 0.05);
+      // "peace": he flips a plain paper into the TAX funnel (cash register) ...
+      var toss = el("toss"), tH = [wx(2, L.b.vis) + SV * (tossH[1][0] + 2), VY + SV * (tossH[1][1] - 10)];
+      var mouth = [FUN[0], FUN[1] - 300 * FS];
+      tl.set(toss, { opacity: 1 }, T.peace - 0.34);
+      KIT.onTime(tl, D, function (t) {
+        var u = clamp01((t - (T.peace - 0.34)) / 0.32), x = tH[0] + (mouth[0] - tH[0]) * u, y = tH[1] + (mouth[1] - tH[1]) * u - (V ? 360 : 260) * 4 * u * (1 - u);
+        toss.setAttribute("transform", "translate(" + n1(x) + "," + n1(y) + ") rotate(" + n1(u * 340) + ")");
+      });
+      tl.set(toss, { opacity: 0 }, T.peace - 0.02);
+      var fin2 = el("fin");
+      tl.set(fin2, { opacity: 1 }, T.peace - 0.02);
+      tl.fromTo(fin2, { y: 0 }, { y: 90, duration: 0.22, ease: "power2.in" }, T.peace - 0.02);
+      tl.set(fin2, { opacity: 0 }, T.peace + 0.22);
+      // ... the funnel chews on it, and on "tax" it drops out of the spout as war money (slide whistle)
+      var fun = el("funnel");
+      tl.fromTo(fun, { x: 0 }, { x: 3, duration: 0.05, repeat: 9, yoyo: true, ease: "none" }, T.tax - 0.5);
+      var lever = fun.querySelector(".funnel-lever");
+      pivot(lever, "80 -112");
+      tl.fromTo(lever, { rotation: 0 }, { rotation: 50, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, T.tax - 0.12);
+      var wb = el("warbill"), wbs = el("warbill-sq"), spout = [FUN[0], FUN[1] - 56 * FS], wbS = WBS;
+      var standY = FLOOR - 46 * wbS;
+      tl.set(wb, { opacity: 1 }, T.tax);
+      pivot(wbs, "0 " + 46 * wbS);
+      tl.fromTo(wbs, { scaleY: 1 }, { scaleY: 0.7, duration: 0.06, yoyo: true, repeat: 1 }, T.tax + 0.22);
+      // "buy": it hops into the bomb's hatch (boing), the fuse lights itself and the bomb rolls to his feet
+      var hatchW = [BMB[0] + BF * BS * -12, BMB[1] - 86 * BS];
+      KIT.onTime(tl, D, function (t) {
+        var t0 = T.buy - 0.18, fall = ease((t - T.tax) / 0.22, "in"), u = clamp01((t - t0) / 0.2);
+        var x = spout[0] + (hatchW[0] - spout[0]) * u, y = spout[1] - 40 + (standY - spout[1] + 40) * fall + (hatchW[1] - 20 - standY) * u - 120 * 4 * u * (1 - u);
+        wb.setAttribute("transform", "translate(" + n1(x) + "," + n1(y) + ") scale(" + (1 - 0.6 * u).toFixed(3) + ")");
+      });
+      tl.set(wb, { opacity: 0 }, T.buy + 0.03);
+      var hatch = el("hatch");
+      pivot(hatch, "-25 -83");
+      tl.fromTo(hatch, { rotation: 0 }, { rotation: -110, duration: 0.1 }, T.buy - 0.2);
+      tl.to(hatch, { rotation: 0, duration: 0.08 }, T.buy + 0.04);
+      var spark = document.querySelector("#" + P + "bomb-rot .bomb-spark");
+      pivot(spark, "0 0");
+      tl.fromTo(spark, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1.2, duration: 0.08 }, T.buy + 0.06);
+      tl.to(spark, { scale: 0.8, duration: 0.05, repeat: 5, yoyo: true }, T.buy + 0.14);
+      pop(el("fuse-fire"), T.buy + 0.08);
+      KIT.flicker(tl, el("fuse-fire"), T.buy + 0.08, BOOM);
+      var rollTo = wx(2, L.b.vis) + (V ? 120 : 100) - BMB[0];
+      tl.fromTo(el("bomb-x"), { x: 0 }, { x: rollTo, duration: BOOM - 0.04 - (T.buy + 0.08), ease: "power1.in" }, T.buy + 0.08);
+      pivot(el("bomb-rot"), "0 " + n1(-42 * BS));
+      tl.fromTo(el("bomb-rot"), { rotation: 0 }, { rotation: -BF * 720, duration: BOOM - 0.04 - (T.buy + 0.08), ease: "power1.in" }, T.buy + 0.08);
+      tl.set(el("bomb-x"), { opacity: 0 }, BOOM);
+      // "bombs).": it goes off: white flash, a small mushroom cloud, the gallery shakes; the smoke clears on him charred
+      KIT.boom(tl, el("nuke2"), BOOM, { shake: q("shake") });
+      tl.fromTo(el("flash"), { opacity: 0 }, { opacity: 1, duration: 0.03 }, BOOM);
+      tl.to(el("flash"), { opacity: 0, duration: 0.32, ease: "power1.out" }, BOOM + 0.08);
+      document.querySelectorAll("." + P + "vpuff").forEach(function (pf, i) {
+        pivot(pf, "0 0");
+        tl.fromTo(pf, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1.25, duration: 0.08, ease: "power2.out" }, BOOM + 0.02);
+        tl.to(pf, { opacity: 0, scale: 1.7, y: -24 - (i % 3) * 10, x: (i % 2 ? 1 : -1) * 14, duration: 0.3, ease: "power1.in" }, BOOM + 0.1 + (i % 4) * 0.03);
+      });
+      // after "bombs).": he turns a page (sizzle); it crumbles to ash
+      var page = VEL.cbook.querySelector("." + P + "page");
+      pivot(page, "0 0");
+      var turnT = T.aftBombs;
+      tl.fromTo(page, { scaleX: 1 }, { scaleX: -0.2, duration: 0.18, ease: "power1.in" }, turnT);
+      tl.to(page, { opacity: 0, duration: 0.05 }, turnT + 0.18);
+      document.querySelectorAll("." + P + "ash").forEach(function (a, i) {
+        var dx = (i % 3 - 1) * 9 - 8, dy = 30 + (i % 4) * 9;
+        tl.fromTo(a, { opacity: 0, x: (i % 3) * 5 - 14, y: (i % 2) * 6 - 4 }, { opacity: 1, duration: 0.02 }, turnT + 0.17);
+        tl.to(a, { x: dx - 14, y: dy, rotation: 90 + i * 30, opacity: 0, duration: 0.55, ease: "power1.in" }, turnT + 0.2 + (i % 3) * 0.03);
+      });
+
+      // ── Exhibit 3: the prize ──
+      var gl = el("gleam");
+      pivot(gl, n1(9 * (V ? 1.6 : 1.55)) + " " + n1(-2 * (V ? 1.6 : 1.55)));
+      tl.fromTo(gl, { opacity: 0, scale: 0.2, rotation: 0 }, { opacity: 1, scale: 1.2, rotation: 45, duration: 0.18, yoyo: true, repeat: 3, ease: "sine.inOut" }, T.prizes + 0.12);
+      // "promote": she rises on the podium (slide whistle up), and the medal flies over and round her neck
+      var rise = PR.pod[3] - PR.pod[2];
+      tl.fromTo(el("pod"), { y: rise }, { y: 0, duration: 0.4, ease: "back.out(1.4)" }, T.promote);
+      tl.fromTo(el("her"), { y: rise }, { y: 0, duration: 0.4, ease: "back.out(1.4)" }, T.promote);
+      var medal = el("medal"), ms0 = [wx(3, PR.stand), ST[2] - (V ? 120 : 110) - 22 * (V ? 1.6 : 1.55)];
+      var neckW = [PODX + SV * (w3r.neck[0] + 1), ST[2] - PR.pod[3] - 8 - 100 * SV + SV * (w3r.shoulder[0][1] + 16)];
+      pivot(medal, "0 0");
+      tl.fromTo(medal, { x: 0, y: 0, scale: 1 }, { x: neckW[0] - ms0[0], y: neckW[1] - ms0[1], scale: 0.42, duration: 0.32, ease: "power2.inOut" }, T.promote + 0.38);
+      tl.set(medal, { opacity: 0 }, T.promote + 0.7);
+      tl.set(el("her-medal"), { opacity: 1 }, T.promote + 0.7);
+      // "funded": the curtain drops on the weapons maker and his giant check; his baby missile watches from a pram
+      var curtH3 = ST[2] - PR.curtain[2];
+      tl.fromTo(el("curt3"), { y: 0 }, { y: curtH3 + 10, duration: 0.3, ease: "power2.in" }, T.funded);
+      var check = el("check"), csq = el("check-sq");
+      var cChest = [WMX + WMS * chestC[0], ST[2] - 100 * WMS + WMS * chestC[1] - 10], cHoist = [hoistCx, hoistBottom - PR.check[1] / 2];
+      var cLand = [hoistCx, ST[2] - PR.pod[3] - 8 - PR.check[1] / 2];
+      tl.set(check, { opacity: 1 }, T.funded + 0.1);
+      tl.fromTo(check, { x: cChest[0], y: cChest[1] }, { x: cChest[0], y: cChest[1], duration: 0.01 }, 0);
+      // "weapons": he hoists it high over her head
+      tl.set(el("wm-chest"), { opacity: 0 }, T.weapons);
+      tl.set(el("wm-hoist"), { opacity: 1 }, T.weapons);
+      tl.to(check, { x: cHoist[0], y: cHoist[1], duration: 0.2, ease: "back.out(1.6)" }, T.weapons);
+      // "manufacturers).": he lets go; it hangs a beat, then drops flat on her like an anvil (splat)
+      tl.set(el("wm-hoist"), { opacity: 0 }, T.manu + 0.06);
+      tl.set(el("wm-drop"), { opacity: 1 }, T.manu + 0.06);
+      pivot(csq, "0 " + n1(PR.check[1] / 2));
+      tl.fromTo(csq, { rotation: 0 }, { rotation: 3, duration: 0.05, yoyo: true, repeat: 1 }, T.manu + 0.08);
+      tl.to(check, { y: cLand[1], duration: SPLAT - (T.manu + 0.24), ease: "power3.in" }, T.manu + 0.24);
+      tl.fromTo(csq, { scaleY: 1, scaleX: 1 }, { scaleY: 0.8, scaleX: 1.08, duration: 0.06, ease: "power2.out", immediateRender: false }, SPLAT);
+      tl.to(csq, { scaleY: 1, scaleX: 1, duration: 0.26, ease: "back.out(3)" }, SPLAT + 0.06);
+      var her = el("her-sq");
+      pivot(her, "0 100");
+      tl.fromTo(her, { scaleY: 1, scaleX: 1 }, { scaleY: 0.12, scaleX: 1.35, duration: 0.05, ease: "power2.out", immediateRender: false }, SPLAT - 0.03);
+      tl.set(el("splat3"), { opacity: 1, x: cLand[0], y: cLand[1] + PR.check[1] / 2 }, SPLAT);
+      tl.set(el("splat3"), { opacity: 0 }, SPLAT + 0.24);
+      // her flattened legs spring out from under it, kick twice, and the shoes curl up (with the squeak)
+      tl.set(el("flatlegs"), { opacity: 1 }, SPLAT);
+      document.querySelectorAll("." + P + "fleg").forEach(function (lg, i) {
+        pivot(lg, "0 0");
+        tl.fromTo(lg, { scaleY: 0.15 }, { scaleY: 1, duration: 0.14, ease: "back.out(3)", immediateRender: false }, SPLAT + 0.01);
+        tl.fromTo(lg, { rotation: 0 }, { rotation: i ? -7 : 7, duration: 0.09, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, SPLAT + 0.16 + i * 0.05);
+      });
+      document.querySelectorAll("." + P + "fshoe").forEach(function (sh) {
+        var k = +sh.getAttribute("data-k");
+        pivot(sh, "0 0");
+        tl.fromTo(sh, { rotation: 0 }, { rotation: -k * 80, duration: 0.3, ease: "back.out(1.6)", immediateRender: false }, T.aftManu - 0.08);
+      });
+      // a little hand and the dove poke out from under it and wave, weakly (squeak)
+      var weak = el("weak");
+      pivot(weak, "0 0");
+      tl.set(weak, { opacity: 1 }, T.aftManu - 0.3);
+      tl.fromTo(weak, { rotation: -70, scaleY: 0.3 }, { rotation: 6, scaleY: 1, duration: 0.18, ease: "power2.out", immediateRender: false }, T.aftManu - 0.3);
+      [[-10, 0.14], [8, 0.14], [-6, 0.16], [4, 0.16], [-3, 0.2]].reduce(function (t, kk) { tl.to(weak, { rotation: kk[0], duration: kk[1], ease: "sine.inOut" }, t); return t + kk[1]; }, T.aftManu - 0.1);
+      // the baby missile winks; the charred visitor applauds, soot puffing off his hands
+      var babyEye = el("baby").querySelectorAll(".eye")[1];
+      pivot(babyEye, "12.5 -90");
+      tl.fromTo(babyEye, { scaleY: 1 }, { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1, repeatDelay: 0.2 }, T.aftManu);
+      var cs = el("clapsoot"), clapAt = [(BOOKH[0][0] + BOOKH[1][0]) / 2 + 10, SY + 16];
+      tl.set(cs, { opacity: 1, x: clapAt[0], y: clapAt[1] }, CLAP);
+      cs.querySelectorAll("." + P + "soot").forEach(function (s, i) {
+        pivot(s, "0 0");
+        [0.07, 0.21, 0.35, 0.49].forEach(function (d, j) {
+          tl.fromTo(s, { opacity: 0.9, scale: 0.3, x: 0, y: 0 }, { opacity: 0, scale: 1.6, x: (i ? 1 : -1) * 16, y: -14, duration: 0.3, ease: "power1.out", immediateRender: false }, CLAP + d);
+        });
+      });
+
+      // ── Exhibit 4: the Department of Defense ──
+      var sign4 = el("sign4");
+      pivot(sign4, "0 0");
+      tl.fromTo(sign4, { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, T.dept1);
+      // "mainly": the courtyard missile pokes up (boing), looks left, looks right
+      var cm = el("cy-mis"), cpu = el("cy-pupils");
+      tl.fromTo(cm, { y: 240 }, { y: 40, duration: 0.24, ease: "back.out(1.6)" }, T.mainly);
+      tl.to(cpu, { x: -5, duration: 0.07 }, T.mainly + 0.2);
+      tl.to(cpu, { x: 5, duration: 0.08 }, T.mainly + 0.38);
+      tl.to(el("cy-brows"), { y: 4, duration: 0.08 }, T.mainly + 0.48);
+      // "attacks": it ducks, and tiny missiles shoot out of all five sides, punching holes in the walls; he ducks
+      tl.to(cm, { y: 240, duration: 0.1, ease: "power3.in" }, T.attacks - 0.04);
+      HOLES.forEach(function (h, i) {
+        var t0 = T.attacks + i * 0.08 - 0.12, f = FROM[i], dx = h[0] - f[0], dy = h[1] - f[1], rot = deg(Math.atan2(dx, -dy)), tm = el("tiny-" + i);
+        tl.set(tm, { opacity: 1 }, t0);
+        tl.fromTo(tm, { x: f[0], y: f[1], rotation: rot, scale: 0.6 }, { x: h[0], y: h[1], rotation: rot, scale: 1, duration: 0.12, ease: "power1.in", immediateRender: false }, t0);
+        tl.set(tm, { opacity: 0 }, t0 + 0.12);
+        var ho = el("hole-" + i);
+        pivot(ho, "0 0");
+        tl.fromTo(ho, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.12, ease: "back.out(2.4)" }, t0 + 0.12);
+        ho.querySelectorAll("." + P + "chunk").forEach(function (c) {
+          pivot(c, "0 0");
+          tl.fromTo(c, { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: +c.getAttribute("data-dx"), y: +c.getAttribute("data-dy") + 60, rotation: 200, opacity: 0, duration: 0.6, ease: "power1.out", immediateRender: false }, t0 + 0.12);
+        });
+      });
+      // "people).": the paint peels off in one curl (scratch): under DEFENSE it says WAR
+      var pr = el("peel-rect"), pe = PEEL, curl = el("curl"), peelT = T.people + 0.12;
+      tl.fromTo(pr, { attr: { height: pe.h } }, { attr: { height: 0 }, duration: 0.34, ease: "power1.inOut" }, peelT);
+      tl.set(curl, { opacity: 1 }, peelT);
+      tl.fromTo(curl, { y: 0 }, { y: -pe.h - 4, duration: 0.34, ease: "power1.inOut" }, peelT);
+      tl.to(curl, { y: 260, rotation: 40, opacity: 0, duration: 0.5, ease: "power2.in" }, peelT + 0.36);
+
+      // ── Exhibit 5: the Department of Health ──
+      var s5 = el("sign5");
+      tl.fromTo(s5, { y: -500 }, { y: 0, duration: 0.24, ease: "power2.in" }, T.dept2 - 0.24);
+      pivot(s5, "0 0");
+      tl.fromTo(s5, { rotation: 0 }, { rotation: 4, duration: 0.08, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, T.dept2);
+      // "makes": she gives the flask a proud shake (bubble pops)
+      var sciArm = el("sci").querySelector(".arm-l");
+      pivot(sciArm, sciR.shoulder[0].join(" "));
+      tl.fromTo(sciArm, { rotation: 0 }, { rotation: 12, duration: 0.07, yoyo: true, repeat: 5, ease: "sine.inOut" }, T.makes);
+      // "coronaviruses": the bubbles are germs; they pop the lid and bounce all over the gallery (boings),
+      // one off his head; on "and" one settles on his shoulder and his check-engine light blinks red
+      // (the lid jumps and slides off to the right, askew, under the sign; the germs come out of the gap)
+      var lid = el("lid");
+      pivot(lid, n1((KW + 16) / 2) + " -5");
+      tl.fromTo(lid, { x: 0, y: 0, rotation: 0 }, { x: KW * 0.18, y: -16, rotation: -4, duration: 0.08, ease: "power2.out" }, T.corona - 0.1);
+      tl.to(lid, { x: KW * 0.46, y: 0, rotation: 4, duration: 0.22, ease: "bounce.out" }, T.corona - 0.02);
+      var S0 = wx(5, 0), VX5 = wx(5, HC.vis), headTop = function (x) { return [x + SV * (R0.top[0] - 2), VY + SV * (R0.top[1] - 4)]; };
+      var shoulderW = function (x) { return [x + SV * R0.shoulder[1][0], VY + SV * (R0.shoulder[1][1] - 5)]; };
+      var lidY = KT - 60, IW = W - 92, hi = V ? 1 : 0;
+      var GP = [
+        [[T.corona - 0.12, FLASK[0], FLASK[1]], [T.corona + 0.05, KX - KW * 0.36, lidY, 60], [T.corona + 0.22, S0 + 70, V ? 700 : 300, 80], [T.corona + 0.62, S0 + 220, FLOOR - 4, 60]],
+        [[T.corona - 0.1, FLASK[0], FLASK[1]], [T.corona + 0.07, KX - KW * 0.22, lidY - 20, 60], [T.corona + 0.44, headTop(VX5)[0], headTop(VX5)[1], 140], [T.and, shoulderW(VX5)[0], shoulderW(VX5)[1], 150]],
+        [[T.corona - 0.08, FLASK[0], FLASK[1]], [T.corona + 0.09, KX - KW * 0.12, lidY - 10, 60], [T.corona + 0.66, S0 + IW - (V ? 120 : 380), V ? 620 : 240, 120], [T.corona + 1.1, S0 + IW - (V ? 260 : 520), FLOOR - 4, 60]],
+        [[T.corona - 0.06, FLASK[0], FLASK[1]], [T.corona + 0.11, KX - KW * 0.28, lidY - 30, 60], [T.corona + 0.6, S0 + (V ? 520 : 760), L.rail + 40, 60], [T.corona + 1.05, S0 + (V ? 760 : 1040), FLOOR - 4, 40]],
+        [[T.corona - 0.04, FLASK[0], FLASK[1]], [T.corona + 0.13, KX - KW * 0.18, lidY - 24, 60], [T.corona + 0.4, S0 + (V ? 120 : 190), V ? 520 : 180, 90], [T.corona + 0.86, S0 + (V ? 420 : 560), FLOOR - 4, 50]],
+      ];
+      var germs = GERMC.map(function (c, i) { return el("germ-" + i); });
+      germs.forEach(function (gm, i) { tl.set(gm, { opacity: 1 }, GP[i][0][0]); });
+      // after its path, each germ (except the one on his shoulder) keeps hopping along the floor
+      function germAt(i, t) {
+        var p = GP[i], last = p[p.length - 1];
+        if (i === 1 && t >= last[0]) { var sw = shoulderW(track(VX, t)); return [sw[0], sw[1], 0, 1]; }
+        if (t >= last[0]) {
+          var dt = t - last[0], per = 0.46 + i * 0.05, hop = (V ? 150 : 110) * (0.6 + 0.4 * ((i * 7) % 3) / 2), dir = i % 2 ? -1 : 1;
+          // (each hops back and forth on the floor, kept inside the gallery and out of Wishonia's corner)
+          var span = Math.min(V ? 300 : 420, dir > 0 ? S0 + (V ? 990 : 1520) - last[1] : last[1] - (S0 + 110));
+          var xx = last[1] + dir * ((dt * 140) % (2 * span) < span ? (dt * 140) % span : span - ((dt * 140) % span));
+          return [xx, FLOOR - 4 - hop * Math.abs(Math.sin((Math.PI * dt) / per)), dt * 260 * dir, 1];
+        }
+        for (var j = 1; j < p.length; j++) if (t < p[j][0]) {
+          var a = p[j - 1], b = p[j], u = clamp01((t - a[0]) / (b[0] - a[0]));
+          var s = j === 1 ? 0.3 + 0.7 * u : 1;
+          return [a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u - b[3] * 4 * u * (1 - u), (t - p[0][0]) * 400, s];
+        }
+        return [p[0][1], p[0][2], 0, 0.3];
+      }
+      KIT.onTime(tl, D, function (t) {
+        germs.forEach(function (gm, i) {
+          var g0 = germAt(i, t);
+          gm.setAttribute("transform", "translate(" + n1(g0[0]) + "," + n1(g0[1]) + ") rotate(" + n1(g0[2] % 360) + " 0 " + n1(-30 * GZ) + ") scale(" + g0[3].toFixed(3) + ")");
+        });
+      });
+      // his light blinks red from "and"
+      for (var bt = T.and + 0.02; bt < T.health; bt += 0.36) { tl.set(el("light"), { opacity: 1 }, bt); tl.set(el("light"), { opacity: 0 }, Math.min(bt + 0.18, T.health)); }
+      // "observable": tap, tap, tap: the needle twitches and falls back to 0
+      var needle = el("gauge").querySelector(".gauge-needle");
+      pivot(needle, "0 -100");
+      TAPS.forEach(function (tt2, i) { tl.fromTo(needle, { rotation: 0 }, { rotation: i < 3 ? 9 : 4, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tt2 + 0.05); });
+      // "health).": he x-rays into a skeleton (zap), still tapping, still grinning
+      KIT.xray(tl, el("alive"), el("bones"), T.health);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

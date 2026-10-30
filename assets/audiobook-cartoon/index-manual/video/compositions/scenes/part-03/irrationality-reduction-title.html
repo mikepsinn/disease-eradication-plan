@@ -1,0 +1,148 @@
+<template id="irrationality-reduction-title-template">
+  <!-- irrationality-reduction-title · Layer A title card (storyboards/part-03-gradual-irrationality-reduction.md), built
+       by KIT.titleScene (assets/js/props/title.js). The slowest title card in the episode: each word drifts in over about
+       0.8 s instead of slamming ("IRRATIONALITY" arrives crooked and slowly straightens itself; "PROGRAM" settles with a
+       thunk). Along the horizon a snail strains to push the fill of an empty progress bar; a beat after "Program." the
+       readout ticks from 0% to 1%, and the snail wipes its brow with an eye stalk and sits down for a rest. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="irrationality-reduction-title" data-width="1920" data-height="1080" data-start="0" data-duration="4.08">
+    <div id="irrationality-reduction-title-cam">
+      <div id="irrationality-reduction-title-bg"></div>
+      <div id="irrationality-reduction-title-sun"></div>
+      <div id="irrationality-reduction-title-back"></div>
+      <div id="irrationality-reduction-title-words"></div>
+      <div id="irrationality-reduction-title-art"></div>
+    </div>
+    <div id="irrationality-reduction-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    (function () {
+      var ID = "irrationality-reduction-title";
+      var C = KIT.C, ink = C.line;
+
+      // ── The snail (this file owns the drawing; slider-year-one-to-twenty copies it: keep the copies the same) ──
+      // About 70 long, drawn around the middle of its foot (0, 0), facing +x: a cream body, a mustard shell with a navy
+      // spiral, two eye stalks with ball tips and navy pupils, thin navy miter outlines. pid prefixes the ids.
+      // Parts (untransformed groups, pivots in snail units): #pid-body (stretch it about the tail (-32, 0)),
+      // #pid-shell (rock it about its foot (-5, -6)), #pid-stalk-0 / -1 (the eye stalks, pivots (29, -25) and (34, -24)),
+      // #pid-drop (a sweat drop by the head, hidden).
+      function snail(pid) {
+        function P(x, y) { return x.toFixed(1) + "," + y.toFixed(1); }
+        function polyD(pts) { return "M" + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + " Z"; }
+        function solid(pts, col, w) {
+          return '<path d="' + polyD(pts) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 3.2) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + polyD(pts) + '" fill="' + col + '"/>';
+        }
+        var body = [[-32, 0], [-29, -4], [-9, -7], [13, -8], [20, -12], [23, -21], [28, -26], [35, -26], [39, -20], [38, -11], [41, -3], [39, 0]];
+        var shell = [], sp = [], i;
+        for (i = 0; i < 12; i++) { var a = (i / 12) * Math.PI * 2; shell.push([-5 + 20 * Math.cos(a), -25 + 19 * Math.sin(a)]); }
+        for (i = 0; i <= 26; i++) { var t = i / 26, b = Math.PI * 0.15 + t * Math.PI * 3.7, r = 16 * (1 - t) + 1.8; sp.push([-5 + r * Math.cos(b), -25 + r * 0.95 * Math.sin(b)]); }
+        var stalk = function (k, x0, y0, x1, y1) {
+          var dx = x1 - x0, dy = y1 - y0, L = Math.sqrt(dx * dx + dy * dy), nx = -dy / L, ny = dx / L;
+          var q = [[x0 + nx * 2.4, y0 + ny * 2.4], [x1 + nx * 1.3, y1 + ny * 1.3], [x1 - nx * 1.3, y1 - ny * 1.3], [x0 - nx * 2.4, y0 - ny * 2.4]];
+          return '<g id="' + pid + "-stalk-" + k + '">' + solid(q, C.cream, 2.6) +
+            '<circle cx="' + x1 + '" cy="' + y1 + '" r="4.4" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.2"/>' +
+            '<circle cx="' + (x1 + 1.2) + '" cy="' + y1 + '" r="1.9" fill="' + ink + '"/></g>';
+        };
+        var dotsId = pid + "-hd";
+        return '<defs><pattern id="' + dotsId + '" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="' + ink + '"/></pattern></defs>' +
+          stalk(0, 29, -25, 25, -45) +
+          '<g id="' + pid + '-body">' + solid(body, C.cream) +
+          '<path d="' + polyD(body) + '" fill="url(#' + dotsId + ')" opacity="0.25" clip-path="none"/>' +
+          '<path d="M33,-15 L39,-14" fill="none" stroke="' + ink + '" stroke-width="1.8" stroke-linecap="round"/>' +
+          '<path d="M-24,-3 L-14,-4 M2,-5 L10,-5.5" fill="none" stroke="' + ink + '" stroke-width="1.3" opacity="0.55"/></g>' +
+          '<g id="' + pid + '-shell">' + solid(shell, C.yellow) +
+          '<path d="M' + P(sp[0][0], sp[0][1]) + sp.slice(1).map(function (p) { return " L" + P(p[0], p[1]); }).join("") + '" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<path d="M5,-10 L12,-17 L14,-27" fill="none" stroke="' + C.orange + '" stroke-width="2.4" stroke-linejoin="miter"/></g>' +
+          stalk(1, 34, -24, 40, -44) +
+          '<g id="' + pid + '-drop" opacity="0"><path d="M44,-38 Q49,-31 46,-27 Q41,-25 41,-31 Q42,-35 44,-38 Z" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.6"/></g>';
+      }
+
+      KIT.titleScene({
+        id: ID,
+        lines: [["THE", "GRADUAL"], ["IRRATIONALITY"], ["REDUCTION", "PROGRAM"]],
+        linesTall: [["THE", "GRADUAL"], ["IRRATIONALITY"], ["REDUCTION"], ["PROGRAM"]],
+        // every word fades in on its word; the gag adds the slow drift
+        how: "fade",
+        spoken: [{ cue: "Gradual", dur: 0.8 }, { cue: "Gradual", offset: 0.18, dur: 0.8 }, { cue: "Irrationality", dur: 0.8 }, { cue: "Reduction", dur: 0.6 }, { cue: "Program.", dur: 0.6 }],
+        cy: KIT.V ? 720 : 300,
+        gag: function (c) {
+          var tl = c.tl, W = c.W, H = c.H, V = c.V, hy = KIT.horizon;
+          // The drift: each word floats down into place over its own duration (0.8 s; 0.6 s for the last two, which
+          // have less room before the next word), instead of slamming.
+          var drifts = [0.8, 0.8, 0.85, 0.6, 0.6];
+          c.words.forEach(function (wd, i) {
+            tl.fromTo(wd.el, { y: -0.32 * wd.size }, { y: 0, duration: drifts[i], ease: "sine.out" }, wd.t);
+          });
+          // IRRATIONALITY arrives crooked and takes its time straightening itself.
+          var irr = c.word("IRRATIONALITY");
+          tl.fromTo(irr.el, { rotation: -11 }, { rotation: 0, duration: 1.75, ease: "sine.inOut" }, irr.t);
+          // PROGRAM settles with a thunk (the thunk sound at "Program." + 0.6 s): a squash on landing, the line shudders.
+          var prog = c.word("PROGRAM"), land = prog.t + 0.6;
+          tl.fromTo(prog.el, { scaleY: 1, scaleX: 1, transformOrigin: "50% 100%" }, { scaleY: 0.86, scaleX: 1.06, transformOrigin: "50% 100%", duration: 0.05, repeat: 1, yoyo: true, ease: "power2.out", immediateRender: false }, land);
+          tl.fromTo(c.wordsEl, { y: 0 }, { y: 5, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, land);
+
+          // ── The progress bar on the horizon, and the snail pushing its fill ──
+          var B = V ? { x0: 250, x1: 850, h: 58, s: 2.3, lab: 60 } : { x0: 560, x1: 1420, h: 58, s: 2.1, lab: 60 };
+          var by = hy - 3 - B.h, inner = B.x1 - B.x0 - 12, fillW = Math.max(6, inner * 0.01);
+          var ch = function (x0, y0, x1, y1, k) { return "M" + (x0 + k) + "," + y0 + " H" + (x1 - k) + " L" + x1 + "," + (y0 + k) + " V" + (y1 - k) + " L" + (x1 - k) + "," + y1 + " H" + (x0 + k) + " L" + x0 + "," + (y1 - k) + " V" + (y0 + k) + " Z"; };
+          var readout = function (id, text) {
+            return '<text id="' + id + '" x="' + (B.x1 + 22) + '" y="' + (by + B.h / 2 + B.lab * 0.36).toFixed(1) + '" font-family="Oswald" font-weight="600" font-size="' + B.lab + '" fill="' + C.cream + '" stroke="' + C.ink + '" stroke-width="7" stroke-linejoin="miter" paint-order="stroke">' + text + "</text>";
+          };
+          var bar = '<path d="' + ch(B.x0, by, B.x1, by + B.h, 8) + '" fill="' + C.deep + '" stroke="' + C.ink + '" stroke-width="10" stroke-linejoin="miter"/>' +
+            '<path d="' + ch(B.x0, by, B.x1, by + B.h, 8) + '" fill="none" stroke="' + C.cream + '" stroke-width="4" stroke-linejoin="miter"/>' +
+            // ten faint segment ticks, so the length of 1% reads against the whole bar
+            [1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (k) { var x = B.x0 + 6 + (inner * k) / 10; return '<path d="M' + x.toFixed(1) + "," + (by + 10) + " V" + (by + B.h - 10) + '" stroke="' + C.slate + '" stroke-width="3"/>'; }).join("") +
+            '<rect id="' + ID + '-fill" x="' + (B.x0 + 6) + '" y="' + (by + 6) + '" width="0" height="' + (B.h - 12) + '" fill="' + C.cyan + '"/>' +
+            '<g id="' + ID + '-r0">' + readout(ID + "-r0t", "0%") + "</g>" +
+            '<g id="' + ID + '-r1" opacity="0">' + readout(ID + "-r1t", "1%") + "</g>";
+          // the snail stands on the horizon at the bar's left end, its head against the bar's end, pushing the fill in
+          // (its head stays outside the bar, so the 1% sliver of fill shows)
+          var sx = B.x0 - 8 - 41 * B.s, sy = hy - 3;
+          var snailG = '<g transform="translate(' + sx.toFixed(1) + "," + sy + ") scale(" + B.s + ')"><g id="' + ID + '-snail">' + snail(ID + "-sn") + "</g></g>";
+          c.art.innerHTML = KIT.svg(W, H, bar + snailG);
+
+          var g = function (s) { return document.getElementById(ID + "-" + s); };
+          var t1 = c.after("Program."), D = c.D;
+          // The push: the whole card long, for 1% (the fill creeps in a few pixels; the snail gains a few).
+          tl.fromTo(g("fill"), { attr: { width: 0 } }, { attr: { width: fillW }, duration: t1, ease: "none" }, 0);
+          tl.fromTo(g("snail"), { x: 0 }, { x: 3 / B.s, duration: t1, ease: "none" }, 0);
+          // straining: the body stretches and the shell rocks, over and over; sweat beads up
+          gsap.set(g("sn-body"), { svgOrigin: "-32 0" });
+          gsap.set(g("sn-shell"), { svgOrigin: "-5 -6" });
+          gsap.set(g("sn-stalk-0"), { svgOrigin: "29 -25" });
+          gsap.set(g("sn-stalk-1"), { svgOrigin: "34 -24" });
+          var pulse = 0.42, n = Math.floor(t1 / pulse);
+          tl.fromTo(g("sn-body"), { scaleX: 1, scaleY: 1 }, { scaleX: 1.07, scaleY: 0.92, duration: pulse / 2, repeat: n * 2 - 1, yoyo: true, ease: "sine.inOut" }, 0);
+          tl.fromTo(g("sn-shell"), { rotation: 0 }, { rotation: 6, duration: pulse / 2, repeat: n * 2 - 1, yoyo: true, ease: "sine.inOut" }, 0);
+          tl.fromTo([g("sn-stalk-0"), g("sn-stalk-1")], { rotation: 0 }, { rotation: 14, duration: pulse / 2, repeat: n * 2 - 1, yoyo: true, ease: "sine.inOut" }, 0);
+          tl.fromTo(g("sn-drop"), { opacity: 0, y: -4 }, { opacity: 1, y: 0, duration: 0.25 }, 1.6);
+
+          // a beat after "Program.": the readout ticks to 1% (the tick)
+          tl.set(g("r0"), { opacity: 0 }, t1);
+          tl.fromTo(g("r1"), { opacity: 0, scale: 1.6, svgOrigin: (B.x1 + 44) + " " + (by + B.h / 2) }, { opacity: 1, scale: 1, svgOrigin: (B.x1 + 44) + " " + (by + B.h / 2), duration: 0.18, ease: "back.out(2.5)" }, t1);
+          // the snail stops, wipes its brow with an eye stalk (the drop flicks off) and sits down for a rest
+          tl.to([g("sn-body"), g("sn-shell")], { scaleX: 1, scaleY: 1, rotation: 0, duration: 0.08, overwrite: false }, t1);
+          tl.to(g("sn-stalk-1"), { keyframes: [{ rotation: 0, duration: 0.05 }, { rotation: 118, duration: 0.14, ease: "power2.in" }, { rotation: 70, duration: 0.1 }, { rotation: 118, duration: 0.08 }, { rotation: 0, duration: 0.14, ease: "power2.out" }] }, t1 + 0.04);
+          tl.to(g("sn-stalk-0"), { rotation: 0, duration: 0.08 }, t1);
+          tl.to(g("sn-drop"), { x: 16, y: -16, opacity: 0, duration: 0.22, ease: "power2.out" }, t1 + 0.2);
+          var sit = Math.min(D - 0.26, t1 + 0.45);
+          tl.to(g("sn-body"), { scaleY: 0.72, scaleX: 1.08, duration: 0.14, ease: "power2.out" }, sit);
+          tl.to(g("sn-shell"), { rotation: -16, y: 4, duration: 0.16, ease: "power2.out" }, sit);
+          // the eye stalks wilt forward (not far enough to hide the fill)
+          tl.to(g("sn-stalk-0"), { rotation: 40, duration: 0.2, ease: "power2.out" }, sit);
+          tl.to(g("sn-stalk-1"), { rotation: 46, y: 2, duration: 0.2, ease: "power2.out" }, sit + 0.03);
+        },
+      });
+    })();
+  </script>
+</template>

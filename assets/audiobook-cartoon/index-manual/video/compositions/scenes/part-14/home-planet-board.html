@@ -1,0 +1,639 @@
+<template id="home-planet-board-template">
+  <!-- home-planet-board · Layer A (storyboards/part-14-decentralized-fda.md). The standard office, the wall screen dark.
+       "three" → the screen switches on: Wishonia's home planet's live board under "WISHONIA · 3,000 YEARS", four rows of
+       treatments. "tracked" → each row's patient counter starts rolling (four ticks). "published." → teal ticks type into
+       the outcome column. "participate." → little blue Wishonians hop onto the rows and wave (the pops).
+       "unapproved" → a mustard Wishonian dictionary flips open at her pointing hand and the camera pushes in; a
+       highlighter runs down the U page and stops in the empty gap between UNAPPETIZING and UNARMED, where a cricket
+       chirps (after "medicine"). "bureaucracy" → the pages riffle to B: "BUREAUCRACY:" and, on the ding, "see EARTH",
+       over an engraving of a committee member sitting on a heap of SAFE bottles like a hen, four patients in line;
+       "sits" → he settles on them; "die." → the patients x-ray into grinning skeletons, still in line. After "die." →
+       the book slams shut and zips off; the camera pulls back. "decentralized" → the header retypes itself:
+       "DECENTRALIZED FDA (your word)". "Here's" → the screen flips to Earth's cream paper: the hallway of trial doors
+       (subsidy-follows-patient's first frame and drawing code, through KIT.zoomView().mini), a doctor in each doorway,
+       the scientist in hers, the patient in the middle, chest light blinking, looking lost. "small" → a plain paper
+       dangles from Wishonia's fingers like a dead mouse; "paper" → its legs wriggle. "anything." → every head on the
+       screen snaps to it; the patient and two doctors run at the glass and splat flat on it. After "anything." → they
+       slide down the glass and drop back into their places, heads still turned up to the top right. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+    #home-planet-board-cam, #home-planet-board-bg, #home-planet-board-screen, #home-planet-board-wish, #home-planet-board-front, #home-planet-board-hand, #home-planet-board-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="home-planet-board" data-width="1920" data-height="1080" data-start="0" data-duration="29.34">
+    <div id="home-planet-board-cam">
+      <div id="home-planet-board-bg"></div>
+      <div id="home-planet-board-screen"></div>
+      <div id="home-planet-board-wish"></div>
+      <div id="home-planet-board-front"></div>
+      <div id="home-planet-board-hand"></div>
+    </div>
+    <div id="home-planet-board-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "home-planet-board";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var qa = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var after = function (w, n) { return KIT.after(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, O = KIT.OFFICE;
+      var S = O.screen, HX = S[0] + 34, HY = S[1] + 34, HW = S[2] - 68, HH = S[3] - 68, HCX = HX + HW / 2, HCY = HY + HH / 2;
+      var ink = C.line, WHITE = "#FBF6E6";
+      function n1(v) { return String(Math.round(v * 10) / 10); }
+      function txt(x, y, size, fam, fill, s, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" font-family="' + fam + '" font-weight="' + (fam === "Fraunces" ? 900 : fam === "Inter" ? 700 : 600) + '" font-size="' + n1(size) + '" fill="' + fill + '"' + (extra ? " " + extra : "") + ">" + s + "</text>";
+      }
+      // An outer group that positions (it has the transform attribute) around an inner one that moves (it has the id).
+      function at(x, y, s, inner, id) {
+        return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (s && s !== 1 ? " scale(" + s + ")" : "") + '">' + (id ? '<g id="' + ID + "-" + id + '">' + inner + "</g>" : inner) + "</g>";
+      }
+      function rect(x, y, w, h, fill, extra) {
+        return '<rect x="' + n1(x) + '" y="' + n1(y) + '" width="' + n1(w) + '" height="' + n1(h) + '" fill="' + fill + '"' + (extra ? " " + extra : "") + "/>";
+      }
+
+      // ── The words ──
+      var tThree = cue("three"), tTracked = cue("tracked"), tPub = cue("published."), tPart = cue("participate.");
+      var tUnap = cue("unapproved"), tCrick = after("medicine"), tBur = cue("bureaucracy"), tDing = tBur + 0.4, tSits = cue("sits");
+      var tDie = cue("die."), tShut = after("die."), tDec = cue("decentralized"), tHere = cue("Here's");
+      var tSmall = cue("small"), tPaper = cue("paper"), tAny = cue("anything."), tSplat = tAny + 0.3, tSlide = after("anything.");
+
+      // ── Per shape: the cabinet (top-left, scale), the mug, the dictionary (its spine's x, its bottom, its open size and
+      // type size), the camera push-in on it (origin, scale), the pinch between Wishonia's open-palms fingers (where the
+      // paper hangs), and the faces on the glass (scale and x centers). ──
+      var L = V
+        ? { cab: [40, 893, 1.05], mug: [952, 1173, 1.1], book: { x: 810, y: 1440, w: 480, h: 232, fs: 26 },
+            push: { at: [1080, 1460], s: 1.35 }, pinch: [694, 1188], bill: 1.05, splat: { s: 2.6, xs: [310, 540, 770] } }
+        : { cab: [946, 664, 0.82], mug: [1775, 800, 1.5], book: { x: 1690, y: 903, w: 420, h: 176, fs: 22 },
+            push: { at: [1920, 905], s: 1.45 }, pinch: [1626, 700], bill: 1.25, splat: { s: 2.8, xs: [284, 520, 756] } };
+
+      q("bg").innerHTML = KIT.office(O.halo[0], O.halo[1]).replace("</svg>", at(L.cab[0], L.cab[1], L.cab[2], KIT.cabinet(0, 0)) + "</svg>");
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ════════════════ (a) The live board ════════════════
+      var hdrH = Math.round(HH * 0.17), fsHdr = Math.round(hdrH * 0.46);
+      var rowsTop = HY + hdrH + 44, rowGap = 8, rowH = (HY + HH - 12 - rowsTop - 3 * rowGap) / 4;
+      var col = { name: HX + HW * 0.035, pc: [HX + HW * 0.4, HX + HW * 0.665], wk: [HX + HW * 0.68, HX + HW * 0.8], tk: [HX + HW * 0.815, HX + HW * 0.89], wish: HX + HW * 0.945 };
+      var ROWS = [
+        { name: "REGROW A LEG", n: 48117902, rate: 23, worked: "99%" },
+        { name: "STOP AGING", n: 903416277, rate: 61, worked: "97%" },
+        { name: "COMMON COLD", n: 612044981, rate: 37, worked: "100%" },
+        { name: "MONDAYS", n: 3104555, rate: 9, worked: "61%" },
+      ];
+      var OLD = "WISHONIA · 3,000 YEARS", NEW = "DECENTRALIZED FDA (your word)";
+      var fsRow = rowH * 0.42, fsCol = Math.round(HH * 0.036);
+      var board = rect(HX, HY, HW, HH, C.navy) + rect(HX, HY, HW, hdrH, C.deep) +
+        '<path d="M' + HX + "," + (HY + hdrH) + " H" + (HX + HW) + '" stroke="' + C.yellow + '" stroke-width="4"/>' +
+        txt(HX + 24, HY + hdrH * 0.68, fsHdr, "Oswald", C.yellow, OLD, 'id="' + ID + '-hdr" letter-spacing="1.5"') +
+        '<circle id="' + ID + '-live" cx="' + n1(HX + HW - 92) + '" cy="' + n1(HY + hdrH * 0.5) + '" r="' + n1(hdrH * 0.13) + '" fill="' + C.war + '" stroke="' + C.cream + '" stroke-width="2"/>' +
+        txt(HX + HW - 76, HY + hdrH * 0.5 + fsHdr * 0.3, fsHdr * 0.75, "Oswald", C.cream, "LIVE", 'letter-spacing="2"') +
+        txt(col.name, HY + hdrH + 30, fsCol, "Oswald", C.peri, "TREATMENT", 'letter-spacing="1.5"') +
+        txt((col.pc[0] + col.pc[1]) / 2, HY + hdrH + 30, fsCol, "Oswald", C.peri, "PATIENTS", 'text-anchor="middle" letter-spacing="1.5"') +
+        txt((col.wk[0] + col.wk[1]) / 2, HY + hdrH + 30, fsCol, "Oswald", C.peri, "WORKED", 'text-anchor="middle" letter-spacing="1.5"') +
+        txt((col.tk[0] + col.tk[1]) / 2, HY + hdrH + 30, fsCol, "Oswald", C.peri, "PUBLISHED", 'text-anchor="middle" letter-spacing="1"');
+      function rowY(i) { return rowsTop + i * (rowH + rowGap); }
+      ROWS.forEach(function (r, i) {
+        var y = rowY(i), cy = y + rowH / 2, cellH = rowH - 16, tb = Math.min(cellH, col.tk[1] - col.tk[0]) * 0.86;
+        var cell = function (x0, x1) {
+          return rect(x0, y + 8, x1 - x0, cellH, C.deep, 'stroke="' + C.ink + '" stroke-width="2"') + '<path d="M' + n1(x0 + 2) + "," + n1(cy) + " H" + n1(x1 - 2) + '" stroke="' + C.slate + '" stroke-width="2"/>';
+        };
+        board += rect(col.name - 12, y, col.tk[1] - col.name + 22, rowH, C.slate, 'stroke="' + C.ink + '" stroke-width="3"') +
+          txt(col.name, cy + fsRow * 0.36, fsRow, "Oswald", C.cream, r.name, 'letter-spacing="1"') +
+          cell(col.pc[0], col.pc[1]) + txt((col.pc[0] + col.pc[1]) / 2, cy + fsRow * 0.36, fsRow, "Oswald", C.yellow, fmt(r.n), 'id="' + ID + "-pc" + i + '" text-anchor="middle" letter-spacing="1"') +
+          cell(col.wk[0], col.wk[1]) + txt((col.wk[0] + col.wk[1]) / 2, cy + fsRow * 0.36, fsRow, "Oswald", C.cream, r.worked, 'text-anchor="middle"') +
+          rect((col.tk[0] + col.tk[1]) / 2 - tb / 2, cy - tb / 2, tb, tb, WHITE, 'stroke="' + C.ink + '" stroke-width="3" rx="3"') +
+          '<g id="' + ID + "-tick" + i + '">' + KIT.tick((col.tk[0] + col.tk[1]) / 2 - tb / 2 - 2, cy - tb / 2 - 6, tb * 1.15, C.med) + "</g>" +
+          at(col.wish, y + rowH - 3, rowH / 66, wishonian(), "wn" + i);
+      });
+      function fmt(n) { return String(Math.floor(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+      // A little Wishonian, feet at (0, 0), about 62 tall: blue skin, the black bob, two ball-tipped antennae, the orange
+      // dress. Its right arm (.wn-wave, shoulder at (6, -30)) waves.
+      function wishonian() {
+        var sk = C.cyan, l = 'stroke="' + C.ink + '" stroke-width="2.4" stroke-linejoin="round"';
+        return '<path d="M-5,-2 V-16 M5,-2 V-16" stroke="' + C.ink + '" stroke-width="6" stroke-linecap="round"/><path d="M-5,-2 V-16 M5,-2 V-16" stroke="' + sk + '" stroke-width="3" stroke-linecap="round"/>' +
+          '<path d="M-9,-3 H-2 M2,-3 H9" stroke="' + C.ink + '" stroke-width="3.5" stroke-linecap="round"/>' +
+          '<path d="M-6,-31 L-14,-17 M-14,-17 L-12,-14" stroke="' + C.ink + '" stroke-width="5" stroke-linecap="round"/><path d="M-6,-31 L-14,-17" stroke="' + sk + '" stroke-width="2.4" stroke-linecap="round"/>' +
+          '<path d="M-7,-33 H7 L13,-14 H-13 Z" fill="' + C.orange + '" ' + l + "/>" +
+          '<path d="M-3,-27 q4,-3 7,1 q-2,5 -6,3 M-8,-19 q5,-3 8,1" fill="none" stroke="' + C.rust + '" stroke-width="1.8"/>' +
+          '<g class="wn-wave"><path d="M6,-30 L15,-44" stroke="' + C.ink + '" stroke-width="5" stroke-linecap="round"/><path d="M6,-30 L15,-44" stroke="' + sk + '" stroke-width="2.4" stroke-linecap="round"/><circle cx="15.5" cy="-45" r="3" fill="' + sk + '" ' + l + "/></g>" +
+          '<path d="M-3,-49 L-7,-61 M3,-49 L7,-61" stroke="' + C.ink + '" stroke-width="4"/><path d="M-3,-49 L-7,-61 M3,-49 L7,-61" stroke="' + sk + '" stroke-width="1.8"/>' +
+          '<circle cx="-7.5" cy="-62" r="3" fill="' + sk + '" ' + l + '/><circle cx="7.5" cy="-62" r="3" fill="' + sk + '" ' + l + "/>" +
+          '<path d="M-10,-38 Q-11,-52 0,-52 Q11,-52 10,-38 L11,-33 H-11 Z" fill="' + C.ink + '"/>' +
+          '<path d="M-7,-44 Q-7,-35 0,-34 Q7,-35 7,-44 Z" fill="' + sk + '" ' + l + "/>" +
+          '<path d="M-8,-45 Q0,-50 8,-45 L8,-43 Q0,-46 -8,-43 Z" fill="' + C.ink + '"/>' +
+          '<circle cx="-3" cy="-40.5" r="1.4" fill="' + C.ink + '"/><circle cx="3" cy="-40.5" r="1.4" fill="' + C.ink + '"/><path d="M-2.5,-37 Q0,-35.5 2.5,-37" fill="none" stroke="' + C.ink + '" stroke-width="1.2"/>';
+      }
+
+      // ════════════════ (c) Earth: the hallway of trial doors ════════════════
+      // subsidy-follows-patient's first frame (that scene zooms into this screen), drawn in its own frame (W x H) and
+      // shown here through KIT.zoomView().mini, so the zoom starts on it. Everything between the COPY markers is copied
+      // verbatim from subsidy-follows-patient.html (its ids get this scene's "-hw" prefix): change both. Left out: the
+      // money mountain and the price tags, which arrive in that scene.
+      var HWY = (function () {
+        var ID = "home-planet-board-hw";
+        var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, INK = C.line, WHITE = "#FBF6E6";
+        var P = function (s) { return ID + "-" + s; };
+        // ── COPY from subsidy-follows-patient.html (helpers) ──
+      var f1 = function (n) { return (+n).toFixed(1); };
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function at(x, y, k, inner) { return '<g transform="translate(' + f1(x) + "," + f1(y) + ")" + (k === 1 ? "" : " scale(" + (+k).toFixed(3) + ")") + '">' + inner + "</g>"; }
+      function poly(pts, fill, sw, extra) { return '<path d="M' + pts.map(function (p) { return f1(p[0]) + "," + f1(p[1]); }).join(" L") + ' Z" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + (sw || 3) + '" stroke-linejoin="miter"' + (extra || "") + "/>"; }
+        // ── COPY from subsidy-follows-patient.html (the hallway, the doors, the doctors, the patient) ──
+      // ════ THE TRIAL HALLWAY (home-planet-board draws this frame on its wall screen: change both) ════
+      // A hospital corridor in one-point perspective toward (vx, vy). A floor point at lateral u (-1 left wall, 1 right
+      // wall) and depth p (1 at the hallway's mouth, smaller farther in) is at (X(u, p), Y(p)); a person there is drawn
+      // at scale S(p). Doors stand on both walls (KIT.props.door, turned onto the wall plane by an affine matrix), each
+      // with a doctor in the doorway and a sign facing down the hall: a germ and a tally. pE: the end wall's depth.
+      var G = V ? { vx: 540, vy: 600, wd: 640, fl: 840, cz: 360, s0: 2.0, pE: 0.17 }
+                : { vx: 1000, vy: 360, wd: 1000, fl: 540, cz: 160, s0: 1.75, pE: 0.17 };
+      function X(u, p) { return G.vx + u * G.wd * p; }
+      function Y(p) { return G.vy + G.fl * p; }
+      function CY(p) { return G.vy - G.cz * p; }
+      function S(p) { return G.s0 * p; }
+      function depthAt(y) { return (y - G.vy) / G.fl; }
+      // side 1 = right wall, -1 = left wall; p: the door's middle; hers: the scientist's door (the patient's pick).
+      var DOORS = (V ? [[1, 0.62], [1, 0.45, 1], [1, 0.33], [1, 0.25], [-1, 0.72], [-1, 0.52], [-1, 0.37], [-1, 0.27]]
+                     : [[1, 0.58], [1, 0.42, 1], [1, 0.31], [1, 0.24], [-1, 0.7], [-1, 0.5], [-1, 0.37], [-1, 0.28]]).map(function (d, i) {
+        var germs = [["yellow", "grin"], ["med", "smug"], ["red", "cross"], ["peri", "grin"], ["orange", "smug"], ["rust", "cross"], ["cyan", "grin"], ["tan", "smug"]];
+        var docs = [{ tone: 0, color: 2, hair: 1 }, null, { tone: 2, color: 0, hair: 0 }, { tone: 3, color: 3, hair: 1 }, { tone: 3, color: 0, hair: 2 }, { tone: 0, color: 3, hair: 0, glasses: true }, { tone: 2, color: 2, hair: 1 }, { tone: 1, color: 0, hair: 0 }];
+        return { side: d[0], p: d[1], hers: !!d[2], germ: germs[i], doc: docs[i], n: d[2] ? 0 : [3, 0, 5, 2, 4, 6, 1, 7][i] };
+      }).sort(function (a, b) { return a.p - b.p; });
+      var HER = DOORS.filter(function (d) { return d.hers; })[0];
+
+      // The walls, floor, ceiling and end wall. Floor: checker tiles; walls: a teal wainscot under a chair rail.
+      function hallway() {
+        var pN = 1.5, pE = G.pE, out = "", tiles = "";
+        var floor = [[X(-1, pN), Y(pN)], [X(-1, pE), Y(pE)], [X(1, pE), Y(pE)], [X(1, pN), Y(pN)]];
+        var ceil = [[X(-1, pN), CY(pN)], [X(-1, pE), CY(pE)], [X(1, pE), CY(pE)], [X(1, pN), CY(pN)]];
+        out += poly(floor, C.cream, 0) + poly(ceil, "#EAE2C2", 0);
+        // checker tiles: depth lines evenly spaced in world depth, eight across
+        var ps = [], k = 0;
+        for (var d = 1 / pN; d < 1 / pE; d += 0.42) ps.push(1 / d);
+        ps.push(pE);
+        for (k = 0; k + 1 < ps.length; k++) {
+          for (var j = 0; j < 8; j++) {
+            if ((j + k) % 2) continue;
+            var u0 = -1 + j / 4, u1 = u0 + 0.25;
+            tiles += '<path d="M' + f1(X(u0, ps[k])) + "," + f1(Y(ps[k])) + " L" + f1(X(u1, ps[k])) + "," + f1(Y(ps[k])) + " L" + f1(X(u1, ps[k + 1])) + "," + f1(Y(ps[k + 1])) + " L" + f1(X(u0, ps[k + 1])) + "," + f1(Y(ps[k + 1])) + ' Z"/>';
+          }
+        }
+        out += '<g fill="url(#' + ID + '-hatch)" opacity="0.32">' + tiles + "</g>";
+        var grid = "";
+        for (k = 0; k < ps.length; k++) grid += "M" + f1(X(-1, ps[k])) + "," + f1(Y(ps[k])) + " H" + f1(X(1, ps[k])) + " ";
+        for (j = 0; j <= 8; j++) { var u = -1 + j / 4; grid += "M" + f1(X(u, pN)) + "," + f1(Y(pN)) + " L" + f1(X(u, pE)) + "," + f1(Y(pE)) + " "; }
+        out += '<path d="' + grid + '" stroke="' + INK + '" stroke-width="1.6" opacity="0.4" fill="none"/>';
+        // ceiling lights down the middle
+        [0.92, 0.6, 0.42, 0.31, 0.24].forEach(function (p) {
+          var w = 0.22, dp = 0.35 * p * p * 0.5;
+          out += poly([[X(-w, p + dp), CY(p + dp)], [X(w, p + dp), CY(p + dp)], [X(w, p - dp), CY(p - dp)], [X(-w, p - dp), CY(p - dp)]], "#FFF8DC", 2);
+        });
+        // the side walls: cream above, the teal wainscot below the chair rail (0.36 of the way up a 400-unit wall)
+        [-1, 1].forEach(function (s) {
+          var top = function (p) { return CY(p); }, rail = function (p) { return Y(p) - 105 * S(p); };
+          out += poly([[X(s, pN), top(pN)], [X(s, pE), top(pE)], [X(s, pE), Y(pE)], [X(s, pN), Y(pN)]], "#F7F0D8", 0);
+          out += poly([[X(s, pN), rail(pN)], [X(s, pE), rail(pE)], [X(s, pE), Y(pE)], [X(s, pN), Y(pN)]], "#BFD9D3", 0);
+          out += '<path d="M' + f1(X(s, pN)) + "," + f1(rail(pN)) + " L" + f1(X(s, pE)) + "," + f1(rail(pE)) + '" stroke="' + INK + '" stroke-width="3"/>' +
+            '<path d="M' + f1(X(s, pN)) + "," + f1(rail(pN) - 12) + " L" + f1(X(s, pE)) + "," + f1(rail(pE) - 12 * pE) + '" stroke="' + C.orange + '" stroke-width="1.8"/>';
+          // the corner lines
+          out += '<path d="M' + f1(X(s, pN)) + "," + f1(Y(pN)) + " L" + f1(X(s, pE)) + "," + f1(Y(pE)) + " M" + f1(X(s, pN)) + "," + f1(CY(pN)) + " L" + f1(X(s, pE)) + "," + f1(CY(pE)) + '" stroke="' + INK + '" stroke-width="4"/>';
+        });
+        // the end wall, with its double door (the herd runs out through it)
+        out += poly([[X(-1, pE), CY(pE)], [X(1, pE), CY(pE)], [X(1, pE), Y(pE)], [X(-1, pE), Y(pE)]], "#F7F0D8", 3) +
+          poly([[X(-1, pE), Y(pE) - 105 * S(pE)], [X(1, pE), Y(pE) - 105 * S(pE)], [X(1, pE), Y(pE)], [X(-1, pE), Y(pE)]], "#BFD9D3", 2);
+        return out;
+      }
+      // A door on a side wall, on the floor at depth p: its local x (-64..64, near to far) runs along the wall.
+      function wallMatrix(side, p) {
+        var dp = 0.4 * p * p, k = dp / 128;
+        return "matrix(" + [-side * G.wd * k, -G.fl * k, 0, S(p), X(side, p), Y(p)].map(function (v) { return v.toFixed(4); }).join(",") + ")";
+      }
+      function doorSvg(d, i) {
+        // the leaf opens with scaleX about its hinge (-48): #door-leaf-<i> holds the prop's leaf at its scale
+        var m = KIT.props.door({ color: d.hers ? C.med : [C.rust, C.peri, C.tan, C.rust, C.peri, C.tan, C.rust, C.peri][i] })
+          .replace('<g class="door-leaf"', '<g id="' + P("leaf-" + i) + '" transform="translate(-48,0) scale(0.16,1) translate(48,0)"><g class="door-leaf"')
+          .replace(/(<g class="door-leaf"[\s\S]*?)(<path d="M-51)/, "$1</g>$2");
+        return '<g transform="' + wallMatrix(d.side, d.p) + '">' + m + "</g>";
+      }
+      // The sign over each door, facing down the hall: a germ on the left, a tally counter on the right. 120 x 74,
+      // hanging from a bracket on the wall. #tally-<i> is the counter's number.
+      function signSvg(d, i) {
+        var p = d.p, s = S(p), sx = X(d.side * 0.84, p), sy = Y(p) - 262 * s;
+        var wallX = X(d.side, p), wallY = Y(p) - 300 * s;
+        var plate = '<rect x="-62" y="-6" width="124" height="76" rx="4" fill="' + INK + '" opacity="0.85"/>' +
+          '<rect x="-64" y="-10" width="124" height="76" rx="4" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="5"/>' +
+          '<rect x="-57" y="-3" width="110" height="62" rx="2" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          at(-26, 52, 0.95, KIT.props.germ({ color: d.germ[0], mood: d.germ[1] })) +
+          '<rect x="6" y="6" width="44" height="44" rx="3" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="3"/>' +
+          '<text id="' + P("tally-" + i) + '" x="28" y="42" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="34" fill="' + C.cream + '">' + d.n + "</text>";
+        var bracket = '<path d="M' + f1(wallX) + "," + f1(wallY) + " L" + f1(sx) + "," + f1(sy - 4 * s) + '" stroke="' + INK + '" stroke-width="' + f1(5 * s + 1) + '"/>';
+        return bracket + '<g id="' + P("sign-" + i) + '">' + at(sx, sy, s * 0.9, '<path d="M-40,-10 L-40,-24 M38,-10 L38,-24" stroke="' + INK + '" stroke-width="3"/>' + plate) + "</g>";
+      }
+      // The doctor in each doorway (everyday humans in lab coats) and the scientist in hers, facing into the hall;
+      // in the first frame they all look up to the top right (at Wishonia's paper), so each has a look-right drawing.
+      function doctorOpts(d) { return d.hers ? KIT.castOpts("scientist", { look: d.side > 0 ? "left" : "right" }) : mix(d.doc, { outfit: "labcoat", look: d.side > 0 ? "left" : "right", mood: "flat" }); }
+      function doctorSvg(d, i) {
+        var o = doctorOpts(d), p = d.p + 0.012, s = S(p), x = X(d.side * 0.93, p);
+        var up = d.side > 0 ? (d.hers ? KIT.castOpts("scientist", { look: "right" }) : mix(o, { look: "right" })) : o;
+        var hand = d.hers ? '<g id="' + P("sci-hand") + '" opacity="0">' + KIT.cast("scientist", { look: "left", mood: "eager", arms: [[-40, -100], [-10, -4]], holdR: "clipboard" }) + "</g>" : "";
+        return '<g id="' + P("doc-" + i) + '" transform="translate(' + f1(x) + "," + f1(Y(p) - 100 * s) + ") scale(" + s.toFixed(3) + ')">' +
+          '<g id="' + P("docj-" + i) + '">' +
+          '<g class="doc-up">' + KIT.person(up) + "</g>" +
+          '<g class="doc-on" opacity="0">' + KIT.person(o) + "</g>" + hand + "</g></g>";
+      }
+
+      // ── The patient (the spine): the same options in every scene of the part, and her mustard-and-orange scarf ──
+      var PAT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried" };
+      function scarf(o) {
+        var n = KIT.rig(o).neck, x = n[0], y = n[1] + 1, stripe = function (pts) { return poly(pts, C.orange, 1.4); };
+        var wrapPts = [[x - 9, y - 4], [x + 9, y - 5], [x + 10, y + 3], [x - 10, y + 4]];
+        var tail = [[x + 3, y + 1], [x + 9, y + 1], [x + 12, y + 24], [x + 5, y + 25]];
+        return '<g class="scarf">' + '<g class="scarf-tail" data-ox="' + (x + 6) + '" data-oy="' + (y + 1) + '">' + poly(tail, C.yellow, 2.2) +
+          stripe([[x + 4.5, y + 8], [x + 10, y + 8], [x + 10.5, y + 12], [x + 5, y + 12]]) + stripe([[x + 5.3, y + 16], [x + 11, y + 16], [x + 11.5, y + 20], [x + 5.7, y + 20]]) +
+          '<path d="M' + (x + 5) + "," + (y + 25) + " l-1,4 M" + (x + 8) + "," + (y + 25) + " l0,4 M" + (x + 11) + "," + (y + 24.5) + ' l1,4" stroke="' + C.orange + '" stroke-width="1.5"/></g>' +
+          poly(wrapPts, C.yellow, 2.4) + stripe([[x - 4, y - 4.5], [x, y - 4.7], [x, y + 3.6], [x - 4, y + 3.8]]) + stripe([[x + 4, y - 4.8], [x + 7, y - 4.9], [x + 7.4, y + 3.2], [x + 4, y + 3.4]]) + "</g>";
+      }
+      function patient(extra) {
+        var o = mix(PAT, extra);
+        return KIT.person(o).replace('<g class="head">', scarf(o) + '<g class="head">');
+      }
+
+        // ── end of COPY ──
+        // the patient's start (subsidy-follows-patient's L.pat)
+        var LP = V ? [0.32, 0.82] : [0, 0.86];
+        var art = KIT.paperDefs(ID) + hallway();
+        // ── COPY from subsidy-follows-patient.html (the end doors, then doors, doctors and signs, far to near) ──
+        var pE = G.pE;
+      var pE = G.pE;
+      art += '<g transform="translate(' + f1(X(-0.25, pE)) + "," + f1(Y(pE)) + ") scale(" + (S(pE) * 1.05).toFixed(3) + ')">' +
+        KIT.props.door({ color: C.slate }).replace('<g class="door-leaf"', '<g id="' + P("end-l") + '"><g class="door-leaf"').replace(/(<g class="door-leaf"[\s\S]*?)(<path d="M-51)/, "$1</g>$2") + "</g>" +
+        '<g transform="translate(' + f1(X(0.25, pE)) + "," + f1(Y(pE)) + ") scale(" + (-S(pE) * 1.05).toFixed(3) + "," + (S(pE) * 1.05).toFixed(3) + ')">' +
+        KIT.props.door({ color: C.slate }).replace('<g class="door-leaf"', '<g id="' + P("end-r") + '"><g class="door-leaf"').replace(/(<g class="door-leaf"[\s\S]*?)(<path d="M-51)/, "$1</g>$2") + "</g>";
+      // doors, signs and doctors, far to near
+      DOORS.forEach(function (d, i) { art += doorSvg(d, i) + doctorSvg(d, i) + signSvg(d, i); });
+        // ── end of COPY ──
+        // the patient, looking right or left (lost), and her question mark
+        var ps = S(LP[1]), px = X(LP[0], LP[1]), py = Y(LP[1]) - 100 * ps, RIG_R = KIT.rig(mix(PAT, { look: "right" }));
+        art += '<g transform="translate(' + f1(px) + "," + f1(py) + ") scale(" + ps.toFixed(3) + ')"><g id="' + P("patj") + '">' +
+          '<g class="pat-r">' + patient({ look: "right" }) + '</g><g class="pat-l" opacity="0">' + patient({ look: "left" }) + "</g></g></g>";
+        art += '<g transform="translate(' + f1(px + (RIG_R.top[0] + 20) * ps) + "," + f1(py + (RIG_R.top[1] - 16) * ps) + ") scale(" + ps.toFixed(3) + ')"><g id="' + P("what") + '" opacity="0">' +
+          '<text x="0" y="0" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="44" fill="' + INK + '">?</text></g></g>';
+        // ── COPY from subsidy-follows-patient.html (the paper's border, on top) ──
+      var border = '<path d="M0,0 H' + W + " V" + H + " H0 Z M30,30 V" + (H - 30) + " H" + (W - 30) + ' V30 Z" fill="' + C.paper + '" fill-rule="evenodd"/>' +
+        '<rect x="30" y="30" width="' + (W - 60) + '" height="' + (H - 60) + '" fill="none" stroke="' + INK + '" stroke-width="5"/>' +
+        '<rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+        KIT.star(W - 92, 96, 22, C.orange) + KIT.star(W - 130, 140, 10, C.yellow) + KIT.star(84, H - 84, 18, C.orange);
+        // ── end of COPY ──
+        return { svg: art + border, P: P, X: X, Y: Y, S: S, DOORS: DOORS, doctorOpts: doctorOpts, mix: mix, patient: patient, PAT: PAT,
+          pat: { x: px, y: py, s: ps, rig: RIG_R } };
+      })();
+      var zv = KIT.zoomView(), ZA = [zv.at[0] * (1 - zv.into), zv.at[1] * (1 - zv.into)], ZI = zv.into;
+      var hq = function (s) { return document.getElementById(HWY.P(s)); };
+      // The people who run at the glass: the patient and the two nearest doctors (one on each wall). run: their place
+      // on the glass (0 left, 1 middle, 2 right); x, y, s: where the drawing stands in the hallway (its outer group).
+      // Each runs as a stand-in (the same drawing, looking up to the right) drawn outside the frame's clip, so in 9:16 it
+      // can leave the narrow strip for the whole glass; the original hides meanwhile.
+      var RUN = [{ key: "patj", run: 1, x: HWY.pat.x, y: HWY.pat.y, s: HWY.pat.s, o: HWY.mix(HWY.PAT, { look: "right" }), art: HWY.patient({ look: "right" }) }];
+      HWY.DOORS.forEach(function (d, i) {
+        if (i < HWY.DOORS.length - 2) return;
+        var p = d.p + 0.012, s = HWY.S(p), o = HWY.doctorOpts(d), up = d.side > 0 ? HWY.mix(o, { look: "right" }) : o;
+        RUN.push({ key: "docj-" + i, run: d.side < 0 ? 0 : 2, x: HWY.X(d.side * 0.93, p), y: HWY.Y(p) - 100 * s, s: s, d: d, o: up, art: KIT.person(up) });
+      });
+      var standIns = RUN.map(function (p) {
+        return '<g transform="translate(' + n1(p.x) + "," + n1(p.y) + ") scale(" + p.s.toFixed(3) + ')"><g id="' + ID + "-rc" + p.run + '" opacity="0">' + p.art + "</g></g>";
+      }).join("");
+
+      // ── The faces on the glass: big, arms up, flattened (screen units). ──
+      var SP = L.splat, splats = "", streaks = "";
+      RUN.forEach(function (p) {
+        var arms = p.d ? [[-78, -172], [78, 172]] : [[-142, -178], [142, 178]];
+        var o = p.d ? HWY.mix(HWY.doctorOpts(p.d), { arms: arms, mood: "eager", look: null }) : HWY.mix(HWY.PAT, { arms: arms, mood: "eager" });
+        var art = p.d ? KIT.person(o) : HWY.patient({ arms: arms, mood: "eager" }), r = KIT.rig(o);
+        var x = SP.xs[p.run], y = HY + 30 - SP.s * r.top[1];
+        p.glass = { x: x, y: y, rig: r };
+        var fog = '<ellipse cx="' + n1(r.head[0] + 3) + '" cy="' + n1(r.head[1] + 2) + '" rx="30" ry="26" fill="#FFFFFF" opacity="0.32"/>';
+        var bang = '<g class="hpb-bang" opacity="0">' + [[-34, -14, -48, -22], [36, -16, 50, -26], [-30, 18, -46, 24], [38, 16, 52, 22], [0, -34, 0, -50]].map(function (b) {
+          return '<path d="M' + n1(r.head[0] + b[0]) + "," + n1(r.head[1] + b[1]) + " L" + n1(r.head[0] + b[2]) + "," + n1(r.head[1] + b[3]) + '" stroke="' + ink + '" stroke-width="3" stroke-linecap="round"/>';
+        }).join("") + "</g>";
+        streaks += rect(x - 26 * SP.s, y + (r.top[1] + 8) * SP.s, 52 * SP.s, 0, "#FFFFFF", 'id="' + ID + "-streak" + p.run + '" opacity="0.28" rx="' + n1(10 * SP.s) + '"');
+        p.svg = '<g id="' + ID + "-sp" + p.run + '" opacity="0">' + at(x, y, SP.s, art + fog + bang, "spi" + p.run) + "</g>";
+      });
+      // the patient in front
+      RUN.slice().sort(function (a, b) { return (a.run === 1) - (b.run === 1); }).forEach(function (p) { splats += p.svg; });
+
+      var gl = Math.min(HW, HH);
+      var glare = '<path d="M' + n1(HX + HW * 0.55) + "," + HY + " L" + n1(HX + HW * 0.55 + gl * 0.32) + "," + HY + " L" + n1(HX + HW * 0.55 - gl * 0.5) + "," + (HY + HH) + " L" + n1(HX + HW * 0.55 - gl * 0.82) + "," + (HY + HH) + ' Z" fill="#FFFFFF" opacity="0.07"/>' +
+        '<path d="M' + n1(HX + HW * 0.72) + "," + HY + " L" + n1(HX + HW * 0.72 + gl * 0.08) + "," + HY + " L" + n1(HX + HW * 0.72 - gl * 0.74) + "," + (HY + HH) + " L" + n1(HX + HW * 0.72 - gl * 0.82) + "," + (HY + HH) + ' Z" fill="#FFFFFF" opacity="0.06"/>';
+      var off = '<g id="' + ID + '-off">' + rect(HX, HY, HW, HH, C.deep) +
+        '<path d="M' + n1(HX + HW * 0.08) + "," + n1(HY + HH * 0.16) + " Q" + n1(HX + HW * 0.1) + "," + n1(HY + HH * 0.08) + " " + n1(HX + HW * 0.2) + "," + n1(HY + HH * 0.07) + '" fill="none" stroke="' + C.peri + '" stroke-width="6" stroke-linecap="round" opacity="0.7"/></g>';
+      q("screen").innerHTML = KIT.svg(W, H, KIT.wallScreen(S[0], S[1], S[2], S[3]) +
+        '<defs><clipPath id="' + ID + '-hole"><rect x="' + HX + '" y="' + HY + '" width="' + HW + '" height="' + HH + '" rx="22"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-hole)">' + off +
+        '<g id="' + ID + '-board" opacity="0">' + board + "</g>" +
+        '<g id="' + ID + '-earth" opacity="0"><g transform="' + zv.mini + '"><defs><clipPath id="' + ID + '-frame"><rect width="' + W + '" height="' + H + '"/></clipPath></defs><g clip-path="url(#' + ID + '-frame)">' + HWY.svg + "</g>" + standIns + "</g></g>" +
+        streaks + splats +
+        rect(HX, HCY - 3, HW, 6, "#FFFFFF", 'id="' + ID + '-crt" opacity="0"') + glare + "</g>");
+
+      // ════════════════ (b) The Wishonian dictionary ════════════════
+      // In its own units: the spine at x 0, the bottom at y 0; the open spread is bw wide (two pages of bw / 2) and bh
+      // tall. Groups: -bk-right (the back cover's edge and the right page), -bk-left (the left page, folded flat onto the
+      // spine while closed), -bk-front (the mustard cover with its star), -bk-flip0..3 (pages for the riffle).
+      var BK = L.book, bw = BK.w, pw = bw / 2, bh = BK.h, fs = BK.fs;
+      var squig = function (x, y, w) {
+        var d = "M" + n1(x) + "," + n1(y), k = 0;
+        for (var xx = x; xx < x + w - 6; xx += 6, k++) d += " l3," + (k % 2 ? 2 : -2) + " l3," + (k % 2 ? -2 : 2);
+        return '<path d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="1.6" opacity="0.55"/>';
+      };
+      var page = function (x0) { return rect(x0, -bh, pw, bh, WHITE, 'stroke="' + ink + '" stroke-width="3"'); };
+      var slot = function (i) { return -bh + 30 + fs * 0.4 + i * ((bh - 40 - fs * 0.4) / 5) + fs * 0.85; };
+      // U spread: UNAFRAID, UNAPPETIZING, the gap, UNARMED, UNAWARE
+      var U = ["UNAFRAID", "UNAPPETIZING", null, "UNARMED", "UNAWARE"];
+      var uL = U.map(function (w, i) { return w ? txt(-pw + 14, slot(i), fs, "Oswald", ink, w, 'letter-spacing="0.5"') : ""; }).join("");
+      var uR = txt(pw - 12, -bh + fs * 1.2, fs * 1.15, "Fraunces", C.orange, "U", 'text-anchor="end"') + [0, 1, 2, 3, 4].map(function (i) { return squig(16, slot(i) - fs * 0.3, pw - 32 - (i % 2) * 30); }).join("") +
+        [0, 1, 2, 3, 4].map(function (i) { return i === 2 ? "" : squig(16, slot(i) + 4, pw * 0.5); }).join("");
+      var hiY = function (i) { return slot(i) - fs * 0.86; };
+      var hilite = rect(-pw + 8, hiY(0), pw - 18, fs * 1.08, C.yellow, 'id="' + ID + '-hi" opacity="0" rx="3"');
+      // the cricket in the gap: a body, a big hind leg that saws (.hpb-saw), long antennae, and two chirp marks
+      var crx = -pw * 0.5, cry = slot(2) - fs * 0.25;
+      var cricket = '<g transform="translate(' + n1(crx) + "," + n1(cry) + ') scale(' + n1(fs / 15) + ')"><g id="' + ID + '-cricket" opacity="0">' +
+        '<path d="M-14,2 L-4,-6 L10,-6 L16,0 L10,4 L-10,5 Z" fill="' + C.moneyDark + '" stroke="' + ink + '" stroke-width="2" stroke-linejoin="miter"/>' +
+        '<circle cx="15" cy="-2" r="4" fill="' + C.moneyDark + '" stroke="' + ink + '" stroke-width="2"/><circle cx="16" cy="-3" r="1.2" fill="' + WHITE + '"/>' +
+        '<path d="M17,-5 Q26,-18 34,-16 M16,-6 Q22,-20 28,-22" fill="none" stroke="' + ink + '" stroke-width="1.4"/>' +
+        '<path d="M-6,4 L-10,10 M4,4 L6,10" stroke="' + ink + '" stroke-width="1.6"/>' +
+        '<g class="hpb-saw"><path d="M-4,-4 L-16,-14 L-24,6" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/></g>' +
+        '<g class="hpb-chirp"><path d="M-26,-14 q-4,-5 0,-10 M-32,-12 q-6,-8 0,-15" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round"/></g></g></g>';
+      // B spread: "BUREAUCRACY:" / "see EARTH" over the engraving
+      var eg = { x: -pw + 12, y: -bh * 0.66, w: bw - 24, h: bh * 0.66 - 12 };
+      var bL = txt(-pw + 14, -bh + fs * 1.25 + 4, fs * 1.08, "Oswald", ink, "BUREAUCRACY:", 'letter-spacing="0.6"');
+      var bR = txt(pw - 12, -bh + fs * 1.2, fs * 1.15, "Fraunces", C.orange, "B", 'text-anchor="end"') + '<g id="' + ID + '-see">' + txt(14, -bh + fs * 1.25 + 4, fs * 0.95, "Inter", ink, "see", 'font-style="italic"') +
+        txt(14 + fs * 1.85, -bh + fs * 1.25 + 4, fs * 1.08, "Oswald", C.war, "EARTH", 'letter-spacing="1"') + "</g>";
+      // The engraving, in its own units (400 x 112, ground at y -6): the committee member on his heap of SAFE bottles,
+      // with a hen's comb, and four patients waiting in line, each stacked over its skeleton.
+      var MEMBER = { tone: 0, outfit: "suit", hair: 2, glasses: true, mood: "smug", color: 2, arms: [[-62, 64], [62, -64]], seed: 5 };
+      var mr = KIT.rig(MEMBER), ms = 0.58, seat = -30;
+      var comb = '<path d="M' + n1(mr.top[0] - 9) + "," + n1(mr.top[1] + 4) + " q-3,-12 4,-11 q1,-11 8,-4 q6,-9 10,2 Z" + '" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2"/>';
+      var member = KIT.person(MEMBER).replace("<!--head-end-->", comb + "<!--head-end-->");
+      var bottle = function (x, y) { return at(x, y, 0.3, KIT.props.pillBottle({ face: "smile", label: "SAFE", pills: false })); };
+      var heapBack = bottle(36, -6) + bottle(56, -6) + bottle(116, -6) + bottle(136, -6) + bottle(46, -32) + bottle(126, -32);
+      var heapFront = bottle(54, 2) + bottle(74, 4) + bottle(94, 4) + bottle(114, 2);
+      var LINE = [
+        { tone: 0, outfit: "shirt", color: 2, mood: "worried", look: "left", seed: 21 },
+        { tone: 3, outfit: "dress", hair: 1, color: 3, mood: "sad", look: "left", seed: 22 },
+        { tone: 1, outfit: "overalls", color: 0, mood: "worried", look: "left", seed: 23 },
+        { tone: 2, outfit: "suit", hair: 2, color: 1, mood: "sad", look: "left", seed: 24 },
+      ];
+      var ls = 0.56, lineArt = LINE.map(function (o, i) {
+        var bones = {}, k;
+        for (k in o) bones[k] = o[k];
+        bones.skeleton = true;
+        return at(232 + i * 46, -6 - 100 * ls, ls, '<g class="hpb-alive">' + KIT.person(o) + '</g><g class="hpb-bones" opacity="0">' + KIT.person(bones) + "</g>", "pt" + i);
+      }).join("");
+      var engr = '<defs><clipPath id="' + ID + '-eclip"><rect x="0" y="-112" width="400" height="112"/></clipPath><clipPath id="' + ID + '-mclip"><rect x="-90" y="-260" width="180" height="' + n1(260 + mr.hipY + 4) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-eclip)">' + rect(0, -112, 400, 112, "#F7EFD8") + '<path d="M0,-6 H400" stroke="' + ink + '" stroke-width="2.5"/>' +
+        rect(0, -6, 400, 6, "url(#" + ID + '-bk-hatch)', 'opacity="0.5"') + heapBack +
+        at(86, seat - mr.hipY * ms, ms, '<g clip-path="url(#' + ID + '-mclip)">' + member + "</g>", "member") + heapFront + lineArt +
+        [[60, -78, -30], [112, -84, 25]].map(function (fp, i) {
+          return '<g transform="translate(' + fp[0] + "," + fp[1] + ') rotate(' + fp[2] + ')"><g class="hpb-feather" opacity="0"><path d="M-9,0 Q0,-6 9,0 Q0,6 -9,0 Z M-9,0 H11" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="1.4"/></g></g>';
+        }).join("") + "</g>" + rect(0, -112, 400, 112, "none", 'stroke="' + ink + '" stroke-width="3"');
+      var ek = Math.min(eg.w / 400, eg.h / 112);
+      var bEng = '<g transform="translate(' + n1(eg.x + (eg.w - 400 * ek) / 2) + "," + n1(eg.y + eg.h) + ") scale(" + ek.toFixed(4) + ')">' + engr + "</g>";
+      // the covers and the spread
+      var coverPts = function (x0) { return rect(x0, -bh - 8, pw + 8, bh + 16, C.yellow, 'stroke="' + ink + '" stroke-width="4" rx="5"'); };
+      var bookArt = KIT.paperDefs(ID + "-bk") +
+        '<g id="' + ID + '-bk-right">' + coverPts(0) + page(0) +
+        '<g id="' + ID + '-uR">' + uR + "</g>" + '<g id="' + ID + '-bR" opacity="0">' + bR + "</g></g>" +
+        '<g id="' + ID + '-bk-left">' + rect(-pw - 8, -bh - 8, pw + 8, bh + 16, C.yellow, 'stroke="' + ink + '" stroke-width="4" rx="5"') + page(-pw) +
+        '<g id="' + ID + '-uL">' + hilite + uL + cricket + "</g>" + '<g id="' + ID + '-bL" opacity="0">' + bL + "</g></g>" +
+        '<g id="' + ID + '-bEng" opacity="0">' + bEng + "</g>" +
+        '<path d="M0,' + (-bh - 2) + ' V2" stroke="' + ink + '" stroke-width="3"/>' +
+        [0, 1, 2, 3].map(function (i) { return '<g id="' + ID + "-bk-flip" + i + '" opacity="0">' + rect(0, -bh + 2 + i, pw - 2 - i, bh - 2 - i, WHITE, 'stroke="' + ink + '" stroke-width="2.4"') + squig(16, -bh * 0.6, pw * 0.5) + "</g>"; }).join("") +
+        '<g id="' + ID + '-bk-front">' + coverPts(0) + rect(10, -bh + 4, pw - 12, bh - 8, "none", 'stroke="' + C.rust + '" stroke-width="3" rx="3"') +
+        KIT.star(pw / 2 + 4, -bh * 0.56, bh * 0.2, C.cream) + KIT.star(pw / 2 + 4, -bh * 0.56, bh * 0.09, C.orange) +
+        rect(pw * 0.16, -bh * 0.27, pw * 0.76, fs * 1.15, C.cream, 'stroke="' + ink + '" stroke-width="2.4"') +
+        txt(pw / 2 + 4, -bh * 0.27 + fs * 0.85, fs * 0.72, "Oswald", ink, "WISHONIAN DICTIONARY", 'text-anchor="middle" letter-spacing="1"') + "</g>";
+      var dust = [-1, 1].map(function (sd) {
+        return '<g transform="translate(' + n1(sd * pw * 0.9) + ',0)"><g class="hpb-dust" data-sd="' + sd + '" opacity="0">' +
+          [[0, 0, 16], [sd * 18, 4, 11], [-sd * 6, -12, 10]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>'; }).join("") + "</g></g>";
+      }).join("");
+
+      // ── The paper at Wishonia's fingers: held by its top-left corner, hanging like a dead mouse; three drawings of
+      // its legs (still, and two wriggle poses). ──
+      var hang = function (legs, cls) { return '<g class="' + cls + '"' + (cls === "hpb-still" ? "" : ' opacity="0"') + '><g transform="rotate(-152) translate(' + n1(-(25 - 10 * legs)) + ',-47)">' + KIT.money("plain", legs) + "</g></g>"; };
+      var bill = '<g transform="translate(' + n1(L.pinch[0]) + "," + n1(L.pinch[1]) + ") scale(" + L.bill + ')"><g id="' + ID + '-bill" opacity="0">' +
+        hang(0, "hpb-still") + hang(-0.9, "hpb-wa") + hang(0.9, "hpb-wb") + "</g></g>";
+      q("hand").innerHTML = KIT.svg(W, H, '<g transform="translate(' + L.book.x + "," + L.book.y + ')"><g id="' + ID + '-book" opacity="0">' + bookArt + dust + "</g></g>" + bill);
+
+      var mug = '<g transform="translate(' + L.mug[0] + "," + L.mug[1] + ") scale(" + L.mug[2] + ')">' + KIT.mug(0, 0) + "</g>";
+      q("front").innerHTML = KIT.svg(W, H, KIT.desk.apply(null, O.desk) + mug);
+
+      // ════════════════ The timeline ════════════════
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("wish"), { scene: ID, x: O.wish.x, y: O.wish.y, w: O.wish.w });
+
+      // "three": the screen switches on (the switch): a CRT line opens into the board.
+      gsap.set(q("crt"), { svgOrigin: HCX + " " + HCY });
+      tl.fromTo(q("crt"), { opacity: 0, scaleY: 1 }, { opacity: 1, duration: 0.04 }, tThree);
+      tl.to(q("crt"), { scaleY: HH / 6, opacity: 0, duration: 0.22, ease: "power2.out" }, tThree + 0.06);
+      tl.set(q("off"), { opacity: 0 }, tThree + 0.1);
+      tl.fromTo(q("board"), { opacity: 0 }, { opacity: 1, duration: 0.15 }, tThree + 0.08);
+      // "published.": the ticks type in, row by row (the typewriter)
+      ROWS.forEach(function (r, i) { KIT.drawTick(tl, q("tick" + i).querySelector(".tick"), tPub + i * 0.14); });
+      // "participate.": a little Wishonian hops onto each row (the pops: rows 1 to 3; the fourth is a beat late) and waves
+      ROWS.forEach(function (r, i) {
+        var el = q("wn" + i), tLand = tPart + i * 0.2, up = 0.34;
+        tl.fromTo(el, { x: 70, y: 90 }, { x: 0, duration: up, ease: "none" }, tLand - up);
+        tl.fromTo(el, { y: 90 }, { keyframes: [{ y: -38, duration: up * 0.55, ease: "power2.out" }, { y: 0, duration: up * 0.45, ease: "power2.in" }] }, tLand - up);
+        gsap.set(el, { svgOrigin: "0 0" });
+        tl.fromTo(el, { scaleY: 1, scaleX: 1 }, { scaleY: 0.78, scaleX: 1.15, duration: 0.06, repeat: 1, yoyo: true, ease: "power1.out", immediateRender: false }, tLand);
+        var wave = el.querySelector(".wn-wave");
+        gsap.set(wave, { svgOrigin: "6 -30" });
+        tl.fromTo(wave, { rotation: -10 }, { rotation: 30, duration: 0.22, repeat: 9, yoyo: true, ease: "sine.inOut" }, tLand + 0.1);
+      });
+
+      // ── "unapproved": the dictionary pops up at her pointing hand and flips open; the camera pushes in on it. ──
+      var book = q("book"), front = q("bk-front"), left = q("bk-left");
+      gsap.set([front, left], { svgOrigin: "0 0" });
+      gsap.set(book, { svgOrigin: "0 0" });
+      tl.fromTo(book, { opacity: 0, y: 60, scale: 0.5 }, { opacity: 1, y: 0, scale: 1, duration: 0.22, ease: "back.out(1.8)" }, tUnap);
+      tl.fromTo(front, { scaleX: 1 }, { scaleX: 0, duration: 0.12, ease: "power1.in" }, tUnap + 0.22);
+      tl.fromTo(left, { scaleX: 0 }, { scaleX: 1, duration: 0.14, ease: "power1.out" }, tUnap + 0.34);
+      tl.fromTo(book, { y: 0 }, { y: -6, duration: 0.7, repeat: 6, yoyo: true, ease: "sine.inOut", immediateRender: false }, tUnap + 0.3);
+      var cam = q("cam"), org = L.push.at[0] + "px " + L.push.at[1] + "px";
+      tl.fromTo(cam, { scale: 1, transformOrigin: org }, { scale: L.push.s, transformOrigin: org, duration: 0.7, ease: "power2.inOut" }, tUnap);
+      // her search: the highlighter runs down the entries, past the gap, and comes back to the gap, blinking
+      var hi = q("hi");
+      tl.fromTo(hi, { opacity: 0, attr: { y: hiY(0) } }, { opacity: 0.55, duration: 0.08 }, tUnap + 0.55);
+      tl.to(hi, { keyframes: [{ attr: { y: hiY(1) }, duration: 0.2 }, { attr: { y: hiY(2) }, duration: 0.2 }, { attr: { y: hiY(3) }, duration: 0.2 }, { attr: { y: hiY(4) }, duration: 0.18 }, { attr: { y: hiY(2) }, duration: 0.3, ease: "power2.inOut" }] }, tUnap + 0.65);
+      tl.to(hi, { opacity: 0.2, duration: 0.18, repeat: 5, yoyo: true, ease: "none" }, tUnap + 1.75);
+      // after "medicine": a cricket in the gap (the crickets), sawing its leg
+      var cricket = q("cricket"), saw = cricket.querySelector(".hpb-saw"), chirp = cricket.querySelector(".hpb-chirp");
+      tl.fromTo(cricket, { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.15, ease: "back.out(2)" }, tCrick - 0.05);
+      gsap.set(saw, { svgOrigin: "-4 -4" });
+      tl.fromTo(saw, { rotation: -14 }, { rotation: 10, duration: 0.07, repeat: 15, yoyo: true, ease: "none" }, tCrick);
+
+      // ── "bureaucracy": the pages riffle to B; the ding: "see EARTH". ──
+      [0, 1, 2, 3].forEach(function (i) {
+        var p = q("bk-flip" + i), t = tBur + i * 0.07;
+        gsap.set(p, { svgOrigin: "0 0" });
+        tl.set(p, { opacity: 1 }, t);
+        tl.fromTo(p, { scaleX: 1 }, { scaleX: -1, duration: 0.16, ease: "power1.inOut" }, t);
+        tl.set(p, { opacity: 0 }, t + 0.17);
+      });
+      tl.set([q("uL"), q("uR"), hi], { opacity: 0 }, tBur + 0.1);
+      tl.set([q("bL"), q("bEng")], { opacity: 1 }, tBur + 0.32);
+      var see = q("see");
+      gsap.set(see, { svgOrigin: n1(pw * 0.4) + " " + n1(-bh + fs * 0.9) });
+      tl.set(q("bR"), { opacity: 1 }, tDing);
+      tl.fromTo(see, { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.14, ease: "power3.in" }, tDing);
+      // "sits": the committee member settles onto his bottles like a hen, wings fluffing
+      var mem = q("member"), wings = mem.querySelectorAll(".arm-l, .arm-r");
+      gsap.set(mem, { svgOrigin: "0 " + n1(mr.hipY) });
+      tl.fromTo(mem, { y: 0 }, { keyframes: [{ y: -10, duration: 0.1 }, { y: 4, duration: 0.12, ease: "power2.in" }, { y: 0, duration: 0.1 }] }, tSits);
+      tl.fromTo(mem, { rotation: 0 }, { rotation: 4, duration: 0.07, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, tSits + 0.1);
+      Array.prototype.forEach.call(wings, function (w, i) {
+        var sh = mr.shoulder[i];
+        gsap.set(w, { svgOrigin: n1(sh[0]) + " " + n1(sh[1]) });
+        tl.fromTo(w, { rotation: 0 }, { rotation: i ? -16 : 16, duration: 0.08, repeat: 5, yoyo: true, ease: "sine.inOut" }, tSits);
+      });
+      qa("#" + ID + "-bEng .hpb-feather").forEach(function (fe, i) {
+        gsap.set(fe, { svgOrigin: "0 0" });
+        tl.fromTo(fe, { opacity: 0, x: 0, y: 0, rotation: 0 }, { opacity: 1, x: (i ? 10 : -10), y: -16, rotation: i ? 40 : -40, duration: 0.25, ease: "power2.out" }, tSits + 0.1);
+        tl.to(fe, { y: 10, x: (i ? 22 : -22), rotation: i ? -20 : 20, opacity: 0, duration: 1.1, ease: "sine.inOut" }, tSits + 0.35);
+      });
+      // "die.": the patients in line x-ray into grinning skeletons (the zap)
+      LINE.forEach(function (o, i) {
+        var g = q("pt" + i);
+        KIT.xray(tl, g.querySelector(".hpb-alive"), g.querySelector(".hpb-bones"), tDie + i * 0.04);
+      });
+      // after "die.": the book slams shut (the slam), puffs dust, hops and zips off right; the camera pulls back
+      tl.fromTo(left, { scaleX: 1 }, { scaleX: 0, duration: 0.07, ease: "power2.in", immediateRender: false }, tShut - 0.12);
+      tl.set(q("bEng"), { opacity: 0 }, tShut - 0.12);
+      tl.fromTo(front, { scaleX: 0 }, { scaleX: 1, duration: 0.07, ease: "power2.out", immediateRender: false }, tShut - 0.05);
+      tl.fromTo(book, { scaleY: 1 }, { scaleY: 0.82, duration: 0.05, repeat: 1, yoyo: true, ease: "power1.out", immediateRender: false }, tShut);
+      qa("#" + ID + "-book .hpb-dust").forEach(function (d) {
+        var sd = +d.getAttribute("data-sd");
+        gsap.set(d, { svgOrigin: "0 0" });
+        tl.fromTo(d, { opacity: 0, scale: 0.3, x: 0 }, { opacity: 1, scale: 1, x: sd * 26, duration: 0.12, ease: "power2.out" }, tShut);
+        tl.to(d, { opacity: 0, x: sd * 60, y: -14, duration: 0.22, ease: "power1.in" }, tShut + 0.13);
+      });
+      tl.to(book, { keyframes: [{ y: -40, duration: 0.14, ease: "power2.out" }, { x: W, y: -260, rotation: 25, duration: 0.3, ease: "power2.in" }] }, tShut + 0.2);
+      tl.set(book, { opacity: 0 }, tShut + 0.66);
+      tl.to(cam, { scale: 1, transformOrigin: org, duration: 0.7, ease: "power2.inOut" }, tShut + 0.3);
+
+      // ── "decentralized": the header retypes itself (the typewriter). The text is set on every seek (below). ──
+      var hdr = q("hdr"), DEL = 0.28, TYPE = 0.85;
+      function header(t) {
+        if (t < tDec) return OLD;
+        if (t < tDec + DEL) return OLD.slice(0, Math.max(0, Math.round(OLD.length * (1 - (t - tDec) / DEL))));
+        var n = Math.min(NEW.length, Math.floor(NEW.length * (t - tDec - DEL) / TYPE));
+        return NEW.slice(0, n) + (n < NEW.length || Math.floor(t * 3) % 2 === 0 ? "_" : " ");
+      }
+
+      // ── "Here's": the screen flips from the board to Earth's paper (the whoosh). ──
+      var boardEl = q("board"), earth = q("earth");
+      gsap.set([boardEl, earth], { svgOrigin: HCX + " " + HCY });
+      tl.to(boardEl, { scaleY: 0, duration: 0.14, ease: "power2.in" }, tHere);
+      tl.set(boardEl, { opacity: 0 }, tHere + 0.14);
+      tl.fromTo(earth, { opacity: 1, scaleY: 0 }, { scaleY: 1, duration: 0.16, ease: "power2.out" }, tHere + 0.14);
+      // the patient looks lost: her question mark pops up and she looks left and right (the two drawings swap)
+      var patJ = hq("patj"), patR = patJ.querySelector(".pat-r"), patL = patJ.querySelector(".pat-l"), what = hq("what");
+      gsap.set(what, { svgOrigin: "0 0" });
+      tl.fromTo(what, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.5)" }, tHere + 0.6);
+      tl.fromTo(what, { rotation: -10 }, { rotation: 10, duration: 0.4, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, tHere + 0.8);
+      [0.9, 1.7, 2.5, 3.3].forEach(function (dt, k) {
+        tl.set(patR, { opacity: k % 2 ? 1 : 0 }, tHere + dt);
+        tl.set(patL, { opacity: k % 2 ? 0 : 1 }, tHere + dt);
+      });
+
+      // ── "small": the paper dangles from Wishonia's fingers; "paper": its legs wriggle (the squeak). ──
+      var billEl = q("bill");
+      gsap.set(billEl, { svgOrigin: "0 0" });
+      tl.fromTo(billEl, { opacity: 0, y: -30, rotation: -20 }, { opacity: 1, y: 0, rotation: 0, duration: 0.25, ease: "back.out(2)" }, tSmall + 0.05);
+      tl.to(billEl, { rotation: 7, duration: 0.5, repeat: 1, yoyo: true, ease: "sine.inOut" }, tSmall + 0.3);
+      tl.fromTo(billEl, { rotation: 0 }, { rotation: -9, duration: 0.09, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, tPaper);
+      tl.fromTo(billEl, { rotation: 0 }, { rotation: 6, duration: 0.6, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, tPaper + 0.6);
+      // the splat startles it
+      tl.fromTo(billEl, { y: 0 }, { y: -14, duration: 0.07, repeat: 1, yoyo: true, ease: "power2.out", immediateRender: false }, tSplat);
+
+      // ── "anything.": every head on the screen snaps up to the paper (the whoosh): each doctor swaps to the drawing
+      // that looks right and tips its head up, as subsidy-follows-patient's first frame has them; the patient too. ──
+      HWY.DOORS.forEach(function (d, i) {
+        var g = hq("doc-" + i), up = g.querySelector(".doc-up"), on = g.querySelector(".doc-on"), nk = KIT.rig(HWY.doctorOpts(d)).neck, head = up.querySelector(".head");
+        tl.set(up, { opacity: 0 }, 0);
+        tl.set(on, { opacity: 1 }, 0);
+        tl.set(up, { opacity: 1 }, tAny);
+        tl.set(on, { opacity: 0 }, tAny);
+        gsap.set(head, { svgOrigin: n1(nk[0]) + " " + n1(nk[1]) });
+        tl.fromTo(head, { rotation: 0 }, { rotation: -16, duration: 0.08, ease: "back.out(3)" }, tAny);
+      });
+      var patHead = patR.querySelector(".head"), nk = HWY.pat.rig.neck;
+      gsap.set(patHead, { svgOrigin: n1(nk[0]) + " " + n1(nk[1]) });
+      tl.set(patR, { opacity: 1 }, tAny);
+      tl.set(patL, { opacity: 0 }, tAny);
+      tl.fromTo(patHead, { rotation: 0 }, { rotation: -14, duration: 0.08, ease: "back.out(3)" }, tAny);
+      tl.to(what, { opacity: 0, duration: 0.06 }, tAny);
+      // the patient and two doctors run at the glass, growing as they come (in hallway units, through the mini)
+      RUN.forEach(function (p) {
+        var orig = hq(p.key), el = q("rc" + p.run), ps = p.s, head = el.querySelector(".head"), nk = KIT.rig(p.o).neck;
+        tl.set(orig, { opacity: 0 }, tAny);
+        tl.set(el, { opacity: 1 }, tAny);
+        gsap.set(head, { svgOrigin: n1(nk[0]) + " " + n1(nk[1]) });
+        tl.fromTo(head, { rotation: 0 }, { rotation: p.d ? -16 : -14, duration: 0.08, ease: "back.out(3)" }, tAny);
+        var m = SP.s / (ZI * ps), dx = ((p.glass.x - ZA[0]) / ZI - p.x) / ps, dy = ((p.glass.y - ZA[1]) / ZI - p.y) / ps;
+        gsap.set(el, { svgOrigin: "0 0" });
+        tl.fromTo(el, { x: 0, y: 0, scale: 1 }, { keyframes: [{ x: -8, y: 4, scale: 0.96, duration: 0.07, ease: "power1.out" }, { x: dx, y: dy, scale: m, duration: 0.23, ease: "power2.in" }] }, tAny + 0.01);
+        tl.set(el, { opacity: 0 }, tSplat);
+        // the splat (the splat): flattened on the glass, with a fogged ring and bang lines
+        var sp = q("sp" + p.run), spi = q("spi" + p.run), r = p.glass.rig;
+        gsap.set(spi, { svgOrigin: n1(r.head[0]) + " " + n1(r.head[1]) });
+        tl.set(sp, { opacity: 1 }, tSplat);
+        tl.fromTo(spi, { scaleX: 1.15, scaleY: 0.9 }, { scaleX: 1.32, scaleY: 0.8, duration: 0.05, ease: "power2.out" }, tSplat);
+        tl.fromTo(spi.querySelector(".hpb-bang"), { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in" }, tSplat + 0.05);
+        // after "anything.": they slide down the glass (the slide whistle), squeaking in stops, leaving streaks
+        var t0 = tSlide + p.run * 0.05, fall = HH + 120;
+        tl.to(sp, { keyframes: [{ y: 24, duration: 0.16, ease: "power1.out" }, { y: 30, duration: 0.14, ease: "none" }, { y: 104, duration: 0.24, ease: "power1.in" }, { y: fall, duration: 0.3, ease: "power2.in" }] }, t0);
+        tl.fromTo(q("streak" + p.run), { attr: { height: 0 } }, { keyframes: [{ attr: { height: 24 }, duration: 0.16 }, { attr: { height: 30 }, duration: 0.14 }, { attr: { height: 104 }, duration: 0.24 }, { attr: { height: fall }, duration: 0.3 }] }, t0);
+        tl.to(q("streak" + p.run), { opacity: 0, duration: 0.3 }, D - 0.4);
+        // and drop back into their places in the hallway, heads still turned up to the paper
+        tl.set(el, { x: 0, y: -700 / ps, scale: 1, opacity: 1 }, t0 + 0.72);
+        tl.to(el, { y: 0, duration: 0.42, ease: "bounce.out" }, t0 + 0.72);
+        // landed: the original takes over again (the frame subsidy-follows-patient starts on)
+        tl.set(orig, { opacity: 1 }, t0 + 1.16);
+        tl.set(el, { opacity: 0 }, t0 + 1.16);
+      });
+
+      // ── Every seek: the rolling counters, the LIVE lamp, the header, the patient's blinking light, the paper's legs,
+      // the cricket's chirp. ──
+      var pcs = ROWS.map(function (r, i) { return q("pc" + i); }), live = q("live");
+      var patLights = patJ.querySelectorAll(".chest-light");
+      var still = billEl.querySelector(".hpb-still"), wa = billEl.querySelector(".hpb-wa"), wb = billEl.querySelector(".hpb-wb");
+      KIT.onTime(tl, D, function (t) {
+        ROWS.forEach(function (r, i) {
+          var t0 = tTracked + i * 0.15;
+          pcs[i].textContent = fmt(t < t0 ? r.n : r.n + r.rate * (t - t0) * (1 + 0.15 * Math.sin(t * 7 + i)));
+        });
+        live.setAttribute("opacity", Math.floor(t * 2) % 2 ? "0.3" : "1");
+        hdr.textContent = header(t);
+        // her light blinks red while she is lost, and stays red from "anything." on
+        Array.prototype.forEach.call(patLights, function (l) { l.setAttribute("fill", t < tAny && Math.floor(t / 0.35) % 2 ? C.rust : C.war); });
+        var w = t >= tPaper ? (Math.floor((t - tPaper) / (t < tPaper + 1 ? 0.06 : 0.12)) % 2 ? 2 : 1) : 0;
+        still.setAttribute("opacity", w === 0 ? "1" : "0");
+        wa.setAttribute("opacity", w === 1 ? "1" : "0");
+        wb.setAttribute("opacity", w === 2 ? "1" : "0");
+        chirp.setAttribute("opacity", t >= tCrick && Math.floor((t - tCrick) / 0.16) % 2 === 0 ? "1" : "0");
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

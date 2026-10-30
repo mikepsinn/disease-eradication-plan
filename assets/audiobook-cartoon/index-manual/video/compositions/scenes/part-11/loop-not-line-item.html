@@ -1,0 +1,620 @@
+<template id="loop-not-line-item-template">
+  <!-- loop-not-line-item · Layer B (storyboards/part-11-civilization-countdown.md): a ledger page of line items. On "line"
+       the MILITARY line peels off it (whoosh); on "item." it curls into a big ledger-paper ring with six unlit station
+       lamps. "print": station 1, the Politician cranks the 1913 press on top of the ring (whirr) and war papers pop out
+       and run round the inside of the ring like a loop-the-loop. "inflation,": station 2, a PRICES balloon swells
+       (slide-up). "less,": station 3, the Builder's paycheck shrinks to a sliver (squeak). "pushes": he walks to station
+       4 and on "cybercrime," sits at a laptop, his domino mask on (click). "economy,": station 5, the THINGS THAT
+       DESTROY stack shoots up (cash register). "more": station 6, the Weapons Maker on top of the stack catches a new
+       baby missile (clank); the lead paper gets back to the press. After "spending.": the loop speeds up (whoosh),
+       papers fly off the bends, and the PRICES balloon pops (pop). The fuse burns in the corner. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #loop-not-line-item-cam, #loop-not-line-item-bg, #loop-not-line-item-art, #loop-not-line-item-pip, #loop-not-line-item-fuse, #loop-not-line-item-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="loop-not-line-item" data-width="1920" data-height="1080" data-start="0" data-duration="19.1">
+    <div id="loop-not-line-item-cam">
+      <div id="loop-not-line-item-bg"></div>
+      <div id="loop-not-line-item-art"></div>
+      <div id="loop-not-line-item-pip"></div>
+    </div>
+    <!-- the fuse burns in its own layer, above the camera (the slide does not move it) and under the grain -->
+    <div id="loop-not-line-item-fuse"></div>
+    <div id="loop-not-line-item-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "loop-not-line-item";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function el(cx, cy, rx, ry) { return 'ellipse cx="' + n1(cx) + '" cy="' + n1(cy) + '" rx="' + n1(rx) + '" ry="' + n1(ry) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function txt(x, y, size, s, col, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" font-family="Oswald" font-weight="600" font-size="' + size + '" text-anchor="middle" fill="' + (col || ink) + '"' + (extra ? " " + extra : "") + ">" + s + "</text>";
+      }
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+      function smooth(k) { k = clamp(k, 0, 1); return k * k * (3 - 2 * k); }
+      // a yoyo repeat count that ends by the scene's end: whole half-cycles of dur that fit in the time left after t0
+      function reps(t0, dur) { return Math.max(1, Math.floor((D - 0.05 - t0) / dur) - 1); }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene. ──
+      // The civilization is a cartoon bomb: a small Earth with a navy screw collar and a lit fuse that burns by part
+      // time (L = L0 - k t), so it is continuous across scenes. Returns the spark's flare group (scale it to flare).
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ── THE LEDGER LOOP: copied in defund-the-loop (which starts on this scene's last frame); change both. ──────
+      // One MILITARY line of a ledger page, a strip of cream ledger paper 52 wide (navy edges, two blue rules, the red
+      // margin rule at its seam), bent into a big upright ring. RING: its centerline ellipse. The war papers run
+      // clockwise round the inside of it like a loop-the-loop, feet on the strip. Six station lamps sit on the strip at
+      // ST (degrees, 0 = 3 o'clock, -90 = the top, clockwise), each with its label tag inside the ring at TAG.
+      var LAY = V
+        ? { ring: { cx: 540, cy: 880, rx: 320, ry: 350, w: 52 }, G: 1430, bs: 0.54,
+            st: [-90, -40, 35, 100, 150, 210], tagSize: 25,
+            tag: [[540, 650], [677, 768], [681, 975], [540, 1104], [399, 975], [403, 768]] }
+        : { ring: { cx: 870, cy: 450, rx: 390, ry: 205, w: 52 }, G: 880, bs: 0.5,
+            st: [-90, -40, 38, 112, 152, 208], tagSize: 22,
+            tag: [[870, 352], [1050, 398], [1050, 503], [880, 548], [668, 488], [668, 394]] };
+      var RG = LAY.ring, HW = RG.w / 2;
+      var TAGS = ["PRINT MONEY", "INFLATION", "WORK PAYS LESS", V ? "TALENT TO\nCYBERCRIME" : "TALENT TO CYBERCRIME", "DESTRUCTIVE\nECONOMY GROWS", "MORE MILITARY\nSPENDING"];
+
+      // The ring's centerline by arc length: s = 0 at the top, increasing clockwise. at(s): the point, the unit
+      // tangent (the way the papers run) and the outward normal.
+      function track(E) {
+        var N = 1440, th = [], s = [0], px = [], py = [];
+        for (var i = 0; i <= N; i++) {
+          var a = -Math.PI / 2 + (2 * Math.PI * i) / N;
+          th.push(a); px.push(E.cx + E.rx * Math.cos(a)); py.push(E.cy + E.ry * Math.sin(a));
+          if (i) s.push(s[i - 1] + Math.hypot(px[i] - px[i - 1], py[i] - py[i - 1]));
+        }
+        var L = s[N];
+        function thAt(sv) {
+          sv = ((sv % L) + L) % L;
+          var lo = 0, hi = N;
+          while (hi - lo > 1) { var m = (lo + hi) >> 1; if (s[m] <= sv) lo = m; else hi = m; }
+          return th[lo] + (th[hi] - th[lo]) * ((sv - s[lo]) / (s[hi] - s[lo] || 1));
+        }
+        function pointAt(a) {
+          var tx = -E.rx * Math.sin(a), ty = E.ry * Math.cos(a), tl2 = Math.hypot(tx, ty);
+          var nx = E.ry * Math.cos(a), ny = E.rx * Math.sin(a), nl = Math.hypot(nx, ny);
+          return { x: E.cx + E.rx * Math.cos(a), y: E.cy + E.ry * Math.sin(a), tx: tx / tl2, ty: ty / tl2, nx: nx / nl, ny: ny / nl, th: a };
+        }
+        return {
+          L: L, at: function (sv) { return pointAt(thAt(sv)); }, pointAt: pointAt,
+          sAt: function (deg) {
+            var a = (deg * Math.PI) / 180, k = ((a + Math.PI / 2) / (2 * Math.PI)) % 1;
+            var i = Math.round(((k + 1) % 1) * N);
+            return s[i];
+          },
+        };
+      }
+      var T = track(RG);
+      // The strip's centerline as points: u 0..1 runs from the seam at the bottom clockwise round to the seam.
+      function ringPts(n, E) {
+        var out = [];
+        for (var i = 0; i <= n; i++) { var a = Math.PI / 2 + (2 * Math.PI * i) / n; out.push([E.cx + E.rx * Math.cos(a), E.cy + E.ry * Math.sin(a)]); }
+        return out;
+      }
+      function ptsD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L"); }
+      // The strip: navy edges, cream paper, two blue rules, MILITARY lettered along it (two textPaths on the
+      // centerline, so the page shows one line item and the ring two), and the red margin rule at the seam.
+      var TXT_A = "MILITARY . . . . . . . . . . . . . . . . $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$";
+      var TXT_B = "MILITARY . . . . . . . . . . $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$";
+      function stripSvg(pre, d, lenA, offB, lenB) {
+        return '<path id="' + pre + 'strip-sh" d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="' + (RG.w + 6) + '" opacity="0.18" transform="translate(6,8)"/>' +
+          '<path id="' + pre + 'strip-a" d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="' + (RG.w + 5) + '"/>' +
+          '<path id="' + pre + 'strip-b" d="' + d + '" fill="none" stroke="#FBF6E6" stroke-width="' + (RG.w - 1) + '"/>' +
+          '<path id="' + pre + 'strip-c" d="' + d + '" fill="none" stroke="#8FA7C4" stroke-width="' + (RG.w - 12) + '"/>' +
+          '<path id="' + pre + 'strip-d" d="' + d + '" fill="none" stroke="#FBF6E6" stroke-width="' + (RG.w - 15) + '"/>' +
+          '<path id="' + pre + 'strip-path" d="' + d + '" fill="none" stroke="none"/>' +
+          '<text font-family="Oswald" font-weight="600" font-size="22" fill="' + ink + '" dominant-baseline="central">' +
+          '<textPath href="#' + pre + 'strip-path" startOffset="16" textLength="' + lenA + '" lengthAdjust="spacing">' + TXT_A + "</textPath></text>" +
+          '<text font-family="Oswald" font-weight="600" font-size="22" fill="' + ink + '" dominant-baseline="central">' +
+          '<textPath href="#' + pre + 'strip-path" startOffset="' + offB + '" textLength="' + lenB + '" lengthAdjust="spacing">' + TXT_B + "</textPath></text>" +
+          '<path id="' + pre + 'strip-m" d="M0,0" fill="none" stroke="' + C.war + '" stroke-width="3"/>';
+      }
+      function setStrip(pre, pts) {
+        var d = ptsD(pts);
+        ["strip-sh", "strip-a", "strip-b", "strip-c", "strip-d", "strip-path"].forEach(function (k) { document.getElementById(pre + k).setAttribute("d", d); });
+        // the red margin rule across the strip, a little way in from its start
+        var a = pts[2], b = pts[3], dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1, nx = -dy / l, ny = dx / l;
+        document.getElementById(pre + "strip-m").setAttribute("d", "M" + pt(a[0] + nx * HW, a[1] + ny * HW) + " L" + pt(a[0] - nx * HW, a[1] - ny * HW));
+      }
+      // A station lamp on the strip: number k, unlit (cream) with a lit face on top (opacity 0 until it lights).
+      function lamp(k) {
+        var p = T.at(T.sAt(LAY.st[k]));
+        return at(p.x, p.y, 1, g("lamp" + k, S([ci(0, 0, 17)], C.cream, 3.4) + txt(0, 7.5, 19, String(k + 1), ink) +
+          g("lamp-on" + k, S([ci(0, 0, 17)], C.yellow, 3.4) + F(ci(0, 0, 10), C.orange) + txt(0, 7.5, 19, String(k + 1), ink) +
+            g("lamp-rays" + k, [0, 45, 90, 135, 180, 225, 270, 315].map(function (r) { return '<g transform="rotate(' + r + ')">' + line("M0,-24 V-34", C.orange, 4) + "</g>"; }).join("")), 'opacity="0"')));
+      }
+      // A label tag inside the ring (the world map's label style: Oswald navy on cream, navy outline).
+      function tag(k) {
+        var lines = TAGS[k].split("\n"), fs = LAY.tagSize, w = Math.max.apply(null, lines.map(function (l) { return l.length; })) * fs * 0.5 + 30, h = lines.length * fs * 1.15 + 16;
+        var c = LAY.tag[k], body = S([pg(R(-w / 2, -h / 2, w, h))], "#FBF6E6", 3.4) + line("M" + n1(-w / 2 + 6) + "," + n1(-h / 2 + 6) + " H" + n1(w / 2 - 6), C.orange, 1.6);
+        lines.forEach(function (l, i) { body += txt(0, -h / 2 + 8 + fs * 0.95 + i * fs * 1.15, fs, l, ink, 'letter-spacing="0.8"'); });
+        return at(c[0], c[1], 1, g("tag" + k, body, 'opacity="0"'));
+      }
+      // A walking paper bill (KIT.money) with its two strides, for flipping between them as it runs.
+      function bill(id, kind) {
+        return g(id, '<g class="st0">' + KIT.money(kind, 0) + '</g><g class="st1" opacity="0">' + KIT.money(kind, 1) + "</g>" +
+          '<g class="trail" opacity="0">' + line("M58,-14 H104 M62,2 H122 M58,18 H98", ink, 5) + "</g>");
+      }
+      // Place a bill at arc s of the ring, feet on the strip's inner edge, the right way up for a loop-the-loop.
+      function onRing(elm, s, k, legs, trail) {
+        var p = T.at(s), bs = LAY.bs * (k === undefined ? 1 : k), off = HW + 46 * bs;
+        var x = p.x - p.nx * off, y = p.y - p.ny * off, rot = (Math.atan2(-p.nx, p.ny) * 180) / Math.PI;
+        elm.setAttribute("transform", "translate(" + n1(x) + "," + n1(y) + ") rotate(" + rot.toFixed(1) + ") scale(" + bs.toFixed(3) + ")");
+        if (legs !== undefined) { elm.children[0].setAttribute("opacity", legs ? 0 : 1); elm.children[1].setAttribute("opacity", legs ? 1 : 0); }
+        elm.children[2].setAttribute("opacity", trail || 0);
+      }
+
+      // ── THE PEOPLE (storyboard Cast; the Builder's options are fixed so he matches every scene) ──
+      var BUILDER = { tone: 1, outfit: "overalls", color: 0, seed: 7, mood: "eager" };
+      // the Builder's hammer, hanging head-down from a hand at (x, y), in person units
+      function hammer(h) {
+        return '<g transform="translate(' + pt(h[0], h[1] + 4) + ') rotate(8)">' + S([pg(R(-2.4, -4, 4.8, 30))], C.tan, 2.4) + S([pg(R(-9, 24, 18, 9))], C.slate, 2.4) + line("M-7,27 H7", C.orange, 1.2) + "</g>";
+      }
+      // the baby missile the Weapons Maker cradles (kit.js's held "missile", copied so it can fall on its own)
+      function babyMissile() {
+        return '<g transform="rotate(-14)">' + S([pg([[-34, -7], [14, -7], [30, 0], [14, 7], [-34, 7]]), pg([[-34, -7], [-44, -17], [-40, -7]]), pg([[-34, 7], [-44, 17], [-40, 7]])], C.war, 2.6) +
+          '<path d="M14,-7 L30,0 L14,7 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' + line("M-4,2 Q2,6 8,2", ink, 1.8) +
+          F(ci(-2, -2.5, 1.6), ink) + F(ci(6, -2.5, 1.6), ink) + "</g>";
+      }
+      // A stack of war papers seen edge-on (as destroy-beats-make's THINGS THAT DESTROY stack): w wide, n bills on y 0.
+      function billStack(w, n, seed) {
+        var r = KIT.rng(seed), out = "";
+        for (var i = 0; i < n; i++) {
+          var y = -12 * (i + 1), j = Math.round((r() - 0.5) * 10), wj = Math.round((r() - 0.5) * 8), x0 = -w / 2 + j, ww = w + wj;
+          out += '<rect x="' + x0 + '" y="' + y + '" width="' + ww + '" height="12" rx="2" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' +
+            '<path d="M' + (x0 + 8) + "," + (y + 4) + " H" + (x0 + ww - 22) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>' +
+            '<circle cx="' + (i % 2 ? x0 + ww - 9 : x0 + 9) + '" cy="' + (y + 6) + '" r="3.6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.2"/>';
+        }
+        return out;
+      }
+      // the winner's rosette from destroy-beats-make
+      function rosette() {
+        var pts = [];
+        for (var i = 0; i < 24; i++) { var a = (i * Math.PI) / 12, rr = i % 2 ? 17 : 22; pts.push([rr * Math.cos(a), rr * Math.sin(a)]); }
+        return S([pg([[-12, 6], [-3, 6], [-8, 40], [-15, 34]]), pg([[3, 6], [12, 6], [15, 34], [8, 40]])], C.war, 2.6) + S([pg(pts)], C.yellow, 3) + S([ci(0, 0, 11)], C.war, 2.4) + KIT.star(0, 0, 7, C.cream);
+      }
+
+      // ── Layout, per canvas shape ────────────────────────────────────────────────────────────────────
+      // page: the ledger page [x, y, w, h], its MILITARY row (y) and that line's ends; press, pol: the 1913 press and the
+      // Politician on top of the ring (x, scale); bal: the PRICES balloon's knot and its radii (small, swollen, huge);
+      // s3: the Builder with his paycheck (x, scale); s4: the stool at station 4 (x); s5: the stack (x, width, top
+      // height); wm: the Weapons Maker's scale.
+      var L = V
+        ? { page: [70, 520, 940, 740], row: 900, x0: 92, x1: 988, press: [540, 0.42], pol: [654, 0.6], bal: [935, 712, 28, 70, 92],
+            s3: [958, 0.95], s4: [452, 0.95], s5: [106, 112, 520], wm: 0.76 }
+        : { page: [330, 150, 1080, 620], row: 470, x0: 350, x1: 1390, press: [870, 0.4], pol: [992, 0.6], bal: [1405, 370, 30, 80, 110],
+            s3: [1215, 1.08], s4: [640, 1.08], s5: [215, 136, 440], wm: 0.98 };
+      var G = LAY.G, ringTop = RG.cy - RG.ry - HW;
+      function ringOuterY(x) { var k = (x - RG.cx) / (RG.rx + HW); return RG.cy - (RG.ry + HW) * Math.sqrt(Math.max(0, 1 - k * k)); }
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // The ledger page: a header, ruled rows of small line items, and an empty MILITARY row (the strip lies on it).
+      var PGx = L.page[0], PGy = L.page[1], PGw = L.page[2], PGh = L.page[3];
+      var pageArt = F(pg(R(PGx + 12, PGy + 14, PGw, PGh)), C.ink, 'opacity="0.25"') + S([pg(R(PGx, PGy, PGw, PGh))], "#FBF6E6", 4) +
+        F(pg(R(PGx, PGy, PGw, 64)), C.peri, 'opacity="0.35"') + txt(PGx + PGw / 2, PGy + 46, 34, "NATIONAL BUDGET", ink, 'letter-spacing="4"') +
+        line("M" + (PGx + 70) + "," + (PGy + 6) + " V" + (PGy + PGh - 6), C.war, 2.4);
+      var rows = [["ROADS", "$"], ["SCHOOLS", "$"], null, ["HOSPITALS", "$"], ["LIBRARIES", "$"], ["PARKS", "$"]];
+      var rowGap = V ? 92 : 64;
+      rows.forEach(function (r, i) {
+        var y = L.row + (i - 2) * rowGap;
+        pageArt += line("M" + (PGx + 8) + "," + n1(y + rowGap / 2) + " H" + (PGx + PGw - 8), "#8FA7C4", 1.6);
+        if (r) {
+          pageArt += '<text x="' + (PGx + 90) + '" y="' + n1(y + 8) + '" font-family="Oswald" font-weight="600" font-size="24" fill="' + ink + '">' + r[0] + " . . . . . . . . . .</text>" +
+            '<text x="' + (PGx + PGw - 40) + '" y="' + n1(y + 8) + '" font-family="Oswald" font-weight="600" font-size="24" text-anchor="end" fill="' + ink + '">' + r[1] + "</text>";
+        }
+      });
+      // the gap the MILITARY line leaves when it peels off
+      pageArt += F(pg(R(L.x0, L.row - HW, L.x1 - L.x0, RG.w)), "#E9E0C2");
+
+      // The strip on the page row at first (setStrip moves it).
+      var rowLen = L.x1 - L.x0, stripD = ptsD([[L.x0, L.row], [L.x1, L.row]]);
+      var offB = Math.max(rowLen + 40, T.L / 2 + 70), strip = stripSvg(P, stripD, rowLen - 40, offB, Math.max(200, T.L - offB - 40));
+
+      // Station 1: the press stands on the ring's top, the Politician beside it on the ring, cranking. The Politician's
+      // left arm reaches the crank's knob (two-segment arm, solved for the knob), and turns with it.
+      var PR = L.press, prX = PR[0], prS = PR[1], prY = ringTop + 2;
+      var knob0 = [prX + 178 * prS, prY - 183 * prS];
+      var polS = L.pol[1], polX = L.pol[0], polY = ringOuterY(polX) + 4;
+      var polBase = KIT.castOpts("politician", { look: "left", arms: [[-90, -90], [16, 6]] }), polRig = KIT.rig(polBase);
+      var sh = polRig.shoulder[0], len = polRig.armLength;
+      var tx = (knob0[0] - polX) / polS - 0, ty = (knob0[1] - (polY - 100 * polS)) / polS;
+      var dxk = tx - sh[0], dyk = ty - sh[1], dk = Math.min(Math.hypot(dxk, dyk), 2 * len * 0.985);
+      // (angles: 0 = down, -90 = left; the upper arm turned toward down puts the elbow below the line to the knob)
+      var alpha = (Math.atan2(dxk, dyk) * 180) / Math.PI, beta = (Math.acos(dk / (2 * len)) * 180) / Math.PI;
+      var polO = KIT.castOpts("politician", { look: "left", arms: [[alpha + beta, alpha - beta], [16, 6]] });
+      polRig = KIT.rig(polO);
+      var shS = [polX + polRig.shoulder[0][0] * polS, polY - 100 * polS + polRig.shoulder[0][1] * polS];
+      var pressArt = at(prX, prY, prS, KIT.props.printingPress({ seal: "war", label: "1913", tray: 3 }));
+      var polArt = at(polX, polY - 100 * polS, polS, g("pol", KIT.person(polO)));
+
+      // Station 2: the PRICES balloon on a string tied to lamp 2. Drawn at radius 100 around (0,-106), knot at (0,0).
+      var BL = L.bal, lamp2 = T.at(T.sAt(LAY.st[1]));
+      var balloon = S([el(0, -106, 92, 100)], C.orange, 4.4) + F(el(-34, -150, 16, 24), C.cream, 'opacity="0.55" transform="rotate(-25,-34,-150)"') +
+        line("M60,-60 Q76,-100 64,-150", C.yellow, 4, 'opacity="0.7"') +
+        S([pg([[-9, 0], [9, 0], [4, -9], [-4, -9]])], C.orange, 3) + txt(0, -92, 40, "PRICES", C.cream, 'letter-spacing="2"');
+      var balArt = '<path id="' + P + 'string" d="M0,0" fill="none" stroke="' + ink + '" stroke-width="2.6"/>' +
+        g("bal", g("bal-sc", balloon)) + g("pop", (function () {
+          var pts = [];
+          for (var i = 0; i < 20; i++) { var a = (i * Math.PI) / 10, rr = i % 2 ? 40 : 96; pts.push([rr * Math.cos(a), -106 + rr * Math.sin(a)]); }
+          return S([pg(pts)], C.yellow, 4) + F(pg(pts.map(function (p) { return [p[0] * 0.55, -106 + (p[1] + 106) * 0.55]; })), C.cream) +
+            [[-70, -40, -30], [64, -60, 40], [-30, -190, 10], [80, -170, -50]].map(function (sh2) { return at(sh2[0], sh2[1], 1, S([pg([[-12, -5], [10, -8], [13, 4], [-9, 7]])], C.orange, 2.6), sh2[2]); }).join("");
+        })(), 'opacity="0"');
+
+      // Station 3: the Builder holds out his paycheck (a plain bill, no legs) in his left hand, his hammer in his right.
+      var S3 = L.s3, b3O = mix(BUILDER, { look: "left", arms: [[-118, -150], [8, 4]] }), b3R = KIT.rig(b3O);
+      var b3sadO = mix(b3O, { mood: "worried" });
+      var check = KIT.money("plain").replace(/<path class="legs"[^>]*\/>/, "");
+      var hand3 = b3R.hand[0];
+      var b3Art = function (o, id) {
+        return g(id, KIT.person(o) + hammer(KIT.rig(o).hand[1]));
+      };
+      var s3Art = at(S3[0], G - 100 * S3[1], S3[1], g("b3-walk", g("b3-bob",
+        g("b3-a", b3Art(b3O, "b3-a-in")) + g("b3-b", b3Art(b3sadO, "b3-b-in"), 'opacity="0"') +
+        at(hand3[0] + 2, hand3[1] - 14, 0.62, g("check", check)))));
+
+      // Station 4: a stool, a little table and a laptop; the Builder sits there in his domino mask, typing.
+      var S4x = L.s4[0], s4s = L.s4[1];
+      var SEAT = { legPose: [[85, 10], [95, 15]] }; // (the kit mirrors a leg pose for look "left")
+      var b4O = mix(BUILDER, { look: "left", mask: true, mood: "grin", arms: [[-62, -100], [-48, -96]], build: SEAT }), b4R = KIT.rig(b4O);
+      var seatY = G - 100 * s4s + (b4R.hipY + 7) * s4s;
+      var hands4 = b4R.hand.map(function (h) { return [S4x + h[0] * s4s, G - 100 * s4s + h[1] * s4s]; });
+      var lapX = Math.min(hands4[0][0], hands4[1][0]) - 8, deskTop = Math.max(hands4[0][1], hands4[1][1]) + 6;
+      var deskX0 = lapX - 70, deskX1 = lapX + 52;
+      var screen = '<rect x="-24" y="-42" width="48" height="31" fill="' + C.cyan + '" opacity="0.35"/>' +
+        '<g transform="translate(0,-27)">' + KIT.moneySeal("war", 0, 0, 8.5) + "</g>" + line("M-19,-37 h10 M-19,-15 h14 M10,-15 h9", C.cream, 1.6);
+      var desk = S([pg(R(deskX0, deskTop, deskX1 - deskX0, 11))], C.tan, 3.4) + line("M" + (deskX0 + 6) + "," + (deskTop + 3) + " H" + (deskX1 - 6), C.cream, 2) +
+        S([pg([[deskX0 + 12, deskTop + 11], [deskX0 + 21, deskTop + 11], [deskX0 + 15, G], [deskX0 + 6, G]]), pg([[deskX1 - 21, deskTop + 11], [deskX1 - 12, deskTop + 11], [deskX1 - 6, G], [deskX1 - 15, G]])], C.navy, 3);
+      var stool = S([pg(R(S4x - 30, seatY, 60, 9))], C.slate, 3) + S([pg([[S4x - 24, seatY + 9], [S4x - 17, seatY + 9], [S4x - 22, G], [S4x - 30, G]]), pg([[S4x + 17, seatY + 9], [S4x + 24, seatY + 9], [S4x + 30, G], [S4x + 22, G]])], C.navy, 3);
+      var lap = at(lapX, deskTop, V ? 1.4 : 1.6, g("lap", KIT.props.laptop({}).replace("<!--laptop-screen-->", g("lap-on", screen, 'opacity="0"'))));
+      var s4Art = g("s4", g("s4-pop", stool + desk + lap), 'opacity="0"') + at(S4x, G - 100 * s4s, s4s, g("b4", g("b4-in", KIT.person(b4O)), 'opacity="0"'));
+
+      // Stations 5 and 6: the THINGS THAT DESTROY stack grows (clipped from the top), and the Weapons Maker rides on it.
+      var S5 = L.s5, nMax = Math.ceil(S5[2] / 12) + 1;
+      var stackArt = '<defs><clipPath id="' + P + 'stack-clip"><rect id="' + P + 'stack-rect" x="' + (S5[0] - S5[1]) + '" y="' + G + '" width="' + 2 * S5[1] + '" height="0"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'stack-clip)">' + at(S5[0], G, 1, billStack(S5[1], nMax, 51)) + "</g>";
+      var wmEmptyO = KIT.castOpts("weaponsMaker", { arms: [[40, 80], [-40, -80]], mood: "eager" }), wmFullO = KIT.castOpts("weaponsMaker");
+      var wmR = KIT.rig(wmFullO), wmS = L.wm;
+      var cradle = [(wmR.hand[0][0] + wmR.hand[1][0]) / 2, (wmR.hand[0][1] + wmR.hand[1][1]) / 2 - 4];
+      var wmArt = g("wm-ride", at(S5[0], -100 * wmS, wmS, g("wm", g("wm-rock",
+        g("wm-empty", KIT.person(wmEmptyO)) + g("wm-full", KIT.person(wmFullO), 'opacity="0"')))) +
+        at(S5[0] + cradle[0] * wmS, (cradle[1] - 0) * wmS, wmS, g("drop", g("drop-sp", babyMissile()), 'opacity="0"')) +
+        at(S5[0] + S5[1] / 2 - 4, 46, 0.95, g("ros", rosette(), 'opacity="0"')));
+
+      // The ring: lamps, tags, the speed lines, the papers.
+      var lamps = "", tags = "";
+      for (var k = 0; k < 6; k++) { lamps += lamp(k); tags += tag(k); }
+      var speed = '<path id="' + P + 'speed" d="' + ptsD(ringPts(180, { cx: RG.cx, cy: RG.cy, rx: RG.rx - 92, ry: RG.ry - 92 })) + '" fill="none" stroke="' + ink + '" stroke-width="4" stroke-linecap="round" stroke-dasharray="26 70" opacity="0"/>';
+      var NB = 14, bills = "";
+      for (var b = 0; b < NB; b++) bills += bill("pp" + b, "war");
+
+      var ground = line("M60," + G + " H" + (W - 60), ink, 5) + [0.08, 0.27, 0.5, 0.74].map(function (f) {
+        var gx = 70 + f * (W - 140);
+        return line("M" + gx + "," + G + " l-6,-14 M" + (gx + 6) + "," + G + " l2,-18 M" + (gx + 12) + "," + G + " l8,-12", ink, 3);
+      }).join("");
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + ground +
+        g("page", pageArt) +
+        stackArt + g("wm-all", wmArt, 'opacity="0"') +
+        g("s3", s3Art, 'opacity="0"') + s4Art +
+        g("balloon", balArt, 'opacity="0"') +
+        g("ring", g("ring-in", strip + g("lamps", lamps, 'opacity="0"') + speed + tags + bills)) +
+        g("s1", g("s1-pop", pressArt + polArt), 'opacity="0"'));
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      fuse(q("fuse"), tl);
+
+      // ── Cues ─────────────────────────────────────────────────────────────────────────────────
+      var tLoop = cue("loop,"), tLine = cue("line"), tItem = cue("item."), tItemE = KIT.cueEnd(ID, "item.");
+      var tGov = cue("governments"), tPrint = cue("print"), tDeval = cue("devalues"), tInfl = cue("inflation,");
+      var tLegit = cue("legitimate"), tLess = cue("less,"), tPush = cue("pushes"), tCyber = cue("cybercrime,");
+      var tGrows = cue("grows"), tEcon = cue("economy,"), tJust = cue("justifies"), tMore = cue("more");
+      var tFast = KIT.after(ID, "spending.", 2), tPop = tFast + 0.35;
+
+      // ── The strip: peels off the page ("line"), then curls into the ring ("item.") ───────────────
+      var straight = [], NS = 160, ringP = ringPts(NS, RG);
+      for (var i0 = 0; i0 <= NS; i0++) straight.push([L.x0 + ((L.x1 - L.x0) * i0) / NS, L.row]);
+      var tCurl0 = tItem - 0.05, tCurl1 = tItem + 0.85;
+      function backOut(k) { var c1 = 1.5, c3 = c1 + 1; return 1 + c3 * Math.pow(k - 1, 3) + c1 * Math.pow(k - 1, 2); }
+      var stripSh = document.getElementById(P + "strip-sh");
+      KIT.onTime(tl, D, function (t) {
+        var lift = t < tLine ? 0 : t < tLine + 0.25 ? 26 * Math.sin(((t - tLine) / 0.25) * Math.PI / 2) : 26;
+        var wig = t > tLoop && t < tLoop + 0.6 ? 9 * Math.sin(((t - tLoop) / 0.6) * Math.PI) : t > tLine && t < tCurl0 ? 6 * Math.sin((t - tLine) * 18) : 0;
+        var c = t < tCurl0 ? 0 : t > tCurl1 ? 1 : backOut((t - tCurl0) / (tCurl1 - tCurl0));
+        var pts = [];
+        for (var i = 0; i <= NS; i++) {
+          var u = i / NS, sx = straight[i][0], sy = straight[i][1] - lift + wig * Math.sin(u * Math.PI * 5 + t * 14);
+          pts.push([sx + (ringP[i][0] - sx) * c, sy + (ringP[i][1] - sy) * c]);
+        }
+        setStrip(P, pts);
+        stripSh.setAttribute("opacity", t < tLine ? 0 : 0.18);
+      });
+      // the page slides away down the paper while the strip curls
+      tl.fromTo(q("page"), { y: 0 }, { y: H, duration: 0.6, ease: "power2.in", immediateRender: false }, tItem - 0.1);
+
+      // ── The six lamps go up; each lights as the lead paper reaches it; its tag pops in ──────────
+      tl.fromTo(q("lamps"), { opacity: 0 }, { opacity: 1, duration: 0.01 }, tCurl1 - 0.15);
+      for (var k2 = 0; k2 < 6; k2++) {
+        var lp = q("lamp" + k2);
+        gsap.set(lp, { svgOrigin: "0 0" });
+        tl.fromTo(lp, { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2.5)", immediateRender: false }, tCurl1 - 0.15 + k2 * 0.06);
+      }
+      // the times the lead paper reaches each station (it triggers them): the loop speeds up station by station
+      var hit = [tPrint, tInfl, tLess, tCyber, tEcon, tMore];
+      hit.forEach(function (t, k) {
+        var on = q("lamp-on" + k), rays = q("lamp-rays" + k), tg = q("tag" + k);
+        tl.set(on, { opacity: 1 }, t);
+        gsap.set(rays, { svgOrigin: "0 0" });
+        tl.fromTo(rays, { scale: 0.5, opacity: 1 }, { scale: 1.6, opacity: 0, duration: 0.45, ease: "power2.out", immediateRender: false }, t);
+        gsap.set(tg, { svgOrigin: "0 0" });
+        tl.fromTo(tg, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2.2)", immediateRender: false }, t);
+      });
+
+      // ── The papers: the lead paper's distance D(t) through the station knots (a monotone cubic), then a fast run ──
+      var sK = LAY.st.map(function (a) { return T.sAt(a); });
+      var tStart = tPrint + 0.15, tBack = tMore + 0.62;
+      var kt = [tStart, tInfl, tLess, tCyber, tEcon, tMore, tBack], kd = [0, sK[1], sK[2], sK[3], sK[4], sK[5], T.L];
+      var vEnd = (T.L - sK[5]) / (tBack - tMore);
+      kt.push(tFast); kd.push(T.L + vEnd * (tFast - tBack));
+      function monotone(xs, ys) {
+        var n = xs.length, dl = [], m = [];
+        for (var i = 0; i < n - 1; i++) dl.push((ys[i + 1] - ys[i]) / (xs[i + 1] - xs[i]));
+        m.push(dl[0] * 0.6);
+        for (i = 1; i < n - 1; i++) m.push(dl[i - 1] * dl[i] <= 0 ? 0 : (2 * dl[i - 1] * dl[i]) / (dl[i - 1] + dl[i]));
+        m.push(vEnd);
+        return function (x) {
+          if (x <= xs[0]) return ys[0];
+          for (var j = 0; j < n - 1; j++) if (x <= xs[j + 1]) {
+            var h = xs[j + 1] - xs[j], tt = (x - xs[j]) / h, t2 = tt * tt, t3 = t2 * tt;
+            return (2 * t3 - 3 * t2 + 1) * ys[j] + (t3 - 2 * t2 + tt) * h * m[j] + (-2 * t3 + 3 * t2) * ys[j + 1] + (t3 - t2) * h * m[j + 1];
+          }
+          return ys[n - 1];
+        };
+      }
+      var Dcurve = monotone(kt, kd), vMax = V ? 1900 : 2100, ramp = 0.5;
+      function Dist(t) {
+        if (t <= tFast) return Dcurve(t);
+        var base = kd[kd.length - 1], dt = t - tFast;
+        if (dt < ramp) return base + vEnd * dt + ((vMax - vEnd) * dt * dt) / (2 * ramp);
+        return base + vEnd * ramp + ((vMax - vEnd) * ramp) / 2 + vMax * (dt - ramp);
+      }
+      var gap = T.L / NB;
+      // papers that fly off the bends once the loop is fast: the first time each passes a bend after tFast + delay
+      var bendS = [T.sAt(0), T.sAt(180)], flyers = {}, flyIdx = V ? [2, 6, 9, 12] : [1, 4, 8, 11];
+      function wrapL(v) { return ((v % T.L) + T.L) % T.L; }
+      flyIdx.forEach(function (bi, j) {
+        var prev = null;
+        for (var t = tFast + 0.12 + j * 0.05; t < D && !flyers[bi]; t += 0.004) {
+          var s = Dist(t) - bi * gap;
+          if (prev !== null) bendS.forEach(function (bs) {
+            // crossed the bend when the distance past it wraps round to near zero
+            if (!flyers[bi] && wrapL(s - bs) < wrapL(prev - bs)) flyers[bi] = { t: t, s: bs };
+          });
+          prev = s;
+        }
+      });
+      var billEls = [];
+      for (var b2 = 0; b2 < NB; b2++) billEls.push(q("pp" + b2));
+      var speedEl = q("speed"), dashLen = 96;
+      KIT.onTime(tl, D, function (t) {
+        var dd = Dist(t), fast = t > tFast;
+        for (var i = 0; i < NB; i++) {
+          var e = billEls[i], s = dd - i * gap;
+          if (t < tStart || s < 0) { e.setAttribute("opacity", 0); continue; }
+          e.setAttribute("opacity", 1);
+          var fl = flyers[i];
+          if (fl && t >= fl.t) {
+            // off the bend: along the tangent and outward, spinning, falling
+            var p = T.at(fl.s), dt = t - fl.t, v = vMax * 0.8;
+            var x = p.x - p.nx * (HW + 23) + (p.tx * v + p.nx * 520) * dt, y = p.y - p.ny * (HW + 23) + (p.ty * v + p.ny * 520) * dt + 900 * dt * dt;
+            e.setAttribute("transform", "translate(" + n1(x) + "," + n1(y) + ") rotate(" + n1(dt * 1300) + ") scale(" + (LAY.bs * (1 + dt * 0.8)).toFixed(3) + ")");
+            continue;
+          }
+          var pop = s < 36 ? 0.35 + 0.65 * (s / 36) : 1;
+          onRing(e, s, pop, Math.floor(s / (fast ? 22 : 15)) % 2, fast ? clamp((t - tFast) / 0.25, 0, 1) : 0);
+        }
+        speedEl.setAttribute("stroke-dashoffset", n1(-dd * 0.92));
+      });
+      tl.fromTo(speedEl, { opacity: 0 }, { opacity: 0.55, duration: 0.25, immediateRender: false }, tFast);
+      // the ring shudders at full speed
+      var ringIn = q("ring-in");
+      tl.fromTo(ringIn, { x: 0 }, { x: 3, duration: 0.035, repeat: reps(tFast + 0.3, 0.035), yoyo: true, ease: "none", immediateRender: false }, tFast + 0.3);
+
+      // ── Station 1: the press and the Politician pop up on the ring top; he cranks, the press stamps a paper out ──
+      var s1 = q("s1-pop");
+      tl.set(q("s1"), { opacity: 1 }, tGov - 0.05);
+      tl.fromTo(s1, { scaleY: 0, svgOrigin: prX + " " + prY }, { scaleY: 1, svgOrigin: prX + " " + prY, duration: 0.3, ease: "back.out(2.2)", immediateRender: false }, tGov - 0.05);
+      var press = q("s1").querySelector(".prop-printingPress"), plate = press.querySelector(".press-plate"), crank = press.querySelector(".press-crank");
+      var polArm = q("pol").querySelector(".arm-l");
+      var shL = polRig.shoulder[0];
+      var a0 = Math.atan2(knob0[1] - shS[1], knob0[0] - shS[0]);
+      KIT.onTime(tl, D, function (t) {
+        var dd = t < tStart ? 0 : Dist(t), ang = t < tPrint ? 0 : (t - tPrint) * -260 - dd * 0.25;
+        crank.setAttribute("transform", "rotate(" + n1(ang) + " 136 -150)");
+        var r = (ang * Math.PI) / 180, kx = 136 + 42 * Math.cos(r) + 33 * Math.sin(r), ky = -150 + 42 * Math.sin(r) - 33 * Math.cos(r);
+        var kS = [prX + kx * prS, prY + ky * prS], da = (Math.atan2(kS[1] - shS[1], kS[0] - shS[0]) - a0) * 180 / Math.PI;
+        if (da > 180) da -= 360; if (da < -180) da += 360;
+        polArm.setAttribute("transform", "rotate(" + n1(da) + " " + n1(shL[0]) + " " + n1(shL[1]) + ")");
+        // the plate stamps each time a paper comes out at the top
+        var ph = t < tStart - 0.12 ? 0.5 : (((dd + 18) / gap) % 1 + 1) % 1, down = ph < 0.16 ? 1 - ph / 0.16 : ph > 0.9 ? (ph - 0.9) / 0.1 : 0;
+        plate.setAttribute("transform", "translate(0," + n1(46 * down) + ")");
+      });
+
+      // ── Station 2: the balloon appears small on "devalues", swells on "inflation," and keeps swelling; pops ──
+      var bal = q("bal"), balSc = q("bal-sc"), str = q("string");
+      tl.set(q("balloon"), { opacity: 1 }, tDeval);
+      function radius(t) {
+        if (t < tDeval) return 0;
+        if (t < tDeval + 0.25) return BL[2] * backOut((t - tDeval) / 0.25);
+        if (t < tInfl) return BL[2];
+        if (t < tInfl + 0.7) return BL[2] + (BL[3] - BL[2]) * smooth((t - tInfl) / 0.7);
+        return BL[3] + (BL[4] - BL[3]) * clamp((t - tInfl - 0.7) / (tPop - tInfl - 0.7), 0, 1);
+      }
+      KIT.onTime(tl, D, function (t) {
+        var r = radius(t), k = r / 100, bob = Math.sin(t * 2.2) * 6, sway = Math.sin(t * 1.3) * 3;
+        var kx = BL[0] + sway, ky = BL[1] + bob;
+        bal.setAttribute("transform", "translate(" + n1(kx) + "," + n1(ky) + ") rotate(" + n1(sway) + ")");
+        balSc.setAttribute("transform", "scale(" + Math.max(0.001, k).toFixed(3) + ")");
+        if (t >= tPop) {
+          // the string drops loose after the pop
+          var dt = t - tPop, ex = kx - 10, ey = ky + 900 * dt * dt;
+          str.setAttribute("d", "M" + pt(lamp2.x, lamp2.y) + " Q" + pt((lamp2.x + ex) / 2 + 20, Math.max(lamp2.y, ey) + 30) + " " + pt(ex, ey));
+        } else {
+          str.setAttribute("d", "M" + pt(lamp2.x, lamp2.y) + " Q" + pt((lamp2.x + kx) / 2 + 30, (lamp2.y + ky) / 2 + 40) + " " + pt(kx, ky));
+        }
+      });
+      tl.set(bal, { opacity: 0 }, tPop);
+      var popEl = q("pop");
+      tl.set(popEl, { attr: { transform: "translate(" + BL[0] + "," + BL[1] + ") scale(" + (BL[4] / 100).toFixed(2) + ")" } }, 0);
+      tl.fromTo(popEl, { opacity: 1 }, { opacity: 0, duration: 0.3, ease: "power2.in", immediateRender: false }, tPop + 0.12);
+      tl.set(popEl, { opacity: 1 }, tPop);
+
+      // ── Station 3: the Builder pops up with his paycheck; on "less," it shrinks to a sliver; he walks to station 4 ──
+      var s3g = q("s3"), b3walk = q("b3-walk"), b3bob = q("b3-bob"), chk = q("check");
+      tl.set(s3g, { opacity: 1 }, tLegit - 0.1);
+      gsap.set(b3bob, { svgOrigin: "0 100" });
+      tl.fromTo(b3bob, { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, tLegit - 0.1);
+      gsap.set(chk, { svgOrigin: "0 0" });
+      tl.fromTo(chk, { rotation: -6 }, { rotation: 6, duration: 0.18, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, tLegit + 0.25);
+      tl.to(chk, { scaleX: 0.07, scaleY: 0.92, rotation: 0, duration: 0.22, ease: "power3.in" }, tLess - 0.05);
+      tl.set(q("b3-a"), { opacity: 0 }, tLess + 0.25);
+      tl.set(q("b3-b"), { opacity: 1 }, tLess + 0.25);
+      // the walk (a bob and scissoring legs) from station 3 to the stool, arriving as "cybercrime," starts
+      var walkT0 = tPush - 0.1, walkT1 = tCyber - 0.08, dist = (S4x - S3[0]) / S3[1];
+      tl.fromTo(b3walk, { x: 0 }, { x: dist, duration: walkT1 - walkT0, ease: "none", immediateRender: false }, walkT0);
+      var nSteps = Math.max(2, Math.round((walkT1 - walkT0) / 0.13));
+      tl.fromTo(b3bob, { y: 0 }, { y: -5, duration: (walkT1 - walkT0) / nSteps, repeat: nSteps - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, walkT0);
+      ["b3-b-in"].forEach(function (id) {
+        var root = q(id), lg = root.querySelector(".leg-l"), rg2 = root.querySelector(".leg-r"), rr = KIT.rig(b3sadO);
+        gsap.set(lg, { svgOrigin: rr.hip[0].join(" ") }); gsap.set(rg2, { svgOrigin: rr.hip[1].join(" ") });
+        tl.fromTo(lg, { rotation: -22 }, { rotation: 22, duration: (walkT1 - walkT0) / nSteps, repeat: nSteps - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, walkT0);
+        tl.fromTo(rg2, { rotation: 22 }, { rotation: -22, duration: (walkT1 - walkT0) / nSteps, repeat: nSteps - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, walkT0);
+        tl.to([lg, rg2], { rotation: 0, duration: 0.05 }, walkT1);
+      });
+      tl.set(s3g, { opacity: 0 }, tCyber);
+
+      // ── Station 4: the stool, table and closed laptop pop in on "pushes"; on "cybercrime," he sits, masked; the lid
+      // opens on its red seal (click), and he types ──
+      var s4pop = q("s4-pop");
+      tl.set(q("s4"), { opacity: 1 }, tPush);
+      gsap.set(s4pop, { svgOrigin: S4x + " " + G });
+      tl.fromTo(s4pop, { scaleY: 0 }, { scaleY: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, tPush);
+      var lid = q("lap").querySelector(".laptop-lid");
+      gsap.set(lid, { svgOrigin: "0 -7.2" });
+      tl.fromTo(lid, { scaleY: 0.08 }, { scaleY: 1, duration: 0.14, ease: "back.out(2)" }, tCyber + 0.05);
+      tl.set(q("lap-on"), { opacity: 1 }, tCyber + 0.12);
+      tl.set(q("b4"), { opacity: 1 }, tCyber);
+      var b4in = q("b4-in");
+      gsap.set(b4in, { svgOrigin: "0 " + n1(b4R.hipY) });
+      tl.fromTo(b4in, { scaleY: 1.12, scaleX: 0.92 }, { scaleY: 1, scaleX: 1, duration: 0.25, ease: "back.out(3)", immediateRender: false }, tCyber);
+      var b4al = b4in.querySelector(".arm-l"), b4ar = b4in.querySelector(".arm-r");
+      gsap.set(b4al, { svgOrigin: b4R.shoulder[0].join(" ") }); gsap.set(b4ar, { svgOrigin: b4R.shoulder[1].join(" ") });
+      tl.fromTo(b4ar, { rotation: 0 }, { rotation: 7, duration: 0.08, repeat: reps(tCyber + 0.3, 0.08), yoyo: true, ease: "sine.inOut", immediateRender: false }, tCyber + 0.3);
+      tl.fromTo(b4al, { rotation: 4 }, { rotation: -4, duration: 0.11, repeat: reps(tCyber + 0.25, 0.11), yoyo: true, ease: "sine.inOut", immediateRender: false }, tCyber + 0.25);
+
+      // ── Station 5: the stack pops in on "grows" and shoots up on "economy," (cash register), wins its rosette ──
+      var rect = q("stack-rect"), wmRide = q("wm-ride");
+      function stackH(t) {
+        if (t < tGrows) return 0;
+        if (t < tGrows + 0.2) return 36 * backOut((t - tGrows) / 0.2);
+        if (t < tEcon) return 36 + 30 * ((t - tGrows - 0.2) / (tEcon - tGrows - 0.2));
+        if (t < tEcon + 0.45) return 66 + (S5[2] - 66) * backOut((t - tEcon) / 0.45);
+        return S5[2];
+      }
+      KIT.onTime(tl, D, function (t) {
+        var h = Math.round(stackH(t) / 12) * 12;
+        rect.setAttribute("y", n1(G - h)); rect.setAttribute("height", n1(h + 2));
+        wmRide.setAttribute("transform", "translate(0," + n1(G - h) + ")");
+      });
+      var ros = q("ros");
+      gsap.set(ros, { svgOrigin: "0 0" });
+      tl.fromTo(ros, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(3)", immediateRender: false }, tEcon + 0.4);
+
+      // ── Station 6: the Weapons Maker pops up on the stack on "justifies"; a new baby missile drops into his arms on
+      // "more" (clank), and he rocks it ──
+      var wmAll = q("wm-all"), wm = q("wm"), drop = q("drop"), dropSp = q("drop-sp");
+      tl.set(wmAll, { opacity: 1 }, tEcon + 0.3);
+      tl.set(q("wm"), { opacity: 0 }, 0);
+      tl.set(q("wm"), { opacity: 1 }, tJust - 0.1);
+      gsap.set(wm, { svgOrigin: "0 100" });
+      tl.fromTo(wm, { scaleY: 0 }, { scaleY: 1, duration: 0.25, ease: "back.out(2.2)", immediateRender: false }, tJust - 0.1);
+      var wmHead = wm.querySelector("#" + P + "wm-empty .head");
+      gsap.set(wmHead, { svgOrigin: wmR.neck.join(" ") });
+      tl.fromTo(wmHead, { rotation: 0 }, { rotation: -16, duration: 0.15, ease: "power2.out", immediateRender: false }, tJust + 0.1);
+      tl.set(drop, { opacity: 1 }, tMore - 0.32);
+      tl.fromTo(drop, { y: -(G + 200) }, { y: 0, duration: 0.32, ease: "power2.in", immediateRender: false }, tMore - 0.32);
+      gsap.set(dropSp, { svgOrigin: "0 0" });
+      tl.fromTo(dropSp, { rotation: -200 }, { rotation: 0, duration: 0.32, ease: "none", immediateRender: false }, tMore - 0.32);
+      tl.set(drop, { opacity: 0 }, tMore);
+      tl.set(q("wm-empty"), { opacity: 0 }, tMore);
+      tl.set(q("wm-full"), { opacity: 1 }, tMore);
+      var rock = q("wm-rock");
+      gsap.set(rock, { svgOrigin: "0 100" });
+      tl.fromTo(rock, { scaleY: 0.86, scaleX: 1.1 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(3)", immediateRender: false }, tMore);
+      tl.fromTo(rock, { rotation: -4 }, { rotation: 4, duration: 0.45, repeat: reps(tMore + 0.3, 0.45), yoyo: true, ease: "sine.inOut", immediateRender: false }, tMore + 0.3);
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,476 @@
+<template id="thought-incorrect-template">
+  <!-- thought-incorrect · Layer A (storyboards/part-08-daily-deletion-event.md): zoom out of the wall screen, which still
+       shows meat-robot-blueprint's last frame (drawn by the same bpArt). "think" → a thought bubble floats up out of the
+       blueprint reader's head and into the office, a teal wrench inside it, a trail of little circles behind it (rising
+       slide whistle). "prioritize" → PRIORITY 1 writes itself into it and it swells (marker). "problems." → it swells
+       bigger and shines (sparkle). "thought" → a pencil comes up from behind the desk. "incorrect." → Wishonia turns
+       her smirk to the camera and points the pencil at it: the bubble pops (pop), PRIORITY 1 scatters into loose
+       letters, and the wrench drops, bounces once and clanks onto the desk (clank). Then nothing moves. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+    #thought-incorrect-cam, #thought-incorrect-bg, #thought-incorrect-screen, #thought-incorrect-wish, #thought-incorrect-bubble,
+    #thought-incorrect-held, #thought-incorrect-front, #thought-incorrect-top, #thought-incorrect-grain { position: absolute; inset: 0; }
+    /* meat-robot-blueprint's reader in cream lines, on the wall screen (the same rule as in that scene) */
+    .thought-incorrect-mini-fig path, .thought-incorrect-mini-fig rect, .thought-incorrect-mini-fig ellipse,
+    .thought-incorrect-mini-fig circle:not(.chest-light) { fill: none; stroke: #F3ECD0; stroke-width: 0.95px; stroke-linejoin: miter; }
+    .thought-incorrect-mini-fig rect[fill^="url"] { display: none; }
+    .thought-incorrect-mini-fig circle.pupil { fill: #F3ECD0; }
+  </style>
+  <div id="root" data-composition-id="thought-incorrect" data-width="1920" data-height="1080" data-start="0" data-duration="5.86">
+    <div id="thought-incorrect-cam">
+      <div id="thought-incorrect-bg"></div>
+      <div id="thought-incorrect-screen"></div>
+      <div id="thought-incorrect-wish"></div>
+      <div id="thought-incorrect-bubble"></div>
+      <div id="thought-incorrect-held"></div>
+      <div id="thought-incorrect-front"></div>
+      <div id="thought-incorrect-top"></div>
+    </div>
+    <div id="thought-incorrect-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "thought-incorrect";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, O = KIT.OFFICE;
+      var S = O.screen, hole = [S[0] + 34, S[1] + 34, S[2] - 68, S[3] - 68];
+      var ink = 'stroke="' + C.ink + '"';
+
+      // ── The blueprint: copied from meat-robot-blueprint.html (keep the two copies the same), to draw that scene's last
+      //    frame on the wall screen. bpArt(pid, fin) draws it with ids prefixed pid; fin true draws the last frame
+      //    (everything fixed and stamped, the beetle flat under wrench 5), fin false the first. ──
+      var BP = (function () {
+        var CREAM = C.cream, INK = C.line, TEAL_INK = "#1F6E68", SOOT = "#4A423C", OFF = "#24304D";
+        // READER (falling-apart, dissolving-on-schedule, Part 9's weirdly-calm), arms out like a service-manual figure.
+        var FIG = { tone: 3, outfit: "shirt", color: 3, arms: [[-28, -14], [28, 14]] };
+        // Per shape: the sheet [x, y, w, h]; the figure [x, feet y, scale]; the title block [x, y, w, h] and its font
+        // sizes; the tags' font size and height; each tag's anchor [x, y, side] (side L: the tag ends at x; R: starts at
+        // x) and its wrench [jaw x, jaw y, handle angle]; the beetle's scale and where it ends up.
+        var L = V
+          ? { sheet: [56, 104, 968, 1318], fig: [520, 1380, 5], title: [86, 130, 600, 360], tfs: [68, 44, 24, 36], tagFs: 34, tagH: 52, wk: 0.95,
+              tags: { knee: [790, 1210, "R"], heart: [262, 1018, "L"], lungs: [262, 800, "L"], brain: [262, 596, "L"], cells: [790, 930, "R"] },
+              wr: { knee: [806, 1146, -18], heart: [246, 954, 198], lungs: [246, 736, 198], brain: [246, 532, 198], cells: [806, 866, -18] },
+              bug: 2.1, bugEnd: [850, 1358] }
+          : { sheet: [104, 76, 1472, 818], fig: [590, 862, 4.4], title: [1062, 112, 476, 430], tfs: [58, 38, 22, 44], tagFs: 30, tagH: 46, wk: 0.85,
+              tags: { knee: [830, 724, "R"], heart: [420, 520, "L"], lungs: [420, 380, "L"], brain: [420, 193, "L"], cells: [830, 509, "R"] },
+              wr: { knee: [845, 668, -18], heart: [405, 464, 198], lungs: [405, 324, 198], brain: [405, 137, 198], cells: [845, 453, -18] },
+              bug: 2, bugEnd: [1290, 842] };
+        var F = L.fig, s = F[2];
+        function fp(px, py) { return [F[0] + px * s, F[1] - 100 * s + py * s]; }
+        function n1(v) { return (+v).toFixed(1); }
+        function P(p) { return n1(p[0]) + "," + n1(p[1]); }
+        function polyD(pts) { return "M" + pts.map(P).join(" L") + " Z"; }
+        // Oswald SemiBold advance widths, in em (measured; title.js)
+        var ADV = { "0": 0.543, "1": 0.384, "2": 0.506, "3": 0.506, "4": 0.515, "5": 0.502, "6": 0.531, "7": 0.428, "8": 0.516, "9": 0.53, " ": 0.25, A: 0.538, B: 0.574, C: 0.553, D: 0.573, E: 0.438, F: 0.425, G: 0.572, H: 0.6, I: 0.29, J: 0.339, K: 0.552, L: 0.433, M: 0.695, N: 0.554, O: 0.576, P: 0.552, Q: 0.576, R: 0.583, S: 0.505, T: 0.438, U: 0.578, V: 0.522, W: 0.704, X: 0.508, Y: 0.49, Z: 0.43, ".": 0.232, ",": 0.227, ":": 0.261 };
+        function textW(t, size) { var w = 0; for (var i = 0; i < t.length; i++) w += ADV[t[i]] || 0.55; return w * size; }
+        function txt(x, y, size, fill, t, extra) {
+          return '<text x="' + n1(x) + '" y="' + n1(y) + '" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + fill + '" ' + (extra || "") + ">" + t + "</text>";
+        }
+
+        // The reader's pivots, in person units: the knee that springs, the forearm with the cells, the chest light.
+        var R = KIT.rig(FIG), legL = 37 * R.build.legs, a6 = (6 * Math.PI) / 180;
+        var KNEE = [R.hip[1][0] + legL * Math.sin(a6), R.hip[1][1] + legL * Math.cos(a6)];
+        var sh = R.shoulder[1], ar = (FIG.arms[1][0] * Math.PI) / 180, elbow = [sh[0] + R.armLength * Math.sin(ar), sh[1] + R.armLength * Math.cos(ar)];
+        var CELLS = [elbow[0] + (R.hand[1][0] - elbow[0]) * 0.5, elbow[1] + (R.hand[1][1] - elbow[1]) * 0.5];
+        var person = KIT.person(FIG);
+        var lm = person.match(/class="chest-light" cx="([-\d.]+)" cy="([-\d.]+)"/);
+        var LIGHT = [+lm[1], +lm[2]];
+        var HEART = [0, 13], LUNGS = [-0.5, -9.5], TUBE = [-5, -52];
+        // The five callouts, in the order they are numbered: the marker loop [center (person units), rx, ry (units)].
+        var PARTS = [
+          { key: "knee", n: 1, label: "KNEE", c: KNEE, rx: 11, ry: 10 },
+          { key: "heart", n: 2, label: "HEART", c: HEART, rx: 9, ry: 9 },
+          { key: "lungs", n: 3, label: "LUNGS", c: LUNGS, rx: 20, ry: 12.5 },
+          { key: "brain", n: 4, label: "BRAIN", c: TUBE, rx: 9, ry: 12 },
+          { key: "cells", n: 5, label: "CELLS", c: CELLS, rx: 9, ry: 9 },
+        ];
+
+        // ── Pieces ──
+        // A shape with a cream halo under its navy outline (so navy things read on the navy sheet).
+        function halo(d, fill, w) {
+          return '<path d="' + d + '" fill="' + CREAM + '" stroke="' + CREAM + '" stroke-width="' + (w + 5) + '" stroke-linejoin="miter"/>' +
+            '<path d="' + d + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + w + '" stroke-linejoin="miter"/>';
+        }
+        // A teal open-end wrench around its jaw (0,0), the handle along +x to the ring at x 96.
+        function wrench() {
+          var oct = function (cx, cy, r) { var p = []; for (var i = 0; i < 8; i++) { var a = (Math.PI / 8) * (2 * i + 1); p.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); } return p; };
+          var head = [[-19, -7], [-19, -10], [-9, -19], [7, -19], [17, -9], [19, 0], [17, 9], [7, 19], [-9, 19], [-19, 10], [-19, 7], [-5, 7], [-5, -7]];
+          return halo(polyD([[12, -7], [86, -5.5], [86, 5.5], [12, 7]]), C.med, 4) + halo(polyD(head), C.med, 4) + halo(polyD(oct(96, 0, 13)), C.med, 4) +
+            '<path d="' + polyD(oct(96, 0, 5.5)) + '" fill="' + INK + '"/>' +
+            '<path d="M22,-2.5 H78" stroke="' + CREAM + '" stroke-width="2.4" opacity="0.7"/><path d="M-12,-12 L4,-14" stroke="' + CREAM + '" stroke-width="2.4" opacity="0.7"/>';
+        }
+        // The beetle (deletion-board's): about 44 long around (0,0), facing +x, seen from above: a navy shell with an
+        // orange edge highlight and a center split, a small head with white eyes and a grin, two antennae and six thin
+        // miter-jointed legs (classes .<pid>-lega / -legb: the two tripods, each pivoting at data-hip).
+        function beetle(pid, fin) {
+          function legs(x, side, fwd, i) {
+            var d = "M" + x + "," + side * 8 + " L" + (x + fwd * 0.45) + "," + side * 15 + " L" + (x + fwd) + "," + side * 20;
+            var tri = (i % 2 === 0) === (side < 0) ? "a" : "b"; // tripod a: front left, middle right, back left
+            return '<g class="' + pid + "-leg" + tri + '" data-hip="' + x + " " + side * 8 + '"><path d="' + d + '" fill="none" stroke="' + CREAM + '" stroke-width="5.5" stroke-linejoin="miter"/>' +
+              '<path d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="2.2" stroke-linejoin="miter"/></g>';
+          }
+          var shell = [[-20, 0], [-18, -8], [-10, -12], [2, -12.5], [9, -9.5], [12.5, -4], [12.5, 4], [9, 9.5], [2, 12.5], [-10, 12], [-18, 8]];
+          var head = [[12, -5.5], [18, -6.5], [22, -3], [22, 3], [18, 6.5], [12, 5.5]];
+          var ant = "M21,-3 L27,-9 L31,-8 M21,3 L27,9 L31,8";
+          return [6, -2, -10].map(function (x, i) { return legs(x, -1, [6, 0, -6][i], i) + legs(x, 1, [6, 0, -6][i], i); }).join("") +
+            '<path d="' + ant + '" fill="none" stroke="' + CREAM + '" stroke-width="5" stroke-linejoin="miter"/><path d="' + ant + '" fill="none" stroke="' + INK + '" stroke-width="1.8" stroke-linejoin="miter"/>' +
+            halo(polyD(head), INK, 2) + halo(polyD(shell), INK, 2.2) +
+            '<path d="M-16,-6.5 L-9,-9.6 L2,-10" fill="none" stroke="' + C.orange + '" stroke-width="2.2"/>' +
+            '<path d="M-19,0 L3,0 M3,-11.5 L5.5,0 L3,11.5" fill="none" stroke="#3A4766" stroke-width="1.6"/>' +
+            '<circle cx="18" cy="-3.2" r="2.5" fill="#FFFFFF"/><circle cx="18" cy="3.2" r="2.5" fill="#FFFFFF"/>' +
+            '<g class="' + pid + '-pupils"' + (fin ? ' transform="translate(0.6,-0.8)"' : "") + '><circle cx="19" cy="-3.2" r="1.2" fill="' + INK + '"/><circle cx="19" cy="3.2" r="1.2" fill="' + INK + '"/></g>' +
+            '<path d="M21.2,-2.6 Q24.6,0 21.2,2.6 Q22.4,0 21.2,-2.6 Z" fill="#FFFFFF" stroke="' + INK + '" stroke-width="0.8"/>';
+        }
+        // The same beetle after the wrench: flat on the floor (y 0), legs splayed, X eyes, antennae limp.
+        function flatBug() {
+          var shell = [[-26, 0], [-22, -5], [-8, -7], [10, -7], [18, -5], [22, 0]], head = [[20, 0], [22, -4], [30, -4], [33, 0]];
+          var legs = "M-24,0 L-31,-1 L-37,1 M-16,0 L-24,4 L-31,4 M-6,0 L-10,5 L-16,7 M4,0 L8,5 L14,7 M12,0 L19,4 L26,4", ant = "M31,-3 L37,-3 L42,2 M31,-1 L36,2 L37,7";
+          var line2 = function (d, w) { return '<path d="' + d + '" fill="none" stroke="' + CREAM + '" stroke-width="' + (w + 3.4) + '" stroke-linejoin="miter"/><path d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="' + w + '" stroke-linejoin="miter"/>'; };
+          return line2(legs, 2.2) + line2(ant, 1.8) + halo(polyD(shell), INK, 2.2) + halo(polyD(head), INK, 2) +
+            '<path d="M-20,-3.4 L-8,-5.4 L8,-5.4" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+            '<path d="M23.6,-3.2 l2.4,2.4 m0,-2.4 l-2.4,2.4 M27.6,-3.2 l2.4,2.4 m0,-2.4 l-2.4,2.4" stroke="#FFFFFF" stroke-width="1.1"/>';
+        }
+        // The vacuum tube (the brain), standing on (0, 9): a glass bulb, its glow, the filament, a crack and a pop star.
+        function tube(pid, fin) {
+          return '<ellipse id="' + pid + '-glow" cx="0" cy="-2" rx="7" ry="9" fill="' + C.yellow + '" opacity="0.55"/>' +
+            '<path d="M-4.2,6 L-4.2,-5 L-2.6,-10 L2.6,-10 L4.2,-5 L4.2,6 Z" fill="' + CREAM + '" fill-opacity="0.12" stroke="' + CREAM + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+            '<path id="' + pid + '-fil" d="M-2,5 L-2,-2.5 L0,-6 L2,-2.5 L2,5" fill="none" stroke="' + C.yellow + '" stroke-width="1"/>' +
+            '<path d="M-5,6 H5 V9 H-5 Z" fill="' + C.slate + '" stroke="' + CREAM + '" stroke-width="0.8"/><path d="M-3,9 V11 M0,9 V11 M3,9 V11" stroke="' + CREAM + '" stroke-width="0.7"/>' +
+            '<path id="' + pid + '-crack" d="M-3.6,-7 L-1.4,-4.6 L-2.8,-2.4 L0.2,0.4 L-0.8,2.4" fill="none" stroke="#FFFFFF" stroke-width="0.7" opacity="0"/>' +
+            '<g id="' + pid + '-tpop" opacity="0">' + KIT.star(0, -5, 16, "#FFFFFF", 6) + KIT.star(0, -5, 9, C.yellow, 6) + "</g>" +
+            // glass shards that fly off when it pops (hidden)
+            [[-1, -1], [1, -1.2], [-1.2, 0.3], [1.1, 0.4]].map(function (d, i) {
+              return '<g id="' + pid + "-tsh" + i + '" opacity="0" data-d="' + d[0] + " " + d[1] + '"><path d="M' + (d[0] * 3) + "," + (-5 + d[1] * 3) + " l" + (d[0] * 2.4) + ",-1.6 l0.8,2.6 Z" + '" fill="' + CREAM + '" stroke="' + CREAM + '" stroke-width="0.5"/></g>';
+            }).join("");
+        }
+        // A lung as a patched bellows, standing on (0,0): pleated sides, pleat lines across, a nozzle on top.
+        function lung(patch) {
+          var body = [[-4.6, -15], [4.6, -15], [6, -12], [4.4, -9], [6, -6], [4.4, -3], [6, 0], [-6, 0], [-4.4, -3], [-6, -6], [-4.4, -9], [-6, -12]];
+          return '<path d="' + polyD(body) + '" fill="' + C.rust + '" stroke="' + CREAM + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+            '<path d="M-4.4,-9 H4.4 M-6,-6 H6 M-4.4,-3 H4.4 M-6,-12 H6" stroke="' + CREAM + '" stroke-width="0.5" opacity="0.8"/>' +
+            (patch ? '<path d="M-3.4,-8 H1 V-4 H-3.4 Z" fill="' + C.tan + '" stroke="' + CREAM + '" stroke-width="0.6"/><path d="M-2.8,-7.4 L0.4,-4.6 M0.4,-7.4 L-2.8,-4.6" stroke="' + CREAM + '" stroke-width="0.4"/>' : "");
+        }
+        function puff() {
+          var cs = [[0, 0, 3.2], [3.4, -2, 2.8], [1.2, -4.6, 2.6], [-2.6, -3, 2.2]];
+          return cs.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + CREAM + '" stroke="' + CREAM + '" stroke-width="1.4"/>'; }).join("") +
+            cs.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + SOOT + '"/>'; }).join("") + '<circle cx="-0.6" cy="-1" r="1" fill="#6E6660"/>';
+        }
+        // A hand-drawn marker loop around an ellipse (a little over one turn, pathLength 1 so it can be drawn on).
+        function loop(cx, cy, rx, ry, seed) {
+          var r = KIT.rng(seed), pts = [], a0 = -2.4 + r() * 0.5;
+          for (var i = 0; i <= 48; i++) {
+            var u = i / 48, a = a0 + u * Math.PI * 2.16, k = 1 - 0.03 + 0.08 * u + (r() - 0.5) * 0.02;
+            pts.push([cx + rx * k * Math.cos(a), cy + ry * k * Math.sin(a)]);
+          }
+          return "M" + pts.map(P).join(" L");
+        }
+        // The coil from the knee to the sprung kneecap, d units long.
+        function coilD(d) {
+          var out = "M0,0";
+          for (var k = 1; k < 10; k++) out += " L" + n1((k / 10) * d) + "," + (k % 2 ? -2.6 : 2.6);
+          return out + " L" + n1(d) + ",0";
+        }
+
+        function art(pid, fin) {
+          var S = L.sheet, sx = S[0], sy = S[1], sw = S[2], shh = S[3];
+          var defs = '<defs><pattern id="' + pid + '-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40,0 H0 V40" fill="none" stroke="' + CREAM + '" stroke-width="1.2" opacity="0.14"/></pattern>' +
+            '<clipPath id="' + pid + '-sheetclip"><rect id="' + pid + '-reveal" x="' + (sx - 20) + '" y="' + sy + '" width="' + (sw + 40) + '" height="' + (fin ? shh : 0) + '"/></clipPath></defs>';
+          var sheet = '<rect x="' + (sx + 8) + '" y="' + (sy + 10) + '" width="' + sw + '" height="' + shh + '" fill="' + C.ink + '" opacity="0.35"/>' +
+            '<rect x="' + sx + '" y="' + sy + '" width="' + sw + '" height="' + shh + '" fill="' + C.navy + '" stroke="' + INK + '" stroke-width="4"/>' +
+            '<rect x="' + sx + '" y="' + sy + '" width="' + sw + '" height="' + shh + '" fill="url(#' + pid + '-grid)"/>' +
+            '<rect x="' + (sx + 18) + '" y="' + (sy + 26) + '" width="' + (sw - 36) + '" height="' + (shh - 44) + '" fill="none" stroke="' + CREAM + '" stroke-width="3"/>' +
+            '<rect x="' + (sx + 26) + '" y="' + (sy + 34) + '" width="' + (sw - 52) + '" height="' + (shh - 60) + '" fill="none" stroke="' + CREAM + '" stroke-width="1.2" opacity="0.6"/>';
+          // the floor line he stands on, dashed
+          var fl = F[1] + 2;
+          sheet += '<path d="M' + (sx + 40) + "," + fl + " H" + (sx + sw - 40) + '" stroke="' + CREAM + '" stroke-width="2.5" stroke-dasharray="18 10" opacity="0.55"/>';
+
+          // ── the title block ──
+          var T = L.title, tx = T[0], ty = T[1], tw = T[2], th = T[3], fs = L.tfs, hd = 175; // hd: the rule under the title lines
+          var title = '<rect x="' + tx + '" y="' + ty + '" width="' + tw + '" height="' + th + '" fill="' + CREAM + '" stroke="' + INK + '" stroke-width="4"/>' +
+            '<rect x="' + (tx + 8) + '" y="' + (ty + 8) + '" width="' + (tw - 16) + '" height="' + (th - 16) + '" fill="none" stroke="' + INK + '" stroke-width="1.6"/>' +
+            txt(tx + tw / 2, ty + th * 0.08 + fs[0] * 0.95, fs[0], INK, "MEAT ROBOT,", 'text-anchor="middle" letter-spacing="2"') +
+            txt(tx + tw / 2, ty + th * 0.08 + fs[0] * 0.95 + fs[1] * 1.2, fs[1], C.war, "MODEL: HUMAN", 'text-anchor="middle" letter-spacing="2"') +
+            '<path d="M' + (tx + 8) + "," + (ty + hd) + " H" + (tx + tw - 8) + '" stroke="' + C.orange + '" stroke-width="3"/>' +
+            txt(tx + tw * 0.25, ty + hd + fs[2] * 1.45, fs[2], INK, "DWG. NO. 847", 'text-anchor="middle" letter-spacing="1"') +
+            txt(tx + tw * 0.73, ty + hd + fs[2] * 1.45, fs[2], INK, "WARRANTY: NONE", 'text-anchor="middle" letter-spacing="1"') +
+            '<path d="M' + (tx + tw * 0.48) + "," + (ty + hd) + " V" + (ty + hd + fs[2] * 2.1) + " M" + (tx + 8) + "," + (ty + hd + fs[2] * 2.1) + " H" + (tx + tw - 8) + '" stroke="' + INK + '" stroke-width="1.6"/>';
+          var markTop = ty + hd + fs[2] * 2.1, mc = [tx + tw / 2, (markTop + ty + th - 8) / 2];
+          var mark = KIT.props.stampMark({ text: "EVERY FAILURE:\nSOLVABLE", color: TEAL_INK, angle: -6, fontSize: fs[3] });
+          var mcy = +mark.match(/data-cy="([-\d.]+)"/)[1];
+          var markG = '<g transform="translate(' + n1(mc[0]) + "," + n1(mc[1] - mcy) + ')"><g id="' + pid + '-mark"' + (fin ? "" : ' opacity="0"') + ">" + mark + "</g></g>";
+          // the rubber stamp that makes it, as wide as the mark, tilted like it (hidden in the last frame)
+          var mw = 14 * fs[3] * 0.58 + 40, stk = mw / 88;
+          var stampG = fin ? "" : '<g transform="translate(' + n1(mc[0]) + "," + n1(mc[1] + 18) + ') rotate(-6)"><g id="' + pid + '-stamp"><g transform="scale(' + stk.toFixed(3) + ')">' + KIT.props.stamp({ text: "", color: C.med }) + "</g></g></g>";
+
+          // ── the figure: the reader in cream lines, and his parts on top (all in person units) ──
+          var lightOn = fin ? C.med : OFF;
+          var fig = person.replace(/(class="chest-light"[^>]*?)r="[^"]*"/, '$1r="0"');
+          var lightG = '<circle id="' + pid + '-light" class="chest-light" cx="' + LIGHT[0] + '" cy="' + LIGHT[1] + '" r="3.6" fill="' + lightOn + '" stroke="' + CREAM + '" stroke-width="1.1"/>';
+          var at = function (p, inner, id) { return '<g transform="translate(' + n1(p[0]) + "," + n1(p[1]) + ')"><g id="' + pid + "-" + id + '">' + inner + "</g></g>"; };
+          var parts =
+            // the windpipe to the lungs
+            '<path d="M-0.5,-27 V-20 M-8,-16 L-0.5,-20 L7,-16" fill="none" stroke="' + CREAM + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+            at([-8, -1], lung(true), "lungl") + at([7, -1], lung(false), "lungr") +
+            // the heart: a faceted engine block with an exhaust pipe
+            '<g transform="translate(' + HEART[0] + "," + HEART[1] + ')"><path d="M-3,-4 L-7,-8.5 L-8.6,-7.2" fill="none" stroke="' + CREAM + '" stroke-width="2.2"/><path d="M-3,-4 L-7,-8.5 L-8.6,-7.2" fill="none" stroke="' + C.slate + '" stroke-width="1.1"/>' +
+            '<g id="' + pid + '-heart"><path d="' + polyD([[0, 5.5], [-5.8, -0.5], [-5.8, -3.6], [-3.6, -5.8], [-1.6, -5.8], [0, -4], [1.6, -5.8], [3.6, -5.8], [5.8, -3.6], [5.8, -0.5]]) + '" fill="' + C.war + '" stroke="' + CREAM + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+            '<path d="M-3.4,-3 L-1.6,-1.4 M2,-3.6 L3.6,-2" stroke="' + CREAM + '" stroke-width="0.6"/></g></g>' +
+            at(TUBE, tube(pid, fin), "tube") +
+            // the cells on his forearm: four round, one lopsided (round again once fixed)
+            '<g transform="translate(' + n1(CELLS[0]) + "," + n1(CELLS[1]) + ')">' + [[-2.6, -2.2], [2.4, -2.6], [-2.8, 2.6], [2.6, 2.4]].map(function (c) {
+              return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="2.1" fill="' + C.med + '" fill-opacity="0.35" stroke="' + CREAM + '" stroke-width="0.6"/><circle cx="' + c[0] + '" cy="' + c[1] + '" r="0.6" fill="' + CREAM + '"/>';
+            }).join("") +
+            '<g id="' + pid + '-badcell"' + (fin ? ' opacity="0"' : "") + '><path d="M-0.4,-1.6 L2.4,-0.6 L1.2,1.8 L2,3.4 L-1.6,2.2 L-2.2,-0.4 Z" fill="' + C.war + '" fill-opacity="0.75" stroke="' + CREAM + '" stroke-width="0.6"/><circle cx="-0.6" cy="0" r="0.6" fill="' + CREAM + '"/><circle cx="1" cy="1.6" r="0.5" fill="' + CREAM + '"/></g>' +
+            '<g id="' + pid + '-goodcell"' + (fin ? "" : ' opacity="0"') + '><circle cx="0" cy="0.4" r="2.1" fill="' + C.med + '" fill-opacity="0.35" stroke="' + CREAM + '" stroke-width="0.6"/><circle cx="0" cy="0.4" r="0.6" fill="' + CREAM + '"/></g></g>' +
+            // the knee: a coil (zero long until it springs) and the kneecap on its end
+            '<g transform="translate(' + n1(KNEE[0]) + "," + n1(KNEE[1]) + ')"><path id="' + pid + '-coil" d="' + coilD(0) + '" fill="none" stroke="' + CREAM + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+            '<g id="' + pid + '-cap"><path d="' + polyD([[-2, -4.6], [2, -4.6], [4.6, -2], [4.6, 2], [2, 4.6], [-2, 4.6], [-4.6, 2], [-4.6, -2]]) + '" fill="' + C.tan + '" stroke="' + CREAM + '" stroke-width="0.9"/>' +
+            '<path d="M-1.8,-1.8 L1.8,1.8 M1.8,-1.8 L-1.8,1.8" stroke="' + INK + '" stroke-width="0.8"/></g></g>';
+          // black smoke puffs from the exhaust pipe's end (hidden until they cough out)
+          var pipe = [HEART[0] - 8.6, HEART[1] - 7.2], puffs = "";
+          if (!fin) for (var i = 0; i < 7; i++) puffs += '<g transform="translate(' + n1(pipe[0]) + "," + n1(pipe[1]) + ')"><g id="' + pid + "-puff" + i + '" opacity="0">' + puff() + "</g></g>";
+          var figG = '<g transform="translate(' + n1(F[0]) + "," + n1(F[1] - 100 * s) + ") scale(" + s + ')"><g class="' + pid + '-fig">' + fig + "</g>" + parts + lightG + puffs + "</g>";
+
+          // ── the callouts: marker loops, leader lines and tags ──
+          var calls = "";
+          PARTS.forEach(function (p, i) {
+            var c = fp(p.c[0], p.c[1]), rx = p.rx * s, ry = p.ry * s, tg = L.tags[p.key];
+            var tt = Math.atan2((tg[1] - c[1]) * rx, (tg[0] - c[0]) * ry), edge = [c[0] + rx * 1.06 * Math.cos(tt), c[1] + ry * 1.06 * Math.sin(tt)];
+            var hgt = L.tagH, fsz = L.tagFs, br = hgt * 0.38, lw = textW(p.label, fsz), tw2 = 12 + 2 * br + 10 + lw + 14;
+            var x0 = tg[2] === "L" ? tg[0] - tw2 : tg[0];
+            var off = fin ? "0" : "1";
+            calls += '<path id="' + pid + "-loop" + i + '" d="' + loop(c[0], c[1], rx, ry, 80 + i) + '" fill="none" stroke="' + C.war + '" stroke-width="' + (V ? 7 : 6.5) + '" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="' + off + '"/>' +
+              '<path id="' + pid + "-lead" + i + '" d="M' + P(edge) + " L" + n1(tg[0]) + "," + n1(tg[1]) + '" fill="none" stroke="' + C.war + '" stroke-width="4" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="' + off + '"/>' +
+              '<g id="' + pid + "-tag" + i + '"' + (fin ? "" : ' opacity="0"') + ' data-at="' + n1(tg[0]) + " " + n1(tg[1]) + '">' +
+              '<rect x="' + n1(x0) + '" y="' + n1(tg[1] - hgt / 2) + '" width="' + n1(tw2) + '" height="' + hgt + '" fill="' + CREAM + '" stroke="' + INK + '" stroke-width="3"/>' +
+              '<circle cx="' + n1(x0 + 12 + br) + '" cy="' + n1(tg[1]) + '" r="' + n1(br) + '" fill="' + C.war + '" stroke="' + INK + '" stroke-width="2"/>' +
+              txt(x0 + 12 + br, tg[1] + fsz * 0.31, fsz * 0.86, CREAM, String(p.n), 'text-anchor="middle"') +
+              txt(x0 + 12 + 2 * br + 10, tg[1] + fsz * 0.36, fsz, INK, p.label, 'letter-spacing="1"') + "</g>";
+          });
+          // the wrenches, by the tags; in the last frame wrench 5 lies across the flattened beetle
+          var wrs = "", be = L.bugEnd;
+          PARTS.forEach(function (p, i) {
+            var w = L.wr[p.key], inner = '<g transform="scale(' + L.wk + ')">' + wrench() + "</g>", tr = "";
+            if (fin) tr = p.key === "cells" ? ' transform="translate(' + n1(be[0] + 6 - w[0]) + "," + n1(F[1] - 4 - 7 * L.bug - 14 - w[1]) + ') rotate(-190)"' : ' transform="rotate(' + w[2] + ')"';
+            wrs += '<g transform="translate(' + w[0] + "," + w[1] + ')"><g id="' + pid + "-wr" + i + '"' + tr + ">" + inner + "</g></g>";
+          });
+          // the beetle walking (position, pop-in squash, turn, then the drawing at its scale), and flat (the last frame)
+          var bug = fin ? "" : '<g id="' + pid + '-bug"><g id="' + pid + '-bugsq"><g id="' + pid + '-bugrot"><g transform="scale(' + L.bug + ')">' + beetle(pid, fin) + "</g></g></g></g>";
+          var flatY = F[1] - 4;
+          bug += '<g transform="translate(' + be[0] + "," + flatY + ')"><g id="' + pid + '-flat"' + (fin ? "" : ' opacity="0"') + '><g transform="scale(' + L.bug + ')">' + flatBug() + "</g></g></g>";
+          var splat = '<g id="' + pid + '-splat"' + (fin ? "" : ' opacity="0"') + ">" + [[-1, -0.15], [-0.75, -0.8], [0, -1], [0.75, -0.8], [1, -0.15]].map(function (d) {
+            return '<path d="M' + n1(be[0] + d[0] * 96) + "," + n1(flatY - 12 + d[1] * 44) + " l" + n1(d[0] * 30) + "," + n1(d[1] * 22) + '" stroke="' + CREAM + '" stroke-width="5" stroke-linecap="round"/>';
+          }).join("") + "</g>";
+
+          // the rolls: the top one fixed, the bottom one unrolls down with the sheet
+          var roll = function (y) {
+            return '<rect x="' + (sx - 14) + '" y="' + (y - 15) + '" width="' + (sw + 28) + '" height="30" fill="' + C.deep + '" stroke="' + INK + '" stroke-width="4"/>' +
+              '<path d="M' + (sx - 8) + "," + (y - 6) + " H" + (sx + sw + 8) + '" stroke="' + C.peri + '" stroke-width="4"/>' +
+              '<rect x="' + (sx - 26) + '" y="' + (y - 19) + '" width="16" height="38" fill="' + CREAM + '" stroke="' + INK + '" stroke-width="3.5"/>' +
+              '<rect x="' + (sx + sw + 10) + '" y="' + (y - 19) + '" width="16" height="38" fill="' + CREAM + '" stroke="' + INK + '" stroke-width="3.5"/>';
+          };
+          var rolls = roll(sy) + '<g id="' + pid + '-roll2"' + (fin ? ' transform="translate(0,' + shh + ')"' : "") + ">" + roll(sy + 14) + "</g>";
+
+          return defs + '<g clip-path="url(#' + pid + '-sheetclip)">' + sheet + title + markG + figG + calls + bug + splat + wrs + "</g>" + rolls + stampG;
+        }
+        return { L: L, art: art, fp: fp, PARTS: PARTS, LIGHT: LIGHT, coilD: coilD, FIG: FIG };
+      })();
+      // ── end of the copied part ──
+
+      // ── The office: the wall screen still shows meat-robot-blueprint's last frame, at the size the zoom-out starts from ──
+      q("bg").innerHTML = KIT.office(O.halo[0], O.halo[1]);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      var zv = KIT.zoomView(S), mid = ID + "-mini";
+      function mini(p) { return [zv.at[0] * (1 - zv.into) + zv.into * p[0], zv.at[1] * (1 - zv.into) + zv.into * p[1]]; }
+      q("screen").innerHTML = KIT.svg(W, H, KIT.wallScreen.apply(null, S) +
+        '<defs><clipPath id="' + ID + '-hole"><rect x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" rx="22"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-hole)"><g transform="' + zv.mini + '">' + KIT.paper(mid) + BP.art(mid, true) + "</g></g>");
+      var M = O.desk, mugAt = V ? [952, 1173, 1.1] : [1775, 800, 1.5];
+      q("front").innerHTML = KIT.svg(W, H, KIT.desk.apply(null, M) + '<g transform="translate(' + mugAt[0] + "," + mugAt[1] + ") scale(" + mugAt[2] + ')">' + KIT.mug(0, 0) + "</g>");
+
+      // Per shape: the bubble's resting center and size (rx, ry at swell 1), the wrench and lettering sizes inside it,
+      // where the pencil comes up from behind the desk, the hand that points (Wishonia's point-right body, mirrored
+      // here so she points at the bubble, her flipped fingertip), and where the wrench lands on the desk (its jaw).
+      var L = V
+        ? { bc: [190, 935], rx: 124, ry: 84, wk: 0.62, fs: 38, rise: [520, 1250], grip: [352, 1194], land: [150, 1246] }
+        : { bc: [930, 420], rx: 150, ry: 100, wk: 0.78, fs: 44, rise: [1400, 905], grip: [1158, 706], land: [1030, 899] };
+      var SW = 1.3; // the bubble's size once it has swelled twice
+      var head = mini(BP.fp(0, -66));
+
+      // ── The thought bubble: a cream cloud, a teal wrench and PRIORITY 1 (one <text> per letter, so they can scatter) ──
+      function cloud(rx, ry) {
+        var cs = [];
+        for (var i = 0; i < 10; i++) {
+          var a = (i / 10) * Math.PI * 2 + 0.2, k = [1, 0.86, 0.96, 0.9, 1.04, 0.92, 0.98, 0.88, 1.02, 0.94][i];
+          cs.push([rx * 0.62 * Math.cos(a), ry * 0.55 * Math.sin(a), ry * 0.5 * k]);
+        }
+        var body = '<ellipse cx="0" cy="0" rx="' + rx * 0.72 + '" ry="' + ry * 0.68 + '"';
+        return body + ' fill="' + C.ink + '" stroke="' + C.ink + '" stroke-width="10"/>' +
+          cs.map(function (c) { return '<circle cx="' + c[0].toFixed(1) + '" cy="' + c[1].toFixed(1) + '" r="' + c[2].toFixed(1) + '" fill="' + C.ink + '" stroke="' + C.ink + '" stroke-width="10"/>'; }).join("") +
+          body + ' fill="#FBF6E6"/>' + cs.map(function (c) { return '<circle cx="' + c[0].toFixed(1) + '" cy="' + c[1].toFixed(1) + '" r="' + c[2].toFixed(1) + '" fill="#FBF6E6"/>'; }).join("");
+      }
+      // A teal open-end wrench around its jaw (0,0), the handle along +x (as meat-robot-blueprint draws it, with a
+      // navy outline instead of the cream halo, on cream).
+      function wrench() {
+        var oct = function (cx, cy, r) { var p = []; for (var i = 0; i < 8; i++) { var a = (Math.PI / 8) * (2 * i + 1); p.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); } return p; };
+        var d = function (pts) { return "M" + pts.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" L") + " Z"; };
+        var head = [[-19, -7], [-19, -10], [-9, -19], [7, -19], [17, -9], [19, 0], [17, 9], [7, 19], [-9, 19], [-19, 10], [-19, 7], [-5, 7], [-5, -7]];
+        var sh = function (pts) { return '<path d="' + d(pts) + '" fill="' + C.med + '" stroke="' + C.line + '" stroke-width="4.5" stroke-linejoin="miter"/>'; };
+        return sh([[12, -7], [86, -5.5], [86, 5.5], [12, 7]]) + sh(head) + sh(oct(96, 0, 13)) + '<path d="' + d(oct(96, 0, 5.5)) + '" fill="' + C.line + '"/>' +
+          '<path d="M22,-2.5 H78" stroke="#FBF6E6" stroke-width="2.4" opacity="0.7"/><path d="M-12,-12 L4,-14" stroke="#FBF6E6" stroke-width="2.4" opacity="0.7"/>';
+      }
+      var ADV = { " ": 0.25, P: 0.552, R: 0.583, I: 0.29, O: 0.576, T: 0.438, Y: 0.49, "1": 0.384 }; // Oswald SemiBold, em
+      var word = "PRIORITY 1", track = 0.04, tw = 0;
+      for (var i = 0; i < word.length; i++) tw += (ADV[word[i]] + track) * L.fs;
+      var x = -tw / 2, ty = L.ry * 0.42, letters = "", lx = [];
+      for (var j = 0; j < word.length; j++) {
+        var cw = ADV[word[j]] * L.fs;
+        lx.push(x + cw / 2);
+        if (word[j] !== " ") letters += '<text id="' + ID + "-l" + j + '" x="' + (x + cw / 2).toFixed(1) + '" y="' + ty.toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + L.fs + '" fill="' + C.war + '" opacity="0">' + word[j] + "</text>";
+        x += (ADV[word[j]] + track) * L.fs;
+      }
+      var under = '<path id="' + ID + '-under" d="M' + (-tw / 2).toFixed(1) + "," + (ty + L.fs * 0.2).toFixed(1) + " L" + (tw / 2).toFixed(1) + "," + (ty + L.fs * 0.14).toFixed(1) + '" stroke="' + C.war + '" stroke-width="4" stroke-linecap="round" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+      var WOFF = [-48 * L.wk, -L.ry * 0.3], WROT = -12;
+      var inWrench = '<g transform="translate(' + WOFF[0].toFixed(1) + "," + WOFF[1].toFixed(1) + ") rotate(" + WROT + ") scale(" + L.wk + ')"><g id="' + ID + '-inwr">' + wrench() + "</g></g>";
+      var shine = '<path id="' + ID + '-shine" d="M' + (-L.rx * 0.62).toFixed(1) + "," + (-L.ry * 0.18).toFixed(1) + " Q" + (-L.rx * 0.6).toFixed(1) + "," + (-L.ry * 0.66).toFixed(1) + " " + (-L.rx * 0.2).toFixed(1) + "," + (-L.ry * 0.78).toFixed(1) + '" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" opacity="0"/>';
+      var bubble = '<g transform="translate(' + L.bc[0] + "," + L.bc[1] + ')"><g id="' + ID + '-bub"><g id="' + ID + '-cloud">' + cloud(L.rx, L.ry) + shine + "</g>" + inWrench + under + letters + "</g></g>";
+      // the trail of little circles from the reader's head on the screen to the bubble: in 16:9 it arcs up over the
+      // screen's top edge (a straight line would cross the title block), in 9:16 it runs down the screen's left margin
+      var trail = "";
+      (V ? [[412, 430, 5], [355, 552, 7], [298, 674, 10], [240, 800, 13]] : [[430, 236, 6], [545, 204, 9], [680, 208, 12], [800, 262, 15]]).forEach(function (c, i) {
+        trail += '<g transform="translate(' + c[0] + "," + c[1] + ')"><g id="' + ID + "-t" + i + '"><circle r="' + c[2] + '" fill="#FBF6E6" stroke="' + C.ink + '" stroke-width="4.5"/></g></g>';
+      });
+      // sparkles round the swelled bubble, the burst lines, and the bubble's shards
+      var sparks = [[-1.08, -0.62, 26], [1.06, -0.78, 20], [0.96, 0.72, 16], [-0.82, 0.92, 14]].map(function (p, i) {
+        return '<g transform="translate(' + (L.bc[0] + p[0] * L.rx * SW).toFixed(1) + "," + (L.bc[1] + p[1] * L.ry * SW).toFixed(1) + ')"><g id="' + ID + "-sp" + i + '">' + KIT.star(0, 0, p[2], i % 2 ? "#FFFFFF" : C.yellow) + "</g></g>";
+      }).join("");
+      var burst = '<g transform="translate(' + L.bc[0] + "," + L.bc[1] + ')"><g id="' + ID + '-burst" opacity="0">';
+      for (var b = 0; b < 12; b++) {
+        var ba = (b / 12) * Math.PI * 2 + 0.13, r0 = 1.08, r1 = 1.36;
+        burst += '<path d="M' + (Math.cos(ba) * L.rx * SW * r0).toFixed(1) + "," + (Math.sin(ba) * L.ry * SW * r0).toFixed(1) + " L" + (Math.cos(ba) * L.rx * SW * r1).toFixed(1) + "," + (Math.sin(ba) * L.ry * SW * r1).toFixed(1) + '" stroke="#FBF6E6" stroke-width="7" stroke-linecap="round"/>';
+      }
+      burst += KIT.star(0, 0, L.ry * 1.1, "#FFFFFF", 8) + "</g></g>";
+      var rnd = KIT.rng(864), shards = "";
+      for (var k = 0; k < 9; k++) {
+        var sa = (k / 9) * Math.PI * 2 + rnd() * 0.5;
+        shards += '<g transform="translate(' + (L.bc[0] + Math.cos(sa) * L.rx * SW * 0.85).toFixed(1) + "," + (L.bc[1] + Math.sin(sa) * L.ry * SW * 0.85).toFixed(1) + ')"><g id="' + ID + "-sh" + k + '" opacity="0" data-a="' + sa.toFixed(3) + '">' +
+          '<path d="M-9,-4 L6,-8 L10,3 L-4,8 Z" fill="#FBF6E6" stroke="' + C.ink + '" stroke-width="3" stroke-linejoin="miter"/></g></g>';
+      }
+      q("bubble").innerHTML = KIT.svg(W, H, trail + sparks + bubble + shards + burst);
+
+      // The pencil, drawn by KIT.pencil with its tip at (0,0): placed by its tip, turned and scaled so its far end lies
+      // toward a point. The wrench that falls out of the popped bubble, in front of the desk.
+      q("held").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-pencil">' + KIT.pencil() + "</g>");
+      q("top").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-drop" opacity="0"><g transform="scale(' + L.wk + ')">' + wrench() + "</g></g>");
+      var A0 = (Math.atan2(-80, 150) * 180) / Math.PI;
+      function pencilPose(tip, toward) {
+        var dx = toward[0] - tip[0], dy = toward[1] - tip[1];
+        return { x: tip[0], y: tip[1], rotation: (Math.atan2(dy, dx) * 180) / Math.PI - A0, scale: Math.sqrt(dx * dx + dy * dy) / 170 };
+      }
+
+
+      var tl = gsap.timeline({ paused: true });
+      var wish = KIT.mountWishonia(tl, q("wish"), { scene: ID, x: O.wish.x, y: O.wish.y, w: O.wish.w });
+      KIT.enter(tl, q("cam"), "zoom out of the wall screen", zv);
+
+      var tThink = cue("think"), tPrio = cue("prioritize"), tProb = cue("problems."), tThought = cue("thought"), tInc = cue("incorrect.");
+
+      // "think": the bubble floats up out of the reader's head on the screen and into the office (slide whistle);
+      // the trail of circles pops out behind it.
+      var bub = q("bub"), off0 = [head[0] - L.bc[0], head[1] - L.bc[1]];
+      gsap.set(bub, { svgOrigin: "0 0" });
+      var mid1 = V ? [off0[0] * 0.55 + 60, off0[1] * 0.5] : [off0[0] * 0.5, off0[1] * 0.5 - 150];
+      tl.fromTo(bub, { x: off0[0], y: off0[1], scale: 0.08, opacity: 0 }, { x: mid1[0], y: mid1[1], scale: 0.5, opacity: 1, duration: 0.3, ease: "power1.out" }, tThink);
+      tl.to(bub, { x: 0, y: 0, scale: 1, duration: 0.42, ease: "power2.out" }, tThink + 0.3);
+      [0, 1, 2, 3].forEach(function (i) {
+        var t = q("t" + i);
+        gsap.set(t, { svgOrigin: "0 0" });
+        tl.fromTo(t, { scale: 0 }, { scale: 1, duration: 0.18, ease: "back.out(3)" }, tThink + 0.2 + i * 0.1);
+      });
+
+      // "prioritize": PRIORITY 1 writes itself in, letter by letter, and is underlined; the bubble swells (marker).
+      for (var n = 0; n < word.length; n++) if (word[n] !== " ") tl.set(q("l" + n), { opacity: 1 }, tPrio + n * 0.045);
+      tl.fromTo(q("under"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.18, ease: "power1.inOut" }, tPrio + word.length * 0.045);
+      tl.to(bub, { scale: 1.15, duration: 0.5, ease: "back.out(2)" }, tPrio);
+      // "problems.": it swells again and shines (sparkle), then hovers there, pleased with itself.
+      tl.to(bub, { scale: SW, duration: 0.35, ease: "back.out(2.4)" }, tProb);
+      tl.fromTo(q("shine"), { opacity: 0 }, { opacity: 0.9, duration: 0.15, immediateRender: false }, tProb + 0.05);
+      [0, 1, 2, 3].forEach(function (i) {
+        var sp = q("sp" + i);
+        gsap.set(sp, { svgOrigin: "0 0", scale: 0, rotation: 0 });
+        tl.to(sp, { keyframes: [{ scale: 1.2, rotation: 45, duration: 0.16, ease: "back.out(2)" }, { scale: 0, rotation: 90, duration: 0.22, ease: "power1.in" }] }, tProb + 0.05 + i * 0.07);
+        tl.to(sp, { keyframes: [{ scale: 0.9, rotation: 135, duration: 0.16, ease: "back.out(2)" }, { scale: 0, rotation: 180, duration: 0.22, ease: "power1.in" }] }, tProb + 0.55 + i * 0.07);
+      });
+      var tHov = tProb + 0.45, hov = (tInc - 0.06 - tHov) / 4;
+      tl.to(bub, { y: -7, duration: hov, repeat: 3, yoyo: true, ease: "sine.inOut" }, tHov);
+
+      // "thought": a pencil comes up from behind the desk, in her (hidden) hand.
+      var pencil = q("pencil"), up = L.rise;
+      gsap.set(pencil, { svgOrigin: "0 0" });
+      var p0 = pencilPose([up[0] - 30, up[1] + 150], [up[0] + 30, up[1] + 330]), p1 = pencilPose([up[0] - 30, up[1] - 150], [up[0] + 30, up[1] + 30]);
+      tl.fromTo(pencil, { x: p0.x, y: p0.y, rotation: p0.rotation, scale: p0.scale },
+        { x: p1.x, y: p1.y, rotation: p1.rotation, scale: p1.scale, duration: 0.24, ease: "back.out(1.8)" }, tThought);
+
+      // "incorrect.": her body turns to point (mirrored, so she points at the bubble) and the pencil is in that hand;
+      // it jabs, the bubble pops (pop), the letters scatter, the shards fly, and the wrench drops onto the desk (clank).
+      var bodyBox = wish.rig.children[0];
+      tl.set(bodyBox, { scaleX: -1 }, tInc);
+      var hitA = 0.9, tip = [L.bc[0] + Math.cos(hitA) * L.rx * SW * 0.98, L.bc[1] + Math.sin(hitA) * L.ry * SW * 0.98];
+      var back = [tip[0] + (L.grip[0] - tip[0]) * 0.16, tip[1] + (L.grip[1] - tip[1]) * 0.16];
+      var pBack = pencilPose(back, [L.grip[0] + (L.grip[0] - tip[0]) * 0.12, L.grip[1] + (L.grip[1] - tip[1]) * 0.12]), pHit = pencilPose(tip, L.grip);
+      tl.set(pencil, { x: pBack.x, y: pBack.y, rotation: pBack.rotation, scale: pBack.scale }, tInc);
+      var tPop = tInc + 0.05;
+      tl.to(pencil, { x: pHit.x, y: pHit.y, duration: tPop - tInc, ease: "power2.in" }, tInc);
+      tl.to(pencil, { x: pBack.x * 0.3 + pHit.x * 0.7, y: pBack.y * 0.3 + pHit.y * 0.7, duration: 0.12, ease: "power2.out" }, tPop);
+      // the pop
+      tl.to(q("cloud"), { opacity: 0, duration: 0.03 }, tPop);
+      // the trail pops too, from the bubble back to the screen
+      [3, 2, 1, 0].forEach(function (i, k) { tl.to(q("t" + i), { scale: 0, duration: 0.06, ease: "power2.in" }, tPop + 0.03 + k * 0.04); });
+      tl.set(q("inwr"), { opacity: 0 }, tPop);
+      tl.set(q("under"), { opacity: 0 }, tPop);
+      var burstEl = q("burst");
+      gsap.set(burstEl, { svgOrigin: "0 0" });
+      tl.fromTo(burstEl, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.05, ease: "power2.out", immediateRender: false }, tPop);
+      tl.to(burstEl, { opacity: 0, scale: 1.25, duration: 0.25, ease: "power1.in" }, tPop + 0.07);
+      for (var m = 0; m < 9; m++) {
+        var sh = q("sh" + m), a = +sh.getAttribute("data-a");
+        gsap.set(sh, { svgOrigin: "0 0", x: 0, y: 0, rotation: 0 });
+        tl.set(sh, { opacity: 1 }, tPop);
+        tl.to(sh, { keyframes: [{ x: Math.cos(a) * 90, y: Math.sin(a) * 60 - 40, rotation: 160, duration: 0.2, ease: "power2.out" }, { x: Math.cos(a) * 130, y: Math.sin(a) * 60 + 160, rotation: 300, opacity: 0, duration: 0.35, ease: "power2.in" }] }, tPop);
+      }
+      // PRIORITY 1 scatters into loose letters that tumble down and away
+      var lr = KIT.rng(1), ln = 0;
+      for (var c = 0; c < word.length; c++) {
+        if (word[c] === " ") continue;
+        var le = q("l" + c), sx = lx[c] * 1.6 + (lr() - 0.5) * 70, spin = (lr() < 0.5 ? -1 : 1) * (120 + lr() * 260);
+        gsap.set(le, { svgOrigin: lx[c].toFixed(1) + " " + (ty - L.fs * 0.35).toFixed(1) });
+        tl.to(le, { keyframes: [{ x: sx * 0.6, y: -40 - lr() * 50, rotation: spin * 0.35, duration: 0.18, ease: "power2.out" }, { x: sx, y: 260 + lr() * 120, rotation: spin, opacity: 0, duration: 0.42, ease: "power2.in" }] }, tPop + ln * 0.01);
+        ln++;
+      }
+      // the wrench drops, tumbling, lands on the desk (clank at "incorrect." + 0.35), bounces once and lies still
+      var drop = q("drop"), tLand = tInc + 0.35;
+      var jaw0 = [L.bc[0] + SW * (WOFF[0]), L.bc[1] + SW * WOFF[1]];
+      gsap.set(drop, { svgOrigin: "0 0" });
+      gsap.set(drop, { x: jaw0[0], y: jaw0[1], rotation: WROT, scale: SW });
+      tl.set(drop, { opacity: 1 }, tPop);
+      tl.fromTo(drop, { x: jaw0[0], y: jaw0[1], rotation: WROT, scale: SW },
+        { x: L.land[0], y: L.land[1], rotation: 364, scale: SW * 0.92, duration: tLand - tPop, ease: "power2.in", immediateRender: false }, tPop);
+      tl.to(drop, { keyframes: [{ y: L.land[1] - 46, rotation: 352, duration: 0.13, ease: "power2.out" }, { y: L.land[1], rotation: 362, duration: 0.13, ease: "power2.in" }, { y: L.land[1] - 7, duration: 0.06, ease: "power1.out" }, { y: L.land[1], duration: 0.06, ease: "power1.in" }] }, tLand + 0.02);
+      tl.fromTo(q("cam"), { y: 0 }, { y: 5, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, tLand);
+      // then nothing moves
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

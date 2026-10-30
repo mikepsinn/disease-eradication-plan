@@ -1,0 +1,633 @@
+<template id="weapons-maker-gets-sick-template">
+  <!-- weapons-maker-gets-sick · Layer B (storyboards/part-06-leaders-arent-the-problem.md): under the loop turning on the
+       hill (horns, angry face, the dog running round it), the Weapons Maker walks home
+       with his baby missile into a cutaway house (the door slams), his chest light clicks red and he coughs his cigar
+       across the room, his children's lights go red, the camera pushes in on the family portrait on the mantel (lights red
+       one by one, the Reaper rises between the last two heads, they x-ray into grinning skeletons), the Reaper steps out of
+       the picture and through the wall and waits by the front door with his clipboard, ECONOMY drops onto the roof, and the
+       house squashes around the family: his hard hat over his eyes, wife and daughter pressed against the windows, the
+       Reaper tapping his watch, the loop on the hill looking down at the house and chuckling. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #weapons-maker-gets-sick-cam, #weapons-maker-gets-sick-bg, #weapons-maker-gets-sick-pip, #weapons-maker-gets-sick-grain { position: absolute; inset: 0; }
+    #weapons-maker-gets-sick-view { position: absolute; left: 46px; top: 46px; overflow: hidden; }
+    #weapons-maker-gets-sick-world { position: absolute; left: -46px; top: -46px; }
+  </style>
+  <div id="root" data-composition-id="weapons-maker-gets-sick" data-width="1920" data-height="1080" data-start="0" data-duration="15.22">
+    <div id="weapons-maker-gets-sick-cam">
+      <div id="weapons-maker-gets-sick-bg"></div>
+      <!-- the camera window: the paper's inner frame; the world inside it pushes in on the portrait and back out -->
+      <div id="weapons-maker-gets-sick-view"><div id="weapons-maker-gets-sick-world"></div></div>
+      <div id="weapons-maker-gets-sick-pip"></div>
+      <div id="weapons-maker-gets-sick-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "weapons-maker-gets-sick";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function flip(pts) { return pts.map(function (p) { return [-p[0], p[1]]; }); }
+      function solid(list, col, w) {
+        w = w || 4.4;
+        return list.map(function (p) { return '<path d="' + polyD(p) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          list.map(function (p) { return '<path d="' + polyD(p) + '" fill="' + col + '"/>'; }).join("");
+      }
+      function fillP(pts, col, extra) { return '<path d="' + polyD(pts) + '" fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+
+      // ── HOUSE: copied in redirect-math; change both. ─────────────────────
+      // (It uses the drawing helpers above; copy them with it, down to "end HOUSE".)
+      // The Weapons Maker's house (the economy), his family and the Grim Reaper, in house units (hu). The origin is
+      // the room's floor centre, where the house squashes: scale SQUASH1 on "shrinking.", SHRINK on the squeak (the end of
+      // weapons-maker-gets-sick, and the start of redirect-math, which grows it to GROW). A scene places the house with
+      // translate(x, floorY) scale(k) on an outer group and tweens untransformed groups inside it (svgOrigin "0 0").
+      // Layers, back to front: houseBack (the room: wallpaper, clock, fireplace, mantel, the family portrait, and the dark
+      // hall behind the front door), the family (never scaled with the house: the house squeezes them), houseFront (the
+      // front wall left of the room with the door and the window, the cut edges, the roof, the chimney, the antenna and
+      // the ECONOMY sign), then the Reaper outside the front door.
+      var HOUSE = {
+        S: 1.2,               // the family's scale (person units to hu); the children are KID times that
+        KID: 0.6,
+        SQUASH1: 0.64,        // "shrinking.": the ceiling reaches his hard hat
+        SHRINK: 0.6,          // the squeak: squashed (the key frame)
+        GROW: 1.43,           // redirect-math: back up, 1.43 times bigger
+        HAT_DROP: 16,         // squashed, the ceiling has pushed his hard hat down over his eyes (face units)
+        ROOM: [-260, 260, 290],                 // the room: x0, x1, height
+        WALL: [-470, -260],                     // the front wall left of the room
+        DOOR: [-455, -355, 210, -437, -188, 64, 58],   // the door leaf x0 (hinge), x1, height; its window x, y, w, h
+        WIN: [-338, -238, 60, 82],              // the front window x, y, w, h
+        EAVE: -306, RIDGE: -436,
+        PORTRAIT: { frame: [45, -276, 220, 126], s: 0.5, x0: 73, dx: 41, y: -210, reaper: [216.5, -179] },
+        // [x as the scene starts, x squashed]: the wife and the daughter end up behind the front wall, faces at its windows
+        FAM: { wife: [-190, -232], kid2: [-135, -200], kid1: [15, 5], wm: [-60, -95] },
+        REAPER: { s: 0.85, gap: 52, lean: 7 },  // outside: his centre gap hu left of the house's left edge (WALL[0] * scale)
+        SIGN: [-90, 1],                         // the ECONOMY sign on the ridge: x, size
+        LIST: { title: "PICK-UPS", items: [["Grandpa", "tick"], ["Grandma", "tick"], ["Aunties", "tick"], ["Cousin", "tick"], "Weapons Maker"] },
+        SICK: { wm: "worried", wife: "worried", kid1: "sad", kid2: "sad" },   // their faces once their lights go red
+      };
+      var FAMO = {
+        wm: KIT.castOpts("weaponsMaker", { hat: null, cigar: false }),   // his hard hat and cigar are drawn apart (they move)
+        wife: { tone: 3, hair: 1, outfit: "dress", color: 2, mood: "smile" },
+        kid1: { tone: 3, outfit: "shirt", color: 0, hat: "hard", seed: 1, mood: "smile" },
+        kid2: { tone: 3, hair: 1, outfit: "dress", color: 1, hat: "hard", seed: 2, mood: "smile" },
+      };
+      // the portrait: a grandpa in a bowler, a grandma in curlers, an aunt, a cousin and an aunt (the Reaper rises
+      // between the last two)
+      var RELS = [
+        { tone: 3, outfit: "suit", hat: "bowler", hair: 2, stache: true, mood: "smile", seed: 3 },
+        { tone: 3, hair: 1, hat: "curlers", outfit: "dress", color: 3, glasses: true, hairColor: "#B9B5AE", mood: "smile", seed: 4 },
+        { tone: 2, hair: 1, outfit: "dress", color: 0, mood: "smile", seed: 5 },
+        { tone: 2, outfit: "shirt", color: 1, mood: "smile", seed: 6 },
+        { tone: 3, hair: 1, outfit: "dress", color: 2, mood: "smile", seed: 7 },
+      ];
+      var BONE = "#F1EAD6", ROBE = "#141B2B", SKIN3 = "#6F4B33", SKIN3_LIT = "#A57B57", GLASS = "#B5D3CF";
+
+      // Patterns, in hu: wallpaper (cyan with cream atomic stars), siding, brick, the cut edge's section hatch.
+      function houseDefs() {
+        return "<defs>" +
+          '<pattern id="' + P + 'wallp" width="54" height="54" patternUnits="userSpaceOnUse">' + KIT.star(13, 13, 7, C.cream) + KIT.star(40, 40, 7, C.cream) +
+          '<circle cx="40" cy="13" r="2" fill="' + C.cream + '" opacity="0.8"/><circle cx="13" cy="40" r="2" fill="' + C.cream + '" opacity="0.8"/></pattern>' +
+          '<pattern id="' + P + 'siding" width="20" height="14" patternUnits="userSpaceOnUse"><path d="M0,13 H20" stroke="' + ink + '" stroke-width="1.3" opacity="0.3"/></pattern>' +
+          '<pattern id="' + P + 'brick" width="32" height="18" patternUnits="userSpaceOnUse"><path d="M0,0.5 H32 M0,9.5 H32 M8,0 V9 M24,9 V18" stroke="' + ink + '" stroke-width="1.4" opacity="0.5"/></pattern>' +
+          '<pattern id="' + P + 'sect" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0,0 V9" stroke="' + ink + '" stroke-width="1.6"/></pattern>' +
+          '<pattern id="' + P + 'plank" width="46" height="24" patternUnits="userSpaceOnUse"><path d="M0.5,0 V24" stroke="' + ink + '" stroke-width="1.4" opacity="0.45"/></pattern>' +
+          "</defs>";
+      }
+      // A hard hat, in the face's units (as the kit draws it at cx 1, hatTop -22).
+      function hardHat() {
+        var cx = 1, t = -22;
+        return solid([[[cx - 23, t + 5], [cx - 18, t - 13], [cx, t - 20], [cx + 18, t - 13], [cx + 23, t + 5]]], C.yellow, 2.6) +
+          line("M" + pt(cx - 12, t - 10) + " L" + pt(cx - 4, t - 15), C.cream, 2) +
+          solid([[[cx - 30, t + 8], [cx - 26, t + 3], [cx + 26, t + 3], [cx + 30, t + 8]]], C.yellow, 2.2);
+      }
+      // The cigar, in the face's units around where it sits in the mouth, with its smoke.
+      function cigarSvg() {
+        return '<g transform="rotate(-12)">' + solid([R(0, -2.6, 22, 5.2)], "#7A4A2A", 2) + '<rect x="19" y="-2.6" width="4" height="5.2" fill="#C9C2B5"/>' +
+          '<rect x="5" y="-2.6" width="3" height="5.2" fill="' + C.war + '"/></g>' + line("M24,-8 q-5,-6 0,-11 q5,-6 0,-11", "#8C8782", 2.4);
+      }
+      // A face squashed flat against a window from inside (front view, about 76 x 100): wide cheeks, the nose a
+      // disc, the lips smeared, the eyes squeezed shut, both palms flat on the glass. kind "wife" | "kid" (in a hard hat).
+      function pressedFace(kind) {
+        var hair = ink, out = "";
+        out += solid([[[-37, -4], [-39, -30], [-25, -47], [0, -51], [25, -47], [39, -30], [37, -4], [31, 6], [-31, 6]]], hair, 3);
+        out += solid([[[-32, -27], [-16, -39], [16, -39], [32, -27], [38, -2], [33, 22], [16, 35], [-16, 35], [-33, 22], [-38, -2]]], SKIN3, 3);
+        var cheek = [[-35, -2], [-25, -9], [-14, -1], [-16, 14], [-29, 17]];
+        out += fillP(cheek, SKIN3_LIT) + fillP(flip(cheek), SKIN3_LIT);
+        out += solid([[[-33, -25], [-18, -42], [18, -42], [33, -25], [23, -20], [10, -27], [-4, -22], [-19, -19]]], hair, 2.4);
+        out += line("M-23,-15 L-12,-10 L-23,-5", ink, 3.2) + line("M23,-15 L12,-10 L23,-5", ink, 3.2);
+        out += solid([[[-11, -6], [11, -6], [14, 4], [8, 11], [-8, 11], [-14, 4]]], SKIN3_LIT, 2.4) +
+          '<ellipse cx="-5" cy="6" rx="2.6" ry="1.6" fill="' + ink + '"/><ellipse cx="5" cy="6" rx="2.6" ry="1.6" fill="' + ink + '"/>';
+        out += solid([[[-18, 17], [0, 13], [18, 17], [14, 26], [-14, 26]]], C.war, 2.4) + line("M-15,20 H15", ink, 1.5);
+        var palm = [[-50, 6], [-41, 1], [-32, 8], [-30, 27], [-39, 35], [-51, 28]];
+        var fingers = "M-48,4 l-5,-14 M-43,2 l-2,-15 M-37,3 l1,-15 M-32,8 l7,-10";
+        var hand = line(fingers, ink, 7.4) + line(fingers, SKIN3_LIT, 4.4) + solid([palm], SKIN3_LIT, 2.6);
+        out += hand + '<g transform="scale(-1,1)">' + hand + "</g>";   // the right hand: the left one mirrored
+        if (kind === "kid") out += '<g transform="translate(0,-18) scale(1.45)">' + hardHat() + "</g>";
+        return out;
+      }
+      // A window in the front wall: trim, glass, a face behind it (hidden until the squeeze; o.faces shows it), mullions
+      // and glare.
+      function frontWindow(x, y, w, h, faceId, kind, fs, shown) {
+        var cid = P + faceId + "-clip";
+        return solid([R(x - 7, y - 7, w + 14, h + 14)], C.cream, 3.4) +
+          '<defs><clipPath id="' + cid + '"><rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '"/></clipPath></defs>' +
+          solid([R(x, y, w, h)], GLASS, 3) + fillP([[x, y + h * 0.55], [x + w, y + h * 0.3], [x + w, y + h], [x, y + h]], C.peri, 'opacity="0.35"') +
+          '<g clip-path="url(#' + cid + ')">' + at(x + w / 2, y + h / 2 + 2, fs, g(faceId, pressedFace(kind), shown ? "" : 'opacity="0"')) +
+          line("M" + pt(x + w * 0.15, y + h) + " L" + pt(x + w * 0.62, y), C.cream, 5, 'opacity="0.35"') + line("M" + pt(x + w * 0.45, y + h) + " L" + pt(x + w * 0.85, y), C.cream, 2.4, 'opacity="0.35"') + "</g>" +
+          solid([R(x + w / 2 - 2.5, y, 5, h), R(x, y + h / 2 - 2.5, w, 5)], C.cream, 2);
+      }
+
+      // The room, the portrait and the hall (behind the family). o: { reaper (the Reaper in the portrait, hidden below
+      // its bottom edge), bones (the relatives already skeletons) }.
+      function houseBack(o) {
+        o = o || {};
+        var RM = HOUSE.ROOM, x0 = RM[0], rw = RM[1] - RM[0], rh = RM[2], out = "";
+        // the hall behind the front wall, seen through the open front door
+        out += '<rect x="' + HOUSE.WALL[0] + '" y="' + -rh + '" width="' + (HOUSE.WALL[1] - HOUSE.WALL[0] + 2) + '" height="' + rh + '" fill="' + C.slate + '"/>' +
+          '<rect x="' + HOUSE.WALL[0] + '" y="-24" width="' + (HOUSE.WALL[1] - HOUSE.WALL[0] + 2) + '" height="24" fill="#1C2A44"/>';
+        // wallpaper, crown rail, floor, rug
+        out += '<rect x="' + x0 + '" y="' + -rh + '" width="' + rw + '" height="' + rh + '" fill="' + C.cyan + '"/>' +
+          '<rect x="' + x0 + '" y="' + -rh + '" width="' + rw + '" height="' + rh + '" fill="url(#' + P + 'wallp)" opacity="0.75"/>' +
+          '<rect x="' + x0 + '" y="' + -rh + '" width="' + rw + '" height="' + rh + '" fill="url(#' + P + 'fine)" opacity="0.12"/>' +
+          solid([R(x0, -rh + 20, rw, 7)], C.cream, 2.4) +
+          solid([R(x0, -30, rw, 30)], C.tan, 3) + '<rect x="' + x0 + '" y="-30" width="' + rw + '" height="30" fill="url(#' + P + 'plank)"/>' +
+          solid([R(x0, -38, rw, 8)], C.cream, 2.4) +
+          solid([[[-205, -16], [25, -16], [35, -2], [-215, -2]]], C.rust, 2.6) + line("M-196,-9 H24", C.yellow, 2.2, 'stroke-dasharray="8 6"');
+        // a starburst wall clock
+        var ck = [-112, -228], rays = "";
+        for (var i = 0; i < 12; i++) { var a = (i / 12) * Math.PI * 2; rays += "M" + pt(ck[0] + Math.cos(a) * 19, ck[1] + Math.sin(a) * 19) + " L" + pt(ck[0] + Math.cos(a) * 31, ck[1] + Math.sin(a) * 31) + " "; }
+        out += line(rays, ink, 5.4) + line(rays, C.yellow, 2.6) + '<circle cx="' + ck[0] + '" cy="' + ck[1] + '" r="17" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3.4"/>' +
+          line("M" + pt(ck[0], ck[1]) + " v-11 M" + pt(ck[0], ck[1]) + " l8,4", ink, 2.6);
+        // the fireplace: a brick surround, the firebox with a small fire, the hearth and the mantel shelf
+        out += solid([R(60, -140, 190, 110)], C.rust, 3.6) + '<rect x="60" y="-140" width="190" height="110" fill="url(#' + P + 'brick)"/>' +
+          solid([[[110, -30], [110, -82], [125, -100], [185, -100], [200, -82], [200, -30]]], C.ink, 3) +
+          at(155, -34, 0.34, KIT.flames(0, 0, 1)) + solid([R(125, -42, 60, 10)], "#6B4A2F", 2.4) +
+          solid([R(50, -38, 210, 8)], C.slate, 2.6) + solid([R(46, -150, 218, 12)], C.cream, 3.4) + line("M54,-141 H258", C.tan, 2);
+        // the family portrait on the mantel (Part 1's loved-ones portrait): each relative drawn twice, alive (rel-a) and
+        // as a skeleton (rel-b), for the x-ray; the Reaper waits below the picture's bottom edge
+        var PT = HOUSE.PORTRAIT, f = PT.frame, inn = [f[0] + 9, f[1] + 9, f[2] - 18, f[3] - 18];
+        var rels = RELS.map(function (r, i) {
+          return at(PT.x0 + i * PT.dx, PT.y, PT.s, g("rel-a" + i, KIT.person(r), o.bones ? 'opacity="0"' : "") +
+            g("rel-b" + i, KIT.person(mix(r, { skeleton: true })), o.bones ? "" : 'opacity="0"'));
+        }).join("");
+        var reaper = o.reaper ? at(PT.reaper[0], PT.reaper[1], PT.s, g("preaper", KIT.reaper())) : "";
+        out += g("portrait", solid([R(f[0], f[1], f[2], f[3])], C.rust, 4) + line("M" + pt(f[0] + 5, f[1] + 5) + " H" + n1(f[0] + f[2] - 5), C.orange, 2) +
+          '<defs><clipPath id="' + P + 'pclip"><rect x="' + inn[0] + '" y="' + inn[1] + '" width="' + inn[2] + '" height="' + inn[3] + '"/></clipPath></defs>' +
+          '<rect x="' + inn[0] + '" y="' + inn[1] + '" width="' + inn[2] + '" height="' + inn[3] + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.4"/>' +
+          '<g clip-path="url(#' + P + 'pclip)"><rect x="' + inn[0] + '" y="' + inn[1] + '" width="' + inn[2] + '" height="' + inn[3] + '" fill="url(#' + P + 'fine)" opacity="0.3"/>' + reaper + rels + "</g>");
+        return out;
+      }
+      // The front of the house (in front of the family). o: { sign: "up" (the ECONOMY sign already standing on the
+      // ridge; false: none), faces (the wife's and the daughter's faces already pressed against the windows) }.
+      // Parts: #door (the leaf; pivot its hinge (DOOR[0], -DOOR[2] / 2)), #ant (pivot (-300, RIDGE)), #sign (pivot its
+      // foot (0, 0)), #face-w and #face-k (pivot their centres (0, 0)).
+      function houseFront(o) {
+        o = o || {};
+        var RM = HOUSE.ROOM, rh = RM[2], Wl = HOUSE.WALL, Dr = HOUSE.DOOR, Wn = HOUSE.WIN, out = "";
+        // the chimney (over the fireplace) and the antenna, behind the roof
+        out += solid([R(132, -500, 46, 120)], C.rust, 3.6) + '<rect x="132" y="-500" width="46" height="120" fill="url(#' + P + 'brick)"/>' + solid([R(126, -510, 58, 12)], C.slate, 3) +
+          g("ant", line("M-300,-436 V-516", ink, 4) + line("M-326,-506 L-300,-510 L-274,-506 M-320,-492 L-300,-496 L-280,-492 M-314,-478 L-300,-482 L-286,-478", ink, 3) + line("M-300,-516 L-286,-528", ink, 2.6));
+        // the hip roof, its shingles and the eave trim
+        var roof = [[-500, HOUSE.EAVE + 4], [312, HOUSE.EAVE + 4], [250, HOUSE.RIDGE], [-438, HOUSE.RIDGE]];
+        out += solid([roof], C.slate) + line("M-480,-340 H294 M-466,-372 H280 M-452,-404 H265", ink, 1.6, 'opacity="0.5"') + line("M-432,-432 H244", C.orange, 2.4) +
+          solid([R(-486, HOUSE.EAVE, 784, 12)], C.cream, 3);
+        // the front wall left of the room, with the door hole (the hall shows through it while the door is open)
+        var wallD = "M" + Wl[0] + "," + -rh + " H" + Wl[1] + " V0 H" + Wl[0] + " Z M" + Dr[0] + "," + -Dr[2] + " V0 H" + Dr[1] + " V" + -Dr[2] + " Z";
+        out += '<path d="' + wallD + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="4.4" fill-rule="evenodd"/><path d="' + wallD + '" fill="' + C.yellow + '" fill-rule="evenodd"/>' +
+          '<path d="' + wallD + '" fill="url(#' + P + 'siding)" fill-rule="evenodd"/>' +
+          '<path d="M' + (Wl[0] + 60) + "," + -rh + " H" + Wl[1] + " V0 H" + (Dr[1] + 4) + " V" + -(Dr[2] + 8) + " H" + (Wl[0] + 60) + ' Z" fill="url(#' + P + 'fine)" opacity="0.22"/>';
+        // the door frame and the door: red, with a four-pane window (the daughter's face ends up in it) and a knob
+        out += '<path d="M' + (Dr[0] - 8) + ",0 V" + -(Dr[2] + 8) + " H" + (Dr[1] + 8) + " V0 H" + Dr[1] + " V" + -Dr[2] + " H" + Dr[0] + ' V0 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="miter"/>';
+        var leaf = solid([R(Dr[0], -Dr[2], Dr[1] - Dr[0], Dr[2])], C.war) + line("M" + (Dr[1] - 6) + "," + (-Dr[2] + 6) + " V-6", C.orange, 2) +
+          line("M" + (Dr[0] + 14) + ",-108 h72 v48 h-72 Z M" + (Dr[0] + 14) + ",-48 h72 v38 h-72 Z", ink, 1.6, 'opacity="0.5"') +
+          frontWindow(Dr[3], Dr[4], Dr[5], Dr[6], "face-k", "kid", 0.62, o.faces) + solid([[[Dr[1] - 18, -102], [Dr[1] - 10, -102], [Dr[1] - 10, -94], [Dr[1] - 18, -94]]], C.yellow, 2.2);
+        out += g("door", leaf);
+        // the porch light, the front window (the wife's face ends up in it) and its sill
+        out += solid([[[-412, -238], [-398, -238], [-396, -226], [-414, -226]]], C.yellow, 2.4) + line("M-405,-238 V-246", ink, 3) +
+          frontWindow(Wn[0], Wn[1], Wn[2], Wn[3], "face-w", "wife", 0.86, o.faces) + solid([R(Wn[0] - 11, Wn[1] + Wn[3] + 6, Wn[2] + 22, 8)], C.cream, 3);
+        // the cut edges: the front wall's end, the right wall and the ceiling, hatched as a section
+        var cuts = [R(Wl[1] - 10, -rh, 12, rh), R(RM[1] - 2, -rh, 24, rh), R(Wl[1] - 10, HOUSE.EAVE + 12, RM[1] + 24 - Wl[1] + 10, -HOUSE.EAVE - 12 - rh + 4)];
+        out += solid(cuts, C.cream, 3.4) + cuts.map(function (c) { return fillP(c, "url(#" + P + "sect)", 'opacity="0.55"'); }).join("");
+        // the ECONOMY sign, dropped onto the ridge on "economy"
+        if (o.sign !== false) out += at(HOUSE.SIGN[0], HOUSE.RIDGE + 6, 1, g("sign", KIT.props.sign({ text: "ECONOMY", size: HOUSE.SIGN[1], fontSize: 36 }), o.sign === "up" ? "" : 'opacity="0"'));
+        return out;
+      }
+      // A family member: <key>-pos (move it in hu) > translate/scale > <key> (its body: rotate and squash it about the
+      // feet, svgOrigin "0 100", in person units). The Weapons Maker carries his own hard hat (#hat, in the face's units;
+      // tween its y) and cigar (#cigar), which leave him. o.squashed: at the squashed x, his hat down over his eyes
+      // (an outer offset; #hat itself stays untransformed), no cigar, and the wife and the daughter hidden behind the
+      // front wall (their faces are houseFront's { faces: true }; show their bodies again when the house grows).
+      // o.sick: as weapons-maker-gets-sick leaves them: red chest lights, faces fallen (HOUSE.SICK moods).
+      // (As the scene ends he is also squashed a little, scaleX 1.05 scaleY 0.93 about his feet, and the son 0.84, 1.04.)
+      function member(key, o) {
+        o = o || {};
+        if (o.sick) FAMO[key] = mix(FAMO[key], { mood: HOUSE.SICK[key], light: "red" });
+        var s = HOUSE.S * (key === "kid1" || key === "kid2" ? HOUSE.KID : 1), x = HOUSE.FAM[key][o.squashed ? 1 : 0], extra = "";
+        if (key === "wm") {
+          var rg = KIT.rig(FAMO.wm), face = "translate(" + n1(rg.head[0]) + "," + n1(rg.head[1]) + ") scale(" + rg.hs + ")";
+          extra = '<g transform="' + face + (o.squashed ? " translate(0," + HOUSE.HAT_DROP + ")" : "") + '">' + g("hat", hardHat()) + "</g>" +
+            (o.squashed ? "" : '<g transform="' + face + '"><g transform="translate(13,16)">' + g("cigar", cigarSvg()) + "</g></g>") +
+            // the cough: a burst of grey puffs and spikes out of his mouth
+            g("cough", line("M" + pt(rg.mouth[0] + 6, rg.mouth[1] - 4) + " l10,-9 M" + pt(rg.mouth[0] + 8, rg.mouth[1] + 1) + " l14,0 M" + pt(rg.mouth[0] + 6, rg.mouth[1] + 6) + " l10,8", ink, 2.4) +
+              [[24, -8, 5], [32, -1, 7], [42, -7, 6], [40, 7, 5]].map(function (c) {
+                return '<circle cx="' + n1(rg.mouth[0] + c[0]) + '" cy="' + n1(rg.mouth[1] + c[1]) + '" r="' + c[2] + '" fill="#C9C2B5" stroke="' + ink + '" stroke-width="2"/>';
+              }).join(""), 'opacity="0"');
+        }
+        var hidden = o.squashed && (key === "wife" || key === "kid2") ? 'opacity="0"' : "";
+        return g(key + "-pos", at(x, -100 * s, s, g(key, KIT.person(FAMO[key]) + extra, hidden)));
+      }
+      // The Reaper outside, leaning by the front door (reaper units, feet at y 100): his scythe propped beside him, the
+      // clipboard (HOUSE.LIST) in one bony hand, a wristwatch on that wrist, the other hand's finger poised to tap it.
+      // Place it with translate(WALL[0] * houseScale - REAPER.gap, -100 * REAPER.s) scale(REAPER.s); he leans REAPER.lean
+      // degrees toward the house (gsap.set #ro-lean { rotation, svgOrigin "0 100" }).
+      // Parts: #ro-lean (lean him about his feet), #ro-tap (the tapping forearm, pivot its elbow (44,-56)), #ro-taplines,
+      // .head (pivot the neck (0,-112)).
+      function reaperOutside() {
+        var r = KIT.reaper().replace('<circle cx="46" cy="-40" r="9"', '<circle cx="46" cy="-40" r="9" opacity="0"');
+        var sleeve = function (pts) { return solid([pts], ROBE, 3); };
+        var bone = function (x, y, rr) { return '<circle cx="' + x + '" cy="' + y + '" r="' + rr + '" fill="' + BONE + '" stroke="' + ink + '" stroke-width="2.6"/>'; };
+        var clip = at(-4, 66, 0.5, KIT.props.clipboard({ title: HOUSE.LIST.title, items: HOUSE.LIST.items }), -6);
+        var left = sleeve([[-36, -112], [-24, -106], [-34, -52], [-18, -18], [-30, -6], [-52, -50]]) + bone(-25, -4, 8);
+        var watch = '<g transform="translate(-30,-15) rotate(-30)">' + solid([R(-10, -5, 20, 10)], C.slate, 2.4) + "</g>" +
+          '<circle cx="-33" cy="-19" r="11" fill="' + C.cream + '" stroke="' + C.yellow + '" stroke-width="4"/><circle cx="-33" cy="-19" r="13" fill="none" stroke="' + ink + '" stroke-width="2"/>' +
+          line("M-33,-19 v-7 M-33,-19 l5,3", ink, 2.2);
+        var tap = g("ro-tap", sleeve([[48, -62], [38, -48], [-4, -24], [-8, -36]]) + bone(-10, -30, 7.5) + line("M-14,-28 L-24,-23", ink, 6) + line("M-14,-28 L-24,-23", BONE, 3) +
+          g("ro-taplines", line("M-22,-38 l-4,-8 M-30,-34 l-8,-5 M-14,-40 l1,-9", ink, 2.6), 'opacity="0"'));
+        var right = sleeve([[24, -112], [38, -108], [52, -60], [36, -50]]);
+        return g("ro-lean", r + clip + left + watch + right + tap);
+      }
+      // ── end HOUSE ────────────────────────────────────────────────────────
+
+      // The loop on the hill: a far view of the part's LOOP (democracy-dog-loop and loop-is-evil), the place he walks
+      // home from: the ring with its red arrows, horns and angry face, the missile-chimney factory on top, and war
+      // papers and the Democracy Dog running round it counterclockwise. Loop units: centre (0, 0), radius 260, as the
+      // LOOP block draws it at k 1. Parts: #fl-spin (turn it about "0 0"), #fl-dog-sq (bob it), #fl-brows,
+      // #fl-pupils (tween them), #fl-grin (pivot "0 180").
+      function farLoop() {
+        var rin = 247, rout = 273, out = "";
+        var aAt = function (a, rr) { var t = (a * Math.PI) / 180; return [rr * Math.sin(t), -rr * Math.cos(t)]; };
+        var aIn = function (a, rr, s) { var p = aAt(a, rr); return "translate(" + pt(p[0], p[1]) + ") rotate(" + n1(a + 180) + ")" + (s ? " scale(" + s + ")" : ""); };
+        var sd = function (d, col, w) { return '<path d="' + d + '" fill="' + col + '" stroke="' + ink + '" stroke-width="' + (w || 5) + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; };
+        // the WEAPONS MAKERS station: the factory standing on top of the ring, on a strip of ground
+        out += line("M-150," + -rout + " H150", ink, 7) + at(0, -rout, 0.5, KIT.props.factory({}));
+        // the horns at 11 and 1 o'clock
+        var hornPts = [[-20, 0], [-31, -20], [-36, -44], [-33, -64], [-24, -84], [-21, -64], [-14, -46], [-1, -28], [20, 0]];
+        out += [[-30, 1], [30, -1]].map(function (h) {
+          var p = aAt(h[0], rout - 4), sx = h[1];
+          return at(p[0], p[1], 1.35, sd(polyD(hornPts.map(function (q2) { return [q2[0] * sx, q2[1]]; })), C.war, 5) +
+            line("M" + pt(-12 * sx, -50) + " L" + pt(-4 * sx, -32) + " L" + pt(12 * sx, -8), C.orange, 2.4), h[0]);
+        }).join("");
+        // the track: two circles
+        out += '<circle r="' + rin + '" fill="none" stroke="' + ink + '" stroke-width="7"/><circle r="' + rout + '" fill="none" stroke="' + ink + '" stroke-width="7"/>';
+        // the face in its middle: angry brows, narrow eyes with red pupils, a fanged grin on the inner bottom arc
+        var eyeL = "M-142,-66 L-30,-44 L-46,-24 L-126,-34 Z", browL = "M-150,-98 L-22,-62 L-26,-46 L-150,-82 Z";
+        var mirror = function (d) { return d.replace(/(-?\d+(\.\d+)?),/g, function (m, x) { return -parseFloat(x) + ","; }); };
+        var eyes = "", pupils = "";
+        [eyeL, mirror(eyeL)].forEach(function (d, k) {
+          var px = k ? 86 : -86, cid = P + "fl-eye-" + k;
+          eyes += '<defs><clipPath id="' + cid + '"><path d="' + d + '"/></clipPath></defs>' + sd(d, "#FBF6E6", 6);
+          pupils += '<g clip-path="url(#' + cid + ')"><g class="fl-pupil"><circle cx="' + px + '" cy="-42" r="14" fill="' + C.war + '" stroke="' + ink + '" stroke-width="3.4"/></g></g>';
+        });
+        var RA = 236, a0 = 120, a1 = 240, deep = 64, outerPts = [], innerPts = [];
+        var lip = function (a) { return RA - 12 - deep * Math.sin((Math.PI * (a - a0)) / (a1 - a0)); };
+        for (var gi = 0; gi <= 24; gi++) {
+          var aa = a0 + ((a1 - a0) * gi) / 24;
+          outerPts.push(aAt(aa, RA));
+          innerPts.push(aAt(aa, lip(aa)));
+        }
+        var grin = sd(polyD(outerPts.concat(innerPts.slice().reverse())), C.ink, 6);
+        [[0.16, 26, 15], [0.84, 26, 15], [0.32, 13, 9], [0.42, 13, 9], [0.5, 13, 9], [0.58, 13, 9], [0.68, 13, 9]].forEach(function (f) {
+          var af = a0 + (a1 - a0) * f[0], ri = lip(af) - 1, half = (f[2] / ri) * (180 / Math.PI);
+          grin += sd(polyD([aAt(af - half, ri), aAt(af + half, ri), aAt(af, ri + f[1])]), "#FBF6E6", 3.4);
+        });
+        out += eyes + g("fl-pupils", pupils) + g("fl-brows", sd(browL, C.ink, 4) + sd(mirror(browL), C.ink, 4)) + g("fl-grin", grin);
+        // the turning track: eight red arrows, eight war papers and the dog (feet toward the outside, facing
+        // counterclockwise)
+        var spin = "";
+        for (var i = 0; i < 8; i++) spin += '<g transform="' + aIn(22.5 + 45 * i, 260) + '"><path d="M18,0 L-11,-15 L-4,0 L-11,15 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="miter"/></g>';
+        for (var j = 0; j < 8; j++) if (j !== 4 && j !== 5) spin += '<g transform="' + aIn(45 * j, 258, 0.5) + '"><g transform="translate(0,-14)">' + KIT.money("war", 0.5) + "</g></g>";
+        spin += '<g transform="' + aIn(205, rin - 2) + '"><g transform="scale(-1.15,1.15)">' + g("fl-dog-sq", KIT.props.democracyDog({ tail: "papers", seal: "war" })) + "</g></g>";
+        out += g("fl-spin", spin);
+        return out;
+      }
+
+      // ── This scene's layout, per canvas shape ──────────────────────────
+      // hx, G, k: the room's floor centre on the frame and the house scale. wmStart: where he stands as the scene starts,
+      // rocking the baby missile (hu): on the lawn in 16:9, framed in the open front door in 9:16 (no lawn there).
+      // room: [zoom, x, y (hu), toX, toY]: the push-in on the room for the family's lights (the point x, y goes to toX,
+      // toY). zoom, zoomTo: the push-in on the portrait (its centre goes to zoomTo). end: [zoom, x, y], the slow push
+      // onto the squashed house and the Reaper (their middle goes to x, y); small, so the house still reads as shrunk
+      // and the loop stays in the frame. hill, loop: the far hill and the loop on it ([x, y, scale]) he walks home from.
+      var L = V
+        ? { hx: 676, G: 1420, k: 1.1, wmStart: -405, room: [1.55, 19, -150, 540, 1130], zoom: 2.5, zoomTo: [540, 880], end: [1.25, 540, 1190], loop: [540, 600, 0.6],
+            hill: "M46,832 C180,798 380,766 540,766 C700,766 900,798 1034,832", hillEnd: 1034,
+            stars: [[110, 170, 20, C.orange], [400, 230, 12, C.yellow], [660, 300, 16, C.orange], [990, 660, 14, C.orange], [860, 560, 9, C.yellow], [120, 520, 12, C.yellow], [190, 700, 11, C.orange], [930, 720, 10, C.yellow]], mailbox: null }
+        : { hx: 1010, G: 830, k: 1.3, wmStart: -623, room: [1.3, 19, -150, 945, 520], zoom: 1.9, zoomTo: [1080, 440], end: [1.17, 1005, 682], loop: [215, 300, 0.46],
+            hill: "M46,432 C110,418 230,412 320,420 C380,428 405,470 418,560 C428,640 434,760 436,830", hillEnd: 436,
+            stars: [[520, 150, 11, C.yellow], [1520, 140, 16, C.orange], [1440, 330, 10, C.yellow], [760, 100, 9, C.yellow], [380, 90, 12, C.orange]], mailbox: null };
+      var K = L.k, HX = L.hx, G = L.G;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("view").style.width = (W - 92) + "px";
+      q("view").style.height = (H - 92) + "px";
+      q("world").style.width = W + "px";
+      q("world").style.height = H + "px";
+
+      // The backdrop: the far hill with the war factory he walks home from, the ground, the sidewalk and grass.
+      var back = '<path d="' + L.hill + " L" + L.hillEnd + "," + G + ' L46,' + G + ' Z" fill="url(#' + P + 'fine)" opacity="0.35"/>' + line(L.hill, ink, 4) +
+        at(L.loop[0], L.loop[1], L.loop[2], farLoop()) +
+        L.stars.map(function (s) { return KIT.star(s[0], s[1], s[2], s[3]); }).join("") +
+        line("M46," + G + " H" + (W - 46), ink, 5) + line("M46," + (G + 70) + " H" + (W - 46) + " M46," + (G + 80) + " H" + (W - 46), ink, 2.6, 'opacity="0.6"') +
+        [0.06, 0.16, 0.27, 0.72, 0.8, 0.92].map(function (f) {
+          var gx = 60 + f * (W - 120), gy = G + 30 + (f * 37 % 1) * 20;
+          return line("M" + pt(gx, gy) + " l-6,-13 M" + pt(gx + 6, gy) + " l2,-17 M" + pt(gx + 12, gy) + " l8,-11", ink, 3);
+        }).join("") +
+        (L.mailbox ? at(L.mailbox[0], L.mailbox[1], 1, solid([R(-5, -96, 10, 96)], "#6B4A2F", 3) + solid([[[-34, -150], [26, -150], [34, -140], [34, -96], [-34, -96]]], C.peri, 3.4) +
+          line("M-26,-140 H24", C.cream, 2, 'opacity="0.6"') + solid([R(30, -168, 6, 50), R(30, -168, 22, 14)], C.war, 2.4)) : "");
+
+      // The house and its people. #shake wraps them all (the slam); #hb and #hf scale together about the floor centre.
+      var S = HOUSE.S, PT = HOUSE.PORTRAIT;
+      var family = member("wife") + member("kid2") + member("kid1") + member("wm") +
+        // the Reaper once he steps out of the picture: #rw-pos (hu, at his feet) > #rw-sc (scale about the feet)
+        g("rw-pos", g("rw-sc", at(0, -100, 1, KIT.reaper())), 'opacity="0"') +
+        // the chest-light pulse rings and the slam lines
+        g("slam", line("M-478,-200 l-26,-10 M-478,-150 l-30,0 M-478,-100 l-26,10 M-440,-232 l-6,-22 M-400,-232 l0,-24 M-360,-232 l6,-22", ink, 4.4), 'opacity="0"');
+      // the dust off the ridge where the sign's two posts land
+      var postX = 205 * HOUSE.SIGN[1] / 2 - 30 * HOUSE.SIGN[1];
+      var outside = g("ro-pos", at(HOUSE.WALL[0] - HOUSE.REAPER.gap, -100 * HOUSE.REAPER.s, HOUSE.REAPER.s, reaperOutside()), 'opacity="0"') +
+        g("dust", [-1, 1].map(function (sd) {
+          var x = HOUSE.SIGN[0] + sd * postX;
+          return [[-22, -6, 10], [-8, -14, 13], [8, -14, 13], [22, -6, 10]].map(function (c) {
+            return '<circle cx="' + n1(x + c[0] * 1.2) + '" cy="' + n1(HOUSE.RIDGE + c[1]) + '" r="' + c[2] + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.6"/>';
+          }).join("");
+        }).join(""), 'opacity="0"');
+      var house = '<g transform="translate(' + HX + "," + G + ") scale(" + K + ')">' + houseDefs() +
+        g("shake", g("hb", houseBack({ reaper: true })) + g("fam", family) + g("hf", houseFront({})) + g("out", outside)) + "</g>";
+
+      q("world").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + back + house);
+
+      // ── Animation ───────────────────────────────────────────────────────
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      var NS = "http://www.w3.org/2000/svg";
+      var piv = function (el, o) { gsap.set(el, { svgOrigin: o }); return el; };
+      var body = {};
+      ["wife", "kid1", "kid2", "wm"].forEach(function (k) { body[k] = piv(q(k), "0 100"); });
+      var light = function (el) { return el.querySelector(".chest-light"); };
+      // The check-engine lights a size up and on top of the folded arms and the missile, so they read.
+      ["wife", "kid1", "kid2", "wm"].map(q).concat(RELS.map(function (r, i) { return q("rel-a" + i); })).forEach(function (el) {
+        var lt = light(el);
+        lt.setAttribute("r", 6.8);
+        lt.setAttribute("stroke-width", 2.4);
+        lt.parentNode.appendChild(lt);
+      });
+      // The family's faces fall when their lights go red: a second head in the new mood, stacked on the first, swapped at t.
+      function moodAt(key, mood, t) {
+        var el = q(key), tmp = document.createElementNS(NS, "g");
+        tmp.innerHTML = KIT.person(mix(FAMO[key], { mood: mood }));
+        var oh = el.querySelector(".head"), nh = tmp.querySelector(".head");
+        nh.setAttribute("opacity", "0");
+        oh.parentNode.insertBefore(nh, oh.nextSibling);
+        tl.set(oh, { opacity: 0 }, t);
+        tl.set(nh, { opacity: 1 }, t);
+      }
+      // A chest light goes red at t, with a ring pulsing out of it, then blinks to the end of the scene.
+      function sick(el, t) {
+        var lt = light(el), ring = document.createElementNS(NS, "circle"), r0 = +lt.getAttribute("r");
+        ring.setAttribute("cx", lt.getAttribute("cx")); ring.setAttribute("cy", lt.getAttribute("cy")); ring.setAttribute("r", r0);
+        ring.setAttribute("fill", "none"); ring.setAttribute("stroke", C.war); ring.setAttribute("stroke-width", "2.4"); ring.setAttribute("opacity", "0");
+        lt.parentNode.insertBefore(ring, lt.nextSibling);
+        tl.to(lt, { attr: { fill: C.war }, duration: 0.05 }, t);
+        tl.fromTo(ring, { attr: { r: r0 }, opacity: 0.95 }, { attr: { r: r0 * 4.2 }, opacity: 0, duration: 0.5, ease: "power2.out", repeat: 1, immediateRender: false }, t);
+        var n = Math.floor((D - t - 0.12) / 0.2);
+        if (n % 2 === 0) n -= 1;
+        if (n > 0) tl.fromTo(lt, { opacity: 1 }, { opacity: 0.45, duration: 0.2, repeat: n - 1, yoyo: true, ease: "steps(1)", immediateRender: false }, t + 0.06);
+      }
+      function cough(el, t, k) {
+        tl.to(el, { rotation: 8 * (k || 1), duration: 0.07, ease: "power2.out" }, t);
+        tl.to(el, { rotation: 0, duration: 0.35, ease: "back.out(3)" }, t + 0.07);
+      }
+
+      var tBen = cue("benefit"), tIt = cue("it."), tDis1 = cue("diseases.", 1), tKids = cue("children"), tEvery = cue("Everyone"),
+        tGets = cue("gets"), tDis3 = cue("diseases.", 3), tEcon = cue("economy"), tLoop = cue("loop", 2), tShrink = cue("shrinking."),
+        tSqueak = KIT.after(ID, "shrinking.");
+
+      // As the scene slides in, he stands on the lawn rocking the baby missile like a baby (it grins up at him).
+      // "benefit": he walks home with it (pat, pat, pat), through the open front door, past his wife and daughter, into
+      // the living room; his wife waves.
+      var w0 = cue("benefit") - 0.06, w1 = tIt - 0.22, steps = Math.max(2, Math.round((w1 - w0) / 0.2));
+      var nRock = Math.max(1, Math.round((w0 - 0.1) / 0.4));
+      tl.fromTo(body.wm, { rotation: -4 }, { rotation: 4, duration: (w0 - 0.1) / nRock, repeat: nRock - 1, yoyo: true, ease: "sine.inOut" }, 0);
+      tl.to(body.wm, { rotation: 0, duration: 0.1, ease: "power1.out" }, w0 - 0.1);
+      tl.fromTo(q("wm-pos"), { x: L.wmStart - HOUSE.FAM.wm[0] }, { x: 0, duration: w1 - w0, ease: "power1.out" }, w0);
+      var WR = KIT.rig(FAMO.wm), legL = piv(q("wm").querySelector(".leg-l"), WR.hip[0].join(" ")), legR = piv(q("wm").querySelector(".leg-r"), WR.hip[1].join(" "));
+      tl.fromTo(legL, { rotation: -24 }, { rotation: 24, duration: (w1 - w0) / steps, repeat: steps - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, w0);
+      tl.fromTo(legR, { rotation: 24 }, { rotation: -24, duration: (w1 - w0) / steps, repeat: steps - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, w0);
+      tl.to([legL, legR], { rotation: 0, duration: 0.12 }, w1);
+      tl.fromTo(body.wm, { y: 0 }, { y: -7, duration: (w1 - w0) / steps / 2, repeat: steps * 2 - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, w0);
+      var wifeArm = piv(q("wife").querySelector(".arm-r"), KIT.rig(FAMO.wife).shoulder[1].join(" "));
+      var wv = w1 - 0.75;
+      tl.to(wifeArm, { rotation: -150, duration: 0.16, ease: "back.out(2)" }, wv);
+      tl.to(wifeArm, { rotation: -125, duration: 0.12, repeat: 3, yoyo: true, ease: "sine.inOut" }, wv + 0.16);
+      tl.to(wifeArm, { rotation: 0, duration: 0.2, ease: "power2.in" }, wv + 0.7);
+      // "it.": the door slams behind him (slam): the house shakes, everyone jumps, the antenna wobbles
+      var door = piv(q("door"), HOUSE.DOOR[0] + " " + -HOUSE.DOOR[2] / 2);
+      tl.fromTo(door, { scaleX: 0.16 }, { scaleX: 1, duration: 0.12, ease: "power3.in" }, tIt - 0.12);
+      tl.fromTo(q("shake"), { x: 0 }, { x: 7, duration: 0.04, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, tIt);
+      tl.set(q("slam"), { opacity: 1 }, tIt);
+      tl.set(q("slam"), { opacity: 0 }, tIt + 0.26);
+      ["wife", "kid1", "kid2", "wm"].forEach(function (k, i) {
+        tl.to(body[k], { y: -16, duration: 0.09, ease: "power2.out" }, tIt + 0.02 * i);
+        tl.to(body[k], { y: 0, duration: 0.2, ease: "bounce.out" }, tIt + 0.09 + 0.02 * i);
+      });
+      var ant = piv(q("ant"), "-300 -436");
+      tl.to(ant, { rotation: -14, duration: 0.08 }, tIt);
+      tl.to(ant, { rotation: 0, duration: 0.7, ease: "elastic.out(1.2, 0.3)" }, tIt + 0.08);
+
+      // "weapons manufacturers": he puffs out his chest, proud; "diseases.": his light clicks red (click) and he deflates;
+      // +0.3 he coughs so hard the cigar shoots out of his mouth, spinning, onto the hearth (pop)
+      tl.to(body.wm, { rotation: -6, scaleY: 1.06, scaleX: 1.05, duration: 0.3, ease: "back.out(2.5)" }, cue("weapons"));
+      sick(q("wm"), tDis1);
+      moodAt("wm", HOUSE.SICK.wm, tDis1);
+      tl.to(body.wm, { rotation: 0, scaleY: 0.95, scaleX: 1, duration: 0.18, ease: "power2.in" }, tDis1);
+      var tPop = tDis1 + 0.3;
+      cough(body.wm, tPop, 1.3);
+      tl.to(body.wm, { scaleY: 1, duration: 0.3 }, tPop + 0.1);
+      var cg = piv(q("cigar"), "11 0"), cs = S * WR.hs, CIG_X = 205;   // it lands on the floor at x CIG_X (hu)
+      var cdx = (CIG_X - (HOUSE.FAM.wm[0] + S * WR.head[0] + cs * 13)) / cs, cdy = (-8 - S * (WR.head[1] + WR.hs * 16 - 100)) / cs;
+      tl.to(cg, { x: cdx * 0.5, y: -105, duration: 0.24, ease: "power2.out" }, tPop);
+      tl.to(cg, { x: cdx, y: cdy, duration: 0.32, ease: "power2.in" }, tPop + 0.24);
+      tl.fromTo(cg, { rotation: 0 }, { rotation: 1092, duration: 0.56, ease: "none", immediateRender: false }, tPop);
+      // (it swells in flight, a cartoon cigar, and lands on the hearth big enough to see, still smoking)
+      tl.fromTo(cg, { scale: 1 }, { scale: 2.4, duration: 0.24, ease: "power2.out", immediateRender: false }, tPop);
+      tl.to(cg, { scale: 1.8, duration: 0.32, ease: "power2.in" }, tPop + 0.24);
+      tl.to(cg, { y: cdy - 14, duration: 0.1, ease: "power2.out" }, tPop + 0.56);
+      tl.to(cg, { y: cdy, duration: 0.12, ease: "power2.in" }, tPop + 0.66);
+      var cgh = q("cough");
+      tl.fromTo(cgh, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1.2, duration: 0.14, ease: "power2.out", svgOrigin: WR.mouth.join(" "), immediateRender: false }, tPop);
+      tl.to(cgh, { opacity: 0, duration: 0.3 }, tPop + 0.3);
+
+      // "children": both children's lights go red (click); they give two little coughs
+      sick(q("kid1"), tKids);
+      sick(q("kid2"), tKids + 0.04);
+      moodAt("kid1", HOUSE.SICK.kid1, tKids);
+      moodAt("kid2", HOUSE.SICK.kid2, tKids + 0.04);
+      cough(body.kid1, tKids + 0.3, 0.8);
+      cough(body.kid2, tKids + 0.45, 0.8);
+
+      // "Everyone": the camera pushes in on the portrait; the wife's light, then the relatives', go red one by one
+      var world = q("world"), PC = [HX + K * (PT.frame[0] + PT.frame[2] / 2), G + K * (PT.frame[1] + PT.frame[3] / 2)];
+      var Z = L.zoom, ZX = L.zoomTo[0] - PC[0] * Z, ZY = L.zoomTo[1] - PC[1] * Z;
+      gsap.set(world, { transformOrigin: "0 0", x: 0, y: 0, scale: 1 });
+      // (9:16: the camera has already pushed in on the room, "weapons" to here; see below)
+      if (L.room) {
+        var RZ = L.room[0], rpx = HX + K * L.room[1], rpy = G + K * L.room[2];
+        tl.to(world, { x: L.room[3] - rpx * RZ, y: L.room[4] - rpy * RZ, scale: RZ, duration: 0.55, ease: "power2.inOut" }, KIT.before(ID, "weapons"));
+      }
+      tl.to(world, { x: ZX, y: ZY, scale: Z, duration: 0.5, ease: "power2.inOut" }, KIT.before(ID, "Everyone"));
+      sick(q("wife"), tEvery);
+      moodAt("wife", HOUSE.SICK.wife, tEvery);
+      RELS.forEach(function (r, i) { sick(q("rel-a" + i), tEvery + 0.15 * (i + 1)); });
+      // "gets": the Grim Reaper rises behind them, grinning between the last two heads (whoosh)
+      tl.fromTo(q("preaper"), { y: 300 }, { y: 0, duration: 0.45, ease: "back.out(1.4)" }, tGets);
+      // "diseases.": they x-ray into skeletons one by one (zap); the skulls keep smiling
+      RELS.forEach(function (r, i) { KIT.xray(tl, q("rel-a" + i), q("rel-b" + i), tDis3 + 0.15 * i); });
+
+      // Then the Reaper steps out of the picture, hops down to the hearth at full size, glides across the room, through
+      // the wall, and leans by the front door outside with his clipboard. The camera pulls back.
+      var tOut = tDis3 + 0.15 * 4 + 0.5, RS = HOUSE.REAPER.s, rFeet = [PT.reaper[0], PT.reaper[1] + 100 * PT.s];
+      var rwPos = q("rw-pos"), rwSc = piv(q("rw-sc"), "0 0");
+      tl.set(q("preaper"), { opacity: 0 }, tOut);
+      tl.set(rwPos, { opacity: 1 }, tOut);
+      // (his robe's hem shows over the picture's bottom edge first; then he drops to the floor, growing as he comes,
+      // his hood staying under the ceiling)
+      tl.fromTo(rwPos, { x: rFeet[0] }, { x: 150, duration: 0.42, ease: "power1.inOut", immediateRender: true }, tOut + 0.08);
+      tl.fromTo(rwPos, { y: rFeet[1] }, { y: 0, duration: 0.42, ease: "power2.in", immediateRender: true }, tOut + 0.08);
+      tl.fromTo(rwSc, { scale: PT.s }, { scale: RS, duration: 0.42, ease: "power2.in", immediateRender: true }, tOut + 0.08);
+      tl.to(rwSc, { scaleY: RS * 0.9, scaleX: RS * 1.06, duration: 0.06, ease: "power2.out" }, tOut + 0.5);
+      tl.to(rwSc, { scaleY: RS, scaleX: RS, duration: 0.14, ease: "back.out(3)" }, tOut + 0.56);
+      var rOut = HOUSE.WALL[0] - HOUSE.REAPER.gap, tGl = tOut + 0.62, tLean = tEcon - 0.06;
+      tl.to(rwPos, { x: rOut, duration: tLean - tGl, ease: "power1.in" }, tGl);
+      tl.fromTo(rwPos, { y: 0 }, { y: -8, duration: 0.15, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, tGl);
+      tl.to(world, { x: 0, y: 0, scale: 1, duration: 0.6, ease: "power2.inOut" }, tOut + 0.12);
+      var roPos = q("ro-pos"), lean = piv(q("ro-lean"), "0 100");
+      tl.set(rwPos, { opacity: 0 }, tLean);
+      tl.set(roPos, { opacity: 1 }, tLean);
+      tl.fromTo(lean, { rotation: 0 }, { rotation: HOUSE.REAPER.lean, duration: 0.3, ease: "back.out(2)", immediateRender: false }, tLean);
+
+      // "economy": a sign drops onto the roof: ECONOMY; the antenna wobbles, dust puffs off the ridge
+      var sign = piv(q("sign"), "0 0");
+      tl.set(sign, { opacity: 1 }, tEcon - 0.24);
+      tl.fromTo(sign, { y: -520 }, { y: 0, duration: 0.24, ease: "power2.in", immediateRender: false }, tEcon - 0.24);
+      tl.fromTo(sign, { scaleY: 1, scaleX: 1 }, { scaleY: 0.82, scaleX: 1.08, duration: 0.06, ease: "power2.out", immediateRender: false }, tEcon);
+      tl.to(sign, { scaleY: 1, scaleX: 1, duration: 0.35, ease: "back.out(4)" }, tEcon + 0.06);
+      tl.to(ant, { rotation: 12, duration: 0.07 }, tEcon);
+      tl.to(ant, { rotation: 0, duration: 0.6, ease: "elastic.out(1.2, 0.3)" }, tEcon + 0.07);
+      var dust = piv(q("dust"), HOUSE.SIGN[0] + " " + HOUSE.RIDGE);
+      tl.fromTo(dust, { opacity: 0, scaleX: 0.5, scaleY: 0.3 }, { opacity: 1, scaleX: 1.25, scaleY: 1, duration: 0.14, ease: "power2.out", immediateRender: false }, tEcon);
+      tl.to(dust, { opacity: 0, scaleX: 1.5, duration: 0.3 }, tEcon + 0.22);
+
+      // "loop": the Reaper glances down at his watch
+      var rHead = piv(q("ro-lean").querySelector(".head"), "0 -112");
+      tl.to(rHead, { rotation: -16, x: -3, y: 4, duration: 0.22, ease: "power2.out" }, tLoop);
+      tl.to(rHead, { rotation: 6, x: 2, y: 0, duration: 0.25, ease: "power2.inOut" }, tShrink);
+
+      // "shrinking." (falling whistle): the house squashes around the family: the walls slam in first (the wife and the
+      // daughter are shoved behind the front wall, their faces squashed against its windows; the Reaper rides in with the
+      // door), then the roof comes down until the ceiling meets his hard hat
+      var hs = [q("hb"), q("hf")];
+      hs.forEach(function (el) { piv(el, "0 0"); });
+      var s1 = HOUSE.SQUASH1, s2 = HOUSE.SHRINK, dx1 = 0.42, ty1 = tShrink + 0.2, dy1 = 0.5;
+      tl.to(hs, { scaleX: s1, duration: dx1, ease: "power2.in" }, tShrink);
+      tl.to(hs, { scaleY: s1, duration: dy1, ease: "power2.in" }, ty1);
+      [["wife", 1], ["kid2", 1], ["kid1", 1], ["wm", 1]].forEach(function (m) {
+        var F = HOUSE.FAM[m[0]];
+        tl.to(q(m[0] + "-pos"), { x: (F[1] - F[0]), duration: dx1, ease: "power2.in" }, tShrink);
+      });
+      tl.to(roPos, { x: -HOUSE.WALL[0] * (1 - s1), duration: dx1, ease: "power2.in" }, tShrink);
+      // the cigar on the floor rides in with the floor (it lives in his group, which moves (F[1] - F[0]) by itself)
+      var wmDx = HOUSE.FAM.wm[1] - HOUSE.FAM.wm[0], cigAt = function (s) { return cdx + (CIG_X * s - CIG_X - wmDx) / cs; };
+      tl.to(cg, { x: cigAt(s1), duration: dx1, ease: "power2.in" }, tShrink);
+      tl.to(cg, { x: cigAt(s2), duration: 0.1, ease: "power3.out" }, tSqueak);
+      tl.set([q("wife"), q("kid2")], { opacity: 0 }, tShrink + dx1);
+      var faces = [q("face-w"), q("face-k")];
+      faces.forEach(function (el) { piv(el, "0 0"); });
+      tl.fromTo(faces, { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.12, ease: "power2.out", immediateRender: false }, tShrink + dx1);
+      // the ceiling lands on his hard hat: he buckles a little
+      tl.to(body.wm, { scaleY: 0.95, scaleX: 1.03, duration: 0.08, ease: "power2.out" }, ty1 + dy1);
+      // the squeak: one last squeeze; the ceiling shoves his hard hat down over his eyes, the faces flatten on the glass
+      tl.to(hs, { scaleX: s2, scaleY: s2, duration: 0.1, ease: "power3.out" }, tSqueak);
+      tl.to(q("hat"), { y: HOUSE.HAT_DROP, duration: 0.1, ease: "power3.out" }, tSqueak);
+      tl.to(body.wm, { scaleY: 0.93, scaleX: 1.05, duration: 0.1 }, tSqueak);
+      tl.to(body.kid1, { scaleX: 0.84, scaleY: 1.04, duration: 0.1 }, tSqueak);
+      tl.to(faces, { scaleX: 1.12, scaleY: 0.88, duration: 0.1, ease: "power3.out" }, tSqueak);
+      tl.to(roPos, { x: -HOUSE.WALL[0] * (1 - s2), duration: 0.1 }, tSqueak);
+      // the camera eases in a little on the squashed house and the Reaper (small, so the shrink still reads)
+      var ec = [HX + K * (HOUSE.WALL[0] * s2 - HOUSE.REAPER.gap - 46 * HOUSE.REAPER.s + 312 * s2) / 2, G + K * -172], EZ = L.end[0];
+      tl.to(world, { x: L.end[1] - ec[0] * EZ, y: L.end[2] - ec[1] * EZ, scale: EZ, duration: tSqueak + 0.1 - (tShrink + 0.1), ease: "power2.inOut" }, tShrink + 0.1);
+      // outside, the Reaper taps his watch
+      var tap = piv(q("ro-tap"), "44 -56"), tp0 = tShrink + 0.25, nt = Math.floor((D - 0.05 - tp0) / 0.13);
+      if (nt % 2 === 1) nt -= 1;
+      tl.fromTo(tap, { rotation: 0 }, { rotation: -9, duration: 0.13, repeat: nt - 1, yoyo: true, ease: "power1.inOut", immediateRender: false }, tp0);
+      tl.fromTo(q("ro-taplines"), { opacity: 0 }, { opacity: 1, duration: 0.13, repeat: nt - 1, yoyo: true, ease: "steps(1)", immediateRender: false }, tp0);
+
+      // The loop on the hill never stops: the track turns counterclockwise (a lap every 4.5 s), the dog runs with it,
+      // legs scrambling, the factory puffs. "loop" (the second): its face looks down at the house; "shrinking.": it
+      // chuckles while the house squashes.
+      var flSpin = piv(q("fl-spin"), "0 0");
+      tl.fromTo(flSpin, { rotation: 0 }, { rotation: (-360 * D) / 4.5, duration: D, ease: "none" }, 0);
+      var dogSq = q("fl-dog-sq"), nRun = Math.floor(D / 0.09);
+      if (nRun % 2 === 1) nRun -= 1;
+      tl.fromTo(dogSq, { y: 0 }, { y: -7, duration: 0.09, repeat: nRun - 1, yoyo: true, ease: "sine.inOut" }, 0);
+      Array.prototype.forEach.call(dogSq.querySelectorAll(".dog-leg"), function (leg, i) {
+        var sg = i % 2 ? 1 : -1;
+        piv(leg, leg.getAttribute("data-pivot"));
+        tl.fromTo(leg, { rotation: -30 * sg }, { rotation: 30 * sg, duration: 0.09, repeat: nRun - 1, yoyo: true, ease: "sine.inOut" }, 0);
+      });
+      var dTail = dogSq.querySelector(".dog-tail"), nWag = Math.floor(D / 0.18);
+      if (nWag % 2 === 1) nWag -= 1;
+      piv(dTail, dTail.getAttribute("data-pivot"));
+      tl.fromTo(dTail, { rotation: -8 }, { rotation: 8, duration: 0.18, repeat: nWag - 1, yoyo: true, ease: "sine.inOut" }, 0);
+      Array.prototype.forEach.call(q("world").querySelectorAll(".factory-puff"), function (pf, i) {
+        var nP = Math.floor(D / 0.6);
+        if (nP % 2 === 1) nP -= 1;
+        piv(pf, pf.getAttribute("data-ox") + " " + pf.getAttribute("data-oy"));
+        tl.fromTo(pf, { scale: 0.85 }, { scale: 1.15, duration: 0.6, repeat: nP - 1, yoyo: true, ease: "sine.inOut" }, (i % 3) * 0.2);
+      });
+      var flPupils = q("fl-pupils").querySelectorAll(".fl-pupil");
+      tl.to(flPupils, { x: 22, y: 5, duration: 0.2, ease: "power2.out" }, tLoop);
+      tl.to(q("fl-brows"), { y: 6, duration: 0.2, ease: "power2.out" }, tLoop);
+      var flGrin = piv(q("fl-grin"), "0 180");
+      tl.fromTo(flGrin, { y: 0, scaleY: 1 }, { y: -10, scaleY: 1.12, duration: 0.07, repeat: 9, yoyo: true, ease: "sine.inOut", immediateRender: false }, tShrink);
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

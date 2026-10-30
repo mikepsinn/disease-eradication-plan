@@ -1,0 +1,87 @@
+<template id="cost-of-war-title-template">
+  <!-- cost-of-war-title · Layer A title card (storyboards/part-10-cost-of-war.md, scene 1), built by KIT.titleScene
+       (assets/js/props/title.js). "The", "Cost", "of", "War." slam in one per spoken word. "War." → a price tag on a
+       string drops from the R and swings, its blank side out. After "War." → it flips over (the cash-register ding):
+       a "$", then a ribbon of zeros slides out of the tag's end, down off the bottom of the card, and it is still
+       sliding out when the card ends. No figure on the tag: the price does not fit on the card. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="cost-of-war-title" data-width="1920" data-height="1080" data-start="0" data-duration="2.76">
+    <div id="cost-of-war-title-cam">
+      <div id="cost-of-war-title-bg"></div>
+      <div id="cost-of-war-title-sun"></div>
+      <div id="cost-of-war-title-back"></div>
+      <div id="cost-of-war-title-words"></div>
+      <div id="cost-of-war-title-art"></div>
+    </div>
+    <div id="cost-of-war-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "cost-of-war-title",
+      lines: [["THE", "COST", "OF", "WAR"]],
+      linesTall: [["THE", "COST"], ["OF", "WAR"]],
+      spoken: ["The", "Cost", "of", "War."],
+      gag: function (c) {
+        var C = c.C, ink = C.line, tl = c.tl, V = c.V, H = c.H, D = c.D, id = c.id;
+        var $ = function (s) { return document.getElementById(id + "-" + s); };
+        var n1 = function (v) { return (Math.round(v * 10) / 10).toFixed(1); };
+        var WHITE = "#FBF6E6";
+        // The tag, in KIT.props.priceTag units (k canvas px each), hanging straight down from its knot on the R's
+        // foot: the prop at angle 90 puts the card at x -12..18 and y 16..28 + CW (CW: the card's length).
+        var k = V ? 3.0 : 3.4, CW = 75, END = 28 + CW;
+        var blank = KIT.props.priceTag({ text: "$0000", angle: 90 });
+        // The ribbon of zeros: the tag's own paper (white, an orange inner rule, the navy edges), stacked upright
+        // digits, sliding out of the card's end. Long enough to still be coming out when the card ends.
+        var digits = ",000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000".split(""), step = 26, len = digits.length * step + 30;
+        var strip = '<rect x="-12" y="0" width="30" height="' + len + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="2.2"/>' +
+          '<path d="M-8,0 V' + len + " M14,0 V" + len + '" stroke="' + C.orange + '" stroke-width="1.2"/>' +
+          digits.map(function (d, i) {
+            return '<text x="3" y="' + (22 + i * step) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + (d === "," ? 26 : 22) + '" fill="' + ink + '">' + d + "</text>";
+          }).join("");
+        // The strip starts with its "$" on the card's face and the rest tucked up inside (clipped to below the
+        // grommet), and slides down out of the card's end.
+        var clipId = id + "-ribbon-clip";
+        var ribbon = '<defs><clipPath id="' + clipId + '"><rect x="-40" y="' + (END - 2) + '" width="80" height="4000"/></clipPath></defs>' +
+          '<g clip-path="url(#' + clipId + ')"><g id="' + id + '-ribbon">' + '<g transform="translate(0,' + (END - len) + ')">' + strip + "</g></g></g>";
+        // The face after the flip: a big upright "$" on the card (the prop's own price text is hidden).
+        var face = '<g id="' + id + '-face" opacity="0"><text x="3" y="' + (28 + CW * 0.55) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="40" fill="#3B6644">$</text></g>';
+        var art = '<g transform="scale(' + k + ')"><g id="' + id + '-drop"><g id="' + id + '-swing">' + ribbon + blank + face + "</g></g></g>";
+        var pin = c.pin("WAR", "bottomright", art);
+        pin.style.marginLeft = (-0.06 * c.word("WAR").size).toFixed(1) + "px"; // the knot on the R's foot, not past it
+        // Hide the prop's price text: the tag hangs blank side out until it flips.
+        Array.prototype.forEach.call(pin.querySelectorAll(".price-tag text"), function (t) { t.setAttribute("opacity", "0"); });
+
+        var drop = $("drop"), swing = $("swing"), face2 = $("face"), rib = $("ribbon");
+        gsap.set(swing, { svgOrigin: "3 0" });
+        // "War.": the tag drops from above onto its string and swings, damped.
+        var tW = c.cue("War."), tF = c.after("War.");
+        tl.fromTo(drop, { y: -(V ? 900 : 520) / k, opacity: 1 }, { y: 0, duration: 0.3, ease: "power2.in" }, tW);
+        tl.fromTo(drop, { opacity: 0 }, { opacity: 1, duration: 0.01 }, tW);
+        tl.fromTo(swing, { rotation: 0 }, { rotation: 16, duration: 0.14, ease: "power2.out", immediateRender: false }, tW + 0.3);
+        tl.to(swing, { rotation: -10, duration: 0.2, ease: "sine.inOut" }, tW + 0.44);
+        tl.to(swing, { rotation: 6, duration: 0.18, ease: "sine.inOut" }, tW + 0.64);
+        tl.to(swing, { rotation: 0, duration: 0.16, ease: "sine.inOut" }, tW + 0.82);
+        // After "War.": it flips over (the ding): the blank side turns away and the "$" side turns to us.
+        tl.to(swing, { scaleX: 0, duration: 0.07, ease: "power2.in" }, tF);
+        tl.set(face2, { opacity: 1 }, tF + 0.07);
+        tl.to(swing, { scaleX: 1, duration: 0.09, ease: "power2.out" }, tF + 0.07);
+        // Then the zeros slide out of the tag's end and down off the card, still coming when the card ends.
+        var t0 = tF + 0.12, speed = (V ? 1250 : 900) / k;
+        tl.fromTo(rib, { y: 0 }, { y: speed * (D - t0), duration: D - t0, ease: "none" }, t0);
+        // The tag jiggles as the ribbon feeds out of it.
+        tl.fromTo(swing, { x: 0 }, { x: 1.2, duration: 0.05, repeat: Math.floor((D - t0) / 0.05) - 1, yoyo: true, ease: "none", immediateRender: false }, t0);
+      },
+    });
+  </script>
+</template>

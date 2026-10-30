@@ -1,0 +1,661 @@
+<template id="step-2-loud-humans-template">
+  <!-- step-2-loud-humans · Layer B (storyboards/part-05-sacred-order-of-paper-distribution.md). The step 2 card unrolls
+       across the top and rolls up into its STEP 2 tab. Four Loud Humans (megaphones for heads: a barrel, a beanpole, an
+       hourglass and a refrigerator box) type at laptops on little stands; on "loud" they whip round and shout at each
+       other, scribbled bubbles (a cat, a sandwich, an angry squiggle) flying across; on "internet." the bubbles pile up
+       and tangle overhead. On "If" every megaphone snaps round to the stream of plain papers dashing in from the left,
+       and the papers leap into the megaphones one after another (gulp). They breathe in; on "your" every megaphone
+       swings round to the camera; on "thing" they blast: shockwaves, the frame shakes, the scribbles are knocked out
+       of the bubbles and every bubble snaps into a neat row holding the same teal pill bottle (the laptops too). On
+       "other" the old scribbles blow off the left edge like leaves; on "things." a passing human in a bowler is blown
+       clean out of his shoes and off the top left; the shoes stay, smoking. On "marketing" a pie chart in sunglasses
+       struts in; on "lying" its three slices read 60%, 60%, 60%; after "graphics." it lowers its sunglasses and winks. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #step-2-loud-humans-cam, #step-2-loud-humans-bg, #step-2-loud-humans-shake, #step-2-loud-humans-art, #step-2-loud-humans-card, #step-2-loud-humans-pip, #step-2-loud-humans-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="step-2-loud-humans" data-width="1920" data-height="1080" data-start="0" data-duration="15.82">
+    <div id="step-2-loud-humans-cam">
+      <div id="step-2-loud-humans-bg"></div>
+      <div id="step-2-loud-humans-shake"><div id="step-2-loud-humans-art"></div></div>
+      <div id="step-2-loud-humans-card"></div>
+      <div id="step-2-loud-humans-pip"></div>
+      <div id="step-2-loud-humans-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "step-2-loud-humans";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var ink = C.line, WHITE = "#FBF6E6", SMOKE = "#8C8782", DARKTEAL = "#1D5E59";
+
+      // ── Times (all from the spoken words) ──────────────────────────────
+      var T = {
+        step: cue("Step"), roll: KIT.after(ID, "Humans"), loud: cue("loud", 2), net: cue("internet."), ifw: cue("If"),
+        papers: cue("papers,", 2), your: cue("your"), thing: cue("thing"), other: cue("other"), things: cue("things."),
+        mkt: cue("marketing"), lying: cue("lying"), wink: KIT.after(ID, "graphics."),
+      };
+      T.calm = T.things + 0.55;      // the blast dies down
+      T.walkIn = T.papers + 0.36;    // the passing human strolls in once the papers have left the lane
+
+      // ── Layout per canvas shape ────────────────────────────────────────
+      // hum: each Loud Human's feet x, feet y, scale, and the way its megaphone points at first (1 right, -1 left).
+      // lane: the front lane's ground (papers, the passing human, the pie chart). pile: the tangle's center and scale.
+      // row(k): where bubble k sits once it is on message. card / tab: the step card and its rolled-up tab.
+      var L = V
+        ? { hum: [[340, 1030, 2.3, 1], [740, 1030, 2.3, -1], [180, 1400, 2.5, 1], [895, 1400, 2.5, -1]], floor: 1030, lane: 1445,
+            bs: 0.82, pile: [430, 400], pileK: 0.82, rowS: 0.9,
+            row: function (k) { return k < 4 ? [130 + k * 175, 250] : [130 + (k - 4) * 273, 492]; },
+            billS: 1, v: 2200, gap: 140, bills: [[3, 0.32, 160, 120], [1, 0.43, 160, 150], [0, 0.42, 130, 150], [2, 0.32, 90, 120]],
+            passer: { s: 1.9, x0: -150, x1: 395, x2: 425 }, pie: { s: 1.45, x0: -260, x1: 540 },
+            card: [40, 720, 70, 330], tab: [40, 260, 40, 110], streak: [380, 1430] }
+        : { hum: [[320, 785, 2.35, 1], [640, 785, 2.35, -1], [960, 785, 2.35, 1], [1280, 785, 2.35, -1]], floor: 785, lane: 892,
+            bs: 1, pile: [960, 200], pileK: 0.9, rowS: 0.8, row: function (k) { return [286 + k * 150, 205]; },
+            billS: 1.1, v: 2400, gap: 150, bills: [[3, 0.34, 170, 220], [2, 0.34, 170, 220], [1, 0.34, 170, 220], [0, 0.34, 170, 220]],
+            passer: { s: 2.2, x0: -150, x1: 462, x2: 492 }, pie: { s: 1.5, x0: -260, x1: 800 },
+            card: [120, 1500, 40, 170], tab: [40, 260, 30, 100], streak: [150, 880] };
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── Drawing helpers (the HUMANS technique from kit.js) ─────────────
+      function P(x, y) { return (+x).toFixed(1) + "," + (+y).toFixed(1); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + " Z"; }
+      function poly(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function flipX(pts) { return pts.map(function (p) { return [-p[0], p[1]]; }); }
+      function solid(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra || "") + "/>"; }
+      function ngon(cx, cy, r, n, rot) {
+        var pts = [];
+        for (var i = 0; i < n; i++) { var a = ((rot || 0) + (i * 360) / n) * Math.PI / 180; pts.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); }
+        return pts;
+      }
+      function g(id, inner, attrs) { return '<g id="' + ID + "-" + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner) { return '<g transform="translate(' + P(x, y) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function place(el, x, y, s, r) {
+        el.setAttribute("transform", "translate(" + P(x, y) + ")" + (r ? " rotate(" + r.toFixed(2) + ")" : "") + " scale(" + s.toFixed(3) + ")");
+      }
+      function show(el, on) { el.setAttribute("opacity", on ? "1" : "0"); }
+      function clamp(x) { return Math.max(0, Math.min(1, x)); }
+      function smooth(x) { x = clamp(x); return x * x * (3 - 2 * x); }
+      function easeOut(x) { x = clamp(x); return 1 - (1 - x) * (1 - x); }
+      function backOut(x) { x = clamp(x); var c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); }
+      function lerp(a, b, u) { return a + (b - a) * u; }
+      function pivot(el, o) { gsap.set(el, { svgOrigin: o }); }
+      // a teal pill bottle (the medicine color): the shared prop, recolored
+      function tealBottle(size) {
+        return KIT.props.pillBottle({ size: size }).replace(/#E5903B/g, C.med).replace(/#904B2E/g, DARKTEAL);
+      }
+
+      // ── The Loud Humans ────────────────────────────────────────────────
+      // Four everyday builds with megaphone heads. Each has four drawings, swapped on the words: typing, shouting,
+      // reaching for the papers, and blasting at the camera (the megaphone seen from the front).
+      var BUILDS = [
+        { kind: "barrel", tone: 2, colorHex: "#5C6F8E", build: { legs: 0.85, tw: 1.18, th: 1.02 } },
+        { kind: "twig", tone: 0, colorHex: "#E8B04A", build: { legs: 1.32, th: 1.2, tw: 0.9, neck: 1.6 } },
+        { kind: "hourglass", tone: 3, hair: 1, color: 0, build: { legs: 1.05 } },
+        { kind: "box", tone: 1, colorHex: "#904B2E", build: { tw: 1.12, legs: 0.92, th: 1.12 } },
+      ];
+      // 9:16 stacks two rows: the beanpole goes to the front row, so the back row's heads stay under the bubble row.
+      if (V) BUILDS = [BUILDS[0], BUILDS[2], BUILDS[1], BUILDS[3]];
+      var POSE = { type: [[24, 52], [14, 46]], shout: [[-160, -178], [80, 96]], reach: [[64, 100], [54, 92]], front: [[-135, -162], [135, 162]] };
+      function opts(i, pose) {
+        var b = BUILDS[i], o = {}, k;
+        for (k in b) o[k] = b[k];
+        o.arms = POSE[pose];
+        return KIT.castOpts("loudHuman", o);
+      }
+      function sidePerson(i, pose) {
+        var m = KIT.person(opts(i, pose));
+        if (!MEGA.test(m)) throw new Error("megaphone head not found");
+        return m.replace(MEGA, bullhorn());
+      }
+      var RIG = BUILDS.map(function (b, i) { return KIT.rig(opts(i, "type")); });
+      // The megaphone seen from the front: a faceted bell, rings inside, the dark throat (in the head's own units).
+      var MEGA = /<path d="M-8,16 L-8,-4 L24,-22 L24,34 Z"[^>]*\/><path d="M24,-22 L30,6 L24,34 Z"[^>]*\/>/;
+      // The kit's side-view megaphone, drawn up as a 1950s bullhorn so it reads at a glance: a white cone with a red
+      // band, a pistol grip, a mouthpiece and a dark bell (the head's own units).
+      var hornN = 0;
+      function bullhorn() {
+        var cid = ID + "-cone" + ++hornN;
+        var yt = function (x) { return -4 - (18 * (x + 8)) / 32; }, yb = function (x) { return 16 + (18 * (x + 8)) / 32; };
+        var cone = [[-8, -4], [24, -22], [24, 34], [-8, 16]];
+        return solid([poly([[-16, 1], [-8, 0], [-8, 12], [-16, 11]])], C.slate, 2.6) +
+          solid([poly([[0, yb(0) - 2], [9, yb(9) - 2], [7, yb(9) + 13], [1, yb(0) + 12]])], C.slate, 2.6) +
+          solid([poly(cone)], WHITE, 3.6) +
+          '<defs><clipPath id="' + cid + '"><path d="' + polyD(cone) + '"/></clipPath></defs>' +
+          '<rect x="-8" y="8" width="34" height="30" fill="url(#' + ID + '-a-fine)" opacity="0.22" clip-path="url(#' + cid + ')"/>' +
+          solid([poly([[9, yt(9)], [15, yt(15)], [15, yb(15)], [9, yb(9)]])], C.war, 2) +
+          solid([poly([[24, -22], [31, 6], [24, 34]])], ink, 2) + line("M25,-15 L29,6 L25,27", C.peri, 2.2) + line("M23,-20 V32", C.orange, 2.4);
+      }
+      function disc() {
+        return solid([poly(ngon(0, 2, 31, 14, 0))], C.cream, 3.6) + solid([poly(ngon(0, 2, 23, 14, 13))], C.peri, 2.2) +
+          solid([poly(ngon(0, 2, 15, 10, 0))], C.slate, 2) + '<path d="' + polyD(ngon(0, 2, 7, 8, 0)) + '" fill="' + ink + '"/>' +
+          line("M-24,-10 L-14,-21 L-3,-25", "#FFFFFF", 3, ' opacity="0.85"') + line("M22,14 L14,24", C.orange, 2.2);
+      }
+      // Smoke wisps over a spent megaphone (head units).
+      var wisps = '<g class="lh-smoke" opacity="0">' + [-12, 4, 18].map(function (dx, i) {
+        return '<g class="lh-wisp">' + line("M" + dx + "," + (-36 - i * 3) + " l-6,-9 l6,-9 l-6,-9 l6,-9", SMOKE, 3.6) + "</g>";
+      }).join("") + "</g>";
+      function frontPerson(i) {
+        var m = KIT.person(opts(i, "front"));
+        if (!MEGA.test(m)) throw new Error("megaphone head not found");
+        return m.replace(MEGA, disc()).replace("<!--face-end-->", wisps + "<!--face-end-->");
+      }
+      // The little stand and laptop in front of each Loud Human (person units; the shelf is at y 22). The laptop's
+      // screen shows scribbled posts and a blinking cursor, then the teal pill bottle.
+      function stand(i) {
+        var shelf = [[-30, 32], [30, 32], [26, 39], [-26, 39]], post = [[-4, 39], [4, 39], [4, 93], [-4, 93]], foot = [[-20, 93], [20, 93], [25, 100], [-25, 100]];
+        var screenA = '<g id="' + ID + "-scrA" + i + '">' + line("M-18,-36 L-6,-36 M-18,-31 L4,-31 M-18,-26 L-2,-26 M-18,-21 L8,-21", C.cream, 1.6, ' opacity="0.85"') +
+          line("M-6,-36 l2,-2 l2,2 l2,-2 l2,2", C.war, 1.4) + '<rect class="lh-cursor" x="10" y="-23.5" width="3" height="4" fill="' + C.cream + '"/></g>';
+        var screenB = '<g id="' + ID + "-scrB" + i + '" opacity="0"><rect x="-24" y="-42" width="48" height="31" fill="' + C.cream + '"/>' + at(0, -13.5, 1, tealBottle(0.24)) + "</g>";
+        var lap = KIT.props.laptop({ color: [C.peri, C.tan, C.peri, C.tan][i] }).replace("<!--laptop-screen-->", screenA + screenB);
+        return solid([poly(post), poly(foot)], C.slate, 3.2) + line("M3,41 V91 M20,94 L23,99", C.orange, 1.4) + solid([poly(shelf)], C.tan, 3.2) +
+          '<g transform="translate(0,32) scale(0.86)">' + lap + "</g>";
+      }
+      var humans = L.hum.map(function (h, i) {
+        return '<g transform="translate(' + P(h[0], h[1] - 100 * h[2]) + ") scale(" + h[2] + ')">' +
+          '<ellipse cx="0" cy="100" rx="34" ry="5" fill="url(#' + ID + '-a-fine)" opacity="0.7"/>' +
+          g("h" + i + "-j", g("h" + i + "-flip",
+            '<g class="lh-type">' + sidePerson(i, "type") + "</g>" +
+            '<g class="lh-shout" opacity="0">' + sidePerson(i, "shout") + "</g>" +
+            '<g class="lh-reach" opacity="0">' + sidePerson(i, "reach") + "</g>" +
+            '<g class="lh-front" opacity="0">' + frontPerson(i) + "</g>")) +
+          stand(i) + "</g>";
+      });
+      // In 9:16 the back row's stands go behind the front row's humans: draw row by row.
+      var humansSvg = humans.join("");
+      // Screen positions on a human: a point in person units (px, py) facing `face`.
+      function onHuman(i, px, py, face) { var h = L.hum[i]; return [h[0] + px * face * h[2], h[1] + (py - 100) * h[2]]; }
+      function bell(i, face) { return onHuman(i, 27, RIG[i].hy + 6, face); }
+      function discAt(i) { return onHuman(i, 0, RIG[i].hy + 2, 1); }
+
+      // ── Speech bubbles and what is in them ─────────────────────────────
+      // Eight scribbled bubbles. Each is a balloon (with a hidden teal pill bottle for later) and, drawn separately so
+      // it can be knocked out and blown away, its scribble: a cat, a sandwich or an angry squiggle.
+      function cat() {
+        var head = [[-34, -4], [-30, -36], [-12, -20], [12, -20], [30, -36], [34, -4], [30, 18], [14, 30], [-14, 30], [-30, 18]];
+        return solid([poly(head)], C.orange, 3.4) + '<path d="M-27,-28 L-24,-19 L-16,-21 Z M27,-28 L24,-19 L16,-21 Z" fill="' + C.cream + '"/>' +
+          '<path d="M-21,-3 Q-13,-11 -5,-3 Q-13,1 -21,-3 Z M21,-3 Q13,-11 5,-3 Q13,1 21,-3 Z" fill="' + ink + '"/>' +
+          '<path d="M-4,7 L4,7 L0,12 Z" fill="' + ink + '"/>' + line("M0,12 L-5,17 L-10,14 M0,12 L5,17 L10,14", ink, 2.2) +
+          line("M-15,9 L-50,2 M-15,14 L-50,16 M15,9 L50,2 M15,14 L50,16", ink, 2);
+      }
+      function sandwich() {
+        return solid([poly([[-46, -10], [-38, -28], [38, -28], [46, -10]])], C.tan, 3.2) +
+          solid([poly([[-50, -10], [50, -10], [46, -2], [32, -4], [22, 4], [12, -4], [-50, -4]])], C.yellow, 2.6) +
+          line("M-48,0 l8,6 l8,-6 l8,6 l8,-6 l8,6 l8,-6 l8,6 l8,-6 l8,6 l8,-6 l8,6", C.moneyDark, 4) +
+          solid([poly([[-46, 6], [46, 6], [46, 13], [-46, 13]])], C.war, 2.6) + solid([poly([[-46, 13], [46, 13], [40, 28], [-40, 28]])], C.tan, 3.2) +
+          line("M-26,-21 l4,-3 M-6,-22 l4,-3 M14,-21 l4,-3", C.cream, 2);
+      }
+      function angry(seed) {
+        var r = KIT.rng(seed), d = "M-8,0", a = 0;
+        for (var i = 0; i < 26; i++) { a += 1.9 + r() * 1.1; var rr = 10 + r() * 26; d += " L" + P(rr * Math.cos(a) * 1.25, rr * Math.sin(a) * 0.9); }
+        return line(d, C.war, 4) + line("M34,-34 l6,8 l8,-6 M44,-22 l6,8 M30,-20 l8,4", ink, 3);
+      }
+      var SCRIB = [cat, sandwich, angry, cat, angry, sandwich, angry, cat];
+      var BODY = [[-82, -48], [-72, -58], [72, -58], [82, -48], [82, 40], [72, 50], [-6, 50], [-38, 74], [-28, 50], [-72, 50], [-82, 40]];
+      function balloon(i) {
+        var body = i % 2 ? flipX(BODY) : BODY;
+        return '<defs><clipPath id="' + ID + "-bc" + i + '"><path d="' + polyD(body) + '"/></clipPath></defs>' + solid([poly(body)], WHITE, 4.6) +
+          '<rect x="20" y="-60" width="64" height="112" fill="url(#' + ID + '-a-fine)" opacity="0.3" clip-path="url(#' + ID + "-bc" + i + ')"/>';
+      }
+      var bubbles = "", scribbles = "";
+      for (var i = 0; i < 8; i++) {
+        bubbles += g("b" + i, balloon(i) + g("b" + i + "-pill", at(0, 43, 1, tealBottle(0.88)), 'opacity="0"'));
+        scribbles += g("c" + i, '<g transform="scale(0.92)">' + SCRIB[i](i + 3) + "</g>");
+      }
+      // The tangle over the pile: a scribbled knot, drawn on (pile units).
+      var knot = (function () {
+        var r = KIT.rng(77), d = "M-250,20", a = 3.4;
+        for (var k = 0; k < 34; k++) { a += 0.55 + r() * 0.5; var rx = 120 + r() * 140, ry = 50 + r() * 70; d += " L" + P(Math.cos(a) * rx + (r() - 0.5) * 60, Math.sin(a) * ry); }
+        return '<path id="' + ID + '-knot-p" d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" opacity="0.8"/>';
+      })();
+
+      // ── Shockwaves and wind ────────────────────────────────────────────
+      // Behind each megaphone, a jagged blast burst (mustard, a cream heart) that kicks with every shockwave.
+      function jag(r0, r1, n, rot) {
+        var pts = [];
+        for (var i = 0; i < n * 2; i++) { var a = ((rot || 0) + (i * 180) / n) * Math.PI / 180, r = i % 2 ? r1 : r0 * (i % 4 ? 0.9 : 1); pts.push([r * Math.cos(a), r * Math.sin(a)]); }
+        return pts;
+      }
+      var bursts = L.hum.map(function (h, i) {
+        var p = discAt(i), s = h[2];
+        return at(p[0], p[1], 1, g("burst" + i, solid([poly(jag(70 * s, 44 * s, 13, i * 9))], C.yellow, 5) + solid([poly(jag(54 * s, 36 * s, 13, i * 9 + 7))], WHITE, 3), 'opacity="0"'));
+      }).join("");
+      var RINGS = 6, ringGap = 0.3;
+      var rings = "";
+      L.hum.forEach(function (h, i) {
+        var p = discAt(i);
+        for (var k = 0; k < RINGS; k++) {
+          rings += at(p[0], p[1], 1, g("ring" + i + "-" + k, '<path d="' + polyD(ngon(0, 0, 40, 16, 0)) + '" fill="none" stroke="' + ink + '" stroke-width="10" vector-effect="non-scaling-stroke"/>' +
+            '<path d="' + polyD(ngon(0, 0, 40, 16, 0)) + '" fill="none" stroke="' + C.cream + '" stroke-width="4" vector-effect="non-scaling-stroke"/>', 'opacity="0"'));
+        }
+      });
+      var NS = 16, srnd = KIT.rng(23), STREAKS = [];
+      var streaks = "";
+      for (var s = 0; s < NS; s++) {
+        STREAKS.push({ x: srnd() * (W + 400), y: L.streak[0] + srnd() * (L.streak[1] - L.streak[0]), v: 2200 + srnd() * 1200 });
+        var len = 60 + srnd() * 120;
+        streaks += g("st" + s, line("M0,0 H" + len.toFixed(0) + (srnd() < 0.5 ? " M" + (len * 0.3).toFixed(0) + ",14 H" + (len * 0.9).toFixed(0) : ""), ink, 4, ' opacity="0.45"'), 'opacity="0"');
+      }
+
+      // ── The stream of plain papers ─────────────────────────────────────
+      var BILLS = L.bills, billsSvg = "";
+      BILLS.forEach(function (b, k) {
+        billsSvg += g("bill" + k, '<g class="bill-a">' + KIT.money("plain", 0) + '</g><g class="bill-b" opacity="0">' + KIT.money("plain", 1) + "</g>" +
+          '<g class="bill-speed">' + line("M-62,-12 h-56 M-60,6 h-40 M-66,22 h-26", ink, 4, ' opacity="0.5"') + "</g>", 'opacity="0"');
+      });
+      // Single file at speed v, gap px apart; bill k peels off at X (its megaphone's bell minus dx) and hops in for
+      // dur seconds. The first gulp lands on "papers," (pop), the last 0.2 s later (pop).
+      var laneC = L.lane - 47 * L.billS;
+      var HOP = BILLS.map(function (b, k) {
+        var tgt = bell(b[0], -1), X = tgt[0] - b[2];
+        return { h: b[0], d: b[1], X: X, to: tgt, arc: b[3], off: (X + 80 + k * L.gap) / L.v };
+      });
+      var t0 = T.papers - Math.min.apply(null, HOP.map(function (o) { return o.off + o.d; }));
+      HOP.forEach(function (o) { o.T = t0 + o.off; o.L = o.T + o.d; });
+
+      // ── The passing human (a commuter in a bowler) ─────────────────────
+      // (no glasses and no cash in his briefcase, so he never reads as the masked Lobbyist of Step 3)
+      var PAS = { tone: 0, kind: "shirt", color: 2, hat: "bowler", look: "right", build: { legs: 1, tw: 1.05, nose: 1.5 } };
+      function pmix(extra) { var o = {}, k; for (k in PAS) o[k] = PAS[k]; for (k in extra) o[k] = extra[k]; return o; }
+      var NOCASH = /<g transform="translate\(6,6\) rotate\(-25\)">[\s\S]*?<\/g>/;
+      function commuter(o) { return KIT.person(o).replace(NOCASH, ""); }
+      var walkO = pmix({ mood: "smile", arms: [[14, 4], [-12, -4]], holdR: "briefcase" });
+      var braceO = pmix({ mood: "worried", brows: true, arms: [[170, 145], [-70, -96]], holdR: "briefcase" });
+      var flyO = pmix({ mood: "eager", arms: [[-150, -118], [150, 118]], holdR: "briefcase" });
+      var braceM = commuter(braceO);
+      // his shoes: the last two paths (outline and fill) of each leg in the braced drawing; in the air, socks
+      var shoes = "";
+      braceM.replace(/<g class="leg-[lr]">([\s\S]*?)<\/g>/g, function (m, inner) {
+        var ps = inner.match(/<path[^>]*\/>/g);
+        shoes += ps.slice(-2).join("");
+        return m;
+      });
+      var flyM = commuter(flyO).replace(/<g class="leg-[lr]">([\s\S]*?)<\/g>/g, function (m, inner) {
+        var ps = inner.match(/<path[^>]*\/>/g), last = ps[ps.length - 1];
+        return m.replace(last, last.replace('fill="' + ink + '"', 'fill="' + WHITE + '"'));
+      });
+      var PR = KIT.rig(walkO);
+      var shoeSmoke = [-14, 4, 20].map(function (dx, i) { return '<g class="shoe-wisp">' + line("M" + dx + "," + (88 - i * 4) + " l-5,-8 l5,-8 l-5,-8", SMOKE, 3.4) + "</g>"; }).join("");
+      var passer = g("pas", g("pas-walk", commuter(walkO)) + g("pas-brace", braceM, 'opacity="0"') + g("pas-fly", flyM, 'opacity="0"'), 'opacity="0"') +
+        g("shoes", shoes + shoeSmoke, 'opacity="0"');
+
+      // ── The pie chart in sunglasses ────────────────────────────────────
+      // Drawn around (0,0), R 100, feet at y 172. Three slices of a third each, every one labeled 60%.
+      var PIE = (function () {
+        var R = 100, out = "", cols = [C.orange, C.yellow, C.slate], a0 = [-90, 30, 150];
+        function arcPt(a, r) { return [r * Math.cos((a * Math.PI) / 180), r * Math.sin((a * Math.PI) / 180)]; }
+        var shade = "";
+        cols.forEach(function (col, k) {
+          var pts = [[0, 0]];
+          for (var j = 0; j <= 12; j++) pts.push(arcPt(a0[k] + j * 10, R));
+          out += '<path d="' + polyD(pts) + '" fill="' + col + '"/>';
+          if (k < 2) shade += '<path d="' + polyD(pts) + '" fill="url(#' + ID + '-a-fine)" opacity="0.25"/>';
+        });
+        var rim = ngon(0, 0, R, 36, 0);
+        var legs = [-1, 1].map(function (sx) {
+          return '<g class="pie-leg" data-sx="' + sx + '">' + line("M" + 32 * sx + ",88 L" + 34 * sx + ",166", ink, 6) +
+            solid([poly([[34 * sx - 8, 162], [34 * sx + 4, 160], [34 * sx + 22, 168], [34 * sx + 20, 173], [34 * sx - 8, 173]])], ink, 2) + "</g>";
+        }).join("");
+        var arms = line("M-98,8 L-130,40 L-96,62 M98,8 L130,40 L96,62", ink, 6);
+        var lab = function (k, x, y, fill) {
+          return '<g id="' + ID + "-lab" + k + '" opacity="0"><text x="' + x + '" y="' + (y + 12) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="34" fill="' + fill + '" stroke="' + (fill === ink ? C.cream : ink) + '" stroke-width="4" style="paint-order:stroke">60%</text></g>';
+        };
+        var eyes = '<g id="' + ID + '-pie-eyes">' + [-32, 32].map(function (x, k) {
+          return '<g class="' + (k ? "pie-eye-r" : "pie-eye-l") + '"><path d="M' + (x - 17) + ",-8 Q" + x + ",-22 " + (x + 17) + ",-8 Q" + x + ",1 " + (x - 17) + ',-8 Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="2.6"/><circle cx="' + (x + 3) + '" cy="-8" r="5" fill="' + ink + '"/>' +
+            line("M" + (x - 19) + ",-9 Q" + x + ",-25 " + (x + 19) + ",-11", ink, 3.6) + "</g>";
+        }).join("") + '<g class="pie-wink" opacity="0">' + line("M15,-9 Q32,3 49,-9", ink, 5.5) + line("M15,-9 l-6,-4 M49,-9 l6,-4", ink, 3) + "</g></g>";
+        var lens = function (sx) { return [[8 * sx, -24], [62 * sx, -26], [58 * sx, 0], [42 * sx, 8], [14 * sx, 4]]; };
+        var glasses = '<g id="' + ID + '-pie-glasses">' + solid([poly(lens(-1)), poly(lens(1))], "#141B2B", 3) + line("M-8,-20 Q0,-26 8,-20", ink, 4) +
+          line("M-62,-24 L-98,-30 M62,-24 L98,-30", ink, 3.4) + line("M-52,-19 L-38,-20 M24,-19 L34,-20", "#FFFFFF", 3, ' opacity="0.7"') +
+          '<g transform="translate(-46,-4)"><g id="' + ID + '-pie-spark" opacity="0">' + KIT.star(0, 0, 22, "#FFFFFF") + KIT.star(0, 0, 12, C.yellow) + "</g></g></g>";
+        var mouth = "";
+        return legs + arms + '<path d="' + polyD(rim) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="10"/>' + out + shade +
+          line("M0,0 L0,-100 M0,0 L86.6,50 M0,0 L-86.6,50", ink, 4) + eyes + glasses + mouth +
+          lab(0, 56, -44, ink) + lab(1, 0, 64, ink) + lab(2, -56, -44, C.cream);
+      })();
+      var pie = g("pie", g("pie-tilt", PIE));
+
+      // ── Assemble the art (back to front) ───────────────────────────────
+      var floor = '<rect x="46" y="' + L.floor + '" width="' + (W - 92) + '" height="' + (H - 46 - L.floor) + '" fill="url(#' + ID + '-a-fine)" opacity="0.16"/>' +
+        '<path d="M46,' + L.floor + " H" + (W - 46) + '" stroke="' + ink + '" stroke-width="4"/>';
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID + "-a") + floor + bursts + humansSvg + rings + g("knot", knot) + bubbles + scribbles + billsSvg + passer + streaks + pie);
+
+      // ── The step card (storyboard: Shared drawings) ────────────────────
+      // A strip of the sacred scroll: cream paper between two rolls, STEP 2 in Fraunces and the heading in Oswald.
+      // It unrolls on "Step", rolls up after "Humans", and the rolled scroll drops into the STEP 2 tab top left.
+      function roll(x, y0, y1) {
+        var r = [[x - 13, y0 - 6], [x - 9, y0 - 11], [x + 9, y0 - 11], [x + 13, y0 - 6], [x + 13, y1 + 6], [x + 9, y1 + 11], [x - 9, y1 + 11], [x - 13, y1 + 6]];
+        return solid([poly(r)], WHITE) + line("M" + (x + 6) + "," + (y0 - 5) + " V" + (y1 + 5), C.orange, 2) + line("M" + (x - 12) + "," + (y0 - 2) + " H" + (x + 12) + " M" + (x - 12) + "," + (y1 + 2) + " H" + (x + 12), ink, 1.6);
+      }
+      function strip(cid, c, text) {
+        var x0 = c[0], x1 = c[1], y0 = c[2], y1 = c[3];
+        var paper = [[x0, y0], [x1, y0], [x1, y1], [x0, y1]];
+        return '<defs><clipPath id="' + ID + "-" + cid + '"><rect id="' + ID + "-" + cid + '-r" x="' + x0 + '" y="' + (y0 - 14) + '" width="0" height="' + (y1 - y0 + 28) + '"/></clipPath></defs>' +
+          '<rect x="' + (x0 + 12) + '" y="' + (y0 + 12) + '" width="' + (x1 - x0) + '" height="' + (y1 - y0) + '" fill="' + C.ink + '" opacity="0.8" clip-path="url(#' + ID + "-" + cid + ')"/>' +
+          '<g clip-path="url(#' + ID + "-" + cid + ')">' + solid([poly(paper)], WHITE, 5) +
+          '<rect x="' + (x1 - (x1 - x0) * 0.32) + '" y="' + y0 + '" width="' + (x1 - x0) * 0.32 + '" height="' + (y1 - y0) + '" fill="url(#' + ID + '-a-fine)" opacity="0.18"/>' + text + "</g>" +
+          roll(x0, y0, y1) + g(cid + "-roll", roll(x0, y0, y1));
+      }
+      var cd = L.card, tb = L.tab;
+      var cardText = V
+        ? '<text x="' + (cd[0] + 44) + '" y="' + (cd[2] + 84) + '" font-family="Fraunces" font-weight="900" font-size="70" fill="' + ink + '">STEP 2</text>' +
+          line("M" + (cd[0] + 44) + "," + (cd[2] + 104) + " H" + (cd[1] - 44), C.orange, 3) +
+          ["GIVE SOME OF THE", "PAPERS TO", "LOUD HUMANS"].map(function (t, k) {
+            return '<text x="' + (cd[0] + 44) + '" y="' + (cd[2] + 154 + k * 50) + '" font-family="Oswald" font-weight="600" font-size="46" letter-spacing="1.5" fill="' + ink + '">' + t + "</text>";
+          }).join("")
+        : '<text x="' + (cd[0] + 44) + '" y="' + (cd[2] + 92) + '" font-family="Fraunces" font-weight="900" font-size="76" fill="' + ink + '">STEP 2</text>' +
+          line("M" + (cd[0] + 336) + "," + (cd[2] + 28) + " V" + (cd[3] - 28), C.orange, 3) +
+          '<text x="' + (cd[0] + 366) + '" y="' + (cd[2] + 84) + '" font-family="Oswald" font-weight="600" font-size="50" letter-spacing="1.5" fill="' + ink + '">GIVE SOME OF THE PAPERS TO LOUD HUMANS</text>';
+      var tabText = '<text x="' + (tb[0] + tb[1]) / 2 + '" y="' + (tb[3] - 18) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="40" fill="' + ink + '">STEP 2</text>';
+      q("card").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID + "-c") + g("card-all", strip("cc", cd, cardText)) + g("tab", strip("tc", tb, tabText), 'opacity="0"'));
+
+      // ── Timeline ───────────────────────────────────────────────────────
+      var tl = gsap.timeline({ paused: true });
+      var WISPS = []; // smoke wisps: rise and fade on a loop from t0 (placed every frame)
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      // The card: unrolls on "Step" (whoosh), rolls up after "Humans" and drops into its tab.
+      var cw = cd[1] - cd[0], tw = tb[1] - tb[0];
+      tl.fromTo(q("cc-r"), { attr: { width: 0 } }, { attr: { width: cw + 16 }, duration: 0.5, ease: "power2.out" }, T.step + 0.05);
+      tl.fromTo(q("cc-roll"), { x: 0 }, { x: cw, duration: 0.5, ease: "power2.out" }, T.step + 0.05);
+      tl.to(q("cc-r"), { attr: { width: 0 }, duration: 0.3, ease: "power2.in" }, T.roll);
+      tl.to(q("cc-roll"), { x: 0, duration: 0.3, ease: "power2.in" }, T.roll);
+      var ca = q("card-all");
+      pivot(ca, cd[0] + " " + cd[2]);
+      tl.to(ca, { x: tb[0] - cd[0], y: tb[2] - cd[2], scale: (tb[3] - tb[2]) / (cd[3] - cd[2]), duration: 0.26, ease: "power2.inOut" }, T.roll + 0.3);
+      tl.set(ca, { opacity: 0 }, T.roll + 0.56);
+      tl.set(q("tab"), { opacity: 1 }, T.roll + 0.56);
+      tl.fromTo(q("tc-r"), { attr: { width: 0 } }, { attr: { width: tw + 16 }, duration: 0.24, ease: "power2.out" }, T.roll + 0.56);
+      tl.fromTo(q("tc-roll"), { x: 0 }, { x: tw, duration: 0.24, ease: "power2.out" }, T.roll + 0.56);
+
+      // The Loud Humans.
+      var BUB = [[0, 0], [1, 0.06], [2, 0.12], [3, 0.18], [0, 0.3], [1, 0.36], [2, 0.42], [3, 0.48]]; // [speaker, offset after "loud"]
+      var FLY = 0.3;
+      L.hum.forEach(function (h, i) {
+        var j = q("h" + i + "-j"), flip = q("h" + i + "-flip"), rg = RIG[i];
+        var v = function (c) { return flip.querySelector(".lh-" + c); };
+        var type = v("type"), shout = v("shout"), reach = v("reach"), front = v("front");
+        var neck = "0 " + rg.neck[1].toFixed(1), hy = rg.hy;
+        pivot(j, "0 100");
+        pivot(flip, "0 100");
+        if (h[3] < 0) gsap.set(flip, { scaleX: -1 });
+        // typing: the megaphone nods at the screen, the cursor blinks
+        var th = type.querySelector(".head");
+        pivot(th, neck);
+        tl.fromTo(th, { rotation: 14 }, { rotation: 22, duration: 0.11, repeat: Math.floor((T.loud - 0.11) / 0.11) - 1, yoyo: true, ease: "sine.inOut" }, 0.05 + i * 0.03);
+        // "loud": they whip round and shout at each other; each bubble fired jolts the megaphone (squawk)
+        tl.set(type, { opacity: 0 }, T.loud);
+        tl.set(shout, { opacity: 1 }, T.loud);
+        var sh = shout.querySelector(".head"), fist = shout.querySelector(".arm-l");
+        pivot(sh, neck);
+        pivot(fist, KIT.rig(opts(i, "shout")).shoulder[0].join(" "));
+        tl.fromTo(fist, { rotation: -10 }, { rotation: 12, duration: 0.09, repeat: Math.floor((T.ifw - T.loud) / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, T.loud);
+        var shots = BUB.filter(function (b) { return b[0] === i; }).map(function (b) { return T.loud + b[1]; }).concat([T.net + 0.25 + i * 0.07, T.net + 0.6 + i * 0.05]);
+        shots.forEach(function (t) {
+          tl.to(sh, { scale: 1.22, rotation: -9, duration: 0.05, ease: "power2.out" }, t);
+          tl.to(sh, { scale: 1, rotation: 0, duration: 0.14, ease: "back.out(3)" }, t + 0.05);
+          tl.to(j, { scaleY: 1.05, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out" }, t);
+        });
+        // "If": every megaphone snaps round to the papers coming in from the left
+        tl.set(shout, { opacity: 0 }, T.ifw);
+        tl.set(reach, { opacity: 1 }, T.ifw);
+        if (h[3] > 0) tl.fromTo(flip, { scaleX: 1 }, { scaleX: -1, duration: 0.12, ease: "power2.inOut" }, T.ifw);
+        tl.to(j, { rotation: -4, duration: 0.12, yoyo: true, repeat: 1 }, T.ifw);
+        // the paper meant for it dives into the bell (gulp), then it breathes in, rising on its toes
+        var rh = reach.querySelector(".head"), hop = HOP.filter(function (o) { return o.h === i; })[0];
+        pivot(rh, neck);
+        tl.fromTo(rh, { scaleX: 1, scaleY: 1 }, { scaleX: 0.84, scaleY: 1.32, duration: 0.07, ease: "power2.out", immediateRender: false }, hop.L);
+        tl.to(rh, { scaleX: 1, scaleY: 1, duration: 0.22, ease: "back.out(3)" }, hop.L + 0.07);
+        tl.to(rh, { scaleX: 1.16, scaleY: 1.16, duration: T.your - hop.L - 0.4, ease: "sine.inOut" }, hop.L + 0.35);
+        tl.to(j, { y: -5, duration: T.your - hop.L - 0.4, ease: "sine.inOut" }, hop.L + 0.35);
+        // "your": the megaphone swings round to the camera (whoosh)
+        tl.to(rh, { scaleX: 0, duration: 0.09, ease: "power2.in" }, T.your);
+        tl.set(reach, { opacity: 0 }, T.your + 0.09);
+        tl.set(front, { opacity: 1 }, T.your + 0.09);
+        var fh = front.querySelector(".head");
+        pivot(fh, "0 " + (hy + 2).toFixed(1));
+        tl.fromTo(fh, { scaleX: 0, scaleY: 1.16 }, { scaleX: 1.16, scaleY: 1.16, duration: 0.12, ease: "back.out(2)", immediateRender: false }, T.your + 0.09);
+        // "thing": BLAST (boom). The bell kicks with every shockwave; the body shudders and squashes.
+        tl.to(fh, { scale: 1.45, duration: 0.05, ease: "power3.out" }, T.thing);
+        tl.to(fh, { scale: 1.1, duration: 0.2, ease: "power2.out" }, T.thing + 0.05);
+        for (var k = 1; k < RINGS; k++) tl.to(fh, { scale: 1.24, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.out" }, T.thing + k * ringGap);
+        tl.to(fh, { scale: 1, duration: 0.3, ease: "power2.out" }, T.calm);
+        tl.to(j, { y: 0, scaleY: 0.9, duration: 0.05, ease: "power2.out" }, T.thing);
+        tl.to(j, { scaleY: 1, duration: 0.25, ease: "back.out(3)" }, T.thing + 0.05);
+        tl.fromTo(j, { x: 0 }, { x: 1.8, duration: 0.04, repeat: Math.floor((T.calm - T.thing) / 0.04) - 1, yoyo: true, ease: "none", immediateRender: false }, T.thing);
+        tl.to(j, { x: 0, duration: 0.05 }, T.calm);
+        // the burst behind the bell: it bursts out, kicks with each shockwave and spins a little, then is gone
+        var bu = q("burst" + i);
+        pivot(bu, "0 0");
+        tl.set(bu, { opacity: 1, scale: 0.25, rotation: 0 }, T.thing);
+        tl.to(bu, { scale: 1.12, rotation: 6, duration: 0.09, ease: "power3.out" }, T.thing);
+        for (var kb = 1; kb < RINGS; kb++) tl.to(bu, { scale: kb % 2 ? 0.9 : 1.08, rotation: 6 + kb * 5, duration: ringGap, ease: "sine.inOut" }, T.thing + 0.09 + (kb - 1) * ringGap);
+        tl.to(bu, { scale: 0.2, opacity: 0, duration: 0.25, ease: "power2.in" }, T.calm - 0.1);
+        // the rings
+        for (var r = 0; r < RINGS; r++) {
+          var ring = q("ring" + i + "-" + r), tr = T.thing + r * ringGap;
+          pivot(ring, "0 0");
+          // the set comes first, so a seek back before tr hides the ring again
+          tl.set(ring, { scale: 0.9, opacity: 0.95 }, tr);
+          tl.to(ring, { scale: V ? 9 : 11, opacity: 0, duration: 0.6, ease: "power1.out" }, tr);
+        }
+        // the spent megaphone smokes
+        var smoke = front.querySelector(".lh-smoke");
+        tl.set(smoke, { opacity: 1 }, T.calm);
+        smoke.querySelectorAll(".lh-wisp").forEach(function (wsp, n) { WISPS.push({ el: wsp, t0: T.calm + n * 0.33 + i * 0.1, rise: 30, per: 1.1 }); });
+        // the laptop: the cursor blinks until the blast, then the screen shows the teal pill bottle
+        var cur = q("scrA" + i).querySelector(".lh-cursor");
+        tl.fromTo(cur, { opacity: 1 }, { opacity: 0, duration: 0.01, repeat: Math.floor(T.thing / 0.25) - 1, repeatDelay: 0.24, yoyo: true }, 0.2 + i * 0.05);
+        tl.set(q("scrA" + i), { opacity: 0 }, T.thing);
+        tl.set(q("scrB" + i), { opacity: 1 }, T.thing);
+        pivot(q("scrB" + i), "0 -26");
+        tl.fromTo(q("scrB" + i), { scale: 0.6 }, { scale: 1, duration: 0.2, ease: "back.out(3)", immediateRender: false }, T.thing);
+      });
+      // the frame shakes on the blast, then rumbles while it lasts
+      var shake = q("shake");
+      tl.fromTo(shake, { x: 0, y: 0 }, { x: 16, y: -8, duration: 0.035, repeat: 11, yoyo: true, ease: "none", immediateRender: false }, T.thing);
+      tl.to(shake, { x: 4, y: 2, duration: 0.04, repeat: Math.floor((T.calm - T.thing - 0.45) / 0.04) - 1, yoyo: true, ease: "none" }, T.thing + 0.42);
+      tl.to(shake, { x: 0, y: 0, duration: 0.05 }, T.calm);
+
+      // the knot draws on with the tangle (scratch)
+      tl.fromTo(q("knot-p"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.45, ease: "power1.inOut" }, T.net);
+      // on the blast every bubble gets a teal pill bottle
+      for (var b = 0; b < 8; b++) {
+        var pill = q("b" + b + "-pill");
+        pivot(pill, "0 0");
+        tl.fromTo(pill, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(3)", immediateRender: false }, T.thing + 0.04 + b * 0.025);
+      }
+
+      // The pie chart: labels pop on "lying"; after "graphics." it lowers its sunglasses, winks, and the lens sparkles.
+      [0, 1, 2].forEach(function (k) {
+        var lab = q("lab" + k), xy = [[56, -44], [0, 64], [-56, -44]][k];
+        pivot(lab, xy[0] + " " + xy[1]);
+        tl.fromTo(lab, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(3)", immediateRender: false }, T.lying + k * 0.14);
+      });
+      var gl = q("pie-glasses");
+      pivot(gl, "0 -10");
+      tl.to(gl, { y: 31, rotation: -5, duration: 0.2, ease: "power2.out" }, T.wink - 0.12);
+      var wink = q("pie-eyes").querySelector(".pie-wink"), eyeR = q("pie-eyes").querySelector(".pie-eye-r");
+      tl.set(eyeR, { opacity: 0 }, T.wink + 0.12);
+      tl.set(wink, { opacity: 1 }, T.wink + 0.12);
+      tl.set(eyeR, { opacity: 1 }, T.wink + 0.75);
+      tl.set(wink, { opacity: 0 }, T.wink + 0.75);
+      var spark = q("pie-spark");
+      pivot(spark, "0 0");
+      tl.fromTo(spark, { opacity: 0, scale: 0, rotation: -60 }, { opacity: 1, scale: 1.2, rotation: 0, duration: 0.18, ease: "back.out(3)", immediateRender: false }, T.wink);
+      tl.to(spark, { scale: 0.8, duration: 0.2, yoyo: true, repeat: 1, ease: "sine.inOut" }, T.wink + 0.18);
+      tl.to(spark, { scale: 0, opacity: 0, duration: 0.2, ease: "power2.in" }, T.wink + 0.6);
+
+      // ── Everything that travels, placed every frame ─────────────────────
+      var bubEl = [], conEl = [], billEl = [], stEl = [];
+      for (var n = 0; n < 8; n++) { bubEl.push(q("b" + n)); conEl.push(q("c" + n)); }
+      BILLS.forEach(function (bb, k) { var e = q("bill" + k); billEl.push({ g: e, a: e.querySelector(".bill-a"), b: e.querySelector(".bill-b"), sp: e.querySelector(".bill-speed") }); });
+      for (var m = 0; m < NS; m++) stEl.push(q("st" + m));
+      var knotG = q("knot");
+      // each bubble: fired from its speaker toward the other in its pair, then into the pile, then onto the row
+      var pairOf = [1, 0, 3, 2];
+      var BS = L.bs;
+      var PILE = [[-190, -34, -14], [-62, -64, 11], [72, -44, -8], [196, -22, 16], [-128, 46, 9], [6, 28, -19], [138, 52, 12], [-30, -6, 5]];
+      var KICK = [[-90, -60, -50], [-30, -110, 40], [40, -100, -30], [110, -50, 60], [-110, 40, 35], [-10, 70, -45], [90, 60, 25], [-50, 0, -60]];
+      var bubbleInfo = BUB.map(function (bb, k) {
+        var src = bb[0], tgt = pairOf[src], fire = T.loud + bb[1], face = L.hum[src][3];
+        var top = onHuman(tgt, 0, RIG[tgt].hy - 40, 1);
+        var p = [L.pile[0] + PILE[k][0] * L.pileK, L.pile[1] + PILE[k][1] * L.pileK, PILE[k][2]];
+        return { from: bell(src, face), to: [top[0] + (k % 3 - 1) * 30, top[1] - 70 * BS], fire: fire, land: fire + FLY, gather: Math.max(T.net + k * 0.03, fire + FLY), pile: p, row: L.row(k) };
+      });
+      function bubbleAt(k, t) {
+        var o = bubbleInfo[k];
+        if (t < o.fire) return null;
+        var x, y, s = BS, r = 0;
+        if (t < o.land) {
+          var u = (t - o.fire) / FLY, e = easeOut(u);
+          x = lerp(o.from[0], o.to[0], e); y = lerp(o.from[1], o.to[1], e) - 90 * BS * Math.sin(Math.PI * u); s = BS * (0.25 + 0.75 * clamp(u * 1.6)); r = (o.to[0] > o.from[0] ? 1 : -1) * 20 * (1 - u);
+        } else if (t < o.gather) {
+          x = o.to[0]; y = o.to[1];
+        } else if (t < T.thing) {
+          var g2 = backOut((t - o.gather) / 0.32), jit = t > o.gather + 0.32 ? Math.sin((t + k) * 26) * 3 : 0;
+          x = lerp(o.to[0], o.pile[0], g2); y = lerp(o.to[1], o.pile[1], g2); r = o.pile[2] * g2 + jit; s = BS * lerp(1, 1, g2);
+        } else {
+          var u2 = backOut((t - T.thing - 0.02 * k) / 0.36), bob = t > T.thing + 0.5 ? Math.sin((t - T.thing) * Math.PI * 2 / 1.1) * 6 * BS : 0;
+          x = lerp(o.pile[0], o.row[0], u2); y = lerp(o.pile[1], o.row[1], u2) + bob; r = lerp(o.pile[2], 0, u2); s = lerp(BS, L.rowS, u2);
+        }
+        return [x, y, s, r];
+      }
+      // a scribble rides in its bubble until the blast knocks it out; it flutters, and on "other" blows off left
+      function scribbleAt(k, t) {
+        var b = bubbleAt(k, Math.min(t, T.thing - 0.001));
+        if (!b) return null;
+        if (t < T.thing) return b;
+        var o = bubbleInfo[k], kk = KICK[k], u = easeOut((t - T.thing) / 0.3), sc2 = L.pileK;
+        var x = o.pile[0] + kk[0] * u * sc2 - 40 * (t - T.thing), y = o.pile[1] + kk[1] * u * sc2 + Math.sin((t - T.thing) * 7 + k) * 8, r = o.pile[2] + kk[2] * u + Math.sin((t - T.thing) * 5 + k) * 8;
+        if (t > T.other) {
+          var w = t - T.other - k * 0.03;
+          if (w > 0) { x -= 900 * w * w + 700 * w; y += Math.sin(w * 9 + k * 1.7) * 60 * Math.min(1, w * 3) - 80 * w; r -= 540 * w; }
+        }
+        return [x, y, b[2], r];
+      }
+      function knotAt(t) {
+        var x = L.pile[0], y = L.pile[1], r = 0;
+        if (t < T.thing && t > T.net + 0.5) r = Math.sin(t * 22) * 1.5;
+        if (t > T.thing) { var u = t - T.thing; x -= 30 * u; y += Math.sin(u * 6) * 6; r = Math.sin(u * 4) * 4; }
+        if (t > T.other) { var w = t - T.other - 0.1; if (w > 0) { x -= 1100 * w * w + 800 * w; y -= 60 * w; r -= 200 * w; } }
+        return [x, y, L.pileK, r];
+      }
+      function billAt(k, t) {
+        var o = HOP[k], s = L.billS;
+        if (t < o.T) {
+          var x = -80 + L.v * (t - t0) - k * L.gap;
+          if (x < -160) return null;
+          return { x: x, y: laneC - Math.abs(Math.sin(t * 34)) * 6, s: s, r: 0, run: true };
+        }
+        if (t < o.L) {
+          var u = (t - o.T) / o.d;
+          return { x: lerp(o.X, o.to[0], u), y: lerp(laneC, o.to[1], u) - o.arc * 4 * u * (1 - u), s: s * (u < 0.7 ? 1 : 1 - 0.75 * (u - 0.7) / 0.3), r: 330 * smooth(u), run: false };
+        }
+        return null;
+      }
+      // the passing human: strolls in, is shoved back by the blast, leans into it, and on "things." leaves his shoes
+      var pas = q("pas"), pWalk = q("pas-walk"), pBrace = q("pas-brace"), pFly = q("pas-fly"), shoesG = q("shoes");
+      var PS = L.passer;
+      var legL = pWalk.querySelector(".leg-l"), legR = pWalk.querySelector(".leg-r");
+      var hipL = PR.hip[0], hipR = PR.hip[1];
+      function passerAt(t) {
+        if (t < T.walkIn) return null;
+        var x, y = L.lane - 100 * PS.s, r = 0, mode = "walk", swing = 0;
+        if (t < T.thing) {
+          var u = (t - T.walkIn) / (T.thing - T.walkIn);
+          x = lerp(PS.x0, PS.x1, u); y += -Math.abs(Math.sin(t * 14)) * 5; swing = Math.sin(t * 14) * 22;
+        } else if (t < T.things) {
+          var b2 = t - T.thing;
+          x = PS.x1 - 34 * Math.exp(-5 * b2) * Math.sin(Math.min(b2, 0.3) / 0.3 * Math.PI / 2) + (PS.x2 - PS.x1) * smooth((b2 - 0.3) / (T.things - T.thing - 0.3));
+          r = 14 * smooth(b2 / 0.25) + Math.sin(b2 * 40) * 1.5; mode = "brace";
+        } else {
+          var f = t - T.things;
+          x = PS.x2 - 760 * f - 400 * f * f; y = L.lane - 100 * PS.s - 1500 * f + 300 * f * f; r = -820 * f; mode = "fly";
+        }
+        return { x: x, y: y, r: r, mode: mode, swing: swing };
+      }
+      var shoesAt = passerAt(T.things - 0.001);
+      shoesG.setAttribute("transform", "translate(" + P(shoesAt.x, L.lane - 100 * PS.s) + ") scale(" + PS.s + ")");
+      tl.set(shoesG, { opacity: 1 }, T.things);
+      shoesG.querySelectorAll(".shoe-wisp").forEach(function (wsp, n) { WISPS.push({ el: wsp, t0: T.things + 0.05 + n * 0.3, rise: 26, per: 0.9 }); });
+      // the pie chart struts in on "marketing", hips first, and stops center front, one hip cocked
+      var pieG = q("pie"), pieTilt = q("pie-tilt"), pieLegs = pieG.querySelectorAll(".pie-leg"), PI_ = L.pie;
+      var strut0 = T.mkt - 0.25, strut1 = T.lying - 0.12;
+      function pieAt(t) {
+        if (t < strut0) return null;
+        var u = clamp((t - strut0) / (strut1 - strut0)), x = lerp(PI_.x0, PI_.x1, 1 - Math.pow(1 - u, 1.6)), walking = u < 1;
+        var ph = (t - strut0) / 0.21 * Math.PI, bounce = walking ? -Math.abs(Math.sin(ph)) * 16 : 0;
+        var tilt = walking ? Math.sin(ph) * 7 : 6 * smooth((t - strut1) / 0.2);
+        return { x: x, y: L.lane - 172 * PI_.s + bounce * PI_.s, tilt: tilt, leg: walking ? Math.sin(ph) * 26 : 0 };
+      }
+
+      KIT.onTime(tl, D, function (t) {
+        for (var k = 0; k < 8; k++) {
+          var b = bubbleAt(k, t), c = scribbleAt(k, t);
+          show(bubEl[k], !!b); if (b) place(bubEl[k], b[0], b[1], b[2], b[3]);
+          show(conEl[k], !!c && c[0] > -300); if (c) place(conEl[k], c[0], c[1], c[2], c[3]);
+        }
+        var kn = knotAt(t);
+        place(knotG, kn[0], kn[1], kn[2], kn[3]);
+        show(knotG, t >= T.net && kn[0] > -400);
+        HOP.forEach(function (o, k) {
+          var e = billEl[k], bb = billAt(k, t);
+          show(e.g, !!bb);
+          if (!bb) return;
+          place(e.g, bb.x, bb.y, bb.s, bb.r);
+          var stride = Math.floor(t / 0.06) % 2;
+          show(e.a, !bb.run || stride === 0); show(e.b, bb.run && stride === 1); show(e.sp, bb.run);
+        });
+        var p = passerAt(t);
+        show(pas, !!p);
+        if (p) {
+          pas.setAttribute("transform", "translate(" + P(p.x, p.y) + ") scale(" + PS.s + ") rotate(" + p.r.toFixed(2) + " 0 " + (p.mode === "fly" ? 0 : 100) + ")");
+          show(pWalk, p.mode === "walk"); show(pBrace, p.mode === "brace"); show(pFly, p.mode === "fly");
+          legL.setAttribute("transform", "rotate(" + p.swing.toFixed(2) + " " + P(hipL[0], hipL[1]) + ")");
+          legR.setAttribute("transform", "rotate(" + (-p.swing).toFixed(2) + " " + P(hipR[0], hipR[1]) + ")");
+        }
+        // the wind during the blast
+        var windOn = t >= T.thing && t < T.calm + 0.2;
+        STREAKS.forEach(function (st, k) {
+          show(stEl[k], windOn);
+          if (windOn) stEl[k].setAttribute("transform", "translate(" + P((((st.x - st.v * (t - T.thing)) % (W + 400)) + W + 400) % (W + 400) - 200, st.y) + ")");
+        });
+        WISPS.forEach(function (w) {
+          var ph = t < w.t0 ? -1 : ((t - w.t0) % w.per) / w.per;
+          w.el.setAttribute("transform", "translate(0," + (ph < 0 ? 0 : -w.rise * ph).toFixed(1) + ")");
+          w.el.setAttribute("opacity", ph < 0 ? "0" : Math.sin(Math.PI * ph).toFixed(2));
+        });
+        var pc = pieAt(t);
+        show(pieG, !!pc);
+        if (pc) {
+          pieG.setAttribute("transform", "translate(" + P(pc.x, pc.y) + ") scale(" + PI_.s + ")");
+          pieTilt.setAttribute("transform", "rotate(" + pc.tilt.toFixed(2) + " 0 172)");
+          pieLegs.forEach(function (lg) { var sx = +lg.getAttribute("data-sx"); lg.setAttribute("transform", "rotate(" + (sx * pc.leg).toFixed(2) + " " + 32 * sx + " 88)"); });
+        }
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

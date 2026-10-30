@@ -1,0 +1,155 @@
+<template id="buy-food-template">
+  <!-- buy-food · style test "modern limited animation" (compositions/scenes/style-modern/STYLE.md).
+       "People use papers to buy food (which grows for free)": a cyan field and one navy ground line. Two shots,
+       one idea each. The trade: the charred father (hard hat, the paper held out) faces a farmer holding out a loaf;
+       on "buy" they snap: the father hugs the loaf, the farmer holds the paper up, smug. On "(which" a hard cut in to
+       the farmer and the bare ground beside him (the same picture, bigger; the father is out of it). On "grows" a
+       wheat stalk shoots up there by itself, then two more. On "free)." the farmer turns and slaps a big price tag
+       on it, and that holds. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    #buy-food-weave, #buy-food-cam, #buy-food-art, #buy-food-film { position: absolute; inset: 0; }
+    #buy-food-field { position: absolute; inset: -800px; }
+    #buy-food-field { background: #7FB5B0; }
+  </style>
+  <div id="root" data-composition-id="buy-food" data-width="1920" data-height="1080" data-start="0" data-duration="4.08">
+    <div id="buy-food-weave">
+      <div id="buy-food-cam">
+        <div id="buy-food-field"></div>
+        <div id="buy-food-art"></div>
+      </div>
+    </div>
+    <div id="buy-food-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "buy-food";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var after = function (w, n) { return KIT.after(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      if (V) q("weave").parentNode.classList.add("tall");
+      var tl = gsap.timeline({ paused: true });
+
+      // ── The period film (the same block in every style-modern scene) ──────────
+      // Over the picture and outside the camera: a cream wash (the faded print), a soft vignette the shape of the frame, the grain, a
+      // frame-by-frame flicker and a few specks of dust. Under it, the gate weave: the picture drifts a pixel or two.
+      function film() {
+        var dust = [0, 1, 2].map(function (i) { return '<ellipse id="' + ID + "-dust" + i + '" rx="2" ry="1.4" fill="#1A1410" opacity="0"/>'; }).join("");
+        q("film").innerHTML = KIT.svg(W, H,
+          '<defs><radialGradient id="' + ID + '-vig" cx="0.5" cy="0.48" r="0.72"><stop offset="0.5" stop-color="#140F0A" stop-opacity="0"/><stop offset="0.8" stop-color="#140F0A" stop-opacity="0.12"/><stop offset="1" stop-color="#140F0A" stop-opacity="0.5"/></radialGradient></defs>' +
+          '<rect width="' + W + '" height="' + H + '" fill="' + C.cream + '" opacity="0.07"/>' +
+          '<rect width="' + W + '" height="' + H + '" fill="url(#' + ID + '-vig)"/>' + KIT.grain(ID) + dust +
+          '<rect id="' + ID + '-flick" width="' + W + '" height="' + H + '" fill="#FFF6DD" opacity="0"/>');
+        var flick = document.getElementById(ID + "-flick"), weave = q("weave");
+        var specks = [0, 1, 2].map(function (i) { return document.getElementById(ID + "-dust" + i); });
+        KIT.onTime(tl, D, function (t) {
+          var f = Math.floor((sc.start + t) * 24), r = KIT.rng(f * 7919 + 17);
+          r(); r();
+          flick.setAttribute("opacity", (0.01 + r() * 0.035).toFixed(3));
+          weave.style.transform = "translate(" + (Math.sin(f * 0.83) * 0.9 + (r() - 0.5) * 0.8).toFixed(2) + "px," + (Math.sin(f * 0.29) * 1.4 + (r() - 0.5) * 0.6).toFixed(2) + "px)";
+          specks.forEach(function (s) {
+            s.setAttribute("opacity", r() < 0.16 ? "0.45" : "0");
+            s.setAttribute("cx", (r() * W).toFixed(0));
+            s.setAttribute("cy", (r() * H).toFixed(0));
+            s.setAttribute("rx", (1.4 + r() * 2.4).toFixed(1));
+          });
+        });
+      }
+      film();
+
+      // ── The family's father (the same options in jobs, buy-food and killed) ──
+      var DAD = { tone: 1, outfit: "shirt", color: 1 };
+      var FARMER = { tone: 0, outfit: "overalls", color: 0 };
+      function opts(base, extra) { var o = {}, k; for (k in base) o[k] = base[k]; for (k in extra || {}) o[k] = extra[k]; return o; }
+      function hardHat(o) {
+        var r = KIT.rig(o), x = r.top[0], y = r.top[1] + 5 * r.hs, k = r.hs;
+        return '<g transform="translate(' + x.toFixed(1) + "," + y.toFixed(1) + ") scale(" + k.toFixed(3) + ')">' +
+          '<path d="M-21,0 Q-21,-24 0,-25 Q21,-24 21,0 Z" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
+          '<path d="M-28,0 H28 L26,5 H-26 Z" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="2.4" stroke-linejoin="round"/>' +
+          '<path d="M0,-24 V-2" stroke="' + C.line + '" stroke-width="2"/></g>';
+      }
+      // A loaf (around its center, about 44 x 20 in person units) and a blank price tag on a string.
+      function loaf() {
+        return '<path d="M-22,6 Q-24,-9 -8,-11 Q6,-13 18,-8 Q25,-4 22,7 Z" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="2.4" stroke-linejoin="round"/>' +
+          '<path d="M-12,-6 l5,8 M-2,-8 l5,8 M8,-8 l5,8" stroke="' + C.cream + '" stroke-width="2.2" stroke-linecap="round"/>';
+      }
+      function tag() {
+        return '<path d="M0,0 L6,16" stroke="' + C.line + '" stroke-width="1.6"/>' +
+          '<path d="M-4,16 L12,12 L20,42 L4,46 Z" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="2.2" stroke-linejoin="round"/>' +
+          '<circle cx="5.5" cy="19" r="2" fill="' + C.line + '"/><path d="M7,28 L14,26 M8,34 L13,33" stroke="' + C.line + '" stroke-width="2.2" stroke-linecap="round"/>';
+      }
+      // A wheat stalk standing on (0,0), h tall: a stem with a head of grains (person units).
+      function wheat(h) {
+        var g = "";
+        for (var i = 0; i < 6; i++) {
+          var y = -h + 8 + i * 9;
+          g += '<path d="M0,' + y + " q-10,-6 -9,-15 q8,3 9,15 Z M0," + (y + 4) + ' q10,-6 9,-15 q-8,3 -9,15 Z" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1.8" stroke-linejoin="round"/>';
+        }
+        return '<path d="M0,0 V' + (-h + 4) + '" stroke="' + C.line + '" stroke-width="5"/><path d="M0,0 V' + (-h + 4) + '" stroke="' + C.yellow + '" stroke-width="2.2"/>' + g +
+          '<path d="M0,' + (-h + 4) + " l-3,-14 M0," + (-h + 4) + ' l3,-14" stroke="' + C.line + '" stroke-width="1.6"/>';
+      }
+
+      // Stage: the ground line at G.y, the father and the farmer facing each other, the wheat beside the farmer.
+      var G = V ? { y: 1330, s: 2.75, dad: 185, farmer: 600, wheat: [820, 895, 965] } : { y: 860, s: 2.9, dad: 610, farmer: 1150, wheat: [1370, 1460, 1545] };
+      var HAND = [[-12, -4], [40, 100]], HUG = [[30, 100], [-30, -100]];
+      var dadA = opts(DAD, { charred: true, arms: HAND }), dadB = opts(DAD, { charred: true, arms: HUG });
+      var fA = opts(FARMER, { look: "left", arms: [[-40, -95], [12, 4]], mood: "smile" });
+      var fB = opts(FARMER, { look: "left", arms: [[-150, -175], [12, 4]], mood: "smug" });
+      var fC = opts(FARMER, { look: "right", arms: [[-12, -4], [55, 100]], mood: "smug" });
+      function placed(x, inner) { return '<g transform="translate(' + x + "," + (G.y - 100 * G.s) + ") scale(" + G.s + ')">' + inner + "</g>"; }
+      var hA = KIT.rig(dadA).hand[1], hB = KIT.rig(dadB).hand, fa = KIT.rig(fA).hand[0], fb = KIT.rig(fB).hand[0], fc = KIT.rig(fC).hand;
+      var dadSvg = function (o, extra) { return KIT.person(o) + hardHat(o) + extra; };
+      var paperIn = function (h, s) { return '<g transform="translate(' + h[0].toFixed(1) + "," + (h[1] - 14).toFixed(1) + ") scale(" + s + ')">' + KIT.money("war", 0) + "</g>"; };
+      var loafAt = function (x, y, s) { return '<g transform="translate(' + x.toFixed(1) + "," + y.toFixed(1) + ") scale(" + s + ')">' + loaf() + "</g>"; };
+      // the wheat stalks: each in its own group, standing on the ground line (person y 100), grown by scaleY from it
+      var stalks = G.wheat.map(function (x, i) {
+        var h = [132, 110, 120][i];
+        return placed(x, '<g transform="translate(0,100)"><g id="' + ID + "-wheat-" + i + '" opacity="0">' + wheat(h) + (i === 0 ? '<g id="' + ID + '-tag" opacity="0" transform="translate(0,' + (-h + 50) + ') scale(1.45)">' + tag() + "</g>" : "") + "</g></g>");
+      }).join("");
+      q("art").innerHTML = KIT.svg(W, H,
+        '<path d="M-900,' + G.y + " H" + (W + 900) + '" stroke="' + C.navy + '" stroke-width="6"/>' + stalks +
+        placed(G.dad, '<g id="' + ID + '-dadA">' + dadSvg(dadA, paperIn(hA, 0.42)) + '</g><g id="' + ID + '-dadB" opacity="0">' + dadSvg(dadB, loafAt((hB[0][0] + hB[1][0]) / 2, (hB[0][1] + hB[1][1]) / 2 - 4, 1.1)) + "</g>") +
+        placed(G.farmer, '<g id="' + ID + '-fA">' + KIT.person(fA) + loafAt(fa[0] - 4, fa[1] - 6, 1) + '</g><g id="' + ID + '-fB" opacity="0">' + KIT.person(fB) + paperIn(fb, 0.42) + '</g><g id="' + ID + '-fC" opacity="0">' + KIT.person(fC) + paperIn(fc[0], 0.36) + "</g>"), 'style="overflow:visible"');
+
+      var buy = cue("buy"), cut = cue("(which"), grow = cue("grows"), tagAt = cue("free).");
+      tl.set(q("dadA"), { opacity: 0 }, buy).set(q("dadB"), { opacity: 1 }, buy);
+      tl.set(q("dadB"), { opacity: 0 }, cut);
+      tl.set(q("fA"), { opacity: 0 }, buy).set(q("fB"), { opacity: 1 }, buy);
+      // the wheat comes up in three snaps each, the first on "grows", the others just after
+      G.wheat.forEach(function (x, i) {
+        var w = q("wheat-" + i), t = grow + i * 0.18;
+        gsap.set(w, { svgOrigin: "0 0" });
+        tl.set(w, { opacity: 1, scaleY: 0.3 }, t).set(w, { scaleY: 0.7 }, t + 0.05).set(w, { scaleY: 1.06 }, t + 0.1).set(w, { scaleY: 1 }, t + 0.15);
+      });
+      // "free).": the farmer turns and tags it (the stamp is on the word)
+      tl.set(q("fB"), { opacity: 0 }, tagAt).set(q("fC"), { opacity: 1 }, tagAt);
+      tl.set(q("tag"), { opacity: 1 }, tagAt + 0.04);
+      // The camera: the trade, creeping in; on "(which" a hard cut in to the farmer and the wheat's ground, creeping
+      // on to the end. Each shot is the same picture at scale S around the origin that puts the point P at the screen
+      // point Q (P: the middle of what the shot holds, the raised paper to the feet).
+      var cam = q("cam");
+      var shots = V ? { w: [[442, 990], 1.3, [540, 900]], c: [[700, 1050], 1.5, [540, 880]] }
+        : { w: [[880, 610], 1.15, [960, 520]], c: [[1265, 565], 1.4, [960, 470]] };
+      function origin(s) { return [(s[1] * s[0][0] - s[2][0]) / (s[1] - 1), (s[1] * s[0][1] - s[2][1]) / (s[1] - 1)]; }
+      var wO = origin(shots.w), cO = origin(shots.c);
+      KIT.onTime(tl, D, function (t) {
+        var close = t >= cut, o = close ? cO : wO;
+        var k = close ? shots.c[1] * (1 + 0.03 * (t - cut) / Math.max(0.1, D - cut)) : shots.w[1] * (1 + 0.02 * t / Math.max(0.1, cut));
+        cam.style.transformOrigin = o[0].toFixed(1) + "px " + o[1].toFixed(1) + "px";
+        cam.style.transform = "scale(" + k.toFixed(4) + ")";
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

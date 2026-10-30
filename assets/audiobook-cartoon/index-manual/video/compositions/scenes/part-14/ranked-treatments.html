@@ -1,0 +1,503 @@
+<template id="ranked-treatments-template">
+  <!-- ranked-treatments · Layer B (storyboards/part-14-decentralized-fda.md): "Your" → zoom into the wall screen: the
+       doctor's office as grape-soda left it (the wheel on DONUTS, the patient on the exam table holding her donut, the
+       doctor beside her with the box). "rank" → a tall flip board drops from the top of the frame, swats the banner away
+       and crushes the prize wheel flat (the slam, the splat); the DONUTS slice skids away across the floor and the doctor
+       jumps. Its flaps clack (the typewriter): RANKED BY WHAT HAPPENED, and the pill bottles shuffle into order, best on
+       top: TREATMENT A · B · C. "happened" → row by row (three ticks), a tally of tiny humans who took it pops up and the
+       GOT BETTER bar fills; row C's tally is mostly grinning skeletons. "humans" → the tiny humans hop. "it:" → the
+       patient drops the donut, looks up and points at row 1 (the ding), whose bottle is the twin of her SAFE bottle.
+       louder-wins (Part 14, group 8) starts by shrinking this board into its corner: rankBoard() below is its drawing. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #ranked-treatments-cam, #ranked-treatments-bg, #ranked-treatments-art, #ranked-treatments-pip, #ranked-treatments-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="ranked-treatments" data-width="1920" data-height="1080" data-start="0" data-duration="6.76">
+    <div id="ranked-treatments-cam">
+      <div id="ranked-treatments-bg"></div>
+      <div id="ranked-treatments-art"></div>
+      <div id="ranked-treatments-pip"></div>
+    </div>
+    <div id="ranked-treatments-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "ranked-treatments";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+
+      // ── The doctor's office. The same block is in decision-wheel.html, grape-soda.html (small, on the wall screen)
+      // and ranked-treatments.html: keep the three copies the same. ──
+      // officeArt(pid, st) draws decision-wheel's last frame: every slice lit, the wheel on DONUTS, DENIED on the chart,
+      // the banner unrolled, the doctor beside the wheel with the donut box under his arm, the patient sitting. st:
+      // { unlit (dark slices, rolled banner, no DENIED: decision-wheel's start), doc (the doctor's drawing shown),
+      // docX (where he stands), pat (the patient's drawing shown) }. Ids are pid-<name>. A person's drawings are groups
+      // with data-d="<name>" inside #pid-doc-j, #pid-pat-j and #pid-lob-j; one is shown at a time.
+      // Layout per shape: F the floor; banner [x, y, w, h, font]; win the window opening [x, y, w, h]; cat the fat cat's
+      // (0,0) and scale (behind the window); table [x0, x1, top]; chart [x, scale] (on the table's right end); pat [x,
+      // scale] (sitting on the table's left end); doc [x before he steps up, x beside the wheel, x beside the patient,
+      // scale]; wheel [cx, cy, r, font]; lob the lobbyist's scale; bubble [cx, cy, rx, ry] (the doctor's thought).
+      var OL = V
+        ? { F: 1420, banner: [60, 104, 660, 120, 46], win: [50, 690, 300, 260], cat: [143, 895, 2.2], table: [30, 330, 1200], chart: [270, 1.0],
+            pat: [140, 2.5], doc: [320, 427, 420, 2.8], wheel: [780, 880, 250, 25], lob: 2.5, bubble: [410, 425, 255, 148] }
+        : { F: 865, banner: [540, 56, 840, 128, 62], win: [270, 230, 290, 250], cat: [350, 425, 2.0], table: [90, 600, 640], chart: [445, 0.8],
+            pat: [220, 2.2], doc: [720, 900, 545, 2.4], wheel: [1300, 505, 225, 23], lob: 2.3, bubble: [752, 300, 168, 100] };
+      var INK = C.line, WHITE = "#FBF6E6", GOWN = "#DDE9E6", PINK = "#E9B4C1", UNLIT = "#DCD3B6";
+      var PAT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried", look: "right" };
+      var DOC = { tone: 1, outfit: "labcoat", color: 1 };
+      var CAT = KIT.castOpts("richHuman", { arms: [[15, 70], [35, 15]], holdL: "cash" });
+      var LOB_IN = KIT.castOpts("lobbyist", { arms: [[62, 100], [58, 96]] }), LOB_OUT = KIT.castOpts("lobbyist", { look: "left" });
+      var SLICES = [
+        { lines: ["DONUTS", "(2003)"], fill: C.orange, at: [0, -0.56] },
+        { lines: ["HALF-", "REMEMBERED", "LECTURE"], fill: C.tan, at: [0.56, 0] },
+        { lines: ["WHAT", "INSURANCE", "ALLOWS"], fill: C.peri, text: C.cream, at: [0, 0.56] },
+        { lines: ["VIBES"], fill: C.yellow, at: [-0.58, 0] },
+      ];
+      // The doctor's arms: the back arm tucking the donut box at his hip (facing right), and its mirror (facing left).
+      var BOX_L = [-15, 75], BOX_R = [15, -75];
+      // Oswald SemiBold widths in em (title.js measured them), for fitting text.
+      var OCH = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789%$.,:;'!?&-()";
+      var OADV = [0.25, 0.538, 0.574, 0.553, 0.573, 0.438, 0.425, 0.572, 0.6, 0.29, 0.339, 0.552, 0.433, 0.695, 0.554, 0.576, 0.552, 0.576, 0.583, 0.505, 0.438, 0.578, 0.522, 0.704, 0.508, 0.49, 0.43,
+        0.543, 0.384, 0.506, 0.506, 0.515, 0.502, 0.531, 0.428, 0.516, 0.53, 0.982, 0.486, 0.232, 0.227, 0.261, 0.27, 0.161, 0.247, 0.483, 0.578, 0.32, 0.329, 0.314];
+      function ow(s, size, track) { var w = 0; for (var i = 0; i < s.length; i++) { var k = OCH.indexOf(s[i]); w += k < 0 ? 0.55 : OADV[k]; } return (w + (track || 0) * s.length) * size; }
+      function f1(v) { return (+v).toFixed(1); }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function tr(x, y, s) { return 'transform="translate(' + f1(x) + "," + f1(y) + ")" + (s ? " scale(" + s + ")" : "") + '"'; }
+      function rectD(x, y, w, h) { return "M" + f1(x) + "," + f1(y) + " h" + f1(w) + " v" + f1(h) + " h" + f1(-w) + " Z"; }
+      function shape(d, fill, sw, extra) { return '<path d="' + d + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + (sw || 4) + '" stroke-linejoin="miter"' + (extra || "") + "/>"; }
+      function txt(x, y, s, size, fill, extra) { return '<text x="' + f1(x) + '" y="' + f1(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + f1(size) + '" fill="' + fill + '"' + (extra || "") + ">" + s + "</text>"; }
+      // A donut in person units around (0,0), 22 across: pink frosting and sprinkles.
+      function donut() {
+        var sp = [[-5, -4, 30, C.cream], [3, -6, -20, C.yellow], [6, 1, 60, C.cream], [-6, 3, -50, C.yellow], [1, 6, 10, C.peri], [-1, -7, 80, C.peri]].map(function (s) {
+          return '<rect x="-1.8" y="-0.7" width="3.6" height="1.4" fill="' + s[3] + '" transform="translate(' + s[0] + "," + s[1] + ") rotate(" + s[2] + ')"/>';
+        }).join("");
+        return '<path d="M-11,0 a11,10 0 1 0 22,0 a11,10 0 1 0 -22,0 Z M-3.6,0 a3.6,3.2 0 1 1 7.2,0 a3.6,3.2 0 1 1 -7.2,0 Z" fill="' + C.tan + '" fill-rule="evenodd" stroke="' + INK + '" stroke-width="2"/>' +
+          '<path d="M-9.4,-1 Q-10,-8 -3,-8.8 Q3,-10 8,-6 Q11,-2 9,2 Q7,5 9,7 Q4,8 1,6 Q-2,9 -6,6 Q-10,4 -9.4,-1 Z M-3.6,0 a3.6,3.2 0 1 1 7.2,0 a3.6,3.2 0 1 1 -7.2,0 Z" fill="' + PINK + '" fill-rule="evenodd" stroke="' + INK + '" stroke-width="1.4"/>' + sp;
+      }
+      // The donut box in person units around (0,0), 34 x 24: a striped lid and DONUTS on the front.
+      function donutBox() {
+        var stripes = [-12, -6, 0, 6, 12].map(function (x) { return '<path d="M' + x + ',-11 l-3,7" stroke="' + C.cream + '" stroke-width="2.2"/>'; }).join("");
+        return shape(rectD(-17, -12, 34, 24), C.cream, 2.4) + '<path d="M-17,-12 h34 v8 h-34 Z" fill="' + C.orange + '"/>' + stripes + shape(rectD(-17, -12, 34, 24), "none", 2.4) +
+          '<path d="M-17,-4 H17" stroke="' + INK + '" stroke-width="1.8"/>' + txt(0, 7.5, "DONUTS", 8.5, INK, ' letter-spacing="0.6"');
+      }
+      function officeArt(pid, st) {
+        st = st || {};
+        var id = function (s) { return pid + "-" + s; };
+        var F = OL.F, lit = !st.unlit;
+        // The patient: the gown over her dress, the striped scarf at her neck. extra: options for KIT.person; holdR:
+        // something in her right hand.
+        function patient(name, extra, holdR) {
+          var o = mix(PAT, extra), r = KIT.rig(o), T = r.shoulder[0][1] - 3, hy = r.hipY, nx = r.neck[0];
+          var gd = "M-15," + (T + 1) + " L-6," + (T - 2) + " L6," + (T - 2) + " L15," + (T + 1) + " L26," + (hy + 24) + " L-26," + (hy + 24) + " Z";
+          var gown = shape(gd, GOWN, 3) + '<path d="M2,' + (T - 2) + " L6," + (T - 2) + " L15," + (T + 1) + " L26," + (hy + 24) + " L2," + (hy + 24) + ' Z" fill="url(#' + id("fine") + ')" opacity="0.22"/>' +
+            '<path d="M-20,' + (hy + 6) + ' l6,3 M-21,' + (hy + 13) + ' l6,3" stroke="' + INK + '" stroke-width="1.4" opacity="0.7"/>';
+          var scarf = shape("M" + (nx - 9) + "," + (T - 6) + " L" + (nx + 9) + "," + (T - 8) + " L" + (nx + 10) + "," + T + " L" + (nx - 9) + "," + (T + 1) + " Z", C.yellow, 2.2) +
+            '<path d="M' + (nx - 5) + "," + (T - 6.5) + " l-1,7 M" + nx + "," + (T - 7) + " l-1,7.5 M" + (nx + 5) + "," + (T - 7.5) + ' l-1,7.5" stroke="' + C.orange + '" stroke-width="2.4"/>' +
+            shape("M" + (nx + 3) + "," + (T - 1) + " L" + (nx + 9) + "," + (T - 2) + " L" + (nx + 13) + "," + (T + 17) + " L" + (nx + 6) + "," + (T + 18) + " Z", C.yellow, 2.2) +
+            '<path d="M' + (nx + 4.3) + "," + (T + 5) + " l6.5,-1.2 M" + (nx + 5.5) + "," + (T + 11) + ' l6.7,-1.2" stroke="' + C.orange + '" stroke-width="2.6"/>' +
+            '<path d="M' + (nx + 7) + "," + (T + 18) + " v3 M" + (nx + 9.5) + "," + (T + 17.7) + " v3 M" + (nx + 12) + "," + (T + 17.4) + ' v3" stroke="' + INK + '" stroke-width="1.4" stroke-linecap="round"/>';
+          var out = KIT.person(o).replace('<circle class="chest-light"', gown + '<circle class="chest-light"').replace('<g class="head">', scarf + '<g class="head">');
+          var h = r.hand[1];
+          return '<g data-d="' + name + '"' + (name === (st.pat || "sit") ? "" : ' opacity="0"') + ">" + out + (holdR ? "<g " + tr(h[0] + 2, h[1] - 5) + ">" + holdR + "</g>" : "") + "</g>";
+        }
+        // The doctor: head mirror and stethoscope; box "L" (facing right) or "R" (facing left) tucks the donut box at
+        // that hip; items: [[hand 0|1, svg, dx, dy]] held in a hand.
+        function doctor(name, extra, box, items) {
+          var o = mix(DOC, extra), r = KIT.rig(o), T = r.shoulder[0][1] - 3;
+          var steth = '<path d="M-8,' + (T - 3) + " Q-12," + (T + 12) + " -2," + (T + 20) + " M8," + (T - 3) + " Q12," + (T + 12) + " 2," + (T + 20) + " M-2," + (T + 20) + " Q0," + (T + 22) + " 2," + (T + 20) +
+            " M0," + (T + 21) + " Q1," + (T + 28) + " 5," + (T + 30) + '" fill="none" stroke="' + INK + '" stroke-width="2.4" stroke-linecap="round"/>' +
+            '<circle cx="6" cy="' + (T + 32) + '" r="4" fill="' + C.peri + '" stroke="' + INK + '" stroke-width="2"/>';
+          var mirror = '<path d="M-17,-11 L15,-17" stroke="' + INK + '" stroke-width="3.2" stroke-linecap="round"/><circle cx="7" cy="-19" r="7.5" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="2.2"/>' +
+            '<circle cx="7" cy="-19" r="4.6" fill="none" stroke="' + C.peri + '" stroke-width="1.6"/><circle cx="7" cy="-19" r="1.6" fill="' + INK + '"/><path d="M3.5,-22.5 l2.2,-1.6" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>';
+          var out = KIT.person(o).replace('<g class="head">', steth + '<g class="head">').replace("<!--face-end-->", mirror + "<!--face-end-->");
+          if (box) out = out.replace('<g class="arm-l">', "<g " + tr(box === "L" ? -6 : 6, 13, 1.3) + ">" + donutBox() + '</g><g class="arm-l">');
+          var held = (items || []).map(function (it) { var h = r.hand[it[0]]; return "<g " + tr(h[0] + it[2], h[1] + it[3]) + ">" + it[1] + "</g>"; }).join("");
+          return '<g data-d="' + name + '"' + (name === (st.doc || "box") ? "" : ' opacity="0"') + ">" + out + held + "</g>";
+        }
+        var pad = shape(rectD(-7, -10, 14, 18), WHITE, 1.8) + txt(-2, -3, "Rx", 5.5, INK) + '<path d="M-4,1 h8 M-4,4 h6" stroke="' + INK + '" stroke-width="1"/>';
+        var pen = '<path d="M0,0 L-7,-12" stroke="' + INK + '" stroke-width="3" stroke-linecap="round"/><path d="M0,0 L-1.6,-2.8" stroke="' + C.yellow + '" stroke-width="1.6"/>';
+
+        // The floor and the wall's baseboard.
+        var floor = '<path d="M46,' + F + " H" + (W - 46) + '" stroke="' + INK + '" stroke-width="5"/><path d="M46,' + (F - 12) + " H" + (W - 46) + '" stroke="' + C.orange + '" stroke-width="2"/>';
+
+        // The window: outside (slate blue sky, a cloud), the fat cat behind it (clipped to the opening), the frame, the
+        // raised upper sash's glass, the sill.
+        var Wn = OL.win, wx = Wn[0], wy = Wn[1], ww = Wn[2], wh = Wn[3], fr = 16, sash = wh * 0.2;
+        var outside = '<rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '" fill="' + C.peri + '"/>' +
+          [[0.25, 0.22, 26], [0.36, 0.18, 32], [0.48, 0.23, 24]].map(function (c) { return '<circle cx="' + f1(wx + ww * c[0]) + '" cy="' + f1(wy + wh * c[1]) + '" r="' + c[2] + '" fill="' + C.cream + '" opacity="0.85"/>'; }).join("") +
+          '<path d="M' + wx + "," + f1(wy + wh * 0.8) + " h" + ww + '" stroke="' + C.slate + '" stroke-width="3" opacity="0.5"/>';
+        var Ct = OL.cat, cs = Ct[2], cr = KIT.rig(CAT), catBody = KIT.person(CAT);
+        var catClip = '<defs><clipPath id="' + id("cat-clip") + '"><rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '"/></clipPath></defs>';
+        var catA = catClip + '<g clip-path="url(#' + id("cat-clip") + ')"><g ' + tr(Ct[0], Ct[1], cs) + '><g id="' + id("cat-a") + '" opacity="0">' + catBody + "</g></g></g>";
+        var frame = '<path d="' + rectD(wx - fr, wy - fr, ww + 2 * fr, wh + 2 * fr) + " " + rectD(wx, wy, ww, wh) + '" fill="' + C.tan + '" fill-rule="evenodd" stroke="' + INK + '" stroke-width="4"/>' +
+          '<rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + f1(sash) + '" fill="#FFFFFF" opacity="0.28"/>' +
+          '<path d="M' + f1(wx + ww / 2) + "," + wy + " v" + f1(sash) + '" stroke="' + C.tan + '" stroke-width="9"/><path d="M' + f1(wx + ww / 2) + "," + wy + " v" + f1(sash) + '" stroke="' + INK + '" stroke-width="2" opacity="0.5"/>' +
+          '<path d="M' + (wx + 14) + "," + (wy + 12) + " l30,30 M" + (wx + 30) + "," + (wy + 12) + ' l18,18" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity="0.7"/>' +
+          shape(rectD(wx, wy + sash - 6, ww, 12), C.tan, 3);
+        var sill = shape(rectD(wx - fr - 16, wy + wh + fr - 4, ww + 2 * fr + 32, 16), C.tan, 4) + '<path d="M' + (wx - fr - 12) + "," + (wy + wh + fr + 8) + " h" + (ww + 2 * fr + 24) + '" stroke="' + C.rust + '" stroke-width="3"/>';
+        var catB = "<g " + tr(Ct[0], Ct[1], cs) + '><g id="' + id("cat-b") + '" opacity="0">' + catBody + "</g></g>";
+
+        // The prize wheel on its stand, in wheel units around its hub: the stand (legs to the floor, the post up to
+        // the pointer), the rim with its bulbs, the four slices with their labels and pegs, the hub, the pointer.
+        var Wh = OL.wheel, R = Wh[2], fs = Wh[3], down = F - Wh[1];
+        var pt = function (a, rr) { var t = (a * Math.PI) / 180; return f1(rr * Math.sin(t)) + "," + f1(-rr * Math.cos(t)); };
+        var leg = function (k) { return shape("M" + k * 6 + ",0 L" + k * (0.62 * R + 10) + "," + down + " L" + k * (0.62 * R - 10) + "," + down + " L" + -k * 6 + ",0 Z", C.tan, 4); };
+        var stand = leg(-1) + leg(1) + shape(rectD(-0.4 * R, down * 0.62 - 6, 0.8 * R, 12), C.tan, 3) + shape(rectD(-9, -(R + 52), 18, R + 52), C.tan, 4) +
+          shape(rectD(-0.62 * R - 24, down - 12, 48, 12), C.rust, 3) + shape(rectD(0.62 * R - 24, down - 12, 48, 12), C.rust, 3);
+        var slices = SLICES.map(function (s, i) {
+          var c = i * 90;
+          return '<path id="' + id("slice-" + i) + '" d="M0,0 L' + pt(c - 45, R) + " A" + R + "," + R + " 0 0 1 " + pt(c + 45, R) + ' Z" fill="' + (lit ? s.fill : UNLIT) + '" stroke="' + INK + '" stroke-width="4" stroke-linejoin="round"/>';
+        }).join("") + '<path d="M0,' + -R + " A" + R + "," + R + " 0 0 1 0," + R + ' Z" fill="url(#' + id("fine") + ')" opacity="0.16"/>';
+        var labels = SLICES.map(function (s, i) {
+          var x = s.at[0] * R, y = s.at[1] * R, lh = fs * 1.08, n = s.lines.length;
+          return '<g id="' + id("lab-" + i) + '"' + (lit ? "" : ' opacity="0"') + ">" + s.lines.map(function (l, j) {
+            return txt(x, y + (j - (n - 1) / 2) * lh + fs * 0.36, l, l === "VIBES" ? fs * 1.35 : fs, s.text || INK, ' letter-spacing="0.6"');
+          }).join("") + "</g>";
+        }).join("");
+        var pegs = "";
+        for (var k = 0; k < 12; k++) pegs += '<circle cx="' + pt(25 + 30 * k, R - 11).split(",")[0] + '" cy="' + pt(25 + 30 * k, R - 11).split(",")[1] + '" r="4.5" fill="' + INK + '"/>';
+        var bulbs = "";
+        for (var b = 0; b < 16; b++) {
+          var ba = 11.25 + 22.5 * b, bp = pt(ba, R + 11).split(","), si = Math.floor(((ba + 45) % 360) / 90);
+          bulbs += '<circle class="' + id("bulb") + '" data-s="' + si + '" cx="' + bp[0] + '" cy="' + bp[1] + '" r="6.5" fill="' + (lit ? C.yellow : C.cream) + '" stroke="' + INK + '" stroke-width="2"/>';
+        }
+        var hub = '<circle r="26" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="4"/>' + KIT.star(0, 0, 15, C.orange) + '<circle r="4" fill="' + INK + '"/>';
+        var pointer = '<g transform="translate(0,' + -(R + 40) + ')"><g id="' + id("flap") + '" transform="rotate(-16)">' +
+          shape("M-10,-2 L10,-2 L0,46 Z", C.yellow, 3) + '<path d="M-3,6 L0,38" stroke="' + C.orange + '" stroke-width="3"/><circle r="5" fill="' + INK + '"/></g></g>' +
+          shape(rectD(-17, -(R + 62), 34, 22), C.slate, 3);
+        var speed = '<g id="' + id("speed") + '" opacity="0" fill="none" stroke="' + INK + '" stroke-width="5" stroke-linecap="round">' +
+          [[200, 250, 36], [30, 80, 36], [120, 155, 30], [285, 320, 30]].map(function (a) { return '<path d="M' + pt(a[0], R + a[2]) + " A" + (R + a[2]) + "," + (R + a[2]) + " 0 0 1 " + pt(a[1], R + a[2]) + '"/>'; }).join("") + "</g>";
+        var wheel = "<g " + tr(Wh[0], Wh[1]) + '><g id="' + id("wheel-sq") + '">' + stand + '<circle r="' + (R + 20) + '" fill="' + C.navy + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<g id="' + id("wheel-rot") + '">' + slices + pegs + labels + bulbs + hub + "</g>" + pointer + speed + "</g></g>";
+
+        // The exam table: a cabinet base with drawers, the padded top, the paper sheet and its roll; the chart
+        // clipboard propped on its right end, with the DENIED mark (hidden at the start).
+        var Tb = OL.table, x0 = Tb[0], x1 = Tb[1], tt = Tb[2];
+        var base = shape(rectD(x0 + 26, tt + 24, x1 - x0 - 52, F - tt - 24), C.tan, 4) + '<rect x="' + f1(x0 + 26 + (x1 - x0 - 52) * 0.6) + '" y="' + (tt + 24) + '" width="' + f1((x1 - x0 - 52) * 0.4) + '" height="' + (F - tt - 24) + '" fill="url(#' + id("fine") + ')" opacity="0.22"/>' +
+          [0.3, 0.62].map(function (fy) {
+            var dy = tt + 24 + (F - tt - 24) * fy, dw = (x1 - x0 - 52) * 0.36;
+            return [0.27, 0.73].map(function (fx) { var dx = x0 + 26 + (x1 - x0 - 52) * fx; return shape(rectD(dx - dw / 2, dy - 26, dw, 52), C.cream, 3) + shape(rectD(dx - 14, dy - 4, 28, 8), C.rust, 2); }).join("");
+          }).join("");
+        var top = shape(rectD(x0, tt, x1 - x0, 26), C.rust, 4) + '<path d="M' + (x0 + 8) + "," + (tt + 13) + " H" + (x1 - 8) + '" stroke="' + C.orange + '" stroke-width="2" stroke-dasharray="7 6"/>' +
+          shape(rectD(x0 + 24, tt - 5, (x1 - x0) * 0.62, 6), WHITE, 2) + shape("M" + (x0 + 6) + "," + (tt - 14) + " a12,10 0 1 0 0.1,0 Z", WHITE, 3) + '<circle cx="' + (x0 + 6) + '" cy="' + (tt - 4) + '" r="3" fill="' + INK + '"/>';
+        var Ch = OL.chart, ck = Ch[1];
+        var chart = "<g " + tr(Ch[0], tt, ck) + ">" + KIT.props.clipboard({ title: "CHART", items: ["Name", "Age", "Rx"] }) + "</g>";
+        var mark = KIT.props.stampMark({ text: "DENIED", fontSize: 30, angle: -10 }), mcy = +mark.match(/data-cy="([-\d.]+)"/)[1];
+        var markAt = "<g " + tr(Ch[0], tt - 70 * ck - mcy * 0.82 * ck, 0.82 * ck) + '><g id="' + id("mark") + '"' + (lit ? "" : ' opacity="0"') + ">" + mark + "</g></g>";
+
+        // The patient sits on the paper on the table's left end (her hips on its top).
+        var Pt = OL.pat, ps = Pt[1], PR = KIT.rig(PAT);
+        var pats = patient("sit", {}) + patient("scared", { mood: "eager", arms: [[-101, 110], [101, -110]] }) +
+          patient("reach", { arms: [[20, 10], [75, 85]] }) + patient("donut", { arms: [[20, 10], [48, -163]] }, donut()) + patient("point", { mood: "eager", arms: [[20, 10], [125, 120]] });
+        var pat = "<g " + tr(Pt[0], tt - 3 - PR.hipY * ps, ps) + '><g id="' + id("pat-j") + '">' + pats + "</g></g>";
+
+        // The doctor: drawn at the wheel (doc[1]); #pid-doc-walk carries him (in his units) to where he stands.
+        var Dc = OL.doc, ds = Dc[3], dx = st.docX === undefined ? 0 : (st.docX - Dc[1]) / ds;
+        var docs = doctor("idle", { look: "right" }) + doctor("box", { look: "right", arms: [BOX_L, [-20, -10]] }, "L") +
+          doctor("scratch", { look: "right", arms: [BOX_L, [160, 240]] }, "L") + doctor("lick", { look: "right", arms: [BOX_L, [-82, 145]] }, "L") +
+          doctor("up", { look: "right", arms: [BOX_L, [175, 180]] }, "L") + doctor("spin", { look: "right", arms: [BOX_L, [100, 95]] }, "L") +
+          doctor("boxL", { look: "left", arms: [[20, 10], BOX_R] }, "R") + doctor("give", { look: "left", arms: [[-75, -85], BOX_R] }, "R", [[0, donut(), -3, -4]]) +
+          doctor("write", { look: "left", arms: [[-80, 79], [-30, -110]] }, "R", [[1, pad, -1, -6], [0, '<g id="' + id("pen") + '">' + pen + "</g>", 0, 0]]);
+        var doc = "<g " + tr(Dc[1], F - 100 * ds, ds) + '><g id="' + id("doc-walk") + '"' + (dx ? " " + tr(dx, 0) : "") + '><g id="' + id("doc-j") + '">' + docs + "</g></g></g>";
+
+        // The lobbyist, drawn where he hands the box over (#pid-lob-walk carries him in and out): the box in his
+        // hands sits exactly where the doctor's box will be.
+        var ls = OL.lob, lr = KIT.rig(LOB_IN), lh = [(lr.hand[0][0] + lr.hand[1][0]) / 2, (lr.hand[0][1] + lr.hand[1][1]) / 2];
+        var dbx = Dc[1] - 6 * ds, dby = F + (13 - 100) * ds, lobX = dbx - lh[0] * ls, lby = (dby - (F - 100 * ls)) / ls;
+        var lob = "<g " + tr(lobX, F - 100 * ls, ls) + '><g id="' + id("lob-walk") + '" opacity="0"><g id="' + id("lob-j") + '">' +
+          '<g data-d="in">' + KIT.person(LOB_IN) + "<g " + tr(lh[0], lby, (1.3 * ds) / ls) + '><g id="' + id("lob-box") + '">' + donutBox() + "</g></g></g>" +
+          '<g data-d="out" opacity="0">' + KIT.person(LOB_OUT) + "</g></g></g></g>";
+
+        // The doctor's thought: a cloud with a chalkboard, FIRST, DO NO HARM; an eraser and the smudge it leaves.
+        var Bb = OL.bubble, bx = Bb[0], by = Bb[1], brx = Bb[2], bry = Bb[3], DR = KIT.rig(mix(DOC, { look: "right" }));
+        var head = [Dc[1] + DR.top[0] * ds, F + (DR.top[1] - 100) * ds - 8], tail = [bx + brx * 0.45, by + bry * 0.9];
+        var trail = [[0.22, 7], [0.52, 11], [0.8, 15]].map(function (p, i) {
+          return '<circle id="' + id("trail-" + i) + '" cx="' + f1(head[0] + (tail[0] - head[0]) * p[0]) + '" cy="' + f1(head[1] + (tail[1] - head[1]) * p[0]) + '" r="' + p[1] + '" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3.5" opacity="0"/>';
+        }).join("");
+        var bumps = [];
+        for (var j = 0; j < 11; j++) { var a = (j / 11) * Math.PI * 2; bumps.push([bx + brx * 0.84 * Math.cos(a), by + bry * 0.8 * Math.sin(a), bry * 0.36]); }
+        bumps.push([bx, by, bry * 0.7]);
+        var cloud = bumps.map(function (c) { return '<circle cx="' + f1(c[0]) + '" cy="' + f1(c[1]) + '" r="' + f1(c[2] + 4) + '" fill="' + INK + '"/>'; }).join("") +
+          '<ellipse cx="' + bx + '" cy="' + by + '" rx="' + f1(brx * 0.86) + '" ry="' + f1(bry * 0.84) + '" fill="' + INK + '"/>' +
+          bumps.map(function (c) { return '<circle cx="' + f1(c[0]) + '" cy="' + f1(c[1]) + '" r="' + f1(c[2]) + '" fill="' + C.cream + '"/>'; }).join("") +
+          '<ellipse cx="' + bx + '" cy="' + by + '" rx="' + f1(brx * 0.86 - 4) + '" ry="' + f1(bry * 0.84 - 4) + '" fill="' + C.cream + '"/>';
+        var cw = brx * 1.42, chh = bry * 1.16, cx0 = bx - cw / 2, cy0 = by - chh / 2;
+        var L1 = "FIRST, DO NO ", L2 = "HARM", csz = Math.min(bry * 0.34, (cw * 0.86) / (ow(L1 + L2, 1, 0.04))), tw1 = ow(L1, csz, 0.04), tw2 = ow(L2, csz, 0.04), tx0 = bx - (tw1 + tw2) / 2, ty = cy0 + chh * 0.42;
+        var chalk = function (x, s, extra) { return '<text x="' + f1(x) + '" y="' + f1(ty) + '" font-family="Oswald" font-weight="600" font-size="' + f1(csz) + '" letter-spacing="' + f1(csz * 0.04) + '" fill="' + C.cream + '"' + (extra || "") + ">" + s + "</text>"; };
+        var hx = bx - cw * 0.22, hy2 = cy0 + chh * 0.74, hs = chh * 0.14;
+        var board = shape(rectD(cx0 - 7, cy0 - 7, cw + 14, chh + 14), C.tan, 3) + '<rect x="' + f1(cx0) + '" y="' + f1(cy0) + '" width="' + f1(cw) + '" height="' + f1(chh) + '" fill="' + C.slate + '"/>' +
+          chalk(tx0, L1.trim()) + '<g id="' + id("harm") + '">' + chalk(tx0 + tw1, L2) + "</g>" +
+          '<path d="M' + f1(hx) + "," + f1(hy2 + hs) + " C" + f1(hx - hs * 1.6) + "," + f1(hy2 - hs * 0.2) + " " + f1(hx - hs * 0.8) + "," + f1(hy2 - hs * 1.2) + " " + f1(hx) + "," + f1(hy2 - hs * 0.4) + " C" + f1(hx + hs * 0.8) + "," + f1(hy2 - hs * 1.2) + " " + f1(hx + hs * 1.6) + "," + f1(hy2 - hs * 0.2) + " " + f1(hx) + "," + f1(hy2 + hs) + ' Z" fill="none" stroke="' + C.cream + '" stroke-width="2.5"/>' +
+          '<path d="M' + f1(hx + hs * 2.2) + "," + f1(hy2) + " h" + f1(cw * 0.3) + '" stroke="' + C.cream + '" stroke-width="2.5" stroke-dasharray="9 6"/>' +
+          '<g id="' + id("smudge") + '" opacity="0"><ellipse cx="' + f1(tx0 + tw1 + tw2 / 2) + '" cy="' + f1(ty - csz * 0.32) + '" rx="' + f1(tw2 * 0.62) + '" ry="' + f1(csz * 0.6) + '" fill="' + C.cream + '" opacity="0.18"/>' +
+          '<path d="M' + f1(tx0 + tw1 - 4) + "," + f1(ty - csz * 0.2) + " q" + f1(tw2 * 0.3) + "," + f1(-csz * 0.6) + " " + f1(tw2 * 0.6) + ",0 t" + f1(tw2 * 0.5) + ',0" fill="none" stroke="' + C.cream + '" stroke-width="5" opacity="0.25" stroke-linecap="round"/></g>' +
+          "<g " + tr(tx0 + tw1 + tw2 / 2, ty - csz * 0.3) + '><g id="' + id("eraser") + '" opacity="0">' + shape(rectD(-20, -11, 40, 15), C.tan, 2.4) + shape(rectD(-20, 4, 40, 8), C.cream, 2.4) + "</g></g>";
+        var bubble = '<g id="' + id("bubble") + '" opacity="0">' + cloud + board + "</g>";
+
+        // The banner, revealed by its clip as the roll moves right.
+        var Bn = OL.banner, nx0 = Bn[0], ny0 = Bn[1], nw = Bn[2], nh = Bn[3], nt = 34;
+        var ribbon = function (ddx, ddy, fill, extra) {
+          return '<path d="M' + (nx0 + ddx) + "," + (ny0 + ddy) + " H" + (nx0 + nw + ddx) + " l" + -nt + "," + nh / 2 + " l" + nt + "," + nh / 2 + " H" + (nx0 + ddx) + " l" + nt + "," + -nh / 2 + ' Z" fill="' + fill + '" ' + (extra || "") + "/>";
+        };
+        var banner = '<g id="' + id("banner") + '"><defs><clipPath id="' + id("banner-clip") + '"><rect id="' + id("banner-reveal") + '" x="' + (nx0 - 20) + '" y="' + (ny0 - 20) + '" width="' + (lit ? nw + 40 : 0) + '" height="' + (nh + 40) + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + id("banner-clip") + ')">' + ribbon(9, 9, C.ink, 'opacity="0.85"') + ribbon(0, 0, WHITE, 'stroke="' + INK + '" stroke-width="5" stroke-linejoin="round"') +
+          '<rect x="' + (nx0 + nt + 12) + '" y="' + (ny0 + 12) + '" width="' + (nw - 2 * nt - 24) + '" height="' + (nh - 24) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          txt(nx0 + nw / 2, ny0 + nh / 2 + Bn[4] * 0.36, "TREATMENT RANKINGS", Bn[4], INK, ' letter-spacing="3"') + "</g>" +
+          "<g " + tr(nx0, ny0) + '><g id="' + id("banner-roll") + '" opacity="0">' + shape(rectD(-15, -10, 30, nh + 20), WHITE, 4) + '<path d="M-5,-4 V' + (nh + 4) + '" stroke="' + C.orange + '" stroke-width="3"/>' +
+          shape("M-15,-10 a15,6 0 1 0 30,0 a15,6 0 1 0 -30,0 Z", C.cream, 3) + "</g></g></g>";
+
+        return {
+          svg: KIT.paperDefs(pid) + floor + outside + catA + frame + sill + wheel + top + base + chart + markAt + pat + doc + lob + catB + trail + bubble + banner,
+          // the cat's two copies: #-cat-a (all of him, clipped to the window) and #-cat-b (only his stamp arm, over
+          // everything); the stamp rides in both right fists. Call once the svg is in the page.
+          fix: function () {
+            var hl = cr.handLocal[1], stamp = "<g " + tr(hl[0] + 1, hl[1] + 92 * 0.6 - 22) + ">" + KIT.props.stamp({ text: "DENIED", size: 0.6 }) + "</g>";
+            var a = document.getElementById(id("cat-a")), b = document.getElementById(id("cat-b"));
+            a.querySelector(".arm-r").insertAdjacentHTML("beforeend", stamp);
+            var bp = b.querySelector(".person"), keep = b.querySelector(".arm-r");
+            keep.insertAdjacentHTML("beforeend", stamp);
+            Array.prototype.slice.call(bp.querySelectorAll(".leg-l, .leg-r")).forEach(function (e) { e.remove(); });
+            Array.prototype.slice.call(keep.parentNode.children).forEach(function (e) { if (e !== keep) e.remove(); });
+          },
+          cat: cr,
+        };
+      }
+      // ── end of the shared block ──
+
+      // ── The ranking board (louder-wins copies this function to shrink the board into its corner). ──
+      // rankBoard(pid, B) draws it standing with its bottom edge on y B.y + B.h: B { x, y, w, h, t (the layout: tile
+      // sizes and fonts, header lines, the row's parts), } Ids: pid-tile-<n> (one per flap letter; data-ch is its final
+      // letter, data-s the order it settles in: header first, then row 1, 2, 3), pid-row-<r>, pid-tiny-<r>-<k> (the tally),
+      // pid-bar-<r> (the GOT BETTER fill: its width grows to data-w), pid-hi (row 1's teal frame), pid-bottle-<A|B|C>
+      // (an outer group at the bottle's slot in the right order; tween its inner #pid-bottle-<X>-mv to shuffle).
+      var TALLY = [
+        [{ tone: 0, outfit: "shirt", color: 2, hair: 0, mood: "smile", light: "teal" }, { tone: 3, outfit: "dress", hair: 1, color: 0, mood: "smile", light: "teal" }, { tone: 1, outfit: "suit", hair: 2, mood: "smile", light: "teal" },
+          { tone: 2, outfit: "overalls", color: 3, mood: "smile", light: "teal" }, { tone: 0, outfit: "dress", hair: 1, color: 2, mood: "smile", light: "teal" }, { tone: 2, outfit: "shirt", color: 1, mood: "flat", light: "red" }],
+        [{ tone: 1, outfit: "dress", hair: 1, color: 3, mood: "smile", light: "teal" }, { tone: 3, outfit: "shirt", color: 0, mood: "worried", light: "red" }, { tone: 0, outfit: "suit", hair: 0, mood: "smile", light: "teal" },
+          { tone: 2, outfit: "dress", hair: 1, color: 0, mood: "sad", light: "red" }, { tone: 1, outfit: "overalls", color: 2, mood: "smile", light: "teal" }, { tone: 3, outfit: "suit", hair: 2, mood: "worried", light: "red" }],
+        [{ tone: 2, outfit: "shirt", color: 3, mood: "smile", light: "teal" }, { tone: 0, outfit: "dress", hair: 1, color: 1, skeleton: true }, { tone: 1, outfit: "suit", hair: 0, mood: "sad", light: "red" },
+          { tone: 3, outfit: "overalls", color: 0, skeleton: true }, { tone: 2, outfit: "suit", hair: 2, skeleton: true }, { tone: 1, outfit: "dress", hair: 1, color: 2, skeleton: true }],
+      ];
+      var GOT = [0.84, 0.5, 0.17];
+      var BOTTLES = { A: { face: "smile", label: "SAFE" }, B: { face: "flat" }, C: { face: "scared" } };
+      function rankBoard(pid, B) {
+        var t = B.t, id = function (s) { return pid + "-" + s; }, n = 0, out = [];
+        var fr = 14, ix = B.x + fr, iy = B.y + fr, iw = B.w - 2 * fr, ih = B.h - 2 * fr;
+        function tiles(str, x, y, tw, th, fs) {
+          var s = "";
+          for (var i = 0; i < str.length; i++) {
+            var ch = str[i], tx = x + i * (tw + t.gap);
+            if (ch === " ") continue;
+            s += '<rect x="' + f1(tx) + '" y="' + f1(y) + '" width="' + tw + '" height="' + th + '" rx="2" fill="#1A2740" stroke="' + C.ink + '" stroke-width="1.5"/>' +
+              '<text id="' + id("tile-" + n) + '" data-ch="' + ch + '" data-s="' + n + '" x="' + f1(tx + tw / 2) + '" y="' + f1(y + th / 2 + fs * 0.36) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + fs + '" fill="' + C.cream + '">' + ch + "</text>" +
+              '<path d="M' + f1(tx) + "," + f1(y + th / 2) + " h" + tw + '" stroke="' + C.ink + '" stroke-width="1.6"/>';
+            n++;
+          }
+          return s;
+        }
+        var lineW = function (str, tw) { return str.length * (tw + t.gap) - t.gap; };
+        out.push('<rect x="' + (B.x + 12) + '" y="' + (B.y + 14) + '" width="' + B.w + '" height="' + B.h + '" fill="' + C.ink + '" opacity="0.5"/>');
+        out.push(shape(rectD(B.x, B.y, B.w, B.h), C.rust, 5) + '<rect x="' + ix + '" y="' + iy + '" width="' + iw + '" height="' + ih + '" fill="' + C.navy + '" stroke="' + C.ink + '" stroke-width="3"/>');
+        out.push('<path d="M' + (B.x + 5) + "," + (B.y + 5) + " h" + (B.w - 10) + '" stroke="' + C.orange + '" stroke-width="2.5"/>');
+        // the header, one tile per letter
+        var hy = iy + t.top;
+        t.head.forEach(function (ln, k) { out.push(tiles(ln, B.x + B.w / 2 - lineW(ln, t.hw) / 2, hy + k * (t.hh + 8), t.hw, t.hh, t.hf)); });
+        var r0 = hy + t.head.length * (t.hh + 8) + t.under, rh = (iy + ih - r0) / 3;
+        for (var r = 0; r < 3; r++) {
+          var ry = r0 + r * rh, R = t.row;
+          out.push('<path d="M' + (ix + 6) + "," + f1(ry) + " h" + (iw - 12) + '" stroke="' + C.slate + '" stroke-width="3"/>');
+          out.push('<g id="' + id("row-" + r) + '">' + tiles("TREATMENT " + "ABC"[r], ix + R.lx, ry + R.ly, t.rw, t.rh, t.rf));
+          // the tally: tiny humans standing on the row's tally line, hidden until they pop up
+          var tal = TALLY[r].map(function (o, k) {
+            var px = ix + R.tx + k * R.tsp, py = ry + R.ty;
+            return "<g " + tr(px, py - 100 * R.ts, R.ts) + '><g id="' + id("tiny-" + r + "-" + k) + '" opacity="0">' + KIT.person(o) + "</g></g>";
+          }).join("");
+          out.push(tal);
+          // the GOT BETTER bar: a slate track, the teal fill, the label over both
+          var bx = ix + R.bx, by = ry + R.by;
+          out.push('<rect x="' + f1(bx) + '" y="' + f1(by) + '" width="' + R.bw + '" height="' + R.bh + '" rx="4" fill="' + C.slate + '" stroke="' + C.cream + '" stroke-width="2.5"/>' +
+            '<rect id="' + id("bar-" + r) + '" data-w="' + f1(R.bw * GOT[r]) + '" x="' + f1(bx) + '" y="' + f1(by) + '" width="0" height="' + R.bh + '" rx="4" fill="' + C.med + '"/>' +
+            txt(bx + 10 + ow("GOT BETTER", R.bf, 0.06) / 2, by + R.bh / 2 + R.bf * 0.36, "GOT BETTER", R.bf, C.cream, ' letter-spacing="' + f1(R.bf * 0.06) + '"') + "</g>");
+        }
+        out.push('<rect id="' + id("hi") + '" x="' + (ix + 4) + '" y="' + f1(r0 + 4) + '" width="' + (iw - 8) + '" height="' + f1(rh - 8) + '" rx="8" fill="none" stroke="' + C.med + '" stroke-width="7" opacity="0"/>');
+        // the bottles, each at the slot of its final row (A on top)
+        ["A", "B", "C"].forEach(function (k, r) {
+          var R = t.row, o = mix(BOTTLES[k], { size: R.bs });
+          var tick = k === "A" ? '<path d="M' + 15 * R.bs + "," + -28 * R.bs + " l" + 4 * R.bs + "," + 5 * R.bs + " l" + 9 * R.bs + "," + -12 * R.bs + '" fill="none" stroke="' + C.med + '" stroke-width="' + 3.4 * R.bs + '" stroke-linecap="round" stroke-linejoin="round"/>' : "";
+          out.push("<g " + tr(ix + R.px, r0 + r * rh + R.py) + '><g id="' + id("bottle-" + k + "-mv") + '">' + KIT.props.pillBottle(o) + tick + "</g></g>");
+        });
+        return { svg: out.join(""), tiles: n, rows: [r0, rh] };
+      }
+      // ── end of the ranking board ──
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      // grape-soda's last frame on its wall screen: the doctor beside the patient, facing her, the box under his arm;
+      // she holds her donut.
+      var art = officeArt(ID, { doc: "boxL", docX: OL.doc[2], pat: "donut" });
+      // The board's place and layout per shape: it stands where the wheel stood, its bottom on the crushed wheel.
+      var F = OL.F, Wh = OL.wheel;
+      var BL = V
+        ? { x: 520, y: 470, w: 510, h: F - 470 - 20,
+            t: { gap: 3, top: 14, head: ["RANKED BY", "WHAT HAPPENED"], hw: 30, hh: 44, hf: 30, under: 18, rw: 30, rh: 40, rf: 26,
+              row: { lx: 108, ly: 16, tx: 128, ty: 168, tsp: 56, ts: 0.56, bx: 108, by: 186, bw: 362, bh: 36, bf: 18, px: 50, py: 196, bs: 1.15 } } }
+        : { x: 950, y: 150, w: 640, h: F - 150 - 18,
+            t: { gap: 3, top: 14, head: ["RANKED BY WHAT HAPPENED"], hw: 23, hh: 38, hf: 25, under: 16, rw: 21, rh: 32, rf: 21,
+              row: { lx: 100, ly: 14, tx: 116, ty: 172, tsp: 39, ts: 0.5, bx: 360, by: 96, bw: 236, bh: 40, bf: 17, px: 46, py: 176, bs: 1.0 } } };
+      var board = rankBoard(ID, BL);
+      // the wheel squashed flat (shown on impact), a few loose bulbs, the DONUTS slice that skids away, dust
+      var pc = Wh[0] - (V ? 80 : 120), pw = Wh[2] * (V ? 2.4 : 3.1), cols = [C.orange, C.tan, C.peri, C.yellow];
+      var pancake = '<g id="' + ID + '-pancake" opacity="0">' + cols.map(function (c, i) {
+        return shape(rectD(pc - pw / 2 + (i * pw) / 4, F - 20, pw / 4, 16), c, 3);
+      }).join("") + shape(rectD(pc - pw / 2 - 10, F - 8, pw + 20, 8), C.tan, 3) +
+        [[-0.56, 4], [-0.42, 9], [0.45, 6]].map(function (b) { return '<circle cx="' + f1(pc + b[0] * pw) + '" cy="' + (F - b[1]) + '" r="6.5" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2"/>'; }).join("") + "</g>";
+      var sr = Wh[2] * 0.48, slice = '<path d="M0,0 L' + f1(-sr * 0.707) + "," + f1(-sr * 0.707) + " A" + f1(sr) + "," + f1(sr) + " 0 0 1 " + f1(sr * 0.707) + "," + f1(-sr * 0.707) + ' Z" fill="' + C.orange + '" stroke="' + INK + '" stroke-width="4" stroke-linejoin="round"/>' +
+        txt(0, -sr * 0.62, "DONUTS", Wh[3] * 0.62, INK) + txt(0, -sr * 0.62 + Wh[3] * 0.7, "(2003)", Wh[3] * 0.62, INK);
+      var sliceStart = [BL.x + 30, F - sr * 0.75], sliceEnd = V ? [310, F - 0.14 * sr - 2] : [760, F - 0.14 * sr - 2];
+      var loose = "<g " + tr(sliceStart[0], sliceStart[1]) + '><g id="' + ID + '-slice" opacity="0"><g transform="translate(0,' + f1(sr * 0.4) + ')">' + slice + "</g></g></g>";
+      var dust = [-1, 1].map(function (k, i) {
+        return "<g " + tr(k < 0 ? BL.x : BL.x + BL.w, F - 14) + '><g id="' + ID + "-dust-" + i + '" opacity="0">' +
+          [[0, 0, 26], [k * 30, -10, 20], [k * 52, 2, 16]].map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3"/>'; }).join("") + "</g></g>";
+      }).join("");
+      // her dropped donut: where her hand holds it in the "donut" drawing
+      var Pt = OL.pat, ps = Pt[1], pr = KIT.rig(mix(PAT, { arms: [[20, 10], [48, -163]] })), py0 = OL.table[2] - 3 - KIT.rig(PAT).hipY * ps;
+      var dn = [Pt[0] + (pr.hand[1][0] + 2) * ps, py0 + (pr.hand[1][1] - 5) * ps];
+      var dropDonut = "<g " + tr(dn[0], dn[1], ps) + '><g id="' + ID + '-donut" opacity="0">' + donut() + "</g></g>";
+      var spark = '<g id="' + ID + '-spark" opacity="0">' + KIT.star(0, 0, 26, C.yellow) + KIT.star(0, 0, 13, "#FFFFFF") + "</g>";
+      var sparkAt = [BL.x + 14 + BL.t.row.px + 30, board.rows[0] + BL.t.row.py - 100 * BL.t.row.bs];
+      q("art").innerHTML = KIT.svg(W, H, art.svg + pancake + loose + '<g id="' + ID + '-board"><g id="' + ID + '-board-sq">' + board.svg + "</g></g>" + dust + dropDonut +
+        "<g " + tr(sparkAt[0], sparkAt[1]) + ">" + spark + "</g>");
+      art.fix();
+      var g = function (s) { return document.getElementById(ID + "-" + s); };
+      var draw = function (who, name) { return g(who + "-j").querySelector('[data-d="' + name + '"]'); };
+      var swap = function (a, b, t) { tl.set(a, { opacity: 0 }, t); tl.set(b, { opacity: 1 }, t); };
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "zoom into the wall screen", KIT.OFFICE.screen);
+
+      var T = { rank: cue("rank"), happened: cue("happened"), humans: cue("humans"), it: cue("it:") };
+      // The board falls (accelerating) and lands on the word (the slam); its bottom edge crushes the wheel on the way.
+      var fall0 = T.rank - 0.3, L = BL.y + BL.h + 60;
+      var fallAt = function (t) { var p = Math.max(0, Math.min(1, (t - fall0) / (T.rank - fall0))); return -L + L * p * p; };
+      var wheelTop = Wh[1] - Wh[2] - 62, Bn = OL.banner, knock = fall0 + (T.rank - fall0) * Math.sqrt(Math.max(0, (Bn[1] + 20 - BL.y - BL.h + L) / L));
+      var boardEl = g("board"), sq = g("wheel-sq");
+      gsap.set(g("board-sq"), { svgOrigin: f1(BL.x + BL.w / 2) + " " + (BL.y + BL.h) });
+
+      // the banner is swatted off its nails and drops away, spinning
+      gsap.set(g("banner"), { svgOrigin: Bn[0] + " " + (Bn[1] + Bn[3] / 2) });
+      tl.to(g("banner"), { rotation: 28, duration: 0.12, ease: "power2.out" }, knock);
+      tl.to(g("banner"), { y: H, rotation: 75, duration: 0.6, ease: "power2.in" }, knock + 0.12);
+
+      // the impact: the wheel is a pancake, the board squashes and settles, the room shakes, dust puffs out (the
+      // splat), and the DONUTS slice skids away across the floor, spinning, and falls flat.
+      tl.set(g("pancake"), { opacity: 1 }, T.rank);
+      tl.fromTo(g("board-sq"), { scaleY: 1 }, { scaleY: 0.94, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.rank);
+      tl.fromTo(q("cam"), { y: 0 }, { y: 10, duration: 0.04, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, T.rank);
+      [0, 1].forEach(function (i) {
+        var d = g("dust-" + i);
+        gsap.set(d, { svgOrigin: "0 0" });
+        tl.set(d, { opacity: 1 }, T.rank + 0.12);
+        tl.fromTo(d, { scale: 0.4, x: 0 }, { scale: 1.5, x: (i ? 1 : -1) * 40, duration: 0.45, ease: "power2.out", immediateRender: false }, T.rank + 0.12);
+        tl.to(d, { opacity: 0, duration: 0.25 }, T.rank + 0.4);
+      });
+      var sl = g("slice"), slide = 1.0;
+      tl.set(sl, { opacity: 1 }, T.rank + 0.05);
+      tl.fromTo(sl, { x: 0 }, { x: sliceEnd[0] - sliceStart[0], duration: slide, ease: "power2.out" }, T.rank + 0.05);
+      gsap.set(sl, { svgOrigin: "0 0" });
+      tl.fromTo(sl, { rotation: 0 }, { rotation: -720, duration: slide, ease: "power2.out" }, T.rank + 0.05);
+      tl.fromTo(sl, { y: 0 }, { y: -36, duration: 0.14, yoyo: true, repeat: 3, ease: "power1.out" }, T.rank + 0.05);
+      tl.to(sl, { y: sliceEnd[1] - sliceStart[1], scaleY: 0.35, duration: 0.12, ease: "power2.in" }, T.rank + 0.05 + slide);
+      // the doctor spins round at the slam and jumps; he jumps again as the slice whizzes past his feet
+      var dL = draw("doc", "boxL"), dR = draw("doc", "box");
+      swap(dL, dR, T.rank + 0.04);
+      tl.fromTo(g("doc-j"), { y: 0 }, { y: -26, duration: 0.14, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.rank + 0.04);
+      tl.to(g("doc-j"), { y: -18, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, T.rank + 0.45);
+      // the patient flinches at the slam
+      tl.fromTo(g("pat-j"), { y: 0 }, { y: -10, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.rank + 0.04);
+
+      // The flaps clack (the typewriter): the header settles left to right, then each row's TREATMENT letters as the
+      // bottles shuffle into order (from C, A, B to A, B, C).
+      var nTiles = board.tiles, nHead = BL.t.head.join("").replace(/ /g, "").length, perRow = "TREATMENTA".length;
+      var settle = [];
+      for (var i = 0; i < nTiles; i++) {
+        if (i < nHead) settle.push(T.rank + 0.15 + (i / nHead) * 0.4);
+        else { var rr = Math.floor((i - nHead) / perRow), cc = (i - nHead) % perRow; settle.push(T.rank + 0.75 + rr * 0.22 + cc * 0.03); }
+      }
+      var tileEls = [], CH = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+      for (var j = 0; j < nTiles; j++) tileEls.push(g("tile-" + j));
+      var rh = board.rows[1], shuf = T.rank + 0.75;
+      // scrambled slots: C in row 1, A in row 2, B in row 3
+      var from = { A: rh, B: rh, C: -2 * rh };
+      ["A", "B", "C"].forEach(function (k, r) {
+        var mv = g("bottle-" + k + "-mv");
+        tl.fromTo(mv, { y: from[k], x: 0 }, { y: 0, duration: 0.42, ease: "back.inOut(1.4)" }, shuf + r * 0.08);
+        tl.to(mv, { x: k === "C" ? 44 : -10, duration: 0.21, yoyo: true, repeat: 1, ease: "sine.out" }, shuf + r * 0.08);
+      });
+
+      // "happened": row by row (the ticks), the tiny humans pop up and the GOT BETTER bar fills.
+      for (var r = 0; r < 3; r++) {
+        var tr0 = T.happened + r * 0.15;
+        for (var k = 0; k < 6; k++) {
+          var tn = g("tiny-" + r + "-" + k);
+          gsap.set(tn, { svgOrigin: "0 100" });
+          tl.fromTo(tn, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.4)" }, tr0 + k * 0.025);
+        }
+        var bar = g("bar-" + r);
+        tl.fromTo(bar, { attr: { width: 0 } }, { attr: { width: +bar.getAttribute("data-w") }, duration: 0.4, ease: "power2.out" }, tr0);
+      }
+      // "humans": they hop, the grinning skeletons too
+      for (var r2 = 0; r2 < 3; r2++) for (var k2 = 0; k2 < 6; k2++) {
+        tl.to(g("tiny-" + r2 + "-" + k2), { y: -16, duration: 0.12, yoyo: true, repeat: 3, ease: "power1.out" }, T.humans + (k2 % 2) * 0.06 + r2 * 0.04);
+      }
+
+      // "it:": the patient drops the donut (it bounces and rolls off), looks up and points at row 1 (the ding); row 1
+      // lights up teal and its bottle twinkles.
+      var pDonut = draw("pat", "donut"), pPoint = draw("pat", "point");
+      swap(pDonut, pPoint, T.it);
+      var dd = g("donut"), fallY = (F - 10 - dn[1]) / ps;
+      gsap.set(dd, { svgOrigin: "0 0" });
+      tl.set(dd, { opacity: 1 }, T.it);
+      tl.fromTo(dd, { y: 0 }, { y: fallY, duration: 0.3, ease: "power2.in" }, T.it);
+      tl.to(dd, { y: fallY - 14, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.out" }, T.it + 0.3);
+      tl.fromTo(dd, { x: 0, rotation: 0 }, { x: -40, rotation: -200, duration: 0.6, ease: "power1.out" }, T.it + 0.05);
+      tl.fromTo(g("hi"), { opacity: 0 }, { opacity: 1, duration: 0.08, repeat: 3, yoyo: true }, T.it);
+      tl.set(g("hi"), { opacity: 1 }, T.it + 0.33);
+      var sp = g("spark");
+      gsap.set(sp, { svgOrigin: "0 0" });
+      tl.fromTo(sp, { opacity: 0, scale: 0, rotation: 0 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(2)" }, T.it + 0.05);
+      tl.to(sp, { scale: 0.6, duration: 0.18, yoyo: true, repeat: 1, ease: "sine.inOut" }, T.it + 0.3);
+
+      var lights = document.querySelectorAll("#" + ID + "-pat-j .chest-light"), lastBlink = -1, lastKey = -1;
+      KIT.onTime(tl, D, function (t) {
+        var y = fallAt(t), bottom = BL.y + BL.h + y;
+        boardEl.setAttribute("transform", "translate(0," + f1(y) + ")");
+        // the wheel squashes under the board's bottom edge, and is gone (a pancake) from the slam on
+        var k = bottom <= wheelTop ? 1 : Math.max(0.03, (F - bottom) / (F - wheelTop));
+        sq.setAttribute("opacity", t >= T.rank ? "0" : "1");
+        sq.setAttribute("transform", "translate(0," + f1((F - Wh[1]) * (1 - k)) + ") scale(1," + k.toFixed(3) + ")");
+        // the flaps: random letters until each one settles
+        var key = Math.floor(t * 22);
+        if (key !== lastKey) {
+          lastKey = key;
+          tileEls.forEach(function (el, i) { el.textContent = t >= settle[i] ? el.getAttribute("data-ch") : CH[(i * 13 + key * 7) % CH.length]; });
+        }
+        var bl = Math.floor(t / 0.45) % 2;
+        if (bl !== lastBlink) { lastBlink = bl; Array.prototype.forEach.call(lights, function (l) { l.setAttribute("fill", bl ? "#7A2A1C" : C.war); }); }
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

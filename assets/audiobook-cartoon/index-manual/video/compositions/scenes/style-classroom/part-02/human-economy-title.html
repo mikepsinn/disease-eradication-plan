@@ -1,0 +1,161 @@
+<template id="human-economy-title-template">
+  <!-- human-economy-title · Part 2 in the "Classroom film" style (compositions/scenes/style-classroom/STYLE.md):
+       a hand-lettered period title card, "A Wishonia Educational Film" over THE HUMAN ECONOMY, cream letters with a rust
+       shade on a flat navy card inside a thin cream rule. It is up from the first frame (the narrator reads it) and the
+       camera pushes in slowly. magnificent opens on this card's last frame and dissolves out of it, so letters() and
+       titleCard() are copied there: change both. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0806; }
+    #human-economy-title-gate, #human-economy-title-shake, #human-economy-title-cam, #human-economy-title-flash, #human-economy-title-iris, #human-economy-title-fx { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #human-economy-title-flash { background: #FFFDF4; opacity: 0; }
+    #human-economy-title-cam .cf-layer { position: absolute; left: 0; top: 0; }
+    #human-economy-title-cam .cf-cut { filter: drop-shadow(5px 8px 3px rgba(40, 24, 8, 0.32)); }
+    #human-economy-title-fx > * { position: absolute; pointer-events: none; }
+    #human-economy-title-fx .cf-wash, #human-economy-title-fx .cf-flick, #human-economy-title-fx .cf-vig { inset: 0; }
+    #human-economy-title-fx .cf-wash { background: rgba(240, 226, 192, 0.12); }
+    #human-economy-title-fx .cf-flick { background: #FFF3D6; }
+    #human-economy-title-fx .cf-vig { background: radial-gradient(ellipse 72% 72% at 50% 50%, rgba(0, 0, 0, 0) 58%, rgba(24, 13, 4, 0.5) 100%); }
+    #human-economy-title-fx .cf-grain, #human-economy-title-fx .cf-dust { left: 0; top: 0; }
+  </style>
+  <div id="root" data-composition-id="human-economy-title" data-width="1920" data-height="1080" data-start="0" data-duration="2.32">
+    <div id="human-economy-title-gate">
+      <div id="human-economy-title-shake">
+        <div id="human-economy-title-cam"></div>
+      </div>
+      <div id="human-economy-title-flash"></div>
+    </div>
+    <div id="human-economy-title-iris"></div>
+    <div id="human-economy-title-fx"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "human-economy-title";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var after = function (w, n) { return KIT.after(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var tl = gsap.timeline({ paused: true });
+      var cam = q("cam");
+
+      // ── The camera (the same block in every shot of this variant) ─────────────────────────────────────────
+      // The world is drawn in two layers inside the camera: the flat backdrop, and the paper cut-outs with their soft
+      // shadow. view(cx, cy, z) puts world point (cx, cy) in the middle of the frame at zoom z; the camera pushes in,
+      // pulls back, pans or cuts, and does most of the work.
+      function layers(box, back, cut) {
+        var s = function (inner, cls) {
+          return '<svg class="cf-layer ' + cls + '" width="' + box[2] + '" height="' + box[3] + '" viewBox="' + box.join(" ") + '" style="left:' + box[0] + "px;top:" + box[1] + 'px;overflow:visible">' + inner + "</svg>";
+        };
+        cam.innerHTML = s(back, "cf-back") + '<div class="cf-layer cf-cut">' + s(cut, "cf-cutsvg") + "</div>";
+      }
+      function view(cx, cy, z) { return { x: W / 2 - z * cx, y: H / 2 - z * cy, scale: z }; }
+      function camAt(t, cx, cy, z) {
+        var v = view(cx, cy, z);
+        v.transformOrigin = "0 0";
+        tl.set(cam, v, t);
+      }
+      function camTo(t, dur, cx, cy, z, ease) {
+        var v = view(cx, cy, z);
+        v.duration = dur; v.ease = ease || "sine.inOut";
+        tl.to(cam, v, t);
+      }
+      // A world point's place on screen at a given view.
+      function onScreen(p, cx, cy, z) { return [W / 2 + z * (p[0] - cx), H / 2 + z * (p[1] - cy)]; }
+      // The iris (the period transition): a black card with a round hole at (cx, cy) in screen pixels, over the
+      // picture and under the film. irisOpen runs it from shut to open, irisClose from open to shut.
+      var irises = 0;
+      function iris(cx, cy) {
+        var R = Math.ceil(Math.hypot(Math.max(cx, W - cx), Math.max(cy, H - cy))) + 30, big = ' x="-20" y="-20" width="' + (W + 40) + '" height="' + (H + 40) + '"', k = ++irises;
+        q("iris").insertAdjacentHTML("beforeend", '<svg width="' + W + '" height="' + H + '" style="position:absolute;left:0;top:0;overflow:visible"><defs><mask id="' + ID + "-im" + k + '" maskUnits="userSpaceOnUse"' + big + ">" +
+          "<rect" + big + ' fill="#fff"/><circle id="' + ID + "-ic" + k + '" cx="' + cx.toFixed(0) + '" cy="' + cy.toFixed(0) + '" r="' + R + '" fill="#000"/></mask></defs>' +
+          "<rect" + big + ' fill="#0B0806" mask="url(#' + ID + "-im" + k + ')"/></svg>');
+        return { el: q("ic" + k), R: R };
+      }
+      function irisOpen(cx, cy, t, dur) { var i = iris(cx, cy); tl.fromTo(i.el, { attr: { r: 0 } }, { attr: { r: i.R }, duration: dur, ease: "power2.in" }, t); }
+      function irisClose(cx, cy, t, dur) { var i = iris(cx, cy); tl.fromTo(i.el, { attr: { r: i.R } }, { attr: { r: 0 }, duration: dur, ease: "power2.out", immediateRender: false }, t); }
+
+      // ── The film (the same block in every shot of this variant) ─────────────────────────────────────────
+      // The picture weaves a little in the gate; over it, outside the camera, a faded warm wash, grain that boils,
+      // a few dust specks and a rare scratch, a soft flicker and the vignette. Everything comes from the part's
+      // frame number through KIT.rng, so every seek draws the same frame.
+      function film() {
+        var fx = q("fx"), gate = q("gate"), m = 96, r0 = KIT.rng(4242), dots = "";
+        // one 96 px tile of random specks (no visible lattice), shifted to a new place every frame
+        for (var k = 0; k < 110; k++) {
+          dots += '<circle cx="' + (r0() * m).toFixed(1) + '" cy="' + (r0() * m).toFixed(1) + '" r="' + (0.5 + r0() * 1.1).toFixed(2) + '" fill="' + (r0() < 0.62 ? "#000" : "#FFF") + '" opacity="' + (0.07 + r0() * 0.13).toFixed(2) + '"/>';
+        }
+        fx.innerHTML = '<div class="cf-wash"></div>' +
+          '<svg class="cf-grain" width="' + (W + m) + '" height="' + (H + m) + '"><defs><pattern id="' + ID + '-fg" width="' + m + '" height="' + m + '" patternUnits="userSpaceOnUse">' + dots + "</pattern></defs>" +
+          '<rect width="' + (W + m) + '" height="' + (H + m) + '" fill="url(#' + ID + '-fg)"/></svg>' +
+          '<svg class="cf-dust" width="' + W + '" height="' + H + '"><circle class="cf-sp" r="0"/><circle class="cf-sp" r="0"/><circle class="cf-sp" r="0"/>' +
+          '<path class="cf-hair" d="M0,0" fill="none" stroke="#1A120A" stroke-width="1.6"/><line class="cf-scratch" y1="0" y2="' + H + '" stroke="#FFF6E2" stroke-width="2"/></svg>' +
+          '<div class="cf-flick"></div><div class="cf-vig"></div>';
+        var grain = fx.querySelector(".cf-grain"), flick = fx.querySelector(".cf-flick"), sp = fx.querySelectorAll(".cf-sp");
+        var hair = fx.querySelector(".cf-hair"), scratch = fx.querySelector(".cf-scratch");
+        KIT.onTime(tl, D, function (t) {
+          var T = sc.start + t, f = Math.floor(T * 24), r = KIT.rng(f * 7919 + 101);
+          gate.style.transform = "translate(" + (Math.sin(T * 1.3) * 1.1 + Math.sin(T * 5.3) * 0.4).toFixed(2) + "px," + (Math.sin(T * 0.9 + 1) * 1.5 + (r() - 0.5) * 0.8).toFixed(2) + "px)";
+          grain.style.transform = "translate(" + -Math.floor(r() * m) + "px," + -Math.floor(r() * m) + "px)";
+          flick.style.opacity = (r() * 0.05).toFixed(3);
+          for (var i = 0; i < sp.length; i++) {
+            var on = r() < 0.16, rad = 1 + r() * 2.4, x = r() * W, y = r() * H, light = r() < 0.3;
+            sp[i].setAttribute("r", on ? rad.toFixed(1) : 0);
+            sp[i].setAttribute("cx", x.toFixed(0)); sp[i].setAttribute("cy", y.toFixed(0));
+            sp[i].setAttribute("fill", light ? "#FFF6E2" : "#1A120A");
+          }
+          var hx = r() * W, hy = r() * H, hon = r() < 0.03;
+          hair.setAttribute("d", hon ? "M" + hx.toFixed(0) + "," + hy.toFixed(0) + " q14,-10 22,6 t20,-4" : "M0,0");
+          var sx = r() * W, son = r() < 0.04;
+          scratch.setAttribute("x1", sx.toFixed(0)); scratch.setAttribute("x2", (sx + 6).toFixed(0));
+          scratch.setAttribute("opacity", son ? 0.3 : 0);
+        });
+      }
+
+      // ── The card ─────────────────────────────────────────────────────────────────────────────────────────────
+      // Hand lettering: every letter sits a little off its line and a little turned (KIT.rng), with a rust shade.
+      // magnificent.html copies letters() and titleCard() to dissolve out of this card: change both.
+      function letters(text, size, color, shade, seed) {
+        var r = KIT.rng(seed), out = "";
+        for (var i = 0; i < text.length; i++) {
+          var ch = text[i];
+          if (ch === " ") { out += '<span style="display:inline-block;width:' + (size * 0.28).toFixed(0) + 'px"></span>'; continue; }
+          out += '<span style="display:inline-block;transform:translateY(' + ((r() - 0.5) * size * 0.05).toFixed(1) + "px) rotate(" + ((r() - 0.5) * 4.4).toFixed(2) + 'deg)">' + ch + "</span>";
+        }
+        return '<div style="position:absolute;left:0;width:100%;text-align:center;font-family:Fraunces;font-weight:900;font-size:' + size + "px;line-height:1;color:" + color +
+          ";text-shadow:" + (size * 0.03).toFixed(1) + "px " + (size * 0.035).toFixed(1) + "px 0 " + shade + ';">' + out + "</div>";
+      }
+      function titleCard() {
+        var L = V
+          ? { inset: 54, over: [610, 50], star: 690, lines: [["THE", 820, 120], ["HUMAN", 960, 190], ["ECONOMY", 1150, 172]] }
+          : { inset: 64, over: [262, 60], star: 352, lines: [["THE HUMAN", 410, 156], ["ECONOMY", 590, 200]] };
+        var bg = KIT.svg(W, H,
+          '<rect x="-40" y="-40" width="' + (W + 80) + '" height="' + (H + 80) + '" fill="' + C.navy + '"/>' +
+          '<rect x="' + L.inset + '" y="' + L.inset + '" width="' + (W - 2 * L.inset) + '" height="' + (H - 2 * L.inset) + '" fill="none" stroke="' + C.cream + '" stroke-width="4"/>' +
+          '<rect x="' + (L.inset + 14) + '" y="' + (L.inset + 14) + '" width="' + (W - 2 * L.inset - 28) + '" height="' + (H - 2 * L.inset - 28) + '" fill="none" stroke="' + C.yellow + '" stroke-width="1.6"/>' +
+          KIT.star(W / 2, L.star, 15, C.yellow) + '<path d="M' + (W / 2 - 150) + "," + L.star + " H" + (W / 2 - 34) + " M" + (W / 2 + 34) + "," + L.star + " H" + (W / 2 + 150) + '" stroke="' + C.yellow + '" stroke-width="3"/>',
+          'style="position:absolute;left:0;top:0;overflow:visible"');
+        var over = '<div style="position:absolute;left:0;top:' + L.over[0] + 'px;width:100%">' + letters("A Wishonia Educational Film", L.over[1], C.yellow, C.rust, 7) + "</div>";
+        var words = L.lines.map(function (l, i) {
+          return '<div style="position:absolute;left:0;top:' + l[1] + 'px;width:100%">' + letters(l[0], l[2], C.cream, C.rust, 31 + i * 17) + "</div>";
+        }).join("");
+        return bg + over + words;
+      }
+
+      cam.innerHTML = titleCard();
+      // The camera: a slow push-in on the card, all the way through (the card is up from the first frame; the narrator
+      // reads it).
+      tl.fromTo(cam, { scale: 1, transformOrigin: "50% 50%" }, { scale: 1.04, transformOrigin: "50% 50%", duration: D, ease: "none" }, 0);
+
+      film();
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

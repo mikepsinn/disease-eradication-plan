@@ -1,0 +1,116 @@
+<template id="weapons-makers-template">
+  <!-- weapons-makers · style test "modern limited animation" (compositions/scenes/style-modern/STYLE.md).
+       "You give these nothing-papers to weapons makers": on a rust field the Weapons Maker stands cradling his
+       smiling missile like a baby. The green paper walks in from the left on its little legs and stops in front of
+       him; on "makers." he snaps to a new pose, the paper held up in one fist, the baby missile tucked under the other
+       arm; a beat later his eyes ring up dollar signs. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    #weapons-makers-weave, #weapons-makers-cam, #weapons-makers-art, #weapons-makers-film { position: absolute; inset: 0; }
+    #weapons-makers-field { position: absolute; inset: -40px; }
+    #weapons-makers-field { background: #904B2E; }
+  </style>
+  <div id="root" data-composition-id="weapons-makers" data-width="1920" data-height="1080" data-start="0" data-duration="2.92">
+    <div id="weapons-makers-weave">
+      <div id="weapons-makers-cam">
+        <div id="weapons-makers-field"></div>
+        <div id="weapons-makers-art"></div>
+      </div>
+    </div>
+    <div id="weapons-makers-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "weapons-makers";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var after = function (w, n) { return KIT.after(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      if (V) q("weave").parentNode.classList.add("tall");
+      var tl = gsap.timeline({ paused: true });
+
+      // ── The period film (the same block in every style-modern scene) ──────────
+      // Over the picture and outside the camera: a cream wash (the faded print), a soft vignette the shape of the frame, the grain, a
+      // frame-by-frame flicker and a few specks of dust. Under it, the gate weave: the picture drifts a pixel or two.
+      function film() {
+        var dust = [0, 1, 2].map(function (i) { return '<ellipse id="' + ID + "-dust" + i + '" rx="2" ry="1.4" fill="#1A1410" opacity="0"/>'; }).join("");
+        q("film").innerHTML = KIT.svg(W, H,
+          '<defs><radialGradient id="' + ID + '-vig" cx="0.5" cy="0.48" r="0.72"><stop offset="0.5" stop-color="#140F0A" stop-opacity="0"/><stop offset="0.8" stop-color="#140F0A" stop-opacity="0.12"/><stop offset="1" stop-color="#140F0A" stop-opacity="0.5"/></radialGradient></defs>' +
+          '<rect width="' + W + '" height="' + H + '" fill="' + C.cream + '" opacity="0.07"/>' +
+          '<rect width="' + W + '" height="' + H + '" fill="url(#' + ID + '-vig)"/>' + KIT.grain(ID) + dust +
+          '<rect id="' + ID + '-flick" width="' + W + '" height="' + H + '" fill="#FFF6DD" opacity="0"/>');
+        var flick = document.getElementById(ID + "-flick"), weave = q("weave");
+        var specks = [0, 1, 2].map(function (i) { return document.getElementById(ID + "-dust" + i); });
+        KIT.onTime(tl, D, function (t) {
+          var f = Math.floor((sc.start + t) * 24), r = KIT.rng(f * 7919 + 17);
+          r(); r();
+          flick.setAttribute("opacity", (0.01 + r() * 0.035).toFixed(3));
+          weave.style.transform = "translate(" + (Math.sin(f * 0.83) * 0.9 + (r() - 0.5) * 0.8).toFixed(2) + "px," + (Math.sin(f * 0.29) * 1.4 + (r() - 0.5) * 0.6).toFixed(2) + "px)";
+          specks.forEach(function (s) {
+            s.setAttribute("opacity", r() < 0.16 ? "0.45" : "0");
+            s.setAttribute("cx", (r() * W).toFixed(0));
+            s.setAttribute("cy", (r() * H).toFixed(0));
+            s.setAttribute("rx", (1.4 + r() * 2.4).toFixed(1));
+          });
+        });
+      }
+      film();
+
+      // The Weapons Maker in person units at M (feet at y 100); the paper walks on the same floor (P.s: its scale).
+      var M = V ? { x: 625, y: 920, s: 4.4 } : { x: 1230, y: 560, s: 3.1 };
+      var floor = M.y + 100 * M.s, P = V ? { from: -160, to: 200, s: 2.8 } : { from: -140, to: 760, s: 2.1 };
+      // Dollar-sign eyes that read on any skin: cream eye whites with a green $ in each (in the face's units).
+      function dollarEyes() {
+        return [-2.5, 10.8].map(function (x) {
+          var y = -4;
+          return '<ellipse cx="' + x + '" cy="' + y + '" rx="6" ry="6.4" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="1.2"/>' +
+            '<path d="M' + (x + 2.6) + "," + (y - 3) + " C" + (x + 2.6) + "," + (y - 5.6) + " " + (x - 2.6) + "," + (y - 5.6) + " " + (x - 2.6) + "," + (y - 3) +
+            " C" + (x - 2.6) + "," + (y - 0.6) + " " + (x + 2.6) + "," + (y - 0.6) + " " + (x + 2.6) + "," + (y + 1.8) + " C" + (x + 2.6) + "," + (y + 4.4) + " " + (x - 2.6) + "," + (y + 4.4) + " " + (x - 2.6) + "," + (y + 1.8) +
+            " M" + x + "," + (y - 6.6) + " V" + (y + 5.4) + '" fill="none" stroke="' + C.moneyDark + '" stroke-width="1.9"/>';
+        }).join("");
+      }
+      var cradle = KIT.castOpts("weaponsMaker", {});
+      var grab = KIT.castOpts("weaponsMaker", { arms: [[45, 95], [130, 178]], holdL: "missile", mood: "grin" });
+      var hand = KIT.rig(grab).hand[1];
+      var held = '<g transform="translate(' + hand[0] + "," + (hand[1] - 16) + ') scale(0.5) rotate(-8)">' + KIT.money("war", 1) + "</g>";
+      var grabSvg = KIT.person(grab) + held;
+      q("art").innerHTML = KIT.svg(W, H,
+        '<g transform="translate(' + M.x + "," + M.y + ") scale(" + M.s + ')">' +
+        '<g id="' + ID + '-cradle">' + KIT.person(cradle) + "</g>" +
+        '<g id="' + ID + '-grab" opacity="0">' + grabSvg + "</g>" +
+        '<g id="' + ID + '-greedy" opacity="0">' + grabSvg.replace("<!--face-end-->", dollarEyes() + "<!--face-end-->") + "</g></g>" +
+        '<g transform="translate(0,' + (floor - 46 * P.s) + ") scale(" + P.s + ')"><g id="' + ID + '-walker">' +
+        '<g id="' + ID + '-pa">' + KIT.money("war", 0) + '</g><g id="' + ID + '-pb" opacity="0">' + KIT.money("war", 1) + "</g></g></g>");
+
+      // The walk: the two leg drawings swap every 0.12 s, with a little bob, from the left edge to its mark by "weapons".
+      var walker = q("walker"), pa = q("pa"), pb = q("pb"), stop = cue("weapons"), grabAt = cue("makers.");
+      tl.fromTo(walker, { x: P.from / P.s }, { x: P.to / P.s, duration: stop, ease: "none" }, 0);
+      KIT.onTime(tl, D, function (t) {
+        var k = t < stop ? Math.floor(t / 0.12) % 2 : 0;
+        pa.setAttribute("opacity", k ? 0 : 1);
+        pb.setAttribute("opacity", k ? 1 : 0);
+      });
+      tl.set(walker, { y: 0 }, 0);
+      for (var s = 0.12; s < stop; s += 0.24) tl.set(walker, { y: -3 }, s).set(walker, { y: 0 }, s + 0.12);
+      // "makers.": snap, the paper is in his fist; a beat later his eyes ring up
+      tl.set(walker, { opacity: 0 }, grabAt);
+      tl.set(q("cradle"), { opacity: 0 }, grabAt);
+      tl.set(q("grab"), { opacity: 1 }, grabAt);
+      tl.set(q("grab"), { opacity: 0 }, after("makers."));
+      tl.set(q("greedy"), { opacity: 1 }, after("makers."));
+      // the camera drifts right with the paper
+      tl.fromTo(q("cam"), { x: 0, scale: 1.04 }, { x: V ? -10 : -24, scale: 1.04, duration: D, ease: "none" }, 0);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

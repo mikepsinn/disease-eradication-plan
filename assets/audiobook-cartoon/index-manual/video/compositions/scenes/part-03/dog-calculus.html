@@ -1,0 +1,498 @@
+<template id="dog-calculus-template">
+  <!-- dog-calculus · Layer B (storyboards/part-03-gradual-irrationality-reduction.md): a plain dog stands on its hind
+       legs at a chalkboard full of integrals, chalk in its mouth, under a lesson list in the wrong order. It faces its
+       sums and shuffles backwards as it writes, so the chalk line grows in front of its nose. It scribbles a
+       line on "illogical"; the Scientist taps "LESSON 1: CALCULUS" twice on "once."; its ears perk at "dog"; on
+       "calculus" it scribbles on, frantic, steam whistles out of its ears, and on "before" the ears catch fire. On "sit"
+       it stops dead and looks at the camera, ears burning. A beat later the Scientist empties her bubbling flask over its
+       head (splat, sizzle): soaked and charred, it plops into a sit, and the chalk ticks off "LESSON 2: SIT". -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #dog-calculus-cam, #dog-calculus-bg, #dog-calculus-art, #dog-calculus-pip, #dog-calculus-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="dog-calculus" data-width="1920" data-height="1080" data-start="0" data-duration="7.12">
+    <div id="dog-calculus-cam">
+      <div id="dog-calculus-bg"></div>
+      <div id="dog-calculus-art"></div>
+      <div id="dog-calculus-pip"></div>
+    </div>
+    <div id="dog-calculus-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "dog-calculus";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var P = function (s) { return ID + "-" + s; };
+      var g = function (s) { return "#" + P(s); };
+      var f1 = function (n) { return (+n).toFixed(1); };
+      function at(x, y, k, inner, id) {
+        return '<g transform="translate(' + f1(x) + "," + f1(y) + ") scale(" + k + ')">' + (id ? '<g id="' + P(id) + '">' + inner + "</g>" : inner) + "</g>";
+      }
+      // Rotate point p about o by deg (clockwise on screen, as SVG and GSAP rotate).
+      function rot(p, o, deg) {
+        var r = (deg * Math.PI) / 180, dx = p[0] - o[0], dy = p[1] - o[1];
+        return [o[0] + dx * Math.cos(r) - dy * Math.sin(r), o[1] + dx * Math.sin(r) + dy * Math.cos(r)];
+      }
+
+      // ── The plain dog (dog-calculus and paint-chips share this block: change both copies) ──────────────
+      // An angular 1950s mutt drawn like the humans: tan fur, a cream chest and muzzle with halftone dots, a rust
+      // saddle, pointed ears, a stub tail, a navy collar with a mustard tag, thin navy miter outlines. Not the
+      // Democracy Dog (no paper tail). Drawn facing right, standing on y 0, in person units (a person is 180 tall):
+      // about 130 tall sitting and 168 standing on its hind legs (to the ear tips).
+      // o: { pose "sit" | "stand" (on its hind legs, front paws up) | "sniff" (front low, nose to the floor),
+      //      head "side" | "front", mood "eager" | "flat" (half lids) | "down" (eyes on the floor) | "smug" (eyes shut),
+      //      look [dx, dy] (pupils), tilt (turns the head, degrees), chalk (a stick of chalk in its mouth), droop (the
+      //      chalk hangs), fire (flames on the ear tips), steam (puffs at the ear tips) }
+      // Parts: .dog-head (data-pivot: the neck), .dog-ear (data-pivot: its base), .dog-tail (its root), .dog-upper
+      // (stand: everything above the hips, data-pivot: the hip), .dog-fire, .dog-steam (.dog-puff), .eye, .pupil.
+      // DOG.point(o, p) maps a point in the head's units (DOG.CHALK, DOG.TIPS) to the dog's units.
+      var DOG = (function () {
+        var WHITE = "#FFFFFF", FUR = C.tan, FAR = C.rust, CREAM = C.cream, HS = 1.22, uid = 0;
+        function Pt(x, y) { return (+x).toFixed(1) + "," + (+y).toFixed(1); }
+        function polyD(pts) { return "M" + pts.map(function (p) { return Pt(p[0], p[1]); }).join(" L") + " Z"; }
+        function solid(list, col, w) {
+          w = w || 4.4;
+          return list.map(function (pts) { return '<path d="' + polyD(pts) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+            list.map(function (pts) { return '<path d="' + polyD(pts) + '" fill="' + col + '"/>'; }).join("");
+        }
+        function line(d, col, w) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"/>'; }
+        function pivot(p) { return ' data-pivot="' + f1(p[0]) + " " + f1(p[1]) + '"'; }
+        // print shading: halftone dots over a light shape
+        function dots(pts, op) {
+          var id = "dogdot-" + ID + "-" + ++uid, xs = pts.map(function (p) { return p[0]; }), ys = pts.map(function (p) { return p[1]; });
+          var x0 = Math.min.apply(null, xs), y0 = Math.min.apply(null, ys), x1 = Math.max.apply(null, xs), y1 = Math.max.apply(null, ys);
+          return '<defs><pattern id="' + id + 'd" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="' + ink + '"/></pattern>' +
+            '<clipPath id="' + id + 'c"><path d="' + polyD(pts) + '"/></clipPath></defs>' +
+            '<rect x="' + f1(x0) + '" y="' + f1(y0) + '" width="' + f1(x1 - x0) + '" height="' + f1(y1 - y0) + '" fill="url(#' + id + 'd)" opacity="' + (op || 0.26) + '" clip-path="url(#' + id + 'c)"/>';
+        }
+        function seg(x, y, a, len) {
+          var r1 = (a[0] * Math.PI) / 180, r2 = (a[1] * Math.PI) / 180, ex = x + len * Math.sin(r1), ey = y + len * Math.cos(r1);
+          return { x: x, y: y, ex: ex, ey: ey, hx: ex + len * Math.sin(r2), hy: ey + len * Math.cos(r2) };
+        }
+        function nrm(ax, ay, bx, by) { var dx = bx - ax, dy = by - ay, l = Math.sqrt(dx * dx + dy * dy) || 1; return [-dy / l, dx / l]; }
+        // a two-segment leg as one tapered polygon with a sharp joint, and a paw at its end
+        function leg(s, w0, w1, w2) {
+          var nA = nrm(s.x, s.y, s.ex, s.ey), nB = nrm(s.ex, s.ey, s.hx, s.hy), sx = nA[0] + nB[0], sy = nA[1] + nB[1], qq = sx * sx + sy * sy;
+          function side(k) {
+            var mid = qq > 0.6 ? [[s.ex + (k * sx * w1) / qq, s.ey + (k * sy * w1) / qq]] : [[s.ex + (k * nA[0] * w1) / 2, s.ey + (k * nA[1] * w1) / 2], [s.ex + (k * nB[0] * w1) / 2, s.ey + (k * nB[1] * w1) / 2]];
+            return [[s.x + (k * nA[0] * w0) / 2, s.y + (k * nA[1] * w0) / 2]].concat(mid, [[s.hx + (k * nB[0] * w2) / 2, s.hy + (k * nB[1] * w2) / 2]]);
+          }
+          return side(1).concat(side(-1).reverse());
+        }
+        function paw(x, y) { return [[x - 4, y - 4], [x + 5, y - 5], [x + 8, y + 1], [x + 4, y + 6], [x - 3, y + 4]]; }
+        var POSE = {
+          sit: { head: [27, -84], neck: [18, -68], tail: [-40, -6], collar: [[12, -74], [31, -69], [31, -61], [12, -66]], tag: [24, -57] },
+          stand: { head: [15, -121], neck: [6, -104], tail: [-19, -48], hip: [-6, -50], collar: [[-8, -104], [15, -102], [15, -94], [-8, -96]], tag: [8, -90] },
+          sniff: { head: [64, -26], neck: [46, -38], tail: [-40, -6], tilt: 30, collar: [[36, -44], [50, -36], [45, -29], [31, -37]], tag: [41, -27] },
+        };
+        var CHALK = [46, 7.5], CHALK_FRONT = [22, 13.8];
+        var TIPS = { side: [[-7, -38], [10, -33]], front: [[-20, -38], [20, -38]] };
+        function eye(x, y, o, fur) {
+          var mood = o.mood || "eager", rx = 4.8, ry = 3.6, lk = o.look || [0, 0];
+          if (mood === "smug") return '<g class="eye">' + line("M" + Pt(x - rx, y - 0.5) + " Q" + Pt(x, y + 3) + " " + Pt(x + rx, y - 0.5), ink, 2.2) + "</g>";
+          var al = "M" + Pt(x - rx, y) + " Q" + Pt(x, y - ry * 1.6) + " " + Pt(x + rx, y - 0.3) + " Q" + Pt(x, y + ry * 1.15) + " " + Pt(x - rx, y) + " Z";
+          var py = mood === "down" ? 1.3 : 0;
+          var out = '<path d="' + al + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="1.2"/>' +
+            '<circle class="pupil" cx="' + f1(x + lk[0]) + '" cy="' + f1(y - 0.5 + lk[1] + py) + '" r="' + (mood === "eager" ? 1.6 : 1.9) + '" fill="' + ink + '"/>';
+          if (mood === "flat" || mood === "down") {
+            out += '<path d="M' + Pt(x - rx - 0.7, y - 0.6) + " Q" + Pt(x, y - ry * 1.95) + " " + Pt(x + rx + 0.7, y - 1) + ' Z" fill="' + fur + '"/>' + line("M" + Pt(x - rx - 0.7, y - 0.6) + " L" + Pt(x + rx + 0.7, y - 1), ink, 2.2);
+          } else {
+            out += line("M" + Pt(x - rx - 0.7, y + 0.3) + " Q" + Pt(x, y - ry * 1.95) + " " + Pt(x + rx + 0.7, y - 0.6), ink, 1.9);
+          }
+          return '<g class="eye">' + out + "</g>";
+        }
+        function flamesAt(tips) {
+          return '<g class="dog-fire">' + tips.map(function (t) { return KIT.flames(f1(t[0]), f1(t[1] + 6), 0.34); }).join("") + "</g>";
+        }
+        function steamAt(tips) {
+          return '<g class="dog-steam" opacity="0">' + tips.map(function (t) {
+            return [0, 1, 2].map(function (i) {
+              return '<g transform="translate(' + Pt(t[0] + (i - 1) * 3, t[1] - 4) + ')"><g class="dog-puff"><circle r="' + (6 - i) + '" fill="' + CREAM + '" stroke="' + ink + '" stroke-width="1.6"/></g></g>';
+            }).join("") + line("M" + Pt(t[0] - 6, t[1] - 12) + " l-5,-7 M" + Pt(t[0] + 6, t[1] - 12) + " l5,-7", ink, 1.6);
+          }).join("") + "</g>";
+        }
+        function ear(pts, inner, base, col) {
+          return '<g class="dog-ear"' + pivot(base) + ">" + solid([pts], col) + (inner ? solid([inner], FAR, 1.6) : "") + "</g>";
+        }
+        // side view: a blocky skull, a square muzzle and a big black nose
+        function headSide(o) {
+          var skull = [[2, -15], [-9, -15], [-16, -6], [-17, 6], [-11, 14], [2, 15], [18, 15], [33, 13], [34, 1], [30, -5], [12, -10]];
+          var jaw = [[33, 6], [18, 6], [4, 3], [-4, 12], [2, 15], [18, 15], [33, 13]];
+          var chalk = o.chalk ? solid([[[46, 5.5], [31, 6.5], [31, 10], [46, 9.5]]], WHITE, 1.8) : "";
+          return ear([[3, -14], [10, -33], [13, -10]], null, [8, -12], FAR) +
+            solid([skull], FUR) + dots([[18, -9], [34, 1], [33, 6], [18, 6], [8, 13]], 0.22) + solid([jaw], CREAM, 3.2) + dots(jaw, 0.22) +
+            solid([[[38, -3], [30, -6], [27, 0], [31, 5], [38, 3]]], ink, 1.6) + line("M33,9 L17,10 L13,8", ink, 1.8) +
+            eye(8, -4, o, FUR) + line("M2,-10.5 L14,-11.5", ink, 2.2) + chalk +
+            ear([[-14, -10], [-7, -38], [1, -14]], [[-10, -12], [-7, -30], [-3, -14]], [-6, -12], FUR) +
+            (o.steam ? steamAt(TIPS.side) : "") + (o.fire ? flamesAt(TIPS.side) : "");
+        }
+        function headFront(o) {
+          var L = [[-17, -9], [-20, -38], [-6, -16]], Li = [[-15, -12], [-17, -31], [-9, -16]];
+          var flip = function (pts) { return pts.map(function (p) { return [-p[0], p[1]]; }); };
+          var skull = [[-16, -12], [-7, -17], [7, -17], [16, -12], [18, 2], [12, 15], [-12, 15], [-18, 2]];
+          var muzzle = [[-11, 0], [11, 0], [13, 9], [7, 17], [-7, 17], [-13, 9]];
+          var chalk = !o.chalk ? "" : o.droop ? solid([[[3, 11], [16, 24], [13, 26.5], [1, 14]]], WHITE, 1.8) : solid([[[3, 10.5], [22, 12], [22, 15.5], [3, 14]]], WHITE, 1.8);
+          return ear(L, Li, [-11, -12], FUR) + ear(flip(L), flip(Li), [11, -12], FUR) +
+            solid([skull], FUR) + dots([[4, -17], [16, -12], [18, 2], [12, 15], [4, 15]], 0.22) + solid([muzzle], CREAM, 3.2) + dots(muzzle, 0.2) +
+            solid([[[-6, -1], [6, -1], [4, 5], [-4, 5]]], ink, 1.6) + line("M0,5 V9 M-7,10 Q-3.5,14 0,9 Q3.5,14 7,10", ink, 1.8) +
+            eye(-7.5, -5, o, FUR) + eye(7.5, -5, o, FUR) + line("M-13,-11.5 L-3,-10.5 M3,-10.5 L13,-11.5", ink, 2.2) + chalk +
+            (o.steam ? steamAt(TIPS.front) : "") + (o.fire ? flamesAt(TIPS.front) : "");
+        }
+        function headAt(o, pose) {
+          var h = POSE[pose].head, t = (POSE[pose].tilt || 0) + (o.tilt || 0);
+          return '<g class="dog-head"' + pivot(POSE[pose].neck) + '><g transform="translate(' + Pt(h[0], h[1]) + ") rotate(" + t + ") scale(" + HS + ')">' + (o.head === "front" ? headFront(o) : headSide(o)) + "</g></g>";
+        }
+        function collar(pose) {
+          var c = POSE[pose];
+          return solid([c.collar], C.navy, 3) + '<circle cx="' + c.tag[0] + '" cy="' + c.tag[1] + '" r="4" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>';
+        }
+        function tail(pts, root) { return '<g class="dog-tail"' + pivot(root) + ">" + solid([pts], FUR) + "</g>"; }
+        function draw(o) {
+          o = o || {};
+          var pose = o.pose || "sit", out;
+          if (pose === "stand") {
+            var farArm = seg(6, -92, [50, 150], 13), nearArm = seg(10, -90, [58, 160], 14);
+            var torso = [[12, -48], [-18, -52], [-20, -80], [-14, -102], [2, -110], [14, -100], [16, -72]];
+            var chest = [[14, -100], [6, -108], [0, -100], [2, -76], [10, -62], [16, -72]];
+            out = solid([[[-14, 0], [8, 0], [8, -4], [-10, -5]]], FAR, 3.6) + tail([[-18, -50], [-34, -60], [-37, -53], [-21, -44]], POSE.stand.tail) +
+              solid([[[-16, -56], [4, -54], [10, -40], [6, -26], [-2, -14], [2, -6], [22, -5], [22, 0], [-8, 0], [-12, -10], [-10, -20], [-18, -30], [-22, -44]]], FUR) +
+              line("M-2,-14 L4,-30 L-4,-46", ink, 1.8) +
+              '<g class="dog-upper"' + pivot(POSE.stand.hip) + ">" + solid([leg(farArm, 9, 8, 7), paw(farArm.hx, farArm.hy)], FAR, 3.6) +
+              solid([torso], FUR) + dots([[-4, -104], [2, -110], [14, -100], [16, -72], [12, -48], [-4, -50]], 0.22) + solid([chest], CREAM, 3.2) + dots(chest, 0.24) +
+              solid([[[-16, -62], [-19, -82], [-12, -96], [-6, -78]]], FAR, 2.4) + collar(pose) + headAt(o, pose) +
+              solid([leg(nearArm, 10, 9, 8), paw(nearArm.hx, nearArm.hy)], FUR, 3.6) + "</g>";
+          } else {
+            var sniff = pose === "sniff";
+            var body = sniff ? [[-40, -30], [-44, -14], [-40, -2], [-24, 0], [2, -2], [22, -10], [38, -16], [46, -28], [38, -40], [16, -50], [-6, -58], [-26, -48]]
+              : [[28, -58], [22, -72], [8, -76], [-6, -64], [-24, -48], [-38, -30], [-44, -14], [-40, -2], [-24, 0], [2, -2], [14, -20], [26, -34]];
+            var chest = sniff ? [[46, -28], [40, -16], [32, -14], [34, -28], [40, -36]] : [[28, -56], [20, -66], [12, -60], [14, -40], [22, -34], [27, -42]];
+            var farLeg = sniff ? [[30, -30], [38, -31], [48, -6], [56, -2], [56, 0], [40, 0], [40, -4]] : [[8, -40], [17, -40], [16, -5], [20, 0], [4, 0], [6, -5]];
+            var nearLeg = sniff ? [[36, -28], [44, -28], [54, -6], [62, -2], [62, 0], [46, 0], [46, -4]] : [[16, -42], [26, -42], [26, -6], [30, 0], [12, 0], [15, -6]];
+            var saddle = sniff ? [[-4, -56], [-18, -50], [-24, -40], [-10, -42], [2, -50]] : [[-2, -64], [-18, -54], [-26, -44], [-12, -44], [2, -56]];
+            out = solid([farLeg], FAR, 3.6) + tail([[-38, -6], [-54, -20], [-58, -14], [-44, 0]], POSE.sit.tail) +
+              solid([body], FUR) + dots(sniff ? [[-6, -58], [16, -50], [38, -40], [22, -10], [2, -2], [-10, -20]] : [[8, -76], [22, -72], [28, -58], [26, -34], [14, -20], [2, -2], [-6, -30]], 0.2) +
+              line("M-6,-2 L-12,-28 L-30,-38", ink, 1.8) + solid([[[-8, 0], [12, 0], [12, -5], [-2, -8], [-8, -4]]], FUR, 3.6) +
+              solid([saddle], FAR, 2.4) + solid([chest], CREAM, 3.2) + dots(chest, 0.24) + collar(pose) + headAt(o, pose) + solid([nearLeg], FUR, 3.6);
+          }
+          return '<g class="plain-dog">' + out + "</g>";
+        }
+        function point(o, p) {
+          var ps = POSE[o.pose || "sit"], t = (((ps.tilt || 0) + (o.tilt || 0)) * Math.PI) / 180, x = p[0] * HS, y = p[1] * HS;
+          return [ps.head[0] + x * Math.cos(t) - y * Math.sin(t), ps.head[1] + x * Math.sin(t) + y * Math.cos(t)];
+        }
+        return { draw: draw, point: point, POSE: POSE, CHALK: CHALK, CHALK_FRONT: CHALK_FRONT, TIPS: TIPS, HS: HS };
+      })();
+      // Burn a drawing (as KIT's charred people are burnt): every color but the ink and pure white turns a dark
+      // brown of the same lightness, so only the eyes and the chalk stay white.
+      function burn(markup) {
+        return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, a, col) {
+          var u = col.toUpperCase();
+          if (u === ink.toUpperCase() || u === "#FFFFFF") return m;
+          var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + l * 46);
+          return a + '="rgb(' + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ')"';
+        });
+      }
+
+      // ── Layout for each canvas shape ──
+      // board: [x, y, w, h] of the chalkboard's frame; floor: the floor line; s: people; ds: the dog; dog0: where the dog
+      // stands at the start (its ground center); line1, line2: how far it writes (and walks) on "illogical" and on
+      // "calculus"; list: where "LESSON 1" starts; rows: the integrals [x, y, size]; step: the Scientist's step to the dog.
+      var L = V
+        ? { board: [40, 450, 1000, 790], floor: 1440, s: 3.3, ds: 3.0, dog0: 335, line1: 100, line2: 140, list: [670, 760, 30], step: 100, banner: [60, 300, 660, 104],
+            rows: [["int", 100, 552, 44, "x² dx = x³/3 + C"], ["text", 100, 624, 44, "d/dx (sin x) = cos x"], ["sig", 100, 696, 44, "1/n² = π²/6"],
+              ["text", 100, 768, 42, "lim (1 + 1/n)<tspan dy=\"-0.42em\" font-size=\"62%\">n</tspan><tspan dy=\"0.42em\"> = e</tspan>"], ["root", 100, 840, 42, "x² + y²  = r"], ["dint", 110, 912, 40, "f dA = ?"]], bowl: [905, 1440] }
+        : { board: [190, 160, 1180, 590], floor: 905, s: 2.75, ds: 2.45, dog0: 562, line1: 140, line2: 230, list: [1034, 240, 30], step: 120, banner: [610, 56, 640, 88],
+            rows: [["int", 250, 262, 42, "x² dx = x³/3 + C"], ["text", 250, 330, 42, "d/dx (sin x) = cos x"], ["sig", 250, 398, 42, "1/n² = π²/6"],
+              ["text", 250, 464, 38, "lim (1 + 1/n)<tspan dy=\"-0.42em\" font-size=\"62%\">n</tspan><tspan dy=\"0.42em\"> = e</tspan>"], ["root", 720, 330, 38, "x² + y²  = r"], ["dint", 262, 540, 38, "f dA = ?"]], bowl: [118, 905] };
+      var B = L.board;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The chalkboard: a tan wood frame, a slate face, chalk dust, a tray with chalk and an eraser ──
+      var CH = "#EFE8D2"; // chalk
+      function chalkText(x, y, size, s, extra) {
+        return '<text x="' + f1(x) + '" y="' + f1(y) + '" font-family="Inter" font-style="italic" font-weight="500" font-size="' + size + '" fill="' + CH + '" opacity="0.92"' + (extra || "") + ">" + s + "</text>";
+      }
+      function chalkPath(d, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + CH + '" stroke-width="' + (w || 4) + '" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"' + (extra || "") + "/>"; }
+      // Math signs the fonts lack, drawn at (x, y) (the baseline), k = font size / 46.
+      function integral(x, y, k) { return chalkPath("M" + f1(x + 18 * k) + "," + f1(y - 40 * k) + " C" + f1(x + 18 * k) + "," + f1(y - 50 * k) + " " + f1(x + 8 * k) + "," + f1(y - 50 * k) + " " + f1(x + 8 * k) + "," + f1(y - 38 * k) + " L" + f1(x) + "," + f1(y + 8 * k) + " C" + f1(x) + "," + f1(y + 18 * k) + " " + f1(x - 10 * k) + "," + f1(y + 18 * k) + " " + f1(x - 10 * k) + "," + f1(y + 10 * k), 3.6 * k); }
+      function sigma(x, y, k) { return chalkPath("M" + f1(x + 26 * k) + "," + f1(y - 34 * k) + " H" + f1(x) + " L" + f1(x + 15 * k) + "," + f1(y - 16 * k) + " L" + f1(x) + "," + f1(y + 2 * k) + " H" + f1(x + 26 * k), 3.6 * k); }
+      function root(x, y, k, w) { return chalkPath("M" + f1(x) + "," + f1(y - 14 * k) + " L" + f1(x + 6 * k) + "," + f1(y - 18 * k) + " L" + f1(x + 13 * k) + "," + f1(y + 2 * k) + " L" + f1(x + 22 * k) + "," + f1(y - 38 * k) + " H" + f1(x + w), 3.4 * k); }
+      function rows() {
+        var out = "";
+        L.rows.forEach(function (r) {
+          var k = r[3] / 46, x = r[1], y = r[2];
+          if (r[0] === "int") { out += integral(x, y, k); x += 26 * k; }
+          if (r[0] === "dint") { out += integral(x, y, k) + integral(x + 24 * k, y, k); x += 52 * k; }
+          if (r[0] === "sig") { out += sigma(x, y, k); x += 34 * k; }
+          if (r[0] === "root") { out += root(x, y, k, 160 * k); x += 26 * k; }
+          out += chalkText(x, y, r[3], r[4]);
+        });
+        return out;
+      }
+      // The lesson list in the board's top corner; returns the markup and the point the pointer taps.
+      var LS = L.list, tapAt = [LS[0] + LS[2] * 9.25 + 16, LS[1] - LS[2] * 0.06];   // just past the end of "LESSON 1: CALCULUS", on its baseline
+      var list = '<text x="' + LS[0] + '" y="' + LS[1] + '" font-family="Oswald" font-weight="600" font-size="' + LS[2] + '" letter-spacing="1.5" fill="' + CH + '">LESSON 1: CALCULUS</text>' +
+        '<text x="' + LS[0] + '" y="' + (LS[1] + LS[2] * 1.35) + '" font-family="Oswald" font-weight="600" font-size="' + LS[2] + '" letter-spacing="1.5" fill="' + CH + '">LESSON 2: SIT</text>' +
+        chalkPath("M" + (LS[0] - 18) + "," + (LS[1] - LS[2] - 12) + " V" + (LS[1] + LS[2] * 1.35 + 14) + " M" + (LS[0] - 26) + "," + (LS[1] - LS[2] - 12) + " H" + (LS[0] + LS[2] * 9.4), 3) +
+        // the tick that lands next to "LESSON 2: SIT" once the dog sits
+        '<path id="' + P("tick") + '" d="M' + (LS[0] + LS[2] * 6.9) + "," + (LS[1] + LS[2] * 1.05) + " l12,14 l26,-34" + '" fill="none" stroke="' + CH + '" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+      var board = '<rect x="' + (B[0] + 12) + '" y="' + (B[1] + 14) + '" width="' + B[2] + '" height="' + B[3] + '" fill="' + C.ink + '" opacity="0.85"/>' +
+        '<rect x="' + B[0] + '" y="' + B[1] + '" width="' + B[2] + '" height="' + B[3] + '" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="5"/>' +
+        '<rect x="' + B[0] + '" y="' + B[1] + '" width="' + B[2] + '" height="' + B[3] + '" fill="url(#' + P("hatch") + ')" opacity="0.12"/>' +
+        '<rect x="' + (B[0] + 22) + '" y="' + (B[1] + 22) + '" width="' + (B[2] - 44) + '" height="' + (B[3] - 44) + '" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<path d="M' + (B[0] + 22) + "," + (B[1] + 22) + " l26,26 H" + (B[0] + B[2] - 48) + " l26,-26" + '" fill="none" stroke="' + C.rust + '" stroke-width="3" opacity="0.6"/>' +
+        rows() + list +
+        // the tray: a ledge with a chalk stub and an eraser
+        '<rect x="' + (B[0] - 10) + '" y="' + (B[1] + B[3] - 6) + '" width="' + (B[2] + 20) + '" height="18" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<rect x="' + (B[0] + B[2] * 0.18) + '" y="' + (B[1] + B[3] - 22) + '" width="64" height="16" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/><rect x="' + (B[0] + B[2] * 0.18) + '" y="' + (B[1] + B[3] - 12) + '" width="64" height="6" fill="' + C.slate + '"/>' +
+        '<rect x="' + (B[0] + B[2] * 0.18 + 90) + '" y="' + (B[1] + B[3] - 15) + '" width="26" height="9" fill="#FFFFFF" stroke="' + ink + '" stroke-width="2.4"/>';
+      var floor = '<path d="M60,' + L.floor + " H" + (W - 60) + '" stroke="' + ink + '" stroke-width="5"/>' +
+        '<rect x="46" y="' + (L.floor + 2) + '" width="' + (W - 92) + '" height="' + (H - 46 - L.floor - 2) + '" fill="url(#' + P("fine") + ')" opacity="0.18"/>';
+      // the school's ribbon banner over the board: this is an obedience school
+      var BN = L.banner, nt = 30;
+      var ribbon = function (dx, dy, fill, extra) {
+        return '<path d="M' + (BN[0] + dx) + "," + (BN[1] + dy) + " H" + (BN[0] + BN[2] + dx) + " l" + -nt + "," + BN[3] / 2 + " l" + nt + "," + BN[3] / 2 + " H" + (BN[0] + dx) + " l" + nt + "," + -BN[3] / 2 + ' Z" fill="' + fill + '" ' + (extra || "") + "/>";
+      };
+      var banner = ribbon(9, 9, C.ink, 'opacity="0.85"') + ribbon(0, 0, "#FBF5E4", 'stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"') +
+        '<rect x="' + (BN[0] + nt + 12) + '" y="' + (BN[1] + 10) + '" width="' + (BN[2] - 2 * nt - 24) + '" height="' + (BN[3] - 20) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+        '<text x="' + (BN[0] + BN[2] / 2) + '" y="' + (BN[1] + BN[3] / 2 + 17) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="48" letter-spacing="5" fill="' + ink + '">OBEDIENCE SCHOOL</text>' +
+        KIT.star(BN[0] + nt + 34, BN[1] + BN[3] / 2, 12, C.orange) + KIT.star(BN[0] + BN[2] - nt - 34, BN[1] + BN[3] / 2, 12, C.orange);
+      // the dog's water bowl on the floor, a bone beside it
+      var bw = L.bowl;
+      var bowl = '<g transform="translate(' + bw[0] + "," + bw[1] + ')"><path d="M-46,-30 H46 L36,0 H-36 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="4.5" stroke-linejoin="miter"/>' +
+        '<path d="M-40,-24 H40" stroke="' + C.cream + '" stroke-width="3" opacity="0.7"/>' +
+        '<path d="M58,-5 h26 M58,-5 l-6,-6 M58,-5 l-6,5 M84,-5 l6,-6 M84,-5 l6,5" stroke="' + ink + '" stroke-width="12" stroke-linecap="round"/>' +
+        '<path d="M58,-5 h26 M58,-5 l-6,-6 M58,-5 l-6,5 M84,-5 l6,-6 M84,-5 l6,5" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/></g>';
+
+      // ── The Scientist (KIT.cast) facing the board: her far hand holds a long pointer up to the lesson list, her near
+      // hand holds up her bubbling flask (drawn here, so it can tip). Two drawings: eager, then worried when the ears catch fire.
+      var s = L.s, ds = L.ds;
+      var ARM_L = [-112, -140];
+      // the dog's last stand: where it ends up after both lines; the flask must tip out above its head
+      var dogEnd = L.dog0 + L.line1 + L.line2;
+      var headTop = [dogEnd - ds * (DOG.POSE.stand.head[0] + 6), L.floor + ds * (DOG.POSE.stand.head[1] - 15 * DOG.HS)];
+      var so0 = KIT.castOpts("scientist", { look: "left", mood: "eager", arms: [ARM_L, [150, 160]] });
+      var R0 = KIT.rig(so0), lean = R0.lean, hip = [0, R0.hipY];
+      var FL = R0.handLocal[0], F0 = [FL[0] - 2, FL[1] + 6];          // the flask's base (its pivot), arm units
+      var RAISE = 54, TIP = -172, FK = 1.5;                           // the pour: the arm lifts, the flask tips over; FK: the flask's size
+      var mouthPour = rot(rot([F0[0], F0[1] - 22 * FK], F0, TIP), R0.shoulder[0], RAISE);
+      mouthPour = rot(mouthPour, hip, lean);
+      var sciX = headTop[0] - s * mouthPour[0] + L.step, sciY = L.floor - 100 * s;   // before her step
+      // the pointer: from the far hand to the lesson list (in arm units, before the hunch)
+      var tapLocal = rot([(tapAt[0] - sciX) / s, (tapAt[1] - sciY) / s], hip, -lean);
+      var shR = R0.shoulder[1], dx = tapLocal[0] - shR[0], dy = tapLocal[1] - shR[1];
+      var alpha = (Math.atan2(dx, dy) * 180) / Math.PI;
+      var ARM_R = [alpha + 22, alpha - 6];
+      var so = KIT.castOpts("scientist", { look: "left", mood: "eager", arms: [ARM_L, ARM_R] });
+      var R = KIT.rig(so), hand = R.handLocal[1];
+      function flask() {
+        return '<g transform="translate(' + f1(F0[0]) + "," + f1(F0[1]) + ") scale(" + FK + ')"><g class="sci-flask">' +
+          '<path d="M-3,-22 L3,-22 L3,-12 L11,4 L-11,4 L-3,-12 Z" fill="' + ink + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<path d="M-3,-22 L3,-22 L3,-12 L11,4 L-11,4 L-3,-12 Z" fill="#FBF6E6"/><path class="sci-liquid" d="M-8,-2 L8,-2 L10.5,3.5 L-10.5,3.5 Z" fill="' + C.med + '"/>' +
+          '<g class="sci-bubbles"><circle cx="2" cy="-27" r="2.5" fill="' + C.med + '"/><circle cx="-2" cy="-33" r="1.8" fill="' + C.med + '"/><circle cx="1" cy="-38" r="1.2" fill="' + C.med + '"/></g></g></g>';
+      }
+      function pointer() {
+        var t = tapLocal, h = hand, n = [-(t[1] - h[1]), t[0] - h[0]], l = Math.hypot(n[0], n[1]);
+        n = [n[0] / l, n[1] / l];
+        var w0 = 1.9, w1 = 1.1, tipLen = 0.12;
+        var mid = [h[0] + (t[0] - h[0]) * (1 - tipLen), h[1] + (t[1] - h[1]) * (1 - tipLen)];
+        var quad = function (a, b, wa, wb) { return [[a[0] + n[0] * wa, a[1] + n[1] * wa], [b[0] + n[0] * wb, b[1] + n[1] * wb], [b[0] - n[0] * wb, b[1] - n[1] * wb], [a[0] - n[0] * wa, a[1] - n[1] * wa]]; };
+        var pd = function (pts) { return "M" + pts.map(function (p) { return f1(p[0]) + "," + f1(p[1]); }).join(" L") + " Z"; };
+        var A = quad(h, mid, w0, w1 + 0.3), Bq = quad(mid, t, w1 + 0.3, w1);
+        return '<path d="' + pd(A) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="2"/><path d="' + pd(A) + '" fill="' + C.tan + '"/>' +
+          '<path d="' + pd(Bq) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="2"/>';
+      }
+      function scientist(mood) {
+        var m = KIT.cast("scientist", { look: "left", mood: mood, arms: [ARM_L, ARM_R] });
+        return m.replace('<g class="arm-r">', '<g class="arm-r">' + pointer()).replace('<g class="arm-l">', '<g class="arm-l">' + flask());
+      }
+      var sci = at(sciX, sciY, s, '<g id="' + P("sci-e") + '">' + scientist("eager") + '</g><g id="' + P("sci-w") + '" opacity="0">' + scientist("worried") + "</g>", "sci-move");
+
+      // ── The dog: four drawings in one walker. a: writing (side head); b: looking at the camera, ears burning;
+      // c: soaked and charred, still standing; d: plopped into a sit.
+      var dogA = DOG.draw({ pose: "stand", head: "side", mood: "eager", chalk: true, fire: true, steam: true });
+      var dogB = DOG.draw({ pose: "stand", head: "front", mood: "eager", chalk: true, fire: true });
+      var dogC = burn(DOG.draw({ pose: "stand", head: "front", mood: "flat", chalk: true }));
+      var dogD = burn(DOG.draw({ pose: "sit", head: "front", mood: "flat", chalk: true, droop: true }));
+      var smoke = '<g id="' + P("smoke") + '" opacity="0">' + [-12, 4, 18].map(function (x, i) {
+        var hp = DOG.point({ pose: "sit" }, [x * 0.7, -28 - i * 2]);
+        return '<path d="M' + f1(hp[0]) + "," + f1(hp[1]) + ' l-5,-8 l5,-8 l-5,-8" fill="none" stroke="#8C8782" stroke-width="3.2" stroke-linecap="round"/>';
+      }).join("") + "</g>";
+      var drips = [[-12, 6], [14, 10], [0, 16]].map(function (d, i) {
+        return '<g id="' + P("drip-" + i) + '" opacity="0"><path d="M0,-7 C4,-1 5,3 0,5 C-5,3 -4,-1 0,-7 Z" fill="' + C.med + '" stroke="' + ink + '" stroke-width="1.6"/></g>';
+      }).join("");
+      var puddle = '<ellipse id="' + P("puddle") + '" cx="4" cy="1" rx="46" ry="6" fill="' + C.med + '" stroke="' + ink + '" stroke-width="2.4" opacity="0"/>';
+      // The dog faces left, into its own sums, and shuffles backwards (right) as it writes, so the fresh chalk line
+      // runs out in front of its nose. Everything inside the mirror is in the dog's own units.
+      var dog = at(L.dog0, L.floor, ds, '<g transform="scale(-1,1)">' + puddle + drips +
+        '<g id="' + P("dog-sq") + '"><g id="' + P("dog-a") + '">' + dogA + '</g><g id="' + P("dog-b") + '" opacity="0">' + dogB + "</g>" +
+        '<g id="' + P("dog-c") + '" opacity="0">' + dogC + '</g><g id="' + P("dog-d") + '" opacity="0">' + dogD + "</g></g>" + smoke + "</g>", "dog-move");
+
+      // ── The chalk lines the dog writes: cursive loops (a prolate cycloid) from the chalk's tip, as it walks ──
+      var tip = DOG.point({ pose: "stand" }, DOG.CHALK), tipX = L.dog0 - ds * tip[0], tipY = L.floor + ds * tip[1];
+      function scribble(x0, x1, y, amp, loops, wild) {
+        var pts = [], N = loops * 14;
+        for (var i = 0; i <= N; i++) {
+          var u = i / N, t = u * loops * 2 * Math.PI, a = amp * (1 + wild * u * (0.6 + 0.4 * Math.sin(t * 0.7)));
+          pts.push(f1(x0 + (x1 - x0) * u - Math.sin(t) * a * 0.55) + "," + f1(y + 4 - Math.cos(t) * a * 0.62 + wild * u * 10 * Math.sin(t * 0.31)));
+        }
+        return "M" + pts.join(" L");
+      }
+      var l1 = scribble(tipX + 34, tipX + L.line1, tipY, 13, 7, 0);
+      var l1s = "M" + f1(tipX + 10) + "," + f1(tipY - 26) + " C" + f1(tipX + 18) + "," + f1(tipY - 34) + " " + f1(tipX + 24) + "," + f1(tipY - 26) + " " + f1(tipX + 20) + "," + f1(tipY - 18) +
+        " L" + f1(tipX + 12) + "," + f1(tipY + 24) + " C" + f1(tipX + 8) + "," + f1(tipY + 32) + " " + f1(tipX + 2) + "," + f1(tipY + 30) + " " + f1(tipX + 2) + "," + f1(tipY + 24);
+      var l2 = scribble(tipX + L.line1 + 8, tipX + L.line1 + L.line2, tipY, 13, 11, 1.4);
+      var lines = '<path id="' + P("l1s") + '" d="' + l1s + '" fill="none" stroke="' + CH + '" stroke-width="4" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>' +
+        '<path id="' + P("l1") + '" d="' + l1 + '" fill="none" stroke="' + CH + '" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>' +
+        '<path id="' + P("l2") + '" d="' + l2 + '" fill="none" stroke="' + CH + '" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+
+      // ── The pour: a column of flask water from the tipped flask onto the dog's head, a splash, a puff of steam ──
+      var mouthS = [sciX - L.step + s * mouthPour[0], sciY + s * mouthPour[1]];
+      var headS = headTop;
+      // a wobbly column of water, a little wider where it lands
+      var sx0 = mouthS[0], sy0 = mouthS[1], sy1 = headS[1] + 6, wob = function (k, y) { return f1(sx0 + k + 3 * Math.sin((y - sy0) / 14)); };
+      var colL = [], colR = [];
+      for (var yy = sy0; yy <= sy1; yy += 8) { var wd = 11 + 8 * (yy - sy0) / Math.max(1, sy1 - sy0); colL.push(wob(-wd, yy) + "," + f1(yy)); colR.unshift(wob(wd, yy) + "," + f1(yy)); }
+      var stream = '<g id="' + P("stream") + '" opacity="0"><path d="M' + colL.concat(colR).join(" L") + ' Z" fill="' + C.med + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+        '<path d="M' + f1(sx0 - 2) + "," + f1(sy0 + 8) + " V" + f1(sy1 - 10) + '" stroke="#FFFFFF" stroke-width="3.5" opacity="0.55" stroke-linecap="round"/></g>';
+      var splash = '<g transform="translate(' + f1(headS[0]) + "," + f1(headS[1]) + ')"><g id="' + P("splash") + '" opacity="0">' +
+        [[-70, -34, 10], [-48, -66, 8], [56, -50, 9], [78, -20, 7], [-86, 4, 6], [20, -80, 7], [96, 12, 6]].map(function (d) {
+          return '<circle class="drop" cx="' + d[0] + '" cy="' + d[1] + '" r="' + d[2] + '" fill="' + C.med + '" stroke="' + ink + '" stroke-width="2.6"/>';
+        }).join("") + "</g></g>";
+      // the hiss: steam puffs off the two burnt ears (left and right of the stream)
+      var earS = DOG.TIPS.front.map(function (t) { var pt = DOG.point({ pose: "stand" }, t); return [dogEnd - ds * pt[0], L.floor + ds * pt[1]]; });
+      var puffC = [[-26, 4, 26], [-6, -26, 30], [-34, -38, 22], [26, 4, 26], [6, -26, 30], [34, -38, 22]];
+      var steam = '<g id="' + P("steam") + '" opacity="0">' + earS.map(function (e, k) {
+        var cs = puffC.slice(k * 3, k * 3 + 3).map(function (c) { return [e[0] + c[0] * 1.2 + (k ? 18 : -18), e[1] + c[1], c[2]]; });
+        return cs.map(function (c) { return '<circle cx="' + f1(c[0]) + '" cy="' + f1(c[1]) + '" r="' + c[2] + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="8"/>'; }).join("") +
+          cs.map(function (c) { return '<circle cx="' + f1(c[0]) + '" cy="' + f1(c[1]) + '" r="' + c[2] + '" fill="#FBF6E6"/>'; }).join("") +
+          cs.map(function (c) { return '<circle cx="' + f1(c[0] - c[2] * 0.25) + '" cy="' + f1(c[1] - c[2] * 0.3) + '" r="' + f1(c[2] * 0.4) + '" fill="#FFFFFF"/>'; }).join("");
+      }).join("") + "</g>";
+      var steamO = f1(headS[0]) + " " + f1(headS[1]);
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + banner + board + lines + floor + bowl + dog + sci + steam + stream + splash);
+
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      // finite repeats that end inside the scene: yoyo halves of d seconds, filling dur
+      var reps = function (dur, d) { return Math.max(1, Math.floor(dur / d) - 1); };
+      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, t); };
+      var hide = function (el, t) { tl.to(el, { opacity: 0, duration: 0.01 }, t); };
+      var all = function (sel) { return document.querySelectorAll("#" + P("art") + " " + sel); };
+      // pivots, set once while everything is untransformed
+      Array.prototype.forEach.call(all("[data-pivot]"), function (el) { gsap.set(el, { svgOrigin: el.getAttribute("data-pivot") }); });
+      var armsL = all(g("sci-move") + " .arm-l"), armsR = all(g("sci-move") + " .arm-r"), flasks = all(".sci-flask");
+      gsap.set(armsL, { svgOrigin: R.shoulder[0].join(" ") });
+      gsap.set(armsR, { svgOrigin: R.shoulder[1].join(" ") });
+      gsap.set(flasks, { svgOrigin: "0 0" });
+      gsap.set(q("dog-sq"), { svgOrigin: "0 0" });
+
+      var T = {
+        ill: cue("illogical"), once: cue("once."), dog: cue("dog"), calc: cue("calculus"), whistle: cue("calculus") + 0.35,
+        before: cue("before"), sit: cue("sit."), pour: KIT.after(ID, "sit."), plop: KIT.after(ID, "sit.") + 0.35,
+      };
+      T.l1e = KIT.cueEnd(ID, "once.") - 0.55;
+      var walk = q("dog-move"), u = 1 / ds;
+      // The tail wags the whole scene (finite repeats).
+      tl.fromTo(all(g("dog-a") + " .dog-tail"), { rotation: -10 }, { rotation: 14, duration: 0.22, repeat: reps(T.calc, 0.22), yoyo: true, ease: "sine.inOut" }, 0);
+      // before "illogical": the dog idles at the board, nodding as if reading its own work
+      tl.fromTo(all(g("dog-a") + " .dog-head"), { rotation: 0 }, { rotation: -6, duration: 0.3, repeat: 1, yoyo: true, ease: "sine.inOut" }, 0.45);
+      // "illogical": an integral sign and a line of loops (chalk scratch); the dog shuffles right with the chalk
+      tl.fromTo(q("l1s"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.18, ease: "none" }, T.ill);
+      tl.fromTo(q("l1"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: T.l1e - T.ill - 0.18, ease: "none" }, T.ill + 0.18);
+      tl.fromTo(walk, { x: 0 }, { x: L.line1 * u, duration: T.l1e - T.ill, ease: "none" }, T.ill);
+      tl.fromTo(walk, { y: 0 }, { y: -3, duration: 0.08, repeat: reps(T.l1e - T.ill, 0.08), yoyo: true, ease: "sine.inOut", immediateRender: false }, T.ill);
+      tl.fromTo(all(g("dog-a") + " .dog-upper"), { rotation: 0 }, { rotation: 3, duration: 0.1, repeat: reps(T.l1e - T.ill, 0.1), yoyo: true, ease: "sine.inOut" }, T.ill);
+      // "once.": the Scientist taps "LESSON 1: CALCULUS" twice with her pointer (the tick): it pulls back off the
+      // board and strikes the end of the line, landing on the word
+      [0, 0.2].forEach(function (d) {
+        tl.to(armsR, { rotation: 4, duration: 0.07, ease: "power2.out" }, T.once - 0.08 + d);
+        tl.to(armsR, { rotation: 0, duration: 0.06, ease: "power3.in" }, T.once - 0.01 + d);
+      });
+      // "dog": its ears perk up at the word
+      var earsA = all(g("dog-a") + " .dog-ear");
+      tl.to(earsA, { rotation: -14, duration: 0.08, ease: "power2.out" }, T.dog);
+      tl.to(earsA, { rotation: 0, duration: 0.18, ease: "back.out(3)" }, T.dog + 0.12);
+      // "calculus": one more squiggle that never stops: frantic loops, the dog jittering along (chalk scratch)
+      var l2d = T.sit - T.calc;
+      tl.fromTo(q("l2"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: l2d, ease: "power1.in" }, T.calc);
+      tl.to(walk, { x: (L.line1 + L.line2) * u, duration: l2d, ease: "power1.in" }, T.calc);
+      tl.to(walk, { y: -4, duration: 0.05, repeat: reps(l2d, 0.05), yoyo: true, ease: "none" }, T.calc);
+      tl.to(all(g("dog-a") + " .dog-upper"), { rotation: 5, duration: 0.06, repeat: reps(l2d, 0.06), yoyo: true, ease: "none" }, T.calc);
+      tl.fromTo(all(g("dog-a") + " .dog-tail"), { rotation: -18 }, { rotation: 22, duration: 0.07, repeat: reps(D - T.calc, 0.07), yoyo: true, ease: "none", immediateRender: false }, T.calc);
+      // the whistle: steam shoots out of both ears, and the ears stand straight up
+      var steamA = q("dog-a").querySelector(".dog-steam");
+      show(steamA, T.whistle);
+      Array.prototype.forEach.call(steamA.querySelectorAll(".dog-puff"), function (p, i) {
+        var d = (i % 3) * 0.09;
+        tl.fromTo(p, { scale: 0.3, y: 0, opacity: 1 }, { scale: 1.6, y: -26, opacity: 0, duration: 0.34, ease: "power1.out", repeat: 2, immediateRender: false }, T.whistle + d);
+      });
+      hide(steamA, T.before + 0.15);
+      tl.to(earsA, { rotation: 8, duration: 0.06, ease: "power3.out" }, T.whistle);
+      // "before": the ears catch fire (the whoosh) and keep burning
+      var fireA = q("dog-a").querySelector(".dog-fire"), fireB = q("dog-b").querySelector(".dog-fire");
+      tl.fromTo(fireA, { scale: 0, opacity: 0, svgOrigin: "0 -34" }, { scale: 1, opacity: 1, svgOrigin: "0 -34", duration: 0.18, ease: "back.out(2)" }, T.before);
+      KIT.flicker(tl, fireA, T.before, T.sit);
+      KIT.flicker(tl, fireB, T.sit, T.pour + 0.05);
+      // the Scientist goes worried when the fire starts
+      hide(q("sci-e"), T.before + 0.1); show(q("sci-w"), T.before + 0.1);
+      // "sit": the dog stops dead and looks at the camera, ears on fire, chalk in its mouth (hold)
+      hide(q("dog-a"), T.sit); show(q("dog-b"), T.sit);
+      // after "sit.": she steps in, lifts the flask over its head and tips it out (splat); the fire goes out with a
+      // hiss of steam (sizzle); it stands there soaked and charred, then plops into a sit (thunk)
+      var go = T.pour - 0.34;
+      tl.fromTo(q("sci-move"), { x: 0 }, { x: -L.step / s, duration: 0.18, ease: "power2.out" }, go);
+      tl.to(armsR, { rotation: 118, duration: 0.2, ease: "power2.inOut" }, go);
+      tl.to(armsL, { rotation: RAISE, duration: 0.16, ease: "power2.out" }, go + 0.08);
+      tl.to(flasks, { rotation: TIP, duration: 0.13, ease: "power2.in" }, T.pour - 0.2);
+      tl.fromTo(q("stream"), { opacity: 0, scaleY: 0, svgOrigin: f1(mouthS[0]) + " " + f1(mouthS[1]) }, { opacity: 1, scaleY: 1, svgOrigin: f1(mouthS[0]) + " " + f1(mouthS[1]), duration: 0.08, ease: "none" }, T.pour - 0.08);
+      hide(q("stream"), T.pour + 0.24);
+      tl.fromTo(q("splash"), { opacity: 1, scale: 0.3, svgOrigin: "0 0" }, { opacity: 0, scale: 1.3, svgOrigin: "0 0", duration: 0.32, ease: "power2.out", immediateRender: false }, T.pour);
+      gsap.set(q("splash"), { opacity: 0 });
+      hide(q("dog-b"), T.pour + 0.02); show(q("dog-c"), T.pour + 0.02);
+      tl.fromTo(q("steam"), { opacity: 1, scale: 0.4, svgOrigin: steamO }, { opacity: 0, scale: 1.25, y: -50, svgOrigin: steamO, duration: 0.5, ease: "power1.out", immediateRender: false }, T.pour + 0.05);
+      gsap.set(q("steam"), { opacity: 0 });
+      // the flask is empty now: its liquid pours out with the stream and the bubbling stops
+      hide(all(".sci-liquid"), T.pour - 0.08);
+      hide(all(".sci-bubbles"), T.pour - 0.2);
+      tl.to(flasks, { rotation: 0, duration: 0.2, ease: "power2.out" }, T.pour + 0.22);
+      tl.to(armsL, { rotation: 0, duration: 0.24, ease: "power2.inOut" }, T.pour + 0.3);
+      // and steps back to admire her work
+      tl.to(q("sci-move"), { x: 0, duration: 0.22, ease: "power2.inOut" }, T.pour + 0.3);
+      // drips off the ears and chin, and a puddle
+      [0, 1, 2].forEach(function (i) {
+        var hp = DOG.point({ pose: "stand" }, [[-18, 8], [16, 10], [2, 16]][i]);
+        tl.fromTo(q("drip-" + i), { opacity: 1, x: hp[0], y: hp[1] }, { opacity: 1, x: hp[0], y: -4, duration: 0.3 + i * 0.05, ease: "power2.in", immediateRender: false }, T.pour + 0.08 + i * 0.06);
+        hide(q("drip-" + i), T.pour + 0.4 + i * 0.11);
+      });
+      tl.fromTo(q("puddle"), { opacity: 0, scaleX: 0.3, svgOrigin: "4 1" }, { opacity: 1, scaleX: 1, svgOrigin: "4 1", duration: 0.25, ease: "power2.out", immediateRender: false }, T.pour + 0.1);
+      // the plop
+      hide(q("dog-c"), T.plop); show(q("dog-d"), T.plop);
+      tl.fromTo(q("dog-sq"), { scaleY: 1.18, scaleX: 0.9 }, { scaleY: 0.82, scaleX: 1.12, duration: 0.06, ease: "power2.in", immediateRender: false }, T.plop - 0.06);
+      tl.to(q("dog-sq"), { scaleY: 1, scaleX: 1, duration: 0.18, ease: "back.out(3)" }, T.plop);
+      show(q("smoke"), T.plop);
+      tl.fromTo(q("smoke"), { y: 0 }, { y: -5, duration: 0.11, repeat: 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, T.plop);
+      // and the chalk ticks off "LESSON 2: SIT"
+      tl.fromTo(q("tick"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.12, ease: "power2.out" }, T.plop + 0.04);
+      // the flask keeps bubbling
+      tl.fromTo(all(".sci-bubbles"), { y: 0 }, { y: -3, duration: 0.25, repeat: reps(D, 0.25), yoyo: true, ease: "sine.inOut" }, 0);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

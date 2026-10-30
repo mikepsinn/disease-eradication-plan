@@ -1,0 +1,105 @@
+{
+  "id": "part-27",
+  "title": "Outro",
+  "storyboard": "storyboards/part-27-outro.md",
+  "audio": { "start": 3413.48, "end": 3473.28 },
+  "noCaptions": [],
+  "scenes": [
+    { "id": "glowing-rectangle-share", "file": "compositions/scenes/part-27/glowing-rectangle-share.html", "cue": "Thank", "approx": 3413.48, "layer": "A",
+      "wishonia": [
+        { "cue": "Thank", "expr": "happy", "rest": "open", "body": "wide-gesture", "mode": "big" },
+        { "cue": "busy,", "expr": "skeptical", "rest": "smile", "body": "hands-hips", "mode": "big" },
+        { "cue": "share", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" }
+      ] },
+    { "id": "really-good-review", "file": "compositions/scenes/part-27/really-good-review.html", "cue": "And", "approx": 3428.6, "layer": "A",
+      "wishonia": [
+        { "cue": "And", "expr": "happy", "rest": "smile", "body": "counting", "mode": "big" },
+        { "cue": "pro-war", "expr": "annoyed", "rest": "frown", "body": "arms-crossed", "mode": "big" },
+        { "cue": "true,", "expr": "smirk", "rest": "smile", "body": "palms-down", "mode": "big" },
+        { "cue": "check.", "expr": "blink", "rest": "smile", "body": "palms-down", "mode": "big" }
+      ] },
+    { "id": "wishocratic-slider", "file": "compositions/scenes/part-27/wishocratic-slider.html", "cue": "But", "approx": 3443.96, "layer": "A",
+      "wishonia": [
+        { "cue": "But", "expr": "eyeroll", "rest": "closed", "body": "shrug", "mode": "big" },
+        { "cue": "least", "expr": "smirk", "rest": "smile", "body": "counting", "mode": "big" },
+        { "cue": "WarOnDisease.org", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "trials.", "expr": "excited", "rest": "open", "body": "excited", "mode": "big" }
+      ] },
+    { "id": "personally-to-blame", "file": "compositions/scenes/part-27/personally-to-blame.html", "cue": "And", "approx": 3459.36, "layer": "A",
+      "wishonia": [
+        { "cue": "And", "expr": "excited", "rest": "open", "body": "fist", "mode": "big" },
+        { "cue": "blame", "expr": "smirk", "rest": "smile", "body": "hands-hips", "mode": "big" }
+      ] },
+    { "id": "love-you-bye", "file": "compositions/scenes/part-27/love-you-bye.html", "cue": "Go", "approx": 3469.16, "layer": "A",
+      "wishonia": [
+        { "cue": "Go", "expr": "happy", "rest": "smile", "body": "counting", "mode": "big" },
+        { "cue": "Love", "expr": "blink", "rest": "smile", "body": "wide-gesture", "mode": "big" }
+      ] }
+  ],
+  "sounds": [
+    { "scene": "glowing-rectangle-share", "cue": "Thank", "sfx": "switch", "volume": 0.5 },
+    { "scene": "glowing-rectangle-share", "cue": "much", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "glowing-rectangle-share", "cue": "time", "sfx": "huff", "volume": 0.45 },
+    { "scene": "glowing-rectangle-share", "cue": "busy,", "sfx": "boing", "volume": 0.45 },
+    { "scene": "glowing-rectangle-share", "cue": "press", "offset": 0.15, "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "glowing-rectangle-share", "cue": "share", "sfx": "pop", "volume": 0.5 },
+    { "scene": "glowing-rectangle-share", "cue": "rectangle", "at": "after", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "glowing-rectangle-share", "cue": "friends", "sfx": "click", "volume": 0.5 },
+    { "scene": "glowing-rectangle-share", "cue": "friends", "offset": 0.1, "sfx": "zap", "volume": 0.3 },
+    { "scene": "glowing-rectangle-share", "cue": "afternoon", "sfx": "ding", "volume": 0.4 },
+    { "scene": "glowing-rectangle-share", "cue": "end", "n": 2, "sfx": "whistle", "volume": 0.3 },
+    { "scene": "glowing-rectangle-share", "cue": "war", "n": 2, "sfx": "clank", "volume": 0.45 },
+    { "scene": "glowing-rectangle-share", "cue": "disease", "n": 2, "sfx": "splat", "volume": 0.55 },
+    { "scene": "glowing-rectangle-share", "cue": "instead.", "sfx": "boing", "volume": 0.4 },
+
+    { "scene": "really-good-review", "cue": "busy", "sfx": "slide-down", "volume": 0.45 },
+    { "scene": "really-good-review", "cue": "that,", "sfx": "pat", "volume": 0.35 },
+    { "scene": "really-good-review", "cue": "really,", "n": 1, "sfx": "pop", "volume": 0.4 },
+    { "scene": "really-good-review", "cue": "really,", "n": 2, "sfx": "pop", "volume": 0.42 },
+    { "scene": "really-good-review", "cue": "really", "n": 3, "sfx": "pop", "volume": 0.45 },
+    { "scene": "really-good-review", "cue": "good", "n": 1, "sfx": "pop", "volume": 0.45 },
+    { "scene": "really-good-review", "cue": "rating", "sfx": "squeak", "volume": 0.5 },
+    { "scene": "really-good-review", "cue": "overcome", "sfx": "clank", "volume": 0.3 },
+    { "scene": "really-good-review", "cue": "algorithmic", "sfx": "slam", "volume": 0.45 },
+    { "scene": "really-good-review", "cue": "suppression", "sfx": "pop", "volume": 0.6 },
+    { "scene": "really-good-review", "cue": "find", "sfx": "boom", "volume": 0.5 },
+    { "scene": "really-good-review", "cue": "spare", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "really-good-review", "cue": "wars", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "really-good-review", "cue": "diseases.", "sfx": "sparkle", "volume": 0.35 },
+    { "scene": "really-good-review", "cue": "check.", "sfx": "slide-down", "volume": 0.3 },
+
+    { "scene": "wishocratic-slider", "cue": "busy", "sfx": "slide-down", "volume": 0.45 },
+    { "scene": "wishocratic-slider", "cue": "do", "n": 1, "sfx": "fire", "volume": 0.5 },
+    { "scene": "wishocratic-slider", "cue": "that,", "sfx": "yelp", "volume": 0.4 },
+    { "scene": "wishocratic-slider", "cue": "least", "sfx": "sizzle", "volume": 0.45 },
+    { "scene": "wishocratic-slider", "cue": "least", "offset": 0.4, "sfx": "pat", "volume": 0.4 },
+    { "scene": "wishocratic-slider", "cue": "15", "sfx": "tick", "volume": 0.5 },
+    { "scene": "wishocratic-slider", "cue": "WarOnDisease.org", "sfx": "typewriter", "volume": 0.4 },
+    { "scene": "wishocratic-slider", "cue": "wishocratic", "sfx": "toaster", "volume": 0.6 },
+    { "scene": "wishocratic-slider", "cue": "allocation,", "sfx": "thunk", "volume": 0.5 },
+    { "scene": "wishocratic-slider", "cue": "humanity's", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "wishocratic-slider", "cue": "resources", "sfx": "tick", "volume": 0.4 },
+    { "scene": "wishocratic-slider", "cue": "explosions", "sfx": "click", "volume": 0.5 },
+    { "scene": "wishocratic-slider", "cue": "versus", "sfx": "slide-up", "volume": 0.4 },
+    { "scene": "wishocratic-slider", "cue": "trials.", "sfx": "pop", "volume": 0.5 },
+    { "scene": "wishocratic-slider", "cue": "trials.", "offset": 0.25, "sfx": "cash-register", "volume": 0.4 },
+
+    { "scene": "personally-to-blame", "cue": "And", "sfx": "ding", "volume": 0.4 },
+    { "scene": "personally-to-blame", "cue": "vote!", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "personally-to-blame", "cue": "vote!", "at": "after", "sfx": "scratch", "volume": 0.45 },
+    { "scene": "personally-to-blame", "cue": "treaty", "sfx": "pop", "volume": 0.5 },
+    { "scene": "personally-to-blame", "cue": "passes,", "sfx": "stamp", "volume": 0.7 },
+    { "scene": "personally-to-blame", "cue": "personally", "sfx": "switch", "volume": 0.5 },
+    { "scene": "personally-to-blame", "cue": "blame", "sfx": "slam", "volume": 0.6 },
+    { "scene": "personally-to-blame", "cue": "2.6", "sfx": "pop", "volume": 0.45 },
+    { "scene": "personally-to-blame", "cue": "2.6", "offset": 0.18, "sfx": "pop", "volume": 0.45 },
+    { "scene": "personally-to-blame", "cue": "2.6", "offset": 0.36, "sfx": "pop", "volume": 0.27 },
+    { "scene": "personally-to-blame", "cue": "468,000", "sfx": "typewriter", "volume": 0.35 },
+    { "scene": "personally-to-blame", "cue": "suffering.", "sfx": "ding", "volume": 0.35 },
+
+    { "scene": "love-you-bye", "cue": "Go", "sfx": "switch", "volume": 0.5 },
+    { "scene": "love-you-bye", "cue": "WarOnDisease.org", "sfx": "thunk", "volume": 0.55 },
+    { "scene": "love-you-bye", "cue": "now.", "sfx": "whistle", "volume": 0.45 },
+    { "scene": "love-you-bye", "cue": "bye!", "sfx": "sparkle", "volume": 0.4 }
+  ]
+}

@@ -1,0 +1,413 @@
+<template id="wishonia-war-timeline-template">
+  <!-- wishonia-war-timeline · Layer A (storyboards/part-03-gradual-irrationality-reduction.md): the office, cut from the
+       title card. "We" → Wishonia's old, dusty copy of the manual (GRADUAL IRRATIONALITY REDUCTION PROGRAM) drops onto the
+       desk; "ended" → it flops open by itself in a puff of dust; "program" → the wall screen clicks on: a timeline axis;
+       "four thousand" → a short teal bar, "PEACE: 4,297 years", and on "years" Part 1's converter bell dings on it;
+       "twelve thousand" → a red bar, "WAR: 12,000 years", grows left, hits the bezel and prints out through it as a red paper
+       tape with a row of grinning antenna skulls (Wishonia's ancestors); "which now seems" → it spills down the wall and
+       loops onto the floor; "quite a long time" → the loops pile up past the desk; "enjoyed." → the tape zips back into the
+       screen like a tape measure, the last skull waving, the screen wobbles and settles; then it clicks over to Earth:
+       nations-foam-bats' first frame (the drawing code is copied from there). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+    #wishonia-war-timeline-cam, #wishonia-war-timeline-bg, #wishonia-war-timeline-screen, #wishonia-war-timeline-tape, #wishonia-war-timeline-wish, #wishonia-war-timeline-front, #wishonia-war-timeline-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="wishonia-war-timeline" data-width="1920" data-height="1080" data-start="0" data-duration="15.38">
+    <div id="wishonia-war-timeline-cam">
+      <div id="wishonia-war-timeline-bg"></div>
+      <div id="wishonia-war-timeline-screen"></div>
+      <div id="wishonia-war-timeline-wish"></div>
+      <div id="wishonia-war-timeline-tape"></div>
+      <div id="wishonia-war-timeline-front"></div>
+    </div>
+    <div id="wishonia-war-timeline-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "wishonia-war-timeline";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, O = KIT.OFFICE, ink = C.line;
+
+      // ── The two nations: the same drawing in wishonia-war-timeline (its wall screen after "enjoyed."), nations-foam-bats
+      //    (the scene) and toddlers-take-nap (its skeleton panel from "refused"). Keep the three copies the same. ──
+      // Two plain islands across a strait (no flags, no country outlines), a little capitol on each, a Politician on each
+      // with a raised orange foam bat (left: tone 1, red tie; right: tone 3, blue tie), a tear-off calendar on a post in the
+      // strait, six tiny mushroom clouds (hidden), and what the years do to it all: white hair, beards down to the shoes,
+      // grinning skeletons (with the wide tie put back on), smoking craters, "YEAR 10,000", two "HE HIT ME LAST" bubbles.
+      // nationsLayout(tall): the layout for a 9:16 (tall) or 16:9 frame. nationsArt(pid, L, state): { svg, geo }; every id
+      // is pid + "-" + name. state "first" (alive, bats up, capitols, YEAR 1) or "last" (skeletons with beards, craters,
+      // YEAR 10,000). Bat arms: #pid-A-alive .arm-r, #pid-A-bones .arm-r, #pid-A-bat, #pid-A-bbat (B: .arm-l); they all turn
+      // about geo.A.sh (B: geo.B.sh) by geo.hit degrees (B: -geo.hit) to bonk the other's head, or by geo.poke to jab
+      // the other one in the chest. The free arms (A: .arm-l, B: .arm-r) turn about geo.A.back (B: geo.B.back).
+      // The person groups sit at (geo.XA or geo.XB, geo.Y0), scaled geo.s.
+      function nationsLayout(tall) {
+        return tall
+          ? { W: 1080, H: 1920, s: 2.1, mid: 540, feet: 1185, isles: [[46, 424, 1191], [656, 1034, 1191]], sea: [1184, 1874],
+              caps: [[132, 0.36], [948, 0.36]], cal: { x: 540, foot: 1440, post: 70, k: 1.38 }, bub: [[205, 640], [875, 640]], bubFs: 38,
+              clouds: [[255, 1191], [835, 1191], [80, 1191], [1000, 1191], [180, 1191], [900, 1191]] }
+          : { W: 1920, H: 1080, s: 1.9, mid: 860, feet: 790, isles: [[96, 728, 796], [992, 1590, 796]], sea: [788, 1034],
+              caps: [[330, 0.5], [1390, 0.5]], cal: { x: 860, foot: 950, post: 84, k: 1.5 }, bub: [[400, 300], [1320, 300]], bubFs: 46,
+              clouds: [[1222, 796], [498, 796], [1530, 796], [176, 796], [1330, 796], [392, 796]] };
+      }
+      function nationsArt(pid, L, state) {
+        var ink = C.line, last = state === "last", s = L.s, HAIR = "#112846", WHITE_HAIR = "#ECE7DA";
+        function P(x, y) { return x.toFixed(1) + "," + y.toFixed(1); }
+        function polyD(pts) { return "M" + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + " Z"; }
+        function solid(pts, col, w) {
+          return '<path d="' + polyD(pts) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 4.4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + polyD(pts) + '" fill="' + col + '"/>';
+        }
+        function line(d, col, w) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"/>'; }
+        function hide(on) { return on ? ' opacity="0"' : ""; }
+        var defs = KIT.paperDefs(pid + "-n");
+        // The sea and the two islands.
+        var sea = '<rect x="46" y="' + L.sea[0] + '" width="' + (L.W - 92) + '" height="' + (L.sea[1] - L.sea[0]) + '" fill="' + C.cyan + '"/>' +
+          '<rect x="46" y="' + L.sea[0] + '" width="' + (L.W - 92) + '" height="' + (L.sea[1] - L.sea[0]) + '" fill="url(#' + pid + '-n-hteal)" opacity="0.25"/>' +
+          '<path d="M46,' + L.sea[0] + " H" + (L.W - 46) + '" stroke="' + ink + '" stroke-width="4"/>';
+        var rw = KIT.rng(L.W + 7);
+        for (var k = 0; k < 16; k++) {
+          var wx = 80 + rw() * (L.W - 220), wy = L.sea[0] + 40 + rw() * (L.sea[1] - L.sea[0] - 80);
+          sea += line("M" + P(wx, wy) + " q12,-9 24,0 q12,9 24,0", ink, 2.4);
+        }
+        var isles = L.isles.map(function (is) {
+          var x0 = is[0], x1 = is[1], t = is[2];
+          var pts = [[x0, t + 16], [x0 + 26, t], [x1 - 30, t - 2], [x1, t + 14], [x1 - 16, t + 74], [x0 + 20, t + 80]];
+          return solid(pts, C.tan) + '<path d="' + polyD(pts) + '" fill="url(#' + pid + '-n-hatch)" opacity="0.18"/>' +
+            line("M" + P(x0 + 30, t + 3) + " L" + P(x1 - 34, t + 1), C.orange, 3) + line("M" + P(x0 + 22, t + 64) + " L" + P(x1 - 20, t + 58), ink, 1.6);
+        }).join("");
+        // The capitols, and the smoking craters they turn into.
+        var caps = L.caps.map(function (c, i) {
+          var t = L.isles[i][2], w = 449 * c[1];
+          var rim = [[-w * 0.5, 4], [-w * 0.42, -14], [-w * 0.3, -6], [-w * 0.2, -24], [-w * 0.06, -12], [w * 0.06, -28], [w * 0.2, -10], [w * 0.3, -22], [w * 0.42, -8], [w * 0.5, 4]];
+          var wisps = [-0.24, 0.02, 0.26].map(function (f, j) {
+            return '<g transform="translate(' + P(c[0] + f * w, t - 20) + ')"><g class="' + pid + '-wisp" data-i="' + (i * 3 + j) + '">' +
+              line("M0,0 q-10,-14 0,-28 q10,-14 0,-28 q-10,-14 0,-28", "#8C8782", 7) + "</g></g>";
+          }).join("");
+          return '<g id="' + pid + "-cap-" + i + '"' + hide(last) + '><g transform="translate(' + c[0] + "," + t + ") scale(" + c[1] + ')"><g id="' + pid + "-capb-" + i + '">' + KIT.props.capitol({}) + "</g></g></g>" +
+            '<g id="' + pid + "-crater-" + i + '"' + hide(!last) + '><g transform="translate(' + c[0] + "," + t + ')">' +
+            solid(rim, C.rust, 4) + '<path d="M' + P(-w * 0.34, 0) + " Q0," + (-w * 0.12).toFixed(1) + " " + P(w * 0.34, 0) + " Q0," + (w * 0.05).toFixed(1) + " " + P(-w * 0.34, 0) + ' Z" fill="#2A221C" stroke="' + ink + '" stroke-width="3"/>' +
+            solid([[-w * 0.16, -18], [-w * 0.1, -34], [-w * 0.02, -22]], C.cream, 3) + solid([[w * 0.12, -14], [w * 0.2, -30], [w * 0.26, -12]], C.cream, 3) + "</g>" + wisps + "</g>";
+        }).join("");
+        // The calendar on its post: pages 1, 10, 100 ... 8,500 tear off; YEAR 10,000 is under them.
+        var CL = L.cal, labels = ["1", "10", "100", "600", "1,500", "3,000", "6,000", "8,500", "10,000"];
+        var cal = KIT.props.calendar({ month: "YEAR", day: 1, pages: 8 }).replace(/(<g class="cal-page(?:-under)?" data-day=")(\d+)("[\s\S]*?font-size=")(\d+)(" fill="#112845">)(\d+)(<\/text>)/g, function (m, a, d, b, fs, c2, d2, e) {
+          var lab = labels[+d - 1], size = lab.length <= 2 ? 44 : lab.length <= 3 ? 34 : lab.length <= 5 ? 23 : 20;
+          return a + d + b + size + c2 + lab + e;
+        });
+        if (last) cal = cal.replace(/<g class="cal-page" /g, '<g class="cal-page" opacity="0" ');
+        var calTop = CL.foot - CL.post;
+        var calSvg = '<ellipse cx="' + CL.x + '" cy="' + CL.foot + '" rx="30" ry="8" fill="none" stroke="' + ink + '" stroke-width="3"/>' +
+          solid([[CL.x - 7, CL.foot], [CL.x - 7, calTop], [CL.x + 7, calTop], [CL.x + 7, CL.foot]], C.rust, 3.4) +
+          '<g transform="translate(' + CL.x + "," + calTop + ") scale(" + CL.k + ')"><g id="' + pid + '-cal">' + cal + "</g></g>";
+        // The Politicians: A on the left (looking right), B on the right (looking left), each with a foam bat in the front
+        // hand. The geometry puts B where A's bat, turned by `hit` degrees about A's shoulder, lands on B's head (and back).
+        var PA = KIT.castOpts("politician", { tone: 1, look: "right", tieColor: C.war, hairColor: HAIR, arms: [[-14, 16], [150, 200]] });
+        var PB = KIT.castOpts("politician", { tone: 3, look: "left", tieColor: C.peri, hairColor: HAIR, arms: [[-150, -200], [14, -16]] });
+        var RA = KIT.rig(PA), RB = KIT.rig(PB), BAT = 150, deg = 180 / Math.PI;
+        function batGeo(R, i, arm) {
+          var sh = R.shoulder[i], a1 = arm[0] / deg, el = [sh[0] + R.armLength * Math.sin(a1), sh[1] + R.armLength * Math.cos(a1)], hd = R.hand[i];
+          var dx = hd[0] - el[0], dy = hd[1] - el[1], d = Math.sqrt(dx * dx + dy * dy), u = [dx / d, dy / d];
+          return { sh: sh, hand: hd, u: u, head: [hd[0] + u[0] * (BAT - 14), hd[1] + u[1] * (BAT - 14)] };
+        }
+        var gA = batGeo(RA, 1, PA.arms[1]), gB = batGeo(RB, 0, PB.arms[0]);
+        var r = Math.sqrt(Math.pow(gA.head[0] - gA.sh[0], 2) + Math.pow(gA.head[1] - gA.sh[1], 2));
+        var tgt = [RB.top[0] + 3, RB.top[1] - 9], dy = tgt[1] - gA.sh[1], dx = Math.sqrt(r * r - dy * dy);
+        var gap = dx + gA.sh[0] - tgt[0], hit = (Math.atan2(dy, dx) - Math.atan2(gA.head[1] - gA.sh[1], gA.head[0] - gA.sh[0])) * deg;
+        var XA = L.mid - (gap * s) / 2, XB = L.mid + (gap * s) / 2, Y0 = L.feet - 100 * s;
+        // the poke: the bat turned to jab the other one instead (A at B's face, B at A's belly, so the bats cross)
+        var aim = function (x, y) { return (Math.atan2(y - gA.sh[1], gap + x - gA.sh[0]) - Math.atan2(gA.head[1] - gA.sh[1], gA.head[0] - gA.sh[0])) * deg; };
+        var pokeA = aim(-10, -62), pokeB = aim(-8, -8);
+        function bat(g, id) {
+          var a = Math.atan2(g.u[1], g.u[0]) * deg, len = BAT;
+          var body = [[18, -5], [len - 30, -17], [len - 7, -19], [len, -12], [len, 12], [len - 7, 19], [len - 30, 17], [18, 5]];
+          var grip = [[-5, -3.8], [20, -4.8], [20, 4.8], [-5, 3.8]];
+          return '<g id="' + id + '"><g transform="translate(' + P(g.hand[0], g.hand[1]) + ") rotate(" + a.toFixed(2) + ')">' +
+            solid(body, C.orange, 3.6) + line("M28,-7 L" + (len - 22) + ",-13", C.cream, 3) + line("M" + (len - 5) + ",-12 V12", C.rust, 2.4) + line("M" + (len - 34) + ",7 L" + (len - 12) + ",8", C.rust, 1.6) +
+            solid(grip, C.yellow, 3) + line("M3,-4.2 V4.2 M10,-4.5 V4.5", ink, 1.4) + solid([[-9, -5], [-4, -5], [-4, 5], [-9, 5]], C.rust, 2.6) + "</g></g>";
+        }
+        // a beard down to the shoes (face units: the face looks +x; the shoes are at person y 100)
+        function beard(R, id, col) {
+          var toe = (100 - R.hy) / R.hs - 4;
+          return '<g class="' + pid + '-beard" id="' + id + '"' + hide(!last) + '>' + solid([[-8, 18], [2, 26], [12, 29], [20, 23], [22, 46], [16, 64], [19, 84], [12, 104], [14, 124], [8, toe], [4, toe - 14], [0, toe - 3], [-3, 122], [-7, 102], [-4, 82], [-9, 62], [-7, 46]], col, 2.6) +
+            line("M6,40 L8,70 L5,96 M13,46 L12,76 L9,120 M0,44 L-1,66 L1,90 M4,104 L5,134", "#A9A49B", 1.5) + "</g>";
+        }
+        function tie(R) {
+          var T = R.shoulder[0][1] - 3;
+          return solid([[-3, T + 1], [3, T + 1], [12, T + 20], [0, T + 30], [-12, T + 20]], C.war, 2.4);
+        }
+        function pol(name, o, R, g, X) {
+          var alive = KIT.person(o).replace('fill="' + HAIR + '"', 'class="' + pid + '-hair" fill="' + (last ? WHITE_HAIR : ink) + '"').replace("<!--face-end-->", beard(R, pid + "-" + name + "-beard", "#F4F1EA") + "<!--face-end-->");
+          var bones = KIT.person(Object.assign({}, o, { skeleton: true })).replace("<!--face-end-->", beard(R, pid + "-" + name + "-bbeard", "#FBF8F0").replace(' opacity="0"', "") + "<!--face-end-->");
+          var tieSvg = tie(R).replace(/#C8452E/g, o.tieColor);
+          return '<g transform="translate(' + P(X, Y0) + ") scale(" + s + ')"><g id="' + pid + "-" + name + '">' +
+            '<g id="' + pid + "-" + name + '-alive"' + hide(last) + ">" + alive + bat(g, pid + "-" + name + "-bat") + "</g>" +
+            '<g id="' + pid + "-" + name + '-bones"' + hide(!last) + ">" + bones + tieSvg + bat(g, pid + "-" + name + "-bbat") + "</g></g></g>";
+        }
+        var pols = pol("A", PA, RA, gA, XA) + pol("B", PB, RB, gB, XB);
+        // Six tiny mushroom clouds, hidden until they go off.
+        var clouds = L.clouds.map(function (c, i) {
+          return '<g transform="translate(' + c[0] + "," + c[1] + ') scale(0.2)"><g id="' + pid + "-cl-" + i + '" opacity="0">' + KIT.nuke() + "</g></g>";
+        }).join("");
+        // The two bubbles, hidden: tails to the skulls.
+        function bubble(i, X, R) {
+          var b = L.bub[i], fs = L.bubFs, w = fs * 7.1, h = fs * 1.75, x0 = b[0] - w / 2, y0 = b[1] - h / 2, c = 9;
+          var hx = X + R.top[0] * s, hy = Y0 + R.top[1] * s - 14, tb = b[0] + (i ? -w * 0.28 : w * 0.28);
+          var pts = [[x0 + c, y0], [x0 + w - c, y0], [x0 + w, y0 + c], [x0 + w, y0 + h - c], [x0 + w - c, y0 + h]].concat(
+            i ? [[tb + 16, y0 + h], [hx, hy], [tb - 16, y0 + h]] : [[tb + 16, y0 + h], [hx, hy], [tb - 16, y0 + h]],
+            [[x0 + c, y0 + h], [x0, y0 + h - c], [x0, y0 + c]]);
+          return '<g id="' + pid + "-bub-" + i + '" opacity="0">' + solid(pts, "#FBF6E6", 5) +
+            '<text x="' + b[0] + '" y="' + (b[1] + fs * 0.36).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + fs + '" letter-spacing="1" fill="' + ink + '">HE HIT ME LAST</text></g>';
+        }
+        var bubs = bubble(0, XA, RA) + bubble(1, XB, RB);
+        return {
+          svg: defs + sea + isles + caps + calSvg + pols + clouds + bubs,
+          geo: { s: s, feet: L.feet, Y0: Y0, XA: XA, XB: XB, hit: hit, pokeA: pokeA, pokeB: pokeB, RA: RA, RB: RB, A: { sh: gA.sh, head: gA.head, back: RA.shoulder[0], neck: RA.neck }, B: { sh: gB.sh, head: gB.head, back: RB.shoulder[1], neck: RB.neck },
+            beardPivot: "2 18", cal: CL, caps: L.caps, clouds: L.clouds },
+        };
+      }
+      // ── end of the nations drawing ──
+
+      // ── The scene ──
+      var S = O.screen, hole = [S[0] + 34, S[1] + 34, S[2] - 68, S[3] - 68], hx1 = hole[0] + hole[2];
+      // Per shape: the timeline (axis y; the teal bar's ends; label sizes), the manual (x on the desk, scale), the mug,
+      // and the tape's pile on the floor (rows of loops: center y, from x, to x; loop radius and advance).
+      var L = V
+        ? { ay: 520, teal: [690, 930], fs: 30, warFs: 36, man: [880, 1.45], mug: [952, 1173, 1.1],
+            wallX: 30, rows: [[1203, 40, 288], [1140, 288, 46], [1077, 46, 288], [1014, 288, 52], [951, 52, 280]], loop: [40, 17], skullK: 1, gapU: 88 }
+        : { ay: 510, teal: [592, 846], fs: 30, warFs: 36, man: [1196, 2], mug: [1775, 800, 1.5],
+            wallX: 40, rows: [[958, 70, 900], [888, 900, 84], [818, 84, 820], [752, 820, 150]], loop: [52, 25], skullK: 1.15, gapU: 104 };
+      var ay = L.ay, by = ay - 44, bh = 40, bc = by + bh / 2;
+
+      q("bg").innerHTML = KIT.office(O.halo[0], O.halo[1]);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      function txt(x, y, size, fam, fill, text, extra) {
+        return '<text x="' + x + '" y="' + y + '" font-family="' + fam + '" font-weight="' + (fam === "Fraunces" ? 900 : 600) + '" font-size="' + size + '" fill="' + fill + '" ' + (extra || "") + ">" + text + "</text>";
+      }
+
+      // ── The wall screen: off, then the timeline, then (after "enjoyed.") Earth: nations-foam-bats' first frame ──
+      var ticks = "";
+      for (var x = hole[0] + 60; x < hx1 - 40; x += 58) ticks += "M" + x + "," + (ay - 8) + " V" + (ay + 8) + " ";
+      var axis = '<g id="' + ID + '-axis"><path id="' + ID + '-axl" d="M' + (hole[0] + 24) + "," + ay + " H" + (hx1 - 30) + '" stroke="' + ink + '" stroke-width="5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>' +
+        '<g id="' + ID + '-axd" opacity="0"><path d="' + ticks + '" stroke="' + ink + '" stroke-width="3"/><path d="M' + (hx1 - 34) + "," + (ay - 12) + " L" + (hx1 - 14) + "," + ay + " L" + (hx1 - 34) + "," + (ay + 12) + ' Z" fill="' + ink + '"/>' +
+        txt(hx1 - 40, ay + 38, 24, "Oswald", ink, "NOW", 'text-anchor="end" letter-spacing="2"') + "</g></g>";
+      var teal = '<rect id="' + ID + '-teal" x="' + L.teal[0] + '" y="' + by + '" width="0" height="' + bh + '" fill="' + C.med + '" stroke="' + ink + '" stroke-width="4"/>';
+      var peace = '<g id="' + ID + '-peace" opacity="0">' + txt((L.teal[0] + L.teal[1]) / 2, by - 22, L.fs, "Oswald", "#1F6E68", "PEACE: 4,297 years", 'text-anchor="middle" letter-spacing="1"') + "</g>";
+      var red = '<rect id="' + ID + '-red" x="' + L.teal[0] + '" y="' + by + '" width="0" height="' + bh + '" fill="' + C.war + '" stroke="' + ink + '" stroke-width="4"/>';
+      var war = '<g id="' + ID + '-war" opacity="0">' + txt((hole[0] + L.teal[0]) / 2, by - 22, L.warFs, "Oswald", C.war, "WAR: 12,000 years", 'text-anchor="middle" letter-spacing="1"') + "</g>";
+      // the converter's bell from meet-wishonia, standing on the PEACE label
+      var bellAt = [L.teal[1] - 26, by - 22 - L.fs - 8];
+      var bell = '<g transform="translate(' + bellAt[0] + "," + bellAt[1] + ')"><g id="' + ID + '-bell" opacity="0"><g transform="translate(-300,0)">' +
+        '<rect x="296" y="-12" width="8" height="12" fill="' + C.ink + '"/><path d="M278,-12 A22,22 0 0 1 322,-12 Z" fill="' + C.yellow + '" stroke="' + C.ink + '" stroke-width="4"/><circle cx="300" cy="-36" r="5" fill="' + C.ink + '"/></g>' +
+        '<path id="' + ID + '-ding" d="M0,-48 V-62 M-28,-36 L-40,-46 M28,-36 L40,-46" stroke="' + C.ink + '" stroke-width="4" stroke-linecap="round" opacity="0"/></g></g>';
+      // the screen switched off: dark glass with a glint; the CRT's bright line when it comes on
+      var off = '<g id="' + ID + '-off"><rect x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" fill="' + C.slate + '"/>' +
+        '<path d="M' + (hole[0] + 60) + "," + (hole[1] + hole[3]) + " L" + (hole[0] + 230) + "," + hole[1] + " L" + (hole[0] + 290) + "," + hole[1] + " L" + (hole[0] + 120) + "," + (hole[1] + hole[3]) + ' Z" fill="#3A4766" opacity="0.8"/></g>';
+      var crt = '<rect id="' + ID + '-crt" x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" fill="#FFFFFF" opacity="0"/>';
+      var zv = KIT.zoomView(), NL = nationsLayout(V), NA = nationsArt(ID + "-nf", NL, "first");
+      var earth = '<g id="' + ID + '-earth" opacity="0"><g transform="' + zv.mini + '">' + KIT.paper(ID + "-np") + NA.svg + "</g></g>";
+      // the printer slot in the left bezel, and the bit of tape in it
+      var slot = '<rect x="' + (S[0] - 2) + '" y="' + (bc - 17) + '" width="' + (hole[0] - S[0] + 4) + '" height="34" fill="' + C.ink + '"/>' +
+        '<rect id="' + ID + '-inslot" x="' + (S[0] - 2) + '" y="' + (bc - 12) + '" width="' + (hole[0] - S[0] + 6) + '" height="24" fill="' + C.war + '" opacity="0"/>';
+      q("screen").innerHTML = KIT.svg(W, H, KIT.wallScreen(S[0], S[1], S[2], S[3]) +
+        '<defs><clipPath id="' + ID + '-hole"><rect x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" rx="22"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-hole)"><g id="' + ID + '-tline" opacity="0">' + axis + red + teal + war + peace + bell + "</g>" + earth + off + crt + "</g>" + slot);
+
+      // ── The tape: one route out of the slot, down the wall and into piles of loops on the floor ──
+      var route = [];
+      function add(x, y) { route.push([x, y]); }
+      var x0 = S[0], dropX = L.wallX, k;
+      for (k = 0; k <= 12; k++) { var f = k / 12; add(x0 - (x0 - dropX - 14) * f, bc + 8 * f * f); }
+      var r0 = L.rows[0], wallEnd = r0[0] + L.loop[0];
+      for (k = 1; k <= 40; k++) { var f2 = k / 40; add(dropX + 14 * (1 - f2) * (1 - f2) + 6 * Math.sin(f2 * 9), bc + 8 + (wallEnd - bc - 8) * f2); }
+      add(r0[1], wallEnd);
+      L.rows.forEach(function (row) {
+        var yc = row[0], xa = row[1], xb = row[2], dir = xb > xa ? 1 : -1, b = L.loop[0], a = L.loop[1];
+        var n = Math.max(1, Math.round(Math.abs(xb - xa) / (2 * Math.PI * a))), T = n * 2 * Math.PI, aa = Math.abs(xb - xa) / T;
+        // rise from where the last row ended to this row's bottom
+        var last = route[route.length - 1];
+        if (Math.abs(last[1] - (yc + b)) > 1) for (var m = 1; m <= 6; m++) add(last[0] + (xa - last[0]) * (m / 6), last[1] + (yc + b - last[1]) * (m / 6));
+        for (var t = 0; t <= T + 1e-6; t += 0.08) add(xa + dir * (aa * t - b * Math.sin(t)), yc + b * Math.cos(t));
+      });
+      var cum = [0];
+      for (k = 1; k < route.length; k++) cum.push(cum[k - 1] + Math.hypot(route[k][0] - route[k - 1][0], route[k][1] - route[k - 1][1]));
+      var LT = cum[cum.length - 1];
+      function at(p) {
+        var lo = 0, hi = cum.length - 1;
+        while (hi - lo > 1) { var mid = (lo + hi) >> 1; if (cum[mid] <= p) lo = mid; else hi = mid; }
+        var u = (p - cum[lo]) / Math.max(1e-6, cum[hi] - cum[lo]);
+        return [route[lo][0] + (route[hi][0] - route[lo][0]) * u, route[lo][1] + (route[hi][1] - route[lo][1]) * u];
+      }
+      var d = "M" + route.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" L");
+      // a tiny grinning skull with two antennae and ball tips (Wishonia's ancestors), about 26 px
+      function skull(i) {
+        var arm = i === 0 ? '<g id="' + ID + '-wave" opacity="0"><path d="M9,4 L17,-4 L15,-14" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linecap="square"/><path d="M9,4 L17,-4 L15,-14" fill="none" stroke="#F1EAD6" stroke-width="2.4" stroke-linecap="square"/><circle cx="15" cy="-16" r="3" fill="#F1EAD6" stroke="' + ink + '" stroke-width="1.6"/></g>' : "";
+        return '<g class="' + ID + '-skull" opacity="0"><g transform="scale(' + L.skullK + ')">' +
+          '<path d="M-4,-10 L-9,-22 M4,-10 L9,-22" stroke="' + ink + '" stroke-width="2.2"/><circle cx="-9" cy="-23" r="3.2" fill="' + C.ink + '"/><circle cx="9" cy="-23" r="3.2" fill="' + C.ink + '"/>' +
+          '<path d="M-11,-4 L-8,-12 L0,-15 L8,-12 L11,-4 L9,4 L5,7 L5,13 L-5,13 L-5,7 L-9,4 Z" fill="#F1EAD6" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<path d="M-8,-5 L-2,-6 L-3,1 L-7,0 Z M8,-5 L2,-6 L3,1 L7,0 Z M-1.5,5 L0,2 L1.5,5 Z" fill="' + ink + '"/>' +
+          '<path d="M-5,8.5 H5 M-2.5,7 v5.5 M0,7 v5.5 M2.5,7 v5.5" stroke="' + ink + '" stroke-width="1.2"/>' + arm + "</g></g>";
+      }
+      var NS = Math.floor((LT - 30) / L.gapU), skulls = "";
+      for (k = 0; k < NS; k++) skulls += skull(k);
+      q("tape").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-tapeg"><path id="' + ID + '-tape0" d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="31" stroke-linejoin="round" stroke-dasharray="' + (LT + 2) + " " + (LT + 2) + '" stroke-dashoffset="' + (LT + 2) + '"/>' +
+        '<path id="' + ID + '-tape1" d="' + d + '" fill="none" stroke="' + C.war + '" stroke-width="24" stroke-linejoin="round" stroke-dasharray="' + (LT + 2) + " " + (LT + 2) + '" stroke-dashoffset="' + (LT + 2) + '"/>' + skulls + "</g>");
+      var skullEls = document.querySelectorAll("#" + ID + "-tape ." + ID + "-skull");
+
+      // ── The desk: the battered manual, its dust, the mug ──
+      function manual() {
+        var m = KIT.props.manual({}).replace(/<text[^>]*>(HOW TO|END|WAR AND|DISEASE)<\/text>/g, "").replace(/<path d="M-24,-58 H24"[^>]*\/>/, "");
+        var WH = "#FBF6E6";
+        var title = [["GRADUAL", 15, -97], ["IRRATIONALITY", 10.5, -77], ["REDUCTION", 15, -56], ["PROGRAM", 15, -35]].map(function (t) {
+          return '<text x="0" y="' + t[2] + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + t[1] + '" textLength="66" lengthAdjust="spacingAndGlyphs" fill="' + WH + '">' + t[0] + "</text>";
+        }).join("") + '<path d="M-26,-88 H26 M-26,-46 H26" stroke="' + WH + '" stroke-width="1.2" opacity="0.8"/>';
+        // wear: dust in the corners, a dog-ear, a coffee ring, a strip of tape on the spine, a cobweb
+        var wear = '<path d="M-42,-118 L-6,-118 L-20,-104 L-42,-100 Z M42,-8 L42,0 L8,0 L20,-8 Z" fill="#9C9488" opacity="0.55"/>' +
+          '<path d="M24,-118 L42,-118 L42,-100 Z" fill="#E9C48A" stroke="' + ink + '" stroke-width="2"/>' +
+          '<circle cx="18" cy="-16" r="11" fill="none" stroke="' + C.rust + '" stroke-width="2.6" opacity="0.6"/>' +
+          '<path d="M-42,-118 L-30,-106 M-42,-108 L-33,-104 M-36,-118 L-32,-104" stroke="#D8D2C4" stroke-width="1.1" opacity="0.9"/>' +
+          [[-30, -8], [-12, -22], [6, -110], [30, -64], [-26, -60], [34, -30]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="1.6" fill="#B9B2A6"/>'; }).join("");
+        var front = '<g id="' + ID + '-cfront">' + title + wear + "</g>";
+        var inside = '<g id="' + ID + '-cinside" opacity="0"><g transform="scale(-1,1)"><rect x="-42" y="-118" width="84" height="118" fill="#E9DCC0" stroke="' + ink + '" stroke-width="3"/>' +
+          '<rect x="-30" y="-92" width="60" height="38" fill="' + WH + '" stroke="' + C.orange + '" stroke-width="1.6"/>' +
+          '<text x="0" y="-78" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="8" letter-spacing="1" fill="' + ink + '">PROPERTY OF</text>' +
+          '<text x="0" y="-62" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="12" textLength="48" fill="' + ink + '">WISHONIA</text></g></g>';
+        m = m.replace(/<\/g><\/g>$/, front + inside + "</g></g>");
+        // the first page, under the cover: a little slider at 1%
+        var page = '<text x="-34" y="-100" font-family="Oswald" font-weight="600" font-size="11" fill="' + ink + '">STEP 1</text>' +
+          '<path d="M-34,-90 H24 M-34,-82 H30 M-34,-74 H14" stroke="' + ink + '" stroke-width="1.4" opacity="0.6"/>' +
+          '<path d="M-30,-52 H30" stroke="' + ink + '" stroke-width="3"/><path d="M-30,-52 H-23" stroke="' + C.med + '" stroke-width="5"/><rect x="-25" y="-59" width="5" height="14" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1.4"/>' +
+          '<text x="0" y="-26" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="20" fill="' + C.med + '">1%</text>' +
+          '<path d="M-34,-14 H20 M-34,-7 H28" stroke="' + ink + '" stroke-width="1.4" opacity="0.6"/>';
+        return m.replace('<g class="manual-cover">', page + '<g class="manual-cover">');
+      }
+      var mx = L.man[0], my = O.desk[1], mk = L.man[1];
+      // dust puffs: along the base when it lands, and out of the pages when it opens
+      var dust = function (id, pts) {
+        return '<g id="' + ID + "-" + id + '">' + pts.map(function (p) {
+          var r = p[3], cl = [[0, 0, r], [-r * 0.8, r * 0.3, r * 0.65], [r * 0.85, r * 0.25, r * 0.6], [r * 0.2, -r * 0.6, r * 0.55]];
+          return '<g transform="translate(' + p[0] + "," + p[1] + ')"><g class="' + ID + "-" + id + '-p" data-dx="' + p[2] + '" opacity="0">' +
+            cl.map(function (c) { return '<circle cx="' + c[0].toFixed(1) + '" cy="' + c[1].toFixed(1) + '" r="' + c[2].toFixed(1) + '" fill="' + C.line + '" stroke="' + C.line + '" stroke-width="4"/>'; }).join("") +
+            cl.map(function (c) { return '<circle cx="' + c[0].toFixed(1) + '" cy="' + c[1].toFixed(1) + '" r="' + c[2].toFixed(1) + '" fill="#CFC6B6"/>'; }).join("") +
+            '<circle cx="' + (-r * 0.3).toFixed(1) + '" cy="' + (-r * 0.3).toFixed(1) + '" r="' + (r * 0.4).toFixed(1) + '" fill="#E6DFD0"/></g></g>';
+        }).join("") + "</g>";
+      };
+      var dustLand = dust("dl", [[-90, -10, -1, 22], [-55, -4, -1, 16], [60, -6, 1, 18], [95, -12, 1, 24], [5, -4, 0, 14]]);
+      var dustOpen = dust("do", [[-60, -170, -1, 20], [0, -200, 0, 26], [50, -160, 1, 18]]);
+      var manualSvg = '<g transform="translate(' + mx + "," + my + ')">' + dustLand + '<g transform="scale(' + mk + ')"><g id="' + ID + '-man">' + manual() + "</g></g>" + dustOpen + "</g>";
+      var mug = '<g transform="translate(' + L.mug[0] + "," + L.mug[1] + ") scale(" + L.mug[2] + ')">' + KIT.mug(0, 0) + "</g>";
+      q("front").innerHTML = KIT.svg(W, H, KIT.desk.apply(null, O.desk) + manualSvg + mug);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("wish"), { scene: ID, x: O.wish.x, y: O.wish.y, w: O.wish.w });
+
+      // "We": the manual drops onto the desk (the thunk) in a puff of dust (the huff)
+      var tLand = cue("We") + 0.1;
+      tl.fromTo(q("man"), { y: -170 / mk }, { y: 0, duration: tLand, ease: "power2.in" }, 0);
+      gsap.set(q("man"), { svgOrigin: "0 0" });
+      tl.fromTo(q("man"), { scaleY: 1 }, { scaleY: 0.9, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, tLand);
+      function puffs(id, t) {
+        document.querySelectorAll("." + ID + "-" + id + "-p").forEach(function (p, i) {
+          var dx = +p.getAttribute("data-dx");
+          gsap.set(p, { svgOrigin: "0 0" });
+          tl.fromTo(p, { scale: 0.2, opacity: 0, x: 0, y: 0 }, { scale: 1, opacity: 1, x: dx * 22, y: -10, duration: 0.18, ease: "power2.out" }, t + i * 0.02);
+          tl.to(p, { scale: 1.5, opacity: 0, x: dx * 50, y: -40, duration: 0.5, ease: "power1.in" }, t + 0.2 + i * 0.02);
+        });
+      }
+      puffs("dl", tLand);
+      // "ended": it flops open by itself, another puff out of the pages
+      // (a beat later than the word, so the cover reads first)
+      var cover = document.querySelector("#" + ID + "-man .manual-cover"), tOpen = cue("wars") + 0.1;
+      gsap.set(cover, { svgOrigin: "-42 -59" });
+      tl.fromTo(cover, { scaleX: 1 }, { scaleX: 0, duration: 0.14, ease: "power2.in" }, tOpen);
+      tl.fromTo(q("cinside"), { opacity: 0 }, { opacity: 1, duration: 0.01 }, tOpen + 0.14);
+      tl.to(q("cfront"), { opacity: 0, duration: 0.01 }, tOpen + 0.14);
+      tl.to(cover, { scaleX: -1, duration: 0.22, ease: "bounce.out" }, tOpen + 0.14);
+      puffs("do", tOpen + 0.12);
+
+      // "program": the wall screen clicks on (the switch): a bright line opens into the picture, the axis draws
+      var tOn = cue("program");
+      tl.to(q("off"), { opacity: 0, duration: 0.01 }, tOn);
+      tl.fromTo(q("crt"), { opacity: 1, scaleY: 0.03, svgOrigin: (hole[0] + hole[2] / 2) + " " + (hole[1] + hole[3] / 2) }, { opacity: 1, scaleY: 1, svgOrigin: (hole[0] + hole[2] / 2) + " " + (hole[1] + hole[3] / 2), duration: 0.09, ease: "power2.out", immediateRender: false }, tOn);
+      tl.to(q("crt"), { opacity: 0, duration: 0.18 }, tOn + 0.1);
+      tl.set(q("tline"), { opacity: 1 }, tOn + 0.08);
+      tl.fromTo(q("axl"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.4, ease: "power2.out" }, tOn + 0.12);
+      tl.fromTo(q("axd"), { opacity: 0 }, { opacity: 1, duration: 0.2 }, tOn + 0.4);
+      // "four thousand": the teal bar draws on at the right end (the marker squeak), and its label
+      var tFour = cue("four");
+      tl.fromTo(q("teal"), { attr: { width: 0 } }, { attr: { width: L.teal[1] - L.teal[0] }, duration: 0.55, ease: "power1.inOut" }, tFour);
+      tl.fromTo(q("peace"), { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }, tFour + 0.45);
+      // "years" (first): the label dings like the converter's bell in meet-wishonia
+      var tBell = cue("years");
+      gsap.set(q("bell"), { svgOrigin: "0 0" });
+      tl.fromTo(q("bell"), { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "back.out(2.5)" }, tBell - 0.12);
+      tl.to(q("bell"), { keyframes: [{ rotation: -16, duration: 0.05 }, { rotation: 14, duration: 0.08 }, { rotation: -8, duration: 0.08 }, { rotation: 0, duration: 0.1 }] }, tBell);
+      tl.fromTo(q("ding"), { opacity: 0 }, { opacity: 1, duration: 0.03 }, tBell);
+      tl.to(q("ding"), { opacity: 0, duration: 0.3 }, tBell + 0.3);
+      tl.to(q("bell"), { opacity: 0, scale: 0.6, duration: 0.25 }, tBell + 1.1);
+      // "twelve thousand": the red bar grows left from the teal one, hits the bezel, and the tape prints out (the typewriter)
+      var tTw = cue("twelve"), tPrint = tTw + 0.3;
+      tl.fromTo(q("red"), { attr: { x: L.teal[0], width: 0 } }, { attr: { x: hole[0] - 6, width: L.teal[0] - hole[0] + 6 }, duration: tPrint - tTw, ease: "power1.in" }, tTw);
+      tl.fromTo(q("war"), { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.25, ease: "power2.out" }, tTw + 0.1);
+      tl.fromTo(q("red"), { x: 0 }, { x: -3, duration: 0.03, repeat: 3, yoyo: true, immediateRender: false }, tPrint);
+      // the tape's length out of the slot over time: prints out stiffly, spills down the wall on "which", piles up on
+      // "quite a long time", rests on "nobody", zips back on "enjoyed." (the whoosh, the slam)
+      var tWhich = cue("which"), tQuite = cue("quite"), tTime = KIT.cueEnd(ID, "time"), tNobody = cue("nobody"), tEnj = cue("enjoyed."), tSlam = tEnj + 0.35;
+      var pokeLen = cum[12], wallLen = cum[53];
+      var keys = [[tPrint, 0, "lin"], [tWhich, pokeLen + (wallLen - pokeLen) * 0.35, "lin"], [tQuite, wallLen + 0.12 * (LT - wallLen), "lin"], [tTime, 0.86 * LT, "out"], [tNobody, LT, "lin"], [tEnj, LT, "in"], [tSlam, 0, "end"]];
+      function hAt(t) {
+        if (t <= keys[0][0]) return 0;
+        for (var i = 0; i < keys.length - 1; i++) {
+          var a = keys[i], b = keys[i + 1];
+          if (t < b[0]) {
+            var u = (t - a[0]) / (b[0] - a[0]);
+            if (a[2] === "out") u = 1 - (1 - u) * (1 - u);
+            if (a[2] === "in") u = u * u;
+            return a[1] + (b[1] - a[1]) * u;
+          }
+        }
+        return 0;
+      }
+      var tape0 = q("tape0"), tape1 = q("tape1"), inslot = q("inslot"), wave = q("wave");
+      KIT.onTime(tl, D, function (t) {
+        var h = hAt(t), off = (LT + 2 - h).toFixed(1);
+        tape0.setAttribute("stroke-dashoffset", off);
+        tape1.setAttribute("stroke-dashoffset", off);
+        inslot.setAttribute("opacity", h > 0.5 ? 1 : 0);
+        for (var i = 0; i < skullEls.length; i++) {
+          var p = h - 30 - i * L.gapU, el = skullEls[i];
+          if (p <= 2) { el.setAttribute("opacity", 0); continue; }
+          var pt = at(p);
+          el.setAttribute("opacity", 1);
+          el.setAttribute("transform", "translate(" + pt[0].toFixed(1) + "," + pt[1].toFixed(1) + ")");
+        }
+        // the last skull in waves on the way back
+        var zip = t > tEnj && t < tSlam;
+        wave.setAttribute("opacity", zip ? 1 : 0);
+        wave.setAttribute("transform", zip ? "rotate(" + (Math.sin((t - tEnj) * 40) * 35).toFixed(1) + " 9 4)" : "");
+      });
+      // the screen wobbles on its mount (the slam) and settles back into place
+      var foot = (S[0] + S[2] / 2) + "px " + (S[1] + S[3] + 46) + "px";
+      gsap.set(q("screen"), { transformOrigin: foot });
+      tl.to(q("screen"), { keyframes: [{ rotation: 2.6, duration: 0.07, ease: "power2.out" }, { rotation: -1.8, duration: 0.11 }, { rotation: 1.1, duration: 0.1 }, { rotation: -0.5, duration: 0.09 }, { rotation: 0, duration: 0.08 }] }, tSlam);
+      // a beat after "enjoyed.": the screen clicks over to Earth (the switch): nations-foam-bats' first frame
+      var tEarth = KIT.after(ID, "enjoyed.");
+      tl.fromTo(q("crt"), { opacity: 0, scaleY: 1 }, { opacity: 1, duration: 0.03, immediateRender: false }, tEarth);
+      tl.set(q("tline"), { opacity: 0 }, tEarth + 0.03);
+      tl.set(q("earth"), { opacity: 1 }, tEarth + 0.03);
+      tl.to(q("crt"), { opacity: 0, duration: 0.2 }, tEarth + 0.05);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,233 @@
+{
+  "id": "part-12",
+  "title": "The FDA Is Unsafe and Ineffective",
+  "storyboard": "storyboards/part-12-fda-unsafe-and-ineffective.md",
+  "audio": { "start": 1354.024, "end": 1541.964 },
+  "noCaptions": ["fda-unsafe-and-ineffective-title"],
+  "scenes": [
+    { "id": "fda-unsafe-and-ineffective-title", "file": "compositions/scenes/part-12/fda-unsafe-and-ineffective-title.html", "cue": "F.D.A.", "approx": 1354.0, "layer": "A" },
+    { "id": "smoke-detector-by-mail", "file": "compositions/scenes/part-12/smoke-detector-by-mail.html", "cue": "Even", "approx": 1357.6, "layer": "B",
+      "wishonia": [
+        { "cue": "Even", "expr": "neutral", "rest": "smile", "body": "idle", "mode": "pip" },
+        { "cue": "mail.", "expr": "eyeroll", "rest": "closed", "body": "shrug", "mode": "pip" }
+      ] },
+    { "id": "vioxx-by-fax", "file": "compositions/scenes/part-12/vioxx-by-fax.html", "cue": "Vioxx", "approx": 1366.6, "layer": "B",
+      "wishonia": [
+        { "cue": "Vioxx", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" },
+        { "cue": "faxed", "expr": "annoyed", "rest": "closed", "body": "arms-crossed", "mode": "pip" },
+        { "cue": "safety", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "pip" }
+      ] },
+    { "id": "fire-department-water", "file": "compositions/scenes/part-12/fire-department-water.html", "cue": "Your", "approx": 1392.0, "layer": "B",
+      "wishonia": [
+        { "cue": "Your", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "pip" },
+        { "cue": "water.", "expr": "skeptical", "rest": "closed", "body": "hands-hips", "mode": "pip" }
+      ] },
+    { "id": "committee-8-years", "file": "compositions/scenes/part-12/committee-8-years.html", "cue": "Then", "approx": 1411.0, "layer": "B",
+      "wishonia": [
+        { "cue": "Then", "expr": "annoyed", "rest": "closed", "body": "arms-crossed", "mode": "pip" },
+        { "cue": "enough.", "expr": "sad", "rest": "frown", "body": "idle", "mode": "pip" }
+      ] },
+    { "id": "billion-volunteers", "file": "compositions/scenes/part-12/billion-volunteers.html", "cue": "You'd", "approx": 1427.8, "layer": "B",
+      "wishonia": [
+        { "cue": "You'd", "expr": "thinking", "rest": "closed", "body": "thinking", "mode": "pip" },
+        { "cue": "seven", "expr": "surprised", "rest": "oh", "body": "open-palms", "mode": "pip" }
+      ] },
+    { "id": "lifeguard-cabinet", "file": "compositions/scenes/part-12/lifeguard-cabinet.html", "cue": "It's", "approx": 1443.8, "layer": "B",
+      "wishonia": [
+        { "cue": "It's", "expr": "eyeroll", "rest": "closed", "body": "hands-hips", "mode": "pip" },
+        { "cue": "jackets.", "expr": "annoyed", "rest": "frown", "body": "arms-crossed", "mode": "pip" }
+      ] },
+    { "id": "two-mistakes", "file": "compositions/scenes/part-12/two-mistakes.html", "cue": "Your", "approx": 1456.3, "layer": "B",
+      "wishonia": [
+        { "cue": "Your", "expr": "thinking", "rest": "closed", "body": "counting", "mode": "pip" },
+        { "cue": "ignores", "expr": "sideeye", "rest": "closed", "body": "hands-hips", "mode": "pip" }
+      ] },
+    { "id": "3389-to-1", "file": "compositions/scenes/part-12/3389-to-1.html", "cue": "I", "approx": 1469.7, "layer": "B",
+      "wishonia": [
+        { "cue": "I", "expr": "thinking", "rest": "small", "body": "thinking", "mode": "pip" },
+        { "cue": "die", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" }
+      ] },
+    { "id": "thalidomide-every-year", "file": "compositions/scenes/part-12/thalidomide-every-year.html", "cue": "Even", "approx": 1481.1, "layer": "B",
+      "wishonia": [
+        { "cue": "Even", "expr": "thinking", "rest": "closed", "body": "thinking", "mode": "pip" },
+        { "cue": "outnumber", "expr": "neutral", "rest": "frown", "body": "hands-hips", "mode": "pip" }
+      ] },
+    { "id": "main-product-dead-patients", "file": "compositions/scenes/part-12/main-product-dead-patients.html", "cue": "Your", "approx": 1501.0, "layer": "B",
+      "wishonia": [{ "cue": "Your", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" }] },
+    { "id": "someone-you-love", "file": "compositions/scenes/part-12/someone-you-love.html", "cue": "Think", "approx": 1505.1, "layer": "B",
+      "wishonia": [
+        { "cue": "Think", "expr": "sad", "rest": "small", "body": "idle", "mode": "pip" },
+        { "cue": "missile.", "expr": "sad", "rest": "frown", "body": "idle", "mode": "pip" }
+      ] },
+    { "id": "child-scientist", "file": "compositions/scenes/part-12/child-scientist.html", "cue": "That", "approx": 1516.4, "layer": "B",
+      "wishonia": [{ "cue": "That", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" }] },
+    { "id": "murder-receipt", "file": "compositions/scenes/part-12/murder-receipt.html", "cue": "You", "approx": 1521.2, "layer": "B",
+      "wishonia": [{ "cue": "You", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" }] },
+    { "id": "suboptimal-stamp", "file": "compositions/scenes/part-12/suboptimal-stamp.html", "cue": "This", "approx": 1529.7, "layer": "A",
+      "wishonia": [
+        { "cue": "This", "expr": "sad", "rest": "closed", "body": "idle", "mode": "big" },
+        { "cue": "suboptimal.", "expr": "smirk", "rest": "closed", "body": "palms-down", "mode": "big" }
+      ] },
+    { "id": "good-bad-weird-news", "file": "compositions/scenes/part-12/good-bad-weird-news.html", "cue": "The", "approx": 1531.7, "layer": "A",
+      "wishonia": [
+        { "cue": "The", "expr": "smirk", "rest": "smile", "body": "counting", "mode": "big" },
+        { "cue": "weird", "expr": "skeptical", "rest": "smile", "body": "counting", "mode": "big" },
+        { "cue": "rich", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" }
+      ] }
+  ],
+  "sounds": [
+    { "scene": "fda-unsafe-and-ineffective-title", "cue": "F.D.A.", "sfx": "thunk", "volume": 0.6 },
+    { "scene": "fda-unsafe-and-ineffective-title", "cue": "Unsafe", "sfx": "thunk", "volume": 0.6 },
+    { "scene": "fda-unsafe-and-ineffective-title", "cue": "Ineffective.", "offset": 0.25, "sfx": "thunk", "volume": 0.6 },
+    { "scene": "fda-unsafe-and-ineffective-title", "cue": "Ineffective.", "at": "after", "sfx": "stamp", "volume": 0.8 },
+
+    { "scene": "smoke-detector-by-mail", "cue": "Even", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "smoke-detector-by-mail", "cue": "mostly", "sfx": "snip", "volume": 0.45 },
+    { "scene": "smoke-detector-by-mail", "cue": "wasted,", "sfx": "slide-down", "volume": 0.45 },
+    { "scene": "smoke-detector-by-mail", "cue": "wasted,", "at": "after", "offset": 0.3, "sfx": "splat", "volume": 0.3 },
+    { "scene": "smoke-detector-by-mail", "cue": "detector", "sfx": "huff", "volume": 0.4 },
+    { "scene": "smoke-detector-by-mail", "cue": "works", "sfx": "marker", "volume": 0.45 },
+    { "scene": "smoke-detector-by-mail", "cue": "by", "sfx": "pop", "volume": 0.35 },
+    { "scene": "smoke-detector-by-mail", "cue": "mail.", "sfx": "squeak", "volume": 0.4 },
+    { "scene": "smoke-detector-by-mail", "cue": "mail.", "at": "after", "sfx": "fire", "volume": 0.45 },
+
+    { "scene": "vioxx-by-fax", "cue": "fifty-five", "sfx": "tick", "volume": 0.4 },
+    { "scene": "vioxx-by-fax", "cue": "fifty-five", "offset": 0.2, "sfx": "tick", "volume": 0.4 },
+    { "scene": "vioxx-by-fax", "cue": "fifty-five", "offset": 0.4, "sfx": "tick", "volume": 0.4 },
+    { "scene": "vioxx-by-fax", "cue": "approved", "sfx": "stamp", "volume": 0.8 },
+    { "scene": "vioxx-by-fax", "cue": "dying,", "sfx": "zap", "volume": 0.3 },
+    { "scene": "vioxx-by-fax", "cue": "dying,", "offset": 0.3, "sfx": "zap", "volume": 0.3 },
+    { "scene": "vioxx-by-fax", "cue": "dying,", "offset": 0.6, "sfx": "zap", "volume": 0.3 },
+    { "scene": "vioxx-by-fax", "cue": "filled", "sfx": "scratch", "volume": 0.4 },
+    { "scene": "vioxx-by-fax", "cue": "faxed", "sfx": "whirr", "volume": 0.45 },
+    { "scene": "vioxx-by-fax", "cue": "twenty-first", "sfx": "scratch", "volume": 0.5 },
+    { "scene": "vioxx-by-fax", "cue": "twenty-first", "offset": 0.3, "sfx": "boing", "volume": 0.35 },
+    { "scene": "vioxx-by-fax", "cue": "Five", "sfx": "tick", "volume": 0.4 },
+    { "scene": "vioxx-by-fax", "cue": "Five", "offset": 0.12, "sfx": "tick", "volume": 0.4 },
+    { "scene": "vioxx-by-fax", "cue": "Five", "offset": 0.24, "sfx": "tick", "volume": 0.4 },
+    { "scene": "vioxx-by-fax", "cue": "Five", "offset": 0.36, "sfx": "tick", "volume": 0.4 },
+    { "scene": "vioxx-by-fax", "cue": "noticed", "sfx": "ding", "volume": 0.3 },
+    { "scene": "vioxx-by-fax", "cue": "safety", "sfx": "clank", "volume": 0.5 },
+    { "scene": "vioxx-by-fax", "cue": "system.", "at": "after", "sfx": "slam", "volume": 0.6 },
+    { "scene": "vioxx-by-fax", "cue": "system.", "at": "after", "offset": 0.05, "sfx": "splat", "volume": 0.5 },
+
+    { "scene": "fire-department-water", "cue": "National", "sfx": "bell", "volume": 0.45 },
+    { "scene": "fire-department-water", "cue": "Institutes", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "fire-department-water", "cue": "three", "sfx": "click", "volume": 0.5 },
+    { "scene": "fire-department-water", "cue": "ninety-seven", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "fire-department-water", "cue": "administration,", "sfx": "stamp", "volume": 0.55 },
+    { "scene": "fire-department-water", "cue": "administration,", "offset": 0.3, "sfx": "stamp", "volume": 0.55 },
+    { "scene": "fire-department-water", "cue": "buildings.", "sfx": "thunk", "volume": 0.7 },
+    { "scene": "fire-department-water", "cue": "buildings.", "offset": 0.2, "sfx": "squeak", "volume": 0.4 },
+    { "scene": "fire-department-water", "cue": "fire", "sfx": "fire", "volume": 0.4 },
+    { "scene": "fire-department-water", "cue": "three", "n": 3, "sfx": "click", "volume": 0.5 },
+    { "scene": "fire-department-water", "cue": "water.", "sfx": "pop", "volume": 0.4 },
+    { "scene": "fire-department-water", "cue": "water.", "offset": 0.3, "sfx": "sizzle", "volume": 0.35 },
+    { "scene": "fire-department-water", "cue": "water.", "at": "after", "offset": 0.1, "sfx": "slam", "volume": 0.55 },
+
+    { "scene": "committee-8-years", "cue": "eight", "sfx": "clank", "volume": 0.45 },
+    { "scene": "committee-8-years", "cue": "test.", "sfx": "stamp", "volume": 0.8 },
+    { "scene": "committee-8-years", "cue": "Everyone", "sfx": "boing", "volume": 0.3 },
+    { "scene": "committee-8-years", "cue": "Everyone", "offset": 0.3, "sfx": "boing", "volume": 0.3 },
+    { "scene": "committee-8-years", "cue": "can't", "sfx": "whoosh", "volume": 0.45 },
+    { "scene": "committee-8-years", "cue": "have", "sfx": "clank", "volume": 0.55 },
+    { "scene": "committee-8-years", "cue": "committee", "sfx": "thunk", "volume": 0.55 },
+    { "scene": "committee-8-years", "cue": "committee", "offset": 0.18, "sfx": "thunk", "volume": 0.55 },
+    { "scene": "committee-8-years", "cue": "committee", "offset": 0.36, "sfx": "thunk", "volume": 0.55 },
+    { "scene": "committee-8-years", "cue": "eight", "n": 2, "sfx": "slide-up", "volume": 0.35 },
+    { "scene": "committee-8-years", "cue": "enough.", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "committee-8-years", "cue": "enough.", "at": "after", "sfx": "zap", "volume": 0.35 },
+
+    { "scene": "billion-volunteers", "cue": "volunteer", "sfx": "pop", "volume": 0.45 },
+    { "scene": "billion-volunteers", "cue": "faster,", "sfx": "whistle", "volume": 0.35 },
+    { "scene": "billion-volunteers", "cue": "billion", "sfx": "whoosh", "volume": 0.5 },
+    { "scene": "billion-volunteers", "cue": "million", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "billion-volunteers", "cue": "slots.", "offset": 0.1, "sfx": "click", "volume": 0.5 },
+    { "scene": "billion-volunteers", "cue": "participation", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "billion-volunteers", "cue": "rate", "sfx": "slam", "volume": 0.6 },
+    { "scene": "billion-volunteers", "cue": "percent.", "at": "after", "sfx": "splat", "volume": 0.55 },
+    { "scene": "billion-volunteers", "cue": "percent.", "at": "after", "offset": 0.14, "sfx": "splat", "volume": 0.45 },
+
+    { "scene": "lifeguard-cabinet", "cue": "lifeguard", "sfx": "whistle", "volume": 0.5 },
+    { "scene": "lifeguard-cabinet", "cue": "confirms", "sfx": "splat", "volume": 0.35 },
+    { "scene": "lifeguard-cabinet", "cue": "floats,", "sfx": "boing", "volume": 0.35 },
+    { "scene": "lifeguard-cabinet", "cue": "floats,", "offset": 0.4, "sfx": "scratch", "volume": 0.4 },
+    { "scene": "lifeguard-cabinet", "cue": "locks", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "lifeguard-cabinet", "cue": "cabinet", "sfx": "clank", "volume": 0.55 },
+    { "scene": "lifeguard-cabinet", "cue": "buoyancy", "sfx": "marker", "volume": 0.45 },
+    { "scene": "lifeguard-cabinet", "cue": "drown", "sfx": "pop", "volume": 0.3 },
+    { "scene": "lifeguard-cabinet", "cue": "drown", "offset": 0.18, "sfx": "pop", "volume": 0.3 },
+    { "scene": "lifeguard-cabinet", "cue": "drown", "offset": 0.36, "sfx": "pop", "volume": 0.3 },
+    { "scene": "lifeguard-cabinet", "cue": "jackets.", "at": "after", "sfx": "whistle", "volume": 0.5 },
+
+    { "scene": "two-mistakes", "cue": "regulatory", "sfx": "whirr", "volume": 0.4 },
+    { "scene": "two-mistakes", "cue": "two", "sfx": "click", "volume": 0.5 },
+    { "scene": "two-mistakes", "cue": "approve", "sfx": "switch", "volume": 0.55 },
+    { "scene": "two-mistakes", "cue": "block", "sfx": "click", "volume": 0.45 },
+    { "scene": "two-mistakes", "cue": "terrified", "sfx": "slide-up", "volume": 0.5 },
+    { "scene": "two-mistakes", "cue": "terrified", "offset": 0.15, "sfx": "yelp", "volume": 0.45 },
+    { "scene": "two-mistakes", "cue": "terrified", "offset": 0.35, "sfx": "boing", "volume": 0.4 },
+    { "scene": "two-mistakes", "cue": "mistake", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "two-mistakes", "cue": "ignores", "sfx": "scratch", "volume": 0.5 },
+    { "scene": "two-mistakes", "cue": "second.", "sfx": "pat", "volume": 0.45 },
+
+    { "scene": "3389-to-1", "cue": "ratio:", "sfx": "clank", "volume": 0.55 },
+    { "scene": "3389-to-1", "cue": "protected", "sfx": "pop", "volume": 0.4 },
+    { "scene": "3389-to-1", "cue": "three", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "3389-to-1", "cue": "hundred", "sfx": "pat", "volume": 0.35 },
+    { "scene": "3389-to-1", "cue": "eighty-nine", "sfx": "slam", "volume": 0.7 },
+    { "scene": "3389-to-1", "cue": "eighty-nine", "offset": 0.1, "sfx": "slide-up", "volume": 0.45 },
+    { "scene": "3389-to-1", "cue": "locked", "sfx": "whoosh", "volume": 0.35 },
+
+    { "scene": "thalidomide-every-year", "cue": "assume", "sfx": "whirr", "volume": 0.4 },
+    { "scene": "thalidomide-every-year", "cue": "catastrophe", "sfx": "clank", "volume": 0.6 },
+    { "scene": "thalidomide-every-year", "cue": "every", "sfx": "clank", "volume": 0.55 },
+    { "scene": "thalidomide-every-year", "cue": "single", "sfx": "clank", "volume": 0.55 },
+    { "scene": "thalidomide-every-year", "cue": "year", "sfx": "thunk", "volume": 0.3 },
+    { "scene": "thalidomide-every-year", "cue": "Phase", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "thalidomide-every-year", "cue": "caught", "at": "before", "sfx": "slide-down", "volume": 0.45 },
+    { "scene": "thalidomide-every-year", "cue": "caught", "sfx": "boing", "volume": 0.55 },
+    { "scene": "thalidomide-every-year", "cue": "outnumber", "sfx": "squeak", "volume": 0.4 },
+    { "scene": "thalidomide-every-year", "cue": "eighty-nine", "sfx": "stamp", "volume": 0.7 },
+
+    { "scene": "main-product-dead-patients", "cue": "system's", "sfx": "switch", "volume": 0.55 },
+    { "scene": "main-product-dead-patients", "cue": "product", "sfx": "hum", "volume": 0.35 },
+    { "scene": "main-product-dead-patients", "cue": "patients.", "sfx": "thunk", "volume": 0.35 },
+
+    { "scene": "someone-you-love", "cue": "love", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "someone-you-love", "cue": "suffering", "sfx": "click", "volume": 0.4 },
+    { "scene": "someone-you-love", "cue": "untested", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "someone-you-love", "cue": "shelf,", "sfx": "squeak", "volume": 0.4 },
+    { "scene": "someone-you-love", "cue": "money", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "someone-you-love", "cue": "busy", "sfx": "tick", "volume": 0.5 },
+    { "scene": "someone-you-love", "cue": "turning", "sfx": "hammer", "volume": 0.4 },
+    { "scene": "someone-you-love", "cue": "missile.", "sfx": "pop", "volume": 0.45 },
+    { "scene": "someone-you-love", "cue": "missile.", "at": "after", "sfx": "whistle", "volume": 0.4 },
+
+    { "scene": "child-scientist", "cue": "missile", "sfx": "whoosh", "volume": 0.5 },
+    { "scene": "child-scientist", "cue": "incinerated", "sfx": "fire", "volume": 0.45 },
+    { "scene": "child-scientist", "cue": "grown", "sfx": "sizzle", "volume": 0.35 },
+
+    { "scene": "murder-receipt", "cue": "lose", "sfx": "typewriter", "volume": 0.4 },
+    { "scene": "murder-receipt", "cue": "lose", "n": 2, "sfx": "typewriter", "volume": 0.4 },
+    { "scene": "murder-receipt", "cue": "inflation.", "sfx": "typewriter", "volume": 0.4 },
+    { "scene": "murder-receipt", "cue": "inflation.", "offset": 0.4, "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "murder-receipt", "cue": "bill.", "sfx": "typewriter", "volume": 0.4 },
+    { "scene": "murder-receipt", "cue": "bill.", "offset": 0.4, "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "murder-receipt", "cue": "murder.", "sfx": "typewriter", "volume": 0.4 },
+
+    { "scene": "suboptimal-stamp", "cue": "This", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "suboptimal-stamp", "cue": "is", "sfx": "thunk", "volume": 0.35 },
+    { "scene": "suboptimal-stamp", "cue": "suboptimal.", "sfx": "stamp", "volume": 0.85 },
+
+    { "scene": "good-bad-weird-news", "cue": "good", "sfx": "pop", "volume": 0.45 },
+    { "scene": "good-bad-weird-news", "cue": "fix", "sfx": "boing", "volume": 0.4 },
+    { "scene": "good-bad-weird-news", "cue": "bad", "sfx": "pop", "volume": 0.45 },
+    { "scene": "good-bad-weird-news", "cue": "something.", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "good-bad-weird-news", "cue": "something.", "offset": 0.3, "sfx": "huff", "volume": 0.4 },
+    { "scene": "good-bad-weird-news", "cue": "weird", "sfx": "pop", "volume": 0.45 },
+    { "scene": "good-bad-weird-news", "cue": "rich", "sfx": "cash-register", "volume": 0.5 },
+    { "scene": "good-bad-weird-news", "cue": "rich", "offset": 0.3, "sfx": "sparkle", "volume": 0.4 },
+    { "scene": "good-bad-weird-news", "cue": "it.", "at": "after", "sfx": "splat", "volume": 0.3 }
+  ]
+}

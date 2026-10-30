@@ -1,0 +1,273 @@
+<template id="odds-of-dying-template">
+  <!-- odds-of-dying · Layer B (storyboards/part-10-cost-of-war.md): two carnival prize wheels. Wheel one, TERRORISM, sits in a
+       fortress of sandbags, barbed wire and a ring of grumpy missiles, guarded by the weapons maker; the politician yanks it
+       ("terrorism:"), it clicks to a stop on a blank slot ("million."), its sign flips to "1 IN 30,000,000", and a beat later
+       another row of sandbags thumps down and one more missile joins the ring. Wheel two, DISEASE, stands alone with no guard:
+       the disease blob shoves it ("disease:"), every slot reads DISEASE, YOU waits in front of it checking his watch, and on
+       "percent." it stops, the sign reads "DISEASE: 100%" and YOU's chest light comes on red. HOLD to the end: nothing moves. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #odds-of-dying-cam, #odds-of-dying-bg, #odds-of-dying-art, #odds-of-dying-pip, #odds-of-dying-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="odds-of-dying" data-width="1920" data-height="1080" data-start="0" data-duration="8.399">
+    <div id="odds-of-dying-cam">
+      <div id="odds-of-dying-bg"></div>
+      <div id="odds-of-dying-art"></div>
+      <div id="odds-of-dying-pip"></div>
+    </div>
+    <div id="odds-of-dying-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "odds-of-dying";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var P = function (s) { return ID + "-" + s; };
+      var f = function (n) { return (+n).toFixed(1); };
+      var PI = Math.PI;
+
+      // Per canvas shape. w1 / w2: the wheels (hub x, y, slot radius r) and the ground under each (g). wall: the sandbag wall
+      // (x0..x1, rows of rh px). ms: the guard missiles' x and scale; mNew: the one added after "million.". wm, pol, blob, you:
+      // x and scale (the politician's x and the blob's x come from where their hands meet the rims). signS: the signs' scale.
+      var L = V
+        ? { w1: { x: 420, y: 590, r: 135, g: 900 }, w2: { x: 560, y: 1200, r: 135, g: 1440 }, wall: { x0: 160, x1: 680, rows: 3, rh: 36, bw: 68 },
+            ms: [[215, 0.62], [315, 0.62], [415, 0.62], [515, 0.62], [615, 0.62]], mNew: [200, 0.62],
+            wm: { x: 865, s: 1.6, look: "left" }, pol: { s: 1.45 }, blob: { s: 1.35 }, you: { x: 805, s: 1.5 }, signS: 1.1 }
+        : { w1: { x: 600, y: 560, r: 155, g: 860 }, w2: { x: 1335, y: 560, r: 155, g: 860 }, wall: { x0: 310, x1: 890, rows: 3, rh: 40, bw: 76 },
+            ms: [[370, 0.75], [480, 0.75], [590, 0.75], [700, 0.75], [810, 0.75]], mNew: [352, 0.75],
+            wm: { x: 172, s: 1.8, look: "right" }, pol: { s: 1.7 }, blob: { s: 1.55 }, you: { x: 1528, s: 1.7 }, signS: 1.25 };
+      var RIM = 14; // the rim band outside the slots
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      function g(id, inner, attrs) { return '<g id="' + P(id) + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      // A drawing in person units, its feet (y 100) standing on the ground at (x, gy); the inner group is free to tween.
+      function stand(x, gy, s, id, inner) { return '<g transform="translate(' + f(x) + "," + f(gy - 100 * s) + ") scale(" + s + ')">' + g(id, inner) + "</g>"; }
+      function pt(cx, cy, r, deg) { var a = (deg * PI) / 180; return [cx + r * Math.cos(a), cy + r * Math.sin(a)]; }
+
+      // ── The carnival prize wheel ──
+      // The A-frame stand behind the disc, the disc (slots, rim band, pegs, hub) in its own group, which the onTime callback turns
+      // with a rotate() attribute, and the leather flapper at the top, which the pegs push aside as they pass.
+      function wheelBack(w) {
+        var R = w.r + RIM, l = R * 0.62;
+        var leg = "M" + f(w.x - l) + "," + w.g + " L" + w.x + "," + w.y + " L" + f(w.x + l) + "," + w.g;
+        return '<path d="' + leg + '" fill="none" stroke="' + C.line + '" stroke-width="17" stroke-linejoin="miter"/>' +
+          '<path d="' + leg + '" fill="none" stroke="' + C.slate + '" stroke-width="9" stroke-linejoin="miter"/>' +
+          '<path d="M' + f(w.x - l - 22) + "," + w.g + " h44 M" + f(w.x + l - 22) + "," + w.g + ' h44" stroke="' + C.line + '" stroke-width="9"/>';
+      }
+      function wheelDisc(key, w, n, colors, slotArt) {
+        var r = w.r, step = 360 / n, out = "";
+        for (var i = 0; i < n; i++) {
+          var c = -90 + i * step, a = pt(0, 0, r, c - step / 2), b = pt(0, 0, r, c + step / 2);
+          out += '<path d="M0,0 L' + f(a[0]) + "," + f(a[1]) + " A" + r + "," + r + " 0 0 1 " + f(b[0]) + "," + f(b[1]) + ' Z" fill="' + colors[i % colors.length] + '" stroke="' + C.line + '" stroke-width="2.5" stroke-linejoin="miter"/>' +
+            slotArt(i, c);
+        }
+        out += '<circle r="' + (r + RIM / 2) + '" fill="none" stroke="' + C.line + '" stroke-width="' + (RIM + 5) + '"/>' +
+          '<circle r="' + (r + RIM / 2) + '" fill="none" stroke="' + C.rust + '" stroke-width="' + (RIM - 3) + '"/>' +
+          '<circle r="' + (r + RIM - 3) + '" fill="none" stroke="' + C.orange + '" stroke-width="1.6"/>';
+        for (var k = 0; k < n; k++) {
+          var p = pt(0, 0, r + RIM / 2, -90 + (k + 0.5) * step);
+          out += '<circle cx="' + f(p[0]) + '" cy="' + f(p[1]) + '" r="4.6" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="2"/>';
+        }
+        out += '<circle r="' + f(r * 0.17) + '" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="4"/>' + KIT.star(0, 0, r * 0.12, C.yellow) +
+          '<circle r="3.5" fill="' + C.cream + '"/>';
+        return '<g transform="translate(' + w.x + "," + w.y + ')">' + g(key + "-disc", out) + "</g>";
+      }
+      // The flapper hangs from a bracket on the sign pole, its tip down between the pegs; pivot at the bracket (0, 0).
+      function wheelFlapper(key, w) {
+        var top = w.y - w.r - RIM - 16;
+        return '<rect x="' + (w.x - 13) + '" y="' + (top - 12) + '" width="26" height="16" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="3"/>' +
+          '<g transform="translate(' + w.x + "," + top + ')">' + g(key + "-flap", '<path d="M-7,0 L7,0 L2,30 L0,34 L-2,30 Z" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
+            '<circle cx="0" cy="2" r="3" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="1.4"/>') + "</g>";
+      }
+      // The sign on the pole that rises from the hub: card A (the wheel's name) shows from the start; card B (the odds) flips
+      // up when the wheel stops. Both cards' bottoms sit RIM + 32 px above the rim.
+      var SIGN_FS = 30;
+      function signH(w) { return (w.r + RIM + 34) / L.signS; }
+      function wheelSign(key, w, a, b) {
+        var h = signH(w);
+        return '<g transform="translate(' + w.x + "," + w.y + ") scale(" + L.signS + ')">' +
+          g(key + "-signA", KIT.props.sign({ text: a, fontSize: SIGN_FS, height: h, posts: 1 })) +
+          g(key + "-signB", KIT.props.sign({ text: b, fontSize: SIGN_FS, height: h, posts: 1 })) + "</g>";
+      }
+
+      // Wheel one: 16 blank slots (cream and yellow, a star each) and one red sliver, far too thin to see.
+      var N1 = 16, N2 = 12;
+      var disc1 = wheelDisc("w1", L.w1, N1, [C.cream, C.yellow], function (i, c) {
+        var p = pt(0, 0, L.w1.r * 0.66, c);
+        var sliver = "";
+        if (i === 9) {
+          var s0 = pt(0, 0, L.w1.r, c - 0.25), s1 = pt(0, 0, L.w1.r, c + 0.25);
+          sliver = '<path d="M0,0 L' + f(s0[0]) + "," + f(s0[1]) + " L" + f(s1[0]) + "," + f(s1[1]) + ' Z" fill="' + C.war + '"/>';
+        }
+        return KIT.star(p[0], p[1], L.w1.r * 0.09, i % 2 ? C.orange : C.yellow) + '<circle cx="' + f(p[0]) + '" cy="' + f(p[1]) + '" r="2" fill="' + C.line + '" opacity="0.4"/>' + sliver;
+      });
+      // Wheel two: 12 slots, and every one says DISEASE (along the radius, reading outward).
+      var disc2 = wheelDisc("w2", L.w2, N2, [C.cream, C.orange], function (i, c) {
+        var rr = L.w2.r * 0.6, p = pt(0, 0, rr, c), fs = Math.round(L.w2.r * 0.155);
+        return '<text x="' + f(p[0]) + '" y="' + f(p[1]) + '" transform="rotate(' + f(c) + " " + f(p[0]) + " " + f(p[1]) + ')" dy="' + f(fs * 0.36) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + fs + '" letter-spacing="1" fill="' + C.line + '">DISEASE</text>';
+      });
+
+      // ── The fortress ──
+      // A sandbag: a fat pillow with tied corners, around (0, 0), bw x rh.
+      function sandbag(x, y, bw, rh, k) {
+        var hw = bw / 2, hh = rh / 2;
+        var pts = [[-hw + 6, -hh], [hw - 6, -hh + 1], [hw, -hh + 6], [hw + 1, hh - 6], [hw - 6, hh], [-hw + 6, hh - 1], [-hw, hh - 6], [-hw - 1, -hh + 6]];
+        var d = "M" + pts.map(function (p) { return f(x + p[0]) + "," + f(y + p[1]); }).join(" L") + " Z";
+        return '<path d="' + d + '" fill="' + (k % 3 === 1 ? "#C49468" : C.tan) + '" stroke="' + C.line + '" stroke-width="3.4" stroke-linejoin="miter"/>' +
+          '<path d="' + d + '" fill="url(#' + P("hatch") + ')" opacity="0.18"/>' +
+          '<path d="M' + f(x - hw + 9) + "," + f(y - hh + 5) + " l-4,-5 M" + f(x - hw + 9) + "," + f(y + hh - 5) + " l-4,5 M" + f(x + hw - 9) + "," + f(y - hh + 5) + " l4,-5 M" + f(x + hw - 9) + "," + f(y + hh - 5) + ' l4,5" stroke="' + C.line + '" stroke-width="2.2"/>' +
+          '<path d="M' + f(x - hw + 12) + "," + f(y - 2) + " Q" + f(x) + "," + f(y + 5) + " " + f(x + hw - 12) + "," + f(y - 2) + '" fill="none" stroke="' + C.line + '" stroke-width="1.4" opacity="0.5"/>';
+      }
+      function sandRow(r, yc) {
+        var wl = L.wall, out = "", k = r * 7;
+        for (var x = wl.x0 + wl.bw / 2 + (r % 2 ? wl.bw / 2 : 0); x <= wl.x1 - wl.bw / 2 + 1; x += wl.bw) out += sandbag(x, yc, wl.bw - 2, wl.rh, k++);
+        return out;
+      }
+      var wl = L.wall, G1 = L.w1.g, wallTop = G1 - wl.rows * wl.rh;
+      var wall = "";
+      for (var r = 0; r < wl.rows; r++) wall += sandRow(r, G1 - (r + 0.5) * wl.rh);
+      // Concertina wire along the wall's top: overlapping loops with little barbs.
+      var wire = "";
+      for (var x = wl.x0 + 14; x <= wl.x1 - 14; x += 24) {
+        wire += '<ellipse cx="' + x + '" cy="' + (wallTop - 16) + '" rx="17" ry="19" fill="none" stroke="' + C.line + '" stroke-width="2.4"/>' +
+          '<path d="M' + (x - 4) + "," + (wallTop - 39) + " l8,8 M" + (x + 4) + "," + (wallTop - 39) + " l-8,8 M" + (x + 14) + "," + (wallTop - 20) + ' l7,-3" stroke="' + C.line + '" stroke-width="2"/>';
+      }
+      wire = g("wire", wire);
+      // The extra row the weapons maker drops on after "million.": it lands on top of the wall and the wire pops up onto it.
+      var newRow = g("row-new", sandRow(wl.rows, wallTop - wl.rh / 2));
+      // The guard missiles (props stand on y 0, so they are placed on the ground directly).
+      var missiles = L.ms.map(function (m, i) {
+        return '<g transform="translate(' + m[0] + "," + G1 + ") scale(" + m[1] + ')">' + g("m" + i, KIT.props.missile({ mood: i % 2 ? "smug" : "grumpy", arms: "crossed" })) + "</g>";
+      }).join("");
+      // The extra missile springs up on the new top of the wall, at its left end: a sentry on the battlements.
+      var mNew = '<g transform="translate(' + L.mNew[0] + "," + (wallTop - wl.rh) + ") scale(" + L.mNew[1] + ')">' + g("m-new", KIT.props.missile({ mood: "grumpy", arms: "crossed" })) + "</g>";
+
+      // ── The people ──
+      // The weapons maker guards the fortress, cradling his own baby missile.
+      var wmO = KIT.castOpts("weaponsMaker", { look: L.wm.look });
+      var wm = stand(L.wm.x, G1, L.wm.s, "wm", KIT.person(wmO));
+      // The politician stands inside the fortress (behind the wall) with one hand up on wheel one's rim; he yanks it down.
+      var polO = KIT.castOpts("politician", { look: "left", arms: [[-150, -166], [14, 6]], holdR: "bill" }), polR = KIT.rig(polO);
+      var ps = L.pol.s, polHand = polR.hand[0], polHy = G1 - 100 * ps + ps * polHand[1];
+      var R1 = L.w1.r + RIM, polX = L.w1.x + Math.sqrt(Math.max(0, R1 * R1 - (polHy - L.w1.y) * (polHy - L.w1.y))) - 6 - ps * polHand[0];
+      var pol = stand(polX, G1, ps, "pol", KIT.person(polO));
+      // The disease blob stands left of wheel two, its right claw up on the rim; it shoves the wheel up.
+      var bs = L.blob.s, R2 = L.w2.r + RIM, clawY = L.w2.g - 112 * bs;
+      var blobX = L.w2.x - Math.sqrt(Math.max(0, R2 * R2 - (clawY - L.w2.y) * (clawY - L.w2.y))) + 4 - 88 * bs;
+      var blob = '<g transform="translate(' + f(blobX) + "," + L.w2.g + ") scale(" + bs + ')">' + g("blob", KIT.props.diseaseBlob({ mood: "grin", arms: "up", seed: 5 })) + "</g>";
+      // YOU (the busy human from Part 1's title card) waits his turn in front of wheel two: first arms down, then a glance at
+      // his wristwatch (a small watch drawn on his raised wrist).
+      var youO = { tone: 2, outfit: "suit", hat: "bowler", look: "left", mood: "flat" };
+      var youW = { tone: 2, outfit: "suit", hat: "bowler", look: "left", mood: "flat", arms: [[-14, -108], [12, 5]] }, youWR = KIT.rig(youW);
+      var watch = '<g transform="translate(' + f(youWR.hand[0][0] + 3) + "," + f(youWR.hand[0][1] + 9) + ')"><rect x="-5" y="-3.5" width="10" height="7" fill="' + C.line + '"/>' +
+        '<circle r="4.6" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1.6"/><circle r="2.6" fill="' + C.cream + '"/></g>';
+      var you = stand(L.you.x, L.w2.g, L.you.s, "you", g("you-a", KIT.person(youO)) + g("you-b", KIT.person(youW) + watch, 'opacity="0"') +
+        g("you-glow", '<circle cx="0" cy="0" r="15" fill="' + C.war + '" opacity="0.28"/><circle cx="0" cy="0" r="9" fill="' + C.war + '" opacity="0.4"/>', 'opacity="0"'));
+
+      // Where YOU's chest light is (the glow circle sits on it).
+      var ground = '<path d="M60,' + G1 + " H" + (V ? W - 60 : 1590) + '" stroke="' + C.line + '" stroke-width="5"/>' +
+        (V ? '<path d="M60,' + L.w2.g + " H" + (W - 60) + '" stroke="' + C.line + '" stroke-width="5"/>' : "");
+      var tufts = (V ? [[120, G1], [700, G1], [980, G1], [120, L.w2.g], [940, L.w2.g]] : [[110, G1], [960, G1], [1560, G1]]).map(function (p) {
+        return '<path d="M' + p[0] + "," + p[1] + " l-6,-14 M" + (p[0] + 6) + "," + p[1] + " l2,-18 M" + (p[0] + 12) + "," + p[1] + ' l8,-12" stroke="' + C.line + '" stroke-width="3" stroke-linecap="round"/>';
+      }).join("");
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + ground + tufts +
+        // wheel one and its fortress (the politician behind the wall, the missiles in front)
+        wheelBack(L.w1) + wheelSign("w1", L.w1, "TERRORISM", "TERRORISM:\n1 IN 30,000,000") + disc1 + wheelFlapper("w1", L.w1) +
+        pol + wall + newRow + wire + mNew + missiles + wm +
+        // wheel two, alone
+        wheelBack(L.w2) + wheelSign("w2", L.w2, "DISEASE", "DISEASE:\n100%") + disc2 + wheelFlapper("w2", L.w2) + blob + you);
+
+      // The chest light's glow, moved onto the light.
+      var youLight = q("you-a").querySelector(".chest-light");
+      Array.prototype.forEach.call(q("you-glow").querySelectorAll("circle"), function (c) {
+        c.setAttribute("cx", youLight.getAttribute("cx"));
+        c.setAttribute("cy", youLight.getAttribute("cy"));
+      });
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      var tTer = cue("terrorism:"), tMil = cue("million."), tAfter = KIT.after(ID, "million."), tDis = cue("disease:"), tPct = cue("percent."), tHun = cue("hundred");
+      // ── The spins: each wheel's angle is a function of time (fast, then slowing to a stop in the middle of a slot) ──
+      // Wheel one turns 30 slots (675 deg) from "terrorism:" to "million.", so its last two pegs pass the flapper with the two
+      // ticks on "thirty"; it stops on slot 2, a blank. Wheel two turns 20 slots from "disease:" to "percent.".
+      var S1 = 360 / N1, S2 = 360 / N2, A1 = 30 * S1, A2 = 20 * S2;
+      function spin(t, t0, t1, A) { var p = Math.min(1, Math.max(0, (t - t0) / (t1 - t0))); return A * (1 - (1 - p) * (1 - p)); }
+      // The flapper: a peg comes up from the left as the wheel turns; the flapper's tip gets pushed to the right, then snaps back.
+      function flap(th, step) { var u = (((th / step + 0.5) % 1) + 1) % 1; return u > 0.62 ? -((u - 0.62) / 0.38) * 32 : 0; }
+      var d1 = q("w1-disc"), d2 = q("w2-disc"), f1 = q("w1-flap"), f2 = q("w2-flap");
+      KIT.onTime(tl, D, function (t) {
+        var a = spin(t, tTer, tMil, A1), b = spin(t, tDis, tPct, A2);
+        d1.setAttribute("transform", "rotate(" + a.toFixed(2) + ")");
+        d2.setAttribute("transform", "rotate(" + b.toFixed(2) + ")");
+        f1.setAttribute("transform", "rotate(" + flap(a, S1).toFixed(2) + ")");
+        f2.setAttribute("transform", "rotate(" + flap(b, S2).toFixed(2) + ")");
+      });
+
+      // Pivots, set once while everything is untransformed.
+      var polArm = q("pol").querySelector(".arm-l"), blobArm = q("blob").querySelector(".blob-arm-r"), blobBody = q("blob").querySelector(".blob-body");
+      gsap.set(polArm, { svgOrigin: polR.shoulder[0].join(" ") });
+      gsap.set(blobArm, { svgOrigin: "60 -52" });
+      gsap.set(blobBody, { svgOrigin: "0 0" });
+      var cardA1 = q("w1-signA").querySelector(".sign-card"), cardB1 = q("w1-signB").querySelector(".sign-card");
+      var cardA2 = q("w2-signA").querySelector(".sign-card"), cardB2 = q("w2-signB").querySelector(".sign-card");
+      [[cardA1, signH(L.w1)], [cardB1, signH(L.w1)], [cardA2, signH(L.w2)], [cardB2, signH(L.w2)]].forEach(function (c) { gsap.set(c[0], { svgOrigin: "0 " + f(-c[1]) }); });
+      tl.set([cardB1, cardB2], { scaleY: 0 }, 0);
+      L.ms.forEach(function (m, i) { gsap.set(q("m" + i), { svgOrigin: "0 0" }); });
+      gsap.set(q("m-new"), { svgOrigin: "0 0" });
+
+      // "terrorism:": the politician yanks the rim down (the whirr) and lets go; the wheel spins.
+      tl.fromTo(polArm, { rotation: 0 }, { rotation: -62, duration: 0.2, ease: "power2.in" }, tTer - 0.06);
+      tl.to(polArm, { rotation: 0, duration: 0.5, ease: "power2.inOut" }, tTer + 0.5);
+      tl.fromTo(q("pol"), { y: 0 }, { y: 6, duration: 0.12, yoyo: true, repeat: 1, ease: "power1.out" }, tTer + 0.08);
+      // the guard missiles turn to watch it, one after another (a little hop each)
+      L.ms.forEach(function (m, i) {
+        tl.fromTo(q("m" + i), { y: 0 }, { y: -10, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.out" }, tTer + 0.15 + i * 0.07);
+      });
+      // "million.": it stops on a blank (the click); card A flips down and card B flips up: "1 IN 30,000,000".
+      tl.to(cardA1, { scaleY: 0, duration: 0.08, ease: "power2.in" }, tMil);
+      tl.fromTo(cardB1, { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: "back.out(2.2)", immediateRender: false }, tMil + 0.08);
+      // a beat after "million.": another row of sandbags thumps down on the wall (the thunk) and one more missile springs up
+      // into the ring; the weapons maker gives one satisfied bounce. The politician is pleased too.
+      tl.fromTo(q("row-new"), { y: -H * 0.75 }, { y: 0, duration: 0.3, ease: "power3.in" }, tAfter - 0.3);
+      tl.to(q("row-new"), { y: 4, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out" }, tAfter);
+      tl.fromTo(q("wire"), { y: 0 }, { y: -wl.rh, duration: 0.14, ease: "back.out(2)" }, tAfter);
+      tl.fromTo(q("m-new"), { scaleY: 0, scaleX: 0.6 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(2.5)" }, tAfter + 0.1);
+      tl.fromTo(q("wm"), { y: 0 }, { y: -12, duration: 0.12, yoyo: true, repeat: 1, ease: "power1.out" }, tAfter + 0.05);
+      // YOU, still waiting, checks his watch while the narrator starts the second line; he looks back up before "disease:".
+      var tWatch = cue("Your", 2);
+      tl.set(q("you-a"), { opacity: 0 }, tWatch);
+      tl.set(q("you-b"), { opacity: 1 }, tWatch);
+      tl.set(q("you-b"), { opacity: 0 }, tDis - 0.2);
+      tl.set(q("you-a"), { opacity: 1 }, tDis - 0.2);
+      // "disease:": the blob shoves wheel two up and round (the whirr), grinning; nobody guards it.
+      tl.fromTo(blobArm, { rotation: 0 }, { rotation: -34, duration: 0.16, ease: "power2.in" }, tDis - 0.08);
+      tl.to(blobArm, { rotation: 0, duration: 0.45, ease: "power2.inOut" }, tDis + 0.35);
+      tl.fromTo(blobBody, { scaleY: 1, scaleX: 1 }, { scaleY: 1.07, scaleX: 0.96, duration: 0.14, yoyo: true, repeat: 1, ease: "power1.out" }, tDis - 0.04);
+      // "hundred": card B is already coming up, because it does not matter where it stops. "percent.": it stops (the click)
+      // and YOU's chest light comes on red. HOLD: nothing moves after this.
+      tl.to(cardA2, { scaleY: 0, duration: 0.08, ease: "power2.in" }, tHun);
+      tl.fromTo(cardB2, { scaleY: 0 }, { scaleY: 1, duration: 0.26, ease: "power3.out", immediateRender: false }, tHun + 0.08);
+      tl.set(youLight, { attr: { fill: C.war } }, tPct);
+      tl.set(q("you-glow"), { opacity: 1 }, tPct);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

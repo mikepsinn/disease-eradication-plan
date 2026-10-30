@@ -1,0 +1,432 @@
+<template id="crypto-afternoon-template">
+  <!-- crypto-afternoon · Layer B (storyboards/part-11-civilization-countdown.md). Slides in from cybercrime-10-trillion.
+       A world map card on the paper; a hospital with a patient waiting on a gurney outside it, his chest light blinking.
+       "North": the label NORTH KOREA lands on the map (thunk). "aircraft": a toy aircraft carrier bobs in a washtub on
+       the sea by the label; "carrier,": it tips over and sinks (slide-down), and one bubble pops (pop). "nuclear
+       program": a grinning missile pops up on a stand, a price tag UNPAID swinging off it. "stealing": the Masked Crook
+       tiptoes out from behind the map with his laptop. "billion": he tips the laptop and war papers pour out of it onto
+       a pile, "$1.5 BILLION" flying on top (cash register). "cryptocurrency": a rubber stamp thumps PAID across the
+       missile's UNPAID (stamp). "single": a wall clock spins from 12 to 5 so fast it smokes (whirr) while the pile
+       climbs; after "afternoon.": it stops with a ding, and the pile is taller than the map. "Russia": the label RUSSIA
+       lands (thunk). "operations": a small missile factory drops in by it. "ransomware.": a padlock snaps onto the
+       hospital's door (clank), its sign flips to CLOSED and a RANSOM note is slapped on; war papers squeeze out under
+       the door and march into the factory, whose chimneys puff. after "ransomware.": the patient on the gurney x-rays
+       into a grinning skeleton (zap), still waiting. The fuse burns in the top-left corner.
+       Map labels (shared with failed-states): Oswald navy capitals on a cream tag with a navy outline, a pin on the
+       place. The wall clock (shared with build-or-steal): a cream face (r 70 in 16:9, 60 in 9:16), a navy rim 8 px,
+       12 ticks, orange hands, a mustard hub. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #crypto-afternoon-cam, #crypto-afternoon-bg, #crypto-afternoon-art, #crypto-afternoon-pip, #crypto-afternoon-fuse, #crypto-afternoon-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="crypto-afternoon" data-width="1920" data-height="1080" data-start="0" data-duration="13.2">
+    <div id="crypto-afternoon-cam">
+      <div id="crypto-afternoon-bg"></div>
+      <div id="crypto-afternoon-art"></div>
+      <div id="crypto-afternoon-pip"></div>
+    </div>
+    <!-- the civilization fuse: above the camera (the slide does not move it), under the grain -->
+    <div id="crypto-afternoon-fuse"></div>
+    <div id="crypto-afternoon-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "crypto-afternoon";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function txt(x, y, size, s, col, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + (col || ink) + '"' + (extra ? " " + extra : "") + ">" + s + "</text>";
+      }
+      function rotAbout(p, deg, c) {
+        var r = (deg * Math.PI) / 180, x = p[0] - c[0], y = p[1] - c[1];
+        return [c[0] + x * Math.cos(r) - y * Math.sin(r), c[1] + x * Math.sin(r) + y * Math.cos(r)];
+      }
+      function lerp(a, b, f) { return a + (b - a) * f; }
+      function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene. ──
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ── MAP LABELS (the same style in failed-states): Oswald navy capitals on a cream tag with a navy outline,
+      // standing on a short post over a pin on the place; drawn around the pin at (0, 0). ──
+      function mapLabel(text, size) {
+        var w = text.length * size * 0.52 + size * 1.1, h = size * 1.45, y1 = -size * 0.7, y0 = y1 - h;
+        return line("M0,-4 V" + n1(y1), ink, 3.4) + S([ci(0, 0, 6)], C.war, 2.6) +
+          F(pg(R(-w / 2 + 5, y0 + 5, w, h)), ink, 'opacity="0.85"') + S([pg(R(-w / 2, y0, w, h))], C.cream, 4) +
+          line("M" + n1(-w / 2 + 5) + "," + n1(y0 + 5) + " H" + n1(w / 2 - 5), C.orange, 1.6) +
+          txt(0, y0 + h / 2 + size * 0.36, size, text, ink, 'letter-spacing="' + n1(size * 0.05) + '"');
+      }
+
+      // ── THE WALL CLOCK (the same in build-or-steal): a cream face, a navy rim 8 px, 12 ticks, orange hands and a
+      // mustard hub, drawn around its center; .clock-hour / .clock-min turn about (0, 0) (12 o'clock = 0 degrees). ──
+      function wallClock(r) {
+        var ticks = "";
+        for (var i = 0; i < 12; i++) {
+          var a = (i * Math.PI) / 6, r0 = i % 3 ? r * 0.8 : r * 0.7;
+          ticks += "M" + pt(Math.sin(a) * r0, -Math.cos(a) * r0) + " L" + pt(Math.sin(a) * r * 0.9, -Math.cos(a) * r * 0.9) + " ";
+        }
+        return line("M0," + n1(-r - 4) + " L-10," + n1(-r - 22) + " M0," + n1(-r - 4) + " L10," + n1(-r - 22), ink, 2.4) + S([ci(0, -r - 24, 4)], C.slate, 2) +
+          F(ci(6, 7, r + 4), ink, 'opacity="0.85"') + S([ci(0, 0, r + 4)], C.cream, 8) + line(ticks, ink, 3.4) +
+          line("M" + n1(-r * 0.55) + "," + n1(r * 0.45) + " A" + n1(r * 0.7) + "," + n1(r * 0.7) + " 0 0 0 " + n1(r * 0.55) + "," + n1(r * 0.45), C.orange, 1.4, 'opacity="0.6"') +
+          g("clock-hour", line("M0,4 L0," + n1(-r * 0.5), ink, 9) + line("M0,4 L0," + n1(-r * 0.5), C.orange, 5)) +
+          g("clock-min", line("M0,6 L0," + n1(-r * 0.8), ink, 7) + line("M0,6 L0," + n1(-r * 0.8), C.orange, 3.4)) +
+          S([ci(0, 0, 7)], C.yellow, 2.4);
+      }
+
+      // ── Layout, per canvas shape ──
+      // map: the world map card [center x, top y, width]; nk / ru: the labels' places in map units (400 x 220);
+      // tub: [map x, map y, scale] (the washtub on the sea by the label); G: the floor; missile: [x, scale] on its stand;
+      // crook: [x he starts from, x he stops at, scale]; pile: [x, width, the y its top reaches]; clock: [x, y, r];
+      // Russia, on its own floor G2: gurney x, hospital [x, scale], factory [x, scale]; leader: draw a dashed line from
+      // the RUSSIA pin down to the factory (9:16, where the factory is far below the map).
+      var L = V
+        ? { map: [400, 470, 700], nk: [338, 76], ru: [250, 34], tub: [368, 114, 0.62], G: 1080, missile: [160, 1.0], crook: [150, 640, 1.5],
+            pile: [832, 124, 440], clock: [138, 330, 60], G2: 1420, gurney: 132, hospital: [330, 0.52], factory: [735, 0.55], label: 30, leader: true,
+            paper: 0.46, flyK: 0.42, pouring: 40 }
+        : { map: [700, 130, 900], nk: [338, 76], ru: [250, 34], tub: [366, 110, 0.8], G: 870, missile: [1225, 1.15], crook: [1060, 1340, 1.6],
+            pile: [1482, 150, 92], clock: [1732, 330, 70], G2: 870, gurney: 342, hospital: [480, 0.6], factory: [810, 0.58], label: 32, leader: false,
+            paper: 0.5, flyK: 0.48, pouring: 46 };
+      var M = L.map, mw = M[2], mh = Math.round(mw * 0.62), mm = Math.round(mw * 0.055);
+      var mapOrigin = [M[0], M[1] + mh + 9];
+      function mapPt(mx, my) { return [M[0] - mw / 2 + mm + (mx * (mw - 2 * mm)) / 400, M[1] + mm + (my * (mh - 2 * mm)) / 220]; }
+      var G = L.G, G2 = L.G2;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The map and its labels ──
+      var nkAt = mapPt(L.nk[0], L.nk[1]), ruAt = mapPt(L.ru[0], L.ru[1]);
+      var mapArt = at(mapOrigin[0], mapOrigin[1], 1, KIT.props.worldMap({ w: mw }));
+      var labels = at(nkAt[0], nkAt[1], 1, g("lab-nk", mapLabel("NORTH KOREA", L.label), 'opacity="0"')) +
+        at(ruAt[0], ruAt[1], 1, g("lab-ru", mapLabel("RUSSIA", L.label), 'opacity="0"'));
+
+      // ── The washtub and the toy aircraft carrier (tub units: the water line at y 0, the tub 200 wide) ──
+      var tubAt = mapPt(L.tub[0], L.tub[1]), tk = L.tub[2];
+      var carrier = '<g id="' + P + 'carrier-sink"><g id="' + P + 'carrier-bob">' +
+        S([pg([[-66, -4], [64, -4], [54, 14], [-58, 14]])], C.slate) + F(pg([[-60, 6], [58, 6], [54, 14], [-58, 14]]), C.rust) +
+        S([pg([[-78, -14], [80, -14], [70, -4], [-70, -4]])], C.peri, 3.4) + line("M-66,-9 H66", C.cream, 1.6, 'stroke-dasharray="7 5"') +
+        S([pg(R(26, -40, 16, 26))], C.slate, 3) + S([pg(R(22, -46, 24, 8))], C.peri, 2.6) + line("M34,-46 V-60 M28,-56 H40", ink, 2) +
+        [[-50], [-26], [-4]].map(function (p) { return S([pg([[p[0] - 8, -14], [p[0] + 8, -14], [p[0], -24]])], C.cream, 2); }).join("") +
+        "</g></g>";
+      var tubBody = [[-100, -8], [100, -8], [82, 62], [-82, 62]];
+      var tubArt = at(tubAt[0], tubAt[1], tk,
+        S([pg([[-104, -14], [104, -14], [100, -6], [-100, -6]])], C.slate, 3) + F(pg([[-98, -9], [98, -9], [96, 0], [-96, 0]]), C.cyan) +
+        line("M-80,-4 q10,-4 20,0 q10,4 20,0 M10,-4 q10,-4 20,0 q10,4 20,0", C.cream, 2) +
+        '<defs><clipPath id="' + P + 'tubclip"><rect x="-98" y="-300" width="196" height="356"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'tubclip)">' + g("carrier", carrier) + "</g>" +
+        S([pg(tubBody)], C.peri) + line("M-94,8 H94 M-90,24 H90 M-86,40 H86", C.slate, 2.4) + line("M96,-6 L80,60", C.orange, 1.6) +
+        S([pg([[-112, 6], [-100, 6], [-98, 22], [-110, 22]]), pg([[112, 6], [100, 6], [98, 22], [110, 22]])], C.slate, 2.6) +
+        g("bubble", S([ci(0, 0, 9)], C.cyan, 2.6) + line("M-3,-3 l3,-2", C.cream, 1.6), 'opacity="0"') +
+        g("pop", [0, 1, 2, 3, 4, 5].map(function (i) { var a = (i * Math.PI) / 3; return line("M" + pt(Math.cos(a) * 10, Math.sin(a) * 10) + " L" + pt(Math.cos(a) * 20, Math.sin(a) * 20), ink, 2.4); }).join(""), 'opacity="0"'));
+
+      // ── The missile on its stand, its UNPAID tag, the stamp and its mark ──
+      var MS = L.missile, mk = MS[1], standH = 58;
+      var stand = S([pg([[-46, 0], [46, 0], [36, -standH], [-36, -standH]])], C.slate) + line("M36,-" + standH + " L46,0", C.orange, 1.8) +
+        S([pg(R(-50, -10, 100, 10))], C.navy, 3) + line("M-24,-30 H24", C.peri, 2.4);
+      var missileArt = at(MS[0], G, mk, stand + at(0, -standH, 1, g("missile-pop", KIT.props.missile({ mood: "grin" }))));
+      var tagKnot = [MS[0] + 30 * mk, G - (standH + 10) * mk], tagSize = V ? 1.35 : 1.5, tagA = 18, tagW = "UNPAID".length * 9 + 30;
+      var cardC = rotAbout([3 + (tagW - 12) / 2, 28], tagA, [3, 28]);
+      cardC = [tagKnot[0] + tagSize * cardC[0], tagKnot[1] + tagSize * cardC[1]];
+      var tagArt = at(tagKnot[0], tagKnot[1], 1, g("tag", KIT.props.priceTag({ text: "UNPAID", angle: tagA, size: tagSize })), 'opacity="1"');
+      var markSvg = KIT.props.stampMark({ text: "PAID", angle: -14, fontSize: V ? 30 : 34 }), markCy = +(/data-cy="(-?[0-9.]+)"/.exec(markSvg)[1]);
+      var markArt = at(cardC[0], cardC[1] - markCy, 1, g("mark", markSvg, 'opacity="0"'));
+      var stampArt = at(cardC[0], cardC[1], 1, g("stamp", KIT.props.stamp({ text: "PAID", size: V ? 1.1 : 1.25 }), 'opacity="0"'));
+
+      // ── The Masked Crook with his laptop (drawn facing right) ──
+      var CK = L.crook, cs = CK[2];
+      var crookO = KIT.castOpts("lobbyist", { arms: [[55, 100], [45, 100]], look: "right" }), crookR = KIT.rig(crookO);
+      var hm = [(crookR.hand[0][0] + crookR.hand[1][0]) / 2, (crookR.hand[0][1] + crookR.hand[1][1]) / 2];
+      var lapK = 1.25, screen = '<rect x="-24" y="-42" width="48" height="31" fill="' + C.cyan + '" opacity="0.3"/>' +
+        '<g transform="translate(0,-27)">' + KIT.moneySeal("war", 0, 0, 8.5) + "</g>" + line("M-19,-37 h10 M-19,-15 h14 M10,-15 h9", C.cream, 1.6);
+      var lap = at(hm[0] + 4, hm[1] + 6, lapK, g("laptop", KIT.props.laptop({}).replace("<!--laptop-screen-->", screen)));
+      var crookArt = at(CK[1], G - 100 * cs, cs, g("crook-move", g("crook-bob", g("crook", KIT.person(crookO)) + lap)));
+      // where the papers come out (the screen, with the laptop tipped 40 degrees toward the pile)
+      var TIP = 40, scr = rotAbout([0, -26 * lapK], TIP, [0, 0]);
+      var emit = [CK[1] + cs * (hm[0] + 4 + scr[0]), G - 100 * cs + cs * (hm[1] + 6 + scr[1])];
+
+      // ── The pile of war papers, rising from the floor (a stack of bills seen edge-on, drawn full height and slid up
+      // out of the floor), with the $1.5 BILLION flag on top ──
+      var PL = L.pile, pileTop = PL[2], fullH = G - pileTop, rr = KIT.rng(1521), bills = "";
+      for (var y = -12; y >= -fullH - 0.5; y -= 12) {
+        var j = Math.round((rr() - 0.5) * 10), wj = Math.round((rr() - 0.5) * 8), x0 = -PL[1] / 2 + j, ww = PL[1] + wj, side = rr() < 0.5;
+        bills += '<rect x="' + x0 + '" y="' + y + '" width="' + ww + '" height="12" rx="2" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<path d="M' + (x0 + (side ? 22 : 8)) + "," + (y + 4) + " H" + (x0 + ww - (side ? 8 : 22)) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>' +
+          '<circle cx="' + (side ? x0 + 9 : x0 + ww - 9) + '" cy="' + (y + 6) + '" r="3.6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.2"/>';
+      }
+      var flagW = (V ? 26 : 30);
+      var flag = at(0, -fullH, 1, g("flag", line("M0,0 V-70", ink, 4) + at(0, -70, 1, mapLabel("$1.5 BILLION", flagW).replace(/<path d="M0,-4[^>]*\/>/, ""))), 'opacity="0"');
+      var pileArt = at(PL[0], G, 1, '<defs><clipPath id="' + P + 'pileclip"><rect x="-400" y="' + (-G - 300) + '" width="800" height="' + (G + 300) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'pileclip)"><g id="' + P + 'pile-rise">' + bills + flag + "</g></g>");
+
+      // ── The wall clock, with the smoke it makes ──
+      var CL = L.clock;
+      var puffs = [[-30, 0, 18], [0, -14, 24], [30, -2, 17]].map(function (p, i) {
+        return g("puff" + i, S([ci(p[0], p[1], p[2])], "#C9C2B5", 3) + F(ci(p[0] - p[2] * 0.3, p[1] - p[2] * 0.3, p[2] * 0.35), C.cream, 'opacity="0.6"'), 'opacity="0"');
+      }).join("");
+      var clockArt = at(CL[0], CL[1], 1, at(0, -CL[2] - 30, 1, puffs) + g("clock", wallClock(CL[2])));
+
+      // ── Russia, on its floor: the patient on his gurney, the hospital (its padlock, its note), the factory ──
+      var HS = L.hospital, FC = L.factory, gx = L.gurney, gs = V ? 0.85 : 1;
+      var patO = { tone: 2, outfit: "shirt", seed: 21, mood: "worried", light: "red" };
+      var gurney = at(gx, G2, gs,
+        S([pg(R(-96, -66, 192, 10))], C.slate, 3) + line("M-80,-56 L-60,-14 M80,-56 L60,-14 M-80,-14 L-60,-56 M80,-14 L60,-56", ink, 3.4) +
+        S([pg(R(-90, -16, 180, 6))], C.slate, 2.6) + S([ci(-70, -6, 6), ci(70, -6, 6)], C.navy, 2.4) +
+        S([pg(R(-92, -80, 184, 15))], C.cream, 3) + S([pg(R(-90, -96, 46, 18))], "#FBF6E6", 2.6) +
+        // the patient lying on his back, head on the pillow (rotated so his head is to the left, his face up)
+        at(10, -102, 0.95, '<g transform="rotate(-90)"><g id="' + P + 'pat-alive">' + KIT.person(patO) + '</g><g id="' + P + 'pat-bones">' + KIT.person({ tone: 2, outfit: "shirt", seed: 21, skeleton: true }) + "</g></g>"));
+      var hospital = at(HS[0], G2, HS[1], g("hospital", KIT.props.hospital({})) +
+        at(0, -64, 1.25, g("lock-drop", g("lock", KIT.props.padlock({ open: true })), 'opacity="0"')));
+      var note = at(HS[0] + 34 * HS[1], G2 - 108 * HS[1], 1, g("note", S([pg(R(-52, -20, 104, 40))], "#FBF6E6", 3) + line("M-46,-14 H46", C.war, 1.6) +
+        txt(0, 10, V ? 24 : 26, "RANSOM", C.war, 'letter-spacing="2"'), 'opacity="0"'));
+      var factory = at(FC[0], G2, 1, g("factory-drop", at(0, 0, FC[1], g("factory", KIT.props.factory({}))), 'opacity="0"'));
+      var leader = L.leader ? g("leader", line("M" + pt(ruAt[0], ruAt[1] + 8) + " L" + pt(FC[0] - 40, G2 - 440 * FC[1]), ink, 3, 'stroke-dasharray="10 8"'), 'opacity="0"') : "";
+      // the papers squeezed out of the hospital: walkers with two leg drawings
+      var NR = 9, rans = "";
+      for (var ri = 0; ri < NR; ri++) rans += g("r" + ri, g("r" + ri + "-a", KIT.money("war", 0)) + g("r" + ri + "-b", KIT.money("war", 1), 'opacity="0"'), 'opacity="0"');
+      // the poured papers, flying from the laptop to the pile
+      var NP = 44, pours = "";
+      for (var pi = 0; pi < NP; pi++) pours += g("p" + pi, KIT.money("war", 0.5), 'opacity="0"');
+
+      var floor = line("M60," + G + " H" + (W - 60), ink, 5) + (G2 !== G ? line("M60," + G2 + " H" + (W - 60), ink, 5) : "") +
+        [0.08, 0.3, 0.52, 0.76].map(function (f) {
+          var fx = 70 + f * (W - 140);
+          return [G, G2].map(function (gy, k) { return k && G2 === G ? "" : line("M" + fx + "," + gy + " l-6,-14 M" + (fx + 6) + "," + gy + " l2,-18 M" + (fx + 12) + "," + gy + " l8,-12", ink, 3); }).join("");
+        }).join("");
+
+      // 16:9: the Crook is behind the map (he sneaks out from behind it); 9:16: in front of it, behind the missile
+      var art = KIT.paperDefs(ID) + floor + clockArt +
+        (V ? mapArt + labels + tubArt + crookArt + missileArt : missileArt + crookArt + mapArt + labels + tubArt) +
+        tagArt + markArt + pileArt + leader + factory + g("rans", rans) + hospital + note + gurney + g("pours", pours) + stampArt;
+      q("art").innerHTML = KIT.svg(W, H, art);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      fuse(q("fuse"), tl);
+
+      // The patient waits from the start, his chest light blinking red.
+      var alive = q("pat-alive"), bones = q("pat-bones"), light = alive.querySelector(".chest-light");
+      gsap.set(bones, { opacity: 0 });
+      tl.fromTo(light, { opacity: 1 }, { opacity: 0.25, duration: 0.3, repeat: Math.floor(12 / 0.3) - 1, yoyo: true, ease: "none" }, 0.2);
+
+      function landLabel(el, t) {
+        gsap.set(el, { svgOrigin: "0 0" });
+        tl.set(el, { opacity: 1 }, t - 0.2);
+        tl.fromTo(el, { y: -420 }, { y: 0, duration: 0.2, ease: "power3.in", immediateRender: false }, t - 0.2);
+        tl.fromTo(el, { scaleY: 0.78, scaleX: 1.12 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(3)", immediateRender: false }, t);
+      }
+      // "North": NORTH KOREA lands on the map (thunk; it lands as the slide settles).
+      var tN = Math.max(0.42, cue("North"));
+      landLabel(q("lab-nk"), tN);
+
+      // "aircraft": the toy carrier bobs in its tub; "carrier,": it tips over and sinks (slide-down); a bubble pops.
+      var tAir = cue("aircraft"), tCar = cue("carrier,"), tBub = KIT.after(ID, "carrier,");
+      var bob = q("carrier-bob"), sink = q("carrier-sink");
+      gsap.set(bob, { svgOrigin: "0 0" });
+      gsap.set(sink, { svgOrigin: "-60 0" });
+      tl.fromTo(bob, { rotation: -4, y: -2 }, { rotation: 4, y: 2, duration: 0.24, repeat: 3, yoyo: true, ease: "sine.inOut" }, Math.min(tAir, 0.5));
+      tl.to(sink, { rotation: -68, duration: 0.25, ease: "power2.in" }, tCar);
+      tl.to(sink, { y: 120, duration: 0.55, ease: "power1.in" }, tCar + 0.2);
+      var bubble = q("bubble"), popEl = q("pop");
+      gsap.set([bubble, popEl], { svgOrigin: "0 0" });
+      tl.fromTo(bubble, { opacity: 1, y: 10, scale: 0.4 }, { y: -12, scale: 1, duration: 0.3, ease: "power1.out", immediateRender: false }, tBub - 0.3);
+      tl.set(bubble, { opacity: 0 }, tBub);
+      tl.set(popEl, { opacity: 1, y: -12 }, tBub);
+      tl.fromTo(popEl, { scale: 0.5 }, { scale: 1.3, duration: 0.15, ease: "power2.out", immediateRender: false }, tBub);
+      tl.set(popEl, { opacity: 0 }, tBub + 0.18);
+
+      // "nuclear program": the grinning missile pops up on its stand; its UNPAID tag swings.
+      var tNuc = cue("nuclear"), mp = q("missile-pop");
+      gsap.set(mp, { svgOrigin: "0 0" });
+      tl.fromTo(mp, { scaleY: 0, scaleX: 0.6 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(2.4)" }, tNuc);
+      var tagEl = q("tag"), tagSw = tagEl.querySelector(".tag-swing");
+      gsap.set(tagSw, { svgOrigin: "0 0" });
+      tl.fromTo(tagEl, { opacity: 0 }, { opacity: 1, duration: 0.05 }, cue("program"));
+      tl.fromTo(tagSw, { rotation: -60 }, { rotation: 0, duration: 0.8, ease: "elastic.out(1.2,0.3)", immediateRender: false }, cue("program"));
+
+      // "stealing": the Masked Crook tiptoes out (from behind the map in 16:9, the missile in 9:16) to his spot.
+      var tSt = cue("stealing"), tArr = Math.min(cue("billion") - 0.3, tSt + 1.15);
+      var mv = q("crook-move"), cb = q("crook-bob"), cr = q("crook");
+      tl.fromTo(mv, { x: (CK[0] - CK[1]) / cs }, { x: 0, duration: tArr - tSt, ease: "sine.inOut" }, tSt);
+      var nSteps = Math.max(2, Math.round((tArr - tSt) / 0.19));
+      tl.fromTo(cb, { y: 0 }, { y: -7, duration: (tArr - tSt) / nSteps / 2, repeat: nSteps * 2 - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, tSt);
+      [".leg-l", ".leg-r"].forEach(function (c, i) {
+        var leg = cr.querySelector(c);
+        gsap.set(leg, { svgOrigin: crookR.hip[i].join(" ") });
+        tl.fromTo(leg, { rotation: i ? -12 : 12 }, { rotation: i ? 12 : -12, duration: (tArr - tSt) / nSteps, repeat: nSteps - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, tSt);
+        tl.to(leg, { rotation: 0, duration: 0.12 }, tArr);
+      });
+
+      // "billion": he tips the laptop and war papers pour out onto the pile (cash register); $1.5 BILLION flies on top.
+      var tBil = cue("billion"), lapEl = q("laptop");
+      gsap.set(lapEl, { svgOrigin: "0 0" });
+      tl.to(lapEl, { rotation: TIP, duration: 0.18, ease: "back.out(2)" }, tBil - 0.15);
+      var tFlag = tBil, fl = q("flag");
+      gsap.set(fl, { svgOrigin: "0 0" });
+      tl.set(fl, { opacity: 1 }, tFlag);
+      // the pile grows from "billion" until the clock stops (after "afternoon."); each paper flies to the top it meets
+      var tStop = KIT.after(ID, "afternoon."), tGrow0 = tBil - 0.1, tGrow1 = tStop - 0.06;
+      function pileH(t) { var f = clamp01((t - tGrow0) / (tGrow1 - tGrow0)); return 70 + (fullH - 70) * (1 - Math.pow(1 - f, 1.4)); }
+      var pTimes = [];
+      for (var k = 0; k < NP; k++) pTimes.push(tBil - 0.05 + (k * (tGrow1 - 0.35 - tBil)) / (NP - 1));
+      var flyDur = 0.38, rise = q("pile-rise"), pEls = [];
+      for (var k2 = 0; k2 < NP; k2++) pEls.push(q("p" + k2));
+      var jr = KIT.rng(77);
+      var pJit = pTimes.map(function () { return [(jr() - 0.5) * PL[1] * 0.7, (jr() - 0.5) * 540]; });
+      KIT.onTime(tl, D, function (lt) {
+        var h = lt < tGrow0 ? 0 : pileH(lt);
+        rise.setAttribute("transform", "translate(0," + n1(fullH - h) + ")");
+        pTimes.forEach(function (t0, i) {
+          var e = pEls[i];
+          if (lt < t0 || lt > t0 + flyDur) { e.setAttribute("opacity", "0"); return; }
+          var f = (lt - t0) / flyDur, tx = PL[0] + pJit[i][0], ty = G - pileH(t0 + flyDur) - 22;
+          var x = lerp(emit[0], tx, f), yy = lerp(emit[1], ty, f) - Math.sin(f * Math.PI) * 120;
+          e.setAttribute("opacity", "1");
+          e.setAttribute("transform", "translate(" + n1(x) + "," + n1(yy) + ") rotate(" + n1(pJit[i][1] * f) + ") scale(" + n1(L.flyK * Math.min(1, 0.3 + f * 3)) + ")");
+        });
+      });
+      tl.fromTo(fl, { scale: 0.2, rotation: -20 }, { scale: 1, rotation: 0, duration: 0.3, ease: "back.out(2.5)", immediateRender: false }, tFlag);
+      tl.fromTo(fl, { rotation: 0 }, { rotation: 6, duration: 0.3, repeat: Math.floor((tStop - tFlag - 0.3) / 0.3) - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, tFlag + 0.3);
+
+      // "cryptocurrency": the stamp comes down on the tag (stamp): PAID across UNPAID; the missile beams.
+      var tCry = cue("cryptocurrency"), st = q("stamp"), stHead = st.querySelector(".stamp-head"), mark = q("mark");
+      tl.set(st, { opacity: 1 }, tCry - 0.2);
+      tl.fromTo(st, { y: -380 }, { y: 0, duration: 0.2, ease: "power3.in", immediateRender: false }, tCry - 0.2);
+      gsap.set(stHead, { svgOrigin: "0 0" });
+      tl.fromTo(stHead, { scaleY: 1 }, { scaleY: 0.82, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tCry);
+      tl.set(mark, { opacity: 1 }, tCry);
+      tl.to(st, { y: -420, duration: 0.3, ease: "power2.in" }, tCry + 0.2);
+      tl.set(st, { opacity: 0 }, tCry + 0.5);
+      tl.fromTo(tagSw, { rotation: 0 }, { rotation: 14, duration: 0.08, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, tCry);
+      tl.fromTo(mp, { scaleY: 1, scaleX: 1 }, { scaleY: 1.12, scaleX: 0.94, duration: 0.12, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, tCry + 0.15);
+
+      // "single": the clock spins from 12 to 5 so fast it smokes (whirr); after "afternoon.": it stops (ding).
+      var tSin = cue("single"), hr = q("clock-hour"), mn = q("clock-min"), clk = q("clock");
+      gsap.set([hr, mn, clk], { svgOrigin: "0 0" });
+      tl.fromTo(hr, { rotation: 0 }, { rotation: 150, duration: tStop - tSin, ease: "power1.inOut" }, tSin);
+      tl.fromTo(mn, { rotation: 0 }, { rotation: 1800, duration: tStop - tSin, ease: "power1.inOut" }, tSin);
+      tl.fromTo(clk, { x: -2 }, { x: 2, duration: 0.04, repeat: Math.floor((tStop - tSin - 0.3) / 0.04) - 1, yoyo: true, ease: "none", immediateRender: false }, tSin + 0.3);
+      tl.fromTo(clk, { scale: 1 }, { scale: 1.12, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tStop);
+      tl.fromTo(hr, { rotation: 150 }, { rotation: 146, duration: 0.1, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, tStop);
+      [0, 1, 2].forEach(function (i) {
+        var pf = q("puff" + i);
+        gsap.set(pf, { svgOrigin: "0 0" });
+        var t0 = tSin + 0.35 + i * 0.22;
+        tl.fromTo(pf, { opacity: 0, y: 30, scale: 0.4 }, { opacity: 1, y: -20 - 16 * i, scale: 1, duration: 0.5, ease: "power1.out", immediateRender: false }, t0);
+        tl.to(pf, { y: -60 - 16 * i, opacity: 0.85, duration: tStop - t0 - 0.5, ease: "none" }, t0 + 0.5);
+        tl.to(pf, { y: -110, opacity: 0, scale: 1.4, duration: 0.6, ease: "power1.out" }, tStop + 0.05);
+      });
+
+      // "Russia": RUSSIA lands (thunk). "operations": the factory drops in by it.
+      var tRu = cue("Russia");
+      landLabel(q("lab-ru"), tRu);
+      if (L.leader) tl.fromTo(q("leader"), { opacity: 0 }, { opacity: 1, duration: 0.3 }, tRu + 0.2);
+      var tOp = cue("operations"), fd = q("factory-drop");
+      tl.set(fd, { opacity: 1 }, tOp - 0.25);
+      tl.fromTo(fd, { y: -G2 - 100 }, { y: 0, duration: 0.25, ease: "power3.in", immediateRender: false }, tOp - 0.25);
+      gsap.set(fd, { svgOrigin: "0 0" });
+      tl.fromTo(fd, { scaleY: 0.8, scaleX: 1.1 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(3)", immediateRender: false }, tOp);
+      var fac = q("factory");
+
+      // "ransomware.": the padlock snaps onto the hospital's door (clank), the sign flips to CLOSED, the note goes up.
+      var tRan = cue("ransomware."), ld = q("lock-drop"), lk = q("lock");
+      tl.set(ld, { opacity: 1 }, tRan - 0.15);
+      tl.fromTo(ld, { y: -260 }, { y: 0, duration: 0.15, ease: "power3.in", immediateRender: false }, tRan - 0.15);
+      var shackle = lk.querySelector(".padlock-shackle");
+      tl.fromTo(shackle, { y: 0 }, { y: 9, duration: 0.06, ease: "power3.in", immediateRender: false }, tRan);
+      var hosp = q("hospital"), hOpen = hosp.querySelector(".hospital-open"), hClosed = hosp.querySelector(".hospital-closed"), hSign = hosp.querySelector(".hospital-sign");
+      tl.set(hOpen, { opacity: 0 }, tRan + 0.05);
+      tl.set(hClosed, { opacity: 1 }, tRan + 0.05);
+      gsap.set(hSign, { svgOrigin: hSign.dataset.ox + " " + hSign.dataset.oy });
+      tl.fromTo(hSign, { rotation: 0 }, { rotation: 12, duration: 0.12, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, tRan + 0.05);
+      var nt = q("note");
+      gsap.set(nt, { svgOrigin: "0 0" });
+      tl.set(nt, { opacity: 1 }, tRan + 0.12);
+      tl.fromTo(nt, { scale: 2, rotation: -24 }, { scale: 1, rotation: -8, duration: 0.14, ease: "power3.in", immediateRender: false }, tRan + 0.12);
+      // war papers squeeze out under the door and march into the factory; its door rolls up and its chimneys puff
+      var door = fac.querySelector(".factory-door");
+      gsap.set(door, { svgOrigin: door.dataset.ox + " " + door.dataset.oy });
+      tl.to(door, { scaleY: 0.05, duration: 0.25, ease: "power2.out" }, tRan + 0.2);
+      var doorX = FC[0], hx0 = HS[0] + 6 * HS[1], rk = L.paper, rTimes = [], rEls = [];
+      for (var r2 = 0; r2 < NR; r2++) { rTimes.push(tRan + 0.15 + r2 * 0.2); rEls.push([q("r" + r2), q("r" + r2 + "-a"), q("r" + r2 + "-b")]); }
+      var walkV = V ? 300 : 330, march = (doorX - hx0) / walkV;
+      KIT.onTime(tl, D, function (lt) {
+        rTimes.forEach(function (t0, i) {
+          var e = rEls[i];
+          if (lt < t0 || lt > t0 + march) { e[0].setAttribute("opacity", "0"); return; }
+          var f = (lt - t0) / march, sq = clamp01((lt - t0) / 0.22), x = lerp(hx0, doorX, f), sy = rk * (0.15 + 0.85 * sq), sx = rk * (1.25 - 0.25 * sq);
+          var fade = f > 0.85 ? (1 - f) / 0.15 : 1;
+          e[0].setAttribute("opacity", n1(fade));
+          e[0].setAttribute("transform", "translate(" + n1(x) + "," + n1(G2 - 48 * sy - Math.abs(Math.sin(f * march * 18)) * 3) + ") scale(" + n1(sx) + "," + sy.toFixed(3) + ")");
+          var step = Math.floor((lt - t0) / 0.1) % 2;
+          e[1].setAttribute("opacity", step ? "0" : "1");
+          e[2].setAttribute("opacity", step ? "1" : "0");
+        });
+      });
+      Array.prototype.forEach.call(fac.querySelectorAll(".factory-puff"), function (pf, i) {
+        gsap.set(pf, { svgOrigin: pf.dataset.ox + " " + pf.dataset.oy });
+        tl.fromTo(pf, { scale: 1 }, { scale: 1.45, duration: 0.18, repeat: Math.max(1, Math.floor((D - 0.1 - tRan - 0.6 - (i % 3) * 0.06) / 0.18) - 1), yoyo: true, ease: "sine.inOut", immediateRender: false }, tRan + 0.6 + (i % 3) * 0.06);
+      });
+
+      // after "ransomware.": the patient x-rays into a grinning skeleton (zap), still waiting.
+      KIT.xray(tl, alive, bones, KIT.after(ID, "ransomware."));
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

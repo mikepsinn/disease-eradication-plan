@@ -1,81 +1,73 @@
 {
   "id": "part-02",
-  "title": "Hello, human",
-  "audio": { "start": 108.5, "end": 255.38 },
+  "title": "The Human Economy",
+  "storyboard": "storyboards/part-02-the-human-economy.md",
+  "audio": { "start": 258.464, "end": 298.184 },
+  "noCaptions": ["human-economy-title"],
   "scenes": [
-    {
-      "id": "s04",
-      "file": "compositions/scenes/s04-hello-human.html",
-      "cue": "Hello,",
-      "approx": 108,
-      "layer": "A",
+    { "id": "human-economy-title", "file": "compositions/scenes/part-02/human-economy-title.html", "cue": "Human", "approx": 258.5, "layer": "A" },
+    { "id": "economy-circle", "file": "compositions/scenes/part-02/economy-circle.html", "cue": "Humanity", "approx": 260.8, "layer": "B",
       "wishonia": [
-        { "cue": "Hello,", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
-        { "cue": "expression,", "expr": "skeptical", "rest": "smile", "body": "presenting", "mode": "big" },
-        { "cue": "skeptical.", "expr": "skeptical", "rest": "smile", "body": "arms-crossed", "mode": "big" }
-      ]
-    },
-    {
-      "id": "s05",
-      "file": "compositions/scenes/s05-push-door.html",
-      "cue": "This",
-      "approx": 124,
-      "layer": "B",
-      "wishonia": [{ "cue": "This", "expr": "eyeroll", "rest": "smile", "body": "idle", "mode": "pip" }]
-    },
-    {
-      "id": "s06",
-      "file": "compositions/scenes/s06-the-numbers.html",
-      "cue": "By",
-      "approx": 141,
-      "layer": "A",
-      "wishonia": [{ "cue": "By", "expr": "neutral", "rest": "smile", "body": "counting", "mode": "big" }]
-    },
-    {
-      "id": "s07",
-      "file": "compositions/scenes/s07-604-bar.html",
-      "cue": "Your",
-      "approx": 158,
-      "layer": "B",
-      "wishonia": [{ "cue": "Your", "expr": "thinking", "rest": "closed", "body": "idle", "mode": "pip" }]
-    },
-    {
-      "id": "s08",
-      "file": "compositions/scenes/s08-quiz.html",
-      "cue": "Would",
-      "approx": 178,
-      "layer": "B",
-      "wishonia": [{ "cue": "Would", "expr": "neutral", "rest": "smile", "body": "idle", "mode": "pip" }]
-    },
-    {
-      "id": "s09",
-      "file": "compositions/scenes/s09-billionaire-quiz.html",
-      "cue": "Do",
-      "approx": 200,
-      "layer": "B",
-      "wishonia": [{ "cue": "Do", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "pip" }]
-    },
-    {
-      "id": "s10",
-      "file": "compositions/scenes/s10-top-hats.html",
-      "cue": "If",
-      "approx": 218.5,
-      "layer": "B",
+        { "cue": "Humanity", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "pip" },
+        { "cue": "free).", "expr": "eyeroll", "rest": "smile", "body": "shrug", "mode": "pip" },
+        { "cue": "economy", "expr": "smirk", "rest": "smile", "body": "wide-gesture", "mode": "pip" }
+      ] },
+    { "id": "economy-310-million", "file": "compositions/scenes/part-02/economy-310-million.html", "cue": "One", "approx": 284.3, "layer": "B",
       "wishonia": [
-        { "cue": "If", "expr": "neutral", "rest": "smile", "body": "idle", "mode": "pip" },
-        { "cue": "stop", "expr": "annoyed", "rest": "closed", "body": "idle", "mode": "pip" }
-      ]
-    },
-    {
-      "id": "s11",
-      "file": "compositions/scenes/s11-aligned.html",
-      "cue": "But",
-      "approx": 237.8,
-      "layer": "A",
+        { "cue": "One", "expr": "neutral", "rest": "closed", "body": "idle", "mode": "pip" },
+        { "cue": "killed", "expr": "sad", "rest": "closed", "body": "idle", "mode": "pip" }
+      ] },
+    { "id": "food-directly", "file": "compositions/scenes/part-02/food-directly.html", "cue": "On", "approx": 290.8, "layer": "A",
       "wishonia": [
-        { "cue": "But", "expr": "excited", "rest": "closed", "body": "excited", "mode": "big" },
-        { "cue": "The", "expr": "neutral", "rest": "smile", "body": "presenting", "mode": "big" }
-      ]
-    }
+        { "cue": "On", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "big" },
+        { "cue": "give", "expr": "smirk", "rest": "smile", "body": "wide-gesture", "mode": "big" },
+        { "cue": "but", "expr": "smirk", "rest": "closed", "body": "idle", "mode": "big" },
+        { "cue": "you.", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "big" }
+      ] }
+  ],
+  "sounds": [
+    { "scene": "human-economy-title", "cue": "Human", "sfx": "thunk", "volume": 0.6 },
+    { "scene": "human-economy-title", "cue": "Human", "offset": 0.2, "sfx": "thunk", "volume": 0.6 },
+    { "scene": "human-economy-title", "cue": "Economy.", "sfx": "thunk", "volume": 0.6 },
+    { "scene": "human-economy-title", "cue": "Economy.", "offset": 0.4, "sfx": "whirr", "volume": 0.35 },
+    { "scene": "economy-circle", "cue": "Humanity", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "economy-circle", "cue": "magnificent:", "offset": 0.2, "sfx": "sparkle", "volume": 0.45 },
+    { "scene": "economy-circle", "cue": "print", "offset": 0.06, "sfx": "stamp", "volume": 0.5 },
+    { "scene": "economy-circle", "cue": "papers", "sfx": "stamp", "volume": 0.5 },
+    { "scene": "economy-circle", "cue": "nothing", "offset": 0.35, "sfx": "stamp", "volume": 0.45 },
+    { "scene": "economy-circle", "cue": "\"monetary", "sfx": "clank", "volume": 0.4 },
+    { "scene": "economy-circle", "cue": "nothing-papers", "sfx": "squeak", "volume": 0.3 },
+    { "scene": "economy-circle", "cue": "nothing-papers", "offset": 0.18, "sfx": "squeak", "volume": 0.3 },
+    { "scene": "economy-circle", "cue": "nothing-papers", "offset": 0.36, "sfx": "squeak", "volume": 0.3 },
+    { "scene": "economy-circle", "cue": "makers.", "sfx": "cash-register", "volume": 0.45 },
+    { "scene": "economy-circle", "cue": "make", "sfx": "hammer", "volume": 0.35 },
+    { "scene": "economy-circle", "cue": "that", "sfx": "slide-down", "volume": 0.45 },
+    { "scene": "economy-circle", "cue": "everything.", "sfx": "boom", "volume": 0.65 },
+    { "scene": "economy-circle", "cue": "everything.", "at": "after", "sfx": "sizzle", "volume": 0.35 },
+    { "scene": "economy-circle", "cue": "\"jobs\"", "sfx": "bell", "volume": 0.5 },
+    { "scene": "economy-circle", "cue": "papers.", "n": 2, "sfx": "pop", "volume": 0.4 },
+    { "scene": "economy-circle", "cue": "buy", "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "economy-circle", "cue": "grows", "sfx": "slide-up", "volume": 0.4 },
+    { "scene": "economy-circle", "cue": "free).", "at": "after", "sfx": "stamp", "volume": 0.5 },
+    { "scene": "economy-circle", "cue": "economy", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "economy-circle", "cue": "economy", "at": "after", "sfx": "whistle", "volume": 0.35 },
+    { "scene": "economy-310-million", "cue": "downside", "sfx": "scratch", "volume": 0.5 },
+    { "scene": "economy-310-million", "cue": "killed", "sfx": "zap", "volume": 0.25 },
+    { "scene": "economy-310-million", "cue": "killed", "offset": 0.3, "sfx": "zap", "volume": 0.25 },
+    { "scene": "economy-310-million", "cue": "killed", "offset": 0.6, "sfx": "zap", "volume": 0.25 },
+    { "scene": "economy-310-million", "cue": "hundred", "sfx": "tick", "volume": 0.4 },
+    { "scene": "economy-310-million", "cue": "hundred", "offset": 0.15, "sfx": "tick", "volume": 0.4 },
+    { "scene": "economy-310-million", "cue": "hundred", "offset": 0.3, "sfx": "tick", "volume": 0.4 },
+    { "scene": "economy-310-million", "cue": "million", "offset": 0.15, "sfx": "thunk", "volume": 0.6 },
+    { "scene": "food-directly", "cue": "On", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "food-directly", "cue": "skip", "sfx": "pat", "volume": 0.4 },
+    { "scene": "food-directly", "cue": "give", "offset": 0.2, "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "food-directly", "cue": "directly,", "sfx": "pop", "volume": 0.45 },
+    { "scene": "food-directly", "cue": "but", "offset": 0.3, "sfx": "huff", "volume": 0.3 },
+    { "scene": "food-directly", "cue": "probably", "sfx": "tick", "volume": 0.45 },
+    { "scene": "food-directly", "cue": "probably", "offset": 0.12, "sfx": "tick", "volume": 0.45 },
+    { "scene": "food-directly", "cue": "probably", "offset": 0.24, "sfx": "tick", "volume": 0.45 },
+    { "scene": "food-directly", "cue": "advanced", "sfx": "snip", "volume": 0.5 },
+    { "scene": "food-directly", "cue": "you.", "offset": 0.6, "sfx": "thunk", "volume": 0.3 }
   ]
 }

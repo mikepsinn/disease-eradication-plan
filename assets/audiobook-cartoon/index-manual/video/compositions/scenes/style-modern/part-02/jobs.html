@@ -1,0 +1,148 @@
+<template id="jobs-template">
+  <!-- jobs · style test "modern limited animation" (compositions/scenes/style-modern/STYLE.md).
+       "This creates "jobs" which give people papers": on a peri field the family from the town stands in a row,
+       charred black and smoking, hair straight up, only their eyes blinking. On "jobs" three yellow hard hats drop
+       onto their heads, one, two, three. On "give" a hard cut in to the father holding out his hand, and on "papers." the green paper
+       drops into it. Nobody else moves. (The same family, drawn with the same options, is in buy-food and killed.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    #jobs-weave, #jobs-cam, #jobs-art, #jobs-film { position: absolute; inset: 0; }
+    #jobs-field { position: absolute; inset: -1200px; }
+    #jobs-field { background: #5C6F8E; }
+  </style>
+  <div id="root" data-composition-id="jobs" data-width="1920" data-height="1080" data-start="0" data-duration="3.22">
+    <div id="jobs-weave">
+      <div id="jobs-cam">
+        <div id="jobs-field"></div>
+        <div id="jobs-art"></div>
+      </div>
+    </div>
+    <div id="jobs-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "jobs";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var after = function (w, n) { return KIT.after(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      if (V) q("weave").parentNode.classList.add("tall");
+      var tl = gsap.timeline({ paused: true });
+
+      // ── The period film (the same block in every style-modern scene) ──────────
+      // Over the picture and outside the camera: a cream wash (the faded print), a soft vignette the shape of the frame, the grain, a
+      // frame-by-frame flicker and a few specks of dust. Under it, the gate weave: the picture drifts a pixel or two.
+      function film() {
+        var dust = [0, 1, 2].map(function (i) { return '<ellipse id="' + ID + "-dust" + i + '" rx="2" ry="1.4" fill="#1A1410" opacity="0"/>'; }).join("");
+        q("film").innerHTML = KIT.svg(W, H,
+          '<defs><radialGradient id="' + ID + '-vig" cx="0.5" cy="0.48" r="0.72"><stop offset="0.5" stop-color="#140F0A" stop-opacity="0"/><stop offset="0.8" stop-color="#140F0A" stop-opacity="0.12"/><stop offset="1" stop-color="#140F0A" stop-opacity="0.5"/></radialGradient></defs>' +
+          '<rect width="' + W + '" height="' + H + '" fill="' + C.cream + '" opacity="0.07"/>' +
+          '<rect width="' + W + '" height="' + H + '" fill="url(#' + ID + '-vig)"/>' + KIT.grain(ID) + dust +
+          '<rect id="' + ID + '-flick" width="' + W + '" height="' + H + '" fill="#FFF6DD" opacity="0"/>');
+        var flick = document.getElementById(ID + "-flick"), weave = q("weave");
+        var specks = [0, 1, 2].map(function (i) { return document.getElementById(ID + "-dust" + i); });
+        KIT.onTime(tl, D, function (t) {
+          var f = Math.floor((sc.start + t) * 24), r = KIT.rng(f * 7919 + 17);
+          r(); r();
+          flick.setAttribute("opacity", (0.01 + r() * 0.035).toFixed(3));
+          weave.style.transform = "translate(" + (Math.sin(f * 0.83) * 0.9 + (r() - 0.5) * 0.8).toFixed(2) + "px," + (Math.sin(f * 0.29) * 1.4 + (r() - 0.5) * 0.6).toFixed(2) + "px)";
+          specks.forEach(function (s) {
+            s.setAttribute("opacity", r() < 0.16 ? "0.45" : "0");
+            s.setAttribute("cx", (r() * W).toFixed(0));
+            s.setAttribute("cy", (r() * H).toFixed(0));
+            s.setAttribute("rx", (1.4 + r() * 2.4).toFixed(1));
+          });
+        });
+      }
+      film();
+
+      // ── The family (the same options in jobs, buy-food and killed) ──
+      var FAMILY = {
+        dad: { tone: 1, outfit: "shirt", color: 1 },
+        mom: { tone: 1, hair: 1, outfit: "dress", color: 0 },
+        kid: { tone: 1, outfit: "shirt", color: 3, seed: 2 },
+      };
+      function opts(who, extra) { var o = {}, k; for (k in FAMILY[who]) o[k] = FAMILY[who][k]; for (k in extra || {}) o[k] = extra[k]; return o; }
+      // A yellow hard hat sitting on a person's head (person units), sized to the head.
+      function hardHat(o) {
+        var r = KIT.rig(o), x = r.top[0], y = r.top[1] + 5 * r.hs, k = r.hs;
+        return '<g transform="translate(' + x.toFixed(1) + "," + y.toFixed(1) + ") scale(" + k.toFixed(3) + ')">' +
+          '<path d="M-21,0 Q-21,-24 0,-25 Q21,-24 21,0 Z" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
+          '<path d="M-28,0 H28 L26,5 H-26 Z" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="2.4" stroke-linejoin="round"/>' +
+          '<path d="M0,-24 V-2" stroke="' + C.line + '" stroke-width="2"/></g>';
+      }
+      // Where each one stands (canvas x, feet at F.y) and how big.
+      var F = V ? { y: 1320, s: 3, at: { mom: 205, kid: 435, dad: 665 } } : { y: 860, s: 2.9, at: { mom: 690, kid: 910, dad: 1140 } };
+      var SIZE = { dad: 1, mom: 1, kid: 0.68 };
+      var DOWN = [[-12, -4], [12, 4]], HAND = [[-12, -4], [40, 100]];
+      var art = "";
+      ["mom", "kid", "dad"].forEach(function (who) {
+        var s = F.s * SIZE[who], base = opts(who, { charred: true, arms: DOWN });
+        var g = '<g id="' + ID + "-" + who + '">' + KIT.person(base) + "</g>";
+        if (who === "dad") g += '<g id="' + ID + '-dad-hand" opacity="0">' + KIT.person(opts("dad", { charred: true, arms: HAND })) + "</g>";
+        art += '<g transform="translate(' + F.at[who] + "," + (F.y - 100 * s) + ") scale(" + s + ')">' + g +
+          '<g id="' + ID + "-hat-" + who + '" opacity="0">' + hardHat(base) + "</g></g>";
+      });
+      // the paper, in the father's open hand once it lands (person units)
+      var hand = KIT.rig(opts("dad", { arms: HAND })).hand[1];
+      art += '<g transform="translate(' + F.at.dad + "," + (F.y - 100 * F.s) + ") scale(" + F.s + ')"><g transform="translate(' + hand[0].toFixed(1) + "," + (hand[1] - 14).toFixed(1) + ') scale(0.42)"><g id="' + ID + '-paper" opacity="0">' + KIT.money("war", 0) + "</g></g></g>";
+      q("art").innerHTML = KIT.svg(W, H, art);
+
+      // "jobs": the hats drop on, one after another, each in two snaps
+      ["mom", "kid", "dad"].forEach(function (who, i) {
+        var h = q("hat-" + who), t = cue("\"jobs\"") + i * 0.12;
+        tl.set(h, { opacity: 1, y: -70 }, t);
+        tl.set(h, { y: -18 }, t + 0.04);
+        tl.set(h, { y: 0 }, t + 0.08);
+      });
+      // "give": the father's hand comes out; "papers.": the paper drops into it
+      tl.set(q("dad"), { opacity: 0 }, cue("give"));
+      tl.set(q("dad-hand"), { opacity: 1 }, cue("give"));
+      var p = q("paper"), pt = cue("papers.");
+      tl.set(p, { opacity: 1, y: -160 }, pt - 0.08);
+      tl.set(p, { y: -60 }, pt - 0.04);
+      tl.set(p, { y: 0 }, pt);
+      // Blinks (only the eyes move; .char-eyes in drawing order: mom, kid, dad, dad with his hand out) and the smoke,
+      // which wavers on twos.
+      var eyes = q("art").querySelectorAll(".char-eyes"), smoke = q("art").querySelectorAll(".smoke");
+      Array.prototype.forEach.call(eyes, function (e) { gsap.set(e, { svgOrigin: "4 -4" }); });
+      [[2, 0.9], [3, 2.6], [0, 1.25], [0, 2.2], [1, 0.4], [1, 2.75]].forEach(function (b) {
+        var e = eyes[b[0]];
+        if (!e) return;
+        tl.set(e, { scaleY: 0.12 }, b[1]);
+        tl.set(e, { scaleY: 1 }, b[1] + 0.09);
+      });
+      KIT.onTime(tl, D, function (t) {
+        var k = Math.floor(t / 0.16) % 2;
+        Array.prototype.forEach.call(smoke, function (s, i) { s.setAttribute("transform", "translate(" + ((k + i) % 2 ? 2 : -2) + "," + ((k + i) % 2 ? -3 : 0) + ")"); });
+      });
+      // The camera: the whole family, creeping in; then on "give" a hard cut in to the father, from his hard hat to
+      // his open hand, so the paper that drops into it reads; that framing creeps on to the end. The cut is the camera
+      // jumping, not a new drawing: the close shot is the same picture, bigger (scale S around the origin that puts the
+      // point P at the screen point Q). The close shot holds the father and the kid whole; the mother, who would be
+      // cut in half at the left edge, is taken out of it.
+      var cam = q("cam"), give = cue("give"), rd = KIT.rig(opts("dad", { arms: HAND })), sd = F.s;
+      var paperAt = [F.at.dad + hand[0] * sd, F.y - 100 * sd + (hand[1] - 14) * sd];
+      var P = [(F.at.dad + rd.neck[0] * sd + paperAt[0]) / 2, F.y - 100 * sd + ((rd.top[1] - 12 + hand[1]) / 2) * sd];
+      var S = V ? 1.55 : 1.7, Q = V ? [700, 900] : [960, 500];
+      tl.set([q("mom"), q("hat-mom")], { opacity: 0 }, give);
+      var wideO = [(F.at.mom + F.at.dad) / 2 + 60, F.y - 300], closeO = [(S * P[0] - Q[0]) / (S - 1), (S * P[1] - Q[1]) / (S - 1)];
+      KIT.onTime(tl, D, function (t) {
+        var close = t >= give, o = close ? closeO : wideO, k = close ? S * (1 + 0.03 * (t - give) / Math.max(0.1, D - give)) : 1 + 0.03 * t / Math.max(0.1, give);
+        cam.style.transformOrigin = o[0].toFixed(1) + "px " + o[1].toFixed(1) + "px";
+        cam.style.transform = "scale(" + k.toFixed(4) + ")";
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

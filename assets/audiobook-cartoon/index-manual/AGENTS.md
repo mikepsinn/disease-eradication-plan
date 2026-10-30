@@ -5,18 +5,21 @@ The cartoon of audiobook episode 1 is drawn in code and rendered with HyperFrame
 Read these first:
 - `cartoon-style-bible.md`: the look, Wishonia, the humans, the recurring gags, the drawing kit.
 - `video/README.md`: the files and the commands.
+- `video/assets/js/film.js`: the film look's shared code (`KIT.film`, `KIT.studio`, `KIT.iris`, `KIT.camera`). Every scene of Parts 2 to 27 loads it after `kit.js`.
+- `video/assets/js/props/*.js`: the shared props library (`KIT.props.<name>`, documented at each function; `node video/tools/props-sheet.mjs [file]` draws them) and `KIT.titleScene` (title.js; copy `video/compositions/scenes/_templates/title-card.html` for a part's title card). Use these and the cast instead of drawing your own versions.
 - `video/storyboards/README.md`: every part, the shorts and the props (generated).
-- `video/storyboards/part-01-opening.md` and `video/compositions/scenes/part-01/`: the first finished part. Copy their form.
+- `video/compositions/scenes/style-atomic/part-02/` (`video/parts/part-02-atomic.json`): Part 2 in the film look, the reference for every kind of shot: the title card, a host shot that irises in (host-opens), a plate the camera travels round (money-loop), a death toll (the-toll) and a host shot with a guest that irises out (host-closes). Copy their form.
+- `video/storyboards/part-01-opening.md`: the storyboard form. Part 1's scenes are in the earlier office look; do not copy their look.
 
 ## The process
 
 1. **Audio first.** The voice is the published episode MP3. Scene times come from `word-timings.json` (`video/tools/word-timings.mjs`). If the narration changes, re-voice the episode and rebuild the timings first; the scenes follow their cue words.
-2. **Storyboard** (`video/storyboards/part-NN-*.md`). One scene per beat, with a name, not a number (feedback says "loved-ones: make the form smaller"). Each scene has transition_in, key, cue, layer, scene, voiceover, wishonia, props and status, then **Moves** (each on a quoted spoken word), **Sound**, **On screen**, **No** and **Why**. `tools/storyboard-times.mjs` fills in the times and voiceover from the cue words; `tools/storyboard-index.mjs` rewrites the README.
+2. **Storyboard** (`video/storyboards/part-NN-*.md`). One scene per beat, with a name, not a number (feedback says "loved-ones: make the form smaller"). Each scene has transition_in, key, cue, layer (A, the host at her lectern, or B, a plate), scene, voiceover, wishonia (host shots only), props and status, then **Moves** (each on a quoted spoken word: what the camera frames for each phrase, and what the actors do), **Sound**, **On screen**, **No** and **Why**. `tools/storyboard-times.mjs` fills in the times and voiceover from the cue words; `tools/storyboard-index.mjs` rewrites the README.
 3. **Sketches** (`part-NN-*.sketch.mjs`): each scene's key frame, drawn with the kit. `tools/storyboard-sheet.mjs` builds the review sheet. Mike reviews the sheet, by scene name, before anything is animated.
-4. **Comedy pass.** The moves are the jokes. Every Layer B scene has an actor that moves on the words; reactions land a beat after the line (`KIT.after`). No slideshow (a new text card every scene) and no screensaver (motion that says nothing).
+4. **Comedy pass.** The moves are the jokes. Every plate has an actor that moves on the words; reactions land a beat after the line (`KIT.after`). No slideshow (a new text card every scene), no screensaver (motion that says nothing) and no busy diagram (labels, arrows, a dozen small things at once).
 5. **Part file** (`video/parts/part-NN.json`): the audio cut; each scene's id, file, cue word, approximate time, layer and Wishonia states; `noCaptions` for title cards; `media` (other footage); `sounds`, placed on spoken words, from the effects `tools/sfx.py` synthesizes (nothing is downloaded).
-6. **Scenes** (`video/compositions/scenes/part-NN/<scene-id>.html`), one per scene, each with its own layout for each shape.
-7. **Check.** Build 16:9, `npx hyperframes lint`, snapshot every key moment, read the contact sheets, fix. Then build 9:16 and do the same.
+6. **Scenes** (`video/compositions/scenes/part-NN/<scene-id>.html`), one per scene. A host shot uses `KIT.studio`; a plate is drawn once and has its own camera views for each shape.
+7. **Check.** While writing, check each scene on its own in both shapes without a build: `node tools/build-part.mjs parts/part-NN.json --data-only` once, then `node tools/scene-check.mjs part-NN <scene-id> [--aspect 9x16] [--at t1,t2]` and read its contact sheet. Then build 16:9, `npx hyperframes lint`, snapshot every key moment, read the contact sheets, fix. Then build 9:16 and do the same.
 8. **Render** 16:9, then build and render 9:16. Rebuild 16:9 before committing.
 
 ## Rules that are easy to get wrong
@@ -27,10 +30,17 @@ Read these first:
 
 **Both shapes.** Keep-out zones:
 
-| | Captions | Wishonia's corner (Layer B, `KIT.cornerOpts`) |
-| --- | --- | --- |
-| 16:9 | none burned in (YouTube's captions and controls sit there), so nothing important below y 900 | standing in the bottom right: x 1600 to 1920, y 690 to the bottom |
-| 9:16 | y 1470 to 1700 (keep above 1450) | her saucer at the top right: x 740 to 1040, y 60 to 430 |
+| | Captions |
+| --- | --- |
+| 16:9 | none burned in (YouTube's captions and controls sit there), so nothing important below y 900 |
+| 9:16 | y 1470 to 1700 (keep above 1450) |
+
+**The film look**
+- Every scene has the same layers: `#<id>-weave` holds everything that moves (the camera, a flash, the iris), and `#<id>-film` sits outside it, last. `KIT.film(tl, ID, weave, film, seed)` puts the gate weave on the first and the grain on the second, so the camera never scales the grain. Use a different seed in each scene.
+- A plate is drawn once, in plate units, inside one camera group (`<g id="<id>-cam">`). Every station of the scene lives on it, so a framing is a view (plate x, plate y, scale), and both shapes share the drawing with their own `VIEW` tables.
+- Move the camera with `KIT.camera(VIEW, KEYS)` and set it in a `KIT.onTime` callback (`camera.place(cam, camera.at(t))`), not with a GSAP tween (the group has a transform attribute). To chase something (a missile), bend `camera.at(t)` before placing it.
+- Wishonia's states go only on Layer A (host) scenes in the part file; the plates do not mount her.
+- Money is green, never red. Its seal (a missile for war, a cross for medicine) says what it buys.
 
 **GSAP on SVG**
 - Never tween x, y, scale or rotation on an SVG element that has a `transform` attribute: GSAP reads it as its start and the element jumps. Position an outer group; tween an inner one.
@@ -46,13 +56,13 @@ Read these first:
 - `plain: true` gives the standard build (shoulders at (±17, -26)) when a gag needs a predictable body; otherwise each human's build comes from its outfit, skin tone and color.
 - `<!--head-end-->` (person units) and `<!--face-end-->` (the face's own units, facing +x) are where to add things to a head. The eyes are `.eye` groups with a `.pupil`.
 
-**Offices and zooms**
+**Part 1's office scenes** (the earlier look; no other part uses it)
 - Office scenes use the `KIT.OFFICE` positions. A scene that moves its wall screen (earth-means-dirt in 16:9) makes the next zoom-in scene pass that screen box to `KIT.enter`.
 - Wall-screen zooms go through `KIT.zoomView` and `KIT.enter`. An office scene that zooms out draws the previous Earth frame inside its screen with `KIT.zoomView(screen).mini`, so the zoom starts on that frame.
 - In scenes that zoom, keep the grain outside the camera wrapper, so it stays put.
 
 **Continuity**
-- A scene that continues the last one ("same form (no seam)", a cut between two office scenes, a zoom-out) starts on the last scene's final frame.
+- A scene that continues the last one ("same form (no seam)", a cut between two office scenes, a zoom-out, a plate the next scene keeps traveling over) starts on the last scene's final frame.
 - That drawing code is copied between the two files (nuclear-winters and eligible, eligible and meet-wishonia, fire-on-fire and earth-means-dirt). Change both.
 
 **Sound**
@@ -66,7 +76,7 @@ Read these first:
 - Always pass `--describe false`.
 - Write to your own `-o` folder.
 - A frame taken on a cue word catches the move just starting. To judge where things end up, snapshot a moment after the move settles.
-- To check one scene in isolation (for example a camera transform), load its template in headless Chrome with `puppeteer-core` from `video/node_modules`, seek with `window.__timelines[id].seek(t, false)` (without `false` the `KIT.onTime` callbacks can stay silent) and read the computed styles. Set `window.HF_ASPECT = "9x16"` before `kit.js` loads to see the tall version without a build.
+- `tools/scene-check.mjs` checks one scene in isolation (both shapes, page errors, a contact sheet) and is safe to run while another part builds or renders. For lower-level checks (for example a camera transform), load its template in headless Chrome with `puppeteer-core` from `video/node_modules`, seek with `window.__timelines[id].seek(t, false)` (without `false` the `KIT.onTime` callbacks can stay silent) and read the computed styles. Set `window.HF_ASPECT = "9x16"` before `kit.js` loads to see the tall version without a build.
 
 **Art**
 - All art is drawn in code. The only AI-made footage is the theme song music video in Part 1.

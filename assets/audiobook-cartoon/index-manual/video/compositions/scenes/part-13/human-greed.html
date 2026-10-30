@@ -1,0 +1,568 @@
+<template id="human-greed-template">
+  <!-- human-greed · Layer A (storyboards/part-13-one-percent-treaty.md): zoom out of the wall screen, which still shows
+       bread-mold's cave and its heap of moldy bread, onto the standard office. "two": she counts. "internet": the screen
+       clicks off and on to a buzzing knot of cables, "1. THE INTERNET" (the zap). "instrument": a fancy bond certificate
+       slides on, "2. A NEW FINANCIAL INSTRUMENT", and glints. "powerful": she sips her coffee. "universe:": the screen
+       pulls back to a power plant, "POWER SOURCE: HUMAN GREED", where the fat cat (dollar-sign eyes) runs in a giant
+       hamster wheel after a paper on a stick (the hum and the whirr). after "universe:": a fat cable drops out of the
+       bottom of the screen to the desk, its plug dangling over a socket. "greed.": her fist; the plug slams in, the sun,
+       the halo and the office flare to full, and on the screen the wheel spins so fast the fat cat catches fire and keeps
+       running, grinning. after "greed.": she puts the mug down, slowly (the thunk). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+    #human-greed-cam, #human-greed-bg, #human-greed-glow, #human-greed-screen, #human-greed-wish, #human-greed-front, #human-greed-grain { position: absolute; inset: 0; }
+    #human-greed-flash { position: absolute; inset: -40px; background: #FFF6DA; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="human-greed" data-width="1920" data-height="1080" data-start="0" data-duration="10.8">
+    <div id="human-greed-cam">
+      <div id="human-greed-bg"></div>
+      <div id="human-greed-glow"></div>
+      <div id="human-greed-screen"></div>
+      <div id="human-greed-wish"></div>
+      <div id="human-greed-front"></div>
+      <div id="human-greed-flash"></div>
+    </div>
+    <div id="human-greed-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "human-greed";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, O = KIT.OFFICE, INK = C.line;
+      var n1 = function (v) { return (Math.round(v * 10) / 10).toString(); };
+      var P = function (s) { return ID + "-" + s; };
+      function pd(pts) { return "M" + pts.map(function (p) { return n1(p[0]) + "," + n1(p[1]); }).join(" L") + " Z"; }
+      function solid(pts, fill, w) {
+        var d = typeof pts === "string" ? pts : pd(pts);
+        return '<path d="' + d + '" fill="' + INK + '" stroke="' + INK + '" stroke-width="' + (w || 4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + d + '" fill="' + fill + '"/>';
+      }
+      function txt(x, y, s, size, col, extra) {
+        return '<text x="' + x + '" y="' + y + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + col + '"' + (extra || "") + ">" + s + "</text>";
+      }
+
+      // ── bmArt: the cave, copied to human-greed.html (keep the copies the same) ──
+      // Draws the scene's art inside one SVG, with ids prefixed pid. fin true draws the last frame (the skeletons, the
+      // calendar on 200,000), which human-greed shows on its wall screen; fin false draws the first poses. Everything
+      // that moves is drawn where it ends (the mold on the pile, the heap at full height, the last slice on the heap),
+      // and the scene's timeline starts it elsewhere. Returns { svg, L, geo }.
+      function bmArt(pid, fin) {
+        var C = KIT.C, V = KIT.V, INK = C.line, WHITE = "#FBF6E6", CRUMB = "#F6E7C8", MOLD_INK = "#1F6E68";
+        var P = function (s) { return pid + "-" + s; };
+        var n1 = function (v) { return (Math.round(v * 10) / 10).toString(); };
+        function pd(pts) { return "M" + pts.map(function (p) { return n1(p[0]) + "," + n1(p[1]); }).join(" L") + " Z"; }
+        function solid(pts, fill, w) {
+          var d = pd(pts);
+          return '<path d="' + d + '" fill="' + INK + '" stroke="' + INK + '" stroke-width="' + (w || 3) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + d + '" fill="' + fill + '"/>';
+        }
+        function copy(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+        function vis(on) { return on ? "" : ' opacity="0"'; }
+
+        // fire-on-fire's cave table (outer and inner arch, ground line, drips), and where this scene puts things:
+        // the calendar on its rock (in 9:16 it stands on the cave's roof), the fire, B and A (x, scale), the mold pile,
+        // the sick line ([x, scale], on sickGy), the heap of moldy crusts behind ([x0, x1, base, height]), where the last
+        // slice lands, the push-in [cx, cy, k], and in 9:16 the rock shelf at the back that the sick line stands on.
+        var L = V
+          ? { outer: "M44,1876 V900 Q60,520 380,480 H720 Q1020,520 1036,900 V1876 Z", inner: "M90,1876 V1000 Q120,700 400,670 H700 Q960,700 990,1000 V1876 Z",
+              ground: [90, 990, 1400], drips: [[255, 712], [470, 670], [640, 670]], gy: 1400,
+              rock: null, cal: [470, 482, 2.3], fire: [215, 0.85], B: [405, 2.3], A: [800, 2.3], pile: 600,
+              sick: [[562, 1.65], [702, 1.65], [842, 1.65]], sickGy: 1010, shelf: [92, 988, 1010, 1052],
+              heap: [100, 980, 1010, 290], land: [870, 808, -24], push: [540, 1150, 1.9] }
+          : { outer: "M44,1036 V420 Q200,130 520,100 H1400 Q1720,130 1876,420 V1036 Z", inner: "M240,1036 V520 Q360,250 640,230 H1280 Q1560,250 1680,520 V1036 Z",
+              ground: [240, 1680, 820], drips: [[560, 250], [780, 230], [1010, 230], [1420, 262]], gy: 820,
+              rock: [250, 452, 758], cal: [351, 760, 2.0], fire: [566, 1.0], B: [768, 2.4], A: [1112, 2.4], pile: 940,
+              sick: [[1300, 2.05], [1410, 2.05], [1520, 2.05]], sickGy: 820, shelf: null,
+              heap: [262, 1662, 820, 470], land: [1238, 404, -18], push: [960, 650, 1.9] };
+        var gy = L.gy;
+
+        var drips = L.drips.map(function (d, i) {
+          var w = 26 + (i % 2) * 14, h = 50 + (i % 3) * 22;
+          return '<path d="M' + (d[0] - w / 2) + "," + (d[1] - 4) + " L" + d[0] + "," + (d[1] + h) + " L" + (d[0] + w / 2) + "," + (d[1] - 4) + ' Z" fill="url(#' + P("hatch") + ')" stroke="' + INK + '" stroke-width="4" stroke-linejoin="round"/>';
+        }).join("");
+        var cave = '<path d="' + L.outer + " " + L.inner + '" fill="#E4D9B8" fill-rule="evenodd" stroke="' + INK + '" stroke-width="5"/>' +
+          '<path d="' + L.outer + " " + L.inner + '" fill="url(#' + P("cross") + ')" fill-rule="evenodd" opacity="0.55"/>' + drips +
+          '<path d="M' + L.ground[0] + "," + L.ground[2] + " H" + L.ground[1] + '" stroke="' + INK + '" stroke-width="5"/>';
+
+        // fire-on-fire's campfire (stage units, ground at y 0), each flame in its own group.
+        var FIRE = 0.8, FLAME = "M0,0 C-34,-10 -30,-60 -8,-96 C-6,-70 10,-62 14,-84 C34,-56 40,-14 0,0 Z";
+        function flame(id, k, fill, pattern) {
+          return '<g id="' + P(id) + '"><path transform="translate(0,-14) scale(' + k + ')" d="' + FLAME + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + (4 / k).toFixed(2) + '" stroke-linejoin="round"/>' +
+            (pattern ? '<path transform="translate(0,-14) scale(' + k + ')" d="' + FLAME + '" fill="url(#' + P(pattern) + ')" opacity="0.6"/>' : "") + "</g>";
+        }
+        var logs = '<g stroke="' + INK + '" stroke-width="5"><rect x="-120" y="-36" width="240" height="32" rx="16" fill="' + C.tan + '" transform="rotate(12 0 -20)"/>' +
+          '<rect x="-120" y="-36" width="240" height="32" rx="16" fill="' + C.rust + '" transform="rotate(-12 0 -20)"/></g>' +
+          [-130, -90, 90, 130].map(function (x) { return '<ellipse cx="' + x + '" cy="-12" rx="26" ry="14" fill="#D8CDB0" stroke="' + INK + '" stroke-width="4"/>'; }).join("");
+        var fire = '<g transform="translate(' + L.fire[0] + "," + gy + ") scale(" + L.fire[1] + ')"><g transform="scale(' + FIRE + ')"><circle cx="0" cy="-110" r="230" fill="' + C.orange + '" opacity="0.2"/>' + logs +
+          '<g id="' + P("flames") + '">' + flame("f-out", 2.6, C.war, "hred") + flame("f-mid", 1.8, C.orange) + flame("f-in", 1.05, C.yellow) + "</g></g></g>";
+
+        // ── The bread (person units) ──
+        // A slice: a tan crust, a cream crumb, and the mold, medicine teal (never money green). The bitten one has a notch.
+        var CRUST = [[-11, 12], [-11, -3], [-14, -8], [-12, -13], [-6, -16], [0, -15], [6, -16], [12, -13], [14, -8], [11, -3], [11, 12]];
+        var BITTEN = [[-11, 12], [-11, -1], [-7, -2], [-4, -6], [-5, -10], [-1, -13], [1, -15], [6, -16], [12, -13], [14, -8], [11, -3], [11, 12]];
+        var MOLD = [[1, -11], [6, -13.5], [10, -10], [9, -4], [4, -2], [0, -5]];
+        var MOLD_AT = [5, -8];
+        function shrink(pts, k, cy) { return pts.map(function (p) { return [p[0] * k, cy + (p[1] - cy) * k]; }); }
+        function moldSvg(dx, dy) {
+          var m = MOLD.map(function (p) { return [p[0] + dx, p[1] + dy]; });
+          return solid(m, C.med, 2.2) + '<path d="' + pd(m) + '" fill="url(#' + P("hteal") + ')" opacity="0.7"/>' +
+            '<circle cx="' + n1(dx + 3) + '" cy="' + n1(dy - 9) + '" r="1.3" fill="#BFE3DC"/><circle cx="' + n1(dx + 7) + '" cy="' + n1(dy - 6) + '" r="1" fill="#BFE3DC"/>';
+        }
+        function slice(kind) {
+          var crust = kind === "bitten" ? BITTEN : CRUST;
+          return solid(crust, C.tan) + solid(shrink(crust, 0.74, 0), CRUMB, 1.6) +
+            '<path d="M-5,4 l2,-1 M3,7 l2,-1 M-2,-5 l2,1" stroke="' + C.tan + '" stroke-width="1.4"/>' + (kind === "mold" ? moldSvg(0, 0) : "");
+        }
+        // a lone bit of flicked-off mold, centered
+        function bit() { return moldSvg(-MOLD_AT[0], -MOLD_AT[1]); }
+
+        // ── The cavemen, from fire-on-fire.html (the same options and hide spots) ──
+        var CAVEMEN = {
+          A: { tone: 2, outfit: "shirt", color: 2, hair: 0, look: "left", plain: true, spots: [[-9, -8], [8, 2], [-6, 17], [9, 22], [-1, 28]] },
+          B: { tone: 0, outfit: "dress", color: 3, hair: 1, hairColor: "#5A3A22", look: "left", plain: true, spots: [[-6, -10], [7, 0], [-14, 26], [12, 32], [-2, 42], [22, 46], [-24, 46]] },
+        };
+        var SKIN = ["#F4E3CC", "#D9B48F", "#A87B57", "#6F4B33"], BONE = "#F1EAD6";
+        // Two segments of length len from shoulder S reaching T; bend picks the side the elbow goes.
+        function ik(S, T, len, bend) {
+          var vx = T[0] - S[0], vy = T[1] - S[1], d = Math.min(Math.hypot(vx, vy), 2 * len * 0.985);
+          var ang = (Math.atan2(vx, vy) * 180) / Math.PI, al = (Math.acos(d / (2 * len)) * 180) / Math.PI;
+          return [ang + bend * al, ang - bend * al];
+        }
+        // Poses (each caveman faces left in its own units; B's group is mirrored): where the near hand is (the slice
+        // rides on it), what the far hand does, the slice, the mood.
+        var DOWN = [15, 5];
+        var POSES = {
+          look: { near: [-38, -30], far: "down", slice: "mold", mood: "flat" },
+          flick: { near: [-38, -30], far: "flick", slice: "clean", mood: "cross" },
+          bite: { near: "mouth", far: "down", slice: "bitten", mood: "eager" },
+          chew: { near: [-27, -14], far: "down", slice: "bitten", mood: "smile" },
+          toss: { near: [14, -88], far: "down", slice: null, mood: "eager" },
+        };
+        var ORDER = ["look", "flick", "bite", "chew", "toss"];
+        var geo = { slice: {}, hand: {} };
+        function poseOpts(who, name, bones) {
+          var base = CAVEMEN[who], sp = POSES[name], o = {}, k;
+          for (k in base) if (k !== "spots") o[k] = base[k];
+          var r = KIT.rig(o), mouth = r.mouth;
+          var near = sp.near === "mouth" ? [mouth[0] + 2, mouth[1] + 12] : sp.near;
+          var a0 = ik(r.shoulder[0], near, r.armLength, 1);
+          var sl = sp.near === "mouth" ? [mouth[0] - 5, mouth[1] - 3] : [near[0] - 2, near[1] - 13];
+          var a1 = sp.far === "flick" ? ik(r.shoulder[1], [sl[0] + 10, sl[1] - 2], r.armLength, 1) : DOWN;
+          o.arms = [a0, a1]; o.mood = sp.mood;
+          if (bones) o.skeleton = true;
+          return { o: o, sl: sl };
+        }
+        function poseSvg(who, name, bones) {
+          var sp = POSES[name], po = poseOpts(who, name, bones), m = KIT.person(po.o), r = KIT.rig(po.o);
+          if (!bones) {
+            var spots = CAVEMEN[who].spots.map(function (s) { return '<ellipse cx="' + s[0] + '" cy="' + s[1] + '" rx="3.6" ry="2.6" fill="' + C.rust + '" opacity="0.85"/>'; }).join("");
+            m = m.replace('<g class="arm-l">', spots + '<g class="arm-l">');
+          }
+          geo.slice[who + name] = po.sl; geo.hand[who + name] = r.hand[0];
+          var extra = sp.slice ? '<g transform="translate(' + n1(po.sl[0]) + "," + n1(po.sl[1]) + ')">' + slice(sp.slice) + "</g>" : "";
+          if (sp.far === "flick") {
+            // the flicking finger, pointing from the far hand at where the mold was
+            var h = r.hand[1], tx = po.sl[0] + MOLD_AT[0], ty = po.sl[1] + MOLD_AT[1], dx = tx - h[0], dy = ty - h[1], dl = Math.hypot(dx, dy) || 1, ux = dx / dl, uy = dy / dl;
+            var tip = [h[0] + ux * 8, h[1] + uy * 8];
+            extra += solid([[h[0] - uy * 1.8, h[1] + ux * 1.8], [tip[0] - uy * 1.1, tip[1] + ux * 1.1], [tip[0] + uy * 1.1, tip[1] - ux * 1.1], [h[0] + uy * 1.8, h[1] - ux * 1.8]], bones ? BONE : SKIN[CAVEMEN[who].tone], 1.8);
+          }
+          return m + extra;
+        }
+        // Where each caveman stands: his x, feet on the ground, and his mirror (A faces left, B is mirrored to face right).
+        function placeOf(who) {
+          var p = L[who], s = p[1];
+          return "translate(" + p[0] + "," + n1(gy - 100 * s) + ") scale(" + (who === "A" ? s : -s) + "," + s + ")";
+        }
+        // A point in a caveman's units, in the frame.
+        geo.at = function (who, pt) { var p = L[who], s = p[1]; return [p[0] + (who === "A" ? s : -s) * pt[0], gy - 100 * s + s * pt[1]]; };
+        var FIN = { A: "look", B: "chew" };
+        function caveman(who) {
+          var sets = [["alive", false], ["bones", true]].map(function (st) {
+            var on = fin ? st[1] : !st[1];
+            var poses = ORDER.filter(function (n) { return n !== "toss" || who === "A"; }).map(function (name) {
+              var shown = fin ? name === FIN[who] : name === "look";
+              return '<g id="' + P(who + "-" + st[0] + "-" + name) + '"' + vis(shown) + ">" + poseSvg(who, name, st[1]) + "</g>";
+            }).join("");
+            return '<g id="' + P(who + "-" + st[0]) + '"' + vis(on) + ">" + poses + "</g>";
+          }).join("");
+          return '<g transform="' + placeOf(who) + '"><g id="' + P(who) + '">' + sets + "</g></g>";
+        }
+
+        // ── The sick line: everyday cavemen with red chest lights, coughing into a fist; each has its skeleton. ──
+        var SICK = [
+          { tone: 1, outfit: "shirt", color: 1, hair: 2, hat: null, look: "left", light: "red", mood: "worried", spots: [[-8, -6], [7, 6], [-4, 18]] },
+          { tone: 3, outfit: "dress", color: 0, hair: 1, look: "left", light: "red", mood: "sad", spots: [[-6, -8], [8, 4], [-12, 26], [10, 34]] },
+          { tone: 0, outfit: "shirt", color: 3, hair: 0, hat: null, hairColor: "#5A3A22", look: "left", light: "red", mood: "worried", spots: [[-9, -4], [6, 8], [-2, 22]] },
+        ];
+        geo.sick = [];
+        function sickman(i) {
+          var base = copy(SICK[i]); delete base.spots;
+          var r = KIT.rig(base), m = r.mouth;
+          base.arms = [ik(r.shoulder[0], [m[0] + 3, m[1] + 6], r.armLength, 1), [12, 4]];
+          var alive = KIT.person(base).replace('<g class="arm-l">', SICK[i].spots.map(function (s) { return '<ellipse cx="' + s[0] + '" cy="' + s[1] + '" rx="3.4" ry="2.4" fill="' + C.rust + '" opacity="0.85"/>'; }).join("") + '<g class="arm-l">');
+          var bones = KIT.person(copy(base, { skeleton: true }));
+          var p = L.sick[i], s = p[1];
+          geo.sick.push({ mouth: [p[0] + s * m[0], L.sickGy - 100 * s + s * m[1]], feet: [p[0], L.sickGy] });
+          return '<g transform="translate(' + p[0] + "," + n1(L.sickGy - 100 * s) + ") scale(" + s + ')"><g id="' + P("s" + i) + '">' +
+            '<g id="' + P("s" + i + "-alive") + '"' + vis(!fin) + ">" + alive + '</g><g id="' + P("s" + i + "-bones") + '"' + vis(fin) + ">" + bones + "</g></g></g>";
+        }
+        var shelf = L.shelf ? '<path d="' + pd([[L.shelf[0], L.shelf[2]], [L.shelf[1], L.shelf[2]], [L.shelf[1], L.shelf[3]], [L.shelf[0] + 30, L.shelf[3]]]) + '" fill="#D6C9A4" stroke="' + INK + '" stroke-width="5" stroke-linejoin="miter"/>' +
+          '<path d="' + pd([[L.shelf[0], L.shelf[2]], [L.shelf[1], L.shelf[2]], [L.shelf[1], L.shelf[3]], [L.shelf[0] + 30, L.shelf[3]]]) + '" fill="url(#' + P("cross") + ')" opacity="0.4"/>' : "";
+
+        // ── The heap of moldy crusts behind them, at full height (the scene grows it from its base). ──
+        var hp = L.heap, hx0 = hp[0], hx1 = hp[1], hb = hp[2], hh = hp[3], hcx = (hx0 + hx1) / 2, hw = (hx1 - hx0) / 2, rnd = KIT.rng(847);
+        var top = function (x) { var u = (x - hcx) / hw; return hb - hh * Math.sqrt(Math.max(0, 1 - u * u)) * (0.92 + 0.08 * Math.cos(u * 9)); };
+        var outline = [];
+        for (var k = 0; k <= 32; k++) { var x = hx0 + (2 * hw * k) / 32; outline.push([x, top(x)]); }
+        var heapIn = solid([[hx0, hb]].concat(outline, [[hx1, hb]]), "#C9A06E", 4) + '<path d="' + pd([[hx0, hb]].concat(outline, [[hx1, hb]])) + '" fill="url(#' + P("hatch") + ')" opacity="0.25"/>';
+        var crumbs = [];
+        for (k = 0; k < 76; k++) {
+          var xx = hx0 + 40 + rnd() * (2 * hw - 80), tY = top(xx), yy = tY + 20 + rnd() * Math.max(10, hb - tY - 34);
+          crumbs.push([xx, yy, (rnd() - 0.5) * 120, (V ? 1.6 : 1.9) + rnd() * 0.5, rnd() < 0.55]);
+        }
+        crumbs.sort(function (a, b) { return a[1] - b[1]; });
+        heapIn += crumbs.map(function (c) {
+          return '<g transform="translate(' + n1(c[0]) + "," + n1(c[1]) + ") rotate(" + n1(c[2]) + ") scale(" + n1(c[3]) + ')">' + slice(c[4] ? "mold" : "bitten") + "</g>";
+        }).join("");
+        var heap = '<g id="' + P("heap") + '">' + heapIn + "</g>";
+        geo.heapBase = [hcx, hb];
+
+        // ── The rock, and the desk calendar on it: "YEAR", the pages tearing off toward 200,000 ──
+        var YEARS = ["1", "10", "100", "1,000", "5,000", "10,000", "20,000", "40,000", "70,000", "100,000", "140,000", "180,000", "200,000"];
+        var cal = KIT.props.calendar({ month: "YEAR", day: 1, pages: YEARS.length - 1, color: C.war });
+        cal = cal.replace(/(<g class="(?:cal-page|cal-page-under)" data-day=")(\d+)("[\s\S]*?font-size=")(\d+)("[^>]*>)\d+(<\/text>)/g, function (m, a, day, b, fs, c, d) {
+          var t = YEARS[+day - 1], size = t.length <= 2 ? 44 : t.length <= 3 ? 34 : t.length <= 5 ? 23 : t.length <= 6 ? 19.5 : 16.5;
+          return a + t + b + size + c + t + d;
+        });
+        // the tear-off pages: the last frame has torn them all off, leaving 200,000
+        var pageN = 0;
+        cal = cal.replace(/<g class="cal-page" /g, function () { return '<g id="' + P("cal-p" + pageN++) + '"' + vis(!fin) + ' class="cal-page" '; });
+        geo.calPages = pageN;
+        var rp = L.rock, rk = rp ? [[rp[0], gy], [rp[0] + 10, rp[2] + 6], [rp[0] + 40, rp[2] - 8], [rp[1] - 50, rp[2] - 10], [rp[1] - 8, rp[2] + 4], [rp[1], gy]] : null;
+        var rock = rp ? solid(rk, "#CFC3A2", 4.4) + '<path d="' + pd(rk) + '" fill="url(#' + P("cross") + ')" opacity="0.35"/>' +
+          '<path d="M' + (rp[0] + 40) + "," + (rp[2] + 14) + " l26,10 M" + (rp[1] - 70) + "," + (rp[2] + 20) + ' l18,-6" stroke="' + INK + '" stroke-width="2.4"/>' : "";
+        var calendar = '<g transform="translate(' + L.cal[0] + "," + L.cal[1] + ") scale(" + L.cal[2] + ')"><g id="' + P("cal") + '">' + cal + "</g></g>";
+
+        // ── The mold pile on the floor between them, the flicked-off bits on it, and its glowing sign ──
+        var px = L.pile, rb = KIT.rng(200000), NB = 20;
+        geo.bits = [];
+        var mound = '<g transform="translate(' + px + "," + gy + ')"><g id="' + P("mound") + '">' + solid([[-58, 0], [-44, -12], [-22, -22], [4, -27], [28, -20], [48, -10], [60, 0]], C.med, 3.4) +
+          '<path d="' + pd([[-58, 0], [-44, -12], [-22, -22], [4, -27], [28, -20], [48, -10], [60, 0]]) + '" fill="url(#' + P("hteal") + ')" opacity="0.6"/>' + "</g></g>";
+        var bits = "";
+        for (k = 0; k < NB; k++) {
+          var bx = px + (rb() - 0.5) * 104, by = gy - 8 - rb() * 22 * (1 - Math.abs(bx - px) / 70), br = (rb() - 0.5) * 160, bs = (V ? 1.6 : 2) * (0.9 + rb() * 0.3);
+          geo.bits.push([bx, by]);
+          bits += '<g transform="translate(' + n1(bx) + "," + n1(by) + ')"><g id="' + P("bit" + k) + '"><g transform="rotate(' + n1(br) + ") scale(" + n1(bs) + ')">' + bit() + "</g></g></g>";
+        }
+        var SG = V ? 0.78 : 1;
+        var glow = '<g transform="translate(' + px + "," + n1(gy - 64 * SG) + ')"><g id="' + P("glow") + '">' +
+          '<circle r="' + n1(150 * SG) + '" fill="' + C.med + '" opacity="0.16"/><circle r="' + n1(104 * SG) + '" fill="' + C.med + '" opacity="0.2"/>' +
+          [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { var a = (i * Math.PI) / 4, r0 = 118 * SG, r1 = 168 * SG; return '<path d="M' + n1(Math.cos(a) * r0) + "," + n1(Math.sin(a) * r0) + " L" + n1(Math.cos(a) * r1) + "," + n1(Math.sin(a) * r1) + '" stroke="' + C.med + '" stroke-width="6" stroke-linecap="round" opacity="0.5"/>'; }).join("") + "</g></g>";
+        var sign = '<g transform="translate(' + (px + 6) + "," + (gy - 10) + ") scale(" + SG + ')"><g id="' + P("sign") + '">' + KIT.props.sign({ text: "ANTIBIOTICS", posts: 1, fontSize: 26, color: MOLD_INK, height: 52 }) + "</g></g>";
+        var sparks = [[-120, -150, 16], [118, -170, 13], [-80, -230, 11], [96, -100, 10]].map(function (s, i) {
+          return '<g transform="translate(' + n1(px + s[0] * SG) + "," + n1(gy + s[1] * SG) + ')"><g id="' + P("spk" + i) + '" opacity="0">' + KIT.star(0, 0, s[2] * 1.4, i % 2 ? C.yellow : "#FFFFFF") + "</g></g>";
+        }).join("");
+
+        // ── The last slice, where it lands on the heap, and the splat ──
+        var ld = L.land, s0 = (V ? 1.85 : 2.25);
+        var last = '<g transform="translate(' + ld[0] + "," + ld[1] + ')"><g id="' + P("last") + '"><g transform="rotate(' + ld[2] + ") scale(" + s0 + ')">' + slice("bitten") + moldSvg(0, 2) + "</g></g></g>";
+        var splat = '<g transform="translate(' + ld[0] + "," + ld[1] + ')">' + [[-1, -0.6], [-0.4, -1], [0.5, -1], [1, -0.5], [-0.8, 0.1], [0.9, 0.2]].map(function (d, i) {
+          return '<g id="' + P("crumb" + i) + '" opacity="0" data-dx="' + d[0] + '" data-dy="' + d[1] + '">' + (i % 2 ? solid([[-5, -3], [4, -4], [6, 2], [-3, 4]], C.tan, 2) : solid([[-4, -3], [4, -2], [3, 3], [-4, 2]], C.med, 2)) + "</g>";
+        }).join("") + "</g>";
+
+        var sickSvg = [2, 1, 0].map(sickman).join("");
+        var svg = KIT.paperDefs(pid) + cave + heap + last + splat + shelf + sickSvg + rock + calendar + fire + glow + caveman("B") + caveman("A") + mound + bits + sign + sparks;
+        return { svg: svg, L: L, geo: geo };
+      }
+      // ── end of the copied part ──
+
+      // ── The office (the standard KIT.OFFICE), with a glow layer for the flare ──
+      var S = O.screen, hole = [S[0] + 34, S[1] + 34, S[2] - 68, S[3] - 68], hc = [hole[0] + hole[2] / 2, hole[1] + hole[3] / 2];
+      q("bg").innerHTML = KIT.office(O.halo[0], O.halo[1]);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      // the flare: rays round the halo, a bigger sun on the horizon, and a few more stars (all hidden until "greed.")
+      var rays = "", NR = 28, RR = V ? 900 : 760;
+      for (var i = 0; i < NR; i++) {
+        var a0 = (i / NR) * 2 * Math.PI, a1 = ((i + 0.5) / NR) * 2 * Math.PI;
+        rays += '<path d="M0,0 L' + n1(RR * Math.cos(a0)) + "," + n1(RR * Math.sin(a0)) + " L" + n1(RR * Math.cos(a1)) + "," + n1(RR * Math.sin(a1)) + ' Z" fill="' + (i % 2 ? C.cream : C.yellow) + '"/>';
+      }
+      var hy = KIT.horizon;
+      var moreStars = (V ? [[150, 180], [960, 760], [120, 1060], [1000, 1120]] : [[60, 90], [980, 110], [1880, 520], [1040, 610]]).map(function (s, k) {
+        return '<g transform="translate(' + s[0] + "," + s[1] + ')"><g id="' + P("st" + k) + '" opacity="0">' + KIT.star(0, 0, 26, k % 2 ? C.cream : C.yellow) + "</g></g>";
+      }).join("");
+      q("glow").innerHTML = KIT.svg(W, H, '<g transform="translate(' + W / 2 + "," + hy + ')"><g id="' + P("sun") + '" opacity="0">' + KIT.sun(0, 0, 1.25) + "</g></g>" +
+        '<rect x="0" y="' + hy + '" width="' + W + '" height="8" fill="' + C.yellow + '" transform="translate(0,-4)"/>' +
+        '<g transform="translate(' + O.halo[0] + "," + O.halo[1] + ')"><g id="' + P("rays") + '" opacity="0">' + rays + "</g>" +
+        '<g id="' + P("halo") + '" opacity="0"><circle r="' + (V ? 360 : 330) + '" fill="#FFE08A"/></g></g>' + moreStars);
+
+      // ── The wall screen ──
+      // 1) bread-mold's last frame, at the size the zoom-out starts from (KIT.zoomView(S).mini).
+      var zv = KIT.zoomView(S);
+      var bm = bmArt(ID + "-mini", true);
+      var mini = '<g id="' + P("mini") + '"><g transform="' + zv.mini + '">' + KIT.paper(ID + "-minip") + bm.svg + "</g></g>";
+      // 2) the two advantages: the internet (a buzzing knot of cables) and the bond (KIT.props.bond(), default options:
+      //    Part 17 slaps the same certificate on the desk). Local units, about 700 x 420, centered on the hole.
+      var K = Math.min(hole[2] / 760, hole[3] / 452);
+      function cablesKnot() {
+        var cols = [C.orange, C.cyan, C.war, C.yellow], loops = [
+          "M-150,90 C-190,-20 -60,-120 10,-60 S40,90 -60,60 S-120,-80 40,-110 S170,20 120,90",
+          "M-130,-110 C-40,-150 110,-120 90,-20 S-70,40 -110,-10 S-20,-130 60,-40 S30,120 150,60",
+          "M-160,0 C-120,110 40,140 70,40 S-40,-90 -100,-60 S-60,70 30,30 S100,-120 160,-60",
+          "M-60,130 C-150,40 -90,-70 0,-20 S130,40 60,100 S-90,0 -20,-100",
+        ];
+        var out = loops.map(function (d, k) {
+          return '<path d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="17" stroke-linejoin="miter" stroke-linecap="butt"/>' +
+            '<path d="' + d + '" fill="none" stroke="' + C.slate + '" stroke-width="10"/><path d="' + d + '" fill="none" stroke="' + cols[k] + '" stroke-width="3" stroke-dasharray="14 10"/>';
+        }).join("");
+        // the plug ends: two-prong plugs and a jack, sticking out of the knot
+        var plug = function (x, y, rot) {
+          return '<g transform="translate(' + x + "," + y + ") rotate(" + rot + ')">' + solid([[-12, -16], [12, -16], [14, 12], [-14, 12]], C.cream, 3.4) +
+            '<path d="M-6,-16 V-30 M6,-16 V-30" stroke="' + INK + '" stroke-width="5"/><path d="M-6,-16 V-29 M6,-16 V-29" stroke="' + C.yellow + '" stroke-width="2"/></g>';
+        };
+        out += plug(-150, 104, 160) + plug(150, 72, 120) + plug(-136, -124, -40) + plug(-62, 146, 200);
+        var sparks = [[20, -120], [-170, 20], [160, -50], [-40, 110], [100, 120]].map(function (s, k) {
+          return '<g transform="translate(' + s[0] + "," + s[1] + ')"><g id="' + P("zz" + k) + '" opacity="0">' + KIT.star(0, 0, 18, k % 2 ? C.yellow : "#FFFFFF") +
+            '<path d="M-22,-4 L-8,-2 L-14,6 L4,4" fill="none" stroke="' + C.yellow + '" stroke-width="4" stroke-linejoin="miter"/></g></g>';
+        }).join("");
+        return '<g id="' + P("knot") + '">' + out + "</g>" + sparks;
+      }
+      var list = '<g transform="translate(' + n1(hc[0]) + "," + n1(hc[1]) + ") scale(" + n1(K) + ')"><g id="' + P("list") + '">' +
+        '<g transform="translate(-190,-36) scale(0.92)"><g id="' + P("cables") + '">' + cablesKnot() + "</g></g>" +
+        txt(-190, 168, "1. THE INTERNET", 32, INK, ' letter-spacing="1"') +
+        '<g transform="translate(186,96) scale(1.9)"><g id="' + P("bond") + '">' + KIT.props.bond() +
+        '<defs><clipPath id="' + P("bondclip") + '"><rect x="-88" y="-116" width="176" height="116"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P("bondclip") + ')"><g id="' + P("shine") + '"><path d="M-30,-130 L-6,-130 L-56,20 L-80,20 Z" fill="#FFFFFF" opacity="0.75"/></g></g>' +
+        '<g transform="translate(78,-108)"><g id="' + P("glint") + '" opacity="0">' + KIT.star(0, 0, 20, "#FFFFFF") + "</g></g></g></g>" +
+        '<g id="' + P("bondlabel") + '">' + txt(186, 150, "2. A NEW FINANCIAL", 30, INK, ' letter-spacing="1"') + txt(186, 184, "INSTRUMENT", 30, INK, ' letter-spacing="1"') + "</g>" +
+        "</g></g>";
+      // 3) the power plant: a boxy 1950s hall with a lightning-bolt sign, a big window, and in it the giant hamster wheel
+      //    where the fat cat runs after a paper on a stick. Local units, ground at y 200.
+      var CAT = KIT.castOpts("richHuman", { mood: "greedy", look: "right", arms: [[112, 96], [128, 110]] });
+      var catRig = KIT.rig(CAT), WHEEL = [0, 40, 128];
+      function plant() {
+        var out = '<rect x="-380" y="-240" width="760" height="440" fill="#BFD6D2"/>' + // the sky behind it
+          solid([[-380, 200], [380, 200], [380, 240], [-380, 240]], "#9FB59A", 3);
+        // smokestacks
+        [-262, 262].forEach(function (x, k) {
+          out += solid([[x - 22, 60], [x - 16, -190], [x + 16, -190], [x + 22, 60]], C.slate) + solid([[x - 20, -196], [x + 20, -196], [x + 20, -182], [x - 20, -182]], C.war, 3) +
+            '<g transform="translate(' + x + ',-206)"><g id="' + P("smoke" + k) + '" fill="#E9E3D2" stroke="' + INK + '" stroke-width="3"><circle cx="0" cy="-6" r="13"/><circle cx="14" cy="-22" r="16"/><circle cx="-6" cy="-38" r="12"/></g></g>';
+        });
+        // the hall
+        out += solid([[-320, 200], [-320, -110], [-300, -128], [300, -128], [320, -110], [320, 200]], C.rust) +
+          '<path d="M-310,200 V-112 L-296,-124 H296" fill="none" stroke="' + C.orange + '" stroke-width="3"/>' +
+          [-80, -40, 0, 40, 80, 120, 160].map(function (y) { return '<path d="M-316,' + y + " H-212 M212," + y + ' H316" stroke="#6E3420" stroke-width="2.4"/>'; }).join("") +
+          solid([[-336, -128], [336, -128], [336, -112], [-336, -112]], C.slate, 3);
+        // the window, lit
+        out += solid([[-200, -102], [200, -102], [200, 186], [-200, 186]], "#F6E2A0") + '<path d="M-188,174 H188" stroke="#E5C67A" stroke-width="6"/>';
+        // the wheel's stand (behind it), the wheel, and the bracket and stick (fixed, in front of the cat)
+        var wx = WHEEL[0], wy = WHEEL[1], wr = WHEEL[2];
+        out += solid([[wx - 6, wy], [wx - 96, 184], [wx - 78, 184], [wx, wy + 22], [wx + 78, 184], [wx + 96, 184], [wx + 6, wy]], C.slate, 3);
+        var spokes = "";
+        for (var k = 0; k < 12; k++) {
+          var a = (k * Math.PI) / 6;
+          spokes += '<path d="M' + n1(wx + 14 * Math.cos(a)) + "," + n1(wy + 14 * Math.sin(a)) + " L" + n1(wx + (wr - 10) * Math.cos(a)) + "," + n1(wy + (wr - 10) * Math.sin(a)) + '" stroke="' + INK + '" stroke-width="5"/>' +
+            '<path d="M' + n1(wx + 14 * Math.cos(a)) + "," + n1(wy + 14 * Math.sin(a)) + " L" + n1(wx + (wr - 10) * Math.cos(a)) + "," + n1(wy + (wr - 10) * Math.sin(a)) + '" stroke="' + C.peri + '" stroke-width="2"/>';
+        }
+        var rungs = "";
+        for (k = 0; k < 36; k++) {
+          var b = (k * Math.PI) / 18;
+          rungs += '<circle cx="' + n1(wx + (wr - 5) * Math.cos(b)) + '" cy="' + n1(wy + (wr - 5) * Math.sin(b)) + '" r="2.6" fill="' + C.cream + '"/>';
+        }
+        out += '<g id="' + P("wheel") + '"><circle cx="' + wx + '" cy="' + wy + '" r="' + wr + '" fill="none" stroke="' + INK + '" stroke-width="16"/>' +
+          '<circle cx="' + wx + '" cy="' + wy + '" r="' + wr + '" fill="none" stroke="' + C.yellow + '" stroke-width="9"/>' +
+          '<circle cx="' + wx + '" cy="' + wy + '" r="' + (wr - 10) + '" fill="none" stroke="' + INK + '" stroke-width="3"/>' + spokes + rungs +
+          '<circle cx="' + wx + '" cy="' + wy + '" r="15" fill="' + C.war + '" stroke="' + INK + '" stroke-width="4"/></g>';
+        // the fat cat, his feet on the bottom of the wheel, legs and body animated; his flames wait for "greed." The stick
+        // is strapped to his own top hat, so the plain paper dangles in front of his nose wherever he runs.
+        var cs = 1.1, feetY = wy + wr - 10, tipX = 98, tipY = -84;
+        var stick = '<path d="M6,-50 L' + tipX + "," + tipY + '" stroke="' + INK + '" stroke-width="7" stroke-linecap="round"/><path d="M6,-50 L' + tipX + "," + tipY + '" stroke="' + C.tan + '" stroke-width="3" stroke-linecap="round"/>' +
+          solid([[-2, -56], [12, -58], [13, -46], [-1, -44]], C.war, 2);
+        var bait = '<g transform="translate(' + tipX + "," + tipY + ')"><g id="' + P("bait") + '"><path d="M0,0 V38" stroke="' + INK + '" stroke-width="2"/>' +
+          '<g transform="translate(0,52) scale(0.4)">' + KIT.money("plain") + "</g></g></g>";
+        out += '<g transform="translate(' + (wx - 22) + "," + n1(feetY - 100 * cs) + ") scale(" + cs + ')"><g id="' + P("cat") + '">' + KIT.person(CAT) + stick + bait +
+          '<g id="' + P("catfire") + '" opacity="0">' + KIT.fireOn(CAT) + "</g></g></g>";
+        // window mullions over it all
+        out += '<path d="M-200,-102 H200 V186 H-200 Z M0,-102 V-60 M-200,-60 H200" fill="none" stroke="' + INK + '" stroke-width="7"/>';
+        // the sign on the roof, with a lightning bolt and bulbs
+        var bolt = [[-14, -26], [8, -26], [-2, -6], [12, -6], [-12, 26], [-4, 2], [-16, 2]];
+        out += solid([[-250, -236], [250, -236], [250, -150], [-250, -150]], WHITE_SIGN, 4) + '<path d="M-150,-150 V-128 M150,-150 V-128" stroke="' + INK + '" stroke-width="7"/>' +
+          '<rect x="-242" y="-228" width="484" height="70" fill="none" stroke="' + C.orange + '" stroke-width="2.4"/>' +
+          '<g transform="translate(-206,-193) scale(1.15)">' + solid(bolt, C.yellow, 3) + "</g>" + '<g transform="translate(206,-193) scale(-1.15,1.15)">' + solid(bolt, C.yellow, 3) + "</g>" +
+          txt(0, -201, "POWER SOURCE:", 26, INK, ' letter-spacing="2"') + txt(0, -164, "HUMAN GREED", 34, C.war, ' letter-spacing="3"');
+        var bulbs = "";
+        for (k = 0; k < 14; k++) bulbs += '<circle cx="' + (-234 + k * 36) + '" cy="-236" r="5.5" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2"/>';
+        out += '<g id="' + P("bulbs") + '">' + bulbs + "</g>";
+        // the power line out of the side of the hall, down out of the bottom of the screen
+        out += '<path d="M320,40 C360,40 372,120 360,260" fill="none" stroke="' + INK + '" stroke-width="12"/><path d="M320,40 C360,40 372,120 360,260" fill="none" stroke="' + C.orange + '" stroke-width="3"/>';
+        return out;
+      }
+      var WHITE_SIGN = "#FBF6E6";
+      var plantG = '<g transform="translate(' + n1(hc[0]) + "," + n1(hc[1]) + ") scale(" + n1(K) + ')"><g id="' + P("plant") + '">' + plant() + "</g></g>";
+      q("screen").innerHTML = KIT.svg(W, H, KIT.wallScreen.apply(null, S) + KIT.paperDefs(ID) +
+        '<defs><clipPath id="' + P("hole") + '"><rect x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" rx="22"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P("hole") + ')">' + mini + list + plantG + '<rect id="' + P("scan") + '" x="' + hole[0] + '" y="' + (hc[1] - 3) + '" width="' + hole[2] + '" height="6" fill="#FFFFFF" opacity="0"/></g>');
+
+      // ── The desk: the socket by her fist, the cable and its plug, the mug ──
+      var hw = O.wish.w * 0.95, mouth = [O.wish.x + O.wish.w * 0.025 + 0.605 * hw, O.wish.y + 0.81 * hw];
+      var bodyTop = O.wish.y + Math.round(O.wish.w * 0.95 - (O.wish.w * 12) / 140), bodyH = Math.round((O.wish.w * 768) / 1343);
+      var fist = [O.wish.x + 0.695 * O.wish.w, bodyTop + 0.12 * bodyH];
+      var deskY = O.desk[1], sk = V ? 0.9 : 1, sock = [fist[0], deskY];
+      var socket = '<g transform="translate(' + n1(sock[0]) + "," + deskY + ") scale(" + sk + ')">' + solid([[-46, 0], [-40, -50], [40, -50], [46, 0]], C.cream) +
+        solid([[-28, -42], [28, -42], [28, -10], [-28, -10]], "#E9E1CC", 3) + '<rect x="-12" y="-34" width="6" height="16" fill="' + INK + '"/><rect x="6" y="-34" width="6" height="16" fill="' + INK + '"/>' +
+        '<g transform="translate(0,-62)"><g id="' + P("bang") + '" opacity="0">' + [0, 1, 2, 3, 4, 5, 6, 7].map(function (k) {
+          var a = (k * Math.PI) / 4 - Math.PI / 2;
+          return '<path d="M' + n1(Math.cos(a) * 40) + "," + n1(Math.sin(a) * 40) + " L" + n1(Math.cos(a) * 92) + "," + n1(Math.sin(a) * 92) + '" stroke="' + C.yellow + '" stroke-width="9" stroke-linecap="round"/>';
+        }).join("") + KIT.star(0, 0, 46, "#FFFFFF") + "</g></g></g>";
+      // the cable: out of the bottom of the screen, down and along the desk top to the plug over the socket
+      var exitX = S[0] + S[2] - (V ? 120 : 80), exitY = S[1] + S[3], plugY = deskY - (V ? 120 : 132) * sk;
+      var cableD = V
+        ? "M" + exitX + "," + exitY + " C" + (exitX + 70) + "," + (exitY + 160) + " " + (exitX + 40) + "," + (deskY - 120) + " " + (exitX - 40) + "," + (deskY - 40) +
+          " C" + (sock[0] + 140) + "," + (deskY - 4) + " " + (sock[0] + 30) + "," + (plugY - 70) + " " + sock[0] + "," + (plugY - 40)
+        : "M" + exitX + "," + exitY + " C" + (exitX + 10) + "," + (exitY + 170) + " " + (O.desk[0] - 40) + "," + (deskY + 4) + " " + (O.desk[0] + 60) + "," + (deskY - 6) +
+          " L" + (sock[0] - 160) + "," + (deskY - 6) + " C" + (sock[0] - 40) + "," + (deskY - 8) + " " + sock[0] + "," + (plugY - 60) + " " + sock[0] + "," + (plugY - 40);
+      var cable = '<g id="' + P("cable") + '"><path d="' + cableD + '" fill="none" stroke="' + INK + '" stroke-width="22" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"/>' +
+        '<path d="' + cableD + '" fill="none" stroke="' + C.navy + '" stroke-width="14" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"/>' +
+        '<path d="' + cableD + '" fill="none" stroke="' + C.orange + '" stroke-width="3.4" pathLength="1" stroke-dasharray="1" stroke-dashoffset="0"/></g>';
+      var plug = '<g transform="translate(' + n1(sock[0]) + "," + n1(plugY) + ") scale(" + sk + ')"><g id="' + P("plug") + '">' +
+        '<path d="M0,-70 V-6" stroke="' + INK + '" stroke-width="22"/><path d="M0,-70 V-6" stroke="' + C.navy + '" stroke-width="14"/><path d="M0,-70 V-6" stroke="' + C.orange + '" stroke-width="3.4"/>' +
+        solid([[-30, -8], [30, -8], [26, 38], [-26, 38]], C.orange) + '<path d="M-20,4 H20 M-18,18 H18" stroke="' + C.rust + '" stroke-width="3"/>' +
+        '<path d="M-9,38 V64 M9,38 V64" stroke="' + INK + '" stroke-width="8"/><path d="M-9,38 V62 M9,38 V62" stroke="' + C.yellow + '" stroke-width="3.4"/></g></g>';
+      // the mug (eligible's desk spot) and its coffee drops for the slam
+      var Mg = V ? [952, 1173, 1.1] : [1775, 800, 1.5], mk = Mg[2], mugC = [Mg[0] + 24 * mk, Mg[1] + 35 * mk];
+      var drops = [[-14, -40], [4, -54], [20, -42]].map(function (d, k) {
+        return '<g transform="translate(' + n1(Mg[0] + 24 * mk) + "," + n1(Mg[1]) + ')"><g id="' + P("drop" + k) + '" opacity="0"><path d="M0,-7 L5,2 Q0,9 -5,2 Z" fill="#6B3E22" stroke="' + INK + '" stroke-width="2"/></g></g>';
+      }).join("");
+      var mugSvg = '<g id="' + P("mug") + '"><g transform="translate(' + Mg[0] + "," + Mg[1] + ") scale(" + mk + ')">' + KIT.mug(0, 0) + "</g>" + drops + "</g>";
+      q("front").innerHTML = KIT.svg(W, H, KIT.desk.apply(null, O.desk) + socket + cable + plug + mugSvg);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("wish"), { scene: ID, x: O.wish.x, y: O.wish.y, w: O.wish.w });
+      KIT.enter(tl, q("cam"), "zoom out of the wall screen", zv);
+
+      var g = function (s) { return q(s); };
+      var cueAt = { two: cue("two"), internet: cue("internet"), instrument: cue("instrument"), designed: cue("designed"), powerful: cue("powerful"),
+        universe: cue("universe:"), greed: cue("greed."), afterU: KIT.after(ID, "universe:"), afterG: KIT.after(ID, "greed.") };
+      // Pivots, set once while untransformed.
+      gsap.set(g("mini"), { svgOrigin: hc.join(" ") });
+      [g("list"), g("plant"), g("cables"), g("bond"), g("knot"), g("bait"), g("plug"), g("bang"), g("halo")].forEach(function (el) { gsap.set(el, { svgOrigin: "0 0" }); });
+      gsap.set([g("rays"), g("sun"), g("glint")], { svgOrigin: "0 0" });
+      gsap.set(g("catfire"), { svgOrigin: "0 40" });
+      for (i = 0; i < 5; i++) gsap.set(g("zz" + i), { svgOrigin: "0 0" });
+      for (i = 0; i < 4; i++) gsap.set(g("st" + i), { svgOrigin: "0 0" });
+      gsap.set(g("wheel"), { svgOrigin: WHEEL[0] + " " + WHEEL[1] });
+      gsap.set(g("bond").querySelector(".bond-seal"), { svgOrigin: "54 -34" });
+      gsap.set(g("mug"), { svgOrigin: n1(mugC[0]) + " " + n1(mugC[1]) });
+      gsap.set(g("cat"), { svgOrigin: "0 100" });
+      var legs = [g("cat").querySelector(".leg-l"), g("cat").querySelector(".leg-r")];
+      legs.forEach(function (el, k) { gsap.set(el, { svgOrigin: catRig.hip[k].join(" ") }); });
+
+      // "internet": the screen clicks off (the old set's line) and back on to the knot of cables, buzzing (the zap).
+      var tI = cueAt.internet;
+      tl.to(g("mini"), { scaleY: 0.01, duration: 0.1, ease: "power2.in" }, tI - 0.12);
+      tl.set(g("mini"), { opacity: 0 }, tI - 0.02);
+      tl.fromTo(g("scan"), { opacity: 0 }, { opacity: 1, duration: 0.02, yoyo: true, repeat: 1, repeatDelay: 0.04, immediateRender: false }, tI - 0.04);
+      gsap.set(g("list"), { opacity: 0 });
+      tl.set(g("list"), { opacity: 1 }, tI);
+      tl.fromTo(g("list"), { scaleY: 0.01 }, { scaleY: 1, duration: 0.14, ease: "power2.out", immediateRender: false }, tI);
+      gsap.set([g("bond"), g("bondlabel")], { opacity: 0 });
+      // the knot buzzes, sparks popping, until the plant takes the screen
+      var tU = cueAt.universe;
+      tl.fromTo(g("knot"), { x: 0, y: 0 }, { x: 3, y: -2, duration: 0.05, yoyo: true, repeat: Math.floor((tU - tI) / 0.05) - 1, ease: "none", immediateRender: false }, tI);
+      for (i = 0; i < 5; i++) {
+        for (var tz = tI + 0.05 + i * 0.37; tz < tU - 0.3; tz += 1.3) {
+          tl.fromTo(g("zz" + i), { opacity: 1, scale: 0.3 }, { opacity: 0, scale: 1.3, duration: 0.3, ease: "power2.out", immediateRender: false }, tz);
+        }
+      }
+      // "instrument": the bond slides on from the right (the whoosh), its label with it, and glints (the sparkle).
+      var tIn = cueAt.instrument;
+      tl.set([g("bond"), g("bondlabel")], { opacity: 1 }, tIn);
+      tl.fromTo(g("bond"), { x: 260, rotation: 8 }, { x: 0, rotation: 0, duration: 0.3, ease: "back.out(1.4)", immediateRender: false }, tIn);
+      tl.fromTo(g("bondlabel"), { x: 420 }, { x: 0, duration: 0.3, ease: "back.out(1.4)", immediateRender: false }, tIn + 0.04);
+      tl.fromTo(g("shine"), { x: 0 }, { x: 200, duration: 0.35, ease: "power1.inOut", immediateRender: true }, tIn + 0.3);
+      tl.fromTo(g("glint"), { opacity: 0, scale: 0.2, rotation: 0 }, { opacity: 1, scale: 1.2, rotation: 45, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tIn + 0.32);
+      // "designed": the bond's gold seal spins once, proudly.
+      tl.fromTo(g("bond").querySelector(".bond-seal"), { rotation: 0 }, { rotation: 360, duration: 0.6, ease: "power2.inOut", immediateRender: false }, cueAt.designed + 0.1);
+
+      // "powerful": the mug floats up to her lips (tilted 40 degrees, its rim on her mouth) for a sip; then she holds it up
+      // beside her face for the rest of the line (clear of her fist and the plug), it jumps at the slam, and after
+      // "greed." it goes down to the desk, slowly (the thunk).
+      var tPw = cueAt.powerful, tG = cueAt.greed, tAG = cueAt.afterG;
+      var sip = [mouth[0] - 2 + 22.5 * mk - mugC[0], mouth[1] + 6 + 26.8 * mk - mugC[1]];
+      tl.fromTo(g("mug"), { x: 0, y: 0, rotation: 0 }, { x: sip[0], y: sip[1], rotation: -40, duration: 0.4, ease: "power2.out", immediateRender: false }, tPw - 0.12);
+      tl.to(g("mug"), { y: sip[1] - 6, duration: 0.14, yoyo: true, repeat: 1, ease: "sine.inOut" }, tPw + 0.3);
+      var hold = [mouth[0] + 130 * mk - mugC[0], mouth[1] + 40 * mk - mugC[1]];
+      tl.to(g("mug"), { x: hold[0], y: hold[1], rotation: 0, duration: 0.35, ease: "power2.inOut" }, tPw + 0.66);
+      tl.to(g("mug"), { y: hold[1] + 16, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.out" }, tG);
+      [0, 1, 2].forEach(function (k) {
+        var d = [[-14, -40], [4, -54], [20, -42]][k];
+        tl.fromTo(g("drop" + k), { opacity: 1, x: 0, y: 0 }, { keyframes: [{ x: d[0] * mk, y: d[1] * mk, duration: 0.16, ease: "power2.out" }, { x: d[0] * mk * 1.4, y: 10 * mk, opacity: 0, duration: 0.2, ease: "power1.in" }], immediateRender: false }, tG + 0.02);
+      });
+      tl.to(g("mug"), { x: 0, y: 0, duration: tAG - (tG + 0.3), ease: "sine.inOut" }, tG + 0.3);
+      tl.fromTo(g("mug"), { scaleY: 1 }, { scaleY: 0.9, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, tAG);
+
+      // "universe:": the screen pulls back to the power plant (the hum); the wheel turns, the fat cat runs (the whirr).
+      gsap.set(g("plant"), { opacity: 0 });
+      tl.set(g("plant"), { opacity: 1 }, tU);
+      tl.fromTo(g("plant"), { scale: 2.6, y: 120 }, { scale: 1, y: 0, duration: 0.45, ease: "power2.out", immediateRender: false }, tU);
+      tl.to(g("list"), { scale: 0.3, opacity: 0, duration: 0.3, ease: "power2.in" }, tU);
+      // the wheel: about a turn a second, then much faster once he is plugged in; the legs and body keep pace
+      var tR0 = tU + 0.25;
+      // (clockwise: the bottom of the wheel runs back under his feet)
+      var turn1 = 360 * 1.1 * (tG - tR0);
+      tl.fromTo(g("wheel"), { rotation: 0 }, { rotation: turn1, duration: tG - tR0, ease: "power1.in", immediateRender: false }, tR0);
+      tl.fromTo(g("wheel"), { rotation: turn1 }, { rotation: turn1 + 360 * 3.6 * (D - tG), duration: D - tG, ease: "none", immediateRender: false }, tG);
+      function run(t0, t1, half, swing, bob) {
+        var n = Math.max(2, 2 * Math.floor((t1 - t0) / (2 * half)));
+        tl.fromTo(legs[0], { rotation: -swing }, { rotation: swing, duration: half, yoyo: true, repeat: n - 1, ease: "sine.inOut", immediateRender: false }, t0);
+        tl.fromTo(legs[1], { rotation: swing }, { rotation: -swing, duration: half, yoyo: true, repeat: n - 1, ease: "sine.inOut", immediateRender: false }, t0);
+        tl.fromTo(g("cat"), { y: 0 }, { y: -bob, duration: half / 2, yoyo: true, repeat: 2 * n - 1, ease: "sine.out", immediateRender: false }, t0);
+      }
+      run(tR0, tG, 0.16, 34, 4);
+      run(tG, D, 0.07, 44, 6);
+      // the bait swings just out of reach
+      tl.fromTo(g("bait"), { rotation: -8 }, { rotation: 10, duration: 0.3, yoyo: true, repeat: Math.floor((D - tR0) / 0.3) - 1, ease: "sine.inOut", immediateRender: false }, tR0);
+      // the bulbs blink and the smoke puffs
+      var bulbs = g("bulbs").querySelectorAll("circle");
+      for (var tb = tU + 0.1, kb = 0; tb < D - 0.05; tb += 0.18, kb++) {
+        Array.prototype.forEach.call(bulbs, function (b, j) { tl.set(b, { attr: { fill: (j + kb) % 2 ? C.yellow : C.cream } }, tb); });
+      }
+      [0, 1].forEach(function (k) { var t0 = tU + 0.2 + k * 0.25; tl.fromTo(g("smoke" + k), { y: 0, opacity: 1 }, { y: -18, opacity: 0.4, duration: 0.5, yoyo: true, repeat: Math.floor((D - t0) / 0.5) - 1, ease: "sine.inOut", immediateRender: false }, t0); });
+
+      // after "universe:": the cable drops out of the bottom of the screen and down to the desk (the whoosh), its plug
+      // swinging in over the socket.
+      var tC = cueAt.afterU;
+      tl.fromTo(g("cable").querySelectorAll("path"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power2.in" }, tC);
+      tl.fromTo(g("plug"), { y: -300, rotation: 0, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power2.in" }, tC);
+      tl.to(g("plug"), { keyframes: [{ rotation: -10, duration: 0.1 }, { rotation: 6, duration: 0.1 }, { rotation: 0, duration: 0.08 }], ease: "sine.inOut" }, tC + 0.3);
+
+      // "greed.": her fist (the sprite), the plug slams into the socket (the slam), a bang of sparks, the room jolts,
+      // and the sun, the halo and the office flare to full; on the screen, the fat cat catches fire (the fire whoosh).
+      tl.to(g("plug"), { y: 48, duration: 0.06, ease: "power3.in" }, tG - 0.06);
+      tl.fromTo(g("bang"), { opacity: 1, scale: 0.3 }, { opacity: 0, scale: 1.4, duration: 0.4, ease: "power2.out", immediateRender: false }, tG);
+      tl.fromTo(q("wish"), { y: 0 }, { y: 14, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tG);
+      tl.fromTo(q("cam"), { x: 0, y: 0 }, { x: 8, y: 6, duration: 0.04, repeat: 7, yoyo: true, ease: "none", immediateRender: false }, tG);
+      tl.fromTo(q("flash"), { opacity: 0 }, { opacity: 0.85, duration: 0.05, immediateRender: false }, tG);
+      tl.to(q("flash"), { opacity: 0, duration: 0.42, ease: "power2.out" }, tG + 0.08);
+      tl.fromTo(g("rays"), { opacity: 0, scale: 0.4, rotation: 0 }, { opacity: 0.85, scale: 1, rotation: 10, duration: 0.5, ease: "power3.out", immediateRender: false }, tG);
+      tl.to(g("rays"), { rotation: 22, duration: D - tG - 0.5, ease: "none" }, tG + 0.5);
+      tl.fromTo(g("halo"), { opacity: 0, scale: 0.9 }, { opacity: 0.9, scale: 1.06, duration: 0.3, ease: "power2.out", immediateRender: false }, tG);
+      tl.fromTo(g("sun"), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.6)", immediateRender: false }, tG);
+      [0, 1, 2, 3].forEach(function (k) { tl.fromTo(g("st" + k), { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(3)", immediateRender: false }, tG + 0.05 + k * 0.06); });
+      var tF = tG + 0.12;
+      tl.set(g("catfire"), { opacity: 1 }, tF);
+      tl.fromTo(g("catfire"), { scale: 0.3 }, { scale: 1, duration: 0.18, ease: "power2.out", immediateRender: false }, tF);
+      KIT.flicker(tl, g("catfire"), tF, D - 0.2);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

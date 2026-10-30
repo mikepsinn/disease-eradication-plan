@@ -1,0 +1,158 @@
+<template id="civilization-countdown-title-template">
+  <!-- civilization-countdown-title · Layer A title card (storyboards/part-11-civilization-countdown.md), built by
+       KIT.titleScene: YOUR CIVILIZATION / HAS A COUNTDOWN slams in one word per spoken word. "Civilization": the
+       civilization drops in under the heading, a small Earth with a bomb's screw collar and a long fuse, and bounces
+       once (boing). "Countdown.": the Weapons Maker pops up from the bottom edge at the fuse's far end, grinning,
+       touches his cigar to it and it catches (fire); he ducks back down. after "Countdown.": the lit Earth hops into
+       the top-left corner (whoosh), where every later Part 11 scene draws it.
+       The Earth-bomb is the corner fuse drawn at its corner geometry (the storyboard's Build line, as the Layer B
+       scenes draw it) inside an outer group that scales it up under the heading; after "Countdown." that group
+       tweens back to identity, so it lands exactly on the corner fuse, burnt to L(2.9). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="civilization-countdown-title" data-width="1920" data-height="1080" data-start="0" data-duration="2.96">
+    <div id="civilization-countdown-title-cam">
+      <div id="civilization-countdown-title-bg"></div>
+      <div id="civilization-countdown-title-sun"></div>
+      <div id="civilization-countdown-title-back"></div>
+      <div id="civilization-countdown-title-words"></div>
+      <div id="civilization-countdown-title-art"></div>
+    </div>
+    <div id="civilization-countdown-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "civilization-countdown-title",
+      lines: [["YOUR", "CIVILIZATION"], ["HAS", "A", "COUNTDOWN"]],
+      // 9:16 in four lines: three lines would bring the heading down to 90 px (HAS A COUNTDOWN is the widest line)
+      linesTall: [["YOUR"], ["CIVILIZATION"], ["HAS", "A"], ["COUNTDOWN"]],
+      spoken: ["Your", "Civilization", "Has", "a", "Countdown."],
+      cy: KIT.V ? 600 : 252,
+      gag: function (c) {
+        var C = c.C, ink = C.line, tl = c.tl, V = c.V, W = c.W, H = c.H, id = c.id, D = c.D, P = id + "-";
+        var sc = KIT.scene(id);
+        function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+        function line(d, col, w) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"/>'; }
+        function at(x, y, s, inner) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+        function layer(inner) {
+          var d = document.createElement("div");
+          d.style.cssText = "position:absolute;left:0;top:0;width:" + W + "px;height:" + H + "px;";
+          d.innerHTML = '<svg width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + " " + H + '" style="position:absolute;inset:0;overflow:visible">' + inner + "</svg>";
+          return d;
+        }
+        var $ = function (s) { return document.getElementById(P + s); };
+
+        // ── THE FUSE at its corner geometry (storyboard, Running gag: the fuse; the same drawing as every Part 11
+        // Layer B scene): the Earth, the navy screw collar, the cord (navy 9 under tan 5) and the spark. ──
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var cl = Fz.collar;
+        var cords = '<path id="' + P + 'cord-a" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + 'cord-b" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var collar = '<rect x="' + cl[0] + '" y="' + cl[1] + '" width="' + cl[2] + '" height="' + cl[3] + '" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="3"/>' +
+          line("M" + (cl[0] + 3) + "," + (cl[1] + 3) + " H" + (cl[0] + cl[2] - 3), C.orange, 1.6) + line("M" + (cl[0] + 2) + "," + (cl[1] + 8) + " H" + (cl[0] + cl[2] - 2), C.peri, 1.4);
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-lit" opacity="0"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g></g>";
+        // the catch: a burst of little sparks round the fuse's end (in the fuse group, so it scales with it)
+        var burst = '<g id="' + P + 'catch" opacity="0">' + [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) {
+          var a = (i * Math.PI) / 4 + 0.3, r0 = 12, r1 = 30;
+          return line("M" + n1(r0 * Math.cos(a)) + "," + n1(r0 * Math.sin(a)) + " L" + n1(r1 * Math.cos(a)) + "," + n1(r1 * Math.sin(a)), i % 2 ? C.yellow : C.orange, 3.4);
+        }).join("") + "</g>";
+        var fuseArt = cords + at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) + collar + spark + '<g id="' + P + 'catch-at">' + burst + "</g>";
+
+        // ── Layout: where the Earth-bomb sits on the card (its center, its scale) and where the Weapons Maker stands
+        // (his scale; his feet are placed so his cigar tip meets the fuse's end). The heading is above. ──
+        var L = V ? { ex: 125, ey: 1340, s: 1.45, wm: 2.3, hop: 160 } : { ex: 340, ey: 660, s: 1.9, wm: 2.8, hop: 120 };
+        var tLight = c.cue("Countdown.") + 0.35, tGo = c.after("Countdown."), tLand = Math.min(D - 0.04, tGo + 0.35);
+        var Lit = Fz.L0 - Fz.k * (sc.start + tLight);
+
+        // The Weapons Maker facing left, the cigar drawn by the kit; the tip is at person (-25.4, -18.9) for this
+        // build (the face's cigar: translate(13, my + 2) rotate(-12), its ash end 23 along; the face mirrored).
+        var wmO = KIT.castOpts("weaponsMaker", { look: "left" });
+        var TIP = [-25.4, -18.9];
+
+        c.art.appendChild(layer(
+          '<g id="' + P + 'wm-at"><g id="' + P + 'wm-pop"><g id="' + P + 'wm-lean">' + KIT.person(wmO) +
+          '<g id="' + P + 'tip-glow" opacity="0"><circle cx="' + TIP[0] + '" cy="' + TIP[1] + '" r="4" fill="' + C.yellow + '" stroke="' + C.orange + '" stroke-width="1.6"/></g></g></g></g>' +
+          '<g id="' + P + 'hop"><g id="' + P + 'drop"><g id="' + P + 'fz">' + fuseArt + "</g></g></g>"));
+
+        var a = $("cord-a"), b = $("cord-b"), sp = $("spark"), lit = $("spark-lit");
+        // The fuse's end before it is lit (it does not burn yet), in corner units, and on the card.
+        var end0 = a.getPointAtLength(Lit);
+        var fz = $("fz"), drop = $("drop"), hop = $("hop");
+        var tx = L.ex - L.s * Fz.cx, ty = L.ey - L.s * Fz.cy;
+        gsap.set(fz, { x: tx, y: ty, scale: L.s, svgOrigin: "0 0" });
+        var endX = tx + L.s * end0.x, endY = ty + L.s * end0.y;
+
+        // The catch burst sits on the fuse's end.
+        $("catch-at").setAttribute("transform", "translate(" + n1(end0.x) + "," + n1(end0.y) + ")");
+
+        // The Weapons Maker's feet: his cigar tip on the fuse's end, with a little lean in (he starts 4 degrees back).
+        $("wm-at").setAttribute("transform", "translate(" + n1(endX - TIP[0] * L.wm) + "," + n1(endY - TIP[1] * L.wm) + ") scale(" + L.wm + ")");
+
+        // The fuse burns by part time once lit (unlit, it holds at its length at the moment it catches).
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (sc.start + Math.max(lt, tLight))), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+
+        // "Civilization": the Earth-bomb drops in under the heading and bounces once (boing at +0.35).
+        var tC = c.cue("Civilization"), land1 = tC + 0.3;
+        tl.fromTo(drop, { y: -(L.ey + 260) }, { y: 0, duration: land1 - tC, ease: "power2.in" }, tC);
+        tl.to(drop, { y: -L.hop * 0.55, duration: 0.17, ease: "power2.out" }, land1 + 0.05);
+        tl.to(drop, { y: 0, duration: 0.17, ease: "power2.in" }, land1 + 0.22);
+        // the squash on each landing: about the Earth's foot, in corner units
+        // (the prop's wrapper sits inside the translate to the Earth's foot, so its pivot is its own (0, 0))
+        var globe = fz.querySelector(".prop-earthGlobe");
+        gsap.set(globe, { svgOrigin: "0 0" });
+        [land1, land1 + 0.39].forEach(function (t, i) {
+          tl.fromTo(globe, { scaleY: 1, scaleX: 1 }, { scaleY: i ? 0.9 : 0.78, scaleX: i ? 1.06 : 1.14, duration: 0.05, ease: "power2.out", immediateRender: false }, t);
+          tl.to(globe, { scaleY: 1, scaleX: 1, duration: 0.18, ease: "back.out(3)" }, t + 0.05);
+        });
+
+        // "Countdown.": the Weapons Maker pops up from the bottom edge, grinning, his cigar on the fuse's end.
+        var tCd = c.cue("Countdown."), pop = $("wm-pop"), lean = $("wm-lean");
+        var below = (H + 40 - (endY - TIP[1] * L.wm) + 60 * L.wm) / L.wm; // feet units to clear the bottom edge
+        tl.fromTo(pop, { y: below }, { y: 0, duration: 0.24, ease: "back.out(1.6)" }, tCd);
+        gsap.set(lean, { svgOrigin: "0 100" });
+        tl.fromTo(lean, { rotation: 5 }, { rotation: 0, duration: 0.12, ease: "power2.out", immediateRender: false }, tLight - 0.13);
+        // the cigar glows on the fuse, and it catches (fire): a burst, then the spark rides the end
+        tl.fromTo($("tip-glow"), { opacity: 0 }, { opacity: 1, duration: 0.04 }, tLight - 0.06);
+        tl.set($("tip-glow"), { opacity: 0 }, tLight + 0.3);
+        tl.set(lit, { opacity: 1 }, tLight);
+        var ct = $("catch");
+        gsap.set(ct, { svgOrigin: "0 0" });
+        tl.fromTo(ct, { opacity: 1, scale: 0.4 }, { scale: 1.5, duration: 0.18, ease: "power2.out", immediateRender: false }, tLight);
+        tl.to(ct, { opacity: 0, duration: 0.12 }, tLight + 0.16);
+        var fl = $("spark-flick"), sm = $("spark-smoke"), flare = $("spark-flare");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        gsap.set(flare, { svgOrigin: "0 0" });
+        tl.fromTo(flare, { scale: 2.2 }, { scale: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, tLight);
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.max(1, Math.floor((D - tLight) / 0.09) - 1), yoyo: true, ease: "sine.inOut" }, tLight);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.max(1, Math.floor((D - tLight) / 0.4) - 1), yoyo: true, ease: "sine.inOut" }, tLight);
+        // he leans back, pleased, and ducks back down out of sight
+        tl.to(lean, { rotation: 6, duration: 0.14, ease: "power2.out" }, tLight + 0.08);
+        tl.to(pop, { y: below, duration: 0.26, ease: "power2.in" }, tLight + 0.34);
+
+        // after "Countdown.": the lit Earth hops into the top-left corner (whoosh) and lands on the corner fuse.
+        var dur = tLand - tGo;
+        tl.to(fz, { x: 0, y: 0, scale: 1, duration: dur, ease: "power2.inOut" }, tGo);
+        tl.fromTo(hop, { y: 0 }, { y: -L.hop, duration: dur * 0.45, ease: "power2.out", immediateRender: false }, tGo);
+        tl.to(hop, { y: 0, duration: dur * 0.55, ease: "power2.in" }, tGo + dur * 0.45);
+      },
+    });
+  </script>
+</template>

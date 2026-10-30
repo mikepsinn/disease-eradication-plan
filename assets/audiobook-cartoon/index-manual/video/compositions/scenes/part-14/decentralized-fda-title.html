@@ -1,0 +1,125 @@
+<template id="decentralized-fda-title-template">
+  <!-- decentralized-fda-title · Layer A title card (storyboards/part-14-decentralized-fda.md), built by KIT.titleScene
+       (assets/js/props/title.js). "Your" → YOUR slams in; "decentralized" → DECENTRALIZED slides in beside it; "F.D.A." →
+       FDA stamps down under them. 0.8 s into "F.D.A." the FDA cracks into a dozen little FDAs that hop off to every
+       corner and edge of the card and sit there (four pops); 1.6 s in, a big rubber stamp thumps the empty middle (the
+       stamp sound), squashes and lifts away, leaving no mark: nothing left to approve. The alignment stretches "F.D.A."
+       to the end of the scene, so the gag is timed from the word's start. No Wishonia; cut in, cut out to the office. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="decentralized-fda-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.38">
+    <div id="decentralized-fda-title-cam">
+      <div id="decentralized-fda-title-bg"></div>
+      <div id="decentralized-fda-title-sun"></div>
+      <div id="decentralized-fda-title-back"></div>
+      <div id="decentralized-fda-title-words"></div>
+      <div id="decentralized-fda-title-art"></div>
+    </div>
+    <div id="decentralized-fda-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "decentralized-fda-title",
+      lines: [["YOUR", "DECENTRALIZED"], ["FDA"]],
+      linesTall: [["YOUR"], ["DECENTRALIZED"], ["FDA"]],
+      spoken: ["Your", { cue: "decentralized", how: "slide" }, { show: "FDA", cue: "F.D.A.", how: "stamp" }],
+      gag: function (c) {
+        var tl = c.tl, C = c.C, V = c.V, W = c.W, ink = C.line;
+        var fda = c.word("FDA"), b = fda.box, cx = b.x + b.w / 2, cy = b.y + b.h / 2, base = b.y + b.h;
+        var tF = c.cue("F.D.A."), tCrack = tF + 0.6, tBurst = tF + 0.8, tStamp = tF + 1.6;
+        var NS = "http://www.w3.org/2000/svg";
+
+        // The little FDAs: a slot on every corner and edge of the card (the center of each word), jittered by KIT.rng.
+        var fs = V ? 50 : 56;
+        var slots = V
+          ? [[150, 150], [930, 150], [540, 120], [150, 320], [930, 320], [130, 880], [950, 860], [150, 1330], [930, 1330], [540, 1400], [300, 1250], [780, 1250]]
+          : [[160, 110], [1760, 110], [560, 92], [1360, 92], [960, 70], [140, 470], [1780, 470], [170, 840], [1750, 840], [560, 860], [1360, 860], [960, 880]];
+        var rnd = KIT.rng(1677);
+        var minis = slots.map(function (s, k) {
+          var jx = (rnd() - 0.5) * 50, jy = (rnd() - 0.5) * 34, tilt = (rnd() - 0.5) * 30;
+          // each starts on a piece of the big word (spread across its letters)
+          var sx = b.x + b.w * (0.15 + 0.7 * ((k * 5) % 12) / 11), sy = cy + (rnd() - 0.5) * b.h * 0.5;
+          return { to: [s[0] + jx, s[1] + jy], from: [sx, sy], tilt: tilt, k: k };
+        });
+        function word(x, y, size) {
+          var a = 'x="0" y="' + (size * 0.35).toFixed(1) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + size + '"';
+          return '<text ' + a + ' transform="translate(' + (size * 0.05).toFixed(1) + "," + (size * 0.07).toFixed(1) + ')" fill="' + C.ink + '" stroke="' + C.ink + '" stroke-width="' + (size * 0.09).toFixed(1) + '" stroke-linejoin="round">FDA</text>' +
+            '<text ' + a + ' fill="' + C.cream + '" stroke="' + ink + '" stroke-width="' + (size * 0.09).toFixed(1) + '" stroke-linejoin="round" paint-order="stroke">FDA</text>';
+        }
+        // The crack across the big word, and a puff where it bursts.
+        var crack = "M" + (b.x - 6) + "," + (cy - 6) + " L" + (b.x + b.w * 0.18) + "," + (cy + 10) + " L" + (b.x + b.w * 0.3) + "," + (cy - 16) +
+          " L" + (b.x + b.w * 0.46) + "," + (cy + 14) + " L" + (b.x + b.w * 0.6) + "," + (cy - 10) + " L" + (b.x + b.w * 0.76) + "," + (cy + 12) + " L" + (b.x + b.w + 6) + "," + (cy - 4) +
+          " M" + (b.x + b.w * 0.3) + "," + (cy - 16) + " L" + (b.x + b.w * 0.34) + "," + (b.y - 4) + " M" + (b.x + b.w * 0.6) + "," + (cy - 10) + " L" + (b.x + b.w * 0.55) + "," + (base + 4) +
+          " M" + (b.x + b.w * 0.76) + "," + (cy + 12) + " L" + (b.x + b.w * 0.86) + "," + (base + 6);
+        var puff = [[-60, 6, 34], [58, 10, 30], [0, -18, 42], [-24, 24, 26], [30, 26, 24]].map(function (p) {
+          return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="8"/>';
+        }).join("") + [[-60, 6, 34], [58, 10, 30], [0, -18, 42], [-24, 24, 26], [30, 26, 24]].map(function (p) {
+          return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '" fill="' + C.cream + '"/>';
+        }).join("");
+        // The big stamp (KIT.props.stamp), its rubber face on the word's baseline; dust puffs at its feet.
+        var sk = V ? 2.5 : 2.8;
+        var dust = [-1, 1].map(function (sd) {
+          return '<g transform="translate(' + (cx + sd * (52 * sk)).toFixed(1) + "," + base.toFixed(1) + ')"><g class="dft-dust" data-sd="' + sd + '" opacity="0">' +
+            [[0, 0, 20], [sd * 22, 6, 14], [-sd * 6, -14, 13]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3.5"/>'; }).join("") + "</g></g>";
+        }).join("");
+        var svg = KIT.svg(c.W, c.H,
+          '<path id="decentralized-fda-title-crack" d="' + crack + '" fill="none" stroke="' + C.ink + '" stroke-width="7" stroke-linejoin="miter" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>' +
+          '<g transform="translate(' + cx.toFixed(1) + "," + cy.toFixed(1) + ')"><g id="decentralized-fda-title-puff" opacity="0">' + puff + "</g></g>" +
+          minis.map(function (m) {
+            return '<g transform="translate(' + m.from[0].toFixed(1) + "," + m.from[1].toFixed(1) + ')"><g id="decentralized-fda-title-m' + m.k + '" opacity="0">' + word(0, 0, fs) + "</g></g>";
+          }).join("") + dust +
+          '<g transform="translate(' + cx.toFixed(1) + "," + base.toFixed(1) + ") scale(" + sk + ')"><g id="decentralized-fda-title-stamp">' + KIT.props.stamp({ text: "APPROVED" }) + "</g></g>",
+          'style="position:absolute;inset:0;overflow:visible"');
+        c.art.innerHTML = svg;
+        var q = function (s) { return document.getElementById("decentralized-fda-title-" + s); };
+
+        // 0.6 s into "F.D.A.": the word cracks; 0.8 s in, it is gone in a puff and twelve little FDAs hop off to the
+        // edges in four waves of three (the four pops), each landing with a squash.
+        tl.fromTo(q("crack"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.16, ease: "power2.out" }, tCrack);
+        tl.fromTo(fda.el, { x: 0 }, { x: 5, duration: 0.03, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, tCrack);
+        tl.set(fda.el, { opacity: 0 }, tBurst);
+        tl.set(q("crack"), { opacity: 0 }, tBurst);
+        gsap.set(q("puff"), { svgOrigin: "0 0" });
+        tl.fromTo(q("puff"), { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.1, ease: "power2.out" }, tBurst);
+        tl.to(q("puff"), { opacity: 0, scale: 1.5, duration: 0.3, ease: "power1.in" }, tBurst + 0.12);
+        minis.forEach(function (m) {
+          var el = q("m" + m.k), t0 = tBurst + 0.1 * Math.floor(m.k / 3), fly = 0.42;
+          var dx = m.to[0] - m.from[0], dy = m.to[1] - m.from[1], peak = Math.min(dy, 0) - (V ? 160 : 130);
+          gsap.set(el, { svgOrigin: "0 " + (fs * 0.35).toFixed(1) });
+          tl.set(el, { opacity: 1 }, t0);
+          tl.fromTo(el, { x: 0 }, { x: dx, duration: fly, ease: "power1.out" }, t0);
+          tl.fromTo(el, { y: 0 }, { keyframes: [{ y: peak, duration: fly * 0.45, ease: "power2.out" }, { y: dy, duration: fly * 0.55, ease: "power2.in" }] }, t0);
+          tl.fromTo(el, { rotation: 0, scale: 1.7 }, { rotation: m.tilt + (m.k % 2 ? 360 : -360), scale: 1, duration: fly, ease: "power1.out" }, t0);
+          tl.fromTo(el, { scaleY: 1 }, { scaleY: 0.7, scaleX: 1.15, duration: 0.06, repeat: 1, yoyo: true, ease: "power1.out", immediateRender: false }, t0 + fly);
+          // the stamp's thump makes every little FDA jump
+          tl.fromTo(el, { y: dy }, { y: dy - 22, duration: 0.09, repeat: 1, yoyo: true, ease: "power2.out", immediateRender: false }, tStamp + 0.02 + (m.k % 4) * 0.015);
+        });
+
+        // 1.6 s into "F.D.A.": the stamp slams the empty middle (the stamp), squashes, kicks up dust, shakes the card,
+        // and lifts away. No mark.
+        var st = q("stamp"), head = st.querySelector(".stamp-head");
+        gsap.set(head, { svgOrigin: "0 0" });
+        tl.fromTo(st, { y: -(base + 120 * sk) / sk, opacity: 1 }, { y: 0, duration: 0.15, ease: "power4.in" }, tStamp - 0.15);
+        tl.fromTo(head, { scaleY: 1, scaleX: 1 }, { scaleY: 0.8, scaleX: 1.12, duration: 0.06, repeat: 1, yoyo: true, ease: "power1.out", immediateRender: false }, tStamp);
+        tl.fromTo(c.cam, { y: 0 }, { y: 9, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, tStamp);
+        c.art.querySelectorAll(".dft-dust").forEach(function (d) {
+          var sd = +d.getAttribute("data-sd");
+          gsap.set(d, { svgOrigin: "0 0" });
+          tl.fromTo(d, { opacity: 0, scale: 0.3, x: 0 }, { opacity: 1, scale: 1, x: sd * 40, duration: 0.14, ease: "power2.out" }, tStamp);
+          tl.to(d, { opacity: 0, x: sd * 90, y: -20, duration: 0.25, ease: "power1.in" }, tStamp + 0.16);
+        });
+        tl.to(st, { y: -(base + 160 * sk) / sk, duration: c.D - tStamp - 0.3, ease: "power2.in" }, tStamp + 0.24);
+      },
+    });
+  </script>
+</template>

@@ -1,0 +1,100 @@
+<template id="fda-unsafe-and-ineffective-title-template">
+  <!-- fda-unsafe-and-ineffective-title · Layer A title card (storyboards/part-12-fda-unsafe-and-ineffective.md), built
+       by KIT.titleScene (assets/js/props/title.js). "F.D.A." slams in THE FDA, "Unsafe" slams in IS UNSAFE, and AND
+       INEFFECTIVE drops in a beat late and lands crooked. A beat after "Ineffective." a giant rubber stamp comes down
+       on the card and lifts off, leaving a red APPROVED mark across all three lines: the agency approves. "The" is
+       outside the part's audio cut, so each line has its own cue. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="fda-unsafe-and-ineffective-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.6">
+    <div id="fda-unsafe-and-ineffective-title-cam">
+      <div id="fda-unsafe-and-ineffective-title-bg"></div>
+      <div id="fda-unsafe-and-ineffective-title-sun"></div>
+      <div id="fda-unsafe-and-ineffective-title-back"></div>
+      <div id="fda-unsafe-and-ineffective-title-words"></div>
+      <div id="fda-unsafe-and-ineffective-title-art"></div>
+    </div>
+    <div id="fda-unsafe-and-ineffective-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "fda-unsafe-and-ineffective-title";
+      // The third line drops in a beat late (offset 0.25 s, its own thunk) and lands crooked (the gag tilts it).
+      var last = { words: ["AND", "INEFFECTIVE"], cue: "Ineffective.", offset: 0.25, how: "drop" };
+      KIT.titleScene({
+        id: ID,
+        lines: [{ words: ["THE", "FDA"], cue: "F.D.A." }, { words: ["IS", "UNSAFE"], cue: "Unsafe" }, last],
+        // 9:16: INEFFECTIVE on a line of its own keeps the heading big; AND and INEFFECTIVE still drop as one.
+        linesTall: [{ words: ["THE", "FDA"], cue: "F.D.A." }, { words: ["IS", "UNSAFE"], cue: "Unsafe" },
+          { words: ["AND"], cue: "Ineffective.", offset: 0.25, how: "drop" }, { words: ["INEFFECTIVE"], cue: "Ineffective.", offset: 0.25, how: "drop" }],
+        spoken: [],
+        gag: function (c) {
+          var tl = c.tl, V = c.V, C = c.C, f = function (n) { return n.toFixed(1); };
+          var g = function (n) { return document.getElementById(ID + "-" + n); };
+
+          // ── The crooked landing: the dropped words tilt together about the middle of their block, as the line hits
+          // the floor (bounce.out first touches down at about 36% of its 0.55 s), and stay crooked. ──
+          var dropLines = V ? [2, 3] : [2];
+          var dropped = c.words.filter(function (w) { return dropLines.indexOf(w.line) >= 0; });
+          var bx0 = Math.min.apply(null, dropped.map(function (w) { return w.box.x; })), bx1 = Math.max.apply(null, dropped.map(function (w) { return w.box.x + w.box.w; }));
+          var by0 = Math.min.apply(null, dropped.map(function (w) { return w.box.y; })), by1 = Math.max.apply(null, dropped.map(function (w) { return w.box.y + w.box.h; }));
+          var piv = [(bx0 + bx1) / 2, (by0 + by1) / 2], tHit = dropped[0].t + 0.2, tilt = V ? 5 : 4.2;
+          dropped.forEach(function (w) {
+            var left = parseFloat(w.el.style.left), top = parseFloat(w.el.style.top);
+            gsap.set(w.el, { transformOrigin: f(piv[0] - left) + "px " + f(piv[1] - top) + "px" });
+            tl.fromTo(w.el, { rotation: 0 }, { rotation: tilt, duration: 0.42, ease: "bounce.out", immediateRender: false }, tHit);
+          });
+
+          // ── APPROVED: a giant rubber stamp (its rubber as wide as the mark) comes down on the card a beat after
+          // "Ineffective." (the stamp sound), the card shakes, and the stamp lifts away off the top, leaving the red
+          // mark across all three lines. ──
+          var top = c.layout.top, bottom = c.layout.bottom, mid = [c.W / 2, (top + bottom) / 2 + (V ? 20 : 34)];
+          // A big font keeps the ink specks small; the mark is drawn twice, the copy under it with a navy outline on
+          // its letters, so APPROVED reads over the cream heading.
+          var fs = 100, markO = { text: "APPROVED", angle: -9, fontSize: fs };
+          var mw = 8 * fs * 0.58 + 40, mh = fs * 0.74 + 34, km = ((V ? 0.86 : 0.54) * (V ? 940 : 1600)) / mw;
+          // the mark's center sits at data-cy (its lowest corner on y 0)
+          var probe = document.createElement("div");
+          probe.innerHTML = KIT.svg(10, 10, KIT.props.stampMark(markO));
+          var mcy = parseFloat(probe.querySelector(".stamp-mark").getAttribute("data-cy"));
+          // the stamp: its rubber face (88 wide) as wide as the mark, tilted like it, standing on the mark's center
+          var ks = (mw * km) / 88, a = markO.angle, rad = (a * Math.PI) / 180;
+          var art =
+            '<g transform="translate(' + f(mid[0]) + "," + f(mid[1]) + ')"><g id="' + ID + '-mark" opacity="0">' +
+              '<g transform="scale(' + km.toFixed(3) + ") translate(0," + f(-mcy) + ')">' +
+              '<g stroke="' + C.ink + '" stroke-width="6" stroke-linejoin="round">' + KIT.props.stampMark(markO) + "</g>" + KIT.props.stampMark(markO) + "</g></g></g>" +
+            // the rubber's bottom edge on the mark's bottom edge, so the stamp covers it when down
+            '<g transform="translate(' + f(mid[0] - (Math.sin(rad) * mh * km) / 2) + "," + f(mid[1] + (Math.cos(rad) * mh * km) / 2) + ") rotate(" + a + ')"><g id="' + ID + '-stamp">' +
+              '<g transform="scale(' + ks.toFixed(3) + ')">' + KIT.props.stamp({ text: "APPROVED" }) + "</g></g></g>";
+          c.art.innerHTML = KIT.svg(c.W, c.H, art);
+
+          var mark = g("mark"), stamp = g("stamp"), tS = c.after("Ineffective."), up = -(mid[1] + 92 * ks + 80);
+          gsap.set(mark, { svgOrigin: "0 0" });
+          gsap.set(stamp, { svgOrigin: "0 0" });
+          // down from above the top edge (fast), squash on the card, then up and away
+          tl.fromTo(stamp, { y: up, scaleY: 1, scaleX: 1 }, { y: 0, duration: 0.11, ease: "power3.in" }, tS - 0.11);
+          tl.to(stamp, { scaleY: 0.86, scaleX: 1.05, duration: 0.05, ease: "power2.out" }, tS);
+          tl.to(stamp, { scaleY: 1, scaleX: 1, duration: 0.06, ease: "power2.in" }, tS + 0.05);
+          tl.to(stamp, { y: up, duration: 0.24, ease: "power2.in" }, tS + 0.13);
+          // the ink is under the stamp from the moment it lands
+          tl.set(mark, { opacity: 1 }, tS);
+          // the thump shakes the heading and the art (not the camera, so the wall's edges stay in frame)
+          [c.wordsEl, c.art].forEach(function (e) {
+            tl.fromTo(e, { x: 0 }, { x: V ? 9 : 12, duration: 0.035, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, tS);
+            tl.set(e, { x: 0 }, tS + 0.22);
+          });
+        },
+      });
+    })();
+  </script>
+</template>

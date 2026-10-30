@@ -1,0 +1,566 @@
+<template id="orderly-door-slot-template">
+  <!-- orderly-door-slot · Layer B (storyboards/part-04-institutionalize.md): out of the static, a padded cell. The patient
+       drops through a hatch in his straitjacket and bounces twice; the Orderly's eyes rise into the door window on his long
+       neck; the door slot clicks open and his arm slides a pill cup in, snaking across the whole floor to the patient's feet,
+       then zips back out. On "Nobody" one arm pops free; the patient swats the cup away, takes a fat pencil and bounces up
+       the padded wall to draw: a little human trips over a toolbox, the tools fly up and come down as a lopsided birdhouse,
+       BUILT BY ACCIDENT; then an aircraft carrier and a nuclear bomb, crossed out with one big red X; the little human
+       shrugs. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #orderly-door-slot-cam, #orderly-door-slot-view, #orderly-door-slot-art, #orderly-door-slot-static, #orderly-door-slot-pip, #orderly-door-slot-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="orderly-door-slot" data-width="1920" data-height="1080" data-start="0" data-duration="11.68">
+    <div id="orderly-door-slot-cam">
+      <!-- the camera: close on the door and the patient, pulling back on "Nobody" to show the whole padded wall -->
+      <div id="orderly-door-slot-view"><div id="orderly-door-slot-art"></div></div>
+      <!-- the TV static the wall screen ended on (diagnostic-criteria), for the first frames of the zoom -->
+      <div id="orderly-door-slot-static"></div>
+      <div id="orderly-door-slot-pip"></div>
+    </div>
+    <div id="orderly-door-slot-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "orderly-door-slot";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var P = function (s) { return ID + "-" + s; };
+      var g = function (s) { return "#" + P(s); };
+      var f = function (n) { return (+n).toFixed(1); };
+
+      // ════ THE PADDED CELL (the same code in orderly-door-slot, war-supply-chain and chain-goes-dark: change all three) ════
+      // s: the people's and the door's scale; feet: where the patient and the cup stand; wall: the wall/floor line (the door
+      // stands on it); door: the door's center x; hatch: [x, y, w] of the hatch in the top of the wall; doodle: [x, y, k] of
+      // the wall doodles (drawn in a 380 x 390 box); land: where the patient drops in; end: where orderly-door-slot leaves
+      // him; home: where he stands to draw the war wheel; arm: the Orderly's arm from the slot along the floor to the
+      // patient's feet. The war wheel (war-supply-chain, chain-goes-dark): hub, r (the rim's radius), gk (the gondolas'
+      // scale); cal: [x, base y, scale, which way its pages fly] of the wall calendar; sw: [x, y, scale, which way the
+      // patient faces to flick it, where his feet stand] of the light switch; hout: where the Orderly's head ends up on
+      // "largest" (door units from the window); cupTo: where the patient swats the pill cup to. The camera (shots are
+      // [art x, art y at the frame's top left, scale]): shotDoor, close on the door and the patient; shotDoodle, up on the
+      // wall doodles (orderly-door-slot ends on it, war-supply-chain starts on it; in 9:16 the whole wall, so he never
+      // stands in the captions); boxZ and boxAt: each gondola's close-up (its scale, and the frame point its middle goes to).
+      var L = V
+        ? { s: 1.9, feet: 1440, wall: 1402, door: 165, hatch: [560, 50, 160], doodle: [70, 100, 1.15], land: 650, end: 350, home: 380,
+            hub: [620, 760], r: 280, gk: 0.88, cal: [120, 720, 1.1, -1], sw: [545, 1292, 1.25, 1, 380], hout: [-10, -150], cupTo: 268,
+            shotDoor: [0, 568, 1.42], shotDoodle: [0, 0, 1], boxZ: 1.55, boxAt: [540, 900],
+            arm: "M165,1263 C190,1295 160,1360 210,1410 C262,1466 330,1392 395,1430 C460,1468 520,1404 590,1444" }
+        : { s: 2.5, feet: 880, wall: 842, door: 205, hatch: [900, 46, 160], doodle: [370, 50, 1.05], land: 985, end: 690, home: 740,
+            hub: [1225, 430], r: 290, gk: 1, cal: [1540, 215, 1.2, 1], sw: [515, 682, 1.3, -1, 620], hout: [130, 32], cupTo: 430,
+            shotDoor: [0, 249, 1.3], shotDoodle: [100, 44, 1.6], boxZ: 1.9, boxAt: [900, 500],
+            arm: "M205,659 C232,690 200,770 258,840 C330,920 420,836 520,872 C620,908 700,846 800,880 C850,898 890,890 935,890" };
+      var S = L.s, PAPER = C.paper, WHITE = "#FBF6E6", SKIN2 = "#A87B57";
+
+      function at(x, y, k, inner) { return '<g transform="translate(' + f(x) + "," + f(y) + ")" + (k === 1 ? "" : " scale(" + k + ")") + '">' + inner + "</g>"; }
+      // A person's (0,0) for feet on the ground at (x, y), at scale k.
+      function stand(x, y, k, inner) { return at(x, y - 100 * k, k, inner); }
+      // A drawing on the padded wall in pencil: every color but the navy line turns to paper (text and outlines stay navy).
+      function pencilify(m) {
+        var ink = C.line.toUpperCase(), ink2 = C.ink.toUpperCase();
+        return m.replace(/fill="url\([^)]*\)"/g, 'fill="none"').replace(/(fill|stroke)="(#[0-9A-Fa-f]{3,6})"/g, function (all, a, col) {
+          var u = col.toUpperCase();
+          if (u === ink || u === ink2) return all;
+          return a === "fill" ? 'fill="' + PAPER + '"' : 'stroke="' + C.line + '"';
+        }).replace(/<text([^>]*)fill="[^"]*"/g, '<text$1fill="' + C.line + '"');
+      }
+      // The quilted wall: cream diamond tufts (110 across) with halftone shading and navy buttons; the padded floor below
+      // with seams running to the camera; a padded skirting roll; the hatch; the paper border on top (drawn by frame()).
+      function cell() {
+        var T = V ? 104 : 110, h = T / 2, dots = P("qdots");
+        var defs = "<defs>" +
+          '<pattern id="' + dots + '" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="2.5" cy="2.5" r="1.15" fill="' + C.line + '"/></pattern>' +
+          '<pattern id="' + P("quilt") + '" width="' + T + '" height="' + T + '" patternUnits="userSpaceOnUse" x="' + (L.door % T) + '" y="0">' +
+          '<rect width="' + T + '" height="' + T + '" fill="' + C.cream + '"/>' +
+          '<path d="M' + h + "," + h + " L" + T + "," + h + " L" + h + "," + T + ' Z M0,0 L' + h + ",0 L0," + h + ' Z" fill="url(#' + dots + ')" opacity="0.2"/>' +
+          '<path d="M0,' + h + " L" + h + ",0 L" + T + "," + h + " L" + h + "," + T + ' Z" fill="none" stroke="' + C.line + '" stroke-width="1.8" opacity="0.5"/>' +
+          [[h, 0], [T, h], [h, T], [0, h]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="4.2" fill="' + C.line + '"/>'; }).join("") +
+          "</pattern></defs>";
+        var y0 = L.wall, floor = '<rect x="0" y="' + y0 + '" width="' + W + '" height="' + (H - y0) + '" fill="' + C.cream + '"/>' +
+          '<rect x="0" y="' + y0 + '" width="' + W + '" height="' + (H - y0) + '" fill="url(#' + dots + ')" opacity="0.16"/>';
+        var vx = W / 2, vy = y0 - (V ? 900 : 700), seams = "";
+        for (var i = -14; i <= 14; i++) {
+          var xb = vx + i * (V ? 190 : 230), xt = vx + (xb - vx) * ((y0 - vy) / (H + 400 - vy));
+          seams += "M" + f(xt) + "," + y0 + " L" + f(xb + (xb - vx) * 0.6) + "," + (H + 400) + " ";
+        }
+        for (var k = 1; k <= 5; k++) { var yy = y0 + (H - y0) * Math.pow(k / 5.5, 1.6); seams += "M0," + f(yy) + " H" + W + " "; }
+        floor += '<path d="' + seams + '" stroke="' + C.line + '" stroke-width="1.6" opacity="0.32" fill="none"/>';
+        // the skirting roll where the padded wall meets the padded floor
+        floor += '<rect x="0" y="' + (y0 - 14) + '" width="' + W + '" height="18" fill="' + WHITE + '" stroke="' + C.line + '" stroke-width="3"/>' +
+          '<rect x="0" y="' + (y0 - 4) + '" width="' + W + '" height="8" fill="url(#' + dots + ')" opacity="0.3"/>';
+        return defs + '<rect width="' + W + '" height="' + y0 + '" fill="url(#' + P("quilt") + ')"/>' + floor;
+      }
+      // The hatch in the top of the wall: a dark square chute with a steel flap hinged on its top edge (.flap: swing it up
+      // with scaleY about its top).
+      function hatch() {
+        var x = L.hatch[0], y = L.hatch[1], w = L.hatch[2], hh = w * 0.5;
+        return '<rect x="' + (x - 10) + '" y="' + y + '" width="' + (w + 20) + '" height="' + (hh + 12) + '" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="4"/>' +
+          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + hh + '" fill="' + C.deep + '"/>' +
+          '<g id="' + P("flap") + '"><rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + hh + '" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="3"/>' +
+          '<path d="M' + (x + 10) + "," + (y + hh * 0.35) + " H" + (x + w - 10) + " M" + (x + 10) + "," + (y + hh * 0.65) + " H" + (x + w - 10) + '" stroke="' + C.orange + '" stroke-width="2"/></g>';
+      }
+      // The paper border of every Layer B frame (KIT.paper's double rule), over the cell's edges.
+      function frame() {
+        return '<path d="M0,0 H' + W + " V" + H + " H0 Z M30,30 V" + (H - 30) + " H" + (W - 30) + ' V30 Z" fill="' + C.paper + '" fill-rule="evenodd"/>' +
+          '<rect x="30" y="30" width="' + (W - 60) + '" height="' + (H - 60) + '" fill="none" stroke="' + C.line + '" stroke-width="5"/>' +
+          '<rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>';
+      }
+      // The camera on the art's HTML wrapper. shotOn: the shot that puts the art point (x, y) at the frame point (fx, fy) at
+      // scale s, kept inside the art. camera(tl, view, first): starts on `first` and returns cam(t, dur, shot, ease), which
+      // eases from the last shot to the next.
+      function shotOn(x, y, s, fx, fy) {
+        return [Math.min(Math.max(x - fx / s, 0), W - W / s), Math.min(Math.max(y - fy / s, 0), H - H / s), s];
+      }
+      function camera(tl, view, first) {
+        var cur = first, css = function (s) { return { x: -s[0] * s[2], y: -s[1] * s[2], scale: s[2] }; };
+        gsap.set(view, { transformOrigin: "0px 0px" });
+        gsap.set(view, css(first));
+        return function (t, dur, shot, ease) {
+          var to = css(shot); to.duration = dur; to.ease = ease || "power2.inOut"; to.immediateRender = false;
+          tl.fromTo(view, css(cur), to, t);
+          cur = shot;
+        };
+      }
+
+      // The steel door (KIT.props.door, its leaf in steel, with the slot), and over its leaf the wired window the Orderly
+      // looks through: the dark corridor, his head on its long neck (#head-lift moves it up and down), the glass and its
+      // wire mesh (#glass). Door units: the doorway is x -48..48, y -202..0; the window is x -22..22, y -186..-122.
+      var WIN = [-28, -192, 56, 80], SLOT = [0, -73];
+      var OHO = KIT.castOpts("orderly", { look: "right" }), OHR = KIT.rig(OHO);
+      function headOf(o) { return KIT.person(o).match(/<g class="head">[\s\S]*?<!--head-end--><\/g>/)[0]; }
+      // the Orderly's head with its center at (0,0) and his neck running far down from it
+      function orderlyHead(o, neckLen) {
+        return '<path d="M-4,8 L-5,' + neckLen + " L5," + neckLen + ' L5,8 Z" fill="' + SKIN2 + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
+          '<g transform="translate(' + f(-OHR.head[0]) + "," + f(-OHR.head[1]) + ')">' + headOf(o) + "</g>";
+      }
+      function door() {
+        var d = KIT.props.door({ color: C.peri, slot: true });
+        var wx = WIN[0], wy = WIN[1], ww = WIN[2], wh = WIN[3], mesh = "";
+        for (var i = -4; i <= 8; i++) mesh += "M" + (wx + i * 11) + "," + wy + " l" + wh * 0.6 + "," + wh + " M" + (wx + ww - i * 11) + "," + wy + " l" + -wh * 0.6 + "," + wh + " ";
+        var win = '<g id="' + P("win") + '"><rect x="' + (wx - 5) + '" y="' + (wy - 5) + '" width="' + (ww + 10) + '" height="' + (wh + 10) + '" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="3"/>' +
+          '<defs><clipPath id="' + P("winclip") + '"><rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '"/></clipPath></defs>' +
+          '<rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '" fill="' + C.deep + '"/>' +
+          '<g clip-path="url(#' + P("winclip") + ')"><g transform="translate(0,' + (wy + wh) + ')"><g id="' + P("head-lift") + '"><g id="' + P("head-win") + '">' + orderlyHead(OHO, 160) + "</g></g></g></g>" +
+          '<g id="' + P("glass") + '"><rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '" fill="' + C.cyan + '" opacity="0.22"/>' +
+          '<g clip-path="url(#' + P("winclip") + ')"><path d="' + mesh + '" stroke="' + C.line + '" stroke-width="0.9" opacity="0.55" fill="none"/></g>' +
+          '<path d="M' + (wx + 6) + "," + (wy + wh - 10) + " L" + (wx + 16) + "," + (wy + 8) + '" stroke="#FFFFFF" stroke-width="3" opacity="0.6"/></g></g>';
+        // the slot's flap (over the prop's dark slit), hinged on its top edge
+        var flap = '<g id="' + P("slotflap") + '"><rect x="-21" y="-76" width="42" height="7" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="2"/></g>';
+        return { door: d, win: win, flap: flap };
+      }
+
+      // ── The patient (the same human all part long), in his straitjacket, drawn facing right (flip the whole group to face
+      // left). jacket: both arms crossed in the long canvas sleeves. free: the right arm out, holding a fat pencil (.pat-arm,
+      // pivot the shoulder), its empty sleeve hanging (.pat-sleeve, pivot the shoulder).
+      var PO = { tone: 1, outfit: "shirt", color: 3, look: "right" }, PR = KIT.rig(PO);
+      var ARMS_FREE = [[10, 100], [115, 140]], PRF = KIT.rig({ tone: 1, outfit: "shirt", color: 3, look: "right", arms: ARMS_FREE });
+      var SHR = PRF.shoulder[1], HAND = PRF.hand[1];
+      // the pencil: KIT.pencil (tip at 0,0, the eraser up and to the right) turned to point along the forearm, held 42% along
+      var PS = 0.42, PROT = 130 + 26.3, GRIP = [66, -33];
+      var TIP = (function () { var r = (PROT * Math.PI) / 180, x = -GRIP[0], y = -GRIP[1]; return [HAND[0] + PS * (x * Math.cos(r) - y * Math.sin(r)), HAND[1] + PS * (x * Math.sin(r) + y * Math.cos(r))]; })();
+      function strip(m) { return m.replace(/<g class="arm-l">[\s\S]*?<\/g><\/g>/, "").replace(/<g class="arm-r">[\s\S]*?<\/g><\/g>/, ""); }
+      function poly(pts, fill, sw) { return '<path d="M' + pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L") + ' Z" fill="' + fill + '" stroke="' + C.line + '" stroke-width="' + (sw || 2.6) + '" stroke-linejoin="miter"/>'; }
+      var JD = P("jdots");
+      function jacketBody() {
+        var body = [[-24, -25.5], [-19, -30], [-6, -31], [0, -23], [6, -31], [19, -30], [24, -25.5], [19, 4], [16.5, 30], [-16.5, 30], [-19, 4]];
+        return '<defs><pattern id="' + JD + '" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="' + C.line + '"/></pattern>' +
+          '<clipPath id="' + P("jclip") + '"><path d="M' + body.map(function (p) { return p.join(","); }).join(" L") + ' Z"/></clipPath></defs>' +
+          poly(body, WHITE, 3) + '<rect x="8" y="-32" width="20" height="64" fill="url(#' + JD + ')" opacity="0.3" clip-path="url(#' + P("jclip") + ')"/>' +
+          '<path d="M-6,-31 L0,-23 L6,-31" fill="none" stroke="' + C.line + '" stroke-width="2"/>';
+      }
+      // one crossed sleeve: down the left side from the shoulder, then across the chest, its end strapped round the back
+      var SLEEVE = [[-24.5, -27], [-11, -25], [-12.5, -9], [23, -14], [31, -10], [31, -1], [-19, 6], [-27, 2]];
+      function sleeveL() { return poly(SLEEVE, WHITE, 2.8) + '<path d="M28,-12 L33,-11 L33,-1 L28,-1" fill="' + C.line + '"/>' + '<rect x="-27" y="-6" width="9" height="3" fill="' + C.line + '"/>'; }
+      function sleeveR() { return poly(SLEEVE.map(function (p) { return [-p[0], p[1] + 8]; }), WHITE, 2.8) + '<path d="M-28,-4 L-33,-3 L-33,7 L-28,7" fill="' + C.line + '"/>'; }
+      function straps() {
+        return [-15, 15].map(function (y) {
+          return '<rect x="-23" y="' + (y - 2.5) + '" width="46" height="5" fill="' + C.line + '"/><rect x="7" y="' + (y - 4) + '" width="7" height="8" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1.6"/>';
+        }).join("");
+      }
+      // the empty right sleeve, hanging long from the shoulder, its strap and buckle dangling
+      var EMPTY = [[10.5, -27], [24.5, -28], [26.5, 2], [25, 34], [17, 46], [12.5, 40], [13.5, 4]];
+      function emptySleeve() {
+        return '<g class="pat-sleeve">' + poly(EMPTY, WHITE, 2.8) + '<path d="M14,40 L12,58" stroke="' + C.line + '" stroke-width="3.5"/><rect x="9" y="55" width="6" height="7" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1.4"/></g>';
+      }
+      function pencilIn() {
+        return '<g class="pat-pencil" transform="translate(' + f(HAND[0]) + "," + f(HAND[1]) + ") rotate(" + PROT.toFixed(1) + ") scale(" + PS + ") translate(" + -GRIP[0] + "," + -GRIP[1] + ')">' + KIT.pencil() + "</g>";
+      }
+      function patient(kind, mood) {
+        var o = { tone: 1, outfit: "shirt", color: 3, look: "right", mood: mood || "flat" };
+        var base = strip(KIT.person(o));
+        // the base person ends with its arms and "</g></g>": put the jacket over the body, before the end
+        var end = base.lastIndexOf("</g></g>");
+        if (kind === "jacket") return base.slice(0, end) + jacketBody() + sleeveL() + sleeveR() + straps() + base.slice(end);
+        var arm = KIT.person({ tone: 1, outfit: "shirt", color: 3, look: "right", arms: ARMS_FREE }).match(/<g class="arm-r">[\s\S]*?<\/g><\/g>/)[0];
+        arm = arm.replace('<g class="arm-r">', '<g class="pat-arm">' + '<g class="pat-pencil-pop">').replace(/<\/g>$/, "</g>" + pencilIn() + "</g>");
+        return base.slice(0, end) + jacketBody() + sleeveL() + straps() + emptySleeve() + arm + base.slice(end);
+      }
+
+      // ── The doodles on the wall (orderly-door-slot draws them; war-supply-chain and chain-goes-dark show them finished) ──
+      // In a 380 x 390 box: the little human and the toolbox he trips over, the tools, the lopsided birdhouse they become,
+      // BUILT BY ACCIDENT, the aircraft carrier, the bomb and the big red X.
+      var DG = 205; // the doodles' ground line
+      var LH = { tone: 0, outfit: "shirt", color: 1, hair: 0, plain: true, look: "right" }, LK = 0.6;
+      function littleHuman(extra) { var o = {}, k; for (k in LH) o[k] = LH[k]; for (k in extra || {}) o[k] = extra[k]; return pencilify(KIT.person(o)); }
+      function toolbox() {
+        return poly([[62, DG - 30], [128, DG - 30], [128, DG], [62, DG]], PAPER, 3) + '<path d="M62,' + (DG - 18) + " H128 M85," + (DG - 30) + " V" + (DG - 40) + " H105 V" + (DG - 30) + '" fill="none" stroke="' + C.line + '" stroke-width="3"/>';
+      }
+      var TOOLS = [
+        // hammer, saw, wrench, three planks, nails: [drawing, x, y (start, in the box), fly-to dx, dy, spin]
+        ['<path d="M-3,-22 V20" stroke="' + C.line + '" stroke-width="4"/>' + poly([[-12, -28], [12, -28], [12, -18], [-12, -18]], PAPER, 2.6), 78, DG - 40, -40, -110, 300],
+        [poly([[-26, -6], [20, -10], [22, 2], [-26, 6]], PAPER, 2.4) + '<path d="M-24,6 l3,4 l3,-4 l3,4 l3,-4 l3,4 l3,-4 l3,4 l3,-4 l3,4 l3,-4 l3,4 l3,-4 l3,4 l3,-4" fill="none" stroke="' + C.line + '" stroke-width="1.4"/>', 112, DG - 42, 60, -130, -260],
+        ['<path d="M-18,0 H14" stroke="' + C.line + '" stroke-width="4"/><path d="M14,-6 l8,0 l4,6 l-4,6 l-8,0" fill="none" stroke="' + C.line + '" stroke-width="3"/>', 96, DG - 36, 10, -150, 400],
+        [poly([[-30, -4], [30, -4], [30, 4], [-30, 4]], PAPER, 2.4), 95, DG - 30, -80, -90, 200],
+        [poly([[-26, -4], [26, -4], [26, 4], [-26, 4]], PAPER, 2.4), 95, DG - 30, 90, -80, -220],
+        [poly([[-22, -4], [22, -4], [22, 4], [-22, 4]], PAPER, 2.4), 95, DG - 30, -10, -170, 160],
+        ['<path d="M-6,-6 V6 M0,-8 V6 M6,-6 V6 M-9,-6 H-3 M-3,-8 H3 M3,-6 H9" stroke="' + C.line + '" stroke-width="2"/>', 100, DG - 34, 40, -70, 120],
+      ];
+      // The birdhouse, standing on the ground line at x 100: a post, a lopsided box, a crooked roof, the hole and a perch,
+      // one nail sticking out. Three pieces (post, box, roof) that bang into place.
+      var BH = [
+        '<path d="M97,' + (DG - 52) + " L96," + DG + " M104," + (DG - 52) + " L105," + DG + '" stroke="' + C.line + '" stroke-width="3"/><path d="M80,' + DG + ' H122" stroke="' + C.line + '" stroke-width="3"/>',
+        poly([[58, DG - 52], [142, DG - 46], [139, DG - 112], [61, DG - 116]], PAPER, 3) + '<circle cx="100" cy="' + (DG - 84) + '" r="13" fill="' + C.line + '"/>' +
+          '<path d="M100,' + (DG - 62) + " l28,3 M62," + (DG - 70) + " l76,4 M61," + (DG - 96) + ' l78,3" stroke="' + C.line + '" stroke-width="1.6" opacity="0.6"/><path d="M138,' + (DG - 100) + ' l14,-6" stroke="' + C.line + '" stroke-width="2.4"/>',
+        poly([[48, DG - 108], [104, DG - 160], [154, DG - 104], [142, DG - 100], [104, DG - 142], [60, DG - 104]], PAPER, 3),
+      ];
+      function carrier() {
+        return poly([[18, 312], [262, 312], [244, 348], [44, 348]], PAPER, 3) + poly([[6, 300], [270, 300], [262, 312], [18, 312]], PAPER, 3) +
+          poly([[196, 300], [196, 262], [222, 262], [226, 278], [214, 278], [214, 300]], PAPER, 3) + '<path d="M210,262 V246 M202,250 H218" stroke="' + C.line + '" stroke-width="2.4"/>' +
+          [[60, 296], [118, 296]].map(function (p) { return '<path d="M' + p[0] + "," + p[1] + " h30 m-16,-6 l-6,12 m16,-9 l6,6" + '" fill="none" stroke="' + C.line + '" stroke-width="2.4"/>'; }).join("") +
+          '<path d="M40,328 H230 M60,337 H220" stroke="' + C.line + '" stroke-width="1.4" opacity="0.5"/>' +
+          '<path d="M0,360 q14,-8 28,0 t28,0 t28,0 t28,0 t28,0 t28,0 t28,0 t28,0 t28,0 t28,0" fill="none" stroke="' + C.line + '" stroke-width="2"/>';
+      }
+
+      var dl = L.doodle;
+      var D_X = dl[0], D_Y = dl[1], D_K = dl[2];
+      // where a doodle point lands in the frame
+      function dpt(x, y) { return [D_X + D_K * x, D_Y + D_K * y]; }
+      var doodles = (function () {
+        var clip = function (id, x, y, w, h) { return '<clipPath id="' + P(id) + '"><rect id="' + P(id + "-r") + '" x="' + x + '" y="' + y + '" width="0" height="' + h + '" data-w="' + w + '"/></clipPath>'; };
+        var out = "<defs>" + clip("c-tb", -10, 100, 330, 120) + clip("c-txt", 0, 0, 380, 72) + clip("c-car", 0, 236, 240, 136) + clip("c-bomb", 238, 190, 150, 170) + "</defs>";
+        // the little human and the toolbox (drawn on "accidentally"): the human walks right, trips, sprawls, gets up
+        out += '<g clip-path="url(#' + P("c-tb") + ')"><path d="M-6,' + DG + ' H190" stroke="' + C.line + '" stroke-width="2.4"/><g id="' + P("tbox") + '">' + toolbox() + "</g>";
+        out += '<g id="' + P("lh-pos") + '"><g transform="translate(14,' + (DG - 100 * LK) + ") scale(" + LK + ')"><g id="' + P("lh") + '">' +
+          '<g id="' + P("lh-a") + '">' + littleHuman({ build: { legPose: [[-18, -18], [22, 10]] } }) + "</g>" +
+          '<g id="' + P("lh-b") + '" opacity="0">' + littleHuman({ build: { legPose: [[16, 6], [-14, -20]] } }) + "</g>" +
+          '<g id="' + P("lh-c") + '" opacity="0">' + littleHuman({ look: "left", arms: [[18, 8], [-18, -8]] }) + "</g>" +
+          '<g id="' + P("lh-d") + '" opacity="0">' + littleHuman({ look: "left", mood: "flat", arms: [[-24, -112], [24, 112]] }) + "</g>" +
+          "</g></g></g></g>";
+        // the flying tools
+        TOOLS.forEach(function (t, i) { out += '<g transform="translate(' + t[1] + "," + t[2] + ')"><g id="' + P("tool-" + i) + '" opacity="0">' + t[0] + "</g></g>"; });
+        // the birdhouse pieces and their bang marks
+        BH.forEach(function (b, i) { out += '<g id="' + P("bh-" + i) + '" opacity="0">' + b + "</g>"; });
+        [[60, DG - 130], [150, DG - 70], [70, DG - 40]].forEach(function (p, i) {
+          out += '<g transform="translate(' + p[0] + "," + p[1] + ')"><g id="' + P("bang-" + i) + '" opacity="0">' + KIT.star(0, 0, 16, C.line, 6) + KIT.star(0, 0, 8, PAPER, 6) + "</g></g>";
+        });
+        // BUILT BY ACCIDENT, hand lettered over it
+        out += '<g clip-path="url(#' + P("c-txt") + ')"><text x="12" y="52" transform="rotate(-3 160 40)" font-family="Oswald" font-weight="600" font-size="40" letter-spacing="1.5" fill="' + C.line + '">BUILT BY ACCIDENT</text>' +
+          '<path d="M14,62 Q160,52 300,58" fill="none" stroke="' + C.line + '" stroke-width="2.6"/></g>';
+        out += '<g clip-path="url(#' + P("c-car") + ')"><g transform="translate(0,54) scale(0.82)">' + carrier() + "</g></g>";
+        // the bomb, with a radiation sign on its ball so it reads as nuclear
+        var tre = "";
+        [-90, 30, 150].forEach(function (a) {
+          var pt = function (deg, r) { var t = (deg * Math.PI) / 180; return f(r * Math.cos(t)) + "," + f(r * Math.sin(t)); };
+          tre += "M" + pt(a - 30, 8) + " L" + pt(a - 30, 27) + " A27,27 0 0 1 " + pt(a + 30, 27) + " L" + pt(a + 30, 8) + " A8,8 0 0 0 " + pt(a - 30, 8) + " Z ";
+        });
+        tre = '<g transform="translate(-2,-40)"><path d="' + tre + '" fill="' + C.line + '"/><circle r="5" fill="' + C.line + '"/></g>';
+        out += '<g clip-path="url(#' + P("c-bomb") + ')">' + at(292, 352, 0.95, pencilify(KIT.props.bomb({})) + tre) + "</g>";
+        // the big red X (pathLength 1: draw it with the dash offset)
+        out += ['M-6,236 L384,380', 'M-6,380 L384,236'].map(function (d, i) {
+          return '<path id="' + P("x-" + i) + '" d="' + d + '" stroke="' + C.war + '" stroke-width="10" stroke-linecap="round" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+        }).join("");
+        return at(D_X, D_Y, D_K, out);
+      })();
+      // The doodles as orderly-door-slot leaves them (for the scenes that continue it): all drawn, the birdhouse built, the
+      // carrier and the bomb crossed out, the little human beside the birdhouse, shrugging.
+      function doodlesDone() {
+        var on = function (id, v) { document.getElementById(P(id)).setAttribute("opacity", v); };
+        ["c-tb", "c-txt", "c-car", "c-bomb"].forEach(function (c) { var r = document.getElementById(P(c + "-r")); r.setAttribute("width", r.getAttribute("data-w")); });
+        on("tbox", 0); on("lh-a", 0); on("lh-d", 1); BH.forEach(function (b, i) { on("bh-" + i, 1); });
+        document.getElementById(P("lh-pos")).setAttribute("transform", "translate(200,0)");
+        [0, 1].forEach(function (i) { document.getElementById(P("x-" + i)).setAttribute("stroke-dashoffset", 0); });
+      }
+      // ════ end of the shared cell code ════
+
+      // ── Assemble ──
+      var DR = door();
+      var doorAt = function (inner) { return at(L.door, L.wall, S, inner); };
+      var slotXY = [L.door + S * SLOT[0], L.wall + S * SLOT[1]];
+      // The Orderly's arm: a navy pass under a skin pass along L.arm, drawn on by its dash; elbows every so often; his hand
+      // and the paper cup ride its end (#hand); the cup stays behind (#cup).
+      var armPath = function (id, col, w) { return '<path id="' + P(id) + '" d="' + L.arm + '" fill="none" stroke="' + col + '" stroke-width="' + w + '" stroke-linecap="round" stroke-linejoin="round"/>'; };
+      var CUPK = S * 1.25;
+      function cupSvg() {
+        return '<g id="' + P("cup-body") + '">' + poly([[-15, -30], [15, -30], [11, 0], [-11, 0]], WHITE, 3) + '<path d="M-13,-21 H13 M-12,-12 H12" stroke="' + C.line + '" stroke-width="1.2" opacity="0.5"/></g>' +
+          '<g id="' + P("pill-r") + '"><rect x="-10" y="-38" width="12" height="7" rx="3.5" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="2"/></g>' +
+          '<g id="' + P("pill-t") + '"><rect x="0" y="-39" width="12" height="7" rx="3.5" fill="' + C.med + '" stroke="' + C.line + '" stroke-width="2"/></g>';
+      }
+      var handSvg = poly([[-9, -12], [6, -14], [14, -6], [12, 4], [-2, 6], [-9, 2]], SKIN2, 2.4) + '<path d="M2,-13 l4,-8 l4,2 l-2,8" fill="' + SKIN2 + '" stroke="' + C.line + '" stroke-width="2"/>';
+      var arm = '<g id="' + P("arm") + '" opacity="0">' + armPath("arm-ink", C.line, 26) + armPath("arm-skin", SKIN2, 18) +
+        '<g id="' + P("elbows") + '"></g></g>' +
+        '<g id="' + P("hand") + '" opacity="0"><g transform="scale(' + CUPK + ')">' + handSvg + "</g></g>";
+      var cupLayer = '<g id="' + P("cup-pos") + '" opacity="0"><g transform="scale(' + CUPK + ')"><g id="' + P("cup") + '">' + cupSvg() + "</g></g></g>";
+
+      // the patient: #pat-move (x, y in the frame), #pat-flip (face left or right), #pat-sq (squash and stretch, about his
+      // feet), the jacket and the free drawings; dizzy stars round his head
+      var stars = [0, 1, 2].map(function (i) { return '<g class="dz"><g transform="translate(' + f(28 * Math.cos(i * 2.094)) + "," + f(9 * Math.sin(i * 2.094)) + ')">' + KIT.star(0, 0, 9, i % 2 ? C.orange : C.yellow) + "</g></g>"; }).join("");
+      var pat = '<g id="' + P("pat-move") + '"><g transform="translate(' + L.land + "," + (L.feet - 100 * S) + ") scale(" + S + ')">' +
+        '<g id="' + P("pat-flip") + '"><g id="' + P("pat-sq") + '">' +
+        '<g id="' + P("pat-jacket") + '">' + patient("jacket", "worried") + "</g>" +
+        '<g id="' + P("pat-free") + '" opacity="0">' + patient("free", "flat") + "</g>" +
+        '<g transform="translate(' + f(PR.top[0]) + "," + f(PR.top[1] - 8) + ')"><g id="' + P("dizzy") + '" opacity="0">' + stars + "</g></g>" +
+        "</g></g></g></g>";
+      var patClip = '<defs><clipPath id="' + P("patclip") + '"><rect x="-200" y="' + (L.hatch[1] + 4) + '" width="' + (W + 400) + '" height="' + H + '"/></clipPath></defs>';
+      // a burst where the arm pops free
+      var burst = '<g id="' + P("burst-pos") + '"><g id="' + P("burst") + '" opacity="0">' + KIT.star(0, 0, 30, C.yellow, 6) + KIT.star(0, 0, 14, WHITE, 6) + "</g></g>";
+
+      // the wall calendar that war-supply-chain tears years off (already hanging here, still on 1947)
+      var cal = '<g transform="translate(' + L.cal[0] + "," + L.cal[1] + ") scale(" + L.cal[2] + ')">' + KIT.props.calendar({ month: "YEAR", day: 1947, pages: 1 }) + "</g>";
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + cell() + hatch() + doodles + doorAt(DR.door + DR.win + DR.flap) + cal +
+        cupLayer + arm + patClip + '<g clip-path="url(#' + P("patclip") + ')">' + pat + "</g>" + burst + frame());
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      // the static diagnostic-criteria ends on: its three frames of navy, slate and cream noise bars (the same seeds), drawn
+      // in the office's screen-hole units and mapped back through the zoom (the inverse of zoomView's mini), so the first
+      // frame is that scene's last, filling the whole screen hole in both shapes
+      (function () {
+        var zv = KIT.zoomView(KIT.OFFICE.screen), Sc = zv.screen, hole = [Sc[0] + 34, Sc[1] + 34, Sc[2] - 68, Sc[3] - 68];
+        var mx = zv.at[0] * (1 - zv.into), my = zv.at[1] * (1 - zv.into), out = "";
+        for (var k = 0; k < 3; k++) {
+          var rs = KIT.rng(847 + k * 31), bars = "", by = hole[1];
+          while (by < hole[1] + hole[3]) {
+            var bh = 3 + Math.floor(rs() * 11), cols = [C.navy, C.slate, C.cream, "#9AA3B5", C.deep, "#D8D2BC"];
+            bars += '<rect x="' + hole[0] + '" y="' + by + '" width="' + hole[2] + '" height="' + bh + '" fill="' + cols[Math.floor(rs() * cols.length)] + '"/>';
+            for (var d = 0; d < 3; d++) bars += '<rect x="' + f(hole[0] + rs() * hole[2]) + '" y="' + by + '" width="' + f(20 + rs() * 120) + '" height="' + bh + '" fill="' + cols[Math.floor(rs() * cols.length)] + '"/>';
+            by += bh;
+          }
+          out += '<g id="' + P("snow-" + k) + '" opacity="' + (k ? 0 : 1) + '">' + bars + "</g>";
+        }
+        q("static").innerHTML = KIT.svg(W, H, '<g transform="scale(' + zv.out.toFixed(5) + ") translate(" + (-mx).toFixed(2) + "," + (-my).toFixed(2) + ')">' +
+          '<defs><clipPath id="' + P("hole") + '"><rect x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + P("hole") + ')">' + out + "</g></g>", 'style="overflow:visible"');
+      })();
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "zoom into the wall screen", KIT.OFFICE.screen);
+      // diagnostic-criteria ends with its sun sunk below the horizon (the office pulled away from Earth): sink the sun of
+      // the office KIT.enter draws round the screen the same way (the floor, drawn after it, hides the lower part)
+      Array.prototype.forEach.call(q("cam").previousElementSibling.querySelectorAll("path"), function (p) {
+        if (/^M[-\d.]+,(610|1180) A/.test(p.getAttribute("d") || "")) p.setAttribute("transform", "translate(0," + (V ? 160 : 140) + ")");
+      });
+      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t); };
+      var hide = function (el, t) { tl.to(el, { opacity: 0, duration: 0.01 }, t); };
+      var el = function (s2) { return document.getElementById(P(s2)); };
+
+      // Pivots, set once while everything is untransformed.
+      gsap.set(g("flap"), { svgOrigin: L.hatch[0] + " " + L.hatch[1] });
+      gsap.set(g("slotflap"), { svgOrigin: "0 -76" });
+      gsap.set([g("pat-flip"), g("pat-sq")], { svgOrigin: "0 100" });
+      gsap.set(g("dizzy"), { svgOrigin: "0 0" });
+      gsap.set(document.querySelectorAll(g("pat-free") + " .pat-arm"), { svgOrigin: f(SHR[0]) + " " + f(SHR[1]) });
+      gsap.set(document.querySelectorAll(g("pat-free") + " .pat-pencil-pop"), { svgOrigin: f(HAND[0]) + " " + f(HAND[1]) });
+      gsap.set(g("lh"), { svgOrigin: "0 100" });
+      gsap.set(g("cup"), { svgOrigin: "0 0" });
+      TOOLS.forEach(function (t, i) { gsap.set(g("tool-" + i), { svgOrigin: "0 0" }); });
+      [0, 1, 2].forEach(function (i) { gsap.set(g("bang-" + i), { svgOrigin: "0 0" }); });
+      var sleeve = document.querySelector(g("pat-free") + " .pat-sleeve"), parm = document.querySelector(g("pat-free") + " .pat-arm"), ppop = document.querySelector(g("pat-free") + " .pat-pencil-pop");
+
+      // ── The static, then the cell (the zoom into the wall screen runs 0 to 0.6) ──
+      [0.06, 0.12, 0.18, 0.24].forEach(function (t, i) { tl.set(g("snow-" + (i % 3)), { opacity: 0 }, t); tl.set(g("snow-" + ((i + 1) % 3)), { opacity: 1 }, t); });
+      tl.set([g("snow-0"), g("snow-1"), g("snow-2")], { opacity: 0 }, 0.3);
+
+      // ── The patient: moves in the frame (px from where he lands), facing left all scene ──
+      var cur = { x: 0, y: 0 };
+      function moveTo(t, dur, x, y, ease) { tl.fromTo(g("pat-move"), { x: cur.x, y: cur.y }, { x: x, y: y, duration: dur, ease: ease || "power2.inOut", immediateRender: false }, t); cur = { x: x, y: y }; }
+      function squash(t, k) { tl.fromTo(g("pat-sq"), { scaleX: 1, scaleY: 1 }, { scaleX: 1 + 0.25 * k, scaleY: 1 - 0.3 * k, duration: 0.06, ease: "power2.out", immediateRender: false }, t).to(g("pat-sq"), { scaleX: 1, scaleY: 1, duration: 0.22, ease: "back.out(3)" }, t + 0.06); }
+      function stretch(t) { tl.fromTo(g("pat-sq"), { scaleX: 1, scaleY: 1 }, { scaleX: 0.86, scaleY: 1.16, duration: 0.08, ease: "power2.out", immediateRender: false }, t).to(g("pat-sq"), { scaleX: 1, scaleY: 1, duration: 0.18, ease: "power2.out" }, t + 0.08); }
+      tl.set(g("pat-flip"), { scaleX: -1 }, 0);
+      // where the feet go so the pencil tip (facing left) lands on a doodle point
+      function feetFor(px, py) { return { x: px + S * TIP[0] - L.land, y: py - S * (TIP[1] - 100) - L.feet }; }
+
+      // "Anyway," the hatch opens and he drops in, bounces twice (the boings, +0.75 and +1.05) and lands dizzy.
+      var tA = cue("Anyway,"), land1 = tA + 0.75, land2 = tA + 1.05;
+      tl.fromTo(g("flap"), { scaleY: 1 }, { scaleY: -0.25, duration: 0.12, ease: "power2.out" }, tA + 0.3);
+      cur = { x: 0, y: L.hatch[1] - L.feet - 30 };
+      tl.set(g("pat-move"), { x: 0, y: cur.y }, 0);
+      moveTo(tA + 0.4, land1 - tA - 0.4, 0, 0, "power2.in");
+      squash(land1, 1);
+      moveTo(land1 + 0.06, 0.12, 0, -110, "power2.out");
+      moveTo(land1 + 0.18, land2 - land1 - 0.18, 0, 0, "power2.in");
+      squash(land2, 0.7);
+      tl.to(g("flap"), { scaleY: 1, duration: 0.2, ease: "bounce.out" }, tA + 1.3);
+      // dizzy stars circling his head, then gone
+      tl.fromTo(g("dizzy"), { opacity: 0 }, { opacity: 1, duration: 0.1 }, land2 + 0.05);
+      tl.fromTo(g("dizzy"), { rotation: 0 }, { rotation: 720, duration: 1.5, ease: "none" }, land2 + 0.05);
+      tl.to(g("dizzy"), { opacity: 0, duration: 0.2 }, land2 + 1.35);
+      tl.fromTo(g("pat-jacket"), { rotation: 0, svgOrigin: "0 100" }, { rotation: -4, svgOrigin: "0 100", duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, land2 + 0.2);
+
+      // "orderly": his eyes rise into the window; then the long neck lifts his whole head (the squeak).
+      var tO = cue("orderly");
+      tl.fromTo(g("head-lift"), { y: 30 }, { y: -2, duration: 0.18, ease: "power2.out" }, tO - 0.25);
+      tl.to(g("head-lift"), { y: -34, duration: 0.32, ease: "back.out(1.6)" }, tO);
+
+      // "slides": the slot flap clicks open and the arm comes through, snaking across the floor; on "medication" the cup
+      // stops at his feet (the pills rattle); a beat after, the arm zips back out (the whistle) and the flap shuts.
+      var tS = cue("slides"), tM = cue("medication"), tBack = KIT.after(ID, "medication");
+      tl.fromTo(g("slotflap"), { scaleY: 1 }, { scaleY: -0.6, duration: 0.08 }, tS);
+      tl.to(g("slotflap"), { scaleY: 1, duration: 0.12, ease: "bounce.out" }, tBack + 0.3);
+      show(g("cup-pos"), tM);
+      [0, 1, 2].forEach(function (i) {
+        tl.fromTo(g("pill-r"), { y: 0 }, { y: -7, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, tM + i * 0.13);
+        tl.fromTo(g("pill-t"), { y: 0 }, { y: -9, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, tM + 0.05 + i * 0.13);
+      });
+      tl.fromTo(g("head-lift"), { y: -34 }, { y: -24, duration: 0.3, ease: "sine.inOut", immediateRender: false }, tM);
+
+      // The camera: wide on the padded cell for the drop; in on the door and the patient for "here's what you tell the
+      // orderly"; up to the wall on "Nobody" for the drawings (war-supply-chain starts on that shot).
+      var cam = camera(tl, q("view"), [0, 0, 1]);
+      cam(1.2, 0.8, L.shotDoor);
+      cam(cue("Nobody") - 0.1, 0.62, L.shotDoodle);
+
+      // "Nobody": the right arm pops free (a boing and a burst), swats the cup away and comes up holding a fat pencil.
+      var tN = cue("Nobody");
+      hide(g("pat-jacket"), tN); show(g("pat-free"), tN);
+      tl.set(g("pat-jacket"), { rotation: 0 }, tN);
+      tl.fromTo(g("burst-pos"), { x: L.land - S * SHR[0], y: L.feet - S * (100 - SHR[1]) }, { x: L.land - S * SHR[0], y: L.feet - S * (100 - SHR[1]), duration: 0.01 }, tN);
+      tl.fromTo(g("burst"), { opacity: 1, scale: 0.3, rotation: 0 }, { opacity: 0, scale: 1.6, rotation: 40, duration: 0.3, ease: "power2.out" }, tN);
+      tl.fromTo(parm, { rotation: -130 }, { rotation: -100, duration: 0.12, ease: "back.out(2)" }, tN);
+      tl.to(parm, { rotation: 75, duration: 0.1, ease: "power2.in" }, tN + 0.14);
+      tl.to(parm, { rotation: 0, duration: 0.26, ease: "back.out(1.6)" }, tN + 0.3);
+      tl.fromTo(ppop, { scale: 0, rotation: -200 }, { scale: 1, rotation: 0, duration: 0.25, ease: "back.out(2)" }, tN + 0.3);
+      tl.set(ppop, { scale: 0 }, 0);
+      // (the cup's units are CUPK px; it slides to L.cupTo, spinning onto its side)
+      var CUPX = (L.cupTo - +L.arm.match(/(-?[\d.]+),(-?[\d.]+)$/)[1]) / CUPK;
+      tl.fromTo(g("cup"), { x: 0, y: 0, rotation: 0 }, { x: CUPX, y: 4, rotation: -455, duration: 0.5, ease: "power3.out" }, tN + 0.22);
+      tl.fromTo(g("pill-r"), { x: 0, y: 0 }, { x: -60, y: 26, duration: 0.35, ease: "power2.out", immediateRender: false }, tN + 0.26);
+      tl.fromTo(g("pill-t"), { x: 0, y: 0 }, { x: -34, y: 30, duration: 0.4, ease: "power2.out", immediateRender: false }, tN + 0.28);
+      tl.fromTo(g("pat-free"), { y: 0 }, { y: -10, duration: 0.08, yoyo: true, repeat: 1 }, tN);
+
+      // The bounces up the padded wall to draw. Each: crouch, spring up (stretch), draw at the top, drop, squash.
+      // (an odd repeat count, so each scribble ends where it started)
+      function scribble(t, dur) { tl.fromTo(parm, { rotation: 0 }, { rotation: 7, duration: 0.07, yoyo: true, repeat: Math.max(1, 2 * Math.round(dur / 0.14) - 1), ease: "sine.inOut", immediateRender: false }, t); }
+      function wipe(id, t, dur) { var r = el(id + "-r"); tl.fromTo(r, { attr: { width: 0 } }, { attr: { width: +r.getAttribute("data-w") }, duration: dur, ease: "none" }, t); }
+      function orderlyLooks(t, y) { tl.to(g("head-lift"), { y: y, duration: 0.3, ease: "sine.inOut" }, t + 0.1); }
+      var tAcc = cue("accidentally"), tB = cue("builds"), tC = cue("carrier"), tBomb = cue("bomb."), tX = KIT.after(ID, "bomb.");
+      // 1: the little human and his toolbox
+      var a1 = dpt(36, 150), p1 = feetFor(a1[0], a1[1]);
+      squash(tAcc - 0.3, 0.5); stretch(tAcc - 0.22);
+      moveTo(tAcc - 0.22, 0.24, p1.x, p1.y, "power2.out");
+      orderlyLooks(tAcc - 0.3, -44);
+      wipe("c-tb", tAcc, 0.3); scribble(tAcc, 0.3);
+      // the drawing comes alive: he walks to the toolbox, trips (the clank: the tools fly up), sprawls, gets up
+      var walk0 = tAcc + 0.3, trip = tAcc + 0.6, clank = tAcc + 0.6;
+      tl.fromTo(g("lh-pos"), { x: 0 }, { x: 34, duration: trip - walk0, ease: "none" }, walk0);
+      [0, 1, 2].forEach(function (i) { tl.set(g("lh-a"), { opacity: i % 2 ? 1 : 0 }, walk0 + 0.1 + i * 0.1); tl.set(g("lh-b"), { opacity: i % 2 ? 0 : 1 }, walk0 + 0.1 + i * 0.1); });
+      tl.fromTo(g("lh"), { rotation: 0 }, { rotation: 90, duration: 0.25, ease: "power2.in" }, trip);
+      tl.to(g("lh-pos"), { x: 110, y: -40, duration: 0.18, ease: "power2.out" }, trip);
+      tl.to(g("lh-pos"), { x: 180, y: 0, duration: 0.2, ease: "power2.in" }, trip + 0.18);
+      tl.set(g("tbox"), { opacity: 0 }, clank);
+      TOOLS.forEach(function (t, i) {
+        show(g("tool-" + i), clank);
+        tl.fromTo(g("tool-" + i), { x: 0, y: 0, rotation: 0 }, { x: t[3], y: t[4], rotation: t[5], duration: 0.36, ease: "power2.out" }, clank);
+      });
+      // fall back down, then "builds": the tools bang together into the birdhouse (the hammering)
+      moveTo(tAcc + 0.4, 0.26, p1.x, 0, "power2.in");
+      squash(tAcc + 0.66, 0.6);
+      TOOLS.forEach(function (t, i) { tl.to(g("tool-" + i), { x: 100 - t[1] + (i - 3) * 4, y: DG - 80 - t[2], rotation: "+=" + (i % 2 ? 90 : -90), scale: 0.4, opacity: 0, duration: 0.2, ease: "power2.in" }, tB - 0.06 + i * 0.015); });
+      BH.forEach(function (b, i) {
+        tl.fromTo(g("bh-" + i), { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.08, ease: "power2.in" }, tB + i * 0.12);
+        tl.fromTo(g("bang-" + i), { opacity: 1, scale: 0.4 }, { opacity: 0, scale: 1.4, duration: 0.18 }, tB + 0.08 + i * 0.12);
+      });
+      // 2: BUILT BY ACCIDENT
+      var a2 = dpt(150, 40), p2 = feetFor(a2[0], a2[1]);
+      squash(tB - 0.28, 0.5); stretch(tB - 0.2);
+      moveTo(tB - 0.2, 0.24, p2.x, p2.y, "power2.out");
+      orderlyLooks(tB - 0.25, -48);
+      wipe("c-txt", tB + 0.05, 0.6); scribble(tB + 0.05, 0.6);
+      moveTo(tB + 0.7, 0.26, p2.x, 0, "power2.in");
+      squash(tB + 0.96, 0.6);
+      // the little human gets up, now looking at what he built
+      tl.to(g("lh"), { rotation: 0, duration: 0.2, ease: "back.out(2)" }, tB + 0.35);
+      tl.to(g("lh-pos"), { x: 200, duration: 0.2 }, tB + 0.35);
+      hide(g("lh-a"), tB + 0.45); hide(g("lh-b"), tB + 0.45); show(g("lh-c"), tB + 0.45);
+      // 3: the aircraft carrier (a small hop)
+      var a3 = dpt(70, 290), p3 = feetFor(a3[0], a3[1]);
+      squash(tC - 0.24, 0.4); stretch(tC - 0.16);
+      moveTo(tC - 0.16, 0.18, p3.x, p3.y, "power2.out");
+      orderlyLooks(tC - 0.2, -30);
+      wipe("c-car", tC, 0.5); scribble(tC, 0.5);
+      moveTo(tC, 0.5, p3.x + D_K * 170, p3.y, "none");
+      moveTo(tC + 0.55, 0.2, cur.x, 0, "power2.in");
+      squash(tC + 0.75, 0.5);
+      // 4: the bomb, drawn left to right with him just right of the line (he never hides what is drawn); then, from that
+      // side, the big red X across both in two quick slashes (down, then up); the little human shrugs
+      var a4 = dpt(250, 300), b4 = dpt(374, 300), p4 = feetFor(a4[0], a4[1]), q4 = feetFor(b4[0], b4[1]);
+      squash(tBomb - 0.3, 0.4); stretch(tBomb - 0.22);
+      moveTo(tBomb - 0.22, 0.2, p4.x, p4.y, "power2.out");
+      orderlyLooks(tBomb - 0.3, -32);
+      wipe("c-bomb", tBomb, 0.32); scribble(tBomb, 0.32);
+      moveTo(tBomb, 0.32, q4.x, q4.y, "none");
+      var a5 = dpt(398, 232), p5 = feetFor(a5[0], a5[1]), a6 = dpt(398, 384), p6 = feetFor(a6[0], a6[1]);
+      moveTo(tBomb + 0.4, tX - tBomb - 0.4, p5.x, p5.y, "power2.inOut");
+      tl.fromTo(g("x-0"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.12, ease: "power1.in" }, tX);
+      tl.fromTo(g("x-1"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.12, ease: "power1.in" }, tX + 0.14);
+      moveTo(tX, 0.12, p6.x, p6.y, "power1.in");
+      moveTo(tX + 0.14, 0.12, p5.x, p5.y, "power1.in");
+      orderlyLooks(tX, -28);
+      hide(g("lh-c"), tX + 0.3); show(g("lh-d"), tX + 0.3);
+      tl.fromTo(g("lh-pos"), { y: 0 }, { y: -6, duration: 0.07, yoyo: true, repeat: 1 }, tX + 0.3);
+      // then he drops straight down beside the drawings, drifting under them only near the floor, landing on the
+      // scene's last frames (a short squash that ends with the scene)
+      var endX = L.end - L.land, tDown = tX + 0.27, tLand = D - 0.1;
+      tl.fromTo(g("pat-move"), { y: cur.y }, { y: 0, duration: tLand - tDown, ease: "power2.in", immediateRender: false }, tDown);
+      tl.fromTo(g("pat-move"), { x: cur.x }, { x: endX, duration: tLand - tDown, ease: "power4.in", immediateRender: false }, tDown);
+      cur = { x: endX, y: 0 };
+      tl.fromTo(g("pat-sq"), { scaleX: 1, scaleY: 1 }, { scaleX: 1.14, scaleY: 0.86, duration: 0.04, ease: "power2.out", immediateRender: false }, tLand)
+        .to(g("pat-sq"), { scaleX: 1, scaleY: 1, duration: 0.06, ease: "power2.out" }, tLand + 0.04);
+
+      // ── Every frame: the Orderly's arm along the floor, his hand and the cup at its end, the empty sleeve flapping ──
+      var ink = el("arm-ink"), skin = el("arm-skin"), LEN = ink.getTotalLength(), hand = el("hand"), armG = el("arm");
+      var elbows = el("elbows"), EL = [];
+      for (var e = 0.18; e < 0.95; e += 0.2) {
+        var pe = ink.getPointAtLength(LEN * e), pe2 = ink.getPointAtLength(LEN * e + 4), ang = Math.atan2(pe2.y - pe.y, pe2.x - pe.x) * 180 / Math.PI;
+        elbows.insertAdjacentHTML("beforeend", '<g data-at="' + e + '" opacity="0" transform="translate(' + f(pe.x) + "," + f(pe.y) + ") rotate(" + f(ang) + ')"><path d="M-6,-6 L2,0 L-6,6" fill="none" stroke="' + C.line + '" stroke-width="3" stroke-linejoin="miter"/></g>');
+      }
+      EL = Array.prototype.slice.call(elbows.children);
+      var cupEnd = ink.getPointAtLength(LEN), cupPos = el("cup-pos");
+      cupPos.setAttribute("transform", "translate(" + f(cupEnd.x) + "," + f(cupEnd.y) + ")");
+      var tIn0 = tS + 0.06;
+      KIT.onTime(tl, D, function (t) {
+        var p = 0;
+        if (t >= tIn0 && t < tM) { var u = (t - tIn0) / (tM - tIn0); p = u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2; }
+        else if (t >= tM && t < tBack) p = 1;
+        else if (t >= tBack && t < tBack + 0.22) { var v = (t - tBack) / 0.22; p = 1 - v * v; }
+        armG.setAttribute("opacity", p > 0.002 ? 1 : 0);
+        hand.setAttribute("opacity", p > 0.002 && t < tM ? 1 : 0);
+        var dash = LEN + " " + LEN, off = f(LEN * (1 - p));
+        ink.setAttribute("stroke-dasharray", dash); ink.setAttribute("stroke-dashoffset", off);
+        skin.setAttribute("stroke-dasharray", dash); skin.setAttribute("stroke-dashoffset", off);
+        EL.forEach(function (n) { n.setAttribute("opacity", p > +n.getAttribute("data-at") + 0.02 ? 1 : 0); });
+        var pt = ink.getPointAtLength(LEN * Math.max(p, 0.001));
+        hand.setAttribute("transform", "translate(" + f(pt.x) + "," + f(pt.y) + ")");
+        // the cup rides in the hand until "medication" (it shows on its own from there)
+        if (t < tM) cupPos.setAttribute("transform", "translate(" + f(pt.x) + "," + f(pt.y - 4) + ")");
+        else cupPos.setAttribute("transform", "translate(" + f(cupEnd.x) + "," + f(cupEnd.y) + ")");
+        cupPos.setAttribute("opacity", t >= tIn0 + 0.05 ? 1 : 0);
+        // the empty sleeve flaps from "Nobody" on (part time, so war-supply-chain carries on the same flap)
+        var T = sc.start + t;
+        sleeve.setAttribute("transform", "rotate(" + f(t >= tN ? 9 * Math.sin(T * 9) + 4 : 0) + " 17.5 -26)");
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,420 @@
+<template id="thats-homework-template">
+  <!-- thats-homework · Layer B (storyboards/part-11-civilization-countdown.md). The world map: "nation", three cartoon
+       bombs whistle down onto it (slide-down); "bombed", they go off as three tiny mushroom clouds (pop, pop, pop);
+       "sanctioned", a giant rubber stamp thumps SANCTIONED across a country (stamp). "parasitizing": the map shrinks
+       onto a classroom wall, the flattened toy tank from war-through-wifi slides in on the floor and a laptop drops
+       beside it. "cheaper": a little HACK: $ tag flutters down onto the laptop, and the FIGHT: $$$$$ tag floats down on a
+       parachute over the tank; "conventionally.": the parachute gives, the tag drops like an anvil and squashes the tank
+       flatter (splat). "crime.": a CRIME card slides in, and a red marker crosses it out (marker). "homework.": a school
+       desk drops in (thunk) with the Kid in his tiny domino mask at it; the laptop hops onto the desk and he opens it,
+       next to a HOMEWORK worksheet. "built": the Politician, as the teacher, pops up on a soapbox at the chalkboard and
+       chalks FIGHT: $$$$$ / HACK: $. "did the math.": the Kid writes HACK < FIGHT (scratch). After "math.": the
+       Politician flicks a gold star onto the worksheet, grinning (sparkle), and the Kid beams. The fuse burns on.
+       The Kid (storyboard Cast options) is drawn at 0.7 of this scene's human scale: 1.26 in 16:9 and 1.08 in 9:16
+       (the Politician is 1.8 and 1.55); defund-the-loop brings him and his laptop back. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #thats-homework-cam, #thats-homework-bg, #thats-homework-art, #thats-homework-pip, #thats-homework-fuse, #thats-homework-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="thats-homework" data-width="1920" data-height="1080" data-start="0" data-duration="13.84">
+    <div id="thats-homework-cam">
+      <div id="thats-homework-bg"></div>
+      <div id="thats-homework-art"></div>
+      <div id="thats-homework-pip"></div>
+    </div>
+    <!-- the fuse burns in its own layer, above the camera (the slide does not move it) and under the grain -->
+    <div id="thats-homework-fuse"></div>
+    <div id="thats-homework-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "thats-homework";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function el(cx, cy, rx, ry) { return 'ellipse cx="' + n1(cx) + '" cy="' + n1(cy) + '" rx="' + n1(rx) + '" ry="' + n1(ry) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function text(x, y, size, t, fill, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + (fill || ink) + '"' + (extra ? " " + extra : "") + ">" + t + "</text>";
+      }
+      function reps(span, dur) { return Math.max(1, Math.floor(span / dur) - 1); }
+      // Two-link arm IK: the angles (deg, 0 = down, + toward +x) that put a hand of segment length len at target.
+      function ik(sh, target, len, bend) {
+        var dx = target[0] - sh[0], dy = target[1] - sh[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len - 0.5);
+        var base = (Math.atan2(dx, dy) * 180) / Math.PI, off = (Math.acos(d / (2 * len)) * 180) / Math.PI;
+        return [base + bend * off, base - bend * off];
+      }
+      // Put a prop in a person's hand (it then swings with the arm): the prop is drawn around (0,0) at the hand.
+      function inHand(svg, prop, o, side) {
+        var h = KIT.rig(o).handLocal[side], cls = side ? "arm-r" : "arm-l";
+        return svg.replace('<g class="' + cls + '">', '<g class="' + cls + '"><g transform="translate(' + n1(h[0]) + "," + n1(h[1]) + ')">' + prop + "</g>");
+      }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene (copied from war-through-wifi). ──
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ── TANK: copied from war-through-wifi (which defines it); this scene uses only the flat one. Change both. ──
+      // A toy tank facing right, drawn around (0,0) with its treads on y 0, in tank units: about 360 x 150.
+      // o.flat: flattened like a pancake: squashed to 18% height on the tread line (8% wider), the turret squeezed
+      //   forward, the barrel bent down to the ground, the hatch lid sprung up on a coil spring, and two eyes in the
+      //   hatch slot (the Weapons Maker, still in there). Parts (flat): .tank-eyes (blink them: scaleY 1 -> 0.1 about
+      //   data-cx, data-cy), .tank-lid-flat (wobble the sprung lid about data-cx, data-cy).
+      var TANK_FLAT_HATCH = [40, -24];
+      function tankFlat() {
+        var sx = 1.08, sy = 0.18, T = function (pts, dx) { return pts.map(function (p) { return [p[0] * sx + (dx || 0), p[1] * sy]; }); };
+        var tread = [[-178, -40], [-164, -52], [164, -52], [178, -40], [174, -10], [162, 0], [-162, 0], [-174, -10]];
+        var hull = [[-186, -50], [186, -50], [180, -62], [152, -90], [-154, -90], [-182, -64]];
+        var tur = [[-76, -90], [70, -90], [54, -126], [-62, -126]];
+        var out = S([pg(T(tread))], C.navy, 3.4);
+        [-125, -75, -25, 25, 75, 125].forEach(function (wx) { out += S([el(wx * sx, -4.5, 17, 3.2)], C.tan, 2.2); });
+        out += S([pg(T(hull))], C.slate, 3.4) + line("M-162,-15.8 H160", C.orange, 1.4);
+        var bd = "M80,-19 L170,-21 L204,-3 L238,-2";
+        out += line(bd, ink, 15) + line(bd, C.slate, 8.5) + S([pg([[234, -9], [258, -10], [260, 3], [234, 4]])], C.slate, 3);
+        out += S([pg(T(tur, 40))], C.slate, 3.4) + line("M-20,-22.4 H95", C.orange, 1.4);
+        var h = TANK_FLAT_HATCH, spring = "";
+        for (var i = 0; i < 6; i++) spring += (i ? " L" : "M") + pt(h[0] - 18 + (i % 2 ? 7 : -7) - i * 1.5, h[1] - 6 - i * 7);
+        out += '<g class="tank-lid-flat" data-cx="' + (h[0] - 18) + '" data-cy="' + (h[1] - 3) + '">' + line(spring, ink, 2.6) +
+          '<g transform="translate(' + pt(h[0] - 27, h[1] - 48) + ') rotate(-24)">' + S([pg([[-24, -5], [24, -5], [22, 4], [-22, 4]])], C.slate, 3) + line("M-20,-3 H20", C.orange, 1.4) + "</g></g>";
+        out += S([el(h[0], h[1], 26, 6)], C.ink, 3) +
+          '<g class="tank-eyes" data-cx="' + h[0] + '" data-cy="' + (h[1] - 5) + '">' + [-8, 8].map(function (dx) {
+            return S([el(h[0] + dx, h[1] - 5, 7, 8)], "#FFFFFF", 2) + F(ci(h[0] + dx - 1.5, h[1] - 7, 2.8), ink);
+          }).join("") + "</g>";
+        return out;
+      }
+
+      // ── Layout, per canvas shape ──────────────────────────────────────────────────────────────────
+      // Two panels on one long classroom wall: the first (the map, then the tank and the laptop) and, one frame to
+      // the right, the second (the chalkboard, the Politician, the desk); the camera pans across on "homework.".
+      // Panel 1: map: [center x, base y, width] of the big map, and wall: [center x, center y, scale] it shrinks to;
+      // floor: the floor line; tank: [x, scale]; lapFloor: the laptop's [x, size] on the floor; hack: the HACK tag's
+      // size (laptop units); fight: the FIGHT tag's size; chute: how high its parachute hangs before it gives;
+      // crime: the CRIME card's center. Panel 2 (in that panel's own screen px): board: [x0, y0, x1, y1, text size];
+      // box: the soapbox [x, height]; pol: the Politician's scale; desk: [center x, top y, width]; kid: x;
+      // lapDesk: the laptop's x on the desk; sheet: the worksheet's [center x, width, height].
+      var L = V
+        ? { map: [540, 1250, 940], wall: [295, 400, 0.46], floor: 1330, tank: [420, 1.3], lapFloor: [840, 2.2], hack: 0.55, fight: 2.6, chute: 240, crime: [760, 600],
+            board: [320, 620, 1010, 900, 52], box: [230, 300], pol: 2.0, desk: [720, 1190, 460], kid: 660, lapDesk: 560, sheet: [850, 170, 150] }
+        : { map: [860, 860, 1000], wall: [1300, 330, 0.5], floor: 860, tank: [600, 1.9], lapFloor: [1240, 3.0], hack: 0.75, fight: 3.2, chute: 210, crime: [900, 280],
+            board: [380, 230, 960, 530, 58], box: [330, 150], pol: 2.2, desk: [1180, 690, 480], kid: 1110, lapDesk: 1000, sheet: [1300, 210, 170] };
+      // panel 2 sits one frame to the right
+      L.board[0] += W; L.board[2] += W; L.box[0] += W; L.desk[0] += W; L.kid += W; L.lapDesk += W; L.sheet[0] += W;
+      var FL = L.floor, PS = L.pol, KS = 0.7 * PS;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The world map (the same framing as failed-states' first shot), its bombs and the sanction stamp ──
+      function mapGeo(w, mx, my) {
+        var h = Math.round(w * 0.62), m = Math.round(w * 0.055), iw = w - 2 * m, ih = h - 2 * m;
+        var ix = mx - w / 2 + m, iy = my - h - 9 + m;
+        return { h: h, at: function (p) { return [ix + (p[0] * iw) / 400, iy + (p[1] * ih) / 220]; } };
+      }
+      var MW = L.map[2], geo = mapGeo(MW, L.map[0], L.map[1]), mapCy = L.map[1] - 9 - geo.h / 2;
+      var BOMBS = [[226, 96], [266, 88], [302, 62]], SANCT = [330, 44];
+      var bombs = BOMBS.map(function (b, i) {
+        var p = geo.at(b);
+        return at(p[0], p[1], 1, g("bomb" + i, g("bomb" + i + "-in", KIT.props.bomb({ size: 0.9 })), 'opacity="0"') + at(0, 2, 0.13, g("cloud" + i, KIT.nuke())));
+      }).join("");
+      var sp = geo.at(SANCT);
+      var sanction = at(sp[0], sp[1] + 30, 1, g("smark", KIT.props.stampMark({ text: "SANCTIONED", size: V ? 1.05 : 1.15, angle: -7 }), 'opacity="0"')) +
+        at(sp[0], sp[1] + 30, 1, g("stamp", KIT.props.stamp({ text: "SANCTIONED", size: 2.6, color: C.war }), 'opacity="0"'));
+      var world = g("world", at(L.map[0], L.map[1], 1, KIT.props.worldMap({ w: MW })) + bombs + sanction);
+
+      // ── The classroom: a floor line, the chalkboard on the wall, a soapbox ──
+      var floor = g("floor", '<path d="M44,' + FL + " H" + (2 * W - 44) + '" stroke="' + ink + '" stroke-width="5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>');
+      var B = L.board, bw = B[2] - B[0], bh = B[3] - B[1], TSZ = B[4];
+      var line1 = "FIGHT: $$$$$", line2 = "HACK: $";
+      var chalkY1 = B[1] + bh * 0.38, chalkY2 = B[1] + bh * 0.74, chalkX = B[0] + 74;
+      var chalkClip = '<defs><clipPath id="' + P + 'ch1"><rect id="' + P + 'ch1-r" x="' + chalkX + '" y="' + (chalkY1 - TSZ) + '" width="0" height="' + (TSZ * 1.3) + '"/></clipPath>' +
+        '<clipPath id="' + P + 'ch2"><rect id="' + P + 'ch2-r" x="' + chalkX + '" y="' + (chalkY2 - TSZ) + '" width="0" height="' + (TSZ * 1.3) + '"/></clipPath></defs>';
+      var board = g("board", chalkClip + S([pg(R(B[0] - 14, B[1] - 14, bw + 28, bh + 28))], C.tan, 4) + S([pg(R(B[0], B[1], bw, bh))], C.slate, 3) +
+        line("M" + (B[0] + 30) + "," + (B[1] + 24) + " L" + (B[0] + 90) + "," + (B[1] + 20) + " M" + (B[2] - 140) + "," + (B[3] - 30) + " L" + (B[2] - 60) + "," + (B[3] - 36), "#5C6F8E", 4, 'opacity="0.5"') +
+        S([pg(R(B[0] + 20, B[3] + 14, bw - 40, 12))], C.tan, 3) + S([pg(R(B[0] + 60, B[3] + 6, 26, 8))], "#FBF6E6", 1.6) +
+        '<g clip-path="url(#' + P + 'ch1)">' + text(chalkX, chalkY1, TSZ, line1, "#F3ECD0", 'letter-spacing="3"') + "</g>" +
+        '<g clip-path="url(#' + P + 'ch2)">' + text(chalkX, chalkY2, TSZ, line2, "#F3ECD0", 'letter-spacing="3"') + "</g>", 'opacity="0"');
+      // the soapbox: wooden crates, stacked when he needs to be taller (9:16)
+      var BX = L.box, soapbox = "", nCr = Math.ceil(BX[1] / 155), crH = BX[1] / nCr;
+      for (var cr = 0; cr < nCr; cr++) {
+        var cy0 = -crH * (cr + 1), cx0 = cr % 2 ? -56 : -62;
+        soapbox += S([pg(R(cx0, cy0, 124, crH))], "#C99A63", 4) + line("M" + cx0 + "," + (cy0 + crH * 0.5) + " H" + (cx0 + 124) + " M" + (cx0 + 32) + "," + cy0 + " V" + (cy0 + crH) + " M" + (cx0 + 92) + "," + cy0 + " V" + (cy0 + crH), ink, 2, 'opacity="0.5"') +
+          line("M" + (cx0 + 120) + "," + (cy0 + 4) + " V" + (cy0 + crH - 4), C.orange, 1.8);
+      }
+
+      // ── The tank (flat, from war-through-wifi) and the laptop on the floor ──
+      var TK = L.tank;
+      var tankArt = at(TK[0], FL, TK[1], g("tank", g("tank-sq", tankFlat())));
+      var tankTop = FL - 22 * TK[1];
+      var dust = at(TK[0], FL, 1, g("dust", [[-260, -12, 22], [-200, -20, 30], [220, -18, 28], [290, -10, 20]].map(function (d) { return S([ci(d[0], d[1], d[2])], "#C9C2B5", 3); }).join(""), 'opacity="0"'));
+      // the laptop: the war seal on its screen, the HACK: $ tag tied to its lid corner
+      var screen = '<rect x="-24" y="-42" width="48" height="31" fill="' + C.cyan + '" opacity="0.35"/>' + '<g transform="translate(0,-27)">' + KIT.moneySeal("war", 0, 0, 8.5) + "</g>";
+      var lap = KIT.props.laptop({}).replace("<!--laptop-screen-->", screen);
+      var hackTag = g("hack", g("hack-in", KIT.props.priceTag({ text: "HACK: $", size: L.hack, angle: 26 })), 'opacity="0"');
+      var LF = L.lapFloor;
+      var laptop = at(LF[0], FL, 1, g("lap", g("lap-s", '<g transform="scale(' + LF[1] + ')">' + lap + at(27, -44, 1, hackTag) + "</g>"), 'opacity="0"'));
+
+      // ── The price tags: FIGHT: $$$$$ under a little parachute (it hangs from its knot at (0,0)) ──
+      var fightTag = KIT.props.priceTag({ text: "FIGHT: $$$$$", size: L.fight, angle: 0 });
+      var canopy = g("canopy", line("M0,0 L-70,-104 M0,0 L-24,-118 M0,0 L24,-118 M0,0 L70,-104", ink, 2) +
+        S([pg([[-84, -100], [-70, -132], [-40, -152], [0, -160], [40, -152], [70, -132], [84, -100], [56, -106], [28, -110], [0, -112], [-28, -110], [-56, -106]])], "#FBF6E6", 3.4) +
+        F(pg([[-70, -132], [-40, -152], [-28, -110], [-56, -106]]), C.war) + F(pg([[40, -152], [70, -132], [56, -106], [28, -110]]), C.war) +
+        F(pg([[-6, -160], [6, -160], [8, -112], [-8, -112]]), C.war));
+      var tagW = (12 * 18 * 0.5 + 30) * L.fight;
+      var fight = at(TK[0] - tagW * 0.47, 0, 1, g("fight", g("canopy-s", '<g transform="scale(' + n1(Math.max(1, L.fight / 2.3)) + ')">' + canopy + "</g>") + g("fight-tag", fightTag), 'opacity="0"'));
+
+      // ── The CRIME card and its red cross-out ──
+      var CR = L.crime, cw = V ? 230 : 250, chh = V ? 84 : 92;
+      var crime = at(CR[0], CR[1], 1, g("crime", F(pg(R(-cw / 2 + 6, -chh / 2 + 7, cw, chh)), ink) + S([pg(R(-cw / 2, -chh / 2, cw, chh))], "#FBF6E6", 4) +
+        F(pg(R(-cw / 2 + 8, -chh / 2 + 8, cw - 16, chh - 16)), "none", 'stroke="' + C.orange + '" stroke-width="2"') +
+        text(0, chh * 0.24, chh * 0.62, "CRIME", ink, 'text-anchor="middle" letter-spacing="5"') +
+        '<path id="' + P + 'xout" d="M' + (-cw / 2 - 16) + "," + (chh * 0.18) + " L" + (cw / 2 + 16) + "," + (-chh * 0.22) + '" stroke="' + C.war + '" stroke-width="12" stroke-linecap="round" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>', 'opacity="0"'));
+
+      // ── The school desk (front view, its top at DT), the Kid behind it, the worksheet propped on it ──
+      var DK = L.desk, DT = DK[1], dw = DK[2], dx0 = DK[0] - dw / 2;
+      var deskFront = S([pg(R(dx0, DT, dw, 16))], C.tan, 4) + line("M" + (dx0 + 8) + "," + (DT + 4) + " H" + (dx0 + dw - 8), "#E0B07A", 2.4) +
+        S([pg(R(dx0 + 24, DT + 16, dw - 48, (FL - DT) * 0.42))], "#C99A63", 4) + F(pg(R(dx0 + 24 + (dw - 48) * 0.6, DT + 16, (dw - 48) * 0.4, (FL - DT) * 0.42)), "url(#" + P + "hatch)", 'opacity="0.2"') +
+        line("M" + (dx0 + 40) + "," + (DT + 16) + " L" + (dx0 + 30) + "," + FL + " M" + (dx0 + dw - 40) + "," + (DT + 16) + " L" + (dx0 + dw - 30) + "," + FL, ink, 9) +
+        line("M" + (dx0 + 40) + "," + (DT + 16) + " L" + (dx0 + 30) + "," + FL + " M" + (dx0 + dw - 40) + "," + (DT + 16) + " L" + (dx0 + dw - 30) + "," + FL, "#9AA4B5", 4) +
+        line("M" + (dx0 + 34) + "," + (FL - 40) + " H" + (dx0 + dw - 34), ink, 4);
+      // the Kid: the storyboard Cast options, facing right; his left hand on the laptop, his right hand writing
+      var KID = { tone: 2, outfit: "shirt", color: 3, seed: 11, mood: "eager", mask: true, look: "right", build: { hs: 1.3, legs: 0.6, th: 0.75, neck: 0.5 } };
+      var KR = KIT.rig(KID), kidY = DT + 6 - KR.hipY * KS;
+      var SH = L.sheet, shX = SH[0], shTop = DT - SH[2];
+      // targets for his hands, in his own units
+      var toK = function (x, y) { return [(x - L.kid) / KS, (y - kidY) / KS]; };
+      var lapHand = toK(L.lapDesk + 20, DT - 16), penAt = toK(shX - SH[1] * 0.3, shTop + SH[2] * 0.9);
+      function kidO(extra) {
+        return mix(KID, mix({ arms: [ik(KR.shoulder[0], lapHand, KR.armLength, 1), ik(KR.shoulder[1], penAt, KR.armLength, -1)] }, extra));
+      }
+      var pencil = '<g transform="scale(0.32) rotate(-30)"><g transform="translate(0,0)">' + KIT.pencil() + "</g></g>";
+      var kidSvg = g("kid-a", inHand(KIT.person(kidO()), pencil, kidO(), 1)) + g("kid-b", inHand(KIT.person(kidO({ mood: "smile" })), pencil, kidO(), 1), 'opacity="0"');
+      var kidArt = at(L.kid, kidY, KS, g("kid", kidSvg));
+      // the worksheet, propped up on the desk: HOMEWORK, then his answer (written on), then the gold star
+      var sw = SH[1], sh = SH[2], shL = shX - sw / 2;
+      var ansClip = '<defs><clipPath id="' + P + 'ans"><rect id="' + P + 'ans-r" x="' + (shL + 10) + '" y="' + (shTop + sh * 0.4) + '" width="0" height="' + (sh * 0.45) + '"/></clipPath></defs>';
+      var sheet = ansClip + F(pg([[shL + 6, shTop + 6], [shL + sw + 6, shTop + 6], [shL + sw + 6, DT], [shL + 6, DT]]), ink, 'opacity="0.8"') +
+        S([pg([[shL + 6, shTop], [shL + sw - 6, shTop], [shL + sw, DT], [shL, DT]])], "#FBF6E6", 3.4) +
+        line("M" + (shL + 14) + "," + (shTop + sh * 0.5) + " H" + (shL + sw - 12) + " M" + (shL + 12) + "," + (shTop + sh * 0.78) + " H" + (shL + sw - 10), C.peri, 1.2, 'opacity="0.5"') +
+        text(shX, shTop + sh * 0.27, sw * 0.15, "HOMEWORK", ink, 'text-anchor="middle" letter-spacing="1.5"') + line("M" + (shL + 18) + "," + (shTop + sh * 0.33) + " H" + (shL + sw - 18), C.war, 2) +
+        '<g clip-path="url(#' + P + 'ans)">' + text(shX, shTop + sh * 0.7, sw * 0.14, "HACK &lt; FIGHT", "#2B3D63", 'text-anchor="middle"') + "</g>";
+      var desk = g("desk", g("desk-sq", deskFront), "");
+      var sheetArt = g("sheet", sheet);
+      // the gold star, flicked from the Politician's hand onto the worksheet's corner
+      var starAt = [shL + sw - 14, shTop + 14];
+      var star = g("star", g("star-spin", KIT.star(0, 0, 36, ink) + KIT.star(0, 0, 29, C.yellow) + F(ci(0, 0, 4), "#FFFFFF")), 'opacity="0"');
+      var sparkle = at(starAt[0], starAt[1], 1, g("sparkle", [0, 60, 120, 180, 240, 300].map(function (a) {
+        var r = (a * Math.PI) / 180;
+        return line("M" + pt(Math.cos(r) * 34, Math.sin(r) * 34) + " L" + pt(Math.cos(r) * 52, Math.sin(r) * 52), C.yellow, 5);
+      }).join(""), 'opacity="0"'));
+
+      // ── The Politician as the teacher, on his soapbox at the chalkboard, chalk in his front hand ──
+      var polBase = { look: "right" };
+      var polY = FL - BX[1] - 100 * PS, PR = KIT.rig(KIT.castOpts("politician", mix(polBase, { arms: [[-10, -4], [20, 10]] })));
+      var toP = function (x, y) { return [(x - BX[0]) / PS, (y - polY) / PS]; };
+      var chalkA = toP(chalkX - 30, chalkY1 - TSZ * 0.25), chalkB = toP(chalkX - 30, chalkY2 - TSZ * 0.25);
+      function polO(target) { return KIT.castOpts("politician", mix(polBase, { arms: [[-14, 30], ik(PR.shoulder[1], target, PR.armLength, 1)] })); }
+      var chalk = '<g transform="rotate(-20)">' + S([pg(R(-3, -12, 6, 14))], "#FBF6E6", 1.6) + "</g>";
+      var polPoses = { w1: polO(chalkA), w2: polO(chalkB), flick: polO([PR.shoulder[1][0] + 38, PR.shoulder[1][1] + 50]) };
+      var polSvg = Object.keys(polPoses).map(function (k, i) { return g("pol-" + k, inHand(KIT.person(polPoses[k]), k === "flick" ? "" : chalk, polPoses[k], 1), i ? 'opacity="0"' : ""); }).join("");
+      var polArt = at(BX[0], FL, 1, g("pol", g("pol-in", soapbox + at(0, -BX[1] - 100 * PS, PS, polSvg))));
+
+      // Put it together.
+      var lapDeskDx = L.lapDesk - LF[0], lapDeskDy = DT - FL;
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + g("pan", floor + board + crime + world + polArt + sheetArt + kidArt + desk + tankArt + dust + laptop + fight + star + sparkle));
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      fuse(q("fuse"), tl);
+      var show = function (id, t) { tl.set(q(id), { opacity: 1 }, t); };
+      var hide = function (id, t) { tl.set(q(id), { opacity: 0 }, t); };
+
+      // "nation": three bombs whistle down onto the map (slide-down); "bombed": three tiny mushroom clouds (pops).
+      var tNat = cue("nation"), tBomb = cue("bombed");
+      BOMBS.forEach(function (b, i) {
+        var e = q("bomb" + i), land = tBomb + i * 0.12, p = geo.at(b);
+        show("bomb" + i, tNat + i * 0.05);
+        // (in 9:16 they fall from just under Wishonia's saucer, not through it)
+        tl.fromTo(e, { y: (V ? 470 : -120) - p[1], rotation: -30, svgOrigin: "0 -38" }, { y: 0, rotation: 10, svgOrigin: "0 -38", duration: land - tNat - i * 0.05, ease: "power2.in" }, tNat + i * 0.05);
+        if (V) tl.fromTo(e, { opacity: 0 }, { opacity: 1, duration: 0.1, immediateRender: false }, tNat + i * 0.05);
+        hide("bomb" + i, land);
+        KIT.boom(tl, q("cloud" + i), land);
+      });
+      // "sanctioned": the giant stamp thumps down on a country (stamp) and lifts off, leaving SANCTIONED.
+      var tSan = cue("sanctioned"), stp = q("stamp");
+      show("stamp", tSan - 0.25);
+      tl.fromTo(stp, { y: -260 }, { y: 0, duration: 0.25, ease: "power3.in" }, tSan - 0.25);
+      var sh2 = stp.querySelector(".stamp-head");
+      gsap.set(sh2, { svgOrigin: "0 0" });
+      tl.fromTo(sh2, { scaleY: 1 }, { scaleY: 0.82, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tSan);
+      show("smark", tSan + 0.02);
+      tl.fromTo(q("world"), { y: 0 }, { y: 6, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, tSan);
+      tl.to(stp, { y: -320, opacity: 0, duration: 0.35, ease: "power2.in" }, tSan + 0.3);
+
+      // "parasitizing": the map shrinks onto the classroom wall; the floor draws on; the flat tank slides in, blinking;
+      // "economy": a laptop drops in beside it.
+      var tPar = cue("parasitizing");
+      gsap.set(q("world"), { svgOrigin: n1(L.map[0]) + " " + n1(mapCy) });
+      tl.to(q("world"), { scale: L.wall[2], x: L.wall[0] - L.map[0], y: L.wall[1] - mapCy, duration: 0.55, ease: "power2.inOut" }, tPar - 0.1);
+      tl.to(q("floor").firstChild, { attr: { "stroke-dashoffset": 0 }, duration: 0.5, ease: "power2.out" }, tPar);
+      tl.fromTo(q("tank"), { x: -(TK[0] + 320 * TK[1]) / TK[1] }, { x: 0, duration: 0.45, ease: "power2.out" }, tPar + 0.25);
+      var eyes = q("tank").querySelector(".tank-eyes"), lid = q("tank").querySelector(".tank-lid-flat");
+      gsap.set(eyes, { svgOrigin: eyes.dataset.cx + " " + eyes.dataset.cy });
+      gsap.set(lid, { svgOrigin: lid.dataset.cx + " " + lid.dataset.cy });
+      tl.fromTo(lid, { rotation: -20 }, { rotation: 0, duration: 0.6, ease: "elastic.out(1.4,0.25)", immediateRender: false }, tPar + 0.7);
+      [tPar + 1.0, cue("cheaper") + 0.2, cue("fighting")].forEach(function (b) {
+        tl.fromTo(eyes, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "none", immediateRender: false }, b);
+      });
+      var tEco = cue("economy");
+      show("lap", tEco - 0.2);
+      tl.fromTo(q("lap"), { y: -FL - 150 }, { y: 0, duration: 0.2, ease: "power2.in" }, tEco - 0.2);
+      var ls = q("lap-s");
+      gsap.set(ls, { svgOrigin: "0 0" });
+      tl.fromTo(ls, { scaleY: 1, scaleX: 1 }, { scaleY: 0.8, scaleX: 1.1, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tEco);
+
+      // "cheaper": HACK: $ flutters down onto the laptop; FIGHT: $$$$$ floats down over the tank on a parachute.
+      var tChp = cue("cheaper"), hk = q("hack"), hki = q("hack-in");
+      show("hack", tChp);
+      tl.fromTo(hk, { y: -260, x: -30 }, { y: 0, x: 0, duration: 0.6, ease: "sine.out" }, tChp);
+      gsap.set(hki, { svgOrigin: "0 0" });
+      tl.fromTo(hki, { rotation: -25 }, { rotation: 18, duration: 0.2, repeat: 3, yoyo: true, ease: "sine.inOut" }, tChp);
+      tl.to(hki, { rotation: 0, duration: 0.3, ease: "sine.out" }, tChp + 0.8);
+      var fg = q("fight"), ft = q("fight-tag"), cp = q("canopy"), tCon = cue("conventionally.");
+      // the card hangs from its knot: its bottom edge is (28 + 15 + 2) tag units below it
+      var cardBot = 45 * L.fight, hangY = tankTop - cardBot - L.chute;
+      tl.fromTo(fg, { y: V ? 330 : 40 }, { y: hangY, duration: tCon - 0.12 - tChp, ease: "sine.out" }, tChp);
+      tl.fromTo(fg, { opacity: 0 }, { opacity: 1, duration: 0.15, immediateRender: false }, tChp);
+      tl.fromTo(fg, { x: -30 }, { x: 30, duration: 0.6, repeat: 1, yoyo: true, ease: "sine.inOut" }, tChp);
+      // "conventionally.": the canopy rips away, the tag drops like an anvil and squashes the tank flatter (splat)
+      tl.to(cp, { y: -300, rotation: 40, opacity: 0, svgOrigin: "0 -120", duration: 0.4, ease: "power2.out" }, tCon - 0.12);
+      tl.to(fg, { y: tankTop - cardBot, duration: 0.12, ease: "power3.in" }, tCon - 0.12);
+      var tsq = q("tank-sq");
+      gsap.set(tsq, { svgOrigin: "0 0" });
+      tl.to(tsq, { scaleY: 0.4, scaleX: 1.06, duration: 0.06, ease: "power2.in" }, tCon - 0.02);
+      tl.to(fg, { y: FL - 22 * TK[1] * 0.4 - cardBot + 2, duration: 0.06, ease: "power2.in" }, tCon - 0.02);
+      tl.fromTo(q("dust"), { opacity: 0 }, { opacity: 0.9, duration: 0.05, immediateRender: false }, tCon);
+      tl.to(q("dust"), { opacity: 0, y: -24, duration: 0.5, ease: "power1.in" }, tCon + 0.15);
+      tl.fromTo(q("cam"), { y: 0 }, { y: 8, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, tCon);
+      tl.fromTo(eyes, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, tCon + 0.3);
+
+      // "crime.": the CRIME card slides in; after it, a red marker crosses it out (marker).
+      var tCr = cue("crime.");
+      show("crime", tCr - 0.15);
+      tl.fromTo(q("crime"), { x: -CR[0] - 200 }, { x: 0, duration: 0.3, ease: "back.out(1.4)" }, tCr - 0.15);
+      tl.to(q("xout"), { attr: { "stroke-dashoffset": 0 }, duration: 0.2, ease: "power1.in" }, KIT.after(ID, "crime."));
+
+      // "homework.": the camera pans across to the other end of the classroom; the desk drops in with the Kid at it
+      // (thunk); the laptop hops along with the camera onto the desk, and he opens it.
+      var tHw = cue("homework."), dq = q("desk-sq"), tPan = KIT.after(ID, "crime.") + 0.15;
+      tl.to(q("pan"), { x: -W, duration: 0.32, ease: "power2.inOut" }, tPan);
+      tl.fromTo(q("desk"), { y: -FL }, { y: 0, duration: 0.22, ease: "power2.in" }, tHw - 0.22);
+      tl.fromTo(q("sheet"), { y: -FL }, { y: 0, duration: 0.22, ease: "power2.in" }, tHw - 0.22);
+      tl.fromTo(q("kid"), { y: -FL / KS }, { y: 0, duration: 0.22, ease: "power2.in" }, tHw - 0.22);
+      gsap.set(dq, { svgOrigin: n1(DK[0]) + " " + FL });
+      tl.fromTo(dq, { scaleY: 1 }, { scaleY: 0.9, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tHw);
+      var lid2 = q("lap").querySelector(".laptop-lid");
+      gsap.set(lid2, { svgOrigin: "0 -7.2" });
+      tl.to(lid2, { scaleY: 0, duration: 0.1 }, tPan);
+      tl.to(q("lap"), { x: lapDeskDx * 0.5, y: lapDeskDy - 160, duration: 0.2, ease: "power1.out" }, tPan);
+      tl.to(q("lap"), { x: lapDeskDx, y: lapDeskDy, duration: 0.2, ease: "power1.in" }, tPan + 0.2);
+      tl.to(ls, { scale: KS * 1.25 / LF[1], duration: 0.35 }, tPan);
+      tl.to(lid2, { scaleY: 1, duration: 0.2, ease: "back.out(2)" }, tHw + 0.4);
+
+      // "built": the chalkboard drops onto the wall, the Politician pops up on his soapbox and chalks the prices.
+      var tBl = cue("built");
+      show("board", tBl - 0.2);
+      tl.fromTo(q("board"), { y: -600 }, { y: 0, duration: 0.25, ease: "bounce.out" }, tBl - 0.2);
+      var pin = q("pol-in");
+      gsap.set(pin, { svgOrigin: "0 0" });
+      tl.fromTo(pin, { scaleY: 0 }, { scaleY: 1, duration: 0.25, ease: "back.out(2)" }, tBl);
+      var w1 = [cue("the") - 0.05, cue("structure") + 0.25], w2 = [cue("structure") + 0.35, cue("they") + 0.1];
+      tl.fromTo(q("ch1-r"), { attr: { width: 0 } }, { attr: { width: bw - 60 }, duration: w1[1] - w1[0], ease: "none" }, w1[0]);
+      show("pol-w2", w2[0]); hide("pol-w1", w2[0]);
+      tl.fromTo(q("ch2-r"), { attr: { width: 0 } }, { attr: { width: bw - 60 }, duration: w2[1] - w2[0], ease: "none" }, w2[0]);
+      [["pol-w1", w1], ["pol-w2", w2]].forEach(function (pw) {
+        var arm = q(pw[0]).querySelector(".arm-r"), o = polPoses[pw[0] === "pol-w1" ? "w1" : "w2"];
+        gsap.set(arm, { svgOrigin: KIT.rig(o).shoulder[1].join(" ") });
+        tl.fromTo(arm, { rotation: -5 }, { rotation: 5, duration: 0.09, repeat: reps(pw[1][1] - pw[1][0], 0.09), yoyo: true, ease: "sine.inOut" }, pw[1][0]);
+      });
+
+      // "did the math.": the Kid writes his answer (scratch on "math.").
+      var tDid = cue("did"), tMath = cue("math.");
+      tl.to(q("ans-r"), { attr: { width: sw - 20 }, duration: KIT.cueEnd(ID, "math.") - tDid, ease: "none" }, tDid);
+      var kArm = q("kid-a").querySelector(".arm-r");
+      gsap.set(kArm, { svgOrigin: KR.shoulder[1].join(" ") });
+      tl.fromTo(kArm, { rotation: -6 }, { rotation: 6, duration: 0.08, repeat: reps(KIT.cueEnd(ID, "math.") - tDid + 0.1, 0.08), yoyo: true, ease: "sine.inOut" }, tDid);
+
+      // After "math.": the Politician flicks a gold star onto the worksheet, grinning (sparkle); the Kid beams.
+      var tStar = KIT.after(ID, "math."), flickAt = tStar - 0.3;
+      hide("pol-w2", flickAt); show("pol-flick", flickAt);
+      var hand = KIT.rig(polPoses.flick).hand[1], from = [BX[0] + hand[0] * PS, polY + hand[1] * PS];
+      var st = q("star"), ss = q("star-spin");
+      gsap.set(ss, { svgOrigin: "0 0" });
+      tl.set(st, { opacity: 1 }, flickAt);
+      tl.fromTo(st, { x: from[0], y: from[1] }, { x: (from[0] + starAt[0]) / 2, y: Math.min(from[1], starAt[1]) - 120, duration: 0.15, ease: "power1.out" }, flickAt);
+      tl.to(st, { x: starAt[0], y: starAt[1], duration: 0.15, ease: "power1.in" }, flickAt + 0.15);
+      tl.fromTo(ss, { rotation: 0, scale: 0.6 }, { rotation: 540, scale: 1, duration: 0.3, ease: "none" }, flickAt);
+      tl.fromTo(ss, { scale: 1.4 }, { scale: 1, duration: 0.2, ease: "back.out(3)", immediateRender: false }, tStar);
+      var spk = q("sparkle");
+      gsap.set(spk, { svgOrigin: "0 0" });
+      tl.fromTo(spk, { opacity: 1, scale: 0.6 }, { opacity: 0, scale: 1.3, duration: 0.4, ease: "power1.out", immediateRender: false }, tStar);
+      hide("kid-a", tStar + 0.08); show("kid-b", tStar + 0.08);
+      tl.fromTo(q("kid"), { y: 0 }, { y: -10 / KS, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tStar + 0.08);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

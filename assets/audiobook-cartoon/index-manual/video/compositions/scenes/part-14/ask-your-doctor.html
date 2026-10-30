@@ -1,0 +1,591 @@
+<template id="ask-your-doctor-template">
+  <!-- ask-your-doctor · Layer B (storyboards/part-14-decentralized-fda.md). Same form as meadow-ad (no seam): the first
+       frame is its last (the living room, the skeleton skipping on the TV, the patient looking at the camera), drawn
+       by the block copied from meadow-ad.html (marked "shared"; change both). "individual": click, the TV cuts to the ad's
+       end card, INDIVIDUAL RESULTS MAY VARY, and the camera pushes into the screen. Its dial's needle wanders until
+       "cured" (it swings to CURED, which gets a tick) and "deceased" (it swings to DECEASED: a tick too). "qualifying).":
+       QUALIFIES thumps onto both, and the ad's skeleton skips back in, gives a bony thumbs-up and skips off. "ask": the
+       camera pulls out of the TV, which now hangs on the wall of a hospital hallway, the patient waiting under it in a
+       plastic chair. "seven": the sign APPOINTMENT: 7 MIN drops in and the doctor zips past on roller skates with a
+       stopwatch. "Googled": he skids back to a stop and types on a rotary phone with a little screen, its cord trailing;
+       a close-up bubble shows a plain search box: RED CHEST LIGHT. "hallway.": the result is a grinning skull; he goes
+       pale, looks at her, and takes one slow roll back. The camera is an SVG transform on the world group (crisp at the
+       zoom), and the two rooms swap while the end card fills the frame. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #ask-your-doctor-cam, #ask-your-doctor-bg, #ask-your-doctor-art, #ask-your-doctor-pip, #ask-your-doctor-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="ask-your-doctor" data-width="1920" data-height="1080" data-start="0" data-duration="14.72">
+    <div id="ask-your-doctor-cam">
+      <div id="ask-your-doctor-bg"></div>
+      <div id="ask-your-doctor-art"></div>
+      <div id="ask-your-doctor-pip"></div>
+    </div>
+    <div id="ask-your-doctor-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "ask-your-doctor";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var P = ID + "-";
+
+      // ═══ Shared with meadow-ad.html (this scene's first frame is its last): copied from it; change both. ═══
+      // The room, the TV and its ad are drawn by livingRoom() (the TV keeps its <!--tv-screen--> marker, over the ad, for
+      // ask-your-doctor's end card); adAt(T) poses the ad and the patient at time T on
+      // meadow-ad's clock (ask-your-doctor passes T = this scene's duration + its own time), so the skip, the meadow,
+      // the crawl and the chest light carry on across the cut.
+      var M = "meadow-ad", MD = KIT.scene(M).duration;
+      var AT = { smile: KIT.cue(M, "smiling"), hop0: KIT.cue(M, "frolicking"), voice: KIT.cue(M, "voiceover"), auct: KIT.cue(M, "auctioneer"),
+        stroke: KIT.cue(M, "stroke"), death: KIT.cue(M, "death"), dry: KIT.cue(M, "dry"), skinEnd: KIT.cueEnd(M, "skin") };
+      var PAT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried" };
+      var MEAD = { tone: 0, outfit: "dress", hair: 1, color: 3, kind: "hourglass", mood: "smile", arms: [[-25, -15], [115, 160]] };
+      // tv: its feet [x, y] and scale (screen box in TV units x -63..17, y -134..-51); splay: the rabbit ears' resting
+      // turn (deg); couch: its left and right; floor: where her feet and the couch stand (the frame crops the floor in
+      // 16:9); pat: her [x, scale] and the way she faces (at the TV); clock: [x, y, r]; lamp: x or null; tvFloor and rug
+      // (9:16, where the TV stands back on its own floor line).
+      var LR = V
+        ? { tv: [440, 1180, 4.8], splay: [-25, 0], couch: [660, 1090], floor: 1500, pat: [900, 3.4], look: "left", clock: [958, 620, 42], lamp: null, tvFloor: [60, 1180, 1020], rug: [640, 1500, 420, 34] }
+        : { tv: [1170, 1060, 5.0], splay: [-25, 25], couch: [110, 690], floor: 1060, pat: [400, 3.2], look: "right", clock: [400, 250, 60], lamp: 650, tvFloor: null, rug: null };
+      // She sits with her hands clasped in her lap, her elbows out, so her chest light shows.
+      var PATO = Object.assign({}, PAT, { look: LR.look, build: { legPose: [[84, 6], [90, 0]] }, arms: [[-18, 60], [18, -60]] });
+      var HIPS = LR.floor - LR.pat[1] * (100 - KIT.rig(PATO).hipY);
+      LR.seat = [LR.couch[0], LR.couch[1], HIPS - 52 * LR.pat[1], HIPS, HIPS + 30 * LR.pat[1], LR.floor];
+      var SCR = { x0: -63, y0: -134, x1: 17, y1: -51, cx: -23 };
+      var AD = { x: -32, feet: -63, s: 0.32, hop: 7, period: 0.35, fs: 5.2, band: -62.5 };
+
+      function f1(v) { return (+v).toFixed(1); }
+      function tr(x, y, s) { return "translate(" + f1(x) + "," + f1(y) + ")" + (s && s !== 1 ? " scale(" + s + ")" : ""); }
+      function at(x, y, s, inner, id, attrs) { return "<g" + (id ? ' id="' + P + id + '"' : "") + ' transform="' + tr(x, y, s) + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function poly(pts, fill, w, extra) {
+        return '<path d="M' + pts.map(function (p) { return f1(p[0]) + "," + f1(p[1]); }).join(" L") + ' Z" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + (w || 3) + '" stroke-linejoin="miter"' + (extra || "") + "/>";
+      }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linecap="round" stroke-linejoin="round"' + (extra || "") + "/>"; }
+      // Two-bone reach (person angles: 0 = down, positive toward +x): the arm angles that put the hand on target.
+      function reach(S, T, len) {
+        var dx = T[0] - S[0], dy = T[1] - S[1], d = Math.min(Math.hypot(dx, dy), 2 * len - 0.01);
+        var phi = (Math.atan2(dx, dy) * 180) / Math.PI, al = (Math.acos(d / (2 * len)) * 180) / Math.PI;
+        var A = [phi + al, phi - al], B = [phi - al, phi + al], ey = function (a) { return S[1] + len * Math.cos((a[0] * Math.PI) / 180); };
+        return ey(A) > ey(B) ? A : B;
+      }
+      // Put markup into a person's group (before its first child of class cls, or at a marker).
+      function into(svg, cls, inner) { return svg.replace('<g class="' + cls + '">', '<g class="' + cls + '">' + inner); }
+      // The patient's mustard-and-orange striped scarf, at her neck (drawn over the dress, under the head).
+      // (Her chin comes down to the collar, so the band sits on the collar and its knot and tails hang on her left.)
+      function scarf(o) {
+        var r = KIT.rig(o), x = r.neck[0], y = r.shoulder[0][1] - 5;
+        var band = [[x - 13, y + 1], [x + 12, y - 1], [x + 13, y + 6], [x - 13, y + 8]];
+        var tails = [[x - 7, y + 5], [x - 3, y + 21], [x - 7.5, y + 22.5], [x - 10, y + 8], [x - 14, y + 20], [x - 18, y + 18], [x - 12, y + 5]];
+        var st = "";
+        for (var i = -10; i <= 11; i += 4.2) st += line("M" + f1(x + i) + "," + f1(y + 0.4) + " L" + f1(x + i + 0.8) + "," + f1(y + 7), C.orange, 2.4);
+        var tst = line("M" + f1(x - 8) + "," + f1(y + 12) + " L" + f1(x - 4.5) + "," + f1(y + 12) + " M" + f1(x - 7.5) + "," + f1(y + 17) + " L" + f1(x - 4) + "," + f1(y + 17) +
+          " M" + f1(x - 11) + "," + f1(y + 11) + " L" + f1(x - 14) + "," + f1(y + 13.5) + " M" + f1(x - 12) + "," + f1(y + 16) + " L" + f1(x - 15.5) + "," + f1(y + 18), C.orange, 2.4);
+        var knot = [[x - 12, y + 2], [x - 6, y + 1], [x - 5, y + 8], [x - 11, y + 9]];
+        return poly(band, C.yellow, 1.8) + st + poly(tails, C.yellow, 1.8) + tst + poly(knot, C.orange, 1.8);
+      }
+      function patient(o) { return KIT.person(o).replace('<g class="head">', scarf(o) + '<g class="head">'); }
+      // The ad woman's straw sun hat (face units) and her bunch of daisies (person units, at a hand).
+      var HAT = poly([[-15, -21], [-12, -34], [0, -38.5], [13, -34], [17, -22]], C.yellow, 1.8) +
+        poly([[-15, -25.5], [16.5, -26.5], [17, -21.5], [-15, -21]], C.orange, 1.4) +
+        poly([[-34, -18.5], [-20, -24], [22, -25], [38, -17.5], [24, -14.5], [-22, -14]], C.yellow, 1.8) +
+        line("M-24,-17 L20,-18.5", C.tan, 1.4);
+      function daisy(x, y, r) {
+        var out = "";
+        for (var k = 0; k < 8; k++) out += '<ellipse cx="' + f1(x) + '" cy="' + f1(y - r * 0.62) + '" rx="' + f1(r * 0.3) + '" ry="' + f1(r * 0.55) + '" fill="#FBF6E6" stroke="' + ink + '" stroke-width="0.9" transform="rotate(' + k * 45 + " " + f1(x) + " " + f1(y) + ')"/>';
+        return out + '<circle cx="' + f1(x) + '" cy="' + f1(y) + '" r="' + f1(r * 0.34) + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="0.9"/>';
+      }
+      function bunch(o, i) {
+        var r = KIT.rig(o), h = r.handLocal[i], a = o.arms[i][1], out = "", heads = "";
+        [-26, 0, 24].forEach(function (da, k) {
+          var rad = ((a + da) * Math.PI) / 180, L = 17 + (k === 1 ? 4 : 0), ex = h[0] + L * Math.sin(rad), ey = h[1] + L * Math.cos(rad);
+          out += line("M" + f1(h[0]) + "," + f1(h[1]) + " L" + f1(ex) + "," + f1(ey), "#3B6644", 2.2);
+          heads += daisy(ex, ey, 6.2);
+        });
+        return out + heads;
+      }
+      function sunHat(svg) { return svg.replace("<!--face-end-->", HAT + "<!--face-end-->"); }
+      function withDaisies(svg, o) { return into(svg, "arm-r", bunch(o, 1)); }
+      // Red rash spots for the skeleton: on the skull (face units), the ribs and the pelvis (person units).
+      function spots(list, r) { return list.map(function (s) { return '<circle cx="' + s[0] + '" cy="' + s[1] + '" r="' + (r || 3.4) + '" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1"/>'; }).join(""); }
+      function rashy(svg) {
+        return svg.replace("<!--face-end-->", '<g class="rash rash-1">' + spots([[-8, -13], [6, -17], [12, -9]]) + "</g><!--face-end-->") +
+          '<g class="rash rash-2">' + spots([[-6, -16], [6, -9], [-3, -2]]) + '</g><g class="rash rash-3">' + spots([[6, 21], [-7, 23]]) + "</g>";
+      }
+      var MR = KIT.rig(MEAD);
+      // The scratch: the free hand reaches across to the raised arm's elbow.
+      var ELBOW = [MR.shoulder[1][0] + MR.armLength * Math.sin((MEAD.arms[1][0] * Math.PI) / 180) - 1.5, MR.shoulder[1][1] + MR.armLength * Math.cos((MEAD.arms[1][0] * Math.PI) / 180) + 2.5];
+      var SCRATCH = Object.assign({}, MEAD, { arms: [reach(MR.shoulder[0], ELBOW, MR.armLength), MEAD.arms[1]] });
+      function adWoman() {
+        var alive = withDaisies(sunHat(KIT.person(MEAD)), MEAD);
+        var boneA = rashy(withDaisies(sunHat(KIT.person(Object.assign({ skeleton: true }, MEAD))), MEAD));
+        var boneB = rashy(withDaisies(sunHat(KIT.person(Object.assign({ skeleton: true }, SCRATCH))), SCRATCH));
+        var sparkle = at(MR.mouth[0] + 8, MR.mouth[1] - 4, 1, g("sparkle", KIT.star(0, 0, 9, "#FFFFFF").replace("/>", ' stroke="' + ink + '" stroke-width="1.2"/>') + KIT.star(0, 0, 4, C.yellow)));
+        return g("ad-alive", alive) + g("ad-bones", g("ad-boneA", boneA) + g("ad-boneB", boneB, 'opacity="0"'), 'opacity="0"') + sparkle;
+      }
+      // The ad on the screen, in TV units: sky, sun, far hills and the meadow (both scroll), the woman, the crawl band.
+      var crawl = (function () {
+        var fs = AD.fs, gap = 1.7 * fs;
+        var width = function (s) { var w = 0; for (var i = 0; i < s.length; i++) w += s[i] === " " ? 0.26 : /[.,:]/.test(s[i]) ? 0.22 : /[I1]/.test(s[i]) ? 0.26 : /[MW]/.test(s[i]) ? 0.62 : 0.48; return w * fs; };
+        var key = ["STROKE", "CONSTIPATION", "DEATH", "MILD RASH", "DRY SKIN", "ITCHING", "SEE PAGE 1 OF 40"];
+        var kc = [], u = 0;
+        key.forEach(function (s) { var w = width(s); kc.push(u + w / 2); u += w + gap; });
+        // Speeds (TV units a second): readable from "voiceover", a blur from "auctioneer", then slowing so STROKE sits
+        // in the middle of the screen on "stroke." and DRY SKIN on "dry", at one steady speed in between.
+        var vEnd = (kc[4] - kc[0]) / (AT.dry - AT.stroke), vMax = 250, b0 = AT.stroke - 1.05, b1 = AT.stroke - 0.4;
+        var ss = function (a, b, t) { var k = Math.min(1, Math.max(0, (t - a) / (b - a))); return k * k * (3 - 2 * k); };
+        var speed = function (t) {
+          if (t < AT.voice) return 0;
+          if (t < AT.auct) return 16;
+          return 16 + (vMax - 16) * ss(AT.auct, AT.auct + 0.3, t) - (vMax - vEnd) * ss(b0, b1, t);
+        };
+        var dt = 1 / 200, tab = [0], end = MD + 3;
+        for (var i = 1; i * dt <= end; i++) tab.push(tab[i - 1] + speed((i - 0.5) * dt) * dt);
+        var dist = function (t) { var k = Math.max(0, t) / dt, i = Math.min(tab.length - 2, Math.floor(k)); return tab[i] + (tab[i + 1] - tab[i]) * (k - i); };
+        // Lay out the text: "MAY CAUSE:", filler (seen mostly as a blur), then the key items from uS on.
+        var uS = SCR.cx - SCR.x1 + dist(AT.stroke), items = [], x = 0;
+        var put = function (s, x0) { items.push({ s: s, x: x0, w: width(s) }); return x0 + width(s) + gap; };
+        x = put("MAY CAUSE:", 0);
+        var filler = ["HEADACHE", "NAUSEA", "DIZZINESS", "DRY MOUTH", "INSOMNIA", "DROWSINESS", "HAIR LOSS", "HAIR GROWTH", "BLURRED VISION", "SWEATING", "FEVER", "CHILLS", "HICCUPS", "MOOD SWINGS", "JOINT PAIN", "SNEEZING", "CRAMPS", "YAWNING", "BLOATING", "DRY EYES"];
+        var stop = uS - kc[0] - gap, k = 0, first = items.length;
+        while (x + width(filler[k % filler.length]) <= stop) { x = put(filler[k % filler.length], x); k++; }
+        // the space left over goes into the middle of the filler, where the crawl is a blur
+        var extra = stop - (x - gap), half = first + Math.floor((items.length - first) / 2);
+        for (var j = half; j < items.length; j++) items[j].x += extra;
+        key.forEach(function (s, i) { put(s, uS - kc[0] + (kc[i] - width(s) / 2)); });
+        var y = AD.band + 11.5 / 2 + fs * 0.36, txt = "";
+        items.forEach(function (it, i) {
+          txt += '<text x="' + f1(it.x) + '" y="' + f1(y) + '" font-family="Oswald" font-weight="600" font-size="' + fs + '" fill="#FBF6E6" textLength="' + f1(it.w) + '" lengthAdjust="spacingAndGlyphs">' + it.s + "</text>";
+          if (i < items.length - 1) txt += '<circle cx="' + f1((it.x + it.w + items[i + 1].x) / 2) + '" cy="' + f1(y - fs * 0.33) + '" r="0.75" fill="' + C.yellow + '"/>';
+        });
+        return { svg: txt, dist: dist, speed: speed, vEnd: vEnd, vMax: vMax };
+      })();
+      function adScreen() {
+        var sky = '<rect x="' + SCR.x0 + '" y="' + SCR.y0 + '" width="80" height="83" fill="' + C.cyan + '"/>';
+        var rays = "";
+        for (var k = 0; k < 12; k++) {
+          var a = (k * Math.PI) / 6;
+          rays += line("M" + f1(4 + 11 * Math.cos(a)) + "," + f1(-121 + 11 * Math.sin(a)) + " L" + f1(4 + 15 * Math.cos(a)) + "," + f1(-121 + 15 * Math.sin(a)), C.yellow, 1.6);
+        }
+        var sun = rays + '<circle cx="4" cy="-121" r="8" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1.2"/>';
+        var cloud = function (x, y) { return [[0, 0, 4], [5, -2, 5], [10, 0, 4]].map(function (c) { return '<circle cx="' + (x + c[0]) + '" cy="' + (y + c[1]) + '" r="' + c[2] + '" fill="#FBF6E6" stroke="' + ink + '" stroke-width="0.9"/>'; }).join("") + '<rect x="' + (x - 1) + '" y="' + y + '" width="12" height="4" fill="#FBF6E6"/>'; };
+        // far hills, period 60; the meadow, period 40 (each drawn wide enough to scroll one period)
+        var hills = "";
+        for (var hx = -123; hx < 77; hx += 60) hills += '<path d="M' + hx + ",-84 Q" + (hx + 15) + ",-104 " + (hx + 30) + ",-90 Q" + (hx + 45) + ",-99 " + (hx + 60) + ',-84 Z" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="1.1"/>';
+        var mead = '<path d="M-110,-84 ' + (function () { var s = ""; for (var mx = -110; mx < 70; mx += 20) s += "Q" + (mx + 10) + ",-88 " + (mx + 20) + ",-84 "; return s; })() + 'L70,-40 L-110,-40 Z" fill="' + C.money + '" stroke="' + ink + '" stroke-width="1.2"/>';
+        var tufts = "", flowers = "";
+        for (var tx = -103; tx < 70; tx += 40) {
+          [[0, -77], [17, -69], [29, -80], [9, -66]].forEach(function (p, j) {
+            tufts += line("M" + (tx + p[0] - 2) + "," + p[1] + " l1,-3 l1,3 l1,-3.5 l1,3.5", C.moneyDark, 0.9);
+            if (j % 2 === 0) flowers += daisy(tx + p[0] + 5, p[1] - 3, 2.6);
+          });
+        }
+        var band = g("ad-band", '<rect x="' + SCR.x0 + '" y="' + AD.band + '" width="80" height="12" fill="' + C.ink + '"/>' +
+          '<path d="M' + SCR.x0 + "," + AD.band + ' h80" stroke="' + C.orange + '" stroke-width="1"/>' +
+          g("ad-streaks", line("M-60,-60 H-20 M-40,-58.2 H10 M-55,-53.5 H-5 M-15,-55.3 H14", "#FBF6E6", 0.6), 'opacity="0"') +
+          g("ad-crawl", '<use href="#' + P + 'ad-text" x="14" opacity="0" id="' + P + 'ad-ghost2"/><use href="#' + P + 'ad-text" x="7" opacity="0" id="' + P + 'ad-ghost1"/>' + g("ad-text", crawl.svg)));
+        return sky + sun + g("ad-clouds", cloud(-50, -122) + cloud(-22, -116) + cloud(30, -122)) + g("ad-hills", hills) + g("ad-meadow", mead + tufts + flowers) +
+          at(AD.x, AD.feet - 100 * AD.s, AD.s, adWoman(), "ad-hop") + band;
+      }
+      // A cricket (Part 1's), and its chirp marks, to sit on the TV.
+      function cricket() {
+        return '<path d="M-4,-4 l-7,-9 l-4,12 M2,-4 l3,4" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round"/>' +
+          '<ellipse cx="0" cy="-7" rx="10" ry="5" fill="' + ink + '"/><circle cx="10" cy="-9" r="4" fill="' + ink + '"/><path d="M12,-12 q6,-12 15,-9" fill="none" stroke="' + ink + '" stroke-width="1.6"/>' +
+          g("chirp", '<path d="M24,-20 q5,4 0,9 M31,-24 q8,7 0,17" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round"/>', 'opacity="0"');
+      }
+      function tv() {
+        return KIT.props.tvSet({}).replace("<!--tv-screen-->", adScreen() + "<!--tv-screen-->") + at(54, -150, 0.5, cricket(), "cricket");
+      }
+      // The couch (back and arms behind her, the seat cushion in front, so she sinks into it), the lamp, the clock, the rug.
+      function couchBack(c) {
+        var x0 = c[0], x1 = c[1], bt = c[2], st = c[3], fb = c[4];
+        var back = [[x0 + 30, bt + 18], [x0 + 52, bt], [x1 - 52, bt], [x1 - 30, bt + 18], [x1 - 30, st + 10], [x0 + 30, st + 10]];
+        var tufts = "";
+        for (var x = x0 + 110; x < x1 - 90; x += 120) tufts += '<circle cx="' + x + '" cy="' + (bt + (st - bt) * 0.45) + '" r="5" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="2"/>';
+        var arm = function (a, b) { return poly([[a, st - 60], [a + 8, st - 74], [b - 8, st - 74], [b, st - 60], [b, fb], [a, fb]], C.orange, 4) + '<path d="M' + (a + 10) + "," + (st - 60) + " H" + (b - 10) + '" stroke="' + C.cream + '" stroke-width="4" opacity="0.6"/>'; };
+        return poly(back, C.orange, 5) + '<rect x="' + (x0 + 30) + '" y="' + bt + '" width="' + (x1 - x0 - 60) + '" height="' + (st - bt + 10) + '" fill="url(#' + P + 'hatch)" opacity="0.18"/>' + tufts +
+          arm(x0, x0 + 70) + arm(x1 - 70, x1);
+      }
+      function couchFront(c) {
+        var x0 = c[0], x1 = c[1], st = c[3], fb = c[4], fl = c[5];
+        var leg = function (x, d) { return poly([[x - 9, fb], [x + 9, fb], [x + 4 * d + 3, fl], [x + 4 * d - 3, fl]], C.rust, 3); };
+        return poly([[x0 + 58, st - 8], [x1 - 58, st - 8], [x1 - 50, st + 6], [x1 - 50, fb], [x0 + 50, fb], [x0 + 50, st + 6]], C.orange, 5) +
+          '<path d="M' + (x0 + 66) + "," + (st + 2) + " H" + (x1 - 66) + '" stroke="' + C.cream + '" stroke-width="4" opacity="0.6"/>' +
+          '<path d="M' + ((x0 + x1) / 2) + "," + (st + 6) + " V" + (fb - 8) + '" stroke="' + ink + '" stroke-width="2.4" opacity="0.6"/>' +
+          leg(x0 + 40, -1) + leg(x1 - 40, 1);
+      }
+      function lamp(x, fl) {
+        if (x === null) return "";
+        var top = fl - 500;
+        return '<path d="M' + x + "," + fl + " L" + x + "," + top + '" stroke="' + ink + '" stroke-width="6"/>' +
+          poly([[x - 22, top - 50], [x + 22, top - 50], [x + 40, top + 20], [x - 40, top + 20]], C.yellow, 4) +
+          '<path d="M' + (x - 30) + "," + (top - 10) + " H" + (x + 30) + '" stroke="' + C.orange + '" stroke-width="5"/>';
+      }
+      function clock(x, y, r) {
+        var rays = "";
+        for (var k = 0; k < 12; k++) {
+          var a = (k * Math.PI) / 6, rr = k % 2 ? r * 1.45 : r * 1.75;
+          rays += '<path d="M' + f1(x + r * 0.9 * Math.cos(a)) + "," + f1(y + r * 0.9 * Math.sin(a)) + " L" + f1(x + rr * Math.cos(a)) + "," + f1(y + rr * Math.sin(a)) + '" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>' +
+            '<circle cx="' + f1(x + rr * Math.cos(a)) + '" cy="' + f1(y + rr * Math.sin(a)) + '" r="' + (k % 2 ? 6 : 8) + '" fill="' + (k % 2 ? C.orange : C.yellow) + '" stroke="' + ink + '" stroke-width="2.4"/>';
+        }
+        return rays + '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="#FBF6E6" stroke="' + ink + '" stroke-width="5"/>' +
+          '<path d="M' + x + "," + y + " L" + x + "," + (y - r * 0.62) + " M" + x + "," + y + " L" + f1(x + r * 0.45) + "," + f1(y + r * 0.2) + '" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>' +
+          '<circle cx="' + x + '" cy="' + y + '" r="5" fill="' + C.war + '"/>';
+      }
+      // The room, cropped by the paper's inner border.
+      function livingRoom() {
+        var c = LR.seat, t = LR.tvFloor, r = LR.rug;
+        // (9:16: the floor from the TV's floor line down, in boards, so the bottom of the frame is floor, not paper)
+        var boards = "";
+        if (t) for (var by = t[1] + 46, k = 1; by < H - 44; by += 40 + k * 14, k++) boards += '<path d="M44,' + by + " H" + (W - 44) + '" stroke="' + ink + '" stroke-width="2.5" opacity="0.5"/>';
+        var floor = (t ? '<rect x="44" y="' + t[1] + '" width="' + (W - 88) + '" height="' + (H - 44 - t[1]) + '" fill="' + C.tan + '" opacity="0.35"/>' + boards +
+          '<path d="M44,' + t[1] + " H" + (W - 44) + '" stroke="' + ink + '" stroke-width="5"/>' : "") +
+          (r ? '<ellipse cx="' + r[0] + '" cy="' + r[1] + '" rx="' + r[2] + '" ry="' + r[3] + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="4"/>' +
+            '<ellipse cx="' + r[0] + '" cy="' + r[1] + '" rx="' + (r[2] - 26) + '" ry="' + (r[3] - 10) + '" fill="none" stroke="' + C.orange + '" stroke-width="4"/>' : "");
+        var pat = at(LR.pat[0], HIPS - LR.pat[1] * KIT.rig(PATO).hipY, LR.pat[1], g("pat", patient(PATO)));
+        return '<defs><clipPath id="' + P + 'frame"><rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '"/></clipPath></defs><g clip-path="url(#' + P + 'frame)">' +
+          clock(LR.clock[0], LR.clock[1], LR.clock[2]) + floor + at(LR.tv[0], LR.tv[1], LR.tv[2], g("tv", tv())) +
+          lamp(LR.lamp, LR.floor - 40) + couchBack(c) + pat + couchFront(c) + "</g>";
+      }
+      // Pose everything that moves continuously, at time T on meadow-ad's clock.
+      var AE = {};
+      function adBind() {
+        var hop = q("ad-hop"), who = function (s) { return hop.querySelectorAll(s); };
+        AE = { hop: hop, meadow: q("ad-meadow"), hills: q("ad-hills"), clouds: q("ad-clouds"), crawl: q("ad-crawl"), g1: q("ad-ghost1"), g2: q("ad-ghost2"), streaks: q("ad-streaks"),
+          text: q("ad-text"), boneA: q("ad-boneA"), boneB: q("ad-boneB"), legL: who(".leg-l"), legR: who(".leg-r"),
+          armL: [q("ad-alive").querySelector(".arm-l"), q("ad-boneA").querySelector(".arm-l")], armR: [q("ad-alive").querySelector(".arm-r"), q("ad-boneA").querySelector(".arm-r"), q("ad-boneB").querySelector(".arm-r")],
+          scrub: q("ad-boneB").querySelector(".arm-l"), light: q("pat").querySelector(".chest-light") };
+      }
+      function rot(el, a, o) { el.setAttribute("transform", "rotate(" + a.toFixed(2) + " " + f1(o[0]) + " " + f1(o[1]) + ")"); }
+      function adAt(T) {
+        var run = Math.max(0, T - AT.hop0), n = 0, p = 0, y = 0;
+        AE.meadow.setAttribute("transform", "translate(" + (-((run * 14) % 40)).toFixed(2) + ",0)");
+        AE.hills.setAttribute("transform", "translate(" + (-((run * 4) % 60)).toFixed(2) + ",0)");
+        AE.clouds.setAttribute("transform", "translate(" + (-((T * 1.5) % 30)).toFixed(2) + ",0)");
+        if (T >= AT.hop0) { var k = run / AD.period; n = Math.floor(k); p = k - n; y = -AD.hop * 4 * p * (1 - p); }
+        AE.hop.setAttribute("transform", tr(AD.x, AD.feet - 100 * AD.s + y, AD.s));
+        var s = Math.sin(Math.PI * p), lead = n % 2 === 0, sway = T < AT.hop0 ? Math.sin(T * 5) * 5 : 0;
+        Array.prototype.forEach.call(AE.legL, function (el) { rot(el, lead ? -34 * s : 16 * s, MR.hip[0]); });
+        Array.prototype.forEach.call(AE.legR, function (el) { rot(el, lead ? 16 * s : -34 * s, MR.hip[1]); });
+        AE.armL.forEach(function (el) { rot(el, (lead ? 22 : -22) * s, MR.shoulder[0]); });
+        AE.armR.forEach(function (el) { rot(el, -8 * s + sway, MR.shoulder[1]); });
+        // the elbow scratch: from "dry" to just after "skin.", the free hand scrubs the raised elbow
+        var scratching = T >= AT.dry && T < AT.skinEnd + 0.3;
+        AE.boneA.setAttribute("opacity", scratching ? 0 : 1);
+        AE.boneB.setAttribute("opacity", scratching ? 1 : 0);
+        rot(AE.scrub, scratching ? 5 * Math.sin((T - AT.dry) * Math.PI * 2 * 7) : 0, MR.shoulder[0]);
+        // the crawl, its blur, and the chest light blinking red
+        AE.crawl.setAttribute("transform", "translate(" + (SCR.x1 - crawl.dist(T)).toFixed(2) + ",0)");
+        var b = Math.min(1, Math.max(0, (crawl.speed(T) - 40) / 150));
+        AE.g1.setAttribute("opacity", (0.4 * b).toFixed(3));
+        AE.g2.setAttribute("opacity", (0.22 * b).toFixed(3));
+        AE.text.setAttribute("opacity", (1 - 0.45 * b).toFixed(3));
+        AE.streaks.setAttribute("opacity", (0.7 * b).toFixed(3));
+        AE.light.setAttribute("fill", T % 0.9 < 0.5 ? C.war : "#E9E1CC");
+      }
+      // The rabbit ears at rest, splayed (their pivot set once), and the patient's head and eyes: looking at the TV
+      // (LOOK), or turned to the camera (FACING) after "skin.". Pass a time to put that pose there.
+      var PR = KIT.rig(PATO), NECK = PR.neck.map(f1).join(" ");
+      var LOOK = { head: -5 * PR.facing, eyes: 1.6 }, FACING = { head: 2 * PR.facing, eyes: -1.6 };
+      function earsAt(tl) {
+        var ears = [q("tv").querySelector(".tv-antenna-l"), q("tv").querySelector(".tv-antenna-r")];
+        gsap.set(ears, { svgOrigin: "0 -156" });
+        tl.fromTo(ears[0], { rotation: LR.splay[0] }, { rotation: LR.splay[0], duration: 0.01 }, 0);
+        tl.fromTo(ears[1], { rotation: LR.splay[1] }, { rotation: LR.splay[1], duration: 0.01 }, 0);
+        return ears;
+      }
+      function patientPose(tl, pose) {
+        var pat = q("pat"), head = pat.querySelector(".head"), pupils = pat.querySelectorAll(".pupil");
+        gsap.set(head, { svgOrigin: NECK });
+        tl.fromTo(head, { rotation: pose.head }, { rotation: pose.head, duration: 0.01 }, 0);
+        tl.fromTo(pupils, { x: pose.eyes }, { x: pose.eyes, duration: 0.01 }, 0);
+        return { head: head, pupils: pupils, eyes: pat.querySelectorAll(".eye") };
+      }
+      // ═══ end of the shared block ═══
+
+      // ── This scene ──────────────────────────────────────────────────────
+      var T_IN = cue("individual"), T_CURED = cue("cured"), T_DEC = cue("deceased"), T_QUAL = cue("qualifying"), T_ASK = cue("ask");
+      var T_SEVEN = cue("seven"), T_GOOG = cue("Googled"), T_HALL = cue("hallway"), T_BACK = KIT.after(ID, "hallway");
+      var BONE = "#F1EAD6";
+      function eyesBy(svg, dx, dy) {
+        return svg.replace(/<circle class="pupil" cx="([-\d.]+)" cy="([-\d.]+)"/g, function (m, cx, cy) { return '<circle class="pupil" cx="' + (+cx + dx) + '" cy="' + (+cy + dy) + '"'; });
+      }
+
+      // ── The end card, in TV units around the screen's center (-23, -92.5). Zoomed in, the frame shows about 78 x 44
+      // of them in 16:9 and 45 x 81 in 9:16, so each shape lays it out for its own window (clear of Wishonia's corner
+      // and, in 9:16, the captions). head: [text, baseline]; dial: [x, y, scale]; labels: [x, y]; stand: where the
+      // skeleton stops [x, feet y, scale]; frame: the half-size of the ruled border.
+      var CL = V
+        ? { head: [["INDIVIDUAL RESULTS", -15.5], ["MAY VARY", -11]], hs: 3.7, rule: -8.3, dial: [0, 1, 0.14], cured: [-10.5, 14.6], dec: [10.5, 14.6], ls: 2.9, stamp: 0.075, stand: [-15.5, 9.6, 0.075], frame: [21, 20.4] }
+        : { head: [["INDIVIDUAL RESULTS MAY VARY", -13.6]], hs: 4.6, rule: -10.9, dial: [0, -1.4, 0.135], cured: [-21.5, -0.6], dec: [21.5, -0.6], ls: 3.4, stamp: 0.1, stand: [-21, 13.6, 0.085], frame: [37, 19.6] };
+      var THUMB = Object.assign({}, MEAD, { arms: [[70, 175], MEAD.arms[1]] });
+      function label(cx, cy, text, s, pre, final) {
+        var tw = text.length * s * 0.5, w = s * 1.5 + tw, x0 = cx - w / 2, by = cy - s * 0.62;
+        var box = '<rect x="' + f1(x0) + '" y="' + f1(by) + '" width="' + s + '" height="' + s + '" fill="#FFFFFF" stroke="' + ink + '" stroke-width="' + (s * 0.12).toFixed(2) + '"/>';
+        var t = '<text x="' + f1(x0 + s * 1.5) + '" y="' + f1(cy + s * 0.35) + '" font-family="Oswald" font-weight="600" font-size="' + s + '" fill="' + ink + '" textLength="' + f1(tw) + '" lengthAdjust="spacingAndGlyphs">' + text + "</text>";
+        var tk = KIT.tick(x0 - s * 0.1, by - s * 0.45, s * 1.35, pre === "tick-0" ? "#1F6E68" : C.war);
+        if (final) tk = tk.replace('stroke-dashoffset="1"', 'stroke-dashoffset="0"');
+        return box + t + (final ? tk : g(pre, tk));
+      }
+      function stampAt(x, y, a, pre, final) {
+        var mark = KIT.props.stampMark({ text: "QUALIFIES", angle: a }), cy = +mark.match(/data-cy="([-\d.]+)"/)[1];
+        return at(x, y - cy * CL.stamp, CL.stamp, final ? mark : g(pre, mark, 'data-cy="' + cy + '"'));
+      }
+      function cardSvg(final) {
+        var fr = CL.frame, out = '<rect x="-41" y="-42.5" width="82" height="85" fill="#FBF6E6"/>' +
+          '<rect x="' + -fr[0] + '" y="' + -fr[1] + '" width="' + 2 * fr[0] + '" height="' + 2 * fr[1] + '" fill="none" stroke="' + ink + '" stroke-width="0.7"/>' +
+          '<rect x="' + (-fr[0] + 1.2) + '" y="' + (-fr[1] + 1.2) + '" width="' + (2 * fr[0] - 2.4) + '" height="' + (2 * fr[1] - 2.4) + '" fill="none" stroke="' + C.orange + '" stroke-width="0.35"/>' +
+          KIT.star(-fr[0] + 3.4, -fr[1] + 3.4, 1.6, C.orange) + KIT.star(fr[0] - 3.4, -fr[1] + 3.4, 1.6, C.orange);
+        CL.head.forEach(function (h) {
+          out += '<text x="0" y="' + h[1] + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + CL.hs + '" letter-spacing="' + (CL.hs * 0.04).toFixed(2) + '" fill="' + ink + '">' + h[0] + "</text>";
+        });
+        out += '<path d="M' + (-fr[0] + 4) + "," + CL.rule + " H" + (fr[0] - 4) + '" stroke="' + C.orange + '" stroke-width="0.5"/>';
+        var dial = KIT.props.gauge({ mount: "dial", value: final ? 1 : 0.5, zones: [], label: "RESULT", marks: [[0, "", "#1F6E68"], [1, "", C.war]] });
+        out += at(CL.dial[0], CL.dial[1] + 62 * CL.dial[2], CL.dial[2], final ? dial : g("dial", dial));
+        out += label(CL.cured[0], CL.cured[1], "CURED", CL.ls, "tick-0", final) + label(CL.dec[0], CL.dec[1], "DECEASED", CL.ls, "tick-1", final);
+        out += stampAt(CL.cured[0], CL.cured[1] - CL.ls * 0.2, -8, "stamp-0", final) + stampAt(CL.dec[0], CL.dec[1] - CL.ls * 0.2, 7, "stamp-1", final);
+        if (!final) {
+          var a = rashy(withDaisies(sunHat(KIT.person(Object.assign({ skeleton: true }, MEAD))), MEAD));
+          var th = KIT.rig(THUMB).handLocal[0];
+          var thumb = '<g transform="translate(' + f1(th[0]) + "," + f1(th[1]) + ')"><path d="M-4,-1 L4,-1 L5,7 L-4,7 Z" fill="' + BONE + '" stroke="' + ink + '" stroke-width="2"/><path d="M-1,-1 L-1,-11 L3,-11 L3,-1" fill="' + BONE + '" stroke="' + ink + '" stroke-width="2" stroke-linejoin="miter"/></g>';
+          var b = rashy(withDaisies(sunHat(KIT.person(Object.assign({ skeleton: true }, THUMB))), THUMB));
+          b = b.replace(/(<g class="arm-l">[\s\S]*?)(<\/g>)/, "$1" + thumb + "$2");
+          out += at(CL.stand[0], CL.stand[1] - 100 * CL.stand[2], CL.stand[2], g("sk-move", g("sk-hop", g("sk-a", a) + g("sk-b", b, 'opacity="0"'))));
+        }
+        return '<g transform="translate(-23,-92.5)"' + (final ? "" : ' id="' + P + 'card" opacity="0"') + ">" + out + "</g>";
+      }
+
+      // ── The hallway (the second room): the TV on a wall bracket, the patient on a plastic chair under it, two exam
+      // room doors, the sign that drops in, the doctor on skates and the close-up bubble of his phone.
+      var HB = V
+        ? { tv: [330, 848, 2.6], rail: 930, floor: 1052, pat: [330, 1180, 2.6], doors: [[640, 610], [860, 610]], sign: [360, 148, 1.1], doc: [760, 1424, 2.9], bubble: [790, 640, 150] }
+        : { tv: [400, 648, 2.6], rail: 690, floor: 812, pat: [400, 960, 2.6], doors: [[1010, 420], [1290, 420]], sign: [880, 196, 1.25], doc: [830, 1004, 2.7], bubble: [1300, 340, 150] };
+      var P2O = Object.assign({}, PAT, { build: { legPose: [[84, 6], [90, 0]] }, arms: [[-18, 60], [18, -60]] });
+      var P2R = KIT.rig(P2O), P2HIPS = HB.pat[1] - HB.pat[2] * (100 - P2R.hipY);
+      function chair(x, hips, s) {
+        var back = [[x - 26 * s, hips - 62 * s], [x + 16 * s, hips - 66 * s], [x + 20 * s, hips - 34 * s], [x + 6 * s, hips - 4 * s], [x - 22 * s, hips - 4 * s], [x - 30 * s, hips - 30 * s]];
+        var seat = [[x - 30 * s, hips - 2 * s], [x + 36 * s, hips - 4 * s], [x + 38 * s, hips + 4 * s], [x - 28 * s, hips + 6 * s]];
+        var legs = "M" + f1(x - 22 * s) + "," + f1(hips + 6 * s) + " L" + f1(x - 30 * s) + "," + HB.pat[1] + " M" + f1(x - 18 * s) + "," + f1(hips + 6 * s) + " L" + f1(x - 8 * s) + "," + HB.pat[1] +
+          " M" + f1(x + 26 * s) + "," + f1(hips + 5 * s) + " L" + f1(x + 18 * s) + "," + HB.pat[1] + " M" + f1(x + 30 * s) + "," + f1(hips + 5 * s) + " L" + f1(x + 40 * s) + "," + HB.pat[1];
+        return line(legs, ink, 2.2 * s) + poly(back, C.orange, 4) + poly(seat, C.orange, 4) + line("M" + f1(x - 22 * s) + "," + f1(hips - 52 * s) + " L" + f1(x + 12 * s) + "," + f1(hips - 55 * s), C.cream, 3, ' opacity="0.6"');
+      }
+      function door(x, y, n) {
+        var w = 160, h = HB.floor - y;
+        return poly([[x, y], [x + w, y], [x + w, y + h], [x, y + h]], C.slate, 5) + poly([[x + 16, y + 16], [x + w - 16, y + 16], [x + w - 16, y + h - 16], [x + 16, y + h - 16]], C.peri, 3) +
+          poly([[x + 40, y + 34], [x + w - 40, y + 34], [x + w - 40, y + 120], [x + 40, y + 120]], C.cyan, 3) +
+          poly([[x + 34, y + 140], [x + w - 34, y + 140], [x + w - 34, y + 172], [x + 34, y + 172]], "#FBF6E6", 2.4) +
+          '<text x="' + (x + w / 2) + '" y="' + (y + 164) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="22" fill="' + ink + '">EXAM ' + n + "</text>" +
+          '<circle cx="' + (x + w - 30) + '" cy="' + (y + h * 0.55) + '" r="8" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/>';
+      }
+      // Roller skates under a person's shoes (in each leg group, so they move with the legs), for a standing build.
+      function skates(svg, o) {
+        var r = KIT.rig(o), L = 37 * r.build.legs, lp = [[-6, -2], [6, 2]], gx = r.facing;
+        [0, 1].forEach(function (i) {
+          var a = lp[i], ax = r.hip[i][0] + L * (Math.sin((a[0] * Math.PI) / 180) + Math.sin((a[1] * Math.PI) / 180)), ay = r.hipY + L * (Math.cos((a[0] * Math.PI) / 180) + Math.cos((a[1] * Math.PI) / 180));
+          var sk = poly([[ax - gx * 8, ay + 4], [ax + gx * 18, ay + 4], [ax + gx * 18, ay + 7.5], [ax - gx * 8, ay + 7.5]], C.war, 2) +
+            [ax - gx * 3, ax + gx * 13].map(function (wx) { return '<circle cx="' + f1(wx) + '" cy="' + f1(ay + 11) + '" r="3.6" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>'; }).join("");
+          svg = into(svg, i ? "leg-r" : "leg-l", sk);
+        });
+        return svg;
+      }
+      var SKATE_FOOT = 114.5; // the wheels' bottom, in person units
+      // The doctor: head mirror (face units) and stethoscope (on the coat, under the head).
+      var DOC = { tone: 1, outfit: "labcoat", color: 1 };
+      var MIRROR = '<path d="M-15,-13 L17,-16" stroke="' + ink + '" stroke-width="3"/><circle cx="5" cy="-19" r="7.5" fill="#E6E8EA" stroke="' + ink + '" stroke-width="2.2"/><circle cx="5" cy="-19" r="2.4" fill="' + ink + '"/><path d="M1,-23 L4,-25" stroke="#FFFFFF" stroke-width="1.6"/>';
+      function doctor(o, extra) {
+        var r = KIT.rig(o), T = r.shoulder[0][1] - 3;
+        var steth = '<path d="M-7,' + f1(T - 1) + " Q-9," + f1(T + 14) + " 2," + f1(T + 20) + " M7," + f1(T - 1) + " Q10," + f1(T + 12) + " 2," + f1(T + 20) + " L4," + f1(T + 27) + '" fill="none" stroke="' + ink + '" stroke-width="2.4"/>' +
+          '<circle cx="4" cy="' + f1(T + 30) + '" r="3.6" fill="#C9CDD2" stroke="' + ink + '" stroke-width="2"/>';
+        var svg = KIT.person(o).replace("<!--face-end-->", MIRROR + "<!--face-end-->").replace('<g class="head">', steth + '<g class="head">');
+        return skates(svg, o) + (extra || "");
+      }
+      // The stopwatch (zip) and the rotary phone with its little screen and its long trailing cord (stop).
+      function stopwatch(x, y) {
+        return '<g transform="translate(' + f1(x) + "," + f1(y) + ')"><rect x="-2" y="-14" width="4" height="4" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="1.4"/>' +
+          '<circle cx="0" cy="-3" r="8" fill="#FBF6E6" stroke="' + ink + '" stroke-width="2.4"/><path d="M0,-3 L0,-9 M0,-3 L4,-1" stroke="' + C.war + '" stroke-width="1.6" stroke-linecap="round"/></g>';
+      }
+      var ZIP = Object.assign({}, DOC, { look: "right", arms: [[-60, -30], [100, 140]] });
+      var STOPO = Object.assign({}, DOC, { look: "left" }), SR = KIT.rig(STOPO);
+      var PH = [-29, 3, 0.75]; // the phone in his hands: [x, y (its base), scale], in person units
+      STOPO.arms = [reach(SR.shoulder[0], [PH[0] - 15, PH[1] - 6], SR.armLength), reach(SR.shoulder[1], [PH[0] + 13, PH[1] - 5], SR.armLength)];
+      function phone() {
+        var scr = '<path d="M-1,-33 L-1,-38" stroke="' + ink + '" stroke-width="2.4"/>' + poly([[-15, -58], [15, -58], [15, -38], [-15, -38]], C.slate, 2.2) +
+          '<rect x="-12" y="-55" width="24" height="7" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1"/><path d="M-9,-51.5 H5" stroke="' + ink + '" stroke-width="1.6"/>' +
+          '<g class="mini-skull" opacity="0"><circle cx="0" cy="-43" r="3" fill="' + BONE + '" stroke="' + ink + '" stroke-width="0.9"/></g>';
+        var cord = '<path d="M17,-4 C30,0 30,30 26,60 C24,80 40,104 60,108 L104,111" fill="none" stroke="' + ink + '" stroke-width="2.2"/>' +
+          poly([[104, 108], [112, 108], [112, 114], [104, 114]], C.slate, 1.4) + line("M112,109.5 h5 M112,112.5 h5", ink, 1.2);
+        return at(PH[0], PH[1], PH[2], cord + scr + KIT.props.phone({}));
+      }
+      function hallway() {
+        var fl = HB.floor, tiles = "";
+        for (var ty = fl, row = 0; ty < H - 44; ty += 64, row++) {
+          for (var tx = 44 + (row % 2) * 64; tx < W - 44; tx += 128) tiles += '<rect x="' + tx + '" y="' + ty + '" width="64" height="64" fill="' + C.tan + '" opacity="0.4"/>';
+        }
+        var wall = '<rect x="44" y="' + HB.rail + '" width="' + (W - 88) + '" height="' + (fl - HB.rail) + '" fill="' + C.cyan + '" opacity="0.55"/>' +
+          '<path d="M44,' + HB.rail + " H" + (W - 44) + '" stroke="' + C.orange + '" stroke-width="8"/>' +
+          '<rect x="44" y="' + fl + '" width="' + (W - 88) + '" height="' + (H - 44 - fl) + '" fill="#FBF6E6" opacity="0.6"/>' + tiles +
+          '<path d="M44,' + fl + " H" + (W - 44) + '" stroke="' + ink + '" stroke-width="6"/>';
+        var doors = HB.doors.map(function (d, i) { return door(d[0], d[1], i + 1); }).join("");
+        // The TV hangs on a bracket: its legs are cut off (above the cabinet's bottom edge).
+        var tvB = '<defs><clipPath id="' + P + 'nolegs"><rect x="-120" y="-260" width="240" height="226"/></clipPath></defs>' +
+          '<g clip-path="url(#' + P + 'nolegs)">' + KIT.props.tvSet({}).replace("<!--tv-screen-->", cardSvg(true)) + "</g>" +
+          poly([[-60, -34], [60, -34], [60, -27], [-60, -27]], C.slate, 2) + line("M-40,-27 L-30,-8 M40,-27 L30,-8", ink, 3) + line("M-34,-8 H-26 M26,-8 H34", ink, 3);
+        var pat = at(HB.pat[0], P2HIPS - HB.pat[2] * P2R.hipY, HB.pat[2], g("pat2", patient(P2O)));
+        // The sign hangs from the top border on two chains.
+        var sign = KIT.props.sign({ text: "APPOINTMENT: 7 MIN", height: 0 }), sh = Math.round(34 * 1.75) * HB.sign[2], sw = Math.round(18 * 34 * 0.56 + 64) * HB.sign[2];
+        var chains = line("M" + f1(HB.sign[0] - sw * 0.35) + ",44 V" + f1(HB.sign[1] - sh) + " M" + f1(HB.sign[0] + sw * 0.35) + ",44 V" + f1(HB.sign[1] - sh), ink, 3, ' stroke-dasharray="7 4"');
+        var signG = g("sign", chains + at(HB.sign[0], HB.sign[1], HB.sign[2], sign));
+        // The doctor: zipping past (look right, stopwatch), and stopped with the phone (look left), normal and pale.
+        var zr = KIT.rig(ZIP), zipD = doctor(ZIP).replace('<g class="arm-r">', '<g class="arm-r">' + stopwatch(zr.handLocal[1][0] + 2, zr.handLocal[1][1] - 4));
+        var stopSvg = doctor(STOPO).replace('<g class="arm-l">', phone() + '<g class="arm-l">');
+        var down = eyesBy(stopSvg, -0.6, 2.2);
+        var pale = doctor(Object.assign({}, STOPO, { mood: "worried" })).replace('<g class="arm-l">', phone() + '<g class="arm-l">')
+          .replace(/#D9B48F/gi, "#E9E6CF") + '<path d="M-17,-64 q-4,6 0,9 q4,-3 0,-9 Z" fill="#DCEBF0" stroke="' + ink + '" stroke-width="1.6"/>';
+        var docAt = function (x, inner, id) { return at(x, HB.doc[1] - SKATE_FOOT * HB.doc[2], HB.doc[2], g(id, inner)); };
+        var speed = g("speed", line("M-150,-20 H-40 M-170,20 H-50 M-140,60 H-30", ink, 4, ' opacity="0.7"'));
+        var skid = g("skid", line("M0,0 H170 M0,22 H150", "#2A221C", 6, ' pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"'));
+        var docs = at(0, HB.doc[1] - 6, 1, '<g transform="translate(' + HB.doc[0] + ',0)">' + skid + "</g>") +
+          docAt(0, g("zip-lean", zipD + at(0, 40, 1, speed)), "zip") +
+          docAt(HB.doc[0], g("stop-lean", g("stop-a", down) + g("stop-b", pale, 'opacity="0"')), "stop");
+        return '<defs><clipPath id="' + P + 'frameB"><rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '"/></clipPath></defs><g clip-path="url(#' + P + 'frameB)">' +
+          wall + doors + signG + at(HB.tv[0], HB.tv[1], HB.tv[2], tvB) + chair(HB.pat[0], P2HIPS, HB.pat[2]) + pat + docs + "</g>";
+      }
+      // The close-up bubble of the phone's screen: a plain search box, then the result.
+      function bubble() {
+        var b = HB.bubble, R = b[2], ph = [HB.doc[0] + HB.doc[2] * PH[0], HB.doc[1] - HB.doc[2] * (SKATE_FOOT - PH[1] + 45)];
+        var ang = Math.atan2(ph[1] - b[1], ph[0] - b[0]), tip = [ph[0] - b[0], ph[1] - b[1]], n = [-Math.sin(ang), Math.cos(ang)];
+        var tail = poly([[Math.cos(ang) * R * 0.8 + n[0] * 26, Math.sin(ang) * R * 0.8 + n[1] * 26], [tip[0] * 0.9, tip[1] * 0.9], [Math.cos(ang) * R * 0.8 - n[0] * 26, Math.sin(ang) * R * 0.8 - n[1] * 26]], "#FBF6E6", 5);
+        var screen = poly([[-112, -96], [112, -96], [112, 96], [-112, 96]], C.slate, 4);
+        var box = poly([[-96, -76], [96, -76], [96, -30], [-96, -30]], "#FFFFFF", 3) +
+          '<circle cx="-76" cy="-56" r="9" fill="none" stroke="' + ink + '" stroke-width="3.4"/><path d="M-70,-50 L-62,-42" stroke="' + ink + '" stroke-width="4" stroke-linecap="round"/>';
+        var typed = '<defs><clipPath id="' + P + 'typeclip"><rect id="' + P + 'typerect" x="-54" y="-74" width="0" height="42"/></clipPath></defs>' +
+          '<text x="-54" y="-44" font-family="Oswald" font-weight="600" font-size="25" fill="' + ink + '" clip-path="url(#' + P + 'typeclip)" textLength="140" lengthAdjust="spacingAndGlyphs">RED CHEST LIGHT</text>' +
+          g("cursor", '<rect x="-54" y="-68" width="3" height="30" fill="' + ink + '"/>');
+        var skull = g("skull", '<g transform="translate(0,34)"><path d="M-36,-10 L-28,-38 L0,-48 L28,-38 L36,-10 L32,12 L18,22 L18,40 L-18,40 L-18,22 L-32,12 Z" fill="' + BONE + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="miter"/>' +
+          '<path d="M-26,-12 L-6,-14 L-8,4 L-22,2 Z M26,-12 L6,-14 L8,4 L22,2 Z" fill="' + ink + '"/><path d="M-5,16 L0,6 L5,16 Z" fill="' + ink + '"/>' +
+          '<path d="M-18,28 H18 M-9,22 V40 M0,22 V40 M9,22 V40" stroke="' + ink + '" stroke-width="3"/></g>', 'opacity="0"');
+        return at(b[0], b[1], 1, g("bubble", tail + '<circle r="' + R + '" fill="#FBF6E6" stroke="' + ink + '" stroke-width="7"/><circle r="' + (R - 12) + '" fill="none" stroke="' + C.orange + '" stroke-width="3"/>' +
+          '<g transform="scale(' + ((R - 26) / 140).toFixed(3) + ')">' + screen + box + typed + skull + "</g>"));
+      }
+
+      // ── Build ──
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + '<g id="' + P + 'world">' + g("roomA", livingRoom().replace("<!--tv-screen-->", cardSvg(false))) +
+        g("roomB", hallway() + bubble(), 'display="none"') + "</g>");
+      adBind();
+      // Meadow-ad's last frame: the skeleton (and its rash) on the TV, the patient facing the camera, no sparkle.
+      q("ad-alive").setAttribute("opacity", 0);
+      q("ad-bones").setAttribute("opacity", 1);
+      q("sparkle").setAttribute("opacity", 0);
+
+      // ── The camera: zoom into TV A's screen ("individual"), then, still zoomed, swap to TV B and pull out ("ask").
+      // A zoom about a fixed point F: translate(F (1 - k)) scale(k); F puts the screen's center at the frame's center.
+      var center = [W / 2, H / 2], sA = LR.tv[2], sB = HB.tv[2];
+      var SA = [LR.tv[0] - 23 * sA, LR.tv[1] - 92.5 * sA], SB = [HB.tv[0] - 23 * sB, HB.tv[1] - 92.5 * sB];
+      var kA = V ? (H * 1.03) / (83 * sA) : (W * 1.03) / (80 * sA), kB = (kA * sA) / sB;
+      var FA = [(center[0] - kA * SA[0]) / (1 - kA), (center[1] - kA * SA[1]) / (1 - kA)], FB = [(center[0] - kB * SB[0]) / (1 - kB), (center[1] - kB * SB[1]) / (1 - kB)];
+      var ease = function (u) { u = Math.min(1, Math.max(0, u)); return u < 0.5 ? 2 * u * u : 1 - 2 * (1 - u) * (1 - u); };
+      var world = q("world"), roomA = q("roomA"), roomB = q("roomB"), shown = null;
+      function camAt(t) {
+        var inA = t < T_ASK, k = inA ? Math.pow(kA, ease((t - T_IN) / 0.8)) : Math.pow(kB, 1 - ease((t - T_ASK) / 0.9)), F = inA ? FA : FB;
+        world.setAttribute("transform", "translate(" + (F[0] * (1 - k)).toFixed(2) + "," + (F[1] * (1 - k)).toFixed(2) + ") scale(" + k.toFixed(5) + ")");
+        if (shown !== inA) { roomA.setAttribute("display", inA ? "inline" : "none"); roomB.setAttribute("display", inA ? "none" : "inline"); shown = inA; }
+      }
+
+      // ── The card's skeleton: skips in from the left to its stand, thumbs-up, skips off right (on its own hop clock).
+      var SK_IN = T_QUAL + 0.05, SK_STOP = T_QUAL + 0.62, SK_OUT = T_QUAL + 1.32, SK_GONE = T_QUAL + 1.9;
+      var skHop = q("sk-hop"), skLegs = [skHop.querySelectorAll(".leg-l"), skHop.querySelectorAll(".leg-r")];
+      function skAt(t) {
+        var moving = (t >= SK_IN && t < SK_STOP) || (t >= SK_OUT && t < SK_GONE), k = moving ? (t - SK_IN) / AD.period : 0, n = Math.floor(k), p = k - n, s = moving ? Math.sin(Math.PI * p) : 0;
+        skHop.setAttribute("transform", "translate(0," + (moving ? -20 * 4 * p * (1 - p) : 0).toFixed(2) + ")");
+        var lead = n % 2 === 0;
+        Array.prototype.forEach.call(skLegs[0], function (el) { rot(el, lead ? -34 * s : 16 * s, MR.hip[0]); });
+        Array.prototype.forEach.call(skLegs[1], function (el) { rot(el, lead ? 16 * s : -34 * s, MR.hip[1]); });
+      }
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      earsAt(tl);
+      patientPose(tl, FACING);
+      var light2 = q("pat2").querySelector(".chest-light");
+      KIT.onTime(tl, D, function (t) { adAt(MD + t); camAt(t); skAt(t); light2.setAttribute("fill", (MD + t) % 0.9 < 0.5 ? C.war : "#E9E1CC"); });
+
+      // "individual": click, the end card; the needle wanders (results may vary) until "cured" and "deceased".
+      tl.fromTo(q("card"), { opacity: 0 }, { opacity: 1, duration: 0.05, repeat: 3, yoyo: true, ease: "steps(1)" }, T_IN);
+      tl.set(q("card"), { opacity: 1 }, T_IN + 0.21);
+      var needle = q("dial").querySelector(".gauge-needle");
+      gsap.set(needle, { svgOrigin: "0 -62" });
+      var wander = Math.max(1, Math.floor((T_CURED - 0.25 - (T_IN + 0.9)) / 0.42));
+      tl.fromTo(needle, { rotation: -30 }, { rotation: 34, duration: 0.42, repeat: wander - 1, yoyo: true, ease: "sine.inOut" }, T_IN + 0.9);
+      tl.to(needle, { rotation: -120, duration: 0.28, ease: "back.out(1.8)" }, T_CURED);
+      KIT.drawTick(tl, q("tick-0").querySelector(".tick"), T_CURED + 0.08);
+      tl.to(needle, { rotation: 120, duration: 0.32, ease: "back.out(1.8)" }, T_DEC);
+      KIT.drawTick(tl, q("tick-1").querySelector(".tick"), T_DEC + 0.08);
+      // "qualifying).": QUALIFIES thumps onto both ends; the skeleton skips in, thumbs-up, and skips off.
+      [0, 1].forEach(function (i) {
+        var st = q("stamp-" + i);
+        gsap.set(st, { svgOrigin: "0 " + st.getAttribute("data-cy") });
+        tl.fromTo(st, { scale: 1.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.12, ease: "power4.in" }, T_QUAL + i * 0.2 - 0.1);
+      });
+      var cs = CL.stand[2];
+      tl.fromTo(q("sk-move"), { x: (-44 - CL.stand[0]) / cs }, { x: 0, duration: SK_STOP - SK_IN, ease: "none" }, SK_IN);
+      tl.set(q("sk-a"), { opacity: 0 }, SK_STOP + 0.05);
+      tl.set(q("sk-b"), { opacity: 1 }, SK_STOP + 0.05);
+      tl.set(q("sk-b"), { opacity: 0 }, SK_OUT);
+      tl.set(q("sk-a"), { opacity: 1 }, SK_OUT);
+      tl.to(q("sk-move"), { x: (48 - CL.stand[0]) / cs, duration: SK_GONE - SK_OUT, ease: "none" }, SK_OUT);
+
+      // "ask": the pull-out (camAt). "seven": the sign drops in on its chains; the doctor zips past with his stopwatch.
+      tl.fromTo(q("sign"), { y: -360 }, { y: 0, duration: 0.42, ease: "bounce.out" }, T_SEVEN);
+      var ds = HB.doc[2];
+      tl.fromTo(q("zip"), { x: -320 / ds }, { x: (W + 320) / ds, duration: 0.5, ease: "none" }, T_SEVEN);
+      gsap.set(q("zip-lean"), { svgOrigin: "0 " + SKATE_FOOT });
+      tl.fromTo(q("zip-lean"), { rotation: 12 }, { rotation: 12, duration: 0.01 }, 0);
+      // "Googled": he skids back in and stops beside her; she looks at him; he dials and types.
+      var arrive = T_GOOG - 0.42;
+      tl.fromTo(q("stop"), { x: (W + 260 - HB.doc[0]) / ds }, { x: 0, duration: T_GOOG - arrive, ease: "power3.out" }, arrive);
+      gsap.set(q("stop-lean"), { svgOrigin: "0 " + SKATE_FOOT });
+      tl.fromTo(q("stop-lean"), { rotation: 14 }, { rotation: 0, duration: 0.3, ease: "back.out(2.5)" }, T_GOOG - 0.08);
+      tl.fromTo(q("skid").firstChild, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power2.out" }, arrive + 0.12);
+      tl.to(q("skid"), { opacity: 0, duration: 0.6 }, T_GOOG + 0.8);
+      var pupils2 = q("pat2").querySelectorAll(".pupil");
+      tl.fromTo(pupils2, { x: 0 }, { x: 1.8, duration: 0.25, ease: "power2.out" }, T_GOOG - 0.2);
+      var dials = q("stop").querySelectorAll(".phone-dial");
+      gsap.set(dials, { svgOrigin: "0 -10.8" });
+      tl.fromTo(dials, { rotation: 0 }, { rotation: -70, duration: 0.09, repeat: 7, yoyo: true, ease: "power1.inOut" }, T_GOOG + 0.05);
+      var tap = q("stop-a").querySelector(".arm-r");
+      gsap.set(tap, { svgOrigin: SR.shoulder[1].map(f1).join(" ") });
+      tl.fromTo(tap, { rotation: 0 }, { rotation: -6, duration: 0.07, repeat: 9, yoyo: true, ease: "none" }, T_GOOG + 0.05);
+      // the close-up bubble: RED CHEST LIGHT typed into a plain search box
+      gsap.set(q("bubble"), { svgOrigin: "0 0" });
+      tl.fromTo(q("bubble"), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "back.out(2)" }, T_GOOG + 0.02);
+      var typeEnd = T_HALL - 0.15;
+      tl.fromTo(q("typerect"), { attr: { width: 0 } }, { attr: { width: 142 }, duration: typeEnd - (T_GOOG + 0.2), ease: "steps(15)" }, T_GOOG + 0.2);
+      tl.fromTo(q("cursor"), { x: 0 }, { x: 142, duration: typeEnd - (T_GOOG + 0.2), ease: "steps(15)" }, T_GOOG + 0.2);
+      tl.to(q("cursor"), { opacity: 0, duration: 0.01 }, typeEnd + 0.05);
+      // "hallway.": the result is a grinning skull; he goes pale, looks at her, and rolls one slow step back.
+      gsap.set(q("skull"), { svgOrigin: "0 34" });
+      tl.fromTo(q("skull"), { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(2.5)" }, T_HALL);
+      tl.set(q("stop").querySelectorAll(".mini-skull"), { opacity: 1 }, T_HALL);
+      tl.to(q("stop-a"), { opacity: 0, duration: 0.3, ease: "none" }, T_HALL + 0.25);
+      tl.to(q("stop-b"), { opacity: 1, duration: 0.3, ease: "none" }, T_HALL + 0.25);
+      tl.to(q("stop"), { x: 70 / ds, duration: D - T_BACK - 0.04, ease: "sine.inOut" }, T_BACK);
+      tl.to(q("stop-lean"), { rotation: -5, duration: 0.25, ease: "sine.out" }, T_BACK);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

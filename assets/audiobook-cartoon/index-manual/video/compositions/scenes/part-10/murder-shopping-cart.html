@@ -1,0 +1,515 @@
+<template id="murder-shopping-cart-template">
+  <!-- murder-shopping-cart · Layer B (storyboards/part-10-cost-of-war.md, scene 2). Slides in from the title card.
+       "Humans" → the politician pushes a giant shopping cart into AISLE 1 (squeaky wheels), waving with his other hand;
+       war papers trickle out between the basket's wires. "spend" → the baby missile in the child seat, in a bonnet,
+       shakes its rattle. "trillion" → the cart's price tag swings up and flips to $2.72 TRILLION / YEAR (ding).
+       "every year" → the politician pats the tag, proud. "stop being alive:" → the shopping list unrolls from the
+       handle (whoosh), its roll hits the floor (boing) and bounces away down the aisle, off the frame; the list is
+       blank under its heading. After "alive:" → he licks his pencil. The last frame is state A of the cart spine,
+       where warheads-in-the-cart starts. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #murder-shopping-cart-cam, #murder-shopping-cart-bg, #murder-shopping-cart-art, #murder-shopping-cart-pip, #murder-shopping-cart-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="murder-shopping-cart" data-width="1920" data-height="1080" data-start="0" data-duration="8.66">
+    <div id="murder-shopping-cart-cam">
+      <div id="murder-shopping-cart-bg"></div>
+      <div id="murder-shopping-cart-art"></div>
+      <div id="murder-shopping-cart-pip"></div>
+    </div>
+    <div id="murder-shopping-cart-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "murder-shopping-cart";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var W = KIT.W, H = KIT.H, V = KIT.V;
+
+      // ── THE CART SPINE ─────────────────────────────────────────────────────────────────────────────────────
+      // One drawing, copied verbatim into murder-shopping-cart, warheads-in-the-cart and cart-gadgets (AGENTS.md
+      // Continuity: change all three). The store aisle, the giant shopping cart, its $2.72 TRILLION / YEAR tag, the
+      // baby missile in the child seat, the shopping list hanging from the handle (its trail runs off the frame),
+      // the warhead heap, the 122-snowflake tag, the politician and the weapons maker, with their poses. Part 11's
+      // official-murder-budget brings the cart back in its cart-gadgets final state: copy this block and
+      // cart-gadgets' STATE C drawing (stateC()).
+      function cartSpine(ID) {
+        var C = KIT.C, ink = C.line, W = KIT.W, H = KIT.H, V = KIT.V, DEG = Math.PI / 180, WHITE = "#FBF6E6";
+        var P = function (s) { return ID + "-" + s; };
+        var n1 = function (v) { return (Math.round(v * 10) / 10).toFixed(1); };
+        var at = function (x, y, sc, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + n1(rot) + ")" : "") + (sc !== 1 ? " scale(" + sc + ")" : "") + '">' + inner + "</g>"; };
+        var g = function (id, inner, extra) { return '<g id="' + P(id) + '"' + (extra || "") + ">" + inner + "</g>"; };
+        var line = function (d, col, w) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"/>'; };
+        var poly = function (pts, col, w) {
+          var d = "M" + pts.map(function (p) { return n1(p[0]) + "," + n1(p[1]); }).join(" L") + " Z";
+          return '<path d="' + d + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 4) + '" stroke-linejoin="miter"/><path d="' + d + '" fill="' + col + '"/>';
+        };
+        var copy = function (a, b) { var o = {}, q; for (q in a) o[q] = a[q]; for (q in b || {}) o[q] = b[q]; return o; };
+
+        // Layout. wj: the foot of the back wall; gy: the shoppers' feet; s: the humans' scale; k: the cart's (1.6 times
+        // theirs: a giant cart); polX / wmX: the politician's and the weapons maker's feet; list: the shopping list's
+        // scale and its center left of the grip; trail: where the list's trail leaves the frame; sign: the 122-flake
+        // tag (box, grid step, flake radius); shelf: the back shelving (top, rows); plate: the AISLE 1 plate;
+        // barrow: where the weapons maker sets his wheelbarrow down.
+        var L = V
+          ? { wj: 1190, gy: 1330, s: 2.0, k: 3.2, polX: 300, wmX: 925, list: { k: 1.6, hand: [-72, -72] }, trail: { fy: 1405, to: [-30, 1440], w: [30, 22] },
+              sign: { x: 58, y: 150, w: 470, h: 520, step: [38, 31], r: 12.5, fs: 40 }, shelf: { top: 660, rows: [820, 1000], x0: 50, x1: 1030 },
+              plate: { x: 560, y: 560, w: 300 }, barrow: [1010, 1330] }
+          : { wj: 690, gy: 830, s: 2.3, k: 3.7, polX: 345, wmX: 1095, list: { k: 1.7, hand: [-72, -70] }, trail: { fy: 858, to: [1945, 688], w: [34, 12] },
+              sign: { x: 880, y: 44, w: 384, h: 440, step: [30, 26], r: 10, fs: 34 }, shelf: { top: 170, rows: [330, 500], x0: 50, x1: 1870 },
+              plate: { x: 70, y: 60, w: 300 }, barrow: [1290, 830] };
+        var s = L.s, k = L.k;
+
+        // ── Geometry: the politician's near hand is on the grip; the cart hangs off that. ──
+        var POL0 = KIT.castOpts("politician", { look: "right" }), RP = KIT.rig(POL0), LEN = RP.armLength;
+        var polY = L.gy - 100 * s;
+        var GRIP_P = [55, -46];
+        var grip = [L.polX + GRIP_P[0] * s, polY + GRIP_P[1] * s];
+        var CX = grip[0] + 53 * k, CY = L.gy;
+        var cp = function (x, y) { return [CX + x * k, CY + y * k]; };
+        var pp = function (p) { return [L.polX + p[0] * s, polY + p[1] * s]; };
+        var toPol = function (p) { return [(p[0] - L.polX) / s, (p[1] - polY) / s]; };
+        function ik(sh, t, len, bend) {
+          var dx = t[0] - sh[0], dy = t[1] - sh[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len * 0.999);
+          var phi = Math.atan2(dx, dy) / DEG, al = Math.acos(d / (2 * len)) / DEG;
+          return [phi + bend * al, phi - bend * al];
+        }
+        function handEnd(sh, a, len) {
+          var e = [sh[0] + len * Math.sin(a[0] * DEG), sh[1] + len * Math.cos(a[0] * DEG)];
+          return { elbow: e, hand: [e[0] + len * Math.sin(a[1] * DEG), e[1] + len * Math.cos(a[1] * DEG)], dir: [Math.sin(a[1] * DEG), Math.cos(a[1] * DEG)] };
+        }
+        // His far (left) hand holds the shopping list up beside him, the whole time.
+        var SH = RP.shoulder, LIST_ARM = ik(SH[0], L.list.hand, LEN, 1), LHAND = pp(handEnd(SH[0], LIST_ARM, LEN).hand);
+
+        // ── The shopping list (KIT.props.scroll), held up by its top roll: rolled up while he waves it, then it
+        // unrolls, and its bottom roll drops to the floor and runs away (the trail). ──
+        var LK = L.list.k, listX = LHAND[0], listTop = LHAND[1] - 4;
+        var listY = listTop + 158 * LK; // the scroll's y 0 on the canvas
+        var lp = function (x, y) { return [listX + x * LK, listY + y * LK]; };
+        var LINES = ["12,241 NUCLEAR", "WARHEADS", "AI MURDER-BOT", "INVISIBLE JET", "SPACE FORCE", "EARTHQUAKE MACHINE", "(PROBABLY)"];
+        var ITEMS = [[0, 1], [2], [3], [4], [5, 6]]; // the five things bought, by line
+        var lineY = function (j) { return -104 + j * 14; };
+        function listSvg() {
+          var sc = KIT.props.scroll({ text: "SHOPPING LIST", lines: LINES, wax: false });
+          var ticks = ITEMS.map(function (it, i) {
+            var y = lineY(it[0]) - 4;
+            return '<path class="' + P("tick") + '" data-i="' + i + '" d="M-55,' + (y - 1) + " L-50.5," + (y + 4) + " L-43," + (y - 8) + '" fill="none" stroke="' + C.war + '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+          }).join("");
+          return g("list-wave", at(listX, listY, LK, g("list", sc + ticks)));
+        }
+        // The list's text: [title, line 0, ... line 6]. Lines start hidden (the list is blank under its heading).
+        function listTexts() { return document.querySelectorAll("#" + P("list") + " .scroll-paper text"); }
+        // Write item i (its lines appear and its tick draws) at time t.
+        function tickItem(tl, i, t) {
+          var tx = listTexts();
+          ITEMS[i].forEach(function (j, n) { tl.fromTo(tx[j + 1], { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "steps(4)" }, t + n * 0.12); });
+          tl.fromTo(document.querySelector("#" + P("list") + " ." + P("tick") + '[data-i="' + i + '"]'), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.2, ease: "power2.out" }, t + 0.2);
+        }
+        // Show items 0..n-1 written and ticked (a scene that starts with them done).
+        function listDone(n) {
+          var tx = listTexts();
+          for (var j = 1; j < tx.length; j++) tx[j].setAttribute("opacity", "0");
+          for (var i = 0; i < n; i++) {
+            ITEMS[i].forEach(function (j) { tx[j + 1].setAttribute("opacity", "1"); });
+            document.querySelector("#" + P("list") + " ." + P("tick") + '[data-i="' + i + '"]').setAttribute("stroke-dashoffset", "0");
+          }
+        }
+        // The list unrolled (or rolled up in his hand).
+        function listRolled(up) {
+          var el = document.getElementById(P("list"));
+          el.querySelector(".scroll-reveal").setAttribute("height", up ? "0" : "150");
+          gsap.set(el.querySelector(".scroll-roll-bottom"), { y: up ? -150 : 0 });
+        }
+
+        // The trail: where the list ends, its paper keeps going: down to the floor (drop), then along the floor and
+        // off the frame (run), narrowing as it goes away. The roll that ran away is at its far end.
+        var foot = lp(0, -8), half = 56 * LK, FY = L.trail.fy, tr1 = L.trail.to, wA = L.trail.w[0], wB = L.trail.w[1];
+        function trailSvg() {
+          var x0 = foot[0] - half, x1 = foot[0] + half;
+          var drop = [[x0 + 4, foot[1] - 6], [x1 - 4, foot[1] - 6], [x1 - 4, FY], [x0 + 4, FY]];
+          var run = V ? [[x1 - 4, FY - wA / 2], [x1 - 4, FY + wA / 2], [tr1[0], tr1[1] + wB / 2], [tr1[0], tr1[1] - wB / 2]]
+            : [[x0 + 4, FY - wA / 2], [tr1[0], tr1[1] - wB / 2], [tr1[0], tr1[1] + wB / 2], [x0 + 4, FY + wA / 2]];
+          return '<defs><clipPath id="' + P("drop-clip") + '"><rect id="' + P("drop-reveal") + '" x="' + n1(x0 - 10) + '" y="' + n1(foot[1] - 8) + '" width="' + n1(2 * half + 20) + '" height="0"/></clipPath>' +
+            '<clipPath id="' + P("run-clip") + '"><rect id="' + P("run-reveal") + '" x="' + n1(V ? x1 : x0) + '" y="0" width="0" height="' + H + '"/></clipPath></defs>' +
+            '<g clip-path="url(#' + P("run-clip") + ')">' + poly(run, WHITE, 3) + line("M" + n1(V ? x1 : x0) + "," + n1(FY) + " L" + n1(tr1[0]) + "," + n1(tr1[1]), C.orange, 1.6) + "</g>" +
+            '<g clip-path="url(#' + P("drop-clip") + ')">' + poly(drop, WHITE, 3.5) + line("M" + n1(x0 + 12) + "," + n1(foot[1]) + " V" + n1(FY) + " M" + n1(x1 - 12) + "," + n1(foot[1]) + " V" + n1(FY), C.orange, 1.6) + "</g>";
+        }
+        // The roll that runs away with the trail: the list's bottom roll seen end-on, a white disc with a spiral.
+        var ROLL_R = 13 * LK, ROLL0 = [V ? foot[0] + half - ROLL_R : foot[0] - half + ROLL_R, FY - ROLL_R + 2];
+        function rollSvg() {
+          var r = ROLL_R;
+          return at(ROLL0[0], ROLL0[1], 1, g("roll-hop", g("roll-spin", '<circle r="' + n1(r) + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+            line("M0,0 m" + n1(-r * 0.15) + ",0 a" + n1(r * 0.15) + "," + n1(r * 0.15) + " 0 1 1 " + n1(r * 0.3) + ",0 a" + n1(r * 0.35) + "," + n1(r * 0.35) + " 0 1 1 " + n1(-r * 0.7) + ",0 a" + n1(r * 0.6) + "," + n1(r * 0.6) + " 0 1 1 " + n1(r * 1.2) + ",0", C.orange, 2.4)), ' opacity="0"'));
+        }
+        // The roll drops from the list's foot to the floor (t0 .. t1), then hops away to the frame edge (t1 .. t1 + dur).
+        function runTrail(tl, t0, t1, dur) {
+          var hop = document.getElementById(P("roll-hop")), spin = document.getElementById(P("roll-spin"));
+          var dx = tr1[0] - ROLL0[0], dy = tr1[1] - (ROLL0[1] + ROLL_R), hops = 3;
+          gsap.set(hop, { svgOrigin: "0 0" });
+          tl.set(hop, { opacity: 1 }, t0);
+          tl.set(document.querySelector("#" + P("list") + " .scroll-roll-bottom"), { opacity: 0 }, t0);
+          tl.fromTo(hop, { y: foot[1] - FY }, { y: 0, duration: t1 - t0, ease: "power2.in" }, t0);
+          tl.fromTo(document.getElementById(P("drop-reveal")), { attr: { height: 0 } }, { attr: { height: FY - foot[1] + 10 } , duration: t1 - t0, ease: "power2.in" }, t0);
+          tl.fromTo(hop, { x: 0 }, { x: dx * 1.1, duration: dur, ease: "none", immediateRender: false }, t1);
+          for (var i = 0; i < hops; i++) {
+            var ta = t1 + (dur / hops) * i, h = (V ? 80 : 70) * (1 - i * 0.3), yA = dy * (i / hops) * 1.1, yB = dy * ((i + 1) / hops) * 1.1;
+            tl.fromTo(hop, { y: yA }, { y: (yA + yB) / 2 - h, duration: dur / hops / 2, ease: "power2.out", immediateRender: false }, ta);
+            tl.to(hop, { y: yB, duration: dur / hops / 2, ease: "power2.in" }, ta + dur / hops / 2);
+          }
+          tl.fromTo(hop, { scale: 1 }, { scale: V ? 0.8 : 0.5, duration: dur, ease: "none", immediateRender: false }, t1);
+          tl.fromTo(spin, { rotation: 0, svgOrigin: "0 0" }, { rotation: (V ? -1 : 1) * 1000, svgOrigin: "0 0", duration: dur, ease: "none" }, t1);
+          var rv = document.getElementById(P("run-reveal")), x0 = +rv.getAttribute("x");
+          if (V) tl.fromTo(rv, { attr: { x: x0, width: 0 } }, { attr: { x: tr1[0] - 40, width: x0 - tr1[0] + 40 }, duration: dur, ease: "none" }, t1);
+          else tl.fromTo(rv, { attr: { width: 0 } }, { attr: { width: tr1[0] + 40 - x0 }, duration: dur, ease: "none" }, t1);
+        }
+        // The whole trail already run out (a scene that starts after it).
+        function trailDone() {
+          var rv = document.getElementById(P("run-reveal")), x0 = +rv.getAttribute("x");
+          if (V) { rv.setAttribute("x", n1(tr1[0] - 40)); rv.setAttribute("width", n1(x0 - tr1[0] + 40)); } else rv.setAttribute("width", n1(tr1[0] + 40 - x0));
+          document.getElementById(P("drop-reveal")).setAttribute("height", n1(FY - foot[1] + 10));
+          document.querySelector("#" + P("list") + " .scroll-roll-bottom").setAttribute("opacity", "0");
+        }
+
+        // ── The store aisle: the back shelving of silly weapons with sale tags, the AISLE 1 plate, the floor. ──
+        function aisleSvg() {
+          var sh = L.shelf, out = "", r = KIT.rng(1913);
+          // the floor (a shade darker than the paper), its back edge, and tile seams running toward the far end
+          out += '<rect x="44" y="' + L.wj + '" width="' + (W - 88) + '" height="' + (H - 44 - L.wj) + '" fill="#E9DFBE"/>';
+          var vx = V ? -600 : W + 900;
+          for (var i = -6; i <= 14; i++) {
+            var xb = (V ? W : 0) + (V ? -1 : 1) * i * 170;
+            out += line("M" + n1(xb) + "," + (H - 44) + " L" + n1(xb + (vx - xb) * 0.42) + "," + n1(L.wj + (H - 44 - L.wj) * 0.0), "#D4C79D", 2);
+          }
+          [0.22, 0.5, 0.82].forEach(function (f) { out += line("M44," + n1(L.wj + (H - 44 - L.wj) * f * f) + " H" + (W - 44), "#D4C79D", 2); });
+          out = '<g clip-path="url(#' + P("floor-clip") + ')">' + out + "</g>" + '<defs><clipPath id="' + P("floor-clip") + '"><rect x="44" y="' + L.wj + '" width="' + (W - 88) + '" height="' + (H - 88 - L.wj + 44) + '"/></clipPath></defs>';
+          out += line("M44," + L.wj + " H" + (W - 44), ink, 3);
+          // the shelving: uprights, shelves, and on each shelf a row of grumpy missiles and grinning bombs with tags
+          var shelf = "";
+          var xs = [];
+          for (var x = sh.x0 + 40; x < sh.x1 - 20; x += V ? 245 : 300) xs.push(x);
+          xs.concat([sh.x1 - 40]).forEach(function (x) { shelf += poly([[x - 7, sh.top], [x + 7, sh.top], [x + 7, L.wj], [x - 7, L.wj]], C.tan, 3); });
+          sh.rows.forEach(function (y, ri) {
+            var items = "";
+            for (var x2 = sh.x0 + 90 + ri * 60; x2 < sh.x1 - 60; x2 += V ? 150 : 170) {
+              var kind = (Math.floor(x2 / 10) + ri) % 3, sz = V ? 0.55 : 0.55;
+              if (kind === 0) items += at(x2, y, sz, KIT.props.missile({ mood: ["grumpy", "smug", "cross"][ri % 3], arms: "crossed" }));
+              else if (kind === 1) items += at(x2, y, sz * 0.95, KIT.props.bomb({ face: "grin", lit: false }));
+              else items += at(x2, y, sz * 0.9, KIT.props.bomb({ face: "smug", lit: false }));
+            }
+            shelf += items + poly([[sh.x0 + 10, y], [sh.x1 - 10, y], [sh.x1 - 10, y + 14], [sh.x0 + 10, y + 14]], C.tan, 3) + line("M" + (sh.x0 + 14) + "," + (y + 11) + " H" + (sh.x1 - 14), C.rust, 2);
+            // the shelf-edge price strips
+            for (var x3 = sh.x0 + 140 + ri * 97; x3 < sh.x1 - 60; x3 += V ? 330 : 420) shelf += at(x3, y + 7, V ? 1.05 : 1, KIT.props.priceTag({ text: ri === 1 && x3 < sh.x0 + 400 ? "SALE" : "$$$", angle: 8 + (Math.floor(x3) % 3) * 6 }));
+          });
+          // a sale card on the middle shelf
+          var sc = V ? [W - 300, sh.rows[1] - 76] : [1290, sh.rows[1] - 80];
+          shelf += at(sc[0], sc[1], 1, poly([[0, 0], [230, 0], [230, 64], [0, 64]], C.yellow, 4) + '<text x="115" y="28" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="22" fill="' + C.war + '">NEW! IMPROVED!</text>' +
+            '<text x="115" y="54" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="22" fill="' + ink + '">NOW 20% DEADLIER</text>');
+          // the AISLE 1 plate on the shelving's top
+          var pl = L.plate;
+          var plate = at(pl.x, pl.y, 1, poly([[0, 0], [pl.w, 0], [pl.w, 84], [0, 84]], C.navy, 5) + '<rect x="7" y="7" width="' + (pl.w - 14) + '" height="70" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+            '<text x="' + pl.w / 2 + '" y="42" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="34" letter-spacing="3" fill="' + C.cream + '">AISLE 1</text>' +
+            '<text x="' + pl.w / 2 + '" y="68" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="19" letter-spacing="2" fill="' + C.yellow + '">MURDER SUPPLIES</text>');
+          return out + '<g opacity="0.4">' + shelf + "</g>" + plate;
+        }
+
+        // ── The cart (KIT.props.shoppingCart at k), the war papers in it, the baby missile and the cart's tag. ──
+        function cartSvg() { return at(CX, CY, k, g("cart", KIT.props.shoppingCart())); }
+        function wheels() { return document.querySelectorAll("#" + P("cart") + " .cart-wheel"); }
+        // War papers lying in the basket (behind the cart's wires).
+        function basketMoney() {
+          return [[-14, -70, -12], [10, -73, 8], [34, -70, -4], [-2, -66, 14], [22, -64, -10]].map(function (b) {
+            var p = cp(b[0], b[1]);
+            return at(p[0], p[1], 0.62, KIT.money("war", 0), b[2]);
+          }).join("");
+        }
+        // The baby missile in the child seat: KIT.props.missile, grinning, arms up, a bonnet on its nose and a
+        // rattle in its right hand. Its own parts: .missile-arm-l / .missile-arm-r (shoulders (+-27, -62)).
+        var BABY = cp(-29, -56), BABY_S = 0.21 * k;
+        function babySvg() {
+          var m = KIT.props.missile({ mood: "grin", arms: "up" });
+          var rattle = '<g transform="translate(51,-112) rotate(-18)">' + line("M0,0 L0,-26", ink, 7) + line("M0,0 L0,-26", C.tan, 3.5) +
+            '<circle cx="0" cy="-36" r="13" fill="' + ink + '"/><circle cx="0" cy="-36" r="10" fill="' + C.yellow + '"/><circle cx="-3" cy="-39" r="3.4" fill="' + WHITE + '"/>' +
+            '<circle cx="0" cy="-36" r="4" fill="none" stroke="' + C.war + '" stroke-width="2"/></g>';
+          var i = m.indexOf('<g class="missile-arm-r">'), j = m.indexOf("</g>", i);
+          m = m.slice(0, j) + rattle + m.slice(j);
+          // the bonnet: a cream frilled cap over the nose cone, its ties knotted in a bow under the face
+          var frill = [];
+          for (var a = 0; a <= 10; a++) { var an = (200 + a * 14) * DEG; frill.push([Math.cos(an) * (a % 2 ? 44 : 38), -118 + Math.sin(an) * (a % 2 ? 44 : 38) * 0.9]); }
+          var bonnet = poly(frill.concat([[30, -112], [-30, -112]]), "#F6D9DE", 3) + poly([[-28, -114], [0, -152], [28, -114]], "#F6D9DE", 3) +
+            line("M-26,-116 Q-30,-96 -18,-74 M26,-116 Q30,-96 18,-74", "#E7A1AE", 3) + poly([[-12, -76], [0, -70], [-12, -64]], "#E7A1AE", 2) + poly([[12, -76], [0, -70], [12, -64]], "#E7A1AE", 2);
+          return at(BABY[0], BABY[1], BABY_S, g("baby", g("baby-bob", m + bonnet)));
+        }
+        // The cart's price tag, tied to the basket's back rail: its blank back, and its face.
+        var TAG_KNOT = cp(-40, -74), TAG_S = 0.38 * k;
+        function cartTagSvg() {
+          var face = KIT.props.priceTag({ text: "$2.72 TRILLION / YEAR" });
+          var blank = face.replace(/<text[^>]*>[^<]*<\/text>/, "");
+          return at(TAG_KNOT[0], TAG_KNOT[1], TAG_S, g("ctag", g("ctag-blank", blank) + g("ctag-face", face, ' opacity="0"')));
+        }
+
+        // War papers that trickled out of the basket as the cart rolled in, lying where they landed. BILLS: [x (from
+        // the cart's center, canvas px), turn]; murder-shopping-cart drops each as the basket passes over it.
+        var BILLS = [[-340, -16], [-225, 10], [-118, -6], [-14, 14]];
+        function billsSvg() {
+          return BILLS.map(function (b, i) {
+            return at(CX + b[0], L.gy + 14 + (i % 2) * 8, 1, g("bill-" + i, at(0, 0, 0.55, '<g transform="scale(1,0.55)">' + KIT.money("war", 0) + "</g>", b[1])));
+          }).join("");
+        }
+
+        // ── The warhead heap: grinning KIT.props.bomb warheads, each with its own tiny price tag, piled in the
+        // basket. HEAP: [x, y (the ball's foot), cart units]; the last one, on top, is the SPARE. ──
+        var HEAP = [[-14, -40], [8, -40], [30, -40], [50, -42], [-10, -58], [12, -58], [34, -58], [53, -60], [0, -76], [22, -76], [43, -77], [11, -94], [33, -94], [22, -112]];
+        var BOMB = 0.26 * k; // a bomb's scale on the canvas (its ball is 84 across)
+        function bombSvg(i, opts) {
+          opts = opts || {};
+          var b = KIT.props.bomb({ face: opts.face || (i % 3 === 1 ? "smug" : "grin"), lit: !!opts.lit, look: i % 2 ? "left" : "right" });
+          if (!opts.fuse) b = b.replace(/stroke-dashoffset="0"/g, 'stroke-dashoffset="1"');
+          var tag = opts.noTag ? "" : at(-30, -70, 0.7, KIT.props.priceTag({ text: "$$$", angle: 60 + (i * 23) % 40 }));
+          return b + tag;
+        }
+        function heapSvg(n, spare) {
+          var out = "";
+          for (var i = 0; i < Math.min(n, HEAP.length - 1); i++) {
+            var p = cp(HEAP[i][0], HEAP[i][1]);
+            out = at(p[0], p[1], BOMB, g("bomb-" + i, bombSvg(i))) + out; // the higher rows behind the lower
+          }
+          return out;
+        }
+        // The SPARE on top: a bomb with a lit fuse and its own SPARE tag (pre: an id prefix, "spare" or "spare2").
+        function spareSvg(pre, tagShown) {
+          var p = cp(HEAP[HEAP.length - 1][0], HEAP[HEAP.length - 1][1]);
+          var b = bombSvg(13, { lit: true, fuse: true, noTag: true, face: "grin" });
+          var tag = g(pre + "-tag", at(-28, -78, 0.9, KIT.props.priceTag({ text: "SPARE", angle: 50, color: C.yellow })), tagShown ? "" : ' opacity="0"');
+          return at(p[0], p[1], BOMB, g(pre, g(pre + "-roll", b + tag)));
+        }
+
+        // ── The 122-snowflake tag: a big price tag hanging from the store's ceiling over the heap, "ENDS
+        // CIVILIZATION:", a grid of 11 x 11 red snowflakes (the grid from Part 1's nuclear-winters) plus one, a
+        // tick on 121 of them and a SPARE tag on the last. ──
+        var SG = L.sign;
+        function flake(r) {
+          var d = "", q, a;
+          for (q = 0; q < 3; q++) { a = (q * Math.PI) / 3; d += "M" + n1(-r * Math.cos(a)) + "," + n1(-r * Math.sin(a)) + " L" + n1(r * Math.cos(a)) + "," + n1(r * Math.sin(a)) + " "; }
+          for (q = 0; q < 6; q++) {
+            a = (q * Math.PI) / 3;
+            var px = 0.58 * r * Math.cos(a), py = 0.58 * r * Math.sin(a);
+            [-1, 1].forEach(function (sg) { var b = a + (sg * Math.PI) / 4; d += "M" + n1(px) + "," + n1(py) + " l" + n1(0.36 * r * Math.cos(b)) + "," + n1(0.36 * r * Math.sin(b)) + " "; });
+          }
+          return '<path d="' + d + '" fill="none" stroke="' + C.war + '" stroke-width="' + n1(r * 0.25) + '" stroke-linecap="round"/>';
+        }
+        // The flakes' centers: rows 0..10 of 11, and the 122nd alone on row 11.
+        function flakeAt(i) {
+          var row = Math.floor(i / 11), col = i % 11;
+          var gx = SG.x + (SG.w - 10 * SG.step[0]) / 2, gy0 = SG.y + SG.fs * 2.2 + 26;
+          return [gx + col * SG.step[0], gy0 + row * SG.step[1]];
+        }
+        function signSvg() {
+          var x = SG.x, y = SG.y, w = SG.w, h = SG.h, out = "";
+          // two strings up to the ceiling (the frame's top edge)
+          out += line("M" + n1(x + 40) + "," + n1(y + 14) + " L" + n1(x + 70) + ",0", ink, 2.4) + line("M" + n1(x + w - 40) + "," + n1(y + 14) + " L" + n1(x + w - 70) + ",0", ink, 2.4);
+          out += '<rect x="' + n1(x + 8) + '" y="' + n1(y + 10) + '" width="' + w + '" height="' + h + '" fill="' + C.ink + '" opacity="0.8"/>';
+          out += poly([[x, y], [x + w, y], [x + w, y + h], [x, y + h]], WHITE, 5) +
+            '<rect x="' + n1(x + 10) + '" y="' + n1(y + 10) + '" width="' + (w - 20) + '" height="' + (h - 20) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>';
+          [[x + 40, y + 14], [x + w - 40, y + 14]].forEach(function (c) { out += '<circle cx="' + n1(c[0]) + '" cy="' + n1(c[1]) + '" r="7" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/><circle cx="' + n1(c[0]) + '" cy="' + n1(c[1]) + '" r="3" fill="' + C.paper + '"/>'; });
+          out += '<text x="' + n1(x + w / 2) + '" y="' + n1(y + SG.fs + 18) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + SG.fs + '" letter-spacing="1" fill="' + ink + '">ENDS CIVILIZATION:</text>';
+          out += line("M" + n1(x + 30) + "," + n1(y + SG.fs + 30) + " H" + n1(x + w - 30), C.orange, 3);
+          var flakes = "", ticks = "";
+          for (var i = 0; i < 122; i++) {
+            var c = flakeAt(i), row = Math.floor(i / 11);
+            flakes += at(c[0], c[1], 1, '<g class="' + P("flake") + '" data-row="' + row + '">' + flake(SG.r) + "</g>");
+            if (i < 121) ticks += at(c[0] + SG.r * 0.55, c[1] + SG.r * 0.35, 1, '<path class="' + P("ftick") + '" data-row="' + row + '" d="M' + n1(-SG.r * 0.45) + ",0 L" + n1(-SG.r * 0.1) + "," + n1(SG.r * 0.4) + " L" + n1(SG.r * 0.55) + "," + n1(-SG.r * 0.55) + '" fill="none" stroke="' + ink + '" stroke-width="' + n1(SG.r * 0.28) + '" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>');
+          }
+          // the count, stamped when the tag is full; the SPARE tag on the 122nd flake
+          var last = flakeAt(121), cnt = [x + w - 34, last[1] + SG.r * 0.6];
+          var count = at(cnt[0], cnt[1], 1, g("count", '<text x="0" y="0" text-anchor="end" font-family="Fraunces" font-weight="900" font-size="' + n1(SG.fs * 1.5) + '" fill="' + C.war + '">122×</text>', ' opacity="0"'));
+          var spareTag = at(last[0] + SG.r * 0.2, last[1] - SG.r * 0.3, 1, g("flake-spare", KIT.props.priceTag({ text: "SPARE", angle: 14, color: C.yellow, size: V ? 1.25 : 1.05 }), ' opacity="0"'));
+          return g("sign", g("sign-swing", out + flakes + ticks + count + spareTag));
+        }
+
+        // ── The humans. The politician (look right) at polX; the weapons maker (look left) at wmX. ──
+        // A person's arm-r group, lifted out of its markup (to draw that arm again in front of the list).
+        function armR(markup) {
+          var i = markup.indexOf('<g class="arm-r">'), d = 0, j = i;
+          while (j < markup.length) {
+            if (markup.startsWith("<g", j)) d++;
+            else if (markup.startsWith("</g>", j)) { d--; if (d === 0) return markup.slice(i, j + 4); }
+            j++;
+          }
+          return "";
+        }
+        var PENCIL_S = 0.14;
+        // The pencil in a hand: the tip t units along dir from the hand (KIT.pencil runs tip -> eraser at -28 deg).
+        function pencilAt(h, dir, burnt) {
+          var ang = Math.atan2(dir[1], dir[0]) / DEG, tip = [h[0] + dir[0] * 8, h[1] + dir[1] * 8];
+          var pc = KIT.pencil();
+          if (burnt) pc = burn(pc);
+          return at(tip[0], tip[1], PENCIL_S, pc, ang - 152);
+        }
+        // Burn a drawing (as KIT's charred people): every color but the ink goes a dark brown of the same lightness.
+        function burn(markup) {
+          var inkU = ink.toUpperCase();
+          return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, a, col) {
+            if (col.toUpperCase() === inkU) return m;
+            var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + l * 46);
+            return a + '="rgb(' + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ')"';
+          });
+        }
+        var POL = {
+          push: { arms: [LIST_ARM, ik(SH[1], GRIP_P, LEN, -1)] },
+          pat: { arms: [LIST_ARM, ik(SH[1], toPol([TAG_KNOT[0] + 4, TAG_KNOT[1] + 4]), LEN, -1)] },
+          pencil: { arms: [LIST_ARM, ik(SH[1], [36, -40], LEN, -1)], pencil: [0.25, -1] },
+          lick: { arms: [LIST_ARM, ik(SH[1], [RP.mouth[0] + 15, RP.mouth[1] + 14], LEN, -1)], pencil: [-0.62, -0.75], tongue: true },
+          tick: { arms: [LIST_ARM, ik(SH[1], [44, -62], LEN, -1)], pencil: [-0.85, 0.5] },
+        };
+        // The politician in a pose (opts: charred). Returns { back, front } markup: back is the whole man; front is
+        // his right arm and pencil again, for a pose whose hand is on the list (drawn after the list).
+        function politician(pose, opts) {
+          opts = opts || {};
+          var ps = POL[pose], o = KIT.castOpts("politician", copy({ look: "right", arms: ps.arms }, opts.charred ? { charred: true, keepHat: true } : {}));
+          var m = KIT.person(o), he = handEnd(SH[1], ps.arms[1], LEN), extra = "";
+          if (ps.pencil) extra += pencilAt(he.hand, ps.pencil, opts.charred);
+          if (ps.tongue && !opts.charred) extra += at(RP.mouth[0] + 1, RP.mouth[1] + 1, 1, poly([[0, -1], [7, 0], [9, 4], [5, 7], [1, 4]], "#D86A5A", 1.4));
+          var back = at(L.polX, polY, s, m + (ps.front ? "" : extra));
+          var front = ps.front ? at(L.polX, polY, s, armR(m) + extra) : "";
+          return { back: back, front: front };
+        }
+        var WM0 = KIT.castOpts("weaponsMaker", { look: "left" }), RW = KIT.rig(WM0), WLEN = RW.armLength, WSH = RW.shoulder;
+        var wmY = L.gy - 100 * s;
+        var toWm = function (p) { return [(p[0] - L.wmX) / s, (p[1] - wmY) / s]; };
+        var WM = {
+          overhead: [[-168, -150], [168, 150]],
+          stand: [[38, 150], [-38, -150]],
+          present: [[-128, -100], [-36, -150]],
+          wide: [[-104, -120], [104, 120]],
+          toss: [[-20, -10], [170, 200]],
+          crank: [[-70, -40], [-36, -150]],
+        };
+        function weaponsMaker(pose, opts) {
+          opts = opts || {};
+          var o = KIT.castOpts("weaponsMaker", copy({ look: "left", arms: WM[pose] }, opts.charred ? { charred: true, keepHat: true } : {}));
+          return at(L.wmX, wmY, s, KIT.person(o));
+        }
+        // The wheelbarrow (facing left, in the humans' units): the grips at (0, 0), the tray, the wheel at the front.
+        function barrowSvg(burnt) {
+          var tray = [[-22, -18], [-150, -26], [-132, 14], [-40, 16]];
+          var out = line("M0,0 L-60,-8", ink, 7) + line("M0,0 L-60,-8", C.tan, 3.5) + line("M0,4 L-60,-2", ink, 7) + line("M0,4 L-60,-2", C.tan, 3.5) +
+            line("M-58,10 L-52,44 M-44,12 L-38,44", ink, 4) + poly(tray, C.war, 4) + poly([[-150, -26], [-138, -32], [-26, -24], [-22, -18]], C.rust, 3) +
+            line("M-128,-14 H-50 M-120,0 H-56", "#8E2E1E", 2) + line("M-138,14 L-142,30", ink, 5) +
+            '<circle cx="-142" cy="32" r="14" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/><circle cx="-142" cy="32" r="4" fill="' + C.cream + '"/>';
+          return burnt ? burn(out) : out;
+        }
+
+        return {
+          L: L, s: s, k: k, pp: pp, LIST_ARM: LIST_ARM, LHAND: LHAND, CX: CX, CY: CY, cp: cp, grip: grip, polY: polY, wmY: wmY, toWm: toWm, toPol: toPol, RP: RP, RW: RW, WSH: WSH, WLEN: WLEN, SH: SH, LEN: LEN,
+          ik: ik, handEnd: handEnd, at: at, g: g, line: line, poly: poly, burn: burn, n1: n1, WHITE: WHITE, DEG: DEG,
+          BILLS: BILLS, billsSvg: billsSvg, listSvg: listSvg, listTexts: listTexts, tickItem: tickItem, listDone: listDone, listRolled: listRolled, lp: lp, LINES: LINES, ITEMS: ITEMS,
+          trailSvg: trailSvg, rollSvg: rollSvg, runTrail: runTrail, trailDone: trailDone, foot: foot,
+          aisleSvg: aisleSvg, cartSvg: cartSvg, wheels: wheels, basketMoney: basketMoney, babySvg: babySvg, BABY: BABY, BABY_S: BABY_S, cartTagSvg: cartTagSvg, TAG_KNOT: TAG_KNOT,
+          HEAP: HEAP, BOMB: BOMB, heapSvg: heapSvg, spareSvg: spareSvg, bombSvg: bombSvg, signSvg: signSvg, flakeAt: flakeAt, SG: SG,
+          politician: politician, POL: POL, weaponsMaker: weaponsMaker, WM: WM, barrowSvg: barrowSvg, pencilAt: pencilAt,
+        };
+      }
+
+      var S = cartSpine(ID), L = S.L, at = S.at, g = S.g;
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // The politician in each pose of this scene: push (one hand on the grip, the rolled list waved overhead in the
+      // other), pat, pencil, lick (state A).
+      var poses = ["push", "pat", "pencil", "lick"];
+      var pol = poses.map(function (p, i) { return g("pol-" + p, S.politician(p).back, i ? ' opacity="0"' : ""); }).join("");
+      // Everything that rolls in together: the politician, the papers in the basket, the baby, the cart, its tag, the list.
+      var push = g("push", pol + S.basketMoney() + S.babySvg() + S.cartSvg() + S.cartTagSvg() + S.listSvg());
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + S.aisleSvg() + S.trailSvg() + S.billsSvg() + push + S.rollSvg());
+      S.listRolled(true);
+      S.listDone(0);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var $ = function (s) { return document.getElementById(ID + "-" + s); };
+      var swap = function (from, to, t) { tl.set($("pol-" + from), { opacity: 0 }, t); tl.set($("pol-" + to), { opacity: 1 }, t); };
+
+      // "Humans": he pushes the cart in from the left, waving the rolled-up list; the wheels turn (the squeak), his
+      // legs walk.
+      var PUSH = 1.8, D0 = S.CX + 300;
+      tl.fromTo($("push"), { x: -D0 }, { x: 0, duration: PUSH, ease: "power2.out" }, 0);
+      Array.prototype.forEach.call(S.wheels(), function (w) {
+        tl.fromTo(w, { rotation: 0, svgOrigin: w.dataset.cx + " " + w.dataset.cy }, { rotation: (D0 / (7.5 * S.k)) * (180 / Math.PI), svgOrigin: w.dataset.cx + " " + w.dataset.cy, duration: PUSH, ease: "power2.out" }, 0);
+      });
+      var walker = $("pol-push"), R = S.RP;
+      var legs = [walker.querySelector(".leg-l"), walker.querySelector(".leg-r")];
+      legs.forEach(function (lg, i) {
+        gsap.set(lg, { svgOrigin: R.hip[i].join(" ") });
+        tl.fromTo(lg, { rotation: i ? -16 : 16 }, { rotation: i ? 16 : -16, duration: 0.2, repeat: 7, yoyo: true, ease: "sine.inOut" }, 0);
+      });
+      tl.to(legs, { rotation: 0, duration: 0.15 }, 1.62);
+      // the wave: his arm and the rolled list swing together about his shoulder
+      var armL = walker.querySelector(".arm-l"), wave = $("list-wave"), shC = S.pp(R.shoulder[0]);
+      gsap.set(armL, { svgOrigin: R.shoulder[0].join(" ") });
+      gsap.set(wave, { svgOrigin: shC[0].toFixed(1) + " " + shC[1].toFixed(1) });
+      tl.fromTo([armL, wave], { rotation: -10 }, { rotation: 12, duration: 0.22, repeat: 9, yoyo: true, ease: "sine.inOut" }, 0);
+      tl.to([armL, wave], { rotation: 0, duration: 0.25, ease: "sine.out" }, 2.2);
+      // War papers trickle out of the basket and flutter down where the basket passes over them.
+      S.BILLS.forEach(function (b, i) {
+        var frac = Math.min(1, Math.max(0, -b[0] / D0)), t = Math.max(0.05, PUSH * (1 - Math.sqrt(frac)) - 0.05);
+        var el = $("bill-" + i), drop = S.cp(0, -40)[1] - (L.gy + 14 + (i % 2) * 8);
+        gsap.set(el, { svgOrigin: "0 0" });
+        tl.fromTo(el, { opacity: 0, y: drop, rotation: -40 }, { opacity: 1, y: drop + 10, rotation: -30, duration: 0.05 }, t);
+        tl.to(el, { y: 0, rotation: 0, duration: 0.45, ease: "power1.in" }, t + 0.05);
+      });
+
+      // "spend": the baby missile shakes its rattle (and bounces in its seat).
+      var baby = $("baby"), bArm = baby.querySelector(".missile-arm-r"), bob = $("baby-bob");
+      gsap.set(bArm, { svgOrigin: "27 -62" });
+      gsap.set(bob, { svgOrigin: "0 0" });
+      tl.fromTo(bArm, { rotation: 0 }, { rotation: -26, duration: 0.11, repeat: 11, yoyo: true, ease: "sine.inOut" }, cue("spend"));
+      tl.fromTo(bob, { y: 0 }, { y: -10, duration: 0.22, repeat: 5, yoyo: true, ease: "sine.inOut" }, cue("spend"));
+
+      // "trillion": the tag swings up from hanging limp and flips over to its face (the ding).
+      var ctag = $("ctag"), tT = cue("trillion");
+      gsap.set(ctag, { svgOrigin: "0 0" });
+      tl.fromTo(ctag, { rotation: 58 }, { rotation: -16, duration: 0.22, ease: "power3.out" }, tT - 0.05);
+      tl.to(ctag, { rotation: 6, duration: 0.2, ease: "sine.inOut" }, tT + 0.17);
+      tl.to(ctag, { rotation: 0, duration: 0.2, ease: "sine.inOut" }, tT + 0.37);
+      tl.to(ctag, { scaleY: 0, duration: 0.07, ease: "power2.in" }, tT + 0.05);
+      tl.set($("ctag-blank"), { opacity: 0 }, tT + 0.12);
+      tl.set($("ctag-face"), { opacity: 1 }, tT + 0.12);
+      tl.to(ctag, { scaleY: 1, duration: 0.09, ease: "power2.out" }, tT + 0.12);
+
+      // "every year": he pats the tag twice, proud.
+      var tE = cue("every");
+      swap("push", "pat", tE);
+      [tE + 0.12, tE + 0.42].forEach(function (t) {
+        tl.fromTo($("pol-pat"), { y: 0 }, { y: 5, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t);
+        tl.fromTo(ctag, { rotation: 0 }, { rotation: 7, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t + 0.03);
+      });
+      swap("pat", "push", cue("year") + 0.55);
+
+      // "stop": the list unrolls from his hand (the whoosh). "alive:": its roll hits the floor (boing) and bounces
+      // away down the aisle and off the frame. The list is blank under its heading.
+      var list = $("list"), tS = cue("stop");
+      tl.fromTo(list.querySelector(".scroll-reveal"), { attr: { height: 0 } }, { attr: { height: 150 }, duration: 0.42, ease: "power2.in" }, tS);
+      tl.fromTo(list.querySelector(".scroll-roll-bottom"), { y: -150 }, { y: 0, duration: 0.42, ease: "power2.in" }, tS);
+      var tA = cue("alive:");
+      S.runTrail(tl, tA - 0.22, tA, D - tA - 0.04);
+
+      // He fishes out his pencil, and after "alive:" licks it.
+      swap("push", "pencil", cue("being") + 0.1);
+      swap("pencil", "lick", KIT.after(ID, "alive:"));
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

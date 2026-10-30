@@ -1,0 +1,575 @@
+<template id="deletion-board-template">
+  <!-- deletion-board · Layer B (storyboards/part-08-daily-deletion-event.md). The NOW SERVING sign fills the frame, its
+       flip digits clattering to a stop on 150,000 ("thousand", clank). On "humans" the camera pulls back: the sign hangs
+       by its chains over a 1950s deli counter run by the Grim Reaper in a paper deli cap (his scythe leans on the wall),
+       with a TAKE A NUMBER dispenser, a till, a counter bell, a DELETED door on the left and a queue of ticket-holders
+       running back to the horizon. "permanently": the fat cat at the front slides a wad of cash across; the Reaper rings
+       it into the till (ding). "stop": the Reaper slaps the bell anyway; the fat cat x-rays into a grinning skeleton (top
+       hat and monocle still on) and strolls out through the DELETED door with his ticket; the line shuffles up.
+       "hours": the sign's bottom strip flips to EVERY 24 HOURS. HOLD (silent) until "bugs": the next in line, a barrel
+       of a man in overalls, blinks red and a hatch on his chest springs open; a callout shows the printout inside,
+       MEAT SOFTWARE, with a fat beetle chewing line 30 (COPY CELLS). "meat": chomp. "software.": it swallows the line and
+       burps; he x-rays; the Reaper dings the bell and the sign clicks to 150,001. After "software." the sign swings up
+       into the top-left corner, still counting at the true rate (one every 0.576 s), and the line shuffles up again. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #deletion-board-cam, #deletion-board-bg, #deletion-board-pip, #deletion-board-grain { position: absolute; inset: 0; }
+    #deletion-board-view { position: absolute; left: 46px; top: 46px; overflow: hidden; }
+    #deletion-board-world { position: absolute; left: -46px; top: -46px; }
+    #deletion-board-signbox { position: absolute; left: 0; top: 0; width: 600px; height: 280px; }
+  </style>
+  <div id="root" data-composition-id="deletion-board" data-width="1920" data-height="1080" data-start="0" data-duration="9.52">
+    <div id="deletion-board-cam">
+      <div id="deletion-board-bg"></div>
+      <!-- the camera window: the paper's inner frame; the world inside it pulls back from the sign -->
+      <div id="deletion-board-view"><div id="deletion-board-world"></div></div>
+      <!-- the sign hangs over the world (it ends in the corner box, over the paper's border) -->
+      <div id="deletion-board-signbox"></div>
+      <div id="deletion-board-pip"></div>
+      <div id="deletion-board-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "deletion-board";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function solid(list, col, w) {
+        w = w || 4.4;
+        return list.map(function (p) { return '<path d="' + polyD(p) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          list.map(function (p) { return '<path d="' + polyD(p) + '" fill="' + col + '"/>'; }).join("");
+      }
+      function fillP(pts, col, extra) { return '<path d="' + polyD(pts) + '" fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function txt(x, y, s, size, col, extra, font) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" font-family="' + (font || "Oswald") + '" font-weight="' + (font === "Fraunces" ? 900 : font === "Inter" ? 700 : 600) + '" font-size="' + size + '" fill="' + col + '"' + (extra ? " " + extra : "") + ">" + s + "</text>";
+      }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function dotsOver(pts, x0, op) {
+        var id = P + "hd" + (++dotsOver.n), ys = pts.map(function (p) { return p[1]; }), xs = pts.map(function (p) { return p[0]; });
+        var y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys), x1 = Math.max.apply(null, xs);
+        return '<defs><pattern id="' + id + 'd" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.5" fill="' + ink + '"/></pattern><clipPath id="' + id + 'c"><path d="' + polyD(pts) + '"/></clipPath></defs>' +
+          '<rect x="' + n1(x0) + '" y="' + n1(y0) + '" width="' + n1(x1 - x0) + '" height="' + n1(y1 - y0) + '" fill="url(#' + id + 'd)" opacity="' + (op || 0.22) + '" clip-path="url(#' + id + 'c)"/>';
+      }
+      dotsOver.n = 0;
+      // Time: piecewise keys [[t, value, ease]] (values are numbers or arrays), eased into each key.
+      var EASE = {
+        l: function (x) { return x; }, i: function (x) { return x * x; }, o: function (x) { return 1 - (1 - x) * (1 - x); },
+        io: function (x) { return x < 0.5 ? 2 * x * x : 1 - 2 * (1 - x) * (1 - x); },
+        b: function (x) { var c = 2.6; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); },
+      };
+      function key(t, ks) {
+        if (t <= ks[0][0]) return ks[0][1];
+        for (var i = 1; i < ks.length; i++) {
+          if (t < ks[i][0]) {
+            var a = ks[i - 1], b = ks[i], u = EASE[b[2] || "io"]((t - a[0]) / (b[0] - a[0]));
+            return Array.isArray(a[1]) ? a[1].map(function (v, j) { return v + (b[1][j] - v) * u; }) : a[1] + (b[1] - a[1]) * u;
+          }
+        }
+        return ks[ks.length - 1][1];
+      }
+
+      // ── NOW SERVING SIGN: the part's spine (part notes). deletion-board, holocaust-every-40-days and fifty-nine-elevens
+      // draw it with this block (copied: change all three); falling-apart's signFront draws the same picture at rest, so
+      // the cut into it has no seam. Sign units 600 x 280, top-left (0, 0): a cream board, a red band with NOW SERVING,
+      // seven ink flip tiles 70 x 110 at x 31 + 78 i (six digits and the comma), a mustard strip with EVERY 24 HOURS,
+      // and two chains rising from (90, 0) and (510, 0). Its corner box (outside the camera after deletion-board):
+      // 16:9 translate(40,30) scale 0.6, 9:16 translate(40,70) scale 0.62. The count at part time pt: 150,000 until the
+      // bell a beat after "software." (+0.3 s), then one more every 0.576 s (86,400 s a day / 150,000).
+      var SIGN = {
+        corner: V ? [40, 70, 0.62] : [40, 30, 0.6], rate: 0.576,
+        T1: KIT.scene("deletion-board").start + KIT.cue("deletion-board", "software.") + 0.3,
+      };
+      function signCount(pt) { return pt < SIGN.T1 ? 150000 : 150001 + Math.floor((pt - SIGN.T1) / SIGN.rate); }
+      function signDigits(n) { var s = String(n); return [s[0], s[1], s[2], ",", s[3], s[4], s[5]]; }
+      function signChain(x, len) {
+        var out = "";
+        for (var y = -6, i = 0; y > -len; y -= 15, i++) {
+          var lk = polyD([[x, y - 10], [x + 6, y - 6], [x + 6, y + 6], [x, y + 10], [x - 6, y + 6], [x - 6, y - 6]]);
+          out += i % 2 ? '<rect x="' + (x - 2.5) + '" y="' + (y - 8) + '" width="5" height="16" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2.4"/>'
+            : '<path d="' + lk + '" fill="none" stroke="' + ink + '" stroke-width="5"/><path d="' + lk + '" fill="none" stroke="' + C.peri + '" stroke-width="2"/>';
+        }
+        return out;
+      }
+      function signBody(fill) { return '<path d="' + polyD(R(0, 0, 600, 280)) + '" fill="' + fill + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>'; }
+      // pfx: the id prefix of its parts: <pfx>dg0..6 (the digit texts), <pfx>fl0..6 (each tile's top flap, hidden at
+      // rest), <pfx>strip-text, and with o.blank a blank mustard flap over the strip (<pfx>strip-blank) and the
+      // strip's text hidden. o.chain: chain length (420).
+      function signFront(pfx, o) {
+        o = o || {};
+        var tiles = "", chain = o.chain || 420;
+        for (var i = 0; i < 7; i++) {
+          var x = 31 + i * 78;
+          tiles += '<path d="' + polyD(R(x, 89, 70, 110)) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="miter"/>' +
+            '<path d="M' + (x + 4) + ",92 H" + (x + 66) + '" stroke="' + C.orange + '" stroke-width="2"/>' +
+            '<text id="' + pfx + "dg" + i + '" x="' + (x + 35) + '" y="177" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="92" fill="' + C.cream + '">' + (i === 3 ? "," : "0") + "</text>" +
+            '<path d="M' + x + ",144 H" + (x + 70) + '" stroke="#000" stroke-width="2.4" opacity="0.7"/>' +
+            '<g id="' + pfx + "fl" + i + '" opacity="0"><path d="' + polyD(R(x, 89, 70, 55)) + '" fill="#22385A" stroke="' + ink + '" stroke-width="3" stroke-linejoin="miter"/>' +
+            '<path d="M' + (x + 4) + ",92 H" + (x + 66) + '" stroke="' + C.orange + '" stroke-width="2"/></g>';
+        }
+        return signChain(90, chain) + signChain(510, chain) + signBody(C.cream) +
+          '<path d="' + polyD(R(2.5, 2.5, 595, 67.5)) + '" fill="' + C.war + '"/><path d="M2.5,70 H597.5" stroke="' + ink + '" stroke-width="4"/>' +
+          '<text x="300" y="54" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="52" letter-spacing="5" fill="' + C.cream + '">NOW SERVING</text>' +
+          tiles + '<path d="' + polyD(R(2.5, 216, 595, 56)) + '" fill="' + C.yellow + '"/><path d="M2.5,216 H597.5" stroke="' + ink + '" stroke-width="4"/>' +
+          '<g id="' + pfx + 'strip-text"' + (o.blank ? ' opacity="0"' : "") + '><text x="300" y="259" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="40" letter-spacing="3" fill="' + ink + '">EVERY 24 HOURS</text></g>' +
+          (o.blank ? '<g id="' + pfx + 'strip-blank"><path d="' + polyD(R(8, 221, 584, 46)) + '" fill="#D9A23F" stroke="' + ink + '" stroke-width="2"/>' + line("M18,244 H582", ink, 1.4, 'opacity="0.35"') + "</g>" : "") +
+          line("M591,76 V210 M591,277 V274", C.orange, 3) + line("M10,277.5 H590", C.orange, 2, 'opacity="0.7"') + signBody("none");
+      }
+      // Show n: each tile's digit; a tile that changed from n - 1 shows its top flap folding down (flap 1 -> 0).
+      function signShow(pfx, n, flap) {
+        var d = signDigits(n), prev = signDigits(n - 1);
+        for (var k = 0; k < 7; k++) {
+          if (k === 3) continue;
+          var el = document.getElementById(pfx + "dg" + k), f = document.getElementById(pfx + "fl" + k), on = flap > 0 && n > 150000 && prev[k] !== d[k];
+          if (el.textContent !== d[k]) el.textContent = d[k];
+          f.setAttribute("opacity", on ? 1 : 0);
+          if (on) f.setAttribute("transform", "translate(0,144) scale(1," + flap.toFixed(3) + ") translate(0,-144)");
+        }
+      }
+      // The count at part time pt (each new number's flaps fold for 0.1 s).
+      function signTick(pfx, pt) {
+        var ph = pt < SIGN.T1 ? 9 : (pt - SIGN.T1) % SIGN.rate;
+        signShow(pfx, signCount(pt), ph < 0.1 ? 1 - ph / 0.1 : 0);
+      }
+      // ── end NOW SERVING SIGN ──
+
+      // ── Layout per shape ──────────────────────────────────────────────
+      // FL: the near floor line (counter, door, the front of the queue); HZ: the horizon; VP: where the queue ends.
+      // reaper: [x, feet, scale]; sign: where it hangs [x, y, scale] and fills the frame at the start [x, y, scale];
+      // Q: the queue's slots [x, feet, scale], front first; callout: [x, y, r].
+      var L = V
+        ? { FL: 1420, HZ: 932, RAIL: 810, VP: [918, 932], counter: [230, 760, 1200], reaper: [470, 1360, 1.85], cap: 1,
+            sign: [40, 400, 1.0], big: [60, 690, 1.6], door: [130, 1.2], deleted: 0.82, scythe: [300, 1220, 1.4, 12],
+            bell: 575, till: [680, 1200], disp: [790, 700, 820, 1040, 1.0],
+            Q: [[850, 1420, 1.5], [965, 1348, 1.28], [870, 1276, 1.08], [960, 1216, 0.9], [880, 1166, 0.76], [950, 1124, 0.64], [892, 1089, 0.54],
+              [944, 1060, 0.45], [902, 1036, 0.38], [936, 1017, 0.32], [908, 1002, 0.27], [930, 990, 0.22]],
+            callout: [835, 650, 190], arm: 132 }
+        : { FL: 860, HZ: 585, RAIL: 470, VP: [1792, 585], counter: [290, 900, 700], reaper: [595, 820, 1.7], cap: 1,
+            sign: [370, 92, 0.75], big: [150, 170, 2.27], door: [165, 1.4], deleted: 1, scythe: [318, 722, 1.5, 9],
+            bell: 700, till: [820, 700], disp: [935, 870, 1000, 520, 1.0],
+            Q: [[1035, 860, 1.5], [1180, 815, 1.28], [1305, 772, 1.08], [1410, 733, 0.9], [1495, 700, 0.76], [1560, 672, 0.64], [1612, 648, 0.54],
+              [1654, 629, 0.45], [1688, 614, 0.38], [1716, 602, 0.32], [1738, 594, 0.27], [1756, 588, 0.22]],
+            callout: [1262, 360, 200], arm: 128 };
+      var FL = L.FL, CT = L.counter[2];
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("view").style.width = W - 92 + "px";
+      q("view").style.height = H - 92 + "px";
+      q("world").style.width = W + "px";
+      q("world").style.height = H + "px";
+
+      // ── The room: subway-tile wall with a red rail, the floor in perspective to the queue's vanishing point ──
+      function room() {
+        var out = '<rect x="0" y="0" width="' + W + '" height="' + H + '" fill="' + C.paper + '"/>';
+        var tiles = "", y, x, row = 0;
+        for (y = L.RAIL + 14; y < L.HZ; y += 22, row++) {
+          tiles += "M0," + y + " H" + W + " ";
+          for (x = (row % 2) * 22; x < W; x += 44) tiles += "M" + x + "," + y + " v22 ";
+        }
+        out += '<rect x="0" y="' + L.RAIL + '" width="' + W + '" height="' + (L.HZ - L.RAIL) + '" fill="#FBF6E6"/>' + line(tiles, ink, 1.1, 'opacity="0.18"') +
+          solid([R(-10, L.RAIL, W + 20, 14)], C.war, 3);
+        var vx = L.VP[0], vy = L.VP[1], fl = "";
+        out += '<rect x="0" y="' + L.HZ + '" width="' + W + '" height="' + (H - L.HZ) + '" fill="#E9DFC4"/>';
+        for (var k = -26; k <= 26; k++) fl += "M" + n1(vx) + "," + vy + " L" + n1(vx + k * 150) + "," + H + " ";
+        for (var j = 1; j <= 9; j++) { var yy = vy + (H - vy) * Math.pow(j / 9, 2.2); fl += "M0," + n1(yy) + " H" + W + " "; }
+        out += line(fl, ink, 1.4, 'opacity="0.28"') + line("M0," + L.HZ + " H" + W, ink, 3);
+        return out;
+      }
+
+      // ── The Reaper's scythe, leaning on the wall (the kit's scythe, out of his hand) ──
+      function scythe() {
+        var s = L.scythe;
+        return '<g transform="translate(' + s[0] + "," + s[1] + ") rotate(" + s[3] + ") scale(" + s[2] + ') translate(-46,-98)">' +
+          '<path d="M46,98 L64,-196" stroke="' + ink + '" stroke-width="13" stroke-linecap="round"/><path d="M46,98 L64,-196" stroke="' + C.tan + '" stroke-width="7" stroke-linecap="round"/>' +
+          '<path d="M64,-196 C20,-236 -60,-236 -104,-196 C-60,-214 10,-210 60,-170 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<path d="M-70,-212 C-40,-224 0,-222 40,-206" fill="none" stroke="' + C.peri + '" stroke-width="3" opacity="0.7"/></g>';
+      }
+
+      // ── The DELETED door (KIT.props.door, split so a walker can pass between its doorway and its leaf) ──
+      var doorSvg = KIT.props.door({}), cut = doorSvg.indexOf("<!--door-inside-->");
+      var doorA = doorSvg.slice(0, cut) + "</g>", doorB = '<g class="door">' + doorSvg.slice(cut + 18);
+      var DX = L.door[0], DS = L.door[1];
+      var deletedSign = at(DX, FL - 216 * DS, L.deleted, KIT.props.sign({ text: "DELETED", height: 0, fontSize: 32, color: C.war }));
+
+      // ── The Reaper behind the counter: no scythe (it leans on the wall), no resting hand (his arm is drawn apart),
+      // and a paper deli cap on his hood ──
+      var RP = L.reaper;
+      var reaperSvg = KIT.reaper().replace(/<g class="reaper-scythe">[\s\S]*?<\/g>/, "").replace(/<circle cx="46" cy="-40" r="9"[^>]*\/>/, "");
+      var cap = solid([[[-27, -164], [27, -166], [21, -188], [0, -196], [-21, -186]]], C.cream, 3.4) + '<path d="M-25,-170 L25,-172" stroke="' + C.war + '" stroke-width="5"/>' +
+        line("M-14,-187 L14,-188", C.war, 2.4) + dotsOver([[-27, -164], [27, -166], [21, -188], [0, -196], [-21, -186]], 4, 0.25);
+      var reaper = at(RP[0], RP[1], RP[2], '<g transform="translate(0,-100)">' + g("reaper", reaperSvg) + cap + "</g>");
+      // world point of a point in the Reaper's units
+      function RW(x, y) { return [RP[0] + x * RP[2], RP[1] + (y - 100) * RP[2]]; }
+      var SH = RW(31, -104); // his right shoulder (screen right), where the arm hangs
+
+      // ── The counter, the bell, the till and the TAKE A NUMBER dispenser ──
+      function counter() {
+        var x0 = L.counter[0], x1 = L.counter[1], top = CT, hgt = FL - top;
+        var front = R(x0, top + 14, x1 - x0, hgt - 14);
+        return solid([front], "#FBF6E6") + dotsOver(front, x0 + (x1 - x0) * 0.62, 0.2) +
+          solid([R(x0, top + 14 + hgt * 0.26, x1 - x0, 18)], C.war, 3) + solid([R(x0, FL - 26, x1 - x0, 26)], C.slate, 3) +
+          line([1, 2, 3].map(function (k) { var x = x0 + ((x1 - x0) * k) / 4; return "M" + n1(x) + "," + (top + 16) + " V" + (FL - 28); }).join(" "), ink, 1.6, 'opacity="0.45"') +
+          solid([R(x0 - 16, top, x1 - x0 + 32, 16)], C.peri, 3.6) + line("M" + (x0 - 12) + "," + (top + 12) + " H" + (x1 + 12), C.orange, 2.2);
+      }
+      function bell() {
+        var bx = L.bell, by = CT;
+        var dome = []; for (var k = 0; k <= 10; k++) { var a = Math.PI + (k * Math.PI) / 10; dome.push([bx + 24 * Math.cos(a), by - 8 + 22 * Math.sin(a)]); }
+        return '<g id="' + P + 'bell">' + solid([[[bx - 27, by], [bx + 27, by], [bx + 23, by - 8], [bx - 23, by - 8]]], C.slate, 3) +
+          solid([dome], C.peri, 3) + '<path d="M' + pt(bx - 15, by - 22) + " Q" + pt(bx - 8, by - 29) + " " + pt(bx, by - 30) + '" fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.8"/>' +
+          solid([R(bx - 3, by - 38, 6, 9)], C.slate, 2.4) + '<circle cx="' + bx + '" cy="' + (by - 40) + '" r="4.5" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2.4"/></g>' +
+          '<g id="' + P + 'ding" opacity="0">' + line("M" + pt(bx - 30, by - 40) + " l-16,-12 M" + pt(bx, by - 52) + " v-18 M" + pt(bx + 30, by - 40) + " l16,-12", ink, 3.4) + "</g>";
+      }
+      function till() {
+        var bx = L.till[0], by = L.till[1];
+        var body = [[bx - 58, by - 18], [bx + 58, by - 18], [bx + 54, by - 50], [bx - 54, by - 50]], keys = [[bx - 50, by - 50], [bx + 50, by - 50], [bx + 40, by - 70], [bx - 40, by - 70]];
+        var k = "";
+        for (var r = 0; r < 2; r++) for (var c = 0; c < 6; c++) k += '<circle cx="' + n1(bx - 32 + c * 13 - r * 3) + '" cy="' + n1(by - 55 - r * 8) + '" r="4" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="1.6"/>';
+        return g("flag", solid([R(bx - 14, by - 104, 28, 24)], C.yellow, 3) + txt(bx, by - 85, "$", 22, ink, "", "Fraunces")) +
+          solid([R(bx - 30, by - 92, 60, 22)], C.navy, 3) + '<rect x="' + (bx - 22) + '" y="' + (by - 88) + '" width="44" height="12" fill="' + C.cream + '" opacity="0.85"/>' +
+          solid([body], C.tan, 3.4) + dotsOver(body, bx + 10, 0.25) + solid([keys], C.slate, 3) + k +
+          g("drawer", solid([R(bx - 56, by - 18, 112, 18)], C.rust, 3) + solid([R(bx - 12, by - 12, 24, 5)], C.yellow, 1.6));
+      }
+      function dispenser() {
+        var d = L.disp, px = d[0], bx0 = d[1], bx1 = d[2], by = d[3], bw = bx1 - bx0, bh = 80;
+        var box = R(bx0, by, bw, bh);
+        return solid([R(px - 6, by + bh, 12, FL - by - bh)], C.slate, 3) + solid([[[px - 30, FL], [px + 30, FL], [px + 20, FL - 10], [px - 20, FL - 10]]], C.slate, 3) +
+          solid([box], C.war, 4) + solid([R(bx0 + 10, by + 10, bw - 20, bh - 20)], C.cream, 2.4) +
+          txt(bx0 + bw / 2, by + 36, "TAKE A", 20 * d[4], ink, 'letter-spacing="2"') + txt(bx0 + bw / 2, by + 60, "NUMBER", 20 * d[4], ink, 'letter-spacing="2"') +
+          solid([[[bx1 - 4, by + 50], [bx1 + 26, by + 46], [bx1 + 28, by + 62], [bx1 - 4, by + 64]]], C.war, 2.4) + line("M" + (bx1 + 8) + "," + (by + 52) + " h12", C.cream, 1.6) +
+          solid([R(bx0 + bw / 2 - 26, by - 16, 52, 16)], C.cream, 3) + line("M" + (bx0 + bw / 2 - 18) + "," + (by - 8) + " h36", ink, 1.4, 'opacity="0.5"');
+      }
+
+      // ── The queue ─────────────────────────────────────────────────────
+      // A red ticket from the dispenser, in person units, centered on a hand.
+      function ticket(h, rot) {
+        return at(h[0], h[1] - 4, 1, solid([R(-11, -7, 22, 13)], C.war, 2.2) + '<rect x="-8" y="-4.5" width="16" height="8" fill="none" stroke="' + C.cream + '" stroke-width="1.1"/>' +
+          line("M-5,0 H5", C.cream, 1.6), rot || -12);
+      }
+      var TICKET_ARMS = [[-38, -98], [8, 4]];
+      var FAT = KIT.castOpts("richHuman", { look: "left", arms: [[-62, -96], [24, 156]] });
+      var BUGGY = { tone: 1, outfit: "overalls", color: 1, look: "left", mood: "flat", arms: TICKET_ARMS };
+      var CROWD = [
+        { tone: 2, outfit: "suit", hair: 0, seed: 11 }, { tone: 0, hair: 1, outfit: "dress", color: 3, seed: 12 }, { tone: 3, outfit: "shirt", color: 2, seed: 13 },
+        { tone: 1, outfit: "labcoat", hair: 2, seed: 14 }, { tone: 2, hair: 1, outfit: "dress", color: 1, seed: 15 }, { tone: 0, outfit: "overalls", color: 3, seed: 16 },
+        { tone: 3, hair: 1, outfit: "scrubs", seed: 17 }, { tone: 1, outfit: "shirt", color: 0, hat: "bowler", seed: 18 }, { tone: 2, outfit: "suit", hair: 2, stache: true, seed: 19 },
+        { tone: 0, hair: 1, outfit: "dress", color: 2, seed: 20 }, { tone: 3, outfit: "shirt", color: 1, seed: 21 }, { tone: 1, hair: 1, outfit: "dress", color: 0, seed: 22 },
+      ].map(function (o) { return mix(o, { look: "left", mood: "flat", arms: TICKET_ARMS }); });
+      // slot -> [x, feet, scale]: along Q, then on toward the vanishing point
+      function slotPos(sl) {
+        var Q = L.Q, n = Q.length - 1;
+        if (sl <= 0) return Q[0];
+        if (sl < n) { var i = Math.floor(sl), f = sl - i; return [0, 1, 2].map(function (j) { return Q[i][j] + (Q[i + 1][j] - Q[i][j]) * f; }); }
+        var e = sl - n, k = 1 - Math.pow(0.72, e);
+        return [Q[n][0] + (L.VP[0] - Q[n][0]) * k, Q[n][1] + (L.VP[1] - Q[n][1]) * k, Q[n][2] * Math.pow(0.8, e)];
+      }
+      var people = [{ o: FAT, bones: true, tk: KIT.rig(FAT).hand[1], tkRot: 18 }, { o: BUGGY, bones: true, tk: KIT.rig(BUGGY).hand[0] }]
+        .concat(CROWD.map(function (o) { return { o: o, tk: KIT.rig(o).hand[0] }; }));
+      // the far queue: tiny heads all the way to the horizon
+      var far = "";
+      for (var fk = 14; fk < 34; fk++) {
+        var fp = slotPos(fk), fr = 13 * fp[2];
+        far += '<circle cx="' + n1(fp[0]) + '" cy="' + n1(fp[1] - 150 * fp[2]) + '" r="' + n1(Math.max(1.6, fr)) + '" fill="' + ink + '" opacity="' + (0.85 - (fk - 14) * 0.03).toFixed(2) + '"/>' +
+          '<path d="M' + pt(fp[0], fp[1] - 140 * fp[2]) + " V" + n1(fp[1]) + '" stroke="' + ink + '" stroke-width="' + n1(Math.max(1.2, 22 * fp[2])) + '" opacity="' + (0.6 - (fk - 14) * 0.02).toFixed(2) + '"/>';
+      }
+      function personG(k) {
+        var p = people[k];
+        var alive = g("p" + k + "-a", KIT.person(p.o) + ticket(p.tk, p.tkRot));
+        var bones = p.bones ? g("p" + k + "-b", KIT.person(mix(p.o, { skeleton: true })) + ticket(p.tk, p.tkRot), 'opacity="0"') : "";
+        return '<g id="' + P + "p" + k + '"><g transform="translate(0,-100)">' + alive + bones + "</g></g>";
+      }
+
+      // ── BUGGY's hatch: a little riveted door on his bib, hinged on its left edge ──
+      var bm = KIT.person(BUGGY).match(/class="chest-light" cx="(-?[\d.]+)" cy="(-?[\d.]+)"/);
+      var HT = [+bm[1] + 15, +bm[2] + 21]; // the hatch's center (person units)
+      var hatch = solid([R(HT[0] - 9, HT[1] - 7, 18, 14)], C.ink, 2.2) + '<circle cx="' + (HT[0] - 3) + '" cy="' + (HT[1] - 2) + '" r="1.8" fill="' + C.yellow + '"/><circle cx="' + (HT[0] + 3) + '" cy="' + (HT[1] + 2) + '" r="1.8" fill="' + C.war + '"/>' +
+        '<rect x="' + (HT[0] - 6) + '" y="' + (HT[1] + 3) + '" width="11" height="3" fill="' + C.cream + '"/>' +
+        g("hatch-door", solid([R(HT[0] - 9, HT[1] - 7, 18, 14)], C.peri, 2.2) + [[-6, -4], [6, -4], [-6, 4], [6, 4]].map(function (r) { return '<circle cx="' + (HT[0] + r[0]) + '" cy="' + (HT[1] + r[1]) + '" r="1.2" fill="' + ink + '"/>'; }).join("") +
+          line("M" + (HT[0] + 7.5) + "," + (HT[1] - 5) + " V" + (HT[1] + 5), C.orange, 1.2));
+
+      // ── The callout: what is inside his hatch (a printout, MEAT SOFTWARE, and the beetle), drawn at r 170 ──
+      // THE BEETLE (also in meat-robot-blueprint): about 44 long, drawn around (0, 0) facing right.
+      function beetle() {
+        var shell = [[-17, 0], [-14, -9], [-6, -13], [4, -13], [11, -9], [13, 0], [11, 9], [4, 13], [-6, 13], [-14, 9]];
+        var legs = [-8, 0, 8].map(function (x, i) {
+          var d = (i - 1) * 6;
+          return "M" + pt(x, -11) + " L" + pt(x + d - 4, -20) + " L" + pt(x + d - 9, -25) + " M" + pt(x, 11) + " L" + pt(x + d - 4, 20) + " L" + pt(x + d - 9, 25);
+        }).join(" ");
+        return line(legs, ink, 2.4) + line("M17,-4 L24,-11 M17,4 L24,11", ink, 1.8) + '<circle cx="24.5" cy="-11.5" r="2" fill="' + ink + '"/><circle cx="24.5" cy="11.5" r="2" fill="' + ink + '"/>' +
+          g("b-body", solid([shell], C.navy, 3) + line("M-15,0 L11,0", C.ink, 2) + '<path d="M-10,-9 Q-2,-14 7,-10" fill="none" stroke="' + C.orange + '" stroke-width="2.2"/>') +
+          g("b-head", solid([[[11, -6], [17, -7], [21, -3], [21, 3], [17, 7], [11, 6]]], C.navy, 2.6) +
+            '<circle cx="15" cy="-3" r="2.6" fill="#FFF" stroke="' + ink + '" stroke-width="0.8"/><circle cx="15" cy="3" r="2.6" fill="#FFF" stroke="' + ink + '" stroke-width="0.8"/>' +
+            '<circle cx="15.8" cy="-3" r="1.1" fill="' + ink + '"/><circle cx="15.8" cy="3" r="1.1" fill="' + ink + '"/>' +
+            g("b-jaw", '<path d="M20,-2.5 L24.5,-1 L20,0 Z M20,2.5 L24.5,1 L20,0 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="0.8"/>') +
+            line("M18.5,-1.2 Q20,0 18.5,1.2", C.cream, 1));
+      }
+      // The beetle in the callout: [x, scale]; its jaws (beetle x 24.5) start on the line's first letter (x -84), and
+      // the line's clip edge follows them: jawX(bx) = -84 + 2 bx when the beetle has crawled bx.
+      var BEETLE = [-84 - 24.5 * 2, 2];
+      function jawX(bx) { return -86 + BEETLE[1] * bx; }
+      function callout() {
+        var r = 170, out = "", strip = R(-112, -230, 224, 460), clip = P + "cclip";
+        out += '<defs><clipPath id="' + clip + '"><circle r="' + (r - 4) + '"/></clipPath><clipPath id="' + P + 'l30"><rect id="' + P + 'l30r" x="-96" y="-14" width="230" height="30"/></clipPath></defs>';
+        out += '<circle cx="9" cy="11" r="' + r + '" fill="' + C.ink + '" opacity="0.8"/>';
+        out += '<g clip-path="url(#' + clip + ')"><rect x="-200" y="-200" width="400" height="400" fill="' + C.ink + '"/>' +
+          // the works behind the printout: a vacuum tube on each side, wires
+          [[-142, -40], [142, 46]].map(function (tb) {
+            return solid([R(tb[0] - 14, tb[1] - 34, 28, 52)], "#3A4766", 2.4) + '<rect x="' + (tb[0] - 8) + '" y="' + (tb[1] - 26) + '" width="16" height="30" fill="' + C.yellow + '" opacity="0.75"/>' +
+              line("M" + (tb[0] - 6) + "," + (tb[1] - 12) + " q6,-8 12,0", C.orange, 2.4);
+          }).join("") + line("M-170,90 Q-120,60 -100,110 M150,-90 Q120,-60 130,-120", C.orange, 3) +
+          '<g transform="rotate(-6)">' + solid([strip], "#FBF6E6", 3) +
+          [-170, -110, -50, 10, 70, 130, 190].map(function (y) { return '<rect x="-98" y="' + y + '" width="196" height="30" fill="#D7E6CC" opacity="0.8"/>'; }).join("") +
+          [-1, 1].map(function (s) { var o = ""; for (var y = -220; y < 230; y += 22) o += '<circle cx="' + s * 104 + '" cy="' + y + '" r="3.4" fill="' + C.ink + '" opacity="0.55"/>'; return o; }).join("") +
+          line("M-96,-230 V230 M96,-230 V230", ink, 1, 'opacity="0.35" stroke-dasharray="4 5"') +
+          txt(0, -92, "MEAT SOFTWARE", 25, ink, 'letter-spacing="2"') + line("M-84,-82 H84", C.war, 2.6) +
+          [["10 BREATHE", -50], ["20 BEAT HEART", -20], ["40 GOTO 10", 40], ["50 END", 70]].map(function (l) { return '<text x="-84" y="' + l[1] + '" font-family="Inter" font-weight="700" font-size="18" fill="' + ink + '" letter-spacing="1">' + l[0] + "</text>"; }).join("") +
+          '<g clip-path="url(#' + P + 'l30)">' + '<text id="' + P + 'l30t" x="-84" y="10" font-family="Inter" font-weight="700" font-size="18" fill="' + ink + '" letter-spacing="1">30 COPY CELLS</text></g>' +
+          g("bite", '<path d="M0,-12 q-5,4 0,8 q-5,4 0,8 q-5,4 0,8" fill="none" stroke="' + ink + '" stroke-width="1.4"/>', 'opacity="0"') +
+          '<g transform="translate(' + BEETLE[0] + ',2) scale(' + BEETLE[1] + ')"><g id="' + P + 'beetle">' + beetle() + "</g></g>" +
+          g("burp", '<circle cx="0" cy="0" r="9" fill="#FBF6E6" stroke="' + ink + '" stroke-width="2"/><circle cx="12" cy="-6" r="7" fill="#FBF6E6" stroke="' + ink + '" stroke-width="2"/><circle cx="22" cy="-14" r="5" fill="#FBF6E6" stroke="' + ink + '" stroke-width="2"/>', 'opacity="0"') +
+          "</g></g>";
+        out += '<circle r="' + r + '" fill="none" stroke="' + ink + '" stroke-width="7"/><circle r="' + (r - 7) + '" fill="none" stroke="' + C.orange + '" stroke-width="3"/>';
+        return out;
+      }
+
+      // ── The world, back to front ──────────────────────────────────────
+      var qs = people.map(function (p, k) { return k; });
+      var world = KIT.paperDefs(ID) + room() + scythe() + at(DX, FL, DS, doorA) + deletedSign + far +
+        qs.slice(2).reverse().map(personG).join("") + reaper + g("arm", "") + counter() + bell() + till() + dispenser() +
+        g("cash", "") + personG(1) + personG(0) + at(DX, FL, DS, doorB) +
+        '<g id="' + P + 'co-at"><g id="' + P + 'co">' + '<path id="' + P + 'co-wedge" d="M0,0" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>' + callout() + "</g></g>";
+      q("world").innerHTML = KIT.svg(W, H, world);
+      q("signbox").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="280" viewBox="0 0 600 280" style="position:absolute;left:0;top:0;overflow:visible">' + signFront(P + "s-", { blank: true, chain: 1400 }) + "</svg>";
+      // the hatch rides inside BUGGY's alive drawing (behind his arms)
+      var buggyAlive = q("p1-a"), bp = buggyAlive.querySelector(".person");
+      var hatchG = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      hatchG.innerHTML = hatch;
+      bp.appendChild(hatchG);
+
+      // ── Timeline ──────────────────────────────────────────────────────
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      var tThou = KIT.cueEnd(ID, "thousand") - 0.2, tHum = cue("humans"), tPerm = cue("permanently"), tStop = cue("stop"), tHours = cue("hours");
+      var tBugs = cue("bugs"), tMeat = cue("meat"), tSoft = cue("software."), tBell2 = tSoft + 0.3, tFly = KIT.after(ID, "software.") - 0.24;
+
+      // The camera: the sign fills the frame, then the world pulls back to show where it hangs (both in step).
+      var S0 = L.sign, B0 = L.big, Z = B0[2] / S0[2], T0 = [B0[0] - Z * S0[0], B0[1] - Z * S0[1]];
+      var world$ = q("world"), sign$ = q("signbox");
+      gsap.set(world$, { transformOrigin: "0px 0px" });
+      gsap.set(sign$, { transformOrigin: "0px 0px" });
+      // (the world div sits at -46,-46 inside the view, so its origin is the frame's origin)
+      tl.fromTo(world$, { x: T0[0], y: T0[1], scale: Z }, { x: 0, y: 0, scale: 1, duration: 0.8, ease: "power2.inOut" }, tHum);
+      tl.fromTo(sign$, { x: B0[0], y: B0[1], scale: B0[2] }, { x: S0[0], y: S0[1], scale: S0[2], duration: 0.8, ease: "power2.inOut" }, tHum);
+      // after "software.": it jolts off its hooks and swings up into the corner (whoosh), still counting
+      var CN = SIGN.corner;
+      tl.to(sign$, { y: S0[1] + 14, duration: 0.07, ease: "power2.out" }, tFly);
+      tl.to(sign$, { x: CN[0], y: CN[1], scale: CN[2], duration: 0.42, ease: "power3.inOut" }, tFly + 0.08);
+      tl.to(sign$, { rotation: -4, duration: 0.2, ease: "sine.out" }, tFly + 0.08);
+      tl.to(sign$, { rotation: 0, duration: 0.3, ease: "back.out(3)" }, tFly + 0.3);
+
+      // "hours": the strip flips to EVERY 24 HOURS (click)
+      var sb = document.getElementById(P + "s-strip-blank"), stx = document.getElementById(P + "s-strip-text");
+      tl.fromTo(sb, { scaleY: 1, svgOrigin: "300 244" }, { scaleY: 0, svgOrigin: "300 244", duration: 0.06, ease: "power2.in" }, tHours);
+      tl.fromTo(stx, { scaleY: 0, svgOrigin: "300 244" }, { scaleY: 1, svgOrigin: "300 244", duration: 0.08, ease: "power2.out", immediateRender: false }, tHours + 0.06);
+      tl.set(stx, { opacity: 0 }, 0);
+      tl.set(stx, { opacity: 1 }, tHours + 0.06);
+
+      // The digits: they blur from "One", settle tile by tile and clank to 150,000 near the end of "thousand".
+      var stopAt = [0.55, 0.64, 0.73, 0.82, 0.91, 1.0].map(function (f) { return f * tThou; });
+      function digitsAt(t) {
+        var pt0 = sc.start + t;
+        if (t >= stopAt[5] + 0.1) { signTick(P + "s-", pt0); return; }
+        var fin = "150000";
+        for (var k = 0; k < 6; k++) {
+          var tile = k < 3 ? k : k + 1, el = document.getElementById(P + "s-dg" + tile), f = document.getElementById(P + "s-fl" + tile), d, flap;
+          if (t < stopAt[k]) {
+            var fr = Math.floor(t * 24);
+            d = String(Math.floor(KIT.rng(k * 977 + fr * 131 + 7)() * 10));
+            flap = 1 - (t * 24 - fr);
+          } else { d = fin[k]; flap = t - stopAt[k] < 0.1 ? 1 - (t - stopAt[k]) / 0.1 : 0; }
+          if (el.textContent !== d) el.textContent = d;
+          f.setAttribute("opacity", flap > 0 ? 1 : 0);
+          f.setAttribute("transform", "translate(0,144) scale(1," + Math.max(0, flap).toFixed(3) + ") translate(0,-144)");
+        }
+      }
+
+      // ── The queue, the walkers and the Reaper's arm: drawn every frame from the time ──
+      // the fat cat walks once his x-ray is done; the line shuffles up as he goes, and again after "software."
+      var tWalk = tStop + 0.56, tOut = KIT.after(ID, "software.") - 0.07;
+      var SH1 = [tWalk - 0.02, tWalk + 0.48], SH2 = [tOut, tOut + 0.45];
+      function steps(t) { return key(t, [[0, 0], [SH1[0], 0], [SH1[1], 1, "io"], [SH2[0], 1], [SH2[1], 2, "io"]]); }
+      var rigs = people.map(function (p) { return KIT.rig(p.o); });
+      function legs(k, which, a) {
+        var el = q("p" + k + "-" + which);
+        if (!el) return;
+        var r = rigs[k], lL = el.querySelector(".leg-l"), lR = el.querySelector(".leg-r");
+        lL.setAttribute("transform", "rotate(" + n1(a) + " " + pt(r.hip[0][0], r.hip[0][1]).replace(",", " ") + ")");
+        lR.setAttribute("transform", "rotate(" + n1(-a) + " " + pt(r.hip[1][0], r.hip[1][1]).replace(",", " ") + ")");
+      }
+      function place(k, x, y, s, hop) { q("p" + k).setAttribute("transform", "translate(" + n1(x) + "," + n1(y - (hop || 0)) + ") scale(" + s.toFixed(3) + ")"); }
+      // the fat cat's stroll to the door: [t, x], then he steps in (smaller, up) as the door shuts
+      var doorIn = [DX + 6, FL - 10, L.Q[0][2] * 0.86];
+      var tDoor = tWalk + 1.0;
+      var fatWalk = [[tWalk, L.Q[0][0]], [tDoor, doorIn[0], "l"]];
+      var bugWalk = [[tOut, L.Q[0][0]], [tOut + 0.52, L.Q[0][0] - (V ? 250 : 330), "l"]];
+      // the Reaper's arm: the hand's target over time (world px); it rests on the bell
+      var bellTop = [L.bell + 4, CT - 44], bellHit = [L.bell + 4, CT - 38], tillKey = [L.till[0] - 10, L.till[1] - 60], tillDown = [L.till[0] - 10, L.till[1] - 54];
+      var raised = [L.bell + 18, CT - 120];
+      var handKeys = [[0, bellTop], [tPerm + 0.08, bellTop], [tPerm + 0.26, tillKey], [tPerm + 0.3, tillDown, "o"], [tPerm + 0.38, tillKey, "o"], [tStop - 0.16, raised],
+        [tStop, bellHit, "i"], [tStop + 0.12, bellTop, "o"], [tBell2 - 0.18, bellTop], [tBell2 - 0.08, raised, "o"], [tBell2, bellHit, "i"], [tBell2 + 0.12, bellTop, "o"]];
+      var arm$ = q("arm"), LA = L.arm;
+      function drawArm(hand) {
+        var dx = hand[0] - SH[0], dy = hand[1] - SH[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * LA * 0.999), th = Math.atan2(dy, dx);
+        var a = Math.acos(d / (2 * LA)), e1 = [SH[0] + LA * Math.cos(th - a), SH[1] + LA * Math.sin(th - a)], e2 = [SH[0] + LA * Math.cos(th + a), SH[1] + LA * Math.sin(th + a)];
+        var E = e1[0] > e2[0] ? e1 : e2, Hn = [SH[0] + d * Math.cos(th), SH[1] + d * Math.sin(th)];
+        function quad(a0, b0, w0, w1) {
+          var ux = b0[0] - a0[0], uy = b0[1] - a0[1], l = Math.sqrt(ux * ux + uy * uy) || 1, nx = -uy / l, ny = ux / l;
+          return [[a0[0] + nx * w0, a0[1] + ny * w0], [b0[0] + nx * w1, b0[1] + ny * w1], [b0[0] - nx * w1, b0[1] - ny * w1], [a0[0] - nx * w0, a0[1] - ny * w0]];
+        }
+        var fa = Math.atan2(Hn[1] - E[1], Hn[0] - E[0]), c = Math.cos(fa), s = Math.sin(fa);
+        var hp = function (u, v) { return [Hn[0] + u * c - v * s, Hn[1] + u * s + v * c]; };
+        var palm = [hp(-4, -9), hp(14, -8), hp(16, 7), hp(-4, 9)];
+        var fingers = "M" + pt.apply(null, hp(14, -6)) + " L" + pt.apply(null, hp(30, -9)) + " M" + pt.apply(null, hp(16, 0)) + " L" + pt.apply(null, hp(33, 1)) + " M" + pt.apply(null, hp(15, 6)) + " L" + pt.apply(null, hp(29, 10)) +
+          " M" + pt.apply(null, hp(2, -9)) + " L" + pt.apply(null, hp(12, -19));
+        arm$.innerHTML = line(fingers, ink, 7.4) + line(fingers, "#F1EAD6", 3.8) + solid([palm], "#F1EAD6", 3) +
+          solid([quad(SH, E, 17, 14), quad(E, hp(-4, 0), 14, 12)], "#141B2B", 4) + line("M" + pt.apply(null, hp(-6, -12)) + " L" + pt.apply(null, hp(-6, 12)), C.peri, 3);
+      }
+      KIT.onTime(tl, D, function (t) {
+        var st = steps(t), fr = st - Math.floor(st), hopK = Math.sin(Math.PI * fr), swing = Math.sin(fr * Math.PI * 2) * 16;
+        // the crowd: everyone from the third on steps up a slot per shuffle (a little hop, legs swinging)
+        for (var k = 2; k < people.length; k++) {
+          var sl = k - st, p = slotPos(sl);
+          place(k, p[0], p[1], p[2], hopK * 7 * p[2]);
+          legs(k, "a", st > 0 && fr > 0 ? swing : 0);
+          q("p" + k).setAttribute("opacity", sl > 11.2 ? Math.max(0, 12 - sl).toFixed(2) : 1);
+        }
+        // the fat cat: at the counter, then a skeleton strolling to the DELETED door and in
+        if (t < fatWalk[0][0]) place(0, L.Q[0][0], L.Q[0][1], L.Q[0][2]);
+        else if (t < tDoor) {
+          var ph = (t - fatWalk[0][0]) / 0.26;
+          place(0, key(t, fatWalk), FL, L.Q[0][2], Math.abs(Math.sin(ph * Math.PI)) * 6);
+          legs(0, "b", Math.sin(ph * Math.PI) * 20);
+        } else {
+          var u = Math.min(1, (t - tDoor) / 0.14);
+          place(0, doorIn[0], FL - 10 * u, L.Q[0][2] + (doorIn[2] - L.Q[0][2]) * u);
+          legs(0, "b", 0);
+        }
+        // BUGGY: second in line, steps up to the counter, then (a skeleton) heads for the door too
+        if (t < SH2[0]) {
+          var b = slotPos(1 - Math.min(1, st));
+          place(1, b[0], b[1], b[2], st > 0 && st < 1 ? hopK * 7 * b[2] : 0);
+          legs(1, "a", st > 0 && st < 1 ? swing : 0);
+        } else {
+          var ph2 = (t - SH2[0]) / 0.26;
+          place(1, key(t, bugWalk), FL, L.Q[0][2], Math.abs(Math.sin(ph2 * Math.PI)) * 6);
+          legs(1, "b", Math.sin(ph2 * Math.PI) * 20);
+        }
+        drawArm(key(t, handKeys));
+        digitsAt(t);
+      });
+
+      // "permanently": the fat cat's wad slides over the counter to the till; the drawer pops, the flag shows $
+      var fr0 = rigs[0].hand[0], s0 = L.Q[0][2], cashAt = [L.Q[0][0] + fr0[0] * s0, L.Q[0][1] + (fr0[1] - 100) * s0];
+      var cash$ = q("cash");
+      cash$.innerHTML = '<g id="' + P + 'wad">' + at(0, 0, s0, [2, 1, 0].map(function (i) {
+        return at(i * 2 - 2, -i * 4, 1, solid([R(-16, -7, 32, 14)], C.money, 2) + '<ellipse cx="0" cy="0" rx="4" ry="4.6" fill="' + C.cream + '" stroke="' + C.moneyDark + '" stroke-width="1"/>' +
+          '<rect x="-3" y="-7" width="6" height="14" fill="' + C.cream + '" opacity="' + (i ? 0 : 0.9) + '"/>', -8 + i * 6);
+      }).join("")) + "</g>";
+      var wad = q("wad"), tillMouth = [L.till[0] - 2, L.till[1] - 8];
+      gsap.set(wad, { x: cashAt[0], y: cashAt[1] });
+      tl.to(wad, { x: L.counter[1] - 10, y: CT - 6, duration: 0.12, ease: "power2.out" }, tPerm);
+      tl.to(wad, { x: tillMouth[0] + 30, y: CT - 6, duration: 0.14, ease: "power1.inOut" }, tPerm + 0.12);
+      tl.to(wad, { x: tillMouth[0], y: tillMouth[1] + 4, scale: 0.6, opacity: 0, duration: 0.06, ease: "power2.in" }, tPerm + 0.28);
+      var drawer = q("drawer");
+      tl.to(drawer, { y: 10, duration: 0.06, ease: "power2.out" }, tPerm + 0.24);
+      tl.to(drawer, { y: 0, duration: 0.1, ease: "power2.in" }, tPerm + 0.36);
+      tl.fromTo(q("flag"), { y: 26 }, { y: 0, duration: 0.14, ease: "back.out(3)" }, tPerm + 0.3);
+      // the Reaper nods, pleased (a tilt of the skull)
+      var head = q("reaper").querySelector(".head");
+      gsap.set(head, { svgOrigin: "0 -118" });
+      tl.to(head, { rotation: 12, duration: 0.12, ease: "power2.out" }, tPerm + 0.3);
+      tl.to(head, { rotation: 0, duration: 0.25, ease: "power2.inOut" }, tPerm + 0.55);
+      // the fat cat beams after paying (his smug drawing stays; he rises a little on his toes)
+
+      // "stop" (and after "software."): the bell squashes and rings
+      function ring(t) {
+        tl.fromTo(q("bell"), { scaleY: 1, svgOrigin: L.bell + " " + CT }, { scaleY: 0.82, svgOrigin: L.bell + " " + CT, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, t);
+        tl.set(q("ding"), { opacity: 1 }, t);
+        tl.set(q("ding"), { opacity: 0 }, t + 0.3);
+      }
+      ring(tStop);
+      ring(tBell2);
+      // the x-rays: the fat cat (zap +0.2), then BUGGY on "software."
+      KIT.xray(tl, q("p0-a"), q("p0-b"), tStop + 0.18);
+      KIT.xray(tl, q("p1-a"), q("p1-b"), tSoft);
+      // the DELETED door opens by itself as he arrives, and shuts behind him
+      var leaf = q("world").querySelectorAll(".door-leaf")[1];
+      gsap.set(leaf, { svgOrigin: "-48 -102" });
+      tl.fromTo(leaf, { scaleX: 1 }, { scaleX: 0.16, duration: 0.16, ease: "power2.out" }, tDoor - 0.37);
+      tl.to(leaf, { scaleX: 1, duration: 0.14, ease: "power3.in" }, tDoor + 0.1);
+      tl.to(leaf, { scaleX: 0.9, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.out" }, tDoor + 0.24);
+
+      // "bugs": BUGGY's chest light blinks red; the hatch springs open (pop); the callout opens on what is inside
+      var light = q("p1-a").querySelector(".chest-light");
+      tl.set(light, { attr: { fill: C.war } }, tBugs);
+      tl.fromTo(light, { opacity: 1 }, { opacity: 0.3, duration: 0.14, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, tBugs);
+      var hd = q("hatch-door");
+      tl.fromTo(hd, { scaleX: 1, svgOrigin: n1(HT[0] - 9) + " " + n1(HT[1]) }, { scaleX: -0.85, svgOrigin: n1(HT[0] - 9) + " " + n1(HT[1]), duration: 0.12, ease: "back.out(3)", immediateRender: false }, tBugs);
+      // the callout sits at L.callout; its wedge points at the hatch on BUGGY (at the counter by now)
+      var CO = L.callout, ck = CO[2] / 170, s1 = L.Q[0][2], hatchW = [L.Q[0][0] + HT[0] * s1, L.Q[0][1] + (HT[1] - 100) * s1];
+      q("co-at").setAttribute("transform", "translate(" + CO[0] + "," + CO[1] + ") scale(" + ck.toFixed(3) + ")");
+      var hx = (hatchW[0] - CO[0]) / ck, hy = (hatchW[1] - CO[1]) / ck, ha = Math.atan2(hy, hx), w0 = 0.32;
+      q("co-wedge").setAttribute("d", "M" + pt(150 * Math.cos(ha - w0), 150 * Math.sin(ha - w0)) + " L" + pt(hx, hy) + " L" + pt(150 * Math.cos(ha + w0), 150 * Math.sin(ha + w0)) + " Z");
+      var co = q("co");
+      tl.set(co, { opacity: 0 }, 0);
+      tl.fromTo(co, { opacity: 1, scale: 0, svgOrigin: n1(hx * 0.5) + " " + n1(hy * 0.5) }, { scale: 1, svgOrigin: n1(hx * 0.5) + " " + n1(hy * 0.5), duration: 0.24, ease: "back.out(1.7)", immediateRender: false }, tBugs + 0.06);
+      tl.to(co, { scale: 0, svgOrigin: n1(hx * 0.5) + " " + n1(hy * 0.5), duration: 0.16, ease: "power2.in" }, tSoft + 0.42);
+      tl.set(co, { opacity: 0 }, tSoft + 0.58);
+      // the beetle chews line 30 from its left end: little bites as it munches along, a big chomp on "meat",
+      // then on "software." it swallows the rest whole (the line is gone), swells, and burps
+      var bt = q("beetle"), jaw = q("b-jaw"), body = q("b-body"), l30 = q("l30r"), bite = q("bite");
+      gsap.set(jaw, { svgOrigin: "20 0" });
+      tl.fromTo(jaw, { scaleY: 1 }, { scaleY: 0.2, duration: 0.07, repeat: Math.floor((tMeat - tBugs) / 0.07) - 1, yoyo: true, ease: "none", immediateRender: false }, tBugs + 0.2);
+      tl.fromTo(bt, { x: 0 }, { x: 22, duration: tMeat - tBugs - 0.2, ease: "steps(6)" }, tBugs + 0.2);
+      tl.fromTo(l30, { attr: { x: jawX(0) - 10 } }, { attr: { x: jawX(22) }, duration: tMeat - tBugs - 0.2, ease: "steps(6)" }, tBugs + 0.2);
+      tl.to(bt, { x: 52, duration: 0.08, ease: "power3.out" }, tMeat);
+      tl.to(l30, { attr: { x: jawX(52) }, duration: 0.05, ease: "none" }, tMeat + 0.03);
+      tl.set(bite, { opacity: 1, x: jawX(52) + 2 }, tMeat + 0.08);
+      // the rest of the line slides into its mouth (the clip edge stays at its jaws)
+      tl.to(q("l30t"), { x: -240, duration: 0.14, ease: "power2.in" }, tSoft + 0.02);
+      tl.to(bt, { x: 48, duration: 0.05, yoyo: true, repeat: 3, ease: "sine.inOut" }, tSoft);
+      tl.set(bite, { opacity: 0 }, tSoft + 0.04);
+      gsap.set(body, { svgOrigin: "-2 0" });
+      tl.to(body, { scale: 1.4, duration: 0.1, ease: "back.out(3)" }, tSoft + 0.14);
+      var burp = q("burp");
+      tl.set(burp, { opacity: 1, x: 20, y: -22 }, tSoft + 0.24);
+      tl.fromTo(burp, { scale: 0.2, svgOrigin: "0 0" }, { scale: 1.2, svgOrigin: "0 0", duration: 0.16, ease: "back.out(2)", immediateRender: false }, tSoft + 0.24);
+      tl.to(body, { scale: 1.1, duration: 0.1 }, tSoft + 0.26);
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

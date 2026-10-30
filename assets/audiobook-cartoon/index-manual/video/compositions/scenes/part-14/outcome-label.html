@@ -1,0 +1,432 @@
+<template id="outcome-label-template">
+  <!-- outcome-label · Layer B (storyboards/part-14-decentralized-fda.md): the patient at her kitchen table with her SAFE
+       bottle, its side panel from smoke-detector-live still lit, the live detector on the wall over the flattened old
+       one. "Labels": a clean label, laid out like a nutrition label, slides in over the bottle: "OUTCOME LABEL
+       (EXAMPLE)". "humans": its bars fill with tiny humans (GOT BETTER, NO CHANGE, SIDE EFFECTS) over the panel's
+       numbers. "department": the loud human slaps a "MIRACLE!" sticker on it; "hopes": the sticker peels itself off
+       and slaps over his megaphone, and he can only squeak. "lawyer": the lawyer tapes his 40-page insert over it;
+       "admitting": the tape lets go and the insert unfolds onto him and buries him, only his briefcase sticking out.
+       "What": the label snaps flat onto the bottle; "happens.": she pops the cap and takes the pill; a beat later her
+       chest light flips from red to teal, she smiles and loosens her scarf. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #outcome-label-cam, #outcome-label-bg, #outcome-label-art, #outcome-label-pip, #outcome-label-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="outcome-label" data-width="1920" data-height="1080" data-start="0" data-duration="13.38">
+    <div id="outcome-label-cam">
+      <div id="outcome-label-bg"></div>
+      <div id="outcome-label-art"></div>
+      <div id="outcome-label-pip"></div>
+      <div id="outcome-label-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "outcome-label";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var P = ID + "-", INK = C.line, WHITE = "#FBF6E6", CARD = "#FBF5E4", CHAR = "#3A302A", PAGE = "#F7F1DD";
+
+      // Layout per shape. floor: the ground; S: the humans' scale; pat: her x; table: [x0, x1, top]; bot: the bottle's
+      // x on the table (BS its size); label: [x, y, scale] of the outcome label's top-left (it is 520 x 470); det: the
+      // detectors' wall spot [x, y, scale]; win/counter/toaster: the kitchen behind (16:9); loud/law: [x from, x stop,
+      // x after]; behind: the loud human and the lawyer stand behind the table (9:16); stick/block: where the sticker
+      // and the insert land on the label (screen px).
+      var L = V
+        ? { floor: 1440, S: 3.2, pat: 220, table: [60, 1020, 1210], bot: 455, BS: 0.75, label: [480, 452, 0.97], det: [232, 640, 1.12],
+            loud: [1380, 905, 990], law: [1400, 745, 745], lawS: 2.9, loudS: 2.9, behind: true, stick: [800, 640], block: [690, 610], pileTop: 905 }
+        : { floor: 880, S: 3.1, pat: 380, table: [200, 1020, 665], bot: 640, BS: 0.75, label: [548, 40, 1], det: [300, 205, 1.25],
+            win: [1120, 205, 320, 235], counter: [1150, 1500], toaster: 1440,
+            loud: [2150, 1300, 1480], law: [2250, 1190, 1190], lawS: 3.1, loudS: 3.1, behind: false, stick: [940, 300], block: [870, 270], pileTop: 300 };
+      var S = L.S, PY = L.floor - 100 * S, BS = L.BS, BK = S * BS;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner) { return '<g transform="translate(' + (+x).toFixed(1) + "," + (+y).toFixed(1) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b) o[k] = b[k]; return o; }
+      function pts(a) { return a.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" "); }
+      function poly(a, fill, w, extra) { return '<polygon points="' + pts(a) + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + (w || 3) + '" stroke-linejoin="miter" ' + (extra || "") + "/>"; }
+      function text(x, y, size, t, fill, family, extra) {
+        return '<text x="' + x + '" y="' + y + '" font-family="' + (family || "Oswald") + '" font-weight="' + (family === "Inter" ? 700 : 600) + '" font-size="' + size + '" fill="' + (fill || INK) + '" ' + (extra || "") + ">" + t + "</text>";
+      }
+      var uid = 0;
+
+      // ── The kitchen (as in smoke-detector-live): checker floor, window, and the counter with its toaster ──
+      function kitchen(k) {
+        var out = "", x, y, i, j, fl = k.floor, cs = V ? 64 : 58;
+        out += '<defs><clipPath id="' + P + 'floor"><rect x="44" y="' + fl + '" width="' + (W - 88) + '" height="' + (H - 44 - fl) + '"/></clipPath></defs><g clip-path="url(#' + P + 'floor)">' +
+          '<rect x="44" y="' + fl + '" width="' + (W - 88) + '" height="' + (H - 44 - fl) + '" fill="' + CARD + '"/>';
+        for (i = 0; 44 + i * cs < W - 44; i++) for (j = 0; fl + j * cs < H - 44; j++) if ((i + j) % 2) out += '<rect x="' + (44 + i * cs) + '" y="' + (fl + j * cs) + '" width="' + cs + '" height="' + cs + '" fill="' + C.peri + '" opacity="' + (V ? 0.32 : 0.5) + '"/>';
+        out += '</g><rect x="44" y="' + (fl - 3) + '" width="' + (W - 88) + '" height="6" fill="' + INK + '"/>';
+        if (k.win) {
+          var w = k.win;
+          out += '<rect x="' + (w[0] + 10) + '" y="' + (w[1] + 10) + '" width="' + w[2] + '" height="' + w[3] + '" fill="' + C.ink + '" opacity="0.85"/>' +
+            '<rect x="' + w[0] + '" y="' + w[1] + '" width="' + w[2] + '" height="' + w[3] + '" fill="' + C.cyan + '" stroke="' + INK + '" stroke-width="5"/>' +
+            '<rect x="' + w[0] + '" y="' + w[1] + '" width="' + w[2] + '" height="' + w[3] + '" fill="url(#' + P + 'fine)" opacity="0.25"/>' +
+            KIT.star(w[0] + w[2] * 0.72, w[1] + w[3] * 0.3, 14, WHITE) +
+            '<path d="M' + (w[0] + w[2] / 2) + "," + w[1] + " V" + (w[1] + w[3]) + " M" + w[0] + "," + (w[1] + w[3] / 2) + " H" + (w[0] + w[2]) + '" stroke="' + INK + '" stroke-width="5"/>' +
+            poly([[w[0] - 14, w[1] + w[3]], [w[0] + w[2] + 14, w[1] + w[3]], [w[0] + w[2] + 8, w[1] + w[3] + 16], [w[0] - 8, w[1] + w[3] + 16]], C.tan, 4) +
+            poly([[w[0] - 6, w[1] - 8], [w[0] + w[2] * 0.3, w[1] - 8], [w[0] + w[2] * 0.2, w[1] + w[3] * 0.62], [w[0] - 6, w[1] + w[3] * 0.72]], C.orange, 4) +
+            poly([[w[0] + w[2] + 6, w[1] - 8], [w[0] + w[2] * 0.7, w[1] - 8], [w[0] + w[2] * 0.8, w[1] + w[3] * 0.62], [w[0] + w[2] + 6, w[1] + w[3] * 0.72]], C.orange, 4) +
+            '<rect x="' + (w[0] - 16) + '" y="' + (w[1] - 16) + '" width="' + (w[2] + 32) + '" height="12" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="4"/>';
+        }
+        if (k.counter) {
+          var x0 = k.counter[0], x1 = k.counter[1], top = k.top, sh = 140, ts = 35, ch = fl - top;
+          out += '<rect x="' + x0 + '" y="' + (top - sh) + '" width="' + (x1 - x0) + '" height="' + sh + '" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="3"/>';
+          for (x = x0; x < x1; x += ts) out += '<path d="M' + x + "," + (top - sh) + " V" + top + '" stroke="' + INK + '" stroke-width="1.6" opacity="0.5"/>';
+          for (y = top - sh; y < top; y += ts) out += '<path d="M' + x0 + "," + y + " H" + x1 + '" stroke="' + INK + '" stroke-width="1.6" opacity="0.5"/>';
+          out += '<rect x="' + x0 + '" y="' + top + '" width="' + (x1 - x0) + '" height="' + ch + '" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="5"/>';
+          var nd = Math.max(1, Math.round((x1 - x0) / 200)), dw = (x1 - x0) / nd;
+          for (i = 0; i < nd; i++) {
+            var dx = x0 + i * dw;
+            out += '<rect x="' + (dx + 14) + '" y="' + (top + 34) + '" width="' + (dw - 28) + '" height="' + (ch - 56) + '" fill="' + CARD + '" stroke="' + INK + '" stroke-width="3"/>' +
+              '<rect x="' + (dx + dw / 2 - 16) + '" y="' + (top + 52) + '" width="32" height="9" rx="2" fill="' + C.orange + '" stroke="' + INK + '" stroke-width="2.4"/>';
+          }
+          out += '<rect x="' + (x0 - 12) + '" y="' + (top - 6) + '" width="' + (x1 - x0 + 24) + '" height="22" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="5"/>';
+          if (k.toaster) {
+            var tx = k.toaster, ty = top - 6;
+            out += poly([[tx - 50, ty], [tx + 50, ty], [tx + 46, ty - 64], [tx + 34, ty - 76], [tx - 34, ty - 76], [tx - 46, ty - 64]], "#C9CED6", 4) +
+              '<path d="M' + (tx - 30) + "," + (ty - 72) + " h22 M" + (tx + 8) + "," + (ty - 72) + ' h22" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>' +
+              '<path d="M' + (tx - 46) + "," + (ty - 30) + " H" + (tx + 46) + '" stroke="' + C.orange + '" stroke-width="4"/>';
+          }
+        }
+        return out;
+      }
+
+      // ── The detectors from smoke-detector-live: the live one on the wall over the charred pancake, flag drooped ──
+      var pk = [], pr = KIT.rng(12);
+      for (var pi = 0; pi <= 16; pi++) pk.push([-116 + pi * 14.5, 84 - pr() * 5]);
+      for (pi = 16; pi >= 0; pi--) pk.push([-116 + pi * 14.5, 104 + pr() * 6]);
+      var pancake = poly(pk, CHAR, 4) + [-30, 30].map(function (x) { return '<g class="pk-eye"><ellipse cx="' + x + '" cy="95" rx="9" ry="6" fill="#FFF" stroke="' + INK + '" stroke-width="2"/><circle cx="' + (x + 1) + '" cy="96" r="3" fill="' + INK + '"/></g>'; }).join("");
+      var flag = '<g transform="translate(116,94) rotate(130)"><path d="M0,0 V-40" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>' + poly([[0, -40], [22, -40], [22, -26], [0, -26]], "#6E2C20", 2.6) + "</g>";
+      var wave = "", wx;
+      for (wx = -70; wx < 900; wx += 60) wave += " L" + (wx + 14) + ",0 L" + (wx + 20) + ",-20 L" + (wx + 26) + ",8 L" + (wx + 31) + ",-4 L" + (wx + 60) + ",-4";
+      var bars = "";
+      for (wx = -60; wx < 900; wx += 14) { var bh = ((Math.abs(wx * 7) % 9) + 3) * 1.4; bars += '<rect x="' + wx + '" y="' + (20 - bh).toFixed(1) + '" width="8" height="' + bh.toFixed(1) + '" fill="' + C.cyan + '" opacity="0.75"/>'; }
+      var liveDet = '<ellipse cx="6" cy="10" rx="92" ry="90" fill="' + C.ink + '" opacity="0.8"/>' +
+        '<circle r="88" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="5"/><circle r="78" fill="none" stroke="' + C.orange + '" stroke-width="5"/>' +
+        '<defs><clipPath id="' + P + 'dc"><circle r="86"/></clipPath><clipPath id="' + P + 'screen"><rect x="-62" y="-26" width="124" height="52" rx="3"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'dc)"><rect x="30" y="-90" width="70" height="180" fill="url(#' + P + 'fine)" opacity="0.35"/></g>' +
+        '<rect x="-70" y="-34" width="140" height="68" rx="6" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3.4"/>' +
+        '<g clip-path="url(#' + P + 'screen)"><rect x="-62" y="-26" width="124" height="52" fill="' + C.slate + '"/>' +
+        g("ld-wave", '<path d="M-70,-4' + wave + '" fill="none" stroke="' + C.yellow + '" stroke-width="3" stroke-linejoin="round"/><g transform="translate(0,4)">' + bars + "</g>") + "</g>" +
+        g("ld-lamp", '<circle cx="-30" cy="-54" r="8" fill="' + C.war + '" stroke="' + INK + '" stroke-width="2.6"/>') +
+        text(-16, -47, 19, "LIVE", INK, "Oswald", 'letter-spacing="1.5"') +
+        '<path d="M-26,50 H26 M-18,62 H18" stroke="' + INK + '" stroke-width="3.4" stroke-linecap="round"/>';
+
+      // ── The patient (the same woman in every Part 14 scene) and her scarf ──
+      var PAT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried" };
+      function scarf(o) {
+        var r = KIT.rig(o), n = r.neck, f = r.facing, x = n[0], y = n[1] + 1, cid = P + "scarf" + ++uid;
+        var band = [[x - 9, y - 3], [x + 9, y - 5], [x + 10.5, y + 3], [x - 9.5, y + 5]];
+        var t1 = [[x + 3 * f, y + 3], [x + 9 * f, y + 2], [x + 15 * f, y + 19], [x + 9 * f, y + 21]];
+        var t2 = [[x + 2 * f, y + 4], [x + 7 * f, y + 5], [x + 6 * f, y + 25], [x + 0 * f, y + 23]];
+        var stripes = "";
+        for (var s = -16; s < 30; s += 5) stripes += '<path d="M' + (x + s) + "," + (y - 8) + " l-8,36" + '" stroke="' + C.yellow + '" stroke-width="2.4"/>';
+        var c1 = cid + "b", c2 = cid + "t1", c3 = cid + "t2";
+        return '<g class="scarf"><defs><clipPath id="' + c1 + '"><polygon points="' + pts(band) + '"/></clipPath><clipPath id="' + c2 + '"><polygon points="' + pts(t1) + '"/></clipPath><clipPath id="' + c3 + '"><polygon points="' + pts(t2) + '"/></clipPath></defs>' +
+          '<g class="scarf-tails">' + poly(t2, C.orange, 2) + '<g clip-path="url(#' + c3 + ')">' + stripes + "</g>" + poly(t1, C.orange, 2) + '<g clip-path="url(#' + c2 + ')">' + stripes + "</g></g>" +
+          poly(band, C.orange, 2) + '<g clip-path="url(#' + c1 + ')">' + stripes + "</g>" +
+          poly([[x + 1 * f, y + 1], [x + 7 * f, y], [x + 8 * f, y + 6], [x + 2 * f, y + 7]], C.yellow, 2) + "</g>";
+      }
+      var patA = mix(PAT, { look: "right", arms: [[-8, -4], [8, 4]] }), patB = mix(PAT, { look: "right", light: "teal", mood: "smile", arms: [[-8, -4], [154, -46]] });
+      var R = KIT.rig(patA);
+
+      // ── Her SAFE bottle with the lit side panel (bottle units) ──
+      function panel(lines) {
+        var x0 = 36, x1 = 172, y0 = -82, y1 = -22;
+        return '<g class="panel"><path d="M27,-60 H' + x0 + ' M27,-42 H' + x0 + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<rect x="' + (x0 + 5) + '" y="' + (y0 + 5) + '" width="' + (x1 - x0) + '" height="' + (y1 - y0) + '" fill="' + C.ink + '" opacity="0.8"/>' +
+          '<rect x="' + x0 + '" y="' + y0 + '" width="' + (x1 - x0) + '" height="' + (y1 - y0) + '" rx="4" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3.4"/>' +
+          '<rect x="' + (x0 + 6) + '" y="' + (y0 + 6) + '" width="' + (x1 - x0 - 12) + '" height="' + (y1 - y0 - 12) + '" rx="2" fill="' + C.slate + '"/>' +
+          text(x0 + 13, y0 + 27, 15, lines[0], C.cream, "Oswald", 'letter-spacing="0.5"') + text(x0 + 13, y0 + 49, 15, lines[1], C.yellow, "Oswald", 'letter-spacing="0.5"') + "</g>";
+      }
+      var bottleArt = panel(["HEADACHES 12%", "SEVERE 3%"]) + KIT.props.pillBottle({ face: "smile", label: "SAFE" }) +
+        '<path d="M16,-29 l4,4 l8,-10" fill="none" stroke="' + C.med + '" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>';
+      // the pill that flies to her mouth
+      var capsule = '<g transform="rotate(-30)"><path d="M-8,-3.6 H0 V3.6 H-8 L-10,0 Z" fill="' + C.med + '" stroke="' + INK + '" stroke-width="2"/><path d="M0,-3.6 H8 L10,0 L8,3.6 H0 Z" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="2"/></g>';
+
+      // ── The outcome label (label units, 520 x 470, top-left at 0,0), laid out like a nutrition label ──
+      var LW = 520, LH = 470;
+      var rows = [["GOT BETTER", 16, C.med], ["NO CHANGE", 7, C.peri], ["SIDE EFFECTS", 4, C.war]];
+      function tiny(x, y, col) {
+        return '<g class="tiny"><circle cx="' + x + '" cy="' + (y - 21) + '" r="4.6" fill="' + col + '" stroke="' + INK + '" stroke-width="1.6"/>' +
+          '<path d="M' + (x - 6) + "," + (y - 1) + " L" + (x - 5) + "," + (y - 14) + " L" + (x + 5) + "," + (y - 14) + " L" + (x + 6) + "," + (y - 1) + ' Z" fill="' + col + '" stroke="' + INK + '" stroke-width="1.6" stroke-linejoin="miter"/></g>';
+      }
+      var labelArt = '<rect x="10" y="12" width="' + LW + '" height="' + LH + '" fill="' + C.ink + '" opacity="0.85"/>' +
+        '<rect x="0" y="0" width="' + LW + '" height="' + LH + '" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="6"/>' +
+        '<rect x="12" y="12" width="' + (LW - 24) + '" height="' + (LH - 24) + '" fill="none" stroke="' + INK + '" stroke-width="2"/>' +
+        text(26, 74, 54, "OUTCOME LABEL", INK, "Oswald", 'letter-spacing="1"') + text(LW - 24, 74, 22, "(EXAMPLE)", C.orange, "Oswald", 'text-anchor="end" letter-spacing="1"') +
+        '<text x="26" y="110" font-family="Inter" font-style="italic" font-weight="600" font-size="21" fill="' + INK + '">What happened to real humans who took it</text>' +
+        '<rect x="22" y="126" width="' + (LW - 44) + '" height="14" fill="' + INK + '"/>';
+      rows.forEach(function (r, i) {
+        var y = 160 + i * 74, bx = 214, bw = LW - 22 - bx;
+        labelArt += text(26, y + 40, 28, r[0], INK, "Oswald", 'letter-spacing="0.5"') +
+          '<rect x="' + bx + '" y="' + (y + 8) + '" width="' + bw + '" height="44" fill="' + CARD + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<g class="row" data-i="' + i + '">' + Array.apply(null, Array(r[1])).map(function (z, k) { return tiny(bx + 13 + k * 17.5, y + 48, r[2]); }).join("") + "</g>" +
+          '<path d="M22,' + (y + 64) + " H" + (LW - 22) + '" stroke="' + INK + '" stroke-width="2"/>';
+      });
+      labelArt += '<rect x="22" y="386" width="' + (LW - 44) + '" height="6" fill="' + INK + '"/>' +
+        text(LW / 2, 436, 30, "HEADACHES 12% · SEVERE 3%", INK, "Oswald", 'text-anchor="middle" letter-spacing="0.5"');
+
+      // the MIRACLE! sticker: a red-and-mustard starburst (sticker units, centered)
+      var burst = [];
+      for (var b = 0; b < 28; b++) { var ar = (Math.PI * b) / 14, rr = b % 2 ? 70 : 92; burst.push([rr * Math.cos(ar), rr * Math.sin(ar) * 0.72]); }
+      var sticker = poly(burst, C.yellow, 4.5) + poly(burst.map(function (p) { return [p[0] * 0.8, p[1] * 0.8]; }), C.war, 0) +
+        text(0, 11, 34, "MIRACLE!", WHITE, "Oswald", 'text-anchor="middle" letter-spacing="1"');
+
+      // the 40-page insert, folded into a fat block (screen px at scale 1, centered), and its tape
+      function block() {
+        var w = 170, h = 210, out = poly([[-w / 2 + 10, -h / 2 + 10], [w / 2 + 10, -h / 2 + 10], [w / 2 + 10, h / 2 + 10], [-w / 2 + 10, h / 2 + 10]], C.ink, 0, 'opacity="0.8"') +
+          poly([[-w / 2, -h / 2], [w / 2, -h / 2], [w / 2, h / 2], [-w / 2, h / 2]], PAGE, 4);
+        for (var y = -h / 2 + 14; y < h / 2; y += 12) out += '<path d="M' + (-w / 2 + 2) + "," + y + " l8,6 l-8,6" + '" fill="none" stroke="' + INK + '" stroke-width="1.6" opacity="0.6"/>';
+        out += text(8, -48, 30, "PAGE 1", INK, "Oswald", 'text-anchor="middle" letter-spacing="1"') + text(8, -14, 30, "OF 40", C.war, "Oswald", 'text-anchor="middle" letter-spacing="1"');
+        for (var k = 0; k < 6; k++) out += '<path d="M' + (-w / 2 + 22) + "," + (12 + k * 12) + " h" + (90 + (k % 3) * 14) + '" stroke="' + INK + '" stroke-width="2" opacity="0.4"/>';
+        return out;
+      }
+      var tape = function (x, y, a) { return '<g class="tape"><g transform="translate(' + x + "," + y + ") rotate(" + a + ')"><rect x="-38" y="-13" width="76" height="26" fill="#EFE3B0" opacity="0.92" stroke="' + INK + '" stroke-width="2"/></g></g>'; };
+
+      // ── The loud human (cast: a megaphone for a head), mirrored to face left; his reaching arm holds the sticker ──
+      var loudO = KIT.castOpts("loudHuman", { arms: [[20, 10], [100, 110]] }), LDR = KIT.rig(loudO);
+      var gag = '<g class="eep" opacity="0">' + [[-36, -64], [-42, -52], [-36, -40]].map(function (e, i) { return '<path d="M' + e[0] + "," + e[1] + " l-7," + (i - 1) * 4 + '" stroke="' + INK + '" stroke-width="2.6" stroke-linecap="round"/>'; }).join("") + "</g>";
+      var loudArt = '<g transform="scale(-1,1)">' + KIT.person(loudO) + "</g>" + gag;
+
+      // ── The lawyer (box build, jowls, bald; the same man in every Part 14 scene), insert held up, briefcase ──
+      var LAW = { tone: 3, outfit: "suit", color: 1, holdR: "briefcase" };
+      var lawO = mix(LAW, { holdR: null, look: "left", mood: "smug", arms: [[-140, -100], [8, 4]] }), LR = KIT.rig(lawO);
+      function briefcase() {
+        return poly([[-18, 6], [18, 6], [18, 30], [-18, 30]], "#6B4A2F", 2.6) + '<path d="M-6,6 V0 H6 V6" fill="none" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<path d="M-18,13 H18" stroke="' + INK + '" stroke-width="1.6"/><rect x="-3" y="10" width="6" height="6" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="1.4"/>';
+      }
+      var lawArt = KIT.person(lawO) + at(LR.hand[1][0], LR.hand[1][1] - 2, 1, briefcase());
+
+      // ── The heap that buries him (screen px), and his briefcase sticking out of it ──
+      function heap(x0, x1, base, top, seed) {
+        var r = KIT.rng(seed), hp = [[x0 - 20, base]];
+        for (var i = 0; i <= 12; i++) { var hx = x0 + ((x1 - x0) * i) / 12, hump = Math.sin((Math.PI * i) / 12); hp.push([hx, base - (base - top) * (0.3 + 0.7 * Math.pow(hump, 0.35)) - r() * 16]); }
+        hp.push([x1 + 20, base]);
+        var folds = "";
+        for (var fy = base - 22; fy > top - 30; fy -= 26) {
+          var zz = "M" + (x0 - 30) + "," + fy;
+          for (var fx = x0 - 30; fx < x1 + 30; fx += 24) zz += " L" + (fx + 12) + "," + (fy - 9) + " L" + (fx + 24) + "," + fy;
+          folds += '<path d="' + zz + '" fill="none" stroke="' + INK + '" stroke-width="2" opacity="0.55"/>';
+        }
+        var cid = P + "heap" + seed;
+        return '<defs><clipPath id="' + cid + '"><polygon points="' + pts(hp) + '"/></clipPath></defs>' + poly(hp, WHITE, 5) +
+          '<g clip-path="url(#' + cid + ')">' + folds + '<rect x="' + ((x0 + x1) / 2) + '" y="' + (top - 40) + '" width="' + (x1 - x0) + '" height="' + (base - top + 60) + '" fill="url(#' + P + 'fine)" opacity="0.28"/></g>';
+      }
+
+      // ── Build ──
+      var TB = L.table, BX = L.bot, BY = TB[2];
+      var tableArt = poly([[TB[0] + 60, TB[2] + 14], [TB[0] + 76, TB[2] + 14], [TB[0] + 84, L.floor], [TB[0] + 52, L.floor]], "#C9CED6", 3) +
+        poly([[TB[1] - 76, TB[2] + 14], [TB[1] - 60, TB[2] + 14], [TB[1] - 52, L.floor], [TB[1] - 84, L.floor]], "#C9CED6", 3) +
+        poly([[TB[0], TB[2]], [TB[1], TB[2]], [TB[1], TB[2] + 22], [TB[0], TB[2] + 22]], C.cyan, 5) +
+        '<rect x="' + TB[0] + '" y="' + (TB[2] + 22) + '" width="' + (TB[1] - TB[0]) + '" height="9" fill="#C9CED6" stroke="' + INK + '" stroke-width="3"/>' +
+        [0.2, 0.5, 0.8].map(function (k) { return KIT.boomerang(TB[0] + (TB[1] - TB[0]) * k, TB[2] + 13, 0.16, WHITE, k * 90); }).join("");
+      var LB = L.label, DT = L.det;
+      var loudPY = L.floor - 100 * L.loudS, lawPY = L.floor - 100 * L.lawS;
+      var people = at(0, 0, 1, g("loud", at(0, loudPY, L.loudS, g("loud-j", loudArt)))) + at(0, 0, 1, g("law", at(0, lawPY, L.lawS, g("law-j", g("law-body", lawArt)))));
+      var lawHeap = g("lheap", heap(L.law[1] - 140, L.law[1] + 140, L.behind ? TB[2] + 20 : L.floor + 2, L.pileTop, 21), 'opacity="0"');
+      var sparks = [0, 1, 2, 3, 4, 5].map(function (i) { return '<g class="spark" opacity="0">' + KIT.star(0, 0, 10 + (i % 2) * 6, i % 2 ? C.yellow : C.med) + "</g>"; }).join("");
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + kitchen({ floor: L.floor, win: L.win, counter: L.counter, top: 606, toaster: L.toaster }) +
+        at(DT[0], DT[1], DT[2], liveDet + pancake + flag) +
+        (L.behind ? people + lawHeap + tableArt : tableArt) +
+        at(L.pat, PY, S, g("pat-a", KIT.person(patA)) + g("pat-b", KIT.person(patB), 'opacity="0"') + g("scarf", scarf(patA)) + g("sparks", '<circle id="' + P + 'halo" r="10" fill="none" stroke="' + C.med + '" stroke-width="3" opacity="0"/>' + sparks)) +
+        at(BX, BY, BK, g("bottle", bottleArt)) + g("pill", at(0, 0, BK, capsule), 'opacity="0"') +
+        (L.behind ? "" : people + lawHeap) +
+        g("cascade", "", "") +
+        at(LB[0], LB[1], LB[2], g("label", labelArt)) +
+        g("sticker", sticker, 'opacity="0"') +
+        g("block", block() + tape(-60, -100, -20) + tape(70, 96, -18), 'opacity="0"') +
+        g("case-out", at(0, 0, L.lawS, '<g transform="rotate(-12)">' + briefcase() + '<path d="M-3,6 L-2,-8 L6,-8 L7,6 Z" fill="#6F4B33" stroke="' + INK + '" stroke-width="2"/></g>'), 'opacity="0"'));
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      var T = {
+        labels: cue("Labels"), humans: cue("humans"), dept: cue("department"), hopes: cue("hopes"), lawyer: cue("lawyer"),
+        admit: cue("admitting"), what: cue("What", 4), happens: cue("happens.", 4), after: KIT.after(ID, "happens.", 4)
+      };
+      function pivot(el, o) { gsap.set(el, { svgOrigin: o }); }
+      function set(el, op, t) { tl.set(el, { opacity: op }, t); }
+
+      // The detector's readings keep scrolling, its lamp blinks; the pancake blinks.
+      tl.fromTo(q("ld-wave"), { x: 0 }, { x: -60 * Math.floor(D), duration: D, ease: "none" }, 0);
+      tl.to(q("ld-lamp"), { opacity: 0.3, duration: 0.25, repeat: Math.floor(D / 0.5) * 2 - 1, yoyo: true, ease: "steps(1)" }, 0);
+      document.querySelectorAll("#" + P + "art .pk-eye").forEach(function (e, i) {
+        pivot(e, (i ? 30 : -30) + " 95");
+        [1.6, 5.2, 9.4].forEach(function (b) { tl.to(e, { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1 }, b); });
+      });
+
+      // ── "Labels": the label slides in over the bottle (whoosh) and stops with a little shake ──
+      var lab = q("label");
+      pivot(lab, "0 0");
+      tl.fromTo(lab, { x: (W + 80 - LB[0]) / LB[2], rotation: 8 }, { x: 0, rotation: 0, duration: 0.42, ease: "back.out(1.4)" }, T.labels - 0.12);
+      // "humans": each bar fills with tiny humans, one row on each pop
+      lab.querySelectorAll(".row").forEach(function (row, i) {
+        var t0 = T.humans + i * 0.15;
+        row.querySelectorAll(".tiny").forEach(function (h, k) {
+          var c = h.firstChild;
+          pivot(h, c.getAttribute("cx") + " " + (+c.getAttribute("cy") + 21));
+          tl.fromTo(h, { scale: 0 }, { scale: 1, duration: 0.12, ease: "back.out(3)" }, t0 + k * 0.012);
+        });
+      });
+
+      // ── The patient: looks up at the label as it arrives, then reads it ──
+      var pA = q("pat-a"), pB = q("pat-b"), headA = pA.querySelector(".head"), headB = pB.querySelector(".head");
+      pivot(headA, R.neck.join(" ")); pivot(headB, R.neck.join(" "));
+      tl.to(headA, { rotation: -14, duration: 0.3 }, T.labels + 0.2);
+      tl.to(headA, { rotation: -8, duration: 0.25 }, T.humans);
+      tl.to(headA, { rotation: 10, duration: 0.25 }, T.what + 0.05);
+
+      // ── "department": the loud human leans in and slaps the MIRACLE! sticker on the label (splat) ──
+      var loud = q("loud"), loudJ = q("loud-j"), stk = q("sticker"), eep = loudJ.querySelector(".eep");
+      var lp = loudJ.querySelector(".person");
+      tl.set(loud, { x: L.loud[0] }, 0);
+      tl.to(loud, { x: L.loud[1], duration: 0.45, ease: "power2.out" }, T.dept - 0.55);
+      pivot(loudJ, "0 100");
+      ["leg-l", "leg-r"].forEach(function (c, i) {
+        var leg = lp.querySelector("." + c);
+        pivot(leg, LDR.hip[i].join(" "));
+        tl.fromTo(leg, { rotation: i ? 22 : -22 }, { rotation: i ? -22 : 22, duration: 0.11, repeat: 3, yoyo: true, ease: "sine.inOut" }, T.dept - 0.55);
+        tl.to(leg, { rotation: 0, duration: 0.08 }, T.dept - 0.1);
+      });
+      tl.to(loudJ, { rotation: -10, duration: 0.15, ease: "power2.out" }, T.dept - 0.15);
+      // the sticker: in his hand, then on the label
+      var hx = function (x) { return x - LDR.hand[1][0] * L.loudS; }, hy = loudPY + LDR.hand[1][1] * L.loudS;
+      pivot(stk, "0 0");
+      set(stk, 1, T.dept - 0.1);
+      tl.fromTo(stk, { x: hx(L.loud[1]) - 30, y: hy - 40, scale: 0.45, rotation: -20 }, { x: L.stick[0], y: L.stick[1], scale: V ? 1.05 : 1.15, rotation: -10, duration: 0.12, ease: "power3.in" }, T.dept - 0.1);
+      tl.to(stk, { scaleY: (V ? 1.05 : 1.15) * 0.82, duration: 0.05, yoyo: true, repeat: 1 }, T.dept + 0.02);
+      tl.to(loudJ, { rotation: 0, duration: 0.3, ease: "power2.inOut" }, T.dept + 0.1);
+      // "hopes": the sticker peels itself off and slaps over his megaphone (squeak); he can only squeak now
+      var bell = [L.loud[1] - 27 * L.loudS, loudPY + (LDR.hy + 6) * L.loudS];
+      tl.to(stk, { rotation: 25, scaleX: 0.5, duration: 0.12, ease: "power2.in" }, T.hopes - 0.14);
+      tl.to(stk, { x: bell[0] - 4, y: bell[1], rotation: 90, scaleX: 0.95, scaleY: 0.42, duration: 0.14, ease: "power2.in" }, T.hopes - 0.02);
+      tl.to(loudJ, { rotation: 8, x: 6, duration: 0.06, yoyo: true, repeat: 1 }, T.hopes + 0.12);
+      ["arm-l", "arm-r"].forEach(function (c, i) {
+        var arm = lp.querySelector("." + c);
+        pivot(arm, LDR.shoulder[i].join(" "));
+        tl.fromTo(arm, { rotation: 0 }, { rotation: i ? -50 : 60, duration: 0.12, repeat: 9, yoyo: true, ease: "sine.inOut" }, T.hopes + 0.15);
+      });
+      // he backs off to make room, still squeaking (the eep marks flash)
+      tl.to(loud, { x: L.loud[2], duration: 0.5, ease: "power1.inOut" }, T.hopes + 0.5);
+      tl.to(stk, { x: bell[0] - 4 + (L.loud[2] - L.loud[1]), duration: 0.5, ease: "power1.inOut" }, T.hopes + 0.5);
+      [0, 0.45, 0.9, 1.4, 2.1, 2.9].forEach(function (d) { set(eep, 1, T.hopes + 0.2 + d); set(eep, 0, T.hopes + 0.38 + d); });
+
+      // ── "lawyer": the lawyer walks in and tapes his 40-page insert over the label (tape rip) ──
+      var law = q("law"), lawJ = q("law-j"), lawBody = q("law-body"), blk = q("block"), tapes = blk.querySelectorAll(".tape");
+      tl.set(law, { x: L.law[0] }, 0);
+      tl.to(law, { x: L.law[1], duration: 0.55, ease: "power2.out" }, T.lawyer - 0.7);
+      ["leg-l", "leg-r"].forEach(function (c, i) {
+        var leg = lawBody.querySelector("." + c);
+        pivot(leg, LR.hip[i].join(" "));
+        tl.fromTo(leg, { rotation: i ? 22 : -22 }, { rotation: i ? -22 : 22, duration: 0.11, repeat: 4, yoyo: true, ease: "sine.inOut" }, T.lawyer - 0.7);
+        tl.to(leg, { rotation: 0, duration: 0.08 }, T.lawyer - 0.15);
+      });
+      var lhand = [L.law[1] + LR.hand[0][0] * L.lawS, lawPY + LR.hand[0][1] * L.lawS];
+      pivot(blk, "0 0");
+      set(blk, 1, T.lawyer - 0.7);
+      tapes.forEach(function (tp) { set(tp, 0, 0); });
+      tl.fromTo(blk, { x: lhand[0] + (L.law[0] - L.law[1]), y: lhand[1] - 60, scale: 0.55, rotation: -8 }, { x: lhand[0], y: lhand[1] - 60, duration: 0.55, ease: "power2.out" }, T.lawyer - 0.7);
+      tl.to(blk, { x: L.block[0], y: L.block[1], scale: 1, rotation: 4, duration: 0.16, ease: "power3.in" }, T.lawyer - 0.12);
+      tapes.forEach(function (tp, i) { set(tp, 1, T.lawyer + 0.05 + i * 0.12); });
+      pivot(lawJ, "0 100");
+      tl.to(lawJ, { rotation: -6, duration: 0.12, yoyo: true, repeat: 1 }, T.lawyer - 0.12);
+
+      // ── "admitting": the tape lets go; the insert unfolds down off the label onto him (whoosh, pat) ──
+      tapes.forEach(function (tp, i) { tl.to(tp, { y: -40 - i * 20, x: (i ? 40 : -40), rotation: (i ? 40 : -40), opacity: 0, duration: 0.3, ease: "power2.out" }, T.admit); });
+      tl.to(blk, { y: L.block[1] + 30, rotation: 14, duration: 0.15, ease: "power2.in" }, T.admit);
+      set(blk, 0, T.admit + 0.16);
+      // the cascade: pages in a zigzag from the label down to him
+      var c0 = [L.block[0], L.block[1] + 90], c1 = [L.law[1], L.pileTop + 20], casc = "", NC = 9;
+      for (var ci = 0; ci < NC; ci++) {
+        var k = ci / (NC - 1), cx = c0[0] + (c1[0] - c0[0]) * k + (ci % 2 ? 28 : -28), cy = c0[1] + (c1[1] - c0[1]) * k;
+        casc += '<g transform="translate(' + cx.toFixed(1) + "," + cy.toFixed(1) + ') rotate(' + (ci % 2 ? 24 : -24) + ')"><g class="casc" opacity="0">' + poly([[-34, -22], [34, -22], [34, 22], [-34, 22]], ci % 2 ? PAGE : WHITE, 3) +
+          '<path d="M-24,-8 H20 M-24,2 H14 M-24,12 H22" stroke="' + INK + '" stroke-width="1.8" opacity="0.45"/></g></g>';
+      }
+      q("cascade").innerHTML = casc;
+      q("cascade").querySelectorAll(".casc").forEach(function (cp, i) {
+        pivot(cp, "0 0");
+        set(cp, 1, T.admit + 0.08 + i * 0.03);
+        tl.fromTo(cp, { scaleY: 0 }, { scaleY: 1, duration: 0.1, ease: "back.out(2)" }, T.admit + 0.08 + i * 0.03);
+        set(cp, 0, T.admit + 0.62 + i * 0.01);
+      });
+      // the heap rises over him; only his briefcase sticks out of the top
+      var lh = q("lheap"), base = L.behind ? TB[2] + 20 : L.floor + 2;
+      pivot(lh, L.law[1] + " " + base);
+      set(lh, 1, T.admit + 0.25);
+      tl.fromTo(lh, { scaleY: 0, scaleX: 0.7 }, { scaleY: 1.06, scaleX: 1, duration: 0.3, ease: "power2.out" }, T.admit + 0.25);
+      tl.to(lh, { scaleY: 1, duration: 0.2, ease: "sine.inOut" }, T.admit + 0.55);
+      set(law, 0, T.admit + 0.5);
+      var co = q("case-out");
+      pivot(co, "0 0");
+      set(co, 1, T.admit + 0.6);
+      tl.fromTo(co, { x: L.law[1] + 10, y: L.pileTop + 20, rotation: 0 }, { y: L.pileTop - 34, duration: 0.25, ease: "back.out(3)" }, T.admit + 0.6);
+      tl.to(co, { rotation: -10, duration: 0.3, repeat: 3, yoyo: true, ease: "sine.inOut" }, T.admit + 0.9);
+
+      // ── "What": the label snaps flat onto the bottle (thunk), as its new label ──
+      var tw = 58 * BK, th = 42 * BK; // the bottle's label area, in px
+      var snapS = Math.min(tw / LW, th / LH) / LB[2];
+      var snapX = (BX - (LW * snapS * LB[2]) / 2 - LB[0]) / LB[2], snapY = (BY - 26 * BK - (LH * snapS * LB[2]) / 2 - LB[1]) / LB[2];
+      tl.to(lab, { x: snapX, y: snapY, scale: snapS, duration: 0.14, ease: "power3.in" }, T.what - 0.1);
+      pivot(q("bottle"), "0 0");
+      tl.to(q("bottle"), { scaleY: 0.92, duration: 0.05, yoyo: true, repeat: 1 }, T.what + 0.04);
+
+      // ── "happens.": she reads it, the cap pops, a pill flies into her mouth ──
+      var bot = q("bottle"), cap = bot.querySelector(".pill-cap"), pill = q("pill");
+      pivot(cap, "0 -84");
+      tl.to(cap, { y: -70, rotation: -200, duration: 0.35, ease: "power2.out" }, T.happens + 0.05);
+      tl.to(cap, { x: -40, y: 60, opacity: 0, duration: 0.3, ease: "power2.in" }, T.happens + 0.4);
+      var mouth = [L.pat + R.mouth[0] * S, PY + R.mouth[1] * S], from = [BX, BY - 92 * BK];
+      set(pill, 1, T.happens + 0.12);
+      tl.fromTo(pill, { x: from[0] }, { x: mouth[0], duration: 0.36, ease: "none" }, T.happens + 0.12);
+      tl.fromTo(pill, { y: from[1] }, { y: Math.min(from[1], mouth[1]) - 130, duration: 0.18, ease: "power2.out" }, T.happens + 0.12);
+      tl.to(pill, { y: mouth[1], duration: 0.18, ease: "power2.in" }, T.happens + 0.3);
+      set(pill, 0, T.happens + 0.48);
+      tl.to(headA, { rotation: -6, duration: 0.08 }, T.happens + 0.46);
+      tl.to(headA, { rotation: 0, duration: 0.12 }, T.happens + 0.54);
+
+      // ── After "happens.": her chest light flips to teal (sparkle); she smiles and loosens her scarf ──
+      set(pA, 0, T.after); set(pB, 1, T.after);
+      var tails = q("scarf").querySelector(".scarf-tails"), RB = KIT.rig(patB);
+      pivot(tails, (R.neck[0] + 5) + " " + (R.neck[1] + 4));
+      tl.to(q("scarf"), { y: 3, duration: 0.2, ease: "power2.out" }, T.after + 0.1);
+      tl.fromTo(tails, { rotation: 0 }, { rotation: -16, duration: 0.12, repeat: 3, yoyo: true, ease: "sine.inOut" }, T.after + 0.06);
+      var light = pB.querySelector(".chest-light"), lx = +light.getAttribute("cx"), ly = +light.getAttribute("cy");
+      var halo = q("halo");
+      tl.set(halo, { attr: { cx: lx, cy: ly } }, 0);
+      pivot(halo, lx + " " + ly);
+      set(halo, 1, T.after);
+      tl.fromTo(halo, { scale: 0.3 }, { scale: 1.6, duration: 0.35, ease: "power2.out" }, T.after);
+      tl.to(halo, { opacity: 0, duration: 0.2 }, T.after + 0.3);
+      q("sparks").querySelectorAll(".spark").forEach(function (s, i) {
+        var a = (i / 6) * Math.PI * 2;
+        tl.set(s, { x: lx, y: ly, scale: 0.3 }, 0);
+        set(s, 1, T.after);
+        tl.to(s, { x: lx + Math.cos(a) * 26, y: ly + Math.sin(a) * 26, scale: 1, duration: 0.3, ease: "power2.out" }, T.after);
+        tl.to(s, { opacity: 0, scale: 0.4, duration: 0.2 }, T.after + 0.3);
+      });
+      pivot(headB, R.neck.join(" "));
+      tl.fromTo(headB, { rotation: 0 }, { rotation: -6, duration: 0.2, yoyo: true, repeat: 1, ease: "sine.inOut" }, T.after + 0.05);
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

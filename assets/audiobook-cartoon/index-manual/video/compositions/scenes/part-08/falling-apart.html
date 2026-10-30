@@ -1,0 +1,506 @@
+<template id="falling-apart-template">
+  <!-- falling-apart · Layer B (storyboards/part-08-daily-deletion-event.md): the NOW SERVING sign slides up out of its
+       corner and a quiet living room slides in; the reader sits in his armchair under the floor lamp, reading the manual,
+       while the camera pushes in very slowly. A shirt button pops off and rolls under the chair, he turns a page (a red
+       ticket for a bookmark), his chest light flickers red once, a faint dotted ring drifts knee to chest to head, and the
+       sailboat picture over his chair turns into a doctor's office: the empty chair, a card face down, the calendar
+       shuffling its pages. He never looks up.
+       The room, the reader, the picture and the camera are shared with dissolving-on-schedule, which starts on this
+       scene's last frame: copy any change between the two files (the block marked SHARED). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #falling-apart-cam, #falling-apart-bg, #falling-apart-corner, #falling-apart-grain { position: absolute; inset: 0; }
+    #falling-apart-view { position: absolute; left: 46px; top: 46px; overflow: hidden; }
+    #falling-apart-world { position: absolute; left: -46px; top: -46px; }
+  </style>
+  <div id="root" data-composition-id="falling-apart" data-width="1920" data-height="1080" data-start="0" data-duration="15.1">
+    <div id="falling-apart-cam">
+      <div id="falling-apart-bg"></div>
+      <!-- the camera window: the paper's inner frame; the room inside it pushes in on the reader -->
+      <div id="falling-apart-view"><div id="falling-apart-world"></div></div>
+    </div>
+    <!-- the NOW SERVING sign in its corner (outside the camera, so it holds still through the slide) -->
+    <div id="falling-apart-corner"></div>
+    <div id="falling-apart-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "falling-apart";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ════ SHARED with dissolving-on-schedule.html (same text in both files) ═══════════════════════════════════
+      var FA = "falling-apart", DS = "dissolving-on-schedule", FAs = KIT.scene(FA), DSs = KIT.scene(DS);
+      var WHITE = "#FBF6E6", GREY = "#8C8782", CHALK = "#F4F1E8";
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      // shapes drawn twice, a navy pass under the fill (the kit's way: sharp corners, thin navy outline)
+      function solid(list, col, w) {
+        w = w || 4.4;
+        return list.map(function (p) { return '<path d="' + polyD(p) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          list.map(function (p) { return '<path d="' + polyD(p) + '" fill="' + col + '"/>'; }).join("");
+      }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function at(x, y, k, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (k !== 1 ? " scale(" + k + ")" : "") + '">' + inner + "</g>"; }
+      function g(id, inner, extra) { return '<g id="' + P + id + '"' + (extra ? " " + extra : "") + ">" + inner + "</g>"; }
+      function dotsOver(pts, pid, op) { return '<path d="' + polyD(pts) + '" fill="url(#' + P + pid + ')" opacity="' + (op || 0.3) + '"/>'; }
+      function facet(cx, cy, r, n, wob, seed) {
+        var out = [], rr = KIT.rng(seed || 1);
+        for (var i = 0; i < n; i++) { var a = (i / n) * Math.PI * 2, k = 1 + (wob ? (rr() - 0.5) * wob : 0); out.push([cx + r * k * Math.cos(a), cy + r * k * Math.sin(a)]); }
+        return out;
+      }
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+      function mix(a, b, f) { return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f]; }
+
+      // Layout, for each canvas shape. k: the reader's scale; px, py: his origin (feet at py + 100 k); fy: where the wall
+      // meets the floor; frame: the picture over his chair [x, y, w, h] (the office inside is drawn 340 x 200, scaled to
+      // fit); sign: the NOW SERVING sign hanging face to the wall [x, y, scale] (off the first frame's crop, so the camera
+      // only shows it when it eases out wider than the start); lamp [x, shade top, scale]; table [x, top]; window [x, y, w, h].
+      // cam: the camera: s0, c0 the first frame of falling-apart (scale and the room point at the frame's centre), s1, c1
+      // its last frame, then dissolving-on-schedule pushes in to s2 (by tB) and s3 on his chest and eases back out to se, ce (the whole room in 16:9; in 9:16 the room without the empty floor).
+      var L = V
+        ? { k: 3.0, px: 520, py: 900, fy: 1140, frame: [265, 430, 480, 294], sign: [60, 52, 0.62], lamp: [808, 740, 1.2], table: [282, 1082],
+            window: [690, 120, 290, 300], rug: [1232, 1350], plant: null,
+            cam: { s0: 1.5, c0: [540, 845], s1: 1.875, c1: [520, 887], s2: 3.8, s3: 4.2, tB: 1.9, m1: 0.025, m2: 0.03, se: 1.12, ce: [487, 862] } }
+        : { k: 2.5, px: 1060, py: 625, fy: 820, frame: [867, 278, 360, 220], sign: [80, 176, 0.66], lamp: [1330, 478, 1], table: [800, 755],
+            window: [1482, 230, 230, 330], rug: [852, 945], plant: 600,
+            cam: { s0: 1.5, c0: [1100, 575], s1: 1.875, c1: [1075, 535], s2: 3.8, s3: 4.2, tB: 1.9, m1: 0.025, m2: 0.03, se: 1, ce: [960, 540] } };
+      var K = L.k, PX = L.px, PY = L.py, FY = L.fy, FEET = PY + 100 * K;
+      function wx(x) { return PX + K * x; }
+      function wy(y) { return PY + K * y; }
+
+      // The reader (Part 9 weirdly-calm reuses these exact options), seated: thighs forward, shins down, both hands on
+      // the open manual resting on his knees, his head tipped down to it.
+      var READER = { tone: 3, outfit: "shirt", color: 3, mood: "flat" };
+      var SEAT = { look: "right", build: { legPose: [[88, -3], [93, 2]] } };
+      function copyO(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      var R0 = KIT.rig(copyO(READER, SEAT));
+      // two-segment reach from shoulder s to hand h (kit angles: degrees, 0 = down); pref: the side the elbow goes
+      function ik(s, h, len, pref) {
+        var dx = h[0] - s[0], dy = h[1] - s[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len - 0.05), ux = dx / d, uy = dy / d;
+        var off = Math.sqrt(len * len - (d * d) / 4), best = null;
+        [1, -1].forEach(function (sg) {
+          var e = [s[0] + (ux * d) / 2 - sg * uy * off, s[1] + (uy * d) / 2 + sg * ux * off];
+          if (!best || e[0] * pref[0] + e[1] * pref[1] > best[0] * pref[0] + best[1] * pref[1]) best = e;
+        });
+        var deg = function (a, b) { return (Math.atan2(b[0] - a[0], b[1] - a[1]) * 180) / Math.PI; };
+        return [deg(s, best), deg(best, [s[0] + dx * (d / Math.sqrt(dx * dx + dy * dy)), s[1] + dy * (d / Math.sqrt(dx * dx + dy * dy))])];
+      }
+      // The open manual, in book units: the spine at x 0, the front cover (the prop) to the right, the back cover to the
+      // left, the top edge at y -40. Placed in person units at BOOK.
+      var BOOK = { x: 35, y: 63, rot: -8 };
+      function bookPt(p) {
+        var r = (BOOK.rot * Math.PI) / 180;
+        return [BOOK.x + p[0] * Math.cos(r) - p[1] * Math.sin(r), BOOK.y + p[0] * Math.sin(r) + p[1] * Math.cos(r)];
+      }
+      var HAND_NEAR = bookPt([19, -16]), HAND_FAR = bookPt([-11, -15]);
+      var ARMS = [ik(R0.shoulder[0], HAND_FAR, R0.armLength, [0, 1]), ik(R0.shoulder[1], HAND_NEAR, R0.armLength, [0, 1])];
+      var SEATED = copyO(READER, copyO(SEAT, { arms: ARMS }));
+      var RIG = KIT.rig(SEATED);
+      var CHEST = [3, 36];
+
+      function ticket(cls) {
+        var t = [[-2.6, -11], [2.6, -11], [2.6, -8.6], [1.5, -7.6], [2.6, -6.6], [2.6, 7], [-2.6, 7], [-2.6, -6.6], [-1.5, -7.6], [-2.6, -8.6]];
+        return '<g class="' + cls + '">' + solid([t], C.war, 1.4) + line("M-1.6,-10 H1.6 M-1.6,-5 V5.8", C.cream, 0.7, 'opacity="0.9"') + "</g>";
+      }
+      function book() {
+        var back = [[-20, -1.5], [0, 0], [0, -40], [-20, -38.5]];
+        var pages = [[-19, -38.6], [0, -42.4], [26.5, -40.6], [26.5, -38.6], [0, -40], [-19, -37]];
+        // the page that turns: a windshield wiper about the spine top, shown only above the book's top edge
+        var page = [[0, 0], [12, -3], [14, -21], [1.5, -19]];
+        return '<defs><clipPath id="' + P + "bookclip" + '"><path d="M-60,-40.5 L60,-38.6 L60,-120 L-60,-120 Z"/></clipPath></defs>' +
+          at(9, -40.6, 1, g("ticket", ticket("tk"))) +
+          solid([back], C.orange, 1.6) + dotsOver(back, "pdots", 0.25) + line("M-17,-4 L-17,-36", WHITE, 0.6, 'opacity="0.6"') +
+          solid([pages], WHITE, 1.2) + line("M-16,-38.6 L-1,-41.4 M2,-41.5 L24,-40", ink, 0.4, 'opacity="0.6"') +
+          at(13.44, 0, 1, KIT.props.manual({ size: 0.32 })) +
+          '<g clip-path="url(#' + P + 'bookclip)">' + at(0, -40, 1, g("flap", g("flapr", solid([page], WHITE, 1.2) + line("M3,-4 L4,-16", ink, 0.4, 'opacity="0.5"')), 'opacity="0"')) + "</g>";
+      }
+      // The torso of the shirt kind (kit.js), for the cutaway that replaces it in dissolving-on-schedule.
+      var TB = RIG.build, Tw = 24 * TB.tw, Tsy = RIG.hipY - 52 * TB.th, TT = Tsy - 4, TWy = RIG.hipY - 8 * TB.th;
+      var TORSO = [[-Tw, TT + 2], [-Tw + 5, TT - 2], [-5, TT - 3], [5, TT - 3], [Tw - 5, TT - 2], [Tw, TT + 2], [13.5, TWy], [14.5, RIG.hipY + 1], [-14.5, RIG.hipY + 1], [-13.5, TWy]];
+      // the protein: N points along a gentle wave, or folded into a knot (p 0..1 between them)
+      var RIB_N = 56;
+      function ribbonD(p) {
+        var e = p * p * (3 - 2 * p), out = [];
+        for (var i = 0; i < RIB_N; i++) {
+          var u = i / (RIB_N - 1), t = 0.45 + u * (Math.PI * 2 - 0.9);
+          var a = [-13 + 26 * u, 43 + 2.2 * Math.sin(u * Math.PI * 6)];
+          var b = [-1 + 2.45 * (Math.sin(t) + 2 * Math.sin(2 * t)), 42.5 + 2.2 * (Math.cos(t) - 2 * Math.cos(2 * t))];
+          out.push([a[0] + (b[0] - a[0]) * e, a[1] + (b[1] - a[1]) * e]);
+        }
+        return "M" + out.map(function (q2) { return pt(q2[0], q2[1]); }).join(" L");
+      }
+      function cell(cx, cy, r, seed, wob) {
+        var body = facet(cx, cy, r, 11, wob || 0.08, seed), nuc = facet(cx - r * 0.12, cy - r * 0.05, r * 0.36, 7, 0.2, seed + 7);
+        return solid([body], WHITE, 1.1) + dotsOver(body, "pdots", 0.28) + solid([nuc], C.rust, 0.9);
+      }
+      // the bad copy: lumpy, a size too big, two red nuclei where one rust one belongs
+      function badCell(cx, cy, r, seed) {
+        var body = facet(cx, cy, r * 1.1, 11, 0.62, seed);
+        return solid([body], WHITE, 1.1) + dotsOver(body, "pdots", 0.42) +
+          solid([facet(cx - r * 0.34, cy + r * 0.2, r * 0.3, 6, 0.35, seed + 3), facet(cx + r * 0.3, cy - r * 0.26, r * 0.22, 5, 0.35, seed + 5)], C.war, 0.9);
+      }
+      // where the dividing cell sits (left of his near sleeve, so the split shows) and where its copy lands
+      var SPLIT = [-9.5, 23.5], SPLIT_TO = [6.5, 6];
+      function cutaway() {
+        var cl = '<defs><clipPath id="' + P + 'cutclip"><path d="' + polyD(TORSO) + '"/></clipPath></defs>';
+        var fibers = "";
+        for (var f = 0; f < 5; f++) {
+          var y = 50 + f * 3.2, d = "M-16," + n1(y);
+          for (var x = -16; x <= 16; x += 2) d += " L" + pt(x, y + Math.sin(x * 0.6 + f) * 0.7);
+          fibers += line(d, C.tan, 1.1);
+        }
+        var cells = [[-20.5, 18.5, 3.6, 3], [-13, 14, 3.2, 5], [-2.5, 15, 3.2, 9], [-17.5, 28, 3.6, 11], [9, 21, 3.6, 13], [14, 29, 3.4, 15]].map(function (c) { return cell(c[0], c[1], c[2], c[3]); }).join("");
+        var scar = facet(-6, 55, 5.6, 9, 0.45, 21);
+        return cl + g("cut", '<g clip-path="url(#' + P + 'cutclip)">' + '<path d="' + polyD(TORSO) + '" fill="' + WHITE + '"/>' + dotsOver(TORSO, "pdots", 0.12) + fibers + cells +
+          // the cell that copies itself: the original (A) and its lopsided copy (B), stacked until "cells"
+          g("cellB", badCell(SPLIT[0], SPLIT[1], 4.7, 31), 'opacity="0"') + g("cellA", cell(SPLIT[0], SPLIT[1], 4.7, 17)) +
+          '<path id="' + P + 'rib0" d="' + ribbonD(0) + '" fill="none" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>' +
+          '<path id="' + P + 'rib1" d="' + ribbonD(0) + '" fill="none" stroke="' + C.orange + '" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>' +
+          g("scar", '<path d="' + polyD(scar) + '" fill="url(#' + P + 'gdots)"/>' + '<path d="' + polyD(scar) + '" fill="none" stroke="' + GREY + '" stroke-width="0.7" stroke-dasharray="1.2 0.9"/>') +
+          "</g>" + '<path d="' + polyD(TORSO) + '" fill="none" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"/>' +
+          '<path d="' + polyD(TORSO.map(function (p2) { return [p2[0] * 0.9, TT + (p2[1] - TT) * 0.95 + 1.2]; })) + '" fill="none" stroke="' + C.orange + '" stroke-width="0.6"/>', 'opacity="0"');
+      }
+      // The reader: the person, with shirt buttons, the cutaway (hidden), the book between his hands; his far arm goes
+      // behind his body (moved in the DOM after the markup is in place).
+      function reader() {
+        var m = KIT.person(SEATED);
+        var buttons = [21, 30, 39, 48].map(function (y, i) { return '<g id="' + P + "btn" + i + '"><circle cx="-3" cy="' + y + '" r="2.2" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="0.8"/><circle cx="-3.7" cy="' + y + '" r="0.4" fill="' + ink + '"/><circle cx="-2.3" cy="' + y + '" r="0.4" fill="' + ink + '"/></g>'; }).join("");
+        // (his chest light sits left of the near arm, between the buttons and the arm, so it shows)
+        m = m.replace(/<circle class="chest-light" cx="[^"]*" cy="[^"]*"/, buttons + '<circle class="chest-light" cx="6" cy="25"');
+        m = m.replace('<g class="head">', cutaway() + '<g class="head">');
+        m = m.replace('<g class="arm-r">', at(BOOK.x, BOOK.y, 1, book(), BOOK.rot) + '<g class="arm-r">');
+        return m;
+      }
+
+      // The armchair (person units, around the reader): a rust wingback seen from the side, facing right.
+      function chairBack() {
+        var back = [[-46, -40], [-30, -44], [-20, -34], [-17, 76], [-42, 79]], wing = [[-24, -33], [-9, -27], [-7, 8], [-20, 16]];
+        var cushion = [[-24, 71.5], [33, 71.5], [36, 76], [35, 84], [-24, 84]];
+        return solid([back], C.rust) + dotsOver(back, "hred", 0.25) + line("M-29,-40 L-21,-35", C.orange, 1.4) + line("M-43,-36 L-40,74", C.tan, 1.4, 'opacity="0.8"') +
+          solid([wing], C.rust, 3.4) + line("M-22,-31 L-10,-26", C.orange, 1.2) + dotsOver(wing, "hred", 0.3) +
+          solid([cushion], C.rust) + line("M-22,72.5 L33,72.5", C.orange, 1.4);
+      }
+      function chairFront() {
+        var arm = [[-38, 73], [20, 73], [20, 92], [-40, 92]], roll = [[17, 70], [26, 70], [31, 73.5], [31, 82], [27, 86], [17, 86]];
+        var skirt = [[-41, 91], [32, 91], [33, 96], [-42, 96]];
+        var legs = [[[-37, 96], [-31, 96], [-32, 102], [-36, 102]], [[24, 96], [30, 96], [29, 102], [25, 102]]];
+        return '<path d="M-36,96.5 L28,96.5 L26,101.5 L-34,101.5 Z" fill="' + ink + '" opacity="0.55"/>' +
+          solid(legs, ink, 2) + solid([arm, skirt], C.rust) + dotsOver(arm, "hred", 0.25) + line("M-36,74 L18,74", C.orange, 1.6) +
+          solid([roll], C.rust, 3.6) + dotsOver(roll, "hred", 0.3) + '<path d="M' + pt(21, 73) + " L" + pt(27, 74) + " L" + pt(28, 80) + " L" + pt(23, 82) + " L" + pt(20, 78) + ' Z" fill="none" stroke="' + C.tan + '" stroke-width="1.2"/>' +
+          line("M-39,93.5 H31", C.tan, 1.2);
+      }
+
+      // The NOW SERVING sign (part notes): 600 x 280 sign units, top left at (0, 0), two chains rising from (90, 0) and
+      // (510, 0). front(): the cream face with the red band, seven flip tiles (six digits and a comma) and the mustard
+      // strip; back(): the slate back board, chalked YOUR SCHEDULE.
+      function chain(x, len) {
+        var out = "";
+        for (var y = -6, i = 0; y > -len; y -= 15, i++) {
+          out += i % 2 ? '<rect x="' + (x - 2.5) + '" y="' + (y - 8) + '" width="5" height="16" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2.4"/>'
+            : '<path d="' + polyD([[x, y - 10], [x + 6, y - 6], [x + 6, y + 6], [x, y + 10], [x - 6, y + 6], [x - 6, y - 6]]) + '" fill="none" stroke="' + ink + '" stroke-width="5"/><path d="' + polyD([[x, y - 10], [x + 6, y - 6], [x + 6, y + 6], [x, y + 10], [x - 6, y + 6], [x - 6, y - 6]]) + '" fill="none" stroke="' + C.peri + '" stroke-width="2"/>';
+        }
+        return out;
+      }
+      function signBody(fill) {
+        return '<path d="' + polyD(R(0, 0, 600, 280)) + '" fill="' + fill + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>';
+      }
+      function signFront(pre) {
+        var tiles = "";
+        for (var i = 0; i < 7; i++) {
+          var x = 31 + i * 78;
+          tiles += '<path d="' + polyD(R(x, 89, 70, 110)) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="miter"/>' +
+            '<path d="M' + (x + 4) + ",92 H" + (x + 66) + '" stroke="' + C.orange + '" stroke-width="2"/>' +
+            '<text id="' + pre + "dg" + i + '" x="' + (x + 35) + '" y="177" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="92" fill="' + C.cream + '">0</text>' +
+            '<path d="M' + x + ",144 H" + (x + 70) + '" stroke="#000" stroke-width="2.4" opacity="0.7"/>';
+        }
+        return chain(90, 420) + chain(510, 420) + signBody(C.cream) +
+          '<path d="' + polyD(R(2.5, 2.5, 595, 67.5)) + '" fill="' + C.war + '"/><path d="M2.5,70 H597.5" stroke="' + ink + '" stroke-width="4"/>' +
+          '<text x="300" y="54" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="52" letter-spacing="5" fill="' + C.cream + '">NOW SERVING</text>' +
+          tiles + '<path d="' + polyD(R(2.5, 216, 595, 56)) + '" fill="' + C.yellow + '"/><path d="M2.5,216 H597.5" stroke="' + ink + '" stroke-width="4"/>' +
+          '<text x="300" y="259" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="40" letter-spacing="3" fill="' + ink + '">EVERY 24 HOURS</text>' +
+          line("M591,76 V210 M591,277 V274", C.orange, 3) + line("M10,277.5 H590", C.orange, 2, 'opacity="0.7"') + signBody("none");
+      }
+      function signBack() {
+        var smudge = line("M70,214 C160,200 260,226 380,208 C450,198 500,214 540,206", CHALK, 5, 'opacity="0.18"') + line("M60,70 C140,60 200,84 300,66", CHALK, 7, 'opacity="0.1"');
+        return chain(90, 420) + chain(510, 420) + signBody(C.slate) + '<path d="' + polyD(R(14, 14, 572, 252)) + '" fill="none" stroke="' + C.tan + '" stroke-width="5"/>' +
+          smudge + '<text x="304" y="162" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="74" letter-spacing="6" fill="' + CHALK + '" opacity="0.35">YOUR SCHEDULE</text>' +
+          '<text x="300" y="160" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="74" letter-spacing="6" fill="' + CHALK + '" opacity="0.92">YOUR SCHEDULE</text>' +
+          line("M110,190 C230,182 380,196 494,186", CHALK, 4, 'opacity="0.8"') +
+          // the nail heads where the chains are bolted through
+          '<circle cx="90" cy="10" r="5" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2"/><circle cx="510" cy="10" r="5" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2"/>';
+      }
+      // The count on the sign's front (part notes): 150,000 until a beat after "software." in deletion-board, then one
+      // more every 0.576 s (86,400 s a day / 150,000).
+      var T1 = KIT.scene("deletion-board").start + KIT.cue("deletion-board", "software.") + 0.3;
+      function countAt(partT) { return partT < T1 ? 150000 : 150001 + Math.floor((partT - T1) / 0.576); }
+      function digitsOf(n) { var s = String(n); return [s[0], s[1], s[2], ",", s[3], s[4], s[5]]; }
+
+      // The office inside the picture frame (340 x 200 office units): the doctor behind his desk, the empty patient's
+      // chair across from him, a calendar on a shelf. DOCTOR is the part notes' doctor (a head mirror, not the scientist).
+      var DOCTOR = { tone: 0, outfit: "labcoat", hair: 2 };
+      var DOC = { x: 252, y: 128, s: 1.06 }, DOC_LOOK = copyO(DOCTOR, { look: "left", mood: "flat" });
+      var DR0 = KIT.rig(DOC_LOOK);
+      var DOC_HAND = [-46, -2];
+      var DOC_ARMS = [ik(DR0.shoulder[0], DOC_HAND, DR0.armLength, [1, 1]), [3, 1]];
+      var DOC_O = copyO(DOC_LOOK, { arms: DOC_ARMS });
+      var DR = KIT.rig(DOC_O);
+      function office() {
+        var wall = '<rect x="0" y="0" width="340" height="168" fill="#EFE5C6"/>' + '<rect x="0" y="0" width="340" height="168" fill="url(#' + P + 'wp)" opacity="0.6"/>';
+        var floor = '<rect x="0" y="168" width="340" height="40" fill="' + C.tan + '" opacity="0.55"/>' + line("M0,168 H340", ink, 2) + line("M0,181 H340 M0,193 H340", ink, 0.8, 'opacity="0.4"');
+        var diploma = solid([R(292, 34, 36, 27)], C.yellow, 2) + '<rect x="296" y="38" width="28" height="19" fill="' + WHITE + '"/>' + line("M300,44 H320 M300,48 H316 M304,52 H316", ink, 0.8) + '<circle cx="320" cy="54" r="2.4" fill="' + C.war + '"/>';
+        var docChair = solid([[[226, 74], [278, 74], [282, 126], [222, 126]]], C.slate, 2.4) + line("M229,77 H275", C.orange, 1.2);
+        var mirror = '<path d="M-15,-13 L16,-15" stroke="' + C.slate + '" stroke-width="2.6"/><circle cx="3" cy="-17" r="6.2" fill="#DCE1E6" stroke="' + ink + '" stroke-width="1.8"/><circle cx="1.6" cy="-18.6" r="1.8" fill="#FFFFFF"/><circle cx="3" cy="-17" r="1.1" fill="' + ink + '"/>';
+        var doc = KIT.person(DOC_O).replace("<!--face-end-->", mirror + "<!--face-end-->");
+        var desk = solid([[[144, 124], [318, 124], [324, 132], [138, 132]]], C.tan, 2.4) + line("M146,125.5 H316", C.orange, 1.2) +
+          solid([R(148, 132, 166, 62)], C.rust, 2.4) + dotsOver(R(148, 132, 166, 62), "fine", 0.25) + line("M231,136 V190 M154,150 H225 M237,150 H308", ink, 1.2) +
+          solid([R(185, 140, 12, 3), R(267, 140, 12, 3)], C.yellow, 1);
+        // the folded card, standing on the desk edge-on, so its word faces the empty chair and never the viewer
+        var card = g("card-pos", g("card", line("M-1,0.6 H25", ink, 1.2, 'opacity="0.3"') + solid([[[0, 0], [12, -11], [24, 0], [22.2, 0], [12, -8.6], [1.8, 0]]], WHITE, 1.3) + line("M11.2,-9.8 L12.8,-9.8", C.orange, 0.8)), 'transform="translate(' + n1(DOC.x + DOC.s * DOC_HAND[0] - 14) + ',124)"');
+        var chair = solid([[[58, 98], [67, 98], [70, 152], [61, 152]]], C.tan, 2.2) + solid([[[61, 104], [67, 104], [68.5, 140], [62.5, 140]]], C.rust, 1.4) +
+          solid([[[60, 147], [116, 147], [118, 155], [62, 155]]], C.orange, 2.2) + solid([[[64, 155], [69, 155], [69, 194], [64, 194]], [[110, 155], [115, 155], [118, 194], [113, 194]]], C.tan, 2);
+        var shelf = solid([R(96, 98, 60, 5)], C.tan, 1.6);
+        var cal = at(126, 98, 1, g("cal", KIT.props.calendar({ size: 0.5, month: "MAR", day: 14, pages: 6 })));
+        return wall + floor + diploma + shelf + cal + docChair + at(DOC.x, DOC.y, DOC.s, g("doc", doc)) + desk + card + chair;
+      }
+      function sailboat() {
+        var sea = [[0, 122], [340, 122], [340, 200], [0, 200]], sun = [];
+        for (var i = 0; i <= 12; i++) { var a = Math.PI + (i / 12) * Math.PI; sun.push([255 + 36 * Math.cos(a), 122 + 36 * Math.sin(a)]); }
+        var waves = [134, 150, 168, 186].map(function (y, i) { var d = "M" + (8 + i * 14) + "," + y; for (var x = 8 + i * 14; x < 330; x += 22) d += " l11,-4 l11,4"; return line(d, C.cream, 1.6, 'opacity="0.75"'); }).join("");
+        return '<rect x="0" y="0" width="340" height="122" fill="' + WHITE + '"/>' + '<rect x="0" y="60" width="340" height="62" fill="url(#' + P + 'fine)" opacity="0.18"/>' +
+          solid([sun], C.yellow, 2) + solid([sea], ink, 1) + waves +
+          solid([[[112, 140], [204, 140], [190, 155], [124, 155]]], C.rust, 2) + line("M158,58 V140", ink, 2.4) +
+          solid([[[160, 62], [160, 136], [206, 136]]], WHITE, 2) + dotsOver([[160, 62], [160, 136], [206, 136]], "fine", 0.25) + solid([[[155, 72], [155, 136], [120, 136]]], C.orange, 2) +
+          solid([[[158, 58], [158, 50], [172, 54]]], C.war, 1.4) + line("M64,48 l7,-5 l7,5 M90,36 l5,-4 l5,4", ink, 1.6);
+      }
+
+      // ── The room, the reader and the picture, into the camera's world ──
+      function buildRoom() {
+        var fr = L.frame, osc = (fr[2] - 20) / 340, ix = fr[0] + 10, iy = fr[1] + 10;
+        var defs = '<defs>' +
+          '<pattern id="' + P + 'wp" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="2" fill="' + ink + '" opacity="0.26"/><circle cx="25" cy="25" r="1.5" fill="' + C.orange + '" opacity="0.5"/></pattern>' +
+          '<pattern id="' + P + 'pdots" width="2.2" height="2.2" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="1.1" cy="1.1" r="0.55" fill="' + ink + '"/></pattern>' +
+          '<pattern id="' + P + 'gdots" width="1.5" height="1.5" patternUnits="userSpaceOnUse" patternTransform="rotate(30)"><circle cx="0.75" cy="0.75" r="0.6" fill="' + GREY + '"/></pattern>' +
+          '<clipPath id="' + P + 'inset"><rect x="0" y="0" width="340" height="' + n1((fr[3] - 20) / osc) + '"/></clipPath></defs>';
+        // wall, dado rail, baseboard, floorboards and the rug
+        var dado = FY - (V ? 230 : 180);
+        var wall = '<rect x="0" y="0" width="' + W + '" height="' + FY + '" fill="' + C.paper + '"/>' + '<rect x="0" y="0" width="' + W + '" height="' + dado + '" fill="url(#' + P + 'wp)"/>' +
+          '<rect x="0" y="' + dado + '" width="' + W + '" height="' + (FY - dado) + '" fill="' + C.tan + '" opacity="0.22"/>' + '<rect x="0" y="' + dado + '" width="' + W + '" height="' + (FY - dado) + '" fill="url(#' + P + 'hatch)" opacity="0.1"/>' +
+          solid([R(-10, dado - 8, W + 20, 9)], C.tan, 3) + line("M0," + (dado - 7) + " H" + W, C.orange, 1.6);
+        var boards = "";
+        for (var bi = 1; bi < 7; bi++) { var by = FY + (H - FY) * Math.pow(bi / 7, 1.4); boards += line("M0," + n1(by) + " H" + W, ink, 1.6, 'opacity="0.35"'); }
+        var floor = '<rect x="0" y="' + FY + '" width="' + W + '" height="' + (H - FY) + '" fill="' + C.tan + '" opacity="0.42"/>' + boards +
+          solid([R(-10, FY - 22, W + 20, 22)], C.slate, 3) + line("M0," + (FY - 20) + " H" + W, C.orange, 1.6);
+        var ru = L.rug, rug = [[wx(-128), ru[0]], [wx(150), ru[0]], [wx(166), ru[1]], [wx(-144), ru[1]]];
+        var rugM = solid([rug], WHITE, 4) + '<path d="' + polyD([[rug[0][0] + 16, rug[0][1] + 8], [rug[1][0] - 16, rug[1][1] + 8], [rug[2][0] - 22, rug[2][1] - 9], [rug[3][0] + 22, rug[3][1] - 9]]) + '" fill="none" stroke="' + C.orange + '" stroke-width="3"/>' +
+          dotsOver(rug, "hatch", 0.12) + '<path d="' + polyD([[rug[0][0] + 30, rug[0][1] + 16], [rug[1][0] - 30, rug[1][1] + 16], [rug[2][0] - 38, rug[2][1] - 17], [rug[3][0] + 38, rug[3][1] - 17]]) + '" fill="none" stroke="' + C.war + '" stroke-width="2"/>';
+        // the window, at night, with atomic stars
+        var wn = L.window, wxx = wn[0], wyy = wn[1], ww = wn[2], wh = wn[3];
+        var win = solid([R(wxx, wyy, ww, wh)], C.tan, 4) + '<rect x="' + (wxx + 14) + '" y="' + (wyy + 14) + '" width="' + (ww - 28) + '" height="' + (wh - 28) + '" fill="' + C.navy + '"/>' +
+          KIT.star(wxx + ww * 0.3, wyy + wh * 0.3, 16, C.yellow) + KIT.star(wxx + ww * 0.72, wyy + wh * 0.22, 10, C.cream) + KIT.star(wxx + ww * 0.62, wyy + wh * 0.62, 13, C.yellow) + KIT.star(wxx + ww * 0.24, wyy + wh * 0.74, 8, C.cream) +
+          '<path d="M' + (wxx + ww / 2) + "," + (wyy + 14) + " V" + (wyy + wh - 14) + " M" + (wxx + 14) + "," + (wyy + wh / 2) + " H" + (wxx + ww - 14) + '" stroke="' + C.tan + '" stroke-width="9"/>' +
+          solid([R(wxx - 14, wyy + wh - 2, ww + 28, 14)], C.tan, 3) +
+          solid([[[wxx - 34, wyy - 24], [wxx + 34, wyy - 24], [wxx + 24, wyy + wh * 0.55], [wxx + 6, wyy + wh + 30], [wxx - 40, wyy + wh + 30]], [[wxx + ww + 34, wyy - 24], [wxx + ww - 34, wyy - 24], [wxx + ww - 24, wyy + wh * 0.55], [wxx + ww - 6, wyy + wh + 30], [wxx + ww + 40, wyy + wh + 30]]], C.rust, 4) +
+          line("M" + (wxx - 20) + "," + (wyy - 18) + " L" + (wxx - 26) + "," + (wyy + wh + 24) + " M" + (wxx + ww + 20) + "," + (wyy - 18) + " L" + (wxx + ww + 26) + "," + (wyy + wh + 24), C.orange, 2) +
+          solid([R(wxx - 50, wyy - 34, ww + 100, 14)], C.slate, 3);
+        // the NOW SERVING sign, turned to the wall
+        var sg = L.sign, signM = at(sg[0], sg[1], sg[2], g("sign", g("signshake", signBack() + g("tick", line("M-14,-10 L-34,-24 M-16,20 L-38,22 M614,-10 L634,-24 M616,20 L638,22", ink, 5), 'opacity="0"'))));
+        // the picture: mustard frame, wire to a nail; inside, the sailboat, then the doctor's office
+        var frame = line("M" + (fr[0] + 22) + "," + (fr[1] + 6) + " L" + (fr[0] + fr[2] / 2) + "," + (fr[1] - 22) + " L" + (fr[0] + fr[2] - 22) + "," + (fr[1] + 6), ink, 2.4) +
+          '<circle cx="' + (fr[0] + fr[2] / 2) + '" cy="' + (fr[1] - 22) + '" r="4.5" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<path d="' + polyD(R(fr[0] + 6, fr[1] + 8, fr[2], fr[3])) + '" fill="' + ink + '" opacity="0.5"/>' +
+          solid([R(fr[0], fr[1], fr[2], fr[3])], C.yellow, 4.4) + line("M" + (fr[0] + 4) + "," + (fr[1] + 4) + " H" + (fr[0] + fr[2] - 4), C.cream, 1.6) +
+          at(ix, iy, osc, '<g clip-path="url(#' + P + 'inset)">' + g("boat", sailboat()) + g("office", office(), 'opacity="0"') +
+            '<rect id="' + P + 'dim" x="0" y="0" width="340" height="210" fill="' + C.navy + '" opacity="0"/></g>') +
+          '<path d="' + polyD(R(ix, iy, fr[2] - 20, fr[3] - 20)) + '" fill="none" stroke="' + C.rust + '" stroke-width="3"/>';
+        // the floor lamp: a cone of light over him, a pleated shade, a brass pole on a round base
+        var lp = L.lamp, LX = lp[0], ST = lp[1], ls = lp[2], SB = ST + 82 * ls, LB = FEET + 4;
+        var cone = '<path d="' + polyD([[LX - 56 * ls, SB], [LX + 56 * ls, SB], [LX + 150 * ls, FY + 50 * ls], [LX - 330 * ls, FY + 50 * ls]]) + '" fill="' + WHITE + '" opacity="0.7"/>' +
+          '<path d="' + polyD([[LX - 30 * ls, ST], [LX + 30 * ls, ST], [LX + 60 * ls, ST - 70 * ls], [LX - 60 * ls, ST - 70 * ls]]) + '" fill="' + WHITE + '" opacity="0.45"/>';
+        var shade = [[LX - 32 * ls, ST], [LX + 32 * ls, ST], [LX + 62 * ls, SB], [LX - 62 * ls, SB]];
+        var lamp = solid([[[LX - 44 * ls, LB], [LX + 44 * ls, LB], [LX + 32 * ls, LB - 12 * ls], [LX - 32 * ls, LB - 12 * ls]]], C.slate, 3) + line("M" + (LX - 30 * ls) + "," + (LB - 11 * ls) + " H" + (LX + 30 * ls), C.orange, 1.6) +
+          solid([R(LX - 3.5 * ls, SB, 7 * ls, LB - 12 * ls - SB)], C.yellow, 3) + solid([R(LX - 8 * ls, SB - 4, 16 * ls, 14 * ls)], C.yellow, 2.4) +
+          solid([shade], WHITE, 4) + dotsOver([[LX + 6 * ls, ST], [LX + 32 * ls, ST], [LX + 62 * ls, SB], [LX + 14 * ls, SB]], "fine", 0.3) +
+          [-0.6, -0.2, 0.2, 0.6].map(function (f) { return line("M" + n1(LX + f * 32 * ls) + "," + ST + " L" + n1(LX + f * 62 * ls) + "," + n1(SB), ink, 1.2, 'opacity="0.6"'); }).join("") +
+          solid([R(LX - 6 * ls, ST - 12 * ls, 12 * ls, 12 * ls)], C.yellow, 2) + line("M" + n1(LX + 28 * ls) + "," + n1(SB) + " v" + n1(40 * ls), ink, 1.4) + '<circle cx="' + n1(LX + 28 * ls) + '" cy="' + n1(SB + 42 * ls) + '" r="' + n1(3 * ls) + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1.4"/>';
+        // the side table with a cup of tea
+        var tb = L.table, TX = tb[0], TY = tb[1], ts = K / 2.5;
+        var table = solid([[[TX - 5 * ts, TY + 8 * ts], [TX + 5 * ts, TY + 8 * ts], [TX + 3 * ts, LB - 34 * ts], [TX - 3 * ts, LB - 34 * ts]]], C.rust, 3) +
+          line("M" + n1(TX) + "," + n1(LB - 34 * ts) + " L" + n1(TX - 40 * ts) + "," + n1(LB) + " M" + n1(TX) + "," + n1(LB - 34 * ts) + " L" + n1(TX + 40 * ts) + "," + n1(LB) + " M" + n1(TX) + "," + n1(LB - 34 * ts) + " L" + n1(TX + 6 * ts) + "," + n1(LB + 4 * ts), ink, 5 * ts) +
+          solid([[[TX - 64 * ts, TY], [TX - 48 * ts, TY - 11 * ts], [TX + 48 * ts, TY - 11 * ts], [TX + 64 * ts, TY], [TX + 48 * ts, TY + 9 * ts], [TX - 48 * ts, TY + 9 * ts]]], C.tan, 3.4) + line("M" + n1(TX - 46 * ts) + "," + n1(TY - 9 * ts) + " H" + n1(TX + 46 * ts), C.orange, 1.6) +
+          solid([[[TX - 20 * ts, TY - 9 * ts], [TX + 26 * ts, TY - 9 * ts], [TX + 20 * ts, TY - 13 * ts], [TX - 14 * ts, TY - 13 * ts]]], WHITE, 2) +
+          solid([[[TX - 10 * ts, TY - 38 * ts], [TX + 16 * ts, TY - 38 * ts], [TX + 12 * ts, TY - 13 * ts], [TX - 6 * ts, TY - 13 * ts]]], WHITE, 2.4) + line("M" + n1(TX - 8 * ts) + "," + n1(TY - 31 * ts) + " H" + n1(TX + 14 * ts), C.war, 3 * ts) +
+          line("M" + n1(TX + 15 * ts) + "," + n1(TY - 33 * ts) + " l8,3 l-2,12 l-8,1", ink, 2.4);
+        // a snake plant in a mustard pot (16:9 only, where the wall is wide)
+        var plant = "";
+        if (L.plant) {
+          var PLX = L.plant, PB = LB, leaves = [[-14, 150, -8], [6, 205, 3], [22, 170, 12], [-4, 120, -18], [14, 125, 22], [-22, 96, -26]];
+          plant = leaves.map(function (lf) {
+            var bx = PLX + lf[0], ty = PB - 62 - lf[1], tx = bx + lf[2] * 2.2, wl = 15;
+            var pts = [[bx - wl / 2, PB - 58], [bx - wl * 0.65 + lf[2] * 0.8, PB - 58 - lf[1] * 0.55], [tx, ty], [bx + wl * 0.65 + lf[2] * 0.8, PB - 58 - lf[1] * 0.55], [bx + wl / 2, PB - 58]];
+            return solid([pts], C.moneyDark, 3) + line("M" + pt(bx, PB - 60) + " L" + pt(tx - lf[2] * 0.2, ty + 14), C.money, 2.4);
+          }).join("") + solid([[[PLX - 40, PB - 62], [PLX + 40, PB - 62], [PLX + 30, PB], [PLX - 30, PB]]], C.yellow, 4) + line("M" + (PLX - 36) + "," + (PB - 50) + " H" + (PLX + 36), C.rust, 3) +
+            dotsOver([[PLX + 8, PB - 62], [PLX + 40, PB - 62], [PLX + 30, PB], [PLX + 8, PB]], "fine", 0.3);
+        }
+        var chair0 = at(PX, PY, K, chairBack()), chair1 = at(PX, PY, K, chairFront());
+        // the button that pops off and rolls under the chair (world units; the roll is behind the chair's front)
+        var btnW = [wx(-3), wy(30)];
+        var btnArt = '<circle cx="0" cy="0" r="' + n1(2.8 * K) + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="' + n1(0.9 * K) + '"/><circle cx="' + n1(-0.8 * K) + '" cy="0" r="' + n1(0.48 * K) + '" fill="' + ink + '"/><circle cx="' + n1(0.8 * K) + '" cy="0" r="' + n1(0.48 * K) + '" fill="' + ink + '"/>';
+        var roll = at(btnW[0], btnW[1], 1, g("broll", g("brollr", btnArt), 'opacity="0"')), fly = at(btnW[0], btnW[1], 1, g("bfly", g("bflyr", btnArt), 'opacity="0"'));
+        // the faint dotted ring that drifts over him on "which part" (world units, about its centre)
+        var ring = g("ring", '<ellipse cx="0" cy="0" rx="' + n1(15 * K) + '" ry="' + n1(13 * K) + '" fill="none" stroke="' + ink + '" stroke-width="' + n1(1.3 * K) + '" stroke-dasharray="' + n1(1.2 * K) + " " + n1(2.6 * K) + '" stroke-linecap="round"/>', 'opacity="0"');
+        q("world").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + defs + wall + win + signM + frame + cone + floor + rugM + plant + table + lamp + chair0 + roll +
+          at(PX, PY, K, g("reader", reader())) + chair1 + fly + ring);
+        q("world").style.width = W + "px";
+        q("world").style.transformOrigin = "0 0";
+        q("world").style.height = H + "px";
+        q("view").style.width = W - 92 + "px";
+        q("view").style.height = H - 92 + "px";
+        // the far arm goes behind his body; his head tips down to the book
+        var body = q("reader").querySelector(".person > g[transform]"), armL = body.querySelector(".arm-l");
+        body.insertBefore(armL, body.firstChild);
+        gsap.set(q("reader").querySelector(".head"), { rotation: 12, svgOrigin: RIG.neck[0] + " " + RIG.neck[1] });
+        // his eyes drop to the page
+        Array.prototype.forEach.call(q("reader").querySelectorAll(".pupil"), function (pu) {
+          pu.setAttribute("cy", n1(+pu.getAttribute("cy") + 1.3));
+          pu.setAttribute("cx", n1(+pu.getAttribute("cx") + 0.6));
+        });
+        // the office calendar: its pages show dates out of order underneath (MAR 14 on top)
+        var pages = q("cal").querySelectorAll(".cal-page, .cal-page-under"), dates = [["MAY", 18], ["AUG", 1], ["DEC", 30], ["FEB", 9], ["JUN", 27], ["NOV", 3], ["MAR", 14]];
+        Array.prototype.forEach.call(pages, function (pg, i) { var ts2 = pg.querySelectorAll("text"); ts2[0].textContent = dates[i][0]; ts2[1].textContent = String(dates[i][1]); });
+        return { btn: btnW, pages: pages, osc: osc };
+      }
+
+      // The camera (part time): a slow push from s0 toward s1 across falling-apart, on into his chest (s2, then s3) in
+      // dissolving-on-schedule, then on "dissolving" it eases back out, wider than the first frame.
+      // The zoom runs in log scale (cubic Hermite pieces, so the speed carries over the cut); the frame's centre moves with it.
+      function herm(t, T, p0, p1, v0, v1) {
+        var u = clamp(t / T, 0, 1), u2 = u * u, u3 = u2 * u;
+        return (2 * u3 - 3 * u2 + 1) * p0 + (u3 - 2 * u2 + u) * T * v0 + (-2 * u3 + 3 * u2) * p1 + (u3 - u2) * T * v1;
+      }
+      var CAM = L.cam, CH = [wx(CHEST[0]), wy(CHEST[1])];
+      function camAt(t) {
+        var l0 = Math.log(CAM.s0), l1 = Math.log(CAM.s1), l2 = Math.log(CAM.s2), l3 = Math.log(CAM.s3);
+        // the pull-back starts just before "dissolving" and settles just after "schedule", so the sign is in view on the word
+        var tA = FAs.start, tS = DSs.start, tB = tS + CAM.tB, tP = tS + KIT.cue(DS, "dissolving") - 0.25, tE = tS + KIT.cue(DS, "schedule") + 0.12, ls, c;
+        if (t < tS) { ls = herm(t - tA, tS - tA, l0, l1, 0, CAM.m1); c = mix(CAM.c0, CAM.c1, (ls - l0) / (l1 - l0)); }
+        else if (t < tB) { ls = herm(t - tS, tB - tS, l1, l2, CAM.m1, CAM.m2); c = mix(CAM.c1, CH, (ls - l1) / (l2 - l1)); }
+        else if (t < tP) { ls = herm(t - tB, tP - tB, l2, l3, CAM.m2, 0); c = CH; }
+        else { var u = clamp((t - tP) / (tE - tP), 0, 1), f = 0.5 - 0.5 * Math.cos(Math.PI * u); ls = l3 * (1 - f) + Math.log(CAM.se) * f; c = mix(CH, CAM.ce, f); }
+        var s = Math.exp(ls), hw = (W - 92) / (2 * s), hh = (H - 92) / (2 * s);
+        c = [clamp(c[0], 46 + hw, W - 46 - hw), clamp(c[1], 46 + hh, H - 46 - hh)];
+        return { s: s, x: W / 2 - s * c[0], y: H / 2 - s * c[1] };
+      }
+      function applyCam(t) {
+        var c = camAt(t);
+        q("world").style.transform = "translate(" + c.x.toFixed(2) + "px," + c.y.toFixed(2) + "px) scale(" + c.s.toFixed(5) + ")";
+      }
+
+      // falling-apart's moves (dissolving-on-schedule sets their end states, to start on this scene's
+      // last frame). All times are falling-apart's own.
+      function faMoves(tl, B) {
+        var fc = function (w, n) { return KIT.cue(FA, w, n); }, fa = function (w, n) { return KIT.after(FA, w, n); };
+        // "apart.": a button pops off his shirt, drops (a tick on the floor) and rolls under the chair
+        var tP = fc("apart."), land = tP + 0.3, floorY = FEET - B.btn[1] - 1.5 * K, dx0 = 8 * K;
+        tl.set(q("btn1"), { opacity: 0 }, tP);
+        tl.set(q("bfly"), { opacity: 1 }, tP);
+        tl.fromTo(q("bflyr"), { x: 0 }, { x: dx0, duration: 0.3, ease: "none" }, tP);
+        tl.fromTo(q("bflyr"), { y: 0 }, { y: -7 * K, duration: 0.09, ease: "power2.out" }, tP);
+        tl.to(q("bflyr"), { y: floorY, duration: 0.21, ease: "power2.in" }, tP + 0.09);
+        tl.to(q("bflyr"), { y: floorY - 3 * K, duration: 0.08, ease: "power1.out" }, land);
+        tl.to(q("bflyr"), { y: floorY, duration: 0.08, ease: "power1.in" }, land + 0.08);
+        tl.set(q("bfly"), { opacity: 0 }, land + 0.16);
+        tl.set(q("broll"), { opacity: 1 }, land + 0.16);
+        tl.fromTo(q("brollr"), { x: dx0, y: floorY }, { x: dx0 - 46 * K, y: floorY, duration: 0.9, ease: "power1.out" }, land + 0.16);
+        tl.to(q("brollr"), { opacity: 0, duration: 0.25 }, land + 0.85);
+        // "read": he turns a page; his bookmark (a red ticket, its number turned to him) comes up out of the book
+        pageTurn(tl, fc("read"));
+        tl.fromTo(q("ticket"), { y: 13 }, { y: 0, duration: 0.3, ease: "back.out(1.6)" }, fc("read") + 0.2);
+        // "breaking.": his chest light flickers red once; he does not notice
+        var light = q("reader").querySelector(".chest-light"), tb = fc("breaking.");
+        tl.set(light, { attr: { fill: C.war } }, tb);
+        tl.set(light, { attr: { fill: "#E9E1CC" } }, tb + 0.16);
+        tl.set(light, { attr: { fill: C.war } }, tb + 0.24);
+        tl.set(light, { attr: { fill: "#E9E1CC" } }, tb + 0.34);
+        // "which part": a faint dotted ring drifts over him, knee to chest to head, and fades
+        var ring = q("ring");
+        gsap.set(ring, { svgOrigin: "0 0" });
+        var knee = [wx(37), wy(67)], chest = [wx(2), wy(32)], head = [wx(9), wy(-18)], tw = fc("which");
+        tl.fromTo(ring, { x: knee[0], y: knee[1], opacity: 0, scale: 0.8 }, { opacity: 0.5, duration: 0.25, ease: "none" }, tw - 0.1);
+        tl.to(ring, { x: chest[0], y: chest[1], scale: 1.25, duration: 0.45, ease: "sine.inOut" }, tw + 0.3);
+        tl.to(ring, { x: head[0], y: head[1], scale: 1.05, duration: 0.45, ease: "sine.inOut" }, tw + 0.85);
+        tl.to(ring, { opacity: 0, duration: 0.4, ease: "none" }, tw + 1.3);
+        // "doctor": the sailboat fades into a doctor's office: the doctor at his desk, the patient's chair empty
+        tl.fromTo(q("office"), { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none" }, fc("doctor"));
+        tl.to(q("boat"), { opacity: 0, duration: 0.5, ease: "none" }, fc("doctor") + 0.1);
+        // "sits": he gestures at the empty chair (the arm toward it rises and comes back to the desk)
+        var dArm = q("doc").querySelector(".arm-l");
+        gsap.set(dArm, { svgOrigin: DR.shoulder[0][0] + " " + DR.shoulder[0][1] });
+        tl.fromTo(dArm, { rotation: 0 }, { rotation: 34, duration: 0.3, ease: "power2.out" }, fc("sits"));
+        tl.to(dArm, { rotation: 20, duration: 0.25, ease: "sine.inOut" }, fc("sits") + 0.45);
+        tl.to(dArm, { rotation: 0, duration: 0.35, ease: "power2.inOut" }, fc("word") - 0.45);
+        // "word": a folded card slides face down across the desk toward the empty chair
+        tl.fromTo(q("card"), { x: 0 }, { x: -62, duration: 0.5, ease: "power2.out" }, fc("word"));
+        tl.to(dArm, { rotation: -10, duration: 0.25, ease: "power1.out" }, fc("word"));
+        tl.to(dArm, { rotation: 0, duration: 0.3, ease: "power1.inOut" }, fc("word") + 0.35);
+        // "rearranges": the calendar shuffles its pages out of order (they fly off one after another)
+        var tr = fc("rearranges"), pages = B.pages, top = pages.length - 1;
+        for (var i = top; i >= 1; i--) {
+          var j = top - i, side = j % 2 ? -1 : 1, pg = pages[i];
+          gsap.set(pg, { svgOrigin: "0 -98" });
+          tl.to(pg, { rotation: side * (40 + j * 14), x: side * (50 + j * 10), y: 60 + j * 22, opacity: 0, duration: 0.42, ease: "power1.in" }, tr + j * 0.11);
+        }
+        gsap.set(pages[0], { svgOrigin: "0 -98" });
+        tl.fromTo(pages[0], { rotation: 0 }, { rotation: -7, duration: 0.2, ease: "back.out(2)" }, tr + top * 0.11 + 0.05);
+      }
+      // a page turn: the page sweeps over the top of the book; his near hand gives it a little push
+      function pageTurn(tl, t) {
+        gsap.set(q("flapr"), { svgOrigin: "0 0" });
+        var hand = q("reader").querySelector(".arm-r");
+        gsap.set(hand, { svgOrigin: RIG.shoulder[1][0] + " " + RIG.shoulder[1][1] });
+        tl.set(q("flap"), { opacity: 1 }, t);
+        tl.fromTo(q("flapr"), { rotation: 62 }, { rotation: -118, duration: 0.42, ease: "power1.inOut", immediateRender: false }, t);
+        tl.set(q("flap"), { opacity: 0 }, t + 0.43);
+        tl.to(hand, { rotation: -5, duration: 0.16, ease: "power1.out" }, t);
+        tl.to(hand, { rotation: 0, duration: 0.22, ease: "power1.inOut" }, t + 0.18);
+      }
+      // ════ end SHARED ═════════════════════════════════════════════════════════════════════════════════════════
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      var B = buildRoom();
+      // the corner sign, at the spot deletion-board leaves it in (16:9 translate(40,30) scale 0.6; 9:16 translate(40,70) scale 0.62)
+      var CORNER = V ? [40, 70, 0.62] : [40, 30, 0.6];
+      q("corner").innerHTML = KIT.svg(W, H, at(CORNER[0], CORNER[1], CORNER[2], signFront(P)));
+      var digitEls = [0, 1, 2, 3, 4, 5, 6].map(function (i) { return q("dg" + i); }), shownN = -1;
+      function setCount(partT) {
+        var n = countAt(partT);
+        if (n === shownN) return;
+        shownN = n;
+        digitsOf(n).forEach(function (d, i) { digitEls[i].textContent = d; });
+      }
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.enter(tl, q("cam"), "slide left");
+      KIT.onTime(tl, D, function (t) { applyCam(sc.start + t); setCount(sc.start + t); });
+      // "Your": the sign slides up out of its corner (it comes back, turned to the wall, in dissolving-on-schedule)
+      tl.fromTo(q("corner"), { y: 0 }, { y: -(CORNER[1] + 290 * CORNER[2]), duration: 0.6, ease: "power2.in" }, cue("Your"));
+      faMoves(tl, B);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

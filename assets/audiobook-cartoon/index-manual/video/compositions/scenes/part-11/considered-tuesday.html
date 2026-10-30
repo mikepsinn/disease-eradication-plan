@@ -1,0 +1,614 @@
+<template id="considered-tuesday-template">
+  <!-- considered-tuesday · Layer A (storyboards/part-11-civilization-countdown.md): zoom out of the wall screen, which
+       still shows destroy-beats-make's last frame (the toppled THINGS THAT DESTROY stack with its rosette, the Builder's
+       eyes and limp hand, the cobwebbed EMERGENCY box, the cricket, the burning fuse). "planet": Wishonia lifts her mug
+       and sips. "Tuesday": the desk calendar flips from MONDAY to TUESDAY, then riffles on: TUESDAY, TUESDAY (three
+       clicks). after "Tuesday.": she puts the mug down, slowly (thunk). The fuse appears only on the wall screen. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+    #considered-tuesday-cam, #considered-tuesday-bg, #considered-tuesday-screen, #considered-tuesday-wish, #considered-tuesday-front, #considered-tuesday-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="considered-tuesday" data-width="1920" data-height="1080" data-start="0" data-duration="2.88">
+    <div id="considered-tuesday-cam">
+      <div id="considered-tuesday-bg"></div>
+      <div id="considered-tuesday-screen"></div>
+      <div id="considered-tuesday-wish"></div>
+      <div id="considered-tuesday-front"></div>
+    </div>
+    <div id="considered-tuesday-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "considered-tuesday";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var O = KIT.OFFICE;
+
+      // ══ SHARED: copied from destroy-beats-make.html (this screen shows its last frame). ══
+      // Keep the two copies the same. dbm(pid) draws the whole scene with element ids pid-*, and returns
+      // { bg, art, fuse } (SVG markup: bg is a nested <svg>, art and fuse are plain content for a 1920 x 1080 or
+      // 1080 x 1920 frame), animate(tl) (this scene's moves, on its own cue words) and burn(tl, dur, t0) (the fuse,
+      // burning by part time from t0; returns the spark's flare group).
+      function dbm(pid) {
+        var DB = "destroy-beats-make", P = pid + "-", ink = C.line, WHITE = "#FBF6E6";
+        var cue = function (w, n) { return KIT.cue(DB, w, n); };
+        var after = function (w, n) { return KIT.after(DB, w, n); };
+        // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+        function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+        function pt(x, y) { return n1(x) + "," + n1(y); }
+        function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+        function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+        function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+        function el(cx, cy, rx, ry) { return 'ellipse cx="' + n1(cx) + '" cy="' + n1(cy) + '" rx="' + n1(rx) + '" ry="' + n1(ry) + '"'; }
+        function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+        function S(tags, col, w) {
+          w = w || 4.4;
+          return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+            tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+        }
+        function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+        function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+        function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+        function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+        function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+        function txt(x, y, size, s, col, extra, family) {
+          return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" font-family="' + (family || "Oswald") + '" font-weight="' + (family ? 900 : 600) + '" font-size="' + size + '" fill="' + (col || ink) + '"' + (extra ? " " + extra : "") + ">" + s + "</text>";
+        }
+        function arcPts(cx, cy, r, a0, a1, n) {
+          var out = [];
+          for (var i = 0; i <= n; i++) { var a = ((a0 + ((a1 - a0) * i) / n) * Math.PI) / 180; out.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); }
+          return out;
+        }
+
+        // ── Layout, per canvas shape (scene pixels) ──
+        // G: the ground. HS: the humans' scale. stack: [x of its left base corner, width, bills after the carts, after
+        // "trillion", after "faster", tag pin height, rosette height]. head: the big number [x, y, size]. earth: [x,
+        // ground, radius]; crook: [x, scale]; gdp: its label [x, y, size]; crates: [x, width, height]; bld: the
+        // Builder's x; pile: the spare crates' x; carts: [x of the small one, x of the big one] (cart units 118 wide);
+        // box: the EMERGENCY box [x, y, w, h]; ledge: the Earth's ledge in 9:16 [x0, x1].
+        var L = V
+          ? { G: 1400, HS: 1.3, stack: [650, 200, 14, 28, 48, 400, 490], head: [400, 400, 72], earth: [800, 700, 85], crook: [965, 1.2],
+              gdp: [790, 500, 32], crates: [480, 140, 92], bld: 290, pile: 150, carts: [226, 492], box: [488, 112, 120, 168], ledge: [712, 1034] }
+          : { G: 850, HS: 1.2, stack: [760, 220, 14, 30, 50, 420, 515], head: [1290, 228, 86], earth: [1225, 850, 95], crook: [1430, 1.3],
+              gdp: [1215, 598, 36], crates: [610, 150, 96], bld: 452, pile: 322, carts: [338, 612], box: [565, 88, 130, 180], ledge: null };
+        var G = L.G, HS = L.HS, ST = L.stack, SW = ST[1], CR = L.crates;
+
+        // ── The war-paper stack, seen edge on: thin green bills, each with its red seal at one end ──
+        function billStack(w, n, seed) {
+          var r = KIT.rng(seed), out = "";
+          for (var i = 0; i < n; i++) {
+            var y = -12 * (i + 1), j = Math.round((r() - 0.5) * 10), wj = Math.round((r() - 0.5) * 8), x0 = -w / 2 + j, ww = w + wj;
+            out += '<rect x="' + x0 + '" y="' + y + '" width="' + ww + '" height="12" rx="2" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' +
+              '<path d="M' + (x0 + 8) + "," + (y + 4) + " H" + (x0 + ww - 22) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>' +
+              '<circle cx="' + (i % 2 ? x0 + ww - 9 : x0 + 9) + '" cy="' + (y + 6) + '" r="3.6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.2"/>';
+          }
+          return out;
+        }
+        // A cream tag on a string from a pin at (0,0): lines of Oswald text.
+        function tag(lines, size, w) {
+          var h = lines.length * size * 1.12 + size * 0.7, y0 = 16;
+          return line("M0,0 L0," + y0, ink, 2.4) + S([pg([[-w / 2, y0 + 8], [-w / 2 + 8, y0], [w / 2 - 8, y0], [w / 2, y0 + 8], [w / 2, y0 + h], [-w / 2, y0 + h]])], WHITE, 4) +
+            line("M" + (-w / 2 + 7) + "," + (y0 + 9) + " H" + (w / 2 - 7), C.orange, 1.6) + S([ci(0, y0 + 7, 3)], C.paper, 2) +
+            lines.map(function (s, i) { return txt(0, y0 + size * 0.42 + (i + 1) * size * 1.08, size, s, ink, 'letter-spacing="1"'); }).join("") +
+            S([ci(0, 0, 5)], C.war, 2.4);
+        }
+        // A wooden crate standing on y 0: tan boards, a rust brace, nail heads.
+        function crate(w, h) {
+          var x = -w / 2, out = S([pg(R(x, -h, w, h))], C.tan, 4.4);
+          out += line("M" + (x + 5) + "," + (-h / 3) + " H" + (-x - 5) + " M" + (x + 5) + "," + (-2 * h / 3) + " H" + (-x - 5), ink, 2.2) +
+            S([pg([[x + 10, -12], [x + 22, -12], [-x - 10, -h + 12], [-x - 22, -h + 12]])], C.rust, 2.4) +
+            S([pg(R(x, -h, 12, h)), pg(R(-x - 12, -h, 12, h))], "#C99466", 3) + line("M" + (-x - 4) + "," + (-h + 4) + " V-4", C.orange, 1.4);
+          [[x + 6, -h + 7], [-x - 6, -h + 7], [x + 6, -7], [-x - 6, -7]].forEach(function (p) { out += F(ci(p[0], p[1], 2.2), ink); });
+          return out;
+        }
+        // Put a prop into a person's arm group, at that hand, turned along the forearm (prop drawn pointing down, +y).
+        function inHand(svg, o, side, prop) {
+          var r = KIT.rig(o), h = r.handLocal[side], a = o.arms[side][1], cls = side ? '<g class="arm-r">' : '<g class="arm-l">';
+          return svg.replace(cls, cls.slice(0, -1) + ">" + '<g transform="translate(' + pt(h[0], h[1]) + ") rotate(" + n1(-a) + ')">' + prop + "</g>");
+        }
+        var hammer = line("M0,-4 V30", ink, 7) + line("M0,-3 V29", C.tan, 3.4) + S([pg([[-15, 26], [15, 26], [15, 37], [-15, 37]])], C.slate, 3) + line("M-12,29 H12", C.orange, 1.4);
+        var knife = S([pg([[-3.5, -6], [3.5, -6], [3, 12], [-3, 12]])], "#6B4A2F", 2.4) + S([pg([[-5.5, 12], [5.5, 12], [5.5, 15], [-5.5, 15]])], C.slate, 2) +
+          S([pg([[-5, 15], [5, 15], [6, 52], [0, 64], [-4.5, 52]])], "#DAD6CC", 2.6) + line("M-1.5,20 L-1,52", "#FFFFFF", 1.6);
+        var fork = S([pg([[-2.5, -14], [2.5, -14], [2.5, 16], [-2.5, 16]])], "#DAD6CC", 2.2) +
+          S([pg([[-7, -14], [7, -14], [7, -18], [-7, -18]])], "#DAD6CC", 2) + [-6, -2, 2, 6].map(function (x) { return S([pg(R(x - 1, -34, 2, 17))], "#DAD6CC", 1.6); }).join("");
+
+        // ── The humans ──
+        var BUILDER = { tone: 1, outfit: "overalls", color: 0, seed: 7, mood: "eager" }; // the storyboard's Builder
+        var bCarry = mix(BUILDER, { look: "right", arms: [[62, 98], [58, 96]] });
+        var bHam = mix(BUILDER, { look: "right", arms: [[14, 30], [76, 120]] });
+        var bR = KIT.rig(bHam), bCR = KIT.rig(bCarry);
+        var crookA = KIT.castOpts("lobbyist", { look: "left", mood: "greedy", arms: [[-132, -96], [20, 168]] });
+        function napkin(o) {
+          var r = KIT.rig(o), n = r.neck, f = r.facing;
+          return '<g transform="rotate(' + n1(r.lean) + " 0 " + n1(r.hipY) + ')">' + S([pg([[n[0] - 11, n[1] + 1], [n[0] + 11, n[1] + 1], [n[0] + f * 3, n[1] + 30]])], WHITE, 2.6) +
+            line("M" + pt(n[0] - 6, n[1] + 6) + " L" + pt(n[0] + f * 2, n[1] + 24), ink, 1, 'opacity="0.4"') + "</g>";
+        }
+        function crookSvg(o, knifeOn) {
+          var s = KIT.person(o);
+          if (knifeOn) s = inHand(s, o, 0, knife);
+          s = inHand(s, o, 1, '<g transform="rotate(180)">' + fork + "</g>");
+          return s.replace('<g class="head">', napkin(o) + '<g class="head">');
+        }
+
+        // ── The carts (as cybercrime-10-trillion leaves them: the official cart and the 1.9x cart, chained) ──
+        function heap(seed) {
+          var r = KIT.rng(seed), out = "";
+          [[-28, -80, -14], [-6, -88, 9], [16, -84, -7], [38, -80, 15], [6, -74, 4], [-16, -73, 6], [28, -96, -18]].forEach(function (b) {
+            out += '<g transform="translate(' + b[0] + "," + b[1] + ") rotate(" + (b[2] + Math.round((r() - 0.5) * 6)) + ')">' +
+              '<rect x="-17" y="-9" width="34" height="18" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' + KIT.moneySeal("war", 10, 0, 4.2) +
+              '<ellipse cx="-4" cy="0" rx="4" ry="5" fill="' + C.paper + '" stroke="' + C.moneyDark + '" stroke-width="1.2"/></g>';
+          });
+          return out;
+        }
+        var ks = HS, kb = 1.9 * HS, cs = L.carts;
+        var cartS = at(cs[0], 0, ks, g("cart-s", g("heap-s", heap(5)) + KIT.props.shoppingCart({})));
+        var cartB = at(cs[1], 0, kb, g("cart-b", g("heap-b", heap(9)) + KIT.props.shoppingCart({})));
+        var c0 = [cs[0] + 52 * ks, -15 * ks], c1 = [cs[1] - 46 * kb, -15 * kb], links = "";
+        for (var li = 0; li < 5; li++) {
+          var fx = c0[0] + ((c1[0] - c0[0]) * (li + 0.5)) / 5, fy = c0[1] + ((c1[1] - c0[1]) * (li + 0.5)) / 5;
+          links += li % 2 ? '<' + el(fx, fy, 4, 3) + ' fill="none" stroke="' + ink + '" stroke-width="5"/>' : '<' + el(fx, fy, 11, 6) + ' fill="none" stroke="' + ink + '" stroke-width="5"/>';
+        }
+        var carts = at(0, G, 1, g("carts", links + cartS + cartB));
+        // the papers that pour out, flying from the baskets to the stack top
+        var fly = [], flyArt = "";
+        for (var fi = 0; fi < 9; fi++) {
+          var big = fi < 6, k = big ? kb : ks, bx0 = (big ? cs[1] : cs[0]) + (-24 + (fi % 3) * 24) * k, by0 = G - 84 * k;
+          fly.push([bx0, by0]);
+          flyArt += at(bx0, by0, 1, g("fly" + fi, at(0, 0, 0.42, KIT.money("war", fi % 2 ? 0.6 : -0.4)), 'opacity="0"'));
+        }
+
+        // ── The stack, its tag and rosette (one group, toppled about its left base corner) ──
+        var nMax = ST[4], stackTop = function (n) { return -12 * n; };
+        var rosette = (function () {
+          var pts = [];
+          for (var i = 0; i < 24; i++) { var a = (i * Math.PI) / 12, rr = i % 2 ? 24 : 30; pts.push([rr * Math.cos(a), rr * Math.sin(a)]); }
+          return S([pg([[-14, 12], [-4, 14], [-10, 62], [-18, 54], [-26, 60]]), pg([[14, 12], [4, 14], [10, 62], [18, 54], [26, 60]])], C.war, 3) +
+            S([pg(pts)], C.orange, 3) + S([ci(0, 0, 19)], C.yellow, 2.6) + txt(0, 6, 17, "1ST", ink, 'letter-spacing="0.5"');
+        })();
+        var stack = at(ST[0], G, 1, g("stk-rot",
+          '<defs><clipPath id="' + P + 'stk-clip"><rect id="' + P + 'stk-cr" x="-24" y="-3" width="' + (SW + 48) + '" height="8"/></clipPath></defs>' +
+          '<g clip-path="url(#' + P + 'stk-clip)">' + at(SW / 2, 0, 1, billStack(SW, nMax, 41)) + "</g>" +
+          at(SW / 2, -ST[5], 1, g("dtag", g("dtag-in", tag(V ? ["THINGS THAT", "DESTROY"] : ["THINGS THAT", "DESTROY"], V ? 23 : 28, V ? 160 : 190)), 'opacity="0"')) +
+          at(SW * 0.72, -ST[6], 1, g("ros", g("ros-in", rosette), 'opacity="0"'))));
+
+        // ── The crates (one group: squashed flat by the stack), the spare pile, the MAKE tag ──
+        var cw = CR[1], ch = CR[2];
+        var crates = at(CR[0], G, 1, g("crates",
+          g("crate1", crate(cw, ch)) + at(0, -ch, 1, g("crate2", crate(cw, ch), 'opacity="0"')) + at(0, -2 * ch, 1, g("crate3", crate(cw, ch), 'opacity="0"')) +
+          at(0, -ch + 6, 1, g("mtag", tag(["THINGS THAT", "MAKE"], V ? 17 : 20, V ? 118 : 138), 'opacity="0"'))));
+        var pile = at(L.pile, G, 1, g("pile", at(0, -ch, 1, g("pile-top", crate(cw, ch))) + g("pile-bot", crate(cw, ch)), 'opacity="0"'));
+
+        // ── The Builder: carrying, hammering; then flat under the stack (eyes in a slot, one hand) ──
+        var by = G - 100 * HS;
+        var bHamSvg = inHand(KIT.person(bHam), bHam, 1, hammer);
+        var builder = at(L.bld, by, 1, g("bld-move", '<g transform="scale(' + HS + ')">' + g("bld-carry", KIT.person(bCarry)) + g("bld-ham", bHamSvg, 'opacity="0"') + "</g>"));
+        var carried = (function () { var h = bCR.hand; return [L.bld + ((h[0][0] + h[1][0]) / 2) * HS, by + ((h[0][1] + h[1][1]) / 2) * HS + 8]; })();
+        var skin = "#D9B48F", hx = L.bld + 16, hy0 = G - SW, armLen = V ? 62 : 72;
+        var hand = S([pg([[-11, 0], [11, 0], [13, -14], [9, -18], [-9, -18], [-13, -14]])], skin, 3.4) +
+          [-8, -2.6, 2.8, 8.2].map(function (x, i) { return S([pg([[x - 2.6, -16], [x + 2.6, -16], [x + 2.2, -34 + Math.abs(i - 1.5) * 3], [x - 2.2, -34 + Math.abs(i - 1.5) * 3]])], skin, 2.6); }).join("") +
+          S([pg([[-12, -6], [-16, -14], [-22, -20], [-19, -24], [-11, -16]])], skin, 2.6);
+        var reach = at(hx, hy0 + 4, 1, g("reach", g("reach-arm",
+          g("reach-shaft", S([pg([[-8, 0], [8, 0], [6.5, -armLen], [-6.5, -armLen]])], skin, 3.4) + S([pg([[-10, 0], [10, 0], [9, -14], [-9, -14]])], WHITE, 3)) +
+          at(0, -armLen + 2, 1, g("reach-hand", hand))), 'opacity="0"'));
+        var slot = at(hx - 34, G - 11, 1.45, g("slot", S([el(0, 0, 30, 8)], C.ink, 3) +
+          g("slot-eyes", [-9, 9].map(function (dx) { return S([el(dx, -3, 7, 8)], "#FFFFFF", 2) + F(ci(dx + 2, -4, 2.8), ink); }).join(""), 'data-cx="0" data-cy="-3"'), 'opacity="0"'));
+
+        // ── The Earth and its slice (11.5% = 41.4 degrees, on the side facing the Crook), and the Crook ──
+        var E = L.earth, er = E[2], a0 = -46, a1 = a0 + 41.4, am = (a0 + a1) / 2, ecy = -er, rad = Math.PI / 180;
+        var restPts = [[0, ecy]].concat(arcPts(0, ecy, er + 9, a1, a0 + 360, 40));
+        var wedge = function (r) { return [[0, 0]].concat(arcPts(0, 0, r, a0, a1, 10)); }; // around the Earth's center
+        var edgeD = (function () { var p0 = arcPts(0, 0, er, a0, a0, 1)[0], p1 = arcPts(0, 0, er, a1, a1, 1)[0]; return "M" + pt(p0[0], p0[1]) + " L0,0 L" + pt(p1[0], p1[1]); })();
+        // the inside of the Earth: a red mantle, an orange layer and a yellow core
+        var layers = function (crust) {
+          return (crust ? S([pg(wedge(er))], C.cream, 4.4) + arcPts(0, 0, er - 5.5, a0 + 3, a1 - 3, 7).map(function (p, i) { return i % 3 === 1 ? "" : F(ci(p[0], p[1], 1.8), ink); }).join("") : "") +
+            [[crust ? er - 11 : er - 3, C.war], [er * 0.62, C.orange], [er * 0.3, C.yellow]].map(function (c) { return S([pg(wedge(c[0]))], c[1], 3); }).join("");
+        };
+        var earth = at(E[0], E[1], 1, g("earth",
+          at(0, ecy, 1, layers(false)) +
+          '<defs><clipPath id="' + P + 'rest-clip"><' + pg(restPts) + "/></clipPath></defs>" +
+          '<g clip-path="url(#' + P + 'rest-clip)">' + KIT.props.earthGlobe({ r: er }) + "</g>" +
+          at(0, ecy, 1, g("cutline", line(edgeD, ink, 7) + line(edgeD, C.war, 3), 'opacity="0"'))));
+        // The slice, drawn around the Earth's center (its tip): in place, the globe's surface; lifted out, its cross
+        // section (crust, red, orange, yellow core); then the same with the tip bitten off.
+        var sliceSurf = '<defs><clipPath id="' + P + 'sl-clip"><' + pg(wedge(er + 9)) + '/></clipPath></defs><g clip-path="url(#' + P + 'sl-clip)">' + at(0, er, 1, KIT.props.earthGlobe({ r: er })) + "</g>";
+        var bitePts = arcPts(0, 0, er * 0.36, a0 - 18, a1 + 18, 8).map(function (p, i) { var k = i % 2 ? 0.74 : 1; return [p[0] * k, p[1] * k]; })
+          .concat([[-0.25 * er * Math.cos(am * rad), -0.25 * er * Math.sin(am * rad)]]);
+        var sliceCut = function (bitten) {
+          var body = layers(true) + line(edgeD, ink, 3);
+          if (!bitten) return body;
+          return '<defs><clipPath id="' + P + 'sl-bite"><path d="M-400,-400 H400 V400 H-400 Z ' + polyD(bitePts) + '" clip-rule="evenodd"/></clipPath></defs>' +
+            '<g clip-path="url(#' + P + 'sl-bite)">' + body + "</g>";
+        };
+        var slice = at(E[0], E[1] + ecy, 1, g("slice", g("slice-pop", g("slice-s", sliceSurf) + g("slice-x", sliceCut(false), 'opacity="0"') + g("slice-b", sliceCut(true), 'opacity="0"'))));
+        // The Crook: pose A cuts (knife), pose B holds the slice up to his mouth by its crust (his arm reaches the crust).
+        var CK = L.crook, cy0 = E[1] - 100 * CK[1], kA = KIT.rig(crookA);
+        var mouth = [CK[0] + kA.mouth[0] * CK[1], cy0 + kA.mouth[1] * CK[1]];
+        var tipHeld = [mouth[0] - 16, mouth[1] + 20], rimDir = 108, sRot = rimDir - am;
+        var rimC = [tipHeld[0] + er * 0.86 * Math.cos(rimDir * rad), tipHeld[1] + er * 0.86 * Math.sin(rimDir * rad)];
+        function ik(o, side, T) { // the arm angles that put this side's hand on T (scene px): two equal segments
+          var r = KIT.rig(o), s = r.shoulder[side], len = r.armLength, th = -r.lean * rad, hy = r.hipY;
+          var px = (T[0] - CK[0]) / CK[1], py = (T[1] - cy0) / CK[1];
+          var x = px * Math.cos(th) - (py - hy) * Math.sin(th), y = hy + px * Math.sin(th) + (py - hy) * Math.cos(th);
+          var dx = x - s[0], dy = y - s[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len - 0.5), phi = Math.atan2(dx, dy) / rad, b = Math.acos(d / (2 * len)) / rad;
+          var A = [phi + b, phi - b], B = [phi - b, phi + b];
+          return Math.cos(A[0] * rad) > Math.cos(B[0] * rad) ? A : B;
+        }
+        var crookB = KIT.castOpts("lobbyist", { look: "left", mood: "smug", arms: [ik(crookA, 0, rimC), [14, 20]] }), kR = KIT.rig(crookB);
+        var crook = at(CK[0], cy0, 1, g("crk-move", '<g transform="scale(' + CK[1] + ')">' + g("crk-a", crookSvg(crookA, true)) + g("crk-b", crookSvg(crookB, false), 'opacity="0"') + "</g>", 'opacity="0"'));
+
+        // ── Text: the big number, the GDP label ──
+        var hd = L.head;
+        var big = function (s, x, y, size) {
+          return txt(x + size * 0.05, y + size * 0.07, size, s, C.ink, "", "Fraunces") +
+            txt(x, y, size, s, C.ink, 'stroke="' + C.cream + '" stroke-width="' + n1(size * 0.09) + '" stroke-linejoin="round" style="paint-order:stroke"', "Fraunces");
+        };
+        var headline = g("head", g("head-a", big("$13.2 TRILLION", hd[0], hd[1], hd[2])) +
+          g("head-b", txt(hd[0], hd[1] + hd[2] * 0.72, Math.round(hd[2] * 0.52), "/ YEAR", C.war, 'letter-spacing="3" stroke="' + C.cream + '" stroke-width="7" stroke-linejoin="round" style="paint-order:stroke"'), 'opacity="0"'), 'opacity="0"');
+        var gd = L.gdp;
+        var gdp = g("gdp", txt(gd[0], gd[1], gd[2], "11.5% OF GLOBAL GDP", C.war, 'letter-spacing="1.5" stroke="' + C.cream + '" stroke-width="8" stroke-linejoin="round" style="paint-order:stroke"'), 'opacity="0"');
+
+        // ── The EMERGENCY box, its cobweb and spider; the cricket ──
+        var B = L.box, bw = B[2], bh = B[3];
+        var web = (function () {
+          var c = [6, 6], an = [[bw * 0.42, -9], [-34, -40], [-46, bh * 0.08], [-9, bh * 0.36]], d = an.map(function (a) { return "M" + pt(c[0], c[1]) + " L" + pt(a[0], a[1]); }).join(" ");
+          [0.35, 0.62, 0.9].forEach(function (f) {
+            for (var i = 0; i < an.length - 1; i++) {
+              var a = an[i], b = an[i + 1], p = [c[0] + (a[0] - c[0]) * f, c[1] + (a[1] - c[1]) * f], r = [c[0] + (b[0] - c[0]) * f, c[1] + (b[1] - c[1]) * f];
+              var m = [(p[0] + r[0]) / 2 + (c[0] - (p[0] + r[0]) / 2) * 0.2, (p[1] + r[1]) / 2 + (c[1] - (p[1] + r[1]) / 2) * 0.2];
+              d += " M" + pt(p[0], p[1]) + " Q" + pt(m[0], m[1]) + " " + pt(r[0], r[1]);
+            }
+          });
+          return '<path d="' + d + '" fill="none" stroke="' + C.cream + '" stroke-width="4" opacity="0.9"/><path d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="1.8" opacity="0.8"/>';
+        })();
+        var es = V ? 18 : 20;
+        var boxArt = S([pg(R(-8, -8, bw + 16, bh + 16))], C.slate, 3.4) + S([pg(R(0, 0, bw, bh))], C.war, 4.4) + line("M" + (bw - 4) + ",4 V" + (bh - 4), C.orange, 1.8) +
+          S([pg(R(8, 9, bw - 16, es + 12))], WHITE, 3) + txt(bw / 2, 9 + es + 2, es, "EMERGENCY", C.war, 'letter-spacing="1"') +
+          S([pg(R(16, es + 32, bw - 32, bh - es - 72))], C.slate, 3) +
+          S([pg(R(bw / 2 - 6, es + 44, 12, bh - es - 106)), pg(R(bw / 2 - 26, bh - 66, 52, 14))], C.cream, 3) +
+          txt(bw / 2, bh - 14, es + 2, "PULL", C.cream, 'letter-spacing="3"') +
+          [[bw * 0.2, -9, 9], [bw * 0.48, -11, 12], [bw * 0.78, -9, 8]].map(function (d) { return F(el(d[0], d[1], d[2] * 1.6, d[2] * 0.5), "#C9C2B5", 'stroke="' + ink + '" stroke-width="2"'); }).join("") + web;
+        var spX = bw * 0.78, spY0 = bh + 30;
+        var spider = '<path d="M-7,-3 l-5,-4 M-7,0 h-7 M-7,3 l-5,5 M7,-3 l5,-4 M7,0 h7 M7,3 l5,5" stroke="' + ink + '" stroke-width="2.2" stroke-linecap="round"/><circle r="6" fill="' + ink + '"/><circle cx="0" cy="-7" r="3.6" fill="' + ink + '"/>';
+        var box = at(B[0], B[1], 1, g("box", boxArt + '<line id="' + P + 'thread" x1="' + spX + '" y1="' + bh + '" x2="' + spX + '" y2="' + spY0 + '" stroke="' + ink + '" stroke-width="1.6"/>' +
+          at(spX, spY0, 1, g("spider", spider)), 'opacity="0"'));
+        var crk = at(ST[0] - (V ? 70 : 96), G - SW, V ? 1.3 : 1.5, g("cricket", '<path d="M-4,-4 l-7,-9 l-4,12 M2,-4 l3,4" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round"/>' +
+          '<ellipse cx="0" cy="-7" rx="10" ry="5" fill="' + ink + '"/><circle cx="10" cy="-9" r="4" fill="' + ink + '"/><path d="M12,-12 q6,-12 15,-9" fill="none" stroke="' + ink + '" stroke-width="1.6"/>' +
+          g("chirp", '<path d="M24,-20 q5,4 0,9 M31,-24 q8,7 0,17" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round"/>', 'opacity="0"'), 'opacity="0"'));
+
+        // the impact: dust clouds at both ends, splat lines
+        var dust = g("dust", [[ST[0] - nMax * 12 - 10, 1], [ST[0] + 20, 0.9], [CR[0] - 10, 0.7]].map(function (d) {
+          return at(d[0], G - 14, d[1], S([ci(-26, 0, 22), ci(4, -14, 28), ci(30, 2, 20)], "#D9D2C2", 3));
+        }).join(""), 'opacity="0"');
+        var splat = g("splat", [[-1, -10], [-1, -34], [1, -10], [1, -34]].map(function (s) {
+          var x = s[0] < 0 ? ST[0] - nMax * 12 - 24 : ST[0] + 24, y = G + s[1];
+          return line("M" + x + "," + y + " l" + s[0] * 40 + "," + (s[1] < -20 ? -20 : -2), ink, 5);
+        }).join(""), 'opacity="0"');
+
+        var ground = line("M60," + G + " H" + (W - 60), ink, 5) + [0.08, 0.36, 0.62].map(function (f) {
+          var gx = 70 + f * (W - 140);
+          return line("M" + gx + "," + G + " l-6,-14 M" + (gx + 6) + "," + G + " l2,-18 M" + (gx + 12) + "," + G + " l8,-12", ink, 3);
+        }).join("") + (L.ledge ? g("ledge", S([pg(R(L.ledge[0], E[1], L.ledge[1] - L.ledge[0], 14))], C.tan, 3.4) + line("M" + (L.ledge[0] + 6) + "," + (E[1] + 4) + " H" + (L.ledge[1] - 6), C.cream, 2) +
+          S([pg([[L.ledge[0] + 30, E[1] + 14], [L.ledge[0] + 44, E[1] + 14], [L.ledge[0] + 44, E[1] + 50]])], C.slate, 2.6), 'opacity="0"') : "");
+
+        // ── The fuse (storyboard, Running gag: the fuse): the same in every Part 11 scene ──
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var fc = Fz.collar;
+        var fuse = '<path id="' + P + 'cord-a" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + 'cord-b" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>' +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(fc[0], fc[1], fc[2], fc[3]))], C.navy, 3) + line("M" + (fc[0] + 3) + "," + (fc[1] + 3) + " H" + (fc[0] + fc[2] - 3), C.orange, 1.6) +
+          line("M" + (fc[0] + 2) + "," + (fc[1] + 8) + " H" + (fc[0] + fc[2] - 2), C.peri, 1.4) +
+          '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+
+        var art = g("shake", ground + earth + crook + slice + gdp + pile + crates + builder + stack + slot + reach + carts + flyArt + dust + splat + crk + box + headline);
+
+        function burn(tl, dur, t0) {
+          var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+          KIT.onTime(tl, dur, function (lt) {
+            var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+            a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+            b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+            sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+          });
+          var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+          gsap.set(fl, { svgOrigin: "0 0" });
+          tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(dur / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+          tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(dur / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+          return document.getElementById(P + "spark-flare");
+        }
+
+        function animate(tl) {
+          var q2 = function (s) { return document.getElementById(P + s); };
+          var show = function (s, t, d) { tl.fromTo(q2(s), { opacity: 0 }, { opacity: 1, duration: d || 0.01, immediateRender: false }, t); };
+          var hide = function (s, t, d) { tl.fromTo(q2(s), { opacity: 1 }, { opacity: 0, duration: d || 0.01, immediateRender: false }, t); };
+          var pop = function (s, t, from) {
+            gsap.set(q2(s), { svgOrigin: "0 0" });
+            tl.fromTo(q2(s), { opacity: 0, scale: from || 0.2 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2.6)" }, t);
+          };
+          tl.set(q2("head"), { opacity: 0 }, 0);
+
+          // "Combined,": the chained carts roll up to the stack's spot (whoosh), tip, pour, and roll away.
+          var t0 = cue("Combined,");
+          var wheels = q2("carts").querySelectorAll(".cart-wheel");
+          tl.fromTo(q2("carts"), { x: -300 }, { x: 0, duration: 0.5, ease: "power2.out" }, t0 + 0.05);
+          Array.prototype.forEach.call(wheels, function (w) {
+            gsap.set(w, { svgOrigin: w.dataset.cx + " " + w.dataset.cy });
+            tl.fromTo(w, { rotation: -400 }, { rotation: 0, duration: 0.5, ease: "power2.out" }, t0 + 0.05);
+            tl.to(w, { rotation: -900, duration: 0.8, ease: "power2.in" }, t0 + 1.6);
+          });
+          ["cart-s", "cart-b"].forEach(function (c, i) {
+            gsap.set(q2(c), { svgOrigin: "37 -7.5" });
+            tl.to(q2(c), { rotation: i ? 26 : 22, duration: 0.18, ease: "power2.in" }, t0 + 0.58 + i * 0.04);
+            tl.to(q2(c), { rotation: 0, duration: 0.25, ease: "back.out(2)" }, t0 + 1.2);
+          });
+          hide("heap-b", t0 + 0.72, 0.12);
+          hide("heap-s", t0 + 0.78, 0.12);
+          var topY = G - 12 * ST[2] - 20, mid = ST[0] + SW / 2;
+          fly.forEach(function (f, i) {
+            var t = t0 + 0.66 + i * 0.05, d = 0.42, el2 = q2("fly" + i), dx = mid - 70 + (i % 5) * 35 - f[0], dy = topY - f[1];
+            tl.fromTo(el2, { opacity: 1, x: 0, rotation: 0, svgOrigin: "0 0" }, { x: dx, rotation: (i % 2 ? 1 : -1) * 260, svgOrigin: "0 0", duration: d, ease: "none" }, t);
+            tl.fromTo(el2, { y: 0 }, { y: Math.min(dy, 0) - 120 - (i % 3) * 30, duration: d / 2, ease: "power2.out" }, t);
+            tl.to(el2, { y: dy, duration: d / 2, ease: "power2.in" }, t + d / 2);
+            tl.set(el2, { opacity: 0 }, t + d);
+          });
+          var cr = q2("stk-cr");
+          var rise = function (n0, n1, t, d) {
+            tl.fromTo(cr, { attr: { y: -12 * n0 - 3, height: 12 * n0 + 8 } }, { attr: { y: -12 * n1 - 3, height: 12 * n1 + 8 }, duration: d, ease: "steps(" + (n1 - n0) + ")", immediateRender: !n0 }, t);
+          };
+          rise(0, ST[2], t0 + 0.78, 0.6);
+          tl.to(q2("carts"), { x: -1500, duration: 0.8, ease: "power2.in" }, t0 + 1.6);
+          hide("carts", t0 + 2.42);
+
+          // "trillion": the stack shoots up (slide-up), and the number lands.
+          var tT = cue("trillion");
+          rise(ST[2], ST[3], tT, 0.55);
+          pop("head", tT, 0.6);
+          show("head-b", cue("dollars"), 0.15);
+
+          // "eleven point five percent": an Earth pops up, the Crook tiptoes in; "percent": the chop (snip).
+          var tE = KIT.before(DB, "eleven");
+          gsap.set(q2("earth"), { svgOrigin: "0 0" });
+          gsap.set(q2("slice-pop"), { svgOrigin: "0 " + er });
+          tl.fromTo([q2("earth"), q2("slice-pop")], { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)" }, tE - 0.2);
+          if (L.ledge) show("ledge", tE - 0.32, 0.15);
+          var cm = q2("crk-move");
+          tl.fromTo(cm, { opacity: 1, x: V ? 320 : 520 }, { x: 0, duration: 0.75, ease: "power1.out" }, tE - 0.35);
+          tl.fromTo(cm, { y: 0 }, { y: -10, duration: 0.125, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, tE - 0.35);
+          var tP = cue("percent"), armA = q2("crk-a").querySelector(".arm-l");
+          gsap.set(armA, { svgOrigin: kA.shoulder[0].join(" ") });
+          tl.to(armA, { rotation: 18, duration: 0.18, ease: "power2.out" }, tP - 0.3);
+          tl.to(armA, { rotation: -34, duration: 0.08, ease: "power3.in" }, tP - 0.08);
+          tl.to(armA, { rotation: 14, duration: 0.12, ease: "power2.out" }, tP + 0.05);
+          tl.to(armA, { rotation: -34, duration: 0.08, ease: "power3.in" }, tP + 0.17);
+          tl.to(armA, { rotation: 0, duration: 0.15, ease: "power2.out" }, tP + 0.3);
+          show("cutline", tP);
+          // the slice slides out of the Earth, turns to show its red inside, and flies up to his mouth; he swaps to
+          // pose B (knife away, the slice held by its crust)
+          var tO = tP + 0.3, s = q2("slice"), ox = E[0], oy = E[1] + ecy;
+          gsap.set(s, { svgOrigin: "0 0" });
+          tl.to(s, { x: 18 * Math.cos(am * rad), y: 18 * Math.sin(am * rad), duration: 0.12, ease: "power2.out" }, tO);
+          hide("slice-s", tO + 0.14);
+          show("slice-x", tO + 0.14);
+          tl.to(s, { x: tipHeld[0] - ox, y: tipHeld[1] - oy, rotation: sRot, duration: 0.32, ease: "power2.inOut" }, tO + 0.14);
+          hide("cutline", tO);
+          hide("crk-a", tO + 0.44);
+          show("crk-b", tO + 0.44);
+          show("gdp", tO + 0.1, 0.18);
+          // "G.D.P.": the tip into his mouth, a bite (pop), and he chews.
+          var tG = cue("G.D.P.");
+          tl.to(s, { x: mouth[0] - ox - 3, y: mouth[1] - oy + 2, duration: 0.14, ease: "power2.in" }, tG - 0.14);
+          hide("slice-x", tG);
+          show("slice-b", tG);
+          tl.to(s, { x: tipHeld[0] - ox, y: tipHeld[1] - oy, duration: 0.2, ease: "power2.out" }, tG + 0.08);
+          var headB = q2("crk-b").querySelector(".head");
+          gsap.set(headB, { svgOrigin: kR.neck.join(" ") });
+          tl.fromTo(headB, { rotation: 0 }, { rotation: -7, duration: 0.14, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, tG + 0.1);
+          tl.fromTo(headB, { rotation: 0 }, { rotation: -6, duration: 0.15, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, cue("destroys") - 0.6);
+          // the numbers step aside for the race
+          tl.to([q2("head"), q2("gdp")], { opacity: 0, duration: 0.3 }, KIT.before(DB, "Both") + 0.1);
+
+          // "growing": the Builder walks in with a crate, sets it down and hammers (hammer); the spare pile sits behind.
+          var tGr = cue("growing"), walk0 = tGr - 1.0, walk1 = tGr - 0.22;
+          show("pile", walk0 - 0.1, 0.2);
+          var bm = q2("bld-move");
+          tl.fromTo(bm, { x: -L.bld - 160 }, { x: 0, duration: walk1 - walk0, ease: "power1.out" }, walk0);
+          tl.fromTo(bm, { y: 0 }, { y: -8, duration: 0.11, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, walk0);
+          var c1 = q2("crate1"), cdx = carried[0] - CR[0], cdy = carried[1] - G + ch / 2;
+          tl.fromTo(c1, { x: -L.bld - 160 + cdx, y: cdy }, { x: cdx, duration: walk1 - walk0, ease: "power1.out" }, walk0);
+          tl.to(c1, { x: 0, y: 0, duration: 0.16, ease: "power2.in" }, walk1);
+          hide("bld-carry", walk1 + 0.08);
+          show("bld-ham", walk1 + 0.08);
+          var armH = q2("bld-ham").querySelector(".arm-r");
+          gsap.set(armH, { svgOrigin: bR.shoulder[1].join(" ") });
+          tl.set(armH, { rotation: -70 }, 0);
+          var strike = function (t) {
+            tl.to(armH, { rotation: 6, duration: 0.07, ease: "power3.in" }, t - 0.07);
+            tl.to(armH, { rotation: -70, duration: 0.17, ease: "power2.out" }, t);
+          };
+          [0, 0.24, 0.48].forEach(function (d) { strike(tGr + d); });
+          // he lifts two more crates on, slowly, while the paper stack grows on its own
+          var lift = function (name, from, t, level) {
+            var c = q2(name), fx = L.pile - CR[0], fy = from === "top" ? -ch + level * ch : level * ch;
+            hide(from === "top" ? "pile-top" : "pile-bot", t);
+            hide("bld-ham", t);
+            show("bld-carry", t);
+            tl.fromTo(c, { opacity: 1, x: fx, y: fy }, { x: cdx, y: cdy + level * ch, duration: 0.3, ease: "power2.out", immediateRender: false }, t);
+            tl.to(c, { x: 0, y: 0, duration: 0.32, ease: "power2.inOut" }, t + 0.4);
+            hide("bld-carry", t + 0.72);
+            show("bld-ham", t + 0.72);
+          };
+          var tF = cue("faster");
+          rise(ST[3], ST[4], tF, 1.1);
+          lift("crate2", "top", tF + 0.5, 1);
+          [0.0, 0.26].forEach(function (d) { strike(tF + 1.45 + d); });
+          var tMk = cue("makes");
+          lift("crate3", "bot", tMk + 0.75, 2);
+          [0.0, 0.26].forEach(function (d) { strike(tMk + 1.7 + d); });
+          // the labels: "makes things." and "destroys things"
+          pop("mtag", tMk, 0.3);
+          var tD = cue("destroys");
+          pop("dtag", tD, 0.3);
+          [0.0, 0.26].forEach(function (d) { strike(tD + 0.6 + d); });
+          var dtg = q2("dtag-in");
+          gsap.set(dtg, { svgOrigin: "0 0" });
+          tl.fromTo(dtg, { rotation: 0 }, { rotation: 7, duration: 0.25, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, tD + 0.2);
+          // "winning.": the rosette pins on (pop); the stack sways proudly; the Builder looks up.
+          var tW = cue("winning."), tAW = after("winning.");
+          pop("ros", tW, 0.1);
+          var rot = q2("stk-rot");
+          gsap.set(rot, { svgOrigin: "0 0" });
+          tl.fromTo(rot, { rotation: 0 }, { rotation: 2.2, duration: 0.22, ease: "sine.inOut", immediateRender: false }, tW + 0.08);
+          tl.to(rot, { rotation: -1.5, duration: 0.2, ease: "sine.inOut" }, tW + 0.3);
+          var headH = q2("bld-ham").querySelector(".head");
+          gsap.set(headH, { svgOrigin: bR.neck.join(" ") });
+          tl.to(headH, { rotation: -30, duration: 0.2, ease: "power2.out" }, tW + 0.25);
+          // after "winning.": it tips over onto the crates and flattens the Builder (splat)
+          var fall = 0.36, land = tAW;
+          tl.to(rot, { rotation: -90, duration: fall, ease: "power2.in" }, land - fall);
+          tl.to(rot, { rotation: -87, duration: 0.08, ease: "power2.out" }, land);
+          tl.to(rot, { rotation: -90, duration: 0.12, ease: "power2.in" }, land + 0.08);
+          var crs = q2("crates");
+          gsap.set(crs, { svgOrigin: "0 0" });
+          tl.fromTo(crs, { scaleY: 1, scaleX: 1 }, { scaleY: 0.12, scaleX: 1.2, duration: 0.05, ease: "power2.in", immediateRender: false }, land - 0.05);
+          hide("pile", land);
+          hide("bld-move", land - 0.02);
+          show("slot", land);
+          tl.to(dtg, { rotation: 90, duration: 0.9, ease: "elastic.out(1.3,0.35)" }, land);
+          tl.fromTo(q2("dust"), { opacity: 0, scale: 0.6, svgOrigin: (ST[0] - 200) + " " + G }, { opacity: 1, scale: 1, svgOrigin: (ST[0] - 200) + " " + G, duration: 0.18, ease: "power2.out", immediateRender: false }, land);
+          tl.to(q2("dust"), { opacity: 0, y: -30, duration: 0.6, ease: "power1.in" }, land + 0.35);
+          show("splat", land);
+          hide("splat", land + 0.3, 0.2);
+          tl.fromTo(q2("shake"), { y: 0 }, { y: 10, duration: 0.04, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, land);
+          // only his eyes and one hand show: the eyes blink, the hand waves feebly
+          var eyes = q2("slot-eyes");
+          gsap.set(eyes, { svgOrigin: "0 -3" });
+          [land + 0.45, land + 1.3, cue("emergency.") + 0.95].forEach(function (b) {
+            tl.fromTo(eyes, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "none", immediateRender: false }, b);
+          });
+          var arm = q2("reach-arm");
+          gsap.set(arm, { svgOrigin: "0 0" });
+          show("reach", land + 0.18);
+          tl.fromTo(arm, { scaleY: 0.2, rotation: 0 }, { scaleY: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, land + 0.18);
+          tl.fromTo(arm, { rotation: -10 }, { rotation: 10, duration: 0.3, repeat: 2, yoyo: true, ease: "sine.inOut", immediateRender: false }, land + 0.45);
+          tl.to(arm, { rotation: 0, duration: 0.2 }, land + 1.4);
+
+          // "emergency.": the cobwebbed box on the wall above; the spider drops; the hand stretches up, falls short.
+          var tEm = cue("emergency.");
+          gsap.set(q2("box"), { svgOrigin: (B[2] / 2) + " 0" });
+          tl.fromTo(q2("box"), { opacity: 0, y: -24, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2.4)" }, tEm - 0.12);
+          var sp = q2("spider"), th = q2("thread"), drop = V ? 70 : 84;
+          tl.fromTo(sp, { y: -24 }, { y: drop, duration: 0.45, ease: "bounce.out", immediateRender: false }, tEm + 0.12);
+          tl.fromTo(th, { attr: { y2: spY0 - 24 } }, { attr: { y2: spY0 + drop }, duration: 0.45, ease: "bounce.out", immediateRender: false }, tEm + 0.12);
+          var shaft = q2("reach-shaft"), hand2 = q2("reach-hand"), str = V ? 3.2 : 3.6;
+          gsap.set(shaft, { svgOrigin: "0 0" });
+          tl.fromTo(shaft, { scaleY: 1 }, { scaleY: str, duration: 0.32, ease: "power2.out", immediateRender: false }, tEm + 0.05);
+          tl.fromTo(hand2, { y: 0 }, { y: -(str - 1) * armLen, duration: 0.32, ease: "power2.out", immediateRender: false }, tEm + 0.05);
+          tl.fromTo(hand2, { scaleX: 1 }, { scaleX: 1.25, duration: 0.08, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, tEm + 0.35);
+          // ... and flops over, limp
+          var tAE = after("emergency.");
+          tl.to(shaft, { scaleY: 1, duration: 0.3, ease: "power2.in" }, tAE + 0.25);
+          tl.to(hand2, { y: 0, duration: 0.3, ease: "power2.in" }, tAE + 0.25);
+          tl.to(arm, { rotation: -78, duration: 0.35, ease: "bounce.out" }, tAE + 0.5);
+          // after "emergency.": nobody pulls it. A cricket chirps on the fallen stack (crickets).
+          show("cricket", tAE - 0.25, 0.15);
+          for (var ck = 0, tk = tAE; tk < D - 0.1; ck++, tk += 0.22) tl.set(q2("chirp"), { opacity: ck % 2 ? 0 : 1 }, tk);
+          var ckEl = q2("cricket");
+          gsap.set(ckEl, { svgOrigin: "0 0" });
+          return { em: tEm };
+        }
+        return { bg: KIT.paper(pid), art: KIT.paperDefs(pid) + art, fuse: fuse, animate: animate, burn: burn };
+      }
+      // ══ end of the shared part ══
+
+      q("bg").innerHTML = KIT.office(O.halo[0], O.halo[1]);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // The wall screen shows destroy-beats-make's last frame at the size the zoom out starts from (KIT.enter starts
+      // it at KIT.zoomView(S).out), so the first frame of the zoom is that frame at full size.
+      var S = O.screen, hole = [S[0] + 34, S[1] + 34, S[2] - 68, S[3] - 68], zv = KIT.zoomView(S);
+      var m = dbm(ID + "-mini");
+      q("screen").innerHTML = KIT.svg(W, H, KIT.wallScreen.apply(null, S) +
+        '<defs><clipPath id="' + ID + '-hole"><rect x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" rx="22"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-hole)"><g transform="' + zv.mini + '"><defs><clipPath id="' + ID + '-frame"><rect width="' + W + '" height="' + H + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-frame)">' + m.bg + m.art + m.fuse + "</g></g></g>");
+      // Put the screen on destroy-beats-make's last frame: record its moves, then set each one's end state, in the
+      // order the moves end (a yoyo that runs an even number of legs ends where it started).
+      var moves = [], rec = {
+        to: function (el, v, at) { moves.push([el, null, v, at, moves.length]); return rec; },
+        fromTo: function (el, f, v, at) { moves.push([el, f, v, at, moves.length]); return rec; },
+        set: function (el, v, at) { moves.push([el, null, v, at, moves.length]); return rec; },
+      };
+      m.animate(rec);
+      var endOf = function (mv) { return (mv[3] || 0) + (mv[2].duration || 0) * ((mv[2].repeat || 0) + 1); };
+      moves.sort(function (a, b) { return endOf(a) - endOf(b) || a[4] - b[4]; }).forEach(function (mv) {
+        var v = mv[2], back = v.yoyo && (v.repeat || 0) % 2 === 1, out = {}, k;
+        if (back && !mv[1]) return;
+        [mv[1] || {}, back ? {} : v].forEach(function (src) { for (k in src) if (["duration", "ease", "repeat", "yoyo", "immediateRender"].indexOf(k) < 0) out[k] = src[k]; });
+        gsap.set(mv[0], out);
+      });
+
+      // Desk props: the calendar (left on the desk) and the mug (right, where Part 1 keeps it).
+      var P = V
+        ? { cal: [170, 1252, 1.6], mug: [952, 1173, 1.1] }
+        : { cal: [1092, 905, 1.7], mug: [1775, 800, 1.5] };
+      // the calendar's pages: MONDAY on top, then TUESDAY, TUESDAY, TUESDAY (the prop repeats a word day on every page)
+      var cal = KIT.props.calendar({ month: "EARTH", day: "TUESDAY", pages: 3 })
+        .replace(/font-size="32"([^>]*)>TUESDAY<\/text>/g, 'font-size="21" textLength="70" lengthAdjust="spacingAndGlyphs"$1>TUESDAY</text>');
+      var lastDay = cal.lastIndexOf(">TUESDAY</text>");
+      cal = cal.slice(0, lastDay) + ">MONDAY</text>" + cal.slice(lastDay + ">TUESDAY</text>".length);
+      var Mg = P.mug, mk = Mg[2], mugC = [Mg[0] + 24 * mk, Mg[1] + 35 * mk];
+      var hw = O.wish.w * 0.95, mouth = [O.wish.x + O.wish.w * 0.025 + 0.605 * hw, O.wish.y + 0.81 * hw];
+      q("front").innerHTML = KIT.svg(W, H, KIT.desk.apply(null, O.desk) +
+        '<g transform="translate(' + P.cal[0] + "," + P.cal[1] + ") scale(" + P.cal[2] + ')"><g id="' + ID + '-cal">' + cal + "</g></g>" +
+        '<g id="' + ID + '-mug"><g transform="translate(' + Mg[0] + "," + Mg[1] + ") scale(" + mk + ')">' + KIT.mug(0, 0) + "</g></g>");
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("wish"), { scene: ID, x: O.wish.x, y: O.wish.y, w: O.wish.w });
+      KIT.enter(tl, q("cam"), "zoom out of the wall screen", zv);
+      // the fuse keeps burning on the screen, by part time
+      m.burn(tl, D, sc.start);
+
+      // "planet": the mug floats up to her mouth for a sip (tilted 40 degrees, its rim on her lips), then lowers to her chin.
+      var mug = q("mug"), tPl = cue("planet"), tTu = cue("Tuesday"), tAT = KIT.after(ID, "Tuesday");
+      gsap.set(mug, { svgOrigin: mugC[0].toFixed(1) + " " + mugC[1].toFixed(1) });
+      var sip = [mouth[0] - 2 + 22.5 * mk - mugC[0], mouth[1] + 6 + 26.8 * mk - mugC[1]];
+      tl.fromTo(mug, { x: 0, y: 0, rotation: 0 }, { x: sip[0], y: sip[1], rotation: -40, duration: 0.32, ease: "power2.out", immediateRender: false }, tPl);
+      tl.to(mug, { y: sip[1] - 5, duration: 0.14, yoyo: true, repeat: 1, ease: "sine.inOut" }, tPl + 0.36);
+      tl.to(mug, { x: sip[0] - 14, y: sip[1] + 80 * mk, rotation: -6, duration: 0.3, ease: "power2.inOut" }, tPl + 0.7);
+      // "Tuesday": the calendar flips over to TUESDAY, then riffles on through two more TUESDAYs (the three clicks).
+      var pages = q("cal").querySelectorAll(".cal-page");
+      var order = [pages[pages.length - 1], pages[pages.length - 2], pages[pages.length - 3]];
+      order.forEach(function (pg, i) {
+        var t = tTu + i * 0.15;
+        gsap.set(pg, { svgOrigin: "0 -98" });
+        tl.fromTo(pg, { scaleY: 1, opacity: 1 }, { scaleY: -0.35, duration: 0.1, ease: "power2.in", immediateRender: false }, t - 0.02);
+        tl.set(pg, { opacity: 0 }, t + 0.08);
+      });
+      var calEl = q("cal");
+      gsap.set(calEl, { svgOrigin: "0 0" });
+      tl.fromTo(calEl, { scaleY: 1 }, { scaleY: 0.96, duration: 0.05, yoyo: true, repeat: 5, ease: "none", immediateRender: false }, tTu);
+      // after "Tuesday.": the mug comes down to the desk, slowly, landing on the thunk.
+      var land = tAT + 0.3;
+      tl.to(mug, { x: 0, y: 0, rotation: 0, duration: 0.85, ease: "power1.inOut" }, land - 0.85);
+      tl.fromTo(mug, { scaleY: 1 }, { scaleY: 0.92, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, land);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>
