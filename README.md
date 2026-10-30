@@ -114,7 +114,7 @@ Your treaty passes, redirecting [$27.2 billion](https://manual.warondisease.org/
 
 ### Why Your Leaders Aren't the Problem
 
-With over two billion humans suffering from disease, you'd have to be a complete psychopath to make the conscious decision to spend [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) times more on weapons than on helping them.
+With over two billion humans suffering from disease, you'd have to be a complete psychopath to make the conscious decision to spend [604](https://manual.warondisease.org/knowledge/solution/1-percent-treaty.html) times more on weapons than on interventional clinical trials.
 But your leaders aren't monsters. They're just operating in a system that rewards the wrong things.
 
 Your civilization's incentive structure is the psychopath:
