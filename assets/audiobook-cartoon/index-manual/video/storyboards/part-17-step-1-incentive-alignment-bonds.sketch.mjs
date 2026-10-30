@@ -220,16 +220,24 @@ function moneyLoop(K, C, opts = {}) {
   const treaty = at(330, -770, 1.3, K.props.scroll({ text: "1% TREATY", signatures: 1 })) + stand(470, -760, s, K.cast("politician", { mood: "grin", arms: down }));
   const tank = at(820, -770, 1, warTank(K, C)) + stand(820, -1230, s, K.cast("weaponsMaker", {}));
   const funnel = at(1250, -700, 1.2, K.props.colorFlipFunnel({ inN: 2, outN: 2 }));
-  const arch = opts.arch ? archSign(C, "PATIENT INDUSTRIAL COMPLEX", -1500, 1500, -1720) : "";
+  const arch = opts.arch ? archSign(K, C, "PATIENT INDUSTRIAL COMPLEX", -1500, 1500, -1720) : "";
   return stadium(1100, 700, 170, FIELD) + office + treaty + tank + funnel + boothA + pac + lab + hosp + reaper + germs + stones +
     moneyRing(K, 1100, 700, 9, 3, 150, 1.5) + toll + arch;
 }
 // A period arch sign across a road: two posts at x0 and x1, the board on top at y.
-function archSign(C, text, x0, x1, y) {
-  const ink = C.line, w = x1 - x0;
+function archSign(K, C, text, x0, x1, y) {
+  const ink = C.line;
   return R(x0 - 20, y, 40, -y - 640, C.tan, ink, 5) + R(x1 - 20, y, 40, -y - 640, C.tan, ink, 5) +
     `<path d="M${x0 - 60},${y + 30} Q${(x0 + x1) / 2},${y - 140} ${x1 + 60},${y + 30} L${x1 + 60},${y + 130} Q${(x0 + x1) / 2},${y - 40} ${x0 - 60},${y + 130} Z" fill="${C.cream}" stroke="${ink}" stroke-width="8"/>` +
-    T((x0 + x1) / 2, y + 40, Math.min(120, w / text.length * 1.4), text, ink, { extra: 'letter-spacing="4"' });
+    archWords(K, C, text, x0, x1, y);
+}
+// The arch's lettering follows the band's middle curve, like a ranch gate: as big as the band is thick, and no
+// wider than 80% of the arch.
+function archWords(K, C, text, x0, x1, y) {
+  const mid = (x0 + x1) / 2, fs = K.fitText(text, 80, (x1 - x0 + 120) * 0.8, "Oswald", 600, 4), drop = fs * 0.33;
+  const pid = "arch-" + text.toLowerCase().replace(/[^a-z]+/g, "-");
+  return `<defs><path id="${pid}" d="M${x0 - 60},${y + 80 + drop} Q${mid},${y - 90 + drop} ${x1 + 60},${y + 80 + drop}"/></defs>` +
+    `<text font-family="Oswald" font-weight="600" font-size="${fs.toFixed(1)}" letter-spacing="4" fill="${C.line}" text-anchor="middle"><textPath href="#${pid}" startOffset="50%">${text}</textPath></text>`;
 }
 // Part 2's loop road (money-loop.html), whole, small: the press (mirrored, crank left) with the Politician, the factory
 // with the Weapons Maker, the house, the pay window and the farm stand; war papers on the road.
@@ -245,7 +253,7 @@ function warLoop(K, C, opts = {}) {
   [[-300, -640], [100, -640], [300, -640], [1300, 0], [200, 640], [-300, 640], [-1300, 0]].forEach(([x, y], i) => { papers += at(x, y - 10, 1.1, K.money("war", i % 2)); });
   let pile = "";
   if (opts.mountain) for (let row = 0; row < 7; row++) for (let j = 0; j < 9 - row; j++) pile += at(-300 + j * 60 + row * 30, -760 - row * 62, 0.6, K.props.headstone({ text: "" }));
-  const arch = opts.arch ? archSign(C, "MILITARY INDUSTRIAL COMPLEX", -1250, 1250, -1600) : "";
+  const arch = opts.arch ? archSign(K, C, "MILITARY INDUSTRIAL COMPLEX", -1250, 1250, -1600) : "";
   return stadium(HL, RR, 160, FIELD) + press + pol + pile + factory + wm + house + stand2 + papers + arch;
 }
 

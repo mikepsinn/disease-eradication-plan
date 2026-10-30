@@ -317,7 +317,7 @@
     var feet = [[-98, FB], [-70, FB], [-66, 0], [-102, 0]];
     var slot = [[-44 + DX * 0.32, FT + DY * 0.32], [52 + DX * 0.32, FT + DY * 0.32], [52 + DX * 0.68, FT + DY * 0.68], [-44 + DX * 0.68, FT + DY * 0.68]];
     var slotY = FT + DY * 0.5, cx = 4 + DX * 0.5, cid = "kp-chr-slot" + ++uid;
-    var ct = slotY - 6 - pop, cl = cx - 36, cr = cx + 36, size = Math.min(13, 62 / (title.length * 0.56));
+    var ct = slotY - 6 - pop, cl = cx - 36, cr = cx + 36, size = K.fitText(title, 13, 62, "Oswald", 600, 1);
     var card = solid([poly([[cl, ct], [cr, ct], [cr, ct + 96], [cl, ct + 96]])], C.cream, 3.2) + dots([[cl, ct], [cr, ct], [cr, ct + 96], [cl, ct + 96]], cx + 14, 0.18) +
       text(cx, ct + 17, title, size, ink, "middle", ' letter-spacing="1"') + line("M" + P(cl + 7, ct + 23) + " H" + (cr - 7).toFixed(1), C.orange, 2.4) +
       line("M" + P(cl + 8, ct + 32) + " H" + (cr - 8).toFixed(1) + " M" + P(cl + 8, ct + 40) + " H" + (cr - 14).toFixed(1) + " M" + P(cl + 8, ct + 48) + " H" + (cr - 22).toFixed(1), ink, 1.4) +
@@ -379,7 +379,7 @@
     var B = legs ? -22 : -6, T = B - 124, L = -50, R = 50, DX = 8, DY = -10;
     var shown = String(o.display === undefined ? (scream ? "ERROR" : "0") : o.display);
     var front = [[L, T], [R, T], [R, B], [L, B]], top = [[L, T], [L + DX, T + DY], [R + DX, T + DY], [R, T]], side = [[R, T], [R + DX, T + DY], [R + DX, B + DY], [R, B]];
-    var disp = [[L + 7, T + 6], [R - 7, T + 6], [R - 7, T + 29], [L + 7, T + 29]], size = Math.min(20, 74 / (shown.length * 0.56));
+    var disp = [[L + 7, T + 6], [R - 7, T + 6], [R - 7, T + 29], [L + 7, T + 29]], size = K.fitText(shown, 20, 74, "Oswald", 600, 1.5);
     var ey = T + 50, my = scream ? 8 : 11;
     var f = face(0, ey, 1.45, { mood: scream ? "scared" : mood, mouth: scream ? "scream" : undefined, browShift: scream ? 3.5 : 0, sep: 10, mouthY: my });
     var keys = "";
@@ -432,7 +432,7 @@
     var f = face(0, -98, 2.4, { mood: faceMood, mouth: mouth, mouthY: mood === "grin" ? 12 : 11, mouthW: mood === "grin" ? 1.3 : 1 });
     var sash = "";
     if (o.label) {
-      var sid = "kp-chr-sash" + ++uid, band = [[-90, -36], [90, -10], [90, 6], [-90, -20]], deg = (Math.atan2(26, 180) * 180) / Math.PI, ts = Math.min(15, 120 / (o.label.length * 0.58));
+      var sid = "kp-chr-sash" + ++uid, band = [[-90, -36], [90, -10], [90, 6], [-90, -20]], deg = (Math.atan2(26, 180) * 180) / Math.PI, ts = K.fitText(o.label, 15, 120, "Oswald", 600, 1.5);
       sash = '<defs><clipPath id="' + sid + '"><path d="' + polyD(pts) + '"/></clipPath></defs><g clip-path="url(#' + sid + ')">' + solid([poly(band)], C.cream, 3.2) +
         '<g transform="translate(-8,-13) rotate(' + deg.toFixed(1) + ')">' + text(0, 5, o.label, ts, C.war, "middle", ' letter-spacing="1.5"') + "</g></g>";
     }

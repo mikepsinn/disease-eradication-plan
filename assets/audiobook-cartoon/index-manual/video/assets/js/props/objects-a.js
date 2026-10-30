@@ -53,8 +53,8 @@
   function text(x, y, s, size, col, extra, anchor) {
     return '<text x="' + (+x).toFixed(1) + '" y="' + (+y).toFixed(1) + '" text-anchor="' + (anchor || "middle") + '" font-family="Oswald" font-weight="600" font-size="' + (+size).toFixed(1) + '" fill="' + col + '"' + (extra || "") + ">" + esc(s) + "</text>";
   }
-  // About how wide a line of Oswald SemiBold capitals is (measured: 0.42 to 0.6 of the size per letter).
-  function textW(s, size) { return String(s).length * size * 0.5; }
+  // How wide a line of Oswald SemiBold is (KIT.textWidth), with spacing px between letters.
+  function textW(s, size, spacing) { return K.textWidth(s, size, "Oswald", 600, spacing); }
   // A tapered bar from a to b (a limb or a strap), w0 wide at a and w1 at b.
   function bar(a, b, w0, w1) {
     var dx = b[0] - a[0], dy = b[1] - a[1], L = Math.sqrt(dx * dx + dy * dy) || 1, nx = -dy / L, ny = dx / L;
@@ -273,7 +273,7 @@
     function sh(pts) { return shift(pts, 0, b); }
     var rubber = sh(rect(-44, -7, 88, 7)), block = sh(rect(-48, -30, 96, 24)), bevel = sh([[-48, -29], [48, -29], [40, -37], [-40, -37]]);
     var neck = sh([[-9, -36], [9, -36], [6.5, -60], [-6.5, -60]]), knob = sh([[-13, -58], [13, -58], [19, -68], [19, -82], [12, -92], [-12, -92], [-19, -82], [-19, -68]]);
-    var label = sh(rect(-38, -25, 76, 14)), fs = Math.min(11, 68 / Math.max(1, t.length * 0.56));
+    var label = sh(rect(-38, -25, 76, 14)), fs = K.fitText(t, 11, 68, "Oswald", 600, 0.5);
     var head = '<g class="stamp-head">' + solid([poly(rubber)], col) + solid([poly(block)], C.tan) + dots(block, 0.6, 0.25) + solid([poly(bevel)], C.rust) +
       (t ? solid([poly(label)], WHITE, 2.4) + text(0, b - 18 + fs * 0.37, t, fs, col, ' letter-spacing="0.5"') : "") +
       solid([poly(neck)], C.tan) + solid([poly(knob)], C.rust) + '<path d="' + polyD(sh([[-14, -70], [-10, -70], [-9, -86], [-12, -84]])) + '" fill="' + C.cream + '" opacity="0.6"/>' +
@@ -291,8 +291,8 @@
     o = o || {};
     var col = o.color || C.war, fs = o.fontSize || 34, a = o.angle === undefined ? -8 : o.angle;
     var lines = String(o.text === undefined ? "APPROVED" : o.text).split("\n");
-    var n = lines.length, maxLen = Math.max.apply(null, lines.map(function (l) { return l.length; }));
-    var w = maxLen * fs * 0.58 + 40, lh = fs * 1.08, h = (n - 1) * lh + fs * 0.74 + 34;
+    var n = lines.length;
+    var w = Math.max.apply(null, lines.map(function (l) { return textW(l, fs, fs * 0.08); })) + 40, lh = fs * 1.08, h = (n - 1) * lh + fs * 0.74 + 34;
     var r = (a * Math.PI) / 180, cy = -(w * Math.abs(Math.sin(r)) + h * Math.abs(Math.cos(r))) / 2;
     var mid = id("mk"), rnd = K.rng(hash(lines.join("|") + col)), specks = "";
     for (var i = 0; i < Math.round((w * h) / 70); i++) specks += '<circle cx="' + ((rnd() - 0.5) * w).toFixed(1) + '" cy="' + ((rnd() - 0.5) * h).toFixed(1) + '" r="' + (0.5 + rnd() * 1.4).toFixed(2) + '" fill="#000"/>';
@@ -306,6 +306,37 @@
     return wrap("stampmark", o, '<g class="stamp-mark" data-cy="' + cy.toFixed(1) + '"><defs><mask id="' + mid + '" maskUnits="userSpaceOnUse" x="' + (-w / 2 - 10).toFixed(1) + '" y="' + (-h / 2 - 10).toFixed(1) + '" width="' + (w + 20).toFixed(1) + '" height="' + (h + 20).toFixed(1) + '">' +
       '<rect x="' + (-w / 2 - 10).toFixed(1) + '" y="' + (-h / 2 - 10).toFixed(1) + '" width="' + (w + 20).toFixed(1) + '" height="' + (h + 20).toFixed(1) + '" fill="#FFF"/>' + specks + "</mask></defs>" +
       '<g transform="translate(0,' + cy.toFixed(1) + ") rotate(" + a + ')"><g mask="url(#' + mid + ')" opacity="0.92">' + art + "</g></g></g>");
+  };
+
+  // ── CASE FILE ───────────────────────────────────────────────────────
+  // The Earth case file, a manila folder standing on y 0, 190 wide, its tab up to y -168 and as wide as its words:
+  // o.tab (default "EARTH DIRT: CASE #847", EARTH struck out in red, as Part 1 renames the planet; "EARTH: CASE #847"
+  // before that). o.stamps: how many of its marks are on the cover, in story order: 1 MAY BE ELIGIBLE FOR
+  // OPTIMIZATION (Part 1), 2 SUBOPTIMAL (Part 12), 3 ELIGIBLE FOR OPTIMIZATION (Part 26). o.dusty grays it under
+  // decades of dust. o: { size, tab, stamps, dusty }. Parts: .case-tab, .case-stamp-1 to .case-stamp-3 (each a
+  // KIT.props.stampMark, slammed in about its own center).
+  K.props.caseFile = function (o) {
+    o = o || {};
+    var tab = o.tab === undefined ? "EARTH DIRT: CASE #847" : String(o.tab), sp = 0.5, fs = K.fitText(tab, 12, 146, "Oswald", 600, sp);
+    var half = textW(tab, fs, sp) / 2 + 10, manila = o.dusty ? "#BDB29A" : "#E7C98C", n = o.stamps || 0;
+    var folder = [[-95, 0], [-95, -150], [-half - 10, -150], [-half, -168], [half, -168], [half + 10, -150], [95, -150], [95, 0]];
+    var strike = "";
+    if (/^EARTH DIRT/.test(tab)) {
+      var x0 = -textW(tab, fs, sp) / 2, x1 = x0 + textW("EARTH", fs, sp);
+      strike = line("M" + P(x0 - 1, -157.5) + " L" + P(x1 + 1, -159), C.war, 2.2);
+    }
+    var marks = [
+      { text: "MAY BE ELIGIBLE\nFOR OPTIMIZATION", fontSize: 13, angle: -5, y: -80 },
+      { text: "SUBOPTIMAL", fontSize: 20, angle: 4, y: -12 },
+      { text: "ELIGIBLE FOR\nOPTIMIZATION", fontSize: 17, angle: -12, y: -36, color: C.med },
+    ];
+    var stamps = marks.slice(0, n).map(function (m, i) {
+      return '<g transform="translate(0,' + m.y + ')"><g class="case-stamp-' + (i + 1) + '">' + K.props.stampMark(m) + "</g></g>";
+    }).join("");
+    var body = solid([poly(folder)], manila, 4) + (o.dusty ? "" : dots(folder, 0.6, 0.18)) +
+      '<g class="case-tab">' + text(0, -154, tab, fs, ink, ' letter-spacing="' + sp + '"') + strike + "</g>" +
+      '<g opacity="' + (o.dusty ? 0.45 : 1) + '">' + stamps + "</g>";
+    return wrap("case-file", o, body);
   };
 
   // ── PRICE TAG ───────────────────────────────────────────────────────
@@ -339,8 +370,7 @@
   K.props.sign = function (o) {
     o = o || {};
     var lines = String(o.text === undefined ? "SIGN" : o.text).split("\n"), size = o.fontSize || 34, n = lines.length, col = o.color || ink;
-    var maxLen = Math.max.apply(null, lines.map(function (l) { return l.length; }));
-    var w = Math.round(maxLen * size * 0.56 + 64), lh = size * 1.1, h = Math.round(size * 1.75 + (n - 1) * lh);
+    var w = Math.round(Math.max.apply(null, lines.map(function (l) { return textW(l, size, size * 0.05); })) + 64), lh = size * 1.1, h = Math.round(size * 1.75 + (n - 1) * lh);
     var bottom = -(o.height === undefined ? 70 : o.height), top = bottom - h, cy = (top + bottom) / 2;
     var posts = o.posts === 1 ? '<path d="M0,' + (bottom - 8) + ' V0" stroke="' + ink + '" stroke-width="7" stroke-linecap="round"/>'
       : '<path d="M' + (-w / 2 + 30) + "," + (bottom - 8) + " V0 M" + (w / 2 - 30) + "," + (bottom - 8) + ' V0" stroke="' + ink + '" stroke-width="7"/>';
@@ -426,10 +456,10 @@
     o = o || {};
     var title = String(o.text === undefined ? "TREATY" : o.text), cid = id("scr"), rnd = K.rng(hash(title + (o.signatures || 0)));
     var paper = rect(-56, -158, 112, 150);
-    var tfs = Math.min(22, (92 - 1.5 * title.length) / Math.max(1, title.length * 0.52));
+    var tfs = K.fitText(title, 22, 92, "Oswald", 600, 1.5);
     var body = "", y, i, ns = Math.min(8, o.signatures || 0);
     if (o.lines) {
-      o.lines.forEach(function (l, j) { body += text(0, -104 + j * 14, l, Math.min(11, 92 / Math.max(1, l.length * 0.5)), ink); });
+      o.lines.forEach(function (l, j) { body += text(0, -104 + j * 14, l, K.fitText(l, 11, 92), ink); });
     } else {
       // handwriting: an even up-and-down scrawl with gaps between the words
       var rows = 7 - Math.ceil(ns / 2);
@@ -504,7 +534,7 @@
     }).join("");
     return wrap("clipboard", o, solid([poly(board)], C.tan) + dots(board, 0.7, 0.25) + line("M48,-146 V-4", C.rust, 1.8) +
       solid([poly(sheet)], WHITE, 3.4) + dots(sheet, 0.72, 0.16) +
-      (title ? text(0, -114, title, Math.min(14, 76 / Math.max(1, title.length * 0.52)), ink, ' letter-spacing="1"') + line("M-30,-109 H30", C.orange, 1.6) : "") + rows +
+      (title ? text(0, -114, title, K.fitText(title, 14, 76, "Oswald", 600, 1), ink, ' letter-spacing="1"') + line("M-30,-109 H30", C.orange, 1.6) : "") + rows +
       line("M-15,-152 L-11,-162 H11 L15,-152", ink, 3.4) + line("M-15,-152 L-11,-162 H11 L15,-152", C.peri, 1.6) +
       solid([poly([[-24, -154], [24, -154], [24, -140], [18, -134], [-18, -134], [-24, -140]])], C.peri) + line("M-20,-150 H20", C.cream, 1.4, ' opacity="0.7"') + line("M20,-151 V-140", ink, 1.2));
   };
@@ -523,6 +553,9 @@
     ["stamp", { pad: true, text: "SUBOPTIMAL" }, "STAMP (on its pad)"],
     ["stampMark", { text: "SUBOPTIMAL" }, "STAMP MARK"],
     ["stampMark", { text: "ELIGIBLE FOR\nOPTIMIZATION", color: "#1F6E68", angle: 6, fontSize: 26 }, "STAMP MARK (2 lines, teal)"],
+    ["caseFile", { tab: "EARTH: CASE #847" }, "CASE FILE (Part 1)"],
+    ["caseFile", { stamps: 2 }, "CASE FILE (stamps 2)"],
+    ["caseFile", { stamps: 3 }, "CASE FILE (stamps 3)"],
     ["priceTag", { anchor: "bottom" }, "PRICE TAG (anchor bottom)"],
     ["priceTag", { text: "$2.4 TRILLION", anchor: "bottom", ink: C.war }, "PRICE TAG (red)"],
     ["sign", { text: "WAR BUILDING", color: C.war }, "SIGN (2 posts)"],

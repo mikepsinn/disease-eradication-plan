@@ -3,11 +3,13 @@
 //
 //   node tools/sheet-shot.mjs storyboards/part-NN-*.html
 //
-// Frames go to snapshots/sheets/<sheet name>/NN-<scene id>.png (1920 x 1080). Exits 1 on a page error.
+// Frames go to snapshots/sheets/<sheet name>/NN-<scene id>.png (1920 x 1080). Exits 1 on a page error. Prints a
+// TEXT OVERFLOW line for each text that runs off its sign (tools/text-overflow.mjs).
 import { mkdirSync } from "node:fs";
 import { createRequire } from "node:module";
 import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { textOverflow } from "./text-overflow.mjs";
 
 const VIDEO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const require = createRequire(join(VIDEO, "package.json"));
@@ -39,6 +41,7 @@ for (let i = 0; i < svgs.length; i++) {
   const name = `${String(i + 1).padStart(2, "0")}-${(svgs[i].id || "frame").replace(/[^a-z0-9-]/gi, "")}.png`;
   await page.screenshot({ path: join(out, name) });
   console.log(join(out, name));
+  for (const o of await page.evaluate(textOverflow, "body>svg")) console.log(`TEXT OVERFLOW ${name}: "${o.text}" (${o.off}% of its letters off its sign)`);
 }
 await browser.close();
 for (const e of errors) console.log(`ERROR: ${e}`);

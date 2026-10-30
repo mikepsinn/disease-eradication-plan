@@ -17,6 +17,8 @@ Every part renders twice: 16:9 (1920 × 1080) and the tall phone version, 9:16 (
 | `tools/build-part.mjs` | Cuts the MP3, mixes in the sound effects, copies the sprites and media, writes `data/part-NN.js` and `index.html` (`--aspect 9x16` for the tall version; `--data-only` writes just `data/part-NN.js`, for checking scenes while another part builds) |
 | `tools/scene-check.mjs` | Loads one scene with its part's data in headless Chrome, in either shape, reports page errors and saves frames and a contact sheet to `snapshots/scene-check/` |
 | `tools/props-sheet.mjs` | Draws the shared props library (`assets/js/props/*.js`) on review sheets in `snapshots/props/` |
+| `tools/text-overflow.mjs` | Finds text that runs off its sign; `scene-check` and `sheet-shot` print what it finds |
+| `tools/text-widths.mjs` | Measures the fonts into `kit.js`, for `KIT.textWidth` and `KIT.fitText` |
 | `tools/art-gen.sh`, `tools/art-cutout.py` | Generate a cut-out art sheet with Codex, then cut it into WebP pieces (`../AGENTS.md`, Generated art) |
 | `tools/sfx.py` | Synthesizes the sound effects (thunk, stamp, slide whistle and so on) with numpy; nothing is downloaded |
 | `data/part-NN.js` | Generated: scene times, words, mouth track, blinks, caption groups, sound times |

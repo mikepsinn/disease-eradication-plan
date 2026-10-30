@@ -9,7 +9,7 @@ Read these first:
 - `video/assets/js/props/*.js`: the shared props library (`KIT.props.<name>`, documented at each function; `node video/tools/props-sheet.mjs [file]` draws them) and `KIT.titleScene` (title.js; copy `video/compositions/scenes/_templates/title-card.html` for a part's title card). Use these and the cast instead of drawing your own versions.
 - `video/storyboards/README.md`: every part, the shorts and the props (generated).
 - `video/compositions/scenes/part-02/` (`video/parts/part-02.json`): Part 2 in the film look, the reference for every kind of shot: the title card, a host shot that irises in (host-opens), a plate the camera travels round (money-loop), a death toll (the-toll) and a host shot with a guest that irises out (host-closes). Copy their form.
-- `video/storyboards/part-01-opening.md`: the storyboard form. Part 1's scenes are in the earlier office look; do not copy their look.
+- `video/storyboards/part-01-opening.md`: the storyboard form.
 
 ## The process
 
@@ -50,20 +50,16 @@ Read these first:
 **Scenes**
 - Determinism: no `Math.random` (use `KIT.rng`), no `Date`, no timers, finite repeats.
 - A scene id that starts with a digit (`604-papers`) is not a valid CSS selector. Get its elements with `getElementById`.
+- Text fits its sign with room at each end: size the sign to the words (`KIT.textWidth`) or the words to the sign (`KIT.fitText`). `tools/scene-check.mjs` and `tools/sheet-shot.mjs` print a TEXT OVERFLOW line for each text that runs off its sign; fix every one.
 
 **People**
 - People come in many shapes, so never hard-code a pivot or a hand. `KIT.rig(o)` (with the same options you drew the person with; `KIT.castOpts(name, extra)` for a cast member) gives the shoulders and hips (svgOrigin for arms and legs), the neck (for the head), the hands, mouth and eyes.
 - `plain: true` gives the standard build (shoulders at (±17, -26)) when a gag needs a predictable body; otherwise each human's build comes from its outfit, skin tone and color.
 - `<!--head-end-->` (person units) and `<!--face-end-->` (the face's own units, facing +x) are where to add things to a head. The eyes are `.eye` groups with a `.pupil`.
 
-**Part 1's office scenes** (the earlier look; no other part uses it)
-- Office scenes use the `KIT.OFFICE` positions. A scene that moves its wall screen (earth-means-dirt in 16:9) makes the next zoom-in scene pass that screen box to `KIT.enter`.
-- Wall-screen zooms go through `KIT.zoomView` and `KIT.enter`. An office scene that zooms out draws the previous Earth frame inside its screen with `KIT.zoomView(screen).mini`, so the zoom starts on that frame.
-- In scenes that zoom, keep the grain outside the camera wrapper, so it stays put.
-
 **Continuity**
-- A scene that continues the last one ("same form (no seam)", a cut between two office scenes, a zoom-out, a plate the next scene keeps traveling over) starts on the last scene's final frame.
-- That drawing code is copied between the two files (nuclear-winters and eligible, eligible and meet-wishonia, fire-on-fire and earth-means-dirt). Change both.
+- A scene that continues the last one ("same plate (no seam)" or "same shot (no seam)") starts on the last scene's final frame.
+- That drawing code is copied between the two files (eligible and meet-wishonia, for one). Change both.
 
 **Sound**
 - A sound placed after its scene ends plays under the next scene. Keep each sound inside its scene, or put its visual in the next scene (the YES tick at the start of eligible).

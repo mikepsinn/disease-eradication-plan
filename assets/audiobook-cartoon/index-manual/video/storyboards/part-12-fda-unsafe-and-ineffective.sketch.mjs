@@ -131,13 +131,7 @@ function wastebasket(H, papers) {
 }
 // The Earth case file standing propped up on the lectern, its bottom middle at (0, 0), 190 wide; stamps: the marks on it.
 function caseFile(H, stamps) {
-  const { C, K } = H, ink = C.line;
-  let s = `<path d="M-95,0 L-95,-150 L-40,-150 L-30,-166 L40,-166 L50,-150 L95,-150 L95,0 Z" fill="#E7C98C" stroke="${ink}" stroke-width="4" stroke-linejoin="miter"/>` +
-    `<text x="5" y="-153" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="11" fill="${ink}"><tspan text-decoration="line-through">EARTH</tspan> DIRT: CASE #847</text>` +
-    `<path d="M-23,-157 H6" stroke="${ink}" stroke-width="1.6"/>`;
-  if (stamps >= 1) s += `<g transform="translate(0,-100) rotate(-6)"><rect x="-82" y="-24" width="164" height="40" fill="none" stroke="${C.med}" stroke-width="3"/><text x="0" y="-6" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="15" fill="${C.med}">MAY BE ELIGIBLE</text><text x="0" y="11" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="15" fill="${C.med}">FOR OPTIMIZATION</text></g>`;
-  if (stamps >= 2) s += `<g transform="translate(4,-36) rotate(4)"><rect x="-84" y="-22" width="168" height="40" fill="none" stroke="${C.war}" stroke-width="4"/><rect x="-78" y="-17" width="156" height="30" fill="none" stroke="${C.war}" stroke-width="1.6"/><text x="0" y="8" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="24" letter-spacing="1.5" fill="${C.war}">SUBOPTIMAL</text></g>`;
-  return s;
+  return H.K.props.caseFile({ stamps });
 }
 // Wishonia's coffee mug, standing on (0, 0).
 function mug(H) {

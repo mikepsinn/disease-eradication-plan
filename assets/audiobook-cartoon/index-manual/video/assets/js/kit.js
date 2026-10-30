@@ -20,6 +20,34 @@
     money: "#86AD6E", moneyDark: "#3B6644", moneyEdge: "#6F9A5C",
   };
 
+  // ── Text ──────────────────────────────────────────────────────────────
+  // Measure text without a browser, so a sign can be made to fit its words. font: "Oswald" (the default, signs and
+  // labels), "Fraunces" (titles and big numbers) or "Inter" (weight 700 or more uses Inter Bold); spacing is the
+  // letter-spacing in px. Kerning is left out, so it errs a little wide.
+  // text-widths:begin (written by tools/text-widths.mjs: each character's advance in thousandths of the font size)
+  var TEXT_CHARS = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~×÷–—‘’“”•…é°½¢€£→←↑↓✓✗";
+  var TEXT_WIDTHS = {
+    Oswald: [250,247,340,524,486,982,578,161,329,314,418,442,227,320,232,411,543,384,506,506,515,502,531,428,516,530,261,270,393,436,393,483,940,538,574,553,573,438,425,572,600,290,339,552,433,695,554,576,552,576,583,505,438,578,522,704,508,490,430,334,411,321,469,363,301,449,493,456,490,460,313,489,495,257,261,493,264,737,493,471,492,491,370,413,342,490,413,595,431,436,382,358,257,367,474,464,433,558,1047,198,198,397,386,454,640,460,521,906,442,547,470,1000,1000,500,500,749,817],
+    Fraunces: [173,306,440,641,596,824,927,220,334,329,531,493,289,340,290,439,660,451,608,564,621,572,615,529,621,623,290,289,448,493,448,582,889,729,713,666,769,636,599,725,815,406,545,792,605,934,754,756,694,746,754,594,685,723,726,1093,718,670,610,359,439,359,457,469,230,507,546,465,547,478,380,512,576,288,278,570,288,852,577,524,555,535,452,431,366,553,501,778,528,515,459,397,284,397,536,458,493,503,790,253,254,505,504,429,906,478,372,750,465,677,622,1000,1000,500,500,749,817],
+    Inter: [281,288,466,633,642,982,644,300,365,365,501,662,288,460,288,360,631,407,610,618,646,593,620,566,619,620,288,302,662,662,662,511,966,690,654,730,722,601,590,746,743,269,571,672,565,903,753,765,639,765,644,642,646,744,690,985,682,679,629,365,360,365,471,456,323,562,612,571,612,583,370,613,591,242,242,549,242,876,591,600,612,612,376,528,327,591,562,818,546,562,552,426,333,426,662,662,662,500,1000,261,261,440,440,563,864,583,456,847,571,667,611,1000,1000,834,834,749,817],
+    InterBold: [237,338,552,649,655,1016,672,339,377,377,559,679,334,468,334,388,674,431,630,646,676,622,649,582,651,649,334,343,679,679,679,560,1016,747,662,740,722,607,587,750,747,281,584,719,565,932,762,771,648,777,657,655,667,732,747,1038,738,731,664,377,388,377,487,476,365,581,630,588,630,596,398,632,623,271,271,580,271,913,623,613,630,630,407,560,366,623,600,850,580,602,573,469,372,469,679,679,679,500,1000,311,311,540,532,474,1002,596,459,881,588,685,639,1000,1000,905,905,749,817],
+  };
+  // text-widths:end
+  function textWidth(text, size, font, weight, spacing) {
+    var key = font === "Inter" && weight >= 600 ? "InterBold" : font || "Oswald", w = TEXT_WIDTHS[key], s = String(text), sum = 0;
+    if (!w) throw new Error("KIT.textWidth: no widths for " + key);
+    for (var i = 0; i < s.length; i++) {
+      var k = TEXT_CHARS.indexOf(s[i]);
+      sum += k < 0 ? w[TEXT_CHARS.indexOf("M")] : w[k];
+    }
+    return (sum / 1000) * size + (spacing || 0) * Math.max(0, s.length - 1);
+  }
+  // The largest size up to `size` at which the text fits in maxWidth.
+  function fitText(text, size, maxWidth, font, weight, spacing) {
+    var w = textWidth(text, size, font, weight, spacing);
+    return w <= maxWidth ? size : size * (maxWidth / w);
+  }
+
   // ── Time ──────────────────────────────────────────────────────────────
   function scene(id) {
     for (var i = 0; i < P.scenes.length; i++) if (P.scenes[i].id === id) return P.scenes[i];
@@ -1105,7 +1133,7 @@
     svg: svg, el: el, office: office, desk: desk, mug: mug, cabinet: cabinet, wallScreen: wallScreen,
     // bean is the old name: every human is now person() (the bean drawing stays as beanClassic).
     paper: paper, paperDefs: paperDefs, grain: grain, star: star, boomerang: boomerang, sun: sun, horizon: V ? 1180 : 610, person: HUMANS.person, cast: HUMANS.cast, CAST: HUMANS.CAST, castOpts: HUMANS.castOpts, rig: HUMANS.rig, bean: HUMANS.person, beanClassic: bean, money: money, moneySeal: moneySeal, tophat: tophat,
-    flames: flames, fireOn: HUMANS.fireOn, flicker: flicker, nuke: nuke, boom: boom, xray: xray, reaper: reaper, REAPER: REAPER,
+    flames: flames, fireOn: HUMANS.fireOn, flicker: flicker, nuke: nuke, boom: boom, xray: xray, reaper: reaper, REAPER: REAPER, textWidth: textWidth, fitText: fitText,
     checkbox: checkbox, tick: tick, checkSvg: checkSvg, pencil: pencil,
   };
 })();

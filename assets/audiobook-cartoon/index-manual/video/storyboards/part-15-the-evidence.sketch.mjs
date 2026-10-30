@@ -68,14 +68,8 @@ function slab(H, x, y, w, h, seal = true) {
 // tab "~~EARTH~~ DIRT: CASE #847", Part 1's MAY BE ELIGIBLE FOR OPTIMIZATION and Part 12's SUBOPTIMAL on its cover.
 // dusty: under 65 years of dust (grayed, the stamps faded).
 function caseFile(H, dusty) {
-  const { C, K } = H, ink = C.line, S = K.STUDIO;
-  const manila = dusty ? "#BDB29A" : "#E7C98C", fade = dusty ? 0.45 : 1;
-  const s = `<path d="M-95,0 L-95,-150 L-40,-150 L-30,-166 L40,-166 L50,-150 L95,-150 L95,0 Z" fill="${manila}" stroke="${ink}" stroke-width="4" stroke-linejoin="miter"/>` +
-    `<text x="5" y="-153" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="11" fill="${ink}"><tspan text-decoration="line-through">EARTH</tspan> DIRT: CASE #847</text>` +
-    `<path d="M-23,-157 H6" stroke="${ink}" stroke-width="1.6"/>` +
-    `<g opacity="${fade}"><g transform="translate(0,-100) rotate(-6)"><rect x="-82" y="-24" width="164" height="40" fill="none" stroke="${C.med}" stroke-width="3"/><text x="0" y="-6" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="15" fill="${C.med}">MAY BE ELIGIBLE</text><text x="0" y="11" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="15" fill="${C.med}">FOR OPTIMIZATION</text></g>` +
-    `<g transform="translate(4,-36) rotate(4)"><rect x="-84" y="-22" width="168" height="40" fill="none" stroke="${C.war}" stroke-width="4"/><rect x="-78" y="-17" width="156" height="30" fill="none" stroke="${C.war}" stroke-width="1.6"/><text x="0" y="8" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="24" letter-spacing="1.5" fill="${C.war}">SUBOPTIMAL</text></g></g>`;
-  return H.at(S.lect[0] - S.lect[1] / 2 + 120, S.top + 6, 0.82, s);
+  const S = H.K.STUDIO;
+  return H.at(S.lect[0] - S.lect[1] / 2 + 120, S.top + 6, 0.82, H.K.props.caseFile({ stamps: 2, dusty }));
 }
 // Where the case file's top right corner sits (for the cobweb over it).
 function caseCorner(H) {

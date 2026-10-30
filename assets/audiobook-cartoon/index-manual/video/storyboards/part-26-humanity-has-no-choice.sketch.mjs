@@ -156,23 +156,7 @@ export function saucer(H) {
 // ELIGIBLE FOR OPTIMIZATION, 2 and SUBOPTIMAL, 3 and the final stamp (a red bar through MAY BE, ELIGIBLE FOR
 // OPTIMIZATION across it).
 export function caseFile(H, stamps) {
-  const { C } = H, ink = C.line;
-  let s = `<path d="M-95,0 L-95,-150 L-40,-150 L-30,-166 L40,-166 L50,-150 L95,-150 L95,0 Z" fill="#E7C98C" stroke="${ink}" stroke-width="4" stroke-linejoin="miter"/>` +
-    `<text x="5" y="-153" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="11" fill="${ink}"><tspan text-decoration="line-through">EARTH</tspan> DIRT: CASE #847</text>` +
-    `<path d="M-23,-157 H6" stroke="${ink}" stroke-width="1.6"/>`;
-  const mark = (x, y, rot, lines, size, w, h, double) => `<g transform="translate(${x},${y}) rotate(${rot})"><rect x="${-w / 2}" y="${-h / 2}" width="${w}" height="${h}" fill="none" stroke="${C.war}" stroke-width="3.4"/>` +
-    (double ? `<rect x="${-w / 2 + 5}" y="${-h / 2 + 5}" width="${w - 10}" height="${h - 10}" fill="none" stroke="${C.war}" stroke-width="1.4"/>` : "") +
-    lines.map((t, i) => `<text x="0" y="${f(-((lines.length - 1) * size * 1.1) / 2 + i * size * 1.1 + size * 0.36)}" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="${size}" letter-spacing="1" fill="${C.war}">${t}</text>`).join("") + "</g>";
-  if (stamps >= 1) s += mark(0, -108, -6, ["MAY BE ELIGIBLE", "FOR OPTIMIZATION"], 15, 164, 42, false);
-  if (stamps >= 2) s += mark(4, -36, 4, ["SUBOPTIMAL"], 22, 168, 38, true);
-  if (stamps >= 3) {
-    s += `<path d="M-70,-122 L-6,-128" stroke="${C.war}" stroke-width="9" stroke-linecap="round"/>`;
-    s += `<g transform="translate(6,-84) rotate(-14)"><rect x="-92" y="-30" width="184" height="60" fill="${WHITE}" fill-opacity="0.55" stroke="${C.war}" stroke-width="5"/>` +
-      `<rect x="-85" y="-23" width="170" height="46" fill="none" stroke="${C.war}" stroke-width="2"/>` +
-      `<text x="0" y="-3" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="21" letter-spacing="1.5" fill="${C.war}">ELIGIBLE FOR</text>` +
-      `<text x="0" y="20" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="21" letter-spacing="1.5" fill="${C.war}">OPTIMIZATION</text></g>`;
-  }
-  return s;
+  return H.K.props.caseFile({ stamps });
 }
 // Wishonia's coffee mug, standing on (0, 0) (Part 12's).
 export function mug(H) {
