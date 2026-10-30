@@ -1,0 +1,1 @@
+../../../index-manual/video/tools/sfx.py

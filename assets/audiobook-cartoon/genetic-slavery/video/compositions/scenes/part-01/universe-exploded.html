@@ -1,0 +1,110 @@
+<template id="universe-exploded-template">
+  <!-- universe-exploded: the heading, the bang, then 400 million years of one spark doing nothing. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+    #universe-exploded-hed {
+      position: absolute; left: 0; right: 0; text-align: center; color: #F3ECD0;
+      font-family: Fraunces, serif; font-weight: 900; line-height: 0.92;
+      text-shadow: 4px 4px 0 #112845;
+    }
+    #universe-exploded-hed .w { display: inline-block; opacity: 0; margin: 0 0.14em; }
+    #universe-exploded-sub {
+      position: absolute; left: 0; right: 0; text-align: center; opacity: 0;
+      font-family: Oswald, sans-serif; font-weight: 600; letter-spacing: 0.06em; color: #E8B04A;
+    }
+    #universe-exploded-quiet {
+      position: absolute; left: 0; right: 0; text-align: center; opacity: 0;
+      font-family: Oswald, sans-serif; font-weight: 600; letter-spacing: 0.06em; color: #F3ECD0;
+    }
+    #universe-exploded-count {
+      position: absolute; left: 0; right: 0; text-align: center;
+      font-family: Oswald, sans-serif; font-weight: 600; letter-spacing: 0.04em; color: #F3ECD0;
+    }
+    #universe-exploded-flash { position: absolute; inset: 0; background: #F3ECD0; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="universe-exploded" data-width="1920" data-height="1080" data-start="0" data-duration="16.22">
+    <div id="universe-exploded-weave" style="position:absolute;inset:0">
+      <div id="universe-exploded-cam" style="position:absolute;inset:0"></div>
+    </div>
+    <div id="universe-exploded-film" style="position:absolute;inset:0;pointer-events:none"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script>
+    (function () {
+      var ID = "universe-exploded";
+      var sc = KIT.scene(ID), D = sc.duration, W = KIT.W, H = KIT.H, V = KIT.V, C = KIT.C;
+      var q = function (n) { return document.getElementById(ID + "-" + n); };
+      var sky = '<rect width="' + W + '" height="' + H + '" fill="' + C.deep + '"/>';
+      var spark = '<g id="' + ID + '-spark" opacity="0" transform="translate(' + (W / 2) + "," + (H * 0.58) + ')">' +
+        '<circle r="' + (V ? 28 : 22) + '" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="5"/>' +
+        '<circle r="' + (V ? 10 : 8) + '" fill="' + C.cream + '"/></g>';
+      q("cam").innerHTML = KIT.svg(W, H, sky + spark);
+      var hed = document.createElement("div");
+      hed.id = ID + "-hed";
+      hed.style.top = (V ? 280 : 160) + "px";
+      hed.style.fontSize = (V ? 92 : 108) + "px";
+      ["HOW", "HYDROGEN", "LEARNED", "TO", "WORRY"].forEach(function (word, i) {
+        if (i === 3 && !V) hed.appendChild(document.createElement("br"));
+        if (V && i > 0) hed.appendChild(document.createElement("br"));
+        var s = document.createElement("span");
+        s.className = "w";
+        s.id = ID + "-w" + i;
+        s.textContent = word;
+        hed.appendChild(s);
+      });
+      var sub = document.createElement("div");
+      sub.id = ID + "-sub";
+      sub.style.top = (V ? 1100 : 620) + "px";
+      sub.style.fontSize = (V ? 42 : 36) + "px";
+      sub.textContent = "A 13.8 BILLION YEAR RECAP";
+      var quiet = document.createElement("div");
+      quiet.id = ID + "-quiet";
+      quiet.style.top = (V ? 1080 : 640) + "px";
+      quiet.style.fontSize = (V ? 64 : 56) + "px";
+      quiet.style.opacity = "0";
+      quiet.textContent = "NOTHING INTERESTING";
+      var count = document.createElement("div");
+      count.id = ID + "-count";
+      count.style.top = (V ? 1280 : 760) + "px";
+      count.style.fontSize = (V ? 54 : 48) + "px";
+      var flash = document.createElement("div");
+      flash.id = ID + "-flash";
+      q("cam").appendChild(hed);
+      q("cam").appendChild(sub);
+      q("cam").appendChild(quiet);
+      q("cam").appendChild(count);
+      q("cam").appendChild(flash);
+
+      var tl = gsap.timeline({ paused: true });
+      window.__timelines[ID] = tl;
+      KIT.film(tl, ID, q("weave"), q("film"), 15);
+      var words = ["How", "hydrogen", "learned", "to", "worry"];
+      words.forEach(function (w, i) {
+        tl.to("#" + ID + "-w" + i, { opacity: 1, duration: 0.12 }, KIT.cue(ID, w, i === 0 ? 1 : undefined));
+      });
+      tl.to(sub, { opacity: 1, duration: 0.25 }, KIT.cue(ID, "recap"));
+      var tBang = KIT.cue(ID, "exploded");
+      tl.to(hed, { opacity: 0, duration: 0.3 }, KIT.before(ID, "exploded"));
+      tl.to(sub, { opacity: 0, duration: 0.25 }, KIT.before(ID, "exploded"));
+      tl.fromTo(flash, { opacity: 0 }, { opacity: 1, duration: 0.06 }, tBang);
+      tl.to(flash, { opacity: 0, duration: 0.55 }, tBang + 0.08);
+      tl.to("#" + ID + "-spark", { opacity: 1, duration: 0.2 }, tBang + 0.35);
+      var tInt = KIT.cue(ID, "interesting");
+      var t400 = KIT.cue(ID, "400");
+      tl.to(quiet, { opacity: 1, duration: 0.25 }, tInt);
+      KIT.onTime(tl, D, function (t) {
+        if (t < tInt) { count.textContent = ""; return; }
+        var u = Math.min(1, (t - tInt) / Math.max(0.3, t400 - tInt));
+        var n = Math.round(u * u * 400000000);
+        count.textContent = n.toLocaleString("en-US") + " YEARS";
+      });
+    })();
+  </script>
+</template>

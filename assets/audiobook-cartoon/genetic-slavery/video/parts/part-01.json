@@ -1,0 +1,23 @@
+{
+  "id": "part-01",
+  "title": "Genetic Slavery",
+  "audio": { "start": 100.24, "end": 143.34 },
+  "noCaptions": ["genetic-slavery-title"],
+  "scenes": [
+    { "id": "genetic-slavery-title", "file": "compositions/scenes/part-01/genetic-slavery-title.html", "cue": "genetic", "approx": 100.24, "layer": "A" },
+    { "id": "six-oh-four", "file": "compositions/scenes/part-01/six-oh-four.html", "cue": "Your", "approx": 102.52, "layer": "B" },
+    { "id": "hardware", "file": "compositions/scenes/part-01/hardware.html", "cue": "hardware", "approx": 111.50, "layer": "B" },
+    { "id": "owners-manual", "file": "compositions/scenes/part-01/owners-manual.html", "cue": "This", "approx": 122.30, "layer": "B" },
+    { "id": "universe-exploded", "file": "compositions/scenes/part-01/universe-exploded.html", "cue": "How", "approx": 127.12, "layer": "B" }
+  ],
+  "sounds": [
+    { "scene": "genetic-slavery-title", "cue": "genetic", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "six-oh-four", "cue": "604", "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "six-oh-four", "cue": "not", "sfx": "slam", "volume": 0.45 },
+    { "scene": "hardware", "cue": "rocks", "sfx": "clank", "volume": 0.35 },
+    { "scene": "hardware", "cue": "nuclear", "sfx": "boom", "volume": 0.5 },
+    { "scene": "owners-manual", "cue": "manual", "sfx": "slam", "volume": 0.4 },
+    { "scene": "universe-exploded", "cue": "exploded", "sfx": "boom", "volume": 0.55 },
+    { "scene": "universe-exploded", "cue": "million", "sfx": "tick", "volume": 0.3 }
+  ]
+}

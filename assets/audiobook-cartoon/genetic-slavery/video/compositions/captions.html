@@ -1,0 +1,65 @@
+<template id="captions-template">
+  <style>
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+    #captions-stage { position: absolute; left: 0; right: 0; top: 918px; height: 140px; }
+    #captions-stage.is-tall { top: 1470px; height: 230px; }
+    #captions-stage.is-tall .captions-pill { max-width: 960px; font-size: 54px; }
+    .captions-group {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; opacity: 0;
+    }
+    .captions-pill {
+      max-width: 1500px; padding: 14px 40px 18px; background: #F3ECD0;
+      border: 5px solid #0B1A33; border-radius: 22px; box-shadow: 6px 7px 0 #0B1A33;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.05em 0.28em;
+      font-family: "Inter", sans-serif; font-weight: 700; font-size: 50px; line-height: 1.18; letter-spacing: -0.01em;
+    }
+    .captions-word { padding: 0 0.14em; border-radius: 0.25em; color: rgba(11, 26, 51, 0.55); }
+    .captions-word.is-spoken { color: #0B1A33; }
+    .captions-word.is-active { color: #0B1A33; background: #E8B04A; }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1920" data-height="1080" data-start="0" data-duration="43.1">
+    <div id="captions-stage" class="clip" data-start="0" data-duration="43.1" data-track-index="0"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var P = window.HF_PART;
+      var stage = document.getElementById("captions-stage");
+      if (KIT.V) stage.className = "clip is-tall";
+      var groups = P.captions.map(function (g) {
+        var box = document.createElement("div");
+        box.className = "captions-group";
+        var pill = document.createElement("div");
+        pill.className = "captions-pill";
+        var spans = g.words.map(function (w) {
+          var s = document.createElement("span");
+          s.className = "captions-word";
+          s.textContent = w.w;
+          pill.appendChild(s);
+          return s;
+        });
+        box.appendChild(pill);
+        stage.appendChild(box);
+        return { g: g, box: box, spans: spans };
+      });
+      var tl = gsap.timeline({ paused: true });
+      KIT.onTime(tl, P.duration, function (t) {
+        groups.forEach(function (x) {
+          var on = t >= x.g.s && t < x.g.e;
+          x.box.style.opacity = on ? 1 : 0;
+          if (!on) return;
+          x.g.words.forEach(function (w, i) {
+            var cls = "captions-word" + (t >= w.s && t < w.e ? " is-active" : t >= w.e ? " is-spoken" : "");
+            if (x.spans[i].className !== cls) x.spans[i].className = cls;
+          });
+        });
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["captions"] = tl;
+    })();
+  </script>
+</template>
