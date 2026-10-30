@@ -12,6 +12,8 @@ The second MP3 in the paperback feed (`https://static.warondisease.org/assets/au
 
 Open `video/storyboards/part-01-genetic-slavery.html` through `part-06-out-of-hand.html`. Each frame is that scene's key moment. Nothing in parts 2 through 6 moves yet. Comment by scene name.
 
+Part 1's review look is the camera-plates version: a khaki field, a vignette, and the kit's cast. Parts 2 through 6 are still thumbnail options and are not locked.
+
 The package stops before "The selfish gene made you illogical," about 7:45 of the MP3. The rest of the chapter is not boarded.
 
 ## Source audio
